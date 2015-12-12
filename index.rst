@@ -6,17 +6,22 @@
 Welcome to Godot Engine's documentation!
 ========================================
 
-Contents:
+The main documentation for the site is organized into a couple sections:
+
+* :ref:`user-doc`
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
+   :caption: User documentation
+   :name: user-doc
+   
+   asset_pipeline/index
+   advanced_topics/index
 
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
+.. Indices and tables
+.. ------------------
+.. 
+.. * :ref:`genindex`
+.. * :ref:`modindex`
+.. * :ref:`search`
