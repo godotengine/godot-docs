@@ -9,23 +9,23 @@ Welcome to Godot Engine's documentation!
 The main documentation for the site is organized into a couple sections:
 
 * :ref:`user-doc`
-* :ref:`contrib-doc`
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
    :caption: User documentation
    :name: user-doc
 
-   tutorials/index
+   tutorials/basic
+   tutorials/engine
+   tutorials/2d_tutorials
+   tutorials/3d_tutorials
+   tutorials/shaders
+   tutorials/math
+   tutorials/advanced
+   tutorials/editor_plugins
    reference/index
    asset_pipeline/index
-   advanced_topics/index
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Contributor documentation
-   :name: contrib-doc
-
+   advanced/index
    contributing/index
 
 
