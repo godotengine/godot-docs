@@ -26,10 +26,10 @@ callback will be called every frame. Example:
     func _process(delta):
         #do something..
 
-| The delta parameter describes the time elapsed (in seconds, as
-  floating point) since the previous call to \_process().
-| Fixed processing is similar, but only needed for synchronization with
-  the physics engine.
+The delta parameter describes the time elapsed (in seconds, as
+floating point) since the previous call to \_process().
+Fixed processing is similar, but only needed for synchronization with
+the physics engine.
 
 A simple way to test this is to create a scene with a single Label node,
 with the following script:
@@ -75,11 +75,12 @@ all enemies can be notified about the alarm sounding, by using
     func _on_discovered():
         get_tree().call_group(0,"guards","player_was_discovered")
 
-| The above code calls the function "player\_was\_discovered" on every
-  member of the group "guards".
-| Optionally, it is possible to get the full list of "guards" nodes by
-  calling
-  `SceneTree.get\_nodes\_in\_group() <https://github.com/okamstudio/godot/wiki/class_scenemainloop#get_nodes_in_group>`__:
+The above code calls the function "player\_was\_discovered" on every
+member of the group "guards".
+
+Optionally, it is possible to get the full list of "guards" nodes by
+calling
+`SceneTree.get\_nodes\_in\_group() <https://github.com/okamstudio/godot/wiki/class_scenemainloop#get_nodes_in_group>`__:
 
 ::
 
