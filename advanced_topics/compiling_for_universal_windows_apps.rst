@@ -1,6 +1,8 @@
 Compiling for Universal Windows Apps
 ====================================
 
+.. highlight:: shell
+
 This page documents the current state of the "winrt" platform, used to
 support "Windows Store Apps" for Windows 8.1, and Windows Phone 8.1 apps
 using Microsoft's new "Universal" APIs.

@@ -1,6 +1,8 @@
 Compiling for Linux
 ===================
 
+.. highlight:: shell
+
 Requirements
 ------------
 

@@ -1,6 +1,8 @@
 Compiling for OSX
 =================
 
+.. highlight:: shell
+
 Requirements
 ------------
 

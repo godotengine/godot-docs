@@ -1,6 +1,8 @@
 Compiling for Android
 =====================
 
+.. highlight:: shell
+
 Note
 ----
 

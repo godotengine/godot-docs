@@ -1,6 +1,8 @@
 Introduction to the buildsystem
 ===============================
 
+.. highlight:: shell
+
 Scons
 -----
 

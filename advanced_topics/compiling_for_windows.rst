@@ -1,6 +1,8 @@
 Compiling for Windows
 =====================
 
+.. highlight:: shell
+
 Requirements
 ------------
 

@@ -1,6 +1,8 @@
 Compiling for iOS
 =================
 
+.. highlight:: shell
+
 Requirements
 ------------
 

@@ -1,6 +1,8 @@
 Command line tutorial
 =====================
 
+.. highlight:: shell
+
 Some developers like using the command line extensively. Godot is
 designed to be friendly to them, so here are the steps for working
 entirely from the command line. Given the engine relies on little to no
