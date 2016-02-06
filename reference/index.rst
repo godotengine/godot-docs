@@ -5,6 +5,6 @@ Reference
    :maxdepth: 2
    :name: reference
 
-   reference_filling_work
+   ../classes/index
    languages
    cheat_sheets

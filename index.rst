@@ -14,6 +14,7 @@ The main documentation for the site is organized into a couple sections:
    :maxdepth: 1
    :caption: User documentation
    :name: user-doc
+   :hidden:
 
    tutorials/basic
    tutorials/engine
@@ -27,7 +28,6 @@ The main documentation for the site is organized into a couple sections:
    asset_pipeline/index
    advanced/index
    contributing/index
-
 
 .. Indices and tables
 .. ------------------
