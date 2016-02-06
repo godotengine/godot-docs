@@ -21,9 +21,9 @@ Start a terminal, go to the root dir of the engine source code and type:
     user@host:~/godot$ scons platform=osx
 
 If all goes well, the resulting binary executable will be placed in the
-\\"bin\\" subdirectory. This executable file contains the whole engine
-and runs without any dependencies. Executing it will bring up the
-project manager. There is a .app template to put the binary into in
+"bin" subdirectory. This executable file contains the whole engine and
+runs without any dependencies. Executing it will bring up the project
+manager. There is a .app template to put the binary into in
 tools/Godot.app.
 
 Cross-compiling
@@ -31,9 +31,8 @@ Cross-compiling
 
 It is possible to compile for OS X in a Linux environment (and maybe
 also in Windows with Cygwin). For that you will need
-\\\ `OSXCross\\ <https://github.com/tpoechtrager/osxcross>`__ for being
-able to use OS X as target. First, follow the instructions to install
-it:
+`OSXCross <https://github.com/tpoechtrager/osxcross>`__ for being able
+to use OS X as target. First, follow the instructions to install it:
 
 # Clone the OSXCross repository
 (https://github.com/tpoechtrager/osxcross) somewhere in your machine (or

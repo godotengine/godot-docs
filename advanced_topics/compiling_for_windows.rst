@@ -6,27 +6,25 @@ Requirements
 
 For compiling under Windows, the following is required:
 
--  \\\ `Visual C++\\ <http://www.microsoft.com/visualstudio>`__, Visual
-   C++ Express compiler or Visual Studio Community (recommended) at
-   least the 2010 version (10.0) up to 2015 (14.0). **Make sure you get
-   a version that can compile for C++, Desktop**.
--  \\\ `Python 2.7+\\ <http://www.python.org/getit/releases/2.7/>`__
-   (3.0 is untested as of now). Using the 32-bits installer is
-   recommended.
--  \\\ `Pywin32 Python
-   Extension\\ <http://sourceforge.net/projects/pywin32>`__ for parallel
+-  `Visual C++ <http://www.microsoft.com/visualstudio>`__, Visual C++
+   Express compiler or Visual Studio Community (recommended) at least
+   the 2010 version (10.0) up to 2015 (14.0). **Make sure you get a
+   version that can compile for C++, Desktop**.
+-  `Python 2.7+ <http://www.python.org/getit/releases/2.7/>`__ (3.0 is
+   untested as of now). Using the 32-bits installer is recommended.
+-  `Pywin32 Python
+   Extension <http://sourceforge.net/projects/pywin32>`__ for parallel
    builds (which increase the build speed by a great factor).
--  \\\ `SCons\\ <http://www.scons.org>`__ build system.
+-  `SCons <http://www.scons.org>`__ build system.
 
 Setting up SCons
 ----------------
 
 Python adds the interpreter (python.exe) to the path. It usually
 installs in C:\\\\Python (or C:\\\\Python[Version]). SCons installs
-inside the python install and provides a .bat file called
-\\"scons.bat\\". The location of this file can be added to the path or
-it can simply be copied to C:\\\\Python together with the interpreter
-executable.
+inside the python install and provides a .bat file called "scons.bat".
+The location of this file can be added to the path or it can simply be
+copied to C:\\\\Python together with the interpreter executable.
 
 Compiling
 ---------
@@ -64,7 +62,7 @@ build it seems to be by running:
 
 ::
 
-    \"C:\\Program Files (x86)\\Microsoft Visual Studio 12.0\\VC\\vcvarsall.bat\" && c:\\python27\\scons p=windows
+    "C:\\Program Files (x86)\\Microsoft Visual Studio 12.0\\VC\\vcvarsall.bat" && c:\\python27\\scons p=windows
 
 (or however your VS and Scons are installed)
 
@@ -91,8 +89,8 @@ following env variables:
 
 ::
 
-    export MINGW32_PREFIX=\"/path/to/i586-mingw32msvc-\"
-    export MINGW64_PREFIX=\"/path/to/i686-w64-mingw32-\"
+    export MINGW32_PREFIX="/path/to/i586-mingw32msvc-"
+    export MINGW64_PREFIX="/path/to/i686-w64-mingw32-"
 
 To make sure you are doing things correctly, executing the following in
 the shell should result in a working compiler:

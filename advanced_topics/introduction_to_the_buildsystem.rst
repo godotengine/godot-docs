@@ -4,12 +4,12 @@ Introduction to the buildsystem
 Scons
 -----
 
-Godot uses \\\ `Scons\\ <http://www.scons.org>`__ to build. We love it,
-we are not changing it for anything else. We are not even sure other
-build systems are up to the task of building Godot. We constantly get
-requests to move the build system to CMake, or Visual Studio, but this
-is not going to happen. There are many reasons why we have chosen SCons
-over other alternatives and are listed as follows:
+Godot uses `Scons <http://www.scons.org>`__ to build. We love it, we are
+not changing it for anything else. We are not even sure other build
+systems are up to the task of building Godot. We constantly get requests
+to move the build system to CMake, or Visual Studio, but this is not
+going to happen. There are many reasons why we have chosen SCons over
+other alternatives and are listed as follows:
 
 -  Godot can be compiled for a dozen different platforms. All PC
    platforms, all mobile platforms, many consoles, and many web-based
@@ -149,9 +149,9 @@ Target controls optimization and debug flags. Each mode means:
 
     scons platform= target=debug/release_debug/release
 
-This flag appends \\".debug\\" suffix (for debug), or \\".tools\\" (for
-debug with tools enables). When optimization is enabled (release) it
-appends the \\".opt\\" suffix.
+This flag appends ".debug" suffix (for debug), or ".tools" (for debug
+with tools enables). When optimization is enabled (release) it appends
+the ".opt" suffix.
 
 Bits
 ----
@@ -171,8 +171,8 @@ else.
 
     scons platform= bits=default/32/64
 
-This flag appends \\".32\\" or \\".64\\" suffixes to resulting binaries
-when relevant.
+This flag appends ".32" or ".64" suffixes to resulting binaries when
+relevant.
 
 Export templates
 ----------------

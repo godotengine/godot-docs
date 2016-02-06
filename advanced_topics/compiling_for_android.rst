@@ -30,8 +30,8 @@ Setting Up SCons
   Android NDK.
 
 To set those environment variables on Windows, press Windows+R, type
-\\"control system\\", then click on **Advanced system settings** in the
-left pane, then click on **Environment variables** on the window that
+"control system", then click on **Advanced system settings** in the left
+pane, then click on **Environment variables** on the window that
 appears.
 
 To set those environment variables on Linux, use
@@ -78,8 +78,8 @@ platform, for each build type (release, debug, etc), it must be
 replaced.
 
 **Note**: The file inside libs/armeabi must be renamed to
-**\\"libgodot\_android.so\\"**, or else unsatisfied link error will
-happen at runtime.
+**"libgodot\_android.so"**, or else unsatisfied link error will happen
+at runtime.
 
 If you also want to include support for x86 Android, add the following
 compile flag: ``x86=yes`` , then copy/symlink the resulting folder to
@@ -102,8 +102,8 @@ the current numbers, then set the following environment variables:
 
 ::
 
-    NDK_TOOLCHAIN  (by default set to \"arm-eabi-4.4.0\")
-    NDK_TARGET (by default set to \"arm-linux-androideabi-4.8\")
+    NDK_TOOLCHAIN  (by default set to "arm-eabi-4.4.0")
+    NDK_TARGET (by default set to "arm-linux-androideabi-4.8")
 
 Building the APK
 ----------------

@@ -61,11 +61,11 @@ excessively:
 Alpha blending
 ~~~~~~~~~~~~~~
 
-The \\\ `blending
-equation\\ <http://en.wikipedia.org/wiki/Alpha_compositing>`__ used by
+The `blending
+equation <http://en.wikipedia.org/wiki/Alpha_compositing>`__ used by
 applications like Photoshop is too complex for real-time. There are
-better approximations such as \\\ `pre-multiplied
-alpha\\ <http://blogs.msdn.com/b/shawnhar/archive/2009/11/06/premultiplied-alpha.aspx?Redirected=true>`__,
+better approximations such as `pre-multiplied
+alpha <http://blogs.msdn.com/b/shawnhar/archive/2009/11/06/premultiplied-alpha.aspx?Redirected=true>`__,
 but they impose more stress in the asset pipeline. In the end, we are
 left with textures that have artifacts in the edges, because apps such
 as Photoshop store white pixels in completely transparent areas. Such
@@ -78,7 +78,7 @@ pixels the same color as the visible neighbours):
 
 To do this, open the image from the resources tab, or edit it from the
 property editor from another node or resource, then go to the object
-options and select \\"Fix Border Alpha\\", then save it.
+options and select "Fix Border Alpha", then save it.
 
 .. image:: /img/imagefixalpha.png
 

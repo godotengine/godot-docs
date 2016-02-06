@@ -38,9 +38,9 @@ To create a new module, the first step is creating a directory inside
 modules. If you want to maintain the module separately, you can checkout
 a different VCS into modules and use it.
 
-The example module will be called \\"sumator\\", and is placed inside
-the Godot source tree (C:\\\\godot refers to wherever the Godot sources
-are located):
+The example module will be called "sumator", and is placed inside the
+Godot source tree (C:\\\\godot refers to wherever the Godot sources are
+located):
 
 ::
 
@@ -51,71 +51,65 @@ are located):
 
 Inside we will create a simple sumator class:
 
-| <pre class=\\"cpp\\">
-| /\* sumator.h \*/
-| #ifndef SUMATOR\_H
-| #define SUMATOR\_H
+.. code:: cpp
 
-#include "reference.h&quot;
+    /* sumator.h */
+    #ifndef SUMATOR_H
+    #define SUMATOR_H
 
-| class Sumator : public Reference {
-| OBJ\_TYPE(Sumator,Reference);
+    #include "reference.h"
 
-int count;
+    class Sumator : public Reference {
+        OBJ_TYPE(Sumator,Reference);
 
-| protected:
-| static void \_bind\_methods();
-| public:
+        int count;
 
-| void add(int value);
-| void reset();
-| int get\_total() const;
+    protected:
+        static void _bind_methods();
+    public:
 
-| Sumator();
-| };
+        void add(int value);
+        void reset();
+        int get_total() const;
 
-#endif
+        Sumator();
+    };
 
-.. raw:: html
-
-   </pre>
+    #endif
 
 And then the cpp file.
 
-| <pre class=\\"cpp\\">
-| /\* sumator.cpp \*/
+.. code:: cpp
 
-#include "sumator.h&quot;
+    /* sumator.cpp */
 
-void Sumator::add(int value) {
+    #include "sumator.h"
 
-| count+=value;
-| }
+    void Sumator::add(int value) {
 
-void Sumator::reset() {
+        count+=value;
+    }
 
-| count=0;
-| }
+    void Sumator::reset() {
 
-int Sumator::get\_total() const {
+        count=0;
+    }
 
-| return count;
-| }
+    int Sumator::get_total() const {
 
-void Sumator::\_bind\_methods() {
+        return count;
+    }
 
-| ObjectTypeDB::bind\_method("add&quot;,&Sumator::add);
-| ObjectTypeDB::bind\_method("reset&quot;,&Sumator::reset);
-| ObjectTypeDB::bind\_method("get\_total&quot;,&Sumator::get\_total);
-| }
+    void Sumator::_bind_methods() {
 
-| Sumator::Sumator() {
-| count=0;
-| }
+        ObjectTypeDB::bind_method("add",&Sumator::add);
+        ObjectTypeDB::bind_method("reset",&Sumator::reset);
+        ObjectTypeDB::bind_method("get_total",&Sumator::get_total);
+    }
 
-.. raw:: html
-
-   </pre>
+    Sumator::Sumator() {
+        count=0;
+    }
 
 Then, the new class needs to be registered somehow, so two more files
 need to be created:
@@ -127,69 +121,53 @@ need to be created:
 
 With the following contents
 
-| <pre class=\\"cpp\\">
-| /\* register\_types.h \*/
+.. code:: cpp
 
-| void register\_sumator\_types();
-| void unregister\_sumator\_types();
-| /\* yes, the word in the middle must be the same as the module folder
-  name \*/
+    /* register_types.h */
 
-.. raw:: html
+    void register_sumator_types();
+    void unregister_sumator_types();
+    /* yes, the word in the middle must be the same as the module folder name */
 
-   </pre>
+.. code:: cpp
 
-| <pre class=\\"cpp\\">
-| /\* register\_types.cpp \*/
+    /* register_types.cpp */
 
-| #include "register\_types.h&quot;
-| #include "object\_type\_db.h&quot;
-| #include "sumator.h&quot;
+    #include "register_types.h"
+    #include "object_type_db.h"
+    #include "sumator.h"
 
-void register\_sumator\_types() {
+    void register_sumator_types() {
 
-| ObjectTypeDB::register\_type&lt;Sumator&gt;();
-| }
+            ObjectTypeDB::register_type<Sumator>();
+    }
 
-| void unregister\_sumator\_types() {
-| //nothing to do here
-| }
-
-.. raw:: html
-
-   </pre>
+    void unregister_sumator_types() {
+       //nothing to do here
+    }
 
 Next, we need to create a SCsub so the build system compiles this
 module:
 
-<pre class=\\"python\\">
+.. code:: python
 
-#. SCsub
-   Import('env')
+    # SCsub
+    Import('env')
 
-env.add\_source\_files(env.modules\_sources,"\*.cpp&quot;) # just add
-all cpp files to the build
-
-.. raw:: html
-
-   </pre>
+    env.add_source_files(env.modules_sources,"*.cpp") # just add all cpp files to the build
 
 And finally, the configuration file for the module, this is a simple
 python script that must be named 'config.py'
 
-<pre class=\\"python\\">
+.. code:: python
 
-#. config.py
+    # config.py
 
-| def can\_build(platform):
-| return True
+    def can_build(platform):
+        return True  
 
-| def configure(env):
-| pass
-
-.. raw:: html
-
-   </pre>
+    def configure(env):
+        pass
 
 The module is asked if it's ok to build for the specific platform (in
 this case, True means it will build for every platform).
@@ -221,17 +199,14 @@ Using the module
 Using your newly created module is very easy, from any script you can
 do:
 
-| <pre class=\\"python\\">
-| var s = Sumator.new()
-| s.add(10)
-| s.add(20)
-| s.add(30)
-| print( s.get\_total() )
-| s.reset()
+.. code:: python
 
-.. raw:: html
-
-   </pre>
+    var s = Sumator.new()
+    s.add(10)
+    s.add(20)
+    s.add(30)
+    print( s.get_total() )
+    s.reset()
 
 And the output will be ``60``.
 
@@ -250,7 +225,7 @@ some surprises.
 
 -  If you inherit from [[API:Node]] (or any derived node type, such as
    Sprite), your new class will appear in the editor, in the inheritance
-   tree in the \\"Add Node\\" dialog.
+   tree in the "Add Node" dialog.
 -  If you inherit from [[API:Resource]], it will appear int the resource
    list, and all the exposed properties can be serialized when
    saved/loaded.

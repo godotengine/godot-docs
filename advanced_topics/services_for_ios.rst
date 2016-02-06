@@ -23,29 +23,24 @@ locally (no internet connection, API incorrectly configured, etc). If
 the error value is 'OK', a response event will be produced and added to
 the 'pending events' queue. Example:
 
-| <pre class=\\"python\\">
-| func on\_purchase\_pressed():
-| var result = InAppStore.purchase( { \\\ `product\_id\\ <>`__
-  \\"my\_product\\" } )
-| if result == OK:
-| animation.play(\\"busy\\") # show the \\"waiting for response\\"
-  animation
-| else:
-| show\_error()
+.. code:: python
 
-| # put this on a 1 second timer or something
-| func check\_events():
-| while InAppStore.get\_pending\_event\_count() > 0:
-| var event = InAppStore.pop\_pending\_event()
-| if event.type  \\"purchase\\":
-              if event.result  \\\ `ok\\ <>`__
-| show\_success(event.product\_id)
-| else:
-| show\_error()
+    func on_purchase_pressed():
+        var result = InAppStore.purchase( { "product_id": "my_product" } )
+        if result == OK:
+            animation.play("busy") # show the "waiting for response" animation
+        else:
+            show_error()
 
-.. raw:: html
-
-   </pre>
+    # put this on a 1 second timer or something
+    func check_events():
+        while InAppStore.get_pending_event_count() > 0:
+            var event = InAppStore.pop_pending_event()
+            if event.type == "purchase":
+                if event.result == "ok":
+                    show_success(event.product_id)
+                else:
+                    show_error()
 
 Remember that when a call returns OK, the API will *always* produce an
 event through the pending\_event interface, even if it's an error, or a
@@ -66,9 +61,9 @@ Store Kit
 
 Implemented in platform/iphone/in\_app\_store.mm
 
-The Store Kit API is accessible through the \\"InAppStore\\" singleton
-(will always be available from gdscript). It is initialized
-automatically. It has 2 methods for purchasing:
+The Store Kit API is accessible through the "InAppStore" singleton (will
+always be available from gdscript). It is initialized automatically. It
+has 2 methods for purchasing:
 
 -  ``Error purchase(Variant p_params);``
 -  ``Error request_product_info(Variant p_params);``
@@ -93,7 +88,7 @@ string with your product id. Example:
 
 ::
 
-    var result = InAppStore.purchase( { \"product_id\": \"my_product\" } )
+    var result = InAppStore.purchase( { "product_id": "my_product" } )
 
 Response event
 ^^^^^^^^^^^^^^
@@ -105,9 +100,9 @@ On error:
 ::
 
     {
-      \"type\": \"purchase\",
-      \"result\": \"error\",
-      \"product_id\": \"the product id requested\"
+      "type": "purchase",
+      "result": "error",
+      "product_id": "the product id requested"
     }
 
 On success:
@@ -115,9 +110,9 @@ On success:
 ::
 
     {
-      \"type\": \"purchase\",
-      \"result\": \"ok\",
-      \"product_id\": \"the product id requested\"
+      "type": "purchase",
+      "result": "ok",
+      "product_id": "the product id requested"
     }
 
 request\_product\_info
@@ -133,7 +128,7 @@ string array with a list of product ids. Example:
 
 ::
 
-    var result = InAppStore.request_product_info( { \"product_ids\": [\"my_product1\", \"my_product2\"] } )
+    var result = InAppStore.request_product_info( { "product_ids": ["my_product1", "my_product2"] } )
 
 Response event
 ^^^^^^^^^^^^^^
@@ -143,14 +138,14 @@ The response event will be a dictionary with the following fields:
 ::
 
     {
-      \"type\": \"product_info\",
-      \"result\": \"ok\",
-      \"invalid_ids\": [ list of requested ids that were invalid ],
-      \"ids\": [ list of ids that were valid ],
-      \"titles\": [ list of valid product titles (corresponds with list of valid ids) ],
-      \"descriptions\": [ list of valid product descriptions ] ,
-      \"prices\": [ list of valid product prices ],
-      \"localized_prices\": [ list of valid product localized prices ],
+      "type": "product_info",
+      "result": "ok",
+      "invalid_ids": [ list of requested ids that were invalid ],
+      "ids": [ list of ids that were valid ],
+      "titles": [ list of valid product titles (corresponds with list of valid ids) ],
+      "descriptions": [ list of valid product descriptions ] ,
+      "prices": [ list of valid product prices ],
+      "localized_prices": [ list of valid product localized prices ],
     }
 
 Game Center
@@ -158,8 +153,8 @@ Game Center
 
 Implemented in platform/iphone/game\_center.mm
 
-The Game Center API is available through the \\"GameCenter\\" singleton.
-It has 6 methods:
+The Game Center API is available through the "GameCenter" singleton. It
+has 6 methods:
 
 -  ``Error post_score(Variant p_score);``
 -  ``Erroraward_achievement(Variant p_params);``
@@ -187,7 +182,7 @@ Example:
 
 ::
 
-    var result = GameCenter.post_score( { \"value\": 100, \"category\": \"my_leaderboard\", } )
+    var result = GameCenter.post_score( { "value": 100, "category": "my_leaderboard", } )
 
 Response event
 ^^^^^^^^^^^^^^
@@ -199,10 +194,10 @@ On error:
 ::
 
     {
-      \"type\": \"post_score\",
-      \"result\": \"error\",
-      \"error_code\": the value from NSError::code,
-      \"error_description\": the value from NSError::localizedDescription,
+      "type": "post_score",
+      "result": "error",
+      "error_code": the value from NSError::code,
+      "error_description": the value from NSError::localizedDescription,
     }
 
 On success:
@@ -210,8 +205,8 @@ On success:
 ::
 
     {
-      \"type\": \"post_score\",
-      \"result\": \"ok\",
+      "type": "post_score",
+      "result": "ok",
     }
 
 award\_achievement
@@ -234,7 +229,7 @@ Example:
 
 ::
 
-    var result = award_achievement( { \"name\": \"hard_mode_completed\", \"progress\": 6.1 } )
+    var result = award_achievement( { "name": "hard_mode_completed", "progress": 6.1 } )
 
 Response event
 ^^^^^^^^^^^^^^
@@ -246,9 +241,9 @@ On error:
 ::
 
     {
-      \"type\": \"award_achievement\",
-      \"result\": \"error\",
-      \"error_code\": the error code taken from NSError::code,
+      "type": "award_achievement",
+      "result": "error",
+      "error_code": the error code taken from NSError::code,
     }
 
 On success:
@@ -256,8 +251,8 @@ On success:
 ::
 
     {
-      \"type\": \"award_achievement\",
-      \"result\": \"ok\",
+      "type": "award_achievement",
+      "result": "ok",
     }
 
 reset\_achievements
@@ -275,9 +270,9 @@ On error:
 ::
 
     {
-      \"type\": \"reset_achievements\",
-      \"result\": \"error\",
-      \"error_code\": the value from NSError::code
+      "type": "reset_achievements",
+      "result": "error",
+      "error_code": the value from NSError::code
     }
 
 On success:
@@ -285,8 +280,8 @@ On success:
 ::
 
     {
-      \"type\": \"reset_achievements\",
-      \"result\": \"ok\",
+      "type": "reset_achievements",
+      "result": "ok",
     }
 
 request\_achievements
@@ -305,9 +300,9 @@ On error:
 ::
 
     {
-      \"type\": \"achievements\",
-      \"result\": \"error\",
-      \"error_code\": the value from NSError::code
+      "type": "achievements",
+      "result": "error",
+      "error_code": the value from NSError::code
     }
 
 On success:
@@ -315,10 +310,10 @@ On success:
 ::
 
     {
-      \"type\": \"achievements\",
-      \"result\": \"ok\",
-      \"names\": [ list of the name of each achievement ],
-      \"progress\": [ list of the progress made on each achievement ]
+      "type": "achievements",
+      "result": "ok",
+      "names": [ list of the name of each achievement ],
+      "progress": [ list of the progress made on each achievement ]
     }
 
 request\_achievement\_descriptions
@@ -337,9 +332,9 @@ On error:
 ::
 
     {
-      \"type\": \"achievement_descriptions\",
-      \"result\": \"error\",
-      \"error_code\": the value from NSError::code
+      "type": "achievement_descriptions",
+      "result": "error",
+      "error_code": the value from NSError::code
     }
 
 On success:
@@ -347,15 +342,15 @@ On success:
 ::
 
     {
-      \"type\": \"achievement_descriptions\",
-      \"result\": \"ok\",
-      \"names\": [ list of the name of each achievement ],
-      \"titles\": [ list of the title of each achievement ]
-      \"unachieved_descriptions\": [ list of the description of each achievement when it is unachieved ]
-      \"achieved_descriptions\": [ list of the description of each achievement when it is achieved ]
-      \"maximum_points\": [ list of the points earned by completing each achievement ]
-      \"hidden\": [ list of booleans indicating whether each achievement is initially visible ]
-      \"replayable\": [ list of booleans indicating whether each achievement can be earned more than once ]
+      "type": "achievement_descriptions",
+      "result": "ok",
+      "names": [ list of the name of each achievement ],
+      "titles": [ list of the title of each achievement ]
+      "unachieved_descriptions": [ list of the description of each achievement when it is unachieved ]
+      "achieved_descriptions": [ list of the description of each achievement when it is achieved ]
+      "maximum_points": [ list of the points earned by completing each achievement ]
+      "hidden": [ list of booleans indicating whether each achievement is initially visible ]
+      "replayable": [ list of booleans indicating whether each achievement can be earned more than once ]
     }
 
 show\_game\_center
@@ -370,19 +365,19 @@ Parameters
 Takes a Dictionary as a parameter, with 2 fields:
 
 -  ``view`` (string) (optional) the name of the view to present. Accepts
-   \\"default\\", \\"leaderboards\\", \\"achievements\\", or
-   \\"challenges\\". Defaults to \\"default\\".
+   "default", "leaderboards", "achievements", or "challenges". Defaults
+   to "default".
 -  ``leaderboard_name`` (string) (optional) the name of the leaderboard
-   to present. Only used when \\"view\\" is \\"leaderboards\\" (or
-   \\"default\\" is configured to show leaderboards). If not specified,
-   Game Center will display the aggregate leaderboard.
+   to present. Only used when "view" is "leaderboards" (or "default" is
+   configured to show leaderboards). If not specified, Game Center will
+   display the aggregate leaderboard.
 
 Examples:
 
 ::
 
-    var result = show_game_center( { \"view\": \"leaderboards\", \"leaderboard_name\": \"best_time_leaderboard\" } )
-    var result = show_game_center( { \"view\": \"achievements\" } )
+    var result = show_game_center( { "view": "leaderboards", "leaderboard_name": "best_time_leaderboard" } )
+    var result = show_game_center( { "view": "achievements" } )
 
 Response event
 ^^^^^^^^^^^^^^
@@ -394,41 +389,37 @@ On close:
 ::
 
     {
-      \"type\": \"show_game_center\",
-      \"result\": \"ok\",
+      "type": "show_game_center",
+      "result": "ok",
     }
 
 Multi-platform games
 --------------------
 
 When working on a multi-platform game, you won't always have the
-\\"GameCenter\\" singleton available (for example when running on PC or
+"GameCenter" singleton available (for example when running on PC or
 Android). Because the gdscript compiler looks up the singletons at
 compile time, you can't just query the singletons to see and use what
 you need inside a conditional block, you need to also define them as
 valid identifiers (local variable or class member). This is an example
 of how to work around this in a class:
 
-| <pre class=\\"python\\">
-| var GameCenter = null # define it as a class member
+.. code:: python
 
-| func post\_score(p\_score):
-| if GameCenter == null:
-| return
-| GameCenter.post\_score( { \\\ `value\\ <>`__ p\_score,
-  \\\ `category\\ <>`__ \\"my\_leaderboard\\" } )
+    var GameCenter = null # define it as a class member
 
-| func check\_events():
-| while GameCenter.get\_pending\_event\_count() > 0:
-| # do something with events here
-| pass
+    func post_score(p_score):
+        if GameCenter == null:
+            return
+        GameCenter.post_score( { "value": p_score, "category": "my_leaderboard" } )
 
-| func \_ready():
-| # check if the singleton exists
-| if Globals.has\_singleton(\\"GameCenter\\"):
-| GameCenter = Globals.get\_singleton(\\"GameCenter\\")
-| # connect your timer here to the \\"check\_events\\" function
+    func check_events():
+        while GameCenter.get_pending_event_count() > 0:
+            # do something with events here
+            pass
 
-.. raw:: html
-
-   </pre>
+    func _ready():
+        # check if the singleton exists
+        if Globals.has_singleton("GameCenter"):
+            GameCenter = Globals.get_singleton("GameCenter")
+            # connect your timer here to the "check_events" function

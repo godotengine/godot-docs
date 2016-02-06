@@ -40,5 +40,5 @@ Run
 | To run on a device or simulator, follow these instructions:
   [[Exporting for iOS]].
 | Replace or add your executable to the Xcode project, and change the
-  \\"executable name\\" property on Info.plist accordingly if you use an
+  "executable name" property on Info.plist accordingly if you use an
   alternative build.

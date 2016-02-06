@@ -6,33 +6,26 @@ inherit directly or indirectly from it. Objects provide reflection and
 editable properties, and declaring them is a matter of using a single
 macro like this.
 
-| <pre class=\\"cpp\\">
-| class CustomObject : public Object {
+.. code:: cpp
 
-| OBJ\_TYPE(CustomObject,Object); // this required to inherit
-| };
+    class CustomObject : public Object {
 
-.. raw:: html
-
-   </pre>
+        OBJ_TYPE(CustomObject,Object); // this required to inherit
+    };
 
 This makes objects gain a lot of functionality, like for example
 
-| <pre class=\\"cpp\\">
-| obj = memnew(CustomObject);
-| print\_line("Object Type: ",obj->get\_type()); //print object type
+.. code:: cpp
 
-obj2 = obj->cast\_to&lt;OtherType&gt;(); // converting between types,
-this also works without RTTI enabled.
+    obj = memnew(CustomObject);
+    print_line("Object Type: ",obj->get_type()); //print object type
 
-.. raw:: html
-
-   </pre>
+    obj2 = obj->cast_to<OtherType>(); // converting between types, this also works without RTTI enabled.
 
 References:
 ~~~~~~~~~~~
 
--  \\\ `core/object.h\\ <https://github.com/okamstudio/godot/blob/master/core/object.h>`__
+-  `core/object.h <https://github.com/okamstudio/godot/blob/master/core/object.h>`__
 
 Registering an Object
 ---------------------
@@ -43,22 +36,18 @@ their methods properties and integer constants.
 
 Classes are registered by calling:
 
-<pre class=\\"cpp\\">ObjectTypeDB::register\_type()
+.. code:: cpp
 
-.. raw:: html
-
-   </pre>
+    ObjectTypeDB::register_type()
 
 Registering it will allow the type to be instanced by scripts, code, or
 creating them again when deserializing.
 
 Registering as virtual is the same but it can't be instanced.
 
-<pre class=\\"cpp\\">ObjectTypeDB::register\_virtual\_type()
+.. code:: cpp
 
-.. raw:: html
-
-   </pre>
+    ObjectTypeDB::register_virtual_type()
 
 Object derived classes can override a static function
 ``static void _bind_methods()``, when one class is registered, this
@@ -70,25 +59,18 @@ virtual automatically.
 Inside ``_bind_methods``, there are a couple of things that can be done.
 Registering functions is one:
 
-<pre
-class=\\"cpp\\">ObjectTypeDB::register\_method(\_MD (\\"methodname\\",\\"arg1name\\",\\"arg2name\\"),&MyCustethod);
+.. code:: cpp
 
-.. raw:: html
-
-   </pre>
+    ObjectTypeDB::register_method(_MD("methodname","arg1name","arg2name"),&MyCustethod);
 
 Default values for arguments can be passed in reverse order:
 
-<pre
-class=\\"cpp\\">ObjectTypeDB::register\_method(\_MD (\\"methodname\\",\\"arg1name\\",\\"arg2name\\"),&MyCustomType::method,DEFVAL (-1));
-//default argument for arg2name
+.. code:: cpp
 
-.. raw:: html
+    ObjectTypeDB::register_method(_MD("methodname","arg1name","arg2name"),&MyCustomType::method,DEFVAL(-1)); //default argument for arg2name
 
-   </pre>
-
-``_MD`` is a macro that convers \\"methodname\\" to a stringname for
-more efficiency. Argument names are used for instrospection, but when
+``_MD`` is a macro that convers "methodname" to a stringname for more
+efficiency. Argument names are used for instrospection, but when
 compiling on release, the macro ignores them, so the strings are unused
 and optimized away.
 
@@ -101,42 +83,33 @@ string passing the name can be passed for brevity.
 References:
 ~~~~~~~~~~~
 
--  \\\ `core/object\_type\_db.h\\ <https://github.com/okamstudio/godot/blob/master/core/object_type_db.h>`__
+-  `core/object\_type\_db.h <https://github.com/okamstudio/godot/blob/master/core/object_type_db.h>`__
 
 Constants
 ---------
 
 Classes often have enums such as:
 
-| <pre class=\\"cpp\\">
-| enum SomeMode {
-| MODE\_FIRST,
-| MODE\_SECOND
-| };
+.. code:: cpp
 
-.. raw:: html
-
-   </pre>
+    enum SomeMode {
+       MODE_FIRST,
+       MODE_SECOND
+    };
 
 For these to work when binding to methods, the enum must be declared
 convertible to int, for this a macro is provided:
 
-<pre class=\\"cpp\\">VARIANT\_ENUM\_CAST( MyClass::SomeMode); // now
-functions that take SomeMode can be bound.
+.. code:: cpp
 
-.. raw:: html
-
-   </pre>
+    VARIANT_ENUM_CAST( MyClass::SomeMode); // now functions that take SomeMode can be bound.
 
 The constants can also be bound inside ``_bind_methods``, by using:
 
-| <pre class=\\"cpp\\">
-| BIND\_CONSTANT( MODE\_FIRST );
-| BIND\_CONSTANT( MODE\_SECOND );
+.. code:: cpp
 
-.. raw:: html
-
-   </pre>
+    BIND_CONSTANT( MODE_FIRST );
+    BIND_CONSTANT( MODE_SECOND );
 
 Properties (set/get)
 --------------------
@@ -149,34 +122,25 @@ Objects export properties, properties are useful for the following:
 Properties are usually defined by the PropertyInfo() class. Usually
 constructed as:
 
-<pre
-class=\\"cpp\\">PropertyInfo(type,name,hint,hint\_string,usage\_flags)
+.. code:: cpp
 
-.. raw:: html
-
-   </pre>
+    PropertyInfo(type,name,hint,hint_string,usage_flags)
 
 For example:
 
-<pre
-class=\\"cpp\\">PropertyInfo(Variant::INT,\\"amount\\",PROPERTY\_HINT\_RANGE,\\"0,49,1\\",PROPERTY\_USAGE\_EDITOR)
+.. code:: cpp
 
-.. raw:: html
+    PropertyInfo(Variant::INT,"amount",PROPERTY_HINT_RANGE,"0,49,1",PROPERTY_USAGE_EDITOR)
 
-   </pre>
-
-This is an integer property, named \\"amount\\", hint is a range, range
-goes from 0 to 49 in steps of 1 (integers). It is only usable for the
-editor (edit value visually) but wont be serialized.
+This is an integer property, named "amount", hint is a range, range goes
+from 0 to 49 in steps of 1 (integers). It is only usable for the editor
+(edit value visually) but wont be serialized.
 
 or
 
-<pre
-class=\\"cpp\\">PropertyInfo(Variant::STRING,\\"modes\\",PROPERTY\_HINT\_ENUM,\\"Enabled,Disabled,Turbo\\")
+.. code:: cpp
 
-.. raw:: html
-
-   </pre>
+    PropertyInfo(Variant::STRING,"modes",PROPERTY_HINT_ENUM,"Enabled,Disabled,Turbo")
 
 This is a string property, can take any string but the editor will only
 allow the defined hint ones. Since no hint flags were specified, the
@@ -188,19 +152,15 @@ check.
 Properties can also work like C# properties and be accessed from script
 using indexing, but ths usage is generally discouraged, as using
 functions is preferred for legibility. Many properties are also bound
-with categories, such as \\"animation/frame\\" which also make indexing
+with categories, such as "animation/frame" which also make indexing
 imposssible unless using operator [].
 
 From ``_bind_methods()``, properties can be created and bound as long as
 a set/get functions exist. Example:
 
-<pre class=\\"cpp\\">ADD\_PROPERTY(
-PropertyInfo(Variant::INT,\\"amount\\"), \_SCS (\\"set\_amount\\"),
-\_SCS (\\"get\_amount\\") )
+.. code:: cpp
 
-.. raw:: html
-
-   </pre>
+    ADD_PROPERTY( PropertyInfo(Variant::INT,"amount"), _SCS("set_amount"), _SCS("get_amount") )
 
 This creates the property using the setter and the getter. ``_SCS`` is a
 macro that creates a StringName efficiently.
@@ -216,17 +176,11 @@ they are NOT virtual, DO NOT make them virtual, they are called for
 every override and the previous ones are not invalidated (multilevel
 call).
 
-| <pre class=\\"cpp\\">
-| void \_get\_property\_info(List \*r\_props); //return list of
-  propertes
-| bool \_get(const StringName& p\_property, Variany& r\_value) const;
-  //return true if property was found
-| bool \_set(const StringName& p\_property, const Variany& p\_value);
-  //return true if property was found
+.. code:: cpp
 
-.. raw:: html
-
-   </pre>
+    void _get_property_info(List *r_props); //return list of propertes
+    bool _get(const StringName& p_property, Variany& r_value) const; //return true if property was found
+    bool _set(const StringName& p_property, const Variany& p_value); //return true if property was found
 
 This is also a little less efficient since ``p_property`` must be
 compared against the desired names in serial order.
@@ -237,15 +191,12 @@ Dynamic casting
 Godot provides dynamic casting between Object Derived classes, for
 example:
 
-| <pre class=\\"cpp\\">
-| void somefunc(Object \*some\_obj) {
+.. code:: cpp
 
-| Button \* button = some\_obj->cast\_to&lt;Button&gt;();
-| }
+    void somefunc(Object *some_obj) {
 
-.. raw:: html
-
-   </pre>
+         Button * button = some_obj->cast_to<Button>();
+    }
 
 If cast fails, NULL is returned. This system uses RTTI, but it also
 works fine (although a bit slower) when RTTI is disabled. This is useful
@@ -258,14 +209,11 @@ Signals
 Objects can have a set of signals defined (similar to Delegates in other
 languages). Connecting to them is rather easy:
 
-| <pre class=\\"cpp\\">
-| obj->connect(,target\_instance,target\_method)
-| //for example
-| obj->connect(\\"enter\_tree\\",this,\\"\_node\_entered\_tree\\")
+.. code:: cpp
 
-.. raw:: html
-
-   </pre>
+    obj->connect(,target_instance,target_method)
+    //for example
+    obj->connect("enter_tree",this,"_node_entered_tree")
 
 The method ``_node_entered_tree`` must be registered to the class using
 ``ObjectTypeDB::register_method`` (explained before).
@@ -273,11 +221,9 @@ The method ``_node_entered_tree`` must be registered to the class using
 Adding signals to a class is done in ``_bind_methods``, using the
 ``ADD_SIGNAL`` macro, for example:
 
-<pre class=\\"cpp\\">ADD\_SIGNAL( MethodInfo(\\"been\_killed\\") )
+.. code:: cpp
 
-.. raw:: html
-
-   </pre>
+    ADD_SIGNAL( MethodInfo("been_killed") )
 
 References
 ----------
@@ -286,16 +232,13 @@ Reference inherits from Object and holds a reference count. It is the
 base for reference counted object types. Declaring them must be done
 using Ref<> template. For example.
 
-| <pre class=\\"cpp\\">
-| class MyReference: public Reference {
-| OBJ\_TYPE( MyReference ,Reference);
-| };
+.. code:: cpp
 
-Ref myref = memnew( MyReference );
+    class MyReference: public Reference {
+        OBJ_TYPE( MyReference ,Reference);
+    };
 
-.. raw:: html
-
-   </pre>
+    Ref myref = memnew( MyReference );
 
 ``myref`` is reference counted. It will be freed when no more Ref<>
 templates point to it.
@@ -303,7 +246,7 @@ templates point to it.
 References:
 ~~~~~~~~~~~
 
--  \\\ `core/reference.h\\ <https://github.com/okamstudio/godot/blob/master/core/reference.h>`__
+-  `core/reference.h <https://github.com/okamstudio/godot/blob/master/core/reference.h>`__
 
 Resources:
 ----------
@@ -319,19 +262,16 @@ Resources without a path are fine too.
 References:
 ~~~~~~~~~~~
 
--  \\\ `core/resource.h\\ <https://github.com/okamstudio/godot/blob/master/core/resource.h>`__
+-  `core/resource.h <https://github.com/okamstudio/godot/blob/master/core/resource.h>`__
 
 Resource loading
 ----------------
 
 Resources can be loaded with the ResourceLoader API, like this:
 
-<pre class=\\"cpp\\">Ref res =
-ResourceLoader::load(\\"res://someresource.res\\")
+.. code:: cpp
 
-.. raw:: html
-
-   </pre>
+    Ref res = ResourceLoader::load("res://someresource.res")
 
 If a reference to that resource has been loaded previously and is in
 memory, the resource loader will return that reference. This means that
@@ -343,27 +283,23 @@ the same time.
 References:
 ~~~~~~~~~~~
 
--  \\\ `core/io/resource\_loader.h\\ <https://github.com/okamstudio/godot/blob/master/core/io/resource_loader.h>`__
+-  `core/io/resource\_loader.h <https://github.com/okamstudio/godot/blob/master/core/io/resource_loader.h>`__
 
 Resource saving
 ---------------
 
 Saving a resource can be done with the resource saver API:
 
-<pre
-class=\\"cpp\\">ResourceSaver::save(\\"res://someresource.res\\",instance)
+.. code:: cpp
 
-.. raw:: html
-
-   </pre>
+    ResourceSaver::save("res://someresource.res",instance)
 
 Instance will be saved. Sub resources that have a path to a file will be
 saved as a reference to that resource. Sub resources without a path will
 be bundled with the saved resource and assigned sub-IDs, like
-\\"res://somereource.res::1\\". This also helps to cache them when
-loaded.
+"res://somereource.res::1". This also helps to cache them when loaded.
 
 References:
 ~~~~~~~~~~~
 
--  \\\ `core/io/resource\_saver.h\\ <https://github.com/okamstudio/godot/blob/master/core/io/resource_saver.h>`__
+-  `core/io/resource\_saver.h <https://github.com/okamstudio/godot/blob/master/core/io/resource_saver.h>`__

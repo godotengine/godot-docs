@@ -64,29 +64,23 @@ In the config.py for the module, some extra functions are provided for
 convenience. First, it's often wise to detect if android is being built
 and only enable building in this case:
 
-| <pre class=\\"python\\">
-| def can\_build(plat):
-| return plat==\\"android\\"
+.. code:: python
 
-.. raw:: html
-
-   </pre>
+    def can_build(plat):
+        return plat=="android"
 
 If more than one platform can be built (typical if implementing the
 module also for iOS), check manually for Android in the configure
 functions:
 
-| <pre class=\\"python\\">
-| def can\_build(plat):
-| return plat\\"android\\" or plat\\"iphone\\"
+.. code:: python
 
-| def configure(env):
-| if env['platform'] == 'android':
-| #androd specific code
+    def can_build(plat):
+        return plat=="android" or plat=="iphone"
 
-.. raw:: html
-
-   </pre>
+    def configure(env):
+        if env['platform'] == 'android':
+             #androd specific code
 
 Java singleton
 --------------
@@ -95,56 +89,51 @@ An android module will usually have a singleton class that will load it,
 this class inherits from ``Godot.SingletonBase``. A singleton object
 template follows:
 
-| <pre class=\\"java\\">
-| //namespace is wrong, will eventually change
-| package com.android.godot;
+.. code:: java
 
-public class MySingleton extends Godot.SingletonBase {
+    //namespace is wrong, will eventually change
+    package com.android.godot;
 
-| public int myFunction(String p\_str) {
-| // a function to bind
-| }
+    public class MySingleton extends Godot.SingletonBase {
 
-static public Godot.SingletonBase initialize(Activity p\_activity) {
 
-| return new MySingleton(p\_activity);
-| }
+        public int myFunction(String p_str) {
+              // a function to bind
+        }
 
-| public MySingleton(Activity p\_activity) {
-| //register class name and functions to bind
-| registerClass(\\"MySingleton\\", new String[]{\\"myFunction\\"});
+        static public Godot.SingletonBase initialize(Activity p_activity) {
 
-| // you might want to try initializing your singleton here, but android
-| // threads are weird and this runs in another thread, so you usually
-  have to do
-| activity.runOnUiThread(new Runnable() {
-| public void run() {
-| //useful way to get config info from engine.cfg
-| String key = GodotLib.getGlobal(\\"plugin/api\_key\\");
-| SDK.initializeHere();
-| }
-| });
+                    return new MySingleton(p_activity);
+        } 
 
-}
+        public MySingleton(Activity p_activity) {
+              //register class name and functions to bind
+              registerClass("MySingleton", new String[]{"myFunction"});
 
-// forwarded callbacks you can reimplement, as SDKs often need them
+              // you might want to try initializing your singleton here, but android
+              // threads are weird and this runs in another thread, so you usually have to do
+              activity.runOnUiThread(new Runnable() {
+                   public void run() {
+                        //useful way to get config info from engine.cfg
+                        String key = GodotLib.getGlobal("plugin/api_key");
+                        SDK.initializeHere();
+                   }
+              });
 
-protected void onMainActivityResult(int requestCode, int resultCode,
-Intent data) {}
+        }
 
-| protected void onMainPause() {}
-| protected void onMainResume() {}
-| protected void onMainDestroy() {}
+         // forwarded callbacks you can reimplement, as SDKs often need them
 
-| protected void onGLDrawFrame(GL10 gl) {}
-| protected void onGLSurfaceChanged(GL10 gl, int width, int height) {}
-  // singletons will always miss first onGLSurfaceChanged call
+         protected void onMainActivityResult(int requestCode, int resultCode, Intent data) {}
 
-}
+         protected void onMainPause() {}
+         protected void onMainResume() {}
+         protected void onMainDestroy() {}
 
-.. raw:: html
+         protected void onGLDrawFrame(GL10 gl) {}
+         protected void onGLSurfaceChanged(GL10 gl, int width, int height) {} // singletons will always miss first onGLSurfaceChanged call
 
-   </pre>
+    }
 
 Calling back to Godot from Java is a little more difficult. The instance
 ID of the script must be known first, this is obtained by calling
@@ -154,30 +143,23 @@ passed to Java.
 From Java, use the calldeferred function to communicate back with Godot.
 Java will most likely run in a separate thread, so calls are deferred:
 
-<pre class=\\"java\\">GodotLib.calldeferred(, \\"\\", new
-Object[]{param1,param2,etc});
+.. code:: java
 
-.. raw:: html
-
-   </pre>
+    GodotLib.calldeferred(, "", new Object[]{param1,param2,etc});
 
 Add this singleton to the build of the project by adding the following
 to config.py:
 
-| <pre class=\\"python\\">
-| def can\_build(plat):
-| return plat\\"android\\" or plat\\"iphone\\"
+.. code:: python
 
-| def configure(env):
-| if env['platform'] == 'android':
-| # will copy this to the java folder
-| env.android\_module\_file(\\"MySingleton.java\\")
-| #env.android\_module\_file(\\"MySingleton2.java\\") call again for
-  more files
+    def can_build(plat):
+        return plat=="android" or plat=="iphone"
 
-.. raw:: html
-
-   </pre>
+    def configure(env):
+        if env['platform'] == 'android':
+            # will copy this to the java folder
+            env.android_module_file("MySingleton.java")
+            #env.android_module_file("MySingleton2.java") call again for more files
 
 AndroidManifest
 ---------------
@@ -189,19 +171,16 @@ maybe other functionalities are needed.
 Create the custom chunk of android manifest and put it inside the
 module, add it like this:
 
-| <pre class=\\"python\\">
-| def can\_build(plat):
-| return plat\\"android\\" or plat\\"iphone\\"
+.. code:: python
 
-| def configure(env):
-| if env['platform'] == 'android':
-| # will copy this to the java folder
-| env.android\_module\_file(\\"MySingleton.java\\")
-| env.android\_module\_manifest(\\"AndroidManifestChunk.xml\\")
+    def can_build(plat):
+        return plat=="android" or plat=="iphone"
 
-.. raw:: html
-
-   </pre>
+    def configure(env):
+        if env['platform'] == 'android':
+            # will copy this to the java folder
+            env.android_module_file("MySingleton.java") 
+            env.android_module_manifest("AndroidManifestChunk.xml")
 
 SDK library
 -----------
@@ -210,20 +189,17 @@ So, finally it's time to add the SDK library. The library can come in
 two flavors, a JAR file or an Android project for ant. JAR is the
 easiest to integrate, just put it in the module directory and add it:
 
-| <pre class=\\"python\\">
-| def can\_build(plat):
-| return plat\\"android\\" or plat\\"iphone\\"
+.. code:: python
 
-| def configure(env):
-| if env['platform'] == 'android':
-| # will copy this to the java folder
-| env.android\_module\_file(\\"MySingleton.java\\")
-| env.android\_module\_manifest(\\"AndroidManifestChunk.xml\\")
-| env.android\_module\_library(\\"MyLibrary-3.1.jar\\")
+    def can_build(plat):
+        return plat=="android" or plat=="iphone"
 
-.. raw:: html
-
-   </pre>
+    def configure(env):
+        if env['platform'] == 'android':
+            # will copy this to the java folder
+            env.android_module_file("MySingleton.java") 
+            env.android_module_manifest("AndroidManifestChunk.xml")
+            env.android_module_library("MyLibrary-3.1.jar")
 
 SDK project
 -----------
@@ -238,24 +214,21 @@ the project folder inside the module directory and configure it:
 As of this writing, godot uses minsdk 10 and target sdk 15. If this ever
 changes, should be reflected in the manifest template:
 
-\\\ `https://github.com/okamstudio/godot/blob/master/platform/android/AndroidManifest.xml.template\\ <https://github.com/okamstudio/godot/blob/master/platform/android/AndroidManifest.xml.template>`__
+https://github.com/okamstudio/godot/blob/master/platform/android/AndroidManifest.xml.template
 
 Then, add the module folder to the project:
 
-| <pre class=\\"python\\">
-| def can\_build(plat):
-| return plat\\"android\\" or plat\\"iphone\\"
+.. code:: python
 
-| def configure(env):
-| if env['platform'] == 'android':
-| # will copy this to the java folder
-| env.android\_module\_file(\\"MySingleton.java\\")
-| env.android\_module\_manifest(\\"AndroidManifestChunk.xml\\")
-| env.android\_module\_source(\\"sdk-1.2\\",\\"\\")
+    def can_build(plat):
+        return plat=="android" or plat=="iphone"
 
-.. raw:: html
-
-   </pre>
+    def configure(env):
+        if env['platform'] == 'android':
+            # will copy this to the java folder
+            env.android_module_file("MySingleton.java") 
+            env.android_module_manifest("AndroidManifestChunk.xml")
+            env.android_module_source("sdk-1.2","")
 
 Building
 --------
@@ -299,7 +272,7 @@ the following line to engine.cfg:
 
     [android]
 
-    modules=\"com/android/godot/MySingleton\"
+    modules="com/android/godot/MySingleton"
 
 More than one singleton module can be enable by separating with comma:
 
@@ -307,22 +280,19 @@ More than one singleton module can be enable by separating with comma:
 
     [android]
 
-    modules=\"com/android/godot/MySingleton,com/android/godot/MyOtherSingleton\"
+    modules="com/android/godot/MySingleton,com/android/godot/MyOtherSingleton"
 
 Then just request the singleton Java object from Globals like this:
 
-| <pre class=\\"python\\">
-| #in any file
+.. code:: python
 
-var singleton=null
+    #in any file
 
-| func \_init():
-| singleton = Globals.get\_singleton(\\"MySingleton\\")
-| print( singleton.myFunction(\\"Hello\\") )
+    var singleton=null
 
-.. raw:: html
-
-   </pre>
+    func _init():
+        singleton = Globals.get_singleton("MySingleton")
+        print( singleton.myFunction("Hello") )
 
 Troubleshooting
 ---------------
@@ -350,5 +320,5 @@ Future
     class = JavaClassWrapper.wrap()
 
 This is most likely not functional yet, if you want to test it and help
-us make it work, contact us through the \\\ `developer mailing
-list\\ <https://groups.google.com/forum/#!forum/godot-engine>`__.
+us make it work, contact us through the `developer mailing
+list <https://groups.google.com/forum/#!forum/godot-engine>`__.

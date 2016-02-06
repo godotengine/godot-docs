@@ -100,7 +100,7 @@ that is headless (server build, no video) is ideal for this.
 
 ::
 
-    user@host:~/newgame$ godot -export \"Linux X11\" /var/builds/project
+    user@host:~/newgame$ godot -export "Linux X11" /var/builds/project
     user@host:~/newgame$ godot -export Android /var/builds/project.apk
 
 The platform names recognized by the ``-export`` switch are the same as
@@ -122,17 +122,14 @@ Running a script
 
 Here is a simple example of how it works:
 
-| <pre class=\\"python\\">
-| #sayhello.gd
-| extends SceneTree
+.. code:: python
 
-| func \_init():
-| print(\\"Hello!\\")
-| quit()
+    #sayhello.gd
+    extends SceneTree
 
-.. raw:: html
-
-   </pre>
+    func _init():
+        print("Hello!")
+        quit()
 
 And how to run it:
 
