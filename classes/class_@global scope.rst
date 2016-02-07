@@ -5,6 +5,9 @@
 
 **Category:** Core
 
+Brief Description
+-----------------
+
 Global scope constants and variables.
 
 Member Variables
@@ -380,7 +383,7 @@ Numeric Constants
 - **JOY_ANALOG_2_Y** = **5**
 - **JOY_ANALOG_L2** = **6**
 - **JOY_ANALOG_R2** = **7**
-- **OK** = **0** --- Functions that return :ref:`Error<class_error>` return OK when everything went ok. Most functions don't return error anyway and/or just print errors to stdout.
+- **OK** = **0** --- Functions that return Error return OK when everything went ok. Most functions don't return error anyway and/or just print errors to stdout.
 - **FAILED** = **1** --- Generic fail return error.
 - **ERR_UNAVAILABLE** = **2**
 - **ERR_UNCONFIGURED** = **3**

@@ -5,6 +5,9 @@ IntArray
 
 **Category:** Built-In Types
 
+Brief Description
+-----------------
+
 Integer Array.
 
 Member Functions

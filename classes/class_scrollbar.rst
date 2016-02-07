@@ -3,9 +3,14 @@
 ScrollBar
 =========
 
-**Inherits:** :ref:`Range<class_range>`
+**Inherits:** :ref:`Range<class_range>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`HScrollBar<class_hscrollbar>`, :ref:`VScrollBar<class_vscrollbar>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Base class for scroll bars.
 

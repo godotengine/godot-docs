@@ -7,6 +7,9 @@ InputMap
 
 **Category:** Core
 
+Brief Description
+-----------------
+
 Singleton that manages actions.
 
 Member Functions

@@ -5,6 +5,9 @@ AABB
 
 **Category:** Built-In Types
 
+Brief Description
+-----------------
+
 Axis-Aligned Bounding Box.
 
 Member Functions
@@ -163,7 +166,7 @@ Return true if the :ref:`AABB<class_aabb>` contains a point.
 
 - :ref:`AABB<class_aabb>`  **intersection**  **(** :ref:`AABB<class_aabb>` with  **)**
 
-Return the intersection between two :ref:`AABB<class_aabb>`s. An empty AABB (size 0,0,0) is returned on failure.
+Return the intersection between two :ref:`AABB<class_aabb>`. An empty AABB (size 0,0,0) is returned on failure.
 
 .. _class_AABB_intersects:
 

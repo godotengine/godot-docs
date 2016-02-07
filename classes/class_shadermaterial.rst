@@ -3,9 +3,12 @@
 ShaderMaterial
 ==============
 
-**Inherits:** :ref:`Material<class_material>`
+**Inherits:** :ref:`Material<class_material>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 
 

@@ -3,9 +3,14 @@
 Texture
 =======
 
-**Inherits:** :ref:`Resource<class_resource>`
+**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`RenderTargetTexture<class_rendertargettexture>`, :ref:`AtlasTexture<class_atlastexture>`, :ref:`ImageTexture<class_imagetexture>`, :ref:`LargeTexture<class_largetexture>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Texture for 2D and 3D.
 
@@ -49,7 +54,7 @@ Numeric Constants
 Description
 -----------
 
-A texture works by registering an image in the video hardware, which then can be used in 3D models or 2D :ref:`Sprite<class_sprite>` or GUI :ref:`Control<class_control>`s.
+A texture works by registering an image in the video hardware, which then can be used in 3D models or 2D :ref:`Sprite<class_sprite>` or GUI :ref:`Control<class_control>`.
 
 Member Function Description
 ---------------------------

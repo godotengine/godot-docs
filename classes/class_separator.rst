@@ -3,9 +3,14 @@
 Separator
 =========
 
-**Inherits:** :ref:`Control<class_control>`
+**Inherits:** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`VSeparator<class_vseparator>`, :ref:`HSeparator<class_hseparator>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Base class for separators.
 

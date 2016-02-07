@@ -5,6 +5,9 @@ String
 
 **Category:** Built-In Types
 
+Brief Description
+-----------------
+
 Built-in string class.
 
 Member Functions
@@ -362,13 +365,13 @@ Return the right side of the string from a given position.
 
 - :ref:`StringArray<class_stringarray>`  **split**  **(** :ref:`String<class_string>` divisor, :ref:`bool<class_bool>` allow_empty=True  **)**
 
-Split the string by a divisor string, return an array of the substrings. Example "One,Two,Three" will return :ref:`"One","Two","Three"<class_"one","two","three">` if split by ",".
+Split the string by a divisor string, return an array of the substrings. Example "One,Two,Three" will return \:ref:`"One","Two","Three"\<class_"one","two","three"\>` if split by ",".
 
 .. _class_String_split_floats:
 
 - :ref:`RealArray<class_realarray>`  **split_floats**  **(** :ref:`String<class_string>` divisor, :ref:`bool<class_bool>` allow_empty=True  **)**
 
-Split the string in floats by using a divisor string, return an array of the substrings. Example "1,2.5,3" will return :ref:`1,2.5,3<class_1,2.5,3>` if split by ",".
+Split the string in floats by using a divisor string, return an array of the substrings. Example "1,2.5,3" will return \:ref:`1,2.5,3\<class_1,2.5,3\>` if split by ",".
 
 .. _class_String_strip_edges:
 

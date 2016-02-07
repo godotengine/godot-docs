@@ -3,9 +3,12 @@
 PathFollow
 ==========
 
-**Inherits:** :ref:`Spatial<class_spatial>`
+**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Point sampler for a :ref:`Path<class_path>`.
 
@@ -90,7 +93,7 @@ Returns the X displacement this node has from its parent :ref:`Path<class_path>`
 
 - void  **set_v_offset**  **(** :ref:`float<class_float>` v_offset  **)**
 
-Moves this node in the Y axis, for the same reasons of :ref:`set_h_offset<PathFollow_set_h_offset>`.
+Moves this node in the Y axis, for the same reasons of :ref:`set_h_offset<class_PathFollow_set_h_offset>`.
 
 .. _class_PathFollow_get_v_offset:
 
@@ -136,13 +139,13 @@ This method controls whether the position between two cached points is interpola
 
 - :ref:`bool<class_bool>`  **get_cubic_interpolation**  **(** **)** const
 
-This method returns whether the position between two cached points (see :ref:`set_cubic_interpolation<PathFollow_set_cubic_interpolation>`) is interpolated linearly, or cubicly.
+This method returns whether the position between two cached points (see :ref:`set_cubic_interpolation<class_PathFollow_set_cubic_interpolation>`) is interpolated linearly, or cubicly.
 
 .. _class_PathFollow_set_loop:
 
 - void  **set_loop**  **(** :ref:`bool<class_bool>` loop  **)**
 
-If set, any offset outside the path's length (whether set by :ref:`set_offset<PathFollow_set_offset>` or :ref:`set_unit_offset<PathFollow_set_unit_offset>` will wrap around, instead of stopping at the ends. Set it for cyclic paths.
+If set, any offset outside the path's length (whether set by :ref:`set_offset<class_PathFollow_set_offset>` or :ref:`set_unit_offset<class_PathFollow_set_unit_offset>` will wrap around, instead of stopping at the ends. Set it for cyclic paths.
 
 .. _class_PathFollow_has_loop:
 

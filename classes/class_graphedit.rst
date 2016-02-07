@@ -3,9 +3,12 @@
 GraphEdit
 =========
 
-**Inherits:** :ref:`Control<class_control>`
+**Inherits:** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 GraphEdit is an area capable of showing various GraphNodes. It manages connection events between them.
 
@@ -48,7 +51,7 @@ Description
 
 GraphEdit manages the showing of GraphNodes it contains, as well as connections an disconnections between them. Signals are sent for each of these two events. Disconnection between GraphNodes slots is disabled by default.
 
-It is greatly advised to enable low processor usage mode :ref:`OS.set_low_processor_usage_mode()<class_os.set_low_processor_usage_mode()>` when using GraphEdits.
+It is greatly advised to enable low processor usage mode (see :ref:`OS.set_low_processor_usage_mode<class_OS_set_low_processor_usage_mode>`) when using GraphEdits.
 
 Member Function Description
 ---------------------------

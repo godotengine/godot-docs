@@ -7,6 +7,9 @@ VisualServer
 
 **Category:** Core
 
+Brief Description
+-----------------
+
 Server for anything visible.
 
 Member Functions

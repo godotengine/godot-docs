@@ -3,9 +3,14 @@
 Joint2D
 =======
 
-**Inherits:** :ref:`Node2D<class_node2d>`
+**Inherits:** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`PinJoint2D<class_pinjoint2d>`, :ref:`DampedSpringJoint2D<class_dampedspringjoint2d>`, :ref:`GrooveJoint2D<class_groovejoint2d>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Base node for all joint constraints in 2D phyisics.
 

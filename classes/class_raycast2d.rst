@@ -3,9 +3,12 @@
 RayCast2D
 =========
 
-**Inherits:** :ref:`Node2D<class_node2d>`
+**Inherits:** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 
 
@@ -79,7 +82,7 @@ Return whether the closest object the ray is pointing to is colliding with the v
 
 - :ref:`Object<class_object>`  **get_collider**  **(** **)** const
 
-Return the closest object the ray is pointing to. Note that this does not consider the length of the vector, so you must also use :ref:`is_colliding<class_is_colliding>` to check if the object returned is actually colliding with the ray.
+Return the closest object the ray is pointing to. Note that this does not consider the length of the vector, so you must also use :ref:`is_colliding<class_RayCast2D_is_colliding>` to check if the object returned is actually colliding with the ray.
 
 .. _class_RayCast2D_get_collider_shape:
 

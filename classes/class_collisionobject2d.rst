@@ -3,9 +3,14 @@
 CollisionObject2D
 =================
 
-**Inherits:** :ref:`Node2D<class_node2d>`
+**Inherits:** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`Area2D<class_area2d>`, :ref:`PhysicsBody2D<class_physicsbody2d>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Base node for 2D collisionables.
 

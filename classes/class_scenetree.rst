@@ -3,9 +3,12 @@
 SceneTree
 =========
 
-**Inherits:** :ref:`MainLoop<class_mainloop>`
+**Inherits:** :ref:`MainLoop<class_mainloop>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 
 

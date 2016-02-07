@@ -3,9 +3,12 @@
 Portal
 ======
 
-**Inherits:** :ref:`VisualInstance<class_visualinstance>`
+**Inherits:** :ref:`VisualInstance<class_visualinstance>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Portals provide virtual openings to rooms.
 
@@ -70,25 +73,25 @@ Return wether the portal is active. When disabled it causes the parent :ref:`Roo
 
 - void  **set_disable_distance**  **(** :ref:`float<class_float>` distance  **)**
 
-Set the distance threshold for disabling the portal. Every time that the portal goes beyond "distance", it disables itself, becoming the opaque color (see :ref:`set_disabled_color<Portal_set_disabled_color>`).
+Set the distance threshold for disabling the portal. Every time that the portal goes beyond "distance", it disables itself, becoming the opaque color (see :ref:`set_disabled_color<class_Portal_set_disabled_color>`).
 
 .. _class_Portal_get_disable_distance:
 
 - :ref:`float<class_float>`  **get_disable_distance**  **(** **)** const
 
-Return the distance threshold for disabling the portal. Every time that the portal goes beyond "distance", it disables itself, becoming the opaque color (see :ref:`set_disabled_color<Portal_set_disabled_color>`).
+Return the distance threshold for disabling the portal. Every time that the portal goes beyond "distance", it disables itself, becoming the opaque color (see :ref:`set_disabled_color<class_Portal_set_disabled_color>`).
 
 .. _class_Portal_set_disabled_color:
 
 - void  **set_disabled_color**  **(** :ref:`Color<class_color>` color  **)**
 
-When the portal goes beyond the disable distance (see :ref:`set_disable_distance<Portal_set_disable_distance>`), it becomes opaque and displayed with color "color".
+When the portal goes beyond the disable distance (see :ref:`set_disable_distance<class_Portal_set_disable_distance>`), it becomes opaque and displayed with color "color".
 
 .. _class_Portal_get_disabled_color:
 
 - :ref:`Color<class_color>`  **get_disabled_color**  **(** **)** const
 
-Return the color for when the portal goes beyond the disable distance (see :ref:`set_disable_distance<Portal_set_disable_distance>`) and becomes disabled.
+Return the color for when the portal goes beyond the disable distance (see :ref:`set_disable_distance<class_Portal_set_disable_distance>`) and becomes disabled.
 
 .. _class_Portal_set_connect_range:
 

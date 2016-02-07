@@ -3,9 +3,14 @@
 StyleBox
 ========
 
-**Inherits:** :ref:`Resource<class_resource>`
+**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`StyleBoxImageMask<class_styleboximagemask>`, :ref:`StyleBoxFlat<class_styleboxflat>`, :ref:`StyleBoxTexture<class_styleboxtexture>`, :ref:`StyleBoxEmpty<class_styleboxempty>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Base class for drawing stylized boxes for the UI.
 

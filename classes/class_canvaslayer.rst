@@ -3,9 +3,14 @@
 CanvasLayer
 ===========
 
-**Inherits:** :ref:`Node<class_node>`
+**Inherits:** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`ParallaxBackground<class_parallaxbackground>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Canvas Item layer.
 

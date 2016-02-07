@@ -3,9 +3,14 @@
 PhysicsBody2D
 =============
 
-**Inherits:** :ref:`CollisionObject2D<class_collisionobject2d>`
+**Inherits:** :ref:`CollisionObject2D<class_collisionobject2d>` **<** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`RigidBody2D<class_rigidbody2d>`, :ref:`StaticBody2D<class_staticbody2d>`, :ref:`KinematicBody2D<class_kinematicbody2d>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Base class for all objects affected by physics.
 
@@ -56,7 +61,7 @@ Member Function Description
 
 Set the physics layers this area is in.
 
-Collidable objects can exist in any of 32 different layers. These layers are not visual, but more of a tagging system instead. A collidable can use these layers/tags to select with which objects it can collide, using :ref:`set_collision_mask<PhysicsBody2D_set_collision_mask>`.
+Collidable objects can exist in any of 32 different layers. These layers are not visual, but more of a tagging system instead. A collidable can use these layers/tags to select with which objects it can collide, using :ref:`set_collision_mask<class_PhysicsBody2D_set_collision_mask>`.
 
 A contact is detected if object A is in any of the layers that object B scans, or object B is in any layer scanned by object A.
 
@@ -118,7 +123,7 @@ Return the direction used for one-way collision detection.
 
 - void  **set_one_way_collision_max_depth**  **(** :ref:`float<class_float>` depth  **)**
 
-Set how far a body can go through this one, when it allows one-way collisions (see :ref:`set_one_way_collision_detection<PhysicsBody2D_set_one_way_collision_detection>`).
+Set how far a body can go through this one, when it allows one-way collisions (see :ref:`set_one_way_collision_detection<class_PhysicsBody2D_set_one_way_collision_detection>`).
 
 .. _class_PhysicsBody2D_get_one_way_collision_max_depth:
 

@@ -3,9 +3,12 @@
 EventPlayer
 ===========
 
-**Inherits:** :ref:`Node<class_node>`
+**Inherits:** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Class for event stream playback.
 
@@ -174,7 +177,7 @@ Return the tempo multiplier.
 
 - void  **set_volume_db**  **(** :ref:`float<class_float>` db  **)**
 
-Set the playback volume for this player, in decibels. This is a float between -80.0 (silent) and 0.0 (full volume). Values under -79.0 get truncated to -80, but values over 0.0 do not, so the warnings for overamplifying (see :ref:`set_volume<class_set_volume>`) still apply.
+Set the playback volume for this player, in decibels. This is a float between -80.0 (silent) and 0.0 (full volume). Values under -79.0 get truncated to -80, but values over 0.0 do not, so the warnings for overamplifying (see :ref:`set_volume<class_EventPlayer_set_volume>`) still apply.
 
 .. _class_EventPlayer_get_volume_db:
 
@@ -228,7 +231,7 @@ Return whether this player will start playing as soon as it enters the scene tre
 
 - void  **set_channel_volume**  **(** :ref:`int<class_int>` channel, :ref:`float<class_float>` channel_volume  **)**
 
-Set the volume scale for an individual channel of the stream, with the same value range as :ref:`methid set_volume<class_methid set_volume>`. The channel number depends on the stream format. For example, MIDIs range from 0 to 15, and MODs from 0 to 63.
+Set the volume scale for an individual channel of the stream, with the same value range as :ref:`set_volume<class_EventPlayer_set_volume>`. The channel number depends on the stream format. For example, MIDIs range from 0 to 15, and MODs from 0 to 63.
 
 Many stream formats are multichannel, so this allows to affect only a part of the music.
 

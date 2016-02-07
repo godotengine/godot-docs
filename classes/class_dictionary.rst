@@ -5,6 +5,9 @@ Dictionary
 
 **Category:** Built-In Types
 
+Brief Description
+-----------------
+
 Dictionary type.
 
 Member Functions

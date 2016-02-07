@@ -5,7 +5,12 @@ MainLoop
 
 **Inherits:** :ref:`Object<class_object>`
 
+**Inherited By:** :ref:`SceneTree<class_scenetree>`
+
 **Category:** Core
+
+Brief Description
+-----------------
 
 Main loop is the abstract main loop base class.
 

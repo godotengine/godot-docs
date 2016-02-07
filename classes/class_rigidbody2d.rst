@@ -3,9 +3,12 @@
 RigidBody2D
 ===========
 
-**Inherits:** :ref:`PhysicsBody2D<class_physicsbody2d>`
+**Inherits:** :ref:`PhysicsBody2D<class_physicsbody2d>` **<** :ref:`CollisionObject2D<class_collisionobject2d>` **<** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Rigid body 2D node.
 
@@ -139,7 +142,7 @@ Set the body mode, from the MODE\_\* enum. This allows to change to a static bod
 
 - :ref:`int<class_int>`  **get_mode**  **(** **)** const
 
-Return the current body mode, see :ref:`set_mode<RigidBody2D_set_mode>`.
+Return the current body mode, see :ref:`set_mode<class_RigidBody2D_set_mode>`.
 
 .. _class_RigidBody2D_set_mass:
 
@@ -229,25 +232,25 @@ Return the angular damp for this body.
 
 - void  **set_linear_velocity**  **(** :ref:`Vector2<class_vector2>` linear_velocity  **)**
 
-Set the body linear velocity. Can be used sporadically, but** DONT SET THIS IN EVERY FRAME **, because physics may be running in another thread and definitely runs at a different granularity. Use :ref:`_integrate_forces<class__integrate_forces>` as your process loop if you want to have precise control of the body state.
+Set the body linear velocity. Can be used sporadically, but **DON'T SET THIS IN EVERY FRAME**, because physics may be running in another thread and definitely runs at a different granularity. Use :ref:`_integrate_forces<class_RigidBody2D__integrate_forces>` as your process loop if you want to have precise control of the body state.
 
 .. _class_RigidBody2D_get_linear_velocity:
 
 - :ref:`Vector2<class_vector2>`  **get_linear_velocity**  **(** **)** const
 
-Return the body linear velocity. This changes by physics granularity. See :ref:`set_linear_velocity<RigidBody2D_set_linear_velocity>`.
+Return the body linear velocity. This changes by physics granularity. See :ref:`set_linear_velocity<class_RigidBody2D_set_linear_velocity>`.
 
 .. _class_RigidBody2D_set_angular_velocity:
 
 - void  **set_angular_velocity**  **(** :ref:`float<class_float>` angular_velocity  **)**
 
-Set the body angular velocity. Can be used sporadically, but** DONT SET THIS IN EVERY FRAME **, because physics may be running in another thread and definitely runs at a different granularity. Use :ref:`_integrate_forces<class__integrate_forces>` as your process loop if you want to have precise control of the body state.
+Set the body angular velocity. Can be used sporadically, but **DON'T SET THIS IN EVERY FRAME**, because physics may be running in another thread and definitely runs at a different granularity. Use :ref:`_integrate_forces<class_RigidBody2D__integrate_forces>` as your process loop if you want to have precise control of the body state.
 
 .. _class_RigidBody2D_get_angular_velocity:
 
 - :ref:`float<class_float>`  **get_angular_velocity**  **(** **)** const
 
-Return the body angular velocity. This changes by physics granularity. See :ref:`set_angular_velocity<RigidBody2D_set_angular_velocity>`.
+Return the body angular velocity. This changes by physics granularity. See :ref:`set_angular_velocity<class_RigidBody2D_set_angular_velocity>`.
 
 .. _class_RigidBody2D_set_max_contacts_reported:
 
@@ -259,13 +262,13 @@ Set the maximum contacts to report. Bodies can keep a log of the contacts with o
 
 - :ref:`int<class_int>`  **get_max_contacts_reported**  **(** **)** const
 
-Return the maximum contacts that can be reported. See :ref:`set_max_contacts_reported<RigidBody2D_set_max_contacts_reported>`.
+Return the maximum contacts that can be reported. See :ref:`set_max_contacts_reported<class_RigidBody2D_set_max_contacts_reported>`.
 
 .. _class_RigidBody2D_set_use_custom_integrator:
 
 - void  **set_use_custom_integrator**  **(** :ref:`bool<class_bool>` enable  **)**
 
-Set to true if the body shall not do any internal force integration at all (like gravity or air friction). Only the :ref:`_integrate_forces<RigidBody2D__integrate_forces>` will be able to integrate them if overrided.
+Set to true if the body shall not do any internal force integration at all (like gravity or air friction). Only the :ref:`_integrate_forces<class_RigidBody2D__integrate_forces>` will be able to integrate them if overrided.
 
 .. _class_RigidBody2D_is_using_custom_integrator:
 
@@ -327,7 +330,7 @@ Return the applied force vector.
 
 - void  **set_sleeping**  **(** :ref:`bool<class_bool>` sleeping  **)**
 
-Set whether a body is isleeping or not. Sleeping bodies are not affected by forces until a collision or an :ref:`apply_impulse<RigidBody2D_apply_impulse>`/:ref:`set_applied_force<RigidBody2D_set_applied_force>` wakes them up. Until then, they behave like a static body.
+Set whether a body is sleeping or not. Sleeping bodies are not affected by forces until a collision or an :ref:`apply_impulse<class_RigidBody2D_apply_impulse>` / :ref:`set_applied_force<class_RigidBody2D_set_applied_force>` wakes them up. Until then, they behave like a static body.
 
 .. _class_RigidBody2D_is_sleeping:
 
@@ -341,13 +344,13 @@ Return whether the body is sleeping.
 
 Set the body ability to fall asleep when not moving. This saves an enormous amount of processor time when there are plenty of rigid bodies (non static) in a scene.
 
-Sleeping bodies are not affected by forces until a collision or an :ref:`apply_impulse<RigidBody2D_apply_impulse>`/:ref:`set_applied_force<RigidBody2D_set_applied_force>` wakes them up. Until then, they behave like a static body.
+Sleeping bodies are not affected by forces until a collision or an :ref:`apply_impulse<class_RigidBody2D_apply_impulse>` / :ref:`set_applied_force<class_RigidBody2D_set_applied_force>` wakes them up. Until then, they behave like a static body.
 
 .. _class_RigidBody2D_is_able_to_sleep:
 
 - :ref:`bool<class_bool>`  **is_able_to_sleep**  **(** **)** const
 
-Return true if the body has the ability to fall asleep when not moving. See :ref:`set_can_sleep<RigidBody2D_set_can_sleep>`.
+Return true if the body has the ability to fall asleep when not moving. See :ref:`set_can_sleep<class_RigidBody2D_set_can_sleep>`.
 
 .. _class_RigidBody2D_test_motion:
 

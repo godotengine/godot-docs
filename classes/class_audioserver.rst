@@ -5,7 +5,12 @@ AudioServer
 
 **Inherits:** :ref:`Object<class_object>`
 
+**Inherited By:** :ref:`AudioServerSW<class_audioserversw>`
+
 **Category:** Core
+
+Brief Description
+-----------------
 
 Server interface for low level audio access.
 
@@ -178,7 +183,7 @@ Return the length in samples (not bytes) of the audio sample. Even if a stereo s
 
 Set the sample data for a given sample as an array of floats. The length must be equal to the sample lenght or an error will be produced.
 
-For this method, a stereo sample is made from two samples. Thus, in case of a stereo sample, the array length must be twice the length returned by :ref:`sample_get_length<AudioServer_sample_get_length>`.
+For this method, a stereo sample is made from two samples. Thus, in case of a stereo sample, the array length must be twice the length returned by :ref:`sample_get_length<class_AudioServer_sample_get_length>`.
 
 Trying to alter a SAMPLE_FORMAT_IMA_ADPCM sample is not supported. It will throw an error to the console, but will not alter the sample data.
 
@@ -188,13 +193,13 @@ Trying to alter a SAMPLE_FORMAT_IMA_ADPCM sample is not supported. It will throw
 
 Set the sample data for a given sample as an array of bytes. The length must be equal to the sample lenght expected in bytes or an error will be produced. The byte length can be calculated as follows:
 
-Get the sample length (:ref:`get_sample_length<AudioServer_get_sample_length>`).
+Get the sample length (:ref:`get_sample_length<class_AudioServer_get_sample_length>`).
 
 If the sample format is SAMPLE_FORMAT_PCM16, multiply it by 2.
 
 If the sample format is SAMPLE_FORMAT_IMA_ADPCM, divide it by 2 (rounding any fraction up), then add 4.
 
-If the sample is stereo (:ref:`sample_is_stereo<AudioServer_sample_is_stereo>`), multiply it by 2.
+If the sample is stereo (:ref:`sample_is_stereo<class_AudioServer_sample_is_stereo>`), multiply it by 2.
 
 .. _class_AudioServer_sample_get_data:
 
@@ -230,31 +235,31 @@ Return the loop format for a sample, as a value from the SAMPLE_LOOP\_\* enum.
 
 - void  **sample_set_loop_begin**  **(** :ref:`RID<class_rid>` sample, :ref:`int<class_int>` pos  **)**
 
-Set the initial loop point of a sample. Only has effect if sample loop is enabled. See :ref:`sample_set_loop_format<AudioServer_sample_set_loop_format>`.
+Set the initial loop point of a sample. Only has effect if sample loop is enabled. See :ref:`sample_set_loop_format<class_AudioServer_sample_set_loop_format>`.
 
 .. _class_AudioServer_sample_get_loop_begin:
 
 - :ref:`int<class_int>`  **sample_get_loop_begin**  **(** :ref:`RID<class_rid>` sample  **)** const
 
-Return the initial loop point of a sample. Only has effect if sample loop is enabled. See :ref:`sample_set_loop_format<AudioServer_sample_set_loop_format>`.
+Return the initial loop point of a sample. Only has effect if sample loop is enabled. See :ref:`sample_set_loop_format<class_AudioServer_sample_set_loop_format>`.
 
 .. _class_AudioServer_sample_set_loop_end:
 
 - void  **sample_set_loop_end**  **(** :ref:`RID<class_rid>` sample, :ref:`int<class_int>` pos  **)**
 
-Set the final loop point of a sample. Only has effect if sample loop is enabled. See :ref:`sample_set_loop_format<AudioServer_sample_set_loop_format>`.
+Set the final loop point of a sample. Only has effect if sample loop is enabled. See :ref:`sample_set_loop_format<class_AudioServer_sample_set_loop_format>`.
 
 .. _class_AudioServer_sample_get_loop_end:
 
 - :ref:`int<class_int>`  **sample_get_loop_end**  **(** :ref:`RID<class_rid>` sample  **)** const
 
-Return the final loop point of a sample. Only has effect if sample loop is enabled. See :ref:`sample_set_loop_format<AudioServer_sample_set_loop_format>`.
+Return the final loop point of a sample. Only has effect if sample loop is enabled. See :ref:`sample_set_loop_format<class_AudioServer_sample_set_loop_format>`.
 
 .. _class_AudioServer_voice_create:
 
 - :ref:`RID<class_rid>`  **voice_create**  **(** **)**
 
-Allocate a voice for playback. Voices are persistent. A voice can play a single sample at the same time. See :ref:`sample_create<AudioServer_sample_create>`.
+Allocate a voice for playback. Voices are persistent. A voice can play a single sample at the same time. See :ref:`sample_create<class_AudioServer_sample_create>`.
 
 .. _class_AudioServer_voice_play:
 
@@ -374,7 +379,7 @@ Return the current mix rate for a given voice.
 
 - :ref:`bool<class_bool>`  **voice_is_positional**  **(** :ref:`RID<class_rid>` voice  **)** const
 
-Return wether the current voice is positional. See :ref:`voice_set_positional<AudioServer_voice_set_positional>`.
+Return wether the current voice is positional. See :ref:`voice_set_positional<class_AudioServer_voice_set_positional>`.
 
 .. _class_AudioServer_voice_stop:
 

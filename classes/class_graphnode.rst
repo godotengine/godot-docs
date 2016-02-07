@@ -3,9 +3,12 @@
 GraphNode
 =========
 
-**Inherits:** :ref:`Container<class_container>`
+**Inherits:** :ref:`Container<class_container>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 A GraphNode is a container with several input and output slots allowing connections between GraphNodes. Slots can have different, incompatible types.
 

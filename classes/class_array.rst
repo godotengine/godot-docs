@@ -5,6 +5,9 @@ Array
 
 **Category:** Built-In Types
 
+Brief Description
+-----------------
+
 Generic array datatype.
 
 Member Functions
@@ -74,7 +77,7 @@ Member Function Description
 
 - void  **append**  **(** var value  **)**
 
-Append an element at the end of the array (alias of :ref:`push_back<Array_push_back>`).
+Append an element at the end of the array (alias of :ref:`push_back<class_Array_push_back>`).
 
 .. _class_Array_clear:
 

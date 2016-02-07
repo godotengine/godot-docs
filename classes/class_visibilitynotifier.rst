@@ -3,9 +3,14 @@
 VisibilityNotifier
 ==================
 
-**Inherits:** :ref:`Spatial<class_spatial>`
+**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`VisibilityEnabler<class_visibilityenabler>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 
 

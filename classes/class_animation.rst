@@ -3,9 +3,12 @@
 Animation
 =========
 
-**Inherits:** :ref:`Resource<class_resource>`
+**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Contains data used to animate everything in the engine.
 
@@ -99,7 +102,7 @@ Numeric Constants
 Description
 -----------
 
-An Animation resource contains data used to animate everything in the engine. Animations are divided into tracks, and each track must be linked to a node. The state of that node can be changed through time, by adding timed keys (events) to the track. 
+An Animation resource contains data used to animate everything in the engine. Animations are divided into tracks, and each track must be linked to a node. The state of that node can be changed through time, by adding timed keys (events) to the track.
 
 Animations are just data containers, and must be added to odes such as an :ref:`AnimationPlayer<class_animationplayer>` or :ref:`AnimationTreePlayer<class_animationtreeplayer>` to be played back.
 
@@ -134,7 +137,7 @@ Get the type of a track.
 
 - :ref:`NodePath<class_nodepath>`  **track_get_path**  **(** :ref:`int<class_int>` idx  **)** const
 
-Get the path of a track. for more information on the path format, see :ref:`track_set_path<Animation_track_set_path>`
+Get the path of a track. for more information on the path format, see :ref:`track_set_path<class_Animation_track_set_path>`
 
 .. _class_Animation_track_set_path:
 

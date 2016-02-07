@@ -3,9 +3,12 @@
 HSeparator
 ==========
 
-**Inherits:** :ref:`Separator<class_separator>`
+**Inherits:** :ref:`Separator<class_separator>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Horizontal separator.
 

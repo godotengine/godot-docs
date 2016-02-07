@@ -3,9 +3,12 @@
 SampleLibrary
 =============
 
-**Inherits:** :ref:`Resource<class_resource>`
+**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Library that contains a collection of samples.
 
@@ -33,7 +36,7 @@ Member Functions
 Description
 -----------
 
-Library that contains a collection of :ref:`Sample<class_sample>`s, each identified by a text ID. This is used as a data container for the majority of the SamplePlayer classes and derivatives.
+Library that contains a collection of :ref:`Sample<class_sample>`, each identified by a text ID. This is used as a data container for the majority of the SamplePlayer classes and derivatives.
 
 Member Function Description
 ---------------------------

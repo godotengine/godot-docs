@@ -3,9 +3,14 @@
 BaseButton
 ==========
 
-**Inherits:** :ref:`Control<class_control>`
+**Inherits:** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`TextureButton<class_texturebutton>`, :ref:`Button<class_button>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Provides a base class for different kinds of buttons.
 
@@ -95,7 +100,7 @@ Set the button toggle_mode property. Toggle mode makes the button flip state bet
 
 - :ref:`bool<class_bool>`  **is_toggle_mode**  **(** **)** const
 
-Return the toggle_mode property (see :ref:`set_toggle_mode<BaseButton_set_toggle_mode>`).
+Return the toggle_mode property (see :ref:`set_toggle_mode<class_BaseButton_set_toggle_mode>`).
 
 .. _class_BaseButton_set_disabled:
 
@@ -107,7 +112,7 @@ Set the button into disabled state. When a button is disabled, it can't be click
 
 - :ref:`bool<class_bool>`  **is_disabled**  **(** **)** const
 
-Return wether the button is in disabled state (see :ref:`set_disabled<BaseButton_set_disabled>`).
+Return wether the button is in disabled state (see :ref:`set_disabled<class_BaseButton_set_disabled>`).
 
 .. _class_BaseButton_set_click_on_press:
 
@@ -119,7 +124,7 @@ Set the button click_on_press mode. This mode generates click events when a mous
 
 - :ref:`bool<class_bool>`  **get_click_on_press**  **(** **)** const
 
-Return the state of the click_on_press property (see :ref:`set_click_on_press<BaseButton_set_click_on_press>`).
+Return the state of the click_on_press property (see :ref:`set_click_on_press<class_BaseButton_set_click_on_press>`).
 
 .. _class_BaseButton_get_draw_mode:
 

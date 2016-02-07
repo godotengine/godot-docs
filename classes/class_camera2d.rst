@@ -3,9 +3,12 @@
 Camera2D
 ========
 
-**Inherits:** :ref:`Node2D<class_node2d>`
+**Inherits:** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Camera node for 2D scenes.
 
@@ -132,7 +135,7 @@ Make this the current 2D camera for the scene (viewport and layer), in case ther
 
 - :ref:`bool<class_bool>`  **is_current**  **(** **)** const
 
-Return true of this is the current camera (see :ref:`Camera2D.make_current<camera2d_make_current>`).
+Return true of this is the current camera (see :ref:`make_current<class_Camera2D_make_current>`).
 
 .. _class_Camera2D_set_limit:
 
@@ -188,7 +191,7 @@ Set the margins needed to drag the camera (relative to the screen size). Margin 
 
 - :ref:`float<class_float>`  **get_drag_margin**  **(** :ref:`int<class_int>` margin  **)** const
 
-Return the margins needed to drag the camera (see :ref:`set_drag_margin<Camera2D_set_drag_margin>`).
+Return the margins needed to drag the camera (see :ref:`set_drag_margin<class_Camera2D_set_drag_margin>`).
 
 .. _class_Camera2D_get_camera_pos:
 

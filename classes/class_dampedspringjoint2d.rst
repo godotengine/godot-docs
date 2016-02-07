@@ -3,9 +3,12 @@
 DampedSpringJoint2D
 ===================
 
-**Inherits:** :ref:`Joint2D<class_joint2d>`
+**Inherits:** :ref:`Joint2D<class_joint2d>` **<** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Damped spring constraint for 2D physics.
 

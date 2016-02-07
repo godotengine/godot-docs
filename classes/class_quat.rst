@@ -5,6 +5,9 @@ Quat
 
 **Category:** Built-In Types
 
+Brief Description
+-----------------
+
 Quaternion.
 
 Member Functions

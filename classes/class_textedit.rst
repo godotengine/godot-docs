@@ -3,9 +3,12 @@
 TextEdit
 ========
 
-**Inherits:** :ref:`Control<class_control>`
+**Inherits:** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Multiline text editing control.
 

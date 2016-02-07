@@ -3,9 +3,14 @@
 Shader
 ======
 
-**Inherits:** :ref:`Resource<class_resource>`
+**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`MaterialShader<class_materialshader>`, :ref:`CanvasItemShader<class_canvasitemshader>`, :ref:`ShaderGraph<class_shadergraph>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 To be changed, ignore.
 

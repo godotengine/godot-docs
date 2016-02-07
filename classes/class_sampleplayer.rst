@@ -3,9 +3,12 @@
 SamplePlayer
 ============
 
-**Inherits:** :ref:`Node<class_node>`
+**Inherits:** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Sample Player node.
 

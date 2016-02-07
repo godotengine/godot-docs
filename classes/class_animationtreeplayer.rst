@@ -3,9 +3,12 @@
 AnimationTreePlayer
 ===================
 
-**Inherits:** :ref:`Node<class_node>`
+**Inherits:** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Animation Player that uses a node graph for the blending.
 

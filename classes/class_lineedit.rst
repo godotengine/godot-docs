@@ -3,9 +3,12 @@
 LineEdit
 ========
 
-**Inherits:** :ref:`Control<class_control>`
+**Inherits:** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Control that provides single line string editing.
 
@@ -140,7 +143,7 @@ Set the *editable* status of the :ref:`LineEdit<class_lineedit>`. When disabled,
 
 - :ref:`bool<class_bool>`  **is_editable**  **(** **)** const
 
-Return the *editable* status of the :ref:`LineEdit<class_lineedit>` (see :ref:`set_editable<LineEdit_set_editable>`).
+Return the *editable* status of the :ref:`LineEdit<class_lineedit>` (see :ref:`set_editable<class_LineEdit_set_editable>`).
 
 .. _class_LineEdit_set_secret:
 
@@ -152,7 +155,7 @@ Set the *secret* status of the :ref:`LineEdit<class_lineedit>`. When enabled, ev
 
 - :ref:`bool<class_bool>`  **is_secret**  **(** **)** const
 
-Return the *secret* status of the :ref:`LineEdit<class_lineedit>` (see :ref:`set_secret<LineEdit_set_secret>`).
+Return the *secret* status of the :ref:`LineEdit<class_lineedit>` (see :ref:`set_secret<class_LineEdit_set_secret>`).
 
 .. _class_LineEdit_select:
 

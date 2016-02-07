@@ -3,9 +3,12 @@
 Area
 ====
 
-**Inherits:** :ref:`CollisionObject<class_collisionobject>`
+**Inherits:** :ref:`CollisionObject<class_collisionobject>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 
 

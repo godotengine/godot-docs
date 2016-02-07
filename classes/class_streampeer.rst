@@ -3,9 +3,14 @@
 StreamPeer
 ==========
 
-**Inherits:** :ref:`Reference<class_reference>`
+**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`StreamPeerSSL<class_streampeerssl>`, :ref:`StreamPeerTCP<class_streampeertcp>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Abstraction and base class for stream-based protocols.
 
@@ -90,25 +95,25 @@ Member Function Description
 
 - :ref:`int<class_int>`  **put_data**  **(** :ref:`RawArray<class_rawarray>` data  **)**
 
-Send a chunk of data through the connection, blocking if necesary until the data is done sending. This function returns an :ref:`Error<class_error>` code.
+Send a chunk of data through the connection, blocking if necesary until the data is done sending. This function returns an Error code.
 
 .. _class_StreamPeer_put_partial_data:
 
 - :ref:`Array<class_array>`  **put_partial_data**  **(** :ref:`RawArray<class_rawarray>` data  **)**
 
-Send a chunk of data through the connection, if all the data could not be sent at once, only part of it will. This function returns two values, an :ref:`Error<class_error>` code and an integer, describing how much data was actually sent.
+Send a chunk of data through the connection, if all the data could not be sent at once, only part of it will. This function returns two values, an Error code and an integer, describing how much data was actually sent.
 
 .. _class_StreamPeer_get_data:
 
 - :ref:`Array<class_array>`  **get_data**  **(** :ref:`int<class_int>` bytes  **)**
 
-Return a chunk data with the received bytes. The amount of bytes to be received can be requested in the "bytes" argument. If not enough bytes are available, the function will block until the desired amount is received. This function returns two values, an :ref:`Error<class_error>` code and a data array.
+Return a chunk data with the received bytes. The amount of bytes to be received can be requested in the "bytes" argument. If not enough bytes are available, the function will block until the desired amount is received. This function returns two values, an Error code and a data array.
 
 .. _class_StreamPeer_get_partial_data:
 
 - :ref:`Array<class_array>`  **get_partial_data**  **(** :ref:`int<class_int>` bytes  **)**
 
-Return a chunk data with the received bytes. The amount of bytes to be received can be requested in the "bytes" argument. If not enough bytes are available, the function will return how many were actually received. This function returns two values, an :ref:`Error<class_error>` code, and a data array.
+Return a chunk data with the received bytes. The amount of bytes to be received can be requested in the "bytes" argument. If not enough bytes are available, the function will return how many were actually received. This function returns two values, an Error code, and a data array.
 
 .. _class_StreamPeer_get_available_bytes:
 

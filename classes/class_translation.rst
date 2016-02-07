@@ -3,9 +3,14 @@
 Translation
 ===========
 
-**Inherits:** :ref:`Resource<class_resource>`
+**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`PHashTranslation<class_phashtranslation>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Language Translation.
 

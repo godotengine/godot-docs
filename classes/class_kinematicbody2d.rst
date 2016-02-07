@@ -3,9 +3,12 @@
 KinematicBody2D
 ===============
 
-**Inherits:** :ref:`PhysicsBody2D<class_physicsbody2d>`
+**Inherits:** :ref:`PhysicsBody2D<class_physicsbody2d>` **<** :ref:`CollisionObject2D<class_collisionobject2d>` **<** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Kinematic body 2D node.
 
@@ -49,7 +52,7 @@ Kinematic bodies are special types of bodies that are meant to be user-controlle
 
 Simulated Motion: When these bodies are moved manually, either from code or from an AnimationPlayer (with process mode set to fixed), the physics will automatically compute an estimate of their linear and angular velocity. This makes them very useful for moving platforms or other AnimationPlayer-controlled objects (like a door, a bridge that opens, etc).
 
-Kinematic Characters: KinematicBody2D also has an api for moving objects (the :ref:`move<KinematicBody2D_move>` method) while performing collision tests. This makes them really useful to implement characters that collide against a world, but that don't require advanced physics.
+Kinematic Characters: KinematicBody2D also has an api for moving objects (the :ref:`move<class_KinematicBody2D_move>` method) while performing collision tests. This makes them really useful to implement characters that collide against a world, but that don't require advanced physics.
 
 Member Function Description
 ---------------------------
@@ -94,7 +97,7 @@ Return whether the body is colliding with another.
 
 - :ref:`Vector2<class_vector2>`  **get_collision_pos**  **(** **)** const
 
-Return the point in space where the body is touching another. If there is no collision, this method will return (0,0), so collisions must be checked first with :ref:`is_colliding<KinematicBody2D_is_colliding>`.
+Return the point in space where the body is touching another. If there is no collision, this method will return (0,0), so collisions must be checked first with :ref:`is_colliding<class_KinematicBody2D_is_colliding>`.
 
 .. _class_KinematicBody2D_get_collision_normal:
 
@@ -118,13 +121,13 @@ Return the body that collided with this one.
 
 - :ref:`int<class_int>`  **get_collider_shape**  **(** **)** const
 
-Return the shape index from the body that collided with this one. If there is no collision, this method will return 0, so collisions must be checked first with :ref:`is_colliding<KinematicBody2D_is_colliding>`.
+Return the shape index from the body that collided with this one. If there is no collision, this method will return 0, so collisions must be checked first with :ref:`is_colliding<class_KinematicBody2D_is_colliding>`.
 
 .. _class_KinematicBody2D_get_collider_metadata:
 
 - Variant  **get_collider_metadata**  **(** **)** const
 
-Return the metadata of the shape that collided with this body. If there is no collision, it will return 0, so collisions must be checked first with :ref:`is_colliding<KinematicBody2D_is_colliding>`. Aditionally, this metadata can not be set with :ref:`Object.set_meta<object_set_meta>`, it must be set with :ref:`Physics2DServer.body_set_shape_metadata<physics2dserver_body_set_shape_metadata>`.
+Return the metadata of the shape that collided with this body. If there is no collision, it will return 0, so collisions must be checked first with :ref:`is_colliding<class_KinematicBody2D_is_colliding>`. Aditionally, this metadata can not be set with :ref:`Object.set_meta<class_Object_set_meta>`, it must be set with :ref:`Physics2DServer.body_set_shape_metadata<class_Physics2DServer_body_set_shape_metadata>`.
 
 .. _class_KinematicBody2D_set_collision_margin:
 

@@ -3,9 +3,14 @@
 SplitContainer
 ==============
 
-**Inherits:** :ref:`Container<class_container>`
+**Inherits:** :ref:`Container<class_container>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`HSplitContainer<class_hsplitcontainer>`, :ref:`VSplitContainer<class_vsplitcontainer>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Container for splitting and adjusting.
 

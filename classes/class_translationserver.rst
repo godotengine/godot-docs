@@ -7,6 +7,9 @@ TranslationServer
 
 **Category:** Core
 
+Brief Description
+-----------------
+
 Server that manages all translations. Translations can be set to it and removed from it.
 
 Member Functions

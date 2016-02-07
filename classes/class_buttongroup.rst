@@ -3,9 +3,12 @@
 ButtonGroup
 ===========
 
-**Inherits:** :ref:`BoxContainer<class_boxcontainer>`
+**Inherits:** :ref:`BoxContainer<class_boxcontainer>` **<** :ref:`Container<class_container>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Group of Buttons.
 
@@ -27,7 +30,7 @@ Member Functions
 Description
 -----------
 
-Group of :ref:`Button<class_button>`s. All direct and indirect children buttons become radios. Only one allows being pressed.
+Group of :ref:`Button<class_button>`. All direct and indirect children buttons become radios. Only one allows being pressed.
 
 Member Function Description
 ---------------------------

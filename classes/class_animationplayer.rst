@@ -3,9 +3,12 @@
 AnimationPlayer
 ===============
 
-**Inherits:** :ref:`Node<class_node>`
+**Inherits:** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Container and player of :ref:`Animation<class_animation>` resources.
 
@@ -264,7 +267,7 @@ AnimationPlayer resolves animation track paths from this node (which is relative
 
 - :ref:`NodePath<class_nodepath>`  **get_root**  **(** **)** const
 
-Return path to root node (see :ref:`set_root<class_set_root>`).
+Return path to root node (see :ref:`set_root<class_AnimationPlayer_set_root>`).
 
 .. _class_AnimationPlayer_seek:
 
@@ -300,7 +303,7 @@ Set the mode in which the animation player processes. By default, it processes o
 
 - :ref:`int<class_int>`  **get_animation_process_mode**  **(** **)** const
 
-Return the mode in which the animation player processes. See :ref:`set_animation_process_mode<AnimationPlayer_set_animation_process_mode>`.
+Return the mode in which the animation player processes. See :ref:`set_animation_process_mode<class_AnimationPlayer_set_animation_process_mode>`.
 
 .. _class_AnimationPlayer_get_current_animation_pos:
 

@@ -5,6 +5,9 @@ Matrix32
 
 **Category:** Built-In Types
 
+Brief Description
+-----------------
+
 3x2 Matrix for 2D transforms.
 
 Member Functions

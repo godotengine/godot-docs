@@ -3,9 +3,12 @@
 StreamPlayer
 ============
 
-**Inherits:** :ref:`Node<class_node>`
+**Inherits:** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Base class for audio stream playback.
 
@@ -145,7 +148,7 @@ Return the playback volume for this player.
 
 - void  **set_volume_db**  **(** :ref:`float<class_float>` db  **)**
 
-Set the playback volume for this player, in decibels. This is a float between -80.0 (silent) and 0.0 (full volume). Values under -79.0 get truncated to -80, but values over 0.0 do not, so the warnings for overamplifying (see :ref:`set_volume<class_set_volume>`) still apply.
+Set the playback volume for this player, in decibels. This is a float between -80.0 (silent) and 0.0 (full volume). Values under -79.0 get truncated to -80, but values over 0.0 do not, so the warnings for overamplifying (see :ref:`set_volume<class_StreamPlayer_set_volume>`) still apply.
 
 .. _class_StreamPlayer_get_volume_db:
 

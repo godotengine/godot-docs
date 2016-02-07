@@ -5,6 +5,9 @@ Vector2Array
 
 **Category:** Built-In Types
 
+Brief Description
+-----------------
+
 An Array of Vector2.
 
 Member Functions

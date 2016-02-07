@@ -3,9 +3,14 @@
 Joint
 =====
 
-**Inherits:** :ref:`Spatial<class_spatial>`
+**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`ConeTwistJoint<class_conetwistjoint>`, :ref:`SliderJoint<class_sliderjoint>`, :ref:`Generic6DOFJoint<class_generic6dofjoint>`, :ref:`HingeJoint<class_hingejoint>`, :ref:`PinJoint<class_pinjoint>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 
 

@@ -7,6 +7,9 @@ PathRemap
 
 **Category:** Core
 
+Brief Description
+-----------------
+
 Singleton containing the list of remapped resources.
 
 Member Functions

@@ -3,9 +3,14 @@
 Light
 =====
 
-**Inherits:** :ref:`VisualInstance<class_visualinstance>`
+**Inherits:** :ref:`VisualInstance<class_visualinstance>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`SpotLight<class_spotlight>`, :ref:`OmniLight<class_omnilight>`, :ref:`DirectionalLight<class_directionallight>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Provides a base class for different kinds of light nodes.
 

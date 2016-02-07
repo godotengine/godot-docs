@@ -3,9 +3,12 @@
 Skeleton
 ========
 
-**Inherits:** :ref:`Spatial<class_spatial>`
+**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Skeleton for characters and animated objects.
 
@@ -75,7 +78,7 @@ Member Function Description
 
 - void  **add_bone**  **(** :ref:`String<class_string>` name  **)**
 
-Add a bone, with name "name". :ref:`get_bone_count<Skeleton_get_bone_count>` will become the bone index.
+Add a bone, with name "name". :ref:`get_bone_count<class_Skeleton_get_bone_count>` will become the bone index.
 
 .. _class_Skeleton_find_bone:
 

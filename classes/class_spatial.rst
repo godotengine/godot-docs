@@ -3,9 +3,14 @@
 Spatial
 =======
 
-**Inherits:** :ref:`Node<class_node>`
+**Inherits:** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`Joint<class_joint>`, :ref:`RayCast<class_raycast>`, :ref:`Camera<class_camera>`, :ref:`BoneAttachment<class_boneattachment>`, :ref:`CollisionShape<class_collisionshape>`, :ref:`Path<class_path>`, :ref:`VisualInstance<class_visualinstance>`, :ref:`VehicleWheel<class_vehiclewheel>`, :ref:`Position3D<class_position3d>`, :ref:`ProximityGroup<class_proximitygroup>`, :ref:`SpatialPlayer<class_spatialplayer>`, :ref:`WorldEnvironment<class_worldenvironment>`, :ref:`PathFollow<class_pathfollow>`, :ref:`NavigationMeshInstance<class_navigationmeshinstance>`, :ref:`VisibilityNotifier<class_visibilitynotifier>`, :ref:`Navigation<class_navigation>`, :ref:`CollisionPolygon<class_collisionpolygon>`, :ref:`GridMap<class_gridmap>`, :ref:`Skeleton<class_skeleton>`, :ref:`CollisionObject<class_collisionobject>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Base class for all 3D nodes.
 

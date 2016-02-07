@@ -3,9 +3,12 @@
 AnimatedSprite
 ==============
 
-**Inherits:** :ref:`Node2D<class_node2d>`
+**Inherits:** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Sprite node that can use multiple textures for animation.
 
@@ -77,7 +80,7 @@ When turned on, offset at (0,0) is the center of the sprite, when off, the top-l
 
 - :ref:`bool<class_bool>`  **is_centered**  **(** **)** const
 
-Return true when centered. See :ref:`set_centered<class_set_centered>`.
+Return true when centered. See :ref:`set_centered<class_AnimatedSprite_set_centered>`.
 
 .. _class_AnimatedSprite_set_offset:
 

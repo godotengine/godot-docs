@@ -5,6 +5,9 @@ Transform
 
 **Category:** Built-In Types
 
+Brief Description
+-----------------
+
 3D Transformation.
 
 Member Functions

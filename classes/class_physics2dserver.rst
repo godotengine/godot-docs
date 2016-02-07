@@ -5,7 +5,12 @@ Physics2DServer
 
 **Inherits:** :ref:`Object<class_object>`
 
+**Inherited By:** :ref:`Physics2DServerSW<class_physics2dserversw>`
+
 **Category:** Core
+
+Brief Description
+-----------------
 
 Physics 2D Server.
 

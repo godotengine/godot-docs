@@ -5,6 +5,9 @@ Matrix3
 
 **Category:** Built-In Types
 
+Brief Description
+-----------------
+
 3x3 matrix datatype.
 
 Member Functions

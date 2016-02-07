@@ -3,9 +3,12 @@
 Label
 =====
 
-**Inherits:** :ref:`Control<class_control>`
+**Inherits:** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Control that displays formatted text.
 
@@ -126,7 +129,7 @@ Set *autowrap* mode. When enabled, autowrap will fit text to the control width, 
 
 - :ref:`bool<class_bool>`  **has_autowrap**  **(** **)** const
 
-Return the state of the *autowrap* mode (see :ref:`set_autowrap<Label_set_autowrap>`).
+Return the state of the *autowrap* mode (see :ref:`set_autowrap<class_Label_set_autowrap>`).
 
 .. _class_Label_set_clip_text:
 

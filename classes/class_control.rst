@@ -3,9 +3,14 @@
 Control
 =======
 
-**Inherits:** :ref:`CanvasItem<class_canvasitem>`
+**Inherits:** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`Label<class_label>`, :ref:`Tabs<class_tabs>`, :ref:`TextureFrame<class_textureframe>`, :ref:`ButtonArray<class_buttonarray>`, :ref:`VideoPlayer<class_videoplayer>`, :ref:`LineEdit<class_lineedit>`, :ref:`Container<class_container>`, :ref:`ReferenceFrame<class_referenceframe>`, :ref:`Patch9Frame<class_patch9frame>`, :ref:`TextEdit<class_textedit>`, :ref:`BaseButton<class_basebutton>`, :ref:`Popup<class_popup>`, :ref:`Tree<class_tree>`, :ref:`Separator<class_separator>`, :ref:`Panel<class_panel>`, :ref:`TabContainer<class_tabcontainer>`, :ref:`Range<class_range>`, :ref:`RichTextLabel<class_richtextlabel>`, :ref:`GraphEdit<class_graphedit>`, :ref:`ItemList<class_itemlist>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Control is the base node for all the GUI components.
 
@@ -222,11 +227,11 @@ Controls are relative to the parent position and size by using anchors and margi
 
 Anchors work by defining which margin do they follow, and a value relative to it. Allowed anchoring modes are ANCHOR_BEGIN, where the margin is relative to the top or left margins of the parent (in pixels), ANCHOR_END for the right and bottom margins of the parent and ANCHOR_RATIO, which is a ratio from 0 to 1 in the parent range.
 
-Input device events (:ref:`InputEvent<class_inputevent>`) are first sent to the root controls via the :ref:`Node._input<node__input>`, which distribute it through the tree, then delivers them to the adequate one (under cursor or keyboard focus based) by calling :ref:`Node._input_event<class_node._input_event>`. There is no need to enable input processing on controls to receive such events. To ensure that no one else will receive the event (not even :ref:`Node._unhandled_input<node__unhandled_input>`), the control can accept it by calling :ref:`accept_event<Control_accept_event>`.
+Input device events (:ref:`InputEvent<class_inputevent>`) are first sent to the root controls via the :ref:`Node._input<class_Node__input>`, which distribute it through the tree, then delivers them to the adequate one (under cursor or keyboard focus based) by calling :ref:`Node._input_event<class_Node__input_event>`. There is no need to enable input processing on controls to receive such events. To ensure that no one else will receive the event (not even :ref:`Node._unhandled_input<class_Node__unhandled_input>`), the control can accept it by calling :ref:`accept_event<class_Control_accept_event>`.
 
-Only one control can hold the keyboard focus (receiving keyboard events), for that the control must define the focus mode with :ref:`set_focus_mode<Control_set_focus_mode>`. Focus is lost when another control gains it, or the current focus owner is hidden.
+Only one control can hold the keyboard focus (receiving keyboard events), for that the control must define the focus mode with :ref:`set_focus_mode<class_Control_set_focus_mode>`. Focus is lost when another control gains it, or the current focus owner is hidden.
 
-It is sometimes desired for a control to ignore mouse/pointer events. This is often the case when placing other controls on top of a button, in such cases. Calling :ref:`set_ignore_mouse<Control_set_ignore_mouse>` enables this function.
+It is sometimes desired for a control to ignore mouse/pointer events. This is often the case when placing other controls on top of a button, in such cases. Calling :ref:`set_ignore_mouse<class_Control_set_ignore_mouse>` enables this function.
 
 Finally, controls are skinned according to a :ref:`Theme<class_theme>`. Setting a :ref:`Theme<class_theme>` on a control will propagate all the skinning down the tree. Optionally, skinning can be overrided per each control by calling the add\_\*_override functions, or from the editor.
 
@@ -261,7 +266,7 @@ Return the minimum size this Control can shrink to. A control will never be disp
 
 - void  **accept_event**  **(** **)**
 
-Handles the event, no other control will receive it and it will not be sent to nodes waiting on :ref:`Node._unhandled_input<node__unhandled_input>` or :ref:`Node._unhandled_key_input<node__unhandled_key_input>`.
+Handles the event, no other control will receive it and it will not be sent to nodes waiting on :ref:`Node._unhandled_input<class_Node__unhandled_input>` or :ref:`Node._unhandled_key_input<class_Node__unhandled_key_input>`.
 
 .. _class_Control_get_minimum_size:
 
@@ -277,7 +282,7 @@ Return the minimum size this Control can shrink to. A control will never be disp
 
 - void  **set_anchor**  **(** :ref:`int<class_int>` margin, :ref:`int<class_int>` anchor_mode  **)**
 
-Change the anchor (ANCHOR_BEGIN, ANCHOR_END, ANCHOR_RATIO) type for a margin (MARGIN_LEFT, MARGIN_TOP, MARGIN_RIGHT, MARGIN_BOTTOM). Changing the anchor mode converts the current margin offset from the previos anchor mode to the new one, so margin offsets (:ref:`set_margin<Control_set_margin>`) must be done after setting anchors, or at the same time (:ref:`set_anchor_and_margin<Control_set_anchor_and_margin>`).
+Change the anchor (ANCHOR_BEGIN, ANCHOR_END, ANCHOR_RATIO) type for a margin (MARGIN_LEFT, MARGIN_TOP, MARGIN_RIGHT, MARGIN_BOTTOM). Changing the anchor mode converts the current margin offset from the previos anchor mode to the new one, so margin offsets (:ref:`set_margin<class_Control_set_margin>`) must be done after setting anchors, or at the same time (:ref:`set_anchor_and_margin<class_Control_set_anchor_and_margin>`).
 
 .. _class_Control_get_anchor:
 
@@ -295,31 +300,31 @@ Set a margin offset. Margin can be one of (MARGIN_LEFT, MARGIN_TOP, MARGIN_RIGHT
 
 - void  **set_anchor_and_margin**  **(** :ref:`int<class_int>` margin, :ref:`int<class_int>` anchor_mode, :ref:`float<class_float>` offset  **)**
 
-Change the anchor (ANCHOR_BEGIN, ANCHOR_END, ANCHOR_RATIO) type for a margin (MARGIN_LEFT, MARGIN_TOP, MARGIN_RIGHT, MARGIN_BOTTOM), and also set its offset. This is a helper (see :ref:`set_anchor<Control_set_anchor>` and :ref:`set_margin<Control_set_margin>`).
+Change the anchor (ANCHOR_BEGIN, ANCHOR_END, ANCHOR_RATIO) type for a margin (MARGIN_LEFT, MARGIN_TOP, MARGIN_RIGHT, MARGIN_BOTTOM), and also set its offset. This is a helper (see :ref:`set_anchor<class_Control_set_anchor>` and :ref:`set_margin<class_Control_set_margin>`).
 
 .. _class_Control_set_begin:
 
 - void  **set_begin**  **(** :ref:`Vector2<class_vector2>` pos  **)**
 
-Sets MARGIN_LEFT and MARGIN_TOP at the same time. This is a helper (see :ref:`set_margin<Control_set_margin>`).
+Sets MARGIN_LEFT and MARGIN_TOP at the same time. This is a helper (see :ref:`set_margin<class_Control_set_margin>`).
 
 .. _class_Control_set_end:
 
 - void  **set_end**  **(** :ref:`Vector2<class_vector2>` pos  **)**
 
-Sets MARGIN_RIGHT and MARGIN_BOTTOM at the same time. This is a helper (see :ref:`set_margin<Control_set_margin>`).
+Sets MARGIN_RIGHT and MARGIN_BOTTOM at the same time. This is a helper (see :ref:`set_margin<class_Control_set_margin>`).
 
 .. _class_Control_set_pos:
 
 - void  **set_pos**  **(** :ref:`Vector2<class_vector2>` pos  **)**
 
-Move the Control to a new position, relative to the top-left corner of the parent Control, changing all margins if needed and without changing current anchor mode. This is a helper (see :ref:`set_margin<Control_set_margin>`).
+Move the Control to a new position, relative to the top-left corner of the parent Control, changing all margins if needed and without changing current anchor mode. This is a helper (see :ref:`set_margin<class_Control_set_margin>`).
 
 .. _class_Control_set_size:
 
 - void  **set_size**  **(** :ref:`Vector2<class_vector2>` size  **)**
 
-Changes MARGIN_RIGHT and MARGIN_BOTTOM to fit a given size. This is a helper (see :ref:`set_margin<Control_set_margin>`).
+Changes MARGIN_RIGHT and MARGIN_BOTTOM to fit a given size. This is a helper (see :ref:`set_margin<class_Control_set_margin>`).
 
 .. _class_Control_set_custom_minimum_size:
 
@@ -329,7 +334,7 @@ Changes MARGIN_RIGHT and MARGIN_BOTTOM to fit a given size. This is a helper (se
 
 - void  **set_global_pos**  **(** :ref:`Vector2<class_vector2>` pos  **)**
 
-Move the Control to a new position, relative to the top-left corner of the *window* Control, and without changing current anchor mode. (see :ref:`set_margin<Control_set_margin>`).
+Move the Control to a new position, relative to the top-left corner of the *window* Control, and without changing current anchor mode. (see :ref:`set_margin<class_Control_set_margin>`).
 
 .. _class_Control_set_rotation:
 
@@ -353,7 +358,7 @@ Return a margin offset. Margin can be one of (MARGIN_LEFT, MARGIN_TOP, MARGIN_RI
 
 - :ref:`Vector2<class_vector2>`  **get_end**  **(** **)** const
 
-Returns MARGIN_LEFT and MARGIN_TOP at the same time. This is a helper (see :ref:`set_margin<Control_set_margin>`).
+Returns MARGIN_LEFT and MARGIN_TOP at the same time. This is a helper (see :ref:`set_margin<class_Control_set_margin>`).
 
 .. _class_Control_get_pos:
 
@@ -365,7 +370,7 @@ Returns the Control position, relative to the top-left corner of the parent Cont
 
 - :ref:`Vector2<class_vector2>`  **get_size**  **(** **)** const
 
-Returns the size of the Control, computed from all margins, however the size returned will **never be smaller than the minimum size reported by :ref:`get_minimum_size<Control_get_minimum_size>`**. This means that even if end position of the Control rectangle is smaller than the begin position, the Control will still display and interact correctly. (see description, :ref:`get_minimum_size<Control_get_minimum_size>`, :ref:`set_margin<Control_set_margin>`, :ref:`set_anchor<Control_set_anchor>`).
+Returns the size of the Control, computed from all margins, however the size returned will **never be smaller than the minimum size reported by :ref:`get_minimum_size<class_Control_get_minimum_size>`**. This means that even if end position of the Control rectangle is smaller than the begin position, the Control will still display and interact correctly. (see description, :ref:`get_minimum_size<class_Control_get_minimum_size>`, :ref:`set_margin<class_Control_set_margin>`, :ref:`set_anchor<class_Control_set_anchor>`).
 
 .. _class_Control_get_rotation:
 
@@ -393,25 +398,25 @@ Returns the Control position, relative to the top-left corner of the parent Cont
 
 - :ref:`Rect2<class_rect2>`  **get_rect**  **(** **)** const
 
-Return position and size of the Control, relative to the top-left corner of the parent Control. This is a helper (see :ref:`get_pos<Control_get_pos>`,:ref:`get_size<Control_get_size>`).
+Return position and size of the Control, relative to the top-left corner of the parent Control. This is a helper (see :ref:`get_pos<class_Control_get_pos>`, :ref:`get_size<class_Control_get_size>`).
 
 .. _class_Control_get_global_rect:
 
 - :ref:`Rect2<class_rect2>`  **get_global_rect**  **(** **)** const
 
-Return position and size of the Control, relative to the top-left corner of the *window* Control. This is a helper (see :ref:`get_global_pos<Control_get_global_pos>`,:ref:`get_size<Control_get_size>`).
+Return position and size of the Control, relative to the top-left corner of the *window* Control. This is a helper (see :ref:`get_global_pos<class_Control_get_global_pos>`, :ref:`get_size<class_Control_get_size>`).
 
 .. _class_Control_set_area_as_parent_rect:
 
 - void  **set_area_as_parent_rect**  **(** :ref:`int<class_int>` margin=0  **)**
 
-Change all margins and anchors, so this Control always takes up the same area as the parent Control. This is a helper (see :ref:`set_anchor<Control_set_anchor>`,:ref:`set_margin<Control_set_margin>`).
+Change all margins and anchors, so this Control always takes up the same area as the parent Control. This is a helper (see :ref:`set_anchor<class_Control_set_anchor>`, :ref:`set_margin<class_Control_set_margin>`).
 
 .. _class_Control_show_modal:
 
 - void  **show_modal**  **(** :ref:`bool<class_bool>` exclusive=false  **)**
 
-Display a Control as modal. Control must be a subwindow (see :ref:`set_as_subwindow<Control_set_as_subwindow>`). Modal controls capture the input signals until closed or the area outside them is accessed. When a modal control loses focus, or the ESC key is pressed, they automatically hide. Modal controls are used extensively for popup dialogs and menus.
+Display a Control as modal. Control must be a subwindow (see :ref:`set_as_subwindow<class_Control_set_as_subwindow>`). Modal controls capture the input signals until closed or the area outside them is accessed. When a modal control loses focus, or the ESC key is pressed, they automatically hide. Modal controls are used extensively for popup dialogs and menus.
 
 .. _class_Control_set_focus_mode:
 
@@ -423,13 +428,13 @@ Set the focus access mode for the control (FOCUS_NONE, FOCUS_CLICK, FOCUS_ALL). 
 
 - :ref:`bool<class_bool>`  **has_focus**  **(** **)** const
 
-Return wether the Control is the current focused control (see :ref:`set_focus_mode<Control_set_focus_mode>`).
+Return wether the Control is the current focused control (see :ref:`set_focus_mode<class_Control_set_focus_mode>`).
 
 .. _class_Control_grab_focus:
 
 - void  **grab_focus**  **(** **)**
 
-Steal the focus from another control and become the focused control (see :ref:`set_focus_mode<Control_set_focus_mode>`).
+Steal the focus from another control and become the focused control (see :ref:`set_focus_mode<class_Control_set_focus_mode>`).
 
 .. _class_Control_release_focus:
 
@@ -489,7 +494,7 @@ Override whole the :ref:`Theme<class_theme>` for this Control and all its childr
 
 - :ref:`Theme<class_theme>`  **get_theme**  **(** **)** const
 
-Return a :ref:`Theme<class_theme>` override, if one exists (see :ref:`set_theme<Control_set_theme>`).
+Return a :ref:`Theme<class_theme>` override, if one exists (see :ref:`set_theme<class_Control_set_theme>`).
 
 .. _class_Control_add_icon_override:
 

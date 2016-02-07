@@ -3,9 +3,14 @@
 Script
 ======
 
-**Inherits:** :ref:`Resource<class_resource>`
+**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`GDScript<class_gdscript>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Base class for scripts.
 

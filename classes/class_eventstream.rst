@@ -3,9 +3,14 @@
 EventStream
 ===========
 
-**Inherits:** :ref:`Resource<class_resource>`
+**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`EventStreamChibi<class_eventstreamchibi>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Base class for all event-based stream drivers.
 

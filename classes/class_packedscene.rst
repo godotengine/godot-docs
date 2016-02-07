@@ -3,9 +3,12 @@
 PackedScene
 ===========
 
-**Inherits:** :ref:`Resource<class_resource>`
+**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 
 
@@ -34,7 +37,7 @@ Member Function Description
 
 - :ref:`int<class_int>`  **pack**  **(** :ref:`Node<class_node>` path  **)**
 
-Pack will ignore any sub-nodes not owned by given node. See :ref:`Node.set_owner<class_node.set_owner>`.
+Pack will ignore any sub-nodes not owned by given node. See :ref:`Node.set_owner<class_Node_set_owner>`.
 
 .. _class_PackedScene_instance:
 

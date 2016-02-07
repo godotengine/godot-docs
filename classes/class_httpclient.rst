@@ -3,9 +3,12 @@
 HTTPClient
 ==========
 
-**Inherits:** :ref:`Reference<class_reference>`
+**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 
 
@@ -147,33 +150,19 @@ verify_host will check the SSL identity of the host if set to true.
 
 - :ref:`int<class_int>`  **request**  **(** :ref:`int<class_int>` method, :ref:`String<class_string>` url, :ref:`StringArray<class_stringarray>` headers, :ref:`String<class_string>` body=""  **)**
 
-Sends a request to the connected host. The url is the what is normally behind the hostname, i.e:
+Sends a request to the connected host. The url is what is normally behind the hostname, i.e. in ``http://somehost.com/index.php``, url would be "index.php".
 
-http://somehost.com/index.php
+Headers are HTTP request headers.
 
-url would be "index.php"
+To create a POST request with query strings to push to the server, do::
 
+    var fields = {"username" : "user", "password" : "pass"}
 
+    var queryString = httpClient.query_string_from_dict(fields)
 
-Headers are HTTP request headers
+    var headers = :ref:`"Content-Type: application/x-www-form-urlencoded", "Content-Length: " + str(queryString.length())<class_"content-type: application/x-www-form-urlencoded", "content-length: " + str(querystring.length())>`
 
-
-
-To create a POST request with query strings to push to the server, do:
-
-var fields = {"username" : "user",
-
-                       "password" : "pass"}
-
-var queryString = httpClient.query_string_from_dict(fields)
-
-var headers = :ref:`"Content-Type: application/x-www-form-urlencoded",
-
-   	             "Content-Length: " + str(queryString.length())<class_"content-type: application/x-www-form-urlencoded",
-
-   	             "content-length: " + str(querystring.length())>`
-
-var result = httpClient.request(httpClient.METHOD_POST, "index.php", headers, queryString)
+    var result = httpClient.request(httpClient.METHOD_POST, "index.php", headers, queryString)
 
 .. _class_HTTPClient_send_body_text:
 
@@ -239,28 +228,24 @@ If set to true, execute will wait until all data is read from the response.
 
 - :ref:`int<class_int>`  **get_status**  **(** **)** const
 
-Returns a status string like STATUS_REQUESTING. Need to call :ref:`poll<HTTPClient_poll>` in order to get status updates.
+Returns a status string like STATUS_REQUESTING. Need to call :ref:`poll<class_HTTPClient_poll>` in order to get status updates.
 
 .. _class_HTTPClient_poll:
 
 - Error  **poll**  **(** **)**
 
-This needs to be called in order to have any request processed. Check results with :ref:`get_status<HTTPClient_get_status>`
+This needs to be called in order to have any request processed. Check results with :ref:`get_status<class_HTTPClient_get_status>`
 
 .. _class_HTTPClient_query_string_from_dict:
 
 - :ref:`String<class_string>`  **query_string_from_dict**  **(** :ref:`Dictionary<class_dictionary>` fields  **)**
 
-Generates a GET/POST application/x-www-form-urlencoded style query string from a provided dictionary.
+Generates a GET/POST application/x-www-form-urlencoded style query string from a provided dictionary, e.g.::
 
+    var fields = {"username": "user", "password": "pass"}
 
+    String queryString = httpClient.query_string_from_dict(fields)
 
-var fields = {"username": "user", "password": "pass"}
-
-String queryString = httpClient.query_string_from_dict(fields)
-
-
-
-returns:= "username=user&password=pass"
+    returns:= "username=user&password=pass"
 
 

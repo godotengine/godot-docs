@@ -3,9 +3,14 @@
 Camera
 ======
 
-**Inherits:** :ref:`Spatial<class_spatial>`
+**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`InterpolatedCamera<class_interpolatedcamera>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Camera node, displays from a point of view.
 

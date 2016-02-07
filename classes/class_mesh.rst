@@ -3,9 +3,12 @@
 Mesh
 ====
 
-**Inherits:** :ref:`Resource<class_resource>`
+**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 A :ref:`Resource<class_resource>` that contains vertex-array based geometry.
 
@@ -61,12 +64,12 @@ Numeric Constants
 
 - **NO_INDEX_ARRAY** = **-1** --- Default value used for index_array_len when no indices are present.
 - **ARRAY_WEIGHTS_SIZE** = **4** --- Amount of weights/bone indices per vertex (always 4).
-- **ARRAY_VERTEX** = **0** --- Vertex array (array of :ref:`Vector3<class_vector3>`() vertices).
-- **ARRAY_NORMAL** = **1** --- Normal array (array of :ref:`Vector3<class_vector3>`() normals).
+- **ARRAY_VERTEX** = **0** --- Vertex array (array of :ref:`Vector3<class_vector3>` vertices).
+- **ARRAY_NORMAL** = **1** --- Normal array (array of :ref:`Vector3<class_vector3>` normals).
 - **ARRAY_TANGENT** = **2** --- Tangent array, array of groups of 4 floats. first 3 floats determine the tangent, and the last the binormal direction as -1 or 1.
-- **ARRAY_COLOR** = **3** --- Vertex array (array of :ref:`Color<class_color>`() colors).
-- **ARRAY_TEX_UV** = **4** --- UV array (array of :ref:`Vector3<class_vector3>`() UVs or float array of groups of 2 floats (u,v)).
-- **ARRAY_TEX_UV2** = **5** --- Second UV array (array of :ref:`Vector3<class_vector3>`() UVs or float array of groups of 2 floats (u,v)).
+- **ARRAY_COLOR** = **3** --- Vertex array (array of :ref:`Color<class_color>` colors).
+- **ARRAY_TEX_UV** = **4** --- UV array (array of :ref:`Vector3<class_vector3>` UVs or float array of groups of 2 floats (u,v)).
+- **ARRAY_TEX_UV2** = **5** --- Second UV array (array of :ref:`Vector3<class_vector3>` UVs or float array of groups of 2 floats (u,v)).
 - **ARRAY_BONES** = **6** --- Array of bone indices, as a float array. Each element in groups of 4 floats.
 - **ARRAY_WEIGHTS** = **7** --- Array of bone weights, as a float array. Each element in groups of 4 floats.
 - **ARRAY_INDEX** = **8** --- Array of integers, used as indices referencing vertices. No index can be beyond the vertex array size.
@@ -123,7 +126,7 @@ Member Function Description
 
 - void  **add_surface**  **(** :ref:`int<class_int>` primitive, :ref:`Array<class_array>` arrays, :ref:`Array<class_array>` morph_arrays=Array(), :ref:`bool<class_bool>` alphasort=false  **)**
 
-Create a new surface (:ref:`get_surface_count<Mesh_get_surface_count>` that will become surf_idx for this.
+Create a new surface (:ref:`get_surface_count<class_Mesh_get_surface_count>` that will become surf_idx for this.
 
 Surfaces are created to be rendered using a "primitive", which may be PRIMITIVE_POINTS, PRIMITIVE_LINES, PRIMITIVE_LINE_STRIP, PRIMITIVE_LINE_LOOP, PRIMITIVE_TRIANGLES, PRIMITIVE_TRIANGLE_STRIP, PRIMITIVE_TRIANGLE_FAN. (As a note, when using indices, it is recommended to only use just points, lines or triangles).
 
@@ -145,25 +148,25 @@ Remove a surface at position surf_idx, shifting greater surfaces one surf_idx sl
 
 - :ref:`int<class_int>`  **surface_get_array_len**  **(** :ref:`int<class_int>` surf_idx  **)** const
 
-Return the length in vertices of the vertex array in the requested surface (see :ref:`add_surface<Mesh_add_surface>`).
+Return the length in vertices of the vertex array in the requested surface (see :ref:`add_surface<class_Mesh_add_surface>`).
 
 .. _class_Mesh_surface_get_array_index_len:
 
 - :ref:`int<class_int>`  **surface_get_array_index_len**  **(** :ref:`int<class_int>` surf_idx  **)** const
 
-Return the length in indices of the index array in the requested surface (see :ref:`add_surface<Mesh_add_surface>`).
+Return the length in indices of the index array in the requested surface (see :ref:`add_surface<class_Mesh_add_surface>`).
 
 .. _class_Mesh_surface_get_format:
 
 - :ref:`int<class_int>`  **surface_get_format**  **(** :ref:`int<class_int>` surf_idx  **)** const
 
-Return the format mask of the requested surface (see :ref:`add_surface<Mesh_add_surface>`).
+Return the format mask of the requested surface (see :ref:`add_surface<class_Mesh_add_surface>`).
 
 .. _class_Mesh_surface_get_primitive_type:
 
 - :ref:`int<class_int>`  **surface_get_primitive_type**  **(** :ref:`int<class_int>` surf_idx  **)** const
 
-Return the primitive type of the requested surface (see :ref:`add_surface<Mesh_add_surface>`).
+Return the primitive type of the requested surface (see :ref:`add_surface<class_Mesh_add_surface>`).
 
 .. _class_Mesh_surface_set_material:
 

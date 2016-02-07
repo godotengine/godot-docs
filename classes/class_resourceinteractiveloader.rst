@@ -3,9 +3,12 @@
 ResourceInteractiveLoader
 =========================
 
-**Inherits:** :ref:`Reference<class_reference>`
+**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Interactive Resource Loader.
 
@@ -42,7 +45,7 @@ Return the loaded resource (only if loaded). Otherwise, returns null.
 
 - :ref:`int<class_int>`  **poll**  **(** **)**
 
-Poll the load. If OK is returned, this means poll will have to be called again. If ERR_EOF is returned, them the load has finished and the resource can be obtained by calling :ref:`get_resource<class_get_resource>`.
+Poll the load. If OK is returned, this means poll will have to be called again. If ERR_EOF is returned, them the load has finished and the resource can be obtained by calling :ref:`get_resource<class_ResourceInteractiveLoader_get_resource>`.
 
 .. _class_ResourceInteractiveLoader_wait:
 
@@ -52,12 +55,12 @@ Poll the load. If OK is returned, this means poll will have to be called again. 
 
 - :ref:`int<class_int>`  **get_stage**  **(** **)** const
 
-Return the load stage. The total amount of stages can be queried with :ref:`get_stage_count<class_get_stage_count>`
+Return the load stage. The total amount of stages can be queried with :ref:`get_stage_count<class_ResourceInteractiveLoader_get_stage_count>`
 
 .. _class_ResourceInteractiveLoader_get_stage_count:
 
 - :ref:`int<class_int>`  **get_stage_count**  **(** **)** const
 
-Return the total amount of stages (calls to :ref:`poll<class_poll>` ) needed to completely load this resource.
+Return the total amount of stages (calls to :ref:`poll<class_ResourceInteractiveLoader_poll>`) needed to completely load this resource.
 
 

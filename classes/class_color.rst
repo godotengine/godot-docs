@@ -5,6 +5,9 @@ Color
 
 **Category:** Built-In Types
 
+Brief Description
+-----------------
+
 Color in RGBA format.
 
 Member Functions

@@ -7,6 +7,9 @@ Physics2DDirectSpaceState
 
 **Category:** Core
 
+Brief Description
+-----------------
+
 Direct access object to a space in the :ref:`Physics2DServer<class_physics2dserver>`.
 
 Member Functions
@@ -60,7 +63,7 @@ normal: normal of the object at the point where the ray was stopped.
 
 shape: shape index of the object agaisnt which the ray was stopped.
 
-collider_: collider agaisnt which the ray was stopped.
+collider\_: collider agaisnt which the ray was stopped.
 
 collider_id: collider id of the object agaisnt which the ray was stopped.
 

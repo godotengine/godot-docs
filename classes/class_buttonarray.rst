@@ -3,9 +3,14 @@
 ButtonArray
 ===========
 
-**Inherits:** :ref:`Control<class_control>`
+**Inherits:** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`HButtonArray<class_hbuttonarray>`, :ref:`VButtonArray<class_vbuttonarray>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Array of Buttons.
 

@@ -3,9 +3,12 @@
 StyleBoxImageMask
 =================
 
-**Inherits:** :ref:`StyleBox<class_stylebox>`
+**Inherits:** :ref:`StyleBox<class_stylebox>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Image mask based StyleBox, for mask test.
 
@@ -44,7 +47,7 @@ Set the image used for mask testing. Pixels (converted to grey) that have a valu
 
 - :ref:`Image<class_image>`  **get_image**  **(** **)** const
 
-Return the image used for mask testing. (see :ref:`set_imag<StyleBoxImageMask_set_imag>`).
+Return the image used for mask testing. (see :ref:`set_image<class_StyleBoxImageMask_set_image>`).
 
 .. _class_StyleBoxImageMask_set_expand:
 

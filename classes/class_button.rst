@@ -3,9 +3,14 @@
 Button
 ======
 
-**Inherits:** :ref:`BaseButton<class_basebutton>`
+**Inherits:** :ref:`BaseButton<class_basebutton>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`OptionButton<class_optionbutton>`, :ref:`ColorPickerButton<class_colorpickerbutton>`, :ref:`CheckButton<class_checkbutton>`, :ref:`MenuButton<class_menubutton>`, :ref:`ToolButton<class_toolbutton>`, :ref:`CheckBox<class_checkbox>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Standard themed Button.
 
@@ -78,7 +83,7 @@ Set the *clip_text* property of a Button. When this property is enabled, text th
 
 - :ref:`bool<class_bool>`  **get_clip_text**  **(** **)** const
 
-Return the state of the *clip_text* property (see :ref:`set_clip_text<Button_set_clip_text>`)
+Return the state of the *clip_text* property (see :ref:`set_clip_text<class_Button_set_clip_text>`)
 
 .. _class_Button_set_text_align:
 
@@ -92,6 +97,6 @@ Return the state of the *clip_text* property (see :ref:`set_clip_text<Button_set
 
 - :ref:`bool<class_bool>`  **is_flat**  **(** **)** const
 
-Return the state of the *flat* property (see :ref:`set_flat<Button_set_flat>`)
+Return the state of the *flat* property (see :ref:`set_flat<class_Button_set_flat>`)
 
 

@@ -5,6 +5,9 @@ Rect2
 
 **Category:** Built-In Types
 
+Brief Description
+-----------------
+
 2D Axis-aligned bounding box.
 
 Member Functions

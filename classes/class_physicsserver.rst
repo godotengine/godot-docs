@@ -5,7 +5,12 @@ PhysicsServer
 
 **Inherits:** :ref:`Object<class_object>`
 
+**Inherited By:** :ref:`PhysicsServerSW<class_physicsserversw>`
+
 **Category:** Core
+
+Brief Description
+-----------------
 
 
 

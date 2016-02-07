@@ -5,6 +5,9 @@
 
 **Category:** Core
 
+Brief Description
+-----------------
+
 Built-in GDScript functions.
 
 Member Functions

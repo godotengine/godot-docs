@@ -3,9 +3,12 @@
 Sample
 ======
 
-**Inherits:** :ref:`Resource<class_resource>`
+**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Audio sample (sound) class.
 
@@ -92,13 +95,13 @@ Return the sample length in samples. Stereo samples count as one, even if they a
 
 Set sample data. Data must be little endian, no matter the host platform, and exactly as long as to fit all samples. The length of this array can be calculated as follows:
 
-Get the sample length (:ref:`get_length<Sample_get_length>`).
+Get the sample length (:ref:`get_length<class_Sample_get_length>`).
 
 If the sample format is FORMAT_PCM16, multiply it by 2.
 
 If the sample format is FORMAT_IMA_ADPCM, divide it by 2 (rounding any fraction up), then add 4.
 
-If the sample is stereo (:ref:`is_stereo<Sample_is_stereo>`), multiply it by 2.
+If the sample is stereo (:ref:`is_stereo<class_Sample_is_stereo>`), multiply it by 2.
 
 .. _class_Sample_get_data:
 

@@ -3,9 +3,14 @@
 CollisionObject
 ===============
 
-**Inherits:** :ref:`Spatial<class_spatial>`
+**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`PhysicsBody<class_physicsbody>`, :ref:`Area<class_area>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 
 

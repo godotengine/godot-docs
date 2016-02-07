@@ -5,7 +5,12 @@ IP
 
 **Inherits:** :ref:`Object<class_object>`
 
+**Inherited By:** :ref:`IP_Unix<class_ip_unix>`
+
 **Category:** Core
+
+Brief Description
+-----------------
 
 IP Protocol support functions.
 
@@ -66,7 +71,7 @@ Return the status of hostname queued for resolving, given it's queue ID. Returne
 
 - :ref:`String<class_string>`  **get_resolve_item_address**  **(** :ref:`int<class_int>` id  **)** const
 
-Return a resolved item address, or an empty string if an error happened or resolution didn't happen yet (see :ref:`get_resolve_item_status<IP_get_resolve_item_status>`).
+Return a resolved item address, or an empty string if an error happened or resolution didn't happen yet (see :ref:`get_resolve_item_status<class_IP_get_resolve_item_status>`).
 
 .. _class_IP_erase_resolve_item:
 

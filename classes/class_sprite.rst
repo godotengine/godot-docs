@@ -3,9 +3,12 @@
 Sprite
 ======
 
-**Inherits:** :ref:`Node2D<class_node2d>`
+**Inherits:** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 General purpose Sprite node.
 
@@ -177,7 +180,7 @@ Set the amount of vertical frames and converts the sprite into a sprite-sheet. T
 
 - :ref:`int<class_int>`  **get_vframes**  **(** **)** const
 
-Return the amount of vertical frames. See :ref:`set_vframes<class_set_vframes>`.
+Return the amount of vertical frames. See :ref:`set_vframes<class_Sprite_set_vframes>`.
 
 .. _class_Sprite_set_hframes:
 
@@ -189,7 +192,7 @@ Set the amount of horizontal frames and converts the sprite into a sprite-sheet.
 
 - :ref:`int<class_int>`  **get_hframes**  **(** **)** const
 
-Return the amount of horizontal frames. See :ref:`set_hframes<class_set_hframes>`.
+Return the amount of horizontal frames. See :ref:`set_hframes<class_Sprite_set_hframes>`.
 
 .. _class_Sprite_set_modulate:
 

@@ -3,7 +3,12 @@
 Object
 ======
 
+**Inherited By:** :ref:`Reference<class_reference>`, :ref:`Physics2DServer<class_physics2dserver>`, :ref:`Input<class_input>`, :ref:`SpatialSound2DServer<class_spatialsound2dserver>`, :ref:`Node<class_node>`, :ref:`Geometry<class_geometry>`, :ref:`TreeItem<class_treeitem>`, :ref:`PhysicsDirectSpaceState<class_physicsdirectspacestate>`, :ref:`Physics2DDirectSpaceState<class_physics2ddirectspacestate>`, :ref:`MainLoop<class_mainloop>`, :ref:`InputMap<class_inputmap>`, :ref:`UndoRedo<class_undoredo>`, :ref:`PhysicsServer<class_physicsserver>`, :ref:`ResourceSaver<class_resourcesaver>`, :ref:`Performance<class_performance>`, :ref:`PathRemap<class_pathremap>`, :ref:`ResourceLoader<class_resourceloader>`, :ref:`AudioServer<class_audioserver>`, :ref:`SpatialSoundServer<class_spatialsoundserver>`, :ref:`IP<class_ip>`, :ref:`VisualServer<class_visualserver>`, :ref:`OS<class_os>`, :ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>`, :ref:`Globals<class_globals>`, :ref:`PhysicsDirectBodyState<class_physicsdirectbodystate>`, :ref:`TranslationServer<class_translationserver>`
+
 **Category:** Core
+
+Brief Description
+-----------------
 
 Base class for all non built-in types.
 
@@ -111,13 +116,13 @@ Description
 
 Base class for all non built-in types. Everything not a built-in type starts the inheritance chain from this class.
 
-Objects do not manage memory, if inheriting from one the object will most likely have to be deleted manually (call the :ref:`free<Object_free>` function from the script or delete from C++).
+Objects do not manage memory, if inheriting from one the object will most likely have to be deleted manually (call the :ref:`free<class_Object_free>` function from the script or delete from C++).
 
 Some derivates add memory management, such as :ref:`Reference<class_reference>` (which keps a reference count and deletes itself automatically when no longer referenced) and :ref:`Node<class_node>`, which deletes the children tree when deleted.
 
-Objects export properties, which are mainly useful for storage and editing, but not really so much in programming. Properties are exported in :ref:`_get_property_list<Object__get_property_list>` and handled in :ref:`_get<Object__get>` and :ref:`_set<class__set>`. However, scripting languages and C++ have simper means to export them.
+Objects export properties, which are mainly useful for storage and editing, but not really so much in programming. Properties are exported in :ref:`_get_property_list<class_Object__get_property_list>` and handled in :ref:`_get<class_Object__get>` and :ref:`_set<class_Object__set>`. However, scripting languages and C++ have simper means to export them.
 
-Objects also receive notifications (:ref:`_notification<Object__notification>`). Notifications are a simple way to notify the object about simple events, so they can all be handled together.
+Objects also receive notifications (:ref:`_notification<class_Object__notification>`). Notifications are a simple way to notify the object about simple events, so they can all be handled together.
 
 Member Function Description
 ---------------------------
@@ -286,7 +291,7 @@ Return the list of signals as an array of dictionaries.
 
 - :ref:`int<class_int>`  **connect**  **(** :ref:`String<class_string>` signal, :ref:`Object<class_object>` target, :ref:`String<class_string>` method, :ref:`Array<class_array>` binds=Array(), :ref:`int<class_int>` flags=0  **)**
 
-Connect a signal to a method at a target (member function). Binds are optional and are passed as extra arguments to the call. Flags specify optional deferred or one shot connections, see enum CONNECT\_\*. A signal can only be connected once to a method, and it will throw an error if already connected. If you want to avoid this, use :ref:`is_connected<Object_is_connected>` to check.
+Connect a signal to a method at a target (member function). Binds are optional and are passed as extra arguments to the call. Flags specify optional deferred or one shot connections, see enum CONNECT\_\*. A signal can only be connected once to a method, and it will throw an error if already connected. If you want to avoid this, use :ref:`is_connected<class_Object_is_connected>` to check.
 
 .. _class_Object_disconnect:
 
@@ -338,7 +343,7 @@ Deprecated, will go away.
 
 - :ref:`String<class_string>`  **tr**  **(** :ref:`String<class_string>` message  **)** const
 
-Translate a message. Only works in message translation is enabled (which is by default). See :ref:`set_message_translation<Object_set_message_translation>`.
+Translate a message. Only works in message translation is enabled (which is by default). See :ref:`set_message_translation<class_Object_set_message_translation>`.
 
 .. _class_Object_is_queued_for_deletion:
 

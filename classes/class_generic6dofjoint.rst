@@ -3,9 +3,12 @@
 Generic6DOFJoint
 ================
 
-**Inherits:** :ref:`Joint<class_joint>`
+**Inherits:** :ref:`Joint<class_joint>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 
 

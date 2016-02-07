@@ -3,9 +3,14 @@
 Shape2D
 =======
 
-**Inherits:** :ref:`Resource<class_resource>`
+**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`RayShape2D<class_rayshape2d>`, :ref:`CapsuleShape2D<class_capsuleshape2d>`, :ref:`LineShape2D<class_lineshape2d>`, :ref:`CircleShape2D<class_circleshape2d>`, :ref:`ConcavePolygonShape2D<class_concavepolygonshape2d>`, :ref:`ConvexPolygonShape2D<class_convexpolygonshape2d>`, :ref:`RectangleShape2D<class_rectangleshape2d>`, :ref:`SegmentShape2D<class_segmentshape2d>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Base class for all 2D Shapes.
 

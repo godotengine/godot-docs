@@ -3,9 +3,12 @@
 RegEx
 =====
 
-**Inherits:** :ref:`Reference<class_reference>`
+**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Simple regular expression matcher.
 
@@ -80,13 +83,13 @@ Compiles and assign the regular expression pattern to use. The limit on the numb
 
 - :ref:`int<class_int>`  **find**  **(** :ref:`String<class_string>` text, :ref:`int<class_int>` start=0, :ref:`int<class_int>` end=-1  **)** const
 
-This method tries to find the pattern within the string, and returns the position where it was found. It also stores any capturing group (see :ref:`get_capture<RegEx_get_capture>`) for further retrieval.
+This method tries to find the pattern within the string, and returns the position where it was found. It also stores any capturing group (see :ref:`get_capture<class_RegEx_get_capture>`) for further retrieval.
 
 .. _class_RegEx_clear:
 
 - void  **clear**  **(** **)**
 
-This method resets the state of the object, as it was freshly created. Namely, it unassigns the regular expression of this object, and forgets all captures made by the last :ref:`find<RegEx_find>`.
+This method resets the state of the object, as it was freshly created. Namely, it unassigns the regular expression of this object, and forgets all captures made by the last :ref:`find<class_RegEx_find>`.
 
 .. _class_RegEx_is_valid:
 

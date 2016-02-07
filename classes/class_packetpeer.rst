@@ -3,9 +3,14 @@
 PacketPeer
 ==========
 
-**Inherits:** :ref:`Reference<class_reference>`
+**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`PacketPeerStream<class_packetpeerstream>`, :ref:`PacketPeerUDP<class_packetpeerudp>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Abstraction and base class for packet-based protocols.
 

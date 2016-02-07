@@ -3,9 +3,12 @@
 PhysicsDirectBodyStateSW
 ========================
 
-**Inherits:** :ref:`PhysicsDirectBodyState<class_physicsdirectbodystate>`
+**Inherits:** :ref:`PhysicsDirectBodyState<class_physicsdirectbodystate>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 
 

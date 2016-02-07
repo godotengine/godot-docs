@@ -5,6 +5,9 @@ InputEvent
 
 **Category:** Built-In Types
 
+Brief Description
+-----------------
+
 Built-in input event data.
 
 Member Functions

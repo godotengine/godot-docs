@@ -7,6 +7,9 @@ ResourceSaver
 
 **Category:** Core
 
+Brief Description
+-----------------
+
 Resource Saving Interface.
 
 Member Functions

@@ -5,6 +5,9 @@ Vector2
 
 **Category:** Built-In Types
 
+Brief Description
+-----------------
+
 Vector used for 2D Math.
 
 Member Functions

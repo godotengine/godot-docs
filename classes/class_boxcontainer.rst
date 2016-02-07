@@ -3,9 +3,14 @@
 BoxContainer
 ============
 
-**Inherits:** :ref:`Container<class_container>`
+**Inherits:** :ref:`Container<class_container>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`VBoxContainer<class_vboxcontainer>`, :ref:`ButtonGroup<class_buttongroup>`, :ref:`HBoxContainer<class_hboxcontainer>`, :ref:`ColorPicker<class_colorpicker>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Base class for Box containers.
 

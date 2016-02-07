@@ -5,7 +5,12 @@ Input
 
 **Inherits:** :ref:`Object<class_object>`
 
+**Inherited By:** :ref:`InputDefault<class_inputdefault>`
+
 **Category:** Core
+
+Brief Description
+-----------------
 
 
 

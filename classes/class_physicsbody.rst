@@ -3,9 +3,14 @@
 PhysicsBody
 ===========
 
-**Inherits:** :ref:`CollisionObject<class_collisionobject>`
+**Inherits:** :ref:`CollisionObject<class_collisionobject>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`VehicleBody<class_vehiclebody>`, :ref:`KinematicBody<class_kinematicbody>`, :ref:`StaticBody<class_staticbody>`, :ref:`RigidBody<class_rigidbody>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Base class for different types of Physics bodies.
 

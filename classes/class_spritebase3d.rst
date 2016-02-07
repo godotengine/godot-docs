@@ -3,9 +3,14 @@
 SpriteBase3D
 ============
 
-**Inherits:** :ref:`GeometryInstance<class_geometryinstance>`
+**Inherits:** :ref:`GeometryInstance<class_geometryinstance>` **<** :ref:`VisualInstance<class_visualinstance>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`AnimatedSprite3D<class_animatedsprite3d>`, :ref:`Sprite3D<class_sprite3d>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 
 

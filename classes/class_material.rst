@@ -3,9 +3,14 @@
 Material
 ========
 
-**Inherits:** :ref:`Resource<class_resource>`
+**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`ShaderMaterial<class_shadermaterial>`, :ref:`FixedMaterial<class_fixedmaterial>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Abstract base :ref:`Resource<class_resource>` for coloring and shading geometry.
 

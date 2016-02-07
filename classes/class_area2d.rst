@@ -3,9 +3,12 @@
 Area2D
 ======
 
-**Inherits:** :ref:`CollisionObject2D<class_collisionobject2d>`
+**Inherits:** :ref:`CollisionObject2D<class_collisionobject2d>` **<** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 General purpose area detection and influence for 2D physics.
 
@@ -124,7 +127,7 @@ Return the space override mode.
 
 - void  **set_gravity_is_point**  **(** :ref:`bool<class_bool>` enable  **)**
 
-When overriding space parameters, this method sets whether this area has a center of gravity. To set/get the location of the center of gravity, use :ref:`set_gravity_vector<Area2D_set_gravity_vector>`/:ref:`get_gravity_vector<Area2D_get_gravity_vector>`.
+When overriding space parameters, this method sets whether this area has a center of gravity. To set/get the location of the center of gravity, use :ref:`set_gravity_vector<class_Area2D_set_gravity_vector>`/:ref:`get_gravity_vector<class_Area2D_get_gravity_vector>`.
 
 .. _class_Area2D_is_gravity_a_point:
 
@@ -150,13 +153,13 @@ Return the falloff factor for point gravity.
 
 Set the gravity vector. This vector does not have to be normalized.
 
-If gravity is a point (see :ref:`is_gravity_a_point<Area2D_is_gravity_a_point>`), this will be the attraction center.
+If gravity is a point (see :ref:`is_gravity_a_point<class_Area2D_is_gravity_a_point>`), this will be the attraction center.
 
 .. _class_Area2D_get_gravity_vector:
 
 - :ref:`Vector2<class_vector2>`  **get_gravity_vector**  **(** **)** const
 
-Return the gravity vector. If gravity is a point (see :ref:`is_gravity_a_point<Area2D_is_gravity_a_point>`), this will be the attraction center.
+Return the gravity vector. If gravity is a point (see :ref:`is_gravity_a_point<class_Area2D_is_gravity_a_point>`), this will be the attraction center.
 
 .. _class_Area2D_set_gravity:
 
@@ -164,7 +167,7 @@ Return the gravity vector. If gravity is a point (see :ref:`is_gravity_a_point<A
 
 Set the gravity intensity. This is useful to alter the force of gravity without altering its direction.
 
-This value multiplies the gravity vector, whether it is the given vector (:ref:`set_gravity_vector<Area2D_set_gravity_vector>`), or a calculated one (when using a center of gravity).
+This value multiplies the gravity vector, whether it is the given vector (:ref:`set_gravity_vector<class_Area2D_set_gravity_vector>`), or a calculated one (when using a center of gravity).
 
 .. _class_Area2D_get_gravity:
 
@@ -232,7 +235,7 @@ Return the physics layers this area can scan for collisions.
 
 Set the physics layers this area is in.
 
-Collidable objects can exist in any of 32 different layers. These layers are not visual, but more of a tagging system instead. A collidable can use these layers/tags to select with which objects it can collide, using :ref:`set_collision_mask<Area2D_set_collision_mask>`.
+Collidable objects can exist in any of 32 different layers. These layers are not visual, but more of a tagging system instead. A collidable can use these layers/tags to select with which objects it can collide, using :ref:`set_collision_mask<class_Area2D_set_collision_mask>`.
 
 A contact is detected if object A is in any of the layers that object B scans, or object B is in any layer scanned by object A.
 

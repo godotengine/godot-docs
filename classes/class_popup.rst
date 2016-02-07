@@ -3,9 +3,14 @@
 Popup
 =====
 
-**Inherits:** :ref:`Control<class_control>`
+**Inherits:** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`PopupPanel<class_popuppanel>`, :ref:`PopupDialog<class_popupdialog>`, :ref:`PopupMenu<class_popupmenu>`, :ref:`WindowDialog<class_windowdialog>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Base container control for popups and dialogs.
 

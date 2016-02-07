@@ -5,7 +5,12 @@ Node
 
 **Inherits:** :ref:`Object<class_object>`
 
+**Inherited By:** :ref:`Viewport<class_viewport>`, :ref:`Timer<class_timer>`, :ref:`CanvasLayer<class_canvaslayer>`, :ref:`EventPlayer<class_eventplayer>`, :ref:`SoundRoomParams<class_soundroomparams>`, :ref:`Spatial<class_spatial>`, :ref:`AnimationPlayer<class_animationplayer>`, :ref:`EditorPlugin<class_editorplugin>`, :ref:`ResourcePreloader<class_resourcepreloader>`, :ref:`AnimationTreePlayer<class_animationtreeplayer>`, :ref:`SamplePlayer<class_sampleplayer>`, :ref:`InstancePlaceholder<class_instanceplaceholder>`, :ref:`StreamPlayer<class_streamplayer>`, :ref:`CanvasItem<class_canvasitem>`, :ref:`Tween<class_tween>`
+
 **Category:** Core
+
+Brief Description
+-----------------
 
 Base class for all the "Scene" elements.
 
@@ -157,7 +162,7 @@ Numeric Constants
 - **NOTIFICATION_MOVED_IN_PARENT** = **12**
 - **NOTIFICATION_READY** = **13**
 - **NOTIFICATION_FIXED_PROCESS** = **16**
-- **NOTIFICATION_PROCESS** = **17** --- Notification received every frame when the process flag is set (see :ref:`set_process<Node_set_process>`).
+- **NOTIFICATION_PROCESS** = **17** --- Notification received every frame when the process flag is set (see :ref:`set_process<class_Node_set_process>`).
 - **NOTIFICATION_PARENTED** = **18** --- Notification received when a node is set as a child of another node. Note that this doesn't mean that a node entered the Scene Tree.
 - **NOTIFICATION_UNPARENTED** = **19** --- Notification received when a node is unparented (parent removed it from the list of children).
 - **NOTIFICATION_PAUSED** = **14**
@@ -180,9 +185,9 @@ A node can contain any number of nodes as a children (but there is only one tree
 
 Nodes can, optionally, be added to groups. This makes it easy to reach a number of nodes from the code (for example an "enemies" group).
 
-Nodes can be set to "process" state, so they constantly receive a callback requesting them to process (do anything). Normal processing (:ref:`_process<Node__process>`) happens as fast as possible and is dependent on the frame rate, so the processing time delta is variable. Fixed processing (:ref:`_fixed_process<Node__fixed_process>`) happens a fixed amount of times per second (by default 60) and is useful to link itself to the physics.
+Nodes can be set to "process" state, so they constantly receive a callback requesting them to process (do anything). Normal processing (:ref:`_process<class_Node__process>`) happens as fast as possible and is dependent on the frame rate, so the processing time delta is variable. Fixed processing (:ref:`_fixed_process<class_Node__fixed_process>`) happens a fixed amount of times per second (by default 60) and is useful to link itself to the physics.
 
-Nodes can also process input events. When set, the :ref:`_input<Node__input>` function will be called with every input that the program receives. Since this is usually too overkill (unless used for simple projects), an :ref:`_unhandled_input<Node__unhandled_input>` function is called when the input was not handled by anyone else (usually, GUI :ref:`Control<class_control>` nodes).
+Nodes can also process input events. When set, the :ref:`_input<class_Node__input>` function will be called with every input that the program receives. Since this is usually too overkill (unless used for simple projects), an :ref:`_unhandled_input<class_Node__unhandled_input>` function is called when the input was not handled by anyone else (usually, GUI :ref:`Control<class_control>` nodes).
 
 To keep track of the scene hieararchy (specially when instancing scenes into scenes) an "owner" can be set to a node. This keeps track of who instanced what. This is mostly useful when writing editors and tools, though.
 
@@ -209,7 +214,7 @@ Called for fixed processing (synced to the physics).
 
 - void  **_input**  **(** :ref:`InputEvent<class_inputevent>` event  **)** virtual
 
-Called when any input happens (also must enable with :ref:`set_process_input<Node_set_process_input>` or the property).
+Called when any input happens (also must enable with :ref:`set_process_input<class_Node_set_process_input>` or the property).
 
 .. _class_Node__process:
 
@@ -227,7 +232,7 @@ Called when ready (entered scene and children entered too).
 
 - void  **_unhandled_input**  **(** :ref:`InputEvent<class_inputevent>` event  **)** virtual
 
-Called when any input happens that was not handled by something else (also must enable with :ref:`set_process_unhandled_input<Node_set_process_unhandled_input>` or the property).
+Called when any input happens that was not handled by something else (also must enable with :ref:`set_process_unhandled_input<class_Node_set_process_unhandled_input>` or the property).
 
 .. _class_Node__unhandled_key_input:
 
@@ -275,7 +280,7 @@ Return the amount of children nodes.
 
 - :ref:`Node<class_node>`  **get_child**  **(** :ref:`int<class_int>` idx  **)** const
 
-Return a children node by it's index (see :ref:`get_child_count<Node_get_child_count>`). This method is often used for iterating all children of a node.
+Return a children node by it's index (see :ref:`get_child_count<class_Node_get_child_count>`). This method is often used for iterating all children of a node.
 
 .. _class_Node_has_node:
 
@@ -287,7 +292,7 @@ Return a children node by it's index (see :ref:`get_child_count<Node_get_child_c
 
 Fetch a node. NodePath must be valid (or else error will occur) and can be either the path to child node, a relative path (from the current node to another node), or an absolute path to a node.
 
-Note: fetching absolute paths only works when the node is inside the scene tree (see :ref:`is_inside_scene<Node_is_inside_scene>`). Examples. Assume your current node is Character and following tree:
+Note: fetching absolute paths only works when the node is inside the scene tree (see :ref:`is_inside_scene<class_Node_is_inside_scene>`). Examples. Assume your current node is Character and following tree:
 
 
 
@@ -357,7 +362,7 @@ Return *true* if "node" occurs later in the scene hierarchy than the current nod
 
 - :ref:`NodePath<class_nodepath>`  **get_path**  **(** **)** const
 
-Return the absolute path of the current node. This only works if the curent node is inside the scene tree (see :ref:`is_inside_scene<Node_is_inside_scene>`).
+Return the absolute path of the current node. This only works if the curent node is inside the scene tree (see :ref:`is_inside_scene<class_Node_is_inside_scene>`).
 
 .. _class_Node_get_path_to:
 
@@ -369,7 +374,7 @@ Return the relative path from the current node to the specified node in "node" a
 
 - void  **add_to_group**  **(** :ref:`String<class_string>` group, :ref:`bool<class_bool>` persistent=false  **)**
 
-Add a node to a group. Groups are helpers to name and organize group of nodes, like for example: "Enemies", "Collectables", etc. A :ref:`Node<class_node>` can be in any number of groups. Nodes can be assigned a group at any time, but will not be added to it until they are inside the scene tree (see :ref:`is_inside_scene<Node_is_inside_scene>`).
+Add a node to a group. Groups are helpers to name and organize group of nodes, like for example: "Enemies", "Collectables", etc. A :ref:`Node<class_node>` can be in any number of groups. Nodes can be assigned a group at any time, but will not be added to it until they are inside the scene tree (see :ref:`is_inside_scene<class_Node_is_inside_scene>`).
 
 .. _class_Node_remove_from_group:
 
@@ -407,7 +412,7 @@ Set the node owner. A node can have any other node as owner (as long as a valid 
 
 - :ref:`Node<class_node>`  **get_owner**  **(** **)** const
 
-Get the node owner (see :ref:`set_node_owner<Node_set_node_owner>`).
+Get the node owner (see :ref:`set_node_owner<class_Node_set_node_owner>`).
 
 .. _class_Node_remove_and_skip:
 
@@ -437,7 +442,7 @@ A node can contain a filename. This filename should not be changed by the user, 
 
 - :ref:`String<class_string>`  **get_filename**  **(** **)** const
 
-Return a filename that may be containedA node can contained by the node. When a scene is instanced from a file, it topmost node contains the filename from where it was loaded (see :ref:`set_filename<Node_set_filename>`).
+Return a filename that may be containedA node can contained by the node. When a scene is instanced from a file, it topmost node contains the filename from where it was loaded (see :ref:`set_filename<class_Node_set_filename>`).
 
 .. _class_Node_propagate_notification:
 
@@ -449,7 +454,7 @@ Notify the current node and all its chldren recursively by calling notification(
 
 - void  **set_fixed_process**  **(** :ref:`bool<class_bool>` enable  **)**
 
-Enables or disables node fixed framerate processing. When a node is being processed, it will receive a NOTIFICATION_PROCESS at a fixed (usually 60fps, check :ref:`OS<class_os>` to change that) interval (and the :ref:`_fixed_process<Node__fixed_process>` callback will be called if exists). It is common to check how much time was elapsed since the previous frame by calling :ref:`get_fixed_process_time<Node_get_fixed_process_time>`.
+Enables or disables node fixed framerate processing. When a node is being processed, it will receive a NOTIFICATION_PROCESS at a fixed (usually 60fps, check :ref:`OS<class_os>` to change that) interval (and the :ref:`_fixed_process<class_Node__fixed_process>` callback will be called if exists). It is common to check how much time was elapsed since the previous frame by calling :ref:`get_fixed_process_time<class_Node_get_fixed_process_time>`.
 
 .. _class_Node_get_fixed_process_delta_time:
 
@@ -461,13 +466,13 @@ Return the time elapsed since the last fixed frame. This is always the same in f
 
 - :ref:`bool<class_bool>`  **is_fixed_processing**  **(** **)** const
 
-Return true if fixed processing is enabled (see :ref:`set_fixed_process<Node_set_fixed_process>`).
+Return true if fixed processing is enabled (see :ref:`set_fixed_process<class_Node_set_fixed_process>`).
 
 .. _class_Node_set_process:
 
 - void  **set_process**  **(** :ref:`bool<class_bool>` enable  **)**
 
-Enables or disables node processing. When a node is being processed, it will receive a NOTIFICATION_PROCESS on every drawn frame (and the :ref:`_process<Node__process>` callback will be called if exists). It is common to check how much time was elapsed since the previous frame by calling :ref:`get_process_time<Node_get_process_time>`.
+Enables or disables node processing. When a node is being processed, it will receive a NOTIFICATION_PROCESS on every drawn frame (and the :ref:`_process<class_Node__process>` callback will be called if exists). It is common to check how much time was elapsed since the previous frame by calling :ref:`get_process_time<class_Node_get_process_time>`.
 
 .. _class_Node_get_process_delta_time:
 
@@ -479,31 +484,31 @@ Return the time elapsed (in seconds) since the last process callback. This is al
 
 - :ref:`bool<class_bool>`  **is_processing**  **(** **)** const
 
-Return whether processing is enabled in the current node (see :ref:`set_process<Node_set_process>`).
+Return whether processing is enabled in the current node (see :ref:`set_process<class_Node_set_process>`).
 
 .. _class_Node_set_process_input:
 
 - void  **set_process_input**  **(** :ref:`bool<class_bool>` enable  **)**
 
-Enable input processing for node. This is not requiered for GUI controls! It hooks up the node to receive all input (see :ref:`_input<Node__input>`).
+Enable input processing for node. This is not requiered for GUI controls! It hooks up the node to receive all input (see :ref:`_input<class_Node__input>`).
 
 .. _class_Node_is_processing_input:
 
 - :ref:`bool<class_bool>`  **is_processing_input**  **(** **)** const
 
-Return true if the node is processing input (see :ref:`set_process_input<Node_set_process_input>`).
+Return true if the node is processing input (see :ref:`set_process_input<class_Node_set_process_input>`).
 
 .. _class_Node_set_process_unhandled_input:
 
 - void  **set_process_unhandled_input**  **(** :ref:`bool<class_bool>` enable  **)**
 
-Enable unhandled input processing for node. This is not requiered for GUI controls! It hooks up the node to receive all input that was not previously handled before (usually by a :ref:`Control<class_control>`). (see :ref:`_unhandled_input<Node__unhandled_input>`).
+Enable unhandled input processing for node. This is not requiered for GUI controls! It hooks up the node to receive all input that was not previously handled before (usually by a :ref:`Control<class_control>`). (see :ref:`_unhandled_input<class_Node__unhandled_input>`).
 
 .. _class_Node_is_processing_unhandled_input:
 
 - :ref:`bool<class_bool>`  **is_processing_unhandled_input**  **(** **)** const
 
-Return true if the node is processing unhandled input (see :ref:`set_process_unhandled_input<Node_set_process_unhandled_input>`).
+Return true if the node is processing unhandled input (see :ref:`set_process_unhandled_input<class_Node_set_process_unhandled_input>`).
 
 .. _class_Node_set_process_unhandled_key_input:
 

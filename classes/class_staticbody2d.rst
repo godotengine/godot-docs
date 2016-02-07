@@ -3,9 +3,12 @@
 StaticBody2D
 ============
 
-**Inherits:** :ref:`PhysicsBody2D<class_physicsbody2d>`
+**Inherits:** :ref:`PhysicsBody2D<class_physicsbody2d>` **<** :ref:`CollisionObject2D<class_collisionobject2d>` **<** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Static body for 2D Physics.
 

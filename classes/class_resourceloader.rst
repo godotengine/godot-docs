@@ -7,6 +7,9 @@ ResourceLoader
 
 **Category:** Core
 
+Brief Description
+-----------------
+
 Resource Loader.
 
 Member Functions

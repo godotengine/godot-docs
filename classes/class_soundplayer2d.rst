@@ -3,9 +3,14 @@
 SoundPlayer2D
 =============
 
-**Inherits:** :ref:`Node2D<class_node2d>`
+**Inherits:** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`SamplePlayer2D<class_sampleplayer2d>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Base class for playing spatial 2D sound.
 

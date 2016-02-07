@@ -3,9 +3,12 @@
 StreamPeerSSL
 =============
 
-**Inherits:** :ref:`StreamPeer<class_streampeer>`
+**Inherits:** :ref:`StreamPeer<class_streampeer>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 
 

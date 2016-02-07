@@ -3,9 +3,14 @@
 Slider
 ======
 
-**Inherits:** :ref:`Range<class_range>`
+**Inherits:** :ref:`Range<class_range>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`HSlider<class_hslider>`, :ref:`VSlider<class_vslider>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Base class for GUI Sliders.
 

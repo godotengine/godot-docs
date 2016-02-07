@@ -3,9 +3,12 @@
 Particles
 =========
 
-**Inherits:** :ref:`GeometryInstance<class_geometryinstance>`
+**Inherits:** :ref:`GeometryInstance<class_geometryinstance>` **<** :ref:`VisualInstance<class_visualinstance>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Particle system 3D Node
 
@@ -126,7 +129,7 @@ Set the "emitting" property state. When emitting, the particle system generates 
 
 - :ref:`bool<class_bool>`  **is_emitting**  **(** **)** const
 
-Return the "emitting" property state (see :ref:`set_emitting<Particles_set_emitting>`).
+Return the "emitting" property state (see :ref:`set_emitting<class_Particles_set_emitting>`).
 
 .. _class_Particles_set_visibility_aabb:
 

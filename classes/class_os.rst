@@ -7,6 +7,9 @@ OS
 
 **Category:** Core
 
+Brief Description
+-----------------
+
 Operating System functions.
 
 Member Functions

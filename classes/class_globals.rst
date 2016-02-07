@@ -7,6 +7,9 @@ Globals
 
 **Category:** Core
 
+Brief Description
+-----------------
+
 Contains global variables accessible from everywhere.
 
 Member Functions

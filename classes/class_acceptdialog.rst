@@ -3,9 +3,14 @@
 AcceptDialog
 ============
 
-**Inherits:** :ref:`WindowDialog<class_windowdialog>`
+**Inherits:** :ref:`WindowDialog<class_windowdialog>` **<** :ref:`Popup<class_popup>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`ConfirmationDialog<class_confirmationdialog>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Base dialog for user notification.
 

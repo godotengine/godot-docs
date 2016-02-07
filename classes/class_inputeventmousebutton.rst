@@ -5,6 +5,9 @@ InputEventMouseButton
 
 **Category:** Built-In Types
 
+Brief Description
+-----------------
+
 
 
 Member Functions

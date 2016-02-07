@@ -3,9 +3,12 @@
 VButtonArray
 ============
 
-**Inherits:** :ref:`ButtonArray<class_buttonarray>`
+**Inherits:** :ref:`ButtonArray<class_buttonarray>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Vertical button array.
 

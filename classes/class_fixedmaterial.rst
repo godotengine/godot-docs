@@ -3,9 +3,12 @@
 FixedMaterial
 =============
 
-**Inherits:** :ref:`Material<class_material>`
+**Inherits:** :ref:`Material<class_material>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Simple Material with a fixed parameter set.
 
@@ -91,13 +94,13 @@ Return a parameter, parameters are defined in the PARAM\_\* enum. The type of ea
 
 - void  **set_texture**  **(** :ref:`int<class_int>` param, :ref:`Texture<class_texture>` texture  **)**
 
-Set a texture. Textures change parameters per texel and are mapped to the model depending on the texcoord mode (see :ref:`set_texcoord_mode<FixedMaterial_set_texcoord_mode>`).
+Set a texture. Textures change parameters per texel and are mapped to the model depending on the texcoord mode (see :ref:`set_texcoord_mode<class_FixedMaterial_set_texcoord_mode>`).
 
 .. _class_FixedMaterial_get_texture:
 
 - :ref:`Texture<class_texture>`  **get_texture**  **(** :ref:`int<class_int>` param  **)** const
 
-Return a texture. Textures change parameters per texel and are mapped to the model depending on the texcoord mode (see :ref:`set_texcoord_mode<FixedMaterial_set_texcoord_mode>`).
+Return a texture. Textures change parameters per texel and are mapped to the model depending on the texcoord mode (see :ref:`set_texcoord_mode<class_FixedMaterial_set_texcoord_mode>`).
 
 .. _class_FixedMaterial_set_texcoord_mode:
 

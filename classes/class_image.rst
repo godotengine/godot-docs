@@ -5,6 +5,9 @@ Image
 
 **Category:** Built-In Types
 
+Brief Description
+-----------------
+
 Image datatype.
 
 Member Functions

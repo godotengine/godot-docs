@@ -3,9 +3,14 @@
 CanvasItem
 ==========
 
-**Inherits:** :ref:`Node<class_node>`
+**Inherits:** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`Node2D<class_node2d>`, :ref:`Control<class_control>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Base class of anything 2D.
 
@@ -206,7 +211,7 @@ Return true if this CanvasItem is visible. It may be invisible because itself or
 
 - :ref:`bool<class_bool>`  **is_hidden**  **(** **)** const
 
-Return true if this CanvasItem is hidden. Note that the CanvasItem may not be visible, but as long as it's not hidden (:ref:`hide<CanvasItem_hide>` called) the function will return false.
+Return true if this CanvasItem is hidden. Note that the CanvasItem may not be visible, but as long as it's not hidden (:ref:`hide<class_CanvasItem_hide>` called) the function will return false.
 
 .. _class_CanvasItem_show:
 
@@ -240,7 +245,7 @@ Set as toplevel. This means that it will not inherit transform from parent canva
 
 - :ref:`bool<class_bool>`  **is_set_as_toplevel**  **(** **)** const
 
-Return if set as toplevel. See :ref:`set_as_toplevel<CanvasItem_set_as_toplevel>`/
+Return if set as toplevel. See :ref:`set_as_toplevel<class_CanvasItem_set_as_toplevel>`.
 
 .. _class_CanvasItem_set_blend_mode:
 

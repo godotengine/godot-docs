@@ -5,6 +5,9 @@ Vector3Array
 
 **Category:** Built-In Types
 
+Brief Description
+-----------------
+
 An Array of Vector3.
 
 Member Functions

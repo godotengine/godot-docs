@@ -3,9 +3,14 @@
 VisualInstance
 ==============
 
-**Inherits:** :ref:`Spatial<class_spatial>`
+**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+
+**Inherited By:** :ref:`BakedLightInstance<class_bakedlightinstance>`, :ref:`Light<class_light>`, :ref:`Room<class_room>`, :ref:`BakedLightSampler<class_bakedlightsampler>`, :ref:`Portal<class_portal>`, :ref:`GeometryInstance<class_geometryinstance>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 
 

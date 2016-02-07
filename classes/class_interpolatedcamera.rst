@@ -3,9 +3,12 @@
 InterpolatedCamera
 ==================
 
-**Inherits:** :ref:`Camera<class_camera>`
+**Inherits:** :ref:`Camera<class_camera>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 
 

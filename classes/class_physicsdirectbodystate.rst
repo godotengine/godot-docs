@@ -5,7 +5,12 @@ PhysicsDirectBodyState
 
 **Inherits:** :ref:`Object<class_object>`
 
+**Inherited By:** :ref:`PhysicsDirectBodyStateSW<class_physicsdirectbodystatesw>`
+
 **Category:** Core
+
+Brief Description
+-----------------
 
 
 

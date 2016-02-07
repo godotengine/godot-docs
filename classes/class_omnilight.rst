@@ -3,9 +3,12 @@
 OmniLight
 =========
 
-**Inherits:** :ref:`Light<class_light>`
+**Inherits:** :ref:`Light<class_light>` **<** :ref:`VisualInstance<class_visualinstance>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 OmniDirectional Light, such as a lightbulb or a candle.
 

@@ -3,9 +3,12 @@
 Curve2D
 =======
 
-**Inherits:** :ref:`Resource<class_resource>`
+**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
+
+Brief Description
+-----------------
 
 Describes a Bezier curve in 2D space.
 
@@ -70,7 +73,7 @@ Returns the number of points describing the curve.
 
 Adds a point to a curve, at position "pos", with control points "in" and "out".
 
-If "atpos" is given, the point is inserted before the point number "atpos", moving that point (and every point after) after the inserted point. If "atpos" is not given, or is an illegal value (atpos <0 or atpos >= :ref:`get_point_count<Curve2D_get_point_count>`), the point will be appended at the end of the point list.
+If "atpos" is given, the point is inserted before the point number "atpos", moving that point (and every point after) after the inserted point. If "atpos" is not given, or is an illegal value (atpos <0 or atpos >= :ref:`get_point_count<class_Curve2D_get_point_count>`), the point will be appended at the end of the point list.
 
 .. _class_Curve2D_set_point_pos:
 
@@ -126,7 +129,7 @@ If "idx" is out of bounds it is truncated to the first or last vertex, and "t" i
 
 - :ref:`Vector2<class_vector2>`  **interpolatef**  **(** :ref:`float<class_float>` fofs  **)** const
 
-Returns the position at the vertex "fofs". It calls :ref:`interpolate<Curve2D_interpolate>` using the integer part of fofs as "idx", and its fractional part as "t".
+Returns the position at the vertex "fofs". It calls :ref:`interpolate<class_Curve2D_interpolate>` using the integer part of fofs as "idx", and its fractional part as "t".
 
 .. _class_Curve2D_set_bake_interval:
 
@@ -144,7 +147,7 @@ Returns the distance between two adjacent cached points.
 
 - :ref:`float<class_float>`  **get_baked_length**  **(** **)** const
 
-Returns the total length of the curve, based on the cached points. Given enough density (see :ref:`set_bake_interval<Curve2D_set_bake_interval>`), it should be approximate enough.
+Returns the total length of the curve, based on the cached points. Given enough density (see :ref:`set_bake_interval<class_Curve2D_set_bake_interval>`), it should be approximate enough.
 
 .. _class_Curve2D_interpolate_baked:
 
