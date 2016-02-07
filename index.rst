@@ -24,7 +24,7 @@ The main documentation for the site is organized into a few sections:
    tutorials/_networking
    tutorials/_plugins
    tutorials/_misc
-   asset_pipeline/index
+   tutorials/asset_pipeline/index
 
 .. toctree::
    :maxdepth: 1
