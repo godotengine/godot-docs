@@ -6,6 +6,6 @@ Scene, input & viewports
    :name: toc-scene-input-viewports
 
    viewports
-   screen_scaling_and_multiple_resolutions
-   input_events_and_actions
+   multiple_resolutions
+   inputevent
    mouse_and_input_coordinates

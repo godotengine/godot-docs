@@ -12,7 +12,7 @@ Learning step by step
    scripting_continued
    simple_2d_game
    gui_tutorial
-   creating_splash_screen
+   splash_screen
    animations
    resources
    file_system

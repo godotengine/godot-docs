@@ -7,5 +7,4 @@ Game flow
 
    pausing_the_game
    background_loading
-   using_multiple_threads
    handling_quit_request
