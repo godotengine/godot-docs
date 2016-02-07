@@ -1,0 +1,633 @@
+.. _class_Control:
+
+Control
+=======
+
+Inherits: :ref:`CanvasItem<class_canvasitem>`
+---------------------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+Control is the base node for all the GUI components.
+
+Member Functions
+----------------
+
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`_input_event<class_Control__input_event>`  **(** :ref:`InputEvent<class_inputevent>` event  **)** virtual                                                                   |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`can_drop_data<class_Control_can_drop_data>`  **(** :ref:`Vector2<class_vector2>` pos, var data  **)** virtual                                                               |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`drop_data<class_Control_drop_data>`  **(** :ref:`Vector2<class_vector2>` pos, var data  **)** virtual                                                                       |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`      | :ref:`get_drag_data<class_Control_get_drag_data>`  **(** :ref:`Vector2<class_vector2>` pos  **)** virtual                                                                         |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`    | :ref:`get_minimum_size<class_Control_get_minimum_size>`  **(** **)** virtual                                                                                                      |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`accept_event<class_Control_accept_event>`  **(** **)**                                                                                                                      |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`    | :ref:`get_minimum_size<class_Control_get_minimum_size>`  **(** **)** const                                                                                                        |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`    | :ref:`get_combined_minimum_size<class_Control_get_combined_minimum_size>`  **(** **)** const                                                                                      |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_anchor<class_Control_set_anchor>`  **(** :ref:`int<class_int>` margin, :ref:`int<class_int>` anchor_mode  **)**                                                         |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_anchor<class_Control_get_anchor>`  **(** :ref:`int<class_int>` margin  **)** const                                                                                      |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_margin<class_Control_set_margin>`  **(** :ref:`int<class_int>` margin, :ref:`float<class_float>` offset  **)**                                                          |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_anchor_and_margin<class_Control_set_anchor_and_margin>`  **(** :ref:`int<class_int>` margin, :ref:`int<class_int>` anchor_mode, :ref:`float<class_float>` offset  **)** |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_begin<class_Control_set_begin>`  **(** :ref:`Vector2<class_vector2>` pos  **)**                                                                                         |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_end<class_Control_set_end>`  **(** :ref:`Vector2<class_vector2>` pos  **)**                                                                                             |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_pos<class_Control_set_pos>`  **(** :ref:`Vector2<class_vector2>` pos  **)**                                                                                             |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_size<class_Control_set_size>`  **(** :ref:`Vector2<class_vector2>` size  **)**                                                                                          |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_custom_minimum_size<class_Control_set_custom_minimum_size>`  **(** :ref:`Vector2<class_vector2>` size  **)**                                                            |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_global_pos<class_Control_set_global_pos>`  **(** :ref:`Vector2<class_vector2>` pos  **)**                                                                               |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_rotation<class_Control_set_rotation>`  **(** :ref:`float<class_float>` rotation  **)**                                                                                  |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_scale<class_Control_set_scale>`  **(** :ref:`Vector2<class_vector2>` scale  **)**                                                                                       |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`        | :ref:`get_margin<class_Control_get_margin>`  **(** :ref:`int<class_int>` margin  **)** const                                                                                      |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`    | :ref:`get_begin<class_Control_get_begin>`  **(** **)** const                                                                                                                      |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`    | :ref:`get_end<class_Control_get_end>`  **(** **)** const                                                                                                                          |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`    | :ref:`get_pos<class_Control_get_pos>`  **(** **)** const                                                                                                                          |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`    | :ref:`get_size<class_Control_get_size>`  **(** **)** const                                                                                                                        |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`        | :ref:`get_rotation<class_Control_get_rotation>`  **(** **)** const                                                                                                                |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`    | :ref:`get_scale<class_Control_get_scale>`  **(** **)** const                                                                                                                      |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`    | :ref:`get_custom_minimum_size<class_Control_get_custom_minimum_size>`  **(** **)** const                                                                                          |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`    | :ref:`get_parent_area_size<class_Control_get_parent_area_size>`  **(** **)** const                                                                                                |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`    | :ref:`get_global_pos<class_Control_get_global_pos>`  **(** **)** const                                                                                                            |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2<class_rect2>`        | :ref:`get_rect<class_Control_get_rect>`  **(** **)** const                                                                                                                        |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2<class_rect2>`        | :ref:`get_global_rect<class_Control_get_global_rect>`  **(** **)** const                                                                                                          |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_area_as_parent_rect<class_Control_set_area_as_parent_rect>`  **(** :ref:`int<class_int>` margin=0  **)**                                                                |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`show_modal<class_Control_show_modal>`  **(** :ref:`bool<class_bool>` exclusive=false  **)**                                                                                 |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_focus_mode<class_Control_set_focus_mode>`  **(** :ref:`int<class_int>` mode  **)**                                                                                      |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`has_focus<class_Control_has_focus>`  **(** **)** const                                                                                                                      |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`grab_focus<class_Control_grab_focus>`  **(** **)**                                                                                                                          |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`release_focus<class_Control_release_focus>`  **(** **)**                                                                                                                    |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Control<class_control>`    | :ref:`get_focus_owner<class_Control_get_focus_owner>`  **(** **)** const                                                                                                          |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_h_size_flags<class_Control_set_h_size_flags>`  **(** :ref:`int<class_int>` flags  **)**                                                                                 |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_h_size_flags<class_Control_get_h_size_flags>`  **(** **)** const                                                                                                        |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_stretch_ratio<class_Control_set_stretch_ratio>`  **(** :ref:`float<class_float>` ratio  **)**                                                                           |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`        | :ref:`get_stretch_ratio<class_Control_get_stretch_ratio>`  **(** **)** const                                                                                                      |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_v_size_flags<class_Control_set_v_size_flags>`  **(** :ref:`int<class_int>` flags  **)**                                                                                 |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_v_size_flags<class_Control_get_v_size_flags>`  **(** **)** const                                                                                                        |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_theme<class_Control_set_theme>`  **(** :ref:`Theme<class_theme>` theme  **)**                                                                                           |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Theme<class_theme>`        | :ref:`get_theme<class_Control_get_theme>`  **(** **)** const                                                                                                                      |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`add_icon_override<class_Control_add_icon_override>`  **(** :ref:`String<class_string>` name, :ref:`Texture<class_texture>` texture  **)**                                   |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`add_shader_override<class_Control_add_shader_override>`  **(** :ref:`String<class_string>` name, :ref:`Shader<class_shader>` shader  **)**                                  |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`add_style_override<class_Control_add_style_override>`  **(** :ref:`String<class_string>` name, :ref:`StyleBox<class_stylebox>` stylebox  **)**                              |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`add_font_override<class_Control_add_font_override>`  **(** :ref:`String<class_string>` name, :ref:`Font<class_font>` font  **)**                                            |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`add_color_override<class_Control_add_color_override>`  **(** :ref:`String<class_string>` name, :ref:`Color<class_color>` color  **)**                                       |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`add_constant_override<class_Control_add_constant_override>`  **(** :ref:`String<class_string>` name, :ref:`int<class_int>` constant  **)**                                  |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_texture>`    | :ref:`get_icon<class_Control_get_icon>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type=""  **)** const                                                 |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`StyleBox<class_stylebox>`  | :ref:`get_stylebox<class_Control_get_stylebox>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type=""  **)** const                                         |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Font<class_font>`          | :ref:`get_font<class_Control_get_font>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type=""  **)** const                                                 |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`        | :ref:`get_color<class_Control_get_color>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type=""  **)** const                                               |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_constant<class_Control_get_constant>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type=""  **)** const                                         |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Control<class_control>`    | :ref:`get_parent_control<class_Control_get_parent_control>`  **(** **)** const                                                                                                    |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_tooltip<class_Control_set_tooltip>`  **(** :ref:`String<class_string>` tooltip  **)**                                                                                   |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`      | :ref:`get_tooltip<class_Control_get_tooltip>`  **(** :ref:`Vector2<class_vector2>` atpos=Vector2(0,0)  **)** const                                                                |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_default_cursor_shape<class_Control_set_default_cursor_shape>`  **(** :ref:`int<class_int>` shape  **)**                                                                 |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_default_cursor_shape<class_Control_get_default_cursor_shape>`  **(** **)** const                                                                                        |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_cursor_shape<class_Control_get_cursor_shape>`  **(** :ref:`Vector2<class_vector2>` pos=Vector2(0,0)  **)** const                                                        |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_focus_neighbour<class_Control_set_focus_neighbour>`  **(** :ref:`int<class_int>` margin, :ref:`NodePath<class_nodepath>` neighbour  **)**                               |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`NodePath<class_nodepath>`  | :ref:`get_focus_neighbour<class_Control_get_focus_neighbour>`  **(** :ref:`int<class_int>` margin  **)** const                                                                    |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_ignore_mouse<class_Control_set_ignore_mouse>`  **(** :ref:`bool<class_bool>` ignore  **)**                                                                              |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`is_ignoring_mouse<class_Control_is_ignoring_mouse>`  **(** **)** const                                                                                                      |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`force_drag<class_Control_force_drag>`  **(** var data, :ref:`Object<class_object>` preview  **)**                                                                           |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_stop_mouse<class_Control_set_stop_mouse>`  **(** :ref:`bool<class_bool>` stop  **)**                                                                                    |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`is_stopping_mouse<class_Control_is_stopping_mouse>`  **(** **)** const                                                                                                      |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`grab_click_focus<class_Control_grab_click_focus>`  **(** **)**                                                                                                              |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_drag_preview<class_Control_set_drag_preview>`  **(** :ref:`Control<class_control>` control  **)**                                                                       |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`warp_mouse<class_Control_warp_mouse>`  **(** :ref:`Vector2<class_vector2>` to_pos  **)**                                                                                    |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Signals
+-------
+
+-  **focus_enter**  **(** **)**
+-  **mouse_enter**  **(** **)**
+-  **resized**  **(** **)**
+-  **minimum_size_changed**  **(** **)**
+-  **size_flags_changed**  **(** **)**
+-  **focus_exit**  **(** **)**
+-  **input_event**  **(** :ref:`InputEvent<class_inputevent>` ev  **)**
+-  **modal_close**  **(** **)**
+-  **mouse_exit**  **(** **)**
+
+Numeric Constants
+-----------------
+
+- **ANCHOR_BEGIN** = **0** --- X is relative to MARGIN_LEFT, Y is relative to MARGIN_TOP.
+- **ANCHOR_END** = **1** --- X is relative to -MARGIN_RIGHT, Y is relative to -MARGIN_BOTTOM.
+- **ANCHOR_RATIO** = **2** --- X and Y are a ratio (0 to 1) relative to the parent size 0 is left/top, 1 is right/bottom.
+- **ANCHOR_CENTER** = **3**
+- **FOCUS_NONE** = **0** --- Control can't acquire focus.
+- **FOCUS_CLICK** = **1** --- Control can acquire focus only if clicked.
+- **FOCUS_ALL** = **2** --- Control can acquire focus if clicked, or by pressing TAB/Directionals in the keyboard from another Control.
+- **NOTIFICATION_RESIZED** = **40** --- Control changed size (get_size() reports the new size).
+- **NOTIFICATION_MOUSE_ENTER** = **41** --- Mouse pointer entered the area of the Control.
+- **NOTIFICATION_MOUSE_EXIT** = **42** --- Mouse pointer exited the area of the Control.
+- **NOTIFICATION_FOCUS_ENTER** = **43** --- Control gained focus.
+- **NOTIFICATION_FOCUS_EXIT** = **44** --- Control lost focus.
+- **NOTIFICATION_THEME_CHANGED** = **45** --- Theme changed. Redrawing is desired.
+- **NOTIFICATION_MODAL_CLOSE** = **46** --- Modal control was closed.
+- **CURSOR_ARROW** = **0**
+- **CURSOR_IBEAM** = **1**
+- **CURSOR_POINTING_HAND** = **2**
+- **CURSOR_CROSS** = **3**
+- **CURSOR_WAIT** = **4**
+- **CURSOR_BUSY** = **5**
+- **CURSOR_DRAG** = **6**
+- **CURSOR_CAN_DROP** = **7**
+- **CURSOR_FORBIDDEN** = **8**
+- **CURSOR_VSIZE** = **9**
+- **CURSOR_HSIZE** = **10**
+- **CURSOR_BDIAGSIZE** = **11**
+- **CURSOR_FDIAGSIZE** = **12**
+- **CURSOR_MOVE** = **13**
+- **CURSOR_VSPLIT** = **14**
+- **CURSOR_HSPLIT** = **15**
+- **CURSOR_HELP** = **16**
+- **SIZE_EXPAND** = **1**
+- **SIZE_FILL** = **2**
+- **SIZE_EXPAND_FILL** = **3**
+
+Description
+-----------
+
+Control is the base class Node for all the GUI components. Every GUI component inherits from it, directly or indirectly. In this way, sections of the scene tree made of contiguous control nodes, become user interfaces.
+
+Controls are relative to the parent position and size by using anchors and margins. This ensures that they can adapt easily in most situation to changing dialog and screen sizes. When more flexibility is desired, :ref:`Container<class_container>` derived nodes can be used.
+
+Anchors work by defining which margin do they follow, and a value relative to it. Allowed anchoring modes are ANCHOR_BEGIN, where the margin is relative to the top or left margins of the parent (in pixels), ANCHOR_END for the right and bottom margins of the parent and ANCHOR_RATIO, which is a ratio from 0 to 1 in the parent range.
+
+Input device events (:ref:`InputEvent<class_inputevent>`) are first sent to the root controls via the :ref:`Node._input<node__input>`, which distribute it through the tree, then delivers them to the adequate one (under cursor or keyboard focus based) by calling :ref:`Node._input_event<class_node._input_event>`. There is no need to enable input processing on controls to receive such events. To ensure that no one else will receive the event (not even :ref:`Node._unhandled_input<node__unhandled_input>`), the control can accept it by calling :ref:`accept_event<Control_accept_event>`.
+
+Only one control can hold the keyboard focus (receiving keyboard events), for that the control must define the focus mode with :ref:`set_focus_mode<Control_set_focus_mode>`. Focus is lost when another control gains it, or the current focus owner is hidden.
+
+It is sometimes desired for a control to ignore mouse/pointer events. This is often the case when placing other controls on top of a button, in such cases. Calling :ref:`set_ignore_mouse<Control_set_ignore_mouse>` enables this function.
+
+Finally, controls are skinned according to a :ref:`Theme<class_theme>`. Setting a :ref:`Theme<class_theme>` on a control will propagate all the skinning down the tree. Optionally, skinning can be overrided per each control by calling the add_*_override functions, or from the editor.
+
+Member Function Description
+---------------------------
+
+.. _class_Control__input_event:
+
+- void  **_input_event**  **(** :ref:`InputEvent<class_inputevent>` event  **)** virtual
+
+Called when an input event reaches the control.
+
+.. _class_Control_can_drop_data:
+
+- :ref:`bool<class_bool>`  **can_drop_data**  **(** :ref:`Vector2<class_vector2>` pos, var data  **)** virtual
+
+.. _class_Control_drop_data:
+
+- void  **drop_data**  **(** :ref:`Vector2<class_vector2>` pos, var data  **)** virtual
+
+.. _class_Control_get_drag_data:
+
+- :ref:`Object<class_object>`  **get_drag_data**  **(** :ref:`Vector2<class_vector2>` pos  **)** virtual
+
+.. _class_Control_get_minimum_size:
+
+- :ref:`Vector2<class_vector2>`  **get_minimum_size**  **(** **)** virtual
+
+Return the minimum size this Control can shrink to. A control will never be displayed or resized smaller than its minimum size.
+
+.. _class_Control_accept_event:
+
+- void  **accept_event**  **(** **)**
+
+Handles the event, no other control will receive it and it will not be sent to nodes waiting on :ref:`Node._unhandled_input<node__unhandled_input>` or :ref:`Node._unhandled_key_input<node__unhandled_key_input>`.
+
+.. _class_Control_get_minimum_size:
+
+- :ref:`Vector2<class_vector2>`  **get_minimum_size**  **(** **)** const
+
+Return the minimum size this Control can shrink to. A control will never be displayed or resized smaller than its minimum size.
+
+.. _class_Control_get_combined_minimum_size:
+
+- :ref:`Vector2<class_vector2>`  **get_combined_minimum_size**  **(** **)** const
+
+.. _class_Control_set_anchor:
+
+- void  **set_anchor**  **(** :ref:`int<class_int>` margin, :ref:`int<class_int>` anchor_mode  **)**
+
+Change the anchor (ANCHOR_BEGIN, ANCHOR_END, ANCHOR_RATIO) type for a margin (MARGIN_LEFT, MARGIN_TOP, MARGIN_RIGHT, MARGIN_BOTTOM). Changing the anchor mode converts the current margin offset from the previos anchor mode to the new one, so margin offsets (:ref:`set_margin<Control_set_margin>`) must be done after setting anchors, or at the same time (:ref:`set_anchor_and_margin<Control_set_anchor_and_margin>`).
+
+.. _class_Control_get_anchor:
+
+- :ref:`int<class_int>`  **get_anchor**  **(** :ref:`int<class_int>` margin  **)** const
+
+Return the anchor type (ANCHOR_BEGIN, ANCHOR_END, ANCHOR_RATIO) for a given margin (MARGIN_LEFT, MARGIN_TOP, MARGIN_RIGHT, MARGIN_BOTTOM).
+
+.. _class_Control_set_margin:
+
+- void  **set_margin**  **(** :ref:`int<class_int>` margin, :ref:`float<class_float>` offset  **)**
+
+Set a margin offset. Margin can be one of (MARGIN_LEFT, MARGIN_TOP, MARGIN_RIGHT, MARGIN_BOTTOM). Offset value being set depends on the anchor mode.
+
+.. _class_Control_set_anchor_and_margin:
+
+- void  **set_anchor_and_margin**  **(** :ref:`int<class_int>` margin, :ref:`int<class_int>` anchor_mode, :ref:`float<class_float>` offset  **)**
+
+Change the anchor (ANCHOR_BEGIN, ANCHOR_END, ANCHOR_RATIO) type for a margin (MARGIN_LEFT, MARGIN_TOP, MARGIN_RIGHT, MARGIN_BOTTOM), and also set its offset. This is a helper (see :ref:`set_anchor<Control_set_anchor>` and :ref:`set_margin<Control_set_margin>`).
+
+.. _class_Control_set_begin:
+
+- void  **set_begin**  **(** :ref:`Vector2<class_vector2>` pos  **)**
+
+Sets MARGIN_LEFT and MARGIN_TOP at the same time. This is a helper (see :ref:`set_margin<Control_set_margin>`).
+
+.. _class_Control_set_end:
+
+- void  **set_end**  **(** :ref:`Vector2<class_vector2>` pos  **)**
+
+Sets MARGIN_RIGHT and MARGIN_BOTTOM at the same time. This is a helper (see :ref:`set_margin<Control_set_margin>`).
+
+.. _class_Control_set_pos:
+
+- void  **set_pos**  **(** :ref:`Vector2<class_vector2>` pos  **)**
+
+Move the Control to a new position, relative to the top-left corner of the parent Control, changing all margins if needed and without changing current anchor mode. This is a helper (see :ref:`set_margin<Control_set_margin>`).
+
+.. _class_Control_set_size:
+
+- void  **set_size**  **(** :ref:`Vector2<class_vector2>` size  **)**
+
+Changes MARGIN_RIGHT and MARGIN_BOTTOM to fit a given size. This is a helper (see :ref:`set_margin<Control_set_margin>`).
+
+.. _class_Control_set_custom_minimum_size:
+
+- void  **set_custom_minimum_size**  **(** :ref:`Vector2<class_vector2>` size  **)**
+
+.. _class_Control_set_global_pos:
+
+- void  **set_global_pos**  **(** :ref:`Vector2<class_vector2>` pos  **)**
+
+Move the Control to a new position, relative to the top-left corner of the *window* Control, and without changing current anchor mode. (see :ref:`set_margin<Control_set_margin>`).
+
+.. _class_Control_set_rotation:
+
+- void  **set_rotation**  **(** :ref:`float<class_float>` rotation  **)**
+
+.. _class_Control_set_scale:
+
+- void  **set_scale**  **(** :ref:`Vector2<class_vector2>` scale  **)**
+
+.. _class_Control_get_margin:
+
+- :ref:`float<class_float>`  **get_margin**  **(** :ref:`int<class_int>` margin  **)** const
+
+Return a margin offset. Margin can be one of (MARGIN_LEFT, MARGIN_TOP, MARGIN_RIGHT, MARGIN_BOTTOM). Offset value being returned depends on the anchor mode.
+
+.. _class_Control_get_begin:
+
+- :ref:`Vector2<class_vector2>`  **get_begin**  **(** **)** const
+
+.. _class_Control_get_end:
+
+- :ref:`Vector2<class_vector2>`  **get_end**  **(** **)** const
+
+Returns MARGIN_LEFT and MARGIN_TOP at the same time. This is a helper (see :ref:`set_margin<Control_set_margin>`).
+
+.. _class_Control_get_pos:
+
+- :ref:`Vector2<class_vector2>`  **get_pos**  **(** **)** const
+
+Returns the Control position, relative to the top-left corner of the parent Control and independly of the anchor mode.
+
+.. _class_Control_get_size:
+
+- :ref:`Vector2<class_vector2>`  **get_size**  **(** **)** const
+
+Returns the size of the Control, computed from all margins, however the size returned will **never be smaller than the minimum size reported by :ref:`get_minimum_size<Control_get_minimum_size>`**. This means that even if end position of the Control rectangle is smaller than the begin position, the Control will still display and interact correctly. (see description, :ref:`get_minimum_size<Control_get_minimum_size>`, :ref:`set_margin<Control_set_margin>`, :ref:`set_anchor<Control_set_anchor>`).
+
+.. _class_Control_get_rotation:
+
+- :ref:`float<class_float>`  **get_rotation**  **(** **)** const
+
+.. _class_Control_get_scale:
+
+- :ref:`Vector2<class_vector2>`  **get_scale**  **(** **)** const
+
+.. _class_Control_get_custom_minimum_size:
+
+- :ref:`Vector2<class_vector2>`  **get_custom_minimum_size**  **(** **)** const
+
+.. _class_Control_get_parent_area_size:
+
+- :ref:`Vector2<class_vector2>`  **get_parent_area_size**  **(** **)** const
+
+.. _class_Control_get_global_pos:
+
+- :ref:`Vector2<class_vector2>`  **get_global_pos**  **(** **)** const
+
+Returns the Control position, relative to the top-left corner of the parent Control and independent of the anchor mode.
+
+.. _class_Control_get_rect:
+
+- :ref:`Rect2<class_rect2>`  **get_rect**  **(** **)** const
+
+Return position and size of the Control, relative to the top-left corner of the parent Control. This is a helper (see :ref:`get_pos<Control_get_pos>`,:ref:`get_size<Control_get_size>`).
+
+.. _class_Control_get_global_rect:
+
+- :ref:`Rect2<class_rect2>`  **get_global_rect**  **(** **)** const
+
+Return position and size of the Control, relative to the top-left corner of the *window* Control. This is a helper (see :ref:`get_global_pos<Control_get_global_pos>`,:ref:`get_size<Control_get_size>`).
+
+.. _class_Control_set_area_as_parent_rect:
+
+- void  **set_area_as_parent_rect**  **(** :ref:`int<class_int>` margin=0  **)**
+
+Change all margins and anchors, so this Control always takes up the same area as the parent Control. This is a helper (see :ref:`set_anchor<Control_set_anchor>`,:ref:`set_margin<Control_set_margin>`).
+
+.. _class_Control_show_modal:
+
+- void  **show_modal**  **(** :ref:`bool<class_bool>` exclusive=false  **)**
+
+Display a Control as modal. Control must be a subwindow (see :ref:`set_as_subwindow<Control_set_as_subwindow>`). Modal controls capture the input signals until closed or the area outside them is accessed. When a modal control loses focus, or the ESC key is pressed, they automatically hide. Modal controls are used extensively for popup dialogs and menus.
+
+.. _class_Control_set_focus_mode:
+
+- void  **set_focus_mode**  **(** :ref:`int<class_int>` mode  **)**
+
+Set the focus access mode for the control (FOCUS_NONE, FOCUS_CLICK, FOCUS_ALL). Only one Control can be focused at the same time, and it will receive keyboard signals.
+
+.. _class_Control_has_focus:
+
+- :ref:`bool<class_bool>`  **has_focus**  **(** **)** const
+
+Return wether the Control is the current focused control (see :ref:`set_focus_mode<Control_set_focus_mode>`).
+
+.. _class_Control_grab_focus:
+
+- void  **grab_focus**  **(** **)**
+
+Steal the focus from another control and become the focused control (see :ref:`set_focus_mode<Control_set_focus_mode>`).
+
+.. _class_Control_release_focus:
+
+- void  **release_focus**  **(** **)**
+
+Give up the focus, no other control will be able to receive keyboard input.
+
+.. _class_Control_get_focus_owner:
+
+- :ref:`Control<class_control>`  **get_focus_owner**  **(** **)** const
+
+Return which control is owning the keyboard focus, or null if no one.
+
+.. _class_Control_set_h_size_flags:
+
+- void  **set_h_size_flags**  **(** :ref:`int<class_int>` flags  **)**
+
+Hint for containers, set horizontal positioning flags.
+
+.. _class_Control_get_h_size_flags:
+
+- :ref:`int<class_int>`  **get_h_size_flags**  **(** **)** const
+
+Hint for containers, return horizontal positioning flags.
+
+.. _class_Control_set_stretch_ratio:
+
+- void  **set_stretch_ratio**  **(** :ref:`float<class_float>` ratio  **)**
+
+Hint for containers, set the stretch ratio. This value is relative to other stretch ratio, so if this control has 2 and another has 1, this one will be twice as big.
+
+.. _class_Control_get_stretch_ratio:
+
+- :ref:`float<class_float>`  **get_stretch_ratio**  **(** **)** const
+
+Hint for containers, return the stretch ratio. This value is relative to other stretch ratio, so if this control has 2 and another has 1, this one will be twice as big.
+
+.. _class_Control_set_v_size_flags:
+
+- void  **set_v_size_flags**  **(** :ref:`int<class_int>` flags  **)**
+
+Hint for containers, set vertical positioning flags.
+
+.. _class_Control_get_v_size_flags:
+
+- :ref:`int<class_int>`  **get_v_size_flags**  **(** **)** const
+
+Hint for containers, return vertical positioning flags.
+
+.. _class_Control_set_theme:
+
+- void  **set_theme**  **(** :ref:`Theme<class_theme>` theme  **)**
+
+Override whole the :ref:`Theme<class_theme>` for this Control and all its children controls.
+
+.. _class_Control_get_theme:
+
+- :ref:`Theme<class_theme>`  **get_theme**  **(** **)** const
+
+Return a :ref:`Theme<class_theme>` override, if one exists (see :ref:`set_theme<Control_set_theme>`).
+
+.. _class_Control_add_icon_override:
+
+- void  **add_icon_override**  **(** :ref:`String<class_string>` name, :ref:`Texture<class_texture>` texture  **)**
+
+Override a single icon (:ref:`Texture<class_texture>`) in the theme of this Control. If texture is empty, override is cleared.
+
+.. _class_Control_add_shader_override:
+
+- void  **add_shader_override**  **(** :ref:`String<class_string>` name, :ref:`Shader<class_shader>` shader  **)**
+
+.. _class_Control_add_style_override:
+
+- void  **add_style_override**  **(** :ref:`String<class_string>` name, :ref:`StyleBox<class_stylebox>` stylebox  **)**
+
+Override a single stylebox (:ref:`Stylebox<class_stylebox>`) in the theme of this Control. If stylebox is empty, override is cleared.
+
+.. _class_Control_add_font_override:
+
+- void  **add_font_override**  **(** :ref:`String<class_string>` name, :ref:`Font<class_font>` font  **)**
+
+Override a single font (font) in the theme of this Control. If font is empty, override is cleared.
+
+.. _class_Control_add_color_override:
+
+- void  **add_color_override**  **(** :ref:`String<class_string>` name, :ref:`Color<class_color>` color  **)**
+
+.. _class_Control_add_constant_override:
+
+- void  **add_constant_override**  **(** :ref:`String<class_string>` name, :ref:`int<class_int>` constant  **)**
+
+Override a single constant (integer) in the theme of this Control. If constant equals Theme.INVALID_CONSTANT, override is cleared.
+
+.. _class_Control_get_icon:
+
+- :ref:`Texture<class_texture>`  **get_icon**  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type=""  **)** const
+
+.. _class_Control_get_stylebox:
+
+- :ref:`StyleBox<class_stylebox>`  **get_stylebox**  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type=""  **)** const
+
+.. _class_Control_get_font:
+
+- :ref:`Font<class_font>`  **get_font**  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type=""  **)** const
+
+.. _class_Control_get_color:
+
+- :ref:`Color<class_color>`  **get_color**  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type=""  **)** const
+
+.. _class_Control_get_constant:
+
+- :ref:`int<class_int>`  **get_constant**  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type=""  **)** const
+
+.. _class_Control_get_parent_control:
+
+- :ref:`Control<class_control>`  **get_parent_control**  **(** **)** const
+
+.. _class_Control_set_tooltip:
+
+- void  **set_tooltip**  **(** :ref:`String<class_string>` tooltip  **)**
+
+Set a tooltip, which will appear when the cursor is resting over this control.
+
+.. _class_Control_get_tooltip:
+
+- :ref:`String<class_string>`  **get_tooltip**  **(** :ref:`Vector2<class_vector2>` atpos=Vector2(0,0)  **)** const
+
+Return the tooltip, which will appear when the cursor is resting over this control.
+
+.. _class_Control_set_default_cursor_shape:
+
+- void  **set_default_cursor_shape**  **(** :ref:`int<class_int>` shape  **)**
+
+Set the default cursor shape for this control. See enum CURSOR_* for the list of shapes.
+
+.. _class_Control_get_default_cursor_shape:
+
+- :ref:`int<class_int>`  **get_default_cursor_shape**  **(** **)** const
+
+Return the default cursor shape for this control. See enum CURSOR_* for the list of shapes.
+
+.. _class_Control_get_cursor_shape:
+
+- :ref:`int<class_int>`  **get_cursor_shape**  **(** :ref:`Vector2<class_vector2>` pos=Vector2(0,0)  **)** const
+
+Return the cursor shape at a certain position in the control.
+
+.. _class_Control_set_focus_neighbour:
+
+- void  **set_focus_neighbour**  **(** :ref:`int<class_int>` margin, :ref:`NodePath<class_nodepath>` neighbour  **)**
+
+Force a neighbour for moving the input focus to. When pressing TAB or directional/joypad directions focus is moved to the next control in that direction. However, the neighbour to move to can be forced with this function.
+
+.. _class_Control_get_focus_neighbour:
+
+- :ref:`NodePath<class_nodepath>`  **get_focus_neighbour**  **(** :ref:`int<class_int>` margin  **)** const
+
+Return the forced neighbour for moving the input focus to. When pressing TAB or directional/joypad directions focus is moved to the next control in that direction. However, the neighbour to move to can be forced with this function.
+
+.. _class_Control_set_ignore_mouse:
+
+- void  **set_ignore_mouse**  **(** :ref:`bool<class_bool>` ignore  **)**
+
+Ignore mouse events on this control (even touchpad events send mouse events).
+
+.. _class_Control_is_ignoring_mouse:
+
+- :ref:`bool<class_bool>`  **is_ignoring_mouse**  **(** **)** const
+
+Return if the control is ignoring mouse events (even touchpad events send mouse events).
+
+.. _class_Control_force_drag:
+
+- void  **force_drag**  **(** var data, :ref:`Object<class_object>` preview  **)**
+
+.. _class_Control_set_stop_mouse:
+
+- void  **set_stop_mouse**  **(** :ref:`bool<class_bool>` stop  **)**
+
+.. _class_Control_is_stopping_mouse:
+
+- :ref:`bool<class_bool>`  **is_stopping_mouse**  **(** **)** const
+
+.. _class_Control_grab_click_focus:
+
+- void  **grab_click_focus**  **(** **)**
+
+.. _class_Control_set_drag_preview:
+
+- void  **set_drag_preview**  **(** :ref:`Control<class_control>` control  **)**
+
+.. _class_Control_warp_mouse:
+
+- void  **warp_mouse**  **(** :ref:`Vector2<class_vector2>` to_pos  **)**
+
+

@@ -1,0 +1,147 @@
+.. _class_AnimatedSprite:
+
+AnimatedSprite
+==============
+
+Inherits: :ref:`Node2D<class_node2d>`
+-------------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+Sprite node that can use multiple textures for animation.
+
+Member Functions
+----------------
+
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_sprite_frames<class_AnimatedSprite_set_sprite_frames>`  **(** :ref:`SpriteFrames<class_spriteframes>` sprite_frames  **)** |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`SpriteFrames<class_spriteframes>`  | :ref:`get_sprite_frames<class_AnimatedSprite_get_sprite_frames>`  **(** **)** const                                                  |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_centered<class_AnimatedSprite_set_centered>`  **(** :ref:`bool<class_bool>` centered  **)**                                |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`is_centered<class_AnimatedSprite_is_centered>`  **(** **)** const                                                              |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_offset<class_AnimatedSprite_set_offset>`  **(** :ref:`Vector2<class_vector2>` offset  **)**                                |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`            | :ref:`get_offset<class_AnimatedSprite_get_offset>`  **(** **)** const                                                                |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_flip_h<class_AnimatedSprite_set_flip_h>`  **(** :ref:`bool<class_bool>` flip_h  **)**                                      |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`is_flipped_h<class_AnimatedSprite_is_flipped_h>`  **(** **)** const                                                            |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_flip_v<class_AnimatedSprite_set_flip_v>`  **(** :ref:`bool<class_bool>` flip_v  **)**                                      |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`is_flipped_v<class_AnimatedSprite_is_flipped_v>`  **(** **)** const                                                            |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_frame<class_AnimatedSprite_set_frame>`  **(** :ref:`int<class_int>` frame  **)**                                           |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                    | :ref:`get_frame<class_AnimatedSprite_get_frame>`  **(** **)** const                                                                  |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_modulate<class_AnimatedSprite_set_modulate>`  **(** :ref:`Color<class_color>` modulate  **)**                              |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`                | :ref:`get_modulate<class_AnimatedSprite_get_modulate>`  **(** **)** const                                                            |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+
+Signals
+-------
+
+-  **frame_changed**  **(** **)**
+
+Description
+-----------
+
+Sprite node that can use multiple textures for animation.
+
+Member Function Description
+---------------------------
+
+.. _class_AnimatedSprite_set_sprite_frames:
+
+- void  **set_sprite_frames**  **(** :ref:`SpriteFrames<class_spriteframes>` sprite_frames  **)**
+
+Set the :ref:`SpriteFrames<class_spriteframes>` resource, which contains all frames.
+
+.. _class_AnimatedSprite_get_sprite_frames:
+
+- :ref:`SpriteFrames<class_spriteframes>`  **get_sprite_frames**  **(** **)** const
+
+Get the :ref:`SpriteFrames<class_spriteframes>` resource, which contains all frames.
+
+.. _class_AnimatedSprite_set_centered:
+
+- void  **set_centered**  **(** :ref:`bool<class_bool>` centered  **)**
+
+When turned on, offset at (0,0) is the center of the sprite, when off, the top-left corner is.
+
+.. _class_AnimatedSprite_is_centered:
+
+- :ref:`bool<class_bool>`  **is_centered**  **(** **)** const
+
+Return true when centered. See :ref:`set_centered<class_set_centered>`.
+
+.. _class_AnimatedSprite_set_offset:
+
+- void  **set_offset**  **(** :ref:`Vector2<class_vector2>` offset  **)**
+
+Set the offset of the sprite in the node origin. Position varies depending on whether it is centered or not.
+
+.. _class_AnimatedSprite_get_offset:
+
+- :ref:`Vector2<class_vector2>`  **get_offset**  **(** **)** const
+
+Return the offset of the sprite in the node origin.
+
+.. _class_AnimatedSprite_set_flip_h:
+
+- void  **set_flip_h**  **(** :ref:`bool<class_bool>` flip_h  **)**
+
+If true, sprite is flipped horizontally.
+
+.. _class_AnimatedSprite_is_flipped_h:
+
+- :ref:`bool<class_bool>`  **is_flipped_h**  **(** **)** const
+
+Return true if sprite is flipped horizontally.
+
+.. _class_AnimatedSprite_set_flip_v:
+
+- void  **set_flip_v**  **(** :ref:`bool<class_bool>` flip_v  **)**
+
+If true, sprite is flipped vertically.
+
+.. _class_AnimatedSprite_is_flipped_v:
+
+- :ref:`bool<class_bool>`  **is_flipped_v**  **(** **)** const
+
+Return true if sprite is flipped vertically.
+
+.. _class_AnimatedSprite_set_frame:
+
+- void  **set_frame**  **(** :ref:`int<class_int>` frame  **)**
+
+Set the visible sprite frame index (from the list of frames inside the :ref:`SpriteFrames<class_spriteframes>` resource).
+
+.. _class_AnimatedSprite_get_frame:
+
+- :ref:`int<class_int>`  **get_frame**  **(** **)** const
+
+Return the visible frame index.
+
+.. _class_AnimatedSprite_set_modulate:
+
+- void  **set_modulate**  **(** :ref:`Color<class_color>` modulate  **)**
+
+Change the color modulation (multiplication) for this sprite.
+
+.. _class_AnimatedSprite_get_modulate:
+
+- :ref:`Color<class_color>`  **get_modulate**  **(** **)** const
+
+Return the color modulation for this sprite.
+
+

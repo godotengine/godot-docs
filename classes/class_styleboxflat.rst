@@ -1,0 +1,102 @@
+.. _class_StyleBoxFlat:
+
+StyleBoxFlat
+============
+
+Inherits: :ref:`StyleBox<class_stylebox>`
+-----------------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+Stylebox of a single color.
+
+Member Functions
+----------------
+
++----------------------------+----------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_bg_color<class_StyleBoxFlat_set_bg_color>`  **(** :ref:`Color<class_color>` color  **)**       |
++----------------------------+----------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`  | :ref:`get_bg_color<class_StyleBoxFlat_get_bg_color>`  **(** **)** const                                  |
++----------------------------+----------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_light_color<class_StyleBoxFlat_set_light_color>`  **(** :ref:`Color<class_color>` color  **)** |
++----------------------------+----------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`  | :ref:`get_light_color<class_StyleBoxFlat_get_light_color>`  **(** **)** const                            |
++----------------------------+----------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_dark_color<class_StyleBoxFlat_set_dark_color>`  **(** :ref:`Color<class_color>` color  **)**   |
++----------------------------+----------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`  | :ref:`get_dark_color<class_StyleBoxFlat_get_dark_color>`  **(** **)** const                              |
++----------------------------+----------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_border_size<class_StyleBoxFlat_set_border_size>`  **(** :ref:`int<class_int>` size  **)**      |
++----------------------------+----------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`get_border_size<class_StyleBoxFlat_get_border_size>`  **(** **)** const                            |
++----------------------------+----------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_border_blend<class_StyleBoxFlat_set_border_blend>`  **(** :ref:`bool<class_bool>` blend  **)** |
++----------------------------+----------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`get_border_blend<class_StyleBoxFlat_get_border_blend>`  **(** **)** const                          |
++----------------------------+----------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_draw_center<class_StyleBoxFlat_set_draw_center>`  **(** :ref:`bool<class_bool>` size  **)**    |
++----------------------------+----------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`get_draw_center<class_StyleBoxFlat_get_draw_center>`  **(** **)** const                            |
++----------------------------+----------------------------------------------------------------------------------------------------------+
+
+Description
+-----------
+
+Stylebox of a single color. Displays the stylebox of a single color, alternatively a border with light/dark colors can be assigned.
+
+Member Function Description
+---------------------------
+
+.. _class_StyleBoxFlat_set_bg_color:
+
+- void  **set_bg_color**  **(** :ref:`Color<class_color>` color  **)**
+
+.. _class_StyleBoxFlat_get_bg_color:
+
+- :ref:`Color<class_color>`  **get_bg_color**  **(** **)** const
+
+.. _class_StyleBoxFlat_set_light_color:
+
+- void  **set_light_color**  **(** :ref:`Color<class_color>` color  **)**
+
+.. _class_StyleBoxFlat_get_light_color:
+
+- :ref:`Color<class_color>`  **get_light_color**  **(** **)** const
+
+.. _class_StyleBoxFlat_set_dark_color:
+
+- void  **set_dark_color**  **(** :ref:`Color<class_color>` color  **)**
+
+.. _class_StyleBoxFlat_get_dark_color:
+
+- :ref:`Color<class_color>`  **get_dark_color**  **(** **)** const
+
+.. _class_StyleBoxFlat_set_border_size:
+
+- void  **set_border_size**  **(** :ref:`int<class_int>` size  **)**
+
+.. _class_StyleBoxFlat_get_border_size:
+
+- :ref:`int<class_int>`  **get_border_size**  **(** **)** const
+
+.. _class_StyleBoxFlat_set_border_blend:
+
+- void  **set_border_blend**  **(** :ref:`bool<class_bool>` blend  **)**
+
+.. _class_StyleBoxFlat_get_border_blend:
+
+- :ref:`bool<class_bool>`  **get_border_blend**  **(** **)** const
+
+.. _class_StyleBoxFlat_set_draw_center:
+
+- void  **set_draw_center**  **(** :ref:`bool<class_bool>` size  **)**
+
+.. _class_StyleBoxFlat_get_draw_center:
+
+- :ref:`bool<class_bool>`  **get_draw_center**  **(** **)** const
+
+

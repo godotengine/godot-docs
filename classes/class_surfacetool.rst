@@ -1,0 +1,126 @@
+.. _class_SurfaceTool:
+
+SurfaceTool
+===========
+
+Inherits: :ref:`Reference<class_reference>`
+-------------------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+Helper tool to create geometry.
+
+Member Functions
+----------------
+
++--------------------------+------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`begin<class_SurfaceTool_begin>`  **(** :ref:`int<class_int>` primitive  **)**                        |
++--------------------------+------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`add_vertex<class_SurfaceTool_add_vertex>`  **(** :ref:`Vector3<class_vector3>` vertex  **)**         |
++--------------------------+------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`add_color<class_SurfaceTool_add_color>`  **(** :ref:`Color<class_color>` color  **)**                |
++--------------------------+------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`add_normal<class_SurfaceTool_add_normal>`  **(** :ref:`Vector3<class_vector3>` normal  **)**         |
++--------------------------+------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`add_tangent<class_SurfaceTool_add_tangent>`  **(** :ref:`Plane<class_plane>` tangent  **)**          |
++--------------------------+------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`add_uv<class_SurfaceTool_add_uv>`  **(** :ref:`Vector2<class_vector2>` uv  **)**                     |
++--------------------------+------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`add_uv2<class_SurfaceTool_add_uv2>`  **(** :ref:`Vector2<class_vector2>` uv2  **)**                  |
++--------------------------+------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`add_bones<class_SurfaceTool_add_bones>`  **(** :ref:`IntArray<class_intarray>` bones  **)**          |
++--------------------------+------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`add_weights<class_SurfaceTool_add_weights>`  **(** :ref:`RealArray<class_realarray>` weights  **)**  |
++--------------------------+------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`add_smooth_group<class_SurfaceTool_add_smooth_group>`  **(** :ref:`bool<class_bool>` smooth  **)**   |
++--------------------------+------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`set_material<class_SurfaceTool_set_material>`  **(** :ref:`Material<class_material>` material  **)** |
++--------------------------+------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`index<class_SurfaceTool_index>`  **(** **)**                                                         |
++--------------------------+------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`deindex<class_SurfaceTool_deindex>`  **(** **)**                                                     |
++--------------------------+------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`generate_normals<class_SurfaceTool_generate_normals>`  **(** **)**                                   |
++--------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`Mesh<class_mesh>`  | :ref:`commit<class_SurfaceTool_commit>`  **(** :ref:`Mesh<class_mesh>` existing=Object()  **)**            |
++--------------------------+------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`clear<class_SurfaceTool_clear>`  **(** **)**                                                         |
++--------------------------+------------------------------------------------------------------------------------------------------------+
+
+Description
+-----------
+
+Helper tool to create geometry.
+
+Member Function Description
+---------------------------
+
+.. _class_SurfaceTool_begin:
+
+- void  **begin**  **(** :ref:`int<class_int>` primitive  **)**
+
+.. _class_SurfaceTool_add_vertex:
+
+- void  **add_vertex**  **(** :ref:`Vector3<class_vector3>` vertex  **)**
+
+.. _class_SurfaceTool_add_color:
+
+- void  **add_color**  **(** :ref:`Color<class_color>` color  **)**
+
+.. _class_SurfaceTool_add_normal:
+
+- void  **add_normal**  **(** :ref:`Vector3<class_vector3>` normal  **)**
+
+.. _class_SurfaceTool_add_tangent:
+
+- void  **add_tangent**  **(** :ref:`Plane<class_plane>` tangent  **)**
+
+.. _class_SurfaceTool_add_uv:
+
+- void  **add_uv**  **(** :ref:`Vector2<class_vector2>` uv  **)**
+
+.. _class_SurfaceTool_add_uv2:
+
+- void  **add_uv2**  **(** :ref:`Vector2<class_vector2>` uv2  **)**
+
+.. _class_SurfaceTool_add_bones:
+
+- void  **add_bones**  **(** :ref:`IntArray<class_intarray>` bones  **)**
+
+.. _class_SurfaceTool_add_weights:
+
+- void  **add_weights**  **(** :ref:`RealArray<class_realarray>` weights  **)**
+
+.. _class_SurfaceTool_add_smooth_group:
+
+- void  **add_smooth_group**  **(** :ref:`bool<class_bool>` smooth  **)**
+
+.. _class_SurfaceTool_set_material:
+
+- void  **set_material**  **(** :ref:`Material<class_material>` material  **)**
+
+.. _class_SurfaceTool_index:
+
+- void  **index**  **(** **)**
+
+.. _class_SurfaceTool_deindex:
+
+- void  **deindex**  **(** **)**
+
+.. _class_SurfaceTool_generate_normals:
+
+- void  **generate_normals**  **(** **)**
+
+.. _class_SurfaceTool_commit:
+
+- :ref:`Mesh<class_mesh>`  **commit**  **(** :ref:`Mesh<class_mesh>` existing=Object()  **)**
+
+.. _class_SurfaceTool_clear:
+
+- void  **clear**  **(** **)**
+
+

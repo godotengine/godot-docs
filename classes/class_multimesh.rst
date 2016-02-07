@@ -1,0 +1,124 @@
+.. _class_MultiMesh:
+
+MultiMesh
+=========
+
+Inherits: :ref:`Resource<class_resource>`
+-----------------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+Provides high perfomance mesh instancing.
+
+Member Functions
+----------------
+
++------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_mesh<class_MultiMesh_set_mesh>`  **(** :ref:`Mesh<class_mesh>` mesh  **)**                                                                            |
++------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Mesh<class_mesh>`            | :ref:`get_mesh<class_MultiMesh_get_mesh>`  **(** **)** const                                                                                                    |
++------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_instance_count<class_MultiMesh_set_instance_count>`  **(** :ref:`int<class_int>` count  **)**                                                         |
++------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`              | :ref:`get_instance_count<class_MultiMesh_get_instance_count>`  **(** **)** const                                                                                |
++------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_instance_transform<class_MultiMesh_set_instance_transform>`  **(** :ref:`int<class_int>` instance, :ref:`Transform<class_transform>` transform  **)** |
++------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_transform>`  | :ref:`get_instance_transform<class_MultiMesh_get_instance_transform>`  **(** :ref:`int<class_int>` instance  **)** const                                        |
++------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_instance_color<class_MultiMesh_set_instance_color>`  **(** :ref:`int<class_int>` instance, :ref:`Color<class_color>` color  **)**                     |
++------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`          | :ref:`get_instance_color<class_MultiMesh_get_instance_color>`  **(** :ref:`int<class_int>` instance  **)** const                                                |
++------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_aabb<class_MultiMesh_set_aabb>`  **(** :ref:`AABB<class_aabb>` visibility_aabb  **)**                                                                 |
++------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`AABB<class_aabb>`            | :ref:`get_aabb<class_MultiMesh_get_aabb>`  **(** **)** const                                                                                                    |
++------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`generate_aabb<class_MultiMesh_generate_aabb>`  **(** **)**                                                                                                |
++------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Description
+-----------
+
+MultiMesh provides low level mesh instancing. If the amount of :ref:`Mesh<class_mesh>` instances needed goes from hundreds to thousands (and most need to be visible at close proximity) creating such a large amount of :ref:`MeshInstance<class_meshinstance>` nodes may affect performance by using too much CPU or video memory.
+
+For this case a MultiMesh becomes very useful, as it can draw thousands of instances with little API overhead.
+
+As a drawback, if the instances are too far away of each other, performance may be reduced as every sigle instance will always rendered (they are spatially indexed as one, for the whole object).
+
+Since instances may have any behavior, the AABB used for visibility must be provided by the user, or generated with :ref:`generate_aabb<MultiMesh_generate_aabb>`.
+
+Member Function Description
+---------------------------
+
+.. _class_MultiMesh_set_mesh:
+
+- void  **set_mesh**  **(** :ref:`Mesh<class_mesh>` mesh  **)**
+
+Set the :ref:`Mesh<class_mesh>` resource to be drawn in multiple instances.
+
+.. _class_MultiMesh_get_mesh:
+
+- :ref:`Mesh<class_mesh>`  **get_mesh**  **(** **)** const
+
+Return the :ref:`Mesh<class_mesh>` resource drawn as multiple instances.
+
+.. _class_MultiMesh_set_instance_count:
+
+- void  **set_instance_count**  **(** :ref:`int<class_int>` count  **)**
+
+Set the amount of instnces that is going to be drawn. Changing this number will erase all the existing instance transform and color data.
+
+.. _class_MultiMesh_get_instance_count:
+
+- :ref:`int<class_int>`  **get_instance_count**  **(** **)** const
+
+Return the amount of instnces that is going to be drawn.
+
+.. _class_MultiMesh_set_instance_transform:
+
+- void  **set_instance_transform**  **(** :ref:`int<class_int>` instance, :ref:`Transform<class_transform>` transform  **)**
+
+Set the transform for a specific instance.
+
+.. _class_MultiMesh_get_instance_transform:
+
+- :ref:`Transform<class_transform>`  **get_instance_transform**  **(** :ref:`int<class_int>` instance  **)** const
+
+Return the transform of a specific instance.
+
+.. _class_MultiMesh_set_instance_color:
+
+- void  **set_instance_color**  **(** :ref:`int<class_int>` instance, :ref:`Color<class_color>` color  **)**
+
+Set the color of a specific instance.
+
+.. _class_MultiMesh_get_instance_color:
+
+- :ref:`Color<class_color>`  **get_instance_color**  **(** :ref:`int<class_int>` instance  **)** const
+
+Get the color of a specific instance.
+
+.. _class_MultiMesh_set_aabb:
+
+- void  **set_aabb**  **(** :ref:`AABB<class_aabb>` visibility_aabb  **)**
+
+Set the visibility AABB. If not provided, MultiMesh will not be visible.
+
+.. _class_MultiMesh_get_aabb:
+
+- :ref:`AABB<class_aabb>`  **get_aabb**  **(** **)** const
+
+Return the visibility AABB.
+
+.. _class_MultiMesh_generate_aabb:
+
+- void  **generate_aabb**  **(** **)**
+
+Generate a new visibility AABB, using mesh AABB and instance transforms. Since instance information is stored in the :ref:`VisualServer<class_visualserver>`, this function is VERY SLOW and must NOT be used often.
+
+

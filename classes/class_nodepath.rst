@@ -1,0 +1,89 @@
+.. _class_NodePath:
+
+NodePath
+========
+
+Category: Built-In Types
+------------------------
+
+Brief Description
+-----------------
+
+Built-in type optimized for path traversing.
+
+Member Functions
+----------------
+
++----------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`      | :ref:`get_name<class_NodePath_get_name>`  **(** :ref:`int<class_int>` idx  **)**        |
++----------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_name_count<class_NodePath_get_name_count>`  **(** **)**                       |
++----------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`      | :ref:`get_property<class_NodePath_get_property>`  **(** **)**                           |
++----------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`      | :ref:`get_subname<class_NodePath_get_subname>`  **(** :ref:`int<class_int>` idx  **)**  |
++----------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_subname_count<class_NodePath_get_subname_count>`  **(** **)**                 |
++----------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`is_absolute<class_NodePath_is_absolute>`  **(** **)**                             |
++----------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`is_empty<class_NodePath_is_empty>`  **(** **)**                                   |
++----------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`NodePath<class_nodepath>`  | :ref:`NodePath<class_NodePath_NodePath>`  **(** :ref:`String<class_string>` from  **)** |
++----------------------------------+-----------------------------------------------------------------------------------------+
+
+Description
+-----------
+
+Built-in type optimized for path traversing. A Node path is an optimized compiled path used for traversing the scene tree. It references nodes and can reference properties in that node, or even reference properties inside the resources of the node.
+
+Member Function Description
+---------------------------
+
+.. _class_NodePath_get_name:
+
+- :ref:`String<class_string>`  **get_name**  **(** :ref:`int<class_int>` idx  **)**
+
+Return a path level name.
+
+.. _class_NodePath_get_name_count:
+
+- :ref:`int<class_int>`  **get_name_count**  **(** **)**
+
+Return the path level count.
+
+.. _class_NodePath_get_property:
+
+- :ref:`String<class_string>`  **get_property**  **(** **)**
+
+Return the property associated (empty if none).
+
+.. _class_NodePath_get_subname:
+
+- :ref:`String<class_string>`  **get_subname**  **(** :ref:`int<class_int>` idx  **)**
+
+Return the subname level name.
+
+.. _class_NodePath_get_subname_count:
+
+- :ref:`int<class_int>`  **get_subname_count**  **(** **)**
+
+Return the subname count.
+
+.. _class_NodePath_is_absolute:
+
+- :ref:`bool<class_bool>`  **is_absolute**  **(** **)**
+
+Return true if the node path is absolute (not relative).
+
+.. _class_NodePath_is_empty:
+
+- :ref:`bool<class_bool>`  **is_empty**  **(** **)**
+
+Return true if the node path is empty.
+
+.. _class_NodePath_NodePath:
+
+- :ref:`NodePath<class_nodepath>`  **NodePath**  **(** :ref:`String<class_string>` from  **)**
+
+

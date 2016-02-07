@@ -1,0 +1,217 @@
+.. _class_SceneTree:
+
+SceneTree
+=========
+
+Inherits: :ref:`MainLoop<class_mainloop>`
+-----------------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+
+
+Member Functions
+----------------
+
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`notify_group<class_SceneTree_notify_group>`  **(** :ref:`int<class_int>` call_flags, :ref:`String<class_string>` group, :ref:`int<class_int>` notification  **)**                                                                   |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_group<class_SceneTree_set_group>`  **(** :ref:`int<class_int>` call_flags, :ref:`String<class_string>` group, :ref:`String<class_string>` property, var value  **)**                                                            |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`        | :ref:`get_nodes_in_group<class_SceneTree_get_nodes_in_group>`  **(** :ref:`String<class_string>` group  **)**                                                                                                                             |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Viewport<class_viewport>`  | :ref:`get_root<class_SceneTree_get_root>`  **(** **)** const                                                                                                                                                                              |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`has_group<class_SceneTree_has_group>`  **(** :ref:`String<class_string>` name  **)** const                                                                                                                                          |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_auto_accept_quit<class_SceneTree_set_auto_accept_quit>`  **(** :ref:`bool<class_bool>` enabled  **)**                                                                                                                           |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_editor_hint<class_SceneTree_set_editor_hint>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                                                                      |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`is_editor_hint<class_SceneTree_is_editor_hint>`  **(** **)** const                                                                                                                                                                  |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_debug_collisions_hint<class_SceneTree_set_debug_collisions_hint>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                                                  |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`is_debugging_collisions_hint<class_SceneTree_is_debugging_collisions_hint>`  **(** **)** const                                                                                                                                      |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_debug_navigation_hint<class_SceneTree_set_debug_navigation_hint>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                                                  |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`is_debugging_navigation_hint<class_SceneTree_is_debugging_navigation_hint>`  **(** **)** const                                                                                                                                      |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_edited_scene_root<class_SceneTree_set_edited_scene_root>`  **(** :ref:`Object<class_object>` scene  **)**                                                                                                                       |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`      | :ref:`get_edited_scene_root<class_SceneTree_get_edited_scene_root>`  **(** **)** const                                                                                                                                                    |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_pause<class_SceneTree_set_pause>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                                                                                  |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`is_paused<class_SceneTree_is_paused>`  **(** **)** const                                                                                                                                                                            |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_input_as_handled<class_SceneTree_set_input_as_handled>`  **(** **)**                                                                                                                                                            |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_node_count<class_SceneTree_get_node_count>`  **(** **)** const                                                                                                                                                                  |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_frame<class_SceneTree_get_frame>`  **(** **)** const                                                                                                                                                                            |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`quit<class_SceneTree_quit>`  **(** **)**                                                                                                                                                                                            |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_screen_stretch<class_SceneTree_set_screen_stretch>`  **(** :ref:`int<class_int>` mode, :ref:`int<class_int>` aspect, :ref:`Vector2<class_vector2>` minsize  **)**                                                               |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`queue_delete<class_SceneTree_queue_delete>`  **(** :ref:`Object<class_object>` obj  **)**                                                                                                                                           |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`call_group<class_SceneTree_call_group>`  **(** :ref:`int<class_int>` flags, :ref:`String<class_string>` group, :ref:`String<class_string>` method, var arg0=NULL, var arg1=NULL, var arg2=NULL, var arg3=NULL, var arg4=NULL  **)** |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_current_scene<class_SceneTree_set_current_scene>`  **(** :ref:`Node<class_node>` child_node  **)**                                                                                                                              |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Node<class_node>`          | :ref:`get_current_scene<class_SceneTree_get_current_scene>`  **(** **)** const                                                                                                                                                            |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`change_scene<class_SceneTree_change_scene>`  **(** :ref:`String<class_string>` path  **)**                                                                                                                                          |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`change_scene_to<class_SceneTree_change_scene_to>`  **(** :ref:`PackedScene<class_packedscene>` packed_scene  **)**                                                                                                                  |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`reload_current_scene<class_SceneTree_reload_current_scene>`  **(** **)**                                                                                                                                                            |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Signals
+-------
+
+-  **screen_resized**  **(** **)**
+-  **node_removed**  **(** :ref:`Object<class_object>` node  **)**
+-  **idle_frame**  **(** **)**
+-  **tree_changed**  **(** **)**
+-  **fixed_frame**  **(** **)**
+
+Numeric Constants
+-----------------
+
+- **GROUP_CALL_DEFAULT** = **0**
+- **GROUP_CALL_REVERSE** = **1**
+- **GROUP_CALL_REALTIME** = **2**
+- **GROUP_CALL_UNIQUE** = **4**
+- **STRETCH_MODE_DISABLED** = **0**
+- **STRETCH_MODE_2D** = **1**
+- **STRETCH_MODE_VIEWPORT** = **2**
+- **STRETCH_ASPECT_IGNORE** = **0**
+- **STRETCH_ASPECT_KEEP** = **1**
+- **STRETCH_ASPECT_KEEP_WIDTH** = **2**
+- **STRETCH_ASPECT_KEEP_HEIGHT** = **3**
+
+Member Function Description
+---------------------------
+
+.. _class_SceneTree_notify_group:
+
+- void  **notify_group**  **(** :ref:`int<class_int>` call_flags, :ref:`String<class_string>` group, :ref:`int<class_int>` notification  **)**
+
+.. _class_SceneTree_set_group:
+
+- void  **set_group**  **(** :ref:`int<class_int>` call_flags, :ref:`String<class_string>` group, :ref:`String<class_string>` property, var value  **)**
+
+.. _class_SceneTree_get_nodes_in_group:
+
+- :ref:`Array<class_array>`  **get_nodes_in_group**  **(** :ref:`String<class_string>` group  **)**
+
+.. _class_SceneTree_get_root:
+
+- :ref:`Viewport<class_viewport>`  **get_root**  **(** **)** const
+
+.. _class_SceneTree_has_group:
+
+- :ref:`bool<class_bool>`  **has_group**  **(** :ref:`String<class_string>` name  **)** const
+
+.. _class_SceneTree_set_auto_accept_quit:
+
+- void  **set_auto_accept_quit**  **(** :ref:`bool<class_bool>` enabled  **)**
+
+.. _class_SceneTree_set_editor_hint:
+
+- void  **set_editor_hint**  **(** :ref:`bool<class_bool>` enable  **)**
+
+.. _class_SceneTree_is_editor_hint:
+
+- :ref:`bool<class_bool>`  **is_editor_hint**  **(** **)** const
+
+.. _class_SceneTree_set_debug_collisions_hint:
+
+- void  **set_debug_collisions_hint**  **(** :ref:`bool<class_bool>` enable  **)**
+
+.. _class_SceneTree_is_debugging_collisions_hint:
+
+- :ref:`bool<class_bool>`  **is_debugging_collisions_hint**  **(** **)** const
+
+.. _class_SceneTree_set_debug_navigation_hint:
+
+- void  **set_debug_navigation_hint**  **(** :ref:`bool<class_bool>` enable  **)**
+
+.. _class_SceneTree_is_debugging_navigation_hint:
+
+- :ref:`bool<class_bool>`  **is_debugging_navigation_hint**  **(** **)** const
+
+.. _class_SceneTree_set_edited_scene_root:
+
+- void  **set_edited_scene_root**  **(** :ref:`Object<class_object>` scene  **)**
+
+.. _class_SceneTree_get_edited_scene_root:
+
+- :ref:`Object<class_object>`  **get_edited_scene_root**  **(** **)** const
+
+.. _class_SceneTree_set_pause:
+
+- void  **set_pause**  **(** :ref:`bool<class_bool>` enable  **)**
+
+.. _class_SceneTree_is_paused:
+
+- :ref:`bool<class_bool>`  **is_paused**  **(** **)** const
+
+.. _class_SceneTree_set_input_as_handled:
+
+- void  **set_input_as_handled**  **(** **)**
+
+.. _class_SceneTree_get_node_count:
+
+- :ref:`int<class_int>`  **get_node_count**  **(** **)** const
+
+.. _class_SceneTree_get_frame:
+
+- :ref:`int<class_int>`  **get_frame**  **(** **)** const
+
+.. _class_SceneTree_quit:
+
+- void  **quit**  **(** **)**
+
+.. _class_SceneTree_set_screen_stretch:
+
+- void  **set_screen_stretch**  **(** :ref:`int<class_int>` mode, :ref:`int<class_int>` aspect, :ref:`Vector2<class_vector2>` minsize  **)**
+
+.. _class_SceneTree_queue_delete:
+
+- void  **queue_delete**  **(** :ref:`Object<class_object>` obj  **)**
+
+.. _class_SceneTree_call_group:
+
+- void  **call_group**  **(** :ref:`int<class_int>` flags, :ref:`String<class_string>` group, :ref:`String<class_string>` method, var arg0=NULL, var arg1=NULL, var arg2=NULL, var arg3=NULL, var arg4=NULL  **)**
+
+.. _class_SceneTree_set_current_scene:
+
+- void  **set_current_scene**  **(** :ref:`Node<class_node>` child_node  **)**
+
+.. _class_SceneTree_get_current_scene:
+
+- :ref:`Node<class_node>`  **get_current_scene**  **(** **)** const
+
+.. _class_SceneTree_change_scene:
+
+- :ref:`int<class_int>`  **change_scene**  **(** :ref:`String<class_string>` path  **)**
+
+.. _class_SceneTree_change_scene_to:
+
+- :ref:`int<class_int>`  **change_scene_to**  **(** :ref:`PackedScene<class_packedscene>` packed_scene  **)**
+
+.. _class_SceneTree_reload_current_scene:
+
+- :ref:`int<class_int>`  **reload_current_scene**  **(** **)**
+
+

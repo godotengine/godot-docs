@@ -1,0 +1,46 @@
+.. _class_BoxShape:
+
+BoxShape
+========
+
+Inherits: :ref:`Shape<class_shape>`
+-----------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+Box shape resource.
+
+Member Functions
+----------------
+
++--------------------------------+----------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_extents<class_BoxShape_set_extents>`  **(** :ref:`Vector3<class_vector3>` extents  **)** |
++--------------------------------+----------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`  | :ref:`get_extents<class_BoxShape_get_extents>`  **(** **)** const                                  |
++--------------------------------+----------------------------------------------------------------------------------------------------+
+
+Description
+-----------
+
+Box shape resource, which can be set into a :ref:`PhysicsBody<class_physicsbody>` or area.
+
+Member Function Description
+---------------------------
+
+.. _class_BoxShape_set_extents:
+
+- void  **set_extents**  **(** :ref:`Vector3<class_vector3>` extents  **)**
+
+Set the half extents for the shape.
+
+.. _class_BoxShape_get_extents:
+
+- :ref:`Vector3<class_vector3>`  **get_extents**  **(** **)** const
+
+Return the half extents of the shape.
+
+

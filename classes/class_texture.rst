@@ -1,0 +1,114 @@
+.. _class_Texture:
+
+Texture
+=======
+
+Inherits: :ref:`Resource<class_resource>`
+-----------------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+Texture for 2D and 3D.
+
+Member Functions
+----------------
+
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_width<class_Texture_get_width>`  **(** **)** const                                                                                                                                                                                                                  |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_height<class_Texture_get_height>`  **(** **)** const                                                                                                                                                                                                                |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_size<class_Texture_get_size>`  **(** **)** const                                                                                                                                                                                                                    |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_rid>`          | :ref:`get_rid<class_Texture_get_rid>`  **(** **)** const                                                                                                                                                                                                                      |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`has_alpha<class_Texture_has_alpha>`  **(** **)** const                                                                                                                                                                                                                  |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_flags<class_Texture_set_flags>`  **(** :ref:`int<class_int>` flags  **)**                                                                                                                                                                                           |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_flags<class_Texture_get_flags>`  **(** **)** const                                                                                                                                                                                                                  |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`draw<class_Texture_draw>`  **(** :ref:`RID<class_rid>` canvas_item, :ref:`Vector2<class_vector2>` pos, :ref:`Color<class_color>` modulate=Color(1,1,1,1), :ref:`bool<class_bool>` transpose=false  **)** const                                                          |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`draw_rect<class_Texture_draw_rect>`  **(** :ref:`RID<class_rid>` canvas_item, :ref:`Rect2<class_rect2>` rect, :ref:`bool<class_bool>` tile, :ref:`Color<class_color>` modulate=Color(1,1,1,1), :ref:`bool<class_bool>` transpose=false  **)** const                     |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`draw_rect_region<class_Texture_draw_rect_region>`  **(** :ref:`RID<class_rid>` canvas_item, :ref:`Rect2<class_rect2>` rect, :ref:`Rect2<class_rect2>` src_rect, :ref:`Color<class_color>` modulate=Color(1,1,1,1), :ref:`bool<class_bool>` transpose=false  **)** const |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Numeric Constants
+-----------------
+
+- **FLAG_MIPMAPS** = **1** --- Generate mipmaps, to enable smooth zooming out of the texture.
+- **FLAG_REPEAT** = **2** --- Repeat (instead of clamp to edge).
+- **FLAG_FILTER** = **4** --- Turn on magnifying filter, to enable smooth zooming in of the texture.
+- **FLAG_VIDEO_SURFACE** = **4096** --- Texture is a video surface.
+- **FLAGS_DEFAULT** = **7** --- Default flags. Generate mipmaps, repeat, and filter are enabled.
+- **FLAG_ANISOTROPIC_FILTER** = **8**
+- **FLAG_CONVERT_TO_LINEAR** = **16**
+- **FLAG_MIRRORED_REPEAT** = **32**
+
+Description
+-----------
+
+A texture works by registering an image in the video hardware, which then can be used in 3D models or 2D :ref:`Sprite<class_sprite>` or GUI :ref:`Control<class_control>`s.
+
+Member Function Description
+---------------------------
+
+.. _class_Texture_get_width:
+
+- :ref:`int<class_int>`  **get_width**  **(** **)** const
+
+Return the texture width.
+
+.. _class_Texture_get_height:
+
+- :ref:`int<class_int>`  **get_height**  **(** **)** const
+
+Return the texture height.
+
+.. _class_Texture_get_size:
+
+- :ref:`Vector2<class_vector2>`  **get_size**  **(** **)** const
+
+Return the texture size.
+
+.. _class_Texture_get_rid:
+
+- :ref:`RID<class_rid>`  **get_rid**  **(** **)** const
+
+Return the texture RID as used in the :ref:`VisualServer<class_visualserver>`.
+
+.. _class_Texture_has_alpha:
+
+- :ref:`bool<class_bool>`  **has_alpha**  **(** **)** const
+
+.. _class_Texture_set_flags:
+
+- void  **set_flags**  **(** :ref:`int<class_int>` flags  **)**
+
+Change the texture flags.
+
+.. _class_Texture_get_flags:
+
+- :ref:`int<class_int>`  **get_flags**  **(** **)** const
+
+Return the current texture flags.
+
+.. _class_Texture_draw:
+
+- void  **draw**  **(** :ref:`RID<class_rid>` canvas_item, :ref:`Vector2<class_vector2>` pos, :ref:`Color<class_color>` modulate=Color(1,1,1,1), :ref:`bool<class_bool>` transpose=false  **)** const
+
+.. _class_Texture_draw_rect:
+
+- void  **draw_rect**  **(** :ref:`RID<class_rid>` canvas_item, :ref:`Rect2<class_rect2>` rect, :ref:`bool<class_bool>` tile, :ref:`Color<class_color>` modulate=Color(1,1,1,1), :ref:`bool<class_bool>` transpose=false  **)** const
+
+.. _class_Texture_draw_rect_region:
+
+- void  **draw_rect_region**  **(** :ref:`RID<class_rid>` canvas_item, :ref:`Rect2<class_rect2>` rect, :ref:`Rect2<class_rect2>` src_rect, :ref:`Color<class_color>` modulate=Color(1,1,1,1), :ref:`bool<class_bool>` transpose=false  **)** const
+
+

@@ -1,0 +1,96 @@
+.. _class_InputMap:
+
+InputMap
+========
+
+Inherits: :ref:`Object<class_object>`
+-------------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+Singleton that manages actions.
+
+Member Functions
+----------------
+
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`has_action<class_InputMap_has_action>`  **(** :ref:`String<class_string>` action  **)** const                                                      |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`get_action_id<class_InputMap_get_action_id>`  **(** :ref:`String<class_string>` action  **)** const                                                |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_action_from_id<class_InputMap_get_action_from_id>`  **(** :ref:`int<class_int>` id  **)** const                                                |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`add_action<class_InputMap_add_action>`  **(** :ref:`String<class_string>` action  **)**                                                            |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`erase_action<class_InputMap_erase_action>`  **(** :ref:`String<class_string>` action  **)**                                                        |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`action_add_event<class_InputMap_action_add_event>`  **(** :ref:`String<class_string>` action, :ref:`InputEvent<class_inputevent>` event  **)**     |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`action_has_event<class_InputMap_action_has_event>`  **(** :ref:`String<class_string>` action, :ref:`InputEvent<class_inputevent>` event  **)**     |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`action_erase_event<class_InputMap_action_erase_event>`  **(** :ref:`String<class_string>` action, :ref:`InputEvent<class_inputevent>` event  **)** |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`    | :ref:`get_action_list<class_InputMap_get_action_list>`  **(** :ref:`String<class_string>` action  **)**                                                  |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`event_is_action<class_InputMap_event_is_action>`  **(** :ref:`InputEvent<class_inputevent>` event, :ref:`String<class_string>` action  **)** const |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`load_from_globals<class_InputMap_load_from_globals>`  **(** **)**                                                                                  |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Description
+-----------
+
+Singleton that manages actions. InputMap has a list of the actions used in InputEvent, which can be modified.
+
+Member Function Description
+---------------------------
+
+.. _class_InputMap_has_action:
+
+- :ref:`bool<class_bool>`  **has_action**  **(** :ref:`String<class_string>` action  **)** const
+
+.. _class_InputMap_get_action_id:
+
+- :ref:`int<class_int>`  **get_action_id**  **(** :ref:`String<class_string>` action  **)** const
+
+.. _class_InputMap_get_action_from_id:
+
+- :ref:`String<class_string>`  **get_action_from_id**  **(** :ref:`int<class_int>` id  **)** const
+
+.. _class_InputMap_add_action:
+
+- void  **add_action**  **(** :ref:`String<class_string>` action  **)**
+
+.. _class_InputMap_erase_action:
+
+- void  **erase_action**  **(** :ref:`String<class_string>` action  **)**
+
+.. _class_InputMap_action_add_event:
+
+- void  **action_add_event**  **(** :ref:`String<class_string>` action, :ref:`InputEvent<class_inputevent>` event  **)**
+
+.. _class_InputMap_action_has_event:
+
+- :ref:`bool<class_bool>`  **action_has_event**  **(** :ref:`String<class_string>` action, :ref:`InputEvent<class_inputevent>` event  **)**
+
+.. _class_InputMap_action_erase_event:
+
+- void  **action_erase_event**  **(** :ref:`String<class_string>` action, :ref:`InputEvent<class_inputevent>` event  **)**
+
+.. _class_InputMap_get_action_list:
+
+- :ref:`Array<class_array>`  **get_action_list**  **(** :ref:`String<class_string>` action  **)**
+
+.. _class_InputMap_event_is_action:
+
+- :ref:`bool<class_bool>`  **event_is_action**  **(** :ref:`InputEvent<class_inputevent>` event, :ref:`String<class_string>` action  **)** const
+
+.. _class_InputMap_load_from_globals:
+
+- void  **load_from_globals**  **(** **)**
+
+

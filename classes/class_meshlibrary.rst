@@ -1,0 +1,114 @@
+.. _class_MeshLibrary:
+
+MeshLibrary
+===========
+
+Inherits: :ref:`Resource<class_resource>`
+-----------------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+Library of meshes.
+
+Member Functions
+----------------
+
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`create_item<class_MeshLibrary_create_item>`  **(** :ref:`int<class_int>` id  **)**                                        |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_item_name<class_MeshLibrary_set_item_name>`  **(** :ref:`int<class_int>` id, :ref:`String<class_string>` name  **)**  |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_item_mesh<class_MeshLibrary_set_item_mesh>`  **(** :ref:`int<class_int>` id, :ref:`Mesh<class_mesh>` mesh  **)**      |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_item_shape<class_MeshLibrary_set_item_shape>`  **(** :ref:`int<class_int>` id, :ref:`Shape<class_shape>` shape  **)** |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`      | :ref:`get_item_name<class_MeshLibrary_get_item_name>`  **(** :ref:`int<class_int>` id  **)** const                              |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Mesh<class_mesh>`          | :ref:`get_item_mesh<class_MeshLibrary_get_item_mesh>`  **(** :ref:`int<class_int>` id  **)** const                              |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Shape<class_shape>`        | :ref:`get_item_shape<class_MeshLibrary_get_item_shape>`  **(** :ref:`int<class_int>` id  **)** const                            |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`remove_item<class_MeshLibrary_remove_item>`  **(** :ref:`int<class_int>` id  **)**                                        |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`clear<class_MeshLibrary_clear>`  **(** **)**                                                                              |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`IntArray<class_intarray>`  | :ref:`get_item_list<class_MeshLibrary_get_item_list>`  **(** **)** const                                                        |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_last_unused_item_id<class_MeshLibrary_get_last_unused_item_id>`  **(** **)** const                                    |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+
+Description
+-----------
+
+Library of meshes. Contains a list of :ref:`Mesh<class_mesh>` resources, each with name and ID. Useful for GridMap or painting Terrain.
+
+Member Function Description
+---------------------------
+
+.. _class_MeshLibrary_create_item:
+
+- void  **create_item**  **(** :ref:`int<class_int>` id  **)**
+
+Create a new item in the library, supplied an id.
+
+.. _class_MeshLibrary_set_item_name:
+
+- void  **set_item_name**  **(** :ref:`int<class_int>` id, :ref:`String<class_string>` name  **)**
+
+Set the name of the item.
+
+.. _class_MeshLibrary_set_item_mesh:
+
+- void  **set_item_mesh**  **(** :ref:`int<class_int>` id, :ref:`Mesh<class_mesh>` mesh  **)**
+
+Set the mesh of the item.
+
+.. _class_MeshLibrary_set_item_shape:
+
+- void  **set_item_shape**  **(** :ref:`int<class_int>` id, :ref:`Shape<class_shape>` shape  **)**
+
+.. _class_MeshLibrary_get_item_name:
+
+- :ref:`String<class_string>`  **get_item_name**  **(** :ref:`int<class_int>` id  **)** const
+
+Return the name of the item.
+
+.. _class_MeshLibrary_get_item_mesh:
+
+- :ref:`Mesh<class_mesh>`  **get_item_mesh**  **(** :ref:`int<class_int>` id  **)** const
+
+Return the mesh of the item.
+
+.. _class_MeshLibrary_get_item_shape:
+
+- :ref:`Shape<class_shape>`  **get_item_shape**  **(** :ref:`int<class_int>` id  **)** const
+
+.. _class_MeshLibrary_remove_item:
+
+- void  **remove_item**  **(** :ref:`int<class_int>` id  **)**
+
+Remove the item.
+
+.. _class_MeshLibrary_clear:
+
+- void  **clear**  **(** **)**
+
+Clear the library.
+
+.. _class_MeshLibrary_get_item_list:
+
+- :ref:`IntArray<class_intarray>`  **get_item_list**  **(** **)** const
+
+Return the list of items.
+
+.. _class_MeshLibrary_get_last_unused_item_id:
+
+- :ref:`int<class_int>`  **get_last_unused_item_id**  **(** **)** const
+
+Get an unused id for a new item.
+
+

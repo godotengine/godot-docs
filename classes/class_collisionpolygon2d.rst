@@ -1,0 +1,100 @@
+.. _class_CollisionPolygon2D:
+
+CollisionPolygon2D
+==================
+
+Inherits: :ref:`Node2D<class_node2d>`
+-------------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+Editor-only class for easy editing of collision polygons.
+
+Member Functions
+----------------
+
++------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_polygon<class_CollisionPolygon2D_set_polygon>`  **(** :ref:`Vector2Array<class_vector2array>` polygon  **)** |
++------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2Array<class_vector2array>`  | :ref:`get_polygon<class_CollisionPolygon2D_get_polygon>`  **(** **)** const                                            |
++------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_build_mode<class_CollisionPolygon2D_set_build_mode>`  **(** :ref:`int<class_int>` build_mode  **)**          |
++------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                    | :ref:`get_build_mode<class_CollisionPolygon2D_get_build_mode>`  **(** **)** const                                      |
++------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_trigger<class_CollisionPolygon2D_set_trigger>`  **(** :ref:`bool<class_bool>` trigger  **)**                 |
++------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`is_trigger<class_CollisionPolygon2D_is_trigger>`  **(** **)** const                                              |
++------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                    | :ref:`get_collision_object_first_shape<class_CollisionPolygon2D_get_collision_object_first_shape>`  **(** **)** const  |
++------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                    | :ref:`get_collision_object_last_shape<class_CollisionPolygon2D_get_collision_object_last_shape>`  **(** **)** const    |
++------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+
+Description
+-----------
+
+Editor-only class. This is not present when running the game. It's used in the editor to properly edit and position collision shapes in :ref:`CollisionObject2D<class_collisionobject2d>`. This is not accessible from regular code. This class is for editing custom shape polygons.
+
+Member Function Description
+---------------------------
+
+.. _class_CollisionPolygon2D_set_polygon:
+
+- void  **set_polygon**  **(** :ref:`Vector2Array<class_vector2array>` polygon  **)**
+
+Set the array of points forming the polygon.
+
+When editing the point list via the editor, depending on :ref:`get_build_mode<CollisionPolygon2D_get_build_mode>`, it has to be a list of points (for :ref:`code<class_code>`build_mode:ref:`/code<class_/code>`=0), or a list of lines (for :ref:`code<class_code>`build_mode:ref:`/code<class_/code>`=1). In the second case, the even elements of the array define the start point of the line, and the odd elements the end point.
+
+.. _class_CollisionPolygon2D_get_polygon:
+
+- :ref:`Vector2Array<class_vector2array>`  **get_polygon**  **(** **)** const
+
+Return the list of points that define the polygon.
+
+.. _class_CollisionPolygon2D_set_build_mode:
+
+- void  **set_build_mode**  **(** :ref:`int<class_int>` build_mode  **)**
+
+Set whether the polygon is to be a :ref:`ConvexPolygon2D<class_convexpolygon2d>` (:ref:`code<class_code>`build_mode:ref:`/code<class_/code>`=0), or a :ref:`ConcavePolygon2D<class_concavepolygon2d>` (:ref:`code<class_code>`build_mode:ref:`/code<class_/code>`=1).
+
+.. _class_CollisionPolygon2D_get_build_mode:
+
+- :ref:`int<class_int>`  **get_build_mode**  **(** **)** const
+
+Return whether the polygon is a :ref:`ConvexPolygon2D<class_convexpolygon2d>` (:ref:`code<class_code>`build_mode:ref:`/code<class_/code>`=0), or a :ref:`ConcavePolygon2D<class_concavepolygon2d>` (:ref:`code<class_code>`build_mode:ref:`/code<class_/code>`=1).
+
+.. _class_CollisionPolygon2D_set_trigger:
+
+- void  **set_trigger**  **(** :ref:`bool<class_bool>` trigger  **)**
+
+Set whether this polygon is a trigger. A trigger polygon detects collisions, but is otherwise unaffected by physics (i.e. colliding objects will not get blocked).
+
+.. _class_CollisionPolygon2D_is_trigger:
+
+- :ref:`bool<class_bool>`  **is_trigger**  **(** **)** const
+
+Return whether this polygon is a trigger.
+
+.. _class_CollisionPolygon2D_get_collision_object_first_shape:
+
+- :ref:`int<class_int>`  **get_collision_object_first_shape**  **(** **)** const
+
+Return the index of the first shape generated by the editor.
+
+When :ref:`code<class_code>`build_mode:ref:`/code<class_/code>` is set to generate convex polygons, the shape shown in the editor may be decomopsed into many convex polygons. In that case, a range of indexes is needed to directly access the :ref:`Shape2D<class_shape2d>`s.
+
+When :ref:`code<class_code>`build_mode:ref:`/code<class_/code>` is set to generate concave polygons, there is only one :ref:`Shape2D<class_shape2d>` generated, so the start index and the end index are the same.
+
+.. _class_CollisionPolygon2D_get_collision_object_last_shape:
+
+- :ref:`int<class_int>`  **get_collision_object_last_shape**  **(** **)** const
+
+Return the index of the last shape generated by the editor.
+
+

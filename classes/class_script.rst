@@ -1,0 +1,78 @@
+.. _class_Script:
+
+Script
+======
+
+Inherits: :ref:`Resource<class_resource>`
+-----------------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+Base class for scripts.
+
+Member Functions
+----------------
+
++------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`can_instance<class_Script_can_instance>`  **(** **)** const                                          |
++------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`instance_has<class_Script_instance_has>`  **(** :ref:`Object<class_object>` base_object  **)** const |
++------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`has_source_code<class_Script_has_source_code>`  **(** **)** const                                    |
++------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_source_code<class_Script_get_source_code>`  **(** **)** const                                    |
++------------------------------+------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_source_code<class_Script_set_source_code>`  **(** :ref:`String<class_string>` source  **)**      |
++------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`reload<class_Script_reload>`  **(** **)**                                                            |
++------------------------------+------------------------------------------------------------------------------------------------------------+
+
+Description
+-----------
+
+Base class for scripts. Any script that is loaded becomes one of these resources, which can then create instances.
+
+Member Function Description
+---------------------------
+
+.. _class_Script_can_instance:
+
+- :ref:`bool<class_bool>`  **can_instance**  **(** **)** const
+
+Return true if this script can be instance (ie not a library).
+
+.. _class_Script_instance_has:
+
+- :ref:`bool<class_bool>`  **instance_has**  **(** :ref:`Object<class_object>` base_object  **)** const
+
+Return true if a given object uses an instance of this script.
+
+.. _class_Script_has_source_code:
+
+- :ref:`bool<class_bool>`  **has_source_code**  **(** **)** const
+
+Return true if the script contains source code.
+
+.. _class_Script_get_source_code:
+
+- :ref:`String<class_string>`  **get_source_code**  **(** **)** const
+
+Return the script source code (if available).
+
+.. _class_Script_set_source_code:
+
+- void  **set_source_code**  **(** :ref:`String<class_string>` source  **)**
+
+Set the script source code.
+
+.. _class_Script_reload:
+
+- :ref:`int<class_int>`  **reload**  **(** **)**
+
+Reload the script. This will fail if there are existing instances.
+
+

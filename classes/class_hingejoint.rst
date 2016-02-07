@@ -1,0 +1,65 @@
+.. _class_HingeJoint:
+
+HingeJoint
+==========
+
+Inherits: :ref:`Joint<class_joint>`
+-----------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+
+
+Member Functions
+----------------
+
++----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_param<class_HingeJoint_set_param>`  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)** |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_param<class_HingeJoint_get_param>`  **(** :ref:`int<class_int>` param  **)** const                            |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_flag<class_HingeJoint_set_flag>`  **(** :ref:`int<class_int>` flag, :ref:`bool<class_bool>` enabled  **)**    |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`get_flag<class_HingeJoint_get_flag>`  **(** :ref:`int<class_int>` flag  **)** const                               |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+
+Numeric Constants
+-----------------
+
+- **PARAM_BIAS** = **0**
+- **PARAM_LIMIT_UPPER** = **1**
+- **PARAM_LIMIT_LOWER** = **2**
+- **PARAM_LIMIT_BIAS** = **3**
+- **PARAM_LIMIT_SOFTNESS** = **4**
+- **PARAM_LIMIT_RELAXATION** = **5**
+- **PARAM_MOTOR_TARGET_VELOCITY** = **6**
+- **PARAM_MOTOR_MAX_IMPULSE** = **7**
+- **PARAM_MAX** = **8**
+- **FLAG_USE_LIMIT** = **0**
+- **FLAG_ENABLE_MOTOR** = **1**
+- **FLAG_MAX** = **2**
+
+Member Function Description
+---------------------------
+
+.. _class_HingeJoint_set_param:
+
+- void  **set_param**  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**
+
+.. _class_HingeJoint_get_param:
+
+- :ref:`float<class_float>`  **get_param**  **(** :ref:`int<class_int>` param  **)** const
+
+.. _class_HingeJoint_set_flag:
+
+- void  **set_flag**  **(** :ref:`int<class_int>` flag, :ref:`bool<class_bool>` enabled  **)**
+
+.. _class_HingeJoint_get_flag:
+
+- :ref:`bool<class_bool>`  **get_flag**  **(** :ref:`int<class_int>` flag  **)** const
+
+

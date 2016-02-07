@@ -1,0 +1,45 @@
+.. _class_int:
+
+int
+===
+
+Category: Built-In Types
+------------------------
+
+Brief Description
+-----------------
+
+Integer built-in type.
+
+Member Functions
+----------------
+
++------------------------+--------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`int<class_int_int>`  **(** :ref:`bool<class_bool>` from  **)**     |
++------------------------+--------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`int<class_int_int>`  **(** :ref:`float<class_float>` from  **)**   |
++------------------------+--------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`int<class_int_int>`  **(** :ref:`String<class_string>` from  **)** |
++------------------------+--------------------------------------------------------------------------+
+
+Description
+-----------
+
+Integer built-in type.
+
+Member Function Description
+---------------------------
+
+.. _class_int_int:
+
+- :ref:`int<class_int>`  **int**  **(** :ref:`bool<class_bool>` from  **)**
+
+.. _class_int_int:
+
+- :ref:`int<class_int>`  **int**  **(** :ref:`float<class_float>` from  **)**
+
+.. _class_int_int:
+
+- :ref:`int<class_int>`  **int**  **(** :ref:`String<class_string>` from  **)**
+
+

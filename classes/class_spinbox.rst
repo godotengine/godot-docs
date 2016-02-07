@@ -1,0 +1,82 @@
+.. _class_SpinBox:
+
+SpinBox
+=======
+
+Inherits: :ref:`Range<class_range>`
+-----------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+Numerical input text field.
+
+Member Functions
+----------------
+
++------------------------------+------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_suffix<class_SpinBox_set_suffix>`  **(** :ref:`String<class_string>` suffix  **)**   |
++------------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_suffix<class_SpinBox_get_suffix>`  **(** **)** const                                 |
++------------------------------+------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_prefix<class_SpinBox_set_prefix>`  **(** :ref:`String<class_string>` prefix  **)**   |
++------------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_prefix<class_SpinBox_get_prefix>`  **(** **)** const                                 |
++------------------------------+------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_editable<class_SpinBox_set_editable>`  **(** :ref:`bool<class_bool>` editable  **)** |
++------------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`is_editable<class_SpinBox_is_editable>`  **(** **)** const                               |
++------------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`  | :ref:`get_line_edit<class_SpinBox_get_line_edit>`  **(** **)**                                 |
++------------------------------+------------------------------------------------------------------------------------------------+
+
+Description
+-----------
+
+SpinBox is a numerical input text field. It allows entering integers and floats.
+
+Member Function Description
+---------------------------
+
+.. _class_SpinBox_set_suffix:
+
+- void  **set_suffix**  **(** :ref:`String<class_string>` suffix  **)**
+
+Set a specific suffix.
+
+.. _class_SpinBox_get_suffix:
+
+- :ref:`String<class_string>`  **get_suffix**  **(** **)** const
+
+Return the specific suffix.
+
+.. _class_SpinBox_set_prefix:
+
+- void  **set_prefix**  **(** :ref:`String<class_string>` prefix  **)**
+
+Set a prefix.
+
+.. _class_SpinBox_get_prefix:
+
+- :ref:`String<class_string>`  **get_prefix**  **(** **)** const
+
+.. _class_SpinBox_set_editable:
+
+- void  **set_editable**  **(** :ref:`bool<class_bool>` editable  **)**
+
+Set whether the spinbox is editable.
+
+.. _class_SpinBox_is_editable:
+
+- :ref:`bool<class_bool>`  **is_editable**  **(** **)** const
+
+Return if the spinbox is editable.
+
+.. _class_SpinBox_get_line_edit:
+
+- :ref:`Object<class_object>`  **get_line_edit**  **(** **)**
+
+

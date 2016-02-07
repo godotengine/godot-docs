@@ -1,0 +1,45 @@
+.. _class_bool:
+
+bool
+====
+
+Category: Built-In Types
+------------------------
+
+Brief Description
+-----------------
+
+Boolean built-in type
+
+Member Functions
+----------------
+
++--------------------------+-----------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`bool<class_bool_bool>`  **(** :ref:`int<class_int>` from  **)**       |
++--------------------------+-----------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`bool<class_bool_bool>`  **(** :ref:`float<class_float>` from  **)**   |
++--------------------------+-----------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`bool<class_bool_bool>`  **(** :ref:`String<class_string>` from  **)** |
++--------------------------+-----------------------------------------------------------------------------+
+
+Description
+-----------
+
+Boolean built-in type.
+
+Member Function Description
+---------------------------
+
+.. _class_bool_bool:
+
+- :ref:`bool<class_bool>`  **bool**  **(** :ref:`int<class_int>` from  **)**
+
+.. _class_bool_bool:
+
+- :ref:`bool<class_bool>`  **bool**  **(** :ref:`float<class_float>` from  **)**
+
+.. _class_bool_bool:
+
+- :ref:`bool<class_bool>`  **bool**  **(** :ref:`String<class_string>` from  **)**
+
+

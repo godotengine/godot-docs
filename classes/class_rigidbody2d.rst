@@ -1,0 +1,369 @@
+.. _class_RigidBody2D:
+
+RigidBody2D
+===========
+
+Inherits: :ref:`PhysicsBody2D<class_physicsbody2d>`
+---------------------------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+Rigid body 2D node.
+
+Member Functions
+----------------
+
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`_integrate_forces<class_RigidBody2D__integrate_forces>`  **(** :ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>` state  **)** virtual                                                                  |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_mode<class_RigidBody2D_set_mode>`  **(** :ref:`int<class_int>` mode  **)**                                                                                                                                       |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_mode<class_RigidBody2D_get_mode>`  **(** **)** const                                                                                                                                                             |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_mass<class_RigidBody2D_set_mass>`  **(** :ref:`float<class_float>` mass  **)**                                                                                                                                   |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_mass<class_RigidBody2D_get_mass>`  **(** **)** const                                                                                                                                                             |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_weight<class_RigidBody2D_set_weight>`  **(** :ref:`float<class_float>` weight  **)**                                                                                                                             |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_weight<class_RigidBody2D_get_weight>`  **(** **)** const                                                                                                                                                         |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_friction<class_RigidBody2D_set_friction>`  **(** :ref:`float<class_float>` friction  **)**                                                                                                                       |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_friction<class_RigidBody2D_get_friction>`  **(** **)** const                                                                                                                                                     |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_bounce<class_RigidBody2D_set_bounce>`  **(** :ref:`float<class_float>` bounce  **)**                                                                                                                             |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_bounce<class_RigidBody2D_get_bounce>`  **(** **)** const                                                                                                                                                         |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_gravity_scale<class_RigidBody2D_set_gravity_scale>`  **(** :ref:`float<class_float>` gravity_scale  **)**                                                                                                        |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_gravity_scale<class_RigidBody2D_get_gravity_scale>`  **(** **)** const                                                                                                                                           |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_linear_damp<class_RigidBody2D_set_linear_damp>`  **(** :ref:`float<class_float>` linear_damp  **)**                                                                                                              |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_linear_damp<class_RigidBody2D_get_linear_damp>`  **(** **)** const                                                                                                                                               |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_angular_damp<class_RigidBody2D_set_angular_damp>`  **(** :ref:`float<class_float>` angular_damp  **)**                                                                                                           |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_angular_damp<class_RigidBody2D_get_angular_damp>`  **(** **)** const                                                                                                                                             |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_linear_velocity<class_RigidBody2D_set_linear_velocity>`  **(** :ref:`Vector2<class_vector2>` linear_velocity  **)**                                                                                              |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_linear_velocity<class_RigidBody2D_get_linear_velocity>`  **(** **)** const                                                                                                                                       |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_angular_velocity<class_RigidBody2D_set_angular_velocity>`  **(** :ref:`float<class_float>` angular_velocity  **)**                                                                                               |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_angular_velocity<class_RigidBody2D_get_angular_velocity>`  **(** **)** const                                                                                                                                     |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_max_contacts_reported<class_RigidBody2D_set_max_contacts_reported>`  **(** :ref:`int<class_int>` amount  **)**                                                                                                   |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_max_contacts_reported<class_RigidBody2D_get_max_contacts_reported>`  **(** **)** const                                                                                                                           |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_use_custom_integrator<class_RigidBody2D_set_use_custom_integrator>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                                 |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_using_custom_integrator<class_RigidBody2D_is_using_custom_integrator>`  **(** **)**                                                                                                                               |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_contact_monitor<class_RigidBody2D_set_contact_monitor>`  **(** :ref:`bool<class_bool>` enabled  **)**                                                                                                            |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_contact_monitor_enabled<class_RigidBody2D_is_contact_monitor_enabled>`  **(** **)** const                                                                                                                         |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_continuous_collision_detection_mode<class_RigidBody2D_set_continuous_collision_detection_mode>`  **(** :ref:`int<class_int>` mode  **)**                                                                         |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_continuous_collision_detection_mode<class_RigidBody2D_get_continuous_collision_detection_mode>`  **(** **)** const                                                                                               |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_axis_velocity<class_RigidBody2D_set_axis_velocity>`  **(** :ref:`Vector2<class_vector2>` axis_velocity  **)**                                                                                                    |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`apply_impulse<class_RigidBody2D_apply_impulse>`  **(** :ref:`Vector2<class_vector2>` pos, :ref:`Vector2<class_vector2>` impulse  **)**                                                                               |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_applied_force<class_RigidBody2D_set_applied_force>`  **(** :ref:`Vector2<class_vector2>` force  **)**                                                                                                            |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_applied_force<class_RigidBody2D_get_applied_force>`  **(** **)** const                                                                                                                                           |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_sleeping<class_RigidBody2D_set_sleeping>`  **(** :ref:`bool<class_bool>` sleeping  **)**                                                                                                                         |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_sleeping<class_RigidBody2D_is_sleeping>`  **(** **)** const                                                                                                                                                       |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_can_sleep<class_RigidBody2D_set_can_sleep>`  **(** :ref:`bool<class_bool>` able_to_sleep  **)**                                                                                                                  |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_able_to_sleep<class_RigidBody2D_is_able_to_sleep>`  **(** **)** const                                                                                                                                             |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`test_motion<class_RigidBody2D_test_motion>`  **(** :ref:`Vector2<class_vector2>` motion, :ref:`float<class_float>` margin=0.08, :ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>` result=NULL  **)** |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`      | :ref:`get_colliding_bodies<class_RigidBody2D_get_colliding_bodies>`  **(** **)** const                                                                                                                                     |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Signals
+-------
+
+-  **body_enter**  **(** :ref:`Object<class_object>` body  **)**
+-  **body_enter_shape**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape  **)**
+-  **body_exit**  **(** :ref:`Object<class_object>` body  **)**
+-  **body_exit_shape**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape  **)**
+
+Numeric Constants
+-----------------
+
+- **MODE_STATIC** = **1** --- Static mode. The body behaves like a :ref:`StaticBody2D<class_staticbody2d>`, and can only move by user code.
+- **MODE_KINEMATIC** = **3** --- Kinematic body. The body behaves like a :ref:`KinematicBody2D<class_kinematicbody2d>`, and can only move by user code.
+- **MODE_RIGID** = **0** --- Rigid body. This is the "natural" state of a rigid body. It is affected by forces, and can move, rotate, and be affected by user code.
+- **MODE_CHARACTER** = **2** --- Character body. This behaves like a rigid body, but can not rotate.
+- **CCD_MODE_DISABLED** = **0** --- Disables continuous collision detection. This is the fastest way to detect body collisions, but can miss small, fast-moving objects.
+- **CCD_MODE_CAST_RAY** = **1** --- Enables continuous collision detection by raycasting. It is faster than shapecasting, but less precise.
+- **CCD_MODE_CAST_SHAPE** = **2** --- Enables continuous collision detection by shapecasting. It is the slowest CCD method, and the most precise.
+
+Description
+-----------
+
+Rigid body 2D node. This node is used for placing rigid bodies in the scene. It can contain a number of shapes, and also shift state between regular Rigid body, Kinematic, Character or Static.
+
+Character mode forbids the node from being rotated. This node can have a custom force integrator function, for writing complex physics motion behavior per node.
+
+As a warning, don't change this node position every frame or very often. Sporadic changes work fine, but physics runs at a different granularity (fixed hz) than usual rendering (process callback) and maybe even in a separate thread, so changing this from a process loop will yield strange behavior.
+
+Member Function Description
+---------------------------
+
+.. _class_RigidBody2D__integrate_forces:
+
+- void  **_integrate_forces**  **(** :ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>` state  **)** virtual
+
+Override this function to use a custom force integrator. This allows to hook up to the physics processing and alter the simulation state for the object on every frame.
+
+.. _class_RigidBody2D_set_mode:
+
+- void  **set_mode**  **(** :ref:`int<class_int>` mode  **)**
+
+Set the body mode, from the MODE_* enum. This allows to change to a static body or a character body.
+
+.. _class_RigidBody2D_get_mode:
+
+- :ref:`int<class_int>`  **get_mode**  **(** **)** const
+
+Return the current body mode, see :ref:`set_mode<RigidBody2D_set_mode>`.
+
+.. _class_RigidBody2D_set_mass:
+
+- void  **set_mass**  **(** :ref:`float<class_float>` mass  **)**
+
+Set the body mass.
+
+.. _class_RigidBody2D_get_mass:
+
+- :ref:`float<class_float>`  **get_mass**  **(** **)** const
+
+Return the body mass.
+
+.. _class_RigidBody2D_set_weight:
+
+- void  **set_weight**  **(** :ref:`float<class_float>` weight  **)**
+
+Set the body weight given standard earth-weight (gravity 9.8). Not really useful for 2D since most measures for this node are in pixels.
+
+.. _class_RigidBody2D_get_weight:
+
+- :ref:`float<class_float>`  **get_weight**  **(** **)** const
+
+Return the body weight given standard earth-weight (gravity 9.8).
+
+.. _class_RigidBody2D_set_friction:
+
+- void  **set_friction**  **(** :ref:`float<class_float>` friction  **)**
+
+Set the body friction, from 0 (frictionless) to 1 (full friction).
+
+.. _class_RigidBody2D_get_friction:
+
+- :ref:`float<class_float>`  **get_friction**  **(** **)** const
+
+Return the body friction.
+
+.. _class_RigidBody2D_set_bounce:
+
+- void  **set_bounce**  **(** :ref:`float<class_float>` bounce  **)**
+
+Set the body bounciness, from 0 (no bounce) to 1 (full bounce).
+
+.. _class_RigidBody2D_get_bounce:
+
+- :ref:`float<class_float>`  **get_bounce**  **(** **)** const
+
+Return the body bounciness.
+
+.. _class_RigidBody2D_set_gravity_scale:
+
+- void  **set_gravity_scale**  **(** :ref:`float<class_float>` gravity_scale  **)**
+
+Set The gravity factor. This factor multiplies gravity intensity just for this body.
+
+.. _class_RigidBody2D_get_gravity_scale:
+
+- :ref:`float<class_float>`  **get_gravity_scale**  **(** **)** const
+
+Return the gravity factor.
+
+.. _class_RigidBody2D_set_linear_damp:
+
+- void  **set_linear_damp**  **(** :ref:`float<class_float>` linear_damp  **)**
+
+Set the linear damp for this body. If this value is different from -1, any linear damp derived from the world or areas will be overriden.
+
+.. _class_RigidBody2D_get_linear_damp:
+
+- :ref:`float<class_float>`  **get_linear_damp**  **(** **)** const
+
+Return the linear damp for this body.
+
+.. _class_RigidBody2D_set_angular_damp:
+
+- void  **set_angular_damp**  **(** :ref:`float<class_float>` angular_damp  **)**
+
+Set the angular damp for this body. If this value is different from -1, any angular damp derived from the world or areas will be overriden.
+
+.. _class_RigidBody2D_get_angular_damp:
+
+- :ref:`float<class_float>`  **get_angular_damp**  **(** **)** const
+
+Return the angular damp for this body.
+
+.. _class_RigidBody2D_set_linear_velocity:
+
+- void  **set_linear_velocity**  **(** :ref:`Vector2<class_vector2>` linear_velocity  **)**
+
+Set the body linear velocity. Can be used sporadically, but** DONT SET THIS IN EVERY FRAME **, because physics may be running in another thread and definitely runs at a different granularity. Use :ref:`_integrate_forces<class__integrate_forces>` as your process loop if you want to have precise control of the body state.
+
+.. _class_RigidBody2D_get_linear_velocity:
+
+- :ref:`Vector2<class_vector2>`  **get_linear_velocity**  **(** **)** const
+
+Return the body linear velocity. This changes by physics granularity. See :ref:`set_linear_velocity<RigidBody2D_set_linear_velocity>`.
+
+.. _class_RigidBody2D_set_angular_velocity:
+
+- void  **set_angular_velocity**  **(** :ref:`float<class_float>` angular_velocity  **)**
+
+Set the body angular velocity. Can be used sporadically, but** DONT SET THIS IN EVERY FRAME **, because physics may be running in another thread and definitely runs at a different granularity. Use :ref:`_integrate_forces<class__integrate_forces>` as your process loop if you want to have precise control of the body state.
+
+.. _class_RigidBody2D_get_angular_velocity:
+
+- :ref:`float<class_float>`  **get_angular_velocity**  **(** **)** const
+
+Return the body angular velocity. This changes by physics granularity. See :ref:`set_angular_velocity<RigidBody2D_set_angular_velocity>`.
+
+.. _class_RigidBody2D_set_max_contacts_reported:
+
+- void  **set_max_contacts_reported**  **(** :ref:`int<class_int>` amount  **)**
+
+Set the maximum contacts to report. Bodies can keep a log of the contacts with other bodies, this is enabled by setting the maximum amount of contacts reported to a number greater than 0.
+
+.. _class_RigidBody2D_get_max_contacts_reported:
+
+- :ref:`int<class_int>`  **get_max_contacts_reported**  **(** **)** const
+
+Return the maximum contacts that can be reported. See :ref:`set_max_contacts_reported<RigidBody2D_set_max_contacts_reported>`.
+
+.. _class_RigidBody2D_set_use_custom_integrator:
+
+- void  **set_use_custom_integrator**  **(** :ref:`bool<class_bool>` enable  **)**
+
+Set to true if the body shall not do any internal force integration at all (like gravity or air friction). Only the :ref:`_integrate_forces<RigidBody2D__integrate_forces>` will be able to integrate them if overrided.
+
+.. _class_RigidBody2D_is_using_custom_integrator:
+
+- :ref:`bool<class_bool>`  **is_using_custom_integrator**  **(** **)**
+
+Return true if the body is not doing any built-in force integration.
+
+.. _class_RigidBody2D_set_contact_monitor:
+
+- void  **set_contact_monitor**  **(** :ref:`bool<class_bool>` enabled  **)**
+
+Enable contact monitoring. This allows the body to emit signals when it collides with another.
+
+.. _class_RigidBody2D_is_contact_monitor_enabled:
+
+- :ref:`bool<class_bool>`  **is_contact_monitor_enabled**  **(** **)** const
+
+Return whether contact monitoring is enabled.
+
+.. _class_RigidBody2D_set_continuous_collision_detection_mode:
+
+- void  **set_continuous_collision_detection_mode**  **(** :ref:`int<class_int>` mode  **)**
+
+Set the continuous collision detection mode from the enum CCD_MODE_*.
+
+Coninuous collision detection tries to predict where a moving body will collide, instead of moving it and correcting its movement if it collided. The first is more precise, and misses less impacts by small, fast-moving objects. The second is faster to compute, but can miss small, fat-moving objects.
+
+.. _class_RigidBody2D_get_continuous_collision_detection_mode:
+
+- :ref:`int<class_int>`  **get_continuous_collision_detection_mode**  **(** **)** const
+
+Return whether this body is using continuous collision detection.
+
+.. _class_RigidBody2D_set_axis_velocity:
+
+- void  **set_axis_velocity**  **(** :ref:`Vector2<class_vector2>` axis_velocity  **)**
+
+Set an axis velocity. The velocity in the given vector axis will be set as the given vector length. This is useful for jumping behavior.
+
+.. _class_RigidBody2D_apply_impulse:
+
+- void  **apply_impulse**  **(** :ref:`Vector2<class_vector2>` pos, :ref:`Vector2<class_vector2>` impulse  **)**
+
+Apply a positioned impulse (which will be affected by the body mass and shape). This is the equivalent of hitting a billiard ball with a cue: a force that is applied once, and only once.
+
+.. _class_RigidBody2D_set_applied_force:
+
+- void  **set_applied_force**  **(** :ref:`Vector2<class_vector2>` force  **)**
+
+Set the applied force vector. This is the equivalent of pushing a box over the ground: the force applied is applied constantly.
+
+.. _class_RigidBody2D_get_applied_force:
+
+- :ref:`Vector2<class_vector2>`  **get_applied_force**  **(** **)** const
+
+Return the applied force vector.
+
+.. _class_RigidBody2D_set_sleeping:
+
+- void  **set_sleeping**  **(** :ref:`bool<class_bool>` sleeping  **)**
+
+Set whether a body is isleeping or not. Sleeping bodies are not affected by forces until a collision or an :ref:`apply_impulse<RigidBody2D_apply_impulse>`/:ref:`set_applied_force<RigidBody2D_set_applied_force>` wakes them up. Until then, they behave like a static body.
+
+.. _class_RigidBody2D_is_sleeping:
+
+- :ref:`bool<class_bool>`  **is_sleeping**  **(** **)** const
+
+Return whether the body is sleeping.
+
+.. _class_RigidBody2D_set_can_sleep:
+
+- void  **set_can_sleep**  **(** :ref:`bool<class_bool>` able_to_sleep  **)**
+
+Set the body ability to fall asleep when not moving. This saves an enormous amount of processor time when there are plenty of rigid bodies (non static) in a scene.
+
+Sleeping bodies are not affected by forces until a collision or an :ref:`apply_impulse<RigidBody2D_apply_impulse>`/:ref:`set_applied_force<RigidBody2D_set_applied_force>` wakes them up. Until then, they behave like a static body.
+
+.. _class_RigidBody2D_is_able_to_sleep:
+
+- :ref:`bool<class_bool>`  **is_able_to_sleep**  **(** **)** const
+
+Return true if the body has the ability to fall asleep when not moving. See :ref:`set_can_sleep<RigidBody2D_set_can_sleep>`.
+
+.. _class_RigidBody2D_test_motion:
+
+- :ref:`bool<class_bool>`  **test_motion**  **(** :ref:`Vector2<class_vector2>` motion, :ref:`float<class_float>` margin=0.08, :ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>` result=NULL  **)**
+
+Return whether the body would collide, if it tried to move in the given vector. This method allows two extra parameters: A margin, which increases slightly the size of the shapes involved in the collision detection, and an object of type :ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>`, which will store additional information about the collision (should there be one).
+
+.. _class_RigidBody2D_get_colliding_bodies:
+
+- :ref:`Array<class_array>`  **get_colliding_bodies**  **(** **)** const
+
+Return a list of the bodies colliding with this one.
+
+

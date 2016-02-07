@@ -1,0 +1,109 @@
+.. _class_GraphEdit:
+
+GraphEdit
+=========
+
+Inherits: :ref:`Control<class_control>`
+---------------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+GraphEdit is an area capable of showing various GraphNodes. It manages connection events between them.
+
+Member Functions
+----------------
+
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Error                          | :ref:`connect_node<class_GraphEdit_connect_node>`  **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_port, :ref:`String<class_string>` to, :ref:`int<class_int>` to_port  **)**           |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_node_connected<class_GraphEdit_is_node_connected>`  **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_port, :ref:`String<class_string>` to, :ref:`int<class_int>` to_port  **)** |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`disconnect_node<class_GraphEdit_disconnect_node>`  **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_port, :ref:`String<class_string>` to, :ref:`int<class_int>` to_port  **)**     |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`      | :ref:`get_connection_list<class_GraphEdit_get_connection_list>`  **(** **)** const                                                                                                                         |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_scroll_ofs<class_GraphEdit_get_scroll_ofs>`  **(** **)** const                                                                                                                                   |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_zoom<class_GraphEdit_set_zoom>`  **(** :ref:`float<class_float>` p_zoom  **)**                                                                                                                   |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_zoom<class_GraphEdit_get_zoom>`  **(** **)** const                                                                                                                                               |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_right_disconnects<class_GraphEdit_set_right_disconnects>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                           |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_right_disconnects_enabled<class_GraphEdit_is_right_disconnects_enabled>`  **(** **)** const                                                                                                       |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Signals
+-------
+
+-  **delete_nodes_request**  **(** **)**
+-  **duplicate_nodes_request**  **(** **)**
+-  **popup_request**  **(** :ref:`Vector2<class_vector2>` p_position  **)**
+-  **_begin_node_move**  **(** **)**
+-  **disconnection_request**  **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_slot, :ref:`String<class_string>` to, :ref:`int<class_int>` to_slot  **)**
+-  **connection_request**  **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_slot, :ref:`String<class_string>` to, :ref:`int<class_int>` to_slot  **)**
+-  **_end_node_move**  **(** **)**
+
+Description
+-----------
+
+GraphEdit manages the showing of GraphNodes it contains, as well as connections an disconnections between them. Signals are sent for each of these two events. Disconnection between GraphNodes slots is disabled by default.
+
+It is greatly advised to enable low processor usage mode :ref:`OS.set_low_processor_usage_mode()<class_os.set_low_processor_usage_mode()>` when using GraphEdits.
+
+Member Function Description
+---------------------------
+
+.. _class_GraphEdit_connect_node:
+
+- Error  **connect_node**  **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_port, :ref:`String<class_string>` to, :ref:`int<class_int>` to_port  **)**
+
+Create a connection between 'from_port' slot of 'from' GraphNode and 'to_port' slot of 'to' GraphNode. If the connection already exists, no connection is created.
+
+.. _class_GraphEdit_is_node_connected:
+
+- :ref:`bool<class_bool>`  **is_node_connected**  **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_port, :ref:`String<class_string>` to, :ref:`int<class_int>` to_port  **)**
+
+Return true if the 'from_port' slot of 'from' GraphNode is connected to the 'to_port' slot of 'to' GraphNode.
+
+.. _class_GraphEdit_disconnect_node:
+
+- void  **disconnect_node**  **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_port, :ref:`String<class_string>` to, :ref:`int<class_int>` to_port  **)**
+
+Remove the connection between 'from_port' slot of 'from' GraphNode and 'to_port' slot of 'to' GraphNode, if connection exists.
+
+.. _class_GraphEdit_get_connection_list:
+
+- :ref:`Array<class_array>`  **get_connection_list**  **(** **)** const
+
+Return an Array containing the list of connections. A connection consists in a structure of the form {from_slot: 0, from: "GraphNode name 0", to_slot: 1, to: "GraphNode name 1" }
+
+.. _class_GraphEdit_get_scroll_ofs:
+
+- :ref:`Vector2<class_vector2>`  **get_scroll_ofs**  **(** **)** const
+
+.. _class_GraphEdit_set_zoom:
+
+- void  **set_zoom**  **(** :ref:`float<class_float>` p_zoom  **)**
+
+.. _class_GraphEdit_get_zoom:
+
+- :ref:`float<class_float>`  **get_zoom**  **(** **)** const
+
+.. _class_GraphEdit_set_right_disconnects:
+
+- void  **set_right_disconnects**  **(** :ref:`bool<class_bool>` enable  **)**
+
+Enable the disconnection of existing connections in the visual GraphEdit by left-clicking a connection and releasing into the void.
+
+.. _class_GraphEdit_is_right_disconnects_enabled:
+
+- :ref:`bool<class_bool>`  **is_right_disconnects_enabled**  **(** **)** const
+
+Return true is the disconnection of connections is enable in the visual GraphEdit. False otherwise.
+
+

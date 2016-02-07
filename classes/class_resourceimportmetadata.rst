@@ -1,0 +1,85 @@
+.. _class_ResourceImportMetadata:
+
+ResourceImportMetadata
+======================
+
+Inherits: :ref:`Reference<class_reference>`
+-------------------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+
+
+Member Functions
+----------------
+
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_editor<class_ResourceImportMetadata_set_editor>`  **(** :ref:`String<class_string>` name  **)**                                     |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`get_editor<class_ResourceImportMetadata_get_editor>`  **(** **)** const                                                                 |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`add_source<class_ResourceImportMetadata_add_source>`  **(** :ref:`String<class_string>` path, :ref:`String<class_string>` md5=""  **)** |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`get_source_path<class_ResourceImportMetadata_get_source_path>`  **(** :ref:`int<class_int>` idx  **)** const                            |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`get_source_md5<class_ResourceImportMetadata_get_source_md5>`  **(** :ref:`int<class_int>` idx  **)** const                              |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`remove_source<class_ResourceImportMetadata_remove_source>`  **(** :ref:`int<class_int>` idx  **)**                                      |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`get_source_count<class_ResourceImportMetadata_get_source_count>`  **(** **)** const                                                     |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_option<class_ResourceImportMetadata_set_option>`  **(** :ref:`String<class_string>` key, var value  **)**                           |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`get_option<class_ResourceImportMetadata_get_option>`  **(** :ref:`String<class_string>` key  **)** const                                |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`StringArray<class_stringarray>`  | :ref:`get_options<class_ResourceImportMetadata_get_options>`  **(** **)** const                                                               |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+
+Member Function Description
+---------------------------
+
+.. _class_ResourceImportMetadata_set_editor:
+
+- void  **set_editor**  **(** :ref:`String<class_string>` name  **)**
+
+.. _class_ResourceImportMetadata_get_editor:
+
+- :ref:`String<class_string>`  **get_editor**  **(** **)** const
+
+.. _class_ResourceImportMetadata_add_source:
+
+- void  **add_source**  **(** :ref:`String<class_string>` path, :ref:`String<class_string>` md5=""  **)**
+
+.. _class_ResourceImportMetadata_get_source_path:
+
+- :ref:`String<class_string>`  **get_source_path**  **(** :ref:`int<class_int>` idx  **)** const
+
+.. _class_ResourceImportMetadata_get_source_md5:
+
+- :ref:`String<class_string>`  **get_source_md5**  **(** :ref:`int<class_int>` idx  **)** const
+
+.. _class_ResourceImportMetadata_remove_source:
+
+- void  **remove_source**  **(** :ref:`int<class_int>` idx  **)**
+
+.. _class_ResourceImportMetadata_get_source_count:
+
+- :ref:`int<class_int>`  **get_source_count**  **(** **)** const
+
+.. _class_ResourceImportMetadata_set_option:
+
+- void  **set_option**  **(** :ref:`String<class_string>` key, var value  **)**
+
+.. _class_ResourceImportMetadata_get_option:
+
+- void  **get_option**  **(** :ref:`String<class_string>` key  **)** const
+
+.. _class_ResourceImportMetadata_get_options:
+
+- :ref:`StringArray<class_stringarray>`  **get_options**  **(** **)** const
+
+

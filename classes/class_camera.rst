@@ -1,0 +1,192 @@
+.. _class_Camera:
+
+Camera
+======
+
+Inherits: :ref:`Spatial<class_spatial>`
+---------------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+Camera node, displays from a point of view.
+
+Member Functions
+----------------
+
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`          | :ref:`project_ray_normal<class_Camera_project_ray_normal>`  **(** :ref:`Vector2<class_vector2>` screen_point  **)** const                                           |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`          | :ref:`project_local_ray_normal<class_Camera_project_local_ray_normal>`  **(** :ref:`Vector2<class_vector2>` screen_point  **)** const                               |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`          | :ref:`project_ray_origin<class_Camera_project_ray_origin>`  **(** :ref:`Vector2<class_vector2>` screen_point  **)** const                                           |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`          | :ref:`unproject_position<class_Camera_unproject_position>`  **(** :ref:`Vector3<class_vector3>` world_point  **)** const                                            |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`is_position_behind<class_Camera_is_position_behind>`  **(** :ref:`Vector3<class_vector3>` world_point  **)** const                                            |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`          | :ref:`project_position<class_Camera_project_position>`  **(** :ref:`Vector2<class_vector2>` screen_point  **)** const                                               |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_perspective<class_Camera_set_perspective>`  **(** :ref:`float<class_float>` fov, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far  **)** |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_orthogonal<class_Camera_set_orthogonal>`  **(** :ref:`float<class_float>` size, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far  **)**  |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`make_current<class_Camera_make_current>`  **(** **)**                                                                                                         |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`clear_current<class_Camera_clear_current>`  **(** **)**                                                                                                       |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`is_current<class_Camera_is_current>`  **(** **)** const                                                                                                       |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_transform>`      | :ref:`get_camera_transform<class_Camera_get_camera_transform>`  **(** **)** const                                                                                   |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_fov<class_Camera_get_fov>`  **(** **)** const                                                                                                             |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_size<class_Camera_get_size>`  **(** **)** const                                                                                                           |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_zfar<class_Camera_get_zfar>`  **(** **)** const                                                                                                           |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_znear<class_Camera_get_znear>`  **(** **)** const                                                                                                         |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`get_projection<class_Camera_get_projection>`  **(** **)** const                                                                                               |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_visible_layers<class_Camera_set_visible_layers>`  **(** :ref:`int<class_int>` mask  **)**                                                                 |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`get_visible_layers<class_Camera_get_visible_layers>`  **(** **)** const                                                                                       |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_environment<class_Camera_set_environment>`  **(** :ref:`Environment<class_environment>` env  **)**                                                        |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Environment<class_environment>`  | :ref:`get_environment<class_Camera_get_environment>`  **(** **)** const                                                                                             |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_keep_aspect_mode<class_Camera_set_keep_aspect_mode>`  **(** :ref:`int<class_int>` mode  **)**                                                             |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`get_keep_aspect_mode<class_Camera_get_keep_aspect_mode>`  **(** **)** const                                                                                   |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Numeric Constants
+-----------------
+
+- **PROJECTION_PERSPECTIVE** = **0** --- Perspective Projection (object's size on the screen becomes smaller when far away).
+- **PROJECTION_ORTHOGONAL** = **1** --- Orthogonal Projection (objects remain the same size on the screen no matter how far away they are).
+- **KEEP_WIDTH** = **0**
+- **KEEP_HEIGHT** = **1**
+
+Description
+-----------
+
+Camera is a special node that displays what is visible from its current location. Cameras register themselves in the nearest :ref:`Viewport<class_viewport>` node (when ascending the tree). Only one camera can be active per viewport. If no viewport is available ascending the tree, the Camera will register in the global viewport. In other words, a Camera just provides *3D* display capabilities to a :ref:`Viewport<class_viewport>`, and, without one, a :ref:`Scene<class_scene>` registered in that :ref:`Viewport<class_viewport>` (or higher viewports) can't be displayed.
+
+Member Function Description
+---------------------------
+
+.. _class_Camera_project_ray_normal:
+
+- :ref:`Vector3<class_vector3>`  **project_ray_normal**  **(** :ref:`Vector2<class_vector2>` screen_point  **)** const
+
+Return a normal vector in worldspace, that is the result of projecting a point on the :ref:`Viewport<class_viewport>` rectangle by the camera projection. This is useful for casting rays in the form of (origin,normal) for object intersection or picking.
+
+.. _class_Camera_project_local_ray_normal:
+
+- :ref:`Vector3<class_vector3>`  **project_local_ray_normal**  **(** :ref:`Vector2<class_vector2>` screen_point  **)** const
+
+.. _class_Camera_project_ray_origin:
+
+- :ref:`Vector3<class_vector3>`  **project_ray_origin**  **(** :ref:`Vector2<class_vector2>` screen_point  **)** const
+
+Return a 3D position in worldspace, that is the result of projecting a point on the :ref:`Viewport<class_viewport>` rectangle by the camera projection. This is useful for casting rays in the form of (origin,normal) for object intersection or picking.
+
+.. _class_Camera_unproject_position:
+
+- :ref:`Vector2<class_vector2>`  **unproject_position**  **(** :ref:`Vector3<class_vector3>` world_point  **)** const
+
+Return how a 3D point in worldpsace maps to a 2D coordinate in the :ref:`Viewport<class_viewport>` rectangle.
+
+.. _class_Camera_is_position_behind:
+
+- :ref:`bool<class_bool>`  **is_position_behind**  **(** :ref:`Vector3<class_vector3>` world_point  **)** const
+
+.. _class_Camera_project_position:
+
+- :ref:`Vector3<class_vector3>`  **project_position**  **(** :ref:`Vector2<class_vector2>` screen_point  **)** const
+
+.. _class_Camera_set_perspective:
+
+- void  **set_perspective**  **(** :ref:`float<class_float>` fov, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far  **)**
+
+Set the camera projection to perspective mode, by specifying a *FOV* Y angle in degrees (FOV means Field of View), and the *near* and *far* clip planes in worldspace units.
+
+.. _class_Camera_set_orthogonal:
+
+- void  **set_orthogonal**  **(** :ref:`float<class_float>` size, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far  **)**
+
+Set the camera projection to orthogonal mode, by specifying a width and the *near* and *far* clip planes in worldspace units. (As a hint, 2D games often use this projection, with values specified in pixels)
+
+.. _class_Camera_make_current:
+
+- void  **make_current**  **(** **)**
+
+Make this camera the current Camera for the :ref:`Viewport<class_viewport>` (see class description). If the Camera Node is outside the scene tree, it will attempt to become current once it's added.
+
+.. _class_Camera_clear_current:
+
+- void  **clear_current**  **(** **)**
+
+.. _class_Camera_is_current:
+
+- :ref:`bool<class_bool>`  **is_current**  **(** **)** const
+
+Return wether the Camera is the current one in the :ref:`Viewport<class_viewport>`, or plans to become current (if outside the scene tree).
+
+.. _class_Camera_get_camera_transform:
+
+- :ref:`Transform<class_transform>`  **get_camera_transform**  **(** **)** const
+
+Get the camera transform. Subclassed cameras (such as CharacterCamera) may provide different transforms than the :ref:`Node<class_node>` transform.
+
+.. _class_Camera_get_fov:
+
+- :ref:`float<class_float>`  **get_fov**  **(** **)** const
+
+.. _class_Camera_get_size:
+
+- :ref:`float<class_float>`  **get_size**  **(** **)** const
+
+.. _class_Camera_get_zfar:
+
+- :ref:`float<class_float>`  **get_zfar**  **(** **)** const
+
+.. _class_Camera_get_znear:
+
+- :ref:`float<class_float>`  **get_znear**  **(** **)** const
+
+.. _class_Camera_get_projection:
+
+- :ref:`int<class_int>`  **get_projection**  **(** **)** const
+
+.. _class_Camera_set_visible_layers:
+
+- void  **set_visible_layers**  **(** :ref:`int<class_int>` mask  **)**
+
+.. _class_Camera_get_visible_layers:
+
+- :ref:`int<class_int>`  **get_visible_layers**  **(** **)** const
+
+.. _class_Camera_set_environment:
+
+- void  **set_environment**  **(** :ref:`Environment<class_environment>` env  **)**
+
+.. _class_Camera_get_environment:
+
+- :ref:`Environment<class_environment>`  **get_environment**  **(** **)** const
+
+.. _class_Camera_set_keep_aspect_mode:
+
+- void  **set_keep_aspect_mode**  **(** :ref:`int<class_int>` mode  **)**
+
+.. _class_Camera_get_keep_aspect_mode:
+
+- :ref:`int<class_int>`  **get_keep_aspect_mode**  **(** **)** const
+
+

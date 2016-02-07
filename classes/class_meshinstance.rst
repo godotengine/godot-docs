@@ -1,0 +1,80 @@
+.. _class_MeshInstance:
+
+MeshInstance
+============
+
+Inherits: :ref:`GeometryInstance<class_geometryinstance>`
+---------------------------------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+Node that instances meshes into a :ref:`Scenario<class_scenario>`.
+
+Member Functions
+----------------
+
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_mesh<class_MeshInstance_set_mesh>`  **(** :ref:`Mesh<class_mesh>` mesh  **)**                                    |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Mesh<class_mesh>`          | :ref:`get_mesh<class_MeshInstance_get_mesh>`  **(** **)** const                                                            |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_skeleton_path<class_MeshInstance_set_skeleton_path>`  **(** :ref:`NodePath<class_nodepath>` skeleton_path  **)** |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`NodePath<class_nodepath>`  | :ref:`get_skeleton_path<class_MeshInstance_get_skeleton_path>`  **(** **)**                                                |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`AABB<class_aabb>`          | :ref:`get_aabb<class_MeshInstance_get_aabb>`  **(** **)** const                                                            |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`create_trimesh_collision<class_MeshInstance_create_trimesh_collision>`  **(** **)**                                  |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`create_convex_collision<class_MeshInstance_create_convex_collision>`  **(** **)**                                    |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+
+Description
+-----------
+
+MeshInstance is a :ref:`Node<class_node>` that takes a :ref:`Mesh<class_mesh>` resource and adds it to the current :ref:`Scenario<class_scenario>` by creating an instance of it. This is the class most often used to get 3D geometry rendered and can be used to instance a sigle :ref:`Mesh<class_mesh>` in many places. This allows to reuse geometry and save on resources. When a :ref:`Mesh<class_mesh>` has to be instanced more than thousands of times at close proximity, consider using a :ref:`MultiMesh<class_multimesh>` in a :ref:`MultiMeshInstance<class_multimeshinstance>` instead.
+
+Member Function Description
+---------------------------
+
+.. _class_MeshInstance_set_mesh:
+
+- void  **set_mesh**  **(** :ref:`Mesh<class_mesh>` mesh  **)**
+
+Set the :ref:`Mesh<class_mesh>` resource for the instance.
+
+.. _class_MeshInstance_get_mesh:
+
+- :ref:`Mesh<class_mesh>`  **get_mesh**  **(** **)** const
+
+Return the current :ref:`Mesh<class_mesh>` resource for the instance.
+
+.. _class_MeshInstance_set_skeleton_path:
+
+- void  **set_skeleton_path**  **(** :ref:`NodePath<class_nodepath>` skeleton_path  **)**
+
+.. _class_MeshInstance_get_skeleton_path:
+
+- :ref:`NodePath<class_nodepath>`  **get_skeleton_path**  **(** **)**
+
+.. _class_MeshInstance_get_aabb:
+
+- :ref:`AABB<class_aabb>`  **get_aabb**  **(** **)** const
+
+Return the AABB of the mesh, in local coordinates.
+
+.. _class_MeshInstance_create_trimesh_collision:
+
+- void  **create_trimesh_collision**  **(** **)**
+
+This helper creates a :ref:`StaticBody<class_staticbody>` child :ref:`Node<class_node>` using the mesh geometry as collision. It's mainly used for testing.
+
+.. _class_MeshInstance_create_convex_collision:
+
+- void  **create_convex_collision**  **(** **)**
+
+

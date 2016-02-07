@@ -1,0 +1,269 @@
+.. _class_Spatial:
+
+Spatial
+=======
+
+Inherits: :ref:`Node<class_node>`
+---------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+Base class for all 3D nodes.
+
+Member Functions
+----------------
+
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_transform<class_Spatial_set_transform>`  **(** :ref:`Transform<class_transform>` local  **)**                                                                         |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_transform>`  | :ref:`get_transform<class_Spatial_get_transform>`  **(** **)** const                                                                                                            |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_translation<class_Spatial_set_translation>`  **(** :ref:`Vector3<class_vector3>` translation  **)**                                                                   |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`      | :ref:`get_translation<class_Spatial_get_translation>`  **(** **)** const                                                                                                        |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_rotation<class_Spatial_set_rotation>`  **(** :ref:`Vector3<class_vector3>` rotation  **)**                                                                            |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`      | :ref:`get_rotation<class_Spatial_get_rotation>`  **(** **)** const                                                                                                              |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_scale<class_Spatial_set_scale>`  **(** :ref:`Vector3<class_vector3>` scale  **)**                                                                                     |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`      | :ref:`get_scale<class_Spatial_get_scale>`  **(** **)** const                                                                                                                    |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_global_transform<class_Spatial_set_global_transform>`  **(** :ref:`Transform<class_transform>` global  **)**                                                          |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_transform>`  | :ref:`get_global_transform<class_Spatial_get_global_transform>`  **(** **)** const                                                                                              |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`        | :ref:`get_parent_spatial<class_Spatial_get_parent_spatial>`  **(** **)** const                                                                                                  |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_ignore_transform_notification<class_Spatial_set_ignore_transform_notification>`  **(** :ref:`bool<class_bool>` enabled  **)**                                         |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_as_toplevel<class_Spatial_set_as_toplevel>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                              |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`            | :ref:`is_set_as_toplevel<class_Spatial_is_set_as_toplevel>`  **(** **)** const                                                                                                  |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`World<class_world>`          | :ref:`get_world<class_Spatial_get_world>`  **(** **)** const                                                                                                                    |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`update_gizmo<class_Spatial_update_gizmo>`  **(** **)**                                                                                                                    |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_gizmo<class_Spatial_set_gizmo>`  **(** SpatialGizmo gizmo  **)**                                                                                                      |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| SpatialGizmo                       | :ref:`get_gizmo<class_Spatial_get_gizmo>`  **(** **)** const                                                                                                                    |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`show<class_Spatial_show>`  **(** **)**                                                                                                                                    |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`hide<class_Spatial_hide>`  **(** **)**                                                                                                                                    |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`            | :ref:`is_visible<class_Spatial_is_visible>`  **(** **)** const                                                                                                                  |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`            | :ref:`is_hidden<class_Spatial_is_hidden>`  **(** **)** const                                                                                                                    |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_hidden<class_Spatial_set_hidden>`  **(** :ref:`bool<class_bool>` hidden  **)**                                                                                        |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_notify_local_transform<class_Spatial_set_notify_local_transform>`  **(** :ref:`bool<class_bool>` enable  **)**                                                        |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`            | :ref:`is_local_transform_notification_enabled<class_Spatial_is_local_transform_notification_enabled>`  **(** **)** const                                                        |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`rotate<class_Spatial_rotate>`  **(** :ref:`Vector3<class_vector3>` normal, :ref:`float<class_float>` radians  **)**                                                       |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`global_rotate<class_Spatial_global_rotate>`  **(** :ref:`Vector3<class_vector3>` normal, :ref:`float<class_float>` radians  **)**                                         |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`rotate_x<class_Spatial_rotate_x>`  **(** :ref:`float<class_float>` radians  **)**                                                                                         |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`rotate_y<class_Spatial_rotate_y>`  **(** :ref:`float<class_float>` radians  **)**                                                                                         |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`rotate_z<class_Spatial_rotate_z>`  **(** :ref:`float<class_float>` radians  **)**                                                                                         |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`translate<class_Spatial_translate>`  **(** :ref:`Vector3<class_vector3>` offset  **)**                                                                                    |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`global_translate<class_Spatial_global_translate>`  **(** :ref:`Vector3<class_vector3>` offset  **)**                                                                      |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`orthonormalize<class_Spatial_orthonormalize>`  **(** **)**                                                                                                                |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_identity<class_Spatial_set_identity>`  **(** **)**                                                                                                                    |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`look_at<class_Spatial_look_at>`  **(** :ref:`Vector3<class_vector3>` target, :ref:`Vector3<class_vector3>` up  **)**                                                      |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`look_at_from_pos<class_Spatial_look_at_from_pos>`  **(** :ref:`Vector3<class_vector3>` pos, :ref:`Vector3<class_vector3>` target, :ref:`Vector3<class_vector3>` up  **)** |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Signals
+-------
+
+-  **visibility_changed**  **(** **)**
+
+Numeric Constants
+-----------------
+
+- **NOTIFICATION_TRANSFORM_CHANGED** = **29** --- Spatial nodes receive this notifacation with their global transform changes. This means that either the current or a parent node changed its transform.
+- **NOTIFICATION_ENTER_WORLD** = **41**
+- **NOTIFICATION_EXIT_WORLD** = **42**
+- **NOTIFICATION_VISIBILITY_CHANGED** = **43**
+
+Description
+-----------
+
+Spatial is the base for every type of 3D :ref:`Node<class_node>`. It contains a 3D :ref:`Transform<class_transform>` which can be set or get as local or global. If a Spatial :ref:`Node<class_node>` has Spatial children, their transforms will be relative to the parent.
+
+Member Function Description
+---------------------------
+
+.. _class_Spatial_set_transform:
+
+- void  **set_transform**  **(** :ref:`Transform<class_transform>` local  **)**
+
+Set the transform locally, relative to the parent spatial node.
+
+.. _class_Spatial_get_transform:
+
+- :ref:`Transform<class_transform>`  **get_transform**  **(** **)** const
+
+Return the local transform, relative to the bone parent.
+
+.. _class_Spatial_set_translation:
+
+- void  **set_translation**  **(** :ref:`Vector3<class_vector3>` translation  **)**
+
+.. _class_Spatial_get_translation:
+
+- :ref:`Vector3<class_vector3>`  **get_translation**  **(** **)** const
+
+.. _class_Spatial_set_rotation:
+
+- void  **set_rotation**  **(** :ref:`Vector3<class_vector3>` rotation  **)**
+
+.. _class_Spatial_get_rotation:
+
+- :ref:`Vector3<class_vector3>`  **get_rotation**  **(** **)** const
+
+.. _class_Spatial_set_scale:
+
+- void  **set_scale**  **(** :ref:`Vector3<class_vector3>` scale  **)**
+
+.. _class_Spatial_get_scale:
+
+- :ref:`Vector3<class_vector3>`  **get_scale**  **(** **)** const
+
+.. _class_Spatial_set_global_transform:
+
+- void  **set_global_transform**  **(** :ref:`Transform<class_transform>` global  **)**
+
+Set the transform globally, relative to worldspace.
+
+.. _class_Spatial_get_global_transform:
+
+- :ref:`Transform<class_transform>`  **get_global_transform**  **(** **)** const
+
+Return the gloal transform, relative to worldspace.
+
+.. _class_Spatial_get_parent_spatial:
+
+- :ref:`Object<class_object>`  **get_parent_spatial**  **(** **)** const
+
+Return the parent :ref:`Spatial<class_spatial>`, or an empty :ref:`Object<class_object>` if no parent exists or parent is not of type :ref:`Spatial<class_spatial>`.
+
+.. _class_Spatial_set_ignore_transform_notification:
+
+- void  **set_ignore_transform_notification**  **(** :ref:`bool<class_bool>` enabled  **)**
+
+.. _class_Spatial_set_as_toplevel:
+
+- void  **set_as_toplevel**  **(** :ref:`bool<class_bool>` enable  **)**
+
+.. _class_Spatial_is_set_as_toplevel:
+
+- :ref:`bool<class_bool>`  **is_set_as_toplevel**  **(** **)** const
+
+.. _class_Spatial_get_world:
+
+- :ref:`World<class_world>`  **get_world**  **(** **)** const
+
+.. _class_Spatial_update_gizmo:
+
+- void  **update_gizmo**  **(** **)**
+
+.. _class_Spatial_set_gizmo:
+
+- void  **set_gizmo**  **(** SpatialGizmo gizmo  **)**
+
+.. _class_Spatial_get_gizmo:
+
+- SpatialGizmo  **get_gizmo**  **(** **)** const
+
+.. _class_Spatial_show:
+
+- void  **show**  **(** **)**
+
+.. _class_Spatial_hide:
+
+- void  **hide**  **(** **)**
+
+.. _class_Spatial_is_visible:
+
+- :ref:`bool<class_bool>`  **is_visible**  **(** **)** const
+
+.. _class_Spatial_is_hidden:
+
+- :ref:`bool<class_bool>`  **is_hidden**  **(** **)** const
+
+.. _class_Spatial_set_hidden:
+
+- void  **set_hidden**  **(** :ref:`bool<class_bool>` hidden  **)**
+
+.. _class_Spatial_set_notify_local_transform:
+
+- void  **set_notify_local_transform**  **(** :ref:`bool<class_bool>` enable  **)**
+
+.. _class_Spatial_is_local_transform_notification_enabled:
+
+- :ref:`bool<class_bool>`  **is_local_transform_notification_enabled**  **(** **)** const
+
+.. _class_Spatial_rotate:
+
+- void  **rotate**  **(** :ref:`Vector3<class_vector3>` normal, :ref:`float<class_float>` radians  **)**
+
+.. _class_Spatial_global_rotate:
+
+- void  **global_rotate**  **(** :ref:`Vector3<class_vector3>` normal, :ref:`float<class_float>` radians  **)**
+
+.. _class_Spatial_rotate_x:
+
+- void  **rotate_x**  **(** :ref:`float<class_float>` radians  **)**
+
+.. _class_Spatial_rotate_y:
+
+- void  **rotate_y**  **(** :ref:`float<class_float>` radians  **)**
+
+.. _class_Spatial_rotate_z:
+
+- void  **rotate_z**  **(** :ref:`float<class_float>` radians  **)**
+
+.. _class_Spatial_translate:
+
+- void  **translate**  **(** :ref:`Vector3<class_vector3>` offset  **)**
+
+.. _class_Spatial_global_translate:
+
+- void  **global_translate**  **(** :ref:`Vector3<class_vector3>` offset  **)**
+
+.. _class_Spatial_orthonormalize:
+
+- void  **orthonormalize**  **(** **)**
+
+.. _class_Spatial_set_identity:
+
+- void  **set_identity**  **(** **)**
+
+.. _class_Spatial_look_at:
+
+- void  **look_at**  **(** :ref:`Vector3<class_vector3>` target, :ref:`Vector3<class_vector3>` up  **)**
+
+.. _class_Spatial_look_at_from_pos:
+
+- void  **look_at_from_pos**  **(** :ref:`Vector3<class_vector3>` pos, :ref:`Vector3<class_vector3>` target, :ref:`Vector3<class_vector3>` up  **)**
+
+

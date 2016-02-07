@@ -1,0 +1,119 @@
+.. _class_Tabs:
+
+Tabs
+====
+
+Inherits: :ref:`Control<class_control>`
+---------------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+Tabs Control.
+
+Member Functions
+----------------
+
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_tab_count<class_Tabs_get_tab_count>`  **(** **)** const                                                             |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_current_tab<class_Tabs_set_current_tab>`  **(** :ref:`int<class_int>` tab_idx  **)**                                |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_current_tab<class_Tabs_get_current_tab>`  **(** **)** const                                                         |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_tab_title<class_Tabs_set_tab_title>`  **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_string>` title  **)** |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`    | :ref:`get_tab_title<class_Tabs_get_tab_title>`  **(** :ref:`int<class_int>` tab_idx  **)** const                              |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_tab_icon<class_Tabs_set_tab_icon>`  **(** :ref:`int<class_int>` tab_idx, :ref:`Texture<class_texture>` icon  **)**  |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_texture>`  | :ref:`get_tab_icon<class_Tabs_get_tab_icon>`  **(** :ref:`int<class_int>` tab_idx  **)** const                                |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`remove_tab<class_Tabs_remove_tab>`  **(** :ref:`int<class_int>` tab_idx  **)**                                          |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`add_tab<class_Tabs_add_tab>`  **(** :ref:`String<class_string>` title, :ref:`Texture<class_texture>` icon  **)**        |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_tab_align<class_Tabs_set_tab_align>`  **(** :ref:`int<class_int>` align  **)**                                      |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_tab_align<class_Tabs_get_tab_align>`  **(** **)** const                                                             |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`ensure_tab_visible<class_Tabs_ensure_tab_visible>`  **(** :ref:`int<class_int>` idx  **)**                              |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+
+Signals
+-------
+
+-  **tab_close**  **(** :ref:`int<class_int>` tab  **)**
+-  **right_button_pressed**  **(** :ref:`int<class_int>` tab  **)**
+-  **tab_changed**  **(** :ref:`int<class_int>` tab  **)**
+
+Numeric Constants
+-----------------
+
+- **ALIGN_LEFT** = **0**
+- **ALIGN_CENTER** = **1**
+- **ALIGN_RIGHT** = **2**
+- **CLOSE_BUTTON_SHOW_ACTIVE_ONLY** = **1**
+- **CLOSE_BUTTON_SHOW_ALWAYS** = **2**
+- **CLOSE_BUTTON_SHOW_NEVER** = **0**
+
+Description
+-----------
+
+Simple tabs control, similar to :ref:`TabContainer<class_tabcontainer>` but is only in charge of drawing tabs, not interact with children.
+
+Member Function Description
+---------------------------
+
+.. _class_Tabs_get_tab_count:
+
+- :ref:`int<class_int>`  **get_tab_count**  **(** **)** const
+
+.. _class_Tabs_set_current_tab:
+
+- void  **set_current_tab**  **(** :ref:`int<class_int>` tab_idx  **)**
+
+.. _class_Tabs_get_current_tab:
+
+- :ref:`int<class_int>`  **get_current_tab**  **(** **)** const
+
+.. _class_Tabs_set_tab_title:
+
+- void  **set_tab_title**  **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_string>` title  **)**
+
+.. _class_Tabs_get_tab_title:
+
+- :ref:`String<class_string>`  **get_tab_title**  **(** :ref:`int<class_int>` tab_idx  **)** const
+
+.. _class_Tabs_set_tab_icon:
+
+- void  **set_tab_icon**  **(** :ref:`int<class_int>` tab_idx, :ref:`Texture<class_texture>` icon  **)**
+
+.. _class_Tabs_get_tab_icon:
+
+- :ref:`Texture<class_texture>`  **get_tab_icon**  **(** :ref:`int<class_int>` tab_idx  **)** const
+
+.. _class_Tabs_remove_tab:
+
+- void  **remove_tab**  **(** :ref:`int<class_int>` tab_idx  **)**
+
+.. _class_Tabs_add_tab:
+
+- void  **add_tab**  **(** :ref:`String<class_string>` title, :ref:`Texture<class_texture>` icon  **)**
+
+.. _class_Tabs_set_tab_align:
+
+- void  **set_tab_align**  **(** :ref:`int<class_int>` align  **)**
+
+.. _class_Tabs_get_tab_align:
+
+- :ref:`int<class_int>`  **get_tab_align**  **(** **)** const
+
+.. _class_Tabs_ensure_tab_visible:
+
+- void  **ensure_tab_visible**  **(** :ref:`int<class_int>` idx  **)**
+
+

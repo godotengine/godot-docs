@@ -1,0 +1,37 @@
+.. _class_SphereShape:
+
+SphereShape
+===========
+
+Inherits: :ref:`Shape<class_shape>`
+-----------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+
+
+Member Functions
+----------------
+
++----------------------------+------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_radius<class_SphereShape_set_radius>`  **(** :ref:`float<class_float>` radius  **)** |
++----------------------------+------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_radius<class_SphereShape_get_radius>`  **(** **)** const                             |
++----------------------------+------------------------------------------------------------------------------------------------+
+
+Member Function Description
+---------------------------
+
+.. _class_SphereShape_set_radius:
+
+- void  **set_radius**  **(** :ref:`float<class_float>` radius  **)**
+
+.. _class_SphereShape_get_radius:
+
+- :ref:`float<class_float>`  **get_radius**  **(** **)** const
+
+

@@ -1,0 +1,110 @@
+.. _class_Portal:
+
+Portal
+======
+
+Inherits: :ref:`VisualInstance<class_visualinstance>`
+-----------------------------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+Portals provide virtual openings to rooms.
+
+Member Functions
+----------------
+
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_shape<class_Portal_set_shape>`  **(** :ref:`Vector2Array<class_vector2array>` points  **)**           |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2Array<class_vector2array>`  | :ref:`get_shape<class_Portal_get_shape>`  **(** **)** const                                                     |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_enabled<class_Portal_set_enabled>`  **(** :ref:`bool<class_bool>` enable  **)**                       |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`is_enabled<class_Portal_is_enabled>`  **(** **)** const                                                   |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_disable_distance<class_Portal_set_disable_distance>`  **(** :ref:`float<class_float>` distance  **)** |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                | :ref:`get_disable_distance<class_Portal_get_disable_distance>`  **(** **)** const                               |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_disabled_color<class_Portal_set_disabled_color>`  **(** :ref:`Color<class_color>` color  **)**        |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`                | :ref:`get_disabled_color<class_Portal_get_disabled_color>`  **(** **)** const                                   |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_connect_range<class_Portal_set_connect_range>`  **(** :ref:`float<class_float>` range  **)**          |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                | :ref:`get_connect_range<class_Portal_get_connect_range>`  **(** **)** const                                     |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+
+Description
+-----------
+
+Portals provide virtual openings to :ref:`RoomInstance<class_roominstance>` nodes, so cameras can look at them from the outside. Note that portals are a visibility optimization technique, and are in no way related to the game of the same name (as in, they are not used for teleportation). For more information on how rooms and portals work, see :ref:`RoomInstance<class_roominstance>`. Portals are represented as 2D convex polygon shapes (in the X,Y local plane), and are placed on the surface of the areas occupied by a :ref:`RoomInstance<class_roominstance>`, to indicate that the room can be accessed or looked-at through them. If two rooms are next to each other, and two similar portals in each of them share the same world position (and are parallel and opposed to each other), they will automatically "connect" and form "doors" (for example, the portals that connect a kitchen to a living room are placed in the door they share). Portals must always have a :ref:`RoomInstance<class_roominstance>` node as a parent, grandparent or far parent, or else they will not be active.
+
+Member Function Description
+---------------------------
+
+.. _class_Portal_set_shape:
+
+- void  **set_shape**  **(** :ref:`Vector2Array<class_vector2array>` points  **)**
+
+Set the portal shape. The shape is an array of :ref:`Point2<class_point2>` points, representing a convex polygon in the X,Y plane.
+
+.. _class_Portal_get_shape:
+
+- :ref:`Vector2Array<class_vector2array>`  **get_shape**  **(** **)** const
+
+Return the portal shape. The shape is an array of :ref:`Point2<class_point2>` points, representing a convex polygon in the X,Y plane.
+
+.. _class_Portal_set_enabled:
+
+- void  **set_enabled**  **(** :ref:`bool<class_bool>` enable  **)**
+
+Enable the portal (it is enabled by defaul though), disabling it will cause the parent :ref:`RoomInstance<class_roominstance>` to not be visible any longer when looking through the portal.
+
+.. _class_Portal_is_enabled:
+
+- :ref:`bool<class_bool>`  **is_enabled**  **(** **)** const
+
+Return wether the portal is active. When disabled it causes the parent :ref:`RoomInstance<class_roominstance>` to not be visible any longer when looking through the portal.
+
+.. _class_Portal_set_disable_distance:
+
+- void  **set_disable_distance**  **(** :ref:`float<class_float>` distance  **)**
+
+Set the distance threshold for disabling the portal. Every time that the portal goes beyond "distance", it disables itself, becoming the opaque color (see :ref:`set_disabled_color<Portal_set_disabled_color>`).
+
+.. _class_Portal_get_disable_distance:
+
+- :ref:`float<class_float>`  **get_disable_distance**  **(** **)** const
+
+Return the distance threshold for disabling the portal. Every time that the portal goes beyond "distance", it disables itself, becoming the opaque color (see :ref:`set_disabled_color<Portal_set_disabled_color>`).
+
+.. _class_Portal_set_disabled_color:
+
+- void  **set_disabled_color**  **(** :ref:`Color<class_color>` color  **)**
+
+When the portal goes beyond the disable distance (see :ref:`set_disable_distance<Portal_set_disable_distance>`), it becomes opaque and displayed with color "color".
+
+.. _class_Portal_get_disabled_color:
+
+- :ref:`Color<class_color>`  **get_disabled_color**  **(** **)** const
+
+Return the color for when the portal goes beyond the disable distance (see :ref:`set_disable_distance<Portal_set_disable_distance>`) and becomes disabled.
+
+.. _class_Portal_set_connect_range:
+
+- void  **set_connect_range**  **(** :ref:`float<class_float>` range  **)**
+
+Set the range for auto-connecting two portals from different rooms sharing the same space.
+
+.. _class_Portal_get_connect_range:
+
+- :ref:`float<class_float>`  **get_connect_range**  **(** **)** const
+
+Return the range for auto-connecting two portals from different rooms sharing the same space.
+
+

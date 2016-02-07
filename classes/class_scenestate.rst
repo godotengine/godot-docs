@@ -1,0 +1,127 @@
+.. _class_SceneState:
+
+SceneState
+==========
+
+Inherits: :ref:`Reference<class_reference>`
+-------------------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+
+
+Member Functions
+----------------
+
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`get_node_count<class_SceneState_get_node_count>`  **(** **)** const                                                                              |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`get_node_type<class_SceneState_get_node_type>`  **(** :ref:`int<class_int>` idx  **)** const                                                     |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`get_node_name<class_SceneState_get_node_name>`  **(** :ref:`int<class_int>` idx  **)** const                                                     |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`NodePath<class_nodepath>`        | :ref:`get_node_path<class_SceneState_get_node_path>`  **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` for_parent=false  **)** const           |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`NodePath<class_nodepath>`        | :ref:`get_node_owner_path<class_SceneState_get_node_owner_path>`  **(** :ref:`int<class_int>` idx  **)** const                                         |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PackedScene<class_packedscene>`  | :ref:`get_node_instance<class_SceneState_get_node_instance>`  **(** :ref:`int<class_int>` idx  **)** const                                             |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`StringArray<class_stringarray>`  | :ref:`get_node_groups<class_SceneState_get_node_groups>`  **(** :ref:`int<class_int>` idx  **)** const                                                 |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`get_node_property_count<class_SceneState_get_node_property_count>`  **(** :ref:`int<class_int>` idx  **)** const                                 |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`get_node_property_name<class_SceneState_get_node_property_name>`  **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` prop_idx  **)** const   |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`get_node_property_value<class_SceneState_get_node_property_value>`  **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` prop_idx  **)** const |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`get_connection_count<class_SceneState_get_connection_count>`  **(** **)** const                                                                  |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`NodePath<class_nodepath>`        | :ref:`get_connection_source<class_SceneState_get_connection_source>`  **(** :ref:`int<class_int>` idx  **)** const                                     |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`get_connection_signal<class_SceneState_get_connection_signal>`  **(** :ref:`int<class_int>` idx  **)** const                                     |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`NodePath<class_nodepath>`        | :ref:`get_connection_target<class_SceneState_get_connection_target>`  **(** :ref:`int<class_int>` idx  **)** const                                     |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`get_connection_method<class_SceneState_get_connection_method>`  **(** :ref:`int<class_int>` idx  **)** const                                     |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`get_connection_flags<class_SceneState_get_connection_flags>`  **(** :ref:`int<class_int>` idx  **)** const                                       |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`              | :ref:`get_connection_binds<class_SceneState_get_connection_binds>`  **(** :ref:`int<class_int>` idx  **)** const                                       |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Member Function Description
+---------------------------
+
+.. _class_SceneState_get_node_count:
+
+- :ref:`int<class_int>`  **get_node_count**  **(** **)** const
+
+.. _class_SceneState_get_node_type:
+
+- :ref:`String<class_string>`  **get_node_type**  **(** :ref:`int<class_int>` idx  **)** const
+
+.. _class_SceneState_get_node_name:
+
+- :ref:`String<class_string>`  **get_node_name**  **(** :ref:`int<class_int>` idx  **)** const
+
+.. _class_SceneState_get_node_path:
+
+- :ref:`NodePath<class_nodepath>`  **get_node_path**  **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` for_parent=false  **)** const
+
+.. _class_SceneState_get_node_owner_path:
+
+- :ref:`NodePath<class_nodepath>`  **get_node_owner_path**  **(** :ref:`int<class_int>` idx  **)** const
+
+.. _class_SceneState_get_node_instance:
+
+- :ref:`PackedScene<class_packedscene>`  **get_node_instance**  **(** :ref:`int<class_int>` idx  **)** const
+
+.. _class_SceneState_get_node_groups:
+
+- :ref:`StringArray<class_stringarray>`  **get_node_groups**  **(** :ref:`int<class_int>` idx  **)** const
+
+.. _class_SceneState_get_node_property_count:
+
+- :ref:`int<class_int>`  **get_node_property_count**  **(** :ref:`int<class_int>` idx  **)** const
+
+.. _class_SceneState_get_node_property_name:
+
+- :ref:`String<class_string>`  **get_node_property_name**  **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` prop_idx  **)** const
+
+.. _class_SceneState_get_node_property_value:
+
+- void  **get_node_property_value**  **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` prop_idx  **)** const
+
+.. _class_SceneState_get_connection_count:
+
+- :ref:`int<class_int>`  **get_connection_count**  **(** **)** const
+
+.. _class_SceneState_get_connection_source:
+
+- :ref:`NodePath<class_nodepath>`  **get_connection_source**  **(** :ref:`int<class_int>` idx  **)** const
+
+.. _class_SceneState_get_connection_signal:
+
+- :ref:`String<class_string>`  **get_connection_signal**  **(** :ref:`int<class_int>` idx  **)** const
+
+.. _class_SceneState_get_connection_target:
+
+- :ref:`NodePath<class_nodepath>`  **get_connection_target**  **(** :ref:`int<class_int>` idx  **)** const
+
+.. _class_SceneState_get_connection_method:
+
+- :ref:`String<class_string>`  **get_connection_method**  **(** :ref:`int<class_int>` idx  **)** const
+
+.. _class_SceneState_get_connection_flags:
+
+- :ref:`int<class_int>`  **get_connection_flags**  **(** :ref:`int<class_int>` idx  **)** const
+
+.. _class_SceneState_get_connection_binds:
+
+- :ref:`Array<class_array>`  **get_connection_binds**  **(** :ref:`int<class_int>` idx  **)** const
+
+

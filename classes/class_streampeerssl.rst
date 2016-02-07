@@ -1,0 +1,57 @@
+.. _class_StreamPeerSSL:
+
+StreamPeerSSL
+=============
+
+Inherits: :ref:`StreamPeer<class_streampeer>`
+---------------------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+
+
+Member Functions
+----------------
+
++------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Error                  | :ref:`accept<class_StreamPeerSSL_accept>`  **(** :ref:`StreamPeer<class_streampeer>` stream  **)**                                                                                              |
++------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Error                  | :ref:`connect<class_StreamPeerSSL_connect>`  **(** :ref:`StreamPeer<class_streampeer>` stream, :ref:`bool<class_bool>` validate_certs=false, :ref:`String<class_string>` for_hostname=""  **)** |
++------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`get_status<class_StreamPeerSSL_get_status>`  **(** **)** const                                                                                                                            |
++------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                   | :ref:`disconnect<class_StreamPeerSSL_disconnect>`  **(** **)**                                                                                                                                  |
++------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Numeric Constants
+-----------------
+
+- **STATUS_DISCONNECTED** = **0**
+- **STATUS_CONNECTED** = **1**
+- **STATUS_ERROR_NO_CERTIFICATE** = **2**
+- **STATUS_ERROR_HOSTNAME_MISMATCH** = **3**
+
+Member Function Description
+---------------------------
+
+.. _class_StreamPeerSSL_accept:
+
+- Error  **accept**  **(** :ref:`StreamPeer<class_streampeer>` stream  **)**
+
+.. _class_StreamPeerSSL_connect:
+
+- Error  **connect**  **(** :ref:`StreamPeer<class_streampeer>` stream, :ref:`bool<class_bool>` validate_certs=false, :ref:`String<class_string>` for_hostname=""  **)**
+
+.. _class_StreamPeerSSL_get_status:
+
+- :ref:`int<class_int>`  **get_status**  **(** **)** const
+
+.. _class_StreamPeerSSL_disconnect:
+
+- void  **disconnect**  **(** **)**
+
+

@@ -1,0 +1,94 @@
+.. _class_SampleLibrary:
+
+SampleLibrary
+=============
+
+Inherits: :ref:`Resource<class_resource>`
+-----------------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+Library that contains a collection of samples.
+
+Member Functions
+----------------
+
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`add_sample<class_SampleLibrary_add_sample>`  **(** :ref:`String<class_string>` name, :ref:`Sample<class_sample>` sample  **)**                      |
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Sample<class_sample>`  | :ref:`get_sample<class_SampleLibrary_get_sample>`  **(** :ref:`String<class_string>` name  **)** const                                                    |
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`has_sample<class_SampleLibrary_has_sample>`  **(** :ref:`String<class_string>` name  **)** const                                                    |
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`remove_sample<class_SampleLibrary_remove_sample>`  **(** :ref:`String<class_string>` name  **)**                                                    |
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`sample_set_volume_db<class_SampleLibrary_sample_set_volume_db>`  **(** :ref:`String<class_string>` name, :ref:`float<class_float>` db  **)**        |
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`    | :ref:`sample_get_volume_db<class_SampleLibrary_sample_get_volume_db>`  **(** :ref:`String<class_string>` name  **)** const                                |
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`sample_set_pitch_scale<class_SampleLibrary_sample_set_pitch_scale>`  **(** :ref:`String<class_string>` name, :ref:`float<class_float>` pitch  **)** |
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`    | :ref:`sample_get_pitch_scale<class_SampleLibrary_sample_get_pitch_scale>`  **(** :ref:`String<class_string>` name  **)** const                            |
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Description
+-----------
+
+Library that contains a collection of :ref:`Sample<class_sample>`s, each identified by a text ID. This is used as a data container for the majority of the SamplePlayer classes and derivatives.
+
+Member Function Description
+---------------------------
+
+.. _class_SampleLibrary_add_sample:
+
+- void  **add_sample**  **(** :ref:`String<class_string>` name, :ref:`Sample<class_sample>` sample  **)**
+
+Add a sample to the library, with a given text ID.
+
+.. _class_SampleLibrary_get_sample:
+
+- :ref:`Sample<class_sample>`  **get_sample**  **(** :ref:`String<class_string>` name  **)** const
+
+Return the sample from the library matching the given text ID. Return null if the sample is not found.
+
+.. _class_SampleLibrary_has_sample:
+
+- :ref:`bool<class_bool>`  **has_sample**  **(** :ref:`String<class_string>` name  **)** const
+
+Return true if the sample text ID exists in the library.
+
+.. _class_SampleLibrary_remove_sample:
+
+- void  **remove_sample**  **(** :ref:`String<class_string>` name  **)**
+
+Remove the sample matching the given text ID.
+
+.. _class_SampleLibrary_sample_set_volume_db:
+
+- void  **sample_set_volume_db**  **(** :ref:`String<class_string>` name, :ref:`float<class_float>` db  **)**
+
+Set the volume (in dB) for the given sample.
+
+.. _class_SampleLibrary_sample_get_volume_db:
+
+- :ref:`float<class_float>`  **sample_get_volume_db**  **(** :ref:`String<class_string>` name  **)** const
+
+Return the volume (in dB) for the given sample.
+
+.. _class_SampleLibrary_sample_set_pitch_scale:
+
+- void  **sample_set_pitch_scale**  **(** :ref:`String<class_string>` name, :ref:`float<class_float>` pitch  **)**
+
+Set the pitch scale for the given sample.
+
+.. _class_SampleLibrary_sample_get_pitch_scale:
+
+- :ref:`float<class_float>`  **sample_get_pitch_scale**  **(** :ref:`String<class_string>` name  **)** const
+
+Return the pitch scale for the given sample.
+
+

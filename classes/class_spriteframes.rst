@@ -1,0 +1,76 @@
+.. _class_SpriteFrames:
+
+SpriteFrames
+============
+
+Inherits: :ref:`Resource<class_resource>`
+-----------------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+Sprite frame library for AnimatedSprite.
+
+Member Functions
+----------------
+
++------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`add_frame<class_SpriteFrames_add_frame>`  **(** :ref:`Object<class_object>` frame, :ref:`int<class_int>` atpos=-1  **)** |
++------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`get_frame_count<class_SpriteFrames_get_frame_count>`  **(** **)** const                                                  |
++------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`  | :ref:`get_frame<class_SpriteFrames_get_frame>`  **(** :ref:`int<class_int>` idx  **)** const                                   |
++------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_frame<class_SpriteFrames_set_frame>`  **(** :ref:`int<class_int>` idx, :ref:`Object<class_object>` txt  **)**        |
++------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`remove_frame<class_SpriteFrames_remove_frame>`  **(** :ref:`int<class_int>` idx  **)**                                   |
++------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`clear<class_SpriteFrames_clear>`  **(** **)**                                                                            |
++------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+
+Description
+-----------
+
+Sprite frame library for :ref:`AnimatedSprite<class_animatedsprite>`.
+
+Member Function Description
+---------------------------
+
+.. _class_SpriteFrames_add_frame:
+
+- void  **add_frame**  **(** :ref:`Object<class_object>` frame, :ref:`int<class_int>` atpos=-1  **)**
+
+Add a frame (texture).
+
+.. _class_SpriteFrames_get_frame_count:
+
+- :ref:`int<class_int>`  **get_frame_count**  **(** **)** const
+
+Return the amount of frames.
+
+.. _class_SpriteFrames_get_frame:
+
+- :ref:`Object<class_object>`  **get_frame**  **(** :ref:`int<class_int>` idx  **)** const
+
+Return a texture (frame).
+
+.. _class_SpriteFrames_set_frame:
+
+- void  **set_frame**  **(** :ref:`int<class_int>` idx, :ref:`Object<class_object>` txt  **)**
+
+.. _class_SpriteFrames_remove_frame:
+
+- void  **remove_frame**  **(** :ref:`int<class_int>` idx  **)**
+
+Remove a frame
+
+.. _class_SpriteFrames_clear:
+
+- void  **clear**  **(** **)**
+
+Clear the frames.
+
+

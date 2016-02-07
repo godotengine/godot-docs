@@ -1,0 +1,155 @@
+.. _class_FixedMaterial:
+
+FixedMaterial
+=============
+
+Inherits: :ref:`Material<class_material>`
+-----------------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+Simple Material with a fixed parameter set.
+
+Member Functions
+----------------
+
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_parameter<class_FixedMaterial_set_parameter>`  **(** :ref:`int<class_int>` param, var value  **)**                          |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`get_parameter<class_FixedMaterial_get_parameter>`  **(** :ref:`int<class_int>` param  **)** const                               |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_texture<class_FixedMaterial_set_texture>`  **(** :ref:`int<class_int>` param, :ref:`Texture<class_texture>` texture  **)**  |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_texture>`      | :ref:`get_texture<class_FixedMaterial_get_texture>`  **(** :ref:`int<class_int>` param  **)** const                                   |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_texcoord_mode<class_FixedMaterial_set_texcoord_mode>`  **(** :ref:`int<class_int>` param, :ref:`int<class_int>` mode  **)** |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`              | :ref:`get_texcoord_mode<class_FixedMaterial_get_texcoord_mode>`  **(** :ref:`int<class_int>` param  **)** const                       |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_fixed_flag<class_FixedMaterial_set_fixed_flag>`  **(** :ref:`int<class_int>` flag, :ref:`bool<class_bool>` value  **)**     |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`            | :ref:`get_fixed_flag<class_FixedMaterial_get_fixed_flag>`  **(** :ref:`int<class_int>` flag  **)** const                              |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_uv_transform<class_FixedMaterial_set_uv_transform>`  **(** :ref:`Transform<class_transform>` transform  **)**               |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_transform>`  | :ref:`get_uv_transform<class_FixedMaterial_get_uv_transform>`  **(** **)** const                                                      |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_light_shader<class_FixedMaterial_set_light_shader>`  **(** :ref:`int<class_int>` shader  **)**                              |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`              | :ref:`get_light_shader<class_FixedMaterial_get_light_shader>`  **(** **)** const                                                      |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_point_size<class_FixedMaterial_set_point_size>`  **(** :ref:`float<class_float>` size  **)**                                |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`          | :ref:`get_point_size<class_FixedMaterial_get_point_size>`  **(** **)** const                                                          |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+
+Numeric Constants
+-----------------
+
+- **PARAM_DIFFUSE** = **0** --- Diffuse Lighting (light scattered from surface).
+- **PARAM_DETAIL** = **1** --- Detail Layer for diffuse lighting.
+- **PARAM_SPECULAR** = **2** --- Specular Lighting (light reflected from the surface).
+- **PARAM_EMISSION** = **3** --- Emission Lighting (light emitted from the surface).
+- **PARAM_SPECULAR_EXP** = **4** --- Specular Exponent (size of the specular dot).
+- **PARAM_GLOW** = **5** --- Glow (Visible emitted scattered light).
+- **PARAM_NORMAL** = **6** --- Normal Map (irregularity map).
+- **PARAM_SHADE_PARAM** = **7**
+- **PARAM_MAX** = **8** --- Maximum amount of parameters.
+- **TEXCOORD_SPHERE** = **3**
+- **TEXCOORD_UV** = **0** --- Read texture coordinates from the UV array.
+- **TEXCOORD_UV_TRANSFORM** = **1** --- Read texture coordinates from the UV array and transform them by uv_xform.
+- **TEXCOORD_UV2** = **2** --- Read texture coordinates from the UV2 array.
+- **FLAG_USE_ALPHA** = **0**
+- **FLAG_USE_COLOR_ARRAY** = **1**
+- **FLAG_USE_POINT_SIZE** = **2**
+- **FLAG_DISCARD_ALPHA** = **3**
+- **LIGHT_SHADER_LAMBERT** = **0**
+- **LIGHT_SHADER_WRAP** = **1**
+- **LIGHT_SHADER_VELVET** = **2**
+- **LIGHT_SHADER_TOON** = **3**
+
+Description
+-----------
+
+FixedMaterial is a simple type of material :ref:`Resource<class_resource>`, which contains a fixed amount of paramters. It is the only type of material supported in fixed-pipeline devices and APIs. It is also an often a better alternative to :ref:`ShaderMaterial<class_shadermaterial>` for most simple use cases.
+
+Member Function Description
+---------------------------
+
+.. _class_FixedMaterial_set_parameter:
+
+- void  **set_parameter**  **(** :ref:`int<class_int>` param, var value  **)**
+
+Set a parameter, parameters are defined in the PARAM_* enum. The type of each parameter may change, so it's best to check the enum.
+
+.. _class_FixedMaterial_get_parameter:
+
+- void  **get_parameter**  **(** :ref:`int<class_int>` param  **)** const
+
+Return a parameter, parameters are defined in the PARAM_* enum. The type of each parameter may change, so it's best to check the enum.
+
+.. _class_FixedMaterial_set_texture:
+
+- void  **set_texture**  **(** :ref:`int<class_int>` param, :ref:`Texture<class_texture>` texture  **)**
+
+Set a texture. Textures change parameters per texel and are mapped to the model depending on the texcoord mode (see :ref:`set_texcoord_mode<FixedMaterial_set_texcoord_mode>`).
+
+.. _class_FixedMaterial_get_texture:
+
+- :ref:`Texture<class_texture>`  **get_texture**  **(** :ref:`int<class_int>` param  **)** const
+
+Return a texture. Textures change parameters per texel and are mapped to the model depending on the texcoord mode (see :ref:`set_texcoord_mode<FixedMaterial_set_texcoord_mode>`).
+
+.. _class_FixedMaterial_set_texcoord_mode:
+
+- void  **set_texcoord_mode**  **(** :ref:`int<class_int>` param, :ref:`int<class_int>` mode  **)**
+
+Set the texture coordinate mode. Each texture param (from the PARAM_* enum) has one. It defines how the textures are mapped to the object.
+
+.. _class_FixedMaterial_get_texcoord_mode:
+
+- :ref:`int<class_int>`  **get_texcoord_mode**  **(** :ref:`int<class_int>` param  **)** const
+
+Return the texture coordinate mode. Each texture param (from the PARAM_* enum) has one. It defines how the textures are mapped to the object.
+
+.. _class_FixedMaterial_set_fixed_flag:
+
+- void  **set_fixed_flag**  **(** :ref:`int<class_int>` flag, :ref:`bool<class_bool>` value  **)**
+
+.. _class_FixedMaterial_get_fixed_flag:
+
+- :ref:`bool<class_bool>`  **get_fixed_flag**  **(** :ref:`int<class_int>` flag  **)** const
+
+.. _class_FixedMaterial_set_uv_transform:
+
+- void  **set_uv_transform**  **(** :ref:`Transform<class_transform>` transform  **)**
+
+Sets a special transform used to post-transform UV coordinates of the uv_xfrom tecoord mode: TEXCOORD_UV_TRANSFORM.
+
+.. _class_FixedMaterial_get_uv_transform:
+
+- :ref:`Transform<class_transform>`  **get_uv_transform**  **(** **)** const
+
+Returns the special transform used to post-transform UV coordinates of the uv_xfrom tecoord mode: TEXCOORD_UV_TRANSFORM.
+
+.. _class_FixedMaterial_set_light_shader:
+
+- void  **set_light_shader**  **(** :ref:`int<class_int>` shader  **)**
+
+.. _class_FixedMaterial_get_light_shader:
+
+- :ref:`int<class_int>`  **get_light_shader**  **(** **)** const
+
+.. _class_FixedMaterial_set_point_size:
+
+- void  **set_point_size**  **(** :ref:`float<class_float>` size  **)**
+
+.. _class_FixedMaterial_get_point_size:
+
+- :ref:`float<class_float>`  **get_point_size**  **(** **)** const
+
+

@@ -1,0 +1,135 @@
+.. _class_Environment:
+
+Environment
+===========
+
+Inherits: :ref:`Resource<class_resource>`
+-----------------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+
+
+Member Functions
+----------------
+
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`set_background<class_Environment_set_background>`  **(** :ref:`int<class_int>` bgmode  **)**                                |
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`    | :ref:`get_background<class_Environment_get_background>`  **(** **)** const                                                        |
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`set_background_param<class_Environment_set_background_param>`  **(** :ref:`int<class_int>` param, var value  **)**          |
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`get_background_param<class_Environment_get_background_param>`  **(** :ref:`int<class_int>` param  **)** const               |
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`set_enable_fx<class_Environment_set_enable_fx>`  **(** :ref:`int<class_int>` effect, :ref:`bool<class_bool>` enabled  **)** |
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`is_fx_enabled<class_Environment_is_fx_enabled>`  **(** :ref:`int<class_int>` effect  **)** const                            |
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`fx_set_param<class_Environment_fx_set_param>`  **(** :ref:`int<class_int>` param, var value  **)**                          |
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`fx_get_param<class_Environment_fx_get_param>`  **(** :ref:`int<class_int>` param  **)** const                               |
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+
+Numeric Constants
+-----------------
+
+- **BG_KEEP** = **0**
+- **BG_DEFAULT_COLOR** = **1**
+- **BG_COLOR** = **2**
+- **BG_TEXTURE** = **3**
+- **BG_CUBEMAP** = **4**
+- **BG_CANVAS** = **5**
+- **BG_MAX** = **6**
+- **BG_PARAM_CANVAS_MAX_LAYER** = **0**
+- **BG_PARAM_COLOR** = **1**
+- **BG_PARAM_TEXTURE** = **2**
+- **BG_PARAM_CUBEMAP** = **3**
+- **BG_PARAM_ENERGY** = **4**
+- **BG_PARAM_GLOW** = **6**
+- **BG_PARAM_MAX** = **7**
+- **FX_AMBIENT_LIGHT** = **0**
+- **FX_FXAA** = **1**
+- **FX_GLOW** = **2**
+- **FX_DOF_BLUR** = **3**
+- **FX_HDR** = **4**
+- **FX_FOG** = **5**
+- **FX_BCS** = **6**
+- **FX_SRGB** = **7**
+- **FX_MAX** = **8**
+- **FX_BLUR_BLEND_MODE_ADDITIVE** = **0**
+- **FX_BLUR_BLEND_MODE_SCREEN** = **1**
+- **FX_BLUR_BLEND_MODE_SOFTLIGHT** = **2**
+- **FX_HDR_TONE_MAPPER_LINEAR** = **0**
+- **FX_HDR_TONE_MAPPER_LOG** = **1**
+- **FX_HDR_TONE_MAPPER_REINHARDT** = **2**
+- **FX_HDR_TONE_MAPPER_REINHARDT_AUTOWHITE** = **3**
+- **FX_PARAM_AMBIENT_LIGHT_COLOR** = **0**
+- **FX_PARAM_AMBIENT_LIGHT_ENERGY** = **1**
+- **FX_PARAM_GLOW_BLUR_PASSES** = **2**
+- **FX_PARAM_GLOW_BLUR_SCALE** = **3**
+- **FX_PARAM_GLOW_BLUR_STRENGTH** = **4**
+- **FX_PARAM_GLOW_BLUR_BLEND_MODE** = **5**
+- **FX_PARAM_GLOW_BLOOM** = **6**
+- **FX_PARAM_GLOW_BLOOM_TRESHOLD** = **7**
+- **FX_PARAM_DOF_BLUR_PASSES** = **8**
+- **FX_PARAM_DOF_BLUR_BEGIN** = **9**
+- **FX_PARAM_DOF_BLUR_RANGE** = **10**
+- **FX_PARAM_HDR_TONEMAPPER** = **11**
+- **FX_PARAM_HDR_EXPOSURE** = **12**
+- **FX_PARAM_HDR_WHITE** = **13**
+- **FX_PARAM_HDR_GLOW_TRESHOLD** = **14**
+- **FX_PARAM_HDR_GLOW_SCALE** = **15**
+- **FX_PARAM_HDR_MIN_LUMINANCE** = **16**
+- **FX_PARAM_HDR_MAX_LUMINANCE** = **17**
+- **FX_PARAM_HDR_EXPOSURE_ADJUST_SPEED** = **18**
+- **FX_PARAM_FOG_BEGIN** = **19**
+- **FX_PARAM_FOG_ATTENUATION** = **22**
+- **FX_PARAM_FOG_BEGIN_COLOR** = **20**
+- **FX_PARAM_FOG_END_COLOR** = **21**
+- **FX_PARAM_FOG_BG** = **23**
+- **FX_PARAM_BCS_BRIGHTNESS** = **24**
+- **FX_PARAM_BCS_CONTRAST** = **25**
+- **FX_PARAM_BCS_SATURATION** = **26**
+- **FX_PARAM_MAX** = **27**
+
+Member Function Description
+---------------------------
+
+.. _class_Environment_set_background:
+
+- void  **set_background**  **(** :ref:`int<class_int>` bgmode  **)**
+
+.. _class_Environment_get_background:
+
+- :ref:`int<class_int>`  **get_background**  **(** **)** const
+
+.. _class_Environment_set_background_param:
+
+- void  **set_background_param**  **(** :ref:`int<class_int>` param, var value  **)**
+
+.. _class_Environment_get_background_param:
+
+- void  **get_background_param**  **(** :ref:`int<class_int>` param  **)** const
+
+.. _class_Environment_set_enable_fx:
+
+- void  **set_enable_fx**  **(** :ref:`int<class_int>` effect, :ref:`bool<class_bool>` enabled  **)**
+
+.. _class_Environment_is_fx_enabled:
+
+- :ref:`bool<class_bool>`  **is_fx_enabled**  **(** :ref:`int<class_int>` effect  **)** const
+
+.. _class_Environment_fx_set_param:
+
+- void  **fx_set_param**  **(** :ref:`int<class_int>` param, var value  **)**
+
+.. _class_Environment_fx_get_param:
+
+- void  **fx_get_param**  **(** :ref:`int<class_int>` param  **)** const
+
+

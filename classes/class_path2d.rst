@@ -1,0 +1,46 @@
+.. _class_Path2D:
+
+Path2D
+======
+
+Inherits: :ref:`Node2D<class_node2d>`
+-------------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+Container for a :ref:`Curve2D<class_curve2d>`.
+
+Member Functions
+----------------
+
++--------------------------------+--------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_curve<class_Path2D_set_curve>`  **(** :ref:`Curve2D<class_curve2d>` curve  **)** |
++--------------------------------+--------------------------------------------------------------------------------------------+
+| :ref:`Curve2D<class_curve2d>`  | :ref:`get_curve<class_Path2D_get_curve>`  **(** **)** const                                |
++--------------------------------+--------------------------------------------------------------------------------------------+
+
+Description
+-----------
+
+This class is a container/Node-ification of a :ref:`Curve2D<class_curve2d>`, so it can have :ref:`Node2D<class_node2d>` properties and :ref:`Node<class_node>` info.
+
+Member Function Description
+---------------------------
+
+.. _class_Path2D_set_curve:
+
+- void  **set_curve**  **(** :ref:`Curve2D<class_curve2d>` curve  **)**
+
+Sets the :ref:`Curve2D<class_curve2d>`.
+
+.. _class_Path2D_get_curve:
+
+- :ref:`Curve2D<class_curve2d>`  **get_curve**  **(** **)** const
+
+Returns the :ref:`Curve2D<class_curve2d>` contained.
+
+

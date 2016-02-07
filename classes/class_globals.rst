@@ -1,0 +1,124 @@
+.. _class_Globals:
+
+Globals
+=======
+
+Inherits: :ref:`Object<class_object>`
+-------------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+Contains global variables accessible from everywhere.
+
+Member Functions
+----------------
+
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`has<class_Globals_has>`  **(** :ref:`String<class_string>` name  **)** const                                                 |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_order<class_Globals_set_order>`  **(** :ref:`String<class_string>` name, :ref:`int<class_int>` pos  **)**                |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`get_order<class_Globals_get_order>`  **(** :ref:`String<class_string>` name  **)** const                                     |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_persisting<class_Globals_set_persisting>`  **(** :ref:`String<class_string>` name, :ref:`bool<class_bool>` enable  **)** |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`is_persisting<class_Globals_is_persisting>`  **(** :ref:`String<class_string>` name  **)** const                             |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`clear<class_Globals_clear>`  **(** :ref:`String<class_string>` name  **)**                                                   |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`localize_path<class_Globals_localize_path>`  **(** :ref:`String<class_string>` path  **)** const                             |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`globalize_path<class_Globals_globalize_path>`  **(** :ref:`String<class_string>` path  **)** const                           |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`save<class_Globals_save>`  **(** **)**                                                                                       |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`has_singleton<class_Globals_has_singleton>`  **(** :ref:`String<class_string>` name  **)** const                             |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`  | :ref:`get_singleton<class_Globals_get_singleton>`  **(** :ref:`String<class_string>` name  **)** const                             |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`load_resource_pack<class_Globals_load_resource_pack>`  **(** :ref:`String<class_string>` pack  **)**                         |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`save_custom<class_Globals_save_custom>`  **(** :ref:`String<class_string>` file  **)**                                       |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+
+Description
+-----------
+
+Contains global variables accessible from everywhere. Use the normal :ref:`Object<class_object>` API, such as "Globals.get(variable)", "Globals.set(variable,value)" or "Globals.has(variable)" to access them. Variables stored in engine.cfg are also loaded into globals, making this object very useful for reading custom game configuration options.
+
+Member Function Description
+---------------------------
+
+.. _class_Globals_has:
+
+- :ref:`bool<class_bool>`  **has**  **(** :ref:`String<class_string>` name  **)** const
+
+Return true if a configuration value is present.
+
+.. _class_Globals_set_order:
+
+- void  **set_order**  **(** :ref:`String<class_string>` name, :ref:`int<class_int>` pos  **)**
+
+Set the order of a configuration value (influences when saved to the config file).
+
+.. _class_Globals_get_order:
+
+- :ref:`int<class_int>`  **get_order**  **(** :ref:`String<class_string>` name  **)** const
+
+Return the order of a configuration value (influences when saved to the config file).
+
+.. _class_Globals_set_persisting:
+
+- void  **set_persisting**  **(** :ref:`String<class_string>` name, :ref:`bool<class_bool>` enable  **)**
+
+If set to true, this value can be saved to the configuration file. This is useful for editors.
+
+.. _class_Globals_is_persisting:
+
+- :ref:`bool<class_bool>`  **is_persisting**  **(** :ref:`String<class_string>` name  **)** const
+
+If returns true, this value can be saved to the configuration file. This is useful for editors.
+
+.. _class_Globals_clear:
+
+- void  **clear**  **(** :ref:`String<class_string>` name  **)**
+
+Clear the whole configuration (not recommended, may break things).
+
+.. _class_Globals_localize_path:
+
+- :ref:`String<class_string>`  **localize_path**  **(** :ref:`String<class_string>` path  **)** const
+
+Convert a path to a localized path (res:// path).
+
+.. _class_Globals_globalize_path:
+
+- :ref:`String<class_string>`  **globalize_path**  **(** :ref:`String<class_string>` path  **)** const
+
+Convert a localized path (res://) to a full native OS path.
+
+.. _class_Globals_save:
+
+- :ref:`int<class_int>`  **save**  **(** **)**
+
+.. _class_Globals_has_singleton:
+
+- :ref:`bool<class_bool>`  **has_singleton**  **(** :ref:`String<class_string>` name  **)** const
+
+.. _class_Globals_get_singleton:
+
+- :ref:`Object<class_object>`  **get_singleton**  **(** :ref:`String<class_string>` name  **)** const
+
+.. _class_Globals_load_resource_pack:
+
+- :ref:`bool<class_bool>`  **load_resource_pack**  **(** :ref:`String<class_string>` pack  **)**
+
+.. _class_Globals_save_custom:
+
+- :ref:`int<class_int>`  **save_custom**  **(** :ref:`String<class_string>` file  **)**
+
+

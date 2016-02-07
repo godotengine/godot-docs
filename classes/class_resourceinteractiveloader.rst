@@ -1,0 +1,68 @@
+.. _class_ResourceInteractiveLoader:
+
+ResourceInteractiveLoader
+=========================
+
+Inherits: :ref:`Reference<class_reference>`
+-------------------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+Interactive Resource Loader.
+
+Member Functions
+----------------
+
++------------------------------+--------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`  | :ref:`get_resource<class_ResourceInteractiveLoader_get_resource>`  **(** **)**             |
++------------------------------+--------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`poll<class_ResourceInteractiveLoader_poll>`  **(** **)**                             |
++------------------------------+--------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`wait<class_ResourceInteractiveLoader_wait>`  **(** **)**                             |
++------------------------------+--------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`get_stage<class_ResourceInteractiveLoader_get_stage>`  **(** **)** const             |
++------------------------------+--------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`get_stage_count<class_ResourceInteractiveLoader_get_stage_count>`  **(** **)** const |
++------------------------------+--------------------------------------------------------------------------------------------+
+
+Description
+-----------
+
+Interactive Resource Loader. This object is returned by ResourceLoader when performing an interactive load. It allows to load with high granularity, so this is mainly useful for displaying load bars/percentages.
+
+Member Function Description
+---------------------------
+
+.. _class_ResourceInteractiveLoader_get_resource:
+
+- :ref:`Object<class_object>`  **get_resource**  **(** **)**
+
+Return the loaded resource (only if loaded). Otherwise, returns null.
+
+.. _class_ResourceInteractiveLoader_poll:
+
+- :ref:`int<class_int>`  **poll**  **(** **)**
+
+Poll the load. If OK is returned, this means poll will have to be called again. If ERR_EOF is returned, them the load has finished and the resource can be obtained by calling :ref:`get_resource<class_get_resource>`.
+
+.. _class_ResourceInteractiveLoader_wait:
+
+- :ref:`int<class_int>`  **wait**  **(** **)**
+
+.. _class_ResourceInteractiveLoader_get_stage:
+
+- :ref:`int<class_int>`  **get_stage**  **(** **)** const
+
+Return the load stage. The total amount of stages can be queried with :ref:`get_stage_count<class_get_stage_count>`
+
+.. _class_ResourceInteractiveLoader_get_stage_count:
+
+- :ref:`int<class_int>`  **get_stage_count**  **(** **)** const
+
+Return the total amount of stages (calls to :ref:`poll<class_poll>` ) needed to completely load this resource.
+
+

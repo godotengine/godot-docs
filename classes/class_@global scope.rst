@@ -1,0 +1,496 @@
+.. _class_@Global Scope:
+
+@Global Scope
+=============
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+Global scope constants and variables.
+
+Member Variables
+----------------
+
+- :ref:`Performance<class_performance>` **Performance**
+- :ref:`Globals<class_globals>` **Globals**
+- :ref:`IP<class_ip>` **IP**
+- :ref:`Geometry<class_geometry>` **Geometry**
+- :ref:`ResourceLoader<class_resourceloader>` **ResourceLoader**
+- :ref:`ResourceSaver<class_resourcesaver>` **ResourceSaver**
+- :ref:`PathRemap<class_pathremap>` **PathRemap**
+- :ref:`OS<class_os>` **OS**
+- :ref:`Reference<class_reference>` **Marshalls**
+- :ref:`TranslationServer<class_translationserver>` **TranslationServer**
+- :ref:`TranslationServer<class_translationserver>` **TS**
+- :ref:`Input<class_input>` **Input**
+- :ref:`InputMap<class_inputmap>` **InputMap**
+- :ref:`VisualServer<class_visualserver>` **VisualServer**
+- :ref:`VisualServer<class_visualserver>` **VS**
+- :ref:`AudioServer<class_audioserver>` **AudioServer**
+- :ref:`AudioServer<class_audioserver>` **AS**
+- :ref:`PhysicsServer<class_physicsserver>` **PhysicsServer**
+- :ref:`PhysicsServer<class_physicsserver>` **PS**
+- :ref:`Physics2DServer<class_physics2dserver>` **Physics2DServer**
+- :ref:`Physics2DServer<class_physics2dserver>` **PS2D**
+- :ref:`SpatialSoundServer<class_spatialsoundserver>` **SpatialSoundServer**
+- :ref:`SpatialSoundServer<class_spatialsoundserver>` **SS**
+- :ref:`SpatialSound2DServer<class_spatialsound2dserver>` **SpatialSound2DServer**
+- :ref:`SpatialSound2DServer<class_spatialsound2dserver>` **SS2D**
+
+Numeric Constants
+-----------------
+
+- **MARGIN_LEFT** = **0** --- Left margin, used usually for :ref:`Control<class_control>` or :ref:`StyleBox<class_stylebox>` derived classes.
+- **MARGIN_TOP** = **1** --- Top margin, used usually for :ref:`Control<class_control>` or :ref:`StyleBox<class_stylebox>` derived classes.
+- **MARGIN_RIGHT** = **2** --- Right margin, used usually for :ref:`Control<class_control>` or :ref:`StyleBox<class_stylebox>` derived classes.
+- **MARGIN_BOTTOM** = **3** --- Bottom margin, used usually for :ref:`Control<class_control>` or :ref:`StyleBox<class_stylebox>` derived classes.
+- **VERTICAL** = **1** --- General vertical alignment, used usually for :ref:`Separator<class_separator>`, :ref:`ScrollBar<class_scrollbar>`, :ref:`Slider<class_slider>`, etc.
+- **HORIZONTAL** = **0** --- General horizontal alignment, used usually for :ref:`Separator<class_separator>`, :ref:`ScrollBar<class_scrollbar>`, :ref:`Slider<class_slider>`, etc.
+- **HALIGN_LEFT** = **0** --- Horizontal left alignment, usually for text-derived classes.
+- **HALIGN_CENTER** = **1** --- Horizontal center alignment, usually for text-derived classes.
+- **HALIGN_RIGHT** = **2** --- Horizontal right alignment, usually for text-derived classes.
+- **VALIGN_TOP** = **0** --- Vertical top alignment, usually for text-derived classes.
+- **VALIGN_CENTER** = **1** --- Vertical center alignment, usually for text-derived classes.
+- **VALIGN_BOTTOM** = **2** --- Vertical bottom alignment, usually for text-derived classes.
+- **SPKEY** = **16777216** --- Scancodes with this bit applied are non printable.
+- **KEY_ESCAPE** = **16777217** --- Escape Key
+- **KEY_TAB** = **16777218** --- Tab Key
+- **KEY_BACKTAB** = **16777219** --- Shift-Tab key
+- **KEY_BACKSPACE** = **16777220**
+- **KEY_RETURN** = **16777221**
+- **KEY_ENTER** = **16777222**
+- **KEY_INSERT** = **16777223**
+- **KEY_DELETE** = **16777224**
+- **KEY_PAUSE** = **16777225**
+- **KEY_PRINT** = **16777226**
+- **KEY_SYSREQ** = **16777227**
+- **KEY_CLEAR** = **16777228**
+- **KEY_HOME** = **16777229**
+- **KEY_END** = **16777230**
+- **KEY_LEFT** = **16777231**
+- **KEY_UP** = **16777232**
+- **KEY_RIGHT** = **16777233**
+- **KEY_DOWN** = **16777234**
+- **KEY_PAGEUP** = **16777235**
+- **KEY_PAGEDOWN** = **16777236**
+- **KEY_SHIFT** = **16777237**
+- **KEY_CONTROL** = **16777238**
+- **KEY_META** = **16777239**
+- **KEY_ALT** = **16777240**
+- **KEY_CAPSLOCK** = **16777241**
+- **KEY_NUMLOCK** = **16777242**
+- **KEY_SCROLLLOCK** = **16777243**
+- **KEY_F1** = **16777244**
+- **KEY_F2** = **16777245**
+- **KEY_F3** = **16777246**
+- **KEY_F4** = **16777247**
+- **KEY_F5** = **16777248**
+- **KEY_F6** = **16777249**
+- **KEY_F7** = **16777250**
+- **KEY_F8** = **16777251**
+- **KEY_F9** = **16777252**
+- **KEY_F10** = **16777253**
+- **KEY_F11** = **16777254**
+- **KEY_F12** = **16777255**
+- **KEY_F13** = **16777256**
+- **KEY_F14** = **16777257**
+- **KEY_F15** = **16777258**
+- **KEY_F16** = **16777259**
+- **KEY_KP_ENTER** = **16777344**
+- **KEY_KP_MULTIPLY** = **16777345**
+- **KEY_KP_DIVIDE** = **16777346**
+- **KEY_KP_SUBSTRACT** = **16777347**
+- **KEY_KP_PERIOD** = **16777348**
+- **KEY_KP_ADD** = **16777349**
+- **KEY_KP_0** = **16777350**
+- **KEY_KP_1** = **16777351**
+- **KEY_KP_2** = **16777352**
+- **KEY_KP_3** = **16777353**
+- **KEY_KP_4** = **16777354**
+- **KEY_KP_5** = **16777355**
+- **KEY_KP_6** = **16777356**
+- **KEY_KP_7** = **16777357**
+- **KEY_KP_8** = **16777358**
+- **KEY_KP_9** = **16777359**
+- **KEY_SUPER_L** = **16777260**
+- **KEY_SUPER_R** = **16777261**
+- **KEY_MENU** = **16777262**
+- **KEY_HYPER_L** = **16777263**
+- **KEY_HYPER_R** = **16777264**
+- **KEY_HELP** = **16777265**
+- **KEY_DIRECTION_L** = **16777266**
+- **KEY_DIRECTION_R** = **16777267**
+- **KEY_BACK** = **16777280**
+- **KEY_FORWARD** = **16777281**
+- **KEY_STOP** = **16777282**
+- **KEY_REFRESH** = **16777283**
+- **KEY_VOLUMEDOWN** = **16777284**
+- **KEY_VOLUMEMUTE** = **16777285**
+- **KEY_VOLUMEUP** = **16777286**
+- **KEY_BASSBOOST** = **16777287**
+- **KEY_BASSUP** = **16777288**
+- **KEY_BASSDOWN** = **16777289**
+- **KEY_TREBLEUP** = **16777290**
+- **KEY_TREBLEDOWN** = **16777291**
+- **KEY_MEDIAPLAY** = **16777292**
+- **KEY_MEDIASTOP** = **16777293**
+- **KEY_MEDIAPREVIOUS** = **16777294**
+- **KEY_MEDIANEXT** = **16777295**
+- **KEY_MEDIARECORD** = **16777296**
+- **KEY_HOMEPAGE** = **16777297**
+- **KEY_FAVORITES** = **16777298**
+- **KEY_SEARCH** = **16777299**
+- **KEY_STANDBY** = **16777300**
+- **KEY_OPENURL** = **16777301**
+- **KEY_LAUNCHMAIL** = **16777302**
+- **KEY_LAUNCHMEDIA** = **16777303**
+- **KEY_LAUNCH0** = **16777304**
+- **KEY_LAUNCH1** = **16777305**
+- **KEY_LAUNCH2** = **16777306**
+- **KEY_LAUNCH3** = **16777307**
+- **KEY_LAUNCH4** = **16777308**
+- **KEY_LAUNCH5** = **16777309**
+- **KEY_LAUNCH6** = **16777310**
+- **KEY_LAUNCH7** = **16777311**
+- **KEY_LAUNCH8** = **16777312**
+- **KEY_LAUNCH9** = **16777313**
+- **KEY_LAUNCHA** = **16777314**
+- **KEY_LAUNCHB** = **16777315**
+- **KEY_LAUNCHC** = **16777316**
+- **KEY_LAUNCHD** = **16777317**
+- **KEY_LAUNCHE** = **16777318**
+- **KEY_LAUNCHF** = **16777319**
+- **KEY_UNKNOWN** = **33554431**
+- **KEY_SPACE** = **32**
+- **KEY_EXCLAM** = **33**
+- **KEY_QUOTEDBL** = **34**
+- **KEY_NUMBERSIGN** = **35**
+- **KEY_DOLLAR** = **36**
+- **KEY_PERCENT** = **37**
+- **KEY_AMPERSAND** = **38**
+- **KEY_APOSTROPHE** = **39**
+- **KEY_PARENLEFT** = **40**
+- **KEY_PARENRIGHT** = **41**
+- **KEY_ASTERISK** = **42**
+- **KEY_PLUS** = **43**
+- **KEY_COMMA** = **44**
+- **KEY_MINUS** = **45**
+- **KEY_PERIOD** = **46**
+- **KEY_SLASH** = **47**
+- **KEY_0** = **48**
+- **KEY_1** = **49**
+- **KEY_2** = **50**
+- **KEY_3** = **51**
+- **KEY_4** = **52**
+- **KEY_5** = **53**
+- **KEY_6** = **54**
+- **KEY_7** = **55**
+- **KEY_8** = **56**
+- **KEY_9** = **57**
+- **KEY_COLON** = **58**
+- **KEY_SEMICOLON** = **59**
+- **KEY_LESS** = **60**
+- **KEY_EQUAL** = **61**
+- **KEY_GREATER** = **62**
+- **KEY_QUESTION** = **63**
+- **KEY_AT** = **64**
+- **KEY_A** = **65**
+- **KEY_B** = **66**
+- **KEY_C** = **67**
+- **KEY_D** = **68**
+- **KEY_E** = **69**
+- **KEY_F** = **70**
+- **KEY_G** = **71**
+- **KEY_H** = **72**
+- **KEY_I** = **73**
+- **KEY_J** = **74**
+- **KEY_K** = **75**
+- **KEY_L** = **76**
+- **KEY_M** = **77**
+- **KEY_N** = **78**
+- **KEY_O** = **79**
+- **KEY_P** = **80**
+- **KEY_Q** = **81**
+- **KEY_R** = **82**
+- **KEY_S** = **83**
+- **KEY_T** = **84**
+- **KEY_U** = **85**
+- **KEY_V** = **86**
+- **KEY_W** = **87**
+- **KEY_X** = **88**
+- **KEY_Y** = **89**
+- **KEY_Z** = **90**
+- **KEY_BRACKETLEFT** = **91**
+- **KEY_BACKSLASH** = **92**
+- **KEY_BRACKETRIGHT** = **93**
+- **KEY_ASCIICIRCUM** = **94**
+- **KEY_UNDERSCORE** = **95**
+- **KEY_QUOTELEFT** = **96**
+- **KEY_BRACELEFT** = **123**
+- **KEY_BAR** = **124**
+- **KEY_BRACERIGHT** = **125**
+- **KEY_ASCIITILDE** = **126**
+- **KEY_NOBREAKSPACE** = **160**
+- **KEY_EXCLAMDOWN** = **161**
+- **KEY_CENT** = **162**
+- **KEY_STERLING** = **163**
+- **KEY_CURRENCY** = **164**
+- **KEY_YEN** = **165**
+- **KEY_BROKENBAR** = **166**
+- **KEY_SECTION** = **167**
+- **KEY_DIAERESIS** = **168**
+- **KEY_COPYRIGHT** = **169**
+- **KEY_ORDFEMININE** = **170**
+- **KEY_GUILLEMOTLEFT** = **171**
+- **KEY_NOTSIGN** = **172**
+- **KEY_HYPHEN** = **173**
+- **KEY_REGISTERED** = **174**
+- **KEY_MACRON** = **175**
+- **KEY_DEGREE** = **176**
+- **KEY_PLUSMINUS** = **177**
+- **KEY_TWOSUPERIOR** = **178**
+- **KEY_THREESUPERIOR** = **179**
+- **KEY_ACUTE** = **180**
+- **KEY_MU** = **181**
+- **KEY_PARAGRAPH** = **182**
+- **KEY_PERIODCENTERED** = **183**
+- **KEY_CEDILLA** = **184**
+- **KEY_ONESUPERIOR** = **185**
+- **KEY_MASCULINE** = **186**
+- **KEY_GUILLEMOTRIGHT** = **187**
+- **KEY_ONEQUARTER** = **188**
+- **KEY_ONEHALF** = **189**
+- **KEY_THREEQUARTERS** = **190**
+- **KEY_QUESTIONDOWN** = **191**
+- **KEY_AGRAVE** = **192**
+- **KEY_AACUTE** = **193**
+- **KEY_ACIRCUMFLEX** = **194**
+- **KEY_ATILDE** = **195**
+- **KEY_ADIAERESIS** = **196**
+- **KEY_ARING** = **197**
+- **KEY_AE** = **198**
+- **KEY_CCEDILLA** = **199**
+- **KEY_EGRAVE** = **200**
+- **KEY_EACUTE** = **201**
+- **KEY_ECIRCUMFLEX** = **202**
+- **KEY_EDIAERESIS** = **203**
+- **KEY_IGRAVE** = **204**
+- **KEY_IACUTE** = **205**
+- **KEY_ICIRCUMFLEX** = **206**
+- **KEY_IDIAERESIS** = **207**
+- **KEY_ETH** = **208**
+- **KEY_NTILDE** = **209**
+- **KEY_OGRAVE** = **210**
+- **KEY_OACUTE** = **211**
+- **KEY_OCIRCUMFLEX** = **212**
+- **KEY_OTILDE** = **213**
+- **KEY_ODIAERESIS** = **214**
+- **KEY_MULTIPLY** = **215**
+- **KEY_OOBLIQUE** = **216**
+- **KEY_UGRAVE** = **217**
+- **KEY_UACUTE** = **218**
+- **KEY_UCIRCUMFLEX** = **219**
+- **KEY_UDIAERESIS** = **220**
+- **KEY_YACUTE** = **221**
+- **KEY_THORN** = **222**
+- **KEY_SSHARP** = **223**
+- **KEY_DIVISION** = **247**
+- **KEY_YDIAERESIS** = **255**
+- **KEY_CODE_MASK** = **33554431**
+- **KEY_MODIFIER_MASK** = **-16777216**
+- **KEY_MASK_SHIFT** = **33554432**
+- **KEY_MASK_ALT** = **67108864**
+- **KEY_MASK_META** = **134217728**
+- **KEY_MASK_CTRL** = **268435456**
+- **KEY_MASK_CMD** = **268435456**
+- **KEY_MASK_KPAD** = **536870912**
+- **KEY_MASK_GROUP_SWITCH** = **1073741824**
+- **BUTTON_LEFT** = **1**
+- **BUTTON_RIGHT** = **2**
+- **BUTTON_MIDDLE** = **3**
+- **BUTTON_WHEEL_UP** = **4**
+- **BUTTON_WHEEL_DOWN** = **5**
+- **BUTTON_WHEEL_LEFT** = **6**
+- **BUTTON_WHEEL_RIGHT** = **7**
+- **BUTTON_MASK_LEFT** = **1**
+- **BUTTON_MASK_RIGHT** = **2**
+- **BUTTON_MASK_MIDDLE** = **4**
+- **JOY_BUTTON_0** = **0** --- Joystick Button 0
+- **JOY_BUTTON_1** = **1** --- Joystick Button 1
+- **JOY_BUTTON_2** = **2** --- Joystick Button 2
+- **JOY_BUTTON_3** = **3** --- Joystick Button 3
+- **JOY_BUTTON_4** = **4** --- Joystick Button 4
+- **JOY_BUTTON_5** = **5** --- Joystick Button 5
+- **JOY_BUTTON_6** = **6** --- Joystick Button 6
+- **JOY_BUTTON_7** = **7** --- Joystick Button 7
+- **JOY_BUTTON_8** = **8** --- Joystick Button 8
+- **JOY_BUTTON_9** = **9** --- Joystick Button 9
+- **JOY_BUTTON_10** = **10** --- Joystick Button 10
+- **JOY_BUTTON_11** = **11** --- Joystick Button 11
+- **JOY_BUTTON_12** = **12** --- Joystick Button 12
+- **JOY_BUTTON_13** = **13** --- Joystick Button 13
+- **JOY_BUTTON_14** = **14** --- Joystick Button 14
+- **JOY_BUTTON_15** = **15** --- Joystick Button 15
+- **JOY_BUTTON_MAX** = **16** --- Joystick Button 16
+- **JOY_SNES_A** = **1**
+- **JOY_SNES_B** = **0**
+- **JOY_SNES_X** = **3**
+- **JOY_SNES_Y** = **2**
+- **JOY_SONY_CIRCLE** = **1**
+- **JOY_SONY_X** = **0**
+- **JOY_SONY_SQUARE** = **2**
+- **JOY_SONY_TRIANGLE** = **3**
+- **JOY_SEGA_B** = **1**
+- **JOY_SEGA_A** = **0**
+- **JOY_SEGA_X** = **2**
+- **JOY_SEGA_Y** = **3**
+- **JOY_XBOX_B** = **1**
+- **JOY_XBOX_A** = **0**
+- **JOY_XBOX_X** = **2**
+- **JOY_XBOX_Y** = **3**
+- **JOY_DS_A** = **1**
+- **JOY_DS_B** = **0**
+- **JOY_DS_X** = **3**
+- **JOY_DS_Y** = **2**
+- **JOY_SELECT** = **10**
+- **JOY_START** = **11**
+- **JOY_DPAD_UP** = **12**
+- **JOY_DPAD_DOWN** = **13**
+- **JOY_DPAD_LEFT** = **14**
+- **JOY_DPAD_RIGHT** = **15**
+- **JOY_L** = **4**
+- **JOY_L2** = **6**
+- **JOY_L3** = **8**
+- **JOY_R** = **5**
+- **JOY_R2** = **7**
+- **JOY_R3** = **9**
+- **JOY_AXIS_0** = **0**
+- **JOY_AXIS_1** = **1**
+- **JOY_AXIS_2** = **2**
+- **JOY_AXIS_3** = **3**
+- **JOY_AXIS_4** = **4**
+- **JOY_AXIS_5** = **5**
+- **JOY_AXIS_6** = **6**
+- **JOY_AXIS_7** = **7**
+- **JOY_AXIS_MAX** = **8**
+- **JOY_ANALOG_0_X** = **0**
+- **JOY_ANALOG_0_Y** = **1**
+- **JOY_ANALOG_1_X** = **2**
+- **JOY_ANALOG_1_Y** = **3**
+- **JOY_ANALOG_2_X** = **4**
+- **JOY_ANALOG_2_Y** = **5**
+- **JOY_ANALOG_L2** = **6**
+- **JOY_ANALOG_R2** = **7**
+- **OK** = **0** --- Functions that return :ref:`Error<class_error>` return OK when everything went ok. Most functions don't return error anyway and/or just print errors to stdout.
+- **FAILED** = **1** --- Generic fail return error.
+- **ERR_UNAVAILABLE** = **2**
+- **ERR_UNCONFIGURED** = **3**
+- **ERR_UNAUTHORIZED** = **4**
+- **ERR_PARAMETER_RANGE_ERROR** = **5**
+- **ERR_OUT_OF_MEMORY** = **6**
+- **ERR_FILE_NOT_FOUND** = **7**
+- **ERR_FILE_BAD_DRIVE** = **8**
+- **ERR_FILE_BAD_PATH** = **9**
+- **ERR_FILE_NO_PERMISSION** = **10**
+- **ERR_FILE_ALREADY_IN_USE** = **11**
+- **ERR_FILE_CANT_OPEN** = **12**
+- **ERR_FILE_CANT_WRITE** = **13**
+- **ERR_FILE_CANT_READ** = **14**
+- **ERR_FILE_UNRECOGNIZED** = **15**
+- **ERR_FILE_CORRUPT** = **16**
+- **ERR_FILE_MISSING_DEPENDENCIES** = **17**
+- **ERR_FILE_EOF** = **18**
+- **ERR_CANT_OPEN** = **19**
+- **ERR_CANT_CREATE** = **20**
+- **ERROR_QUERY_FAILED** = **21**
+- **ERR_ALREADY_IN_USE** = **22**
+- **ERR_LOCKED** = **23**
+- **ERR_TIMEOUT** = **24**
+- **ERR_CANT_AQUIRE_RESOURCE** = **28**
+- **ERR_INVALID_DATA** = **30**
+- **ERR_INVALID_PARAMETER** = **31**
+- **ERR_ALREADY_EXISTS** = **32**
+- **ERR_DOES_NOT_EXIST** = **33**
+- **ERR_DATABASE_CANT_READ** = **34**
+- **ERR_DATABASE_CANT_WRITE** = **35**
+- **ERR_COMPILATION_FAILED** = **36**
+- **ERR_METHOD_NOT_FOUND** = **37**
+- **ERR_LINK_FAILED** = **38**
+- **ERR_SCRIPT_FAILED** = **39**
+- **ERR_CYCLIC_LINK** = **40**
+- **ERR_BUSY** = **44**
+- **ERR_HELP** = **46**
+- **ERR_BUG** = **47**
+- **ERR_WTF** = **49**
+- **PROPERTY_HINT_NONE** = **0** --- No hint for edited property.
+- **PROPERTY_HINT_RANGE** = **1** --- Hints that the string is a range, defined as "min,max" or "min,max,step". This is valid for integers and floats.
+- **PROPERTY_HINT_EXP_RANGE** = **2** --- Hints that the string is an exponential range, defined as "min,max" or "min,max,step". This is valid for integers and floats.
+- **PROPERTY_HINT_ENUM** = **3** --- Property hint for an enumerated value, like "Hello,Something,Else". This is valid for integer, float and string properties.
+- **PROPERTY_HINT_EXP_EASING** = **4**
+- **PROPERTY_HINT_LENGTH** = **5**
+- **PROPERTY_HINT_KEY_ACCEL** = **7**
+- **PROPERTY_HINT_FLAGS** = **8** --- Property hint for a bitmask description, for bits 0,1,2,3 and 5 the hint would be like "Bit0,Bit1,Bit2,Bit3,,Bit5". Valid only for integers.
+- **PROPERTY_HINT_ALL_FLAGS** = **9** --- Property hint for a bitmask description that covers all 32 bits. Valid only for integers.
+- **PROPERTY_HINT_FILE** = **10** --- String property is a file (so pop up a file dialog when edited). Hint string can be a set of wildcards like "*.doc".
+- **PROPERTY_HINT_DIR** = **11** --- String property is a directory (so pop up a file dialog when edited).
+- **PROPERTY_HINT_GLOBAL_FILE** = **12**
+- **PROPERTY_HINT_GLOBAL_DIR** = **13**
+- **PROPERTY_HINT_RESOURCE_TYPE** = **14** --- String property is a resource, so open the resource popup menu when edited.
+- **PROPERTY_HINT_MULTILINE_TEXT** = **15**
+- **PROPERTY_HINT_COLOR_NO_ALPHA** = **16**
+- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSY** = **17**
+- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSLESS** = **18**
+- **PROPERTY_USAGE_STORAGE** = **1** --- Property will be used as storage (default).
+- **PROPERTY_USAGE_STORAGE** = **1** --- Property will be used as storage (default).
+- **PROPERTY_USAGE_EDITOR** = **2** --- Property will be visible in editor (default).
+- **PROPERTY_USAGE_NETWORK** = **4**
+- **PROPERTY_USAGE_DEFAULT** = **7** --- Default usage (storage and editor).
+- **METHOD_FLAG_NORMAL** = **1**
+- **METHOD_FLAG_EDITOR** = **2**
+- **METHOD_FLAG_NOSCRIPT** = **4**
+- **METHOD_FLAG_CONST** = **8**
+- **METHOD_FLAG_REVERSE** = **16**
+- **METHOD_FLAG_VIRTUAL** = **32**
+- **METHOD_FLAG_FROM_SCRIPT** = **64**
+- **METHOD_FLAGS_DEFAULT** = **1**
+- **TYPE_NIL** = **0** --- Variable is of type nil (only applied for null).
+- **TYPE_BOOL** = **1** --- Variable is of type bool.
+- **TYPE_INT** = **2** --- Variable is of type integer.
+- **TYPE_REAL** = **3** --- Variable is of type float/real.
+- **TYPE_STRING** = **4** --- Variable is of type :ref:`String<class_string>`.
+- **TYPE_VECTOR2** = **5** --- Variable is of type :ref:`Vector2<class_vector2>`.
+- **TYPE_RECT2** = **6** --- Variable is of type :ref:`Rect2<class_rect2>`.
+- **TYPE_VECTOR3** = **7** --- Variable is of type :ref:`Vector3<class_vector3>`.
+- **TYPE_MATRIX32** = **8** --- Variable is of type :ref:`Matrix32<class_matrix32>`.
+- **TYPE_PLANE** = **9** --- Variable is of type :ref:`Plane<class_plane>`.
+- **TYPE_QUAT** = **10** --- Variable is of type :ref:`Quat<class_quat>`.
+- **TYPE_AABB** = **11** --- Variable is of type :ref:`AABB<class_aabb>`.
+- **TYPE_MATRIX3** = **12** --- Variable is fo type :ref:`Matrix3<class_matrix3>`.
+- **TYPE_TRANSFORM** = **13** --- Variable is fo type :ref:`Transform<class_transform>`.
+- **TYPE_COLOR** = **14** --- Variable is fo type :ref:`Color<class_color>`.
+- **TYPE_IMAGE** = **15** --- Variable is fo type :ref:`Image<class_image>`.
+- **TYPE_NODE_PATH** = **16** --- Variable is fo type :ref:`NodePath<class_nodepath>`.
+- **TYPE_RID** = **17** --- Variable is fo type :ref:`RID<class_rid>`.
+- **TYPE_OBJECT** = **18** --- Variable is fo type :ref:`Object<class_object>`.
+- **TYPE_INPUT_EVENT** = **19** --- Variable is fo type :ref:`InputEvent<class_inputevent>`.
+- **TYPE_DICTIONARY** = **20** --- Variable is fo type :ref:`Dictionary<class_dictionary>`.
+- **TYPE_ARRAY** = **21** --- Variable is fo type :ref:`Array<class_array>`.
+- **TYPE_RAW_ARRAY** = **22**
+- **TYPE_INT_ARRAY** = **23**
+- **TYPE_REAL_ARRAY** = **24**
+- **TYPE_STRING_ARRAY** = **25**
+- **TYPE_VECTOR2_ARRAY** = **26**
+- **TYPE_VECTOR3_ARRAY** = **27**
+- **TYPE_COLOR_ARRAY** = **28**
+- **TYPE_MAX** = **29**
+
+Description
+-----------
+
+Global scope constants and variables. This is all that resides in the globals, constants regarding error codes, scancodes, property hints, etc. It's not much.
+
+Singletons are also documented here, since they can be accessed from anywhere.
+

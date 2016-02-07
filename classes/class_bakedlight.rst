@@ -1,0 +1,294 @@
+.. _class_BakedLight:
+
+BakedLight
+==========
+
+Inherits: :ref:`Resource<class_resource>`
+-----------------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+
+
+Member Functions
+----------------
+
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_mode<class_BakedLight_set_mode>`  **(** :ref:`int<class_int>` mode  **)**                                                            |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_mode<class_BakedLight_get_mode>`  **(** **)** const                                                                                  |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_octree<class_BakedLight_set_octree>`  **(** :ref:`RawArray<class_rawarray>` octree  **)**                                            |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RawArray<class_rawarray>`  | :ref:`get_octree<class_BakedLight_get_octree>`  **(** **)** const                                                                              |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_light<class_BakedLight_set_light>`  **(** :ref:`RawArray<class_rawarray>` light  **)**                                               |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RawArray<class_rawarray>`  | :ref:`get_light<class_BakedLight_get_light>`  **(** **)** const                                                                                |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_sampler_octree<class_BakedLight_set_sampler_octree>`  **(** :ref:`IntArray<class_intarray>` sampler_octree  **)**                    |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`IntArray<class_intarray>`  | :ref:`get_sampler_octree<class_BakedLight_get_sampler_octree>`  **(** **)** const                                                              |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`add_lightmap<class_BakedLight_add_lightmap>`  **(** :ref:`Texture<class_texture>` texture, :ref:`Vector2<class_vector2>` gen_size  **)** |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`erase_lightmap<class_BakedLight_erase_lightmap>`  **(** :ref:`int<class_int>` id  **)**                                                  |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`clear_lightmaps<class_BakedLight_clear_lightmaps>`  **(** **)**                                                                          |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_cell_subdivision<class_BakedLight_set_cell_subdivision>`  **(** :ref:`int<class_int>` cell_subdivision  **)**                        |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_cell_subdivision<class_BakedLight_get_cell_subdivision>`  **(** **)** const                                                          |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_initial_lattice_subdiv<class_BakedLight_set_initial_lattice_subdiv>`  **(** :ref:`int<class_int>` cell_subdivision  **)**            |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_initial_lattice_subdiv<class_BakedLight_get_initial_lattice_subdiv>`  **(** **)** const                                              |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_plot_size<class_BakedLight_set_plot_size>`  **(** :ref:`float<class_float>` plot_size  **)**                                         |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`        | :ref:`get_plot_size<class_BakedLight_get_plot_size>`  **(** **)** const                                                                        |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_bounces<class_BakedLight_set_bounces>`  **(** :ref:`int<class_int>` bounces  **)**                                                   |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_bounces<class_BakedLight_get_bounces>`  **(** **)** const                                                                            |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_cell_extra_margin<class_BakedLight_set_cell_extra_margin>`  **(** :ref:`float<class_float>` cell_extra_margin  **)**                 |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`        | :ref:`get_cell_extra_margin<class_BakedLight_get_cell_extra_margin>`  **(** **)** const                                                        |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_edge_damp<class_BakedLight_set_edge_damp>`  **(** :ref:`float<class_float>` edge_damp  **)**                                         |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`        | :ref:`get_edge_damp<class_BakedLight_get_edge_damp>`  **(** **)** const                                                                        |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_normal_damp<class_BakedLight_set_normal_damp>`  **(** :ref:`float<class_float>` normal_damp  **)**                                   |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`        | :ref:`get_normal_damp<class_BakedLight_get_normal_damp>`  **(** **)** const                                                                    |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_tint<class_BakedLight_set_tint>`  **(** :ref:`float<class_float>` tint  **)**                                                        |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`        | :ref:`get_tint<class_BakedLight_get_tint>`  **(** **)** const                                                                                  |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_saturation<class_BakedLight_set_saturation>`  **(** :ref:`float<class_float>` saturation  **)**                                      |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`        | :ref:`get_saturation<class_BakedLight_get_saturation>`  **(** **)** const                                                                      |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_ao_radius<class_BakedLight_set_ao_radius>`  **(** :ref:`float<class_float>` ao_radius  **)**                                         |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`        | :ref:`get_ao_radius<class_BakedLight_get_ao_radius>`  **(** **)** const                                                                        |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_ao_strength<class_BakedLight_set_ao_strength>`  **(** :ref:`float<class_float>` ao_strength  **)**                                   |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`        | :ref:`get_ao_strength<class_BakedLight_get_ao_strength>`  **(** **)** const                                                                    |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_format<class_BakedLight_set_format>`  **(** :ref:`int<class_int>` format  **)**                                                      |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_format<class_BakedLight_get_format>`  **(** **)** const                                                                              |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_transfer_lightmaps_only_to_uv2<class_BakedLight_set_transfer_lightmaps_only_to_uv2>`  **(** :ref:`bool<class_bool>` enable  **)**    |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`get_transfer_lightmaps_only_to_uv2<class_BakedLight_get_transfer_lightmaps_only_to_uv2>`  **(** **)** const                              |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_energy_multiplier<class_BakedLight_set_energy_multiplier>`  **(** :ref:`float<class_float>` energy_multiplier  **)**                 |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`        | :ref:`get_energy_multiplier<class_BakedLight_get_energy_multiplier>`  **(** **)** const                                                        |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_gamma_adjust<class_BakedLight_set_gamma_adjust>`  **(** :ref:`float<class_float>` gamma_adjust  **)**                                |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`        | :ref:`get_gamma_adjust<class_BakedLight_get_gamma_adjust>`  **(** **)** const                                                                  |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_bake_flag<class_BakedLight_set_bake_flag>`  **(** :ref:`int<class_int>` flag, :ref:`bool<class_bool>` enabled  **)**                 |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`get_bake_flag<class_BakedLight_get_bake_flag>`  **(** :ref:`int<class_int>` flag  **)** const                                            |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Numeric Constants
+-----------------
+
+- **MODE_OCTREE** = **0**
+- **MODE_LIGHTMAPS** = **1**
+- **BAKE_DIFFUSE** = **0**
+- **BAKE_SPECULAR** = **1**
+- **BAKE_TRANSLUCENT** = **2**
+- **BAKE_CONSERVE_ENERGY** = **3**
+- **BAKE_MAX** = **5**
+
+Member Function Description
+---------------------------
+
+.. _class_BakedLight_set_mode:
+
+- void  **set_mode**  **(** :ref:`int<class_int>` mode  **)**
+
+.. _class_BakedLight_get_mode:
+
+- :ref:`int<class_int>`  **get_mode**  **(** **)** const
+
+.. _class_BakedLight_set_octree:
+
+- void  **set_octree**  **(** :ref:`RawArray<class_rawarray>` octree  **)**
+
+.. _class_BakedLight_get_octree:
+
+- :ref:`RawArray<class_rawarray>`  **get_octree**  **(** **)** const
+
+.. _class_BakedLight_set_light:
+
+- void  **set_light**  **(** :ref:`RawArray<class_rawarray>` light  **)**
+
+.. _class_BakedLight_get_light:
+
+- :ref:`RawArray<class_rawarray>`  **get_light**  **(** **)** const
+
+.. _class_BakedLight_set_sampler_octree:
+
+- void  **set_sampler_octree**  **(** :ref:`IntArray<class_intarray>` sampler_octree  **)**
+
+.. _class_BakedLight_get_sampler_octree:
+
+- :ref:`IntArray<class_intarray>`  **get_sampler_octree**  **(** **)** const
+
+.. _class_BakedLight_add_lightmap:
+
+- void  **add_lightmap**  **(** :ref:`Texture<class_texture>` texture, :ref:`Vector2<class_vector2>` gen_size  **)**
+
+.. _class_BakedLight_erase_lightmap:
+
+- void  **erase_lightmap**  **(** :ref:`int<class_int>` id  **)**
+
+.. _class_BakedLight_clear_lightmaps:
+
+- void  **clear_lightmaps**  **(** **)**
+
+.. _class_BakedLight_set_cell_subdivision:
+
+- void  **set_cell_subdivision**  **(** :ref:`int<class_int>` cell_subdivision  **)**
+
+.. _class_BakedLight_get_cell_subdivision:
+
+- :ref:`int<class_int>`  **get_cell_subdivision**  **(** **)** const
+
+.. _class_BakedLight_set_initial_lattice_subdiv:
+
+- void  **set_initial_lattice_subdiv**  **(** :ref:`int<class_int>` cell_subdivision  **)**
+
+.. _class_BakedLight_get_initial_lattice_subdiv:
+
+- :ref:`int<class_int>`  **get_initial_lattice_subdiv**  **(** **)** const
+
+.. _class_BakedLight_set_plot_size:
+
+- void  **set_plot_size**  **(** :ref:`float<class_float>` plot_size  **)**
+
+.. _class_BakedLight_get_plot_size:
+
+- :ref:`float<class_float>`  **get_plot_size**  **(** **)** const
+
+.. _class_BakedLight_set_bounces:
+
+- void  **set_bounces**  **(** :ref:`int<class_int>` bounces  **)**
+
+.. _class_BakedLight_get_bounces:
+
+- :ref:`int<class_int>`  **get_bounces**  **(** **)** const
+
+.. _class_BakedLight_set_cell_extra_margin:
+
+- void  **set_cell_extra_margin**  **(** :ref:`float<class_float>` cell_extra_margin  **)**
+
+.. _class_BakedLight_get_cell_extra_margin:
+
+- :ref:`float<class_float>`  **get_cell_extra_margin**  **(** **)** const
+
+.. _class_BakedLight_set_edge_damp:
+
+- void  **set_edge_damp**  **(** :ref:`float<class_float>` edge_damp  **)**
+
+.. _class_BakedLight_get_edge_damp:
+
+- :ref:`float<class_float>`  **get_edge_damp**  **(** **)** const
+
+.. _class_BakedLight_set_normal_damp:
+
+- void  **set_normal_damp**  **(** :ref:`float<class_float>` normal_damp  **)**
+
+.. _class_BakedLight_get_normal_damp:
+
+- :ref:`float<class_float>`  **get_normal_damp**  **(** **)** const
+
+.. _class_BakedLight_set_tint:
+
+- void  **set_tint**  **(** :ref:`float<class_float>` tint  **)**
+
+.. _class_BakedLight_get_tint:
+
+- :ref:`float<class_float>`  **get_tint**  **(** **)** const
+
+.. _class_BakedLight_set_saturation:
+
+- void  **set_saturation**  **(** :ref:`float<class_float>` saturation  **)**
+
+.. _class_BakedLight_get_saturation:
+
+- :ref:`float<class_float>`  **get_saturation**  **(** **)** const
+
+.. _class_BakedLight_set_ao_radius:
+
+- void  **set_ao_radius**  **(** :ref:`float<class_float>` ao_radius  **)**
+
+.. _class_BakedLight_get_ao_radius:
+
+- :ref:`float<class_float>`  **get_ao_radius**  **(** **)** const
+
+.. _class_BakedLight_set_ao_strength:
+
+- void  **set_ao_strength**  **(** :ref:`float<class_float>` ao_strength  **)**
+
+.. _class_BakedLight_get_ao_strength:
+
+- :ref:`float<class_float>`  **get_ao_strength**  **(** **)** const
+
+.. _class_BakedLight_set_format:
+
+- void  **set_format**  **(** :ref:`int<class_int>` format  **)**
+
+.. _class_BakedLight_get_format:
+
+- :ref:`int<class_int>`  **get_format**  **(** **)** const
+
+.. _class_BakedLight_set_transfer_lightmaps_only_to_uv2:
+
+- void  **set_transfer_lightmaps_only_to_uv2**  **(** :ref:`bool<class_bool>` enable  **)**
+
+.. _class_BakedLight_get_transfer_lightmaps_only_to_uv2:
+
+- :ref:`bool<class_bool>`  **get_transfer_lightmaps_only_to_uv2**  **(** **)** const
+
+.. _class_BakedLight_set_energy_multiplier:
+
+- void  **set_energy_multiplier**  **(** :ref:`float<class_float>` energy_multiplier  **)**
+
+.. _class_BakedLight_get_energy_multiplier:
+
+- :ref:`float<class_float>`  **get_energy_multiplier**  **(** **)** const
+
+.. _class_BakedLight_set_gamma_adjust:
+
+- void  **set_gamma_adjust**  **(** :ref:`float<class_float>` gamma_adjust  **)**
+
+.. _class_BakedLight_get_gamma_adjust:
+
+- :ref:`float<class_float>`  **get_gamma_adjust**  **(** **)** const
+
+.. _class_BakedLight_set_bake_flag:
+
+- void  **set_bake_flag**  **(** :ref:`int<class_int>` flag, :ref:`bool<class_bool>` enabled  **)**
+
+.. _class_BakedLight_get_bake_flag:
+
+- :ref:`bool<class_bool>`  **get_bake_flag**  **(** :ref:`int<class_int>` flag  **)** const
+
+

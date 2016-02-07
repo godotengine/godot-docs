@@ -1,0 +1,530 @@
+.. _class_@GDScript:
+
+@GDScript
+=========
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+Built-in GDScript functions.
+
+Member Functions
+----------------
+
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`sin<class_@GDScript_sin>`  **(** :ref:`float<class_float>` s  **)**                                                                                  |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`cos<class_@GDScript_cos>`  **(** :ref:`float<class_float>` s  **)**                                                                                  |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`tan<class_@GDScript_tan>`  **(** :ref:`float<class_float>` s  **)**                                                                                  |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`sinh<class_@GDScript_sinh>`  **(** :ref:`float<class_float>` s  **)**                                                                                |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`cosh<class_@GDScript_cosh>`  **(** :ref:`float<class_float>` s  **)**                                                                                |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`tanh<class_@GDScript_tanh>`  **(** :ref:`float<class_float>` s  **)**                                                                                |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`asin<class_@GDScript_asin>`  **(** :ref:`float<class_float>` s  **)**                                                                                |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`acos<class_@GDScript_acos>`  **(** :ref:`float<class_float>` s  **)**                                                                                |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`atan<class_@GDScript_atan>`  **(** :ref:`float<class_float>` s  **)**                                                                                |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`atan2<class_@GDScript_atan2>`  **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y  **)**                                                 |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`sqrt<class_@GDScript_sqrt>`  **(** :ref:`float<class_float>` s  **)**                                                                                |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`fmod<class_@GDScript_fmod>`  **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y  **)**                                                   |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`fposmod<class_@GDScript_fposmod>`  **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y  **)**                                             |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`floor<class_@GDScript_floor>`  **(** :ref:`float<class_float>` s  **)**                                                                              |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`ceil<class_@GDScript_ceil>`  **(** :ref:`float<class_float>` s  **)**                                                                                |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`round<class_@GDScript_round>`  **(** :ref:`float<class_float>` s  **)**                                                                              |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`abs<class_@GDScript_abs>`  **(** :ref:`float<class_float>` s  **)**                                                                                  |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`sign<class_@GDScript_sign>`  **(** :ref:`float<class_float>` s  **)**                                                                                |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`pow<class_@GDScript_pow>`  **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y  **)**                                                     |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`log<class_@GDScript_log>`  **(** :ref:`float<class_float>` s  **)**                                                                                  |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`exp<class_@GDScript_exp>`  **(** :ref:`float<class_float>` s  **)**                                                                                  |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`isnan<class_@GDScript_isnan>`  **(** :ref:`float<class_float>` s  **)**                                                                              |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`isinf<class_@GDScript_isinf>`  **(** :ref:`float<class_float>` s  **)**                                                                              |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`ease<class_@GDScript_ease>`  **(** :ref:`float<class_float>` s, :ref:`float<class_float>` curve  **)**                                               |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`decimals<class_@GDScript_decimals>`  **(** :ref:`float<class_float>` step  **)**                                                                     |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`stepify<class_@GDScript_stepify>`  **(** :ref:`float<class_float>` s, :ref:`float<class_float>` step  **)**                                          |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`lerp<class_@GDScript_lerp>`  **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` weight  **)**             |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`dectime<class_@GDScript_dectime>`  **(** :ref:`float<class_float>` value, :ref:`float<class_float>` amount, :ref:`float<class_float>` step  **)**    |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Nil<class_nil>`                | :ref:`randomize<class_@GDScript_randomize>`  **(** **)**                                                                                                   |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                | :ref:`randi<class_@GDScript_randi>`  **(** **)**                                                                                                           |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`randf<class_@GDScript_randf>`  **(** **)**                                                                                                           |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`rand_range<class_@GDScript_rand_range>`  **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to  **)**                                   |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Nil<class_nil>`                | :ref:`seed<class_@GDScript_seed>`  **(** :ref:`float<class_float>` seed  **)**                                                                             |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`            | :ref:`rand_seed<class_@GDScript_rand_seed>`  **(** :ref:`float<class_float>` seed  **)**                                                                   |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`deg2rad<class_@GDScript_deg2rad>`  **(** :ref:`float<class_float>` deg  **)**                                                                        |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`rad2deg<class_@GDScript_rad2deg>`  **(** :ref:`float<class_float>` rad  **)**                                                                        |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`linear2db<class_@GDScript_linear2db>`  **(** :ref:`float<class_float>` nrg  **)**                                                                    |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`db2linear<class_@GDScript_db2linear>`  **(** :ref:`float<class_float>` db  **)**                                                                     |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`max<class_@GDScript_max>`  **(** :ref:`float<class_float>` a, :ref:`float<class_float>` b  **)**                                                     |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`min<class_@GDScript_min>`  **(** :ref:`float<class_float>` a, :ref:`float<class_float>` b  **)**                                                     |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`            | :ref:`clamp<class_@GDScript_clamp>`  **(** :ref:`float<class_float>` val, :ref:`float<class_float>` min, :ref:`float<class_float>` max  **)**              |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                | :ref:`nearest_po2<class_@GDScript_nearest_po2>`  **(** :ref:`int<class_int>` val  **)**                                                                    |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`WeakRef<class_weakref>`        | :ref:`weakref<class_@GDScript_weakref>`  **(** :ref:`Object<class_object>` obj  **)**                                                                      |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`FuncRef<class_funcref>`        | :ref:`funcref<class_@GDScript_funcref>`  **(** :ref:`Object<class_object>` instance, :ref:`String<class_string>` funcname  **)**                           |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`          | :ref:`convert<class_@GDScript_convert>`  **(** Variant what, :ref:`int<class_int>` type  **)**                                                             |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                | :ref:`typeof<class_@GDScript_typeof>`  **(** Variant what  **)**                                                                                           |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`          | :ref:`str<class_@GDScript_str>`  **(** Variant what, Variant ...  **)**                                                                                    |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Nil<class_nil>`                | :ref:`print<class_@GDScript_print>`  **(** Variant what, Variant ...  **)**                                                                                |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Nil<class_nil>`                | :ref:`printt<class_@GDScript_printt>`  **(** Variant what, Variant ...  **)**                                                                              |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Nil<class_nil>`                | :ref:`prints<class_@GDScript_prints>`  **(** Variant what, Variant ...  **)**                                                                              |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Nil<class_nil>`                | :ref:`printerr<class_@GDScript_printerr>`  **(** Variant what, Variant ...  **)**                                                                          |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Nil<class_nil>`                | :ref:`printraw<class_@GDScript_printraw>`  **(** Variant what, Variant ...  **)**                                                                          |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`          | :ref:`var2str<class_@GDScript_var2str>`  **(** Variant var  **)**                                                                                          |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Variant                              | :ref:`str2var<class_@GDScript_str2var>`  **(** :ref:`String<class_string>` string  **)**                                                                   |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RawArray<class_rawarray>`      | :ref:`var2bytes<class_@GDScript_var2bytes>`  **(** Variant var  **)**                                                                                      |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Variant                              | :ref:`bytes2var<class_@GDScript_bytes2var>`  **(** :ref:`RawArray<class_rawarray>` bytes  **)**                                                            |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`            | :ref:`range<class_@GDScript_range>`  **(** Variant ...  **)**                                                                                              |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Resource<class_resource>`      | :ref:`load<class_@GDScript_load>`  **(** :ref:`String<class_string>` path  **)**                                                                           |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_dictionary>`  | :ref:`inst2dict<class_@GDScript_inst2dict>`  **(** :ref:`Object<class_object>` inst  **)**                                                                 |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`          | :ref:`dict2inst<class_@GDScript_dict2inst>`  **(** :ref:`Dictionary<class_dictionary>` dict  **)**                                                         |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                | :ref:`hash<class_@GDScript_hash>`  **(** Variant var:Variant  **)**                                                                                        |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`            | :ref:`Color8<class_@GDScript_Color8>`  **(** :ref:`int<class_int>` r8, :ref:`int<class_int>` g8, :ref:`int<class_int>` b8, :ref:`int<class_int>` a8  **)** |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Nil<class_nil>`                | :ref:`print_stack<class_@GDScript_print_stack>`  **(** **)**                                                                                               |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`          | :ref:`instance_from_id<class_@GDScript_instance_from_id>`  **(** :ref:`int<class_int>` instance_id  **)**                                                  |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Numeric Constants
+-----------------
+
+- **PI** = **3.141593** --- Constant that represents how many times the diameter of a circumference fits around it's perimeter.
+
+Description
+-----------
+
+This contains the list of built-in gdscript functions. Mostly math functions and other utilities. Everything else is expanded by objects.
+
+Member Function Description
+---------------------------
+
+.. _class_@GDScript_sin:
+
+- :ref:`float<class_float>`  **sin**  **(** :ref:`float<class_float>` s  **)**
+
+Standard sine function.
+
+.. _class_@GDScript_cos:
+
+- :ref:`float<class_float>`  **cos**  **(** :ref:`float<class_float>` s  **)**
+
+Standard cosine function.
+
+.. _class_@GDScript_tan:
+
+- :ref:`float<class_float>`  **tan**  **(** :ref:`float<class_float>` s  **)**
+
+Standard tangent function.
+
+.. _class_@GDScript_sinh:
+
+- :ref:`float<class_float>`  **sinh**  **(** :ref:`float<class_float>` s  **)**
+
+Hyperbolic sine.
+
+.. _class_@GDScript_cosh:
+
+- :ref:`float<class_float>`  **cosh**  **(** :ref:`float<class_float>` s  **)**
+
+Hyperbolic cosine.
+
+.. _class_@GDScript_tanh:
+
+- :ref:`float<class_float>`  **tanh**  **(** :ref:`float<class_float>` s  **)**
+
+Hyperbolic tangent.
+
+.. _class_@GDScript_asin:
+
+- :ref:`float<class_float>`  **asin**  **(** :ref:`float<class_float>` s  **)**
+
+Arc-sine.
+
+.. _class_@GDScript_acos:
+
+- :ref:`float<class_float>`  **acos**  **(** :ref:`float<class_float>` s  **)**
+
+Arc-cosine.
+
+.. _class_@GDScript_atan:
+
+- :ref:`float<class_float>`  **atan**  **(** :ref:`float<class_float>` s  **)**
+
+Arc-tangent.
+
+.. _class_@GDScript_atan2:
+
+- :ref:`float<class_float>`  **atan2**  **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y  **)**
+
+Arc-tangent that takes a 2D vector as argument, retuns the full -pi to +pi range.
+
+.. _class_@GDScript_sqrt:
+
+- :ref:`float<class_float>`  **sqrt**  **(** :ref:`float<class_float>` s  **)**
+
+Square root.
+
+.. _class_@GDScript_fmod:
+
+- :ref:`float<class_float>`  **fmod**  **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y  **)**
+
+Module (remainder of x/y).
+
+.. _class_@GDScript_fposmod:
+
+- :ref:`float<class_float>`  **fposmod**  **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y  **)**
+
+Module (remainder of x/y) that wraps equally in positive and negative.
+
+.. _class_@GDScript_floor:
+
+- :ref:`float<class_float>`  **floor**  **(** :ref:`float<class_float>` s  **)**
+
+Floor (rounds down to nearest integer).
+
+.. _class_@GDScript_ceil:
+
+- :ref:`float<class_float>`  **ceil**  **(** :ref:`float<class_float>` s  **)**
+
+Ceiling (rounds up to nearest integer).
+
+.. _class_@GDScript_round:
+
+- :ref:`float<class_float>`  **round**  **(** :ref:`float<class_float>` s  **)**
+
+Round to nearest integer.
+
+.. _class_@GDScript_abs:
+
+- :ref:`float<class_float>`  **abs**  **(** :ref:`float<class_float>` s  **)**
+
+Remove sign (works for integer and float).
+
+.. _class_@GDScript_sign:
+
+- :ref:`float<class_float>`  **sign**  **(** :ref:`float<class_float>` s  **)**
+
+Return sign (-1 or +1).
+
+.. _class_@GDScript_pow:
+
+- :ref:`float<class_float>`  **pow**  **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y  **)**
+
+Power function, x elevate to y.
+
+.. _class_@GDScript_log:
+
+- :ref:`float<class_float>`  **log**  **(** :ref:`float<class_float>` s  **)**
+
+Natural logarithm.
+
+.. _class_@GDScript_exp:
+
+- :ref:`float<class_float>`  **exp**  **(** :ref:`float<class_float>` s  **)**
+
+Exponential logarithm.
+
+.. _class_@GDScript_isnan:
+
+- :ref:`float<class_float>`  **isnan**  **(** :ref:`float<class_float>` s  **)**
+
+Return true if the float is not a number.
+
+.. _class_@GDScript_isinf:
+
+- :ref:`float<class_float>`  **isinf**  **(** :ref:`float<class_float>` s  **)**
+
+Return true if the float is infinite.
+
+.. _class_@GDScript_ease:
+
+- :ref:`float<class_float>`  **ease**  **(** :ref:`float<class_float>` s, :ref:`float<class_float>` curve  **)**
+
+Easing function, based on exponent. 0 is constant, 1 is linear, 0 to 1 is ease-in, 1+ is ease out. Negative values are in-out/out in.
+
+.. _class_@GDScript_decimals:
+
+- :ref:`float<class_float>`  **decimals**  **(** :ref:`float<class_float>` step  **)**
+
+Return the amount of decimals in the floating point value.
+
+.. _class_@GDScript_stepify:
+
+- :ref:`float<class_float>`  **stepify**  **(** :ref:`float<class_float>` s, :ref:`float<class_float>` step  **)**
+
+Snap float value to a given step.
+
+.. _class_@GDScript_lerp:
+
+- :ref:`float<class_float>`  **lerp**  **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` weight  **)**
+
+Linear interpolates between two values by a normalized value.
+
+.. _class_@GDScript_dectime:
+
+- :ref:`float<class_float>`  **dectime**  **(** :ref:`float<class_float>` value, :ref:`float<class_float>` amount, :ref:`float<class_float>` step  **)**
+
+Decreases time by a specified amount.
+
+.. _class_@GDScript_randomize:
+
+- :ref:`Nil<class_nil>`  **randomize**  **(** **)**
+
+Reset the seed of the random number generator with a new, different one.
+
+.. _class_@GDScript_randi:
+
+- :ref:`int<class_int>`  **randi**  **(** **)**
+
+Random 32 bits value (integer). To obtain a value	from 0 to N, you can use remainder, like (for random from 0 to 19): randi() % 20.
+
+.. _class_@GDScript_randf:
+
+- :ref:`float<class_float>`  **randf**  **(** **)**
+
+Random value (0 to 1 float).
+
+.. _class_@GDScript_rand_range:
+
+- :ref:`float<class_float>`  **rand_range**  **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to  **)**
+
+Random range, any floating point value between 'from' and 'to'
+
+.. _class_@GDScript_seed:
+
+- :ref:`Nil<class_nil>`  **seed**  **(** :ref:`float<class_float>` seed  **)**
+
+.. _class_@GDScript_rand_seed:
+
+- :ref:`Array<class_array>`  **rand_seed**  **(** :ref:`float<class_float>` seed  **)**
+
+Random from seed, pass a seed and an array with both number and new seed is returned.
+
+.. _class_@GDScript_deg2rad:
+
+- :ref:`float<class_float>`  **deg2rad**  **(** :ref:`float<class_float>` deg  **)**
+
+Convert from degrees to radians.
+
+.. _class_@GDScript_rad2deg:
+
+- :ref:`float<class_float>`  **rad2deg**  **(** :ref:`float<class_float>` rad  **)**
+
+Convert from radias to degrees.
+
+.. _class_@GDScript_linear2db:
+
+- :ref:`float<class_float>`  **linear2db**  **(** :ref:`float<class_float>` nrg  **)**
+
+Convert from linear energy to decibels (audio).
+
+.. _class_@GDScript_db2linear:
+
+- :ref:`float<class_float>`  **db2linear**  **(** :ref:`float<class_float>` db  **)**
+
+Convert from decibels to linear energy (audio).
+
+.. _class_@GDScript_max:
+
+- :ref:`float<class_float>`  **max**  **(** :ref:`float<class_float>` a, :ref:`float<class_float>` b  **)**
+
+Return the maximum of two values.
+
+.. _class_@GDScript_min:
+
+- :ref:`float<class_float>`  **min**  **(** :ref:`float<class_float>` a, :ref:`float<class_float>` b  **)**
+
+Return the minimum of two values.
+
+.. _class_@GDScript_clamp:
+
+- :ref:`float<class_float>`  **clamp**  **(** :ref:`float<class_float>` val, :ref:`float<class_float>` min, :ref:`float<class_float>` max  **)**
+
+Clamp both values to a range.
+
+.. _class_@GDScript_nearest_po2:
+
+- :ref:`int<class_int>`  **nearest_po2**  **(** :ref:`int<class_int>` val  **)**
+
+Return the nearest larger power of 2 for an integer.
+
+.. _class_@GDScript_weakref:
+
+- :ref:`WeakRef<class_weakref>`  **weakref**  **(** :ref:`Object<class_object>` obj  **)**
+
+Return a weak reference to an object.
+
+.. _class_@GDScript_funcref:
+
+- :ref:`FuncRef<class_funcref>`  **funcref**  **(** :ref:`Object<class_object>` instance, :ref:`String<class_string>` funcname  **)**
+
+Returns a reference to the specified function
+
+.. _class_@GDScript_convert:
+
+- :ref:`Object<class_object>`  **convert**  **(** Variant what, :ref:`int<class_int>` type  **)**
+
+Convert from a type to another in the best way possible. The "type" parameter uses the enum TYPE_* in :ref:`@Global Scope<class_@global scope>`.
+
+.. _class_@GDScript_typeof:
+
+- :ref:`int<class_int>`  **typeof**  **(** Variant what  **)**
+
+Returns the internal type of the given Variant object, using the TYPE_* enum in :ref:`@Global Scope<class_@global scope>`.
+
+.. _class_@GDScript_str:
+
+- :ref:`String<class_string>`  **str**  **(** Variant what, Variant ...  **)**
+
+Convert one or more arguments to strings in the best way possible.
+
+.. _class_@GDScript_print:
+
+- :ref:`Nil<class_nil>`  **print**  **(** Variant what, Variant ...  **)**
+
+Print one or more arguments to strings in the best way possible to a console line.
+
+.. _class_@GDScript_printt:
+
+- :ref:`Nil<class_nil>`  **printt**  **(** Variant what, Variant ...  **)**
+
+Print one or more arguments to the console with a tab between each argument.
+
+.. _class_@GDScript_prints:
+
+- :ref:`Nil<class_nil>`  **prints**  **(** Variant what, Variant ...  **)**
+
+.. _class_@GDScript_printerr:
+
+- :ref:`Nil<class_nil>`  **printerr**  **(** Variant what, Variant ...  **)**
+
+Print one or more arguments to strings in the best way possible to standard error line.
+
+.. _class_@GDScript_printraw:
+
+- :ref:`Nil<class_nil>`  **printraw**  **(** Variant what, Variant ...  **)**
+
+Print one or more arguments to strings in the best way possible to console. No newline is added at the end.
+
+.. _class_@GDScript_var2str:
+
+- :ref:`String<class_string>`  **var2str**  **(** Variant var  **)**
+
+Converts the value of a variable to a String.
+
+.. _class_@GDScript_str2var:
+
+- Variant  **str2var**  **(** :ref:`String<class_string>` string  **)**
+
+.. _class_@GDScript_var2bytes:
+
+- :ref:`RawArray<class_rawarray>`  **var2bytes**  **(** Variant var  **)**
+
+.. _class_@GDScript_bytes2var:
+
+- Variant  **bytes2var**  **(** :ref:`RawArray<class_rawarray>` bytes  **)**
+
+.. _class_@GDScript_range:
+
+- :ref:`Array<class_array>`  **range**  **(** Variant ...  **)**
+
+Return an array with the given range. Range can be 1 argument N (0 to N-1), two arguments (initial, final-1) or three arguments (initial,final-1,increment).
+
+.. _class_@GDScript_load:
+
+- :ref:`Resource<class_resource>`  **load**  **(** :ref:`String<class_string>` path  **)**
+
+Load a resource from the filesystem, pass a valid path as argument.
+
+.. _class_@GDScript_inst2dict:
+
+- :ref:`Dictionary<class_dictionary>`  **inst2dict**  **(** :ref:`Object<class_object>` inst  **)**
+
+Convert a script class instance to a dictionary (useful for serializing).
+
+.. _class_@GDScript_dict2inst:
+
+- :ref:`Object<class_object>`  **dict2inst**  **(** :ref:`Dictionary<class_dictionary>` dict  **)**
+
+Convert a previously converted instances to dictionary back into an instance. Useful for deserializing.
+
+.. _class_@GDScript_hash:
+
+- :ref:`int<class_int>`  **hash**  **(** Variant var:Variant  **)**
+
+Hashes the variable passed and returns an integer.
+
+.. _class_@GDScript_Color8:
+
+- :ref:`Color<class_color>`  **Color8**  **(** :ref:`int<class_int>` r8, :ref:`int<class_int>` g8, :ref:`int<class_int>` b8, :ref:`int<class_int>` a8  **)**
+
+.. _class_@GDScript_print_stack:
+
+- :ref:`Nil<class_nil>`  **print_stack**  **(** **)**
+
+Print a stack track at code location, only works when running with debugger turned on.
+
+.. _class_@GDScript_instance_from_id:
+
+- :ref:`Object<class_object>`  **instance_from_id**  **(** :ref:`int<class_int>` instance_id  **)**
+
+

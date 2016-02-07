@@ -1,0 +1,68 @@
+.. _class_OccluderPolygon2D:
+
+OccluderPolygon2D
+=================
+
+Inherits: :ref:`Resource<class_resource>`
+-----------------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+
+
+Member Functions
+----------------
+
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_closed<class_OccluderPolygon2D_set_closed>`  **(** :ref:`bool<class_bool>` closed  **)**                    |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`is_closed<class_OccluderPolygon2D_is_closed>`  **(** **)** const                                                |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_cull_mode<class_OccluderPolygon2D_set_cull_mode>`  **(** :ref:`int<class_int>` cull_mode  **)**             |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                    | :ref:`get_cull_mode<class_OccluderPolygon2D_get_cull_mode>`  **(** **)** const                                        |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_polygon<class_OccluderPolygon2D_set_polygon>`  **(** :ref:`Vector2Array<class_vector2array>` polygon  **)** |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2Array<class_vector2array>`  | :ref:`get_polygon<class_OccluderPolygon2D_get_polygon>`  **(** **)** const                                            |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+
+Numeric Constants
+-----------------
+
+- **CULL_DISABLED** = **0**
+- **CULL_CLOCKWISE** = **1**
+- **CULL_COUNTER_CLOCKWISE** = **2**
+
+Member Function Description
+---------------------------
+
+.. _class_OccluderPolygon2D_set_closed:
+
+- void  **set_closed**  **(** :ref:`bool<class_bool>` closed  **)**
+
+.. _class_OccluderPolygon2D_is_closed:
+
+- :ref:`bool<class_bool>`  **is_closed**  **(** **)** const
+
+.. _class_OccluderPolygon2D_set_cull_mode:
+
+- void  **set_cull_mode**  **(** :ref:`int<class_int>` cull_mode  **)**
+
+.. _class_OccluderPolygon2D_get_cull_mode:
+
+- :ref:`int<class_int>`  **get_cull_mode**  **(** **)** const
+
+.. _class_OccluderPolygon2D_set_polygon:
+
+- void  **set_polygon**  **(** :ref:`Vector2Array<class_vector2array>` polygon  **)**
+
+.. _class_OccluderPolygon2D_get_polygon:
+
+- :ref:`Vector2Array<class_vector2array>`  **get_polygon**  **(** **)** const
+
+

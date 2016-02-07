@@ -1,0 +1,436 @@
+.. _class_AnimationTreePlayer:
+
+AnimationTreePlayer
+===================
+
+Inherits: :ref:`Node<class_node>`
+---------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+Animation Player that uses a node graph for the blending.
+
+Member Functions
+----------------
+
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`add_node<class_AnimationTreePlayer_add_node>`  **(** :ref:`int<class_int>` type, :ref:`String<class_string>` id  **)**                                                                                                  |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`node_exists<class_AnimationTreePlayer_node_exists>`  **(** :ref:`String<class_string>` node  **)** const                                                                                                                |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`node_rename<class_AnimationTreePlayer_node_rename>`  **(** :ref:`String<class_string>` node, :ref:`String<class_string>` new_name  **)**                                                                                |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`node_get_type<class_AnimationTreePlayer_node_get_type>`  **(** :ref:`String<class_string>` id  **)** const                                                                                                              |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`node_get_input_count<class_AnimationTreePlayer_node_get_input_count>`  **(** :ref:`String<class_string>` id  **)** const                                                                                                |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`node_get_input_source<class_AnimationTreePlayer_node_get_input_source>`  **(** :ref:`String<class_string>` id, :ref:`int<class_int>` idx  **)** const                                                                   |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`animation_node_set_animation<class_AnimationTreePlayer_animation_node_set_animation>`  **(** :ref:`String<class_string>` id, :ref:`Animation<class_animation>` animation  **)**                                         |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Animation<class_animation>`      | :ref:`animation_node_get_animation<class_AnimationTreePlayer_animation_node_get_animation>`  **(** :ref:`String<class_string>` id  **)** const                                                                                |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`animation_node_set_master_animation<class_AnimationTreePlayer_animation_node_set_master_animation>`  **(** :ref:`String<class_string>` id, :ref:`String<class_string>` source  **)**                                    |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`animation_node_get_master_animation<class_AnimationTreePlayer_animation_node_get_master_animation>`  **(** :ref:`String<class_string>` id  **)** const                                                                  |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`oneshot_node_set_fadein_time<class_AnimationTreePlayer_oneshot_node_set_fadein_time>`  **(** :ref:`String<class_string>` id, :ref:`float<class_float>` time_sec  **)**                                                  |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`oneshot_node_get_fadein_time<class_AnimationTreePlayer_oneshot_node_get_fadein_time>`  **(** :ref:`String<class_string>` id  **)** const                                                                                |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`oneshot_node_set_fadeout_time<class_AnimationTreePlayer_oneshot_node_set_fadeout_time>`  **(** :ref:`String<class_string>` id, :ref:`float<class_float>` time_sec  **)**                                                |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`oneshot_node_get_fadeout_time<class_AnimationTreePlayer_oneshot_node_get_fadeout_time>`  **(** :ref:`String<class_string>` id  **)** const                                                                              |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`oneshot_node_set_autorestart<class_AnimationTreePlayer_oneshot_node_set_autorestart>`  **(** :ref:`String<class_string>` id, :ref:`bool<class_bool>` enable  **)**                                                      |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`oneshot_node_set_autorestart_delay<class_AnimationTreePlayer_oneshot_node_set_autorestart_delay>`  **(** :ref:`String<class_string>` id, :ref:`float<class_float>` delay_sec  **)**                                     |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`oneshot_node_set_autorestart_random_delay<class_AnimationTreePlayer_oneshot_node_set_autorestart_random_delay>`  **(** :ref:`String<class_string>` id, :ref:`float<class_float>` rand_sec  **)**                        |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`oneshot_node_has_autorestart<class_AnimationTreePlayer_oneshot_node_has_autorestart>`  **(** :ref:`String<class_string>` id  **)** const                                                                                |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`oneshot_node_get_autorestart_delay<class_AnimationTreePlayer_oneshot_node_get_autorestart_delay>`  **(** :ref:`String<class_string>` id  **)** const                                                                    |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`oneshot_node_get_autorestart_random_delay<class_AnimationTreePlayer_oneshot_node_get_autorestart_random_delay>`  **(** :ref:`String<class_string>` id  **)** const                                                      |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`oneshot_node_start<class_AnimationTreePlayer_oneshot_node_start>`  **(** :ref:`String<class_string>` id  **)**                                                                                                          |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`oneshot_node_stop<class_AnimationTreePlayer_oneshot_node_stop>`  **(** :ref:`String<class_string>` id  **)**                                                                                                            |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`oneshot_node_is_active<class_AnimationTreePlayer_oneshot_node_is_active>`  **(** :ref:`String<class_string>` id  **)** const                                                                                            |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`oneshot_node_set_filter_path<class_AnimationTreePlayer_oneshot_node_set_filter_path>`  **(** :ref:`String<class_string>` id, :ref:`NodePath<class_nodepath>` path, :ref:`bool<class_bool>` enable  **)**                |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`mix_node_set_amount<class_AnimationTreePlayer_mix_node_set_amount>`  **(** :ref:`String<class_string>` id, :ref:`float<class_float>` ratio  **)**                                                                       |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`mix_node_get_amount<class_AnimationTreePlayer_mix_node_get_amount>`  **(** :ref:`String<class_string>` id  **)** const                                                                                                  |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`blend2_node_set_amount<class_AnimationTreePlayer_blend2_node_set_amount>`  **(** :ref:`String<class_string>` id, :ref:`float<class_float>` blend  **)**                                                                 |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`blend2_node_get_amount<class_AnimationTreePlayer_blend2_node_get_amount>`  **(** :ref:`String<class_string>` id  **)** const                                                                                            |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`blend2_node_set_filter_path<class_AnimationTreePlayer_blend2_node_set_filter_path>`  **(** :ref:`String<class_string>` id, :ref:`NodePath<class_nodepath>` path, :ref:`bool<class_bool>` enable  **)**                  |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`blend3_node_set_amount<class_AnimationTreePlayer_blend3_node_set_amount>`  **(** :ref:`String<class_string>` id, :ref:`float<class_float>` blend  **)**                                                                 |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`blend3_node_get_amount<class_AnimationTreePlayer_blend3_node_get_amount>`  **(** :ref:`String<class_string>` id  **)** const                                                                                            |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`blend4_node_set_amount<class_AnimationTreePlayer_blend4_node_set_amount>`  **(** :ref:`String<class_string>` id, :ref:`Vector2<class_vector2>` blend  **)**                                                             |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`          | :ref:`blend4_node_get_amount<class_AnimationTreePlayer_blend4_node_get_amount>`  **(** :ref:`String<class_string>` id  **)** const                                                                                            |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`timescale_node_set_scale<class_AnimationTreePlayer_timescale_node_set_scale>`  **(** :ref:`String<class_string>` id, :ref:`float<class_float>` scale  **)**                                                             |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`timescale_node_get_scale<class_AnimationTreePlayer_timescale_node_get_scale>`  **(** :ref:`String<class_string>` id  **)** const                                                                                        |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`timeseek_node_seek<class_AnimationTreePlayer_timeseek_node_seek>`  **(** :ref:`String<class_string>` id, :ref:`float<class_float>` pos_sec  **)**                                                                       |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`transition_node_set_input_count<class_AnimationTreePlayer_transition_node_set_input_count>`  **(** :ref:`String<class_string>` id, :ref:`int<class_int>` count  **)**                                                   |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`transition_node_get_input_count<class_AnimationTreePlayer_transition_node_get_input_count>`  **(** :ref:`String<class_string>` id  **)** const                                                                          |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`transition_node_delete_input<class_AnimationTreePlayer_transition_node_delete_input>`  **(** :ref:`String<class_string>` id, :ref:`int<class_int>` input_idx  **)**                                                     |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`transition_node_set_input_auto_advance<class_AnimationTreePlayer_transition_node_set_input_auto_advance>`  **(** :ref:`String<class_string>` id, :ref:`int<class_int>` input_idx, :ref:`bool<class_bool>` enable  **)** |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`transition_node_has_input_auto_advance<class_AnimationTreePlayer_transition_node_has_input_auto_advance>`  **(** :ref:`String<class_string>` id, :ref:`int<class_int>` input_idx  **)** const                           |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`transition_node_set_xfade_time<class_AnimationTreePlayer_transition_node_set_xfade_time>`  **(** :ref:`String<class_string>` id, :ref:`float<class_float>` time_sec  **)**                                              |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`transition_node_get_xfade_time<class_AnimationTreePlayer_transition_node_get_xfade_time>`  **(** :ref:`String<class_string>` id  **)** const                                                                            |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`transition_node_set_current<class_AnimationTreePlayer_transition_node_set_current>`  **(** :ref:`String<class_string>` id, :ref:`int<class_int>` input_idx  **)**                                                       |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`transition_node_get_current<class_AnimationTreePlayer_transition_node_get_current>`  **(** :ref:`String<class_string>` id  **)** const                                                                                  |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`node_set_pos<class_AnimationTreePlayer_node_set_pos>`  **(** :ref:`String<class_string>` id, :ref:`Vector2<class_vector2>` screen_pos  **)**                                                                            |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`          | :ref:`node_get_pos<class_AnimationTreePlayer_node_get_pos>`  **(** :ref:`String<class_string>` id  **)** const                                                                                                                |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`remove_node<class_AnimationTreePlayer_remove_node>`  **(** :ref:`String<class_string>` id  **)**                                                                                                                        |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`connect<class_AnimationTreePlayer_connect>`  **(** :ref:`String<class_string>` id, :ref:`String<class_string>` dst_id, :ref:`int<class_int>` dst_input_idx  **)**                                                       |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`is_connected<class_AnimationTreePlayer_is_connected>`  **(** :ref:`String<class_string>` id, :ref:`String<class_string>` dst_id, :ref:`int<class_int>` dst_input_idx  **)** const                                       |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`disconnect<class_AnimationTreePlayer_disconnect>`  **(** :ref:`String<class_string>` id, :ref:`int<class_int>` dst_input_idx  **)**                                                                                     |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_active<class_AnimationTreePlayer_set_active>`  **(** :ref:`bool<class_bool>` enabled  **)**                                                                                                                         |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`is_active<class_AnimationTreePlayer_is_active>`  **(** **)** const                                                                                                                                                      |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_base_path<class_AnimationTreePlayer_set_base_path>`  **(** :ref:`NodePath<class_nodepath>` path  **)**                                                                                                              |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`NodePath<class_nodepath>`        | :ref:`get_base_path<class_AnimationTreePlayer_get_base_path>`  **(** **)** const                                                                                                                                              |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_master_player<class_AnimationTreePlayer_set_master_player>`  **(** :ref:`NodePath<class_nodepath>` nodepath  **)**                                                                                                  |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`NodePath<class_nodepath>`        | :ref:`get_master_player<class_AnimationTreePlayer_get_master_player>`  **(** **)** const                                                                                                                                      |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`StringArray<class_stringarray>`  | :ref:`get_node_list<class_AnimationTreePlayer_get_node_list>`  **(** **)**                                                                                                                                                    |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_animation_process_mode<class_AnimationTreePlayer_set_animation_process_mode>`  **(** :ref:`int<class_int>` mode  **)**                                                                                              |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`get_animation_process_mode<class_AnimationTreePlayer_get_animation_process_mode>`  **(** **)** const                                                                                                                    |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`advance<class_AnimationTreePlayer_advance>`  **(** :ref:`float<class_float>` delta  **)**                                                                                                                               |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`reset<class_AnimationTreePlayer_reset>`  **(** **)**                                                                                                                                                                    |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`recompute_caches<class_AnimationTreePlayer_recompute_caches>`  **(** **)**                                                                                                                                              |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Numeric Constants
+-----------------
+
+- **NODE_OUTPUT** = **0**
+- **NODE_ANIMATION** = **1**
+- **NODE_ONESHOT** = **2**
+- **NODE_MIX** = **3**
+- **NODE_BLEND2** = **4**
+- **NODE_BLEND3** = **5**
+- **NODE_BLEND4** = **6**
+- **NODE_TIMESCALE** = **7**
+- **NODE_TIMESEEK** = **8**
+- **NODE_TRANSITION** = **9**
+
+Description
+-----------
+
+Animation Player that uses a node graph for the blending. This kind of player is very useful when animating character or other skeleton based rigs, because it can combine several animations to form a desired pose.
+
+Member Function Description
+---------------------------
+
+.. _class_AnimationTreePlayer_add_node:
+
+- void  **add_node**  **(** :ref:`int<class_int>` type, :ref:`String<class_string>` id  **)**
+
+Add a node of a given type in the graph with given id.
+
+.. _class_AnimationTreePlayer_node_exists:
+
+- :ref:`bool<class_bool>`  **node_exists**  **(** :ref:`String<class_string>` node  **)** const
+
+Check if a node exists (by name).
+
+.. _class_AnimationTreePlayer_node_rename:
+
+- :ref:`int<class_int>`  **node_rename**  **(** :ref:`String<class_string>` node, :ref:`String<class_string>` new_name  **)**
+
+Rename a node in the graph.
+
+.. _class_AnimationTreePlayer_node_get_type:
+
+- :ref:`int<class_int>`  **node_get_type**  **(** :ref:`String<class_string>` id  **)** const
+
+Get the node type, will return from NODE_* enum.
+
+.. _class_AnimationTreePlayer_node_get_input_count:
+
+- :ref:`int<class_int>`  **node_get_input_count**  **(** :ref:`String<class_string>` id  **)** const
+
+Return the input count for a given node. Different types of nodes have different amount of inputs.
+
+.. _class_AnimationTreePlayer_node_get_input_source:
+
+- :ref:`String<class_string>`  **node_get_input_source**  **(** :ref:`String<class_string>` id, :ref:`int<class_int>` idx  **)** const
+
+Return the input source for a given node input.
+
+.. _class_AnimationTreePlayer_animation_node_set_animation:
+
+- void  **animation_node_set_animation**  **(** :ref:`String<class_string>` id, :ref:`Animation<class_animation>` animation  **)**
+
+Set the animation for an animation node.
+
+.. _class_AnimationTreePlayer_animation_node_get_animation:
+
+- :ref:`Animation<class_animation>`  **animation_node_get_animation**  **(** :ref:`String<class_string>` id  **)** const
+
+.. _class_AnimationTreePlayer_animation_node_set_master_animation:
+
+- void  **animation_node_set_master_animation**  **(** :ref:`String<class_string>` id, :ref:`String<class_string>` source  **)**
+
+.. _class_AnimationTreePlayer_animation_node_get_master_animation:
+
+- :ref:`String<class_string>`  **animation_node_get_master_animation**  **(** :ref:`String<class_string>` id  **)** const
+
+.. _class_AnimationTreePlayer_oneshot_node_set_fadein_time:
+
+- void  **oneshot_node_set_fadein_time**  **(** :ref:`String<class_string>` id, :ref:`float<class_float>` time_sec  **)**
+
+.. _class_AnimationTreePlayer_oneshot_node_get_fadein_time:
+
+- :ref:`float<class_float>`  **oneshot_node_get_fadein_time**  **(** :ref:`String<class_string>` id  **)** const
+
+.. _class_AnimationTreePlayer_oneshot_node_set_fadeout_time:
+
+- void  **oneshot_node_set_fadeout_time**  **(** :ref:`String<class_string>` id, :ref:`float<class_float>` time_sec  **)**
+
+.. _class_AnimationTreePlayer_oneshot_node_get_fadeout_time:
+
+- :ref:`float<class_float>`  **oneshot_node_get_fadeout_time**  **(** :ref:`String<class_string>` id  **)** const
+
+.. _class_AnimationTreePlayer_oneshot_node_set_autorestart:
+
+- void  **oneshot_node_set_autorestart**  **(** :ref:`String<class_string>` id, :ref:`bool<class_bool>` enable  **)**
+
+.. _class_AnimationTreePlayer_oneshot_node_set_autorestart_delay:
+
+- void  **oneshot_node_set_autorestart_delay**  **(** :ref:`String<class_string>` id, :ref:`float<class_float>` delay_sec  **)**
+
+.. _class_AnimationTreePlayer_oneshot_node_set_autorestart_random_delay:
+
+- void  **oneshot_node_set_autorestart_random_delay**  **(** :ref:`String<class_string>` id, :ref:`float<class_float>` rand_sec  **)**
+
+.. _class_AnimationTreePlayer_oneshot_node_has_autorestart:
+
+- :ref:`bool<class_bool>`  **oneshot_node_has_autorestart**  **(** :ref:`String<class_string>` id  **)** const
+
+.. _class_AnimationTreePlayer_oneshot_node_get_autorestart_delay:
+
+- :ref:`float<class_float>`  **oneshot_node_get_autorestart_delay**  **(** :ref:`String<class_string>` id  **)** const
+
+.. _class_AnimationTreePlayer_oneshot_node_get_autorestart_random_delay:
+
+- :ref:`float<class_float>`  **oneshot_node_get_autorestart_random_delay**  **(** :ref:`String<class_string>` id  **)** const
+
+.. _class_AnimationTreePlayer_oneshot_node_start:
+
+- void  **oneshot_node_start**  **(** :ref:`String<class_string>` id  **)**
+
+.. _class_AnimationTreePlayer_oneshot_node_stop:
+
+- void  **oneshot_node_stop**  **(** :ref:`String<class_string>` id  **)**
+
+.. _class_AnimationTreePlayer_oneshot_node_is_active:
+
+- :ref:`bool<class_bool>`  **oneshot_node_is_active**  **(** :ref:`String<class_string>` id  **)** const
+
+.. _class_AnimationTreePlayer_oneshot_node_set_filter_path:
+
+- void  **oneshot_node_set_filter_path**  **(** :ref:`String<class_string>` id, :ref:`NodePath<class_nodepath>` path, :ref:`bool<class_bool>` enable  **)**
+
+.. _class_AnimationTreePlayer_mix_node_set_amount:
+
+- void  **mix_node_set_amount**  **(** :ref:`String<class_string>` id, :ref:`float<class_float>` ratio  **)**
+
+.. _class_AnimationTreePlayer_mix_node_get_amount:
+
+- :ref:`float<class_float>`  **mix_node_get_amount**  **(** :ref:`String<class_string>` id  **)** const
+
+.. _class_AnimationTreePlayer_blend2_node_set_amount:
+
+- void  **blend2_node_set_amount**  **(** :ref:`String<class_string>` id, :ref:`float<class_float>` blend  **)**
+
+.. _class_AnimationTreePlayer_blend2_node_get_amount:
+
+- :ref:`float<class_float>`  **blend2_node_get_amount**  **(** :ref:`String<class_string>` id  **)** const
+
+.. _class_AnimationTreePlayer_blend2_node_set_filter_path:
+
+- void  **blend2_node_set_filter_path**  **(** :ref:`String<class_string>` id, :ref:`NodePath<class_nodepath>` path, :ref:`bool<class_bool>` enable  **)**
+
+.. _class_AnimationTreePlayer_blend3_node_set_amount:
+
+- void  **blend3_node_set_amount**  **(** :ref:`String<class_string>` id, :ref:`float<class_float>` blend  **)**
+
+.. _class_AnimationTreePlayer_blend3_node_get_amount:
+
+- :ref:`float<class_float>`  **blend3_node_get_amount**  **(** :ref:`String<class_string>` id  **)** const
+
+.. _class_AnimationTreePlayer_blend4_node_set_amount:
+
+- void  **blend4_node_set_amount**  **(** :ref:`String<class_string>` id, :ref:`Vector2<class_vector2>` blend  **)**
+
+.. _class_AnimationTreePlayer_blend4_node_get_amount:
+
+- :ref:`Vector2<class_vector2>`  **blend4_node_get_amount**  **(** :ref:`String<class_string>` id  **)** const
+
+.. _class_AnimationTreePlayer_timescale_node_set_scale:
+
+- void  **timescale_node_set_scale**  **(** :ref:`String<class_string>` id, :ref:`float<class_float>` scale  **)**
+
+.. _class_AnimationTreePlayer_timescale_node_get_scale:
+
+- :ref:`float<class_float>`  **timescale_node_get_scale**  **(** :ref:`String<class_string>` id  **)** const
+
+.. _class_AnimationTreePlayer_timeseek_node_seek:
+
+- void  **timeseek_node_seek**  **(** :ref:`String<class_string>` id, :ref:`float<class_float>` pos_sec  **)**
+
+.. _class_AnimationTreePlayer_transition_node_set_input_count:
+
+- void  **transition_node_set_input_count**  **(** :ref:`String<class_string>` id, :ref:`int<class_int>` count  **)**
+
+.. _class_AnimationTreePlayer_transition_node_get_input_count:
+
+- :ref:`int<class_int>`  **transition_node_get_input_count**  **(** :ref:`String<class_string>` id  **)** const
+
+.. _class_AnimationTreePlayer_transition_node_delete_input:
+
+- void  **transition_node_delete_input**  **(** :ref:`String<class_string>` id, :ref:`int<class_int>` input_idx  **)**
+
+.. _class_AnimationTreePlayer_transition_node_set_input_auto_advance:
+
+- void  **transition_node_set_input_auto_advance**  **(** :ref:`String<class_string>` id, :ref:`int<class_int>` input_idx, :ref:`bool<class_bool>` enable  **)**
+
+.. _class_AnimationTreePlayer_transition_node_has_input_auto_advance:
+
+- :ref:`bool<class_bool>`  **transition_node_has_input_auto_advance**  **(** :ref:`String<class_string>` id, :ref:`int<class_int>` input_idx  **)** const
+
+.. _class_AnimationTreePlayer_transition_node_set_xfade_time:
+
+- void  **transition_node_set_xfade_time**  **(** :ref:`String<class_string>` id, :ref:`float<class_float>` time_sec  **)**
+
+.. _class_AnimationTreePlayer_transition_node_get_xfade_time:
+
+- :ref:`float<class_float>`  **transition_node_get_xfade_time**  **(** :ref:`String<class_string>` id  **)** const
+
+.. _class_AnimationTreePlayer_transition_node_set_current:
+
+- void  **transition_node_set_current**  **(** :ref:`String<class_string>` id, :ref:`int<class_int>` input_idx  **)**
+
+.. _class_AnimationTreePlayer_transition_node_get_current:
+
+- :ref:`int<class_int>`  **transition_node_get_current**  **(** :ref:`String<class_string>` id  **)** const
+
+.. _class_AnimationTreePlayer_node_set_pos:
+
+- void  **node_set_pos**  **(** :ref:`String<class_string>` id, :ref:`Vector2<class_vector2>` screen_pos  **)**
+
+.. _class_AnimationTreePlayer_node_get_pos:
+
+- :ref:`Vector2<class_vector2>`  **node_get_pos**  **(** :ref:`String<class_string>` id  **)** const
+
+.. _class_AnimationTreePlayer_remove_node:
+
+- void  **remove_node**  **(** :ref:`String<class_string>` id  **)**
+
+.. _class_AnimationTreePlayer_connect:
+
+- :ref:`int<class_int>`  **connect**  **(** :ref:`String<class_string>` id, :ref:`String<class_string>` dst_id, :ref:`int<class_int>` dst_input_idx  **)**
+
+.. _class_AnimationTreePlayer_is_connected:
+
+- :ref:`bool<class_bool>`  **is_connected**  **(** :ref:`String<class_string>` id, :ref:`String<class_string>` dst_id, :ref:`int<class_int>` dst_input_idx  **)** const
+
+.. _class_AnimationTreePlayer_disconnect:
+
+- void  **disconnect**  **(** :ref:`String<class_string>` id, :ref:`int<class_int>` dst_input_idx  **)**
+
+.. _class_AnimationTreePlayer_set_active:
+
+- void  **set_active**  **(** :ref:`bool<class_bool>` enabled  **)**
+
+.. _class_AnimationTreePlayer_is_active:
+
+- :ref:`bool<class_bool>`  **is_active**  **(** **)** const
+
+.. _class_AnimationTreePlayer_set_base_path:
+
+- void  **set_base_path**  **(** :ref:`NodePath<class_nodepath>` path  **)**
+
+.. _class_AnimationTreePlayer_get_base_path:
+
+- :ref:`NodePath<class_nodepath>`  **get_base_path**  **(** **)** const
+
+.. _class_AnimationTreePlayer_set_master_player:
+
+- void  **set_master_player**  **(** :ref:`NodePath<class_nodepath>` nodepath  **)**
+
+.. _class_AnimationTreePlayer_get_master_player:
+
+- :ref:`NodePath<class_nodepath>`  **get_master_player**  **(** **)** const
+
+.. _class_AnimationTreePlayer_get_node_list:
+
+- :ref:`StringArray<class_stringarray>`  **get_node_list**  **(** **)**
+
+.. _class_AnimationTreePlayer_set_animation_process_mode:
+
+- void  **set_animation_process_mode**  **(** :ref:`int<class_int>` mode  **)**
+
+.. _class_AnimationTreePlayer_get_animation_process_mode:
+
+- :ref:`int<class_int>`  **get_animation_process_mode**  **(** **)** const
+
+.. _class_AnimationTreePlayer_advance:
+
+- void  **advance**  **(** :ref:`float<class_float>` delta  **)**
+
+.. _class_AnimationTreePlayer_reset:
+
+- void  **reset**  **(** **)**
+
+.. _class_AnimationTreePlayer_recompute_caches:
+
+- void  **recompute_caches**  **(** **)**
+
+

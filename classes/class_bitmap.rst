@@ -1,0 +1,67 @@
+.. _class_BitMap:
+
+BitMap
+======
+
+Inherits: :ref:`Resource<class_resource>`
+-----------------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+
+
+Member Functions
+----------------
+
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`create<class_BitMap_create>`  **(** :ref:`Vector2<class_vector2>` size  **)**                                        |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`create_from_image_alpha<class_BitMap_create_from_image_alpha>`  **(** :ref:`Image<class_image>` image  **)**         |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_bit<class_BitMap_set_bit>`  **(** :ref:`Vector2<class_vector2>` pos, :ref:`bool<class_bool>` bit  **)**          |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`get_bit<class_BitMap_get_bit>`  **(** :ref:`Vector2<class_vector2>` pos  **)** const                                 |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_bit_rect<class_BitMap_set_bit_rect>`  **(** :ref:`Rect2<class_rect2>` p_rect, :ref:`bool<class_bool>` bit  **)** |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_true_bit_count<class_BitMap_get_true_bit_count>`  **(** **)** const                                              |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_size<class_BitMap_get_size>`  **(** **)** const                                                                  |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+
+Member Function Description
+---------------------------
+
+.. _class_BitMap_create:
+
+- void  **create**  **(** :ref:`Vector2<class_vector2>` size  **)**
+
+.. _class_BitMap_create_from_image_alpha:
+
+- void  **create_from_image_alpha**  **(** :ref:`Image<class_image>` image  **)**
+
+.. _class_BitMap_set_bit:
+
+- void  **set_bit**  **(** :ref:`Vector2<class_vector2>` pos, :ref:`bool<class_bool>` bit  **)**
+
+.. _class_BitMap_get_bit:
+
+- :ref:`bool<class_bool>`  **get_bit**  **(** :ref:`Vector2<class_vector2>` pos  **)** const
+
+.. _class_BitMap_set_bit_rect:
+
+- void  **set_bit_rect**  **(** :ref:`Rect2<class_rect2>` p_rect, :ref:`bool<class_bool>` bit  **)**
+
+.. _class_BitMap_get_true_bit_count:
+
+- :ref:`int<class_int>`  **get_true_bit_count**  **(** **)** const
+
+.. _class_BitMap_get_size:
+
+- :ref:`Vector2<class_vector2>`  **get_size**  **(** **)** const
+
+

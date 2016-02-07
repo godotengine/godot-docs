@@ -1,0 +1,221 @@
+.. _class_Tween:
+
+Tween
+=====
+
+Inherits: :ref:`Node<class_node>`
+---------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+
+
+Member Functions
+----------------
+
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`is_active<class_Tween_is_active>`  **(** **)** const                                                                                                                                                                                                                                                                                                                                  |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_active<class_Tween_set_active>`  **(** :ref:`bool<class_bool>` active  **)**                                                                                                                                                                                                                                                                                                      |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`is_repeat<class_Tween_is_repeat>`  **(** **)** const                                                                                                                                                                                                                                                                                                                                  |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_repeat<class_Tween_set_repeat>`  **(** :ref:`bool<class_bool>` repeat  **)**                                                                                                                                                                                                                                                                                                      |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_speed<class_Tween_set_speed>`  **(** :ref:`float<class_float>` speed  **)**                                                                                                                                                                                                                                                                                                       |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_speed<class_Tween_get_speed>`  **(** **)** const                                                                                                                                                                                                                                                                                                                                  |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_tween_process_mode<class_Tween_set_tween_process_mode>`  **(** :ref:`int<class_int>` mode  **)**                                                                                                                                                                                                                                                                                  |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`get_tween_process_mode<class_Tween_get_tween_process_mode>`  **(** **)** const                                                                                                                                                                                                                                                                                                        |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`start<class_Tween_start>`  **(** **)**                                                                                                                                                                                                                                                                                                                                                |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`reset<class_Tween_reset>`  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key  **)**                                                                                                                                                                                                                                                                           |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`reset_all<class_Tween_reset_all>`  **(** **)**                                                                                                                                                                                                                                                                                                                                        |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`stop<class_Tween_stop>`  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key  **)**                                                                                                                                                                                                                                                                             |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`stop_all<class_Tween_stop_all>`  **(** **)**                                                                                                                                                                                                                                                                                                                                          |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`resume<class_Tween_resume>`  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key  **)**                                                                                                                                                                                                                                                                         |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`resume_all<class_Tween_resume_all>`  **(** **)**                                                                                                                                                                                                                                                                                                                                      |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`remove<class_Tween_remove>`  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key  **)**                                                                                                                                                                                                                                                                         |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`remove_all<class_Tween_remove_all>`  **(** **)**                                                                                                                                                                                                                                                                                                                                      |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`seek<class_Tween_seek>`  **(** :ref:`float<class_float>` time  **)**                                                                                                                                                                                                                                                                                                                  |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`tell<class_Tween_tell>`  **(** **)** const                                                                                                                                                                                                                                                                                                                                            |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_runtime<class_Tween_get_runtime>`  **(** **)** const                                                                                                                                                                                                                                                                                                                              |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`interpolate_property<class_Tween_interpolate_property>`  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property, var initial_val, var final_val, :ref:`float<class_float>` times_in_sec, :ref:`int<class_int>` trans_type, :ref:`int<class_int>` ease_type, :ref:`float<class_float>` delay=0  **)**                                                          |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`interpolate_method<class_Tween_interpolate_method>`  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` method, var initial_val, var final_val, :ref:`float<class_float>` times_in_sec, :ref:`int<class_int>` trans_type, :ref:`int<class_int>` ease_type, :ref:`float<class_float>` delay=0  **)**                                                                |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`interpolate_callback<class_Tween_interpolate_callback>`  **(** :ref:`Object<class_object>` object, :ref:`float<class_float>` times_in_sec, :ref:`String<class_string>` callback, var arg1=NULL, var arg2=NULL, var arg3=NULL, var arg4=NULL, var arg5=NULL  **)**                                                                                                                     |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`interpolate_deferred_callback<class_Tween_interpolate_deferred_callback>`  **(** :ref:`Object<class_object>` object, :ref:`float<class_float>` times_in_sec, :ref:`String<class_string>` callback, var arg1=NULL, var arg2=NULL, var arg3=NULL, var arg4=NULL, var arg5=NULL  **)**                                                                                                   |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`follow_property<class_Tween_follow_property>`  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property, var initial_val, :ref:`Object<class_object>` target, :ref:`String<class_string>` target_property, :ref:`float<class_float>` times_in_sec, :ref:`int<class_int>` trans_type, :ref:`int<class_int>` ease_type, :ref:`float<class_float>` delay=0  **)**  |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`follow_method<class_Tween_follow_method>`  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` method, var initial_val, :ref:`Object<class_object>` target, :ref:`String<class_string>` target_method, :ref:`float<class_float>` times_in_sec, :ref:`int<class_int>` trans_type, :ref:`int<class_int>` ease_type, :ref:`float<class_float>` delay=0  **)**          |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`targeting_property<class_Tween_targeting_property>`  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property, :ref:`Object<class_object>` initial, :ref:`String<class_string>` initial_val, var final_val, :ref:`float<class_float>` times_in_sec, :ref:`int<class_int>` trans_type, :ref:`int<class_int>` ease_type, :ref:`float<class_float>` delay=0  **)** |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`targeting_method<class_Tween_targeting_method>`  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` method, :ref:`Object<class_object>` initial, :ref:`String<class_string>` initial_method, var final_val, :ref:`float<class_float>` times_in_sec, :ref:`int<class_int>` trans_type, :ref:`int<class_int>` ease_type, :ref:`float<class_float>` delay=0  **)**    |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Signals
+-------
+
+-  **tween_complete**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key  **)**
+-  **tween_step**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key, :ref:`float<class_float>` elapsed, :ref:`Object<class_object>` value  **)**
+-  **tween_start**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key  **)**
+
+Numeric Constants
+-----------------
+
+- **TWEEN_PROCESS_FIXED** = **0**
+- **TWEEN_PROCESS_IDLE** = **1**
+- **TRANS_LINEAR** = **0**
+- **TRANS_SINE** = **1**
+- **TRANS_QUINT** = **2**
+- **TRANS_QUART** = **3**
+- **TRANS_QUAD** = **4**
+- **TRANS_EXPO** = **5**
+- **TRANS_ELASTIC** = **6**
+- **TRANS_CUBIC** = **7**
+- **TRANS_CIRC** = **8**
+- **TRANS_BOUNCE** = **9**
+- **TRANS_BACK** = **10**
+- **EASE_IN** = **0**
+- **EASE_OUT** = **1**
+- **EASE_IN_OUT** = **2**
+- **EASE_OUT_IN** = **3**
+
+Member Function Description
+---------------------------
+
+.. _class_Tween_is_active:
+
+- :ref:`bool<class_bool>`  **is_active**  **(** **)** const
+
+.. _class_Tween_set_active:
+
+- void  **set_active**  **(** :ref:`bool<class_bool>` active  **)**
+
+.. _class_Tween_is_repeat:
+
+- :ref:`bool<class_bool>`  **is_repeat**  **(** **)** const
+
+.. _class_Tween_set_repeat:
+
+- void  **set_repeat**  **(** :ref:`bool<class_bool>` repeat  **)**
+
+.. _class_Tween_set_speed:
+
+- void  **set_speed**  **(** :ref:`float<class_float>` speed  **)**
+
+.. _class_Tween_get_speed:
+
+- :ref:`float<class_float>`  **get_speed**  **(** **)** const
+
+.. _class_Tween_set_tween_process_mode:
+
+- void  **set_tween_process_mode**  **(** :ref:`int<class_int>` mode  **)**
+
+.. _class_Tween_get_tween_process_mode:
+
+- :ref:`int<class_int>`  **get_tween_process_mode**  **(** **)** const
+
+.. _class_Tween_start:
+
+- :ref:`bool<class_bool>`  **start**  **(** **)**
+
+.. _class_Tween_reset:
+
+- :ref:`bool<class_bool>`  **reset**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key  **)**
+
+.. _class_Tween_reset_all:
+
+- :ref:`bool<class_bool>`  **reset_all**  **(** **)**
+
+.. _class_Tween_stop:
+
+- :ref:`bool<class_bool>`  **stop**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key  **)**
+
+.. _class_Tween_stop_all:
+
+- :ref:`bool<class_bool>`  **stop_all**  **(** **)**
+
+.. _class_Tween_resume:
+
+- :ref:`bool<class_bool>`  **resume**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key  **)**
+
+.. _class_Tween_resume_all:
+
+- :ref:`bool<class_bool>`  **resume_all**  **(** **)**
+
+.. _class_Tween_remove:
+
+- :ref:`bool<class_bool>`  **remove**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key  **)**
+
+.. _class_Tween_remove_all:
+
+- :ref:`bool<class_bool>`  **remove_all**  **(** **)**
+
+.. _class_Tween_seek:
+
+- :ref:`bool<class_bool>`  **seek**  **(** :ref:`float<class_float>` time  **)**
+
+.. _class_Tween_tell:
+
+- :ref:`float<class_float>`  **tell**  **(** **)** const
+
+.. _class_Tween_get_runtime:
+
+- :ref:`float<class_float>`  **get_runtime**  **(** **)** const
+
+.. _class_Tween_interpolate_property:
+
+- :ref:`bool<class_bool>`  **interpolate_property**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property, var initial_val, var final_val, :ref:`float<class_float>` times_in_sec, :ref:`int<class_int>` trans_type, :ref:`int<class_int>` ease_type, :ref:`float<class_float>` delay=0  **)**
+
+.. _class_Tween_interpolate_method:
+
+- :ref:`bool<class_bool>`  **interpolate_method**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` method, var initial_val, var final_val, :ref:`float<class_float>` times_in_sec, :ref:`int<class_int>` trans_type, :ref:`int<class_int>` ease_type, :ref:`float<class_float>` delay=0  **)**
+
+.. _class_Tween_interpolate_callback:
+
+- :ref:`bool<class_bool>`  **interpolate_callback**  **(** :ref:`Object<class_object>` object, :ref:`float<class_float>` times_in_sec, :ref:`String<class_string>` callback, var arg1=NULL, var arg2=NULL, var arg3=NULL, var arg4=NULL, var arg5=NULL  **)**
+
+.. _class_Tween_interpolate_deferred_callback:
+
+- :ref:`bool<class_bool>`  **interpolate_deferred_callback**  **(** :ref:`Object<class_object>` object, :ref:`float<class_float>` times_in_sec, :ref:`String<class_string>` callback, var arg1=NULL, var arg2=NULL, var arg3=NULL, var arg4=NULL, var arg5=NULL  **)**
+
+.. _class_Tween_follow_property:
+
+- :ref:`bool<class_bool>`  **follow_property**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property, var initial_val, :ref:`Object<class_object>` target, :ref:`String<class_string>` target_property, :ref:`float<class_float>` times_in_sec, :ref:`int<class_int>` trans_type, :ref:`int<class_int>` ease_type, :ref:`float<class_float>` delay=0  **)**
+
+.. _class_Tween_follow_method:
+
+- :ref:`bool<class_bool>`  **follow_method**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` method, var initial_val, :ref:`Object<class_object>` target, :ref:`String<class_string>` target_method, :ref:`float<class_float>` times_in_sec, :ref:`int<class_int>` trans_type, :ref:`int<class_int>` ease_type, :ref:`float<class_float>` delay=0  **)**
+
+.. _class_Tween_targeting_property:
+
+- :ref:`bool<class_bool>`  **targeting_property**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property, :ref:`Object<class_object>` initial, :ref:`String<class_string>` initial_val, var final_val, :ref:`float<class_float>` times_in_sec, :ref:`int<class_int>` trans_type, :ref:`int<class_int>` ease_type, :ref:`float<class_float>` delay=0  **)**
+
+.. _class_Tween_targeting_method:
+
+- :ref:`bool<class_bool>`  **targeting_method**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` method, :ref:`Object<class_object>` initial, :ref:`String<class_string>` initial_method, var final_val, :ref:`float<class_float>` times_in_sec, :ref:`int<class_int>` trans_type, :ref:`int<class_int>` ease_type, :ref:`float<class_float>` delay=0  **)**
+
+

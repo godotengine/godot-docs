@@ -1,0 +1,73 @@
+.. _class_RawArray:
+
+RawArray
+========
+
+Category: Built-In Types
+------------------------
+
+Brief Description
+-----------------
+
+Raw byte array.
+
+Member Functions
+----------------
+
++----------------------------------+----------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`      | :ref:`get_string_from_ascii<class_RawArray_get_string_from_ascii>`  **(** **)**                    |
++----------------------------------+----------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`      | :ref:`get_string_from_utf8<class_RawArray_get_string_from_utf8>`  **(** **)**                      |
++----------------------------------+----------------------------------------------------------------------------------------------------+
+| void                             | :ref:`push_back<class_RawArray_push_back>`  **(** :ref:`int<class_int>` byte  **)**                |
++----------------------------------+----------------------------------------------------------------------------------------------------+
+| void                             | :ref:`resize<class_RawArray_resize>`  **(** :ref:`int<class_int>` idx  **)**                       |
++----------------------------------+----------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set<class_RawArray_set>`  **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` byte  **)** |
++----------------------------------+----------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`size<class_RawArray_size>`  **(** **)**                                                      |
++----------------------------------+----------------------------------------------------------------------------------------------------+
+| :ref:`RawArray<class_rawarray>`  | :ref:`RawArray<class_RawArray_RawArray>`  **(** :ref:`Array<class_array>` from  **)**              |
++----------------------------------+----------------------------------------------------------------------------------------------------+
+
+Description
+-----------
+
+Raw byte array. Contains bytes. Optimized for memory usage, can't fragment the memory.
+
+Member Function Description
+---------------------------
+
+.. _class_RawArray_get_string_from_ascii:
+
+- :ref:`String<class_string>`  **get_string_from_ascii**  **(** **)**
+
+Returns a copy of the array's contents formatted as String. Fast alternative to get_string_from_utf8(), assuming the content is ASCII-only (unlike the UTF-8 function, this function maps every byte to a character in the string, so any multibyte sequence will be torn apart).
+
+.. _class_RawArray_get_string_from_utf8:
+
+- :ref:`String<class_string>`  **get_string_from_utf8**  **(** **)**
+
+Returns a copy of the array's contents formatted as String, assuming the array is formatted as UTF-8. Slower than get_string_from_ascii(), but works for UTF-8. Usually you should prefer this function over get_string_from_ascii() to support international input.
+
+.. _class_RawArray_push_back:
+
+- void  **push_back**  **(** :ref:`int<class_int>` byte  **)**
+
+.. _class_RawArray_resize:
+
+- void  **resize**  **(** :ref:`int<class_int>` idx  **)**
+
+.. _class_RawArray_set:
+
+- void  **set**  **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` byte  **)**
+
+.. _class_RawArray_size:
+
+- :ref:`int<class_int>`  **size**  **(** **)**
+
+.. _class_RawArray_RawArray:
+
+- :ref:`RawArray<class_rawarray>`  **RawArray**  **(** :ref:`Array<class_array>` from  **)**
+
+

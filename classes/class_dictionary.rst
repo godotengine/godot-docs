@@ -1,8 +1,10 @@
+.. _class_Dictionary:
+
 Dictionary
 ==========
 
-**Category:** Built-In Types
-----------------------------
+Category: Built-In Types
+------------------------
 
 Brief Description
 -----------------
@@ -12,71 +14,82 @@ Dictionary type.
 Member Functions
 ----------------
 
--  void **`clear <#clear>`__** **(** **)**
--  `bool <class_bool>`__ **`empty <#empty>`__** **(** **)**
--  void **`erase <#erase>`__** **(** var value **)**
--  `bool <class_bool>`__ **`has <#has>`__** **(** var value **)**
--  `int <class_int>`__ **`hash <#hash>`__** **(** **)**
--  `Array <class_array>`__ **`keys <#keys>`__** **(** **)**
--  `int <class_int>`__ **`parse\_json <#parse_json>`__** **(**
-   `String <class_string>`__ json **)**
--  `int <class_int>`__ **`size <#size>`__** **(** **)**
--  `String <class_string>`__ **`to\_json <#to_json>`__** **(** **)**
++------------------------------+-----------------------------------------------------------------------------------------------+
+| void                         | :ref:`clear<class_Dictionary_clear>`  **(** **)**                                             |
++------------------------------+-----------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`empty<class_Dictionary_empty>`  **(** **)**                                             |
++------------------------------+-----------------------------------------------------------------------------------------------+
+| void                         | :ref:`erase<class_Dictionary_erase>`  **(** var value  **)**                                  |
++------------------------------+-----------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`has<class_Dictionary_has>`  **(** var value  **)**                                      |
++------------------------------+-----------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`hash<class_Dictionary_hash>`  **(** **)**                                               |
++------------------------------+-----------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`    | :ref:`keys<class_Dictionary_keys>`  **(** **)**                                               |
++------------------------------+-----------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`parse_json<class_Dictionary_parse_json>`  **(** :ref:`String<class_string>` json  **)** |
++------------------------------+-----------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`size<class_Dictionary_size>`  **(** **)**                                               |
++------------------------------+-----------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`to_json<class_Dictionary_to_json>`  **(** **)**                                         |
++------------------------------+-----------------------------------------------------------------------------------------------+
 
 Description
 -----------
 
-Dictionary type. Associative container which contains values referenced
-by unique keys. Dictionaries are always passed by reference.
+Dictionary type. Associative container which contains values referenced by unique keys. Dictionaries are always passed by reference.
 
 Member Function Description
 ---------------------------
 
-clear
-~~~~~
+.. _class_Dictionary_clear:
 
--  void **clear** **(** **)**
+- void  **clear**  **(** **)**
 
 Clear the dictionary, removing all key/value pairs.
 
-empty
-~~~~~
+.. _class_Dictionary_empty:
 
--  `bool <class_bool>`__ **empty** **(** **)**
+- :ref:`bool<class_bool>`  **empty**  **(** **)**
 
 Return true if the dictionary is empty.
 
-erase
-~~~~~
+.. _class_Dictionary_erase:
 
--  void **erase** **(** var value **)**
+- void  **erase**  **(** var value  **)**
 
 Erase a dictionary key/value pair by key.
 
-has
-~~~
+.. _class_Dictionary_has:
 
--  `bool <class_bool>`__ **has** **(** var value **)**
+- :ref:`bool<class_bool>`  **has**  **(** var value  **)**
 
 Return true if the dictionary has a given key.
 
-hash
-~~~~
+.. _class_Dictionary_hash:
 
--  `int <class_int>`__ **hash** **(** **)**
+- :ref:`int<class_int>`  **hash**  **(** **)**
 
 Return a hashed integer value representing the dictionary contents.
 
-keys
-~~~~
+.. _class_Dictionary_keys:
 
--  `Array <class_array>`__ **keys** **(** **)**
+- :ref:`Array<class_array>`  **keys**  **(** **)**
 
 Return the list of keys in the dictionary.
 
-size
-~~~~
+.. _class_Dictionary_parse_json:
 
--  `int <class_int>`__ **size** **(** **)**
+- :ref:`int<class_int>`  **parse_json**  **(** :ref:`String<class_string>` json  **)**
+
+.. _class_Dictionary_size:
+
+- :ref:`int<class_int>`  **size**  **(** **)**
 
 Return the size of the dictionary (in pairs).
+
+.. _class_Dictionary_to_json:
+
+- :ref:`String<class_string>`  **to_json**  **(** **)**
+
+

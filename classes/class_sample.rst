@@ -1,0 +1,162 @@
+.. _class_Sample:
+
+Sample
+======
+
+Inherits: :ref:`Resource<class_resource>`
+-----------------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+Audio sample (sound) class.
+
+Member Functions
+----------------
+
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`create<class_Sample_create>`  **(** :ref:`int<class_int>` format, :ref:`bool<class_bool>` stereo, :ref:`int<class_int>` length  **)** |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_format<class_Sample_get_format>`  **(** **)** const                                                                               |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`is_stereo<class_Sample_is_stereo>`  **(** **)** const                                                                                 |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_length<class_Sample_get_length>`  **(** **)** const                                                                               |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_data<class_Sample_set_data>`  **(** :ref:`RawArray<class_rawarray>` data  **)**                                                   |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RawArray<class_rawarray>`  | :ref:`get_data<class_Sample_get_data>`  **(** **)** const                                                                                   |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_mix_rate<class_Sample_set_mix_rate>`  **(** :ref:`int<class_int>` hz  **)**                                                       |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_mix_rate<class_Sample_get_mix_rate>`  **(** **)** const                                                                           |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_loop_format<class_Sample_set_loop_format>`  **(** :ref:`int<class_int>` format  **)**                                             |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_loop_format<class_Sample_get_loop_format>`  **(** **)** const                                                                     |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_loop_begin<class_Sample_set_loop_begin>`  **(** :ref:`int<class_int>` pos  **)**                                                  |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_loop_begin<class_Sample_get_loop_begin>`  **(** **)** const                                                                       |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_loop_end<class_Sample_set_loop_end>`  **(** :ref:`int<class_int>` pos  **)**                                                      |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_loop_end<class_Sample_get_loop_end>`  **(** **)** const                                                                           |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+Numeric Constants
+-----------------
+
+- **FORMAT_PCM8** = **0** --- 8-bits signed PCM audio.
+- **FORMAT_PCM16** = **1** --- 16-bits signed little endian PCM audio.
+- **FORMAT_IMA_ADPCM** = **2** --- IMA-ADPCM Audio.
+- **LOOP_NONE** = **0** --- No loop enabled.
+- **LOOP_FORWARD** = **1** --- Forward looping (when playback reaches loop end, goes back to loop begin).
+- **LOOP_PING_PONG** = **2** --- Ping-pong looping (when playback reaches loop end, plays backward until loop begin). Not available in all platforms.
+
+Description
+-----------
+
+Sample provides an audio sample class, containing audio data, together with some information for playback, such as format, mix rate and loop. It is used by sound playback routines.
+
+Member Function Description
+---------------------------
+
+.. _class_Sample_create:
+
+- void  **create**  **(** :ref:`int<class_int>` format, :ref:`bool<class_bool>` stereo, :ref:`int<class_int>` length  **)**
+
+Create new data for the sample, with format (see FORMAT_* constants), stereo hint, and length in samples (not bytes).
+
+Calling this method overrides previously existing data. Stereo samples are interleaved pairs of left and right points (in that order), but count as one sample for length purposes.
+
+.. _class_Sample_get_format:
+
+- :ref:`int<class_int>`  **get_format**  **(** **)** const
+
+Return the sample format.
+
+.. _class_Sample_is_stereo:
+
+- :ref:`bool<class_bool>`  **is_stereo**  **(** **)** const
+
+Return whether the current sample was created as stereo.
+
+.. _class_Sample_get_length:
+
+- :ref:`int<class_int>`  **get_length**  **(** **)** const
+
+Return the sample length in samples. Stereo samples count as one, even if they are made of a left and a right sample.
+
+.. _class_Sample_set_data:
+
+- void  **set_data**  **(** :ref:`RawArray<class_rawarray>` data  **)**
+
+Set sample data. Data must be little endian, no matter the host platform, and exactly as long as to fit all samples. The length of this array can be calculated as follows:
+
+Get the sample length (:ref:`get_length<Sample_get_length>`).
+
+If the sample format is FORMAT_PCM16, multiply it by 2.
+
+If the sample format is FORMAT_IMA_ADPCM, divide it by 2 (rounding any fraction up), then add 4.
+
+If the sample is stereo (:ref:`is_stereo<Sample_is_stereo>`), multiply it by 2.
+
+.. _class_Sample_get_data:
+
+- :ref:`RawArray<class_rawarray>`  **get_data**  **(** **)** const
+
+Return sample data as little endian.
+
+.. _class_Sample_set_mix_rate:
+
+- void  **set_mix_rate**  **(** :ref:`int<class_int>` hz  **)**
+
+Set the mix rate for the sample (expected playback frequency).
+
+.. _class_Sample_get_mix_rate:
+
+- :ref:`int<class_int>`  **get_mix_rate**  **(** **)** const
+
+Return the mix rate for the sample.
+
+.. _class_Sample_set_loop_format:
+
+- void  **set_loop_format**  **(** :ref:`int<class_int>` format  **)**
+
+Set the loop format (use LOOP_* constants as argument).
+
+.. _class_Sample_get_loop_format:
+
+- :ref:`int<class_int>`  **get_loop_format**  **(** **)** const
+
+Return the loop format.
+
+.. _class_Sample_set_loop_begin:
+
+- void  **set_loop_begin**  **(** :ref:`int<class_int>` pos  **)**
+
+Set the loop begin position. It must be a valid frame and less than the loop end position.
+
+.. _class_Sample_get_loop_begin:
+
+- :ref:`int<class_int>`  **get_loop_begin**  **(** **)** const
+
+Return the loop begin position.
+
+.. _class_Sample_set_loop_end:
+
+- void  **set_loop_end**  **(** :ref:`int<class_int>` pos  **)**
+
+Set the loop end position. It must be a valid frame and greater than the loop begin position.
+
+.. _class_Sample_get_loop_end:
+
+- :ref:`int<class_int>`  **get_loop_end**  **(** **)** const
+
+Return the loop end position.
+
+

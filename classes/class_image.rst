@@ -1,0 +1,174 @@
+.. _class_Image:
+
+Image
+=====
+
+Category: Built-In Types
+------------------------
+
+Brief Description
+-----------------
+
+Image datatype.
+
+Member Functions
+----------------
+
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`blit_rect<class_Image_blit_rect>`  **(** :ref:`Image<class_image>` src, :ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` dest=0  **)**                 |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`brush_transfer<class_Image_brush_transfer>`  **(** :ref:`Image<class_image>` src, :ref:`Image<class_image>` brush, :ref:`Vector2<class_vector2>` pos=0  **)**           |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Image<class_image>`        | :ref:`brushed<class_Image_brushed>`  **(** :ref:`Image<class_image>` src, :ref:`Image<class_image>` brush, :ref:`Vector2<class_vector2>` pos=0  **)**                         |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Image<class_image>`        | :ref:`compressed<class_Image_compressed>`  **(** :ref:`int<class_int>` format=0  **)**                                                                                        |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Image<class_image>`        | :ref:`converted<class_Image_converted>`  **(** :ref:`int<class_int>` format=0  **)**                                                                                          |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Image<class_image>`        | :ref:`decompressed<class_Image_decompressed>`  **(** **)**                                                                                                                    |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`empty<class_Image_empty>`  **(** **)**                                                                                                                                  |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RawArray<class_rawarray>`  | :ref:`get_data<class_Image_get_data>`  **(** **)**                                                                                                                            |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_format<class_Image_get_format>`  **(** **)**                                                                                                                        |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_height<class_Image_get_height>`  **(** **)**                                                                                                                        |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`        | :ref:`get_pixel<class_Image_get_pixel>`  **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` mipmap_level=0  **)**                                  |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Image<class_image>`        | :ref:`get_rect<class_Image_get_rect>`  **(** :ref:`Rect2<class_rect2>` area=0  **)**                                                                                          |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2<class_rect2>`        | :ref:`get_used_rect<class_Image_get_used_rect>`  **(** **)**                                                                                                                  |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_width<class_Image_get_width>`  **(** **)**                                                                                                                          |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`load<class_Image_load>`  **(** :ref:`String<class_string>` path=0  **)**                                                                                                |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`put_pixel<class_Image_put_pixel>`  **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`Color<class_color>` color, :ref:`int<class_int>` mipmap_level=0  **)** |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Image<class_image>`        | :ref:`resized<class_Image_resized>`  **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` interpolation=1  **)**                                     |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`save_png<class_Image_save_png>`  **(** :ref:`String<class_string>` path=0  **)**                                                                                        |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Image<class_image>`        | :ref:`Image<class_Image_Image>`  **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` mipmaps, :ref:`int<class_int>` format  **)**        |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Numeric Constants
+-----------------
+
+- **COMPRESS_BC** = **0**
+- **COMPRESS_PVRTC2** = **1**
+- **COMPRESS_PVRTC4** = **2**
+- **COMPRESS_ETC** = **3**
+- **FORMAT_GRAYSCALE** = **0**
+- **FORMAT_INTENSITY** = **1**
+- **FORMAT_GRAYSCALE_ALPHA** = **2**
+- **FORMAT_RGB** = **3**
+- **FORMAT_RGBA** = **4**
+- **FORMAT_INDEXED** = **5**
+- **FORMAT_INDEXED_ALPHA** = **6**
+- **FORMAT_YUV_422** = **7**
+- **FORMAT_YUV_444** = **8**
+- **FORMAT_BC1** = **9**
+- **FORMAT_BC2** = **10**
+- **FORMAT_BC3** = **11**
+- **FORMAT_BC4** = **12**
+- **FORMAT_BC5** = **13**
+- **FORMAT_PVRTC2** = **14**
+- **FORMAT_PVRTC2_ALPHA** = **15**
+- **FORMAT_PVRTC4** = **16**
+- **FORMAT_PVRTC4_ALPHA** = **17**
+- **FORMAT_ETC** = **18**
+- **FORMAT_ATC** = **19**
+- **FORMAT_ATC_ALPHA_EXPLICIT** = **20**
+- **FORMAT_ATC_ALPHA_INTERPOLATED** = **21**
+- **FORMAT_CUSTOM** = **22**
+
+Description
+-----------
+
+Built in native image datatype. Contains image data, which can be converted to a texture, and several functions to interact with it.
+
+Member Function Description
+---------------------------
+
+.. _class_Image_blit_rect:
+
+- void  **blit_rect**  **(** :ref:`Image<class_image>` src, :ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` dest=0  **)**
+
+.. _class_Image_brush_transfer:
+
+- void  **brush_transfer**  **(** :ref:`Image<class_image>` src, :ref:`Image<class_image>` brush, :ref:`Vector2<class_vector2>` pos=0  **)**
+
+.. _class_Image_brushed:
+
+- :ref:`Image<class_image>`  **brushed**  **(** :ref:`Image<class_image>` src, :ref:`Image<class_image>` brush, :ref:`Vector2<class_vector2>` pos=0  **)**
+
+.. _class_Image_compressed:
+
+- :ref:`Image<class_image>`  **compressed**  **(** :ref:`int<class_int>` format=0  **)**
+
+.. _class_Image_converted:
+
+- :ref:`Image<class_image>`  **converted**  **(** :ref:`int<class_int>` format=0  **)**
+
+.. _class_Image_decompressed:
+
+- :ref:`Image<class_image>`  **decompressed**  **(** **)**
+
+.. _class_Image_empty:
+
+- :ref:`bool<class_bool>`  **empty**  **(** **)**
+
+.. _class_Image_get_data:
+
+- :ref:`RawArray<class_rawarray>`  **get_data**  **(** **)**
+
+.. _class_Image_get_format:
+
+- :ref:`int<class_int>`  **get_format**  **(** **)**
+
+.. _class_Image_get_height:
+
+- :ref:`int<class_int>`  **get_height**  **(** **)**
+
+.. _class_Image_get_pixel:
+
+- :ref:`Color<class_color>`  **get_pixel**  **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` mipmap_level=0  **)**
+
+.. _class_Image_get_rect:
+
+- :ref:`Image<class_image>`  **get_rect**  **(** :ref:`Rect2<class_rect2>` area=0  **)**
+
+.. _class_Image_get_used_rect:
+
+- :ref:`Rect2<class_rect2>`  **get_used_rect**  **(** **)**
+
+.. _class_Image_get_width:
+
+- :ref:`int<class_int>`  **get_width**  **(** **)**
+
+.. _class_Image_load:
+
+- :ref:`int<class_int>`  **load**  **(** :ref:`String<class_string>` path=0  **)**
+
+.. _class_Image_put_pixel:
+
+- void  **put_pixel**  **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`Color<class_color>` color, :ref:`int<class_int>` mipmap_level=0  **)**
+
+.. _class_Image_resized:
+
+- :ref:`Image<class_image>`  **resized**  **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` interpolation=1  **)**
+
+.. _class_Image_save_png:
+
+- :ref:`int<class_int>`  **save_png**  **(** :ref:`String<class_string>` path=0  **)**
+
+.. _class_Image_Image:
+
+- :ref:`Image<class_image>`  **Image**  **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` mipmaps, :ref:`int<class_int>` format  **)**
+
+Create an empty image of a specific size and format.
+
+

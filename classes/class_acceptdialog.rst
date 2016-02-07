@@ -1,0 +1,104 @@
+.. _class_AcceptDialog:
+
+AcceptDialog
+============
+
+Inherits: :ref:`WindowDialog<class_windowdialog>`
+-------------------------------------------------
+
+Category: Core
+--------------
+
+Brief Description
+-----------------
+
+Base dialog for user notification.
+
+Member Functions
+----------------
+
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`      | :ref:`get_ok<class_AcceptDialog_get_ok>`  **(** **)**                                                                                                                       |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`      | :ref:`get_label<class_AcceptDialog_get_label>`  **(** **)**                                                                                                                 |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_hide_on_ok<class_AcceptDialog_set_hide_on_ok>`  **(** :ref:`bool<class_bool>` enabled  **)**                                                                      |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`get_hide_on_ok<class_AcceptDialog_get_hide_on_ok>`  **(** **)** const                                                                                                 |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Button<class_button>`      | :ref:`add_button<class_AcceptDialog_add_button>`  **(** :ref:`String<class_string>` text, :ref:`bool<class_bool>` right=false, :ref:`String<class_string>` action=""  **)** |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Button<class_button>`      | :ref:`add_cancel<class_AcceptDialog_add_cancel>`  **(** :ref:`String<class_string>` name  **)**                                                                             |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`LineEdit<class_lineedit>`  | :ref:`register_text_enter<class_AcceptDialog_register_text_enter>`  **(** :ref:`Object<class_object>` line_edit  **)**                                                      |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_text<class_AcceptDialog_set_text>`  **(** :ref:`String<class_string>` text  **)**                                                                                 |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`      | :ref:`get_text<class_AcceptDialog_get_text>`  **(** **)** const                                                                                                             |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Signals
+-------
+
+-  **confirmed**  **(** **)**
+-  **custom_action**  **(** :ref:`String<class_string>` action  **)**
+
+Description
+-----------
+
+This dialog is useful for small notifications to the user about an event. It can only be accepted or closed, with the same result.
+
+Member Function Description
+---------------------------
+
+.. _class_AcceptDialog_get_ok:
+
+- :ref:`Object<class_object>`  **get_ok**  **(** **)**
+
+Return the OK Button.
+
+.. _class_AcceptDialog_get_label:
+
+- :ref:`Object<class_object>`  **get_label**  **(** **)**
+
+Return the label used for built-in text.
+
+.. _class_AcceptDialog_set_hide_on_ok:
+
+- void  **set_hide_on_ok**  **(** :ref:`bool<class_bool>` enabled  **)**
+
+Set whether the dialog is hidden when accepted (default true).
+
+.. _class_AcceptDialog_get_hide_on_ok:
+
+- :ref:`bool<class_bool>`  **get_hide_on_ok**  **(** **)** const
+
+Return true if the dialog will be hidden when accepted (default true).
+
+.. _class_AcceptDialog_add_button:
+
+- :ref:`Button<class_button>`  **add_button**  **(** :ref:`String<class_string>` text, :ref:`bool<class_bool>` right=false, :ref:`String<class_string>` action=""  **)**
+
+.. _class_AcceptDialog_add_cancel:
+
+- :ref:`Button<class_button>`  **add_cancel**  **(** :ref:`String<class_string>` name  **)**
+
+.. _class_AcceptDialog_register_text_enter:
+
+- :ref:`LineEdit<class_lineedit>`  **register_text_enter**  **(** :ref:`Object<class_object>` line_edit  **)**
+
+Register a :ref:`LineEdit<class_lineedit>` in the dialog. When the enter key is pressed, the dialog will be accepted.
+
+.. _class_AcceptDialog_set_text:
+
+- void  **set_text**  **(** :ref:`String<class_string>` text  **)**
+
+Set the built-in label text.
+
+.. _class_AcceptDialog_get_text:
+
+- :ref:`String<class_string>`  **get_text**  **(** **)** const
+
+Return the built-in label text.
+
+

@@ -1,0 +1,89 @@
+.. _class_InputEvent:
+
+InputEvent
+==========
+
+Category: Built-In Types
+------------------------
+
+Brief Description
+-----------------
+
+Built-in input event data.
+
+Member Functions
+----------------
+
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`is_action<class_InputEvent_is_action>`  **(** :ref:`String<class_string>` action  **)**                                          |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`is_action_pressed<class_InputEvent_is_action_pressed>`  **(** :ref:`String<class_string>` is_action_pressed  **)**               |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`is_action_released<class_InputEvent_is_action_released>`  **(** :ref:`String<class_string>` is_action_released  **)**            |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`is_echo<class_InputEvent_is_echo>`  **(** **)**                                                                                  |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`is_pressed<class_InputEvent_is_pressed>`  **(** **)**                                                                            |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`set_as_action<class_InputEvent_set_as_action>`  **(** :ref:`String<class_string>` action, :ref:`bool<class_bool>` pressed  **)** |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+- :ref:`int<class_int>` **type**
+- :ref:`int<class_int>` **device**
+- :ref:`int<class_int>` **ID**
+
+Numeric Constants
+-----------------
+
+- **NONE** = **0** --- Empty input event.
+- **KEY** = **1** --- Key event.
+- **MOUSE_MOTION** = **2** --- Mouse motion event.
+- **MOUSE_BUTTON** = **3** --- Mouse button event.
+- **JOYSTICK_MOTION** = **4** --- Jostick motion event.
+- **JOYSTICK_BUTTON** = **5** --- Joystick button event.
+- **SCREEN_TOUCH** = **6**
+- **SCREEN_DRAG** = **7**
+- **ACTION** = **8**
+
+Description
+-----------
+
+Built-in input event data. InputEvent is a built-in engine datatype, given that it's passed around and used so much. Depending on it's type, the members contained can be different, so read the documentation well!. Input events can also represent actions (editable from the project settings).
+
+Member Function Description
+---------------------------
+
+.. _class_InputEvent_is_action:
+
+- :ref:`bool<class_bool>`  **is_action**  **(** :ref:`String<class_string>` action  **)**
+
+Return if this input event matches a pre-defined action, no matter the type.
+
+.. _class_InputEvent_is_action_pressed:
+
+- :ref:`bool<class_bool>`  **is_action_pressed**  **(** :ref:`String<class_string>` is_action_pressed  **)**
+
+.. _class_InputEvent_is_action_released:
+
+- :ref:`bool<class_bool>`  **is_action_released**  **(** :ref:`String<class_string>` is_action_released  **)**
+
+.. _class_InputEvent_is_echo:
+
+- :ref:`bool<class_bool>`  **is_echo**  **(** **)**
+
+Return if this input event is an echo event (usually for key events).
+
+.. _class_InputEvent_is_pressed:
+
+- :ref:`bool<class_bool>`  **is_pressed**  **(** **)**
+
+Return if this input event is pressed (for key, mouse, joy button or screen press events).
+
+.. _class_InputEvent_set_as_action:
+
+- void  **set_as_action**  **(** :ref:`String<class_string>` action, :ref:`bool<class_bool>` pressed  **)**
+
+

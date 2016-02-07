@@ -25,6 +25,7 @@ The main documentation for the site is organized into a couple sections:
    tutorials/advanced
    tutorials/editor_plugins
    reference/index
+   classes/index
    asset_pipeline/index
    advanced/index
    contributing/index
