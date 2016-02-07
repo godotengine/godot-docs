@@ -6,7 +6,7 @@
 Welcome to Godot Engine's documentation!
 ========================================
 
-The main documentation for the site is organized into a couple sections:
+The main documentation for the site is organized into a few sections:
 
 * :ref:`sec-tutorials`
 * :ref:`sec-reference`
@@ -34,8 +34,8 @@ The main documentation for the site is organized into a couple sections:
    classes/index
    reference/_languages
    reference/_cheat_sheets
-   advanced/_compiling
-   advanced/index
+   reference/_compiling
+   reference/_advanced
 
 .. toctree::
    :maxdepth: 1
