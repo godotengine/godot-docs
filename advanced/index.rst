@@ -1,11 +1,11 @@
-Advanced topics
-===============
+Advanced
+========
 
 .. toctree::
    :maxdepth: 2
-   :name: advanced-topics
-   
-   compiling
-   developing
-   formats
-   misc
+   :name: toc-advanced
+
+   _compiling
+   _developing
+   _formats
+   _misc

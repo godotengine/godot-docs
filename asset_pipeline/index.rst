@@ -3,9 +3,8 @@ Asset pipeline
 
 .. toctree::
    :maxdepth: 2
-   :name: asset-pipeline
+   :name: toc-asset-pipeline
 
-   general
-   import
-   export
-
+   _general
+   _import
+   _export

@@ -3,7 +3,7 @@ Contributing
 
 .. toctree::
    :maxdepth: 1
-   :name: contributing
+   :name: toc-contributing
 
    bug_triage_guidelines
    documentation_guidelines

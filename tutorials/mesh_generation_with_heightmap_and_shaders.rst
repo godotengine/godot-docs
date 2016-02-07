@@ -1,5 +1,5 @@
-Generate a mesh using a heightmap and vertex fragment shaders
-=============================================================
+Mesh generation with heightmap and shaders
+==========================================
 
 Introduction
 ------------

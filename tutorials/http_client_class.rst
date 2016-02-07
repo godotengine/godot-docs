@@ -1,5 +1,5 @@
-Example
-=======
+HTTP client class example
+=========================
 
 Here's an example of using the
 `HTTPClient <https://github.com/okamstudio/godot/wiki/class_httpclient>`__

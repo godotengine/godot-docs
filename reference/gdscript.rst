@@ -1,5 +1,8 @@
+GDScript
+========
+
 Introduction
-============
+------------
 
 GDScript is a high level, dynamically typed programming language used to
 create content. It uses a syntax that is very similar to the Python
@@ -8,7 +11,7 @@ and tightly integrated with the engine, allowing great flexibility for
 content creation and integration.
 
 History
-=======
+-------
 
 Initially, Godot was designed to support multiple scripting languages
 (this ability still exists today). However, only GDScript is in use
@@ -44,7 +47,7 @@ for Lua and Squirrel, and equally as functional. With time, having a
 built-in language has proven to be a huge advantage.
 
 Example
-=======
+-------
 
 Some people can learn better by just taking a look at the syntax, so
 here's a simple example of how it looks.
@@ -113,10 +116,10 @@ C, C++, or C# but never used a dynamically typed one, it is advised you
 read this tutorial: [[GDScript (More Efficiently)]].
 
 Language
-========
+--------
 
 Identifiers
------------
+~~~~~~~~~~~
 
 Any string that restricts itself to alphabetic characters (``a`` to
 ``z`` and ``A`` to ``Z``), digits (``0`` to ``9``) and ``_`` qualifies
@@ -124,13 +127,13 @@ as an identifier. Additionally, identifiers must not begin with a digit.
 Identifiers are case-sensitive (``foo`` is different from ``FOO``).
 
 Keywords
---------
+~~~~~~~~
 
 The following is the list of keywords supported by the language. Since
 keywords are reserved words (tokens), they can't be used as identifiers.
 
 Operators
----------
+~~~~~~~~~
 
 The following is the list of supported operators and their precedence
 (TODO, change since this was made to reflect python operators)
@@ -174,7 +177,7 @@ The following is the list of supported operators and their precedence
 +---------------------------------------------------------------+-----------------------------------------+
 
 Literals
---------
+~~~~~~~~
 
 +--------------------------+--------------------------------+
 | **Literal**              | **Type**                       |
@@ -193,7 +196,7 @@ Literals
 +--------------------------+--------------------------------+
 
 Comments
---------
+~~~~~~~~
 
 Anything from a ``#`` to the end of the line is ignored and is
 considered a comment.
@@ -212,82 +215,82 @@ the beginning and end of a block of text.
     a comment """
 
 Built-In Types
-==============
+--------------
 
 Basic Built-In Types
---------------------
+~~~~~~~~~~~~~~~~~~~~
 
 A variable in GDScript can be assigned to several built-in types.
 
 null
-~~~~
+^^^^
 
 null is a data type that contains no information, nothing assigned, and
 it's just empty. It can only be set to one value: ``null``.
 
 bool
-~~~~
+^^^^
 
 The Boolean data type can only contain ``true`` or ``false``.
 
 int
-~~~
+^^^
 
 The integer data type can only contain integer numbers, (both negative
 and positive).
 
 float
-~~~~~
+^^^^^
 
 Used to contain a floating point value (real numbers).
 
 `String <https://github.com/okamstudio/godot/wiki/class_string>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A sequence of characters in Unicode format. Strings can contain the
 standard C escape sequences.
 
 Vector Built-In Types
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 `Vector2 <https://github.com/okamstudio/godot/wiki/class_vector2>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 2D vector type containing ``x`` and ``y`` fields. Can alternatively
 access fields as ``width`` and ``height`` for readability. Can also be
 accessed as array.
 
 `Rect2 <https://github.com/okamstudio/godot/wiki/class_rect2>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 2D Rectangle type containing two vectors fields: ``pos`` and ``size``.
 Alternatively contains an ``end`` field which is ``pos+size``.
 
 `Vector3 <https://github.com/okamstudio/godot/wiki/class_vector3>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3D vector type containing ``x``, ``y`` and ``z`` fields. This can also
 be accessed as an array.
 
 `Matrix32 <https://github.com/okamstudio/godot/wiki/class_matrix32>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3x2 matrix used for 2D transforms.
 
 `Plane <https://github.com/okamstudio/godot/wiki/class_plane>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3D Plane type in normalized form that contains a ``normal`` vector field
 and a ``d`` scalar distance.
 
 `Quat <https://github.com/okamstudio/godot/wiki/class_quat>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Quaternion is a datatype used for representing a 3D rotation. It's
 useful for interpolating rotations.
 
 `AABB <https://github.com/okamstudio/godot/wiki/class_aabb>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Axis Aligned bounding box (or 3D box) contains 2 vectors fields: ``pos``
 and ``size``. Alternatively contains an ``end`` field which is
@@ -295,61 +298,61 @@ and ``size``. Alternatively contains an ``end`` field which is
 interchangeably.
 
 `Matrix3 <https://github.com/okamstudio/godot/wiki/class_matrix3>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3x3 matrix used for 3D rotation and scale. It contains 3 vector fields
 (``x``, ``y`` and ``z``) and can also be accessed as an array of 3D
 vectors.
 
 `Transform <https://github.com/okamstudio/godot/wiki/class_transform>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3D Transform contains a Matrix3 field ``basis`` and a Vector3 field
 ``origin``.
 
 Engine Built-In Types
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 `Color <https://github.com/okamstudio/godot/wiki/class_color>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Color data type contains ``r``, ``g``, ``b``, and ``a`` fields. It can
 also be accessed as ``h``, ``s``, and ``v`` for hue/saturation/value.
 
 `Image <https://github.com/okamstudio/godot/wiki/class_image>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Contains a custom format 2D image and allows direct access to the
 pixels.
 
 `NodePath <https://github.com/okamstudio/godot/wiki/class_nodepath>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Compiled path to a node used mainly in the scene system. It can be
 easily assigned to, and from, a String.
 
 `RID <https://github.com/okamstudio/godot/wiki/class_rid>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Resource ID (RID). Servers use generic RIDs to reference opaque data.
 
 `Object <https://github.com/okamstudio/godot/wiki/class_object>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Base class for anything that is not a built-in type.
 
 `InputEvent <https://github.com/okamstudio/godot/wiki/class_inputevent>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Events from input devices are contained in very compact form in
 InputEvent objects. Due to the fact that they can be received in high
 amounts from frame to frame they are optimized as their own data type.
 
 Container Built-In Types
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 `Array <https://github.com/okamstudio/godot/wiki/class_array>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Generic sequence of objects. Its size can be changed to anything and
 starts from index 0.
@@ -370,7 +373,7 @@ and generally run a little slower, so they are only justified for very
 large amount of data.
 
 `Dictionary <https://github.com/okamstudio/godot/wiki/class_dictionary>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Associative container which contains values referenced by unique keys.
 
@@ -392,7 +395,7 @@ write and read:
     }
 
 `ByteArray <https://github.com/okamstudio/godot/wiki/class_bytearray>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 An array of bytes can only contain bytes (integers from 0 to 255).
 
@@ -400,40 +403,40 @@ This, and all of the following specialized array types, are optimized
 for memory usage and can't fragment the memory.
 
 `IntArray <https://github.com/okamstudio/godot/wiki/class_intarray>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Array of integers can only contain integers.
 
 `FloatArray <https://github.com/okamstudio/godot/wiki/class_floatarray>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Array of floats can only contain floats.
 
 `StringArray <https://github.com/okamstudio/godot/wiki/class_stringarray>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Array of strings can only contain strings.
 
 `Vector2Array <https://github.com/okamstudio/godot/wiki/class_vector2array>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Array of Vector2 can only contain 2D Vectors.
 
 `Vector3Array <https://github.com/okamstudio/godot/wiki/class_vector3array>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Array of Vector3 can only contain 3D Vectors.
 
 `ColorArray <https://github.com/okamstudio/godot/wiki/class_colorarray>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Array of Color can only contains colors.
 
 Data
-====
+----
 
 Variables
----------
+~~~~~~~~~
 
 Variables can exist as class members or local to functions. They are
 created with the ``var`` keyword and may, optionally, be assigned a
@@ -447,7 +450,7 @@ value upon initialization.
     var d = b + c  # variables are always initialized in order
 
 Constants
----------
+~~~~~~~~~
 
 Constants are similar to variables, but must be constants or constant
 expressions and must be assigned on initialization.
@@ -463,7 +466,7 @@ expressions and must be assigned on initialization.
     const g = x + 20  # invalid; this is not a constant expression!
 
 Functions
----------
+~~~~~~~~~
 
 Functions always belong to a class. The scope priority for variable
 look-up is: local→class member→global. ``self`` is provided as an option
@@ -481,14 +484,14 @@ return value is null.
         return a + b  # return is optional; without it null is returned
 
 Statements and Control Flow
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Statements are standard and can be assignments, function calls, control
 flow structures, etc (see below). ``;`` as a statement separator is
 entirely optional.
 
 if/else/elif
-~~~~~~~~~~~~
+^^^^^^^^^^^^
 
 Simple conditions are created by using the *if/else/elif* syntax.
 Parenthesis around statements is allowed, but not required. Given the
@@ -505,7 +508,7 @@ else:/if: to maintain a level of indentation.
         statement(s)
 
 while
-~~~~~
+^^^^^
 
 Simple loops are created by using *while* syntax. Loops can be broken
 using *break* or continued using *continue*:
@@ -516,7 +519,7 @@ using *break* or continued using *continue*:
         statement(s)
 
 for
-~~~
+^^^
 
 To iterate through a range, such as an array or table, a *for* loop is
 used. For loops store the index in the loop variable on each iteration.
@@ -540,7 +543,7 @@ used. For loops store the index in the loop variable on each iteration.
         statement  # similar to [2, 4, 6] but does not allocate an array
 
 Function Call on Base Class
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To call a function on a base class (that was overridden in the current
 one), prepend ``.`` to the function name:
@@ -555,7 +558,7 @@ notifications such as ``_enter_tree``, ``_exit_tree``, ``_process``,
 so this should be only for calling functions you write yourself.
 
 Classes
-=======
+^^^^^^^
 
 By default, the body of a script file is an unnamed class and it can
 only be referenced externally as a resource or file. Class syntax is
@@ -567,7 +570,7 @@ variables (including arrays and dictionaries) are initialized every time
 an instance is created.
 
 Class File Example
-------------------
+~~~~~~~~~~~~~~~~~~
 
 Imagine the following being stored in a file like myclass.gd.
 
@@ -579,7 +582,7 @@ Imagine the following being stored in a file like myclass.gd.
         print(a)
 
 Inheritance
------------
+~~~~~~~~~~~
 
 A class file can inherit from a global class, another file or a subclass
 inside another file. Multiple inheritance is not allowed. The
@@ -601,7 +604,7 @@ inside another file. Multiple inheritance is not allowed. The
     extends "somefile.gd".Subclass
 
 Inheritance Testing
--------------------
+~~~~~~~~~~~~~~~~~~~
 
 It's possible to check if an instance inherits from a given class. For
 this the ``extends`` keyword can be used as an operator instead:
@@ -616,13 +619,13 @@ this the ``extends`` keyword can be used as an operator instead:
         entity.apply_damage()
 
 Constructor
------------
+~~~~~~~~~~~
 
 A class can have an optional constructor; a function named ``_init``
 that is called when the class is instanced.
 
 Arguments to Parent Constructor
--------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When inheriting, parent constructors are called automatically (no need
 to call ``._init()``). If a parent constructor takes arguments, they are
@@ -634,7 +637,7 @@ passed like this:
        pass
 
 Sub Classes
------------
+~~~~~~~~~~~
 
 A class file can have subclasses. This syntax should be straightforward:
 
@@ -650,7 +653,7 @@ A class file can have subclasses. This syntax should be straightforward:
         sc.print_value_of_a()
 
 Classes as Objects
-------------------
+~~~~~~~~~~~~~~~~~~
 
 It may be desired at some point to load a class from a file and then
 instance it. Since the global scope does not exist, classes must be
@@ -670,7 +673,7 @@ in a class object:
         a.somefunction()
 
 Exports
--------
+~~~~~~~
 
 Class members can be exported. This means their value gets saved along
 with a scene. If class members have initializers to constant
@@ -745,7 +748,7 @@ editor, the exported properties are still editable (see below for
 "tool").
 
 Exporting bit flags
-~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^
 
 Integers used as bit flags can store multiple true/false (boolean)
 values in one property. By using the export hint ``int, FLAGS``, they
@@ -771,7 +774,7 @@ Using bit flags requires some understanding of bitwise operations. If in
 doubt, boolean variables should be exported instead.
 
 Exporting Arrays
-~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^
 
 Exporting arrays works too but there is a restriction. While regular
 arrays are created local to every instance, exported arrays are shared
@@ -798,7 +801,7 @@ initializers, but they must be constant expressions.
     var b = [a,2,3]
 
 Static Functions
-----------------
+~~~~~~~~~~~~~~~~
 
 A function can be declared static. When a function is static it has no
 access to the instance member variables or ``self``. This is mainly
@@ -810,7 +813,7 @@ useful to make libraries of helper functions:
         return a + b
 
 Setters/Getters
----------------
+~~~~~~~~~~~~~~~
 
 | It is often useful to know when an member variable changed. It may
   also be desired to encapsulate its access. For this, GDScript provides
@@ -867,7 +870,7 @@ getter. For example:
         print(self.myinteger)
 
 Tool Mode
----------
+~~~~~~~~~
 
 Scripts, by default, don't run inside the editor and only the exported
 properties can be changed. In some cases it is desired that they do run
@@ -884,7 +887,7 @@ placed at the top of the file:
         print("Hello")
 
 Memory Management
------------------
+~~~~~~~~~~~~~~~~~
 
 If a class inherits from [[Class:Reference]], then instances will be
 freed when no longer in use. No garbage collector exists, just simple
@@ -895,7 +898,7 @@ avoid reference cycles that can't be freed, a ``weakref`` function is
 provided for creating weak references.
 
 Function References
--------------------
+~~~~~~~~~~~~~~~~~~~
 
 Functions can't be referenced because they are not treated as class
 members. There are two alternatives to this, though. The ``call``
@@ -909,7 +912,7 @@ function or the ``funcref`` helper.
     fr.call_func(args)
 
 Signals
--------
+~~~~~~~
 
 It is often desired to send a notification that something happened in an
 instance. GDScript supports creation of built-in Godot signals.
@@ -970,7 +973,7 @@ Object.emit\_signal method:
         someinstance.emit_signal("somesignal")
 
 Coroutines
-----------
+~~~~~~~~~~
 
 GDScript has some support for coroutines via the ``yield`` built-in
 function. The way it works is very simple: Calling ``yield()`` will
@@ -1031,7 +1034,7 @@ Will print:
     cheers!
 
 Coroutines & Signals
---------------------
+~~~~~~~~~~~~~~~~~~~~
 
 The real strength of using ``yield`` is when combined with signals.
 ``yield`` can accept two parameters, an object and a signal. When the

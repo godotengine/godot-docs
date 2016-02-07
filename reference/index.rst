@@ -3,7 +3,7 @@ Reference
 
 .. toctree::
    :maxdepth: 2
-   :name: reference
+   :name: toc-reference
 
-   languages
-   cheat_sheets
+   _languages
+   _cheat_sheets
