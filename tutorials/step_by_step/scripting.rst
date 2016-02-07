@@ -96,15 +96,14 @@ Select the Panel node, then press the "Add Script" Icon as follows:
 
 .. image:: /img/addscript.png
 
-| The script creation diallog will popup. This dialog allows to select
-  the language, class name, etc.
-| GDScript does not use class names in script files, so that field is
-  not editable.
-| The script should inherit from "Panel" (as it is meant to extend the
-  node, which is of Panel type, this is automatically filled anyway).
-| Select the filename for the script (if you saved the scene previously,
-  one will be automatically generated as sayhello.gd) and push
-  `Create <>`__
+The script creation dialog will popup. This dialog allows to select
+the language, class name, etc. GDScript does not use class names in
+script files, so that field is not editable. The script should inherit
+from "Panel" (as it is meant to extend the node, which is of Panel type,
+this is automatically filled anyway).
+
+Select the filename for the script (if you saved the scene previously,
+one will be automatically generated as sayhello.gd) and push "Create":
 
 .. image:: /img/scriptcreate.png
 
@@ -153,11 +152,12 @@ Which will show the list of signals a Button can emit.
 
 .. image:: /img/button_connections.png
 
-| But this example will not use it. We don't want to make things *too*
-  easy. So please close that screen!
-| In any case, at this point it is clear that that we are interested in
-  the "pressed" signal, so instead of doing it with the visual
-  interface, the connection will be done using code.
+But this example will not use it. We don't want to make things *too*
+easy. So please close that screen!
+
+In any case, at this point it is clear that that we are interested in
+the "pressed" signal, so instead of doing it with the visual
+interface, the connection will be done using code.
 
 For this, there is a function that is probably the one that Godot
 programmers will use the most, this is

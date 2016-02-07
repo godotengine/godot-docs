@@ -27,7 +27,7 @@ Creating a ShaderMaterial
 -------------------------
 
 Create a new ShaderMaterial in some object of your choice. Go to the
-"Shader" property, then create a new `Shader <>`__
+"Shader" property, then create a new "Shader":
 
 .. image:: /img/shader_material_create.png
 

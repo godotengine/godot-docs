@@ -28,43 +28,44 @@ received input, in order:
 
 .. image:: /img/input_event_flow.png
 
-| 1. First, it will try to feed the input to the GUI, and see if any
-  control can receive it. If so, the [[API:Control]] will be called the
-  virtual function [[API:Control.\_input\_event()]] and the signal
-  "input\_event" will be emitted (this function is re-implementable by
-  script by inheriting from it). If the control wants to "consume" the
-  event, it will call [[API:Control.accept\_event()]] and the event will
-  not spread any more.
-| 2. If the GUI does not want the event, the standard \_input function
-  will be called in any node with input processing enabled (enable with
-  [[API:Node.set\_process\_input()]]) and override
-  [[API:Node.\_input()]]). If any function consumes the event, it can
-  call [[API:SceneTree.set\_input\_as\_handled()]], and the event will
-  not spread any more.
-| 3. If so far no one consumed the event, the unhandled input callback
-  will be called (enable with
-  [[API:Node.set\_process\_unhandled\_input()]]) and override
-  [[API:Node.\_unhandled\_input()]]). If any function consumes the
-  event, it can call [[SceneTree.set\_input\_as\_handled()]], and the
-  event will not spread any more.
-| 4. If no one wanted the event so far, and a [[API:Camera]] is assigned
-  to the Viewport, a ray to the physics world (in the ray direction from
-  he click) will be casted. If this ray hits an object, it will call the
-  [[API:CollisionObject.\_input\_event()]] function in the relevant
-  physics object (bodies receive this callback by default, but areas do
-  not. This can be configured through [[API:Area]] properties).
-| 5. Finally, if the event was unhandled, it will be passed to the next
-  Viewport in the tree, or it will be ignored.
+1. First, it will try to feed the input to the GUI, and see if any
+control can receive it. If so, the [[API:Control]] will be called the
+virtual function [[API:Control.\_input\_event()]] and the signal
+"input\_event" will be emitted (this function is re-implementable by
+script by inheriting from it). If the control wants to "consume" the
+event, it will call [[API:Control.accept\_event()]] and the event will
+not spread any more.
+2. If the GUI does not want the event, the standard \_input function
+will be called in any node with input processing enabled (enable with
+[[API:Node.set\_process\_input()]]) and override
+[[API:Node.\_input()]]). If any function consumes the event, it can
+call [[API:SceneTree.set\_input\_as\_handled()]], and the event will
+not spread any more.
+3. If so far no one consumed the event, the unhandled input callback
+will be called (enable with
+[[API:Node.set\_process\_unhandled\_input()]]) and override
+[[API:Node.\_unhandled\_input()]]). If any function consumes the
+event, it can call [[SceneTree.set\_input\_as\_handled()]], and the
+event will not spread any more.
+4. If no one wanted the event so far, and a [[API:Camera]] is assigned
+to the Viewport, a ray to the physics world (in the ray direction from
+the click) will be casted. If this ray hits an object, it will call the
+[[API:CollisionObject.\_input\_event()]] function in the relevant
+physics object (bodies receive this callback by default, but areas do
+not. This can be configured through [[API:Area]] properties).
+5. Finally, if the event was unhandled, it will be passed to the next
+Viewport in the tree, or it will be ignored.
 
 Anatomy of an InputEvent
 ------------------------
 
-| [[API:InputEvent]] is just a base built-in type, it does not represent
-  anything and only contains some basic information, such as event ID
-  (which is increased for each event), device index, etc.
-| InputEvent has a "type" member. By assigning it, it can become
-  different types of input event. Every type of InputEvent has different
-  properties, according to it's role.
+[[API:InputEvent]] is just a base built-in type, it does not represent
+anything and only contains some basic information, such as event ID
+(which is increased for each event), device index, etc.
+
+InputEvent has a "type" member. By assigning it, it can become
+different types of input event. Every type of InputEvent has different
+properties, according to it's role.
 
 Example of changing event type.
 
@@ -81,8 +82,6 @@ There are several types of InputEvent, described in the table below:
 
 +------------------------------------+--------------------+-------------------------------------------------------------------------------------------------------------------+
 | Event                              | Type Index         | Description                                                                                                       |
-+------------------------------------+--------------------+-------------------------------------------------------------------------------------------------------------------+
-| -------                            | ------------       | -------------                                                                                                     |
 +------------------------------------+--------------------+-------------------------------------------------------------------------------------------------------------------+
 | [[API:InputEvent]]                 | NONE               | Empty Input Event                                                                                                 |
 +------------------------------------+--------------------+-------------------------------------------------------------------------------------------------------------------+

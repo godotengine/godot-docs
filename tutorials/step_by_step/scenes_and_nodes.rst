@@ -124,7 +124,7 @@ And finally, create the Label! A lot happens when Create is pressed:
   bottom right corner).
 
 The next step, will be to change the "Text" Property of the label, let
-change it to `Hello, World! <>`__
+change it to "Hello, World!":
 
 .. image:: /img/hw.png
 

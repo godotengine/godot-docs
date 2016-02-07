@@ -2,7 +2,7 @@ Skinning a GUI
 ==============
 
 Oh Beautiful GUI!
-~~~~~~~~~~~~~~~~~
+-----------------
 
 This tutorial is about advanced skinning of an user interface. Most
 games generally don't need this, as they end up just relying on
@@ -22,7 +22,7 @@ but they can be skinned to resemble pretty much any kind of user
 interface.
 
 Theme
-~~~~~
+-----
 
 The GUI is skinned through the
 `Theme <https://github.com/okamstudio/godot/wiki/class_theme>`__
@@ -31,8 +31,8 @@ entire visual styling of all controls. Theme options are named, so it's
 not obvious which name changes what (specialy from code), but several
 tools are provided. The ultimate place to look at what each theme option
 is for each control, which will always be more up to date than any
-documentation is the file
-https://github.com/okamstudio/godot/blob/master/scene/resources/default\_theme/default\_theme.cpp.
+documentation is the file `scene/resources/default_theme/default_theme.cpp
+<https://github.com/godotengine/godot/blob/master/scene/resources/default_theme/default_theme.cpp>`__.
 The rest of this document will explain the different tools used to
 customize the theme.
 
@@ -45,7 +45,7 @@ used. This system allows for flexible overriding of themes in complex
 user interfaces.
 
 Theme Options
-~~~~~~~~~~~~~
+-------------
 
 Each kind of option in a theme can be:
 
@@ -94,7 +94,7 @@ are overrideable. This is not yet available in the wiki class reference,
 but will be soon.
 
 Customizing a Control
-~~~~~~~~~~~~~~~~~~~~~
+---------------------
 
 If only a few controls need to be skinned. It is often not neccesary to
 create a new theme. Controls offer their theme options as special kind
@@ -107,11 +107,11 @@ If checked, they can be used to override the value of the theme just for
 that control.
 
 Creating a Theme
-~~~~~~~~~~~~~~~~
+----------------
 
 The simplest way to create a theme is to edit a theme resource. Create a
 Theme from the resource menu, the editor will appear immediately.
-Following to this, save it (to, as example, myheme.thm):
+Following to this, save it (to, as example, mytheme.thm):
 
 .. image:: /img/themecheck.png
 
@@ -119,15 +119,15 @@ This will create an empty theme that can later be loaded and assigned to
 controls.
 
 Example: Themeing a Button
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 Take some assets attachment:skin\_assets.zip, go to the "theme" menu and
-select `Add Class Item <>`__
+select "Add Class Item":
 
 .. image:: /img/themeci.png
 
 A menu will appear promting the type of control to create. Select
-`Button <>`__
+"Button":
 
 .. image:: /img/themeci2.png
 

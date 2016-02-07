@@ -73,20 +73,22 @@ Import process begins with the 3D scene import menu:
 
 That opens what is probably the biggest of all the import dialogs:
 
-| p=. |image1|
-| Many options exist in there, so each section will be explained as
-  follows:
+p=. |image1|
+
+Many options exist in there, so each section will be explained as
+follows:
 
 Source & target paths
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
-| To import, two options are needed. The first is a source .dae file
-  (.dae stands for Collada. More import formats will eventually added,
-  but Collada is the most complete open format as of this writing).
-| A target folder needs to be provided, so the importer can import the
-  scene there. The imported scene will have the same filename as the
-  source one, except for the .scn extension, so make sure you pick good
-  names when you export!
+To import, two options are needed. The first is a source .dae file
+(.dae stands for Collada. More import formats will eventually added,
+but Collada is the most complete open format as of this writing).
+
+A target folder needs to be provided, so the importer can import the
+scene there. The imported scene will have the same filename as the
+source one, except for the .scn extension, so make sure you pick good
+names when you export!
 
 The textures will be copied and converted. Textures in 3D applications
 are usually just PNG or JPG files. Godot will convert them to video
@@ -104,7 +106,7 @@ in the project settings). If you choose this, make sure no two textures
 are names the same.
 
 3D rigging tips
----------------
+~~~~~~~~~~~~~~~
 
 Before going into the options, here are some tips for making sure your
 rigs import properly
@@ -125,7 +127,7 @@ rigs import properly
    both objects (the little orange dot) should be at the same place.
 
 3D import options
------------------
+~~~~~~~~~~~~~~~~~
 
 This section contains many options to change the way import workflow
 works. Some (like HDR) will be better explained in other sections, but
@@ -156,7 +158,7 @@ Notice that:
 -  The Light was not imported (-noimp).
 
 Options in detail
------------------
+~~~~~~~~~~~~~~~~~
 
 Following is a list of most import options and what they do in more
 detail.
@@ -313,35 +315,37 @@ The rest of the tags in this section should be rather obvious, or will
 be documented/changed in the future.
 
 Double-sidedness
-----------------
+~~~~~~~~~~~~~~~~
 
-| Collada and other formats support specifying the double-sidedness of
-  the geometry (in other words, when not double-sided, back-faces are
-  not drawn). Godot supports this option per Material, not per Geometry.
-| When exporting from 3D DCCs that work with per-object double-sidedness
-  (such as Blender of Maya), make sure that the double sided objects do
-  not share a material with the single sided ones or the importer will
-  not be able to discern.
+Collada and other formats support specifying the double-sidedness of
+the geometry (in other words, when not double-sided, back-faces are
+not drawn). Godot supports this option per Material, not per Geometry.
+
+When exporting from 3D DCCs that work with per-object double-sidedness
+(such as Blender of Maya), make sure that the double sided objects do
+not share a material with the single sided ones or the importer will
+not be able to discern.
 
 Animation options
------------------
+~~~~~~~~~~~~~~~~~
 
-| Some things to keep in mind when importing animations. 3D DCCs allow
-  animating with curves for every x,y,z component, doing IK constraints
-  and other stuff. When imported for real-time, animations are sampled
-  (at small intervals) so all this information is lost. Sampled
-  animations are fast to process, but can use considerable amounts of
-  memory.
-| Because of this, the "Optimize" option exists but, in some cases, this
-  option might get to break an animation, so make it sure to disable if
-  you see this.
+Some things to keep in mind when importing animations. 3D DCCs allow
+animating with curves for every x,y,z component, doing IK constraints
+and other stuff. When imported for real-time, animations are sampled
+(at small intervals) so all this information is lost. Sampled
+animations are fast to process, but can use considerable amounts of
+memory.
+
+Because of this, the "Optimize" option exists but, in some cases, this
+option might get to break an animation, so make it sure to disable if
+you see this.
 
 Some animations are meant to be cycled (like walk animations) if this is
 the case, animation names that end in "-cycle" or "-loop" are
 automatically set to loop.
 
 Import script
--------------
+~~~~~~~~~~~~~
 
 Creating a script to parse the imported scene is actually really simple.
 This is great for post processing, changing materials, doing funny stuff
@@ -362,7 +366,7 @@ The post-import function takes the imported scene as parameter (the
 parameter is actually the root node of the scene).
 
 Update logic
-------------
+~~~~~~~~~~~~
 
 Other types of resources (like samples, meshes, fonts, images, etc.) are
 re-imported entirely when changed and user changes are not kept.
