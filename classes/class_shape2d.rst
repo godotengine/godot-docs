@@ -54,7 +54,7 @@ Return the custom solver bias.
 
 Return whether this shape is colliding with another.
 
-This method needs the transformation matrix for this shape (:ref:`code<class_code>`local_xform:ref:`/code<class_/code>`), the shape to check collisions with (:ref:`code<class_code>`with_shape:ref:`/code<class_/code>`), and the transformation matrix of that shape (:ref:`code<class_code>`shape_xform:ref:`/code<class_/code>`).
+This method needs the transformation matrix for this shape (``local_xform``), the shape to check collisions with (``with_shape``), and the transformation matrix of that shape (``shape_xform``).
 
 .. _class_Shape2D_collide_with_motion:
 
@@ -62,7 +62,7 @@ This method needs the transformation matrix for this shape (:ref:`code<class_cod
 
 Return whether this shape would collide with another, if a given movemen was applied.
 
-This method needs the transformation matrix for this shape (:ref:`code<class_code>`local_xform:ref:`/code<class_/code>`), the movement to test on this shape (:ref:`code<class_code>`local_motion:ref:`/code<class_/code>`), the shape to check collisions with (:ref:`code<class_code>`with_shape:ref:`/code<class_/code>`), the transformation matrix of that shape (:ref:`code<class_code>`shape_xform:ref:`/code<class_/code>`), and the movement to test ont the other object (:ref:`code<class_code>`shape_motion:ref:`/code<class_/code>`).
+This method needs the transformation matrix for this shape (``local_xform``), the movement to test on this shape (``local_motion``), the shape to check collisions with (``with_shape``), the transformation matrix of that shape (``shape_xform``), and the movement to test ont the other object (``shape_motion``).
 
 .. _class_Shape2D_collide_and_get_contacts:
 
@@ -70,7 +70,7 @@ This method needs the transformation matrix for this shape (:ref:`code<class_cod
 
 Return a list of the points where this shape touches another. If there are no collisions, the list is empty.
 
-This method needs the transformation matrix for this shape (:ref:`code<class_code>`local_xform:ref:`/code<class_/code>`), the shape to check collisions with (:ref:`code<class_code>`with_shape:ref:`/code<class_/code>`), and the transformation matrix of that shape (:ref:`code<class_code>`shape_xform:ref:`/code<class_/code>`).
+This method needs the transformation matrix for this shape (``local_xform``), the shape to check collisions with (``with_shape``), and the transformation matrix of that shape (``shape_xform``).
 
 .. _class_Shape2D_collide_with_motion_and_get_contacts:
 
@@ -78,6 +78,6 @@ This method needs the transformation matrix for this shape (:ref:`code<class_cod
 
 Return a list of the points where this shape would touch another, if a given movement was applied. If there are no collisions, the list is empty.
 
-This method needs the transformation matrix for this shape (:ref:`code<class_code>`local_xform:ref:`/code<class_/code>`), the movement to test on this shape (:ref:`code<class_code>`local_motion:ref:`/code<class_/code>`), the shape to check collisions with (:ref:`code<class_code>`with_shape:ref:`/code<class_/code>`), the transformation matrix of that shape (:ref:`code<class_code>`shape_xform:ref:`/code<class_/code>`), and the movement to test ont the other object (:ref:`code<class_code>`shape_motion:ref:`/code<class_/code>`).
+This method needs the transformation matrix for this shape (``local_xform``), the movement to test on this shape (``local_motion``), the shape to check collisions with (``with_shape``), the transformation matrix of that shape (``shape_xform``), and the movement to test ont the other object (``shape_motion``).
 
 

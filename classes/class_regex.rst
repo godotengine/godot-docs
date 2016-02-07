@@ -39,33 +39,33 @@ Usage of regular expressions is too long to be explained here, but Internet is f
 
 Currently supported features:
 
-Capturing :ref:`code<class_code>`():ref:`/code<class_/code>` and non-capturing :ref:`code<class_code>`(?:):ref:`/code<class_/code>` groups
+Capturing ``()`` and non-capturing ``(?:)`` groups
 
-Any character :ref:`code<class_code>`.:ref:`/code<class_/code>`
+Any character ``.``
 
-Shorthand caracter classes :ref:`code<class_code>`\w \W \s \S \d \D:ref:`/code<class_/code>`
+Shorthand caracter classes ``\w \W \s \S \d \D``
 
-User-defined character classes such as :ref:`code<class_code>`:ref:`A-Za-z<class_a-za-z>`:ref:`/code<class_/code>`
+User-defined character classes such as ``:ref:`A-Za-z<class_a-za-z>```
 
-Simple quantifiers :ref:`code<class_code>`?:ref:`/code<class_/code>`, :ref:`code<class_code>`\*:ref:`/code<class_/code>` and :ref:`code<class_code>`+:ref:`/code<class_/code>`
+Simple quantifiers ``?``, ``\*`` and ``+``
 
-Range quantifiers :ref:`code<class_code>`{x,y}:ref:`/code<class_/code>`
+Range quantifiers ``{x,y}``
 
-Lazy (non-greedy) quantifiers :ref:`code<class_code>`\*?:ref:`/code<class_/code>`
+Lazy (non-greedy) quantifiers ``\*?``
 
-Begining :ref:`code<class_code>`^:ref:`/code<class_/code>` and end :ref:`code<class_code>`$:ref:`/code<class_/code>` anchors
+Begining ``^`` and end ``$`` anchors
 
-Alternation :ref:`code<class_code>`|:ref:`/code<class_/code>`
+Alternation ``|``
 
-Backreferences :ref:`code<class_code>`\1:ref:`/code<class_/code>` and :ref:`code<class_code>`\g{1}:ref:`/code<class_/code>`
+Backreferences ``\1`` and ``\g{1}``
 
-POSIX character classes :ref:`code<class_code>`:ref:`[:alnum:<class_[:alnum:>`]:ref:`/code<class_/code>`
+POSIX character classes ``:ref:`[:alnum:<class_[:alnum:>`]``
 
-Lookahead :ref:`code<class_code>`(?=):ref:`/code<class_/code>`, :ref:`code<class_code>`(?!):ref:`/code<class_/code>` and lookbehind :ref:`code<class_code>`(?<=):ref:`/code<class_/code>`, :ref:`code<class_code>`(?<!):ref:`/code<class_/code>`
+Lookahead ``(?=)``, ``(?!)`` and lookbehind ``(?<=)``, ``(?<!)``
 
-ASCII :ref:`code<class_code>`\xFF:ref:`/code<class_/code>` and Unicode :ref:`code<class_code>`\uFFFF:ref:`/code<class_/code>` code points (in a style similar to Python)
+ASCII ``\xFF`` and Unicode ``\uFFFF`` code points (in a style similar to Python)
 
-Word boundaries :ref:`code<class_code>`\b:ref:`/code<class_/code>`, :ref:`code<class_code>`\B:ref:`/code<class_/code>`
+Word boundaries ``\b``, ``\B``
 
 Member Function Description
 ---------------------------
