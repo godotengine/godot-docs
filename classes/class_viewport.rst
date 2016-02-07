@@ -208,7 +208,7 @@ Return the viewport rect. If the viewport is child of a control, it will use the
 
 - :ref:`Rect2<class_rect2>`  **get_visible_rect**  **(** **)** const
 
-Return the final, visuble rect in global screen coordinates.
+Return the final, visible rect in global screen coordinates.
 
 .. _class_Viewport_set_transparent_background:
 
@@ -220,7 +220,7 @@ If this viewport is a child of another viewport, keep the previously drawn backg
 
 - :ref:`bool<class_bool>`  **has_transparent_background**  **(** **)** const
 
-Reurn whether the viewport lets whatever is behind it to show.
+Return whether the viewport lets whatever is behind it to show.
 
 .. _class_Viewport_set_size_override:
 

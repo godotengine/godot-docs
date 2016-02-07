@@ -47,7 +47,7 @@ Member Function Description
 
 - :ref:`bool<class_bool>`  **test_mask**  **(** :ref:`Vector2<class_vector2>` point, :ref:`Rect2<class_rect2>` rect  **)** const
 
-Test a position in a rectangle, return wether it pases the mask test.
+Test a position in a rectangle, return whether it passes the mask test.
 
 .. _class_StyleBox_set_default_margin:
 

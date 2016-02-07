@@ -114,7 +114,7 @@ Return sprite draw offst.
 
 - void  **set_flip_h**  **(** :ref:`bool<class_bool>` flip_h  **)**
 
-Set true to flip the sprite horizontaly.
+Set true to flip the sprite horizontally.
 
 .. _class_Sprite_is_flipped_h:
 

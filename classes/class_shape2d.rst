@@ -65,9 +65,9 @@ This method needs the transformation matrix for this shape (``local_xform``), th
 
 - :ref:`bool<class_bool>`  **collide_with_motion**  **(** :ref:`Matrix32<class_matrix32>` local_xform, :ref:`Vector2<class_vector2>` local_motion, :ref:`Shape2D<class_shape2d>` with_shape, :ref:`Matrix32<class_matrix32>` shape_xform, :ref:`Vector2<class_vector2>` shape_motion  **)**
 
-Return whether this shape would collide with another, if a given movemen was applied.
+Return whether this shape would collide with another, if a given movement was applied.
 
-This method needs the transformation matrix for this shape (``local_xform``), the movement to test on this shape (``local_motion``), the shape to check collisions with (``with_shape``), the transformation matrix of that shape (``shape_xform``), and the movement to test ont the other object (``shape_motion``).
+This method needs the transformation matrix for this shape (``local_xform``), the movement to test on this shape (``local_motion``), the shape to check collisions with (``with_shape``), the transformation matrix of that shape (``shape_xform``), and the movement to test onto the other object (``shape_motion``).
 
 .. _class_Shape2D_collide_and_get_contacts:
 
@@ -83,6 +83,6 @@ This method needs the transformation matrix for this shape (``local_xform``), th
 
 Return a list of the points where this shape would touch another, if a given movement was applied. If there are no collisions, the list is empty.
 
-This method needs the transformation matrix for this shape (``local_xform``), the movement to test on this shape (``local_motion``), the shape to check collisions with (``with_shape``), the transformation matrix of that shape (``shape_xform``), and the movement to test ont the other object (``shape_motion``).
+This method needs the transformation matrix for this shape (``local_xform``), the movement to test on this shape (``local_motion``), the shape to check collisions with (``with_shape``), the transformation matrix of that shape (``shape_xform``), and the movement to test onto the other object (``shape_motion``).
 
 

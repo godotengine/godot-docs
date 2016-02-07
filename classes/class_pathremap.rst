@@ -30,7 +30,7 @@ Member Functions
 Description
 -----------
 
-When exporting, the types of some resources may change internally so they are converted to more optimized versions. While it's not usually necesary to access to this directly (path remapping happens automatically when opeining a file), it's exported just for information.
+When exporting, the types of some resources may change internally so they are converted to more optimized versions. While it's not usually necessary to access to this directly (path remapping happens automatically when opening a file), it's exported just for information.
 
 Member Function Description
 ---------------------------

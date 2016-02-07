@@ -118,7 +118,7 @@ Base class for all non built-in types. Everything not a built-in type starts the
 
 Objects do not manage memory, if inheriting from one the object will most likely have to be deleted manually (call the :ref:`free<class_Object_free>` function from the script or delete from C++).
 
-Some derivates add memory management, such as :ref:`Reference<class_reference>` (which keps a reference count and deletes itself automatically when no longer referenced) and :ref:`Node<class_node>`, which deletes the children tree when deleted.
+Some derivates add memory management, such as :ref:`Reference<class_reference>` (which keeps a reference count and deletes itself automatically when no longer referenced) and :ref:`Node<class_node>`, which deletes the children tree when deleted.
 
 Objects export properties, which are mainly useful for storage and editing, but not really so much in programming. Properties are exported in :ref:`_get_property_list<class_Object__get_property_list>` and handled in :ref:`_get<class_Object__get>` and :ref:`_set<class_Object__set>`. However, scripting languages and C++ have simper means to export them.
 
@@ -137,7 +137,7 @@ Return a property, return null if the property does not exist.
 
 - :ref:`Array<class_array>`  **_get_property_list**  **(** **)** virtual
 
-Return the property list, array of dictionaries, dictionaries must countain: name:String, type:int (see TYPE\_\* enum in globals) and optionally: hint:int (see PROPERTY_HINT\_\* in globals), hint_string:String, usage:int (see PROPERTY_USAGE\_\* in globals).
+Return the property list, array of dictionaries, dictionaries must contain: name:String, type:int (see TYPE\_\* enum in globals) and optionally: hint:int (see PROPERTY_HINT\_\* in globals), hint_string:String, usage:int (see PROPERTY_USAGE\_\* in globals).
 
 .. _class_Object__init:
 
@@ -169,7 +169,7 @@ Return the type of the object as a string.
 
 - :ref:`bool<class_bool>`  **is_type**  **(** :ref:`String<class_string>` type  **)** const
 
-Check the type of the obeject against a string (including inheritance).
+Check the type of the object against a string (including inheritance).
 
 .. _class_Object_set:
 
@@ -187,7 +187,7 @@ Get a property from the object.
 
 - :ref:`Array<class_array>`  **get_property_list**  **(** **)** const
 
-Return the list of properties as an array of dictionaries, dictionaries countain: name:String, type:int (see TYPE\_\* enum in globals) and optionally: hint:int (see PROPERTY_HINT\_\* in globals), hint_string:String, usage:int (see PROPERTY_USAGE\_\* in globals).
+Return the list of properties as an array of dictionaries, dictionaries contain: name:String, type:int (see TYPE\_\* enum in globals) and optionally: hint:int (see PROPERTY_HINT\_\* in globals), hint_string:String, usage:int (see PROPERTY_USAGE\_\* in globals).
 
 .. _class_Object_get_method_list:
 
@@ -221,7 +221,7 @@ Return the object script (or null if it doesn't have one).
 
 - void  **set_meta**  **(** :ref:`String<class_string>` name, var value  **)**
 
-Set a metadata into the object. Medatada is serialized. Metadata can be *anything*.
+Set a metadata into the object. Metadata is serialized. Metadata can be *anything*.
 
 .. _class_Object_get_meta:
 
@@ -239,7 +239,7 @@ Return true if a metadata is found with the requested name.
 
 - :ref:`StringArray<class_stringarray>`  **get_meta_list**  **(** **)** const
 
-Return the list of metadatas in the object.
+Return the list of metadata in the object.
 
 .. _class_Object_add_user_signal:
 

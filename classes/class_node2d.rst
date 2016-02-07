@@ -70,7 +70,7 @@ Member Functions
 Description
 -----------
 
-Base node for 2D system. Node2D contains a position, rotation and scale, which is used to position and animate. It can alternatively be used with a custom 2D transform (:ref:`Matrix32<class_matrix32>`). A tree of Node2Ds allows complex hierachies for animation and positioning.
+Base node for 2D system. Node2D contains a position, rotation and scale, which is used to position and animate. It can alternatively be used with a custom 2D transform (:ref:`Matrix32<class_matrix32>`). A tree of Node2Ds allows complex hierarchies for animation and positioning.
 
 Member Function Description
 ---------------------------

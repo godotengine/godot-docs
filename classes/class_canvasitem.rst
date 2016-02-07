@@ -152,7 +152,7 @@ Description
 
 Base class of anything 2D. Canvas items are laid out in a tree and children inherit and extend the transform of their parent. CanvasItem is extended by :ref:`Control<class_control>`, for anything GUI related, and by :ref:`Node2D<class_node2d>` for anything 2D engine related.
 
-Any CanvasItem can draw. For this, the "update" function must be called, then NOTIFICATION_DRAW will be received on idle time to request redraw. Because of this, canvas items don't need to be redraw on every frame, improving the performance significan'tly. Several functions for drawing on the CanvasItem are provided (see draw\_\* functions). They can only be used inside the notification, signal or _draw() overrided function, though.
+Any CanvasItem can draw. For this, the "update" function must be called, then NOTIFICATION_DRAW will be received on idle time to request redraw. Because of this, canvas items don't need to be redraw on every frame, improving the performance significan'tly. Several functions for drawing on the CanvasItem are provided (see draw\_\* functions). They can only be used inside the notification, signal or _draw() overrides function, though.
 
 Canvas items are draw in tree order. By default, children are on top of their parents so a root CanvasItem will be drawn behind everything (this can be changed per item though).
 
@@ -173,7 +173,7 @@ Called (if exists) to draw the canvas item.
 
 - void  **edit_set_state**  **(** var state  **)**
 
-Used for editing, returns an opaque value represeting the transform state.
+Used for editing, returns an opaque value representing the transform state.
 
 .. _class_CanvasItem_edit_get:
 

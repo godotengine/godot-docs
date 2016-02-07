@@ -93,7 +93,7 @@ Numeric Constants
 Description
 -----------
 
-Mesh is a type of :ref:`Resource<class_resource>` that contains vertex-array based geometry, divided in *surfaces*. Each surface contains a completely separate array and a material used to draw it. Design wise, a mesh with multiple surfaces is prefered to a single surface, because objects created in 3D editing software commonly contain multiple materials.
+Mesh is a type of :ref:`Resource<class_resource>` that contains vertex-array based geometry, divided in *surfaces*. Each surface contains a completely separate array and a material used to draw it. Design wise, a mesh with multiple surfaces is preferred to a single surface, because objects created in 3D editing software commonly contain multiple materials.
 
 Member Function Description
 ---------------------------

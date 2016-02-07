@@ -127,7 +127,7 @@ Return the shape index from the body that collided with this one. If there is no
 
 - Variant  **get_collider_metadata**  **(** **)** const
 
-Return the metadata of the shape that collided with this body. If there is no collision, it will return 0, so collisions must be checked first with :ref:`is_colliding<class_KinematicBody2D_is_colliding>`. Aditionally, this metadata can not be set with :ref:`Object.set_meta<class_Object_set_meta>`, it must be set with :ref:`Physics2DServer.body_set_shape_metadata<class_Physics2DServer_body_set_shape_metadata>`.
+Return the metadata of the shape that collided with this body. If there is no collision, it will return 0, so collisions must be checked first with :ref:`is_colliding<class_KinematicBody2D_is_colliding>`. Additionally, this metadata can not be set with :ref:`Object.set_meta<class_Object_set_meta>`, it must be set with :ref:`Physics2DServer.body_set_shape_metadata<class_Physics2DServer_body_set_shape_metadata>`.
 
 .. _class_KinematicBody2D_set_collision_margin:
 

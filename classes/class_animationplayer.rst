@@ -104,7 +104,7 @@ Numeric Constants
 Description
 -----------
 
-An animation player is used for general purpose playback of :ref:`Animation<class_animation>` resources. It contains a dictionary of animations (referenced by name) and custom blend times between their transitions. Additionally, animations can be played and blended in diferent channels.
+An animation player is used for general purpose playback of :ref:`Animation<class_animation>` resources. It contains a dictionary of animations (referenced by name) and custom blend times between their transitions. Additionally, animations can be played and blended in different channels.
 
 Member Function Description
 ---------------------------
@@ -131,7 +131,7 @@ Rename an existing animation.
 
 - :ref:`bool<class_bool>`  **has_animation**  **(** :ref:`String<class_string>` name  **)** const
 
-Request wether an :ref:`Animation<class_animation>` name exist within the player.
+Request whether an :ref:`Animation<class_animation>` name exist within the player.
 
 .. _class_AnimationPlayer_get_animation:
 
@@ -149,13 +149,13 @@ Get the list of names of the animations stored in the player.
 
 - void  **set_blend_time**  **(** :ref:`String<class_string>` anim_from, :ref:`String<class_string>` anim_to, :ref:`float<class_float>` sec  **)**
 
-Specify a blend time (in seconds) between two animations, referemced by their names.
+Specify a blend time (in seconds) between two animations, referenced by their names.
 
 .. _class_AnimationPlayer_get_blend_time:
 
 - :ref:`float<class_float>`  **get_blend_time**  **(** :ref:`String<class_string>` anim_from, :ref:`String<class_string>` anim_to  **)** const
 
-Get the blend time between two animations, referemced by their names.
+Get the blend time between two animations, referenced by their names.
 
 .. _class_AnimationPlayer_set_default_blend_time:
 
@@ -193,7 +193,7 @@ Stop playback of animations (deprecated).
 
 - :ref:`bool<class_bool>`  **is_playing**  **(** **)** const
 
-Return wether an animation is playing.
+Return whether an animation is playing.
 
 .. _class_AnimationPlayer_set_current_animation:
 

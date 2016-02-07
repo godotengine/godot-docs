@@ -61,13 +61,13 @@ Return the portal shape. The shape is an array of :ref:`Point2<class_point2>` po
 
 - void  **set_enabled**  **(** :ref:`bool<class_bool>` enable  **)**
 
-Enable the portal (it is enabled by defaul though), disabling it will cause the parent :ref:`RoomInstance<class_roominstance>` to not be visible any longer when looking through the portal.
+Enable the portal (it is enabled by default though), disabling it will cause the parent :ref:`RoomInstance<class_roominstance>` to not be visible any longer when looking through the portal.
 
 .. _class_Portal_is_enabled:
 
 - :ref:`bool<class_bool>`  **is_enabled**  **(** **)** const
 
-Return wether the portal is active. When disabled it causes the parent :ref:`RoomInstance<class_roominstance>` to not be visible any longer when looking through the portal.
+Return whether the portal is active. When disabled it causes the parent :ref:`RoomInstance<class_roominstance>` to not be visible any longer when looking through the portal.
 
 .. _class_Portal_set_disable_distance:
 

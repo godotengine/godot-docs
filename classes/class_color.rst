@@ -94,7 +94,7 @@ Return the linear interpolation with another color.
 
 - :ref:`int<class_int>`  **to_32**  **(** **)**
 
-Convert the color to a 32 its integer (each byte represets a RGBA).
+Convert the color to a 32 its integer (each byte represents a RGBA).
 
 .. _class_Color_to_ARGB32:
 

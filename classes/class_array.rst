@@ -95,7 +95,7 @@ Return true if the array is empty (size==0).
 
 - void  **erase**  **(** var value  **)**
 
-Remove the first occurence of a value from the array.
+Remove the first occurrence of a value from the array.
 
 .. _class_Array_find:
 

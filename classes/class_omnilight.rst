@@ -10,7 +10,7 @@ OmniLight
 Brief Description
 -----------------
 
-OmniDirectional Light, such as a lightbulb or a candle.
+OmniDirectional Light, such as a light bulb or a candle.
 
 Description
 -----------

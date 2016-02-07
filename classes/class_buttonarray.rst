@@ -51,7 +51,7 @@ Signals
 Numeric Constants
 -----------------
 
-- **ALIGN_BEGIN** = **0** --- Align buttons at the begining.
+- **ALIGN_BEGIN** = **0** --- Align buttons at the beginning.
 - **ALIGN_CENTER** = **1** --- Align buttons in the middle.
 - **ALIGN_END** = **2** --- Align buttons at the end.
 - **ALIGN_FILL** = **3** --- Spread the buttons, but keep them small.
@@ -60,7 +60,7 @@ Numeric Constants
 Description
 -----------
 
-Array of Buttons. A Button array is useful to have an array of buttons laid out vertically or horizontally. Only one can be selected. This is useful for joypad based interfaces and option menus.
+Array of Buttons. A Button array is useful to have an array of buttons laid out vertically or horizontally. Only one can be selected. This is useful for joy pad based interfaces and option menus.
 
 Member Function Description
 ---------------------------
@@ -119,7 +119,7 @@ Return the currently hovered button in the array.
 
 - void  **set_selected**  **(** :ref:`int<class_int>` button  **)**
 
-Sekect a button in the array.
+Select a button in the array.
 
 .. _class_ButtonArray_erase_button:
 

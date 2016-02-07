@@ -99,7 +99,7 @@ Returns the position of the vertex "idx". If the index is out of bounds, the fun
 
 Sets the tilt angle in radians for the point "idx". If the index is out of bounds, the function sends an error to the console.
 
-The tilt controls the rotation along the look-at axis an object travelling the path would have. In the case of a curve controlling a :ref:`PathFollow<class_pathfollow>`, this tilt is an offset over the natural tilt the PathFollow calculates.
+The tilt controls the rotation along the look-at axis an object traveling the path would have. In the case of a curve controlling a :ref:`PathFollow<class_pathfollow>`, this tilt is an offset over the natural tilt the PathFollow calculates.
 
 .. _class_Curve3D_get_point_tilt:
 

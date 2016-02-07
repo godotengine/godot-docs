@@ -99,7 +99,7 @@ Numeric Constants
 
 - **SEARCH_MATCH_CASE** = **1** --- Match case when searching.
 - **SEARCH_WHOLE_WORDS** = **2** --- Match whole words when searching.
-- **SEARCH_BACKWARDS** = **4** --- Search from end to begining.
+- **SEARCH_BACKWARDS** = **4** --- Search from end to beginning.
 
 Description
 -----------

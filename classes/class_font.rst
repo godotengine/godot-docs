@@ -163,13 +163,13 @@ Clear all the font data.
 
 - void  **draw**  **(** :ref:`RID<class_rid>` canvas_item, :ref:`Vector2<class_vector2>` pos, :ref:`String<class_string>` string, :ref:`Color<class_color>` modulate=Color(1,1,1,1), :ref:`int<class_int>` clip_w=-1  **)** const
 
-Draw "string" into a canvas item using the font at a given "pos" position, with "modulate" color, and optionally clipping the width. "pos" specifies te baseline, not the top. To draw from the top, *ascent* must be added to the Y axis.
+Draw "string" into a canvas item using the font at a given "pos" position, with "modulate" color, and optionally clipping the width. "pos" specifies the baseline, not the top. To draw from the top, *ascent* must be added to the Y axis.
 
 .. _class_Font_draw_char:
 
 - :ref:`float<class_float>`  **draw_char**  **(** :ref:`RID<class_rid>` canvas_item, :ref:`Vector2<class_vector2>` pos, :ref:`int<class_int>` char, :ref:`int<class_int>` next=-1, :ref:`Color<class_color>` modulate=Color(1,1,1,1)  **)** const
 
-Draw character "char" into a canvas item using the font at a given "pos" position, with "modulate" color, and optionally kerning if "next" is apassed. clipping the width. "pos" specifies te baseline, not the top. To draw from the top, *ascent* must be added to the Y axis. The width used by the character is returned, making this function useful for drawing strings character by character.
+Draw character "char" into a canvas item using the font at a given "pos" position, with "modulate" color, and optionally kerning if "next" is apassed. clipping the width. "pos" specifies the baseline, not the top. To draw from the top, *ascent* must be added to the Y axis. The width used by the character is returned, making this function useful for drawing strings character by character.
 
 .. _class_Font_set_fallback:
 

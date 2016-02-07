@@ -73,7 +73,7 @@ Numeric Constants
 Description
 -----------
 
-FixedMaterial is a simple type of material :ref:`Resource<class_resource>`, which contains a fixed amount of paramters. It is the only type of material supported in fixed-pipeline devices and APIs. It is also an often a better alternative to :ref:`ShaderMaterial<class_shadermaterial>` for most simple use cases.
+FixedMaterial is a simple type of material :ref:`Resource<class_resource>`, which contains a fixed amount of parameters. It is the only type of material supported in fixed-pipeline devices and APIs. It is also an often a better alternative to :ref:`ShaderMaterial<class_shadermaterial>` for most simple use cases.
 
 Member Function Description
 ---------------------------

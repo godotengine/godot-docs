@@ -101,7 +101,7 @@ Return a 3D position in worldspace, that is the result of projecting a point on 
 
 - :ref:`Vector2<class_vector2>`  **unproject_position**  **(** :ref:`Vector3<class_vector3>` world_point  **)** const
 
-Return how a 3D point in worldpsace maps to a 2D coordinate in the :ref:`Viewport<class_viewport>` rectangle.
+Return how a 3D point in worldspace maps to a 2D coordinate in the :ref:`Viewport<class_viewport>` rectangle.
 
 .. _class_Camera_is_position_behind:
 
@@ -137,7 +137,7 @@ Make this camera the current Camera for the :ref:`Viewport<class_viewport>` (see
 
 - :ref:`bool<class_bool>`  **is_current**  **(** **)** const
 
-Return wether the Camera is the current one in the :ref:`Viewport<class_viewport>`, or plans to become current (if outside the scene tree).
+Return whether the Camera is the current one in the :ref:`Viewport<class_viewport>`, or plans to become current (if outside the scene tree).
 
 .. _class_Camera_get_camera_transform:
 

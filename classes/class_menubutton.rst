@@ -27,7 +27,7 @@ Signals
 Description
 -----------
 
-Special button that brings up a :ref:`PopupMenu<class_popupmenu>` when clicked. That's pretty much all it does, as it's just a helper class when bulding GUIs.
+Special button that brings up a :ref:`PopupMenu<class_popupmenu>` when clicked. That's pretty much all it does, as it's just a helper class when building GUIs.
 
 Member Function Description
 ---------------------------

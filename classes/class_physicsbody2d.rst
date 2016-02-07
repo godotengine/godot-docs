@@ -50,7 +50,7 @@ Member Functions
 Description
 -----------
 
-PhysicsBody2D is an abstract base class for implementing a physics body. All *x*Body2D types inherit from it.
+PhysicsBody2D is an abstract base class for implementing a physics body. All \*Body2D types inherit from it.
 
 Member Function Description
 ---------------------------

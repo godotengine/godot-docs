@@ -80,7 +80,7 @@ Returns a point on the plane.
 
 - :ref:`bool<class_bool>`  **has_point**  **(** :ref:`Vector3<class_vector3>` point, :ref:`float<class_float>` epsilon=0.00001  **)**
 
-Returns true if "point" is inside the plane (by a very minimum treshold).
+Returns true if "point" is inside the plane (by a very minimum threshold).
 
 .. _class_Plane_intersect_3:
 

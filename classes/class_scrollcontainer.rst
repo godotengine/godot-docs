@@ -10,7 +10,7 @@ ScrollContainer
 Brief Description
 -----------------
 
-A helper node for displaying scollable elements (e.g. lists).
+A helper node for displaying scrollable elements (e.g. lists).
 
 Member Functions
 ----------------

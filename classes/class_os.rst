@@ -479,7 +479,7 @@ Return an environment variable.
 
 - :ref:`bool<class_bool>`  **has_environment**  **(** :ref:`String<class_string>` environment  **)** const
 
-Return true if an envieronment variable exists.
+Return true if an environment variable exists.
 
 .. _class_OS_get_name:
 

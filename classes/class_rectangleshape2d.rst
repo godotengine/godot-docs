@@ -24,7 +24,7 @@ Member Functions
 Description
 -----------
 
-Rectangle Shape for 2D Physics. This shape is useful for modelling box-like 2D objects.
+Rectangle Shape for 2D Physics. This shape is useful for modeling box-like 2D objects.
 
 Member Function Description
 ---------------------------

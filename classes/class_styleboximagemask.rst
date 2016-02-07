@@ -32,7 +32,7 @@ Member Functions
 Description
 -----------
 
-This StyleBox is similar to :ref:`StyleBoxTexture<class_styleboxtexture>`, but only meant to be used for mask testing. It takes an image and applies stretch rules to determine if the poit clicked is masked or not.
+This StyleBox is similar to :ref:`StyleBoxTexture<class_styleboxtexture>`, but only meant to be used for mask testing. It takes an image and applies stretch rules to determine if the point clicked is masked or not.
 
 Member Function Description
 ---------------------------
@@ -59,7 +59,7 @@ Set the expand property (default). When expanding, the image will use the same r
 
 - :ref:`bool<class_bool>`  **get_expand**  **(** **)** const
 
-Return wether the expand property is set(default). When expanding, the image will use the same rules as :ref:`StyleBoxTexture<class_styleboxtexture>` for expand. If not expanding, the image will always be tested at its original size.
+Return whether the expand property is set(default). When expanding, the image will use the same rules as :ref:`StyleBoxTexture<class_styleboxtexture>` for expand. If not expanding, the image will always be tested at its original size.
 
 .. _class_StyleBoxImageMask_set_expand_margin_size:
 

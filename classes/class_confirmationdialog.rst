@@ -24,7 +24,7 @@ Member Functions
 Description
 -----------
 
-Dialog for confirmation of actions. This dialog inherits from :ref:`AcceptDialog<class_acceptdialog>`, but has by default an OK and Cancel buton (in host OS order).
+Dialog for confirmation of actions. This dialog inherits from :ref:`AcceptDialog<class_acceptdialog>`, but has by default an OK and Cancel button (in host OS order).
 
 Member Function Description
 ---------------------------

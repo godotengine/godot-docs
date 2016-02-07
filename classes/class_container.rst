@@ -36,9 +36,9 @@ Numeric Constants
 Description
 -----------
 
-Base node for conainers. A :ref:`Container<class_container>` contains other controls and automatically arranges them in a certain way.
+Base node for containers. A :ref:`Container<class_container>` contains other controls and automatically arranges them in a certain way.
 
-A Control can inherit this to reate custom container classes.
+A Control can inherit this to create custom container classes.
 
 Member Function Description
 ---------------------------

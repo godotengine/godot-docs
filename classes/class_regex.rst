@@ -46,7 +46,7 @@ Capturing ``()`` and non-capturing ``(?:)`` groups
 
 Any character ``.``
 
-Shorthand caracter classes ``\w \W \s \S \d \D``
+Shorthand character classes ``\w \W \s \S \d \D``
 
 User-defined character classes such as ``:ref:`A-Za-z<class_a-za-z>```
 
@@ -56,7 +56,7 @@ Range quantifiers ``{x,y}``
 
 Lazy (non-greedy) quantifiers ``\*?``
 
-Begining ``^`` and end ``$`` anchors
+Beginning ``^`` and end ``$`` anchors
 
 Alternation ``|``
 

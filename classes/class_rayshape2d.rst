@@ -24,7 +24,7 @@ Member Functions
 Description
 -----------
 
-Ray 2D shape resource for physics. A ray is not really a collision body, isntead it tries to separate itself from whatever is touching its far endpoint. It's often useful for characters.
+Ray 2D shape resource for physics. A ray is not really a collision body, instead it tries to separate itself from whatever is touching its far endpoint. It's often useful for characters.
 
 Member Function Description
 ---------------------------

@@ -282,7 +282,7 @@ Return the minimum size this Control can shrink to. A control will never be disp
 
 - void  **set_anchor**  **(** :ref:`int<class_int>` margin, :ref:`int<class_int>` anchor_mode  **)**
 
-Change the anchor (ANCHOR_BEGIN, ANCHOR_END, ANCHOR_RATIO) type for a margin (MARGIN_LEFT, MARGIN_TOP, MARGIN_RIGHT, MARGIN_BOTTOM). Changing the anchor mode converts the current margin offset from the previos anchor mode to the new one, so margin offsets (:ref:`set_margin<class_Control_set_margin>`) must be done after setting anchors, or at the same time (:ref:`set_anchor_and_margin<class_Control_set_anchor_and_margin>`).
+Change the anchor (ANCHOR_BEGIN, ANCHOR_END, ANCHOR_RATIO) type for a margin (MARGIN_LEFT, MARGIN_TOP, MARGIN_RIGHT, MARGIN_BOTTOM). Changing the anchor mode converts the current margin offset from the previous anchor mode to the new one, so margin offsets (:ref:`set_margin<class_Control_set_margin>`) must be done after setting anchors, or at the same time (:ref:`set_anchor_and_margin<class_Control_set_anchor_and_margin>`).
 
 .. _class_Control_get_anchor:
 
@@ -364,7 +364,7 @@ Returns MARGIN_LEFT and MARGIN_TOP at the same time. This is a helper (see :ref:
 
 - :ref:`Vector2<class_vector2>`  **get_pos**  **(** **)** const
 
-Returns the Control position, relative to the top-left corner of the parent Control and independly of the anchor mode.
+Returns the Control position, relative to the top-left corner of the parent Control and independent of the anchor mode.
 
 .. _class_Control_get_size:
 
@@ -428,7 +428,7 @@ Set the focus access mode for the control (FOCUS_NONE, FOCUS_CLICK, FOCUS_ALL). 
 
 - :ref:`bool<class_bool>`  **has_focus**  **(** **)** const
 
-Return wether the Control is the current focused control (see :ref:`set_focus_mode<class_Control_set_focus_mode>`).
+Return whether the Control is the current focused control (see :ref:`set_focus_mode<class_Control_set_focus_mode>`).
 
 .. _class_Control_grab_focus:
 

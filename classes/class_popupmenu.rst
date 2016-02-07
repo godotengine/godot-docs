@@ -94,25 +94,25 @@ Member Function Description
 
 - void  **add_icon_item**  **(** :ref:`Object<class_object>` texture, :ref:`String<class_string>` label, :ref:`int<class_int>` id=-1, :ref:`int<class_int>` accel=0  **)**
 
-Add a new item with text "label" and icon "texture". An id can optonally be provided, as well as an accelerator. If no id is provided, one will be created from the index.
+Add a new item with text "label" and icon "texture". An id can optionally be provided, as well as an accelerator. If no id is provided, one will be created from the index.
 
 .. _class_PopupMenu_add_item:
 
 - void  **add_item**  **(** :ref:`String<class_string>` label, :ref:`int<class_int>` id=-1, :ref:`int<class_int>` accel=0  **)**
 
-Add a new item with text "label". An id can optonally be provided, as well as an accelerator. If no id is provided, one will be created from the index.
+Add a new item with text "label". An id can optionally be provided, as well as an accelerator. If no id is provided, one will be created from the index.
 
 .. _class_PopupMenu_add_icon_check_item:
 
 - void  **add_icon_check_item**  **(** :ref:`Object<class_object>` texture, :ref:`String<class_string>` label, :ref:`int<class_int>` id=-1, :ref:`int<class_int>` accel=0  **)**
 
-Add a new checkable item with text "label" and icon "texture". An id can optonally be provided, as well as an accelerator. If no id is provided, one will be created from the index. Note that checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually.
+Add a new check able item with text "label" and icon "texture". An id can optionally be provided, as well as an accelerator. If no id is provided, one will be created from the index. Note that checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually.
 
 .. _class_PopupMenu_add_check_item:
 
 - void  **add_check_item**  **(** :ref:`String<class_string>` label, :ref:`int<class_int>` id=-1, :ref:`int<class_int>` accel=0  **)**
 
-Add a new checkable item with text "label". An id can optonally be provided, as well as an accelerator. If no id is provided, one will be created from the index. Note that checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually.
+Add a new checkable item with text "label". An id can optionally be provided, as well as an accelerator. If no id is provided, one will be created from the index. Note that checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually.
 
 .. _class_PopupMenu_add_submenu_item:
 

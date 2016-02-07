@@ -25,15 +25,11 @@ The platform can compile binaries for both Windows 8.1 and Windows Phone
 Windows 8.1
 ~~~~~~~~~~~
 
-\* Open a "VS 2013 x64 Cross Tools Command Prompt"
+-  Open a "VS 2013 x64 Cross Tools Command Prompt"
+-  The value of environment variable "PLATFORM" should be "x64"
+-  Run scons with platform=winrt from the root of the source tree::
 
-\* The value of environment variable "PLATFORM" should be "x64"
-
-\* Run scons with platform=winrt from the root of the source tree
-
-::
-
-    C:\\godot_source> scons platform=winrt
+    C:\godot_source> scons platform=winrt
 
 -  You should get an executable file inside bin/ named according to your
    build options, for the architecture "x64", for example
@@ -42,15 +38,11 @@ Windows 8.1
 Windows Phone 8.1
 ~~~~~~~~~~~~~~~~~
 
-\* Open a "Visual Studio 2012 ARM Phone Tools Command Prompt"
+-  Open a "Visual Studio 2012 ARM Phone Tools Command Prompt"
+-  The value of environment variable "PLATFORM" should be "arm"
+-  Run scons with platform=winrt from the root of the source tree::
 
-\* The value of environment variable "PLATFORM" should be "arm"
-
-\* Run scons with platform=winrt from the root of the source tree
-
-::
-
-    C:\\godot_source> scons platform=winrt
+    C:\godot_source> scons platform=winrt
 
 -  You should get an executable file inside bin/ named according to your
    build options, for the architecture "arm", for example
@@ -70,32 +62,29 @@ You need to add files to each section:
 App.Shared
 ~~~~~~~~~~
 
--  Add a folder named "game" containing your game content (can be
-   individual files or your data.pck). Remember to set the "Content"
-   property of each file to "True", otherwise your files won't get
-   included in the package.
+Add a folder named "game" containing your game content (can be individual
+files or your data.pck). Remember to set the "Content" property of each
+file to "True", otherwise your files won't get included in the package.
 
 App.Windows
 ~~~~~~~~~~~
 
-\* Add your windows executable, and all the .dll files found on
-platform/winrt/x64/bin on the godot source. Remember to also set the
-"Content" property.
+-  Add your windows executable, and all the .dll files found on
+   platform/winrt/x64/bin on the godot source. Remember to also set the
+   "Content" property.
+-  Find the file "Package.appxmanifest". Right click on it and select
+   "Open with..." then "XML (Text) Editor" from the list.
+-  Find the "Application" section, and add (or modify) the "Executable"
+   property with the name of your .exe. Example:
 
-\* Find the file "Package.appxmanifest". Right click on it and select
-"Open with..." then "XML (Text) Editor" from the list.
-
-\* Find the "Application" section, and add (or modify) the "Executable"
-property with the name of your .exe. Example:
-
-::
+  <Application Id="App" Executable="godot.winrt.tools.x64.exe" EntryPoint="App_Windows.App">
 
 App.WindowsPhone
 ~~~~~~~~~~~~~~~~
 
--  Repeat all the steps from App.Windows, using your arm executable and
-   the dlls found in platform/winrt/arm/bin. Remember to set the
-   "Content" property for all the files.
+Repeat all the steps from App.Windows, using your arm executable and
+the dlls found in platform/winrt/arm/bin. Remember to set the
+"Content" property for all the files.
 
 Use the green "Play" button on the top to run. The drop down menu next
 to it should let you choose the project (App.Windows or

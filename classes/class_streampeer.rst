@@ -86,7 +86,7 @@ Member Functions
 Description
 -----------
 
-StreamPeer is an abstration and base class for stream-based protocols (such as TCP or Unix Sockets). It provides an API for sending and receiving data through streams as raw data or strings.
+StreamPeer is an abstraction and base class for stream-based protocols (such as TCP or Unix Sockets). It provides an API for sending and receiving data through streams as raw data or strings.
 
 Member Function Description
 ---------------------------
@@ -95,7 +95,7 @@ Member Function Description
 
 - :ref:`int<class_int>`  **put_data**  **(** :ref:`RawArray<class_rawarray>` data  **)**
 
-Send a chunk of data through the connection, blocking if necesary until the data is done sending. This function returns an Error code.
+Send a chunk of data through the connection, blocking if necessary until the data is done sending. This function returns an Error code.
 
 .. _class_StreamPeer_put_partial_data:
 

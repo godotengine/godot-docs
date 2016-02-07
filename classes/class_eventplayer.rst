@@ -141,7 +141,7 @@ Return whether this player will be restart the playback at the end.
 
 Set the playback volume for this player. This is a float between 0.0 (silent) and 1.0 (full volume). Values over 1.0 may amplify sound even more, but may introduce distortion. Negative values may just invert the output waveform, which produces no audible difference.
 
-The effect of these special values uiltimately depends on the low-level implementation of the file format being played.
+The effect of these special values ultimately depends on the low-level implementation of the file format being played.
 
 .. _class_EventPlayer_get_volume:
 
@@ -177,7 +177,7 @@ Return the tempo multiplier.
 
 - void  **set_volume_db**  **(** :ref:`float<class_float>` db  **)**
 
-Set the playback volume for this player, in decibels. This is a float between -80.0 (silent) and 0.0 (full volume). Values under -79.0 get truncated to -80, but values over 0.0 do not, so the warnings for overamplifying (see :ref:`set_volume<class_EventPlayer_set_volume>`) still apply.
+Set the playback volume for this player, in decibels. This is a float between -80.0 (silent) and 0.0 (full volume). Values under -79.0 get truncated to -80, but values over 0.0 do not, so the warnings for over amplifying (see :ref:`set_volume<class_EventPlayer_set_volume>`) still apply.
 
 .. _class_EventPlayer_get_volume_db:
 

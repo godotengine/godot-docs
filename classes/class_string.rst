@@ -126,7 +126,7 @@ Member Functions
 Description
 -----------
 
-This is the built-in string class (and the one used by GDScript). It supports Unicode and provides all necesary means for string handling. Strings are reference counted and use a copy-on-write approach, so passing them around is cheap in resources.
+This is the built-in string class (and the one used by GDScript). It supports Unicode and provides all necessary means for string handling. Strings are reference counted and use a copy-on-write approach, so passing them around is cheap in resources.
 
 Member Function Description
 ---------------------------
@@ -161,7 +161,7 @@ Return the string in uppercase.
 
 - :ref:`int<class_int>`  **casecmp_to**  **(** :ref:`String<class_string>` to  **)**
 
-Perform a case-sensitive comparison to antoher string, return -1 if less, 0 if equal and +1 if greater.
+Perform a case-sensitive comparison to another string, return -1 if less, 0 if equal and +1 if greater.
 
 .. _class_String_empty:
 
@@ -179,19 +179,19 @@ If the string is a path to a file, return the extension.
 
 - :ref:`int<class_int>`  **find**  **(** :ref:`String<class_string>` what, :ref:`int<class_int>` from=0  **)**
 
-Find the first occurence of a substring, return the starting position of the substring or -1 if not found. Optionally, the initial search index can be passed.
+Find the first occurrence of a substring, return the starting position of the substring or -1 if not found. Optionally, the initial search index can be passed.
 
 .. _class_String_find_last:
 
 - :ref:`int<class_int>`  **find_last**  **(** :ref:`String<class_string>` what  **)**
 
-Find the last occurence of a substring, return the starting position of the substring or -1 if not found. Optionally, the initial search index can be passed.
+Find the last occurrence of a substring, return the starting position of the substring or -1 if not found. Optionally, the initial search index can be passed.
 
 .. _class_String_findn:
 
 - :ref:`int<class_int>`  **findn**  **(** :ref:`String<class_string>` what, :ref:`int<class_int>` from=0  **)**
 
-Find the first occurence of a substring but search as case-insensitive, return the starting position of the substring or -1 if not found. Optionally, the initial search index can be passed.
+Find the first occurrence of a substring but search as case-insensitive, return the starting position of the substring or -1 if not found. Optionally, the initial search index can be passed.
 
 .. _class_String_get_base_dir:
 
@@ -303,7 +303,7 @@ Do a simple, case insensitive, expression matching, using ? and \* wildcards.
 
 - :ref:`int<class_int>`  **nocasecmp_to**  **(** :ref:`String<class_string>` to  **)**
 
-Perform a case-insensitive comparison to antoher string, return -1 if less, 0 if equal and +1 if greater.
+Perform a case-insensitive comparison to another string, return -1 if less, 0 if equal and +1 if greater.
 
 .. _class_String_ord_at:
 
@@ -347,13 +347,13 @@ Replace occurrences of a substring for different ones inside the string, but sea
 
 - :ref:`int<class_int>`  **rfind**  **(** :ref:`String<class_string>` what, :ref:`int<class_int>` from=-1  **)**
 
-Perform a search for a substring, but start from the end of the string instead of the begining.
+Perform a search for a substring, but start from the end of the string instead of the beginning.
 
 .. _class_String_rfindn:
 
 - :ref:`int<class_int>`  **rfindn**  **(** :ref:`String<class_string>` what, :ref:`int<class_int>` from=-1  **)**
 
-Perform a search for a substring, but start from the end of the string instead of the begining. Also search case-insensitive.
+Perform a search for a substring, but start from the end of the string instead of the beginning. Also search case-insensitive.
 
 .. _class_String_right:
 
@@ -377,7 +377,7 @@ Split the string in floats by using a divisor string, return an array of the sub
 
 - :ref:`String<class_string>`  **strip_edges**  **(** **)**
 
-Return a copy of the string stripped of any non-printable character at the begining and the end.
+Return a copy of the string stripped of any non-printable character at the beginning and the end.
 
 .. _class_String_substr:
 

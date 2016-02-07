@@ -46,7 +46,7 @@ Numeric Constants
 Description
 -----------
 
-PopUp is a base :ref:`Control<class_control>` used to show dialogs and popups. It's a subwindow and modal by default (see :ref:`Control<class_control>`) and has helpers for custom popup behavior.
+Popup is a base :ref:`Control<class_control>` used to show dialogs and popups. It's a subwindow and modal by default (see :ref:`Control<class_control>`) and has helpers for custom popup behavior.
 
 Member Function Description
 ---------------------------
@@ -55,7 +55,7 @@ Member Function Description
 
 - void  **popup_centered**  **(** :ref:`Vector2<class_vector2>` size=Vector2(0,0)  **)**
 
-Popup (show the control in modal form) in the center of the screen, at the curent size, or at a size determined by "size".
+Popup (show the control in modal form) in the center of the screen, at the current size, or at a size determined by "size".
 
 .. _class_Popup_popup_centered_ratio:
 

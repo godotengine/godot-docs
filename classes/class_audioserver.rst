@@ -181,7 +181,7 @@ Return the length in samples (not bytes) of the audio sample. Even if a stereo s
 
 - void  **sample_set_signed_data**  **(** :ref:`RID<class_rid>` sample, :ref:`RealArray<class_realarray>` data  **)**
 
-Set the sample data for a given sample as an array of floats. The length must be equal to the sample lenght or an error will be produced.
+Set the sample data for a given sample as an array of floats. The length must be equal to the sample length or an error will be produced.
 
 For this method, a stereo sample is made from two samples. Thus, in case of a stereo sample, the array length must be twice the length returned by :ref:`sample_get_length<class_AudioServer_sample_get_length>`.
 
@@ -191,7 +191,7 @@ Trying to alter a SAMPLE_FORMAT_IMA_ADPCM sample is not supported. It will throw
 
 - void  **sample_set_data**  **(** :ref:`RID<class_rid>` sample, :ref:`RawArray<class_rawarray>` data  **)**
 
-Set the sample data for a given sample as an array of bytes. The length must be equal to the sample lenght expected in bytes or an error will be produced. The byte length can be calculated as follows:
+Set the sample data for a given sample as an array of bytes. The length must be equal to the sample length expected in bytes or an error will be produced. The byte length can be calculated as follows:
 
 Get the sample length (:ref:`get_sample_length<class_AudioServer_get_sample_length>`).
 
@@ -307,7 +307,7 @@ Set a different playback mix rate for the given voice.
 
 - void  **voice_set_positional**  **(** :ref:`RID<class_rid>` voice, :ref:`bool<class_bool>` enabled  **)**
 
-Set wether a given voice is positional. This is only interpreted as a hint and used for backends that may support binaural encoding.
+Set whether a given voice is positional. This is only interpreted as a hint and used for backends that may support binaural encoding.
 
 .. _class_AudioServer_voice_get_volume:
 
@@ -379,7 +379,7 @@ Return the current mix rate for a given voice.
 
 - :ref:`bool<class_bool>`  **voice_is_positional**  **(** :ref:`RID<class_rid>` voice  **)** const
 
-Return wether the current voice is positional. See :ref:`voice_set_positional<class_AudioServer_voice_set_positional>`.
+Return whether the current voice is positional. See :ref:`voice_set_positional<class_AudioServer_voice_set_positional>`.
 
 .. _class_AudioServer_voice_stop:
 

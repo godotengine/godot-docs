@@ -71,7 +71,7 @@ Return the button text.
 
 - void  **set_flat**  **(** :ref:`bool<class_bool>` enabled  **)**
 
-Set the *flat* property of a Button. Flat buttons don't display decoration unless hoevered or pressed.
+Set the *flat* property of a Button. Flat buttons don't display decoration unless hovered or pressed.
 
 .. _class_Button_set_clip_text:
 

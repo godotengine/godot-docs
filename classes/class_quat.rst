@@ -69,7 +69,7 @@ Returns the dot product between two quaternions.
 
 - :ref:`Quat<class_quat>`  **inverse**  **(** **)**
 
-Returns the inverse of the quaternion (applies to the inverse rotatio too).
+Returns the inverse of the quaternion (applies to the inverse rotation too).
 
 .. _class_Quat_length:
 

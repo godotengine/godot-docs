@@ -117,13 +117,13 @@ Return whether the tabs should be visible or hidden.
 
 - void  **set_tab_title**  **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_string>` title  **)**
 
-Set a title for the tab. Tab titles are by default the children node name, but this can be overriden.
+Set a title for the tab. Tab titles are by default the children node name, but this can be overridden.
 
 .. _class_TabContainer_get_tab_title:
 
 - :ref:`String<class_string>`  **get_tab_title**  **(** :ref:`int<class_int>` tab_idx  **)** const
 
-Return the title for the tab. Tab titles are by default the children node name, but this can be overriden.
+Return the title for the tab. Tab titles are by default the children node name, but this can be overridden.
 
 .. _class_TabContainer_set_tab_icon:
 

@@ -101,7 +101,7 @@ Set the tuple of input/output slots defined by 'idx' ID. 'left' slots are input,
 
 - void  **clear_slot**  **(** :ref:`int<class_int>` idx  **)**
 
-Disable input and ouput slot whose index is 'idx'.
+Disable input and output slot whose index is 'idx'.
 
 .. _class_GraphNode_clear_all_slots:
 

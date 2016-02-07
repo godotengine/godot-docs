@@ -208,7 +208,7 @@ Return the gravity factor.
 
 - void  **set_linear_damp**  **(** :ref:`float<class_float>` linear_damp  **)**
 
-Set the linear damp for this body. If this value is different from -1, any linear damp derived from the world or areas will be overriden.
+Set the linear damp for this body. If this value is different from -1, any linear damp derived from the world or areas will be overridden.
 
 .. _class_RigidBody2D_get_linear_damp:
 
@@ -220,7 +220,7 @@ Return the linear damp for this body.
 
 - void  **set_angular_damp**  **(** :ref:`float<class_float>` angular_damp  **)**
 
-Set the angular damp for this body. If this value is different from -1, any angular damp derived from the world or areas will be overriden.
+Set the angular damp for this body. If this value is different from -1, any angular damp derived from the world or areas will be overridden.
 
 .. _class_RigidBody2D_get_angular_damp:
 
@@ -294,7 +294,7 @@ Return whether contact monitoring is enabled.
 
 Set the continuous collision detection mode from the enum CCD_MODE\_\*.
 
-Coninuous collision detection tries to predict where a moving body will collide, instead of moving it and correcting its movement if it collided. The first is more precise, and misses less impacts by small, fast-moving objects. The second is faster to compute, but can miss small, fat-moving objects.
+Continuous collision detection tries to predict where a moving body will collide, instead of moving it and correcting its movement if it collided. The first is more precise, and misses less impacts by small, fast-moving objects. The second is faster to compute, but can miss small, fat-moving objects.
 
 .. _class_RigidBody2D_get_continuous_collision_detection_mode:
 

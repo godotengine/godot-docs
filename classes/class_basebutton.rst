@@ -61,7 +61,7 @@ Numeric Constants
 Description
 -----------
 
-BaseButton is the abstract base class for buttons, so it shouldn't be used directly (It doesnt display anything). Other types of buttons inherit from it.
+BaseButton is the abstract base class for buttons, so it shouldn't be used directly (It doesn't display anything). Other types of buttons inherit from it.
 
 Member Function Description
 ---------------------------
@@ -112,13 +112,13 @@ Set the button into disabled state. When a button is disabled, it can't be click
 
 - :ref:`bool<class_bool>`  **is_disabled**  **(** **)** const
 
-Return wether the button is in disabled state (see :ref:`set_disabled<class_BaseButton_set_disabled>`).
+Return whether the button is in disabled state (see :ref:`set_disabled<class_BaseButton_set_disabled>`).
 
 .. _class_BaseButton_set_click_on_press:
 
 - void  **set_click_on_press**  **(** :ref:`bool<class_bool>` enable  **)**
 
-Set the button click_on_press mode. This mode generates click events when a mousebutton or key is just pressed (by default events are generated when the button/keys are released and both press and release occur in the visual area of the Button).
+Set the button click_on_press mode. This mode generates click events when a mouse button or key is just pressed (by default events are generated when the button/keys are released and both press and release occur in the visual area of the Button).
 
 .. _class_BaseButton_get_click_on_press:
 
@@ -130,6 +130,6 @@ Return the state of the click_on_press property (see :ref:`set_click_on_press<cl
 
 - :ref:`int<class_int>`  **get_draw_mode**  **(** **)** const
 
-Return the visual state used to draw the button. This is useful mainly when implementing your own draw code by either overiding _draw() or connecting to "draw" signal. The visual state of the button is defined by the DRAW\_\* enum.
+Return the visual state used to draw the button. This is useful mainly when implementing your own draw code by either overriding _draw() or connecting to "draw" signal. The visual state of the button is defined by the DRAW\_\* enum.
 
 

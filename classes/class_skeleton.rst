@@ -69,7 +69,7 @@ Numeric Constants
 Description
 -----------
 
-Skeleton provides a hierachial interface for managing bones, including pose, rest and animation (see :ref:`Animation<class_animation>`). Skeleton will support rag doll dynamics in the future.
+Skeleton provides a hierarchical interface for managing bones, including pose, rest and animation (see :ref:`Animation<class_animation>`). Skeleton will support rag doll dynamics in the future.
 
 Member Function Description
 ---------------------------

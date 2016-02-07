@@ -99,7 +99,7 @@ Signals
 Numeric Constants
 -----------------
 
-- **NOTIFICATION_TRANSFORM_CHANGED** = **29** --- Spatial nodes receive this notifacation with their global transform changes. This means that either the current or a parent node changed its transform.
+- **NOTIFICATION_TRANSFORM_CHANGED** = **29** --- Spatial nodes receive this notification with their global transform changes. This means that either the current or a parent node changed its transform.
 - **NOTIFICATION_ENTER_WORLD** = **41**
 - **NOTIFICATION_EXIT_WORLD** = **42**
 - **NOTIFICATION_VISIBILITY_CHANGED** = **43**

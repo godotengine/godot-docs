@@ -61,15 +61,15 @@ position: place where ray is stopped.
 
 normal: normal of the object at the point where the ray was stopped.
 
-shape: shape index of the object agaisnt which the ray was stopped.
+shape: shape index of the object against which the ray was stopped.
 
-collider\_: collider agaisnt which the ray was stopped.
+collider\_: collider against which the ray was stopped.
 
-collider_id: collider id of the object agaisnt which the ray was stopped.
+collider_id: collider id of the object against which the ray was stopped.
 
-collider: collider object agaisnt which the ray was stopped.
+collider: collider object against which the ray was stopped.
 
-rid: :ref:`RID<class_rid>` of the object agaisnt which the ray was stopped.
+rid: :ref:`RID<class_rid>` of the object against which the ray was stopped.
 
 If the ray did not intersect anything, then an empty dictionary (dir.empty()==true) is returned instead.
 

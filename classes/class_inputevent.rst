@@ -41,7 +41,7 @@ Numeric Constants
 - **KEY** = **1** --- Key event.
 - **MOUSE_MOTION** = **2** --- Mouse motion event.
 - **MOUSE_BUTTON** = **3** --- Mouse button event.
-- **JOYSTICK_MOTION** = **4** --- Jostick motion event.
+- **JOYSTICK_MOTION** = **4** --- Joystick motion event.
 - **JOYSTICK_BUTTON** = **5** --- Joystick button event.
 - **SCREEN_TOUCH** = **6**
 - **SCREEN_DRAG** = **7**

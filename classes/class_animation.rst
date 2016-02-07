@@ -113,7 +113,7 @@ Member Function Description
 
 - :ref:`int<class_int>`  **add_track**  **(** :ref:`int<class_int>` type, :ref:`int<class_int>` at_pos=-1  **)**
 
-Add a track to the Animation. The track type must be specified as any of the values in te TYPE\_\* enumeration.
+Add a track to the Animation. The track type must be specified as any of the values in the TYPE\_\* enumeration.
 
 .. _class_Animation_remove_track:
 
@@ -159,7 +159,7 @@ Move a track up.
 
 - void  **track_move_down**  **(** :ref:`int<class_int>` idx  **)**
 
-Nove a track down.
+Move a track down.
 
 .. _class_Animation_transform_track_insert_key:
 
@@ -255,7 +255,7 @@ Enable or disable interpolation for a whole track. By default tracks are interpo
 
 - :ref:`bool<class_bool>`  **value_track_is_continuous**  **(** :ref:`int<class_int>` idx  **)** const
 
-Return wether interpolation is enabled or disabled for a whole track. By default tracks are interpolated.
+Return whether interpolation is enabled or disabled for a whole track. By default tracks are interpolated.
 
 .. _class_Animation_value_track_get_key_indices:
 
@@ -303,7 +303,7 @@ Set a flag indicating that the animation must loop. This is uses for correct int
 
 - :ref:`bool<class_bool>`  **has_loop**  **(** **)** const
 
-Return wether the animation has the loop flag set.
+Return whether the animation has the loop flag set.
 
 .. _class_Animation_set_step:
 

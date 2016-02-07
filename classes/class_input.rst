@@ -80,11 +80,13 @@ Member Function Description
 
 - :ref:`bool<class_bool>`  **is_mouse_button_pressed**  **(** :ref:`int<class_int>` button  **)**
 
+Returns true or false depending on whether mouse button is pressed or not. You can pass BUTTON\_\*, which are pre-defined constants listed in :ref:`@Global Scope<class_@global scope>`.
+
 .. _class_Input_is_joy_button_pressed:
 
 - :ref:`bool<class_bool>`  **is_joy_button_pressed**  **(** :ref:`int<class_int>` device, :ref:`int<class_int>` button  **)**
 
-Returns if the joystick button at the given index is currently pressed. (see JOY\_\* constans in :ref:`@Global Scope<class_@global scope>`)
+Returns if the joystick button at the given index is currently pressed. (see JOY\_\* constants in :ref:`@Global Scope<class_@global scope>`)
 
 .. _class_Input_is_action_pressed:
 

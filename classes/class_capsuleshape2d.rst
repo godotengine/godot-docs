@@ -28,7 +28,7 @@ Member Functions
 Description
 -----------
 
-Capsule 2D shape resource for physics. A capsule (or sometimes called "pill") is like a line grown in all directions. It has a radius and a height, and is often useful for modelling biped characters.
+Capsule 2D shape resource for physics. A capsule (or sometimes called "pill") is like a line grown in all directions. It has a radius and a height, and is often useful for modeling biped characters.
 
 Member Function Description
 ---------------------------

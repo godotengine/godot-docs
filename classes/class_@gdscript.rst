@@ -214,7 +214,7 @@ Arc-tangent.
 
 - :ref:`float<class_float>`  **atan2**  **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y  **)**
 
-Arc-tangent that takes a 2D vector as argument, retuns the full -pi to +pi range.
+Arc-tangent that takes a 2D vector as argument, returns the full -pi to +pi range.
 
 .. _class_@GDScript_sqrt:
 
@@ -368,7 +368,7 @@ Convert from degrees to radians.
 
 - :ref:`float<class_float>`  **rad2deg**  **(** :ref:`float<class_float>` rad  **)**
 
-Convert from radias to degrees.
+Convert from radians to degrees.
 
 .. _class_@GDScript_linear2db:
 
