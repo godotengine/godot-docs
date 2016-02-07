@@ -151,7 +151,5 @@ screens with progress bar, animated indicators or thread (background)
 loading. This must be done manually using autoloads (see next chapter!)
 and [[Background Loading]].
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*
 
 

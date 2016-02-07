@@ -68,7 +68,5 @@ Microsoft, etc) .
 Or just pick any of the more specific certificates there if you are
 connecting to a specific one.
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*
 
 

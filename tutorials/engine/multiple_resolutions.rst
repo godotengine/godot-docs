@@ -88,7 +88,5 @@ Stretch Aspect
    option for 2D games that scroll horizontally (like runners or
    platformers).
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*
 
 

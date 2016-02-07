@@ -61,7 +61,5 @@ instantly visible:
 This allows to very quickly create custom, complex materials for every
 type of object.
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*
 
 

@@ -44,7 +44,5 @@ can be set a custom font by editing the following property:
 As a side note, the font was imported from a TTF, there is a [[Importing
 Fonts]] for importing fonts.
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*
 
 

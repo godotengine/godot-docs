@@ -6,8 +6,7 @@ Contributing
    :name: toc-contributing
 
    bug_triage_guidelines
-   documentation_guidelines
-   documentation_writing_and_translating_guidelines
+   doc_and_l10n_guidelines
    list_of_classes_and_documenters
    reference_filling_work
    wiki_syntax

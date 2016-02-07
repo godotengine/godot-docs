@@ -181,7 +181,5 @@ Re-positioning controls for these kind of interfaces is more commonly
 done with containers (see the [[GUI Repositioning]] tutorial for more
 info).
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*
 
 

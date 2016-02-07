@@ -130,5 +130,3 @@ modified. Make sure to **not commit this file** to git or svn, as it
 contains local information and might confuse another editor instance in
 another computer.
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*

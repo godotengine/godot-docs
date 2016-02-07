@@ -107,7 +107,5 @@ purposes, such as baking light emissors that are not going to be used in
 real-time, and baking light bounces from real-time lights to add more
 realism to a scene (see Baked Light]] tutorial for more information).
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*
 
 

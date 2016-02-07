@@ -190,7 +190,5 @@ Make sure to check the viewport demos! Viewport folder in the demo.zip
 available to download, or
 https://github.com/okamstudio/godot/tree/master/demos/viewport
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*
 
 

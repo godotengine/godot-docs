@@ -113,7 +113,4 @@ Licence
 -------
 
 This wiki and every page it contains is published under the terms of the
-Creative Commons By-SA 4.0.
-
-© Juan Linietsky, Ariel Mansur and contributors - License Creative
-Commons By-SA 4.0.
+Creative Commons BY 3.0 license.

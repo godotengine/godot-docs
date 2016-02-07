@@ -78,7 +78,5 @@ nodes. The most optimal way will always be arranging them by tree order.
 In the future, nodes will also have a priority or sub-layer index which
 should aid for this.
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*
 
 

@@ -113,7 +113,5 @@ sorted by depth). This behavior can be changed here. The options are:
 
 .. image:: /img/material_depth_draw.png
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*
 
 

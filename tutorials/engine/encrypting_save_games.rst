@@ -55,5 +55,3 @@ some unique user identifier is needed, for example:
 
 This is all! Thanks for your cooperation, citizen.
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*

@@ -217,7 +217,5 @@ kept loaded and ready to use, so it can be used to create as many
 instances as desired. This is specially useful, for example, to instance
 several enemies, bullets, etc. quickly in the active scene.
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*
 
 

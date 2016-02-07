@@ -145,5 +145,3 @@ exists, but can be checked with the \_notification callback:
           pass # for modal popups, notification
           # that the popup was closed
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*

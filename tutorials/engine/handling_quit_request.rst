@@ -35,5 +35,3 @@ behavior to quit when quit is requested, this can be changed:
 
     get_tree().set_auto_accept_quit(false)
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*

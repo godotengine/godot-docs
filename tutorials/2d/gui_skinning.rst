@@ -162,7 +162,5 @@ replace it by the theme that was just created. It should look like this:
 
 Congratulations! You have created a reusable GUI Theme!
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*
 
 

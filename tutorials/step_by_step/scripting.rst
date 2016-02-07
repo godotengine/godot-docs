@@ -226,7 +226,5 @@ to obtain it would be:
 And, also, try to remember that nodes are referenced by name, not by
 type.
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*
 
 

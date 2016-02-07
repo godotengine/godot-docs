@@ -175,7 +175,6 @@ parameter. This means that if a texture is loaded for diffuse, it will
 be multiplied by the color of the diffuse color parameter. Same applies
 to all the others except for specular exponent, which is replaced.
 
-© Juan Linietsky, Ariel Manzur, Distributed under the terms of the
 [[https://creativecommons.org/licenses/by/3.0/legalcode]] license.
 
 

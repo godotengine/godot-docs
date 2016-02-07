@@ -106,7 +106,5 @@ Godot:
    region of the screen and then use texscreen() on a different region.
    Avoid this behavior!
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*
 
 

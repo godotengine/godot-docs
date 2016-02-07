@@ -166,7 +166,5 @@ ones that look better for you:
 -  Viewport Scaling can often help shrinking the map (see the
    [[Viewports]] tutorial).
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*
 
 

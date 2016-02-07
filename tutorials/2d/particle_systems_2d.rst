@@ -256,7 +256,5 @@ All physics parameters can be randomiez. Random variables go from 0 to
 
     initial_value = param_value + param_value*randomness
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*
 
 

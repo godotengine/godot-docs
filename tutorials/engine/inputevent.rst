@@ -144,7 +144,5 @@ singleton is not saved (must be modified manually) and it's state is run
 from the project settings (engine.cfg). So any dynamic system of this
 type needs to store settings in the way the programmer sees best fit.
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*
 
 

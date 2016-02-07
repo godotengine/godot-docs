@@ -432,7 +432,5 @@ In case of overlap, who receives collision information?
   None \|
 | \| **Area** \| Area \| Area \| Area \| None \| Both \|
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*
 
 

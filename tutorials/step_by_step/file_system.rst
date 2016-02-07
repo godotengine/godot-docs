@@ -106,5 +106,3 @@ for files.
 Because of this, please instruct your team to use a specific naming
 convention for files when working with Godot!
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*

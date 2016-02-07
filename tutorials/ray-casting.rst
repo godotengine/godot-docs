@@ -175,7 +175,5 @@ To obtain it using a camera, the following code can be used:
 Of course, remember that during \_input(), space may be locked, so save
 your query for \_fixed\_process().
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*
 
 

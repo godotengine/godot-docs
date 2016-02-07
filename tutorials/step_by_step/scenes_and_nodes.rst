@@ -204,7 +204,5 @@ This tutorial talks about "Scenes and Nodes", but so far there has been
 only *one* scene and *one* node! Don't worry, the next tutorial will
 deal with that...
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*
 
 

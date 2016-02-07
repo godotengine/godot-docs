@@ -177,7 +177,5 @@ scenes y pressing the button!
 (To load scenes with a progress bar, check out the next tutorial,
 [[Background Loading]])
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*
 
 

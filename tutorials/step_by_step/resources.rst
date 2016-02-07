@@ -143,7 +143,5 @@ Like any object in Godot, not just nodes, Resources can be scripted too.
 However, there isn't generally much of a win, as resources are just data
 containers.
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*
 
 

@@ -163,7 +163,5 @@ Exposure Adjustment Speed
 Auto-exposure will change slowly and will take a while to adjust (like
 in real cameras). Bigger values means faster adjustment.
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*
 
 

@@ -352,7 +352,5 @@ apply the "Out-In" transition curve to smooth the animation:
 
 .. image:: /img/tuto_cutout24.png
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*
 
 

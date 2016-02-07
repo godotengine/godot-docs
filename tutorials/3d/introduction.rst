@@ -244,7 +244,5 @@ overall.
 It is possible to use [[Light Baking]], to avoid using large amount of
 real-time lights and improve performance.
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*
 
 

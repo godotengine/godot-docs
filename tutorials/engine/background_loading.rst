@@ -367,5 +367,3 @@ Example:
 scenarios. Find me on IRC (punto on irc.freenode.net) or e-mail me
 (punto@okamstudio.com) for help.
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*

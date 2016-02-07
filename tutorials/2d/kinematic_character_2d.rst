@@ -246,7 +246,5 @@ A more complete demo can be found in the demo zip distributed with the
 engine, or in the
 https://github.com/okamstudio/godot/tree/master/demos/2d/kinematic\_char.
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*
 
 

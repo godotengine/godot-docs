@@ -108,7 +108,5 @@ Conclusion
 Instancing seems handy, but there is more to it than it meets the eye!
 The next part of the instancing tutorial should cover the rest..
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*
 
 

@@ -116,7 +116,5 @@ application/name and append it the locale identifier. For example:
 As always, If you don't know the code of a language or zone, `check the
 list <https://github.com/okamstudio/godot/wiki/locales>`__.
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*
 
 

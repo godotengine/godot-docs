@@ -111,5 +111,3 @@ Tools
 | Remember to just use the "tool" keyword at the top of the script
   (check the [[GDScript]] reference if you forgot what this does).
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*

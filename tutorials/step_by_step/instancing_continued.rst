@@ -74,7 +74,5 @@ way to understand all this is to make some games.
 Everything will become very obvious when put to practice, so, please do
 not scratch your head and go on to the next tutorial!
 
-*Juan Linietsky, Ariel Manzur, Distributed under the terms of the `CC
-By <https://creativecommons.org/licenses/by/3.0/legalcode>`__ license.*
 
 
