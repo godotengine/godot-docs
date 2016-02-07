@@ -9,8 +9,8 @@ Welcome to Godot Engine's documentation!
 The main documentation for the site is organized into a couple sections:
 
 * :ref:`sec-tutorials`
-* :ref:`sec-further`
-* :ref:`sec-api-doc`
+* :ref:`sec-reference`
+* :ref:`sec-community`
 
 .. toctree::
    :maxdepth: 1
@@ -24,23 +24,24 @@ The main documentation for the site is organized into a couple sections:
    tutorials/_networking
    tutorials/_plugins
    tutorials/_misc
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Getting further
-   :name: sec-further
-
    asset_pipeline/index
-   reference/index
-   advanced/index
-   contributing/index
 
 .. toctree::
    :maxdepth: 1
-   :caption: API documentation
-   :name: sec-api-doc
+   :caption: Reference
+   :name: sec-reference
 
    classes/index
+   reference/_languages
+   reference/_cheat_sheets
+   advanced/index
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Community
+   :name: sec-community
+
+   contributing/index
 
 .. Indices and tables
 .. ------------------
