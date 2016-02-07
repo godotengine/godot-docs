@@ -34,6 +34,7 @@ The main documentation for the site is organized into a couple sections:
    classes/index
    reference/_languages
    reference/_cheat_sheets
+   advanced/_compiling
    advanced/index
 
 .. toctree::
