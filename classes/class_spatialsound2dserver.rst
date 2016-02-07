@@ -3,14 +3,9 @@
 SpatialSound2DServer
 ====================
 
-Inherits: :ref:`Object<class_object>`
--------------------------------------
+**Inherits:** :ref:`Object<class_object>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Server for Spatial 2D Sound.
 

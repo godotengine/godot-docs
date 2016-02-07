@@ -3,14 +3,9 @@
 Light
 =====
 
-Inherits: :ref:`VisualInstance<class_visualinstance>`
------------------------------------------------------
+**Inherits:** :ref:`VisualInstance<class_visualinstance>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Provides a base class for different kinds of light nodes.
 

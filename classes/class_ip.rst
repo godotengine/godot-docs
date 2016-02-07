@@ -3,14 +3,9 @@
 IP
 ==
 
-Inherits: :ref:`Object<class_object>`
--------------------------------------
+**Inherits:** :ref:`Object<class_object>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 IP Protocol support functions.
 
@@ -65,7 +60,7 @@ Create a queue item for resolving a given hostname. The queue ID is returned, or
 
 - :ref:`int<class_int>`  **get_resolve_item_status**  **(** :ref:`int<class_int>` id  **)** const
 
-Return the status of hostname queued for resolving, given it's queue ID. Returned status can be any of the RESOLVER_STATUS_* enumeration.
+Return the status of hostname queued for resolving, given it's queue ID. Returned status can be any of the RESOLVER_STATUS\_\* enumeration.
 
 .. _class_IP_get_resolve_item_address:
 

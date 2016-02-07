@@ -3,11 +3,7 @@
 NodePath
 ========
 
-Category: Built-In Types
-------------------------
-
-Brief Description
------------------
+**Category:** Built-In Types
 
 Built-in type optimized for path traversing.
 

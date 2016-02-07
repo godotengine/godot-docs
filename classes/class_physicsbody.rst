@@ -3,14 +3,9 @@
 PhysicsBody
 ===========
 
-Inherits: :ref:`CollisionObject<class_collisionobject>`
--------------------------------------------------------
+**Inherits:** :ref:`CollisionObject<class_collisionobject>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Base class for different types of Physics bodies.
 

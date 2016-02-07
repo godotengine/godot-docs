@@ -3,14 +3,9 @@
 PhysicsShapeQueryResult
 =======================
 
-Inherits: :ref:`Reference<class_reference>`
--------------------------------------------
+**Inherits:** :ref:`Reference<class_reference>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Result of a shape query in Physics2DServer.
 

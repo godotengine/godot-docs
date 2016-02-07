@@ -3,14 +3,9 @@
 RigidBody2D
 ===========
 
-Inherits: :ref:`PhysicsBody2D<class_physicsbody2d>`
----------------------------------------------------
+**Inherits:** :ref:`PhysicsBody2D<class_physicsbody2d>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Rigid body 2D node.
 
@@ -138,7 +133,7 @@ Override this function to use a custom force integrator. This allows to hook up 
 
 - void  **set_mode**  **(** :ref:`int<class_int>` mode  **)**
 
-Set the body mode, from the MODE_* enum. This allows to change to a static body or a character body.
+Set the body mode, from the MODE\_\* enum. This allows to change to a static body or a character body.
 
 .. _class_RigidBody2D_get_mode:
 
@@ -294,7 +289,7 @@ Return whether contact monitoring is enabled.
 
 - void  **set_continuous_collision_detection_mode**  **(** :ref:`int<class_int>` mode  **)**
 
-Set the continuous collision detection mode from the enum CCD_MODE_*.
+Set the continuous collision detection mode from the enum CCD_MODE\_\*.
 
 Coninuous collision detection tries to predict where a moving body will collide, instead of moving it and correcting its movement if it collided. The first is more precise, and misses less impacts by small, fast-moving objects. The second is faster to compute, but can miss small, fat-moving objects.
 

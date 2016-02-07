@@ -3,14 +3,9 @@
 TileMap
 =======
 
-Inherits: :ref:`Node2D<class_node2d>`
--------------------------------------
+**Inherits:** :ref:`Node2D<class_node2d>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Node for 2D tile-based games.
 
@@ -147,7 +142,7 @@ Return the current tileset.
 
 - void  **set_mode**  **(** :ref:`int<class_int>` mode  **)**
 
-Set the orientation mode as square, isometric or custom (use MODE_* constants as argument).
+Set the orientation mode as square, isometric or custom (use MODE\_\* constants as argument).
 
 .. _class_TileMap_get_mode:
 
@@ -159,7 +154,7 @@ Return the orientation mode.
 
 - void  **set_half_offset**  **(** :ref:`int<class_int>` half_offset  **)**
 
-Set an half offset on the X coordinate, Y coordinate, or none (use HALF_OFFSET_* constants as argument).
+Set an half offset on the X coordinate, Y coordinate, or none (use HALF_OFFSET\_\* constants as argument).
 
 Half offset sets every other tile off by a half tile size in the specified direction.
 
@@ -211,7 +206,7 @@ Return the quadrant size.
 
 - void  **set_tile_origin**  **(** :ref:`int<class_int>` origin  **)**
 
-Set the tile origin to the tile center or its top-left corner (use TILE_ORIGIN_* constants as argument).
+Set the tile origin to the tile center or its top-left corner (use TILE_ORIGIN\_\* constants as argument).
 
 .. _class_TileMap_get_tile_origin:
 

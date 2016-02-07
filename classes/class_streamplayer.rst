@@ -3,14 +3,9 @@
 StreamPlayer
 ============
 
-Inherits: :ref:`Node<class_node>`
----------------------------------
+**Inherits:** :ref:`Node<class_node>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Base class for audio stream playback.
 

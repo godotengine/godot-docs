@@ -3,14 +3,9 @@
 TextureFrame
 ============
 
-Inherits: :ref:`Control<class_control>`
----------------------------------------
+**Inherits:** :ref:`Control<class_control>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Control Frame that draws a texture.
 

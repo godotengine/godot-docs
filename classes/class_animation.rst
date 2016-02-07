@@ -3,14 +3,9 @@
 Animation
 =========
 
-Inherits: :ref:`Resource<class_resource>`
------------------------------------------
+**Inherits:** :ref:`Resource<class_resource>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Contains data used to animate everything in the engine.
 
@@ -115,7 +110,7 @@ Member Function Description
 
 - :ref:`int<class_int>`  **add_track**  **(** :ref:`int<class_int>` type, :ref:`int<class_int>` at_pos=-1  **)**
 
-Add a track to the Animation. The track type must be specified as any of the values in te TYPE_* enumeration.
+Add a track to the Animation. The track type must be specified as any of the values in te TYPE\_\* enumeration.
 
 .. _class_Animation_remove_track:
 
@@ -233,13 +228,13 @@ Find the key index by time in a given track. Optionally, only find it if the exa
 
 - void  **track_set_interpolation_type**  **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` interpolation  **)**
 
-Set the interpolation type of a given track, from the INTERPOLATION_* enum.
+Set the interpolation type of a given track, from the INTERPOLATION\_\* enum.
 
 .. _class_Animation_track_get_interpolation_type:
 
 - :ref:`int<class_int>`  **track_get_interpolation_type**  **(** :ref:`int<class_int>` idx  **)** const
 
-Return the interpolation type of a given track, from the INTERPOLATION_* enum.
+Return the interpolation type of a given track, from the INTERPOLATION\_\* enum.
 
 .. _class_Animation_transform_track_interpolate:
 

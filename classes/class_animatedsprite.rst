@@ -3,14 +3,9 @@
 AnimatedSprite
 ==============
 
-Inherits: :ref:`Node2D<class_node2d>`
--------------------------------------
+**Inherits:** :ref:`Node2D<class_node2d>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Sprite node that can use multiple textures for animation.
 

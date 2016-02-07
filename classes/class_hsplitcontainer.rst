@@ -3,14 +3,9 @@
 HSplitContainer
 ===============
 
-Inherits: :ref:`SplitContainer<class_splitcontainer>`
------------------------------------------------------
+**Inherits:** :ref:`SplitContainer<class_splitcontainer>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Horizontal split container.
 

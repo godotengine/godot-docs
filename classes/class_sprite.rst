@@ -3,14 +3,9 @@
 Sprite
 ======
 
-Inherits: :ref:`Node2D<class_node2d>`
--------------------------------------
+**Inherits:** :ref:`Node2D<class_node2d>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 General purpose Sprite node.
 

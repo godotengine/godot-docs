@@ -3,14 +3,9 @@
 ConvexPolygonShape2D
 ====================
 
-Inherits: :ref:`Shape2D<class_shape2d>`
----------------------------------------
+**Inherits:** :ref:`Shape2D<class_shape2d>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Convex Polygon Shape for 2D physics.
 

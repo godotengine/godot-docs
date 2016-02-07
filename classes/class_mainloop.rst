@@ -3,14 +3,9 @@
 MainLoop
 ========
 
-Inherits: :ref:`Object<class_object>`
--------------------------------------
+**Inherits:** :ref:`Object<class_object>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Main loop is the abstract main loop base class.
 

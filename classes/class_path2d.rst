@@ -3,14 +3,9 @@
 Path2D
 ======
 
-Inherits: :ref:`Node2D<class_node2d>`
--------------------------------------
+**Inherits:** :ref:`Node2D<class_node2d>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Container for a :ref:`Curve2D<class_curve2d>`.
 

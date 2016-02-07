@@ -3,14 +3,9 @@
 StyleBox
 ========
 
-Inherits: :ref:`Resource<class_resource>`
------------------------------------------
+**Inherits:** :ref:`Resource<class_resource>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Base class for drawing stylized boxes for the UI.
 
@@ -53,19 +48,19 @@ Test a position in a rectangle, return wether it pases the mask test.
 
 - void  **set_default_margin**  **(** :ref:`int<class_int>` margin, :ref:`float<class_float>` offset  **)**
 
-Set the default offset "offset" of the margin "margin" (see MARGIN_* enum) for a StyleBox, Controls that draw styleboxes with context inside need to know the margin, so the border of the stylebox is not occluded.
+Set the default offset "offset" of the margin "margin" (see MARGIN\_\* enum) for a StyleBox, Controls that draw styleboxes with context inside need to know the margin, so the border of the stylebox is not occluded.
 
 .. _class_StyleBox_get_default_margin:
 
 - :ref:`float<class_float>`  **get_default_margin**  **(** :ref:`int<class_int>` margin  **)** const
 
-Return the default offset of the margin "margin" (see MARGIN_* enum) of a StyleBox, Controls that draw styleboxes with context inside need to know the margin, so the border of the stylebox is not occluded.
+Return the default offset of the margin "margin" (see MARGIN\_\* enum) of a StyleBox, Controls that draw styleboxes with context inside need to know the margin, so the border of the stylebox is not occluded.
 
 .. _class_StyleBox_get_margin:
 
 - :ref:`float<class_float>`  **get_margin**  **(** :ref:`int<class_int>` margin  **)** const
 
-Return the offset of margin "margin" (see MARGIN_* enum).
+Return the offset of margin "margin" (see MARGIN\_\* enum).
 
 .. _class_StyleBox_get_minimum_size:
 

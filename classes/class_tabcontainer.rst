@@ -3,14 +3,9 @@
 TabContainer
 ============
 
-Inherits: :ref:`Control<class_control>`
----------------------------------------
+**Inherits:** :ref:`Control<class_control>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Tabbed Container.
 
@@ -95,13 +90,13 @@ Return the current tab that is being showed.
 
 - void  **set_tab_align**  **(** :ref:`int<class_int>` align  **)**
 
-Set tab alignment, from the ALIGN_* enum. Moves tabs to the left, right or center.
+Set tab alignment, from the ALIGN\_\* enum. Moves tabs to the left, right or center.
 
 .. _class_TabContainer_get_tab_align:
 
 - :ref:`int<class_int>`  **get_tab_align**  **(** **)** const
 
-Return tab alignment, from the ALIGN_* enum.
+Return tab alignment, from the ALIGN\_\* enum.
 
 .. _class_TabContainer_set_tabs_visible:
 

@@ -3,11 +3,7 @@
 IntArray
 ========
 
-Category: Built-In Types
-------------------------
-
-Brief Description
------------------
+**Category:** Built-In Types
 
 Integer Array.
 

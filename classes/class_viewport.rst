@@ -3,14 +3,9 @@
 Viewport
 ========
 
-Inherits: :ref:`Node<class_node>`
----------------------------------
+**Inherits:** :ref:`Node<class_node>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Creates a sub-view into the screen.
 

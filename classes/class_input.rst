@@ -3,14 +3,9 @@
 Input
 =====
 
-Inherits: :ref:`Object<class_object>`
--------------------------------------
+**Inherits:** :ref:`Object<class_object>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 
 
@@ -84,7 +79,7 @@ Member Function Description
 
 - :ref:`bool<class_bool>`  **is_joy_button_pressed**  **(** :ref:`int<class_int>` device, :ref:`int<class_int>` button  **)**
 
-Returns if the joystick button at the given index is currently pressed. (see JOY_* constans in :ref:`@Global Scope<class_@global scope>`)
+Returns if the joystick button at the given index is currently pressed. (see JOY\_\* constans in :ref:`@Global Scope<class_@global scope>`)
 
 .. _class_Input_is_action_pressed:
 
@@ -106,13 +101,13 @@ Removes all mappings from the internal db that match the given uid.
 
 - :ref:`bool<class_bool>`  **is_joy_known**  **(** :ref:`int<class_int>` device  **)**
 
-Returns if the specified device is known by the system. This means that it sets all button and axis indices exactly as defined in the JOY_* constants (see :ref:`@Global Scope<class_@global scope>`). Unknown joysticks are not expected to match these constants, but you can still retrieve events from them.
+Returns if the specified device is known by the system. This means that it sets all button and axis indices exactly as defined in the JOY\_\* constants (see :ref:`@Global Scope<class_@global scope>`). Unknown joysticks are not expected to match these constants, but you can still retrieve events from them.
 
 .. _class_Input_get_joy_axis:
 
 - :ref:`float<class_float>`  **get_joy_axis**  **(** :ref:`int<class_int>` device, :ref:`int<class_int>` axis  **)**
 
-Returns the current value of the joystick axis at given index (see JOY_* constants in :ref:`@Global Scope<class_@global scope>`)
+Returns the current value of the joystick axis at given index (see JOY\_\* constants in :ref:`@Global Scope<class_@global scope>`)
 
 .. _class_Input_get_joy_name:
 

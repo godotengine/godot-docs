@@ -3,14 +3,9 @@
 GDScript
 ========
 
-Inherits: :ref:`Script<class_script>`
--------------------------------------
+**Inherits:** :ref:`Script<class_script>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 
 

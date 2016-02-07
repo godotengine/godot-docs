@@ -3,14 +3,9 @@
 Reference
 =========
 
-Inherits: :ref:`Object<class_object>`
--------------------------------------
+**Inherits:** :ref:`Object<class_object>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Base class for anything that keeps a reference count.
 

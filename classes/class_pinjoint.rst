@@ -3,14 +3,9 @@
 PinJoint
 ========
 
-Inherits: :ref:`Joint<class_joint>`
------------------------------------
+**Inherits:** :ref:`Joint<class_joint>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 
 

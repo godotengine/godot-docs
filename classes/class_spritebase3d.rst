@@ -3,14 +3,9 @@
 SpriteBase3D
 ============
 
-Inherits: :ref:`GeometryInstance<class_geometryinstance>`
----------------------------------------------------------
+**Inherits:** :ref:`GeometryInstance<class_geometryinstance>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 
 

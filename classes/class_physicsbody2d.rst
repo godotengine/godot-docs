@@ -3,14 +3,9 @@
 PhysicsBody2D
 =============
 
-Inherits: :ref:`CollisionObject2D<class_collisionobject2d>`
------------------------------------------------------------
+**Inherits:** :ref:`CollisionObject2D<class_collisionobject2d>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Base class for all objects affected by physics.
 

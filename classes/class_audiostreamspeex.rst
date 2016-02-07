@@ -3,14 +3,9 @@
 AudioStreamSpeex
 ================
 
-Inherits: :ref:`AudioStream<class_audiostream>`
------------------------------------------------
+**Inherits:** :ref:`AudioStream<class_audiostream>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Speex audio stream driver.
 

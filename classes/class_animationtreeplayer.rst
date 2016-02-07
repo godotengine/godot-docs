@@ -3,14 +3,9 @@
 AnimationTreePlayer
 ===================
 
-Inherits: :ref:`Node<class_node>`
----------------------------------
+**Inherits:** :ref:`Node<class_node>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Animation Player that uses a node graph for the blending.
 
@@ -189,7 +184,7 @@ Rename a node in the graph.
 
 - :ref:`int<class_int>`  **node_get_type**  **(** :ref:`String<class_string>` id  **)** const
 
-Get the node type, will return from NODE_* enum.
+Get the node type, will return from NODE\_\* enum.
 
 .. _class_AnimationTreePlayer_node_get_input_count:
 

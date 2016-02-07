@@ -3,14 +3,9 @@
 PathFollow
 ==========
 
-Inherits: :ref:`Spatial<class_spatial>`
----------------------------------------
+**Inherits:** :ref:`Spatial<class_spatial>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Point sampler for a :ref:`Path<class_path>`.
 

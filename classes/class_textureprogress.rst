@@ -3,14 +3,9 @@
 TextureProgress
 ===============
 
-Inherits: :ref:`Range<class_range>`
------------------------------------
+**Inherits:** :ref:`Range<class_range>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Textured progress bar implementation.
 

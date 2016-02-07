@@ -3,14 +3,9 @@
 AudioServerSW
 =============
 
-Inherits: :ref:`AudioServer<class_audioserver>`
------------------------------------------------
+**Inherits:** :ref:`AudioServer<class_audioserver>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Software implementation of :ref:`AudioServer<class_audioserver>`.
 

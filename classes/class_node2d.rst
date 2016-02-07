@@ -3,14 +3,9 @@
 Node2D
 ======
 
-Inherits: :ref:`CanvasItem<class_canvasitem>`
----------------------------------------------
+**Inherits:** :ref:`CanvasItem<class_canvasitem>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Base node for 2D system.
 

@@ -3,14 +3,9 @@
 AudioServer
 ===========
 
-Inherits: :ref:`Object<class_object>`
--------------------------------------
+**Inherits:** :ref:`Object<class_object>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Server interface for low level audio access.
 
@@ -143,7 +138,7 @@ Member Function Description
 
 - :ref:`RID<class_rid>`  **sample_create**  **(** :ref:`int<class_int>` format, :ref:`bool<class_bool>` stereo, :ref:`int<class_int>` length  **)**
 
-Create an audio sample, return a :ref:`RID<class_rid>` referencing it. The sample will be created with a given format (from the SAMPLE_FORMAT_* enum), a total length (in samples, not bytes), in either stereo or mono.
+Create an audio sample, return a :ref:`RID<class_rid>` referencing it. The sample will be created with a given format (from the SAMPLE_FORMAT\_\* enum), a total length (in samples, not bytes), in either stereo or mono.
 
 Even if a stereo sample consists of a left sample and a right sample, it still counts as one sample for length purposes.
 
@@ -163,7 +158,7 @@ Return the description of an audio sample. Mainly used for organization.
 
 - :ref:`int<class_int>`  **sample_get_format**  **(** :ref:`RID<class_rid>` sample  **)** const
 
-Return the format of the audio sample, in the form of the SAMPLE_FORMAT_* enum.
+Return the format of the audio sample, in the form of the SAMPLE_FORMAT\_\* enum.
 
 .. _class_AudioServer_sample_is_stereo:
 
@@ -223,13 +218,13 @@ Return the mix rate of the given sample.
 
 - void  **sample_set_loop_format**  **(** :ref:`RID<class_rid>` sample, :ref:`int<class_int>` loop_format  **)**
 
-Set the loop format for a sample from the SAMPLE_LOOP_* enum. As a warning, Ping Pong loops may not be available on some hardware-mixing platforms.
+Set the loop format for a sample from the SAMPLE_LOOP\_\* enum. As a warning, Ping Pong loops may not be available on some hardware-mixing platforms.
 
 .. _class_AudioServer_sample_get_loop_format:
 
 - :ref:`int<class_int>`  **sample_get_loop_format**  **(** :ref:`RID<class_rid>` sample  **)** const
 
-Return the loop format for a sample, as a value from the SAMPLE_LOOP_* enum.
+Return the loop format for a sample, as a value from the SAMPLE_LOOP\_\* enum.
 
 .. _class_AudioServer_sample_set_loop_begin:
 
@@ -283,7 +278,7 @@ Change the pan of a currently playing voice and, optionally, the depth and heigh
 
 - void  **voice_set_filter**  **(** :ref:`RID<class_rid>` voice, :ref:`int<class_int>` type, :ref:`float<class_float>` cutoff, :ref:`float<class_float>` resonance, :ref:`float<class_float>` gain=0  **)**
 
-Set a resonant filter post processing for the voice. Filter type is a value from the FILTER_* enum.
+Set a resonant filter post processing for the voice. Filter type is a value from the FILTER\_\* enum.
 
 .. _class_AudioServer_voice_set_chorus:
 
@@ -295,7 +290,7 @@ Set chorus send post processing for the voice (from 0 to 1).
 
 - void  **voice_set_reverb**  **(** :ref:`RID<class_rid>` voice, :ref:`int<class_int>` room, :ref:`float<class_float>` reverb  **)**
 
-Set the reverb send post processing for the voice (from 0 to 1) and the reverb type, from the REVERB_* enum.
+Set the reverb send post processing for the voice (from 0 to 1) and the reverb type, from the REVERB\_\* enum.
 
 .. _class_AudioServer_voice_set_mix_rate:
 
@@ -337,7 +332,7 @@ Return the current pan depth for a given voice (-1 to +1 range).
 
 - :ref:`int<class_int>`  **voice_get_filter_type**  **(** :ref:`RID<class_rid>` voice  **)** const
 
-Return the current selected filter type for a given voice, from the FILTER_* enum.
+Return the current selected filter type for a given voice, from the FILTER\_\* enum.
 
 .. _class_AudioServer_voice_get_filter_cutoff:
 
@@ -361,7 +356,7 @@ Return the current chorus send for a given voice (0 to 1).
 
 - :ref:`int<class_int>`  **voice_get_reverb_type**  **(** :ref:`RID<class_rid>` voice  **)** const
 
-Return the current reverb type for a given voice from the REVERB_* enum.
+Return the current reverb type for a given voice from the REVERB\_\* enum.
 
 .. _class_AudioServer_voice_get_reverb:
 

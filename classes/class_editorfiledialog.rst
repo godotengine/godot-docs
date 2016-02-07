@@ -3,14 +3,9 @@
 EditorFileDialog
 ================
 
-Inherits: :ref:`ConfirmationDialog<class_confirmationdialog>`
--------------------------------------------------------------
+**Inherits:** :ref:`ConfirmationDialog<class_confirmationdialog>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 
 

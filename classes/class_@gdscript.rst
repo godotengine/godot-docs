@@ -3,11 +3,7 @@
 @GDScript
 =========
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Built-in GDScript functions.
 
@@ -423,13 +419,13 @@ Returns a reference to the specified function
 
 - :ref:`Object<class_object>`  **convert**  **(** Variant what, :ref:`int<class_int>` type  **)**
 
-Convert from a type to another in the best way possible. The "type" parameter uses the enum TYPE_* in :ref:`@Global Scope<class_@global scope>`.
+Convert from a type to another in the best way possible. The "type" parameter uses the enum TYPE\_\* in :ref:`@Global Scope<class_@global scope>`.
 
 .. _class_@GDScript_typeof:
 
 - :ref:`int<class_int>`  **typeof**  **(** Variant what  **)**
 
-Returns the internal type of the given Variant object, using the TYPE_* enum in :ref:`@Global Scope<class_@global scope>`.
+Returns the internal type of the given Variant object, using the TYPE\_\* enum in :ref:`@Global Scope<class_@global scope>`.
 
 .. _class_@GDScript_str:
 

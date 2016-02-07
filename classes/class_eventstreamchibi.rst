@@ -3,14 +3,9 @@
 EventStreamChibi
 ================
 
-Inherits: :ref:`EventStream<class_eventstream>`
------------------------------------------------
+**Inherits:** :ref:`EventStream<class_eventstream>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Driver for MOD playback.
 

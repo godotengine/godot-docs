@@ -3,14 +3,9 @@
 CanvasItem
 ==========
 
-Inherits: :ref:`Node<class_node>`
----------------------------------
+**Inherits:** :ref:`Node<class_node>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Base class of anything 2D.
 
@@ -152,7 +147,7 @@ Description
 
 Base class of anything 2D. Canvas items are laid out in a tree and children inherit and extend the transform of their parent. CanvasItem is extended by :ref:`Control<class_control>`, for anything GUI related, and by :ref:`Node2D<class_node2d>` for anything 2D engine related.
 
-Any CanvasItem can draw. For this, the "update" function must be called, then NOTIFICATION_DRAW will be received on idle time to request redraw. Because of this, canvas items don't need to be redraw on every frame, improving the performance significan'tly. Several functions for drawing on the CanvasItem are provided (see draw_* functions). They can only be used inside the notification, signal or _draw() overrided function, though.
+Any CanvasItem can draw. For this, the "update" function must be called, then NOTIFICATION_DRAW will be received on idle time to request redraw. Because of this, canvas items don't need to be redraw on every frame, improving the performance significan'tly. Several functions for drawing on the CanvasItem are provided (see draw\_\* functions). They can only be used inside the notification, signal or _draw() overrided function, though.
 
 Canvas items are draw in tree order. By default, children are on top of their parents so a root CanvasItem will be drawn behind everything (this can be changed per item though).
 
@@ -251,13 +246,13 @@ Return if set as toplevel. See :ref:`set_as_toplevel<CanvasItem_set_as_toplevel>
 
 - void  **set_blend_mode**  **(** :ref:`int<class_int>` blend_mode  **)**
 
-Set the blending mode from enum BLEND_MODE_*.
+Set the blending mode from enum BLEND_MODE\_\*.
 
 .. _class_CanvasItem_get_blend_mode:
 
 - :ref:`int<class_int>`  **get_blend_mode**  **(** **)** const
 
-Return the current blending mode from enum BLEND_MODE_*.
+Return the current blending mode from enum BLEND_MODE\_\*.
 
 .. _class_CanvasItem_set_light_mask:
 

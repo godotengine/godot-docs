@@ -3,14 +3,9 @@
 StaticBody2D
 ============
 
-Inherits: :ref:`PhysicsBody2D<class_physicsbody2d>`
----------------------------------------------------
+**Inherits:** :ref:`PhysicsBody2D<class_physicsbody2d>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Static body for 2D Physics.
 

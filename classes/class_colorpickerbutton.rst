@@ -3,14 +3,9 @@
 ColorPickerButton
 =================
 
-Inherits: :ref:`Button<class_button>`
--------------------------------------
+**Inherits:** :ref:`Button<class_button>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 
 

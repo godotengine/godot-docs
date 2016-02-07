@@ -3,14 +3,9 @@
 AnimatedSprite3D
 ================
 
-Inherits: :ref:`SpriteBase3D<class_spritebase3d>`
--------------------------------------------------
+**Inherits:** :ref:`SpriteBase3D<class_spritebase3d>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 
 

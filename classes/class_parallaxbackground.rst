@@ -3,14 +3,9 @@
 ParallaxBackground
 ==================
 
-Inherits: :ref:`CanvasLayer<class_canvaslayer>`
------------------------------------------------
+**Inherits:** :ref:`CanvasLayer<class_canvaslayer>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 
 

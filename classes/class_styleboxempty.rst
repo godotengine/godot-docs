@@ -3,14 +3,9 @@
 StyleBoxEmpty
 =============
 
-Inherits: :ref:`StyleBox<class_stylebox>`
------------------------------------------
+**Inherits:** :ref:`StyleBox<class_stylebox>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Empty stylebox (does not display anything).
 

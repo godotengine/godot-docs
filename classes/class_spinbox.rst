@@ -3,14 +3,9 @@
 SpinBox
 =======
 
-Inherits: :ref:`Range<class_range>`
------------------------------------
+**Inherits:** :ref:`Range<class_range>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Numerical input text field.
 

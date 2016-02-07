@@ -3,14 +3,9 @@
 PopupMenu
 =========
 
-Inherits: :ref:`Popup<class_popup>`
------------------------------------
+**Inherits:** :ref:`Popup<class_popup>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 PopupMenu displays a list of options.
 

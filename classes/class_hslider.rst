@@ -3,14 +3,9 @@
 HSlider
 =======
 
-Inherits: :ref:`Slider<class_slider>`
--------------------------------------
+**Inherits:** :ref:`Slider<class_slider>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Horizontal slider.
 

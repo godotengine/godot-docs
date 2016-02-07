@@ -3,14 +3,9 @@
 PHashTranslation
 ================
 
-Inherits: :ref:`Translation<class_translation>`
------------------------------------------------
+**Inherits:** :ref:`Translation<class_translation>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Optimized translation.
 

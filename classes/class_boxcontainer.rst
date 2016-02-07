@@ -3,14 +3,9 @@
 BoxContainer
 ============
 
-Inherits: :ref:`Container<class_container>`
--------------------------------------------
+**Inherits:** :ref:`Container<class_container>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Base class for Box containers.
 

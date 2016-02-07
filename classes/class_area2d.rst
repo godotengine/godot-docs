@@ -3,14 +3,9 @@
 Area2D
 ======
 
-Inherits: :ref:`CollisionObject2D<class_collisionobject2d>`
------------------------------------------------------------
+**Inherits:** :ref:`CollisionObject2D<class_collisionobject2d>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 General purpose area detection and influence for 2D physics.
 

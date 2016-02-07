@@ -3,14 +3,9 @@
 ConfirmationDialog
 ==================
 
-Inherits: :ref:`AcceptDialog<class_acceptdialog>`
--------------------------------------------------
+**Inherits:** :ref:`AcceptDialog<class_acceptdialog>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Dialog for confirmation of actions.
 

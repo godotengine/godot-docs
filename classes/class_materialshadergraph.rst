@@ -3,14 +3,9 @@
 MaterialShaderGraph
 ===================
 
-Inherits: :ref:`ShaderGraph<class_shadergraph>`
------------------------------------------------
+**Inherits:** :ref:`ShaderGraph<class_shadergraph>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 
 

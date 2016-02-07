@@ -3,14 +3,9 @@
 StyleBoxFlat
 ============
 
-Inherits: :ref:`StyleBox<class_stylebox>`
------------------------------------------
+**Inherits:** :ref:`StyleBox<class_stylebox>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Stylebox of a single color.
 

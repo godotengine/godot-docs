@@ -3,14 +3,9 @@
 MenuButton
 ==========
 
-Inherits: :ref:`Button<class_button>`
--------------------------------------
+**Inherits:** :ref:`Button<class_button>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Special button that brings up a :ref:`PopupMenu<class_popupmenu>` when clicked.
 

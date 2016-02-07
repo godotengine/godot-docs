@@ -3,14 +3,9 @@
 AudioStreamOGGVorbis
 ====================
 
-Inherits: :ref:`AudioStream<class_audiostream>`
------------------------------------------------
+**Inherits:** :ref:`AudioStream<class_audiostream>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 OGG Vorbis audio stream driver.
 

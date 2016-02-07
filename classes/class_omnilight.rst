@@ -3,14 +3,9 @@
 OmniLight
 =========
 
-Inherits: :ref:`Light<class_light>`
------------------------------------
+**Inherits:** :ref:`Light<class_light>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 OmniDirectional Light, such as a lightbulb or a candle.
 

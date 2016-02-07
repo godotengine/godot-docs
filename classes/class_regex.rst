@@ -3,14 +3,9 @@
 RegEx
 =====
 
-Inherits: :ref:`Reference<class_reference>`
--------------------------------------------
+**Inherits:** :ref:`Reference<class_reference>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Simple regular expression matcher.
 
@@ -52,11 +47,11 @@ Shorthand caracter classes :ref:`code<class_code>`\w \W \s \S \d \D:ref:`/code<c
 
 User-defined character classes such as :ref:`code<class_code>`:ref:`A-Za-z<class_a-za-z>`:ref:`/code<class_/code>`
 
-Simple quantifiers :ref:`code<class_code>`?:ref:`/code<class_/code>`, :ref:`code<class_code>`*:ref:`/code<class_/code>` and :ref:`code<class_code>`+:ref:`/code<class_/code>`
+Simple quantifiers :ref:`code<class_code>`?:ref:`/code<class_/code>`, :ref:`code<class_code>`\*:ref:`/code<class_/code>` and :ref:`code<class_code>`+:ref:`/code<class_/code>`
 
 Range quantifiers :ref:`code<class_code>`{x,y}:ref:`/code<class_/code>`
 
-Lazy (non-greedy) quantifiers :ref:`code<class_code>`*?:ref:`/code<class_/code>`
+Lazy (non-greedy) quantifiers :ref:`code<class_code>`\*?:ref:`/code<class_/code>`
 
 Begining :ref:`code<class_code>`^:ref:`/code<class_/code>` and end :ref:`code<class_code>`$:ref:`/code<class_/code>` anchors
 

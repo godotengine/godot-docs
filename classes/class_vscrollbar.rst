@@ -3,14 +3,9 @@
 VScrollBar
 ==========
 
-Inherits: :ref:`ScrollBar<class_scrollbar>`
--------------------------------------------
+**Inherits:** :ref:`ScrollBar<class_scrollbar>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Vertical version of :ref:`ScrollBar<class_scrollbar>`, which goes from left (min) to right (max).
 

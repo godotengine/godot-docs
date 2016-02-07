@@ -3,14 +3,9 @@
 Physics2DDirectBodyStateSW
 ==========================
 
-Inherits: :ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>`
--------------------------------------------------------------------------
+**Inherits:** :ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 
 

@@ -3,14 +3,9 @@
 RigidBody
 =========
 
-Inherits: :ref:`PhysicsBody<class_physicsbody>`
------------------------------------------------
+**Inherits:** :ref:`PhysicsBody<class_physicsbody>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 
 

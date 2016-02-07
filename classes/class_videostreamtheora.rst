@@ -3,14 +3,9 @@
 VideoStreamTheora
 =================
 
-Inherits: :ref:`VideoStream<class_videostream>`
------------------------------------------------
+**Inherits:** :ref:`VideoStream<class_videostream>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 
 

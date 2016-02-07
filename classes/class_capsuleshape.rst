@@ -3,14 +3,9 @@
 CapsuleShape
 ============
 
-Inherits: :ref:`Shape<class_shape>`
------------------------------------
+**Inherits:** :ref:`Shape<class_shape>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Capsule shape resource.
 

@@ -3,14 +3,9 @@
 BoxShape
 ========
 
-Inherits: :ref:`Shape<class_shape>`
------------------------------------
+**Inherits:** :ref:`Shape<class_shape>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Box shape resource.
 

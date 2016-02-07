@@ -3,14 +3,9 @@
 FileDialog
 ==========
 
-Inherits: :ref:`ConfirmationDialog<class_confirmationdialog>`
--------------------------------------------------------------
+**Inherits:** :ref:`ConfirmationDialog<class_confirmationdialog>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Dialog for selecting files or directories in the filesystem.
 
@@ -87,7 +82,7 @@ Clear all the added filters in the dialog.
 
 - void  **add_filter**  **(** :ref:`String<class_string>` filter  **)**
 
-Add a custom filter. Filter format is: "mask ; description", example (C++): dialog->add_filter("*.png ; PNG Images");
+Add a custom filter. Filter format is: "mask ; description", example (C++): dialog->add_filter("\*.png ; PNG Images");
 
 .. _class_FileDialog_get_current_dir:
 
@@ -123,13 +118,13 @@ Get the current selected path (directory and file) of the file dialog (empty if 
 
 - void  **set_mode**  **(** :ref:`int<class_int>` mode  **)**
 
-Set the file dialog mode from the MODE_* enum.
+Set the file dialog mode from the MODE\_\* enum.
 
 .. _class_FileDialog_get_mode:
 
 - :ref:`int<class_int>`  **get_mode**  **(** **)** const
 
-Get the file dialog mode from the MODE_* enum.
+Get the file dialog mode from the MODE\_\* enum.
 
 .. _class_FileDialog_get_vbox:
 

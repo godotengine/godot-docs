@@ -3,11 +3,7 @@
 Vector2Array
 ============
 
-Category: Built-In Types
-------------------------
-
-Brief Description
------------------
+**Category:** Built-In Types
 
 An Array of Vector2.
 

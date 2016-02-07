@@ -3,14 +3,9 @@
 DampedSpringJoint2D
 ===================
 
-Inherits: :ref:`Joint2D<class_joint2d>`
----------------------------------------
+**Inherits:** :ref:`Joint2D<class_joint2d>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Damped spring constraint for 2D physics.
 

@@ -3,14 +3,9 @@
 ProgressBar
 ===========
 
-Inherits: :ref:`Range<class_range>`
------------------------------------
+**Inherits:** :ref:`Range<class_range>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 General purpose progress bar.
 

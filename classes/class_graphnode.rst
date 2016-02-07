@@ -3,14 +3,9 @@
 GraphNode
 =========
 
-Inherits: :ref:`Container<class_container>`
--------------------------------------------
+**Inherits:** :ref:`Container<class_container>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 A GraphNode is a container with several input and output slots allowing connections between GraphNodes. Slots can have different, incompatible types.
 

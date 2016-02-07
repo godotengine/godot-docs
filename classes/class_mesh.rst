@@ -3,14 +3,9 @@
 Mesh
 ====
 
-Inherits: :ref:`Resource<class_resource>`
------------------------------------------
+**Inherits:** :ref:`Resource<class_resource>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 A :ref:`Resource<class_resource>` that contains vertex-array based geometry.
 
@@ -132,7 +127,7 @@ Create a new surface (:ref:`get_surface_count<Mesh_get_surface_count>` that will
 
 Surfaces are created to be rendered using a "primitive", which may be PRIMITIVE_POINTS, PRIMITIVE_LINES, PRIMITIVE_LINE_STRIP, PRIMITIVE_LINE_LOOP, PRIMITIVE_TRIANGLES, PRIMITIVE_TRIANGLE_STRIP, PRIMITIVE_TRIANGLE_FAN. (As a note, when using indices, it is recommended to only use just points, lines or triangles).
 
-The format of a surface determines which arrays it will allocate and hold, so "format" is a combination of ARRAY_FORMAT_* mask constants ORed together. ARRAY_FORMAT_VERTEX must be always present. "array_len" determines the amount of vertices in the array (not primitives!). if ARRAY_FORMAT_INDEX is in the format mask, then it means that an index array will be allocated and "index_array_len" must be passed.
+The format of a surface determines which arrays it will allocate and hold, so "format" is a combination of ARRAY_FORMAT\_\* mask constants ORed together. ARRAY_FORMAT_VERTEX must be always present. "array_len" determines the amount of vertices in the array (not primitives!). if ARRAY_FORMAT_INDEX is in the format mask, then it means that an index array will be allocated and "index_array_len" must be passed.
 
 .. _class_Mesh_get_surface_count:
 

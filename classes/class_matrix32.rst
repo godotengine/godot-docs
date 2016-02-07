@@ -3,11 +3,7 @@
 Matrix32
 ========
 
-Category: Built-In Types
-------------------------
-
-Brief Description
------------------
+**Category:** Built-In Types
 
 3x2 Matrix for 2D transforms.
 

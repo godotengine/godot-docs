@@ -3,14 +3,9 @@
 SpatialStreamPlayer
 ===================
 
-Inherits: :ref:`SpatialPlayer<class_spatialplayer>`
----------------------------------------------------
+**Inherits:** :ref:`SpatialPlayer<class_spatialplayer>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 
 

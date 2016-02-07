@@ -3,14 +3,9 @@
 Position3D
 ==========
 
-Inherits: :ref:`Spatial<class_spatial>`
----------------------------------------
+**Inherits:** :ref:`Spatial<class_spatial>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Generic 3D Position hint for editing
 

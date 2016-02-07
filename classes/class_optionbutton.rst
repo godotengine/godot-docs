@@ -3,14 +3,9 @@
 OptionButton
 ============
 
-Inherits: :ref:`Button<class_button>`
--------------------------------------
+**Inherits:** :ref:`Button<class_button>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Button control that provides selectable options when pressed.
 

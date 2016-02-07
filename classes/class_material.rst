@@ -3,14 +3,9 @@
 Material
 ========
 
-Inherits: :ref:`Resource<class_resource>`
------------------------------------------
+**Inherits:** :ref:`Resource<class_resource>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Abstract base :ref:`Resource<class_resource>` for coloring and shading geometry.
 
@@ -68,13 +63,13 @@ Member Function Description
 
 - void  **set_flag**  **(** :ref:`int<class_int>` flag, :ref:`bool<class_bool>` enable  **)**
 
-Set a :ref:`Material<class_material>` flag, which toggles on or off a behavior when rendering. See enumeration FLAG_* for a list.
+Set a :ref:`Material<class_material>` flag, which toggles on or off a behavior when rendering. See enumeration FLAG\_\* for a list.
 
 .. _class_Material_get_flag:
 
 - :ref:`bool<class_bool>`  **get_flag**  **(** :ref:`int<class_int>` flag  **)** const
 
-Return a :ref:`Material<class_material>` flag, which toggles on or off a behavior when rendering. See enumeration FLAG_* for a list.
+Return a :ref:`Material<class_material>` flag, which toggles on or off a behavior when rendering. See enumeration FLAG\_\* for a list.
 
 .. _class_Material_set_blend_mode:
 

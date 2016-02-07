@@ -3,14 +3,9 @@
 HScrollBar
 ==========
 
-Inherits: :ref:`ScrollBar<class_scrollbar>`
--------------------------------------------
+**Inherits:** :ref:`ScrollBar<class_scrollbar>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Horizontal scroll bar.
 

@@ -3,14 +3,9 @@
 ScrollBar
 =========
 
-Inherits: :ref:`Range<class_range>`
------------------------------------
+**Inherits:** :ref:`Range<class_range>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Base class for scroll bars.
 

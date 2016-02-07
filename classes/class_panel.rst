@@ -3,14 +3,9 @@
 Panel
 =====
 
-Inherits: :ref:`Control<class_control>`
----------------------------------------
+**Inherits:** :ref:`Control<class_control>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Provides an opaque background for :ref:`Control<class_control>` children.
 

@@ -3,11 +3,7 @@
 Object
 ======
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Base class for all non built-in types.
 
@@ -136,7 +132,7 @@ Return a property, return null if the property does not exist.
 
 - :ref:`Array<class_array>`  **_get_property_list**  **(** **)** virtual
 
-Return the property list, array of dictionaries, dictionaries must countain: name:String, type:int (see TYPE_* enum in globals) and optionally: hint:int (see PROPERTY_HINT_* in globals), hint_string:String, usage:int (see PROPERTY_USAGE_* in globals).
+Return the property list, array of dictionaries, dictionaries must countain: name:String, type:int (see TYPE\_\* enum in globals) and optionally: hint:int (see PROPERTY_HINT\_\* in globals), hint_string:String, usage:int (see PROPERTY_USAGE\_\* in globals).
 
 .. _class_Object__init:
 
@@ -186,7 +182,7 @@ Get a property from the object.
 
 - :ref:`Array<class_array>`  **get_property_list**  **(** **)** const
 
-Return the list of properties as an array of dictionaries, dictionaries countain: name:String, type:int (see TYPE_* enum in globals) and optionally: hint:int (see PROPERTY_HINT_* in globals), hint_string:String, usage:int (see PROPERTY_USAGE_* in globals).
+Return the list of properties as an array of dictionaries, dictionaries countain: name:String, type:int (see TYPE\_\* enum in globals) and optionally: hint:int (see PROPERTY_HINT\_\* in globals), hint_string:String, usage:int (see PROPERTY_USAGE\_\* in globals).
 
 .. _class_Object_get_method_list:
 
@@ -244,7 +240,7 @@ Return the list of metadatas in the object.
 
 - void  **add_user_signal**  **(** :ref:`String<class_string>` signal, :ref:`Array<class_array>` arguments=Array()  **)**
 
-Add a user signal (can be added anytime). Arguments are optional, but can be added as an array of dictionaries, each containing "name" and "type" (from :ref:`@Global Scope<class_@global scope>` TYPE_*).
+Add a user signal (can be added anytime). Arguments are optional, but can be added as an array of dictionaries, each containing "name" and "type" (from :ref:`@Global Scope<class_@global scope>` TYPE\_\*).
 
 .. _class_Object_has_user_signal:
 
@@ -290,7 +286,7 @@ Return the list of signals as an array of dictionaries.
 
 - :ref:`int<class_int>`  **connect**  **(** :ref:`String<class_string>` signal, :ref:`Object<class_object>` target, :ref:`String<class_string>` method, :ref:`Array<class_array>` binds=Array(), :ref:`int<class_int>` flags=0  **)**
 
-Connect a signal to a method at a target (member function). Binds are optional and are passed as extra arguments to the call. Flags specify optional deferred or one shot connections, see enum CONNECT_*. A signal can only be connected once to a method, and it will throw an error if already connected. If you want to avoid this, use :ref:`is_connected<Object_is_connected>` to check.
+Connect a signal to a method at a target (member function). Binds are optional and are passed as extra arguments to the call. Flags specify optional deferred or one shot connections, see enum CONNECT\_\*. A signal can only be connected once to a method, and it will throw an error if already connected. If you want to avoid this, use :ref:`is_connected<Object_is_connected>` to check.
 
 .. _class_Object_disconnect:
 

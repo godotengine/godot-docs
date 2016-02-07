@@ -3,14 +3,9 @@
 VisibilityEnabler
 =================
 
-Inherits: :ref:`VisibilityNotifier<class_visibilitynotifier>`
--------------------------------------------------------------
+**Inherits:** :ref:`VisibilityNotifier<class_visibilitynotifier>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 
 

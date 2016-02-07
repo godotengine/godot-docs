@@ -3,11 +3,7 @@
 Plane
 =====
 
-Category: Built-In Types
-------------------------
-
-Brief Description
------------------
+**Category:** Built-In Types
 
 Plane in hessian form.
 

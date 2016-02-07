@@ -3,14 +3,9 @@
 GraphEdit
 =========
 
-Inherits: :ref:`Control<class_control>`
----------------------------------------
+**Inherits:** :ref:`Control<class_control>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 GraphEdit is an area capable of showing various GraphNodes. It manages connection events between them.
 

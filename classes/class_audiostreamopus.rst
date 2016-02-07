@@ -3,14 +3,9 @@
 AudioStreamOpus
 ===============
 
-Inherits: :ref:`AudioStream<class_audiostream>`
------------------------------------------------
+**Inherits:** :ref:`AudioStream<class_audiostream>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Opus Codec audio stream driver.
 

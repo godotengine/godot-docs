@@ -3,14 +3,9 @@
 Room
 ====
 
-Inherits: :ref:`VisualInstance<class_visualinstance>`
------------------------------------------------------
+**Inherits:** :ref:`VisualInstance<class_visualinstance>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Room data resource.
 

@@ -3,14 +3,9 @@
 Sample
 ======
 
-Inherits: :ref:`Resource<class_resource>`
------------------------------------------
+**Inherits:** :ref:`Resource<class_resource>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Audio sample (sound) class.
 
@@ -69,7 +64,7 @@ Member Function Description
 
 - void  **create**  **(** :ref:`int<class_int>` format, :ref:`bool<class_bool>` stereo, :ref:`int<class_int>` length  **)**
 
-Create new data for the sample, with format (see FORMAT_* constants), stereo hint, and length in samples (not bytes).
+Create new data for the sample, with format (see FORMAT\_\* constants), stereo hint, and length in samples (not bytes).
 
 Calling this method overrides previously existing data. Stereo samples are interleaved pairs of left and right points (in that order), but count as one sample for length purposes.
 
@@ -127,7 +122,7 @@ Return the mix rate for the sample.
 
 - void  **set_loop_format**  **(** :ref:`int<class_int>` format  **)**
 
-Set the loop format (use LOOP_* constants as argument).
+Set the loop format (use LOOP\_\* constants as argument).
 
 .. _class_Sample_get_loop_format:
 

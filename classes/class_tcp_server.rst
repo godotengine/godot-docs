@@ -3,14 +3,9 @@
 TCP_Server
 ==========
 
-Inherits: :ref:`Reference<class_reference>`
--------------------------------------------
+**Inherits:** :ref:`Reference<class_reference>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 TCP Server.
 

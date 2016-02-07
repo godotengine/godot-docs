@@ -3,14 +3,9 @@
 HButtonArray
 ============
 
-Inherits: :ref:`ButtonArray<class_buttonarray>`
------------------------------------------------
+**Inherits:** :ref:`ButtonArray<class_buttonarray>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Horizontal button array.
 

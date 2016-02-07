@@ -3,14 +3,9 @@
 Physics2DServerSW
 =================
 
-Inherits: :ref:`Physics2DServer<class_physics2dserver>`
--------------------------------------------------------
+**Inherits:** :ref:`Physics2DServer<class_physics2dserver>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 
 

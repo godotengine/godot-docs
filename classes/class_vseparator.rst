@@ -3,14 +3,9 @@
 VSeparator
 ==========
 
-Inherits: :ref:`Separator<class_separator>`
--------------------------------------------
+**Inherits:** :ref:`Separator<class_separator>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Vertical version of :ref:`Separator<class_separator>`.
 

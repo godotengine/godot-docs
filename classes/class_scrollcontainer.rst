@@ -3,14 +3,9 @@
 ScrollContainer
 ===============
 
-Inherits: :ref:`Container<class_container>`
--------------------------------------------
+**Inherits:** :ref:`Container<class_container>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 A helper node for displaying scollable elements (e.g. lists).
 

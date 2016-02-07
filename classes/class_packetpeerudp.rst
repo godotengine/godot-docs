@@ -3,14 +3,9 @@
 PacketPeerUDP
 =============
 
-Inherits: :ref:`PacketPeer<class_packetpeer>`
----------------------------------------------
+**Inherits:** :ref:`PacketPeer<class_packetpeer>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 
 

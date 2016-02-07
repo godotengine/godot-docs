@@ -3,14 +3,9 @@
 ShaderGraph
 ===========
 
-Inherits: :ref:`Shader<class_shader>`
--------------------------------------
+**Inherits:** :ref:`Shader<class_shader>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 
 

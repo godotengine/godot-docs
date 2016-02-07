@@ -3,14 +3,9 @@
 Skeleton
 ========
 
-Inherits: :ref:`Spatial<class_spatial>`
----------------------------------------
+**Inherits:** :ref:`Spatial<class_spatial>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Skeleton for characters and animated objects.
 

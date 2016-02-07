@@ -3,14 +3,9 @@
 StyleBoxImageMask
 =================
 
-Inherits: :ref:`StyleBox<class_stylebox>`
------------------------------------------
+**Inherits:** :ref:`StyleBox<class_stylebox>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Image mask based StyleBox, for mask test.
 
@@ -67,12 +62,12 @@ Return wether the expand property is set(default). When expanding, the image wil
 
 - void  **set_expand_margin_size**  **(** :ref:`int<class_int>` margin, :ref:`float<class_float>` size  **)**
 
-Set an expand margin size (from enum MARGIN_*). Parts of the image below the size of the margin (and in the direction of the margin) will not expand.
+Set an expand margin size (from enum MARGIN\_\*). Parts of the image below the size of the margin (and in the direction of the margin) will not expand.
 
 .. _class_StyleBoxImageMask_get_expand_margin_size:
 
 - :ref:`float<class_float>`  **get_expand_margin_size**  **(** :ref:`int<class_int>` margin  **)** const
 
-Return the expand margin size (from enum MARGIN_*). Parts of the image below the size of the margin (and in the direction of the margin) will not expand.
+Return the expand margin size (from enum MARGIN\_\*). Parts of the image below the size of the margin (and in the direction of the margin) will not expand.
 
 

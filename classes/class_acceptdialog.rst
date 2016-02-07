@@ -3,14 +3,9 @@
 AcceptDialog
 ============
 
-Inherits: :ref:`WindowDialog<class_windowdialog>`
--------------------------------------------------
+**Inherits:** :ref:`WindowDialog<class_windowdialog>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Base dialog for user notification.
 

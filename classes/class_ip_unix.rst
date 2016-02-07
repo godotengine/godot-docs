@@ -3,14 +3,9 @@
 IP_Unix
 =======
 
-Inherits: :ref:`IP<class_ip>`
------------------------------
+**Inherits:** :ref:`IP<class_ip>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 
 

@@ -3,14 +3,9 @@
 AnimationPlayer
 ===============
 
-Inherits: :ref:`Node<class_node>`
----------------------------------
+**Inherits:** :ref:`Node<class_node>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Container and player of :ref:`Animation<class_animation>` resources.
 
@@ -299,7 +294,7 @@ The animation player creates caches for faster access to the nodes it will anima
 
 - void  **set_animation_process_mode**  **(** :ref:`int<class_int>` mode  **)**
 
-Set the mode in which the animation player processes. By default, it processes on idle time (framerate dependent), but using fixed time works well for animating static collision bodies in 2D and 3D. See enum ANIMATION_PROCESS_*.
+Set the mode in which the animation player processes. By default, it processes on idle time (framerate dependent), but using fixed time works well for animating static collision bodies in 2D and 3D. See enum ANIMATION_PROCESS\_\*.
 
 .. _class_AnimationPlayer_get_animation_process_mode:
 

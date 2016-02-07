@@ -3,14 +3,9 @@
 TextEdit
 ========
 
-Inherits: :ref:`Control<class_control>`
----------------------------------------
+**Inherits:** :ref:`Control<class_control>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Multiline text editing control.
 
@@ -253,7 +248,7 @@ Return the text inside the selection.
 
 - :ref:`IntArray<class_intarray>`  **search**  **(** :ref:`String<class_string>` flags, :ref:`int<class_int>` from_line, :ref:`int<class_int>` from_column, :ref:`int<class_int>` to_line  **)** const
 
-Perform a search inside the text. Search flags can be specified in the SEARCH_* enum.
+Perform a search inside the text. Search flags can be specified in the SEARCH\_\* enum.
 
 .. _class_TextEdit_undo:
 

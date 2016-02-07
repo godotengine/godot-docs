@@ -3,14 +3,9 @@
 PopupDialog
 ===========
 
-Inherits: :ref:`Popup<class_popup>`
------------------------------------
+**Inherits:** :ref:`Popup<class_popup>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Base class for Popup Dialogs.
 

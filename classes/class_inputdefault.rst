@@ -3,14 +3,9 @@
 InputDefault
 ============
 
-Inherits: :ref:`Input<class_input>`
------------------------------------
+**Inherits:** :ref:`Input<class_input>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 
 

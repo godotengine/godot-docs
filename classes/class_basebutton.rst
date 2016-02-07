@@ -3,14 +3,9 @@
 BaseButton
 ==========
 
-Inherits: :ref:`Control<class_control>`
----------------------------------------
+**Inherits:** :ref:`Control<class_control>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Provides a base class for different kinds of buttons.
 
@@ -130,6 +125,6 @@ Return the state of the click_on_press property (see :ref:`set_click_on_press<Ba
 
 - :ref:`int<class_int>`  **get_draw_mode**  **(** **)** const
 
-Return the visual state used to draw the button. This is useful mainly when implementing your own draw code by either overiding _draw() or connecting to "draw" signal. The visual state of the button is defined by the DRAW_* enum.
+Return the visual state used to draw the button. This is useful mainly when implementing your own draw code by either overiding _draw() or connecting to "draw" signal. The visual state of the button is defined by the DRAW\_\* enum.
 
 

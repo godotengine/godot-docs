@@ -3,14 +3,9 @@
 GeometryInstance
 ================
 
-Inherits: :ref:`VisualInstance<class_visualinstance>`
------------------------------------------------------
+**Inherits:** :ref:`VisualInstance<class_visualinstance>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Base node for geometry based visual instances.
 

@@ -3,14 +3,9 @@
 PathFollow2D
 ============
 
-Inherits: :ref:`Node2D<class_node2d>`
--------------------------------------
+**Inherits:** :ref:`Node2D<class_node2d>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Point sampler for a :ref:`Path2D<class_path2d>`.
 

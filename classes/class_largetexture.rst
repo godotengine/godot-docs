@@ -3,14 +3,9 @@
 LargeTexture
 ============
 
-Inherits: :ref:`Texture<class_texture>`
----------------------------------------
+**Inherits:** :ref:`Texture<class_texture>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 
 

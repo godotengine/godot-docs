@@ -3,14 +3,9 @@
 StyleBoxTexture
 ===============
 
-Inherits: :ref:`StyleBox<class_stylebox>`
------------------------------------------
+**Inherits:** :ref:`StyleBox<class_stylebox>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Texture Based 3x3 scale style.
 

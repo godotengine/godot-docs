@@ -3,14 +3,9 @@
 FixedMaterial
 =============
 
-Inherits: :ref:`Material<class_material>`
------------------------------------------
+**Inherits:** :ref:`Material<class_material>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Simple Material with a fixed parameter set.
 
@@ -84,13 +79,13 @@ Member Function Description
 
 - void  **set_parameter**  **(** :ref:`int<class_int>` param, var value  **)**
 
-Set a parameter, parameters are defined in the PARAM_* enum. The type of each parameter may change, so it's best to check the enum.
+Set a parameter, parameters are defined in the PARAM\_\* enum. The type of each parameter may change, so it's best to check the enum.
 
 .. _class_FixedMaterial_get_parameter:
 
 - void  **get_parameter**  **(** :ref:`int<class_int>` param  **)** const
 
-Return a parameter, parameters are defined in the PARAM_* enum. The type of each parameter may change, so it's best to check the enum.
+Return a parameter, parameters are defined in the PARAM\_\* enum. The type of each parameter may change, so it's best to check the enum.
 
 .. _class_FixedMaterial_set_texture:
 
@@ -108,13 +103,13 @@ Return a texture. Textures change parameters per texel and are mapped to the mod
 
 - void  **set_texcoord_mode**  **(** :ref:`int<class_int>` param, :ref:`int<class_int>` mode  **)**
 
-Set the texture coordinate mode. Each texture param (from the PARAM_* enum) has one. It defines how the textures are mapped to the object.
+Set the texture coordinate mode. Each texture param (from the PARAM\_\* enum) has one. It defines how the textures are mapped to the object.
 
 .. _class_FixedMaterial_get_texcoord_mode:
 
 - :ref:`int<class_int>`  **get_texcoord_mode**  **(** :ref:`int<class_int>` param  **)** const
 
-Return the texture coordinate mode. Each texture param (from the PARAM_* enum) has one. It defines how the textures are mapped to the object.
+Return the texture coordinate mode. Each texture param (from the PARAM\_\* enum) has one. It defines how the textures are mapped to the object.
 
 .. _class_FixedMaterial_set_fixed_flag:
 

@@ -3,14 +3,9 @@
 ColorPicker
 ===========
 
-Inherits: :ref:`BoxContainer<class_boxcontainer>`
--------------------------------------------------
+**Inherits:** :ref:`BoxContainer<class_boxcontainer>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Color picker control.
 

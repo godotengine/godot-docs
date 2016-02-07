@@ -3,14 +3,9 @@
 Control
 =======
 
-Inherits: :ref:`CanvasItem<class_canvasitem>`
----------------------------------------------
+**Inherits:** :ref:`CanvasItem<class_canvasitem>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Control is the base node for all the GUI components.
 
@@ -233,7 +228,7 @@ Only one control can hold the keyboard focus (receiving keyboard events), for th
 
 It is sometimes desired for a control to ignore mouse/pointer events. This is often the case when placing other controls on top of a button, in such cases. Calling :ref:`set_ignore_mouse<Control_set_ignore_mouse>` enables this function.
 
-Finally, controls are skinned according to a :ref:`Theme<class_theme>`. Setting a :ref:`Theme<class_theme>` on a control will propagate all the skinning down the tree. Optionally, skinning can be overrided per each control by calling the add_*_override functions, or from the editor.
+Finally, controls are skinned according to a :ref:`Theme<class_theme>`. Setting a :ref:`Theme<class_theme>` on a control will propagate all the skinning down the tree. Optionally, skinning can be overrided per each control by calling the add\_\*_override functions, or from the editor.
 
 Member Function Description
 ---------------------------
@@ -568,13 +563,13 @@ Return the tooltip, which will appear when the cursor is resting over this contr
 
 - void  **set_default_cursor_shape**  **(** :ref:`int<class_int>` shape  **)**
 
-Set the default cursor shape for this control. See enum CURSOR_* for the list of shapes.
+Set the default cursor shape for this control. See enum CURSOR\_\* for the list of shapes.
 
 .. _class_Control_get_default_cursor_shape:
 
 - :ref:`int<class_int>`  **get_default_cursor_shape**  **(** **)** const
 
-Return the default cursor shape for this control. See enum CURSOR_* for the list of shapes.
+Return the default cursor shape for this control. See enum CURSOR\_\* for the list of shapes.
 
 .. _class_Control_get_cursor_shape:
 

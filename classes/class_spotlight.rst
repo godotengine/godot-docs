@@ -3,14 +3,9 @@
 SpotLight
 =========
 
-Inherits: :ref:`Light<class_light>`
------------------------------------
+**Inherits:** :ref:`Light<class_light>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Spotlight :ref:`Light<class_light>`, such as a reflector spotlight or a latern.
 

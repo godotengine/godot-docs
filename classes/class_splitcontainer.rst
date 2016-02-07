@@ -3,14 +3,9 @@
 SplitContainer
 ==============
 
-Inherits: :ref:`Container<class_container>`
--------------------------------------------
+**Inherits:** :ref:`Container<class_container>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Container for splitting and adjusting.
 

@@ -3,14 +3,9 @@
 Curve3D
 =======
 
-Inherits: :ref:`Resource<class_resource>`
------------------------------------------
+**Inherits:** :ref:`Resource<class_resource>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Describes a Bezier curve in 3D space.
 

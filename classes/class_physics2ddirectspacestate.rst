@@ -3,14 +3,9 @@
 Physics2DDirectSpaceState
 =========================
 
-Inherits: :ref:`Object<class_object>`
--------------------------------------
+**Inherits:** :ref:`Object<class_object>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Direct access object to a space in the :ref:`Physics2DServer<class_physics2dserver>`.
 

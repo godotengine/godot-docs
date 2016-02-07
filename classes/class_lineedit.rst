@@ -3,14 +3,9 @@
 LineEdit
 ========
 
-Inherits: :ref:`Control<class_control>`
----------------------------------------
+**Inherits:** :ref:`Control<class_control>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Control that provides single line string editing.
 
@@ -151,7 +146,7 @@ Return the *editable* status of the :ref:`LineEdit<class_lineedit>` (see :ref:`s
 
 - void  **set_secret**  **(** :ref:`bool<class_bool>` enabled  **)**
 
-Set the *secret* status of the :ref:`LineEdit<class_lineedit>`. When enabled, every character is displayed as "*".
+Set the *secret* status of the :ref:`LineEdit<class_lineedit>`. When enabled, every character is displayed as "\*".
 
 .. _class_LineEdit_is_secret:
 

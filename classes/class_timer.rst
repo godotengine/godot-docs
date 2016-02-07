@@ -3,14 +3,9 @@
 Timer
 =====
 
-Inherits: :ref:`Node<class_node>`
----------------------------------
+**Inherits:** :ref:`Node<class_node>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 
 
@@ -118,7 +113,7 @@ Return the time left for timeout in seconds if the timer is active, 0 otherwise.
 
 - void  **set_timer_process_mode**  **(** :ref:`int<class_int>` mode  **)**
 
-Set the timer's processing mode (fixed or idle, use TIMER_PROCESS_* constants as argument).
+Set the timer's processing mode (fixed or idle, use TIMER_PROCESS\_\* constants as argument).
 
 .. _class_Timer_get_timer_process_mode:
 

@@ -3,14 +3,9 @@
 PhysicsServerSW
 ===============
 
-Inherits: :ref:`PhysicsServer<class_physicsserver>`
----------------------------------------------------
+**Inherits:** :ref:`PhysicsServer<class_physicsserver>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 
 

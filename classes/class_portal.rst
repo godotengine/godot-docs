@@ -3,14 +3,9 @@
 Portal
 ======
 
-Inherits: :ref:`VisualInstance<class_visualinstance>`
------------------------------------------------------
+**Inherits:** :ref:`VisualInstance<class_visualinstance>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Portals provide virtual openings to rooms.
 

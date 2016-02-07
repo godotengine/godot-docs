@@ -3,14 +3,9 @@
 Button
 ======
 
-Inherits: :ref:`BaseButton<class_basebutton>`
----------------------------------------------
+**Inherits:** :ref:`BaseButton<class_basebutton>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Standard themed Button.
 

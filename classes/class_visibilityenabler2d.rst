@@ -3,14 +3,9 @@
 VisibilityEnabler2D
 ===================
 
-Inherits: :ref:`VisibilityNotifier2D<class_visibilitynotifier2d>`
------------------------------------------------------------------
+**Inherits:** :ref:`VisibilityNotifier2D<class_visibilitynotifier2d>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 
 

@@ -3,14 +3,9 @@
 Label
 =====
 
-Inherits: :ref:`Control<class_control>`
----------------------------------------
+**Inherits:** :ref:`Control<class_control>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Control that displays formatted text.
 
@@ -89,25 +84,25 @@ Member Function Description
 
 - void  **set_align**  **(** :ref:`int<class_int>` align  **)**
 
-Sets the alignment mode to any of the ALIGN_* enumeration values.
+Sets the alignment mode to any of the ALIGN\_\* enumeration values.
 
 .. _class_Label_get_align:
 
 - :ref:`int<class_int>`  **get_align**  **(** **)** const
 
-Return the alignment mode (any of the ALIGN_* enumeration values).
+Return the alignment mode (any of the ALIGN\_\* enumeration values).
 
 .. _class_Label_set_valign:
 
 - void  **set_valign**  **(** :ref:`int<class_int>` valign  **)**
 
-Sets the vertical alignment mode to any of the VALIGN_* enumeration values.
+Sets the vertical alignment mode to any of the VALIGN\_\* enumeration values.
 
 .. _class_Label_get_valign:
 
 - :ref:`int<class_int>`  **get_valign**  **(** **)** const
 
-Return the vertical alignment mode (any of the VALIGN_* enumeration values).
+Return the vertical alignment mode (any of the VALIGN\_\* enumeration values).
 
 .. _class_Label_set_text:
 

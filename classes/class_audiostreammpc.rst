@@ -3,14 +3,9 @@
 AudioStreamMPC
 ==============
 
-Inherits: :ref:`AudioStream<class_audiostream>`
------------------------------------------------
+**Inherits:** :ref:`AudioStream<class_audiostream>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 MusePack audio stream driver.
 

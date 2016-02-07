@@ -3,11 +3,7 @@
 Rect2
 =====
 
-Category: Built-In Types
-------------------------
-
-Brief Description
------------------
+**Category:** Built-In Types
 
 2D Axis-aligned bounding box.
 

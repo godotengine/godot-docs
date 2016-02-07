@@ -3,14 +3,9 @@
 ConcavePolygonShape
 ===================
 
-Inherits: :ref:`Shape<class_shape>`
------------------------------------
+**Inherits:** :ref:`Shape<class_shape>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Concave polygon shape.
 

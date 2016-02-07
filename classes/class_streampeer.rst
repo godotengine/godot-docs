@@ -3,14 +3,9 @@
 StreamPeer
 ==========
 
-Inherits: :ref:`Reference<class_reference>`
--------------------------------------------
+**Inherits:** :ref:`Reference<class_reference>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Abstraction and base class for stream-based protocols.
 

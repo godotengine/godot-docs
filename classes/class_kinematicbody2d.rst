@@ -3,14 +3,9 @@
 KinematicBody2D
 ===============
 
-Inherits: :ref:`PhysicsBody2D<class_physicsbody2d>`
----------------------------------------------------
+**Inherits:** :ref:`PhysicsBody2D<class_physicsbody2d>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Kinematic body 2D node.
 

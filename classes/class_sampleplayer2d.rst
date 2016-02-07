@@ -3,14 +3,9 @@
 SamplePlayer2D
 ==============
 
-Inherits: :ref:`SoundPlayer2D<class_soundplayer2d>`
----------------------------------------------------
+**Inherits:** :ref:`SoundPlayer2D<class_soundplayer2d>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Sample player for positional 2D Sound.
 
@@ -127,9 +122,9 @@ Set the amplitude for random pitch scale variations. If different from zero, the
 
 The actual pitch scale will be, with "variation" ranging from -val to val:
 
-* variation > 0: 1.0 + variation
+\* variation > 0: 1.0 + variation
 
-* variation < 0: 1.0/(1.0 - variation)
+\* variation < 0: 1.0/(1.0 - variation)
 
 .. _class_SamplePlayer2D_get_random_pitch_scale:
 

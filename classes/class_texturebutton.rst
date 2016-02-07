@@ -3,14 +3,9 @@
 TextureButton
 =============
 
-Inherits: :ref:`BaseButton<class_basebutton>`
----------------------------------------------
+**Inherits:** :ref:`BaseButton<class_basebutton>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Button that can be themed with textures.
 

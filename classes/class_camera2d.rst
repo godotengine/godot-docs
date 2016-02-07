@@ -3,14 +3,9 @@
 Camera2D
 ========
 
-Inherits: :ref:`Node2D<class_node2d>`
--------------------------------------
+**Inherits:** :ref:`Node2D<class_node2d>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Camera node for 2D scenes.
 
@@ -187,7 +182,7 @@ Return the scrolling limit in pixels.
 
 - void  **set_drag_margin**  **(** :ref:`int<class_int>` margin, :ref:`float<class_float>` drag_margin  **)**
 
-Set the margins needed to drag the camera (relative to the screen size). Margin uses the MARGIN_* enum. Drag margins of 0,0,0,0 will keep the camera at the center of the screen, while drag margins of 1,1,1,1 will only move when the camera is at the edges.
+Set the margins needed to drag the camera (relative to the screen size). Margin uses the MARGIN\_\* enum. Drag margins of 0,0,0,0 will keep the camera at the center of the screen, while drag margins of 1,1,1,1 will only move when the camera is at the edges.
 
 .. _class_Camera2D_get_drag_margin:
 

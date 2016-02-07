@@ -3,14 +3,9 @@
 LineShape2D
 ===========
 
-Inherits: :ref:`Shape2D<class_shape2d>`
----------------------------------------
+**Inherits:** :ref:`Shape2D<class_shape2d>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Line shape for 2D collision objects.
 

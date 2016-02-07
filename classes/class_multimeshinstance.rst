@@ -3,14 +3,9 @@
 MultiMeshInstance
 =================
 
-Inherits: :ref:`GeometryInstance<class_geometryinstance>`
----------------------------------------------------------
+**Inherits:** :ref:`GeometryInstance<class_geometryinstance>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Node that instances a :ref:`MultiMesh<class_multimesh>`.
 

@@ -3,14 +3,9 @@
 SamplePlayer
 ============
 
-Inherits: :ref:`Node<class_node>`
----------------------------------
+**Inherits:** :ref:`Node<class_node>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Sample Player node.
 
@@ -233,7 +228,7 @@ Optionally, for hardware than support 3D sound, one can also set depth and heigh
 
 - void  **set_filter**  **(** :ref:`int<class_int>` voice, :ref:`int<class_int>` type, :ref:`float<class_float>` cutoff_hz, :ref:`float<class_float>` resonance, :ref:`float<class_float>` gain=0  **)**
 
-Set the filter for a given voice, using the given type (see FILTER_* constants), cutoff frequency (from 20 to 16,384 Hz) and resonance (from 0 to 4.0).
+Set the filter for a given voice, using the given type (see FILTER\_\* constants), cutoff frequency (from 20 to 16,384 Hz) and resonance (from 0 to 4.0).
 
 Optionally, a gain can also be given (from 0 to 2.0).
 
@@ -247,7 +242,7 @@ Set the chorus send level of a voice (from 0 to 1.0). For setting chorus paramet
 
 - void  **set_reverb**  **(** :ref:`int<class_int>` voice, :ref:`int<class_int>` room_type, :ref:`float<class_float>` send  **)**
 
-Set the reverberation type (see REVERB_* constants) and send level (from 0 to 1.0) of a voice.
+Set the reverberation type (see REVERB\_\* constants) and send level (from 0 to 1.0) of a voice.
 
 .. _class_SamplePlayer_get_mix_rate:
 
@@ -295,7 +290,7 @@ Return the current pan height for a given voice.
 
 - :ref:`int<class_int>`  **get_filter_type**  **(** :ref:`int<class_int>` voice  **)** const
 
-Return the current filter type in use (see FILTER_* constants) for a given voice.
+Return the current filter type in use (see FILTER\_\* constants) for a given voice.
 
 .. _class_SamplePlayer_get_filter_cutoff:
 
@@ -325,7 +320,7 @@ Return the current chorus send level for a given voice.
 
 - :ref:`int<class_int>`  **get_reverb_room**  **(** :ref:`int<class_int>` voice  **)** const
 
-Return the current reverberation room type for a given voice (see REVERB_* enum).
+Return the current reverberation room type for a given voice (see REVERB\_\* enum).
 
 .. _class_SamplePlayer_get_reverb:
 
@@ -369,7 +364,7 @@ Optionally, for hardware than support 3D sound, one can also set depth and heigh
 
 - void  **set_default_filter**  **(** :ref:`int<class_int>` type, :ref:`float<class_float>` cutoff_hz, :ref:`float<class_float>` resonance, :ref:`float<class_float>` gain=0  **)**
 
-Set the default filter for the player, using the given type (see FILTER_* constants), cutoff frequency (from 20 to 16,384 Hz) and resonance (from 0 to 4.0).
+Set the default filter for the player, using the given type (see FILTER\_\* constants), cutoff frequency (from 20 to 16,384 Hz) and resonance (from 0 to 4.0).
 
 Optionally, a gain can also be given (from 0 to 2.0).
 
@@ -383,7 +378,7 @@ Set the default chorus send level of the player (from 0 to 1.0). For setting cho
 
 - void  **set_default_reverb**  **(** :ref:`int<class_int>` room_type, :ref:`float<class_float>` send  **)**
 
-Set the default reverberation type (see REVERB_* constants) and send level (from 0 to 1.0) of the player.
+Set the default reverberation type (see REVERB\_\* constants) and send level (from 0 to 1.0) of the player.
 
 .. _class_SamplePlayer_get_default_pitch_scale:
 
@@ -425,7 +420,7 @@ Return the default pan height of the player.
 
 - :ref:`int<class_int>`  **get_default_filter_type**  **(** **)** const
 
-Return the default filter type in use (see FILTER_* constants) for the player.
+Return the default filter type in use (see FILTER\_\* constants) for the player.
 
 .. _class_SamplePlayer_get_default_filter_cutoff:
 
@@ -455,7 +450,7 @@ Return the default chorus send level of the player.
 
 - :ref:`int<class_int>`  **get_default_reverb_room**  **(** **)** const
 
-Return the default reverberation room type of the player (see REVERB_* enum).
+Return the default reverberation room type of the player (see REVERB\_\* enum).
 
 .. _class_SamplePlayer_get_default_reverb:
 

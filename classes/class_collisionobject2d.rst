@@ -3,14 +3,9 @@
 CollisionObject2D
 =================
 
-Inherits: :ref:`Node2D<class_node2d>`
--------------------------------------
+**Inherits:** :ref:`Node2D<class_node2d>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Base node for 2D collisionables.
 

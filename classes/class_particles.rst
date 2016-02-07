@@ -3,14 +3,9 @@
 Particles
 =========
 
-Inherits: :ref:`GeometryInstance<class_geometryinstance>`
----------------------------------------------------------
+**Inherits:** :ref:`GeometryInstance<class_geometryinstance>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Particle system 3D Node
 
@@ -189,13 +184,13 @@ Return the normal vector towards where gravity is pulling (by default, negative 
 
 - void  **set_variable**  **(** :ref:`int<class_int>` variable, :ref:`float<class_float>` value  **)**
 
-Set a specific variable for the particle system (see VAR_* enum).
+Set a specific variable for the particle system (see VAR\_\* enum).
 
 .. _class_Particles_get_variable:
 
 - :ref:`float<class_float>`  **get_variable**  **(** :ref:`int<class_int>` variable  **)** const
 
-Return a specific variable for the particle system (see VAR_* enum).
+Return a specific variable for the particle system (see VAR\_\* enum).
 
 .. _class_Particles_set_randomness:
 

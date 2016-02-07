@@ -3,14 +3,9 @@
 StreamPeerTCP
 =============
 
-Inherits: :ref:`StreamPeer<class_streampeer>`
----------------------------------------------
+**Inherits:** :ref:`StreamPeer<class_streampeer>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 TCP Stream peer.
 

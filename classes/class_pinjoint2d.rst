@@ -3,14 +3,9 @@
 PinJoint2D
 ==========
 
-Inherits: :ref:`Joint2D<class_joint2d>`
----------------------------------------
+**Inherits:** :ref:`Joint2D<class_joint2d>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Pin Joint for 2D Shapes.
 

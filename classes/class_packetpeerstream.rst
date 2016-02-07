@@ -3,14 +3,9 @@
 PacketPeerStream
 ================
 
-Inherits: :ref:`PacketPeer<class_packetpeer>`
----------------------------------------------
+**Inherits:** :ref:`PacketPeer<class_packetpeer>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Wrapper to use a PacketPeer over a StreamPeer.
 

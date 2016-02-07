@@ -3,11 +3,7 @@
 String
 ======
 
-Category: Built-In Types
-------------------------
-
-Brief Description
------------------
+**Category:** Built-In Types
 
 Built-in string class.
 
@@ -284,13 +280,13 @@ Return the length of the string in characters.
 
 - :ref:`bool<class_bool>`  **match**  **(** :ref:`String<class_string>` expr  **)**
 
-Do a simple expression matching, using ? and * wildcards.
+Do a simple expression matching, using ? and \* wildcards.
 
 .. _class_String_matchn:
 
 - :ref:`bool<class_bool>`  **matchn**  **(** :ref:`String<class_string>` expr  **)**
 
-Do a simple, case insensitive, expression matching, using ? and * wildcards.
+Do a simple, case insensitive, expression matching, using ? and \* wildcards.
 
 .. _class_String_md5_buffer:
 

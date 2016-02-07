@@ -3,14 +3,9 @@
 CenterContainer
 ===============
 
-Inherits: :ref:`Container<class_container>`
--------------------------------------------
+**Inherits:** :ref:`Container<class_container>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Keeps children controls centered.
 

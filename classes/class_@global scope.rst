@@ -3,11 +3,7 @@
 @Global Scope
 =============
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Global scope constants and variables.
 
@@ -434,7 +430,7 @@ Numeric Constants
 - **PROPERTY_HINT_KEY_ACCEL** = **7**
 - **PROPERTY_HINT_FLAGS** = **8** --- Property hint for a bitmask description, for bits 0,1,2,3 and 5 the hint would be like "Bit0,Bit1,Bit2,Bit3,,Bit5". Valid only for integers.
 - **PROPERTY_HINT_ALL_FLAGS** = **9** --- Property hint for a bitmask description that covers all 32 bits. Valid only for integers.
-- **PROPERTY_HINT_FILE** = **10** --- String property is a file (so pop up a file dialog when edited). Hint string can be a set of wildcards like "*.doc".
+- **PROPERTY_HINT_FILE** = **10** --- String property is a file (so pop up a file dialog when edited). Hint string can be a set of wildcards like "\*.doc".
 - **PROPERTY_HINT_DIR** = **11** --- String property is a directory (so pop up a file dialog when edited).
 - **PROPERTY_HINT_GLOBAL_FILE** = **12**
 - **PROPERTY_HINT_GLOBAL_DIR** = **13**

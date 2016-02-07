@@ -3,11 +3,7 @@
 Vector3
 =======
 
-Category: Built-In Types
-------------------------
-
-Brief Description
------------------
+**Category:** Built-In Types
 
 Vector class, which performs basic 3D vector math operations.
 

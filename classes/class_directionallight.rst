@@ -3,14 +3,9 @@
 DirectionalLight
 ================
 
-Inherits: :ref:`Light<class_light>`
------------------------------------
+**Inherits:** :ref:`Light<class_light>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Directional Light, such as the Sun or the Moon.
 

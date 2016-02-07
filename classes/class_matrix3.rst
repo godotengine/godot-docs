@@ -3,11 +3,7 @@
 Matrix3
 =======
 
-Category: Built-In Types
-------------------------
-
-Brief Description
------------------
+**Category:** Built-In Types
 
 3x3 matrix datatype.
 

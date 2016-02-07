@@ -3,14 +3,9 @@
 Physics2DDirectBodyState
 ========================
 
-Inherits: :ref:`Object<class_object>`
--------------------------------------
+**Inherits:** :ref:`Object<class_object>`
 
-Category: Core
---------------
-
-Brief Description
------------------
+**Category:** Core
 
 Direct access object to a physics body in the :ref:`Physics2DServer<class_physics2dserver>`.
 

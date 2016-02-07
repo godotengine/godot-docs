@@ -3,11 +3,7 @@
 AABB
 ====
 
-Category: Built-In Types
-------------------------
-
-Brief Description
------------------
+**Category:** Built-In Types
 
 Axis-Aligned Bounding Box.
 
@@ -107,7 +103,7 @@ Return the normalized longest axis of the :ref:`AABB<class_aabb>`.
 
 - :ref:`int<class_int>`  **get_longest_axis_index**  **(** **)**
 
-Return the index of the longest axis of the :ref:`AABB<class_aabb>` (according to :ref:`Vector3<class_vector3>`::AXIS* enum).
+Return the index of the longest axis of the :ref:`AABB<class_aabb>` (according to :ref:`Vector3<class_vector3>`::AXIS\* enum).
 
 .. _class_AABB_get_longest_axis_size:
 
@@ -125,7 +121,7 @@ Return the normalized shortest axis of the :ref:`AABB<class_aabb>`.
 
 - :ref:`int<class_int>`  **get_shortest_axis_index**  **(** **)**
 
-Return the index of the shortest axis of the :ref:`AABB<class_aabb>` (according to :ref:`Vector3<class_vector3>`::AXIS* enum).
+Return the index of the shortest axis of the :ref:`AABB<class_aabb>` (according to :ref:`Vector3<class_vector3>`::AXIS\* enum).
 
 .. _class_AABB_get_shortest_axis_size:
 
