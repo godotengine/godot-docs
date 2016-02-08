@@ -1,4 +1,4 @@
-:: _doc_importing_translations:
+.. _doc_importing_translations:
 
 Importing translations
 ======================

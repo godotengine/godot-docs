@@ -1,4 +1,4 @@
-:: _doc_custom_modules_in_c++:
+.. _doc_custom_modules_in_c++:
 
 Custom modules in C++
 =====================
@@ -225,10 +225,10 @@ stuff normally and remember to:
 But this is not all, depending what you do, you will be greeted with
 some surprises.
 
--  If you inherit from [[API:Node]] (or any derived node type, such as
+-  If you inherit from :ref:`class_Node` (or any derived node type, such as
    Sprite), your new class will appear in the editor, in the inheritance
    tree in the "Add Node" dialog.
--  If you inherit from [[API:Resource]], it will appear int the resource
+-  If you inherit from :ref:`class_Resource`, it will appear int the resource
    list, and all the exposed properties can be serialized when
    saved/loaded.
 -  By this same logic, you can extend the Editor and almost any area of

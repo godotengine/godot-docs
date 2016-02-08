@@ -1,4 +1,4 @@
-:: _doc_exporting_for_ios:
+.. _doc_exporting_for_ios:
 
 Exporting for iOS
 =================
@@ -24,9 +24,9 @@ identities (??), etc.
 Add your project data
 ---------------------
 
-Using the Godot editor, [[Exporting\_for\_pc\|export your project for
-Windows]], to obtain the data.pck file. Replace the empty data.pck in
-the XCode project with the new one, and run/archive.
+Using the Godot editor, :ref:`doc_exporting_for_pc`, to obtain the data.pck
+file. Replace the empty data.pck in the XCode project with the new one,
+and run/archive.
 
 If you want to test your scenes on the iOS device as you edit them, you
 can add your game directory to the project (instead of data.pck), and
@@ -72,7 +72,6 @@ no longer added to the project, only the engine executable.
 Services for iOS
 ----------------
 
-Special iOS services can be used in Godot. Check out the [[Services for
-iOS]] page.
+Special iOS services can be used in Godot. Check out the :ref:`doc_services_for_ios` page.
 
 

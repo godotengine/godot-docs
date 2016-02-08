@@ -1,4 +1,4 @@
-:: _doc_importing_3d_meshes:
+.. _doc_importing_3d_meshes:
 
 Importing 3D meshes
 ===================
@@ -6,7 +6,7 @@ Importing 3D meshes
 Introduction
 ------------
 
-Godot supports a flexible and powerful [[3D Scene importer]], that
+Godot supports a flexible and powerful :ref:`doc_importing_3d_scenes`, that
 allows for full scene importing. For a lot of artists and developers
 this is more than enough. However, many do not like this workflow as
 much and prefer to import individual 3D Meshes and build the scenes
@@ -16,7 +16,7 @@ Importer).
 
 The 3D mesh import workflow is simple and works using the OBJ file
 format. The imported meshes result in a .msh binary file which the user
-can put into a [[API:MeshInstance]], which in turn can be placed
+can put into a :ref:`class_meshinstance`, which in turn can be placed
 somewhere in the edited scene.
 
 Importing
@@ -33,7 +33,7 @@ Which opens the Mesh import window:
 This dialog allows the import of one more more OBJ files into a target
 path. OBJ files are converted to .msh files. Files are imported without
 any material on them, material has to be added by the user (see the
-[[Fixed materials]] tutorial). If the external OBJ file is changed it
+:ref:`doc_fixed_materials` tutorial). If the external OBJ file is changed it
 will be re-imported, while keeping the newly assigned material.
 
 Options

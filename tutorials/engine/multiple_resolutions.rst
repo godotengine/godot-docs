@@ -1,4 +1,4 @@
-:: _doc_multiple_resolutions:
+.. _doc_multiple_resolutions:
 
 Screen Scaling & Multiple Resolutions
 =====================================
@@ -82,7 +82,7 @@ Stretch Aspect
    be stretched vertically (and more vertical resolution will be
    reported in the viewport, proportionally). This is usually the best
    option for creating GUIs or HUDs that scale, so some controls can be
-   anchored to the bottom ([[Gui Repositioning]]).
+   anchored to the bottom (:ref:`doc_size_and_anchors`).
 -  **Keep Height**: Keep aspect ratio when stretching the screen, but if
    the resulting screen is wider than the specified resolution, it will
    be stretched horizontally (and more horizontal resolution will be

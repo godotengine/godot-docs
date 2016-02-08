@@ -1,4 +1,4 @@
-:: _doc_one-click_deploy:
+.. _doc_one-click_deploy:
 
 One-click deploy
 ================

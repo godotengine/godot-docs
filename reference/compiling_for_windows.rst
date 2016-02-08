@@ -1,4 +1,4 @@
-:: _doc_compiling_for_windows:
+.. _doc_compiling_for_windows:
 
 Compiling for Windows
 =====================

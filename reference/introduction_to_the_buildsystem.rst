@@ -1,4 +1,4 @@
-:: _doc_introduction_to_the_buildsystem:
+.. _doc_introduction_to_the_buildsystem:
 
 Introduction to the buildsystem
 ===============================

@@ -1,4 +1,4 @@
-:: _doc_importing_3d_scenes:
+.. _doc_importing_3d_scenes:
 
 Importing 3D scenes
 ===================
@@ -99,8 +99,7 @@ default to improve performance and save resources.
 
 Since the original textures, 3d file and textues are usually not needed,
 it's recommended you keep them outside the project. For some hints on
-how to do this the best way, you can check the [[Version control &
-Project organization]] tutorial.
+how to do this the best way, you can check the :ref:`doc_version_control` tutorial.
 
 Two options for textures are provided. They can be copied to the same
 place as the scene, or they can be copied to a common path (configurable
@@ -207,7 +206,7 @@ changes. This option must be used together with the SRGB option in
 `WorldEnvironment <class_worldenvironment>`__. The texture import
 options also have the option to do this conversion, but if this one is
 turned on, conversion will always be done to diffuse textures (usually
-what is desired). For more information, read the [[HDR]].
+what is desired). For more information, read the :ref:`doc_high_dynamic_range`.
 
 Set alpha in materials (-alpha)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -263,8 +262,9 @@ Create rooms (-room)
 
 This is used to create a room. As a general rule, any node that is a
 child of this node will be considered inside the room (including
-portals). For more information about rooms/portals, look at the
-[[Portals and Rooms]] tutorial.
+portals).
+
+.. For more information about rooms/portals, look at the [[Portals and Rooms]] tutorial.
 
 There are two ways in which this modifier can be used. The first is
 using a Dummy/Empty node in the 3D app with the "-room" tag. For this to
@@ -287,8 +287,9 @@ Create portals (-portal)
 
 Portals are the view to look outside a room. They are always some flat
 shape on the surface of a room. If the portal is left alone, it is used
-to activate occlusion when looking inside<->outside the room. Again,
-more information on the [[Portals and Rooms]] tutorial.
+to activate occlusion when looking inside<->outside the room.
+
+.. Again, more information on the [[Portals and Rooms]] tutorial.
 
 Basically, the conditions to make and import a portal from the 3D DCC
 are:

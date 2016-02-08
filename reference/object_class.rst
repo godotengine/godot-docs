@@ -1,4 +1,4 @@
-:: _doc_object_class:
+.. _doc_object_class:
 
 Object class
 ============

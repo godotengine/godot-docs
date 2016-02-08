@@ -1,4 +1,4 @@
-:: _doc_animations:
+.. _doc_animations:
 
 Animations
 ==========

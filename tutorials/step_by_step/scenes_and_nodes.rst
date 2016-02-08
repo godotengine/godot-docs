@@ -1,4 +1,4 @@
-:: _doc_scenes_and_nodes:
+.. _doc_scenes_and_nodes:
 
 Scenes and nodes
 ================

@@ -1,4 +1,4 @@
-:: _doc_scripting_continued:
+.. _doc_scripting_continued:
 
 Scripting (continued)
 =====================

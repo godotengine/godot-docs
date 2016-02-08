@@ -1,4 +1,4 @@
-:: _doc_gui_skinning:
+.. _doc_gui_skinning:
 
 Skinning a GUI
 ==============

@@ -1,4 +1,4 @@
-:: _doc_exporting_projects:
+.. _doc_exporting_projects:
 
 Exporting projects
 ==================

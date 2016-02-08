@@ -1,4 +1,4 @@
-:: _doc_singletons_autoload:
+.. _doc_singletons_autoload:
 
 Singletons (AutoLoad)
 =====================
@@ -59,7 +59,7 @@ Custom Scene Switcher
 This short tutorial will explain how to make a scene switcher by using
 autoload. For simple scene switching, the
 `SceneTree.change\_scene <https://github.com/okamstudio/godot/wiki/class_scenetree#change_scene>`__
-method suffices (described [[Scene Main Loop]] ), so this method is for
+method suffices (described in :ref:`doc_scene_tree`), so this method is for
 more complex behaviors when switching scenes.
 
 First download the template from here: attachment:autoload.zip, then

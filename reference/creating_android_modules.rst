@@ -1,4 +1,4 @@
-:: _doc_creating_android_modules:
+.. _doc_creating_android_modules:
 
 Creating Android modules
 ========================
@@ -52,12 +52,11 @@ share it with the community.
 Android module
 --------------
 
-Writing an Android module is similar to [[Custom modules in C++]], but
+Writing an Android module is similar to :ref:`doc_custom_modules_in_c++`, but
 needs a few more steps.
 
-Make sure you are familiar with building your own [[Compiling for
-Android\|Android export templates]], as well as creating [[Custom
-modules in C++\|custom modules]].
+Make sure you are familiar with building your own :ref:`Android export templates <doc_compiling_for_android>`,
+as well as creating :ref:`doc_custom_modules_in_c++`.
 
 config.py
 ~~~~~~~~~
@@ -254,7 +253,7 @@ Afterwards, just build the ant project normally:
     c:\\godot\\platform\\android\\java> ant release
 
 This should generate the apk used as export template properly, as
-defined in the [[Compiling for Android\|Android build instructions]].
+defined in :ref:`doc_compiling_for_android`.
 
 Usually to generate the apk, again both commands must be run in
 sequence:

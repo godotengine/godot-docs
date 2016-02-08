@@ -1,4 +1,4 @@
-:: _doc_exporting_for_pc:
+.. _doc_exporting_for_pc:
 
 Exporting for PC
 ================

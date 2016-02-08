@@ -1,4 +1,4 @@
-:: _doc_tilemap:
+.. _doc_tilemap:
 
 Creating a Tilemap
 ~~~~~~~~~~~~~~~~~~
@@ -162,11 +162,11 @@ ones that look better for you:
    can be more cumbersome to implement, so first try the options below
    first.
 -  Disable filtering for either the tileset texture or the entire image
-   loader (see the [[Image Files]] asset pipeline tutorial).
+   loader (see the :ref:`doc_managing_image_files` asset pipeline tutorial).
 -  Enable pixel snap (Set: ΅Scene [STRIKEOUT:> Project Settings]>
    rasterizer/uxe\_pixel\_snap" to true).
 -  Viewport Scaling can often help shrinking the map (see the
-   [[Viewports]] tutorial).
+   :ref:`doc_viewports` tutorial).
 
 
 

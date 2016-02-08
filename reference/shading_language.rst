@@ -1,4 +1,4 @@
-:: _doc_shading_language:
+.. _doc_shading_language:
 
 Shading Language
 ================

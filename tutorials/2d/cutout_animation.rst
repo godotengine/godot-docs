@@ -1,4 +1,4 @@
-:: _doc_cutout_animation:
+.. _doc_cutout_animation:
 
 Cutout Animation
 ================
@@ -279,7 +279,7 @@ Animation
 
 The following section will be a collection of tips for creating
 animation for your rigs. If unsure about how the animation system in
-Godot works, refresh it by checking again the [[tutorial\_animation]].
+Godot works, refresh it by checking again the :ref:`doc-animations`.
 
 2D Animation
 ------------

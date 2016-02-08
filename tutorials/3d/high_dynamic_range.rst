@@ -1,4 +1,4 @@
-:: _doc_high_dynamic_range:
+.. _doc_high_dynamic_range:
 
 High Dynamic Range
 ==================

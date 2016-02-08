@@ -1,4 +1,4 @@
-:: _doc_introduction_to_godot_development:
+.. _doc_introduction_to_godot_development:
 
 Introduction to Godot development
 =================================

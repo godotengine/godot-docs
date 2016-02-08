@@ -1,4 +1,4 @@
-:: _doc_inverse_kinematics:
+.. _doc_inverse_kinematics:
 
 | Before continuing on, I'd recommend reading some theory, the simplest
   article I find is this:

@@ -1,4 +1,4 @@
-:: _doc_inputevent:
+.. _doc_inputevent:
 
 InputEvent
 ==========
@@ -116,7 +116,7 @@ logic. This allows for:
 -  Input to be reconfigured at run-time.
 
 Actions can be created from the Project Settings menu in the Actions
-tab. If you read the [[Tutorial 2D]], there is an explanation on how
+tab. If you read the :ref:`doc_simple_2d_game`, there is an explanation on how
 does the action editor work.
 
 Any event has the methods [[API:InputEvent.is\_action()]],

@@ -1,4 +1,4 @@
-:: _doc_bug_triage_guidelines:
+.. _doc_bug_triage_guidelines:
 
 Bug triage guidelines
 =====================

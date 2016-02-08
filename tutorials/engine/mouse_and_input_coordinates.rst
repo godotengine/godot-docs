@@ -1,4 +1,4 @@
-:: _doc_mouse_and_input_coordinates:
+.. _doc_mouse_and_input_coordinates:
 
 Mouse & Input Coordinates
 =========================
@@ -23,7 +23,7 @@ functions such as:]
 **This method is no longer supported:** It was too confusing and caused
 errors for users making 2D games. Screen would stretch to different
 resolutions and input would stop making sense. Please use the
-\`\`\_input\`\` function
+``_input`` function
 
 ::
 
@@ -37,7 +37,7 @@ Viewport Display Coordinates
 ----------------------------
 
 Godot uses viewports to display content, and viewports can be scaled by
-several options (see [[tutorial\_multires]] tutorial). Use, then, the
+several options (see :ref:`doc_multiple_resolutions` tutorial). Use, then, the
 functions in nodes to obtain the mouse coordinates and viewport size,
 for example:
 

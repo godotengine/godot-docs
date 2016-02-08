@@ -1,4 +1,4 @@
-:: _doc_configure_your_ide:
+.. _doc_configure_your_ide:
 
 Configure an IDE
 ================

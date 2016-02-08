@@ -1,10 +1,9 @@
-:: _doc_managing_image_files:
+.. _doc_managing_image_files:
 
 Managing image files
 ====================
 
-If you have read the previous tutorials on [[Resources]] and [[File
-System]], at this point you know that regular image files (.png, .jpg,
+If you have read the previous tutorials on :ref:`doc_resources` and :ref:`doc_file_system`, at this point you know that regular image files (.png, .jpg,
 etc) are treated as regular resources in Godot.
 
 Unlike texture resources (.tex files), image files contain no extra
@@ -110,6 +109,6 @@ compression) on export, as well as instructing the exporter to create an
 Atlas for a set of images. It is also possible to ask the exporter to
 scale all images (or selected groups).
 
-More information on the [[Exporting images]] page.
+More information on the :ref:`doc_exporting_images` page.
 
 

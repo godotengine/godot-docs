@@ -1,4 +1,4 @@
-:: _doc_gdscript_more_efficiently:
+.. _doc_gdscript_more_efficiently:
 
 Using GDScript Efficiently
 ==========================
@@ -27,8 +27,8 @@ are that:
 -  Less code written means less errors & mistakes to fix.
 -  Easier to read the code (less clutter).
 -  No compilation is required to test.
--  Run-Time is tiny.
--  [[API:Duck-Typing]] and [[API:Polymorphism]] by nature.
+-  Runtime is tiny.
+-  Duck-typing and polymorphism by nature.
 
 While the main cons are:
 
@@ -165,9 +165,9 @@ GDScript:
 In GDScript, only base types (int, float, string and the vector types)
 are passed by value to functions (value is copied). Everything else
 (instances, arrays, dictionaries, etc) is passed as reference. Classes
-that inherit [[API:Reference]] (the default if nothing is specified)
+that inherit :ref:`class_Reference` (the default if nothing is specified)
 will be freed when not used, but manual memory management is allowed too
-if inheriting manualy from [[API:Object]].
+if inheriting manualy from :ref:`class_Object`.
 
 Arrays
 ------

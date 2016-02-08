@@ -1,4 +1,4 @@
-:: _doc_paths:
+.. _doc_paths:
 
 Paths
 =====

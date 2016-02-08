@@ -1,4 +1,4 @@
-:: _doc_instancing_continued:
+.. _doc_instancing_continued:
 
 Instancing (continued)
 ======================

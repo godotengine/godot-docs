@@ -1,4 +1,4 @@
-:: _doc_import_process:
+.. _doc_import_process:
 
 Import process
 ==============

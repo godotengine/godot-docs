@@ -1,4 +1,4 @@
-:: _doc_services_for_ios:
+.. _doc_services_for_ios:
 
 Services for iOS
 ================

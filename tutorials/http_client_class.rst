@@ -1,4 +1,4 @@
-:: _doc_http_client_class:
+.. _doc_http_client_class:
 
 HTTP client class example
 =========================

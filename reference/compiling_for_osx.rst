@@ -1,4 +1,4 @@
-:: _doc_compiling_for_osx:
+.. _doc_compiling_for_osx:
 
 Compiling for OSX
 =================

@@ -1,4 +1,4 @@
-:: _doc_compiling_for_universal_windows_apps:
+.. _doc_compiling_for_universal_windows_apps:
 
 Compiling for Universal Windows Apps
 ====================================
@@ -13,7 +13,7 @@ Requirements
 ------------
 
 -  Windows 8
--  SCons (see [[Compiling for Windows]] for more details)
+-  SCons (see :ref:`doc_compiling_for_windows` for more details)
 -  Visual Studio 2013 for Windows (but *not* "for Windows Desktop").
    Tested on "Microsoft Visual Studio Express 2013 for Windows Version
    12.0.31101.00 Update 4".

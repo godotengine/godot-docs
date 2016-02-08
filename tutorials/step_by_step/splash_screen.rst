@@ -1,4 +1,4 @@
-:: _doc_splash_screen:
+.. _doc_splash_screen:
 
 Splash screen
 =============
@@ -43,8 +43,7 @@ can be set a custom font by editing the following property:
 
 .. image:: /img/label.png
 
-As a side note, the font was imported from a TTF, there is a [[Importing
-Fonts]] for importing fonts.
+As a side note, the font was imported from a TTF, see :ref:`doc_importing_fonts`.
 
 
 

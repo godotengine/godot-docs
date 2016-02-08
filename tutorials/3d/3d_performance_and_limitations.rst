@@ -1,4 +1,4 @@
-:: _doc_3d_performance_and_limitations:
+.. _doc_3d_performance_and_limitations:
 
 3D Performance & Limitations
 ============================
@@ -181,7 +181,7 @@ Bake Lighting
 
 Small lights are usually not a performance issue. Shadows a little more.
 In general, if several lights need to affect a scene, it's ideal to bake
-it ([[Light Baking]]). Baking can also improve the scene quality by
+it (:ref:`doc_light_baking`). Baking can also improve the scene quality by
 adding indirect light bounces.
 
 If working on mobile, baking to texture is recommended, since this

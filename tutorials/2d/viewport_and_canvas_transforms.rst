@@ -1,4 +1,4 @@
-:: _doc_viewport_and_canvas_transforms:
+.. _doc_viewport_and_canvas_transforms:
 
 Viewport & Canvas Transforms
 ============================
@@ -14,7 +14,7 @@ the screen.
 Canvas Transform
 ----------------
 
-As mentioned in the previous tutorial [[Canvas Layers]], every
+As mentioned in the previous tutorial :ref:`doc_canvas_layers`, every
 CanvasItem node (remember that Node2D and Control based nodes use
 CanvasItem as their common root) will reside in a *Canvas Layer*. Every
 canvas layer has a transform (translation, rotation, scale, etc) that
@@ -41,7 +41,7 @@ Stretch Transform
 
 Finally, viewports have a *Stretch Transform*, which is used when
 resizing or stretching the screen. This transform is used internally by
-the [[Tutorial Multires]], but can also be requested to the viewport.
+the :ref:`doc_multiple_resolutions`, but can also be requested to the viewport.
 
 Input events received in the
 `Node.\_input\_event(ev) <https://github.com/okamstudio/godot/wiki/class_node#_input_event>`__

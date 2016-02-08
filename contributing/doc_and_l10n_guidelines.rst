@@ -1,4 +1,4 @@
-:: _doc_doc_and_l10n_guidelines:
+.. _doc_doc_and_l10n_guidelines:
 
 Documentation writing and translating guidelines
 ================================================
@@ -34,7 +34,7 @@ following rules must be respected :
 
 -  Choose a short and explicit title
 -  Respect the grammar and orthography
--  Make use of the [[Wiki syntax]]
+-  Make use of the :ref:`doc_wiki_syntax`
 
 | Try to structure your page in order to enable users to include a page
   directly in another page or even forum posts using the include wiki
@@ -78,6 +78,8 @@ Note for non-English authors
 Translating existing pages
 --------------------------
 
+**TODO: Needs review for Sphinx doc**
+
 You are very welcome to translate existing pages from English to your
 language, or from your language to English. If these guidelines were
 respected, an English page already exists for every page of this wiki,
@@ -85,7 +87,7 @@ even if it is empty. To translate an existing page, please follow these
 few rules :
 
 -  Respect the grammar and orthography
--  Make use of the [[wiki syntax]]
+-  Make use of the :ref:`doc_wiki_syntax`
 -  Re-use images
 -  Always keep the structure of the English page (if it is written yet,
    follow the structure of the original language page you are
@@ -95,9 +97,10 @@ To translate an existing page, simply copy its original content. Then,
 create the new page in the section of your language, copy the English
 content in it and start translating.
 
-| Please add a line at the very beginning of your translation, linking
-  to the English base page you translate from :
-| Traduction de ![[Godot Engine:Creating 2D Games]]
+Please add a line at the very beginning of your translation, linking
+to the English base page you translate from:
+
+Traduction de ![[Godot Engine:Creating 2D Games]]
 
 The previous link is of the form ![[:]] which enables you to add a link
 to a page located in an other project. Here, "Godot Engine" is the

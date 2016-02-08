@@ -1,4 +1,4 @@
-:: _doc_shader_materials:
+.. _doc_shader_materials:
 
 Shader Materials
 ================
@@ -6,7 +6,7 @@ Shader Materials
 Introduction
 ------------
 
-For the most common cases, [[Fixed Material]] are enough to create the
+For the most common cases, :ref:`doc_fixed_materials` are enough to create the
 desired textures or look and feel. Shader materials are a step beyond
 that adds a huge amount of flexibility. With them, it is possible to:
 
@@ -39,7 +39,7 @@ Edit the newly created shader, and the shader editor will open:
 
 There are three code tabs open, the first is for the vertex shader, the
 second for the fragment and the third for the lighting. The shader
-language is documented in it's [[Shader]] so a small example will be
+language is documented in it's :ref:`doc_shading_language` so a small example will be
 presented next.
 
 Create a very simple fragment shader that writes a color:

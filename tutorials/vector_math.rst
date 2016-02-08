@@ -1,4 +1,4 @@
-:: _doc_vector_math:
+.. _doc_vector_math:
 
 Vector Math
 ===========
@@ -906,7 +906,7 @@ So the final algorithm is something like:
 
 This was all! Hope it was helpful, and please give feedback and let know
 if something in this tutorial is not clear! You should be now ready for
-the next challenge.. [[Transforms]]!
+the next challenge... :ref:`doc_matrices_and_transforms`!
 
 
 

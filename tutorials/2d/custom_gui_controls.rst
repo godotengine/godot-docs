@@ -1,4 +1,4 @@
-:: _doc_custom_gui_controls:
+.. _doc_custom_gui_controls:
 
 Custom GUI Controls
 ===================
@@ -16,7 +16,7 @@ create these controls easily from script.
 Drawing
 -------
 
-For drawing, it is recommended to check the [[Custom Draw 2D]] tutorial.
+For drawing, it is recommended to check the :ref:`doc_custom_drawing_in_2d` tutorial.
 The same applies. Some functions are worth mentioning due to their
 usefulness when drawing, so they will be detailed next:
 

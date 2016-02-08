@@ -1,4 +1,4 @@
-:: _doc_introduction:
+.. _doc_introduction:
 
 Introduction
 ============
@@ -12,7 +12,7 @@ the 3D platformer tutorial, or the 3D kinematic character tutorials,
 which are almost identical to their 2D counterparts.
 
 In 3D, math is a little more complex than in 2D, so also checking the
-[[Vector Math]] in the wiki (which were specially created for game
+:ref:`doc_vector_math` in the wiki (which were specially created for game
 developers, not mathematicians or engineers) will help pave the way into
 efficiently developing 3D games.
 
@@ -53,11 +53,11 @@ DCC-Created Models
 ------------------
 
 There are two pipelines to import 3D models in Godot. The first and most
-common one is through the [[Import 3D]] importer, which allows to import
+common one is through the :ref:`doc_importing_3d_scenes` importer, which allows to import
 entire scenes (just as they look in the DCC), including animation,
 skeletal rigs, blend shapes, etc.
 
-The second pipeline is through the [[Import Meshes]] importer. This
+The second pipeline is through the :ref:`doc_importing_3d_meshes` importer. This
 second method allows importing simple .OBJ files as mesh resources,
 which can be then put inside a
 `MeshInstance <https://github.com/okamstudio/godot/wiki/class_meshinstance>`__
@@ -243,7 +243,7 @@ many as desired can be added (as long as performance allows). Shadow
 maps are, however, limited. The more they are used, the less the quality
 overall.
 
-It is possible to use [[Light Baking]], to avoid using large amount of
+It is possible to use :ref:`doc_light_baking`, to avoid using large amount of
 real-time lights and improve performance.
 
 

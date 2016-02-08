@@ -1,4 +1,4 @@
-:: _doc_core_types:
+.. _doc_core_types:
 
 Core types
 ==========

@@ -1,4 +1,4 @@
-:: _doc_importing_textures:
+.. _doc_importing_textures:
 
 Importing textures
 ==================
@@ -8,7 +8,7 @@ Do NOT import them in most cases
 
 In most cases you **don't** want images imported when dealing with 2D
 and GUI. Just copy them to the filesystem. Read the tutorial on
-[[Image\_Files\|dealing with image files]] before continuing! For 3D,
+:ref:`doc_managing_image_files` before continuing! For 3D,
 textures are always imported by the 3D scene importer, so importing
 those is only useful when importing a texture used for 3D that doesn't
 come with the 3D scene (for example, in a shader). The flags and options

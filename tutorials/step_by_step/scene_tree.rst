@@ -1,4 +1,4 @@
-:: _doc_scene_tree:
+.. _doc_scene_tree:
 
 SceneTree
 =========
@@ -14,7 +14,7 @@ Introduction
 
 This deserves going a little more into depth. In fact, the scene system
 is not even a core component of Godot, as it is possible to skip it and
-make a script (or C++ code) that talks directly to the [[Servers]]. But
+make a script (or C++ code) that talks directly to the servers. But
 making a game that way would be a lot of work and is reserved for other
 uses.
 
@@ -151,7 +151,7 @@ that the game will stall until the new scene is loaded and running. At
 some point in your game, it may be desired to create proper loading
 screens with progress bar, animated indicators or thread (background)
 loading. This must be done manually using autoloads (see next chapter!)
-and [[Background Loading]].
+and :ref:`doc_background_loading`.
 
 
 

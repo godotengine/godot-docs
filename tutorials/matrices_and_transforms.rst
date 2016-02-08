@@ -1,4 +1,4 @@
-:: _doc_matrices_and_transforms:
+.. _doc_matrices_and_transforms:
 
 Matrices & Transforms
 =====================
@@ -7,7 +7,7 @@ Introduction
 ------------
 
 Before reading this tutorial, it is advised to read the previous one
-about [[Vector Math]] as this one is a direct continuation.
+about :ref:`doc_vector_math` as this one is a direct continuation.
 
 | This tutorial will be about *transformations* and will cover a little
   about matrices (but not in-depth).
@@ -98,7 +98,7 @@ position!
 | How did this black magic happen? The ship was lost in space, and now
   it's back home!
 | It might seem strange, but it does have plenty of logic. Remember, as
-  we have seen in the [[tutorial\_vector\_math#distance-to-plane]], what
+  we have seen in the :ref:`doc_vector_math`, what
   happened is that the distance to X axis, and the distance to Y axis
   were computed. Calculating distance in a direction or plane was one of
   the uses for the dot product. This was enough to obtain back the

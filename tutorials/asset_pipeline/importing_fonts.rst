@@ -1,4 +1,4 @@
-:: _doc_importing_fonts:
+.. _doc_importing_fonts:
 
 Importing fonts
 ===============
@@ -103,7 +103,7 @@ format) where it expects to find all the characters that will be used in
 the project. This seems difficult to provide at first, and more to keep
 up to date, but it becomes rather easy when one realizes that the .csv
 with the translations can be used as such source file (see the
-[[Importing\_translations]] section). As Godot re-imports assets when
+:ref:`doc_importing_translations` section). As Godot re-imports assets when
 their dependencies change, both the translation and font files will be
 updated and re-imported automatically if the translation csv changes.
 

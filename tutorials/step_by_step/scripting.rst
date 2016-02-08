@@ -1,4 +1,4 @@
-:: _doc_scripting:
+.. _doc_scripting:
 
 Scripting
 =========
@@ -41,8 +41,8 @@ available engine classes.
 GDScript
 --------
 
-[[GDScript]] (click link for reference) is a dynamically typed scripting
-language to fit inside Godot. It was designed with the following goals:
+:ref:`doc_gdscript` is a dynamically typed scripting language to fit
+inside Godot. It was designed with the following goals:
 
 -  First and most importantly, making it simple, familiar and as easy to
    learn as possible.
@@ -67,7 +67,7 @@ rest of the game.
 Scripting a Scene
 -----------------
 
-Before continuing, please make sure to read the [[GDScript]] reference.
+Before continuing, please make sure to read the :ref:`doc_gdscript` reference.
 It's a simple language and the reference is short, should not take more
 than a few minutes to glance.
 

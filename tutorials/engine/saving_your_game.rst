@@ -1,4 +1,4 @@
-:: _doc_saving_your_game:
+.. _doc_saving_your_game:
 
 Saving Your Game
 ================
@@ -21,7 +21,7 @@ this tutorial, we will use groups to mark and handle objects to be saved
 but other methods are certainly possible.
 
 We will start by adding objects we wish to save to the "Persist" group.
-As in the [[Scripting\_(Continued)]] tutorial, we can do this through
+As in the :ref:`doc_scripting_continued` tutorial, we can do this through
 the GUI or through script. Let's add the relevant nodes using the GUI:
 
 .. image:: /img/groups.png
@@ -78,7 +78,7 @@ loading.
 Saving and reading Data
 -----------------------
 
-As covered in the [[File\_System]] tutorial, we'll need to open a file
+As covered in the :ref:`doc_file_system` tutorial, we'll need to open a file
 and write to it and then later read from it. Now that we have a way to
 call our groups and get their relevant data, let's use to\_json() to
 convert it into an easily stored string and store them in a file. Doing

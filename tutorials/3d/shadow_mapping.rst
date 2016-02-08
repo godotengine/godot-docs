@@ -1,4 +1,4 @@
-:: _doc_shadow_mapping:
+.. _doc_shadow_mapping:
 
 Shadow Mapping
 ==============

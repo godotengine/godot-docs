@@ -1,4 +1,4 @@
-:: _doc_fixed_materials:
+.. _doc_fixed_materials:
 
 Fixed Materials
 ===============
@@ -14,7 +14,7 @@ also allow to try out different things quickly without the need of
 writing shaders. Fixed Materials inherit from
 `Material <https://github.com/okamstudio/godot/wiki/class_material>`__,
 which also has several options. If you haven't read it before, reading
-the [[Materials]] tutorial is recommended.
+the :ref:`doc_materials` tutorial is recommended.
 
 Options
 -------
@@ -38,7 +38,7 @@ what is behind, otherwise display will always be opaque. Do not enable
 this flag unless the material really needs it, because it can severely
 affect performance and quality. Materials with transparency will also
 not cast shadows (unless they contain opaque areas and the "opaque
-pre-pass" hint is turned on, see the [[Materials]] tutorial for more
+pre-pass" hint is turned on, see the :ref:`doc_materials` tutorial for more
 information).
 
 .. image:: /img/fixed_material_alpha.png
@@ -68,7 +68,7 @@ Discard Alpha
   objects.
 | If this is the case, enable this option for the material. This option
   is often used in combination with "opaque pre-pass" hint (see the
-  [[Materials]] tutorial for more information).
+  :ref:`doc_materials` tutorial for more information).
 
 Parameters
 ----------
@@ -176,7 +176,3 @@ The value of every pixel of the texture is multiplied by the original
 parameter. This means that if a texture is loaded for diffuse, it will
 be multiplied by the color of the diffuse color parameter. Same applies
 to all the others except for specular exponent, which is replaced.
-
-[[https://creativecommons.org/licenses/by/3.0/legalcode]] license.
-
-

@@ -1,4 +1,4 @@
-:: _doc_gui_tutorial:
+.. _doc_gui_tutorial:
 
 GUI tutorial
 ============
@@ -156,7 +156,7 @@ be skinned easily with regular textures.
    : Displays a single textured progress bar.
 
 Additionally, re-positioning of controls is most efficiently done with
-anchors in this case (see the [[GUI Repositioning]] tutorial for more
+anchors in this case (see the :ref:`doc_size_and_anchors` tutorial for more
 info).
 
 In any case, it will happen often that even for simple games, more
@@ -180,7 +180,7 @@ another set of scenarios, most commonly:
 -  Creating Godot Editor Plugins, to extend the engine functionality.
 
 Re-positioning controls for these kind of interfaces is more commonly
-done with containers (see the [[GUI Repositioning]] tutorial for more
+done with containers (see the :ref:`doc_size_and_anchors` tutorial for more
 info).
 
 

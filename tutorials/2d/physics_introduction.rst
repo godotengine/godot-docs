@@ -1,4 +1,4 @@
-:: _doc_physics_introduction:
+.. _doc_physics_introduction:
 
 Physics introduction
 ====================
@@ -250,7 +250,7 @@ They have however, two main uses:
    objects (the move() function) while performing collision tests. This
    makes them really useful to implement characters that collide against
    a world, but that don't require advanced physics. A special
-   [[tutorial\_kinematic\_char]].
+   :ref:`doc_kinematic_character_2d`.
 
 RigidBody2D
 ~~~~~~~~~~~

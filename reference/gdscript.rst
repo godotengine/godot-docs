@@ -1,4 +1,4 @@
-:: _doc_gdscript:
+.. _doc_gdscript:
 
 GDScript
 ========
@@ -115,7 +115,7 @@ here's a simple example of how it looks.
 
 If you have previous experience with statically typed languages such as
 C, C++, or C# but never used a dynamically typed one, it is advised you
-read this tutorial: [[GDScript (More Efficiently)]].
+read this tutorial: :ref:`doc_gdscript_more_efficiently`.
 
 Language
 --------
@@ -891,11 +891,11 @@ placed at the top of the file:
 Memory Management
 ~~~~~~~~~~~~~~~~~
 
-If a class inherits from [[Class:Reference]], then instances will be
+If a class inherits from :ref:`class_Reference`, then instances will be
 freed when no longer in use. No garbage collector exists, just simple
 reference counting. By default, all classes that don't define
 inheritance extend **Reference**. If this is not desired, then a class
-must inherit [[Class:Object]] manually and must call instance.free(). To
+must inherit :ref:`class_Object` manually and must call instance.free(). To
 avoid reference cycles that can't be freed, a ``weakref`` function is
 provided for creating weak references.
 

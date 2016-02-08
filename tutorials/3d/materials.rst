@@ -1,4 +1,4 @@
-:: _doc_materials:
+.. _doc_materials:
 
 Materials
 =========
@@ -12,8 +12,7 @@ Introduction
   `FixedMaterial <https://github.com/okamstudio/godot/wiki/class_fixedmaterial>`__
   and
   `ShaderMaterial <https://github.com/okamstudio/godot/wiki/class_shadermaterial>`__.
-  Tutorials for each of them exist [[Fixed Material]] and [[Shader
-  Material]].
+  Tutorials for each of them exist :ref:`doc_fixed_materials` and :ref:`doc_shader_materials`.
 | This tutorial is about the basic properties shared between them.
 
 .. image:: /img/material_flags.png
@@ -63,7 +62,7 @@ useful for HUD effects or gizmos.
 Ligthmap on UV2
 ~~~~~~~~~~~~~~~
 
-When using lightmapping (see the [[Light Baking]] tutorial), this option
+When using lightmapping (see the :ref:`doc_light_baking` tutorial), this option
 determines that the lightmap should be accessed on the UV2 array instead
 of regular UV.
 

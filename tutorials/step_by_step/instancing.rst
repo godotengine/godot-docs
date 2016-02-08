@@ -1,4 +1,4 @@
-:: _doc_instancing:
+.. _doc_instancing:
 
 Instancing
 ==========

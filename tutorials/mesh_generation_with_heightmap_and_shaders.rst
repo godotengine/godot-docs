@@ -1,4 +1,4 @@
-:: _doc_mesh_generation_with_heightmap_and_shaders:
+.. _doc_mesh_generation_with_heightmap_and_shaders:
 
 Mesh generation with heightmap and shaders
 ==========================================
@@ -124,7 +124,7 @@ Shader magic
 | |image17|
 | The Vertex tab is for the Vertex shader, and the Fragment tab is for
   the Fragment shader. No need to explain what both of them do, right?
-  If so, head to the [[Shader]] page. Else, let's start with the
+  If so, head to the :ref:`doc_shading_language` page. Else, let's start with the
   Fragment shader. This one is used to texture the plane using an image.
   For this example, we will texture it with the heightmap image itself,
   so we'll actually see mountains as brighter regions and canyons as
@@ -136,7 +136,7 @@ Shader magic
     uniform color col;
     DIFFUSE = col.rgb * tex(source,UV).rgb;
 
-This shader is very simple (it actually comes from the [[Shader]] page).
+This shader is very simple (it actually comes from the :ref:`doc_shading_language` page).
 What it basically does is take 2 parameters that we have to provide from
 outside the shader ("uniform"):
 

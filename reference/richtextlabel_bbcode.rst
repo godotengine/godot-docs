@@ -1,4 +1,4 @@
-:: _doc_richtextlabel_bbcode:
+.. _doc_richtextlabel_bbcode:
 
 BBCode RichTextLabel
 ====================
@@ -6,7 +6,7 @@ BBCode RichTextLabel
 Introduction
 ------------
 
-[[RichTextLabel]] allows to display complex text markup in a control. It
+:ref:`class_RichTextLabel` allows to display complex text markup in a control. It
 has a built-in API for generating the markup, but can also parse a
 BBCode.
 

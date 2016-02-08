@@ -1,4 +1,4 @@
-:: _doc_simple_2d_game:
+.. _doc_simple_2d_game:
 
 Simple 2D game (Pong!)
 ======================
@@ -25,8 +25,8 @@ tutorials). The default background color should be set to black:
 
 .. image:: /img/clearcolor.png
 
-Create a [[class\_node2d]] node for the project root. Node2D is the base
-type for the 2D engine. After this, add some sprites ([[class\_sprite]]
+Create a :ref:`class_Node2D` node for the project root. Node2D is the base
+type for the 2D engine. After this, add some sprites :ref:`class_Sprite`
 node) and set each to the corresponding texture. The final scene layour
 should look similar to this (note: the ball is in the middle!):
 

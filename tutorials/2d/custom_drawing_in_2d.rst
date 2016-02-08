@@ -1,4 +1,4 @@
-:: _doc_custom_drawing_in_2d:
+.. _doc_custom_drawing_in_2d:
 
 Custom Drawing in 2D
 ====================
@@ -111,5 +111,5 @@ Tools
   editor, to use as preview or visualization of some feature or
   behavior.
 | Remember to just use the "tool" keyword at the top of the script
-  (check the [[GDScript]] reference if you forgot what this does).
+  (check the :ref:`doc_gdscript` reference if you forgot what this does).
 

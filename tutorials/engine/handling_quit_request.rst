@@ -1,4 +1,4 @@
-:: _doc_handling_quit_request:
+.. _doc_handling_quit_request:
 
 Handling Quit Request
 =====================

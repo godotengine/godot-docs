@@ -1,4 +1,4 @@
-:: _doc_background_loading:
+.. _doc_background_loading:
 
 Background loading
 ==================
@@ -109,9 +109,7 @@ Example
 -------
 
 This example demostrates how to load a new scene. Consider it in the
-context of the
-[[https://github.com/okamstudio/godot/wiki/tutorial\_singletons#scene-switcher]]
-example.
+context of the :ref:`doc_singletons_autoload` example.
 
 First we setup some variables and initialize the
 

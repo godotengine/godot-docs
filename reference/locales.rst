@@ -1,4 +1,4 @@
-:: _doc_locales:
+.. _doc_locales:
 
 Locales
 =======

@@ -1,4 +1,4 @@
-:: _doc_resources:
+.. _doc_resources:
 
 Resources
 =========

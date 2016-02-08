@@ -1,4 +1,4 @@
-:: _doc_wiki_syntax:
+.. _doc_wiki_syntax:
 
 Wiki Syntax
 ===========

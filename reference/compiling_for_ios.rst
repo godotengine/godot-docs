@@ -1,4 +1,4 @@
-:: _doc_compiling_for_ios:
+.. _doc_compiling_for_ios:
 
 Compiling for iOS
 =================
@@ -42,7 +42,7 @@ Run
 ---
 
 | To run on a device or simulator, follow these instructions:
-  [[Exporting for iOS]].
+  :ref:`doc_exporting_for_ios`.
 | Replace or add your executable to the Xcode project, and change the
   "executable name" property on Info.plist accordingly if you use an
   alternative build.

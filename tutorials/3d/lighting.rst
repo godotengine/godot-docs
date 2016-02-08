@@ -1,4 +1,4 @@
-:: _doc_lighting:
+.. _doc_lighting:
 
 Lighting
 ========
@@ -14,7 +14,7 @@ result. Light can come from several types of sources in a scene:
 -  Light Nodes: Directional, Omni and Spot.
 -  Ambient Light in the
    `Environment <https://github.com/okamstudio/godot/wiki/class_worldenvironment>`__.
--  Baked Light (read [[Light Baking]]).
+-  Baked Light (read :ref:`doc_light_baking`).
 
 The emission color is a material property, as seen in the previous
 tutorials about materials (go read them if you didn't at this point!).
@@ -37,7 +37,7 @@ Each one has a specific function:
    light is disabled, which allows to configure a light and then disable
    it for baking.
 -  **Energy**: This value is a multiplier for the light, it's specially
-   useful for [[HRD]] and for Spot and Omni lights, because it can
+   useful for :ref:`doc_high_dynamic_range` and for Spot and Omni lights, because it can
    create very bright spots near the emissor.
 -  **Diffuse and Specular**: These light values get multiplied by the
    material light and diffuse colors, so a white value does not mean

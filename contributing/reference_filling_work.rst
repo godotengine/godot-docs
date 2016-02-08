@@ -1,17 +1,17 @@
-:: _doc_reference_filling_work:
+.. _doc_reference_filling_work:
 
 Reference filling work
 ======================
 
 Godot Engine provides an important number of classes that you can make
-use of to create your games. However, the [[Reference\|reference]] that
+use of to create your games. However, the :ref:`toc-class-ref` that
 lists all these classes with their methods is quite incomplete. We need
 your kind help to fill this reference. This page will explain you how.
 
 > Please note: we aim at filling completely this reference in English
 first. Please do not start translating it for the moment.
 
-[[List of classes and documenters]]
+:ref:`doc_list_of_classes_and_documenters`
 
 Editing with Github
 -------------------
@@ -46,7 +46,7 @@ Updating the documentation template
 When classes are modified in the source code, the documentation template
 might become outdated. To make sure that you are editing an up-to-date
 version, you first need to compile Godot (you can follow the
-[[Introduction to the Godot buildsystem]] page), and then run the
+:ref:`doc_introduction_to_the_buildsystem` page), and then run the
 following command (assuming 64-bit Linux):
 
 ::
@@ -84,7 +84,7 @@ Godot fork.
 Edit doc/base/classes.xml file
 ------------------------------
 
-First of all, check the [[List of classes and documenters]]. Try to work
+First of all, check the :ref:`doc_list_of_classes_and_documenters`. Try to work
 on classes not already assigned nor filled.
 
 | This file is produced by Godot Engine. It is used by the editor, for

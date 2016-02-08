@@ -1,4 +1,4 @@
-:: _doc_encrypting_save_games:
+.. _doc_encrypting_save_games:
 
 Encrypting Save Games
 =====================
