@@ -5,6 +5,6 @@
    :maxdepth: 2
    :name: toc-2d-tutorials
 
-   _graphics
-   _gui
-   _physics
+   _2d_graphics
+   _2d_gui
+   _2d_physics

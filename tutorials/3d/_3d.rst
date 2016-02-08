@@ -5,6 +5,6 @@
    :maxdepth: 2
    :name: toc-3d-tutorials
 
-   _graphics
-   _physics
-   _import
+   _3d_graphics
+   _3d_physics
+   _3d_import

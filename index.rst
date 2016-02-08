@@ -17,21 +17,21 @@ The main documentation for the site is organized into a few sections:
    :caption: Tutorials
    :name: sec-tutorials
 
-   tutorials/step_by_step/index
-   tutorials/engine/index
-   tutorials/2d/index
-   tutorials/3d/index
+   tutorials/step_by_step/_step_by_step
+   tutorials/engine/_engine
+   tutorials/2d/_2d
+   tutorials/3d/_3d
    tutorials/_networking
    tutorials/_plugins
-   tutorials/_misc
-   tutorials/asset_pipeline/index
+   tutorials/_misc_tutorials
+   tutorials/asset_pipeline/_asset_pipeline
 
 .. toctree::
    :maxdepth: 1
    :caption: Reference
    :name: sec-reference
 
-   classes/index
+   classes/_classes
    reference/_languages
    reference/_cheat_sheets
    reference/_compiling
@@ -42,7 +42,7 @@ The main documentation for the site is organized into a few sections:
    :caption: Community
    :name: sec-community
 
-   contributing/index
+   contributing/_contributing
 
 .. Indices and tables
 .. ------------------

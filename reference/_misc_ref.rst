@@ -3,7 +3,7 @@ Misc
 
 .. toctree::
    :maxdepth: 1
-   :name: toc-advanced-misc
+   :name: toc-misc-ref
 
    command_line_tutorial
    changing_editor_fonts

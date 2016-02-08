@@ -10,7 +10,7 @@ import os
 needs_sphinx = '1.3'
 
 # Sphinx extension module names and templates location
-extensions = []
+extensions = ['sphinx.ext.intersphinx']
 templates_path = ['_templates']
 
 # You can specify multiple suffix as a list of string: ['.rst', '.md']
@@ -38,6 +38,11 @@ exclude_patterns = ['_build']
 # Pygments (syntax highlighting) style to use
 pygments_style = 'sphinx'
 highlight_language = 'python3'
+
+# intersphinx configuration
+intersphinx_mapping = {
+  'english': ('http://docs.godotengine.org/en/latest/', None),
+}
 
 # -- Options for HTML output ----------------------------------------------
 
