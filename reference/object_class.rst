@@ -1,3 +1,5 @@
+:: _doc_object_class:
+
 Object class
 ============
 

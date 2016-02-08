@@ -1,10 +1,15 @@
+:: _doc_bug_triage_guidelines:
+
+Bug triage guidelines
+=====================
+
 This page describes the typical workflow of the bug triage team aka
 bugsquad when handling issues and pull requests on Godot's GitHub
 repository. It is bound to evolve together with the bugsquad, so do not
 hesitate to propose modifications to the following guidelines.
 
 Issues management
-=================
+-----------------
 
 GitHub proposes three features to manage issues:
 
@@ -19,7 +24,7 @@ use it or OpenProject instead, we will not use assignees extensively for
 the time being.
 
 Labels
-------
+~~~~~~
 
 The following labels are currently defined in the Godot repository:
 
@@ -75,14 +80,15 @@ filed in GitHub but in the appropriate tool in OpenProject, therefore
 such issues should be closed and archived once they have been moved to
 their rightful platform.
 
-| **Platforms:** *Android*, *HTML5*, *iOS*, *Linux*, *OS X*, *Windows*
-| By default, it is assumed that a given issue applies to all platforms.
-  If one of the platform labels is used, it is the exclusive and the
-  previous assumption doesn't stand anymore (so if it's a bug on e.g.
-  Android and Linux exclusively, select those two platforms).
+**Platforms:** *Android*, *HTML5*, *iOS*, *Linux*, *OS X*, *Windows*
+
+By default, it is assumed that a given issue applies to all platforms. 
+If one of the platform labels is used, it is the exclusive and the
+previous assumption doesn't stand anymore (so if it's a bug on e.g.
+Android and Linux exclusively, select those two platforms).
 
 Milestones
-----------
+~~~~~~~~~~
 
 Milestones correspond to planned future versions of Godot for which
 there is an existing roadmap. Issues that fit in the said roadmap should

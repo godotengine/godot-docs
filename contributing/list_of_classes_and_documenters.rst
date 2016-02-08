@@ -1,3 +1,5 @@
+:: _doc_list_of_classes_and_documenters:
+
 List of classes and documenters
 ===============================
 

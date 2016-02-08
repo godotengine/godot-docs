@@ -1,3 +1,5 @@
+:: _doc_importing_textures:
+
 Importing textures
 ==================
 

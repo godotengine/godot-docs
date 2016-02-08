@@ -1,3 +1,5 @@
+:: _doc_exporting_images:
+
 Exporting images
 ================
 

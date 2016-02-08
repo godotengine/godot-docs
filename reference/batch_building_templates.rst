@@ -1,3 +1,5 @@
+:: _doc_batch_building_templates:
+
 Batch building templates
 ========================
 

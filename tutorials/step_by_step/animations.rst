@@ -1,3 +1,5 @@
+:: _doc_animations:
+
 Animations
 ==========
 

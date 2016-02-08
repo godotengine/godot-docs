@@ -1,3 +1,5 @@
+:: _doc_doc_and_l10n_guidelines:
+
 Documentation writing and translating guidelines
 ================================================
 

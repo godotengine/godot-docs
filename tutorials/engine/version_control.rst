@@ -1,3 +1,5 @@
+:: _doc_version_control:
+
 Version Control & Project Organization
 ======================================
 

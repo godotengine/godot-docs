@@ -1,3 +1,5 @@
+:: _doc_changing_editor_fonts:
+
 Changing editor fonts
 =====================
 

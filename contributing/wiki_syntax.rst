@@ -1,3 +1,5 @@
+:: _doc_wiki_syntax:
+
 Wiki Syntax
 ===========
 

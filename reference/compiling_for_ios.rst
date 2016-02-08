@@ -1,3 +1,5 @@
+:: _doc_compiling_for_ios:
+
 Compiling for iOS
 =================
 

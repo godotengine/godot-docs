@@ -1,3 +1,5 @@
+:: _doc_importing_3d_scenes:
+
 Importing 3D scenes
 ===================
 

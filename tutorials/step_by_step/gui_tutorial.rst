@@ -1,3 +1,5 @@
+:: _doc_gui_tutorial:
+
 GUI tutorial
 ============
 

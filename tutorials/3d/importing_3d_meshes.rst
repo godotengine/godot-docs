@@ -1,3 +1,5 @@
+:: _doc_importing_3d_meshes:
+
 Importing 3D meshes
 ===================
 

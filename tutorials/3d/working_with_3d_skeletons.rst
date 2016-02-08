@@ -1,3 +1,5 @@
+:: _doc_working_with_3d_skeletons:
+
 Working with 3D skeletons
 =========================
 

@@ -1,3 +1,5 @@
+:: _doc_mouse_and_input_coordinates:
+
 Mouse & Input Coordinates
 =========================
 

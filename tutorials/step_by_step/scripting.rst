@@ -1,3 +1,5 @@
+:: _doc_scripting:
+
 Scripting
 =========
 

@@ -1,3 +1,5 @@
+:: _doc_gdscript_more_efficiently:
+
 Using GDScript Efficiently
 ==========================
 

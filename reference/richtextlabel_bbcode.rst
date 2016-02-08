@@ -1,3 +1,5 @@
+:: _doc_richtextlabel_bbcode:
+
 BBCode RichTextLabel
 ====================
 

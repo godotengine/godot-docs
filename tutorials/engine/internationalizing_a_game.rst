@@ -1,3 +1,5 @@
+:: _doc_internationalizing_a_game:
+
 Internationalization
 ====================
 

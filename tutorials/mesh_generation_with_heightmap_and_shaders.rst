@@ -1,3 +1,5 @@
+:: _doc_mesh_generation_with_heightmap_and_shaders:
+
 Mesh generation with heightmap and shaders
 ==========================================
 

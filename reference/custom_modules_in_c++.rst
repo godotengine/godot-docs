@@ -1,3 +1,5 @@
+:: _doc_custom_modules_in_c++:
+
 Custom modules in C++
 =====================
 

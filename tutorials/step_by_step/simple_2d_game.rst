@@ -1,3 +1,5 @@
+:: _doc_simple_2d_game:
+
 Simple 2D game (Pong!)
 ======================
 

@@ -1,3 +1,5 @@
+:: _doc_multiple_resolutions:
+
 Screen Scaling & Multiple Resolutions
 =====================================
 

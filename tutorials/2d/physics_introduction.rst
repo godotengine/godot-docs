@@ -1,3 +1,5 @@
+:: _doc_physics_introduction:
+
 Physics introduction
 ====================
 

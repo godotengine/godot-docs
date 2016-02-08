@@ -1,3 +1,5 @@
+:: _doc_splash_screen:
+
 Splash screen
 =============
 

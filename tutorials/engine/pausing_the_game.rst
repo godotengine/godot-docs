@@ -1,3 +1,5 @@
+:: _doc_pausing_the_game:
+
 Pausing a Game
 ==============
 

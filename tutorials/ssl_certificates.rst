@@ -1,3 +1,5 @@
+:: _doc_ssl_certificates:
+
 SSL Certificates
 ================
 
