@@ -51,12 +51,13 @@ lot of code. The fact that most games allow controller customization
 makes this worse. For this, Godot created the "Input Actions". An action
 is defined, then input methods that trigger it are added.
 
-| Open the project properties dialog again, but this time move to the
-  "Input Map" tab.
-| On it, add 4 actions:
-  "left\_move\_up","left\_move\_down","right\_move\_up","right\_move\_down".
-  Assign the keys that you desire. A/Z for left and Up/Down as keys
-  should work in most cases.
+Open the project properties dialog again, but this time move to the
+"Input Map" tab.
+
+On it, add 4 actions:
+"left\_move\_up","left\_move\_down","right\_move\_up","right\_move\_down".
+Assign the keys that you desire. A/Z for left and Up/Down as keys
+should work in most cases.
 
 .. image:: /img/inputmap.png
 

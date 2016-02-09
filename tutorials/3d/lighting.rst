@@ -73,12 +73,13 @@ lamps or any other light source that comes from a point.
 
 .. image:: /img/light_omni.png
 
-| The attenuation curve for these kind of lights in nature is computed
-  with an inverse-quadratic function that never reaches zero and has
-  almost infinitely large values near the emissor.
-| This makes them considerably inconvenient to tweak for artists, so
-  Godot simulates them with an artist-controlled exponential curve
-  instead.
+The attenuation curve for these kind of lights in nature is computed
+with an inverse-quadratic function that never reaches zero and has
+almost infinitely large values near the emissor.
+
+This makes them considerably inconvenient to tweak for artists, so
+Godot simulates them with an artist-controlled exponential curve
+instead.
 
 .. image:: /img/light_attenuation.png
 

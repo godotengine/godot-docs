@@ -36,17 +36,19 @@ following rules must be respected :
 -  Respect the grammar and orthography
 -  Make use of the :ref:`doc_wiki_syntax`
 
-| Try to structure your page in order to enable users to include a page
-  directly in another page or even forum posts using the include wiki
-  syntax. For example, the syntax to include the page you are reading is
-  :
-| !{{include(Documentation writing and translating guidelines)}}.
+Try to structure your page in order to enable users to include a page
+directly in another page or even forum posts using the include wiki
+syntax. For example, the syntax to include the page you are reading is
+:
+
+!{{include(Documentation writing and translating guidelines)}}.
 
 Titles
 ~~~~~~
 
-| Please always begin pages with their name:
-| ``h1. <Insert your title here>``
+Please always begin pages with their name:
+
+``h1. <Insert your title here>``
 
 Also, avoid American CamelCase titles: titles' first word should begin
 with a capitalized letter, and every following word should not. Thus,
@@ -66,14 +68,15 @@ letter. This is good:
 Note for non-English authors
 ----------------------------
 
-| If you intend to create a new page in your language, you are asked to
-  firstly create the corresponding English page if it doesn't already
-  exist. **Do it even if you will not write it yourself, just leave it
-  blank.** Only then, create the corresponding page in your own
-  language. Maybe later, another contributor will translate your new
-  page to English.
-| **Remember** : even if Godot aims at being accessible to everyone,
-  English is the most frequent language for documentation.
+If you intend to create a new page in your language, you are asked to
+firstly create the corresponding English page if it doesn't already
+exist. **Do it even if you will not write it yourself, just leave it
+blank.** Only then, create the corresponding page in your own
+language. Maybe later, another contributor will translate your new
+page to English.
+
+**Remember** : even if Godot aims at being accessible to everyone,
+English is the most frequent language for documentation.
 
 Translating existing pages
 --------------------------

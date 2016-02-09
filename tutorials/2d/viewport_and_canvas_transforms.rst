@@ -63,16 +63,19 @@ Transform Functions
 
 Obtaining each transform can be achieved with the following functions:
 
-| \|Type: \| Transform\|
-| \|CanvasItem \|
-  :ref:`CanvasItem.get_global_transform() <class_CanvasItem_get_global_transform>`
-  \|
-| \|CanvasLayer\|
-  :ref:`CanvasItem.get_canvas_transform() <class_CanvasItem_get_canvas_transform>`
-  \|
-| \|CanvasLayer+GlobalCanvas+Stretch \|
-  :ref:`CanvasItem.get_viewport_transform() <class_CanvasItem_get_viewport_transform>`
-  \|
+\|Type: \| Transform\|
+
+\|CanvasItem \|
+:ref:`CanvasItem.get_global_transform() <class_CanvasItem_get_global_transform>`
+\|
+
+\|CanvasLayer\|
+:ref:`CanvasItem.get_canvas_transform() <class_CanvasItem_get_canvas_transform>`
+\|
+
+\|CanvasLayer+GlobalCanvas+Stretch \|
+:ref:`CanvasItem.get_viewport_transform() <class_CanvasItem_get_viewport_transform>`
+\|
 
 Finally then, to convert a CanvasItem local coordinates to screen
 coordinates, just multiply in the following order:

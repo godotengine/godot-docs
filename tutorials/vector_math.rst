@@ -132,10 +132,11 @@ It is the same as doing:
 
 Except the former is way more efficient and readable.
 
-| Regular arithmetic operations such as addition, subtraction,
-  multiplication and division are supported.
-| Vector multiplication and division can also be mixed with single-digit
-  numbers, also named **scalars**.
+Regular arithmetic operations such as addition, subtraction,
+multiplication and division are supported.
+
+Vector multiplication and division can also be mixed with single-digit
+numbers, also named **scalars**.
 
 ::
 
@@ -156,10 +157,11 @@ Except, again, the former is way more efficient and readable.
 Perpendicular Vectors
 ~~~~~~~~~~~~~~~~~~~~~
 
-| Rotating a 2D vector 90° degrees to either side, left or right, is
-  really easy, just swap x and y, then
-| negate either x or y (direction of rotation depends on which is
-  negated).
+Rotating a 2D vector 90° degrees to either side, left or right, is
+really easy, just swap x and y, then
+
+negate either x or y (direction of rotation depends on which is
+negated).
 
 .. image:: /img/tutovec15.png
 
@@ -386,14 +388,15 @@ two vectors, we must do:
 
     var angle_in_radians = acos( a.dot(b) )
 
-| What is this useful for? Well obtaining the angle directly is probably
-  not as useful, but just being able to tell the angle is useful for
-  reference. One example is in the `Kinematic
-  Character <https://github.com/okamstudio/godot/blob/master/demos/2d/kinematic_char/player.gd#L83>`__
-  demo, when the character moves in a certain direction then we hit an
-  object. How to tell if what we hit is the floor?
-| By comparing the normal of the collision point with a previously
-  computed angle.
+What is this useful for? Well obtaining the angle directly is probably
+not as useful, but just being able to tell the angle is useful for
+reference. One example is in the `Kinematic
+Character <https://github.com/okamstudio/godot/blob/master/demos/2d/kinematic_char/player.gd#L83>`__
+demo, when the character moves in a certain direction then we hit an
+object. How to tell if what we hit is the floor?
+
+By comparing the normal of the collision point with a previously
+computed angle.
 
 The beauty of this is that the same code works exactly the same and
 without modification in
@@ -476,8 +479,9 @@ to reach a point in the plane, you will just do:
 
    </pre>
 
-| var point\_in\_plane = N\*D
-| 
+var point\_in\_plane = N\*D
+
+
 
 .. raw:: html
 
@@ -687,8 +691,9 @@ This can be simplified, in Godot, to:
 
    </pre>
 
-| var c = a.cross(b)
-| 
+var c = a.cross(b)
+
+
 
 .. raw:: html
 
@@ -718,9 +723,11 @@ other two points. As example, we will use B as a pivot:
 
    </pre>
 
-| var BA = A-B
-| var BC = C-B
-| 
+var BA = A-B
+
+var BC = C-B
+
+
 
 .. raw:: html
 
@@ -755,8 +762,9 @@ normal of the plane.
 
    </pre>
 
-| var N = P.normalized()
-| 
+var N = P.normalized()
+
+
 
 .. raw:: html
 

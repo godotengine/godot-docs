@@ -142,12 +142,13 @@ Determines the intial and final scales of the particle.
 Color Phases
 ------------
 
-| Particles can use up to 4 color phases. Each color phase can include
-  transparency.
-| Phases must provide an offset value from 0 to 1, and alays in
-  ascending order. For example, a color will begin at offset 0 and end
-  in offset 1, but 4 colors might use diferent offsets, such as 0, 0.2,
-  0.8 and 1.0 for the different phases:
+Particles can use up to 4 color phases. Each color phase can include
+transparency.
+
+Phases must provide an offset value from 0 to 1, and alays in
+ascending order. For example, a color will begin at offset 0 and end
+in offset 1, but 4 colors might use diferent offsets, such as 0, 0.2,
+0.8 and 1.0 for the different phases:
 
 .. image:: /img/particlecolorphases.png
 

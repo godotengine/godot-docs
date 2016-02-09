@@ -15,14 +15,15 @@ So where does all this HDR stuff thing come from? The idea is that
 instead of dealing with colors that go from black to white (0 to 1), we
 use colors whiter than white (for example, 0 to 8 times white).
 
-| To be more practical, imagine that in a regular scene, the intensity
-  of a light (generally 1.0) is set to 5.0. The whole scene will turn
-  very bright (towards white) and look horrible.
-| After this the luminance of the scene is computed by averaging the
-  luminance of every pixel of it, and this value is used to bring the
-  scene back to normal ranges. This last operation is called
-  tone-mapping. Finally, we are at a similar place from where we
-  started:
+To be more practical, imagine that in a regular scene, the intensity
+of a light (generally 1.0) is set to 5.0. The whole scene will turn
+very bright (towards white) and look horrible.
+
+After this the luminance of the scene is computed by averaging the
+luminance of every pixel of it, and this value is used to bring the
+scene back to normal ranges. This last operation is called
+tone-mapping. Finally, we are at a similar place from where we
+started:
 
 .. image:: /img/hdr_tonemap.png
 
@@ -40,14 +41,15 @@ realistic light bleeding effects in the scene.
 Linear Color Space
 ------------------
 
-| The problem with this technique is that computer monitors apply a
-  gamma curve to adapt better to the way the human eye sees. Artists
-  create their art on the screen too, so their art has an implicit gamma
-  curve applied to it.
-| The color space where images created in computer monitors exist is
-  called "sRGB". Every visual content that people has on their computers
-  or downloads from the internet (such as pictures, movies, porn, etc)
-  is in this colorspace.
+The problem with this technique is that computer monitors apply a
+gamma curve to adapt better to the way the human eye sees. Artists
+create their art on the screen too, so their art has an implicit gamma
+curve applied to it.
+
+The color space where images created in computer monitors exist is
+called "sRGB". Every visual content that people has on their computers
+or downloads from the internet (such as pictures, movies, porn, etc)
+is in this colorspace.
 
 .. image:: /img/hdr_gamma.png
 

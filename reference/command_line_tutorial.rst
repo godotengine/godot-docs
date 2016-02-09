@@ -119,10 +119,11 @@ instead of ``-export``. Their parameters and usage are the same.
 Running a script
 ----------------
 
-| It is possible to run a simple .gd script from the command line. This
-  feature is specially useful in very large projects, for batch
-  conversion of assets or custom import/export.
-| The script must inherit from SceneTree or MainLoop.
+It is possible to run a simple .gd script from the command line. This
+feature is specially useful in very large projects, for batch
+conversion of assets or custom import/export.
+
+The script must inherit from SceneTree or MainLoop.
 
 Here is a simple example of how it works:
 

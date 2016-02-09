@@ -6,18 +6,19 @@ Kinematic Character (2D)
 Introduction
 ~~~~~~~~~~~~
 
-| Yes, the name sounds strange. "Kinematic Character" WTF is that? The
-  reason is that when physics engines came out, they were called
-  "Dynamics" engines (because they dealt mainly with collision
-  responses). Many attempts were made to create a character controller
-  using the dynamics engines but it wasn't as easy as it seems. Godot
-  has one of the best implementations of dynamic character controller
-  you can find (as it can be seen in the 2d/platformer demo), but using
-  it requieres a considerable level of skill and understanding of
-  physics engines (or a lot of patience with trial and error).
-| Some physics engines such as Havok seem to swear by dynamic character
-  controllers as the best alternative, while others (PhysX) would rather
-  promote the Kinematic one.
+Yes, the name sounds strange. "Kinematic Character" WTF is that? The
+reason is that when physics engines came out, they were called
+"Dynamics" engines (because they dealt mainly with collision
+responses). Many attempts were made to create a character controller
+using the dynamics engines but it wasn't as easy as it seems. Godot
+has one of the best implementations of dynamic character controller
+you can find (as it can be seen in the 2d/platformer demo), but using
+it requieres a considerable level of skill and understanding of
+physics engines (or a lot of patience with trial and error).
+
+Some physics engines such as Havok seem to swear by dynamic character
+controllers as the best alternative, while others (PhysX) would rather
+promote the Kinematic one.
 
 So, what is really the difference?:
 
@@ -84,10 +85,11 @@ radius) of the shape instead of scaling it. The same is also true for
 the kinematic/rigid/static bodies themselves, as their scale affect the
 shape scale.**
 
-| Now create a script for the character, the one used as an example
-  above should work as a base.
-| Finally, instance that character scene in the tilemap, and make the
-  map scene the main one, so it runs when pressing play.
+Now create a script for the character, the one used as an example
+above should work as a base.
+
+Finally, instance that character scene in the tilemap, and make the
+map scene the main one, so it runs when pressing play.
 
 .. image:: /img/kbinstance.png
 
@@ -115,10 +117,11 @@ So, let's move our sprite downwards until it hits the floor:
     func _ready():
         set_fixed_process(true)
 
-| The result is that the character will move, but stop right when
-  hitting the floor. Pretty cool, huh?
-| The next step will be adding gravity to the mix, this way it behaves a
-  little more like an actual game character:
+The result is that the character will move, but stop right when
+hitting the floor. Pretty cool, huh?
+
+The next step will be adding gravity to the mix, this way it behaves a
+little more like an actual game character:
 
 ::
 
@@ -203,12 +206,13 @@ So what we want to do is this:
 
 .. image:: /img/motion_reflect.png
 
-| When colliding, the function move() returns the "remainder" of the
-  motion vector. That means, if the motion vector is 40 pixels, but
-  collision happened at 10 pixels, the same vector but 30 pixels long is
-  returned.
-| The correct way to solve the motion is, then, to slide by the normal
-  this way:
+When colliding, the function move() returns the "remainder" of the
+motion vector. That means, if the motion vector is 40 pixels, but
+collision happened at 10 pixels, the same vector but 30 pixels long is
+returned.
+
+The correct way to solve the motion is, then, to slide by the normal
+this way:
 
 ::
 
@@ -236,9 +240,10 @@ So what we want to do is this:
     func _ready():
         set_fixed_process(true)
 
-| Note that not only the motion has been modified but also the velocity.
-  This makes sense as it helps keep
-| the new direction too.
+Note that not only the motion has been modified but also the velocity.
+This makes sense as it helps keep
+
+the new direction too.
 
 The normal can also be used to detect that the character is on floor, by
 checking the angle. If the normal points up (or at least, within a

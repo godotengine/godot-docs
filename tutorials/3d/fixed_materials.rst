@@ -62,13 +62,14 @@ points. This feature is mostly used in tools and HUDs
 Discard Alpha
 ~~~~~~~~~~~~~
 
-| When alpha is enabled (see above) the invisible pixels are blended
-  with what is behind them. In some combinations (of using alpha to
-  render depth) it may be possible that invisible pixels cover other
-  objects.
-| If this is the case, enable this option for the material. This option
-  is often used in combination with "opaque pre-pass" hint (see the
-  :ref:`doc_materials` tutorial for more information).
+When alpha is enabled (see above) the invisible pixels are blended
+with what is behind them. In some combinations (of using alpha to
+render depth) it may be possible that invisible pixels cover other
+objects.
+
+If this is the case, enable this option for the material. This option
+is often used in combination with "opaque pre-pass" hint (see the
+:ref:`doc_materials` tutorial for more information).
 
 Parameters
 ----------

@@ -3,10 +3,11 @@
 Core types
 ==========
 
-| Godot has a rich set of classes and template that make for its core,
-  and everything is built upon them.
-| This reference will try to list them in order for their better
-  understanding.
+Godot has a rich set of classes and template that make for its core,
+and everything is built upon them.
+
+This reference will try to list them in order for their better
+understanding.
 
 Definitions
 -----------
@@ -43,15 +44,16 @@ terabytes of storage and gigahertz of CPU, and when an application needs
 more resources the OS will just swap out the inactive ones. Other
 architectures (like mobile or consoles) are in general more limited.
 
-| The most common memory model is the heap, where an application will
-  request a region of memory, and the underlying OS will try to fit it
-  somewhere and return it. This often works best and is very flexible,
-  but over time and with abuse, this can lead to segmentation.
-| Segmentation slowly creates holes that are too small for most common
-  allocations, so that memory is wasted. There is a lot of literature
-  about heap and segmentation, so this topic will not be developed
-  further here. Modern Operating Systems use paged memory, which helps
-  mitigate the problem of segmentation but doesn't solve it.
+The most common memory model is the heap, where an application will
+request a region of memory, and the underlying OS will try to fit it
+somewhere and return it. This often works best and is very flexible,
+but over time and with abuse, this can lead to segmentation.
+
+Segmentation slowly creates holes that are too small for most common
+allocations, so that memory is wasted. There is a lot of literature
+about heap and segmentation, so this topic will not be developed
+further here. Modern Operating Systems use paged memory, which helps
+mitigate the problem of segmentation but doesn't solve it.
 
 However, in many studies and tests, it is shown that given enough
 memory, if the maximum allocation size is below a given threshold in
@@ -185,12 +187,13 @@ References:
 StringName
 ----------
 
-| StringNames are like a String, but they are unique. Creating a
-  StringName from a string results in a unique internal pointer for all
-  equal strings. StringNames are really useful for using strings as
-  identifier, as comparing them is basically comparing a pointer.
-| Creation of a StringName (specially a new one) is slow, but comparison
-  is fast.
+StringNames are like a String, but they are unique. Creating a
+StringName from a string results in a unique internal pointer for all
+equal strings. StringNames are really useful for using strings as
+identifier, as comparing them is basically comparing a pointer.
+
+Creation of a StringName (specially a new one) is slow, but comparison
+is fast.
 
 References:
 ~~~~~~~~~~~

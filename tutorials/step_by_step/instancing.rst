@@ -51,8 +51,9 @@ This project contains two scenes "ball.scn" and "container.scn". The
 ball scene is just a ball with physics, while container scene has a
 nicely shaped collision, so balls can be thrown in there.
 
-| p=. |image4|
-| |image5|
+p=. |image4|
+
+|image5|
 
 Open the container scene, then select the root node:
 
@@ -62,9 +63,10 @@ Afterwards, push the '+' shaped button, this is the instancing button!
 
 .. image:: /img/continst.png
 
-| Select the ball scene (ball.scn), the ball should appear in the origin
-  (0,0), move it to around the center
-| of the scene, like this:
+Select the ball scene (ball.scn), the ball should appear in the origin
+(0,0), move it to around the center
+
+of the scene, like this:
 
 .. image:: /img/continstanced.png
 

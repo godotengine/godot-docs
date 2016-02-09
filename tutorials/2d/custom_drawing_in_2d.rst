@@ -107,9 +107,10 @@ OK! This is basically it! Enjoy drawing your own nodes!
 Tools
 -----
 
-| Drawing your own nodes might also be desired while running them in the
-  editor, to use as preview or visualization of some feature or
-  behavior.
-| Remember to just use the "tool" keyword at the top of the script
-  (check the :ref:`doc_gdscript` reference if you forgot what this does).
+Drawing your own nodes might also be desired while running them in the
+editor, to use as preview or visualization of some feature or
+behavior.
+
+Remember to just use the "tool" keyword at the top of the script
+(check the :ref:`doc_gdscript` reference if you forgot what this does).
 

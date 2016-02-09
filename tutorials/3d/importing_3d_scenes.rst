@@ -60,11 +60,12 @@ with the latest version of the software.
 Exporting DAE files from Blender
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| Blender also has built-in collada support, but It's really broken and
-  should not be used either.
-| Godot provides a `Python
-  Plugin <https://github.com/okamstudio/godot/tree/master/tools/export/blender25>`__
-  that will do a much better job at exporting the scenes.
+Blender also has built-in collada support, but It's really broken and
+should not be used either.
+
+Godot provides a `Python
+Plugin <https://github.com/okamstudio/godot/tree/master/tools/export/blender25>`__
+that will do a much better job at exporting the scenes.
 
 The import process
 ------------------

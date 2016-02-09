@@ -6,11 +6,12 @@ SceneTree
 Introduction
 ------------
 
-| This is where things start getting abstract, but don't panic, as
-  there's not really more depth than this.
-| In previous tutorials, everything revolves around the concept of
-  Nodes, scenes are made of them, and they become active once they enter
-  the *Scene Tree*.
+This is where things start getting abstract, but don't panic, as
+there's not really more depth than this.
+
+In previous tutorials, everything revolves around the concept of
+Nodes, scenes are made of them, and they become active once they enter
+the *Scene Tree*.
 
 This deserves going a little more into depth. In fact, the scene system
 is not even a core component of Godot, as it is possible to skip it and
@@ -21,17 +22,18 @@ uses.
 MainLoop
 --------
 
-| The way Godot works internally is as follows. There is the the
-  :ref:`OS <class_OS>` class,
-  which is the only instance that runs at the beginning. Afterwards, all
-  drivers, servers, scripting languages, scene system, etc are loaded.
-| When initialization is complete,
-  :ref:`OS <class_OS>` needs to be
-  supplied a
-  :ref:`MainLoop <class_MainLoop>`
-  to run. Up to this point, all this is internals working (you can check
-  main/main.cpp file in the source code if you are ever interested to
-  see how this works internally).
+The way Godot works internally is as follows. There is the the
+:ref:`OS <class_OS>` class,
+which is the only instance that runs at the beginning. Afterwards, all
+drivers, servers, scripting languages, scene system, etc are loaded.
+
+When initialization is complete,
+:ref:`OS <class_OS>` needs to be
+supplied a
+:ref:`MainLoop <class_MainLoop>`
+to run. Up to this point, all this is internals working (you can check
+main/main.cpp file in the source code if you are ever interested to
+see how this works internally).
 
 The user program, or game, starts in the MainLoop. This class has a few
 methods, for initialization, idle (frame-syncronized callback), fixed
@@ -42,16 +44,18 @@ even make sense.
 SceneTree
 ---------
 
-| One of the ways to explain how Godot works, is that it's a high level
-  game engine over a low level middleware.
-| The scene system is the game engine, while the
-  :ref:`OS <class_OS>` and servers
-  are the low level API.
+One of the ways to explain how Godot works, is that it's a high level
+game engine over a low level middleware.
 
-| In any case, the scene system provides it's own main loop to OS,
-  :ref:`SceneTree <class_SceneTree>`.
-| This is automatically instanced and set when running a scene, no need
-  to do any extra work.
+The scene system is the game engine, while the
+:ref:`OS <class_OS>` and servers
+are the low level API.
+
+In any case, the scene system provides it's own main loop to OS,
+:ref:`SceneTree <class_SceneTree>`.
+
+This is automatically instanced and set when running a scene, no need
+to do any extra work.
 
 It's important to know that this class exists because it has a few
 important uses:
@@ -95,10 +99,11 @@ user. It's created automatically inside SceneTree.
 Scene Tree
 ----------
 
-| When a node is connected, directly or indirectly, to the root
-  viewport, it becomes part of the *Scene Tree*.
-| This means that, as explained in previous tutorials, will get the
-  \_enter\_tree() and \_ready() callbacks (as well as \_exit\_tree()).
+When a node is connected, directly or indirectly, to the root
+viewport, it becomes part of the *Scene Tree*.
+
+This means that, as explained in previous tutorials, will get the
+\_enter\_tree() and \_ready() callbacks (as well as \_exit\_tree()).
 
 .. image:: /img/activescene.png
 

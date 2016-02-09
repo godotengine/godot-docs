@@ -85,12 +85,13 @@ emit a "value\_changed" when dragged, etc.
 Custom Control Mini Tutorial
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| Before going into more depth, creating a custom control will be a good
-  way to get the picture on how controls works, as they are not as
-  complex as it might seem.
-| Additionally, even though Godot comes with dozens of controls for
-  different purposes, it happens often that it's just easier to attain a
-  specific functionality by creating a new one.
+Before going into more depth, creating a custom control will be a good
+way to get the picture on how controls works, as they are not as
+complex as it might seem.
+
+Additionally, even though Godot comes with dozens of controls for
+different purposes, it happens often that it's just easier to attain a
+specific functionality by creating a new one.
 
 To begin, create a single-node scene. The node is of type "Control" and
 has a certain area of the screen in the 2D editor, like this:

@@ -6,10 +6,11 @@ Physics Ray Casting and Queries (2D and 3D)
 Introduction
 ~~~~~~~~~~~~
 
-| One of the most common tasks in game development is casting a ray (or
-  custom shaped object) and see what it hits. This enables complex
-  behaviors, AI, etc. to take place.
-| This tutorial will explain how to do this in 2D and 3D.
+One of the most common tasks in game development is casting a ray (or
+custom shaped object) and see what it hits. This enables complex
+behaviors, AI, etc. to take place.
+
+This tutorial will explain how to do this in 2D and 3D.
 
 Godot stores all the low level game information in servers, while the
 scene is just a frontend. As such, ray casting is generally a

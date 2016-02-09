@@ -1,8 +1,9 @@
 .. _doc_inverse_kinematics:
 
-| Before continuing on, I'd recommend reading some theory, the simplest
-  article I find is this:
-| http://freespace.virgin.net/hugo.elias/models/m\_ik2.htm
+Before continuing on, I'd recommend reading some theory, the simplest
+article I find is this:
+
+http://freespace.virgin.net/hugo.elias/models/m\_ik2.htm
 
 Initial problem
 ~~~~~~~~~~~~~~~

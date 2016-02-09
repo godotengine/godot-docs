@@ -313,10 +313,12 @@ Area2D
 
 Areas in Godot physics have three main roles:
 
-| 1. Override the space parameters for objects entering them (ie.
-  gravity, gravity direction, gravity type, density, etc).
-| 2. Monitor when rigid or kinematic bodies enter or exit the area.
-| 3. Monitor other areas (this is the simplest way to get overlap test)
+1. Override the space parameters for objects entering them (ie.
+gravity, gravity direction, gravity type, density, etc).
+
+2. Monitor when rigid or kinematic bodies enter or exit the area.
+
+3. Monitor other areas (this is the simplest way to get overlap test)
 
 The second function is the most common. For it to work, the "monitoring"
 property must be enabled (it is by default). There are two types of
@@ -398,9 +400,10 @@ server must be used directly. For this, the
 :ref:`Physics2DDirectspaceState <class_Physics2DDirectspaceState>`
 class must be used. To obtain it, the following steps must be taken:
 
-| 1. It must be used inside the \_fixed\_process() callback, or at
-  \_integrate\_forces()
-| 2. The 2D RIDs for the space and physics server must be obtained.
+1. It must be used inside the \_fixed\_process() callback, or at
+\_integrate\_forces()
+
+2. The 2D RIDs for the space and physics server must be obtained.
 
 The following code should work:
 
@@ -424,15 +427,20 @@ and with other areas. The following table should make it more visual:
 In case of overlap, who receives collision information?
 -------------------------------------------------------
 
-| \|\ *. Type \|*. RigidBody \|\ *. CharacterBody \|*. KinematicBody
-  \|\ *. StaticBody \|*. Area \|
-| \| **RigidBody** \| Both \| Both \| Both \| Rigidbody \| Area \|
-| \| **CharacterBody** \| Both \| Both \| Both \| CharacterBody \| Area
-  \|
-| \| **KinematicBody** \| Both \| Both \| None \| None \| Area \|
-| \| **StaticBody** \| RigidBody \| CharacterBody \| None \| None \|
-  None \|
-| \| **Area** \| Area \| Area \| Area \| None \| Both \|
+\|\ *. Type \|*. RigidBody \|\ *. CharacterBody \|*. KinematicBody
+\|\ *. StaticBody \|*. Area \|
+
+\| **RigidBody** \| Both \| Both \| Both \| Rigidbody \| Area \|
+
+\| **CharacterBody** \| Both \| Both \| Both \| CharacterBody \| Area
+\|
+
+\| **KinematicBody** \| Both \| Both \| None \| None \| Area \|
+
+\| **StaticBody** \| RigidBody \| CharacterBody \| None \| None \|
+None \|
+
+\| **Area** \| Area \| Area \| Area \| None \| Both \|
 
 
 

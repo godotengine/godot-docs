@@ -59,14 +59,15 @@ and saturation:
 Behind The Scenes
 ~~~~~~~~~~~~~~~~~
 
-| While this seems magical, it's not. The Texscreen instruction, when
-  first found in a node that is about to be drawn, does a full-screen
-  copy to a back-buffer. Subsequent nodes that use texscreen() in
-  shaders will not have the screen copied for them, because this ends up
-  being very inefficient.
-| As a result, if shaders that use texscreen() overlap, the second one
-  will not use the result of the first one, resulting in unexpected
-  visuals:
+While this seems magical, it's not. The Texscreen instruction, when
+first found in a node that is about to be drawn, does a full-screen
+copy to a back-buffer. Subsequent nodes that use texscreen() in
+shaders will not have the screen copied for them, because this ends up
+being very inefficient.
+
+As a result, if shaders that use texscreen() overlap, the second one
+will not use the result of the first one, resulting in unexpected
+visuals:
 
 .. image:: /img/texscreen_demo1.png
 

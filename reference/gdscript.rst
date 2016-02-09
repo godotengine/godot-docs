@@ -817,10 +817,11 @@ useful to make libraries of helper functions:
 Setters/Getters
 ~~~~~~~~~~~~~~~
 
-| It is often useful to know when an member variable changed. It may
-  also be desired to encapsulate its access. For this, GDScript provides
-  a *setter\_/\_getter* helper using the ``setget`` keyword.
-| Just add it at the end of the variable definition line like this:
+It is often useful to know when an member variable changed. It may
+also be desired to encapsulate its access. For this, GDScript provides
+a *setter\_/\_getter* helper using the ``setget`` keyword.
+
+Just add it at the end of the variable definition line like this:
 
 ::
 

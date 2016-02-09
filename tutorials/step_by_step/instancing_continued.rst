@@ -54,11 +54,12 @@ lots of assets and parts that interact:
 
 .. image:: /img/openworld_instancing.png
 
-| Make some rooms with furniture, then connect them. Make a house later,
-  and use those rooms are the interior.
-| The house can be part of a citadel, which has many houses. Finally the
-  citadel can be put on the world map terrain. Add also guards and other
-  NPCs to the citadel by previously creating their scenes.
+Make some rooms with furniture, then connect them. Make a house later,
+and use those rooms are the interior.
+
+The house can be part of a citadel, which has many houses. Finally the
+citadel can be put on the world map terrain. Add also guards and other
+NPCs to the citadel by previously creating their scenes.
 
 With Godot, games can grow as quickly as desired, as only more scenes
 have to be made and instanced. The editor UI is also designed to be

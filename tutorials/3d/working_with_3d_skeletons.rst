@@ -220,9 +220,10 @@ Create the following node tree:
     + DirectionLight (DirectionLight)
     + Camera
 
-| Set up Camera so that arm is properly visible. Rotate DirectionLight
-  so that arm is properly lit
-| while in scene play mode.
+Set up Camera so that arm is properly visible. Rotate DirectionLight
+so that arm is properly lit
+
+while in scene play mode.
 
 Now we need to create new script under main:
 
@@ -233,8 +234,9 @@ First we setup parameters:
     var lowerarm_angle = Vector3()
     var upperarm_angle = Vector3()
 
-| Now we need to setup way to change them. Just lets use keys for that.
-| Please create 7 actions under project settings:
+Now we need to setup way to change them. Just lets use keys for that.
+
+Please create 7 actions under project settings:
 
 -  **selext\_x** - bind to X key
 -  **selext\_y** - bind to Y key
@@ -323,19 +325,21 @@ The full code for arm control is this:
 Pressing keys 1/2 select upperarm/lowerarm, select axis by pressing x,
 y, z, rotate using numpad "+"/"-"
 
-| This way you fully control your arm in FK mode using 2 bones. You can
-  add additional bones and/or improve "feel" of the interface by using
-  coefficients for the change. I recommend you play with this example a
-  lot before going to next part.
-| You can clone the demo code for this chapter using
+This way you fully control your arm in FK mode using 2 bones. You can
+add additional bones and/or improve "feel" of the interface by using
+coefficients for the change. I recommend you play with this example a
+lot before going to next part.
+
+You can clone the demo code for this chapter using
 
 ::
 
     git clone git@github.com:slapin/godot-skel3d.git
     cd demo1
 
-| Or you can browse it using web-interface:
-| https://github.com/slapin/godot-skel3d
+Or you can browse it using web-interface:
+
+https://github.com/slapin/godot-skel3d
 
 Using 3D "bones" to implement Inverse Kinematics
 ------------------------------------------------

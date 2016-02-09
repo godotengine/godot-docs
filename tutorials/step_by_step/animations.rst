@@ -56,12 +56,13 @@ property of any object* can be animated:
 Making the Logo Appear
 ----------------------
 
-| Next, the logo will appear from the top of the screen. After selecting
-  the animation player, the editor panel will stay visible until
-  manually hidden (or the animation node is erased). Taking advantage of
-  this, select the "logo" node and go to the "pos" property, move it up,
-  to position: 114,-400.
-| Once in this position, press the key button next to the property:
+Next, the logo will appear from the top of the screen. After selecting
+the animation player, the editor panel will stay visible until
+manually hidden (or the animation node is erased). Taking advantage of
+this, select the "logo" node and go to the "pos" property, move it up,
+to position: 114,-400.
+
+Once in this position, press the key button next to the property:
 
 .. image:: /img/keypress.png
 

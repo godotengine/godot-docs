@@ -37,9 +37,10 @@ game, it has the following characteristics:
 -  Can be extended (to have more functions).
 -  Can be added to other nodes as children.
 
-| p=. |image1|
-| The last one is very important. Nodes can have other nodes as
-  children. When arranged in this way, the nodes become a **tree**.
+p=. |image1|
+
+The last one is very important. Nodes can have other nodes as
+children. When arranged in this way, the nodes become a **tree**.
 
 In Godot, the ability to arrange nodes in this way creates a powerful
 tool for organizing the projects. Since different nodes have different
@@ -54,10 +55,11 @@ Scenes
 
 .. image:: /img/scene.png
 
-| Now that the existence of nodes has been defined, the next logical
-  step is to explain what a Scene is.
-| A scene is composed of a group of nodes organized hierarchically (in
-  tree fashion). It has the following properties:
+Now that the existence of nodes has been defined, the next logical
+step is to explain what a Scene is.
+
+A scene is composed of a group of nodes organized hierarchically (in
+tree fashion). It has the following properties:
 
 -  A scene always has only one root node.
 -  Scenes can be saved to disk and loaded back.
@@ -118,12 +120,13 @@ And finally, create the Label! A lot happens when Create is pressed:
 
 .. image:: /img/addedlabel.png
 
-| First of all, the scene is changed to the 2D editor (because Label is
-  a 2D Node type), and the Label appears, selected, at the top left
-  corner of the viewport.
-| The node appears in the scene tree editor (box in the top right
-  corner), and the label properties apear in the Inspector (box in the
-  bottom right corner).
+First of all, the scene is changed to the 2D editor (because Label is
+a 2D Node type), and the Label appears, selected, at the top left
+corner of the viewport.
+
+The node appears in the scene tree editor (box in the top right
+corner), and the label properties apear in the Inspector (box in the
+bottom right corner).
 
 The next step, will be to change the "Text" Property of the label, let
 change it to "Hello, World!":
@@ -185,13 +188,14 @@ selecting 'hello.scn'.
 With this change, pressing the regular Play button (or F5) will run the
 project, no matter which scene is being edited.
 
-| Going back to the project settings dialog. This dialog provides a lot
-  of options that can be added to engine.cfg and show their default
-  values. If the default value is ok, then there isn't any need to
-  change it.
-| When a value is changed, a tick is marked to the left of the name.
-  This means that the property will be saved to the engine.cfg file and
-  remembered.
+Going back to the project settings dialog. This dialog provides a lot
+of options that can be added to engine.cfg and show their default
+values. If the default value is ok, then there isn't any need to
+change it.
+
+When a value is changed, a tick is marked to the left of the name.
+This means that the property will be saved to the engine.cfg file and
+remembered.
 
 As a side note, for future reference and a little out of context (this
 is the first tutorial after all!), it is also possible to add custom

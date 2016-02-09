@@ -11,9 +11,11 @@ class. It's just a script, so it can be run by executing:
 
    </pre>
 
-| c
-| c:\\\\godot> godot -s http\_test.gd
-| 
+c
+
+c:\\\\godot> godot -s http\_test.gd
+
+
 
 .. raw:: html
 

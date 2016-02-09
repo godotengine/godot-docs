@@ -12,11 +12,12 @@ and features of the engine are implemented through them. There is,
 though, another datatype that is equally as important. That is
 :ref:`Resource <class_Resource>`.
 
-| Where *Nodes* focus on behaviors, such as drawing a sprite, drawing a
-  3D model, physics, GUI controls, etc,
-| **Resources** are mere **data containers**. This means that they don't
-  do any action nor process any information. Resources just contain
-  data.
+Where *Nodes* focus on behaviors, such as drawing a sprite, drawing a
+3D model, physics, GUI controls, etc,
+
+**Resources** are mere **data containers**. This means that they don't
+do any action nor process any information. Resources just contain
+data.
 
 Examples of resources are
 :ref:`Texture <class_Texture>`,
@@ -50,13 +51,14 @@ To make it a litle more visual:
 External vs Built-In
 --------------------
 
-| The resource properties can reference resources in two ways,
-  *external* (on disk) or **built-in**.
-| To be more specific, here's a
-  :ref:`Texture <class_Texture>`
-  in a
-  :ref:`Sprite <class_Sprite>`
-  node:
+The resource properties can reference resources in two ways,
+*external* (on disk) or **built-in**.
+
+To be more specific, here's a
+:ref:`Texture <class_Texture>`
+in a
+:ref:`Sprite <class_Sprite>`
+node:
 
 .. image:: /img/spriteprop.png
 
@@ -117,16 +119,17 @@ must be used.
             var bullet = preload("res://bullet.scn").instance()
             add_child(bullet)                  
 
-| This method creates the nodes in hierarchy, configures them (sets all
-  the properties) and returns the root node of the scene, which can be
-  added to any other node.
-| The approach has several advantages. As the
-  :ref:`PackedScene.instance() <class_PackedScene_instance>`
-  function is pretty fast, adding extra content to the scene can be done
-  efficiently. New enemies, bullets, effects, etc can be added or
-  removed quickly, without having to load them again from disk each
-  time. It is important to remember that, as always, images, meshes, etc
-  are all shared between the scene instances.
+This method creates the nodes in hierarchy, configures them (sets all
+the properties) and returns the root node of the scene, which can be
+added to any other node.
+
+The approach has several advantages. As the
+:ref:`PackedScene.instance() <class_PackedScene_instance>`
+function is pretty fast, adding extra content to the scene can be done
+efficiently. New enemies, bullets, effects, etc can be added or
+removed quickly, without having to load them again from disk each
+time. It is important to remember that, as always, images, meshes, etc
+are all shared between the scene instances.
 
 Freeing Resources
 -----------------

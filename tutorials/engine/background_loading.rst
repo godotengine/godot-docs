@@ -70,8 +70,9 @@ get\_stage\_count
 
    </pre>
 
-| returns the total number of stages to load
-| 
+returns the total number of stages to load
+
+
 
 .. raw:: html
 

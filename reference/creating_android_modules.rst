@@ -6,10 +6,11 @@ Creating Android modules
 Introduction
 ------------
 
-| Making videogames portable is all fine and dandy, until mobile gaming
-  monetization shows up.
-| This area is complex, usually a mobile game that monetizes needs
-  special connections to a server for stuff such as:
+Making videogames portable is all fine and dandy, until mobile gaming
+monetization shows up.
+
+This area is complex, usually a mobile game that monetizes needs
+special connections to a server for stuff such as:
 
 -  Analytics
 -  In-app purchases
@@ -312,9 +313,10 @@ Check ``adb logcat`` for possible problems, then:
 Future
 ------
 
-| Godot has an experimental Java API Wrapper that allows to use the
-  entire Java API fro GDScript.
-| It's simple to use and it's used like this:
+Godot has an experimental Java API Wrapper that allows to use the
+entire Java API fro GDScript.
+
+It's simple to use and it's used like this:
 
 ::
 

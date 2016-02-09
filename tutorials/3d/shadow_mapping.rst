@@ -6,13 +6,14 @@ Shadow Mapping
 Introduction
 ------------
 
-| Simply throwing a light is not enough to realistically illuminate a
-  scene. It should be, in theory, but given the way video hardware
-  works, parts of objects that should not be reached by light are lit
-  anyway.
-| Most people (including artists), see shadows as something projected by
-  light, as if they were created by the light itself by darkening places
-  that are hidden from the light source.
+Simply throwing a light is not enough to realistically illuminate a
+scene. It should be, in theory, but given the way video hardware
+works, parts of objects that should not be reached by light are lit
+anyway.
+
+Most people (including artists), see shadows as something projected by
+light, as if they were created by the light itself by darkening places
+that are hidden from the light source.
 
 This is actually not correct and it's important to understand that
 shadows are places where light simply does not reach. As a rule (and
@@ -131,12 +132,13 @@ increase the Z-Offset even more!
 
 .. image:: /img/shadow_offset_3.png
 
-| And it gets rid of those self-shadowings! hooray! except something is
-  wrong.. oh, right. Being pushed back too much, the shadows start
-  disconnecting from their casters, which looks pretty awful. Ok, you go
-  back to the previous Z-offset.
-| This is when Z-Slope-Scale comes to save the day. This setting makes
-  shadow caster objects thinner, so the borders don't self-shadow:
+And it gets rid of those self-shadowings! hooray! except something is
+wrong.. oh, right. Being pushed back too much, the shadows start
+disconnecting from their casters, which looks pretty awful. Ok, you go
+back to the previous Z-offset.
+
+This is when Z-Slope-Scale comes to save the day. This setting makes
+shadow caster objects thinner, so the borders don't self-shadow:
 
 .. image:: /img/shadow_offset_4.png
 
@@ -157,21 +159,23 @@ else.
 Important!
 ~~~~~~~~~~
 
-| If you are using shadow maps with directional lights, make sure that
-  the *view distance* of the *camera* is set to an *optimal range*. This
-  means, if the distance between your camera and the visible end of the
-  scene is 100, then set the view distance to that value. If a greater
-  than necessary value is used, the shadow maps will lose detail as they
-  will try to cover a bigger area.
-| So, always make sure to use the optimal range!
+If you are using shadow maps with directional lights, make sure that
+the *view distance* of the *camera* is set to an *optimal range*. This
+means, if the distance between your camera and the visible end of the
+scene is 100, then set the view distance to that value. If a greater
+than necessary value is used, the shadow maps will lose detail as they
+will try to cover a bigger area.
+
+So, always make sure to use the optimal range!
 
 Shadow Filtering
 ~~~~~~~~~~~~~~~~
 
-| Raw shadows are blocky. Increasing their resolution just makes smaller
-  blocks, but they are still blocks.
-| Godot offers a few ways to filter them (shadow in the example is
-  low-resolution on purpose!):
+Raw shadows are blocky. Increasing their resolution just makes smaller
+blocks, but they are still blocks.
+
+Godot offers a few ways to filter them (shadow in the example is
+low-resolution on purpose!):
 
 .. image:: /img/shadow_filter_options.png
 

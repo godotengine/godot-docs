@@ -97,8 +97,9 @@ supplied:
 
    </pre>
 
-| c:\\\\MyGame> godot -lang fr
-| 
+c:\\\\MyGame> godot -lang fr
+
+
 
 .. raw:: html
 

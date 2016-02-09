@@ -87,9 +87,10 @@ Edit doc/base/classes.xml file
 First of all, check the :ref:`doc_list_of_classes_and_documenters`. Try to work
 on classes not already assigned nor filled.
 
-| This file is produced by Godot Engine. It is used by the editor, for
-  example in the Help window (F1, Shift+F1).
-| You can edit this file using your favourite text editor.
+This file is produced by Godot Engine. It is used by the editor, for
+example in the Help window (F1, Shift+F1).
+
+You can edit this file using your favourite text editor.
 
 Here is an example with the Node2D class:
 
@@ -217,8 +218,9 @@ method:
         Rotates the node of "degrees" degrees.
         
 
-| That's all!
-| You simply have to write any missing text between these marks:
+That's all!
+
+You simply have to write any missing text between these marks:
 
 -  
 -  
@@ -230,11 +232,12 @@ use if needed. Avoid grammar faults.
 I don't know what this method does!
 -----------------------------------
 
-| Not a problem. Leave it behind for now, and don't forget to notify the
-  missing methods when you request a pull of your changes. Another
-  editor will take care of it.
-| If you wonder what a method does, you can still have a look at its
-  implementation in Godot Engine's source code on GitHub. Also, if you
-  have a doubt, feel free to ask on the
-  `Forums <http://www.godotengine.org/projects/godot-engine/boards>`__
-  and on IRC (freenode, #godotengine).
+Not a problem. Leave it behind for now, and don't forget to notify the
+missing methods when you request a pull of your changes. Another
+editor will take care of it.
+
+If you wonder what a method does, you can still have a look at its
+implementation in Godot Engine's source code on GitHub. Also, if you
+have a doubt, feel free to ask on the
+`Forums <http://www.godotengine.org/projects/godot-engine/boards>`__
+and on IRC (freenode, #godotengine).

@@ -28,10 +28,11 @@ For compiling under Windows, the following is required:
 Setting Up SCons
 ----------------
 
-| Set the environment variable ANDROID\_HOME to point to the Android
-  SDK.
-| Set the environment variable ANDROID\_NDK\_ROOT to point to the
-  Android NDK.
+Set the environment variable ANDROID\_HOME to point to the Android
+SDK.
+
+Set the environment variable ANDROID\_NDK\_ROOT to point to the
+Android NDK.
 
 To set those environment variables on Windows, press Windows+R, type
 "control system", then click on **Advanced system settings** in the left
@@ -209,9 +210,10 @@ If it still fails, open a command line and run logcat:
 
     C:\\android-sdk\\platform-tools> adb logcat
 
-| And check the output while the application is installed. Reason for
-  failure should be presented there.
-| Seek assistance if you can't figure it out.
+And check the output while the application is installed. Reason for
+failure should be presented there.
+
+Seek assistance if you can't figure it out.
 
 Application exits immediately
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

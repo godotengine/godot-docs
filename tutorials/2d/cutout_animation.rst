@@ -85,11 +85,12 @@ rotating the torso:
 
 .. image:: /img/tutovec_torso1.gif
 
-| Ouch, that doesn't look good! The rotation pivot is wrong, this means
-  it needs to be adjusted.
-| This small little cross in the middle of the
-  :ref:`Sprite <class_Sprite>` is
-  the rotation pivot:
+Ouch, that doesn't look good! The rotation pivot is wrong, this means
+it needs to be adjusted.
+
+This small little cross in the middle of the
+:ref:`Sprite <class_Sprite>` is
+the rotation pivot:
 
 .. image:: /img/tuto_cutout4.png
 
@@ -137,12 +138,13 @@ skeleton like.. a skeleton. Is there any hope?.. Of Course!
 RemoteTransform2D Node
 ~~~~~~~~~~~~~~~~~~~~~~
 
-| Godot provides a special node,
-  :ref:`RemoteTransform2D <class_RemoteTransform2D>`.
-  This node will transform nodes that are sitting somewhere else in the
-  hierarchy, by copying it's transform to the remote node.
-| This enables to have a visibility order independent from the
-  hierarchy.
+Godot provides a special node,
+:ref:`RemoteTransform2D <class_RemoteTransform2D>`.
+This node will transform nodes that are sitting somewhere else in the
+hierarchy, by copying it's transform to the remote node.
+
+This enables to have a visibility order independent from the
+hierarchy.
 
 Simply create two more nodes as children from torso, remote\_arm\_l and
 remote\_hand\_l and link them to the actual sprites:
@@ -249,9 +251,10 @@ involves also moving the rest of the leg bones. Each motion of the foot
 involves rotating several other bones. This is quite complex and leads
 to imprecise results.
 
-| So, what if we could just move the foot and let the rest of the leg
-  accommodate to the new foot position?
-| This type of posing is called IK (Inverse Kinematic).
+So, what if we could just move the foot and let the rest of the leg
+accommodate to the new foot position?
+
+This type of posing is called IK (Inverse Kinematic).
 
 To create an IK chain, simply select a chain of bones from endpoint to
 the base for the chain. For example, to create an IK chain for the right
@@ -302,12 +305,16 @@ create a reference rest pose in one of the animations.
 
 Simply do the following steps:
 
-| 1. Make sure the rig is in "rest" (not doing any specific pose).
-| 2. Create a new animation, rename it to "rest".
-| 3. Select all nodes (box selection should work fine).
-| 4. Select "loc" and "rot" on the top menu.
-| 5. Push the key button. Keys will be inserted for everything, creating
-  a default pose.
+1. Make sure the rig is in "rest" (not doing any specific pose).
+
+2. Create a new animation, rename it to "rest".
+
+3. Select all nodes (box selection should work fine).
+
+4. Select "loc" and "rot" on the top menu.
+
+5. Push the key button. Keys will be inserted for everything, creating
+a default pose.
 
 .. image:: /img/tuto_cutout21.png
 

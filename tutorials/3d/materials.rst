@@ -6,14 +6,15 @@ Materials
 Introduction
 ------------
 
-| Materials can be applied to most visible 3D objects, they basically
-  are a description to how light reacts to that object. There are many
-  types of materials, but the main ones are the
-  :ref:`FixedMaterial <class_FixedMaterial>`
-  and
-  :ref:`ShaderMaterial <class_ShaderMaterial>`.
-  Tutorials for each of them exist :ref:`doc_fixed_materials` and :ref:`doc_shader_materials`.
-| This tutorial is about the basic properties shared between them.
+Materials can be applied to most visible 3D objects, they basically
+are a description to how light reacts to that object. There are many
+types of materials, but the main ones are the
+:ref:`FixedMaterial <class_FixedMaterial>`
+and
+:ref:`ShaderMaterial <class_ShaderMaterial>`.
+Tutorials for each of them exist :ref:`doc_fixed_materials` and :ref:`doc_shader_materials`.
+
+This tutorial is about the basic properties shared between them.
 
 .. image:: /img/material_flags.png
 
@@ -32,15 +33,16 @@ not be shown.
 Double Sided & Invert Faces
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| Godot by default only shows geometry faces (triangles) when facing the
-  camera. To do this it needs them to be in view in clockwise order.
-  This saves a lot of GPU power by ensuring that not visible triangles
-  are not drawn.
-| Some flat objects might need to be drawn all the times though, for
-  this the "double sided" flag will make sure that no matter the facing,
-  the triangle will always be drawn. It is also possible to invert this
-  check and draw counter-clockwise looking faces too, though it's not
-  very useful except for a few cases (like drawing outlines).
+Godot by default only shows geometry faces (triangles) when facing the
+camera. To do this it needs them to be in view in clockwise order.
+This saves a lot of GPU power by ensuring that not visible triangles
+are not drawn.
+
+Some flat objects might need to be drawn all the times though, for
+this the "double sided" flag will make sure that no matter the facing,
+the triangle will always be drawn. It is also possible to invert this
+check and draw counter-clockwise looking faces too, though it's not
+very useful except for a few cases (like drawing outlines).
 
 Unshaded
 ~~~~~~~~

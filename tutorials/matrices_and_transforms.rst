@@ -9,10 +9,11 @@ Introduction
 Before reading this tutorial, it is advised to read the previous one
 about :ref:`doc_vector_math` as this one is a direct continuation.
 
-| This tutorial will be about *transformations* and will cover a little
-  about matrices (but not in-depth).
-| Transformations are most of the time applied as translation, rotation
-  and scale so they will be considered as priority here.
+This tutorial will be about *transformations* and will cover a little
+about matrices (but not in-depth).
+
+Transformations are most of the time applied as translation, rotation
+and scale so they will be considered as priority here.
 
 Oriented Coordinate System (OCS)
 --------------------------------
@@ -26,18 +27,20 @@ Ok, so in 2D this looks simple, a position and an angle for a rotation.
 But remember, we are grown ups here and don't use angles (plus, angles
 are not really even that useful when working in 3D).
 
-| We should realize that at some point, someone *designed* this
-  spaceship. Be it for 2D in a drawing such as Paint.net, Gimp,
-  Photoshop, etc. or in 3D through a 3D DCC tool such as Blender, Max,
-  Maya, etc.
-| When it was designed, it was not rotated. It was designed in it's own
-  *coordinate system*.
+We should realize that at some point, someone *designed* this
+spaceship. Be it for 2D in a drawing such as Paint.net, Gimp,
+Photoshop, etc. or in 3D through a 3D DCC tool such as Blender, Max,
+Maya, etc.
+
+When it was designed, it was not rotated. It was designed in it's own
+*coordinate system*.
 
 .. image:: /img/tutomat2.png
 
-| This means that the tip of the ship has a coordinate, the fin has
-  another, etc. Be it in pixels (2D) or vertices (3D).
-| So, let's recall again that the ship was somewhere in space:
+This means that the tip of the ship has a coordinate, the fin has
+another, etc. Be it in pixels (2D) or vertices (3D).
+
+So, let's recall again that the ship was somewhere in space:
 
 .. image:: /img/tutomat3.png
 
@@ -95,14 +98,15 @@ position!
 
 .. image:: /img/tutomat9.png
 
-| How did this black magic happen? The ship was lost in space, and now
-  it's back home!
-| It might seem strange, but it does have plenty of logic. Remember, as
-  we have seen in the :ref:`doc_vector_math`, what
-  happened is that the distance to X axis, and the distance to Y axis
-  were computed. Calculating distance in a direction or plane was one of
-  the uses for the dot product. This was enough to obtain back the
-  design coordinates for every point in the ship.
+How did this black magic happen? The ship was lost in space, and now
+it's back home!
+
+It might seem strange, but it does have plenty of logic. Remember, as
+we have seen in the :ref:`doc_vector_math`, what
+happened is that the distance to X axis, and the distance to Y axis
+were computed. Calculating distance in a direction or plane was one of
+the uses for the dot product. This was enough to obtain back the
+design coordinates for every point in the ship.
 
 So, what he have been working with so far (with X, Y and Origin) is an
 *Oriented Coordinate System\*. X an Y are the **Basis**, and \*Origin*
@@ -203,11 +207,12 @@ the origin:
 
 .. image:: /img/tutomat13.png
 
-| This will always work in global coordinates.
-| If instead, translation is desired in *local* coordinates of the
-  matrix (towards where the *basis* is oriented), there is the
-  :ref:`Matrix32.translated() <class_Matrix32_translated>`
-  method:
+This will always work in global coordinates.
+
+If instead, translation is desired in *local* coordinates of the
+matrix (towards where the *basis* is oriented), there is the
+:ref:`Matrix32.translated() <class_Matrix32_translated>`
+method:
 
 ::
 
@@ -292,11 +297,12 @@ Or pre-multiplication:
 Orthonormal Matrices
 --------------------
 
-| However, if the Matrix has been scaled (vectors are not unit length),
-  or the basis vectors are not orthogonal (90°), the inverse transform
-  will not work.
-| In other words, inverse transform is only valid in *orthonormal*
-  matrices. For this, these cases an affine inverse must be computed.
+However, if the Matrix has been scaled (vectors are not unit length),
+or the basis vectors are not orthogonal (90°), the inverse transform
+will not work.
+
+In other words, inverse transform is only valid in *orthonormal*
+matrices. For this, these cases an affine inverse must be computed.
 
 The transform, or inverse transform of an identity matrix will return
 the position unchanged:
@@ -333,10 +339,11 @@ If the matrix is orthonormal, then:
 Matrix Multiplication
 ---------------------
 
-| Matrices can be multiplied. Multiplication of two matrices "chains"
-  (concatenates) their transforms.
-| However, as per convention, multiplication takes place in reverse
-  order.
+Matrices can be multiplied. Multiplication of two matrices "chains"
+(concatenates) their transforms.
+
+However, as per convention, multiplication takes place in reverse
+order.
 
 Example:
 

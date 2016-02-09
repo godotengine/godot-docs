@@ -77,8 +77,9 @@ many factors.
 On a modern PC and consoles, vertex cost is low. Very low. GPUs
 originally only rendered triangles, so all the vertices:
 
-| 1. Had to be transformed by the CPU (including clipping).
-| 1. Had to be sent to the GPU memory from the main RAM.
+1. Had to be transformed by the CPU (including clipping).
+
+1. Had to be sent to the GPU memory from the main RAM.
 
 Nowadays, all this is handled inside the GPU, so the performance is
 extremely high. 3D artists usually have the wrong feeling about
@@ -132,11 +133,12 @@ have extra processing per vertex, such as:
 Texture Compression
 -------------------
 
-| Godot offers to compress textures of 3D models when imported (VRAM
-  compression). Video Ram compression is not as efficient in size as PNG
-  or JPG when stored, but increase performance enormously when drawing.
-| This is because the main goal of texture compression is bandwidth
-  reduction between memory and the GPU.
+Godot offers to compress textures of 3D models when imported (VRAM
+compression). Video Ram compression is not as efficient in size as PNG
+or JPG when stored, but increase performance enormously when drawing.
+
+This is because the main goal of texture compression is bandwidth
+reduction between memory and the GPU.
 
 In 3D, the shapes of objects depend more on the geometry than the
 texture, so compression is generally not noticeable. In 2D, compression

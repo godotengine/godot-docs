@@ -90,11 +90,12 @@ points to this file:
 
 .. image:: /img/addglobal.png
 
-| Now, when any scene is run, the script will be always loaded.
-| So, going back to it, In the \_ready() function, the current scene
-  will be fetched. Both the current scene and global.gd are children of
-  root, but the autoloaded nodes are always first. This means that the
-  last child of root is always the loaded scene.
+Now, when any scene is run, the script will be always loaded.
+
+So, going back to it, In the \_ready() function, the current scene
+will be fetched. Both the current scene and global.gd are children of
+root, but the autoloaded nodes are always first. This means that the
+last child of root is always the loaded scene.
 
 Also, make sure that global.gd extends from Node, otherwise it won't be
 loaded.

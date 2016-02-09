@@ -139,13 +139,14 @@ the screen.
 
 .. image:: /img/changes.png
 
-| From that moment onward, the user can choose to re-import at any given
-  time by clicking on the red-icon. When this action is done, a dialog
-  will pop-up showing which resources can be re-imported (all selected
-  by default).
-| Accepting that dialog will immediately re-import the resources and
-  will update any of them currently in use in the editor (like a
-  texture, model or audio file).
+From that moment onward, the user can choose to re-import at any given
+time by clicking on the red-icon. When this action is done, a dialog
+will pop-up showing which resources can be re-imported (all selected
+by default).
+
+Accepting that dialog will immediately re-import the resources and
+will update any of them currently in use in the editor (like a
+texture, model or audio file).
 
 .. image:: /img/changed.png
 

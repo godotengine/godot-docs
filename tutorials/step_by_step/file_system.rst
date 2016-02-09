@@ -35,11 +35,12 @@ the best to play along with SVN, Git, Mercurial, Perforce, etc.
 engine.cfg
 ----------
 
-| The mere existence of this file marks that there is a Godot project in
-  that directory and all sub-directories.
-| This file contains the project configuration in plain text, win.ini
-  style, though it will work to mark the existence of a project even if
-  the file is empty.
+The mere existence of this file marks that there is a Godot project in
+that directory and all sub-directories.
+
+This file contains the project configuration in plain text, win.ini
+style, though it will work to mark the existence of a project even if
+the file is empty.
 
 Example of a filesystem:
 
