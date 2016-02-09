@@ -69,7 +69,7 @@ Generated Geometry
 It is possible to create custom geometry by using the
 `Mesh <https://github.com/okamstudio/godot/wiki/class_mesh>`__ resource
 directly, simply create your arrays and use the
-`Mesh.add\_surface <https://github.com/okamstudio/godot/wiki/class_mesh#add_surface>`__
+:ref:`Mesh.add_surface() <class_Mesh_add_surface>`
 function. A helper class is also available,
 `SurfaceTool <https://github.com/okamstudio/godot/wiki/class_surfacetool>`__,
 which provides a more straightforward API and helpers for indexing,

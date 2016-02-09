@@ -64,7 +64,7 @@ are cached and remembered, so further calls are unnecessary.
 
 If re-drawing is required because a state or something else changed,
 simply call
-`CanvasItem.update() <https://github.com/okamstudio/godot/wiki/class_canvasitem#update>`__
+:ref:`CanvasItem.update() <class_CanvasItem_update>`
 in that same node and a new \_draw() call will happen.
 
 Here is a little more complex example. A texture variable that will be

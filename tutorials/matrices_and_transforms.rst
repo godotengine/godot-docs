@@ -206,7 +206,7 @@ the origin:
 | This will always work in global coordinates.
 | If instead, translation is desired in *local* coordinates of the
   matrix (towards where the *basis* is oriented), there is the
-  `Matrix32.translated <https://github.com/okamstudio/godot/wiki/class_matrix32#translated>`__
+  :ref:`Matrix32.translated() <class_Matrix32_translated>`
   method:
 
 ::

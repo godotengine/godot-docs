@@ -15,9 +15,9 @@ frame. There are two types of processing, idle processing and fixed
 processing.
 
 Idle processing is activated with the
-`Node.set\_process() <https://github.com/okamstudio/godot/wiki/class_node#set_process>`__
+:ref:`Node.set_process() <class_Node_set_process>`
 function. Once active, the
-`Node.\_process() <https://github.com/okamstudio/godot/wiki/class_node>`__
+:ref:`Node._process() <class_Node__process>`
 callback will be called every frame. Example:
 
 ::
@@ -70,7 +70,7 @@ tag scenes which are enemies.
 
 This way, if the player, sneaking into the secret base, is discovered,
 all enemies can be notified about the alarm sounding, by using
-`SceneTree.call\_group() <https://github.com/okamstudio/godot/wiki/class_scenemainloop#call_group>`__:
+:ref:`SceneTree.call_group() <class_SceneTree_call_group>`:
 
 ::
 
@@ -82,7 +82,7 @@ member of the group "guards".
 
 Optionally, it is possible to get the full list of "guards" nodes by
 calling
-`SceneTree.get\_nodes\_in\_group() <https://github.com/okamstudio/godot/wiki/class_scenemainloop#get_nodes_in_group>`__:
+:ref:`SceneTree.get_nodes_in_group() <class_SceneTree_get_nodes_in_group>`:
 
 ::
 
@@ -99,7 +99,7 @@ Godot has a system of notifications. This is usually not needed to be
 used from scripting, as it's too low level and virtual functions are
 provided for most of them. It's just good to know they exists. Simply
 add a
-`Object.\_notification() <https://github.com/okamstudio/godot/wiki/class_object#_notification>`__
+:ref:`Object._notification() <class_Object__notification>`
 function in your script:
 
 ::
@@ -111,8 +111,7 @@ function in your script:
             var delta = get_process_time()
             print("This is the same as overriding _process()...")
 
-The documentation of each class in the `class
-list <https://github.com/okamstudio/godot/wiki/class_class_list>`__
+The documentation of each class in the :ref:`Class Reference <toc-class-ref>`
 shows the notifications it can receive. However, again, for most cases
 script provides simpler overrideable functions.
 
@@ -176,7 +175,7 @@ calling a function. This will result in crashing the game. Running Godot
 in the debugger often will catch this case and warn you about it.
 
 The safest way to delete a node is by using
-`queue\_free() <https://github.com/okamstudio/godot/wiki/class_node#queue_free>`__
+:ref:`Node.queue_free() <class_Node_queue_free>`
 instead. This erases the node during idle, safely.
 
 ::
@@ -205,7 +204,7 @@ But 'scene' is still not a node containing subnodes. It's packed in a
 special resource called
 `PackedScene <https://github.com/okamstudio/godot/wiki/class_packedscene>`__.
 To create the actual node, the function
-`PackedScene.instance() <https://github.com/okamstudio/godot/wiki/class_packedscene#instance>`__
+:ref:`PackedScene.instance() <class_PackedScene_instance>`
 must be called. This will return the tree of nodes that can be added to
 the active scene:
 

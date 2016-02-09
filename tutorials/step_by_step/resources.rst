@@ -108,7 +108,7 @@ are resources of type
 this means that the scene is packed inside a resource.
 
 To obtain an instance of the scene, the method
-`instance() <https://github.com/okamstudio/godot/wiki/class_packedscene#instance>`__
+:ref:`PackedScene.instance() <class_PackedScene_instance>`
 must be used.
 
 ::

@@ -35,7 +35,7 @@ Viewports are also responsible of delivering properly adjusted and
 scaled input events to all it's children nodes. Both the root viewport
 and sub-viewports do this automatically, but render targets do not.
 Because of this, the user must do it manually via the
-`Viewport.input <https://github.com/okamstudio/godot/wiki/class_viewport#input>`__
+:ref:`Viewport.input() <class_Viewport_input>`
 function if needed.
 
 Listener

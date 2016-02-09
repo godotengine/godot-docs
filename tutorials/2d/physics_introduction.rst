@@ -302,7 +302,7 @@ are in the scene. To get contacts reported, simply increase the amount
 of the "contacts reported" property from zero to a meaningful value
 (depending on how many you are expecting to get). The contacts can be
 later obtained via the
-`Physics2DDirectBodyState.get\_contact\_count() <https://github.com/okamstudio/godot/wiki/class_physics2ddirectbodystate#get_contact_count>`__
+:ref:`Physics2DDirectBodyState.get_contact_count() <class_Physics2DDirectBodyState_get_contact_count>`
 and related functions.
 
 Contact monitoring via signals is also available (signals similar to the

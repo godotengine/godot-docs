@@ -68,7 +68,7 @@ important uses:
 When a node is part of the Scene Tree, the
 `SceneTree <https://github.com/okamstudio/godot/wiki/class_scenemainloop>`__
 singleton can be obtained by simply calling
-`Node.get\_tree() <https://github.com/okamstudio/godot/wiki/class_node#get_tree>`__.
+:ref:`Node.get_tree() <class_Node_get_tree>`.
 
 Root Viewport
 -------------
@@ -138,7 +138,7 @@ Changing Current Scene
 
 After a scene is loaded, it is often desired to change this scene for
 another one. The simple way to do this to use the
-`SceneTree.change\_scene <https://github.com/okamstudio/godot/wiki/class_scenetree#change_scene>`__
+:ref:`SceneTree.change_scene() <class_SceneTree_change_scene>`
 function:
 
 ::

@@ -1,5 +1,5 @@
-Classes reference
-=================
+Class reference
+===============
 
 .. toctree::
    :maxdepth: 1

@@ -58,7 +58,7 @@ changing the language in the settings, the scenes (or at least the
 settings scene) will have to be re-loaded for new text to have effect.
 
 For code, the
-`Object.tr() <https://github.com/okamstudio/godot/wiki/class_object#tr>`__
+:ref:`Object.tr() <class_Object_tr>`
 function can be used. This will just look-up the text into the
 translations and convert it if found:
 

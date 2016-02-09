@@ -82,7 +82,7 @@ Raycast Query
 ~~~~~~~~~~~~~
 
 For performing a 2D raycast query, the method
-`Physics2DDirectSpaceState.intersect\_ray() <https://github.com/okamstudio/godot/wiki/class_physics2ddirectspacestate#intersect_ray>`__
+:ref:`Physics2DDirectSpaceState.intersect_ray() <class_Physics2DDirectSpaceState_intersect_ray>`
 must be used, for example:
 
 ::

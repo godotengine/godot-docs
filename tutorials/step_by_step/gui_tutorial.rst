@@ -48,12 +48,12 @@ Input and Drawing
 ~~~~~~~~~~~~~~~~~
 
 Controls receive input events by means of the
-`\_input\_event() <https://github.com/okamstudio/godot/wiki/class_control#_input_event>`__
+:ref:`Control._input_event() <class_Control__input_event>`
 callback. Only one control, the one in focus, will receive
 keyboard/joypad events (see
-`set\_focus\_mode() <https://github.com/okamstudio/godot/wiki/class_control#set_focus_mode>`__
+:ref:`Control.set_focus_mode() <class_Control_set_focus_mode>`
 and
-`grab\_focus() <https://github.com/okamstudio/godot/wiki/class_control#grab_focus>`__.
+:ref:`Control.grab_focus() <class_Control_grab_focus>`.
 
 Mouse Motion events are received by the control directly below the mouse
 pointer. When a control receives a mouse button pressed event, all
@@ -64,10 +64,10 @@ boundary.
 Like any class that inherits from
 `CanvasItem <https://github.com/okamstudio/godot/wiki/class_canvasitem>`__
 (Control does), a
-`\_draw() <https://github.com/okamstudio/godot/wiki/class_canvasitem#draw>`__
+:ref:`CanvasItem.draw() <class_CanvasItem_draw>`
 callback will be received at the begining and every time the control
 needs to be redrawn (programmer needs to call
-`update() <https://github.com/okamstudio/godot/wiki/class_canvasitem#update>`__
+:ref:`CanvasItem.update() <class_CanvasItem_update>`
 to enqueue the CanvasItem for redraw). If the control is not visible
 (yet aother CanvasItem property), the control does not receive any
 input.

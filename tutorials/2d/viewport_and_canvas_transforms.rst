@@ -65,13 +65,13 @@ Obtaining each transform can be achieved with the following functions:
 
 | \|Type: \| Transform\|
 | \|CanvasItem \|
-  `CanvasItem.get\_global\_transform() <https://github.com/okamstudio/godot/wiki/class_canvasitem#get_global_transform>`__
+  :ref:`CanvasItem.get_global_transform() <class_CanvasItem_get_global_transform>`
   \|
 | \|CanvasLayer\|
-  `CanvasItem.get\_canvas\_transform() <https://github.com/okamstudio/godot/wiki/class_canvasitem#get_canvas_transform>`__
+  :ref:`CanvasItem.get_canvas_transform() <class_CanvasItem_get_canvas_transform>`
   \|
 | \|CanvasLayer+GlobalCanvas+Stretch \|
-  `CanvasItem.get\_viewport\_transform() <https://github.com/okamstudio/godot/wiki/class_canvasitem#get_viewport_transform>`__
+  :ref:`CanvasItem.get_viewport_transform() <class_CanvasItem_get_viewport_transform>`
   \|
 
 Finally then, to convert a CanvasItem local coordinates to screen

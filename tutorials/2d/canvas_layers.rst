@@ -19,7 +19,7 @@ parent, the children will be moved too.
   `Viewport <https://github.com/okamstudio/godot/wiki/class_viewport>`__,
   and will be displayed through it.
 | Viewport has a property "canvas\_transform"
-  (`Viewport.set\_canvas\_transform() <https://github.com/okamstudio/godot/wiki/class_viewport#set_canvas_transform)>`__,
+  :ref:`Viewport.set_canvas_transform() <class_Viewport_set_canvas_transform>`,
   which allows to transform all the CanvasItem hierarchy by a custom
   `Matrix32 <https://github.com/okamstudio/godot/wiki/class_matrix32>`__
   transform. Nodes such as

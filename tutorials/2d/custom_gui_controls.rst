@@ -25,7 +25,7 @@ Checking Control Size
 
 Unlike 2D nodes, "size" is very important with controls, as it helps to
 organize them in proper layouts. For this, the
-`Control.get\_size() <https://github.com/okamstudio/godot/wiki/class_control#get_size>`__
+:ref:`Control.get_size() <class_Control_get_size>`
 method is provided. Checking it during \_draw() is vital to ensure
 everything is kept in-bounds.
 
@@ -35,12 +35,12 @@ Checking Focus
 Some controls (such as buttons or text editors) might provide input
 focus for keyboard or joypad input. Examples of this are entering text
 or pressing a button. This is controlled with the
-`Control.set\_focus\_mode() <https://github.com/okamstudio/godot/wiki/class_control#set_focus_mode>`__
+:ref:`Control.set_focus_mode() <class_Control_set_focus_mode>`
 function. When drawing, and if the control supports input focus, it is
 always desired to show some sort of indicator (highight, box, etc) to
 indicate that this is the currently focused control. To check for this
 status, the
-`Control.has\_focus() <https://github.com/okamstudio/godot/wiki/class_control#has_focus>`__
+:ref:`Control.has_focus() <class_Control_has_focus>`
 exists. Example
 
 ::
@@ -64,7 +64,7 @@ the minimum size will make sure your custom control is not squished by
 the other controls in the container.
 
 To provide this callback, just override
-`Control.get\_minimum\_size() <https://github.com/okamstudio/godot/wiki/class_control#get_minimum_size>`__,
+:ref:`Control.get_minimum_size() <class_Control_get_minimum_size>`,
 for example:
 
 ::
@@ -96,7 +96,7 @@ when:
 -  The left button was pressed over this control (control always
    captures input until button si released)
 -  Control provides keyboard/joypad focus via
-   `Control.set\_focus\_mode <https://github.com/okamstudio/godot/wiki/class_control#set_focus_mode>`__.
+   :ref:`Control.set_focus_mode() <class_Control_set_focus_mode>`.
 
 This function is
 `Control.\_input\_event(event) <https://github.com/okamstudio/godot/wiki/class_control#_input_event>`__.

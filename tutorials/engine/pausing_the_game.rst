@@ -20,7 +20,7 @@ How Pausing Works
 -----------------
 
 To set pause mode, the pause state must be set. This is done by calling
-`SceneTree.set\_pause <https://github.com/okamstudio/godot/wiki/class_scenetree#set_pause>`__
+:ref:`SceneTree.set_pause() <class_SceneTree_set_pause>`
 with a "true" argument:
 
 ::

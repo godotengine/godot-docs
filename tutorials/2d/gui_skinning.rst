@@ -84,7 +84,7 @@ children and grand children labels) will use that color.
 
 It is possible to override those options without using the theme
 directly and only for a specific control by using the override API in
-`Control <https://github.com/okamstudio/godot/wiki/class_control#add_color_override>`__:
+:ref:`Control.add_color_override() <class_Control_add_color_override>`:
 
 ::
 

@@ -163,7 +163,7 @@ interface, the connection will be done using code.
 
 For this, there is a function that is probably the one that Godot
 programmers will use the most, this is
-`get\_node() <https://github.com/okamstudio/godot/wiki/class_node#get_node>`__.
+:ref:`Node.get_node() <class_Node_get_node>`.
 This function uses paths to fetch nodes in the current tree or anywhere
 in the scene, relative to the node holding the script.
 

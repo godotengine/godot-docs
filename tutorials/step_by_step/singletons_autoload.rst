@@ -58,7 +58,7 @@ Custom Scene Switcher
 
 This short tutorial will explain how to make a scene switcher by using
 autoload. For simple scene switching, the
-`SceneTree.change\_scene <https://github.com/okamstudio/godot/wiki/class_scenetree#change_scene>`__
+:ref:`SceneTree.change_scene() <class_SceneTree_change_scene>`
 method suffices (described in :ref:`doc_scene_tree`), so this method is for
 more complex behaviors when switching scenes.
 
@@ -149,7 +149,7 @@ current scene and replace it by the requested one.
 As mentioned in the comments above, we really want to avoid the
 situation of having the current scene being deleted while being used
 (code from functions of it being run), so using
-`Object.call\_deferred <https://github.com/okamstudio/godot/wiki/class_object#call_deferred>`__
+:ref:`Object.call_deferred() <class_Object_call_deferred>`
 is desired at this point. The result is that execution of the commands
 in the second function will happen at an immediate later time when no
 code from the current scene is running.

@@ -314,7 +314,7 @@ CanvasItem (2D) - VertexShader
 | \| out float *POINT\_SIZE* \| Point Size (for points) \|
 | \| const mat4 *WORLD\_MATRIX* \| Object World Matrix \|
 | \| const mat4 *EXTRA\_MATRIX* \| Extra (user supplied) matrix via
-  `CanvasItem.draw\_set\_transform() <https://github.com/okamstudio/godot/wiki/class_canvasitem#draw_set_transform>`__.
+  :ref:`CanvasItem.draw_set_transform() <class_CanvasItem_draw_set_transform>`.
   Identity by default. \|
 | \| const mat4 *PROJECTION\_MATRIX* \| Projection Matrix (model coords
   to screen).\|

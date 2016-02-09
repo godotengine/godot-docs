@@ -196,8 +196,8 @@ Solution!
 The solution? This situation is solved by "sliding" by the collision
 normal. KinematicBody2D provides two useful functions:
 
--  `KinematicBody2D.is\_colliding() <https://github.com/okamstudio/godot/wiki/class_kinematicbody2d#is_colliding>`__
--  `KinematicBody2D.get\_collision\_normal() <https://github.com/okamstudio/godot/wiki/class_kinematicbody2d#get_collision_normal>`__
+-  :ref:`KinematicBody2D.is_colliding() <class_KinematicBody2D_is_colliding>`
+-  :ref:`KinematicBody2D.get_collision_normal() <class_KinematicBody2D_get_collision_normal>`
 
 So what we want to do is this:
 
