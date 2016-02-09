@@ -11,8 +11,8 @@ stuff. For far most cases this is enough, but not always. If something
 desired is not supported, and before crying in fear, angst and range
 because a node to draw that-specific-something does not exist.. it would
 be good to know that it is possible to easily make any 2D node (be it
-`Control <https://github.com/okamstudio/godot/wiki/class_control>`__ or
-`Node2D <https://github.com/okamstudio/godot/wiki/class_node2d>`__
+:ref:`Control <class_Control>` or
+:ref:`Node2D <class_Node2D>`
 based) draw custom commands. It is *really* easy to do it too.
 
 But..
@@ -38,10 +38,10 @@ OK, How?
 --------
 
 Add a script to any
-`CanvasItem <https://github.com/okamstudio/godot/wiki/class_canvasitem>`__
+:ref:`CanvasItem <class_CanvasItem>`
 derived node, like
-`Control <https://github.com/okamstudio/godot/wiki/class_control>`__ or
-`Node2D <https://github.com/okamstudio/godot/wiki/class_node2d>`__.
+:ref:`Control <class_Control>` or
+:ref:`Node2D <class_Node2D>`.
 Override the \_draw() function.
 
 ::
@@ -53,7 +53,7 @@ Override the \_draw() function.
         pass
 
 Draw commands are described in the
-`CanvasItem <https://github.com/okamstudio/godot/wiki/class_canvasitem>`__
+:ref:`CanvasItem <class_CanvasItem>`
 class reference. There are plenty of them.
 
 Updating

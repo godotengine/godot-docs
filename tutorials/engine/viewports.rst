@@ -10,7 +10,7 @@ Godot has a small but very useful feature called viewports. Viewports
 are, as they name implies, rectangles where the world is drawn. They
 have three main uses, but can flexibly adapted to a lot more. All this
 is done via the
-`Viewport <https://github.com/okamstudio/godot/wiki/class_viewport>`__
+:ref:`Viewport <class_Viewport>`
 node.
 
 .. image:: /img/viewportnode.png
@@ -22,11 +22,11 @@ The main uses in question are:
    know this by having read previous tutorials!)
 -  **Sub-Viewports**: These can be created when a Viewport is a child of
    a
-   `Control <https://github.com/okamstudio/godot/wiki/class_control>`__.
+   :ref:`Control <class_Control>`.
 -  **Render Targets**: Viewports can be set to "RenderTarget" mode. This
    means that the viewport is not directly visible, but it's contents
    can be accessed via a
-   `Texture <https://github.com/okamstudio/godot/wiki/class_texture>`__.
+   :ref:`Texture <class_Texture>`.
 
 Input
 -----
@@ -51,8 +51,8 @@ Cameras (2D & 3D)
 -----------------
 
 When using a 2D or 3D
-`Camera <https://github.com/okamstudio/godot/wiki/class_camera>`__ /
-`Camera2D <https://github.com/okamstudio/godot/wiki/class_camera2d>`__,
+:ref:`Camera <class_Camera>` /
+:ref:`Camera2D <class_Camera2D>`,
 cameras will always display on the closest parent viewport (going
 towards the root). For example, in the following hierarchy:
 
@@ -101,7 +101,7 @@ Worlds
 ------
 
 For 3D, a Viewport will contain a
-`World <https://github.com/okamstudio/godot/wiki/class_world>`__. This
+:ref:`World <class_World>`. This
 is basically, the universe that links physics and rendering together.
 Spatial-base nodes will register using the World of the closest
 viewport. By default, newly created viewports do not contain a World but
@@ -119,7 +119,7 @@ the option to use it's own World. This is very useful when you want to
 instance 3D characters or objects in the 2D world.
 
 For 2D, each Viewport always contains it's own
-`World2D <https://github.com/okamstudio/godot/wiki/class_World2D>`__.
+:ref:`World2D <class_World2D>`.
 This suffices in most cases, but in case sharing them may be desired, it
 is possible to do so by calling the viewport API manually.
 
@@ -181,11 +181,11 @@ rendering (once), or always render, no matter if visible or not.
 A few classes are created to make this easier in most common cases
 inside the editor:
 
--  `ViewportSprite <https://github.com/okamstudio/godot/wiki/class_viewportsprite>`__
+-  :ref:`ViewportSprite <class_ViewportSprite>`
    (for 2D).
--  `ViewportQuad <https://github.com/okamstudio/godot/wiki/class_viewportquad>`__
+-  :ref:`ViewportQuad <class_ViewportQuad>`
    (for 3D).
--  `ViewportFrame <https://github.com/okamstudio/godot/wiki/class_viewportframe>`__
+-  :ref:`ViewportFrame <class_ViewportFrame>`
    (for GUI).
 
 Make sure to check the viewport demos! Viewport folder in the demo.zip

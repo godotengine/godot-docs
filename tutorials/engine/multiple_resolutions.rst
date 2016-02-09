@@ -26,7 +26,7 @@ There are several types of devices, with several types of screens, which
 in turn have different pixel density and resolutions. Handling all of
 them can be a lot of work, so Godot tries to make the developer's life a
 little easier. The
-`Viewport <https://github.com/okamstudio/godot/wiki/class_viewport>`__
+:ref:`Viewport <class_Viewport>`
 node has several functions to handle resizing, and the root node of the
 scene tree is always a viewport (scenes loaded are instanced as a child
 of it, and it can always be accessed by calling
@@ -57,7 +57,7 @@ Stretch Mode
    to higher-res) and 2D will also be rendered at higher-res, just
    enlarged.
 -  **Viewport**: Viewport scaling is different, the root
-   `Viewport <https://github.com/okamstudio/godot/wiki/class_viewport>`__
+   :ref:`Viewport <class_Viewport>`
    is set as a render target, and still renders precisely to the
    resolution specified in the ``display/`` section of the project
    settings. Finally, this viewport is copied and scaled to fit the

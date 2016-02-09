@@ -182,8 +182,7 @@ will change the label's text:
         get_node("Label").set_text("HELLO!")
 
 Finally, the button "pressed" signal will be connected to that callback
-in \_ready(), by using
-`connect <https://github.com/okamstudio/godot/wiki/class_object#connect()>`__.
+in \_ready(), by using :ref:`Object.connect() <class_Object_connect>`.
 
 ::
 

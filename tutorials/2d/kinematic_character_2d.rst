@@ -99,7 +99,7 @@ now! Kinematic body will do nothing by default, but it has a really
 useful function called
 `move(motion\_vector:Vector2) <https://github.com/okamstudio/godot/wiki/class_kinematicbody2d#move>`__.
 This function takes a
-`Vector2 <https://github.com/okamstudio/godot/wiki/class_vector2>`__ as
+:ref:`Vector2 <class_Vector2>` as
 an argument, and tries to apply that motion to the kinematic body. If a
 collision happens, it stops right at the moment of the collision.
 

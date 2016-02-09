@@ -97,8 +97,8 @@ Vectors in Godot
 
 To make examples easier, it is worth explaining how vectors are
 implemented in GDScript. GDscript has both
-`Vector2 <https://github.com/okamstudio/godot/wiki/class_vector2>`__ and
-`Vector3 <https://github.com/okamstudio/godot/wiki/class_vector3>`__,
+:ref:`Vector2 <class_Vector2>` and
+:ref:`Vector3 <class_Vector3>`,
 for 2D and 3D math respectively. Godot uses Vector classes as both
 position and direction. They also contain x and y (for 2D) and x, y and
 z (for 3D) member variables.
@@ -463,7 +463,7 @@ by N and D. For example:
 .. image:: /img/tutovec12.png
 
 For 3D math, Godot provides a
-`Plane <https://github.com/okamstudio/godot/wiki/class_plane>`__
+:ref:`Plane <class_Plane>`
 built-in type that handles this.
 
 Basically, N and D can represent any plane in space, be it for 2D or 3D
@@ -504,7 +504,7 @@ inverted negative and positive half spaces:
     D = -D
 
 Of course, Godot implements this operator in
-`Plane <https://github.com/okamstudio/godot/wiki/class_plane>`__, so
+:ref:`Plane <class_Plane>`, so
 doing:
 
 ::

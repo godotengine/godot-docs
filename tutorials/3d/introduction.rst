@@ -19,12 +19,12 @@ efficiently developing 3D games.
 Spatial Node
 ~~~~~~~~~~~~
 
-`Node2D <https://github.com/okamstudio/godot/wiki/class_node2d>`__ is
+:ref:`Node2D <class_Node2D>` is
 the base node for 2D.
-`Control <https://github.com/okamstudio/godot/wiki/class_control>`__ is
+:ref:`Control <class_Control>` is
 the base node for everything GUI. Following this reasoning, the 3D
 engine uses the
-`Spatial <https://github.com/okamstudio/godot/wiki/class_spatial>`__
+:ref:`Spatial <class_Spatial>`
 node for everything 3D.
 
 .. image:: /img/tuto_3d1.png
@@ -32,9 +32,9 @@ node for everything 3D.
 Spatial nodes have a local transform, which is relative to the parent
 node (as long as the parent node is also **or inherits** of type
 Spatial). This transform can be accessed as a 4x3
-`Transform <https://github.com/okamstudio/godot/wiki/class_transform>`__,
+:ref:`Transform <class_Transform>`,
 or as 3
-`Vector3 <https://github.com/okamstudio/godot/wiki/class_vector3>`__
+:ref:`Vector3 <class_Vector3>`
 members representing location, euler rotation (x,y and z angles) and
 scale.
 
@@ -60,18 +60,18 @@ skeletal rigs, blend shapes, etc.
 The second pipeline is through the :ref:`doc_importing_3d_meshes` importer. This
 second method allows importing simple .OBJ files as mesh resources,
 which can be then put inside a
-`MeshInstance <https://github.com/okamstudio/godot/wiki/class_meshinstance>`__
+:ref:`MeshInstance <class_MeshInstance>`
 node for display.
 
 Generated Geometry
 ------------------
 
 It is possible to create custom geometry by using the
-`Mesh <https://github.com/okamstudio/godot/wiki/class_mesh>`__ resource
+:ref:`Mesh <class_Mesh>` resource
 directly, simply create your arrays and use the
 :ref:`Mesh.add_surface() <class_Mesh_add_surface>`
 function. A helper class is also available,
-`SurfaceTool <https://github.com/okamstudio/godot/wiki/class_surfacetool>`__,
+:ref:`SurfaceTool <class_SurfaceTool>`,
 which provides a more straightforward API and helpers for indexing,
 generating normals, tangents, etc.
 
@@ -84,7 +84,7 @@ Immediate Geometry
 
 If, instead, there is a requirement to generate simple geometry that
 will be updated often, Godot provides a special node,
-`ImmediateGeometry <https://github.com/okamstudio/godot/wiki/class_immediategeometry>`__
+:ref:`ImmediateGeometry <class_ImmediateGeometry>`
 which provides an OpenGL 1.x style immediate-mode API to create points,
 lines, triangles, etc.
 
@@ -94,9 +94,9 @@ lines, triangles, etc.
 While Godot packs a powerful 2D engine, many types of games use 2D in a
 3D environment. By using a fixed camera (either orthogonal or
 perspective) that does not rotate, nodes such as
-`Sprite3D <https://github.com/okamstudio/godot/wiki/class_sprite3d>`__
+:ref:`Sprite3D <class_Sprite3D>`
 and
-`AnimatedSprite3D <https://github.com/okamstudio/godot/wiki/class_animatedsprite3d>`__
+:ref:`AnimatedSprite3D <class_AnimatedSprite3D>`
 can be used to create 2D games that take advantage of mixing with 3D
 backgrounds, more realistic parallax, lighting/shadow effects, etc.
 
@@ -109,7 +109,7 @@ Environment
 
 Besides editing a scene, it is often common to edit the environment.
 Godot provides a
-`WorldEnvironment <https://github.com/okamstudio/godot/wiki/class_worldenvironment>`__
+:ref:`WorldEnvironment <class_WorldEnvironment>`
 node that allows changing the background color, mode (as in, put a
 skybox), and applying several types of built-in post-processing effects.
 Environments can also be overriden in the Camera.
@@ -209,7 +209,7 @@ Cameras
 
 No matter how many objects are placed in 3D space, nothing will be
 displayed unless a
-`Camera <https://github.com/okamstudio/godot/wiki/class_camera>`__ is
+:ref:`Camera <class_Camera>` is
 also added to the scene. Cameras can either work in orthogonal or
 perspective projections:
 

@@ -13,7 +13,7 @@ result. Light can come from several types of sources in a scene:
    it does not affect nearby objects unless baked).
 -  Light Nodes: Directional, Omni and Spot.
 -  Ambient Light in the
-   `Environment <https://github.com/okamstudio/godot/wiki/class_worldenvironment>`__.
+   :ref:`Environment <class_Environment>`.
 -  Baked Light (read :ref:`doc_light_baking`).
 
 The emission color is a material property, as seen in the previous

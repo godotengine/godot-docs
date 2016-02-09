@@ -35,7 +35,7 @@ Control
 ~~~~~~~
 
 The basic node for UI elements is
-`Control <https://github.com/okamstudio/godot/wiki/class_control>`__
+:ref:`Control <class_Control>`
 (sometimes called "Widget" or "Box" in other toolkits). Every node that
 provides user interface functionality descends from it.
 
@@ -62,7 +62,7 @@ button is released, even if the pointer moves outside the control
 boundary.
 
 Like any class that inherits from
-`CanvasItem <https://github.com/okamstudio/godot/wiki/class_canvasitem>`__
+:ref:`CanvasItem <class_CanvasItem>`
 (Control does), a
 :ref:`CanvasItem.draw() <class_CanvasItem_draw>`
 callback will be received at the begining and every time the control
@@ -77,9 +77,9 @@ input events directly when building UIs, (that is more useful when
 creating custom controls). Instead, controls emit different kinds of
 signals with contextural information for when action occurs. For
 example, a
-`Button <https://github.com/okamstudio/godot/wiki/class_button>`__ emits
+:ref:`Button <class_Button>` emits
 a "pressed" signal when pressed, a
-`Slider <https://github.com/okamstudio/godot/wiki/class_slider>`__ will
+:ref:`Slider <class_Slider>` will
 emit a "value\_changed" when dragged, etc.
 
 Custom Control Mini Tutorial
@@ -145,14 +145,14 @@ This set of controls is enough for most games, where complex
 interactions or ways to present information are not necessary. The can
 be skinned easily with regular textures.
 
--  `Label <https://github.com/okamstudio/godot/wiki/class_label>`__ :
+-  :ref:`Label <class_Label>` :
    Node used for showing text.
--  `TextureFrame <https://github.com/okamstudio/godot/wiki/class_textureframe>`__
+-  :ref:`TextureFrame <class_TextureFrame>`
    : Displays a single texture, which can be scaled or kept fixed.
--  `TextureButton <https://github.com/okamstudio/godot/wiki/class_texturebutton>`__
+-  :ref:`TextureButton <class_TextureButton>`
    : Displays a simple texture buttons, states such as pressed, hover,
    disabled, etc can be set.
--  `TextureProgress <https://github.com/okamstudio/godot/wiki/class_textureprogress>`__
+-  :ref:`TextureProgress <class_TextureProgress>`
    : Displays a single textured progress bar.
 
 Additionally, re-positioning of controls is most efficiently done with
@@ -162,9 +162,9 @@ info).
 In any case, it will happen often that even for simple games, more
 complex UI behaviors will be required. An example of this is a scrolling
 list of elements (for a high score table, for example), which needs a
-`ScrollContainer <https://github.com/okamstudio/godot/wiki/class_scrollcontainer>`__
+:ref:`ScrollContainer <class_ScrollContainer>`
 and a
-`VBoxContainer <https://github.com/okamstudio/godot/wiki/class_vboxcontainer>`__.
+:ref:`VBoxContainer <class_VBoxContainer>`.
 These kind of more advanced controls can be mixed with the regular ones
 seamlessly (they are all controls anyway).
 

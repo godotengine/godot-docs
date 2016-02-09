@@ -9,9 +9,9 @@ Introduction
 | Materials can be applied to most visible 3D objects, they basically
   are a description to how light reacts to that object. There are many
   types of materials, but the main ones are the
-  `FixedMaterial <https://github.com/okamstudio/godot/wiki/class_fixedmaterial>`__
+  :ref:`FixedMaterial <class_FixedMaterial>`
   and
-  `ShaderMaterial <https://github.com/okamstudio/godot/wiki/class_shadermaterial>`__.
+  :ref:`ShaderMaterial <class_ShaderMaterial>`.
   Tutorials for each of them exist :ref:`doc_fixed_materials` and :ref:`doc_shader_materials`.
 | This tutorial is about the basic properties shared between them.
 

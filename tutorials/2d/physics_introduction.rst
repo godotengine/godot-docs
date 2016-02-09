@@ -16,18 +16,18 @@ Shapes
 ------
 
 The base collidable object in Godot's 2D world is a
-`Shape2D <https://github.com/okamstudio/godot/wiki/class_shape2d>`__.
+:ref:`Shape2D <class_Shape2D>`.
 There are many types of shapes, all of them inherit this base class:
 
--  `CircleShape2D <https://github.com/okamstudio/godot/wiki/class_circleshape2d>`__
--  `RectangleShape2D <https://github.com/okamstudio/godot/wiki/class_rectangleshape2d>`__
--  `CapsuleShape2D <https://github.com/okamstudio/godot/wiki/class_capsuleshape2d>`__
--  `ConvexPolygonShape2D <https://github.com/okamstudio/godot/wiki/class_convexpolygonshape2d>`__
--  `ConcavePolygonShape2D <https://github.com/okamstudio/godot/wiki/class_concavepolygonshape2d>`__
+-  :ref:`CircleShape2D <class_CircleShape2D>`
+-  :ref:`RectangleShape2D <class_RectangleShape2D>`
+-  :ref:`CapsuleShape2D <class_CapsuleShape2D>`
+-  :ref:`ConvexPolygonShape2D <class_ConvexPolygonShape2D>`
+-  :ref:`ConcavePolygonShape2D <class_ConcavePolygonShape2D>`
 -  etc. (there are others check the class list).
 
 Shapes are of type
-`Resource <https://github.com/okamstudio/godot/wiki/class_resource>`__,
+:ref:`Resource <class_Resource>`,
 but they can be created via code easily. For example:
 
 ::
@@ -62,7 +62,7 @@ Transforming Shapes
 
 As seen before in the collide functions, 2D shapes in godot can be
 transformed by using a regular
-`Matrix32 <https://github.com/okamstudio/godot/wiki/class_matrix32>`__
+:ref:`Matrix32 <class_Matrix32>`
 transform, meaning the can check collision while scaled, moved and
 rotated. The only limitation to this is that shapes with curved sections
 (such as circle and capsule) can only be scaled uniformly. This means
@@ -123,13 +123,13 @@ levels and layers of functionality. The built-in physics engine can be
 used for:
 
 -  Simple Collision Detection: See
-   `Shape2D <https://github.com/okamstudio/godot/wiki/class_shape2d>`__
+   :ref:`Shape2D <class_Shape2D>`
    API.
 -  Scene Kinematics: Handle shapes, collisions, broadphase, etc as
    nodes. See
-   `Area2D <https://github.com/okamstudio/godot/wiki/class_area2d,"StaticBody2D":https://github.com/okamstudio/godot/wiki/class_staticbody2d,"KinematicBody2D":https://github.com/okamstudio/godot/wiki/class_kinematicbody2d>`__.
+   :ref:`Area2D <class_Area2D>`.
 -  Scene Physics: Rigid bodies and constraints as nodes. See
-   `RigidBody2D <https://github.com/okamstudio/godot/wiki/class_rigidbody2d>`__,
+   :ref:`RigidBody2D <class_RigidBody2D>`,
    and the joint nodes.
 
 Units of Measure
@@ -145,7 +145,7 @@ straightforward.
 CollisionObject2D
 -----------------
 
-`CollisionObject2D <https://github.com/okamstudio/godot/wiki/class_collisionobject2d>`__
+:ref:`CollisionObject2D <class_CollisionObject2D>`
 is the (virtual) base node for everything that can be collided in 2D.
 Area2D, StaticBody2D, KinematicBody2D and RigidBody2D all inherit from
 it. This node contains a list of shapes (Shape2D) and a relative
@@ -178,7 +178,7 @@ CollisionShape2D
 
 This node is a helper node. It must be created as a direct children of a
 CollisionObject2D derived node
-(`Area2D <https://github.com/okamstudio/godot/wiki/class_area2d,"StaticBody2D":https://github.com/okamstudio/godot/wiki/class_staticbody2d,"KinematicBody2D":https://github.com/okamstudio/godot/wiki/class_kinematicbody2d,"RigidBody2D":https://github.com/okamstudio/godot/wiki/class_rigidbody2d)>`__.
+:ref:`Area2D <class_Area2D>`.
 
 By itself it does nothing, but when created as a child of the above
 mentioned nodes, it adds collision shapes to them. Any amount of
@@ -231,7 +231,7 @@ the CollisionObject2D:
 KinematicBody2D
 ~~~~~~~~~~~~~~~
 
-`Kinematic <https://github.com/okamstudio/godot/wiki/class_kinematicbody2d>`__
+:ref:`Kinematic <class_Kinematic>`
 bodies are special types of bodies that are meant to be user-controlled.
 They are not affected by the physics at all (to other types of bodies,
 such a character or a rigidbody, these are the same as a staticbody).
@@ -239,7 +239,7 @@ They have however, two main uses:
 
 -  **Simulated Motion**: When these bodies are moved manually, either
    from code or from an
-   `AnimationPlayer <https://github.com/okamstudio/godot/wiki/class_animationplayer>`__
+   :ref:`AnimationPlayer <class_AnimationPlayer>`
    (with process mode set to fixed!), the physics will automatically
    compute an estimate of their linear and angular velocity. This makes
    them very useful for moving platforms or other
@@ -258,7 +258,7 @@ RigidBody2D
 This type of body simulates newtonian physics. It has mass, friction,
 bounce, and the 0,0 coordinates simulates the center of mass. When real
 physics are needed,
-`RigidBody2D <https://github.com/okamstudio/godot/wiki/class_rigidbody2d>`__
+:ref:`RigidBody2D <class_RigidBody2D>`
 is the node to use. The motion of this body is affected by gravity
 and/or other bodies.
 
@@ -289,7 +289,7 @@ function must be overridden:
        [use state to change the object]
 
 The \`state\` parameter is of type
-`Physics2DDirectBodyState <https://github.com/okamstudio/godot/wiki/class_physics2ddirectbodystate>`__.
+:ref:`Physics2DDirectBodyState <class_Physics2DDirectBodyState>`.
 Please do not use this object (state) outside the callback as it will
 result in an error.
 
@@ -395,7 +395,7 @@ and record the intersection.
 
 At the moment there isn't a high level API for this, so the physics
 server must be used directly. For this, the
-`Physics2DDirectspaceState <https://github.com/okamstudio/godot/wiki/class_physics2ddirectspacestate>`__
+:ref:`Physics2DDirectspaceState <class_Physics2DDirectspaceState>`
 class must be used. To obtain it, the following steps must be taken:
 
 | 1. It must be used inside the \_fixed\_process() callback, or at

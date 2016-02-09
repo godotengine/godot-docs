@@ -141,7 +141,7 @@ tutorial. We'll just explain how to use transforms.
 Matrix32
 --------
 
-`Matrix32 <https://github.com/okamstudio/godot/wiki/class_matrix32>`__
+:ref:`Matrix32 <class_Matrix32>`
 is a 3x2 matrix. It has 3 Vector2 elements and it's used for 2D. The "X"
 axis is the element 0, "Y" axis is the element 1 and "Origin" is element
 2. It's not divided in basis/origin for convenience, due to it's
@@ -426,14 +426,14 @@ Matrices & Transforms in 3D
 ---------------------------
 
 As mentioned before, for 3D, we deal with 3
-`Vector3 <https://github.com/okamstudio/godot/wiki/class_vector3>`__
+:ref:`Vector3 <class_Vector3>`
 vectors for the rotation matrix, and an extra one for the origin.
 
 Matrix3
 -------
 
 Godot has a special type for a 3x3 matrix, named
-`Matrix3 <https://github.com/okamstudio/godot/wiki/class_matrix3>`__. It
+:ref:`Matrix3 <class_Matrix3>`. It
 can be used to represent a 3D rotation and scale. Sub vectors can be
 accessed as:
 
@@ -477,13 +477,13 @@ Transform
 ---------
 
 To add the final component to the mix, Godot provides the
-`Transform <https://github.com/okamstudio/godot/wiki/class_transform>`__
+:ref:`Transform <class_Transform>`
 type. Transform has two members:
 
 -  *basis* (of type
-   `Matrix3 <https://github.com/okamstudio/godot/wiki/class_matrix3)>`__
+   :ref:`Matrix3 <class_Matrix3>`
 -  *origin* (of type
-   `Vector3 <https://github.com/okamstudio/godot/wiki/class_vector3)>`__
+   :ref:`Vector3 <class_Vector3>`
 
 Any 3D transform can be represented with Transform, and the separation
 of basis and origin makes it easier to work translation and rotation

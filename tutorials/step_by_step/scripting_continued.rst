@@ -89,7 +89,7 @@ calling
     var guards = get_tree().get_nodes_in_group("guards")
 
 More will be added about
-`SceneTree <https://github.com/okamstudio/godot/wiki/class_scenemainloop>`__
+:ref:`SceneTree <class_SceneTree>`
 later.
 
 Notifications
@@ -202,7 +202,7 @@ time.
 
 But 'scene' is still not a node containing subnodes. It's packed in a
 special resource called
-`PackedScene <https://github.com/okamstudio/godot/wiki/class_packedscene>`__.
+:ref:`PackedScene <class_PackedScene>`.
 To create the actual node, the function
 :ref:`PackedScene.instance() <class_PackedScene_instance>`
 must be called. This will return the tree of nodes that can be added to

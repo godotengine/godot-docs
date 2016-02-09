@@ -32,7 +32,7 @@ encrypt savegames and protect the world order.
 How?
 ----
 
-The class `File <https://github.com/okamstudio/godot/wiki/class_file>`__
+The class :ref:`File <class_File>`
 is simple to use, just open a location and read/write data (integers,
 strings and variants). To create an encrypted file, a passphrase must be
 provided, like this:

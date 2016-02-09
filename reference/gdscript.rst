@@ -246,7 +246,7 @@ float
 
 Used to contain a floating point value (real numbers).
 
-`String <https://github.com/okamstudio/godot/wiki/class_string>`__
+:ref:`String <class_String>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A sequence of characters in Unicode format. Strings can contain the
@@ -255,43 +255,43 @@ standard C escape sequences.
 Vector Built-In Types
 ~~~~~~~~~~~~~~~~~~~~~
 
-`Vector2 <https://github.com/okamstudio/godot/wiki/class_vector2>`__
+:ref:`Vector2 <class_Vector2>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 2D vector type containing ``x`` and ``y`` fields. Can alternatively
 access fields as ``width`` and ``height`` for readability. Can also be
 accessed as array.
 
-`Rect2 <https://github.com/okamstudio/godot/wiki/class_rect2>`__
+:ref:`Rect2 <class_Rect2>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 2D Rectangle type containing two vectors fields: ``pos`` and ``size``.
 Alternatively contains an ``end`` field which is ``pos+size``.
 
-`Vector3 <https://github.com/okamstudio/godot/wiki/class_vector3>`__
+:ref:`Vector3 <class_Vector3>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3D vector type containing ``x``, ``y`` and ``z`` fields. This can also
 be accessed as an array.
 
-`Matrix32 <https://github.com/okamstudio/godot/wiki/class_matrix32>`__
+:ref:`Matrix32 <class_Matrix32>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3x2 matrix used for 2D transforms.
 
-`Plane <https://github.com/okamstudio/godot/wiki/class_plane>`__
+:ref:`Plane <class_Plane>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3D Plane type in normalized form that contains a ``normal`` vector field
 and a ``d`` scalar distance.
 
-`Quat <https://github.com/okamstudio/godot/wiki/class_quat>`__
+:ref:`Quat <class_Quat>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Quaternion is a datatype used for representing a 3D rotation. It's
 useful for interpolating rotations.
 
-`AABB <https://github.com/okamstudio/godot/wiki/class_aabb>`__
+:ref:`AABB <class_AABB>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Axis Aligned bounding box (or 3D box) contains 2 vectors fields: ``pos``
@@ -299,14 +299,14 @@ and ``size``. Alternatively contains an ``end`` field which is
 ``pos+size``. As an alias of this type, ``Rect3`` can be used
 interchangeably.
 
-`Matrix3 <https://github.com/okamstudio/godot/wiki/class_matrix3>`__
+:ref:`Matrix3 <class_Matrix3>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3x3 matrix used for 3D rotation and scale. It contains 3 vector fields
 (``x``, ``y`` and ``z``) and can also be accessed as an array of 3D
 vectors.
 
-`Transform <https://github.com/okamstudio/godot/wiki/class_transform>`__
+:ref:`Transform <class_Transform>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3D Transform contains a Matrix3 field ``basis`` and a Vector3 field
@@ -315,35 +315,35 @@ vectors.
 Engine Built-In Types
 ~~~~~~~~~~~~~~~~~~~~~
 
-`Color <https://github.com/okamstudio/godot/wiki/class_color>`__
+:ref:`Color <class_Color>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Color data type contains ``r``, ``g``, ``b``, and ``a`` fields. It can
 also be accessed as ``h``, ``s``, and ``v`` for hue/saturation/value.
 
-`Image <https://github.com/okamstudio/godot/wiki/class_image>`__
+:ref:`Image <class_Image>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Contains a custom format 2D image and allows direct access to the
 pixels.
 
-`NodePath <https://github.com/okamstudio/godot/wiki/class_nodepath>`__
+:ref:`NodePath <class_NodePath>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Compiled path to a node used mainly in the scene system. It can be
 easily assigned to, and from, a String.
 
-`RID <https://github.com/okamstudio/godot/wiki/class_rid>`__
+:ref:`RID <class_RID>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Resource ID (RID). Servers use generic RIDs to reference opaque data.
 
-`Object <https://github.com/okamstudio/godot/wiki/class_object>`__
+:ref:`Object <class_Object>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Base class for anything that is not a built-in type.
 
-`InputEvent <https://github.com/okamstudio/godot/wiki/class_inputevent>`__
+:ref:`InputEvent <class_InputEvent>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Events from input devices are contained in very compact form in
@@ -353,7 +353,7 @@ amounts from frame to frame they are optimized as their own data type.
 Container Built-In Types
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-`Array <https://github.com/okamstudio/godot/wiki/class_array>`__
+:ref:`Array <class_Array>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Generic sequence of objects. Its size can be changed to anything and
@@ -374,7 +374,7 @@ which do not suffer from this and use less memory, but they are atomic
 and generally run a little slower, so they are only justified for very
 large amount of data.
 
-`Dictionary <https://github.com/okamstudio/godot/wiki/class_dictionary>`__
+:ref:`Dictionary <class_Dictionary>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Associative container which contains values referenced by unique keys.
@@ -396,7 +396,7 @@ write and read:
         morekey = "Hello"
     }
 
-`ByteArray <https://github.com/okamstudio/godot/wiki/class_bytearray>`__
+:ref:`ByteArray <class_ByteArray>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 An array of bytes can only contain bytes (integers from 0 to 255).
@@ -404,32 +404,32 @@ An array of bytes can only contain bytes (integers from 0 to 255).
 This, and all of the following specialized array types, are optimized
 for memory usage and can't fragment the memory.
 
-`IntArray <https://github.com/okamstudio/godot/wiki/class_intarray>`__
+:ref:`IntArray <class_IntArray>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Array of integers can only contain integers.
 
-`FloatArray <https://github.com/okamstudio/godot/wiki/class_floatarray>`__
+:ref:`FloatArray <class_FloatArray>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Array of floats can only contain floats.
 
-`StringArray <https://github.com/okamstudio/godot/wiki/class_stringarray>`__
+:ref:`StringArray <class_StringArray>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Array of strings can only contain strings.
 
-`Vector2Array <https://github.com/okamstudio/godot/wiki/class_vector2array>`__
+:ref:`Vector2Array <class_Vector2Array>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Array of Vector2 can only contain 2D Vectors.
 
-`Vector3Array <https://github.com/okamstudio/godot/wiki/class_vector3array>`__
+:ref:`Vector3Array <class_Vector3Array>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Array of Vector3 can only contain 3D Vectors.
 
-`ColorArray <https://github.com/okamstudio/godot/wiki/class_colorarray>`__
+:ref:`ColorArray <class_ColorArray>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Array of Color can only contains colors.

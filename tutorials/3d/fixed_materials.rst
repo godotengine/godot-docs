@@ -12,7 +12,7 @@ in 3D DCCs (such as Maya, 3DS Max or Blender). The big advantage of
 using them is that 3D artists are very familiar with this layout. They
 also allow to try out different things quickly without the need of
 writing shaders. Fixed Materials inherit from
-`Material <https://github.com/okamstudio/godot/wiki/class_material>`__,
+:ref:`Material <class_Material>`,
 which also has several options. If you haven't read it before, reading
 the :ref:`doc_materials` tutorial is recommended.
 

@@ -22,13 +22,13 @@ MainLoop
 --------
 
 | The way Godot works internally is as follows. There is the the
-  `OS <https://github.com/okamstudio/godot/wiki/class_os>`__ class,
+  :ref:`OS <class_OS>` class,
   which is the only instance that runs at the beginning. Afterwards, all
   drivers, servers, scripting languages, scene system, etc are loaded.
 | When initialization is complete,
-  `OS <https://github.com/okamstudio/godot/wiki/class_os>`__ needs to be
+  :ref:`OS <class_OS>` needs to be
   supplied a
-  `MainLoop <https://github.com/okamstudio/godot/wiki/class_mainloop>`__
+  :ref:`MainLoop <class_MainLoop>`
   to run. Up to this point, all this is internals working (you can check
   main/main.cpp file in the source code if you are ever interested to
   see how this works internally).
@@ -45,11 +45,11 @@ SceneTree
 | One of the ways to explain how Godot works, is that it's a high level
   game engine over a low level middleware.
 | The scene system is the game engine, while the
-  `OS <https://github.com/okamstudio/godot/wiki/class_os>`__ and servers
+  :ref:`OS <class_OS>` and servers
   are the low level API.
 
 | In any case, the scene system provides it's own main loop to OS,
-  `SceneTree <https://github.com/okamstudio/godot/wiki/class_scenetree>`__.
+  :ref:`SceneTree <class_SceneTree>`.
 | This is automatically instanced and set when running a scene, no need
   to do any extra work.
 
@@ -57,7 +57,7 @@ It's important to know that this class exists because it has a few
 important uses:
 
 -  It contains the root
-   `Viewport <https://github.com/okamstudio/godot/wiki/class_viewport>`__,
+   :ref:`Viewport <class_Viewport>`,
    when a scene is first opened, it's added as a child of it to become
    part of the *Scene Tree* (more on that next)
 -  It contains information about the groups, and has means to call all
@@ -66,7 +66,7 @@ important uses:
    mode, or quitting the process.
 
 When a node is part of the Scene Tree, the
-`SceneTree <https://github.com/okamstudio/godot/wiki/class_scenemainloop>`__
+:ref:`SceneTree <class_SceneTree>`
 singleton can be obtained by simply calling
 :ref:`Node.get_tree() <class_Node_get_tree>`.
 
@@ -74,7 +74,7 @@ Root Viewport
 -------------
 
 The root
-`Viewport <https://github.com/okamstudio/godot/wiki/class_viewport>`__
+:ref:`Viewport <class_Viewport>`
 is always a top of the scene. From a node, it can be obtained in two
 different ways:
 
@@ -84,7 +84,7 @@ different ways:
         get_node("/root") # access via absolute path
 
 This node contains the main viewport, anything that is a child of a
-`Viewport <https://github.com/okamstudio/godot/wiki/class_viewport>`__
+:ref:`Viewport <class_Viewport>`
 is drawn inside of it by default, so it makes sense that the top of all
 nodes is always a node of this type, otherwise nothing would be seen!
 

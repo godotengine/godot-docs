@@ -19,11 +19,11 @@ CanvasItem node (remember that Node2D and Control based nodes use
 CanvasItem as their common root) will reside in a *Canvas Layer*. Every
 canvas layer has a transform (translation, rotation, scale, etc) that
 can be accessed as a
-`Matrix32 <https://github.com/okamstudio/godot/wiki/class_matrix32>`__.
+:ref:`Matrix32 <class_Matrix32>`.
 
 By default, nodes are drawn in Layer 0, in the built-in canvas. To put
 nodes in a different layer, a
-`CanvasLayer <https://github.com/okamstudio/godot/wiki/class_canvaslayer>`__
+:ref:`CanvasLayer <class_CanvasLayer>`
 node can be used. This was covered in the previous tutorial anyway, just
 refreshing.
 
@@ -31,7 +31,7 @@ Global Canvas Transform
 -----------------------
 
 Viewports also have a Global Canvas transform (also a
-`Matrix32 <https://github.com/okamstudio/godot/wiki/class_matrix32>`__
+:ref:`Matrix32 <class_Matrix32>`
 ). This is the master transform and affects all individual *Canvas
 Layer* transforms. Generally this transform is not of much use, but is
 used in the CanvasItem Editor in Godot's editor.

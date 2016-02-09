@@ -7,23 +7,23 @@ Viewport and Canvas Items
 -------------------------
 
 Regular 2D nodes, such as
-`Node2D <https://github.com/okamstudio/godot/wiki/class_node2d>`__ or
-`Control <https://github.com/okamstudio/godot/wiki/class_control>`__
+:ref:`Node2D <class_Node2D>` or
+:ref:`Control <class_Control>`
 both inherit from
-`CanvasItem <https://github.com/okamstudio/godot/wiki/class_canvasitem>`__,
+:ref:`CanvasItem <class_CanvasItem>`,
 which is the base for all 2D nodes. CanvasItems can be arranged in trees
 and they will inherit their transform. This means that, moving the
 parent, the children will be moved too.
 
 | These nodes are placed as direct or indirect children to a
-  `Viewport <https://github.com/okamstudio/godot/wiki/class_viewport>`__,
+  :ref:`Viewport <class_Viewport>`,
   and will be displayed through it.
 | Viewport has a property "canvas\_transform"
   :ref:`Viewport.set_canvas_transform() <class_Viewport_set_canvas_transform>`,
   which allows to transform all the CanvasItem hierarchy by a custom
-  `Matrix32 <https://github.com/okamstudio/godot/wiki/class_matrix32>`__
+  :ref:`Matrix32 <class_Matrix32>`
   transform. Nodes such as
-  `Camera2D <https://github.com/okamstudio/godot/wiki/class_camera2d>`__,
+  :ref:`Camera2D <class_Camera2D>`,
   work by changing that transform.
 
 Changing the canvas transform is useful because it is a lot more
@@ -51,7 +51,7 @@ CanvasLayers
 ------------
 
 The answer is
-`CanvasLayer <https://github.com/okamstudio/godot/wiki/class_canvaslayer>`__,
+:ref:`CanvasLayer <class_CanvasLayer>`,
 which is a node that adds a separate 2D rendering layer for all it's
 children and grand-children. Viewport children will draw by default at
 layer "0", while a CanvasLayer will draw at any numeric layer. Layers

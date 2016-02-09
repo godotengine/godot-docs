@@ -90,7 +90,7 @@ Linear -> sRGB at the end.
 After all the rendering is done, the linear-space rendered image must be
 converted back to sRGB. To do this, simply enable sRGB conversion in the
 current
-`Environment <https://github.com/okamstudio/godot/wiki/class_environment>`__
+:ref:`Environment <class_Environment>`
 (more on that below).
 
 Keep in mind that sRGB [STRIKEOUT:> Linear and Linear]> sRGB conversions
@@ -102,9 +102,9 @@ Parameters of HDR
 -----------------
 
 HDR is found in the
-`Environment <https://github.com/okamstudio/godot/wiki/class_environment>`__
+:ref:`Environment <class_Environment>`
 resource. These are found most of the time inside a
-`WorldEnvironment <https://github.com/okamstudio/godot/wiki/class_worldenvironment>`__
+:ref:`WorldEnvironment <class_WorldEnvironment>`
 node, or set in a camera. There are many parameters for HDR:
 
 .. image:: /img/hdr_parameters.png

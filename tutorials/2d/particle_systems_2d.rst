@@ -21,7 +21,7 @@ Particles2D
 ~~~~~~~~~~~
 
 Particle systems are added to the scene via the
-`Particles2D <https://github.com/okamstudio/godot/wiki/class_particles2d>`__
+:ref:`Particles2D <class_Particles2D>`
 node. They are enabled by default and start emitting white points
 downwards (as affected by the gravity). This provides a reasonable
 starting point to start adapting it to our needs.

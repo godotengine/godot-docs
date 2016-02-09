@@ -6,11 +6,11 @@ Resources
 Nodes and Resources
 -------------------
 
-So far, `Node <https://github.com/okamstudio/godot/wiki/class_node>`__
+So far, :ref:`Node <class_Node>`
 have been the most important datatype in Godot, as most of the behaviors
 and features of the engine are implemented through them. There is,
 though, another datatype that is equally as important. That is
-`Resource <https://github.com/okamstudio/godot/wiki/class_resource.>`__.
+:ref:`Resource <class_Resource>`.
 
 | Where *Nodes* focus on behaviors, such as drawing a sprite, drawing a
   3D model, physics, GUI controls, etc,
@@ -19,14 +19,14 @@ though, another datatype that is equally as important. That is
   data.
 
 Examples of resources are
-`Texture <https://github.com/okamstudio/godot/wiki/class_texture>`__,
-`Script <https://github.com/okamstudio/godot/wiki/class_script>`__,
-`Mesh <https://github.com/okamstudio/godot/wiki/class_mesh>`__,
-`Animation <https://github.com/okamstudio/godot/wiki/class_animation>`__,
-`Sample <https://github.com/okamstudio/godot/wiki/class_sample>`__,
-`AudioStream <https://github.com/okamstudio/godot/wiki/class_audiostream>`__,
-`Font <https://github.com/okamstudio/godot/wiki/class_font>`__,
-`Translation <https://github.com/okamstudio/godot/wiki/class_translation>`__,
+:ref:`Texture <class_Texture>`,
+:ref:`Script <class_Script>`,
+:ref:`Mesh <class_Mesh>`,
+:ref:`Animation <class_Animation>`,
+:ref:`Sample <class_Sample>`,
+:ref:`AudioStream <class_AudioStream>`,
+:ref:`Font <class_Font>`,
+:ref:`Translation <class_Translation>`,
 etc.
 
 When Godot saves or loads (from disk) a scene (.scn or .xml), an image
@@ -53,9 +53,9 @@ External vs Built-In
 | The resource properties can reference resources in two ways,
   *external* (on disk) or **built-in**.
 | To be more specific, here's a
-  `Texture <https://github.com/okamstudio/godot/wiki/class_texture>`__
+  :ref:`Texture <class_Texture>`
   in a
-  `Sprite <https://github.com/okamstudio/godot/wiki/class_sprite>`__
+  :ref:`Sprite <class_Sprite>`
   node:
 
 .. image:: /img/spriteprop.png
@@ -104,7 +104,7 @@ Loading Scenes
 
 Scenes are also resources, but there is a catch. Scenes saved to disk
 are resources of type
-`PackedScene <https://github.com/okamstudio/godot/wiki/class_packedscene>`__,
+:ref:`PackedScene <class_PackedScene>`,
 this means that the scene is packed inside a resource.
 
 To obtain an instance of the scene, the method
@@ -121,7 +121,7 @@ must be used.
   the properties) and returns the root node of the scene, which can be
   added to any other node.
 | The approach has several advantages. As the
-  `instance <https://github.com/okamstudio/godot/wiki/class_packedscene#instance()>`__
+  :ref:`PackedScene.instance() <class_PackedScene_instance>`
   function is pretty fast, adding extra content to the scene can be done
   efficiently. New enemies, bullets, effects, etc can be added or
   removed quickly, without having to load them again from disk each
@@ -132,7 +132,7 @@ Freeing Resources
 -----------------
 
 Resource extends from
-`Reference <https://github.com/okamstudio/godot/wiki/class_reference>`__.
+:ref:`Reference <class_Reference>`.
 As such, when a resource is no longer in use, it will automatically free
 itelf. Since, in most cases, Resources are contained in Nodes, scripts
 or other resources, when a node is removed or freed, all the children

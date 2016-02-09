@@ -14,8 +14,8 @@ Introduction
 Godot stores all the low level game information in servers, while the
 scene is just a frontend. As such, ray casting is generally a
 lower-level task. For simple raycasts, node such as
-`RayCast <https://github.com/okamstudio/godot/wiki/class_raycast>`__ and
-`RayCast2D <https://github.com/okamstudio/godot/wiki/class_raycast2d>`__
+:ref:`RayCast <class_RayCast>` and
+:ref:`RayCast2D <class_RayCast2D>`
 will work, as they will return every frame what the result of a raycast
 is.
 
@@ -33,11 +33,11 @@ For 3D, it's
 `Spatial.get\_world().get\_space() <https://github.com/okamstudio/godot/wiki/class_spatial#get_world>`__.
 
 The resulting space
-`RID <https://github.com/okamstudio/godot/wiki/class_rid>`__ can be used
+:ref:`RID <class_RID>` can be used
 in
-`PhysicsServer <https://github.com/okamstudio/godot/wiki/class_physicsserver>`__
+:ref:`PhysicsServer <class_PhysicsServer>`
 and
-`Physics2DServer <https://github.com/okamstudio/godot/wiki/class_physics2dserver>`__
+:ref:`Physics2DServer <class_Physics2DServer>`
 respectively for 3D and 2D.
 
 Acessing Space
@@ -51,9 +51,9 @@ callback. Accessing it from outside this function may result in an error
 due to space being *locked*.
 
 To perform queries into physics space, the
-`Physics2DDirectSpaceState <https://github.com/okamstudio/godot/wiki/class_physics2ddirectspacestate>`__
+:ref:`Physics2DDirectSpaceState <class_Physics2DDirectSpaceState>`
 and
-`PhysicsDirectSpaceState <https://github.com/okamstudio/godot/wiki/class_physicsdirectspacestate>`__
+:ref:`PhysicsDirectSpaceState <class_PhysicsDirectSpaceState>`
 must be used.
 
 In code, for 2D spacestate, this code must be used:
@@ -148,12 +148,12 @@ The extra argument is a list of exceptions, can be objects (need Godot
 
 Casting a ray from screen to 3D physics space is useful for object
 picking. There is not much of a need to do this because
-`CollisionObject <https://github.com/okamstudio/godot/wiki/class_collisionobject>`__
+:ref:`CollisionObject <class_CollisionObject>`
 has an "input\_event" signal that will let you know when it was clicked,
 but in case there is any desire to do it manually, here's how.
 
 To cast a ray from the screen, the
-`Camera <https://github.com/okamstudio/godot/wiki/class_camera>`__ node
+:ref:`Camera <class_Camera>` node
 is needed. Camera can be in two projection modes, perspective and
 orthogonal. Because of this, both the ray origin and direction must be
 obtained. (origin changes in orthogonal, while direction changes in

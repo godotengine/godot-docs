@@ -8,11 +8,11 @@ Oh Beautiful GUI!
 
 This tutorial is about advanced skinning of an user interface. Most
 games generally don't need this, as they end up just relying on
-`Label <https://github.com/okamstudio/godot/wiki/class_label>`__,
-`TextureFrame <https://github.com/okamstudio/godot/wiki/class_textureframe>`__,
-`TextureButton <https://github.com/okamstudio/godot/wiki/class_texturebutton>`__
+:ref:`Label <class_Label>`,
+:ref:`TextureFrame <class_TextureFrame>`,
+:ref:`TextureButton <class_TextureButton>`
 and
-`TextureProgress <https://github.com/okamstudio/godot/wiki/class_textureprogress>`__.
+:ref:`TextureProgress <class_TextureProgress>`.
 
 However, many types of games often need complex user interfaces, like
 MMOs, traditional RPGs, Simulators, Strategy, etc. These kind of
@@ -27,7 +27,7 @@ Theme
 -----
 
 The GUI is skinned through the
-`Theme <https://github.com/okamstudio/godot/wiki/class_theme>`__
+:ref:`Theme <class_Theme>`
 resource. Theme contains all the information required to change the
 entire visual styling of all controls. Theme options are named, so it's
 not obvious which name changes what (specialy from code), but several

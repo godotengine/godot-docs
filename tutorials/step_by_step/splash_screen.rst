@@ -24,21 +24,21 @@ Create a scene with screen resolution 800x450, and set it up like this:
 .. image:: /img/robisplashpreview.png
 
 The nodes 'background" and "logo" are of
-`TextureFrame <https://github.com/okamstudio/godot/wiki/class_textureframe>`__
+:ref:`TextureFrame <class_TextureFrame>`
 type. These have a special property for setting the texture to be
 displayed, just load the corresponding file.
 
 .. image:: /img/texframe.png
 
 The node "start" is a
-`TextureButton <https://github.com/okamstudio/godot/wiki/class_texturebutton>`__,
+:ref:`TextureButton <class_TextureButton>`,
 it takes several images for different states, but only the normal and
 pressed will be supplied in this example:
 
 .. image:: /img/texbutton.png
 
 Finally, the node "copyright" is a
-`Label <https://github.com/okamstudio/godot/wiki/class_label>`__. Labels
+:ref:`Label <class_Label>`. Labels
 can be set a custom font by editing the following property:
 
 .. image:: /img/label.png

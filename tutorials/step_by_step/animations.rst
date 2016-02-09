@@ -17,7 +17,7 @@ Creating the Animation
 ----------------------
 
 First of all, add an
-`AnimationPlayer <https://github.com/okamstudio/godot/wiki/class_animationplayer>`__
+:ref:`AnimationPlayer <class_AnimationPlayer>`
 node to the scene, make it a child of bg (the root node):
 
 .. image:: /img/animplayer.png

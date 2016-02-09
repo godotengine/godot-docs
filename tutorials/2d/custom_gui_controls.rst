@@ -59,7 +59,7 @@ them to lay out properly, when set into grids, containers, or anchored.
 Controls most of the time provide a *minimum size* to help to properly
 lay them out. For example, if controls are placed vertically on top of
 each other using a
-`VBoxContainer <https://github.com/okamstudio/godot/wiki/class_vboxcontainer>`__,
+:ref:`VBoxContainer <class_VBoxContainer>`,
 the minimum size will make sure your custom control is not squished by
 the other controls in the container.
 

@@ -49,7 +49,7 @@ Reuse Shaders and Materials
 
 Godot renderer is a little different to what is out there. It's designed
 to minimize GPU state changes as much as possible.
-`FixedMaterial <https://github.com/okamstudio/godot/wiki/class_fixedmaterial>`__
+:ref:`FixedMaterial <class_FixedMaterial>`
 does a good job at reusing materials that need similar shaders but, if
 custom shaders are used, make sure to reuse them as much as possible.
 Godot's priorities will be like this:
@@ -162,7 +162,7 @@ Level of Detail (LOD)
 As also mentioned before, using objects with less vertices can improve
 performance in some cases. Godot has a very simple system to use level
 of detail,
-`GeometryInstance <https://github.com/okamstudio/godot/wiki/class_geometryinstance>`__
+:ref:`GeometryInstance <class_GeometryInstance>`
 based objects have a visibility range that can be defined. Having
 several GeometryInstance objects in different ranges works as LOD.
 
@@ -171,7 +171,7 @@ Use Instancing (MultiMesh)
 
 If several identical objects have to be drawn in the same place or
 nearby, try using
-`MultiMesh <https://github.com/okamstudio/godot/wiki/class_multimesh>`__
+:ref:`MultiMesh <class_MultiMesh>`
 instead. MultiMesh allows drawing of dozens of thousands of objects at
 very little performance cost, making it ideal for flocks, grass,
 particles, etc.

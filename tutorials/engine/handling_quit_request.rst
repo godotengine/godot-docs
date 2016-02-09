@@ -15,7 +15,7 @@ Handling the Notification
 -------------------------
 
 The
-`MainLoop <https://github.com/okamstudio/godot/wiki/class_mainloop>`__
+:ref:`MainLoop <class_MainLoop>`
 has a special notification that is sent to all nodes when quit is
 requested: MainLoop.NOTIFICATION\_WM\_QUIT.
 

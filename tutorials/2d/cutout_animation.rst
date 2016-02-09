@@ -40,7 +40,7 @@ unlike other tools meant for this, Godot has the following advantages:
    to be mixed, very useful for complex objects, such as shape of hands
    and foot, changing face expression, etc.
 -  **Custom Shaped Elements**: Can be created with
-   `Polygon2D <https://github.com/okamstudio/godot/wiki/class_polygon2d>`__
+   :ref:`Polygon2D <class_Polygon2D>`
    allowing the mixing of UV animation, deformations, etc.
 -  **Particle Systems**: Can also be mixed with the traditional
    animation hierarchy, useful for magic effecs, jetpacks, etc.
@@ -88,7 +88,7 @@ rotating the torso:
 | Ouch, that doesn't look good! The rotation pivot is wrong, this means
   it needs to be adjusted.
 | This small little cross in the middle of the
-  `Sprite <https://github.com/okamstudio/godot/wiki/class_sprite>`__ is
+  :ref:`Sprite <class_Sprite>` is
   the rotation pivot:
 
 .. image:: /img/tuto_cutout4.png
@@ -138,7 +138,7 @@ RemoteTransform2D Node
 ~~~~~~~~~~~~~~~~~~~~~~
 
 | Godot provides a special node,
-  `RemoteTransform2D <https://github.com/okamstudio/godot/wiki/class_remotetransform2d>`__.
+  :ref:`RemoteTransform2D <class_RemoteTransform2D>`.
   This node will transform nodes that are sitting somewhere else in the
   hierarchy, by copying it's transform to the remote node.
 | This enables to have a visibility order independent from the
@@ -214,7 +214,7 @@ useful skeleton.
 
 The first step is creating an endpoint node. Any kind of node will do,
 but
-`Position2D <https://github.com/okamstudio/godot/wiki/class_position2d>`__
+:ref:`Position2D <class_Position2D>`
 is preferred because it's visible in the editor. The endpoint node will
 ensure that the last bone has orientation
 

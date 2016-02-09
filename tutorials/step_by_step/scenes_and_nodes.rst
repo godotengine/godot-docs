@@ -196,7 +196,7 @@ project, no matter which scene is being edited.
 As a side note, for future reference and a little out of context (this
 is the first tutorial after all!), it is also possible to add custom
 configuration options and read them in run-time using the
-`Globals <https://github.com/okamstudio/godot/wiki/class_globals>`__
+:ref:`Globals <class_Globals>`
 singleton.
 
 To Be Continued...

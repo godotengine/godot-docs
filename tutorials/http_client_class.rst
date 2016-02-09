@@ -4,7 +4,7 @@ HTTP client class example
 =========================
 
 Here's an example of using the
-`HTTPClient <https://github.com/okamstudio/godot/wiki/class_httpclient>`__
+:ref:`HTTPClient <class_HTTPClient>`
 class. It's just a script, so it can be run by executing:
 
 .. raw:: html

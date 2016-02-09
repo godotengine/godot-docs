@@ -75,7 +75,7 @@ source for texscreen() as the first one below, so the first one
 "dissapears", or is not visible.
 
 To correct this, a
-`BackBufferCopy <https://github.com/okamstudio/godot/wiki/class_backbuffercopy>`__
+:ref:`BackBufferCopy <class_BackBufferCopy>`
 node can be instanced between both spheres. BackBufferCopy can work by
 either specifying a screen region or the whole screen:
 

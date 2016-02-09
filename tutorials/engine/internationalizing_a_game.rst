@@ -47,8 +47,7 @@ locale.
 Converting Keys to Text
 -----------------------
 
-Some controls such as
-`Button <https://github.com/okamstudio/godot/wiki/class_button,"Label":https://github.com/okamstudio/godot/wiki/class_label,etc>`__.
+Some controls such as :ref:`Button <class_Button>`, :ref:`Label <class_Label>`, etc.
 will automatically fetch a translation each time they are set a key
 instead of a text. For example, if a label is assigned
 "MAIN\_SCREEN\_GREETING1" and a key to different languages exists in the
@@ -73,9 +72,9 @@ Making Controls Resizeable
 The same text in different languages can vary greatly in length. For
 this, make sure to read the tutorial on :ref:`doc_size_and_anchors`, as having
 dynamically adjusted control sizes may help.
-`Containers <https://github.com/okamstudio/godot/wiki/class_container>`__
+:ref:`Containers <class_Containers>`
 can be very useful, as well as the multiple options in
-`Label <https://github.com/okamstudio/godot/wiki/class_label>`__ for
+:ref:`Label <class_Label>` for
 text wrapping.
 
 TranslationServer
@@ -83,7 +82,7 @@ TranslationServer
 
 Godot has a server for handling the low level translation management
 called the
-`TranslationServer <https://github.com/okamstudio/godot/wiki/class_translationserver>`__.
+:ref:`TranslationServer <class_TranslationServer>`.
 Translations can be added or removed during run-time, and the current
 language be changed too.
 

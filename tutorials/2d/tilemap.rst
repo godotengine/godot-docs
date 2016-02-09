@@ -30,7 +30,7 @@ Create the TileSet Scene
 ------------------------
 
 We will be creating a
-`TileSet <https://github.com/okamstudio/godot/wiki/class_tileset>`__
+:ref:`TileSet <class_TileSet>`
 resource. While this resource exports properties, it's pretty difficult
 to get complex data into it and maintain it:
 
@@ -114,7 +114,7 @@ Using the TileSet in a TileMap
 ------------------------------
 
 Create a new scene, use any node or node2d as root, then create a
-`TileMap <https://github.com/okamstudio/godot/wiki/class_tilemap>`__ as
+:ref:`TileMap <class_TileMap>` as
 a child.
 
 .. image:: /img/tilemap_scene.png
