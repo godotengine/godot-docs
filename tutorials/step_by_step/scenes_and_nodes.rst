@@ -37,7 +37,7 @@ game, it has the following characteristics:
 -  Can be extended (to have more functions).
 -  Can be added to other nodes as children.
 
-p=. |image1|
+.. image:: /img/tree.png
 
 The last one is very important. Nodes can have other nodes as
 children. When arranged in this way, the nodes become a **tree**.
@@ -160,7 +160,7 @@ demo should finally execute:
 
 .. image:: /img/helloworld.png
 
-Success\ |image15|
+Success!
 
 Configuring the Project
 -----------------------

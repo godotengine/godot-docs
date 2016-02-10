@@ -76,7 +76,7 @@ Import process begins with the 3D scene import menu:
 
 That opens what is probably the biggest of all the import dialogs:
 
-p=. |image1|
+.. image:: /img/3dimp_dialog.png
 
 Many options exist in there, so each section will be explained as
 follows:

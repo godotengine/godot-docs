@@ -205,22 +205,22 @@ case):
 .. image:: /img/compressopts.png
 
 Each of the four options described in this table together with their
-advantages and disadvantages ( |image5| = Best, |image6| =Worst ):
+advantages and disadvantages ( |good| = Best, |bad| =Worst ):
 
 +----------------+------------------------+---------------------------+-------------------------+------------------------------------------------------+
 |                | Uncompressed           | Compress Lossless (PNG)   | Compress Lossy (WebP)   | Compress VRAM                                        |
 +================+========================+===========================+=========================+======================================================+
 | Description    | Stored as raw pixels   | Stored as PNG             | Stored as WebP          | Stored as S3TC/BC,PVRTC/ETC, depending on platform   |
 +----------------+------------------------+---------------------------+-------------------------+------------------------------------------------------+
-| Size on Disk   | |image7| Large         | |image8| Small            | |image9| Very Small     | |image10| Small                                      |
+| Size on Disk   | |bad| Large            | |regular| Small           | |good| Very Small       | |regular| Small                                      |
 +----------------+------------------------+---------------------------+-------------------------+------------------------------------------------------+
-| Memory Usage   | |image11| Large        | |image12| Large           | |image13| Large         | |image14| Small                                      |
+| Memory Usage   | |bad| Large            | |bad| Large               | |bad| Large             | |good| Small                                         |
 +----------------+------------------------+---------------------------+-------------------------+------------------------------------------------------+
-| Performance    | |image15| Normal       | |image16| Normal          | |image17| Normal        | |image18| Fast                                       |
+| Performance    | |regular| Normal       | |regular| Normal          | |regular| Normal        | |good| Fast                                          |
 +----------------+------------------------+---------------------------+-------------------------+------------------------------------------------------+
-| Quality Loss   | |image19| None         | |image20| None            | |image21| Slight        | |image22| Moderate                                   |
+| Quality Loss   | |good| None            | |good| None               | |regular| Slight        | |bad| Moderate                                       |
 +----------------+------------------------+---------------------------+-------------------------+------------------------------------------------------+
-| Load Time      | |image23| Normal       | |image24| Slow            | |image25| Slow          | |image26| Fast                                       |
+| Load Time      | |regular| Normal       | |bad| Slow                | |bad| Slow              | |good| Fast                                          |
 +----------------+------------------------+---------------------------+-------------------------+------------------------------------------------------+
 
 Texture options
@@ -249,4 +249,8 @@ Provided are a small amount of options for fine grained import control:
    than a screen pixel. This is usually turned on, unless it's required
    for artistic purposes (minecraft look, for example).
 
+.. |bad| image:: /img/bad.png
 
+.. |good| image:: /img/good.png
+
+.. |regular| image:: /img/regular.png

@@ -51,9 +51,9 @@ This project contains two scenes "ball.scn" and "container.scn". The
 ball scene is just a ball with physics, while container scene has a
 nicely shaped collision, so balls can be thrown in there.
 
-p=. |image4|
+.. image:: /img/ballscene.png
 
-|image5|
+.. image:: /img/contscene.png
 
 Open the container scene, then select the root node:
 

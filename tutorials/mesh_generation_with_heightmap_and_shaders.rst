@@ -38,15 +38,15 @@ The heightmap
 We will use a few functions of GIMP image editor to produce a simple
 heightmap. Start GIMP and create a square image of 512x512 pixels.
 
-|image0|
+.. image:: /img/1_GIMP_createImage512.png
 
 You are now in front of a new, blank, square image.
 
-|image1|
+.. image:: /img/2_GIMP.png
 
 Then, use a filter to render some clouds on this new image.
 
-|image2|
+.. image:: /img/3_GIMP_FilterRenderClouds.png
 
 Parameter this filter to whatever you want. A white pixel corresponds
 to the highest point of the heightmap, a black pixel corresponds to
@@ -58,7 +58,7 @@ decent ground. A value of 4.0 or 5.0 for both is nice. Click on the
 "New Seed" button to roll a dice and GIMP will create a new random
 heightmap. Once you are happy with the result, click "OK".
 
-|image3|
+.. image:: /img/4_GIMP_Clouds.png
 
 You can continue to edit your image if you wish. For our example,
 let's keep the heightmap as is, and let's export it to a PNG file, say
@@ -69,16 +69,16 @@ The plane mesh
 
 Now, we will need a plane mesh to import in Godot. Let's run Blender.
 
-|image4|
+.. image:: /img/5_Blender.png
 
 Remove the start cube mesh, then add a new plane to the scene.
 
-|image5|
+.. image:: /img/6_Blender_CreatePlane.png
 
 Zoom a bit, then switch to Edit mode (Tab key) and in the Tools
 buttongroup at the left, hit "Subdivide" 5 or 6 times.
 
-|image6|
+.. image:: /img/7_Blender_subdivided.png
 
 Your mesh is now subdivided, which means we added vertices to the
 plane mesh that we will later be able to move. Job's not finished yet:
@@ -93,16 +93,16 @@ Shading/UVs button group a the left, click the "Unwrap" button (or
 simply hit "U") and select "Smart UV Project". Keep the default
 options and hit "Ok".
 
-|image7|
+.. image:: /img/8_Blender_UVSmart.png
 
 Now, we need to switch our view to "UV/Image editor".
 
-|image8|
+.. image:: /img/9_Blender_UV_editor.png
 
 Select all the vertices again ("A") then in the UV button, select
 "Export UV Layout".
 
-|image9|
+.. image:: /img/10_Blender_exportUV.png
 
 Export the layout as a PNG file. Name it "plane.png" and save it in
 your Godot project folder. Now, let's export our mesh as an OBJ file.
@@ -117,48 +117,48 @@ Let's now open Godot Editor.
 Create a new project in the folder you previously created and name it
 what you want.
 
-|image10|
+.. image:: /img/11_Godot.png
 
 In our default scene (3D), create a root node "Spatial". Next, import
 the mesh OBJ file. Click "Import", choose "3D Mesh" and select your
 plane.obj file, set the target path as "/" (or wherever you want in
 your project folder).
 
-|image11|
+.. image:: /img/12_Godot_ImportMesh.png
 
 I like to check "Normals" in the import popup so the import will also
 consider faces normals, which can be useful (even if we don't use them
 in this tutorial). Your mesh is now displayed in the FileSystem in
 "res://".
 
-|image12|
+.. image:: /img/13_Godot_ImportPopup.png
 
 Create a MeshInstance node. In the Inspector, load the mesh we just
 imported. Select "plane.msh" and hit ok.
 
-|image13|
+.. image:: /img/14_Godot_LoadMesh.png
 
 Great! Our plane is now rendered in the 3D view.
 
-|image14|
+.. image:: /img/15_Godot_MeshPlaneRendered.png
 
 It is time to add some shader stuff. In the Inspector, in the
 "Material Override" line, add a "New ShaderMaterial". Edit it by
 clicking the ">" button just right to it.
 
-|image15|
+.. image:: /img/16_Godot_ShaderMaterial.png
 
 You have two ways to create a shader: by code (MaterialShader), or
 using a shader graph (MaterialShaderGraph). The second one is a bit
 more visual, but we will not cover it for now. Create a "New
 MaterialShader".
 
-|image16|
+.. image:: /img/17_Godot_newMaterialShader.png
 
 Edit it by clicking the ">" button just right to it. The Shaders
 editor opens.
 
-|image17|
+.. image:: /img/18_Godot_ShaderEditorOpened.png
 
 The Vertex tab is for the Vertex shader, and the Fragment tab is for
 the Fragment shader. No need to explain what both of them do, right?
@@ -192,7 +192,7 @@ outside the shader ("uniform"):
 However, the plane is displayed black! This is because we didn't set
 the texture file and the color to use.
 
-|image18|
+.. image:: /img/19_Godot_BlackPlane.png
 
 In the Inspector, click the "Previous" button to get back to the
 ShaderMaterial. This is where you want to set the texture and the
@@ -203,7 +203,7 @@ Fragment shader multiplies each pixel value of the texture by the
 (0,0,0), and as you know, 0\*x = 0 ;) . Just change the ``col``
 parameter to another color to see your texture appear:
 
-|image19|
+.. image:: /img/20_Godot_TexturedPlane.png
 
 Good. Now, the Vertex Shader.
 
@@ -250,6 +250,4 @@ That's all good, but our plane remains flat. This is because the
 ``height_range`` value is 0. Increase this value to observe the mesh
 distort and take to form of the terrain we set before:
 
-|image20|
-
-
+.. image:: /img/21_Godot_Fini.png
