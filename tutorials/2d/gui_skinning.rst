@@ -98,7 +98,7 @@ but will be soon.
 Customizing a Control
 ---------------------
 
-If only a few controls need to be skinned. It is often not neccesary to
+If only a few controls need to be skinned. It is often not necessary to
 create a new theme. Controls offer their theme options as special kind
 of properties. If checked, overriding will take place:
 

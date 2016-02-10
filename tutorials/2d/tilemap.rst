@@ -135,7 +135,7 @@ Painting Your World
 
 With all set, make sure the TileMap node is selected. A red grid will
 appear on screen, allowing to paint on it with the selected tile on the
-left pallete.
+left palette.
 
 .. image:: /img/tile_example6.png
 

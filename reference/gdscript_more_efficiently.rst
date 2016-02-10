@@ -51,7 +51,7 @@ a boost.
 Variables & Assignment
 ~~~~~~~~~~~~~~~~~~~~~~
 
-All variables in a dynamicaly typed language are "variant"-like. This
+All variables in a dynamically typed language are "variant"-like. This
 means that their type is not fixed, and is only modified through
 assignment. Example:
 

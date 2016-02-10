@@ -73,7 +73,7 @@ visuals:
 
 In the above image, the second sphere (top right) is using the same
 source for texscreen() as the first one below, so the first one
-"dissapears", or is not visible.
+"disappears", or is not visible.
 
 To correct this, a
 :ref:`BackBufferCopy <class_BackBufferCopy>`

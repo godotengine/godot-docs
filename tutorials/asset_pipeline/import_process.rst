@@ -93,7 +93,7 @@ ensures that the same asset can be re-imported in another computer.
 
 The usual approach to this, when using a VCS such as Subversion,
 Perforce or GIT, is to create the project in a subfolder, so both it and
-the source assets can be commited to a same repository. For example:
+the source assets can be committed to a same repository. For example:
 
 Repository layout:
 

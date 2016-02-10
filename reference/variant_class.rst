@@ -23,7 +23,7 @@ A Variant can:
 -  Be used to abstract calling methods and their arguments (Godot
    exports all it's functions through variants)
 -  Be used to defer calls or move data between threads.
--  Be serialized as binary and stored to disk, or transfered via
+-  Be serialized as binary and stored to disk, or transferred via
    network.
 -  Be serialized to text and use it for printing values and editable
    settings.

@@ -183,7 +183,7 @@ CollisionObject2D derived node
 By itself it does nothing, but when created as a child of the above
 mentioned nodes, it adds collision shapes to them. Any amount of
 CollisionShape2D children can be created, meaning the parent object will
-simply have mroe collision shapes. When added/deleted/moved/edited, it
+simply have more collision shapes. When added/deleted/moved/edited, it
 updates the list of shapes in the parent node.
 
 At run time, though, this node does not exist (can't be accessed with

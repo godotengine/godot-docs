@@ -21,7 +21,7 @@ Implementation
 
 Godot stores resources to disk. Anything, from a script, to a scene or a
 PNG image is a resource to the engine. If a resource contains properties
-that referece other resources on disk, the path to that resource is
+that reference other resources on disk, the path to that resource is
 included. If it has sub-resources that are built-in, the resource is
 saved in a single file together with all the bundled sub-resources. For
 example, a font resource is often saved with the character textures

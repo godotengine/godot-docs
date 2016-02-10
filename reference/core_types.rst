@@ -19,7 +19,7 @@ more difficult to read.
 
 In general, care is not taken to use the most efficient datatype for a
 given task unless using large structures or arrays. ``int`` is used
-through most of the code unless neccesary. This is done because nowadays
+through most of the code unless necessary. This is done because nowadays
 every device has at least a 32 bits bus and can do such operations in
 one cycle. It makes code more readable too.
 

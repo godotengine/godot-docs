@@ -127,7 +127,7 @@ high linear velocity and then stop as they fade.
 Initial Angle
 -------------
 
-Determines the intial angle of the particle (in degress). This parameter
+Determines the initial angle of the particle (in degress). This parameter
 is mostly useful randomized.
 
 .. image:: /img/paranim11.gif
@@ -135,7 +135,7 @@ is mostly useful randomized.
 Initial & Final Size
 --------------------
 
-Determines the intial and final scales of the particle.
+Determines the initial and final scales of the particle.
 
 .. image:: /img/paranim12.gif
 
@@ -147,7 +147,7 @@ transparency.
 
 Phases must provide an offset value from 0 to 1, and alays in
 ascending order. For example, a color will begin at offset 0 and end
-in offset 1, but 4 colors might use diferent offsets, such as 0, 0.2,
+in offset 1, but 4 colors might use different offsets, such as 0, 0.2,
 0.8 and 1.0 for the different phases:
 
 .. image:: /img/particlecolorphases.png

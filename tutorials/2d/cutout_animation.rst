@@ -336,7 +336,7 @@ that will remain unused.
 Keyframing IK
 ~~~~~~~~~~~~~
 
-When editing IK chains, is is not neccesary to select the whole chain to
+When editing IK chains, is is not necessary to select the whole chain to
 add keyframes. Selecting the endpoint of the chain and inserting a
 keyframe will automatically insert keyframes until the chain base too.
 This makes the task of animating extremities much simpler.

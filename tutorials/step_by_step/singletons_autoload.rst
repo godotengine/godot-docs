@@ -7,7 +7,7 @@ Introduction
 ------------
 
 Scene Singletons are very useful things, as they represent a very common
-use case, but it's not clear at the begining where their value is.
+use case, but it's not clear at the beginning where their value is.
 
 The scene system is very useful, but by itself it has a few drawbacks:
 

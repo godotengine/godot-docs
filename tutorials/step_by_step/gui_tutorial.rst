@@ -63,7 +63,7 @@ boundary.
 
 Like any class that inherits from :ref:`CanvasItem <class_CanvasItem>`
 (Control does), a :ref:`CanvasItem._draw() <class_CanvasItem__draw>`
-callback will be received at the begining and every time the control
+callback will be received at the beginning and every time the control
 needs to be redrawn (programmer needs to call
 :ref:`CanvasItem.update() <class_CanvasItem_update>`
 to enqueue the CanvasItem for redraw). If the control is not visible

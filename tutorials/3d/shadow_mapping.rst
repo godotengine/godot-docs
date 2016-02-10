@@ -68,7 +68,7 @@ of light with a single texture? There are two alternatives, the first
 one is to use DPSM (Dual Paraboloid Shadow Mapping). This technique is
 fast, but it requires DISCARD to be used (which makes it not very usable
 on mobile). DPSM can also look rather bad if the geometry is not
-tesselated enough, so more vertices might be neccesary if it doesnt'r
+tesselated enough, so more vertices might be necessary if it doesnt'r
 look tight. The second option is to simply not use a shadow map, and use
 a shadow cubemap. This is faster, but requires six passes to render all
 directions and is not supported on the current (GLES2) renderer.
@@ -126,7 +126,7 @@ Z-Offset. This improves things a lot:
 
 .. image:: /img/shadow_offset_2.png
 
-But it's not quite perfect, self shadowing did not dissapear completely.
+But it's not quite perfect, self shadowing did not disappear completely.
 So close to perfection but still not there.. so in a turn of greed you
 increase the Z-Offset even more!
 

@@ -79,7 +79,7 @@ and optimized away.
 Check ``_bind_methods`` of Control or Object for more examples.
 
 If just adding modules and functionality that is not expected to be
-documented as throughly, the ``_MD()`` macro can safely be ignore and a
+documented as thoroughly, the ``_MD()`` macro can safely be ignore and a
 string passing the name can be passed for brevity.
 
 References:

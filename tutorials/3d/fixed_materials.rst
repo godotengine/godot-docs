@@ -87,7 +87,7 @@ These are the base colors for the material.
 -  Specular color is the color of the reflected light and responsible
    for shines. It is affected by the specular exponent.
 -  Emission is the color of the light generated within the material
-   (althought it will not lit anything else around unless baking). This
+   (although it will not lit anything else around unless baking). This
    color is constant.
 -  Specular Exponent (or "Shininess"/"Intensity" in some 3D DCCs) is the
    way light is reflected. If the value is high, light is reflected
