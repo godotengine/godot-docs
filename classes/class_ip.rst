@@ -44,7 +44,7 @@ Numeric Constants
 Description
 -----------
 
-IP contains some support functions for the IPv4 protocol. TCP/IP support is in different classes (see :ref:`TCP_Client<class_tcp_client>`, :ref:`TCP_Server<class_tcp_server>`). IP provides hostname resolution support, both blocking and threaded.
+IP contains some support functions for the IPv4 protocol. TCP/IP support is in different classes (see :ref:`StreamPeerTCP<class_streampeertcp>` and :ref:`TCP_Server<class_tcp_server>`). IP provides hostname resolution support, both blocking and threaded.
 
 Member Function Description
 ---------------------------

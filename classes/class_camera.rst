@@ -76,7 +76,7 @@ Numeric Constants
 Description
 -----------
 
-Camera is a special node that displays what is visible from its current location. Cameras register themselves in the nearest :ref:`Viewport<class_viewport>` node (when ascending the tree). Only one camera can be active per viewport. If no viewport is available ascending the tree, the Camera will register in the global viewport. In other words, a Camera just provides *3D* display capabilities to a :ref:`Viewport<class_viewport>`, and, without one, a :ref:`Scene<class_scene>` registered in that :ref:`Viewport<class_viewport>` (or higher viewports) can't be displayed.
+Camera is a special node that displays what is visible from its current location. Cameras register themselves in the nearest :ref:`Viewport<class_viewport>` node (when ascending the tree). Only one camera can be active per viewport. If no viewport is available ascending the tree, the Camera will register in the global viewport. In other words, a Camera just provides *3D* display capabilities to a :ref:`Viewport<class_viewport>`, and, without one, a scene registered in that :ref:`Viewport<class_viewport>` (or higher viewports) can't be displayed.
 
 Member Function Description
 ---------------------------

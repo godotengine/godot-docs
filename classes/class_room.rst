@@ -30,7 +30,7 @@ Member Functions
 Description
 -----------
 
-Room contains the data to define the bounds of a scene (using a BSP Tree). It is instanced by a :ref:`RoomInstance<class_roominstance>` node to create rooms. See that class documentation for more information about rooms.
+Room contains the data to define the bounds of a scene (using a BSP Tree). It is instanced by a :ref:`VisualInstance<class_visualinstance>` node to create rooms. See that class documentation for more information about rooms.
 
 Member Function Description
 ---------------------------

@@ -24,7 +24,7 @@ Member Functions
 Description
 -----------
 
-MultiMeshInstance is a :ref:`Node<class_node>` that takes a :ref:`MultiMesh<class_multimesh>` resource and adds it to the current :ref:`Scenario<class_scenario>` by creating an instance of it (yes, this is an instance of instances).
+MultiMeshInstance is a :ref:`Node<class_node>` that takes a :ref:`MultiMesh<class_multimesh>` resource and adds it to the current scenario by creating an instance of it (yes, this is an instance of instances).
 
 Member Function Description
 ---------------------------

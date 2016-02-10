@@ -81,7 +81,7 @@ Return the minimum size that this stylebox can be shrunk to.
 
 - :ref:`Vector2<class_vector2>`  **get_offset**  **(** **)** const
 
-Return the "offset" of a stylebox, this is a helper function, like writing Point2( style.get_margin(MARGIN_LEFT), style.get_margin(MARGIN_TOP) )
+Return the "offset" of a stylebox, this is a helper function, like writing ``Vector2(style.get_margin(MARGIN_LEFT), style.get_margin(MARGIN_TOP))``.
 
 .. _class_StyleBox_draw:
 

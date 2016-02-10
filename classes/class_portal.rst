@@ -40,7 +40,7 @@ Member Functions
 Description
 -----------
 
-Portals provide virtual openings to :ref:`RoomInstance<class_roominstance>` nodes, so cameras can look at them from the outside. Note that portals are a visibility optimization technique, and are in no way related to the game of the same name (as in, they are not used for teleportation). For more information on how rooms and portals work, see :ref:`RoomInstance<class_roominstance>`. Portals are represented as 2D convex polygon shapes (in the X,Y local plane), and are placed on the surface of the areas occupied by a :ref:`RoomInstance<class_roominstance>`, to indicate that the room can be accessed or looked-at through them. If two rooms are next to each other, and two similar portals in each of them share the same world position (and are parallel and opposed to each other), they will automatically "connect" and form "doors" (for example, the portals that connect a kitchen to a living room are placed in the door they share). Portals must always have a :ref:`RoomInstance<class_roominstance>` node as a parent, grandparent or far parent, or else they will not be active.
+Portals provide virtual openings to :ref:`VisualInstance<class_visualinstance>` nodes, so cameras can look at them from the outside. Note that portals are a visibility optimization technique, and are in no way related to the game of the same name (as in, they are not used for teleportation). For more information on how rooms and portals work, see :ref:`VisualInstance<class_visualinstance>`. Portals are represented as 2D convex polygon shapes (in the X,Y local plane), and are placed on the surface of the areas occupied by a :ref:`VisualInstance<class_visualinstance>`, to indicate that the room can be accessed or looked-at through them. If two rooms are next to each other, and two similar portals in each of them share the same world position (and are parallel and opposed to each other), they will automatically "connect" and form "doors" (for example, the portals that connect a kitchen to a living room are placed in the door they share). Portals must always have a :ref:`VisualInstance<class_visualinstance>` node as a parent, grandparent or far parent, or else they will not be active.
 
 Member Function Description
 ---------------------------
@@ -49,25 +49,25 @@ Member Function Description
 
 - void  **set_shape**  **(** :ref:`Vector2Array<class_vector2array>` points  **)**
 
-Set the portal shape. The shape is an array of :ref:`Point2<class_point2>` points, representing a convex polygon in the X,Y plane.
+Set the portal shape. The shape is an array of :ref:`Vector2<class_vector2>` points, representing a convex polygon in the X,Y plane.
 
 .. _class_Portal_get_shape:
 
 - :ref:`Vector2Array<class_vector2array>`  **get_shape**  **(** **)** const
 
-Return the portal shape. The shape is an array of :ref:`Point2<class_point2>` points, representing a convex polygon in the X,Y plane.
+Return the portal shape. The shape is an array of :ref:`Vector2<class_vector2>` points, representing a convex polygon in the X,Y plane.
 
 .. _class_Portal_set_enabled:
 
 - void  **set_enabled**  **(** :ref:`bool<class_bool>` enable  **)**
 
-Enable the portal (it is enabled by default though), disabling it will cause the parent :ref:`RoomInstance<class_roominstance>` to not be visible any longer when looking through the portal.
+Enable the portal (it is enabled by default though), disabling it will cause the parent :ref:`VisualInstance<class_visualinstance>` to not be visible any longer when looking through the portal.
 
 .. _class_Portal_is_enabled:
 
 - :ref:`bool<class_bool>`  **is_enabled**  **(** **)** const
 
-Return whether the portal is active. When disabled it causes the parent :ref:`RoomInstance<class_roominstance>` to not be visible any longer when looking through the portal.
+Return whether the portal is active. When disabled it causes the parent :ref:`VisualInstance<class_visualinstance>` to not be visible any longer when looking through the portal.
 
 .. _class_Portal_set_disable_distance:
 

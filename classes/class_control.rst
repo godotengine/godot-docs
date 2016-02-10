@@ -227,7 +227,7 @@ Controls are relative to the parent position and size by using anchors and margi
 
 Anchors work by defining which margin do they follow, and a value relative to it. Allowed anchoring modes are ANCHOR_BEGIN, where the margin is relative to the top or left margins of the parent (in pixels), ANCHOR_END for the right and bottom margins of the parent and ANCHOR_RATIO, which is a ratio from 0 to 1 in the parent range.
 
-Input device events (:ref:`InputEvent<class_inputevent>`) are first sent to the root controls via the :ref:`Node._input<class_Node__input>`, which distribute it through the tree, then delivers them to the adequate one (under cursor or keyboard focus based) by calling :ref:`Node._input_event<class_Node__input_event>`. There is no need to enable input processing on controls to receive such events. To ensure that no one else will receive the event (not even :ref:`Node._unhandled_input<class_Node__unhandled_input>`), the control can accept it by calling :ref:`accept_event<class_Control_accept_event>`.
+Input device events (:ref:`InputEvent<class_inputevent>`) are first sent to the root controls via the :ref:`Node._input<class_Node__input>`, which distribute it through the tree, then delivers them to the adequate one (under cursor or keyboard focus based) by calling :ref:`MainLoop._input_event<class_MainLoop__input_event>`. There is no need to enable input processing on controls to receive such events. To ensure that no one else will receive the event (not even :ref:`Node._unhandled_input<class_Node__unhandled_input>`), the control can accept it by calling :ref:`accept_event<class_Control_accept_event>`.
 
 Only one control can hold the keyboard focus (receiving keyboard events), for that the control must define the focus mode with :ref:`set_focus_mode<class_Control_set_focus_mode>`. Focus is lost when another control gains it, or the current focus owner is hidden.
 
@@ -416,7 +416,7 @@ Change all margins and anchors, so this Control always takes up the same area as
 
 - void  **show_modal**  **(** :ref:`bool<class_bool>` exclusive=false  **)**
 
-Display a Control as modal. Control must be a subwindow (see :ref:`set_as_subwindow<class_Control_set_as_subwindow>`). Modal controls capture the input signals until closed or the area outside them is accessed. When a modal control loses focus, or the ESC key is pressed, they automatically hide. Modal controls are used extensively for popup dialogs and menus.
+Display a Control as modal. Control must be a subwindow. Modal controls capture the input signals until closed or the area outside them is accessed. When a modal control loses focus, or the ESC key is pressed, they automatically hide. Modal controls are used extensively for popup dialogs and menus.
 
 .. _class_Control_set_focus_mode:
 

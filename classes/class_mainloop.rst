@@ -57,7 +57,7 @@ Numeric Constants
 Description
 -----------
 
-Main loop is the abstract main loop base class. All other main loop classes are derived from it. Upon application start, a :ref:`MainLoop<class_mainloop>` has to be provided to OS, else the application will exit. This happens automatically (and a :ref:`SceneMainLoop<class_scenemainloop>` is created), unless a main :ref:`Script<class_script>` is supplied, which may or not create and return a :ref:`MainLoop<class_mainloop>`.
+Main loop is the abstract main loop base class. All other main loop classes are derived from it. Upon application start, a :ref:`MainLoop<class_mainloop>` has to be provided to OS, else the application will exit. This happens automatically (and a :ref:`SceneTree<class_scenetree>` is created), unless a main :ref:`Script<class_script>` is supplied, which may or not create and return a :ref:`MainLoop<class_mainloop>`.
 
 Member Function Description
 ---------------------------

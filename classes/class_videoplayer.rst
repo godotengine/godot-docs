@@ -58,7 +58,7 @@ Member Functions
 +--------------------------------+----------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_buffering_msec<class_VideoPlayer_get_buffering_msec>`  **(** **)** const                       |
 +--------------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_texture>`  | :ref:`get_video_texutre<class_VideoPlayer_get_video_texutre>`  **(** **)**                               |
+| :ref:`Texture<class_texture>`  | :ref:`get_video_texture<class_VideoPlayer_get_video_texture>`  **(** **)**                               |
 +--------------------------------+----------------------------------------------------------------------------------------------------------+
 
 Member Function Description
@@ -148,8 +148,8 @@ Member Function Description
 
 - :ref:`int<class_int>`  **get_buffering_msec**  **(** **)** const
 
-.. _class_VideoPlayer_get_video_texutre:
+.. _class_VideoPlayer_get_video_texture:
 
-- :ref:`Texture<class_texture>`  **get_video_texutre**  **(** **)**
+- :ref:`Texture<class_texture>`  **get_video_texture**  **(** **)**
 
 

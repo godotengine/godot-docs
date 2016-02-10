@@ -193,7 +193,7 @@ Trying to alter a SAMPLE_FORMAT_IMA_ADPCM sample is not supported. It will throw
 
 Set the sample data for a given sample as an array of bytes. The length must be equal to the sample length expected in bytes or an error will be produced. The byte length can be calculated as follows:
 
-Get the sample length (:ref:`get_sample_length<class_AudioServer_get_sample_length>`).
+Get the sample length (:ref:`sample_get_length<class_AudioServer_sample_get_length>`).
 
 If the sample format is SAMPLE_FORMAT_PCM16, multiply it by 2.
 

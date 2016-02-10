@@ -179,7 +179,7 @@ Nodes can be set as children of other nodes, resulting in a tree arrangement. An
 
 Scenes can be saved to disk, and then instanced into other scenes. This allows for very high flexibility in the architecture and data model of the projects.
 
-:ref:`SceneMainLoop<class_scenemainloop>` contains the "active" tree of nodes, and a node becomes active (receiving NOTIFICATION_ENTER_SCENE) when added to that tree.
+:ref:`SceneTree<class_scenetree>` contains the "active" tree of nodes, and a node becomes active (receiving NOTIFICATION_ENTER_SCENE) when added to that tree.
 
 A node can contain any number of nodes as a children (but there is only one tree root) with the requirement that no two children with the same name can exist.
 
@@ -292,7 +292,7 @@ Return a children node by it's index (see :ref:`get_child_count<class_Node_get_c
 
 Fetch a node. NodePath must be valid (or else error will occur) and can be either the path to child node, a relative path (from the current node to another node), or an absolute path to a node.
 
-Note: fetching absolute paths only works when the node is inside the scene tree (see :ref:`is_inside_scene<class_Node_is_inside_scene>`). Examples. Assume your current node is Character and following tree:
+Note: fetching absolute paths only works when the node is inside the scene tree (see :ref:`is_inside_tree<class_Node_is_inside_tree>`). Examples. Assume your current node is Character and following tree:
 
 
 
@@ -362,7 +362,7 @@ Return *true* if "node" occurs later in the scene hierarchy than the current nod
 
 - :ref:`NodePath<class_nodepath>`  **get_path**  **(** **)** const
 
-Return the absolute path of the current node. This only works if the current node is inside the scene tree (see :ref:`is_inside_scene<class_Node_is_inside_scene>`).
+Return the absolute path of the current node. This only works if the current node is inside the scene tree (see :ref:`is_inside_tree<class_Node_is_inside_tree>`).
 
 .. _class_Node_get_path_to:
 
@@ -374,7 +374,7 @@ Return the relative path from the current node to the specified node in "node" a
 
 - void  **add_to_group**  **(** :ref:`String<class_string>` group, :ref:`bool<class_bool>` persistent=false  **)**
 
-Add a node to a group. Groups are helpers to name and organize group of nodes, like for example: "Enemies", "Collectables", etc. A :ref:`Node<class_node>` can be in any number of groups. Nodes can be assigned a group at any time, but will not be added to it until they are inside the scene tree (see :ref:`is_inside_scene<class_Node_is_inside_scene>`).
+Add a node to a group. Groups are helpers to name and organize group of nodes, like for example: "Enemies", "Collectables", etc. A :ref:`Node<class_node>` can be in any number of groups. Nodes can be assigned a group at any time, but will not be added to it until they are inside the scene tree (see :ref:`is_inside_tree<class_Node_is_inside_tree>`).
 
 .. _class_Node_remove_from_group:
 
@@ -412,7 +412,7 @@ Set the node owner. A node can have any other node as owner (as long as a valid 
 
 - :ref:`Node<class_node>`  **get_owner**  **(** **)** const
 
-Get the node owner (see :ref:`set_node_owner<class_Node_set_node_owner>`).
+Get the node owner (see :ref:`set_owner<class_Node_set_owner>`).
 
 .. _class_Node_remove_and_skip:
 
@@ -454,7 +454,7 @@ Notify the current node and all its children recursively by calling notification
 
 - void  **set_fixed_process**  **(** :ref:`bool<class_bool>` enable  **)**
 
-Enables or disables node fixed framerate processing. When a node is being processed, it will receive a NOTIFICATION_PROCESS at a fixed (usually 60 fps, check :ref:`OS<class_os>` to change that) interval (and the :ref:`_fixed_process<class_Node__fixed_process>` callback will be called if exists). It is common to check how much time was elapsed since the previous frame by calling :ref:`get_fixed_process_time<class_Node_get_fixed_process_time>`.
+Enables or disables node fixed framerate processing. When a node is being processed, it will receive a NOTIFICATION_PROCESS at a fixed (usually 60 fps, check :ref:`OS<class_os>` to change that) interval (and the :ref:`_fixed_process<class_Node__fixed_process>` callback will be called if exists). It is common to check how much time was elapsed since the previous frame by calling :ref:`get_fixed_process_delta_time<class_Node_get_fixed_process_delta_time>`.
 
 .. _class_Node_get_fixed_process_delta_time:
 
@@ -472,7 +472,7 @@ Return true if fixed processing is enabled (see :ref:`set_fixed_process<class_No
 
 - void  **set_process**  **(** :ref:`bool<class_bool>` enable  **)**
 
-Enables or disables node processing. When a node is being processed, it will receive a NOTIFICATION_PROCESS on every drawn frame (and the :ref:`_process<class_Node__process>` callback will be called if exists). It is common to check how much time was elapsed since the previous frame by calling :ref:`get_process_time<class_Node_get_process_time>`.
+Enables or disables node processing. When a node is being processed, it will receive a NOTIFICATION_PROCESS on every drawn frame (and the :ref:`_process<class_Node__process>` callback will be called if exists). It is common to check how much time was elapsed since the previous frame by calling :ref:`get_process_delta_time<class_Node_get_process_delta_time>`.
 
 .. _class_Node_get_process_delta_time:
 

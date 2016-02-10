@@ -59,13 +59,13 @@ Return the list of points that define the polygon.
 
 - void  **set_build_mode**  **(** :ref:`int<class_int>` build_mode  **)**
 
-Set whether the polygon is to be a :ref:`ConvexPolygon2D<class_convexpolygon2d>` (``build_mode==0``), or a :ref:`ConcavePolygon2D<class_concavepolygon2d>` (``build_mode==1``).
+Set whether the polygon is to be a :ref:`ConvexPolygonShape2D<class_convexpolygonshape2d>` (``build_mode==0``), or a :ref:`ConcavePolygonShape2D<class_concavepolygonshape2d>` (``build_mode==1``).
 
 .. _class_CollisionPolygon2D_get_build_mode:
 
 - :ref:`int<class_int>`  **get_build_mode**  **(** **)** const
 
-Return whether the polygon is a :ref:`ConvexPolygon2D<class_convexpolygon2d>` (``build_mode==0``), or a :ref:`ConcavePolygon2D<class_concavepolygon2d>` (``build_mode==1``).
+Return whether the polygon is a :ref:`ConvexPolygonShape2D<class_convexpolygonshape2d>` (``build_mode==0``), or a :ref:`ConcavePolygonShape2D<class_concavepolygonshape2d>` (``build_mode==1``).
 
 .. _class_CollisionPolygon2D_set_trigger:
 

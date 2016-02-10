@@ -142,6 +142,12 @@ Member Functions
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_object>`          | :ref:`instance_from_id<class_@GDScript_instance_from_id>`  **(** :ref:`int<class_int>` instance_id  **)**                                                  |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Resource<class_resource>`      | :ref:`preload<class_@GDScript_preload>`  **(** :ref:`String<class_string>` path  **)**                                                                     |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Nil<class_nil>`                | :ref:`yield<class_@GDScript_yield>`  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` signal  **)**                                   |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Nil<class_nil>`                | :ref:`assert<class_@GDScript_assert>`  **(** :ref:`bool<class_bool>` condition  **)**                                                                      |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
 -----------------
@@ -525,5 +531,17 @@ Print a stack track at code location, only works when running with debugger turn
 .. _class_@GDScript_instance_from_id:
 
 - :ref:`Object<class_object>`  **instance_from_id**  **(** :ref:`int<class_int>` instance_id  **)**
+
+.. _class_@GDScript_preload:
+
+- :ref:`Resource<class_resource>`  **preload**  **(** :ref:`String<class_string>` path  **)**
+
+.. _class_@GDScript_yield:
+
+- :ref:`Nil<class_nil>`  **yield**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` signal  **)**
+
+.. _class_@GDScript_assert:
+
+- :ref:`Nil<class_nil>`  **assert**  **(** :ref:`bool<class_bool>` condition  **)**
 
 

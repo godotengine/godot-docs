@@ -123,7 +123,7 @@ Return the direction used for one-way collision detection.
 
 - void  **set_one_way_collision_max_depth**  **(** :ref:`float<class_float>` depth  **)**
 
-Set how far a body can go through this one, when it allows one-way collisions (see :ref:`set_one_way_collision_detection<class_PhysicsBody2D_set_one_way_collision_detection>`).
+Set how far a body can go through this one, when it allows one-way collisions (see :ref:`set_one_way_collision_direction<class_PhysicsBody2D_set_one_way_collision_direction>`).
 
 .. _class_PhysicsBody2D_get_one_way_collision_max_depth:
 
