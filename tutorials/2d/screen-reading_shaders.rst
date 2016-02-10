@@ -22,7 +22,7 @@ TexScreen shader instruction.
 
 Godot :ref:`doc_shading_language` has a special instruction, "texscreen", it takes as
 parameter the UV of the screen and returns a vec3 RGB with the color. A
-special built-in varying: SCREEN\_UV can be used to obtain the UV for
+special built-in varying: SCREEN_UV can be used to obtain the UV for
 the current fragment. As a result, this simple 2D fragment shader:
 
 ::

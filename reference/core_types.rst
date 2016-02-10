@@ -26,10 +26,10 @@ one cycle. It makes code more readable too.
 For files or memory sizes, ``size_t`` is used, which is warranted to be
 64 bits.
 
-For Unicode characters, CharType instead of wchar\_t is used, because
-many architectures have 4 bytes long wchar\_t, where 2 bytes might be
+For Unicode characters, CharType instead of wchar_t is used, because
+many architectures have 4 bytes long wchar_t, where 2 bytes might be
 desired. However, by default, this has not been forced and CharType maps
-directly to wchar\_t.
+directly to wchar_t.
 
 References:
 ~~~~~~~~~~~
@@ -198,7 +198,7 @@ is fast.
 References:
 ~~~~~~~~~~~
 
--  `core/string\_db.h <https://github.com/okamstudio/godot/blob/master/core/string_db.h>`__
+-  `core/string_db.h <https://github.com/okamstudio/godot/blob/master/core/string_db.h>`__
 
 Math types
 ----------
@@ -220,7 +220,7 @@ referencing them fast.
 References:
 ~~~~~~~~~~~
 
--  `core/path\_db.h <https://github.com/okamstudio/godot/blob/master/core/path_db.h>`__
+-  `core/path_db.h <https://github.com/okamstudio/godot/blob/master/core/path_db.h>`__
 
 RID
 ---

@@ -306,7 +306,7 @@ Godot crashes upon load
 
 Check ``adb logcat`` for possible problems, then:
 
--  Make sure libgodot\_android.so is in the libs/armeabi folder
+-  Make sure libgodot_android.so is in the libs/armeabi folder
 -  Check that the methods used in the Java singleton only use simple
    Java datatypes, more complex ones are not supported.
 

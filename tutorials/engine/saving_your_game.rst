@@ -41,8 +41,8 @@ Serializing
 The next step is to serialize the data. This makes it much easier to
 read and store to disk. In this case, we're assuming each member of
 group Persist is an instanced node and thus has a file path. GDScript
-has helper functions for this such as dictionary.to\_json() and
-dictionary.parse\_json() so we will use a dictionary. Our node needs to
+has helper functions for this such as dictionary.to_json() and
+dictionary.parse_json() so we will use a dictionary. Our node needs to
 contain a save function that returns this data. The save function will
 look like this:
 
@@ -72,7 +72,7 @@ look like this:
         return savedict
 
 This gives us a dictionary with the style {
-`variable\_name <that_variables_value>`__ } which will be useful when
+`variable_name <that_variables_value>`__ } which will be useful when
 loading.
 
 Saving and reading Data
@@ -80,7 +80,7 @@ Saving and reading Data
 
 As covered in the :ref:`doc_file_system` tutorial, we'll need to open a file
 and write to it and then later read from it. Now that we have a way to
-call our groups and get their relevant data, let's use to\_json() to
+call our groups and get their relevant data, let's use to_json() to
 convert it into an easily stored string and store them in a file. Doing
 it this way ensures that each line is its own object so we have an easy
 way to pull the data out of the file as well.
@@ -99,7 +99,7 @@ way to pull the data out of the file as well.
         savegame.close()
 
 Game saved! Loading is fairly simple as well. For that we'll read each
-line, use parse\_json() to read it back to a dict, and then iterate over
+line, use parse_json() to read it back to a dict, and then iterate over
 the dict to read our values. But we'll need to first create the object
 and we can use filename and parent to achieve that. Here is our load
 function:
@@ -149,7 +149,7 @@ This implementation assumes no Persist objects are children of other
 Persist objects. Doing so would create invalid paths. If this is one of
 the needs of a project this needs to be considered. Saving objects in
 stages (parent objects first) so they are available when child objects
-are loaded will make sure they're available for the add\_child() call.
+are loaded will make sure they're available for the add_child() call.
 There will also need to be some way to link children to parents as the
 nodepath will likely be invalid.
 

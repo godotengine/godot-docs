@@ -12,7 +12,7 @@ splash screen.
 
 Following is a file with the assets that will be used:
 
-attachment:robisplash\_assets.zip
+attachment:robisplash_assets.zip
 
 Setting Up
 ----------

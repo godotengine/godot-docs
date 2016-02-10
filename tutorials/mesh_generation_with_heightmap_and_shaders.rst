@@ -226,7 +226,7 @@ already set for the fragment shader. Thus, the same image will be used
 in this shader as the heightmap. The ``height_range`` parameter is a
 parameter that we will use to increase the height effect.
 
-At line 3, we save the x and z position of the SRC\_VERTEX, because we
+At line 3, we save the x and z position of the SRC_VERTEX, because we
 do not want them to change : the plane must remain square. Remember
 that Y axis corresponds to the "altitude", which is the only one we
 want to change with the heightmap.

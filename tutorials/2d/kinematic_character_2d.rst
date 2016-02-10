@@ -99,7 +99,7 @@ Moving the Kinematic Character
 Go back to the character scene, and open the script, the magic begins
 now! Kinematic body will do nothing by default, but it has a really
 useful function called
-`move(motion\_vector:Vector2) <https://github.com/okamstudio/godot/wiki/class_kinematicbody2d#move>`__.
+`move(motion_vector:Vector2) <https://github.com/okamstudio/godot/wiki/class_kinematicbody2d#move>`__.
 This function takes a
 :ref:`Vector2 <class_Vector2>` as
 an argument, and tries to apply that motion to the kinematic body. If a
@@ -251,7 +251,7 @@ certain threshold), the character can be determined to be there.
 
 A more complete demo can be found in the demo zip distributed with the
 engine, or in the
-https://github.com/okamstudio/godot/tree/master/demos/2d/kinematic\_char.
+https://github.com/okamstudio/godot/tree/master/demos/2d/kinematic_char.
 
 
 

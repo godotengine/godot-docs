@@ -8,7 +8,7 @@ Status list : Not started, Started, Finished, Removed
 | \| Class name \| Assigned to \| Status \| Start date \| Notes \|
 | \| @GDScript \| \| \|
 | \| @Global Scope \| \| \|
-| \| AABB \| bojidar\_bg \| Finished \|
+| \| AABB \| bojidar_bg \| Finished \|
 | \| AcceptDialog \| \| \|
 | \| AnimatedSprite \| \| \|
 | \| AnimatedSprite3D \| \| \|
@@ -116,7 +116,7 @@ Status list : Not started, Started, Finished, Removed
 | \| HTTPClient \| \| \|
 | \| HingeJoint \| \| \|
 | \| IP \| \| \|
-| \| IP\_Unix \| \| \|
+| \| IP_Unix \| \| \|
 | \| Image \| \| \|
 | \| ImageTexture \| \| \|
 | \| ImmediateGeometry \| \| \|
@@ -241,7 +241,7 @@ Status list : Not started, Started, Finished, Removed
 | \| RayShape \| \| \|
 | \| RayShape2D \| Ovnuniarchos \| Finished \| \|
 | \| RealArray \| \| \|
-| \| Rect2 \| bojidar\_bg \| Finished \|
+| \| Rect2 \| bojidar_bg \| Finished \|
 | \| RectangleShape2D \| Ovnuniarchos \| Finished \| \|
 | \| Reference \| \| \|
 | \| ReferenceFrame \| \| \|
@@ -310,7 +310,7 @@ Status list : Not started, Started, Finished, Removed
 | \| StyleBoxImageMask \| \| \|
 | \| StyleBoxTexture \| \| \|
 | \| SurfaceTool \| \| \|
-| \| TCP\_Server \| \| \|
+| \| TCP_Server \| \| \|
 | \| TabContainer \| \| \|
 | \| Tabs \| \| \|
 | \| TestCube \| \| \|
@@ -339,10 +339,10 @@ Status list : Not started, Started, Finished, Removed
 | \| VSeparator \| \| \|
 | \| VSlider \| \| \|
 | \| VSplitContainer \| \| \|
-| \| Vector2 \| bojidar\_bg \| Finished \|
-| \| Vector2Array \| bojidar\_bg \| Finished \|
-| \| Vector3 \| bojidar\_bg \| Finished \|
-| \| Vector3Array \| bojidar\_bg \| Finished \|
+| \| Vector2 \| bojidar_bg \| Finished \|
+| \| Vector2Array \| bojidar_bg \| Finished \|
+| \| Vector3 \| bojidar_bg \| Finished \|
+| \| Vector3Array \| bojidar_bg \| Finished \|
 | \| VehicleBody \| \| \|
 | \| VehicleWheel \| \| \|
 | \| VideoPlayer \| \| \|

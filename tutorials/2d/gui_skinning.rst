@@ -78,7 +78,7 @@ An example usage:
     var l = Label.new()
     l.set_theme(t)
 
-In the example above, a new theme is created. The "font\_color" option
+In the example above, a new theme is created. The "font_color" option
 is changed and then applied to a label. As a result, the label (and all
 children and grand children labels) will use that color.
 
@@ -123,7 +123,7 @@ controls.
 Example: Themeing a Button
 --------------------------
 
-Take some assets attachment:skin\_assets.zip, go to the "theme" menu and
+Take some assets attachment:skin_assets.zip, go to the "theme" menu and
 select "Add Class Item":
 
 .. image:: /img/themeci.png

@@ -819,7 +819,7 @@ Setters/Getters
 
 It is often useful to know when an member variable changed. It may
 also be desired to encapsulate its access. For this, GDScript provides
-a *setter\_/\_getter* helper using the ``setget`` keyword.
+a *setter_/_getter* helper using the ``setget`` keyword.
 
 Just add it at the end of the variable definition line like this:
 
@@ -966,7 +966,7 @@ single callback and the sender must be identified:
             b.connect("pressed",self,"_button_pressed",[b])
 
 Finally, emitting a custom signal is done by using the
-Object.emit\_signal method:
+Object.emit_signal method:
 
 ::
 

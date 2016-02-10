@@ -28,10 +28,10 @@ For compiling under Windows, the following is required:
 Setting Up SCons
 ----------------
 
-Set the environment variable ANDROID\_HOME to point to the Android
+Set the environment variable ANDROID_HOME to point to the Android
 SDK.
 
-Set the environment variable ANDROID\_NDK\_ROOT to point to the
+Set the environment variable ANDROID_NDK_ROOT to point to the
 Android NDK.
 
 To set those environment variables on Windows, press Windows+R, type
@@ -78,12 +78,12 @@ alternatively if you are under unix you can symlink:
 
     user@host:~/godot$ ln -s bin/libgodot.android..so platform/android/java/libs/armeabi/libgodot_android.so
 
-Remember that only *one* of libgodot\_android.so must exist for each
+Remember that only *one* of libgodot_android.so must exist for each
 platform, for each build type (release, debug, etc), it must be
 replaced.
 
 **Note**: The file inside libs/armeabi must be renamed to
-**"libgodot\_android.so"**, or else unsatisfied link error will happen
+**"libgodot_android.so"**, or else unsatisfied link error will happen
 at runtime.
 
 If you also want to include support for x86 Android, add the following
@@ -221,7 +221,7 @@ Application exits immediately
 If the application runs but exits immediately, there might be one of the
 following reasons:
 
--  libgodot\_android.so is not in libs/armeabi
+-  libgodot_android.so is not in libs/armeabi
 -  Device does not support armv7 (try compiling yourself for armv6)
 -  Device is Intel, and apk is compiled for ARM.
 

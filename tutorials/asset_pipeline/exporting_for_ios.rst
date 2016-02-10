@@ -13,10 +13,10 @@ Requirements
 -  Download XCode for iOS
 -  Download the export templates:
    http://www.godotengine.org/projects/godot-engine/documents
--  Since there is no automatic deployer yet, unzip export\_templates.tpz
+-  Since there is no automatic deployer yet, unzip export_templates.tpz
    manually and extract GodotiOSXCode.zip from it.
 
-The zip contains an XCode project, godot\_ios.xcodeproj, an empty
+The zip contains an XCode project, godot_ios.xcodeproj, an empty
 data.pck file and the engine executable. Open the project, and modify
 the game name, icon, organization, provisioning signing certificate
 identities (??), etc.
@@ -30,7 +30,7 @@ and run/archive.
 
 If you want to test your scenes on the iOS device as you edit them, you
 can add your game directory to the project (instead of data.pck), and
-add a property "godot\_path" to Info.plist, with the name of your
+add a property "godot_path" to Info.plist, with the name of your
 directory as its value.
 
 .. image:: /img/godot_path.png

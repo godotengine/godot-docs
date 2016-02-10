@@ -312,7 +312,7 @@ This field is padded to 4 bytes.
 +---------------------+-------+-----------+--------------------------------------------------+
 | Offset              | Len   | Type      | Description                                      |
 +=====================+=======+===========+==================================================+
-| 4                   | 4     | Integer   | Format (see FORMAT\_\* in "Image":class\_image   |
+| 4                   | 4     | Integer   | Format (see FORMAT\_\* in "Image":class_image    |
 +---------------------+-------+-----------+--------------------------------------------------+
 | 8                   | 4     | Integer   | Mip-Maps (0 means no mip-maps).                  |
 +---------------------+-------+-----------+--------------------------------------------------+
@@ -463,8 +463,8 @@ Every string is is padded to 4 bytes.
 +===========================================+=======+===========+================+
 | 4                                         | 4     | Integer   | Array Length   |
 +-------------------------------------------+-------+-----------+----------------+
-| 8..8+length\_8\|4\|Float\| X Coordinate   | 4     | Float     | Y Coordinate   |
-| 8..12+length\_8                           |       |           |                |
+| 8..8+length_8\|4\|Float\| X Coordinate    | 4     | Float     | Y Coordinate   |
+| 8..12+length_8                            |       |           |                |
 +-------------------------------------------+-------+-----------+----------------+
 
 27: vector3 array
@@ -473,8 +473,8 @@ Every string is is padded to 4 bytes.
 | Offset \| Len \| Type \| Description
 | -- \| -- \| -- \| --
 | 4\|4\|Integer\| Array Length
-| 8..8+length\_12\|4\|Float\| X Coordinate
-| 8..12+length\_12\|4\|Float\| Y Coordinate
+| 8..8+length_12\|4\|Float\| X Coordinate
+| 8..12+length_12\|4\|Float\| Y Coordinate
 | 8..16+length\*12\|4\|Float\| Z Coordinate
 
 28: color array
@@ -485,9 +485,9 @@ Every string is is padded to 4 bytes.
 +============================================+=======+===========+================+
 | 4                                          | 4     | Integer   | Array Length   |
 +--------------------------------------------+-------+-----------+----------------+
-| 8..8+length\_16\|4\|Float\| Red (0..1)     | 4     | Float     | Green (0..1)   |
-| 8..12+length\_16                           |       |           |                |
+| 8..8+length_16\|4\|Float\| Red (0..1)      | 4     | Float     | Green (0..1)   |
+| 8..12+length_16                            |       |           |                |
 +--------------------------------------------+-------+-----------+----------------+
-| 8..16+length\_16\|4\|Float\| Blue (0..1)   | 4     | Float     | Alpha (0..1)   |
-| 8..20+length\_16                           |       |           |                |
+| 8..16+length_16\|4\|Float\| Blue (0..1)    | 4     | Float     | Alpha (0..1)   |
+| 8..20+length_16                            |       |           |                |
 +--------------------------------------------+-------+-----------+----------------+

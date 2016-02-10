@@ -60,7 +60,7 @@ character, created by Andreas Esau.
 
 .. image:: /img/tuto_cutout_walk.gif
 
-Get your assets attachment:gbot\_resources.zip .
+Get your assets attachment:gbot_resources.zip .
 
 Setting up the Rig
 ~~~~~~~~~~~~~~~~~~
@@ -146,8 +146,8 @@ hierarchy, by copying it's transform to the remote node.
 This enables to have a visibility order independent from the
 hierarchy.
 
-Simply create two more nodes as children from torso, remote\_arm\_l and
-remote\_hand\_l and link them to the actual sprites:
+Simply create two more nodes as children from torso, remote_arm_l and
+remote_hand_l and link them to the actual sprites:
 
 .. image:: /img/tuto_cutout9.png
 

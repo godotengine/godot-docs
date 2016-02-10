@@ -11,307 +11,307 @@ based on the Unix standard locale strings:
 +==============+====================================+
 | ar           | Arabic                             |
 +--------------+------------------------------------+
-| ar\_AE       | Arabic (United Arab Emirates)      |
+| ar_AE        | Arabic (United Arab Emirates)      |
 +--------------+------------------------------------+
-| ar\_BH       | Arabic (Bahrain)                   |
+| ar_BH        | Arabic (Bahrain)                   |
 +--------------+------------------------------------+
-| ar\_DZ       | Arabic (Algeria)                   |
+| ar_DZ        | Arabic (Algeria)                   |
 +--------------+------------------------------------+
-| ar\_EG       | Arabic (Egypt)                     |
+| ar_EG        | Arabic (Egypt)                     |
 +--------------+------------------------------------+
-| ar\_IQ       | Arabic (Iraq)                      |
+| ar_IQ        | Arabic (Iraq)                      |
 +--------------+------------------------------------+
-| ar\_JO       | Arabic (Jordan)                    |
+| ar_JO        | Arabic (Jordan)                    |
 +--------------+------------------------------------+
-| ar\_KW       | Arabic (Kuwait)                    |
+| ar_KW        | Arabic (Kuwait)                    |
 +--------------+------------------------------------+
-| ar\_LB       | Arabic (Lebanon)                   |
+| ar_LB        | Arabic (Lebanon)                   |
 +--------------+------------------------------------+
-| ar\_LY       | Arabic (Libya)                     |
+| ar_LY        | Arabic (Libya)                     |
 +--------------+------------------------------------+
-| ar\_MA       | Arabic (Morocco)                   |
+| ar_MA        | Arabic (Morocco)                   |
 +--------------+------------------------------------+
-| ar\_OM       | Arabic (Oman)                      |
+| ar_OM        | Arabic (Oman)                      |
 +--------------+------------------------------------+
-| ar\_QA       | Arabic (Qatar)                     |
+| ar_QA        | Arabic (Qatar)                     |
 +--------------+------------------------------------+
-| ar\_SA       | Arabic (Saudi Arabia)              |
+| ar_SA        | Arabic (Saudi Arabia)              |
 +--------------+------------------------------------+
-| ar\_SD       | Arabic (Sudan)                     |
+| ar_SD        | Arabic (Sudan)                     |
 +--------------+------------------------------------+
-| ar\_SY       | Arabic (Syria)                     |
+| ar_SY        | Arabic (Syria)                     |
 +--------------+------------------------------------+
-| ar\_TN       | Arabic (Tunisia)                   |
+| ar_TN        | Arabic (Tunisia)                   |
 +--------------+------------------------------------+
-| ar\_YE       | Arabic (Yemen)                     |
+| ar_YE        | Arabic (Yemen)                     |
 +--------------+------------------------------------+
 | be           | Belarusian                         |
 +--------------+------------------------------------+
-| be\_BY       | Belarusian (Belarus)               |
+| be_BY        | Belarusian (Belarus)               |
 +--------------+------------------------------------+
 | bg           | Bulgarian                          |
 +--------------+------------------------------------+
-| bg\_BG       | Bulgarian (Bulgaria)               |
+| bg_BG        | Bulgarian (Bulgaria)               |
 +--------------+------------------------------------+
 | ca           | Catalan                            |
 +--------------+------------------------------------+
-| ca\_ES       | Catalan (Spain)                    |
+| ca_ES        | Catalan (Spain)                    |
 +--------------+------------------------------------+
 | cs           | Czech                              |
 +--------------+------------------------------------+
-| cs\_CZ       | Czech (Czech Republic)             |
+| cs_CZ        | Czech (Czech Republic)             |
 +--------------+------------------------------------+
 | da           | Danish                             |
 +--------------+------------------------------------+
-| da\_DK       | Danish (Denmark)                   |
+| da_DK        | Danish (Denmark)                   |
 +--------------+------------------------------------+
 | de           | German                             |
 +--------------+------------------------------------+
-| de\_AT       | German (Austria)                   |
+| de_AT        | German (Austria)                   |
 +--------------+------------------------------------+
-| de\_CH       | German (Switzerland)               |
+| de_CH        | German (Switzerland)               |
 +--------------+------------------------------------+
-| de\_DE       | German (Germany)                   |
+| de_DE        | German (Germany)                   |
 +--------------+------------------------------------+
-| de\_LU       | German (Luxembourg)                |
+| de_LU        | German (Luxembourg)                |
 +--------------+------------------------------------+
 | el           | Greek                              |
 +--------------+------------------------------------+
-| el\_CY       | Greek (Cyprus)                     |
+| el_CY        | Greek (Cyprus)                     |
 +--------------+------------------------------------+
-| el\_GR       | Greek (Greece)                     |
+| el_GR        | Greek (Greece)                     |
 +--------------+------------------------------------+
 | en           | English                            |
 +--------------+------------------------------------+
-| en\_AU       | English (Australia)                |
+| en_AU        | English (Australia)                |
 +--------------+------------------------------------+
-| en\_CA       | English (Canada)                   |
+| en_CA        | English (Canada)                   |
 +--------------+------------------------------------+
-| en\_GB       | English (United Kingdom)           |
+| en_GB        | English (United Kingdom)           |
 +--------------+------------------------------------+
-| en\_IE       | English (Ireland)                  |
+| en_IE        | English (Ireland)                  |
 +--------------+------------------------------------+
-| en\_IN       | English (India)                    |
+| en_IN        | English (India)                    |
 +--------------+------------------------------------+
-| en\_MT       | English (Malta)                    |
+| en_MT        | English (Malta)                    |
 +--------------+------------------------------------+
-| en\_NZ       | English (New Zealand)              |
+| en_NZ        | English (New Zealand)              |
 +--------------+------------------------------------+
-| en\_PH       | English (Philippines)              |
+| en_PH        | English (Philippines)              |
 +--------------+------------------------------------+
-| en\_SG       | English (Singapore)                |
+| en_SG        | English (Singapore)                |
 +--------------+------------------------------------+
-| en\_US       | English (United States)            |
+| en_US        | English (United States)            |
 +--------------+------------------------------------+
-| en\_ZA       | English (South Africa)             |
+| en_ZA        | English (South Africa)             |
 +--------------+------------------------------------+
 | es           | Spanish                            |
 +--------------+------------------------------------+
-| es\_AR       | Spanish (Argentina)                |
+| es_AR        | Spanish (Argentina)                |
 +--------------+------------------------------------+
-| es\_BO       | Spanish (Bolivia)                  |
+| es_BO        | Spanish (Bolivia)                  |
 +--------------+------------------------------------+
-| es\_CL       | Spanish (Chile)                    |
+| es_CL        | Spanish (Chile)                    |
 +--------------+------------------------------------+
-| es\_CO       | Spanish (Colombia)                 |
+| es_CO        | Spanish (Colombia)                 |
 +--------------+------------------------------------+
-| es\_CR       | Spanish (Costa Rica)               |
+| es_CR        | Spanish (Costa Rica)               |
 +--------------+------------------------------------+
-| es\_DO       | Spanish (Dominican Republic)       |
+| es_DO        | Spanish (Dominican Republic)       |
 +--------------+------------------------------------+
-| es\_EC       | Spanish (Ecuador)                  |
+| es_EC        | Spanish (Ecuador)                  |
 +--------------+------------------------------------+
-| es\_ES       | Spanish (Spain)                    |
+| es_ES        | Spanish (Spain)                    |
 +--------------+------------------------------------+
-| es\_GT       | Spanish (Guatemala)                |
+| es_GT        | Spanish (Guatemala)                |
 +--------------+------------------------------------+
-| es\_HN       | Spanish (Honduras)                 |
+| es_HN        | Spanish (Honduras)                 |
 +--------------+------------------------------------+
-| es\_MX       | Spanish (Mexico)                   |
+| es_MX        | Spanish (Mexico)                   |
 +--------------+------------------------------------+
-| es\_NI       | Spanish (Nicaragua)                |
+| es_NI        | Spanish (Nicaragua)                |
 +--------------+------------------------------------+
-| es\_PA       | Spanish (Panama)                   |
+| es_PA        | Spanish (Panama)                   |
 +--------------+------------------------------------+
-| es\_PE       | Spanish (Peru)                     |
+| es_PE        | Spanish (Peru)                     |
 +--------------+------------------------------------+
-| es\_PR       | Spanish (Puerto Rico)              |
+| es_PR        | Spanish (Puerto Rico)              |
 +--------------+------------------------------------+
-| es\_PY       | Spanish (Paraguay)                 |
+| es_PY        | Spanish (Paraguay)                 |
 +--------------+------------------------------------+
-| es\_SV       | Spanish (El Salvador)              |
+| es_SV        | Spanish (El Salvador)              |
 +--------------+------------------------------------+
-| es\_US       | Spanish (United States)            |
+| es_US        | Spanish (United States)            |
 +--------------+------------------------------------+
-| es\_UY       | Spanish (Uruguay)                  |
+| es_UY        | Spanish (Uruguay)                  |
 +--------------+------------------------------------+
-| es\_VE       | Spanish (Venezuela)                |
+| es_VE        | Spanish (Venezuela)                |
 +--------------+------------------------------------+
 | et           | Estonian                           |
 +--------------+------------------------------------+
-| et\_EE       | Estonian (Estonia)                 |
+| et_EE        | Estonian (Estonia)                 |
 +--------------+------------------------------------+
 | fi           | Finnish                            |
 +--------------+------------------------------------+
-| fi\_FI       | Finnish (Finland)                  |
+| fi_FI        | Finnish (Finland)                  |
 +--------------+------------------------------------+
 | fr           | French                             |
 +--------------+------------------------------------+
-| fr\_BE       | French (Belgium)                   |
+| fr_BE        | French (Belgium)                   |
 +--------------+------------------------------------+
-| fr\_CA       | French (Canada)                    |
+| fr_CA        | French (Canada)                    |
 +--------------+------------------------------------+
-| fr\_CH       | French (Switzerland)               |
+| fr_CH        | French (Switzerland)               |
 +--------------+------------------------------------+
-| fr\_FR       | French (France)                    |
+| fr_FR        | French (France)                    |
 +--------------+------------------------------------+
-| fr\_LU       | French (Luxembourg)                |
+| fr_LU        | French (Luxembourg)                |
 +--------------+------------------------------------+
 | ga           | Irish                              |
 +--------------+------------------------------------+
-| ga\_IE       | Irish (Ireland)                    |
+| ga_IE        | Irish (Ireland)                    |
 +--------------+------------------------------------+
 | hi           | Hindi (India)                      |
 +--------------+------------------------------------+
-| hi\_IN       | Hindi (India)                      |
+| hi_IN        | Hindi (India)                      |
 +--------------+------------------------------------+
 | hr           | Croatian                           |
 +--------------+------------------------------------+
-| hr\_HR       | Croatian (Croatia)                 |
+| hr_HR        | Croatian (Croatia)                 |
 +--------------+------------------------------------+
 | hu           | Hungarian                          |
 +--------------+------------------------------------+
-| hu\_HU       | Hungarian (Hungary)                |
+| hu_HU        | Hungarian (Hungary)                |
 +--------------+------------------------------------+
 | in           | Indonesian                         |
 +--------------+------------------------------------+
-| in\_ID       | Indonesian (Indonesia)             |
+| in_ID        | Indonesian (Indonesia)             |
 +--------------+------------------------------------+
 | is           | Icelandic                          |
 +--------------+------------------------------------+
-| is\_IS       | Icelandic (Iceland)                |
+| is_IS        | Icelandic (Iceland)                |
 +--------------+------------------------------------+
 | it           | Italian                            |
 +--------------+------------------------------------+
-| it\_CH       | Italian (Switzerland)              |
+| it_CH        | Italian (Switzerland)              |
 +--------------+------------------------------------+
-| it\_IT       | Italian (Italy)                    |
+| it_IT        | Italian (Italy)                    |
 +--------------+------------------------------------+
 | iw           | Hebrew                             |
 +--------------+------------------------------------+
-| iw\_IL       | Hebrew (Israel)                    |
+| iw_IL        | Hebrew (Israel)                    |
 +--------------+------------------------------------+
 | ja           | Japanese                           |
 +--------------+------------------------------------+
-| ja\_JP       | Japanese (Japan)                   |
+| ja_JP        | Japanese (Japan)                   |
 +--------------+------------------------------------+
-| ja\_JP\_JP   | Japanese (Japan,JP)                |
+| ja_JP_JP     | Japanese (Japan,JP)                |
 +--------------+------------------------------------+
 | ko           | Korean                             |
 +--------------+------------------------------------+
-| ko\_KR       | Korean (South Korea)               |
+| ko_KR        | Korean (South Korea)               |
 +--------------+------------------------------------+
 | lt           | Lithuanian                         |
 +--------------+------------------------------------+
-| lt\_LT       | Lithuanian (Lithuania)             |
+| lt_LT        | Lithuanian (Lithuania)             |
 +--------------+------------------------------------+
 | lv           | Latvian                            |
 +--------------+------------------------------------+
-| lv\_LV       | Latvian (Latvia)                   |
+| lv_LV        | Latvian (Latvia)                   |
 +--------------+------------------------------------+
 | mk           | Macedonian                         |
 +--------------+------------------------------------+
-| mk\_MK       | Macedonian (Macedonia)             |
+| mk_MK        | Macedonian (Macedonia)             |
 +--------------+------------------------------------+
 | ms           | Malay                              |
 +--------------+------------------------------------+
-| ms\_MY       | Malay (Malaysia)                   |
+| ms_MY        | Malay (Malaysia)                   |
 +--------------+------------------------------------+
 | mt           | Maltese                            |
 +--------------+------------------------------------+
-| mt\_MT       | Maltese (Malta)                    |
+| mt_MT        | Maltese (Malta)                    |
 +--------------+------------------------------------+
 | nl           | Dutch                              |
 +--------------+------------------------------------+
-| nl\_BE       | Dutch (Belgium)                    |
+| nl_BE        | Dutch (Belgium)                    |
 +--------------+------------------------------------+
-| nl\_NL       | Dutch (Netherlands)                |
+| nl_NL        | Dutch (Netherlands)                |
 +--------------+------------------------------------+
 | no           | Norwegian                          |
 +--------------+------------------------------------+
-| no\_NO       | Norwegian (Norway)                 |
+| no_NO        | Norwegian (Norway)                 |
 +--------------+------------------------------------+
-| no\_NO\_NY   | Norwegian (Norway,Nynorsk)         |
+| no_NO_NY     | Norwegian (Norway,Nynorsk)         |
 +--------------+------------------------------------+
 | pl           | Polish                             |
 +--------------+------------------------------------+
-| pl\_PL       | Polish (Poland)                    |
+| pl_PL        | Polish (Poland)                    |
 +--------------+------------------------------------+
 | pt           | Portuguese                         |
 +--------------+------------------------------------+
-| pt\_BR       | Portuguese (Brazil)                |
+| pt_BR        | Portuguese (Brazil)                |
 +--------------+------------------------------------+
-| pt\_PT       | Portuguese (Portugal)              |
+| pt_PT        | Portuguese (Portugal)              |
 +--------------+------------------------------------+
 | ro           | Romanian                           |
 +--------------+------------------------------------+
-| ro\_RO       | Romanian (Romania)                 |
+| ro_RO        | Romanian (Romania)                 |
 +--------------+------------------------------------+
 | ru           | Russian                            |
 +--------------+------------------------------------+
-| ru\_RU       | Russian (Russia)                   |
+| ru_RU        | Russian (Russia)                   |
 +--------------+------------------------------------+
 | sk           | Slovak                             |
 +--------------+------------------------------------+
-| sk\_SK       | Slovak (Slovakia)                  |
+| sk_SK        | Slovak (Slovakia)                  |
 +--------------+------------------------------------+
 | sl           | Slovenian                          |
 +--------------+------------------------------------+
-| sl\_SI       | Slovenian (Slovenia)               |
+| sl_SI        | Slovenian (Slovenia)               |
 +--------------+------------------------------------+
 | sq           | Albanian                           |
 +--------------+------------------------------------+
-| sq\_AL       | Albanian (Albania)                 |
+| sq_AL        | Albanian (Albania)                 |
 +--------------+------------------------------------+
 | sr           | Serbian                            |
 +--------------+------------------------------------+
-| sr\_BA       | Serbian (Bosnia and Herzegovina)   |
+| sr_BA        | Serbian (Bosnia and Herzegovina)   |
 +--------------+------------------------------------+
-| sr\_CS       | Serbian (Serbia and Montenegro)    |
+| sr_CS        | Serbian (Serbia and Montenegro)    |
 +--------------+------------------------------------+
-| sr\_ME       | Serbian (Montenegro)               |
+| sr_ME        | Serbian (Montenegro)               |
 +--------------+------------------------------------+
-| sr\_RS       | Serbian (Serbia)                   |
+| sr_RS        | Serbian (Serbia)                   |
 +--------------+------------------------------------+
 | sv           | Swedish                            |
 +--------------+------------------------------------+
-| sv\_SE       | Swedish (Sweden)                   |
+| sv_SE        | Swedish (Sweden)                   |
 +--------------+------------------------------------+
 | th           | Thai                               |
 +--------------+------------------------------------+
-| th\_TH       | Thai (Thailand)                    |
+| th_TH        | Thai (Thailand)                    |
 +--------------+------------------------------------+
-| th\_TH\_TH   | Thai (Thailand,TH)                 |
+| th_TH_TH     | Thai (Thailand,TH)                 |
 +--------------+------------------------------------+
 | tr           | Turkish                            |
 +--------------+------------------------------------+
-| tr\_TR       | Turkish (Turkey)                   |
+| tr_TR        | Turkish (Turkey)                   |
 +--------------+------------------------------------+
 | uk           | Ukrainian                          |
 +--------------+------------------------------------+
-| uk\_UA       | Ukrainian (Ukraine)                |
+| uk_UA        | Ukrainian (Ukraine)                |
 +--------------+------------------------------------+
 | vi           | Vietnamese                         |
 +--------------+------------------------------------+
-| vi\_VN       | Vietnamese (Vietnam)               |
+| vi_VN        | Vietnamese (Vietnam)               |
 +--------------+------------------------------------+
 | zh           | Chinese                            |
 +--------------+------------------------------------+
-| zh\_CN       | Chinese (China)                    |
+| zh_CN        | Chinese (China)                    |
 +--------------+------------------------------------+
-| zh\_HK       | Chinese (Hong Kong)                |
+| zh_HK        | Chinese (Hong Kong)                |
 +--------------+------------------------------------+
-| zh\_SG       | Chinese (Singapore)                |
+| zh_SG        | Chinese (Singapore)                |
 +--------------+------------------------------------+
-| zh\_TW       | Chinese (Taiwan)                   |
+| zh_TW        | Chinese (Taiwan)                   |
 +--------------+------------------------------------+

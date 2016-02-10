@@ -85,7 +85,7 @@ string passing the name can be passed for brevity.
 References:
 ~~~~~~~~~~~
 
--  `core/object\_type\_db.h <https://github.com/okamstudio/godot/blob/master/core/object_type_db.h>`__
+-  `core/object_type_db.h <https://github.com/okamstudio/godot/blob/master/core/object_type_db.h>`__
 
 Constants
 ---------
@@ -146,7 +146,7 @@ or
 
 This is a string property, can take any string but the editor will only
 allow the defined hint ones. Since no hint flags were specified, the
-default ones are PROPERTY\_USAGE\_STORAGE and PROPERTY\_USAGE\_EDITOR.
+default ones are PROPERTY_USAGE_STORAGE and PROPERTY_USAGE_EDITOR.
 
 There are plenty of hints and usages available in object.h, give them a
 check.
@@ -285,7 +285,7 @@ the same time.
 References:
 ~~~~~~~~~~~
 
--  `core/io/resource\_loader.h <https://github.com/okamstudio/godot/blob/master/core/io/resource_loader.h>`__
+-  `core/io/resource_loader.h <https://github.com/okamstudio/godot/blob/master/core/io/resource_loader.h>`__
 
 Resource saving
 ---------------
@@ -304,4 +304,4 @@ be bundled with the saved resource and assigned sub-IDs, like
 References:
 ~~~~~~~~~~~
 
--  `core/io/resource\_saver.h <https://github.com/okamstudio/godot/blob/master/core/io/resource_saver.h>`__
+-  `core/io/resource_saver.h <https://github.com/okamstudio/godot/blob/master/core/io/resource_saver.h>`__

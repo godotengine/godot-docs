@@ -141,7 +141,7 @@ Target controls optimization and debug flags. Each mode means:
 
 -  **debug**: Build with C++ debugging symbols, runtime checks (performs
    checks and reports error) and none to little optimization.
--  **release\_debug**: Build without C++ debugging symbols and
+-  **release_debug**: Build without C++ debugging symbols and
    optimization, but keep the runtime checks (performs checks and
    reports errors). Official binaries use this configuration.
 -  **release**: Build without symbols, with optimization and with little

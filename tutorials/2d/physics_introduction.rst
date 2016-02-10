@@ -187,7 +187,7 @@ simply have mroe collision shapes. When added/deleted/moved/edited, it
 updates the list of shapes in the parent node.
 
 At run time, though, this node does not exist (can't be accessed with
-get\_node() ), since it's only meant to be an editor helper. To access
+get_node() ), since it's only meant to be an editor helper. To access
 the shapes created at runtime, use the CollisionObject2D API directly.
 
 As an example, here's the scene from the platformer, containing an
@@ -204,7 +204,7 @@ non-collidable (objects can't collide against it). They just move around
 with the object as ghosts. This makes them useful in two situations:
 
 -  Disabling collision in a specific shape.
--  Get an Area2D to trigger a body\_enter / body\_exit signals with non
+-  Get an Area2D to trigger a body_enter / body_exit signals with non
    collidable objects (useful in several situations).
 
 CollisionPolygon2D
@@ -351,7 +351,7 @@ adjusting how 2D physics works:
 
 Leaving them alone is best (except for the gravity, that needs to be
 adjusted in most games), but there is one specific parameter that might
-need tweaking which is the "cell\_size". Godot 2D physics engine used by
+need tweaking which is the "cell_size". Godot 2D physics engine used by
 default a space hashing algorithm that divides space in cells to compute
 close collision pairs more efficiently.
 
@@ -374,7 +374,7 @@ but it's called once per physics frame (by default 60 times per second).
 During this time, the physics engine is in *synchronization* state and
 can be accessed directly and without delays.
 
-To enable a fixed process callback, use the set\_fixed\_process()
+To enable a fixed process callback, use the set_fixed_process()
 function, example:
 
 ::
@@ -400,8 +400,8 @@ server must be used directly. For this, the
 :ref:`Physics2DDirectspaceState <class_Physics2DDirectspaceState>`
 class must be used. To obtain it, the following steps must be taken:
 
-1. It must be used inside the \_fixed\_process() callback, or at
-\_integrate\_forces()
+1. It must be used inside the _fixed_process() callback, or at
+_integrate_forces()
 
 2. The 2D RIDs for the space and physics server must be obtained.
 

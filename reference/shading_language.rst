@@ -147,37 +147,37 @@ follows:
 | \| float *asin*\ ( float ) \| arc-Sine \|
 | \| float *acos*\ ( float ) \| arc-Cosine \|
 | \| float *atan*\ ( float ) \| arc-Tangent \|
-| \| vec\_type *pow*\ ( vec\_type, float ) \| Power \|
-| \| vec\_type *pow*\ ( vec\_type, vec\_type ) \| Power (Vec. Exponent)
+| \| vec_type *pow*\ ( vec_type, float ) \| Power \|
+| \| vec_type *pow*\ ( vec_type, vec_type ) \| Power (Vec. Exponent)
   \|
-| \| vec\_type *exp*\ ( vec\_type ) \| Base-e Exponential \|
-| \| vec\_type *log*\ ( vec\_type ) \| Natural Logarithm \|
-| \| vec\_type *sqrt*\ ( vec\_type ) \| Square Root \|
-| \| vec\_type *abs*\ ( vec\_type ) \| Absolute \|
-| \| vec\_type *sign*\ ( vec\_type ) \| Sign \|
-| \| vec\_type *floor*\ ( vec\_type ) \| Floor \|
-| \| vec\_type *trunc*\ ( vec\_type ) \| Trunc \|
-| \| vec\_type *ceil*\ ( vec\_type ) \| Ceiling \|
-| \| vec\_type *fract*\ ( vec\_type ) \| Fractional \|
-| \| vec\_type *mod*\ ( vec\_type,vec\_type ) \| Remainder \|
-| \| vec\_type *min*\ ( vec\_type,vec\_type ) \| Minimum \|
-| \| vec\_type *min*\ ( vec\_type,vec\_type ) \| Maximum \|
-| \| vec\_type *clamp*\ ( vec\_type value,vec\_type min, vec\_type max )
+| \| vec_type *exp*\ ( vec_type ) \| Base-e Exponential \|
+| \| vec_type *log*\ ( vec_type ) \| Natural Logarithm \|
+| \| vec_type *sqrt*\ ( vec_type ) \| Square Root \|
+| \| vec_type *abs*\ ( vec_type ) \| Absolute \|
+| \| vec_type *sign*\ ( vec_type ) \| Sign \|
+| \| vec_type *floor*\ ( vec_type ) \| Floor \|
+| \| vec_type *trunc*\ ( vec_type ) \| Trunc \|
+| \| vec_type *ceil*\ ( vec_type ) \| Ceiling \|
+| \| vec_type *fract*\ ( vec_type ) \| Fractional \|
+| \| vec_type *mod*\ ( vec_type,vec_type ) \| Remainder \|
+| \| vec_type *min*\ ( vec_type,vec_type ) \| Minimum \|
+| \| vec_type *min*\ ( vec_type,vec_type ) \| Maximum \|
+| \| vec_type *clamp*\ ( vec_type value,vec_type min, vec_type max )
   \| Clamp to Min-Max \|
-| \| vec\_type *mix*\ ( vec\_type a,vec\_type b, float c ) \| Linear
+| \| vec_type *mix*\ ( vec_type a,vec_type b, float c ) \| Linear
   Interpolate \|
-| \| vec\_type *mix*\ ( vec\_type a,vec\_type b, vec\_type c ) \| Linear
+| \| vec_type *mix*\ ( vec_type a,vec_type b, vec_type c ) \| Linear
   Interpolate (Vector Coef.)\|
-| \| vec\_type *step*\ ( vec\_type a,vec\_type b) \| \` a[i] < b[i] ?
+| \| vec_type *step*\ ( vec_type a,vec_type b) \| \` a[i] < b[i] ?
   0.0 : 1.0\`\|
-| \| vec\_type *smoothstep*\ ( vec\_type a,vec\_type b,vec\_type c) \|
+| \| vec_type *smoothstep*\ ( vec_type a,vec_type b,vec_type c) \|
   \|
-| \| float *length*\ ( vec\_type ) \| Vector Length \|
-| \| float *distance*\ ( vec\_type, vec\_type ) \| Distance between
+| \| float *length*\ ( vec_type ) \| Vector Length \|
+| \| float *distance*\ ( vec_type, vec_type ) \| Distance between
   vector. \|
-| \| float *dot*\ ( vec\_type, vec\_type ) \| Dot Product \|
+| \| float *dot*\ ( vec_type, vec_type ) \| Dot Product \|
 | \| vec3 *dot*\ ( vec3, vec3 ) \| Cross Product \|
-| \| vec\_type *normalize*\ ( vec\_type ) \| Normalize to unit length \|
+| \| vec_type *normalize*\ ( vec_type ) \| Normalize to unit length \|
 | \| vec3 *reflect*\ ( vec3, vec3 ) \| Reflect \|
 | \| color *tex*\ ( texture, vec2 ) \| Read from a texture in
   noormalized coords \|
@@ -195,10 +195,10 @@ Material - VertexShader
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 | \|\ *. Variable \|*. Description \|
-| \| const vec3 *SRC\_VERTEX* \| Model-Space Vertex \|
-| \| const vec3 *SRC\_NORMAL* \| Model-Space Normal \|
-| \| const vec3 *SRC\_TANGENT* \| Model-Space Tangent \|
-| \| const float *SRC\_BINORMALF* \| Direction to Compute Binormal \|
+| \| const vec3 *SRC_VERTEX* \| Model-Space Vertex \|
+| \| const vec3 *SRC_NORMAL* \| Model-Space Normal \|
+| \| const vec3 *SRC_TANGENT* \| Model-Space Tangent \|
+| \| const float *SRC_BINORMALF* \| Direction to Compute Binormal \|
 | \| vec3 *VERTEX* \| View-Space Vertex \|
 | \| vec3 *NORMAL* \| View-Space Normal \|
 | \| vec3 *TANGENT* \| View-Space Tangent \|
@@ -208,13 +208,13 @@ Material - VertexShader
 | \| color *COLOR* \| Vertex Color \|
 | \| out vec4 *VAR1* \| Varying 1 Output \|
 | \| out vec4 *VAR2* \| Varying 2 Output \|
-| \| out float *SPEC\_EXP* \| Specular Exponent (for Vertex Lighting) \|
-| \| out float *POINT\_SIZE* \| Point Size (for points) \|
-| \| const mat4 *WORLD\_MATRIX* \| Object World Matrix \|
-| \| const mat4 *INV\_CAMERA\_MATRIX* \| Inverse Camera Matrix \|
-| \| const mat4 *PROJECTION\_MATRIX* \| Projection Matrix \|
-| \| const mat4 *MODELVIEW\_MATRIX* \| (InvCamera \* Projection) \|
-| \| const float *INSTANCE\_ID* \| Instance ID (for multimesh)\|
+| \| out float *SPEC_EXP* \| Specular Exponent (for Vertex Lighting) \|
+| \| out float *POINT_SIZE* \| Point Size (for points) \|
+| \| const mat4 *WORLD_MATRIX* \| Object World Matrix \|
+| \| const mat4 *INV_CAMERA_MATRIX* \| Inverse Camera Matrix \|
+| \| const mat4 *PROJECTION_MATRIX* \| Projection Matrix \|
+| \| const mat4 *MODELVIEW_MATRIX* \| (InvCamera \* Projection) \|
+| \| const float *INSTANCE_ID* \| Instance ID (for multimesh)\|
 | \| const float *TIME* \| Time (in seconds) \|
 
 Material - FragmentShader
@@ -235,7 +235,7 @@ Material - FragmentShader
 +----------------------------------+----------------------------------------------------------------------------------+
 | const vec3 *NORMALMAP*           | Alternative to NORMAL, use for normal texture output.                            |
 +----------------------------------+----------------------------------------------------------------------------------+
-| const vec3 *NORMALMAP\_DEPTH*    | Complementary to the above, allows changing depth of normalmap.                  |
+| const vec3 *NORMALMAP_DEPTH*     | Complementary to the above, allows changing depth of normalmap.                  |
 +----------------------------------+----------------------------------------------------------------------------------+
 | const vec2 *UV*                  | UV                                                                               |
 +----------------------------------+----------------------------------------------------------------------------------+
@@ -247,25 +247,25 @@ Material - FragmentShader
 +----------------------------------+----------------------------------------------------------------------------------+
 | const vec4 *VAR2*                | Varying 2                                                                        |
 +----------------------------------+----------------------------------------------------------------------------------+
-| const vec2 *SCREEN\_UV*          | Screen Texture Coordinate (for using with texscreen)                             |
+| const vec2 *SCREEN_UV*           | Screen Texture Coordinate (for using with texscreen)                             |
 +----------------------------------+----------------------------------------------------------------------------------+
 | const float *TIME*               | Time (in seconds)                                                                |
 +----------------------------------+----------------------------------------------------------------------------------+
-| const vec2 *POINT\_COORD*        | UV for point, when drawing point sprites.                                        |
+| const vec2 *POINT_COORD*         | UV for point, when drawing point sprites.                                        |
 +----------------------------------+----------------------------------------------------------------------------------+
 | out vec3 *DIFFUSE*               | Diffuse Color                                                                    |
 +----------------------------------+----------------------------------------------------------------------------------+
-| out vec4 *DIFFUSE\_ALPHA*        | Diffuse Color with Alpha (using this sends geometry to alpha pipeline)           |
+| out vec4 *DIFFUSE_ALPHA*         | Diffuse Color with Alpha (using this sends geometry to alpha pipeline)           |
 +----------------------------------+----------------------------------------------------------------------------------+
 | out vec3 *SPECULAR*              | Specular Color                                                                   |
 +----------------------------------+----------------------------------------------------------------------------------+
 | out vec3 *EMISSION*              | Emission Color                                                                   |
 +----------------------------------+----------------------------------------------------------------------------------+
-| out float *SPEC\_EXP*            | Specular Exponent (Fragment Version)                                             |
+| out float *SPEC_EXP*             | Specular Exponent (Fragment Version)                                             |
 +----------------------------------+----------------------------------------------------------------------------------+
 | out float *GLOW*                 | Glow                                                                             |
 +----------------------------------+----------------------------------------------------------------------------------+
-| out mat4 *INV\_CAMERA\_MATRIX*   | Inverse camera matrix, can be used to obtain world coords (see example below).   |
+| out mat4 *INV_CAMERA_MATRIX*     | Inverse camera matrix, can be used to obtain world coords (see example below).   |
 +----------------------------------+----------------------------------------------------------------------------------+
 
 Material - LightShader
@@ -276,23 +276,23 @@ Material - LightShader
 +================================+===============================+
 | const vec3 *NORMAL*            | View-Space normal             |
 +--------------------------------+-------------------------------+
-| const vec3 *LIGHT\_DIR*        | View-Space Light Direction    |
+| const vec3 *LIGHT_DIR*         | View-Space Light Direction    |
 +--------------------------------+-------------------------------+
-| const vec3 *EYE\_VEC*          | View-Space Eye-Point Vector   |
+| const vec3 *EYE_VEC*           | View-Space Eye-Point Vector   |
 +--------------------------------+-------------------------------+
 | const vec3 *DIFFUSE*           | Material Diffuse Color        |
 +--------------------------------+-------------------------------+
-| const vec3 *LIGHT\_DIFFUSE*    | Light Diffuse Color           |
+| const vec3 *LIGHT_DIFFUSE*     | Light Diffuse Color           |
 +--------------------------------+-------------------------------+
 | const vec3 *SPECULAR*          | Material Specular Color       |
 +--------------------------------+-------------------------------+
-| const vec3 *LIGHT\_SPECULAR*   | Light Specular Color          |
+| const vec3 *LIGHT_SPECULAR*    | Light Specular Color          |
 +--------------------------------+-------------------------------+
-| const float *SPECULAR\_EXP*    | Specular Exponent             |
+| const float *SPECULAR_EXP*     | Specular Exponent             |
 +--------------------------------+-------------------------------+
-| const vec1 *SHADE\_PARAM*      | Generic Shade Parameter       |
+| const vec1 *SHADE_PARAM*       | Generic Shade Parameter       |
 +--------------------------------+-------------------------------+
-| const vec2 *POINT\_COORD*      | Current UV for Point Sprite   |
+| const vec2 *POINT_COORD*       | Current UV for Point Sprite   |
 +--------------------------------+-------------------------------+
 | out vec2 *LIGHT*               | Resulting Light               |
 +--------------------------------+-------------------------------+
@@ -303,20 +303,20 @@ CanvasItem (2D) - VertexShader
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | \|\ *. Variable \|*. Description \|
-| \| const vec2 *SRC\_VERTEX* \| CanvasItem space vertex. \|
+| \| const vec2 *SRC_VERTEX* \| CanvasItem space vertex. \|
 | \| vec2 *UV* \| UV \|
 | \| out vec2 *VERTEX* \| Output LocalSpace vertex. \|
-| \| out vec2 *WORLD\_VERTEX* \| Output WorldSpace vertex. (use this or
+| \| out vec2 *WORLD_VERTEX* \| Output WorldSpace vertex. (use this or
   the one above) \|
 | \| color *COLOR* \| Vertex Color \|
 | \| out vec4 *VAR1* \| Varying 1 Output \|
 | \| out vec4 *VAR2* \| Varying 2 Output \|
-| \| out float *POINT\_SIZE* \| Point Size (for points) \|
-| \| const mat4 *WORLD\_MATRIX* \| Object World Matrix \|
-| \| const mat4 *EXTRA\_MATRIX* \| Extra (user supplied) matrix via
+| \| out float *POINT_SIZE* \| Point Size (for points) \|
+| \| const mat4 *WORLD_MATRIX* \| Object World Matrix \|
+| \| const mat4 *EXTRA_MATRIX* \| Extra (user supplied) matrix via
   :ref:`CanvasItem.draw_set_transform() <class_CanvasItem_draw_set_transform>`.
   Identity by default. \|
-| \| const mat4 *PROJECTION\_MATRIX* \| Projection Matrix (model coords
+| \| const mat4 *PROJECTION_MATRIX* \| Projection Matrix (model coords
   to screen).\|
 | \| const float *TIME* \| Time (in seconds) \|
 
@@ -324,23 +324,23 @@ CanvasItem (2D) - FragmentShader
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | \|\ *. Variable \|*. Description \|
-| \| const vec4 *SRC\_COLOR* \| Vertex color \|
+| \| const vec4 *SRC_COLOR* \| Vertex color \|
 | \| const vec4 *POSITION* \| Screen Position \|
 | \| vec2 *UV* \| UV \|
 | \| out color *COLOR* \| Output Color \|
 | \| out vec3 *NORMAL* \| Optional Normal (used for 2D Lighting) \|
 | \| out vec3 *NORMALMAP* \| Optional Normal in standard normalmap
   format (flipped y and Z from 0 to 1) \|
-| \| out float *NORMALMAP\_DEPTH* \| Depth option for above normalmap
+| \| out float *NORMALMAP_DEPTH* \| Depth option for above normalmap
   output, default value is 1.0 \|
 | \| const texture *TEXTURE* \| Current texture in use for CanvasItem \|
-| \| const vec2 *TEXTURE\_PIXEL\_SIZE* \| Pixel size for current 2D
+| \| const vec2 *TEXTURE_PIXEL_SIZE* \| Pixel size for current 2D
   texture \|
 | \| in vec4 *VAR1* \| Varying 1 Output \|
 | \| in vec4 *VAR2* \| Varying 2 Output \|
-| \| const vec2 *SCREEN\_UV*\ \| Screen Texture Coordinate (for using
+| \| const vec2 *SCREEN_UV*\ \| Screen Texture Coordinate (for using
   with texscreen) \|
-| \| const vec2 *POINT\_COORD* \| Current UV for Point Sprite \|
+| \| const vec2 *POINT_COORD* \| Current UV for Point Sprite \|
 | \| const float *TIME*\ \| Time (in seconds) \|
 
 CanvasItem (2D) - LightShader
@@ -352,18 +352,18 @@ CanvasItem (2D) - LightShader
 | \| in vec2 *UV* \| UV \|
 | \| in color *COLOR* \| Input Color \|
 | \| const texture *TEXTURE* \| Current texture in use for CanvasItem \|
-| \| const vec2 *TEXTURE\_PIXEL\_SIZE* \| Pixel size for current 2D
+| \| const vec2 *TEXTURE_PIXEL_SIZE* \| Pixel size for current 2D
   texture \|
 | \| in vec4 *VAR1* \| Varying 1 Output \|
 | \| in vec4 *VAR2* \| Varying 2 Output \|
-| \| const vec2 *SCREEN\_UV*\ \| Screen Texture Coordinate (for using
+| \| const vec2 *SCREEN_UV*\ \| Screen Texture Coordinate (for using
   with texscreen) \|
-| \| const vec2 *POINT\_COORD* \| Current UV for Point Sprite \|
+| \| const vec2 *POINT_COORD* \| Current UV for Point Sprite \|
 | \| const float *TIME*\ \| Time (in seconds) \|
-| \| vec2 *LIGHT\_VEC* \| Vector from light to fragment, can be modified
+| \| vec2 *LIGHT_VEC* \| Vector from light to fragment, can be modified
   to alter shadow computation. \|
-| \| const float *LIGHT\_HEIGHT* \| Height of Light \|
-| \| const color *LIGHT\_COLOR* \| Color of Light \|
+| \| const float *LIGHT_HEIGHT* \| Height of Light \|
+| \| const color *LIGHT_COLOR* \| Color of Light \|
 | \| out vec4 *LIGHT* \| Light Ouput (shader is ignored if this is not
   used) \|
 
@@ -410,7 +410,7 @@ Obtaining world-space normal and position in material fragment program:
 Notes
 -----
 
-| \* **Do not** use DIFFUSE\_ALPHA unless you really intend to use
+| \* **Do not** use DIFFUSE_ALPHA unless you really intend to use
   transparency. Transparent materials must be sorted by depth and slow
   down the rendering pipeline. For opaque materials, just use DIFFUSE.
 | \* **Do not** use DISCARD unless you really need it. Discard makes

@@ -180,7 +180,7 @@ sort of a frontend to editing engine.cfg
 To access that dialog, simply go to Scene -> Project Settings.
 
 Once the window opens, the task will be to select a main scene. This can
-be done easily by changing the application/main\_scene property and
+be done easily by changing the application/main_scene property and
 selecting 'hello.scn'.
 
 .. image:: /img/main_scene.png

@@ -121,9 +121,9 @@ template script:
 
 .. image:: /img/script_template.png
 
-There is not much in there. The "\_ready()" function is called when the
+There is not much in there. The "_ready()" function is called when the
 node (and all it's children) entered the active scene. (Remember, It's
-not a constructor, the constructor is "\_init()" ).
+not a constructor, the constructor is "_init()" ).
 
 The Role of the Script
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -182,7 +182,7 @@ will change the label's text:
         get_node("Label").set_text("HELLO!")
 
 Finally, the button "pressed" signal will be connected to that callback
-in \_ready(), by using :ref:`Object.connect() <class_Object_connect>`.
+in _ready(), by using :ref:`Object.connect() <class_Object_connect>`.
 
 ::
 
@@ -212,7 +212,7 @@ button:
 .. image:: /img/scripthello.png
 
 **Note:** As it is a common mistake in this tutorial, let's clarify
-again that get\_node(path) works by returning the immediate children to
+again that get_node(path) works by returning the immediate children to
 the node controlled by the script (in this case, *Panel*), so *Button*
 must be a child of *Panel* for the above code to work. To give this
 clarification more context, if *Button* was a child of *Label*, the code

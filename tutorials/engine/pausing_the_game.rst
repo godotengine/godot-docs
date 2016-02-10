@@ -30,8 +30,8 @@ with a "true" argument:
 Doing so will have the following behavior:
 
 -  2D and 3D Physics will be stopped.
--  \_process and \_fixed\_process will not be called anymore in nodes.
--  \_input and \_input\_event will not be called anymore either.
+-  _process and _fixed_process will not be called anymore in nodes.
+-  _input and _input_event will not be called anymore either.
 
 This effectively stops the whole game. Calling this function from a
 script, by default, will result in an unrecoverable state (nothing will

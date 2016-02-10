@@ -29,9 +29,9 @@ Space
 In the physics world, Godot stores all the low level collision and
 physics information in a *space*. The current 2d space (for 2D Physics)
 can be obtained by calling
-`CanvasItem.get\_world\_2d().get\_space() <https://github.com/okamstudio/godot/wiki/class_canvasitem#get_world_2d>`__.
+`CanvasItem.get_world_2d().get_space() <https://github.com/okamstudio/godot/wiki/class_canvasitem#get_world_2d>`__.
 For 3D, it's
-`Spatial.get\_world().get\_space() <https://github.com/okamstudio/godot/wiki/class_spatial#get_world>`__.
+`Spatial.get_world().get_space() <https://github.com/okamstudio/godot/wiki/class_spatial#get_world>`__.
 
 The resulting space
 :ref:`RID <class_RID>` can be used
@@ -47,7 +47,7 @@ Acessing Space
 Godot physics runs by default in the same thread as game logic, but may
 be set to run on a separate thread to work more efficiently. Due to
 this, the only time accessing space is safe is during the
-`Node.\_fixed\_process(delta) <https://github.com/okamstudio/godot/wiki/class_node#_fixed_process>`__
+`Node._fixed_process(delta) <https://github.com/okamstudio/godot/wiki/class_node#_fixed_process>`__
 callback. Accessing it from outside this function may result in an error
 due to space being *locked*.
 
@@ -128,7 +128,7 @@ as evidenced in the following image.
 
 .. image:: /img/raycast_falsepositive.png
 
-To avoid self-intersection, the intersect\_ray() function can take an
+To avoid self-intersection, the intersect_ray() function can take an
 optional third parameter which is an array of exceptions. This is an
 example of how to use it from a KinematicBody2D or any other
 collisionobject based node:
@@ -150,7 +150,7 @@ The extra argument is a list of exceptions, can be objects (need Godot
 Casting a ray from screen to 3D physics space is useful for object
 picking. There is not much of a need to do this because
 :ref:`CollisionObject <class_CollisionObject>`
-has an "input\_event" signal that will let you know when it was clicked,
+has an "input_event" signal that will let you know when it was clicked,
 but in case there is any desire to do it manually, here's how.
 
 To cast a ray from the screen, the
@@ -175,8 +175,8 @@ To obtain it using a camera, the following code can be used:
               var from = camera.project_ray_origin(ev.pos)
               var to = from + camera.project_ray_normal(ev.pos) * ray_length
 
-Of course, remember that during \_input(), space may be locked, so save
-your query for \_fixed\_process().
+Of course, remember that during _input(), space may be locked, so save
+your query for _fixed_process().
 
 
 

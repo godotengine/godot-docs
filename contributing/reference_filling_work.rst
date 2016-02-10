@@ -205,7 +205,7 @@ Here is an example with the Node2D class:
 
 As you can see, some methods in this class have no description (i.e.
 there is no text between their marks). This can also happen for the
-description and the brief\_description of the class, but in our case
+description and the brief_description of the class, but in our case
 they are already filled. Let's edit the description of the rotate()
 method:
 

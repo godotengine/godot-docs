@@ -44,10 +44,10 @@ resizing or stretching the screen. This transform is used internally by
 the :ref:`doc_multiple_resolutions`, but can also be requested to the viewport.
 
 Input events received in the
-`Node.\_input\_event(ev) <https://github.com/okamstudio/godot/wiki/class_node#_input_event>`__
+`Node._input_event(ev) <https://github.com/okamstudio/godot/wiki/class_node#_input_event>`__
 callback are multiplied by this transform, but lack the ones above. To
 convert InputEvent coordinates to local CanvasItem coordinates, the
-`CanvasItem.make\_input\_local(ev) <https://github.com/okamstudio/godot/wiki/class_canvasitem#make_input_local>`__
+`CanvasItem.make_input_local(ev) <https://github.com/okamstudio/godot/wiki/class_canvasitem#make_input_local>`__
 function was added for convenience.
 
 Transform Order
@@ -86,7 +86,7 @@ coordinates, just multiply in the following order:
 
 Keep in mind, however, that it is generally not desired to work with
 screen coordinates. The recommended approach is to simply work in Canvas
-coordinates (CanvasItem.get\_global\_transform()), to allow automatic
+coordinates (CanvasItem.get_global_transform()), to allow automatic
 screen resolution resizing to work properly.
 
 Feeding Custom Input Events

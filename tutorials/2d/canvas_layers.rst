@@ -19,7 +19,7 @@ These nodes are placed as direct or indirect children to a
 :ref:`Viewport <class_Viewport>`,
 and will be displayed through it.
 
-Viewport has a property "canvas\_transform"
+Viewport has a property "canvas_transform"
 :ref:`Viewport.set_canvas_transform() <class_Viewport_set_canvas_transform>`,
 which allows to transform all the CanvasItem hierarchy by a custom
 :ref:`Matrix32 <class_Matrix32>`

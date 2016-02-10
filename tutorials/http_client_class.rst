@@ -13,7 +13,7 @@ class. It's just a script, so it can be run by executing:
 
 c
 
-c:\\\\godot> godot -s http\_test.gd
+c:\\\\godot> godot -s http_test.gd
 
 
 

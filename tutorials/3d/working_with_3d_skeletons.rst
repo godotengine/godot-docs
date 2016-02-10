@@ -19,7 +19,7 @@ Being obvious, Skeleton is intended to deform meshes, and consists of
 structures called "bones". Each "bone" is represented as Transform,
 which is applied to a group of vertices within a mesh. You can directly
 control a group of vertices from Godot. For that please reference
-MeshDataTool class, method set\_vertex\_bones. This class is very
+MeshDataTool class, method set_vertex_bones. This class is very
 powerful but not documented.
 
 The "bones" are organized in hierarchy, every bone, except for root
@@ -46,7 +46,7 @@ You can view Godot internal help for descriptions of every function.
 Basically all operations on bones are done using their numeric ID. You
 can convert from name to numeric ID and vise versa.
 
-**To find number of bones in skeleton we use get\_bone\_count()
+**To find number of bones in skeleton we use get_bone_count()
 function**
 
 ::
@@ -61,7 +61,7 @@ function**
         var parent = skel.get_bone_parent(id)
         print("bone parent id:", id)
 
-**to find ID for the bone, use find\_bone() function**
+**to find ID for the bone, use find_bone() function**
 
 ::
 
@@ -75,9 +75,9 @@ function**
 
 Now, we want to do something interesting with ID except for printing it.
 Also, we might need additional information - to find bone parents to
-complete chain, etc. This all is done with get/set\_bone\_\* functions.
+complete chain, etc. This all is done with get/set_bone_\* functions.
 
-**To find bone parent we use get\_bone\_parent(id) function**
+**To find bone parent we use get_bone_parent(id) function**
 
 ::
 
@@ -94,7 +94,7 @@ complete chain, etc. This all is done with get/set\_bone\_\* functions.
 Bone transforms is the thing why we're here at all. There are 3 kind of
 transforms - local, global, custom.
 
-**To find bone local Transform we use get\_bone\_pose(id) function**
+**To find bone local Transform we use get_bone_pose(id) function**
 
 ::
 
@@ -146,7 +146,7 @@ But this Transform tells us nothing about relationship between bones.
 This information is needed for quite a number of tasks. How can we get
 it? here comes global transform:
 
-**To find bone global Transform we use get\_bone\_global\_pose(id)
+**To find bone global Transform we use get_bone_global_pose(id)
 function**
 
 We will find global Transform for lowerarm bone
@@ -238,11 +238,11 @@ Now we need to setup way to change them. Just lets use keys for that.
 
 Please create 7 actions under project settings:
 
--  **selext\_x** - bind to X key
--  **selext\_y** - bind to Y key
--  **selext\_z** - bind to Z key
--  **select\_upperarm** - bind to key 1
--  **select\_lowerarm** - bind to key 2
+-  **selext_x** - bind to X key
+-  **selext_y** - bind to Y key
+-  **selext_z** - bind to Z key
+-  **select_upperarm** - bind to key 1
+-  **select_lowerarm** - bind to key 2
 -  **increment** - bind to key numpad +
 -  **decrement** - bind to key numpad -
 

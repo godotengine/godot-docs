@@ -479,7 +479,7 @@ to reach a point in the plane, you will just do:
 
    </pre>
 
-var point\_in\_plane = N\*D
+var point_in_plane = N\*D
 
 
 
@@ -554,8 +554,8 @@ degrees to either side:
     # var normal = Vector2(-dvec.y,dev.x)
     # depending the desired side of the normal
 
-The rest is the same as the previous example, either point\_a or
-point\_b will work since they are in the same plane:
+The rest is the same as the previous example, either point_a or
+point_b will work since they are in the same plane:
 
 ::
 

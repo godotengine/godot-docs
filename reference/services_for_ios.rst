@@ -45,7 +45,7 @@ the 'pending events' queue. Example:
                     show_error()
 
 Remember that when a call returns OK, the API will *always* produce an
-event through the pending\_event interface, even if it's an error, or a
+event through the pending_event interface, even if it's an error, or a
 network timeout, etc. You should be able to, for example, safely block
 the interface waiting for a reply from the server. If any of the APIs
 don't behave this way it should be treated as a bug.
@@ -61,7 +61,7 @@ The pending event interface consists of 2 methods:
 Store Kit
 ---------
 
-Implemented in platform/iphone/in\_app\_store.mm
+Implemented in platform/iphone/in_app_store.mm
 
 The Store Kit API is accessible through the "InAppStore" singleton (will
 always be available from gdscript). It is initialized automatically. It
@@ -70,7 +70,7 @@ has 2 methods for purchasing:
 -  ``Error purchase(Variant p_params);``
 -  ``Error request_product_info(Variant p_params);``
 
-and the pending\_event interface
+and the pending_event interface
 
 ::
 
@@ -117,7 +117,7 @@ On success:
       "product_id": "the product id requested"
     }
 
-request\_product\_info
+request_product_info
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Requests the product info on a list of product IDs.
@@ -153,7 +153,7 @@ The response event will be a dictionary with the following fields:
 Game Center
 -----------
 
-Implemented in platform/iphone/game\_center.mm
+Implemented in platform/iphone/game_center.mm
 
 The Game Center API is available through the "GameCenter" singleton. It
 has 6 methods:
@@ -167,7 +167,7 @@ has 6 methods:
 
 plus the standard pending event interface.
 
-post\_score
+post_score
 ~~~~~~~~~~~
 
 Posts a score to a Game Center leaderboard.
@@ -211,7 +211,7 @@ On success:
       "result": "ok",
     }
 
-award\_achievement
+award_achievement
 ~~~~~~~~~~~~~~~~~~
 
 Modifies the progress of a Game Center achievement.
@@ -257,7 +257,7 @@ On success:
       "result": "ok",
     }
 
-reset\_achievements
+reset_achievements
 ~~~~~~~~~~~~~~~~~~~
 
 Clears all Game Center achievements. The function takes no parameters.
@@ -286,7 +286,7 @@ On success:
       "result": "ok",
     }
 
-request\_achievements
+request_achievements
 ~~~~~~~~~~~~~~~~~~~~~
 
 Request all the Game Center achievements the player has made progress
@@ -318,7 +318,7 @@ On success:
       "progress": [ list of the progress made on each achievement ]
     }
 
-request\_achievement\_descriptions
+request_achievement_descriptions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Request the descriptions of all existing Game Center achievements
@@ -355,7 +355,7 @@ On success:
       "replayable": [ list of booleans indicating whether each achievement can be earned more than once ]
     }
 
-show\_game\_center
+show_game_center
 ~~~~~~~~~~~~~~~~~~
 
 Displays the built in Game Center overlay showing leaderboards,

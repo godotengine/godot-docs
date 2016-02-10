@@ -107,7 +107,7 @@ Repository layout:
     game/engine.cfg
 
 In the above example, artists, musican, translators, etc. can work in
-the source\_assets/ folder, then import the assets to the game/ folder.
+the source_assets/ folder, then import the assets to the game/ folder.
 When the repository is updated, anyone can re-import the assets if they
 changed.
 

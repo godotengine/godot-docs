@@ -144,7 +144,7 @@ This means that the object names in the 3D DCC need to have those
 options appended at the end for the importer to tell what they are. When
 imported, Godot will convert them to what they are meant to be.
 
-**Note:** Maya users must use “\_" (underscore) instead of "-" (minus).
+**Note:** Maya users must use “_" (underscore) instead of "-" (minus).
 
 Here is an example of how a scene in the 3D dcc looks (using blender),
 and how it is imported to Godot:

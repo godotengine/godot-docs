@@ -50,7 +50,7 @@ Converting Keys to Text
 Some controls such as :ref:`Button <class_Button>`, :ref:`Label <class_Label>`, etc.
 will automatically fetch a translation each time they are set a key
 instead of a text. For example, if a label is assigned
-"MAIN\_SCREEN\_GREETING1" and a key to different languages exists in the
+"MAIN_SCREEN_GREETING1" and a key to different languages exists in the
 translations, this will be automatically converted. This process is done
 upon load though, so if the project in question has a dialog that allows
 changing the language in the settings, the scenes (or at least the

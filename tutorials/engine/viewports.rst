@@ -135,7 +135,7 @@ following API:
     # queues a screen capture, will not happen immediately
     viewport.queue_screen_capture() 
 
-After a frame or two (check \_process() ), the capture will be ready,
+After a frame or two (check _process() ), the capture will be ready,
 get it back by using:
 
 ::

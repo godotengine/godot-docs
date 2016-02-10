@@ -92,7 +92,7 @@ a BG so we don't care about it.
 .. image:: /img/tile_example5.png
 
 OK! We're done! Remember to save this scene for future edit, call it
-"tileset\_edit.scn" or something like that.
+"tileset_edit.scn" or something like that.
 
 Exporting a TileSet
 -------------------
@@ -164,7 +164,7 @@ ones that look better for you:
 -  Disable filtering for either the tileset texture or the entire image
    loader (see the :ref:`doc_managing_image_files` asset pipeline tutorial).
 -  Enable pixel snap (Set: ΅Scene [STRIKEOUT:> Project Settings]>
-   rasterizer/uxe\_pixel\_snap" to true).
+   rasterizer/uxe_pixel_snap" to true).
 -  Viewport Scaling can often help shrinking the map (see the
    :ref:`doc_viewports` tutorial).
 

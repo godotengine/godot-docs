@@ -80,7 +80,7 @@ example, a
 :ref:`Button <class_Button>` emits
 a "pressed" signal when pressed, a
 :ref:`Slider <class_Slider>` will
-emit a "value\_changed" when dragged, etc.
+emit a "value_changed" when dragged, etc.
 
 Custom Control Mini Tutorial
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

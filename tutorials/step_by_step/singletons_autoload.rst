@@ -65,10 +65,10 @@ more complex behaviors when switching scenes.
 First download the template from here: attachment:autoload.zip, then
 open it.
 
-Two scenes are present, scene\_a.scn and scene\_b.scn on an otherwise
+Two scenes are present, scene_a.scn and scene_b.scn on an otherwise
 empty project. Each are identical and contain a button connected to a
 callback for going to the opposite scene. When the project runs, it
-starts n scene\_a.scn. However, this does nothing and pressing the
+starts n scene_a.scn. However, this does nothing and pressing the
 button does not work.
 
 global.gd
@@ -92,7 +92,7 @@ points to this file:
 
 Now, when any scene is run, the script will be always loaded.
 
-So, going back to it, In the \_ready() function, the current scene
+So, going back to it, In the _ready() function, the current scene
 will be fetched. Both the current scene and global.gd are children of
 root, but the autoloaded nodes are always first. This means that the
 last child of root is always the loaded scene.
@@ -155,8 +155,8 @@ is desired at this point. The result is that execution of the commands
 in the second function will happen at an immediate later time when no
 code from the current scene is running.
 
-Finally, all that is left is to fill the empty functions in scene\_a.gd
-and scene\_b.gd:
+Finally, all that is left is to fill the empty functions in scene_a.gd
+and scene_b.gd:
 
 ::
 

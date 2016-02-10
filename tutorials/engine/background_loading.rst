@@ -64,7 +64,7 @@ To query the progress of the load, use the following methods:
 
    </pre>
 
-get\_stage\_count
+get_stage_count
 
 .. raw:: html
 
@@ -78,7 +78,7 @@ returns the total number of stages to load
 
    </pre>
 
-get\_stage
+get_stage
 
 .. raw:: html
 
@@ -118,7 +118,7 @@ First we setup some variables and initialize the
 
    </pre>
 
-current\_scene
+current_scene
 
 .. raw:: html
 
@@ -143,7 +143,7 @@ The function
 
    </pre>
 
-goto\_scene
+goto_scene
 
 .. raw:: html
 
@@ -156,7 +156,7 @@ an interactive loader, and calls
 
    </pre>
 
-set\_progress(true)
+set_progress(true)
 
 .. raw:: html
 
@@ -168,7 +168,7 @@ to start polling the loader in the
 
    </pre>
 
-\_progress
+_progress
 
 .. raw:: html
 
@@ -299,7 +299,7 @@ Call after you instance the class to start the thread.
 
     func queue_resource(path, p_in_front = false)
 
-Queue a resource. Use optional parameter "p\_in\_front" to put it in
+Queue a resource. Use optional parameter "p_in_front" to put it in
 front of the queue.
 
 ::

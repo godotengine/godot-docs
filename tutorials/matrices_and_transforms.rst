@@ -276,7 +276,7 @@ Inverse Transform
 -----------------
 
 To do the opposite operation (what we did up there with the rocket), the
-"xform\_inv" method is used:
+"xform_inv" method is used:
 
 ::
 
@@ -318,7 +318,7 @@ Affine Inverse
 The affine inverse is a matrix that does the inverse operation of
 another matrix, no matter if the matrix has scale or the axis vectors
 are not orthogonal. The affine inverse is calculated with the
-affine\_inverse() method:
+affine_inverse() method:
 
 ::
 

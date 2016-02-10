@@ -3,7 +3,7 @@
 Before continuing on, I'd recommend reading some theory, the simplest
 article I find is this:
 
-http://freespace.virgin.net/hugo.elias/models/m\_ik2.htm
+http://freespace.virgin.net/hugo.elias/models/m_ik2.htm
 
 Initial problem
 ~~~~~~~~~~~~~~~
@@ -31,7 +31,7 @@ base, bone tip and target.
 The rotation axis is easily calculated using cross-product of bone
 vector and target vector. The rotation in this case will be always in
 positive direction. If t is Transform which we get from
-get\_bone\_global\_pose() function, the bone vector is
+get_bone_global_pose() function, the bone vector is
 
 ::
 

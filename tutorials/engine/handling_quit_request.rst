@@ -17,7 +17,7 @@ Handling the Notification
 The
 :ref:`MainLoop <class_MainLoop>`
 has a special notification that is sent to all nodes when quit is
-requested: MainLoop.NOTIFICATION\_WM\_QUIT.
+requested: MainLoop.NOTIFICATION_WM_QUIT.
 
 Handling it is done as follows (on any node):
 
