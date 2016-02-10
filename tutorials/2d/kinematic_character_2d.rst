@@ -66,9 +66,9 @@ or lose precision is the frame rate is too high or too low.
 Scene Setup
 ~~~~~~~~~~~
 
-To have something to test, here's the scene (from the tilemap tutorial)
-attachment:kbscene.zip. We'll be creating a new scene for the character.
-Use the robot sprite and create a scene like this:
+To have something to test, here's the scene (from the tilemap tutorial):
+:download:`kbscene.zip </files/kbscene.zip>`. We'll be creating a new scene
+for the character. Use the robot sprite and create a scene like this:
 
 .. image:: /img/kbscene.png
 

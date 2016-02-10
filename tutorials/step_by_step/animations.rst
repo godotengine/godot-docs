@@ -11,7 +11,7 @@ animation system is extremely powerful and flexible.
 
 To begin, let's just use the scene from the previous tutorial (splash
 screen). The goal will be to add a simple animation to it. Here's a copy
-just in case: attachment:robisplash.zip
+just in case: :download:`robisplash.zip </files/robisplash.zip>`.
 
 Creating the Animation
 ----------------------

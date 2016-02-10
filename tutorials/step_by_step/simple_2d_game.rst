@@ -13,8 +13,8 @@ but this should get introduced to basic functionality for 2D Games.
 Assets
 ~~~~~~
 
-Some assets are included for this tutorial, the
-attachment:pong_assets.zip.
+Some assets are included for this tutorial:
+:download:`pong_assets.zip </files/pong_assets.zip>`.
 
 Scene Setup
 ~~~~~~~~~~~

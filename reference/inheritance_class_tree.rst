@@ -1,8 +1,6 @@
 Inheritance Class Tree
 ======================
 
-2.0 A
-
 Object
 ------
 
@@ -28,6 +26,4 @@ Spatial
 
 .. image:: /img/Spatial.png
 
-attachment:sources.zip
-
-
+Source files: :download:`class_tree.zip </files/class_tree.zip>`.

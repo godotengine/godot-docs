@@ -123,8 +123,8 @@ controls.
 Example: Themeing a Button
 --------------------------
 
-Take some assets attachment:skin_assets.zip, go to the "theme" menu and
-select "Add Class Item":
+Take some assets (:download:`skin_assets.zip </files/skin_assets.zip>`,
+go to the "theme" menu and select "Add Class Item":
 
 .. image:: /img/themeci.png
 

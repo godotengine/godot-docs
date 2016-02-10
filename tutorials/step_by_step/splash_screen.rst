@@ -11,8 +11,7 @@ subsystem works. The goal will be to create a really simple, static,
 splash screen.
 
 Following is a file with the assets that will be used:
-
-attachment:robisplash_assets.zip
+:download:`robisplash_assets.zip </files/robisplash_assets.zip>`.
 
 Setting Up
 ----------

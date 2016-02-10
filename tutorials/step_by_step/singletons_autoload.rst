@@ -38,7 +38,7 @@ Autoload
 
 Autoload can be a scene, or a script that inherits from Node (a Node
 will be created and the script will be set to it). They are added to the
-project in the Scene [STRIKEOUT:> Project Settings]> AutoLoad tab.
+project in the Scene > Project Settings > AutoLoad tab.
 
 Each autoload needs a name, this name will be the node name, and the
 node will be always added to the root viewport before any scene is
@@ -62,8 +62,8 @@ autoload. For simple scene switching, the
 method suffices (described in :ref:`doc_scene_tree`), so this method is for
 more complex behaviors when switching scenes.
 
-First download the template from here: attachment:autoload.zip, then
-open it.
+First download the template from here:
+:download:`autoload.zip </files/autoload.zip>`, then open it.
 
 Two scenes are present, scene_a.scn and scene_b.scn on an otherwise
 empty project. Each are identical and contain a button connected to a

@@ -35,8 +35,8 @@ complete sense!
 Instancing, Step by Step
 ------------------------
 
-To learn how to do instancing, let's start with downloading
-attachment:instancing.zip.
+To learn how to do instancing, let's start with downloading a sample
+project: :download:`instancing.zip </files/instancing.zip>`.
 
 Unzip this scene in any place of our preference. Then, add this scene to
 the project manager using the 'Import' option:
