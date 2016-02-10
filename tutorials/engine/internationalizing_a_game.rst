@@ -18,7 +18,7 @@ Localization is usually done by specific studios hired for the job and,
 despite the huge amount of software and file formats available for this,
 the most common way to do localization to this day is still with
 spreadsheets. The process of creating the spreadsheets and importing
-them is already covered in the :ref:`doc_import_translations` tutorial, so this
+them is already covered in the :ref:`doc_importing_translations` tutorial, so this
 one could be seen more like a follow up to that one.
 
 Configuring the Imported Translation
@@ -72,10 +72,8 @@ Making Controls Resizeable
 The same text in different languages can vary greatly in length. For
 this, make sure to read the tutorial on :ref:`doc_size_and_anchors`, as having
 dynamically adjusted control sizes may help.
-:ref:`Containers <class_Containers>`
-can be very useful, as well as the multiple options in
-:ref:`Label <class_Label>` for
-text wrapping.
+:ref:`Container <class_Container>` can be very useful, as well as the multiple options in
+:ref:`Label <class_Label>` for text wrapping.
 
 TranslationServer
 -----------------

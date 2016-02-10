@@ -181,12 +181,11 @@ rendering (once), or always render, no matter if visible or not.
 A few classes are created to make this easier in most common cases
 inside the editor:
 
--  :ref:`ViewportSprite <class_ViewportSprite>`
-   (for 2D).
--  :ref:`ViewportQuad <class_ViewportQuad>`
-   (for 3D).
--  :ref:`ViewportFrame <class_ViewportFrame>`
-   (for GUI).
+-  :ref:`ViewportSprite <class_ViewportSprite>` (for 2D).
+-  ViewportQuad (for 3D).
+-  ViewportFrame (for GUI).
+
+*TODO: Review the doc, ViewportQuad and ViewportFrame don't exist in 2.0.*
 
 Make sure to check the viewport demos! Viewport folder in the demo.zip
 available to download, or

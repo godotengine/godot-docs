@@ -61,10 +61,8 @@ subsequent motion events are received by the pressed control until that
 button is released, even if the pointer moves outside the control
 boundary.
 
-Like any class that inherits from
-:ref:`CanvasItem <class_CanvasItem>`
-(Control does), a
-:ref:`CanvasItem.draw() <class_CanvasItem_draw>`
+Like any class that inherits from :ref:`CanvasItem <class_CanvasItem>`
+(Control does), a :ref:`CanvasItem._draw() <class_CanvasItem__draw>`
 callback will be received at the begining and every time the control
 needs to be redrawn (programmer needs to call
 :ref:`CanvasItem.update() <class_CanvasItem_update>`

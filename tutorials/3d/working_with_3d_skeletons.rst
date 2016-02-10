@@ -75,7 +75,7 @@ function**
 
 Now, we want to do something interesting with ID except for printing it.
 Also, we might need additional information - to find bone parents to
-complete chain, etc. This all is done with get/set_bone_\* functions.
+complete chain, etc. This all is done with get/set_bone\_\* functions.
 
 **To find bone parent we use get_bone_parent(id) function**
 

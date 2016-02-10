@@ -231,8 +231,8 @@ the CollisionObject2D:
 KinematicBody2D
 ~~~~~~~~~~~~~~~
 
-:ref:`Kinematic <class_Kinematic>`
-bodies are special types of bodies that are meant to be user-controlled.
+:ref:`KinematicBody2D <class_KinematicBody2D>` bodies are special types
+of bodies that are meant to be user-controlled.
 They are not affected by the physics at all (to other types of bodies,
 such a character or a rigidbody, these are the same as a staticbody).
 They have however, two main uses:
