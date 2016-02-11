@@ -16,19 +16,18 @@ For compiling under Windows, the following is required:
    version that can compile for C++, Desktop**.
 -  `Python 2.7+ <http://www.python.org/getit/releases/2.7/>`__ (3.0 is
    untested as of now). Using the 32-bits installer is recommended.
--  `Pywin32 Python
-   Extension <http://sourceforge.net/projects/pywin32>`__ for parallel
-   builds (which increase the build speed by a great factor).
+-  `Pywin32 Python Extension <http://sourceforge.net/projects/pywin32>`__
+   for parallel builds (which increase the build speed by a great factor).
 -  `SCons <http://www.scons.org>`__ build system.
 
 Setting up SCons
 ----------------
 
 Python adds the interpreter (python.exe) to the path. It usually
-installs in C:\\\\Python (or C:\\\\Python[Version]). SCons installs
+installs in ``C:\Python`` (or ``C:\Python[Version]``). SCons installs
 inside the python install and provides a .bat file called "scons.bat".
 The location of this file can be added to the path or it can simply be
-copied to C:\\\\Python together with the interpreter executable.
+copied to ``C:\Python`` together with the interpreter executable.
 
 Compiling
 ---------
@@ -39,10 +38,10 @@ the engine source code and type:
 
 ::
 
-    C:\\godot> scons platform=windows
+    C:\godot> scons platform=windows
 
 If all goes well, the resulting binary executable will be placed in
-C:\\\\godot\\\\bin\\\\godot.windows.tools.exe. This executable file
+``C:\godot\bin\godot.windows.tools.exe``. This executable file
 contains the whole engine and runs without any dependencies. Executing
 it will bring up the project manager.
 
@@ -58,7 +57,7 @@ following should be called in a .bat file:
 
 ::
 
-    C:\\path_to_sdk\\vcvarsall.bat &&  scons bin/godot.windows.tools.exe
+    C:\path_to_sdk\vcvarsall.bat && scons bin/godot.windows.tools.exe
 
 **NOTE:** It seems the latest Visual Studio does not include a desktop
 command prompt (No, Native tools for x86 is not it). The only way to
@@ -66,11 +65,11 @@ build it seems to be by running:
 
 ::
 
-    "C:\\Program Files (x86)\\Microsoft Visual Studio 12.0\\VC\\vcvarsall.bat" && c:\\python27\\scons p=windows
+    "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" && c:\python27\scons p=windows
 
 (or however your VS and Scons are installed)
 
-Cross compiling
+Cross-compiling
 ---------------
 
 If you are a Linux or Mac user, you need to install mingw32 and
@@ -80,7 +79,7 @@ mingw-w64. Under Ubuntu or Debian, just run the following commands:
 
     apt-get install mingw32 mingw-w64
 
-If you are using other distro, scons will check for the following
+If you are using another distro, scons will check for the following
 binaries:
 
 ::
@@ -110,26 +109,26 @@ Creating Windows export templates
 Windows export templates are created by compiling Godot as release, with
 the following flags:
 
-(for 32 bits, using Mingw32 command prompt or Visual Studio command
+-  (for 32 bits, using Mingw32 command prompt or Visual Studio command
 prompt)
 
 ::
 
-    C:\\godot> scons platform=windows tools=no target=release bits=32
-    C:\\godot> scons platform=windows tools=no target=release_debug bits=32
+    C:\godot> scons platform=windows tools=no target=release bits=32
+    C:\godot> scons platform=windows tools=no target=release_debug bits=32
 
-(for 64 bits, using Mingw-w64 or Visual Studio command prompt)
+-  (for 64 bits, using Mingw-w64 or Visual Studio command prompt)
 
 ::
 
-    C:\\godot> scons platform=windows tools=no target=release bits=64
-    C:\\godot> scons platform=windows tools=no target=release_debug bits=64
+    C:\godot> scons platform=windows tools=no target=release bits=64
+    C:\godot> scons platform=windows tools=no target=release_debug bits=64
 
 If you plan on replacing the standard templates, copy these to:
 
 ::
 
-    C:\\USERS\\YOURUSER\\AppData\\Roaming\\Godot\\Templates
+    C:\USERS\YOURUSER\AppData\Roaming\Godot\Templates
 
 With the following names:
 
@@ -147,7 +146,5 @@ here:
 .. image:: /img/wintemplates.png
 
 You don't even need to copy them, you can just reference the resulting
-files in the bin\\\\ directory of your Godot source folder, so the next
+files in the ``bin\`` directory of your Godot source folder, so the next
 time you build you automatically have the custom templates referenced.
-
-

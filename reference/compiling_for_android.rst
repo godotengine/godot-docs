@@ -12,20 +12,21 @@ For most cases, using the built-in deployer and export templates is good
 enough. Compiling the Android APK manually is mostly useful for custom
 builds or custom packages for the deployer.
 
-Also, you still need to do all the steps mentioned in the :ref:`doc_exporting_for_android`
-tutorial before attempting your custom export template.
+Also, you still need to do all the steps mentioned in the
+:ref:`doc_exporting_for_android` tutorial before attempting your custom
+export template.
 
 Requirements
 ------------
 
-For compiling under Windows, the following is required:
+For compiling under Windows, Linux or OSX, the following is required:
 
 -  Python 2.7+ (3.0 is untested as of now).
 -  SCons build system.
 -  Android SDK version 8 and 13
 -  Android NDK
 
-Setting Up SCons
+Setting up SCons
 ----------------
 
 Set the environment variable ANDROID_HOME to point to the Android
@@ -50,49 +51,49 @@ Go to the root dir of the engine source code and type:
 
 ::
 
-    C:\\godot> scons platform=android
+    C:\godot> scons platform=android
 
-This should result in a regular .so in \\\\bin folder as if it was
+This should result in a regular .so in ``\bin`` folder as if it was
 compiled with flags: ``tools=no target=debug``. The resulting file will
 be huge because it will contain all debug symbols, so for next builds,
 using ``target=release_debug`` or ``target=release`` is recommended.
 
-Copy the .so to the libs/armeabi Android folder (or symlink if you are
+Copy the .so to the ``libs/armeabi`` Android folder (or symlink if you are
 in Linux or OSX). Note: Git does not support empty directories so you
 will have to create it if it does not exist:
 
 ::
 
-    C:\\godot> mkdir platform/android/java/libs
-    C:\\godot> mkdir platform/android/java/libs/armeabi
+    C:\godot> mkdir platform/android/java/libs
+    C:\godot> mkdir platform/android/java/libs/armeabi
 
-Then copy or symlink:
-
-::
-
-    C:\\godot> copy bin/libgodot.android..so platform/android/java/libs/armeabi/libgodot_android.so
-
-alternatively if you are under unix you can symlink:
+Then copy:
 
 ::
 
-    user@host:~/godot$ ln -s bin/libgodot.android..so platform/android/java/libs/armeabi/libgodot_android.so
+    C:\godot> copy bin/libgodot.android.<version>.so platform/android/java/libs/armeabi/libgodot_android.so
+
+Or alternatively, if you are under a Unix system you can symlink:
+
+::
+
+    user@host:~/godot$ ln -s bin/libgodot.android.<version>.so platform/android/java/libs/armeabi/libgodot_android.so
 
 Remember that only *one* of libgodot_android.so must exist for each
 platform, for each build type (release, debug, etc), it must be
 replaced.
 
-**Note**: The file inside libs/armeabi must be renamed to
+**Note**: The file inside ``libs/armeabi`` must be renamed to
 **"libgodot_android.so"**, or else unsatisfied link error will happen
 at runtime.
 
 If you also want to include support for x86 Android, add the following
-compile flag: ``x86=yes`` , then copy/symlink the resulting folder to
-the x86 folder:
+compile flag: ``x86=yes``, then copy/symlink the resulting folder to
+the ``x86`` folder:
 
 ::
 
-    C:\\godot> cp bin/libgodot.android..x86.so platform/android/java/libs/x86/libgodot_android.so
+    C:\godot> copy bin/libgodot.android.<version>.x86.so platform/android/java/libs/x86/libgodot_android.so
 
 This will create a fat binary that works in both platforms, but will add
 about 6 megabytes to the APK.
@@ -107,7 +108,7 @@ the current numbers, then set the following environment variables:
 
 ::
 
-    NDK_TOOLCHAIN  (by default set to "arm-eabi-4.4.0")
+    NDK_TOOLCHAIN (by default set to "arm-eabi-4.4.0")
     NDK_TARGET (by default set to "arm-linux-androideabi-4.8")
 
 Building the APK
@@ -118,11 +119,11 @@ or release build:
 
 ::
 
-    C:\\godot\\platform\\android\\java> ant debug
+    C:\godot\platform\android\java> ant debug
 
 ::
 
-    C:\\godot\\platform\\android\\java> ant release
+    C:\godot\platform\android\java> ant release
 
 In the ``java/bin`` subfolder, the resulting apk can be used as export
 template.
@@ -143,14 +144,14 @@ really handy! (and required some reverse engineering of the format).
 Compiling the standard export templates is done by calling scons with
 the following arguments:
 
-(debug)
+-  (debug)
 
 ::
 
-    C:\\godot> scons platform=android target=release_debug
-    C:\\godot> cp bin/libgodot_android.opt.debug.so platform/android/java/libs/armeabi
-    C:\\godot> cd platform/android/java
-    C:\\godot\\platform\\android\\java> ant release
+    C:\godot> scons platform=android target=release_debug
+    C:\godot> cp bin/libgodot_android.opt.debug.so platform/android/java/libs/armeabi
+    C:\godot> cd platform/android/java
+    C:\godot\platform\android\java> ant release
 
 Resulting APK is in:
 
@@ -158,14 +159,14 @@ Resulting APK is in:
 
     platform/android/java/bin/Godot-release-unsigned.apk
 
-(release)
+-  (release)
 
 ::
 
-    C:\\godot> scons platform=android target=release
-    C:\\godot> cp bin/libgodot_android.opt.so platform/android/java/libs/armeabi
-    C:\\godot> cd platform/android/java
-    C:\\godot\\platform\\android\\java> ant release
+    C:\godot> scons platform=android target=release
+    C:\godot> cp bin/libgodot_android.opt.so platform/android/java/libs/armeabi
+    C:\godot> cd platform/android/java
+    C:\godot\platform\android\java> ant release
 
 Resulting APK is in:
 
@@ -189,7 +190,7 @@ here:
 .. image:: /img/andtemplates.png
 
 You don't even need to copy them, you can just reference the resulting
-file in the bin\\\\ directory of your Godot source folder, so the next
+file in the ``bin\`` directory of your Godot source folder, so the next
 time you build you automatically have the custom templates referenced.
 
 Troubleshooting
@@ -208,7 +209,7 @@ If it still fails, open a command line and run logcat:
 
 ::
 
-    C:\\android-sdk\\platform-tools> adb logcat
+    C:\android-sdk\platform-tools> adb logcat
 
 And check the output while the application is installed. Reason for
 failure should be presented there.
@@ -221,10 +222,8 @@ Application exits immediately
 If the application runs but exits immediately, there might be one of the
 following reasons:
 
--  libgodot_android.so is not in libs/armeabi
+-  libgodot_android.so is not in ``libs/armeabi``
 -  Device does not support armv7 (try compiling yourself for armv6)
 -  Device is Intel, and apk is compiled for ARM.
 
 In any case, ``adb logcat`` should also show the cause of the error.
-
-

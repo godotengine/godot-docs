@@ -68,19 +68,19 @@ example:
     scons: `.' is up to date.
     scons: done building targets.
 
-To build a platform (for example, x11), run with the platform= (or just
-p= to make it short) argument:
+To build for a platform (for example, x11), run with the ``platform=`` (or just
+``p=`` to make it short) argument:
 
 ::
 
     user@host:~/godot$ scons platform=x11
 
 This will start the build process, which will take a while. If you want
-scons to build faster, use the -j parameter to specify how many cores
+scons to build faster, use the ``-j`` parameter to specify how many cores
 will be used for the build. Or just leave it using one core, so you can
 use your computer for something else :)
 
-Example for using 4 processes:
+Example for using 4 cores:
 
 ::
 
@@ -94,7 +94,7 @@ generally with this naming convention:
 
 ::
 
-    godot..[opt].[tools/debug]..
+    godot.<platform>.[opt].[tools/debug].<bits>[extension]
 
 For the previous build attempt the result would look like this:
 
@@ -110,14 +110,14 @@ A Windows binary with the same configuration will look like this.
 
 ::
 
-    C:\\GODOT> DIR BIN/
+    C:\GODOT> DIR BIN/
     godot.windows.tools.64.exe
 
 Just copy that binary to wherever you like, as it self-contains the
 project manager, editor and all means to execute the game. However, it
 lacks the data to export it to the different platforms. For that the
 export templates are needed (which can be either downloaded from
-http://www.godotengine.org, or you can build them yourself).
+`godotengine.org <http://godotengine.org>`, or you can build them yourself).
 
 Aside from that, there are a few standard options that can be set in all
 build targets, and will be explained as follows.
@@ -132,7 +132,7 @@ manager.
 
 ::
 
-    scons platform= tools=yes/no
+    scons platform=<platform> tools=yes/no
 
 Target
 ------
@@ -151,10 +151,10 @@ Target controls optimization and debug flags. Each mode means:
 
 ::
 
-    scons platform= target=debug/release_debug/release
+    scons platform=<platform> target=debug/release_debug/release
 
 This flag appends ".debug" suffix (for debug), or ".tools" (for debug
-with tools enables). When optimization is enabled (release) it appends
+with tools enabled). When optimization is enabled (release) it appends
 the ".opt" suffix.
 
 Bits
@@ -173,7 +173,7 @@ else.
 
 ::
 
-    scons platform= bits=default/32/64
+    scons platform=<platform> bits=default/32/64
 
 This flag appends ".32" or ".64" suffixes to resulting binaries when
 relevant.
@@ -182,9 +182,9 @@ Export templates
 ----------------
 
 Official export templates are downloaded from the Godot Engine site:
-http://www.godotengine.org. However, you might want to build them
-yourself (in case you want newer ones, you are using custom modules, or
-simply don't trust your own shadow).
+`godotengine.org <http://godotengine.org>`. However, you might want
+to build them yourself (in case you want newer ones, you are using custom
+modules, or simply don't trust your own shadow).
 
 If you download the official export templates package and unzip it, you
 will notice that most are just optimized binaries or packages for each
@@ -208,8 +208,6 @@ platform:
     windows_32_release.exe
     windows_64_debug.exe
     windows_64_release.exe
-    windows_debug.exe
-    windows_release.exe
 
 To create those yourself, just follow the instructions detailed for each
 platform in this same tutorial section. Each platform explains how to

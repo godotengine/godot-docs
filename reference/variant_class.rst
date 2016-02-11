@@ -37,7 +37,7 @@ of c++ with little effort. Become a friend of Variant today.
 References:
 ~~~~~~~~~~~
 
--  `core/variant.h <https://github.com/okamstudio/godot/blob/master/core/variant.h>`__
+-  `core/variant.h <https://github.com/godotengine/okamstudio/godot/blob/master/core/variant.h>`__
 
 Dictionary and Array
 --------------------
@@ -52,7 +52,7 @@ mode (meaning modifications to a container will modify all references to
 it), or COW mode (modifications will always alter the local copy, making
 a copy of the internal data if necessary, but will not affect the other
 copies). In COW mode, Both Dictionary and Array are thread-safe,
-otherwise a Nutex should be created to lock if multi thread access is
+otherwise a Mutex should be created to lock if multi thread access is
 desired.
 
 References:

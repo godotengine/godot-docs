@@ -15,37 +15,36 @@ Disclaimer
 While it is possible to compile for iOS on a Linux environment, Apple is
 very restrictive about the tools to be used (specially hardware-wise),
 allowing pretty much only their products to be used for development. So
-this is **not official**. However, a `statement from Apple in
-2010 <http://www.apple.com/pr/library/2010/09/09Statement-by-Apple-on-App-Store-Review-Guidelines.html>`__
-says they relaxed some of the `App Store review
-guidelines <https://developer.apple.com/app-store/review/guidelines/>`__
-to allow any tool to be used, as long as the resulting binary do not
+this is **not official**. However, a `statement from Apple in 2010
+<http://www.apple.com/pr/library/2010/09/09Statement-by-Apple-on-App-Store-Review-Guidelines.html>`__
+says they relaxed some of the `App Store review guidelines
+<https://developer.apple.com/app-store/review/guidelines/>`__
+to allow any tool to be used, as long as the resulting binary does not
 download any code, which means it should be OK to use the procedure
 described here and cross-compiling the binary.
 
 Requirements
 ------------
 
--  `**XCode with the iOS
-   SDK** <https://developer.apple.com/xcode/download>`__ (a dmg image)
--  `**Clang >=3.5** <http://clang.llvm.org>`__ for your development
-   machine installed and in the ``PATH``. It needs to be version >= 3.5
+-  `XCode with the iOS SDK <https://developer.apple.com/xcode/download>`__
+   (a dmg image)
+-  `Clang >= 3.5 <http://clang.llvm.org>`__ for your development
+   machine installed and in the ``PATH``. It has to be version >= 3.5
    to target ``arm64`` architecture.
--  `**Fuse** <http://fuse.sourceforge.net>`__ for mounting and umounting
+-  `Fuse <http://fuse.sourceforge.net>`__ for mounting and umounting
    the dmg image.
--  `**darling-dmg** <https://github.com/darlinghq/darling-dmg>`__, which
+-  `darling-dmg <https://github.com/darlinghq/darling-dmg>`__, which
    needs to be built from source. The procedure for that is explained
    below.
 
    -  For building darling-dmg, you'll need the development packages of
-      the following libraries: **fuse, icu, openssl, zlib, bzip2**.
+      the following libraries: fuse, icu, openssl, zlib, bzip2.
 
--  `**cctools-port** <https://github.com/tpoechtrager/cctools-port>`__
+-  `cctools-port <https://github.com/tpoechtrager/cctools-port>`__
    for the needed build tools. The procedure for building is quite
    peculiar and is described below.
 
-   -  This also has some extra dependencies: **automake, autogen,
-      libtool**.
+   -  This also has some extra dependencies: automake, autogen, libtool.
 
 Configuring the environment
 ---------------------------
@@ -53,45 +52,45 @@ Configuring the environment
 darling-dmg
 ~~~~~~~~~~~
 
-# Clone the repository in your machine:
+Clone the repository on your machine:
 
 ::
 
-    $ git clone https://github.com/LubosD/darling-dmg.git
+    $ git clone https://github.com/darlinghq/darling-dmg.git
 
-# Build it:
+Build it:
 
 ::
 
     $ cd darling-dmg
     $ mkdir build
     $ cd build
-    $ cmake .. -DCMAKE_BUILD_TYPE=RELEASE
-    $ make -j 4  # The number is the amount of cores your processor have, for faster build
+    $ cmake .. -DCMAKE_BUILD_TYPE=Release
+    $ make -j 4  # The number is the amount of cores your processor has, for faster build
     $ cd ../..
 
 Preparing the SDK
 ~~~~~~~~~~~~~~~~~
 
-# Mount the XCode image:
+Mount the XCode image:
 
 ::
 
     $ mkdir xcode
     $ ./darling-dmg/build/darling-dmg /path/to/Xcode_7.1.1.dmg xcode
-    [...]   
+    [...]
     Everything looks OK, disk mounted
 
-# Extract the iOS SDK:
+Extract the iOS SDK:
 
 ::
 
     $ mkdir -p iPhoneSDK/iPhoneOS9.1.sdk
     $ cp -r xcode/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/* iPhoneSDK/iPhoneOS9.1.sdk
     $ cp -r xcode/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/* iPhoneSDK/iPhoneOS9.1.sdk/usr/include/c++
-    $ fusermount -u xcode # unmount the image
+    $ fusermount -u xcode  # unmount the image
 
-# Pack the SDK:
+Pack the SDK:
 
 ::
 
@@ -101,7 +100,7 @@ Preparing the SDK
 Toolchain
 ~~~~~~~~~
 
-# Build cctools:
+Build cctools:
 
 ::
 
@@ -109,7 +108,7 @@ Toolchain
     $ cd cctools-port/usage_examples/ios_toolchain
     $ ./build.sh /path/iPhoneOS9.1.sdk.tar.xz arm64
 
-# Copy the tools to a nicer place. Note that the SCons scripts for
+Copy the tools to a nicer place. Note that the SCons scripts for
 building will look under ``usr/bin`` inside the directory you provide
 for the toolchain binaries, so you must copy to such subdirectory, akin
 to the following commands:
@@ -130,14 +129,14 @@ environment: the built toolchain and the iPhoneOS SDK directory. Those
 can stay anywhere you want since you have to provide their paths to the
 SCons build command.
 
-# For the iPhone platform to be detected, you need the ``OSXCROSS_IOS``
+For the iPhone platform to be detected, you need the ``OSXCROSS_IOS``
 environment variable defined to anything.
 
 ::
 
     $ export OSXCROSS_IOS=anything
 
-# Now you can compile for iPhone using SCons like the standard Godot
+Now you can compile for iPhone using SCons like the standard Godot
 way, with some additional arguments to provide the correct paths:
 
 ::
@@ -157,5 +156,4 @@ you are in the root Godot source directory:
 
     $ /path/to/iostoolchain/usr/bin/arm-apple-darwin11-lipo -create bin/godot.iphone.opt.debug.32 bin/godot.iphone.opt.debug.64 -output bin/godot.iphone.opt.debug.fat
 
-Then you will have an iOS fat binary in
-``bin/godot.iphone.opt.debug.fat``.
+Then you will have an iOS fat binary in ``bin/godot.iphone.opt.debug.fat``.

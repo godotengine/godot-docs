@@ -11,29 +11,22 @@ Requirements
 For compiling under Linux or other Unix variants, the following is
 required:
 
--  GCC or LLVM
--  Python 2.7+ (3.0 is untested as of now).
--  SCons build system.
--  X11 and MESA development Libraries
--  Xinerama Libraries
+-  GCC (G++) or Clang
+-  Python 2.7+ (3.0 is untested as of now)
+-  SCons build system
+-  X11 and Mesa development libraries
+-  Xinerama libraries
 -  ALSA development libraries
 -  Freetype (for the editor)
 -  OpenSSL (for HTTPS and TLS)
--  pkg-config (used to detect the above three)
--  libevdev-dev and libudev-dev (for facultative joypad support)
+-  libudev-dev (optional, for gamepad support)
+-  pkg-config (used to detect the above dependencies)
 
 For Ubuntu users:
 
 ::
 
-    apt-get install scons pkg-config libx11-dev libxcursor-dev build-essential libasound2-dev libfreetype6-dev libgl1-mesa-dev libglu-dev libssl-dev libxinerama-dev
-
-If you wish to have Joypad support, libevdev-dev and libudev-dev are
-required.
-
-::
-
-    apt-get install libevdev-dev libudev-dev
+    apt-get install scons pkg-config libx11-dev libxcursor-dev build-essential libasound2-dev libfreetype6-dev libgl1-mesa-dev libglu-dev libssl-dev libxinerama-dev libudev-dev
 
 Compiling
 ---------
@@ -55,14 +48,14 @@ Building export templates
 To build Linux export templates, run the build system with the following
 parameters:
 
-(32 bits)
+-  (32 bits)
 
 ::
 
     user@host:~/godot$ scons platform=x11 tools=no target=release bits=32
     user@host:~/godot$ scons platform=x11 tools=no target=release_debug bits=32
 
-(64 bits)
+-  (64 bits)
 
 ::
 
@@ -74,8 +67,8 @@ platform in linux is quite difficult and might need a chroot
 environment.
 
 In Ubuntu, compilation works without a chroot but some libraries (.so)
-might be missing from /usr/lib32. Symlinking the missing .so files from
-/usr/lib results in a working build.
+might be missing from ``/usr/lib32``. Symlinking the missing .so files from
+``/usr/lib`` results in a working build.
 
 To create standard export templates, the resulting files must be copied
 to:
@@ -102,5 +95,3 @@ here:
 You don't even need to copy them, you can just reference the resulting
 files in the bin/ directory of your Godot source folder, so the next
 time you build you automatically have the custom templates referenced.
-
-

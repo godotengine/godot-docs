@@ -29,7 +29,7 @@ Windows 8.1
 
 -  Open a "VS 2013 x64 Cross Tools Command Prompt"
 -  The value of environment variable "PLATFORM" should be "x64"
--  Run scons with platform=winrt from the root of the source tree::
+-  Run scons with ``platform=winrt`` from the root of the source tree::
 
     C:\godot_source> scons platform=winrt
 
@@ -42,7 +42,7 @@ Windows Phone 8.1
 
 -  Open a "Visual Studio 2012 ARM Phone Tools Command Prompt"
 -  The value of environment variable "PLATFORM" should be "arm"
--  Run scons with platform=winrt from the root of the source tree::
+-  Run scons with ``platform=winrt`` from the root of the source tree::
 
     C:\godot_source> scons platform=winrt
 
@@ -99,8 +99,8 @@ Angle
 ANGLE precompiled binaries are provided on platform/winrt/x64 and
 platform/winrt/arm. They are built from MSOpenTech's "future-dev"
 branch, found here: https://github.com/MSOpenTech/angle. The visual
-studio 'solutions' used are found on "projects/winrt/windows/angle.sln"
-and "projects/winrt/windowsphone/angle.sln".
+studio 'solutions' used are found on ``projects/winrt/windows/angle.sln``
+and ``projects/winrt/windowsphone/angle.sln``.
 
 What's missing
 --------------
@@ -122,10 +122,10 @@ This is what we know:
 
 -  App packages are documented here:
    http://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh464929.aspx
--  There are 2 command line tools that might be useful, `App
-   Packager <http://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh446767.aspx>`__
-   and
-   `SignTool <http://msdn.microsoft.com/en-us/library/windows/apps/xaml/ff551778.aspx>`__.
+-  There are 2 command line tools that might be useful, `App Packager
+   <http://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh446767.aspx>`__
+   and `SignTool
+   <http://msdn.microsoft.com/en-us/library/windows/apps/xaml/ff551778.aspx>`__.
 -  There are a bunch of tools on "powershell" that deal with packages
    that might be relevant:
    http://technet.microsoft.com/library/dn448373.aspx
