@@ -249,7 +249,7 @@ certain threshold), the character can be determined to be there.
 
 A more complete demo can be found in the demo zip distributed with the
 engine, or in the
-https://github.com/okamstudio/godot/tree/master/demos/2d/kinematic_char.
+https://github.com/godotengine/godot/tree/master/demos/2d/kinematic_char.
 
 
 

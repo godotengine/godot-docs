@@ -285,9 +285,8 @@ resource.
 Example class
 -------------
 
-You can find an example class for loading resources in threads
-`here <https://github.com/okamstudio/godot/wiki/media/resource_queue.gd>`__.
-Usage is as follows:
+You can find an example class for loading resources in threads here:
+:download:`resource_queue.gd </files/resource_queue.gd>`. Usage is as follows:
 
 ::
 
@@ -365,6 +364,5 @@ Example:
     queue.cancel_resource("res://zone_2.xml")
 
 **Note**: this code in its current form is not tested in real world
-scenarios. Find me on IRC (punto on irc.freenode.net) or e-mail me
-(punto@okamstudio.com) for help.
+scenarios. Ask punto on IRC (#godotengine on irc.freenode.net) for help.
 

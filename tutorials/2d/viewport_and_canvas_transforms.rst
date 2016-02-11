@@ -44,10 +44,10 @@ resizing or stretching the screen. This transform is used internally by
 the :ref:`doc_multiple_resolutions`, but can also be requested to the viewport.
 
 Input events received in the
-`Node._input_event(ev) <https://github.com/okamstudio/godot/wiki/class_node#_input_event>`__
+:ref:`Node._input_event() <class_Node__input_event>`
 callback are multiplied by this transform, but lack the ones above. To
 convert InputEvent coordinates to local CanvasItem coordinates, the
-`CanvasItem.make_input_local(ev) <https://github.com/okamstudio/godot/wiki/class_canvasitem#make_input_local>`__
+:ref:`CanvasItem.make_input_local() <class_CanvasItem_make_input_local>`
 function was added for convenience.
 
 Transform Order

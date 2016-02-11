@@ -189,7 +189,7 @@ inside the editor:
 
 Make sure to check the viewport demos! Viewport folder in the demo.zip
 available to download, or
-https://github.com/okamstudio/godot/tree/master/demos/viewport
+https://github.com/godotengine/godot/tree/master/demos/viewport
 
 
 

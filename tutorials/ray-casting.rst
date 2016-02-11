@@ -4,19 +4,17 @@ Physics Ray Casting and Queries (2D and 3D)
 ===========================================
 
 Introduction
-~~~~~~~~~~~~
+------------
 
 One of the most common tasks in game development is casting a ray (or
 custom shaped object) and see what it hits. This enables complex
-behaviors, AI, etc. to take place.
-
-This tutorial will explain how to do this in 2D and 3D.
+behaviors, AI, etc. to take place. This tutorial will explain how to
+do this in 2D and 3D.
 
 Godot stores all the low level game information in servers, while the
 scene is just a frontend. As such, ray casting is generally a
 lower-level task. For simple raycasts, node such as
-:ref:`RayCast <class_RayCast>` and
-:ref:`RayCast2D <class_RayCast2D>`
+:ref:`RayCast <class_RayCast>` and :ref:`RayCast2D <class_RayCast2D>`
 will work, as they will return every frame what the result of a raycast
 is.
 
@@ -24,37 +22,31 @@ Many times, though, ray-casting needs to be a more interactive process
 so a way to do this by code must exist.
 
 Space
-~~~~~
+-----
 
 In the physics world, Godot stores all the low level collision and
 physics information in a *space*. The current 2d space (for 2D Physics)
 can be obtained by calling
-`CanvasItem.get_world_2d().get_space() <https://github.com/okamstudio/godot/wiki/class_canvasitem#get_world_2d>`__.
-For 3D, it's
-`Spatial.get_world().get_space() <https://github.com/okamstudio/godot/wiki/class_spatial#get_world>`__.
+:ref:`CanvasItem.get_world_2d().get_space() <class_CanvasItem_get_world_2d>`.
+For 3D, it's :ref:`Spatial.get_world().get_space() <class_Spatial_get_world>`.
 
-The resulting space
-:ref:`RID <class_RID>` can be used
-in
-:ref:`PhysicsServer <class_PhysicsServer>`
-and
-:ref:`Physics2DServer <class_Physics2DServer>`
-respectively for 3D and 2D.
+The resulting space :ref:`RID <class_RID>` can be used in
+:ref:`PhysicsServer <class_PhysicsServer>` and
+:ref:`Physics2DServer <class_Physics2DServer>` respectively for 3D and 2D.
 
-Acessing Space
-~~~~~~~~~~~~~~
+Acessing space
+--------------
 
 Godot physics runs by default in the same thread as game logic, but may
 be set to run on a separate thread to work more efficiently. Due to
 this, the only time accessing space is safe is during the
-`Node._fixed_process(delta) <https://github.com/okamstudio/godot/wiki/class_node#_fixed_process>`__
+:ref:`Node._fixed_process() <class_Node__fixed_process>`
 callback. Accessing it from outside this function may result in an error
 due to space being *locked*.
 
 To perform queries into physics space, the
 :ref:`Physics2DDirectSpaceState <class_Physics2DDirectSpaceState>`
-and
-:ref:`PhysicsDirectSpaceState <class_PhysicsDirectSpaceState>`
+and :ref:`PhysicsDirectSpaceState <class_PhysicsDirectSpaceState>`
 must be used.
 
 In code, for 2D spacestate, this code must be used:
@@ -79,8 +71,8 @@ For 3D:
     func _fixed_process(delta):
         var space_state = get_world().get_direct_space_state()
 
-Raycast Query
-~~~~~~~~~~~~~
+Raycast query
+-------------
 
 For performing a 2D raycast query, the method
 :ref:`Physics2DDirectSpaceState.intersect_ray() <class_Physics2DDirectSpaceState_intersect_ray>`
@@ -117,8 +109,8 @@ The collision result dictionary, when something hit, has this format:
 
     # in case of 3D, Vector3 is returned.
 
-Collision Exceptions
-~~~~~~~~~~~~~~~~~~~~
+Collision exceptions
+--------------------
 
 It is a very common case to attempt casting a ray from a character or
 another game scene to try to infer properties of the world around it.
@@ -141,11 +133,10 @@ collisionobject based node:
         var space_state = get_world().get_direct_space_state()
         var result = space_state.intersect_ray( get_global_pos(), enemy_pos, [ self ] )
 
-The extra argument is a list of exceptions, can be objects (need Godot
-1.1beta2+ for this) or RIDs.
+The extra argument is a list of exceptions, can be objects or RIDs.
 
-3D Ray Casting From Screen
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+3D ray casting from screen
+--------------------------
 
 Casting a ray from screen to 3D physics space is useful for object
 picking. There is not much of a need to do this because
@@ -153,8 +144,7 @@ picking. There is not much of a need to do this because
 has an "input_event" signal that will let you know when it was clicked,
 but in case there is any desire to do it manually, here's how.
 
-To cast a ray from the screen, the
-:ref:`Camera <class_Camera>` node
+To cast a ray from the screen, the :ref:`Camera <class_Camera>` node
 is needed. Camera can be in two projection modes, perspective and
 orthogonal. Because of this, both the ray origin and direction must be
 obtained. (origin changes in orthogonal, while direction changes in
@@ -175,8 +165,5 @@ To obtain it using a camera, the following code can be used:
               var from = camera.project_ray_origin(ev.pos)
               var to = from + camera.project_ray_normal(ev.pos) * ray_length
 
-Of course, remember that during _input(), space may be locked, so save
-your query for _fixed_process().
-
-
-
+Of course, remember that during ``_input()``, space may be locked, so save
+your query for ``_fixed_process()``.

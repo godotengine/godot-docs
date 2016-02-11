@@ -114,7 +114,7 @@ application/name and append it the locale identifier. For example:
 .. image:: /img/localized_name.png
 
 As always, If you don't know the code of a language or zone, `check the
-list <https://github.com/okamstudio/godot/wiki/locales>`__.
+list :ref:`doc_locales`.
 
 
 

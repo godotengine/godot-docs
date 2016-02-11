@@ -99,7 +99,7 @@ when:
    :ref:`Control.set_focus_mode() <class_Control_set_focus_mode>`.
 
 This function is
-`Control._input_event(event) <https://github.com/okamstudio/godot/wiki/class_control#_input_event>`__.
+:ref:`Control._input_event() <class_Control__input_event>`.
 Simply override it in your control. No processing needs to be set.
 
 ::

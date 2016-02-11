@@ -37,7 +37,7 @@ of c++ with little effort. Become a friend of Variant today.
 References:
 ~~~~~~~~~~~
 
--  `core/variant.h <https://github.com/godotengine/okamstudio/godot/blob/master/core/variant.h>`__
+-  `core/variant.h <https://github.com/godotengine/godotengine/godot/blob/master/core/variant.h>`__
 
 Dictionary and Array
 --------------------
@@ -58,5 +58,5 @@ desired.
 References:
 ~~~~~~~~~~~
 
--  `core/dictionary.h <https://github.com/okamstudio/godot/blob/master/core/dictionary.h>`__
--  `core/array.h <https://github.com/okamstudio/godot/blob/master/core/array.h>`__
+-  `core/dictionary.h <https://github.com/godotengine/godot/blob/master/core/dictionary.h>`__
+-  `core/array.h <https://github.com/godotengine/godot/blob/master/core/array.h>`__

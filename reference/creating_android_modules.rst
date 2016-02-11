@@ -216,7 +216,7 @@ the project folder inside the module directory and configure it:
 As of this writing, godot uses minsdk 10 and target sdk 15. If this ever
 changes, should be reflected in the manifest template:
 
-https://github.com/okamstudio/godot/blob/master/platform/android/AndroidManifest.xml.template
+https://github.com/godotengine/godot/blob/master/platform/android/AndroidManifest.xml.template
 
 Then, add the module folder to the project:
 
