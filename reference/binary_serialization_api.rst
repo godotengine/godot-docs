@@ -333,7 +333,7 @@ This field is padded to 4 bytes.
 +----------+-------+-----------+-----------------------------------------------------------------------------------------+
 | Offset   | Len   | Type      | Description                                                                             |
 +==========+=======+===========+=========================================================================================+
-| 4        | 4     | Integer   | String Length, or New Format (val&amp;0x80000000!=0 and NameCount=val&amp;0x7FFFFFFF)   |
+| 4        | 4     | Integer   | String Length, or New Format (val&0x80000000!=0 and NameCount=val&0x7FFFFFFF)           |
 +----------+-------+-----------+-----------------------------------------------------------------------------------------+
 
 For old format:
@@ -355,7 +355,7 @@ For new format:
 +==========+=======+===========+=====================================+
 | 4        | 4     | Integer   | Sub-Name Count                      |
 +----------+-------+-----------+-------------------------------------+
-| 8        | 4     | Integer   | Flags (absolute: val&amp;1 != 0 )   |
+| 8        | 4     | Integer   | Flags (absolute: val&1 != 0 )       |
 +----------+-------+-----------+-------------------------------------+
 
 For each Name and Sub-Name
@@ -385,7 +385,7 @@ Every name string is is padded to 4 bytes.
 +----------+-------+-----------+---------------------------------------------------------------------+
 | Offset   | Len   | Type      | Description                                                         |
 +==========+=======+===========+=====================================================================+
-| 4        | 4     | Integer   | val&amp;0x7FFFFFFF = elements, val&amp;0x80000000 = shared (bool)   |
+| 4        | 4     | Integer   | val&0x7FFFFFFF = elements, val&0x80000000 = shared (bool)           |
 +----------+-------+-----------+---------------------------------------------------------------------+
 
 | Then what follows is, for amount of "elements", pairs of key and
@@ -398,7 +398,7 @@ Every name string is is padded to 4 bytes.
 +----------+-------+-----------+---------------------------------------------------------------------+
 | Offset   | Len   | Type      | Description                                                         |
 +==========+=======+===========+=====================================================================+
-| 4        | 4     | Integer   | val&amp;0x7FFFFFFF = elements, val&amp;0x80000000 = shared (bool)   |
+| 4        | 4     | Integer   | val&0x7FFFFFFF = elements, val&0x80000000 = shared (bool)           |
 +----------+-------+-----------+---------------------------------------------------------------------+
 
 | Then what follows is, for amount of "elements", values one after the

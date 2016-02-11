@@ -121,7 +121,7 @@ creates the package. There are 3 different modes for exporting:
    offers total control of what is exported. Individual resources can be
    selected and dependency detection is performed to ensure that
    everything needed is added. As a plus, this mode allows to
-   "Bundle&quot; scenes and dependencies into a single file, which is
+   "Bundle" scenes and dependencies into a single file, which is
    *really* useful for games distributed on optical media.
 
 .. image:: /img/expselected.png
