@@ -15,10 +15,9 @@ is not used for binary scenes and resources.
 Packet specification
 --------------------
 
-| The packet is designed to be always padded to 4 bytes. All values are
-  little endian encoded.
-| All packets have a 4 byte header representing an integer, specifying
-  the type of data:
+The packet is designed to be always padded to 4 bytes. All values are
+little endian encoded. All packets have a 4 byte header representing an
+integer, specifying the type of data:
 
 +--------+--------------------------+
 | Type   | Value                    |

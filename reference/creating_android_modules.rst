@@ -6,8 +6,8 @@ Creating Android modules
 Introduction
 ------------
 
-Making videogames portable is all fine and dandy, until mobile gaming
-monetization shows up.
+Making video games portable is all fine and dandy, until mobile
+gaming monetization shows up.
 
 This area is complex, usually a mobile game that monetizes needs
 special connections to a server for stuff such as:
@@ -18,7 +18,7 @@ special connections to a server for stuff such as:
 -  Install tracking
 -  Ads
 -  Video ads
--  Cross promotion
+-  Cross-promotion
 -  In-game soft & hard currencies
 -  Promo codes
 -  A/B testing
@@ -82,7 +82,7 @@ functions:
 
     def configure(env):
         if env['platform'] == 'android':
-             #androd specific code
+            # android specific code
 
 Java singleton
 --------------
@@ -93,47 +93,45 @@ template follows:
 
 .. code:: java
 
-    //namespace is wrong, will eventually change
+    // namespace is wrong, will eventually change
     package com.android.godot;
 
     public class MySingleton extends Godot.SingletonBase {
 
-
         public int myFunction(String p_str) {
-              // a function to bind
+            // a function to bind
         }
 
         static public Godot.SingletonBase initialize(Activity p_activity) {
-
-                    return new MySingleton(p_activity);
+            return new MySingleton(p_activity);
         } 
 
         public MySingleton(Activity p_activity) {
-              //register class name and functions to bind
-              registerClass("MySingleton", new String[]{"myFunction"});
+            //register class name and functions to bind
+            registerClass("MySingleton", new String[]{"myFunction"});
 
-              // you might want to try initializing your singleton here, but android
-              // threads are weird and this runs in another thread, so you usually have to do
-              activity.runOnUiThread(new Runnable() {
-                   public void run() {
+            // you might want to try initializing your singleton here, but android
+            // threads are weird and this runs in another thread, so you usually have to do
+            activity.runOnUiThread(new Runnable() {
+                    public void run() {
                         //useful way to get config info from engine.cfg
                         String key = GodotLib.getGlobal("plugin/api_key");
                         SDK.initializeHere();
-                   }
-              });
+                    }
+            });
 
         }
 
-         // forwarded callbacks you can reimplement, as SDKs often need them
+        // forwarded callbacks you can reimplement, as SDKs often need them
 
-         protected void onMainActivityResult(int requestCode, int resultCode, Intent data) {}
+        protected void onMainActivityResult(int requestCode, int resultCode, Intent data) {}
 
-         protected void onMainPause() {}
-         protected void onMainResume() {}
-         protected void onMainDestroy() {}
+        protected void onMainPause() {}
+        protected void onMainResume() {}
+        protected void onMainDestroy() {}
 
-         protected void onGLDrawFrame(GL10 gl) {}
-         protected void onGLSurfaceChanged(GL10 gl, int width, int height) {} // singletons will always miss first onGLSurfaceChanged call
+        protected void onGLDrawFrame(GL10 gl) {}
+        protected void onGLSurfaceChanged(GL10 gl, int width, int height) {} // singletons will always miss first onGLSurfaceChanged call
 
     }
 
@@ -142,12 +140,12 @@ ID of the script must be known first, this is obtained by calling
 ``get_instance_ID()`` on the script. This returns an integer that can be
 passed to Java.
 
-From Java, use the calldeferred function to communicate back with Godot.
+From Java, use the ``calldeferred`` function to communicate back with Godot.
 Java will most likely run in a separate thread, so calls are deferred:
 
 .. code:: java
 
-    GodotLib.calldeferred(, "", new Object[]{param1,param2,etc});
+    GodotLib.calldeferred(<instanceid>, "<function>", new Object[]{param1,param2,etc});
 
 Add this singleton to the build of the project by adding the following
 to config.py:
@@ -211,12 +209,11 @@ the project folder inside the module directory and configure it:
 
 ::
 
-    c:\\godot\\modules\\mymodule\\sdk-1.2> android -p . -t 15
+    c:\godot\modules\mymodule\sdk-1.2> android -p . -t 15
 
-As of this writing, godot uses minsdk 10 and target sdk 15. If this ever
-changes, should be reflected in the manifest template:
-
-https://github.com/godotengine/godot/blob/master/platform/android/AndroidManifest.xml.template
+As of this writing, Godot uses minsdk 10 and target sdk 15. If this ever
+changes, it should be reflected in the manifest template:
+`AndroidManifest.xml.template <https://github.com/godotengine/godot/blob/master/platform/android/AndroidManifest.xml.template>`
 
 Then, add the module folder to the project:
 
@@ -241,17 +238,17 @@ Godot, so compile android normally.
 
 ::
 
-    c:\\godot> scons p=android
+    c:\godot> scons p=android
 
 This will cause your module to be included, the .jar will be copied to
 the java folder, the .java will be copied to the sources folder, etc.
-Each time you modify the .java scons must be called.
+Each time you modify the .java, scons must be called.
 
 Afterwards, just build the ant project normally:
 
 ::
 
-    c:\\godot\\platform\\android\\java> ant release
+    c:\godot\platform\android\java> ant release
 
 This should generate the apk used as export template properly, as
 defined in :ref:`doc_compiling_for_android`.
@@ -261,8 +258,8 @@ sequence:
 
 ::
 
-    c:\\godot> scons p=android
-    c:\\godot\\platform\\android\\java> ant release
+    c:\godot> scons p=android
+    c:\godot\platform\android\java> ant release
 
 Using the Module
 ~~~~~~~~~~~~~~~~
@@ -276,7 +273,7 @@ the following line to engine.cfg:
 
     modules="com/android/godot/MySingleton"
 
-More than one singleton module can be enable by separating with comma:
+More than one singleton module can be enabled by separating with commas:
 
 ::
 
@@ -286,15 +283,15 @@ More than one singleton module can be enable by separating with comma:
 
 Then just request the singleton Java object from Globals like this:
 
-.. code:: python
+::
 
-    #in any file
+    # in any file
 
-    var singleton=null
+    var singleton = null
 
     func _init():
         singleton = Globals.get_singleton("MySingleton")
-        print( singleton.myFunction("Hello") )
+        print(singleton.myFunction("Hello"))
 
 Troubleshooting
 ---------------
@@ -306,7 +303,7 @@ Godot crashes upon load
 
 Check ``adb logcat`` for possible problems, then:
 
--  Make sure libgodot_android.so is in the libs/armeabi folder
+-  Make sure libgodot_android.so is in the ``libs/armeabi`` folder
 -  Check that the methods used in the Java singleton only use simple
    Java datatypes, more complex ones are not supported.
 
@@ -314,13 +311,13 @@ Future
 ------
 
 Godot has an experimental Java API Wrapper that allows to use the
-entire Java API fro GDScript.
+entire Java API from GDScript.
 
 It's simple to use and it's used like this:
 
 ::
 
-    class = JavaClassWrapper.wrap()
+    class = JavaClassWrapper.wrap(<javaclass as text>)
 
 This is most likely not functional yet, if you want to test it and help
 us make it work, contact us through the `developer mailing

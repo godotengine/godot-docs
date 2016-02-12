@@ -105,9 +105,9 @@ to the English base page you translate from:
 
 Traduction de ![[Godot Engine:Creating 2D Games]]
 
-The previous link is of the form ![[:]] which enables you to add a link
-to a page located in an other project. Here, "Godot Engine" is the
-English project.
+The previous link is of the form ![[<project name>:<project page>]] which
+enables you to add a link to a page located in an other project. Here,
+"Godot Engine" is the English project.
 
 Important changes and discussions
 ---------------------------------

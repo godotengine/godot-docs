@@ -79,7 +79,9 @@ App.Windows
 -  Find the "Application" section, and add (or modify) the "Executable"
    property with the name of your .exe. Example:
 
-  <Application Id="App" Executable="godot.winrt.tools.x64.exe" EntryPoint="App_Windows.App">
+::
+
+    <Application Id="App" Executable="godot.winrt.tools.x64.exe" EntryPoint="App_Windows.App">
 
 App.WindowsPhone
 ~~~~~~~~~~~~~~~~

@@ -3,7 +3,7 @@
 Object class
 ============
 
-Object is the base class for almost everything. Most classes in Godot
+:ref:`Object <class_object>` is the base class for almost everything. Most classes in Godot
 inherit directly or indirectly from it. Objects provide reflection and
 editable properties, and declaring them is a matter of using a single
 macro like this.
@@ -12,10 +12,10 @@ macro like this.
 
     class CustomObject : public Object {
 
-        OBJ_TYPE(CustomObject,Object); // this required to inherit
+        OBJ_TYPE(CustomObject,Object); // this is required to inherit
     };
 
-This makes objects gain a lot of functionality, like for example
+This makes Objects gain a lot of functionality, like for example
 
 .. code:: cpp
 
@@ -32,15 +32,15 @@ References:
 Registering an Object
 ---------------------
 
-ObjectTypeDB is a static class that hold the entire list of registered
-classes that inherit from object, as well as dynamic bindings to all
+ObjectTypeDB is a static class that holds the entire list of registered
+classes that inherit from Object, as well as dynamic bindings to all
 their methods properties and integer constants.
 
 Classes are registered by calling:
 
 .. code:: cpp
 
-    ObjectTypeDB::register_type()
+    ObjectTypeDB::register_type<MyCustomType>()
 
 Registering it will allow the type to be instanced by scripts, code, or
 creating them again when deserializing.
@@ -49,10 +49,10 @@ Registering as virtual is the same but it can't be instanced.
 
 .. code:: cpp
 
-    ObjectTypeDB::register_virtual_type()
+    ObjectTypeDB::register_virtual_type<MyCustomType>()
 
-Object derived classes can override a static function
-``static void _bind_methods()``, when one class is registered, this
+Object-derived classes can override the static function
+``static void _bind_methods()``. When one class is registered, this
 static function is called to register all the object methods,
 properties, constants, etc. It's only called once. If an Object derived
 class is instanced but has not been registered, it will be registered as
@@ -63,15 +63,15 @@ Registering functions is one:
 
 .. code:: cpp
 
-    ObjectTypeDB::register_method(_MD("methodname","arg1name","arg2name"),&MyCustethod);
+    ObjectTypeDB::register_method(_MD("methodname","arg1name","arg2name"),&MyCustomMethod);
 
 Default values for arguments can be passed in reverse order:
 
 .. code:: cpp
 
-    ObjectTypeDB::register_method(_MD("methodname","arg1name","arg2name"),&MyCustomType::method,DEFVAL(-1)); //default argument for arg2name
+    ObjectTypeDB::register_method(_MD("methodname","arg1name","arg2name"),&MyCustomType::method,DEFVAL(-1)); //default value for arg2name
 
-``_MD`` is a macro that convers "methodname" to a stringname for more
+``_MD`` is a macro that convers "methodname" to a StringName for more
 efficiency. Argument names are used for instrospection, but when
 compiling on release, the macro ignores them, so the strings are unused
 and optimized away.
@@ -79,7 +79,7 @@ and optimized away.
 Check ``_bind_methods`` of Control or Object for more examples.
 
 If just adding modules and functionality that is not expected to be
-documented as thoroughly, the ``_MD()`` macro can safely be ignore and a
+documented as thoroughly, the ``_MD()`` macro can safely be ignored and a
 string passing the name can be passed for brevity.
 
 References:
@@ -104,7 +104,7 @@ convertible to int, for this a macro is provided:
 
 .. code:: cpp
 
-    VARIANT_ENUM_CAST( MyClass::SomeMode); // now functions that take SomeMode can be bound.
+    VARIANT_ENUM_CAST( MyClass::SomeMode ); // now functions that take SomeMode can be bound.
 
 The constants can also be bound inside ``_bind_methods``, by using:
 
@@ -138,27 +138,27 @@ This is an integer property, named "amount", hint is a range, range goes
 from 0 to 49 in steps of 1 (integers). It is only usable for the editor
 (edit value visually) but wont be serialized.
 
-or
+Another example:
 
 .. code:: cpp
 
     PropertyInfo(Variant::STRING,"modes",PROPERTY_HINT_ENUM,"Enabled,Disabled,Turbo")
 
 This is a string property, can take any string but the editor will only
-allow the defined hint ones. Since no hint flags were specified, the
+allow the defined hint ones. Since no usage flags were specified, the
 default ones are PROPERTY_USAGE_STORAGE and PROPERTY_USAGE_EDITOR.
 
-There are plenty of hints and usages available in object.h, give them a
+There are plenty of hints and usage flags available in object.h, give them a
 check.
 
 Properties can also work like C# properties and be accessed from script
-using indexing, but ths usage is generally discouraged, as using
+using indexing, but this usage is generally discouraged, as using
 functions is preferred for legibility. Many properties are also bound
 with categories, such as "animation/frame" which also make indexing
 imposssible unless using operator [].
 
 From ``_bind_methods()``, properties can be created and bound as long as
-a set/get functions exist. Example:
+set/get functions exist. Example:
 
 .. code:: cpp
 
@@ -171,7 +171,7 @@ Binding properties using ``_set``/``_get``/``_get_property_list``
 -----------------------------------------------------------------
 
 An additional method of creating properties exists when more flexibility
-is desired (i.e. adding or removing properties on context):
+is desired (i.e. adding or removing properties on context).
 
 The following functions can be overriden in an Object derived class,
 they are NOT virtual, DO NOT make them virtual, they are called for
@@ -180,7 +180,7 @@ call).
 
 .. code:: cpp
 
-    void _get_property_info(List *r_props); //return list of propertes
+    void _get_property_info(List<PropertyInfo> *r_props); //return list of propertes
     bool _get(const StringName& p_property, Variany& r_value) const; //return true if property was found
     bool _set(const StringName& p_property, const Variany& p_value); //return true if property was found
 
@@ -190,14 +190,14 @@ compared against the desired names in serial order.
 Dynamic casting
 ---------------
 
-Godot provides dynamic casting between Object Derived classes, for
+Godot provides dynamic casting between Object-derived classes, for
 example:
 
 .. code:: cpp
 
     void somefunc(Object *some_obj) {
 
-         Button * button = some_obj->cast_to<Button>();
+         Button *button = some_obj->cast_to<Button>();
     }
 
 If cast fails, NULL is returned. This system uses RTTI, but it also
@@ -213,7 +213,7 @@ languages). Connecting to them is rather easy:
 
 .. code:: cpp
 
-    obj->connect(,target_instance,target_method)
+    obj->connect(<signal>,target_instance,target_method)
     //for example
     obj->connect("enter_tree",this,"_node_entered_tree")
 
@@ -230,17 +230,17 @@ Adding signals to a class is done in ``_bind_methods``, using the
 References
 ----------
 
-Reference inherits from Object and holds a reference count. It is the
-base for reference counted object types. Declaring them must be done
-using Ref<> template. For example.
+:ref:`Reference <class_reference>` inherits from Object and holds a
+reference count. It is the base for reference counted object types.
+Declaring them must be done using Ref<> template. For example:
 
 .. code:: cpp
 
     class MyReference: public Reference {
-        OBJ_TYPE( MyReference ,Reference);
+        OBJ_TYPE( MyReference,Reference );
     };
 
-    Ref myref = memnew( MyReference );
+    Ref<MyReference> myref = memnew( MyReference );
 
 ``myref`` is reference counted. It will be freed when no more Ref<>
 templates point to it.
@@ -253,11 +253,11 @@ References:
 Resources:
 ----------
 
-Resource inherits from Reference, so all resources are reference
-counted. Resources can optionally contain a path, which reference a file
-on disk. This can be set with ``resource.set_path(path)``. This is
-normally done by the resource loader though. No two different resources
-can have the same path, attempt to do so will result in an error.
+:ref:`Resource <class_resource>` inherits from Reference, so all resources
+are reference counted. Resources can optionally contain a path, which
+reference a file on disk. This can be set with ``resource.set_path(path)``.
+This is normally done by the resource loader though. No two different
+resources can have the same path, attempt to do so will result in an error.
 
 Resources without a path are fine too.
 
@@ -273,7 +273,7 @@ Resources can be loaded with the ResourceLoader API, like this:
 
 .. code:: cpp
 
-    Ref res = ResourceLoader::load("res://someresource.res")
+    Ref<Resource> res = ResourceLoader::load("res://someresource.res")
 
 If a reference to that resource has been loaded previously and is in
 memory, the resource loader will return that reference. This means that
@@ -299,7 +299,7 @@ Saving a resource can be done with the resource saver API:
 Instance will be saved. Sub resources that have a path to a file will be
 saved as a reference to that resource. Sub resources without a path will
 be bundled with the saved resource and assigned sub-IDs, like
-"res://somereource.res::1". This also helps to cache them when loaded.
+"res://someresource.res::1". This also helps to cache them when loaded.
 
 References:
 ~~~~~~~~~~~

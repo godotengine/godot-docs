@@ -3,11 +3,17 @@
 Configure an IDE
 ================
 
-With Eclipse
-------------
+Eclipse
+-------
 
-With QtCreator
---------------
+TODO.
 
-With another editor (vim, emacs, Atom...)
------------------------------------------
+QtCreator
+---------
+
+TODO.
+
+Other editors (vim, emacs, Atom...)
+-----------------------------------
+
+TODO.

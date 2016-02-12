@@ -11,8 +11,8 @@ created and then enabled/disabled. This allows for adding new engine
 functionality at every level without modifying the core, which can be
 split for use and reuse in different modules.
 
-Modules are located in them modules/ subdirectory of the build system.
-By default, two modules exist, GDScript (which, yes it's not part of the
+Modules are located in the ``modules/`` subdirectory of the build system.
+By default, two modules exist, GDScript (which, yes, is not part of the
 core engine), and the GridMap. As many new modules as desired can be
 created and combined, and the SCons build system will take care of it
 transparently.
@@ -34,22 +34,22 @@ Creating a new module
 ---------------------
 
 Before creating a module, make sure to download the source code of Godot
-and manage to compile it. There are tutorials in the wiki for this.
+and manage to compile it. There are tutorials in the documentation for this.
 
 To create a new module, the first step is creating a directory inside
-modules. If you want to maintain the module separately, you can checkout
+``modules/``. If you want to maintain the module separately, you can checkout
 a different VCS into modules and use it.
 
 The example module will be called "sumator", and is placed inside the
-Godot source tree (C:\\\\godot refers to wherever the Godot sources are
+Godot source tree (``C:\godot`` refers to wherever the Godot sources are
 located):
 
 ::
 
-    c:\\godot> cd modules
-    c:\\godot\\modules> mkdir sumator
-    c:\\godot\\modules> cd sumator
-    c:\\godot\\modules\\sumator>
+    C:\godot> cd modules
+    C:\godot\modules> mkdir sumator
+    C:\godot\modules> cd sumator
+    C:\godot\modules\sumator>
 
 Inside we will create a simple sumator class:
 
@@ -68,8 +68,8 @@ Inside we will create a simple sumator class:
 
     protected:
         static void _bind_methods();
-    public:
 
+    public:
         void add(int value);
         void reset();
         int get_total() const;
@@ -121,7 +121,7 @@ need to be created:
     register_types.h
     register_types.cpp
 
-With the following contents
+With the following contents:
 
 .. code:: cpp
 
@@ -148,8 +148,8 @@ With the following contents
        //nothing to do here
     }
 
-Next, we need to create a SCsub so the build system compiles this
-module:
+Next, we need to create a ``SCsub`` file so the build system compiles
+this module:
 
 .. code:: python
 
@@ -159,14 +159,14 @@ module:
     env.add_source_files(env.modules_sources,"*.cpp") # just add all cpp files to the build
 
 And finally, the configuration file for the module, this is a simple
-python script that must be named 'config.py'
+python script that must be named ``config.py``:
 
 .. code:: python
 
     # config.py
 
     def can_build(platform):
-        return True  
+        return True
 
     def configure(env):
         pass
@@ -175,9 +175,9 @@ The module is asked if it's ok to build for the specific platform (in
 this case, True means it will build for every platform).
 
 The second function allows to customize the build process for the
-module, like adding special compiler flags, options etc. (This can be
-done in SCSub, but configure(env) is called at a previous stage). If
-unsure, just ignore this.
+module, like adding special compiler flags, options, etc. (This can be
+done in ``SCsub``, but ``configure(env)`` is called at a previous stage).
+If unsure, just ignore this.
 
 And that's it. Hope it was not too complex! Your module should look like
 this:
@@ -192,22 +192,22 @@ this:
     godot/modules/sumator/SCsub
 
 You can then zip it and share the module with everyone else. When
-building for every platform (instructions in the previous section), your
-module will be included.
+building for every platform (instructions in the previous sections),
+your module will be included.
 
 Using the module
 ----------------
 
 Using your newly created module is very easy, from any script you can
-do:
+now do:
 
-.. code:: python
+::
 
     var s = Sumator.new()
     s.add(10)
     s.add(20)
     s.add(30)
-    print( s.get_total() )
+    print(s.get_total())
     s.reset()
 
 And the output will be ``60``.
@@ -228,7 +228,7 @@ some surprises.
 -  If you inherit from :ref:`class_Node` (or any derived node type, such as
    Sprite), your new class will appear in the editor, in the inheritance
    tree in the "Add Node" dialog.
--  If you inherit from :ref:`class_Resource`, it will appear int the resource
+-  If you inherit from :ref:`class_Resource`, it will appear in the resource
    list, and all the exposed properties can be serialized when
    saved/loaded.
 -  By this same logic, you can extend the Editor and almost any area of

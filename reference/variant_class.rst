@@ -32,7 +32,7 @@ A Variant can:
 
 Basically, thanks to the Variant class, writing Godot itself was a much,
 much easier task, as it allows for highly dynamic constructs not common
-of c++ with little effort. Become a friend of Variant today.
+of C++ with little effort. Become a friend of Variant today.
 
 References:
 ~~~~~~~~~~~

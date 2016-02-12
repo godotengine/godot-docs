@@ -3,11 +3,11 @@
 Batch building templates
 ========================
 
-The following is almost the same exact script we use to build all the
-export templates that go to the site. If you want to build or roll them
+The following is almost the same script that we use to build all the
+export templates that go to the website. If you want to build or roll them
 yourself, this might be of use.
 
-(note: mac stuff is missing)
+(note: Apple stuff is missing)
 
 ::
 
@@ -113,7 +113,7 @@ yourself, this might be of use.
 
     # BlackBerry 10 (currently disabled)
 
-    #. /path/to/bbndk/bbndk-env.sh
+    #./path/to/bbndk/bbndk-env.sh
     #scons -j 4 platform/bb10/godot_bb10_opt.qnx.armle target=release
     #cp platform/bb10/godot_bb10_opt.qnx.armle platform/bb10/bar
 

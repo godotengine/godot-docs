@@ -3,7 +3,7 @@
 Core types
 ==========
 
-Godot has a rich set of classes and template that make for its core,
+Godot has a rich set of classes and templates that compose its core,
 and everything is built upon them.
 
 This reference will try to list them in order for their better
@@ -52,7 +52,7 @@ but over time and with abuse, this can lead to segmentation.
 Segmentation slowly creates holes that are too small for most common
 allocations, so that memory is wasted. There is a lot of literature
 about heap and segmentation, so this topic will not be developed
-further here. Modern Operating Systems use paged memory, which helps
+further here. Modern operating systems use paged memory, which helps
 mitigate the problem of segmentation but doesn't solve it.
 
 However, in many studies and tests, it is shown that given enough
@@ -73,13 +73,13 @@ of the game, the programmer can configure the dynamic memory pool size.
 Allocating memory
 -----------------
 
-Godot has many tools for tracking memory usage in an game, specially
+Godot has many tools for tracking memory usage in a game, specially
 during debug. Because of this, the regular C and C++ library calls
 should not be used. Instead, a few other ones are provided.
 
 For C-style allocation, Godot provides a few macros:
 
-::
+.. code:: cpp
 
     memalloc()
     memrealloc()
@@ -90,7 +90,7 @@ library.
 
 For C++-style allocation, special macros are provided:
 
-::
+.. code:: cpp
 
     memnew( Class / Class(args) )
     memdelete( instance )
@@ -106,24 +106,24 @@ after they are created, and right before they are deleted.
 For dynamic memory, the DVector<> template is provided. Just use it
 like:
 
-::
+.. code:: cpp
 
-    DVector
+    DVector<int>
 
 DVector is just a standard vector class, it can be accessed using the []
 operator, but that's probably slow for large amount of accesses (as it
 has to lock internally). A few helpers exist for this:
 
-::
+.. code:: cpp
 
-    DVector::Read r = dvector.read()
+    DVector<int>::Read r = dvector.read()
     int someint = r[4]
 
 and
 
-::
+.. code:: cpp
 
-    DVector::Write w = dvector.write()
+    DVector<int>::Write w = dvector.write()
     w[4]=22;
 
 respectively. These allow fast read/write from DVectors and keep it
@@ -150,9 +150,9 @@ in C++ are often inlined and make the binary size much fatter, both in
 debug symbols and code. List, Set and Map can be iterated using
 pointers, like this:
 
-::
+.. code:: cpp
 
-    for(List::Element *E=somelist.front();E;E=E->next()) {
+    for(List<int>::Element *E=somelist.front();E;E=E->next()) {
         print_line(E->get()); //print the element
     }
 
@@ -214,7 +214,7 @@ References:
 NodePath
 --------
 
-This is a special datatype sued for storing paths in a scenetree and
+This is a special datatype used for storing paths in a scene tree and
 referencing them fast.
 
 References:

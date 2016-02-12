@@ -76,9 +76,9 @@ To build for a platform (for example, x11), run with the ``platform=`` (or just
     user@host:~/godot$ scons platform=x11
 
 This will start the build process, which will take a while. If you want
-scons to build faster, use the ``-j`` parameter to specify how many cores
-will be used for the build. Or just leave it using one core, so you can
-use your computer for something else :)
+scons to build faster, use the ``-j <cores>`` parameter to specify how many
+cores will be used for the build. Or just leave it using one core, so you
+can use your computer for something else :)
 
 Example for using 4 cores:
 
@@ -94,7 +94,7 @@ generally with this naming convention:
 
 ::
 
-    godot.<platform>.[opt].[tools/debug].<bits>[extension]
+    godot.<platform>.[opt].[tools/debug].<architecture>[extension]
 
 For the previous build attempt the result would look like this:
 

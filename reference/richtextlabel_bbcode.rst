@@ -6,15 +6,14 @@ BBCode RichTextLabel
 Introduction
 ------------
 
-:ref:`class_RichTextLabel` allows to display complex text markup in a control. It
-has a built-in API for generating the markup, but can also parse a
-BBCode.
+:ref:`class_RichTextLabel` allows to display complex text markup in a control.
+It has a built-in API for generating the markup, but can also parse a BBCode.
 
-Setting Up
+Setting up
 ----------
 
-For RichTextLabel to work properly, it must be set-up. This means
-loading the intended fonts in the releavant properties:
+For RichTextLabel to work properly, it must be set up. This means loading
+the intended fonts in the relevant properties:
 
 .. image:: /img/rtl_setup.png
 
@@ -40,21 +39,21 @@ Reference
 +-----------------+--------------------------------------------+--------------------------------------------------------------+
 | **indent**      | ``[indent]{text}[/indent]``                | Incrase indent level of {text}.                              |
 +-----------------+--------------------------------------------+--------------------------------------------------------------+
-| **url**         | ``[url]{url}[/url]``                       | Show as such.                                                |
+| **url**         | ``[url]{url}[/url]``                       | Show {url} as such.                                          |
 +-----------------+--------------------------------------------+--------------------------------------------------------------+
-| **url (ref)**   | ``[url=<url>]{text}[/url]``                | Makes {text} reference .                                     |
+| **url (ref)**   | ``[url=<url>]{text}[/url]``                | Makes {text} reference <url>.                                |
 +-----------------+--------------------------------------------+--------------------------------------------------------------+
-| **image**       | ``[img=<path>][/img]``                     | Insert image at resource .                                   |
+| **image**       | ``[img=<path>][/img]``                     | Insert image at resource <path>.                             |
 +-----------------+--------------------------------------------+--------------------------------------------------------------+
-| **font**        | ``[font=<path>]{text}[/font]``             | Use custom font at for {text}.                               |
+| **font**        | ``[font=<path>]{text}[/font]``             | Use custom font at <path> for {text}.                        |
 +-----------------+--------------------------------------------+--------------------------------------------------------------+
 | **color**       | ``[color=<code/name>]{text}[/color]``      | Change {text} color, use # format such as #ff00ff or name.   |
 +-----------------+--------------------------------------------+--------------------------------------------------------------+
 
-Built-In Color Names
+Built-in color names
 ~~~~~~~~~~~~~~~~~~~~
 
-List of valid color names for the [color=] tag:
+List of valid color names for the [color=<name>] tag:
 
 -  aqua
 -  black
@@ -71,5 +70,3 @@ List of valid color names for the [color=] tag:
 -  teal
 -  white
 -  yellow
-
-

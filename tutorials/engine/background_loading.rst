@@ -30,7 +30,7 @@ Obtaining a ResourceInteractiveLoader
 
 ::
 
-    Ref ResourceLoader::load_interactive(String p_path);
+    Ref<ResourceInteractiveLoader> ResourceLoader::load_interactive(String p_path);
 
 This method will give you a ResourceInteractiveLoader that you will use
 to manage the load operation.
@@ -101,7 +101,7 @@ Obtaining the resource
 
 ::
 
-    Ref ResourceInteractiveLoader::get_resource();
+    Ref<Resource> ResourceInteractiveLoader::get_resource();
 
 If everything goes well, use this method to retrieve your loaded
 resource.

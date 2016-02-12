@@ -191,7 +191,7 @@ Example:
 
 ::
 
-    std::vector array;
+    std::vector<int> array;
     array.resize(4);
     array[0]=10; //initialize manually
     array[1]=20; //can't mix types
@@ -335,7 +335,7 @@ Iterating in some statically typed languages can be quite complex:
 
     //Even in STL:
 
-    for(std::list::const_iterator it = strings.begin() ; it != strings.end() ; it++) {
+    for(std::list<std::string>::const_iterator it = strings.begin() ; it != strings.end() ; it++) {
 
         std::cout << *it << std::endl;
     }

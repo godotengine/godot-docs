@@ -43,7 +43,7 @@ requirement is that the files have a special format. The csv files must
 be saved in utf-8 encoding and the format is as follows:
 
 +--------+----------+----------+----------+
-|        |          |          |          |
+|        | <lang1>  | <lang2>  | <langN>  |
 +========+==========+==========+==========+
 | KEY1   | string   | string   | string   |
 +--------+----------+----------+----------+
