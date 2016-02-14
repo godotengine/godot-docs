@@ -25,6 +25,7 @@ For compiling under Windows, Linux or OSX, the following is required:
 -  SCons build system.
 -  Android SDK version 8 and 13
 -  Android NDK
+-  Gradle
 
 Setting up SCons
 ----------------
@@ -114,16 +115,13 @@ the current numbers, then set the following environment variables:
 Building the APK
 ----------------
 
-To compile the APK, go to the Java folder and run ant, either for debug
-or release build:
+To compile the APK, go to the Java folder and run ``gradlew.bat build``
+(or ``./gradlew build`` on unix):
 
 ::
 
-    C:\godot\platform\android\java> ant debug
+    C:\godot\platform\android\java> gradlew.bat build
 
-::
-
-    C:\godot\platform\android\java> ant release
 
 In the ``java/bin`` subfolder, the resulting apk can be used as export
 template.
@@ -149,9 +147,9 @@ the following arguments:
 ::
 
     C:\godot> scons platform=android target=release_debug
-    C:\godot> cp bin/libgodot_android.opt.debug.so platform/android/java/libs/armeabi
+    C:\godot> cp bin/libgodot_android.opt.debug.so platform/android/java/libs/armeabi/libgodot_android.so
     C:\godot> cd platform/android/java
-    C:\godot\platform\android\java> ant release
+    C:\godot\platform\android\java> gradlew.bat build
 
 Resulting APK is in:
 
@@ -164,9 +162,9 @@ Resulting APK is in:
 ::
 
     C:\godot> scons platform=android target=release
-    C:\godot> cp bin/libgodot_android.opt.so platform/android/java/libs/armeabi
+    C:\godot> cp bin/libgodot_android.opt.so platform/android/java/libs/armeabi/libgodot_android.so
     C:\godot> cd platform/android/java
-    C:\godot\platform\android\java> ant release
+    C:\godot\platform\android\java> gradlew.bat build
 
 Resulting APK is in:
 
