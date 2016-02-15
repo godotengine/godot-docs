@@ -32,11 +32,11 @@ but they can be created via code easily. For example:
 
 ::
 
-    #create a circle
+    # Create a circle
     var c = CircleShape2D.new()
     c.set_radius(20)
 
-    #create a box
+    # Create a box
     var b = RectangleShape2D.new()
     b.set_extents(Vector2(20,10))
 
@@ -48,21 +48,20 @@ functions like:
 
 ::
 
-    #check if there is a collision between two shapes, each with a transform
-    if b.collide(b_xform,a,a_xform):
-       print("OMG Collision!")
+    # Check if there is a collision between two shapes, each with a transform
+    if b.collide(b_xform, a, a_xform):
+        print("OMG Collision!")
 
 Godot will return correct collision and collision info from the
 different calls to the Shape2D api. Collision between all shapes and
 transforms can be done this way, or even obtaining contact information,
 motion casting, etc.
 
-Transforming Shapes
+Transforming shapes
 ~~~~~~~~~~~~~~~~~~~
 
 As seen before in the collide functions, 2D shapes in godot can be
-transformed by using a regular
-:ref:`Matrix32 <class_Matrix32>`
+transformed by using a regular :ref:`Matrix32 <class_Matrix32>`
 transform, meaning the can check collision while scaled, moved and
 rotated. The only limitation to this is that shapes with curved sections
 (such as circle and capsule) can only be scaled uniformly. This means
@@ -73,14 +72,14 @@ scaled uniformly!
 
 .. image:: /img/shape_rules.png
 
-But Problems Begin
-------------------
+When problems begin
+-------------------
 
 Even though this sounds good, reality is that collision detection alone
 is usually not enough in most scenarios. Many problems start arising as
 long as the development of the game is in progress:
 
-Too Many Combinations!
+Too many combinations!
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Games have several dozens, hundreds, thousands! of objects that can
@@ -91,14 +90,14 @@ against everything in two for loops like this:
 
     for i in colliders:
         for j in colliders:
-             if (i.collides(j)):
-                  do_collision_code()
+            if (i.collides(j)):
+                do_collision_code()
 
 But this scales really bad. Let's imagine there are only 100 objects in
 the game. This means that 100\*100=10000 collisions will need to be
 tested each frame. This is a lot!
 
-Visual Aid
+Visual aid
 ~~~~~~~~~~
 
 Most of the time, creating a shape via code is not enough. We need to
@@ -106,7 +105,7 @@ visually place it over a sprite, draw a collision polygon, etc. It is
 obvious that we need nodes to create the proper collision shapes in a
 scene.
 
-Collision Resolution
+Collision resolution
 ~~~~~~~~~~~~~~~~~~~~
 
 Imagine we solved the collision issue, we can tell easily and quickly
@@ -114,28 +113,25 @@ which shapes overlap. If many of them are dynamic objects that move
 around, or move according to newtonian physics, solving a collision of
 multiple objects can be really difficult code-wise.
 
-Introducing.. Godot's Physics Engine!
--------------------------------------
+Introducing... Godot's physics engine!
+--------------------------------------
 
 To solve all these problems, Godot has a physics and collision engine
 that is well integrated into the scene system, yet it allows different
 levels and layers of functionality. The built-in physics engine can be
 used for:
 
--  Simple Collision Detection: See
-   :ref:`Shape2D <class_Shape2D>`
+-  Simple Collision Detection: See :ref:`Shape2D <class_Shape2D>`
    API.
 -  Scene Kinematics: Handle shapes, collisions, broadphase, etc as
-   nodes. See
-   :ref:`Area2D <class_Area2D>`.
+   nodes. See :ref:`Area2D <class_Area2D>`.
 -  Scene Physics: Rigid bodies and constraints as nodes. See
-   :ref:`RigidBody2D <class_RigidBody2D>`,
-   and the joint nodes.
+   :ref:`RigidBody2D <class_RigidBody2D>`, and the joint nodes.
 
-Units of Measure
+Units of measure
 ~~~~~~~~~~~~~~~~
 
-It is often a problem when integrating a 2D Physics engine to a game
+It is often a problem when integrating a 2D physics engine to a game
 that such engines are optimized to work using meters as unit of measure.
 Godot uses a built-in custom 2D physics engine that is designed to
 function properly in pixels, so all units and default values used for
@@ -177,8 +173,9 @@ CollisionShape2D
 ~~~~~~~~~~~~~~~~
 
 This node is a helper node. It must be created as a direct children of a
-CollisionObject2D derived node
-:ref:`Area2D <class_Area2D>`.
+CollisionObject2D derived node: :ref:`Area2D <class_Area2D>`,
+:ref:`StaticBody2D <class_StaticBody2D>`, :ref:`KinematicBody2D <class_KinematicBody2D>`,
+:ref:`RigidBody2D <class_RigidBody2D>`.
 
 By itself it does nothing, but when created as a child of the above
 mentioned nodes, it adds collision shapes to them. Any amount of
@@ -187,7 +184,7 @@ simply have more collision shapes. When added/deleted/moved/edited, it
 updates the list of shapes in the parent node.
 
 At run time, though, this node does not exist (can't be accessed with
-get_node() ), since it's only meant to be an editor helper. To access
+``get_node()``), since it's only meant to be an editor helper. To access
 the shapes created at runtime, use the CollisionObject2D API directly.
 
 As an example, here's the scene from the platformer, containing an
@@ -238,8 +235,7 @@ such a character or a rigidbody, these are the same as a staticbody).
 They have however, two main uses:
 
 -  **Simulated Motion**: When these bodies are moved manually, either
-   from code or from an
-   :ref:`AnimationPlayer <class_AnimationPlayer>`
+   from code or from an :ref:`AnimationPlayer <class_AnimationPlayer>`
    (with process mode set to fixed!), the physics will automatically
    compute an estimate of their linear and angular velocity. This makes
    them very useful for moving platforms or other
@@ -249,16 +245,15 @@ They have however, two main uses:
 -  **Kinematic Characters**: KinematicBody2D also has an api for moving
    objects (the move() function) while performing collision tests. This
    makes them really useful to implement characters that collide against
-   a world, but that don't require advanced physics. A special
-   :ref:`doc_kinematic_character_2d`.
+   a world, but that don't require advanced physics. There is a tutorial
+   about :ref:`doc_kinematic_character_2d`.
 
 RigidBody2D
 ~~~~~~~~~~~
 
 This type of body simulates newtonian physics. It has mass, friction,
 bounce, and the 0,0 coordinates simulates the center of mass. When real
-physics are needed,
-:ref:`RigidBody2D <class_RigidBody2D>`
+physics are needed, :ref:`RigidBody2D <class_RigidBody2D>`
 is the node to use. The motion of this body is affected by gravity
 and/or other bodies.
 
@@ -286,14 +281,13 @@ function must be overridden:
 ::
 
     func _integrate_forces(state):
-       [use state to change the object]
+        [use state to change the object]
 
-The \`state\` parameter is of type
-:ref:`Physics2DDirectBodyState <class_Physics2DDirectBodyState>`.
+The "state" parameter is of type :ref:`Physics2DDirectBodyState <class_Physics2DDirectBodyState>`.
 Please do not use this object (state) outside the callback as it will
 result in an error.
 
-Contact Reporting
+Contact reporting
 -----------------
 
 In general, RigidBody2D will not keep track of the contacts, because
@@ -326,22 +320,24 @@ signals emitted by this node:
 
 ::
 
-    #Simple, high level notification
+    # Simple, high level notification
     body_enter(body:PhysicsBody2D)
     body_exit(body:PhysicsBody2D)
     area_enter(area:Area2D)
     area_exit(body:Area2D)
 
-    #Low level shape-based notification
-    #notifies which shape specifically in both the body and area are in contact
+    # Low level shape-based notification
+    # Notifies which shape specifically in both the body and area are in contact
     body_enter_shape(body_id:int,body:PhysicsBody2D,body_shape_index:int,area_shape_index:idx)
     body_exit_shape(body_id:int,body:PhysicsBody2D,body_shape_index:int,area_shape_index:idx)
     area_enter_shape(area_id:int,area:Area2D,area_shape_index:int,self_shape_index:idx)
     area_exit_shape(area_id:int,area:Area2D,area_shape_index:int,self_shape_index:idx)
 
-    Areas also by default receive mouse/touchscreen input, providing a lower-level way than controls to implement this kind of input in a game. Bodies support this by it's disabled by default.
+Areas also by default receive mouse/touchscreen input, providing a
+lower-level way than controls to implement this kind of input in a game.
+Bodies support this by it's disabled by default.
 
-Physics Global Variables
+Physics global variables
 ------------------------
 
 A few global variables can be tweaked in the project settings for
@@ -361,7 +357,7 @@ small portion of the screen, it might be necessary to shrink that value
 few large colliders that span a huge map (of several screens of size),
 increasing that value a bit might help save resources.
 
-Fixed Process Callback
+Fixed process callback
 ----------------------
 
 The physics engine may spawn multiple threads to improve performance, so
@@ -374,7 +370,7 @@ but it's called once per physics frame (by default 60 times per second).
 During this time, the physics engine is in *synchronization* state and
 can be accessed directly and without delays.
 
-To enable a fixed process callback, use the set_fixed_process()
+To enable a fixed process callback, use the ``set_fixed_process()``
 function, example:
 
 ::
@@ -382,12 +378,12 @@ function, example:
     extends KinematicBody2D
 
     func _fixed_process(delta):
-       move( direction * delta )
+        move(direction * delta)
 
     func _ready():
-       set_fixed_process(true)
+        set_fixed_process(true)
 
-Casting Rays and Motion Queries
+Casting rays and motion queries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 It is very often desired to "explore" the world around from our code.
@@ -400,8 +396,8 @@ server must be used directly. For this, the
 :ref:`Physics2DDirectspaceState <class_Physics2DDirectspaceState>`
 class must be used. To obtain it, the following steps must be taken:
 
-1. It must be used inside the _fixed_process() callback, or at
-_integrate_forces()
+1. It must be used inside the ``_fixed_process()`` callback, or at
+``_integrate_forces()``
 
 2. The 2D RIDs for the space and physics server must be obtained.
 
@@ -411,11 +407,11 @@ The following code should work:
 
     func _fixed_process(delta):
         var space = get_world_2d().get_space()
-        var space_state = Physics2DServer.space_get_direct_state( space )
+        var space_state = Physics2DServer.space_get_direct_state(space)
 
 Enjoy doing space queries!
 
-Contact Reporting
+Contact reporting
 ~~~~~~~~~~~~~~~~~
 
 Remember that not every combination of two bodies can "report" contacts.
@@ -427,20 +423,16 @@ and with other areas. The following table should make it more visual:
 In case of overlap, who receives collision information?
 -------------------------------------------------------
 
-\|\ *. Type \|*. RigidBody \|\ *. CharacterBody \|*. KinematicBody
-\|\ *. StaticBody \|*. Area \|
-
-\| **RigidBody** \| Both \| Both \| Both \| Rigidbody \| Area \|
-
-\| **CharacterBody** \| Both \| Both \| Both \| CharacterBody \| Area
-\|
-
-\| **KinematicBody** \| Both \| Both \| None \| None \| Area \|
-
-\| **StaticBody** \| RigidBody \| CharacterBody \| None \| None \|
-None \|
-
-\| **Area** \| Area \| Area \| Area \| None \| Both \|
-
-
-
++-------------------+-------------+-----------------+-----------------+---------------+--------+
+| **Type**          | *RigidBody* | *CharacterBody* | *KinematicBody* | *StaticBody*  | *Area* |
++===================+=============+=================+=================+===============+========+
+| **RigidBody**     | Both        | Both            | Both            | Rigidbody     | Area   |
++-------------------+-------------+-----------------+-----------------+---------------+--------+
+| **CharacterBody** | Both        | Both            | Both            | CharacterBody | Area   |
++-------------------+-------------+-----------------+-----------------+---------------+--------+
+| **KinematicBody** | Both        | Both            | None            | None          | Area   |
++-------------------+-------------+-----------------+-----------------+---------------+--------+
+| **StaticBody**    | RigidBody   | CharacterBody   | None            | None          | None   |
++-------------------+-------------+-----------------+-----------------+---------------+--------+
+| **Area**          | Area        | Area            | Area            | None          | Both   |
++-------------------+-------------+-----------------+-----------------+---------------+--------+
