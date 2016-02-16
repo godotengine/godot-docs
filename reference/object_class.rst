@@ -3,6 +3,9 @@
 Object class
 ============
 
+General definition
+------------------
+
 :ref:`Object <class_object>` is the base class for almost everything. Most classes in Godot
 inherit directly or indirectly from it. Objects provide reflection and
 editable properties, and declaring them is a matter of using a single
