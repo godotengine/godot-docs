@@ -1050,3 +1050,22 @@ signal is activated, execution will return. Here are some examples:
 
     #resume execution when animation is done playing:
     yield( get_node("AnimationPlayer"), "finished" )
+
+
+Onready Keyword
+~~~~~~~~~~~~~~~
+
+When using nodes, it's very common to desire to keep references to parts of the scene in a variable. As scenes are only warranted to be configured when entering the active scene tree, the sub-nodes can only be obtained when a call to Node._ready() is made.
+
+::
+
+    var mylabel
+    
+    func _ready():
+      myabel = get_node("MyLabel")
+
+This can get a little cumbersome, specially when nodes and external references pile up. For this, GDScript has the ``onready`` keyword, that defers initialization of a member variable until _ready is called. It can replace the above code with a single line:
+
+::
+
+    onready var mylabel = get_node("MyLabel")
