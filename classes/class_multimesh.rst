@@ -46,7 +46,7 @@ MultiMesh provides low level mesh instancing. If the amount of :ref:`Mesh<class_
 
 For this case a MultiMesh becomes very useful, as it can draw thousands of instances with little API overhead.
 
-        As a drawback, if the instances are too far away of each other, performance may be reduced as every single instance will always rendered (they are spatially indexed as one, for the whole object).
+As a drawback, if the instances are too far away of each other, performance may be reduced as every single instance will always rendered (they are spatially indexed as one, for the whole object).
 
 Since instances may have any behavior, the AABB used for visibility must be provided by the user, or generated with :ref:`generate_aabb<class_MultiMesh_generate_aabb>`.
 

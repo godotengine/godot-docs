@@ -485,7 +485,7 @@ Return true if an environment variable exists.
 
 - :ref:`String<class_string>`  **get_name**  **(** **)** const
 
-Return the name of the host OS.
+Return the name of the host OS. Possible values are: "Android", "BlackBerry 10", "Flash", "Haiku", "iOS", "HTML5", "OSX", "Server", "Windows", "WinRT", "X11"
 
 .. _class_OS_get_cmdline_args:
 

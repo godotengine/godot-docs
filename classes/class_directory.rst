@@ -10,7 +10,7 @@ Directory
 Brief Description
 -----------------
 
-
+Type used to handle the filesystem.
 
 Member Functions
 ----------------
@@ -51,6 +51,29 @@ Member Functions
 | Error                        | :ref:`remove<class_Directory_remove>`  **(** :ref:`String<class_string>` file  **)**                                 |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------+
 
+Description
+-----------
+
+Directory type. Is used to manage directories and their content (not restricted to the project folder).
+
+Example for how to iterate through the files of a directory:
+
+::
+
+    func dir(path):
+        var d = Directory.new()
+        if d.open( path )==0:
+            d.list_dir_begin()
+            var file_name = d.get_next()
+            while(file_name!=""):
+                if d.current_is_dir():
+                    print("Found directory: " + file_name)
+                else:
+                    print("Found file:" + file_name)
+                file_name = d.get_next()
+        else:
+            print("Some open Error, maybe directory not found?")
+
 Member Function Description
 ---------------------------
 
@@ -58,21 +81,33 @@ Member Function Description
 
 - Error  **open**  **(** :ref:`String<class_string>` path  **)**
 
+Opens a directory to work with. Needs a path, example "res://folder"
+
 .. _class_Directory_list_dir_begin:
 
 - :ref:`bool<class_bool>`  **list_dir_begin**  **(** **)**
+
+Loads all file names of the current directory (prepares the get_next() function).
 
 .. _class_Directory_get_next:
 
 - :ref:`String<class_string>`  **get_next**  **(** **)**
 
+Is used to iterate through the files of the current directory. Returns the name(no path) of the current file/directory, it also contains "." and ".." .
+
+Returns an empty String "" at the end of the list.
+
 .. _class_Directory_current_is_dir:
 
 - :ref:`bool<class_bool>`  **current_is_dir**  **(** **)** const
 
+Returns true if the current file you are looking at with get_next() is a directory or "." or ".." otherwise false.
+
 .. _class_Directory_list_dir_end:
 
 - void  **list_dir_end**  **(** **)**
+
+Run this to empty the list of remaining files in get_next(). You can use it to end the iteration, as soon as your goal is reached.
 
 .. _class_Directory_get_drive_count:
 
@@ -86,9 +121,13 @@ Member Function Description
 
 - Error  **change_dir**  **(** :ref:`String<class_string>` todir  **)**
 
+Needs a path or name to the next directory. When the target directory is in the current directory you can use "newfolder" otherwise you need the full path "res://currentfolder/newfolder"
+
 .. _class_Directory_get_current_dir:
 
 - :ref:`String<class_string>`  **get_current_dir**  **(** **)**
+
+Returns a path to the current directory, example: "res://folder"
 
 .. _class_Directory_make_dir:
 
@@ -105,6 +144,8 @@ Member Function Description
 .. _class_Directory_dir_exists:
 
 - :ref:`bool<class_bool>`  **dir_exists**  **(** :ref:`String<class_string>` name  **)**
+
+Returns true if directory exists otherwise false. Needs a path, example: "res://folder"
 
 .. _class_Directory_get_space_left:
 

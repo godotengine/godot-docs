@@ -138,8 +138,6 @@ Connect to a host. This needs to be done before any requests are sent.
 
 The host should not have http:// prepended but will strip the protocol identifier if provided.
 
-
-
 verify_host will check the SSL identity of the host if set to true.
 
 .. _class_HTTPClient_set_connection:
@@ -154,14 +152,13 @@ Sends a request to the connected host. The url is what is normally behind the ho
 
 Headers are HTTP request headers.
 
-To create a POST request with query strings to push to the server, do::
+To create a POST request with query strings to push to the server, do:
+
+::
 
     var fields = {"username" : "user", "password" : "pass"}
-
     var queryString = httpClient.query_string_from_dict(fields)
-
     var headers = :ref:`"Content-Type: application/x-www-form-urlencoded", "Content-Length: " + str(queryString.length())<class_"content-type: application/x-www-form-urlencoded", "content-length: " + str(querystring.length())>`
-
     var result = httpClient.request(httpClient.METHOD_POST, "index.php", headers, queryString)
 
 .. _class_HTTPClient_send_body_text:
@@ -199,6 +196,8 @@ Stub function
 .. _class_HTTPClient_get_response_headers_as_dictionary:
 
 - :ref:`Dictionary<class_dictionary>`  **get_response_headers_as_dictionary**  **(** **)**
+
+Returns all response headers as dictionary where the keys and values are transformed to lower case. A key with more than one value is a simple string with "; " as separator. example: (content-length:12), (content-type:application/json; charset=utf-8)
 
 .. _class_HTTPClient_get_response_body_length:
 
@@ -240,12 +239,12 @@ This needs to be called in order to have any request processed. Check results wi
 
 - :ref:`String<class_string>`  **query_string_from_dict**  **(** :ref:`Dictionary<class_dictionary>` fields  **)**
 
-Generates a GET/POST application/x-www-form-urlencoded style query string from a provided dictionary, e.g.::
+Generates a GET/POST application/x-www-form-urlencoded style query string from a provided dictionary, e.g.:
+
+::
 
     var fields = {"username": "user", "password": "pass"}
-
     String queryString = httpClient.query_string_from_dict(fields)
-
     returns:= "username=user&password=pass"
 
 

@@ -36,7 +36,7 @@ Member Functions
 Description
 -----------
 
-Damped spring constraint for 2D physics. This resembles a spring joint that always want to go back to a given length.
+Damped spring constraint for 2D physics. This resembles a spring joint that always wants to go back to a given length.
 
 Member Function Description
 ---------------------------
@@ -69,24 +69,24 @@ Return the resting length of the spring joint. The joint will always try to go t
 
 - void  **set_stiffness**  **(** :ref:`float<class_float>` stiffness  **)**
 
-Set the stiffness of the spring joint.
+Set the stiffness of the spring joint. The joint applies a force equal to the stiffness times the distance from its resting length.
 
 .. _class_DampedSpringJoint2D_get_stiffness:
 
 - :ref:`float<class_float>`  **get_stiffness**  **(** **)** const
 
-Return the stiffness of the spring joint.
+Return the stiffness of the spring joint. The joint applies a force equal to the stiffness times the distance from its resting length.
 
 .. _class_DampedSpringJoint2D_set_damping:
 
 - void  **set_damping**  **(** :ref:`float<class_float>` damping  **)**
 
-Set the damping of the spring joint.
+Set the damping ratio of the spring joint. A value of 0 indicates an undamped spring, while 1 causes the system to reach equilibrium as fast as possible (critical damping).
 
 .. _class_DampedSpringJoint2D_get_damping:
 
 - :ref:`float<class_float>`  **get_damping**  **(** **)** const
 
-Return the damping of the spring joint.
+Return the damping ratio of the spring joint. A value of 0 indicates an undamped spring, while 1 causes the system to reach equilibrium as fast as possible (critical damping).
 
 

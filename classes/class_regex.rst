@@ -28,6 +28,8 @@ Member Functions
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`            | :ref:`get_capture<class_RegEx_get_capture>`  **(** :ref:`int<class_int>` capture  **)** const                                                   |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`get_capture_start<class_RegEx_get_capture_start>`  **(** :ref:`int<class_int>` capture  **)** const                                       |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`StringArray<class_stringarray>`  | :ref:`get_captures<class_RegEx_get_captures>`  **(** **)** const                                                                                |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -108,6 +110,10 @@ Returns the number of capturing groups. A captured group is the part of a string
 - :ref:`String<class_string>`  **get_capture**  **(** :ref:`int<class_int>` capture  **)** const
 
 Returns a captured group. A captured group is the part of a string that matches a part of the pattern delimited by parentheses (unless they are non-capturing parentheses *(?:)*).
+
+.. _class_RegEx_get_capture_start:
+
+- :ref:`int<class_int>`  **get_capture_start**  **(** :ref:`int<class_int>` capture  **)** const
 
 .. _class_RegEx_get_captures:
 

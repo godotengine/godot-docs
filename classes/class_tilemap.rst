@@ -92,6 +92,8 @@ Member Functions
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`is_cell_y_flipped<class_TileMap_is_cell_y_flipped>`  **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y  **)** const                                                                                                                          |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`is_cell_transposed<class_TileMap_is_cell_transposed>`  **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y  **)** const                                                                                                                        |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`clear<class_TileMap_clear>`  **(** **)**                                                                                                                                                                                                          |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_array>`        | :ref:`get_used_cells<class_TileMap_get_used_cells>`  **(** **)** const                                                                                                                                                                                  |
@@ -374,6 +376,12 @@ Return whether the referenced cell is flipped over the X axis.
 - :ref:`bool<class_bool>`  **is_cell_y_flipped**  **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y  **)** const
 
 Return whether the referenced cell is flipped over the Y axis.
+
+.. _class_TileMap_is_cell_transposed:
+
+- :ref:`bool<class_bool>`  **is_cell_transposed**  **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y  **)** const
+
+Return whether the referenced cell is transposed, i.e. the X and Y axes are swapped (mirroring with regard to the (1,1) vector).
 
 .. _class_TileMap_clear:
 
