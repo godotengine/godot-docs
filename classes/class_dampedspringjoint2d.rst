@@ -87,5 +87,5 @@ Set the damping ratio of the spring joint. A value of 0 indicates an undamped sp
 
 - :ref:`float<class_float>`  **get_damping**  **(** **)** const
 
-Return the damping of the spring joint. A value of 0 indicates an undamped spring, while 1 causes the system to reach equilibrium as fast as possible (critical damping).
+Return the damping ratio of the spring joint. A value of 0 indicates an undamped spring, while 1 causes the system to reach equilibrium as fast as possible (critical damping).
 
