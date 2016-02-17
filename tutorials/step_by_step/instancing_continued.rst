@@ -37,8 +37,7 @@ of game. Just write down the elements that come to mind, and then the
 arrows that represent ownership.
 
 Once this diagram exists, making a game is about creating a scene for
-each of those nodes, and use instancing (either by code [STRIKEOUT:more
-of that later] or from the editor) to represent ownership.
+each of those nodes, and use instancing (either by code or from the editor) to represent ownership.
 
 Most of the time programming games (or software in general) is spent
 designing an architecture and fitting game components to that
