@@ -68,46 +68,55 @@ letter. This is good:
 Note for non-English authors
 ----------------------------
 
-If you intend to create a new page in your language, you are asked to
-firstly create the corresponding English page if it doesn't already
-exist. **Do it even if you will not write it yourself, just leave it
-blank.** Only then, create the corresponding page in your own
-language. Maybe later, another contributor will translate your new
-page to English.
+For the moment, we will not pull contributed pages that have no English counterpart.
+We aim at providing a tool helping translators and writers to determine whether certain languages have pages that do not exist in other languages, but this is not done yet. When it is done, we will open the documentation to new contributions.
 
-**Remember** : even if Godot aims at being accessible to everyone,
-English is the most frequent language for documentation.
+Please be patient, we are working on it ;) .
+
+--
+   If you intend to create a new page in your language, you are asked to
+   firstly create the corresponding English page if it doesn't already
+   exist. **Do it even if you will not write it yourself, just leave it
+   blank.** Only then, create the corresponding page in your own
+   language. Maybe later, another contributor will translate your new
+   page to English.
+   
+   **Remember** : even if Godot aims at being accessible to everyone,
+   English is the most frequent language for documentation.
 
 Translating existing pages
 --------------------------
 
-**TODO: Needs review for Sphinx doc**
+**New guidelines will come soon !**
 
-You are very welcome to translate existing pages from English to your
-language, or from your language to English. If these guidelines were
-respected, an English page already exists for every page of this wiki,
-even if it is empty. To translate an existing page, please follow these
-few rules :
-
--  Respect the grammar and orthography
--  Make use of the :ref:`doc_wiki_syntax`
--  Re-use images
--  Always keep the structure of the English page (if it is written yet,
-   follow the structure of the original language page you are
-   translating from).
-
-To translate an existing page, simply copy its original content. Then,
-create the new page in the section of your language, copy the English
-content in it and start translating.
-
-Please add a line at the very beginning of your translation, linking
-to the English base page you translate from:
-
-Traduction de ![[Godot Engine:Creating 2D Games]]
-
-The previous link is of the form ![[<project name>:<project page>]] which
-enables you to add a link to a page located in an other project. Here,
-"Godot Engine" is the English project.
+..
+   **TODO: Needs review for Sphinx doc**
+   
+   You are very welcome to translate existing pages from English to your
+   language, or from your language to English. If these guidelines were
+   respected, an English page already exists for every page of this wiki,
+   even if it is empty. To translate an existing page, please follow these
+   few rules :
+   
+   -  Respect the grammar and orthography
+   -  Make use of the :ref:`doc_wiki_syntax`
+   -  Re-use images
+   -  Always keep the structure of the English page (if it is written yet,
+      follow the structure of the original language page you are
+      translating from).
+   
+   To translate an existing page, simply copy its original content. Then,
+   create the new page in the section of your language, copy the English
+   content in it and start translating.
+   
+   Please add a line at the very beginning of your translation, linking
+   to the English base page you translate from:
+   
+   Traduction de ![[Godot Engine:Creating 2D Games]]
+   
+   The previous link is of the form ![[<project name>:<project page>]] which
+   enables you to add a link to a page located in an other project. Here,
+   "Godot Engine" is the English project.
 
 Important changes and discussions
 ---------------------------------
