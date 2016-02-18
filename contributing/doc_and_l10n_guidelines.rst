@@ -73,7 +73,7 @@ We aim at providing a tool helping translators and writers to determine whether 
 
 Please be patient, we are working on it ;) .
 
---
+..
    If you intend to create a new page in your language, you are asked to
    firstly create the corresponding English page if it doesn't already
    exist. **Do it even if you will not write it yourself, just leave it
