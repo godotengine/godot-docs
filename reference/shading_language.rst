@@ -1,6 +1,6 @@
 .. _doc_shading_language:
 
-Shading Language
+Shading language
 ================
 
 Introduction
@@ -25,7 +25,7 @@ The language is statically type and supports only a few operations.
 Arrays, classes, structures, etc are not supported. Several built-in
 datatypes are provided:
 
-Data Types
+Data types
 ~~~~~~~~~~
 
 +-------------------+--------------------------------------------------------------+

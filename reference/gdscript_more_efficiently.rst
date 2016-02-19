@@ -1,7 +1,7 @@
 .. _doc_gdscript_more_efficiently:
 
-Using GDScript Efficiently
-==========================
+GDScript more efficiently
+=========================
 
 About
 -----
@@ -13,10 +13,10 @@ also covers a lot related to using dynamically typed languages.
 It's meant to be specially useful for programmers without previous or
 little experience of dynamically typed languages.
 
-Dynamic Nature
+Dynamic nature
 --------------
 
-Pros & Cons of Dynamic Typing
+Pros & cons of dynamic typing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 GDScript is a Dynamically Typed language. As such, it's main advantages
@@ -48,7 +48,7 @@ possibility of using C++ is present too. This allows to still create the
 entire game in GDScript and add small bits of C++ in the areas that need
 a boost.
 
-Variables & Assignment
+Variables & assignment
 ~~~~~~~~~~~~~~~~~~~~~~
 
 All variables in a dynamically typed language are "variant"-like. This
@@ -60,18 +60,18 @@ Static:
 ::
 
     int a; // value uninitialized
-    a=5; // this is valid
-    a="Hi!"; // this is invalid
+    a = 5; // this is valid
+    a = "Hi!"; // this is invalid
 
 Dynamic:
 
 ::
 
     var a # null by default
-    a=5 # valid, 'a' becomes an integer
-    a="Hi!" # valid, 'a' changed to a string
+    a = 5 # valid, 'a' becomes an integer
+    a = "Hi!" # valid, 'a' changed to a string
 
-As Function Arguments:
+As function arguments:
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Functions are of dynamic nature too, which means they can be called with
@@ -83,7 +83,7 @@ Static:
 
     void print_value(int value) 
     {
-        printf("value is %i\\n",value);
+        printf("value is %i\n",value);
     }
 
     [..]
@@ -102,7 +102,7 @@ Dynamic:
     print_value(55) # valid
     print_value("Hello") # valid
 
-Pointers & Referencing:
+Pointers & referencing:
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 In static languages such as C or C++ (and to some extent Java and C#),
@@ -116,9 +116,9 @@ garbage-collected automatically, which means they are erased when no
 onger used. Dynamically typed languages tend to use this memory model
 too. Some Examples:
 
-// C++
+-  C++:
 
-::
+.. code:: cpp
 
     void use_class(SomeClass *instance) {
 
@@ -127,14 +127,14 @@ too. Some Examples:
 
     void do_something() {
 
-        SomeClass *instance = new SomeClass; //created as pointer
-        use_class(instance); //pass as pointer
-        delete instance; //otherwise it will leak memory
+        SomeClass *instance = new SomeClass; // created as pointer
+        use_class(instance); // passed as pointer
+        delete instance; // otherwise it will leak memory
     }
 
-Java:
+-  Java:
 
-::
+.. code:: java
 
     @Override
     public final void use_class(SomeClass instance) {
@@ -144,23 +144,23 @@ Java:
 
     public final void do_something() {
 
-        SomeClass instance = new SomeClass(); //created as reference
-        use_class(instance); //pass as reference
-        //garbage collector will get rid of it when not in 
-        //use and freeze your game randomly for a second
+        SomeClass instance = new SomeClass(); // created as reference
+        use_class(instance); // passed as reference
+        // garbage collector will get rid of it when not in 
+        // use and freeze your game randomly for a second
     }
 
-GDScript:
+-  GDScript:
 
 ::
 
-    func use_class(instance); #does not care about class type
+    func use_class(instance); # does not care about class type
         instance.use() # will work with any class that has a ".use()" method.
 
     func do_something():
         var instance = SomeClass.new() # created as reference
-        use_class(instance) # pass as reference
-        #will be unreferenced and deleted
+        use_class(instance) # passed as reference
+        # will be unreferenced and deleted
 
 In GDScript, only base types (int, float, string and the vector types)
 are passed by value to functions (value is copied). Everything else
@@ -174,41 +174,39 @@ Arrays
 
 Arrays in dynamically typed languages can contain many different mixed
 datatypes inside and are always dynamic (can be resized at any time).
-Example:
+Compare for example arrays in statically typed languages:
 
 ::
 
-    int *array = new int[4]; //create array
-    array[0]=10; //initialize manually
-    array[1]=20; //can't mix types
-    array[2]=40;
-    array[3]=60;
-    //can't resize
-    use_array(array); //passed as pointer
-    delete[] array; //must be freed
+    int *array = new int[4]; // create array
+    array[0] = 10; // initialize manually
+    array[1] = 20; // can't mix types
+    array[2] = 40;
+    array[3] = 60;
+    // can't resize
+    use_array(array); // passed as pointer
+    delete[] array; // must be freed
 
-//or
-
-::
+    //or
 
     std::vector<int> array;
     array.resize(4);
-    array[0]=10; //initialize manually
-    array[1]=20; //can't mix types
-    array[2]=40;
-    array[3]=60;
-    array.resize(3); //can be resized
-    use_array(array); //passed reference or value
-    //freed when stack ends
+    array[0] = 10; // initialize manually
+    array[1] = 20; // can't mix types
+    array[2] = 40;
+    array[3] = 60;
+    array.resize(3); // can be resized
+    use_array(array); // passed reference or value
+    // freed when stack ends
 
-GDScript:
+And in GDScript:
 
 ::
 
     var array = [10, "hello", 40, 60] # simple, and can mix types
     array.resize(3) # can be resized
     use_array(array) # passed as reference
-    #freed when no longer in use
+    # freed when no longer in use
 
 In dynamically typed languages, arrays can also double as other
 datatypes, such as lists:
@@ -220,13 +218,13 @@ datatypes, such as lists:
     array.append(5)
     array.pop_front()
 
-or unordered sets:
+Or unordered sets:
 
 ::
 
     var a = 20
-    if a in [10,20,30]:
-        print("We have a Winner!")
+    if a in [10, 20, 30]:
+        print("We have a winner!")
 
 Dictionaries
 ------------
@@ -247,51 +245,51 @@ Example of Dictionary:
 
 ::
 
-    var d = { "name":"john", "age":22 } # simple syntax
-    print("Name: ", d["name"], " Age: ", d["age"] )
+    var d = { "name": "john", "age": 22 } # simple syntax
+    print("Name: ", d["name"], " Age: ", d["age"])
 
 Dictionaries are also dynamic, keys can be added or removed at any point
 at little cost:
 
 ::
 
-    d["mother"]="Rebecca" # addition
-    d["age"]=11 # modification
-    d.erase("name") #removal
+    d["mother"] = "Rebecca" # addition
+    d["age"] = 11 # modification
+    d.erase("name") # removal
 
 In most cases, two-dimensional arrays can often be implemented more
 easily with dictionaries. Here's a simple battleship game example:
 
 ::
 
-    #battleship game
+    # battleship game
 
-    const SHIP=0
-    const SHIP_HIT=1
-    const WATER_HIT=2
+    const SHIP = 0
+    const SHIP_HIT = 1
+    const WATER_HIT = 2
 
-    var board={}
+    var board = {}
 
     func initialize():
-        board[Vector(1,1)]=SHIP
-        board[Vector(1,2)]=SHIP
-        board[Vector(1,3)]=SHIP
+        board[Vector(1,1)] = SHIP
+        board[Vector(1,2)] = SHIP
+        board[Vector(1,3)] = SHIP
 
     func missile(pos):
 
-        if pos in board: #something at that pos
-            if board[pos]==SHIP: #there was a ship! hit it
-                board[pos]=SHIP_HIT
+        if pos in board: # something at that pos
+            if board[pos] == SHIP: # there was a ship! hit it
+                board[pos] = SHIP_HIT
             else: 
                 print("already hit here!") # hey dude you already hit here
-        else: #nothing, mark as water
-            board[pos]=WATER_HIT
+        else: # nothing, mark as water
+            board[pos] = WATER_HIT
 
     func game():
         initialize()
-        missile( Vector2(1,1) )
-        missile( Vector2(5,8) )
-        missile( Vector2(2,3) )
+        missile(Vector2(1,1))
+        missile(Vector2(5,8))
+        missile(Vector2(2,3))
 
 Dictionaries can also be used as data markup or quick structures. While
 GDScript dictionaries resemble python dictionaries, it also supports Lua
@@ -303,20 +301,20 @@ states and quick structs:
     # same example, lua-style support
     # this syntax is a lot more readable and usable
 
-    var d = { 
-        name="john", 
-        age=22 
-    } 
+    var d = {
+        name = "john",
+        age = 22
+    }
 
-    print("Name: ", d.name, " Age: ", d.age ) # used "." based indexing
+    print("Name: ", d.name, " Age: ", d.age) # used "." based indexing
 
     # indexing
 
-    d.nother="rebecca" #this doesn't work (use syntax below to add a key:value pair)
-    d["mother"]="rebecca" #this works
-    d.name="caroline" # if key exists, assignment does work, this is why it's like a quick struct.
+    d.mother = "rebecca" # this doesn't work (use syntax below to add a key:value pair)
+    d["mother"] = "rebecca" # this works
+    d.name = "caroline" # if key exists, assignment does work, this is why it's like a quick struct.
 
-For & While
+For & while
 -----------
 
 Iterating in some statically typed languages can be quite complex:
@@ -327,15 +325,15 @@ Iterating in some statically typed languages can be quite complex:
 
     [..]
 
-    for(int i=0;i<50;i++)
+    for(int i=0; i<50; i++)
     {
 
-        printf("value: %s\\n",i,strings[i]);
+        printf("value: %s\n", i, strings[i]);
     }
 
-    //Even in STL:
+    // even in STL:
 
-    for(std::list<std::string>::const_iterator it = strings.begin() ; it != strings.end() ; it++) {
+    for(std::list<std::string>::const_iterator it = strings.begin(); it != strings.end(); it++) {
 
         std::cout << *it << std::endl;
     }
@@ -353,7 +351,7 @@ allow iterating the keys:
 ::
 
     for key in dict:
-        print(key," -> ",dict[key])
+        print(key, " -> ", dict[key])
 
 Iterating with indices is also possible:
 
@@ -367,18 +365,18 @@ The range() function can take 3 arguments:
 ::
 
         range(n) (will go from 0 to n-1)
-        range(b,n) (will go from b to n-1)
-        range(b,n,s) (will go from b to n-1, in steps of s)
+        range(b, n) (will go from b to n-1)
+        range(b, n, s) (will go from b to n-1, in steps of s)
 
 Some examples:
 
 ::
 
-    for(int i=0;i<10;i++) {}
+    for(int i=0; i<10; i++) {}
 
-    for(int i=5;i<10;i++) {}
+    for(int i=5; i<10; i++) {}
 
-    for(int i=5;i<10;i+=2) {}
+    for(int i=5; i<10; i+=2) {}
 
 Translate to:
 
@@ -386,43 +384,45 @@ Translate to:
 
     for i in range(10):
 
-    for i in range(5,10):
+    for i in range(5, 10):
 
-    for i in range(5,10,2):
+    for i in range(5, 10, 2):
 
 And backwards looping is done through a negative counter:
 
 ::
 
-    for(int i=10;i>0;i--) {}
+    for(int i=10; i>0; i--) {}
 
 becomes
 
 ::
 
-    for i in range(10,0,-1):
+    for i in range(10, 0, -1):
 
 While
 -----
 
-While() loops are the same everywhere:
+while() loops are the same everywhere:
 
 ::
 
-    var i=0
+    var i = 0
 
-    while(i
+    while(i < strings.size()):
+        print(strings[i])
+        i += 1
 
-Duck Typing
+Duck typing
 -----------
 
 One of the most difficult concepts to grasp when moving from a
-statically typed language to a dynamic one is Duck Typing. Duck typing
+statically typed language to a dynamic one is duck typing. Duck typing
 makes overall code design much simpler and straightforward to write, but
 it's not obvious how it works.
 
 As an example, imagine a situation where a big rock is falling down a
-tunnel, smashing everything on it's way. The code for the rock, in a
+tunnel, smashing everything on its way. The code for the rock, in a
 statically typed language would be something like:
 
 ::
@@ -437,12 +437,12 @@ inherit Smashable. If a character, enemy, piece of furniture, small rock
 were all smashable, they would need to inherit from the class Smashable,
 possibly requiring multiple inheritance. If multiple inheritance was
 undesired, then they would have to inherit a common class like Entity.
-Yet, it would not be very elegant to add a virtual method "smash()" to
+Yet, it would not be very elegant to add a virtual method ``smash()`` to
 Entity only if a few of them can be smashed.
 
 With dynamically typed languages, this is not a problem. Duck typing
-makes sure you only have to define a smash() function where required and
-that's it. No need to consider inheritance, base classes, etc.
+makes sure you only have to define a ``smash()`` function where required
+and that's it. No need to consider inheritance, base classes, etc.
 
 ::
 
@@ -472,7 +472,7 @@ checking if the function exists is desirable:
 
     func _on_object_hit(object):
         if (object.has_method("smash")):
-             object.smash()
+            object.smash()
 
 Then, simply define that method and anything the rock touches can be
 smashed.

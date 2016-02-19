@@ -1,13 +1,13 @@
 .. _doc_doc_and_l10n_guidelines:
 
-Documentation writing and translating guidelines
-================================================
+Documentation and localisation guidelines
+=========================================
 
 This page describes the rules to follow if you want to contribute Godot
 Engine by writing documentation or translating existing documentation.
 
-What is a good documentation ?
-------------------------------
+What is a good documentation?
+-----------------------------
 
 A good documentation is well written in plain English and well-formed
 sentences. It is clear and objective.
@@ -29,8 +29,10 @@ respect the following rules.
 Create a new wiki page
 ----------------------
 
+**TODO: Needs review for Sphinx doc**
+
 Creating a new documentation page or tutorial page is easy. The
-following rules must be respected :
+following rules must be respected:
 
 -  Choose a short and explicit title
 -  Respect the grammar and orthography
@@ -41,10 +43,14 @@ directly in another page or even forum posts using the include wiki
 syntax. For example, the syntax to include the page you are reading is
 :
 
-!{{include(Documentation writing and translating guidelines)}}.
+::
+
+    :ref:`the cool documentation guidelines <doc_doc_and_l10n_guidelines>`
 
 Titles
 ~~~~~~
+
+**TODO: Needs review for Sphinx doc**
 
 Please always begin pages with their name:
 
@@ -123,7 +129,7 @@ Important changes and discussions
 
 You are welcome to correct mistakes or styles to respect these
 guidelines. However, in case of important changes, please do not start a
-discussion on this page : use the forum, create a new topic with a link
+discussion on this page: use the forum, create a new topic with a link
 to the incriminated page and start discussing there about your remarks.
 
 Licence

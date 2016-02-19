@@ -261,10 +261,10 @@ sequence:
     c:\godot> scons p=android
     c:\godot\platform\android\java> ant release
 
-Using the Module
+Using the module
 ~~~~~~~~~~~~~~~~
 
-To use the Module from GDScript, first enable the singleton by adding
+To use the module from GDScript, first enable the singleton by adding
 the following line to engine.cfg:
 
 ::

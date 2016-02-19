@@ -1,13 +1,16 @@
-.. _doc_richtextlabel_bbcode:
+.. _doc_bbcode_in_richtextlabel:
 
-BBCode RichTextLabel
-====================
+BBCode in RichTextLabel
+=======================
 
 Introduction
 ------------
 
 :ref:`class_RichTextLabel` allows to display complex text markup in a control.
 It has a built-in API for generating the markup, but can also parse a BBCode.
+
+Note that the BBCode tags can also be used to some extent in the
+:ref:`XML source of the class reference <doc_updating_the_class_reference>`.
 
 Setting up
 ----------

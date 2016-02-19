@@ -1,7 +1,7 @@
-.. _doc_reference_filling_work:
+.. _doc_updating_the_class_reference:
 
-Reference filling work
-======================
+Updating the class reference
+============================
 
 Godot Engine provides an important number of classes that you can make
 use of to create your games. However, the :ref:`toc-class-ref` that

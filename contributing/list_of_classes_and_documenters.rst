@@ -3,6 +3,8 @@
 List of classes and documenters
 ===============================
 
+**TODO: Move out of the Sphinx doc, a pad would be better**
+
 Status list : Not started, Started, Finished, Removed
 Class name - Assigned to - Status - Start date - Notes
 

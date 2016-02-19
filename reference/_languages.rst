@@ -9,4 +9,4 @@ Languages
    gdscript_more_efficiently
    shading_language
    locales
-   richtextlabel_bbcode
+   bbcode_in_richtextlabel

@@ -1,4 +1,4 @@
-Inheritance Class Tree
+Inheritance class tree
 ======================
 
 Object

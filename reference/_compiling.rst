@@ -14,7 +14,7 @@ Compiling
    cross-compiling_for_ios_on_linux
    compiling_for_universal_windows_apps
    batch_building_templates
-   configure_your_ide
+   configuring_an_ide
 
 .. compiling_for_blackberry_qnx
 .. compiling_for_google_native_client
