@@ -3,7 +3,7 @@
 One-click deploy
 ================
 
-Sounds Good, What is it?
+Sounds good, what is it?
 ------------------------
 
 This feature will pop up automatically once a platform is properly
@@ -19,17 +19,15 @@ the user to automatically export, install and run the project (in debug
 mode) on the device. This feature is called, in industry buzz-words,
 "One Click Deploy" (though, it's technically two clicks...).
 
-Steps for One Click Deploy
+Steps for one-click deploy
 --------------------------
 
 #. Configure target platform.
 #. Configure device (make sure it's in developer mode, likes the
    computer, usb is recognized, usb cable is plugged, etc).
 #. Connect the device..
-#. And Voila!
+#. And voila!
 
 .. image:: /img/oneclick.png
 
 Click once.. and deploy!
-
-

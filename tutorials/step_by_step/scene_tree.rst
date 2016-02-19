@@ -11,7 +11,7 @@ there's not really more depth than this.
 
 In previous tutorials, everything revolves around the concept of
 Nodes, scenes are made of them, and they become active once they enter
-the *Scene Tree*.
+the *scene tree*.
 
 This deserves going a little more into depth. In fact, the scene system
 is not even a core component of Godot, as it is possible to skip it and
@@ -27,10 +27,8 @@ The way Godot works internally is as follows. There is the the
 which is the only instance that runs at the beginning. Afterwards, all
 drivers, servers, scripting languages, scene system, etc are loaded.
 
-When initialization is complete,
-:ref:`OS <class_OS>` needs to be
-supplied a
-:ref:`MainLoop <class_MainLoop>`
+When initialization is complete, :ref:`OS <class_OS>` needs to be
+supplied a :ref:`MainLoop <class_MainLoop>`
 to run. Up to this point, all this is internals working (you can check
 main/main.cpp file in the source code if you are ever interested to
 see how this works internally).
@@ -47,9 +45,8 @@ SceneTree
 One of the ways to explain how Godot works, is that it's a high level
 game engine over a low level middleware.
 
-The scene system is the game engine, while the
-:ref:`OS <class_OS>` and servers
-are the low level API.
+The scene system is the game engine, while the :ref:`OS <class_OS>`
+and servers are the low level API.
 
 In any case, the scene system provides it's own main loop to OS,
 :ref:`SceneTree <class_SceneTree>`.
@@ -60,8 +57,7 @@ to do any extra work.
 It's important to know that this class exists because it has a few
 important uses:
 
--  It contains the root
-   :ref:`Viewport <class_Viewport>`,
+-  It contains the root :ref:`Viewport <class_Viewport>`,
    when a scene is first opened, it's added as a child of it to become
    part of the *Scene Tree* (more on that next)
 -  It contains information about the groups, and has means to call all
@@ -74,11 +70,10 @@ When a node is part of the Scene Tree, the
 singleton can be obtained by simply calling
 :ref:`Node.get_tree() <class_Node_get_tree>`.
 
-Root Viewport
+Root viewport
 -------------
 
-The root
-:ref:`Viewport <class_Viewport>`
+The root :ref:`Viewport <class_Viewport>`
 is always a top of the scene. From a node, it can be obtained in two
 different ways:
 
@@ -96,11 +91,11 @@ While other viewports can be created in the scene (for split-screen
 effects and such), this one is the only one that is never created by the
 user. It's created automatically inside SceneTree.
 
-Scene Tree
+Scene tree
 ----------
 
 When a node is connected, directly or indirectly, to the root
-viewport, it becomes part of the *Scene Tree*.
+viewport, it becomes part of the *scene tree*.
 
 This means that, as explained in previous tutorials, will get the
 _enter_tree() and _ready() callbacks (as well as _exit_tree()).
@@ -110,9 +105,9 @@ _enter_tree() and _ready() callbacks (as well as _exit_tree()).
 When nodes enter the *Scene Tree*, they become active. They get access
 to everything they need to process, get input, display 2D and 3D,
 notifications, play sound, groups, etc. When they are removed from the
-*Scene Tree*, they lose it.
+*scene tree*, they lose it.
 
-Tree Order
+Tree order
 ----------
 
 Most node operations in Godot, such as drawing 2D, processing or getting
@@ -121,8 +116,8 @@ siblings with less order will get notified before the current node.
 
 .. image:: /img/toptobottom.png
 
-"Becoming Active" by entering the *Scene Tree* In Detail
---------------------------------------------------------
+"Becoming active" by entering the *Scene Tree*
+----------------------------------------------
 
 #. A scene is loaded from disk or created by scripting.
 #. The root node of that scene (only one root, remember?) is added as
@@ -138,7 +133,7 @@ siblings with less order will get notified before the current node.
    scene" notification ( _exit_tree() callback in GDScript) in
    bottom-to-top order
 
-Changing Current Scene
+Changing current scene
 ----------------------
 
 After a scene is loaded, it is often desired to change this scene for
@@ -157,6 +152,3 @@ some point in your game, it may be desired to create proper loading
 screens with progress bar, animated indicators or thread (background)
 loading. This must be done manually using autoloads (see next chapter!)
 and :ref:`doc_background_loading`.
-
-
-

@@ -16,8 +16,7 @@ processing.
 
 Idle processing is activated with the
 :ref:`Node.set_process() <class_Node_set_process>`
-function. Once active, the
-:ref:`Node._process() <class_Node__process>`
+function. Once active, the :ref:`Node._process() <class_Node__process>`
 callback will be called every frame. Example:
 
 ::
@@ -26,7 +25,7 @@ callback will be called every frame. Example:
         set_process(true)
 
     func _process(delta):
-        #do something..
+        # do something..
 
 The delta parameter describes the time elapsed (in seconds, as
 floating point) since the previous call to _process().
@@ -46,7 +45,7 @@ with the following script:
         set_process(true)
 
     func _process(delta):
-        accum+=delta
+        accum += delta
         set_text(str(accum))
 
 Which will show a counter increasing each second.
@@ -75,7 +74,7 @@ all enemies can be notified about the alarm sounding, by using
 ::
 
     func _on_discovered():
-        get_tree().call_group(0,"guards","player_was_discovered")
+        get_tree().call_group(0, "guards", "player_was_discovered")
 
 The above code calls the function "player_was_discovered" on every
 member of the group "guards".
@@ -105,9 +104,9 @@ function in your script:
 ::
 
     func _notification(what):
-         if (what==NOTIFICATION_READY):
+        if (what == NOTIFICATION_READY):
             print("This is the same as overriding _ready()...")
-         elif (what==NOTIFICATION_PROCESS):     
+        elif (what == NOTIFICATION_PROCESS):     
             var delta = get_process_time()
             print("This is the same as overriding _process()...")
 
@@ -115,7 +114,7 @@ The documentation of each class in the :ref:`Class Reference <toc-class-ref>`
 shows the notifications it can receive. However, again, for most cases
 script provides simpler overrideable functions.
 
-Overrideable Functions
+Overrideable functions
 ----------------------
 
 As mentioned before, it's better to use these functions. Nodes provide
@@ -124,27 +123,27 @@ many useful overrideable functions, which are described as follows:
 ::
 
     func _enter_tree():
-       pass # When the node enters the _Scene Tree_, it become acive and  this function is called. Children nodes have not entered the active scene yet. In general, it's better to use _ready() for most cases.
+        pass # When the node enters the _Scene Tree_, it become acive and  this function is called. Children nodes have not entered the active scene yet. In general, it's better to use _ready() for most cases.
 
     func _ready():
-       pass # This function is called after _enter_tree, but it ensures that all children nodes have also entered the _Scene Tree_, and became active.
+        pass # This function is called after _enter_tree, but it ensures that all children nodes have also entered the _Scene Tree_, and became active.
 
     func _exit_tree():
-       pass # When the node exists the _Scene Tree_, this function is called. Children nodes have all exited the _Scene Tree_  at this point and all became inactive.
+        pass # When the node exists the _Scene Tree_, this function is called. Children nodes have all exited the _Scene Tree_  at this point and all became inactive.
 
     func _process(delta):
-       pass # When set_process() is enabled, this is called every frame
+        pass # When set_process() is enabled, this is called every frame
 
     func _fixed_process(delta):
-       pass # When set_fixed_process() is enabled, this is called every physics frame
+        pass # When set_fixed_process() is enabled, this is called every physics frame
 
     func _paused():
-       pass # Called when game is paused, after this call, the node will not receive any more process callbacks
+        pass # Called when game is paused, after this call, the node will not receive any more process callbacks
 
     func _unpaused():
-       pass # Called when game is unpaused   
+        pass # Called when game is unpaused   
 
-Creating Nodes
+Creating nodes
 --------------
 
 To create a node from code, just call the .new() method, (like for any
@@ -154,8 +153,8 @@ other class based datatype). Example:
 
     var s
     func _ready():
-       s = Sprite.new() # create a new sprite!
-       add_child(s) #add it as a child of this node
+        s = Sprite.new() # create a new sprite!
+        add_child(s) # add it as a child of this node
 
 To delete a node, be it inside or outside the scene, free() must be
 used:
@@ -163,7 +162,7 @@ used:
 ::
 
     func _someaction():
-       s.free() # immediately removes the node from the scene and frees it
+        s.free() # immediately removes the node from the scene and frees it
 
 When a node is freed, it also frees all it's children nodes. Because of
 this, manually deleting nodes is much simpler than it appears. Just free
@@ -181,9 +180,9 @@ instead. This erases the node during idle, safely.
 ::
 
     func _someaction():
-       s.queue_free() # remove the node and delete it while nothing is happening
+        s.queue_free() # remove the node and delete it while nothing is happening
 
-Instancing Scenes
+Instancing scenes
 -----------------
 
 Instancing a scene from code is pretty easy and done in two steps. The
@@ -201,8 +200,7 @@ time.
     var scene = preload("res://myscene.scn") # will load when parsing the script
 
 But 'scene' is still not a node containing subnodes. It's packed in a
-special resource called
-:ref:`PackedScene <class_PackedScene>`.
+special resource called :ref:`PackedScene <class_PackedScene>`.
 To create the actual node, the function
 :ref:`PackedScene.instance() <class_PackedScene_instance>`
 must be called. This will return the tree of nodes that can be added to
@@ -217,6 +215,3 @@ The advantage of this two-step process is that a packed scene may be
 kept loaded and ready to use, so it can be used to create as many
 instances as desired. This is specially useful, for example, to instance
 several enemies, bullets, etc. quickly in the active scene.
-
-
-

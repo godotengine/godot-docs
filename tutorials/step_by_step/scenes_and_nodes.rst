@@ -73,8 +73,8 @@ tools for editing 2D and 3D scenes as well as user interfaces, but all
 the editor revolves around the concept of editing a scene and the nodes
 that compose it.
 
-Creating New Project
---------------------
+Creating a new project
+----------------------
 
 Theory is boring, so let's change subject and go practical. Following a
 long tradition in tutorials, the first project will be a hello world.
@@ -138,7 +138,7 @@ the top bar (or hit F6):
 
 .. image:: /img/playscene.png
 
-Aaaand.. Oops.
+Aaaand... Oops.
 
 .. image:: /img/neversaved.png
 
@@ -162,7 +162,7 @@ demo should finally execute:
 
 Success!
 
-Configuring the Project
+Configuring the project
 -----------------------
 
 Ok, It's time to do some configuration to the project. Right now, the
@@ -200,15 +200,11 @@ remembered.
 As a side note, for future reference and a little out of context (this
 is the first tutorial after all!), it is also possible to add custom
 configuration options and read them in run-time using the
-:ref:`Globals <class_Globals>`
-singleton.
+:ref:`Globals <class_Globals>` singleton.
 
-To Be Continued...
+To be continued...
 ------------------
 
-This tutorial talks about "Scenes and Nodes", but so far there has been
+This tutorial talks about "scenes and nodes", but so far there has been
 only *one* scene and *one* node! Don't worry, the next tutorial will
 deal with that...
-
-
-

@@ -72,6 +72,5 @@ no longer added to the project, only the engine executable.
 Services for iOS
 ----------------
 
-Special iOS services can be used in Godot. Check out the :ref:`doc_services_for_ios` page.
-
-
+Special iOS services can be used in Godot. Check out the
+:ref:`doc_services_for_ios` page.

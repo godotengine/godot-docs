@@ -113,5 +113,3 @@ might want to use a super large font, but only to show numbers. For
 this, he or she writes a numbers.txt file that contains "1234567890",
 and Godot will only limit itself to import data, thus saving a lot of
 video memory.
-
-

@@ -1,4 +1,4 @@
-.. _doc_file_system:
+.. _doc_filesystem:
 
 Filesystem
 ==========
@@ -52,23 +52,23 @@ Example of a filesystem:
     /enemy/enemysprite.png
     /player/player.gd
 
-Directory Delimiter
+Directory delimiter
 -------------------
 
-Godot only supports "/" as a directory delimiter. This is done for
+Godot only supports ``/`` as a directory delimiter. This is done for
 portability reasons. All operating systems support this, even Windows,
-so a path such as c:\\\\project\\\\engine.cfg needs to be typed as
-c:/project/engine.cfg.
+so a path such as ``c:\project\engine.cfg`` needs to be typed as
+``c:/project/engine.cfg``.
 
-Resource Path
+Resource path
 -------------
 
 For accessing resources, using the host OS filesystem layout can be
 cumbersome and non portable. To solve this problem, the specal path
-\`"res://"\` was created.
+``res://`` was created.
 
-The path \`"res://"\` will always point at the project root (where
-engine.cfg is located, so in fact \`"res://engine.cfg"\` is always
+The path ``res://`` will always point at the project root (where
+engine.cfg is located, so in fact ``res://engine.cfg`` is always
 valid).
 
 This filesystem is read-write only when running the project locally from
@@ -76,14 +76,14 @@ the editor. When exported or when running on different devices (such as
 phones or consoles, or running from DVD), the filesystem will become
 read-only and writing will no longer be permitted.
 
-User Path
+User path
 ---------
 
 Writing to disk is still needed often, from doing a savegame to
 downloading content packs. For this, the engine ensures that there is a
-special path \`"user://"\` that is always writable.
+special path ``user://`` that is always writable.
 
-Host Filesystem
+Host filesystem
 ---------------
 
 Of course, opening the host filesystem always works, as this is always
@@ -108,4 +108,3 @@ for files.
 
 Because of this, please instruct your team to use a specific naming
 convention for files when working with Godot!
-

@@ -165,5 +165,3 @@ to re-import that asset again, with the ability to change any of the
 settings.
 
 .. image:: /img/reimported.png
-
-

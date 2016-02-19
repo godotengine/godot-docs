@@ -14,7 +14,7 @@ Instancing has many handy uses. At a glance, with instancing you have:
 -  A way to design more complex game flows or even UIs (UI Elements are
    nodes in Godot too).
 
-Design Language
+Design language
 ---------------
 
 But the real strong point of instancing scenes is that it works as an
@@ -66,7 +66,7 @@ operated by non programmers too, so an usual team development process
 involves 3D or 2D artists, level designers, game designers, animators,
 etc all working with the editor interface.
 
-Information Overload!
+Information overload!
 ---------------------
 
 Do not worry to much, the important part of this tutorial is to create
@@ -75,6 +75,3 @@ way to understand all this is to make some games.
 
 Everything will become very obvious when put to practice, so, please do
 not scratch your head and go on to the next tutorial!
-
-
-

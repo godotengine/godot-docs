@@ -1,7 +1,7 @@
-.. _doc_version_control:
+.. _doc_project_organization:
 
-Version Control & Project Organization
-======================================
+Project organization
+====================
 
 Introduction
 ------------
@@ -24,7 +24,7 @@ browse images, models, sounds, etc. Godot is more scene-based in nature
 so most of the time the assets are bundled inside the scenes or just
 exist as files but are referenced from scenes.
 
-Importing & Game Folder
+Importing & game folder
 -----------------------
 
 It is very often necessary to use asset importing in Godot. As the
@@ -69,7 +69,7 @@ Following this layout, many things can be done:
    other project members, because Godot keeps track of source assets
    using relative paths.
 
-Scene Organization
+Scene organization
 ------------------
 
 Inside the game folder, a question that often arises is how to organize
@@ -123,7 +123,7 @@ settings screen or the valley. Since everything in Godot is done with
 scenes, and everything that can be named or described can be a scene,
 this workflow is very smooth and easygoing.
 
-Cache Files
+Cache files
 -----------
 
 Godot uses a hidden file called ".fscache" at the root of the project.
@@ -131,4 +131,3 @@ On it, it caches project files and is used to quickly know when one is
 modified. Make sure to **not commit this file** to git or svn, as it
 contains local information and might confuse another editor instance in
 another computer.
-

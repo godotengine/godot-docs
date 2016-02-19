@@ -5,6 +5,6 @@ Game flow
    :maxdepth: 1
    :name: toc-game-flow
 
-   pausing_the_game
+   pausing_games
    background_loading
-   handling_quit_request
+   handling_quit_requests

@@ -1,7 +1,7 @@
-.. _doc_internationalizing_a_game:
+.. _doc_internationalizing_games:
 
-Internationalization
-====================
+Internationalizing games
+========================
 
 Introduction
 ------------
@@ -21,18 +21,18 @@ spreadsheets. The process of creating the spreadsheets and importing
 them is already covered in the :ref:`doc_importing_translations` tutorial, so this
 one could be seen more like a follow up to that one.
 
-Configuring the Imported Translation
+Configuring the imported translation
 ------------------------------------
 
 The translations can get updated and re-imported when they change, but
 they still have to be added to the project. This is done in Scene
-[STRIKEOUT:> Project Settings]> Localization:
+> Project Settings > Localization:
 
 .. image:: /img/localization_dialog.png
 
 This dialog allows to add or remove translations project-wide.
 
-Localizing Resources
+Localizing resources
 --------------------
 
 It is also possible to instruct Godot to open alternative versions of
@@ -44,11 +44,11 @@ assets (resources) depending on the current language. For this the
 Select the resource to be remapped, and the alternatives for each
 locale.
 
-Converting Keys to Text
+Converting keys to text
 -----------------------
 
-Some controls such as :ref:`Button <class_Button>`, :ref:`Label <class_Label>`, etc.
-will automatically fetch a translation each time they are set a key
+Some controls such as :ref:`Button <class_Button>`, :ref:`Label <class_Label>`,
+etc. will automatically fetch a translation each time they are set a key
 instead of a text. For example, if a label is assigned
 "MAIN_SCREEN_GREETING1" and a key to different languages exists in the
 translations, this will be automatically converted. This process is done
@@ -56,17 +56,16 @@ upon load though, so if the project in question has a dialog that allows
 changing the language in the settings, the scenes (or at least the
 settings scene) will have to be re-loaded for new text to have effect.
 
-For code, the
-:ref:`Object.tr() <class_Object_tr>`
+For code, the :ref:`Object.tr() <class_Object_tr>`
 function can be used. This will just look-up the text into the
 translations and convert it if found:
 
 ::
 
     level.set_text(tr("LEVEL_5_NAME"))
-    status.set_text(tr("GAME_STATUS_"+str(status_index)))
+    status.set_text(tr("GAME_STATUS_" + str(status_index)))
 
-Making Controls Resizeable
+Making controls resizeable
 --------------------------
 
 The same text in different languages can vary greatly in length. For
@@ -79,31 +78,22 @@ TranslationServer
 -----------------
 
 Godot has a server for handling the low level translation management
-called the
-:ref:`TranslationServer <class_TranslationServer>`.
+called the :ref:`TranslationServer <class_TranslationServer>`.
 Translations can be added or removed during run-time, and the current
 language be changed too.
 
-Command Line
+Command line
 ------------
 
 Language can be tested when running Godot from command line. For
 example, to test a game in french, the following arguments can be
 supplied:
 
-.. raw:: html
+::
 
-   </pre>
+   c:\MyGame> godot -lang fr
 
-c:\\\\MyGame> godot -lang fr
-
-
-
-.. raw:: html
-
-   </pre>
-
-Translating the Project Name
+Translating the project name
 ----------------------------
 
 The project name becomes the app name when exporting to different
@@ -115,6 +105,3 @@ application/name and append it the locale identifier. For example:
 
 As always, If you don't know the code of a language or zone, `check the
 list :ref:`doc_locales`.
-
-
-

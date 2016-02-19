@@ -1,7 +1,7 @@
 .. _doc_matrices_and_transforms:
 
-Matrices & Transforms
-=====================
+Matrices and transforms
+=======================
 
 Introduction
 ------------
@@ -15,7 +15,7 @@ about matrices (but not in-depth).
 Transformations are most of the time applied as translation, rotation
 and scale so they will be considered as priority here.
 
-Oriented Coordinate System (OCS)
+Oriented coordinate system (OCS)
 --------------------------------
 
 Imagine we have a spaceship somewhere in space. In Godot this is easy,
@@ -272,7 +272,7 @@ Post - multiplying is also valid:
 
     var new_pos = m * pos
 
-Inverse Transform
+Inverse transform
 -----------------
 
 To do the opposite operation (what we did up there with the rocket), the
@@ -294,7 +294,7 @@ Or pre-multiplication:
 
     var new_pos = pos * m
 
-Orthonormal Matrices
+Orthonormal matrices
 --------------------
 
 However, if the Matrix has been scaled (vectors are not unit length),
@@ -312,7 +312,7 @@ the position unchanged:
     # Does nothing, pos is unchanged
     pos = Matrix32().xform(pos)
 
-Affine Inverse
+Affine inverse
 --------------
 
 The affine inverse is a matrix that does the inverse operation of
@@ -325,18 +325,18 @@ affine_inverse() method:
     var mi = m.affine_inverse()
     var pos = m.xform(pos)
     pos = mi.xform(pos)
-    #pos is unchanged
+    # pos is unchanged
 
 If the matrix is orthonormal, then:
 
 ::
 
-    #if m is orthonormal, then
+    # if m is orthonormal, then
     pos = mi.xform(pos)
-    #is the same is
+    # is the same is
     pos = m.xform_inv(pos)
 
-Matrix Multiplication
+Matrix multiplication
 ---------------------
 
 Matrices can be multiplied. Multiplication of two matrices "chains"
@@ -362,7 +362,7 @@ Is the same as:
 
 ::
 
-    h1. note the inverse order
+    # note the inverse order
     pos = (transform2 * transform1).xform(pos)
 
 However, this is not the same:
@@ -374,7 +374,7 @@ However, this is not the same:
 
 Because in matrix math, A + B is not the same as B + A.
 
-Multiplication by Inverse
+Multiplication by inverse
 -------------------------
 
 Multiplying a matrix by it's inverse, results in identity
@@ -384,14 +384,14 @@ Multiplying a matrix by it's inverse, results in identity
     # No matter what A is, B will be identity
     B = A.affine_inverse() * A
 
-Multiplication by Identity
+Multiplication by identity
 --------------------------
 
 Multiplying a matrix by identity, will result in the unchanged matrix:
 
 ::
 
-    h1. B will be equal to A
+    # B will be equal to A
     B = A * Matrix32()
 
 Matrix tips
@@ -429,36 +429,34 @@ Revert it just like the example above:
 OK, hopefully this should be enough! Let's complete the tutorial by
 moving to 3D matrices
 
-Matrices & Transforms in 3D
+Matrices & transforms in 3D
 ---------------------------
 
-As mentioned before, for 3D, we deal with 3
-:ref:`Vector3 <class_Vector3>`
+As mentioned before, for 3D, we deal with 3 :ref:`Vector3 <class_Vector3>`
 vectors for the rotation matrix, and an extra one for the origin.
 
 Matrix3
 -------
 
-Godot has a special type for a 3x3 matrix, named
-:ref:`Matrix3 <class_Matrix3>`. It
-can be used to represent a 3D rotation and scale. Sub vectors can be
+Godot has a special type for a 3x3 matrix, named :ref:`Matrix3 <class_Matrix3>`.
+It can be used to represent a 3D rotation and scale. Sub vectors can be
 accessed as:
 
 ::
 
     var m = Matrix3()
-    var x = m[0] h1. Vector3
-    var y = m[1] h1. Vector3
-    var z = m[2] h1. Vector3
+    var x = m[0] # Vector3
+    var y = m[1] # Vector3
+    var z = m[2] # Vector3
 
 or, alternatively as:
 
 ::
 
     var m = Matrix3()
-    var x = m.x h1. Vector3
-    var y = m.y h1. Vector3
-    var z = m.z h1. Vector3
+    var x = m.x # Vector3
+    var y = m.y # Vector3
+    var z = m.z # Vector3
 
 Matrix3 is also initialized to Identity by default:
 
@@ -484,13 +482,10 @@ Transform
 ---------
 
 To add the final component to the mix, Godot provides the
-:ref:`Transform <class_Transform>`
-type. Transform has two members:
+:ref:`Transform <class_Transform>` type. Transform has two members:
 
--  *basis* (of type
-   :ref:`Matrix3 <class_Matrix3>`
--  *origin* (of type
-   :ref:`Vector3 <class_Vector3>`
+-  *basis* (of type :ref:`Matrix3 <class_Matrix3>`
+-  *origin* (of type :ref:`Vector3 <class_Vector3>`
 
 Any 3D transform can be represented with Transform, and the separation
 of basis and origin makes it easier to work translation and rotation
@@ -501,8 +496,6 @@ An example:
 ::
 
     var t = Transform()
-    pos = t.xform(pos) #transform 3D position
-    pos = t.basis.xform(pos) h1. (only rotate)
+    pos = t.xform(pos) # transform 3D position
+    pos = t.basis.xform(pos) # (only rotate)
     pos = t.origin + pos  (only translate)
-
-

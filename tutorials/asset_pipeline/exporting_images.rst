@@ -14,10 +14,10 @@ are:
 -  Create an atlas for a group of images and crop them, for higher
    performance and less memory usage.
 
-Image Export Options
+Image export options
 --------------------
 
-In the `Export Dialog <export>`__, go to the Images tab:
+In the "Export Dialog", go to the Images tab:
 
 .. image:: /img/exportimages.png
 
@@ -38,7 +38,7 @@ On export, Godot will perform the desired operation. The first export
 might be really slow, but subsequent exports will be fast, as the
 converted images will be cached.
 
-Image Group Export Options
+Image group export options
 --------------------------
 
 This section is similar to the previous one, except it can operate on a
@@ -65,5 +65,3 @@ engines, Godot is designed so state changes do not affect it as much).
 Textures added to an atlas get cropped (empty spaces around the image
 are removed), so this is another reason to use them (save space). If
 unsure, though, just leave that option disabled.
-
-

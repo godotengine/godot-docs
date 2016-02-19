@@ -132,7 +132,7 @@ SceneTree (derived from MainLoop) has a method for this:
     var ev = InputEvent()
     ev.type=InputEvent.ACTION
     # set as move_left, pressed
-    ev.set_as_action("move_left",true) 
+    ev.set_as_action("move_left", true) 
     # feedback
     get_tree().input_event(ev)
 
@@ -145,6 +145,3 @@ ideal for reassigning or creating different actions at run-time. This
 singleton is not saved (must be modified manually) and it's state is run
 from the project settings (engine.cfg). So any dynamic system of this
 type needs to store settings in the way the programmer sees best fit.
-
-
-

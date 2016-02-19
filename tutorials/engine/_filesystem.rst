@@ -5,7 +5,7 @@ Filesystem
    :maxdepth: 1
    :name: toc-filesystem
 
-   version_control
-   paths
-   saving_your_game
+   project_organization
+   data_paths
+   saving_games
    encrypting_save_games

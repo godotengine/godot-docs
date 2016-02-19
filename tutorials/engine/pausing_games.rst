@@ -1,7 +1,7 @@
-.. _doc_pausing_the_game:
+.. _doc_pausing_games:
 
-Pausing a Game
-==============
+Pausing games
+=============
 
 Pause?
 ------
@@ -16,7 +16,7 @@ Implementing a fine-grained control for what can be paused (and what
 not) is a lot of work, so a simple framework for pausing is provided in
 Godot.
 
-How Pausing Works
+How pausing works
 -----------------
 
 To set pause mode, the pause state must be set. This is done by calling
@@ -29,7 +29,7 @@ with a "true" argument:
 
 Doing so will have the following behavior:
 
--  2D and 3D Physics will be stopped.
+-  2D and 3D physics will be stopped.
 -  _process and _fixed_process will not be called anymore in nodes.
 -  _input and _input_event will not be called anymore either.
 
@@ -37,7 +37,7 @@ This effectively stops the whole game. Calling this function from a
 script, by default, will result in an unrecoverable state (nothing will
 work anymore!).
 
-White-Listing Nodes
+White-listing nodes
 -------------------
 
 Before enabling pause, make sure that nodes that must keep working
@@ -94,6 +94,3 @@ closed:
         get_tree().set_pause(false)
 
 And that should be all!
-
-
-

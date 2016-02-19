@@ -1,25 +1,14 @@
 .. _doc_http_client_class:
 
-HTTP client class example
-=========================
+HTTP client class
+=================
 
-Here's an example of using the
-:ref:`HTTPClient <class_HTTPClient>`
+Here's an example of using the :ref:`HTTPClient <class_HTTPClient>`
 class. It's just a script, so it can be run by executing:
 
-.. raw:: html
+::
 
-   </pre>
-
-c
-
-c:\\\\godot> godot -s http_test.gd
-
-
-
-.. raw:: html
-
-   </pre>
+    c:\godot> godot -s http_test.gd
 
 It will connect and fetch a website.
 
@@ -109,6 +98,4 @@ It will connect and fetch a website.
             print("Text: ",text)
 
 
-        quit()      
-
-
+        quit()

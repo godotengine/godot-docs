@@ -99,8 +99,9 @@ memory texture compression format (s3tc, pvrtc, ericsson, etc) by
 default to improve performance and save resources.
 
 Since the original textures, 3d file and textues are usually not needed,
-it's recommended you keep them outside the project. For some hints on
-how to do this the best way, you can check the :ref:`doc_version_control` tutorial.
+it's recommended to keep them outside the project. For some hints on
+how to do this the best way, you can check the :ref:`doc_project_organization`
+tutorial.
 
 Two options for textures are provided. They can be copied to the same
 place as the scene, or they can be copied to a common path (configurable

@@ -15,6 +15,6 @@ Learning step by step
    splash_screen
    animations
    resources
-   file_system
+   filesystem
    scene_tree
    singletons_autoload

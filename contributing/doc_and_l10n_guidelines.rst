@@ -50,11 +50,14 @@ syntax. For example, the syntax to include the page you are reading is
 Titles
 ~~~~~~
 
-**TODO: Needs review for Sphinx doc**
+Please always begin pages with their title and a reference based on the
+file name (which should ideally be the same as the page title):
 
-Please always begin pages with their name:
+::
+    .. _insert_your_title_here:
 
-``h1. <Insert your title here>``
+    Insert your title here
+    ======================
 
 Also, avoid American CamelCase titles: titles' first word should begin
 with a capitalized letter, and every following word should not. Thus,

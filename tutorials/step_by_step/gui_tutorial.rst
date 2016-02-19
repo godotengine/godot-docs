@@ -34,8 +34,7 @@ animators.
 Control
 ~~~~~~~
 
-The basic node for UI elements is
-:ref:`Control <class_Control>`
+The basic node for UI elements is :ref:`Control <class_Control>`
 (sometimes called "Widget" or "Box" in other toolkits). Every node that
 provides user interface functionality descends from it.
 
@@ -44,7 +43,7 @@ it's coordinates (position, size) are always relative to the parent.
 This sets the basis for editing complex user interface quickly and
 visually.
 
-Input and Drawing
+Input and drawing
 ~~~~~~~~~~~~~~~~~
 
 Controls receive input events by means of the
@@ -52,8 +51,7 @@ Controls receive input events by means of the
 callback. Only one control, the one in focus, will receive
 keyboard/joypad events (see
 :ref:`Control.set_focus_mode() <class_Control_set_focus_mode>`
-and
-:ref:`Control.grab_focus() <class_Control_grab_focus>`.
+and :ref:`Control.grab_focus() <class_Control_grab_focus>`.
 
 Mouse Motion events are received by the control directly below the mouse
 pointer. When a control receives a mouse button pressed event, all
@@ -74,13 +72,11 @@ In general though, the programmer does not need to deal with drawing and
 input events directly when building UIs, (that is more useful when
 creating custom controls). Instead, controls emit different kinds of
 signals with contextural information for when action occurs. For
-example, a
-:ref:`Button <class_Button>` emits
-a "pressed" signal when pressed, a
-:ref:`Slider <class_Slider>` will
+example, a :ref:`Button <class_Button>` emits
+a "pressed" signal when pressed, a :ref:`Slider <class_Slider>` will
 emit a "value_changed" when dragged, etc.
 
-Custom Control Mini Tutorial
+Custom control mini tutorial
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Before going into more depth, creating a custom control will be a good
@@ -126,7 +122,7 @@ how most controls work internally.
 
 .. image:: /img/ctrl_tapped.png
 
-UI Complexity
+UI complexity
 ~~~~~~~~~~~~~
 
 As mentioned before, Godot includes dozens of controls ready for using
@@ -137,22 +133,20 @@ meant for complex user interfaces and uniform skinning trough styles. A
 description is presented as follows to help understand which one should
 be used in which case.
 
-Simplified UI Controls
+Simplified UI controls
 ~~~~~~~~~~~~~~~~~~~~~~
 
 This set of controls is enough for most games, where complex
 interactions or ways to present information are not necessary. The can
 be skinned easily with regular textures.
 
--  :ref:`Label <class_Label>` :
-   Node used for showing text.
--  :ref:`TextureFrame <class_TextureFrame>`
-   : Displays a single texture, which can be scaled or kept fixed.
--  :ref:`TextureButton <class_TextureButton>`
-   : Displays a simple texture buttons, states such as pressed, hover,
-   disabled, etc can be set.
--  :ref:`TextureProgress <class_TextureProgress>`
-   : Displays a single textured progress bar.
+-  :ref:`Label <class_Label>`: Node used for showing text.
+-  :ref:`TextureFrame <class_TextureFrame>`: Displays a single texture,
+   which can be scaled or kept fixed.
+-  :ref:`TextureButton <class_TextureButton>`: Displays a simple texture
+   buttons, states such as pressed, hover, disabled, etc. can be set.
+-  :ref:`TextureProgress <class_TextureProgress>`: Displays a single
+   textured progress bar.
 
 Additionally, re-positioning of controls is most efficiently done with
 anchors in this case (see the :ref:`doc_size_and_anchors` tutorial for more
@@ -162,12 +156,11 @@ In any case, it will happen often that even for simple games, more
 complex UI behaviors will be required. An example of this is a scrolling
 list of elements (for a high score table, for example), which needs a
 :ref:`ScrollContainer <class_ScrollContainer>`
-and a
-:ref:`VBoxContainer <class_VBoxContainer>`.
+and a :ref:`VBoxContainer <class_VBoxContainer>`.
 These kind of more advanced controls can be mixed with the regular ones
 seamlessly (they are all controls anyway).
 
-Complex UI Controls
+Complex UI controls
 ~~~~~~~~~~~~~~~~~~~
 
 The rest of the controls (and there are dozens of them!) are meant for
@@ -181,6 +174,3 @@ another set of scenarios, most commonly:
 Re-positioning controls for these kind of interfaces is more commonly
 done with containers (see the :ref:`doc_size_and_anchors` tutorial for more
 info).
-
-
-

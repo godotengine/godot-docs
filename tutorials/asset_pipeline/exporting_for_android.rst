@@ -30,9 +30,9 @@ OSX, you can find it in the ~/.android folder).
 If you can't find it or need to generate one, the keytool command from
 the JDK can be used for this purpose:
 
-keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android
--keystore debug.keystore -storepass android -dname "CN=Android
-Debug,O=Android,C=US" -validity 9999
+::
+
+    keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android -keystore debug.keystore -storepass android -dname "CN=Android Debug,O=Android,C=US" -validity 9999
 
 Make sure you have adb
 ----------------------
@@ -61,5 +61,3 @@ In that screen, the path to 3 files needs to be set:
 -  The debug *keystore*
 
 Once that is configured, everything is ready to export to Android!
-
-

@@ -50,7 +50,7 @@ so it will take several frames to load.
 Returns ``OK`` on no errors, ``ERR_FILE_EOF`` when loading is finished.
 Any other return value means there was an error and loading has stopped.
 
-Load Progress (optional)
+Load progress (optional)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 To query the progress of the load, use the following methods:
@@ -60,31 +60,8 @@ To query the progress of the load, use the following methods:
     int ResourceInteractiveLoader::get_stage_count() const;
     int ResourceInteractiveLoader::get_stage() const;
 
-.. raw:: html
-
-   </pre>
-
-get_stage_count
-
-.. raw:: html
-
-   </pre>
-
-returns the total number of stages to load
-
-
-
-.. raw:: html
-
-   </pre>
-
-get_stage
-
-.. raw:: html
-
-   </pre>
-
-returns the current stage being loaded
+``get_stage_count`` returns the total number of stages to load.
+``get_stage`` returns the current stage being loaded.
 
 Forcing completion (optional)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -112,74 +89,29 @@ Example
 This example demostrates how to load a new scene. Consider it in the
 context of the :ref:`doc_singletons_autoload` example.
 
-First we setup some variables and initialize the
-
-.. raw:: html
-
-   </pre>
-
-current_scene
-
-.. raw:: html
-
-   </pre>
-
+First we setup some variables and initialize the ``current_scene``
 with the main scene of the game:
 
 ::
 
     var loader
     var wait_frames
-    var time_max = 100 h1. msec
+    var time_max = 100 # msec
     var current_scene
 
     func _ready():
         var root = get_tree().get_root()
-        current_scene = root.get_child( root.get_child_count() -1 )
+        current_scene = root.get_child(root.get_child_count() -1)
 
-The function
-
-.. raw:: html
-
-   </pre>
-
-goto_scene
-
-.. raw:: html
-
-   </pre>
-
-is called from the game when the scene needs to be switched. It requests
-an interactive loader, and calls
-
-.. raw:: html
-
-   </pre>
-
-set_progress(true)
-
-.. raw:: html
-
-   </pre>
-
-to start polling the loader in the
-
-.. raw:: html
-
-   </pre>
-
-_progress
-
-.. raw:: html
-
-   </pre>
-
+The function ``goto_scene`` is called from the game when the scene
+needs to be switched. It requests an interactive loader, and calls
+``set_progress(true)`` to start polling the loader in the ``_progress``
 callback. It also starts a "loading" animation, which can show a
 progress bar or loading screen, etc.
 
 ::
 
-    func goto_scene(path): h1. game requests to switch to this scene
+    func goto_scene(path): # game requests to switch to this scene
         loader = ResourceLoader.load_interactive(path)
         if loader == null: # check for errors
             show_error()
@@ -230,7 +162,7 @@ precise control over the timings.
                 break
             elif err == OK:
                 update_progress()
-            else: h1. error during loading
+            else: # error during loading
                 show_error()
                 loader = null
                 break
@@ -271,8 +203,8 @@ Use a Semaphore
 While your thread waits for the main thread to request a new resource,
 use a Semaphore to sleep (instead of a busy loop or anything similar).
 
-Don't block the main thread during the call to ``poll``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Not blocking main thread during the polling
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you have a mutex to allow calls from the main thread to your loader
 class, don't lock it while you call ``poll`` on the loader. When a
@@ -365,4 +297,3 @@ Example:
 
 **Note**: this code in its current form is not tested in real world
 scenarios. Ask punto on IRC (#godotengine on irc.freenode.net) for help.
-

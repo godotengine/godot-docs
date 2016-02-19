@@ -1,7 +1,7 @@
-.. _doc_saving_your_game:
+.. _doc_saving_games:
 
-Saving Your Game
-================
+Saving games
+============
 
 Introduction
 ------------
@@ -12,7 +12,7 @@ More advanced save games may need to store additional information about
 an arbitrary number of objects. This will allow the save function to
 scale as the game grows more complex.
 
-Identify Persistent Objects
+Identify persistent objects
 ---------------------------
 
 First we should identify what objects we want to keep between game
@@ -71,14 +71,14 @@ look like this:
         }
         return savedict
 
-This gives us a dictionary with the style {
-`variable_name <that_variables_value>`__ } which will be useful when
+This gives us a dictionary with the style
+``{ "variable_name":that_variables_value }`` which will be useful when
 loading.
 
-Saving and reading Data
+Saving and reading data
 -----------------------
 
-As covered in the :ref:`doc_file_system` tutorial, we'll need to open a file
+As covered in the :ref:`doc_filesystem` tutorial, we'll need to open a file
 and write to it and then later read from it. Now that we have a way to
 call our groups and get their relevant data, let's use to_json() to
 convert it into an easily stored string and store them in a file. Doing
@@ -112,7 +112,7 @@ function:
         if !savegame.file_exists("user://savegame.save"):
             return #Error!  We don't have a save to load
 
-        #We need to revert the game state so we're not cloning objects during loading.  This will vary wildly depending on the needs of a project, so take care with this step.
+        # We need to revert the game state so we're not cloning objects during loading.  This will vary wildly depending on the needs of a project, so take care with this step.
         #For our example, we will accomplish this by deleting savable objects.
         var savenodes = get_tree().get_nodes_in_group("Persist")
         for i in savenodes:
@@ -138,7 +138,7 @@ And now we can save and load an arbitrary number of objects laid out
 almost anywhere across the scene tree! Each object can store different
 data depending on what it needs to save.
 
-Some Notes
+Some notes
 ----------
 
 We may have glossed over a step, but setting the game state to one fit
@@ -152,5 +152,3 @@ stages (parent objects first) so they are available when child objects
 are loaded will make sure they're available for the add_child() call.
 There will also need to be some way to link children to parents as the
 nodepath will likely be invalid.
-
-

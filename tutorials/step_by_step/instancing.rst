@@ -32,7 +32,7 @@ In the above picture, Scene B was added to Scene A as an instance. It
 may seem weird at first, but at the end of this tutorial it will make
 complete sense!
 
-Instancing, Step by Step
+Instancing, step by step
 ------------------------
 
 To learn how to do instancing, let's start with downloading a sample
@@ -76,7 +76,7 @@ Press Play and Voila!
 
 The instanced ball fell to the bottom of the pit.
 
-A Little More
+A little more
 -------------
 
 There can be as many instances as desired in a scene, just try
@@ -90,7 +90,7 @@ Then try running the scene again:
 
 Cool, huh? This is how instancing works.
 
-Editing Instances
+Editing instances
 -----------------
 
 Select one of the many copies of the balls and go to the property
@@ -111,6 +111,3 @@ Conclusion
 
 Instancing seems handy, but there is more to it than it meets the eye!
 The next part of the instancing tutorial should cover the rest..
-
-
-

@@ -1,7 +1,7 @@
 .. _doc_mouse_and_input_coordinates:
 
-Mouse & Input Coordinates
-=========================
+Mouse and input coordinates
+===========================
 
 About
 -----
@@ -10,30 +10,14 @@ The reason for this small tutorial is to clear up many common mistakes
 about input coordinates, obtaining mouse position and screen resolution,
 etc.
 
-Hardware Display Coordinates
+Hardware display coordinates
 ----------------------------
 
 Using hardware coordinates makes sense in the case of writing complex
-UIs meant to run on PC, such as editors, MMOs, tools, etc. Yet, make not
-as much sense outside of that scope.
+UIs meant to run on PC, such as editors, MMOs, tools, etc. Yet, it makes
+not as much sense outside of that scope.
 
-[STRIKEOUT:The only way to reliably obtain this information is by using
-functions such as:]
-
-**This method is no longer supported:** It was too confusing and caused
-errors for users making 2D games. Screen would stretch to different
-resolutions and input would stop making sense. Please use the
-``_input`` function
-
-::
-
-    OS.get_video_mode_size()
-    Input.get_mouse_pos()
-
-However, this is discouraged for pretty much any situation. Please do
-not use these functions unless you really know what you are doing.
-
-Viewport Display Coordinates
+Viewport display coordinates
 ----------------------------
 
 Godot uses viewports to display content, and viewports can be scaled by
@@ -56,11 +40,10 @@ for example:
        print("Viewport Resolution is: ",get_viewport_rect().size)
 
     func _ready():
-       set_process_input(true)
+        set_process_input(true)
 
-Alternatively it's possible to ask the viewport for the mouse position
+Alternatively it's possible to ask the viewport for the mouse position:
 
 ::
 
     get_viewport().get_mouse_pos()
-

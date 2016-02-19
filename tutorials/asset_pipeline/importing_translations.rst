@@ -84,5 +84,3 @@ The import dialog also can add the translation to the list of
 translations to load when the game runs, specified in engine.cfg (or the
 project properties). Godot allows to load and remove translations at
 runtime, too.
-
-

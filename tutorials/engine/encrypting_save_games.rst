@@ -1,6 +1,6 @@
 .. _doc_encrypting_save_games:
 
-Encrypting Save Games
+Encrypting save games
 =====================
 
 Why?
@@ -32,16 +32,15 @@ encrypt savegames and protect the world order.
 How?
 ----
 
-The class :ref:`File <class_File>`
-is simple to use, just open a location and read/write data (integers,
-strings and variants). To create an encrypted file, a passphrase must be
-provided, like this:
+The class :ref:`File <class_File>` is simple to use, just open a
+location and read/write data (integers, strings and variants). To create
+an encrypted file, a passphrase must be provided, like this:
 
 ::
 
     var f = File.new()
-    var err = f.open_encrypted_with_pass("user://savedata.bin",File.WRITE,"mypass")
-    f.store_var( game_state )
+    var err = f.open_encrypted_with_pass("user://savedata.bin", File.WRITE, "mypass")
+    f.store_var(game_state)
     f.close()
 
 This will make the file unreadable to users, but will still not avoid
@@ -51,9 +50,8 @@ some unique user identifier is needed, for example:
 ::
 
     var f = File.new()
-    var err = f.open_encrypted_with_pass("user://savedata.bin",File.WRITE,OS.get_unique_ID())
-    f.store_var( game_state )
+    var err = f.open_encrypted_with_pass("user://savedata.bin", File.WRITE, OS.get_unique_ID())
+    f.store_var(game_state)
     f.close()
 
 This is all! Thanks for your cooperation, citizen.
-

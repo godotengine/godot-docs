@@ -3,7 +3,7 @@
 Resources
 =========
 
-Nodes and Resources
+Nodes and resources
 -------------------
 
 So far, :ref:`Node <class_Node>`
@@ -48,17 +48,14 @@ To make it a litle more visual:
 
 .. image:: /img/nodes_resources.png
 
-External vs Built-In
+External vs built-in
 --------------------
 
 The resource properties can reference resources in two ways,
 *external* (on disk) or **built-in**.
 
-To be more specific, here's a
-:ref:`Texture <class_Texture>`
-in a
-:ref:`Sprite <class_Sprite>`
-node:
+To be more specific, here's a :ref:`Texture <class_Texture>`
+in a :ref:`Sprite <class_Sprite>` node:
 
 .. image:: /img/spriteprop.png
 
@@ -80,7 +77,7 @@ the scene can be instanced multiple times, the resource will still
 always be loaded once. That means, different Robi robot scenes instanced
 at the same time will still share the same image.
 
-Loading Resources from Code
+Loading resources from code
 ---------------------------
 
 Loading resources from code is easy, there are two ways to do it. The
@@ -89,7 +86,7 @@ first is to use load(), like this:
 ::
 
     func _ready():
-            var res = load("res://robi.png") h1. resource is loaded when line is executed
+            var res = load("res://robi.png") # resource is loaded when line is executed
             get_node("sprite").set_texture(res)
 
 The second way is more optimal, but only works with a string constant
@@ -98,15 +95,14 @@ parameter, because it loads the resource at compile-time.
 ::
 
     func _ready():
-            var res = preload("res://robi.png") h1. resource is loaded at compile time
+            var res = preload("res://robi.png") # resource is loaded at compile time
             get_node("sprite").set_texture(res)
 
-Loading Scenes
+Loading scenes
 --------------
 
 Scenes are also resources, but there is a catch. Scenes saved to disk
-are resources of type
-:ref:`PackedScene <class_PackedScene>`,
+are resources of type :ref:`PackedScene <class_PackedScene>`,
 this means that the scene is packed inside a resource.
 
 To obtain an instance of the scene, the method
@@ -131,11 +127,10 @@ removed quickly, without having to load them again from disk each
 time. It is important to remember that, as always, images, meshes, etc
 are all shared between the scene instances.
 
-Freeing Resources
+Freeing resources
 -----------------
 
-Resource extends from
-:ref:`Reference <class_Reference>`.
+Resource extends from :ref:`Reference <class_Reference>`.
 As such, when a resource is no longer in use, it will automatically free
 itelf. Since, in most cases, Resources are contained in Nodes, scripts
 or other resources, when a node is removed or freed, all the children
@@ -144,9 +139,6 @@ resources are freed too.
 Scripting
 ---------
 
-Like any object in Godot, not just nodes, Resources can be scripted too.
+Like any object in Godot, not just nodes, resources can be scripted too.
 However, there isn't generally much of a win, as resources are just data
 containers.
-
-
-

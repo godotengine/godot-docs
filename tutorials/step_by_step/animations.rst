@@ -13,11 +13,10 @@ To begin, let's just use the scene from the previous tutorial (splash
 screen). The goal will be to add a simple animation to it. Here's a copy
 just in case: :download:`robisplash.zip </files/robisplash.zip>`.
 
-Creating the Animation
+Creating the animation
 ----------------------
 
-First of all, add an
-:ref:`AnimationPlayer <class_AnimationPlayer>`
+First of all, add an :ref:`AnimationPlayer <class_AnimationPlayer>`
 node to the scene, make it a child of bg (the root node):
 
 .. image:: /img/animplayer.png
@@ -37,7 +36,7 @@ pressing the "edit" button:
 
 .. image:: /img/animedit.png
 
-Editing the Animation
+Editing the animation
 ---------------------
 
 Now this is when the magic happens! Several things happen when the
@@ -53,7 +52,7 @@ property of any object* can be animated:
 
 .. image:: /img/propertykeys.png
 
-Making the Logo Appear
+Making the logo appear
 ----------------------
 
 Next, the logo will appear from the top of the screen. After selecting
@@ -94,6 +93,3 @@ And finally, when running the scene, the animation should look like
 this:
 
 .. image:: /img/out.gif
-
-
-

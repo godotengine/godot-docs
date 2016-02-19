@@ -1,6 +1,6 @@
 .. _doc_ssl_certificates:
 
-SSL Certificates
+SSL certificates
 ================
 
 Introduction
@@ -28,7 +28,7 @@ this when exporting your project.
 
 There are two ways to obtain certificates:
 
-Approach 1, Self Signed Cert
+Approach 1: self signed cert
 ----------------------------
 
 The first approach is the simplest, just generate a private and public
@@ -41,7 +41,7 @@ this. This approach also **does not require domain validation** nor
 requires you to spend a considerable amount of money in purchasing
 certificates from a CA.
 
-Approach 2, CA Cert
+Approach 2: CA cert
 -------------------
 
 The second approach consists of using a certificate authority (CA)
@@ -65,11 +65,8 @@ located in:
 
     /etc/ssl/certs/ca-certificates.crt
 
-This file allows HTTPS connections to virtually any website (ie, Google,
-Microsoft, etc) .
+This file allows HTTPS connections to virtually any website (i.e.,
+Google, Microsoft, etc.).
 
 Or just pick any of the more specific certificates there if you are
 connecting to a specific one.
-
-
-

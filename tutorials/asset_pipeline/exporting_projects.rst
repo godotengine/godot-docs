@@ -3,7 +3,7 @@
 Exporting projects
 ==================
 
-Why Exporting?
+Why exporting?
 --------------
 
 Originally, Godot did not have any means to export projects. The
@@ -35,7 +35,7 @@ does not include tools inside (like the editor, debugger, etc).
 Finally, Godot has a simple but efficient system for creating DLCs as
 extra package files.
 
-On Mobile
+On mobile
 ~~~~~~~~~
 
 The same scenario in mobile is a little worse. To distribute a project
@@ -54,7 +54,7 @@ compression and that has been standardized for more than a decade, but
 mobile devices use different formats for texture compression, such as
 PVRCT (iOS) or ETC (Android)
 
-Export Dialog
+Export dialog
 -------------
 
 After many attempts at different export workflows, the current one has
@@ -81,7 +81,7 @@ export for that platform until he or she resolves it:
 At that time, the user is expected to come back to the wiki and follow
 instructions on how to properly set up that platform.
 
-Export Templates
+Export templates
 ~~~~~~~~~~~~~~~~
 
 Apart from setting up the platform, the export templates must be
@@ -93,7 +93,7 @@ Templates" option in the editor:
 
 .. image:: /img/exptemp.png
 
-Export Mode
+Export mode
 ~~~~~~~~~~~
 
 When exporting, Godot makes a list of all the files to export and then
@@ -125,5 +125,3 @@ creates the package. There are 3 different modes for exporting:
    *really* useful for games distributed on optical media.
 
 .. image:: /img/expselected.png
-
-

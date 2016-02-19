@@ -33,10 +33,10 @@ to have parts of a scene that:
 
 For this, the option for auto-loading nodes and scripts exists.
 
-Autoload
+AutoLoad
 --------
 
-Autoload can be a scene, or a script that inherits from Node (a Node
+AutoLoad can be a scene, or a script that inherits from Node (a Node
 will be created and the script will be set to it). They are added to the
 project in the Scene > Project Settings > AutoLoad tab.
 
@@ -53,7 +53,7 @@ access it by requesting:
 
     var player_vars = get_node("/root/playervariables")
 
-Custom Scene Switcher
+Custom scene switcher
 ---------------------
 
 This short tutorial will explain how to make a scene switcher by using
@@ -178,7 +178,4 @@ Finally, by running the project it's possible to switch bewtween both
 scenes y pressing the button!
 
 (To load scenes with a progress bar, check out the next tutorial,
-[[Background Loading]])
-
-
-
+:ref:`doc_background_loading`)

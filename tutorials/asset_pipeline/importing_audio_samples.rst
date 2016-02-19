@@ -111,5 +111,3 @@ supported.
 
 As an alternative, the import screen has a "loop" option that enables
 looping for the entire sample when importing.
-
-

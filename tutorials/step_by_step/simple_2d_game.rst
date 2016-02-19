@@ -1,7 +1,7 @@
 .. _doc_simple_2d_game:
 
-Simple 2D game (Pong!)
-======================
+Simple 2D game
+==============
 
 Pong
 ~~~~
@@ -16,7 +16,7 @@ Assets
 Some assets are included for this tutorial:
 :download:`pong_assets.zip </files/pong_assets.zip>`.
 
-Scene Setup
+Scene setup
 ~~~~~~~~~~~
 
 For the sake of the old times, the game will be in 640x400 pixels
@@ -39,7 +39,7 @@ The scene tree should, then look similar to this:
 Save the scene as "pong.scn" and set it as the main scene in the project
 properties.
 
-Input Actions Setup
+Input actions setup
 ~~~~~~~~~~~~~~~~~~~
 
 There are so many input methods for video games... Keyboard, Joypad,
@@ -189,7 +189,4 @@ really useful here:
 
         get_node("right").set_pos(right_pos)
 
-And that's it! a simple Pong was written with a few lines of code.
-
-
-
+And that's it! A simple Pong was written with a few lines of code.

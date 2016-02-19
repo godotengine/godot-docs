@@ -9,9 +9,7 @@ Introduction
 Godot has a small but very useful feature called viewports. Viewports
 are, as they name implies, rectangles where the world is drawn. They
 have three main uses, but can flexibly adapted to a lot more. All this
-is done via the
-:ref:`Viewport <class_Viewport>`
-node.
+is done via the :ref:`Viewport <class_Viewport>` node.
 
 .. image:: /img/viewportnode.png
 
@@ -21,12 +19,10 @@ The main uses in question are:
    This is what displays the scenes created by the user. (You should
    know this by having read previous tutorials!)
 -  **Sub-Viewports**: These can be created when a Viewport is a child of
-   a
-   :ref:`Control <class_Control>`.
+   a :ref:`Control <class_Control>`.
 -  **Render Targets**: Viewports can be set to "RenderTarget" mode. This
    means that the viewport is not directly visible, but it's contents
-   can be accessed via a
-   :ref:`Texture <class_Texture>`.
+   can be accessed via a :ref:`Texture <class_Texture>`.
 
 Input
 -----
@@ -35,8 +31,7 @@ Viewports are also responsible of delivering properly adjusted and
 scaled input events to all it's children nodes. Both the root viewport
 and sub-viewports do this automatically, but render targets do not.
 Because of this, the user must do it manually via the
-:ref:`Viewport.input() <class_Viewport_input>`
-function if needed.
+:ref:`Viewport.input() <class_Viewport_input>` function if needed.
 
 Listener
 --------
@@ -50,11 +45,10 @@ to enable this!
 Cameras (2D & 3D)
 -----------------
 
-When using a 2D or 3D
-:ref:`Camera <class_Camera>` /
-:ref:`Camera2D <class_Camera2D>`,
-cameras will always display on the closest parent viewport (going
-towards the root). For example, in the following hierarchy:
+When using a 2D or 3D :ref:`Camera <class_Camera>` /
+:ref:`Camera2D <class_Camera2D>`, cameras will always display on the
+closest parent viewport (going towards the root). For example, in the
+following hierarchy:
 
 -  Viewport
 
@@ -76,7 +70,7 @@ or make it the current camera by calling:
 
     camera.make_current()
 
-Scale & Stretching
+Scale & stretching
 ------------------
 
 Viewports have a "rect" property. X and Y are often not used (only the
@@ -100,8 +94,7 @@ settings.
 Worlds
 ------
 
-For 3D, a Viewport will contain a
-:ref:`World <class_World>`. This
+For 3D, a Viewport will contain a :ref:`World <class_World>`. This
 is basically, the universe that links physics and rendering together.
 Spatial-base nodes will register using the World of the closest
 viewport. By default, newly created viewports do not contain a World but
@@ -118,8 +111,7 @@ display single objects and don't want to create a world, viewport has
 the option to use it's own World. This is very useful when you want to
 instance 3D characters or objects in the 2D world.
 
-For 2D, each Viewport always contains it's own
-:ref:`World2D <class_World2D>`.
+For 2D, each Viewport always contains it's own :ref:`World2D <class_World2D>`.
 This suffices in most cases, but in case sharing them may be desired, it
 is possible to do so by calling the viewport API manually.
 
@@ -135,7 +127,7 @@ following API:
     # queues a screen capture, will not happen immediately
     viewport.queue_screen_capture() 
 
-After a frame or two (check _process() ), the capture will be ready,
+After a frame or two (check _process()), the capture will be ready,
 get it back by using:
 
 ::
@@ -145,7 +137,7 @@ get it back by using:
 If the returned image is empty, capture still didn't happen, wait a
 little more, as this API is asyncronous.
 
-Sub-Viewport
+Sub-viewport
 ------------
 
 If the viewport is a child of a control, it will become active and
@@ -159,7 +151,7 @@ The viewport will cover the area of it's parent control completely.
 
 .. image:: /img/subviewport.png
 
-Render Target
+Render target
 -------------
 
 To set as a render target, just toggle the "render target" property of
@@ -187,9 +179,6 @@ inside the editor:
 
 *TODO: Review the doc, ViewportQuad and ViewportFrame don't exist in 2.0.*
 
-Make sure to check the viewport demos! Viewport folder in the demo.zip
-available to download, or
+Make sure to check the viewport demos! Viewport folder in the demos
+archive available to download, or
 https://github.com/godotengine/godot/tree/master/demos/viewport
-
-
-

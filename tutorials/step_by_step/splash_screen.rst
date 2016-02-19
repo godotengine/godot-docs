@@ -13,7 +13,7 @@ splash screen.
 Following is a file with the assets that will be used:
 :download:`robisplash_assets.zip </files/robisplash_assets.zip>`.
 
-Setting Up
+Setting up
 ----------
 
 Create a scene with screen resolution 800x450, and set it up like this:
@@ -22,27 +22,21 @@ Create a scene with screen resolution 800x450, and set it up like this:
 
 .. image:: /img/robisplashpreview.png
 
-The nodes 'background" and "logo" are of
-:ref:`TextureFrame <class_TextureFrame>`
+The nodes 'background" and "logo" are of :ref:`TextureFrame <class_TextureFrame>`
 type. These have a special property for setting the texture to be
 displayed, just load the corresponding file.
 
 .. image:: /img/texframe.png
 
-The node "start" is a
-:ref:`TextureButton <class_TextureButton>`,
+The node "start" is a :ref:`TextureButton <class_TextureButton>`,
 it takes several images for different states, but only the normal and
 pressed will be supplied in this example:
 
 .. image:: /img/texbutton.png
 
-Finally, the node "copyright" is a
-:ref:`Label <class_Label>`. Labels
-can be set a custom font by editing the following property:
+Finally, the node "copyright" is a :ref:`Label <class_Label>`.
+Labels can be set a custom font by editing the following property:
 
 .. image:: /img/label.png
 
 As a side note, the font was imported from a TTF, see :ref:`doc_importing_fonts`.
-
-
-

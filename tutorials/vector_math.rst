@@ -1,6 +1,6 @@
 .. _doc_vector_math:
 
-Vector Math
+Vector math
 ===========
 
 Introduction
@@ -19,7 +19,7 @@ trigonometry instead of vector of math for 2D games.
 This tutorial will focus on practical usage, with immediate application
 to the art of game programming.
 
-Coordinate Systems (2D)
+Coordinate systems (2D)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 Typically, we define coordinates as an (x,y) pair, x representing the
@@ -70,8 +70,8 @@ Theorem <http://en.wikipedia.org/wiki/Pythagorean_theorem>`__.
 
     var len = sqrt( x*x + y*y )
 
-But.. Angles?
--------------
+But... angles?
+--------------
 
 But why not using an *angle*? After all, we could also think of a vector
 as an angle and a magnitude, instead of a direction and a magnitude.
@@ -88,29 +88,27 @@ as measure, but take little part in the math. So, give up the
 trigonometry already, prepare to embrace vectors!
 
 In any case, obtaining an angle from a vector is easy and can be
-accomplished with trig.. er what was that? I mean, the
-:ref:`atan2.atan2() <class_atan2_atan2>`
-function.
+accomplished with trig... er, what was that? I mean, the
+:ref:`atan2() class_@GDScript_atan2` function.
 
 Vectors in Godot
 ~~~~~~~~~~~~~~~~
 
 To make examples easier, it is worth explaining how vectors are
 implemented in GDScript. GDscript has both
-:ref:`Vector2 <class_Vector2>` and
-:ref:`Vector3 <class_Vector3>`,
+:ref:`Vector2 <class_Vector2>` and :ref:`Vector3 <class_Vector3>`,
 for 2D and 3D math respectively. Godot uses Vector classes as both
 position and direction. They also contain x and y (for 2D) and x, y and
 z (for 3D) member variables.
 
 ::
 
-    h1. create a vector with coordinates (2,5)
+    # create a vector with coordinates (2,5)
     var a = Vector2(2,5)
-    h1. create a vector and assign x and y manually
+    # create a vector and assign x and y manually
     var b = Vector2()
-    b.x=7
-    b.y=8
+    b.x = 7
+    b.y = 8
 
 When operating with vectors, it is not necessary to operate on the
 members directly (in fact this is much slower). Vectors support regular
@@ -118,17 +116,17 @@ arithmetic operations:
 
 ::
 
-    #add a and b
-    var c = a+b
-    h1. will result in c vector, with value (9,13)
+    # add a and b
+    var c = a + b
+    # will result in c vector, with value (9,13)
 
 It is the same as doing:
 
 ::
 
     var c = Vector2()
-    c.x=a.x+b.x
-    c.y=a.y+b.y
+    c.x = a.x + b.x
+    c.y = a.y + b.y
 
 Except the former is way more efficient and readable.
 
@@ -140,9 +138,9 @@ numbers, also named **scalars**.
 
 ::
 
-    h1. Multiplication of vector by scalar
+    # Multiplication of vector by scalar
     var c = a*2.0
-    h1. will result in c vector, with value (4,10)
+    # will result in c vector, with value (4,10)
 
 Which is the same as doing
 
@@ -154,7 +152,7 @@ Which is the same as doing
 
 Except, again, the former is way more efficient and readable.
 
-Perpendicular Vectors
+Perpendicular vectors
 ~~~~~~~~~~~~~~~~~~~~~
 
 Rotating a 2D vector 90° degrees to either side, left or right, is
@@ -170,16 +168,16 @@ Example:
 ::
 
     var v = Vector2(0,1)
-    #rotate right (clockwise)
-    var v_right = Vector2(-v.y,v.x)
-    #rotate left (counter-clockwise)
-    var v_right = Vector2(v.y,-v.x)
+    # rotate right (clockwise)
+    var v_right = Vector2(-v.y, v.x)
+    # rotate left (counter-clockwise)
+    var v_right = Vector2(v.y, -v.x)
 
 This is a handy trick that is often of use. It is impossible to do with
 3D vectors, because there are an infinite amount of perpendicular
 vectors.
 
-Unit Vectors
+Unit vectors
 ~~~~~~~~~~~~
 
 Ok, so we know what a vector is. It has a **direction** and a
@@ -209,9 +207,9 @@ by it's magnitude:
 ::
 
     var a = Vector2(2,4)
-    var m = sqrt( a.x*a.x + a.y*a.y )
-    a.x/=m
-    a.y/=m
+    var m = sqrt(a.x*a.x + a.y*a.y)
+    a.x /= m
+    a.y /= m
 
 As you might have guessed, if the vector has magnitude 0 (meaning, it's
 not a vector but the **origin** also called *null vector*), a division
@@ -225,7 +223,7 @@ Of course, Vector2 and Vector3 already provide a method to do this:
 
     a = a.normalized()
 
-Dot Product
+Dot product
 ~~~~~~~~~~~
 
 OK, the **dot product** is the most important part of vector math.
@@ -233,7 +231,7 @@ Without the dot product, Quake would have never been made. This is the
 most important section of the tutorial, so make sure to grasp it
 properly. Most people trying to understand vector math give up here
 because, despite how simple it is, they can't make head or tails from
-it. Why? Here's why, it's because..
+it. Why? Here's why, it's because...
 
 The dot product takes two vectors and returns a **scalar**:
 
@@ -256,8 +254,8 @@ function:
 
     var s = a.dot(b)
 
-The order of two vectors does *not* matter, \`a.dot(b)\` returns the
-same value as \`b.dot(a)\`.
+The order of two vectors does *not* matter, ``a.dot(b)`` returns the
+same value as ``b.dot(a)``.
 
 This is where despair begins and books and tutorials show you this
 formula:
@@ -319,7 +317,7 @@ Snake (**A**), by subtracting the two:
 
 ::
 
-    var BA = A-B
+    var BA = A - B
 
 .. image:: /img/tutovec7.png
 
@@ -332,12 +330,12 @@ that the guard is facing towards him:
 
 ::
 
-    if ( BA.dot(F) > 0 ):
+    if (BA.dot(F) > 0):
         print("!")
 
 Seems Snake is safe so far.
 
-Siding with Unit Vectors
+Siding with unit vectors
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Ok, so now we know that dot product between two vectors will let us know
@@ -357,28 +355,28 @@ property is added:
    resulting scalar is **-1**.
 
 This means that dot product between unit vectors is always between the
-range of 1 and -1. So Again..
+range of 1 and -1. So Again...
 
 -  If their angle is **0°** dot product is **1**.
 -  If their angle is **90°**, then dot product is **0**.
 -  If their angle is **180°**, then dot product is **-1**.
 
-Uh.. this is oddly familiar.. seen this before.. where?
+Uh.. this is oddly familiar... seen this before... where?
 
 Let's take two unit vectors. The first one is pointing up, the second
 too but we will rotate it all the way from up (0°) to down (180°
-degrees)..
+degrees)...
 
 .. image:: /img/tutovec8.png
 
-..while plotting the resulting scalar!
+While plotting the resulting scalar!
 
 .. image:: /img/tutovec9.png
 
 Aha! It all makes sense now, this is a
 `Cosine <http://mathworld.wolfram.com/Cosine.html>`__ function!
 
-We can say that, then, as a rule..
+We can say that, then, as a rule...
 
 The **dot product** between two **unit vectors** is the **cosine** of
 the **angle** between those two vectors. So, to obtain the angle between
@@ -409,7 +407,7 @@ Planes
 
 The dot product has another interesting property with unit vectors.
 Imagine that perpendicular to that vector (and through the origin)
-passes a [STRIKEOUT:plane]. Planes divide the entire space into positive
+passes a plane. Planes divide the entire space into positive
 (over the plane) and negative (under the plane), and (contrary to
 popular belief) you can also use their math in 2D:
 
@@ -430,7 +428,7 @@ except that the plane is an infinite surface (imagine an infinite, flat
 sheet of paper that you can orient and is pinned to the origin) instead
 of a line.
 
-Distance to Plane
+Distance to plane
 -----------------
 
 Now that it's clear what a plane is, let's go back to the dot product.
@@ -449,7 +447,8 @@ space the distance will be negative, too:
 
 This allows us to tell which side of the plane a point is.
 
-#h3. Away from the Origin
+Away from the origin
+--------------------
 
 I know what you are thinking! So far this is nice, but *real* planes are
 everywhere in space, not only passing through the origin. You want real
@@ -465,8 +464,7 @@ by N and D. For example:
 
 .. image:: /img/tutovec12.png
 
-For 3D math, Godot provides a
-:ref:`Plane <class_Plane>`
+For 3D math, Godot provides a :ref:`Plane <class_Plane>`
 built-in type that handles this.
 
 Basically, N and D can represent any plane in space, be it for 2D or 3D
@@ -475,17 +473,9 @@ for both. It's the same as before, but D id the distance from the origin
 to the plane, travelling in N direction. As an example, imagine you want
 to reach a point in the plane, you will just do:
 
-.. raw:: html
+::
 
-   </pre>
-
-var point_in_plane = N\*D
-
-
-
-.. raw:: html
-
-   </pre>
+    var point_in_plane = N*D
 
 This will stretch (resize) the normal vector and make it touch the
 plane. This math might seem confusing, but it's actually much simpler
@@ -507,9 +497,8 @@ inverted negative and positive half spaces:
     N = -N
     D = -D
 
-Of course, Godot implements this operator in
-:ref:`Plane <class_Plane>`, so
-doing:
+Of course, Godot implements this operator in :ref:`Plane <class_Plane>`,
+so doing:
 
 ::
 
@@ -522,7 +511,7 @@ calculating the distance to it. So, why is it useful to calculate the
 distance from a point to a plane? It's extremely useful! Let's see some
 simple examples..
 
-Constructing a Plane in 2D
+Constructing a plane in 2D
 --------------------------
 
 Planes clearly don't come out of nowhere, so they must be built.
@@ -546,11 +535,11 @@ degrees to either side:
 
 ::
 
-    #calculate vector from a to b
+    # calculate vector from a to b
     var dvec = (point_b - point_a).normalized()
-    #rotate 90 degrees
+    # rotate 90 degrees
     var normal = Vector2(dvec.y,-dev.x)
-    #or alternatively
+    # or alternatively
     # var normal = Vector2(-dvec.y,dev.x)
     # depending the desired side of the normal
 
@@ -567,7 +556,7 @@ point_b will work since they are in the same plane:
 Doing the same in 3D is a little more complex and will be explained
 further down.
 
-Some Examples of Planes
+Some examples of planes
 -----------------------
 
 Here is a simple example of what planes are useful for. Imagine you have
@@ -589,12 +578,12 @@ Code should be something like this:
 
 ::
 
-    var inside=true
+    var inside = true
     for p in planes:
-       #check if distance to plane is positive
-       if ( N.dot(point) - D > 0): 
-           inside=false
-           break h1. with one that fails, it's enough
+        # check if distance to plane is positive
+        if (N.dot(point) - D > 0):
+            inside = false
+            break # with one that fails, it's enough
 
 Pretty cool, huh? But this gets much better! With a little more effort,
 similar logic will let us know when two convex polygons are overlapping
@@ -614,37 +603,37 @@ Code should be something like this:
 
 ::
 
-    var overlapping=true
+    var overlapping = true
 
     for p in planes_of_A:
-       var all_out = true
-       for v in points_of_B:
-          if ( p.distance_to(v) < 0): 
-             all_out=false
-             break
-
-       if (all_out):
-          # a separating plane was found
-          # do not continue testing 
-          overlapping=false
-          break
-
-    if (overlapping):
-       #only do this check if no separating plane
-       #was found in planes of A
-       for p in planes_of_B:
-          var all_out = true
-          for v in points_of_A:
-             if ( p.distance_to(v) < 0): 
-                all_out=false
+        var all_out = true
+        for v in points_of_B:
+            if (p.distance_to(v) < 0): 
+                all_out = false
                 break
 
-          if (all_out):
-             overlapping=false
-             break
+        if (all_out):
+            # a separating plane was found
+            # do not continue testing 
+            overlapping = false
+            break
 
     if (overlapping):
-       print("Polygons Collided!")
+        # only do this check if no separating plane
+        # was found in planes of A
+        for p in planes_of_B:
+            var all_out = true
+            for v in points_of_A:
+                if (p.distance_to(v) < 0): 
+                    all_out = false
+                    break
+
+            if (all_out):
+                overlapping = false
+                break
+
+    if (overlapping):
+        print("Polygons Collided!")
 
 As you can see, planes are quite useful, and this is the tip of the
 iceberg. You might be wondering what happens with non convex polygons.
@@ -652,7 +641,7 @@ This is usually just handled by splitting the concave polygon into
 smaller convex polygons, or using a technique such as BSP (which is not
 used much nowadays).
 
-Cross Product
+Cross product
 -------------
 
 Quite a lot can be done with the dot product! But the party would not be
@@ -687,19 +676,11 @@ The formula for the cross product is:
 
 This can be simplified, in Godot, to:
 
-.. raw:: html
+::
 
-   </pre>
+    var c = a.cross(b)
 
-var c = a.cross(b)
-
-
-
-.. raw:: html
-
-   </pre>
-
-However, unlike the dot product, doing \`a.cross(b)\` and \`b.cross(a)\`
+However, unlike the dot product, doing ``a.cross(b)`` and ``b.cross(a)``
 will yield different results. Specifically, the returned vector will be
 negated in the second case. As you might have realized, this coincides
 with creating perpendicular vectors in 2D. In 3D, there are also two
@@ -708,7 +689,7 @@ possible perpendicular vectors to a pair of 2D vectors.
 Also, the resulting cross product of two unit vectors is *not* a unit
 vector. Result will need to be renormalized.
 
-Area of a Triangle
+Area of a triangle
 ~~~~~~~~~~~~~~~~~~
 
 Cross product can be used to obtain the surface area of a triangle in
@@ -719,19 +700,10 @@ Cross product can be used to obtain the surface area of a triangle in
 Take any of them as a pivot and compute the adjacent vectors to the
 other two points. As example, we will use B as a pivot:
 
-.. raw:: html
+::
 
-   </pre>
-
-var BA = A-B
-
-var BC = C-B
-
-
-
-.. raw:: html
-
-   </pre>
+    var BA = A - B
+    var BC = C - B
 
 .. image:: /img/tutovec18.png
 
@@ -752,23 +724,15 @@ of the triangle is half of it.
 
     var area = P.length()/2
 
-Plane of the Triangle
+Plane of the triangle
 ~~~~~~~~~~~~~~~~~~~~~
 
 With **P** computed from the previous step, normalize it to get the
 normal of the plane.
 
-.. raw:: html
+::
 
-   </pre>
-
-var N = P.normalized()
-
-
-
-.. raw:: html
-
-   </pre>
+    var N = P.normalized()
 
 And obtain the distance by doing the dot product of P with any of the 3
 points of the **ABC** triangle:
@@ -811,7 +775,7 @@ So, to obtain N, the correct formula is:
     # var N = (A-B).cross(A-C).normalized()
     var D = N.dot(A)
 
-Collision Detection in 3D
+Collision detection in 3D
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This is another bonus bit, a reward for being patient and keeping up
@@ -850,71 +814,78 @@ So the final algorithm is something like:
 
 ::
 
-    var overlapping=true
+    var overlapping = true
 
     for p in planes_of_A:
-       var all_out = true
-       for v in points_of_B:
-          if ( p.distance_to(v) < 0): 
-             all_out=false
-             break
-
-       if (all_out):
-          # a separating plane was found
-          # do not continue testing 
-          overlapping=false
-          break
-
-    if (overlapping):
-       #only do this check if no separating plane
-       #was found in planes of A
-       for p in planes_of_B:
-          var all_out = true
-          for v in points_of_A:
-             if ( p.distance_to(v) < 0): 
-                all_out=false
+        var all_out = true
+        for v in points_of_B:
+            if (p.distance_to(v) < 0): 
+                all_out = false
                 break
 
-          if (all_out):
-             overlapping=false
-             break
+        if (all_out):
+            # a separating plane was found
+            # do not continue testing 
+            overlapping = false
+            break
 
     if (overlapping):
+        # only do this check if no separating plane
+        # was found in planes of A
+        for p in planes_of_B:
+            var all_out = true
+            for v in points_of_A:
+                if (p.distance_to(v) < 0): 
+                    all_out = false
+                    break
 
-       for ea in edges_of_A:
-          for eb in edges_of_B:
-              var n = ea.cross(eb)
-              if (n.length()==0):
-                 continue
-              var max_A=-1e20 # tiny number
-              var min_A=1e20 # huge number
-
-              # we are using the dot product directly
-              # so we can map a maximum and minimum range
-              # for each polygon, then check if they
-              # overlap.
-
-              for v in points_of_A:
-                 var d = n.dot(v)
-                 if (d>max_A):
-                    max_A=d
-                 if (dmax_B):
-                    max_B=d
-                 if (dmax_B or min_B>max_A):
-                  # not overlapping!
-                  overlapping=false
-                  break
-
-          if (not overlapping):
-             break
-
+            if (all_out):
+                overlapping = false
+                break
 
     if (overlapping):
-       print("Polygons Collided!")
+        for ea in edges_of_A:
+            for eb in edges_of_B:
+                var n = ea.cross(eb)
+                if (n.length() == 0):
+                    continue
+
+                var max_A = -1e20 # tiny number
+                var min_A = 1e20 # huge number
+
+                # we are using the dot product directly
+                # so we can map a maximum and minimum range
+                # for each polygon, then check if they
+                # overlap.
+
+                for v in points_of_A:
+                    var d = n.dot(v)
+                    if (d > max_A):
+                        max_A = d
+                    if (d < min_A):
+                        min_A = d
+
+                var max_B = -1e20 # tiny number
+                var min_B = 1e20 # huge number
+
+                for v in points_of_B:
+                    var d = n.dot(v)
+                    if (d > max_B):
+                        max_B = d
+                    if (d < min_B):
+                        min_B = d
+
+                if (min_A > max_B or min_B > max_A):
+                    # not overlapping!
+                    overlapping = false
+                    break
+
+            if (not overlapping):
+                break
+
+    if (overlapping):
+       print("Polygons collided!")
 
 This was all! Hope it was helpful, and please give feedback and let know
 if something in this tutorial is not clear! You should be now ready for
 the next challenge... :ref:`doc_matrices_and_transforms`!
-
-
-

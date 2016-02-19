@@ -64,14 +64,14 @@ rewritten in C++ and exposed transparently to the script. This allows
 for replacing a GDScript class with a C++ class without altering the
 rest of the game.
 
-Scripting a Scene
+Scripting a scene
 -----------------
 
 Before continuing, please make sure to read the :ref:`doc_gdscript` reference.
 It's a simple language and the reference is short, should not take more
 than a few minutes to glance.
 
-Scene Setup
+Scene setup
 ~~~~~~~~~~~
 
 This tutorial will begin by scripting a simple GUI scene. Use the add
@@ -91,7 +91,7 @@ And try to make it look like this in the 2D editor, so it makes sense:
 
 Finally, save the scene, a fitting name could be "sayhello.scn"
 
-Adding a Script
+Adding a script
 ~~~~~~~~~~~~~~~
 
 Select the Panel node, then press the "Add Script" Icon as follows:
@@ -125,7 +125,7 @@ There is not much in there. The "_ready()" function is called when the
 node (and all it's children) entered the active scene. (Remember, It's
 not a constructor, the constructor is "_init()" ).
 
-The Role of the Script
+The role of the script
 ~~~~~~~~~~~~~~~~~~~~~~
 
 A script basically adds a behavior to a node. It is used to control the
@@ -136,7 +136,7 @@ script.
 
 .. image:: /img/brainslug.jpg
 
-Handling a Signal
+Handling a signal
 ~~~~~~~~~~~~~~~~~
 
 Signals are used mostly in GUI nodes, (although other nodes have them
@@ -226,6 +226,3 @@ to obtain it would be:
 
 And, also, try to remember that nodes are referenced by name, not by
 type.
-
-
-
