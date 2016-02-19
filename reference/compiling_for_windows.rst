@@ -33,8 +33,12 @@ Compiling
 ---------
 
 Start a Visual Studio command prompt (it sets up environment variables
-needed by SCons to locate the compiler and SDK), go to the root dir of
-the engine source code and type:
+needed by SCons to locate the compiler and SDK). It should be called
+"Developer Command Prompt for VS2015" or similar. SCons will not be able
+to compile from the standard Windows "Command Prompt".
+
+Once inside the Developer Console, go to the root dir of the engine
+source code and type:
 
 ::
 
@@ -44,6 +48,31 @@ If all goes well, the resulting binary executable will be placed in
 ``C:\godot\bin\godot.windows.tools.exe``. This executable file
 contains the whole engine and runs without any dependencies. Executing
 it will bring up the project manager.
+
+Note for Godot 2.0+ if you are having issues:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You might also find other command prompts in your VS instalation. Make
+sure you do not use x64 Native or Cross Tools Command Prompts, because
+64 bit version of the Visual C compiler can not compile Godot 2.0+, only
+the 32 bit (x86) **compiler** can. If you get compiler errors about
+``_asm`` (assembly instructions) in theora, switch the command prompt
+(compiler if not using VS IDE). One more thing, 32 bit compiler can
+compile **both** 32 bit Godot and 64 bit Godot. The process is called
+cross compiling for different architectures.
+
+How to know which compiler SCons will use? Open your Developer Command
+Prompt (or whatever prompt you are using) and type in ``cl.exe``:
+
+If it says this, you're good to go (note x86 at the end):
+
+::
+
+    Microsoft (R) C/C++ Optimizing Compiler Version 18.00.31101 for x86
+
+If it says (x64), wrong prompt/compiler, find the right one. If the
+prompt you are using can't find ``cl.exe``, you are using the standard
+Windows Command Prompt... find the right developer prompt.
 
 Development in Visual Studio or other IDEs
 ------------------------------------------

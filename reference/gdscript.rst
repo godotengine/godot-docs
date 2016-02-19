@@ -216,10 +216,10 @@ the beginning and end of a block of text.
     lines is considered
     a comment """
 
-Built-In Types
+Built-in types
 --------------
 
-Basic Built-In Types
+Basic built-in types
 ~~~~~~~~~~~~~~~~~~~~
 
 A variable in GDScript can be assigned to several built-in types.
@@ -247,52 +247,52 @@ float
 Used to contain a floating point value (real numbers).
 
 :ref:`String <class_String>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A sequence of characters in Unicode format. Strings can contain the
 standard C escape sequences.
 
-Vector Built-In Types
+Vector built-in types
 ~~~~~~~~~~~~~~~~~~~~~
 
 :ref:`Vector2 <class_Vector2>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 2D vector type containing ``x`` and ``y`` fields. Can alternatively
 access fields as ``width`` and ``height`` for readability. Can also be
 accessed as array.
 
 :ref:`Rect2 <class_Rect2>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 2D Rectangle type containing two vectors fields: ``pos`` and ``size``.
 Alternatively contains an ``end`` field which is ``pos+size``.
 
 :ref:`Vector3 <class_Vector3>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3D vector type containing ``x``, ``y`` and ``z`` fields. This can also
 be accessed as an array.
 
 :ref:`Matrix32 <class_Matrix32>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3x2 matrix used for 2D transforms.
 
 :ref:`Plane <class_Plane>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3D Plane type in normalized form that contains a ``normal`` vector field
 and a ``d`` scalar distance.
 
 :ref:`Quat <class_Quat>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 Quaternion is a datatype used for representing a 3D rotation. It's
 useful for interpolating rotations.
 
 :ref:`AABB <class_AABB>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 Axis Aligned bounding box (or 3D box) contains 2 vectors fields: ``pos``
 and ``size``. Alternatively contains an ``end`` field which is
@@ -300,61 +300,61 @@ and ``size``. Alternatively contains an ``end`` field which is
 interchangeably.
 
 :ref:`Matrix3 <class_Matrix3>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3x3 matrix used for 3D rotation and scale. It contains 3 vector fields
 (``x``, ``y`` and ``z``) and can also be accessed as an array of 3D
 vectors.
 
 :ref:`Transform <class_Transform>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3D Transform contains a Matrix3 field ``basis`` and a Vector3 field
 ``origin``.
 
-Engine Built-In Types
+Engine built-in types
 ~~~~~~~~~~~~~~~~~~~~~
 
 :ref:`Color <class_Color>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Color data type contains ``r``, ``g``, ``b``, and ``a`` fields. It can
 also be accessed as ``h``, ``s``, and ``v`` for hue/saturation/value.
 
 :ref:`Image <class_Image>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Contains a custom format 2D image and allows direct access to the
 pixels.
 
 :ref:`NodePath <class_NodePath>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Compiled path to a node used mainly in the scene system. It can be
 easily assigned to, and from, a String.
 
 :ref:`RID <class_RID>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
 Resource ID (RID). Servers use generic RIDs to reference opaque data.
 
 :ref:`Object <class_Object>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Base class for anything that is not a built-in type.
 
 :ref:`InputEvent <class_InputEvent>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Events from input devices are contained in very compact form in
 InputEvent objects. Due to the fact that they can be received in high
 amounts from frame to frame they are optimized as their own data type.
 
-Container Built-In Types
+Container built-in types
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 :ref:`Array <class_Array>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Generic sequence of objects. Its size can be changed to anything and
 starts from index 0.
@@ -375,7 +375,7 @@ and generally run a little slower, so they are only justified for very
 large amount of data.
 
 :ref:`Dictionary <class_Dictionary>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Associative container which contains values referenced by unique keys.
 
@@ -397,7 +397,7 @@ write and read:
     }
 
 :ref:`ByteArray <class_ByteArray>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 An array of bytes can only contain bytes (integers from 0 to 255).
 
@@ -405,32 +405,32 @@ This, and all of the following specialized array types, are optimized
 for memory usage and can't fragment the memory.
 
 :ref:`IntArray <class_IntArray>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Array of integers can only contain integers.
 
 :ref:`FloatArray <class_FloatArray>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Array of floats can only contain floats.
 
 :ref:`StringArray <class_StringArray>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Array of strings can only contain strings.
 
 :ref:`Vector2Array <class_Vector2Array>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Array of Vector2 can only contain 2D Vectors.
 
 :ref:`Vector3Array <class_Vector3Array>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Array of Vector3 can only contain 3D Vectors.
 
 :ref:`ColorArray <class_ColorArray>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Array of Color can only contains colors.
 
@@ -485,7 +485,7 @@ return value is null.
         print(b)
         return a + b  # return is optional; without it null is returned
 
-Statements and Control Flow
+Statements and control flow
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Statements are standard and can be assignments, function calls, control
@@ -544,7 +544,7 @@ used. For loops store the index in the loop variable on each iteration.
     for i in range(2,8,2):
         statement  # similar to [2, 4, 6] but does not allocate an array
 
-Function Call on Base Class
+Function call on base class
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To call a function on a base class (that was overridden in the current
@@ -571,7 +571,7 @@ separate threads without the user knowing). In the same way, member
 variables (including arrays and dictionaries) are initialized every time
 an instance is created.
 
-Class File Example
+Class file example
 ~~~~~~~~~~~~~~~~~~
 
 Imagine the following being stored in a file like myclass.gd.
@@ -605,7 +605,7 @@ inside another file. Multiple inheritance is not allowed. The
     # extend from a subclass in another file
     extends "somefile.gd".Subclass
 
-Inheritance Testing
+Inheritance testing
 ~~~~~~~~~~~~~~~~~~~
 
 It's possible to check if an instance inherits from a given class. For
@@ -626,7 +626,7 @@ Constructor
 A class can have an optional constructor; a function named ``_init``
 that is called when the class is instanced.
 
-Arguments to Parent Constructor
+Arguments to parent constructor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When inheriting, parent constructors are called automatically (no need
@@ -638,7 +638,7 @@ passed like this:
     func _init(args).(parentargs):
        pass
 
-Sub Classes
+Sub classes
 ~~~~~~~~~~~
 
 A class file can have subclasses. This syntax should be straightforward:
@@ -654,7 +654,7 @@ A class file can have subclasses. This syntax should be straightforward:
         var sc = SomeSubClass.new()  #instance by calling built-in new
         sc.print_value_of_a()
 
-Classes as Objects
+Classes as objects
 ~~~~~~~~~~~~~~~~~~
 
 It may be desired at some point to load a class from a file and then
@@ -775,7 +775,7 @@ on).
 Using bit flags requires some understanding of bitwise operations. If in
 doubt, boolean variables should be exported instead.
 
-Exporting Arrays
+Exporting arrays
 ^^^^^^^^^^^^^^^^
 
 Exporting arrays works too but there is a restriction. While regular
@@ -802,7 +802,7 @@ initializers, but they must be constant expressions.
 
     var b = [a,2,3]
 
-Static Functions
+Static functions
 ~~~~~~~~~~~~~~~~
 
 A function can be declared static. When a function is static it has no
@@ -814,7 +814,7 @@ useful to make libraries of helper functions:
     static func sum2(a, b):
         return a + b
 
-Setters/Getters
+Setters/getters
 ~~~~~~~~~~~~~~~
 
 It is often useful to know when an member variable changed. It may
@@ -872,7 +872,7 @@ getter. For example:
         self.myinteger=5
         print(self.myinteger)
 
-Tool Mode
+Tool mode
 ~~~~~~~~~
 
 Scripts, by default, don't run inside the editor and only the exported
@@ -889,7 +889,7 @@ placed at the top of the file:
     func _ready():
         print("Hello")
 
-Memory Management
+Memory management
 ~~~~~~~~~~~~~~~~~
 
 If a class inherits from :ref:`class_Reference`, then instances will be
@@ -900,7 +900,7 @@ must inherit :ref:`class_Object` manually and must call instance.free(). To
 avoid reference cycles that can't be freed, a ``weakref`` function is
 provided for creating weak references.
 
-Function References
+Function references
 ~~~~~~~~~~~~~~~~~~~
 
 Functions can't be referenced because they are not treated as class
@@ -1036,7 +1036,7 @@ Will print:
     world
     cheers!
 
-Coroutines & Signals
+Coroutines & signals
 ~~~~~~~~~~~~~~~~~~~~
 
 The real strength of using ``yield`` is when combined with signals.
@@ -1052,19 +1052,25 @@ signal is activated, execution will return. Here are some examples:
     yield( get_node("AnimationPlayer"), "finished" )
 
 
-Onready Keyword
+Onready keyword
 ~~~~~~~~~~~~~~~
 
-When using nodes, it's very common to desire to keep references to parts of the scene in a variable. As scenes are only warranted to be configured when entering the active scene tree, the sub-nodes can only be obtained when a call to Node._ready() is made.
+When using nodes, it's very common to desire to keep references to parts
+of the scene in a variable. As scenes are only warranted to be
+configured when entering the active scene tree, the sub-nodes can only
+be obtained when a call to Node._ready() is made.
 
 ::
 
     var mylabel
-    
-    func _ready():
-      myabel = get_node("MyLabel")
 
-This can get a little cumbersome, specially when nodes and external references pile up. For this, GDScript has the ``onready`` keyword, that defers initialization of a member variable until _ready is called. It can replace the above code with a single line:
+    func _ready():
+        mylabel = get_node("MyLabel")
+
+This can get a little cumbersome, specially when nodes and external
+references pile up. For this, GDScript has the ``onready`` keyword, that
+defers initialization of a member variable until _ready is called. It
+can replace the above code with a single line:
 
 ::
 

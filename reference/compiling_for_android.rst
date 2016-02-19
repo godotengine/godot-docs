@@ -23,7 +23,8 @@ For compiling under Windows, Linux or OSX, the following is required:
 
 -  Python 2.7+ (3.0 is untested as of now).
 -  SCons build system.
--  Android SDK version 8 and 13
+-  Android SDK version 19
+-  Android build tools version 19.1
 -  Android NDK
 -  Gradle
 
@@ -116,7 +117,7 @@ Building the APK
 ----------------
 
 To compile the APK, go to the Java folder and run ``gradlew.bat build``
-(or ``./gradlew build`` on unix):
+(or ``./gradlew build`` on Unix):
 
 ::
 

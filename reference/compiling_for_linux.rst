@@ -17,6 +17,7 @@ required:
 -  X11 and Mesa development libraries
 -  Xinerama libraries
 -  ALSA development libraries
+-  PulseAudio development libraries (for sound support)
 -  Freetype (for the editor)
 -  OpenSSL (for HTTPS and TLS)
 -  libudev-dev (optional, for gamepad support)
@@ -26,7 +27,7 @@ For Ubuntu users:
 
 ::
 
-    apt-get install scons pkg-config libx11-dev libxcursor-dev build-essential libasound2-dev libfreetype6-dev libgl1-mesa-dev libglu-dev libssl-dev libxinerama-dev libudev-dev
+    sudo apt-get install scons pkg-config libx11-dev libxcursor-dev build-essential libasound2-dev libpulse-dev libfreetype6-dev libgl1-mesa-dev libglu-dev libssl-dev libxinerama-dev libudev-dev
 
 Compiling
 ---------

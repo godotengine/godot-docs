@@ -74,7 +74,7 @@ Default values for arguments can be passed in reverse order:
 
     ObjectTypeDB::register_method(_MD("methodname","arg1name","arg2name"),&MyCustomType::method,DEFVAL(-1)); //default value for arg2name
 
-``_MD`` is a macro that convers "methodname" to a StringName for more
+``_MD`` is a macro that converts "methodname" to a StringName for more
 efficiency. Argument names are used for instrospection, but when
 compiling on release, the macro ignores them, so the strings are unused
 and optimized away.

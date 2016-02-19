@@ -118,7 +118,7 @@ On success:
     }
 
 request_product_info
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 Requests the product info on a list of product IDs.
 
@@ -168,7 +168,7 @@ has 6 methods:
 plus the standard pending event interface.
 
 post_score
-~~~~~~~~~~~
+~~~~~~~~~~
 
 Posts a score to a Game Center leaderboard.
 
@@ -212,7 +212,7 @@ On success:
     }
 
 award_achievement
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 Modifies the progress of a Game Center achievement.
 
@@ -258,7 +258,7 @@ On success:
     }
 
 reset_achievements
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 Clears all Game Center achievements. The function takes no parameters.
 
@@ -287,7 +287,7 @@ On success:
     }
 
 request_achievements
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 Request all the Game Center achievements the player has made progress
 on. The function takes no parameters.
@@ -319,7 +319,7 @@ On success:
     }
 
 request_achievement_descriptions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Request the descriptions of all existing Game Center achievements
 regardless of progress. The function takes no parameters.
@@ -356,7 +356,7 @@ On success:
     }
 
 show_game_center
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 Displays the built in Game Center overlay showing leaderboards,
 achievements, and challenges.

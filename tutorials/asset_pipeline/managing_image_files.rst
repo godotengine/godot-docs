@@ -3,8 +3,9 @@
 Managing image files
 ====================
 
-If you have read the previous tutorials on :ref:`doc_resources` and :ref:`doc_file_system`, at this point you know that regular image files (.png, .jpg,
-etc) are treated as regular resources in Godot.
+If you have read the previous tutorials on :ref:`doc_resources` and
+:ref:`doc_file_system`, at this point you know that regular image files
+(.png, .jpg, etc.) are treated as regular resources in Godot.
 
 Unlike texture resources (.tex files), image files contain no extra
 information on tiling (texture repeat), mipamps or filtering. Editing
