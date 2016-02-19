@@ -104,7 +104,7 @@ Numeric Constants
 - **KEY_KP_ENTER** = **16777344**
 - **KEY_KP_MULTIPLY** = **16777345**
 - **KEY_KP_DIVIDE** = **16777346**
-- **KEY_KP_SUBSTRACT** = **16777347**
+- **KEY_KP_SUBTRACT** = **16777347**
 - **KEY_KP_PERIOD** = **16777348**
 - **KEY_KP_ADD** = **16777349**
 - **KEY_KP_0** = **16777350**

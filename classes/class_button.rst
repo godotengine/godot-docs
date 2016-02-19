@@ -45,7 +45,7 @@ Member Functions
 Description
 -----------
 
-Button is just the standard themed button: :ref:`image src="images/button_example.png"/<class_image src="images/button_example.png"/>` It can contain text and an icon, and will display them according to the current :ref:`Theme<class_theme>`.
+Button is the standard themed button. It can contain text and an icon, and will display them according to the current :ref:`Theme<class_theme>`.
 
 Member Function Description
 ---------------------------
