@@ -35,7 +35,7 @@ Cross-compiling
 
 It is possible to compile for OSX in a Linux environment (and maybe
 also in Windows with Cygwin). For that you will need
-`OSXCross <https://github.com/tpoechtrager/osxcross>`__to be able
+`OSXCross <https://github.com/tpoechtrager/osxcross>`__ to be able
 to use OSX as target. First, follow the instructions to install it:
 
 Clone the `OSXCross repository <https://github.com/tpoechtrager/osxcross>`

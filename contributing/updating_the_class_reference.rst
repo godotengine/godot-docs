@@ -8,7 +8,7 @@ use of to create your games. However, the :ref:`toc-class-ref` that
 lists all these classes with their methods is quite incomplete. We need
 your kind help to fill this reference. This page will explain you how.
 
-> Please note: we aim at filling completely this reference in English
+Please note: we aim at filling completely this reference in English
 first. Please do not start translating it for the moment.
 
 :ref:`doc_list_of_classes_and_documenters`
@@ -95,113 +95,114 @@ You can edit this file using your favourite text editor.
 Here is an example with the Node2D class:
 
 .. code:: xml
+
     <class name="Node2D" inherits="CanvasItem" category="Core">
-    <brief_description>
-    Base node for 2D system.
-    </brief_description>
-    <description>
-    Base node for 2D system. Node2D contains a position, rotation and scale, which is used to position and animate. It can alternatively be used with a custom 2D transform ([Matrix32]). A tree of Node2Ds allows complex hierachies for animation and positioning.
-    </description>
-    <methods>
-        <method name="set_pos">
-            <argument index="0" name="pos" type="Vector2">
-            </argument>
-            <description>
-            Set the position of the 2d node.
-            </description>
-        </method>
-        <method name="set_rot">
-            <argument index="0" name="rot" type="float">
-            </argument>
-            <description>
-            Set the rotation of the 2d node.
-            </description>
-        </method>
-        <method name="set_scale">
-            <argument index="0" name="scale" type="Vector2">
-            </argument>
-            <description>
-            Set the scale of the 2d node.
-            </description>
-        </method>
-        <method name="get_pos" qualifiers="const">
-            <return type="Vector2">
-            </return>
-            <description>
-            Return the position of the 2D node.
-            </description>
-        </method>
-        <method name="get_rot" qualifiers="const">
-            <return type="float">
-            </return>
-            <description>
-            Return the rotation of the 2D node.
-            </description>
-        </method>
-        <method name="get_scale" qualifiers="const">
-            <return type="Vector2">
-            </return>
-            <description>
-            Return the scale of the 2D node.
-            </description>
-        </method>
-        <method name="rotate">
-            <argument index="0" name="degrees" type="float">
-            </argument>
-            <description>
+        <brief_description>
+        Base node for 2D system.
+        </brief_description>
+        <description>
+        Base node for 2D system. Node2D contains a position, rotation and scale, which is used to position and animate. It can alternatively be used with a custom 2D transform ([Matrix32]). A tree of Node2Ds allows complex hierachies for animation and positioning.
         </description>
-        </method>
-        <method name="move_local_x">
-            <argument index="0" name="delta" type="float">
-            </argument>
-            <argument index="1" name="scaled" type="bool" default="false">
-            </argument>
-            <description>
+        <methods>
+            <method name="set_pos">
+                <argument index="0" name="pos" type="Vector2">
+                </argument>
+                <description>
+                Set the position of the 2d node.
+                </description>
+            </method>
+            <method name="set_rot">
+                <argument index="0" name="rot" type="float">
+                </argument>
+                <description>
+                Set the rotation of the 2d node.
+                </description>
+            </method>
+            <method name="set_scale">
+                <argument index="0" name="scale" type="Vector2">
+                </argument>
+                <description>
+                Set the scale of the 2d node.
+                </description>
+            </method>
+            <method name="get_pos" qualifiers="const">
+                <return type="Vector2">
+                </return>
+                <description>
+                Return the position of the 2D node.
+                </description>
+            </method>
+            <method name="get_rot" qualifiers="const">
+                <return type="float">
+                </return>
+                <description>
+                Return the rotation of the 2D node.
+                </description>
+            </method>
+            <method name="get_scale" qualifiers="const">
+                <return type="Vector2">
+                </return>
+                <description>
+                Return the scale of the 2D node.
+                </description>
+            </method>
+            <method name="rotate">
+                <argument index="0" name="degrees" type="float">
+                </argument>
+                <description>
             </description>
-        </method>
-        <method name="move_local_y">
-            <argument index="0" name="delta" type="float">
-            </argument>
-            <argument index="1" name="scaled" type="bool" default="false">
-            </argument>
-            <description>
-            </description>
-        </method>
-        <method name="get_global_pos" qualifiers="const">
-            <return type="Vector2">
-            </return>
-            <description>
-            Return the global position of the 2D node.
-            </description>
-        </method>
-        <method name="set_global_pos">
-            <argument index="0" name="arg0" type="Vector2">
-            </argument>
-            <description>
-            </description>
-        </method>
-        <method name="set_transform">
-            <argument index="0" name="xform" type="Matrix32">
-            </argument>
-            <description>
-            </description>
-        </method>
-        <method name="set_global_transform">
-            <argument index="0" name="xform" type="Matrix32">
-            </argument>
-            <description>
-            </description>
-        </method>
-        <method name="edit_set_pivot">
-            <argument index="0" name="arg0" type="Vector2">
-            </argument>
-            <description>
-            </description>
-        </method>
-    </methods>
-    <constants>
-    </constants>
-</class>
+            </method>
+            <method name="move_local_x">
+                <argument index="0" name="delta" type="float">
+                </argument>
+                <argument index="1" name="scaled" type="bool" default="false">
+                </argument>
+                <description>
+                </description>
+            </method>
+            <method name="move_local_y">
+                <argument index="0" name="delta" type="float">
+                </argument>
+                <argument index="1" name="scaled" type="bool" default="false">
+                </argument>
+                <description>
+                </description>
+            </method>
+            <method name="get_global_pos" qualifiers="const">
+                <return type="Vector2">
+                </return>
+                <description>
+                Return the global position of the 2D node.
+                </description>
+            </method>
+            <method name="set_global_pos">
+                <argument index="0" name="arg0" type="Vector2">
+                </argument>
+                <description>
+                </description>
+            </method>
+            <method name="set_transform">
+                <argument index="0" name="xform" type="Matrix32">
+                </argument>
+                <description>
+                </description>
+            </method>
+            <method name="set_global_transform">
+                <argument index="0" name="xform" type="Matrix32">
+                </argument>
+                <description>
+                </description>
+            </method>
+            <method name="edit_set_pivot">
+                <argument index="0" name="arg0" type="Vector2">
+                </argument>
+                <description>
+                </description>
+            </method>
+        </methods>
+        <constants>
+        </constants>
+    </class>
 
 As you can see, some methods in this class have no description (i.e.
 there is no text between their marks). This can also happen for the
@@ -210,6 +211,7 @@ they are already filled. Let's edit the description of the rotate()
 method:
 
 .. code:: xml
+
     <method name="rotate">
         <argument index="0" name="degrees" type="float">
         </argument>

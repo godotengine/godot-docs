@@ -54,6 +54,7 @@ Please always begin pages with their title and a reference based on the
 file name (which should ideally be the same as the page title):
 
 ::
+
     .. _insert_your_title_here:
 
     Insert your title here

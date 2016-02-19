@@ -89,7 +89,7 @@ trigonometry already, prepare to embrace vectors!
 
 In any case, obtaining an angle from a vector is easy and can be
 accomplished with trig... er, what was that? I mean, the
-:ref:`atan2() class_@GDScript_atan2` function.
+:ref:`atan2() <class_@GDScript_atan2>` function.
 
 Vectors in Godot
 ~~~~~~~~~~~~~~~~

@@ -139,7 +139,7 @@ Windows export templates are created by compiling Godot as release, with
 the following flags:
 
 -  (for 32 bits, using Mingw32 command prompt or Visual Studio command
-prompt)
+   prompt)
 
 ::
 

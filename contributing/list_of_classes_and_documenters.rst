@@ -5,7 +5,7 @@ List of classes and documenters
 
 **TODO: Move out of the Sphinx doc, a pad would be better**
 
-Status list : Not started, Started, Finished, Removed
+Status list: Not started, Started, Finished, Removed
 Class name - Assigned to - Status - Start date - Notes
 
 -  @GDScript 
@@ -102,10 +102,8 @@ Class name - Assigned to - Status - Start date - Notes
 -  Geometry 
 -  GeometryInstance 
 -  Globals 
--  GraphEdit - StraToN - Finished  may need a tutorial. I'll
-  think about it. -
--  GraphNode - StraToN - Finished  may need a tutorial. I'll
-  think about it. -
+-  GraphEdit - StraToN - Finished  may need a tutorial. I'll think about it. -
+-  GraphNode - StraToN - Finished  may need a tutorial. I'll think about it. -
 -  GridContainer 
 -  GridMap 
 -  GrooveJoint2D 
