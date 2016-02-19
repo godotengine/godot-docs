@@ -1,17 +1,15 @@
 .. _doc_gui_skinning:
 
-Skinning a GUI
-==============
+GUI skinning
+============
 
-Oh Beautiful GUI!
+Oh beautiful GUI!
 -----------------
 
 This tutorial is about advanced skinning of an user interface. Most
 games generally don't need this, as they end up just relying on
-:ref:`Label <class_Label>`,
-:ref:`TextureFrame <class_TextureFrame>`,
-:ref:`TextureButton <class_TextureButton>`
-and
+:ref:`Label <class_Label>`, :ref:`TextureFrame <class_TextureFrame>`,
+:ref:`TextureButton <class_TextureButton>` and
 :ref:`TextureProgress <class_TextureProgress>`.
 
 However, many types of games often need complex user interfaces, like
@@ -26,8 +24,7 @@ interface.
 Theme
 -----
 
-The GUI is skinned through the
-:ref:`Theme <class_Theme>`
+The GUI is skinned through the :ref:`Theme <class_Theme>`
 resource. Theme contains all the information required to change the
 entire visual styling of all controls. Theme options are named, so it's
 not obvious which name changes what (specialy from code), but several
@@ -46,7 +43,7 @@ hierarchy towards the root. If nothing was found, the default theme is
 used. This system allows for flexible overriding of themes in complex
 user interfaces.
 
-Theme Options
+Theme options
 -------------
 
 Each kind of option in a theme can be:
@@ -95,7 +92,7 @@ In the inline help of Godot (help tab) you can check which theme options
 are overrideable. This is not yet available in the wiki class reference,
 but will be soon.
 
-Customizing a Control
+Customizing a control
 ---------------------
 
 If only a few controls need to be skinned. It is often not necessary to
@@ -108,7 +105,7 @@ As can be see in the image above, theme options have little check-boxes.
 If checked, they can be used to override the value of the theme just for
 that control.
 
-Creating a Theme
+Creating a theme
 ----------------
 
 The simplest way to create a theme is to edit a theme resource. Create a
@@ -120,10 +117,10 @@ Following to this, save it (to, as example, mytheme.thm):
 This will create an empty theme that can later be loaded and assigned to
 controls.
 
-Example: Themeing a Button
+Example: themeing a button
 --------------------------
 
-Take some assets (:download:`skin_assets.zip </files/skin_assets.zip>`,
+Take some assets (:download:`skin_assets.zip </files/skin_assets.zip>`),
 go to the "theme" menu and select "Add Class Item":
 
 .. image:: /img/themeci.png
@@ -163,6 +160,3 @@ replace it by the theme that was just created. It should look like this:
 .. image:: /img/skinbuttons2.png
 
 Congratulations! You have created a reusable GUI Theme!
-
-
-

@@ -1,7 +1,7 @@
-.. _doc_tilemap:
+.. _doc_using_tilemaps:
 
-Creating a Tilemap
-~~~~~~~~~~~~~~~~~~
+Using tilemaps
+~~~~~~~~~~~~~~
 
 Introduction
 ~~~~~~~~~~~~
@@ -15,7 +15,7 @@ grid, as many times each as desired:
 Collision can also be added to the tiles, allowing for both 2D side
 scroller or top down games.
 
-Making a Tileset
+Making a tileset
 ----------------
 
 To begin with, a tileset needs to be made. Here are some tiles for it.
@@ -26,11 +26,7 @@ Having them as separate images also works too.
 
 Create a new project and throw the above png image inside.
 
-Create the TileSet Scene
-------------------------
-
-We will be creating a
-:ref:`TileSet <class_TileSet>`
+We will be creating a :ref:`TileSet <class_TileSet>`
 resource. While this resource exports properties, it's pretty difficult
 to get complex data into it and maintain it:
 
@@ -40,7 +36,7 @@ There's enough properties to get by, and with some effort editing this
 way can work, but the easiest way to edit and maintain a tileset is with
 the export tool!
 
-TileSet Scene
+TileSet scene
 -------------
 
 Create a new scene with a regular node or node2d as root. For each new a
@@ -130,7 +126,7 @@ draw and cull the tilemap in blocks of 16x16 tiles. This value is
 usually fine and does not need to be changed, but can be used to tune
 performance in specific cases (if you know what you are doing).
 
-Painting Your World
+Painting your world
 -------------------
 
 With all set, make sure the TileMap node is selected. A red grid will
@@ -145,7 +141,7 @@ using the lock button:
 
 .. image:: /img/tile_lock.png
 
-Offset and Scaling Artifacts
+Offset and scaling artifacts
 ----------------------------
 
 When using a single texture for all the tiles, scaling the tileset (or
@@ -163,10 +159,7 @@ ones that look better for you:
    first.
 -  Disable filtering for either the tileset texture or the entire image
    loader (see the :ref:`doc_managing_image_files` asset pipeline tutorial).
--  Enable pixel snap (Set: ΅Scene [STRIKEOUT:> Project Settings]>
+-  Enable pixel snap (set: "Scene > Project Settings >
    rasterizer/uxe_pixel_snap" to true).
 -  Viewport Scaling can often help shrinking the map (see the
    :ref:`doc_viewports` tutorial).
-
-
-

@@ -9,8 +9,7 @@ Introduction
 Materials can be applied to most visible 3D objects, they basically
 are a description to how light reacts to that object. There are many
 types of materials, but the main ones are the
-:ref:`FixedMaterial <class_FixedMaterial>`
-and
+:ref:`FixedMaterial <class_FixedMaterial>` and
 :ref:`ShaderMaterial <class_ShaderMaterial>`.
 Tutorials for each of them exist :ref:`doc_fixed_materials` and :ref:`doc_shader_materials`.
 
@@ -30,7 +29,7 @@ Visible
 Toggles whether the material is visible. If unchecked, the object will
 not be shown.
 
-Double Sided & Invert Faces
+Double sided & invert faces
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Godot by default only shows geometry faces (triangles) when facing the
@@ -54,7 +53,7 @@ in the texture or parameter:
 
 .. image:: /img/material_unshaded.png
 
-On Top
+On top
 ~~~~~~
 
 When this flag is turned on, te object will be drawn after everything
@@ -73,7 +72,7 @@ Parameters
 
 Some parameters also exist for controlling drawing and blending:
 
-Blend Mode
+Blend mode
 ~~~~~~~~~~
 
 Objects are usually blended in Mix mode. Other blend modes (Add and Sub)
@@ -82,12 +81,12 @@ materials can be set to them:
 
 .. image:: /img/fixed_material_blend.png
 
-Line Width
+Line width
 ~~~~~~~~~~
 
 When drawing lines, the size of them can be adjusted here per material.
 
-Depth Draw Mode
+Depth draw mode
 ~~~~~~~~~~~~~~~
 
 This is a tricky but very useful setting. By default, opaque objects are
@@ -115,6 +114,3 @@ sorted by depth). This behavior can be changed here. The options are:
    mostly useful in combination with the "On Top" flag explained above.
 
 .. image:: /img/material_depth_draw.png
-
-
-

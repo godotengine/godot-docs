@@ -344,9 +344,9 @@ https://github.com/slapin/godot-skel3d
 Using 3D "bones" to implement Inverse Kinematics
 ------------------------------------------------
 
-{{include(Inverse Kinematics)}}
+See :ref:`doc_inverse_kinematics`.
 
 Using 3D "bones" to implement ragdoll-like physics
 --------------------------------------------------
 
-TBD
+TODO.

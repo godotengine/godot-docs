@@ -6,8 +6,8 @@ Kinematic Character (2D)
 Introduction
 ~~~~~~~~~~~~
 
-Yes, the name sounds strange. "Kinematic Character" WTF is that? The
-reason is that when physics engines came out, they were called
+Yes, the name sounds strange. "Kinematic Character". What is that?
+The reason is that when physics engines came out, they were called
 "Dynamics" engines (because they dealt mainly with collision
 responses). Many attempts were made to create a character controller
 using the dynamics engines but it wasn't as easy as it seems. Godot
@@ -44,7 +44,7 @@ Basically, the oldschool way of handling collisions (which is not
 necessarily simpler under the hood, but well hidden and presented as a
 nice and simple API).
 
-Fixed Process
+Fixed process
 ~~~~~~~~~~~~~
 
 To manage the logic of a kinematic body or character, it is always
@@ -63,7 +63,7 @@ or lose precision is the frame rate is too high or too low.
     func _ready():
         set_fixed_process(true)
 
-Scene Setup
+Scene setup
 ~~~~~~~~~~~
 
 To have something to test, here's the scene (from the tilemap tutorial):
@@ -93,7 +93,7 @@ map scene the main one, so it runs when pressing play.
 
 .. image:: /img/kbinstance.png
 
-Moving the Kinematic Character
+Moving the Kinematic character
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Go back to the character scene, and open the script, the magic begins
@@ -165,7 +165,7 @@ This adds simple walking support by pressing left and right:
             velocity.x = 0
 
         var motion = velocity * delta
-        move( motion )  
+        move(motion)  
 
     func _ready():
         set_fixed_process(true)
@@ -175,7 +175,7 @@ And give it a try.
 Problem?
 ~~~~~~~~
 
-And.. it doesn't work very well. If you go to the left against a wall,
+And... it doesn't work very well. If you go to the left against a wall,
 it gets stuck unless you release the arrow key. Once it is on the floor,
 it also gets stuck and it won't walk. What is going on??
 
@@ -204,7 +204,7 @@ So what we want to do is this:
 
 .. image:: /img/motion_reflect.png
 
-When colliding, the function move() returns the "remainder" of the
+When colliding, the function ``move()`` returns the "remainder" of the
 motion vector. That means, if the motion vector is 40 pixels, but
 collision happened at 10 pixels, the same vector but 30 pixels long is
 returned.
@@ -225,23 +225,20 @@ this way:
             velocity.x = 0
 
         var motion = velocity * delta
-        motion = move( motion ) 
+        motion = move(motion) 
 
         if (is_colliding()):
             var n = get_collision_normal()
-            motion = n.slide( motion ) 
-            velocity = n.slide( velocity )
-            move( motion )
-
+            motion = n.slide(motion) 
+            velocity = n.slide(velocity)
+            move(motion)
 
 
     func _ready():
         set_fixed_process(true)
 
 Note that not only the motion has been modified but also the velocity.
-This makes sense as it helps keep
-
-the new direction too.
+This makes sense as it helps keep the new direction too.
 
 The normal can also be used to detect that the character is on floor, by
 checking the angle. If the normal points up (or at least, within a
@@ -250,6 +247,3 @@ certain threshold), the character can be determined to be there.
 A more complete demo can be found in the demo zip distributed with the
 engine, or in the
 https://github.com/godotengine/godot/tree/master/demos/2d/kinematic_char.
-
-
-

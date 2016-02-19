@@ -415,5 +415,3 @@ Fresh re-import
 It can also happen that the source asset changed beyond recognition and
 a full fresh re-import is desired. If so, simply re-open the 3d scene
 import dialog from the Import -> Re-Import menu and perform re-import.
-
-

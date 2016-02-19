@@ -1,6 +1,6 @@
 .. _doc_fixed_materials:
 
-Fixed Materials
+Fixed materials
 ===============
 
 Introduction
@@ -25,12 +25,12 @@ Here is the list of all the options available for fixed materials:
 
 From this point, every option will be explained in detail:
 
-Fixed Flags
+Fixed flags
 -----------
 
 These are a set of flags that control general aspects of the material.
 
-Use Alpha
+Use alpha
 ~~~~~~~~~
 
 This flag needs to be active for transparent materials to blend with
@@ -43,7 +43,7 @@ information).
 
 .. image:: /img/fixed_material_alpha.png
 
-Use Vertex Colors
+Use vertex colors
 ~~~~~~~~~~~~~~~~~
 
 Vertex color painting is a very common technique to add detail to
@@ -53,13 +53,13 @@ material by modulating the diffuse color when enabled.
 
 .. image:: /img/fixed_material_vcols.png
 
-Point Size
+Point size
 ~~~~~~~~~~
 
 Point size is used to set the point size (in pixels) for when rendering
 points. This feature is mostly used in tools and HUDs
 
-Discard Alpha
+Discard alpha
 ~~~~~~~~~~~~~
 
 When alpha is enabled (see above) the invisible pixels are blended
@@ -74,12 +74,12 @@ is often used in combination with "opaque pre-pass" hint (see the
 Parameters
 ----------
 
-Diffuse, Specular, Emission and Specular Exponent
+Diffuse, specular, emission and specular exponent
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 These are the base colors for the material.
 
--  Diffuse Color is responsible for the light that reaches the material,
+-  Diffuse color is responsible for the light that reaches the material,
    then gets diffused around. This color varies by the angle to the
    light and the distance (in the case of spot and omni lights). It is
    the color that best represents the material. It can also have alpha
@@ -97,7 +97,7 @@ Below is an example of how they interact:
 
 .. image:: /img/fixed_material_colors.png
 
-Shader & Shader Param
+Shader & shader param
 ~~~~~~~~~~~~~~~~~~~~~
 
 Regular shader materials allow custom lighting code. Fixed materials
@@ -115,7 +115,7 @@ come with four predefined shader types:
 
 .. image:: /img/fixed_material_shader.png
 
-Detail & Detail Mix
+Detail & detail mix
 ~~~~~~~~~~~~~~~~~~~
 
 Detail is a second diffuse texture which can be mixed with the first one
@@ -124,7 +124,7 @@ added together, here's an example of what detail textures are for:
 
 .. image:: /img/fixed_material_detail.png
 
-Normal Depth
+Normal depth
 ~~~~~~~~~~~~
 
 Normal depth controls the inensity of the normal-mapping as well as the
@@ -143,7 +143,7 @@ WorldEnvironment must exist with Glow activated.
 
 .. image:: /img/fixed_material_glow.png
 
-Blend Mode
+Blend mode
 ~~~~~~~~~~
 
 Objects are usually blended in Mix mode. Other blend modes (Add and Sub)
@@ -152,7 +152,7 @@ materials can be set to them:
 
 .. image:: /img/fixed_material_blend.png
 
-Point Size, Line Width
+Point size, line width
 ~~~~~~~~~~~~~~~~~~~~~~
 
 When drawing points or lines, the size of them can be adjusted here per

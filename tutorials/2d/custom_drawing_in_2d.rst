@@ -1,6 +1,6 @@
 .. _doc_custom_drawing_in_2d:
 
-Custom Drawing in 2D
+Custom drawing in 2D
 ====================
 
 Why?
@@ -11,12 +11,11 @@ stuff. For far most cases this is enough, but not always. If something
 desired is not supported, and before crying in fear, angst and range
 because a node to draw that-specific-something does not exist.. it would
 be good to know that it is possible to easily make any 2D node (be it
-:ref:`Control <class_Control>` or
-:ref:`Node2D <class_Node2D>`
+:ref:`Control <class_Control>` or :ref:`Node2D <class_Node2D>`
 based) draw custom commands. It is *really* easy to do it too.
 
-But..
------
+But...
+------
 
 Custom drawing manually in a node is *really* useful. Here are some
 examples why:
@@ -34,15 +33,12 @@ examples why:
 -  Making a custom UI control. There are plenty of controls available,
    but it's easy to run into the need to make a new, custom one.
 
-OK, How?
+OK, how?
 --------
 
-Add a script to any
-:ref:`CanvasItem <class_CanvasItem>`
-derived node, like
-:ref:`Control <class_Control>` or
-:ref:`Node2D <class_Node2D>`.
-Override the _draw() function.
+Add a script to any :ref:`CanvasItem <class_CanvasItem>`
+derived node, like :ref:`Control <class_Control>` or
+:ref:`Node2D <class_Node2D>`. Override the _draw() function.
 
 ::
 
@@ -52,8 +48,7 @@ Override the _draw() function.
         #your draw commands here
         pass
 
-Draw commands are described in the
-:ref:`CanvasItem <class_CanvasItem>`
+Draw commands are described in the :ref:`CanvasItem <class_CanvasItem>`
 class reference. There are plenty of them.
 
 Updating
@@ -63,8 +58,7 @@ The _draw() function is only called once, and then the draw commands
 are cached and remembered, so further calls are unnecessary.
 
 If re-drawing is required because a state or something else changed,
-simply call
-:ref:`CanvasItem.update() <class_CanvasItem_update>`
+simply call :ref:`CanvasItem.update() <class_CanvasItem_update>`
 in that same node and a new _draw() call will happen.
 
 Here is a little more complex example. A texture variable that will be
@@ -113,4 +107,3 @@ behavior.
 
 Remember to just use the "tool" keyword at the top of the script
 (check the :ref:`doc_gdscript` reference if you forgot what this does).
-

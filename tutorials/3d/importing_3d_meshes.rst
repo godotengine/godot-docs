@@ -58,5 +58,3 @@ nodes. Simply set them to the Mesh property of them.
 .. image:: /img/3dmesh_instance.png
 
 And that is it.
-
-

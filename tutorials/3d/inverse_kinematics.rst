@@ -1,5 +1,10 @@
 .. _doc_inverse_kinematics:
 
+Inverse kinematics
+==================
+
+This tutorial is a follow-up of :ref:`doc_working_with_3d_skeletons`.
+
 Before continuing on, I'd recommend reading some theory, the simplest
 article I find is this:
 

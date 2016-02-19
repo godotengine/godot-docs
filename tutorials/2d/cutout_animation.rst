@@ -1,6 +1,6 @@
 .. _doc_cutout_animation:
 
-Cutout Animation
+Cutout animation
 ================
 
 What is it?
@@ -62,7 +62,7 @@ character, created by Andreas Esau.
 
 Get your assets: :download:`gbot_resources.zip </files/gbot_resources.zip>`.
 
-Setting up the Rig
+Setting up the rig
 ~~~~~~~~~~~~~~~~~~
 
 Create an empty Node2D as root of the scene, weĺl work under it:
@@ -94,10 +94,10 @@ the rotation pivot:
 
 .. image:: /img/tuto_cutout4.png
 
-Adjusting the Pivot
+Adjusting the pivot
 ~~~~~~~~~~~~~~~~~~~
 
-The Pivot can be adjusted by changing the *offset* property in the
+The pivot can be adjusted by changing the *offset* property in the
 Sprite:
 
 .. image:: /img/tuto_cutout5.png
@@ -135,11 +135,10 @@ the hip and the torso. For this, we can move the nodes behind the hip:
 But then, we lose the hierarchy layout, which allows to control the
 skeleton like.. a skeleton. Is there any hope?.. Of Course!
 
-RemoteTransform2D Node
+RemoteTransform2D node
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Godot provides a special node,
-:ref:`RemoteTransform2D <class_RemoteTransform2D>`.
+Godot provides a special node, :ref:`RemoteTransform2D <class_RemoteTransform2D>`.
 This node will transform nodes that are sitting somewhere else in the
 hierarchy, by copying it's transform to the remote node.
 
@@ -156,7 +155,7 @@ easily animate and pose the character:
 
 .. image:: /img/tutovec_torso4.gif
 
-Completing the Skeleton
+Completing the skeleton
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 Complete the skeleton by following the same steps for the rest of the
@@ -189,8 +188,7 @@ skeletons, a chain of nodes must be selected from top to bottom:
 
 .. image:: /img/tuto_cutout11.png
 
-Then, the option to create a skeleton is located at Edit [STRIKEOUT:>
-Skeleton]> Make Bones:
+Then, the option to create a skeleton is located at Edit > Make Bones:
 
 .. image:: /img/tuto_cutout12.png
 
@@ -215,10 +213,9 @@ So, with this knowledge. Let's do the same again so we have an actual,
 useful skeleton.
 
 The first step is creating an endpoint node. Any kind of node will do,
-but
-:ref:`Position2D <class_Position2D>`
-is preferred because it's visible in the editor. The endpoint node will
-ensure that the last bone has orientation
+but :ref:`Position2D <class_Position2D>` is preferred because it's
+visible in the editor. The endpoint node will ensure that the last bone
+has orientation.
 
 .. image:: /img/tuto_cutout14.png
 
@@ -242,7 +239,7 @@ sense soon.
 Now that a whole skeleton is rigged, the next step is setting up the IK
 chains. IK chains allow for more natural control of extremities.
 
-IK Chains
+IK chains
 ~~~~~~~~~
 
 To add in animation, IK chains are a powerful tool. Imagine you want to
@@ -262,8 +259,7 @@ leg select the following:
 
 .. image:: /img/tuto_cutout17.png
 
-Then enable this chain for IK. Go to Edit [STRIKEOUT:> Skeleton]> Make
-IK Chain
+Then enable this chain for IK. Go to Edit > Make IK Chain.
 
 .. image:: /img/tuto_cutout18.png
 
@@ -284,7 +280,7 @@ The following section will be a collection of tips for creating
 animation for your rigs. If unsure about how the animation system in
 Godot works, refresh it by checking again the :ref:`doc_animations`.
 
-2D Animation
+2D animation
 ------------
 
 When doing animation in 2D, a helper will be present in the top menu.
@@ -297,7 +293,7 @@ selected objects or bones. This depends on the mask enabled. Green items
 will insert keys while red ones will not, so modify the key insertion
 mask to your preference.
 
-Rest Pose
+Rest pose
 ~~~~~~~~~
 
 These kind of rigs do not have a "rest" pose, so it's recommended to
@@ -341,7 +337,7 @@ add keyframes. Selecting the endpoint of the chain and inserting a
 keyframe will automatically insert keyframes until the chain base too.
 This makes the task of animating extremities much simpler.
 
-Moving Sprites Above and Behind Others.
+Moving sprites above and behind others.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 RemoteTransform2D works in most cases, but sometimes it is really
@@ -350,7 +346,7 @@ aid on this the "Behind Parent" property exists on any Node2D:
 
 .. image:: /img/tuto_cutout23.png
 
-Batch Setting Transition Curves
+Batch setting transition curves
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When creating really complex animations and inserting lots of keyframes,
@@ -360,6 +356,3 @@ the curves is easy. Just select every single keyframe and (generally)
 apply the "Out-In" transition curve to smooth the animation:
 
 .. image:: /img/tuto_cutout24.png
-
-
-

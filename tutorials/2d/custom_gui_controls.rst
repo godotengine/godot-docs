@@ -1,10 +1,10 @@
 .. _doc_custom_gui_controls:
 
-Custom GUI Controls
+Custom GUI controls
 ===================
 
-So Many Controls..
-------------------
+So many controls...
+-------------------
 
 Yet there are never enough. Creating your own custom controls that act
 just the way you want them is an obsession of almost every GUI
@@ -20,7 +20,7 @@ For drawing, it is recommended to check the :ref:`doc_custom_drawing_in_2d` tuto
 The same applies. Some functions are worth mentioning due to their
 usefulness when drawing, so they will be detailed next:
 
-Checking Control Size
+Checking control size
 ~~~~~~~~~~~~~~~~~~~~~
 
 Unlike 2D nodes, "size" is very important with controls, as it helps to
@@ -29,7 +29,7 @@ organize them in proper layouts. For this, the
 method is provided. Checking it during _draw() is vital to ensure
 everything is kept in-bounds.
 
-Checking Focus
+Checking focus
 ~~~~~~~~~~~~~~
 
 Some controls (such as buttons or text editors) might provide input
@@ -39,8 +39,7 @@ or pressing a button. This is controlled with the
 function. When drawing, and if the control supports input focus, it is
 always desired to show some sort of indicator (highight, box, etc) to
 indicate that this is the currently focused control. To check for this
-status, the
-:ref:`Control.has_focus() <class_Control_has_focus>`
+status, the :ref:`Control.has_focus() <class_Control_has_focus>`
 exists. Example
 
 ::
@@ -58,8 +57,7 @@ As mentioned before, size is very important to controls. This allows
 them to lay out properly, when set into grids, containers, or anchored.
 Controls most of the time provide a *minimum size* to help to properly
 lay them out. For example, if controls are placed vertically on top of
-each other using a
-:ref:`VBoxContainer <class_VBoxContainer>`,
+each other using a :ref:`VBoxContainer <class_VBoxContainer>`,
 the minimum size will make sure your custom control is not squished by
 the other controls in the container.
 
@@ -85,7 +83,7 @@ Input
 Controls provide a few helpers to make managing input events much esier
 than regular nodes.
 
-Input Events
+Input events
 ~~~~~~~~~~~~
 
 There are a few tutorials about input before this one, but it's worth
@@ -146,4 +144,3 @@ exists, but can be checked with the _notification callback:
        elif (what==NOTIFICATION_MODAL_CLOSED):
           pass # for modal popups, notification
           # that the popup was closed
-

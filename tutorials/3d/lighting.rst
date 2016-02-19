@@ -19,7 +19,7 @@ result. Light can come from several types of sources in a scene:
 The emission color is a material property, as seen in the previous
 tutorials about materials (go read them if you didn't at this point!).
 
-Light Nodes
+Light nodes
 -----------
 
 As mentioned before, there are three types of light nodes: Directional,
@@ -47,7 +47,7 @@ Each one has a specific function:
 -  **Projector**: Lights can project a texture for the diffuse light
    (currently only supported in Spot light).
 
-Directional Light
+Directional light
 ~~~~~~~~~~~~~~~~~
 
 This is the most common type of light and represents the sun. It is also
@@ -63,7 +63,7 @@ Basically what faces the light is lit, what doesn't is dark. Most lights
 have specific parameters but directional lights are pretty simple in
 nature so they don't.
 
-Omni Light
+Omni light
 ~~~~~~~~~~
 
 Omni light is a point that throws light all around it up to a given
@@ -83,7 +83,7 @@ instead.
 
 .. image:: /img/light_attenuation.png
 
-Spot Light
+Spot light
 ~~~~~~~~~~
 
 Spot lights are similar to Omni lights, except they only operate between
@@ -93,7 +93,7 @@ opposite direction it points to.
 
 .. image:: /img/light_spot.png
 
-Ambient Light
+Ambient light
 -------------
 
 Ambient light can be found in the properties of a WorldEnvironment
@@ -102,13 +102,10 @@ consists of a uniform light and energy. This light is applied the same
 to every single pixel of the rendered scene, except to objects that used
 baked light.
 
-Baked Light
+Baked light
 -----------
 
-Baked Light stands for pre-computed ambient light. It can serve multiple
+Baked light stands for pre-computed ambient light. It can serve multiple
 purposes, such as baking light emissors that are not going to be used in
 real-time, and baking light bounces from real-time lights to add more
 realism to a scene (see Baked Light]] tutorial for more information).
-
-
-

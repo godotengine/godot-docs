@@ -1,6 +1,6 @@
 .. _doc_shadow_mapping:
 
-Shadow Mapping
+Shadow mapping
 ==============
 
 Introduction
@@ -31,10 +31,10 @@ The bigger the resolution of the shadow map texture, the more detail the
 shadow has, but more video memory and bandwidth consumed (which means
 frame-rate goes down).
 
-Shadows by Light Type
+Shadows by light type
 ---------------------
 
-Directional Light Shadows
+Directional light shadows
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Directional lights can affect a really big area. The bigger the scene,
@@ -60,7 +60,7 @@ words, PSM is only useful for games where the camera direction and light
 direction are both fixed, and the light is not parallel to the camera
 (which is when PSM completely breaks).
 
-Omni Light Shadows
+Omni light shadows
 ~~~~~~~~~~~~~~~~~~
 
 Omnidirectional lights are also troubesome. How to represent 360 degrees
@@ -83,7 +83,7 @@ As few considerations when using DPSM shadow maps:
 -  The seams between the two halfs of the shadow are generally
    noticeable, so rotate the light to make them show less.
 
-Spot Light Shadows
+Spot light shadows
 ~~~~~~~~~~~~~~~~~~
 
 Spot light shadows are generally the simpler, just needing a single
@@ -91,7 +91,7 @@ texture and no special techniques.
 
 .. image:: /img/shadow_spot.png
 
-Shadows Parameters
+Shadows parameters
 ------------------
 
 The fact that shadows are actually a texture can generate several
@@ -101,7 +101,7 @@ is to tweak the offset parameters, and the second is to use a filtered
 shadow algorithm, which generally looks better and has not as many
 glitches, but consumes more GPU time.
 
-Adjusting Z-Offset
+Adjusting z-offset
 ~~~~~~~~~~~~~~~~~~
 
 So, you have decided to go with non-filtered shadows because they are
@@ -168,7 +168,7 @@ will try to cover a bigger area.
 
 So, always make sure to use the optimal range!
 
-Shadow Filtering
+Shadow filtering
 ~~~~~~~~~~~~~~~~
 
 Raw shadows are blocky. Increasing their resolution just makes smaller
@@ -186,6 +186,3 @@ to look good.
 ESM is a more complex filter and has a few more tweaking parameters. ESM
 uses shadow blurring (amount of blur passes and multiplier can be
 adjusted).
-
-
-

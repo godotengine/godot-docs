@@ -17,8 +17,8 @@ The workaround is to make a copy of the screen, or a part of the screen,
 to a back-buffer and then read from it while drawing. Godot provides a
 few tools that makes this process easy!
 
-TexScreen shader instruction.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TexScreen shader instruction
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Godot :ref:`doc_shading_language` has a special instruction, "texscreen", it takes as
 parameter the UV of the screen and returns a vec3 RGB with the color. A
@@ -34,7 +34,7 @@ The same shader using the visual editor looks like this:
 
 .. image:: /img/texscreen_visual_shader.png
 
-TexScreen Example
+TexScreen example
 ~~~~~~~~~~~~~~~~~
 
 Texscreen instruction can be used for a lot of things. There is a
@@ -44,19 +44,19 @@ and saturation:
 
 ::
 
-    uniform float brightness=1.0; 
-    uniform float contrast=1.0;
-    uniform float saturation=1.0;
+    uniform float brightness = 1.0; 
+    uniform float contrast = 1.0;
+    uniform float saturation = 1.0;
 
     vec3 c = texscreen(SCREEN_UV);
 
-    c.rgb = mix(vec3(0.0),c.rgb,brightness);
-    c.rgb = mix(vec3(0.5),c.rgb,contrast);
-    c.rgb = mix(vec3(dot(vec3(1.0),c.rgb)*0.33333),c.rgb,saturation);
+    c.rgb = mix(vec3(0.0), c.rgb, brightness);
+    c.rgb = mix(vec3(0.5), c.rgb, contrast);
+    c.rgb = mix(vec3(dot(vec3(1.0), c.rgb)*0.33333), c.rgb, saturation);
 
-    COLOR.rgb=c;
+    COLOR.rgb = c;
 
-Behind The Scenes
+Behind the scenes
 ~~~~~~~~~~~~~~~~~
 
 While this seems magical, it's not. The Texscreen instruction, when
@@ -86,7 +86,7 @@ With correct back-buffer copying, the two spheres blend correctly:
 
 .. image:: /img/texscreen_demo2.png
 
-Back-Buffer Logic
+Back-buffer logic
 ~~~~~~~~~~~~~~~~~
 
 So, to make it clearer, here's how the backbuffer copying logic works in
@@ -103,11 +103,7 @@ Godot:
    disabled) was found before in tree-order.
 -  BackBufferCopy can copy either the entire screen or a region. If set
    to only a region (not the whole screen) and your shader uses pixels
-   not in the region copied, the result of that read is
-   [STRIKEOUT:undefined] (most likely garbage from previous frames). In
-   other words, it's possible to use BackBufferCopy to copy back a
-   region of the screen and then use texscreen() on a different region.
-   Avoid this behavior!
-
-
-
+   not in the region copied, the result of that read is undefined
+   (most likely garbage from previous frames). In other words, it's
+   possible to use BackBufferCopy to copy back a region of the screen
+   and then use texscreen() on a different region. Avoid this behavior!

@@ -1,7 +1,7 @@
-.. _doc_introduction:
+.. _doc_introduction_to_3d:
 
-Introduction
-============
+Introduction to 3D
+==================
 
 Creating a 3D game can be challenging. That extra Z coordinate makes
 many of the common techniques that helped to make 2D games simple no
@@ -16,15 +16,12 @@ In 3D, math is a little more complex than in 2D, so also checking the
 developers, not mathematicians or engineers) will help pave the way into
 efficiently developing 3D games.
 
-Spatial Node
+Spatial node
 ~~~~~~~~~~~~
 
-:ref:`Node2D <class_Node2D>` is
-the base node for 2D.
-:ref:`Control <class_Control>` is
-the base node for everything GUI. Following this reasoning, the 3D
-engine uses the
-:ref:`Spatial <class_Spatial>`
+:ref:`Node2D <class_Node2D>` is the base node for 2D.
+:ref:`Control <class_Control>` is the base node for everything GUI.
+Following this reasoning, the 3D engine uses the :ref:`Spatial <class_Spatial>`
 node for everything 3D.
 
 .. image:: /img/tuto_3d1.png
@@ -32,15 +29,13 @@ node for everything 3D.
 Spatial nodes have a local transform, which is relative to the parent
 node (as long as the parent node is also **or inherits** of type
 Spatial). This transform can be accessed as a 4x3
-:ref:`Transform <class_Transform>`,
-or as 3
-:ref:`Vector3 <class_Vector3>`
+:ref:`Transform <class_Transform>`, or as 3 :ref:`Vector3 <class_Vector3>`
 members representing location, euler rotation (x,y and z angles) and
 scale.
 
 .. image:: /img/tuto_3d2.png
 
-3D Content
+3D content
 ~~~~~~~~~~
 
 Unlike 2D, where loading image content and drawing is straightforward,
@@ -49,7 +44,7 @@ special 3D tool (usually referred to as DCCs) and exported to an
 exchange file format in order to be imported in Godot (3D formats are
 not as standardized as images).
 
-DCC-Created Models
+DCC-created models
 ------------------
 
 There are two pipelines to import 3D models in Godot. The first and most
@@ -59,19 +54,16 @@ skeletal rigs, blend shapes, etc.
 
 The second pipeline is through the :ref:`doc_importing_3d_meshes` importer. This
 second method allows importing simple .OBJ files as mesh resources,
-which can be then put inside a
-:ref:`MeshInstance <class_MeshInstance>`
+which can be then put inside a :ref:`MeshInstance <class_MeshInstance>`
 node for display.
 
-Generated Geometry
+Generated geometry
 ------------------
 
 It is possible to create custom geometry by using the
-:ref:`Mesh <class_Mesh>` resource
-directly, simply create your arrays and use the
-:ref:`Mesh.add_surface() <class_Mesh_add_surface>`
-function. A helper class is also available,
-:ref:`SurfaceTool <class_SurfaceTool>`,
+:ref:`Mesh <class_Mesh>` resource directly, simply create your arrays
+and use the :ref:`Mesh.add_surface() <class_Mesh_add_surface>`
+function. A helper class is also available, :ref:`SurfaceTool <class_SurfaceTool>`,
 which provides a more straightforward API and helpers for indexing,
 generating normals, tangents, etc.
 
@@ -79,7 +71,7 @@ In any case, this method is meant for generating static geometry (models
 that will not be updated often), as creating vertex arrays and
 submitting them to the 3D API has a significant performance cost.
 
-Immediate Geometry
+Immediate geometry
 ------------------
 
 If, instead, there is a requirement to generate simple geometry that
@@ -94,8 +86,7 @@ lines, triangles, etc.
 While Godot packs a powerful 2D engine, many types of games use 2D in a
 3D environment. By using a fixed camera (either orthogonal or
 perspective) that does not rotate, nodes such as
-:ref:`Sprite3D <class_Sprite3D>`
-and
+:ref:`Sprite3D <class_Sprite3D>` and
 :ref:`AnimatedSprite3D <class_AnimatedSprite3D>`
 can be used to create 2D games that take advantage of mixing with 3D
 backgrounds, more realistic parallax, lighting/shadow effects, etc.
@@ -108,13 +99,12 @@ Environment
 ~~~~~~~~~~~
 
 Besides editing a scene, it is often common to edit the environment.
-Godot provides a
-:ref:`WorldEnvironment <class_WorldEnvironment>`
+Godot provides a :ref:`WorldEnvironment <class_WorldEnvironment>`
 node that allows changing the background color, mode (as in, put a
 skybox), and applying several types of built-in post-processing effects.
 Environments can also be overriden in the Camera.
 
-3D Viewport
+3D viewport
 ~~~~~~~~~~~
 
 Editing 3D scenes is done in the 3D tab. This tab can be selected
@@ -130,7 +120,7 @@ similar to other tools in Editor Settings:
 
 .. image:: /img/tuto_3d4.png
 
-Coordinate System
+Coordinate system
 -----------------
 
 Godot uses the `metric <http://en.wikipedia.org/wiki/Metric_system>`__
@@ -154,7 +144,7 @@ means that:
 -  **Y** is up/down
 -  **Z** is front/back
 
-Space and Manipulation Gizmos
+Space and manipulation gizmos
 -----------------------------
 
 Moving objects in the 3D view is done through the manipulator gizmos.
@@ -171,18 +161,18 @@ Some useful keybindings:
    or rotating.
 -  To center the view on the selected object, press the "f" key.
 
-View Menu
+View menu
 ---------
 
-The view options are controlled by the \`[view]\` menu. Pay attention to
+The view options are controlled by the "[ view ]" menu. Pay attention to
 this little menu inside the window because it is often overlooked!
 
 .. image:: /img/tuto_3d6.png
 
-Default Lighting
+Default lighting
 ----------------
 
-The 3D View has by some default options on lighting:
+The 3D view has by some default options on lighting:
 
 -  There is a directional light that makes objects visible while editing
    turned on by default. It is no longer visible when running the game.
@@ -208,8 +198,7 @@ Cameras
 -------
 
 No matter how many objects are placed in 3D space, nothing will be
-displayed unless a
-:ref:`Camera <class_Camera>` is
+displayed unless a :ref:`Camera <class_Camera>` is
 also added to the scene. Cameras can either work in orthogonal or
 perspective projections:
 
@@ -245,6 +234,3 @@ overall.
 
 It is possible to use :ref:`doc_light_baking`, to avoid using large amount of
 real-time lights and improve performance.
-
-
-

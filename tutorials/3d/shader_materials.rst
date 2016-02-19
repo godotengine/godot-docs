@@ -1,6 +1,6 @@
 .. _doc_shader_materials:
 
-Shader Materials
+Shader materials
 ================
 
 Introduction
@@ -62,6 +62,3 @@ instantly visible:
 
 This allows to very quickly create custom, complex materials for every
 type of object.
-
-
-

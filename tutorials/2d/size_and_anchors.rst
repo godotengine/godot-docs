@@ -1,6 +1,6 @@
 .. _doc_size_and_anchors:
 
-Size and Anchors
+Size and anchors
 ----------------
 
 If a game was to be always run in the same device and at the same

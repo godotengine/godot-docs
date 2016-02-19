@@ -37,7 +37,7 @@ the relevant texture property:
 
 .. image:: /img/particles2.png
 
-Physics Variables
+Physics variables
 -----------------
 
 Before taking a look at the global parameters for the particle system,
@@ -67,31 +67,31 @@ in all directions.
 
 .. image:: /img/paranim3.gif
 
-Linear Velocity
+Linear velocity
 ---------------
 
-Linear Velocity is the speed at which particles will be emitted (in
+Linear velocity is the speed at which particles will be emitted (in
 pixels/sec). Speed might later be modified by gravity or other
 accelerations (as described further below).
 
 .. image:: /img/paranim4.gif
 
-Spin Velocity
+Spin velocity
 -------------
 
-Spin Velocity is the speed at which particles turn around their center
+Spin velocity is the speed at which particles turn around their center
 (in degrees/sec).
 
 .. image:: /img/paranim5.gif
 
-Orbit Velocity
+Orbit velocity
 --------------
 
-Orbit Velocity is used to make particles turn around their center.
+Orbit velocity is used to make particles turn around their center.
 
 .. image:: /img/paranim6.gif
 
-Gravity Direction & Strength
+Gravity direction & strength
 ----------------------------
 
 Gravity can be modified as in direction and strength. Gravity affects
@@ -99,7 +99,7 @@ every particle currently alive.
 
 .. image:: /img/paranim7.gif
 
-Radial Acceleration
+Radial acceleration
 -------------------
 
 If this acceleration is positive, particles are accelerated away from
@@ -107,11 +107,11 @@ the center. If negative, they are absorbed towards it.
 
 .. image:: /img/paranim8.gif
 
-Tangential Acceleration
+Tangential acceleration
 -----------------------
 
-This acceleration will use the tangent vector to the center. Combined
-with Radial Acceleration can do nice effects.
+This acceleration will use the tangent vector to the center. Combining
+with radial acceleration can do nice effects.
 
 .. image:: /img/paranim9.gif
 
@@ -124,7 +124,7 @@ high linear velocity and then stop as they fade.
 
 .. image:: /img/paranim10.gif
 
-Initial Angle
+Initial angle
 -------------
 
 Determines the initial angle of the particle (in degress). This parameter
@@ -132,14 +132,14 @@ is mostly useful randomized.
 
 .. image:: /img/paranim11.gif
 
-Initial & Final Size
+Initial & final size
 --------------------
 
 Determines the initial and final scales of the particle.
 
 .. image:: /img/paranim12.gif
 
-Color Phases
+Color phases
 ------------
 
 Particles can use up to 4 color phases. Each color phase can include
@@ -156,7 +156,7 @@ Will result in:
 
 .. image:: /img/paranim13.gif
 
-Global Parameters
+Global parameters
 -----------------
 
 These parameters affect the behavior of the entire system.
@@ -194,7 +194,7 @@ a torch, mist, etc begin emitting the moment you enter. Preprocess is
 used to let the system process a given amount of seconds before it is
 actually shown the first time.
 
-Emit Timeout
+Emit timeout
 ------------
 
 This variable will switch emission off after given amount of seconds
@@ -205,7 +205,7 @@ Offset
 
 Allows to move the emission center away from the center
 
-Half Extents
+Half extents
 ------------
 
 Makes the center (by default 1 pixel) wider, to the size in pixels
@@ -220,7 +220,7 @@ location, while transparent ones will be ignored:
 
 .. image:: /img/paranim19.gif
 
-Local Space
+Local space
 -----------
 
 By default this option is on, and it means that the space that particles
@@ -258,6 +258,3 @@ All physics parameters can be randomiez. Random variables go from 0 to
 ::
 
     initial_value = param_value + param_value*randomness
-
-
-

@@ -5,7 +5,7 @@ Graphics
    :maxdepth: 1
    :name: toc-3d-graphics
 
-   introduction
+   introduction_to_3d
    materials
    fixed_materials
    shader_materials

@@ -1,7 +1,7 @@
 .. _doc_3d_performance_and_limitations:
 
-3D Performance & Limitations
-============================
+3D performance and limitations
+==============================
 
 Introduction
 ~~~~~~~~~~~~
@@ -44,7 +44,7 @@ Rendering
 3D rendering is one of the most difficult areas to get performance from,
 so this section will have a list of tips.
 
-Reuse Shaders and Materials
+Reuse shaders and materials
 ---------------------------
 
 Godot renderer is a little different to what is out there. It's designed
@@ -67,7 +67,7 @@ materials each, rendering will be really slow. If the same scene has
 20.000 objects, but only uses 100 materials, rendering will be blazing
 fast.
 
-Pixels Cost vs Vertex Cost
+Pixels cost vs vertex cost
 --------------------------
 
 It is a common thought that the lower the polygons in a model, the
@@ -130,11 +130,11 @@ have extra processing per vertex, such as:
 -  Morphs (shape keys)
 -  Vertex Lit Objects (common on mobile)
 
-Texture Compression
+Texture compression
 -------------------
 
 Godot offers to compress textures of 3D models when imported (VRAM
-compression). Video Ram compression is not as efficient in size as PNG
+compression). Video RAM compression is not as efficient in size as PNG
 or JPG when stored, but increase performance enormously when drawing.
 
 This is because the main goal of texture compression is bandwidth
@@ -148,7 +148,7 @@ from the compression is more noticeable.
 As a warning, most Android devices do not support texture compression of
 textures with transparency (only opaque), so keep this in mind.
 
-Transparent Objects
+Transparent objects
 -------------------
 
 As mentioned before, Godot sorts objects by material and shader to
@@ -158,7 +158,7 @@ blending with what is behind work. As a result, please try to keep
 transparent objects to a minimum! If an object has a small section with
 transparency, try to make that section a separate material.
 
-Level of Detail (LOD)
+Level of detail (LOD)
 ---------------------
 
 As also mentioned before, using objects with less vertices can improve
@@ -168,17 +168,16 @@ of detail,
 based objects have a visibility range that can be defined. Having
 several GeometryInstance objects in different ranges works as LOD.
 
-Use Instancing (MultiMesh)
+Use instancing (MultiMesh)
 --------------------------
 
 If several identical objects have to be drawn in the same place or
-nearby, try using
-:ref:`MultiMesh <class_MultiMesh>`
+nearby, try using :ref:`MultiMesh <class_MultiMesh>`
 instead. MultiMesh allows drawing of dozens of thousands of objects at
 very little performance cost, making it ideal for flocks, grass,
 particles, etc.
 
-Bake Lighting
+Bake lighting
 -------------
 
 Small lights are usually not a performance issue. Shadows a little more.
@@ -188,4 +187,3 @@ adding indirect light bounces.
 
 If working on mobile, baking to texture is recommended, since this
 method is even faster.
-

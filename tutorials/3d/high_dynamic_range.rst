@@ -1,6 +1,6 @@
 .. _doc_high_dynamic_range:
 
-High Dynamic Range
+High dynamic range
 ==================
 
 Introduction
@@ -38,7 +38,7 @@ Additionally, it is possible to set a threshold value to send to the
 glow buffer depending on the pixel luminance. This allows for more
 realistic light bleeding effects in the scene.
 
-Linear Color Space
+Linear color space
 ------------------
 
 The problem with this technique is that computer monitors apply a
@@ -58,15 +58,15 @@ values to adjust the luminance and exposure to different light ranges,
 and this curve gets in the way as we need colors in linear space for
 this.
 
-Linear Color Space & Asset Pipeline
+Linear color space & asset pipeline
 -----------------------------------
 
 Working in HDR is not just pressing a switch. First, imported image
 assets must be converted to linear space on import. There are two ways
 to do this:
 
-SRGB->Linear conversion on image import
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SRGB -> linear conversion on image import
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This is the most compatible way of using linear-space assets and it will
 work everywhere including all mobile devices. The main issue with this
@@ -77,7 +77,7 @@ too, which makes the problem worse.
 
 In any case though, this is the easy solution that works everywhere.
 
-Hardware sRGB -> Linear conversion.
+Hardware sRGB -> linear conversion.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This is the most correct way to use assets in linear-space, as the
@@ -91,9 +91,7 @@ Linear -> sRGB at the end.
 
 After all the rendering is done, the linear-space rendered image must be
 converted back to sRGB. To do this, simply enable sRGB conversion in the
-current
-:ref:`Environment <class_Environment>`
-(more on that below).
+current :ref:`Environment <class_Environment>` (more on that below).
 
 Keep in mind that sRGB [STRIKEOUT:> Linear and Linear]> sRGB conversions
 must always be **both** enabled. Failing to enable one of them will
@@ -103,8 +101,7 @@ indie games.
 Parameters of HDR
 -----------------
 
-HDR is found in the
-:ref:`Environment <class_Environment>`
+HDR is found in the :ref:`Environment <class_Environment>`
 resource. These are found most of the time inside a
 :ref:`WorldEnvironment <class_WorldEnvironment>`
 node, or set in a camera. There are many parameters for HDR:
@@ -138,34 +135,31 @@ White
 
 Maximum value of white.
 
-Glow Threshold
+Glow threshold
 ~~~~~~~~~~~~~~
 
 Determine above which value (from 0 to 1 after the scene is tonemapped),
 light will start bleeding.
 
-Glow Scale
+Glow scale
 ~~~~~~~~~~
 
 Determine how much light will bleed.
 
-Min Luminance
+Min luminance
 ~~~~~~~~~~~~~
 
 Lower bound value of light for the scene at which the tonemapper stops
 working. This allows dark scenes to remain dark.
 
-Max Luminance
+Max luminance
 ~~~~~~~~~~~~~
 
 Upper bound value of light for the scene at which the tonemapper stops
 working. This allows bright scenes to remain saturated.
 
-Exposure Adjustment Speed
+Exposure adjustment speed
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Auto-exposure will change slowly and will take a while to adjust (like
 in real cameras). Bigger values means faster adjustment.
-
-
-
