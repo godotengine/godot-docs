@@ -1,1 +1,6 @@
 _build/
+env/
+
+.fscache
+*~
+.directory

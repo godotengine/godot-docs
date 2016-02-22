@@ -55,6 +55,20 @@ make html
 The compilation might take some time as the `classes/` folder contains many files to parse.  
 You can then test the changes live by opening `_build/html/index.html` in your favourite browser.
 
+### Building with Sphinx and virtualenv
+
+If you want your Sphinx installation scoped to the project, you can install it using virtualenv.
+Execute this from the root folder of this repository:
+
+```sh
+virtualenv --system-site-packages env/
+. env/bin/activate
+pip3 install sphinx
+pip3 install sphinx_rtd_theme
+```
+
+Then do `make html` like above.
+
 ## License
 
 At the exception of the `classes/` folder, all the content of this repository is licensed under the Creative Commons Attribution 3.0 Unported license ([CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)) and is to be attributed to "Juan Linietsky, Ariel Manzur and the Godot community".
