@@ -108,7 +108,7 @@ Simply override it in your control. No processing needs to be set.
        if (ev.type==InputEvent.MOUSE_BUTTON and ev.button_index==BUTTON_LEFT and ev.pressed):
            print("Left mouse button was pressed!")
 
-For more information about events themselves, check the [[Input Events]]
+For more information about events themselves, check the :ref:`doc_inputevent`
 tutorial.
 
 Notifications

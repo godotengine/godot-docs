@@ -47,7 +47,7 @@ not spread any more.
 will be called (enable with
 :ref:`Node.set_process_unhandled_input() <class_Node_set_process_unhandled_input>`) and override
 :ref:`Node._unhandled_input() <class_Node__unhandled_input>`). If any function consumes the
-event, it can call [[SceneTree.set_input_as_handled()]], and the
+event, it can call :ref:`SceneTree.set_input_as_handled() <class_SceneTree_set_input_as_handled>`, and the
 event will not spread any more.
 4. If no one wanted the event so far, and a :ref:`Camera <class_Camera>` is assigned
 to the Viewport, a ray to the physics world (in the ray direction from
@@ -116,8 +116,8 @@ logic. This allows for:
 -  Input to be reconfigured at run-time.
 
 Actions can be created from the Project Settings menu in the Actions
-tab. If you read the :ref:`doc_simple_2d_game`, there is an explanation on how
-does the action editor work.
+tab. If you read the :ref:`doc_simple_2d_game` tutorial, there is an
+explanation on how the action editor works.
 
 Any event has the methods :ref:`InputEvent.is_action() <class_InputEvent_is_action>`,
 :ref:`InputEvent.is_pressed() <class_InputEvent_is_pressed>` and :ref:`InputEvent <class_InputEvent>`.
