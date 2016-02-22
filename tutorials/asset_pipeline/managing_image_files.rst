@@ -8,7 +8,7 @@ If you have read the previous tutorials on :ref:`doc_resources` and
 (.png, .jpg, etc.) are treated as regular resources in Godot.
 
 Unlike texture resources (.tex files), image files contain no extra
-information on tiling (texture repeat), mipamps or filtering. Editing
+information on tiling (texture repeat), mipmaps or filtering. Editing
 this information and saving the texture back will have not any effect,
 since such formats can't contain that information.
 
