@@ -99,8 +99,8 @@ individual flags can be changed. Godot also keeps track of the original
 file and will re-import if it changes.
 
 Importing also allows conversion to other formats (WebP, or RAM
-compression) which might be of use in some cases. . More information on
-the [[Importing textures]] page.
+compression) which might be of use in some cases. More information on
+the :ref:`doc_importing_textures` page.
 
 Image export
 ~~~~~~~~~~~~
