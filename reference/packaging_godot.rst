@@ -1,0 +1,44 @@
+.. _doc_packaging_godot:
+
+Packaging Godot
+===============
+
+Starting with 2.0, Godot has features to make it easier to package it for application repositories.
+
+Default behaviour
+-----------------
+
+Per default, Godot stores all settings and installed templates in a per-user directory.
+First Godot checks the ``APPDATA`` environment variable. If it exists, the per-user directory
+is the "Godot" subdirectory of ``$APPDATA``.
+If ``APPDATA`` doesn't exist, Godot checks the ``HOME`` environment variable. The per-user
+directory is then the ".godot" subdir of ``$HOME``.
+
+This meets common operating system standards.
+
+Global template path (Unix only)
+--------------------------------
+
+The ``unix_global_settings_path`` build variable is meant for Unix/Linux distro packagers
+who want to package export templates together with godot. It allows to put the export
+templates on a hardcoded path.
+
+To use it, pass the desired path via the scons ``unix_global_settings_path`` build variable
+when building the editor. The export templates then live at the "templates" subdirectory
+of the path specified.
+
+Templates installed at the per-user location still override the system wide templates.
+
+This option is only available on unix based platforms.
+
+Self contained mode
+-------------------
+
+The self contained mode can be used to package godot for distribution systems where godot
+doesn't live at a fixed location. If the godot editor finds a ``._sc_`` file in the directory
+the executable is located, godot will continue in "self contained mode".
+
+In self contained mode, all config files are located next to the executable in a directory
+called ``editor_data``. Godot doesn't read or write to the per-user location anymore.
+
+Also, the ``._sc_`` file may contain a list of pre-loaded projects.

@@ -8,3 +8,4 @@ Misc
    command_line_tutorial
    changing_editor_fonts
    services_for_ios
+   packaging_godot
