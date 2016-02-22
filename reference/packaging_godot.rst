@@ -41,4 +41,16 @@ the executable is located, godot will continue in "self contained mode".
 In self contained mode, all config files are located next to the executable in a directory
 called ``editor_data``. Godot doesn't read or write to the per-user location anymore.
 
-Also, the ``._sc_`` file may contain a list of pre-loaded projects.
+The contents of the ``._sc_`` file (when not empty) are read with the ConfigFile api (same
+format as ``engine.cfg``, etc). So far it can contain a list of pre-loaded project in this
+format:
+
+:: 
+
+  [init_projects]
+  list=["demos/2d/platformer", "demos/2d/isometric"]
+
+The paths are relative to the executable location, and will be added to the file ``editor_settings.xml``
+when this is created for the first time.
+
+
