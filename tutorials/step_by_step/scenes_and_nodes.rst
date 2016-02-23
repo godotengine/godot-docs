@@ -83,12 +83,12 @@ For this, the editor will be used.
 When godot executable is run outside a project, the Project Manager
 appears. This helps developers manage their projects.
 
-.. image:: /img/newproject.png
+.. image:: /img/project_manager_2.0.png
 
 To create a new project, the "New Project" option must be used. Choose
 and create a path for the project and specify the project name:
 
-.. image:: /img/newproj.png
+.. image:: /img/create_new_project_2.0.png
 
 Editor
 ------
@@ -97,28 +97,28 @@ Once the "New Project" is created, the next step is opening it. This
 will open the Godot editor. Here is how the editor looks when freshly
 opened:
 
-.. image:: /img/editor.png
+.. image:: /img/empty_editor_2.0.png
 
 As mentioned before, making games in Godot feels like being in a
 kitchen, so let's open the refrigerator and add some fresh nodes to the
 project. We'll begin with a Hello World! To do this, the "New Node"
 button must be pressed:
 
-.. image:: /img/newnode.png
+.. image:: /img/newnode_button_2.0.png
 
 This will open the Create Node dialog, showing the long list of nodes
 that can be created:
 
-.. image:: /img/createnode.png
+.. image:: /img/node_classes_2.0.png
 
 From there, select the "Label" node first. Searching for it is probably
 the quickest way:
 
-.. image:: /img/nodesearch.png
+.. image:: /img/node_search_label_2.0.png
 
 And finally, create the Label! A lot happens when Create is pressed:
 
-.. image:: /img/addedlabel.png
+.. image:: /img/editor_with_label_2.0.png
 
 First of all, the scene is changed to the 2D editor (because Label is
 a 2D Node type), and the Label appears, selected, at the top left
@@ -131,21 +131,21 @@ bottom right corner).
 The next step, will be to change the "Text" Property of the label, let
 change it to "Hello, World!":
 
-.. image:: /img/hw.png
+.. image:: /img/hw_2.0.png
 
 Ok, everything's ready to run the scene! Press the PLAY SCENE Button on
 the top bar (or hit F6):
 
-.. image:: /img/playscene.png
+.. image:: /img/playscene_2.0.png
 
 Aaaand... Oops.
 
-.. image:: /img/neversaved.png
+.. image:: /img/neversaved_2.0.png
 
 Scenes need to be saved to be run, so save the scene to something like
 hello.scn in Scene -> Save:
 
-.. image:: /img/savescene.png
+.. image:: /img/save_scene_2.0.png
 
 And here's when something funny happens. The file dialog is a special
 file dialog, and only allows to save inside the project. The project
@@ -158,7 +158,7 @@ resource files are from inside the game.
 After saving the scene and pressing run scene again, the "Hello, World!"
 demo should finally execute:
 
-.. image:: /img/helloworld.png
+.. image:: /img/helloworld_0.2.png
 
 Success!
 
@@ -183,7 +183,7 @@ Once the window opens, the task will be to select a main scene. This can
 be done easily by changing the application/main_scene property and
 selecting 'hello.scn'.
 
-.. image:: /img/main_scene.png
+.. image:: /img/main_scene_2.0.png
 
 With this change, pressing the regular Play button (or F5) will run the
 project, no matter which scene is being edited.
