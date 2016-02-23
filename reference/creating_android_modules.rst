@@ -150,6 +150,8 @@ Java will most likely run in a separate thread, so calls are deferred:
 Add this singleton to the build of the project by adding the following
 to config.py:
 
+(Before Version 2.0)
+
 .. code:: python
 
     def can_build(plat):
@@ -161,6 +163,21 @@ to config.py:
             env.android_module_file("MySingleton.java")
             #env.android_module_file("MySingleton2.java") call again for more files
 
+
+(After Version 2.0)
+
+.. code:: python
+
+    def can_build(plat):
+        return plat=="android" or plat=="iphone"
+
+    def configure(env):
+        if env['platform'] == 'android':
+            # will copy this to the java folder
+            env.android_add_java_dir("Directory that contain MySingelton.java")
+
+
+
 AndroidManifest
 ---------------
 
@@ -170,6 +187,8 @@ maybe other functionalities are needed.
 
 Create the custom chunk of android manifest and put it inside the
 module, add it like this:
+
+(Before Version 2.0)
 
 .. code:: python
 
@@ -182,12 +201,27 @@ module, add it like this:
             env.android_module_file("MySingleton.java") 
             env.android_module_manifest("AndroidManifestChunk.xml")
 
+(After Version 2.0)
+
+.. code:: python
+
+    def can_build(plat):
+        return plat=="android" or plat=="iphone"
+
+    def configure(env):
+        if env['platform'] == 'android':
+            # will copy this to the java folder
+            env.android_add_java_dir("Directory that contain MySingelton.java") 
+            env.android_add_to_manifest("AndroidManifestChunk.xml")
+
 SDK library
 -----------
 
 So, finally it's time to add the SDK library. The library can come in
 two flavors, a JAR file or an Android project for ant. JAR is the
 easiest to integrate, just put it in the module directory and add it:
+
+(Before Version 2.0)
 
 .. code:: python
 
@@ -200,6 +234,24 @@ easiest to integrate, just put it in the module directory and add it:
             env.android_module_file("MySingleton.java") 
             env.android_module_manifest("AndroidManifestChunk.xml")
             env.android_module_library("MyLibrary-3.1.jar")
+            
+
+(After Version 2.0)  
+
+.. code:: python
+
+    def can_build(plat):
+        return plat=="android" or plat=="iphone"
+
+    def configure(env):
+        if env['platform'] == 'android':
+            # will copy this to the java folder
+            env.android_add_java_dir("Directory that contain MySingelton.java") 
+            env.android_add_to_manifest("AndroidManifestChunk.xml")
+            env.android_add_dependency("compile files('something_local.jar')") # if you have a jar
+            env.android_add_maven_repository("maven url") #add a maven url
+            env.android_add_dependency("compile 'com.google.android.gms:play-services-ads:8'") #get dependency from maven repository
+           
 
 SDK project
 -----------
@@ -217,6 +269,8 @@ changes, it should be reflected in the manifest template:
 
 Then, add the module folder to the project:
 
+(Before Version 2.0)
+
 .. code:: python
 
     def can_build(plat):
@@ -229,6 +283,9 @@ Then, add the module folder to the project:
             env.android_module_manifest("AndroidManifestChunk.xml")
             env.android_module_source("sdk-1.2","")
 
+(After Version 2.0)
+    
+    
 Building
 --------
 
@@ -244,22 +301,7 @@ This will cause your module to be included, the .jar will be copied to
 the java folder, the .java will be copied to the sources folder, etc.
 Each time you modify the .java, scons must be called.
 
-Afterwards, just build the ant project normally:
-
-::
-
-    c:\godot\platform\android\java> ant release
-
-This should generate the apk used as export template properly, as
-defined in :ref:`doc_compiling_for_android`.
-
-Usually to generate the apk, again both commands must be run in
-sequence:
-
-::
-
-    c:\godot> scons p=android
-    c:\godot\platform\android\java> ant release
+Afterwards, just continue the steps for compiling android  :ref:`doc_compiling_for_android`.
 
 Using the module
 ~~~~~~~~~~~~~~~~
