@@ -8,7 +8,7 @@ Intro
 
 A simple (but flexible enough for most uses) particle system is
 provided. Particle systems are used to simulate complex physical effects
-tsuch as sparks, fire, magic particles, smoke, mist, magic, etc.
+such as sparks, fire, magic particles, smoke, mist, magic, etc.
 
 The idea is that a "particle" is emitted at a fixed interval and with a
 fixed lifetime. During his lifetime, every particle will have the same
@@ -145,7 +145,7 @@ Color phases
 Particles can use up to 4 color phases. Each color phase can include
 transparency.
 
-Phases must provide an offset value from 0 to 1, and alays in
+Phases must provide an offset value from 0 to 1, and always in
 ascending order. For example, a color will begin at offset 0 and end
 in offset 1, but 4 colors might use different offsets, such as 0, 0.2,
 0.8 and 1.0 for the different phases:
@@ -252,7 +252,7 @@ creating explosions or sudden bursts of particles:
 Randomness
 ----------
 
-All physics parameters can be randomiez. Random variables go from 0 to
+All physics parameters can be randomized. Random variables go from 0 to
 1. the formula to randomize a parameter is:
 
 ::
