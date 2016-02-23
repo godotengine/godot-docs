@@ -53,7 +53,7 @@ now is that nodes exist and can be arranged this way.
 Scenes
 ------
 
-.. image:: /img/scene.png
+.. image:: /img/scene_tree_example_2.0.png
 
 Now that the existence of nodes has been defined, the next logical
 step is to explain what a Scene is.
