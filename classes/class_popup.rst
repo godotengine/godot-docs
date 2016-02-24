@@ -64,7 +64,7 @@ Popup (show the control in modal form) in the center of the screen, at the curre
 
 - void  **popup_centered_ratio**  **(** :ref:`float<class_float>` ratio=0.75  **)**
 
-Popup (show the control in modal form) in the center of the screen, scalled at a ratio of size of the screen.
+Popup (show the control in modal form) in the center of the screen, scaled at a ratio of size of the screen.
 
 .. _class_Popup_popup_centered_minsize:
 

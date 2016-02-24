@@ -52,7 +52,7 @@ it will bring up the project manager.
 Note for Godot 2.0+ if you are having issues:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You might also find other command prompts in your VS instalation. Make
+You might also find other command prompts in your VS installation. Make
 sure you do not use x64 Native or Cross Tools Command Prompts, because
 64 bit version of the Visual C compiler can not compile Godot 2.0+, only
 the 32 bit (x86) **compiler** can. If you get compiler errors about

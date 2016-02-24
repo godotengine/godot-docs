@@ -174,9 +174,9 @@ References:
 String
 ------
 
-Godot also provides a String class. This class has a huge amoun of
+Godot also provides a String class. This class has a huge amount of
 features, full Unicode support in all the functions (like case
-operations) and utf8 parsing/exracting, as well as helpers for
+operations) and utf8 parsing/extracting, as well as helpers for
 conversion and visualization.
 
 References:

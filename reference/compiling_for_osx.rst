@@ -57,7 +57,7 @@ repository/extracted the zip), e.g.:
 
 ::
 
-    user@host:~$ export OSXCROSS_ROOT=/home/myuser/sources/oscross
+    user@host:~$ export OSXCROSS_ROOT=/home/myuser/sources/osxcross
 
 Now you can compile with SCons like you normally would:
 

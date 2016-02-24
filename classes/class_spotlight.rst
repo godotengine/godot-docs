@@ -13,7 +13,7 @@ SpotLight
 Brief Description
 -----------------
 
-Spotlight :ref:`Light<class_light>`, such as a reflector spotlight or a latern.
+Spotlight :ref:`Light<class_light>`, such as a reflector spotlight or a lantern.
 
 Description
 -----------

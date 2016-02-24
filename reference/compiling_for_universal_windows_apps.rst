@@ -53,7 +53,7 @@ Windows Phone 8.1
 Running
 -------
 
-On Visual studio, create a new project using any of the "Unversal App"
+On Visual studio, create a new project using any of the "Universal App"
 templates found under Visual C++ -> Store Apps -> Universal Apps. "Blank
 App" should be fine.
 

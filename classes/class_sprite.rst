@@ -111,7 +111,7 @@ Set the sprite draw offset, useful for setting rotation pivots.
 
 - :ref:`Vector2<class_vector2>`  **get_offset**  **(** **)** const
 
-Return sprite draw offst.
+Return sprite draw offset.
 
 .. _class_Sprite_set_flip_h:
 

@@ -101,7 +101,7 @@ Here is an example with the Node2D class:
         Base node for 2D system.
         </brief_description>
         <description>
-        Base node for 2D system. Node2D contains a position, rotation and scale, which is used to position and animate. It can alternatively be used with a custom 2D transform ([Matrix32]). A tree of Node2Ds allows complex hierachies for animation and positioning.
+        Base node for 2D system. Node2D contains a position, rotation and scale, which is used to position and animate. It can alternatively be used with a custom 2D transform ([Matrix32]). A tree of Node2Ds allows complex hierarchies for animation and positioning.
         </description>
         <methods>
             <method name="set_pos">

@@ -129,13 +129,13 @@ Return the texture coordinate mode. Each texture param (from the PARAM\_\* enum)
 
 - void  **set_uv_transform**  **(** :ref:`Transform<class_transform>` transform  **)**
 
-Sets a special transform used to post-transform UV coordinates of the uv_xfrom tecoord mode: TEXCOORD_UV_TRANSFORM.
+Sets a special transform used to post-transform UV coordinates of the uv_xform texcoord mode: TEXCOORD_UV_TRANSFORM.
 
 .. _class_FixedMaterial_get_uv_transform:
 
 - :ref:`Transform<class_transform>`  **get_uv_transform**  **(** **)** const
 
-Returns the special transform used to post-transform UV coordinates of the uv_xfrom tecoord mode: TEXCOORD_UV_TRANSFORM.
+Returns the special transform used to post-transform UV coordinates of the uv_xform texcoord mode: TEXCOORD_UV_TRANSFORM.
 
 .. _class_FixedMaterial_set_light_shader:
 

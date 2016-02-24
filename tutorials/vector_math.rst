@@ -63,7 +63,7 @@ Magnitude
 
 Finally, the length of the vector is the distance from the origin to the
 position. Obtaining the length from a vector is easy, just use the
-`Pithagorean
+`Pythagorean
 Theorem <http://en.wikipedia.org/wiki/Pythagorean_theorem>`__.
 
 ::
@@ -399,7 +399,7 @@ computed angle.
 The beauty of this is that the same code works exactly the same and
 without modification in
 `3D <https://github.com/godotengine/godot/blob/master/demos/3d/kinematic_char/cubio.gd#L57>`__.
-Vector math is, in a great deal, dimemsion-amount-independent, so adding
+Vector math is, in a great deal, dimension-amount-independent, so adding
 or removing an axis only adds very little complexity.
 
 Planes
@@ -480,7 +480,7 @@ to reach a point in the plane, you will just do:
 This will stretch (resize) the normal vector and make it touch the
 plane. This math might seem confusing, but it's actually much simpler
 than it seems. If we want to tell, again, the distance from the point to
-the plane, we do the same but adjusing for distance:
+the plane, we do the same but adjusting for distance:
 
 ::
 

@@ -50,7 +50,7 @@ ship was *transformed* from their original position to the new one. This
 allows the ship to be displayed where it is.
 
 So, a transform is too generic of a term. To solve this puzzle, we will
-overimpose the ship's original design position at their current
+superimpose the ship's original design position at their current
 position:
 
 .. image:: /img/tutomat4.png
@@ -63,7 +63,7 @@ towards Y positive and a translation.
 .. image:: /img/tutomat5.png
 
 Let's call the 3 vectors "X", "Y" and "Origin", and let's also
-overimpose them over the ship so it makes more sense:
+superimpose them over the ship so it makes more sense:
 
 .. image:: /img/tutomat6.png
 
@@ -227,7 +227,7 @@ Scale
 -----
 
 A matrix can be scaled too. Scaling will multiply the basis vectors by a
-vetor (X vector by x component of the scale, Y vector by y component of
+vector (X vector by x component of the scale, Y vector by y component of
 the scale). It will leave the origin alone:
 
 ::

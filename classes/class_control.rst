@@ -236,7 +236,7 @@ Only one control can hold the keyboard focus (receiving keyboard events), for th
 
 It is sometimes desired for a control to ignore mouse/pointer events. This is often the case when placing other controls on top of a button, in such cases. Calling :ref:`set_ignore_mouse<class_Control_set_ignore_mouse>` enables this function.
 
-Finally, controls are skinned according to a :ref:`Theme<class_theme>`. Setting a :ref:`Theme<class_theme>` on a control will propagate all the skinning down the tree. Optionally, skinning can be overrided per each control by calling the add\_\*_override functions, or from the editor.
+Finally, controls are skinned according to a :ref:`Theme<class_theme>`. Setting a :ref:`Theme<class_theme>` on a control will propagate all the skinning down the tree. Optionally, skinning can be overridden per each control by calling the add\_\*_override functions, or from the editor.
 
 Member Function Description
 ---------------------------
