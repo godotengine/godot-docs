@@ -42,7 +42,7 @@ Numeric Constants
 Description
 -----------
 
-A DirectionalLight is a type of :ref:`Light<class_light>` node that emits light constantly in one direction (the negative z axis of the node). It is used lights with strong intensity that are located far away from the scene to model sunlight or moonlight. The worldpace location of the DirectionalLight transform (origin) is ignored, only the basis is used do determine light direction.
+A DirectionalLight is a type of :ref:`Light<class_light>` node that emits light constantly in one direction (the negative z axis of the node). It is used lights with strong intensity that are located far away from the scene to model sunlight or moonlight. The worldspace location of the DirectionalLight transform (origin) is ignored, only the basis is used do determine light direction.
 
 Member Function Description
 ---------------------------

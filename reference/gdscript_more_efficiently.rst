@@ -113,7 +113,7 @@ by passing a reference to the original one.
 In C# or Java, everything not a built-in type (int, float, sometimes
 String) is always a pointer or a reference. References are also
 garbage-collected automatically, which means they are erased when no
-onger used. Dynamically typed languages tend to use this memory model
+longer used. Dynamically typed languages tend to use this memory model
 too. Some Examples:
 
 -  C++:
@@ -167,7 +167,7 @@ are passed by value to functions (value is copied). Everything else
 (instances, arrays, dictionaries, etc) is passed as reference. Classes
 that inherit :ref:`class_Reference` (the default if nothing is specified)
 will be freed when not used, but manual memory management is allowed too
-if inheriting manualy from :ref:`class_Object`.
+if inheriting manually from :ref:`class_Object`.
 
 Arrays
 ------
@@ -450,7 +450,7 @@ and that's it. No need to consider inheritance, base classes, etc.
         object.smash()
 
 And that's it. If the object that hit the big rock has a smash() method,
-it will be called. No need for inheritance or polymorphysm. Dynamically
+it will be called. No need for inheritance or polymorphism. Dynamically
 typed languages only care about the instance having the desired method
 or member, not what it inherits or the class type. The definition of
 Duck Typing should make this clearer:

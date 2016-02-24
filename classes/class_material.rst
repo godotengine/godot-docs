@@ -55,7 +55,7 @@ Numeric Constants
 - **DEPTH_DRAW_NEVER** = **3**
 - **BLEND_MODE_MIX** = **0** --- Use the regular alpha blending equation (source and dest colors are faded) (default).
 - **BLEND_MODE_ADD** = **1** --- Use additive blending equation, often used for particle effects such as fire or light decals.
-- **BLEND_MODE_SUB** = **2** --- Use substractive blending equation, often used for some smoke effects or types of glass.
+- **BLEND_MODE_SUB** = **2** --- Use subtractive blending equation, often used for some smoke effects or types of glass.
 - **BLEND_MODE_MUL** = **3**
 - **BLEND_MODE_PREMULT_ALPHA** = **4**
 

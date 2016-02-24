@@ -18,7 +18,7 @@ specified in the project settings:
 
 .. image:: /img/ssl_certs.png
 
-This file should contain any number of public certificicates in
+This file should contain any number of public certificates in
 http://en.wikipedia.org/wiki/Privacy-enhanced_Electronic_Mail format.
 
 Of course, remember to add .crt as filter so the exporter recognizes

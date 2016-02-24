@@ -69,7 +69,7 @@ as ``//`` and ``/* */``. Example:
 Swizzling
 ~~~~~~~~~
 
-It is possible to use swizzling to reasigning subindices or groups of
+It is possible to use swizzling to reassigning subindices or groups of
 subindices, in order:
 
 ::
@@ -203,7 +203,7 @@ follows:
 +-----------------------------------------------------------------------+---------------------------------------------+
 | vec3 *reflect* ( vec3, vec3 )                                         | Reflect                                     |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| color *tex* ( texture, vec2 )                                         | Read from a texture in noormalized coords   |
+| color *tex* ( texture, vec2 )                                         | Read from a texture in normalized coords   |
 +-----------------------------------------------------------------------+---------------------------------------------+
 | color *texcube* ( texture, vec3 )                                     | Read from a cubemap                         |
 +-----------------------------------------------------------------------+---------------------------------------------+
@@ -447,7 +447,7 @@ CanvasItem (2D) - LightShader
 +-------------------------------------+-------------------------------------------------------------------------------+
 | const color *LIGHT\_COLOR*          | Color of Light                                                                |
 +-------------------------------------+-------------------------------------------------------------------------------+
-| out vec4 *LIGHT*                    | Light Ouput (shader is ignored if this is not used)                           |
+| out vec4 *LIGHT*                    | Light Output (shader is ignored if this is not used)                           |
 +-------------------------------------+-------------------------------------------------------------------------------+
 
 Examples

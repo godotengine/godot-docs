@@ -147,7 +147,7 @@ way, with some additional arguments to provide the correct paths:
 Producing fat binaries
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Apple requires a fat binary with both achitectures (``armv7`` and
+Apple requires a fat binary with both architectures (``armv7`` and
 ``arm64``) in a single file. To do this, use the
 ``arm-apple-darwin11-lipo`` executable. The following example assumes
 you are in the root Godot source directory:

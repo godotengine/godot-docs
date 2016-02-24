@@ -18,5 +18,5 @@ Horizontal separator.
 Description
 -----------
 
-Horizontal separator. See :ref:`Separator<class_separator>`. It is used to separate objects vertiacally, though (but it looks horizontal!).
+Horizontal separator. See :ref:`Separator<class_separator>`. It is used to separate objects vertically, though (but it looks horizontal!).
 

@@ -15,7 +15,7 @@ Joint2D
 Brief Description
 -----------------
 
-Base node for all joint constraints in 2D phyisics.
+Base node for all joint constraints in 2D physics.
 
 Member Functions
 ----------------
@@ -41,7 +41,7 @@ Member Functions
 Description
 -----------
 
-Base node for all joint constraints in 2D phyisics. Joints take 2 bodies and apply a custom constraint.
+Base node for all joint constraints in 2D physics. Joints take 2 bodies and apply a custom constraint.
 
 Member Function Description
 ---------------------------

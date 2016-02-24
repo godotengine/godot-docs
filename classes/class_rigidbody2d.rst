@@ -271,7 +271,7 @@ Return the maximum contacts that can be reported. See :ref:`set_max_contacts_rep
 
 - void  **set_use_custom_integrator**  **(** :ref:`bool<class_bool>` enable  **)**
 
-Set to true if the body shall not do any internal force integration at all (like gravity or air friction). Only the :ref:`_integrate_forces<class_RigidBody2D__integrate_forces>` will be able to integrate them if overrided.
+Set to true if the body shall not do any internal force integration at all (like gravity or air friction). Only the :ref:`_integrate_forces<class_RigidBody2D__integrate_forces>` will be able to integrate them if overridden.
 
 .. _class_RigidBody2D_is_using_custom_integrator:
 

@@ -70,7 +70,7 @@ It will connect and fetch a website.
 
             if (http.is_response_chunked()):
                 #Does it use chunks?
-                print("Respose is Chunked!")
+                print("Response is Chunked!")
             else:
                 #Or just plain Content-Length
                 var bl = http.get_response_body_length()
@@ -88,7 +88,7 @@ It will connect and fetch a website.
                     #got nothing, wait for buffers to fill a bit
                     OS.delay_usec(1000)
                 else:
-                    rb = rb + chunk # append to read bufer
+                    rb = rb + chunk # append to read buffer
 
 
             #done!

@@ -161,7 +161,7 @@ Set the transform globally, relative to worldspace.
 
 - :ref:`Transform<class_transform>`  **get_global_transform**  **(** **)** const
 
-Return the gloal transform, relative to worldspace.
+Return the global transform, relative to worldspace.
 
 .. _class_Spatial_get_parent_spatial:
 

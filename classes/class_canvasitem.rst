@@ -141,7 +141,7 @@ Numeric Constants
 
 - **BLEND_MODE_MIX** = **0** --- Mix blending mode. Colors are assumed to be independent of the alpha (opacity) value.
 - **BLEND_MODE_ADD** = **1** --- Additive blending mode.
-- **BLEND_MODE_SUB** = **2** --- Substractive blending mode.
+- **BLEND_MODE_SUB** = **2** --- Subtractive blending mode.
 - **BLEND_MODE_MUL** = **3** --- Multiplicative blending mode.
 - **BLEND_MODE_PREMULT_ALPHA** = **4** --- Mix blending mode. Colors are assumed to be premultiplied by the alpha (opacity) value.
 - **NOTIFICATION_DRAW** = **30** --- CanvasItem is requested to draw.
@@ -155,7 +155,7 @@ Description
 
 Base class of anything 2D. Canvas items are laid out in a tree and children inherit and extend the transform of their parent. CanvasItem is extended by :ref:`Control<class_control>`, for anything GUI related, and by :ref:`Node2D<class_node2d>` for anything 2D engine related.
 
-Any CanvasItem can draw. For this, the "update" function must be called, then NOTIFICATION_DRAW will be received on idle time to request redraw. Because of this, canvas items don't need to be redraw on every frame, improving the performance significan'tly. Several functions for drawing on the CanvasItem are provided (see draw\_\* functions). They can only be used inside the notification, signal or _draw() overrides function, though.
+Any CanvasItem can draw. For this, the "update" function must be called, then NOTIFICATION_DRAW will be received on idle time to request redraw. Because of this, canvas items don't need to be redraw on every frame, improving the performance significantly. Several functions for drawing on the CanvasItem are provided (see draw\_\* functions). They can only be used inside the notification, signal or _draw() overrides function, though.
 
 Canvas items are draw in tree order. By default, children are on top of their parents so a root CanvasItem will be drawn behind everything (this can be changed per item though).
 

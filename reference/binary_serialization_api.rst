@@ -367,7 +367,7 @@ For each Name and Sub-Name
 | X+4      | X     | Bytes     | UTF-8 Encoded String   |
 +----------+-------+-----------+------------------------+
 
-Every name string is is padded to 4 bytes.
+Every name string is padded to 4 bytes.
 
 17: rid (unsupported)
 ~~~~~~~~~~~~~~~~~~~~~

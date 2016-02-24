@@ -75,7 +75,7 @@ Default values for arguments can be passed in reverse order:
     ObjectTypeDB::register_method(_MD("methodname","arg1name","arg2name"),&MyCustomType::method,DEFVAL(-1)); //default value for arg2name
 
 ``_MD`` is a macro that converts "methodname" to a StringName for more
-efficiency. Argument names are used for instrospection, but when
+efficiency. Argument names are used for introspection, but when
 compiling on release, the macro ignores them, so the strings are unused
 and optimized away.
 
@@ -139,7 +139,7 @@ For example:
 
 This is an integer property, named "amount", hint is a range, range goes
 from 0 to 49 in steps of 1 (integers). It is only usable for the editor
-(edit value visually) but wont be serialized.
+(edit value visually) but won't be serialized.
 
 Another example:
 
@@ -158,7 +158,7 @@ Properties can also work like C# properties and be accessed from script
 using indexing, but this usage is generally discouraged, as using
 functions is preferred for legibility. Many properties are also bound
 with categories, such as "animation/frame" which also make indexing
-imposssible unless using operator [].
+impossible unless using operator [].
 
 From ``_bind_methods()``, properties can be created and bound as long as
 set/get functions exist. Example:
@@ -176,14 +176,14 @@ Binding properties using ``_set``/``_get``/``_get_property_list``
 An additional method of creating properties exists when more flexibility
 is desired (i.e. adding or removing properties on context).
 
-The following functions can be overriden in an Object derived class,
+The following functions can be overridden in an Object derived class,
 they are NOT virtual, DO NOT make them virtual, they are called for
 every override and the previous ones are not invalidated (multilevel
 call).
 
 .. code:: cpp
 
-    void _get_property_info(List<PropertyInfo> *r_props); //return list of propertes
+    void _get_property_info(List<PropertyInfo> *r_props); //return list of properties
     bool _get(const StringName& p_property, Variany& r_value) const; //return true if property was found
     bool _set(const StringName& p_property, const Variany& p_value); //return true if property was found
 
