@@ -123,25 +123,41 @@ many useful overrideable functions, which are described as follows:
 ::
 
     func _enter_tree():
-        pass # When the node enters the _Scene Tree_, it become acive and  this function is called. Children nodes have not entered the active scene yet. In general, it's better to use _ready() for most cases.
+        # When the node enters the _Scene Tree_, it become active 
+        # and  this function is called. Children nodes have not entered 
+        # the active scene yet. In general, it's better to use _ready() 
+        # for most cases.
+        pass
 
     func _ready():
-        pass # This function is called after _enter_tree, but it ensures that all children nodes have also entered the _Scene Tree_, and became active.
+        # This function is called after _enter_tree, but it ensures 
+        # that all children nodes have also entered the _Scene Tree_, 
+        # and became active.
+        pass 
 
     func _exit_tree():
-        pass # When the node exists the _Scene Tree_, this function is called. Children nodes have all exited the _Scene Tree_  at this point and all became inactive.
+        # When the node exists the _Scene Tree_, this function is called. 
+        # Children nodes have all exited the _Scene Tree_  at this point 
+        # and all became inactive.
+        pass
 
     func _process(delta):
-        pass # When set_process() is enabled, this is called every frame
+        # When set_process() is enabled, this function is called every frame.
+        pass
 
     func _fixed_process(delta):
-        pass # When set_fixed_process() is enabled, this is called every physics frame
+        # When set_fixed_process() is enabled, this is called every physics 
+        # frame.
+        pass
 
     func _paused():
-        pass # Called when game is paused, after this call, the node will not receive any more process callbacks
+        # Called when game is paused. After this call, the node will not receive 
+        # any more process callbacks.
+        pass
 
     func _unpaused():
-        pass # Called when game is unpaused   
+        # Called when game is unpaused.
+        pass
 
 Creating nodes
 --------------
