@@ -85,6 +85,7 @@ Importing the project
    are added automatically. Potentially useful additions: \*.py for buildsystem files, \*.java for Android development,
    \*.mm for OSX. Click "Next".
 -  Click *Finish*.
+-  Add a line containing ``.`` to *project_name.files* to get working code completion.
 
 Build and run
 ^^^^^^^^^^^^^
