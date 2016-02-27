@@ -14,7 +14,7 @@ For compiling under Windows, the following is required:
    Express compiler or Visual Studio Community (recommended) at least
    the 2010 version (10.0) up to 2015 (14.0). **Make sure you get a
    version that can compile for C++, Desktop**.
--  `Python 2.7+ <http://www.python.org/getit/releases/2.7/>`__ (3.0 is
+-  `Python 2.7+ <https://www.python.org/downloads/>`__ (3.0 is
    untested as of now). Using the 32-bits installer is recommended.
 -  `Pywin32 Python Extension <http://sourceforge.net/projects/pywin32>`__
    for parallel builds (which increase the build speed by a great factor).
