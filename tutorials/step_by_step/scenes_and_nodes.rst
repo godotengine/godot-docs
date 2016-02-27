@@ -124,11 +124,11 @@ First of all, the scene is changed to the 2D editor (because Label is
 a 2D Node type), and the Label appears, selected, at the top left
 corner of the viewport.
 
-The node appears in the scene tree editor (box in the top right
-corner), and the label properties apear in the Inspector (box in the
-bottom right corner).
+The node appears in the scene tree editor (box in the top left
+corner), and the label properties appear in the Inspector (box on the
+right side).
 
-The next step, will be to change the "Text" Property of the label, let
+The next step will be to change the "Text" Property of the label, let's
 change it to "Hello, World!":
 
 .. image:: /img/hw.png
