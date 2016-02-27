@@ -8,7 +8,7 @@ Processing
 
 Several actions in Godot are triggered by callbacks or virtual
 functions, so there is no need to check for writing code that runs all
-time time. Additionally, a lot can be done with animation players.
+the time. Additionally, a lot can be done with animation players.
 
 However,it is still a very common case to have a script process on every
 frame. There are two types of processing, idle processing and fixed
