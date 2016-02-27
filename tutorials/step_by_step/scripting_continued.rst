@@ -8,9 +8,9 @@ Processing
 
 Several actions in Godot are triggered by callbacks or virtual
 functions, so there is no need to check for writing code that runs all
-time time. Additionally, a lot can be done with animation players.
+the time. Additionally, a lot can be done with animation players.
 
-However,it is still a very common case to have a script process on every
+However, it is still a very common case to have a script process on every
 frame. There are two types of processing, idle processing and fixed
 processing.
 
@@ -25,7 +25,7 @@ callback will be called every frame. Example:
         set_process(true)
 
     func _process(delta):
-        # do something..
+        # do something...
 
 The delta parameter describes the time elapsed (in seconds, as
 floating point) since the previous call to _process().
@@ -55,7 +55,7 @@ Groups
 
 Nodes can be added to groups (as many as desired per node). This is a
 simple yet useful feature for organizing large scenes. There are two
-ways to do this, the first is from the UI, from tne Groups button:
+ways to do this, the first is from the UI, from the Groups button:
 
 .. image:: /img/groups.png
 
@@ -136,8 +136,8 @@ many useful overrideable functions, which are described as follows:
         pass 
 
     func _exit_tree():
-        # When the node exists the _Scene Tree_, this function is called. 
-        # Children nodes have all exited the _Scene Tree_  at this point 
+        # When the node exits the _Scene Tree_, this function is called. 
+        # Children nodes have all exited the _Scene Tree_ at this point 
         # and all became inactive.
         pass
 
