@@ -20,19 +20,18 @@ Scene setup
 ~~~~~~~~~~~
 
 For the sake of the old times, the game will be in 640x400 pixels
-resolution. This can be configured in the Project Settings (see previous
-tutorials). The default background color should be set to black:
+resolution. This can be configured in the Project Settings (see :ref:`doc_scenes_and_nodes-configuring_the_project`). The default background color should be set to black:
 
 .. image:: /img/clearcolor.png
 
 Create a :ref:`class_Node2D` node for the project root. Node2D is the base
 type for the 2D engine. After this, add some sprites :ref:`class_Sprite`
-node) and set each to the corresponding texture. The final scene layour
+node) and set each to the corresponding texture. The final scene layout
 should look similar to this (note: the ball is in the middle!):
 
 .. image:: /img/pong_layout.png
 
-The scene tree should, then look similar to this:
+The scene tree should, then, look similar to this:
 
 .. image:: /img/pong_nodes.png
 
@@ -64,9 +63,8 @@ should work in most cases.
 Script
 ~~~~~~
 
-Create a script for the root node of the scene and open it (should have
-been explained in the previous tutorial!). The script will inherit
-Node2D:
+Create a script for the root node of the scene and open it (as explained
+in :ref:`doc_scripting-adding_a_script`). The script will inherit Node2D:
 
 ::
 

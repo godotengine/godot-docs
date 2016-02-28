@@ -91,6 +91,8 @@ And try to make it look like this in the 2D editor, so it makes sense:
 
 Finally, save the scene, a fitting name could be "sayhello.scn"
 
+.. _doc_scripting-adding_a_script:
+
 Adding a script
 ~~~~~~~~~~~~~~~
 

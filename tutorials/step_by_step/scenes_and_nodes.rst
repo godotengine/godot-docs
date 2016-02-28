@@ -162,6 +162,8 @@ demo should finally execute:
 
 Success!
 
+.. _doc_scenes_and_nodes-configuring_the_project:
+
 Configuring the project
 -----------------------
 
