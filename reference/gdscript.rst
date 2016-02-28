@@ -744,7 +744,10 @@ variables:
 
     export(Color, RGB) var col  # Color is RGB
     export(Color, RGBA) var col  # Color is RGBA
-
+   
+    # another node in the scene can be exported too
+    
+    export(NodePath) var node
 It must be noted that even if the script is not being run while at the
 editor, the exported properties are still editable (see below for
 "tool").
