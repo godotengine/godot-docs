@@ -6,11 +6,11 @@ Instancing
 Rationale
 ---------
 
-Having a scene and throwing nodes to it might work for small projects,
+Having a scene and throwing nodes into it might work for small projects,
 but as a project grows, more and more nodes are used and it can quickly
 become unmanageable. To solve this, Godot allows a project to be
 separated in several scenes. This, however, does not work the same way
-as in other game engines. In fact, it's quite different, So please do
+as in other game engines. In fact, it's quite different, so please do
 not skip this tutorial!
 
 To recap: A scene is a collection of nodes organized as a tree, where
@@ -18,7 +18,7 @@ they can have only one single node as the tree root.
 
 .. image:: /img/tree.png
 
-In Godot, a scene can be created and saved it to disk. As many scenes
+In Godot, a scene can be created and saved to disk. As many scenes
 can be created and saved as desired.
 
 .. image:: /img/instancingpre.png
@@ -38,7 +38,7 @@ Instancing, step by step
 To learn how to do instancing, let's start with downloading a sample
 project: :download:`instancing.zip </files/instancing.zip>`.
 
-Unzip this scene in any place of our preference. Then, add this scene to
+Unzip this scene in any place of your preference. Then, add this scene to
 the project manager using the 'Import' option:
 
 .. image:: /img/importproject.png
