@@ -25,7 +25,7 @@ not obvious at first, but works well later on. That is, to relieve
 programmers from the responsibility of architecting code.
 
 When designing games using the scene system, the whole project is
-fragmented in *complementary* scenes (not individual ones). Scenes
+fragmented into *complementary* scenes (not individual ones). Scenes
 complement each other, instead of being separate. There will be plenty
 of examples about this later on, but it's very important to remember it.
 
@@ -35,7 +35,7 @@ expense of dropping the MVC habits, which are replaced by the *scenes as
 a complement* pattern.
 
 Godot also uses the `extend <http://c2.com/cgi/wiki?EmbedVsExtend>`__
-pattern for scripting, meaning that scripts extends from all the
+pattern for scripting, meaning that scripts extend from all the
 available engine classes.
 
 GDScript
@@ -98,7 +98,7 @@ Select the Panel node, then press the "Add Script" Icon as follows:
 
 .. image:: /img/addscript.png
 
-The script creation dialog will popup. This dialog allows to select
+The script creation dialog will pop up. This dialog allows to select
 the language, class name, etc. GDScript does not use class names in
 script files, so that field is not editable. The script should inherit
 from "Panel" (as it is meant to extend the node, which is of Panel type,
