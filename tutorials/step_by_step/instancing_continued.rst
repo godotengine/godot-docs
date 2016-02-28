@@ -19,8 +19,8 @@ Design language
 
 But the real strong point of instancing scenes is that it works as an
 excellent design language. This is pretty much what makes Godot special
-and different to any other engine out there. All the engine was designed
-from the ground around this concept.
+and different to any other engine out there. The entire engine was designed
+from the ground up around this concept.
 
 When making games with Godot, the recommended approach is to leave aside
 other design patterns such as MVC or Entity-Relationship diagrams and
@@ -69,7 +69,7 @@ etc all working with the editor interface.
 Information overload!
 ---------------------
 
-Do not worry to much, the important part of this tutorial is to create
+Do not worry too much, the important part of this tutorial is to create
 awareness on how scenes and instancing are used in real life. The best
 way to understand all this is to make some games.
 
