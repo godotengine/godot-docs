@@ -160,6 +160,6 @@ ones that look better for you:
 -  Disable filtering for either the tileset texture or the entire image
    loader (see the :ref:`doc_managing_image_files` asset pipeline tutorial).
 -  Enable pixel snap (set: "Scene > Project Settings >
-   rasterizer/uxe_pixel_snap" to true).
+   Display/use_pixel_snap" to true).
 -  Viewport Scaling can often help shrinking the map (see the
    :ref:`doc_viewports` tutorial).
