@@ -7,7 +7,7 @@ Tutorial
 --------
 
 This will be a simple tutorial to cement the basic idea of how the GUI
-subsystem works. The goal will be to create a really simple, static,
+subsystem works. The goal will be to create a really simple, static
 splash screen.
 
 Following is a file with the assets that will be used:
