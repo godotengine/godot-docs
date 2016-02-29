@@ -51,7 +51,7 @@ Controls receive input events by means of the
 callback. Only one control, the one in focus, will receive
 keyboard/joypad events (see
 :ref:`Control.set_focus_mode() <class_Control_set_focus_mode>`
-and :ref:`Control.grab_focus() <class_Control_grab_focus>`.
+and :ref:`Control.grab_focus() <class_Control_grab_focus>`.)
 
 Mouse Motion events are received by the control directly below the mouse
 pointer. When a control receives a mouse button pressed event, all
@@ -115,7 +115,7 @@ Add a script to that node, with the following code:
             update()
 
 Then run the scene. When the rectangle is clicked/taped, it will go from
-blue to red. That synnergy between the events and drawing is pretty much
+blue to red. That synergy between the events and drawing is pretty much
 how most controls work internally.
 
 .. image:: /img/ctrl_normal.png
@@ -129,7 +129,7 @@ As mentioned before, Godot includes dozens of controls ready for using
 in a user interface. Such controls are divided in two categories. The
 first is a small set of controls that work well for creating most game
 user interfaces. The second (and most controls are of this type) are
-meant for complex user interfaces and uniform skinning trough styles. A
+meant for complex user interfaces and uniform skinning through styles. A
 description is presented as follows to help understand which one should
 be used in which case.
 
@@ -137,7 +137,7 @@ Simplified UI controls
 ~~~~~~~~~~~~~~~~~~~~~~
 
 This set of controls is enough for most games, where complex
-interactions or ways to present information are not necessary. The can
+interactions or ways to present information are not necessary. They can
 be skinned easily with regular textures.
 
 -  :ref:`Label <class_Label>`: Node used for showing text.
