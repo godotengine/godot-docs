@@ -6,18 +6,18 @@ Animations
 Introduction
 ------------
 
-This tutorial will explain how everything is animated in Godot. Godot
+This tutorial will explain how everything is animated in Godot. Godot's
 animation system is extremely powerful and flexible.
 
-To begin, let's just use the scene from the previous tutorial (splash
-screen). The goal will be to add a simple animation to it. Here's a copy
+To begin, let's just use the scene from the previous tutorial (:ref:`doc_splash_screen`).
+The goal will be to add a simple animation to it. Here's a copy
 just in case: :download:`robisplash.zip </files/robisplash.zip>`.
 
 Creating the animation
 ----------------------
 
 First of all, add an :ref:`AnimationPlayer <class_AnimationPlayer>`
-node to the scene, make it a child of bg (the root node):
+node to the scene as a child of bg (the root node):
 
 .. image:: /img/animplayer.png
 
@@ -78,7 +78,7 @@ Second, move the editor cursor to the end, by clicking here:
 
 .. image:: /img/move_cursor.png
 
-Change the logo position to 114,0 and a keyframe again. With two
+Change the logo position to 114,0 and add a keyframe again. With two
 keyframes, the animation happens.
 
 .. image:: /img/animation.png
