@@ -4,7 +4,7 @@ Using tilemaps
 ~~~~~~~~~~~~~~
 
 Introduction
-~~~~~~~~~~~~
+------------
 
 Tilemaps are a simple and quick way to make 2D game levels. Basically,
 you start with bunch of reference tiles (or pieces) that can be put in a
