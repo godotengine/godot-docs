@@ -107,5 +107,5 @@ on other platforms, such as Linux, Android, etc. This may also apply to exported
 which use a compressed package to store all files.
 
 It is recommend that your team clearly defines a naming convention for files when
-working with Godot! One simple full-proof convention is to only allow lowercase
+working with Godot! One simple fool-proof convention is to only allow lowercase
 file and path names.
