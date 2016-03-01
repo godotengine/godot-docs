@@ -13,7 +13,7 @@ Tween
 Brief Description
 -----------------
 
-
+Node useful for animations with unknown start and end points.
 
 Member Functions
 ----------------
@@ -86,23 +86,40 @@ Signals
 Numeric Constants
 -----------------
 
-- **TWEEN_PROCESS_FIXED** = **0**
-- **TWEEN_PROCESS_IDLE** = **1**
-- **TRANS_LINEAR** = **0**
-- **TRANS_SINE** = **1**
-- **TRANS_QUINT** = **2**
-- **TRANS_QUART** = **3**
-- **TRANS_QUAD** = **4**
-- **TRANS_EXPO** = **5**
-- **TRANS_ELASTIC** = **6**
-- **TRANS_CUBIC** = **7**
-- **TRANS_CIRC** = **8**
-- **TRANS_BOUNCE** = **9**
-- **TRANS_BACK** = **10**
-- **EASE_IN** = **0**
-- **EASE_OUT** = **1**
-- **EASE_IN_OUT** = **2**
-- **EASE_OUT_IN** = **3**
+- **TWEEN_PROCESS_FIXED** = **0** --- The :ref:`Tween<class_tween>` should use ``_fixed_process`` for timekeeping when this is enabled.
+- **TWEEN_PROCESS_IDLE** = **1** --- The :ref:`Tween<class_tween>` should use ``_process`` for timekeeping when this is enabled (default).
+- **TRANS_LINEAR** = **0** --- Means that the animation is interpolated linearly.
+- **TRANS_SINE** = **1** --- Means that the animation is interpolated using a sine wave.
+- **TRANS_QUINT** = **2** --- Means that the animation is interpolated with a quinary (to the power of 5) function.
+- **TRANS_QUART** = **3** --- Means that the animation is interpolated with a quartic (to the power of 4) function.
+- **TRANS_QUAD** = **4** --- Means that the animation is interpolated with a quadratic (to the power of 2) function.
+- **TRANS_EXPO** = **5** --- Means that the animation is interpolated with a exponential (some number to the power of x) function.
+- **TRANS_ELASTIC** = **6** --- Means that the animation is interpolated with elasticity, wiggling around the edges.
+- **TRANS_CUBIC** = **7** --- Means that the animation is interpolated with a cubic (to the power of 3) function.
+- **TRANS_CIRC** = **8** --- Means that the animation is interpolated with a function using square roots.
+- **TRANS_BOUNCE** = **9** --- Means that the animation is interpolated by bouncing at, but never surpassing, the end.
+- **TRANS_BACK** = **10** --- Means that the animation is interpolated backing out at edges.
+- **EASE_IN** = **0** --- Signifies that the interpolation should be focused in the beginning.
+- **EASE_OUT** = **1** --- Signifies that the interpolation should be focused in the end.
+- **EASE_IN_OUT** = **2** --- Signifies that the interpolation should be focused in both ends.
+- **EASE_OUT_IN** = **3** --- Signifies that the interpolation should be focused in both ends, but they should be switched (a bit hard to explain, try it for yourself to be sure).
+
+Description
+-----------
+
+Node useful for animations with unknown start and end points, procedural animations, making one node follow another, and other simple behavior.
+
+Because it is easy to get it wrong, here is a quick usage example:
+
+::
+
+    var tween = get_node("Tween")
+    tween.interpolate_property(get_node("Node2D_to_move"), "transform/pos", Vector2(0,0), Vector2(100,100), Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+    tween.start()
+
+Some of the methods of this class require a property name. You can get the property name by hovering over the property in the inspector of the editor.
+
+Many of the methods accept ``trans_type`` and ``ease_type``. The first accepts an TRANS\_\* constant, and refers to the way the timing of the animation is handled (you might want to see ``http://easings.net/`` for some examples). The second accepts an EASE\_\* constant, and controls the where ``trans_type`` is applied to the interpolation (in the begining, the end, or both). If you don't know which transision and easing to pick, you can try different TRANS\_\* constants with EASE_IN_OUT, and use the one that looks best.
 
 Member Function Description
 ---------------------------
@@ -111,112 +128,180 @@ Member Function Description
 
 - :ref:`bool<class_bool>`  **is_active**  **(** **)** const
 
+Returns true if any tweens are currently running, and false otherwise. Note that this method doesn't consider tweens that have ended.
+
 .. _class_Tween_set_active:
 
 - void  **set_active**  **(** :ref:`bool<class_bool>` active  **)**
+
+Activate/deactivate the tween. You can use this for pausing animations, though :ref:`stop_all<class_Tween_stop_all>` and :ref:`resume_all<class_Tween_resume_all>` might be more fit for this.
 
 .. _class_Tween_is_repeat:
 
 - :ref:`bool<class_bool>`  **is_repeat**  **(** **)** const
 
+Returns true if repeat has been set from editor GUI or :ref:`set_repeat<class_Tween_set_repeat>`.
+
 .. _class_Tween_set_repeat:
 
 - void  **set_repeat**  **(** :ref:`bool<class_bool>` repeat  **)**
+
+Make the tween repeat after all tweens have finished.
 
 .. _class_Tween_set_speed:
 
 - void  **set_speed**  **(** :ref:`float<class_float>` speed  **)**
 
+Set the speed multiplier of the tween. Set it to 1 for normal speed, 2 for two times nromal speed, and 0.5 for half of the normal speed. Setting it to 0 would pause the animation, but you might consider using :ref:`set_active<class_Tween_set_active>` or :ref:`stop_all<class_Tween_stop_all>` and :ref:`resume_all<class_Tween_resume_all>` for this.
+
 .. _class_Tween_get_speed:
 
 - :ref:`float<class_float>`  **get_speed**  **(** **)** const
+
+Returns the speed that has been set from editor GUI or :ref:`set_repeat<class_Tween_set_repeat>`.
 
 .. _class_Tween_set_tween_process_mode:
 
 - void  **set_tween_process_mode**  **(** :ref:`int<class_int>` mode  **)**
 
+Set whether the Tween uses ``_process`` or ``_fixed_process`` (accepts TWEEN_PROCESS_IDLE and TWEEN_PROCESS_FIXED constants, respectively).
+
 .. _class_Tween_get_tween_process_mode:
 
 - :ref:`int<class_int>`  **get_tween_process_mode**  **(** **)** const
+
+Returns the process mode that has been set from editor GUI or :ref:`set_tween_process_mode<class_Tween_set_tween_process_mode>`
 
 .. _class_Tween_start:
 
 - :ref:`bool<class_bool>`  **start**  **(** **)**
 
+Start the tween node. You can define tweens both before and after this.
+
 .. _class_Tween_reset:
 
 - :ref:`bool<class_bool>`  **reset**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key  **)**
+
+Resets a tween to the initial value (the one given, not the one before the tween), given its object and property/method pair.
 
 .. _class_Tween_reset_all:
 
 - :ref:`bool<class_bool>`  **reset_all**  **(** **)**
 
+Resets all tweens to their initial values (the ones given, not those before the tween).
+
 .. _class_Tween_stop:
 
 - :ref:`bool<class_bool>`  **stop**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key  **)**
+
+Stop animating a tween, given its object and property/method pair.
 
 .. _class_Tween_stop_all:
 
 - :ref:`bool<class_bool>`  **stop_all**  **(** **)**
 
+Stop animating all tweens.
+
 .. _class_Tween_resume:
 
 - :ref:`bool<class_bool>`  **resume**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key  **)**
+
+Continue animating a stopped tween, given its object and property/method pair.
 
 .. _class_Tween_resume_all:
 
 - :ref:`bool<class_bool>`  **resume_all**  **(** **)**
 
+Continue animating all stopped tweens.
+
 .. _class_Tween_remove:
 
 - :ref:`bool<class_bool>`  **remove**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key  **)**
+
+Stop animating and completely remove a tween, given its object and property/method pair.
 
 .. _class_Tween_remove_all:
 
 - :ref:`bool<class_bool>`  **remove_all**  **(** **)**
 
+Stop animating and completely remove all tweens.
+
 .. _class_Tween_seek:
 
 - :ref:`bool<class_bool>`  **seek**  **(** :ref:`float<class_float>` time  **)**
+
+Seek the animation to the given ``time`` in seconds.
 
 .. _class_Tween_tell:
 
 - :ref:`float<class_float>`  **tell**  **(** **)** const
 
+Returns the current time of the tween.
+
 .. _class_Tween_get_runtime:
 
 - :ref:`float<class_float>`  **get_runtime**  **(** **)** const
+
+Returns the time needed for all tweens to end in seconds, measured from the start. Thus, if you have two tweens, one ending 10 seconds after the start and the other - 20 seconds, it would return 20 seconds, as by that time all tweens would have finished.
 
 .. _class_Tween_interpolate_property:
 
 - :ref:`bool<class_bool>`  **interpolate_property**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property, var initial_val, var final_val, :ref:`float<class_float>` times_in_sec, :ref:`int<class_int>` trans_type, :ref:`int<class_int>` ease_type, :ref:`float<class_float>` delay=0  **)**
 
+Animate ``property`` of ``object`` from ``initial_val`` to ``final_val`` for ``times_in_sec`` seconds, ``delay`` seconds later.
+
+``trans_type`` accepts TRANS\_\* constants, and is the way the animation is interpolated, while ``ease_type`` accepts EASE\_\* constants, and controls the place of the interpolation (the begining, the end, or both). You can read more about them in the class description.
+
 .. _class_Tween_interpolate_method:
 
 - :ref:`bool<class_bool>`  **interpolate_method**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` method, var initial_val, var final_val, :ref:`float<class_float>` times_in_sec, :ref:`int<class_int>` trans_type, :ref:`int<class_int>` ease_type, :ref:`float<class_float>` delay=0  **)**
+
+Animate ``method`` of ``object`` from ``initial_val`` to ``final_val`` for ``times_in_sec`` seconds, ``delay`` seconds later. Methods are animated by calling them with consecuitive values.
+
+``trans_type`` accepts TRANS\_\* constants, and is the way the animation is interpolated, while ``ease_type`` accepts EASE\_\* constants, and controls the place of the interpolation (the begining, the end, or both). You can read more about them in the class description.
 
 .. _class_Tween_interpolate_callback:
 
 - :ref:`bool<class_bool>`  **interpolate_callback**  **(** :ref:`Object<class_object>` object, :ref:`float<class_float>` times_in_sec, :ref:`String<class_string>` callback, var arg1=NULL, var arg2=NULL, var arg3=NULL, var arg4=NULL, var arg5=NULL  **)**
 
+Call ``callback`` of ``object`` after ``times_in_sec``. ``arg1``-``arg5`` are arguments to be passed to the callback.
+
 .. _class_Tween_interpolate_deferred_callback:
 
 - :ref:`bool<class_bool>`  **interpolate_deferred_callback**  **(** :ref:`Object<class_object>` object, :ref:`float<class_float>` times_in_sec, :ref:`String<class_string>` callback, var arg1=NULL, var arg2=NULL, var arg3=NULL, var arg4=NULL, var arg5=NULL  **)**
+
+Call ``callback`` of ``object`` after ``times_in_sec`` on the main thread (similar to :ref:`methog Object.call_deferred). [code<class_methog object.call_deferred). [code>`arg1``-``arg5`` are arguments to be passed to the callback.
 
 .. _class_Tween_follow_property:
 
 - :ref:`bool<class_bool>`  **follow_property**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property, var initial_val, :ref:`Object<class_object>` target, :ref:`String<class_string>` target_property, :ref:`float<class_float>` times_in_sec, :ref:`int<class_int>` trans_type, :ref:`int<class_int>` ease_type, :ref:`float<class_float>` delay=0  **)**
 
+Follow ``property`` of ``object`` and apply it on ``target_property`` of ``target``, beginning from ``initial_val`` for ``times_in_sec`` seconds, ``delay`` seconds later. Note that ``target:target_property`` would equal ``object:property`` at the end of the tween.
+
+``trans_type`` accepts TRANS\_\* constants, and is the way the animation is interpolated, while ``ease_type`` accepts EASE\_\* constants, and controls the place of the interpolation (the begining, the end, or both). You can read more about them in the class description.
+
 .. _class_Tween_follow_method:
 
 - :ref:`bool<class_bool>`  **follow_method**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` method, var initial_val, :ref:`Object<class_object>` target, :ref:`String<class_string>` target_method, :ref:`float<class_float>` times_in_sec, :ref:`int<class_int>` trans_type, :ref:`int<class_int>` ease_type, :ref:`float<class_float>` delay=0  **)**
+
+Follow ``method`` of ``object`` and apply the returned value on ``target_method`` of ``target``, beginning from ``initial_val`` for ``times_in_sec`` seconds, ``delay`` later. Methods are animated by calling them with consequitive values.
+
+``trans_type`` accepts TRANS\_\* constants, and is the way the animation is interpolated, while ``ease_type`` accepts EASE\_\* constants, and controls the place of the interpolation (the begining, the end, or both). You can read more about them in the class description.
 
 .. _class_Tween_targeting_property:
 
 - :ref:`bool<class_bool>`  **targeting_property**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property, :ref:`Object<class_object>` initial, :ref:`String<class_string>` initial_val, var final_val, :ref:`float<class_float>` times_in_sec, :ref:`int<class_int>` trans_type, :ref:`int<class_int>` ease_type, :ref:`float<class_float>` delay=0  **)**
 
+Animate ``property`` of ``object`` from the current value of the ``initial_val`` property of ``initial`` to ``final_val`` for ``times_in_sec`` seconds, ``delay`` seconds later.
+
+``trans_type`` accepts TRANS\_\* constants, and is the way the animation is interpolated, while ``ease_type`` accepts EASE\_\* constants, and controls the place of the interpolation (the begining, the end, or both). You can read more about them in the class description.
+
 .. _class_Tween_targeting_method:
 
 - :ref:`bool<class_bool>`  **targeting_method**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` method, :ref:`Object<class_object>` initial, :ref:`String<class_string>` initial_method, var final_val, :ref:`float<class_float>` times_in_sec, :ref:`int<class_int>` trans_type, :ref:`int<class_int>` ease_type, :ref:`float<class_float>` delay=0  **)**
+
+Animate ``method`` of ``object`` from the value returned by ``initial.initial_method`` to ``final_val`` for ``times_in_sec`` seconds, ``delay`` seconds later. Methods are animated by calling them with consecuitive values.
+
+``trans_type`` accepts TRANS\_\* constants, and is the way the animation is interpolated, while ``ease_type`` accepts EASE\_\* constants, and controls the place of the interpolation (the begining, the end, or both). You can read more about them in the class description.
 
 

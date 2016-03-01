@@ -200,7 +200,11 @@ Stub function
 
 - :ref:`Dictionary<class_dictionary>`  **get_response_headers_as_dictionary**  **(** **)**
 
-Returns all response headers as dictionary where the keys and values are transformed to lower case. A key with more than one value is a simple string with "; " as separator. example: (content-length:12), (content-type:application/json; charset=utf-8)
+Returns all response headers as dictionary where the case-sensitivity of the keys and values is kept like the server delivers it. A value is a simple String, this string can have more than one value where "; " is used as separator.
+
+Structure: ("key":"value1; value2")
+
+Example: (content-length:12), (Content-Type:application/json; charset=UTF-8)
 
 .. _class_HTTPClient_get_response_body_length:
 

@@ -29,6 +29,10 @@ Member Functions
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`NodePath<class_nodepath>`        | :ref:`get_node_owner_path<class_SceneState_get_node_owner_path>`  **(** :ref:`int<class_int>` idx  **)** const                                         |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`is_node_instance_placeholder<class_SceneState_is_node_instance_placeholder>`  **(** :ref:`int<class_int>` idx  **)** const                       |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`get_node_instance_placeholder<class_SceneState_get_node_instance_placeholder>`  **(** :ref:`int<class_int>` idx  **)** const                     |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedScene<class_packedscene>`  | :ref:`get_node_instance<class_SceneState_get_node_instance>`  **(** :ref:`int<class_int>` idx  **)** const                                             |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`StringArray<class_stringarray>`  | :ref:`get_node_groups<class_SceneState_get_node_groups>`  **(** :ref:`int<class_int>` idx  **)** const                                                 |
@@ -76,6 +80,14 @@ Member Function Description
 .. _class_SceneState_get_node_owner_path:
 
 - :ref:`NodePath<class_nodepath>`  **get_node_owner_path**  **(** :ref:`int<class_int>` idx  **)** const
+
+.. _class_SceneState_is_node_instance_placeholder:
+
+- :ref:`bool<class_bool>`  **is_node_instance_placeholder**  **(** :ref:`int<class_int>` idx  **)** const
+
+.. _class_SceneState_get_node_instance_placeholder:
+
+- :ref:`String<class_string>`  **get_node_instance_placeholder**  **(** :ref:`int<class_int>` idx  **)** const
 
 .. _class_SceneState_get_node_instance:
 

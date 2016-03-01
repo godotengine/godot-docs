@@ -133,7 +133,7 @@ Member Function Description
 
 - void  **_integrate_forces**  **(** :ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>` state  **)** virtual
 
-Override this function to use a custom force integrator. This allows to hook up to the physics processing and alter the simulation state for the object on every frame.
+Called during physics processing, allowing you to read and safely modify the simulation state for the object. By default it works in addition to the usual physics behavior, but :ref:`set_use_custom_integrator<class_RigidBody2D_set_use_custom_integrator>` allows you to disable the default behavior and do fully custom force integration for a body.
 
 .. _class_RigidBody2D_set_mode:
 
@@ -271,7 +271,7 @@ Return the maximum contacts that can be reported. See :ref:`set_max_contacts_rep
 
 - void  **set_use_custom_integrator**  **(** :ref:`bool<class_bool>` enable  **)**
 
-Set to true if the body shall not do any internal force integration at all (like gravity or air friction). Only the :ref:`_integrate_forces<class_RigidBody2D__integrate_forces>` will be able to integrate them if overridden.
+Pass true to disable the internal force integration (like gravity or air friction) for this body. Other than collision response, the body will only move as determined by the :ref:`_integrate_forces<class_RigidBody2D__integrate_forces>` function, if defined.
 
 .. _class_RigidBody2D_is_using_custom_integrator:
 

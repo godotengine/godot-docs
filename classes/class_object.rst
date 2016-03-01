@@ -123,7 +123,7 @@ Objects do not manage memory, if inheriting from one the object will most likely
 
 Some derivates add memory management, such as :ref:`Reference<class_reference>` (which keeps a reference count and deletes itself automatically when no longer referenced) and :ref:`Node<class_node>`, which deletes the children tree when deleted.
 
-Objects export properties, which are mainly useful for storage and editing, but not really so much in programming. Properties are exported in :ref:`_get_property_list<class_Object__get_property_list>` and handled in :ref:`_get<class_Object__get>` and :ref:`_set<class_Object__set>`. However, scripting languages and C++ have simper means to export them.
+Objects export properties, which are mainly useful for storage and editing, but not really so much in programming. Properties are exported in :ref:`_get_property_list<class_Object__get_property_list>` and handled in :ref:`_get<class_Object__get>` and :ref:`_set<class_Object__set>`. However, scripting languages and C++ have simpler means to export them.
 
 Objects also receive notifications (:ref:`_notification<class_Object__notification>`). Notifications are a simple way to notify the object about simple events, so they can all be handled together.
 
