@@ -68,7 +68,7 @@ First download the template from here:
 Two scenes are present, scene_a.scn and scene_b.scn on an otherwise
 empty project. Each are identical and contain a button connected to a
 callback for going to the opposite scene. When the project runs, it
-starts n scene_a.scn. However, this does nothing and pressing the
+starts in scene_a.scn. However, this does nothing and pressing the
 button does not work.
 
 global.gd
@@ -174,8 +174,8 @@ and
     func _on_goto_scene_pressed():
             get_node("/root/global").goto_scene("res://scene_a.scn")
 
-Finally, by running the project it's possible to switch bewtween both
-scenes y pressing the button!
+Finally, by running the project it's possible to switch between both
+scenes by pressing the button!
 
 (To load scenes with a progress bar, check out the next tutorial,
 :ref:`doc_background_loading`)
