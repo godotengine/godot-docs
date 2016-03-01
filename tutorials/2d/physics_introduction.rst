@@ -337,6 +337,29 @@ Areas also by default receive mouse/touchscreen input, providing a
 lower-level way than controls to implement this kind of input in a game.
 Bodies support this by it's disabled by default.
 
+In case of overlap, who receives collision information?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Remember that not every combination of two bodies can "report" contacts.
+Static bodies are passive and will not report contacts when hit.
+Kinematic Bodies will report contacts but only against Rigid/Character
+bodies. Area2D will report overlap (not detailed contacts) with bodies
+and with other areas. The following table should make it more visual:
+
++-------------------+-------------+-----------------+-----------------+---------------+--------+
+| **Type**          | *RigidBody* | *CharacterBody* | *KinematicBody* | *StaticBody*  | *Area* |
++===================+=============+=================+=================+===============+========+
+| **RigidBody**     | Both        | Both            | Both            | Rigidbody     | Area   |
++-------------------+-------------+-----------------+-----------------+---------------+--------+
+| **CharacterBody** | Both        | Both            | Both            | CharacterBody | Area   |
++-------------------+-------------+-----------------+-----------------+---------------+--------+
+| **KinematicBody** | Both        | Both            | None            | None          | Area   |
++-------------------+-------------+-----------------+-----------------+---------------+--------+
+| **StaticBody**    | RigidBody   | CharacterBody   | None            | None          | None   |
++-------------------+-------------+-----------------+-----------------+---------------+--------+
+| **Area**          | Area        | Area            | Area            | None          | Both   |
++-------------------+-------------+-----------------+-----------------+---------------+--------+
+
 Physics global variables
 ------------------------
 
@@ -410,28 +433,3 @@ The following code should work:
         var space_state = Physics2DServer.space_get_direct_state(space)
 
 Enjoy doing space queries!
-
-Contact reporting
------------------
-
-Remember that not every combination of two bodies can "report" contacts.
-Static bodies are passive and will not report contacts when hit.
-Kinematic Bodies will report contacts but only against Rigid/Character
-bodies. Area2D will report overlap (not detailed contacts) with bodies
-and with other areas. The following table should make it more visual:
-
-**In case of overlap, who receives collision information?**
-
-+-------------------+-------------+-----------------+-----------------+---------------+--------+
-| **Type**          | *RigidBody* | *CharacterBody* | *KinematicBody* | *StaticBody*  | *Area* |
-+===================+=============+=================+=================+===============+========+
-| **RigidBody**     | Both        | Both            | Both            | Rigidbody     | Area   |
-+-------------------+-------------+-----------------+-----------------+---------------+--------+
-| **CharacterBody** | Both        | Both            | Both            | CharacterBody | Area   |
-+-------------------+-------------+-----------------+-----------------+---------------+--------+
-| **KinematicBody** | Both        | Both            | None            | None          | Area   |
-+-------------------+-------------+-----------------+-----------------+---------------+--------+
-| **StaticBody**    | RigidBody   | CharacterBody   | None            | None          | None   |
-+-------------------+-------------+-----------------+-----------------+---------------+--------+
-| **Area**          | Area        | Area            | Area            | None          | Both   |
-+-------------------+-------------+-----------------+-----------------+---------------+--------+
