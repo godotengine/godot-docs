@@ -384,7 +384,7 @@ function, example:
         set_fixed_process(true)
 
 Casting rays and motion queries
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------
 
 It is very often desired to "explore" the world around from our code.
 Throwing rays is the most common way to do it. The simplest way to do
@@ -412,7 +412,7 @@ The following code should work:
 Enjoy doing space queries!
 
 Contact reporting
-~~~~~~~~~~~~~~~~~
+-----------------
 
 Remember that not every combination of two bodies can "report" contacts.
 Static bodies are passive and will not report contacts when hit.
@@ -420,8 +420,7 @@ Kinematic Bodies will report contacts but only against Rigid/Character
 bodies. Area2D will report overlap (not detailed contacts) with bodies
 and with other areas. The following table should make it more visual:
 
-In case of overlap, who receives collision information?
--------------------------------------------------------
+**In case of overlap, who receives collision information?**
 
 +-------------------+-------------+-----------------+-----------------+---------------+--------+
 | **Type**          | *RigidBody* | *CharacterBody* | *KinematicBody* | *StaticBody*  | *Area* |
