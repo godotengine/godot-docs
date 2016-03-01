@@ -127,7 +127,7 @@ siblings with less order will get notified before the current node.
    notification ( _enter_tree() callback in GDScript) in top-to-bottom
    order.
 #. An extra notification, "ready" ( _ready() callback in GDScript) is
-   provided for convenience, when a node and all it"™s children are
+   provided for convenience, when a node and all its children are
    inside the active scene.
 #. When a scene (or part of it) is removed, they receive the "exit
    scene" notification ( _exit_tree() callback in GDScript) in
