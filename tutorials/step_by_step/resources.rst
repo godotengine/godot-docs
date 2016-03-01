@@ -6,7 +6,7 @@ Resources
 Nodes and resources
 -------------------
 
-So far, :ref:`Node <class_Node>`
+So far, :ref:`Nodes <class_Node>`
 have been the most important datatype in Godot, as most of the behaviors
 and features of the engine are implemented through them. There is,
 though, another datatype that is equally as important. That is
@@ -31,7 +31,7 @@ Examples of resources are
 etc.
 
 When Godot saves or loads (from disk) a scene (.scn or .xml), an image
-(png, jpg), a scrit (.gd) or pretty much anything, that file is
+(png, jpg), a script (.gd) or pretty much anything, that file is
 considered a resource.
 
 When a resource is loaded from disk, **it is always loaded once**. That
@@ -61,12 +61,12 @@ in a :ref:`Sprite <class_Sprite>` node:
 
 Pressing the the ">" button the right side of the preview, allows to
 view and edit the resources properties. One of the properties (path)
-shows where did it come from. In this case, it came from a png image.
+shows where it came from. In this case, it came from a png image.
 
 .. image:: /img/resourcerobi.png
 
 When the resource comes from a file, it is considered an *external*
-resource. If the path property is erased (or never had a path o begin
+resource. If the path property is erased (or never had a path to begin
 with), it is then considered a built-in resource.
 
 For example, if the path \`"res://robi.png"\` is erased from the "path"
