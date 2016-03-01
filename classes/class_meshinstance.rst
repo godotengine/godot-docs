@@ -33,6 +33,8 @@ Member Functions
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`create_convex_collision<class_MeshInstance_create_convex_collision>`  **(** **)**                                    |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set<class_MeshInstance_set>`  **(** :ref:`String<class_string>` property, :ref:`float<class_float>` value **)**      |                              |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -78,4 +80,8 @@ This helper creates a :ref:`StaticBody<class_staticbody>` child :ref:`Node<class
 
 - void  **create_convex_collision**  **(** **)**
 
+.. _class_MeshInstance_set:
 
+- void  **set**  **(** :ref:`String<class_string>` property, :ref:`float<class_float>` value  **)**
+
+Set a morph value by string property for the instance.
