@@ -56,7 +56,7 @@ the click) will be casted. If this ray hits an object, it will call the
 physics object (bodies receive this callback by default, but areas do
 not. This can be configured through :ref:`Area <class_Area>` properties).
 5. Finally, if the event was unhandled, it will be passed to the next
-Viewport in the tree, or it will be ignored.
+Viewport in the tree, otherwise it will be ignored.
 
 Anatomy of an InputEvent
 ------------------------
@@ -116,7 +116,7 @@ logic. This allows for:
 -  Input to be reconfigured at run-time.
 
 Actions can be created from the Project Settings menu in the Actions
-tab. If you read the :ref:`doc_simple_2d_game` tutorial, there is an
+tab. Read :ref:`doc_simple_2d_game-input_actions_setup` for an
 explanation on how the action editor works.
 
 Any event has the methods :ref:`InputEvent.is_action() <class_InputEvent_is_action>`,
