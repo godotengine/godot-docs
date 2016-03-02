@@ -146,11 +146,13 @@ Return true of this is the current camera (see :ref:`make_current<class_Camera2D
 
 Set the scrolling limit in pixels.
 
+Where "margin" is the direction, use predefined values MARGIN_UP, MARGIN_BOTTOM, MARGIN_LEFT and MARGIN_RIGHT, "limit" - scrolling limit in pixels for that direction.
+
 .. _class_Camera2D_get_limit:
 
 - :ref:`int<class_int>`  **get_limit**  **(** :ref:`int<class_int>` margin  **)** const
 
-Return the scrolling limit in pixels.
+Return the scrolling limit in pixels for the direction "margin".
 
 .. _class_Camera2D_set_v_drag_enabled:
 
