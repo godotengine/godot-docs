@@ -95,11 +95,11 @@ Worlds
 ------
 
 For 3D, a Viewport will contain a :ref:`World <class_World>`. This
-is basically, the universe that links physics and rendering together.
+is basically the universe that links physics and rendering together.
 Spatial-base nodes will register using the World of the closest
 viewport. By default, newly created viewports do not contain a World but
 use the same as a parent viewport (root viewport does contain one
-though, which is the one objects are renderer by default). A world can
+though, which is the one objects are rendered to by default). A world can
 be set in a viewport using the "world" property, and that will separate
 all children nodes of that viewport from interacting with the parent
 viewport world. This is specially useful in scenarios where, for
