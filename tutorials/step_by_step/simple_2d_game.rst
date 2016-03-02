@@ -38,6 +38,8 @@ The scene tree should, then, look similar to this:
 Save the scene as "pong.scn" and set it as the main scene in the project
 properties.
 
+.. _doc_simple_2d_game-input_actions_setup
+
 Input actions setup
 ~~~~~~~~~~~~~~~~~~~
 
