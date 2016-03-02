@@ -93,8 +93,8 @@ template follows:
 
 .. code:: java
 
-    // namespace is wrong, will eventually change
-    package com.android.godot;
+    // package com.android.godot; // for 1.1
+    package org.godotengine.godot; // for 2.0
 
     public class MySingleton extends Godot.SingletonBase {
 
@@ -307,7 +307,15 @@ Using the module
 ~~~~~~~~~~~~~~~~
 
 To use the module from GDScript, first enable the singleton by adding
-the following line to engine.cfg:
+the following line to engine.cfg (Godot Engine 2.0 and greater):
+
+::
+
+    [android]
+
+    modules="org/godotengine/godot/MySingleton"
+
+For Godot Engine 1.1 is 
 
 ::
 
