@@ -52,7 +52,7 @@ Example
 -------
 
 Some people can learn better by just taking a look at the syntax, so
-here's a simple example of how it looks.
+here's a simple example of how GDScript looks.
 
 ::
 
@@ -227,8 +227,8 @@ A variable in GDScript can be assigned to several built-in types.
 null
 ^^^^
 
-null is a data type that contains no information, nothing assigned, and
-it's just empty. It can only be set to one value: ``null``.
+``null`` is an empty data type that contains no information and can not
+be assigned any other value. 
 
 bool
 ^^^^
@@ -249,8 +249,8 @@ Used to contain a floating point value (real numbers).
 :ref:`String <class_String>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A sequence of characters in Unicode format. Strings can contain the
-standard C escape sequences.
+A sequence of characters in `Unicode format <https://en.wikipedia.org/wiki/Unicode>`_. Strings can contain the
+`standard C escape sequences <https://en.wikipedia.org/wiki/Escape_sequences_in_C>`_.
 
 Vector built-in types
 ~~~~~~~~~~~~~~~~~~~~~
@@ -356,23 +356,30 @@ Container built-in types
 :ref:`Array <class_Array>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Generic sequence of objects. Its size can be changed to anything and
-starts from index 0.
+Generic sequence of arbitrary object types, including other arrays or dictionaries (see below). 
+The array can resize dynamically. Arrays are indexed starting from index ``0``.
 
 ::
 
     var arr=[]
     arr=[1, 2, 3]
-    arr[0] = "Hi!"
+    var b = arr[1] # this is 2
+    arr[0] = "Hi!" # replacing value 1 with "Hi"
 
-Arrays are allocated linearly in memory, so they are fast, but very
-large arrays (more than tens of thousands of elements) may cause
-fragmentation.
+GDScript Arrays are allocated linearly in memory for speed. Very
+large arrays (more than tens of thousands of elements) may however cause
+memory fragmentation. If this is a concern special types of 
+arrays are available. These only accept a single data type. They avoid memory 
+fragmentation and also uses less memory but are atomic and tend to run slower than generic
+arrays. They are therefore only recommended to use for very large data sets: 
 
-There are specialized arrays (listed below) for some built-in data types
-which do not suffer from this and use less memory, but they are atomic
-and generally run a little slower, so they are only justified for very
-large amount of data.
+- :ref:`ByteArray <class_ByteArray>`: An array of bytes (integers from 0 to 255).
+- :ref:`IntArray <class_IntArray>`: An array of integers.
+- :ref:`FloatArray <class_FloatArray>`: An array of floats.
+- :ref:`StringArray <class_StringArray>`: An array strings.
+- :ref:`Vector2Array <class_Vector2Array>`: An array of :ref:`Vector2 <class_Vector2>` objects.
+- :ref:`Vector3Array <class_Vector3Array>`: An array of :ref:`Vector3 <class_Vector3>` objects.
+- :ref:`ColorArray <class_ColorArray>`: An array of :ref:`Color <class_Color>` objects.
 
 :ref:`Dictionary <class_Dictionary>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -383,56 +390,23 @@ Associative container which contains values referenced by unique keys.
 
     var d={4:5, "a key":"a value", 28:[1,2,3]}
     d["Hi!"] = 0
+    var d = {
+         somekey : 2,
+         otherkey : [2,3,4],
+         morekey : "Hello"
+         }
 
-Lua-style table syntax is also supported, given that it's easier to
-write and read:
+Lua-style table syntax (using ``=`` instead of ``:``) is also supported:
 
 ::
-
 
     var d = {
         somekey = 2,
         otherkey = [2,3,4],
         morekey = "Hello"
-    }
+      }
 
-:ref:`ByteArray <class_ByteArray>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-An array of bytes can only contain bytes (integers from 0 to 255).
-
-This, and all of the following specialized array types, are optimized
-for memory usage and can't fragment the memory.
-
-:ref:`IntArray <class_IntArray>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Array of integers can only contain integers.
-
-:ref:`FloatArray <class_FloatArray>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Array of floats can only contain floats.
-
-:ref:`StringArray <class_StringArray>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Array of strings can only contain strings.
-
-:ref:`Vector2Array <class_Vector2Array>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Array of Vector2 can only contain 2D Vectors.
-
-:ref:`Vector3Array <class_Vector3Array>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Array of Vector3 can only contain 3D Vectors.
-
-:ref:`ColorArray <class_ColorArray>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Array of Color can only contains colors.
 
 Data
 ----
@@ -470,13 +444,10 @@ expressions and must be assigned on initialization.
 Functions
 ~~~~~~~~~
 
-Functions always belong to a class. The scope priority for variable
+Functions always belong to a :ref: `class <Classes>`. The scope priority for variable
 look-up is: local→class member→global. ``self`` is provided as an option
-for accessing class members, but is not always required (and must *not*
-be defined as the first parameter, like in Python). For performance
-reasons, functions are not considered class members, so they can't be
-referenced directly. A function can return at any point. The default
-return value is null.
+for accessing class members, but is not always required (and should *not*
+be sent as the function's first argument, unlike Python). 
 
 ::
 
@@ -485,8 +456,65 @@ return value is null.
         print(b)
         return a + b  # return is optional; without it null is returned
 
+A function can ``return`` at any point. The default return value is ``null``.
+
+Referencing Functions
+^^^^^^^^^^^^^^^^^^^^^
+
+To call a function on a *base class* (i.e. one extended in your current class), 
+prepend ``.`` to the function name:
+
+::
+
+    .basefunc()
+
+Remember that default functions like  ``_init``, and most
+notifications such as ``_enter_tree``, ``_exit_tree``, ``_process``,
+``_fixed_process``, etc. are called in all base classes automatically.
+So there is only a need to call the function explicitly when overloading
+them in some way. 
+
+Contrary to Python, functions are *not* first class objects in GDScript. This 
+means that they cannot be treated as objects and stored in variables. It also
+means that they cannot be referenced directly since they are not considered 
+class members (this is for performance reasons).
+
+To reference a function in another class instance, one must instead use 
+the ``call`` or ``funcref`` helpers: 
+
+::
+   
+    # Will fail: 
+
+    mynode.myfunction(args) # error!
+    mynode.get("myfunction")(args) # error!
+
+    # Will work:
+    
+    # Call a function by name in one step
+    mynode.call("myfunction", args)  
+
+    # Store a function reference 
+    var myfunc = funcref(mynode, "myfunction")
+    # Call stored function reference 
+    myfunc.call_func(args)
+
+
+Static functions
+^^^^^^^^^^^^^^^^
+
+A function can be declared static. When a function is static it has no
+access to the instance member variables or ``self``. This is mainly
+useful to make libraries of helper functions:
+
+::
+
+    static func sum2(a, b):
+        return a + b
+
+
 Statements and control flow
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Statements are standard and can be assignments, function calls, control
 flow structures, etc (see below). ``;`` as a statement separator is
@@ -544,23 +572,9 @@ used. For loops store the index in the loop variable on each iteration.
     for i in range(2,8,2):
         statement  # similar to [2, 4, 6] but does not allocate an array
 
-Function call on base class
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-To call a function on a base class (that was overridden in the current
-one), prepend ``.`` to the function name:
-
-::
-
-    .basefunc()
-
-However, remember that functions such as ``_init``, and most
-notifications such as ``_enter_tree``, ``_exit_tree``, ``_process``,
-``_fixed_process``, etc. are called in all base classes automatically,
-so this should be only for calling functions you write yourself.
 
 Classes
-^^^^^^^
+~~~~~~~
 
 By default, the body of a script file is an unnamed class and it can
 only be referenced externally as a resource or file. Class syntax is
@@ -571,12 +585,11 @@ separate threads without the user knowing). In the same way, member
 variables (including arrays and dictionaries) are initialized every time
 an instance is created.
 
-Class file example
-~~~~~~~~~~~~~~~~~~
-
-Imagine the following being stored in a file like myclass.gd.
+Below is an example of a class file. 
 
 ::
+
+    # saved as a file myclass.gd
 
     var a = 5
 
@@ -584,54 +597,52 @@ Imagine the following being stored in a file like myclass.gd.
         print(a)
 
 Inheritance
-~~~~~~~~~~~
+^^^^^^^^^^^
 
-A class file can inherit from a global class, another file or a subclass
-inside another file. Multiple inheritance is not allowed. The
-``extends`` syntax is used. Follows is 3 methods of using extends:
+A class (stored as a file) can inherit from 
+
+- A global class
+- Another class file 
+- A subclass inside another class file. 
+
+Multiple inheritance is not allowed. 
+
+Inheritance uses the ``extends`` keyword:
 
 ::
 
-    # extend from some class (global)
+    # Inherit/extend a globally available class
     extends SomeClass 
-
-::
-
-    # optionally, extend from another file
+    
+    # Inherit/extend a named class file
     extends "somefile.gd" 
+    
+    # Inherit/extend a subclass in another file
+    extends "somefile.gd".SomeSubClass
+
+
+To check if a given instance inherits from a given class 
+the ``extends`` keyword can be used as an operator instead:
 
 ::
 
-    # extend from a subclass in another file
-    extends "somefile.gd".Subclass
-
-Inheritance testing
-~~~~~~~~~~~~~~~~~~~
-
-It's possible to check if an instance inherits from a given class. For
-this the ``extends`` keyword can be used as an operator instead:
-
-::
-
-    const enemy_class = preload("enemy.gd")  # cache the enemy class
+    # Cache the enemy class
+    const enemy_class = preload("enemy.gd")
 
     # [...]
 
+    # use 'extends' to check inheritance
     if (entity extends enemy_class):
         entity.apply_damage()
 
-Constructor
-~~~~~~~~~~~
+Class Constructor
+^^^^^^^^^^^^^^^^^
 
-A class can have an optional constructor; a function named ``_init``
-that is called when the class is instanced.
+The class constructor, called on class instantiation, is named ``_init``. 
+As mentioned earlier, rhe constructors of parent classes are called automatically when
+inheriting a class. So there is usually no need to call ``._init()`` explicitly.
 
-Arguments to parent constructor
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-When inheriting, parent constructors are called automatically (no need
-to call ``._init()``). If a parent constructor takes arguments, they are
-passed like this:
+If a parent constructor takes arguments, they are passed like this:
 
 ::
 
@@ -639,35 +650,42 @@ passed like this:
        pass
 
 Sub classes
-~~~~~~~~~~~
+^^^^^^^^^^^
 
-A class file can have subclasses. This syntax should be straightforward:
+A class file can contain subclasses. Subclasses are defined using the
+``class`` keyword. They are instanced using the ``ClassName.new()`` 
+function.
 
 ::
 
+    # inside a class file
+
+    # A subclass for this class file
     class SomeSubClass:
         var a = 5
         func print_value_of_a():
             print(a)
 
+    # This is the constructor of the class file's main class
     func _init():
-        var sc = SomeSubClass.new()  #instance by calling built-in new
+        var sc = SomeSubClass.new() 
         sc.print_value_of_a()
 
-Classes as objects
-~~~~~~~~~~~~~~~~~~
+Classes as resources
+^^^^^^^^^^^^^^^^^^^^
 
-It may be desired at some point to load a class from a file and then
-instance it. Since the global scope does not exist, classes must be
-loaded as a resource. Instancing is done by calling the ``new`` function
-in a class object:
+Since Classes are always stored as files, they are treated as resources
+that must be loaded from disk into whichever class that wants to make use 
+of their functionality. This is done using either the ``load`` or ``preload`` 
+functions (see below). Instancing of a loaded class resource is done by 
+calling the ``new`` function from a class object:
 
 ::
 
-    # load the class (loaded every time the script is instanced)
+    # Load the class (reloaded every time the script is instanced)
     var MyClass = load("myclass.gd")
 
-    # alternatively, using the preload() function preloads the class at compile time
+    # Preload the class only once, at compile time
     var MyClass2 = preload("myclass.gd")
 
     func _init():
@@ -690,10 +708,9 @@ Exporting is done by using the export keyword:
     export var number = 5  # also available to the property editor
 
 One of the fundamental benefits of exporting member variables is to have
-them visible in the property editor. This way artists and game designers
+them visible and editable in the Godot editor. This way artists and game designers
 can modify values that later influence how the program runs. For this, a
-special export syntax is provided for more detail in the exported
-variables:
+special export syntax is provided.
 
 ::
 
@@ -768,6 +785,7 @@ variables:
     # another node in the scene can be exported too
     
     export(NodePath) var node
+
 It must be noted that even if the script is not being run while at the
 editor, the exported properties are still editable (see below for
 "tool").
@@ -775,7 +793,7 @@ editor, the exported properties are still editable (see below for
 Exporting bit flags
 ^^^^^^^^^^^^^^^^^^^
 
-Integers used as bit flags can store multiple true/false (boolean)
+Integers used as bit flags can store multiple ``true``/``false`` (boolean)
 values in one property. By using the export hint ``int, FLAGS``, they
 can be set from the editor:
 
@@ -802,8 +820,8 @@ doubt, boolean variables should be exported instead.
 Exporting arrays
 ^^^^^^^^^^^^^^^^
 
-Exporting arrays works too but there is a restriction. While regular
-arrays are created local to every instance, exported arrays are shared
+Exporting arrays works but with an important caveat: While regular
+arrays are created local to every class instance, exported arrays are *shared*
 between all instances. This means that editing them in one instance will
 cause them to change in all other instances. Exported arrays can have
 initializers, but they must be constant expressions.
@@ -826,43 +844,19 @@ initializers, but they must be constant expressions.
 
     var b = [a,2,3]
 
-Static functions
-~~~~~~~~~~~~~~~~
-
-A function can be declared static. When a function is static it has no
-access to the instance member variables or ``self``. This is mainly
-useful to make libraries of helper functions:
-
-::
-
-    static func sum2(a, b):
-        return a + b
 
 Setters/getters
 ~~~~~~~~~~~~~~~
 
-It is often useful to know when an member variable changed. It may
-also be desired to encapsulate its access. For this, GDScript provides
-a *setter_/_getter* helper using the ``setget`` keyword.
+It is often useful to know when a class' member variable changes for 
+whatever reason. It may also be desired to encapsulate its access in some way. 
 
-Just add it at the end of the variable definition line like this:
-
-::
-
-    var myinteger = 5 setget myinteger_changed
-
-If the value of ``myinteger`` is modified *externally* (not from local
-usage in the class), the *setter* function will be called beforehand.
-The *setter* must, then, decide what to do with the new value. The
-*setter function* looks like this:
+For this, GDScript provides a *setter_/_getter* helper using the ``setget`` keyword. 
+It is used directly after a variable definition:
 
 ::
 
-    func myinteger_changed(newvalue):
-        myinteger=newvalue
-
-A *setter* and a *getter* can be used together too, just define both of
-them:
+    var variable = value setget setterfunc, getterfunc
 
 ::
 
@@ -874,25 +868,35 @@ them:
     func myvar_get():
         return myvar # getter must return a value
 
-Using simply a *getter* is possible too, just skip the setter:
+Whenever the value of ``myvar`` is modified by an *external* source 
+(i.e. not from local usage in the class), the *setter* function (`myvar_set`)`
+will be called *before* the value is changed. The *setter* must decide what to do 
+with the new value. Vice-versa, when `myvar` is accessed, `myvar_get` will be 
+used to deliver the desired value. 
+
+Either of the *setter* or *getter* can be omitted.
 
 ::
 
-    var myvar setget ,myvar_get
+    # Only a setter
+    var myvar = 5 setget myvar_set
+    # Only a getter (note the comma)
+    var myvar = 5 setget ,myvar_get
 
-This is especially useful when exporting variables to editor in tool
+Get/Setters are especially useful when exporting variables to editor in tool
 scripts or plugins, for validating input.
 
-Note: As mentioned before, local access will not trigger the setter and
+Note: As mentioned, local access will not trigger the setter and
 getter. For example:
 
 ::
 
     func _init():
-        #does not trigger setter/getter
+        # Does not trigger setter/getter
         myinteger=5
         print(myinteger)
-        #triggers setter/getter
+        
+        # Does trigger setter/getter
         self.myinteger=5
         print(self.myinteger)
 
@@ -924,27 +928,13 @@ must inherit :ref:`class_Object` manually and must call instance.free(). To
 avoid reference cycles that can't be freed, a ``weakref`` function is
 provided for creating weak references.
 
-Function references
-~~~~~~~~~~~~~~~~~~~
-
-Functions can't be referenced because they are not treated as class
-members. There are two alternatives to this, though. The ``call``
-function or the ``funcref`` helper.
-
-::
-
-    instance.call("funcname", args)  # call a function by name
-
-    var fr = funcref(instance, "funcname")  # create a function ref
-    fr.call_func(args)
 
 Signals
 ~~~~~~~
 
 It is often desired to send a notification that something happened in an
 instance. GDScript supports creation of built-in Godot signals.
-Declaring a signal in GDScript is easy, in the body of the class, just
-write:
+Declaring a signal in GDScript is easy using the `signal` keyword. 
 
 ::
 
@@ -1002,8 +992,8 @@ Object.emit_signal method:
 Coroutines
 ~~~~~~~~~~
 
-GDScript has some support for coroutines via the ``yield`` built-in
-function. The way it works is very simple: Calling ``yield()`` will
+GDScript offers support for `coroutines <https://en.wikipedia.org/wiki/Coroutine>`_ 
+via the ``yield`` built-in function. Calling ``yield()`` will
 immediately return from the current function, with the current frozen
 state of the same function as the return value. Calling ``resume`` on
 this resulting object will continue execution and return whatever the
@@ -1061,11 +1051,11 @@ Will print:
     cheers!
 
 Coroutines & signals
-~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^
 
 The real strength of using ``yield`` is when combined with signals.
 ``yield`` can accept two parameters, an object and a signal. When the
-signal is activated, execution will return. Here are some examples:
+signal is received, execution will recommence. Here are some examples:
 
 ::
 
