@@ -861,10 +861,10 @@ It is used directly after a variable definition:
     var variable = value setget setterfunc, getterfunc
 
 Whenever the value of ``variable`` is modified by an *external* source 
-(i.e. not from local usage in the class), the *setter* function (`setterfunc`)`
+(i.e. not from local usage in the class), the *setter* function (``setterfunc`` above)
 will be called. This happens *before* the value is changed. The *setter* must decide what to do 
-with the new value. Vice-versa, when ``variable`` is accessed, `getterfunc` must ``return``
-the desired value. Below is an example: 
+with the new value. Vice-versa, when ``variable`` is accessed, the *getter* function 
+(``getterfunc`` above) must ``return`` the desired value. Below is an example: 
 
 
 ::
@@ -890,7 +890,7 @@ Get/Setters are especially useful when exporting variables to editor in tool
 scripts or plugins, for validating input.
 
 As said *local* access will *not* trigger the setter and getter. Here is an 
-illustration: 
+illustration of this: 
 
 ::
 
