@@ -371,7 +371,7 @@ GDScript Arrays are allocated linearly in memory for speed. Very
 large arrays (more than tens of thousands of elements) may however cause
 memory fragmentation. If this is a concern special types of 
 arrays are available. These only accept a single data type. They avoid memory 
-fragmentation and also uses less memory but are atomic and tend to run slower than generic
+fragmentation and also use less memory but are atomic and tend to run slower than generic
 arrays. They are therefore only recommended to use for very large data sets: 
 
 - :ref:`ByteArray <class_ByteArray>`: An array of bytes (integers from 0 to 255).
@@ -640,7 +640,7 @@ Class Constructor
 ^^^^^^^^^^^^^^^^^
 
 The class constructor, called on class instantiation, is named ``_init``. 
-As mentioned earlier, rhe constructors of parent classes are called automatically when
+As mentioned earlier, the constructors of parent classes are called automatically when
 inheriting a class. So there is usually no need to call ``._init()`` explicitly.
 
 If a parent constructor takes arguments, they are passed like this:
@@ -853,12 +853,19 @@ Setters/getters
 It is often useful to know when a class' member variable changes for 
 whatever reason. It may also be desired to encapsulate its access in some way. 
 
-For this, GDScript provides a *setter_/_getter* helper using the ``setget`` keyword. 
+For this, GDScript provides a *setter/getter* syntax using the ``setget`` keyword. 
 It is used directly after a variable definition:
 
 ::
 
     var variable = value setget setterfunc, getterfunc
+
+Whenever the value of ``variable`` is modified by an *external* source 
+(i.e. not from local usage in the class), the *setter* function (`setterfunc`)`
+will be called. This happens *before* the value is changed. The *setter* must decide what to do 
+with the new value. Vice-versa, when ``variable`` is accessed, `getterfunc` must ``return``
+the desired value. Below is an example: 
+
 
 ::
 
@@ -870,13 +877,7 @@ It is used directly after a variable definition:
     func myvar_get():
         return myvar # getter must return a value
 
-Whenever the value of ``myvar`` is modified by an *external* source 
-(i.e. not from local usage in the class), the *setter* function (`myvar_set`)`
-will be called *before* the value is changed. The *setter* must decide what to do 
-with the new value. Vice-versa, when `myvar` is accessed, `myvar_get` will be 
-used to deliver the desired value. 
-
-Either of the *setter* or *getter* can be omitted.
+Either of the *setter* or *getter* functions can be omitted:
 
 ::
 
@@ -888,8 +889,8 @@ Either of the *setter* or *getter* can be omitted.
 Get/Setters are especially useful when exporting variables to editor in tool
 scripts or plugins, for validating input.
 
-Note: As mentioned, local access will not trigger the setter and
-getter. For example:
+As said *local* access will *not* trigger the setter and getter. Here is an 
+illustration: 
 
 ::
 
