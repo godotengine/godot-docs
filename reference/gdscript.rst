@@ -697,11 +697,13 @@ variables:
 
 ::
 
-    # if the exported value assigns a constant or constant expression, the type will be inferred and used in the editor
+    # if the exported value assigns a constant or constant expression, 
+    # the type will be inferred and used in the editor
 
     export var number = 5
 
-    # export can take a basic data type as an argument which will be used in the editor
+    # export can take a basic data type as an argument which will be 
+    # used in the editor
 
     export(int) var number
 
@@ -711,38 +713,56 @@ variables:
 
     # integers and strings hint enumerated values
 
-    export(int, "Warrior", "Magician", "Thief") var character_class  # (editor will set them as 0, 1 and 2) 
+    # editor will enumerate as 0, 1 and 2
+    export(int, "Warrior", "Magician", "Thief") var character_class   
+    # editor will enumerate with string names 
     export(String, "Rebecca", "Mary", "Leah") var character_name 
 
     # strings as paths
 
-    export(String, FILE) var f  # string is a path to a file
-    export(String, DIR) var f  # string is a path to a directory
-    export(String, FILE, "*.txt") var f  # string is a path to a file, custom filter provided as hint
+    # string is a path to a file
+    export(String, FILE) var f  
+    # string is a path to a directory
+    export(String, DIR) var f  
+    # string is a path to a file, custom filter provided as hint
+    export(String, FILE, "*.txt") var f  
 
-    # using paths in the global filesystem is also possible, but only in tool scripts (see further below)
+    # using paths in the global filesystem is also possible, 
+    # but only in tool scripts (see further below)
 
-    export(String, FILE, GLOBAL, "*.png") var tool_image # string is a path to a PNG file in the global filesystem
-    export(String, DIR, GLOBAL) var tool_dir # string is a path to a directory in the global filesystem
+    # string is a path to a PNG file in the global filesystem
+    export(String, FILE, GLOBAL, "*.png") var tool_image 
+    # string is a path to a directory in the global filesystem
+    export(String, DIR, GLOBAL) var tool_dir
 
-    # multiline strings
+    # the MULTILINE setting tells the editor to show a large input 
+    # field for editing over multiple lines
+    export(String, MULTILINE) var text
 
-    export(String, MULTILINE) var text # display a large window to edit strings with multiple lines
+    # limiting editor input ranges
 
-    # integers and floats hint ranges
-
-    export(int, 20) var i  # 0 to 20 allowed
-    export(int, -10, 20) var j  # -10 to 20 allowed
-    export(float, -10, 20, 0.2) var k  # -10 to 20 allowed, with stepping of 0.2
-    export(float, EXP, 100, 1000, 20) var l  # exponential range, editing this property using the slider will set the value exponentially
+    # allow integer values from 0 to 20
+    export(int, 20) var i  
+    # allow integer values from -10 to 20 
+    export(int, -10, 20) var j 
+    # allow floats from -10 to 20, with a step of 0.2
+    export(float, -10, 20, 0.2) var k 
+    # allow values y = exp(x) where y varies betwee 100 and 1000 
+    # while snapping to steps of 20. The editor will present a 
+    # slider for easily editing the value. 
+    export(float, EXP, 100, 1000, 20) var l 
 
     # floats with easing hint
 
-    export(float, EASE) var transition_speed # display a visual representation of the ease() function when editing
+    # display a visual representation of the ease() function 
+    # when editing
+    export(float, EASE) var transition_speed 
 
-    # color can hint availability of alpha
+    # colors
 
+    # color given as Red-Green-Blue value
     export(Color, RGB) var col  # Color is RGB
+    # color given as Red-Green-Blue-Alpha value
     export(Color, RGBA) var col  # Color is RGBA
    
     # another node in the scene can be exported too
@@ -761,14 +781,15 @@ can be set from the editor:
 
 ::
 
-    export(int, FLAGS) var spell_elements = ELEMENT_WIND | ELEMENT_WATER # individually edit the bits of an integer
+    # individually edit the bits of an integer
+    export(int, FLAGS) var spell_elements = ELEMENT_WIND | ELEMENT_WATER 
 
 Restricting the flags to a certain number of named flags is also
 possible. The syntax is very similar to the enumeration syntax:
 
 ::
-
-    export(int, FLAGS, "Fire", "Water", "Earth", "Wind") var spell_elements = 0 # set any of the given flags from the editor
+    # set any of the given flags from the editor
+    export(int, FLAGS, "Fire", "Water", "Earth", "Wind") var spell_elements = 0 
 
 In this example, ``Fire`` has value 1, ``Water`` has value 2, ``Earth``
 has value 4 and ``Wind`` corresponds to value 8. Usually, constants
@@ -789,7 +810,7 @@ initializers, but they must be constant expressions.
 
 ::
 
-    # Exported array, shared between all instances.
+    # exported array, shared between all instances.
     # Default value must be a constant expression.
 
     export var a=[1,2,3]
@@ -799,7 +820,7 @@ initializers, but they must be constant expressions.
     export var vector3s = Vector3Array()
     export var strings = StringArray()
 
-    # Regular array, created local for every instance.
+    # regular array, created local for every instance.
     # Default value can include run-time values, but can't
     # be exported.
 
@@ -868,10 +889,10 @@ getter. For example:
 ::
 
     func _init():
-    #does not trigger setter/getter
+        #does not trigger setter/getter
         myinteger=5
         print(myinteger)
-    #triggers setter/getter
+        #triggers setter/getter
         self.myinteger=5
         print(self.myinteger)
 
