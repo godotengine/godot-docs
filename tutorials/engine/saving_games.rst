@@ -40,11 +40,12 @@ Serializing
 
 The next step is to serialize the data. This makes it much easier to
 read and store to disk. In this case, we're assuming each member of
-group Persist is an instanced node and thus has a file path. GDScript
-has helper functions for this such as dictionary.to_json() and
-dictionary.parse_json() so we will use a dictionary. Our node needs to
-contain a save function that returns this data. The save function will
-look like this:
+group Persist is an instanced node and thus has a path. GDScript
+has helper functions for this, such as :ref:`Dictionary.to_json()
+<class_Dictionary_to_json>` and :ref:`Dictionary.parse_json()
+<class_Dictionary_parse_json>`, so we will use a dictionary. Our node needs to
+contain a save function that returns this data. The save function will look
+like this:
 
 ::
 
@@ -101,8 +102,8 @@ way to pull the data out of the file as well.
 Game saved! Loading is fairly simple as well. For that we'll read each
 line, use parse_json() to read it back to a dict, and then iterate over
 the dict to read our values. But we'll need to first create the object
-and we can use filename and parent to achieve that. Here is our load
-function:
+and we can use the filename and parent values to achieve that. Here is our
+load function:
 
 ::
 
@@ -113,7 +114,7 @@ function:
             return #Error!  We don't have a save to load
 
         # We need to revert the game state so we're not cloning objects during loading.  This will vary wildly depending on the needs of a project, so take care with this step.
-        #For our example, we will accomplish this by deleting savable objects.
+        # For our example, we will accomplish this by deleting savable objects.
         var savenodes = get_tree().get_nodes_in_group("Persist")
         for i in savenodes:
             i.queue_free()
@@ -123,7 +124,7 @@ function:
         savegame.open("user://Invasionsave.save", File.READ)
         while (!savegame.eof_reached()):
             currentline.parse_json(savegame.get_line())
-            #First we need to create the object and add it to the tree and set its position.
+            # First we need to create the object and add it to the tree and set its position.
             var newobject = load(currentline["filename"]).instance()
             get_node(currentline["parent"]).add_child(newobject)
             newobject.set_pos(Vector2(currentline["posx"],currentline["posy"]))
