@@ -130,7 +130,7 @@ uniforms or other shader variables.
         return a+b;
     }
 
-    vec3 c = addtwo(vec3(1,1,1) + vec3(2,2,2));
+    vec3 c = addtwo(vec3(1,1,1), vec3(2,2,2));
 
 Built-in functions
 ------------------
