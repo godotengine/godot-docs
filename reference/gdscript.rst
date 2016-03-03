@@ -697,72 +697,72 @@ variables:
 
 ::
 
-    # if the exported value assigns a constant or constant expression, 
+    # If the exported value assigns a constant or constant expression, 
     # the type will be inferred and used in the editor
 
     export var number = 5
 
-    # export can take a basic data type as an argument which will be 
+    # Export can take a basic data type as an argument which will be 
     # used in the editor
 
     export(int) var number
 
-    # export can also take a resource type to use as a hint
+    # Export can also take a resource type to use as a hint
 
     export(Texture) var character_face
 
-    # integers and strings hint enumerated values
+    # Integers and strings hint enumerated values
 
-    # editor will enumerate as 0, 1 and 2
+    # Editor will enumerate as 0, 1 and 2
     export(int, "Warrior", "Magician", "Thief") var character_class   
-    # editor will enumerate with string names 
+    # Editor will enumerate with string names 
     export(String, "Rebecca", "Mary", "Leah") var character_name 
 
-    # strings as paths
+    # Strings as paths
 
-    # string is a path to a file
+    # String is a path to a file
     export(String, FILE) var f  
-    # string is a path to a directory
+    # String is a path to a directory
     export(String, DIR) var f  
-    # string is a path to a file, custom filter provided as hint
+    # String is a path to a file, custom filter provided as hint
     export(String, FILE, "*.txt") var f  
 
-    # using paths in the global filesystem is also possible, 
+    # Using paths in the global filesystem is also possible, 
     # but only in tool scripts (see further below)
 
-    # string is a path to a PNG file in the global filesystem
+    # String is a path to a PNG file in the global filesystem
     export(String, FILE, GLOBAL, "*.png") var tool_image 
-    # string is a path to a directory in the global filesystem
+    # String is a path to a directory in the global filesystem
     export(String, DIR, GLOBAL) var tool_dir
 
-    # the MULTILINE setting tells the editor to show a large input 
+    # The MULTILINE setting tells the editor to show a large input 
     # field for editing over multiple lines
     export(String, MULTILINE) var text
 
-    # limiting editor input ranges
+    # Limiting editor input ranges
 
-    # allow integer values from 0 to 20
+    # Allow integer values from 0 to 20
     export(int, 20) var i  
-    # allow integer values from -10 to 20 
+    # Allow integer values from -10 to 20 
     export(int, -10, 20) var j 
-    # allow floats from -10 to 20, with a step of 0.2
+    # Allow floats from -10 to 20, with a step of 0.2
     export(float, -10, 20, 0.2) var k 
-    # allow values y = exp(x) where y varies betwee 100 and 1000 
+    # Allow values y = exp(x) where y varies betwee 100 and 1000 
     # while snapping to steps of 20. The editor will present a 
     # slider for easily editing the value. 
     export(float, EXP, 100, 1000, 20) var l 
 
-    # floats with easing hint
+    # Floats with easing hint
 
-    # display a visual representation of the ease() function 
+    # Display a visual representation of the ease() function 
     # when editing
     export(float, EASE) var transition_speed 
 
-    # colors
+    # Colors
 
-    # color given as Red-Green-Blue value
+    # Color given as Red-Green-Blue value
     export(Color, RGB) var col  # Color is RGB
-    # color given as Red-Green-Blue-Alpha value
+    # Color given as Red-Green-Blue-Alpha value
     export(Color, RGBA) var col  # Color is RGBA
    
     # another node in the scene can be exported too
@@ -781,14 +781,14 @@ can be set from the editor:
 
 ::
 
-    # individually edit the bits of an integer
+    # Individually edit the bits of an integer
     export(int, FLAGS) var spell_elements = ELEMENT_WIND | ELEMENT_WATER 
 
 Restricting the flags to a certain number of named flags is also
 possible. The syntax is very similar to the enumeration syntax:
 
 ::
-    # set any of the given flags from the editor
+    # Set any of the given flags from the editor
     export(int, FLAGS, "Fire", "Water", "Earth", "Wind") var spell_elements = 0 
 
 In this example, ``Fire`` has value 1, ``Water`` has value 2, ``Earth``
@@ -810,7 +810,7 @@ initializers, but they must be constant expressions.
 
 ::
 
-    # exported array, shared between all instances.
+    # Exported array, shared between all instances.
     # Default value must be a constant expression.
 
     export var a=[1,2,3]
@@ -820,7 +820,7 @@ initializers, but they must be constant expressions.
     export var vector3s = Vector3Array()
     export var strings = StringArray()
 
-    # regular array, created local for every instance.
+    # Regular array, created local for every instance.
     # Default value can include run-time values, but can't
     # be exported.
 
@@ -948,9 +948,9 @@ write:
 
 ::
 
-    # no arguments
+    # No arguments
     signal your_signal_name
-    # with arguments
+    # With arguments
     signal your_signal_name_with_args(a,b)
 
 These signals, just like regular signals, can be connected in the editor
@@ -1021,7 +1021,7 @@ an example:
     func _ready():
 
         var y = myfunc()
-        #function state saved in 'y'
+        # Function state saved in 'y'
         print("my dear")
         y.resume()
         # 'y' resumed and is now an invalid state
@@ -1048,7 +1048,7 @@ example:
     func _ready():
 
         var y = myfunc()
-        #function state saved in 'y'
+        # Function state saved in 'y'
         print( y.resume("world") )
         # 'y' resumed and is now an invalid state
 
@@ -1069,10 +1069,10 @@ signal is activated, execution will return. Here are some examples:
 
 ::
 
-    #resume execution the next frame
+    # Resume execution the next frame
     yield( get_tree(), "idle_frame" )
 
-    #resume execution when animation is done playing:
+    # Resume execution when animation is done playing:
     yield( get_node("AnimationPlayer"), "finished" )
 
 
