@@ -697,52 +697,72 @@ variables:
 
 ::
 
-    # if the exported value assigns a constant or constant expression, the type will be inferred and used in the editor
+    # If the exported value assigns a constant or constant expression, 
+    # the type will be inferred and used in the editor
 
     export var number = 5
 
-    # export can take a basic data type as an argument which will be used in the editor
+    # Export can take a basic data type as an argument which will be 
+    # used in the editor
 
     export(int) var number
 
-    # export can also take a resource type to use as a hint
+    # Export can also take a resource type to use as a hint
 
     export(Texture) var character_face
 
-    # integers and strings hint enumerated values
+    # Integers and strings hint enumerated values
 
-    export(int, "Warrior", "Magician", "Thief") var character_class  # (editor will set them as 0, 1 and 2) 
+    # Editor will enumerate as 0, 1 and 2
+    export(int, "Warrior", "Magician", "Thief") var character_class   
+    # Editor will enumerate with string names 
     export(String, "Rebecca", "Mary", "Leah") var character_name 
 
-    # strings as paths
+    # Strings as paths
 
-    export(String, FILE) var f  # string is a path to a file
-    export(String, DIR) var f  # string is a path to a directory
-    export(String, FILE, "*.txt") var f  # string is a path to a file, custom filter provided as hint
+    # String is a path to a file
+    export(String, FILE) var f  
+    # String is a path to a directory
+    export(String, DIR) var f  
+    # String is a path to a file, custom filter provided as hint
+    export(String, FILE, "*.txt") var f  
 
-    # using paths in the global filesystem is also possible, but only in tool scripts (see further below)
+    # Using paths in the global filesystem is also possible, 
+    # but only in tool scripts (see further below)
 
-    export(String, FILE, GLOBAL, "*.png") var tool_image # string is a path to a PNG file in the global filesystem
-    export(String, DIR, GLOBAL) var tool_dir # string is a path to a directory in the global filesystem
+    # String is a path to a PNG file in the global filesystem
+    export(String, FILE, GLOBAL, "*.png") var tool_image 
+    # String is a path to a directory in the global filesystem
+    export(String, DIR, GLOBAL) var tool_dir
 
-    # multiline strings
+    # The MULTILINE setting tells the editor to show a large input 
+    # field for editing over multiple lines
+    export(String, MULTILINE) var text
 
-    export(String, MULTILINE) var text # display a large window to edit strings with multiple lines
+    # Limiting editor input ranges
 
-    # integers and floats hint ranges
+    # Allow integer values from 0 to 20
+    export(int, 20) var i  
+    # Allow integer values from -10 to 20 
+    export(int, -10, 20) var j 
+    # Allow floats from -10 to 20, with a step of 0.2
+    export(float, -10, 20, 0.2) var k 
+    # Allow values y = exp(x) where y varies betwee 100 and 1000 
+    # while snapping to steps of 20. The editor will present a 
+    # slider for easily editing the value. 
+    export(float, EXP, 100, 1000, 20) var l 
 
-    export(int, 20) var i  # 0 to 20 allowed
-    export(int, -10, 20) var j  # -10 to 20 allowed
-    export(float, -10, 20, 0.2) var k  # -10 to 20 allowed, with stepping of 0.2
-    export(float, EXP, 100, 1000, 20) var l  # exponential range, editing this property using the slider will set the value exponentially
+    # Floats with easing hint
 
-    # floats with easing hint
+    # Display a visual representation of the ease() function 
+    # when editing
+    export(float, EASE) var transition_speed 
 
-    export(float, EASE) var transition_speed # display a visual representation of the ease() function when editing
+    # Colors
 
-    # color can hint availability of alpha
-
+    # Color given as Red-Green-Blue value
     export(Color, RGB) var col  # Color is RGB
+    # Color given as Red-Green-Blue-Alpha value
     export(Color, RGBA) var col  # Color is RGBA
    
     # another node in the scene can be exported too
@@ -761,14 +781,15 @@ can be set from the editor:
 
 ::
 
-    export(int, FLAGS) var spell_elements = ELEMENT_WIND | ELEMENT_WATER # individually edit the bits of an integer
+    # Individually edit the bits of an integer
+    export(int, FLAGS) var spell_elements = ELEMENT_WIND | ELEMENT_WATER 
 
 Restricting the flags to a certain number of named flags is also
 possible. The syntax is very similar to the enumeration syntax:
 
 ::
-
-    export(int, FLAGS, "Fire", "Water", "Earth", "Wind") var spell_elements = 0 # set any of the given flags from the editor
+    # Set any of the given flags from the editor
+    export(int, FLAGS, "Fire", "Water", "Earth", "Wind") var spell_elements = 0 
 
 In this example, ``Fire`` has value 1, ``Water`` has value 2, ``Earth``
 has value 4 and ``Wind`` corresponds to value 8. Usually, constants
@@ -868,10 +889,10 @@ getter. For example:
 ::
 
     func _init():
-    #does not trigger setter/getter
+        #does not trigger setter/getter
         myinteger=5
         print(myinteger)
-    #triggers setter/getter
+        #triggers setter/getter
         self.myinteger=5
         print(self.myinteger)
 
@@ -927,9 +948,9 @@ write:
 
 ::
 
-    # no arguments
+    # No arguments
     signal your_signal_name
-    # with arguments
+    # With arguments
     signal your_signal_name_with_args(a,b)
 
 These signals, just like regular signals, can be connected in the editor
@@ -1000,7 +1021,7 @@ an example:
     func _ready():
 
         var y = myfunc()
-        #function state saved in 'y'
+        # Function state saved in 'y'
         print("my dear")
         y.resume()
         # 'y' resumed and is now an invalid state
@@ -1027,7 +1048,7 @@ example:
     func _ready():
 
         var y = myfunc()
-        #function state saved in 'y'
+        # Function state saved in 'y'
         print( y.resume("world") )
         # 'y' resumed and is now an invalid state
 
@@ -1048,10 +1069,10 @@ signal is activated, execution will return. Here are some examples:
 
 ::
 
-    #resume execution the next frame
+    # Resume execution the next frame
     yield( get_tree(), "idle_frame" )
 
-    #resume execution when animation is done playing:
+    # Resume execution when animation is done playing:
     yield( get_node("AnimationPlayer"), "finished" )
 
 
