@@ -806,6 +806,7 @@ Restricting the flags to a certain number of named flags is also
 possible. The syntax is very similar to the enumeration syntax:
 
 ::
+
     # Set any of the given flags from the editor
     export(int, FLAGS, "Fire", "Water", "Earth", "Wind") var spell_elements = 0 
 
