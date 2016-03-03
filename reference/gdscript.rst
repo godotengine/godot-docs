@@ -7,10 +7,11 @@ Introduction
 ------------
 
 GDScript is a high level, dynamically typed programming language used to
-create content. It uses a syntax that is very similar to the Python
-language (blocks are indent-based) and its goal is to be very optimal
-and tightly integrated with the engine, allowing great flexibility for
-content creation and integration.
+create content. It uses a syntax similar to 
+`Python <https://en.wikipedia.org/wiki/Python_%28programming_language%29>`_ 
+(blocks are indent-based and many keywords are similar). Its goal is 
+to be optimized for and tightly integrated with the Godot engine, allowing 
+great flexibility for content creation and integration.
 
 History
 -------
@@ -27,29 +28,29 @@ enormous amount of code. After some experiments with
 
 The last third party scripting language that was used for shipped games
 was `Squirrel <http://squirrel-lang.org>`__, but it was dropped as well.
-At that point, it became evident that Godot would work more optimally by
-using a built-in scripting language, as the following barriers were met:
+At that point, it became evident that a custom scripting language could 
+more optimally make use of Godots particular architecture:
 
--  Godot embeds scripts in nodes, most languages are not designed with
+-  Godot embeds scripts in nodes. Most languages are not designed with
    this in mind.
--  Godot uses several built-in data types for 2D and 3D math, script
+-  Godot uses several built-in data types for 2D and 3D math. Script
    languages do not provide this, and binding them is inefficient.
 -  Godot uses threads heavily for lifting and initializing data from the
-   net or disk, script interpreters for common languages are not
+   net or disk. Script interpreters for common languages are not
    friendly to this.
 -  Godot already has a memory management model for resources, most
-   script languages provide their own, which resulted in duplicate
+   script languages provide their own, which results in duplicate
    effort and bugs.
 -  Binding code is always messy and results in several failure points,
    unexpected bugs and generally low maintainability.
 
-Finally, GDScript was written as a custom solution. The language and
-interpreter for it ended up being smaller than the binding code itself
-for Lua and Squirrel, and equally as functional. With time, having a
+The result of these considerations is *GDScript*. The language and
+interpreter for GDScript ended up being smaller than the binding code itself
+for Lua and Squirrel, while having equal functionality. With time, having a
 built-in language has proven to be a huge advantage.
 
-Example
--------
+Example of GDScript
+~~~~~~~~~~~~~~~~~~~
 
 Some people can learn better by just taking a look at the syntax, so
 here's a simple example of how GDScript looks.
@@ -114,7 +115,7 @@ here's a simple example of how GDScript looks.
         print(lv.a)
 
 If you have previous experience with statically typed languages such as
-C, C++, or C# but never used a dynamically typed one, it is advised you
+C, C++, or C# but never used a dynamically typed one before, it is advised you
 read this tutorial: :ref:`doc_gdscript_more_efficiently`.
 
 Language
