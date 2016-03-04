@@ -6,7 +6,7 @@ GDScript
 Introduction
 ------------
 
-GDScript is a high level, dynamically typed programming language used to
+*GDScript* is a high level, dynamically typed programming language used to
 create content. It uses a syntax similar to 
 `Python <https://en.wikipedia.org/wiki/Python_%28programming_language%29>`_ 
 (blocks are indent-based and many keywords are similar). Its goal is 
@@ -14,7 +14,7 @@ to be optimized for and tightly integrated with the Godot engine, allowing
 great flexibility for content creation and integration.
 
 History
--------
+^^^^^^^
 
 Initially, Godot was designed to support multiple scripting languages
 (this ability still exists today). However, only GDScript is in use
@@ -120,6 +120,10 @@ read this tutorial: :ref:`doc_gdscript_more_efficiently`.
 
 Language
 --------
+
+In the following, an overview is given to GDScript. Details, such as which 
+methods are available to arrays or other objects, should be looked up in
+the linked class descriptions. 
 
 Identifiers
 ~~~~~~~~~~~
@@ -366,6 +370,7 @@ The array can resize dynamically. Arrays are indexed starting from index ``0``.
     arr=[1, 2, 3]
     var b = arr[1] # this is 2
     arr[0] = "Hi!" # replacing value 1 with "Hi"
+    arr.append(4)  # array is now ["Hi", 2, 3, 4]
 
 GDScript Arrays are allocated linearly in memory for speed. Very
 large arrays (more than tens of thousands of elements) may however cause
@@ -430,7 +435,7 @@ Constants
 ~~~~~~~~~
 
 Constants are similar to variables, but must be constants or constant
-expressions and must be assigned on initialization.
+expressions and must be assigned on initialization. 
 
 ::
 
@@ -446,8 +451,8 @@ Functions
 ~~~~~~~~~
 
 Functions always belong to a :ref: `class <Classes>`. The scope priority for variable
-look-up is: local→class member→global. ``self`` is provided as an option
-for accessing class members, but is not always required (and should *not*
+look-up is: local → class member → global. The ``self`` variable is always available
+is provided as an option for accessing class members, but is not always required (and should *not*
 be sent as the function's first argument, unlike Python). 
 
 ::
