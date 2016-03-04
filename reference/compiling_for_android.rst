@@ -23,10 +23,11 @@ For compiling under Windows, Linux or OSX, the following is required:
 
 -  Python 2.7+ (3.0 is untested as of now).
 -  SCons build system.
--  Android SDK version 19
+-  Android SDK version 19 [Note: Please install all Tools and Extras of sdk manager]
 -  Android build tools version 19.1
 -  Android NDK
 -  Gradle
+-  OpenJDK 6 (or Oracle JDK 6) [Note: Should be able to compile with OpenJDK 7.]
 
 Setting up SCons
 ----------------
