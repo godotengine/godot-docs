@@ -52,8 +52,8 @@ be saved in utf-8 encoding and the format is as follows:
 | KEYN   | string   | string   | string   |
 +--------+----------+----------+----------+
 
-The "lang" tags must represent a language, it must be one of the `valid
-locales <locales>`__ supported by the engine. The "KEY" tags must be
+The "lang" tags must represent a language, it must be one of the :ref:`valid
+locales <doc_locales>` supported by the engine. The "KEY" tags must be
 unique and represent a string universally (they are usually in
 uppercase, to differentiate from other strings). Here's an example:
 
