@@ -98,10 +98,10 @@ Translating the project name
 
 The project name becomes the app name when exporting to different
 operating systems and platforms. To specify the project name in more
-than one language. In the project settings dialog, create a new setting
-application/name and append it the locale identifier. For example:
+than one language, create a new setting application/name in the project
+settings dialog and append the locale identifier to it. For example:
 
 .. image:: /img/localized_name.png
 
-As always, If you don't know the code of a language or zone, `check the
-list :ref:`doc_locales`.
+As always, If you don't know the code of a language or zone, :ref:`check the
+list <doc_locales>`.
