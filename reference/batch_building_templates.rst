@@ -85,15 +85,15 @@ yourself, this might be of use.
 
     scons -j 4 p=android target=release
     cp bin/libgodot.android.opt.so platform/android/java/libs/armeabi/libgodot_android.so
-    ant -s platform/android/java/build.xml release
-    cp platform/android/java/bin/Godot-release-unsigned.apk templates/android_release.apk
+    ./gradlew build
+    cp platform/android/java/build/outputs/apk/java-release-unsigned.apk templates/android_release.apk
 
     #Android Debug
 
     scons -j 4 p=android target=release_debug
     cp bin/libgodot.android.opt.debug.so platform/android/java/libs/armeabi/libgodot_android.so
-    ant -s platform/android/java/build.xml release
-    cp platform/android/java/bin/Godot-release-unsigned.apk templates/android_debug.apk
+    ./gradlew build
+    cp platform/android/java/build/outputs/apk/java-release-unsigned.apk templates/android_debug.apk
 
     # EMScripten
 
