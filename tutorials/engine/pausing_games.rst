@@ -6,13 +6,13 @@ Pausing games
 Pause?
 ------
 
-In most games, it is always desirable to, at some point, interrupt the
-game to do something else. Be it taking a break, to changing options.
+In most games it is desirable to, at some point, interrupt the
+game to do something else, such as taking a break or changing options.
 However this is not as simple as it seems. The game might be stopped,
 but it might be desirable that some menus and animations continue
 working.
 
-Implementing a fine-grained control for what can be paused (and what
+Implementing a fine-grained control for what can be paused (and what can
 not) is a lot of work, so a simple framework for pausing is provided in
 Godot.
 
@@ -59,7 +59,7 @@ So the three possible states for a node are:
 -  **Inherit**: Process depending on the state of the parent,
    grandparent, etc. The first parent that has a non-Inherit state.
 -  **Stop**: Stop the node no matter what (and children in Inherit
-   mode). Paused or not this node will not process.
+   mode). When paused this node will not process.
 -  **Process**: Process the node no matter what (and children in Inherit
    mode). Paused or not this node will process.
 
