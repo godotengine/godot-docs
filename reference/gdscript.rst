@@ -472,36 +472,31 @@ A function can ``return`` at any point. The default return value is ``null``.
 Referencing Functions
 ^^^^^^^^^^^^^^^^^^^^^
 
-To call a function on a *base class* (i.e. one extended in your current class), 
+A function in another class can be referenced as follows: 
+
+::
+
+    get_node("/root/path/to/node").function(args)
+
+
+To call a function in a *base class* (i.e. one extended in your current class), 
 prepend ``.`` to the function name:
 
 ::
 
-    .basefunc()
+    .basefunc(args)
 
-Remember that default functions like  ``_init``, and most
-notifications such as ``_enter_tree``, ``_exit_tree``, ``_process``,
-``_fixed_process``, etc. are called in all base classes automatically.
-So there is only a need to call the function explicitly when overloading
-them in some way. 
 
 Contrary to Python, functions are *not* first class objects in GDScript. This 
-means that they cannot be treated as objects and stored in variables. It also
-means that they cannot be referenced directly since they are not considered 
+means that they cannot be treated as objects and stored in variables. They 
+cannot be referenced directly since they are not considered 
 class members (this is for performance reasons).
 
-To reference a function in another class instance, one must instead use 
-the ``call`` or ``funcref`` helpers: 
+To refefence a function by name or store a function in a variable one must 
+instead use the ``call`` or ``funcref`` helpers:
 
 ::
    
-    # Will fail: 
-
-    mynode.myfunction(args) # error!
-    mynode.get("myfunction")(args) # error!
-
-    # Will work:
-    
     # Call a function by name in one step
     mynode.call("myfunction", args)  
 
@@ -509,6 +504,13 @@ the ``call`` or ``funcref`` helpers:
     var myfunc = funcref(mynode, "myfunction")
     # Call stored function reference 
     myfunc.call_func(args)
+
+
+Remember that default functions like  ``_init``, and most
+notifications such as ``_enter_tree``, ``_exit_tree``, ``_process``,
+``_fixed_process``, etc. are called in all base classes automatically.
+So there is only a need to call the function explicitly when overloading
+them in some way. 
 
 
 Static functions
