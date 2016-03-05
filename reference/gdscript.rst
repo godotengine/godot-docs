@@ -397,16 +397,21 @@ Associative container which contains values referenced by unique keys.
     var d={4:5, "a key":"a value", 28:[1,2,3]}
     d["Hi!"] = 0
     var d = {
-         somekey : 2,
-         otherkey : [2,3,4],
-         morekey : "Hello"
+         22        : "Value",
+         "somekey" : 2,
+         "otherkey" : [2,3,4],
+         "morekey" : "Hello"
          }
 
-Lua-style table syntax (using ``=`` instead of ``:``) is also supported:
+Lua-style table syntax is also supported. Lua-style uses ``=`` instead of ``:`` 
+and doesn't use quotes to mark string keys (making for slightly less to write). 
+Note however that like any GDScript identifier, keys written in this form cannot 
+start with a digit.
 
 ::
 
     var d = {
+        test22 = "Value", 
         somekey = 2,
         otherkey = [2,3,4],
         morekey = "Hello"
