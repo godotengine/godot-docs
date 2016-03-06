@@ -44,7 +44,7 @@ Typically, every object in Godot (Node, Resource, or anything else) can
 export properties, properties can be of many types (like a string,
 integer, Vector2, etc) and one of those types can be a resource. This
 means that both nodes and resources can contain resources as properties.
-To make it a litle more visual:
+To make it a little more visual:
 
 .. image:: /img/nodes_resources.png
 
