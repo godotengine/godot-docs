@@ -27,7 +27,7 @@ For compiling under Windows, Linux or OSX, the following is required:
 -  Android build tools version 19.1
 -  Android NDK
 -  Gradle
--  OpenJDK 6 (or Oracle JDK 6) [Note: Should be able to compile with OpenJDK 7.]
+-  OpenJDK 8
 
 Setting up SCons
 ----------------
