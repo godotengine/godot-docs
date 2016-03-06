@@ -10,7 +10,7 @@ Regular 2D nodes, such as :ref:`Node2D <class_Node2D>` or
 :ref:`Control <class_Control>` both inherit from
 :ref:`CanvasItem <class_CanvasItem>`, which is the base for all 2D
 nodes. CanvasItems can be arranged in trees and they will inherit
-their transform. This means that, moving the parent, the children
+their transform. This means that when moving the parent, the children
 will be moved too.
 
 These nodes are placed as direct or indirect children to a
@@ -37,7 +37,7 @@ transform. Examples of this are:
 -  **Parallax Backgrounds**: Backgrounds that move slower than the rest
    of the stage.
 -  **HUD**: Head's up display, or user interface. If the world moves,
-   the life counter, points, etc must stay static.
+   the life counter, score, etc. must stay static.
 -  **Transitions**: Effects used for transitions (fades, blends) may
    also want it to remain at a fixed location.
 
@@ -72,5 +72,5 @@ Performance
 Even though there shouldn't be any performance limitation, it is not
 advised to use excessive amount of layers to arrange drawing order of
 nodes. The most optimal way will always be arranging them by tree order.
-In the future, nodes will also have a priority or sub-layer index which
-should aid for this.
+2d nodes also have a property for controlling their drawing order
+(see :ref:`Node2D.set_z() <class_Node2D_set_z>`).
