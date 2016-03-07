@@ -14,16 +14,15 @@ the screen.
 Canvas transform
 ----------------
 
-As mentioned in the previous tutorial :ref:`doc_canvas_layers`, every
+As mentioned in the previous tutorial, :ref:`doc_canvas_layers`, every
 CanvasItem node (remember that Node2D and Control based nodes use
 CanvasItem as their common root) will reside in a *Canvas Layer*. Every
 canvas layer has a transform (translation, rotation, scale, etc.) that
 can be accessed as a :ref:`Matrix32 <class_Matrix32>`.
 
-By default, nodes are drawn in Layer 0, in the built-in canvas. To put
-nodes in a different layer, a :ref:`CanvasLayer <class_CanvasLayer>`
-node can be used. This was covered in the previous tutorial anyway, just
-refreshing.
+Also covered in the previous tutorial, nodes are drawn by default in Layer 0,
+in the built-in canvas. To put nodes in a different layer, a :ref:`CanvasLayer
+<class_CanvasLayer>` node can be used.
 
 Global canvas transform
 -----------------------
@@ -38,10 +37,11 @@ Stretch transform
 -----------------
 
 Finally, viewports have a *Stretch Transform*, which is used when
-resizing or stretching the screen. This transform is used internally by
-the :ref:`doc_multiple_resolutions`, but can also be requested to the viewport.
+resizing or stretching the screen. This transform is used internally (as
+described in :ref:`doc_multiple_resolutions`), but can also be manually set
+on each viewport.
 
-Input events received in the :ref:`Node._input_event() <class_Node__input_event>`
+Input events received in the :ref:`MainLoop._input_event() <class_MainLoop__input_event>`
 callback are multiplied by this transform, but lack the ones above. To
 convert InputEvent coordinates to local CanvasItem coordinates, the
 :ref:`CanvasItem.make_input_local() <class_CanvasItem_make_input_local>`
