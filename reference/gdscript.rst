@@ -472,14 +472,28 @@ A function can ``return`` at any point. The default return value is ``null``.
 Referencing Functions
 ^^^^^^^^^^^^^^^^^^^^^
 
-A function in another class can be referenced as follows: 
+Referencing a function in another class means retrieving 
+that class from the scene tree.
 
 ::
 
-    get_node("/root/path/to/node").function(args)
+    # absolute node path
+    get_node("/root/path/to/node").myfunction(args)
+    # relative reference
+    get_node("../node").myfunction(args)
 
+A common case is referencing a function (or variable) 
+in the class' node parent, accessible with ``get_parent``:
 
-To call a function in a *base class* (i.e. one extended in your current class), 
+::
+
+    # store parent in variable, then reference
+    var parent = get_parent()
+    parent.function(args)
+    # two parents up (etc)
+    get_parent().get_parent().function(args)
+
+To call a function in a *base class* (i.e. one ``extend``ed in your current class), 
 prepend ``.`` to the function name:
 
 ::
@@ -488,7 +502,7 @@ prepend ``.`` to the function name:
 
 
 Contrary to Python, functions are *not* first class objects in GDScript. This 
-means that they cannot be treated as objects and stored in variables. They 
+means that they cannot be treated as objects and stored in variables. Functions 
 cannot be referenced directly since they are not considered 
 class members (this is for performance reasons).
 
