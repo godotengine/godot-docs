@@ -7,7 +7,7 @@ Why?
 ----
 
 Godot has nodes to draw sprites, polygons, particles, and all sort of
-stuff. For far most cases this is enough, but not always. If something
+stuff. For most cases this is enough, but not always. If something
 desired is not supported, and before crying in fear, angst and range
 because a node to draw that-specific-something does not exist.. it would
 be good to know that it is possible to easily make any 2D node (be it
