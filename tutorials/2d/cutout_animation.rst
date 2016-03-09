@@ -10,7 +10,7 @@ Cut-out is a technique of animating in 2D where pieces of paper (or
 similar material) are cut in special shapes and laid one over the other.
 The papers are animated and photographed, frame by frame using a stop
 motion technique (more info
-`here <http://en.wikipedia.org/wiki/Cutout_animation)>`__.
+`here <http://en.wikipedia.org/wiki/Cutout_animation)>`__).
 
 With the advent of the digital age, this technique became possible using
 computers, which resulted in an increased amount of animation TV shows
@@ -38,7 +38,7 @@ unlike other tools meant for this, Godot has the following advantages:
    etc. Everything can be animated and blended.
 -  **Mix with Traditional**: AnimatedSprite allows traditional animation
    to be mixed, very useful for complex objects, such as shape of hands
-   and foot, changing face expression, etc.
+   and foot, changing facial expression, etc.
 -  **Custom Shaped Elements**: Can be created with
    :ref:`Polygon2D <class_Polygon2D>`
    allowing the mixing of UV animation, deformations, etc.
@@ -65,7 +65,7 @@ Get your assets: :download:`gbot_resources.zip </files/gbot_resources.zip>`.
 Setting up the rig
 ~~~~~~~~~~~~~~~~~~
 
-Create an empty Node2D as root of the scene, weĺl work under it:
+Create an empty Node2D as root of the scene, we will work under it:
 
 .. image:: /img/tuto_cutout1.png
 
@@ -102,12 +102,10 @@ Sprite:
 
 .. image:: /img/tuto_cutout5.png
 
-However, there is a way to do it more *visually*. Pick the object and
-move it normally. After the motion has begun and while the left mouse
-button is being held, press the "v" key *without releasing* the mouse
-button. Further motion will move the object around the pivot. This small
-tool allows adjusting the pivot easily. Finally, move the pivot to the
-right place:
+However, there is a way to do it more *visually*. While hovering over the
+desired pivot point, simply press the "v" key to move the pivot there for the
+selected Sprite. Alternately, there is a tool in the tool bar that has a
+similar function.
 
 .. image:: /img/tutovec_torso2.gif
 
@@ -124,11 +122,13 @@ simple! Or maybe not:
 
 Right. Remember your tutorials, Luke. In 2D, parent nodes appear below
 children nodes. Well, this sucks. It seems Godot does not support cutout
-rigs after all. Come back next year, maybe for 1.2.. no wait. Just
+rigs after all. Come back next year, maybe for 3.0.. no wait. Just
 Kidding! It works just fine.
 
 But how can this problem be solved? We want the whole to appear behind
-the hip and the torso. For this, we can move the nodes behind the hip:
+the hip and the torso. For this, we can move the nodes behind the hip
+(note that you can bypass this by setting the Node2D Z property, but then you
+won't learn about all this!):
 
 .. image:: /img/tuto_cutout8.png
 
