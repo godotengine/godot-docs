@@ -1,6 +1,6 @@
 .. _doc_compiling_for_web:
 
-Compiling for web export
+Compiling for the Web
 ========================
 
 .. highlight:: shell
@@ -8,7 +8,7 @@ Compiling for web export
 Requirements
 ------------
 
-To compile export templates for the web, the following is required:
+To compile export templates for the Web, the following is required:
 
 -  `Emscripten SDK <http://emscripten.org/>`__
 -  `Python 2.7+ <https://www.python.org/>`__ (3.0 is
@@ -88,8 +88,8 @@ And ``javascript_debug.zip`` for the debug template::
 The resulting files must be placed in the ``templates`` directory in your Godot
 user directory::
 
-    mv javascript_release ~/.godot/templates
-    mv javascript_debug ~/.godot/templates
+    mv javascript_release.zip ~/.godot/templates
+    mv javascript_debug.zip ~/.godot/templates
 
 If you are writing custom modules or using custom C++ code, you may want to
 configure your zip files as custom export templates. This can be done in the
