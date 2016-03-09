@@ -14,7 +14,7 @@ to be optimized for and tightly integrated with the Godot engine, allowing
 great flexibility for content creation and integration.
 
 History
-^^^^^^^
+~~~~~~~
 
 Initially, Godot was designed to support multiple scripting languages
 (this ability still exists today). However, only GDScript is in use
@@ -29,7 +29,7 @@ enormous amount of code. After some experiments with
 The last third party scripting language that was used for shipped games
 was `Squirrel <http://squirrel-lang.org>`__, but it was dropped as well.
 At that point, it became evident that a custom scripting language could 
-more optimally make use of Godots particular architecture:
+more optimally make use of Godot's particular architecture:
 
 -  Godot embeds scripts in nodes. Most languages are not designed with
    this in mind.
