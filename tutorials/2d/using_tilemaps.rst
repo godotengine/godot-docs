@@ -12,19 +12,19 @@ grid, as many times each as desired:
 
 .. image:: /img/tilemap.png
 
-Collision can also be added to the tiles, allowing for both 2D side
-scroller or top down games.
+Collisions can also be added to the tiles, allowing for both 2D side
+scrolling and top down games.
 
 Making a tileset
 ----------------
 
-To begin with, a tileset needs to be made. Here are some tiles for it.
+To begin, a tileset needs to be made. Here are some tiles for it.
 They are all in the same image because artists will often prefer this.
-Having them as separate images also works too.
+Having them as separate images also works.
 
 .. image:: /img/tileset.png
 
-Create a new project and throw the above png image inside.
+Create a new project and move the above png image into the directory.
 
 We will be creating a :ref:`TileSet <class_TileSet>`
 resource. While this resource exports properties, it's pretty difficult
@@ -39,13 +39,13 @@ the export tool!
 TileSet scene
 -------------
 
-Create a new scene with a regular node or node2d as root. For each new a
-sprite will be added. Since tiles here are 50x50, enabling snap might be
+Create a new scene with a regular node or node2d as root. For each tile,
+add a sprite as a child. Since tiles here are 50x50, enabling snap might be
 a good idea.
 
 If more than one tile is present in the source image, make sure to use
-the region property of the sprite to adjust which of the sprites is the
-source texture is being edited.
+the region property of the sprite to adjust which part of the texture is being
+used.
 
 Finally, make sure to name your sprite node correctly, this will ensure
 that, in subsequent edits to the tileset (for example, if added
@@ -57,9 +57,9 @@ where everything of relevance is:
 
 .. image:: /img/tile_example.png
 
-Continue adding all the tiles, adjust the offsets if needed (if you use
-multiple tiles in a single image) unless there is a sprite per each
-tile. Again, as always, remember that their names must be unique.
+Continue adding all the tiles, adjusting the offsets if needed (if you have
+multiple tiles in a single source image). Again, remember that their names must
+be unique.
 
 .. image:: /img/tile_example2.png
 
@@ -68,8 +68,8 @@ Collision
 
 To add collision to a tile, create a StaticBody2D child for each sprite.
 This is a static collision node. Then, as a child of the StaticBody2D,
-create a CollisionShape2D or CollisionPolygon. The later is recommended
-because it's easier to edit:
+create a CollisionShape2D or CollisionPolygon. The latter is recommended
+because it is easier to edit:
 
 .. image:: /img/tile_example3.png
 
@@ -82,8 +82,8 @@ respect to the parent sprite.
 
 .. image:: /img/tile_example4.png
 
-Keep adding collisions to tiles untile we are done. Note that BG is just
-a BG so we don't care about it.
+Keep adding collisions to tiles until we are done. Note that BG is just
+a background, so it should not have a collision.
 
 .. image:: /img/tile_example5.png
 
@@ -155,11 +155,10 @@ works. So, to avoid this situation, there are a few workarounds, try the
 ones that look better for you:
 
 -  Use a single image for each tile, this will remove all artifacts but
-   can be more cumbersome to implement, so first try the options below
-   first.
+   can be more cumbersome to implement, so try the options below first.
 -  Disable filtering for either the tileset texture or the entire image
    loader (see the :ref:`doc_managing_image_files` asset pipeline tutorial).
 -  Enable pixel snap (set: "Scene > Project Settings >
    Display/use_2d_pixel_snap" to true).
--  Viewport Scaling can often help shrinking the map (see the
+-  Viewport Scaling can often help with shrinking the map (see the
    :ref:`doc_viewports` tutorial).
