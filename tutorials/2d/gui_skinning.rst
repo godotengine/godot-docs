@@ -88,15 +88,14 @@ directly and only for a specific control by using the override API in
     var l = Label.new()
     l.add_color_override("font_color",Color(1.0,1.0,1.0))
 
-In the inline help of Godot (help tab) you can check which theme options
-are overrideable. This is not yet available in the wiki class reference,
-but will be soon.
+In the inline help of Godot (in the script tab) you can check which theme options
+are overrideable, or check the :ref:`Control <class_Control>` class reference.
 
 Customizing a control
 ---------------------
 
-If only a few controls need to be skinned. It is often not necessary to
-create a new theme. Controls offer their theme options as special kind
+If only a few controls need to be skinned, it is often not necessary to
+create a new theme. Controls offer their theme options as special kinds
 of properties. If checked, overriding will take place:
 
 .. image:: /img/themecheck.png
@@ -117,7 +116,7 @@ Following to this, save it (to, as example, mytheme.thm):
 This will create an empty theme that can later be loaded and assigned to
 controls.
 
-Example: themeing a button
+Example: theming a button
 --------------------------
 
 Take some assets (:download:`skin_assets.zip </files/skin_assets.zip>`),
