@@ -333,9 +333,9 @@ signals emitted by this node:
     area_enter_shape(area_id:int,area:Area2D,area_shape_index:int,self_shape_index:idx)
     area_exit_shape(area_id:int,area:Area2D,area_shape_index:int,self_shape_index:idx)
 
-Areas also by default receive mouse/touchscreen input, providing a
+By default, areas also receive mouse/touchscreen input, providing a
 lower-level way than controls to implement this kind of input in a game.
-Bodies support this by it's disabled by default.
+Bodies support this but it's disabled by default.
 
 In case of overlap, who receives collision information?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
