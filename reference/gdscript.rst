@@ -929,27 +929,6 @@ illustration of this:
         self.myinteger=5
         print(self.myinteger)
 
-Loading Scenes
-~~~~~~~~~~~~~~
-
-A special case of resource-loading is when loading *Scenes*. Scenes are trees of nodes that form the basis of Godot's logical structure. Scenes are explained in more detail here: :ref:`doc_instancing`. A loaded scene resource must be *instantiated* into the current (running) scene tree before it can be used. This is done by calling its ``instance`` method:
-
-::
-
-   MyScene = preload("res://scenes/Myscene.tscn")
-   myscene = MyScene.instance()
-
-Calling ``.instance`` on the scene will trigger any ``_init`` constructors. The constructor doesn't take any arguments, so use a separate configuration function if some particular information should be passed to the instanced scene.
-
-It's important to note that in the example above, ``myscene`` is *not* yet added into the current scene tree - it works as a node without parent. This means, importantly, that any ``_ready`` function within ``myscene`` has not run, and no processing/fixed_processing can take place. If that is desired, ``myscene`` must be added as a child to a node within the running tree. For example, the ``add_child`` function adds ``myscene`` as a child to the current node: 
-
-::
-
-   add_child(myscene)
-
-
-
-
 Tool mode
 ~~~~~~~~~
 
