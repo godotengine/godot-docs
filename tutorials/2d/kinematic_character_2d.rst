@@ -51,7 +51,7 @@ To manage the logic of a kinematic body or character, it is always
 advised to use fixed process, which is called the same amount of times
 per second, always. This makes physics and motion calculation work in a
 more predictable way than using regular process, which might have spikes
-or lose precision is the frame rate is too high or too low.
+or lose precision if the frame rate is too high or too low.
 
 ::
 
