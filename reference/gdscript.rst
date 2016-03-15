@@ -985,8 +985,8 @@ declared and connect it to the method of another instance:
         print("Got callback with args! a: ",a," and b: ",b)
 
     func _at_some_func():
-        instance.connect("your_signal_name",self,"callback_no_args")
-        instance.connect("your_signal_name_with_args",self,"callback_args")
+        instance.connect("your_signal_name",self,"_callback_no_args")
+        instance.connect("your_signal_name_with_args",self,"_callback_args")
 
 It is also possible to bind arguments to a signal that lacks them with
 your custom values:
@@ -994,7 +994,7 @@ your custom values:
 ::
 
     func _at_some_func():
-        instance.connect("your_signal_name_with_args",self,"callback_no_args",[22,"hello"])
+        instance.connect("your_signal_name",self,"_callback_args",[22,"hello"])
 
 This is very useful when a signal from many objects is connected to a
 single callback and the sender must be identified:
