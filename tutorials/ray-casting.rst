@@ -7,7 +7,7 @@ Introduction
 ------------
 
 One of the most common tasks in game development is casting a ray (or
-custom shaped object) and see what it hits. This enables complex
+custom shaped object) and checking what it hits. This enables complex
 behaviors, AI, etc. to take place. This tutorial will explain how to
 do this in 2D and 3D.
 
@@ -85,7 +85,7 @@ must be used, for example:
         # use global coordinates, not local to node
         var result = space_state.intersect_ray( Vector2(0,0), Vector2(50,100) )
 
-Result is a dictionary, if ray didn't hit anything, the dictionary will
+Result is a dictionary. If the ray didn't hit anything, the dictionary will
 be empty. If it did hit something it will contain collision information:
 
 ::
