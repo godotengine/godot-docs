@@ -30,7 +30,7 @@ Spatial nodes have a local transform, which is relative to the parent
 node (as long as the parent node is also **or inherits** of type
 Spatial). This transform can be accessed as a 4x3
 :ref:`Transform <class_Transform>`, or as 3 :ref:`Vector3 <class_Vector3>`
-members representing location, euler rotation (x,y and z angles) and
+members representing location, Euler rotation (x,y and z angles) and
 scale.
 
 .. image:: /img/tuto_3d2.png
@@ -102,7 +102,7 @@ Besides editing a scene, it is often common to edit the environment.
 Godot provides a :ref:`WorldEnvironment <class_WorldEnvironment>`
 node that allows changing the background color, mode (as in, put a
 skybox), and applying several types of built-in post-processing effects.
-Environments can also be overriden in the Camera.
+Environments can also be overridden in the Camera.
 
 3D viewport
 ~~~~~~~~~~~
@@ -136,7 +136,7 @@ delicate areas such as rendering or physics. So, make sure your artists
 always work in the right scale!
 
 The Y coordinate is used for "up", though for most objects that need
-alignment (like lights, cameras, capsule collider, vehicle, etc), the Z
+alignment (like lights, cameras, capsule collider, vehicle, etc.), the Z
 axis is used as a "pointing towards" direction. This convention roughly
 means that:
 
@@ -151,7 +151,7 @@ Moving objects in the 3D view is done through the manipulator gizmos.
 Each axis is represented by a color: Red, Green, Blue represent X,Y,Z
 respectively. This convention applies to the grid and other gizmos too
 (and also to the shader language, ordering of components for
-Vector3,Color,etc).
+Vector3,Color,etc.).
 
 .. image:: /img/tuto_3d5.png
 
@@ -189,7 +189,7 @@ the settings menu:
 
 .. image:: /img/tuto_3d7.png
 
-which opens this window, allowing to customize ambient light color and
+Which opens this window, allowing to customize ambient light color and
 default light direction:
 
 .. image:: /img/tuto_3d9.png
@@ -227,8 +227,8 @@ each viewport:
 Lights
 ------
 
-There is no limitation on the number of lights and types in Godot. As
-many as desired can be added (as long as performance allows). Shadow
+There is no limitation on the number of lights nor of types of lights in
+Godot. As many as desired can be added (as long as performance allows). Shadow
 maps are, however, limited. The more they are used, the less the quality
 overall.
 
