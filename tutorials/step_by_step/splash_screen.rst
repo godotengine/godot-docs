@@ -17,7 +17,7 @@ Following is a file with the assets that will be used. These can be added direct
 Setting up
 ----------
 
-Create a scene with screen resolution 800x450, and set it up like this:
+Set the display resolution to 800x450 in Project Settings, and set up a new scene like this:
 
 .. image:: /img/robisplashscene.png
 
