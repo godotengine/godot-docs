@@ -77,9 +77,10 @@ Scene setup
 This tutorial will begin by scripting a simple GUI scene. Use the add
 node dialog to create the following hierarchy, with the following nodes:
 
--  Panel
-   \* Label
-   \* Button
+- Panel
+
+  * Label
+  * Button
 
 It should look like this in the scene tree:
 
