@@ -493,7 +493,7 @@ in the class' node parent, accessible with ``get_parent``:
     # two parents up (etc)
     get_parent().get_parent().function(args)
 
-To call a function in a *base class* (i.e. one ``extend``ed in your current class), 
+To call a function in a *base class* (i.e. one ``extend``-ed in your current class),
 prepend ``.`` to the function name:
 
 ::
