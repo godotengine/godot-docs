@@ -48,7 +48,7 @@ curve applied to it.
 
 The color space where images created in computer monitors exist is
 called "sRGB". Every visual content that people has on their computers
-or downloads from the internet (such as pictures, movies, porn, etc)
+or downloads from the internet (such as pictures, movies, etc)
 is in this colorspace.
 
 .. image:: /img/hdr_gamma.png
