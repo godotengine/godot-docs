@@ -56,7 +56,7 @@ in the texture or parameter:
 On top
 ~~~~~~
 
-When this flag is turned on, te object will be drawn after everything
+When this flag is turned on, the object will be drawn after everything
 else has been drawn and without a depth test. This is generally only
 useful for HUD effects or gizmos.
 
@@ -76,7 +76,7 @@ Blend mode
 ~~~~~~~~~~
 
 Objects are usually blended in Mix mode. Other blend modes (Add and Sub)
-exist for special cases (usually particle effects, light rays, etc) but
+exist for special cases (usually particle effects, light rays, etc.) but
 materials can be set to them:
 
 .. image:: /img/fixed_material_blend.png
@@ -97,11 +97,11 @@ sorted by depth). This behavior can be changed here. The options are:
    This often results in glitches like the one in the first image (which
    is why it's not the default).
 -  **Opaque Only**: Draw objects with depth only when they are opaque,
-   and do not se depth for alpha. This is the default because it's fast,
+   and do not set depth for alpha. This is the default because it's fast,
    but it's not the most correct setting. Objects with transparency that
-   self-intersect will always look wrong, specially those that mix
-   opaque and transparent areas, like grass tree leaves, etc. Objects
-   with transparency also can't cast shadows, this is evident i the
+   self-intersect will always look wrong, especially those that mix
+   opaque and transparent areas, like grass, tree leaves, etc. Objects
+   with transparency also can't cast shadows, this is evident in the
    second image.
 -  **Alpha Pre-Pass**: The same as above, but a depth pass is performed
    for the opaque areas of objects with transparency. This makes objects
