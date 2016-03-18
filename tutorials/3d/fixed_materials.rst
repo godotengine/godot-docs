@@ -104,7 +104,7 @@ Regular shader materials allow custom lighting code. Fixed materials
 come with four predefined shader types:
 
 -  **Lambert**: The standard diffuse light, where the amount of light is
-   proportional to the angle with the light emissor.
+   proportional to the angle from the light emitter.
 -  **Wrap**: A variation on Lambert, where the "coverage" of the light
    can be changed. This is useful for many types of materials such as
    wood, clay, hair, etc.
@@ -127,8 +127,8 @@ added together, here's an example of what detail textures are for:
 Normal depth
 ~~~~~~~~~~~~
 
-Normal depth controls the inensity of the normal-mapping as well as the
-direction. On 1 (the default) normalmapping applies normaly, on -1 the
+Normal depth controls the intensity of the normal-mapping as well as the
+direction. On 1 (the default) normalmapping applies normally, on -1 the
 map is inverted and on 0 is disabled. Intermediate or greater values are
 accepted. Here's how it's supposed to look:
 
@@ -147,7 +147,7 @@ Blend mode
 ~~~~~~~~~~
 
 Objects are usually blended in Mix mode. Other blend modes (Add and Sub)
-exist for special cases (usually particle effects, light rays, etc) but
+exist for special cases (usually particle effects, light rays, etc.) but
 materials can be set to them:
 
 .. image:: /img/fixed_material_blend.png
