@@ -125,7 +125,7 @@ children nodes. Well, this sucks. It seems Godot does not support cutout
 rigs after all. Come back next year, maybe for 3.0.. no wait. Just
 Kidding! It works just fine.
 
-But how can this problem be solved? We want the whole to appear behind
+But how can this problem be solved? We want the left arm to appear behind
 the hip and the torso. For this, we can move the nodes behind the hip
 (note that you can bypass this by setting the Node2D Z property, but then you
 won't learn about all this!):
