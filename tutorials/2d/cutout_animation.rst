@@ -43,7 +43,7 @@ unlike other tools meant for this, Godot has the following advantages:
    :ref:`Polygon2D <class_Polygon2D>`
    allowing the mixing of UV animation, deformations, etc.
 -  **Particle Systems**: Can also be mixed with the traditional
-   animation hierarchy, useful for magic effecs, jetpacks, etc.
+   animation hierarchy, useful for magic effects, jetpacks, etc.
 -  **Custom Colliders**: Set colliders and influence areas in different
    parts of the skeletons, great for bosses, fighting games, etc.
 -  **Animation Tree**: Allows complex combinations and blendings of
