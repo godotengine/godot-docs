@@ -150,7 +150,7 @@ remote_hand_l and link them to the actual sprites:
 
 .. image:: /img/tuto_cutout9.png
 
-Moving the remote transform nodes will move the sprites, allowing to
+Moving the remote transform nodes will move the sprites, allowing you to
 easily animate and pose the character:
 
 .. image:: /img/tutovec_torso4.gif
