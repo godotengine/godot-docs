@@ -80,7 +80,7 @@ create a child sprite and load the torso, later accommodate it properly:
 
 .. image:: /img/tuto_cutout3.png
 
-This looks good. Let's try if our hierarchy works as a skeleton by
+This looks good. Let's see if our hierarchy works as a skeleton by
 rotating the torso:
 
 .. image:: /img/tutovec_torso1.gif
