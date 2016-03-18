@@ -43,7 +43,7 @@ unlike other tools meant for this, Godot has the following advantages:
    :ref:`Polygon2D <class_Polygon2D>`
    allowing the mixing of UV animation, deformations, etc.
 -  **Particle Systems**: Can also be mixed with the traditional
-   animation hierarchy, useful for magic effecs, jetpacks, etc.
+   animation hierarchy, useful for magic effects, jetpacks, etc.
 -  **Custom Colliders**: Set colliders and influence areas in different
    parts of the skeletons, great for bosses, fighting games, etc.
 -  **Animation Tree**: Allows complex combinations and blendings of
@@ -80,7 +80,7 @@ create a child sprite and load the torso, later accommodate it properly:
 
 .. image:: /img/tuto_cutout3.png
 
-This looks good. Let's try if our hierarchy works as a skeleton by
+This looks good. Let's see if our hierarchy works as a skeleton by
 rotating the torso:
 
 .. image:: /img/tutovec_torso1.gif
@@ -125,7 +125,7 @@ children nodes. Well, this sucks. It seems Godot does not support cutout
 rigs after all. Come back next year, maybe for 3.0.. no wait. Just
 Kidding! It works just fine.
 
-But how can this problem be solved? We want the whole to appear behind
+But how can this problem be solved? We want the left arm to appear behind
 the hip and the torso. For this, we can move the nodes behind the hip
 (note that you can bypass this by setting the Node2D Z property, but then you
 won't learn about all this!):
@@ -140,7 +140,7 @@ RemoteTransform2D node
 
 Godot provides a special node, :ref:`RemoteTransform2D <class_RemoteTransform2D>`.
 This node will transform nodes that are sitting somewhere else in the
-hierarchy, by copying it's transform to the remote node.
+hierarchy, by applying the transform to the remote nodes.
 
 This enables to have a visibility order independent from the
 hierarchy.
@@ -150,7 +150,7 @@ remote_hand_l and link them to the actual sprites:
 
 .. image:: /img/tuto_cutout9.png
 
-Moving the remote transform nodes will move the sprites, allowing to
+Moving the remote transform nodes will move the sprites, allowing you to
 easily animate and pose the character:
 
 .. image:: /img/tutovec_torso4.gif
@@ -163,8 +163,8 @@ parts. The resulting scene should look similar to this:
 
 .. image:: /img/tuto_cutout10.png
 
-The resulting rig should be easy to animate, by selecting the nodes and
-rotating them you can animate forward kinematic (FK) efficiently.
+The resulting rig will be easy to animate. By selecting the nodes and
+rotating them you can animate forward kinematics (FK) efficiently.
 
 For simple objects and rigs this is fine, however the following problems
 are common:
@@ -179,9 +179,11 @@ To solve these problems, Godot supports a simple method of skeletons.
 Skeletons
 ~~~~~~~~~
 
-Godot *does not really* support actual skeletons. What exists is a
-helper to create "bones" between nodes. This is enough for most cases,
+Godot doesn't actually support *true* Skeketons, but it does feature a
+helper to create "bones" between nodes. This is enough for most cases, 
 but the way it works is not completely obvious.
+
+
 
 As an example, let's turn the right arm into a skeleton. To create
 skeletons, a chain of nodes must be selected from top to bottom:
@@ -242,20 +244,15 @@ chains. IK chains allow for more natural control of extremities.
 IK chains
 ~~~~~~~~~
 
-To add in animation, IK chains are a powerful tool. Imagine you want to
-pose a foot in a specific position in the ground. Moving the foot
-involves also moving the rest of the leg bones. Each motion of the foot
-involves rotating several other bones. This is quite complex and leads
-to imprecise results.
+IK chains are a powerful animation tool. Imagine you want to pose a character's foot in a specific position on the ground. Without IK chains, each motion of the foot would require rotating and positioning several other bones. This would be quite complex and lead to imprecise results.
 
-So, what if we could just move the foot and let the rest of the leg
-accommodate to the new foot position?
+What if we could move the foot and let the rest of the leg self-adjust?
 
 This type of posing is called IK (Inverse Kinematic).
 
 To create an IK chain, simply select a chain of bones from endpoint to
 the base for the chain. For example, to create an IK chain for the right
-leg select the following:
+leg, select the following:
 
 .. image:: /img/tuto_cutout17.png
 
