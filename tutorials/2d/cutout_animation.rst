@@ -140,7 +140,7 @@ RemoteTransform2D node
 
 Godot provides a special node, :ref:`RemoteTransform2D <class_RemoteTransform2D>`.
 This node will transform nodes that are sitting somewhere else in the
-hierarchy, by copying it's transform to the remote node.
+hierarchy, by applying the transform to the remote nodes.
 
 This enables to have a visibility order independent from the
 hierarchy.
