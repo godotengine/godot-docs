@@ -244,20 +244,15 @@ chains. IK chains allow for more natural control of extremities.
 IK chains
 ~~~~~~~~~
 
-To add in animation, IK chains are a powerful tool. Imagine you want to
-pose a foot in a specific position in the ground. Moving the foot
-involves also moving the rest of the leg bones. Each motion of the foot
-involves rotating several other bones. This is quite complex and leads
-to imprecise results.
+IK chains are a powerful animation tool. Imagine you want to pose a character's foot in a specific position on the ground. Without IK chains, each motion of the foot would require rotating and positioning several other bones. This would be quite complex and lead to imprecise results.
 
-So, what if we could just move the foot and let the rest of the leg
-accommodate to the new foot position?
+What if we could move the foot and let the rest of the leg self-adjust?
 
 This type of posing is called IK (Inverse Kinematic).
 
 To create an IK chain, simply select a chain of bones from endpoint to
 the base for the chain. For example, to create an IK chain for the right
-leg select the following:
+leg, select the following:
 
 .. image:: /img/tuto_cutout17.png
 
