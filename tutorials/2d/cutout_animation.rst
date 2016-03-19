@@ -179,9 +179,11 @@ To solve these problems, Godot supports a simple method of skeletons.
 Skeletons
 ~~~~~~~~~
 
-Godot *does not really* support actual skeletons. What exists is a
-helper to create "bones" between nodes. This is enough for most cases,
+Godot doesn't actually support *true* Skeketons, but it does feature a
+helper to create "bones" between nodes. This is enough for most cases, 
 but the way it works is not completely obvious.
+
+
 
 As an example, let's turn the right arm into a skeleton. To create
 skeletons, a chain of nodes must be selected from top to bottom:
