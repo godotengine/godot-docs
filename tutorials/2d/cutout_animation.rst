@@ -163,8 +163,8 @@ parts. The resulting scene should look similar to this:
 
 .. image:: /img/tuto_cutout10.png
 
-The resulting rig should be easy to animate, by selecting the nodes and
-rotating them you can animate forward kinematic (FK) efficiently.
+The resulting rig will be easy to animate. By selecting the nodes and
+rotating them you can animate forward kinematics (FK) efficiently.
 
 For simple objects and rigs this is fine, however the following problems
 are common:
