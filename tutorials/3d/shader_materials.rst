@@ -8,9 +8,9 @@ Introduction
 
 For the most common cases, :ref:`doc_fixed_materials` are enough to create the
 desired textures or look and feel. Shader materials are a step beyond
-that adds a huge amount of flexibility. With them, it is possible to:
+that, adding a huge amount of flexibility. With them, it is possible to:
 
--  Create procedural texures.
+-  Create procedural textures.
 -  Create complex texture blendings.
 -  Create animated materials, or materials that change with time.
 -  Create refractive effects or other advanced effects.
@@ -22,14 +22,14 @@ Traditionally, most engines will ask you to learn GLSL, HLSL or CG,
 which are pretty complex for the skillset of most artists. Godot uses a
 simplified version of a shader language that will detect errors as you
 type, so you can see your edited shaders in real-time. Additionally, it
-is possible to edit shaders using a visual graph editor (NOTE: Currently
-disabled! work in progress!).
+is possible to edit shaders using a visual, node-based graph editor.
 
 Creating a ShaderMaterial
 -------------------------
 
 Create a new ShaderMaterial in some object of your choice. Go to the
-"Shader" property, then create a new "Shader":
+"Shader" property, then create a new "MaterialShader" (use
+"MaterialShaderGraph" for access to the visual graph editor):
 
 .. image:: /img/shader_material_create.png
 
@@ -39,7 +39,7 @@ Edit the newly created shader, and the shader editor will open:
 
 There are three code tabs open, the first is for the vertex shader, the
 second for the fragment and the third for the lighting. The shader
-language is documented in it's :ref:`doc_shading_language` so a small example will be
+language is documented in :ref:`doc_shading_language` so a small example will be
 presented next.
 
 Create a very simple fragment shader that writes a color:
