@@ -135,9 +135,6 @@ exists, but can be checked with the _notification callback:
        elif (what==NOTIFICATION_VISIBILITY_CHANGED):
           pass # control became visible/invisible
           # check new status with is_visible()
-       elif (what==NOTIFICATION_THEME_CHANGED):
-          pass # theme used to draw the control changed
-          # update and redraw is recommended if using a theme
        elif (what==NOTIFICATION_RESIZED):
           pass # control changed size, check new size
           # with get_size()
