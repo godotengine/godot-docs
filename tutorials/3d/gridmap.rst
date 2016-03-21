@@ -60,6 +60,6 @@ Ta Da.
 Reminder
 ------------------------------
 
--Beware of the scale of the meshes, if you are not using uniform meshes.
+- Beware of the scale of the meshes, if you are not using uniform meshes.
 
--There are many ways to make use of the Gridmap, be creative.
+- There are many ways to make use of the Gridmap, be creative.
