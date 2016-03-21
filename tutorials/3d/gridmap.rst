@@ -21,7 +21,7 @@ Open a new scene and create a root node(this is important, without the root node
 
 .. image:: /img/mesh_meshlib.png
 
-If you don't need to apply physics to the building blocks. That's all you need to do. Usually you will need to add physics, let's try do add it.
+If you don't need to apply physics to the building blocks. That's all you need to do. Usually you will need to add physics, let's try to add it.
 
 Collision
 ---------
