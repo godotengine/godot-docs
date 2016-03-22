@@ -24,7 +24,7 @@ Light nodes
 
 As mentioned before, there are three types of light nodes: Directional,
 Ambient and Spot. Each has different uses and will be described in
-detail below, but firs let's take a look at the common parameters for
+detail below, but first let's take a look at the common parameters for
 lights:
 
 .. image:: /img/light_params.png
