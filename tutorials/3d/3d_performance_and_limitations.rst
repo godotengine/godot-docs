@@ -83,7 +83,7 @@ originally only rendered triangles, so all the vertices:
 
 Nowadays, all this is handled inside the GPU, so the performance is
 extremely high. 3D artists usually have the wrong feeling about
-polycount performance because 3D DCCs (such as Blender, Max, etc) need
+polycount performance because 3D DCCs (such as Blender, Max, etc.) need
 to keep geometry in CPU memory in order for it to be edited, reducing
 actual performance. Truth is, a model rendered by a 3D engine is much
 more optimal than how 3D DCCs display them.
@@ -95,7 +95,7 @@ to be a lot more power efficient.
 
 To be more efficient, mobile GPUs attempt to avoid *overdraw*. This
 means, the same pixel on the screen being rendered (as in, with lighting
-calculation, etc) more than once. Imagine a town with several buildings,
+calculation, etc.) more than once. Imagine a town with several buildings,
 GPUs don't really know what is visible and what is hidden until they
 draw it. A house might be drawn and then another house in front of it
 (rendering happened twice for the same pixel!). PC GPUs normally don't
@@ -105,7 +105,7 @@ consumption).
 
 On mobile, pulling more power is not an option, so a technique called
 "Tile Based Rendering" is used (almost every mobile hardware uses a
-variant of it), which divide the screen into a grid. Each cell keps the
+variant of it), which divide the screen into a grid. Each cell keeps the
 list of triangles drawn to it and sorts them by depth to minimize
 *overdraw*. This technique improves performance and reduces power
 consumption, but takes a toll on vertex performance. As a result, less
@@ -120,7 +120,7 @@ order to display the frame).
 
 To make it short, do not worry about vertex count so much on mobile, but
 avoid concentration of vertices in small parts of the screen. If, for
-example, a character, NPC, vehicle, etc is far away (so it looks tiny),
+example, a character, NPC, vehicle, etc. is far away (so it looks tiny),
 use a smaller level of detail (LOD) model instead.
 
 An extra situation where vertex cost must be considered is objects that
