@@ -3,9 +3,9 @@
 Working with 3D skeletons
 =========================
 
-Godot 3D skeleton support is currently quite rudimentary. Skeleton node
-and class were disigned mainly to support importing skeletal animations
-as set of transformation matrices.
+Godot 3D skeleton support is currently quite rudimentary. The
+:ref:`class_Skeleton` node and class were designed mainly to support importing
+skeletal animations as a set of transformation matrices.
 
 Skeleton node
 -------------
@@ -16,19 +16,19 @@ Transforms within skeleton are relative to where Skeleton is. But you
 can specify Skeleton node in every MeshInstance.
 
 Being obvious, Skeleton is intended to deform meshes, and consists of
-structures called "bones". Each "bone" is represented as Transform,
-which is applied to a group of vertices within a mesh. You can directly
-control a group of vertices from Godot. For that please reference
-MeshDataTool class, method set_vertex_bones. This class is very
-powerful but not documented.
+structures called "bones". Each "bone" is represented as Transform, which is
+applied to a group of vertices within a mesh. You can directly control a group
+of vertices from Godot. For that please reference :ref:`class_MeshDataTool`
+class, method :ref:`set_vertex_bones <class_MeshDataTool_set_vertex_bones>`.
+This class is very powerful.
 
 The "bones" are organized in hierarchy, every bone, except for root
 bone(s) have parent. Every bone have associated name you can use to
-refer to it (e.g. "root" or "hand.L", etc). Also bones are all numbered,
+refer to it (e.g. "root" or "hand.L", etc.). Also bones are all numbered,
 these numbers are bone IDs. Bone parents are referred by their numbered
 IDs.
 
-For the rest of the article we consider the following scene
+For the rest of the article we consider the following scene:
 
 ::
 
@@ -37,7 +37,7 @@ For the rest of the article we consider the following scene
     ==== mesh (MeshInstance)
 
 This scene is imported from Blender. It contains arm mesh with 2 bones -
-upperarm and lowerarm, with lowerarm parented to upperarm
+upperarm and lowerarm, with lowerarm parented to upperarm.
 
 Skeleton class
 --------------
@@ -111,7 +111,7 @@ transforms - local, global, custom.
         print("bone transform: ", t)
 
 So we see 3x4 matrix there, with first column of 1s. What can we do
-about that? it is Transform, so we can do everything we can do with
+about that? It is a Transform, so we can do everything we can do with
 Transform, basically translate, rotate and scale. Also we can multiply
 transforms to have complex transforms. Remember, "bones" in Godot are
 just Transforms over a group of vertices. Also we can copy Transforms of
@@ -144,12 +144,12 @@ translate - try these on your own and see results.
 What we used now was local pose. By default all bones are not modified.
 But this Transform tells us nothing about relationship between bones.
 This information is needed for quite a number of tasks. How can we get
-it? here comes global transform:
+it? Here comes global transform:
 
 **To find bone global Transform we use get_bone_global_pose(id)
 function**
 
-We will find global Transform for lowerarm bone
+We will find global Transform for lowerarm bone:
 
 ::
 
@@ -221,9 +221,7 @@ Create the following node tree:
     + Camera
 
 Set up Camera so that arm is properly visible. Rotate DirectionLight
-so that arm is properly lit
-
-while in scene play mode.
+so that arm is properly lit while in scene play mode.
 
 Now we need to create new script under main:
 
@@ -234,7 +232,7 @@ First we setup parameters:
     var lowerarm_angle = Vector3()
     var upperarm_angle = Vector3()
 
-Now we need to setup way to change them. Just lets use keys for that.
+Now we need to setup a way to change them. Let us use keys for that.
 
 Please create 7 actions under project settings:
 
