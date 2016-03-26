@@ -17,7 +17,7 @@ Talking in Godot terminology, the task we want to solve here is position
 our 2 angles we talked about above so, that the tip of lowerarm bone is
 as close to target point, which is set by target Vector3() as possible
 using only rotations. This task is very calculation-intensive and never
-resolved by analytical equation solve. lso, it is underconstrained
+resolved by analytical equation solve. So, it is an underconstrained
 problem, which means there is unlimited number of solutions to the
 equation.
 
@@ -35,14 +35,14 @@ base, bone tip and target.
 
 The rotation axis is easily calculated using cross-product of bone
 vector and target vector. The rotation in this case will be always in
-positive direction. If t is Transform which we get from
+positive direction. If t is the Transform which we get from
 get_bone_global_pose() function, the bone vector is
 
 ::
 
     t.basis[2]
 
-so we have all information here to execute our algorithm.
+So we have all information here to execute our algorithm.
 
 In game dev it is common to resolve this problem by iteratively closing
 to the desired location, adding/subtracting small numbers to the angles
@@ -50,14 +50,14 @@ until the distance change achieved is less than some small error value.
 Sounds easy enough, but there are Godot problems we need to resolve
 there to achieve our goal.
 
--  **how to find coordinates of tip of the bone?**
--  **how to find vector from bone base to target?**
+-  **How to find coordinates of the tip of the bone?**
+-  **How to find vector from bone base to target?**
 
-For our goal (tip of the bone is within area of target), we need to know
-where is a tip of our IK bone. As we don't use leaf bone as IK bone, we
-know, that coordinate of tip is the base of child bone. But all these
-calculations are quite depend on skeleton structure. You can use
-pre-calculated constant as well. You can add extra bone for the tip of
+For our goal (tip of the bone moved within area of target), we need to know
+where the tip of our IK bone is. As we don't use a leaf bone as IK bone, we
+know the coordinate of the bone base is the tip of parent bone. All these
+calculations are quite dependant on the skeleton's structure. You can use
+pre-calculated constants as well. You can add an extra bone for the tip of
 IK and calculate using that.
 
 Implementation
@@ -72,7 +72,7 @@ We will just use exported variable for bone length to be easy.
     export var IK_error = 0.1
 
 Now, we need to apply our transformations from IK bone to the base of
-chain. So we apply rotation to IK bone then move from our IK bone upt to
+chain. So we apply rotation to IK bone then move from our IK bone up to
 its parent, then apply rotation again, then move to the parent of
 current bone again, etc. So we need to limit our chain somewhat.
 
