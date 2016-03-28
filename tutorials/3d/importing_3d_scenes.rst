@@ -7,13 +7,13 @@ Introduction
 ------------
 
 Most game engines just import 3D objects, which may contain skeletons or
-animations and then all further work is done in the engine UI, like
+animations, and then all further work is done in the engine UI, like
 object placement, full scene animations, etc. In Godot, given the node
-system is very similar to how 3D DCC (Such as Maya, 3DS Max or Blender)
-tools work, full 3D scenes can be imported in all their glory.
-Additionally, by using a simple language tag system, it is possible to
-specify that objects are imported as several things, such as collidable,
-rooms and portals, vehicles and wheels, LOD distances, billboards, etc.
+system is very similar to how 3D DCC tools (such as Maya, 3DS Max or Blender)
+work, full 3D scenes can be imported in all their glory. Additionally, by using
+a simple language tag system, it is possible to specify that objects are
+imported as several things, such as collidable, rooms and portals, vehicles
+and wheels, LOD distances, billboards, etc.
 
 This allows for some interesting features:
 
@@ -95,10 +95,10 @@ names when you export!
 
 The textures will be copied and converted. Textures in 3D applications
 are usually just PNG or JPG files. Godot will convert them to video
-memory texture compression format (s3tc, pvrtc, ericsson, etc) by
+memory texture compression format (s3tc, pvrtc, ericsson, etc.) by
 default to improve performance and save resources.
 
-Since the original textures, 3d file and textues are usually not needed,
+Since the original textures, 3D file and textures are usually not needed,
 it's recommended to keep them outside the project. For some hints on
 how to do this the best way, you can check the :ref:`doc_project_organization`
 tutorial.
@@ -106,7 +106,7 @@ tutorial.
 Two options for textures are provided. They can be copied to the same
 place as the scene, or they can be copied to a common path (configurable
 in the project settings). If you choose this, make sure no two textures
-are names the same.
+are named the same.
 
 3D rigging tips
 ~~~~~~~~~~~~~~~
@@ -147,7 +147,7 @@ imported, Godot will convert them to what they are meant to be.
 
 **Note:** Maya users must use “_" (underscore) instead of "-" (minus).
 
-Here is an example of how a scene in the 3D dcc looks (using blender),
+Here is an example of how a scene in the 3D DCC looks (using Blender),
 and how it is imported to Godot:
 
 .. image:: /img/3dimp_blender.png
@@ -208,19 +208,20 @@ changes. This option must be used together with the SRGB option in
 `WorldEnvironment <class_worldenvironment>`__. The texture import
 options also have the option to do this conversion, but if this one is
 turned on, conversion will always be done to diffuse textures (usually
-what is desired). For more information, read the :ref:`doc_high_dynamic_range`.
+what is desired). For more information, read the :ref:`doc_high_dynamic_range`
+tutorial.
 
 Set alpha in materials (-alpha)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When working with most 3D dccs, its pretty obvious when a texture is
+When working with most 3D DCCs, its pretty obvious when a texture is
 transparent and has opacity and this rarely affects the workflow or
 final rendering. However, when dealing with real-time rendering,
 materials with alpha blending are usually less optimal to draw, so they
 must be explicitly marked as such.
 
 Originally Godot detected this based on whether if the source texture
-had an alpha channel, but most image manipulation apps like Photoshop or
+had an alpha channel, but most image manipulation applications like Photoshop or
 Gimp will export this channel anyway even if not used. Code was added
 later to check manually if there really was any transparency in the
 texture, but artists will anyway and very often lay uvmaps into opaque
@@ -229,9 +230,10 @@ transparent, making this detection worthless.
 
 Finally, it was decided that it's best to import everything as opaque
 and leave artists to fix materials that need transparency when it's
-obvious that they are not looking right (see the [Fixed Ma
+obvious that they are not looking right (see the :ref:`doc_materials`
+tutorial).
 
-As a helper, since every 3D dcc allows naming the materials and keeping
+As a helper, since every 3D DCC allows naming the materials and keeping
 their name upon export, the (-alpha) modifier in their name will hint
 the 3D scene importer in Godot that this material will use the alpha
 channel for transparency.
@@ -269,9 +271,9 @@ portals).
 .. For more information about rooms/portals, look at the [[Portals and Rooms]] tutorial.
 
 There are two ways in which this modifier can be used. The first is
-using a Dummy/Empty node in the 3D app with the "-room" tag. For this to
+using a Dummy/Empty node in the 3D application with the "-room" tag. For this to
 work, the "interior" of the room must be closed (geometry of the
-childrens should contain walls, roof, floor, etc and the only holes to
+children should contain walls, roof, floor, etc. and the only holes to
 the outside should be covered with portals). The importer will then
 create a simplified version of the geometry for the room.
 
@@ -300,7 +302,7 @@ are:
 -  It should lay on the surface of the room (this doesn't need to be
    super exact, just make it as close as you can by eye and Godot will
    adjust it)
--  It must be a flat, convex shape, any flat and convex shape is ok, no
+-  It must be a flat, convex shape, any flat and convex shape is okay, no
    matter the axis or size.
 -  Normals for the flat shape faces must **all point towards the
    OUTSIDE** of the room.
@@ -342,8 +344,8 @@ animations are fast to process, but can use considerable amounts of
 memory.
 
 Because of this, the "Optimize" option exists but, in some cases, this
-option might get to break an animation, so make it sure to disable if
-you see this.
+option might break an animation, so make it sure to disable it if
+you notice any issues.
 
 Some animations are meant to be cycled (like walk animations) if this is
 the case, animation names that end in "-cycle" or "-loop" are
@@ -360,11 +362,11 @@ Create a script that basically looks like this:
 
 ::
 
-    tool #needed so it runs in editor
+    tool # needed so it runs in editor
     extends EditorScenePostImport
 
     func post_import(scene):
-      #do your stuff here
+      # do your stuff here
       pass # scene contains the imported scene starting from the root node
 
 The post-import function takes the imported scene as parameter (the
@@ -405,7 +407,7 @@ Finally, the following will be updated:
    transform will be combined.
 
 In general, if the user deletes anything from the imported scene (node,
-mesh, material, etc), updating the source asset will restore what was
+mesh, material, etc.), updating the source asset will restore what was
 deleted. This is a good way to revert local changes to anything. If you
 really don't want a node anymore in the scene, either delete it from
 both places or add the "-noimp" tag to it in the source asset.
@@ -414,5 +416,5 @@ Fresh re-import
 ^^^^^^^^^^^^^^^
 
 It can also happen that the source asset changed beyond recognition and
-a full fresh re-import is desired. If so, simply re-open the 3d scene
+a full fresh re-import is desired. If so, simply re-open the 3D scene
 import dialog from the Import -> Re-Import menu and perform re-import.
