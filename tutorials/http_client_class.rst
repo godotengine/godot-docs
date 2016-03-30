@@ -27,9 +27,8 @@ It will connect and fetch a website.
         var err = http.connect("www.php.net",80) # Connect to host/port
         assert(err==OK) # Make sure connection was OK
 
-
+        # Wait until resolved and connected
         while( http.get_status()==HTTPClient.STATUS_CONNECTING or http.get_status()==HTTPClient.STATUS_RESOLVING):
-                    # Wait until resolved and connected
             http.poll()
             print("Connecting..")
             OS.delay_msec(500)
