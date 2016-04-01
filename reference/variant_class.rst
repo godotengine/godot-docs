@@ -37,7 +37,7 @@ of C++ with little effort. Become a friend of Variant today.
 References:
 ~~~~~~~~~~~
 
--  `core/variant.h <https://github.com/godotengine/godotengine/godot/blob/master/core/variant.h>`__
+-  `core/variant.h <https://github.com/godotengine/godot/blob/master/core/variant.h>`__
 
 Dictionary and Array
 --------------------
