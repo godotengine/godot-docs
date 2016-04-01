@@ -11,8 +11,7 @@ Requirements
 ------------
 
 -  Download XCode for iOS
--  Download the export templates:
-   http://www.godotengine.org/projects/godot-engine/documents
+-  Download the export templates: https://godotengine.org/download
 -  Since there is no automatic deployer yet, unzip export_templates.tpz
    manually and extract GodotiOSXCode.zip from it.
 
