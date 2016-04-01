@@ -138,7 +138,7 @@ numbers, also named **scalars**.
 
 ::
 
-    # Multiplication of vector by scalar
+    # multiplication of vector by scalar
     var c = a*2.0
     # will result in c vector, with value (4,10)
 
@@ -156,10 +156,8 @@ Perpendicular vectors
 ~~~~~~~~~~~~~~~~~~~~~
 
 Rotating a 2D vector 90° degrees to either side, left or right, is
-really easy, just swap x and y, then
-
-negate either x or y (direction of rotation depends on which is
-negated).
+really easy, just swap x and y, then negate either x or y (direction of
+rotation depends on which is negated).
 
 .. image:: /img/tutovec15.png
 
@@ -247,7 +245,7 @@ much the same:
 
     var s = a.x*b.x + a.y*b.y + a.z*b.z
 
-I know, it's totally meaningless! you can even do it with a built-in
+I know, it's totally meaningless! You can even do it with a built-in
 function:
 
 ::
@@ -273,7 +271,7 @@ At this point, this tutorial will take a sharp turn and focus on what
 makes the dot product useful. This is, **why** it is useful. We will
 focus one by one in the use cases for the dot product, with real-life
 applications. No more formulas that don't make any sense. Formulas will
-make sense *once you learn* why do they exist for.
+make sense *once you learn* what they are useful for.
 
 Siding
 ------
@@ -415,7 +413,7 @@ popular belief) you can also use their math in 2D:
 
 Unit vectors that are perpendicular to a surface (so, they describe the
 orientation of the surface) are called **unit normal vectors**. Though,
-usually they are just abbreviated as \*normalsÄ. Normals appear in
+usually they are just abbreviated as \*normals. Normals appear in
 planes, 3D geometry (to determine where each face or vertex is siding),
 etc. A **normal** *is* a **unit vector**, but it's called *normal*
 because of it's usage. (Just like we call Origin to (0,0)!).
@@ -469,7 +467,7 @@ built-in type that handles this.
 
 Basically, N and D can represent any plane in space, be it for 2D or 3D
 (depending on the amount of dimensions of N) and the math is the same
-for both. It's the same as before, but D id the distance from the origin
+for both. It's the same as before, but D is the distance from the origin
 to the plane, travelling in N direction. As an example, imagine you want
 to reach a point in the plane, you will just do:
 
@@ -486,10 +484,16 @@ the plane, we do the same but adjusting for distance:
 
     var distance = N.dot(point) - D
 
+The same thing, using a built-in function:
+
+::
+
+    var distance = plane.distance_to(point)
+
 This will, again, return either a positive or negative distance.
 
 Flipping the polarity of the plane is also very simple, just negate both
-N and D. this will result in a plane in the same position, but with
+N and D. This will result in a plane in the same position, but with
 inverted negative and positive half spaces:
 
 ::
@@ -497,7 +501,7 @@ inverted negative and positive half spaces:
     N = -N
     D = -D
 
-Of course, Godot implements this operator in :ref:`Plane <class_Plane>`,
+Of course, Godot also implements this operator in :ref:`Plane <class_Plane>`,
 so doing:
 
 ::
@@ -608,13 +612,13 @@ Code should be something like this:
     for p in planes_of_A:
         var all_out = true
         for v in points_of_B:
-            if (p.distance_to(v) < 0): 
+            if (p.distance_to(v) < 0):
                 all_out = false
                 break
 
         if (all_out):
             # a separating plane was found
-            # do not continue testing 
+            # do not continue testing
             overlapping = false
             break
 
@@ -624,7 +628,7 @@ Code should be something like this:
         for p in planes_of_B:
             var all_out = true
             for v in points_of_A:
-                if (p.distance_to(v) < 0): 
+                if (p.distance_to(v) < 0):
                     all_out = false
                     break
 
@@ -741,7 +745,7 @@ points of the **ABC** triangle:
 
     var D = P.dot(A)
 
-Fantastic! you computed the plane from a triangle!
+Fantastic! You computed the plane from a triangle!
 
 Here's some useful info (that you can find in Godot source code anyway).
 Computing a plane from a triangle can result in 2 planes, so a sort of
@@ -779,8 +783,8 @@ Collision detection in 3D
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This is another bonus bit, a reward for being patient and keeping up
-with this long tutorial. Here is another piece of wisdom. This maybe is
-not something with a direct use case (Godot already does collision
+with this long tutorial. Here is another piece of wisdom. This might
+not be something with a direct use case (Godot already does collision
 detection pretty well) but It's a really cool algorithm to understand
 anyway, because it's used by almost all physics engines and collision
 detection libraries :)
@@ -819,13 +823,13 @@ So the final algorithm is something like:
     for p in planes_of_A:
         var all_out = true
         for v in points_of_B:
-            if (p.distance_to(v) < 0): 
+            if (p.distance_to(v) < 0):
                 all_out = false
                 break
 
         if (all_out):
             # a separating plane was found
-            # do not continue testing 
+            # do not continue testing
             overlapping = false
             break
 
@@ -835,7 +839,7 @@ So the final algorithm is something like:
         for p in planes_of_B:
             var all_out = true
             for v in points_of_A:
-                if (p.distance_to(v) < 0): 
+                if (p.distance_to(v) < 0):
                     all_out = false
                     break
 
