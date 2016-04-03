@@ -637,16 +637,18 @@ for
 ^^^
 
 To iterate through a range, such as an array or table, a *for* loop is
-used. For loops store the index in the loop variable on each iteration.
+used. When looping over an array, the current array element is stored in
+the loop variable. When looping over a dictionary, the *index* is stored
+in the loop variable.
 
 ::
 
-    for i in [0, 1, 2]:
-        statement  # loop iterates 3 times with i as 0, then 1 and finally 2
+    for x in [5, 7, 11]:
+        statement  # loop iterates 3 times with x as 5, then 7 and finally 11
 
     var dict = {"a":0, "b":1, "c":2}
     for i in dict:
-        print(dict[i])  # loop iterates the keys; with i being "a","b" and "c" it prints 0, 1 and 2.
+        print(dict[i])  # loop provides the keys in an arbitrary order; may print 0, 1, 2, or 2, 0, 1, etc...
 
     for i in range(3):
         statement  # similar to [0, 1, 2] but does not allocate an array
