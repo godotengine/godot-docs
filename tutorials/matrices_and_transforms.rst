@@ -49,9 +49,9 @@ designed to it's current position? The answer is... a **transform**, the
 ship was *transformed* from their original position to the new one. This
 allows the ship to be displayed where it is.
 
-So, a transform is too generic of a term. To solve this puzzle, we will
-superimpose the ship's original design position at their current
-position:
+But transform is too generic of a term to describe this process. To solve this
+puzzle, we will superimpose the ship's original design position at their
+current position:
 
 .. image:: /img/tutomat4.png
 
@@ -449,7 +449,7 @@ accessed as:
     var y = m[1] # Vector3
     var z = m[2] # Vector3
 
-or, alternatively as:
+Or, alternatively as:
 
 ::
 
