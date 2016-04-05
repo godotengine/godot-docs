@@ -142,10 +142,10 @@ Your idea will most certainly be ignored. Examples of stuff that is
 ignored by the developers:
 
 -  Let's do this because it will make Godot better
--  Let's do this in Godot because other game engine does it
+-  Let's do this in Godot because another game engine does it
 -  Let's remove this because I think it's not needed
 -  Let's remove clutter and bloat and make godot look nicer
--  Let's add an alternative workflow for people that prefers it
+-  Let's add an alternative workflow for people who prefer it
 
 Developers are always willing to talk to you and listen to your feedback
 very openly, to an extent rarely seen in open source projects, but they
@@ -169,7 +169,7 @@ As such, please don't feel that your ideas for Godot are unwelcome.
 Instead, try to reformulate them as a problem first, so developers and
 the community have a base ground to discuss first.
 
-Examples of how not to state problems generally are like this:
+Examples of how NOT to state problems generally are like this:
 
 -  Certain feature is ugly
 -  Certain workflow is slow
