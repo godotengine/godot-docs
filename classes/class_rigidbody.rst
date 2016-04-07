@@ -103,6 +103,7 @@ Signals
 -  **body_enter_shape**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape  **)**
 -  **body_exit**  **(** :ref:`Object<class_object>` body  **)**
 -  **body_exit_shape**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape  **)**
+-  **sleeping_state_changed**  **(** **)**
 
 Numeric Constants
 -----------------

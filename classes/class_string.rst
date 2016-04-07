@@ -286,13 +286,13 @@ Return the length of the string in characters.
 
 - :ref:`bool<class_bool>`  **match**  **(** :ref:`String<class_string>` expr  **)**
 
-Do a simple expression matching, using ? and \* wildcards.
+Do a simple expression match, where '\*' matches zero or more arbitrary characters and '?' matches any single character except '.'.
 
 .. _class_String_matchn:
 
 - :ref:`bool<class_bool>`  **matchn**  **(** :ref:`String<class_string>` expr  **)**
 
-Do a simple, case insensitive, expression matching, using ? and \* wildcards.
+Do a simple case insensitive expression match, using ? and \* wildcards (see :ref:`match<class_String_match>`).
 
 .. _class_String_md5_buffer:
 

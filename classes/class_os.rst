@@ -420,6 +420,8 @@ Return the amount of fixed iterations per second (for fixed process and physics)
 
 - void  **set_time_scale**  **(** :ref:`float<class_float>` time_scale  **)**
 
+Speeds up or slows down the physics by changing the delta variable. (delta \* time_scale)
+
 .. _class_OS_get_time_scale:
 
 - :ref:`float<class_float>`  **get_time_scale**  **(** **)**

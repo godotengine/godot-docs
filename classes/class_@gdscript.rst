@@ -361,6 +361,8 @@ Random range, any floating point value between 'from' and 'to'
 
 - :ref:`Nil<class_nil>`  **seed**  **(** :ref:`float<class_float>` seed  **)**
 
+Set seed for the random number generator.
+
 .. _class_@GDScript_rand_seed:
 
 - :ref:`Array<class_array>`  **rand_seed**  **(** :ref:`float<class_float>` seed  **)**
@@ -425,7 +427,7 @@ Return a weak reference to an object.
 
 - :ref:`FuncRef<class_funcref>`  **funcref**  **(** :ref:`Object<class_object>` instance, :ref:`String<class_string>` funcname  **)**
 
-Returns a reference to the specified function
+Return a reference to the specified function.
 
 .. _class_@GDScript_convert:
 
@@ -437,7 +439,7 @@ Convert from a type to another in the best way possible. The "type" parameter us
 
 - :ref:`int<class_int>`  **typeof**  **(** Variant what  **)**
 
-Returns the internal type of the given Variant object, using the TYPE\_\* enum in :ref:`@Global Scope<class_@global scope>`.
+Return the internal type of the given Variant object, using the TYPE\_\* enum in :ref:`@Global Scope<class_@global scope>`.
 
 .. _class_@GDScript_str:
 
@@ -461,6 +463,8 @@ Print one or more arguments to the console with a tab between each argument.
 
 - :ref:`Nil<class_nil>`  **prints**  **(** Variant what, Variant ...  **)**
 
+Print one or more arguments to the console with a space between each argument.
+
 .. _class_@GDScript_printerr:
 
 - :ref:`Nil<class_nil>`  **printerr**  **(** Variant what, Variant ...  **)**
@@ -477,25 +481,31 @@ Print one or more arguments to strings in the best way possible to console. No n
 
 - :ref:`String<class_string>`  **var2str**  **(** Variant var  **)**
 
-Converts the value of a variable to a String.
+Convert a value to a formatted string that can later be parsed using :ref:`str2var<class_@GDScript_str2var>`.
 
 .. _class_@GDScript_str2var:
 
 - Variant  **str2var**  **(** :ref:`String<class_string>` string  **)**
 
+Convert a formatted string that was returned by :ref:`var2str<class_@GDScript_var2str>` to the original value.
+
 .. _class_@GDScript_var2bytes:
 
 - :ref:`RawArray<class_rawarray>`  **var2bytes**  **(** Variant var  **)**
+
+Encode a variable value to a byte array.
 
 .. _class_@GDScript_bytes2var:
 
 - Variant  **bytes2var**  **(** :ref:`RawArray<class_rawarray>` bytes  **)**
 
+Decode a byte array back to a value.
+
 .. _class_@GDScript_range:
 
 - :ref:`Array<class_array>`  **range**  **(** Variant ...  **)**
 
-Return an array with the given range. Range can be 1 argument N (0 to N-1), two arguments (initial, final-1) or three arguments (initial,final-1,increment).
+Return an array with the given range. Range can be 1 argument N (0 to N-1), two arguments (initial, final-1) or three arguments (initial, final-1, increment).
 
 .. _class_@GDScript_load:
 
@@ -519,11 +529,13 @@ Convert a previously converted instances to dictionary back into an instance. Us
 
 - :ref:`int<class_int>`  **hash**  **(** Variant var:Variant  **)**
 
-Hashes the variable passed and returns an integer.
+Hash the variable passed and return an integer.
 
 .. _class_@GDScript_Color8:
 
 - :ref:`Color<class_color>`  **Color8**  **(** :ref:`int<class_int>` r8, :ref:`int<class_int>` g8, :ref:`int<class_int>` b8, :ref:`int<class_int>` a8  **)**
+
+Make a color from red, green, blue and alpha. Arguments can range from 0 to 255.
 
 .. _class_@GDScript_print_stack:
 
@@ -535,16 +547,28 @@ Print a stack track at code location, only works when running with debugger turn
 
 - :ref:`Object<class_object>`  **instance_from_id**  **(** :ref:`int<class_int>` instance_id  **)**
 
+Get an object by its ID.
+
 .. _class_@GDScript_preload:
 
 - :ref:`Resource<class_resource>`  **preload**  **(** :ref:`String<class_string>` path  **)**
+
+Preload a resource from the filesystem. The resource is loaded during script parsing.
 
 .. _class_@GDScript_yield:
 
 - :ref:`Nil<class_nil>`  **yield**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` signal  **)**
 
+Stop the function execution and return the current state. Call resume on the state to resume execution. This makes the state invalid.
+
+Returns anything that was passed to the resume function call.
+
+If passed an object and a signal, the execution is resumed when the object's signal is emmited.
+
 .. _class_@GDScript_assert:
 
 - :ref:`Nil<class_nil>`  **assert**  **(** :ref:`bool<class_bool>` condition  **)**
+
+Assert that the condition is true. If the condition is false, generates an error.
 
 

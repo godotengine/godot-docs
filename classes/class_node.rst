@@ -337,6 +337,8 @@ Return the parent :ref:`Node<class_node>` of the current :ref:`Node<class_node>`
 
 - :ref:`Node<class_node>`  **find_node**  **(** :ref:`String<class_string>` mask, :ref:`bool<class_bool>` recursive=true, :ref:`bool<class_bool>` owned=true  **)** const
 
+Find a descendant of this node whose name matches ``mask`` as in :ref:`String.match<class_String_match>` (i.e. case sensitive, but '\*' matches zero or more characters and '?' matches any single character except '.'). Note that it does not match against the full path, just against individual node names.
+
 .. _class_Node_has_node_and_resource:
 
 - :ref:`bool<class_bool>`  **has_node_and_resource**  **(** :ref:`NodePath<class_nodepath>` path  **)** const

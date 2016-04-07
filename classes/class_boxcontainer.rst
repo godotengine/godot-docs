@@ -21,6 +21,8 @@ Member Functions
 ----------------
 
 +------------------------+------------------------------------------------------------------------------------------------------+
+| void                   | :ref:`add_spacer<class_BoxContainer_add_spacer>`  **(** :ref:`bool<class_bool>` begin  **)**         |
++------------------------+------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`  | :ref:`get_alignment<class_BoxContainer_get_alignment>`  **(** **)** const                            |
 +------------------------+------------------------------------------------------------------------------------------------------+
 | void                   | :ref:`set_alignment<class_BoxContainer_set_alignment>`  **(** :ref:`int<class_int>` alignment  **)** |
@@ -40,6 +42,10 @@ Base class for Box containers. It arranges children controls vertically or horiz
 
 Member Function Description
 ---------------------------
+
+.. _class_BoxContainer_add_spacer:
+
+- void  **add_spacer**  **(** :ref:`bool<class_bool>` begin  **)**
 
 .. _class_BoxContainer_get_alignment:
 
