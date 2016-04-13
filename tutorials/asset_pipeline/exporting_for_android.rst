@@ -12,12 +12,12 @@ Download the Android SDK
 Download and install the Android SDK from
 http://developer.android.com/sdk/index.html
 
-Download the Java 6 or OpenJDK6
--------------------------------
+Install OpenJDK or Oracle JDK
+-----------------------------
 
-Download and install Java 6 or OpenJDK 6, Android needs this version and
-it seems that jarsigner (what is used to sign APKs) from greater
-versions do not work.
+Download and install OpenJDK or Oracle JDK. Version 6 and 8 are known to
+work, some users have reported issues with the jarsigner (used to sign the
+APKs) in JDK 7.
 
 Create a debug.keystore
 -----------------------
