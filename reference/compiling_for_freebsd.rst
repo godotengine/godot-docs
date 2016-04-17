@@ -16,18 +16,18 @@ required:
 -  SCons build system
 -  X11 and Mesa development libraries
 -  Xinerama libraries
--  ALSA development libraries
--  PulseAudio development libraries (for sound support)
+-  ALSA development libraries (for sound support)
 -  Freetype (for the editor)
 -  OpenSSL (for HTTPS and TLS)
--  libudev-dev (optional, for gamepad support)
 -  pkg-config (used to detect the above dependencies)
+
+Currently, there's no libudev port available for gamepad support.
 
 For FreeBSD:
 
 ::
 
-    sudo pkg install scons pkg-config xorg-libraries libXcursor pulseaudio freetype2 libglapi libGLU openssl xineramaproto
+    sudo pkg install scons pkg-config xorg-libraries libXcursor freetype2 libglapi libGLU openssl xineramaproto
 
 Compiling
 ---------
