@@ -1,7 +1,7 @@
-.. _doc_compiling_for_linux:
+.. _doc_compiling_for_x11:
 
-Compiling for Linux
-===================
+Compiling for X11 (Linux, *BSD, Fedora)
+=======================================
 
 .. highlight:: shell
 
