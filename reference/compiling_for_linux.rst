@@ -29,6 +29,12 @@ For Ubuntu users:
 
     sudo apt-get install scons pkg-config libx11-dev libxcursor-dev build-essential libasound2-dev libpulse-dev libfreetype6-dev libgl1-mesa-dev libglu-dev libssl-dev libxinerama-dev libudev-dev
 
+And for Fedora users:
+
+::
+
+    sudo dnf install  scons pkgconfig libX11-devel libXcursor-devel alsa-lib-devel pulseaudio-libs-devel freetype-devel mesa-libGL-devel openssl-devel libXinerama-devel libudev-devel
+
 Compiling
 ---------
 
