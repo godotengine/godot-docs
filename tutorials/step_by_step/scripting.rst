@@ -125,7 +125,7 @@ template script:
 .. image:: /img/script_template.png
 
 There is not much in there. The "_ready()" function is called when the
-node (and all it's children) entered the active scene. (Remember, It's
+node (and all its children) entered the active scene. (Remember, it's
 not a constructor, the constructor is "_init()" ).
 
 The role of the script
@@ -153,7 +153,7 @@ the "Signals" button:
 
 .. image:: /img/signals.png
 
-Which will show the list of signals a Button can emit.
+which will show the list of signals a Button can emit.
 
 .. image:: /img/button_connections.png
 
@@ -215,10 +215,10 @@ button:
 .. image:: /img/scripthello.png
 
 **Note:** As it is a common mistake in this tutorial, let's clarify
-again that get_node(path) works by returning the immediate children to
+again that get_node(path) works by returning the *immediate* children of
 the node controlled by the script (in this case, *Panel*), so *Button*
 must be a child of *Panel* for the above code to work. To give this
-clarification more context, if *Button* was a child of *Label*, the code
+clarification more context, if *Button* were a child of *Label*, the code
 to obtain it would be:
 
 ::
