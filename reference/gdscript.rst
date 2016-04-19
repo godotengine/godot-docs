@@ -970,7 +970,7 @@ Either of the *setter* or *getter* functions can be omitted:
     # Only a setter
     var myvar = 5 setget myvar_set
     # Only a getter (note the comma)
-    var myvar = 5 setget ,myvar_gets
+    var myvar = 5 setget ,myvar_get
 
 Get/Setters are especially useful when exporting variables to editor in tool
 scripts or plugins, for validating input.
