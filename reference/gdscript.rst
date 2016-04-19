@@ -747,7 +747,7 @@ function.
 
     # inside a class file
 
-    # A inner class for this class file
+    # An inner class in this class file
     class SomeInnerClass:
         var a = 5
         func print_value_of_a():
