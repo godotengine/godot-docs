@@ -755,8 +755,8 @@ function.
 
     # This is the constructor of the class file's main class
     func _init():
-        var sc = SomeInnerClass.new() 
-        sc.print_value_of_a()
+        var c = SomeInnerClass.new() 
+        c.print_value_of_a()
 
 Classes as resources
 ^^^^^^^^^^^^^^^^^^^^
