@@ -102,7 +102,7 @@ here's a simple example of how GDScript looks.
         return local_var2
 
 
-    # subclass
+    # inner class
 
     class Something:
         var a = 10
@@ -690,7 +690,7 @@ A class (stored as a file) can inherit from
 
 - A global class
 - Another class file 
-- A subclass inside another class file. 
+- An inner class inside another class file. 
 
 Multiple inheritance is not allowed. 
 
@@ -704,8 +704,8 @@ Inheritance uses the ``extends`` keyword:
     # Inherit/extend a named class file
     extends "somefile.gd" 
     
-    # Inherit/extend a subclass in another file
-    extends "somefile.gd".SomeSubClass
+    # Inherit/extend an inner class in another file
+    extends "somefile.gd".SomeInnerClass
 
 
 To check if a given instance inherits from a given class 
@@ -736,10 +736,10 @@ If a parent constructor takes arguments, they are passed like this:
     func _init(args).(parentargs):
        pass
 
-Sub classes
+Inner classes
 ^^^^^^^^^^^
 
-A class file can contain subclasses. Subclasses are defined using the
+A class file can contain inner classes. Inner classes are defined using the
 ``class`` keyword. They are instanced using the ``ClassName.new()`` 
 function.
 
@@ -747,15 +747,15 @@ function.
 
     # inside a class file
 
-    # A subclass for this class file
-    class SomeSubClass:
+    # A inner class for this class file
+    class SomeInnerClass:
         var a = 5
         func print_value_of_a():
             print(a)
 
     # This is the constructor of the class file's main class
     func _init():
-        var sc = SomeSubClass.new() 
+        var sc = SomeInnerClass.new() 
         sc.print_value_of_a()
 
 Classes as resources
@@ -970,7 +970,7 @@ Either of the *setter* or *getter* functions can be omitted:
     # Only a setter
     var myvar = 5 setget myvar_set
     # Only a getter (note the comma)
-    var myvar = 5 setget ,myvar_get
+    var myvar = 5 setget ,myvar_gets
 
 Get/Setters are especially useful when exporting variables to editor in tool
 scripts or plugins, for validating input.
