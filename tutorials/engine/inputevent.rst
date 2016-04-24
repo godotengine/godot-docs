@@ -16,9 +16,9 @@ How does it work?
 -----------------
 
 Every input event is originated from the user/player (though it's
-possible to generate an InputEvent and feed then back to the engine,
+possible to generate an InputEvent and feed them back to the engine,
 which is useful for gestures). The OS object for each platform will read
-events from the device, then feed the to MainLoop. As :ref:`SceneTree <class_SceneTree>`
+events from the device, then feed them to MainLoop. As :ref:`SceneTree <class_SceneTree>`
 is the default MainLoop implementation, events are fed to it. Godot
 provides a function to get the current SceneTree object :
 **get_tree()**.
@@ -31,7 +31,7 @@ received input, in order:
 .. image:: /img/input_event_flow.png
 
 1. First, it will try to feed the input to the GUI, and see if any
-   control can receive it. If so, the :ref:`Control <class_Control>` will be called the
+   control can receive it. If so, the :ref:`Control <class_Control>` will be called via the
    virtual function :ref:`Control._input_event() <class_Control__input_event>` and the signal
    "input_event" will be emitted (this function is re-implementable by
    script by inheriting from it). If the control wants to "consume" the
@@ -39,19 +39,19 @@ received input, in order:
    not spread any more.
 2. If the GUI does not want the event, the standard _input function
    will be called in any node with input processing enabled (enable with
-   :ref:`Node.set_process_input() <class_Node_set_process_input>`) and override
+   :ref:`Node.set_process_input() <class_Node_set_process_input>` and override
    :ref:`Node._input() <class_Node__input>`). If any function consumes the event, it can
    call :ref:`SceneTree.set_input_as_handled() <class_SceneTree_set_input_as_handled>`, and the event will
    not spread any more.
 3. If so far no one consumed the event, the unhandled input callback
    will be called (enable with
-   :ref:`Node.set_process_unhandled_input() <class_Node_set_process_unhandled_input>`) and override
+   :ref:`Node.set_process_unhandled_input() <class_Node_set_process_unhandled_input>` and override
    :ref:`Node._unhandled_input() <class_Node__unhandled_input>`). If any function consumes the
    event, it can call :ref:`SceneTree.set_input_as_handled() <class_SceneTree_set_input_as_handled>`, and the
    event will not spread any more.
 4. If no one wanted the event so far, and a :ref:`Camera <class_Camera>` is assigned
    to the Viewport, a ray to the physics world (in the ray direction from
-   the click) will be casted. If this ray hits an object, it will call the
+   the click) will be cast. If this ray hits an object, it will call the
    :ref:`CollisionObject._input_event() <class_CollisionObject__input_event>` function in the relevant
    physics object (bodies receive this callback by default, but areas do
    not. This can be configured through :ref:`Area <class_Area>` properties).
@@ -76,19 +76,19 @@ Example of changing event type.
     # create event
     var ev = InputEvent()
     # set type index
-    ev.type=InputEvent.MOUSE_BUTTON
+    ev.type = InputEvent.MOUSE_BUTTON
     # button_index is only available for the above type
-    ev.button_index=BUTTON_LEFT
+    ev.button_index = BUTTON_LEFT
 
 There are several types of InputEvent, described in the table below:
 
 +-------------------------------------------------------------------+--------------------+-----------------------------------------+
 | Event                                                             | Type Index         | Description                             |
 +-------------------------------------------------------------------+--------------------+-----------------------------------------+
-| :ref:`InputEvent <class_InputEvent>`                              | NONE               | Empty Input Event                       |
+| :ref:`InputEvent <class_InputEvent>`                              | NONE               | Empty Input Event.                      |
 +-------------------------------------------------------------------+--------------------+-----------------------------------------+
 | :ref:`InputEventKey <class_InputEventKey>`                        | KEY                | Contains a scancode and unicode value,  |
-|                                                                   |                    | as well as modifiers                    |
+|                                                                   |                    | as well as modifiers.                   |
 +-------------------------------------------------------------------+--------------------+-----------------------------------------+
 | :ref:`InputEventMouseButton <class_InputEventMouseButton>`        | MOUSE_BUTTON       | Contains click information, such as     |
 |                                                                   |                    | button, modifiers, etc.                 |
@@ -121,8 +121,8 @@ An InputEvent may or may not represent a pre-defined action. Actions are
 useful because they abstract the input device when programming the game
 logic. This allows for:
 
--  The same code to work on different devices with different inputs (ie:
-   keyboard on PC, Joypad on console)
+-  The same code to work on different devices with different inputs (e.g.,
+   keyboard on PC, Joypad on console).
 -  Input to be reconfigured at run-time.
 
 Actions can be created from the Project Settings menu in the Actions
@@ -140,7 +140,7 @@ SceneTree (derived from MainLoop) has a method for this:
 ::
 
     var ev = InputEvent()
-    ev.type=InputEvent.ACTION
+    ev.type = InputEvent.ACTION
     # set as move_left, pressed
     ev.set_as_action("move_left", true) 
     # feedback
@@ -154,4 +154,4 @@ whole workflow depends on actions, the :ref:`InputMap <class_InputMap>` singleto
 ideal for reassigning or creating different actions at run-time. This
 singleton is not saved (must be modified manually) and its state is run
 from the project settings (engine.cfg). So any dynamic system of this
-type needs to store settings in the way the programmer sees best fit.
+type needs to store settings in the way the programmer best sees fit.
