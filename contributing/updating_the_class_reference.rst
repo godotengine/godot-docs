@@ -3,18 +3,49 @@
 Updating the class reference
 ============================
 
-Godot Engine provides an important number of classes that you can make
-use of to create your games. However, the :ref:`toc-class-ref` that
-lists all these classes with their methods is quite incomplete. We need
-your kind help to fill this reference. This page will explain you how.
+Godot Engine provides an extensive panel of nodes and singletons that you can
+use with GDScript to develop your games. All those classes are listed and
+documented in the :ref:`class reference <toc-class-ref>`, which is available
+both in the online documentation and offline from within the engine.
 
-Please note: we aim at filling completely this reference in English
-first. Please do not start translating it for the moment.
+The class reference is however not 100% complete. Some methods, constants and
+signals have not been described yet, while others may have their implementation
+changed and thus need an update. Updating the class reference is a tedious work
+and the responsibility of the community: if we all partake in the effort, we
+can fill in the blanks and ensure a good documentation level in no time!
 
-:ref:`doc_list_of_classes_and_documenters`
+**Important note:** We aim at completely filling the class reference in English
+first. Once it nears 90-95% completion, we could start thinking about
+localisating in other languages.
 
-Editing with Github
--------------------
+Workflow for updating the class reference
+-----------------------------------------
+
+The source file of the class reference is an XML file in the main Godot source
+repository on GitHub, `doc/base/classes.xml <https://github.com/godotengine/godot/blob/master/doc/base/classes.xml>`_.
+As of now, it is relatively heavy (more than 1 MB), so it can't be edited online
+using GitHub's text editor.
+
+The workflow to update the class reference is therefore:
+
+-  Fork the `upstream repository <https://github.com/godotengine/godot>`_ and clone
+   your fork.
+-  Edit the ``doc/base/classes.xml`` file, commit your changes and push to your
+   fork.
+-  Make a pull request on the upstream repository.
+
+The following section details this workflow, and gives also additional information
+about how to synchronise the XML template with the current state of the source code,
+or what should be the formatting of the added text.
+
+**Important:** The class reference is also :ref:`available in the online documentation <toc-class-ref>`,
+which is hosted alongside the rest of the documentation in the
+`godot-docs <https://github.com/godotengine/godot-docs>`_ git repository. The rST files
+should however **not be edited directly**, they are generated via a script from the
+``doc/base/classes.xml`` file described above.
+
+Getting started with GitHub
+---------------------------
 
 Fork Godot Engine
 ~~~~~~~~~~~~~~~~~
@@ -34,11 +65,11 @@ Then, create a new git branch that will contain your changes.
 
 ::
 
-    git checkout -b reference-edition
+    git checkout -b classref-edit
 
 The branch you just created is identical to current master branch of
-Godot Engine. It already contains a doc/ folder, with the currently
-written reference.
+Godot Engine. It already contains a ``doc/`` folder, with the current
+state of the class reference.
 
 Updating the documentation template
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -54,7 +85,7 @@ following command (assuming 64-bit Linux):
     ./bin/godot.x11.tools.64 -doctool doc/base/classes.xml
 
 The doc/base/classes.xml should then be up-to-date with current Godot
-Engine features. You can then check what changed (or not) using the
+Engine features. You can then check what changed using the
 ``git diff`` command. If there are changes to other classes than the one
 you are planning to document, please commit those changes first before
 starting to edit the template:
@@ -65,6 +96,10 @@ starting to edit the template:
     git commit -m "Sync classes reference template with current code base"
 
 You are now ready to edit this file to add stuff.
+
+**Note:** If this has been done recently by another contributor, you don't
+forcefully need to go through these steps (unless you know that the class
+you plan to edit *has* been modified recently).
 
 Push and request a pull of your changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -78,19 +113,21 @@ repository:
     git commit -m "Explain your modifications."
     git push
 
-When it's done, you can ask for a Pull Request on the GitHub UI of your
+When it's done, you can ask for a Pull Request via the GitHub UI of your
 Godot fork.
 
-Edit doc/base/classes.xml file
-------------------------------
+Editing the doc/base/classes.xml file
+-------------------------------------
 
-First of all, check the :ref:`doc_list_of_classes_and_documenters`. Try to work
-on classes not already assigned nor filled.
+This file is generated and updated by Godot Engine. It is used by the
+editor as base for the Help section.
 
-This file is produced by Godot Engine. It is used by the editor, for
-example in the Help window (F1, Shift+F1).
+You can edit this file using your favourite text editor. If you use a code
+editor, make sure that it won't needlessly change the indentation behaviour
+(e.g. change all tabs to spaces).
 
-You can edit this file using your favourite text editor.
+Formatting of the XML file
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Here is an example with the Node2D class:
 
@@ -206,8 +243,8 @@ Here is an example with the Node2D class:
 
 As you can see, some methods in this class have no description (i.e.
 there is no text between their marks). This can also happen for the
-description and the brief_description of the class, but in our case
-they are already filled. Let's edit the description of the rotate()
+``description`` and ``brief_description`` of the class, but in our example
+they are already filled. Let's edit the description of the ``rotate()``
 method:
 
 .. code:: xml
@@ -216,7 +253,7 @@ method:
         <argument index="0" name="degrees" type="float">
         </argument>
         <description>
-        Rotates the node of "degrees" degrees.
+        Rotates the node of a given number of degrees.
         </description>
     </method>
 
@@ -227,12 +264,20 @@ You simply have to write any missing text between these marks:
 -  <description></description>
 -  <brief_description></brief_description>
 -  <constant></constant>
+-  <member></member>
+-  <signal></signal>
 
-Describe clearly and shortly what it does. You can include an example of
-use if needed. Avoid grammar faults.
+Describe clearly and shortly what the method does, or what the
+constant, member variable or signal mean. You can include an example
+of use if needed. Try to use grammatically correct English, and check
+the other descriptions to get an impression of the writing style.
+
+For setters/getters, the convention is to describe in depth what the
+method does in the setter, and to say only the minimal in the getter to
+avoid duplication of the contents.
 
 I don't know what this method does!
------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Not a problem. Leave it behind for now, and don't forget to notify the
 missing methods when you request a pull of your changes. Another
