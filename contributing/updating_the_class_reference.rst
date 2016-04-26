@@ -276,6 +276,55 @@ For setters/getters, the convention is to describe in depth what the
 method does in the setter, and to say only the minimal in the getter to
 avoid duplication of the contents.
 
+Tags available for improved formatting
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For more control over the formatting of the help, Godot's XML
+documentation supports various BBcode-like tags which are
+interpreted by both the offline in-editor Help, as well as the
+online documentation (via the reST converter).
+
+Those tags are listed below. See existing documentation entries
+for more examples of how to use them properly.
+
++---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
+| Tag                       | Effect                         | Usage                             | Result                                     |
++===========================+================================+===================================+============================================+
+| [Class]                   | Link a class                   | Move the [Sprite].                | Move the :ref:`class_sprite`.              |
++---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
+| [method methodname]       | Link a method of this class    | See [method set_pos].             | See :ref:`set_pos <class_node2d_set_pos>`. |
++---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
+| [method Class.methodname] | Link a method of another class | See [method Node2D.set_pos].      | See :ref:`set_pos <class_node2d_set_pos>`. |
++---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
+| [b] [/b]                  | Bold                           | Some [b]bold[/b] text.            | Some **bold** text.                        |
++---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
+| [i] [/i]                  | Italic                         | Some [i]italic[/b] text.          | Some *italic* text.                        |
++---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
+| [code] [/code]            | Monospace                      | Some [code]monospace[/code] text. | Some ``monospace`` text.                   |
++---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
+| [codeblock] [/codeblock]  | Multiline preformatted block   | *See below.*                      | *See below.*                               |
++---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
+
+The ``[codeblock]`` is meant to be used for pre-formatted code
+block, using spaces as indentation (tabs will be removed by the
+reST converter). For example:
+
+.. code:: xml
+
+    [codeblock]
+	func _ready():
+	    var sprite = get_node("Sprite")
+		print(sprite.get_pos())
+	[/codeblock]
+
+Which would be rendered as:
+
+::
+
+    func _ready():
+	    var sprite = get_node("Sprite")
+		print(sprite.get_pos())
+
 I don't know what this method does!
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
