@@ -17,7 +17,7 @@ can fill in the blanks and ensure a good documentation level in no time!
 **Important notes:**
 
 -  To coordinate the effort and have an overview of the current status, we use
-   `a collaborative pad <https://etherpad.net/p/godot-classref-status>`. Please
+   `a collaborative pad <https://etherpad.net/p/godot-classref-status>`_. Please
    follow the instructions there to notify the other documentation writers about
    what you are working on.
 -  We aim at completely filling the class reference in English
