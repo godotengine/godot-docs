@@ -312,18 +312,18 @@ reST converter). For example:
 .. code:: xml
 
     [codeblock]
-	func _ready():
-	    var sprite = get_node("Sprite")
-		print(sprite.get_pos())
-	[/codeblock]
+    func _ready():
+        var sprite = get_node("Sprite")
+        print(sprite.get_pos())
+    [/codeblock]
 
 Which would be rendered as:
 
 ::
 
     func _ready():
-	    var sprite = get_node("Sprite")
-		print(sprite.get_pos())
+        var sprite = get_node("Sprite")
+        print(sprite.get_pos())
 
 I don't know what this method does!
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
