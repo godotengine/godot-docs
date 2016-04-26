@@ -14,9 +14,15 @@ changed and thus need an update. Updating the class reference is a tedious work
 and the responsibility of the community: if we all partake in the effort, we
 can fill in the blanks and ensure a good documentation level in no time!
 
-**Important note:** We aim at completely filling the class reference in English
-first. Once it nears 90-95% completion, we could start thinking about
-localisating in other languages.
+**Important notes:**
+
+-  To coordinate the effort and have an overview of the current status, we use
+   this pad: **https://etherpad.net/p/godot-classref-status**. Please follow the
+   instructions there to notify the other documentation writers about what you
+   are working on.
+-  We aim at completely filling the class reference in English
+   first. Once it nears 90-95% completion, we could start thinking about
+   localisating in other languages.
 
 Workflow for updating the class reference
 -----------------------------------------
