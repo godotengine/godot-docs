@@ -82,19 +82,19 @@ Member Function Description
 
 - void  **set_pos**  **(** :ref:`Vector2<class_vector2>` pos  **)**
 
-Set the position of the 2d node.
+Set the position of the 2D node.
 
 .. _class_Node2D_set_rot:
 
 - void  **set_rot**  **(** :ref:`float<class_float>` rot  **)**
 
-Set the rotation of the 2d node.
+Set the rotation of the 2D node.
 
 .. _class_Node2D_set_scale:
 
 - void  **set_scale**  **(** :ref:`Vector2<class_vector2>` scale  **)**
 
-Set the scale of the 2d node.
+Set the scale of the 2D node.
 
 .. _class_Node2D_get_pos:
 
@@ -118,29 +118,43 @@ Return the scale of the 2D node.
 
 - void  **rotate**  **(** :ref:`float<class_float>` radians  **)**
 
+Apply a 'radians' rotation to the 2D node, starting from its current rotation.
+
 .. _class_Node2D_move_local_x:
 
 - void  **move_local_x**  **(** :ref:`float<class_float>` delta, :ref:`bool<class_bool>` scaled=false  **)**
+
+Apply a local translation on X axis to the 2D node according to the 'delta' of the process. If 'scaled' is false, the movement is normalized.
 
 .. _class_Node2D_move_local_y:
 
 - void  **move_local_y**  **(** :ref:`float<class_float>` delta, :ref:`bool<class_bool>` scaled=false  **)**
 
+Apply a local translation on Y axis to the 2D node according to the 'delta' of the process. If 'scaled' is false, the movement is normalized.
+
 .. _class_Node2D_translate:
 
 - void  **translate**  **(** :ref:`Vector2<class_vector2>` offset  **)**
+
+Apply a local translation of 'offset' to the 2D node, starting from its current local position.
 
 .. _class_Node2D_global_translate:
 
 - void  **global_translate**  **(** :ref:`Vector2<class_vector2>` offset  **)**
 
+Apply a global translation of 'offset' to the 2D node, starting from its current global position.
+
 .. _class_Node2D_scale:
 
 - void  **scale**  **(** :ref:`Vector2<class_vector2>` ratio  **)**
 
+Apply the 'ratio' scale to the 2D node, according to its current scale value.
+
 .. _class_Node2D_set_global_pos:
 
 - void  **set_global_pos**  **(** :ref:`Vector2<class_vector2>` pos  **)**
+
+Set the global position of the 2D node to 'pos'.
 
 .. _class_Node2D_get_global_pos:
 
@@ -152,40 +166,60 @@ Return the global position of the 2D node.
 
 - void  **set_transform**  **(** :ref:`Matrix32<class_matrix32>` xform  **)**
 
+Set the local transform :ref:`Matrix32<class_matrix32>` of the 2D node.
+
 .. _class_Node2D_set_global_transform:
 
 - void  **set_global_transform**  **(** :ref:`Matrix32<class_matrix32>` xform  **)**
+
+Set the global transform :ref:`Matrix32<class_matrix32>` of the 2D node.
 
 .. _class_Node2D_look_at:
 
 - void  **look_at**  **(** :ref:`Vector2<class_vector2>` point  **)**
 
+Rotate the 2d node so it points at 'point' position.
+
 .. _class_Node2D_get_angle_to:
 
 - :ref:`float<class_float>`  **get_angle_to**  **(** :ref:`Vector2<class_vector2>` point  **)** const
+
+Return the rotation angle needed for the 2d node to point at 'point' position.
 
 .. _class_Node2D_set_z:
 
 - void  **set_z**  **(** :ref:`int<class_int>` z  **)**
 
+Set the Z-index value of the 2D node.
+
 .. _class_Node2D_get_z:
 
 - :ref:`int<class_int>`  **get_z**  **(** **)** const
+
+Return the Z-index of the 2D node.
 
 .. _class_Node2D_set_z_as_relative:
 
 - void  **set_z_as_relative**  **(** :ref:`bool<class_bool>` enable  **)**
 
+Set the Z-index value as relative to the parent node of this 2D node. Thus, if this 2D node's Z-index value is 2 and its parent's effective Z-index is 3, then the effective Z-index value of this 2D node would be 3 + 2 = 5.
+
 .. _class_Node2D_is_z_relative:
 
 - :ref:`bool<class_bool>`  **is_z_relative**  **(** **)** const
+
+Return true if the Z-index value of this 2D node is relative to its parent's. Else, return false.
 
 .. _class_Node2D_edit_set_pivot:
 
 - void  **edit_set_pivot**  **(** :ref:`Vector2<class_vector2>` pivot  **)**
 
+Set the pivot position of the 2D node to 'pivot' value. This method is implemented only in some nodes that inherit Node2D.
+
 .. _class_Node2D_get_relative_transform_to_parent:
 
 - :ref:`Matrix32<class_matrix32>`  **get_relative_transform_to_parent**  **(** :ref:`Object<class_object>` parent  **)** const
+
+Return the transform :ref:`Matrix32<class_matrix32>` calculated relatively to the parent of this 2D node.
 
 

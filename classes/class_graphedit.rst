@@ -87,13 +87,19 @@ Return an Array containing the list of connections. A connection consists in a s
 
 - :ref:`Vector2<class_vector2>`  **get_scroll_ofs**  **(** **)** const
 
+Return the scroll offset.
+
 .. _class_GraphEdit_set_zoom:
 
 - void  **set_zoom**  **(** :ref:`float<class_float>` p_zoom  **)**
 
+Set the zoom value of the GraphEdit. Zoom value is between :ref:`0.01; 1.728<class_0.01; 1.728>`.
+
 .. _class_GraphEdit_get_zoom:
 
 - :ref:`float<class_float>`  **get_zoom**  **(** **)** const
+
+Return the current zoom value.
 
 .. _class_GraphEdit_set_right_disconnects:
 
