@@ -13,7 +13,7 @@ CanvasModulate
 Brief Description
 -----------------
 
-
+Tint the entire canvas
 
 Member Functions
 ----------------
@@ -24,6 +24,11 @@ Member Functions
 | :ref:`Color<class_color>`  | :ref:`get_color<class_CanvasModulate_get_color>`  **(** **)** const                            |
 +----------------------------+------------------------------------------------------------------------------------------------+
 
+Description
+-----------
+
+CanvasModulate tints the canvas elements using its asigned color
+
 Member Function Description
 ---------------------------
 
@@ -31,8 +36,12 @@ Member Function Description
 
 - void  **set_color**  **(** :ref:`Color<class_color>` color  **)**
 
+Sets the canvas tint color
+
 .. _class_CanvasModulate_get_color:
 
 - :ref:`Color<class_color>`  **get_color**  **(** **)** const
+
+Gets the canvas tint color
 
 

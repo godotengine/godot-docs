@@ -13,7 +13,7 @@ ColorPickerButton
 Brief Description
 -----------------
 
-
+Button that pops out a :ref:`ColorPicker<class_colorpicker>`
 
 Member Functions
 ----------------
@@ -33,6 +33,11 @@ Signals
 
 -  **color_changed**  **(** :ref:`Color<class_color>` color  **)**
 
+Description
+-----------
+
+Encapsulates a :ref:`ColorPicker<class_colorpicker>` making it accesible by pressing a button, pressing the button will toggle the :ref:`ColorPicker<class_colorpicker>` visibility
+
 Member Function Description
 ---------------------------
 
@@ -40,16 +45,24 @@ Member Function Description
 
 - void  **set_color**  **(** :ref:`Color<class_color>` color  **)**
 
+Sets the current color
+
 .. _class_ColorPickerButton_get_color:
 
 - :ref:`Color<class_color>`  **get_color**  **(** **)** const
+
+Gets the current color
 
 .. _class_ColorPickerButton_set_edit_alpha:
 
 - void  **set_edit_alpha**  **(** :ref:`bool<class_bool>` show  **)**
 
+See :ref:`ColorPicker.set_edit_alpha<class_ColorPicker_set_edit_alpha>`
+
 .. _class_ColorPickerButton_is_editing_alpha:
 
 - :ref:`bool<class_bool>`  **is_editing_alpha**  **(** **)** const
+
+See :ref:`ColorPicker.is_edit_alpha<class_ColorPicker_is_edit_alpha>`
 
 

@@ -66,6 +66,11 @@ Member Variables
 - :ref:`float<class_float>` **width**
 - :ref:`float<class_float>` **height**
 
+Description
+-----------
+
+2-element structure that can be used to represent positions in 2d-space, or any other pair of numeric values.
+
 Member Function Description
 ---------------------------
 

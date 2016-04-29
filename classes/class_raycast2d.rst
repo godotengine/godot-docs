@@ -13,7 +13,7 @@ RayCast2D
 Brief Description
 -----------------
 
-
+Query the closest object intersecting a ray
 
 Member Functions
 ----------------
@@ -56,6 +56,11 @@ Member Functions
 | :ref:`int<class_int>`          | :ref:`get_type_mask<class_RayCast2D_get_type_mask>`  **(** **)** const                                    |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------+
 
+Description
+-----------
+
+A RayCast2D represents a line from its origin to its destination position ``cast_to``, it is used to query the 2D space in order to find the closest object intersecting with the ray.
+
 Member Function Description
 ---------------------------
 
@@ -63,23 +68,31 @@ Member Function Description
 
 - void  **set_enabled**  **(** :ref:`bool<class_bool>` enabled  **)**
 
+Enables the RayCast2D. Only enabled raycasts will be able to query the space and report collisions.
+
 .. _class_RayCast2D_is_enabled:
 
 - :ref:`bool<class_bool>`  **is_enabled**  **(** **)** const
+
+Returns whether this raycast is enabled or not
 
 .. _class_RayCast2D_set_cast_to:
 
 - void  **set_cast_to**  **(** :ref:`Vector2<class_vector2>` local_point  **)**
 
+Sets the ray destination point, so that the ray will test from the ray's origin to ``local_point``
+
 .. _class_RayCast2D_get_cast_to:
 
 - :ref:`Vector2<class_vector2>`  **get_cast_to**  **(** **)** const
+
+Return the destination point of this ray object
 
 .. _class_RayCast2D_is_colliding:
 
 - :ref:`bool<class_bool>`  **is_colliding**  **(** **)** const
 
-Return whether the closest object the ray is pointing to is colliding with the vector, with the vector length considered.
+Return whether the closest object the ray is pointing to is colliding with the vector (considering the vector length).
 
 .. _class_RayCast2D_get_collider:
 
@@ -91,13 +104,19 @@ Return the closest object the ray is pointing to. Note that this does not consid
 
 - :ref:`int<class_int>`  **get_collider_shape**  **(** **)** const
 
+Returns the collision shape of the closest object the ray is pointing to.
+
 .. _class_RayCast2D_get_collision_point:
 
 - :ref:`Vector2<class_vector2>`  **get_collision_point**  **(** **)** const
 
+Returns the collision point in which the ray intersects the closest object.
+
 .. _class_RayCast2D_get_collision_normal:
 
 - :ref:`Vector2<class_vector2>`  **get_collision_normal**  **(** **)** const
+
+Returns the normal of the intersecting object shape face containing the collision point.
 
 .. _class_RayCast2D_add_exception_rid:
 
@@ -107,6 +126,8 @@ Return the closest object the ray is pointing to. Note that this does not consid
 
 - void  **add_exception**  **(** :ref:`Object<class_object>` node  **)**
 
+Adds a collision exception so the ray does not report collisions with the specified ``node``.
+
 .. _class_RayCast2D_remove_exception_rid:
 
 - void  **remove_exception_rid**  **(** :ref:`RID<class_rid>` rid  **)**
@@ -115,9 +136,13 @@ Return the closest object the ray is pointing to. Note that this does not consid
 
 - void  **remove_exception**  **(** :ref:`Object<class_object>` node  **)**
 
+Removes a collision exception so the ray does report collisions with the specified ``node``.
+
 .. _class_RayCast2D_clear_exceptions:
 
 - void  **clear_exceptions**  **(** **)**
+
+Removes all collision exception for this ray.
 
 .. _class_RayCast2D_set_layer_mask:
 
@@ -126,6 +151,8 @@ Return the closest object the ray is pointing to. Note that this does not consid
 .. _class_RayCast2D_get_layer_mask:
 
 - :ref:`int<class_int>`  **get_layer_mask**  **(** **)** const
+
+Returns the layer mask for this ray.
 
 .. _class_RayCast2D_set_type_mask:
 

@@ -20,36 +20,36 @@ Array of Buttons.
 Member Functions
 ----------------
 
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`add_button<class_ButtonArray_add_button>`  **(** :ref:`String<class_string>` text  **)**                                                |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`add_icon_button<class_ButtonArray_add_icon_button>`  **(** :ref:`Object<class_object>` icon, :ref:`String<class_string>` text=""  **)** |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_button_text<class_ButtonArray_set_button_text>`  **(** :ref:`int<class_int>` button, :ref:`String<class_string>` text  **)**        |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_button_icon<class_ButtonArray_set_button_icon>`  **(** :ref:`int<class_int>` button, :ref:`Object<class_object>` icon  **)**        |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_button_text<class_ButtonArray_get_button_text>`  **(** :ref:`int<class_int>` button  **)** const                                    |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`  | :ref:`get_button_icon<class_ButtonArray_get_button_icon>`  **(** :ref:`int<class_int>` button  **)** const                                    |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_button_count<class_ButtonArray_get_button_count>`  **(** **)** const                                                                |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_selected<class_ButtonArray_get_selected>`  **(** **)** const                                                                        |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_hovered<class_ButtonArray_get_hovered>`  **(** **)** const                                                                          |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_selected<class_ButtonArray_set_selected>`  **(** :ref:`int<class_int>` button  **)**                                                |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`erase_button<class_ButtonArray_erase_button>`  **(** :ref:`int<class_int>` button  **)**                                                |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`clear<class_ButtonArray_clear>`  **(** **)**                                                                                            |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`add_button<class_ButtonArray_add_button>`  **(** :ref:`String<class_string>` text  **)**                                                  |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`add_icon_button<class_ButtonArray_add_icon_button>`  **(** :ref:`Texture<class_texture>` icon, :ref:`String<class_string>` text=""  **)** |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_button_text<class_ButtonArray_set_button_text>`  **(** :ref:`int<class_int>` button_idx, :ref:`String<class_string>` text  **)**      |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_button_icon<class_ButtonArray_set_button_icon>`  **(** :ref:`int<class_int>` button_idx, :ref:`Texture<class_texture>` icon  **)**    |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`    | :ref:`get_button_text<class_ButtonArray_get_button_text>`  **(** :ref:`int<class_int>` button_idx  **)** const                                  |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_texture>`  | :ref:`get_button_icon<class_ButtonArray_get_button_icon>`  **(** :ref:`int<class_int>` button_idx  **)** const                                  |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_button_count<class_ButtonArray_get_button_count>`  **(** **)** const                                                                  |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_selected<class_ButtonArray_get_selected>`  **(** **)** const                                                                          |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_hovered<class_ButtonArray_get_hovered>`  **(** **)** const                                                                            |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_selected<class_ButtonArray_set_selected>`  **(** :ref:`int<class_int>` button_idx  **)**                                              |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`erase_button<class_ButtonArray_erase_button>`  **(** :ref:`int<class_int>` button_idx  **)**                                              |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`clear<class_ButtonArray_clear>`  **(** **)**                                                                                              |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
 
--  **button_selected**  **(** :ref:`int<class_int>` button  **)**
+-  **button_selected**  **(** :ref:`int<class_int>` button_idx  **)**
 
 Numeric Constants
 -----------------
@@ -63,7 +63,9 @@ Numeric Constants
 Description
 -----------
 
-Array of Buttons. A Button array is useful to have an array of buttons laid out vertically or horizontally. Only one can be selected. This is useful for joy pad based interfaces and option menus.
+Array of Buttons. A ButtonArray is useful to have an array of buttons laid out vertically or horizontally. Only one button can be selected, and is referenced by its index in the array (first button is 0, second button is 1, etc.).
+
+This is useful *e.g.* for joypad-friendly interfaces and option menus.
 
 Member Function Description
 ---------------------------
@@ -72,33 +74,37 @@ Member Function Description
 
 - void  **add_button**  **(** :ref:`String<class_string>` text  **)**
 
-Add a new button.
+Append a new button to the array, with the specified text.
 
 .. _class_ButtonArray_add_icon_button:
 
-- void  **add_icon_button**  **(** :ref:`Object<class_object>` icon, :ref:`String<class_string>` text=""  **)**
+- void  **add_icon_button**  **(** :ref:`Texture<class_texture>` icon, :ref:`String<class_string>` text=""  **)**
+
+Append a new button to the array, with the specified icon and text.
 
 .. _class_ButtonArray_set_button_text:
 
-- void  **set_button_text**  **(** :ref:`int<class_int>` button, :ref:`String<class_string>` text  **)**
+- void  **set_button_text**  **(** :ref:`int<class_int>` button_idx, :ref:`String<class_string>` text  **)**
+
+Define the text of the specified button.
 
 .. _class_ButtonArray_set_button_icon:
 
-- void  **set_button_icon**  **(** :ref:`int<class_int>` button, :ref:`Object<class_object>` icon  **)**
+- void  **set_button_icon**  **(** :ref:`int<class_int>` button_idx, :ref:`Texture<class_texture>` icon  **)**
 
-Set the icon of an existing button.
+Set the icon of the specified button.
 
 .. _class_ButtonArray_get_button_text:
 
-- :ref:`String<class_string>`  **get_button_text**  **(** :ref:`int<class_int>` button  **)** const
+- :ref:`String<class_string>`  **get_button_text**  **(** :ref:`int<class_int>` button_idx  **)** const
 
-Return the text of an existing button.
+Return the text of the specified button.
 
 .. _class_ButtonArray_get_button_icon:
 
-- :ref:`Object<class_object>`  **get_button_icon**  **(** :ref:`int<class_int>` button  **)** const
+- :ref:`Texture<class_texture>`  **get_button_icon**  **(** :ref:`int<class_int>` button_idx  **)** const
 
-Return the icon of an existing button.
+Return the icon of the specified button.
 
 .. _class_ButtonArray_get_button_count:
 
@@ -110,30 +116,30 @@ Return the amount of buttons in the array.
 
 - :ref:`int<class_int>`  **get_selected**  **(** **)** const
 
-Return the currently selected button in the array.
+Return the index of the currently selected button in the array.
 
 .. _class_ButtonArray_get_hovered:
 
 - :ref:`int<class_int>`  **get_hovered**  **(** **)** const
 
-Return the currently hovered button in the array.
+Return the index of the currently hovered button in the array.
 
 .. _class_ButtonArray_set_selected:
 
-- void  **set_selected**  **(** :ref:`int<class_int>` button  **)**
+- void  **set_selected**  **(** :ref:`int<class_int>` button_idx  **)**
 
-Select a button in the array.
+Select a button in the array based on the given index.
 
 .. _class_ButtonArray_erase_button:
 
-- void  **erase_button**  **(** :ref:`int<class_int>` button  **)**
+- void  **erase_button**  **(** :ref:`int<class_int>` button_idx  **)**
 
-Remove a button in the array, by index.
+Remove the specified button in the array.
 
 .. _class_ButtonArray_clear:
 
 - void  **clear**  **(** **)**
 
-Clear the button array.
+Remove all buttons from the array.
 
 

@@ -36,8 +36,12 @@ Member Function Description
 
 - void  **set_use_top_left**  **(** :ref:`bool<class_bool>` enable  **)**
 
+This function will anchor the container children to the top left corner of the the container boundaries, moving all its children to that position, (the children new center will be the top left corner of the container).
+
 .. _class_CenterContainer_is_using_top_left:
 
 - :ref:`bool<class_bool>`  **is_using_top_left**  **(** **)** const
+
+Should put children to the top left corner instead of center of the container.
 
 

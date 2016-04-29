@@ -13,7 +13,7 @@ Polygon2D
 Brief Description
 -----------------
 
-
+2D polygon representation
 
 Member Functions
 ----------------
@@ -60,6 +60,11 @@ Member Functions
 | :ref:`Vector2<class_vector2>`            | :ref:`get_offset<class_Polygon2D_get_offset>`  **(** **)** const                                                           |
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
+Description
+-----------
+
+A Polygon2D is defined by a set of n points connected together by line segments, meaning that the point 1 will be connected with point 2, point 2 with point 3 ..., point n-1 with point n and point n with point 1 in order to close the loop and define a plane.
+
 Member Function Description
 ---------------------------
 
@@ -67,49 +72,73 @@ Member Function Description
 
 - void  **set_polygon**  **(** :ref:`Vector2Array<class_vector2array>` polygon  **)**
 
+Defines the set of points that will represent the polygon.
+
 .. _class_Polygon2D_get_polygon:
 
 - :ref:`Vector2Array<class_vector2array>`  **get_polygon**  **(** **)** const
+
+Returns the set of points that defines this polygon
 
 .. _class_Polygon2D_set_uv:
 
 - void  **set_uv**  **(** :ref:`Vector2Array<class_vector2array>` uv  **)**
 
+Sets the uv value for every point of the polygon
+
 .. _class_Polygon2D_get_uv:
 
 - :ref:`Vector2Array<class_vector2array>`  **get_uv**  **(** **)** const
+
+Returns the uv value associated with every point of the polygon
 
 .. _class_Polygon2D_set_color:
 
 - void  **set_color**  **(** :ref:`Color<class_color>` color  **)**
 
+Sets the polygon fill color, if the polygon has a texture defined, the defined texture will be tinted to the polygon fill color.
+
 .. _class_Polygon2D_get_color:
 
 - :ref:`Color<class_color>`  **get_color**  **(** **)** const
+
+Returns the polygon fill color
 
 .. _class_Polygon2D_set_texture:
 
 - void  **set_texture**  **(** :ref:`Object<class_object>` texture  **)**
 
+Sets the polygon texture.
+
 .. _class_Polygon2D_get_texture:
 
 - :ref:`Object<class_object>`  **get_texture**  **(** **)** const
+
+Returns the polygon texture
 
 .. _class_Polygon2D_set_texture_offset:
 
 - void  **set_texture_offset**  **(** :ref:`Vector2<class_vector2>` texture_offset  **)**
 
+Sets the offset of the polygon texture. Initially the texture will appear anchored to the polygon position, the offset is used to move the texture location away from that point (notice that the texture origin is set to its top left corner, so when offset is 0,0 the top left corner of the texture is at the polygon position), for example setting the offset to 10, 10 will move the texture 10 units to the left and 10 units to the top.
+
 .. _class_Polygon2D_get_texture_offset:
 
 - :ref:`Vector2<class_vector2>`  **get_texture_offset**  **(** **)** const
+
+Returns the polygon texture offset
 
 .. _class_Polygon2D_set_texture_rotation:
 
 - void  **set_texture_rotation**  **(** :ref:`float<class_float>` texture_rotation  **)**
 
+Sets the amount of rotation of the polygon texture, ``texture_rotation`` is specified in degrees and clockwise rotation, meaning that if the texture rotation is set to 45 degrees, the texture will be rotated 45 degrees clockwise along the polygon position plus the texture offset.
+
 .. _class_Polygon2D_get_texture_rotation:
 
 - :ref:`float<class_float>`  **get_texture_rotation**  **(** **)** const
+
+Returns the rotation in degrees of the texture polygon
 
 .. _class_Polygon2D_set_texture_scale:
 
@@ -123,9 +152,13 @@ Member Function Description
 
 - void  **set_invert**  **(** :ref:`bool<class_bool>` invert  **)**
 
+Sets the polygon as the defined polygon bounding box minus the defined polygon (the defined polygon will appear as a hole on square that contains the defined polygon).
+
 .. _class_Polygon2D_get_invert:
 
 - :ref:`bool<class_bool>`  **get_invert**  **(** **)** const
+
+Returns whether this polygon is inverted or not
 
 .. _class_Polygon2D_set_invert_border:
 
@@ -139,8 +172,12 @@ Member Function Description
 
 - void  **set_offset**  **(** :ref:`Vector2<class_vector2>` offset  **)**
 
+Sets the amount of distance from the polygon points from the polygon position, for example if the offset is set to 10,10 then all the polygon points will move 10 units to the right and 10 units to the bottom.
+
 .. _class_Polygon2D_get_offset:
 
 - :ref:`Vector2<class_vector2>`  **get_offset**  **(** **)** const
+
+Returns the polygon points offset to the polygon position.
 
 

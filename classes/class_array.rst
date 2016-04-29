@@ -134,9 +134,13 @@ Get whether this is a shared array instance.
 
 - void  **pop_back**  **(** **)**
 
+Remove the last element of the array.
+
 .. _class_Array_pop_front:
 
 - void  **pop_front**  **(** **)**
+
+Remove the first element of the array.
 
 .. _class_Array_push_back:
 
@@ -147,6 +151,8 @@ Append an element at the end of the array.
 .. _class_Array_push_front:
 
 - void  **push_front**  **(** var value  **)**
+
+Add an element at the beginning of the array.
 
 .. _class_Array_remove:
 

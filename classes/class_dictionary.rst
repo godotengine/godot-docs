@@ -84,6 +84,8 @@ Return the list of keys in the dictionary.
 
 - :ref:`int<class_int>`  **parse_json**  **(** :ref:`String<class_string>` json  **)**
 
+Parse json text to the dictionary. Return OK when successed or the error code when failed.
+
 .. _class_Dictionary_size:
 
 - :ref:`int<class_int>`  **size**  **(** **)**
@@ -93,5 +95,7 @@ Return the size of the dictionary (in pairs).
 .. _class_Dictionary_to_json:
 
 - :ref:`String<class_string>`  **to_json**  **(** **)**
+
+Return the dictionary as json text.
 
 

@@ -42,6 +42,13 @@ Member Functions
 | :ref:`bool<class_bool>`        | :ref:`is_flat<class_Button_is_flat>`  **(** **)** const                                                  |
 +--------------------------------+----------------------------------------------------------------------------------------------------------+
 
+Numeric Constants
+-----------------
+
+- **ALIGN_LEFT** = **0** --- Align the text to the left.
+- **ALIGN_CENTER** = **1** --- Center the text.
+- **ALIGN_RIGHT** = **2** --- Align the text to the right.
+
 Description
 -----------
 
@@ -66,9 +73,13 @@ Return the button text.
 
 - void  **set_button_icon**  **(** :ref:`Texture<class_texture>` texture  **)**
 
+Set the icon that will be displayed next to the text inside the button area.
+
 .. _class_Button_get_button_icon:
 
 - :ref:`Texture<class_texture>`  **get_button_icon**  **(** **)** const
+
+Return the button icon.
 
 .. _class_Button_set_flat:
 
@@ -92,14 +103,18 @@ Return the state of the *clip_text* property (see :ref:`set_clip_text<class_Butt
 
 - void  **set_text_align**  **(** :ref:`int<class_int>` align  **)**
 
+Set the text alignment policy, using one of the ALIGN\_\* constants.
+
 .. _class_Button_get_text_align:
 
 - :ref:`int<class_int>`  **get_text_align**  **(** **)** const
+
+Return the text alignment policy.
 
 .. _class_Button_is_flat:
 
 - :ref:`bool<class_bool>`  **is_flat**  **(** **)** const
 
-Return the state of the *flat* property (see :ref:`set_flat<class_Button_set_flat>`)
+Return the state of the *flat* property (see :ref:`set_flat<class_Button_set_flat>`).
 
 

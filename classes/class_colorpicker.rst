@@ -63,20 +63,30 @@ Return the current (edited) color.
 
 - void  **set_raw_mode**  **(** :ref:`bool<class_bool>` mode  **)**
 
+When set to true, every color channel will be represented as a value from 0 to 1, insetead of 0, 255.
+
 .. _class_ColorPicker_is_raw_mode:
 
 - :ref:`bool<class_bool>`  **is_raw_mode**  **(** **)** const
+
+Returns whether this color picker is in raw mode or not
 
 .. _class_ColorPicker_set_edit_alpha:
 
 - void  **set_edit_alpha**  **(** :ref:`bool<class_bool>` show  **)**
 
+Set true if you want the color to have an alpha channel (transparency), or false if you want a solid color.
+
 .. _class_ColorPicker_is_editing_alpha:
 
 - :ref:`bool<class_bool>`  **is_editing_alpha**  **(** **)** const
 
+Returns whether the color has transparency or not.
+
 .. _class_ColorPicker_add_preset:
 
 - void  **add_preset**  **(** :ref:`Color<class_color>` arg0  **)**
+
+Adds the current selected to color to a list of colors (presets), the presets will be displayed in the color picker and the user will be able to select them, notice that the presets list is only for this color picker.
 
 
