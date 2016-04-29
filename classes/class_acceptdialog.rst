@@ -82,9 +82,15 @@ Return true if the dialog will be hidden when accepted (default true).
 
 - :ref:`Button<class_button>`  **add_button**  **(** :ref:`String<class_string>` text, :ref:`bool<class_bool>` right=false, :ref:`String<class_string>` action=""  **)**
 
+Add custom button to the dialog and return the created button.
+
+The button titled with *text* and the *action* will be passed to :ref:`custom_action<class_custom_action>` signal when it is pressed.
+
 .. _class_AcceptDialog_add_cancel:
 
 - :ref:`Button<class_button>`  **add_cancel**  **(** :ref:`String<class_string>` name  **)**
+
+Add custom cancel button to the dialog and return the created button.
 
 .. _class_AcceptDialog_register_text_enter:
 

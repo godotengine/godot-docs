@@ -66,9 +66,9 @@ Numeric Constants
 - **MODE_OPEN_FILES** = **1** --- The dialog allows the selection of multiple files.
 - **MODE_OPEN_DIR** = **2** --- The dialog functions as a folder selector, disallowing the selection of any file.
 - **MODE_SAVE_FILE** = **3** --- The dialog will warn when a file exists.
-- **ACCESS_RESOURCES** = **0**
-- **ACCESS_USERDATA** = **1**
-- **ACCESS_FILESYSTEM** = **2**
+- **ACCESS_RESOURCES** = **0** --- The dialog allows the selection of file and directory.
+- **ACCESS_USERDATA** = **1** --- The dialog allows ascess files under :ref:`Resource<class_resource>` path(res://) .
+- **ACCESS_FILESYSTEM** = **2** --- The dialog allows ascess files in whole file system.
 
 Description
 -----------
@@ -140,17 +140,25 @@ Get the file dialog mode from the MODE\_\* enum.
 
 - void  **set_access**  **(** :ref:`int<class_int>` access  **)**
 
+Set the file access permission of the dialog(Must be one of :ref:`ACCESS_RESOURCES<class_access_resources>`, :ref:`ACCESS_USERDATA<class_access_userdata>` or :ref:`ACCESS_FILESYSTEM<class_access_filesystem>`).
+
 .. _class_FileDialog_get_access:
 
 - :ref:`int<class_int>`  **get_access**  **(** **)** const
+
+Return the file access permission of the dialog.
 
 .. _class_FileDialog_set_show_hidden_files:
 
 - void  **set_show_hidden_files**  **(** :ref:`bool<class_bool>` show  **)**
 
+Set the dialog should show hidden files.
+
 .. _class_FileDialog_is_showing_hidden_files:
 
 - :ref:`bool<class_bool>`  **is_showing_hidden_files**  **(** **)** const
+
+Return true if the diaog allows show hidden files.
 
 .. _class_FileDialog_invalidate:
 

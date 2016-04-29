@@ -35,4 +35,6 @@ Member Function Description
 
 - :ref:`bool<class_bool>`  **is_valid**  **(** **)** const
 
+Should put children to the top left corner instead of center of the container.
+
 

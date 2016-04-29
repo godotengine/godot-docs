@@ -128,6 +128,8 @@ Remove the fractional part of x and y.
 
 - :ref:`Vector2<class_vector2>`  **floorf**  **(** **)**
 
+Remove the fractional part of x and y.
+
 .. _class_Vector2_get_aspect:
 
 - :ref:`float<class_float>`  **get_aspect**  **(** **)**

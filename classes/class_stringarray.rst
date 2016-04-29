@@ -40,9 +40,13 @@ Member Function Description
 
 - void  **push_back**  **(** :ref:`String<class_string>` string  **)**
 
+Append a string element at end of the array.
+
 .. _class_StringArray_resize:
 
 - void  **resize**  **(** :ref:`int<class_int>` idx  **)**
+
+Reset the size of the array.
 
 .. _class_StringArray_set:
 
@@ -51,6 +55,8 @@ Member Function Description
 .. _class_StringArray_size:
 
 - :ref:`int<class_int>`  **size**  **(** **)**
+
+Return the size of the array.
 
 .. _class_StringArray_StringArray:
 

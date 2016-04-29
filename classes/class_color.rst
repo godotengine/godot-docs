@@ -69,6 +69,8 @@ Member Function Description
 
 - :ref:`Color<class_color>`  **blend**  **(** :ref:`Color<class_color>` over  **)**
 
+Return a new color blended with anothor one.
+
 .. _class_Color_contrasted:
 
 - :ref:`Color<class_color>`  **contrasted**  **(** **)**

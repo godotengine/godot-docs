@@ -25,6 +25,8 @@ Member Functions
 +------------------------------+-----------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`      | :ref:`has<class_Dictionary_has>`  **(** var value  **)**                                      |
 +------------------------------+-----------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`has_all<class_Dictionary_has_all>`  **(** :ref:`Array<class_array>` values  **)**       |
++------------------------------+-----------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`        | :ref:`hash<class_Dictionary_hash>`  **(** **)**                                               |
 +------------------------------+-----------------------------------------------------------------------------------------------+
 | :ref:`Array<class_array>`    | :ref:`keys<class_Dictionary_keys>`  **(** **)**                                               |
@@ -67,6 +69,10 @@ Erase a dictionary key/value pair by key.
 - :ref:`bool<class_bool>`  **has**  **(** var value  **)**
 
 Return true if the dictionary has a given key.
+
+.. _class_Dictionary_has_all:
+
+- :ref:`bool<class_bool>`  **has_all**  **(** :ref:`Array<class_array>` values  **)**
 
 .. _class_Dictionary_hash:
 

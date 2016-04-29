@@ -42,9 +42,9 @@ Signals
 Numeric Constants
 -----------------
 
-- **DRAGGER_VISIBLE** = **0**
-- **DRAGGER_HIDDEN** = **1**
-- **DRAGGER_HIDDEN_COLLAPSED** = **2**
+- **DRAGGER_VISIBLE** = **0** --- The split dragger is visible.
+- **DRAGGER_HIDDEN** = **1** --- The split dragger is invisible.
+- **DRAGGER_HIDDEN_COLLAPSED** = **2** --- The split dragger is invisible and collapsed.
 
 Description
 -----------
@@ -76,14 +76,18 @@ Set if the split must be collapsed.
 
 - :ref:`bool<class_bool>`  **is_collapsed**  **(** **)** const
 
-Return if the split is collapsed.
+Return true if the split is collapsed.
 
 .. _class_SplitContainer_set_dragger_visibility:
 
 - void  **set_dragger_visibility**  **(** :ref:`int<class_int>` mode  **)**
 
+Set visibility of the split dragger(*mode* must be one of :ref:`DRAGGER_VISIBLE<class_dragger_visible>`, :ref:`DRAGGER_HIDDEN<class_dragger_hidden>` or :ref:`DRAGGER_HIDDEN_COLLAPSED<class_dragger_hidden_collapsed>`).
+
 .. _class_SplitContainer_get_dragger_visibility:
 
 - :ref:`int<class_int>`  **get_dragger_visibility**  **(** **)** const
+
+Return visibility of the split dragger(One of :ref:`DRAGGER_VISIBLE<class_dragger_visible>`, :ref:`DRAGGER_HIDDEN<class_dragger_hidden>` or :ref:`DRAGGER_HIDDEN_COLLAPSED<class_dragger_hidden_collapsed>`).
 
 

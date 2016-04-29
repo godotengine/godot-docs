@@ -31,9 +31,9 @@ Member Functions
 Numeric Constants
 -----------------
 
-- **ALIGN_BEGIN** = **0**
-- **ALIGN_CENTER** = **1**
-- **ALIGN_END** = **2**
+- **ALIGN_BEGIN** = **0** --- Align children with beginning of the container.
+- **ALIGN_CENTER** = **1** --- Align children with center of the container.
+- **ALIGN_END** = **2** --- Align children with end of the container.
 
 Description
 -----------
@@ -47,12 +47,20 @@ Member Function Description
 
 - void  **add_spacer**  **(** :ref:`bool<class_bool>` begin  **)**
 
+Add a control to the box as a spacer.
+
+If *begin* is true the spacer control will be inserted in front of other children.
+
 .. _class_BoxContainer_get_alignment:
 
 - :ref:`int<class_int>`  **get_alignment**  **(** **)** const
 
+Return the alignment of children in the container.
+
 .. _class_BoxContainer_set_alignment:
 
 - void  **set_alignment**  **(** :ref:`int<class_int>` alignment  **)**
+
+Set the alignment of children in the container(Must be one of ALIGN_BEGIN, ALIGN_CENTER or ALIGN_END).
 
 

@@ -56,10 +56,10 @@ Signals
 Numeric Constants
 -----------------
 
-- **DRAW_NORMAL** = **0**
-- **DRAW_PRESSED** = **1**
-- **DRAW_HOVER** = **2**
-- **DRAW_DISABLED** = **3**
+- **DRAW_NORMAL** = **0** --- The normal state (i.e. not pressed, not hovered, not toggled and enabled) of buttons.
+- **DRAW_PRESSED** = **1** --- The state of buttons are pressed.
+- **DRAW_HOVER** = **2** --- The state of buttons are hovered.
+- **DRAW_DISABLED** = **3** --- The state of buttons are disabled.
 
 Description
 -----------
@@ -73,9 +73,13 @@ Member Function Description
 
 - void  **_pressed**  **(** **)** virtual
 
+Called when button is pressed.
+
 .. _class_BaseButton__toggled:
 
 - void  **_toggled**  **(** :ref:`bool<class_bool>` pressed  **)** virtual
+
+Called when button is toggled (only if toggle_mode is active).
 
 .. _class_BaseButton_set_pressed:
 
@@ -92,6 +96,8 @@ If toggle_mode is active, return whether the button is toggled. If toggle_mode i
 .. _class_BaseButton_is_hovered:
 
 - :ref:`bool<class_bool>`  **is_hovered**  **(** **)** const
+
+Return true if mouse entered the button before it exit.
 
 .. _class_BaseButton_set_toggle_mode:
 
