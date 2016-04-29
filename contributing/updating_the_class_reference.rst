@@ -53,7 +53,7 @@ should however **not be edited directly**, they are generated via a script from 
 Getting started with GitHub
 ---------------------------
 
-This section described step-by-step the typical workflow to fork the git repository,
+This section describes step-by-step the typical workflow to fork the git repository,
 or update an existing local clone of your fork, and then prepare a pull request.
 
 Fork Godot Engine
@@ -122,6 +122,17 @@ commit in the upstream branch), you need to *reset* your branch:
 ``upstream/master`` branch, i.e. it will discard all changes which are
 specific to your local branch. So make sure to run this *before* making new
 changes and not afterwards.
+
+Alternatively, you can also keep your own master branch (``origin/master``)
+up-to-date and create new branches when wanting to commit changes to the
+class reference:
+
+::
+
+    git checkout master
+    git branch -d my-previous-doc-branch
+    git pull --rebase upstream/master
+    git checkout -b my-new-doc-branch
 
 In case of doubt, ask for help on our IRC channels, we have some git gurus
 there.
