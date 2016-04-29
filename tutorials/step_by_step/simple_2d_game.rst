@@ -55,7 +55,6 @@ is defined, then input methods that trigger it are added.
 Open the project properties dialog again, but this time move to the
 "Input Map" tab.
 
-.. role:: python(code)
 On it, add 4 actions:
 ``left_move_up``, ``left_move_down``, ``right_move_up``, ``right_move_down``.
 Assign the keys that you desire. A/Z (for the left player) and Up/Down (for the right player) as keys
