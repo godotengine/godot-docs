@@ -10,8 +10,8 @@ Introduction
 create content. It uses a syntax similar to 
 `Python <https://en.wikipedia.org/wiki/Python_%28programming_language%29>`_ 
 (blocks are indent-based and many keywords are similar). Its goal is 
-to be optimized for and tightly integrated with the Godot engine, allowing 
-great flexibility for content creation and integration.
+to be optimized for and tightly integrated with Godot Engine, allowing great
+flexibility for content creation and integration.
 
 History
 ~~~~~~~
@@ -139,63 +139,57 @@ Keywords
 The following is the list of keywords supported by the language. Since
 keywords are reserved words (tokens), they can't be used as identifiers.
 
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|  Keyword       | Description                                                                                                                                                                                              |
-+================+==========================================================================================================================================================================================================+
-| if             | See if-else-elif_                                                                                                                                                                                        |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| elif           | See if-else-elif_                                                                                                                                                                                        |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| else           | See if-else-elif_                                                                                                                                                                                        |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| for            | See for_                                                                                                                                                                                                 |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| do             | Reserved for future implementation of do...while loops.                                                                                                                                                  |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| while          | See while_                                                                                                                                                                                               |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| switch         | Reserved for future implementation.                                                                                                                                                                      |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| case           | Reserved for future implementation.                                                                                                                                                                      |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| break          | Exits the execution of the current for or while loop                                                                                                                                                     |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| continue       | Directly continues with the next iteration of the for or while loop                                                                                                                                      |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| pass           | Used when a statement is required syntactically but you do not want any command or code to execute (ex: empty function returning nothing)                                                                |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| return         | Returns a value at the end of the function                                                                                                                                                               |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| func           | Defines a function                                                                                                                                                                                       |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| class          | Defines a class                                                                                                                                                                                          |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| extends        | Indicates that the script extends another script or class. Also used to test whether a variable extends a class (if variable extends MyClass:)                                                           |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| onready        | Initializes a script variable when the Node which the script it attached to and all its children, are ready.                                                                                             |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| tool           | Executes the script in the editor                                                                                                                                                                        |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| static         | Defines a static function. Static members are not allowed.                                                                                                                                               |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| export         | Saves a variable along a scene. If initialized, can be set from the editor.                                                                                                                              |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| setget         | Defines setter and getter functions for a variable.                                                                                                                                                      |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| const          | Defines a constant variable.                                                                                                                                                                             |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| var            | Defines a variable.                                                                                                                                                                                      |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| preload        | Preloads a resource or a scene.                                                                                                                                                                          |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| assert         | Reserved for future GDScript implementation. Stops if the provided condition is not valid.                                                                                                               |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| yield / resume | Coroutines : yield freezes the state of execution of the current function and returns back to where it was called from. On resume, the function will continue execution from the place yield was called. |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| signal         | Creates a signal.                                                                                                                                                                                        |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| breakpoint     | Editor helper for debugger breakpoints.                                                                                                                                                                  |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------+---------------------------------------------------------------------------------------------------------------+
+|  Keyword   | Description                                                                                                   |
++============+===============================================================================================================+
+| if         | See `if/else/elif`_.                                                                                          |
++------------+---------------------------------------------------------------------------------------------------------------+
+| elif       | See `if/else/elif`_.                                                                                          |
++------------+---------------------------------------------------------------------------------------------------------------+
+| else       | See `if/else/elif`_.                                                                                          |
++------------+---------------------------------------------------------------------------------------------------------------+
+| for        | See for_.                                                                                                     |
++------------+---------------------------------------------------------------------------------------------------------------+
+| do         | Reserved for future implementation of do...while loops.                                                       |
++------------+---------------------------------------------------------------------------------------------------------------+
+| while      | See while_.                                                                                                   |
++------------+---------------------------------------------------------------------------------------------------------------+
+| switch     | Reserved for future implementation.                                                                           |
++------------+---------------------------------------------------------------------------------------------------------------+
+| case       | Reserved for future implementation.                                                                           |
++------------+---------------------------------------------------------------------------------------------------------------+
+| break      | Exits the execution of the current ``for`` or ``while`` loop.                                                 |
++------------+---------------------------------------------------------------------------------------------------------------+
+| continue   | Immediately skips to the next iteration of the ``for`` or ``while`` loop.                                     |
++------------+---------------------------------------------------------------------------------------------------------------+
+| pass       | Used where a statement is required syntactically but execution of code is undesired, e.g. in empty functions. |
++------------+---------------------------------------------------------------------------------------------------------------+
+| return     | Returns a value from a function.                                                                              |
++------------+---------------------------------------------------------------------------------------------------------------+
+| class      | Defines a class.                                                                                              |
++------------+---------------------------------------------------------------------------------------------------------------+
+| extends    | Defines what class to extend with the current class. Also tests whether a variable extends a given class.     |
++------------+---------------------------------------------------------------------------------------------------------------+
+| tool       | Executes the script in the editor.                                                                            |
++------------+---------------------------------------------------------------------------------------------------------------+
+| signal     | Defines a signal.                                                                                             |
++------------+---------------------------------------------------------------------------------------------------------------+
+| func       | Defines a function.                                                                                           |
++------------+---------------------------------------------------------------------------------------------------------------+
+| static     | Defines a static function. Static member variables are not allowed.                                           |
++------------+---------------------------------------------------------------------------------------------------------------+
+| const      | Defines a constant.                                                                                           |
++------------+---------------------------------------------------------------------------------------------------------------+
+| var        | Defines a variable.                                                                                           |
++------------+---------------------------------------------------------------------------------------------------------------+
+| onready    | Initializes a variable once the Node the script is attached to and its children are part of the scene tree.   |
++------------+---------------------------------------------------------------------------------------------------------------+
+| export     | Saves a variable along with the resource it's attached to and makes it visible and modifiable in the editor.  |
++------------+---------------------------------------------------------------------------------------------------------------+
+| setget     | Defines setter and getter functions for a variable.                                                           |
++------------+---------------------------------------------------------------------------------------------------------------+
+| breakpoint | Editor helper for debugger breakpoints.                                                                       |
++------------+---------------------------------------------------------------------------------------------------------------+
 
 Operators
 ~~~~~~~~~
@@ -430,7 +424,7 @@ The array can resize dynamically. Arrays are indexed starting from index ``0``.
     arr[0] = "Hi!" # replacing value 1 with "Hi"
     arr.append(4)  # array is now ["Hi", 2, 3, 4]
 
-GDScript Arrays are allocated linearly in memory for speed. Very
+GDScript arrays are allocated linearly in memory for speed. Very
 large arrays (more than tens of thousands of elements) may however cause
 memory fragmentation. If this is a concern special types of 
 arrays are available. These only accept a single data type. They avoid memory 
@@ -455,11 +449,11 @@ Associative container which contains values referenced by unique keys.
     var d={4:5, "a key":"a value", 28:[1,2,3]}
     d["Hi!"] = 0
     var d = {
-         22        : "Value",
-         "somekey" : 2,
-         "otherkey" : [2,3,4],
-         "morekey" : "Hello"
-         }
+        22         : "Value",
+        "somekey"  : 2,
+        "otherkey" : [2,3,4],
+        "morekey"  : "Hello"
+    }
 
 Lua-style table syntax is also supported. Lua-style uses ``=`` instead of ``:`` 
 and doesn't use quotes to mark string keys (making for slightly less to write). 
@@ -473,9 +467,15 @@ start with a digit.
         somekey = 2,
         otherkey = [2,3,4],
         morekey = "Hello"
-      }
+    }
 
+To add a key to an existing dictionary, access it like an existing key and
+assign to it::
 
+    var d = {} # create an empty Dictionary
+    d.Waiting = 14 # add String "Waiting" as a key and assign the value 14 to it
+    d[4] = "hello" # add integer `4` as a key and assign the String "hello" as its value
+    d["Godot"] = 3.01 # add String "Godot" as a key and assign the value 3.01 to it
 
 Data
 ----
@@ -513,10 +513,11 @@ expressions and must be assigned on initialization.
 Functions
 ~~~~~~~~~
 
-Functions always belong to a :ref: `class <Classes>`. The scope priority for variable
-look-up is: local → class member → global. The ``self`` variable is always available
-is provided as an option for accessing class members, but is not always required (and should *not*
-be sent as the function's first argument, unlike Python). 
+Functions always belong to a `class <Classes_>`_. The scope priority for
+variable look-up is: local → class member → global. The ``self`` variable is
+always available and is provided as an option for accessing class members, but
+is not always required (and should *not* be sent as the function's first
+argument, unlike Python).
 
 ::
 
@@ -530,27 +531,6 @@ A function can ``return`` at any point. The default return value is ``null``.
 Referencing Functions
 ^^^^^^^^^^^^^^^^^^^^^
 
-Referencing a function in another class means retrieving 
-that class from the scene tree.
-
-::
-
-    # absolute node path
-    get_node("/root/path/to/node").myfunction(args)
-    # relative reference
-    get_node("../node").myfunction(args)
-
-A common case is referencing a function (or variable) 
-in the class' node parent, accessible with ``get_parent``:
-
-::
-
-    # store parent in variable, then reference
-    var parent = get_parent()
-    parent.function(args)
-    # two parents up (etc)
-    get_parent().get_parent().function(args)
-
 To call a function in a *base class* (i.e. one ``extend``-ed in your current class),
 prepend ``.`` to the function name:
 
@@ -558,16 +538,13 @@ prepend ``.`` to the function name:
 
     .basefunc(args)
 
+Contrary to Python, functions are *not* first class objects in GDScript. This
+means they cannot be stored in variables, passed as an argument to another
+function or be returned from other functions. This is for performance reasons.
 
-Contrary to Python, functions are *not* first class objects in GDScript. This 
-means that they cannot be treated as objects and stored in variables. Functions 
-cannot be referenced directly since they are not considered 
-class members (this is for performance reasons).
-
-To refefence a function by name or store a function in a variable one must 
-instead use the ``call`` or ``funcref`` helpers:
-
-::
+To reference a function by name at runtime, (e.g. to store it in a variable, or
+pass it to another function as an argument) one must use the ``call`` or
+``funcref`` helpers::
    
     # Call a function by name in one step
     mynode.call("myfunction", args)  
@@ -608,10 +585,10 @@ entirely optional.
 if/else/elif
 ^^^^^^^^^^^^
 
-Simple conditions are created by using the *if/else/elif* syntax.
-Parenthesis around statements is allowed, but not required. Given the
-nature of the tab-based indentation, elif can be used instead of
-else:/if: to maintain a level of indentation.
+Simple conditions are created by using the ``if``/``else``/``elif`` syntax.
+Parenthesis around conditions are allowed, but not required. Given the
+nature of the tab-based indentation, ``elif`` can be used instead of
+``else``/``if`` to maintain a level of indentation.
 
 ::
 
@@ -622,11 +599,18 @@ else:/if: to maintain a level of indentation.
     else:
         statement(s)
 
+Short statements can be written on the same line as the condition::
+
+    if (1 + 1 == 2): return 2 + 2
+    else:
+        var x = 3 + 3
+        return x
+
 while
 ^^^^^
 
-Simple loops are created by using *while* syntax. Loops can be broken
-using *break* or continued using *continue*:
+Simple loops are created by using ``while`` syntax. Loops can be broken
+using ``break`` or continued using ``continue``:
 
 ::
 
@@ -637,8 +621,8 @@ for
 ^^^
 
 To iterate through a range, such as an array or table, a *for* loop is
-used. When looping over an array, the current array element is stored in
-the loop variable. When looping over a dictionary, the *index* is stored
+used. When iterating over an array, the current array element is stored in
+the loop variable. When iterating over a dictionary, the *index* is stored
 in the loop variable.
 
 ::
@@ -667,7 +651,7 @@ By default, the body of a script file is an unnamed class and it can
 only be referenced externally as a resource or file. Class syntax is
 meant to be very compact and can only contain member variables or
 functions. Static functions are allowed, but not static members (this is
-in the spirit of thread safety since scripts can be initialized in
+in the spirit of thread safety, since scripts can be initialized in
 separate threads without the user knowing). In the same way, member
 variables (including arrays and dictionaries) are initialized every time
 an instance is created.
@@ -676,7 +660,7 @@ Below is an example of a class file.
 
 ::
 
-    # saved as a file myclass.gd
+    # saved as a file named myclass.gd
 
     var a = 5
 
@@ -733,11 +717,11 @@ If a parent constructor takes arguments, they are passed like this:
 
 ::
 
-    func _init(args).(parentargs):
+    func _init(args).(parent_args):
        pass
 
 Inner classes
-^^^^^^^^^^^
+^^^^^^^^^^^^^
 
 A class file can contain inner classes. Inner classes are defined using the
 ``class`` keyword. They are instanced using the ``ClassName.new()`` 
@@ -761,18 +745,15 @@ function.
 Classes as resources
 ^^^^^^^^^^^^^^^^^^^^
 
-Since Classes are always stored as files, they are treated as resources
-that must be loaded from disk into whichever class that wants to make use 
-of their functionality. This is done using either the ``load`` or ``preload`` 
-functions (see below). Instancing of a loaded class resource is done by 
-calling the ``new`` function from a class object:
+Classes stored as files are treated as :ref:`resources <class_GDScript>`. They
+must be loaded from disk to access them in other classes. This is done using
+either the ``load`` or ``preload`` functions (see below). Instancing of a loaded
+class resource is done by calling the ``new`` function on the class object::
 
-::
-
-    # Load the class (reloaded every time the script is instanced)
+    # Load the class resource when calling load()
     var MyClass = load("myclass.gd")
 
-    # Preload the class only once, at compile time
+    # Preload the class only once at compile time
     var MyClass2 = preload("myclass.gd")
 
     func _init():
@@ -783,19 +764,19 @@ Exports
 ~~~~~~~
 
 Class members can be exported. This means their value gets saved along
-with a scene. If class members have initializers to constant
-expressions, they will be available for editing in the property editor.
-Exporting is done by using the export keyword:
-
-::
+with the resource (e.g. the :ref:`scene <class_PackedScene>`) they're attached
+to. They will also be available for editing in the property editor. Exporting
+is done by using the ``export`` keyword::
 
     extends Button
 
-    export var data  # value will be saved
-    export var number = 5  # also available to the property editor
+    export var number = 5  # value will be saved and visible in the property editor
+
+An exported variable must be initialized to a constant expression or have an
+export hint in the form of an argument to the export keyword (see below).
 
 One of the fundamental benefits of exporting member variables is to have
-them visible and editable in the Godot editor. This way artists and game designers
+them visible and editable in the editor. This way artists and game designers
 can modify values that later influence how the program runs. For this, a
 special export syntax is provided.
 
