@@ -53,6 +53,9 @@ should however **not be edited directly**, they are generated via a script from 
 Getting started with GitHub
 ---------------------------
 
+This section described step-by-step the typical workflow to fork the git repository,
+or update an existing local clone of your fork, and then prepare a pull request.
+
 Fork Godot Engine
 ~~~~~~~~~~~~~~~~~
 
@@ -75,7 +78,53 @@ Then, create a new git branch that will contain your changes.
 
 The branch you just created is identical to current master branch of
 Godot Engine. It already contains a ``doc/`` folder, with the current
-state of the class reference.
+state of the class reference. Note that you can set whatever name
+you want for the branch, ``classref-edit`` is just an example.
+
+Keeping your local clone up-to-date
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you already have a local clone of your own fork, it might happen
+pretty fast that it will diverge with the upstream git repository.
+For example other contributors might have updated the class reference
+since you last worked on it, or your own commits might have been squashed
+together when merging your pull request, and thus appear as diverging
+from the upstream master branch.
+
+To keep your local clone up-to-date, you should first add an ``upstream``
+git *remote* to work with:
+
+::
+
+    git remote add upstream https://github.com/godotengine/godot
+    git fetch upstream
+
+You only need to run this once to define this remote. The following steps
+will have to be run each time you want to sync your branch to the state
+of the upstream repo:
+
+::
+
+    git pull --rebase upstream/master
+
+This command would reapply your local changes (if any) on top of the current
+state of the upstream branch, thus bringing you up-to-date with your own commits
+on top. In case you have local commits that should be discarded (e.g. if your
+previous pull request had 5 small commits that were all merged into one bigger
+commit in the upstream branch), you need to *reset* your branch:
+
+::
+
+    git fetch upstream
+    git reset --hard upstream/master
+
+**Warning:** The above command will reset your branch to the state of the
+``upstream/master`` branch, i.e. it will discard all changes which are
+specific to your local branch. So make sure to run this *before* making new
+changes and not afterwards.
+
+In case of doubt, ask for help on our IRC channels, we have some git gurus
+there.
 
 Updating the documentation template
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
