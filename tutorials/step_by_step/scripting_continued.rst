@@ -180,7 +180,7 @@ used:
     func _someaction():
         s.free() # immediately removes the node from the scene and frees it
 
-When a node is freed, it also frees all it's children nodes. Because of
+When a node is freed, it also frees all its children nodes. Because of
 this, manually deleting nodes is much simpler than it appears. Just free
 the base node and everything else in the sub-tree goes away with it.
 
