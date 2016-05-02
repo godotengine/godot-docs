@@ -91,7 +91,7 @@ replaced.
 at runtime.
 
 If you also want to include support for x86 Android, add the following
-compile flag: ``x86=yes``, then copy/symlink the resulting folder to
+compile flag: ``android_arch=x86``, then copy/symlink the resulting binary to
 the ``x86`` folder:
 
 ::
