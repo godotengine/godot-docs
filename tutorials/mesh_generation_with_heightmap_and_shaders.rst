@@ -28,9 +28,8 @@ See this tutorial as an introduction, not a method that you should
 employ in your games, except if you intend to do LOD. Otherwise, this is
 probably not the best way.
 
-However, let's first create a heightmap. To do so, let's first create a
-heightmap. To do this, I'll use GIMP editor, but you can use any image
-editor you like.
+However, let's first create a heightmap,or a 2D representation of the terrain.
+To do this, I'll use GIMP, but you can use any image editor you like.
 
 The heightmap
 -------------
@@ -89,7 +88,7 @@ texture over the whole mesh correctly.
 
 If all the vertices of your mesh are not selected, select them all
 (hit "A"). They must appear orange, not black. Then, in the
-Shading/UVs button group a the left, click the "Unwrap" button (or
+Shading/UVs button group to the left, click the "Unwrap" button (or
 simply hit "U") and select "Smart UV Project". Keep the default
 options and hit "Ok".
 
@@ -99,7 +98,7 @@ Now, we need to switch our view to "UV/Image editor".
 
 .. image:: /img/9_Blender_UV_editor.png
 
-Select all the vertices again ("A") then in the UV button, select
+Select all the vertices again ("A") then in the UV menu, select
 "Export UV Layout".
 
 .. image:: /img/10_Blender_exportUV.png
@@ -126,7 +125,7 @@ your project folder).
 
 .. image:: /img/12_Godot_ImportMesh.png
 
-I like to check "Normals" in the import popup so the import will also
+I like to check "Normals" in the import pop-up so the import will also
 consider faces normals, which can be useful (even if we don't use them
 in this tutorial). Your mesh is now displayed in the FileSystem in
 "res://".
