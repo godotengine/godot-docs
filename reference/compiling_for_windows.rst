@@ -12,7 +12,7 @@ For compiling under Windows, the following is required:
 
 -  `Visual C++ <http://www.microsoft.com/visualstudio>`__, Visual C++
    Express compiler or Visual Studio Community (recommended) at least
-   the 2010 version (10.0) up to 2015 (14.0). **Make sure you get a
+   the 2013 version (12.0) up to 2015 (14.0). **Make sure you get a
    version that can compile for C++, Desktop**.
 -  `Python 2.7+ <https://www.python.org/downloads/>`__ (3.0 is
    untested as of now). Using the 32-bits installer is recommended.
