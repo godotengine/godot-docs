@@ -43,7 +43,7 @@ The aim of the import system is that it works well enough for most
 common cases and projects. What is there has been tested and seems to
 cover most needs.
 
-However, as mentioned before, this is on of the most difficult areas of
+However, as mentioned before, this is one of the most difficult areas of
 writing a game engine. It may happen often (specially on large projects,
 ports, or projects with unusual requirement) that what is provided is
 not enough. It's easy to say that the engine is open source and that the
@@ -59,7 +59,7 @@ helpers as possible to support a custom import process, for example:
    the data being imported.
 -  Support for creating custom import plugins is also provided, even for
    replacing the existing ones.
--  If all else fails, Godot supports for adding custom resource loaders,
+-  If all else fails, Godot supports adding custom resource loaders,
    to load data in alternative formats, without intermediate conversion.
 
 Both the import system and the custom tools provided will improve over
@@ -106,7 +106,7 @@ Repository layout:
     source_assets/art/niceart.psd
     game/engine.cfg
 
-In the above example, artists, musican, translators, etc. can work in
+In the above example, artists, musician, translators, etc. can work in
 the source_assets/ folder, then import the assets to the game/ folder.
 When the repository is updated, anyone can re-import the assets if they
 changed.
