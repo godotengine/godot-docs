@@ -15,3 +15,8 @@ Brief Description
 
 Base class for Popup Dialogs.
 
+Description
+-----------
+
+PopupDialog is a base class for popup dialogs, along with :ref:`WindowDialog<class_windowdialog>`.
+

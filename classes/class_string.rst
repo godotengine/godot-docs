@@ -105,7 +105,7 @@ Member Functions
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RealArray<class_realarray>`      | :ref:`split_floats<class_String_split_floats>`  **(** :ref:`String<class_string>` divisor, :ref:`bool<class_bool>` allow_empty=True  **)** |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`            | :ref:`strip_edges<class_String_strip_edges>`  **(** **)**                                                                                  |
+| :ref:`String<class_string>`            | :ref:`strip_edges<class_String_strip_edges>`  **(** :ref:`bool<class_bool>` left=True, :ref:`bool<class_bool>` right=True  **)**           |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`            | :ref:`substr<class_String_substr>`  **(** :ref:`int<class_int>` from, :ref:`int<class_int>` len  **)**                                     |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -378,9 +378,9 @@ Split the string in floats by using a divisor string, return an array of the sub
 
 .. _class_String_strip_edges:
 
-- :ref:`String<class_string>`  **strip_edges**  **(** **)**
+- :ref:`String<class_string>`  **strip_edges**  **(** :ref:`bool<class_bool>` left=True, :ref:`bool<class_bool>` right=True  **)**
 
-Return a copy of the string stripped of any non-printable character at the beginning and the end.
+Return a copy of the string stripped of any non-printable character at the beginning and the end. The optional arguments are used to toggle stripping on the left and right edges respectively.
 
 .. _class_String_substr:
 

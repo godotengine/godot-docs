@@ -97,19 +97,19 @@ Member Function Description
 
 - void  **add_icon_item**  **(** :ref:`Object<class_object>` texture, :ref:`String<class_string>` label, :ref:`int<class_int>` id=-1, :ref:`int<class_int>` accel=0  **)**
 
-Add a new item with text "label" and icon "texture". An id can optionally be provided, as well as an accelerator. If no id is provided, one will be created from the index.
+Add a new item with text "label" and icon "texture". An id can optionally be provided, as well as an accelerator keybinding. If no id is provided, one will be created from the index.
 
 .. _class_PopupMenu_add_item:
 
 - void  **add_item**  **(** :ref:`String<class_string>` label, :ref:`int<class_int>` id=-1, :ref:`int<class_int>` accel=0  **)**
 
-Add a new item with text "label". An id can optionally be provided, as well as an accelerator. If no id is provided, one will be created from the index.
+Add a new item with text "label". An id can optionally be provided, as well as an accelerator keybinding. If no id is provided, one will be created from the index.
 
 .. _class_PopupMenu_add_icon_check_item:
 
 - void  **add_icon_check_item**  **(** :ref:`Object<class_object>` texture, :ref:`String<class_string>` label, :ref:`int<class_int>` id=-1, :ref:`int<class_int>` accel=0  **)**
 
-Add a new check able item with text "label" and icon "texture". An id can optionally be provided, as well as an accelerator. If no id is provided, one will be created from the index. Note that checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually.
+Add a new checkable item with text "label" and icon "texture". An id can optionally be provided, as well as an accelerator. If no id is provided, one will be created from the index. Note that checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually.
 
 .. _class_PopupMenu_add_check_item:
 
@@ -120,6 +120,8 @@ Add a new checkable item with text "label". An id can optionally be provided, as
 .. _class_PopupMenu_add_submenu_item:
 
 - void  **add_submenu_item**  **(** :ref:`String<class_string>` label, :ref:`String<class_string>` submenu, :ref:`int<class_int>` id=-1  **)**
+
+Adds an item with a submenu. The submenu is the name of a child PopupMenu node that would be shown when the item is clicked. An id can optionally be provided, but if is isn't provided, one will be created from the index.
 
 .. _class_PopupMenu_set_item_text:
 
@@ -143,6 +145,8 @@ Set the accelerator of the item at index "idx". Accelerators are special combina
 
 - void  **set_item_metadata**  **(** :ref:`int<class_int>` idx, var metadata  **)**
 
+Sets the metadata of an item, which might be of any type. You can later get it with :ref:`get_item_metadata<class_PopupMenu_get_item_metadata>`, which provides a simple way of assigning context data to items.
+
 .. _class_PopupMenu_set_item_checked:
 
 - void  **set_item_checked**  **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` checked  **)**
@@ -153,17 +157,25 @@ Set the checkstate status of the item at index "idx".
 
 - void  **set_item_disabled**  **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` disabled  **)**
 
+Sets whether the item at index "idx" is disabled or not. When it is disabled it can't be selected, or its action invoked.
+
 .. _class_PopupMenu_set_item_submenu:
 
 - void  **set_item_submenu**  **(** :ref:`int<class_int>` idx, :ref:`String<class_string>` submenu  **)**
+
+Sets the submenu of the item at index "idx". The submenu is the name of a child PopupMenu node that would be shown when the item is clicked.
 
 .. _class_PopupMenu_set_item_as_separator:
 
 - void  **set_item_as_separator**  **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enable  **)**
 
+Mark the item at index "idx" as a seperator, which means that it would be displayed as a mere line.
+
 .. _class_PopupMenu_set_item_as_checkable:
 
 - void  **set_item_as_checkable**  **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enable  **)**
+
+Set whether the item at index "idx" has a checkbox. Note that checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually.
 
 .. _class_PopupMenu_set_item_ID:
 
@@ -187,6 +199,8 @@ Return the icon of the item at index "idx".
 
 - void  **get_item_metadata**  **(** :ref:`int<class_int>` idx  **)** const
 
+Return the metadata of an item, which might be of any type. You can set it with :ref:`set_item_metadata<class_PopupMenu_set_item_metadata>`, which provides a simple way of assigning context data to items.
+
 .. _class_PopupMenu_get_item_accelerator:
 
 - :ref:`int<class_int>`  **get_item_accelerator**  **(** :ref:`int<class_int>` idx  **)** const
@@ -197,13 +211,19 @@ Return the accelerator of the item at index "idx". Accelerators are special comb
 
 - :ref:`String<class_string>`  **get_item_submenu**  **(** :ref:`int<class_int>` idx  **)** const
 
+Return the submenu name of the item at index "idx".
+
 .. _class_PopupMenu_is_item_separator:
 
 - :ref:`bool<class_bool>`  **is_item_separator**  **(** :ref:`int<class_int>` idx  **)** const
 
+Return whether the item is a seperator. If it is, it would be displayed as a line.
+
 .. _class_PopupMenu_is_item_checkable:
 
 - :ref:`bool<class_bool>`  **is_item_checkable**  **(** :ref:`int<class_int>` idx  **)** const
+
+Return whether the item at index "idx" has a checkbox. Note that checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually.
 
 .. _class_PopupMenu_is_item_checked:
 
@@ -214,6 +234,8 @@ Return the checkstate status of the item at index "idx".
 .. _class_PopupMenu_is_item_disabled:
 
 - :ref:`bool<class_bool>`  **is_item_disabled**  **(** :ref:`int<class_int>` idx  **)** const
+
+Return whether the item at index "idx" is disabled. When it is disabled it can't be selected, or its action invoked.
 
 .. _class_PopupMenu_get_item_ID:
 
@@ -243,10 +265,12 @@ Add a separator between items. Separators also occupy an index.
 
 - void  **remove_item**  **(** :ref:`int<class_int>` idx  **)**
 
+Removes the item at index "idx" from the menu. Note that the indexes of items after the removed item are going to be shifted by one.
+
 .. _class_PopupMenu_clear:
 
 - void  **clear**  **(** **)**
 
-Clear the popup menu.
+Clear the popup menu, in effect removing all items.
 
 

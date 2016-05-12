@@ -37,6 +37,14 @@ Member Functions
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`            | :ref:`cursor_get_line<class_TextEdit_cursor_get_line>`  **(** **)** const                                                                                                                                                   |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`cursor_set_blink_enabled<class_TextEdit_cursor_set_blink_enabled>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                                       |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`cursor_get_blink_enabled<class_TextEdit_cursor_get_blink_enabled>`  **(** **)** const                                                                                                                                 |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`cursor_set_blink_speed<class_TextEdit_cursor_set_blink_speed>`  **(** :ref:`float<class_float>` blink_speed  **)**                                                                                                    |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`        | :ref:`cursor_get_blink_speed<class_TextEdit_cursor_get_blink_speed>`  **(** **)** const                                                                                                                                     |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_readonly<class_TextEdit_set_readonly>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                                                               |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_wrap<class_TextEdit_set_wrap>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                                                                       |
@@ -161,6 +169,30 @@ Return the column the editing cursor is at.
 - :ref:`int<class_int>`  **cursor_get_line**  **(** **)** const
 
 Return the line the editing cursor is at.
+
+.. _class_TextEdit_cursor_set_blink_enabled:
+
+- void  **cursor_set_blink_enabled**  **(** :ref:`bool<class_bool>` enable  **)**
+
+Set the text editor caret to blink.
+
+.. _class_TextEdit_cursor_get_blink_enabled:
+
+- :ref:`bool<class_bool>`  **cursor_get_blink_enabled**  **(** **)** const
+
+Gets whether the text editor caret is blinking.
+
+.. _class_TextEdit_cursor_set_blink_speed:
+
+- void  **cursor_set_blink_speed**  **(** :ref:`float<class_float>` blink_speed  **)**
+
+Set the text editor caret blink speed. Cannot be less then or equal to 0.
+
+.. _class_TextEdit_cursor_get_blink_speed:
+
+- :ref:`float<class_float>`  **cursor_get_blink_speed**  **(** **)** const
+
+Gets the text editor caret blink speed.
 
 .. _class_TextEdit_set_readonly:
 

@@ -29,9 +29,13 @@ Member Functions
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`      | :ref:`get_translation<class_Spatial_get_translation>`  **(** **)** const                                                                                                        |
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_rotation<class_Spatial_set_rotation>`  **(** :ref:`Vector3<class_vector3>` rotation  **)**                                                                            |
+| void                               | :ref:`set_rotation<class_Spatial_set_rotation>`  **(** :ref:`Vector3<class_vector3>` rotation_rad  **)**                                                                        |
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`      | :ref:`get_rotation<class_Spatial_get_rotation>`  **(** **)** const                                                                                                              |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_rotation_deg<class_Spatial_set_rotation_deg>`  **(** :ref:`Vector3<class_vector3>` rotation_deg  **)**                                                                |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`      | :ref:`get_rotation_deg<class_Spatial_get_rotation_deg>`  **(** **)** const                                                                                                      |
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_scale<class_Spatial_set_scale>`  **(** :ref:`Vector3<class_vector3>` scale  **)**                                                                                     |
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -137,11 +141,19 @@ Return the local transform, relative to the bone parent.
 
 .. _class_Spatial_set_rotation:
 
-- void  **set_rotation**  **(** :ref:`Vector3<class_vector3>` rotation  **)**
+- void  **set_rotation**  **(** :ref:`Vector3<class_vector3>` rotation_rad  **)**
 
 .. _class_Spatial_get_rotation:
 
 - :ref:`Vector3<class_vector3>`  **get_rotation**  **(** **)** const
+
+.. _class_Spatial_set_rotation_deg:
+
+- void  **set_rotation_deg**  **(** :ref:`Vector3<class_vector3>` rotation_deg  **)**
+
+.. _class_Spatial_get_rotation_deg:
+
+- :ref:`Vector3<class_vector3>`  **get_rotation_deg**  **(** **)** const
 
 .. _class_Spatial_set_scale:
 

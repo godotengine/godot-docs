@@ -43,8 +43,8 @@ Signals
 Numeric Constants
 -----------------
 
-- **NOTIFICATION_POST_POPUP** = **80**
-- **NOTIFICATION_POPUP_HIDE** = **81**
+- **NOTIFICATION_POST_POPUP** = **80** --- Notification sent right after the popup is shown.
+- **NOTIFICATION_POPUP_HIDE** = **81** --- Notification sent right after the popup is hidden.
 
 Description
 -----------
@@ -70,6 +70,8 @@ Popup (show the control in modal form) in the center of the screen, scaled at a 
 
 - void  **popup_centered_minsize**  **(** :ref:`Vector2<class_vector2>` minsize=Vector2(0,0)  **)**
 
+Popup (show the control in modal form) in the center of the screen, ensuring the size is never smaller than ``minsize``.
+
 .. _class_Popup_popup:
 
 - void  **popup**  **(** **)**
@@ -80,8 +82,12 @@ Popup (show the control in modal form).
 
 - void  **set_exclusive**  **(** :ref:`bool<class_bool>` enable  **)**
 
+Make the popup hide other popups when shown on the screen.
+
 .. _class_Popup_is_exclusive:
 
 - :ref:`bool<class_bool>`  **is_exclusive**  **(** **)** const
+
+Returns whether the popup will hide other popups when shown on the screen.
 
 

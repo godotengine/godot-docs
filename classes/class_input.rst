@@ -15,7 +15,7 @@ Input
 Brief Description
 -----------------
 
-
+A Singleton that deals with inputs.
 
 Member Functions
 ----------------
@@ -68,9 +68,14 @@ Signals
 Numeric Constants
 -----------------
 
-- **MOUSE_MODE_VISIBLE** = **0**
-- **MOUSE_MODE_HIDDEN** = **1**
-- **MOUSE_MODE_CAPTURED** = **2**
+- **MOUSE_MODE_VISIBLE** = **0** --- Makes the mouse cursor visible if it is hidden.
+- **MOUSE_MODE_HIDDEN** = **1** --- Makes the mouse cursor hidden if it is visible.
+- **MOUSE_MODE_CAPTURED** = **2** --- Captures the mouse. The mouse will be hidden and unable to leave the game window. But it will still register movement and mouse button presses.
+
+Description
+-----------
+
+A Singleton that deals with inputs. This includes key presses, mouse buttons and movement, joysticks, and input actions.
 
 Member Function Description
 ---------------------------
@@ -78,6 +83,8 @@ Member Function Description
 .. _class_Input_is_key_pressed:
 
 - :ref:`bool<class_bool>`  **is_key_pressed**  **(** :ref:`int<class_int>` scancode  **)**
+
+Returns true or false depending on whether the key is pressed or not. You can pass KEY\_\*, which are pre-defined constants listed in :ref:`@Global Scope<class_@global scope>`.
 
 .. _class_Input_is_mouse_button_pressed:
 
@@ -94,6 +101,8 @@ Returns if the joystick button at the given index is currently pressed. (see JOY
 .. _class_Input_is_action_pressed:
 
 - :ref:`bool<class_bool>`  **is_action_pressed**  **(** :ref:`String<class_string>` action  **)**
+
+Returns true or false depending on whether the action event is pressed. Actions and their events can be set in the Project Settings / Input Map tab. Or be set with :ref:`InputMap<class_inputmap>`.
 
 .. _class_Input_add_joy_mapping:
 
@@ -135,36 +144,54 @@ Returns a SDL2 compatible device guid on platforms that use gamepad remapping. R
 
 - :ref:`Vector3<class_vector3>`  **get_accelerometer**  **(** **)**
 
+If the device has an accelerometer, this will return the movement.
+
 .. _class_Input_get_mouse_speed:
 
 - :ref:`Vector2<class_vector2>`  **get_mouse_speed**  **(** **)** const
+
+Returns the mouse speed.
 
 .. _class_Input_get_mouse_button_mask:
 
 - :ref:`int<class_int>`  **get_mouse_button_mask**  **(** **)** const
 
+Returns mouse buttons as a bitmask. If multiple mouse buttons are pressed at the same time the bits are added together.
+
 .. _class_Input_set_mouse_mode:
 
 - void  **set_mouse_mode**  **(** :ref:`int<class_int>` mode  **)**
+
+Set the mouse mode. See the constants for more information.
 
 .. _class_Input_get_mouse_mode:
 
 - :ref:`int<class_int>`  **get_mouse_mode**  **(** **)** const
 
+Return the mouse mode. See the constants for more information.
+
 .. _class_Input_warp_mouse_pos:
 
 - void  **warp_mouse_pos**  **(** :ref:`Vector2<class_vector2>` to  **)**
+
+Sets the mouse position to the specified vector.
 
 .. _class_Input_action_press:
 
 - void  **action_press**  **(** :ref:`String<class_string>` action  **)**
 
+This will simulate pressing the specificed action.
+
 .. _class_Input_action_release:
 
 - void  **action_release**  **(** :ref:`String<class_string>` action  **)**
 
+If the specified action is already pressed, this will release it.
+
 .. _class_Input_set_custom_mouse_cursor:
 
 - void  **set_custom_mouse_cursor**  **(** :ref:`Texture<class_texture>` image, :ref:`Vector2<class_vector2>` hotspot=Vector2(0,0)  **)**
+
+Set a custom mouse cursor image, which is only visible inside the game window. The hotspot can also be specified.
 
 

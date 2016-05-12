@@ -33,15 +33,19 @@ Member Functions
 +----------------------------------+---------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`    | :ref:`get_offset<class_CanvasLayer_get_offset>`  **(** **)** const                                            |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_rotation<class_CanvasLayer_set_rotation>`  **(** :ref:`float<class_float>` rotation  **)**          |
+| void                             | :ref:`set_rotation<class_CanvasLayer_set_rotation>`  **(** :ref:`float<class_float>` radians  **)**           |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`        | :ref:`get_rotation<class_CanvasLayer_get_rotation>`  **(** **)** const                                        |
++----------------------------------+---------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_rotationd<class_CanvasLayer_set_rotationd>`  **(** :ref:`float<class_float>` degrees  **)**         |
++----------------------------------+---------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`        | :ref:`get_rotationd<class_CanvasLayer_get_rotationd>`  **(** **)** const                                      |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_scale<class_CanvasLayer_set_scale>`  **(** :ref:`Vector2<class_vector2>` scale  **)**               |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`    | :ref:`get_scale<class_CanvasLayer_get_scale>`  **(** **)** const                                              |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------+
-| Canvas                           | :ref:`get_world_2d<class_CanvasLayer_get_world_2d>`  **(** **)** const                                        |
+| :ref:`World2D<class_world2d>`    | :ref:`get_world_2d<class_CanvasLayer_get_world_2d>`  **(** **)** const                                        |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_rid>`            | :ref:`get_viewport<class_CanvasLayer_get_viewport>`  **(** **)** const                                        |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------+
@@ -92,7 +96,7 @@ Return the base offset for this layer (helper).
 
 .. _class_CanvasLayer_set_rotation:
 
-- void  **set_rotation**  **(** :ref:`float<class_float>` rotation  **)**
+- void  **set_rotation**  **(** :ref:`float<class_float>` radians  **)**
 
 Set the base rotation for this layer (helper).
 
@@ -101,6 +105,14 @@ Set the base rotation for this layer (helper).
 - :ref:`float<class_float>`  **get_rotation**  **(** **)** const
 
 Return the base rotation for this layer (helper).
+
+.. _class_CanvasLayer_set_rotationd:
+
+- void  **set_rotationd**  **(** :ref:`float<class_float>` degrees  **)**
+
+.. _class_CanvasLayer_get_rotationd:
+
+- :ref:`float<class_float>`  **get_rotationd**  **(** **)** const
 
 .. _class_CanvasLayer_set_scale:
 
@@ -116,7 +128,7 @@ Return the base scale for this layer (helper).
 
 .. _class_CanvasLayer_get_world_2d:
 
-- Canvas  **get_world_2d**  **(** **)** const
+- :ref:`World2D<class_world2d>`  **get_world_2d**  **(** **)** const
 
 Return the :ref:`World2D<class_world2d>` used by this layer.
 

@@ -55,7 +55,7 @@ Member Functions
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Node<class_node>`            | :ref:`get_node<class_Node_get_node>`  **(** :ref:`NodePath<class_nodepath>` path  **)** const                                                                           |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Parent                             | :ref:`get_parent<class_Node_get_parent>`  **(** **)** const                                                                                                             |
+| :ref:`Node<class_node>`            | :ref:`get_parent<class_Node_get_parent>`  **(** **)** const                                                                                                             |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Node<class_node>`            | :ref:`find_node<class_Node_find_node>`  **(** :ref:`String<class_string>` mask, :ref:`bool<class_bool>` recursive=true, :ref:`bool<class_bool>` owned=true  **)** const |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -329,7 +329,7 @@ Note: fetching absolute paths only works when the node is inside the scene tree 
 
 .. _class_Node_get_parent:
 
-- Parent  **get_parent**  **(** **)** const
+- :ref:`Node<class_node>`  **get_parent**  **(** **)** const
 
 Return the parent :ref:`Node<class_node>` of the current :ref:`Node<class_node>`, or an empty Object if the node lacks a parent.
 

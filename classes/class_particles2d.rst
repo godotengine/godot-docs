@@ -13,7 +13,7 @@ Particles2D
 Brief Description
 -----------------
 
-
+2D Particle emitter
 
 Member Functions
 ----------------
@@ -123,24 +123,29 @@ Member Functions
 Numeric Constants
 -----------------
 
-- **PARAM_DIRECTION** = **0**
+- **PARAM_DIRECTION** = **0** --- Direction in degrees at which the particles will be launched, Notice that when the direction is set to 0 the particles will be launched to the negative
 - **PARAM_SPREAD** = **1**
-- **PARAM_LINEAR_VELOCITY** = **2**
-- **PARAM_SPIN_VELOCITY** = **3**
-- **PARAM_ORBIT_VELOCITY** = **4**
-- **PARAM_GRAVITY_DIRECTION** = **5**
-- **PARAM_GRAVITY_STRENGTH** = **6**
+- **PARAM_LINEAR_VELOCITY** = **2** --- Velocity at which the particles will be launched.
+- **PARAM_SPIN_VELOCITY** = **3** --- The speed at which particles will spin around its own center.
+- **PARAM_ORBIT_VELOCITY** = **4** --- Velocity at which the particles will orbit around the emitter center
+- **PARAM_GRAVITY_DIRECTION** = **5** --- Direction in degrees at which the particles will be attracted
+- **PARAM_GRAVITY_STRENGTH** = **6** --- Strength of the gravitation attraction for each particle
 - **PARAM_RADIAL_ACCEL** = **7**
 - **PARAM_TANGENTIAL_ACCEL** = **8**
-- **PARAM_DAMPING** = **9**
-- **PARAM_INITIAL_ANGLE** = **10**
-- **PARAM_INITIAL_SIZE** = **11**
-- **PARAM_FINAL_SIZE** = **12**
+- **PARAM_DAMPING** = **9** --- Amount of damping for each particle
+- **PARAM_INITIAL_ANGLE** = **10** --- Initial angle at which each particle will be spawned
+- **PARAM_INITIAL_SIZE** = **11** --- Initial size of each particle
+- **PARAM_FINAL_SIZE** = **12** --- Final size of each particle, the particle size will interpolate to this value during its lifetime.
 - **PARAM_HUE_VARIATION** = **13**
 - **PARAM_ANIM_SPEED_SCALE** = **14**
 - **PARAM_ANIM_INITIAL_POS** = **15**
 - **PARAM_MAX** = **16**
 - **MAX_COLOR_PHASES** = **4**
+
+Description
+-----------
+
+Particles2D is a particle system 2D :ref:`Node<class_node>` that is used to simulate several types of particle effects, such as explosions, rain, snow, fireflies, or other magical-like shinny sparkles. Particles are drawn using impostors, and given their dynamic behavior, the user must provide a visibility AABB (although helpers to create one automatically exist).
 
 Member Function Description
 ---------------------------
@@ -149,33 +154,49 @@ Member Function Description
 
 - void  **set_emitting**  **(** :ref:`bool<class_bool>` active  **)**
 
+If this is set to true then the particle emitter will emit particles, if its false it will not.
+
 .. _class_Particles2D_is_emitting:
 
 - :ref:`bool<class_bool>`  **is_emitting**  **(** **)** const
+
+Returns whether this emitter is currently emitting or not
 
 .. _class_Particles2D_set_amount:
 
 - void  **set_amount**  **(** :ref:`int<class_int>` amount  **)**
 
+Sets the amount of particles spawned at each emission
+
 .. _class_Particles2D_get_amount:
 
 - :ref:`int<class_int>`  **get_amount**  **(** **)** const
+
+Returns the amount of particles spawned at each emission
 
 .. _class_Particles2D_set_lifetime:
 
 - void  **set_lifetime**  **(** :ref:`float<class_float>` lifetime  **)**
 
+Sets the amount of seconds that each particle will be visible.
+
 .. _class_Particles2D_get_lifetime:
 
 - :ref:`float<class_float>`  **get_lifetime**  **(** **)** const
+
+Gets the amount of seconds that each particle will be visible.
 
 .. _class_Particles2D_set_time_scale:
 
 - void  **set_time_scale**  **(** :ref:`float<class_float>` time_scale  **)**
 
+Sets the increment or decrement for the particle lifetime. for example: if the time scale is set to 2, the particles will die and move twice as fast.
+
 .. _class_Particles2D_get_time_scale:
 
 - :ref:`float<class_float>`  **get_time_scale**  **(** **)** const
+
+Returns the emitter time scale
 
 .. _class_Particles2D_set_pre_process_time:
 
@@ -189,57 +210,85 @@ Member Function Description
 
 - void  **set_emit_timeout**  **(** :ref:`float<class_float>` value  **)**
 
+Sets the amount of seconds during which the emitter will spawn particles, after the specified seconds the emitter state will be set to non emitting, so calling :ref:`is_emitting<class_Particles2D_is_emitting>` will return false. If the timeout is 0 the emitter will spawn forever.
+
 .. _class_Particles2D_get_emit_timeout:
 
 - :ref:`float<class_float>`  **get_emit_timeout**  **(** **)** const
+
+Returns the amount of seconds during which the emitter will spawn particles
 
 .. _class_Particles2D_set_param:
 
 - void  **set_param**  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**
 
+Sets the value of the specified emitter parameter (see the constants secction for the list of parameters)
+
 .. _class_Particles2D_get_param:
 
 - :ref:`float<class_float>`  **get_param**  **(** :ref:`int<class_int>` param  **)** const
+
+Returns the value of the specified emitter parameter
 
 .. _class_Particles2D_set_randomness:
 
 - void  **set_randomness**  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**
 
+Sets the randomness value of the specified emitter parameter (see the constants secction for the list of parameters), 0 means no randomness, so every particle will have the parameters specified, 1 means that the parameter will be choosen at random, the closer the randomness value gets to 0 the more conservative the variation of the parameter will be.
+
 .. _class_Particles2D_get_randomness:
 
 - :ref:`float<class_float>`  **get_randomness**  **(** :ref:`int<class_int>` param  **)** const
+
+Returns the randomness value of the specified emitter parameter
 
 .. _class_Particles2D_set_texture:
 
 - :ref:`Texture<class_texture>`  **set_texture**  **(** :ref:`Object<class_object>` texture  **)**
 
+Sets the texture for each particle
+
 .. _class_Particles2D_get_texture:
 
 - :ref:`Texture<class_texture>`  **get_texture**  **(** **)** const
+
+Returns the texture for emitted particles
 
 .. _class_Particles2D_set_color:
 
 - void  **set_color**  **(** :ref:`Color<class_color>` color  **)**
 
+Set the tint color for each particle.
+
 .. _class_Particles2D_get_color:
 
 - :ref:`Color<class_color>`  **get_color**  **(** **)** const
+
+Returns the tint color for each particle.
 
 .. _class_Particles2D_set_color_ramp:
 
 - :ref:`ColorRamp<class_colorramp>`  **set_color_ramp**  **(** :ref:`Object<class_object>` color_ramp  **)**
 
+Sets the :ref:`ColorRamp<class_colorramp>` used to tint each particle. Particle will be tinted according to their lifetimes.
+
 .. _class_Particles2D_get_color_ramp:
 
 - :ref:`ColorRamp<class_colorramp>`  **get_color_ramp**  **(** **)** const
+
+Returns the :ref:`ColorRamp<class_colorramp>` used to tint each particle
 
 .. _class_Particles2D_set_emissor_offset:
 
 - void  **set_emissor_offset**  **(** :ref:`Vector2<class_vector2>` offset  **)**
 
+Sets the particle spawn origin position relative to the emitter center. for example if this value is set to (50, 50), the particle will spawn 50 units to the right and  50 units to the bottom of the emitter center.
+
 .. _class_Particles2D_get_emissor_offset:
 
 - :ref:`Vector2<class_vector2>`  **get_emissor_offset**  **(** **)** const
+
+Returns the particle spawn origin position relative to the emitter.
 
 .. _class_Particles2D_set_flip_h:
 
@@ -277,9 +326,13 @@ Member Function Description
 
 - void  **set_emission_half_extents**  **(** :ref:`Vector2<class_vector2>` extents  **)**
 
+Sets the half extents of the emission box, particles will be spawned at random inside this box.
+
 .. _class_Particles2D_get_emission_half_extents:
 
 - :ref:`Vector2<class_vector2>`  **get_emission_half_extents**  **(** **)** const
+
+Returns the half extents of the emission box.
 
 .. _class_Particles2D_set_color_phases:
 

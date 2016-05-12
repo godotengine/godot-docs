@@ -13,7 +13,7 @@ YSort
 Brief Description
 -----------------
 
-
+Sort all child nodes based on their Y positions.
 
 Member Functions
 ----------------
@@ -24,6 +24,11 @@ Member Functions
 | :ref:`bool<class_bool>`  | :ref:`is_sort_enabled<class_YSort_is_sort_enabled>`  **(** **)** const                              |
 +--------------------------+-----------------------------------------------------------------------------------------------------+
 
+Description
+-----------
+
+Sort all child nodes based on their Y positions. The child node must inherit from :ref:`CanvasItem<class_canvasitem>` for it to be sorted. Nodes that have a higher Y position will be drawn later, so they will appear on top of nodes that have a lower Y position.
+
 Member Function Description
 ---------------------------
 
@@ -31,8 +36,12 @@ Member Function Description
 
 - void  **set_sort_enabled**  **(** :ref:`bool<class_bool>` enabled  **)**
 
+Set whether the children nodes are sorted or not. (default true)
+
 .. _class_YSort_is_sort_enabled:
 
 - :ref:`bool<class_bool>`  **is_sort_enabled**  **(** **)** const
+
+Returns true if the children nodes are being sorted.
 
 

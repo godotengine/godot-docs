@@ -314,9 +314,13 @@ Return the list of fullscreen modes.
 
 - :ref:`int<class_int>`  **get_screen_count**  **(** **)** const
 
+Returns the number of displays attached to the host machine
+
 .. _class_OS_get_current_screen:
 
 - :ref:`int<class_int>`  **get_current_screen**  **(** **)** const
+
+Returns the current screen index (0 padded).
 
 .. _class_OS_set_current_screen:
 
@@ -330,37 +334,55 @@ Return the list of fullscreen modes.
 
 - :ref:`Vector2<class_vector2>`  **get_screen_size**  **(** :ref:`int<class_int>` screen=0  **)** const
 
+Returns the dimensions in pixels of the specified screen.
+
 .. _class_OS_get_window_position:
 
 - :ref:`Vector2<class_vector2>`  **get_window_position**  **(** **)** const
+
+Returns the window position relative to the screen, the origin is the top left corner, +Y axis goes to the bottom and +X axis goes to the right.
 
 .. _class_OS_set_window_position:
 
 - void  **set_window_position**  **(** :ref:`Vector2<class_vector2>` position  **)**
 
+Sets the position of the window to the specified position (this function could be restricted by the window manager, meaning that there could be some unreachable areas of the screen).
+
 .. _class_OS_get_window_size:
 
 - :ref:`Vector2<class_vector2>`  **get_window_size**  **(** **)** const
+
+Returns the size of the window (without counting window manager decorations).
 
 .. _class_OS_set_window_size:
 
 - void  **set_window_size**  **(** :ref:`Vector2<class_vector2>` size  **)**
 
+Sets the window size to the specified size.
+
 .. _class_OS_set_window_fullscreen:
 
 - void  **set_window_fullscreen**  **(** :ref:`bool<class_bool>` enabled  **)**
+
+Sets window fullscreen mode to the *enabled* argument, *enabled* is a toggle for the fullscreen mode, calling the function with *enabled* true when the screen is not on fullscreen mode will cause the screen to go to fullscreen mode, calling the function with *enabled* false when the screen is in fullscreen mode will cause the window to exit the fullscreen mode.
 
 .. _class_OS_is_window_fullscreen:
 
 - :ref:`bool<class_bool>`  **is_window_fullscreen**  **(** **)** const
 
+Returns whether the window is in fullscreen mode or not.
+
 .. _class_OS_set_window_resizable:
 
 - void  **set_window_resizable**  **(** :ref:`bool<class_bool>` enabled  **)**
 
+Set the window resizable state, if the window is not resizable it will preserve the dimensions specified in the project settings.
+
 .. _class_OS_is_window_resizable:
 
 - :ref:`bool<class_bool>`  **is_window_resizable**  **(** **)** const
+
+Returns whether the window is resizable or not.
 
 .. _class_OS_set_window_minimized:
 
@@ -382,9 +404,13 @@ Return the list of fullscreen modes.
 
 - void  **set_screen_orientation**  **(** :ref:`int<class_int>` orientation  **)**
 
+Sets the current screen orientation, the argument value must be one of the SCREEN_ORIENTATION constants in this class.
+
 .. _class_OS_get_screen_orientation:
 
 - :ref:`int<class_int>`  **get_screen_orientation**  **(** **)** const
+
+Returns the current screen orientation, the return value will be one of the SCREEN_ORIENTATION constants in this class.
 
 .. _class_OS_set_keep_screen_on:
 
@@ -395,6 +421,8 @@ Set keep screen on if true, or goes to sleep by device setting if false. (for An
 .. _class_OS_is_keep_screen_on:
 
 - :ref:`bool<class_bool>`  **is_keep_screen_on**  **(** **)** const
+
+Returns whether the screen is being kept on or not.
 
 .. _class_OS_set_iterations_per_second:
 
@@ -434,6 +462,8 @@ Speeds up or slows down the physics by changing the delta variable. (delta \* ti
 
 - void  **set_window_title**  **(** :ref:`String<class_string>` title  **)**
 
+Sets the window title to the specified string.
+
 .. _class_OS_set_low_processor_usage_mode:
 
 - void  **set_low_processor_usage_mode**  **(** :ref:`bool<class_bool>` enable  **)**
@@ -449,6 +479,8 @@ Return true if low cpu usage mode is enabled.
 .. _class_OS_get_processor_count:
 
 - :ref:`int<class_int>`  **get_processor_count**  **(** **)** const
+
+Returns the number of cores available in the host machine.
 
 .. _class_OS_get_executable_path:
 
@@ -466,7 +498,7 @@ Execute the binary file in given path, optionally blocking until it returns. A p
 
 - :ref:`int<class_int>`  **kill**  **(** :ref:`int<class_int>` pid  **)**
 
-Kill a process ID.
+Kill a process ID (this method can be used to kill processes that were not spawned by the game).
 
 .. _class_OS_shell_open:
 
@@ -475,6 +507,8 @@ Kill a process ID.
 .. _class_OS_get_process_ID:
 
 - :ref:`int<class_int>`  **get_process_ID**  **(** **)** const
+
+Returns the game process ID
 
 .. _class_OS_get_environment:
 
@@ -643,6 +677,8 @@ Return the total amount of dynamic memory used (only works in debug).
 .. _class_OS_get_frames_per_second:
 
 - :ref:`float<class_float>`  **get_frames_per_second**  **(** **)** const
+
+Returns the frames per second of the running game.
 
 .. _class_OS_print_all_textures_by_size:
 

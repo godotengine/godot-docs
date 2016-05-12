@@ -31,6 +31,10 @@ Member Functions
 +----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`StringArray<class_stringarray>`  | :ref:`get_animation_list<class_AnimationPlayer_get_animation_list>`  **(** **)** const                                                                                                                                 |
 +----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`animation_set_next<class_AnimationPlayer_animation_set_next>`  **(** :ref:`String<class_string>` anim_from, :ref:`String<class_string>` anim_to  **)**                                                           |
++----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`animation_get_next<class_AnimationPlayer_animation_get_next>`  **(** :ref:`String<class_string>` anim_from  **)** const                                                                                          |
++----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`set_blend_time<class_AnimationPlayer_set_blend_time>`  **(** :ref:`String<class_string>` anim_from, :ref:`String<class_string>` anim_to, :ref:`float<class_float>` sec  **)**                                    |
 +----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`              | :ref:`get_blend_time<class_AnimationPlayer_get_blend_time>`  **(** :ref:`String<class_string>` anim_from, :ref:`String<class_string>` anim_to  **)** const                                                             |
@@ -148,6 +152,14 @@ Get an :ref:`Animation<class_animation>` resource by requesting a name.
 
 Get the list of names of the animations stored in the player.
 
+.. _class_AnimationPlayer_animation_set_next:
+
+- void  **animation_set_next**  **(** :ref:`String<class_string>` anim_from, :ref:`String<class_string>` anim_to  **)**
+
+.. _class_AnimationPlayer_animation_get_next:
+
+- :ref:`String<class_string>`  **animation_get_next**  **(** :ref:`String<class_string>` anim_from  **)** const
+
 .. _class_AnimationPlayer_set_blend_time:
 
 - void  **set_blend_time**  **(** :ref:`String<class_string>` anim_from, :ref:`String<class_string>` anim_to, :ref:`float<class_float>` sec  **)**
@@ -182,9 +194,13 @@ Play a given animation by the animation name. Custom speed and blend times can b
 
 - void  **play_backwards**  **(** :ref:`String<class_string>` name="", :ref:`float<class_float>` custom_blend=-1  **)**
 
+Play a given animation by the animation name in reverse.
+
 .. _class_AnimationPlayer_stop:
 
 - void  **stop**  **(** :ref:`bool<class_bool>` reset=true  **)**
+
+Stop the currently playing animation.
 
 .. _class_AnimationPlayer_stop_all:
 
@@ -323,5 +339,7 @@ Get the length (in seconds) of the currently being played animation.
 .. _class_AnimationPlayer_advance:
 
 - void  **advance**  **(** :ref:`float<class_float>` delta  **)**
+
+Used to skip ahead or skip back in an animation. Delta is the time in seconds to skip.
 
 

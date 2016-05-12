@@ -47,7 +47,7 @@ Member Functions
 +--------------------------+------------------------------------------------------------------------------------------------------------+
 | void                     | :ref:`generate_normals<class_SurfaceTool_generate_normals>`  **(** **)**                                   |
 +--------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`Mesh<class_mesh>`  | :ref:`commit<class_SurfaceTool_commit>`  **(** :ref:`Mesh<class_mesh>` existing=Object()  **)**            |
+| :ref:`Mesh<class_mesh>`  | :ref:`commit<class_SurfaceTool_commit>`  **(** :ref:`Mesh<class_mesh>` existing=NULL  **)**                |
 +--------------------------+------------------------------------------------------------------------------------------------------------+
 | void                     | :ref:`clear<class_SurfaceTool_clear>`  **(** **)**                                                         |
 +--------------------------+------------------------------------------------------------------------------------------------------------+
@@ -118,7 +118,7 @@ Member Function Description
 
 .. _class_SurfaceTool_commit:
 
-- :ref:`Mesh<class_mesh>`  **commit**  **(** :ref:`Mesh<class_mesh>` existing=Object()  **)**
+- :ref:`Mesh<class_mesh>`  **commit**  **(** :ref:`Mesh<class_mesh>` existing=NULL  **)**
 
 .. _class_SurfaceTool_clear:
 

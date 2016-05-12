@@ -21,7 +21,7 @@ Member Functions
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`clear<class_Tree_clear>`  **(** **)**                                                                                                        |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`TreeItem<class_treeitem>`  | :ref:`create_item<class_Tree_create_item>`  **(** :ref:`TreeItem<class_treeitem>` parent=Object()  **)**                                           |
+| :ref:`TreeItem<class_treeitem>`  | :ref:`create_item<class_Tree_create_item>`  **(** :ref:`TreeItem<class_treeitem>` parent=NULL  **)**                                               |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`TreeItem<class_treeitem>`  | :ref:`get_root<class_Tree_get_root>`  **(** **)**                                                                                                  |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -100,7 +100,7 @@ Member Function Description
 
 .. _class_Tree_create_item:
 
-- :ref:`TreeItem<class_treeitem>`  **create_item**  **(** :ref:`TreeItem<class_treeitem>` parent=Object()  **)**
+- :ref:`TreeItem<class_treeitem>`  **create_item**  **(** :ref:`TreeItem<class_treeitem>` parent=NULL  **)**
 
 .. _class_Tree_get_root:
 

@@ -181,7 +181,7 @@ Member Functions
 +--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_rid>`                                              | :ref:`damped_spring_joint_create<class_Physics2DServer_damped_spring_joint_create>`  **(** :ref:`Vector2<class_vector2>` anchor_a, :ref:`Vector2<class_vector2>` anchor_b, :ref:`RID<class_rid>` body_a, :ref:`RID<class_rid>` body_b=RID()  **)**                                   |
 +--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                               | :ref:`damped_string_joint_set_param<class_Physics2DServer_damped_string_joint_set_param>`  **(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` param, :ref:`float<class_float>` value=RID()  **)**                                                                              |
+| void                                                               | :ref:`damped_string_joint_set_param<class_Physics2DServer_damped_string_joint_set_param>`  **(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**                                                                                    |
 +--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                          | :ref:`damped_string_joint_get_param<class_Physics2DServer_damped_string_joint_get_param>`  **(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` param  **)** const                                                                                                               |
 +--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -579,7 +579,7 @@ Member Function Description
 
 .. _class_Physics2DServer_damped_string_joint_set_param:
 
-- void  **damped_string_joint_set_param**  **(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` param, :ref:`float<class_float>` value=RID()  **)**
+- void  **damped_string_joint_set_param**  **(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**
 
 .. _class_Physics2DServer_damped_string_joint_get_param:
 
