@@ -37,19 +37,19 @@ Importing a font
 ----------------
 
 Fonts are imported via the Font import dialog. The dialog will ask for a
-font, a size, some options and a target resource fie to save.
+font, a size, some options and a target resource file to save.
 
 .. image:: /img/fontimport.png
 
 The dialog is fully dynamic, which means that any change will be
-reflected in the font preview window. The user ccan tweak almost every
+reflected in the font preview window. The user can tweak almost every
 parameter and get instant feedback on how the font will look.
 
 Since the resulting font is a bitmap, a few more options were added to
 make the imported font look even nicer. These options were added to
 please graphic designers, who love putting gradients, outlines and
 shadows in fonts, as well as changing all the inter-spaces available :).
-The options which will be explained in the next section.
+These options will be explained in the next section.
 
 Extra spacing
 ~~~~~~~~~~~~~
@@ -66,8 +66,8 @@ It is possible to add more space for:
 Shadows & outline
 ~~~~~~~~~~~~~~~~~
 
-Fonts can be added a shadow. For this, the font is drawn again below on
-a different color and the blurred with a gaussian kernel of different
+Fonts can have a shadow. For this, the font is drawn again, below the original,
+in a different color, and then blurred with a Gaussian kernel of different
 sizes. The resulting shadow can be adjusted with an exponential function
 to make it softer or more like an outline. A second shadow is also
 provided to create some added effects, like a bump or outline+shadow.
@@ -92,7 +92,7 @@ serious business. Developing games for Asian markets is a common
 practice in today's globalized world and app stores.
 
 Here's when things get tricky with using bitmap fonts. Asian alphabets
-(Chinese, Japanese and Korean) contains dozens of thousands of
+(Chinese, Japanese and Korean) contain dozens of thousands of
 characters. Generating bitmap fonts with every single of them is pretty
 expensive, as the resulting textures are huge. If the font size is small
 enough, it can be done without much trouble, but when the fonts become
