@@ -50,6 +50,7 @@ derived node, like :ref:`Control <class_Control>` or
 
 Draw commands are described in the :ref:`CanvasItem <class_CanvasItem>`
 class reference. There are plenty of them.
+    
 
 Updating
 --------
@@ -96,7 +97,145 @@ call update() from the _process() callback, like this:
     func _ready():
         set_process(true)
 
-OK! This is basically it! Enjoy drawing your own nodes!
+An example : drawing circular arcs
+----------------------------------
+
+We will now use the custom drawing functionality of Godot Engine to draw something Godot doesn't provide functions to. As an example, Godot provides a draw_circle() function that draws a whole circle. However, what about drawing a portion of a circle? You will have to code a function to perform this, and draw it yourself.
+
+Arc function
+^^^^^^^^^^^^
+
+
+An arc is defined by its support circle parameters, that is: the center position, and the radius. And the arc itself is then defined by the angle it starts from, and the angle it stops to. Here we are, these are the 4 parameters we have to provide to our drawing. We'll also provide the color value so we can draw the arc in different colors if we wish.
+
+Basically, drawing a shape on screen requires it to be decomposed into a certain number of points linked one to the following one. As you can imagine, the more points your shape is made of, the smoother it will appear, but the heavier it will be in terms of processing cost. In general, if your shape is huge (or in 3D, close to the camera), it will require more points to be drawn smooth. On the contrary, if you shape is small (or in 3D, far from the camera), you may reduce its number of points to save processing costs. This is called *Level of Detail (LoD)*. In our example, we'll use the same value whatever the radius of our arc.
+
+Here is the function, we will explain it in details just after.
+
+::
+
+    func draw_circle_arc( center, radius, angleFrom, angleTo, color ):
+        var nbPoints = 32
+        var pointsArc = Vector2Array()
+    
+        for i in range(nbPoints+1):
+            var anglePoint = angleFrom + i*(angleTo-angleFrom)/nbPoints - 90
+            var point = center + Vector2( cos(deg2rad(anglePoint)), sin(deg2rad(anglePoint)) ) * radius
+            pointsArc.push_back( point )
+    
+        for indexPoint in range(nbPoints):
+            draw_line(pointsArc[indexPoint], pointsArc[indexPoint+1], color)
+       pass
+
+Remember the number of points our shape has to be decomposed into? We fixed this number in the nbPoints variable to a value of 32. Then, we initialize an empty Vector2Array, which is simply an array of Vector2.
+
+Next step consists in computing the actual positions of these 32 points that compose arc. This is done in the first for-loop: we iterate over the number of points we want to compute the positions, plus one to include the last point. We first determine the angle of each point, between the starting and ending angles. 
+
+The reason why each angle is reduced of 90° is that we will compute 2D positions out of each angle using trigonometry (you know, cosinus and sinus stuff...). However, to be simple, cos() and sin() use radians, not degrees. The angle of 0° (0 radian) starts at 3 o'clock, although we want to start counting at 0 o'clock. So, we just reduce each angle of 90° in order to start counting from 0'clock.
+
+The actual position of a point located on a circle at angle 'angle' (in radians) is given by Vector2(cos(angle), sin(angle)). Since cos() and sin() return values between -1 and 1, the position is located on a circle of radius 1. To have this position on our support circle, which has a radius of 'radius', we simply need to multiply the position by 'radius'. Finally, we need to position our support circle at the 'center' position, which is performed by adding it to our Vector2 value. Finally, we insert the point in our Vector2Array previously defined.
+
+Now, we need to actually draw our points. As you can imagine, we will not simply draw our 32 points: we need to draw everything that is between each of them. We could have computed every point ourselves using the previous method, and draw it one by one, but this it too complicated and inefficient (except if explicitly needed). So, we simply draw lines between each pair of points. Unless the radius of our support circle is very big, the length of each line between a pair of points will never be long enough to see them. It this happens, we simply would need to increase the number of points.
+
+Draw the arc on screen
+^^^^^^^^^^^^^^^^^^^^^^
+We now have a function that draws stuff on screen: it is time to call it in the _draw() function.
+
+::
+
+    func _draw():
+        var center = Vector2(200,200)
+        var radius = 80
+        var angleFrom = 75
+        var angleTo = 195
+        var color = Color(1.0, 1.0, 1.0)
+        draw_circle_arc( center, radius, angleFrom, angleTo, color )
+
+Result:
+
+.. image:: /img/result_drawarc.png
+
+
+Arc polygon function
+^^^^^^^^^^^^^^^^^^^^
+
+Only for example purpose, we also provide here another function, very similar, that draws the plain portion of the disc defined by the arc, not only its shape. The method is exactly the same a previously, except that we draw a polygon instead of lines.
+
+::
+
+    func draw_circle_arc_poly( center, radius, angleFrom, angleTo, color ):
+        var nbPoints = 32
+        var pointsArc = Vector2Array()
+        pointsArc.push_back(center)
+        var colors = ColorArray([color])
+    
+        for i in range(nbPoints+1):
+            var anglePoint = angleFrom + i*(angleTo-angleFrom)/nbPoints - 90
+            pointsArc.push_back(center + Vector2( cos( deg2rad(anglePoint) ), sin( deg2rad(anglePoint) ) ) * radius)
+        draw_polygon(pointsArc, colors)
+        pass
+
+Dynamic custom drawing
+^^^^^^^^^^^^^^^^^^^^^^
+Alright, we are now able to draw custom stuff on screen. However, it is very static: let's make this shape turn around the center. The solution to do this is simply to change the angleFrom and angleTo values over time. For our example, we will simply increment them by 50. This increment value has to remain constant, else the rotation speed will change accordingly.
+
+First, we have to make both angleFrom and angleTo variables global at the top of our script. Also note that you can store them in other nodes and access them using get_node().
+
+::
+
+ extends Node2D
+
+ var rotationAng = 50
+ var angleFrom = 75
+ var angleTo = 195
+
+
+
+We make these values change in the _process(delta) function. To activate this function, we need to call set_process(true) in the _ready() function. 
+
+We also increment our angleFrom and angleTo values here. However, we must not forget to clamp() the resulting values between 0 and 360°! If you don't, the script will work correctly but angles values will grow bigger and bigger over time, until they reach the maximum integer value Godot can manage (2^31 - 1). When this happens, Godot may crash.
+
+Finally, we must not forget to call the update() function, which automatically calls _draw(). This way, you can control when you want to refresh the frame.
+
+::
+
+ func _ready():
+     set_process(true)
+
+ func _process(delta):
+     angleFrom += rotationAng
+     angleTo += rotationAng
+     angleFrom = clamp(angleFrom, 0, 360)
+     angleTo = clamp(angleTo, 0, 360)
+     update()
+
+Also, don't forget to modify the _draw() function to make use of these variables:
+::
+
+ func _draw():
+	var center = Vector2(200,200)
+	var radius = 80
+	var color = Color(1.0, 0.0, 0.0)
+
+	draw_circle_arc( center, radius, angleFrom, angleTo, color )
+
+Let's run!
+It works, but the arc is rotating insanely fast! What's wrong?
+
+The reason is that your GPU is actually displaying the frames as fast as he can. We need to "normalize" the drawing by this speed. To achieve, we have to make use of the 'delta' parameter of the _process() function. 'delta' contains the time elapsed between the two last rendered frames. It is generally small (about 0.0003 seconds, but this depends on your hardware). So, using 'delta' to control your drawing ensures your program to run at the same speed on every hardware.
+
+In our case, we simply need to multiply our 'rotationAng' variable by 'delta' in the _process() function. This way, our 2 angles will be increased by a much smaller value, which directly depends on the rendering speed.
+
+::
+
+ func _process(delta):
+     angleFrom += rotationAng * delta
+     angleTo += rotationAng * delta
+     angleFrom = clamp(angleFrom, 0, 360)
+     angleTo = clamp(angleTo, 0, 360)
+     update()
+
+Let's run again! This time, the rotation displays fine!
 
 Tools
 -----
