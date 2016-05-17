@@ -9,7 +9,7 @@ Why?
 Godot has nodes to draw sprites, polygons, particles, and all sort of
 stuff. For most cases this is enough, but not always. If something
 desired is not supported, and before crying in fear, angst and range
-because a node to draw that-specific-something does not exist.. it would
+because a node to draw that-specific-something does not exist... it would
 be good to know that it is possible to easily make any 2D node (be it
 :ref:`Control <class_Control>` or :ref:`Node2D <class_Node2D>`
 based) draw custom commands. It is *really* easy to do it too.
@@ -96,7 +96,7 @@ call update() from the _process() callback, like this:
     func _ready():
         set_process(true)
 
-An example : drawing circular arcs
+An example: drawing circular arcs
 ----------------------------------
 
 We will now use the custom drawing functionality of Godot Engine to draw something Godot doesn't provide functions for. As an example, Godot provides a draw_circle() function that draws a whole circle. However, what about drawing a portion of a circle? You will have to code a function to perform this, and draw it yourself.
@@ -107,7 +107,7 @@ Arc function
 
 An arc is defined by its support circle parameters, that is: the center position, and the radius. And the arc itself is then defined by the angle it starts from, and the angle it stops at. These are the 4 parameters we have to provide to our drawing. We'll also provide the color value so we can draw the arc in different colors if we wish.
 
-Basically, drawing a shape on screen requires it to be decomposed into a certain number of points linked one to the following one. As you can imagine, the more points your shape is made of, the smoother it will appear, but the heavier it will be in terms of processing cost. In general, if your shape is huge (or in 3D, close to the camera), it will require more points to be drawn without showing angular-looking. On the contrary, if you shape is small (or in 3D, far from the camera), you may reduce its number of points to save processing costs. This is called *Level of Detail (LoD)*. In our example, we will simply use a fixed number of points, no matter the radius..
+Basically, drawing a shape on screen requires it to be decomposed into a certain number of points linked one to the following one. As you can imagine, the more points your shape is made of, the smoother it will appear, but the heavier it will be in terms of processing cost. In general, if your shape is huge (or in 3D, close to the camera), it will require more points to be drawn without showing angular-looking. On the contrary, if you shape is small (or in 3D, far from the camera), you may reduce its number of points to save processing costs. This is called *Level of Detail (LoD)*. In our example, we will simply use a fixed number of points, no matter the radius.
 
 ::
 
@@ -191,7 +191,7 @@ First, we have to make both angle_from and angle_to variables global at the top 
 
 We make these values change in the _process(delta) function. To activate this function, we need to call set_process(true) in the _ready() function. 
 
-We also increment our angle_from and angle_to values here. However, we must not forget to clamp() the resulting values between 0 and 360°! If you don't, the script will work correctly but angles values will grow bigger and bigger over time, until they reach the maximum integer value Godot can manage (2^31 - 1). When this happens, Godot may crash or produce unexpected behavior.
+We also increment our angle_from and angle_to values here. However, we must not forget to wrap() the resulting values between 0 and 360°! That is, if the angle is 361°, then it is actually 1°. If you don't wrap these values, the script will work correctly but angles values will grow bigger and bigger over time, until they reach the maximum integer value Godot can manage (2^31 - 1). When this happens, Godot may crash or produce unexpected behavior. Since Godot doesn't provide a wrap() function, we'll create it here, as it is relatively simple.
 
 Finally, we must not forget to call the update() function, which automatically calls _draw(). This way, you can control when you want to refresh the frame.
 
@@ -199,12 +199,15 @@ Finally, we must not forget to call the update() function, which automatically c
 
  func _ready():
      set_process(true)
+ 
+ func wrap(value, min_val, max_val):
+     return (((value - min_val) % (max_val - min_val)) + min_val)
 
  func _process(delta):
      angle_from += rotation_ang
      angle_to += rotation_ang
-     angle_from = clamp(angle_from, 0, 360)
-     angle_to = clamp(angle_to, 0, 360)
+     angle_from = wrap(angle_from, 0, 360)
+     angle_to = wrap(angle_to, 0, 360)
      update()
 
 Also, don't forget to modify the _draw() function to make use of these variables:
