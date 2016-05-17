@@ -232,8 +232,8 @@ In our case, we simply need to multiply our 'rotation_ang' variable by 'delta' i
  func _process(delta):
      angle_from += rotation_ang * delta
      angle_to += rotation_ang * delta
-     angle_from = clamp(angle_from, 0, 360)
-     angle_to = clamp(angle_to, 0, 360)
+     angle_from = wrap(angle_from, 0, 360)
+     angle_to = wrap(angle_to, 0, 360)
      update()
 
 Let's run again! This time, the rotation displays fine!
