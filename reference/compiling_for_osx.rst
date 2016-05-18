@@ -64,3 +64,9 @@ Now you can compile with SCons like you normally would:
 ::
 
     user@host:~/godot$ scons platform=osx
+
+If you have an OSXCross SDK version different from the one expected by the SCons buildsystem, you can specify a custom one with the ``osxcross`` argument:
+
+::
+
+    user@host:~/godot$ scons platform=osx osxcross_sdk=darwin15
