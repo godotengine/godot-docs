@@ -107,12 +107,11 @@ Toolchain
 We usually try to keep the Godot Android build code up to date, but
 Google changes their toolchain versions very often, so if compilation
 fails due to wrong toolchain version, go to your NDK directory and check
-the current numbers, then set the following environment variables:
+the current number, then set the following environment variable:
 
 ::
 
-    NDK_TOOLCHAIN (by default set to "arm-eabi-4.4.0")
-    NDK_TARGET (by default set to "arm-linux-androideabi-4.8")
+    NDK_TARGET (by default set to "arm-linux-androideabi-4.9")
 
 Building the APK
 ----------------
