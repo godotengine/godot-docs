@@ -201,15 +201,18 @@ Finally, we must not forget to call the update() function, which automatically c
      set_process(true)
  
  func wrap(value, min_val, max_val):
-     var f1 = value - min_value
-     var f2 = max_value - min_value
-     return fmod(f1, f2) + min_value
+     var f1 = value - min_val
+     var f2 = max_val - min_val
+     return fmod(f1, f2) + min_val
 
  func _process(delta):
      angle_from += rotation_ang
      angle_to += rotation_ang
-     angle_from = wrap(angle_from, 0, 360)
-     angle_to = wrap(angle_to, 0, 360)
+     
+     # we only wrap angles if both of them are bigger than 360
+     if (angle_from > 360 && angle_to > 360):
+         angle_from = wrap(angle_from, 0, 360)
+         angle_to = wrap(angle_to, 0, 360)
      update()
 
 Also, don't forget to modify the _draw() function to make use of these variables:
