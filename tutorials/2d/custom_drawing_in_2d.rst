@@ -201,7 +201,9 @@ Finally, we must not forget to call the update() function, which automatically c
      set_process(true)
  
  func wrap(value, min_val, max_val):
-     return (((value - min_val) % (max_val - min_val)) + min_val)
+     var f1 = value - min_value
+     var f2 = max_value - min_value
+     return fmod(f1, f2) + min_value
 
  func _process(delta):
      angle_from += rotation_ang
