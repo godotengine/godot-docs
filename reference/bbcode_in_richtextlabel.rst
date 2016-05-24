@@ -73,3 +73,8 @@ List of valid color names for the [color=<name>] tag:
 -  teal
 -  white
 -  yellow
+
+Hexadecimal color codes
+~~~~~~~~~~~~~~~~~~~~
+ 
+Any valid 6 digit hexadecimal code is supported. e.g: [color=#ffffff]white[/color]
