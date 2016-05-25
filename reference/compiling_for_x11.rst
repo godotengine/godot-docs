@@ -17,10 +17,10 @@ required:
 -  X11 and Mesa development libraries
 -  Xinerama libraries
 -  ALSA development libraries
--  PulseAudio development libraries (for sound support)
+-  PulseAudio development libraries (for sound support, *Linux only*)
 -  Freetype (for the editor)
 -  OpenSSL (for HTTPS and TLS)
--  libudev-dev (optional, for gamepad support)
+-  libudev-dev (optional, for gamepad support, *Linux only*)
 -  pkg-config (used to detect the above dependencies)
 
 Distro-specific oneliners
@@ -30,7 +30,10 @@ Distro-specific oneliners
 | Fedora        | ``sudo dnf install scons pkgconfig libX11-devel libXcursor-devel alsa-lib-devel pulseaudio-libs-devel \  |
 |               | freetype-devel mesa-libGL-devel openssl-devel libXinerama-devel libudev-devel``                          |
 +---------------+----------------------------------------------------------------------------------------------------------+
-| Mageia        | ``urpmi scons pkgconfig "pkgconfig(alsa) pkgconfig(freetype2) pkgconfig(gl) pkgconfig(libpulse)" \       |
+| FreeBSD       | ``sudo pkg install scons pkg-config xorg-libraries libXcursor freetype2 libglapi libGLU openssl \        |
+|               | xineramaproto``                                                                                          |
++---------------+----------------------------------------------------------------------------------------------------------+
+| Mageia        | ``urpmi scons pkgconfig "pkgconfig(alsa) pkgconfig(freetype2) pkgconfig(glu) pkgconfig(libpulse)" \      |
 |               | "pkgconfig(openssl) pkgconfig(udev) pkgconfig(x11) pkgconfig(xcursor) pkgconfig(xinerama)"``             |
 +---------------+----------------------------------------------------------------------------------------------------------+
 | Ubuntu        | ``sudo apt-get install scons pkg-config libx11-dev libxcursor-dev build-essential libasound2-dev \       |
@@ -54,8 +57,8 @@ manager.
 Building export templates
 -------------------------
 
-To build Linux export templates, run the build system with the following
-parameters:
+To build X11 (Linux, *BSD) export templates, run the build system with the
+following parameters:
 
 -  (32 bits)
 
@@ -72,21 +75,15 @@ parameters:
     user@host:~/godot$ scons platform=x11 tools=no target=release_debug bits=64
 
 Note that cross compiling for the opposite bits (64/32) as your host
-platform in linux is quite difficult and might need a chroot
-environment.
+platform is not always straight-forward and might need a chroot environment.
 
-In Ubuntu, compilation works without a chroot but some libraries (.so)
-might be missing from ``/usr/lib32``. Symlinking the missing .so files from
-``/usr/lib`` results in a working build.
-
-To create standard export templates, the resulting files must be copied
-to:
+To create standard export templates, the resulting files must be copied to:
 
 ::
 
     /home/youruser/.godot/templates
 
-and named like this:
+and named like this (even for *BSD which is seen as "Linux X11" by Godot):
 
 ::
 
