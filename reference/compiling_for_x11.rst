@@ -27,25 +27,25 @@ Distro-specific oneliners
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +---------------+------------------------------------------------------------------------------------------------------------+
-| Fedora        | ::                                                                                                         |
+| **Fedora**    | ::                                                                                                         |
 |               |                                                                                                            |
 |               |     sudo dnf install scons pkgconfig libX11-devel libXcursor-devel libXinerama-devel \                     |
-|               |     mesa-libGL-devel alsa-lib-devel pulseaudio-libs-devel freetype-devel openssl-devel libudev-devel       |
+|               |         mesa-libGL-devel alsa-lib-devel pulseaudio-libs-devel freetype-devel openssl-devel libudev-devel   |
 +---------------+------------------------------------------------------------------------------------------------------------+
-| FreeBSD       | ::                                                                                                         |
+| **FreeBSD**   | ::                                                                                                         |
 |               |                                                                                                            |
 |               |     sudo pkg install scons pkg-config xorg-libraries libXcursor xineramaproto libglapi libGLU \            |
-|               |     freetype2 openssl                                                                                      |
+|               |         freetype2 openssl                                                                                  |
 +---------------+------------------------------------------------------------------------------------------------------------+
-| Mageia        | ::                                                                                                         |
+| **Mageia**    | ::                                                                                                         |
 |               |                                                                                                            |
 |               |     urpmi scons pkgconfig "pkgconfig(alsa) pkgconfig(freetype2) pkgconfig(glu) pkgconfig(libpulse)" \      |
-|               |     "pkgconfig(openssl) pkgconfig(udev) pkgconfig(x11) pkgconfig(xcursor) pkgconfig(xinerama)"             |
+|               |         "pkgconfig(openssl) pkgconfig(udev) pkgconfig(x11) pkgconfig(xcursor) pkgconfig(xinerama)"         |
 +---------------+------------------------------------------------------------------------------------------------------------+
-| Ubuntu        | ::                                                                                                         |
+| **Ubuntu**    | ::                                                                                                         |
 |               |                                                                                                            |
 |               |     sudo apt-get install build-essential scons pkg-config libx11-dev libxcursor-dev libxinerama-dev \      |
-|               |     libgl1-mesa-dev libglu-dev libasound2-dev libpulse-dev libfreetype6-dev libssl-dev libudev-dev         | 
+|               |         libgl1-mesa-dev libglu-dev libasound2-dev libpulse-dev libfreetype6-dev libssl-dev libudev-dev     | 
 +---------------+------------------------------------------------------------------------------------------------------------+
 
 Compiling
