@@ -47,6 +47,10 @@ Distro-specific oneliners
 |               |     sudo apt-get install build-essential scons pkg-config libx11-dev libxcursor-dev libxinerama-dev \      |
 |               |         libgl1-mesa-dev libglu-dev libasound2-dev libpulse-dev libfreetype6-dev libssl-dev libudev-dev     | 
 +---------------+------------------------------------------------------------------------------------------------------------+
+| **Arch**      | ::                                                                                                         |
+|               |                                                                                                            |
+|               |     pacman -S scons libxcursor libxinerama mesa glu alsa-lib pulseaudio freetype2                          |
++---------------+------------------------------------------------------------------------------------------------------------+
 
 Compiling
 ---------
