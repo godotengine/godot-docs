@@ -8,7 +8,7 @@ export. Godot provides some tools for this. Examples of such operations
 are:
 
 -  Converting all images from a lossless format to a lossy one (ie: png
-   -> web) for greater compression.
+   -> WebP) for greater compression.
 -  Shrinking all images to half the size, to create a low resolution
    build for smaller screens.
 -  Create an atlas for a group of images and crop them, for higher
@@ -17,13 +17,13 @@ are:
 Image export options
 --------------------
 
-In the "Export Dialog", go to the Images tab:
+In the "Project Export Settings" dialog, go to the Images tab:
 
 .. image:: /img/exportimages.png
 
 In this dialog the image extensions for conversion can be selected, and
 operations can be performed that apply to all images (except those in
-groups -next section for that-):
+groups, see the next section for those):
 
 -  **Convert Image Format**: Probably the most useful operation is to
    convert to Lossy (WebP) to save disk space. For lossy, a Quality bar
@@ -53,7 +53,7 @@ selectable.
 Atlas
 ~~~~~
 
-As a plus, an atlas can be created from a group. When this mode is
+Grouping images allows a texture atlas to be created. When this mode is
 active, a button to preview the resulting atlas becomes available. Make
 sure that atlases don't become too big, as some hardware will not
 support textures bigger than 2048x2048 pixels. If this happens, just
