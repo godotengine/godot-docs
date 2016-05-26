@@ -3,8 +3,8 @@
 Exporting for Android
 =====================
 
-Exporting for android has much less requirements than compiling Godot
-for it. As follows are the steps to setup the SDK and the engine.
+Exporting for Android has fewer requirements than compiling Godot for it. The
+following steps detail what is needed to setup the SDK and the engine.
 
 Download the Android SDK
 ------------------------
@@ -37,9 +37,9 @@ the JDK can be used for this purpose:
 Make sure you have adb
 ----------------------
 
-ADB is the command line tool used to communicate with Android devices.
-It's installed with the SDK, but you may need to install one (any) of
-the Android API levels for it to be installed in the SDK directory.
+Android Debug Bridge (adb) is the command line tool used to communicate with
+Android devices. It's installed with the SDK, but you may need to install one
+(any) of the Android API levels for it to be installed in the SDK directory.
 
 Setting it up in Godot
 ----------------------
