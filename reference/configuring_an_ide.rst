@@ -105,6 +105,51 @@ Run configuration:
 -  If you want to run a specific game or project, point *Working directory* to the game directory.
 -  If you want to run the editor, add ``-e`` to the *Command line arguments* field.
 
+Xcode
+-----
+
+Here is an `image album <https://imgur.com/a/NU9y9>` of the steps as well.
+
+Project Setup
+^^^^^^^^^^^^^
+
+- Create an external build project anywhere
+- Set the *Build tool* to the path to scons
+- In the external build target's info panel that should now be open
+  - Set *Arguments* to something like: platform=osx tools=yes bits=64 target=debug
+  - Set *Directory* to the path to Godot's source folder. Keep it blank if project is already there.
+  - You may uncheck *Pass build settings in environment*
+- Go to File > New > Target... and add a new command line target  
+  - Name it something so you know not to compile with this target
+  - e.g. GodotXcodeIndex
+- Drag and drop godot source into project file browser  
+  - Uncheck *Create External Build System*
+  - Click Next
+  - Select create groups
+  - Check off only your command line target in the *Add to targets* section
+  - Click finish. Xcode will now index the files.
+- Grab a cup of coffee... Maybe make something to eat, too
+  - You should have jump to definition, auto completion, and full syntax highlighting when it is done.
+
+Scheme Setup
+^^^^^^^^^^^^
+
+- Open scheme editor of external build target  
+  - Expand the *Build* menu
+  - Goto *Post Actions*
+  - Add a new script run action
+  - Write a script that gives the binary a name that xcode will recognize
+  - e.g. ln -f "$SRCROOT"/bin/godot.osx.tools.64 godot
+- Build the external build target
+- Open the scheme editor again
+  - Click *Run*
+  - Set the *Executable* to the file you linked in your post build action script
+  - Check if *Debug executable* if it isn't already
+- Test it
+  - set a breakpoint in platform/osx/godot_main_osx.mm
+  - it should break at the point!
+
+
 Other editors (vim, emacs, Atom...)
 -----------------------------------
 
