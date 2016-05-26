@@ -66,6 +66,12 @@ If all goes well, the resulting binary executable will be placed in the
 runs without any dependencies. Executing it will bring up the project
 manager.
 
+If you wish to compile using Clang rather than GCC, use this command:
+
+::
+
+    user@host:~/godot$ scons platform=x11 use_llvm=yes
+
 Building export templates
 -------------------------
 
