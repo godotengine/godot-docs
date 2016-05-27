@@ -108,47 +108,68 @@ Run configuration:
 Xcode
 -----
 
-Here is an `image album <https://imgur.com/a/NU9y9>` of the steps as well.
-
 Project Setup
 ^^^^^^^^^^^^^
 
-- Create an external build project anywhere
+- Create an |xcode external build| project anywhere
 - Set the *Build tool* to the path to scons
-- In the external build target's info panel that should now be open
-  - Set *Arguments* to something like: platform=osx tools=yes bits=64 target=debug
-  - Set *Directory* to the path to Godot's source folder. Keep it blank if project is already there.
-  - You may uncheck *Pass build settings in environment*
-- Go to File > New > Target... and add a new command line target  
-  - Name it something so you know not to compile with this target
-  - e.g. GodotXcodeIndex
-- Drag and drop godot source into project file browser  
-  - Uncheck *Create External Build System*
-  - Click Next
-  - Select create groups
-  - Check off only your command line target in the *Add to targets* section
-  - Click finish. Xcode will now index the files.
+
+Modify Build Target's |xcode Info Tab|:
+
+- Set *Arguments* to something like: platform=osx tools=yes bits=64 target=debug
+- Set *Directory* to the path to Godot's source folder. Keep it blank if project is already there.
+- You may uncheck *Pass build settings in environment*
+
+Add a Command Line Target:
+
+- Go to |xcode File > New > Target...| and add a new |xcode command line target|
+- Name it something so you know not to compile with this target
+- e.g. GodotXcodeIndex
+
+Add Godot Source to the Project:
+
+- Drag and drop godot source into project file browser.
+- |xcode Uncheck| *Create External Build System*
+- Click Next
+- |xcode Select| *create groups*
+- Check off only your command line target in the *Add to targets* section
+- Click finish. Xcode will now index the files.
 - Grab a cup of coffee... Maybe make something to eat, too
-  - You should have jump to definition, auto completion, and full syntax highlighting when it is done.
+- You should have jump to definition, auto completion, and full syntax highlighting when it is done.
 
 Scheme Setup
 ^^^^^^^^^^^^
 
-- Open scheme editor of external build target  
-  - Expand the *Build* menu
-  - Goto *Post Actions*
-  - Add a new script run action
-  - Write a script that gives the binary a name that xcode will recognize
-  - e.g. ln -f "$SRCROOT"/bin/godot.osx.tools.64 godot
-- Build the external build target
-- Open the scheme editor again
-  - Click *Run*
-  - Set the *Executable* to the file you linked in your post build action script
-  - Check if *Debug executable* if it isn't already
-- Test it
-  - set a breakpoint in platform/osx/godot_main_osx.mm
-  - it should break at the point!
+Edit Build Scheme of External Build Target:
 
+- Open scheme editor of external build target
+- Expand the *Build* menu
+- Goto *Post Actions*
+- Add a new script |xcode run action|
+- Write a script that gives the binary a name that Xcode will recognize
+- e.g. ln -f "$SRCROOT"/bin/godot.osx.tools.64 godot
+- Build the external build target
+
+Edit Run Scheme of External Build Target:
+
+- Open the scheme editor again
+- |xcode Click Run|
+- Set the *Executable* to the file you linked in your post build action script
+- Check *Debug executable* if it isn't already
+
+Test It:
+
+- set a breakpoint in platform/osx/godot_main_osx.mm
+- it should break at the point!
+
+.. |xcode external build|         replace:: :download:`external build </img/xcode_1_create_external_build_project.png>`
+.. |xcode Info Tab|               replace:: :download:`Info Tab </img/xcode_2_configure_scons.png>`
+.. |xcode File > New > Target...| replace:: :download:`File > New > Target... </img/xcode_3_add_new_target.png>`
+.. |xcode command line target|    replace:: :download:`command line target </img/xcode_4_select_command_line_target.png>`
+.. |xcode Uncheck|                replace:: :download:`Uncheck </img/xcode_5_after_add_godot_source_to_project.png>`
+.. |xcode Select|                 replace:: :download:`Select </img/xcode_6_after_add_godot_source_to_project_2.png>`
+.. |xcode run action|             replace:: :download:`run action </img/xcode_7_setup_build_post_action.png>`
+.. |xcode Click Run|              replace:: :download:`Click Run </img/xcode_8_setup_run_scheme.png>`
 
 Other editors (vim, emacs, Atom...)
 -----------------------------------
