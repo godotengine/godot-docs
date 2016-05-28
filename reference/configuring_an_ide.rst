@@ -151,7 +151,7 @@ Edit Build Scheme of External Build Target:
 - Goto *Post Actions*
 - Add a new script |xcode run action|
 - Write a script that gives the binary a name that Xcode will recognize
-- e.g. ln -f "$SRCROOT"/bin/godot.osx.tools.64 godot
+- e.g. ln -f "$SRCROOT"/bin/godot.osx.tools.64 "$SRCROOT"/bin/godot
 - Build the external build target
 
 Edit Run Scheme of External Build Target:
@@ -160,6 +160,8 @@ Edit Run Scheme of External Build Target:
 - |xcode Click Run|
 - Set the *Executable* to the file you linked in your post build action script
 - Check *Debug executable* if it isn't already
+- You can go to *Arguments* tab and add an -e and a -path to a project to debug the editor
+  not the project selection screen
 
 Test It:
 
