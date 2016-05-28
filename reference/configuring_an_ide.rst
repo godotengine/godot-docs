@@ -125,6 +125,10 @@ Add a Command Line Target:
 - Go to |xcode File > New > Target...| and add a new |xcode command line target|
 - Name it something so you know not to compile with this target
 - e.g. GodotXcodeIndex
+- Goto the newly created target's *Build Settings* tab and search for *Header Search Paths*
+- Set *Header Search Paths* to an absolute path to Godot's source folder
+- Make it recursive by adding two \*'s to the end of the path
+- e.g. /Users/me/repos/godot-source/\**
 
 Add Godot Source to the Project:
 
