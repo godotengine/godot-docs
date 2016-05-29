@@ -54,7 +54,7 @@ lots of assets and parts that interact:
 .. image:: /img/openworld_instancing.png
 
 Make some rooms with furniture, then connect them. Make a house later,
-and use those rooms are the interior.
+and use those rooms as the interior.
 
 The house can be part of a citadel, which has many houses. Finally the
 citadel can be put on the world map terrain. Add also guards and other
