@@ -46,7 +46,7 @@ loaded.
 
 .. image:: /img/singleton.png
 
-This means, that a for a singleton named "playervariables", any node can
+This means, that for a singleton named "playervariables", any node can
 access it by requesting:
 
 ::
