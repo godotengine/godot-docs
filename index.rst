@@ -6,6 +6,8 @@
 Welcome to Godot Engine's documentation!
 ========================================
 
+**Note:** Failing to understand something? Can't find what you are looking for in the docs? Help us make the documentation better and let us know! Submit an issue to github <https://github.com/godotengine/godot/issues>, or annoy us at the #godotengine-devel IRC channel!.
+
 The main documentation for the site is organized into a few sections:
 
 * :ref:`sec-tutorials`
