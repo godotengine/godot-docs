@@ -59,9 +59,9 @@ Member Functions
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`            | :ref:`exp<class_@GDScript_exp>`  **(** :ref:`float<class_float>` s  **)**                                                                                  |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`            | :ref:`isnan<class_@GDScript_isnan>`  **(** :ref:`float<class_float>` s  **)**                                                                              |
+| :ref:`float<class_float>`            | :ref:`is_nan<class_@GDScript_is_nan>`  **(** :ref:`float<class_float>` s  **)**                                                                            |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`            | :ref:`isinf<class_@GDScript_isinf>`  **(** :ref:`float<class_float>` s  **)**                                                                              |
+| :ref:`float<class_float>`            | :ref:`is_inf<class_@GDScript_is_inf>`  **(** :ref:`float<class_float>` s  **)**                                                                            |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`            | :ref:`ease<class_@GDScript_ease>`  **(** :ref:`float<class_float>` s, :ref:`float<class_float>` curve  **)**                                               |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -291,15 +291,15 @@ Natural logarithm.
 
 Exponential logarithm.
 
-.. _class_@GDScript_isnan:
+.. _class_@GDScript_is_nan:
 
-- :ref:`float<class_float>`  **isnan**  **(** :ref:`float<class_float>` s  **)**
+- :ref:`float<class_float>`  **is_nan**  **(** :ref:`float<class_float>` s  **)**
 
 Return true if the float is not a number.
 
-.. _class_@GDScript_isinf:
+.. _class_@GDScript_is_inf:
 
-- :ref:`float<class_float>`  **isinf**  **(** :ref:`float<class_float>` s  **)**
+- :ref:`float<class_float>`  **is_inf**  **(** :ref:`float<class_float>` s  **)**
 
 Return true if the float is infinite.
 

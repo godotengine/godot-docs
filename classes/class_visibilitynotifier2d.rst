@@ -15,7 +15,7 @@ VisibilityNotifier2D
 Brief Description
 -----------------
 
-
+Detect when the node is visible on screen.
 
 Member Functions
 ----------------
@@ -36,6 +36,11 @@ Signals
 -  **exit_screen**  **(** **)**
 -  **exit_viewport**  **(** :ref:`Object<class_object>` viewport  **)**
 
+Description
+-----------
+
+The VisibilityNotifier2D is used to notify when its bounding rectangle enters the screen, is visible on the screen, or when it exits the screen.
+
 Member Function Description
 ---------------------------
 
@@ -43,12 +48,18 @@ Member Function Description
 
 - void  **set_rect**  **(** :ref:`Rect2<class_rect2>` rect  **)**
 
+Set the visibility bounding rectangle of the VisibilityNotifier2D.
+
 .. _class_VisibilityNotifier2D_get_rect:
 
 - :ref:`Rect2<class_rect2>`  **get_rect**  **(** **)** const
 
+Return the visibility bounding rectangle of the VisibilityNotifier2D.
+
 .. _class_VisibilityNotifier2D_is_on_screen:
 
 - :ref:`bool<class_bool>`  **is_on_screen**  **(** **)** const
+
+Return true if any part of the bounding rectangle is on the screen.
 
 

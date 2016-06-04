@@ -13,7 +13,7 @@ Light2D
 Brief Description
 -----------------
 
-
+Node that casts light in a 2D environment.
 
 Member Functions
 ----------------
@@ -95,10 +95,15 @@ Member Functions
 Numeric Constants
 -----------------
 
-- **MODE_ADD** = **0**
-- **MODE_SUB** = **1**
-- **MODE_MIX** = **2**
-- **MODE_MASK** = **3**
+- **MODE_ADD** = **0** --- Adds the value of pixels corresponding to the Light2D to the values of pixels under it. This is the common behaviour of a light.
+- **MODE_SUB** = **1** --- Substract the value of pixels corresponding to the Light2D to the values of pixels under it, resulting in inversed light effect.
+- **MODE_MIX** = **2** --- Mix the value of pixels corresponding to the Light2D to the values of pixels under it by linear interpolation.
+- **MODE_MASK** = **3** --- The light texture of the Light2D is used as a mask, hiding or revealing parts of the screen underneath depending on the value of each pixel of the light (mask) texture.
+
+Description
+-----------
+
+Node that casts light in a 2D environment. Light is defined by a (usually grayscale) texture, a color, an energy value, a mode (see constants), and various other parameters (range and shadows-related). Note that Light2D can be used as a mask.
 
 Member Function Description
 ---------------------------
@@ -107,144 +112,216 @@ Member Function Description
 
 - void  **set_enabled**  **(** :ref:`bool<class_bool>` enabled  **)**
 
+Switches the Light2D on or off, depending on the 'enabled' parameter.
+
 .. _class_Light2D_is_enabled:
 
 - :ref:`bool<class_bool>`  **is_enabled**  **(** **)** const
+
+Return true if the Light2D is enabled, false if it is not.
 
 .. _class_Light2D_set_texture:
 
 - void  **set_texture**  **(** :ref:`Object<class_object>` texture  **)**
 
+Set the texture of the Light2D.
+
 .. _class_Light2D_get_texture:
 
 - :ref:`Object<class_object>`  **get_texture**  **(** **)** const
+
+Return the texture of the Light2D.
 
 .. _class_Light2D_set_texture_offset:
 
 - void  **set_texture_offset**  **(** :ref:`Vector2<class_vector2>` texture_offset  **)**
 
+Set the offset of the light texture.
+
 .. _class_Light2D_get_texture_offset:
 
 - :ref:`Vector2<class_vector2>`  **get_texture_offset**  **(** **)** const
+
+Return the offset of the light texture.
 
 .. _class_Light2D_set_color:
 
 - void  **set_color**  **(** :ref:`Color<class_color>` color  **)**
 
+Set the color of the Light2D.
+
 .. _class_Light2D_get_color:
 
 - :ref:`Color<class_color>`  **get_color**  **(** **)** const
+
+Return the color of the Light2D.
 
 .. _class_Light2D_set_height:
 
 - void  **set_height**  **(** :ref:`float<class_float>` height  **)**
 
+Set the height of the Light2D. Used with 2D normalmapping.
+
 .. _class_Light2D_get_height:
 
 - :ref:`float<class_float>`  **get_height**  **(** **)** const
+
+Return the height of the Light2D. Used with 2D normalmapping.
 
 .. _class_Light2D_set_energy:
 
 - void  **set_energy**  **(** :ref:`float<class_float>` energy  **)**
 
+Set the energy value of the Light2D. The bigger the value, the stronger the light.
+
 .. _class_Light2D_get_energy:
 
 - :ref:`float<class_float>`  **get_energy**  **(** **)** const
+
+Return the energy value of the Light2D.
 
 .. _class_Light2D_set_texture_scale:
 
 - void  **set_texture_scale**  **(** :ref:`float<class_float>` texture_scale  **)**
 
+Set the scale value of the light texture.
+
 .. _class_Light2D_get_texture_scale:
 
 - :ref:`float<class_float>`  **get_texture_scale**  **(** **)** const
+
+Return the scale value of the light texture.
 
 .. _class_Light2D_set_z_range_min:
 
 - void  **set_z_range_min**  **(** :ref:`int<class_int>` z  **)**
 
+Set the minimum Z value that objects of the scene have to be in order to be affected by the Light2D.
+
 .. _class_Light2D_get_z_range_min:
 
 - :ref:`int<class_int>`  **get_z_range_min**  **(** **)** const
+
+Get the minimum Z value that objects of the scene have to be in order to be affected by the Light2D.
 
 .. _class_Light2D_set_z_range_max:
 
 - void  **set_z_range_max**  **(** :ref:`int<class_int>` z  **)**
 
+Set the maximum Z value that objects of the scene can be in order to be affected by the Light2D.
+
 .. _class_Light2D_get_z_range_max:
 
 - :ref:`int<class_int>`  **get_z_range_max**  **(** **)** const
+
+Get the maximum Z value that objects of the scene can be in order to be affected by the Light2D.
 
 .. _class_Light2D_set_layer_range_min:
 
 - void  **set_layer_range_min**  **(** :ref:`int<class_int>` layer  **)**
 
+Set the minimum layer value of objects of the scene that are affected by the Light2D.
+
 .. _class_Light2D_get_layer_range_min:
 
 - :ref:`int<class_int>`  **get_layer_range_min**  **(** **)** const
+
+Get the minimum layer value of objects of the scene that are affected by the Light2D.
 
 .. _class_Light2D_set_layer_range_max:
 
 - void  **set_layer_range_max**  **(** :ref:`int<class_int>` layer  **)**
 
+Set the maximum layer value of objects of the scene that are affected by the Light2D.
+
 .. _class_Light2D_get_layer_range_max:
 
 - :ref:`int<class_int>`  **get_layer_range_max**  **(** **)** const
+
+Set the maximum layer value of objects of the scene that are affected by the Light2D.
 
 .. _class_Light2D_set_item_mask:
 
 - void  **set_item_mask**  **(** :ref:`int<class_int>` item_mask  **)**
 
+Set the item mask of the Light2D to 'item_mask' value.
+
 .. _class_Light2D_get_item_mask:
 
 - :ref:`int<class_int>`  **get_item_mask**  **(** **)** const
+
+Return the item mask of the Light2D.
 
 .. _class_Light2D_set_item_shadow_mask:
 
 - void  **set_item_shadow_mask**  **(** :ref:`int<class_int>` item_shadow_mask  **)**
 
+Set the item shadow mask to 'item_shadow_mask' value.
+
 .. _class_Light2D_get_item_shadow_mask:
 
 - :ref:`int<class_int>`  **get_item_shadow_mask**  **(** **)** const
+
+Return the item shadow mask of the Light2D.
 
 .. _class_Light2D_set_mode:
 
 - void  **set_mode**  **(** :ref:`int<class_int>` mode  **)**
 
+Set the behaviour mode of the Light2D. Use constants defined in the constants section.
+
 .. _class_Light2D_get_mode:
 
 - :ref:`int<class_int>`  **get_mode**  **(** **)** const
+
+Return the current mode set to the Light2D.
 
 .. _class_Light2D_set_shadow_enabled:
 
 - void  **set_shadow_enabled**  **(** :ref:`bool<class_bool>` enabled  **)**
 
+Enable or disable shadows casting from this Light2D according to the 'enabled' parameter.
+
 .. _class_Light2D_is_shadow_enabled:
 
 - :ref:`bool<class_bool>`  **is_shadow_enabled**  **(** **)** const
+
+Return true if shadow casting is enabled for this Light2D, else return false.
 
 .. _class_Light2D_set_shadow_buffer_size:
 
 - void  **set_shadow_buffer_size**  **(** :ref:`int<class_int>` size  **)**
 
+Set the shadow buffer size.
+
 .. _class_Light2D_get_shadow_buffer_size:
 
 - :ref:`int<class_int>`  **get_shadow_buffer_size**  **(** **)** const
+
+Return the shadow buffer size.
 
 .. _class_Light2D_set_shadow_esm_multiplier:
 
 - void  **set_shadow_esm_multiplier**  **(** :ref:`float<class_float>` multiplier  **)**
 
+Set the Exponential Shadow Multiplier (ESM) value of the Light2D.
+
 .. _class_Light2D_get_shadow_esm_multiplier:
 
 - :ref:`float<class_float>`  **get_shadow_esm_multiplier**  **(** **)** const
+
+Return the Exponential Shadow Multiplier (ESM) value of the Light2D.
 
 .. _class_Light2D_set_shadow_color:
 
 - void  **set_shadow_color**  **(** :ref:`Color<class_color>` shadow_color  **)**
 
+Set the color of casted shadows for this Light2D.
+
 .. _class_Light2D_get_shadow_color:
 
 - :ref:`Color<class_color>`  **get_shadow_color**  **(** **)** const
+
+Return the color of casted shadows for this Light2D.
 
 

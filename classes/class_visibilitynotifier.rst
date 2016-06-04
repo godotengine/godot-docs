@@ -15,7 +15,7 @@ VisibilityNotifier
 Brief Description
 -----------------
 
-
+Detect when the node is visible on screen.
 
 Member Functions
 ----------------
@@ -36,6 +36,11 @@ Signals
 -  **exit_screen**  **(** **)**
 -  **exit_camera**  **(** :ref:`Object<class_object>` camera  **)**
 
+Description
+-----------
+
+The VisibilityNotifier is used to notify when its bounding box enters the screen, is visible on the screen, or when it exits the screen.
+
 Member Function Description
 ---------------------------
 
@@ -43,12 +48,18 @@ Member Function Description
 
 - void  **set_aabb**  **(** :ref:`AABB<class_aabb>` rect  **)**
 
+Set the visibility bounding box of the VisibilityNotifier.
+
 .. _class_VisibilityNotifier_get_aabb:
 
 - :ref:`AABB<class_aabb>`  **get_aabb**  **(** **)** const
 
+Return the visibility bounding box of the VisibilityNotifier.
+
 .. _class_VisibilityNotifier_is_on_screen:
 
 - :ref:`bool<class_bool>`  **is_on_screen**  **(** **)** const
+
+Return true if any part of the bounding box is on the screen.
 
 

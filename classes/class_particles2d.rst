@@ -123,17 +123,17 @@ Member Functions
 Numeric Constants
 -----------------
 
-- **PARAM_DIRECTION** = **0** --- Direction in degrees at which the particles will be launched, Notice that when the direction is set to 0 the particles will be launched to the negative
+- **PARAM_DIRECTION** = **0** --- Direction in radians at which the particles will be launched, Notice that when the direction is set to 0 the particles will be launched to the negative
 - **PARAM_SPREAD** = **1**
 - **PARAM_LINEAR_VELOCITY** = **2** --- Velocity at which the particles will be launched.
 - **PARAM_SPIN_VELOCITY** = **3** --- The speed at which particles will spin around its own center.
 - **PARAM_ORBIT_VELOCITY** = **4** --- Velocity at which the particles will orbit around the emitter center
-- **PARAM_GRAVITY_DIRECTION** = **5** --- Direction in degrees at which the particles will be attracted
+- **PARAM_GRAVITY_DIRECTION** = **5** --- Direction in radians at which the particles will be attracted
 - **PARAM_GRAVITY_STRENGTH** = **6** --- Strength of the gravitation attraction for each particle
 - **PARAM_RADIAL_ACCEL** = **7**
 - **PARAM_TANGENTIAL_ACCEL** = **8**
 - **PARAM_DAMPING** = **9** --- Amount of damping for each particle
-- **PARAM_INITIAL_ANGLE** = **10** --- Initial angle at which each particle will be spawned
+- **PARAM_INITIAL_ANGLE** = **10** --- Initial angle in radians at which each particle will be spawned
 - **PARAM_INITIAL_SIZE** = **11** --- Initial size of each particle
 - **PARAM_FINAL_SIZE** = **12** --- Final size of each particle, the particle size will interpolate to this value during its lifetime.
 - **PARAM_HUE_VARIATION** = **13**

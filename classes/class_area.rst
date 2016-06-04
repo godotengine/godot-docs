@@ -13,7 +13,7 @@ Area
 Brief Description
 -----------------
 
-
+General purpose area detection and influence for 3D physics.
 
 Member Functions
 ----------------
@@ -80,6 +80,11 @@ Signals
 -  **area_exit**  **(** :ref:`Object<class_object>` area  **)**
 -  **area_exit_shape**  **(** :ref:`int<class_int>` area_id, :ref:`Object<class_object>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` area_shape  **)**
 
+Description
+-----------
+
+General purpose area detection for 3D physics. Areas can be used for detection of objects that enter/exit them, as well as overriding space parameters (changing gravity, damping, etc). For this, use any space override different from AREA_SPACE_OVERRIDE_DISABLE and point gravity at the center of mass.
+
 Member Function Description
 ---------------------------
 
@@ -103,92 +108,148 @@ AREA_SPACE_OVERRIDE_REPLACE_COMBINE: This area replaces any gravity/damp calcula
 
 - :ref:`int<class_int>`  **get_space_override_mode**  **(** **)** const
 
+Return the space override mode.
+
 .. _class_Area_set_gravity_is_point:
 
 - void  **set_gravity_is_point**  **(** :ref:`bool<class_bool>` enable  **)**
+
+When overriding space parameters, this method sets whether this area has a center of gravity. To set/get the location of the center of gravity, use :ref:`set_gravity_vector<class_Area_set_gravity_vector>`/:ref:`get_gravity_vector<class_Area_get_gravity_vector>`.
 
 .. _class_Area_is_gravity_a_point:
 
 - :ref:`bool<class_bool>`  **is_gravity_a_point**  **(** **)** const
 
+Return whether gravity is a point. A point gravity will attract objects towards it, as opposed to a gravity vector, which moves them in a given direction.
+
 .. _class_Area_set_gravity_distance_scale:
 
 - void  **set_gravity_distance_scale**  **(** :ref:`float<class_float>` distance_scale  **)**
+
+Set the falloff factor for point gravity. The greater this value is, the faster the strength of gravity decreases with the square of distance.
 
 .. _class_Area_get_gravity_distance_scale:
 
 - :ref:`float<class_float>`  **get_gravity_distance_scale**  **(** **)** const
 
+Return the falloff factor for point gravity.
+
 .. _class_Area_set_gravity_vector:
 
 - void  **set_gravity_vector**  **(** :ref:`Vector3<class_vector3>` vector  **)**
+
+Set the gravity vector. This vector does not have to be normalized.
+
+If gravity is a point (see :ref:`is_gravity_a_point<class_Area_is_gravity_a_point>`), this will be the attraction center.
 
 .. _class_Area_get_gravity_vector:
 
 - :ref:`Vector3<class_vector3>`  **get_gravity_vector**  **(** **)** const
 
+Return the gravity vector. If gravity is a point (see :ref:`is_gravity_a_point<class_Area_is_gravity_a_point>`), this will be the attraction center.
+
 .. _class_Area_set_gravity:
 
 - void  **set_gravity**  **(** :ref:`float<class_float>` gravity  **)**
+
+Set the gravity intensity. This is useful to alter the force of gravity without altering its direction.
+
+This value multiplies the gravity vector, whether it is the given vector (:ref:`set_gravity_vector<class_Area_set_gravity_vector>`), or a calculated one (when using a center of gravity).
 
 .. _class_Area_get_gravity:
 
 - :ref:`float<class_float>`  **get_gravity**  **(** **)** const
 
+Return the gravity intensity.
+
 .. _class_Area_set_angular_damp:
 
 - void  **set_angular_damp**  **(** :ref:`float<class_float>` angular_damp  **)**
+
+Set the rate at which objects stop spinning in this area, if there are not any other forces making it spin. The value is a fraction of its current speed, lost per second. Thus, a value of 1.0 should mean stopping immediately, and 0.0 means the object never stops.
+
+In practice, as the fraction of speed lost gets smaller with each frame, a value of 1.0 does not mean the object will stop in exactly one second. Only when the physics calculations are done at 1 frame per second, it does stop in a second.
 
 .. _class_Area_get_angular_damp:
 
 - :ref:`float<class_float>`  **get_angular_damp**  **(** **)** const
 
+Return the angular damp rate.
+
 .. _class_Area_set_linear_damp:
 
 - void  **set_linear_damp**  **(** :ref:`float<class_float>` linear_damp  **)**
+
+Set the rate at which objects stop moving in this area, if there are not any other forces moving it. The value is a fraction of its current speed, lost per second. Thus, a value of 1.0 should mean stopping immediately, and 0.0 means the object never stops.
+
+In practice, as the fraction of speed lost gets smaller with each frame, a value of 1.0 does not mean the object will stop in exactly one second. Only when the physics calculations are done at 1 frame per second, it does stop in a second.
 
 .. _class_Area_get_linear_damp:
 
 - :ref:`float<class_float>`  **get_linear_damp**  **(** **)** const
 
+Return the linear damp rate.
+
 .. _class_Area_set_priority:
 
 - void  **set_priority**  **(** :ref:`float<class_float>` priority  **)**
+
+Set the order in which the area is processed. Greater values mean the area gets processed first. This is useful for areas which have an space override different from AREA_SPACE_OVERRIDE_DISABLED or AREA_SPACE_OVERRIDE_COMBINE, as they replace values, and are thus order-dependent.
+
+Areas with the same priority value get evaluated in an unpredictable order, and should be differentiated if evaluation order is to be important.
 
 .. _class_Area_get_priority:
 
 - :ref:`float<class_float>`  **get_priority**  **(** **)** const
 
+Return the processing order of this area.
+
 .. _class_Area_set_monitorable:
 
 - void  **set_monitorable**  **(** :ref:`bool<class_bool>` enable  **)**
+
+Set whether this area can be detected by other, monitoring, areas. Only areas need to be marked as monitorable. Bodies are always so.
 
 .. _class_Area_is_monitorable:
 
 - :ref:`bool<class_bool>`  **is_monitorable**  **(** **)** const
 
+Return whether this area can be detected by other, monitoring, areas.
+
 .. _class_Area_set_enable_monitoring:
 
 - void  **set_enable_monitoring**  **(** :ref:`bool<class_bool>` enable  **)**
+
+Set whether this area can detect bodies/areas entering/exiting it.
 
 .. _class_Area_is_monitoring_enabled:
 
 - :ref:`bool<class_bool>`  **is_monitoring_enabled**  **(** **)** const
 
+Return whether this area detects bodies/areas entering/exiting it.
+
 .. _class_Area_get_overlapping_bodies:
 
 - :ref:`Array<class_array>`  **get_overlapping_bodies**  **(** **)** const
+
+Return a list of the bodies (:ref:`PhysicsBody<class_physicsbody>`) that are totally or partially inside this area.
 
 .. _class_Area_get_overlapping_areas:
 
 - :ref:`Array<class_array>`  **get_overlapping_areas**  **(** **)** const
 
+Return a list of the areas that are totally or partially inside this area.
+
 .. _class_Area_overlaps_body:
 
 - :ref:`bool<class_bool>`  **overlaps_body**  **(** :ref:`Object<class_object>` body  **)** const
 
+Return whether the body passed is totally or partially inside this area.
+
 .. _class_Area_overlaps_area:
 
 - :ref:`bool<class_bool>`  **overlaps_area**  **(** :ref:`Object<class_object>` area  **)** const
+
+Return whether the area passed is totally or partially inside this area.
 
 

@@ -45,17 +45,17 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`float<class_float>` **r**
-- :ref:`float<class_float>` **g**
-- :ref:`float<class_float>` **b**
-- :ref:`float<class_float>` **a**
-- :ref:`float<class_float>` **h**
-- :ref:`float<class_float>` **s**
-- :ref:`float<class_float>` **v**
-- :ref:`int<class_int>` **r8**
-- :ref:`int<class_int>` **g8**
-- :ref:`int<class_int>` **b8**
-- :ref:`int<class_int>` **a8**
+- :ref:`float<class_float>` **r** - Red (0 to 1)
+- :ref:`float<class_float>` **g** - Green (0 to 1)
+- :ref:`float<class_float>` **b** - Blue (0 to 1)
+- :ref:`float<class_float>` **a** - Alpha (0 to 1)
+- :ref:`float<class_float>` **h** - Hue (0 to 1)
+- :ref:`float<class_float>` **s** - Saturation (0 to 1)
+- :ref:`float<class_float>` **v** - Value (0 to 1)
+- :ref:`int<class_int>` **r8** - Red (0 to 255)
+- :ref:`int<class_int>` **g8** - Green (0 to 255)
+- :ref:`int<class_int>` **b8** - Blue (0 to 255)
+- :ref:`int<class_int>` **a8** - Alpha (0 to 255)
 
 Description
 -----------

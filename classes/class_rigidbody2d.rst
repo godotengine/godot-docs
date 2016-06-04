@@ -200,7 +200,7 @@ Return the body bounciness.
 
 - void  **set_gravity_scale**  **(** :ref:`float<class_float>` gravity_scale  **)**
 
-Set The gravity factor. This factor multiplies gravity intensity just for this body.
+Set the gravity factor. This factor multiplies gravity intensity just for this body.
 
 .. _class_RigidBody2D_get_gravity_scale:
 
@@ -298,7 +298,7 @@ Return whether contact monitoring is enabled.
 
 Set the continuous collision detection mode from the enum CCD_MODE\_\*.
 
-Continuous collision detection tries to predict where a moving body will collide, instead of moving it and correcting its movement if it collided. The first is more precise, and misses less impacts by small, fast-moving objects. The second is faster to compute, but can miss small, fat-moving objects.
+Continuous collision detection tries to predict where a moving body will collide, instead of moving it and correcting its movement if it collided. The first is more precise, and misses less impacts by small, fast-moving objects. The second is faster to compute, but can miss small, fast-moving objects.
 
 .. _class_RigidBody2D_get_continuous_collision_detection_mode:
 

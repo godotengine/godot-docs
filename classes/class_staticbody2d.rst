@@ -58,13 +58,13 @@ Set a constant linear velocity for the body. This does not move the body, but af
 
 - void  **set_constant_angular_velocity**  **(** :ref:`float<class_float>` vel  **)**
 
-Set a constant angular velocity for the body.
+Set a constant angular velocity for the body. This does not rotate the body, but affects other bodies touching it, as if it was rotating.
 
 .. _class_StaticBody2D_get_constant_linear_velocity:
 
 - :ref:`Vector2<class_vector2>`  **get_constant_linear_velocity**  **(** **)** const
 
-Return the constant linear velocity for the body. This does not rotate the body, but affects other bodies touching it, as if it was rotating.
+Return the constant linear velocity for the body.
 
 .. _class_StaticBody2D_get_constant_angular_velocity:
 

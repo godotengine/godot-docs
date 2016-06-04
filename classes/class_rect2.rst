@@ -43,9 +43,9 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`Vector2<class_vector2>` **pos**
-- :ref:`Vector2<class_vector2>` **size**
-- :ref:`Vector2<class_vector2>` **end**
+- :ref:`Vector2<class_vector2>` **pos** - Position (starting corner).
+- :ref:`Vector2<class_vector2>` **size** - Size from position to end.
+- :ref:`Vector2<class_vector2>` **end** - Ending corner.
 
 Description
 -----------

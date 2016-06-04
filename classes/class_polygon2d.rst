@@ -126,19 +126,19 @@ Sets the offset of the polygon texture. Initially the texture will appear anchor
 
 - :ref:`Vector2<class_vector2>`  **get_texture_offset**  **(** **)** const
 
-Returns the polygon texture offset
+Returns the polygon texture offset.
 
 .. _class_Polygon2D_set_texture_rotation:
 
 - void  **set_texture_rotation**  **(** :ref:`float<class_float>` texture_rotation  **)**
 
-Sets the amount of rotation of the polygon texture, ``texture_rotation`` is specified in degrees and clockwise rotation, meaning that if the texture rotation is set to 45 degrees, the texture will be rotated 45 degrees clockwise along the polygon position plus the texture offset.
+Sets the amount of rotation of the polygon texture, ``texture_rotation`` is specified in radians and clockwise rotation.
 
 .. _class_Polygon2D_get_texture_rotation:
 
 - :ref:`float<class_float>`  **get_texture_rotation**  **(** **)** const
 
-Returns the rotation in degrees of the texture polygon
+Returns the rotation in radians of the texture polygon.
 
 .. _class_Polygon2D_set_texture_scale:
 

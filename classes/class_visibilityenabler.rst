@@ -13,7 +13,7 @@ VisibilityEnabler
 Brief Description
 -----------------
 
-
+Enable certain nodes only when visible.
 
 Member Functions
 ----------------
@@ -27,9 +27,14 @@ Member Functions
 Numeric Constants
 -----------------
 
-- **ENABLER_FREEZE_BODIES** = **1**
-- **ENABLER_PAUSE_ANIMATIONS** = **0**
+- **ENABLER_FREEZE_BODIES** = **1** --- This enabler will freeze :ref:`RigidBody<class_rigidbody>` nodes.
+- **ENABLER_PAUSE_ANIMATIONS** = **0** --- This enabler will pause :ref:`AnimationPlayer<class_animationplayer>` nodes.
 - **ENABLER_MAX** = **2**
+
+Description
+-----------
+
+The VisibilityEnabler will disable :ref:`RigidBody<class_rigidbody>` and :ref:`AnimationPlayer<class_animationplayer>` nodes when they are not visible. It will only affect other nodes within the same scene as the VisibilityEnabler itself.
 
 Member Function Description
 ---------------------------
@@ -38,8 +43,12 @@ Member Function Description
 
 - void  **set_enabler**  **(** :ref:`int<class_int>` enabler, :ref:`bool<class_bool>` enabled  **)**
 
+Set an enabler to true for all nodes of its type to be disabled when the VisibilityEnabler is not in view. See the constants for enablers and what they affect.
+
 .. _class_VisibilityEnabler_is_enabler_enabled:
 
 - :ref:`bool<class_bool>`  **is_enabler_enabled**  **(** :ref:`int<class_int>` enabler  **)** const
+
+Returns whether the specified enabler was set to true or not.
 
 

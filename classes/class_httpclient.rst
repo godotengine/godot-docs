@@ -13,7 +13,7 @@ HTTPClient
 Brief Description
 -----------------
 
-
+Hyper-text transfer protocol client.
 
 Member Functions
 ----------------
@@ -130,6 +130,13 @@ Numeric Constants
 - **RESPONSE_INSUFFICIENT_STORAGE** = **507**
 - **RESPONSE_NOT_EXTENDED** = **510**
 
+Description
+-----------
+
+Hyper-text transfer protocol client. Supports SSL and SSL server certificate verification. 
+
+Can be reused to connect to different hosts and make many requests.
+
 Member Function Description
 ---------------------------
 
@@ -146,6 +153,8 @@ verify_host will check the SSL identity of the host if set to true.
 .. _class_HTTPClient_set_connection:
 
 - void  **set_connection**  **(** :ref:`StreamPeer<class_streampeer>` connection  **)**
+
+Set connection to use, for this client.
 
 .. _class_HTTPClient_request:
 
@@ -180,21 +189,31 @@ Stub function
 
 - void  **close**  **(** **)**
 
+Cloces the current connection, allows for reusal of :ref:`HTTPClient<class_httpclient>`.
+
 .. _class_HTTPClient_has_response:
 
 - :ref:`bool<class_bool>`  **has_response**  **(** **)** const
+
+Return whether this :ref:`HTTPClient<class_httpclient>` has a response available.
 
 .. _class_HTTPClient_is_response_chunked:
 
 - :ref:`bool<class_bool>`  **is_response_chunked**  **(** **)** const
 
+Return whether this :ref:`HTTPClient<class_httpclient>` has a response that is chunked.
+
 .. _class_HTTPClient_get_response_code:
 
 - :ref:`int<class_int>`  **get_response_code**  **(** **)** const
 
+Return the HTTP status code of the response.
+
 .. _class_HTTPClient_get_response_headers:
 
 - :ref:`StringArray<class_stringarray>`  **get_response_headers**  **(** **)**
+
+Return the response headers.
 
 .. _class_HTTPClient_get_response_headers_as_dictionary:
 
@@ -210,25 +229,31 @@ Example: (content-length:12), (Content-Type:application/json; charset=UTF-8)
 
 - :ref:`int<class_int>`  **get_response_body_length**  **(** **)** const
 
+Return the response's body length.
+
 .. _class_HTTPClient_read_response_body_chunk:
 
 - :ref:`RawArray<class_rawarray>`  **read_response_body_chunk**  **(** **)**
+
+Reads one chunk from the response.
 
 .. _class_HTTPClient_set_read_chunk_size:
 
 - void  **set_read_chunk_size**  **(** :ref:`int<class_int>` bytes  **)**
 
-Sets the size of the buffer used and maximum bytes to read per iteration
+Sets the size of the buffer used and maximum bytes to read per iteration. see :ref:`read_response_body_chunk<class_HTTPClient_read_response_body_chunk>`
 
 .. _class_HTTPClient_set_blocking_mode:
 
 - void  **set_blocking_mode**  **(** :ref:`bool<class_bool>` enabled  **)**
 
-If set to true, execute will wait until all data is read from the response.
+If set to true, execution will block until all data is read from the response.
 
 .. _class_HTTPClient_is_blocking_mode_enabled:
 
 - :ref:`bool<class_bool>`  **is_blocking_mode_enabled**  **(** **)** const
+
+Return whether blocking mode is enabled.
 
 .. _class_HTTPClient_get_status:
 

@@ -61,10 +61,10 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`float<class_float>` **x**
-- :ref:`float<class_float>` **y**
-- :ref:`float<class_float>` **width**
-- :ref:`float<class_float>` **height**
+- :ref:`float<class_float>` **x** - X component of the vector.
+- :ref:`float<class_float>` **y** - Y component of the vector.
+- :ref:`float<class_float>` **width** - Width of the vector (Same as X).
+- :ref:`float<class_float>` **height** - Height of the vector (Same as Y).
 
 Description
 -----------

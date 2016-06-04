@@ -98,6 +98,8 @@ Set the rotation of the 2D node.
 
 - void  **set_rotd**  **(** :ref:`float<class_float>` degrees  **)**
 
+Set the rotation of the 2D node.
+
 .. _class_Node2D_set_scale:
 
 - void  **set_scale**  **(** :ref:`Vector2<class_vector2>` scale  **)**
@@ -196,7 +198,7 @@ Rotate the 2d node so it points at 'point' position.
 
 - :ref:`float<class_float>`  **get_angle_to**  **(** :ref:`Vector2<class_vector2>` point  **)** const
 
-Return the rotation angle needed for the 2d node to point at 'point' position.
+Return the rotation angle in radians needed for the 2d node to point at 'point' position.
 
 .. _class_Node2D_set_z:
 

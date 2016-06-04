@@ -57,11 +57,13 @@ Member Function Description
 
 - void  **set_path**  **(** :ref:`String<class_string>` path  **)**
 
-Set the path of the resource. This is useful mainly for editors when saving/loading, and shouldn't be changed by anything else.
+Set the path of the resource. This is useful mainly for editors when saving/loading, and shouldn't be changed by anything else. Fails if another :ref:`Resource<class_resource>` already has path "path".
 
 .. _class_Resource_take_over_path:
 
 - void  **take_over_path**  **(** :ref:`String<class_string>` path  **)**
+
+Set the path of the resource. Differs from set_path(), if another :ref:`Resource<class_resource>` exists with "path" it over-takes it, instead of failing.
 
 .. _class_Resource_get_path:
 

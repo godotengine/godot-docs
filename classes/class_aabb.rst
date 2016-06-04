@@ -63,9 +63,9 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`Vector3<class_vector3>` **pos**
-- :ref:`Vector3<class_vector3>` **size**
-- :ref:`Vector3<class_vector3>` **end**
+- :ref:`Vector3<class_vector3>` **pos** - Position (starting corner).
+- :ref:`Vector3<class_vector3>` **size** - Size from position to end.
+- :ref:`Vector3<class_vector3>` **end** - Ending corner.
 
 Description
 -----------
@@ -186,6 +186,8 @@ Return true if the :ref:`AABB<class_aabb>` is at both sides of a plane.
 .. _class_AABB_intersects_segment:
 
 - :ref:`bool<class_bool>`  **intersects_segment**  **(** :ref:`Vector3<class_vector3>` from, :ref:`Vector3<class_vector3>` to  **)**
+
+Return true if the :ref:`AABB<class_aabb>` intersects the line segment between from and to
 
 .. _class_AABB_merge:
 

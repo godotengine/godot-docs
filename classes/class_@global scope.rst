@@ -16,31 +16,31 @@ Global scope constants and variables.
 Member Variables
 ----------------
 
-- :ref:`Performance<class_performance>` **Performance**
-- :ref:`Globals<class_globals>` **Globals**
-- :ref:`IP<class_ip>` **IP**
-- :ref:`Geometry<class_geometry>` **Geometry**
-- :ref:`ResourceLoader<class_resourceloader>` **ResourceLoader**
-- :ref:`ResourceSaver<class_resourcesaver>` **ResourceSaver**
-- :ref:`PathRemap<class_pathremap>` **PathRemap**
-- :ref:`OS<class_os>` **OS**
-- :ref:`Reference<class_reference>` **Marshalls**
-- :ref:`TranslationServer<class_translationserver>` **TranslationServer**
-- :ref:`TranslationServer<class_translationserver>` **TS**
-- :ref:`Input<class_input>` **Input**
-- :ref:`InputMap<class_inputmap>` **InputMap**
-- :ref:`VisualServer<class_visualserver>` **VisualServer**
-- :ref:`VisualServer<class_visualserver>` **VS**
-- :ref:`AudioServer<class_audioserver>` **AudioServer**
-- :ref:`AudioServer<class_audioserver>` **AS**
-- :ref:`PhysicsServer<class_physicsserver>` **PhysicsServer**
-- :ref:`PhysicsServer<class_physicsserver>` **PS**
-- :ref:`Physics2DServer<class_physics2dserver>` **Physics2DServer**
-- :ref:`Physics2DServer<class_physics2dserver>` **PS2D**
-- :ref:`SpatialSoundServer<class_spatialsoundserver>` **SpatialSoundServer**
-- :ref:`SpatialSoundServer<class_spatialsoundserver>` **SS**
-- :ref:`SpatialSound2DServer<class_spatialsound2dserver>` **SpatialSound2DServer**
-- :ref:`SpatialSound2DServer<class_spatialsound2dserver>` **SS2D**
+- :ref:`Performance<class_performance>` **Performance** - [Performance] singleton
+- :ref:`Globals<class_globals>` **Globals** - [Globals] singleton
+- :ref:`IP<class_ip>` **IP** - [IP] singleton
+- :ref:`Geometry<class_geometry>` **Geometry** - [Geometry] singleton
+- :ref:`ResourceLoader<class_resourceloader>` **ResourceLoader** - [ResourceLoader] singleton
+- :ref:`ResourceSaver<class_resourcesaver>` **ResourceSaver** - [ResourceSaver] singleton
+- :ref:`PathRemap<class_pathremap>` **PathRemap** - [PathRemap] singleton
+- :ref:`OS<class_os>` **OS** - [OS] singleton
+- :ref:`Reference<class_reference>` **Marshalls** - [Marshalls] singleton
+- :ref:`TranslationServer<class_translationserver>` **TranslationServer** - [TranslationServer] singleton
+- :ref:`TranslationServer<class_translationserver>` **TS** - [TranslationServer] singleton
+- :ref:`Input<class_input>` **Input** - [Input] singleton
+- :ref:`InputMap<class_inputmap>` **InputMap** - [InputMap] singleton
+- :ref:`VisualServer<class_visualserver>` **VisualServer** - [VisualServer] singleton
+- :ref:`VisualServer<class_visualserver>` **VS** - [VisualServer] singleton
+- :ref:`AudioServer<class_audioserver>` **AudioServer** - [AudioServer] singleton
+- :ref:`AudioServer<class_audioserver>` **AS** - [AudioServer] singleton
+- :ref:`PhysicsServer<class_physicsserver>` **PhysicsServer** - [PhysicsServer] singleton
+- :ref:`PhysicsServer<class_physicsserver>` **PS** - [PhysicsServer] singleton
+- :ref:`Physics2DServer<class_physics2dserver>` **Physics2DServer** - [Physics2DServer] singleton
+- :ref:`Physics2DServer<class_physics2dserver>` **PS2D** - [Physics2DServer] singleton
+- :ref:`SpatialSoundServer<class_spatialsoundserver>` **SpatialSoundServer** - [SpatialSoundServer] singleton
+- :ref:`SpatialSoundServer<class_spatialsoundserver>` **SS** - [SpatialSoundServer] singleton
+- :ref:`SpatialSound2DServer<class_spatialsound2dserver>` **SpatialSound2DServer** - [SpatialSound2DServer] singleton
+- :ref:`SpatialSound2DServer<class_spatialsound2dserver>` **SS2D** - [SpatialSound2DServer] singleton
 
 Numeric Constants
 -----------------
@@ -117,34 +117,34 @@ Numeric Constants
 - **KEY_KP_7** = **16777357** --- Number 7 on Numpad
 - **KEY_KP_8** = **16777358** --- Number 8 on Numpad
 - **KEY_KP_9** = **16777359** --- Number 9 on Numpad
-- **KEY_SUPER_L** = **16777260**
-- **KEY_SUPER_R** = **16777261**
-- **KEY_MENU** = **16777262**
+- **KEY_SUPER_L** = **16777260** --- Super Left key (windows key)
+- **KEY_SUPER_R** = **16777261** --- Super Left key (windows key)
+- **KEY_MENU** = **16777262** --- Context menu key
 - **KEY_HYPER_L** = **16777263**
 - **KEY_HYPER_R** = **16777264**
-- **KEY_HELP** = **16777265**
+- **KEY_HELP** = **16777265** --- Help key
 - **KEY_DIRECTION_L** = **16777266**
 - **KEY_DIRECTION_R** = **16777267**
-- **KEY_BACK** = **16777280**
-- **KEY_FORWARD** = **16777281**
-- **KEY_STOP** = **16777282**
-- **KEY_REFRESH** = **16777283**
-- **KEY_VOLUMEDOWN** = **16777284**
-- **KEY_VOLUMEMUTE** = **16777285**
-- **KEY_VOLUMEUP** = **16777286**
+- **KEY_BACK** = **16777280** --- Back key
+- **KEY_FORWARD** = **16777281** --- Forward key
+- **KEY_STOP** = **16777282** --- Stop key
+- **KEY_REFRESH** = **16777283** --- Refresh key
+- **KEY_VOLUMEDOWN** = **16777284** --- Volume down key
+- **KEY_VOLUMEMUTE** = **16777285** --- Mute volume key
+- **KEY_VOLUMEUP** = **16777286** --- Volume up key
 - **KEY_BASSBOOST** = **16777287**
 - **KEY_BASSUP** = **16777288**
 - **KEY_BASSDOWN** = **16777289**
 - **KEY_TREBLEUP** = **16777290**
 - **KEY_TREBLEDOWN** = **16777291**
-- **KEY_MEDIAPLAY** = **16777292**
-- **KEY_MEDIASTOP** = **16777293**
-- **KEY_MEDIAPREVIOUS** = **16777294**
-- **KEY_MEDIANEXT** = **16777295**
-- **KEY_MEDIARECORD** = **16777296**
-- **KEY_HOMEPAGE** = **16777297**
-- **KEY_FAVORITES** = **16777298**
-- **KEY_SEARCH** = **16777299**
+- **KEY_MEDIAPLAY** = **16777292** --- Media play key
+- **KEY_MEDIASTOP** = **16777293** --- Media stop key
+- **KEY_MEDIAPREVIOUS** = **16777294** --- Previous song key
+- **KEY_MEDIANEXT** = **16777295** --- Next song key
+- **KEY_MEDIARECORD** = **16777296** --- Media record key
+- **KEY_HOMEPAGE** = **16777297** --- Home page key
+- **KEY_FAVORITES** = **16777298** --- Favorites key
+- **KEY_SEARCH** = **16777299** --- Search key
 - **KEY_STANDBY** = **16777300**
 - **KEY_OPENURL** = **16777301**
 - **KEY_LAUNCHMAIL** = **16777302**
@@ -167,21 +167,21 @@ Numeric Constants
 - **KEY_LAUNCHF** = **16777319**
 - **KEY_UNKNOWN** = **33554431**
 - **KEY_SPACE** = **32** --- Space Key
-- **KEY_EXCLAM** = **33**
-- **KEY_QUOTEDBL** = **34**
-- **KEY_NUMBERSIGN** = **35**
-- **KEY_DOLLAR** = **36**
-- **KEY_PERCENT** = **37**
-- **KEY_AMPERSAND** = **38**
-- **KEY_APOSTROPHE** = **39**
-- **KEY_PARENLEFT** = **40**
-- **KEY_PARENRIGHT** = **41**
-- **KEY_ASTERISK** = **42**
-- **KEY_PLUS** = **43**
-- **KEY_COMMA** = **44**
-- **KEY_MINUS** = **45**
-- **KEY_PERIOD** = **46**
-- **KEY_SLASH** = **47**
+- **KEY_EXCLAM** = **33** --- ! key
+- **KEY_QUOTEDBL** = **34** --- " key
+- **KEY_NUMBERSIGN** = **35** --- # key
+- **KEY_DOLLAR** = **36** --- $ key
+- **KEY_PERCENT** = **37** --- % key
+- **KEY_AMPERSAND** = **38** --- & key
+- **KEY_APOSTROPHE** = **39** --- ' key
+- **KEY_PARENLEFT** = **40** --- ( key
+- **KEY_PARENRIGHT** = **41** --- ) key
+- **KEY_ASTERISK** = **42** --- \* key
+- **KEY_PLUS** = **43** --- + key
+- **KEY_COMMA** = **44** --- , key
+- **KEY_MINUS** = **45** --- - key
+- **KEY_PERIOD** = **46** --- . key
+- **KEY_SLASH** = **47** --- / key
 - **KEY_0** = **48** --- Number 0
 - **KEY_1** = **49** --- Number 1
 - **KEY_2** = **50** --- Number 2
@@ -192,13 +192,13 @@ Numeric Constants
 - **KEY_7** = **55** --- Number 7
 - **KEY_8** = **56** --- Number 8
 - **KEY_9** = **57** --- Number 9
-- **KEY_COLON** = **58**
-- **KEY_SEMICOLON** = **59**
-- **KEY_LESS** = **60**
-- **KEY_EQUAL** = **61**
-- **KEY_GREATER** = **62**
-- **KEY_QUESTION** = **63**
-- **KEY_AT** = **64**
+- **KEY_COLON** = **58** --- : key
+- **KEY_SEMICOLON** = **59** --- ; key
+- **KEY_LESS** = **60** --- Lower than key
+- **KEY_EQUAL** = **61** --- = key
+- **KEY_GREATER** = **62** --- Greater than key
+- **KEY_QUESTION** = **63** --- ? key
+- **KEY_AT** = **64** --- @ key
 - **KEY_A** = **65** --- A Key
 - **KEY_B** = **66** --- B Key
 - **KEY_C** = **67** --- C Key
@@ -225,46 +225,46 @@ Numeric Constants
 - **KEY_X** = **88** --- X Key
 - **KEY_Y** = **89** --- Y Key
 - **KEY_Z** = **90** --- Z Key
-- **KEY_BRACKETLEFT** = **91**
-- **KEY_BACKSLASH** = **92**
-- **KEY_BRACKETRIGHT** = **93**
-- **KEY_ASCIICIRCUM** = **94**
-- **KEY_UNDERSCORE** = **95**
+- **KEY_BRACKETLEFT** = **91** --- [ key
+- **KEY_BACKSLASH** = **92** --- \ key
+- **KEY_BRACKETRIGHT** = **93** --- ] key
+- **KEY_ASCIICIRCUM** = **94** --- ^ key
+- **KEY_UNDERSCORE** = **95** --- \_ key
 - **KEY_QUOTELEFT** = **96**
-- **KEY_BRACELEFT** = **123**
-- **KEY_BAR** = **124**
-- **KEY_BRACERIGHT** = **125**
-- **KEY_ASCIITILDE** = **126**
+- **KEY_BRACELEFT** = **123** --- { key
+- **KEY_BAR** = **124** --- | key
+- **KEY_BRACERIGHT** = **125** --- } key
+- **KEY_ASCIITILDE** = **126** --- ~ key
 - **KEY_NOBREAKSPACE** = **160**
 - **KEY_EXCLAMDOWN** = **161**
-- **KEY_CENT** = **162**
+- **KEY_CENT** = **162** --- ¢ key
 - **KEY_STERLING** = **163**
 - **KEY_CURRENCY** = **164**
 - **KEY_YEN** = **165**
-- **KEY_BROKENBAR** = **166**
-- **KEY_SECTION** = **167**
-- **KEY_DIAERESIS** = **168**
-- **KEY_COPYRIGHT** = **169**
+- **KEY_BROKENBAR** = **166** --- ¦ key
+- **KEY_SECTION** = **167** --- § key
+- **KEY_DIAERESIS** = **168** --- ¨ key
+- **KEY_COPYRIGHT** = **169** --- © key
 - **KEY_ORDFEMININE** = **170**
-- **KEY_GUILLEMOTLEFT** = **171**
-- **KEY_NOTSIGN** = **172**
-- **KEY_HYPHEN** = **173**
-- **KEY_REGISTERED** = **174**
+- **KEY_GUILLEMOTLEFT** = **171** --- « key
+- **KEY_NOTSIGN** = **172** --- » key
+- **KEY_HYPHEN** = **173** --- ‐ key
+- **KEY_REGISTERED** = **174** --- ® key
 - **KEY_MACRON** = **175**
-- **KEY_DEGREE** = **176**
-- **KEY_PLUSMINUS** = **177**
-- **KEY_TWOSUPERIOR** = **178**
-- **KEY_THREESUPERIOR** = **179**
-- **KEY_ACUTE** = **180**
-- **KEY_MU** = **181**
+- **KEY_DEGREE** = **176** --- ° key
+- **KEY_PLUSMINUS** = **177** --- ± key
+- **KEY_TWOSUPERIOR** = **178** --- ² key
+- **KEY_THREESUPERIOR** = **179** --- ³ key
+- **KEY_ACUTE** = **180** --- ´ key
+- **KEY_MU** = **181** --- µ key
 - **KEY_PARAGRAPH** = **182**
-- **KEY_PERIODCENTERED** = **183**
-- **KEY_CEDILLA** = **184**
+- **KEY_PERIODCENTERED** = **183** --- · key
+- **KEY_CEDILLA** = **184** --- ¬ key
 - **KEY_ONESUPERIOR** = **185**
 - **KEY_MASCULINE** = **186**
 - **KEY_GUILLEMOTRIGHT** = **187**
 - **KEY_ONEQUARTER** = **188**
-- **KEY_ONEHALF** = **189**
+- **KEY_ONEHALF** = **189** --- ½ key
 - **KEY_THREEQUARTERS** = **190**
 - **KEY_QUESTIONDOWN** = **191**
 - **KEY_AGRAVE** = **192**
@@ -313,10 +313,10 @@ Numeric Constants
 - **BUTTON_LEFT** = **1** --- Left Mouse Button
 - **BUTTON_RIGHT** = **2** --- Right Mouse Button
 - **BUTTON_MIDDLE** = **3** --- Middle Mouse Button
-- **BUTTON_WHEEL_UP** = **4**
-- **BUTTON_WHEEL_DOWN** = **5**
-- **BUTTON_WHEEL_LEFT** = **6**
-- **BUTTON_WHEEL_RIGHT** = **7**
+- **BUTTON_WHEEL_UP** = **4** --- Mouse wheel up
+- **BUTTON_WHEEL_DOWN** = **5** --- Mouse wheel down
+- **BUTTON_WHEEL_LEFT** = **6** --- Mouse wheel left button
+- **BUTTON_WHEEL_RIGHT** = **7** --- Mouse wheel right button
 - **BUTTON_MASK_LEFT** = **1**
 - **BUTTON_MASK_RIGHT** = **2**
 - **BUTTON_MASK_MIDDLE** = **4**
@@ -337,22 +337,22 @@ Numeric Constants
 - **JOY_BUTTON_14** = **14** --- Joystick Button 14
 - **JOY_BUTTON_15** = **15** --- Joystick Button 15
 - **JOY_BUTTON_MAX** = **16** --- Joystick Button 16
-- **JOY_SNES_A** = **1**
-- **JOY_SNES_B** = **0**
-- **JOY_SNES_X** = **3**
-- **JOY_SNES_Y** = **2**
-- **JOY_SONY_CIRCLE** = **1**
-- **JOY_SONY_X** = **0**
-- **JOY_SONY_SQUARE** = **2**
-- **JOY_SONY_TRIANGLE** = **3**
-- **JOY_SEGA_B** = **1**
-- **JOY_SEGA_A** = **0**
-- **JOY_SEGA_X** = **2**
-- **JOY_SEGA_Y** = **3**
-- **JOY_XBOX_B** = **1**
-- **JOY_XBOX_A** = **0**
-- **JOY_XBOX_X** = **2**
-- **JOY_XBOX_Y** = **3**
+- **JOY_SNES_A** = **1** --- Super Nintendo Entertaiment System controller A button
+- **JOY_SNES_B** = **0** --- Super Nintendo Entertaiment System controller B button
+- **JOY_SNES_X** = **3** --- Super Nintendo Entertaiment System controller X button
+- **JOY_SNES_Y** = **2** --- Super Nintendo Entertaiment System controller Y button
+- **JOY_SONY_CIRCLE** = **1** --- DUALSHOCK circle button
+- **JOY_SONY_X** = **0** --- DUALSHOCK X button
+- **JOY_SONY_SQUARE** = **2** --- DUALSHOCK square button
+- **JOY_SONY_TRIANGLE** = **3** --- DUALSHOCK triangle button
+- **JOY_SEGA_B** = **1** --- SEGA controller B button
+- **JOY_SEGA_A** = **0** --- SEGA controller A button
+- **JOY_SEGA_X** = **2** --- SEGA controller X button
+- **JOY_SEGA_Y** = **3** --- SEGA controller Y button
+- **JOY_XBOX_B** = **1** --- XBOX controller B button
+- **JOY_XBOX_A** = **0** --- XBOX controller A button
+- **JOY_XBOX_X** = **2** --- XBOX controller X button
+- **JOY_XBOX_Y** = **3** --- XBOX controller Y button
 - **JOY_DS_A** = **1**
 - **JOY_DS_B** = **0**
 - **JOY_DS_X** = **3**
@@ -458,9 +458,9 @@ Numeric Constants
 - **METHOD_FLAG_FROM_SCRIPT** = **64**
 - **METHOD_FLAGS_DEFAULT** = **1**
 - **TYPE_NIL** = **0** --- Variable is of type nil (only applied for null).
-- **TYPE_BOOL** = **1** --- Variable is of type bool.
-- **TYPE_INT** = **2** --- Variable is of type integer.
-- **TYPE_REAL** = **3** --- Variable is of type float/real.
+- **TYPE_BOOL** = **1** --- Variable is of type :ref:`bool<class_bool>`.
+- **TYPE_INT** = **2** --- Variable is of type :ref:`int<class_int>`.
+- **TYPE_REAL** = **3** --- Variable is of type :ref:`float<class_float>`/real.
 - **TYPE_STRING** = **4** --- Variable is of type :ref:`String<class_string>`.
 - **TYPE_VECTOR2** = **5** --- Variable is of type :ref:`Vector2<class_vector2>`.
 - **TYPE_RECT2** = **6** --- Variable is of type :ref:`Rect2<class_rect2>`.

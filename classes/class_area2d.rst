@@ -294,7 +294,7 @@ Set whether this area can be detected by other, monitoring, areas. Only areas ne
 
 - :ref:`bool<class_bool>`  **is_monitorable**  **(** **)** const
 
-Set whether this area can be detected by other, monitoring, areas.
+Return whether this area can be detected by other, monitoring, areas.
 
 .. _class_Area2D_get_overlapping_bodies:
 

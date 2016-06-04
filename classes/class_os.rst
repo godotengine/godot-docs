@@ -388,17 +388,25 @@ Returns whether the window is resizable or not.
 
 - void  **set_window_minimized**  **(** :ref:`bool<class_bool>` enabled  **)**
 
+Set whether the window is minimized.
+
 .. _class_OS_is_window_minimized:
 
 - :ref:`bool<class_bool>`  **is_window_minimized**  **(** **)** const
+
+Return true if the window is minimized.
 
 .. _class_OS_set_window_maximized:
 
 - void  **set_window_maximized**  **(** :ref:`bool<class_bool>` enabled  **)**
 
+Set the window size to maximized.
+
 .. _class_OS_is_window_maximized:
 
 - :ref:`bool<class_bool>`  **is_window_maximized**  **(** **)** const
+
+Return true if the window is maximized.
 
 .. _class_OS_set_screen_orientation:
 
@@ -556,6 +564,8 @@ Return the main loop object (see :ref:`MainLoop<class_mainloop>`).
 
 - :ref:`int<class_int>`  **get_unix_time**  **(** **)** const
 
+Return	the current unix timestamp.
+
 .. _class_OS_get_system_time_secs:
 
 - :ref:`int<class_int>`  **get_system_time_secs**  **(** **)** const
@@ -661,6 +671,8 @@ Return the total amount of dynamic memory used (only works in debug).
 .. _class_OS_get_data_dir:
 
 - :ref:`String<class_string>`  **get_data_dir**  **(** **)** const
+
+Return the absolute directory path of user data path(:ref:`user://<class_user://>`).
 
 .. _class_OS_get_system_dir:
 

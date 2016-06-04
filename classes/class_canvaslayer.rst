@@ -110,9 +110,13 @@ Return the base rotation for this layer (helper).
 
 - void  **set_rotationd**  **(** :ref:`float<class_float>` degrees  **)**
 
+Set rotation of the layer in degree.
+
 .. _class_CanvasLayer_get_rotationd:
 
 - :ref:`float<class_float>`  **get_rotationd**  **(** **)** const
+
+Get rotation of the layer in degree.
 
 .. _class_CanvasLayer_set_scale:
 

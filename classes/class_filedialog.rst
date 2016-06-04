@@ -112,13 +112,19 @@ Get the current selected path (directory and file) of the file dialog (empty if 
 
 - void  **set_current_dir**  **(** :ref:`String<class_string>` dir  **)**
 
+Set the current working directory of the file dialog.
+
 .. _class_FileDialog_set_current_file:
 
 - void  **set_current_file**  **(** :ref:`String<class_string>` file  **)**
 
+Set the current selected file name of the file dialog.
+
 .. _class_FileDialog_set_current_path:
 
 - void  **set_current_path**  **(** :ref:`String<class_string>` path  **)**
+
+Set the current selected file path of the file dialog.
 
 .. _class_FileDialog_set_mode:
 
@@ -135,6 +141,8 @@ Get the file dialog mode from the MODE\_\* enum.
 .. _class_FileDialog_get_vbox:
 
 - :ref:`VBoxContainer<class_vboxcontainer>`  **get_vbox**  **(** **)**
+
+Return the vertical box container of the dialog, custom controls can be added to it.
 
 .. _class_FileDialog_set_access:
 
@@ -163,5 +171,7 @@ Return true if the diaog allows show hidden files.
 .. _class_FileDialog_invalidate:
 
 - void  **invalidate**  **(** **)**
+
+Invalidate and update the current dialog content list.
 
 
