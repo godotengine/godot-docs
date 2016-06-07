@@ -251,15 +251,29 @@ that vertex colors are desired.
 Create collisions (-col, -colonly)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-These will only work for Mesh nodes, If the "-col" option is detected, a
-child static collision node will be added, using the same geometry as
-the mesh.
+Option "-col" will work only for Mesh nodes. If it is detected, a child
+static collision node will be added, using the same geometry as the mesh.
 
 However, it is often the case that the visual geometry is too complex or
 too un-smooth for collisions, which end up not working well. To solve
 this, the "-colonly" modifier exists, which will remove the mesh upon
 import and create a `StaticBody <class_staticbody>`__ collision instead.
 This helps the visual mesh and actual collision to be separated.
+
+Option "-colonly" can be also used with Blender's empty objects.
+On import it will create a `StaticBody <class_staticbody>`__ with
+collision node as a child. Collision node will have one of predefined shapes,
+depending on the Blender's empty draw type:
+
+.. image:: /img/3dimp_BlenderEmptyDrawTypes.png
+
+-  Single arrow will create `RayShape <class_rayshape>`__
+-  Cube will create `BoxShape <class_boxshape>`__
+-  Image will create `PlaneShape <class_planeshape>`__
+-  Sphere (and other non-listed) will create `SphereShape <class_sphereshape>`__
+
+For better visibility in Blender's editor user can set "X-Ray" option on collision
+empties and set some distinct color for them in User Preferences / Themes / 3D View / Empty.
 
 Create rooms (-room)
 ^^^^^^^^^^^^^^^^^^^^
