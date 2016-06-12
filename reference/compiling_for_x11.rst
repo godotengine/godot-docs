@@ -15,7 +15,7 @@ required:
 -  Python 2.7+ (3.0 is untested as of now)
 -  SCons build system
 -  pkg-config (used to detect the dependencies below)
--  X11, Xcursor and Xinerama development libraries
+-  X11, Xrandr, Xcursor and Xinerama development libraries
 -  MesaGL development libraries
 -  ALSA development libraries
 -  PulseAudio development libraries (for sound support)
