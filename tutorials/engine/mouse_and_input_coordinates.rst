@@ -37,7 +37,7 @@ for example:
 
        # Print the size of the viewport
 
-       print("Viewport Resolution is: ",get_viewport_rect().size)
+       print("Viewport Resolution is: ", get_viewport().get_rect().size)
 
     func _ready():
         set_process_input(true)
