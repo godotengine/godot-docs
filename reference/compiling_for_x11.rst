@@ -40,7 +40,8 @@ Distro-specific oneliners
 | **Mageia**    | ::                                                                                                         |
 |               |                                                                                                            |
 |               |     urpmi scons pkgconfig "pkgconfig(alsa) pkgconfig(freetype2) pkgconfig(glu) pkgconfig(libpulse)" \      |
-|               |         "pkgconfig(openssl) pkgconfig(udev) pkgconfig(x11) pkgconfig(xcursor) pkgconfig(xinerama)"         |
+|               |         "pkgconfig(openssl) pkgconfig(udev) pkgconfig(x11) pkgconfig(xcursor) pkgconfig(xinerama)" \       |
+|               |         "pkgconfig(xrandr)"                                                                                |
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **Ubuntu**    | ::                                                                                                         |
 |               |                                                                                                            |
