@@ -15,7 +15,7 @@ required:
 -  Python 2.7+ (3.0 is untested as of now)
 -  SCons build system
 -  pkg-config (used to detect the dependencies below)
--  X11, Xcursor and Xinerama development libraries
+-  X11, Xcursor, Xinerama and XRandR development libraries
 -  MesaGL development libraries
 -  ALSA development libraries
 -  PulseAudio development libraries (for sound support)
@@ -29,12 +29,12 @@ Distro-specific oneliners
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **Fedora**    | ::                                                                                                         |
 |               |                                                                                                            |
-|               |     sudo dnf install scons pkgconfig libX11-devel libXcursor-devel libXinerama-devel \                     |
+|               |     sudo dnf install scons pkgconfig libX11-devel libXcursor-devel libXrandr-devel libXinerama-devel \     |
 |               |         mesa-libGL-devel alsa-lib-devel pulseaudio-libs-devel freetype-devel openssl-devel libudev-devel   |
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **FreeBSD**   | ::                                                                                                         |
 |               |                                                                                                            |
-|               |     sudo pkg install scons pkg-config xorg-libraries libXcursor xineramaproto libglapi libGLU \            |
+|               |     sudo pkg install scons pkg-config xorg-libraries libXcursor libXrandr xineramaproto libglapi libGLU \  |
 |               |         freetype2 openssl                                                                                  |
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **Mageia**    | ::                                                                                                         |
@@ -45,11 +45,12 @@ Distro-specific oneliners
 | **Ubuntu**    | ::                                                                                                         |
 |               |                                                                                                            |
 |               |     sudo apt-get install build-essential scons pkg-config libx11-dev libxcursor-dev libxinerama-dev \      |
-|               |         libgl1-mesa-dev libglu-dev libasound2-dev libpulse-dev libfreetype6-dev libssl-dev libudev-dev     | 
+|               |         libgl1-mesa-dev libglu-dev libasound2-dev libpulse-dev libfreetype6-dev libssl-dev libudev-dev \   |
+|               |         libxrandr-dev                                                                                      |
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **Arch**      | ::                                                                                                         |
 |               |                                                                                                            |
-|               |     pacman -S scons libxcursor libxinerama mesa glu alsa-lib pulseaudio freetype2                          |
+|               |     pacman -S scons libxcursor libxinerama libxrandr mesa glu alsa-lib pulseaudio freetype2                |
 +---------------+------------------------------------------------------------------------------------------------------------+
 
 Compiling
