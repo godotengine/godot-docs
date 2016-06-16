@@ -6,48 +6,46 @@ Singletons (AutoLoad)
 Introduction
 ------------
 
-Scene Singletons are very useful things, as they represent a very common
-use case, but it's not clear at the beginning where their value is.
+Scene singletons are very useful, catering to a common use case where you need
+to store persistent information between scenes.
 
-The scene system is very useful, but by itself it has a few drawbacks:
+The scene system by istelf has a few drawbacks:
 
--  There is no "common" place to store information (such as core, items
-   obtained, etc) between two scenes.
--  It is possible to make a scene that loads other scenes as children
-   and frees them, while keeping that information, but then if that is
-   done, it's not possible to run a scene alone by itself and expect it
-   to work
--  It is also possible to store persistent information to disk in
-   \`user://\` and have scenes always load it, but saving/loading that
-   while changing scenes is cumbersome.
+-  There is no common place to store information (e.g. a player's items etc.)
+   required by more than one scene.
+-  While it is possible for a scene that loads and unloads other scenes as 
+   its children to store information common to these child scenes, it is no 
+   longer possible to run these scenes by themselves and expect them to work 
+   correctly.
+-  While information can be stored to disk in \`user://\` and this information 
+   can be loaded by scenes that require it, continuously saving and loading this 
+   data when changing scenes is cumbersome and may be slow.
 
-So, after using Godot for a while, it becomes clear that it is necessary
-to have parts of a scene that:
+However there is still a need in Godot to create parts of a scene that:
 
--  Are always loaded, no matter which scene is opened from the editor.
--  Can keep global variables, such as player information, items, money,
-   etc.
--  Can handle switching of scenes and transitions.
--  Just have something that acts like a singleton, since GDScript does
-   not support global variables by design.
+-  Are always loaded, no matter which scene is opened from the editor
+-  Can store global variables, such as player information, items, money
+   etc. and hare information between scenes
+-  Can handle switching scenes and transitions
+-  Acts like a singleton, since GDScript does not support global variables by design.
 
-For this, the option for auto-loading nodes and scripts exists.
+
+Auto-loading nodes and scripts caters to this need.
 
 AutoLoad
 --------
 
-AutoLoad can be a scene, or a script that inherits from Node (a Node
-will be created and the script will be set to it). They are added to the
-project in the Scene > Project Settings > AutoLoad tab.
+You can use AutoLoad to load a scene, or a script that inherits from Node (a Node
+will be created and the script will be set to it). 
 
-Each autoload needs a name, this name will be the node name, and the
-node will be always added to the root viewport before any scene is
-loaded.
+To autoload a scene or script, select Scene > Project Settings from the menu and switch
+to the AutoLoad tab. Each entry in the list requires a name, which is used as the name
+of the node, and the node is always added to the root viewport before any other scenes 
+are loaded.
 
 .. image:: /img/singleton.png
 
-This means, that for a singleton named "playervariables", any node can
-access it by requesting:
+This means that any node can access a singleton named "playervariables" with:
 
 ::
 
@@ -56,49 +54,49 @@ access it by requesting:
 Custom scene switcher
 ---------------------
 
-This short tutorial will explain how to make a scene switcher by using
+This short tutorial will explain how to make a scene switcher using
 autoload. For simple scene switching, the
 :ref:`SceneTree.change_scene() <class_SceneTree_change_scene>`
 method suffices (described in :ref:`doc_scene_tree`), so this method is for
-more complex behaviors when switching scenes.
+more complex behavior when switching between scenes.
 
 First download the template from here:
 :download:`autoload.zip </files/autoload.zip>`, then open it.
 
 Two scenes are present, scene_a.scn and scene_b.scn on an otherwise
 empty project. Each are identical and contain a button connected to a
-callback for going to the opposite scene. When the project runs, it
-starts in scene_a.scn. However, this does nothing and pressing the
+callback for switching to the other scene. When the project runs, it
+starts in scene_a.scn. However, this currently does nothing and pressing the
 button does not work.
 
 global.gd
 ---------
 
-First of all, create a global.gd script. The easier way to create a
+First of all, create a global.gd script. The easy way to create a
 resource from scratch is from the resources tab:
 
 .. image:: /img/newscript.png
 
-Save the script to a file global.gd:
+Save the script as `global.gd`:
 
 .. image:: /img/saveasscript.png
 
-The script should be opened in the script editor. Next step will be
-adding it to autoload, for this, go to: Scene [STRIKEOUT:> Project
-Settings]> AutoLoad and add a new autoload with name "global" that
-points to this file:
+The script should open in the script editor. The next step is to add
+it to AutoLoad list. Select Scene [STRIKEOUT:> Project
+Settings] from the menu, switch to the AutoLoad tab and add a new entry 
+with name "global" that points to this file:
 
 .. image:: /img/addglobal.png
 
-Now, when any scene is run, the script will be always loaded.
+Now, whenever you run any of your scenes, the script is always loaded.
 
-So, going back to it, In the _ready() function, the current scene
-will be fetched. Both the current scene and global.gd are children of
+Returning to our script, the current scene needs to be fetched in the 
+_ready() function. Both the current scene and `global.gd` are children of
 root, but the autoloaded nodes are always first. This means that the
 last child of root is always the loaded scene.
 
-Also, make sure that global.gd extends from Node, otherwise it won't be
-loaded.
+Note: Make sure that global.gd extends Node, otherwise it won't be
+loaded!
 
 ::
 
@@ -110,8 +108,8 @@ loaded.
             var root = get_tree().get_root()
             current_scene = root.get_child( root.get_child_count() -1 )
 
-Next, is the function for changing scene. This function will erase the
-current scene and replace it by the requested one.
+Next up is the function for changing the scene. This function frees the
+current scene and replaces it with the requested one.
 
 ::
 
@@ -152,8 +150,8 @@ situation of having the current scene being deleted while being used
 (code from functions of it being run), so using
 :ref:`Object.call_deferred() <class_Object_call_deferred>`
 is desired at this point. The result is that execution of the commands
-in the second function will happen at an immediate later time when no
-code from the current scene is running.
+in the second function will happen at a later time when no code from
+the current scene is running.
 
 Finally, all that is left is to fill the empty functions in scene_a.gd
 and scene_b.gd:
@@ -174,8 +172,8 @@ and
     func _on_goto_scene_pressed():
             get_node("/root/global").goto_scene("res://scene_a.scn")
 
-Finally, by running the project it's possible to switch between both
-scenes by pressing the button!
+Now if you run the project, you can switch between both scenes by pressing
+the button!
 
-(To load scenes with a progress bar, check out the next tutorial,
-:ref:`doc_background_loading`)
+To load scenes with a progress bar, check out the next tutorial,
+:ref:`doc_background_loading`
