@@ -13,11 +13,11 @@ For compiling under Windows, the following is required:
 -  Visual C++, `Visual
    Studio Community <https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx>`__
    (recommended), at least the 2013 version (12.0) up to 2015 (14.0).
-   **If you're using Express, make sure you get/have a
-   version that can compile for C++, Desktop**.
+   **Make sure you read Installing Visual Studio caveats bellow or you
+   will have to run/download the installer again.**
 -  `Python 2.7+ <https://www.python.org/downloads/>`__ (3.0 is
    untested as of now). Using the 32-bits installer is recommended.
--  `Pywin32 Python Extension <http://sourceforge.net/projects/pywin32>`__
+-  `Pywin32 Python Extension <https://sourceforge.net/projects/pywin32/files/pywin32/>`__
    for parallel builds (which increase the build speed by a great factor).
 -  `SCons <http://www.scons.org>`__ build system.
 
@@ -33,6 +33,45 @@ copied to ``C:\Python`` together with the interpreter executable.
 To check whether you have installed Python and SCons correctly, you can
 type ``python --version`` and ``scons --version`` into the standard
 Windows Command Prompt (cmd.exe).
+
+If commands above do not work, make sure you add Python to your PATH
+environment variable after installing it, and check again.
+
+Setting up Pywin32
+-------------------------
+
+Pywin32 is required for -j (parallel) builds for multiple cores (for a
+32 bit Python version). If SCons is issuing a warning about Pywin32
+after parsing SConstruct build instructions, when begining to build,
+you need to install it properly from the correct installer executable
+for your python version `located at Sourceforge. <https://sourceforge.net/projects/pywin32/files/pywin32/>`__
+
+For example, if you installed Python 2.7 32 bit version, you would want
+to install the latest version of Pywin32 (as of writting Build 220) that
+is built for the mentioned version of Python... That executable installer
+would be named "pywin32-220.win32-py2.7.exe".
+
+Amd64 version of Pywin32 is for a 64 bit version of Python
+"pywin32-220.win-amd64-py2.7.exe". Change the "py" number to install for
+your version of python (check via ``python --version`` mentioned above).
+
+Installing Visual Studio caveats
+-----------------------------------
+
+If installing VS 2015, make sure to run **Custom** installation, not
+**Typical** and select C++ as language there (and any other things you might
+need). The installer does not install C++ by default. C++ was the
+`only language made optional <https://blogs.msdn.microsoft.com/vcblog/2015/07/24/setup-changes-in-visual-studio-2015-affecting-c-developers/>`__
+in VS2015.
+
+If you have already made the mistake of installing a **Typical**,
+installation, rerun the executable installer you downloaded from
+internet, it will give you a **Modify** Button option. Running the
+install from Add/Remove programs will only give you the "Repair" option,
+which will do nothing for your problem.
+
+If you're using Express, make sure you get/have a version that can
+compile for ***C++, Desktop***.
 
 Downloading Godot's source
 --------------------------
@@ -212,7 +251,25 @@ can choose the starting directory of the command prompt ("Start in"
 field).
    
 Some of these shortcuts (namely the 64 bit compilers) seem to not be
-available in the Express edition of Visual Studio or Visual C++.
+available in the Express edition of Visual Studio or Visual C++. Before
+recreating the commands, make sure that cl.exe executables are present
+in one of these locations, they are the actual compilers for the
+arhitecture you want to build from the command prompt.
+
+::
+
+    x86 (32bit) cl.exe
+    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\cl.exe
+
+    x86 (32bit) cl.exe for crosscompiling to 64bit.
+    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\cl.exe
+
+    x64 (64bit) cl.exe
+    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\amd64\cl.exe
+
+    x64 (64bit) cl.exe for crosscompiling to 32bit.
+    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\amd64_x86\cl.exe
+
 
 In case you are wondering what these prompt shortcuts do, they call the
 standard cmd.exe with \\k option and have it run a batch file...
@@ -273,11 +330,16 @@ the vsproj=yes parameter, like this:
 
    scons p=windows vsproj=yes
 
-You will be able to open Godot's source in a Visual Studio solution now
-but, currently, you can not build Godot via Visual Studio, as it does
-not work. It can be made to work manually if you are inclined to do so
-(.bat file called from NMake settings) but it is beyond the scope of
-this article.
+You will be able to open Godot's source in a Visual Studio solution now,
+and able to build Godot via the Visual Studio **Build** button. However,
+make sure that you have installed Pywin so that parallel (-j) builds
+work properly.
+
+If you need to edit the compilation commands, they are located in
+"Godot" project settings, NMAKE sheet. SCons is called at the very end of
+the commands. If you make a mistake, copy the command from one of the
+other build configurations (debug, release_debug, release) or
+architectures (Win32/x64). They are equivalent.
 
 Cross-compiling for Windows from other operating systems
 ---------------
