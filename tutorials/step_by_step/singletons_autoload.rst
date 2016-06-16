@@ -9,7 +9,7 @@ Introduction
 Scene singletons are very useful, catering to a common use case where you need
 to store persistent information between scenes.
 
-The scene system by istelf has a few drawbacks:
+Albeit very powerful, the scene system by itself has a few drawbacks:
 
 -  There is no common place to store information (e.g. a player's items etc.)
    required by more than one scene.
@@ -25,10 +25,9 @@ However there is still a need in Godot to create parts of a scene that:
 
 -  Are always loaded, no matter which scene is opened from the editor
 -  Can store global variables, such as player information, items, money
-   etc. and hare information between scenes
+   etc. and share information between scenes
 -  Can handle switching scenes and transitions
 -  Acts like a singleton, since GDScript does not support global variables by design.
-
 
 Auto-loading nodes and scripts caters to this need.
 
@@ -49,7 +48,7 @@ This means that any node can access a singleton named "playervariables" with:
 
 ::
 
-    var player_vars = get_node("/root/playervariables")
+   var player_vars = get_node("/root/playervariables")
 
 Custom scene switcher
 ---------------------
@@ -82,16 +81,16 @@ Save the script as `global.gd`:
 .. image:: /img/saveasscript.png
 
 The script should open in the script editor. The next step is to add
-it to AutoLoad list. Select Scene [STRIKEOUT:> Project
-Settings] from the menu, switch to the AutoLoad tab and add a new entry 
-with name "global" that points to this file:
+it to AutoLoad list. Select Scene > Project Settings from the menu,
+switch to the AutoLoad tab and add a new entry with name "global" that
+points to this file:
 
 .. image:: /img/addglobal.png
 
 Now, whenever you run any of your scenes, the script is always loaded.
 
 Returning to our script, the current scene needs to be fetched in the 
-_ready() function. Both the current scene and `global.gd` are children of
+`_ready()` function. Both the current scene and `global.gd` are children of
 root, but the autoloaded nodes are always first. This means that the
 last child of root is always the loaded scene.
 
