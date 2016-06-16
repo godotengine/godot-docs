@@ -10,7 +10,8 @@ Requirements
 
 To compile export templates for the Web, the following is required:
 
--  `Emscripten SDK <http://emscripten.org/>`__
+-  `Emscripten SDK <http://emscripten.org/>`__ (Install in a path without
+   spaces, i.e. not on "Program Files")
 -  `Python 2.7+ <https://www.python.org/>`__ (3.0 is
    untested as of now)
 -  `SCons <http://www.scons.org>`__ build system
@@ -22,6 +23,13 @@ Start a terminal and set the environment variable ``EMSCRIPTEN_ROOT`` to the
 installation directory of Emscripten::
 
     export EMSCRIPTEN_ROOT=~/emsdk/emscripten/master
+
+If you are on Windows, start a regular prompt or the Emscripten Command Prompt.
+Do **not** use the Developer Command Prompt nor any of the ones that come with
+Visual Studio. You can set the environment variable in the system settings or
+in the prompt itself::
+
+    set EMSCRIPTEN_ROOT=C:\emsdk\emscripten\master
 
 Now go to the root directory of the engine source code and instruct SCons to
 compile for JavaScript. Specify ``target`` as either ``release`` for a release
