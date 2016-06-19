@@ -156,7 +156,7 @@ Resulting APK is in:
 
 ::
 
-    platform/android/java/bin/Godot-release-unsigned.apk
+    platform/android/java/build/outputs/apk/java-release-unsigned.apk
 
 -  (release)
 
@@ -171,7 +171,7 @@ Resulting APK is in:
 
 ::
 
-    platform/android/java/bin/Godot-release-unsigned.apk
+    platform/android/java/build/outputs/apk/java-release-unsigned.apk
 
 (same as before)
 
