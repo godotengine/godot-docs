@@ -62,8 +62,8 @@ Numeric Constants
 - **KEY_TAB** = **16777218** --- Tab Key
 - **KEY_BACKTAB** = **16777219** --- Shift-Tab Key
 - **KEY_BACKSPACE** = **16777220** --- Backspace Key
-- **KEY_RETURN** = **16777221** --- Return Key
-- **KEY_ENTER** = **16777222** --- Enter Key
+- **KEY_RETURN** = **16777221** --- Return Key (On Main Keyboard)
+- **KEY_ENTER** = **16777222** --- Enter Key (On Numpad)
 - **KEY_INSERT** = **16777223** --- Insert Key
 - **KEY_DELETE** = **16777224** --- Delete Key
 - **KEY_PAUSE** = **16777225** --- Pause Key
