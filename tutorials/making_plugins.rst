@@ -6,7 +6,7 @@ Making Plugins
 About Plugins
 ~~~~~~~~~~~~~
 
-A plugin is a great way to extend the editor with useful tools. It can be make
+A plugin is a great way to extend the editor with useful tools. It can be made
 entirely with GDScript and standard scenes, without even reloading the editor.
 Unlike modules, you don't need to create C++ code nor recompile the engine.
 While this makes plugins not as powerful, there's still a lot of things you can
@@ -25,10 +25,10 @@ Before starting, create a new empty project wherever you want. This will serve
 as base to develop and test the plugins.
 
 The first thing you need to do is to create a new plugin that the editor can
-understand as such. For that you need to files: ``plugin.cfg`` for the
+understand as such. For that you need two files: ``plugin.cfg`` for the
 configuration and a custom GDScript with the functionality.
 
-The plugins have a standard path of ``addons/plugin_name`` inside the project
+Plugins have a standard path like ``addons/plugin_name`` inside the project
 folder. So create the folder ``my_custom_dock`` inside ``addons``. So you'll
 have a directory structure like this:
 
@@ -48,7 +48,7 @@ be done in an external editor. Add the following structure to you plugin::
 
 This is a simple ``ini`` file with metadata about your plugin. You need to set
 up the name and description so users can understand what it does. Add your
-own name so you can be properly credited. A version number so users can see if
+own name so you can be properly credited. A version number is useful so users can see if
 they have an outdated version (if you are unsure on how to make the version
 number, check `SemVer <http://semver.org/>`_). And finally a main script file
 to load when your plugin is active.
@@ -88,12 +88,12 @@ A custom node
 ~~~~~~~~~~~~~~~~~~~~
 
 Sometimes you want a certain behavior in many nodes. Maybe a custom scene
-or control that can be reused. Instancing is helpful in a lot of case but
+or control that can be reused. Instancing is helpful in a lot of cases but
 sometimes it can be cumbersome, especially if you're using it between many
 projects. A good solution to this is to make a plugin that adds a node with a
 custom behavior.
 
-To create a new node type, you can avail of the can avail of the funcion
+To create a new node type, you can avail the funcion
 :ref:`add_custom_type() <class_EditorPlugin_add_custom_type>` from the
 :ref:`class_EditorPlugin` class. This function can add new types to the editor,
 be it nodes or resources. But before you can create the type you need a script
