@@ -36,7 +36,8 @@ have a directory structure like this:
 
 To make the ``plugin.cfg`` file, open your favorite text editor with a blank
 file. Godot is not able (yet) to open text files besides scripts, so this must
-be done in an external editor. Add the following structure to you plugin::
+be done in an external editor. Add the following structure to your
+``plugin.cfg``::
 
     [plugin]
 
@@ -49,9 +50,9 @@ be done in an external editor. Add the following structure to you plugin::
 This is a simple ``ini`` file with metadata about your plugin. You need to set
 up the name and description so users can understand what it does. Add your
 own name so you can be properly credited. A version number is useful so users can see if
-they have an outdated version (if you are unsure on how to make the version
-number, check `SemVer <http://semver.org/>`_). And finally a main script file
-to load when your plugin is active.
+they have an outdated version (if you are unsure on how to come up with
+the version number, check `SemVer <http://semver.org/>`_). And finally a main
+script file to load when your plugin is active.
 
 The script file
 ^^^^^^^^^^^^^^^
@@ -93,7 +94,7 @@ sometimes it can be cumbersome, especially if you're using it between many
 projects. A good solution to this is to make a plugin that adds a node with a
 custom behavior.
 
-To create a new node type, you can avail the funcion
+To create a new node type, you can avail of the function
 :ref:`add_custom_type() <class_EditorPlugin_add_custom_type>` from the
 :ref:`class_EditorPlugin` class. This function can add new types to the editor,
 be it nodes or resources. But before you can create the type you need a script
@@ -187,8 +188,9 @@ Don't forget to add a text to your button.
 Save this scene as ``my_dock.tscn``.
 
 Now you need to grab that scene you just created and add it as a dock in the
-editor. For this you can rely on the function ``add_control_to_dock()`` from
-the :ref:`EditorPlugin <class_EditorPlugin>` class.
+editor. For this you can rely on the function
+:ref:`add_control_to_dock() <class_EditorPlugin_add_control_to_dock>` from the
+:ref:`EditorPlugin <class_EditorPlugin>` class.
 
 The code is very straightforward, you just need to select a dock position to
 add it and have a control to add (which is the scene you just created). It is
