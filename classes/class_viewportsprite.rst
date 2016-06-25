@@ -13,62 +13,83 @@ ViewportSprite
 Brief Description
 -----------------
 
-
+Displays a viewport as a sprite.
 
 Member Functions
 ----------------
 
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_viewport_path<class_ViewportSprite_set_viewport_path>`  **(** :ref:`NodePath<class_nodepath>` path  **)** |
-+----------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_nodepath>`  | :ref:`get_viewport_path<class_ViewportSprite_get_viewport_path>`  **(** **)** const                                 |
-+----------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_centered<class_ViewportSprite_set_centered>`  **(** :ref:`bool<class_bool>` centered  **)**               |
-+----------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`          | :ref:`is_centered<class_ViewportSprite_is_centered>`  **(** **)** const                                             |
-+----------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_offset<class_ViewportSprite_set_offset>`  **(** :ref:`Vector2<class_vector2>` offset  **)**               |
+| :ref:`Color<class_color>`        | :ref:`get_modulate<class_ViewportSprite_get_modulate>`  **(** **)** const                                           |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`    | :ref:`get_offset<class_ViewportSprite_get_offset>`  **(** **)** const                                               |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`NodePath<class_nodepath>`  | :ref:`get_viewport_path<class_ViewportSprite_get_viewport_path>`  **(** **)** const                                 |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`is_centered<class_ViewportSprite_is_centered>`  **(** **)** const                                             |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_centered<class_ViewportSprite_set_centered>`  **(** :ref:`bool<class_bool>` centered  **)**               |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_modulate<class_ViewportSprite_set_modulate>`  **(** :ref:`Color<class_color>` modulate  **)**             |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`        | :ref:`get_modulate<class_ViewportSprite_get_modulate>`  **(** **)** const                                           |
+| void                             | :ref:`set_offset<class_ViewportSprite_set_offset>`  **(** :ref:`Vector2<class_vector2>` offset  **)**               |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_viewport_path<class_ViewportSprite_set_viewport_path>`  **(** :ref:`NodePath<class_nodepath>` path  **)** |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------+
+
+Description
+-----------
+
+Used to display a :ref:`Viewport<class_viewport>` node at some position in the world, without having to mess with :ref:`RenderTargetTexture<class_rendertargettexture>`s.
 
 Member Function Description
 ---------------------------
 
-.. _class_ViewportSprite_set_viewport_path:
+.. _class_ViewportSprite_get_modulate:
 
-- void  **set_viewport_path**  **(** :ref:`NodePath<class_nodepath>` path  **)**
+- :ref:`Color<class_color>`  **get_modulate**  **(** **)** const
 
-.. _class_ViewportSprite_get_viewport_path:
-
-- :ref:`NodePath<class_nodepath>`  **get_viewport_path**  **(** **)** const
-
-.. _class_ViewportSprite_set_centered:
-
-- void  **set_centered**  **(** :ref:`bool<class_bool>` centered  **)**
-
-.. _class_ViewportSprite_is_centered:
-
-- :ref:`bool<class_bool>`  **is_centered**  **(** **)** const
-
-.. _class_ViewportSprite_set_offset:
-
-- void  **set_offset**  **(** :ref:`Vector2<class_vector2>` offset  **)**
+Get color modulation for the texture. All texture pixels are multiplied by this color.
 
 .. _class_ViewportSprite_get_offset:
 
 - :ref:`Vector2<class_vector2>`  **get_offset**  **(** **)** const
 
+get the offset to the origin of the texture.
+
+.. _class_ViewportSprite_get_viewport_path:
+
+- :ref:`NodePath<class_nodepath>`  **get_viewport_path**  **(** **)** const
+
+Return the path to the shown :ref:`Viewport<class_viewport>` node.
+
+.. _class_ViewportSprite_is_centered:
+
+- :ref:`bool<class_bool>`  **is_centered**  **(** **)** const
+
+Return whether the viewport's texture is centered on the origin.
+
+.. _class_ViewportSprite_set_centered:
+
+- void  **set_centered**  **(** :ref:`bool<class_bool>` centered  **)**
+
+Set whether the viewport's texture should be centered on the origin.
+
 .. _class_ViewportSprite_set_modulate:
 
 - void  **set_modulate**  **(** :ref:`Color<class_color>` modulate  **)**
 
-.. _class_ViewportSprite_get_modulate:
+Set color modulation for the texture. All texture pixels are multiplied by this color. Color may contain rgb values above 1 to achieve a highlight effect.
 
-- :ref:`Color<class_color>`  **get_modulate**  **(** **)** const
+.. _class_ViewportSprite_set_offset:
+
+- void  **set_offset**  **(** :ref:`Vector2<class_vector2>` offset  **)**
+
+Set the offset to the origin of the texture.
+
+.. _class_ViewportSprite_set_viewport_path:
+
+- void  **set_viewport_path**  **(** :ref:`NodePath<class_nodepath>` path  **)**
+
+Set the path to the shown :ref:`Viewport<class_viewport>` node.
 
 

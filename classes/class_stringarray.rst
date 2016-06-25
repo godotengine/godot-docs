@@ -17,6 +17,8 @@ Member Functions
 ----------------
 
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------+
+| :ref:`StringArray<class_stringarray>`  | :ref:`StringArray<class_StringArray_StringArray>`  **(** :ref:`Array<class_array>` from  **)**                |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`push_back<class_StringArray_push_back>`  **(** :ref:`String<class_string>` string  **)**                |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`resize<class_StringArray_resize>`  **(** :ref:`int<class_int>` idx  **)**                               |
@@ -24,8 +26,6 @@ Member Functions
 | void                                   | :ref:`set<class_StringArray_set>`  **(** :ref:`int<class_int>` idx, :ref:`String<class_string>` string  **)** |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`size<class_StringArray_size>`  **(** **)**                                                              |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`StringArray<class_stringarray>`  | :ref:`StringArray<class_StringArray_StringArray>`  **(** :ref:`Array<class_array>` from  **)**                |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -35,6 +35,12 @@ String Array. Array of strings. Can only contain strings. Optimized for memory u
 
 Member Function Description
 ---------------------------
+
+.. _class_StringArray_StringArray:
+
+- :ref:`StringArray<class_stringarray>`  **StringArray**  **(** :ref:`Array<class_array>` from  **)**
+
+Create from a generic array.
 
 .. _class_StringArray_push_back:
 
@@ -46,20 +52,18 @@ Append a string element at end of the array.
 
 - void  **resize**  **(** :ref:`int<class_int>` idx  **)**
 
-Reset the size of the array.
+Set the size of the :ref:`StringArray<class_stringarray>`. If larger than the current size it will reserve some space beforehand, and if it is smaller it will cut off the array.
 
 .. _class_StringArray_set:
 
 - void  **set**  **(** :ref:`int<class_int>` idx, :ref:`String<class_string>` string  **)**
+
+Change the :ref:`String<class_string>` at the given index.
 
 .. _class_StringArray_size:
 
 - :ref:`int<class_int>`  **size**  **(** **)**
 
 Return the size of the array.
-
-.. _class_StringArray_StringArray:
-
-- :ref:`StringArray<class_stringarray>`  **StringArray**  **(** :ref:`Array<class_array>` from  **)**
 
 

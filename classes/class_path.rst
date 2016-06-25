@@ -19,9 +19,9 @@ Member Functions
 ----------------
 
 +--------------------------------+------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_curve<class_Path_set_curve>`  **(** :ref:`Curve3D<class_curve3d>` curve  **)** |
-+--------------------------------+------------------------------------------------------------------------------------------+
 | :ref:`Curve3D<class_curve3d>`  | :ref:`get_curve<class_Path_get_curve>`  **(** **)** const                                |
++--------------------------------+------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_curve<class_Path_set_curve>`  **(** :ref:`Curve3D<class_curve3d>` curve  **)** |
 +--------------------------------+------------------------------------------------------------------------------------------+
 
 Description
@@ -32,16 +32,16 @@ This class is a container/Node-ification of a :ref:`Curve3D<class_curve3d>`, so 
 Member Function Description
 ---------------------------
 
-.. _class_Path_set_curve:
-
-- void  **set_curve**  **(** :ref:`Curve3D<class_curve3d>` curve  **)**
-
-Sets the :ref:`Curve3D<class_curve3d>`.
-
 .. _class_Path_get_curve:
 
 - :ref:`Curve3D<class_curve3d>`  **get_curve**  **(** **)** const
 
 Returns the :ref:`Curve3D<class_curve3d>` contained.
+
+.. _class_Path_set_curve:
+
+- void  **set_curve**  **(** :ref:`Curve3D<class_curve3d>` curve  **)**
+
+Sets the :ref:`Curve3D<class_curve3d>`.
 
 

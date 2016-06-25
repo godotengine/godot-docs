@@ -21,13 +21,13 @@ Member Functions
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`add_remap<class_PathRemap_add_remap>`  **(** :ref:`String<class_string>` from, :ref:`String<class_string>` to, :ref:`String<class_string>` locale=""  **)** |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`has_remap<class_PathRemap_has_remap>`  **(** :ref:`String<class_string>` path  **)** const                                                                  |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_remap<class_PathRemap_get_remap>`  **(** :ref:`String<class_string>` path  **)** const                                                                  |
+| void                         | :ref:`clear_remaps<class_PathRemap_clear_remaps>`  **(** **)**                                                                                                    |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`erase_remap<class_PathRemap_erase_remap>`  **(** :ref:`String<class_string>` path  **)**                                                                    |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`clear_remaps<class_PathRemap_clear_remaps>`  **(** **)**                                                                                                    |
+| :ref:`String<class_string>`  | :ref:`get_remap<class_PathRemap_get_remap>`  **(** :ref:`String<class_string>` path  **)** const                                                                  |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`has_remap<class_PathRemap_has_remap>`  **(** :ref:`String<class_string>` path  **)** const                                                                  |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -44,17 +44,11 @@ Member Function Description
 
 Add a remap from a file to another.
 
-.. _class_PathRemap_has_remap:
+.. _class_PathRemap_clear_remaps:
 
-- :ref:`bool<class_bool>`  **has_remap**  **(** :ref:`String<class_string>` path  **)** const
+- void  **clear_remaps**  **(** **)**
 
-Return true if a file is being remapped.
-
-.. _class_PathRemap_get_remap:
-
-- :ref:`String<class_string>`  **get_remap**  **(** :ref:`String<class_string>` path  **)** const
-
-Return the remapped new path of a file.
+Clear all remaps.
 
 .. _class_PathRemap_erase_remap:
 
@@ -62,10 +56,16 @@ Return the remapped new path of a file.
 
 Erase a remap.
 
-.. _class_PathRemap_clear_remaps:
+.. _class_PathRemap_get_remap:
 
-- void  **clear_remaps**  **(** **)**
+- :ref:`String<class_string>`  **get_remap**  **(** :ref:`String<class_string>` path  **)** const
 
-Clear all remaps.
+Return the remapped new path of a file.
+
+.. _class_PathRemap_has_remap:
+
+- :ref:`bool<class_bool>`  **has_remap**  **(** :ref:`String<class_string>` path  **)** const
+
+Return true if a file is being remapped.
 
 

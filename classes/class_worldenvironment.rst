@@ -19,20 +19,20 @@ Member Functions
 ----------------
 
 +----------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_environment<class_WorldEnvironment_set_environment>`  **(** :ref:`Environment<class_environment>` env  **)** |
-+----------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Environment<class_environment>`  | :ref:`get_environment<class_WorldEnvironment_get_environment>`  **(** **)** const                                      |
++----------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_environment<class_WorldEnvironment_set_environment>`  **(** :ref:`Environment<class_environment>` env  **)** |
 +----------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 
 Member Function Description
 ---------------------------
 
-.. _class_WorldEnvironment_set_environment:
-
-- void  **set_environment**  **(** :ref:`Environment<class_environment>` env  **)**
-
 .. _class_WorldEnvironment_get_environment:
 
 - :ref:`Environment<class_environment>`  **get_environment**  **(** **)** const
+
+.. _class_WorldEnvironment_set_environment:
+
+- void  **set_environment**  **(** :ref:`Environment<class_environment>` env  **)**
 
 

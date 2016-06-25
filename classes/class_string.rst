@@ -79,7 +79,7 @@ Member Functions
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`nocasecmp_to<class_String_nocasecmp_to>`  **(** :ref:`String<class_string>` to  **)**                                                |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`            | :ref:`ord_at<class_String_ord_at>`  **(** :ref:`int<class_int>` at  **)**                                                                  |
+| :ref:`int<class_int>`                  | :ref:`ord_at<class_String_ord_at>`  **(** :ref:`int<class_int>` at  **)**                                                                  |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`            | :ref:`pad_decimals<class_String_pad_decimals>`  **(** :ref:`int<class_int>` digits  **)**                                                  |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -150,9 +150,13 @@ Return true if the strings begins with the given string.
 
 - :ref:`String<class_string>`  **c_escape**  **(** **)**
 
+Return a copy of the string with special characters escaped using the C language standard.
+
 .. _class_String_c_unescape:
 
 - :ref:`String<class_string>`  **c_unescape**  **(** **)**
+
+Return a copy of the string with escaped characters replaced by their meanings according to the C language standard.
 
 .. _class_String_capitalize:
 
@@ -254,6 +258,8 @@ Check whether the string contains a valid color in HTML notation.
 
 - :ref:`bool<class_bool>`  **is_valid_identifier**  **(** **)**
 
+Check whether the string is a valid identifier. As is common in programming languages, a valid identifier may contain only letters, digits and underscores (\_) and the first character may not be a digit.
+
 .. _class_String_is_valid_integer:
 
 - :ref:`bool<class_bool>`  **is_valid_integer**  **(** **)**
@@ -269,6 +275,8 @@ Check whether the string contains a valid IP address.
 .. _class_String_json_escape:
 
 - :ref:`String<class_string>`  **json_escape**  **(** **)**
+
+Return a copy of the string with special characters escaped using the JSON standard.
 
 .. _class_String_left:
 
@@ -298,9 +306,13 @@ Do a simple case insensitive expression match, using ? and \* wildcards (see :re
 
 - :ref:`RawArray<class_rawarray>`  **md5_buffer**  **(** **)**
 
+Return the MD5 hash of the string as an array of bytes.
+
 .. _class_String_md5_text:
 
 - :ref:`String<class_string>`  **md5_text**  **(** **)**
+
+Return the MD5 hash of the string as a string.
 
 .. _class_String_nocasecmp_to:
 
@@ -310,29 +322,39 @@ Perform a case-insensitive comparison to another string, return -1 if less, 0 if
 
 .. _class_String_ord_at:
 
-- :ref:`String<class_string>`  **ord_at**  **(** :ref:`int<class_int>` at  **)**
+- :ref:`int<class_int>`  **ord_at**  **(** :ref:`int<class_int>` at  **)**
 
-Return the character code at position "at".
+Return the character code at position ``at``.
 
 .. _class_String_pad_decimals:
 
 - :ref:`String<class_string>`  **pad_decimals**  **(** :ref:`int<class_int>` digits  **)**
 
+Format a number to have an exact number of ``digits`` after the decimal point.
+
 .. _class_String_pad_zeros:
 
 - :ref:`String<class_string>`  **pad_zeros**  **(** :ref:`int<class_int>` digits  **)**
+
+Format a number to have an exact number of ``digits`` before the decimal point.
 
 .. _class_String_percent_decode:
 
 - :ref:`String<class_string>`  **percent_decode**  **(** **)**
 
+Decode a percent-encoded string. See :ref:`percent_encode<class_String_percent_encode>`.
+
 .. _class_String_percent_encode:
 
 - :ref:`String<class_string>`  **percent_encode**  **(** **)**
 
+Percent-encode a string. This is meant to encode parameters in a URL when sending a HTTP GET request and bodies of form-urlencoded POST request.
+
 .. _class_String_plus_file:
 
 - :ref:`String<class_string>`  **plus_file**  **(** :ref:`String<class_string>` file  **)**
+
+If the string is a path, this concatenates ``file`` at the end of the string as a subpath. E.g. ``"this/is".plus_file("path") == "this/is/path"``.
 
 .. _class_String_replace:
 
@@ -368,13 +390,13 @@ Return the right side of the string from a given position.
 
 - :ref:`StringArray<class_stringarray>`  **split**  **(** :ref:`String<class_string>` divisor, :ref:`bool<class_bool>` allow_empty=True  **)**
 
-Split the string by a divisor string, return an array of the substrings. Example "One,Two,Three" will return \:ref:`"One","Two","Three"\<class_"one","two","three"\>` if split by ",".
+Split the string by a divisor string, return an array of the substrings. Example "One,Two,Three" will return :ref:`"One","Two","Three"<class_"one","two","three">` if split by ",".
 
 .. _class_String_split_floats:
 
 - :ref:`RealArray<class_realarray>`  **split_floats**  **(** :ref:`String<class_string>` divisor, :ref:`bool<class_bool>` allow_empty=True  **)**
 
-Split the string in floats by using a divisor string, return an array of the substrings. Example "1,2.5,3" will return \:ref:`1,2.5,3\<class_1,2.5,3\>` if split by ",".
+Split the string in floats by using a divisor string, return an array of the substrings. Example "1,2.5,3" will return :ref:`1,2.5,3<class_1,2.5,3>` if split by ",".
 
 .. _class_String_strip_edges:
 
@@ -386,7 +408,7 @@ Return a copy of the string stripped of any non-printable character at the begin
 
 - :ref:`String<class_string>`  **substr**  **(** :ref:`int<class_int>` from, :ref:`int<class_int>` len  **)**
 
-Return part of the string from "from", with length "len".
+Return part of the string from the position ``from``, with length ``len``.
 
 .. _class_String_to_ascii:
 
@@ -398,13 +420,13 @@ Convert the String (which is a character array) to RawArray (which is an array o
 
 - :ref:`float<class_float>`  **to_float**  **(** **)**
 
-Convert a string, containing a decimal number, into a float.
+Convert a string, containing a decimal number, into a ``float``.
 
 .. _class_String_to_int:
 
 - :ref:`int<class_int>`  **to_int**  **(** **)**
 
-Convert a string, containing an integer number, into an int.
+Convert a string, containing an integer number, into an ``int``.
 
 .. _class_String_to_lower:
 
@@ -428,12 +450,12 @@ Convert the String (which is an array of characters) to RawArray (which is an ar
 
 - :ref:`String<class_string>`  **xml_escape**  **(** **)**
 
-Perform XML escaping on the string.
+Return a copy of the string with special characters escaped using the XML standard.
 
 .. _class_String_xml_unescape:
 
 - :ref:`String<class_string>`  **xml_unescape**  **(** **)**
 
-Perform XML un-escaping of the string.
+Return a copy of the string with escaped characters replaced by their meanings according to the XML standard.
 
 

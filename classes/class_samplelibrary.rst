@@ -27,13 +27,13 @@ Member Functions
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`remove_sample<class_SampleLibrary_remove_sample>`  **(** :ref:`String<class_string>` name  **)**                                                    |
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`sample_set_volume_db<class_SampleLibrary_sample_set_volume_db>`  **(** :ref:`String<class_string>` name, :ref:`float<class_float>` db  **)**        |
+| :ref:`float<class_float>`    | :ref:`sample_get_pitch_scale<class_SampleLibrary_sample_get_pitch_scale>`  **(** :ref:`String<class_string>` name  **)** const                            |
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`    | :ref:`sample_get_volume_db<class_SampleLibrary_sample_get_volume_db>`  **(** :ref:`String<class_string>` name  **)** const                                |
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`sample_set_pitch_scale<class_SampleLibrary_sample_set_pitch_scale>`  **(** :ref:`String<class_string>` name, :ref:`float<class_float>` pitch  **)** |
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`    | :ref:`sample_get_pitch_scale<class_SampleLibrary_sample_get_pitch_scale>`  **(** :ref:`String<class_string>` name  **)** const                            |
+| void                         | :ref:`sample_set_volume_db<class_SampleLibrary_sample_set_volume_db>`  **(** :ref:`String<class_string>` name, :ref:`float<class_float>` db  **)**        |
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -68,11 +68,11 @@ Return true if the sample text ID exists in the library.
 
 Remove the sample matching the given text ID.
 
-.. _class_SampleLibrary_sample_set_volume_db:
+.. _class_SampleLibrary_sample_get_pitch_scale:
 
-- void  **sample_set_volume_db**  **(** :ref:`String<class_string>` name, :ref:`float<class_float>` db  **)**
+- :ref:`float<class_float>`  **sample_get_pitch_scale**  **(** :ref:`String<class_string>` name  **)** const
 
-Set the volume (in dB) for the given sample.
+Return the pitch scale for the given sample.
 
 .. _class_SampleLibrary_sample_get_volume_db:
 
@@ -86,10 +86,10 @@ Return the volume (in dB) for the given sample.
 
 Set the pitch scale for the given sample.
 
-.. _class_SampleLibrary_sample_get_pitch_scale:
+.. _class_SampleLibrary_sample_set_volume_db:
 
-- :ref:`float<class_float>`  **sample_get_pitch_scale**  **(** :ref:`String<class_string>` name  **)** const
+- void  **sample_set_volume_db**  **(** :ref:`String<class_string>` name, :ref:`float<class_float>` db  **)**
 
-Return the pitch scale for the given sample.
+Set the volume (in dB) for the given sample.
 
 

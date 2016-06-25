@@ -19,44 +19,44 @@ Member Functions
 ----------------
 
 +------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_locale<class_TranslationServer_set_locale>`  **(** :ref:`String<class_string>` locale  **)**                                |
+| void                         | :ref:`add_translation<class_TranslationServer_add_translation>`  **(** :ref:`Translation<class_translation>` translation  **)**       |
++------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`clear<class_TranslationServer_clear>`  **(** **)**                                                                              |
 +------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`  | :ref:`get_locale<class_TranslationServer_get_locale>`  **(** **)** const                                                              |
 +------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`translate<class_TranslationServer_translate>`  **(** :ref:`String<class_string>` message  **)** const                           |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`add_translation<class_TranslationServer_add_translation>`  **(** :ref:`Translation<class_translation>` translation  **)**       |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`remove_translation<class_TranslationServer_remove_translation>`  **(** :ref:`Translation<class_translation>` translation  **)** |
 +------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`clear<class_TranslationServer_clear>`  **(** **)**                                                                              |
+| void                         | :ref:`set_locale<class_TranslationServer_set_locale>`  **(** :ref:`String<class_string>` locale  **)**                                |
++------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`translate<class_TranslationServer_translate>`  **(** :ref:`String<class_string>` message  **)** const                           |
 +------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Function Description
 ---------------------------
 
-.. _class_TranslationServer_set_locale:
+.. _class_TranslationServer_add_translation:
 
-- void  **set_locale**  **(** :ref:`String<class_string>` locale  **)**
+- void  **add_translation**  **(** :ref:`Translation<class_translation>` translation  **)**
+
+.. _class_TranslationServer_clear:
+
+- void  **clear**  **(** **)**
 
 .. _class_TranslationServer_get_locale:
 
 - :ref:`String<class_string>`  **get_locale**  **(** **)** const
 
-.. _class_TranslationServer_translate:
-
-- :ref:`String<class_string>`  **translate**  **(** :ref:`String<class_string>` message  **)** const
-
-.. _class_TranslationServer_add_translation:
-
-- void  **add_translation**  **(** :ref:`Translation<class_translation>` translation  **)**
-
 .. _class_TranslationServer_remove_translation:
 
 - void  **remove_translation**  **(** :ref:`Translation<class_translation>` translation  **)**
 
-.. _class_TranslationServer_clear:
+.. _class_TranslationServer_set_locale:
 
-- void  **clear**  **(** **)**
+- void  **set_locale**  **(** :ref:`String<class_string>` locale  **)**
+
+.. _class_TranslationServer_translate:
+
+- :ref:`String<class_string>`  **translate**  **(** :ref:`String<class_string>` message  **)** const
 
 

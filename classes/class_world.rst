@@ -19,17 +19,17 @@ Member Functions
 ----------------
 
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                          | :ref:`get_space<class_World_get_space>`  **(** **)** const                                                  |
+| :ref:`PhysicsDirectSpaceState<class_physicsdirectspacestate>`  | :ref:`get_direct_space_state<class_World_get_direct_space_state>`  **(** **)**                              |
++----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| :ref:`Environment<class_environment>`                          | :ref:`get_environment<class_World_get_environment>`  **(** **)** const                                      |
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_rid>`                                          | :ref:`get_scenario<class_World_get_scenario>`  **(** **)** const                                            |
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_rid>`                                          | :ref:`get_sound_space<class_World_get_sound_space>`  **(** **)** const                                      |
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_rid>`                                          | :ref:`get_space<class_World_get_space>`  **(** **)** const                                                  |
++----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`set_environment<class_World_set_environment>`  **(** :ref:`Environment<class_environment>` env  **)** |
-+----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
-| :ref:`Environment<class_environment>`                          | :ref:`get_environment<class_World_get_environment>`  **(** **)** const                                      |
-+----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
-| :ref:`PhysicsDirectSpaceState<class_physicsdirectspacestate>`  | :ref:`get_direct_space_state<class_World_get_direct_space_state>`  **(** **)**                              |
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -40,9 +40,13 @@ Class that has everything pertaining to a world. A physics space, a visual scena
 Member Function Description
 ---------------------------
 
-.. _class_World_get_space:
+.. _class_World_get_direct_space_state:
 
-- :ref:`RID<class_rid>`  **get_space**  **(** **)** const
+- :ref:`PhysicsDirectSpaceState<class_physicsdirectspacestate>`  **get_direct_space_state**  **(** **)**
+
+.. _class_World_get_environment:
+
+- :ref:`Environment<class_environment>`  **get_environment**  **(** **)** const
 
 .. _class_World_get_scenario:
 
@@ -52,16 +56,12 @@ Member Function Description
 
 - :ref:`RID<class_rid>`  **get_sound_space**  **(** **)** const
 
+.. _class_World_get_space:
+
+- :ref:`RID<class_rid>`  **get_space**  **(** **)** const
+
 .. _class_World_set_environment:
 
 - void  **set_environment**  **(** :ref:`Environment<class_environment>` env  **)**
-
-.. _class_World_get_environment:
-
-- :ref:`Environment<class_environment>`  **get_environment**  **(** **)** const
-
-.. _class_World_get_direct_space_state:
-
-- :ref:`PhysicsDirectSpaceState<class_physicsdirectspacestate>`  **get_direct_space_state**  **(** **)**
 
 

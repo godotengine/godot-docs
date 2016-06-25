@@ -13,61 +13,86 @@ KinematicBody
 Brief Description
 -----------------
 
-
+Kinematic body 3D node.
 
 Member Functions
 ----------------
 
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`move<class_KinematicBody_move>`  **(** :ref:`Vector3<class_vector3>` rel_vec  **)**                                                    |
+| :ref:`bool<class_bool>`        | :ref:`can_collide_with_character_bodies<class_KinematicBody_can_collide_with_character_bodies>`  **(** **)** const                           |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`move_to<class_KinematicBody_move_to>`  **(** :ref:`Vector3<class_vector3>` position  **)**                                             |
+| :ref:`bool<class_bool>`        | :ref:`can_collide_with_kinematic_bodies<class_KinematicBody_can_collide_with_kinematic_bodies>`  **(** **)** const                           |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`can_collide_with_rigid_bodies<class_KinematicBody_can_collide_with_rigid_bodies>`  **(** **)** const                                   |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`can_collide_with_static_bodies<class_KinematicBody_can_collide_with_static_bodies>`  **(** **)** const                                 |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`can_teleport_to<class_KinematicBody_can_teleport_to>`  **(** :ref:`Vector3<class_vector3>` position  **)**                             |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_colliding<class_KinematicBody_is_colliding>`  **(** **)** const                                                                     |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`get_collision_pos<class_KinematicBody_get_collision_pos>`  **(** **)** const                                                           |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`get_collision_normal<class_KinematicBody_get_collision_normal>`  **(** **)** const                                                     |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`get_collider_velocity<class_KinematicBody_get_collider_velocity>`  **(** **)** const                                                   |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_object>`    | :ref:`get_collider<class_KinematicBody_get_collider>`  **(** **)** const                                                                     |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_collider_shape<class_KinematicBody_get_collider_shape>`  **(** **)** const                                                         |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_collide_with_static_bodies<class_KinematicBody_set_collide_with_static_bodies>`  **(** :ref:`bool<class_bool>` enable  **)**       |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`can_collide_with_static_bodies<class_KinematicBody_can_collide_with_static_bodies>`  **(** **)** const                                 |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_collide_with_kinematic_bodies<class_KinematicBody_set_collide_with_kinematic_bodies>`  **(** :ref:`bool<class_bool>` enable  **)** |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`can_collide_with_kinematic_bodies<class_KinematicBody_can_collide_with_kinematic_bodies>`  **(** **)** const                           |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_collide_with_rigid_bodies<class_KinematicBody_set_collide_with_rigid_bodies>`  **(** :ref:`bool<class_bool>` enable  **)**         |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`can_collide_with_rigid_bodies<class_KinematicBody_can_collide_with_rigid_bodies>`  **(** **)** const                                   |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_collide_with_character_bodies<class_KinematicBody_set_collide_with_character_bodies>`  **(** :ref:`bool<class_bool>` enable  **)** |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`can_collide_with_character_bodies<class_KinematicBody_can_collide_with_character_bodies>`  **(** **)** const                           |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_collision_margin<class_KinematicBody_set_collision_margin>`  **(** :ref:`float<class_float>` pixels  **)**                         |
+| :ref:`Vector3<class_vector3>`  | :ref:`get_collider_velocity<class_KinematicBody_get_collider_velocity>`  **(** **)** const                                                   |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_collision_margin<class_KinematicBody_get_collision_margin>`  **(** **)** const                                                     |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`  | :ref:`get_collision_normal<class_KinematicBody_get_collision_normal>`  **(** **)** const                                                     |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`  | :ref:`get_collision_pos<class_KinematicBody_get_collision_pos>`  **(** **)** const                                                           |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_colliding<class_KinematicBody_is_colliding>`  **(** **)** const                                                                     |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`  | :ref:`move<class_KinematicBody_move>`  **(** :ref:`Vector3<class_vector3>` rel_vec  **)**                                                    |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`  | :ref:`move_to<class_KinematicBody_move_to>`  **(** :ref:`Vector3<class_vector3>` position  **)**                                             |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_collide_with_character_bodies<class_KinematicBody_set_collide_with_character_bodies>`  **(** :ref:`bool<class_bool>` enable  **)** |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_collide_with_kinematic_bodies<class_KinematicBody_set_collide_with_kinematic_bodies>`  **(** :ref:`bool<class_bool>` enable  **)** |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_collide_with_rigid_bodies<class_KinematicBody_set_collide_with_rigid_bodies>`  **(** :ref:`bool<class_bool>` enable  **)**         |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_collide_with_static_bodies<class_KinematicBody_set_collide_with_static_bodies>`  **(** :ref:`bool<class_bool>` enable  **)**       |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_collision_margin<class_KinematicBody_set_collision_margin>`  **(** :ref:`float<class_float>` pixels  **)**                         |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+Description
+-----------
+
+Kinematic bodies are special types of bodies that are meant to be user-controlled. They are not affected by physics at all (to other types of bodies, such a character or a rigid body, these are the same as a static body). They have however, two main uses:
+
+Simulated Motion: When these bodies are moved manually, either from code or from an AnimationPlayer (with process mode set to fixed), the physics will automatically compute an estimate of their linear and angular velocity. This makes them very useful for moving platforms or other AnimationPlayer-controlled objects (like a door, a bridge that opens, etc).
+
+Kinematic Characters: KinematicBody also has an api for moving objects (the :ref:`move<class_KinematicBody_move>` method) while performing collision tests. This makes them really useful to implement characters that collide against a world, but that don't require advanced physics.
 
 Member Function Description
 ---------------------------
 
-.. _class_KinematicBody_move:
+.. _class_KinematicBody_can_collide_with_character_bodies:
 
-- :ref:`Vector3<class_vector3>`  **move**  **(** :ref:`Vector3<class_vector3>` rel_vec  **)**
+- :ref:`bool<class_bool>`  **can_collide_with_character_bodies**  **(** **)** const
 
-.. _class_KinematicBody_move_to:
+Return if this body can collide with character bodies.
 
-- :ref:`Vector3<class_vector3>`  **move_to**  **(** :ref:`Vector3<class_vector3>` position  **)**
+.. _class_KinematicBody_can_collide_with_kinematic_bodies:
+
+- :ref:`bool<class_bool>`  **can_collide_with_kinematic_bodies**  **(** **)** const
+
+Return if this body can collide with kinematic bodies.
+
+.. _class_KinematicBody_can_collide_with_rigid_bodies:
+
+- :ref:`bool<class_bool>`  **can_collide_with_rigid_bodies**  **(** **)** const
+
+Return if this body can collide with rigid bodies.
+
+.. _class_KinematicBody_can_collide_with_static_bodies:
+
+- :ref:`bool<class_bool>`  **can_collide_with_static_bodies**  **(** **)** const
+
+Return if this body can collide with static bodies.
 
 .. _class_KinematicBody_can_teleport_to:
 
@@ -75,68 +100,88 @@ Member Function Description
 
 Returns whether the KinematicBody can be teleported to the destination given as an argument, checking all collision shapes of the body against potential colliders at the destination.
 
-.. _class_KinematicBody_is_colliding:
-
-- :ref:`bool<class_bool>`  **is_colliding**  **(** **)** const
-
-.. _class_KinematicBody_get_collision_pos:
-
-- :ref:`Vector3<class_vector3>`  **get_collision_pos**  **(** **)** const
-
-.. _class_KinematicBody_get_collision_normal:
-
-- :ref:`Vector3<class_vector3>`  **get_collision_normal**  **(** **)** const
-
-.. _class_KinematicBody_get_collider_velocity:
-
-- :ref:`Vector3<class_vector3>`  **get_collider_velocity**  **(** **)** const
-
 .. _class_KinematicBody_get_collider:
 
 - :ref:`Object<class_object>`  **get_collider**  **(** **)** const
+
+Return the body that collided with this one.
 
 .. _class_KinematicBody_get_collider_shape:
 
 - :ref:`int<class_int>`  **get_collider_shape**  **(** **)** const
 
-.. _class_KinematicBody_set_collide_with_static_bodies:
+Return the shape index from the body that collided with this one. If there is no collision, this method will return 0, so collisions must be checked first with :ref:`is_colliding<class_KinematicBody_is_colliding>`.
 
-- void  **set_collide_with_static_bodies**  **(** :ref:`bool<class_bool>` enable  **)**
+.. _class_KinematicBody_get_collider_velocity:
 
-.. _class_KinematicBody_can_collide_with_static_bodies:
+- :ref:`Vector3<class_vector3>`  **get_collider_velocity**  **(** **)** const
 
-- :ref:`bool<class_bool>`  **can_collide_with_static_bodies**  **(** **)** const
+Return the velocity of the body that collided with this one.
 
-.. _class_KinematicBody_set_collide_with_kinematic_bodies:
+.. _class_KinematicBody_get_collision_margin:
 
-- void  **set_collide_with_kinematic_bodies**  **(** :ref:`bool<class_bool>` enable  **)**
+- :ref:`float<class_float>`  **get_collision_margin**  **(** **)** const
 
-.. _class_KinematicBody_can_collide_with_kinematic_bodies:
+Return the collision margin for this object.
 
-- :ref:`bool<class_bool>`  **can_collide_with_kinematic_bodies**  **(** **)** const
+.. _class_KinematicBody_get_collision_normal:
 
-.. _class_KinematicBody_set_collide_with_rigid_bodies:
+- :ref:`Vector3<class_vector3>`  **get_collision_normal**  **(** **)** const
 
-- void  **set_collide_with_rigid_bodies**  **(** :ref:`bool<class_bool>` enable  **)**
+Return the normal of the surface the body collided with. This is useful to implement sliding along a surface.
 
-.. _class_KinematicBody_can_collide_with_rigid_bodies:
+.. _class_KinematicBody_get_collision_pos:
 
-- :ref:`bool<class_bool>`  **can_collide_with_rigid_bodies**  **(** **)** const
+- :ref:`Vector3<class_vector3>`  **get_collision_pos**  **(** **)** const
+
+Return the point in space where the body is touching another. If there is no collision, this method will return (0,0,0), so collisions must be checked first with :ref:`is_colliding<class_KinematicBody_is_colliding>`.
+
+.. _class_KinematicBody_is_colliding:
+
+- :ref:`bool<class_bool>`  **is_colliding**  **(** **)** const
+
+Return whether the body is colliding with another.
+
+.. _class_KinematicBody_move:
+
+- :ref:`Vector3<class_vector3>`  **move**  **(** :ref:`Vector3<class_vector3>` rel_vec  **)**
+
+Move the body in the given direction, stopping if there is an obstacle. The returned vector is how much movement was remaining before being stopped.
+
+.. _class_KinematicBody_move_to:
+
+- :ref:`Vector3<class_vector3>`  **move_to**  **(** :ref:`Vector3<class_vector3>` position  **)**
+
+Move the body to the given position. This is not a teleport, and the body will stop if there is an obstacle. The returned vector is how much movement was remaining before being stopped.
 
 .. _class_KinematicBody_set_collide_with_character_bodies:
 
 - void  **set_collide_with_character_bodies**  **(** :ref:`bool<class_bool>` enable  **)**
 
-.. _class_KinematicBody_can_collide_with_character_bodies:
+Set if this body should collide with character bodies.
 
-- :ref:`bool<class_bool>`  **can_collide_with_character_bodies**  **(** **)** const
+.. _class_KinematicBody_set_collide_with_kinematic_bodies:
+
+- void  **set_collide_with_kinematic_bodies**  **(** :ref:`bool<class_bool>` enable  **)**
+
+Set if this body should collide with kinematic bodies.
+
+.. _class_KinematicBody_set_collide_with_rigid_bodies:
+
+- void  **set_collide_with_rigid_bodies**  **(** :ref:`bool<class_bool>` enable  **)**
+
+Set if this body should collide with rigid bodies.
+
+.. _class_KinematicBody_set_collide_with_static_bodies:
+
+- void  **set_collide_with_static_bodies**  **(** :ref:`bool<class_bool>` enable  **)**
+
+Set if this body should collide with static bodies.
 
 .. _class_KinematicBody_set_collision_margin:
 
 - void  **set_collision_margin**  **(** :ref:`float<class_float>` pixels  **)**
 
-.. _class_KinematicBody_get_collision_margin:
-
-- :ref:`float<class_float>`  **get_collision_margin**  **(** **)** const
+Set the collision margin for this object. A collision margin is an amount that all shapes will grow when computing collisions, to account for numerical imprecision.
 
 

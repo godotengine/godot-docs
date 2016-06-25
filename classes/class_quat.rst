@@ -17,6 +17,12 @@ Member Functions
 ----------------
 
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Quat<class_quat>`        | :ref:`Quat<class_Quat_Quat>`  **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z, :ref:`float<class_float>` w  **)**                  |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Quat<class_quat>`        | :ref:`Quat<class_Quat_Quat>`  **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` angle  **)**                                                                 |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Quat<class_quat>`        | :ref:`Quat<class_Quat_Quat>`  **(** :ref:`Matrix3<class_matrix3>` from  **)**                                                                                                  |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Quat<class_quat>`        | :ref:`cubic_slerp<class_Quat_cubic_slerp>`  **(** :ref:`Quat<class_quat>` b, :ref:`Quat<class_quat>` pre_a, :ref:`Quat<class_quat>` post_b, :ref:`float<class_float>` t  **)** |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`dot<class_Quat_dot>`  **(** :ref:`Quat<class_quat>` b  **)**                                                                                                             |
@@ -35,20 +41,14 @@ Member Functions
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`  | :ref:`xform<class_Quat_xform>`  **(** :ref:`Vector3<class_vector3>` v  **)**                                                                                                   |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Quat<class_quat>`        | :ref:`Quat<class_Quat_Quat>`  **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z, :ref:`float<class_float>` w  **)**                  |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Quat<class_quat>`        | :ref:`Quat<class_Quat_Quat>`  **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` angle  **)**                                                                 |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Quat<class_quat>`        | :ref:`Quat<class_Quat_Quat>`  **(** :ref:`Matrix3<class_matrix3>` from  **)**                                                                                                  |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
 
+- :ref:`float<class_float>` **w**
 - :ref:`float<class_float>` **x**
 - :ref:`float<class_float>` **y**
 - :ref:`float<class_float>` **z**
-- :ref:`float<class_float>` **w**
 
 Description
 -----------
@@ -57,6 +57,18 @@ Quaternion is a 4 dimensional vector that is used to represent a rotation. It ma
 
 Member Function Description
 ---------------------------
+
+.. _class_Quat_Quat:
+
+- :ref:`Quat<class_quat>`  **Quat**  **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z, :ref:`float<class_float>` w  **)**
+
+.. _class_Quat_Quat:
+
+- :ref:`Quat<class_quat>`  **Quat**  **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` angle  **)**
+
+.. _class_Quat_Quat:
+
+- :ref:`Quat<class_quat>`  **Quat**  **(** :ref:`Matrix3<class_matrix3>` from  **)**
 
 .. _class_Quat_cubic_slerp:
 
@@ -105,17 +117,5 @@ Perform a spherical-linear interpolation with another quaternion.
 .. _class_Quat_xform:
 
 - :ref:`Vector3<class_vector3>`  **xform**  **(** :ref:`Vector3<class_vector3>` v  **)**
-
-.. _class_Quat_Quat:
-
-- :ref:`Quat<class_quat>`  **Quat**  **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z, :ref:`float<class_float>` w  **)**
-
-.. _class_Quat_Quat:
-
-- :ref:`Quat<class_quat>`  **Quat**  **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` angle  **)**
-
-.. _class_Quat_Quat:
-
-- :ref:`Quat<class_quat>`  **Quat**  **(** :ref:`Matrix3<class_matrix3>` from  **)**
 
 

@@ -19,27 +19,27 @@ Member Functions
 ----------------
 
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`has_action<class_InputMap_has_action>`  **(** :ref:`String<class_string>` action  **)** const                                                      |
+| void                         | :ref:`action_add_event<class_InputMap_action_add_event>`  **(** :ref:`String<class_string>` action, :ref:`InputEvent<class_inputevent>` event  **)**     |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_action_id<class_InputMap_get_action_id>`  **(** :ref:`String<class_string>` action  **)** const                                                |
+| void                         | :ref:`action_erase_event<class_InputMap_action_erase_event>`  **(** :ref:`String<class_string>` action, :ref:`InputEvent<class_inputevent>` event  **)** |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_action_from_id<class_InputMap_get_action_from_id>`  **(** :ref:`int<class_int>` id  **)** const                                                |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`    | :ref:`get_actions<class_InputMap_get_actions>`  **(** **)**                                                                                              |
+| :ref:`bool<class_bool>`      | :ref:`action_has_event<class_InputMap_action_has_event>`  **(** :ref:`String<class_string>` action, :ref:`InputEvent<class_inputevent>` event  **)**     |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`add_action<class_InputMap_add_action>`  **(** :ref:`String<class_string>` action  **)**                                                            |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`erase_action<class_InputMap_erase_action>`  **(** :ref:`String<class_string>` action  **)**                                                        |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`action_add_event<class_InputMap_action_add_event>`  **(** :ref:`String<class_string>` action, :ref:`InputEvent<class_inputevent>` event  **)**     |
+| :ref:`bool<class_bool>`      | :ref:`event_is_action<class_InputMap_event_is_action>`  **(** :ref:`InputEvent<class_inputevent>` event, :ref:`String<class_string>` action  **)** const |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`action_has_event<class_InputMap_action_has_event>`  **(** :ref:`String<class_string>` action, :ref:`InputEvent<class_inputevent>` event  **)**     |
+| :ref:`String<class_string>`  | :ref:`get_action_from_id<class_InputMap_get_action_from_id>`  **(** :ref:`int<class_int>` id  **)** const                                                |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`action_erase_event<class_InputMap_action_erase_event>`  **(** :ref:`String<class_string>` action, :ref:`InputEvent<class_inputevent>` event  **)** |
+| :ref:`int<class_int>`        | :ref:`get_action_id<class_InputMap_get_action_id>`  **(** :ref:`String<class_string>` action  **)** const                                                |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_array>`    | :ref:`get_action_list<class_InputMap_get_action_list>`  **(** :ref:`String<class_string>` action  **)**                                                  |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`event_is_action<class_InputMap_event_is_action>`  **(** :ref:`InputEvent<class_inputevent>` event, :ref:`String<class_string>` action  **)** const |
+| :ref:`Array<class_array>`    | :ref:`get_actions<class_InputMap_get_actions>`  **(** **)**                                                                                              |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`has_action<class_InputMap_has_action>`  **(** :ref:`String<class_string>` action  **)** const                                                      |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`load_from_globals<class_InputMap_load_from_globals>`  **(** **)**                                                                                  |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -52,29 +52,23 @@ Singleton that manages actions. InputMap has a list of the actions used in Input
 Member Function Description
 ---------------------------
 
-.. _class_InputMap_has_action:
+.. _class_InputMap_action_add_event:
 
-- :ref:`bool<class_bool>`  **has_action**  **(** :ref:`String<class_string>` action  **)** const
+- void  **action_add_event**  **(** :ref:`String<class_string>` action, :ref:`InputEvent<class_inputevent>` event  **)**
 
-Whether this InputMap has an action with name "action".
+Add an :ref:`InputEvent<class_inputevent>` to action. This :ref:`InputEvent<class_inputevent>` will trigger the action.
 
-.. _class_InputMap_get_action_id:
+.. _class_InputMap_action_erase_event:
 
-- :ref:`int<class_int>`  **get_action_id**  **(** :ref:`String<class_string>` action  **)** const
+- void  **action_erase_event**  **(** :ref:`String<class_string>` action, :ref:`InputEvent<class_inputevent>` event  **)**
 
-Return the id of an action.
+Remove an :ref:`InputEvent<class_inputevent>` from an action.
 
-.. _class_InputMap_get_action_from_id:
+.. _class_InputMap_action_has_event:
 
-- :ref:`String<class_string>`  **get_action_from_id**  **(** :ref:`int<class_int>` id  **)** const
+- :ref:`bool<class_bool>`  **action_has_event**  **(** :ref:`String<class_string>` action, :ref:`InputEvent<class_inputevent>` event  **)**
 
-Return the action from an id.
-
-.. _class_InputMap_get_actions:
-
-- :ref:`Array<class_array>`  **get_actions**  **(** **)**
-
-Return an :ref:`Array<class_array>` of all actions in the :ref:`InputMap<class_inputmap>`.
+Whether an action has an :ref:`InputEvent<class_inputevent>` associated with it.
 
 .. _class_InputMap_add_action:
 
@@ -88,23 +82,21 @@ Add an action to the :ref:`InputMap<class_inputmap>`.
 
 Remove an action from the :ref:`InputMap<class_inputmap>`.
 
-.. _class_InputMap_action_add_event:
+.. _class_InputMap_event_is_action:
 
-- void  **action_add_event**  **(** :ref:`String<class_string>` action, :ref:`InputEvent<class_inputevent>` event  **)**
+- :ref:`bool<class_bool>`  **event_is_action**  **(** :ref:`InputEvent<class_inputevent>` event, :ref:`String<class_string>` action  **)** const
 
-Add an :ref:`InputEvent<class_inputevent>` to action. This :ref:`InputEvent<class_inputevent>` will trigger the action.
+.. _class_InputMap_get_action_from_id:
 
-.. _class_InputMap_action_has_event:
+- :ref:`String<class_string>`  **get_action_from_id**  **(** :ref:`int<class_int>` id  **)** const
 
-- :ref:`bool<class_bool>`  **action_has_event**  **(** :ref:`String<class_string>` action, :ref:`InputEvent<class_inputevent>` event  **)**
+Return the action from an id.
 
-Whether an action has an :ref:`InputEvent<class_inputevent>` associated with it.
+.. _class_InputMap_get_action_id:
 
-.. _class_InputMap_action_erase_event:
+- :ref:`int<class_int>`  **get_action_id**  **(** :ref:`String<class_string>` action  **)** const
 
-- void  **action_erase_event**  **(** :ref:`String<class_string>` action, :ref:`InputEvent<class_inputevent>` event  **)**
-
-Remove an :ref:`InputEvent<class_inputevent>` from an action.
+Return the id of an action.
 
 .. _class_InputMap_get_action_list:
 
@@ -112,9 +104,17 @@ Remove an :ref:`InputEvent<class_inputevent>` from an action.
 
 Return an :ref:`Array<class_array>` of :ref:`InputEvent<class_inputevent>`s associated with an action.
 
-.. _class_InputMap_event_is_action:
+.. _class_InputMap_get_actions:
 
-- :ref:`bool<class_bool>`  **event_is_action**  **(** :ref:`InputEvent<class_inputevent>` event, :ref:`String<class_string>` action  **)** const
+- :ref:`Array<class_array>`  **get_actions**  **(** **)**
+
+Return an :ref:`Array<class_array>` of all actions in the :ref:`InputMap<class_inputmap>`.
+
+.. _class_InputMap_has_action:
+
+- :ref:`bool<class_bool>`  **has_action**  **(** :ref:`String<class_string>` action  **)** const
+
+Whether this InputMap has an action with name "action".
 
 .. _class_InputMap_load_from_globals:
 

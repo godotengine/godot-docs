@@ -21,11 +21,11 @@ Member Functions
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------+
 | :ref:`RID<class_rid>`                                              | :ref:`get_canvas<class_World2D_get_canvas>`  **(** **)**                         |
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                              | :ref:`get_space<class_World2D_get_space>`  **(** **)**                           |
+| :ref:`Physics2DDirectSpaceState<class_physics2ddirectspacestate>`  | :ref:`get_direct_space_state<class_World2D_get_direct_space_state>`  **(** **)** |
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------+
 | :ref:`RID<class_rid>`                                              | :ref:`get_sound_space<class_World2D_get_sound_space>`  **(** **)**               |
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------+
-| :ref:`Physics2DDirectSpaceState<class_physics2ddirectspacestate>`  | :ref:`get_direct_space_state<class_World2D_get_direct_space_state>`  **(** **)** |
+| :ref:`RID<class_rid>`                                              | :ref:`get_space<class_World2D_get_space>`  **(** **)**                           |
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 Description
@@ -40,16 +40,16 @@ Member Function Description
 
 - :ref:`RID<class_rid>`  **get_canvas**  **(** **)**
 
-.. _class_World2D_get_space:
+.. _class_World2D_get_direct_space_state:
 
-- :ref:`RID<class_rid>`  **get_space**  **(** **)**
+- :ref:`Physics2DDirectSpaceState<class_physics2ddirectspacestate>`  **get_direct_space_state**  **(** **)**
 
 .. _class_World2D_get_sound_space:
 
 - :ref:`RID<class_rid>`  **get_sound_space**  **(** **)**
 
-.. _class_World2D_get_direct_space_state:
+.. _class_World2D_get_space:
 
-- :ref:`Physics2DDirectSpaceState<class_physics2ddirectspacestate>`  **get_direct_space_state**  **(** **)**
+- :ref:`RID<class_rid>`  **get_space**  **(** **)**
 
 

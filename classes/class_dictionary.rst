@@ -21,11 +21,11 @@ Member Functions
 +------------------------------+-----------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`      | :ref:`empty<class_Dictionary_empty>`  **(** **)**                                             |
 +------------------------------+-----------------------------------------------------------------------------------------------+
-| void                         | :ref:`erase<class_Dictionary_erase>`  **(** var value  **)**                                  |
+| void                         | :ref:`erase<class_Dictionary_erase>`  **(** var key  **)**                                    |
 +------------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`has<class_Dictionary_has>`  **(** var value  **)**                                      |
+| :ref:`bool<class_bool>`      | :ref:`has<class_Dictionary_has>`  **(** var key  **)**                                        |
 +------------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`has_all<class_Dictionary_has_all>`  **(** :ref:`Array<class_array>` values  **)**       |
+| :ref:`bool<class_bool>`      | :ref:`has_all<class_Dictionary_has_all>`  **(** :ref:`Array<class_array>` keys  **)**         |
 +------------------------------+-----------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`        | :ref:`hash<class_Dictionary_hash>`  **(** **)**                                               |
 +------------------------------+-----------------------------------------------------------------------------------------------+
@@ -60,19 +60,19 @@ Return true if the dictionary is empty.
 
 .. _class_Dictionary_erase:
 
-- void  **erase**  **(** var value  **)**
+- void  **erase**  **(** var key  **)**
 
 Erase a dictionary key/value pair by key.
 
 .. _class_Dictionary_has:
 
-- :ref:`bool<class_bool>`  **has**  **(** var value  **)**
+- :ref:`bool<class_bool>`  **has**  **(** var key  **)**
 
 Return true if the dictionary has a given key.
 
 .. _class_Dictionary_has_all:
 
-- :ref:`bool<class_bool>`  **has_all**  **(** :ref:`Array<class_array>` values  **)**
+- :ref:`bool<class_bool>`  **has_all**  **(** :ref:`Array<class_array>` keys  **)**
 
 .. _class_Dictionary_hash:
 

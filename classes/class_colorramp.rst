@@ -21,27 +21,27 @@ Member Functions
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | void                                 | :ref:`add_point<class_ColorRamp_add_point>`  **(** :ref:`float<class_float>` offset, :ref:`Color<class_color>` color  **)** |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                                 | :ref:`remove_point<class_ColorRamp_remove_point>`  **(** :ref:`int<class_int>` offset  **)**                                |
+| :ref:`Color<class_color>`            | :ref:`get_color<class_ColorRamp_get_color>`  **(** :ref:`int<class_int>` point  **)** const                                 |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                                 | :ref:`set_offset<class_ColorRamp_set_offset>`  **(** :ref:`int<class_int>` point, :ref:`float<class_float>` offset  **)**   |
+| :ref:`ColorArray<class_colorarray>`  | :ref:`get_colors<class_ColorRamp_get_colors>`  **(** **)** const                                                            |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`            | :ref:`get_offset<class_ColorRamp_get_offset>`  **(** :ref:`int<class_int>` point  **)** const                               |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                                 | :ref:`set_color<class_ColorRamp_set_color>`  **(** :ref:`int<class_int>` point, :ref:`Color<class_color>` color  **)**      |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`            | :ref:`get_color<class_ColorRamp_get_color>`  **(** :ref:`int<class_int>` point  **)** const                                 |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`            | :ref:`interpolate<class_ColorRamp_interpolate>`  **(** :ref:`float<class_float>` offset  **)**                              |
+| :ref:`RealArray<class_realarray>`    | :ref:`get_offsets<class_ColorRamp_get_offsets>`  **(** **)** const                                                          |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                | :ref:`get_point_count<class_ColorRamp_get_point_count>`  **(** **)** const                                                  |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                                 | :ref:`set_offsets<class_ColorRamp_set_offsets>`  **(** :ref:`RealArray<class_realarray>` offsets  **)**                     |
+| :ref:`Color<class_color>`            | :ref:`interpolate<class_ColorRamp_interpolate>`  **(** :ref:`float<class_float>` offset  **)**                              |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RealArray<class_realarray>`    | :ref:`get_offsets<class_ColorRamp_get_offsets>`  **(** **)** const                                                          |
+| void                                 | :ref:`remove_point<class_ColorRamp_remove_point>`  **(** :ref:`int<class_int>` offset  **)**                                |
++--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                                 | :ref:`set_color<class_ColorRamp_set_color>`  **(** :ref:`int<class_int>` point, :ref:`Color<class_color>` color  **)**      |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | void                                 | :ref:`set_colors<class_ColorRamp_set_colors>`  **(** :ref:`ColorArray<class_colorarray>` colors  **)**                      |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ColorArray<class_colorarray>`  | :ref:`get_colors<class_ColorRamp_get_colors>`  **(** **)** const                                                            |
+| void                                 | :ref:`set_offset<class_ColorRamp_set_offset>`  **(** :ref:`int<class_int>` point, :ref:`float<class_float>` offset  **)**   |
++--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                                 | :ref:`set_offsets<class_ColorRamp_set_offsets>`  **(** :ref:`RealArray<class_realarray>` offsets  **)**                     |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -58,17 +58,17 @@ Member Function Description
 
 Adds the specified color to the end of the ramp, with the specified offset
 
-.. _class_ColorRamp_remove_point:
+.. _class_ColorRamp_get_color:
 
-- void  **remove_point**  **(** :ref:`int<class_int>` offset  **)**
+- :ref:`Color<class_color>`  **get_color**  **(** :ref:`int<class_int>` point  **)** const
 
-Removes the color at the index *offset*
+Returns the color of the ramp color at index *point*
 
-.. _class_ColorRamp_set_offset:
+.. _class_ColorRamp_get_colors:
 
-- void  **set_offset**  **(** :ref:`int<class_int>` point, :ref:`float<class_float>` offset  **)**
+- :ref:`ColorArray<class_colorarray>`  **get_colors**  **(** **)** const
 
-Sets the offset for the ramp color at index *point*
+Returns the colors in the ramp
 
 .. _class_ColorRamp_get_offset:
 
@@ -76,23 +76,11 @@ Sets the offset for the ramp color at index *point*
 
 Returns the offset of the ramp color at index *point*
 
-.. _class_ColorRamp_set_color:
+.. _class_ColorRamp_get_offsets:
 
-- void  **set_color**  **(** :ref:`int<class_int>` point, :ref:`Color<class_color>` color  **)**
+- :ref:`RealArray<class_realarray>`  **get_offsets**  **(** **)** const
 
-Sets the color of the ramp color at index *point*
-
-.. _class_ColorRamp_get_color:
-
-- :ref:`Color<class_color>`  **get_color**  **(** :ref:`int<class_int>` point  **)** const
-
-Returns the color of the ramp color at index *point*
-
-.. _class_ColorRamp_interpolate:
-
-- :ref:`Color<class_color>`  **interpolate**  **(** :ref:`float<class_float>` offset  **)**
-
-Returns the interpolated color specified by *offset*
+Returns the offsets for the colors in this ramp
 
 .. _class_ColorRamp_get_point_count:
 
@@ -100,17 +88,23 @@ Returns the interpolated color specified by *offset*
 
 Returns the number of colors in the ramp
 
-.. _class_ColorRamp_set_offsets:
+.. _class_ColorRamp_interpolate:
 
-- void  **set_offsets**  **(** :ref:`RealArray<class_realarray>` offsets  **)**
+- :ref:`Color<class_color>`  **interpolate**  **(** :ref:`float<class_float>` offset  **)**
 
-Sets the offset for the specified amount of elements. Calling this function with a different number of elements than previously defined causes the ramp to resize its colors and offsets array to accomodate the new elements, all new colors will be black by default.
+Returns the interpolated color specified by *offset*
 
-.. _class_ColorRamp_get_offsets:
+.. _class_ColorRamp_remove_point:
 
-- :ref:`RealArray<class_realarray>`  **get_offsets**  **(** **)** const
+- void  **remove_point**  **(** :ref:`int<class_int>` offset  **)**
 
-Returns the offsets for the colors in this ramp
+Removes the color at the index *offset*
+
+.. _class_ColorRamp_set_color:
+
+- void  **set_color**  **(** :ref:`int<class_int>` point, :ref:`Color<class_color>` color  **)**
+
+Sets the color of the ramp color at index *point*
 
 .. _class_ColorRamp_set_colors:
 
@@ -118,10 +112,16 @@ Returns the offsets for the colors in this ramp
 
 Sets the colors for the specified amount of elements. Calling this function with a different number of elements than previously defined causes the ramp to resize its colors and offsets array to accomodate the new elements.
 
-.. _class_ColorRamp_get_colors:
+.. _class_ColorRamp_set_offset:
 
-- :ref:`ColorArray<class_colorarray>`  **get_colors**  **(** **)** const
+- void  **set_offset**  **(** :ref:`int<class_int>` point, :ref:`float<class_float>` offset  **)**
 
-Returns the colors in the ramp
+Sets the offset for the ramp color at index *point*
+
+.. _class_ColorRamp_set_offsets:
+
+- void  **set_offsets**  **(** :ref:`RealArray<class_realarray>` offsets  **)**
+
+Sets the offset for the specified amount of elements. Calling this function with a different number of elements than previously defined causes the ramp to resize its colors and offsets array to accomodate the new elements, all new colors will be black by default.
 
 

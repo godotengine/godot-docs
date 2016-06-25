@@ -17,6 +17,8 @@ Member Functions
 ----------------
 
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------+
+| :ref:`ColorArray<class_colorarray>`  | :ref:`ColorArray<class_ColorArray_ColorArray>`  **(** :ref:`Array<class_array>` from  **)**               |
++--------------------------------------+-----------------------------------------------------------------------------------------------------------+
 | void                                 | :ref:`push_back<class_ColorArray_push_back>`  **(** :ref:`Color<class_color>` color  **)**                |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------+
 | void                                 | :ref:`resize<class_ColorArray_resize>`  **(** :ref:`int<class_int>` idx  **)**                            |
@@ -24,8 +26,6 @@ Member Functions
 | void                                 | :ref:`set<class_ColorArray_set>`  **(** :ref:`int<class_int>` idx, :ref:`Color<class_color>` color  **)** |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                | :ref:`size<class_ColorArray_size>`  **(** **)**                                                           |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`ColorArray<class_colorarray>`  | :ref:`ColorArray<class_ColorArray_ColorArray>`  **(** :ref:`Array<class_array>` from  **)**               |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------+
 
 Description
@@ -35,6 +35,12 @@ Array of Color, can only contains colors. Optimized for memory usage, can't frag
 
 Member Function Description
 ---------------------------
+
+.. _class_ColorArray_ColorArray:
+
+- :ref:`ColorArray<class_colorarray>`  **ColorArray**  **(** :ref:`Array<class_array>` from  **)**
+
+Create from a generic array.
 
 .. _class_ColorArray_push_back:
 
@@ -46,24 +52,18 @@ Append a value to the array.
 
 - void  **resize**  **(** :ref:`int<class_int>` idx  **)**
 
-Resize the array.
+Set the size of the :ref:`ColorArray<class_colorarray>`. If larger than the current size it will reserve some space beforehand, and if it is smaller it will cut off the array.
 
 .. _class_ColorArray_set:
 
 - void  **set**  **(** :ref:`int<class_int>` idx, :ref:`Color<class_color>` color  **)**
 
-Set an index in the array.
+Change the :ref:`Color<class_color>` at the given index.
 
 .. _class_ColorArray_size:
 
 - :ref:`int<class_int>`  **size**  **(** **)**
 
 Return the array size.
-
-.. _class_ColorArray_ColorArray:
-
-- :ref:`ColorArray<class_colorarray>`  **ColorArray**  **(** :ref:`Array<class_array>` from  **)**
-
-Create from a generic array.
 
 

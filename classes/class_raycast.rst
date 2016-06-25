@@ -19,57 +19,53 @@ Member Functions
 ----------------
 
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_enabled<class_RayCast_set_enabled>`  **(** :ref:`bool<class_bool>` enabled  **)**             |
+| void                           | :ref:`add_exception<class_RayCast_add_exception>`  **(** :ref:`Object<class_object>` node  **)**        |
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_enabled<class_RayCast_is_enabled>`  **(** **)** const                                          |
+| void                           | :ref:`add_exception_rid<class_RayCast_add_exception_rid>`  **(** :ref:`RID<class_rid>` rid  **)**       |
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_cast_to<class_RayCast_set_cast_to>`  **(** :ref:`Vector3<class_vector3>` local_point  **)**   |
+| void                           | :ref:`clear_exceptions<class_RayCast_clear_exceptions>`  **(** **)**                                    |
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`  | :ref:`get_cast_to<class_RayCast_get_cast_to>`  **(** **)** const                                        |
-+--------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_colliding<class_RayCast_is_colliding>`  **(** **)** const                                      |
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_object>`    | :ref:`get_collider<class_RayCast_get_collider>`  **(** **)** const                                      |
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_collider_shape<class_RayCast_get_collider_shape>`  **(** **)** const                          |
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`get_collision_point<class_RayCast_get_collision_point>`  **(** **)** const                        |
-+--------------------------------+---------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`  | :ref:`get_collision_normal<class_RayCast_get_collision_normal>`  **(** **)** const                      |
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`add_exception_rid<class_RayCast_add_exception_rid>`  **(** :ref:`RID<class_rid>` rid  **)**       |
+| :ref:`Vector3<class_vector3>`  | :ref:`get_collision_point<class_RayCast_get_collision_point>`  **(** **)** const                        |
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`add_exception<class_RayCast_add_exception>`  **(** :ref:`Object<class_object>` node  **)**        |
+| :ref:`bool<class_bool>`        | :ref:`is_colliding<class_RayCast_is_colliding>`  **(** **)** const                                      |
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`remove_exception_rid<class_RayCast_remove_exception_rid>`  **(** :ref:`RID<class_rid>` rid  **)** |
+| :ref:`bool<class_bool>`        | :ref:`is_enabled<class_RayCast_is_enabled>`  **(** **)** const                                          |
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`remove_exception<class_RayCast_remove_exception>`  **(** :ref:`Object<class_object>` node  **)**  |
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`clear_exceptions<class_RayCast_clear_exceptions>`  **(** **)**                                    |
+| void                           | :ref:`remove_exception_rid<class_RayCast_remove_exception_rid>`  **(** :ref:`RID<class_rid>` rid  **)** |
++--------------------------------+---------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_cast_to<class_RayCast_set_cast_to>`  **(** :ref:`Vector3<class_vector3>` local_point  **)**   |
++--------------------------------+---------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_enabled<class_RayCast_set_enabled>`  **(** :ref:`bool<class_bool>` enabled  **)**             |
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
 
 Member Function Description
 ---------------------------
 
-.. _class_RayCast_set_enabled:
+.. _class_RayCast_add_exception:
 
-- void  **set_enabled**  **(** :ref:`bool<class_bool>` enabled  **)**
+- void  **add_exception**  **(** :ref:`Object<class_object>` node  **)**
 
-.. _class_RayCast_is_enabled:
+.. _class_RayCast_add_exception_rid:
 
-- :ref:`bool<class_bool>`  **is_enabled**  **(** **)** const
+- void  **add_exception_rid**  **(** :ref:`RID<class_rid>` rid  **)**
 
-.. _class_RayCast_set_cast_to:
+.. _class_RayCast_clear_exceptions:
 
-- void  **set_cast_to**  **(** :ref:`Vector3<class_vector3>` local_point  **)**
+- void  **clear_exceptions**  **(** **)**
 
 .. _class_RayCast_get_cast_to:
 
 - :ref:`Vector3<class_vector3>`  **get_cast_to**  **(** **)** const
-
-.. _class_RayCast_is_colliding:
-
-- :ref:`bool<class_bool>`  **is_colliding**  **(** **)** const
 
 .. _class_RayCast_get_collider:
 
@@ -79,32 +75,36 @@ Member Function Description
 
 - :ref:`int<class_int>`  **get_collider_shape**  **(** **)** const
 
-.. _class_RayCast_get_collision_point:
-
-- :ref:`Vector3<class_vector3>`  **get_collision_point**  **(** **)** const
-
 .. _class_RayCast_get_collision_normal:
 
 - :ref:`Vector3<class_vector3>`  **get_collision_normal**  **(** **)** const
 
-.. _class_RayCast_add_exception_rid:
+.. _class_RayCast_get_collision_point:
 
-- void  **add_exception_rid**  **(** :ref:`RID<class_rid>` rid  **)**
+- :ref:`Vector3<class_vector3>`  **get_collision_point**  **(** **)** const
 
-.. _class_RayCast_add_exception:
+.. _class_RayCast_is_colliding:
 
-- void  **add_exception**  **(** :ref:`Object<class_object>` node  **)**
+- :ref:`bool<class_bool>`  **is_colliding**  **(** **)** const
 
-.. _class_RayCast_remove_exception_rid:
+.. _class_RayCast_is_enabled:
 
-- void  **remove_exception_rid**  **(** :ref:`RID<class_rid>` rid  **)**
+- :ref:`bool<class_bool>`  **is_enabled**  **(** **)** const
 
 .. _class_RayCast_remove_exception:
 
 - void  **remove_exception**  **(** :ref:`Object<class_object>` node  **)**
 
-.. _class_RayCast_clear_exceptions:
+.. _class_RayCast_remove_exception_rid:
 
-- void  **clear_exceptions**  **(** **)**
+- void  **remove_exception_rid**  **(** :ref:`RID<class_rid>` rid  **)**
+
+.. _class_RayCast_set_cast_to:
+
+- void  **set_cast_to**  **(** :ref:`Vector3<class_vector3>` local_point  **)**
+
+.. _class_RayCast_set_enabled:
+
+- void  **set_enabled**  **(** :ref:`bool<class_bool>` enabled  **)**
 
 

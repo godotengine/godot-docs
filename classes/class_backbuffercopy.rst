@@ -19,13 +19,13 @@ Member Functions
 ----------------
 
 +----------------------------+--------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_rect<class_BackBufferCopy_set_rect>`  **(** :ref:`Rect2<class_rect2>` rect  **)**            |
+| :ref:`int<class_int>`      | :ref:`get_copy_mode<class_BackBufferCopy_get_copy_mode>`  **(** **)** const                            |
 +----------------------------+--------------------------------------------------------------------------------------------------------+
 | :ref:`Rect2<class_rect2>`  | :ref:`get_rect<class_BackBufferCopy_get_rect>`  **(** **)** const                                      |
 +----------------------------+--------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`set_copy_mode<class_BackBufferCopy_set_copy_mode>`  **(** :ref:`int<class_int>` copy_mode  **)** |
 +----------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_copy_mode<class_BackBufferCopy_get_copy_mode>`  **(** **)** const                            |
+| void                       | :ref:`set_rect<class_BackBufferCopy_set_rect>`  **(** :ref:`Rect2<class_rect2>` rect  **)**            |
 +----------------------------+--------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
@@ -43,11 +43,11 @@ Node for back-buffering the currently displayed screen. The region defined in th
 Member Function Description
 ---------------------------
 
-.. _class_BackBufferCopy_set_rect:
+.. _class_BackBufferCopy_get_copy_mode:
 
-- void  **set_rect**  **(** :ref:`Rect2<class_rect2>` rect  **)**
+- :ref:`int<class_int>`  **get_copy_mode**  **(** **)** const
 
-Defines the area covered by the BackBufferCopy.
+Return the copy mode currently applied to the BackBufferCopy (refer to constants section).
 
 .. _class_BackBufferCopy_get_rect:
 
@@ -61,10 +61,10 @@ Return the area covered by the BackBufferCopy.
 
 Set the copy mode of the BackBufferCopy (refer to constants section).
 
-.. _class_BackBufferCopy_get_copy_mode:
+.. _class_BackBufferCopy_set_rect:
 
-- :ref:`int<class_int>`  **get_copy_mode**  **(** **)** const
+- void  **set_rect**  **(** :ref:`Rect2<class_rect2>` rect  **)**
 
-Return the copy mode currently applied to the BackBufferCopy (refer to constants section).
+Defines the area covered by the BackBufferCopy.
 
 

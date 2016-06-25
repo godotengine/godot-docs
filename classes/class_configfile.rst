@@ -19,7 +19,9 @@ Member Functions
 ----------------
 
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_value<class_ConfigFile_set_value>`  **(** :ref:`String<class_string>` section, :ref:`String<class_string>` key, var value  **)**              |
+| :ref:`StringArray<class_stringarray>`  | :ref:`get_section_keys<class_ConfigFile_get_section_keys>`  **(** :ref:`String<class_string>` section  **)** const                                      |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`StringArray<class_stringarray>`  | :ref:`get_sections<class_ConfigFile_get_sections>`  **(** **)** const                                                                                   |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Variant                                | :ref:`get_value<class_ConfigFile_get_value>`  **(** :ref:`String<class_string>` section, :ref:`String<class_string>` key, var default=NULL  **)** const |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -27,13 +29,11 @@ Member Functions
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                | :ref:`has_section_key<class_ConfigFile_has_section_key>`  **(** :ref:`String<class_string>` section, :ref:`String<class_string>` key  **)** const       |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StringArray<class_stringarray>`  | :ref:`get_sections<class_ConfigFile_get_sections>`  **(** **)** const                                                                                   |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StringArray<class_stringarray>`  | :ref:`get_section_keys<class_ConfigFile_get_section_keys>`  **(** :ref:`String<class_string>` section  **)** const                                      |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Error                                  | :ref:`load<class_ConfigFile_load>`  **(** :ref:`String<class_string>` path  **)**                                                                       |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Error                                  | :ref:`save<class_ConfigFile_save>`  **(** :ref:`String<class_string>` path  **)**                                                                       |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_value<class_ConfigFile_set_value>`  **(** :ref:`String<class_string>` section, :ref:`String<class_string>` key, var value  **)**              |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -59,11 +59,17 @@ The following example shows how to parse a INI-style file from the system, read 
 Member Function Description
 ---------------------------
 
-.. _class_ConfigFile_set_value:
+.. _class_ConfigFile_get_section_keys:
 
-- void  **set_value**  **(** :ref:`String<class_string>` section, :ref:`String<class_string>` key, var value  **)**
+- :ref:`StringArray<class_stringarray>`  **get_section_keys**  **(** :ref:`String<class_string>` section  **)** const
 
-Assign a value to the specified key of the the specified section. If the section and/or the key do not exist, they are created. Passing a ``NULL`` value deletes the specified key if it exists (and deletes the section if it ends up empty once the key has been removed).
+Return an array of all defined key identifiers in the specified section.
+
+.. _class_ConfigFile_get_sections:
+
+- :ref:`StringArray<class_stringarray>`  **get_sections**  **(** **)** const
+
+Return an array of all defined section identifiers.
 
 .. _class_ConfigFile_get_value:
 
@@ -83,18 +89,6 @@ Check if the specified section exists.
 
 Check if the specified section-key pair exists.
 
-.. _class_ConfigFile_get_sections:
-
-- :ref:`StringArray<class_stringarray>`  **get_sections**  **(** **)** const
-
-Return an array of all defined section identifiers.
-
-.. _class_ConfigFile_get_section_keys:
-
-- :ref:`StringArray<class_stringarray>`  **get_section_keys**  **(** :ref:`String<class_string>` section  **)** const
-
-Return an array of all defined key identifiers in the specified section.
-
 .. _class_ConfigFile_load:
 
 - Error  **load**  **(** :ref:`String<class_string>` path  **)**
@@ -108,5 +102,11 @@ Load the config file specified as a parameter. The file's contents are parsed an
 Save the contents of the ConfigFile object to the file specified as a parameter. The output file uses an INI-style structure.
 
 The return value is one of the OK, FAILED or ERR\_\* constants listed in :ref:`@Global Scope<class_@global scope>` (if the save was successful, it returns OK).
+
+.. _class_ConfigFile_set_value:
+
+- void  **set_value**  **(** :ref:`String<class_string>` section, :ref:`String<class_string>` key, var value  **)**
+
+Assign a value to the specified key of the the specified section. If the section and/or the key do not exist, they are created. Passing a ``NULL`` value deletes the specified key if it exists (and deletes the section if it ends up empty once the key has been removed).
 
 

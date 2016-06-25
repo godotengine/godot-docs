@@ -21,15 +21,15 @@ Member Functions
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`add_resource<class_ResourcePreloader_add_resource>`  **(** :ref:`String<class_string>` name, :ref:`Object<class_object>` resource  **)**      |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`remove_resource<class_ResourcePreloader_remove_resource>`  **(** :ref:`String<class_string>` name  **)**                                      |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`rename_resource<class_ResourcePreloader_rename_resource>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` newname  **)** |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`has_resource<class_ResourcePreloader_has_resource>`  **(** :ref:`String<class_string>` name  **)** const                                      |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_object>`            | :ref:`get_resource<class_ResourcePreloader_get_resource>`  **(** :ref:`String<class_string>` name  **)** const                                      |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`StringArray<class_stringarray>`  | :ref:`get_resource_list<class_ResourcePreloader_get_resource_list>`  **(** **)** const                                                              |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`has_resource<class_ResourcePreloader_has_resource>`  **(** :ref:`String<class_string>` name  **)** const                                      |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`remove_resource<class_ResourcePreloader_remove_resource>`  **(** :ref:`String<class_string>` name  **)**                                      |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`rename_resource<class_ResourcePreloader_rename_resource>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` newname  **)** |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -46,24 +46,6 @@ Member Function Description
 
 Add a resource to the preloader. Set the text-id that will be used to identify it (retrieve it/erase it/etc).
 
-.. _class_ResourcePreloader_remove_resource:
-
-- void  **remove_resource**  **(** :ref:`String<class_string>` name  **)**
-
-Remove a resource from the preloader by text id.
-
-.. _class_ResourcePreloader_rename_resource:
-
-- void  **rename_resource**  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` newname  **)**
-
-Rename a resource inside the preloader, from a text-id to a new text-id.
-
-.. _class_ResourcePreloader_has_resource:
-
-- :ref:`bool<class_bool>`  **has_resource**  **(** :ref:`String<class_string>` name  **)** const
-
-Return true if the preloader has a given resource.
-
 .. _class_ResourcePreloader_get_resource:
 
 - :ref:`Object<class_object>`  **get_resource**  **(** :ref:`String<class_string>` name  **)** const
@@ -75,5 +57,23 @@ Return the resource given a text-id.
 - :ref:`StringArray<class_stringarray>`  **get_resource_list**  **(** **)** const
 
 Return the list of resources inside the preloader.
+
+.. _class_ResourcePreloader_has_resource:
+
+- :ref:`bool<class_bool>`  **has_resource**  **(** :ref:`String<class_string>` name  **)** const
+
+Return true if the preloader has a given resource.
+
+.. _class_ResourcePreloader_remove_resource:
+
+- void  **remove_resource**  **(** :ref:`String<class_string>` name  **)**
+
+Remove a resource from the preloader by text id.
+
+.. _class_ResourcePreloader_rename_resource:
+
+- void  **rename_resource**  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` newname  **)**
+
+Rename a resource inside the preloader, from a text-id to a new text-id.
 
 

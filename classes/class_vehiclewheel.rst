@@ -19,128 +19,128 @@ Member Functions
 ----------------
 
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_radius<class_VehicleWheel_set_radius>`  **(** :ref:`float<class_float>` length  **)**                                 |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_radius<class_VehicleWheel_get_radius>`  **(** **)** const                                                             |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_suspension_rest_length<class_VehicleWheel_set_suspension_rest_length>`  **(** :ref:`float<class_float>` length  **)** |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_suspension_rest_length<class_VehicleWheel_get_suspension_rest_length>`  **(** **)** const                             |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_suspension_travel<class_VehicleWheel_set_suspension_travel>`  **(** :ref:`float<class_float>` length  **)**           |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_suspension_travel<class_VehicleWheel_get_suspension_travel>`  **(** **)** const                                       |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_suspension_stiffness<class_VehicleWheel_set_suspension_stiffness>`  **(** :ref:`float<class_float>` length  **)**     |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_suspension_stiffness<class_VehicleWheel_get_suspension_stiffness>`  **(** **)** const                                 |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_suspension_max_force<class_VehicleWheel_set_suspension_max_force>`  **(** :ref:`float<class_float>` length  **)**     |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_suspension_max_force<class_VehicleWheel_get_suspension_max_force>`  **(** **)** const                                 |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_damping_compression<class_VehicleWheel_set_damping_compression>`  **(** :ref:`float<class_float>` length  **)**       |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_damping_compression<class_VehicleWheel_get_damping_compression>`  **(** **)** const                                   |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_damping_relaxation<class_VehicleWheel_set_damping_relaxation>`  **(** :ref:`float<class_float>` length  **)**         |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_damping_relaxation<class_VehicleWheel_get_damping_relaxation>`  **(** **)** const                                     |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_use_as_traction<class_VehicleWheel_set_use_as_traction>`  **(** :ref:`bool<class_bool>` enable  **)**                 |
+| :ref:`float<class_float>`  | :ref:`get_friction_slip<class_VehicleWheel_get_friction_slip>`  **(** **)** const                                               |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`is_used_as_traction<class_VehicleWheel_is_used_as_traction>`  **(** **)** const                                           |
+| :ref:`float<class_float>`  | :ref:`get_radius<class_VehicleWheel_get_radius>`  **(** **)** const                                                             |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_use_as_steering<class_VehicleWheel_set_use_as_steering>`  **(** :ref:`bool<class_bool>` enable  **)**                 |
+| :ref:`float<class_float>`  | :ref:`get_suspension_max_force<class_VehicleWheel_get_suspension_max_force>`  **(** **)** const                                 |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_suspension_rest_length<class_VehicleWheel_get_suspension_rest_length>`  **(** **)** const                             |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_suspension_stiffness<class_VehicleWheel_get_suspension_stiffness>`  **(** **)** const                                 |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_suspension_travel<class_VehicleWheel_get_suspension_travel>`  **(** **)** const                                       |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`    | :ref:`is_used_as_steering<class_VehicleWheel_is_used_as_steering>`  **(** **)** const                                           |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`is_used_as_traction<class_VehicleWheel_is_used_as_traction>`  **(** **)** const                                           |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_damping_compression<class_VehicleWheel_set_damping_compression>`  **(** :ref:`float<class_float>` length  **)**       |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_damping_relaxation<class_VehicleWheel_set_damping_relaxation>`  **(** :ref:`float<class_float>` length  **)**         |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`set_friction_slip<class_VehicleWheel_set_friction_slip>`  **(** :ref:`float<class_float>` length  **)**                   |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_friction_slip<class_VehicleWheel_get_friction_slip>`  **(** **)** const                                               |
+| void                       | :ref:`set_radius<class_VehicleWheel_set_radius>`  **(** :ref:`float<class_float>` length  **)**                                 |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_suspension_max_force<class_VehicleWheel_set_suspension_max_force>`  **(** :ref:`float<class_float>` length  **)**     |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_suspension_rest_length<class_VehicleWheel_set_suspension_rest_length>`  **(** :ref:`float<class_float>` length  **)** |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_suspension_stiffness<class_VehicleWheel_set_suspension_stiffness>`  **(** :ref:`float<class_float>` length  **)**     |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_suspension_travel<class_VehicleWheel_set_suspension_travel>`  **(** :ref:`float<class_float>` length  **)**           |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_use_as_steering<class_VehicleWheel_set_use_as_steering>`  **(** :ref:`bool<class_bool>` enable  **)**                 |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_use_as_traction<class_VehicleWheel_set_use_as_traction>`  **(** :ref:`bool<class_bool>` enable  **)**                 |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 
 Member Function Description
 ---------------------------
 
-.. _class_VehicleWheel_set_radius:
-
-- void  **set_radius**  **(** :ref:`float<class_float>` length  **)**
-
-.. _class_VehicleWheel_get_radius:
-
-- :ref:`float<class_float>`  **get_radius**  **(** **)** const
-
-.. _class_VehicleWheel_set_suspension_rest_length:
-
-- void  **set_suspension_rest_length**  **(** :ref:`float<class_float>` length  **)**
-
-.. _class_VehicleWheel_get_suspension_rest_length:
-
-- :ref:`float<class_float>`  **get_suspension_rest_length**  **(** **)** const
-
-.. _class_VehicleWheel_set_suspension_travel:
-
-- void  **set_suspension_travel**  **(** :ref:`float<class_float>` length  **)**
-
-.. _class_VehicleWheel_get_suspension_travel:
-
-- :ref:`float<class_float>`  **get_suspension_travel**  **(** **)** const
-
-.. _class_VehicleWheel_set_suspension_stiffness:
-
-- void  **set_suspension_stiffness**  **(** :ref:`float<class_float>` length  **)**
-
-.. _class_VehicleWheel_get_suspension_stiffness:
-
-- :ref:`float<class_float>`  **get_suspension_stiffness**  **(** **)** const
-
-.. _class_VehicleWheel_set_suspension_max_force:
-
-- void  **set_suspension_max_force**  **(** :ref:`float<class_float>` length  **)**
-
-.. _class_VehicleWheel_get_suspension_max_force:
-
-- :ref:`float<class_float>`  **get_suspension_max_force**  **(** **)** const
-
-.. _class_VehicleWheel_set_damping_compression:
-
-- void  **set_damping_compression**  **(** :ref:`float<class_float>` length  **)**
-
 .. _class_VehicleWheel_get_damping_compression:
 
 - :ref:`float<class_float>`  **get_damping_compression**  **(** **)** const
-
-.. _class_VehicleWheel_set_damping_relaxation:
-
-- void  **set_damping_relaxation**  **(** :ref:`float<class_float>` length  **)**
 
 .. _class_VehicleWheel_get_damping_relaxation:
 
 - :ref:`float<class_float>`  **get_damping_relaxation**  **(** **)** const
 
-.. _class_VehicleWheel_set_use_as_traction:
+.. _class_VehicleWheel_get_friction_slip:
 
-- void  **set_use_as_traction**  **(** :ref:`bool<class_bool>` enable  **)**
+- :ref:`float<class_float>`  **get_friction_slip**  **(** **)** const
 
-.. _class_VehicleWheel_is_used_as_traction:
+.. _class_VehicleWheel_get_radius:
 
-- :ref:`bool<class_bool>`  **is_used_as_traction**  **(** **)** const
+- :ref:`float<class_float>`  **get_radius**  **(** **)** const
 
-.. _class_VehicleWheel_set_use_as_steering:
+.. _class_VehicleWheel_get_suspension_max_force:
 
-- void  **set_use_as_steering**  **(** :ref:`bool<class_bool>` enable  **)**
+- :ref:`float<class_float>`  **get_suspension_max_force**  **(** **)** const
+
+.. _class_VehicleWheel_get_suspension_rest_length:
+
+- :ref:`float<class_float>`  **get_suspension_rest_length**  **(** **)** const
+
+.. _class_VehicleWheel_get_suspension_stiffness:
+
+- :ref:`float<class_float>`  **get_suspension_stiffness**  **(** **)** const
+
+.. _class_VehicleWheel_get_suspension_travel:
+
+- :ref:`float<class_float>`  **get_suspension_travel**  **(** **)** const
 
 .. _class_VehicleWheel_is_used_as_steering:
 
 - :ref:`bool<class_bool>`  **is_used_as_steering**  **(** **)** const
 
+.. _class_VehicleWheel_is_used_as_traction:
+
+- :ref:`bool<class_bool>`  **is_used_as_traction**  **(** **)** const
+
+.. _class_VehicleWheel_set_damping_compression:
+
+- void  **set_damping_compression**  **(** :ref:`float<class_float>` length  **)**
+
+.. _class_VehicleWheel_set_damping_relaxation:
+
+- void  **set_damping_relaxation**  **(** :ref:`float<class_float>` length  **)**
+
 .. _class_VehicleWheel_set_friction_slip:
 
 - void  **set_friction_slip**  **(** :ref:`float<class_float>` length  **)**
 
-.. _class_VehicleWheel_get_friction_slip:
+.. _class_VehicleWheel_set_radius:
 
-- :ref:`float<class_float>`  **get_friction_slip**  **(** **)** const
+- void  **set_radius**  **(** :ref:`float<class_float>` length  **)**
+
+.. _class_VehicleWheel_set_suspension_max_force:
+
+- void  **set_suspension_max_force**  **(** :ref:`float<class_float>` length  **)**
+
+.. _class_VehicleWheel_set_suspension_rest_length:
+
+- void  **set_suspension_rest_length**  **(** :ref:`float<class_float>` length  **)**
+
+.. _class_VehicleWheel_set_suspension_stiffness:
+
+- void  **set_suspension_stiffness**  **(** :ref:`float<class_float>` length  **)**
+
+.. _class_VehicleWheel_set_suspension_travel:
+
+- void  **set_suspension_travel**  **(** :ref:`float<class_float>` length  **)**
+
+.. _class_VehicleWheel_set_use_as_steering:
+
+- void  **set_use_as_steering**  **(** :ref:`bool<class_bool>` enable  **)**
+
+.. _class_VehicleWheel_set_use_as_traction:
+
+- void  **set_use_as_traction**  **(** :ref:`bool<class_bool>` enable  **)**
 
 

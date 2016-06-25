@@ -19,9 +19,9 @@ Member Functions
 ----------------
 
 +------------------------+-------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_columns<class_GridContainer_set_columns>`  **(** :ref:`int<class_int>` columns  **)** |
-+------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`  | :ref:`get_columns<class_GridContainer_get_columns>`  **(** **)** const                          |
++------------------------+-------------------------------------------------------------------------------------------------+
+| void                   | :ref:`set_columns<class_GridContainer_set_columns>`  **(** :ref:`int<class_int>` columns  **)** |
 +------------------------+-------------------------------------------------------------------------------------------------+
 
 Description
@@ -32,16 +32,16 @@ Grid container will arrange its children in a grid like structure, the grid colu
 Member Function Description
 ---------------------------
 
-.. _class_GridContainer_set_columns:
-
-- void  **set_columns**  **(** :ref:`int<class_int>` columns  **)**
-
-Sets the numbers of columns in the container, then reorder its children to accommodate the new layout
-
 .. _class_GridContainer_get_columns:
 
 - :ref:`int<class_int>`  **get_columns**  **(** **)** const
 
 Returns the number of columns in this container
+
+.. _class_GridContainer_set_columns:
+
+- void  **set_columns**  **(** :ref:`int<class_int>` columns  **)**
+
+Sets the numbers of columns in the container, then reorder its children to accommodate the new layout
 
 

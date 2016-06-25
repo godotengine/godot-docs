@@ -19,27 +19,27 @@ Member Functions
 ----------------
 
 +----------------------------+------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_wait_time<class_Timer_set_wait_time>`  **(** :ref:`float<class_float>` time_sec  **)**           |
+| :ref:`float<class_float>`  | :ref:`get_time_left<class_Timer_get_time_left>`  **(** **)** const                                         |
++----------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`get_timer_process_mode<class_Timer_get_timer_process_mode>`  **(** **)** const                       |
 +----------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_wait_time<class_Timer_get_wait_time>`  **(** **)** const                                         |
 +----------------------------+------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_one_shot<class_Timer_set_one_shot>`  **(** :ref:`bool<class_bool>` enable  **)**                 |
+| :ref:`bool<class_bool>`    | :ref:`has_autostart<class_Timer_has_autostart>`  **(** **)** const                                         |
 +----------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`    | :ref:`is_one_shot<class_Timer_is_one_shot>`  **(** **)** const                                             |
 +----------------------------+------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`set_autostart<class_Timer_set_autostart>`  **(** :ref:`bool<class_bool>` enable  **)**               |
 +----------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`has_autostart<class_Timer_has_autostart>`  **(** **)** const                                         |
+| void                       | :ref:`set_one_shot<class_Timer_set_one_shot>`  **(** :ref:`bool<class_bool>` enable  **)**                 |
++----------------------------+------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_timer_process_mode<class_Timer_set_timer_process_mode>`  **(** :ref:`int<class_int>` mode  **)** |
++----------------------------+------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_wait_time<class_Timer_set_wait_time>`  **(** :ref:`float<class_float>` time_sec  **)**           |
 +----------------------------+------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`start<class_Timer_start>`  **(** **)**                                                               |
 +----------------------------+------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`stop<class_Timer_stop>`  **(** **)**                                                                 |
-+----------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_time_left<class_Timer_get_time_left>`  **(** **)** const                                         |
-+----------------------------+------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_timer_process_mode<class_Timer_set_timer_process_mode>`  **(** :ref:`int<class_int>` mode  **)** |
-+----------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_timer_process_mode<class_Timer_get_timer_process_mode>`  **(** **)** const                       |
 +----------------------------+------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -61,11 +61,17 @@ Timer node. This is a simple node that will emit a timeout callback when the tim
 Member Function Description
 ---------------------------
 
-.. _class_Timer_set_wait_time:
+.. _class_Timer_get_time_left:
 
-- void  **set_wait_time**  **(** :ref:`float<class_float>` time_sec  **)**
+- :ref:`float<class_float>`  **get_time_left**  **(** **)** const
 
-Set wait time in seconds. When the time is over, it will emit the timeout signal.
+Return the time left for timeout in seconds if the timer is active, 0 otherwise.
+
+.. _class_Timer_get_timer_process_mode:
+
+- :ref:`int<class_int>`  **get_timer_process_mode**  **(** **)** const
+
+Return the timer's processing mode.
 
 .. _class_Timer_get_wait_time:
 
@@ -73,11 +79,11 @@ Set wait time in seconds. When the time is over, it will emit the timeout signal
 
 Return the wait time in seconds.
 
-.. _class_Timer_set_one_shot:
+.. _class_Timer_has_autostart:
 
-- void  **set_one_shot**  **(** :ref:`bool<class_bool>` enable  **)**
+- :ref:`bool<class_bool>`  **has_autostart**  **(** **)** const
 
-Set as one-shot. If enabled, the timer will stop after timeout, otherwise it will automatically restart.
+Return true if set to automatically start when entering the scene.
 
 .. _class_Timer_is_one_shot:
 
@@ -91,11 +97,23 @@ Return true if configured as one-shot.
 
 Set to automatically start when entering the scene.
 
-.. _class_Timer_has_autostart:
+.. _class_Timer_set_one_shot:
 
-- :ref:`bool<class_bool>`  **has_autostart**  **(** **)** const
+- void  **set_one_shot**  **(** :ref:`bool<class_bool>` enable  **)**
 
-Return true if set to automatically start when entering the scene.
+Set as one-shot. If enabled, the timer will stop after timeout, otherwise it will automatically restart.
+
+.. _class_Timer_set_timer_process_mode:
+
+- void  **set_timer_process_mode**  **(** :ref:`int<class_int>` mode  **)**
+
+Set the timer's processing mode (fixed or idle, use TIMER_PROCESS\_\* constants as argument).
+
+.. _class_Timer_set_wait_time:
+
+- void  **set_wait_time**  **(** :ref:`float<class_float>` time_sec  **)**
+
+Set wait time in seconds. When the time is over, it will emit the timeout signal.
 
 .. _class_Timer_start:
 
@@ -108,23 +126,5 @@ Start the timer.
 - void  **stop**  **(** **)**
 
 Stop (cancel) the timer.
-
-.. _class_Timer_get_time_left:
-
-- :ref:`float<class_float>`  **get_time_left**  **(** **)** const
-
-Return the time left for timeout in seconds if the timer is active, 0 otherwise.
-
-.. _class_Timer_set_timer_process_mode:
-
-- void  **set_timer_process_mode**  **(** :ref:`int<class_int>` mode  **)**
-
-Set the timer's processing mode (fixed or idle, use TIMER_PROCESS\_\* constants as argument).
-
-.. _class_Timer_get_timer_process_mode:
-
-- :ref:`int<class_int>`  **get_timer_process_mode**  **(** **)** const
-
-Return the timer's processing mode.
 
 
