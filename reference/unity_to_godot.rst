@@ -1,8 +1,8 @@
 .. _unity3D_to_godot:
 
-..	references : 
-..	https://wiki.unrealengine.com/Unity3D_Developer's_Guide_to_Unreal_Engine_4
-..	https://docs.unrealengine.com/latest/INT/GettingStarted/FromUnity/
+..    references : 
+..    https://wiki.unrealengine.com/Unity3D_Developer's_Guide_to_Unreal_Engine_4
+..    https://docs.unrealengine.com/latest/INT/GettingStarted/FromUnity/
 
 From Unity3D to Godot Engine
 ============================
@@ -68,29 +68,28 @@ Godot's scene system is different: it actually consists in a tree made of nodes.
 
 For example, think of a platformer level. You would compose it with multiple elements:
 
-    - Bricks
+- Bricks
 
-    - Coins
+- Coins
 
-    - The player
+- The player
 
-    - The enemies
+- The enemies
 
 
 In Unity, you would put all the GameObjects in the scene: the player, multiple instances of enemies, bricks everywhere to form the ground of the level, and multiple instances of coins all over the level. You would then add various components to each element to link them and add logic in the level: for example, you'd add a BoxCollider2D to all the elements of the scene so that they can collide. This principle is different in Godot.
 
 In Godot, you would split your whole scene into 3 separate, smaller scenes, which you would then instance in the main scene.
 
-    1. First, a scene for the Player alone.
+1. First, a scene for the Player alone.
 
 Consider the player as a reusable element in other levels. It is composed of one node in particular: an AnimatedSprite node, which contains the sprite textures to form various animations (for example, walking animation)
 
-
-    2. Second, a scene for the Enemy.
+2. Second, a scene for the Enemy.
 
 There again, an enemy is a reusable element in other levels. It is almost the same as the Player node - the only differences are the script (that manages IA, mostly) and sprite textures used by the AnimatedSprite.
 
-    3. Lastly, the Level scene.
+3. Lastly, the Level scene.
 
 It is composed of Bricks (for platforms), Coins (for the player to grab) and a certain number of instances of the previous Enemy scene. These will be different, separate enemies, whose behaviour and appearance will be the same as defined in the Enemy scene. Each instance is then considered as a node in the Level scene tree. Of course, you can set different properties for each enemy node (to change its color for example).
 
@@ -100,12 +99,11 @@ The root node can be anything, generally a "root" type such as "Node" which is t
 
 As you can see, every scene is organized as a tree. The same goes for nodes' properties: you don't *add* a collision component to a node to make it collidable like Unity does. Instead, you make this node a *child* of a new specific node that has collision properties. Godot features various collision types nodes, depending of the use (see the `Physics introduction <tutorials/2d/physics_introduction>`_).
 
-<< Question
-What are the advantages of this system? Wouldn't this system potentially increase the depth of the scene tree? Besides, Unity allows organizing GameObjects by putting them in empty GameObjects.
->> Answer
-First, this system is closer to the well-known Object-Oriented paradigm: Godot provides a number of nodes which are not clearly "Game Objects", but they provide their children with their own capabilities: this is inheritance.
+- Question: What are the advantages of this system? Wouldn't this system potentially increase the depth of the scene tree? Besides, Unity allows organizing GameObjects by putting them in empty GameObjects.
+
+- Answer: First, this system is closer to the well-known Object-Oriented paradigm: Godot provides a number of nodes which are not clearly "Game Objects", but they provide their children with their own capabilities: this is inheritance.
 Second, it allows the extraction a subtree of scene to make it a scene of its own, which answers to the second and third questions: even if a scene tree gets too deep, it can be split into smaller subtrees. This also allows a better solution for reusability, as you can include any subtree as a child of any node. Putting multiple nodes in an empty GameObject in Unity does not provide the same possibility, apart from a visual organization.
-<<
+
 
 These are the most important concepts you need to remind: "node", "parent node" and "child node".
 
@@ -146,8 +144,34 @@ Prefab -> Externalized branch
 Scripting : From C# to GDScript
 -------------------------------
 
-As you may know already, Unity provides support for 2 scripting languages for its API: C# and Javascript. 
+Design
+^^^^^^
 
-By design, you can attach one script 
+As you may know already, Unity supports 2 scripting languages for its API: C# and Javascript (called UnityScript). Both languages can be used in the same project (but not in the same file, of course). Choosing one instead of the other is a matter of personal taste, as performances seem not to be affected that much by the use of Javascript as long as the project remains small. C# benefits from its integration with Visual Studio and other specific features, such as static typing.
 
+Godot provides its own scripting language: GDScript. This language borrows its syntax to Python, but is not related to it. If you wonder about why GDScript and not Lua, C# or any other, please read `GDScript <reference/gdscript>`_ and `FAQ <reference/faq>`_ pages. GDScript is strongly attached to Godot API, but it is really easy to learn: between 1 evening for an experimented programmer and 1 week for a complete beginner.
+
+Unity allows you to attach as many scripts as you want to a GameObject. Each script adds a behaviour to the GameObject: for example, you can attach a script to a  so that the player can control it, and another that controls its specific game logic.
+
+In Godot, you can only attach one script per node. You can use either an external GDScript file, or include it directly in the node. If you need to attach more scripts to one node, then you may consider 2 solutions, depending on your scene and on what you want to achieve::
+  - either add a new node between your target node and its current parent, then add a script to this new node. 
+  - or, your can split your target node into multiple children and attach one script to each of them.
+  
+As you can see, it can be easy to turn a scene tree to a mess. This is why it is important to have a real reflection, and consider splitting a complicated scene into multiple, smaller branches.
+
+Connections : groups and signals
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can control nodes by accessing them using a script, and call functions (built-in or user-defined) on them. But there's more: you can also place them in a group and call a function on all nodes contained it this group! This is explained in `this page <tutorials/step_by_step/scripting_continued#groups>`_.
+
+But there's more! Certain nodes throw signals when certain actions happen. You can connect these signals to call a specific function when they happen. Note that you can define your own signals and send them whenever you want. This feature is documented `here <reference/gdscript.html#signals>`_.
+
+
+
+Using Godot in C++
+------------------
+
+Just for your information, Godot also allows you to develop your project directly in C++ by using its API, which is not possible with Unity at the moment. As an example, you can consider Godot Engine's editor as a "game" written in C++ using Godot API. 
+
+If you are interested in using Godot in C++, you may want to start reading the `Developing in C++ <reference/_developing.html>`_ page.
 
