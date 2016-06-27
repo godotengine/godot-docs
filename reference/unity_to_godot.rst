@@ -15,30 +15,32 @@ Differences
 +-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 |                   | Unity                                                                             | Godot                                                                                                          |
 +===================+===================================================================================+================================================================================================================+
-| License           | proprietary                                                                       | MIT License                                                                                                    |
+| License           | Proprietary, closed, free license with revenue caps and usage restrictions        | MIT License,  free and fully open souce without any restriction                                                |
 +-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| OS (editor)       | Windows, OSX, Linux (unofficial)                                                  | Windows, X11 (Linux, *BSD), Haiku, OSX                                                                         |
+| OS (editor)       | Windows, OSX, Linux (unofficial and unsupported)                                  | Windows, X11 (Linux, *BSD), Haiku, OSX                                                                         |
 +-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 | OS (export)       | | Desktop: Windows, Linux/SteamOS, OSX                                            | | Desktop: Windows, X11, OSX                                                                                   |
 |                   | | Mobile: Android, iOS, Windows Phone, Tizen,                                     | | Mobile: Android, iOS, Blackberry (deprecated)                                                                |
-|                   | | Web: WebGL                                                                      | | Web: HTML5 (via emscripten, broken)                                                                          |
+|                   | | Web: WebGL                                                                      | | Web: WebGL, HTML5 (via emscripten, broken)                                                                   |
 |                   | | Consoles: PS4, PS Vita, XBox One, XBox 360, WiiU, 3DS                           |                                                                                                                |
 |                   | | VR: Occulus Rift, SteamVR, Google Cardboard, Playstation VR, Gear VR, HoloLens  |                                                                                                                |
 |                   | | TV: AndroidTV, Samsung SMARTTV, tvOS                                            |                                                                                                                |
 +-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| Scene system      | Entity-Component System (ECS) (GameObject > Component).                           | Scene tree and nodes, allowing scenes to be nested and/or inherit other scenes                                 |
+| Scene system      | | Entity-Component System (ECS) (GameObject > Component).                         | Scene tree and nodes, allowing scenes to be nested and/or inherit other scenes                                 |
+|                   | | Prefabs                                                                         |                                                                                                                |
 +-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 | Third-party tools | Visual Studio or SharpEditor                                                      | | Android SDK for Android export                                                                               |
 |                   |                                                                                   | | External editors are possible                                                                                |
 +-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| Killer features   | | Huge community                                                                  | | Live-editing                                                                                                 |
-|                   | | Large assets store                                                              | | Signals                                                                                                      |
-|                   |                                                                                   | | Animation tool                                                                                               |
-|                   |                                                                                   | | Shader graphs                                                                                                |
-|                   |                                                                                   | | GDScript                                                                                                     |
-|                   |                                                                                   | | Integrated debugger                                                                                          |
+| Killer features   | | Huge community                                                                  | | Scene System                                                                                                 |
+|                   | | Large assets store                                                              | | Animation Pipeline                                                                                           |
+|                   |                                                                                   | | Easy to write Shaders                                                                                        |
+|                   |                                                                                   | | Debug on Device                                                                                              |
+|                   |                                                                                   |                                                                                                                |
+|                   |                                                                                   |                                                                                                                |
 +-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 
+, , , 
 
 The editor
 ----------
@@ -51,29 +53,36 @@ Godot Engine provides a rich-featured editor that allows you to build your games
 
 Note that Godot editor allows you to dock each panel at the side of the scene editor you wish.
 
-As you can see, there are some similarities between both editors: first of course, the scene which allows you to display and organize your game elements on screen. Second, the inspector which allows you to edit the parameters of the selected object. Also, the Hierarchy panel in Unity finds its correspondance with Godot's Scene tree panel, although we will see in the next section the differences between how Unity and Godot manage scenes and scene elements.
+While both editors may seem similar, there are many differences below the surface. Both let you organize the project using the filesystem, but Godot approach is simpler, with a single configuration file, minimalist text format, and no metadata. All this contributes to Godot being much friendlier to VCS systems such as Git, Subversion or Mercurial.
 
-Unity and Godot both directly use the folder architecture you define for your project. There is no real good solution, and every folder architecture will work for both engines. You can thus continue with your current way to organize your project. However, we have some advices to share a bit further, in order to match your project architecture and Godot scene system.
+Godot's Scene panel is similar to Unity's Hierarchy panel but, as each node has a specific function, the approach used by Godot is more visually descriptive. In other words, it's easier to understand what a specific scene does at a glance.
 
-To finish, the toolbar at the top of the screen is also similar between Unity and Godot. However, Godot provides some new buttons aside the classic "Play", "Pause" and "Stop" buttons. These buttons are introduced in the `Toolbar <introduction/editor#toolbar>`_ section as they a bit out of the scope of this page.
+The Inspector in Godot is more minimalist and designed to only show properties. Thanks to this, objects can export a much larger amount of useful parameters to the user, without having to hide functionality in language APIs. As a plus, Godot allows animating any of those properties visually, so changing colors, textures, enumerations or even links to resources in real-time is possible without involving code.
+
+Finally, the Toolbar at the top of the screen is similar in the sense that it allows controlling the project playback, but projects in Godot run in a separate window, as they don't execute inside the editor (but the tree and objects can still be explored in the debugger window). 
+
+This approach has the disadvantage that the running game can't be explored from different angles (though this may be supported in the future, and displaying collision gizmos in the running game is already possible), but in exchange has several advantages:
+
+- Running the project and closing it is very fast (Unity has to save, run the project, close the project and then reload the previous state).
+- Live editing is a lot more useful, because changes done to the editor take effect immediately in the game, and are not lost (nor have to be synced) when the game is closed. This allows fantastic workflows, like creating levels while you play them. 
+- The editor is more stable, because the game runs in a separate process.
+
+Finally, the top toolbar includes a menu for remote debugging. These options make it simple to deploy to a device (connected phone, tablet or browser via HTML5), and debug/live edit on it after the game was exported.
 
 The scene system
 ----------------
 
 This is the most important difference between Unity and Godot, and actually the favourite feature of most Godot users.
 
-Unity's scene system generally consist in embedding all the required assets in a scene, and link them together by setting components and scripts to them. 
+Unity's scene system consist in embedding all the required assets in a scene, and link them together by setting components and scripts to them. 
 
 Godot's scene system is different: it actually consists in a tree made of nodes. Each node serves a purpose: Sprite, Mesh, Light... Basically, this is similar to Unity scene system. However, each node can have multiple children, which make each a subscene of the main scene. This means you can compose a whole scene with different scenes, stored in different files.
 
 For example, think of a platformer level. You would compose it with multiple elements:
 
 - Bricks
-
 - Coins
-
 - The player
-
 - The enemies
 
 
@@ -97,12 +106,12 @@ Finally, the main scene would then be composed of one root node with 2 children:
 The root node can be anything, generally a "root" type such as "Node" which is the most global type, or "Node2D" (root type of all 2D-related nodes), "Spatial" (root type of all 3D-related nodes) or "Control" (root type of all GUI-related nodes).
 
 
-As you can see, every scene is organized as a tree. The same goes for nodes' properties: you don't *add* a collision component to a node to make it collidable like Unity does. Instead, you make this node a *child* of a new specific node that has collision properties. Godot features various collision types nodes, depending of the use (see the `Physics introduction <tutorials/2d/physics_introduction>`_).
+As you can see, every scene is organized as a tree. The same goes for nodes' properties: you don't *add* a collision component to a node to make it collidable like Unity does. Instead, you make this node a *child* of a new specific node that has collision properties. Godot features various collision types nodes, depending of the use (see the `Physics introduction <../tutorials/2d/physics_introduction>`_).
 
 - Question: What are the advantages of this system? Wouldn't this system potentially increase the depth of the scene tree? Besides, Unity allows organizing GameObjects by putting them in empty GameObjects.
 
-- Answer: First, this system is closer to the well-known Object-Oriented paradigm: Godot provides a number of nodes which are not clearly "Game Objects", but they provide their children with their own capabilities: this is inheritance.
-Second, it allows the extraction a subtree of scene to make it a scene of its own, which answers to the second and third questions: even if a scene tree gets too deep, it can be split into smaller subtrees. This also allows a better solution for reusability, as you can include any subtree as a child of any node. Putting multiple nodes in an empty GameObject in Unity does not provide the same possibility, apart from a visual organization.
+    - First, this system is closer to the well-known Object-Oriented paradigm: Godot provides a number of nodes which are not clearly "Game Objects", but they provide their children with their own capabilities: this is inheritance.
+    - Second, it allows the extraction a subtree of scene to make it a scene of its own, which answers to the second and third questions: even if a scene tree gets too deep, it can be split into smaller subtrees. This also allows a better solution for reusability, as you can include any subtree as a child of any node. Putting multiple nodes in an empty GameObject in Unity does not provide the same possibility, apart from a visual organization.
 
 
 These are the most important concepts you need to remind: "node", "parent node" and "child node".
@@ -125,7 +134,7 @@ Where are my prefabs?
 
 The concept of prefabs as provided by Unity is a 'template' element of the scene. It is reusable, and each instance of the prefab that exists in the scene has an existence of its own, but all of them have the same properties as defined by the prefab.
 
-Godot does not provide prefabs as such, but this functionality is here again filled thanks to its scene system: as we saw the scene system is organized as a tree. Godot allows you to save a subtree of a scene as its own scene, thus saved in its own file. This new scene can then be instanced any times you want. Any change you make to this new, separate scene will be applied to the instance. However, any change you make to the instance will not have any impact on the 'template' scene.
+Godot does not provide prefabs as such, but this functionality is here again filled thanks to its scene system: as we saw the scene system is organized as a tree. Godot allows you to save a subtree of a scene as its own scene, thus saved in its own file. This new scene can then be instanced as many times as you want. Any change you make to this new, separate scene will be applied to its instances. However, any change you make to the instance will not have any impact on the 'template' scene.
 
 .. image:: /img/save-branch-as-scene.png
 
@@ -149,22 +158,23 @@ Design
 
 As you may know already, Unity supports 2 scripting languages for its API: C# and Javascript (called UnityScript). Both languages can be used in the same project (but not in the same file, of course). Choosing one instead of the other is a matter of personal taste, as performances seem not to be affected that much by the use of Javascript as long as the project remains small. C# benefits from its integration with Visual Studio and other specific features, such as static typing.
 
-Godot provides its own scripting language: GDScript. This language borrows its syntax to Python, but is not related to it. If you wonder about why GDScript and not Lua, C# or any other, please read `GDScript <reference/gdscript>`_ and `FAQ <reference/faq>`_ pages. GDScript is strongly attached to Godot API, but it is really easy to learn: between 1 evening for an experimented programmer and 1 week for a complete beginner.
+Godot provides its own scripting language: GDScript. This language borrows its syntax to Python, but is not related to it. If you wonder about why GDScript and not Lua, C# or any other, please read `GDScript <gdscript>`_ and `FAQ <faq>`_ pages. GDScript is strongly attached to Godot API, but it is really easy to learn: between 1 evening for an experimented programmer and 1 week for a complete beginner.
 
-Unity allows you to attach as many scripts as you want to a GameObject. Each script adds a behaviour to the GameObject: for example, you can attach a script to a  so that the player can control it, and another that controls its specific game logic.
+Unity allows you to attach as many scripts as you want to a GameObject. Each script adds a behaviour to the GameObject: for example, you can attach a script so that it reacts to the player's controls, and another that controls its specific game logic.
 
-In Godot, you can only attach one script per node. You can use either an external GDScript file, or include it directly in the node. If you need to attach more scripts to one node, then you may consider 2 solutions, depending on your scene and on what you want to achieve::
-  - either add a new node between your target node and its current parent, then add a script to this new node. 
-  - or, your can split your target node into multiple children and attach one script to each of them.
+In Godot, you can only attach one script per node. You can use either an external GDScript file, or include it directly in the node. If you need to attach more scripts to one node, then you may consider 2 solutions, depending on your scene and on what you want to achieve:
+
+- either add a new node between your target node and its current parent, then add a script to this new node. 
+- or, your can split your target node into multiple children and attach one script to each of them.
   
 As you can see, it can be easy to turn a scene tree to a mess. This is why it is important to have a real reflection, and consider splitting a complicated scene into multiple, smaller branches.
 
 Connections : groups and signals
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can control nodes by accessing them using a script, and call functions (built-in or user-defined) on them. But there's more: you can also place them in a group and call a function on all nodes contained it this group! This is explained in `this page <tutorials/step_by_step/scripting_continued#groups>`_.
+You can control nodes by accessing them using a script, and call functions (built-in or user-defined) on them. But there's more: you can also place them in a group and call a function on all nodes contained it this group! This is explained in `this page <../tutorials/step_by_step/scripting_continued#groups>`_.
 
-But there's more! Certain nodes throw signals when certain actions happen. You can connect these signals to call a specific function when they happen. Note that you can define your own signals and send them whenever you want. This feature is documented `here <reference/gdscript.html#signals>`_.
+But there's more! Certain nodes throw signals when certain actions happen. You can connect these signals to call a specific function when they happen. Note that you can define your own signals and send them whenever you want. This feature is documented `here <gdscript.html#signals>`_.
 
 
 
@@ -173,5 +183,5 @@ Using Godot in C++
 
 Just for your information, Godot also allows you to develop your project directly in C++ by using its API, which is not possible with Unity at the moment. As an example, you can consider Godot Engine's editor as a "game" written in C++ using Godot API. 
 
-If you are interested in using Godot in C++, you may want to start reading the `Developing in C++ <reference/_developing.html>`_ page.
+If you are interested in using Godot in C++, you may want to start reading the `Developing in C++ <_developing.html>`_ page.
 
