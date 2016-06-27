@@ -401,5 +401,5 @@ editor will take care of it.
 If you wonder what a method does, you can still have a look at its
 implementation in Godot Engine's source code on GitHub. Also, if you
 have a doubt, feel free to ask on the
-`Forums <http://www.godotengine.org/projects/godot-engine/boards>`__
+`Q&A website <https://godotengine.org/qa/>`__
 and on IRC (freenode, #godotengine).
