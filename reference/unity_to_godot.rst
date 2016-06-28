@@ -26,7 +26,7 @@ Differences
 |                   | | VR: Occulus Rift, SteamVR, Google Cardboard, Playstation VR, Gear VR, HoloLens  |                                                                                                                |
 |                   | | TV: AndroidTV, Samsung SMARTTV, tvOS                                            |                                                                                                                |
 +-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| Scene system      | | Entity-Component System (ECS) (GameObject > Component).                         | Scene tree and nodes, allowing scenes to be nested and/or inherit other scenes                                 |
+| Scene system      | | Component/Scene (GameObject > Component)                                        | Scene tree and nodes, allowing scenes to be nested and/or inherit other scenes                                 |
 |                   | | Prefabs                                                                         |                                                                                                                |
 +-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 | Third-party tools | Visual Studio or SharpEditor                                                      | | Android SDK for Android export                                                                               |
