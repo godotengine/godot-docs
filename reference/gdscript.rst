@@ -308,6 +308,8 @@ Used to contain a floating point value (real numbers).
 
 A sequence of characters in `Unicode format <https://en.wikipedia.org/wiki/Unicode>`_. Strings can contain the
 `standard C escape sequences <https://en.wikipedia.org/wiki/Escape_sequences_in_C>`_.
+GDScript supports :ref:`format strings aka printf functionality
+<doc_gdscript_printf>`.
 
 Vector built-in types
 ~~~~~~~~~~~~~~~~~~~~~
@@ -437,7 +439,7 @@ arrays. They are therefore only recommended to use for very large data sets:
 - :ref:`ByteArray <class_ByteArray>`: An array of bytes (integers from 0 to 255).
 - :ref:`IntArray <class_IntArray>`: An array of integers.
 - :ref:`FloatArray <class_FloatArray>`: An array of floats.
-- :ref:`StringArray <class_StringArray>`: An array strings.
+- :ref:`StringArray <class_StringArray>`: An array of strings.
 - :ref:`Vector2Array <class_Vector2Array>`: An array of :ref:`Vector2 <class_Vector2>` objects.
 - :ref:`Vector3Array <class_Vector3Array>`: An array of :ref:`Vector3 <class_Vector3>` objects.
 - :ref:`ColorArray <class_ColorArray>`: An array of :ref:`Color <class_Color>` objects.
