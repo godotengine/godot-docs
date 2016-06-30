@@ -238,8 +238,8 @@ only on limited form).
 Dictionaries can map any value to any other value with complete
 disregard for the datatype used as either key or value. Contrary to
 popular belief, they are very efficient because they can be implemented
-with hash tables. They are, in fact, so efficient that languages such as
-Lua will go as far as implementing arrays as dictionaries.
+with hash tables. They are, in fact, so efficient that some languages
+will go as far as implementing arrays as dictionaries.
 
 Example of Dictionary:
 
