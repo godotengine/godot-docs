@@ -11,7 +11,7 @@ needs_sphinx = '1.3'
 
 # Sphinx extension module names and templates location
 sys.path.append(os.path.abspath('extensions'))
-extensions = ['sphinx.ext.intersphinx', 'gdscript']
+extensions = ['gdscript']
 templates_path = ['_templates']
 
 # You can specify multiple suffix as a list of string: ['.rst', '.md']
@@ -43,11 +43,6 @@ lexers['gdscript'] = GDScriptLexer()
 # Pygments (syntax highlighting) style to use
 pygments_style = 'sphinx'
 highlight_language = 'gdscript'
-
-# intersphinx configuration
-intersphinx_mapping = {
-  'english': ('http://docs.godotengine.org/en/latest/', None),
-}
 
 # -- Options for HTML output ----------------------------------------------
 
