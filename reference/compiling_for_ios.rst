@@ -44,8 +44,8 @@ It can be done in three steps, first compile 32 bit version, then compile 64 bit
 
 ::
 
-    $ scons p=iphone bin/godot.iphone.opt.32 tools=no bits=32 target=release 
-    $ scons p=iphone bin/godot.iphone.opt.64 tools=no bits=64 target=release
+    $ scons p=iphone tools=no bits=32 target=release 
+    $ scons p=iphone tools=no bits=64 target=release
     $ lipo -create bin/godot.iphone.opt.32 arm64 bin/godot.iphone.opt.64 -output bin/godot.iphone.opt.universal
 
 
