@@ -116,7 +116,7 @@ class GDScriptLexer(RegexLexer):
                 'Matrix32', 'Array', 'ByteArray', 'IntArray', 'FloatArray',
                 'StringArray', 'Vector2Array', 'Vector3Array', 'ColorArray',
                 'Plane', 'Quat', 'AABB', 'Matrix3', 'Transform', 'Color',
-                'Image', 'NodePath', 'RID', 'Object', 'InputEvent',
+                'Image', 'NodePath', 'RID', 'Object', 'InputEvent', 'Rect2'
             ), prefix=r'(?<!\.)', suffix=r'\b'), Name.Builtin.Type),
         ],
         'numbers': [
