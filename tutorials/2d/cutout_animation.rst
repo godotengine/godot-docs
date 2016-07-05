@@ -10,7 +10,7 @@ Cut-out is a technique of animating in 2D where pieces of paper (or
 similar material) are cut in special shapes and laid one over the other.
 The papers are animated and photographed, frame by frame using a stop
 motion technique (more info
-`here <http://en.wikipedia.org/wiki/Cutout_animation)>`__).
+`here <http://en.wikipedia.org/wiki/Cutout_animation>`__).
 
 With the advent of the digital age, this technique became possible using
 computers, which resulted in an increased amount of animation TV shows
