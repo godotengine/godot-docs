@@ -1,11 +1,11 @@
 Editor plugins
 ==============
 
-Coming soon™.
-
 .. toctree::
    :maxdepth: 1
    :name: toc-plugins
+
+   making_plugins
 
 .. editor_plugin
 .. editor_extension

@@ -19,60 +19,60 @@ Member Functions
 ----------------
 
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_title<class_GraphNode_set_title>`  **(** :ref:`String<class_string>` title  **)**                                                                                                                                                                                                                  |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`    | :ref:`get_title<class_GraphNode_get_title>`  **(** **)** const                                                                                                                                                                                                                                               |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_slot<class_GraphNode_set_slot>`  **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enable_left, :ref:`int<class_int>` type_left, :ref:`Color<class_color>` color_left, :ref:`bool<class_bool>` enable_right, :ref:`int<class_int>` type_right, :ref:`Color<class_color>` color_right  **)** |
+| void                           | :ref:`clear_all_slots<class_GraphNode_clear_all_slots>`  **(** **)**                                                                                                                                                                                                                                         |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`clear_slot<class_GraphNode_clear_slot>`  **(** :ref:`int<class_int>` idx  **)**                                                                                                                                                                                                                        |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`clear_all_slots<class_GraphNode_clear_all_slots>`  **(** **)**                                                                                                                                                                                                                                         |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_slot_enabled_left<class_GraphNode_is_slot_enabled_left>`  **(** :ref:`int<class_int>` idx  **)** const                                                                                                                                                                                              |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_slot_type_left<class_GraphNode_get_slot_type_left>`  **(** :ref:`int<class_int>` idx  **)** const                                                                                                                                                                                                  |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`      | :ref:`get_slot_color_left<class_GraphNode_get_slot_color_left>`  **(** :ref:`int<class_int>` idx  **)** const                                                                                                                                                                                                |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_slot_enabled_right<class_GraphNode_is_slot_enabled_right>`  **(** :ref:`int<class_int>` idx  **)** const                                                                                                                                                                                            |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_slot_type_right<class_GraphNode_get_slot_type_right>`  **(** :ref:`int<class_int>` idx  **)** const                                                                                                                                                                                                |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`      | :ref:`get_slot_color_right<class_GraphNode_get_slot_color_right>`  **(** :ref:`int<class_int>` idx  **)** const                                                                                                                                                                                              |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_offset<class_GraphNode_set_offset>`  **(** :ref:`Vector2<class_vector2>` offset  **)**                                                                                                                                                                                                             |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_offset<class_GraphNode_get_offset>`  **(** **)** const                                                                                                                                                                                                                                             |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_connection_output_count<class_GraphNode_get_connection_output_count>`  **(** **)**                                                                                                                                                                                                                 |
+| :ref:`Color<class_color>`      | :ref:`get_connection_input_color<class_GraphNode_get_connection_input_color>`  **(** :ref:`int<class_int>` idx  **)**                                                                                                                                                                                        |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_connection_input_count<class_GraphNode_get_connection_input_count>`  **(** **)**                                                                                                                                                                                                                   |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_connection_output_pos<class_GraphNode_get_connection_output_pos>`  **(** :ref:`int<class_int>` idx  **)**                                                                                                                                                                                          |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_connection_output_type<class_GraphNode_get_connection_output_type>`  **(** :ref:`int<class_int>` idx  **)**                                                                                                                                                                                        |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`      | :ref:`get_connection_output_color<class_GraphNode_get_connection_output_color>`  **(** :ref:`int<class_int>` idx  **)**                                                                                                                                                                                      |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`get_connection_input_pos<class_GraphNode_get_connection_input_pos>`  **(** :ref:`int<class_int>` idx  **)**                                                                                                                                                                                            |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_connection_input_type<class_GraphNode_get_connection_input_type>`  **(** :ref:`int<class_int>` idx  **)**                                                                                                                                                                                          |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`      | :ref:`get_connection_input_color<class_GraphNode_get_connection_input_color>`  **(** :ref:`int<class_int>` idx  **)**                                                                                                                                                                                        |
+| :ref:`Color<class_color>`      | :ref:`get_connection_output_color<class_GraphNode_get_connection_output_color>`  **(** :ref:`int<class_int>` idx  **)**                                                                                                                                                                                      |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_connection_output_count<class_GraphNode_get_connection_output_count>`  **(** **)**                                                                                                                                                                                                                 |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_connection_output_pos<class_GraphNode_get_connection_output_pos>`  **(** :ref:`int<class_int>` idx  **)**                                                                                                                                                                                          |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_connection_output_type<class_GraphNode_get_connection_output_type>`  **(** :ref:`int<class_int>` idx  **)**                                                                                                                                                                                        |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_offset<class_GraphNode_get_offset>`  **(** **)** const                                                                                                                                                                                                                                             |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`      | :ref:`get_slot_color_left<class_GraphNode_get_slot_color_left>`  **(** :ref:`int<class_int>` idx  **)** const                                                                                                                                                                                                |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`      | :ref:`get_slot_color_right<class_GraphNode_get_slot_color_right>`  **(** :ref:`int<class_int>` idx  **)** const                                                                                                                                                                                              |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_slot_type_left<class_GraphNode_get_slot_type_left>`  **(** :ref:`int<class_int>` idx  **)** const                                                                                                                                                                                                  |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_slot_type_right<class_GraphNode_get_slot_type_right>`  **(** :ref:`int<class_int>` idx  **)** const                                                                                                                                                                                                |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`    | :ref:`get_title<class_GraphNode_get_title>`  **(** **)** const                                                                                                                                                                                                                                               |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_close_button_visible<class_GraphNode_is_close_button_visible>`  **(** **)** const                                                                                                                                                                                                                   |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_slot_enabled_left<class_GraphNode_is_slot_enabled_left>`  **(** :ref:`int<class_int>` idx  **)** const                                                                                                                                                                                              |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_slot_enabled_right<class_GraphNode_is_slot_enabled_right>`  **(** :ref:`int<class_int>` idx  **)** const                                                                                                                                                                                            |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_offset<class_GraphNode_set_offset>`  **(** :ref:`Vector2<class_vector2>` offset  **)**                                                                                                                                                                                                             |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_show_close_button<class_GraphNode_set_show_close_button>`  **(** :ref:`bool<class_bool>` show  **)**                                                                                                                                                                                               |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_close_button_visible<class_GraphNode_is_close_button_visible>`  **(** **)** const                                                                                                                                                                                                                   |
+| void                           | :ref:`set_slot<class_GraphNode_set_slot>`  **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enable_left, :ref:`int<class_int>` type_left, :ref:`Color<class_color>` color_left, :ref:`bool<class_bool>` enable_right, :ref:`int<class_int>` type_right, :ref:`Color<class_color>` color_right  **)** |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_title<class_GraphNode_set_title>`  **(** :ref:`String<class_string>` title  **)**                                                                                                                                                                                                                  |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
 
--  **raise_request**  **(** **)**
 -  **close_request**  **(** **)**
 -  **dragged**  **(** :ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to  **)**
 -  **offset_changed**  **(** **)**
+-  **raise_request**  **(** **)**
 
 Description
 -----------
@@ -82,23 +82,11 @@ A GraphNode is a container defined by a title. It can have 1 or more input and o
 Member Function Description
 ---------------------------
 
-.. _class_GraphNode_set_title:
+.. _class_GraphNode_clear_all_slots:
 
-- void  **set_title**  **(** :ref:`String<class_string>` title  **)**
+- void  **clear_all_slots**  **(** **)**
 
-Set the title of the GraphNode.
-
-.. _class_GraphNode_get_title:
-
-- :ref:`String<class_string>`  **get_title**  **(** **)** const
-
-Return the title of the GraphNode.
-
-.. _class_GraphNode_set_slot:
-
-- void  **set_slot**  **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enable_left, :ref:`int<class_int>` type_left, :ref:`Color<class_color>` color_left, :ref:`bool<class_bool>` enable_right, :ref:`int<class_int>` type_right, :ref:`Color<class_color>` color_right  **)**
-
-Set the tuple of input/output slots defined by 'idx' ID. 'left' slots are input, 'right' are output. 'type' is an integer defining the type of the slot. Refer to description for the compatibility between slot types.
+Disable all input and output slots of the GraphNode.
 
 .. _class_GraphNode_clear_slot:
 
@@ -106,89 +94,17 @@ Set the tuple of input/output slots defined by 'idx' ID. 'left' slots are input,
 
 Disable input and output slot whose index is 'idx'.
 
-.. _class_GraphNode_clear_all_slots:
+.. _class_GraphNode_get_connection_input_color:
 
-- void  **clear_all_slots**  **(** **)**
+- :ref:`Color<class_color>`  **get_connection_input_color**  **(** :ref:`int<class_int>` idx  **)**
 
-Disable all input and output slots of the GraphNode.
-
-.. _class_GraphNode_is_slot_enabled_left:
-
-- :ref:`bool<class_bool>`  **is_slot_enabled_left**  **(** :ref:`int<class_int>` idx  **)** const
-
-Return true if left (input) slot 'idx' is enabled. False otherwise.
-
-.. _class_GraphNode_get_slot_type_left:
-
-- :ref:`int<class_int>`  **get_slot_type_left**  **(** :ref:`int<class_int>` idx  **)** const
-
-Return the (integer) type of left (input) 'idx' slot.
-
-.. _class_GraphNode_get_slot_color_left:
-
-- :ref:`Color<class_color>`  **get_slot_color_left**  **(** :ref:`int<class_int>` idx  **)** const
-
-Return the color set to 'idx' left (input) slot.
-
-.. _class_GraphNode_is_slot_enabled_right:
-
-- :ref:`bool<class_bool>`  **is_slot_enabled_right**  **(** :ref:`int<class_int>` idx  **)** const
-
-Return true if right (output) slot 'idx' is enabled. False otherwise.
-
-.. _class_GraphNode_get_slot_type_right:
-
-- :ref:`int<class_int>`  **get_slot_type_right**  **(** :ref:`int<class_int>` idx  **)** const
-
-Return the (integer) type of right (output) 'idx' slot.
-
-.. _class_GraphNode_get_slot_color_right:
-
-- :ref:`Color<class_color>`  **get_slot_color_right**  **(** :ref:`int<class_int>` idx  **)** const
-
-Return the color set to 'idx' right (output) slot.
-
-.. _class_GraphNode_set_offset:
-
-- void  **set_offset**  **(** :ref:`Vector2<class_vector2>` offset  **)**
-
-Set the offset of the GraphNode.
-
-.. _class_GraphNode_get_offset:
-
-- :ref:`Vector2<class_vector2>`  **get_offset**  **(** **)** const
-
-Return the offset of the GraphNode.
-
-.. _class_GraphNode_get_connection_output_count:
-
-- :ref:`int<class_int>`  **get_connection_output_count**  **(** **)**
-
-Return the number of enabled output slots (connections) of the GraphNode.
+Return the color of the input connection 'idx'.
 
 .. _class_GraphNode_get_connection_input_count:
 
 - :ref:`int<class_int>`  **get_connection_input_count**  **(** **)**
 
 Return the number of enabled input slots (connections) to the GraphNode.
-
-.. _class_GraphNode_get_connection_output_pos:
-
-- :ref:`Vector2<class_vector2>`  **get_connection_output_pos**  **(** :ref:`int<class_int>` idx  **)**
-
-Return the position of the output connection 'idx'.
-
-.. _class_GraphNode_get_connection_output_type:
-
-- :ref:`int<class_int>`  **get_connection_output_type**  **(** :ref:`int<class_int>` idx  **)**
-
-Return the type of the output connection 'idx'.
-
-.. _class_GraphNode_get_connection_output_color:
-
-- :ref:`Color<class_color>`  **get_connection_output_color**  **(** :ref:`int<class_int>` idx  **)**
-
-Return the color of the output connection 'idx'.
 
 .. _class_GraphNode_get_connection_input_pos:
 
@@ -202,11 +118,89 @@ Return the position of the input connection 'idx'.
 
 Return the type of the input connection 'idx'.
 
-.. _class_GraphNode_get_connection_input_color:
+.. _class_GraphNode_get_connection_output_color:
 
-- :ref:`Color<class_color>`  **get_connection_input_color**  **(** :ref:`int<class_int>` idx  **)**
+- :ref:`Color<class_color>`  **get_connection_output_color**  **(** :ref:`int<class_int>` idx  **)**
 
-Return the color of the input connection 'idx'.
+Return the color of the output connection 'idx'.
+
+.. _class_GraphNode_get_connection_output_count:
+
+- :ref:`int<class_int>`  **get_connection_output_count**  **(** **)**
+
+Return the number of enabled output slots (connections) of the GraphNode.
+
+.. _class_GraphNode_get_connection_output_pos:
+
+- :ref:`Vector2<class_vector2>`  **get_connection_output_pos**  **(** :ref:`int<class_int>` idx  **)**
+
+Return the position of the output connection 'idx'.
+
+.. _class_GraphNode_get_connection_output_type:
+
+- :ref:`int<class_int>`  **get_connection_output_type**  **(** :ref:`int<class_int>` idx  **)**
+
+Return the type of the output connection 'idx'.
+
+.. _class_GraphNode_get_offset:
+
+- :ref:`Vector2<class_vector2>`  **get_offset**  **(** **)** const
+
+Return the offset of the GraphNode.
+
+.. _class_GraphNode_get_slot_color_left:
+
+- :ref:`Color<class_color>`  **get_slot_color_left**  **(** :ref:`int<class_int>` idx  **)** const
+
+Return the color set to 'idx' left (input) slot.
+
+.. _class_GraphNode_get_slot_color_right:
+
+- :ref:`Color<class_color>`  **get_slot_color_right**  **(** :ref:`int<class_int>` idx  **)** const
+
+Return the color set to 'idx' right (output) slot.
+
+.. _class_GraphNode_get_slot_type_left:
+
+- :ref:`int<class_int>`  **get_slot_type_left**  **(** :ref:`int<class_int>` idx  **)** const
+
+Return the (integer) type of left (input) 'idx' slot.
+
+.. _class_GraphNode_get_slot_type_right:
+
+- :ref:`int<class_int>`  **get_slot_type_right**  **(** :ref:`int<class_int>` idx  **)** const
+
+Return the (integer) type of right (output) 'idx' slot.
+
+.. _class_GraphNode_get_title:
+
+- :ref:`String<class_string>`  **get_title**  **(** **)** const
+
+Return the title of the GraphNode.
+
+.. _class_GraphNode_is_close_button_visible:
+
+- :ref:`bool<class_bool>`  **is_close_button_visible**  **(** **)** const
+
+Returns true if the close button is shown. False otherwise.
+
+.. _class_GraphNode_is_slot_enabled_left:
+
+- :ref:`bool<class_bool>`  **is_slot_enabled_left**  **(** :ref:`int<class_int>` idx  **)** const
+
+Return true if left (input) slot 'idx' is enabled. False otherwise.
+
+.. _class_GraphNode_is_slot_enabled_right:
+
+- :ref:`bool<class_bool>`  **is_slot_enabled_right**  **(** :ref:`int<class_int>` idx  **)** const
+
+Return true if right (output) slot 'idx' is enabled. False otherwise.
+
+.. _class_GraphNode_set_offset:
+
+- void  **set_offset**  **(** :ref:`Vector2<class_vector2>` offset  **)**
+
+Set the offset of the GraphNode.
 
 .. _class_GraphNode_set_show_close_button:
 
@@ -214,10 +208,16 @@ Return the color of the input connection 'idx'.
 
 Show the close button on the GraphNode if 'show' is true (disabled by default). If enabled, a connection on the signal close_request is needed for the close button to work.
 
-.. _class_GraphNode_is_close_button_visible:
+.. _class_GraphNode_set_slot:
 
-- :ref:`bool<class_bool>`  **is_close_button_visible**  **(** **)** const
+- void  **set_slot**  **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enable_left, :ref:`int<class_int>` type_left, :ref:`Color<class_color>` color_left, :ref:`bool<class_bool>` enable_right, :ref:`int<class_int>` type_right, :ref:`Color<class_color>` color_right  **)**
 
-Returns true if the close button is shown. False otherwise.
+Set the tuple of input/output slots defined by 'idx' ID. 'left' slots are input, 'right' are output. 'type' is an integer defining the type of the slot. Refer to description for the compatibility between slot types.
+
+.. _class_GraphNode_set_title:
+
+- void  **set_title**  **(** :ref:`String<class_string>` title  **)**
+
+Set the title of the GraphNode.
 
 

@@ -19,13 +19,13 @@ Member Functions
 ----------------
 
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_sprite_frames<class_AnimatedSprite3D_set_sprite_frames>`  **(** :ref:`SpriteFrames<class_spriteframes>` sprite_frames  **)** |
+| :ref:`int<class_int>`          | :ref:`get_frame<class_AnimatedSprite3D_get_frame>`  **(** **)** const                                                                  |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Texture<class_texture>`  | :ref:`get_sprite_frames<class_AnimatedSprite3D_get_sprite_frames>`  **(** **)** const                                                  |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_frame<class_AnimatedSprite3D_set_frame>`  **(** :ref:`int<class_int>` frame  **)**                                           |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_frame<class_AnimatedSprite3D_get_frame>`  **(** **)** const                                                                  |
+| void                           | :ref:`set_sprite_frames<class_AnimatedSprite3D_set_sprite_frames>`  **(** :ref:`SpriteFrames<class_spriteframes>` sprite_frames  **)** |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -36,9 +36,9 @@ Signals
 Member Function Description
 ---------------------------
 
-.. _class_AnimatedSprite3D_set_sprite_frames:
+.. _class_AnimatedSprite3D_get_frame:
 
-- void  **set_sprite_frames**  **(** :ref:`SpriteFrames<class_spriteframes>` sprite_frames  **)**
+- :ref:`int<class_int>`  **get_frame**  **(** **)** const
 
 .. _class_AnimatedSprite3D_get_sprite_frames:
 
@@ -48,8 +48,8 @@ Member Function Description
 
 - void  **set_frame**  **(** :ref:`int<class_int>` frame  **)**
 
-.. _class_AnimatedSprite3D_get_frame:
+.. _class_AnimatedSprite3D_set_sprite_frames:
 
-- :ref:`int<class_int>`  **get_frame**  **(** **)** const
+- void  **set_sprite_frames**  **(** :ref:`SpriteFrames<class_spriteframes>` sprite_frames  **)**
 
 

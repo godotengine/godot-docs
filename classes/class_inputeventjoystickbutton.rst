@@ -33,25 +33,25 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **type**
-- :ref:`int<class_int>` **device**
 - :ref:`int<class_int>` **ID**
 - :ref:`int<class_int>` **button_index**
+- :ref:`int<class_int>` **device**
 - :ref:`bool<class_bool>` **pressed**
 - :ref:`float<class_float>` **pressure**
+- :ref:`int<class_int>` **type**
 
 Numeric Constants
 -----------------
 
-- **NONE** = **0**
+- **ACTION** = **8**
+- **JOYSTICK_MOTION** = **4**
+- **JOYSTICK_BUTTON** = **5**
 - **KEY** = **1**
 - **MOUSE_MOTION** = **2**
 - **MOUSE_BUTTON** = **3**
-- **JOYSTICK_MOTION** = **4**
-- **JOYSTICK_BUTTON** = **5**
+- **NONE** = **0**
 - **SCREEN_TOUCH** = **6**
 - **SCREEN_DRAG** = **7**
-- **ACTION** = **8**
 
 Member Function Description
 ---------------------------

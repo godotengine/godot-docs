@@ -33,17 +33,17 @@ Member Functions
 +--------------------------+---------------------------------------------------------------------------------------------------------------+
 | void                     | :ref:`_iteration<class_MainLoop__iteration>`  **(** :ref:`float<class_float>` delta  **)** virtual            |
 +--------------------------+---------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`finish<class_MainLoop_finish>`  **(** **)**                                                             |
++--------------------------+---------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`idle<class_MainLoop_idle>`  **(** :ref:`float<class_float>` delta  **)**                                |
++--------------------------+---------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`init<class_MainLoop_init>`  **(** **)**                                                                 |
++--------------------------+---------------------------------------------------------------------------------------------------------------+
 | void                     | :ref:`input_event<class_MainLoop_input_event>`  **(** :ref:`InputEvent<class_inputevent>` ev  **)**           |
 +--------------------------+---------------------------------------------------------------------------------------------------------------+
 | void                     | :ref:`input_text<class_MainLoop_input_text>`  **(** :ref:`String<class_string>` text  **)**                   |
 +--------------------------+---------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`init<class_MainLoop_init>`  **(** **)**                                                                 |
-+--------------------------+---------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`  | :ref:`iteration<class_MainLoop_iteration>`  **(** :ref:`float<class_float>` delta  **)**                      |
-+--------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`idle<class_MainLoop_idle>`  **(** :ref:`float<class_float>` delta  **)**                                |
-+--------------------------+---------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`finish<class_MainLoop_finish>`  **(** **)**                                                             |
 +--------------------------+---------------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
@@ -89,6 +89,18 @@ Member Function Description
 
 - void  **_iteration**  **(** :ref:`float<class_float>` delta  **)** virtual
 
+.. _class_MainLoop_finish:
+
+- void  **finish**  **(** **)**
+
+.. _class_MainLoop_idle:
+
+- :ref:`bool<class_bool>`  **idle**  **(** :ref:`float<class_float>` delta  **)**
+
+.. _class_MainLoop_init:
+
+- void  **init**  **(** **)**
+
 .. _class_MainLoop_input_event:
 
 - void  **input_event**  **(** :ref:`InputEvent<class_inputevent>` ev  **)**
@@ -97,20 +109,8 @@ Member Function Description
 
 - void  **input_text**  **(** :ref:`String<class_string>` text  **)**
 
-.. _class_MainLoop_init:
-
-- void  **init**  **(** **)**
-
 .. _class_MainLoop_iteration:
 
 - :ref:`bool<class_bool>`  **iteration**  **(** :ref:`float<class_float>` delta  **)**
-
-.. _class_MainLoop_idle:
-
-- :ref:`bool<class_bool>`  **idle**  **(** :ref:`float<class_float>` delta  **)**
-
-.. _class_MainLoop_finish:
-
-- void  **finish**  **(** **)**
 
 

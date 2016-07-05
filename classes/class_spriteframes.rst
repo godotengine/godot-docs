@@ -21,15 +21,15 @@ Member Functions
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`add_frame<class_SpriteFrames_add_frame>`  **(** :ref:`Object<class_object>` frame, :ref:`int<class_int>` atpos=-1  **)** |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_frame_count<class_SpriteFrames_get_frame_count>`  **(** **)** const                                                  |
+| void                         | :ref:`clear<class_SpriteFrames_clear>`  **(** **)**                                                                            |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_object>`  | :ref:`get_frame<class_SpriteFrames_get_frame>`  **(** :ref:`int<class_int>` idx  **)** const                                   |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_frame<class_SpriteFrames_set_frame>`  **(** :ref:`int<class_int>` idx, :ref:`Object<class_object>` txt  **)**        |
+| :ref:`int<class_int>`        | :ref:`get_frame_count<class_SpriteFrames_get_frame_count>`  **(** **)** const                                                  |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`remove_frame<class_SpriteFrames_remove_frame>`  **(** :ref:`int<class_int>` idx  **)**                                   |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`clear<class_SpriteFrames_clear>`  **(** **)**                                                                            |
+| void                         | :ref:`set_frame<class_SpriteFrames_set_frame>`  **(** :ref:`int<class_int>` idx, :ref:`Object<class_object>` txt  **)**        |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -46,11 +46,11 @@ Member Function Description
 
 Add a frame (texture).
 
-.. _class_SpriteFrames_get_frame_count:
+.. _class_SpriteFrames_clear:
 
-- :ref:`int<class_int>`  **get_frame_count**  **(** **)** const
+- void  **clear**  **(** **)**
 
-Return the amount of frames.
+Clear the frames.
 
 .. _class_SpriteFrames_get_frame:
 
@@ -58,9 +58,11 @@ Return the amount of frames.
 
 Return a texture (frame).
 
-.. _class_SpriteFrames_set_frame:
+.. _class_SpriteFrames_get_frame_count:
 
-- void  **set_frame**  **(** :ref:`int<class_int>` idx, :ref:`Object<class_object>` txt  **)**
+- :ref:`int<class_int>`  **get_frame_count**  **(** **)** const
+
+Return the amount of frames.
 
 .. _class_SpriteFrames_remove_frame:
 
@@ -68,10 +70,8 @@ Return a texture (frame).
 
 Remove a frame
 
-.. _class_SpriteFrames_clear:
+.. _class_SpriteFrames_set_frame:
 
-- void  **clear**  **(** **)**
-
-Clear the frames.
+- void  **set_frame**  **(** :ref:`int<class_int>` idx, :ref:`Object<class_object>` txt  **)**
 
 

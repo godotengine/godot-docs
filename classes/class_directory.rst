@@ -19,39 +19,39 @@ Member Functions
 ----------------
 
 +------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| Error                        | :ref:`open<class_Directory_open>`  **(** :ref:`String<class_string>` path  **)**                                     |
+| Error                        | :ref:`change_dir<class_Directory_change_dir>`  **(** :ref:`String<class_string>` todir  **)**                        |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`list_dir_begin<class_Directory_list_dir_begin>`  **(** **)**                                                   |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_next<class_Directory_get_next>`  **(** **)**                                                               |
+| Error                        | :ref:`copy<class_Directory_copy>`  **(** :ref:`String<class_string>` from, :ref:`String<class_string>` to  **)**     |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`      | :ref:`current_is_dir<class_Directory_current_is_dir>`  **(** **)** const                                             |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`list_dir_end<class_Directory_list_dir_end>`  **(** **)**                                                       |
+| :ref:`bool<class_bool>`      | :ref:`dir_exists<class_Directory_dir_exists>`  **(** :ref:`String<class_string>` path  **)**                         |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_drive_count<class_Directory_get_drive_count>`  **(** **)**                                                 |
+| :ref:`bool<class_bool>`      | :ref:`file_exists<class_Directory_file_exists>`  **(** :ref:`String<class_string>` path  **)**                       |
++------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_current_dir<class_Directory_get_current_dir>`  **(** **)**                                                 |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`  | :ref:`get_drive<class_Directory_get_drive>`  **(** :ref:`int<class_int>` idx  **)**                                  |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| Error                        | :ref:`change_dir<class_Directory_change_dir>`  **(** :ref:`String<class_string>` todir  **)**                        |
+| :ref:`int<class_int>`        | :ref:`get_drive_count<class_Directory_get_drive_count>`  **(** **)**                                                 |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_current_dir<class_Directory_get_current_dir>`  **(** **)**                                                 |
+| :ref:`String<class_string>`  | :ref:`get_next<class_Directory_get_next>`  **(** **)**                                                               |
++------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`get_space_left<class_Directory_get_space_left>`  **(** **)**                                                   |
++------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`list_dir_begin<class_Directory_list_dir_begin>`  **(** **)**                                                   |
++------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`list_dir_end<class_Directory_list_dir_end>`  **(** **)**                                                       |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------+
 | Error                        | :ref:`make_dir<class_Directory_make_dir>`  **(** :ref:`String<class_string>` path  **)**                             |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------+
 | Error                        | :ref:`make_dir_recursive<class_Directory_make_dir_recursive>`  **(** :ref:`String<class_string>` path  **)**         |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`file_exists<class_Directory_file_exists>`  **(** :ref:`String<class_string>` path  **)**                       |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`dir_exists<class_Directory_dir_exists>`  **(** :ref:`String<class_string>` path  **)**                         |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_space_left<class_Directory_get_space_left>`  **(** **)**                                                   |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| Error                        | :ref:`copy<class_Directory_copy>`  **(** :ref:`String<class_string>` from, :ref:`String<class_string>` to  **)**     |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| Error                        | :ref:`rename<class_Directory_rename>`  **(** :ref:`String<class_string>` from, :ref:`String<class_string>` to  **)** |
+| Error                        | :ref:`open<class_Directory_open>`  **(** :ref:`String<class_string>` path  **)**                                     |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------+
 | Error                        | :ref:`remove<class_Directory_remove>`  **(** :ref:`String<class_string>` path  **)**                                 |
++------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| Error                        | :ref:`rename<class_Directory_rename>`  **(** :ref:`String<class_string>` from, :ref:`String<class_string>` to  **)** |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -80,13 +80,69 @@ Here is an example on how to iterate through the files of a directory:
 Member Function Description
 ---------------------------
 
-.. _class_Directory_open:
+.. _class_Directory_change_dir:
 
-- Error  **open**  **(** :ref:`String<class_string>` path  **)**
+- Error  **change_dir**  **(** :ref:`String<class_string>` todir  **)**
 
-Open an existing directory of the filesystem. The *path* argument can be within the project tree (``res://folder``), the user directory (``user://folder``) or an absolute path of the user filesystem (e.g. ``/tmp/folder`` or ``C:\tmp\folder``).
+Change the currently opened directory to the one passed as an argument. The argument can be relative to the current directory (e.g. ``newdir`` or ``../newdir``), or an absolute path (e.g. ``/tmp/newdir`` or ``res://somedir/newdir``).
 
 The method returns one of the error code constants defined in :ref:`@Global Scope<class_@global scope>` (OK or ERR\_\*).
+
+.. _class_Directory_copy:
+
+- Error  **copy**  **(** :ref:`String<class_string>` from, :ref:`String<class_string>` to  **)**
+
+Copy the *from* file to the *to* destination. Both arguments should be paths to files, either relative or absolute. If the destination file exists and is not access-protected, it will be overwritten.
+
+Returns one of the error code constants defined in :ref:`@Global Scope<class_@global scope>` (OK, FAILED or ERR\_\*).
+
+.. _class_Directory_current_is_dir:
+
+- :ref:`bool<class_bool>`  **current_is_dir**  **(** **)** const
+
+Return whether the current item processed with the last :ref:`get_next<class_Directory_get_next>` call is a directory (``.`` and ``..`` are considered directories).
+
+.. _class_Directory_dir_exists:
+
+- :ref:`bool<class_bool>`  **dir_exists**  **(** :ref:`String<class_string>` path  **)**
+
+Return whether the target directory exists. The argument can be relative to the current directory, or an absolute path.
+
+.. _class_Directory_file_exists:
+
+- :ref:`bool<class_bool>`  **file_exists**  **(** :ref:`String<class_string>` path  **)**
+
+Return whether the target file exists. The argument can be relative to the current directory, or an absolute path.
+
+.. _class_Directory_get_current_dir:
+
+- :ref:`String<class_string>`  **get_current_dir**  **(** **)**
+
+Return the absolute path to the currently opened directory (e.g. ``res://folder`` or ``C:\tmp\folder``).
+
+.. _class_Directory_get_drive:
+
+- :ref:`String<class_string>`  **get_drive**  **(** :ref:`int<class_int>` idx  **)**
+
+On Windows, return the name of the drive (partition) passed as an argument (e.g. ``C:``). On other platforms, or if the requested drive does not existed, the method returns an empty String.
+
+.. _class_Directory_get_drive_count:
+
+- :ref:`int<class_int>`  **get_drive_count**  **(** **)**
+
+On Windows, return the number of drives (partitions) mounted on the current filesystem. On other platforms, the method returns 0.
+
+.. _class_Directory_get_next:
+
+- :ref:`String<class_string>`  **get_next**  **(** **)**
+
+Return the next element (file or directory) in the current directory (including ``.`` and ``..``). The name of the file or directory is returned (and not its full path). Once the stream has been fully processed, the method returns an empty String and closes the stream automatically (i.e. :ref:`list_dir_end<class_Directory_list_dir_end>` would not be mandatory in such a case).
+
+.. _class_Directory_get_space_left:
+
+- :ref:`int<class_int>`  **get_space_left**  **(** **)**
+
+On Unix desktop systems, return the available space on the current directory's disk. On other platforms, this information is not available and the method returns 0 or -1.
 
 .. _class_Directory_list_dir_begin:
 
@@ -96,49 +152,11 @@ Initialise the stream used to list all files and directories using the :ref:`get
 
 Return false if the stream could not be initialised.
 
-.. _class_Directory_get_next:
-
-- :ref:`String<class_string>`  **get_next**  **(** **)**
-
-Return the next element (file or directory) in the current directory (including ``.`` and ``..``). The name of the file or directory is returned (and not its full path). Once the stream has been fully processed, the method returns an empty String and closes the stream automatically (i.e. :ref:`list_dir_end<class_Directory_list_dir_end>` would not be mandatory in such a case).
-
-.. _class_Directory_current_is_dir:
-
-- :ref:`bool<class_bool>`  **current_is_dir**  **(** **)** const
-
-Return whether the current item processed with the last :ref:`get_next<class_Directory_get_next>` call is a directory (``.`` and ``..`` are considered directories).
-
 .. _class_Directory_list_dir_end:
 
 - void  **list_dir_end**  **(** **)**
 
 Close the current stream opened with :ref:`list_dir_begin<class_Directory_list_dir_begin>` (whether it has been fully processed with :ref:`get_next<class_Directory_get_next>` or not does not matter).
-
-.. _class_Directory_get_drive_count:
-
-- :ref:`int<class_int>`  **get_drive_count**  **(** **)**
-
-On Windows, return the number of drives (partitions) mounted on the current filesystem. On other platforms, the method returns 0.
-
-.. _class_Directory_get_drive:
-
-- :ref:`String<class_string>`  **get_drive**  **(** :ref:`int<class_int>` idx  **)**
-
-On Windows, return the name of the drive (partition) passed as an argument (e.g. ``C:``). On other platforms, or if the requested drive does not existed, the method returns an empty String.
-
-.. _class_Directory_change_dir:
-
-- Error  **change_dir**  **(** :ref:`String<class_string>` todir  **)**
-
-Change the currently opened directory to the one passed as an argument. The argument can be relative to the current directory (e.g. ``newdir`` or ``../newdir``), or an absolute path (e.g. ``/tmp/newdir`` or ``res://somedir/newdir``).
-
-The method returns one of the error code constants defined in :ref:`@Global Scope<class_@global scope>` (OK or ERR\_\*).
-
-.. _class_Directory_get_current_dir:
-
-- :ref:`String<class_string>`  **get_current_dir**  **(** **)**
-
-Return the absolute path to the currently opened directory (e.g. ``res://folder`` or ``C:\tmp\folder``).
 
 .. _class_Directory_make_dir:
 
@@ -156,45 +174,27 @@ Create a target directory and all necessary intermediate directories in its path
 
 Returns one of the error code constants defined in :ref:`@Global Scope<class_@global scope>` (OK, FAILED or ERR\_\*).
 
-.. _class_Directory_file_exists:
+.. _class_Directory_open:
 
-- :ref:`bool<class_bool>`  **file_exists**  **(** :ref:`String<class_string>` path  **)**
+- Error  **open**  **(** :ref:`String<class_string>` path  **)**
 
-Return whether the target file exists. The argument can be relative to the current directory, or an absolute path.
+Open an existing directory of the filesystem. The *path* argument can be within the project tree (``res://folder``), the user directory (``user://folder``) or an absolute path of the user filesystem (e.g. ``/tmp/folder`` or ``C:\tmp\folder``).
 
-.. _class_Directory_dir_exists:
-
-- :ref:`bool<class_bool>`  **dir_exists**  **(** :ref:`String<class_string>` path  **)**
-
-Return whether the target directory exists. The argument can be relative to the current directory, or an absolute path.
-
-.. _class_Directory_get_space_left:
-
-- :ref:`int<class_int>`  **get_space_left**  **(** **)**
-
-On Unix desktop systems, return the available space on the current directory's disk. On other platforms, this information is not available and the method returns 0 or -1.
-
-.. _class_Directory_copy:
-
-- Error  **copy**  **(** :ref:`String<class_string>` from, :ref:`String<class_string>` to  **)**
-
-Copy the *from* file to the *to* destination. Both arguments should be paths to files, either relative or absolute. If the destination file exists and is not access-protected, it will be overwritten.
-
-Returns one of the error code constants defined in :ref:`@Global Scope<class_@global scope>` (OK, FAILED or ERR\_\*).
-
-.. _class_Directory_rename:
-
-- Error  **rename**  **(** :ref:`String<class_string>` from, :ref:`String<class_string>` to  **)**
-
-Rename (move) the *from* file to the *to* destination. Both arguments should be paths to files, either relative or absolute. If the destination file exists and is not access-protected, it will be overwritten.
-
-Returns one of the error code constants defined in :ref:`@Global Scope<class_@global scope>` (OK or FAILED).
+The method returns one of the error code constants defined in :ref:`@Global Scope<class_@global scope>` (OK or ERR\_\*).
 
 .. _class_Directory_remove:
 
 - Error  **remove**  **(** :ref:`String<class_string>` path  **)**
 
 Delete the target file or an empty directory. The argument can be relative to the current directory, or an absolute path. If the target directory is not empty, the operation will fail.
+
+Returns one of the error code constants defined in :ref:`@Global Scope<class_@global scope>` (OK or FAILED).
+
+.. _class_Directory_rename:
+
+- Error  **rename**  **(** :ref:`String<class_string>` from, :ref:`String<class_string>` to  **)**
+
+Rename (move) the *from* file to the *to* destination. Both arguments should be paths to files, either relative or absolute. If the destination file exists and is not access-protected, it will be overwritten.
 
 Returns one of the error code constants defined in :ref:`@Global Scope<class_@global scope>` (OK or FAILED).
 

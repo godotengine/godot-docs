@@ -216,7 +216,7 @@ Built-in variables
 Depending on the shader type, several built-in variables are available,
 listed as follows:
 
-Material - VertexShader
+Material (3D) - VertexShader
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 +------------------------------------+-------------------------------------------+
@@ -265,7 +265,7 @@ Material - VertexShader
 | const float *TIME*                 | Time (in seconds)                         |
 +------------------------------------+-------------------------------------------+
 
-Material - FragmentShader
+Material (3D) - FragmentShader
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------+----------------------------------------------------------------------------------+
@@ -316,7 +316,7 @@ Material - FragmentShader
 | out mat4 *INV\_CAMERA\_MATRIX*   | Inverse camera matrix, can be used to obtain world coords (see example below).   |
 +----------------------------------+----------------------------------------------------------------------------------+
 
-Material - LightShader
+Material (3D) - LightShader
 ~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------------------------+-------------------------------+

@@ -21,23 +21,23 @@ Member Functions
 ----------------
 
 +------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_path<class_Resource_set_path>`  **(** :ref:`String<class_string>` path  **)**                           |
+| :ref:`Object<class_object>`  | :ref:`duplicate<class_Resource_duplicate>`  **(** :ref:`bool<class_bool>` subresources=false  **)**               |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`take_over_path<class_Resource_take_over_path>`  **(** :ref:`String<class_string>` path  **)**               |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_path<class_Resource_get_path>`  **(** **)** const                                                       |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_name<class_Resource_set_name>`  **(** :ref:`String<class_string>` name  **)**                           |
+| :ref:`Object<class_object>`  | :ref:`get_import_metadata<class_Resource_get_import_metadata>`  **(** **)** const                                 |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`  | :ref:`get_name<class_Resource_get_name>`  **(** **)** const                                                       |
++------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_path<class_Resource_get_path>`  **(** **)** const                                                       |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_rid>`        | :ref:`get_rid<class_Resource_get_rid>`  **(** **)** const                                                         |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`set_import_metadata<class_Resource_set_import_metadata>`  **(** :ref:`Object<class_object>` metadata  **)** |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`  | :ref:`get_import_metadata<class_Resource_get_import_metadata>`  **(** **)** const                                 |
+| void                         | :ref:`set_name<class_Resource_set_name>`  **(** :ref:`String<class_string>` name  **)**                           |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`  | :ref:`duplicate<class_Resource_duplicate>`  **(** :ref:`bool<class_bool>` subresources=false  **)**               |
+| void                         | :ref:`set_path<class_Resource_set_path>`  **(** :ref:`String<class_string>` path  **)**                           |
++------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`take_over_path<class_Resource_take_over_path>`  **(** :ref:`String<class_string>` path  **)**               |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -53,35 +53,25 @@ Resource is the base class for all resource types. Resources are primarily data 
 Member Function Description
 ---------------------------
 
-.. _class_Resource_set_path:
+.. _class_Resource_duplicate:
 
-- void  **set_path**  **(** :ref:`String<class_string>` path  **)**
+- :ref:`Object<class_object>`  **duplicate**  **(** :ref:`bool<class_bool>` subresources=false  **)**
 
-Set the path of the resource. This is useful mainly for editors when saving/loading, and shouldn't be changed by anything else. Fails if another :ref:`Resource<class_resource>` already has path "path".
+.. _class_Resource_get_import_metadata:
 
-.. _class_Resource_take_over_path:
-
-- void  **take_over_path**  **(** :ref:`String<class_string>` path  **)**
-
-Set the path of the resource. Differs from set_path(), if another :ref:`Resource<class_resource>` exists with "path" it over-takes it, instead of failing.
-
-.. _class_Resource_get_path:
-
-- :ref:`String<class_string>`  **get_path**  **(** **)** const
-
-Return the path of the resource. This is useful mainly for editors when saving/loading, and shouldn't be changed by anything else.
-
-.. _class_Resource_set_name:
-
-- void  **set_name**  **(** :ref:`String<class_string>` name  **)**
-
-Set the name of the resources, any name is valid (it doesn't have to be unique). Name is for descriptive purposes only.
+- :ref:`Object<class_object>`  **get_import_metadata**  **(** **)** const
 
 .. _class_Resource_get_name:
 
 - :ref:`String<class_string>`  **get_name**  **(** **)** const
 
 Return the name of the resources, any name is valid (it doesn't have to be unique). Name is for descriptive purposes only.
+
+.. _class_Resource_get_path:
+
+- :ref:`String<class_string>`  **get_path**  **(** **)** const
+
+Return the path of the resource. This is useful mainly for editors when saving/loading, and shouldn't be changed by anything else.
 
 .. _class_Resource_get_rid:
 
@@ -93,12 +83,22 @@ Return the RID of the resource (or an empty RID). Many resources (such as :ref:`
 
 - void  **set_import_metadata**  **(** :ref:`Object<class_object>` metadata  **)**
 
-.. _class_Resource_get_import_metadata:
+.. _class_Resource_set_name:
 
-- :ref:`Object<class_object>`  **get_import_metadata**  **(** **)** const
+- void  **set_name**  **(** :ref:`String<class_string>` name  **)**
 
-.. _class_Resource_duplicate:
+Set the name of the resources, any name is valid (it doesn't have to be unique). Name is for descriptive purposes only.
 
-- :ref:`Object<class_object>`  **duplicate**  **(** :ref:`bool<class_bool>` subresources=false  **)**
+.. _class_Resource_set_path:
+
+- void  **set_path**  **(** :ref:`String<class_string>` path  **)**
+
+Set the path of the resource. This is useful mainly for editors when saving/loading, and shouldn't be changed by anything else. Fails if another :ref:`Resource<class_resource>` already has path "path".
+
+.. _class_Resource_take_over_path:
+
+- void  **take_over_path**  **(** :ref:`String<class_string>` path  **)**
+
+Set the path of the resource. Differs from set_path(), if another :ref:`Resource<class_resource>` exists with "path" it over-takes it, instead of failing.
 
 

@@ -17,6 +17,12 @@ Member Functions
 ----------------
 
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Plane<class_plane>`      | :ref:`Plane<class_Plane_Plane>`  **(** :ref:`float<class_float>` a, :ref:`float<class_float>` b, :ref:`float<class_float>` c, :ref:`float<class_float>` d  **)** |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Plane<class_plane>`      | :ref:`Plane<class_Plane_Plane>`  **(** :ref:`Vector3<class_vector3>` v1, :ref:`Vector3<class_vector3>` v2, :ref:`Vector3<class_vector3>` v3  **)**               |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Plane<class_plane>`      | :ref:`Plane<class_Plane_Plane>`  **(** :ref:`Vector3<class_vector3>` normal, :ref:`float<class_float>` d  **)**                                                  |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`  | :ref:`center<class_Plane_center>`  **(** **)**                                                                                                                   |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`distance_to<class_Plane_distance_to>`  **(** :ref:`Vector3<class_vector3>` point  **)**                                                                    |
@@ -37,21 +43,15 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`  | :ref:`project<class_Plane_project>`  **(** :ref:`Vector3<class_vector3>` point  **)**                                                                            |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Plane<class_plane>`      | :ref:`Plane<class_Plane_Plane>`  **(** :ref:`float<class_float>` a, :ref:`float<class_float>` b, :ref:`float<class_float>` c, :ref:`float<class_float>` d  **)** |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Plane<class_plane>`      | :ref:`Plane<class_Plane_Plane>`  **(** :ref:`Vector3<class_vector3>` v1, :ref:`Vector3<class_vector3>` v2, :ref:`Vector3<class_vector3>` v3  **)**               |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Plane<class_plane>`      | :ref:`Plane<class_Plane_Plane>`  **(** :ref:`Vector3<class_vector3>` normal, :ref:`float<class_float>` d  **)**                                                  |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
 
+- :ref:`float<class_float>` **d**
 - :ref:`Vector3<class_vector3>` **normal**
 - :ref:`float<class_float>` **x**
 - :ref:`float<class_float>` **y**
 - :ref:`float<class_float>` **z**
-- :ref:`float<class_float>` **d**
 
 Description
 -----------
@@ -60,6 +60,24 @@ Plane represents a normalized plane equation. Basically, "normal" is the normal 
 
 Member Function Description
 ---------------------------
+
+.. _class_Plane_Plane:
+
+- :ref:`Plane<class_plane>`  **Plane**  **(** :ref:`float<class_float>` a, :ref:`float<class_float>` b, :ref:`float<class_float>` c, :ref:`float<class_float>` d  **)**
+
+Creates a plane from the three parameters "a", "b", "c" and "d".
+
+.. _class_Plane_Plane:
+
+- :ref:`Plane<class_plane>`  **Plane**  **(** :ref:`Vector3<class_vector3>` v1, :ref:`Vector3<class_vector3>` v2, :ref:`Vector3<class_vector3>` v3  **)**
+
+Creates a plane from three points.
+
+.. _class_Plane_Plane:
+
+- :ref:`Plane<class_plane>`  **Plane**  **(** :ref:`Vector3<class_vector3>` normal, :ref:`float<class_float>` d  **)**
+
+Creates a plane from the normal and the plane's distance to the origin.
 
 .. _class_Plane_center:
 
@@ -120,23 +138,5 @@ Returns a copy of the plane, normalized.
 - :ref:`Vector3<class_vector3>`  **project**  **(** :ref:`Vector3<class_vector3>` point  **)**
 
 Returns the orthogonal projection of point "p" into a point in the plane.
-
-.. _class_Plane_Plane:
-
-- :ref:`Plane<class_plane>`  **Plane**  **(** :ref:`float<class_float>` a, :ref:`float<class_float>` b, :ref:`float<class_float>` c, :ref:`float<class_float>` d  **)**
-
-Creates a plane from the three parameters "a", "b", "c" and "d".
-
-.. _class_Plane_Plane:
-
-- :ref:`Plane<class_plane>`  **Plane**  **(** :ref:`Vector3<class_vector3>` v1, :ref:`Vector3<class_vector3>` v2, :ref:`Vector3<class_vector3>` v3  **)**
-
-Creates a plane from three points.
-
-.. _class_Plane_Plane:
-
-- :ref:`Plane<class_plane>`  **Plane**  **(** :ref:`Vector3<class_vector3>` normal, :ref:`float<class_float>` d  **)**
-
-Creates a plane from the normal and the plane's distance to the origin.
 
 

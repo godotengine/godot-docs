@@ -19,19 +19,19 @@ Member Functions
 ----------------
 
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_text<class_TextEdit_set_text>`  **(** :ref:`String<class_string>` text  **)**                                                                                                                                     |
+| void                             | :ref:`add_color_region<class_TextEdit_add_color_region>`  **(** :ref:`String<class_string>` begin_key, :ref:`String<class_string>` end_key, :ref:`Color<class_color>` color, :ref:`bool<class_bool>` line_only=false  **)** |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`insert_text_at_cursor<class_TextEdit_insert_text_at_cursor>`  **(** :ref:`String<class_string>` text  **)**                                                                                                           |
+| void                             | :ref:`add_keyword_color<class_TextEdit_add_keyword_color>`  **(** :ref:`String<class_string>` keyword, :ref:`Color<class_color>` color  **)**                                                                               |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_line_count<class_TextEdit_get_line_count>`  **(** **)** const                                                                                                                                                     |
+| void                             | :ref:`clear_colors<class_TextEdit_clear_colors>`  **(** **)**                                                                                                                                                               |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`get_text<class_TextEdit_get_text>`  **(** **)**                                                                                                                                                                       |
+| void                             | :ref:`clear_undo_history<class_TextEdit_clear_undo_history>`  **(** **)**                                                                                                                                                   |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`get_line<class_TextEdit_get_line>`  **(** :ref:`int<class_int>` line  **)** const                                                                                                                                     |
+| void                             | :ref:`copy<class_TextEdit_copy>`  **(** **)**                                                                                                                                                                               |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`cursor_set_column<class_TextEdit_cursor_set_column>`  **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` adjust_viewport=false  **)**                                                                        |
+| :ref:`bool<class_bool>`          | :ref:`cursor_get_blink_enabled<class_TextEdit_cursor_get_blink_enabled>`  **(** **)** const                                                                                                                                 |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`cursor_set_line<class_TextEdit_cursor_set_line>`  **(** :ref:`int<class_int>` line, :ref:`bool<class_bool>` adjust_viewport=false  **)**                                                                              |
+| :ref:`float<class_float>`        | :ref:`cursor_get_blink_speed<class_TextEdit_cursor_get_blink_speed>`  **(** **)** const                                                                                                                                     |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`            | :ref:`cursor_get_column<class_TextEdit_cursor_get_column>`  **(** **)** const                                                                                                                                               |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -39,71 +39,71 @@ Member Functions
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`cursor_set_blink_enabled<class_TextEdit_cursor_set_blink_enabled>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                                       |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`          | :ref:`cursor_get_blink_enabled<class_TextEdit_cursor_get_blink_enabled>`  **(** **)** const                                                                                                                                 |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`cursor_set_blink_speed<class_TextEdit_cursor_set_blink_speed>`  **(** :ref:`float<class_float>` blink_speed  **)**                                                                                                    |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`        | :ref:`cursor_get_blink_speed<class_TextEdit_cursor_get_blink_speed>`  **(** **)** const                                                                                                                                     |
+| void                             | :ref:`cursor_set_column<class_TextEdit_cursor_set_column>`  **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` adjust_viewport=false  **)**                                                                        |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_readonly<class_TextEdit_set_readonly>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                                                               |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_wrap<class_TextEdit_set_wrap>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                                                                       |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_max_chars<class_TextEdit_set_max_chars>`  **(** :ref:`int<class_int>` amount  **)**                                                                                                                               |
+| void                             | :ref:`cursor_set_line<class_TextEdit_cursor_set_line>`  **(** :ref:`int<class_int>` line, :ref:`bool<class_bool>` adjust_viewport=false  **)**                                                                              |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`cut<class_TextEdit_cut>`  **(** **)**                                                                                                                                                                                 |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`copy<class_TextEdit_copy>`  **(** **)**                                                                                                                                                                               |
+| :ref:`String<class_string>`      | :ref:`get_line<class_TextEdit_get_line>`  **(** :ref:`int<class_int>` line  **)** const                                                                                                                                     |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`paste<class_TextEdit_paste>`  **(** **)**                                                                                                                                                                             |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`select_all<class_TextEdit_select_all>`  **(** **)**                                                                                                                                                                   |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`select<class_TextEdit_select>`  **(** :ref:`int<class_int>` from_line, :ref:`int<class_int>` from_column, :ref:`int<class_int>` to_line, :ref:`int<class_int>` to_column  **)**                                       |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`          | :ref:`is_selection_active<class_TextEdit_is_selection_active>`  **(** **)** const                                                                                                                                           |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_selection_from_line<class_TextEdit_get_selection_from_line>`  **(** **)** const                                                                                                                                   |
+| :ref:`int<class_int>`            | :ref:`get_line_count<class_TextEdit_get_line_count>`  **(** **)** const                                                                                                                                                     |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`            | :ref:`get_selection_from_column<class_TextEdit_get_selection_from_column>`  **(** **)** const                                                                                                                               |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_selection_to_line<class_TextEdit_get_selection_to_line>`  **(** **)** const                                                                                                                                       |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_selection_to_column<class_TextEdit_get_selection_to_column>`  **(** **)** const                                                                                                                                   |
+| :ref:`int<class_int>`            | :ref:`get_selection_from_line<class_TextEdit_get_selection_from_line>`  **(** **)** const                                                                                                                                   |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`      | :ref:`get_selection_text<class_TextEdit_get_selection_text>`  **(** **)** const                                                                                                                                             |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_selection_to_column<class_TextEdit_get_selection_to_column>`  **(** **)** const                                                                                                                                   |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_selection_to_line<class_TextEdit_get_selection_to_line>`  **(** **)** const                                                                                                                                       |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`      | :ref:`get_text<class_TextEdit_get_text>`  **(** **)**                                                                                                                                                                       |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`      | :ref:`get_word_under_cursor<class_TextEdit_get_word_under_cursor>`  **(** **)** const                                                                                                                                       |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`IntArray<class_intarray>`  | :ref:`search<class_TextEdit_search>`  **(** :ref:`String<class_string>` flags, :ref:`int<class_int>` from_line, :ref:`int<class_int>` from_column, :ref:`int<class_int>` to_line  **)** const                               |
+| void                             | :ref:`insert_text_at_cursor<class_TextEdit_insert_text_at_cursor>`  **(** :ref:`String<class_string>` text  **)**                                                                                                           |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`undo<class_TextEdit_undo>`  **(** **)**                                                                                                                                                                               |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`redo<class_TextEdit_redo>`  **(** **)**                                                                                                                                                                               |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`clear_undo_history<class_TextEdit_clear_undo_history>`  **(** **)**                                                                                                                                                   |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_syntax_coloring<class_TextEdit_set_syntax_coloring>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                                                 |
+| :ref:`bool<class_bool>`          | :ref:`is_selection_active<class_TextEdit_is_selection_active>`  **(** **)** const                                                                                                                                           |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`is_syntax_coloring_enabled<class_TextEdit_is_syntax_coloring_enabled>`  **(** **)** const                                                                                                                             |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`add_keyword_color<class_TextEdit_add_keyword_color>`  **(** :ref:`String<class_string>` keyword, :ref:`Color<class_color>` color  **)**                                                                               |
+| void                             | :ref:`paste<class_TextEdit_paste>`  **(** **)**                                                                                                                                                                             |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`add_color_region<class_TextEdit_add_color_region>`  **(** :ref:`String<class_string>` begin_key, :ref:`String<class_string>` end_key, :ref:`Color<class_color>` color, :ref:`bool<class_bool>` line_only=false  **)** |
+| void                             | :ref:`redo<class_TextEdit_redo>`  **(** **)**                                                                                                                                                                               |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_symbol_color<class_TextEdit_set_symbol_color>`  **(** :ref:`Color<class_color>` color  **)**                                                                                                                      |
+| :ref:`IntArray<class_intarray>`  | :ref:`search<class_TextEdit_search>`  **(** :ref:`String<class_string>` flags, :ref:`int<class_int>` from_line, :ref:`int<class_int>` from_column, :ref:`int<class_int>` to_line  **)** const                               |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`select<class_TextEdit_select>`  **(** :ref:`int<class_int>` from_line, :ref:`int<class_int>` from_column, :ref:`int<class_int>` to_line, :ref:`int<class_int>` to_column  **)**                                       |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`select_all<class_TextEdit_select_all>`  **(** **)**                                                                                                                                                                   |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_custom_bg_color<class_TextEdit_set_custom_bg_color>`  **(** :ref:`Color<class_color>` color  **)**                                                                                                                |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`clear_colors<class_TextEdit_clear_colors>`  **(** **)**                                                                                                                                                               |
+| void                             | :ref:`set_max_chars<class_TextEdit_set_max_chars>`  **(** :ref:`int<class_int>` amount  **)**                                                                                                                               |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_readonly<class_TextEdit_set_readonly>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                                                               |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_symbol_color<class_TextEdit_set_symbol_color>`  **(** :ref:`Color<class_color>` color  **)**                                                                                                                      |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_syntax_coloring<class_TextEdit_set_syntax_coloring>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                                                 |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_text<class_TextEdit_set_text>`  **(** :ref:`String<class_string>` text  **)**                                                                                                                                     |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_wrap<class_TextEdit_set_wrap>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                                                                       |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`undo<class_TextEdit_undo>`  **(** **)**                                                                                                                                                                               |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
 
--  **text_changed**  **(** **)**
 -  **cursor_changed**  **(** **)**
 -  **request_completion**  **(** **)**
+-  **text_changed**  **(** **)**
 
 Numeric Constants
 -----------------
@@ -120,43 +120,47 @@ TextEdit is meant for editing large, multiline text. It also has facilities for 
 Member Function Description
 ---------------------------
 
-.. _class_TextEdit_set_text:
+.. _class_TextEdit_add_color_region:
 
-- void  **set_text**  **(** :ref:`String<class_string>` text  **)**
+- void  **add_color_region**  **(** :ref:`String<class_string>` begin_key, :ref:`String<class_string>` end_key, :ref:`Color<class_color>` color, :ref:`bool<class_bool>` line_only=false  **)**
 
-Set the entire text.
+Add color region (given the delimiters) and its colors.
 
-.. _class_TextEdit_insert_text_at_cursor:
+.. _class_TextEdit_add_keyword_color:
 
-- void  **insert_text_at_cursor**  **(** :ref:`String<class_string>` text  **)**
+- void  **add_keyword_color**  **(** :ref:`String<class_string>` keyword, :ref:`Color<class_color>` color  **)**
 
-Insert a given text at the cursor position.
+Add a keyword and its color.
 
-.. _class_TextEdit_get_line_count:
+.. _class_TextEdit_clear_colors:
 
-- :ref:`int<class_int>`  **get_line_count**  **(** **)** const
+- void  **clear_colors**  **(** **)**
 
-Return the amount of total lines in the text.
+Clear all the syntax coloring information.
 
-.. _class_TextEdit_get_text:
+.. _class_TextEdit_clear_undo_history:
 
-- :ref:`String<class_string>`  **get_text**  **(** **)**
+- void  **clear_undo_history**  **(** **)**
 
-Return the whole text.
+Clear the undo history.
 
-.. _class_TextEdit_get_line:
+.. _class_TextEdit_copy:
 
-- :ref:`String<class_string>`  **get_line**  **(** :ref:`int<class_int>` line  **)** const
+- void  **copy**  **(** **)**
 
-Return the text of a specific line.
+Copy the current selection.
 
-.. _class_TextEdit_cursor_set_column:
+.. _class_TextEdit_cursor_get_blink_enabled:
 
-- void  **cursor_set_column**  **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` adjust_viewport=false  **)**
+- :ref:`bool<class_bool>`  **cursor_get_blink_enabled**  **(** **)** const
 
-.. _class_TextEdit_cursor_set_line:
+Gets whether the text editor caret is blinking.
 
-- void  **cursor_set_line**  **(** :ref:`int<class_int>` line, :ref:`bool<class_bool>` adjust_viewport=false  **)**
+.. _class_TextEdit_cursor_get_blink_speed:
+
+- :ref:`float<class_float>`  **cursor_get_blink_speed**  **(** **)** const
+
+Gets the text editor caret blink speed.
 
 .. _class_TextEdit_cursor_get_column:
 
@@ -176,41 +180,19 @@ Return the line the editing cursor is at.
 
 Set the text editor caret to blink.
 
-.. _class_TextEdit_cursor_get_blink_enabled:
-
-- :ref:`bool<class_bool>`  **cursor_get_blink_enabled**  **(** **)** const
-
-Gets whether the text editor caret is blinking.
-
 .. _class_TextEdit_cursor_set_blink_speed:
 
 - void  **cursor_set_blink_speed**  **(** :ref:`float<class_float>` blink_speed  **)**
 
 Set the text editor caret blink speed. Cannot be less then or equal to 0.
 
-.. _class_TextEdit_cursor_get_blink_speed:
+.. _class_TextEdit_cursor_set_column:
 
-- :ref:`float<class_float>`  **cursor_get_blink_speed**  **(** **)** const
+- void  **cursor_set_column**  **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` adjust_viewport=false  **)**
 
-Gets the text editor caret blink speed.
+.. _class_TextEdit_cursor_set_line:
 
-.. _class_TextEdit_set_readonly:
-
-- void  **set_readonly**  **(** :ref:`bool<class_bool>` enable  **)**
-
-Set the text editor as read-only. Text can be displayed but not edited.
-
-.. _class_TextEdit_set_wrap:
-
-- void  **set_wrap**  **(** :ref:`bool<class_bool>` enable  **)**
-
-Enable text wrapping when it goes beyond he edge of what is visible.
-
-.. _class_TextEdit_set_max_chars:
-
-- void  **set_max_chars**  **(** :ref:`int<class_int>` amount  **)**
-
-Set the maximum amount of characters editable.
+- void  **cursor_set_line**  **(** :ref:`int<class_int>` line, :ref:`bool<class_bool>` adjust_viewport=false  **)**
 
 .. _class_TextEdit_cut:
 
@@ -218,41 +200,17 @@ Set the maximum amount of characters editable.
 
 Cut the current selection.
 
-.. _class_TextEdit_copy:
+.. _class_TextEdit_get_line:
 
-- void  **copy**  **(** **)**
+- :ref:`String<class_string>`  **get_line**  **(** :ref:`int<class_int>` line  **)** const
 
-Copy the current selection.
+Return the text of a specific line.
 
-.. _class_TextEdit_paste:
+.. _class_TextEdit_get_line_count:
 
-- void  **paste**  **(** **)**
+- :ref:`int<class_int>`  **get_line_count**  **(** **)** const
 
-Paste the current selection.
-
-.. _class_TextEdit_select_all:
-
-- void  **select_all**  **(** **)**
-
-Select all the text.
-
-.. _class_TextEdit_select:
-
-- void  **select**  **(** :ref:`int<class_int>` from_line, :ref:`int<class_int>` from_column, :ref:`int<class_int>` to_line, :ref:`int<class_int>` to_column  **)**
-
-Perform selection, from line/column to line/column.
-
-.. _class_TextEdit_is_selection_active:
-
-- :ref:`bool<class_bool>`  **is_selection_active**  **(** **)** const
-
-Return true if the selection is active.
-
-.. _class_TextEdit_get_selection_from_line:
-
-- :ref:`int<class_int>`  **get_selection_from_line**  **(** **)** const
-
-Return the selection begin line.
+Return the amount of total lines in the text.
 
 .. _class_TextEdit_get_selection_from_column:
 
@@ -260,17 +218,11 @@ Return the selection begin line.
 
 Return the selection begin column.
 
-.. _class_TextEdit_get_selection_to_line:
+.. _class_TextEdit_get_selection_from_line:
 
-- :ref:`int<class_int>`  **get_selection_to_line**  **(** **)** const
+- :ref:`int<class_int>`  **get_selection_from_line**  **(** **)** const
 
-Return the selection end line.
-
-.. _class_TextEdit_get_selection_to_column:
-
-- :ref:`int<class_int>`  **get_selection_to_column**  **(** **)** const
-
-Return the selection end column.
+Return the selection begin line.
 
 .. _class_TextEdit_get_selection_text:
 
@@ -278,39 +230,39 @@ Return the selection end column.
 
 Return the text inside the selection.
 
+.. _class_TextEdit_get_selection_to_column:
+
+- :ref:`int<class_int>`  **get_selection_to_column**  **(** **)** const
+
+Return the selection end column.
+
+.. _class_TextEdit_get_selection_to_line:
+
+- :ref:`int<class_int>`  **get_selection_to_line**  **(** **)** const
+
+Return the selection end line.
+
+.. _class_TextEdit_get_text:
+
+- :ref:`String<class_string>`  **get_text**  **(** **)**
+
+Return the whole text.
+
 .. _class_TextEdit_get_word_under_cursor:
 
 - :ref:`String<class_string>`  **get_word_under_cursor**  **(** **)** const
 
-.. _class_TextEdit_search:
+.. _class_TextEdit_insert_text_at_cursor:
 
-- :ref:`IntArray<class_intarray>`  **search**  **(** :ref:`String<class_string>` flags, :ref:`int<class_int>` from_line, :ref:`int<class_int>` from_column, :ref:`int<class_int>` to_line  **)** const
+- void  **insert_text_at_cursor**  **(** :ref:`String<class_string>` text  **)**
 
-Perform a search inside the text. Search flags can be specified in the SEARCH\_\* enum.
+Insert a given text at the cursor position.
 
-.. _class_TextEdit_undo:
+.. _class_TextEdit_is_selection_active:
 
-- void  **undo**  **(** **)**
+- :ref:`bool<class_bool>`  **is_selection_active**  **(** **)** const
 
-Perform undo operation.
-
-.. _class_TextEdit_redo:
-
-- void  **redo**  **(** **)**
-
-Perform redo operation.
-
-.. _class_TextEdit_clear_undo_history:
-
-- void  **clear_undo_history**  **(** **)**
-
-Clear the undo history.
-
-.. _class_TextEdit_set_syntax_coloring:
-
-- void  **set_syntax_coloring**  **(** :ref:`bool<class_bool>` enable  **)**
-
-Set to enable the syntax coloring.
+Return true if the selection is active.
 
 .. _class_TextEdit_is_syntax_coloring_enabled:
 
@@ -318,23 +270,35 @@ Set to enable the syntax coloring.
 
 Return true if the syntax coloring is enabled.
 
-.. _class_TextEdit_add_keyword_color:
+.. _class_TextEdit_paste:
 
-- void  **add_keyword_color**  **(** :ref:`String<class_string>` keyword, :ref:`Color<class_color>` color  **)**
+- void  **paste**  **(** **)**
 
-Add a keyword and its color.
+Paste the current selection.
 
-.. _class_TextEdit_add_color_region:
+.. _class_TextEdit_redo:
 
-- void  **add_color_region**  **(** :ref:`String<class_string>` begin_key, :ref:`String<class_string>` end_key, :ref:`Color<class_color>` color, :ref:`bool<class_bool>` line_only=false  **)**
+- void  **redo**  **(** **)**
 
-Add color region (given the delimiters) and its colors.
+Perform redo operation.
 
-.. _class_TextEdit_set_symbol_color:
+.. _class_TextEdit_search:
 
-- void  **set_symbol_color**  **(** :ref:`Color<class_color>` color  **)**
+- :ref:`IntArray<class_intarray>`  **search**  **(** :ref:`String<class_string>` flags, :ref:`int<class_int>` from_line, :ref:`int<class_int>` from_column, :ref:`int<class_int>` to_line  **)** const
 
-Set the color for symbols.
+Perform a search inside the text. Search flags can be specified in the SEARCH\_\* enum.
+
+.. _class_TextEdit_select:
+
+- void  **select**  **(** :ref:`int<class_int>` from_line, :ref:`int<class_int>` from_column, :ref:`int<class_int>` to_line, :ref:`int<class_int>` to_column  **)**
+
+Perform selection, from line/column to line/column.
+
+.. _class_TextEdit_select_all:
+
+- void  **select_all**  **(** **)**
+
+Select all the text.
 
 .. _class_TextEdit_set_custom_bg_color:
 
@@ -342,10 +306,46 @@ Set the color for symbols.
 
 Set a custom background color. A background color with alpha==0 disables this.
 
-.. _class_TextEdit_clear_colors:
+.. _class_TextEdit_set_max_chars:
 
-- void  **clear_colors**  **(** **)**
+- void  **set_max_chars**  **(** :ref:`int<class_int>` amount  **)**
 
-Clear all the syntax coloring information.
+Set the maximum amount of characters editable.
+
+.. _class_TextEdit_set_readonly:
+
+- void  **set_readonly**  **(** :ref:`bool<class_bool>` enable  **)**
+
+Set the text editor as read-only. Text can be displayed but not edited.
+
+.. _class_TextEdit_set_symbol_color:
+
+- void  **set_symbol_color**  **(** :ref:`Color<class_color>` color  **)**
+
+Set the color for symbols.
+
+.. _class_TextEdit_set_syntax_coloring:
+
+- void  **set_syntax_coloring**  **(** :ref:`bool<class_bool>` enable  **)**
+
+Set to enable the syntax coloring.
+
+.. _class_TextEdit_set_text:
+
+- void  **set_text**  **(** :ref:`String<class_string>` text  **)**
+
+Set the entire text.
+
+.. _class_TextEdit_set_wrap:
+
+- void  **set_wrap**  **(** :ref:`bool<class_bool>` enable  **)**
+
+Enable text wrapping when it goes beyond he edge of what is visible.
+
+.. _class_TextEdit_undo:
+
+- void  **undo**  **(** **)**
+
+Perform undo operation.
 
 

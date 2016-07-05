@@ -17,6 +17,8 @@ Member Functions
 ----------------
 
 +----------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`NodePath<class_nodepath>`  | :ref:`NodePath<class_NodePath_NodePath>`  **(** :ref:`String<class_string>` from  **)** |
++----------------------------------+-----------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`      | :ref:`get_name<class_NodePath_get_name>`  **(** :ref:`int<class_int>` idx  **)**        |
 +----------------------------------+-----------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`            | :ref:`get_name_count<class_NodePath_get_name_count>`  **(** **)**                       |
@@ -31,8 +33,6 @@ Member Functions
 +----------------------------------+-----------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`is_empty<class_NodePath_is_empty>`  **(** **)**                                   |
 +----------------------------------+-----------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_nodepath>`  | :ref:`NodePath<class_NodePath_NodePath>`  **(** :ref:`String<class_string>` from  **)** |
-+----------------------------------+-----------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -45,6 +45,12 @@ A :ref:`NodePath<class_nodepath>` is made up of a list of node names, a list of 
 
 Member Function Description
 ---------------------------
+
+.. _class_NodePath_NodePath:
+
+- :ref:`NodePath<class_nodepath>`  **NodePath**  **(** :ref:`String<class_string>` from  **)**
+
+Create a NodePath from a string, e.g. "Path2D/PathFollow2D/Sprite:texture:size". A path is absolute if it starts with a slash. Absolute paths are only valid in the global scene tree, not within individual scenes. In a relative path, ``"."`` and ``".."`` indicate the current node and its parent.
 
 .. _class_NodePath_get_name:
 
@@ -87,11 +93,5 @@ Return true if the node path is absolute (not relative).
 - :ref:`bool<class_bool>`  **is_empty**  **(** **)**
 
 Return true if the node path is empty.
-
-.. _class_NodePath_NodePath:
-
-- :ref:`NodePath<class_nodepath>`  **NodePath**  **(** :ref:`String<class_string>` from  **)**
-
-Create a NodePath from a string, e.g. "Path2D/PathFollow2D/Sprite:texture:size". A path is absolute if it starts with a slash. Absolute paths are only valid in the global scene tree, not within individual scenes. In a relative path, ``"."`` and ``".."`` indicate the current node and its parent.
 
 

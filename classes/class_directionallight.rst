@@ -19,25 +19,25 @@ Member Functions
 ----------------
 
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_shadow_mode<class_DirectionalLight_set_shadow_mode>`  **(** :ref:`int<class_int>` mode  **)**                                     |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`      | :ref:`get_shadow_mode<class_DirectionalLight_get_shadow_mode>`  **(** **)** const                                                           |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_shadow_param<class_DirectionalLight_set_shadow_param>`  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)** |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_shadow_param<class_DirectionalLight_get_shadow_param>`  **(** :ref:`int<class_int>` param  **)** const                            |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_shadow_mode<class_DirectionalLight_set_shadow_mode>`  **(** :ref:`int<class_int>` mode  **)**                                     |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_shadow_param<class_DirectionalLight_set_shadow_param>`  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)** |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
 -----------------
 
 - **SHADOW_ORTHOGONAL** = **0**
-- **SHADOW_PERSPECTIVE** = **1**
-- **SHADOW_PARALLEL_2_SPLITS** = **2**
-- **SHADOW_PARALLEL_4_SPLITS** = **3**
 - **SHADOW_PARAM_MAX_DISTANCE** = **0**
 - **SHADOW_PARAM_PSSM_SPLIT_WEIGHT** = **1**
+- **SHADOW_PERSPECTIVE** = **1**
+- **SHADOW_PARALLEL_2_SPLITS** = **2**
 - **SHADOW_PARAM_PSSM_ZOFFSET_SCALE** = **2**
+- **SHADOW_PARALLEL_4_SPLITS** = **3**
 
 Description
 -----------
@@ -47,20 +47,20 @@ A DirectionalLight is a type of :ref:`Light<class_light>` node that emits light 
 Member Function Description
 ---------------------------
 
-.. _class_DirectionalLight_set_shadow_mode:
-
-- void  **set_shadow_mode**  **(** :ref:`int<class_int>` mode  **)**
-
 .. _class_DirectionalLight_get_shadow_mode:
 
 - :ref:`int<class_int>`  **get_shadow_mode**  **(** **)** const
 
-.. _class_DirectionalLight_set_shadow_param:
-
-- void  **set_shadow_param**  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**
-
 .. _class_DirectionalLight_get_shadow_param:
 
 - :ref:`float<class_float>`  **get_shadow_param**  **(** :ref:`int<class_int>` param  **)** const
+
+.. _class_DirectionalLight_set_shadow_mode:
+
+- void  **set_shadow_mode**  **(** :ref:`int<class_int>` mode  **)**
+
+.. _class_DirectionalLight_set_shadow_param:
+
+- void  **set_shadow_param**  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**
 
 

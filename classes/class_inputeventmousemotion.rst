@@ -33,39 +33,39 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **type**
-- :ref:`int<class_int>` **device**
 - :ref:`int<class_int>` **ID**
-- :ref:`bool<class_bool>` **shift**
 - :ref:`bool<class_bool>` **alt**
-- :ref:`bool<class_bool>` **control**
-- :ref:`bool<class_bool>` **meta**
 - :ref:`int<class_int>` **button_mask**
-- :ref:`int<class_int>` **x**
-- :ref:`int<class_int>` **y**
-- :ref:`Vector2<class_vector2>` **pos**
+- :ref:`bool<class_bool>` **control**
+- :ref:`int<class_int>` **device**
+- :ref:`Vector2<class_vector2>` **global_pos**
 - :ref:`int<class_int>` **global_x**
 - :ref:`int<class_int>` **global_y**
-- :ref:`Vector2<class_vector2>` **global_pos**
+- :ref:`bool<class_bool>` **meta**
+- :ref:`Vector2<class_vector2>` **pos**
+- :ref:`Vector2<class_vector2>` **relative_pos**
 - :ref:`int<class_int>` **relative_x**
 - :ref:`int<class_int>` **relative_y**
-- :ref:`Vector2<class_vector2>` **relative_pos**
+- :ref:`bool<class_bool>` **shift**
+- :ref:`Vector2<class_vector2>` **speed**
 - :ref:`float<class_float>` **speed_x**
 - :ref:`float<class_float>` **speed_y**
-- :ref:`Vector2<class_vector2>` **speed**
+- :ref:`int<class_int>` **type**
+- :ref:`int<class_int>` **x**
+- :ref:`int<class_int>` **y**
 
 Numeric Constants
 -----------------
 
-- **NONE** = **0**
+- **ACTION** = **8**
+- **JOYSTICK_MOTION** = **4**
+- **JOYSTICK_BUTTON** = **5**
 - **KEY** = **1**
 - **MOUSE_MOTION** = **2**
 - **MOUSE_BUTTON** = **3**
-- **JOYSTICK_MOTION** = **4**
-- **JOYSTICK_BUTTON** = **5**
+- **NONE** = **0**
 - **SCREEN_TOUCH** = **6**
 - **SCREEN_DRAG** = **7**
-- **ACTION** = **8**
 
 Member Function Description
 ---------------------------

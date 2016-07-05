@@ -33,32 +33,32 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **type**
-- :ref:`int<class_int>` **device**
 - :ref:`int<class_int>` **ID**
+- :ref:`int<class_int>` **device**
 - :ref:`int<class_int>` **index**
-- :ref:`float<class_float>` **x**
-- :ref:`float<class_float>` **y**
 - :ref:`Vector2<class_vector2>` **pos**
+- :ref:`Vector2<class_vector2>` **relative_pos**
 - :ref:`float<class_float>` **relative_x**
 - :ref:`float<class_float>` **relative_y**
-- :ref:`Vector2<class_vector2>` **relative_pos**
+- :ref:`Vector2<class_vector2>` **speed**
 - :ref:`float<class_float>` **speed_x**
 - :ref:`float<class_float>` **speed_y**
-- :ref:`Vector2<class_vector2>` **speed**
+- :ref:`int<class_int>` **type**
+- :ref:`float<class_float>` **x**
+- :ref:`float<class_float>` **y**
 
 Numeric Constants
 -----------------
 
-- **NONE** = **0**
+- **ACTION** = **8**
+- **JOYSTICK_MOTION** = **4**
+- **JOYSTICK_BUTTON** = **5**
 - **KEY** = **1**
 - **MOUSE_MOTION** = **2**
 - **MOUSE_BUTTON** = **3**
-- **JOYSTICK_MOTION** = **4**
-- **JOYSTICK_BUTTON** = **5**
+- **NONE** = **0**
 - **SCREEN_TOUCH** = **6**
 - **SCREEN_DRAG** = **7**
-- **ACTION** = **8**
 
 Member Function Description
 ---------------------------

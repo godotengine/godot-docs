@@ -33,22 +33,22 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **type**
-- :ref:`int<class_int>` **device**
 - :ref:`int<class_int>` **ID**
+- :ref:`int<class_int>` **device**
+- :ref:`int<class_int>` **type**
 
 Numeric Constants
 -----------------
 
-- **NONE** = **0** --- Empty input event.
+- **ACTION** = **8**
+- **JOYSTICK_MOTION** = **4** --- Joystick motion event.
+- **JOYSTICK_BUTTON** = **5** --- Joystick button event.
 - **KEY** = **1** --- Key event.
 - **MOUSE_MOTION** = **2** --- Mouse motion event.
 - **MOUSE_BUTTON** = **3** --- Mouse button event.
-- **JOYSTICK_MOTION** = **4** --- Joystick motion event.
-- **JOYSTICK_BUTTON** = **5** --- Joystick button event.
+- **NONE** = **0** --- Empty input event.
 - **SCREEN_TOUCH** = **6**
 - **SCREEN_DRAG** = **7**
-- **ACTION** = **8**
 
 Description
 -----------

@@ -13,7 +13,7 @@ Mutex
 Brief Description
 -----------------
 
-
+A synchronization Mutex.
 
 Member Functions
 ----------------
@@ -26,6 +26,11 @@ Member Functions
 | void   | :ref:`unlock<class_Mutex_unlock>`  **(** **)**     |
 +--------+----------------------------------------------------+
 
+Description
+-----------
+
+A synchronization Mutex. Element used in multi-threadding. Basically a binary :ref:`Semaphore<class_semaphore>`. Guarantees that only one thread has this lock, can be used to protect a critical section.
+
 Member Function Description
 ---------------------------
 
@@ -33,12 +38,18 @@ Member Function Description
 
 - void  **lock**  **(** **)**
 
+Lock this :ref:`Mutex<class_mutex>`, blocks until it is unlocked by the current owner.
+
 .. _class_Mutex_try_lock:
 
 - Error  **try_lock**  **(** **)**
 
+Try locking this :ref:`Mutex<class_mutex>`, does not block. Returns :ref:`OK<class_ok>` on success else :ref:`ERR_BUSY<class_err_busy>`.
+
 .. _class_Mutex_unlock:
 
 - void  **unlock**  **(** **)**
+
+Unlock this :ref:`Mutex<class_mutex>`, leaving it to others threads.
 
 

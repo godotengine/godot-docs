@@ -19,6 +19,10 @@ Member Functions
 ----------------
 
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`add_custom_control<class_EditorPlugin_add_custom_control>`  **(** :ref:`int<class_int>` container, :ref:`Object<class_object>` control  **)**                                                                 |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`add_custom_type<class_EditorPlugin_add_custom_type>`  **(** :ref:`String<class_string>` type, :ref:`String<class_string>` base, :ref:`Script<class_script>` script, :ref:`Texture<class_texture>` icon  **)** |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`apply_changes<class_EditorPlugin_apply_changes>`  **(** **)** virtual                                                                                                                                         |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`clear<class_EditorPlugin_clear>`  **(** **)** virtual                                                                                                                                                         |
@@ -35,21 +39,17 @@ Member Functions
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_dictionary>`    | :ref:`get_state<class_EditorPlugin_get_state>`  **(** **)** virtual                                                                                                                                                 |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`            | :ref:`get_undo_redo<class_EditorPlugin_get_undo_redo>`  **(** **)**                                                                                                                                                 |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                | :ref:`handles<class_EditorPlugin_handles>`  **(** :ref:`Object<class_object>` object  **)** virtual                                                                                                                 |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                | :ref:`has_main_screen<class_EditorPlugin_has_main_screen>`  **(** **)** virtual                                                                                                                                     |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`make_visible<class_EditorPlugin_make_visible>`  **(** :ref:`bool<class_bool>` visible  **)** virtual                                                                                                          |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_state<class_EditorPlugin_set_state>`  **(** :ref:`Dictionary<class_dictionary>` state  **)** virtual                                                                                                      |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`            | :ref:`get_undo_redo<class_EditorPlugin_get_undo_redo>`  **(** **)**                                                                                                                                                 |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`add_custom_control<class_EditorPlugin_add_custom_control>`  **(** :ref:`int<class_int>` container, :ref:`Object<class_object>` control  **)**                                                                 |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`add_custom_type<class_EditorPlugin_add_custom_type>`  **(** :ref:`String<class_string>` type, :ref:`String<class_string>` base, :ref:`Script<class_script>` script, :ref:`Texture<class_texture>` icon  **)** |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`remove_custom_type<class_EditorPlugin_remove_custom_type>`  **(** :ref:`String<class_string>` type  **)**                                                                                                     |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_state<class_EditorPlugin_set_state>`  **(** :ref:`Dictionary<class_dictionary>` state  **)** virtual                                                                                                      |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
@@ -64,6 +64,14 @@ Numeric Constants
 
 Member Function Description
 ---------------------------
+
+.. _class_EditorPlugin_add_custom_control:
+
+- void  **add_custom_control**  **(** :ref:`int<class_int>` container, :ref:`Object<class_object>` control  **)**
+
+.. _class_EditorPlugin_add_custom_type:
+
+- void  **add_custom_type**  **(** :ref:`String<class_string>` type, :ref:`String<class_string>` base, :ref:`Script<class_script>` script, :ref:`Texture<class_texture>` icon  **)**
 
 .. _class_EditorPlugin_apply_changes:
 
@@ -97,6 +105,10 @@ Member Function Description
 
 - :ref:`Dictionary<class_dictionary>`  **get_state**  **(** **)** virtual
 
+.. _class_EditorPlugin_get_undo_redo:
+
+- :ref:`Object<class_object>`  **get_undo_redo**  **(** **)**
+
 .. _class_EditorPlugin_handles:
 
 - :ref:`bool<class_bool>`  **handles**  **(** :ref:`Object<class_object>` object  **)** virtual
@@ -109,24 +121,12 @@ Member Function Description
 
 - void  **make_visible**  **(** :ref:`bool<class_bool>` visible  **)** virtual
 
-.. _class_EditorPlugin_set_state:
-
-- void  **set_state**  **(** :ref:`Dictionary<class_dictionary>` state  **)** virtual
-
-.. _class_EditorPlugin_get_undo_redo:
-
-- :ref:`Object<class_object>`  **get_undo_redo**  **(** **)**
-
-.. _class_EditorPlugin_add_custom_control:
-
-- void  **add_custom_control**  **(** :ref:`int<class_int>` container, :ref:`Object<class_object>` control  **)**
-
-.. _class_EditorPlugin_add_custom_type:
-
-- void  **add_custom_type**  **(** :ref:`String<class_string>` type, :ref:`String<class_string>` base, :ref:`Script<class_script>` script, :ref:`Texture<class_texture>` icon  **)**
-
 .. _class_EditorPlugin_remove_custom_type:
 
 - void  **remove_custom_type**  **(** :ref:`String<class_string>` type  **)**
+
+.. _class_EditorPlugin_set_state:
+
+- void  **set_state**  **(** :ref:`Dictionary<class_dictionary>` state  **)** virtual
 
 

@@ -19,19 +19,19 @@ Member Functions
 ----------------
 
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_mesh<class_MeshInstance_set_mesh>`  **(** :ref:`Mesh<class_mesh>` mesh  **)**                                    |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Mesh<class_mesh>`          | :ref:`get_mesh<class_MeshInstance_get_mesh>`  **(** **)** const                                                            |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_skeleton_path<class_MeshInstance_set_skeleton_path>`  **(** :ref:`NodePath<class_nodepath>` skeleton_path  **)** |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_nodepath>`  | :ref:`get_skeleton_path<class_MeshInstance_get_skeleton_path>`  **(** **)**                                                |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AABB<class_aabb>`          | :ref:`get_aabb<class_MeshInstance_get_aabb>`  **(** **)** const                                                            |
+| void                             | :ref:`create_convex_collision<class_MeshInstance_create_convex_collision>`  **(** **)**                                    |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`create_trimesh_collision<class_MeshInstance_create_trimesh_collision>`  **(** **)**                                  |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`create_convex_collision<class_MeshInstance_create_convex_collision>`  **(** **)**                                    |
+| :ref:`AABB<class_aabb>`          | :ref:`get_aabb<class_MeshInstance_get_aabb>`  **(** **)** const                                                            |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Mesh<class_mesh>`          | :ref:`get_mesh<class_MeshInstance_get_mesh>`  **(** **)** const                                                            |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`NodePath<class_nodepath>`  | :ref:`get_skeleton_path<class_MeshInstance_get_skeleton_path>`  **(** **)**                                                |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_mesh<class_MeshInstance_set_mesh>`  **(** :ref:`Mesh<class_mesh>` mesh  **)**                                    |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_skeleton_path<class_MeshInstance_set_skeleton_path>`  **(** :ref:`NodePath<class_nodepath>` skeleton_path  **)** |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -42,31 +42,9 @@ MeshInstance is a :ref:`Node<class_node>` that takes a :ref:`Mesh<class_mesh>` r
 Member Function Description
 ---------------------------
 
-.. _class_MeshInstance_set_mesh:
+.. _class_MeshInstance_create_convex_collision:
 
-- void  **set_mesh**  **(** :ref:`Mesh<class_mesh>` mesh  **)**
-
-Set the :ref:`Mesh<class_mesh>` resource for the instance.
-
-.. _class_MeshInstance_get_mesh:
-
-- :ref:`Mesh<class_mesh>`  **get_mesh**  **(** **)** const
-
-Return the current :ref:`Mesh<class_mesh>` resource for the instance.
-
-.. _class_MeshInstance_set_skeleton_path:
-
-- void  **set_skeleton_path**  **(** :ref:`NodePath<class_nodepath>` skeleton_path  **)**
-
-.. _class_MeshInstance_get_skeleton_path:
-
-- :ref:`NodePath<class_nodepath>`  **get_skeleton_path**  **(** **)**
-
-.. _class_MeshInstance_get_aabb:
-
-- :ref:`AABB<class_aabb>`  **get_aabb**  **(** **)** const
-
-Return the AABB of the mesh, in local coordinates.
+- void  **create_convex_collision**  **(** **)**
 
 .. _class_MeshInstance_create_trimesh_collision:
 
@@ -74,8 +52,30 @@ Return the AABB of the mesh, in local coordinates.
 
 This helper creates a :ref:`StaticBody<class_staticbody>` child :ref:`Node<class_node>` using the mesh geometry as collision. It's mainly used for testing.
 
-.. _class_MeshInstance_create_convex_collision:
+.. _class_MeshInstance_get_aabb:
 
-- void  **create_convex_collision**  **(** **)**
+- :ref:`AABB<class_aabb>`  **get_aabb**  **(** **)** const
+
+Return the AABB of the mesh, in local coordinates.
+
+.. _class_MeshInstance_get_mesh:
+
+- :ref:`Mesh<class_mesh>`  **get_mesh**  **(** **)** const
+
+Return the current :ref:`Mesh<class_mesh>` resource for the instance.
+
+.. _class_MeshInstance_get_skeleton_path:
+
+- :ref:`NodePath<class_nodepath>`  **get_skeleton_path**  **(** **)**
+
+.. _class_MeshInstance_set_mesh:
+
+- void  **set_mesh**  **(** :ref:`Mesh<class_mesh>` mesh  **)**
+
+Set the :ref:`Mesh<class_mesh>` resource for the instance.
+
+.. _class_MeshInstance_set_skeleton_path:
+
+- void  **set_skeleton_path**  **(** :ref:`NodePath<class_nodepath>` skeleton_path  **)**
 
 

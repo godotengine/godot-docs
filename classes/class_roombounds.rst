@@ -19,11 +19,7 @@ Member Functions
 ----------------
 
 +------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_bounds<class_RoomBounds_set_bounds>`  **(** :ref:`Dictionary<class_dictionary>` bsp_tree  **)**                    |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_dictionary>`      | :ref:`get_bounds<class_RoomBounds_get_bounds>`  **(** **)** const                                                            |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_geometry_hint<class_RoomBounds_set_geometry_hint>`  **(** :ref:`Vector3Array<class_vector3array>` triangles  **)** |
 +------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3Array<class_vector3array>`  | :ref:`get_geometry_hint<class_RoomBounds_get_geometry_hint>`  **(** **)** const                                              |
 +------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
@@ -31,21 +27,17 @@ Member Functions
 +------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`regenerate_bsp_cubic<class_RoomBounds_regenerate_bsp_cubic>`  **(** **)**                                              |
 +------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_bounds<class_RoomBounds_set_bounds>`  **(** :ref:`Dictionary<class_dictionary>` bsp_tree  **)**                    |
++------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_geometry_hint<class_RoomBounds_set_geometry_hint>`  **(** :ref:`Vector3Array<class_vector3array>` triangles  **)** |
++------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
 
 Member Function Description
 ---------------------------
 
-.. _class_RoomBounds_set_bounds:
-
-- void  **set_bounds**  **(** :ref:`Dictionary<class_dictionary>` bsp_tree  **)**
-
 .. _class_RoomBounds_get_bounds:
 
 - :ref:`Dictionary<class_dictionary>`  **get_bounds**  **(** **)** const
-
-.. _class_RoomBounds_set_geometry_hint:
-
-- void  **set_geometry_hint**  **(** :ref:`Vector3Array<class_vector3array>` triangles  **)**
 
 .. _class_RoomBounds_get_geometry_hint:
 
@@ -58,5 +50,13 @@ Member Function Description
 .. _class_RoomBounds_regenerate_bsp_cubic:
 
 - void  **regenerate_bsp_cubic**  **(** **)**
+
+.. _class_RoomBounds_set_bounds:
+
+- void  **set_bounds**  **(** :ref:`Dictionary<class_dictionary>` bsp_tree  **)**
+
+.. _class_RoomBounds_set_geometry_hint:
+
+- void  **set_geometry_hint**  **(** :ref:`Vector3Array<class_vector3array>` triangles  **)**
 
 

@@ -19,17 +19,17 @@ Member Functions
 ----------------
 
 +------------------------------+-------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_texture<class_TextureFrame_set_texture>`  **(** :ref:`Object<class_object>` texture  **)**  |
+| :ref:`Color<class_color>`    | :ref:`get_modulate<class_TextureFrame_get_modulate>`  **(** **)** const                               |
 +------------------------------+-------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_object>`  | :ref:`get_texture<class_TextureFrame_get_texture>`  **(** **)** const                                 |
 +------------------------------+-------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_modulate<class_TextureFrame_set_modulate>`  **(** :ref:`Color<class_color>` modulate  **)** |
-+------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`    | :ref:`get_modulate<class_TextureFrame_get_modulate>`  **(** **)** const                               |
+| :ref:`bool<class_bool>`      | :ref:`has_expand<class_TextureFrame_has_expand>`  **(** **)** const                                   |
 +------------------------------+-------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`set_expand<class_TextureFrame_set_expand>`  **(** :ref:`bool<class_bool>` enable  **)**         |
 +------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`has_expand<class_TextureFrame_has_expand>`  **(** **)** const                                   |
+| void                         | :ref:`set_modulate<class_TextureFrame_set_modulate>`  **(** :ref:`Color<class_color>` modulate  **)** |
++------------------------------+-------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_texture<class_TextureFrame_set_texture>`  **(** :ref:`Object<class_object>` texture  **)**  |
 +------------------------------+-------------------------------------------------------------------------------------------------------+
 
 Description
@@ -40,28 +40,28 @@ Control frame that simply draws an assigned texture. It can stretch or not. It's
 Member Function Description
 ---------------------------
 
-.. _class_TextureFrame_set_texture:
+.. _class_TextureFrame_get_modulate:
 
-- void  **set_texture**  **(** :ref:`Object<class_object>` texture  **)**
+- :ref:`Color<class_color>`  **get_modulate**  **(** **)** const
 
 .. _class_TextureFrame_get_texture:
 
 - :ref:`Object<class_object>`  **get_texture**  **(** **)** const
 
-.. _class_TextureFrame_set_modulate:
+.. _class_TextureFrame_has_expand:
 
-- void  **set_modulate**  **(** :ref:`Color<class_color>` modulate  **)**
-
-.. _class_TextureFrame_get_modulate:
-
-- :ref:`Color<class_color>`  **get_modulate**  **(** **)** const
+- :ref:`bool<class_bool>`  **has_expand**  **(** **)** const
 
 .. _class_TextureFrame_set_expand:
 
 - void  **set_expand**  **(** :ref:`bool<class_bool>` enable  **)**
 
-.. _class_TextureFrame_has_expand:
+.. _class_TextureFrame_set_modulate:
 
-- :ref:`bool<class_bool>`  **has_expand**  **(** **)** const
+- void  **set_modulate**  **(** :ref:`Color<class_color>` modulate  **)**
+
+.. _class_TextureFrame_set_texture:
+
+- void  **set_texture**  **(** :ref:`Object<class_object>` texture  **)**
 
 

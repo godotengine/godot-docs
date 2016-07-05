@@ -19,19 +19,19 @@ Member Functions
 ----------------
 
 +----------------------------+----------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_color<class_ColorPicker_set_color>`  **(** :ref:`Color<class_color>` color  **)**        |
+| void                       | :ref:`add_preset<class_ColorPicker_add_preset>`  **(** :ref:`Color<class_color>` arg0  **)**       |
 +----------------------------+----------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_color>`  | :ref:`get_color<class_ColorPicker_get_color>`  **(** **)** const                                   |
 +----------------------------+----------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_raw_mode<class_ColorPicker_set_raw_mode>`  **(** :ref:`bool<class_bool>` mode  **)**     |
+| :ref:`bool<class_bool>`    | :ref:`is_editing_alpha<class_ColorPicker_is_editing_alpha>`  **(** **)** const                     |
 +----------------------------+----------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`    | :ref:`is_raw_mode<class_ColorPicker_is_raw_mode>`  **(** **)** const                               |
 +----------------------------+----------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_color<class_ColorPicker_set_color>`  **(** :ref:`Color<class_color>` color  **)**        |
++----------------------------+----------------------------------------------------------------------------------------------------+
 | void                       | :ref:`set_edit_alpha<class_ColorPicker_set_edit_alpha>`  **(** :ref:`bool<class_bool>` show  **)** |
 +----------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`is_editing_alpha<class_ColorPicker_is_editing_alpha>`  **(** **)** const                     |
-+----------------------------+----------------------------------------------------------------------------------------------------+
-| void                       | :ref:`add_preset<class_ColorPicker_add_preset>`  **(** :ref:`Color<class_color>` arg0  **)**       |
+| void                       | :ref:`set_raw_mode<class_ColorPicker_set_raw_mode>`  **(** :ref:`bool<class_bool>` mode  **)**     |
 +----------------------------+----------------------------------------------------------------------------------------------------+
 
 Signals
@@ -47,11 +47,11 @@ This is a simple color picker :ref:`Control<class_control>`. It's useful for sel
 Member Function Description
 ---------------------------
 
-.. _class_ColorPicker_set_color:
+.. _class_ColorPicker_add_preset:
 
-- void  **set_color**  **(** :ref:`Color<class_color>` color  **)**
+- void  **add_preset**  **(** :ref:`Color<class_color>` arg0  **)**
 
-Select the current color.
+Adds the current selected to color to a list of colors (presets), the presets will be displayed in the color picker and the user will be able to select them, notice that the presets list is only for this color picker.
 
 .. _class_ColorPicker_get_color:
 
@@ -59,11 +59,11 @@ Select the current color.
 
 Return the current (edited) color.
 
-.. _class_ColorPicker_set_raw_mode:
+.. _class_ColorPicker_is_editing_alpha:
 
-- void  **set_raw_mode**  **(** :ref:`bool<class_bool>` mode  **)**
+- :ref:`bool<class_bool>`  **is_editing_alpha**  **(** **)** const
 
-When set to true, every color channel will be represented as a value from 0 to 1, insetead of 0, 255.
+Returns whether the color has transparency or not.
 
 .. _class_ColorPicker_is_raw_mode:
 
@@ -71,22 +71,22 @@ When set to true, every color channel will be represented as a value from 0 to 1
 
 Returns whether this color picker is in raw mode or not
 
+.. _class_ColorPicker_set_color:
+
+- void  **set_color**  **(** :ref:`Color<class_color>` color  **)**
+
+Select the current color.
+
 .. _class_ColorPicker_set_edit_alpha:
 
 - void  **set_edit_alpha**  **(** :ref:`bool<class_bool>` show  **)**
 
 Set true if you want the color to have an alpha channel (transparency), or false if you want a solid color.
 
-.. _class_ColorPicker_is_editing_alpha:
+.. _class_ColorPicker_set_raw_mode:
 
-- :ref:`bool<class_bool>`  **is_editing_alpha**  **(** **)** const
+- void  **set_raw_mode**  **(** :ref:`bool<class_bool>` mode  **)**
 
-Returns whether the color has transparency or not.
-
-.. _class_ColorPicker_add_preset:
-
-- void  **add_preset**  **(** :ref:`Color<class_color>` arg0  **)**
-
-Adds the current selected to color to a list of colors (presets), the presets will be displayed in the color picker and the user will be able to select them, notice that the presets list is only for this color picker.
+When set to true, every color channel will be represented as a value from 0 to 1, insetead of 0, 255.
 
 

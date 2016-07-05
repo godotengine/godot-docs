@@ -132,7 +132,7 @@ Freeing resources
 
 Resource extends from :ref:`Reference <class_Reference>`.
 As such, when a resource is no longer in use, it will automatically free
-itelf. Since, in most cases, Resources are contained in Nodes, scripts
+itself. Since, in most cases, Resources are contained in Nodes, scripts
 or other resources, when a node is removed or freed, all the children
 resources are freed too.
 

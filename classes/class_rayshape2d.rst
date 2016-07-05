@@ -19,9 +19,9 @@ Member Functions
 ----------------
 
 +----------------------------+-----------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_length<class_RayShape2D_set_length>`  **(** :ref:`float<class_float>` length  **)** |
-+----------------------------+-----------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_length<class_RayShape2D_get_length>`  **(** **)** const                             |
++----------------------------+-----------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_length<class_RayShape2D_set_length>`  **(** :ref:`float<class_float>` length  **)** |
 +----------------------------+-----------------------------------------------------------------------------------------------+
 
 Description
@@ -32,16 +32,16 @@ Ray 2D shape resource for physics. A ray is not really a collision body, instead
 Member Function Description
 ---------------------------
 
-.. _class_RayShape2D_set_length:
-
-- void  **set_length**  **(** :ref:`float<class_float>` length  **)**
-
-Set the length of the ray.
-
 .. _class_RayShape2D_get_length:
 
 - :ref:`float<class_float>`  **get_length**  **(** **)** const
 
 Return the length of the ray.
+
+.. _class_RayShape2D_set_length:
+
+- void  **set_length**  **(** :ref:`float<class_float>` length  **)**
+
+Set the length of the ray.
 
 

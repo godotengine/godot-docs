@@ -19,13 +19,13 @@ Member Functions
 ----------------
 
 +--------------------------------+----------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_normal<class_LineShape2D_set_normal>`  **(** :ref:`Vector2<class_vector2>` normal  **)** |
+| :ref:`float<class_float>`      | :ref:`get_d<class_LineShape2D_get_d>`  **(** **)** const                                           |
 +--------------------------------+----------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`get_normal<class_LineShape2D_get_normal>`  **(** **)** const                                 |
 +--------------------------------+----------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_d<class_LineShape2D_set_d>`  **(** :ref:`float<class_float>` d  **)**                    |
 +--------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_d<class_LineShape2D_get_d>`  **(** **)** const                                           |
+| void                           | :ref:`set_normal<class_LineShape2D_set_normal>`  **(** :ref:`Vector2<class_vector2>` normal  **)** |
 +--------------------------------+----------------------------------------------------------------------------------------------------+
 
 Description
@@ -36,11 +36,11 @@ Line shape for 2D collision objects. It works like a 2D plane and will not allow
 Member Function Description
 ---------------------------
 
-.. _class_LineShape2D_set_normal:
+.. _class_LineShape2D_get_d:
 
-- void  **set_normal**  **(** :ref:`Vector2<class_vector2>` normal  **)**
+- :ref:`float<class_float>`  **get_d**  **(** **)** const
 
-Set the line normal.
+Return the line distance from the origin.
 
 .. _class_LineShape2D_get_normal:
 
@@ -54,10 +54,10 @@ Return the line normal.
 
 Set the line distance from the origin.
 
-.. _class_LineShape2D_get_d:
+.. _class_LineShape2D_set_normal:
 
-- :ref:`float<class_float>`  **get_d**  **(** **)** const
+- void  **set_normal**  **(** :ref:`Vector2<class_vector2>` normal  **)**
 
-Return the line distance from the origin.
+Set the line normal.
 
 

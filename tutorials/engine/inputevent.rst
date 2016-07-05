@@ -30,25 +30,26 @@ received input, in order:
 
 .. image:: /img/input_event_flow.png
 
-1. First, it will try to feed the input to the GUI, and see if any
+1. First of all, the standard _input function
+   will be called in any node with input processing enabled (enable with
+   :ref:`Node.set_process_input() <class_Node_set_process_input>` and override
+   :ref:`Node._input() <class_Node__input>`). If any function consumes the event, it can
+   call :ref:`SceneTree.set_input_as_handled() <class_SceneTree_set_input_as_handled>`, and the event will
+   not spread any more. This ensures that you can filter all events of interest, even before the GUI. 
+   For gameplay input, the _unhandled_input() is generally a better fit, because it allows the GUI to intercept the events.
+2. Second, it will try to feed the input to the GUI, and see if any
    control can receive it. If so, the :ref:`Control <class_Control>` will be called via the
    virtual function :ref:`Control._input_event() <class_Control__input_event>` and the signal
    "input_event" will be emitted (this function is re-implementable by
    script by inheriting from it). If the control wants to "consume" the
    event, it will call :ref:`Control.accept_event() <class_Control_accept_event>` and the event will
    not spread any more.
-2. If the GUI does not want the event, the standard _input function
-   will be called in any node with input processing enabled (enable with
-   :ref:`Node.set_process_input() <class_Node_set_process_input>` and override
-   :ref:`Node._input() <class_Node__input>`). If any function consumes the event, it can
-   call :ref:`SceneTree.set_input_as_handled() <class_SceneTree_set_input_as_handled>`, and the event will
-   not spread any more.
 3. If so far no one consumed the event, the unhandled input callback
    will be called (enable with
    :ref:`Node.set_process_unhandled_input() <class_Node_set_process_unhandled_input>` and override
    :ref:`Node._unhandled_input() <class_Node__unhandled_input>`). If any function consumes the
    event, it can call :ref:`SceneTree.set_input_as_handled() <class_SceneTree_set_input_as_handled>`, and the
-   event will not spread any more.
+   event will not spread any more. The unhandled input callback is ideal for full-screen gameplay events, so they are not received when a GUI is active.
 4. If no one wanted the event so far, and a :ref:`Camera <class_Camera>` is assigned
    to the Viewport, a ray to the physics world (in the ray direction from
    the click) will be cast. If this ray hits an object, it will call the

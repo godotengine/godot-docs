@@ -19,9 +19,9 @@ Member Functions
 ----------------
 
 +--------------------------------+--------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_curve<class_Path2D_set_curve>`  **(** :ref:`Curve2D<class_curve2d>` curve  **)** |
-+--------------------------------+--------------------------------------------------------------------------------------------+
 | :ref:`Curve2D<class_curve2d>`  | :ref:`get_curve<class_Path2D_get_curve>`  **(** **)** const                                |
++--------------------------------+--------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_curve<class_Path2D_set_curve>`  **(** :ref:`Curve2D<class_curve2d>` curve  **)** |
 +--------------------------------+--------------------------------------------------------------------------------------------+
 
 Description
@@ -32,16 +32,16 @@ This class is a container/Node-ification of a :ref:`Curve2D<class_curve2d>`, so 
 Member Function Description
 ---------------------------
 
-.. _class_Path2D_set_curve:
-
-- void  **set_curve**  **(** :ref:`Curve2D<class_curve2d>` curve  **)**
-
-Sets the :ref:`Curve2D<class_curve2d>`.
-
 .. _class_Path2D_get_curve:
 
 - :ref:`Curve2D<class_curve2d>`  **get_curve**  **(** **)** const
 
 Returns the :ref:`Curve2D<class_curve2d>` contained.
+
+.. _class_Path2D_set_curve:
+
+- void  **set_curve**  **(** :ref:`Curve2D<class_curve2d>` curve  **)**
+
+Sets the :ref:`Curve2D<class_curve2d>`.
 
 

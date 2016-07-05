@@ -19,85 +19,61 @@ Member Functions
 ----------------
 
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_texture<class_TouchScreenButton_set_texture>`  **(** :ref:`Object<class_object>` texture  **)**                         |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`  | :ref:`get_texture<class_TouchScreenButton_get_texture>`  **(** **)** const                                                        |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_texture_pressed<class_TouchScreenButton_set_texture_pressed>`  **(** :ref:`Object<class_object>` texture_pressed  **)** |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`  | :ref:`get_texture_pressed<class_TouchScreenButton_get_texture_pressed>`  **(** **)** const                                        |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_bitmask<class_TouchScreenButton_set_bitmask>`  **(** :ref:`Object<class_object>` bitmask  **)**                         |
+| :ref:`String<class_string>`  | :ref:`get_action<class_TouchScreenButton_get_action>`  **(** **)** const                                                          |
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_object>`  | :ref:`get_bitmask<class_TouchScreenButton_get_bitmask>`  **(** **)** const                                                        |
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_action<class_TouchScreenButton_set_action>`  **(** :ref:`String<class_string>` action  **)**                            |
+| :ref:`Object<class_object>`  | :ref:`get_texture<class_TouchScreenButton_get_texture>`  **(** **)** const                                                        |
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_action<class_TouchScreenButton_get_action>`  **(** **)** const                                                          |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_visibility_mode<class_TouchScreenButton_set_visibility_mode>`  **(** :ref:`int<class_int>` mode  **)**                  |
+| :ref:`Object<class_object>`  | :ref:`get_texture_pressed<class_TouchScreenButton_get_texture_pressed>`  **(** **)** const                                        |
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`        | :ref:`get_visibility_mode<class_TouchScreenButton_get_visibility_mode>`  **(** **)** const                                        |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_passby_press<class_TouchScreenButton_set_passby_press>`  **(** :ref:`bool<class_bool>` enabled  **)**                   |
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`      | :ref:`is_passby_press_enabled<class_TouchScreenButton_is_passby_press_enabled>`  **(** **)** const                                |
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`      | :ref:`is_pressed<class_TouchScreenButton_is_pressed>`  **(** **)** const                                                          |
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_action<class_TouchScreenButton_set_action>`  **(** :ref:`String<class_string>` action  **)**                            |
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_bitmask<class_TouchScreenButton_set_bitmask>`  **(** :ref:`Object<class_object>` bitmask  **)**                         |
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_passby_press<class_TouchScreenButton_set_passby_press>`  **(** :ref:`bool<class_bool>` enabled  **)**                   |
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_texture<class_TouchScreenButton_set_texture>`  **(** :ref:`Object<class_object>` texture  **)**                         |
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_texture_pressed<class_TouchScreenButton_set_texture_pressed>`  **(** :ref:`Object<class_object>` texture_pressed  **)** |
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_visibility_mode<class_TouchScreenButton_set_visibility_mode>`  **(** :ref:`int<class_int>` mode  **)**                  |
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
 
--  **released**  **(** **)**
 -  **pressed**  **(** **)**
+-  **released**  **(** **)**
 
 Member Function Description
 ---------------------------
-
-.. _class_TouchScreenButton_set_texture:
-
-- void  **set_texture**  **(** :ref:`Object<class_object>` texture  **)**
-
-.. _class_TouchScreenButton_get_texture:
-
-- :ref:`Object<class_object>`  **get_texture**  **(** **)** const
-
-.. _class_TouchScreenButton_set_texture_pressed:
-
-- void  **set_texture_pressed**  **(** :ref:`Object<class_object>` texture_pressed  **)**
-
-.. _class_TouchScreenButton_get_texture_pressed:
-
-- :ref:`Object<class_object>`  **get_texture_pressed**  **(** **)** const
-
-.. _class_TouchScreenButton_set_bitmask:
-
-- void  **set_bitmask**  **(** :ref:`Object<class_object>` bitmask  **)**
-
-.. _class_TouchScreenButton_get_bitmask:
-
-- :ref:`Object<class_object>`  **get_bitmask**  **(** **)** const
-
-.. _class_TouchScreenButton_set_action:
-
-- void  **set_action**  **(** :ref:`String<class_string>` action  **)**
 
 .. _class_TouchScreenButton_get_action:
 
 - :ref:`String<class_string>`  **get_action**  **(** **)** const
 
-.. _class_TouchScreenButton_set_visibility_mode:
+.. _class_TouchScreenButton_get_bitmask:
 
-- void  **set_visibility_mode**  **(** :ref:`int<class_int>` mode  **)**
+- :ref:`Object<class_object>`  **get_bitmask**  **(** **)** const
+
+.. _class_TouchScreenButton_get_texture:
+
+- :ref:`Object<class_object>`  **get_texture**  **(** **)** const
+
+.. _class_TouchScreenButton_get_texture_pressed:
+
+- :ref:`Object<class_object>`  **get_texture_pressed**  **(** **)** const
 
 .. _class_TouchScreenButton_get_visibility_mode:
 
 - :ref:`int<class_int>`  **get_visibility_mode**  **(** **)** const
-
-.. _class_TouchScreenButton_set_passby_press:
-
-- void  **set_passby_press**  **(** :ref:`bool<class_bool>` enabled  **)**
 
 .. _class_TouchScreenButton_is_passby_press_enabled:
 
@@ -106,5 +82,29 @@ Member Function Description
 .. _class_TouchScreenButton_is_pressed:
 
 - :ref:`bool<class_bool>`  **is_pressed**  **(** **)** const
+
+.. _class_TouchScreenButton_set_action:
+
+- void  **set_action**  **(** :ref:`String<class_string>` action  **)**
+
+.. _class_TouchScreenButton_set_bitmask:
+
+- void  **set_bitmask**  **(** :ref:`Object<class_object>` bitmask  **)**
+
+.. _class_TouchScreenButton_set_passby_press:
+
+- void  **set_passby_press**  **(** :ref:`bool<class_bool>` enabled  **)**
+
+.. _class_TouchScreenButton_set_texture:
+
+- void  **set_texture**  **(** :ref:`Object<class_object>` texture  **)**
+
+.. _class_TouchScreenButton_set_texture_pressed:
+
+- void  **set_texture_pressed**  **(** :ref:`Object<class_object>` texture_pressed  **)**
+
+.. _class_TouchScreenButton_set_visibility_mode:
+
+- void  **set_visibility_mode**  **(** :ref:`int<class_int>` mode  **)**
 
 

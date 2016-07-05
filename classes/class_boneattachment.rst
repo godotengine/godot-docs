@@ -13,5 +13,10 @@ BoneAttachment
 Brief Description
 -----------------
 
+A node that will attach to a bone.
 
+Description
+-----------
+
+This node must be the child of a :ref:`Skeleton<class_skeleton>` node. You can then select a bone for this node to attach to. The BoneAttachment node will copy the transform of the selected bone.
 

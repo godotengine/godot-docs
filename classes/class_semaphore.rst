@@ -13,26 +13,35 @@ Semaphore
 Brief Description
 -----------------
 
-
+A synchronization Semaphore.
 
 Member Functions
 ----------------
 
 +--------+------------------------------------------------+
-| Error  | :ref:`wait<class_Semaphore_wait>`  **(** **)** |
-+--------+------------------------------------------------+
 | Error  | :ref:`post<class_Semaphore_post>`  **(** **)** |
 +--------+------------------------------------------------+
+| Error  | :ref:`wait<class_Semaphore_wait>`  **(** **)** |
++--------+------------------------------------------------+
+
+Description
+-----------
+
+A synchronization Semaphore. Element used in multi-threadding. Initialized to zero on creation.
 
 Member Function Description
 ---------------------------
+
+.. _class_Semaphore_post:
+
+- Error  **post**  **(** **)**
+
+Lowers the :ref:`Semaphore<class_semaphore>`, allowing one more thread in.
 
 .. _class_Semaphore_wait:
 
 - Error  **wait**  **(** **)**
 
-.. _class_Semaphore_post:
-
-- Error  **post**  **(** **)**
+Tries to wait for the :ref:`Semaphore<class_semaphore>`, if it's value is zero, blocks until non-zero.
 
 

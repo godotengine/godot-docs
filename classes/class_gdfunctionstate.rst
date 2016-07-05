@@ -19,22 +19,22 @@ Member Functions
 ----------------
 
 +--------------------------+------------------------------------------------------------------------+
-| Variant                  | :ref:`resume<class_GDFunctionState_resume>`  **(** var arg=NULL  **)** |
-+--------------------------+------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`  | :ref:`is_valid<class_GDFunctionState_is_valid>`  **(** **)** const     |
++--------------------------+------------------------------------------------------------------------+
+| Variant                  | :ref:`resume<class_GDFunctionState_resume>`  **(** var arg=NULL  **)** |
 +--------------------------+------------------------------------------------------------------------+
 
 Member Function Description
 ---------------------------
-
-.. _class_GDFunctionState_resume:
-
-- Variant  **resume**  **(** var arg=NULL  **)**
 
 .. _class_GDFunctionState_is_valid:
 
 - :ref:`bool<class_bool>`  **is_valid**  **(** **)** const
 
 Should put children to the top left corner instead of center of the container.
+
+.. _class_GDFunctionState_resume:
+
+- Variant  **resume**  **(** var arg=NULL  **)**
 
 

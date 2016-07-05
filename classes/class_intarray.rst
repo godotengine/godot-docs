@@ -17,6 +17,8 @@ Member Functions
 ----------------
 
 +----------------------------------+-------------------------------------------------------------------------------------------------------+
+| :ref:`IntArray<class_intarray>`  | :ref:`IntArray<class_IntArray_IntArray>`  **(** :ref:`Array<class_array>` from  **)**                 |
++----------------------------------+-------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`push_back<class_IntArray_push_back>`  **(** :ref:`int<class_int>` integer  **)**                |
 +----------------------------------+-------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`resize<class_IntArray_resize>`  **(** :ref:`int<class_int>` idx  **)**                          |
@@ -24,8 +26,6 @@ Member Functions
 | void                             | :ref:`set<class_IntArray_set>`  **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` integer  **)** |
 +----------------------------------+-------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`            | :ref:`size<class_IntArray_size>`  **(** **)**                                                         |
-+----------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`IntArray<class_intarray>`  | :ref:`IntArray<class_IntArray_IntArray>`  **(** :ref:`Array<class_array>` from  **)**                 |
 +----------------------------------+-------------------------------------------------------------------------------------------------------+
 
 Description
@@ -35,6 +35,12 @@ Integer Array. Array of integers. Can only contain integers. Optimized for memor
 
 Member Function Description
 ---------------------------
+
+.. _class_IntArray_IntArray:
+
+- :ref:`IntArray<class_intarray>`  **IntArray**  **(** :ref:`Array<class_array>` from  **)**
+
+Create from a generic array.
 
 .. _class_IntArray_push_back:
 
@@ -46,24 +52,18 @@ Append a value to the array.
 
 - void  **resize**  **(** :ref:`int<class_int>` idx  **)**
 
-Resize the array.
+Set the size of the :ref:`IntArray<class_intarray>`. If larger than the current size it will reserve some space beforehand, and if it is smaller it will cut off the array.
 
 .. _class_IntArray_set:
 
 - void  **set**  **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` integer  **)**
 
-Set an index in the array.
+Change the int at the given index.
 
 .. _class_IntArray_size:
 
 - :ref:`int<class_int>`  **size**  **(** **)**
 
 Return the array size.
-
-.. _class_IntArray_IntArray:
-
-- :ref:`IntArray<class_intarray>`  **IntArray**  **(** :ref:`Array<class_array>` from  **)**
-
-Create from a generic array.
 
 
