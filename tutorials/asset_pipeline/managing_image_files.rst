@@ -111,3 +111,34 @@ Atlas for a set of images. It is also possible to ask the exporter to
 scale all images (or selected groups).
 
 More information on the :ref:`doc_exporting_images` page.
+
+Fixing PNGs iCCP chunk
+----------------------
+
+With the upgrade of libpng to 1.6.23, libpng became more strict in terms of
+enforcing iCC profile correctness. This means that it now warns when it comes
+across an image with a non-conforming iCC chunk.
+
+    WARNING: _png_warn_function: iCCP: known incorrect sRGB profile
+
+This can be fixed by either using a tool that exports PNGs with the correct
+iCC profile (in some tools this profile can even be manually changed on export)
+or using a tool that removes/fixes the iCC chunks.
+
+Linux/Mac
+~~~~~
+Using ImageMagicks ``convert`` or ``mogrify`` fixes these warnings.
+To fix all PNGs in a project folder do:
+
+    find . -type f -name "*.png" -exec convert {} {} \;
+
+``pngcheck`` is also useful in locating the non-conforming images:
+
+    find . -type f -name "*.png" -exec pngcheck {} \;
+
+Windows
+~~~~~~~
+Using `optiPNG <http://optipng.sourceforge.net/>` fixes these warnings on Windows.
+To fix a PNG inplace do:
+
+    optipng -clobber -strip all file.png
