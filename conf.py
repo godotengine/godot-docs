@@ -56,7 +56,7 @@ if not on_rtd:  # only import and set the theme if we're building docs locally
 
 # Theme options
 html_theme_options = {
-  "collapse_navigation": "False",
+  "collapse_navigation": "True",
 }
 
 # Output file base name for HTML help builder
