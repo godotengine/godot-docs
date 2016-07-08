@@ -134,11 +134,11 @@ Numeric Constants
 - **FILTER_BANDLIMIT** = **6** --- Band-limit filter is used for voice, in this case resonance is the high-pass cutoff. A band-limit filter has a different frequency response than a notch filter, but otherwise both are band-rejecting filters.
 - **FILTER_LOW_SHELF** = **7** --- Low-shelf filter is used for voice.
 - **FILTER_HIGH_SHELF** = **8** --- High-shelf filter is used for voice.
-- **INVALID_VOICE_ID** = **-1** --- Value returned if the voice ID is invalid.
 - **REVERB_SMALL** = **0** --- Small reverberation room (house room).
 - **REVERB_MEDIUM** = **1** --- Medium reverberation room (street)
 - **REVERB_LARGE** = **2** --- Large reverberation room (theatre)
 - **REVERB_HALL** = **3** --- Huge reverberation room (cathedral, warehouse).
+- **INVALID_VOICE_ID** = **-1** --- Value returned if the voice ID is invalid.
 
 Description
 -----------

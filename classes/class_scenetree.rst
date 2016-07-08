@@ -92,12 +92,12 @@ Numeric Constants
 - **GROUP_CALL_REVERSE** = **1**
 - **GROUP_CALL_REALTIME** = **2**
 - **GROUP_CALL_UNIQUE** = **4**
-- **STRETCH_ASPECT_IGNORE** = **0**
 - **STRETCH_MODE_DISABLED** = **0**
-- **STRETCH_ASPECT_KEEP** = **1**
 - **STRETCH_MODE_2D** = **1**
-- **STRETCH_ASPECT_KEEP_WIDTH** = **2**
 - **STRETCH_MODE_VIEWPORT** = **2**
+- **STRETCH_ASPECT_IGNORE** = **0**
+- **STRETCH_ASPECT_KEEP** = **1**
+- **STRETCH_ASPECT_KEEP_WIDTH** = **2**
 - **STRETCH_ASPECT_KEEP_HEIGHT** = **3**
 
 Member Function Description

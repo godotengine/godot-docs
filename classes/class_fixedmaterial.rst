@@ -51,14 +51,6 @@ Member Functions
 Numeric Constants
 -----------------
 
-- **FLAG_USE_ALPHA** = **0**
-- **FLAG_USE_COLOR_ARRAY** = **1**
-- **FLAG_USE_POINT_SIZE** = **2**
-- **FLAG_DISCARD_ALPHA** = **3**
-- **LIGHT_SHADER_LAMBERT** = **0**
-- **LIGHT_SHADER_WRAP** = **1**
-- **LIGHT_SHADER_VELVET** = **2**
-- **LIGHT_SHADER_TOON** = **3**
 - **PARAM_DIFFUSE** = **0** --- Diffuse Lighting (light scattered from surface).
 - **PARAM_DETAIL** = **1** --- Detail Layer for diffuse lighting.
 - **PARAM_SPECULAR** = **2** --- Specular Lighting (light reflected from the surface).
@@ -72,6 +64,14 @@ Numeric Constants
 - **TEXCOORD_UV_TRANSFORM** = **1** --- Read texture coordinates from the UV array and transform them by uv_xform.
 - **TEXCOORD_UV2** = **2** --- Read texture coordinates from the UV2 array.
 - **TEXCOORD_SPHERE** = **3**
+- **FLAG_USE_ALPHA** = **0**
+- **FLAG_USE_COLOR_ARRAY** = **1**
+- **FLAG_USE_POINT_SIZE** = **2**
+- **FLAG_DISCARD_ALPHA** = **3**
+- **LIGHT_SHADER_LAMBERT** = **0**
+- **LIGHT_SHADER_WRAP** = **1**
+- **LIGHT_SHADER_VELVET** = **2**
+- **LIGHT_SHADER_TOON** = **3**
 
 Description
 -----------

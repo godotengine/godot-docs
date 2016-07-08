@@ -89,11 +89,6 @@ Numeric Constants
 
 - **VAR_LIFETIME** = **0**
 - **VAR_SPREAD** = **1**
-- **VAR_FINAL_SIZE** = **10**
-- **VAR_INITIAL_ANGLE** = **11**
-- **VAR_HEIGHT** = **12**
-- **VAR_HEIGHT_SPEED_SCALE** = **13**
-- **VAR_MAX** = **14**
 - **VAR_GRAVITY** = **2**
 - **VAR_LINEAR_VELOCITY** = **3**
 - **VAR_ANGULAR_VELOCITY** = **4**
@@ -101,6 +96,11 @@ Numeric Constants
 - **VAR_DRAG** = **6**
 - **VAR_TANGENTIAL_ACCELERATION** = **7**
 - **VAR_INITIAL_SIZE** = **9**
+- **VAR_FINAL_SIZE** = **10**
+- **VAR_INITIAL_ANGLE** = **11**
+- **VAR_HEIGHT** = **12**
+- **VAR_HEIGHT_SPEED_SCALE** = **13**
+- **VAR_MAX** = **14**
 
 Description
 -----------

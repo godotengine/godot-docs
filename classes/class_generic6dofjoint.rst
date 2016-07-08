@@ -47,17 +47,8 @@ Member Functions
 Numeric Constants
 -----------------
 
-- **FLAG_ENABLE_LINEAR_LIMIT** = **0**
-- **FLAG_ENABLE_ANGULAR_LIMIT** = **1**
-- **FLAG_ENABLE_MOTOR** = **2**
-- **FLAG_MAX** = **3**
 - **PARAM_LINEAR_LOWER_LIMIT** = **0**
 - **PARAM_LINEAR_UPPER_LIMIT** = **1**
-- **PARAM_ANGULAR_FORCE_LIMIT** = **10**
-- **PARAM_ANGULAR_ERP** = **11**
-- **PARAM_ANGULAR_MOTOR_TARGET_VELOCITY** = **12**
-- **PARAM_ANGULAR_MOTOR_FORCE_LIMIT** = **13**
-- **PARAM_MAX** = **14**
 - **PARAM_LINEAR_LIMIT_SOFTNESS** = **2**
 - **PARAM_LINEAR_RESTITUTION** = **3**
 - **PARAM_LINEAR_DAMPING** = **4**
@@ -66,6 +57,15 @@ Numeric Constants
 - **PARAM_ANGULAR_LIMIT_SOFTNESS** = **7**
 - **PARAM_ANGULAR_DAMPING** = **8**
 - **PARAM_ANGULAR_RESTITUTION** = **9**
+- **PARAM_ANGULAR_FORCE_LIMIT** = **10**
+- **PARAM_ANGULAR_ERP** = **11**
+- **PARAM_ANGULAR_MOTOR_TARGET_VELOCITY** = **12**
+- **PARAM_ANGULAR_MOTOR_FORCE_LIMIT** = **13**
+- **PARAM_MAX** = **14**
+- **FLAG_ENABLE_LINEAR_LIMIT** = **0**
+- **FLAG_ENABLE_ANGULAR_LIMIT** = **1**
+- **FLAG_ENABLE_MOTOR** = **2**
+- **FLAG_MAX** = **3**
 
 Member Function Description
 ---------------------------

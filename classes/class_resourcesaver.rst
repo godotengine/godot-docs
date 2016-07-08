@@ -28,11 +28,11 @@ Numeric Constants
 -----------------
 
 - **FLAG_RELATIVE_PATHS** = **1**
-- **FLAG_SAVE_BIG_ENDIAN** = **16**
 - **FLAG_BUNDLE_RESOURCES** = **2**
-- **FLAG_COMPRESS** = **32**
 - **FLAG_CHANGE_PATH** = **4**
 - **FLAG_OMIT_EDITOR_PROPERTIES** = **8**
+- **FLAG_SAVE_BIG_ENDIAN** = **16**
+- **FLAG_COMPRESS** = **32**
 
 Description
 -----------

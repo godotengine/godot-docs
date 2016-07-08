@@ -104,9 +104,11 @@ Numeric Constants
 - **ALIGN_CENTER** = **1**
 - **ALIGN_RIGHT** = **2**
 - **ALIGN_FILL** = **3**
+- **LIST_NUMBERS** = **0**
+- **LIST_LETTERS** = **1**
+- **LIST_DOTS** = **2**
 - **ITEM_FRAME** = **0**
 - **ITEM_TEXT** = **1**
-- **ITEM_META** = **11**
 - **ITEM_IMAGE** = **2**
 - **ITEM_NEWLINE** = **3**
 - **ITEM_FONT** = **4**
@@ -115,9 +117,7 @@ Numeric Constants
 - **ITEM_ALIGN** = **7**
 - **ITEM_INDENT** = **8**
 - **ITEM_LIST** = **9**
-- **LIST_NUMBERS** = **0**
-- **LIST_LETTERS** = **1**
-- **LIST_DOTS** = **2**
+- **ITEM_META** = **11**
 
 Description
 -----------

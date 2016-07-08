@@ -46,13 +46,13 @@ Numeric Constants
 -----------------
 
 - **FLAG_MIPMAPS** = **1** --- Generate mipmaps, to enable smooth zooming out of the texture.
-- **FLAG_CONVERT_TO_LINEAR** = **16**
 - **FLAG_REPEAT** = **2** --- Repeat (instead of clamp to edge).
-- **FLAG_MIRRORED_REPEAT** = **32**
 - **FLAG_FILTER** = **4** --- Turn on magnifying filter, to enable smooth zooming in of the texture.
 - **FLAG_VIDEO_SURFACE** = **4096** --- Texture is a video surface.
-- **FLAG_ANISOTROPIC_FILTER** = **8**
 - **FLAGS_DEFAULT** = **7** --- Default flags. Generate mipmaps, repeat, and filter are enabled.
+- **FLAG_ANISOTROPIC_FILTER** = **8**
+- **FLAG_CONVERT_TO_LINEAR** = **16**
+- **FLAG_MIRRORED_REPEAT** = **32**
 
 Description
 -----------

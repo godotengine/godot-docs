@@ -216,8 +216,6 @@ Numeric Constants
 - **DAY_SATURDAY** = **6**
 - **MONTH_JANUARY** = **0**
 - **MONTH_FEBRUARY** = **1**
-- **MONTH_NOVEMBER** = **10**
-- **MONTH_DECEMBER** = **11**
 - **MONTH_MARCH** = **2**
 - **MONTH_APRIL** = **3**
 - **MONTH_MAY** = **4**
@@ -226,6 +224,8 @@ Numeric Constants
 - **MONTH_AUGUST** = **7**
 - **MONTH_SEPTEMBER** = **8**
 - **MONTH_OCTOBER** = **9**
+- **MONTH_NOVEMBER** = **10**
+- **MONTH_DECEMBER** = **11**
 - **SCREEN_ORIENTATION_LANDSCAPE** = **0**
 - **SCREEN_ORIENTATION_PORTRAIT** = **1**
 - **SCREEN_ORIENTATION_REVERSE_LANDSCAPE** = **2**

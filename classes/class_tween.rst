@@ -86,13 +86,10 @@ Signals
 Numeric Constants
 -----------------
 
-- **EASE_IN** = **0** --- Signifies that the interpolation should be focused in the beginning.
-- **EASE_OUT** = **1** --- Signifies that the interpolation should be focused in the end.
-- **EASE_IN_OUT** = **2** --- Signifies that the interpolation should be focused in both ends.
-- **EASE_OUT_IN** = **3** --- Signifies that the interpolation should be focused in both ends, but they should be switched (a bit hard to explain, try it for yourself to be sure).
+- **TWEEN_PROCESS_FIXED** = **0** --- The :ref:`Tween<class_tween>` should use ``_fixed_process`` for timekeeping when this is enabled.
+- **TWEEN_PROCESS_IDLE** = **1** --- The :ref:`Tween<class_tween>` should use ``_process`` for timekeeping when this is enabled (default).
 - **TRANS_LINEAR** = **0** --- Means that the animation is interpolated linearly.
 - **TRANS_SINE** = **1** --- Means that the animation is interpolated using a sine wave.
-- **TRANS_BACK** = **10** --- Means that the animation is interpolated backing out at edges.
 - **TRANS_QUINT** = **2** --- Means that the animation is interpolated with a quinary (to the power of 5) function.
 - **TRANS_QUART** = **3** --- Means that the animation is interpolated with a quartic (to the power of 4) function.
 - **TRANS_QUAD** = **4** --- Means that the animation is interpolated with a quadratic (to the power of 2) function.
@@ -101,8 +98,11 @@ Numeric Constants
 - **TRANS_CUBIC** = **7** --- Means that the animation is interpolated with a cubic (to the power of 3) function.
 - **TRANS_CIRC** = **8** --- Means that the animation is interpolated with a function using square roots.
 - **TRANS_BOUNCE** = **9** --- Means that the animation is interpolated by bouncing at, but never surpassing, the end.
-- **TWEEN_PROCESS_FIXED** = **0** --- The :ref:`Tween<class_tween>` should use ``_fixed_process`` for timekeeping when this is enabled.
-- **TWEEN_PROCESS_IDLE** = **1** --- The :ref:`Tween<class_tween>` should use ``_process`` for timekeeping when this is enabled (default).
+- **TRANS_BACK** = **10** --- Means that the animation is interpolated backing out at edges.
+- **EASE_IN** = **0** --- Signifies that the interpolation should be focused in the beginning.
+- **EASE_OUT** = **1** --- Signifies that the interpolation should be focused in the end.
+- **EASE_IN_OUT** = **2** --- Signifies that the interpolation should be focused in both ends.
+- **EASE_OUT_IN** = **3** --- Signifies that the interpolation should be focused in both ends, but they should be switched (a bit hard to explain, try it for yourself to be sure).
 
 Description
 -----------

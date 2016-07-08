@@ -83,8 +83,8 @@ Member Functions
 Numeric Constants
 -----------------
 
-- **ANCHOR_MODE_FIXED_TOP_LEFT** = **0**
 - **ANCHOR_MODE_DRAG_CENTER** = **1**
+- **ANCHOR_MODE_FIXED_TOP_LEFT** = **0**
 
 Description
 -----------

@@ -56,7 +56,7 @@ Member Function Description
 
 - void  **action_add_event**  **(** :ref:`String<class_string>` action, :ref:`InputEvent<class_inputevent>` event  **)**
 
-Add an :ref:`InputEvent<class_inputevent>` to action. This :ref:`InputEvent<class_inputevent>` will trigger the action.
+Add an :ref:`InputEvent<class_inputevent>` to an action. This :ref:`InputEvent<class_inputevent>` will trigger the action.
 
 .. _class_InputMap_action_erase_event:
 
@@ -74,7 +74,7 @@ Whether an action has an :ref:`InputEvent<class_inputevent>` associated with it.
 
 - void  **add_action**  **(** :ref:`String<class_string>` action  **)**
 
-Add an action to the :ref:`InputMap<class_inputmap>`.
+Add an (empty) action to the :ref:`InputMap<class_inputmap>`. An :ref:`InputEvent<class_inputevent>` can then be added to this action with :ref:`action_add_event<class_InputMap_action_add_event>`.
 
 .. _class_InputMap_erase_action:
 
@@ -86,40 +86,42 @@ Remove an action from the :ref:`InputMap<class_inputmap>`.
 
 - :ref:`bool<class_bool>`  **event_is_action**  **(** :ref:`InputEvent<class_inputevent>` event, :ref:`String<class_string>` action  **)** const
 
+Return whether the given event is part of an existing action.
+
 .. _class_InputMap_get_action_from_id:
 
 - :ref:`String<class_string>`  **get_action_from_id**  **(** :ref:`int<class_int>` id  **)** const
 
-Return the action from an id.
+Return the action corresponding to the identifier.
 
 .. _class_InputMap_get_action_id:
 
 - :ref:`int<class_int>`  **get_action_id**  **(** :ref:`String<class_string>` action  **)** const
 
-Return the id of an action.
+Return the identifier of the given action.
 
 .. _class_InputMap_get_action_list:
 
 - :ref:`Array<class_array>`  **get_action_list**  **(** :ref:`String<class_string>` action  **)**
 
-Return an :ref:`Array<class_array>` of :ref:`InputEvent<class_inputevent>`s associated with an action.
+Return an array of InputEvents associated with a given action.
 
 .. _class_InputMap_get_actions:
 
 - :ref:`Array<class_array>`  **get_actions**  **(** **)**
 
-Return an :ref:`Array<class_array>` of all actions in the :ref:`InputMap<class_inputmap>`.
+Return an array of all actions in the :ref:`InputMap<class_inputmap>`.
 
 .. _class_InputMap_has_action:
 
 - :ref:`bool<class_bool>`  **has_action**  **(** :ref:`String<class_string>` action  **)** const
 
-Whether this InputMap has an action with name "action".
+Whether this InputMap has a registered action with the given name.
 
 .. _class_InputMap_load_from_globals:
 
 - void  **load_from_globals**  **(** **)**
 
-Clears the :ref:`InputMap<class_inputmap>` and loads it from :ref:`Globals<class_globals>`.
+Clear the :ref:`InputMap<class_inputmap>` and load it anew from :ref:`Globals<class_globals>`.
 
 

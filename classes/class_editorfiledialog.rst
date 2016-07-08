@@ -66,13 +66,13 @@ Signals
 Numeric Constants
 -----------------
 
-- **ACCESS_RESOURCES** = **0**
-- **ACCESS_USERDATA** = **1**
-- **ACCESS_FILESYSTEM** = **2**
 - **MODE_OPEN_FILE** = **0**
 - **MODE_OPEN_FILES** = **1**
 - **MODE_OPEN_DIR** = **2**
 - **MODE_SAVE_FILE** = **3**
+- **ACCESS_RESOURCES** = **0**
+- **ACCESS_USERDATA** = **1**
+- **ACCESS_FILESYSTEM** = **2**
 
 Member Function Description
 ---------------------------

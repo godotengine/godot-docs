@@ -13,5 +13,10 @@ InputDefault
 Brief Description
 -----------------
 
+Default implementation of the :ref:`Input<class_input>` class.
 
+Description
+-----------
+
+Default implementation of the :ref:`Input<class_input>` class, used internally by the editor and games for default input management.
 

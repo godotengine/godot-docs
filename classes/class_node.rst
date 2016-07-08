@@ -164,12 +164,12 @@ Numeric Constants
 - **NOTIFICATION_EXIT_TREE** = **11**
 - **NOTIFICATION_MOVED_IN_PARENT** = **12**
 - **NOTIFICATION_READY** = **13**
-- **NOTIFICATION_PAUSED** = **14**
-- **NOTIFICATION_UNPAUSED** = **15**
 - **NOTIFICATION_FIXED_PROCESS** = **16**
 - **NOTIFICATION_PROCESS** = **17** --- Notification received every frame when the process flag is set (see :ref:`set_process<class_Node_set_process>`).
 - **NOTIFICATION_PARENTED** = **18** --- Notification received when a node is set as a child of another node. Note that this doesn't mean that a node entered the Scene Tree.
 - **NOTIFICATION_UNPARENTED** = **19** --- Notification received when a node is unparented (parent removed it from the list of children).
+- **NOTIFICATION_PAUSED** = **14**
+- **NOTIFICATION_UNPAUSED** = **15**
 - **NOTIFICATION_INSTANCED** = **20**
 - **PAUSE_MODE_INHERIT** = **0**
 - **PAUSE_MODE_STOP** = **1**

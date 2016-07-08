@@ -50,10 +50,10 @@ Numeric Constants
 -----------------
 
 - **FLAG_VISIBLE** = **0**
-- **FLAG_BILLBOARD** = **1**
-- **FLAG_BILLBOARD_FIX_Y** = **2**
 - **FLAG_CAST_SHADOW** = **3**
 - **FLAG_RECEIVE_SHADOWS** = **4**
+- **FLAG_BILLBOARD** = **1**
+- **FLAG_BILLBOARD_FIX_Y** = **2**
 - **FLAG_DEPH_SCALE** = **5**
 - **FLAG_VISIBLE_IN_ALL_ROOMS** = **6**
 - **FLAG_MAX** = **8**

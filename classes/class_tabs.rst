@@ -57,9 +57,9 @@ Numeric Constants
 - **ALIGN_LEFT** = **0**
 - **ALIGN_CENTER** = **1**
 - **ALIGN_RIGHT** = **2**
-- **CLOSE_BUTTON_SHOW_NEVER** = **0**
 - **CLOSE_BUTTON_SHOW_ACTIVE_ONLY** = **1**
 - **CLOSE_BUTTON_SHOW_ALWAYS** = **2**
+- **CLOSE_BUTTON_SHOW_NEVER** = **0**
 
 Description
 -----------

@@ -109,13 +109,13 @@ Member Functions
 Numeric Constants
 -----------------
 
+- **MODE_OCTREE** = **0**
+- **MODE_LIGHTMAPS** = **1**
 - **BAKE_DIFFUSE** = **0**
 - **BAKE_SPECULAR** = **1**
 - **BAKE_TRANSLUCENT** = **2**
 - **BAKE_CONSERVE_ENERGY** = **3**
 - **BAKE_MAX** = **5**
-- **MODE_OCTREE** = **0**
-- **MODE_LIGHTMAPS** = **1**
 
 Member Function Description
 ---------------------------

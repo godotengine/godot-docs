@@ -110,13 +110,13 @@ Signals
 Numeric Constants
 -----------------
 
+- **MODE_STATIC** = **1** --- Static mode. The body behaves like a :ref:`StaticBody2D<class_staticbody2d>`, and can only move by user code.
+- **MODE_KINEMATIC** = **3** --- Kinematic body. The body behaves like a :ref:`KinematicBody2D<class_kinematicbody2d>`, and can only move by user code.
+- **MODE_RIGID** = **0** --- Rigid body. This is the "natural" state of a rigid body. It is affected by forces, and can move, rotate, and be affected by user code.
+- **MODE_CHARACTER** = **2** --- Character body. This behaves like a rigid body, but can not rotate.
 - **CCD_MODE_DISABLED** = **0** --- Disables continuous collision detection. This is the fastest way to detect body collisions, but can miss small, fast-moving objects.
 - **CCD_MODE_CAST_RAY** = **1** --- Enables continuous collision detection by raycasting. It is faster than shapecasting, but less precise.
 - **CCD_MODE_CAST_SHAPE** = **2** --- Enables continuous collision detection by shapecasting. It is the slowest CCD method, and the most precise.
-- **MODE_RIGID** = **0** --- Rigid body. This is the "natural" state of a rigid body. It is affected by forces, and can move, rotate, and be affected by user code.
-- **MODE_STATIC** = **1** --- Static mode. The body behaves like a :ref:`StaticBody2D<class_staticbody2d>`, and can only move by user code.
-- **MODE_CHARACTER** = **2** --- Character body. This behaves like a rigid body, but can not rotate.
-- **MODE_KINEMATIC** = **3** --- Kinematic body. The body behaves like a :ref:`KinematicBody2D<class_kinematicbody2d>`, and can only move by user code.
 
 Description
 -----------

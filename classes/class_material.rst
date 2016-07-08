@@ -41,15 +41,6 @@ Member Functions
 Numeric Constants
 -----------------
 
-- **BLEND_MODE_MIX** = **0** --- Use the regular alpha blending equation (source and dest colors are faded) (default).
-- **BLEND_MODE_ADD** = **1** --- Use additive blending equation, often used for particle effects such as fire or light decals.
-- **BLEND_MODE_SUB** = **2** --- Use subtractive blending equation, often used for some smoke effects or types of glass.
-- **BLEND_MODE_MUL** = **3**
-- **BLEND_MODE_PREMULT_ALPHA** = **4**
-- **DEPTH_DRAW_ALWAYS** = **0**
-- **DEPTH_DRAW_OPAQUE_ONLY** = **1**
-- **DEPTH_DRAW_OPAQUE_PRE_PASS_ALPHA** = **2**
-- **DEPTH_DRAW_NEVER** = **3**
 - **FLAG_VISIBLE** = **0** --- Geometry is visible when this flag is enabled (default).
 - **FLAG_DOUBLE_SIDED** = **1** --- Both front facing and back facing triangles are rendered when this flag is enabled.
 - **FLAG_INVERT_FACES** = **2** --- Front facing and back facing order is swapped when this flag is enabled.
@@ -58,6 +49,15 @@ Numeric Constants
 - **FLAG_LIGHTMAP_ON_UV2** = **5**
 - **FLAG_COLOR_ARRAY_SRGB** = **6**
 - **FLAG_MAX** = **7** --- Maximum amount of flags.
+- **DEPTH_DRAW_ALWAYS** = **0**
+- **DEPTH_DRAW_OPAQUE_ONLY** = **1**
+- **DEPTH_DRAW_OPAQUE_PRE_PASS_ALPHA** = **2**
+- **DEPTH_DRAW_NEVER** = **3**
+- **BLEND_MODE_MIX** = **0** --- Use the regular alpha blending equation (source and dest colors are faded) (default).
+- **BLEND_MODE_ADD** = **1** --- Use additive blending equation, often used for particle effects such as fire or light decals.
+- **BLEND_MODE_SUB** = **2** --- Use subtractive blending equation, often used for some smoke effects or types of glass.
+- **BLEND_MODE_MUL** = **3**
+- **BLEND_MODE_PREMULT_ALPHA** = **4**
 
 Description
 -----------

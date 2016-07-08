@@ -31,9 +31,6 @@ Member Functions
 Numeric Constants
 -----------------
 
-- **FLAG_USE_LIMIT** = **0**
-- **FLAG_ENABLE_MOTOR** = **1**
-- **FLAG_MAX** = **2**
 - **PARAM_BIAS** = **0**
 - **PARAM_LIMIT_UPPER** = **1**
 - **PARAM_LIMIT_LOWER** = **2**
@@ -43,6 +40,9 @@ Numeric Constants
 - **PARAM_MOTOR_TARGET_VELOCITY** = **6**
 - **PARAM_MOTOR_MAX_IMPULSE** = **7**
 - **PARAM_MAX** = **8**
+- **FLAG_USE_LIMIT** = **0**
+- **FLAG_ENABLE_MOTOR** = **1**
+- **FLAG_MAX** = **2**
 
 Member Function Description
 ---------------------------

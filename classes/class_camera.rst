@@ -71,10 +71,10 @@ Member Functions
 Numeric Constants
 -----------------
 
-- **KEEP_WIDTH** = **0**
-- **KEEP_HEIGHT** = **1**
 - **PROJECTION_PERSPECTIVE** = **0** --- Perspective Projection (object's size on the screen becomes smaller when far away).
 - **PROJECTION_ORTHOGONAL** = **1** --- Orthogonal Projection (objects remain the same size on the screen no matter how far away they are).
+- **KEEP_WIDTH** = **0**
+- **KEEP_HEIGHT** = **1**
 
 Description
 -----------

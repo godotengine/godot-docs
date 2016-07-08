@@ -67,12 +67,12 @@ Member Functions
 Numeric Constants
 -----------------
 
-- **ALPHA_CUT_DISABLED** = **0**
-- **ALPHA_CUT_DISCARD** = **1**
-- **ALPHA_CUT_OPAQUE_PREPASS** = **2**
 - **FLAG_TRANSPARENT** = **0**
 - **FLAG_SHADED** = **1**
 - **FLAG_MAX** = **2**
+- **ALPHA_CUT_DISABLED** = **0**
+- **ALPHA_CUT_DISCARD** = **1**
+- **ALPHA_CUT_OPAQUE_PREPASS** = **2**
 
 Member Function Description
 ---------------------------

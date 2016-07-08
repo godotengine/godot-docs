@@ -95,12 +95,12 @@ Member Functions
 Numeric Constants
 -----------------
 
-- **INTERPOLATION_NEAREST** = **0** --- No interpolation (nearest value).
-- **INTERPOLATION_LINEAR** = **1** --- Linear interpolation.
-- **INTERPOLATION_CUBIC** = **2** --- Cubic interpolation.
 - **TYPE_VALUE** = **0** --- Value tracks set values in node properties, but only those which can be Interpolated.
 - **TYPE_TRANSFORM** = **1** --- Transform tracks are used to change node local transforms or skeleton pose bones. Transitions are Interpolated.
 - **TYPE_METHOD** = **2** --- Method tracks call functions with given arguments per key.
+- **INTERPOLATION_NEAREST** = **0** --- No interpolation (nearest value).
+- **INTERPOLATION_LINEAR** = **1** --- Linear interpolation.
+- **INTERPOLATION_CUBIC** = **2** --- Cubic interpolation.
 
 Description
 -----------

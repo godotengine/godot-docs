@@ -123,16 +123,8 @@ Member Functions
 Numeric Constants
 -----------------
 
-- **MAX_COLOR_PHASES** = **4**
 - **PARAM_DIRECTION** = **0** --- Direction in radians at which the particles will be launched, Notice that when the direction is set to 0 the particles will be launched to the negative
 - **PARAM_SPREAD** = **1**
-- **PARAM_INITIAL_ANGLE** = **10** --- Initial angle in radians at which each particle will be spawned
-- **PARAM_INITIAL_SIZE** = **11** --- Initial size of each particle
-- **PARAM_FINAL_SIZE** = **12** --- Final size of each particle, the particle size will interpolate to this value during its lifetime.
-- **PARAM_HUE_VARIATION** = **13**
-- **PARAM_ANIM_SPEED_SCALE** = **14**
-- **PARAM_ANIM_INITIAL_POS** = **15**
-- **PARAM_MAX** = **16**
 - **PARAM_LINEAR_VELOCITY** = **2** --- Velocity at which the particles will be launched.
 - **PARAM_SPIN_VELOCITY** = **3** --- The speed at which particles will spin around its own center.
 - **PARAM_ORBIT_VELOCITY** = **4** --- Velocity at which the particles will orbit around the emitter center
@@ -141,6 +133,14 @@ Numeric Constants
 - **PARAM_RADIAL_ACCEL** = **7**
 - **PARAM_TANGENTIAL_ACCEL** = **8**
 - **PARAM_DAMPING** = **9** --- Amount of damping for each particle
+- **PARAM_INITIAL_ANGLE** = **10** --- Initial angle in radians at which each particle will be spawned
+- **PARAM_INITIAL_SIZE** = **11** --- Initial size of each particle
+- **PARAM_FINAL_SIZE** = **12** --- Final size of each particle, the particle size will interpolate to this value during its lifetime.
+- **PARAM_HUE_VARIATION** = **13**
+- **PARAM_ANIM_SPEED_SCALE** = **14**
+- **PARAM_ANIM_INITIAL_POS** = **15**
+- **PARAM_MAX** = **16**
+- **MAX_COLOR_PHASES** = **4**
 
 Description
 -----------

@@ -57,19 +57,19 @@ Member Functions
 Numeric Constants
 -----------------
 
+- **PARAM_RADIUS** = **2**
+- **PARAM_ENERGY** = **3**
+- **PARAM_ATTENUATION** = **4**
+- **PARAM_SPOT_ANGLE** = **1**
+- **PARAM_SPOT_ATTENUATION** = **0**
+- **PARAM_SHADOW_DARKENING** = **5**
+- **PARAM_SHADOW_Z_OFFSET** = **6**
+- **COLOR_DIFFUSE** = **0**
+- **COLOR_SPECULAR** = **1**
 - **BAKE_MODE_DISABLED** = **0**
 - **BAKE_MODE_INDIRECT** = **1**
 - **BAKE_MODE_INDIRECT_AND_SHADOWS** = **2**
 - **BAKE_MODE_FULL** = **3**
-- **COLOR_DIFFUSE** = **0**
-- **COLOR_SPECULAR** = **1**
-- **PARAM_SPOT_ATTENUATION** = **0**
-- **PARAM_SPOT_ANGLE** = **1**
-- **PARAM_RADIUS** = **2**
-- **PARAM_ENERGY** = **3**
-- **PARAM_ATTENUATION** = **4**
-- **PARAM_SHADOW_DARKENING** = **5**
-- **PARAM_SHADOW_Z_OFFSET** = **6**
 
 Description
 -----------

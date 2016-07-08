@@ -34,11 +34,11 @@ Numeric Constants
 -----------------
 
 - **TYPE_MASK_STATIC_BODY** = **1**
-- **TYPE_MASK_COLLISION** = **15**
-- **TYPE_MASK_AREA** = **16**
 - **TYPE_MASK_KINEMATIC_BODY** = **2**
 - **TYPE_MASK_RIGID_BODY** = **4**
 - **TYPE_MASK_CHARACTER_BODY** = **8**
+- **TYPE_MASK_AREA** = **16**
+- **TYPE_MASK_COLLISION** = **15**
 
 Member Function Description
 ---------------------------

@@ -162,7 +162,7 @@ Return a copy of the string with escaped characters replaced by their meanings a
 
 - :ref:`String<class_string>`  **capitalize**  **(** **)**
 
-Return the string in uppercase.
+Change the case of some letters. Replace underscores with spaces, convert all letters to lowercase then capitalize first and every letter following the space character. For ``capitalize camelCase mixed_with_underscores`` it will return ``Capitalize Camelcase Mixed With Underscores``.
 
 .. _class_String_casecmp_to:
 

@@ -27,11 +27,11 @@ Member Functions
 +------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`draw_circle<class_CanvasItem_draw_circle>`  **(** :ref:`Vector2<class_vector2>` pos, :ref:`float<class_float>` radius, :ref:`Color<class_color>` color  **)**                                                                                                                            |
 +------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`draw_colored_polygon<class_CanvasItem_draw_colored_polygon>`  **(** :ref:`Vector2Array<class_vector2array>` points, :ref:`Color<class_color>` color, :ref:`Vector2Array<class_vector2array>` uvs=Vector2Array(), :ref:`Texture<class_texture>` texture=NULL  **)**                       |
+| void                                                 | :ref:`draw_colored_polygon<class_CanvasItem_draw_colored_polygon>`  **(** :ref:`Vector2Array<class_vector2array>` points, :ref:`Color<class_color>` color, :ref:`Vector2Array<class_vector2array>` uvs=Vector2Array([]), :ref:`Texture<class_texture>` texture=NULL  **)**                     |
 +------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`draw_line<class_CanvasItem_draw_line>`  **(** :ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to, :ref:`Color<class_color>` color, :ref:`float<class_float>` width=1  **)**                                                                                            |
 +------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`draw_polygon<class_CanvasItem_draw_polygon>`  **(** :ref:`Vector2Array<class_vector2array>` points, :ref:`ColorArray<class_colorarray>` colors, :ref:`Vector2Array<class_vector2array>` uvs=Vector2Array(), :ref:`Texture<class_texture>` texture=NULL  **)**                            |
+| void                                                 | :ref:`draw_polygon<class_CanvasItem_draw_polygon>`  **(** :ref:`Vector2Array<class_vector2array>` points, :ref:`ColorArray<class_colorarray>` colors, :ref:`Vector2Array<class_vector2array>` uvs=Vector2Array([]), :ref:`Texture<class_texture>` texture=NULL  **)**                          |
 +------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`draw_primitive<class_CanvasItem_draw_primitive>`  **(** :ref:`Vector2Array<class_vector2array>` points, :ref:`ColorArray<class_colorarray>` colors, :ref:`Vector2Array<class_vector2array>` uvs, :ref:`Texture<class_texture>` texture=NULL, :ref:`float<class_float>` width=1  **)**    |
 +------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -144,11 +144,11 @@ Numeric Constants
 - **BLEND_MODE_SUB** = **2** --- Subtractive blending mode.
 - **BLEND_MODE_MUL** = **3** --- Multiplicative blending mode.
 - **BLEND_MODE_PREMULT_ALPHA** = **4** --- Mix blending mode. Colors are assumed to be premultiplied by the alpha (opacity) value.
-- **NOTIFICATION_TRANSFORM_CHANGED** = **29** --- Canvas item transform has changed. Only received if requested.
 - **NOTIFICATION_DRAW** = **30** --- CanvasItem is requested to draw.
 - **NOTIFICATION_VISIBILITY_CHANGED** = **31** --- Canvas item visibility has changed.
 - **NOTIFICATION_ENTER_CANVAS** = **32** --- Canvas item has entered the canvas.
 - **NOTIFICATION_EXIT_CANVAS** = **33** --- Canvas item has exited the canvas.
+- **NOTIFICATION_TRANSFORM_CHANGED** = **29** --- Canvas item transform has changed. Only received if requested.
 
 Description
 -----------
@@ -186,7 +186,7 @@ Draw a colored circle.
 
 .. _class_CanvasItem_draw_colored_polygon:
 
-- void  **draw_colored_polygon**  **(** :ref:`Vector2Array<class_vector2array>` points, :ref:`Color<class_color>` color, :ref:`Vector2Array<class_vector2array>` uvs=Vector2Array(), :ref:`Texture<class_texture>` texture=NULL  **)**
+- void  **draw_colored_polygon**  **(** :ref:`Vector2Array<class_vector2array>` points, :ref:`Color<class_color>` color, :ref:`Vector2Array<class_vector2array>` uvs=Vector2Array([]), :ref:`Texture<class_texture>` texture=NULL  **)**
 
 Draw a colored polygon of any amount of points, convex or concave.
 
@@ -198,7 +198,7 @@ Draw a line from a 2D point to another, with a given color and width.
 
 .. _class_CanvasItem_draw_polygon:
 
-- void  **draw_polygon**  **(** :ref:`Vector2Array<class_vector2array>` points, :ref:`ColorArray<class_colorarray>` colors, :ref:`Vector2Array<class_vector2array>` uvs=Vector2Array(), :ref:`Texture<class_texture>` texture=NULL  **)**
+- void  **draw_polygon**  **(** :ref:`Vector2Array<class_vector2array>` points, :ref:`ColorArray<class_colorarray>` colors, :ref:`Vector2Array<class_vector2array>` uvs=Vector2Array([]), :ref:`Texture<class_texture>` texture=NULL  **)**
 
 Draw a polygon of any amount of points, convex or concave.
 

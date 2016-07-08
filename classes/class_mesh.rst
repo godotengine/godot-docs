@@ -65,26 +65,26 @@ Member Functions
 Numeric Constants
 -----------------
 
-- **ARRAY_VERTEX** = **0** --- Vertex array (array of :ref:`Vector3<class_vector3>` vertices).
-- **ARRAY_FORMAT_VERTEX** = **1** --- Array format will include vertices (mandatory).
-- **ARRAY_NORMAL** = **1** --- Normal array (array of :ref:`Vector3<class_vector3>` normals).
-- **ARRAY_FORMAT_WEIGHTS** = **128** --- Array format will include bone weights.
-- **ARRAY_FORMAT_TEX_UV** = **16** --- Array format will include UVs.
-- **ARRAY_FORMAT_NORMAL** = **2** --- Array format will include normals
-- **ARRAY_TANGENT** = **2** --- Tangent array, array of groups of 4 floats. first 3 floats determine the tangent, and the last the binormal direction as -1 or 1.
-- **ARRAY_FORMAT_INDEX** = **256** --- Index array will be used.
-- **ARRAY_COLOR** = **3** --- Vertex array (array of :ref:`Color<class_color>` colors).
-- **ARRAY_FORMAT_TEX_UV2** = **32** --- Array format will include another set of UVs.
-- **ARRAY_FORMAT_TANGENT** = **4** --- Array format will include tangents
-- **ARRAY_TEX_UV** = **4** --- UV array (array of :ref:`Vector3<class_vector3>` UVs or float array of groups of 2 floats (u,v)).
+- **NO_INDEX_ARRAY** = **-1** --- Default value used for index_array_len when no indices are present.
 - **ARRAY_WEIGHTS_SIZE** = **4** --- Amount of weights/bone indices per vertex (always 4).
+- **ARRAY_VERTEX** = **0** --- Vertex array (array of :ref:`Vector3<class_vector3>` vertices).
+- **ARRAY_NORMAL** = **1** --- Normal array (array of :ref:`Vector3<class_vector3>` normals).
+- **ARRAY_TANGENT** = **2** --- Tangent array, array of groups of 4 floats. first 3 floats determine the tangent, and the last the binormal direction as -1 or 1.
+- **ARRAY_COLOR** = **3** --- Vertex array (array of :ref:`Color<class_color>` colors).
+- **ARRAY_TEX_UV** = **4** --- UV array (array of :ref:`Vector3<class_vector3>` UVs or float array of groups of 2 floats (u,v)).
 - **ARRAY_TEX_UV2** = **5** --- Second UV array (array of :ref:`Vector3<class_vector3>` UVs or float array of groups of 2 floats (u,v)).
 - **ARRAY_BONES** = **6** --- Array of bone indices, as a float array. Each element in groups of 4 floats.
-- **ARRAY_FORMAT_BONES** = **64** --- Array format will include bone indices.
 - **ARRAY_WEIGHTS** = **7** --- Array of bone weights, as a float array. Each element in groups of 4 floats.
-- **ARRAY_FORMAT_COLOR** = **8** --- Array format will include a color array.
 - **ARRAY_INDEX** = **8** --- Array of integers, used as indices referencing vertices. No index can be beyond the vertex array size.
-- **NO_INDEX_ARRAY** = **-1** --- Default value used for index_array_len when no indices are present.
+- **ARRAY_FORMAT_VERTEX** = **1** --- Array format will include vertices (mandatory).
+- **ARRAY_FORMAT_NORMAL** = **2** --- Array format will include normals
+- **ARRAY_FORMAT_TANGENT** = **4** --- Array format will include tangents
+- **ARRAY_FORMAT_COLOR** = **8** --- Array format will include a color array.
+- **ARRAY_FORMAT_TEX_UV** = **16** --- Array format will include UVs.
+- **ARRAY_FORMAT_TEX_UV2** = **32** --- Array format will include another set of UVs.
+- **ARRAY_FORMAT_BONES** = **64** --- Array format will include bone indices.
+- **ARRAY_FORMAT_WEIGHTS** = **128** --- Array format will include bone weights.
+- **ARRAY_FORMAT_INDEX** = **256** --- Index array will be used.
 - **PRIMITIVE_POINTS** = **0** --- Render array as points (one vertex equals one point).
 - **PRIMITIVE_LINES** = **1** --- Render array as lines (every two vertices a line is created).
 - **PRIMITIVE_LINE_STRIP** = **2** --- Render array as line strip.

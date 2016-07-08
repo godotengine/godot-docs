@@ -37,12 +37,12 @@ Member Functions
 Numeric Constants
 -----------------
 
-- **RESOLVER_INVALID_ID** = **-1**
 - **RESOLVER_STATUS_NONE** = **0**
 - **RESOLVER_STATUS_WAITING** = **1**
 - **RESOLVER_STATUS_DONE** = **2**
 - **RESOLVER_STATUS_ERROR** = **3**
 - **RESOLVER_MAX_QUERIES** = **32**
+- **RESOLVER_INVALID_ID** = **-1**
 
 Description
 -----------

@@ -102,8 +102,8 @@ Numeric Constants
 -----------------
 
 - **READ** = **1** --- Open the file for reading.
-- **READ_WRITE** = **3** --- Open the file for reading and writing, without truncating the file.
 - **WRITE** = **2** --- Open the file for writing. Create it if the file not exists and truncate if it exists.
+- **READ_WRITE** = **3** --- Open the file for reading and writing, without truncating the file.
 - **WRITE_READ** = **7** --- Open the file for reading and writing. Create it if the file not exists and truncate if it exists.
 
 Description

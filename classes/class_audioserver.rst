@@ -117,6 +117,12 @@ Member Functions
 Numeric Constants
 -----------------
 
+- **SAMPLE_FORMAT_PCM8** = **0** --- Sample format is 8 bits, signed.
+- **SAMPLE_FORMAT_PCM16** = **1** --- Sample format is 16 bits, little-endian, signed.
+- **SAMPLE_FORMAT_IMA_ADPCM** = **2** --- Sample format is IMA-ADPCM compressed.
+- **SAMPLE_LOOP_NONE** = **0** --- Sample does not loop.
+- **SAMPLE_LOOP_FORWARD** = **1** --- Sample loops in forward mode.
+- **SAMPLE_LOOP_PING_PONG** = **2** --- Sample loops in a bidirectional way.
 - **FILTER_NONE** = **0** --- Filter is disabled.
 - **FILTER_LOWPASS** = **1** --- Filter is a resonant lowpass.
 - **FILTER_BANDPASS** = **2** --- Filter is a resonant bandpass.
@@ -127,12 +133,6 @@ Numeric Constants
 - **REVERB_MEDIUM** = **1** --- Medium reverb room (living room)
 - **REVERB_LARGE** = **2** --- Large reverb room (warehouse).
 - **REVERB_HALL** = **3** --- Large reverb room with long decay.
-- **SAMPLE_FORMAT_PCM8** = **0** --- Sample format is 8 bits, signed.
-- **SAMPLE_LOOP_NONE** = **0** --- Sample does not loop.
-- **SAMPLE_FORMAT_PCM16** = **1** --- Sample format is 16 bits, little-endian, signed.
-- **SAMPLE_LOOP_FORWARD** = **1** --- Sample loops in forward mode.
-- **SAMPLE_FORMAT_IMA_ADPCM** = **2** --- Sample format is IMA-ADPCM compressed.
-- **SAMPLE_LOOP_PING_PONG** = **2** --- Sample loops in a bidirectional way.
 
 Description
 -----------

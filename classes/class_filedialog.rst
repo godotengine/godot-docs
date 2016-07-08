@@ -62,13 +62,13 @@ Signals
 Numeric Constants
 -----------------
 
-- **ACCESS_RESOURCES** = **0** --- The dialog allows the selection of file and directory.
-- **ACCESS_USERDATA** = **1** --- The dialog allows ascess files under :ref:`Resource<class_resource>` path(res://) .
-- **ACCESS_FILESYSTEM** = **2** --- The dialog allows ascess files in whole file system.
 - **MODE_OPEN_FILE** = **0** --- The dialog allows the selection of one, and only one file.
 - **MODE_OPEN_FILES** = **1** --- The dialog allows the selection of multiple files.
 - **MODE_OPEN_DIR** = **2** --- The dialog functions as a folder selector, disallowing the selection of any file.
 - **MODE_SAVE_FILE** = **3** --- The dialog will warn when a file exists.
+- **ACCESS_RESOURCES** = **0** --- The dialog allows the selection of file and directory.
+- **ACCESS_USERDATA** = **1** --- The dialog allows ascess files under :ref:`Resource<class_resource>` path(res://) .
+- **ACCESS_FILESYSTEM** = **2** --- The dialog allows ascess files in whole file system.
 
 Description
 -----------

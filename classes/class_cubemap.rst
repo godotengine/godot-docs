@@ -45,19 +45,19 @@ Member Functions
 Numeric Constants
 -----------------
 
-- **FLAG_MIPMAPS** = **1**
-- **FLAG_REPEAT** = **2**
-- **FLAG_FILTER** = **4**
-- **FLAGS_DEFAULT** = **7**
+- **STORAGE_RAW** = **0**
+- **STORAGE_COMPRESS_LOSSY** = **1**
+- **STORAGE_COMPRESS_LOSSLESS** = **2**
 - **SIDE_LEFT** = **0**
 - **SIDE_RIGHT** = **1**
 - **SIDE_BOTTOM** = **2**
 - **SIDE_TOP** = **3**
 - **SIDE_FRONT** = **4**
 - **SIDE_BACK** = **5**
-- **STORAGE_RAW** = **0**
-- **STORAGE_COMPRESS_LOSSY** = **1**
-- **STORAGE_COMPRESS_LOSSLESS** = **2**
+- **FLAG_MIPMAPS** = **1**
+- **FLAG_REPEAT** = **2**
+- **FLAG_FILTER** = **4**
+- **FLAGS_DEFAULT** = **7**
 
 Member Function Description
 ---------------------------
