@@ -3,6 +3,11 @@
 Making Plugins
 ==============
 
+.. Remove this warning when 2.1 is release
+
+*Important:* This tutorial applies only to the upcoming version 2.1.
+
+
 About Plugins
 ~~~~~~~~~~~~~
 
