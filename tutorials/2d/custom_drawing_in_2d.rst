@@ -68,7 +68,7 @@ redrawn if modified:
 
     extends Node2D
 
-    var texture setget _set_texture
+    export var texture setget _set_texture
 
     func _set_texture(value):
         #if the texture variable is modified externally,
