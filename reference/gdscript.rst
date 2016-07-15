@@ -264,14 +264,16 @@ considered a comment.
 
     # This is a comment
 
-Multi-line comments can be created using """ (three quotes in a row) at
-the beginning and end of a block of text.
-
-::
-
-    """ Everything on these 
-    lines is considered
-    a comment """
+..  Uncomment me if/when https://github.com/godotengine/godot/issues/1320 gets fixed
+    
+    Multi-line comments can be created using """ (three quotes in a row) at
+    the beginning and end of a block of text.
+    
+    ::
+    
+        """ Everything on these 
+        lines is considered
+        a comment """
 
 Built-in types
 --------------
