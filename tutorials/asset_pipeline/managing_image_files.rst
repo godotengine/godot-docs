@@ -130,9 +130,13 @@ Linux/Mac
 Using ImageMagicks ``convert`` or ``mogrify`` fixes these warnings.
 To fix all PNGs in a project folder do:
 
-    find . -type f -name "*.png" -exec convert {} {} \;
+.. code-block:: shell
+
+    $ find . -type f -name "*.png" -exec convert {} {} \;
 
 ``pngcheck`` is also useful in locating the non-conforming images:
+
+.. code-block:: shell
 
     find . -type f -name "*.png" -exec pngcheck {} \;
 
@@ -140,5 +144,7 @@ Windows
 ~~~~~~~
 Using `optiPNG <http://optipng.sourceforge.net/>` fixes these warnings on Windows.
 To fix a PNG inplace do:
+
+.. code-block:: shell
 
     optipng -clobber -strip all file.png
