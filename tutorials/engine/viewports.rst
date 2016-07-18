@@ -181,4 +181,4 @@ inside the editor:
 
 Make sure to check the viewport demos! Viewport folder in the demos
 archive available to download, or
-https://github.com/godotengine/godot/tree/master/demos/viewport
+https://github.com/godotengine/godot-demo-projects/tree/master/viewport
