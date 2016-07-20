@@ -59,13 +59,13 @@ html_theme_options = {
     # 'typekit_id': 'hiw1hhg',
     # 'analytics_id': '',
     # 'sticky_navigation': True  # Set to False to disable the sticky nav while scrolling.
-    # 'logo_only': True,  # if we have a html_logo below, this shows /only/ the logo with no title text
+    'logo_only': True,  # if we have a html_logo below, this shows /only/ the logo with no title text
     'collapse_navigation': False,  # Collapse navigation (False makes it tree-like)
     # 'display_version': True,  # Display the docs version
     # 'navigation_depth': 4,  # Depth of the headers shown in the navigation bar
 }
 
-# html_logo = ''
+html_logo = 'img/docs_logo.png'
 
 # Output file base name for HTML help builder
 htmlhelp_basename = 'GodotEnginedoc'
