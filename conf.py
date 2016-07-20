@@ -56,8 +56,16 @@ if not on_rtd:  # only import and set the theme if we're building docs locally
 
 # Theme options
 html_theme_options = {
-  "collapse_navigation": True,
+    # 'typekit_id': 'hiw1hhg',
+    # 'analytics_id': '',
+    # 'sticky_navigation': True  # Set to False to disable the sticky nav while scrolling.
+    # 'logo_only': True,  # if we have a html_logo below, this shows /only/ the logo with no title text
+    'collapse_navigation': False,  # Collapse navigation (False makes it tree-like)
+    # 'display_version': True,  # Display the docs version
+    # 'navigation_depth': 4,  # Depth of the headers shown in the navigation bar
 }
+
+# html_logo = ''
 
 # Output file base name for HTML help builder
 htmlhelp_basename = 'GodotEnginedoc'
