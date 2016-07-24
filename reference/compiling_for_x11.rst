@@ -11,7 +11,7 @@ Requirements
 For compiling under Linux or other Unix variants, the following is
 required:
 
--  GCC (G++) or Clang
+-  GCC (G++) or Clang (note: use of GCC6 is discouraged because of optimization problems. Prefer GCC versions <6 for the moment).
 -  Python 2.7+ (3.0 is untested as of now)
 -  SCons build system
 -  pkg-config (used to detect the dependencies below)
