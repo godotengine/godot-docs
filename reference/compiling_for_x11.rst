@@ -53,6 +53,11 @@ Distro-specific oneliners
 |               |                                                                                                            |
 |               |     pacman -S scons libxcursor libxinerama libxrandr mesa glu alsa-lib pulseaudio freetype2                |
 +---------------+------------------------------------------------------------------------------------------------------------+
+| **Gentoo**    | ::                                                                                                         |
+|               |                                                                                                            |
+|               |     emerge -an dev-util/scons x11-libs/libX11 x11-libs/libXcursor x11-libs/libXinerama media-libs/mesa \   |
+|               |         media-libs/glu media-libs/alsa-lib media-sound/pulseaudio media-libs/freetype                      |
++---------------+------------------------------------------------------------------------------------------------------------+
 
 Compiling
 ---------
