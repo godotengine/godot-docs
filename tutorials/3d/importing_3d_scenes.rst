@@ -381,7 +381,7 @@ Create a script that basically looks like this:
 
     func post_import(scene):
       # do your stuff here
-      pass # scene contains the imported scene starting from the root node
+      return scene # remember to return the imported scene
 
 The post-import function takes the imported scene as parameter (the
 parameter is actually the root node of the scene).
