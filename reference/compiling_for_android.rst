@@ -16,21 +16,29 @@ Also, you still need to do all the steps mentioned in the
 :ref:`doc_exporting_for_android` tutorial before attempting your custom
 export template.
 
-Requirements
-------------
+A. Requirements
+---------------
 
 For compiling under Windows, Linux or OSX, the following is required:
 
--  Python 2.7+ (3.0 is untested as of now).
--  SCons build system.
+-  Python 2.7+ [3.0 is untested as of now]
+-  pywin32 [Optional, Windows only. Applied when -j(number of cores) specified]
+-  SCons build system
 -  Android SDK version 19 [Note: Please install all Tools and Extras of sdk manager]
 -  Android build tools version 19.1
--  Android NDK
--  Gradle
--  OpenJDK 6 or later (or Oracle JDK 6 or later)
+-  Android NDK r10e or later
+-  Gradle [will be downloaded and installed when compiling for android if it doesn't exist]
+-  JDK 6+ (Oracle's releases) or OpenJDK 6+
 
-Setting up SCons
-----------------
+B. Setting up Build System
+--------------------------------------------------------
+
+1) Scons : please, refer to their respective docs
+
+2) Gradle : will be automatically setup upon packing APK if 
+we do not have gradle installed previously (may require working internet connection)
+
+3) Android :
 
 Set the environment variable ANDROID_HOME to point to the Android
 SDK.
@@ -38,17 +46,20 @@ SDK.
 Set the environment variable ANDROID_NDK_ROOT to point to the
 Android NDK.
 
-To set those environment variables on Windows, press Windows+R, type
-"control system", then click on **Advanced system settings** in the left
-pane, then click on **Environment variables** on the window that
-appears.
+- on Windows :
+press Windows+R, type "control system", then click on **Advanced system settings**
+in the left pane, then click on **Environment variables** on the window that appears.
 
-To set those environment variables on Linux, use
+- on Unix (eg. Linux and Mac OS):
+Open up Terminal and then execute commands below :
 ``export ANDROID_HOME=/path/to/android-sdk`` and
-``export ANDROID_NDK_ROOT=/path/to/android-ndk``.
+``export ANDROID_NDK_ROOT=/path/to/android-ndk``
 
-Compiling
----------
+C. Compiling
+------------
+
+C1. Compiling the Engine
+------------------------
 
 Go to the root dir of the engine source code and type:
 
@@ -56,53 +67,30 @@ Go to the root dir of the engine source code and type:
 
     C:\godot> scons platform=android
 
-This should result in a regular .so in ``\bin`` folder as if it was
+This should result in a regular .so file (built for ARM platform) in ``\bin`` folder, as if it was
 compiled with flags: ``tools=no target=debug``. The resulting file will
-be huge because it will contain all debug symbols, so for next builds,
-using ``target=release_debug`` or ``target=release`` is recommended.
-
-Copy the .so to the ``libs/armeabi`` Android folder (or symlink if you are
-in Linux or OSX). Note: Git does not support empty directories so you
-will have to create it if it does not exist:
+be huge because it will contain all debug symbols.
 
 ::
 
-    C:\godot> mkdir platform/android/java/libs
-    C:\godot> mkdir platform/android/java/libs/armeabi
-
-Then copy:
-
-::
-
-    C:\godot> copy bin/libgodot.android.<version>.so platform/android/java/libs/armeabi/libgodot_android.so
-
-Or alternatively, if you are under a Unix system you can symlink:
-
-::
-
-    user@host:~/godot$ ln -s bin/libgodot.android.<version>.so platform/android/java/libs/armeabi/libgodot_android.so
-
-Remember that only *one* of libgodot_android.so must exist for each
-platform, for each build type (release, debug, etc), it must be
-replaced.
-
-**Note**: The file inside ``libs/armeabi`` must be renamed to
-**"libgodot_android.so"**, or else unsatisfied link error will happen
-at runtime.
+    C:\godot> bin\libgodot.android.debug.armv7.neon.so
 
 If you also want to include support for x86 Android, add the following
-compile flag: ``android_arch=x86``, then copy/symlink the resulting binary to
-the ``x86`` folder:
+compile flag: ``android_arch=x86``.
 
 ::
 
-    C:\godot> copy bin/libgodot.android.<version>.x86.so platform/android/java/libs/x86/libgodot_android.so
+    C:\godot> scons platform=android android_arch=x86
+
+::
+
+    C:\godot> bin\libgodot.android.debug.x86.neon.so
 
 This will create a fat binary that works in both platforms, but will add
-about 6 megabytes to the APK.
+about more than 6 megabytes to the APK.
 
-Toolchain
----------
+Note on Toolchain
+-----------------
 
 We usually try to keep the Godot Android build code up to date, but
 Google changes their toolchain versions very often, so if compilation
@@ -113,74 +101,69 @@ the current number, then set the following environment variable:
 
     NDK_TARGET (by default set to "arm-linux-androideabi-4.9")
 
-Building the APK
-----------------
-
-To compile the APK, go to the Java folder and run ``gradlew.bat build``
-(or ``./gradlew build`` on Unix):
-
-::
-
-    C:\godot\platform\android\java> gradlew.bat build
+So, we have done compiling the engine, right? Very Good. Now, let's compile the Android Export Template.
 
 
-In the ``java/bin`` subfolder, the resulting apk can be used as export
-template.
-
-**Note:** If you reaaaally feel oldschool, you can copy your entire game
-(or symlink) to the assets/ folder of the Java project (make sure
-engine.cfg is in assets/) and it will work, but you lose all the
-benefits of the export system (scripts are not byte-compiled, textures
-not converted to Android compression, etc. so it's not a good idea).
-
-Compiling export templates
---------------------------
+C2. Compiling Android Export Templates
+--------------------------------------
 
 Godot needs the freshly compiled APK as export templates. It opens the
 APK, changes a few things inside, adds your file and spits it back. It's
 really handy! (and required some reverse engineering of the format).
 
-Compiling the standard export templates is done by calling scons with
-the following arguments:
+Two export template files that required by Godot when exporting to Android are:
+(1) android_debug.apk
+(2) android_release.apk
 
--  (debug)
+- (1) android_debug.apk (debug Mode)
+
+Picked by Editor when exporting with "Debugging Enabled" = ON
 
 ::
 
-    C:\godot> scons platform=android target=release_debug
-    C:\godot> cp bin/libgodot_android.opt.debug.so platform/android/java/libs/armeabi/libgodot_android.so
-    C:\godot> cd platform/android/java
-    C:\godot\platform\android\java> gradlew.bat build
+    C:\godot> scons -j4 platform=android target=release_debug
+    C:\godot> cd platform\android\java
+    C:\godot> gradlew assembleDebug
 
 Resulting APK is in:
 
 ::
 
-    platform/android/java/build/outputs/apk/java-release-unsigned.apk
+    C:\godot\bin\android_debug.apk
 
--  (release)
+- (2) android_release.apk (release Mode)
+
+Picked by Editor when exporting with "Debugging Enabled" = OFF
 
 ::
 
-    C:\godot> scons platform=android target=release
-    C:\godot> cp bin/libgodot_android.opt.so platform/android/java/libs/armeabi/libgodot_android.so
-    C:\godot> cd platform/android/java
-    C:\godot\platform\android\java> gradlew.bat build
+    C:\godot> scons -j4 platform=android target=release
+    C:\godot> cd platform\android\java
+    C:\godot> gradlew assembleRelease
 
 Resulting APK is in:
 
 ::
 
-    platform/android/java/build/outputs/apk/java-release-unsigned.apk
+    C:\godot\bin\android_release.apk
 
-(same as before)
+Note:
+-----
+It's optional but always be a good practice to clean build cache first before
+executing next build command, as sometimes gradle could mess up when it can't
+detect a new change we have made.
 
-They must be copied to your templates folder with the following names:
+Now, both files (android_debug.apk and android_release.apk) are created.
+It's the time to copied them to Editor "templates" folder.
 
-::
+- Windows :
+C:\Users\[your_username]\AppData\Roaming\Godot\templates
 
-    android_debug.apk
-    android_release.apk
+- Linux :
+/home/.godot/templates
+
+- Mac OS :
+/users/[your_username]/.godot/templates
 
 However, if you are writing your custom modules or custom C++ code, you
 might instead want to configure your APKs as custom export templates
@@ -192,10 +175,10 @@ You don't even need to copy them, you can just reference the resulting
 file in the ``bin\`` directory of your Godot source folder, so the next
 time you build you automatically have the custom templates referenced.
 
-Troubleshooting
+D.) Troubleshooting
 ---------------
 
-Application not installed
+1.) Application not installed
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Android might complain the application is not correctly installed. If
@@ -215,14 +198,14 @@ failure should be presented there.
 
 Seek assistance if you can't figure it out.
 
-Application exits immediately
+2.) Application exits immediately
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If the application runs but exits immediately, there might be one of the
 following reasons:
 
--  libgodot_android.so is not in ``libs/armeabi``
+-  libgodot_android.so is not in ``lib/armeabi-v7a``
 -  Device does not support armv7 (try compiling yourself for armv6)
--  Device is Intel, and apk is compiled for ARM.
+-  Device is ARM, and apk is compiled for intel.
 
 In any case, ``adb logcat`` should also show the cause of the error.
