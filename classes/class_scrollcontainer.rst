@@ -60,25 +60,25 @@ Return current vertical scroll value.
 
 - :ref:`bool<class_bool>`  **is_h_scroll_enabled**  **(** **)** const
 
-Return true if horizontal scrool is allowed.
+Return true if horizontal scroll is allowed.
 
 .. _class_ScrollContainer_is_v_scroll_enabled:
 
 - :ref:`bool<class_bool>`  **is_v_scroll_enabled**  **(** **)** const
 
-Return true if vertical scrool is allowed.
+Return true if vertical scroll is allowed.
 
 .. _class_ScrollContainer_set_enable_h_scroll:
 
 - void  **set_enable_h_scroll**  **(** :ref:`bool<class_bool>` enable  **)**
 
-Set allows horizontal scrool.
+Set allows horizontal scroll.
 
 .. _class_ScrollContainer_set_enable_v_scroll:
 
 - void  **set_enable_v_scroll**  **(** :ref:`bool<class_bool>` enable  **)**
 
-Set allows vertical scrool.
+Set allows vertical scroll.
 
 .. _class_ScrollContainer_set_h_scroll:
 
