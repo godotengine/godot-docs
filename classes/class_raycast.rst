@@ -83,6 +83,8 @@ Member Function Description
 
 - :ref:`Vector3<class_vector3>`  **get_collision_point**  **(** **)** const
 
+Returns collision point. This point is in **global** coordinate system.
+
 .. _class_RayCast_is_colliding:
 
 - :ref:`bool<class_bool>`  **is_colliding**  **(** **)** const
@@ -102,6 +104,8 @@ Member Function Description
 .. _class_RayCast_set_cast_to:
 
 - void  **set_cast_to**  **(** :ref:`Vector3<class_vector3>` local_point  **)**
+
+Sets to which point ray should be casted. This point is in **local** coordinate system.
 
 .. _class_RayCast_set_enabled:
 
