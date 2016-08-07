@@ -1142,6 +1142,8 @@ signal is received, execution will recommence. Here are some examples:
     # Resume execution when animation is done playing:
     yield( get_node("AnimationPlayer"), "finished" )
 
+   # Wait 5 seconds, then resume execution (Godot 2.2+)
+    yield( get_tree().create_timer(5.0), "timeout" )
 
 Onready keyword
 ~~~~~~~~~~~~~~~
