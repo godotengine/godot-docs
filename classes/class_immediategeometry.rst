@@ -13,7 +13,7 @@ ImmediateGeometry
 Brief Description
 -----------------
 
-
+Node to draw simple geometry from code, ala OpenGL 1.x
 
 Member Functions
 ----------------
@@ -23,7 +23,7 @@ Member Functions
 +-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void  | :ref:`add_vertex<class_ImmediateGeometry_add_vertex>`  **(** :ref:`Vector3<class_vector3>` pos  **)**                                                        |
 +-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`begin<class_ImmediateGeometry_begin>`  **(** :ref:`int<class_int>` primitive, :ref:`Texture<class_texture>` texture  **)**                             |
+| void  | :ref:`begin<class_ImmediateGeometry_begin>`  **(** :ref:`int<class_int>` primitive, :ref:`Texture<class_texture>` texture=Object()  **)**                    |
 +-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void  | :ref:`clear<class_ImmediateGeometry_clear>`  **(** **)**                                                                                                     |
 +-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -47,40 +47,62 @@ Member Function Description
 
 - void  **add_sphere**  **(** :ref:`int<class_int>` lats, :ref:`int<class_int>` lons, :ref:`float<class_float>` radius  **)**
 
+Simple helper to draw an uvsphere, with given latitudes, longitude and radius.
+
 .. _class_ImmediateGeometry_add_vertex:
 
 - void  **add_vertex**  **(** :ref:`Vector3<class_vector3>` pos  **)**
 
+Add a vertex with the currently set color/uv/etc.
+
 .. _class_ImmediateGeometry_begin:
 
-- void  **begin**  **(** :ref:`int<class_int>` primitive, :ref:`Texture<class_texture>` texture  **)**
+- void  **begin**  **(** :ref:`int<class_int>` primitive, :ref:`Texture<class_texture>` texture=Object()  **)**
+
+Begin drawing (And optionally pass a texture override). When done call end(). For more information on how this works, search for glBegin() glEnd() references.
+
+For the type of primitive, use the :ref:`Mesh<class_mesh>`.PRIMITIVE\_\* enumerations.
 
 .. _class_ImmediateGeometry_clear:
 
 - void  **clear**  **(** **)**
 
+Clear everything that was drawn using begin/end.
+
 .. _class_ImmediateGeometry_end:
 
 - void  **end**  **(** **)**
+
+Call this when done adding a batch of geometry, otherwise it can't be displayed.
 
 .. _class_ImmediateGeometry_set_color:
 
 - void  **set_color**  **(** :ref:`Color<class_color>` color  **)**
 
+Set the color that the next vertex will use to be drawn.
+
 .. _class_ImmediateGeometry_set_normal:
 
 - void  **set_normal**  **(** :ref:`Vector3<class_vector3>` normal  **)**
+
+Set the normal that the next vertex will use to be drawn.
 
 .. _class_ImmediateGeometry_set_tangent:
 
 - void  **set_tangent**  **(** :ref:`Plane<class_plane>` tangent  **)**
 
+Set the tangent (and binormal facing) that the next vertex will use to be drawn.
+
 .. _class_ImmediateGeometry_set_uv:
 
 - void  **set_uv**  **(** :ref:`Vector2<class_vector2>` uv  **)**
 
+Set the UV that the next vertex will use to be drawn.
+
 .. _class_ImmediateGeometry_set_uv2:
 
 - void  **set_uv2**  **(** :ref:`Vector2<class_vector2>` uv  **)**
+
+Set the second layer of UV that the next vertex will use to be drawn.
 
 

@@ -23,7 +23,7 @@ Member Functions
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`_input_event<class_CollisionObject2D__input_event>`  **(** :ref:`Object<class_object>` viewport, :ref:`InputEvent<class_inputevent>` event, :ref:`int<class_int>` shape_idx  **)** virtual |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`add_shape<class_CollisionObject2D_add_shape>`  **(** :ref:`Shape2D<class_shape2d>` shape, :ref:`Matrix32<class_matrix32>` transform=1,0, 0,1, 0,0  **)**                                   |
+| void                             | :ref:`add_shape<class_CollisionObject2D_add_shape>`  **(** :ref:`Shape2D<class_shape2d>` shape, :ref:`Matrix32<class_matrix32>` transform=((1, 0), (0, 1), (0, 0))  **)**                        |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`clear_shapes<class_CollisionObject2D_clear_shapes>`  **(** **)**                                                                                                                           |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -73,7 +73,7 @@ This method can be used to override normal input processing. The first parameter
 
 .. _class_CollisionObject2D_add_shape:
 
-- void  **add_shape**  **(** :ref:`Shape2D<class_shape2d>` shape, :ref:`Matrix32<class_matrix32>` transform=1,0, 0,1, 0,0  **)**
+- void  **add_shape**  **(** :ref:`Shape2D<class_shape2d>` shape, :ref:`Matrix32<class_matrix32>` transform=((1, 0), (0, 1), (0, 0))  **)**
 
 Add a :ref:`Shape2D<class_shape2d>` to the collision body, with a given custom transform.
 

@@ -35,6 +35,10 @@ Member Functions
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`  | :ref:`get_collision_point<class_RayCast_get_collision_point>`  **(** **)** const                        |
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_layer_mask<class_RayCast_get_layer_mask>`  **(** **)** const                                  |
++--------------------------------+---------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_type_mask<class_RayCast_get_type_mask>`  **(** **)** const                                    |
++--------------------------------+---------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`is_colliding<class_RayCast_is_colliding>`  **(** **)** const                                      |
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`is_enabled<class_RayCast_is_enabled>`  **(** **)** const                                          |
@@ -46,6 +50,10 @@ Member Functions
 | void                           | :ref:`set_cast_to<class_RayCast_set_cast_to>`  **(** :ref:`Vector3<class_vector3>` local_point  **)**   |
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_enabled<class_RayCast_set_enabled>`  **(** :ref:`bool<class_bool>` enabled  **)**             |
++--------------------------------+---------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_layer_mask<class_RayCast_set_layer_mask>`  **(** :ref:`int<class_int>` mask  **)**            |
++--------------------------------+---------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_type_mask<class_RayCast_set_type_mask>`  **(** :ref:`int<class_int>` mask  **)**              |
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
 
 Member Function Description
@@ -83,6 +91,16 @@ Member Function Description
 
 - :ref:`Vector3<class_vector3>`  **get_collision_point**  **(** **)** const
 
+Returns collision point. This point is in **global** coordinate system.
+
+.. _class_RayCast_get_layer_mask:
+
+- :ref:`int<class_int>`  **get_layer_mask**  **(** **)** const
+
+.. _class_RayCast_get_type_mask:
+
+- :ref:`int<class_int>`  **get_type_mask**  **(** **)** const
+
 .. _class_RayCast_is_colliding:
 
 - :ref:`bool<class_bool>`  **is_colliding**  **(** **)** const
@@ -103,8 +121,18 @@ Member Function Description
 
 - void  **set_cast_to**  **(** :ref:`Vector3<class_vector3>` local_point  **)**
 
+Sets to which point ray should be casted. This point is in **local** coordinate system.
+
 .. _class_RayCast_set_enabled:
 
 - void  **set_enabled**  **(** :ref:`bool<class_bool>` enabled  **)**
+
+.. _class_RayCast_set_layer_mask:
+
+- void  **set_layer_mask**  **(** :ref:`int<class_int>` mask  **)**
+
+.. _class_RayCast_set_type_mask:
+
+- void  **set_type_mask**  **(** :ref:`int<class_int>` mask  **)**
 
 

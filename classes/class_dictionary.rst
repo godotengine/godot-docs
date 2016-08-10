@@ -37,6 +37,8 @@ Member Functions
 +------------------------------+-----------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`  | :ref:`to_json<class_Dictionary_to_json>`  **(** **)**                                         |
 +------------------------------+-----------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`    | :ref:`values<class_Dictionary_values>`  **(** **)**                                           |
++------------------------------+-----------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -74,6 +76,8 @@ Return true if the dictionary has a given key.
 
 - :ref:`bool<class_bool>`  **has_all**  **(** :ref:`Array<class_array>` keys  **)**
 
+Return true if the dictionary has all of the keys in the given array.
+
 .. _class_Dictionary_hash:
 
 - :ref:`int<class_int>`  **hash**  **(** **)**
@@ -84,7 +88,7 @@ Return a hashed integer value representing the dictionary contents.
 
 - :ref:`Array<class_array>`  **keys**  **(** **)**
 
-Return the list of keys in the dictionary.
+Return the list of keys in the :ref:`Dictionary<class_dictionary>`.
 
 .. _class_Dictionary_parse_json:
 
@@ -103,5 +107,11 @@ Return the size of the dictionary (in pairs).
 - :ref:`String<class_string>`  **to_json**  **(** **)**
 
 Return the dictionary as json text.
+
+.. _class_Dictionary_values:
+
+- :ref:`Array<class_array>`  **values**  **(** **)**
+
+Return the list of values in the :ref:`Dictionary<class_dictionary>`.
 
 

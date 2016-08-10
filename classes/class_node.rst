@@ -8,14 +8,14 @@ Node
 
 **Inherits:** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`Viewport<class_viewport>`, :ref:`Timer<class_timer>`, :ref:`CanvasLayer<class_canvaslayer>`, :ref:`EventPlayer<class_eventplayer>`, :ref:`SoundRoomParams<class_soundroomparams>`, :ref:`Spatial<class_spatial>`, :ref:`AnimationPlayer<class_animationplayer>`, :ref:`EditorPlugin<class_editorplugin>`, :ref:`ResourcePreloader<class_resourcepreloader>`, :ref:`AnimationTreePlayer<class_animationtreeplayer>`, :ref:`SamplePlayer<class_sampleplayer>`, :ref:`InstancePlaceholder<class_instanceplaceholder>`, :ref:`StreamPlayer<class_streamplayer>`, :ref:`CanvasItem<class_canvasitem>`, :ref:`Tween<class_tween>`
+**Inherited By:** :ref:`Viewport<class_viewport>`, :ref:`Timer<class_timer>`, :ref:`CanvasLayer<class_canvaslayer>`, :ref:`EventPlayer<class_eventplayer>`, :ref:`SoundRoomParams<class_soundroomparams>`, :ref:`Spatial<class_spatial>`, :ref:`AnimationPlayer<class_animationplayer>`, :ref:`EditorPlugin<class_editorplugin>`, :ref:`ResourcePreloader<class_resourcepreloader>`, :ref:`AnimationTreePlayer<class_animationtreeplayer>`, :ref:`SamplePlayer<class_sampleplayer>`, :ref:`InstancePlaceholder<class_instanceplaceholder>`, :ref:`HTTPRequest<class_httprequest>`, :ref:`StreamPlayer<class_streamplayer>`, :ref:`CanvasItem<class_canvasitem>`, :ref:`Tween<class_tween>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
-Base class for all the "Scene" elements.
+Base class for all the *scene* elements.
 
 Member Functions
 ----------------
@@ -93,6 +93,8 @@ Member Functions
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`            | :ref:`is_a_parent_of<class_Node_is_a_parent_of>`  **(** :ref:`Node<class_node>` node  **)** const                                                                       |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`            | :ref:`is_displayed_folded<class_Node_is_displayed_folded>`  **(** **)** const                                                                                           |
++------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`            | :ref:`is_fixed_processing<class_Node_is_fixed_processing>`  **(** **)** const                                                                                           |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`            | :ref:`is_greater_than<class_Node_is_greater_than>`  **(** :ref:`Node<class_node>` node  **)** const                                                                     |
@@ -128,6 +130,8 @@ Member Functions
 | void                               | :ref:`remove_from_group<class_Node_remove_from_group>`  **(** :ref:`String<class_string>` group  **)**                                                                  |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`replace_by<class_Node_replace_by>`  **(** :ref:`Node<class_node>` node, :ref:`bool<class_bool>` keep_data=false  **)**                                            |
++------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_display_folded<class_Node_set_display_folded>`  **(** :ref:`bool<class_bool>` fold  **)**                                                                     |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_filename<class_Node_set_filename>`  **(** :ref:`String<class_string>` filename  **)**                                                                         |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -171,6 +175,8 @@ Numeric Constants
 - **NOTIFICATION_PAUSED** = **14**
 - **NOTIFICATION_UNPAUSED** = **15**
 - **NOTIFICATION_INSTANCED** = **20**
+- **NOTIFICATION_DRAG_BEGIN** = **21**
+- **NOTIFICATION_DRAG_END** = **22**
 - **PAUSE_MODE_INHERIT** = **0**
 - **PAUSE_MODE_STOP** = **1**
 - **PAUSE_MODE_PROCESS** = **2**
@@ -178,23 +184,23 @@ Numeric Constants
 Description
 -----------
 
-Nodes can be set as children of other nodes, resulting in a tree arrangement. Any tree of nodes is called a "Scene".
+Nodes are the base bricks with which Godot games are developed. They can be set as children of other nodes, resulting in a tree arrangement. A given node can contain any number of nodes as children (but there is only one scene tree root node) with the requirement that all siblings (direct children of a node) should have unique names.
 
-Scenes can be saved to disk, and then instanced into other scenes. This allows for very high flexibility in the architecture and data model of the projects.
+Any tree of nodes is called a *scene*. Scenes can be saved to the disk and then instanced into other scenes. This allows for very high flexibility in the architecture and data model of the projects. Nodes can optionally be added to groups. This makes it easy to reach a number of nodes from the code (for example an "enemies" group) to perform grouped actions.
 
-:ref:`SceneTree<class_scenetree>` contains the "active" tree of nodes, and a node becomes active (receiving NOTIFICATION_ENTER_SCENE) when added to that tree.
+**Scene tree:** The :ref:`SceneTree<class_scenetree>` contains the active tree of nodes. When a node is added to the scene tree, it receives the NOTIFICATION_ENTER_TREE notification and its :ref:`_enter_tree<class_Node__enter_tree>` callback is triggered. Children nodes are always added *after* their parent node, i.e. the :ref:`_enter_tree<class_Node__enter_tree>` callback of a parent node will be triggered before its child's.
 
-A node can contain any number of nodes as a children (but there is only one tree root) with the requirement that no two children with the same name can exist.
+Once all nodes have been added in the scene tree, they receive the NOTIFICATION_READY notification and their respective :ref:`_ready<class_Node__ready>` callbacks are triggered. For groups of nodes, the :ref:`_ready<class_Node__ready>` callback is called in reverse order, from the children up to the parent nodes.
 
-Nodes can, optionally, be added to groups. This makes it easy to reach a number of nodes from the code (for example an "enemies" group).
+It means that when adding a scene to the scene tree, the following order will be used for the callbacks: :ref:`_enter_tree<class_Node__enter_tree>` of the parent, :ref:`_enter_tree<class_Node__enter_tree>` of the children, :ref:`_ready<class_Node__ready>` of the children and finally :ref:`_ready<class_Node__ready>` of the parent (and that recursively for the whole scene).
 
-Nodes can be set to "process" state, so they constantly receive a callback requesting them to process (do anything). Normal processing (:ref:`_process<class_Node__process>`) happens as fast as possible and is dependent on the frame rate, so the processing time delta is variable. Fixed processing (:ref:`_fixed_process<class_Node__fixed_process>`) happens a fixed amount of times per second (by default 60) and is useful to link itself to the physics.
+**Processing:** Nodes can be set to the "process" state, so that they receive a callback on each frame requesting them to process (do something). Normal processing (callback :ref:`_process<class_Node__process>`, toggled with :ref:`set_process<class_Node_set_process>`) happens as fast as possible and is dependent on the frame rate, so the processing time *delta* is variable. Fixed processing (callback :ref:`_fixed_process<class_Node__fixed_process>`, toggled with :ref:`set_fixed_process<class_Node_set_fixed_process>`) happens a fixed amount of times per second (by default 60) and is useful to link itself to the physics.
 
-Nodes can also process input events. When set, the :ref:`_input<class_Node__input>` function will be called with every input that the program receives. Since this is usually too overkill (unless used for simple projects), an :ref:`_unhandled_input<class_Node__unhandled_input>` function is called when the input was not handled by anyone else (usually, GUI :ref:`Control<class_control>` nodes).
+Nodes can also process input events. When set, the :ref:`_input<class_Node__input>` function will be called for each input that the program receives. In many cases, this can be overkill (unless used for simple projects), and the :ref:`_unhandled_input<class_Node__unhandled_input>` function might be preferred; it is called when the input event was not handled by anyone else (typically, GUI :ref:`Control<class_control>` nodes), ensuring that the node only receives the events that were meant for it.
 
-To keep track of the scene hierarchy (specially when instancing scenes into scenes) an "owner" can be set to a node. This keeps track of who instanced what. This is mostly useful when writing editors and tools, though.
+To keep track of the scene hierarchy (especially when instancing scenes into other scenes), an "owner" can be set for the node with :ref:`set_owner<class_Node_set_owner>`. This keeps track of who instanced what. This is mostly useful when writing editors and tools, though.
 
-Finally, when a node is freed, it will free all its children nodes too.
+Finally, when a node is freed with :ref:`free<class_Node_free>` or :ref:`queue_free<class_Node_queue_free>`, it will also free all its children.
 
 Member Function Description
 ---------------------------
@@ -203,45 +209,69 @@ Member Function Description
 
 - void  **_enter_tree**  **(** **)** virtual
 
+Called when the node enters the :ref:`SceneTree<class_scenetree>` (e.g. upon instancing, scene changing or after calling :ref:`add_child<class_Node_add_child>` in a script). If the node has children, its :ref:`_enter_tree<class_Node__enter_tree>` callback will be called first, and then that of the children.
+
+Corresponds to the NOTIFICATION_ENTER_TREE notification in :ref:`Object._notification<class_Object__notification>`.
+
 .. _class_Node__exit_tree:
 
 - void  **_exit_tree**  **(** **)** virtual
+
+Called when the node leaves the :ref:`SceneTree<class_scenetree>` (e.g. upon freeing, scene changing or after calling :ref:`remove_child<class_Node_remove_child>` in a script). If the node has children, its :ref:`_exit_tree<class_Node__exit_tree>` callback will be called last, after all its children have left the tree.
+
+Corresponds to the NOTIFICATION_EXIT_TREE notification in :ref:`Object._notification<class_Object__notification>`.
 
 .. _class_Node__fixed_process:
 
 - void  **_fixed_process**  **(** :ref:`float<class_float>` delta  **)** virtual
 
-Called for fixed processing (synced to the physics).
+Called during the fixed processing step of the main loop. Fixed processing means that the frame rate is synced to the physics, i.e. the ``delta`` variable should be constant.
+
+It is only called if fixed processing has been enabled with :ref:`set_fixed_process<class_Node_set_fixed_process>`.
+
+Corresponds to the NOTIFICATION_FIXED_PROCESS notification in :ref:`Object._notification<class_Object__notification>`.
 
 .. _class_Node__input:
 
 - void  **_input**  **(** :ref:`InputEvent<class_inputevent>` event  **)** virtual
 
-Called when any input happens (also must enable with :ref:`set_process_input<class_Node_set_process_input>` or the property).
+Called for every input event.
+
+It has to be enabled with :ref:`set_process_input<class_Node_set_process_input>` or the corresponding property in the inspector.
 
 .. _class_Node__process:
 
 - void  **_process**  **(** :ref:`float<class_float>` delta  **)** virtual
 
-Called for processing. This is called every frame, with the delta time from the previous frame.
+Called during the processing step of the main loop. Processing happens at every frame and as fast as possible, so the ``delta`` time since the previous frame is not constant.
+
+It is only called if processing has been enabled with :ref:`set_process<class_Node_set_process>`.
+
+Corresponds to the NOTIFICATION_PROCESS notification in :ref:`Object._notification<class_Object__notification>`.
 
 .. _class_Node__ready:
 
 - void  **_ready**  **(** **)** virtual
 
-Called when ready (entered scene and children entered too).
+Called when the node is "ready", i.e. when both the node and its children have entered the scene tree. If the node has children, their :ref:`_ready<class_Node__ready>` callback gets triggered first, and the node will receive the ready notification only afterwards.
+
+Corresponds to the NOTIFICATION_READY notification in :ref:`Object._notification<class_Object__notification>`.
 
 .. _class_Node__unhandled_input:
 
 - void  **_unhandled_input**  **(** :ref:`InputEvent<class_inputevent>` event  **)** virtual
 
-Called when any input happens that was not handled by something else (also must enable with :ref:`set_process_unhandled_input<class_Node_set_process_unhandled_input>` or the property).
+Called for every input event that has not already been handled by another node.
+
+It has to be enabled with :ref:`set_process_unhandled_input<class_Node_set_process_unhandled_input>` or the corresponding property in the inspector.
 
 .. _class_Node__unhandled_key_input:
 
 - void  **_unhandled_key_input**  **(** :ref:`InputEvent<class_inputevent>` key_event  **)** virtual
 
-Called when any key input happens that was not handled by something else.
+Called for every *key* input event that has not already been handled by another node.
+
+It has to be enabled with :ref:`set_process_unhandled_key_input<class_Node_set_process_unhandled_key_input>` or the corresponding property in the inspector.
 
 .. _class_Node_add_child:
 
@@ -249,23 +279,25 @@ Called when any key input happens that was not handled by something else.
 
 Add a child :ref:`Node<class_node>`. Nodes can have as many children as they want, but every child must have a unique name. Children nodes are automatically deleted when the parent node is deleted, so deleting a whole scene is performed by deleting its topmost node.
 
-The optional boolean argument enforces creating child node with human-readable names, based on the name of node being instanced instead of its type only.
+The optional boolean argument enforces creating child nodes with human-readable names, based on the name of the node being instanced instead of its type only.
 
 .. _class_Node_add_to_group:
 
 - void  **add_to_group**  **(** :ref:`String<class_string>` group, :ref:`bool<class_bool>` persistent=false  **)**
 
-Add a node to a group. Groups are helpers to name and organize group of nodes, like for example: "Enemies", "Collectables", etc. A :ref:`Node<class_node>` can be in any number of groups. Nodes can be assigned a group at any time, but will not be added to it until they are inside the scene tree (see :ref:`is_inside_tree<class_Node_is_inside_tree>`).
+Add a node to a group. Groups are helpers to name and organize a subset of nodes, like for example "enemies" or "collectables". A :ref:`Node<class_node>` can be in any number of groups. Nodes can be assigned a group at any time, but will not be added to it until they are inside the scene tree (see :ref:`is_inside_tree<class_Node_is_inside_tree>`).
 
 .. _class_Node_can_process:
 
 - :ref:`bool<class_bool>`  **can_process**  **(** **)** const
 
-Return true if the node can process.
+Return true if the node can process, i.e. whether its pause mode allows processing while the scene tree is paused (see :ref:`set_pause_mode<class_Node_set_pause_mode>`). Always returns true if the scene tree is not paused, and false if the node is not in the tree. FIXME: Why FAIL_COND?
 
 .. _class_Node_duplicate:
 
 - :ref:`Node<class_node>`  **duplicate**  **(** :ref:`bool<class_bool>` use_instancing=false  **)** const
+
+Duplicate the node, returning a new :ref:`Node<class_node>`. If ``use_instancing`` is true, the duplicated node will be a new instance of the original :ref:`PackedScene<class_packedscene>`, if not it will be an independent node. The duplicated node has the same group assignments and signals as the original one.
 
 .. _class_Node_find_node:
 
@@ -277,83 +309,79 @@ Find a descendant of this node whose name matches ``mask`` as in :ref:`String.ma
 
 - :ref:`Node<class_node>`  **get_child**  **(** :ref:`int<class_int>` idx  **)** const
 
-Return a children node by it's index (see :ref:`get_child_count<class_Node_get_child_count>`). This method is often used for iterating all children of a node.
+Return a child node by its index (see :ref:`get_child_count<class_Node_get_child_count>`). This method is often used for iterating all children of a node.
 
 .. _class_Node_get_child_count:
 
 - :ref:`int<class_int>`  **get_child_count**  **(** **)** const
 
-Return the amount of children nodes.
+Return the amount of child nodes.
 
 .. _class_Node_get_children:
 
 - :ref:`Array<class_array>`  **get_children**  **(** **)** const
 
+Return an array of references (:ref:`Node<class_node>`) to the child nodes.
+
 .. _class_Node_get_filename:
 
 - :ref:`String<class_string>`  **get_filename**  **(** **)** const
 
-Return a filename that may be containedA node can contained by the node. When a scene is instanced from a file, it topmost node contains the filename from where it was loaded (see :ref:`set_filename<class_Node_set_filename>`).
+Return a filename that may be contained by the node. When a scene is instanced from a file, it topmost node contains the filename from where it was loaded (see :ref:`set_filename<class_Node_set_filename>`).
 
 .. _class_Node_get_fixed_process_delta_time:
 
 - :ref:`float<class_float>`  **get_fixed_process_delta_time**  **(** **)** const
 
-Return the time elapsed since the last fixed frame. This is always the same in fixed processing unless the frames per second is changed in :ref:`OS<class_os>`.
+Return the time elapsed since the last fixed frame (see :ref:`_fixed_process<class_Node__fixed_process>`). This is always the same in fixed processing unless the frames per second is changed in :ref:`OS<class_os>`.
 
 .. _class_Node_get_groups:
 
 - :ref:`Array<class_array>`  **get_groups**  **(** **)** const
 
+Return an array listing the groups that the node is part of.
+
 .. _class_Node_get_index:
 
 - :ref:`int<class_int>`  **get_index**  **(** **)** const
 
-Get the node index in the parent (assuming it has a parent).
+Get the node index, i.e. its position among the siblings of its parent.
 
 .. _class_Node_get_name:
 
 - :ref:`String<class_string>`  **get_name**  **(** **)** const
 
-Return the name of the :ref:`Node<class_node>`. Name is be unique within parent.
+Return the name of the node. This name is unique among the siblings (other child nodes from the same parent).
 
 .. _class_Node_get_node:
 
 - :ref:`Node<class_node>`  **get_node**  **(** :ref:`NodePath<class_nodepath>` path  **)** const
 
-Fetch a node. NodePath must be valid (or else error will occur) and can be either the path to child node, a relative path (from the current node to another node), or an absolute path to a node.
+Fetch a node. The :ref:`NodePath<class_nodepath>` must be valid (or else an error will be raised) and can be either the path to child node, a relative path (from the current node to another node), or an absolute path to a node.
 
-Note: fetching absolute paths only works when the node is inside the scene tree (see :ref:`is_inside_tree<class_Node_is_inside_tree>`). Examples. Assume your current node is Character and following tree:
+Note: fetching absolute paths only works when the node is inside the scene tree (see :ref:`is_inside_tree<class_Node_is_inside_tree>`).
 
+*Example:* Assume your current node is Character and the following tree:
 
+::
 
- root/
+    /root
+    /root/Character
+    /root/Character/Sword
+    /root/Character/Backpack/Dagger
+    /root/MyGame
+    /root/Swamp/Alligator
+    /root/Swamp/Mosquito
+    /root/Swamp/Goblin
 
- root/Character
+Possible paths are:
 
- root/Character/Sword
+::
 
- root/Character/Backpack/Dagger
-
- root/MyGame
-
- root/Swamp/Alligator
-
- root/Swamp/Mosquito
-
- root/Swamp/Goblin
-
-
-
- Possible paths are:
-
- - get_node("Sword")
-
- - get_node("Backpack/Dagger")
-
- - get_node("../Swamp/Alligator")
-
- - get_node("/root/MyGame")
+    get_node("Sword")
+    get_node("Backpack/Dagger")
+    get_node("../Swamp/Alligator")
+    get_node("/root/MyGame")
 
 .. _class_Node_get_node_and_resource:
 
@@ -369,7 +397,7 @@ Get the node owner (see :ref:`set_owner<class_Node_set_owner>`).
 
 - :ref:`Node<class_node>`  **get_parent**  **(** **)** const
 
-Return the parent :ref:`Node<class_node>` of the current :ref:`Node<class_node>`, or an empty Object if the node lacks a parent.
+Return the parent node of the current node, or an empty :ref:`Node<class_node>` if the node lacks a parent.
 
 .. _class_Node_get_path:
 
@@ -422,6 +450,10 @@ Return the time elapsed (in seconds) since the last process callback. This is al
 - :ref:`bool<class_bool>`  **is_a_parent_of**  **(** :ref:`Node<class_node>` node  **)** const
 
 Return *true* if the "node" argument is a direct or indirect child of the current node, otherwise return *false*.
+
+.. _class_Node_is_displayed_folded:
+
+- :ref:`bool<class_bool>`  **is_displayed_folded**  **(** **)** const
 
 .. _class_Node_is_fixed_processing:
 
@@ -520,6 +552,10 @@ Remove a node from a group.
 - void  **replace_by**  **(** :ref:`Node<class_node>` node, :ref:`bool<class_bool>` keep_data=false  **)**
 
 Replace a node in a scene by a given one. Subscriptions that pass through this node will be lost.
+
+.. _class_Node_set_display_folded:
+
+- void  **set_display_folded**  **(** :ref:`bool<class_bool>` fold  **)**
 
 .. _class_Node_set_filename:
 

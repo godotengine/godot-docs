@@ -35,11 +35,17 @@ Member Functions
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`clear<class_Array_clear>`  **(** **)**                                                                                |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`count<class_Array_count>`  **(** var value  **)**                                                                     |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`    | :ref:`empty<class_Array_empty>`  **(** **)**                                                                                |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`erase<class_Array_erase>`  **(** var value  **)**                                                                     |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`find<class_Array_find>`  **(** var value  **)**                                                                       |
+| :ref:`int<class_int>`      | :ref:`find<class_Array_find>`  **(** var what, :ref:`int<class_int>` from=0  **)**                                          |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`find_last<class_Array_find_last>`  **(** var value  **)**                                                             |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`has<class_Array_has>`  **(** var value  **)**                                                                         |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`      | :ref:`hash<class_Array_hash>`  **(** **)**                                                                                  |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
@@ -61,6 +67,8 @@ Member Functions
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`resize<class_Array_resize>`  **(** :ref:`int<class_int>` pos  **)**                                                   |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`rfind<class_Array_rfind>`  **(** var what, :ref:`int<class_int>` from=-1  **)**                                       |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`      | :ref:`size<class_Array_size>`  **(** **)**                                                                                  |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`sort<class_Array_sort>`  **(** **)**                                                                                  |
@@ -71,7 +79,7 @@ Member Functions
 Description
 -----------
 
-Generic array, contains several elements of any type, accessible by numerical index starting at 0. Arrays are always passed by reference.
+Generic array, contains several elements of any type, accessible by numerical index starting at 0. Negative indices can be used to count from the right, like in Python. Arrays are always passed by reference.
 
 Member Function Description
 ---------------------------
@@ -130,6 +138,12 @@ Append an element at the end of the array (alias of :ref:`push_back<class_Array_
 
 Clear the array (resize to 0).
 
+.. _class_Array_count:
+
+- :ref:`int<class_int>`  **count**  **(** var value  **)**
+
+Return the amount of times an element is in the array.
+
 .. _class_Array_empty:
 
 - :ref:`bool<class_bool>`  **empty**  **(** **)**
@@ -144,9 +158,21 @@ Remove the first occurrence of a value from the array.
 
 .. _class_Array_find:
 
-- :ref:`int<class_int>`  **find**  **(** var value  **)**
+- :ref:`int<class_int>`  **find**  **(** var what, :ref:`int<class_int>` from=0  **)**
 
-Searches the array for a value and returns its index or -1 if not found.
+Searches the array for a value and returns its index or -1 if not found. Optionally, the initial search index can be passed.
+
+.. _class_Array_find_last:
+
+- :ref:`int<class_int>`  **find_last**  **(** var value  **)**
+
+Searches the array in reverse order for a value and returns its index or -1 if not found.
+
+.. _class_Array_has:
+
+- :ref:`bool<class_bool>`  **has**  **(** var value  **)**
+
+Return true if the array contains given value. ``:ref:` "inside", 7 <class_ "inside", 7 >`.has("inside") == true, :ref:` "inside", 7 <class_ "inside", 7 >`.has("outside") == false, :ref:` "inside", 7 <class_ "inside", 7 >`.has(7) == true, :ref:` "inside", 7 <class_ "inside", 7 >`.has("7") == false``
 
 .. _class_Array_hash:
 
@@ -207,6 +233,12 @@ Remove an element from the array by index.
 - void  **resize**  **(** :ref:`int<class_int>` pos  **)**
 
 Resize the array to contain a different number of elements. If the array size is smaller, elements are cleared, if bigger, new elements are Null.
+
+.. _class_Array_rfind:
+
+- :ref:`int<class_int>`  **rfind**  **(** var what, :ref:`int<class_int>` from=-1  **)**
+
+Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array.
 
 .. _class_Array_size:
 

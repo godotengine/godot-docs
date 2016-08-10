@@ -69,7 +69,7 @@ Returns whether the color has transparency or not.
 
 - :ref:`bool<class_bool>`  **is_raw_mode**  **(** **)** const
 
-Returns whether this color picker is in raw mode or not
+Returns whether this color picker is in raw mode or not, raw mode will allow the color R, G, B component values to go beyond 1, you have to consider that the max value for color components is 1, going beyond that value will not have effect in the color, but can be used for special operations that require it (like tinting without darkening or rendering sprites in HDR).
 
 .. _class_ColorPicker_set_color:
 
@@ -87,6 +87,6 @@ Set true if you want the color to have an alpha channel (transparency), or false
 
 - void  **set_raw_mode**  **(** :ref:`bool<class_bool>` mode  **)**
 
-When set to true, every color channel will be represented as a value from 0 to 1, insetead of 0, 255.
+Set whether this color picker is using raw mode or not, see :ref:`is_raw_mode<class_ColorPicker_is_raw_mode>`.
 
 

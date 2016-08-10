@@ -39,6 +39,8 @@ Member Functions
 +------------------------------+---------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`        | :ref:`get_visible_characters<class_Label_get_visible_characters>`  **(** **)** const                                |
 +------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`get_visible_line_count<class_Label_get_visible_line_count>`  **(** **)** const                                |
++------------------------------+---------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`      | :ref:`has_autowrap<class_Label_has_autowrap>`  **(** **)** const                                                    |
 +------------------------------+---------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`      | :ref:`is_clipping_text<class_Label_is_clipping_text>`  **(** **)** const                                            |
@@ -145,6 +147,10 @@ Return the vertical alignment mode (any of the VALIGN\_\* enumeration values).
 - :ref:`int<class_int>`  **get_visible_characters**  **(** **)** const
 
 Return the restricted number of characters to display. Returns -1 if unrestricted.
+
+.. _class_Label_get_visible_line_count:
+
+- :ref:`int<class_int>`  **get_visible_line_count**  **(** **)** const
 
 .. _class_Label_has_autowrap:
 

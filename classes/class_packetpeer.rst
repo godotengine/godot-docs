@@ -27,11 +27,11 @@ Member Functions
 +----------------------------------+-----------------------------------------------------------------------------------------------------+
 | Error                            | :ref:`get_packet_error<class_PacketPeer_get_packet_error>`  **(** **)** const                       |
 +----------------------------------+-----------------------------------------------------------------------------------------------------+
-| Variant                          | :ref:`get_var<class_PacketPeer_get_var>`  **(** **)** const                                         |
+| :ref:`Variant<class_variant>`    | :ref:`get_var<class_PacketPeer_get_var>`  **(** **)** const                                         |
 +----------------------------------+-----------------------------------------------------------------------------------------------------+
 | Error                            | :ref:`put_packet<class_PacketPeer_put_packet>`  **(** :ref:`RawArray<class_rawarray>` buffer  **)** |
 +----------------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`put_var<class_PacketPeer_put_var>`  **(** Variant var  **)**                                  |
+| :ref:`int<class_int>`            | :ref:`put_var<class_PacketPeer_put_var>`  **(** :ref:`Variant<class_variant>` var  **)**            |
 +----------------------------------+-----------------------------------------------------------------------------------------------------+
 
 Description
@@ -62,7 +62,7 @@ Return the error state of the last packet received (via :ref:`get_packet<class_P
 
 .. _class_PacketPeer_get_var:
 
-- Variant  **get_var**  **(** **)** const
+- :ref:`Variant<class_variant>`  **get_var**  **(** **)** const
 
 Get a Variant.
 
@@ -74,7 +74,7 @@ Send a raw packet.
 
 .. _class_PacketPeer_put_var:
 
-- :ref:`int<class_int>`  **put_var**  **(** Variant var  **)**
+- :ref:`int<class_int>`  **put_var**  **(** :ref:`Variant<class_variant>` var  **)**
 
 Send a Variant as a packet.
 

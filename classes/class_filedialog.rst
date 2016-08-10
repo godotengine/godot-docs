@@ -31,6 +31,8 @@ Member Functions
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                | :ref:`get_current_path<class_FileDialog_get_current_path>`  **(** **)** const                                   |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| :ref:`StringArray<class_stringarray>`      | :ref:`get_filters<class_FileDialog_get_filters>`  **(** **)** const                                             |
++--------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                      | :ref:`get_mode<class_FileDialog_get_mode>`  **(** **)** const                                                   |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | :ref:`VBoxContainer<class_vboxcontainer>`  | :ref:`get_vbox<class_FileDialog_get_vbox>`  **(** **)**                                                         |
@@ -46,6 +48,8 @@ Member Functions
 | void                                       | :ref:`set_current_file<class_FileDialog_set_current_file>`  **(** :ref:`String<class_string>` file  **)**       |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`set_current_path<class_FileDialog_set_current_path>`  **(** :ref:`String<class_string>` path  **)**       |
++--------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`set_filters<class_FileDialog_set_filters>`  **(** :ref:`StringArray<class_stringarray>` filters  **)**    |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`set_mode<class_FileDialog_set_mode>`  **(** :ref:`int<class_int>` mode  **)**                             |
 +--------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
@@ -65,7 +69,8 @@ Numeric Constants
 - **MODE_OPEN_FILE** = **0** --- The dialog allows the selection of one, and only one file.
 - **MODE_OPEN_FILES** = **1** --- The dialog allows the selection of multiple files.
 - **MODE_OPEN_DIR** = **2** --- The dialog functions as a folder selector, disallowing the selection of any file.
-- **MODE_SAVE_FILE** = **3** --- The dialog will warn when a file exists.
+- **MODE_OPEN_ANY** = **3** --- The dialog allows the selection of a file or a directory.
+- **MODE_SAVE_FILE** = **4** --- The dialog will warn when a file exists.
 - **ACCESS_RESOURCES** = **0** --- The dialog allows the selection of file and directory.
 - **ACCESS_USERDATA** = **1** --- The dialog allows ascess files under :ref:`Resource<class_resource>` path(res://) .
 - **ACCESS_FILESYSTEM** = **2** --- The dialog allows ascess files in whole file system.
@@ -114,6 +119,10 @@ Get the current selected file of the file dialog (empty if none).
 
 Get the current selected path (directory and file) of the file dialog (empty if none).
 
+.. _class_FileDialog_get_filters:
+
+- :ref:`StringArray<class_stringarray>`  **get_filters**  **(** **)** const
+
 .. _class_FileDialog_get_mode:
 
 - :ref:`int<class_int>`  **get_mode**  **(** **)** const
@@ -161,6 +170,10 @@ Set the current selected file name of the file dialog.
 - void  **set_current_path**  **(** :ref:`String<class_string>` path  **)**
 
 Set the current selected file path of the file dialog.
+
+.. _class_FileDialog_set_filters:
+
+- void  **set_filters**  **(** :ref:`StringArray<class_stringarray>` filters  **)**
 
 .. _class_FileDialog_set_mode:
 

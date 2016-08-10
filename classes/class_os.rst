@@ -37,6 +37,8 @@ Member Functions
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`find_scancode_from_string<class_OS_find_scancode_from_string>`  **(** :ref:`String<class_string>` string  **)** const                                                                                                |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`get_borderless_window<class_OS_get_borderless_window>`  **(** **)** const                                                                                                                                            |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`            | :ref:`get_clipboard<class_OS_get_clipboard>`  **(** **)** const                                                                                                                                                            |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`StringArray<class_stringarray>`  | :ref:`get_cmdline_args<class_OS_get_cmdline_args>`  **(** **)**                                                                                                                                                            |
@@ -49,7 +51,13 @@ Member Functions
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_dictionary>`    | :ref:`get_date<class_OS_get_date>`  **(** :ref:`bool<class_bool>` utc=false  **)** const                                                                                                                                   |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_dictionary>`    | :ref:`get_datetime<class_OS_get_datetime>`  **(** :ref:`bool<class_bool>` utc=false  **)** const                                                                                                                           |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_dictionary>`    | :ref:`get_datetime_from_unix_time<class_OS_get_datetime_from_unix_time>`  **(** :ref:`int<class_int>` unix_time_val  **)** const                                                                                           |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`get_dynamic_memory_usage<class_OS_get_dynamic_memory_usage>`  **(** **)** const                                                                                                                                      |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_dictionary>`    | :ref:`get_engine_version<class_OS_get_engine_version>`  **(** **)** const                                                                                                                                                  |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`            | :ref:`get_environment<class_OS_get_environment>`  **(** :ref:`String<class_string>` environment  **)** const                                                                                                               |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -62,6 +70,8 @@ Member Functions
 | :ref:`Array<class_array>`              | :ref:`get_fullscreen_mode_list<class_OS_get_fullscreen_mode_list>`  **(** :ref:`int<class_int>` screen=0  **)** const                                                                                                      |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`get_iterations_per_second<class_OS_get_iterations_per_second>`  **(** **)** const                                                                                                                                    |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`get_latin_keyboard_variant<class_OS_get_latin_keyboard_variant>`  **(** **)** const                                                                                                                                  |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`            | :ref:`get_locale<class_OS_get_locale>`  **(** **)** const                                                                                                                                                                  |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -78,6 +88,8 @@ Member Functions
 | :ref:`String<class_string>`            | :ref:`get_scancode_string<class_OS_get_scancode_string>`  **(** :ref:`int<class_int>` code  **)** const                                                                                                                    |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`get_screen_count<class_OS_get_screen_count>`  **(** **)** const                                                                                                                                                      |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`get_screen_dpi<class_OS_get_screen_dpi>`  **(** :ref:`int<class_int>` screen=0  **)** const                                                                                                                          |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`get_screen_orientation<class_OS_get_screen_orientation>`  **(** **)** const                                                                                                                                          |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -109,6 +121,8 @@ Member Functions
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`get_unix_time<class_OS_get_unix_time>`  **(** **)** const                                                                                                                                                            |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`get_unix_time_from_datetime<class_OS_get_unix_time_from_datetime>`  **(** :ref:`Dictionary<class_dictionary>` datetime  **)** const                                                                                  |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`          | :ref:`get_video_mode_size<class_OS_get_video_mode_size>`  **(** :ref:`int<class_int>` screen=0  **)** const                                                                                                                |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`          | :ref:`get_window_position<class_OS_get_window_position>`  **(** **)** const                                                                                                                                                |
@@ -118,6 +132,10 @@ Member Functions
 | :ref:`bool<class_bool>`                | :ref:`has_environment<class_OS_has_environment>`  **(** :ref:`String<class_string>` environment  **)** const                                                                                                               |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                | :ref:`has_touchscreen_ui_hint<class_OS_has_touchscreen_ui_hint>`  **(** **)** const                                                                                                                                        |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`has_virtual_keyboard<class_OS_has_virtual_keyboard>`  **(** **)** const                                                                                                                                              |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`hide_virtual_keyboard<class_OS_hide_virtual_keyboard>`  **(** **)**                                                                                                                                                  |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                | :ref:`is_debug_build<class_OS_is_debug_build>`  **(** **)** const                                                                                                                                                          |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -134,6 +152,8 @@ Member Functions
 | :ref:`bool<class_bool>`                | :ref:`is_video_mode_fullscreen<class_OS_is_video_mode_fullscreen>`  **(** :ref:`int<class_int>` screen=0  **)** const                                                                                                      |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                | :ref:`is_video_mode_resizable<class_OS_is_video_mode_resizable>`  **(** :ref:`int<class_int>` screen=0  **)** const                                                                                                        |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`is_vsnc_enabled<class_OS_is_vsnc_enabled>`  **(** **)** const                                                                                                                                                        |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                | :ref:`is_window_fullscreen<class_OS_is_window_fullscreen>`  **(** **)** const                                                                                                                                              |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -163,6 +183,10 @@ Member Functions
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`print_resources_in_use<class_OS_print_resources_in_use>`  **(** :ref:`bool<class_bool>` short=false  **)**                                                                                                           |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`request_attention<class_OS_request_attention>`  **(** **)**                                                                                                                                                          |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_borderless_window<class_OS_set_borderless_window>`  **(** :ref:`bool<class_bool>` borderless  **)**                                                                                                              |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`set_clipboard<class_OS_set_clipboard>`  **(** :ref:`String<class_string>` clipboard  **)**                                                                                                                           |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`set_current_screen<class_OS_set_current_screen>`  **(** :ref:`int<class_int>` screen  **)**                                                                                                                          |
@@ -185,6 +209,8 @@ Member Functions
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`set_use_file_access_save_and_swap<class_OS_set_use_file_access_save_and_swap>`  **(** :ref:`bool<class_bool>` enabled  **)**                                                                                         |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_use_vsync<class_OS_set_use_vsync>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                                                                  |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`set_video_mode<class_OS_set_video_mode>`  **(** :ref:`Vector2<class_vector2>` size, :ref:`bool<class_bool>` fullscreen, :ref:`bool<class_bool>` resizable, :ref:`int<class_int>` screen=0  **)**                     |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`set_window_fullscreen<class_OS_set_window_fullscreen>`  **(** :ref:`bool<class_bool>` enabled  **)**                                                                                                                 |
@@ -203,6 +229,8 @@ Member Functions
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`shell_open<class_OS_shell_open>`  **(** :ref:`String<class_string>` uri  **)**                                                                                                                                       |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`show_virtual_keyboard<class_OS_show_virtual_keyboard>`  **(** :ref:`String<class_string>` existing_text=""  **)**                                                                                                    |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
 -----------------
@@ -214,18 +242,18 @@ Numeric Constants
 - **DAY_THURSDAY** = **4**
 - **DAY_FRIDAY** = **5**
 - **DAY_SATURDAY** = **6**
-- **MONTH_JANUARY** = **0**
-- **MONTH_FEBRUARY** = **1**
-- **MONTH_MARCH** = **2**
-- **MONTH_APRIL** = **3**
-- **MONTH_MAY** = **4**
-- **MONTH_JUNE** = **5**
-- **MONTH_JULY** = **6**
-- **MONTH_AUGUST** = **7**
-- **MONTH_SEPTEMBER** = **8**
-- **MONTH_OCTOBER** = **9**
-- **MONTH_NOVEMBER** = **10**
-- **MONTH_DECEMBER** = **11**
+- **MONTH_JANUARY** = **1**
+- **MONTH_FEBRUARY** = **2**
+- **MONTH_MARCH** = **3**
+- **MONTH_APRIL** = **4**
+- **MONTH_MAY** = **5**
+- **MONTH_JUNE** = **6**
+- **MONTH_JULY** = **7**
+- **MONTH_AUGUST** = **8**
+- **MONTH_SEPTEMBER** = **9**
+- **MONTH_OCTOBER** = **10**
+- **MONTH_NOVEMBER** = **11**
+- **MONTH_DECEMBER** = **12**
 - **SCREEN_ORIENTATION_LANDSCAPE** = **0**
 - **SCREEN_ORIENTATION_PORTRAIT** = **1**
 - **SCREEN_ORIENTATION_REVERSE_LANDSCAPE** = **2**
@@ -245,25 +273,7 @@ Numeric Constants
 Description
 -----------
 
-Operating System functions. OS Wraps the most common functionality to communicate with the host Operating System, such as:
-
- -Mouse Grabbing
-
- -Mouse Cursors
-
- -Clipboard
-
- -Video Mode
-
- -Date " Time
-
- -Timers
-
- -Environment Variables
-
- -Execution of Binaries
-
- -Command Line
+Operating System functions. OS Wraps the most common functionality to communicate with the host Operating System, such as: mouse grabbing, mouse cursors, clipboard, video mode, date and time, timers, environment variables, execution of binaries, command line, etc.
 
 Member Function Description
 ---------------------------
@@ -271,6 +281,8 @@ Member Function Description
 .. _class_OS_alert:
 
 - void  **alert**  **(** :ref:`String<class_string>` text, :ref:`String<class_string>` title="Alert!"  **)**
+
+Displays a modal dialog box utilizing the host OS.
 
 .. _class_OS_can_draw:
 
@@ -281,6 +293,8 @@ Return true if the host OS allows drawing.
 .. _class_OS_can_use_threads:
 
 - :ref:`bool<class_bool>`  **can_use_threads**  **(** **)** const
+
+Returns if the current host platform is using multiple threads.
 
 .. _class_OS_delay_msec:
 
@@ -298,9 +312,19 @@ Delay executing of the current thread by given microseconds.
 
 - void  **dump_memory_to_file**  **(** :ref:`String<class_string>` file  **)**
 
+Dumps the memory allocation ringlist to a file (only works in debug).
+
+Entry format per line: "Address - Size - Description"
+
 .. _class_OS_dump_resources_to_file:
 
 - void  **dump_resources_to_file**  **(** :ref:`String<class_string>` file  **)**
+
+Dumps all used resources to file (only works in debug).
+
+Entry format per line: "Resource Type : Resource Location"
+
+At the end of the file is a statistic of all used Resource Types.
 
 .. _class_OS_execute:
 
@@ -311,6 +335,14 @@ Execute the binary file in given path, optionally blocking until it returns. A p
 .. _class_OS_find_scancode_from_string:
 
 - :ref:`int<class_int>`  **find_scancode_from_string**  **(** :ref:`String<class_string>` string  **)** const
+
+Returns the scancode of the given string (e.g. "Escape")
+
+.. _class_OS_get_borderless_window:
+
+- :ref:`bool<class_bool>`  **get_borderless_window**  **(** **)** const
+
+Returns true if the current window is borderless.
 
 .. _class_OS_get_clipboard:
 
@@ -334,6 +366,8 @@ Returns the current screen index (0 padded).
 
 - :ref:`String<class_string>`  **get_custom_level**  **(** **)** const
 
+Returns the value of the commandline argument "-level".
+
 .. _class_OS_get_data_dir:
 
 - :ref:`String<class_string>`  **get_data_dir**  **(** **)** const
@@ -344,11 +378,47 @@ Return the absolute directory path of user data path(:ref:`user://<class_user://
 
 - :ref:`Dictionary<class_dictionary>`  **get_date**  **(** :ref:`bool<class_bool>` utc=false  **)** const
 
+Returns current date as a dictionary of keys: year, month, day, weekday, dst (daylight savings time).
+
+.. _class_OS_get_datetime:
+
+- :ref:`Dictionary<class_dictionary>`  **get_datetime**  **(** :ref:`bool<class_bool>` utc=false  **)** const
+
+Returns current datetime as a dictionary of keys: year, month, day, weekday, dst (daylight savings time), hour, minute, second.
+
+.. _class_OS_get_datetime_from_unix_time:
+
+- :ref:`Dictionary<class_dictionary>`  **get_datetime_from_unix_time**  **(** :ref:`int<class_int>` unix_time_val  **)** const
+
+Get a dictionary of time values when given epoch time.
+
+Dictionary Time values will be a union of values from :ref:`get_time<class_OS_get_time>` and :ref:`get_date<class_OS_get_date>` dictionaries (with the exception of dst = day light standard time, as it cannot be determined from epoch).
+
 .. _class_OS_get_dynamic_memory_usage:
 
 - :ref:`int<class_int>`  **get_dynamic_memory_usage**  **(** **)** const
 
 Return the total amount of dynamic memory used (only works in debug).
+
+.. _class_OS_get_engine_version:
+
+- :ref:`Dictionary<class_dictionary>`  **get_engine_version**  **(** **)** const
+
+Returns the current engine version information in a Dictionary.
+
+
+
+"major"    - Holds the major version number as a String
+
+"minor"    - Holds the minor version number as a String
+
+"patch"    - Holds the patch version number as a String
+
+"status"   - Holds the status (e.g. "beta", "rc1", "rc2", ... "stable") as a String
+
+"revision" - Holds the revision (e.g. "custom-build") as a String
+
+"string"   - major + minor + patch + status + revision in a single String
 
 .. _class_OS_get_environment:
 
@@ -386,6 +456,14 @@ Return the list of fullscreen modes.
 
 Return the amount of fixed iterations per second (for fixed process and physics).
 
+.. _class_OS_get_latin_keyboard_variant:
+
+- :ref:`String<class_string>`  **get_latin_keyboard_variant**  **(** **)** const
+
+Returns the current latin keyboard variant as a String.
+
+Possible return values are: "QWERTY", "AZERTY", "QZERTY", "DVORAK", "NEO" or "ERROR"
+
 .. _class_OS_get_locale:
 
 - :ref:`String<class_string>`  **get_locale**  **(** **)** const
@@ -401,6 +479,8 @@ Return the main loop object (see :ref:`MainLoop<class_mainloop>`).
 .. _class_OS_get_model_name:
 
 - :ref:`String<class_string>`  **get_model_name**  **(** **)** const
+
+Returns the model name of the current device.
 
 .. _class_OS_get_name:
 
@@ -424,11 +504,35 @@ Returns the number of cores available in the host machine.
 
 - :ref:`String<class_string>`  **get_scancode_string**  **(** :ref:`int<class_int>` code  **)** const
 
+Returns the given scancode as a string (e.g. Return values: "Escape", "Shift+Escape").
+
 .. _class_OS_get_screen_count:
 
 - :ref:`int<class_int>`  **get_screen_count**  **(** **)** const
 
 Returns the number of displays attached to the host machine
+
+.. _class_OS_get_screen_dpi:
+
+- :ref:`int<class_int>`  **get_screen_dpi**  **(** :ref:`int<class_int>` screen=0  **)** const
+
+Returns the dots per inch density of the specified screen.
+
+
+
+On Android Devices, the actual screen densities are grouped into six generalized densities:
+
+ldpi    - 120 dpi
+
+mdpi    - 160 dpi
+
+hdpi    - 240 dpi
+
+xhdpi   - 320 dpi
+
+xxhdpi  - 480 dpi
+
+xxxhdpi - 640 dpi
 
 .. _class_OS_get_screen_orientation:
 
@@ -482,6 +586,8 @@ Return the amount of time passed in milliseconds since the engine started.
 
 - :ref:`Dictionary<class_dictionary>`  **get_time**  **(** :ref:`bool<class_bool>` utc=false  **)** const
 
+Returns current time as a dictionary of keys: hour, minute, second
+
 .. _class_OS_get_time_scale:
 
 - :ref:`float<class_float>`  **get_time_scale**  **(** **)**
@@ -499,6 +605,16 @@ Return the amount of time passed in milliseconds since the engine started.
 - :ref:`int<class_int>`  **get_unix_time**  **(** **)** const
 
 Return	the current unix timestamp.
+
+.. _class_OS_get_unix_time_from_datetime:
+
+- :ref:`int<class_int>`  **get_unix_time_from_datetime**  **(** :ref:`Dictionary<class_dictionary>` datetime  **)** const
+
+Get an epoch time value from a dictionary of time values.
+
+``datetime`` must be populated with the following keys: year, month, day, hour, minute, second.
+
+You can pass the output from :ref:`get_datetime_from_unix_time<class_OS_get_datetime_from_unix_time>` directly into this function. Daylight savings time (dst), if present, is ignored.
 
 .. _class_OS_get_video_mode_size:
 
@@ -527,6 +643,18 @@ Return true if an environment variable exists.
 .. _class_OS_has_touchscreen_ui_hint:
 
 - :ref:`bool<class_bool>`  **has_touchscreen_ui_hint**  **(** **)** const
+
+.. _class_OS_has_virtual_keyboard:
+
+- :ref:`bool<class_bool>`  **has_virtual_keyboard**  **(** **)** const
+
+Returns true if the platform has a virtual keyboard, false otherwise.
+
+.. _class_OS_hide_virtual_keyboard:
+
+- void  **hide_virtual_keyboard**  **(** **)**
+
+Hides the virtual keyboard if it is shown, does nothing otherwise.
 
 .. _class_OS_is_debug_build:
 
@@ -569,6 +697,10 @@ Return true if the current video mode is fullscreen.
 - :ref:`bool<class_bool>`  **is_video_mode_resizable**  **(** :ref:`int<class_int>` screen=0  **)** const
 
 Return true if the window is resizable.
+
+.. _class_OS_is_vsnc_enabled:
+
+- :ref:`bool<class_bool>`  **is_vsnc_enabled**  **(** **)** const
 
 .. _class_OS_is_window_fullscreen:
 
@@ -636,6 +768,16 @@ Kill a process ID (this method can be used to kill processes that were not spawn
 
 - void  **print_resources_in_use**  **(** :ref:`bool<class_bool>` short=false  **)**
 
+.. _class_OS_request_attention:
+
+- void  **request_attention**  **(** **)**
+
+Request the user attention to the window. It'll flash the taskbar button on Windows or bounce the dock icon on OSX.
+
+.. _class_OS_set_borderless_window:
+
+- void  **set_borderless_window**  **(** :ref:`bool<class_bool>` borderless  **)**
+
 .. _class_OS_set_clipboard:
 
 - void  **set_clipboard**  **(** :ref:`String<class_string>` clipboard  **)**
@@ -692,6 +834,10 @@ Speeds up or slows down the physics by changing the delta variable. (delta \* ti
 
 - void  **set_use_file_access_save_and_swap**  **(** :ref:`bool<class_bool>` enabled  **)**
 
+.. _class_OS_set_use_vsync:
+
+- void  **set_use_vsync**  **(** :ref:`bool<class_bool>` enable  **)**
+
 .. _class_OS_set_video_mode:
 
 - void  **set_video_mode**  **(** :ref:`Vector2<class_vector2>` size, :ref:`bool<class_bool>` fullscreen, :ref:`bool<class_bool>` resizable, :ref:`int<class_int>` screen=0  **)**
@@ -743,5 +889,11 @@ Sets the window title to the specified string.
 .. _class_OS_shell_open:
 
 - :ref:`int<class_int>`  **shell_open**  **(** :ref:`String<class_string>` uri  **)**
+
+.. _class_OS_show_virtual_keyboard:
+
+- void  **show_virtual_keyboard**  **(** :ref:`String<class_string>` existing_text=""  **)**
+
+Shows the virtual keyboard if the platform has one. The *existing_text* parameter is useful for implementing your own LineEdit, as it tells the virtual keyboard what text has already been typed (the virtual keyboard uses it for auto-correct and predictions).
 
 

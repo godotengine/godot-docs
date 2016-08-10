@@ -18,18 +18,18 @@ Brief Description
 Member Functions
 ----------------
 
-+------------------------+---------------------------------------------------------------------+
-| Error                  | :ref:`pack<class_PackedDataContainer_pack>`  **(** var value  **)** |
-+------------------------+---------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`size<class_PackedDataContainer_size>`  **(** **)** const      |
-+------------------------+---------------------------------------------------------------------+
++------------------------+-----------------------------------------------------------------------------------------------+
+| Error                  | :ref:`pack<class_PackedDataContainer_pack>`  **(** :ref:`Variant<class_variant>` value  **)** |
++------------------------+-----------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`size<class_PackedDataContainer_size>`  **(** **)** const                                |
++------------------------+-----------------------------------------------------------------------------------------------+
 
 Member Function Description
 ---------------------------
 
 .. _class_PackedDataContainer_pack:
 
-- Error  **pack**  **(** var value  **)**
+- Error  **pack**  **(** :ref:`Variant<class_variant>` value  **)**
 
 .. _class_PackedDataContainer_size:
 

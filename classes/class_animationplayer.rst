@@ -100,6 +100,7 @@ Signals
 -------
 
 -  **animation_changed**  **(** :ref:`String<class_string>` old_name, :ref:`String<class_string>` new_name  **)**
+-  **animation_started**  **(** :ref:`String<class_string>` name  **)**
 -  **finished**  **(** **)**
 
 Numeric Constants
@@ -284,9 +285,7 @@ Seek the animation to a given position in time (in seconds). If 'update' is true
 
 - void  **set_active**  **(** :ref:`bool<class_bool>` active  **)**
 
-Set the player as active (playing). If false, it
-
-will do nothing.
+Set the player as active (playing). If false, it will do nothing.
 
 .. _class_AnimationPlayer_set_animation_process_mode:
 

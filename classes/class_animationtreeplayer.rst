@@ -29,6 +29,8 @@ Member Functions
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`animation_node_set_animation<class_AnimationTreePlayer_animation_node_set_animation>`  **(** :ref:`String<class_string>` id, :ref:`Animation<class_animation>` animation  **)**                                         |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`animation_node_set_filter_path<class_AnimationTreePlayer_animation_node_set_filter_path>`  **(** :ref:`String<class_string>` id, :ref:`NodePath<class_nodepath>` path, :ref:`bool<class_bool>` enable  **)**            |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`animation_node_set_master_animation<class_AnimationTreePlayer_animation_node_set_master_animation>`  **(** :ref:`String<class_string>` id, :ref:`String<class_string>` source  **)**                                    |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`              | :ref:`blend2_node_get_amount<class_AnimationTreePlayer_blend2_node_get_amount>`  **(** :ref:`String<class_string>` id  **)** const                                                                                            |
@@ -191,6 +193,10 @@ Add a node of a given type in the graph with given id.
 - void  **animation_node_set_animation**  **(** :ref:`String<class_string>` id, :ref:`Animation<class_animation>` animation  **)**
 
 Set the animation for an animation node.
+
+.. _class_AnimationTreePlayer_animation_node_set_filter_path:
+
+- void  **animation_node_set_filter_path**  **(** :ref:`String<class_string>` id, :ref:`NodePath<class_nodepath>` path, :ref:`bool<class_bool>` enable  **)**
 
 .. _class_AnimationTreePlayer_animation_node_set_master_animation:
 

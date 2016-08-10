@@ -123,6 +123,7 @@ Numeric Constants
 - **HALF_OFFSET_DISABLED** = **2** --- Half offset disabled.
 - **TILE_ORIGIN_TOP_LEFT** = **0** --- Tile origin at its top-left corner.
 - **TILE_ORIGIN_CENTER** = **1** --- Tile origin at its center.
+- **TILE_ORIGIN_BOTTOM_LEFT** = **2**
 
 Description
 -----------
@@ -320,17 +321,13 @@ Set tiles to be centered in y coordinate. (by default this is false and they are
 
 - void  **set_collision_bounce**  **(** :ref:`float<class_float>` value  **)**
 
-Set the collision bounce parameter.
-
-Allowable values range from 0 to 1.
+Set the collision bounce parameter. Allowable values range from 0 to 1.
 
 .. _class_TileMap_set_collision_friction:
 
 - void  **set_collision_friction**  **(** :ref:`float<class_float>` value  **)**
 
-Set the collision friction parameter.
-
-Allowable values range from 0 to 1.
+Set the collision friction parameter. Allowable values range from 0 to 1.
 
 .. _class_TileMap_set_collision_layer:
 

@@ -53,6 +53,8 @@ Member Functions
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`StringArray<class_stringarray>`  | :ref:`get_stylebox_list<class_Theme_get_stylebox_list>`  **(** :ref:`String<class_string>` type  **)** const                                                            |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`StringArray<class_stringarray>`  | :ref:`get_stylebox_types<class_Theme_get_stylebox_types>`  **(** **)** const                                                                                            |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`StringArray<class_stringarray>`  | :ref:`get_type_list<class_Theme_get_type_list>`  **(** :ref:`String<class_string>` type  **)** const                                                                    |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                | :ref:`has_color<class_Theme_has_color>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type  **)** const                                          |
@@ -83,7 +85,7 @@ Description
 
 Theme for skinning controls. Controls can be skinned individually, but for complex applications it's more efficient to just create a global theme that defines everything. This theme can be applied to any :ref:`Control<class_control>`, and it and its children will automatically use it.
 
-Theme resources can be alternatively loaded by writing them in a .theme file, see wiki for more info.
+Theme resources can be alternatively loaded by writing them in a .theme file, see docs for more info.
 
 Member Function Description
 ---------------------------
@@ -155,6 +157,10 @@ Member Function Description
 .. _class_Theme_get_stylebox_list:
 
 - :ref:`StringArray<class_stringarray>`  **get_stylebox_list**  **(** :ref:`String<class_string>` type  **)** const
+
+.. _class_Theme_get_stylebox_types:
+
+- :ref:`StringArray<class_stringarray>`  **get_stylebox_types**  **(** **)** const
 
 .. _class_Theme_get_type_list:
 

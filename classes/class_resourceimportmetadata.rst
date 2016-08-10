@@ -37,7 +37,9 @@ Member Functions
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`set_editor<class_ResourceImportMetadata_set_editor>`  **(** :ref:`String<class_string>` name  **)**                                     |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_option<class_ResourceImportMetadata_set_option>`  **(** :ref:`String<class_string>` key, var value  **)**                           |
+| void                                   | :ref:`set_option<class_ResourceImportMetadata_set_option>`  **(** :ref:`String<class_string>` key, :ref:`Variant<class_variant>` value  **)** |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_source_md5<class_ResourceImportMetadata_set_source_md5>`  **(** :ref:`int<class_int>` idx, :ref:`String<class_string>` md5  **)**   |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Function Description
@@ -81,6 +83,10 @@ Member Function Description
 
 .. _class_ResourceImportMetadata_set_option:
 
-- void  **set_option**  **(** :ref:`String<class_string>` key, var value  **)**
+- void  **set_option**  **(** :ref:`String<class_string>` key, :ref:`Variant<class_variant>` value  **)**
+
+.. _class_ResourceImportMetadata_set_source_md5:
+
+- void  **set_source_md5**  **(** :ref:`int<class_int>` idx, :ref:`String<class_string>` md5  **)**
 
 

@@ -21,6 +21,8 @@ Member Functions
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                | :ref:`begins_with<class_String_begins_with>`  **(** :ref:`String<class_string>` text  **)**                                                |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`StringArray<class_stringarray>`  | :ref:`bigrams<class_String_bigrams>`  **(** **)**                                                                                          |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`            | :ref:`c_escape<class_String_c_escape>`  **(** **)**                                                                                        |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`            | :ref:`c_unescape<class_String_c_unescape>`  **(** **)**                                                                                    |
@@ -30,6 +32,10 @@ Member Functions
 | :ref:`int<class_int>`                  | :ref:`casecmp_to<class_String_casecmp_to>`  **(** :ref:`String<class_string>` to  **)**                                                    |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                | :ref:`empty<class_String_empty>`  **(** **)**                                                                                              |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`ends_with<class_String_ends_with>`  **(** :ref:`String<class_string>` text  **)**                                                    |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`erase<class_String_erase>`  **(** :ref:`int<class_int>` pos, :ref:`int<class_int>` chars  **)**                                      |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`            | :ref:`extension<class_String_extension>`  **(** **)**                                                                                      |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -52,6 +58,10 @@ Member Functions
 | :ref:`bool<class_bool>`                | :ref:`is_abs_path<class_String_is_abs_path>`  **(** **)**                                                                                  |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                | :ref:`is_rel_path<class_String_is_rel_path>`  **(** **)**                                                                                  |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`is_subsequence_of<class_String_is_subsequence_of>`  **(** :ref:`String<class_string>` text  **)**                                    |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`is_subsequence_ofi<class_String_is_subsequence_ofi>`  **(** :ref:`String<class_string>` text  **)**                                  |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                | :ref:`is_valid_float<class_String_is_valid_float>`  **(** **)**                                                                            |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -101,6 +111,12 @@ Member Functions
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`            | :ref:`right<class_String_right>`  **(** :ref:`int<class_int>` pos  **)**                                                                   |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RawArray<class_rawarray>`        | :ref:`sha256_buffer<class_String_sha256_buffer>`  **(** **)**                                                                              |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`sha256_text<class_String_sha256_text>`  **(** **)**                                                                                  |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`similarity<class_String_similarity>`  **(** :ref:`String<class_string>` text  **)**                                                  |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`StringArray<class_stringarray>`  | :ref:`split<class_String_split>`  **(** :ref:`String<class_string>` divisor, :ref:`bool<class_bool>` allow_empty=True  **)**               |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RealArray<class_realarray>`      | :ref:`split_floats<class_String_split_floats>`  **(** :ref:`String<class_string>` divisor, :ref:`bool<class_bool>` allow_empty=True  **)** |
@@ -146,6 +162,12 @@ If the string is a path to a file, return the path to the file without the exten
 
 Return true if the strings begins with the given string.
 
+.. _class_String_bigrams:
+
+- :ref:`StringArray<class_stringarray>`  **bigrams**  **(** **)**
+
+Return the bigrams (pairs of consecutive letters) of this string.
+
 .. _class_String_c_escape:
 
 - :ref:`String<class_string>`  **c_escape**  **(** **)**
@@ -175,6 +197,18 @@ Perform a case-sensitive comparison to another string, return -1 if less, 0 if e
 - :ref:`bool<class_bool>`  **empty**  **(** **)**
 
 Return true if the string is empty.
+
+.. _class_String_ends_with:
+
+- :ref:`bool<class_bool>`  **ends_with**  **(** :ref:`String<class_string>` text  **)**
+
+Return true if the strings ends with the given string.
+
+.. _class_String_erase:
+
+- void  **erase**  **(** :ref:`int<class_int>` pos, :ref:`int<class_int>` chars  **)**
+
+Erase ``chars`` characters from the string starting from ``pos``.
 
 .. _class_String_extension:
 
@@ -241,6 +275,18 @@ If the string is a path to a file or directory, return true if the path is absol
 - :ref:`bool<class_bool>`  **is_rel_path**  **(** **)**
 
 If the string is a path to a file or directory, return true if the path is relative.
+
+.. _class_String_is_subsequence_of:
+
+- :ref:`bool<class_bool>`  **is_subsequence_of**  **(** :ref:`String<class_string>` text  **)**
+
+Check whether this string is a subsequence of the given string.
+
+.. _class_String_is_subsequence_ofi:
+
+- :ref:`bool<class_bool>`  **is_subsequence_ofi**  **(** :ref:`String<class_string>` text  **)**
+
+Check whether this string is a subsequence of the given string, without considering case.
 
 .. _class_String_is_valid_float:
 
@@ -385,6 +431,22 @@ Perform a search for a substring, but start from the end of the string instead o
 - :ref:`String<class_string>`  **right**  **(** :ref:`int<class_int>` pos  **)**
 
 Return the right side of the string from a given position.
+
+.. _class_String_sha256_buffer:
+
+- :ref:`RawArray<class_rawarray>`  **sha256_buffer**  **(** **)**
+
+.. _class_String_sha256_text:
+
+- :ref:`String<class_string>`  **sha256_text**  **(** **)**
+
+Return the SHA-256 hash of the string as a string.
+
+.. _class_String_similarity:
+
+- :ref:`float<class_float>`  **similarity**  **(** :ref:`String<class_string>` text  **)**
+
+Return the similarity index of the text compared to this string. 1 means totally similar and 0 means totally dissimilar.
 
 .. _class_String_split:
 

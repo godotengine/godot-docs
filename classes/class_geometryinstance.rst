@@ -20,31 +20,35 @@ Base node for geometry based visual instances.
 Member Functions
 ----------------
 
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_baked_light_texture_id<class_GeometryInstance_get_baked_light_texture_id>`  **(** **)** const                       |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`    | :ref:`get_draw_range_begin<class_GeometryInstance_get_draw_range_begin>`  **(** **)** const                                   |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`    | :ref:`get_draw_range_end<class_GeometryInstance_get_draw_range_end>`  **(** **)** const                                       |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`    | :ref:`get_extra_cull_margin<class_GeometryInstance_get_extra_cull_margin>`  **(** **)** const                                 |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`get_flag<class_GeometryInstance_get_flag>`  **(** :ref:`int<class_int>` flag  **)** const                               |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`  | :ref:`get_material_override<class_GeometryInstance_get_material_override>`  **(** **)** const                                 |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_baked_light_texture_id<class_GeometryInstance_set_baked_light_texture_id>`  **(** :ref:`int<class_int>` id  **)**   |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_draw_range_begin<class_GeometryInstance_set_draw_range_begin>`  **(** :ref:`float<class_float>` mode  **)**         |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_draw_range_end<class_GeometryInstance_set_draw_range_end>`  **(** :ref:`float<class_float>` mode  **)**             |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_extra_cull_margin<class_GeometryInstance_set_extra_cull_margin>`  **(** :ref:`float<class_float>` margin  **)**     |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_flag<class_GeometryInstance_set_flag>`  **(** :ref:`int<class_int>` flag, :ref:`bool<class_bool>` value  **)**      |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_material_override<class_GeometryInstance_set_material_override>`  **(** :ref:`Object<class_object>` material  **)** |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
++------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`get_baked_light_texture_id<class_GeometryInstance_get_baked_light_texture_id>`  **(** **)** const                                     |
++------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`get_cast_shadows_setting<class_GeometryInstance_get_cast_shadows_setting>`  **(** **)** const                                         |
++------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`    | :ref:`get_draw_range_begin<class_GeometryInstance_get_draw_range_begin>`  **(** **)** const                                                 |
++------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`    | :ref:`get_draw_range_end<class_GeometryInstance_get_draw_range_end>`  **(** **)** const                                                     |
++------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`    | :ref:`get_extra_cull_margin<class_GeometryInstance_get_extra_cull_margin>`  **(** **)** const                                               |
++------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`get_flag<class_GeometryInstance_get_flag>`  **(** :ref:`int<class_int>` flag  **)** const                                             |
++------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`  | :ref:`get_material_override<class_GeometryInstance_get_material_override>`  **(** **)** const                                               |
++------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_baked_light_texture_id<class_GeometryInstance_set_baked_light_texture_id>`  **(** :ref:`int<class_int>` id  **)**                 |
++------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_cast_shadows_setting<class_GeometryInstance_set_cast_shadows_setting>`  **(** :ref:`int<class_int>` shadow_casting_setting  **)** |
++------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_draw_range_begin<class_GeometryInstance_set_draw_range_begin>`  **(** :ref:`float<class_float>` mode  **)**                       |
++------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_draw_range_end<class_GeometryInstance_set_draw_range_end>`  **(** :ref:`float<class_float>` mode  **)**                           |
++------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_extra_cull_margin<class_GeometryInstance_set_extra_cull_margin>`  **(** :ref:`float<class_float>` margin  **)**                   |
++------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_flag<class_GeometryInstance_set_flag>`  **(** :ref:`int<class_int>` flag, :ref:`bool<class_bool>` value  **)**                    |
++------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_material_override<class_GeometryInstance_set_material_override>`  **(** :ref:`Object<class_object>` material  **)**               |
++------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
 -----------------
@@ -57,6 +61,10 @@ Numeric Constants
 - **FLAG_DEPH_SCALE** = **5**
 - **FLAG_VISIBLE_IN_ALL_ROOMS** = **6**
 - **FLAG_MAX** = **8**
+- **SHADOW_CASTING_SETTING_OFF** = **0**
+- **SHADOW_CASTING_SETTING_ON** = **1**
+- **SHADOW_CASTING_SETTING_DOUBLE_SIDED** = **2**
+- **SHADOW_CASTING_SETTING_SHADOWS_ONLY** = **3**
 
 Description
 -----------
@@ -69,6 +77,10 @@ Member Function Description
 .. _class_GeometryInstance_get_baked_light_texture_id:
 
 - :ref:`int<class_int>`  **get_baked_light_texture_id**  **(** **)** const
+
+.. _class_GeometryInstance_get_cast_shadows_setting:
+
+- :ref:`int<class_int>`  **get_cast_shadows_setting**  **(** **)** const
 
 .. _class_GeometryInstance_get_draw_range_begin:
 
@@ -95,6 +107,10 @@ Return the material override for the whole geometry.
 .. _class_GeometryInstance_set_baked_light_texture_id:
 
 - void  **set_baked_light_texture_id**  **(** :ref:`int<class_int>` id  **)**
+
+.. _class_GeometryInstance_set_cast_shadows_setting:
+
+- void  **set_cast_shadows_setting**  **(** :ref:`int<class_int>` shadow_casting_setting  **)**
 
 .. _class_GeometryInstance_set_draw_range_begin:
 

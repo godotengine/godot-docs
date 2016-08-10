@@ -68,6 +68,7 @@ Signals
 -------
 
 -  **frame_changed**  **(** **)**
+-  **texture_changed**  **(** **)**
 
 Description
 -----------

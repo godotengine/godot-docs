@@ -18,15 +18,19 @@ A parallax scrolling layer to be used with :ref:`ParallaxBackground<class_parall
 Member Functions
 ----------------
 
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_mirroring<class_ParallaxLayer_get_mirroring>`  **(** **)** const                                      |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_motion_scale<class_ParallaxLayer_get_motion_scale>`  **(** **)** const                                |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_mirroring<class_ParallaxLayer_set_mirroring>`  **(** :ref:`Vector2<class_vector2>` mirror  **)**      |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_motion_scale<class_ParallaxLayer_set_motion_scale>`  **(** :ref:`Vector2<class_vector2>` scale  **)** |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------+
++--------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_mirroring<class_ParallaxLayer_get_mirroring>`  **(** **)** const                                         |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_motion_offset<class_ParallaxLayer_get_motion_offset>`  **(** **)** const                                 |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_motion_scale<class_ParallaxLayer_get_motion_scale>`  **(** **)** const                                   |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_mirroring<class_ParallaxLayer_set_mirroring>`  **(** :ref:`Vector2<class_vector2>` mirror  **)**         |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_motion_offset<class_ParallaxLayer_set_motion_offset>`  **(** :ref:`Vector2<class_vector2>` offset  **)** |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_motion_scale<class_ParallaxLayer_set_motion_scale>`  **(** :ref:`Vector2<class_vector2>` scale  **)**    |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -42,6 +46,10 @@ Member Function Description
 
 Return the mirroring of the ParallaxLayer.
 
+.. _class_ParallaxLayer_get_motion_offset:
+
+- :ref:`Vector2<class_vector2>`  **get_motion_offset**  **(** **)** const
+
 .. _class_ParallaxLayer_get_motion_scale:
 
 - :ref:`Vector2<class_vector2>`  **get_motion_scale**  **(** **)** const
@@ -53,6 +61,10 @@ Return the motion scale of the ParallaxLayer.
 - void  **set_mirroring**  **(** :ref:`Vector2<class_vector2>` mirror  **)**
 
 Set the mirroring of the ParallaxLayer. If an axis is set to 0 then that axis will have no mirroring.
+
+.. _class_ParallaxLayer_set_motion_offset:
+
+- void  **set_motion_offset**  **(** :ref:`Vector2<class_vector2>` offset  **)**
 
 .. _class_ParallaxLayer_set_motion_scale:
 

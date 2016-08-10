@@ -57,6 +57,12 @@ Member Functions
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`        | :ref:`get_plot_size<class_BakedLight_get_plot_size>`  **(** **)** const                                                                        |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`        | :ref:`get_realtime_color<class_BakedLight_get_realtime_color>`  **(** **)** const                                                              |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`get_realtime_color_enabled<class_BakedLight_get_realtime_color_enabled>`  **(** **)** const                                              |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`        | :ref:`get_realtime_energy<class_BakedLight_get_realtime_energy>`  **(** **)** const                                                            |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`IntArray<class_intarray>`  | :ref:`get_sampler_octree<class_BakedLight_get_sampler_octree>`  **(** **)** const                                                              |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`        | :ref:`get_saturation<class_BakedLight_get_saturation>`  **(** **)** const                                                                      |
@@ -96,6 +102,12 @@ Member Functions
 | void                             | :ref:`set_octree<class_BakedLight_set_octree>`  **(** :ref:`RawArray<class_rawarray>` octree  **)**                                            |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_plot_size<class_BakedLight_set_plot_size>`  **(** :ref:`float<class_float>` plot_size  **)**                                         |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_realtime_color<class_BakedLight_set_realtime_color>`  **(** :ref:`Color<class_color>` tint  **)**                                    |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_realtime_color_enabled<class_BakedLight_set_realtime_color_enabled>`  **(** :ref:`bool<class_bool>` enabled  **)**                   |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_realtime_energy<class_BakedLight_set_realtime_energy>`  **(** :ref:`float<class_float>` energy  **)**                                |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_sampler_octree<class_BakedLight_set_sampler_octree>`  **(** :ref:`IntArray<class_intarray>` sampler_octree  **)**                    |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -196,6 +208,18 @@ Member Function Description
 
 - :ref:`float<class_float>`  **get_plot_size**  **(** **)** const
 
+.. _class_BakedLight_get_realtime_color:
+
+- :ref:`Color<class_color>`  **get_realtime_color**  **(** **)** const
+
+.. _class_BakedLight_get_realtime_color_enabled:
+
+- :ref:`bool<class_bool>`  **get_realtime_color_enabled**  **(** **)** const
+
+.. _class_BakedLight_get_realtime_energy:
+
+- :ref:`float<class_float>`  **get_realtime_energy**  **(** **)** const
+
 .. _class_BakedLight_get_sampler_octree:
 
 - :ref:`IntArray<class_intarray>`  **get_sampler_octree**  **(** **)** const
@@ -275,6 +299,18 @@ Member Function Description
 .. _class_BakedLight_set_plot_size:
 
 - void  **set_plot_size**  **(** :ref:`float<class_float>` plot_size  **)**
+
+.. _class_BakedLight_set_realtime_color:
+
+- void  **set_realtime_color**  **(** :ref:`Color<class_color>` tint  **)**
+
+.. _class_BakedLight_set_realtime_color_enabled:
+
+- void  **set_realtime_color_enabled**  **(** :ref:`bool<class_bool>` enabled  **)**
+
+.. _class_BakedLight_set_realtime_energy:
+
+- void  **set_realtime_energy**  **(** :ref:`float<class_float>` energy  **)**
 
 .. _class_BakedLight_set_sampler_octree:
 

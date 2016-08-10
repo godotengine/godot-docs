@@ -39,7 +39,7 @@ Member Functions
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`canvas_item_add_rect<class_VisualServer_canvas_item_add_rect>`  **(** :ref:`RID<class_rid>` arg0, :ref:`Rect2<class_rect2>` arg1, :ref:`Color<class_color>` arg2  **)**                                                                                                                                              |
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`canvas_item_add_style_box<class_VisualServer_canvas_item_add_style_box>`  **(** :ref:`RID<class_rid>` arg0, :ref:`Rect2<class_rect2>` arg1, :ref:`RID<class_rid>` arg2, :ref:`RealArray<class_realarray>` arg3, :ref:`Color<class_color>` arg4=Color(1,1,1,1)  **)**                                                 |
+| void                                     | :ref:`canvas_item_add_style_box<class_VisualServer_canvas_item_add_style_box>`  **(** :ref:`RID<class_rid>` arg0, :ref:`Rect2<class_rect2>` arg1, :ref:`Rect2<class_rect2>` arg2, :ref:`RID<class_rid>` arg3, :ref:`RealArray<class_realarray>` arg4, :ref:`Color<class_color>` arg5=Color(1,1,1,1)  **)**                 |
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`canvas_item_add_texture_rect<class_VisualServer_canvas_item_add_texture_rect>`  **(** :ref:`RID<class_rid>` arg0, :ref:`Rect2<class_rect2>` arg1, :ref:`RID<class_rid>` arg2, :ref:`bool<class_bool>` arg3, :ref:`Color<class_color>` arg4=Color(1,1,1,1), :ref:`bool<class_bool>` arg5=false  **)**                 |
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -75,7 +75,7 @@ Member Functions
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`cursor_set_rotation<class_VisualServer_cursor_set_rotation>`  **(** :ref:`float<class_float>` arg0, :ref:`int<class_int>` arg1  **)**                                                                                                                                                                                |
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`cursor_set_texture<class_VisualServer_cursor_set_texture>`  **(** :ref:`RID<class_rid>` arg0, :ref:`Vector2<class_vector2>` arg1, :ref:`int<class_int>` arg2  **)**                                                                                                                                                  |
+| void                                     | :ref:`cursor_set_texture<class_VisualServer_cursor_set_texture>`  **(** :ref:`RID<class_rid>` arg0, :ref:`Vector2<class_vector2>` arg1, :ref:`int<class_int>` arg2, :ref:`Rect2<class_rect2>` arg3  **)**                                                                                                                  |
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`cursor_set_visible<class_VisualServer_cursor_set_visible>`  **(** :ref:`bool<class_bool>` arg0, :ref:`int<class_int>` arg1  **)**                                                                                                                                                                                    |
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -167,7 +167,7 @@ Member Functions
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`material_set_line_width<class_VisualServer_material_set_line_width>`  **(** :ref:`RID<class_rid>` arg0, :ref:`float<class_float>` arg1  **)**                                                                                                                                                                        |
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`material_set_param<class_VisualServer_material_set_param>`  **(** :ref:`RID<class_rid>` arg0, :ref:`String<class_string>` arg1, var arg2  **)**                                                                                                                                                                      |
+| void                                     | :ref:`material_set_param<class_VisualServer_material_set_param>`  **(** :ref:`RID<class_rid>` arg0, :ref:`String<class_string>` arg1, :ref:`Variant<class_variant>` arg2  **)**                                                                                                                                            |
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`material_set_shader<class_VisualServer_material_set_shader>`  **(** :ref:`RID<class_rid>` shader, :ref:`RID<class_rid>` arg1  **)**                                                                                                                                                                                  |
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -512,7 +512,7 @@ Member Function Description
 
 .. _class_VisualServer_canvas_item_add_style_box:
 
-- void  **canvas_item_add_style_box**  **(** :ref:`RID<class_rid>` arg0, :ref:`Rect2<class_rect2>` arg1, :ref:`RID<class_rid>` arg2, :ref:`RealArray<class_realarray>` arg3, :ref:`Color<class_color>` arg4=Color(1,1,1,1)  **)**
+- void  **canvas_item_add_style_box**  **(** :ref:`RID<class_rid>` arg0, :ref:`Rect2<class_rect2>` arg1, :ref:`Rect2<class_rect2>` arg2, :ref:`RID<class_rid>` arg3, :ref:`RealArray<class_realarray>` arg4, :ref:`Color<class_color>` arg5=Color(1,1,1,1)  **)**
 
 .. _class_VisualServer_canvas_item_add_texture_rect:
 
@@ -584,7 +584,7 @@ Member Function Description
 
 .. _class_VisualServer_cursor_set_texture:
 
-- void  **cursor_set_texture**  **(** :ref:`RID<class_rid>` arg0, :ref:`Vector2<class_vector2>` arg1, :ref:`int<class_int>` arg2  **)**
+- void  **cursor_set_texture**  **(** :ref:`RID<class_rid>` arg0, :ref:`Vector2<class_vector2>` arg1, :ref:`int<class_int>` arg2, :ref:`Rect2<class_rect2>` arg3  **)**
 
 .. _class_VisualServer_cursor_set_visible:
 
@@ -768,7 +768,7 @@ Member Function Description
 
 .. _class_VisualServer_material_set_param:
 
-- void  **material_set_param**  **(** :ref:`RID<class_rid>` arg0, :ref:`String<class_string>` arg1, var arg2  **)**
+- void  **material_set_param**  **(** :ref:`RID<class_rid>` arg0, :ref:`String<class_string>` arg1, :ref:`Variant<class_variant>` arg2  **)**
 
 .. _class_VisualServer_material_set_shader:
 

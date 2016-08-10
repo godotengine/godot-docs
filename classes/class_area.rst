@@ -18,55 +18,71 @@ General purpose area detection and influence for 3D physics.
 Member Functions
 ----------------
 
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_angular_damp<class_Area_get_angular_damp>`  **(** **)** const                                                         |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_gravity<class_Area_get_gravity>`  **(** **)** const                                                                   |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_gravity_distance_scale<class_Area_get_gravity_distance_scale>`  **(** **)** const                                     |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`get_gravity_vector<class_Area_get_gravity_vector>`  **(** **)** const                                                     |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_linear_damp<class_Area_get_linear_damp>`  **(** **)** const                                                           |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`      | :ref:`get_overlapping_areas<class_Area_get_overlapping_areas>`  **(** **)** const                                               |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`      | :ref:`get_overlapping_bodies<class_Area_get_overlapping_bodies>`  **(** **)** const                                             |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_priority<class_Area_get_priority>`  **(** **)** const                                                                 |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_space_override_mode<class_Area_get_space_override_mode>`  **(** **)** const                                           |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_gravity_a_point<class_Area_is_gravity_a_point>`  **(** **)** const                                                     |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_monitorable<class_Area_is_monitorable>`  **(** **)** const                                                             |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_monitoring_enabled<class_Area_is_monitoring_enabled>`  **(** **)** const                                               |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`overlaps_area<class_Area_overlaps_area>`  **(** :ref:`Object<class_object>` area  **)** const                             |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`overlaps_body<class_Area_overlaps_body>`  **(** :ref:`Object<class_object>` body  **)** const                             |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_angular_damp<class_Area_set_angular_damp>`  **(** :ref:`float<class_float>` angular_damp  **)**                       |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_enable_monitoring<class_Area_set_enable_monitoring>`  **(** :ref:`bool<class_bool>` enable  **)**                     |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_gravity<class_Area_set_gravity>`  **(** :ref:`float<class_float>` gravity  **)**                                      |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_gravity_distance_scale<class_Area_set_gravity_distance_scale>`  **(** :ref:`float<class_float>` distance_scale  **)** |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_gravity_is_point<class_Area_set_gravity_is_point>`  **(** :ref:`bool<class_bool>` enable  **)**                       |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_gravity_vector<class_Area_set_gravity_vector>`  **(** :ref:`Vector3<class_vector3>` vector  **)**                     |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_linear_damp<class_Area_set_linear_damp>`  **(** :ref:`float<class_float>` linear_damp  **)**                          |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_monitorable<class_Area_set_monitorable>`  **(** :ref:`bool<class_bool>` enable  **)**                                 |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_priority<class_Area_set_priority>`  **(** :ref:`float<class_float>` priority  **)**                                   |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_space_override_mode<class_Area_set_space_override_mode>`  **(** :ref:`int<class_int>` enable  **)**                   |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_angular_damp<class_Area_get_angular_damp>`  **(** **)** const                                                                 |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_collision_mask<class_Area_get_collision_mask>`  **(** **)** const                                                             |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`get_collision_mask_bit<class_Area_get_collision_mask_bit>`  **(** :ref:`int<class_int>` bit  **)** const                          |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_gravity<class_Area_get_gravity>`  **(** **)** const                                                                           |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_gravity_distance_scale<class_Area_get_gravity_distance_scale>`  **(** **)** const                                             |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`  | :ref:`get_gravity_vector<class_Area_get_gravity_vector>`  **(** **)** const                                                             |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_layer_mask<class_Area_get_layer_mask>`  **(** **)** const                                                                     |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`get_layer_mask_bit<class_Area_get_layer_mask_bit>`  **(** :ref:`int<class_int>` bit  **)** const                                  |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_linear_damp<class_Area_get_linear_damp>`  **(** **)** const                                                                   |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`      | :ref:`get_overlapping_areas<class_Area_get_overlapping_areas>`  **(** **)** const                                                       |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`      | :ref:`get_overlapping_bodies<class_Area_get_overlapping_bodies>`  **(** **)** const                                                     |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_priority<class_Area_get_priority>`  **(** **)** const                                                                         |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_space_override_mode<class_Area_get_space_override_mode>`  **(** **)** const                                                   |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_gravity_a_point<class_Area_is_gravity_a_point>`  **(** **)** const                                                             |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_monitorable<class_Area_is_monitorable>`  **(** **)** const                                                                     |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_monitoring_enabled<class_Area_is_monitoring_enabled>`  **(** **)** const                                                       |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`overlaps_area<class_Area_overlaps_area>`  **(** :ref:`Object<class_object>` area  **)** const                                     |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`overlaps_body<class_Area_overlaps_body>`  **(** :ref:`Object<class_object>` body  **)** const                                     |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_angular_damp<class_Area_set_angular_damp>`  **(** :ref:`float<class_float>` angular_damp  **)**                               |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_collision_mask<class_Area_set_collision_mask>`  **(** :ref:`int<class_int>` collision_mask  **)**                             |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_collision_mask_bit<class_Area_set_collision_mask_bit>`  **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value  **)** |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_enable_monitoring<class_Area_set_enable_monitoring>`  **(** :ref:`bool<class_bool>` enable  **)**                             |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_gravity<class_Area_set_gravity>`  **(** :ref:`float<class_float>` gravity  **)**                                              |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_gravity_distance_scale<class_Area_set_gravity_distance_scale>`  **(** :ref:`float<class_float>` distance_scale  **)**         |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_gravity_is_point<class_Area_set_gravity_is_point>`  **(** :ref:`bool<class_bool>` enable  **)**                               |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_gravity_vector<class_Area_set_gravity_vector>`  **(** :ref:`Vector3<class_vector3>` vector  **)**                             |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_layer_mask<class_Area_set_layer_mask>`  **(** :ref:`int<class_int>` layer_mask  **)**                                         |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_layer_mask_bit<class_Area_set_layer_mask_bit>`  **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value  **)**         |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_linear_damp<class_Area_set_linear_damp>`  **(** :ref:`float<class_float>` linear_damp  **)**                                  |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_monitorable<class_Area_set_monitorable>`  **(** :ref:`bool<class_bool>` enable  **)**                                         |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_priority<class_Area_set_priority>`  **(** :ref:`float<class_float>` priority  **)**                                           |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_space_override_mode<class_Area_set_space_override_mode>`  **(** :ref:`int<class_int>` enable  **)**                           |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -94,6 +110,18 @@ Member Function Description
 
 Return the angular damp rate.
 
+.. _class_Area_get_collision_mask:
+
+- :ref:`int<class_int>`  **get_collision_mask**  **(** **)** const
+
+Return the physics layers this area can scan for collisions.
+
+.. _class_Area_get_collision_mask_bit:
+
+- :ref:`bool<class_bool>`  **get_collision_mask_bit**  **(** :ref:`int<class_int>` bit  **)** const
+
+Return an individual bit on the collision mask.
+
 .. _class_Area_get_gravity:
 
 - :ref:`float<class_float>`  **get_gravity**  **(** **)** const
@@ -111,6 +139,18 @@ Return the falloff factor for point gravity.
 - :ref:`Vector3<class_vector3>`  **get_gravity_vector**  **(** **)** const
 
 Return the gravity vector. If gravity is a point (see :ref:`is_gravity_a_point<class_Area_is_gravity_a_point>`), this will be the attraction center.
+
+.. _class_Area_get_layer_mask:
+
+- :ref:`int<class_int>`  **get_layer_mask**  **(** **)** const
+
+Return the physics layer this area is in.
+
+.. _class_Area_get_layer_mask_bit:
+
+- :ref:`bool<class_bool>`  **get_layer_mask_bit**  **(** :ref:`int<class_int>` bit  **)** const
+
+Return an individual bit on the layer mask.
 
 .. _class_Area_get_linear_damp:
 
@@ -180,6 +220,18 @@ Set the rate at which objects stop spinning in this area, if there are not any o
 
 In practice, as the fraction of speed lost gets smaller with each frame, a value of 1.0 does not mean the object will stop in exactly one second. Only when the physics calculations are done at 1 frame per second, it does stop in a second.
 
+.. _class_Area_set_collision_mask:
+
+- void  **set_collision_mask**  **(** :ref:`int<class_int>` collision_mask  **)**
+
+Set the physics layers this area can scan for collisions.
+
+.. _class_Area_set_collision_mask_bit:
+
+- void  **set_collision_mask_bit**  **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value  **)**
+
+Set/clear individual bits on the collision mask. This makes selecting the areas scanned easier.
+
 .. _class_Area_set_enable_monitoring:
 
 - void  **set_enable_monitoring**  **(** :ref:`bool<class_bool>` enable  **)**
@@ -213,6 +265,22 @@ When overriding space parameters, this method sets whether this area has a cente
 Set the gravity vector. This vector does not have to be normalized.
 
 If gravity is a point (see :ref:`is_gravity_a_point<class_Area_is_gravity_a_point>`), this will be the attraction center.
+
+.. _class_Area_set_layer_mask:
+
+- void  **set_layer_mask**  **(** :ref:`int<class_int>` layer_mask  **)**
+
+Set the physics layers this area is in.
+
+Collidable objects can exist in any of 32 different layers. These layers are not visual, but more of a tagging system instead. A collidable can use these layers/tags to select with which objects it can collide, using :ref:`set_collision_mask<class_Area_set_collision_mask>`.
+
+A contact is detected if object A is in any of the layers that object B scans, or object B is in any layer scanned by object A.
+
+.. _class_Area_set_layer_mask_bit:
+
+- void  **set_layer_mask_bit**  **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value  **)**
+
+Set/clear individual bits on the layer mask. This makes getting an area in/out of only one layer easier.
 
 .. _class_Area_set_linear_damp:
 

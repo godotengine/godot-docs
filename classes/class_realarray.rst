@@ -16,17 +16,27 @@ Real Array .
 Member Functions
 ----------------
 
-+------------------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`RealArray<class_realarray>`  | :ref:`RealArray<class_RealArray_RealArray>`  **(** :ref:`Array<class_array>` from  **)**                 |
-+------------------------------------+----------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`push_back<class_RealArray_push_back>`  **(** :ref:`float<class_float>` value  **)**                |
-+------------------------------------+----------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`resize<class_RealArray_resize>`  **(** :ref:`int<class_int>` idx  **)**                            |
-+------------------------------------+----------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set<class_RealArray_set>`  **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` value  **)** |
-+------------------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`              | :ref:`size<class_RealArray_size>`  **(** **)**                                                           |
-+------------------------------------+----------------------------------------------------------------------------------------------------------+
++------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| :ref:`RealArray<class_realarray>`  | :ref:`RealArray<class_RealArray_RealArray>`  **(** :ref:`Array<class_array>` from  **)**                       |
++------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`append<class_RealArray_append>`  **(** :ref:`float<class_float>` value  **)**                            |
++------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`append_array<class_RealArray_append_array>`  **(** :ref:`RealArray<class_realarray>` array  **)**        |
++------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`              | :ref:`insert<class_RealArray_insert>`  **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` value  **)** |
++------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`invert<class_RealArray_invert>`  **(** **)**                                                             |
++------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`push_back<class_RealArray_push_back>`  **(** :ref:`float<class_float>` value  **)**                      |
++------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`remove<class_RealArray_remove>`  **(** :ref:`int<class_int>` idx  **)**                                  |
++------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`resize<class_RealArray_resize>`  **(** :ref:`int<class_int>` idx  **)**                                  |
++------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set<class_RealArray_set>`  **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` value  **)**       |
++------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`              | :ref:`size<class_RealArray_size>`  **(** **)**                                                                 |
++------------------------------------+----------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -42,11 +52,41 @@ Member Function Description
 
 Create from a generic array.
 
+.. _class_RealArray_append:
+
+- void  **append**  **(** :ref:`float<class_float>` value  **)**
+
+Append an element at the end of the array (alias of :ref:`push_back<class_RealArray_push_back>`).
+
+.. _class_RealArray_append_array:
+
+- void  **append_array**  **(** :ref:`RealArray<class_realarray>` array  **)**
+
+Append an :ref:`RealArray<class_realarray>` at the end of this array.
+
+.. _class_RealArray_insert:
+
+- :ref:`int<class_int>`  **insert**  **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` value  **)**
+
+Insert a new element at a given position in the array. The position must be valid, or at the end of the array (pos==size()).
+
+.. _class_RealArray_invert:
+
+- void  **invert**  **(** **)**
+
+Reverse the order of the elements in the array (so first element will now be the last).
+
 .. _class_RealArray_push_back:
 
 - void  **push_back**  **(** :ref:`float<class_float>` value  **)**
 
 Append an element at the end of the array.
+
+.. _class_RealArray_remove:
+
+- void  **remove**  **(** :ref:`int<class_int>` idx  **)**
+
+Remove an element from the array by index.
 
 .. _class_RealArray_resize:
 

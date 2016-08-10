@@ -55,7 +55,7 @@ Member Functions
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_item_icon<class_OptionButton_set_item_icon>`  **(** :ref:`int<class_int>` idx, :ref:`Texture<class_texture>` texture  **)**                                   |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_item_metadata<class_OptionButton_set_item_metadata>`  **(** :ref:`int<class_int>` idx, var metadata  **)**                                                    |
+| void                           | :ref:`set_item_metadata<class_OptionButton_set_item_metadata>`  **(** :ref:`int<class_int>` idx, :ref:`Variant<class_variant>` metadata  **)**                          |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_item_text<class_OptionButton_set_item_text>`  **(** :ref:`int<class_int>` idx, :ref:`String<class_string>` text  **)**                                        |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -171,7 +171,7 @@ Set the icon of an item at index "idx".
 
 .. _class_OptionButton_set_item_metadata:
 
-- void  **set_item_metadata**  **(** :ref:`int<class_int>` idx, var metadata  **)**
+- void  **set_item_metadata**  **(** :ref:`int<class_int>` idx, :ref:`Variant<class_variant>` metadata  **)**
 
 .. _class_OptionButton_set_item_text:
 

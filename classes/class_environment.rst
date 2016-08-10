@@ -18,23 +18,23 @@ Brief Description
 Member Functions
 ----------------
 
-+--------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`fx_get_param<class_Environment_fx_get_param>`  **(** :ref:`int<class_int>` param  **)** const                               |
-+--------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`fx_set_param<class_Environment_fx_set_param>`  **(** :ref:`int<class_int>` param, var value  **)**                          |
-+--------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`    | :ref:`get_background<class_Environment_get_background>`  **(** **)** const                                                        |
-+--------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`get_background_param<class_Environment_get_background_param>`  **(** :ref:`int<class_int>` param  **)** const               |
-+--------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_fx_enabled<class_Environment_is_fx_enabled>`  **(** :ref:`int<class_int>` effect  **)** const                            |
-+--------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_background<class_Environment_set_background>`  **(** :ref:`int<class_int>` bgmode  **)**                                |
-+--------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_background_param<class_Environment_set_background_param>`  **(** :ref:`int<class_int>` param, var value  **)**          |
-+--------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_enable_fx<class_Environment_set_enable_fx>`  **(** :ref:`int<class_int>` effect, :ref:`bool<class_bool>` enabled  **)** |
-+--------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`fx_get_param<class_Environment_fx_get_param>`  **(** :ref:`int<class_int>` param  **)** const                                                |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`fx_set_param<class_Environment_fx_set_param>`  **(** :ref:`int<class_int>` param, :ref:`Variant<class_variant>` value  **)**                 |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`    | :ref:`get_background<class_Environment_get_background>`  **(** **)** const                                                                         |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`get_background_param<class_Environment_get_background_param>`  **(** :ref:`int<class_int>` param  **)** const                                |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`is_fx_enabled<class_Environment_is_fx_enabled>`  **(** :ref:`int<class_int>` effect  **)** const                                             |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`set_background<class_Environment_set_background>`  **(** :ref:`int<class_int>` bgmode  **)**                                                 |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`set_background_param<class_Environment_set_background_param>`  **(** :ref:`int<class_int>` param, :ref:`Variant<class_variant>` value  **)** |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`set_enable_fx<class_Environment_set_enable_fx>`  **(** :ref:`int<class_int>` effect, :ref:`bool<class_bool>` enabled  **)**                  |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
 -----------------
@@ -107,7 +107,7 @@ Member Function Description
 
 .. _class_Environment_fx_set_param:
 
-- void  **fx_set_param**  **(** :ref:`int<class_int>` param, var value  **)**
+- void  **fx_set_param**  **(** :ref:`int<class_int>` param, :ref:`Variant<class_variant>` value  **)**
 
 .. _class_Environment_get_background:
 
@@ -127,7 +127,7 @@ Member Function Description
 
 .. _class_Environment_set_background_param:
 
-- void  **set_background_param**  **(** :ref:`int<class_int>` param, var value  **)**
+- void  **set_background_param**  **(** :ref:`int<class_int>` param, :ref:`Variant<class_variant>` value  **)**
 
 .. _class_Environment_set_enable_fx:
 

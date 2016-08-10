@@ -23,13 +23,13 @@ Member Functions
 +----------------------------------+------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`      | :ref:`base64_to_utf8<class_Marshalls_base64_to_utf8>`  **(** :ref:`String<class_string>` base64_str  **)**       |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------+
-| Variant                          | :ref:`base64_to_variant<class_Marshalls_base64_to_variant>`  **(** :ref:`String<class_string>` base64_str  **)** |
+| :ref:`Variant<class_variant>`    | :ref:`base64_to_variant<class_Marshalls_base64_to_variant>`  **(** :ref:`String<class_string>` base64_str  **)** |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`      | :ref:`raw_to_base64<class_Marshalls_raw_to_base64>`  **(** :ref:`RawArray<class_rawarray>` array  **)**          |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`      | :ref:`utf8_to_base64<class_Marshalls_utf8_to_base64>`  **(** :ref:`String<class_string>` utf8_str  **)**         |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`variant_to_base64<class_Marshalls_variant_to_base64>`  **(** var variant  **)**                            |
+| :ref:`String<class_string>`      | :ref:`variant_to_base64<class_Marshalls_variant_to_base64>`  **(** :ref:`Variant<class_variant>` variant  **)**  |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------+
 
 Member Function Description
@@ -45,7 +45,7 @@ Member Function Description
 
 .. _class_Marshalls_base64_to_variant:
 
-- Variant  **base64_to_variant**  **(** :ref:`String<class_string>` base64_str  **)**
+- :ref:`Variant<class_variant>`  **base64_to_variant**  **(** :ref:`String<class_string>` base64_str  **)**
 
 .. _class_Marshalls_raw_to_base64:
 
@@ -57,6 +57,6 @@ Member Function Description
 
 .. _class_Marshalls_variant_to_base64:
 
-- :ref:`String<class_string>`  **variant_to_base64**  **(** var variant  **)**
+- :ref:`String<class_string>`  **variant_to_base64**  **(** :ref:`Variant<class_variant>` variant  **)**
 
 

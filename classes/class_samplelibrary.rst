@@ -23,6 +23,8 @@ Member Functions
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Sample<class_sample>`  | :ref:`get_sample<class_SampleLibrary_get_sample>`  **(** :ref:`String<class_string>` name  **)** const                                                    |
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`    | :ref:`get_sample_list<class_SampleLibrary_get_sample_list>`  **(** **)** const                                                                            |
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`      | :ref:`has_sample<class_SampleLibrary_has_sample>`  **(** :ref:`String<class_string>` name  **)** const                                                    |
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`remove_sample<class_SampleLibrary_remove_sample>`  **(** :ref:`String<class_string>` name  **)**                                                    |
@@ -55,6 +57,10 @@ Add a sample to the library, with a given text ID.
 - :ref:`Sample<class_sample>`  **get_sample**  **(** :ref:`String<class_string>` name  **)** const
 
 Return the sample from the library matching the given text ID. Return null if the sample is not found.
+
+.. _class_SampleLibrary_get_sample_list:
+
+- :ref:`Array<class_array>`  **get_sample_list**  **(** **)** const
 
 .. _class_SampleLibrary_has_sample:
 

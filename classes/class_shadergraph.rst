@@ -45,7 +45,7 @@ Member Functions
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`default_get_value<class_ShaderGraph_default_get_value>`  **(** :ref:`int<class_int>` shader_type, :ref:`int<class_int>` id, :ref:`int<class_int>` param_id  **)**                                                                         |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`default_set_value<class_ShaderGraph_default_set_value>`  **(** :ref:`int<class_int>` shader_type, :ref:`int<class_int>` id, :ref:`int<class_int>` param_id, var value  **)**                                                              |
+| void                                     | :ref:`default_set_value<class_ShaderGraph_default_set_value>`  **(** :ref:`int<class_int>` shader_type, :ref:`int<class_int>` id, :ref:`int<class_int>` param_id, :ref:`Variant<class_variant>` value  **)**                                    |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`disconnect_node<class_ShaderGraph_disconnect_node>`  **(** :ref:`int<class_int>` shader_type, :ref:`int<class_int>` src_id, :ref:`int<class_int>` src_slot, :ref:`int<class_int>` dst_id, :ref:`int<class_int>` dst_slot  **)**           |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -63,7 +63,7 @@ Member Functions
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`            | :ref:`node_get_pos<class_ShaderGraph_node_get_pos>`  **(** :ref:`int<class_int>` shader_type, :ref:`int<class_int>` id  **)** const                                                                                                             |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Variant                                  | :ref:`node_get_state<class_ShaderGraph_node_get_state>`  **(** :ref:`int<class_int>` shader_type, :ref:`int<class_int>` id  **)** const                                                                                                         |
+| :ref:`Variant<class_variant>`            | :ref:`node_get_state<class_ShaderGraph_node_get_state>`  **(** :ref:`int<class_int>` shader_type, :ref:`int<class_int>` id  **)** const                                                                                                         |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                    | :ref:`node_get_type<class_ShaderGraph_node_get_type>`  **(** :ref:`int<class_int>` shader_type, :ref:`int<class_int>` id  **)** const                                                                                                           |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -71,7 +71,7 @@ Member Functions
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`node_set_pos<class_ShaderGraph_node_set_pos>`  **(** :ref:`int<class_int>` shader_type, :ref:`int<class_int>` id, :ref:`Vector2<class_vector2>` pos  **)**                                                                                |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`node_set_state<class_ShaderGraph_node_set_state>`  **(** :ref:`int<class_int>` shader_type, :ref:`int<class_int>` id, var state  **)**                                                                                                    |
+| void                                     | :ref:`node_set_state<class_ShaderGraph_node_set_state>`  **(** :ref:`int<class_int>` shader_type, :ref:`int<class_int>` id, :ref:`Variant<class_variant>` state  **)**                                                                          |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_color>`                | :ref:`rgb_const_node_get_value<class_ShaderGraph_rgb_const_node_get_value>`  **(** :ref:`int<class_int>` shader_type, :ref:`int<class_int>` id  **)** const                                                                                     |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -320,7 +320,7 @@ Member Function Description
 
 .. _class_ShaderGraph_default_set_value:
 
-- void  **default_set_value**  **(** :ref:`int<class_int>` shader_type, :ref:`int<class_int>` id, :ref:`int<class_int>` param_id, var value  **)**
+- void  **default_set_value**  **(** :ref:`int<class_int>` shader_type, :ref:`int<class_int>` id, :ref:`int<class_int>` param_id, :ref:`Variant<class_variant>` value  **)**
 
 .. _class_ShaderGraph_disconnect_node:
 
@@ -356,7 +356,7 @@ Member Function Description
 
 .. _class_ShaderGraph_node_get_state:
 
-- Variant  **node_get_state**  **(** :ref:`int<class_int>` shader_type, :ref:`int<class_int>` id  **)** const
+- :ref:`Variant<class_variant>`  **node_get_state**  **(** :ref:`int<class_int>` shader_type, :ref:`int<class_int>` id  **)** const
 
 .. _class_ShaderGraph_node_get_type:
 
@@ -372,7 +372,7 @@ Member Function Description
 
 .. _class_ShaderGraph_node_set_state:
 
-- void  **node_set_state**  **(** :ref:`int<class_int>` shader_type, :ref:`int<class_int>` id, var state  **)**
+- void  **node_set_state**  **(** :ref:`int<class_int>` shader_type, :ref:`int<class_int>` id, :ref:`Variant<class_variant>` state  **)**
 
 .. _class_ShaderGraph_rgb_const_node_get_value:
 

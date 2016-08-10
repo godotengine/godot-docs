@@ -71,9 +71,9 @@ Member Functions
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RealArray<class_realarray>`  | :ref:`get_vertex_weights<class_MeshDataTool_get_vertex_weights>`  **(** :ref:`int<class_int>` idx  **)** const                                      |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_edge_meta<class_MeshDataTool_set_edge_meta>`  **(** :ref:`int<class_int>` idx, var meta  **)**                                            |
+| void                               | :ref:`set_edge_meta<class_MeshDataTool_set_edge_meta>`  **(** :ref:`int<class_int>` idx, :ref:`Variant<class_variant>` meta  **)**                  |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_face_meta<class_MeshDataTool_set_face_meta>`  **(** :ref:`int<class_int>` idx, var meta  **)**                                            |
+| void                               | :ref:`set_face_meta<class_MeshDataTool_set_face_meta>`  **(** :ref:`int<class_int>` idx, :ref:`Variant<class_variant>` meta  **)**                  |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_material<class_MeshDataTool_set_material>`  **(** :ref:`Material<class_material>` material  **)**                                         |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -83,7 +83,7 @@ Member Functions
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_vertex_color<class_MeshDataTool_set_vertex_color>`  **(** :ref:`int<class_int>` idx, :ref:`Color<class_color>` color  **)**               |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_vertex_meta<class_MeshDataTool_set_vertex_meta>`  **(** :ref:`int<class_int>` idx, var meta  **)**                                        |
+| void                               | :ref:`set_vertex_meta<class_MeshDataTool_set_vertex_meta>`  **(** :ref:`int<class_int>` idx, :ref:`Variant<class_variant>` meta  **)**              |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_vertex_normal<class_MeshDataTool_set_vertex_normal>`  **(** :ref:`int<class_int>` idx, :ref:`Vector3<class_vector3>` normal  **)**        |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -205,11 +205,11 @@ Member Function Description
 
 .. _class_MeshDataTool_set_edge_meta:
 
-- void  **set_edge_meta**  **(** :ref:`int<class_int>` idx, var meta  **)**
+- void  **set_edge_meta**  **(** :ref:`int<class_int>` idx, :ref:`Variant<class_variant>` meta  **)**
 
 .. _class_MeshDataTool_set_face_meta:
 
-- void  **set_face_meta**  **(** :ref:`int<class_int>` idx, var meta  **)**
+- void  **set_face_meta**  **(** :ref:`int<class_int>` idx, :ref:`Variant<class_variant>` meta  **)**
 
 .. _class_MeshDataTool_set_material:
 
@@ -229,7 +229,7 @@ Member Function Description
 
 .. _class_MeshDataTool_set_vertex_meta:
 
-- void  **set_vertex_meta**  **(** :ref:`int<class_int>` idx, var meta  **)**
+- void  **set_vertex_meta**  **(** :ref:`int<class_int>` idx, :ref:`Variant<class_variant>` meta  **)**
 
 .. _class_MeshDataTool_set_vertex_normal:
 

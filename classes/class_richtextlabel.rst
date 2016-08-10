@@ -31,6 +31,8 @@ Member Functions
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`        | :ref:`get_tab_size<class_RichTextLabel_get_tab_size>`  **(** **)** const                                                                                                            |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_text<class_RichTextLabel_get_text>`  **(** **)**                                                                                                                          |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`        | :ref:`get_total_character_count<class_RichTextLabel_get_total_character_count>`  **(** **)** const                                                                                  |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_object>`  | :ref:`get_v_scroll<class_RichTextLabel_get_v_scroll>`  **(** **)**                                                                                                                  |
@@ -65,7 +67,7 @@ Member Functions
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`push_list<class_RichTextLabel_push_list>`  **(** :ref:`int<class_int>` type  **)**                                                                                            |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`push_meta<class_RichTextLabel_push_meta>`  **(** var data  **)**                                                                                                              |
+| void                         | :ref:`push_meta<class_RichTextLabel_push_meta>`  **(** :ref:`Variant<class_variant>` data  **)**                                                                                    |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`push_table<class_RichTextLabel_push_table>`  **(** :ref:`int<class_int>` columns  **)**                                                                                       |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -151,6 +153,12 @@ Member Function Description
 
 - :ref:`int<class_int>`  **get_tab_size**  **(** **)** const
 
+.. _class_RichTextLabel_get_text:
+
+- :ref:`String<class_string>`  **get_text**  **(** **)**
+
+Returns the raw text, stripping out the formatting information.
+
 .. _class_RichTextLabel_get_total_character_count:
 
 - :ref:`int<class_int>`  **get_total_character_count**  **(** **)** const
@@ -223,7 +231,7 @@ Return true if selecting the text inside this richtext is allowed.
 
 .. _class_RichTextLabel_push_meta:
 
-- void  **push_meta**  **(** var data  **)**
+- void  **push_meta**  **(** :ref:`Variant<class_variant>` data  **)**
 
 .. _class_RichTextLabel_push_table:
 

@@ -29,7 +29,7 @@ Member Functions
 +------------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`      | :ref:`instance_has<class_Script_instance_has>`  **(** :ref:`Object<class_object>` base_object  **)** const |
 +------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`reload<class_Script_reload>`  **(** **)**                                                            |
+| :ref:`int<class_int>`        | :ref:`reload<class_Script_reload>`  **(** :ref:`bool<class_bool>` keep_state=false  **)**                  |
 +------------------------------+------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`set_source_code<class_Script_set_source_code>`  **(** :ref:`String<class_string>` source  **)**      |
 +------------------------------+------------------------------------------------------------------------------------------------------------+
@@ -68,9 +68,7 @@ Return true if a given object uses an instance of this script.
 
 .. _class_Script_reload:
 
-- :ref:`int<class_int>`  **reload**  **(** **)**
-
-Reload the script. This will fail if there are existing instances.
+- :ref:`int<class_int>`  **reload**  **(** :ref:`bool<class_bool>` keep_state=false  **)**
 
 .. _class_Script_set_source_code:
 

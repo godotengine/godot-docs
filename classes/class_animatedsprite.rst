@@ -19,6 +19,8 @@ Member Functions
 ----------------
 
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`              | :ref:`get_animation<class_AnimatedSprite_get_animation>`  **(** **)** const                                                          |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                    | :ref:`get_frame<class_AnimatedSprite_get_frame>`  **(** **)** const                                                                  |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_color>`                | :ref:`get_modulate<class_AnimatedSprite_get_modulate>`  **(** **)** const                                                            |
@@ -32,6 +34,12 @@ Member Functions
 | :ref:`bool<class_bool>`                  | :ref:`is_flipped_h<class_AnimatedSprite_is_flipped_h>`  **(** **)** const                                                            |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                  | :ref:`is_flipped_v<class_AnimatedSprite_is_flipped_v>`  **(** **)** const                                                            |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`is_playing<class_AnimatedSprite_is_playing>`  **(** **)** const                                                                |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`play<class_AnimatedSprite_play>`  **(** :ref:`String<class_string>` anim=""  **)**                                             |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_animation<class_AnimatedSprite_set_animation>`  **(** :ref:`String<class_string>` animation  **)**                         |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_centered<class_AnimatedSprite_set_centered>`  **(** :ref:`bool<class_bool>` centered  **)**                                |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
@@ -47,6 +55,8 @@ Member Functions
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_sprite_frames<class_AnimatedSprite_set_sprite_frames>`  **(** :ref:`SpriteFrames<class_spriteframes>` sprite_frames  **)** |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`stop<class_AnimatedSprite_stop>`  **(** **)**                                                                                  |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -60,6 +70,12 @@ Sprite node that can use multiple textures for animation.
 
 Member Function Description
 ---------------------------
+
+.. _class_AnimatedSprite_get_animation:
+
+- :ref:`String<class_string>`  **get_animation**  **(** **)** const
+
+Return the name of the current animation set to the node.
 
 .. _class_AnimatedSprite_get_frame:
 
@@ -103,6 +119,24 @@ Return true if sprite is flipped horizontally.
 
 Return true if sprite is flipped vertically.
 
+.. _class_AnimatedSprite_is_playing:
+
+- :ref:`bool<class_bool>`  **is_playing**  **(** **)** const
+
+Return true if an animation if currently being played.
+
+.. _class_AnimatedSprite_play:
+
+- void  **play**  **(** :ref:`String<class_string>` anim=""  **)**
+
+Play the animation set in parameter. If no parameter is provided, the current animation is played.
+
+.. _class_AnimatedSprite_set_animation:
+
+- void  **set_animation**  **(** :ref:`String<class_string>` animation  **)**
+
+Set the current animation of the node and reinits the frame counter of the animation.
+
 .. _class_AnimatedSprite_set_centered:
 
 - void  **set_centered**  **(** :ref:`bool<class_bool>` centered  **)**
@@ -144,5 +178,11 @@ Set the offset of the sprite in the node origin. Position varies depending on wh
 - void  **set_sprite_frames**  **(** :ref:`SpriteFrames<class_spriteframes>` sprite_frames  **)**
 
 Set the :ref:`SpriteFrames<class_spriteframes>` resource, which contains all frames.
+
+.. _class_AnimatedSprite_stop:
+
+- void  **stop**  **(** **)**
+
+Stop the current animation (does not reset the frame counter).
 
 

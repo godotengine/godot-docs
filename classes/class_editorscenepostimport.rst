@@ -13,7 +13,7 @@ EditorScenePostImport
 Brief Description
 -----------------
 
-
+Base script for post-processing scenes being imported.
 
 Member Functions
 ----------------
@@ -22,11 +22,20 @@ Member Functions
 | void  | :ref:`post_import<class_EditorScenePostImport_post_import>`  **(** :ref:`Object<class_object>` scene  **)** virtual |
 +-------+---------------------------------------------------------------------------------------------------------------------+
 
+Description
+-----------
+
+These scripts can modify scenes after being imported by the 3D Scene import option of the Import menu.
+
 Member Function Description
 ---------------------------
 
 .. _class_EditorScenePostImport_post_import:
 
 - void  **post_import**  **(** :ref:`Object<class_object>` scene  **)** virtual
+
+This function is called upon import with the imported scene.
+
+Just do any changes desired to the scene and return it. If null is returned, import will fail and throw an error to the user.
 
 

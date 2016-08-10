@@ -39,41 +39,51 @@ Member Functions
 Description
 -----------
 
-Class for finding text patterns in a string using regular expressions. Regular expressions are a way to define patterns of text to be searched.
+Class for finding text patterns in a string using regular expressions. It can not perform replacements. Regular expressions are a way to define patterns of text to be searched. Details on writing patterns are too long to explain here but the Internet is full of tutorials and detailed explanations.
 
-This class only finds patterns in a string. It can not perform replacements.
+Once created, the RegEx object needs to be compiled with the pattern before it can be used. The pattern must be escaped first for gdscript before it is escaped for the expression. For example:
 
-Usage of regular expressions is too long to be explained here, but Internet is full of tutorials and detailed explanations.
+``var exp = RegEx.new()``
+
+``exp.compile("\\d+")``
+
+would be read by RegEx as ``\d+``
+
+Similarly:
+
+``exp.compile("\"(?:\\\\.|:ref:`^\"<class_^\">`)\*\"")``
+
+would be read as ``"(?:\\.|:ref:`^"<class_^">`)\*"``
 
 Currently supported features:
 
-Capturing ``()`` and non-capturing ``(?:)`` groups
+\* Capturing ``()`` and non-capturing ``(?:)`` groups
 
-Any character ``.``
+\* Any character ``.``
 
-Shorthand character classes ``\w \W \s \S \d \D``
+\* Shorthand character classes ``\w \W \s \S \d \D``
 
-User-defined character classes such as ``:ref:`A-Za-z<class_a-za-z>```
+\* User-defined character classes such as ``:ref:`A-Za-z<class_a-za-z>```
 
-Simple quantifiers ``?``, ``\*`` and ``+``
+\* Simple quantifiers ``?``, ``\*`` and ``+``
 
-Range quantifiers ``{x,y}``
+\* Range quantifiers ``{x,y}``
 
-Lazy (non-greedy) quantifiers ``\*?``
+\* Lazy (non-greedy) quantifiers ``\*?``
 
-Beginning ``^`` and end ``$`` anchors
+\* Beginning ``^`` and end ``$`` anchors
 
-Alternation ``|``
+\* Alternation ``|``
 
-Backreferences ``\1`` and ``\g{1}``
+\* Backreferences ``\1`` and ``\g{1}``
 
-POSIX character classes ``:ref:`[:alnum:<class_[:alnum:>`]``
+\* POSIX character classes ``:ref:`[:alnum:<class_[:alnum:>`]``
 
-Lookahead ``(?=)``, ``(?!)`` and lookbehind ``(?<=)``, ``(?<!)``
+\* Lookahead ``(?=)``, ``(?!)`` and lookbehind ``(?<=)``, ``(?<!)``
 
-ASCII ``\xFF`` and Unicode ``\uFFFF`` code points (in a style similar to Python)
+\* ASCII ``\xFF`` and Unicode ``\uFFFF`` code points (in a style similar to Python)
 
-Word boundaries ``\b``, ``\B``
+\* Word boundaries ``\b``, ``\B``
 
 Member Function Description
 ---------------------------

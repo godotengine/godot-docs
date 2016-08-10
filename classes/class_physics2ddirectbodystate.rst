@@ -33,7 +33,7 @@ Member Functions
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                              | :ref:`get_contact_collider_shape<class_Physics2DDirectBodyState_get_contact_collider_shape>`  **(** :ref:`int<class_int>` contact_idx  **)** const                     |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Variant                                                            | :ref:`get_contact_collider_shape_metadata<class_Physics2DDirectBodyState_get_contact_collider_shape_metadata>`  **(** :ref:`int<class_int>` contact_idx  **)** const   |
+| :ref:`Variant<class_variant>`                                      | :ref:`get_contact_collider_shape_metadata<class_Physics2DDirectBodyState_get_contact_collider_shape_metadata>`  **(** :ref:`int<class_int>` contact_idx  **)** const   |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`                                      | :ref:`get_contact_collider_velocity_at_pos<class_Physics2DDirectBodyState_get_contact_collider_velocity_at_pos>`  **(** :ref:`int<class_int>` contact_idx  **)** const |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -122,7 +122,7 @@ Return the collider shape index.
 
 .. _class_Physics2DDirectBodyState_get_contact_collider_shape_metadata:
 
-- Variant  **get_contact_collider_shape_metadata**  **(** :ref:`int<class_int>` contact_idx  **)** const
+- :ref:`Variant<class_variant>`  **get_contact_collider_shape_metadata**  **(** :ref:`int<class_int>` contact_idx  **)** const
 
 Return the metadata of the collided shape. This metadata is different from :ref:`Object.get_meta<class_Object_get_meta>`, and is set with :ref:`Physics2DServer.shape_set_data<class_Physics2DServer_shape_set_data>`.
 

@@ -11,7 +11,7 @@ RID
 Brief Description
 -----------------
 
-
+Handle for a :ref:`Resource<class_resource>`'s unique ID.
 
 Member Functions
 ----------------
@@ -22,6 +22,11 @@ Member Functions
 | :ref:`int<class_int>`  | :ref:`get_id<class_RID_get_id>`  **(** **)**                             |
 +------------------------+--------------------------------------------------------------------------+
 
+Description
+-----------
+
+The RID type is used to access the unique integer ID of a resource.  They are opaque, so they do not grant access to the associated resource by themselves. They are used by and with the low-level Server classes such as :ref:`VisualServer<class_visualserver>`.
+
 Member Function Description
 ---------------------------
 
@@ -29,8 +34,12 @@ Member Function Description
 
 - :ref:`RID<class_rid>`  **RID**  **(** :ref:`Object<class_object>` from  **)**
 
+Create a new RID instance with the ID of a given resource. When not handed a valid resource, silently stores the unused ID 0.
+
 .. _class_RID_get_id:
 
 - :ref:`int<class_int>`  **get_id**  **(** **)**
+
+Retrieve the ID of the referenced resource.
 
 

@@ -18,23 +18,23 @@ Helper class to handle INI-style files.
 Member Functions
 ----------------
 
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StringArray<class_stringarray>`  | :ref:`get_section_keys<class_ConfigFile_get_section_keys>`  **(** :ref:`String<class_string>` section  **)** const                                      |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StringArray<class_stringarray>`  | :ref:`get_sections<class_ConfigFile_get_sections>`  **(** **)** const                                                                                   |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Variant                                | :ref:`get_value<class_ConfigFile_get_value>`  **(** :ref:`String<class_string>` section, :ref:`String<class_string>` key, var default=NULL  **)** const |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`has_section<class_ConfigFile_has_section>`  **(** :ref:`String<class_string>` section  **)** const                                                |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`has_section_key<class_ConfigFile_has_section_key>`  **(** :ref:`String<class_string>` section, :ref:`String<class_string>` key  **)** const       |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Error                                  | :ref:`load<class_ConfigFile_load>`  **(** :ref:`String<class_string>` path  **)**                                                                       |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Error                                  | :ref:`save<class_ConfigFile_save>`  **(** :ref:`String<class_string>` path  **)**                                                                       |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_value<class_ConfigFile_set_value>`  **(** :ref:`String<class_string>` section, :ref:`String<class_string>` key, var value  **)**              |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`StringArray<class_stringarray>`  | :ref:`get_section_keys<class_ConfigFile_get_section_keys>`  **(** :ref:`String<class_string>` section  **)** const                                                                |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`StringArray<class_stringarray>`  | :ref:`get_sections<class_ConfigFile_get_sections>`  **(** **)** const                                                                                                             |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_variant>`          | :ref:`get_value<class_ConfigFile_get_value>`  **(** :ref:`String<class_string>` section, :ref:`String<class_string>` key, :ref:`Variant<class_variant>` default=NULL  **)** const |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`has_section<class_ConfigFile_has_section>`  **(** :ref:`String<class_string>` section  **)** const                                                                          |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`has_section_key<class_ConfigFile_has_section_key>`  **(** :ref:`String<class_string>` section, :ref:`String<class_string>` key  **)** const                                 |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Error                                  | :ref:`load<class_ConfigFile_load>`  **(** :ref:`String<class_string>` path  **)**                                                                                                 |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Error                                  | :ref:`save<class_ConfigFile_save>`  **(** :ref:`String<class_string>` path  **)**                                                                                                 |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_value<class_ConfigFile_set_value>`  **(** :ref:`String<class_string>` section, :ref:`String<class_string>` key, :ref:`Variant<class_variant>` value  **)**              |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -51,10 +51,10 @@ The following example shows how to parse a INI-style file from the system, read 
         # Look for the display/width pair, and default to 1024 if missing
         var screen_width = get_value("display", "width", 1024)
         # Store a variable if and only it hasn't been defined yet
-    if not config.has_section_key("audio", "mute"):
-        config.set_value("audio", "mute", false)
+        if not config.has_section_key("audio", "mute"):
+            config.set_value("audio", "mute", false)
         # Save the changes by overwriting the previous file
-    config.save("user://settings.cfg")
+        config.save("user://settings.cfg")
 
 Member Function Description
 ---------------------------
@@ -73,7 +73,7 @@ Return an array of all defined section identifiers.
 
 .. _class_ConfigFile_get_value:
 
-- Variant  **get_value**  **(** :ref:`String<class_string>` section, :ref:`String<class_string>` key, var default=NULL  **)** const
+- :ref:`Variant<class_variant>`  **get_value**  **(** :ref:`String<class_string>` section, :ref:`String<class_string>` key, :ref:`Variant<class_variant>` default=NULL  **)** const
 
 Return the current value for the specified section and key. If the section and/or the key do not exist, the method returns the value of the optional *default* argument (and thus ``NULL`` if not specified).
 
@@ -105,7 +105,7 @@ The return value is one of the OK, FAILED or ERR\_\* constants listed in :ref:`@
 
 .. _class_ConfigFile_set_value:
 
-- void  **set_value**  **(** :ref:`String<class_string>` section, :ref:`String<class_string>` key, var value  **)**
+- void  **set_value**  **(** :ref:`String<class_string>` section, :ref:`String<class_string>` key, :ref:`Variant<class_variant>` value  **)**
 
 Assign a value to the specified key of the the specified section. If the section and/or the key do not exist, they are created. Passing a ``NULL`` value deletes the specified key if it exists (and deletes the section if it ends up empty once the key has been removed).
 

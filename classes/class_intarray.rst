@@ -16,17 +16,27 @@ Integer Array.
 Member Functions
 ----------------
 
-+----------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`IntArray<class_intarray>`  | :ref:`IntArray<class_IntArray_IntArray>`  **(** :ref:`Array<class_array>` from  **)**                 |
-+----------------------------------+-------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`push_back<class_IntArray_push_back>`  **(** :ref:`int<class_int>` integer  **)**                |
-+----------------------------------+-------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`resize<class_IntArray_resize>`  **(** :ref:`int<class_int>` idx  **)**                          |
-+----------------------------------+-------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set<class_IntArray_set>`  **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` integer  **)** |
-+----------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`size<class_IntArray_size>`  **(** **)**                                                         |
-+----------------------------------+-------------------------------------------------------------------------------------------------------+
++----------------------------------+-------------------------------------------------------------------------------------------------------------+
+| :ref:`IntArray<class_intarray>`  | :ref:`IntArray<class_IntArray_IntArray>`  **(** :ref:`Array<class_array>` from  **)**                       |
++----------------------------------+-------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`append<class_IntArray_append>`  **(** :ref:`int<class_int>` integer  **)**                            |
++----------------------------------+-------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`append_array<class_IntArray_append_array>`  **(** :ref:`IntArray<class_intarray>` array  **)**        |
++----------------------------------+-------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`insert<class_IntArray_insert>`  **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` integer  **)** |
++----------------------------------+-------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`invert<class_IntArray_invert>`  **(** **)**                                                           |
++----------------------------------+-------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`push_back<class_IntArray_push_back>`  **(** :ref:`int<class_int>` integer  **)**                      |
++----------------------------------+-------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`remove<class_IntArray_remove>`  **(** :ref:`int<class_int>` idx  **)**                                |
++----------------------------------+-------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`resize<class_IntArray_resize>`  **(** :ref:`int<class_int>` idx  **)**                                |
++----------------------------------+-------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set<class_IntArray_set>`  **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` integer  **)**       |
++----------------------------------+-------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`size<class_IntArray_size>`  **(** **)**                                                               |
++----------------------------------+-------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -42,11 +52,41 @@ Member Function Description
 
 Create from a generic array.
 
+.. _class_IntArray_append:
+
+- void  **append**  **(** :ref:`int<class_int>` integer  **)**
+
+Append an element at the end of the array (alias of :ref:`push_back<class_IntArray_push_back>`).
+
+.. _class_IntArray_append_array:
+
+- void  **append_array**  **(** :ref:`IntArray<class_intarray>` array  **)**
+
+Append an :ref:`IntArray<class_intarray>` at the end of this array.
+
+.. _class_IntArray_insert:
+
+- :ref:`int<class_int>`  **insert**  **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` integer  **)**
+
+Insert a new int at a given position in the array. The position must be valid, or at the end of the array (pos==size()).
+
+.. _class_IntArray_invert:
+
+- void  **invert**  **(** **)**
+
+Reverse the order of the elements in the array (so first element will now be the last).
+
 .. _class_IntArray_push_back:
 
 - void  **push_back**  **(** :ref:`int<class_int>` integer  **)**
 
 Append a value to the array.
+
+.. _class_IntArray_remove:
+
+- void  **remove**  **(** :ref:`int<class_int>` idx  **)**
+
+Remove an element from the array by index.
 
 .. _class_IntArray_resize:
 

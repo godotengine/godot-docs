@@ -13,44 +13,105 @@ EditorImportPlugin
 Brief Description
 -----------------
 
-
+Import plugin for editor
 
 Member Functions
 ----------------
 
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RawArray<class_rawarray>`  | :ref:`custom_export<class_EditorImportPlugin_custom_export>`  **(** :ref:`String<class_string>` path  **)** virtual                |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`get_name<class_EditorImportPlugin_get_name>`  **(** **)** virtual                                                            |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`get_visible_name<class_EditorImportPlugin_get_visible_name>`  **(** **)** virtual                                            |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`import<class_EditorImportPlugin_import>`  **(** :ref:`String<class_string>` path, ResourceImportMetaData from  **)** virtual |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`import_dialog<class_EditorImportPlugin_import_dialog>`  **(** :ref:`String<class_string>` from  **)** virtual                |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`can_reimport_multiple_files<class_EditorImportPlugin_can_reimport_multiple_files>`  **(** **)** virtual                                                               |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RawArray<class_rawarray>`  | :ref:`custom_export<class_EditorImportPlugin_custom_export>`  **(** :ref:`String<class_string>` path, EditorExportPlatform platform  **)** virtual                          |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`      | :ref:`expand_source_path<class_EditorImportPlugin_expand_source_path>`  **(** :ref:`String<class_string>` path  **)**                                                       |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`      | :ref:`get_name<class_EditorImportPlugin_get_name>`  **(** **)** virtual                                                                                                     |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`      | :ref:`get_visible_name<class_EditorImportPlugin_get_visible_name>`  **(** **)** virtual                                                                                     |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`import<class_EditorImportPlugin_import>`  **(** :ref:`String<class_string>` path, :ref:`ResourceImportMetadata<class_resourceimportmetadata>` from  **)** virtual     |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`import_dialog<class_EditorImportPlugin_import_dialog>`  **(** :ref:`String<class_string>` from  **)** virtual                                                         |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`import_from_drop<class_EditorImportPlugin_import_from_drop>`  **(** :ref:`StringArray<class_stringarray>` files, :ref:`String<class_string>` dest_path  **)** virtual |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`reimport_multiple_files<class_EditorImportPlugin_reimport_multiple_files>`  **(** :ref:`StringArray<class_stringarray>` files  **)** virtual                          |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`      | :ref:`validate_source_path<class_EditorImportPlugin_validate_source_path>`  **(** :ref:`String<class_string>` path  **)**                                                   |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Description
+-----------
+
+Import plugins make it easy to handle importing of external assets into a project. They way they work is not that obvious though, so please make sure to read the documentation, tutorials and examples.
 
 Member Function Description
 ---------------------------
 
+.. _class_EditorImportPlugin_can_reimport_multiple_files:
+
+- :ref:`bool<class_bool>`  **can_reimport_multiple_files**  **(** **)** virtual
+
 .. _class_EditorImportPlugin_custom_export:
 
-- :ref:`RawArray<class_rawarray>`  **custom_export**  **(** :ref:`String<class_string>` path  **)** virtual
+- :ref:`RawArray<class_rawarray>`  **custom_export**  **(** :ref:`String<class_string>` path, EditorExportPlatform platform  **)** virtual
+
+Generally, files that are imported stay the same when exported. The only exception is in some cases when the file must be re-imported for different platforms (ie. texture compression).
+
+If you want to customize the export process, it's recommended to use :ref:`EditorExportPlugin.custom_export<class_EditorExportPlugin_custom_export>` instead.
+
+.. _class_EditorImportPlugin_expand_source_path:
+
+- :ref:`String<class_string>`  **expand_source_path**  **(** :ref:`String<class_string>` path  **)**
 
 .. _class_EditorImportPlugin_get_name:
 
 - :ref:`String<class_string>`  **get_name**  **(** **)** virtual
 
+Get the name of the import plugin, which will be used to identify content imported by this plugin. Try to use lowercase and underscores if possible.
+
 .. _class_EditorImportPlugin_get_visible_name:
 
 - :ref:`String<class_string>`  **get_visible_name**  **(** **)** virtual
 
+Visible name for this plugin, which will be shown on the import menu.
+
 .. _class_EditorImportPlugin_import:
 
-- :ref:`int<class_int>`  **import**  **(** :ref:`String<class_string>` path, ResourceImportMetaData from  **)** virtual
+- :ref:`int<class_int>`  **import**  **(** :ref:`String<class_string>` path, :ref:`ResourceImportMetadata<class_resourceimportmetadata>` from  **)** virtual
+
+Perform an import of an external resources into the project. This function is both called on import (from the dialog) or re-import (manual or automatic when external source files changed).
+
+An import process generally works like this:
+
+1) Check the metadata for source files and options. Metadata is either generated in the import dialog or taken from an existing resource upon reimport.
+
+2) Perform the import process into a new resource. Some times the resource being re-imported may be already loaded and in use, so checking for this by using :ref:`ResourceLoader.has<class_ResourceLoader_has>` is recommended. Otherwise create a new resource.
+
+3) Set the metadata from the argument into the existing or new resource being created using :ref:`Resource.set_import_metadata<class_Resource_set_import_metadata>`.
+
+4) Save the resource into 'path' (function argument)
 
 .. _class_EditorImportPlugin_import_dialog:
 
 - void  **import_dialog**  **(** :ref:`String<class_string>` from  **)** virtual
+
+This function is called when either the user chooses to import a resource of this type (Import menu), or when the user chooses to re-import the resource (from filesystem). In the later case, the path for the existing file is supplied in the argument.
+
+If the path is supplied, it is recommended to read the import metadata with :ref:`ResourceLoader.load_import_metadata<class_ResourceLoader_load_import_metadata>` and fill in the fields with the values contained there.
+
+The dialog can be shown in any way (just use a ConfirmationDialog and pop it up). Upon confirmation, fill up a ResourceImportMetadata and call the :ref:`EditorImportPlugin.import<class_EditorImportPlugin_import>` function with this information.
+
+.. _class_EditorImportPlugin_import_from_drop:
+
+- void  **import_from_drop**  **(** :ref:`StringArray<class_stringarray>` files, :ref:`String<class_string>` dest_path  **)** virtual
+
+.. _class_EditorImportPlugin_reimport_multiple_files:
+
+- void  **reimport_multiple_files**  **(** :ref:`StringArray<class_stringarray>` files  **)** virtual
+
+.. _class_EditorImportPlugin_validate_source_path:
+
+- :ref:`String<class_string>`  **validate_source_path**  **(** :ref:`String<class_string>` path  **)**
 
 

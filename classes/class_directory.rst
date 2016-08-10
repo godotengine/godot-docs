@@ -172,7 +172,7 @@ The method returns one of the error code constants defined in :ref:`@Global Scop
 
 Create a target directory and all necessary intermediate directories in its path, by calling :ref:`make_dir<class_Directory_make_dir>` recursively. The argument can be relative to the current directory, or an absolute path.
 
-Returns one of the error code constants defined in :ref:`@Global Scope<class_@global scope>` (OK, FAILED or ERR\_\*).
+Return one of the error code constants defined in :ref:`@Global Scope<class_@global scope>` (OK, FAILED or ERR\_\*).
 
 .. _class_Directory_open:
 
@@ -188,7 +188,7 @@ The method returns one of the error code constants defined in :ref:`@Global Scop
 
 Delete the target file or an empty directory. The argument can be relative to the current directory, or an absolute path. If the target directory is not empty, the operation will fail.
 
-Returns one of the error code constants defined in :ref:`@Global Scope<class_@global scope>` (OK or FAILED).
+Return one of the error code constants defined in :ref:`@Global Scope<class_@global scope>` (OK or FAILED).
 
 .. _class_Directory_rename:
 
@@ -196,6 +196,6 @@ Returns one of the error code constants defined in :ref:`@Global Scope<class_@gl
 
 Rename (move) the *from* file to the *to* destination. Both arguments should be paths to files, either relative or absolute. If the destination file exists and is not access-protected, it will be overwritten.
 
-Returns one of the error code constants defined in :ref:`@Global Scope<class_@global scope>` (OK or FAILED).
+Return one of the error code constants defined in :ref:`@Global Scope<class_@global scope>` (OK or FAILED).
 
 

@@ -85,13 +85,15 @@ Member Functions
 +--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                 | :ref:`select<class_TreeItem_select>`  **(** :ref:`int<class_int>` column  **)**                                                                                                                                                       |
 +--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                 | :ref:`set_button<class_TreeItem_set_button>`  **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx, :ref:`Texture<class_texture>` button  **)**                                                                       |
++--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                 | :ref:`set_cell_mode<class_TreeItem_set_cell_mode>`  **(** :ref:`int<class_int>` column, :ref:`int<class_int>` mode  **)**                                                                                                             |
 +--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                 | :ref:`set_checked<class_TreeItem_set_checked>`  **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` checked  **)**                                                                                                            |
 +--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                 | :ref:`set_collapsed<class_TreeItem_set_collapsed>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                                                                       |
 +--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                 | :ref:`set_custom_bg_color<class_TreeItem_set_custom_bg_color>`  **(** :ref:`int<class_int>` column, :ref:`Color<class_color>` color  **)**                                                                                            |
+| void                                 | :ref:`set_custom_bg_color<class_TreeItem_set_custom_bg_color>`  **(** :ref:`int<class_int>` column, :ref:`Color<class_color>` color, :ref:`bool<class_bool>` just_outline=false  **)**                                                |
 +--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                 | :ref:`set_custom_color<class_TreeItem_set_custom_color>`  **(** :ref:`int<class_int>` column, :ref:`Color<class_color>` color  **)**                                                                                                  |
 +--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -105,7 +107,7 @@ Member Functions
 +--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                 | :ref:`set_icon_region<class_TreeItem_set_icon_region>`  **(** :ref:`int<class_int>` column, :ref:`Rect2<class_rect2>` region  **)**                                                                                                   |
 +--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                 | :ref:`set_metadata<class_TreeItem_set_metadata>`  **(** :ref:`int<class_int>` column, var meta  **)**                                                                                                                                 |
+| void                                 | :ref:`set_metadata<class_TreeItem_set_metadata>`  **(** :ref:`int<class_int>` column, :ref:`Variant<class_variant>` meta  **)**                                                                                                       |
 +--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                 | :ref:`set_range<class_TreeItem_set_range>`  **(** :ref:`int<class_int>` column, :ref:`float<class_float>` value  **)**                                                                                                                |
 +--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -124,8 +126,9 @@ Numeric Constants
 - **CELL_MODE_STRING** = **0**
 - **CELL_MODE_CHECK** = **1**
 - **CELL_MODE_RANGE** = **2**
-- **CELL_MODE_ICON** = **3**
-- **CELL_MODE_CUSTOM** = **4**
+- **CELL_MODE_RANGE_EXPRESSION** = **3**
+- **CELL_MODE_ICON** = **4**
+- **CELL_MODE_CUSTOM** = **5**
 
 Member Function Description
 ---------------------------
@@ -262,6 +265,10 @@ Member Function Description
 
 - void  **select**  **(** :ref:`int<class_int>` column  **)**
 
+.. _class_TreeItem_set_button:
+
+- void  **set_button**  **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx, :ref:`Texture<class_texture>` button  **)**
+
 .. _class_TreeItem_set_cell_mode:
 
 - void  **set_cell_mode**  **(** :ref:`int<class_int>` column, :ref:`int<class_int>` mode  **)**
@@ -276,7 +283,7 @@ Member Function Description
 
 .. _class_TreeItem_set_custom_bg_color:
 
-- void  **set_custom_bg_color**  **(** :ref:`int<class_int>` column, :ref:`Color<class_color>` color  **)**
+- void  **set_custom_bg_color**  **(** :ref:`int<class_int>` column, :ref:`Color<class_color>` color, :ref:`bool<class_bool>` just_outline=false  **)**
 
 .. _class_TreeItem_set_custom_color:
 
@@ -304,7 +311,7 @@ Member Function Description
 
 .. _class_TreeItem_set_metadata:
 
-- void  **set_metadata**  **(** :ref:`int<class_int>` column, var meta  **)**
+- void  **set_metadata**  **(** :ref:`int<class_int>` column, :ref:`Variant<class_variant>` meta  **)**
 
 .. _class_TreeItem_set_range:
 

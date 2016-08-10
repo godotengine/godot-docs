@@ -27,6 +27,8 @@ Member Functions
 +--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Resource<class_resource>`                                    | :ref:`load<class_ResourceLoader_load>`  **(** :ref:`String<class_string>` path, :ref:`String<class_string>` type_hint="", :ref:`bool<class_bool>` p_no_cache=false  **)** |
 +--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`ResourceImportMetadata<class_resourceimportmetadata>`        | :ref:`load_import_metadata<class_ResourceLoader_load_import_metadata>`  **(** :ref:`String<class_string>` path  **)**                                                     |
++--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`ResourceInteractiveLoader<class_resourceinteractiveloader>`  | :ref:`load_interactive<class_ResourceLoader_load_interactive>`  **(** :ref:`String<class_string>` path, :ref:`String<class_string>` type_hint=""  **)**                   |
 +--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`set_abort_on_missing_resources<class_ResourceLoader_set_abort_on_missing_resources>`  **(** :ref:`bool<class_bool>` abort  **)**                                    |
@@ -57,6 +59,10 @@ Return the list of recognized extensions for a resource type.
 .. _class_ResourceLoader_load:
 
 - :ref:`Resource<class_resource>`  **load**  **(** :ref:`String<class_string>` path, :ref:`String<class_string>` type_hint="", :ref:`bool<class_bool>` p_no_cache=false  **)**
+
+.. _class_ResourceLoader_load_import_metadata:
+
+- :ref:`ResourceImportMetadata<class_resourceimportmetadata>`  **load_import_metadata**  **(** :ref:`String<class_string>` path  **)**
 
 .. _class_ResourceLoader_load_interactive:
 

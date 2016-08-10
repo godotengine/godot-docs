@@ -51,11 +51,15 @@ Member Functions
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`            | :ref:`get_line<class_File_get_line>`  **(** **)** const                                                                                                                                 |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`get_md5<class_File_get_md5>`  **(** :ref:`String<class_string>` path  **)** const                                                                                                 |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`            | :ref:`get_pascal_string<class_File_get_pascal_string>`  **(** **)**                                                                                                                     |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`get_pos<class_File_get_pos>`  **(** **)** const                                                                                                                                   |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`              | :ref:`get_real<class_File_get_real>`  **(** **)** const                                                                                                                                 |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`get_sha256<class_File_get_sha256>`  **(** :ref:`String<class_string>` path  **)** const                                                                                           |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`get_var<class_File_get_var>`  **(** **)** const                                                                                                                                   |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -95,7 +99,7 @@ Member Functions
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`store_string<class_File_store_string>`  **(** :ref:`String<class_string>` string  **)**                                                                                           |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`store_var<class_File_store_var>`  **(** var value  **)**                                                                                                                          |
+| void                                   | :ref:`store_var<class_File_store_var>`  **(** :ref:`Variant<class_variant>` value  **)**                                                                                                |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
@@ -111,11 +115,7 @@ Description
 
 File type. This is used to permanently store data into the user device's file system and to read from it. This can be used to store game save data or player configuration files, for example.
 
-
-
 Here's a sample on how to write and read from a file:
-
-
 
 ::
 
@@ -231,6 +231,12 @@ Return the size of the file in bytes.
 
 Get the next line of the file as a :ref:`String<class_string>`.
 
+.. _class_File_get_md5:
+
+- :ref:`String<class_string>`  **get_md5**  **(** :ref:`String<class_string>` path  **)** const
+
+Return a md5 String representing the file at the given path or an empty :ref:`String<class_string>` on failure.
+
 .. _class_File_get_pascal_string:
 
 - :ref:`String<class_string>`  **get_pascal_string**  **(** **)**
@@ -248,6 +254,12 @@ Return the file cursor position.
 - :ref:`float<class_float>`  **get_real**  **(** **)** const
 
 Get the next bits from the file as a floating point number.
+
+.. _class_File_get_sha256:
+
+- :ref:`String<class_string>`  **get_sha256**  **(** :ref:`String<class_string>` path  **)** const
+
+Return a sha256 String representing the file at the given path or an empty :ref:`String<class_string>` on failure.
 
 .. _class_File_get_var:
 
@@ -297,9 +309,7 @@ Change the file reading/writing cursor to the specified position (in bytes from 
 
 Set whether to swap the endianess of the file. Enable this if you're dealing with files written in big endian machines.
 
-
-
-            Note that this is about the file format, not CPU type. This is always reseted to ``false`` whenever you open the file.
+Note that this is about the file format, not CPU type. This is always reseted to ``false`` whenever you open the file.
 
 .. _class_File_store_16:
 
@@ -369,7 +379,7 @@ Store the given :ref:`String<class_string>` in the file.
 
 .. _class_File_store_var:
 
-- void  **store_var**  **(** var value  **)**
+- void  **store_var**  **(** :ref:`Variant<class_variant>` value  **)**
 
 Store any Variant value in the file.
 

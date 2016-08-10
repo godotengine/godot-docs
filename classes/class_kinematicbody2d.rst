@@ -21,7 +21,7 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_object>`    | :ref:`get_collider<class_KinematicBody2D_get_collider>`  **(** **)** const                                             |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| Variant                        | :ref:`get_collider_metadata<class_KinematicBody2D_get_collider_metadata>`  **(** **)** const                           |
+| :ref:`Variant<class_variant>`  | :ref:`get_collider_metadata<class_KinematicBody2D_get_collider_metadata>`  **(** **)** const                           |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_collider_shape<class_KinematicBody2D_get_collider_shape>`  **(** **)** const                                 |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------+
@@ -68,7 +68,7 @@ Return the body that collided with this one.
 
 .. _class_KinematicBody2D_get_collider_metadata:
 
-- Variant  **get_collider_metadata**  **(** **)** const
+- :ref:`Variant<class_variant>`  **get_collider_metadata**  **(** **)** const
 
 Return the metadata of the shape that collided with this body. If there is no collision, it will return 0, so collisions must be checked first with :ref:`is_colliding<class_KinematicBody2D_is_colliding>`. Additionally, this metadata can not be set with :ref:`Object.set_meta<class_Object_set_meta>`, it must be set with :ref:`Physics2DServer.body_set_shape_metadata<class_Physics2DServer_body_set_shape_metadata>`.
 

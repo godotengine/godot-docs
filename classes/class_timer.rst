@@ -13,7 +13,7 @@ Timer
 Brief Description
 -----------------
 
-
+A simple Timer node.
 
 Member Functions
 ----------------
@@ -27,7 +27,11 @@ Member Functions
 +----------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`    | :ref:`has_autostart<class_Timer_has_autostart>`  **(** **)** const                                         |
 +----------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`is_active<class_Timer_is_active>`  **(** **)** const                                                 |
++----------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`    | :ref:`is_one_shot<class_Timer_is_one_shot>`  **(** **)** const                                             |
++----------------------------+------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_active<class_Timer_set_active>`  **(** :ref:`bool<class_bool>` active  **)**                     |
 +----------------------------+------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`set_autostart<class_Timer_set_autostart>`  **(** :ref:`bool<class_bool>` enable  **)**               |
 +----------------------------+------------------------------------------------------------------------------------------------------------+
@@ -85,11 +89,23 @@ Return the wait time in seconds.
 
 Return true if set to automatically start when entering the scene.
 
+.. _class_Timer_is_active:
+
+- :ref:`bool<class_bool>`  **is_active**  **(** **)** const
+
+Return if the timer is active or not.
+
 .. _class_Timer_is_one_shot:
 
 - :ref:`bool<class_bool>`  **is_one_shot**  **(** **)** const
 
 Return true if configured as one-shot.
+
+.. _class_Timer_set_active:
+
+- void  **set_active**  **(** :ref:`bool<class_bool>` active  **)**
+
+Set whether the timer is active or not. An inactive timer will be paused until it is activated again.
 
 .. _class_Timer_set_autostart:
 
