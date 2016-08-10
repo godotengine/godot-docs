@@ -174,7 +174,7 @@ to config.py:
     def configure(env):
         if env['platform'] == 'android':
             # will copy this to the java folder
-            env.android_add_java_dir("Directory that contain MySingelton.java")
+            env.android_add_java_dir("Directory that contain MySingleton.java")
 
 
 
