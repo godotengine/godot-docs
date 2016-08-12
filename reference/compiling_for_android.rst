@@ -24,7 +24,7 @@ For compiling under Windows, Linux or OSX, the following is required:
 -  Python 2.7+ (3.0 is untested as of now)
 -  SCons build system
 -  [Windows only] PyWin32 (optional, for parallel compilation)
--  Android SDK version 19 [Note: Please install all Tools and Extras of sdk manager]
+-  Android SDK version 23.0.3 [Note: Please install all Tools and Extras of sdk manager]
 -  Android build tools version 19.1
 -  Android NDK r10e or later
 -  Gradle (will be downloaded and installed automatically if missing)
@@ -47,6 +47,8 @@ appears.
 To set those environment variables on Unix (e.g. Linux, Mac OSX), use
 ``export ANDROID_HOME=/path/to/android-sdk`` and
 ``export ANDROID_NDK_ROOT=/path/to/android-ndk``.
+Where /path/to/android-sdk and /path/to/android-ndk is the path where Android Sdk 
+and Android Ndk are placed on you PC.
 
 Toolchain
 ~~~~~~~~~
@@ -75,6 +77,11 @@ the following arguments:
     C:\godot> scons platform=android target=release
     C:\godot> cd platform/android/java
     C:\godot\platform\android\java> gradlew build
+    
+Linux :
+    ~/godot$ scons platform=android target=release
+    ~/godot$ cd platform/android/java
+    ~/godot/platform/android/java$ ./gradlew
 
 The resulting APK is in:
 
@@ -89,6 +96,11 @@ The resulting APK is in:
     C:\godot> scons platform=android target=release_debug
     C:\godot> cd platform/android/java
     C:\godot\platform\android\java> gradlew build
+    
+Linux :
+    ~/godot$ scons platform=android target=release_debug
+    ~/godot$ cd platform/android/java
+    ~/godot/platform/android/java$ ./gradlew
 
 The resulting APK is in:
 
@@ -118,6 +130,7 @@ with Gradle. For example for the release template:
     C:\godot> scons platform=android target=release android_arch=x86
     C:\godot> cd platform/android/java
     C:\godot\platform\android\java> gradlew build
+    
 
 This will create a fat binary that works in both platforms, but will add
 about 6 megabytes to the APK.
