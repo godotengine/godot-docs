@@ -65,13 +65,13 @@ callback will be received at the beginning and every time the control
 needs to be redrawn (programmer needs to call
 :ref:`CanvasItem.update() <class_CanvasItem_update>`
 to enqueue the CanvasItem for redraw). If the control is not visible
-(yet aother CanvasItem property), the control does not receive any
+(yet another CanvasItem property), the control does not receive any
 input.
 
 In general though, the programmer does not need to deal with drawing and
 input events directly when building UIs, (that is more useful when
 creating custom controls). Instead, controls emit different kinds of
-signals with contextural information for when action occurs. For
+signals with contextual information for when action occurs. For
 example, a :ref:`Button <class_Button>` emits
 a "pressed" signal when pressed, a :ref:`Slider <class_Slider>` will
 emit a "value_changed" when dragged, etc.
