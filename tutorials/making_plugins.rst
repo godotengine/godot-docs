@@ -34,7 +34,7 @@ understand as such. For that you need two files: ``plugin.cfg`` for the
 configuration and a custom GDScript with the functionality.
 
 Plugins have a standard path like ``addons/plugin_name`` inside the project
-folder. So create the folder ``my_custom_dock`` inside ``addons``. So you'll
+folder. So create the folder ``my_custom_node`` inside ``addons``. So you'll
 have a directory structure like this:
 
 .. image:: /img/making_plugins-my_custom_mode_folder.png
@@ -63,7 +63,7 @@ The script file
 ^^^^^^^^^^^^^^^
 
 Open the script editor (F3) and create a new GDScript file called
-``custom_dock.gd`` inside the ``my_custom_node`` folder. This script is special
+``custom_node.gd`` inside the ``my_custom_node`` folder. This script is special
 and it has two requirements: it must be a ``tool`` script and it has to
 inherit from :ref:`class_EditorPlugin`.
 
