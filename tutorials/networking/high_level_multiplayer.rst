@@ -174,7 +174,7 @@ This keyword has two main uses. The first is to let Godot know that this functio
 Godot will block any attempts to call functions for security. This makes security work a lot easier (so a client can't call a function
 to delete a file in another).
 
-The second use, is to specify how the function will be called via RCP. There are four different keywords:
+The second use, is to specify how the function will be called via RPC. There are four different keywords:
 
 - remote
 - sync
@@ -182,8 +182,91 @@ The second use, is to specify how the function will be called via RCP. There are
 - slave
 
 The "remote" keyword means that the rpc() call will go via network and execute remotely.
+
 The "sync" keyword means that the rpc() call will go via network and execute remotely, but will also execute locally (do a normal function call).
+
 The others will be explained further down.
+
+With this, lobby management should be more or less explained. One you have your game going, you will most likely want to add some 
+extra security to make sure clients don't do anything funny (just validate the info they send from time to time, or before 
+game start). For the sake of simplicity and the fact each game will share different information, this was not done here.
+
+Starting the game
+-----------------
+
+Once enough people has gathered in the Lobby, the server will most likely want to start the game. This is honestly nothing
+special in itself, but we'll explain a few nice tricks that can be done at this point to make your life much easier.
+
+Player Scenes:
+^^^^^^^^^^^^^^
+
+In most games, each player will likely have it's own scene. Remember that this is a multiplayer game, so in every peer 
+you need to instance **one scene for each player connected to it**. For a 4 player game, each peer needs to instance 4 player nodes.
+
+So, how to name such nodes? In godot nodes need to have an unique name. It must also be relatively easy for a player to tell which
+nodes represent each player id.
+
+The solution is to simply name the *root nodes of the instanced player scenes as their network ID*. This way, they will be the same in 
+every peer and RPC will work great! Here is an example:
+
+::
+	remote func pre_configure_game():
+	
+		# load world
+		var world = load(which_level).instance()
+		get_node("/root").add_child(world)
+		
+		# load players
+		var my_player = preload("res://player.tscn").intance()
+		my_player.set_name( str( get_tree().get_network_unique_id() ) )
+		get_node("/root/world/players").add_child( my_player )
+		for p in player_info:
+			var player = preload("res://player.tscn").intance()
+			player.set_name( str( p ) )
+			get_node("/root/world/players").add_child( player )
+			
+		# tell server (remember, server is always ID==1) this peer is done pre-configuring
+		rpc_id(1,"done_preconfiguring", get_tree().get_network_unique_id() )
+			
+Synchronized game start
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Setting up players might take different amount of time on every peer due to lag and any large number of reasons.
+To make sure the game will actually start when everyone is ready, pausing the game can be very useful:
+
+::
+	remote func pre_configure_game():
+		get_tree().set_pause(true) #pre-pause
+		# the rest is the same as in the code in the previous section (look above)
+		
+When the server gets the OK from all the peers, it can tell them to start, as for example
+
+::
+
+	var players_done = []
+	remote func done_preconfiguring(who):
+		# here is some checks you can do, as example
+		assert( get_tree().is_network_server() ) 
+		assert( who in player_info ) # exists
+		assert( not who in players_done ) # was not added yet
+		
+		players_done.append( who )
+		
+		if ( players_done.size() == player_info.size() ):
+			rpc("post_configure_game")
+			
+	remote func post_configure_game():
+		get_tree().set_pause(false)
+		#game starts now!
+
+
+
+
+
+	
+
+
+
 
 
 
