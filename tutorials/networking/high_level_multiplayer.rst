@@ -98,6 +98,13 @@ in :ref:`Node <class_Node>`:
 - rpc_unreliable("function_name",<optional_args>)
 - rpc_unreliable_id(<peer_id>,"function_name",<optional_args>)
 
+Synchronizing member variables is also possible:
+
+- rset("variable",value)
+- rset_id(<peer_id>,"variable",value)
+- rset_unreliable("variable",value)
+- rset_unreliable_id(<peer_id>,"variable",value)
+
 Functions can be called in two fashions:
 
 - Reliable (call will arrive no matter what, but may take longer because it will be re-transmitted in fails)
@@ -211,18 +218,23 @@ every peer and RPC will work great! Here is an example:
 		var world = load(which_level).instance()
 		get_node("/root").add_child(world)
 		
-		# load players
+		# load my player
 		var my_player = preload("res://player.tscn").intance()
 		my_player.set_name( str( get_tree().get_network_unique_id() ) )
+		my_player.set_network_mode( NETWORK_MODE_MASTER ) # will be explained later
 		get_node("/root/world/players").add_child( my_player )
+		
+		# load other players
 		for p in player_info:
 			var player = preload("res://player.tscn").intance()
 			player.set_name( str( p ) )
+			player.set_network_mode( NETWORK_MODE_SLAVE ) # will be explained later
 			get_node("/root/world/players").add_child( player )
 			
 		# tell server (remember, server is always ID==1) this peer is done pre-configuring
 		rpc_id(1,"done_preconfiguring", get_tree().get_network_unique_id() )
-			
+	
+	
 Synchronized game start
 ^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -252,4 +264,48 @@ When the server gets the OK from all the peers, it can tell them to start, as fo
 	remote func post_configure_game():
 		get_tree().set_pause(false)
 		#game starts now!
+
+Synchronizing the game
+======================
+
+In most games, the goal of supporting multiplayer neworking is to make sure that the game runs synchronized in all the peers playing it. Besides supplying an RPC and remote member variable set implementation. Godot adds the concept of master and slave network modes.
+
+Master and slave
+^^^^^^^^^^^^^^^^
+
+Very similar to how the pause mode works in regular nodes (with pause, process, inherit modes), nodes can be set a "network mode" with the function Node.set_network_mode(mode). Mode can be: Master, Slave and Inherit.
+
+The Inherit mode assumes the value of the parent node. If the parent node is also in this mode, it will go up in the parenthood chain until it finds a mode. If no mode set is found, Master will be assumed for the server and Slave for clients.
+
+This means that, upon loading scenes, the client is by default the master and clients are the slaves. Checking that a node is in master mode is done by calling:
+
+::
+	is_network_master()
+	
+If you have paid attention to the previous example, it's possible you noticed each node being set a role when being loaded in each peer:
+
+::
+		[...]
+		# load my player
+		var my_player = preload("res://player.tscn").intance()
+		my_player.set_name( str( get_tree().get_network_unique_id() ) )
+		my_player.set_network_mode( NETWORK_MODE_MASTER ) # will be explained later
+		get_node("/root/world/players").add_child( my_player )
+		
+		# load other players
+		for p in player_info:
+			var player = preload("res://player.tscn").intance()
+			player.set_name( str( p ) )
+			player.set_network_mode( NETWORK_MODE_SLAVE ) # will be explained later
+			get_node("/root/world/players").add_child( player )
+		[...]
+
+
+Here, each time this piece of code is executed on each peer, the peer makes the node it controls master, and the ones it does not slaves. The modes for each are different on each peer. To clarify, here is an example of how this looks in the bomber demo:
+
+.. image:: /img/nmms.png
+
+
+
+
 
