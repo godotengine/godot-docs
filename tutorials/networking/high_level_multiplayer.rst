@@ -1,6 +1,6 @@
 .. _doc_high_level_multiplayer:
 
-High Level Multiplayer (2.2+)
+High Level Multiplayer (Godot 2.2+)
 ==============================
 
 Why high level?
@@ -43,7 +43,6 @@ To initialize high level networking, SceneTree must be provided a NetworkedMulti
 Initializing as a server, listening on a port, maximum 4 peers:
 
 ::
-
 	var host = NetworkedMultiplayerENet.new()
 	host.create_server(SERVER_PORT,4) 
 	get_tree().set_network_peer(host)
@@ -51,7 +50,6 @@ Initializing as a server, listening on a port, maximum 4 peers:
 Initializing as a client, connecto an ip:port:
 
 ::
-
 	var host = NetworkedMultiplayerENet.new()
 	host.create_client(ip,SERVER_PORT)
 	get_tree().set_network_peer(host)
@@ -59,7 +57,6 @@ Initializing as a client, connecto an ip:port:
 Finalizing networking:
 
 ::
-
 	get_tree().set_network_peer(null)
 
 Managing connections:
@@ -70,8 +67,8 @@ connections at any point. To manage who connects, Godot provides the following s
 
 Server and Clients:
 
--network_peer_connected(int id)
--network_peer_disconnected(int id)
+- network_peer_connected(int id)
+- network_peer_disconnected(int id)
 
 The above signals are called in every connected peer to the server when a new one connects or disconnects. 
 Is's very useful to keep track of the ids above (clients will connect with non-zero and non-one unique IDs),
@@ -79,9 +76,9 @@ while the server is warranted to always use ID=1. These IDs will be useful mostl
 
 Clients:
 
--connected_to_server
--connection_failed
--server_disconnected
+- connected_to_server
+- connection_failed
+- server_disconnected
 
 Again, all these functions are mainly useful for lobby management, or for adding/removing players on the fly. 
 For these tasks, the server clearly has to work as a server and you have do tasks manually such as sending a new
@@ -115,7 +112,6 @@ Back to Lobby
 Let's back to the lobby. Imagine that each player that connects to the server will tell everyone about it. 
 
 ::
-	
 	# typical lobby implementation, imagine this being in /root/lobby
 
 	extends Node
@@ -168,7 +164,7 @@ Let's back to the lobby. Imagine that each player that connects to the server wi
 You might have noticed already something different, which is the usage of the "remote" keyword on the register_player function:
 
 ::
-  remote func register_player(id,info):
+	remote func register_player(id,info):
   
 This keyword has two main uses. The first is to let Godot know that this function can be called from RPC. If no keywords are added,
 Godot will block any attempts to call functions for security. This makes security work a lot easier (so a client can't call a function
@@ -211,7 +207,6 @@ every peer and RPC will work great! Here is an example:
 
 ::
 	remote func pre_configure_game():
-	
 		# load world
 		var world = load(which_level).instance()
 		get_node("/root").add_child(world)
@@ -242,7 +237,6 @@ To make sure the game will actually start when everyone is ready, pausing the ga
 When the server gets the OK from all the peers, it can tell them to start, as for example
 
 ::
-
 	var players_done = []
 	remote func done_preconfiguring(who):
 		# here is some checks you can do, as example
@@ -259,24 +253,3 @@ When the server gets the OK from all the peers, it can tell them to start, as fo
 		get_tree().set_pause(false)
 		#game starts now!
 
-
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--
