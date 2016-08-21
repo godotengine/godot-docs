@@ -306,6 +306,38 @@ Here, each time this piece of code is executed on each peer, the peer makes the 
 .. image:: /img/nmms.png
 
 
+Master and slave
+^^^^^^^^^^^^^^^^
 
+The real advantage of this model is when used with the master/slave keywords in GDScript (Don't worry we'll have something similar in C#, Visual Script). Similar to "remote", functions can also be tagged with them:
+
+Example bomb code:
+
+::
+	for p in bodies_in_area:
+		if (p.has_method("exploded")):
+			p.rpc("exploded",bomb_owner)
+			
+
+Example player code:
+
+::
+	slave func stun():
+		stunned=true
+		
+	master func exploded(by_who):
+		if (stunned):
+			return #already stunned
+		
+		rpc("stun")
+		stun() #stun myself, could have used sync keyword too.
+
+
+
+In the above example, a bomb explodes somewhere (likely managed by whoever is master). The bomb knows the bodies in the area, so it checks them and checks that they contain an "exploded" function.
+
+If they do, the bomb calls "exploded" on it. However, the "exploded" method in the player has a "master" keyword. This means that only the player who is master for that instance will actually get the function.
+
+This instance, then, calls the "stun" function in the same instances of that same player (but in different peers), and only those which are set as slave, making the player look stunned in all the peers (as well as the current, master one).
 
 
