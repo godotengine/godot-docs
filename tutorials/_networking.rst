@@ -7,3 +7,4 @@ Networking
 
    ssl_certificates
    http_client_class
+   high_level_multiplayer
