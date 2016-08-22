@@ -43,6 +43,7 @@ To initialize high level networking, SceneTree must be provided a NetworkedMulti
 Initializing as a server, listening on a port, maximum 4 peers:
 
 ::
+
 	var host = NetworkedMultiplayerENet.new()
 	host.create_server(SERVER_PORT,4) 
 	get_tree().set_network_peer(host)
@@ -50,6 +51,7 @@ Initializing as a server, listening on a port, maximum 4 peers:
 Initializing as a client, connecto an ip:port:
 
 ::
+
 	var host = NetworkedMultiplayerENet.new()
 	host.create_client(ip,SERVER_PORT)
 	get_tree().set_network_peer(host)
@@ -57,6 +59,7 @@ Initializing as a client, connecto an ip:port:
 Finalizing networking:
 
 ::
+
 	get_tree().set_network_peer(null)
 
 Managing connections:
@@ -119,6 +122,7 @@ Back to Lobby
 Let's back to the lobby. Imagine that each player that connects to the server will tell everyone about it. 
 
 ::
+
 	# typical lobby implementation, imagine this being in /root/lobby
 
 	extends Node
@@ -171,6 +175,7 @@ Let's back to the lobby. Imagine that each player that connects to the server wi
 You might have noticed already something different, which is the usage of the "remote" keyword on the register_player function:
 
 ::
+
 	remote func register_player(id,info):
   
 This keyword has two main uses. The first is to let Godot know that this function can be called from RPC. If no keywords are added,
@@ -213,6 +218,7 @@ The solution is to simply name the *root nodes of the instanced player scenes as
 every peer and RPC will work great! Here is an example:
 
 ::
+
 	remote func pre_configure_game():
 		# load world
 		var world = load(which_level).instance()
@@ -242,6 +248,7 @@ Setting up players might take different amount of time on every peer due to lag 
 To make sure the game will actually start when everyone is ready, pausing the game can be very useful:
 
 ::
+
 	remote func pre_configure_game():
 		get_tree().set_pause(true) #pre-pause
 		# the rest is the same as in the code in the previous section (look above)
@@ -249,6 +256,7 @@ To make sure the game will actually start when everyone is ready, pausing the ga
 When the server gets the OK from all the peers, it can tell them to start, as for example
 
 ::
+
 	var players_done = []
 	remote func done_preconfiguring(who):
 		# here is some checks you can do, as example
@@ -266,7 +274,7 @@ When the server gets the OK from all the peers, it can tell them to start, as fo
 		#game starts now!
 
 Synchronizing the game
-======================
+----------------------
 
 In most games, the goal of supporting multiplayer neworking is to make sure that the game runs synchronized in all the peers playing it. Besides supplying an RPC and remote member variable set implementation. Godot adds the concept of master and slave network modes.
 
@@ -280,11 +288,13 @@ The Inherit mode assumes the value of the parent node. If the parent node is als
 This means that, upon loading scenes, the client is by default the master and clients are the slaves. Checking that a node is in master mode is done by calling:
 
 ::
+
 	is_network_master()
 	
 If you have paid attention to the previous example, it's possible you noticed each node being set a role when being loaded in each peer:
 
 ::
+
 		[...]
 		# load my player
 		var my_player = preload("res://player.tscn").intance()
@@ -314,6 +324,7 @@ The real advantage of this model is when used with the master/slave keywords in 
 Example bomb code:
 
 ::
+
 	for p in bodies_in_area:
 		if (p.has_method("exploded")):
 			p.rpc("exploded",bomb_owner)
@@ -322,6 +333,7 @@ Example bomb code:
 Example player code:
 
 ::
+
 	slave func stun():
 		stunned=true
 		
