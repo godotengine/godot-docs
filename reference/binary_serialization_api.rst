@@ -66,19 +66,19 @@ integer, specifying the type of data:
 +--------+--------------------------+
 | 21     | array                    |
 +--------+--------------------------+
-| 22     | byte array               |
+| 22     | ByteArray                |
 +--------+--------------------------+
-| 23     | int array                |
+| 23     | IntArray                 |
 +--------+--------------------------+
-| 24     | float array              |
+| 24     | FloatArray               |
 +--------+--------------------------+
-| 25     | string array             |
+| 25     | StringArray              |
 +--------+--------------------------+
-| 26     | vector2 array            |
+| 26     | Vector2Array             |
 +--------+--------------------------+
-| 27     | vector3 array            |
+| 27     | Vector3Array             |
 +--------+--------------------------+
-| 28     | color array              |
+| 28     | ColorArray               |
 +--------+--------------------------+
 
 Following this is the actual packet contents, which varies for each type
@@ -402,7 +402,7 @@ one after the other, using this same format.
 Then what follows is, for amount of "elements", values one after the
 other, using this same format.
 
-22: byte array
+22: :ref:`class_ByteArray`
 ~~~~~~~~~~~~~~
 
 +---------------+-------+-----------+------------------------+
@@ -415,7 +415,7 @@ other, using this same format.
 
 The array data is padded to 4 bytes.
 
-23: int array
+23: :ref:`class_IntArray`
 ~~~~~~~~~~~~~
 
 +------------------+-------+-----------+---------------------------+
@@ -426,7 +426,7 @@ The array data is padded to 4 bytes.
 | 8..8+length\*4   | 4     | Integer   | 32 Bits Signed Integer    |
 +------------------+-------+-----------+---------------------------+
 
-24: float array
+24: :ref:`class_FloatArray`
 ~~~~~~~~~~~~~~~
 
 +------------------+-------+-----------+---------------------------+
@@ -437,7 +437,7 @@ The array data is padded to 4 bytes.
 | 8..8+length\*4   | 4     |Integer    | 32 Bits IEE 754 Float     |
 +------------------+-------+-----------+---------------------------+
 
-25: string array
+25: :ref:`class_StringArray`
 ~~~~~~~~~~~~~~~~
 
 +----------+-------+-----------+--------------------------+
@@ -458,7 +458,7 @@ For each String:
 
 Every string is is padded to 4 bytes.
 
-26: vector2 array
+26: :ref:`class_Vector2Array`
 ~~~~~~~~~~~~~~~~~
 
 +-------------------+-------+-----------+----------------+
@@ -471,7 +471,7 @@ Every string is is padded to 4 bytes.
 | 8..12+length\*8   | 4     | Float     | Y Coordinate   |
 +-------------------+-------+-----------+----------------+
 
-27: vector3 array
+27: :ref:`class_Vector3Array`
 ~~~~~~~~~~~~~~~~~
 
 +--------------------+-------+-----------+----------------+
@@ -486,7 +486,7 @@ Every string is is padded to 4 bytes.
 | 8..16+length\*12   | 4     | Float     | Z Coordinate   |
 +--------------------+-------+-----------+----------------+
 
-28: color array
+28: :ref:`class_ColorArray`
 ~~~~~~~~~~~~~~~
 
 +--------------------+-------+-----------+----------------+
