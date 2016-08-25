@@ -75,7 +75,7 @@ coordinates, just multiply in the following order:
 
 ::
 
-    var screen_coord = get_viewport_transform() + ( get_global_transform() + local_pos )
+    var screen_coord = get_viewport_transform() * ( get_global_transform() * local_pos )
 
 Keep in mind, however, that it is generally not desired to work with
 screen coordinates. The recommended approach is to simply work in Canvas
@@ -95,5 +95,5 @@ way:
     var ie = InputEvent()
     ie.type = InputEvent.MOUSE_BUTTON
     ie.button_index = BUTTON_LEFT
-    ie.pos = get_viewport_transform() + (get_global_transform() + local_pos)
+    ie.pos = get_viewport_transform() * (get_global_transform() * local_pos)
     get_tree().input_event(ie)
