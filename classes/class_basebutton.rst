@@ -57,6 +57,8 @@ Member Functions
 Signals
 -------
 
+-  **button_down**  **(** **)**
+-  **button_up**  **(** **)**
 -  **pressed**  **(** **)**
 -  **released**  **(** **)**
 -  **toggled**  **(** :ref:`bool<class_bool>` pressed  **)**

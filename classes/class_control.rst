@@ -53,7 +53,7 @@ Member Functions
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`            | :ref:`get_constant<class_Control_get_constant>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type=""  **)** const                                         |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_cursor_shape<class_Control_get_cursor_shape>`  **(** :ref:`Vector2<class_vector2>` pos=Vector2((0, 0))  **)** const                                                     |
+| :ref:`int<class_int>`            | :ref:`get_cursor_shape<class_Control_get_cursor_shape>`  **(** :ref:`Vector2<class_vector2>` pos=Vector2(0, 0)  **)** const                                                       |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`    | :ref:`get_custom_minimum_size<class_Control_get_custom_minimum_size>`  **(** **)** const                                                                                          |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -107,7 +107,7 @@ Member Functions
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Theme<class_theme>`        | :ref:`get_theme<class_Control_get_theme>`  **(** **)** const                                                                                                                      |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`get_tooltip<class_Control_get_tooltip>`  **(** :ref:`Vector2<class_vector2>` atpos=Vector2((0, 0))  **)** const                                                             |
+| :ref:`String<class_string>`      | :ref:`get_tooltip<class_Control_get_tooltip>`  **(** :ref:`Vector2<class_vector2>` atpos=Vector2(0, 0)  **)** const                                                               |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`            | :ref:`get_v_size_flags<class_Control_get_v_size_flags>`  **(** **)** const                                                                                                        |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -351,7 +351,7 @@ Return the anchor type (ANCHOR_BEGIN, ANCHOR_END, ANCHOR_RATIO) for a given marg
 
 .. _class_Control_get_cursor_shape:
 
-- :ref:`int<class_int>`  **get_cursor_shape**  **(** :ref:`Vector2<class_vector2>` pos=Vector2((0, 0))  **)** const
+- :ref:`int<class_int>`  **get_cursor_shape**  **(** :ref:`Vector2<class_vector2>` pos=Vector2(0, 0)  **)** const
 
 Return the cursor shape at a certain position in the control.
 
@@ -493,7 +493,7 @@ Return a :ref:`Theme<class_theme>` override, if one exists (see :ref:`set_theme<
 
 .. _class_Control_get_tooltip:
 
-- :ref:`String<class_string>`  **get_tooltip**  **(** :ref:`Vector2<class_vector2>` atpos=Vector2((0, 0))  **)** const
+- :ref:`String<class_string>`  **get_tooltip**  **(** :ref:`Vector2<class_vector2>` atpos=Vector2(0, 0)  **)** const
 
 Return the tooltip, which will appear when the cursor is resting over this control.
 

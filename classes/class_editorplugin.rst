@@ -57,11 +57,15 @@ Member Functions
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`UndoRedo<class_undoredo>`                      | :ref:`get_undo_redo<class_EditorPlugin_get_undo_redo>`  **(** **)**                                                                                                                                                 |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                 | :ref:`get_window_layout<class_EditorPlugin_get_window_layout>`  **(** :ref:`ConfigFile<class_configfile>` layout  **)** virtual                                                                                     |
++------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                              | :ref:`handles<class_EditorPlugin_handles>`  **(** :ref:`Object<class_object>` object  **)** virtual                                                                                                                 |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                              | :ref:`has_main_screen<class_EditorPlugin_has_main_screen>`  **(** **)** virtual                                                                                                                                     |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`make_visible<class_EditorPlugin_make_visible>`  **(** :ref:`bool<class_bool>` visible  **)** virtual                                                                                                          |
++------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                 | :ref:`queue_save_layout<class_EditorPlugin_queue_save_layout>`  **(** **)** const                                                                                                                                   |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`remove_control_from_bottom_panel<class_EditorPlugin_remove_control_from_bottom_panel>`  **(** :ref:`Control<class_control>` control  **)**                                                                    |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -73,7 +77,11 @@ Member Functions
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`remove_import_plugin<class_EditorPlugin_remove_import_plugin>`  **(** :ref:`EditorImportPlugin<class_editorimportplugin>` plugin  **)**                                                                       |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                 | :ref:`save_external_data<class_EditorPlugin_save_external_data>`  **(** **)** virtual                                                                                                                               |
++------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`set_state<class_EditorPlugin_set_state>`  **(** :ref:`Dictionary<class_dictionary>` state  **)** virtual                                                                                                      |
++------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                 | :ref:`set_window_layout<class_EditorPlugin_set_window_layout>`  **(** :ref:`ConfigFile<class_configfile>` layout  **)** virtual                                                                                     |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
@@ -242,6 +250,12 @@ Get the state of your plugin editor. This is used when saving the scene (so stat
 
 Get the undo/redo object. Most actions in the editor can be undoable, so use this object to make sure this happens when it's worth it.
 
+.. _class_EditorPlugin_get_window_layout:
+
+- void  **get_window_layout**  **(** :ref:`ConfigFile<class_configfile>` layout  **)** virtual
+
+Get the GUI layout of the plugin. This is used to save the project's editor layout when the :ref:`EditorPlugin.queue_save_layout<class_EditorPlugin_queue_save_layout>` is called or the editor layout was changed(For example changing the position of a dock).
+
 .. _class_EditorPlugin_handles:
 
 - :ref:`bool<class_bool>`  **handles**  **(** :ref:`Object<class_object>` object  **)** virtual
@@ -261,6 +275,12 @@ Return true if this is a main screen editor plugin (it goes in the main screen s
 This function will be called when the editor is requested to become visible. It is used for plugins that edit a specific object type.
 
 Remember that you have to manage the visibility of all your editor controls manually.
+
+.. _class_EditorPlugin_queue_save_layout:
+
+- void  **queue_save_layout**  **(** **)** const
+
+Queue save the project's editor layout.
 
 .. _class_EditorPlugin_remove_control_from_bottom_panel:
 
@@ -292,10 +312,22 @@ Remove the export plugin, don't forget to call this on exit.
 
 Remove the import plugin, don't forget to call this on exit.
 
+.. _class_EditorPlugin_save_external_data:
+
+- void  **save_external_data**  **(** **)** virtual
+
+This method is called after the editor save the project or when the it's closed. It asks the plugin to save edited external scenes/resources.
+
 .. _class_EditorPlugin_set_state:
 
 - void  **set_state**  **(** :ref:`Dictionary<class_dictionary>` state  **)** virtual
 
 Restore the state saved by :ref:`EditorPlugin.get_state<class_EditorPlugin_get_state>`.
+
+.. _class_EditorPlugin_set_window_layout:
+
+- void  **set_window_layout**  **(** :ref:`ConfigFile<class_configfile>` layout  **)** virtual
+
+Restore the plugin GUI layout saved by :ref:`EditorPlugin.get_window_layout<class_EditorPlugin_get_window_layout>`.
 
 

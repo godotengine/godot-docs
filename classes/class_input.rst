@@ -63,7 +63,7 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`remove_joy_mapping<class_Input_remove_joy_mapping>`  **(** :ref:`String<class_string>` guid  **)**                                                                                                                           |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_custom_mouse_cursor<class_Input_set_custom_mouse_cursor>`  **(** :ref:`Texture<class_texture>` image, :ref:`Vector2<class_vector2>` hotspot=Vector2((0, 0))  **)**                                                       |
+| void                           | :ref:`set_custom_mouse_cursor<class_Input_set_custom_mouse_cursor>`  **(** :ref:`Texture<class_texture>` image, :ref:`Vector2<class_vector2>` hotspot=Vector2(0, 0)  **)**                                                         |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_mouse_mode<class_Input_set_mouse_mode>`  **(** :ref:`int<class_int>` mode  **)**                                                                                                                                         |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -222,7 +222,7 @@ Removes all mappings from the internal db that match the given uid.
 
 .. _class_Input_set_custom_mouse_cursor:
 
-- void  **set_custom_mouse_cursor**  **(** :ref:`Texture<class_texture>` image, :ref:`Vector2<class_vector2>` hotspot=Vector2((0, 0))  **)**
+- void  **set_custom_mouse_cursor**  **(** :ref:`Texture<class_texture>` image, :ref:`Vector2<class_vector2>` hotspot=Vector2(0, 0)  **)**
 
 Set a custom mouse cursor image, which is only visible inside the game window. The hotspot can also be specified.
 

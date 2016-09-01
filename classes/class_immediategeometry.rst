@@ -23,7 +23,7 @@ Member Functions
 +-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void  | :ref:`add_vertex<class_ImmediateGeometry_add_vertex>`  **(** :ref:`Vector3<class_vector3>` pos  **)**                                                        |
 +-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`begin<class_ImmediateGeometry_begin>`  **(** :ref:`int<class_int>` primitive, :ref:`Texture<class_texture>` texture=Object()  **)**                    |
+| void  | :ref:`begin<class_ImmediateGeometry_begin>`  **(** :ref:`int<class_int>` primitive, :ref:`Texture<class_texture>` texture=NULL  **)**                        |
 +-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void  | :ref:`clear<class_ImmediateGeometry_clear>`  **(** **)**                                                                                                     |
 +-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -57,7 +57,7 @@ Add a vertex with the currently set color/uv/etc.
 
 .. _class_ImmediateGeometry_begin:
 
-- void  **begin**  **(** :ref:`int<class_int>` primitive, :ref:`Texture<class_texture>` texture=Object()  **)**
+- void  **begin**  **(** :ref:`int<class_int>` primitive, :ref:`Texture<class_texture>` texture=NULL  **)**
 
 Begin drawing (And optionally pass a texture override). When done call end(). For more information on how this works, search for glBegin() glEnd() references.
 

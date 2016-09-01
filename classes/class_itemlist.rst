@@ -13,7 +13,7 @@ ItemList
 Brief Description
 -----------------
 
-
+Control that provides a list of selectable items (and/or icons) in a single column, or optionally in multiple columns.
 
 Member Functions
 ----------------
@@ -128,6 +128,17 @@ Numeric Constants
 - **SELECT_SINGLE** = **0**
 - **SELECT_MULTI** = **1**
 
+Description
+-----------
+
+This control provides a selectable list of items that may be in a single (or multiple columns) with option of text, icons,
+
+or both text and icon.  Tooltips are supported and may be different for every item in the list.  Selectable items in the list
+
+may be selected or deselected and multiple selection may be enabled.  Selection with right mouse button may also be enabled
+
+to allow use of popup context menus.  Items may also be 'activated' with a double click (or Enter key).
+
 Member Function Description
 ---------------------------
 
@@ -135,25 +146,39 @@ Member Function Description
 
 - void  **add_icon_item**  **(** :ref:`Texture<class_texture>` icon, :ref:`bool<class_bool>` selectable=true  **)**
 
+Adds an item to the item list with no text, only an icon.
+
 .. _class_ItemList_add_item:
 
 - void  **add_item**  **(** :ref:`String<class_string>` text, :ref:`Texture<class_texture>` icon=NULL, :ref:`bool<class_bool>` selectable=true  **)**
+
+Adds an item to the item list with specified text.  Specify an icon of null for a list item with no icon.
+
+If selectable is true the list item will be selectable.
 
 .. _class_ItemList_clear:
 
 - void  **clear**  **(** **)**
 
+Remove all items from the list.
+
 .. _class_ItemList_ensure_current_is_visible:
 
 - void  **ensure_current_is_visible**  **(** **)**
+
+Ensure selection is visible, adjusting the scroll position as necessary.
 
 .. _class_ItemList_get_allow_rmb_select:
 
 - :ref:`bool<class_bool>`  **get_allow_rmb_select**  **(** **)** const
 
+Return whether or not items may be selected via right mouse clicking.
+
 .. _class_ItemList_get_fixed_column_width:
 
 - :ref:`int<class_int>`  **get_fixed_column_width**  **(** **)** const
+
+If column size has been fixed to a value, return that value.
 
 .. _class_ItemList_get_fixed_icon_size:
 
@@ -171,9 +196,13 @@ Member Function Description
 
 - :ref:`int<class_int>`  **get_item_at_pos**  **(** :ref:`Vector2<class_vector2>` pos, :ref:`bool<class_bool>` exact=false  **)** const
 
+Given a position within the control return the item (if any) at that point.
+
 .. _class_ItemList_get_item_count:
 
 - :ref:`int<class_int>`  **get_item_count**  **(** **)** const
+
+Return count of items currently in the item list.
 
 .. _class_ItemList_get_item_custom_bg_color:
 
@@ -195,17 +224,25 @@ Member Function Description
 
 - :ref:`String<class_string>`  **get_item_text**  **(** :ref:`int<class_int>` idx  **)** const
 
+Return the text for specified item index.
+
 .. _class_ItemList_get_item_tooltip:
 
 - :ref:`String<class_string>`  **get_item_tooltip**  **(** :ref:`int<class_int>` idx  **)** const
+
+Return tooltip hint for specified item index.
 
 .. _class_ItemList_get_max_columns:
 
 - :ref:`int<class_int>`  **get_max_columns**  **(** **)** const
 
+Return total number of columns in use by the list.
+
 .. _class_ItemList_get_max_text_lines:
 
 - :ref:`int<class_int>`  **get_max_text_lines**  **(** **)** const
+
+Return total number of lines currently in use by the list.
 
 .. _class_ItemList_get_select_mode:
 
@@ -215,39 +252,57 @@ Member Function Description
 
 - :ref:`IntArray<class_intarray>`  **get_selected_items**  **(** **)**
 
-Returns a list of selected indexes.
+Returns the list of selected indexes.
 
 .. _class_ItemList_is_item_disabled:
 
 - :ref:`bool<class_bool>`  **is_item_disabled**  **(** :ref:`int<class_int>` idx  **)** const
 
+Returns whether or not the item at the specified index is disabled
+
 .. _class_ItemList_is_item_selectable:
 
 - :ref:`bool<class_bool>`  **is_item_selectable**  **(** :ref:`int<class_int>` idx  **)** const
+
+Returns whether or not the item at the specified index is selectable.
 
 .. _class_ItemList_is_same_column_width:
 
 - :ref:`int<class_int>`  **is_same_column_width**  **(** **)** const
 
+Returns whether or not all columns of the list are of the same size.
+
 .. _class_ItemList_is_selected:
 
 - :ref:`bool<class_bool>`  **is_selected**  **(** :ref:`int<class_int>` idx  **)** const
+
+Returns whether or not item at the specified index is currently selected.
 
 .. _class_ItemList_remove_item:
 
 - void  **remove_item**  **(** :ref:`int<class_int>` idx  **)**
 
+Remove item at specified index from the list.
+
 .. _class_ItemList_select:
 
 - void  **select**  **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` single=true  **)**
+
+Select the item at the specified index.
+
+Note:  This method does not trigger the item selection signal.
 
 .. _class_ItemList_set_allow_rmb_select:
 
 - void  **set_allow_rmb_select**  **(** :ref:`bool<class_bool>` allow  **)**
 
+Allow (or disallow) selection of (selectable) items in the list using right mouse button.
+
 .. _class_ItemList_set_fixed_column_width:
 
 - void  **set_fixed_column_width**  **(** :ref:`int<class_int>` width  **)**
+
+Set the size (width) all columns in the list are to use.
 
 .. _class_ItemList_set_fixed_icon_size:
 
@@ -269,9 +324,15 @@ Returns a list of selected indexes.
 
 - void  **set_item_disabled**  **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` disabled  **)**
 
+Disable (or enable) item at specified index.
+
+Disabled items are not be selectable and do not fire activation (Enter or double-click) signals.
+
 .. _class_ItemList_set_item_icon:
 
 - void  **set_item_icon**  **(** :ref:`int<class_int>` idx, :ref:`Texture<class_texture>` icon  **)**
+
+Set (or replace) icon of the item at the specified index.
 
 .. _class_ItemList_set_item_icon_region:
 
@@ -281,29 +342,43 @@ Returns a list of selected indexes.
 
 - void  **set_item_metadata**  **(** :ref:`int<class_int>` idx, :ref:`Variant<class_variant>` metadata  **)**
 
+Sets a value (of any type) to be stored with the item at the specified index.
+
 .. _class_ItemList_set_item_selectable:
 
 - void  **set_item_selectable**  **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` selectable  **)**
+
+Allow or disallow selection of the item at the specified index.
 
 .. _class_ItemList_set_item_text:
 
 - void  **set_item_text**  **(** :ref:`int<class_int>` idx, :ref:`String<class_string>` text  **)**
 
+Sets text of item at specified index.
+
 .. _class_ItemList_set_item_tooltip:
 
 - void  **set_item_tooltip**  **(** :ref:`int<class_int>` idx, :ref:`String<class_string>` tooltip  **)**
+
+Sets tooltip hint for item at specified index.
 
 .. _class_ItemList_set_max_columns:
 
 - void  **set_max_columns**  **(** :ref:`int<class_int>` amount  **)**
 
+Set maximum number of columns to use for the list.
+
 .. _class_ItemList_set_max_text_lines:
 
 - void  **set_max_text_lines**  **(** :ref:`int<class_int>` lines  **)**
 
+Set maximum number of lines to use for the list.
+
 .. _class_ItemList_set_same_column_width:
 
 - void  **set_same_column_width**  **(** :ref:`bool<class_bool>` enable  **)**
+
+Sets a fixed size (width) to use for all columns of the list.
 
 .. _class_ItemList_set_select_mode:
 
@@ -313,8 +388,12 @@ Returns a list of selected indexes.
 
 - void  **sort_items_by_text**  **(** **)**
 
+Sorts items in the list by their text.
+
 .. _class_ItemList_unselect:
 
 - void  **unselect**  **(** :ref:`int<class_int>` idx  **)**
+
+Ensure item at specified index is not selected.
 
 
