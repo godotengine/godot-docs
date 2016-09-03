@@ -30,7 +30,8 @@ Distro-specific oneliners
 | **Fedora**    | ::                                                                                                         |
 |               |                                                                                                            |
 |               |     sudo dnf install scons pkgconfig libX11-devel libXcursor-devel libXrandr-devel libXinerama-devel \     |
-|               |         mesa-libGL-devel alsa-lib-devel pulseaudio-libs-devel freetype-devel openssl-devel libudev-devel   |
+|               |         mesa-libGL-devel alsa-lib-devel pulseaudio-libs-devel freetype-devel openssl-devel libudev-devel \ |
+|               |         mesa-libGLU-devel                                                                                  |
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **FreeBSD**   | ::                                                                                                         |
 |               |                                                                                                            |
