@@ -471,7 +471,7 @@ Material that glows from red to white:
 
 ::
 
-    DIFFUSE = vec3(1,0,0) + vec(1,1,1) * mod(TIME, 1.0);
+    DIFFUSE = vec3(1,0,0) + vec3(1,1,1) * mod(TIME, 1.0);
 
 Standard Blinn Lighting Shader
 
