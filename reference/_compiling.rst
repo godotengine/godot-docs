@@ -12,7 +12,7 @@ Compiling
    compiling_for_android
    compiling_for_ios
    cross-compiling_for_ios_on_linux
-   compiling_for_universal_windows_apps
+   compiling_for_uwp
    compiling_for_web
    batch_building_templates
    configuring_an_ide
