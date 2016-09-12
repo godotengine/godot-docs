@@ -7,7 +7,7 @@ There's no extra requirement to export an ``.appx`` package that can be
 installed as a Windows App or submited to the Windows Store. Exporting
 packages also works from any platform, not only on Windows.
 
-However, if you want to install an run the app, you need to sign it with a
+However, if you want to install and run the app, you need to sign it with a
 trusted signature. Currently, Godot supports no signing of packages and you
 need to use externals to tools to do so.
 
@@ -38,10 +38,15 @@ Next, create a Personal Information Exchange (.pfx) file using ``Pvk2Pfx.exe``::
 If you don't specify a password with ``/po`` argument, the PFX will have the
 same password as the private key.
 
+You also need to trust this certificate to be able to actually install the
+apps. Open the Command Prompt as Administrator and run the following command::
+
+    Certutil -addStore TrustedPeople MyKey.cer
+
 Signing the package
 -------------------
 
-Using the ``SignTool.exe`` this requires a single command:;
+Using the ``SignTool.exe`` this requires a single command::
 
     SignTool sign /fd SHA256 /a /f MyKey.pfx /p pfxPassword package.appx
 
