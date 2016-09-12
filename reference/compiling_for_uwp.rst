@@ -74,3 +74,57 @@ Zip according to the target/architecture of the template::
 Move those templates to the ``templates`` folder in Godot settings path. If
 you don't want to replacet the templates, you can set the "Custom Package"
 property in the export window.
+
+Running UWP apps with Visual Studio
+-----------------------------------
+
+If you want to debug the UWP port or simply run your apps without packaging
+and signing, you can deploy and launch them using Visual Studio. It might be
+the easiest way if you are testing on a device such as a Windows Phone or an
+Xbox One.
+
+Within the ANGLE source folder, open ``templates`` and double-click the
+``install.bat`` script file. This will install the Visual Studio project
+templates for ANGLE apps.
+
+If you have not built Godot yet, open the ``winrt/10/src/angle.sln`` solution
+from the ANGLE source and build it to Release/Win32 target. You may also need
+to build it for ARM if you plan to run on a device. You can also use MSBuild if
+you're comfortable with the command line.
+
+Create a new Windows App project using the "App for OpenGL ES
+(Windows Unversal)" project template, which can be found under the
+``Visual C++/Windows/Universal`` category.
+
+This is a base project with the ANGLE dependencies already set up. However, by 
+default it picks the debug version of the DLLs which usually have a very poor
+performance. So in the "Binaries" filter, click in each of the DLLs there
+and in the "Properties" window and change the relative path from
+``Debug_Win32`` to ``Release_Win32`` (or ``Release_ARM`` for devices).
+
+In the same "Binaries" filter, select "Add > Existing Item" and point to the
+Godot executable for UWP you have. In the "Properties" window, set "Content"
+to ``True`` so it's included in the project.
+
+Right-click the ``Package.appxmanifest`` file and select "Open With... > XML
+(Text) Editor". In the ``Package/Applications/Application`` element, replace
+the ``Executable`` attribute from ``$targetnametoken$.exe`` to
+``godot.winrt.exe`` (or whatever your Godot executable is called). Also change
+the ``EntryPoint`` attribute to ``GodotWinRT.App``. This will ensure that
+the Godot executable is correctly called when the app starts.
+
+Create a folder (*not* a filter) called ``game`` in your Visual Studio project
+folder and there you can put either a ``data.pck`` file or your Godot project
+files. After that, make sure to include it all with the "Add > Existing Item"
+command and set their "Content" property to ``True`` so they're copied to the
+app.
+
+To ease the workflow, you can open the "Solution Properties" and in the
+"Configuration" section untick the "Build" option for the app. You still have
+to build it at least once to generate some needed files, you can do so by
+right-clicking the project (*not* the solution) in the "Solution Explorer" and
+selecting "Build".
+
+Now you can just run the project and your app should open. You can use also
+the "Start Without Debugging" from the "Debug" menu (Ctrl+F5) to make it
+launch faster.
