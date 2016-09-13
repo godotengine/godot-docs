@@ -16,6 +16,15 @@ Requirements
 -  `ANGLE source <https://github.com/Microsoft/angle>`__. Use the 
    ``ms_master`` (default) branch. Keep it in a path without spaces to
    avoid problems.
+   
+Limitations on Xbox One
+------------
+
+As described in `UWP documentation <https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/system-resource-allocation>`__:
+
+- available RAM is 1GB (after exceeding it, application will encounter memory allocation failures)
+- share of 2-4 CPU cores
+- share of 45% of GPU power
 
 Compiling
 ---------
