@@ -14,6 +14,15 @@ need to use externals to tools to do so.
 Also, make sure the Publisher name you set when export the package matches
 the name on the certificate.
 
+Limitations on Xbox One
+------------
+
+As described in `UWP documentation <https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/system-resource-allocation>`__:
+
+- available RAM is 1GB (after exceeding it, application will encounter memory allocation failures and will crash)
+- share of 2-4 CPU cores
+- share of 45% of GPU power
+
 Creating a signing certificate
 ------------------------------
 
