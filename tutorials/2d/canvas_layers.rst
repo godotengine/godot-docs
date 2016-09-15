@@ -53,7 +53,7 @@ layer "0", while a CanvasLayer will draw at any numeric layer. Layers
 with a greater number will be drawn above those with a smaller number.
 CanvasLayers also have their own transform, and do not depend of the
 transform of other layers. This allows the UI to be fixed in-place,
-while the word moves.
+while the world moves.
 
 An example of this is creating a parallax background. This can be done
 with a CanvasLayer at layer "-1". The screen with the points, life
