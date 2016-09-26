@@ -387,7 +387,7 @@ two vectors, we must do:
 What is this useful for? Well obtaining the angle directly is probably
 not as useful, but just being able to tell the angle is useful for
 reference. One example is in the `Kinematic
-Character <https://github.com/godotengine/godot/blob/master/demos/2d/kinematic_char/player.gd#L879>`__
+Character <https://github.com/godotengine/godot-demo-projects/blob/master/2d/kinematic_char/player.gd#L79>`__
 demo, when the character moves in a certain direction then we hit an
 object. How to tell if what we hit is the floor?
 
@@ -396,7 +396,7 @@ computed angle.
 
 The beauty of this is that the same code works exactly the same and
 without modification in
-`3D <https://github.com/godotengine/godot/blob/master/demos/3d/kinematic_char/cubio.gd#L57>`__.
+`3D <https://github.com/godotengine/godot-demo-projects/blob/master/3d/kinematic_char/cubio.gd#L57>`__.
 Vector math is, in a great deal, dimension-amount-independent, so adding
 or removing an axis only adds very little complexity.
 
