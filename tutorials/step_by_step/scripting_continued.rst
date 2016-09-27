@@ -48,7 +48,7 @@ with the following script:
         accum += delta
         set_text(str(accum))
 
-Which will show a counter increasing each second.
+Which will show a counter increasing each frame.
 
 Groups
 ------
