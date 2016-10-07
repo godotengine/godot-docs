@@ -75,11 +75,6 @@ here's a simple example of how GDScript looks.
     const answer = 42
     const thename = "Charly"
 
-    # enums (Godot 2.2+)
-
-    enum {UNIT_NEUTRAL, UNIT_ENEMY, UNIT_ALLY}
-    enum Named {THING_1, THING_2, ANOTHER_THING = -1}
-
     # built-in vector types
 
     var v2 = Vector2(1, 2)
@@ -185,8 +180,6 @@ keywords are reserved words (tokens), they can't be used as identifiers.
 +------------+---------------------------------------------------------------------------------------------------------------+
 | const      | Defines a constant.                                                                                           |
 +------------+---------------------------------------------------------------------------------------------------------------+
-| enum       | Defines an enum. (Godot 2.2+)                                                                                 |
-+------------+---------------------------------------------------------------------------------------------------------------+
 | var        | Defines a variable.                                                                                           |
 +------------+---------------------------------------------------------------------------------------------------------------+
 | onready    | Initializes a variable once the Node the script is attached to and its children are part of the scene tree.   |
@@ -238,8 +231,6 @@ The following is the list of supported operators and their precedence
 | ``and`` ``&&``                                                | Boolean AND                             |
 +---------------------------------------------------------------+-----------------------------------------+
 | ``or`` ``||``                                                 | Boolean OR                              |
-+---------------------------------------------------------------+-----------------------------------------+
-| ``if x else``                                                 | Ternary if/else (Godot 2.2+)            |
 +---------------------------------------------------------------+-----------------------------------------+
 | ``=`` ``+=`` ``-=`` ``*=`` ``/=`` ``%=`` ``&=`` ``|=``        | Assignment, Lowest Priority             |
 +---------------------------------------------------------------+-----------------------------------------+
@@ -526,34 +517,6 @@ expressions and must be assigned on initialization.
     const f = sin(20)  # sin() can be used in constant expressions
     const g = x + 20  # invalid; this is not a constant expression!
     
-Enums
-^^^^^
-
-*Note, only available in Godot 2.2 or higher.*
-
-Enums are basically a shorthand for constants, and are pretty useful if you
-want to assign consecutive integers to some constant.
-
-If you pass a name to the enum, it would also put all the values inside a
-constant dictionary of that name.
-
-::
-
-    enum {TILE_BRICK, TILE_FLOOR, TILE_SPIKE, TILE_TELEPORT}
-    # Is the same as:
-    const TILE_BRICK = 0
-    const TILE_FLOOR = 1
-    const TILE_SPIKE = 2
-    const TILE_TELEPORT = 3
-
-    enum State {STATE_IDLE, STATE_JUMP = 5, STATE_SHOOT}
-    # Is the same as:
-    const STATE_IDLE = 0
-    const STATE_JUMP = 5
-    const STATE_SHOOT = 6
-    const State = {STATE_IDLE = 0, STATE_JUMP = 5, STATE_SHOOT = 6}
-
-
 Functions
 ~~~~~~~~~
 
@@ -649,13 +612,6 @@ Short statements can be written on the same line as the condition::
     else:
         var x = 3 + 3
         return x
-
-Sometimes you might want to assign a different initial value based on a
-boolean expression. In this case ternary-if expressions come in handy
-(Godot 2.2+)::
-
-    var x = [true-value] if [expression] else [false-value]
-    y += 3 if y < 10 else -1
 
 while
 ^^^^^
@@ -1184,9 +1140,6 @@ signal is received, execution will recommence. Here are some examples:
 
     # Resume execution when animation is done playing:
     yield( get_node("AnimationPlayer"), "finished" )
-
-    # Wait 5 seconds, then resume execution (Godot 2.2+)
-    yield( get_tree().create_timer(5.0), "timeout" )
 
 Onready keyword
 ~~~~~~~~~~~~~~~
