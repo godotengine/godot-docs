@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Godot Engine's documentation!
-========================================
+Documentation for Godot Engine 2.1.x (stable)
+=============================================
 
 **Note:** Godot Engine is an open source project developed by a community of volunteers.
 It means that the documentation team can always use your feedback and help to improve our
