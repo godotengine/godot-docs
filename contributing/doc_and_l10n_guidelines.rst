@@ -65,14 +65,18 @@ with a capitalized letter, and every following word should not. Thus,
 this is a good example:
 
 -  Insert your title here
-   And this is a bad example:
+
+And this is a bad example:
+
 -  Insert Your Title Here
 
 Only project names (and people names) should have capitalized first
 letter. This is good:
 
 -  Starting up with Godot Engine
-   and this is bad:
+
+And this is bad:
+
 -  Starting up with godot engine
 
 Note for non-English authors
