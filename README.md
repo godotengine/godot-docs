@@ -55,6 +55,18 @@ make html
 The compilation might take some time as the `classes/` folder contains many files to parse.  
 You can then test the changes live by opening `_build/html/index.html` in your favourite browser.
 
+### Building with Sphinx on Windows
+
+On Windows, you need to: 
+* Download the python installer [here](https://www.python.org/downloads/).
+* Install python. Don't forget to check the "Add python to PATH" box.
+* Use the above pip commands.
+
+Building is still done at the root folder of this repository, but with this command line instead:
+```sh
+sphinx-build -b html ./ _build
+```
+
 ### Building with Sphinx and virtualenv
 
 If you want your Sphinx installation scoped to the project, you can install it using virtualenv.
