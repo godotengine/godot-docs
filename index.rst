@@ -6,6 +6,9 @@
 Documentation for Godot Engine 2.1.x (stable)
 =============================================
 
+Looking for the documentation of the current **development** branch?
+`Have a look here </en/latest/>`_.
+
 **Note:** Godot Engine is an open source project developed by a community of volunteers.
 It means that the documentation team can always use your feedback and help to improve our
 tutorials and class reference. So if you don't manage to understand something, or can't find
