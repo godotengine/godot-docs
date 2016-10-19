@@ -86,6 +86,20 @@ Example for using 4 cores:
 
     user@host:~/godot$ scons platform=x11 -j 4
 
+The default build is not heavily optimized, to allow
+for easier debugging of the editor binary. To make
+a faster executable:
+
+::
+
+    user@host:~/godot$ scons platform=x11 target=release_debug
+
+Example putting everything together:
+
+::
+
+    user@host:~/godot$ scons platform=x11 target=release_debug -j 4
+
 Resulting binary
 ----------------
 
