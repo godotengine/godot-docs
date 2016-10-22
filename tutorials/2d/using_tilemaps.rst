@@ -28,13 +28,14 @@ Create a new project and move the above png image into the directory.
 
 We will be creating a :ref:`TileSet <class_TileSet>`
 resource. While this resource exports properties, it's pretty difficult
-to get complex data into it and maintain it:
+to get complex data into it and maintain it. Here is what it would look like to
+manually edit the resource:
 
 .. image:: /img/tileset_edit_resource.png
 
 There's enough properties to get by, and with some effort editing this
-way can work, but the easiest way to edit and maintain a tileset is with
-the export tool!
+way can work, but the easiest way to edit and maintain a tileset is exporting
+it from a specially-crafted scene!
 
 TileSet scene
 -------------
