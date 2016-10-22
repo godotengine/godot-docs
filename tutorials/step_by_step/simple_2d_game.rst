@@ -27,8 +27,11 @@ resolution. This can be configured in the Project Settings (see :ref:`doc_scenes
 .. image:: /img/clearcolor.png
 
 Create a :ref:`class_Node2D` node for the project root. Node2D is the base
-type for the 2D engine. After this, add 4 sprites (:ref:`class_Sprite`
-node). The scene tree should, then, look similar to this:
+type for the 2D engine. After this, add some sprites (:ref:`class_Sprite`
+node) for the left and right paddles, the separator and ball. You can set
+a custom name for each node, and set the texture for each sprite in the
+Inspector. The result should look similar to this (note: the ball is in
+the middle!):
 
 .. image:: /img/pong_nodes.png
 

@@ -59,7 +59,7 @@ Open the container scene, then select the root node:
 
 .. image:: /img/controot.png
 
-Afterwards, push the '+' shaped button, this is the instancing button!
+Afterwards, push the link shaped button, this is the instancing button!
 
 .. image:: /img/continst.png
 
