@@ -35,9 +35,11 @@ respect the following rules (and the ones on the repo).
 Titles
 ------
 
-Always begin pages with their title:
+Always begin pages with their title and a Sphinx reference name:
 
 ::
+
+    .. _doc_insert_your_title_here:
 
     Insert your title here
     ======================
