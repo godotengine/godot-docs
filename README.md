@@ -48,6 +48,7 @@ pip3 install sphinx_rtd_theme
 ```
 
 You can then build the HTML documentation from the root folder of this repository with:
+
 ```sh
 make html
 ```
@@ -58,9 +59,9 @@ You can then test the changes live by opening `_build/html/index.html` in your f
 ### Building with Sphinx on Windows
 
 On Windows, you need to: 
-* Download the python installer [here](https://www.python.org/downloads/).
-* Install python. Don't forget to check the "Add python to PATH" box.
-* Use the above pip commands.
+* Download the Python installer [here](https://www.python.org/downloads/).
+* Install Python. Don't forget to check the "Add Python to PATH" box.
+* Use the above `pip` commands.
 
 Building is still done at the root folder of this repository, but with this command line instead:
 ```sh
