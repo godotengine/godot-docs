@@ -799,9 +799,12 @@ special export syntax is provided.
     export(int) var number
 
     # Export can also take a resource type to use as a hint
-
+    
+    # Select Texture image
     export(Texture) var character_face
-
+    # Select a scene file from your project
+    export (PackedScene) var scene_file
+   
     # Integers and strings hint enumerated values
 
     # Editor will enumerate as 0, 1 and 2
