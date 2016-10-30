@@ -79,7 +79,7 @@ originally only rendered triangles, so all the vertices:
 
 1. Had to be transformed by the CPU (including clipping).
 
-1. Had to be sent to the GPU memory from the main RAM.
+2. Had to be sent to the GPU memory from the main RAM.
 
 Nowadays, all this is handled inside the GPU, so the performance is
 extremely high. 3D artists usually have the wrong feeling about
