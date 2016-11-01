@@ -25,8 +25,8 @@ you want to build. Check :ref:`doc_compiling_for_windows` to see how these
 prompts work.
 
 There are three target architectures for UWP: x86 (32-bits), x64 (64-bits)
-and ARM (32-bits). You can run ``vcvarsall.bat`` with ``arm`` as argument to
-set the environment for this target architecture.
+and ARM (32-bits). For the latter, you can run ``vcvarsall.bat`` with
+``x86_arm`` or ``amd64_arm`` as argument to set the environment.
 
 Set the ``ANGLE_SRC_PATH`` to the directory where you downloaded the ANGLE
 source code. The build process will also build ANGLE to produce the
