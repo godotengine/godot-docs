@@ -34,7 +34,7 @@ required DLLs for the selected architecture.
 
 Once you're set, run the SCons command similarly to the other platforms::
 
-    C:\godot>scons platform=winrt
+    C:\godot>scons platform=uwp
 
 Creating UWP export templates
 -----------------------------
@@ -46,17 +46,17 @@ be able to export.
 Open the command prompt for one architecture and run SCons twice (once for
 each target)::
 
-    C:\godot>scons platform=winrt target=release_debug
-    C:\godot>scons platform=winrt target=release
+    C:\godot>scons platform=uwp target=release_debug
+    C:\godot>scons platform=uwp target=release
 
 Repeat for the other architectures.
 
 In the end your ``bin`` folder will have the ``.exe`` binaries with a name
-like ``godot.winrt.opt.debug.32.x86.exe`` (with variations for each
+like ``godot.uwp.opt.debug.32.x86.exe`` (with variations for each
 target/arch).
 
 Copy one of these to ``tools/dist/uwp_template`` inside the Godot source
-folder and rename the binary to ``godot.winrt.exe``. From the ANGLE source,
+folder and rename the binary to ``godot.uwp.exe``. From the ANGLE source,
 under ``winrt/10/src/Release_%arch%`` (where ``%arch%`` can be ``Win32``,
 ``x64`` or ``ARM``), get the ``libEGL.dll`` and the ``libGLESv2.dll``,
 putting them along with the executable.
@@ -64,12 +64,12 @@ putting them along with the executable.
 Add the files in the ``uwp_template`` folder to a ZIP. Rename the resulting
 Zip according to the target/architecture of the template::
 
-    winrt_x86_debug.zip
-    winrt_x86_release.zip
-    winrt_x64_debug.zip
-    winrt_x64_release.zip
-    winrt_arm_debug.zip
-    winrt_arm_release.zip
+    uwp_x86_debug.zip
+    uwp_x86_release.zip
+    uwp_x64_debug.zip
+    uwp_x64_release.zip
+    uwp_arm_debug.zip
+    uwp_arm_release.zip
 
 Move those templates to the ``templates`` folder in Godot settings path. If
 you don't want to replacet the templates, you can set the "Custom Package"
@@ -109,8 +109,8 @@ to ``True`` so it's included in the project.
 Right-click the ``Package.appxmanifest`` file and select "Open With... > XML
 (Text) Editor". In the ``Package/Applications/Application`` element, replace
 the ``Executable`` attribute from ``$targetnametoken$.exe`` to
-``godot.winrt.exe`` (or whatever your Godot executable is called). Also change
-the ``EntryPoint`` attribute to ``GodotWinRT.App``. This will ensure that
+``godot.uwp.exe`` (or whatever your Godot executable is called). Also change
+the ``EntryPoint`` attribute to ``GodotUWP.App``. This will ensure that
 the Godot executable is correctly called when the app starts.
 
 Create a folder (*not* a filter) called ``game`` in your Visual Studio project
