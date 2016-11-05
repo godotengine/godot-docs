@@ -121,12 +121,14 @@ Compiling to WebAssembly
 The current default for exporting to the web is to compile to *asm.js*, a
 highly optimizable subset of JavaScript.
 
-It is also possible to compile to the experimental WebAssembly format, which
+It is also possible to compile to the experimental *WebAssembly* format, which
 should eventually offer better performance and loading times. Its specification
 is still in flux and compile tools may sporadically fail to build Godot.
 Running a game per WebAssembly requires nightly browser builds with special
 flags set. As such, WebAssembly builds are currently not suitable for
 publishing.
+
+Compiling to WebAssembly requires using the `incoming branch of Emscripten <http://kripken.github.io/emscripten-site/docs/building_from_source/building_emscripten_from_source_using_the_sdk.html#building-emscripten-from-the-main-repositories>`_.
 
 WebAssembly can be compiled in two ways: The default way is to first
 compile to asm.js similarly to the default method, then translate to
@@ -135,7 +137,7 @@ care of both processes, we simply run SCons.
 
 The other method uses LLVM's WebAssembly backend, which should eventually
 produce more performant binaries. To build LLVM with this backend, set the
-CMake variable ``LLVM_EXPERIMENTAL_TARGETS_TO_BUILD` to ``WebAssembly`` when
+CMake variable ``LLVM_EXPERIMENTAL_TARGETS_TO_BUILD`` to ``WebAssembly`` when
 building LLVM.
 
 Compiling with this backend outputs files in LLVM's ``.s`` format, which is
@@ -159,10 +161,9 @@ These commands will build WebAssembly binaries in either release or debug mode.
 The generated files' names contain ``.webassembly`` as an additional file
 suffix before the extension.
 
-WebAssembly builds do not use a memory initializer file, so do not add a
-``godot.mem`` file in the archive — there is none.
-However, the binary WebAssembly file with the ``.wasm`` extension must be
-added to the archive as ``godot.wasm``.
+In order to build the actual WebAssembly export templates, the WebAssembly
+binary file with the ``.wasm`` extension must be added alongside the usual
+files to the archive as ``godot.wasm``.
 
 For the release template::
 
@@ -171,6 +172,9 @@ For the release template::
 For the debug template::
 
    cp bin/godot.javascript.opt.debug.webassembly.wasm godot.wasm
+
+WebAssembly builds do not use a memory initializer file, so do not add a
+``godot.mem`` file to the archive — there is none.
 
 The WebAssembly export templates simply replace the previous asm.js-based web
 export templates with the names ``javascript_release.zip`` and
