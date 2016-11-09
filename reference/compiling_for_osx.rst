@@ -22,7 +22,7 @@ Start a terminal, go to the root dir of the engine source code and type:
 
 ::
 
-    user@host:~/godot$ scons platform=osx
+    user@host:~/godot$ scons platform=osx bits=64 target=release_debug
 
 If all goes well, the resulting binary executable will be placed in the
 "bin" subdirectory. This executable file contains the whole engine and
@@ -30,11 +30,11 @@ runs without any dependencies. Executing it will bring up the project
 manager.
 
 To create an .app like in the official builds, you need to use the template
-located in ``tools/Godot.app``. Typically:
+located in ``tools/dist/osx_tools.app/Contents/MacOS/Godot``. Typically:
 
 ::
 
-    user@host:~/godot$ cp -r tools/Godot.app .
+    user@host:~/godot$ cp -r tools/dist/osx_tools.app/Contents/MacOS/Godot .
     user@host:~/godot$ mkdir -p Godot.app/Contents/MacOS
     user@host:~/godot$ cp bin/godot.osx.opt.tools.64 Godot.app/Contents/MacOS/Godot
     user@host:~/godot$ chmod +x Godot.app/Contents/MacOS/Godot
