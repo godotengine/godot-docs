@@ -66,7 +66,7 @@ tree fashion). It has the following properties:
 -  Scenes can be *instanced* (more on that later).
 -  Running a game means running a scene.
 -  There can be several scenes in a project, but for it to start, one of
-   them must selected to be loaded first.
+   them must be selected to be loaded first.
 
 Basically, the Godot editor is a **scene editor**. It has plenty of
 tools for editing 2D and 3D scenes as well as user interfaces, but all
@@ -76,11 +76,11 @@ that compose it.
 Creating a new project
 ----------------------
 
-Theory is boring, so let's change subject and go practical. Following a
+Theory is boring, so let's change the subject and go practical. Following a
 long tradition in tutorials, the first project will be a hello world.
 For this, the editor will be used.
 
-When godot executable is run outside a project, the Project Manager
+When the godot executable is run outside a project, the Project Manager
 appears. This helps developers manage their projects.
 
 .. image:: /img/project_manager.png
@@ -148,8 +148,8 @@ hello.scn in Scene -> Save:
 .. image:: /img/save_scene.png
 
 And here's when something funny happens. The file dialog is a special
-file dialog, and only allows to save inside the project. The project
-root is "res://" which means "resource path. This means that files can
+file dialog, and only allows you to save inside the project. The project
+root is "res://" which means "resource path". This means that files can
 only be saved inside the project. For the future, when doing file
 operations in Godot, remember that "res://" is the resource path, and no
 matter the platform or install location, it is the way to locate where
