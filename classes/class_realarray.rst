@@ -16,17 +16,27 @@ Real Array .
 Member Functions
 ----------------
 
-+------------------------------------+----------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`push_back<class_RealArray_push_back>`  **(** :ref:`float<class_float>` value  **)**                |
-+------------------------------------+----------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`resize<class_RealArray_resize>`  **(** :ref:`int<class_int>` idx  **)**                            |
-+------------------------------------+----------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set<class_RealArray_set>`  **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` value  **)** |
-+------------------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`              | :ref:`size<class_RealArray_size>`  **(** **)**                                                           |
-+------------------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`RealArray<class_realarray>`  | :ref:`RealArray<class_RealArray_RealArray>`  **(** :ref:`Array<class_array>` from  **)**                 |
-+------------------------------------+----------------------------------------------------------------------------------------------------------+
++------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| :ref:`RealArray<class_realarray>`  | :ref:`RealArray<class_RealArray_RealArray>`  **(** :ref:`Array<class_array>` from  **)**                       |
++------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`append<class_RealArray_append>`  **(** :ref:`float<class_float>` value  **)**                            |
++------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`append_array<class_RealArray_append_array>`  **(** :ref:`RealArray<class_realarray>` array  **)**        |
++------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`              | :ref:`insert<class_RealArray_insert>`  **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` value  **)** |
++------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`invert<class_RealArray_invert>`  **(** **)**                                                             |
++------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`push_back<class_RealArray_push_back>`  **(** :ref:`float<class_float>` value  **)**                      |
++------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`remove<class_RealArray_remove>`  **(** :ref:`int<class_int>` idx  **)**                                  |
++------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`resize<class_RealArray_resize>`  **(** :ref:`int<class_int>` idx  **)**                                  |
++------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set<class_RealArray_set>`  **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` value  **)**       |
++------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`              | :ref:`size<class_RealArray_size>`  **(** **)**                                                                 |
++------------------------------------+----------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -36,24 +46,64 @@ Real Array. Array of floating point values. Can only contain floats. Optimized f
 Member Function Description
 ---------------------------
 
+.. _class_RealArray_RealArray:
+
+- :ref:`RealArray<class_realarray>`  **RealArray**  **(** :ref:`Array<class_array>` from  **)**
+
+Create from a generic array.
+
+.. _class_RealArray_append:
+
+- void  **append**  **(** :ref:`float<class_float>` value  **)**
+
+Append an element at the end of the array (alias of :ref:`push_back<class_RealArray_push_back>`).
+
+.. _class_RealArray_append_array:
+
+- void  **append_array**  **(** :ref:`RealArray<class_realarray>` array  **)**
+
+Append an :ref:`RealArray<class_realarray>` at the end of this array.
+
+.. _class_RealArray_insert:
+
+- :ref:`int<class_int>`  **insert**  **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` value  **)**
+
+Insert a new element at a given position in the array. The position must be valid, or at the end of the array (pos==size()).
+
+.. _class_RealArray_invert:
+
+- void  **invert**  **(** **)**
+
+Reverse the order of the elements in the array (so first element will now be the last).
+
 .. _class_RealArray_push_back:
 
 - void  **push_back**  **(** :ref:`float<class_float>` value  **)**
+
+Append an element at the end of the array.
+
+.. _class_RealArray_remove:
+
+- void  **remove**  **(** :ref:`int<class_int>` idx  **)**
+
+Remove an element from the array by index.
 
 .. _class_RealArray_resize:
 
 - void  **resize**  **(** :ref:`int<class_int>` idx  **)**
 
+Set the size of the :ref:`RealArray<class_realarray>`. If larger than the current size it will reserve some space beforehand, and if it is smaller it will cut off the array.
+
 .. _class_RealArray_set:
 
 - void  **set**  **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` value  **)**
+
+Change the float at the given index.
 
 .. _class_RealArray_size:
 
 - :ref:`int<class_int>`  **size**  **(** **)**
 
-.. _class_RealArray_RealArray:
-
-- :ref:`RealArray<class_realarray>`  **RealArray**  **(** :ref:`Array<class_array>` from  **)**
+Return the size of the array.
 
 

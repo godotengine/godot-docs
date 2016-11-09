@@ -21,21 +21,21 @@ Member Functions
 ----------------
 
 +----------------------------+-------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_flag<class_Material_set_flag>`  **(** :ref:`int<class_int>` flag, :ref:`bool<class_bool>` enable  **)** |
+| :ref:`int<class_int>`      | :ref:`get_blend_mode<class_Material_get_blend_mode>`  **(** **)** const                                           |
++----------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`get_depth_draw_mode<class_Material_get_depth_draw_mode>`  **(** **)** const                                 |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`    | :ref:`get_flag<class_Material_get_flag>`  **(** :ref:`int<class_int>` flag  **)** const                           |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_blend_mode<class_Material_set_blend_mode>`  **(** :ref:`int<class_int>` mode  **)**                     |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_blend_mode<class_Material_get_blend_mode>`  **(** **)** const                                           |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_line_width<class_Material_set_line_width>`  **(** :ref:`float<class_float>` width  **)**                |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_line_width<class_Material_get_line_width>`  **(** **)** const                                           |
++----------------------------+-------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_blend_mode<class_Material_set_blend_mode>`  **(** :ref:`int<class_int>` mode  **)**                     |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`set_depth_draw_mode<class_Material_set_depth_draw_mode>`  **(** :ref:`int<class_int>` mode  **)**           |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_depth_draw_mode<class_Material_get_depth_draw_mode>`  **(** **)** const                                 |
+| void                       | :ref:`set_flag<class_Material_set_flag>`  **(** :ref:`int<class_int>` flag, :ref:`bool<class_bool>` enable  **)** |
++----------------------------+-------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_line_width<class_Material_set_line_width>`  **(** :ref:`float<class_float>` width  **)**                |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
@@ -67,11 +67,15 @@ Material is a base :ref:`Resource<class_resource>` used for coloring and shading
 Member Function Description
 ---------------------------
 
-.. _class_Material_set_flag:
+.. _class_Material_get_blend_mode:
 
-- void  **set_flag**  **(** :ref:`int<class_int>` flag, :ref:`bool<class_bool>` enable  **)**
+- :ref:`int<class_int>`  **get_blend_mode**  **(** **)** const
 
-Set a :ref:`Material<class_material>` flag, which toggles on or off a behavior when rendering. See enumeration FLAG\_\* for a list.
+Return blend mode for the material, which can be one of BLEND_MODE_MIX (default), BLEND_MODE_ADD, BLEND_MODE_SUB. Keep in mind that only BLEND_MODE_MIX ensures that the material *may* be opaque, any other blend mode will render with alpha blending enabled in raster-based :ref:`VisualServer<class_visualserver>` implementations.
+
+.. _class_Material_get_depth_draw_mode:
+
+- :ref:`int<class_int>`  **get_depth_draw_mode**  **(** **)** const
 
 .. _class_Material_get_flag:
 
@@ -79,36 +83,32 @@ Set a :ref:`Material<class_material>` flag, which toggles on or off a behavior w
 
 Return a :ref:`Material<class_material>` flag, which toggles on or off a behavior when rendering. See enumeration FLAG\_\* for a list.
 
-.. _class_Material_set_blend_mode:
-
-- void  **set_blend_mode**  **(** :ref:`int<class_int>` mode  **)**
-
-Set blend mode for the material, which can be one of BLEND_MODE_MIX (default), BLEND_MODE_ADD, BLEND_MODE_SUB. Keep in mind that only BLEND_MODE_MIX ensures that the material *may* be opaque, any other blend mode will render with alpha blending enabled in raster-based :ref:`VisualServer<class_visualserver>` implementations.
-
-.. _class_Material_get_blend_mode:
-
-- :ref:`int<class_int>`  **get_blend_mode**  **(** **)** const
-
-Return blend mode for the material, which can be one of BLEND_MODE_MIX (default), BLEND_MODE_ADD, BLEND_MODE_SUB. Keep in mind that only BLEND_MODE_MIX ensures that the material *may* be opaque, any other blend mode will render with alpha blending enabled in raster-based :ref:`VisualServer<class_visualserver>` implementations.
-
-.. _class_Material_set_line_width:
-
-- void  **set_line_width**  **(** :ref:`float<class_float>` width  **)**
-
-Set the line width for geometry drawn with FLAG_WIREFRAME enabled, or LINE primitives. Note that not all hardware or VisualServer backends support this (like DirectX).
-
 .. _class_Material_get_line_width:
 
 - :ref:`float<class_float>`  **get_line_width**  **(** **)** const
 
 Return the line width for geometry drawn with FLAG_WIREFRAME enabled, or LINE primitives. Note that not all hardware or VisualServer backends support this (like DirectX).
 
+.. _class_Material_set_blend_mode:
+
+- void  **set_blend_mode**  **(** :ref:`int<class_int>` mode  **)**
+
+Set blend mode for the material, which can be one of BLEND_MODE_MIX (default), BLEND_MODE_ADD, BLEND_MODE_SUB. Keep in mind that only BLEND_MODE_MIX ensures that the material *may* be opaque, any other blend mode will render with alpha blending enabled in raster-based :ref:`VisualServer<class_visualserver>` implementations.
+
 .. _class_Material_set_depth_draw_mode:
 
 - void  **set_depth_draw_mode**  **(** :ref:`int<class_int>` mode  **)**
 
-.. _class_Material_get_depth_draw_mode:
+.. _class_Material_set_flag:
 
-- :ref:`int<class_int>`  **get_depth_draw_mode**  **(** **)** const
+- void  **set_flag**  **(** :ref:`int<class_int>` flag, :ref:`bool<class_bool>` enable  **)**
+
+Set a :ref:`Material<class_material>` flag, which toggles on or off a behavior when rendering. See enumeration FLAG\_\* for a list.
+
+.. _class_Material_set_line_width:
+
+- void  **set_line_width**  **(** :ref:`float<class_float>` width  **)**
+
+Set the line width for geometry drawn with FLAG_WIREFRAME enabled, or LINE primitives. Note that not all hardware or VisualServer backends support this (like DirectX).
 
 

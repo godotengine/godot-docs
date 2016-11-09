@@ -13,33 +13,17 @@ File
 Brief Description
 -----------------
 
-
+Type to handle file reading and writing operations.
 
 Member Functions
 ----------------
 
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                  | :ref:`open_encrypted<class_File_open_encrypted>`  **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`RawArray<class_rawarray>` key  **)**                  |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                  | :ref:`open_encrypted_with_pass<class_File_open_encrypted_with_pass>`  **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`String<class_string>` pass  **)** |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                  | :ref:`open<class_File_open>`  **(** :ref:`String<class_string>` path, :ref:`int<class_int>` flags  **)**                                                                                |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`close<class_File_close>`  **(** **)**                                                                                                                                             |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`is_open<class_File_is_open>`  **(** **)** const                                                                                                                                   |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`seek<class_File_seek>`  **(** :ref:`int<class_int>` pos  **)**                                                                                                                    |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`seek_end<class_File_seek_end>`  **(** :ref:`int<class_int>` pos=0  **)**                                                                                                          |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                  | :ref:`get_pos<class_File_get_pos>`  **(** **)** const                                                                                                                                   |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                  | :ref:`get_len<class_File_get_len>`  **(** **)** const                                                                                                                                   |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                | :ref:`eof_reached<class_File_eof_reached>`  **(** **)** const                                                                                                                           |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                  | :ref:`get_8<class_File_get_8>`  **(** **)** const                                                                                                                                       |
+| :ref:`bool<class_bool>`                | :ref:`file_exists<class_File_file_exists>`  **(** :ref:`String<class_string>` path  **)** const                                                                                         |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`get_16<class_File_get_16>`  **(** **)** const                                                                                                                                     |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -47,29 +31,51 @@ Member Functions
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`get_64<class_File_get_64>`  **(** **)** const                                                                                                                                     |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_float<class_File_get_float>`  **(** **)** const                                                                                                                               |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_double<class_File_get_double>`  **(** **)** const                                                                                                                             |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_real<class_File_get_real>`  **(** **)** const                                                                                                                                 |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RawArray<class_rawarray>`        | :ref:`get_buffer<class_File_get_buffer>`  **(** :ref:`int<class_int>` len  **)** const                                                                                                  |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`            | :ref:`get_line<class_File_get_line>`  **(** **)** const                                                                                                                                 |
+| :ref:`int<class_int>`                  | :ref:`get_8<class_File_get_8>`  **(** **)** const                                                                                                                                       |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`            | :ref:`get_as_text<class_File_get_as_text>`  **(** **)** const                                                                                                                           |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`get_endian_swap<class_File_get_endian_swap>`  **(** **)**                                                                                                                         |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_endian_swap<class_File_set_endian_swap>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                         |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Error                                  | :ref:`get_error<class_File_get_error>`  **(** **)** const                                                                                                                               |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`get_var<class_File_get_var>`  **(** **)** const                                                                                                                                   |
+| :ref:`RawArray<class_rawarray>`        | :ref:`get_buffer<class_File_get_buffer>`  **(** :ref:`int<class_int>` len  **)** const                                                                                                  |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`StringArray<class_stringarray>`  | :ref:`get_csv_line<class_File_get_csv_line>`  **(** :ref:`String<class_string>` delim=","  **)** const                                                                                  |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`store_8<class_File_store_8>`  **(** :ref:`int<class_int>` value  **)**                                                                                                            |
+| :ref:`float<class_float>`              | :ref:`get_double<class_File_get_double>`  **(** **)** const                                                                                                                             |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`get_endian_swap<class_File_get_endian_swap>`  **(** **)**                                                                                                                         |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Error                                  | :ref:`get_error<class_File_get_error>`  **(** **)** const                                                                                                                               |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_float<class_File_get_float>`  **(** **)** const                                                                                                                               |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`get_len<class_File_get_len>`  **(** **)** const                                                                                                                                   |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`get_line<class_File_get_line>`  **(** **)** const                                                                                                                                 |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`get_md5<class_File_get_md5>`  **(** :ref:`String<class_string>` path  **)** const                                                                                                 |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`get_pascal_string<class_File_get_pascal_string>`  **(** **)**                                                                                                                     |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`get_pos<class_File_get_pos>`  **(** **)** const                                                                                                                                   |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_real<class_File_get_real>`  **(** **)** const                                                                                                                                 |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`get_sha256<class_File_get_sha256>`  **(** :ref:`String<class_string>` path  **)** const                                                                                           |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`get_var<class_File_get_var>`  **(** **)** const                                                                                                                                   |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`is_open<class_File_is_open>`  **(** **)** const                                                                                                                                   |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`open<class_File_open>`  **(** :ref:`String<class_string>` path, :ref:`int<class_int>` flags  **)**                                                                                |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`open_encrypted<class_File_open_encrypted>`  **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`RawArray<class_rawarray>` key  **)**                  |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`open_encrypted_with_pass<class_File_open_encrypted_with_pass>`  **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`String<class_string>` pass  **)** |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`seek<class_File_seek>`  **(** :ref:`int<class_int>` pos  **)**                                                                                                                    |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`seek_end<class_File_seek_end>`  **(** :ref:`int<class_int>` pos=0  **)**                                                                                                          |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_endian_swap<class_File_set_endian_swap>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                         |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`store_16<class_File_store_16>`  **(** :ref:`int<class_int>` value  **)**                                                                                                          |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -77,192 +83,304 @@ Member Functions
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`store_64<class_File_store_64>`  **(** :ref:`int<class_int>` value  **)**                                                                                                          |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`store_float<class_File_store_float>`  **(** :ref:`float<class_float>` value  **)**                                                                                                |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`store_double<class_File_store_double>`  **(** :ref:`float<class_float>` value  **)**                                                                                              |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`store_real<class_File_store_real>`  **(** :ref:`float<class_float>` value  **)**                                                                                                  |
+| void                                   | :ref:`store_8<class_File_store_8>`  **(** :ref:`int<class_int>` value  **)**                                                                                                            |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`store_buffer<class_File_store_buffer>`  **(** :ref:`RawArray<class_rawarray>` buffer  **)**                                                                                       |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`store_double<class_File_store_double>`  **(** :ref:`float<class_float>` value  **)**                                                                                              |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`store_float<class_File_store_float>`  **(** :ref:`float<class_float>` value  **)**                                                                                                |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`store_line<class_File_store_line>`  **(** :ref:`String<class_string>` line  **)**                                                                                                 |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`store_string<class_File_store_string>`  **(** :ref:`String<class_string>` string  **)**                                                                                           |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`store_var<class_File_store_var>`  **(** var value  **)**                                                                                                                          |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`store_pascal_string<class_File_store_pascal_string>`  **(** :ref:`String<class_string>` string  **)**                                                                             |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`            | :ref:`get_pascal_string<class_File_get_pascal_string>`  **(** **)**                                                                                                                     |
+| void                                   | :ref:`store_real<class_File_store_real>`  **(** :ref:`float<class_float>` value  **)**                                                                                                  |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`file_exists<class_File_file_exists>`  **(** :ref:`String<class_string>` path  **)** const                                                                                         |
+| void                                   | :ref:`store_string<class_File_store_string>`  **(** :ref:`String<class_string>` string  **)**                                                                                           |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`store_var<class_File_store_var>`  **(** :ref:`Variant<class_variant>` value  **)**                                                                                                |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
 -----------------
 
-- **READ** = **1**
-- **WRITE** = **2**
-- **READ_WRITE** = **3**
-- **WRITE_READ** = **7**
+- **READ** = **1** --- Open the file for reading.
+- **WRITE** = **2** --- Open the file for writing. Create it if the file not exists and truncate if it exists.
+- **READ_WRITE** = **3** --- Open the file for reading and writing, without truncating the file.
+- **WRITE_READ** = **7** --- Open the file for reading and writing. Create it if the file not exists and truncate if it exists.
+
+Description
+-----------
+
+File type. This is used to permanently store data into the user device's file system and to read from it. This can be used to store game save data or player configuration files, for example.
+
+Here's a sample on how to write and read from a file:
+
+::
+
+    func save(content):
+        var file = File.new()
+        file.open("user://save_game.dat", file.WRITE)
+        file.store_string(content)
+        file.close()
+    
+    func load():
+        var file = File.new()
+        file.open("user://save_game.dat", file.READ)
+        var content = file.get_as_text()
+        file.close()
+        return content
 
 Member Function Description
 ---------------------------
-
-.. _class_File_open_encrypted:
-
-- :ref:`int<class_int>`  **open_encrypted**  **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`RawArray<class_rawarray>` key  **)**
-
-.. _class_File_open_encrypted_with_pass:
-
-- :ref:`int<class_int>`  **open_encrypted_with_pass**  **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`String<class_string>` pass  **)**
-
-.. _class_File_open:
-
-- :ref:`int<class_int>`  **open**  **(** :ref:`String<class_string>` path, :ref:`int<class_int>` flags  **)**
 
 .. _class_File_close:
 
 - void  **close**  **(** **)**
 
-.. _class_File_is_open:
-
-- :ref:`bool<class_bool>`  **is_open**  **(** **)** const
-
-.. _class_File_seek:
-
-- void  **seek**  **(** :ref:`int<class_int>` pos  **)**
-
-.. _class_File_seek_end:
-
-- void  **seek_end**  **(** :ref:`int<class_int>` pos=0  **)**
-
-.. _class_File_get_pos:
-
-- :ref:`int<class_int>`  **get_pos**  **(** **)** const
-
-.. _class_File_get_len:
-
-- :ref:`int<class_int>`  **get_len**  **(** **)** const
+Close the currently opened file.
 
 .. _class_File_eof_reached:
 
 - :ref:`bool<class_bool>`  **eof_reached**  **(** **)** const
 
-.. _class_File_get_8:
+Return whether the file cursor reached the end of the file.
 
-- :ref:`int<class_int>`  **get_8**  **(** **)** const
+.. _class_File_file_exists:
+
+- :ref:`bool<class_bool>`  **file_exists**  **(** :ref:`String<class_string>` path  **)** const
+
+Get whether or not the file in the specified path exists.
 
 .. _class_File_get_16:
 
 - :ref:`int<class_int>`  **get_16**  **(** **)** const
 
+Get the next 16 bits from the file as an integer.
+
 .. _class_File_get_32:
 
 - :ref:`int<class_int>`  **get_32**  **(** **)** const
+
+Get the next 32 bits from the file as an integer.
 
 .. _class_File_get_64:
 
 - :ref:`int<class_int>`  **get_64**  **(** **)** const
 
-.. _class_File_get_float:
+Get the next 64 bits from the file as an integer.
 
-- :ref:`float<class_float>`  **get_float**  **(** **)** const
+.. _class_File_get_8:
 
-.. _class_File_get_double:
+- :ref:`int<class_int>`  **get_8**  **(** **)** const
 
-- :ref:`float<class_float>`  **get_double**  **(** **)** const
-
-.. _class_File_get_real:
-
-- :ref:`float<class_float>`  **get_real**  **(** **)** const
-
-.. _class_File_get_buffer:
-
-- :ref:`RawArray<class_rawarray>`  **get_buffer**  **(** :ref:`int<class_int>` len  **)** const
-
-.. _class_File_get_line:
-
-- :ref:`String<class_string>`  **get_line**  **(** **)** const
+Get the next 8 bits from the file as an integer.
 
 .. _class_File_get_as_text:
 
 - :ref:`String<class_string>`  **get_as_text**  **(** **)** const
 
-.. _class_File_get_endian_swap:
+Get the whole file as a :ref:`String<class_string>`.
 
-- :ref:`bool<class_bool>`  **get_endian_swap**  **(** **)**
+.. _class_File_get_buffer:
 
-.. _class_File_set_endian_swap:
+- :ref:`RawArray<class_rawarray>`  **get_buffer**  **(** :ref:`int<class_int>` len  **)** const
 
-- void  **set_endian_swap**  **(** :ref:`bool<class_bool>` enable  **)**
-
-.. _class_File_get_error:
-
-- Error  **get_error**  **(** **)** const
-
-.. _class_File_get_var:
-
-- void  **get_var**  **(** **)** const
+Get next len bytes of the file as a :ref:`RawArray<class_rawarray>`.
 
 .. _class_File_get_csv_line:
 
 - :ref:`StringArray<class_stringarray>`  **get_csv_line**  **(** :ref:`String<class_string>` delim=","  **)** const
 
-.. _class_File_store_8:
+Get the next value of the file in CSV (Comma Separated Values) format. You can pass a different delimiter to use other than the default "," (comma).
 
-- void  **store_8**  **(** :ref:`int<class_int>` value  **)**
+.. _class_File_get_double:
 
-.. _class_File_store_16:
+- :ref:`float<class_float>`  **get_double**  **(** **)** const
 
-- void  **store_16**  **(** :ref:`int<class_int>` value  **)**
+Get the next 64 bits from the file as a floating point number.
 
-.. _class_File_store_32:
+.. _class_File_get_endian_swap:
 
-- void  **store_32**  **(** :ref:`int<class_int>` value  **)**
+- :ref:`bool<class_bool>`  **get_endian_swap**  **(** **)**
 
-.. _class_File_store_64:
+Get whether endian swap is enabled for this file.
 
-- void  **store_64**  **(** :ref:`int<class_int>` value  **)**
+.. _class_File_get_error:
 
-.. _class_File_store_float:
+- Error  **get_error**  **(** **)** const
 
-- void  **store_float**  **(** :ref:`float<class_float>` value  **)**
+Get the last error that happened when trying to perform operations. Compare with the ``ERR_FILE\_\*`` constants from :ref:`@Global Scope<class_@global scope>`.
 
-.. _class_File_store_double:
+.. _class_File_get_float:
 
-- void  **store_double**  **(** :ref:`float<class_float>` value  **)**
+- :ref:`float<class_float>`  **get_float**  **(** **)** const
 
-.. _class_File_store_real:
+Get the next 32 bits from the file as a floating point number.
 
-- void  **store_real**  **(** :ref:`float<class_float>` value  **)**
+.. _class_File_get_len:
 
-.. _class_File_store_buffer:
+- :ref:`int<class_int>`  **get_len**  **(** **)** const
 
-- void  **store_buffer**  **(** :ref:`RawArray<class_rawarray>` buffer  **)**
+Return the size of the file in bytes.
 
-.. _class_File_store_line:
+.. _class_File_get_line:
 
-- void  **store_line**  **(** :ref:`String<class_string>` line  **)**
+- :ref:`String<class_string>`  **get_line**  **(** **)** const
 
-.. _class_File_store_string:
+Get the next line of the file as a :ref:`String<class_string>`.
 
-- void  **store_string**  **(** :ref:`String<class_string>` string  **)**
+.. _class_File_get_md5:
 
-.. _class_File_store_var:
+- :ref:`String<class_string>`  **get_md5**  **(** :ref:`String<class_string>` path  **)** const
 
-- void  **store_var**  **(** var value  **)**
-
-.. _class_File_store_pascal_string:
-
-- void  **store_pascal_string**  **(** :ref:`String<class_string>` string  **)**
+Return a md5 String representing the file at the given path or an empty :ref:`String<class_string>` on failure.
 
 .. _class_File_get_pascal_string:
 
 - :ref:`String<class_string>`  **get_pascal_string**  **(** **)**
 
-.. _class_File_file_exists:
+Get a :ref:`String<class_string>` saved in Pascal format from the file.
 
-- :ref:`bool<class_bool>`  **file_exists**  **(** :ref:`String<class_string>` path  **)** const
+.. _class_File_get_pos:
+
+- :ref:`int<class_int>`  **get_pos**  **(** **)** const
+
+Return the file cursor position.
+
+.. _class_File_get_real:
+
+- :ref:`float<class_float>`  **get_real**  **(** **)** const
+
+Get the next bits from the file as a floating point number.
+
+.. _class_File_get_sha256:
+
+- :ref:`String<class_string>`  **get_sha256**  **(** :ref:`String<class_string>` path  **)** const
+
+Return a sha256 String representing the file at the given path or an empty :ref:`String<class_string>` on failure.
+
+.. _class_File_get_var:
+
+- void  **get_var**  **(** **)** const
+
+Get the next Variant value from the file.
+
+.. _class_File_is_open:
+
+- :ref:`bool<class_bool>`  **is_open**  **(** **)** const
+
+Return whether the file is currently opened.
+
+.. _class_File_open:
+
+- :ref:`int<class_int>`  **open**  **(** :ref:`String<class_string>` path, :ref:`int<class_int>` flags  **)**
+
+Open the file for writing or reading, depending on the flags.
+
+.. _class_File_open_encrypted:
+
+- :ref:`int<class_int>`  **open_encrypted**  **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`RawArray<class_rawarray>` key  **)**
+
+Open an encrypted file in write or read mode. You need to pass a binary key to encrypt/decrypt it.
+
+.. _class_File_open_encrypted_with_pass:
+
+- :ref:`int<class_int>`  **open_encrypted_with_pass**  **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`String<class_string>` pass  **)**
+
+Open an encrypted file in write or read mode. You need to pass a password to encrypt/decrypt it.
+
+.. _class_File_seek:
+
+- void  **seek**  **(** :ref:`int<class_int>` pos  **)**
+
+Change the file reading/writing cursor to the specified position (in bytes from the beginning of the file).
+
+.. _class_File_seek_end:
+
+- void  **seek_end**  **(** :ref:`int<class_int>` pos=0  **)**
+
+Change the file reading/writing cursor to the specified position (in bytes from the end of the file). Note that this is an offset, so you should use negative numbers or the cursor will be at the end of the file.
+
+.. _class_File_set_endian_swap:
+
+- void  **set_endian_swap**  **(** :ref:`bool<class_bool>` enable  **)**
+
+Set whether to swap the endianess of the file. Enable this if you're dealing with files written in big endian machines.
+
+Note that this is about the file format, not CPU type. This is always reseted to ``false`` whenever you open the file.
+
+.. _class_File_store_16:
+
+- void  **store_16**  **(** :ref:`int<class_int>` value  **)**
+
+Store an integer as 16 bits in the file.
+
+.. _class_File_store_32:
+
+- void  **store_32**  **(** :ref:`int<class_int>` value  **)**
+
+Store an integer as 32 bits in the file.
+
+.. _class_File_store_64:
+
+- void  **store_64**  **(** :ref:`int<class_int>` value  **)**
+
+Store an integer as 64 bits in the file.
+
+.. _class_File_store_8:
+
+- void  **store_8**  **(** :ref:`int<class_int>` value  **)**
+
+Store an integer as 8 bits in the file.
+
+.. _class_File_store_buffer:
+
+- void  **store_buffer**  **(** :ref:`RawArray<class_rawarray>` buffer  **)**
+
+Store the given array of bytes in the file.
+
+.. _class_File_store_double:
+
+- void  **store_double**  **(** :ref:`float<class_float>` value  **)**
+
+Store a floating point number as 64 bits in the file.
+
+.. _class_File_store_float:
+
+- void  **store_float**  **(** :ref:`float<class_float>` value  **)**
+
+Store a floating point number as 32 bits in the file.
+
+.. _class_File_store_line:
+
+- void  **store_line**  **(** :ref:`String<class_string>` line  **)**
+
+Store the given :ref:`String<class_string>` as a line in the file.
+
+.. _class_File_store_pascal_string:
+
+- void  **store_pascal_string**  **(** :ref:`String<class_string>` string  **)**
+
+Store the given :ref:`String<class_string>` as a line in the file in Pascal format (i.e. also store the length of the string).
+
+.. _class_File_store_real:
+
+- void  **store_real**  **(** :ref:`float<class_float>` value  **)**
+
+Store a floating point number in the file.
+
+.. _class_File_store_string:
+
+- void  **store_string**  **(** :ref:`String<class_string>` string  **)**
+
+Store the given :ref:`String<class_string>` in the file.
+
+.. _class_File_store_var:
+
+- void  **store_var**  **(** :ref:`Variant<class_variant>` value  **)**
+
+Store any Variant value in the file.
 
 

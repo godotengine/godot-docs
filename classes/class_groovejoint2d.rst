@@ -19,13 +19,13 @@ Member Functions
 ----------------
 
 +----------------------------+------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_length<class_GrooveJoint2D_set_length>`  **(** :ref:`float<class_float>` length  **)**                 |
+| :ref:`float<class_float>`  | :ref:`get_initial_offset<class_GrooveJoint2D_get_initial_offset>`  **(** **)** const                             |
 +----------------------------+------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_length<class_GrooveJoint2D_get_length>`  **(** **)** const                                             |
 +----------------------------+------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`set_initial_offset<class_GrooveJoint2D_set_initial_offset>`  **(** :ref:`float<class_float>` offset  **)** |
 +----------------------------+------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_initial_offset<class_GrooveJoint2D_get_initial_offset>`  **(** **)** const                             |
+| void                       | :ref:`set_length<class_GrooveJoint2D_set_length>`  **(** :ref:`float<class_float>` length  **)**                 |
 +----------------------------+------------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -36,11 +36,11 @@ Groove constraint for 2D physics. This is useful for making a body "slide" throu
 Member Function Description
 ---------------------------
 
-.. _class_GrooveJoint2D_set_length:
+.. _class_GrooveJoint2D_get_initial_offset:
 
-- void  **set_length**  **(** :ref:`float<class_float>` length  **)**
+- :ref:`float<class_float>`  **get_initial_offset**  **(** **)** const
 
-Set the length of the groove.
+Set the final offset of the groove on body A.
 
 .. _class_GrooveJoint2D_get_length:
 
@@ -54,10 +54,10 @@ Return the length of the groove.
 
 Set the initial offset of the groove on body A.
 
-.. _class_GrooveJoint2D_get_initial_offset:
+.. _class_GrooveJoint2D_set_length:
 
-- :ref:`float<class_float>`  **get_initial_offset**  **(** **)** const
+- void  **set_length**  **(** :ref:`float<class_float>` length  **)**
 
-Set the final offset of the groove on body A.
+Set the length of the groove.
 
 

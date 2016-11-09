@@ -46,12 +46,12 @@ problems, but the most common one is PSSM (Parallel Split Shadow Maps):
 .. image:: /img/shadow_directional.png
 
 These techniques divide the view in 2 or 4 sections, and a shadow is
-rendered for each. This way, close obects can use larger shadow while
+rendered for each. This way, close objects can use larger shadow while
 further away objects will use one in less detail, but in proportion this
-seems to make the shadow map size increase while it's actually kept thr
+seems to make the shadow map size increase while it's actually kept the
 same. Of course, this technique is not free, the more splits the more
-the performance goes down. On mobile, generally it is convenient to not
-sure more tan 2 splits.
+the performance goes down. On mobile, it is generally inconvenient to
+use more than 2 splits.
 
 An alternative technique is PSM (Perspective Shadow Mapping). This
 technique is much cheaper than PSSM (as cheap as orthogonal), but it
@@ -63,12 +63,12 @@ direction are both fixed, and the light is not parallel to the camera
 Omni light shadows
 ~~~~~~~~~~~~~~~~~~
 
-Omnidirectional lights are also troubesome. How to represent 360 degrees
+Omnidirectional lights are also troublesome. How to represent 360 degrees
 of light with a single texture? There are two alternatives, the first
 one is to use DPSM (Dual Paraboloid Shadow Mapping). This technique is
 fast, but it requires DISCARD to be used (which makes it not very usable
 on mobile). DPSM can also look rather bad if the geometry is not
-tesselated enough, so more vertices might be necessary if it doesnt'r
+tessellated enough, so more vertices might be necessary if it doesn't
 look tight. The second option is to simply not use a shadow map, and use
 a shadow cubemap. This is faster, but requires six passes to render all
 directions and is not supported on the current (GLES2) renderer.
@@ -78,9 +78,9 @@ directions and is not supported on the current (GLES2) renderer.
 As few considerations when using DPSM shadow maps:
 
 -  Keep Slope-Scale on 0.
--  Use a small value for Z-Offset, if thigs look wrong, make it smaller.
+-  Use a small value for Z-Offset, if this look wrong, make it smaller.
 -  ESM filtering can improve the look.
--  The seams between the two halfs of the shadow are generally
+-  The seams between the two halves of the shadow are generally
    noticeable, so rotate the light to make them show less.
 
 Spot light shadows
@@ -107,9 +107,9 @@ Adjusting z-offset
 So, you have decided to go with non-filtered shadows because they are
 faster, you want a little more detail or maybe you just like the sexy
 saw-like shadow outlines because they remind you of your favorite
-previous-gen games. Truth is this can kind of be a pain, but most of the
-time it can be solved to nice results. There is no magic number and
-whathever resut you come up will be different from scene to scene, it
+previous-gen games. Truth is, this can be kind of be a pain, but most of the
+time it can be adjusted to have nice results. There is no magic number and
+whatever result you come up will be different from scene to scene, it
 just takes a while of tweaking. Let's go step by step.
 
 First step is to turn on the shadows, let's assume that both Z-Offset
@@ -117,11 +117,11 @@ and Z-Slope-Scale are at 0. You will be greeted by this:
 
 .. image:: /img/shadow_offset_1.png
 
-Holy crap, shadow is all around the place and extremely glitchy! this
+Holy crap, the shadow is all over the place and extremely glitchy! This
 happens because the shadow is fighting with the same geometry that is
 casting it. This is called "self-shadowing". To avoid this meaningless
 fight, you realize you need to make peace between the shadow and the
-geometry, so you push back the shadow a little by adjusting the shadow
+geometry, so you push back the shadow a little by increasing the shadow
 Z-Offset. This improves things a lot:
 
 .. image:: /img/shadow_offset_2.png
@@ -132,7 +132,7 @@ increase the Z-Offset even more!
 
 .. image:: /img/shadow_offset_3.png
 
-And it gets rid of those self-shadowings! hooray! except something is
+And it gets rid of those self-shadowings! Hooray! Except something is
 wrong.. oh, right. Being pushed back too much, the shadows start
 disconnecting from their casters, which looks pretty awful. Ok, you go
 back to the previous Z-offset.
@@ -144,8 +144,8 @@ shadow caster objects thinner, so the borders don't self-shadow:
 
 Aha! Finally something that looks acceptable. It's perfectly acceptable
 and you can perfectly ship a game that looks like this (imagine you are
-looking at Final Fantasy quality art btw, not this horribe attempt at 3D
-modelling). There may be very tiiny bits left of self shadowing that no
+looking at Final Fantasy quality art btw, not this horrible attempt at 3D
+modelling). There may be very tiny bits left of self shadowing that no
 one cares about, so your inextinguishable greed kicks in again and you
 raise the Z-Slope Scale again:
 

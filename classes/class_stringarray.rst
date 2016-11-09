@@ -16,17 +16,27 @@ String Array.
 Member Functions
 ----------------
 
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`push_back<class_StringArray_push_back>`  **(** :ref:`String<class_string>` string  **)**                |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`resize<class_StringArray_resize>`  **(** :ref:`int<class_int>` idx  **)**                               |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set<class_StringArray_set>`  **(** :ref:`int<class_int>` idx, :ref:`String<class_string>` string  **)** |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                  | :ref:`size<class_StringArray_size>`  **(** **)**                                                              |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`StringArray<class_stringarray>`  | :ref:`StringArray<class_StringArray_StringArray>`  **(** :ref:`Array<class_array>` from  **)**                |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------+
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`StringArray<class_stringarray>`  | :ref:`StringArray<class_StringArray_StringArray>`  **(** :ref:`Array<class_array>` from  **)**                      |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`append<class_StringArray_append>`  **(** :ref:`String<class_string>` string  **)**                            |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`append_array<class_StringArray_append_array>`  **(** :ref:`StringArray<class_stringarray>` array  **)**       |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`insert<class_StringArray_insert>`  **(** :ref:`int<class_int>` idx, :ref:`String<class_string>` string  **)** |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`invert<class_StringArray_invert>`  **(** **)**                                                                |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`push_back<class_StringArray_push_back>`  **(** :ref:`String<class_string>` string  **)**                      |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`remove<class_StringArray_remove>`  **(** :ref:`int<class_int>` idx  **)**                                     |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`resize<class_StringArray_resize>`  **(** :ref:`int<class_int>` idx  **)**                                     |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set<class_StringArray_set>`  **(** :ref:`int<class_int>` idx, :ref:`String<class_string>` string  **)**       |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`size<class_StringArray_size>`  **(** **)**                                                                    |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -36,24 +46,64 @@ String Array. Array of strings. Can only contain strings. Optimized for memory u
 Member Function Description
 ---------------------------
 
+.. _class_StringArray_StringArray:
+
+- :ref:`StringArray<class_stringarray>`  **StringArray**  **(** :ref:`Array<class_array>` from  **)**
+
+Create from a generic array.
+
+.. _class_StringArray_append:
+
+- void  **append**  **(** :ref:`String<class_string>` string  **)**
+
+Append an element at the end of the array (alias of :ref:`push_back<class_StringArray_push_back>`).
+
+.. _class_StringArray_append_array:
+
+- void  **append_array**  **(** :ref:`StringArray<class_stringarray>` array  **)**
+
+Append an :ref:`StringArray<class_stringarray>` at the end of this array.
+
+.. _class_StringArray_insert:
+
+- :ref:`int<class_int>`  **insert**  **(** :ref:`int<class_int>` idx, :ref:`String<class_string>` string  **)**
+
+Insert a new element at a given position in the array. The position must be valid, or at the end of the array (pos==size()).
+
+.. _class_StringArray_invert:
+
+- void  **invert**  **(** **)**
+
+Reverse the order of the elements in the array (so first element will now be the last).
+
 .. _class_StringArray_push_back:
 
 - void  **push_back**  **(** :ref:`String<class_string>` string  **)**
+
+Append a string element at end of the array.
+
+.. _class_StringArray_remove:
+
+- void  **remove**  **(** :ref:`int<class_int>` idx  **)**
+
+Remove an element from the array by index.
 
 .. _class_StringArray_resize:
 
 - void  **resize**  **(** :ref:`int<class_int>` idx  **)**
 
+Set the size of the :ref:`StringArray<class_stringarray>`. If larger than the current size it will reserve some space beforehand, and if it is smaller it will cut off the array.
+
 .. _class_StringArray_set:
 
 - void  **set**  **(** :ref:`int<class_int>` idx, :ref:`String<class_string>` string  **)**
+
+Change the :ref:`String<class_string>` at the given index.
 
 .. _class_StringArray_size:
 
 - :ref:`int<class_int>`  **size**  **(** **)**
 
-.. _class_StringArray_StringArray:
-
-- :ref:`StringArray<class_stringarray>`  **StringArray**  **(** :ref:`Array<class_array>` from  **)**
+Return the size of the array.
 
 

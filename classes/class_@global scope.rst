@@ -16,31 +16,31 @@ Global scope constants and variables.
 Member Variables
 ----------------
 
-- :ref:`Performance<class_performance>` **Performance**
-- :ref:`Globals<class_globals>` **Globals**
-- :ref:`IP<class_ip>` **IP**
-- :ref:`Geometry<class_geometry>` **Geometry**
-- :ref:`ResourceLoader<class_resourceloader>` **ResourceLoader**
-- :ref:`ResourceSaver<class_resourcesaver>` **ResourceSaver**
-- :ref:`PathRemap<class_pathremap>` **PathRemap**
-- :ref:`OS<class_os>` **OS**
-- :ref:`Reference<class_reference>` **Marshalls**
-- :ref:`TranslationServer<class_translationserver>` **TranslationServer**
-- :ref:`TranslationServer<class_translationserver>` **TS**
-- :ref:`Input<class_input>` **Input**
-- :ref:`InputMap<class_inputmap>` **InputMap**
-- :ref:`VisualServer<class_visualserver>` **VisualServer**
-- :ref:`VisualServer<class_visualserver>` **VS**
-- :ref:`AudioServer<class_audioserver>` **AudioServer**
-- :ref:`AudioServer<class_audioserver>` **AS**
-- :ref:`PhysicsServer<class_physicsserver>` **PhysicsServer**
-- :ref:`PhysicsServer<class_physicsserver>` **PS**
-- :ref:`Physics2DServer<class_physics2dserver>` **Physics2DServer**
-- :ref:`Physics2DServer<class_physics2dserver>` **PS2D**
-- :ref:`SpatialSoundServer<class_spatialsoundserver>` **SpatialSoundServer**
-- :ref:`SpatialSoundServer<class_spatialsoundserver>` **SS**
-- :ref:`SpatialSound2DServer<class_spatialsound2dserver>` **SpatialSound2DServer**
-- :ref:`SpatialSound2DServer<class_spatialsound2dserver>` **SS2D**
+- :ref:`AudioServer<class_audioserver>` **AS** - [AudioServer] singleton
+- :ref:`AudioServer<class_audioserver>` **AudioServer** - [AudioServer] singleton
+- :ref:`Geometry<class_geometry>` **Geometry** - [Geometry] singleton
+- :ref:`Globals<class_globals>` **Globals** - [Globals] singleton
+- :ref:`IP<class_ip>` **IP** - [IP] singleton
+- :ref:`Input<class_input>` **Input** - [Input] singleton
+- :ref:`InputMap<class_inputmap>` **InputMap** - [InputMap] singleton
+- :ref:`Reference<class_reference>` **Marshalls** - [Marshalls] singleton
+- :ref:`OS<class_os>` **OS** - [OS] singleton
+- :ref:`PhysicsServer<class_physicsserver>` **PS** - [PhysicsServer] singleton
+- :ref:`Physics2DServer<class_physics2dserver>` **PS2D** - [Physics2DServer] singleton
+- :ref:`PathRemap<class_pathremap>` **PathRemap** - [PathRemap] singleton
+- :ref:`Performance<class_performance>` **Performance** - [Performance] singleton
+- :ref:`Physics2DServer<class_physics2dserver>` **Physics2DServer** - [Physics2DServer] singleton
+- :ref:`PhysicsServer<class_physicsserver>` **PhysicsServer** - [PhysicsServer] singleton
+- :ref:`ResourceLoader<class_resourceloader>` **ResourceLoader** - [ResourceLoader] singleton
+- :ref:`ResourceSaver<class_resourcesaver>` **ResourceSaver** - [ResourceSaver] singleton
+- :ref:`SpatialSoundServer<class_spatialsoundserver>` **SS** - [SpatialSoundServer] singleton
+- :ref:`SpatialSound2DServer<class_spatialsound2dserver>` **SS2D** - [SpatialSound2DServer] singleton
+- :ref:`SpatialSound2DServer<class_spatialsound2dserver>` **SpatialSound2DServer** - [SpatialSound2DServer] singleton
+- :ref:`SpatialSoundServer<class_spatialsoundserver>` **SpatialSoundServer** - [SpatialSoundServer] singleton
+- :ref:`TranslationServer<class_translationserver>` **TS** - [TranslationServer] singleton
+- :ref:`TranslationServer<class_translationserver>` **TranslationServer** - [TranslationServer] singleton
+- :ref:`VisualServer<class_visualserver>` **VS** - [VisualServer] singleton
+- :ref:`VisualServer<class_visualserver>` **VisualServer** - [VisualServer] singleton
 
 Numeric Constants
 -----------------
@@ -60,91 +60,91 @@ Numeric Constants
 - **SPKEY** = **16777216** --- Scancodes with this bit applied are non printable.
 - **KEY_ESCAPE** = **16777217** --- Escape Key
 - **KEY_TAB** = **16777218** --- Tab Key
-- **KEY_BACKTAB** = **16777219** --- Shift-Tab key
-- **KEY_BACKSPACE** = **16777220**
-- **KEY_RETURN** = **16777221**
-- **KEY_ENTER** = **16777222**
-- **KEY_INSERT** = **16777223**
-- **KEY_DELETE** = **16777224**
-- **KEY_PAUSE** = **16777225**
-- **KEY_PRINT** = **16777226**
+- **KEY_BACKTAB** = **16777219** --- Shift-Tab Key
+- **KEY_BACKSPACE** = **16777220** --- Backspace Key
+- **KEY_RETURN** = **16777221** --- Return Key (On Main Keyboard)
+- **KEY_ENTER** = **16777222** --- Enter Key (On Numpad)
+- **KEY_INSERT** = **16777223** --- Insert Key
+- **KEY_DELETE** = **16777224** --- Delete Key
+- **KEY_PAUSE** = **16777225** --- Pause Key
+- **KEY_PRINT** = **16777226** --- Printscreen Key
 - **KEY_SYSREQ** = **16777227**
 - **KEY_CLEAR** = **16777228**
-- **KEY_HOME** = **16777229**
-- **KEY_END** = **16777230**
-- **KEY_LEFT** = **16777231**
-- **KEY_UP** = **16777232**
-- **KEY_RIGHT** = **16777233**
-- **KEY_DOWN** = **16777234**
-- **KEY_PAGEUP** = **16777235**
-- **KEY_PAGEDOWN** = **16777236**
-- **KEY_SHIFT** = **16777237**
-- **KEY_CONTROL** = **16777238**
+- **KEY_HOME** = **16777229** --- Home Key
+- **KEY_END** = **16777230** --- End Key
+- **KEY_LEFT** = **16777231** --- Left Arrow Key
+- **KEY_UP** = **16777232** --- Up Arrow Key
+- **KEY_RIGHT** = **16777233** --- Right Arrow Key
+- **KEY_DOWN** = **16777234** --- Down Arrow Key
+- **KEY_PAGEUP** = **16777235** --- Pageup Key
+- **KEY_PAGEDOWN** = **16777236** --- Pagedown Key
+- **KEY_SHIFT** = **16777237** --- Shift Key
+- **KEY_CONTROL** = **16777238** --- Control Key
 - **KEY_META** = **16777239**
-- **KEY_ALT** = **16777240**
-- **KEY_CAPSLOCK** = **16777241**
-- **KEY_NUMLOCK** = **16777242**
-- **KEY_SCROLLLOCK** = **16777243**
-- **KEY_F1** = **16777244**
-- **KEY_F2** = **16777245**
-- **KEY_F3** = **16777246**
-- **KEY_F4** = **16777247**
-- **KEY_F5** = **16777248**
-- **KEY_F6** = **16777249**
-- **KEY_F7** = **16777250**
-- **KEY_F8** = **16777251**
-- **KEY_F9** = **16777252**
-- **KEY_F10** = **16777253**
-- **KEY_F11** = **16777254**
-- **KEY_F12** = **16777255**
-- **KEY_F13** = **16777256**
-- **KEY_F14** = **16777257**
-- **KEY_F15** = **16777258**
-- **KEY_F16** = **16777259**
-- **KEY_KP_ENTER** = **16777344**
-- **KEY_KP_MULTIPLY** = **16777345**
-- **KEY_KP_DIVIDE** = **16777346**
-- **KEY_KP_SUBTRACT** = **16777347**
-- **KEY_KP_PERIOD** = **16777348**
-- **KEY_KP_ADD** = **16777349**
-- **KEY_KP_0** = **16777350**
-- **KEY_KP_1** = **16777351**
-- **KEY_KP_2** = **16777352**
-- **KEY_KP_3** = **16777353**
-- **KEY_KP_4** = **16777354**
-- **KEY_KP_5** = **16777355**
-- **KEY_KP_6** = **16777356**
-- **KEY_KP_7** = **16777357**
-- **KEY_KP_8** = **16777358**
-- **KEY_KP_9** = **16777359**
-- **KEY_SUPER_L** = **16777260**
-- **KEY_SUPER_R** = **16777261**
-- **KEY_MENU** = **16777262**
+- **KEY_ALT** = **16777240** --- Alt Key
+- **KEY_CAPSLOCK** = **16777241** --- Capslock Key
+- **KEY_NUMLOCK** = **16777242** --- Numlock Key
+- **KEY_SCROLLLOCK** = **16777243** --- Scrolllock Key
+- **KEY_F1** = **16777244** --- F1 Key
+- **KEY_F2** = **16777245** --- F2 Key
+- **KEY_F3** = **16777246** --- F3 Key
+- **KEY_F4** = **16777247** --- F4 Key
+- **KEY_F5** = **16777248** --- F5 Key
+- **KEY_F6** = **16777249** --- F6 Key
+- **KEY_F7** = **16777250** --- F7 Key
+- **KEY_F8** = **16777251** --- F8 Key
+- **KEY_F9** = **16777252** --- F9 Key
+- **KEY_F10** = **16777253** --- F10 Key
+- **KEY_F11** = **16777254** --- F11 Key
+- **KEY_F12** = **16777255** --- F12 Key
+- **KEY_F13** = **16777256** --- F13 Key
+- **KEY_F14** = **16777257** --- F14 Key
+- **KEY_F15** = **16777258** --- F15 Key
+- **KEY_F16** = **16777259** --- F16 Key
+- **KEY_KP_ENTER** = **16777344** --- Enter Key on Numpad
+- **KEY_KP_MULTIPLY** = **16777345** --- Multiply Key on Numpad
+- **KEY_KP_DIVIDE** = **16777346** --- Divide Key on Numpad
+- **KEY_KP_SUBTRACT** = **16777347** --- Subtract Key on Numpad
+- **KEY_KP_PERIOD** = **16777348** --- Period Key on Numpad
+- **KEY_KP_ADD** = **16777349** --- Add Key on Numpad
+- **KEY_KP_0** = **16777350** --- Number 0 on Numpad
+- **KEY_KP_1** = **16777351** --- Number 1 on Numpad
+- **KEY_KP_2** = **16777352** --- Number 2 on Numpad
+- **KEY_KP_3** = **16777353** --- Number 3 on Numpad
+- **KEY_KP_4** = **16777354** --- Number 4 on Numpad
+- **KEY_KP_5** = **16777355** --- Number 5 on Numpad
+- **KEY_KP_6** = **16777356** --- Number 6 on Numpad
+- **KEY_KP_7** = **16777357** --- Number 7 on Numpad
+- **KEY_KP_8** = **16777358** --- Number 8 on Numpad
+- **KEY_KP_9** = **16777359** --- Number 9 on Numpad
+- **KEY_SUPER_L** = **16777260** --- Super Left key (windows key)
+- **KEY_SUPER_R** = **16777261** --- Super Left key (windows key)
+- **KEY_MENU** = **16777262** --- Context menu key
 - **KEY_HYPER_L** = **16777263**
 - **KEY_HYPER_R** = **16777264**
-- **KEY_HELP** = **16777265**
+- **KEY_HELP** = **16777265** --- Help key
 - **KEY_DIRECTION_L** = **16777266**
 - **KEY_DIRECTION_R** = **16777267**
-- **KEY_BACK** = **16777280**
-- **KEY_FORWARD** = **16777281**
-- **KEY_STOP** = **16777282**
-- **KEY_REFRESH** = **16777283**
-- **KEY_VOLUMEDOWN** = **16777284**
-- **KEY_VOLUMEMUTE** = **16777285**
-- **KEY_VOLUMEUP** = **16777286**
+- **KEY_BACK** = **16777280** --- Back key
+- **KEY_FORWARD** = **16777281** --- Forward key
+- **KEY_STOP** = **16777282** --- Stop key
+- **KEY_REFRESH** = **16777283** --- Refresh key
+- **KEY_VOLUMEDOWN** = **16777284** --- Volume down key
+- **KEY_VOLUMEMUTE** = **16777285** --- Mute volume key
+- **KEY_VOLUMEUP** = **16777286** --- Volume up key
 - **KEY_BASSBOOST** = **16777287**
 - **KEY_BASSUP** = **16777288**
 - **KEY_BASSDOWN** = **16777289**
 - **KEY_TREBLEUP** = **16777290**
 - **KEY_TREBLEDOWN** = **16777291**
-- **KEY_MEDIAPLAY** = **16777292**
-- **KEY_MEDIASTOP** = **16777293**
-- **KEY_MEDIAPREVIOUS** = **16777294**
-- **KEY_MEDIANEXT** = **16777295**
-- **KEY_MEDIARECORD** = **16777296**
-- **KEY_HOMEPAGE** = **16777297**
-- **KEY_FAVORITES** = **16777298**
-- **KEY_SEARCH** = **16777299**
+- **KEY_MEDIAPLAY** = **16777292** --- Media play key
+- **KEY_MEDIASTOP** = **16777293** --- Media stop key
+- **KEY_MEDIAPREVIOUS** = **16777294** --- Previous song key
+- **KEY_MEDIANEXT** = **16777295** --- Next song key
+- **KEY_MEDIARECORD** = **16777296** --- Media record key
+- **KEY_HOMEPAGE** = **16777297** --- Home page key
+- **KEY_FAVORITES** = **16777298** --- Favorites key
+- **KEY_SEARCH** = **16777299** --- Search key
 - **KEY_STANDBY** = **16777300**
 - **KEY_OPENURL** = **16777301**
 - **KEY_LAUNCHMAIL** = **16777302**
@@ -166,105 +166,105 @@ Numeric Constants
 - **KEY_LAUNCHE** = **16777318**
 - **KEY_LAUNCHF** = **16777319**
 - **KEY_UNKNOWN** = **33554431**
-- **KEY_SPACE** = **32**
-- **KEY_EXCLAM** = **33**
-- **KEY_QUOTEDBL** = **34**
-- **KEY_NUMBERSIGN** = **35**
-- **KEY_DOLLAR** = **36**
-- **KEY_PERCENT** = **37**
-- **KEY_AMPERSAND** = **38**
-- **KEY_APOSTROPHE** = **39**
-- **KEY_PARENLEFT** = **40**
-- **KEY_PARENRIGHT** = **41**
-- **KEY_ASTERISK** = **42**
-- **KEY_PLUS** = **43**
-- **KEY_COMMA** = **44**
-- **KEY_MINUS** = **45**
-- **KEY_PERIOD** = **46**
-- **KEY_SLASH** = **47**
-- **KEY_0** = **48**
-- **KEY_1** = **49**
-- **KEY_2** = **50**
-- **KEY_3** = **51**
-- **KEY_4** = **52**
-- **KEY_5** = **53**
-- **KEY_6** = **54**
-- **KEY_7** = **55**
-- **KEY_8** = **56**
-- **KEY_9** = **57**
-- **KEY_COLON** = **58**
-- **KEY_SEMICOLON** = **59**
-- **KEY_LESS** = **60**
-- **KEY_EQUAL** = **61**
-- **KEY_GREATER** = **62**
-- **KEY_QUESTION** = **63**
-- **KEY_AT** = **64**
-- **KEY_A** = **65**
-- **KEY_B** = **66**
-- **KEY_C** = **67**
-- **KEY_D** = **68**
-- **KEY_E** = **69**
-- **KEY_F** = **70**
-- **KEY_G** = **71**
-- **KEY_H** = **72**
-- **KEY_I** = **73**
-- **KEY_J** = **74**
-- **KEY_K** = **75**
-- **KEY_L** = **76**
-- **KEY_M** = **77**
-- **KEY_N** = **78**
-- **KEY_O** = **79**
-- **KEY_P** = **80**
-- **KEY_Q** = **81**
-- **KEY_R** = **82**
-- **KEY_S** = **83**
-- **KEY_T** = **84**
-- **KEY_U** = **85**
-- **KEY_V** = **86**
-- **KEY_W** = **87**
-- **KEY_X** = **88**
-- **KEY_Y** = **89**
-- **KEY_Z** = **90**
-- **KEY_BRACKETLEFT** = **91**
-- **KEY_BACKSLASH** = **92**
-- **KEY_BRACKETRIGHT** = **93**
-- **KEY_ASCIICIRCUM** = **94**
-- **KEY_UNDERSCORE** = **95**
+- **KEY_SPACE** = **32** --- Space Key
+- **KEY_EXCLAM** = **33** --- ! key
+- **KEY_QUOTEDBL** = **34** --- " key
+- **KEY_NUMBERSIGN** = **35** --- # key
+- **KEY_DOLLAR** = **36** --- $ key
+- **KEY_PERCENT** = **37** --- % key
+- **KEY_AMPERSAND** = **38** --- & key
+- **KEY_APOSTROPHE** = **39** --- ' key
+- **KEY_PARENLEFT** = **40** --- ( key
+- **KEY_PARENRIGHT** = **41** --- ) key
+- **KEY_ASTERISK** = **42** --- \* key
+- **KEY_PLUS** = **43** --- + key
+- **KEY_COMMA** = **44** --- , key
+- **KEY_MINUS** = **45** --- - key
+- **KEY_PERIOD** = **46** --- . key
+- **KEY_SLASH** = **47** --- / key
+- **KEY_0** = **48** --- Number 0
+- **KEY_1** = **49** --- Number 1
+- **KEY_2** = **50** --- Number 2
+- **KEY_3** = **51** --- Number 3
+- **KEY_4** = **52** --- Number 4
+- **KEY_5** = **53** --- Number 5
+- **KEY_6** = **54** --- Number 6
+- **KEY_7** = **55** --- Number 7
+- **KEY_8** = **56** --- Number 8
+- **KEY_9** = **57** --- Number 9
+- **KEY_COLON** = **58** --- : key
+- **KEY_SEMICOLON** = **59** --- ; key
+- **KEY_LESS** = **60** --- Lower than key
+- **KEY_EQUAL** = **61** --- = key
+- **KEY_GREATER** = **62** --- Greater than key
+- **KEY_QUESTION** = **63** --- ? key
+- **KEY_AT** = **64** --- @ key
+- **KEY_A** = **65** --- A Key
+- **KEY_B** = **66** --- B Key
+- **KEY_C** = **67** --- C Key
+- **KEY_D** = **68** --- D Key
+- **KEY_E** = **69** --- E Key
+- **KEY_F** = **70** --- F Key
+- **KEY_G** = **71** --- G Key
+- **KEY_H** = **72** --- H Key
+- **KEY_I** = **73** --- I Key
+- **KEY_J** = **74** --- J Key
+- **KEY_K** = **75** --- K Key
+- **KEY_L** = **76** --- L Key
+- **KEY_M** = **77** --- M Key
+- **KEY_N** = **78** --- N Key
+- **KEY_O** = **79** --- O Key
+- **KEY_P** = **80** --- P Key
+- **KEY_Q** = **81** --- Q Key
+- **KEY_R** = **82** --- R Key
+- **KEY_S** = **83** --- S Key
+- **KEY_T** = **84** --- T Key
+- **KEY_U** = **85** --- U Key
+- **KEY_V** = **86** --- V Key
+- **KEY_W** = **87** --- W Key
+- **KEY_X** = **88** --- X Key
+- **KEY_Y** = **89** --- Y Key
+- **KEY_Z** = **90** --- Z Key
+- **KEY_BRACKETLEFT** = **91** --- [ key
+- **KEY_BACKSLASH** = **92** --- \ key
+- **KEY_BRACKETRIGHT** = **93** --- ] key
+- **KEY_ASCIICIRCUM** = **94** --- ^ key
+- **KEY_UNDERSCORE** = **95** --- \_ key
 - **KEY_QUOTELEFT** = **96**
-- **KEY_BRACELEFT** = **123**
-- **KEY_BAR** = **124**
-- **KEY_BRACERIGHT** = **125**
-- **KEY_ASCIITILDE** = **126**
+- **KEY_BRACELEFT** = **123** --- { key
+- **KEY_BAR** = **124** --- | key
+- **KEY_BRACERIGHT** = **125** --- } key
+- **KEY_ASCIITILDE** = **126** --- ~ key
 - **KEY_NOBREAKSPACE** = **160**
 - **KEY_EXCLAMDOWN** = **161**
-- **KEY_CENT** = **162**
+- **KEY_CENT** = **162** --- ¢ key
 - **KEY_STERLING** = **163**
 - **KEY_CURRENCY** = **164**
 - **KEY_YEN** = **165**
-- **KEY_BROKENBAR** = **166**
-- **KEY_SECTION** = **167**
-- **KEY_DIAERESIS** = **168**
-- **KEY_COPYRIGHT** = **169**
+- **KEY_BROKENBAR** = **166** --- ¦ key
+- **KEY_SECTION** = **167** --- § key
+- **KEY_DIAERESIS** = **168** --- ¨ key
+- **KEY_COPYRIGHT** = **169** --- © key
 - **KEY_ORDFEMININE** = **170**
-- **KEY_GUILLEMOTLEFT** = **171**
-- **KEY_NOTSIGN** = **172**
-- **KEY_HYPHEN** = **173**
-- **KEY_REGISTERED** = **174**
+- **KEY_GUILLEMOTLEFT** = **171** --- « key
+- **KEY_NOTSIGN** = **172** --- » key
+- **KEY_HYPHEN** = **173** --- ‐ key
+- **KEY_REGISTERED** = **174** --- ® key
 - **KEY_MACRON** = **175**
-- **KEY_DEGREE** = **176**
-- **KEY_PLUSMINUS** = **177**
-- **KEY_TWOSUPERIOR** = **178**
-- **KEY_THREESUPERIOR** = **179**
-- **KEY_ACUTE** = **180**
-- **KEY_MU** = **181**
+- **KEY_DEGREE** = **176** --- ° key
+- **KEY_PLUSMINUS** = **177** --- ± key
+- **KEY_TWOSUPERIOR** = **178** --- ² key
+- **KEY_THREESUPERIOR** = **179** --- ³ key
+- **KEY_ACUTE** = **180** --- ´ key
+- **KEY_MU** = **181** --- µ key
 - **KEY_PARAGRAPH** = **182**
-- **KEY_PERIODCENTERED** = **183**
-- **KEY_CEDILLA** = **184**
+- **KEY_PERIODCENTERED** = **183** --- · key
+- **KEY_CEDILLA** = **184** --- ¬ key
 - **KEY_ONESUPERIOR** = **185**
 - **KEY_MASCULINE** = **186**
 - **KEY_GUILLEMOTRIGHT** = **187**
 - **KEY_ONEQUARTER** = **188**
-- **KEY_ONEHALF** = **189**
+- **KEY_ONEHALF** = **189** --- ½ key
 - **KEY_THREEQUARTERS** = **190**
 - **KEY_QUESTIONDOWN** = **191**
 - **KEY_AGRAVE** = **192**
@@ -310,13 +310,13 @@ Numeric Constants
 - **KEY_MASK_CMD** = **268435456**
 - **KEY_MASK_KPAD** = **536870912**
 - **KEY_MASK_GROUP_SWITCH** = **1073741824**
-- **BUTTON_LEFT** = **1**
-- **BUTTON_RIGHT** = **2**
-- **BUTTON_MIDDLE** = **3**
-- **BUTTON_WHEEL_UP** = **4**
-- **BUTTON_WHEEL_DOWN** = **5**
-- **BUTTON_WHEEL_LEFT** = **6**
-- **BUTTON_WHEEL_RIGHT** = **7**
+- **BUTTON_LEFT** = **1** --- Left Mouse Button
+- **BUTTON_RIGHT** = **2** --- Right Mouse Button
+- **BUTTON_MIDDLE** = **3** --- Middle Mouse Button
+- **BUTTON_WHEEL_UP** = **4** --- Mouse wheel up
+- **BUTTON_WHEEL_DOWN** = **5** --- Mouse wheel down
+- **BUTTON_WHEEL_LEFT** = **6** --- Mouse wheel left button
+- **BUTTON_WHEEL_RIGHT** = **7** --- Mouse wheel right button
 - **BUTTON_MASK_LEFT** = **1**
 - **BUTTON_MASK_RIGHT** = **2**
 - **BUTTON_MASK_MIDDLE** = **4**
@@ -337,51 +337,51 @@ Numeric Constants
 - **JOY_BUTTON_14** = **14** --- Joystick Button 14
 - **JOY_BUTTON_15** = **15** --- Joystick Button 15
 - **JOY_BUTTON_MAX** = **16** --- Joystick Button 16
-- **JOY_SNES_A** = **1**
-- **JOY_SNES_B** = **0**
-- **JOY_SNES_X** = **3**
-- **JOY_SNES_Y** = **2**
-- **JOY_SONY_CIRCLE** = **1**
-- **JOY_SONY_X** = **0**
-- **JOY_SONY_SQUARE** = **2**
-- **JOY_SONY_TRIANGLE** = **3**
-- **JOY_SEGA_B** = **1**
-- **JOY_SEGA_A** = **0**
-- **JOY_SEGA_X** = **2**
-- **JOY_SEGA_Y** = **3**
-- **JOY_XBOX_B** = **1**
-- **JOY_XBOX_A** = **0**
-- **JOY_XBOX_X** = **2**
-- **JOY_XBOX_Y** = **3**
+- **JOY_SNES_A** = **1** --- Super Nintendo Entertaiment System controller A button
+- **JOY_SNES_B** = **0** --- Super Nintendo Entertaiment System controller B button
+- **JOY_SNES_X** = **3** --- Super Nintendo Entertaiment System controller X button
+- **JOY_SNES_Y** = **2** --- Super Nintendo Entertaiment System controller Y button
+- **JOY_SONY_CIRCLE** = **1** --- DUALSHOCK circle button
+- **JOY_SONY_X** = **0** --- DUALSHOCK X button
+- **JOY_SONY_SQUARE** = **2** --- DUALSHOCK square button
+- **JOY_SONY_TRIANGLE** = **3** --- DUALSHOCK triangle button
+- **JOY_SEGA_B** = **1** --- SEGA controller B button
+- **JOY_SEGA_A** = **0** --- SEGA controller A button
+- **JOY_SEGA_X** = **2** --- SEGA controller X button
+- **JOY_SEGA_Y** = **3** --- SEGA controller Y button
+- **JOY_XBOX_B** = **1** --- XBOX controller B button
+- **JOY_XBOX_A** = **0** --- XBOX controller A button
+- **JOY_XBOX_X** = **2** --- XBOX controller X button
+- **JOY_XBOX_Y** = **3** --- XBOX controller Y button
 - **JOY_DS_A** = **1**
 - **JOY_DS_B** = **0**
 - **JOY_DS_X** = **3**
 - **JOY_DS_Y** = **2**
-- **JOY_SELECT** = **10**
-- **JOY_START** = **11**
-- **JOY_DPAD_UP** = **12**
-- **JOY_DPAD_DOWN** = **13**
-- **JOY_DPAD_LEFT** = **14**
-- **JOY_DPAD_RIGHT** = **15**
-- **JOY_L** = **4**
-- **JOY_L2** = **6**
-- **JOY_L3** = **8**
-- **JOY_R** = **5**
-- **JOY_R2** = **7**
-- **JOY_R3** = **9**
-- **JOY_AXIS_0** = **0**
-- **JOY_AXIS_1** = **1**
-- **JOY_AXIS_2** = **2**
-- **JOY_AXIS_3** = **3**
+- **JOY_SELECT** = **10** --- Joystick Button Select
+- **JOY_START** = **11** --- Joystick Button Start
+- **JOY_DPAD_UP** = **12** --- Joystick DPad Up
+- **JOY_DPAD_DOWN** = **13** --- Joystick DPad Down
+- **JOY_DPAD_LEFT** = **14** --- Joystick DPad Left
+- **JOY_DPAD_RIGHT** = **15** --- Joystick DPad Right
+- **JOY_L** = **4** --- Joystick Left Shoulder Button
+- **JOY_L2** = **6** --- Joystick Left Trigger
+- **JOY_L3** = **8** --- Joystick Left Stick Click
+- **JOY_R** = **5** --- Joystick Right Shoulder Button
+- **JOY_R2** = **7** --- Joystick Right Trigger
+- **JOY_R3** = **9** --- Joystick Right Stick Click
+- **JOY_AXIS_0** = **0** --- Joystick Left Stick Horizontal Axis
+- **JOY_AXIS_1** = **1** --- Joystick Left Stick Vertical Axis
+- **JOY_AXIS_2** = **2** --- Joystick Right Stick Horizontal Axis
+- **JOY_AXIS_3** = **3** --- Joystick Right Stick Vertical Axis
 - **JOY_AXIS_4** = **4**
 - **JOY_AXIS_5** = **5**
-- **JOY_AXIS_6** = **6**
-- **JOY_AXIS_7** = **7**
+- **JOY_AXIS_6** = **6** --- Joystick Left Trigger Analog Axis
+- **JOY_AXIS_7** = **7** --- Joystick Right Trigger Analog Axis
 - **JOY_AXIS_MAX** = **8**
-- **JOY_ANALOG_0_X** = **0**
-- **JOY_ANALOG_0_Y** = **1**
-- **JOY_ANALOG_1_X** = **2**
-- **JOY_ANALOG_1_Y** = **3**
+- **JOY_ANALOG_0_X** = **0** --- Joystick Left Stick Horizontal Axis
+- **JOY_ANALOG_0_Y** = **1** --- Joystick Left Stick Vertical Axis
+- **JOY_ANALOG_1_X** = **2** --- Joystick Right Stick Horizontal Axis
+- **JOY_ANALOG_1_Y** = **3** --- Joystick Right Stick Vertical Axis
 - **JOY_ANALOG_2_X** = **4**
 - **JOY_ANALOG_2_Y** = **5**
 - **JOY_ANALOG_L2** = **6**
@@ -407,6 +407,7 @@ Numeric Constants
 - **ERR_FILE_EOF** = **18**
 - **ERR_CANT_OPEN** = **19**
 - **ERR_CANT_CREATE** = **20**
+- **ERR_PARSE_ERROR** = **43**
 - **ERROR_QUERY_FAILED** = **21**
 - **ERR_ALREADY_IN_USE** = **22**
 - **ERR_LOCKED** = **23**
@@ -446,10 +447,22 @@ Numeric Constants
 - **PROPERTY_HINT_IMAGE_COMPRESS_LOSSY** = **17**
 - **PROPERTY_HINT_IMAGE_COMPRESS_LOSSLESS** = **18**
 - **PROPERTY_USAGE_STORAGE** = **1** --- Property will be used as storage (default).
-- **PROPERTY_USAGE_STORAGE** = **1** --- Property will be used as storage (default).
 - **PROPERTY_USAGE_EDITOR** = **2** --- Property will be visible in editor (default).
 - **PROPERTY_USAGE_NETWORK** = **4**
+- **PROPERTY_USAGE_EDITOR_HELPER** = **8**
+- **PROPERTY_USAGE_CHECKABLE** = **16**
+- **PROPERTY_USAGE_CHECKED** = **32**
+- **PROPERTY_USAGE_INTERNATIONALIZED** = **64**
+- **PROPERTY_USAGE_BUNDLE** = **128**
+- **PROPERTY_USAGE_CATEGORY** = **256**
+- **PROPERTY_USAGE_STORE_IF_NONZERO** = **512**
+- **PROPERTY_USAGE_STORE_IF_NONONE** = **1024**
+- **PROPERTY_USAGE_NO_INSTANCE_STATE** = **2048**
+- **PROPERTY_USAGE_RESTART_IF_CHANGED** = **4096**
+- **PROPERTY_USAGE_SCRIPT_VARIABLE** = **8192**
 - **PROPERTY_USAGE_DEFAULT** = **7** --- Default usage (storage and editor).
+- **PROPERTY_USAGE_DEFAULT_INTL** = **71**
+- **PROPERTY_USAGE_NOEDITOR** = **5**
 - **METHOD_FLAG_NORMAL** = **1**
 - **METHOD_FLAG_EDITOR** = **2**
 - **METHOD_FLAG_NOSCRIPT** = **4**
@@ -459,9 +472,9 @@ Numeric Constants
 - **METHOD_FLAG_FROM_SCRIPT** = **64**
 - **METHOD_FLAGS_DEFAULT** = **1**
 - **TYPE_NIL** = **0** --- Variable is of type nil (only applied for null).
-- **TYPE_BOOL** = **1** --- Variable is of type bool.
-- **TYPE_INT** = **2** --- Variable is of type integer.
-- **TYPE_REAL** = **3** --- Variable is of type float/real.
+- **TYPE_BOOL** = **1** --- Variable is of type :ref:`bool<class_bool>`.
+- **TYPE_INT** = **2** --- Variable is of type :ref:`int<class_int>`.
+- **TYPE_REAL** = **3** --- Variable is of type :ref:`float<class_float>`/real.
 - **TYPE_STRING** = **4** --- Variable is of type :ref:`String<class_string>`.
 - **TYPE_VECTOR2** = **5** --- Variable is of type :ref:`Vector2<class_vector2>`.
 - **TYPE_RECT2** = **6** --- Variable is of type :ref:`Rect2<class_rect2>`.
@@ -470,16 +483,16 @@ Numeric Constants
 - **TYPE_PLANE** = **9** --- Variable is of type :ref:`Plane<class_plane>`.
 - **TYPE_QUAT** = **10** --- Variable is of type :ref:`Quat<class_quat>`.
 - **TYPE_AABB** = **11** --- Variable is of type :ref:`AABB<class_aabb>`.
-- **TYPE_MATRIX3** = **12** --- Variable is fo type :ref:`Matrix3<class_matrix3>`.
-- **TYPE_TRANSFORM** = **13** --- Variable is fo type :ref:`Transform<class_transform>`.
-- **TYPE_COLOR** = **14** --- Variable is fo type :ref:`Color<class_color>`.
-- **TYPE_IMAGE** = **15** --- Variable is fo type :ref:`Image<class_image>`.
-- **TYPE_NODE_PATH** = **16** --- Variable is fo type :ref:`NodePath<class_nodepath>`.
-- **TYPE_RID** = **17** --- Variable is fo type :ref:`RID<class_rid>`.
-- **TYPE_OBJECT** = **18** --- Variable is fo type :ref:`Object<class_object>`.
-- **TYPE_INPUT_EVENT** = **19** --- Variable is fo type :ref:`InputEvent<class_inputevent>`.
-- **TYPE_DICTIONARY** = **20** --- Variable is fo type :ref:`Dictionary<class_dictionary>`.
-- **TYPE_ARRAY** = **21** --- Variable is fo type :ref:`Array<class_array>`.
+- **TYPE_MATRIX3** = **12** --- Variable is of type :ref:`Matrix3<class_matrix3>`.
+- **TYPE_TRANSFORM** = **13** --- Variable is of type :ref:`Transform<class_transform>`.
+- **TYPE_COLOR** = **14** --- Variable is of type :ref:`Color<class_color>`.
+- **TYPE_IMAGE** = **15** --- Variable is of type :ref:`Image<class_image>`.
+- **TYPE_NODE_PATH** = **16** --- Variable is of type :ref:`NodePath<class_nodepath>`.
+- **TYPE_RID** = **17** --- Variable is of type :ref:`RID<class_rid>`.
+- **TYPE_OBJECT** = **18** --- Variable is of type :ref:`Object<class_object>`.
+- **TYPE_INPUT_EVENT** = **19** --- Variable is of type :ref:`InputEvent<class_inputevent>`.
+- **TYPE_DICTIONARY** = **20** --- Variable is of type :ref:`Dictionary<class_dictionary>`.
+- **TYPE_ARRAY** = **21** --- Variable is of type :ref:`Array<class_array>`.
 - **TYPE_RAW_ARRAY** = **22**
 - **TYPE_INT_ARRAY** = **23**
 - **TYPE_REAL_ARRAY** = **24**

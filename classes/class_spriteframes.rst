@@ -18,19 +18,37 @@ Sprite frame library for AnimatedSprite.
 Member Functions
 ----------------
 
-+------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`add_frame<class_SpriteFrames_add_frame>`  **(** :ref:`Object<class_object>` frame, :ref:`int<class_int>` atpos=-1  **)** |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_frame_count<class_SpriteFrames_get_frame_count>`  **(** **)** const                                                  |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`  | :ref:`get_frame<class_SpriteFrames_get_frame>`  **(** :ref:`int<class_int>` idx  **)** const                                   |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_frame<class_SpriteFrames_set_frame>`  **(** :ref:`int<class_int>` idx, :ref:`Object<class_object>` txt  **)**        |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`remove_frame<class_SpriteFrames_remove_frame>`  **(** :ref:`int<class_int>` idx  **)**                                   |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`clear<class_SpriteFrames_clear>`  **(** **)**                                                                            |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`add_animation<class_SpriteFrames_add_animation>`  **(** :ref:`String<class_string>` anim  **)**                                                            |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`add_frame<class_SpriteFrames_add_frame>`  **(** :ref:`String<class_string>` anim, :ref:`Object<class_object>` frame, :ref:`int<class_int>` atpos=-1  **)** |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`clear<class_SpriteFrames_clear>`  **(** :ref:`String<class_string>` anim  **)**                                                                            |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`clear_all<class_SpriteFrames_clear_all>`  **(** **)**                                                                                                      |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`get_animation_loop<class_SpriteFrames_get_animation_loop>`  **(** :ref:`String<class_string>` anim  **)** const                                            |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`    | :ref:`get_animation_speed<class_SpriteFrames_get_animation_speed>`  **(** :ref:`String<class_string>` anim  **)** const                                          |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`  | :ref:`get_frame<class_SpriteFrames_get_frame>`  **(** :ref:`String<class_string>` anim, :ref:`int<class_int>` idx  **)** const                                   |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`get_frame_count<class_SpriteFrames_get_frame_count>`  **(** :ref:`String<class_string>` anim  **)** const                                                  |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`has_animation<class_SpriteFrames_has_animation>`  **(** :ref:`String<class_string>` anim  **)** const                                                      |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`remove_animation<class_SpriteFrames_remove_animation>`  **(** :ref:`String<class_string>` anim  **)**                                                      |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`remove_frame<class_SpriteFrames_remove_frame>`  **(** :ref:`String<class_string>` anim, :ref:`int<class_int>` idx  **)**                                   |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`rename_animation<class_SpriteFrames_rename_animation>`  **(** :ref:`String<class_string>` anim, :ref:`String<class_string>` newname  **)**                 |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_animation_loop<class_SpriteFrames_set_animation_loop>`  **(** :ref:`String<class_string>` anim, :ref:`bool<class_bool>` loop  **)**                    |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_animation_speed<class_SpriteFrames_set_animation_speed>`  **(** :ref:`String<class_string>` anim, :ref:`float<class_float>` speed  **)**               |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_frame<class_SpriteFrames_set_frame>`  **(** :ref:`String<class_string>` anim, :ref:`int<class_int>` idx, :ref:`Object<class_object>` txt  **)**        |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -40,38 +58,64 @@ Sprite frame library for :ref:`AnimatedSprite<class_animatedsprite>`.
 Member Function Description
 ---------------------------
 
+.. _class_SpriteFrames_add_animation:
+
+- void  **add_animation**  **(** :ref:`String<class_string>` anim  **)**
+
 .. _class_SpriteFrames_add_frame:
 
-- void  **add_frame**  **(** :ref:`Object<class_object>` frame, :ref:`int<class_int>` atpos=-1  **)**
-
-Add a frame (texture).
-
-.. _class_SpriteFrames_get_frame_count:
-
-- :ref:`int<class_int>`  **get_frame_count**  **(** **)** const
-
-Return the amount of frames.
-
-.. _class_SpriteFrames_get_frame:
-
-- :ref:`Object<class_object>`  **get_frame**  **(** :ref:`int<class_int>` idx  **)** const
-
-Return a texture (frame).
-
-.. _class_SpriteFrames_set_frame:
-
-- void  **set_frame**  **(** :ref:`int<class_int>` idx, :ref:`Object<class_object>` txt  **)**
-
-.. _class_SpriteFrames_remove_frame:
-
-- void  **remove_frame**  **(** :ref:`int<class_int>` idx  **)**
-
-Remove a frame
+- void  **add_frame**  **(** :ref:`String<class_string>` anim, :ref:`Object<class_object>` frame, :ref:`int<class_int>` atpos=-1  **)**
 
 .. _class_SpriteFrames_clear:
 
-- void  **clear**  **(** **)**
+- void  **clear**  **(** :ref:`String<class_string>` anim  **)**
 
-Clear the frames.
+.. _class_SpriteFrames_clear_all:
+
+- void  **clear_all**  **(** **)**
+
+.. _class_SpriteFrames_get_animation_loop:
+
+- :ref:`bool<class_bool>`  **get_animation_loop**  **(** :ref:`String<class_string>` anim  **)** const
+
+.. _class_SpriteFrames_get_animation_speed:
+
+- :ref:`float<class_float>`  **get_animation_speed**  **(** :ref:`String<class_string>` anim  **)** const
+
+.. _class_SpriteFrames_get_frame:
+
+- :ref:`Object<class_object>`  **get_frame**  **(** :ref:`String<class_string>` anim, :ref:`int<class_int>` idx  **)** const
+
+.. _class_SpriteFrames_get_frame_count:
+
+- :ref:`int<class_int>`  **get_frame_count**  **(** :ref:`String<class_string>` anim  **)** const
+
+.. _class_SpriteFrames_has_animation:
+
+- :ref:`bool<class_bool>`  **has_animation**  **(** :ref:`String<class_string>` anim  **)** const
+
+.. _class_SpriteFrames_remove_animation:
+
+- void  **remove_animation**  **(** :ref:`String<class_string>` anim  **)**
+
+.. _class_SpriteFrames_remove_frame:
+
+- void  **remove_frame**  **(** :ref:`String<class_string>` anim, :ref:`int<class_int>` idx  **)**
+
+.. _class_SpriteFrames_rename_animation:
+
+- void  **rename_animation**  **(** :ref:`String<class_string>` anim, :ref:`String<class_string>` newname  **)**
+
+.. _class_SpriteFrames_set_animation_loop:
+
+- void  **set_animation_loop**  **(** :ref:`String<class_string>` anim, :ref:`bool<class_bool>` loop  **)**
+
+.. _class_SpriteFrames_set_animation_speed:
+
+- void  **set_animation_speed**  **(** :ref:`String<class_string>` anim, :ref:`float<class_float>` speed  **)**
+
+.. _class_SpriteFrames_set_frame:
+
+- void  **set_frame**  **(** :ref:`String<class_string>` anim, :ref:`int<class_int>` idx, :ref:`Object<class_object>` txt  **)**
 
 

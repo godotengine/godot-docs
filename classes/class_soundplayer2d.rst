@@ -21,9 +21,9 @@ Member Functions
 ----------------
 
 +----------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_param<class_SoundPlayer2D_set_param>`  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)** |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_param<class_SoundPlayer2D_get_param>`  **(** :ref:`int<class_int>` param  **)** const                            |
++----------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_param<class_SoundPlayer2D_set_param>`  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)** |
 +----------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
@@ -44,12 +44,12 @@ Base class for playing spatial 2D sound.
 Member Function Description
 ---------------------------
 
-.. _class_SoundPlayer2D_set_param:
-
-- void  **set_param**  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**
-
 .. _class_SoundPlayer2D_get_param:
 
 - :ref:`float<class_float>`  **get_param**  **(** :ref:`int<class_int>` param  **)** const
+
+.. _class_SoundPlayer2D_set_param:
+
+- void  **set_param**  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**
 
 

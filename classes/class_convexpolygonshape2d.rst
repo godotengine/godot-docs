@@ -19,11 +19,11 @@ Member Functions
 ----------------
 
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2Array<class_vector2array>`  | :ref:`get_points<class_ConvexPolygonShape2D_get_points>`  **(** **)** const                                                          |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_point_cloud<class_ConvexPolygonShape2D_set_point_cloud>`  **(** :ref:`Vector2Array<class_vector2array>` point_cloud  **)** |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_points<class_ConvexPolygonShape2D_set_points>`  **(** :ref:`Vector2Array<class_vector2array>` points  **)**                |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2Array<class_vector2array>`  | :ref:`get_points<class_ConvexPolygonShape2D_get_points>`  **(** **)** const                                                          |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -36,6 +36,12 @@ The main difference between a :ref:`ConvexPolygonShape2D<class_convexpolygonshap
 Member Function Description
 ---------------------------
 
+.. _class_ConvexPolygonShape2D_get_points:
+
+- :ref:`Vector2Array<class_vector2array>`  **get_points**  **(** **)** const
+
+Return a list of points in either clockwise or counter clockwise order, forming a convex polygon.
+
 .. _class_ConvexPolygonShape2D_set_point_cloud:
 
 - void  **set_point_cloud**  **(** :ref:`Vector2Array<class_vector2array>` point_cloud  **)**
@@ -47,11 +53,5 @@ Currently, this method does nothing.
 - void  **set_points**  **(** :ref:`Vector2Array<class_vector2array>` points  **)**
 
 Set a list of points in either clockwise or counter clockwise order, forming a convex polygon.
-
-.. _class_ConvexPolygonShape2D_get_points:
-
-- :ref:`Vector2Array<class_vector2array>`  **get_points**  **(** **)** const
-
-Return a list of points in either clockwise or counter clockwise order, forming a convex polygon.
 
 

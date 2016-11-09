@@ -23,15 +23,15 @@ Member Functions
 +------------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`      | :ref:`can_instance<class_Script_can_instance>`  **(** **)** const                                          |
 +------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`instance_has<class_Script_instance_has>`  **(** :ref:`Object<class_object>` base_object  **)** const |
+| :ref:`String<class_string>`  | :ref:`get_source_code<class_Script_get_source_code>`  **(** **)** const                                    |
 +------------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`      | :ref:`has_source_code<class_Script_has_source_code>`  **(** **)** const                                    |
 +------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_source_code<class_Script_get_source_code>`  **(** **)** const                                    |
+| :ref:`bool<class_bool>`      | :ref:`instance_has<class_Script_instance_has>`  **(** :ref:`Object<class_object>` base_object  **)** const |
++------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`reload<class_Script_reload>`  **(** :ref:`bool<class_bool>` keep_state=false  **)**                  |
 +------------------------------+------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`set_source_code<class_Script_set_source_code>`  **(** :ref:`String<class_string>` source  **)**      |
-+------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`reload<class_Script_reload>`  **(** **)**                                                            |
 +------------------------------+------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -48,11 +48,11 @@ Member Function Description
 
 Return true if this script can be instance (ie not a library).
 
-.. _class_Script_instance_has:
+.. _class_Script_get_source_code:
 
-- :ref:`bool<class_bool>`  **instance_has**  **(** :ref:`Object<class_object>` base_object  **)** const
+- :ref:`String<class_string>`  **get_source_code**  **(** **)** const
 
-Return true if a given object uses an instance of this script.
+Return the script source code (if available).
 
 .. _class_Script_has_source_code:
 
@@ -60,22 +60,20 @@ Return true if a given object uses an instance of this script.
 
 Return true if the script contains source code.
 
-.. _class_Script_get_source_code:
+.. _class_Script_instance_has:
 
-- :ref:`String<class_string>`  **get_source_code**  **(** **)** const
+- :ref:`bool<class_bool>`  **instance_has**  **(** :ref:`Object<class_object>` base_object  **)** const
 
-Return the script source code (if available).
+Return true if a given object uses an instance of this script.
+
+.. _class_Script_reload:
+
+- :ref:`int<class_int>`  **reload**  **(** :ref:`bool<class_bool>` keep_state=false  **)**
 
 .. _class_Script_set_source_code:
 
 - void  **set_source_code**  **(** :ref:`String<class_string>` source  **)**
 
 Set the script source code.
-
-.. _class_Script_reload:
-
-- :ref:`int<class_int>`  **reload**  **(** **)**
-
-Reload the script. This will fail if there are existing instances.
 
 

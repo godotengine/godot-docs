@@ -84,11 +84,12 @@ node dialog to create the following hierarchy, with the following nodes:
 
 It should look like this in the scene tree:
 
-.. image:: /img/scriptscene.png
+.. image:: /img/scripting_scene_tree.png
 
-And try to make it look like this in the 2D editor, so it makes sense:
+Use the 2D editor to position and resize the button and label so that they
+look like the image below. You can set the text in the Inspector pane.
 
-.. image:: /img/scriptsceneimg.png
+.. image:: /img/label_button_example.png
 
 Finally, save the scene, a fitting name could be "sayhello.scn"
 
@@ -97,9 +98,10 @@ Finally, save the scene, a fitting name could be "sayhello.scn"
 Adding a script
 ~~~~~~~~~~~~~~~
 
-Select the Panel node, then press the "Add Script" Icon as follows:
+Right click on the panel node, then select "Add Script" in the context
+menu:
 
-.. image:: /img/addscript.png
+.. image:: /img/add_script.png
 
 The script creation dialog will pop up. This dialog allows to select
 the language, class name, etc. GDScript does not use class names in
@@ -107,31 +109,30 @@ script files, so that field is not editable. The script should inherit
 from "Panel" (as it is meant to extend the node, which is of Panel type,
 this is automatically filled anyway).
 
-Select the filename for the script (if you saved the scene previously,
-one will be automatically generated as sayhello.gd) and push "Create":
+Enter a path name for the script and then select "Create":
 
-.. image:: /img/scriptcreate.png
+.. image:: /img/script_create.png
 
 Once this is done, the script will be created and added to the node. You
 can see this both as an extra icon in the node, as well as in the script
 property:
 
-.. image:: /img/scriptadded.png
+.. image:: /img/script_added.png
 
-To edit the script, pushing the icon above should do it (although, the
-UI will take you directly to the Script editor screen). So, here's the
-template script:
+To edit the script, select either of the highlighted buttons. 
+This will bring you to the script editor where an existing template will
+be included by default:
 
 .. image:: /img/script_template.png
 
 There is not much in there. The "_ready()" function is called when the
-node (and all it's children) entered the active scene. (Remember, It's
+node (and all its children) entered the active scene. (Remember, it's
 not a constructor, the constructor is "_init()" ).
 
 The role of the script
 ~~~~~~~~~~~~~~~~~~~~~~
 
-A script basically adds a behavior to a node. It is used to control the
+A script adds behavior to a node. It is used to control the
 node functions as well as other nodes (children, parent, siblings, etc).
 The local scope of the script is the node (just like in regular
 inheritance) and the virtual functions of the node are captured by the
@@ -148,21 +149,15 @@ and can be connected to any function of any script instance. In this
 step, the "pressed" signal from the button will be connected to a custom
 function.
 
-There is a GUI for connecting signals, just select the node and press
-the "Signals" button:
+An interface for connecting signals to your scripts exists in the editor. 
+You can access this by selecting the node in the scene tree and then
+selecting the "Node" tab. Make sure that you have "Signals" selected.
 
 .. image:: /img/signals.png
 
-Which will show the list of signals a Button can emit.
-
-.. image:: /img/button_connections.png
-
-But this example will not use it. We don't want to make things *too*
-easy. So please close that screen!
-
 In any case, at this point it is clear that that we are interested in
-the "pressed" signal, so instead of doing it with the visual
-interface, the connection will be done using code.
+the "pressed" signal. Instead of doing it with the visual
+interface, we will opt to make the connection using code.
 
 For this, there is a function that is probably the one that Godot
 programmers will use the most, this is
@@ -212,13 +207,13 @@ The final script should look like this:
 Running the scene should have the expected result when pressing the
 button:
 
-.. image:: /img/scripthello.png
+.. image:: /img/scripting_hello.png
 
 **Note:** As it is a common mistake in this tutorial, let's clarify
-again that get_node(path) works by returning the immediate children to
+again that get_node(path) works by returning the *immediate* children of
 the node controlled by the script (in this case, *Panel*), so *Button*
 must be a child of *Panel* for the above code to work. To give this
-clarification more context, if *Button* was a child of *Label*, the code
+clarification more context, if *Button* were a child of *Label*, the code
 to obtain it would be:
 
 ::

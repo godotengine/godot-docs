@@ -47,8 +47,8 @@ create their art on the screen too, so their art has an implicit gamma
 curve applied to it.
 
 The color space where images created in computer monitors exist is
-called "sRGB". Every visual content that people has on their computers
-or downloads from the internet (such as pictures, movies, etc)
+called "sRGB". All visual content that people have on their computers
+or download from the internet (such as pictures, movies, etc.)
 is in this colorspace.
 
 .. image:: /img/hdr_gamma.png

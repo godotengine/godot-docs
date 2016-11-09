@@ -9,7 +9,7 @@ If you have read the previous tutorials on :ref:`doc_resources` and
 
 Unlike texture resources (.tex files), image files contain no extra
 information on tiling (texture repeat), mipmaps or filtering. Editing
-this information and saving the texture back will have not any effect,
+this information and saving the texture back will not have any effect,
 since such formats can't contain that information.
 
 Image loader
@@ -18,7 +18,7 @@ Image loader
 Loading of images is done by the image loader. The behavior of the
 loader for all image files can be changed in the Project Settings dialog
 (Scene -> Project Settings). There is a section with values that
-correspond to the every image file when loaded:
+are used for all image resources:
 
 .. image:: /img/imgloader.png
 
@@ -28,9 +28,9 @@ Image loader options
 Filter
 ~~~~~~
 
-Filter is used when the image is stretched more than it's original size,
+Filter is used when the image is stretched more than its original size,
 so a texel in the image is bigger than a pixel on the screen. Turning
-off the fiter produces a retro-like look:
+off the filter produces a retro-like look:
 
 .. image:: /img/imagefilter.png
 
@@ -46,7 +46,7 @@ of clamping to the edge.
 Mipmaps
 ~~~~~~~
 
-When the mipmaps option is enabled, Godot will generate mip-maps.
+When the mipmaps option is enabled, Godot will generate mipmaps.
 Mipmaps are versions of the image shrunk by half in both axis,
 recursively, until the image is 1 pixel of size. When the 3D hardware
 needs to shrink the image, it finds the largest mipmap it can scale
@@ -55,7 +55,7 @@ quality.
 
 .. image:: /img/mipmaps.png
 
-When Mip-Maps are disabled, images start distorting badly when shrunk
+When mipmaps are disabled, images start distorting badly when shrunk
 excessively:
 
 .. image:: /img/imagemipmap.png
@@ -80,7 +80,7 @@ pixels the same color as the visible neighbours):
 
 To do this, open the image from the resources tab, or edit it from the
 property editor from another node or resource, then go to the object
-options and select "Fix Border Alpha", then save it.
+options and select "Fix Alpha Edges", then save it.
 
 .. image:: /img/imagefixalpha.png
 
@@ -111,3 +111,40 @@ Atlas for a set of images. It is also possible to ask the exporter to
 scale all images (or selected groups).
 
 More information on the :ref:`doc_exporting_images` page.
+
+Fixing PNGs iCCP chunk
+----------------------
+
+With the upgrade of libpng to 1.6.23, libpng became more strict in terms of
+enforcing iCC profile correctness. This means that it now warns when it comes
+across an image with a non-conforming iCC chunk.
+
+    WARNING: _png_warn_function: iCCP: known incorrect sRGB profile
+
+This can be fixed by either using a tool that exports PNGs with the correct
+iCC profile (in some tools this profile can even be manually changed on export)
+or using a tool that removes/fixes the iCC chunks.
+
+Linux/Mac
+~~~~~
+Using ImageMagicks ``convert`` or ``mogrify`` fixes these warnings.
+To fix all PNGs in a project folder do:
+
+.. code-block:: shell
+
+    $ find . -type f -name "*.png" -exec convert {} {} \;
+
+``pngcheck`` is also useful in locating the non-conforming images:
+
+.. code-block:: shell
+
+    find . -type f -name "*.png" -exec pngcheck {} \;
+
+Windows
+~~~~~~~
+Using `optiPNG <http://optipng.sourceforge.net/>` fixes these warnings on Windows.
+To fix a PNG inplace do:
+
+.. code-block:: shell
+
+    optipng -clobber -strip all file.png

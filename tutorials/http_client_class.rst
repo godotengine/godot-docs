@@ -27,9 +27,8 @@ It will connect and fetch a website.
         var err = http.connect("www.php.net",80) # Connect to host/port
         assert(err==OK) # Make sure connection was OK
 
-
+        # Wait until resolved and connected
         while( http.get_status()==HTTPClient.STATUS_CONNECTING or http.get_status()==HTTPClient.STATUS_RESOLVING):
-                    #Wait until resolved and connected
             http.poll()
             print("Connecting..")
             OS.delay_msec(500)
@@ -60,38 +59,38 @@ It will connect and fetch a website.
 
 
         if (http.has_response()):
-            #If there is a response..
+            # If there is a response..
 
             var headers = http.get_response_headers_as_dictionary() # Get response headers
             print("code: ",http.get_response_code()) # Show response code
             print("**headers:\\n",headers) # Show headers
 
-            #Getting the HTTP Body
+            # Getting the HTTP Body
 
             if (http.is_response_chunked()):
-                #Does it use chunks?
+                # Does it use chunks?
                 print("Response is Chunked!")
             else:
-                #Or just plain Content-Length
+                # Or just plain Content-Length
                 var bl = http.get_response_body_length()
                 print("Response Length: ",bl)
 
-            #This method works for both anyway
+            # This method works for both anyway
 
-            var rb = RawArray() #array that will hold the data
+            var rb = RawArray() # Array that will hold the data
 
             while(http.get_status()==HTTPClient.STATUS_BODY):
-                #While there is body left to be read
+                # While there is body left to be read
                 http.poll()
                 var chunk = http.read_response_body_chunk() # Get a chunk
                 if (chunk.size()==0):
-                    #got nothing, wait for buffers to fill a bit
+                    # Got nothing, wait for buffers to fill a bit
                     OS.delay_usec(1000)
                 else:
-                    rb = rb + chunk # append to read buffer
+                    rb = rb + chunk # Append to read buffer
 
 
-            #done!
+            # Done!
 
             print("bytes got: ",rb.size())
             var text = rb.get_string_from_ascii()

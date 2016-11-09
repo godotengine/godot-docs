@@ -21,13 +21,13 @@ Member Functions
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`        | :ref:`get_result_count<class_PhysicsShapeQueryResult_get_result_count>`  **(** **)** const                                          |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`        | :ref:`get_result_rid<class_PhysicsShapeQueryResult_get_result_rid>`  **(** :ref:`int<class_int>` idx  **)** const                   |
+| :ref:`Object<class_object>`  | :ref:`get_result_object<class_PhysicsShapeQueryResult_get_result_object>`  **(** :ref:`int<class_int>` idx  **)** const             |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`        | :ref:`get_result_object_id<class_PhysicsShapeQueryResult_get_result_object_id>`  **(** :ref:`int<class_int>` idx  **)** const       |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`  | :ref:`get_result_object<class_PhysicsShapeQueryResult_get_result_object>`  **(** :ref:`int<class_int>` idx  **)** const             |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`        | :ref:`get_result_object_shape<class_PhysicsShapeQueryResult_get_result_object_shape>`  **(** :ref:`int<class_int>` idx  **)** const |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_rid>`        | :ref:`get_result_rid<class_PhysicsShapeQueryResult_get_result_rid>`  **(** :ref:`int<class_int>` idx  **)** const                   |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Function Description
@@ -37,20 +37,20 @@ Member Function Description
 
 - :ref:`int<class_int>`  **get_result_count**  **(** **)** const
 
-.. _class_PhysicsShapeQueryResult_get_result_rid:
+.. _class_PhysicsShapeQueryResult_get_result_object:
 
-- :ref:`RID<class_rid>`  **get_result_rid**  **(** :ref:`int<class_int>` idx  **)** const
+- :ref:`Object<class_object>`  **get_result_object**  **(** :ref:`int<class_int>` idx  **)** const
 
 .. _class_PhysicsShapeQueryResult_get_result_object_id:
 
 - :ref:`int<class_int>`  **get_result_object_id**  **(** :ref:`int<class_int>` idx  **)** const
 
-.. _class_PhysicsShapeQueryResult_get_result_object:
-
-- :ref:`Object<class_object>`  **get_result_object**  **(** :ref:`int<class_int>` idx  **)** const
-
 .. _class_PhysicsShapeQueryResult_get_result_object_shape:
 
 - :ref:`int<class_int>`  **get_result_object_shape**  **(** :ref:`int<class_int>` idx  **)** const
+
+.. _class_PhysicsShapeQueryResult_get_result_rid:
+
+- :ref:`RID<class_rid>`  **get_result_rid**  **(** :ref:`int<class_int>` idx  **)** const
 
 

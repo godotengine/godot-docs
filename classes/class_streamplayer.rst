@@ -18,55 +18,55 @@ Base class for audio stream playback.
 Member Functions
 ----------------
 
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_stream<class_StreamPlayer_set_stream>`  **(** Stream stream  **)**                                        |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| Stream                       | :ref:`get_stream<class_StreamPlayer_get_stream>`  **(** **)** const                                                 |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`play<class_StreamPlayer_play>`  **(** :ref:`float<class_float>` offset=0  **)**                               |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`stop<class_StreamPlayer_stop>`  **(** **)**                                                                   |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`is_playing<class_StreamPlayer_is_playing>`  **(** **)** const                                                 |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_paused<class_StreamPlayer_set_paused>`  **(** :ref:`bool<class_bool>` paused  **)**                       |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`is_paused<class_StreamPlayer_is_paused>`  **(** **)** const                                                   |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_loop<class_StreamPlayer_set_loop>`  **(** :ref:`bool<class_bool>` enabled  **)**                          |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`has_loop<class_StreamPlayer_has_loop>`  **(** **)** const                                                     |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_volume<class_StreamPlayer_set_volume>`  **(** :ref:`float<class_float>` volume  **)**                     |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`    | :ref:`get_volume<class_StreamPlayer_get_volume>`  **(** **)** const                                                 |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_volume_db<class_StreamPlayer_set_volume_db>`  **(** :ref:`float<class_float>` db  **)**                   |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`    | :ref:`get_volume_db<class_StreamPlayer_get_volume_db>`  **(** **)** const                                           |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_buffering_msec<class_StreamPlayer_set_buffering_msec>`  **(** :ref:`int<class_int>` msec  **)**           |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_buffering_msec<class_StreamPlayer_get_buffering_msec>`  **(** **)** const                                 |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_loop_restart_time<class_StreamPlayer_set_loop_restart_time>`  **(** :ref:`float<class_float>` secs  **)** |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`    | :ref:`get_loop_restart_time<class_StreamPlayer_get_loop_restart_time>`  **(** **)** const                           |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_stream_name<class_StreamPlayer_get_stream_name>`  **(** **)** const                                       |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_loop_count<class_StreamPlayer_get_loop_count>`  **(** **)** const                                         |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`    | :ref:`get_pos<class_StreamPlayer_get_pos>`  **(** **)** const                                                       |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`seek_pos<class_StreamPlayer_seek_pos>`  **(** :ref:`float<class_float>` time  **)**                           |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_autoplay<class_StreamPlayer_set_autoplay>`  **(** :ref:`bool<class_bool>` enabled  **)**                  |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`has_autoplay<class_StreamPlayer_has_autoplay>`  **(** **)** const                                             |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`    | :ref:`get_length<class_StreamPlayer_get_length>`  **(** **)** const                                                 |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`get_buffering_msec<class_StreamPlayer_get_buffering_msec>`  **(** **)** const                                 |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_length<class_StreamPlayer_get_length>`  **(** **)** const                                                 |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`get_loop_count<class_StreamPlayer_get_loop_count>`  **(** **)** const                                         |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_loop_restart_time<class_StreamPlayer_get_loop_restart_time>`  **(** **)** const                           |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_pos<class_StreamPlayer_get_pos>`  **(** **)** const                                                       |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`AudioStream<class_audiostream>`  | :ref:`get_stream<class_StreamPlayer_get_stream>`  **(** **)** const                                                 |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`get_stream_name<class_StreamPlayer_get_stream_name>`  **(** **)** const                                       |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_volume<class_StreamPlayer_get_volume>`  **(** **)** const                                                 |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_volume_db<class_StreamPlayer_get_volume_db>`  **(** **)** const                                           |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`has_autoplay<class_StreamPlayer_has_autoplay>`  **(** **)** const                                             |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`has_loop<class_StreamPlayer_has_loop>`  **(** **)** const                                                     |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`is_paused<class_StreamPlayer_is_paused>`  **(** **)** const                                                   |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`is_playing<class_StreamPlayer_is_playing>`  **(** **)** const                                                 |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`play<class_StreamPlayer_play>`  **(** :ref:`float<class_float>` offset=0  **)**                               |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`seek_pos<class_StreamPlayer_seek_pos>`  **(** :ref:`float<class_float>` time  **)**                           |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_autoplay<class_StreamPlayer_set_autoplay>`  **(** :ref:`bool<class_bool>` enabled  **)**                  |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_buffering_msec<class_StreamPlayer_set_buffering_msec>`  **(** :ref:`int<class_int>` msec  **)**           |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_loop<class_StreamPlayer_set_loop>`  **(** :ref:`bool<class_bool>` enabled  **)**                          |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_loop_restart_time<class_StreamPlayer_set_loop_restart_time>`  **(** :ref:`float<class_float>` secs  **)** |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_paused<class_StreamPlayer_set_paused>`  **(** :ref:`bool<class_bool>` paused  **)**                       |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_stream<class_StreamPlayer_set_stream>`  **(** :ref:`AudioStream<class_audiostream>` stream  **)**         |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_volume<class_StreamPlayer_set_volume>`  **(** :ref:`float<class_float>` volume  **)**                     |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_volume_db<class_StreamPlayer_set_volume_db>`  **(** :ref:`float<class_float>` db  **)**                   |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`stop<class_StreamPlayer_stop>`  **(** **)**                                                                   |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -81,115 +81,17 @@ Base class for audio stream playback. Audio stream players inherit from it.
 Member Function Description
 ---------------------------
 
-.. _class_StreamPlayer_set_stream:
-
-- void  **set_stream**  **(** Stream stream  **)**
-
-Set the :ref:`EventStream<class_eventstream>` this player will play.
-
-.. _class_StreamPlayer_get_stream:
-
-- Stream  **get_stream**  **(** **)** const
-
-Return the currently assigned stream.
-
-.. _class_StreamPlayer_play:
-
-- void  **play**  **(** :ref:`float<class_float>` offset=0  **)**
-
-Play the currently assigned stream, starting from a given position (in seconds).
-
-.. _class_StreamPlayer_stop:
-
-- void  **stop**  **(** **)**
-
-Stop the playback.
-
-.. _class_StreamPlayer_is_playing:
-
-- :ref:`bool<class_bool>`  **is_playing**  **(** **)** const
-
-Return whether this player is playing.
-
-.. _class_StreamPlayer_set_paused:
-
-- void  **set_paused**  **(** :ref:`bool<class_bool>` paused  **)**
-
-Pause stream playback.
-
-.. _class_StreamPlayer_is_paused:
-
-- :ref:`bool<class_bool>`  **is_paused**  **(** **)** const
-
-Return whether the playback is currently paused.
-
-.. _class_StreamPlayer_set_loop:
-
-- void  **set_loop**  **(** :ref:`bool<class_bool>` enabled  **)**
-
-Set whether the stream will be restarted at the end.
-
-.. _class_StreamPlayer_has_loop:
-
-- :ref:`bool<class_bool>`  **has_loop**  **(** **)** const
-
-Return whether the stream will be restarted at the end.
-
-.. _class_StreamPlayer_set_volume:
-
-- void  **set_volume**  **(** :ref:`float<class_float>` volume  **)**
-
-Set the playback volume for this player. This is a float between 0.0 (silent) and 1.0 (full volume). Values over 1.0 will amplify sound even more, but may introduce distortion. Negative values will just invert the output waveform, which produces no audible difference.
-
-.. _class_StreamPlayer_get_volume:
-
-- :ref:`float<class_float>`  **get_volume**  **(** **)** const
-
-Return the playback volume for this player.
-
-.. _class_StreamPlayer_set_volume_db:
-
-- void  **set_volume_db**  **(** :ref:`float<class_float>` db  **)**
-
-Set the playback volume for this player, in decibels. This is a float between -80.0 (silent) and 0.0 (full volume). Values under -79.0 get truncated to -80, but values over 0.0 do not, so the warnings for overamplifying (see :ref:`set_volume<class_StreamPlayer_set_volume>`) still apply.
-
-.. _class_StreamPlayer_get_volume_db:
-
-- :ref:`float<class_float>`  **get_volume_db**  **(** **)** const
-
-Return the playback volume for this player, in decibels.
-
-.. _class_StreamPlayer_set_buffering_msec:
-
-- void  **set_buffering_msec**  **(** :ref:`int<class_int>` msec  **)**
-
-Set the size (in milliseconds) of the audio buffer. A long audio buffer protects better against slowdowns, but responds worse to changes (in volume, stream played...). A shorter buffer takes less time to respond to changes, but may stutter if the application suffers some slowdown.
-
-Default is 500 milliseconds.
-
 .. _class_StreamPlayer_get_buffering_msec:
 
 - :ref:`int<class_int>`  **get_buffering_msec**  **(** **)** const
 
 Return the size of the audio buffer.
 
-.. _class_StreamPlayer_set_loop_restart_time:
+.. _class_StreamPlayer_get_length:
 
-- void  **set_loop_restart_time**  **(** :ref:`float<class_float>` secs  **)**
+- :ref:`float<class_float>`  **get_length**  **(** **)** const
 
-Set the point in time the stream will rewind to, when looping.
-
-.. _class_StreamPlayer_get_loop_restart_time:
-
-- :ref:`float<class_float>`  **get_loop_restart_time**  **(** **)** const
-
-Return the point in time the stream will rewind to, when looping.
-
-.. _class_StreamPlayer_get_stream_name:
-
-- :ref:`String<class_string>`  **get_stream_name**  **(** **)** const
-
-Return the name of the currently assigned stream. This is not the file name, but a field inside the file. If no stream is assigned, if returns "<No Stream>".
+Return the length of the stream, in seconds.
 
 .. _class_StreamPlayer_get_loop_count:
 
@@ -197,11 +99,71 @@ Return the name of the currently assigned stream. This is not the file name, but
 
 Return the number of times the playback has looped.
 
+.. _class_StreamPlayer_get_loop_restart_time:
+
+- :ref:`float<class_float>`  **get_loop_restart_time**  **(** **)** const
+
+Return the point in time the stream will rewind to, when looping.
+
 .. _class_StreamPlayer_get_pos:
 
 - :ref:`float<class_float>`  **get_pos**  **(** **)** const
 
 Return the playback position, in seconds.
+
+.. _class_StreamPlayer_get_stream:
+
+- :ref:`AudioStream<class_audiostream>`  **get_stream**  **(** **)** const
+
+Return the currently assigned stream.
+
+.. _class_StreamPlayer_get_stream_name:
+
+- :ref:`String<class_string>`  **get_stream_name**  **(** **)** const
+
+Return the name of the currently assigned stream. This is not the file name, but a field inside the file. If no stream is assigned, if returns "<No Stream>".
+
+.. _class_StreamPlayer_get_volume:
+
+- :ref:`float<class_float>`  **get_volume**  **(** **)** const
+
+Return the playback volume for this player.
+
+.. _class_StreamPlayer_get_volume_db:
+
+- :ref:`float<class_float>`  **get_volume_db**  **(** **)** const
+
+Return the playback volume for this player, in decibels.
+
+.. _class_StreamPlayer_has_autoplay:
+
+- :ref:`bool<class_bool>`  **has_autoplay**  **(** **)** const
+
+Return whether this player will start playing as soon as it enters the scene tree.
+
+.. _class_StreamPlayer_has_loop:
+
+- :ref:`bool<class_bool>`  **has_loop**  **(** **)** const
+
+Return whether the stream will be restarted at the end.
+
+.. _class_StreamPlayer_is_paused:
+
+- :ref:`bool<class_bool>`  **is_paused**  **(** **)** const
+
+Return whether the playback is currently paused.
+
+.. _class_StreamPlayer_is_playing:
+
+- :ref:`bool<class_bool>`  **is_playing**  **(** **)** const
+
+Return whether this player is playing.
+
+.. _class_StreamPlayer_play:
+
+- void  **play**  **(** :ref:`float<class_float>` offset=0  **)**
+
+Play the currently assigned stream, starting from a given position (in seconds).
 
 .. _class_StreamPlayer_seek_pos:
 
@@ -215,16 +177,54 @@ Set the playback position, in seconds.
 
 Set whether this player will start playing as soon as it enters the scene tree.
 
-.. _class_StreamPlayer_has_autoplay:
+.. _class_StreamPlayer_set_buffering_msec:
 
-- :ref:`bool<class_bool>`  **has_autoplay**  **(** **)** const
+- void  **set_buffering_msec**  **(** :ref:`int<class_int>` msec  **)**
 
-Return whether this player will start playing as soon as it enters the scene tree.
+Set the size (in milliseconds) of the audio buffer. A long audio buffer protects better against slowdowns, but responds worse to changes (in volume, stream played...). A shorter buffer takes less time to respond to changes, but may stutter if the application suffers some slowdown.
 
-.. _class_StreamPlayer_get_length:
+Default is 500 milliseconds.
 
-- :ref:`float<class_float>`  **get_length**  **(** **)** const
+.. _class_StreamPlayer_set_loop:
 
-Return the length of the stream, in seconds.
+- void  **set_loop**  **(** :ref:`bool<class_bool>` enabled  **)**
+
+Set whether the stream will be restarted at the end.
+
+.. _class_StreamPlayer_set_loop_restart_time:
+
+- void  **set_loop_restart_time**  **(** :ref:`float<class_float>` secs  **)**
+
+Set the point in time the stream will rewind to, when looping.
+
+.. _class_StreamPlayer_set_paused:
+
+- void  **set_paused**  **(** :ref:`bool<class_bool>` paused  **)**
+
+Pause stream playback.
+
+.. _class_StreamPlayer_set_stream:
+
+- void  **set_stream**  **(** :ref:`AudioStream<class_audiostream>` stream  **)**
+
+Set the :ref:`EventStream<class_eventstream>` this player will play.
+
+.. _class_StreamPlayer_set_volume:
+
+- void  **set_volume**  **(** :ref:`float<class_float>` volume  **)**
+
+Set the playback volume for this player. This is a float between 0.0 (silent) and 1.0 (full volume). Values over 1.0 will amplify sound even more, but may introduce distortion. Negative values will just invert the output waveform, which produces no audible difference.
+
+.. _class_StreamPlayer_set_volume_db:
+
+- void  **set_volume_db**  **(** :ref:`float<class_float>` db  **)**
+
+Set the playback volume for this player, in decibels. This is a float between -80.0 (silent) and 0.0 (full volume). Values under -79.0 get truncated to -80, but values over 0.0 do not, so the warnings for overamplifying (see :ref:`set_volume<class_StreamPlayer_set_volume>`) still apply.
+
+.. _class_StreamPlayer_stop:
+
+- void  **stop**  **(** **)**
+
+Stop the playback.
 
 

@@ -19,44 +19,49 @@ Member Functions
 ----------------
 
 +--------------------------------+--------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_atlas<class_AtlasTexture_set_atlas>`  **(** :ref:`Texture<class_texture>` atlas  **)** |
-+--------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`Texture<class_texture>`  | :ref:`get_atlas<class_AtlasTexture_get_atlas>`  **(** **)** const                                |
-+--------------------------------+--------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_region<class_AtlasTexture_set_region>`  **(** :ref:`Rect2<class_rect2>` region  **)**  |
-+--------------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_rect2>`      | :ref:`get_region<class_AtlasTexture_get_region>`  **(** **)** const                              |
-+--------------------------------+--------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_margin<class_AtlasTexture_set_margin>`  **(** :ref:`Rect2<class_rect2>` margin  **)**  |
 +--------------------------------+--------------------------------------------------------------------------------------------------+
 | :ref:`Rect2<class_rect2>`      | :ref:`get_margin<class_AtlasTexture_get_margin>`  **(** **)** const                              |
 +--------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`Rect2<class_rect2>`      | :ref:`get_region<class_AtlasTexture_get_region>`  **(** **)** const                              |
++--------------------------------+--------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_atlas<class_AtlasTexture_set_atlas>`  **(** :ref:`Texture<class_texture>` atlas  **)** |
++--------------------------------+--------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_margin<class_AtlasTexture_set_margin>`  **(** :ref:`Rect2<class_rect2>` margin  **)**  |
++--------------------------------+--------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_region<class_AtlasTexture_set_region>`  **(** :ref:`Rect2<class_rect2>` region  **)**  |
++--------------------------------+--------------------------------------------------------------------------------------------------+
+
+Signals
+-------
+
+-  **atlas_changed**  **(** **)**
 
 Member Function Description
 ---------------------------
-
-.. _class_AtlasTexture_set_atlas:
-
-- void  **set_atlas**  **(** :ref:`Texture<class_texture>` atlas  **)**
 
 .. _class_AtlasTexture_get_atlas:
 
 - :ref:`Texture<class_texture>`  **get_atlas**  **(** **)** const
 
-.. _class_AtlasTexture_set_region:
+.. _class_AtlasTexture_get_margin:
 
-- void  **set_region**  **(** :ref:`Rect2<class_rect2>` region  **)**
+- :ref:`Rect2<class_rect2>`  **get_margin**  **(** **)** const
 
 .. _class_AtlasTexture_get_region:
 
 - :ref:`Rect2<class_rect2>`  **get_region**  **(** **)** const
 
+.. _class_AtlasTexture_set_atlas:
+
+- void  **set_atlas**  **(** :ref:`Texture<class_texture>` atlas  **)**
+
 .. _class_AtlasTexture_set_margin:
 
 - void  **set_margin**  **(** :ref:`Rect2<class_rect2>` margin  **)**
 
-.. _class_AtlasTexture_get_margin:
+.. _class_AtlasTexture_set_region:
 
-- :ref:`Rect2<class_rect2>`  **get_margin**  **(** **)** const
+- void  **set_region**  **(** :ref:`Rect2<class_rect2>` region  **)**
 
 

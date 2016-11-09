@@ -21,9 +21,9 @@ Member Functions
 ----------------
 
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`test_mask<class_StyleBox_test_mask>`  **(** :ref:`Vector2<class_vector2>` point, :ref:`Rect2<class_rect2>` rect  **)** const        |
+| void                           | :ref:`draw<class_StyleBox_draw>`  **(** :ref:`RID<class_rid>` canvas_item, :ref:`Rect2<class_rect2>` rect  **)** const                    |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_default_margin<class_StyleBox_set_default_margin>`  **(** :ref:`int<class_int>` margin, :ref:`float<class_float>` offset  **)** |
+| :ref:`Vector2<class_vector2>`  | :ref:`get_center_size<class_StyleBox_get_center_size>`  **(** **)** const                                                                 |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_default_margin<class_StyleBox_get_default_margin>`  **(** :ref:`int<class_int>` margin  **)** const                             |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
@@ -31,11 +31,11 @@ Member Functions
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`get_minimum_size<class_StyleBox_get_minimum_size>`  **(** **)** const                                                               |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_center_size<class_StyleBox_get_center_size>`  **(** **)** const                                                                 |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`get_offset<class_StyleBox_get_offset>`  **(** **)** const                                                                           |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`draw<class_StyleBox_draw>`  **(** :ref:`RID<class_rid>` canvas_item, :ref:`Rect2<class_rect2>` rect  **)** const                    |
+| void                           | :ref:`set_default_margin<class_StyleBox_set_default_margin>`  **(** :ref:`int<class_int>` margin, :ref:`float<class_float>` offset  **)** |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`test_mask<class_StyleBox_test_mask>`  **(** :ref:`Vector2<class_vector2>` point, :ref:`Rect2<class_rect2>` rect  **)** const        |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -46,17 +46,13 @@ StyleBox is :ref:`Resource<class_resource>` that provides an abstract base class
 Member Function Description
 ---------------------------
 
-.. _class_StyleBox_test_mask:
+.. _class_StyleBox_draw:
 
-- :ref:`bool<class_bool>`  **test_mask**  **(** :ref:`Vector2<class_vector2>` point, :ref:`Rect2<class_rect2>` rect  **)** const
+- void  **draw**  **(** :ref:`RID<class_rid>` canvas_item, :ref:`Rect2<class_rect2>` rect  **)** const
 
-Test a position in a rectangle, return whether it passes the mask test.
+.. _class_StyleBox_get_center_size:
 
-.. _class_StyleBox_set_default_margin:
-
-- void  **set_default_margin**  **(** :ref:`int<class_int>` margin, :ref:`float<class_float>` offset  **)**
-
-Set the default offset "offset" of the margin "margin" (see MARGIN\_\* enum) for a StyleBox, Controls that draw styleboxes with context inside need to know the margin, so the border of the stylebox is not occluded.
+- :ref:`Vector2<class_vector2>`  **get_center_size**  **(** **)** const
 
 .. _class_StyleBox_get_default_margin:
 
@@ -76,18 +72,22 @@ Return the offset of margin "margin" (see MARGIN\_\* enum).
 
 Return the minimum size that this stylebox can be shrunk to.
 
-.. _class_StyleBox_get_center_size:
-
-- :ref:`Vector2<class_vector2>`  **get_center_size**  **(** **)** const
-
 .. _class_StyleBox_get_offset:
 
 - :ref:`Vector2<class_vector2>`  **get_offset**  **(** **)** const
 
 Return the "offset" of a stylebox, this is a helper function, like writing ``Vector2(style.get_margin(MARGIN_LEFT), style.get_margin(MARGIN_TOP))``.
 
-.. _class_StyleBox_draw:
+.. _class_StyleBox_set_default_margin:
 
-- void  **draw**  **(** :ref:`RID<class_rid>` canvas_item, :ref:`Rect2<class_rect2>` rect  **)** const
+- void  **set_default_margin**  **(** :ref:`int<class_int>` margin, :ref:`float<class_float>` offset  **)**
+
+Set the default offset "offset" of the margin "margin" (see MARGIN\_\* enum) for a StyleBox, Controls that draw styleboxes with context inside need to know the margin, so the border of the stylebox is not occluded.
+
+.. _class_StyleBox_test_mask:
+
+- :ref:`bool<class_bool>`  **test_mask**  **(** :ref:`Vector2<class_vector2>` point, :ref:`Rect2<class_rect2>` rect  **)** const
+
+Test a position in a rectangle, return whether it passes the mask test.
 
 

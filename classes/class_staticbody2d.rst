@@ -19,21 +19,21 @@ Member Functions
 ----------------
 
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_constant_linear_velocity<class_StaticBody2D_set_constant_linear_velocity>`  **(** :ref:`Vector2<class_vector2>` vel  **)** |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_constant_angular_velocity<class_StaticBody2D_set_constant_angular_velocity>`  **(** :ref:`float<class_float>` vel  **)**   |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_constant_linear_velocity<class_StaticBody2D_get_constant_linear_velocity>`  **(** **)** const                              |
+| :ref:`float<class_float>`      | :ref:`get_bounce<class_StaticBody2D_get_bounce>`  **(** **)** const                                                                  |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_constant_angular_velocity<class_StaticBody2D_get_constant_angular_velocity>`  **(** **)** const                            |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_friction<class_StaticBody2D_set_friction>`  **(** :ref:`float<class_float>` friction  **)**                                |
+| :ref:`Vector2<class_vector2>`  | :ref:`get_constant_linear_velocity<class_StaticBody2D_get_constant_linear_velocity>`  **(** **)** const                              |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_friction<class_StaticBody2D_get_friction>`  **(** **)** const                                                              |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_bounce<class_StaticBody2D_set_bounce>`  **(** :ref:`float<class_float>` bounce  **)**                                      |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_bounce<class_StaticBody2D_get_bounce>`  **(** **)** const                                                                  |
+| void                           | :ref:`set_constant_angular_velocity<class_StaticBody2D_set_constant_angular_velocity>`  **(** :ref:`float<class_float>` vel  **)**   |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_constant_linear_velocity<class_StaticBody2D_set_constant_linear_velocity>`  **(** :ref:`Vector2<class_vector2>` vel  **)** |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_friction<class_StaticBody2D_set_friction>`  **(** :ref:`float<class_float>` friction  **)**                                |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -48,23 +48,11 @@ Alternatively, a constant linear or angular velocity can be set for the static b
 Member Function Description
 ---------------------------
 
-.. _class_StaticBody2D_set_constant_linear_velocity:
+.. _class_StaticBody2D_get_bounce:
 
-- void  **set_constant_linear_velocity**  **(** :ref:`Vector2<class_vector2>` vel  **)**
+- :ref:`float<class_float>`  **get_bounce**  **(** **)** const
 
-Set a constant linear velocity for the body. This does not move the body, but affects other bodies touching it, as if it was moving.
-
-.. _class_StaticBody2D_set_constant_angular_velocity:
-
-- void  **set_constant_angular_velocity**  **(** :ref:`float<class_float>` vel  **)**
-
-Set a constant angular velocity for the body.
-
-.. _class_StaticBody2D_get_constant_linear_velocity:
-
-- :ref:`Vector2<class_vector2>`  **get_constant_linear_velocity**  **(** **)** const
-
-Return the constant linear velocity for the body. This does not rotate the body, but affects other bodies touching it, as if it was rotating.
+Return the body bounciness.
 
 .. _class_StaticBody2D_get_constant_angular_velocity:
 
@@ -72,11 +60,11 @@ Return the constant linear velocity for the body. This does not rotate the body,
 
 Return the constant angular velocity for the body.
 
-.. _class_StaticBody2D_set_friction:
+.. _class_StaticBody2D_get_constant_linear_velocity:
 
-- void  **set_friction**  **(** :ref:`float<class_float>` friction  **)**
+- :ref:`Vector2<class_vector2>`  **get_constant_linear_velocity**  **(** **)** const
 
-Set the body friction, from 0 (frictionless) to 1 (full friction).
+Return the constant linear velocity for the body.
 
 .. _class_StaticBody2D_get_friction:
 
@@ -90,10 +78,22 @@ Return the body friction.
 
 Set the body bounciness, from 0 (not bouncy) to 1 (bouncy).
 
-.. _class_StaticBody2D_get_bounce:
+.. _class_StaticBody2D_set_constant_angular_velocity:
 
-- :ref:`float<class_float>`  **get_bounce**  **(** **)** const
+- void  **set_constant_angular_velocity**  **(** :ref:`float<class_float>` vel  **)**
 
-Return the body bounciness.
+Set a constant angular velocity for the body. This does not rotate the body, but affects other bodies touching it, as if it was rotating.
+
+.. _class_StaticBody2D_set_constant_linear_velocity:
+
+- void  **set_constant_linear_velocity**  **(** :ref:`Vector2<class_vector2>` vel  **)**
+
+Set a constant linear velocity for the body. This does not move the body, but affects other bodies touching it, as if it was moving.
+
+.. _class_StaticBody2D_set_friction:
+
+- void  **set_friction**  **(** :ref:`float<class_float>` friction  **)**
+
+Set the body friction, from 0 (frictionless) to 1 (full friction).
 
 

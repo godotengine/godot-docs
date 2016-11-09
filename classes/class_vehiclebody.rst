@@ -18,69 +18,82 @@ Brief Description
 Member Functions
 ----------------
 
-+----------------------------+------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_mass<class_VehicleBody_set_mass>`  **(** :ref:`float<class_float>` mass  **)**                         |
-+----------------------------+------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_mass<class_VehicleBody_get_mass>`  **(** **)** const                                                   |
-+----------------------------+------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_friction<class_VehicleBody_set_friction>`  **(** :ref:`float<class_float>` friction  **)**             |
-+----------------------------+------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_friction<class_VehicleBody_get_friction>`  **(** **)** const                                           |
-+----------------------------+------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_engine_force<class_VehicleBody_set_engine_force>`  **(** :ref:`float<class_float>` engine_force  **)** |
-+----------------------------+------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_engine_force<class_VehicleBody_get_engine_force>`  **(** **)** const                                   |
-+----------------------------+------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_brake<class_VehicleBody_set_brake>`  **(** :ref:`float<class_float>` brake  **)**                      |
-+----------------------------+------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_brake<class_VehicleBody_get_brake>`  **(** **)** const                                                 |
-+----------------------------+------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_steering<class_VehicleBody_set_steering>`  **(** :ref:`float<class_float>` steering  **)**             |
-+----------------------------+------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_steering<class_VehicleBody_get_steering>`  **(** **)** const                                           |
-+----------------------------+------------------------------------------------------------------------------------------------------------------+
++--------------------------------+------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_brake<class_VehicleBody_get_brake>`  **(** **)** const                                                 |
++--------------------------------+------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_engine_force<class_VehicleBody_get_engine_force>`  **(** **)** const                                   |
++--------------------------------+------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_friction<class_VehicleBody_get_friction>`  **(** **)** const                                           |
++--------------------------------+------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`  | :ref:`get_linear_velocity<class_VehicleBody_get_linear_velocity>`  **(** **)** const                             |
++--------------------------------+------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_mass<class_VehicleBody_get_mass>`  **(** **)** const                                                   |
++--------------------------------+------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_steering<class_VehicleBody_get_steering>`  **(** **)** const                                           |
++--------------------------------+------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_brake<class_VehicleBody_set_brake>`  **(** :ref:`float<class_float>` brake  **)**                      |
++--------------------------------+------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_engine_force<class_VehicleBody_set_engine_force>`  **(** :ref:`float<class_float>` engine_force  **)** |
++--------------------------------+------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_friction<class_VehicleBody_set_friction>`  **(** :ref:`float<class_float>` friction  **)**             |
++--------------------------------+------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_mass<class_VehicleBody_set_mass>`  **(** :ref:`float<class_float>` mass  **)**                         |
++--------------------------------+------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_steering<class_VehicleBody_set_steering>`  **(** :ref:`float<class_float>` steering  **)**             |
++--------------------------------+------------------------------------------------------------------------------------------------------------------+
 
 Member Function Description
 ---------------------------
-
-.. _class_VehicleBody_set_mass:
-
-- void  **set_mass**  **(** :ref:`float<class_float>` mass  **)**
-
-.. _class_VehicleBody_get_mass:
-
-- :ref:`float<class_float>`  **get_mass**  **(** **)** const
-
-.. _class_VehicleBody_set_friction:
-
-- void  **set_friction**  **(** :ref:`float<class_float>` friction  **)**
-
-.. _class_VehicleBody_get_friction:
-
-- :ref:`float<class_float>`  **get_friction**  **(** **)** const
-
-.. _class_VehicleBody_set_engine_force:
-
-- void  **set_engine_force**  **(** :ref:`float<class_float>` engine_force  **)**
-
-.. _class_VehicleBody_get_engine_force:
-
-- :ref:`float<class_float>`  **get_engine_force**  **(** **)** const
-
-.. _class_VehicleBody_set_brake:
-
-- void  **set_brake**  **(** :ref:`float<class_float>` brake  **)**
 
 .. _class_VehicleBody_get_brake:
 
 - :ref:`float<class_float>`  **get_brake**  **(** **)** const
 
-.. _class_VehicleBody_set_steering:
+.. _class_VehicleBody_get_engine_force:
 
-- void  **set_steering**  **(** :ref:`float<class_float>` steering  **)**
+- :ref:`float<class_float>`  **get_engine_force**  **(** **)** const
+
+.. _class_VehicleBody_get_friction:
+
+- :ref:`float<class_float>`  **get_friction**  **(** **)** const
+
+.. _class_VehicleBody_get_linear_velocity:
+
+- :ref:`Vector3<class_vector3>`  **get_linear_velocity**  **(** **)** const
+
+Returns the VehicleBody's velocity vector. To get the absolute speed in scalar value, get the length of the return vector in pixels/second. Example:
+
+::
+
+    # vehicle is an instance of VehicleBody
+    var speed = vehicle.get_linear_velocity().length()
+
+.. _class_VehicleBody_get_mass:
+
+- :ref:`float<class_float>`  **get_mass**  **(** **)** const
 
 .. _class_VehicleBody_get_steering:
 
 - :ref:`float<class_float>`  **get_steering**  **(** **)** const
+
+.. _class_VehicleBody_set_brake:
+
+- void  **set_brake**  **(** :ref:`float<class_float>` brake  **)**
+
+.. _class_VehicleBody_set_engine_force:
+
+- void  **set_engine_force**  **(** :ref:`float<class_float>` engine_force  **)**
+
+.. _class_VehicleBody_set_friction:
+
+- void  **set_friction**  **(** :ref:`float<class_float>` friction  **)**
+
+.. _class_VehicleBody_set_mass:
+
+- void  **set_mass**  **(** :ref:`float<class_float>` mass  **)**
+
+.. _class_VehicleBody_set_steering:
+
+- void  **set_steering**  **(** :ref:`float<class_float>` steering  **)**
 
 

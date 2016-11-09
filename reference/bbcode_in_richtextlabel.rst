@@ -40,7 +40,7 @@ Reference
 +-----------------+--------------------------------------------+--------------------------------------------------------------+
 | **fill**        | ``[fill]{text}[/fill]``                    | Makes {text} fill width.                                     |
 +-----------------+--------------------------------------------+--------------------------------------------------------------+
-| **indent**      | ``[indent]{text}[/indent]``                | Increase indent level of {text}.                              |
+| **indent**      | ``[indent]{text}[/indent]``                | Increase indent level of {text}.                             |
 +-----------------+--------------------------------------------+--------------------------------------------------------------+
 | **url**         | ``[url]{url}[/url]``                       | Show {url} as such.                                          |
 +-----------------+--------------------------------------------+--------------------------------------------------------------+
@@ -73,3 +73,8 @@ List of valid color names for the [color=<name>] tag:
 -  teal
 -  white
 -  yellow
+
+Hexadecimal color codes
+~~~~~~~~~~~~~~~~~~~~
+ 
+Any valid 6 digit hexadecimal code is supported. e.g: [color=#ffffff]white[/color]

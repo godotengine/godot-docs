@@ -11,7 +11,7 @@ InputEventScreenTouch
 Brief Description
 -----------------
 
-
+Built-in input event type for touchscreen drag events.
 
 Member Functions
 ----------------
@@ -19,9 +19,9 @@ Member Functions
 +--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`  | :ref:`is_action<class_InputEventScreenTouch_is_action>`  **(** :ref:`String<class_string>` action  **)**                                          |
 +--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_action_pressed<class_InputEventScreenTouch_is_action_pressed>`  **(** :ref:`String<class_string>` is_action_pressed  **)**               |
+| :ref:`bool<class_bool>`  | :ref:`is_action_pressed<class_InputEventScreenTouch_is_action_pressed>`  **(** :ref:`String<class_string>` action  **)**                          |
 +--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_action_released<class_InputEventScreenTouch_is_action_released>`  **(** :ref:`String<class_string>` is_action_released  **)**            |
+| :ref:`bool<class_bool>`  | :ref:`is_action_released<class_InputEventScreenTouch_is_action_released>`  **(** :ref:`String<class_string>` action  **)**                        |
 +--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`  | :ref:`is_echo<class_InputEventScreenTouch_is_echo>`  **(** **)**                                                                                  |
 +--------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -33,27 +33,32 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **type**
-- :ref:`int<class_int>` **device**
-- :ref:`int<class_int>` **ID**
-- :ref:`int<class_int>` **index**
-- :ref:`float<class_float>` **x**
-- :ref:`float<class_float>` **y**
-- :ref:`Vector2<class_vector2>` **pos**
-- :ref:`bool<class_bool>` **pressed**
+- :ref:`int<class_int>` **ID** - Event identifier, positive integer increased at each new event.
+- :ref:`int<class_int>` **device** - Device identifier.
+- :ref:`int<class_int>` **index** - Touch event index in the case of a multi-touch event.
+- :ref:`Vector2<class_vector2>` **pos** - Position of the touch event.
+- :ref:`bool<class_bool>` **pressed** - Pressed state of the touch event.
+- :ref:`int<class_int>` **type** - Type of event (one of the [InputEvent] constants).
+- :ref:`float<class_float>` **x** - X coordinate of the touch event.
+- :ref:`float<class_float>` **y** - Y coordinate of the touch event.
 
 Numeric Constants
 -----------------
 
-- **NONE** = **0**
-- **KEY** = **1**
-- **MOUSE_MOTION** = **2**
-- **MOUSE_BUTTON** = **3**
-- **JOYSTICK_MOTION** = **4**
-- **JOYSTICK_BUTTON** = **5**
-- **SCREEN_TOUCH** = **6**
-- **SCREEN_DRAG** = **7**
-- **ACTION** = **8**
+- **NONE** = **0** --- Empty input event.
+- **KEY** = **1** --- Key event.
+- **MOUSE_MOTION** = **2** --- Mouse motion event.
+- **MOUSE_BUTTON** = **3** --- Mouse button event.
+- **JOYSTICK_MOTION** = **4** --- Joystick motion event.
+- **JOYSTICK_BUTTON** = **5** --- Joystick button event.
+- **SCREEN_TOUCH** = **6** --- Screen touch event.
+- **SCREEN_DRAG** = **7** --- Screen drag event.
+- **ACTION** = **8** --- Pre-defined action event (see :ref:`InputMap<class_inputmap>`).
+
+Description
+-----------
+
+Input event type for touchscreen drag events that extends the global :ref:`InputEvent<class_inputevent>` type.
 
 Member Function Description
 ---------------------------
@@ -62,24 +67,36 @@ Member Function Description
 
 - :ref:`bool<class_bool>`  **is_action**  **(** :ref:`String<class_string>` action  **)**
 
+Return if this input event matches a pre-defined action.
+
 .. _class_InputEventScreenTouch_is_action_pressed:
 
-- :ref:`bool<class_bool>`  **is_action_pressed**  **(** :ref:`String<class_string>` is_action_pressed  **)**
+- :ref:`bool<class_bool>`  **is_action_pressed**  **(** :ref:`String<class_string>` action  **)**
+
+Return whether the given action is being pressed.
 
 .. _class_InputEventScreenTouch_is_action_released:
 
-- :ref:`bool<class_bool>`  **is_action_released**  **(** :ref:`String<class_string>` is_action_released  **)**
+- :ref:`bool<class_bool>`  **is_action_released**  **(** :ref:`String<class_string>` action  **)**
+
+Return whether the given action is released (i.e. not pressed).
 
 .. _class_InputEventScreenTouch_is_echo:
 
 - :ref:`bool<class_bool>`  **is_echo**  **(** **)**
 
+Return if this input event is an echo event (only for events of type KEY, i.e. always false for this type).
+
 .. _class_InputEventScreenTouch_is_pressed:
 
 - :ref:`bool<class_bool>`  **is_pressed**  **(** **)**
 
+Return if this input event is pressed.
+
 .. _class_InputEventScreenTouch_set_as_action:
 
 - void  **set_as_action**  **(** :ref:`String<class_string>` action, :ref:`bool<class_bool>` pressed  **)**
+
+Change the input event to an action event of the given name with the pressed status passed as argument.
 
 

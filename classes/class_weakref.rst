@@ -13,7 +13,7 @@ WeakRef
 Brief Description
 -----------------
 
-
+Holds an :ref:`Object<class_object>`, but does not contribute to the reference count if the object is a reference.
 
 Member Functions
 ----------------
@@ -22,11 +22,18 @@ Member Functions
 | :ref:`Object<class_object>`  | :ref:`get_ref<class_WeakRef_get_ref>`  **(** **)** const |
 +------------------------------+----------------------------------------------------------+
 
+Description
+-----------
+
+A weakref can hold a :ref:`Reference<class_reference>`, without contributing to the reference counter. A weakref can be created from an :ref:`Object<class_object>` using :ref:`@GDScript.weakref<class_@GDScript_weakref>`. If this object is not a reference, weakref still works, however, it does not have any effect on the object. Weakrefs are useful in cases where multiple classes have variables that refer to eachother. Without weakrefs, using these classes could lead to memory leaks, since both references keep eachother from being released. Making part of the variables a weakref can prevent this cyclic dependency, and allows the references to be released.
+
 Member Function Description
 ---------------------------
 
 .. _class_WeakRef_get_ref:
 
 - :ref:`Object<class_object>`  **get_ref**  **(** **)** const
+
+Returns the :ref:`Object<class_object>` this weakref is referring to.
 
 

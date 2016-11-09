@@ -21,31 +21,31 @@ Member Functions
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`create<class_Sample_create>`  **(** :ref:`int<class_int>` format, :ref:`bool<class_bool>` stereo, :ref:`int<class_int>` length  **)** |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_format<class_Sample_get_format>`  **(** **)** const                                                                               |
+| :ref:`RawArray<class_rawarray>`  | :ref:`get_data<class_Sample_get_data>`  **(** **)** const                                                                                   |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`          | :ref:`is_stereo<class_Sample_is_stereo>`  **(** **)** const                                                                                 |
+| :ref:`int<class_int>`            | :ref:`get_format<class_Sample_get_format>`  **(** **)** const                                                                               |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`            | :ref:`get_length<class_Sample_get_length>`  **(** **)** const                                                                               |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_data<class_Sample_set_data>`  **(** :ref:`RawArray<class_rawarray>` data  **)**                                                   |
+| :ref:`int<class_int>`            | :ref:`get_loop_begin<class_Sample_get_loop_begin>`  **(** **)** const                                                                       |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RawArray<class_rawarray>`  | :ref:`get_data<class_Sample_get_data>`  **(** **)** const                                                                                   |
-+----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_mix_rate<class_Sample_set_mix_rate>`  **(** :ref:`int<class_int>` hz  **)**                                                       |
-+----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_mix_rate<class_Sample_get_mix_rate>`  **(** **)** const                                                                           |
-+----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_loop_format<class_Sample_set_loop_format>`  **(** :ref:`int<class_int>` format  **)**                                             |
+| :ref:`int<class_int>`            | :ref:`get_loop_end<class_Sample_get_loop_end>`  **(** **)** const                                                                           |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`            | :ref:`get_loop_format<class_Sample_get_loop_format>`  **(** **)** const                                                                     |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_loop_begin<class_Sample_set_loop_begin>`  **(** :ref:`int<class_int>` pos  **)**                                                  |
+| :ref:`int<class_int>`            | :ref:`get_mix_rate<class_Sample_get_mix_rate>`  **(** **)** const                                                                           |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_loop_begin<class_Sample_get_loop_begin>`  **(** **)** const                                                                       |
+| :ref:`bool<class_bool>`          | :ref:`is_stereo<class_Sample_is_stereo>`  **(** **)** const                                                                                 |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_data<class_Sample_set_data>`  **(** :ref:`RawArray<class_rawarray>` data  **)**                                                   |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_loop_begin<class_Sample_set_loop_begin>`  **(** :ref:`int<class_int>` pos  **)**                                                  |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_loop_end<class_Sample_set_loop_end>`  **(** :ref:`int<class_int>` pos  **)**                                                      |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_loop_end<class_Sample_get_loop_end>`  **(** **)** const                                                                           |
+| void                             | :ref:`set_loop_format<class_Sample_set_loop_format>`  **(** :ref:`int<class_int>` format  **)**                                             |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_mix_rate<class_Sample_set_mix_rate>`  **(** :ref:`int<class_int>` hz  **)**                                                       |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
@@ -74,17 +74,17 @@ Create new data for the sample, with format (see FORMAT\_\* constants), stereo h
 
 Calling this method overrides previously existing data. Stereo samples are interleaved pairs of left and right points (in that order), but count as one sample for length purposes.
 
+.. _class_Sample_get_data:
+
+- :ref:`RawArray<class_rawarray>`  **get_data**  **(** **)** const
+
+Return sample data as little endian.
+
 .. _class_Sample_get_format:
 
 - :ref:`int<class_int>`  **get_format**  **(** **)** const
 
 Return the sample format.
-
-.. _class_Sample_is_stereo:
-
-- :ref:`bool<class_bool>`  **is_stereo**  **(** **)** const
-
-Return whether the current sample was created as stereo.
 
 .. _class_Sample_get_length:
 
@@ -92,43 +92,17 @@ Return whether the current sample was created as stereo.
 
 Return the sample length in samples. Stereo samples count as one, even if they are made of a left and a right sample.
 
-.. _class_Sample_set_data:
+.. _class_Sample_get_loop_begin:
 
-- void  **set_data**  **(** :ref:`RawArray<class_rawarray>` data  **)**
+- :ref:`int<class_int>`  **get_loop_begin**  **(** **)** const
 
-Set sample data. Data must be little endian, no matter the host platform, and exactly as long as to fit all samples. The length of this array can be calculated as follows:
+Return the loop begin position.
 
-Get the sample length (:ref:`get_length<class_Sample_get_length>`).
+.. _class_Sample_get_loop_end:
 
-If the sample format is FORMAT_PCM16, multiply it by 2.
+- :ref:`int<class_int>`  **get_loop_end**  **(** **)** const
 
-If the sample format is FORMAT_IMA_ADPCM, divide it by 2 (rounding any fraction up), then add 4.
-
-If the sample is stereo (:ref:`is_stereo<class_Sample_is_stereo>`), multiply it by 2.
-
-.. _class_Sample_get_data:
-
-- :ref:`RawArray<class_rawarray>`  **get_data**  **(** **)** const
-
-Return sample data as little endian.
-
-.. _class_Sample_set_mix_rate:
-
-- void  **set_mix_rate**  **(** :ref:`int<class_int>` hz  **)**
-
-Set the mix rate for the sample (expected playback frequency).
-
-.. _class_Sample_get_mix_rate:
-
-- :ref:`int<class_int>`  **get_mix_rate**  **(** **)** const
-
-Return the mix rate for the sample.
-
-.. _class_Sample_set_loop_format:
-
-- void  **set_loop_format**  **(** :ref:`int<class_int>` format  **)**
-
-Set the loop format (use LOOP\_\* constants as argument).
+Return the loop end position.
 
 .. _class_Sample_get_loop_format:
 
@@ -136,17 +110,31 @@ Set the loop format (use LOOP\_\* constants as argument).
 
 Return the loop format.
 
+.. _class_Sample_get_mix_rate:
+
+- :ref:`int<class_int>`  **get_mix_rate**  **(** **)** const
+
+Return the mix rate for the sample.
+
+.. _class_Sample_is_stereo:
+
+- :ref:`bool<class_bool>`  **is_stereo**  **(** **)** const
+
+Return whether the current sample was created as stereo.
+
+.. _class_Sample_set_data:
+
+- void  **set_data**  **(** :ref:`RawArray<class_rawarray>` data  **)**
+
+Set sample data. Data must be little endian, no matter the host platform, and exactly as long as to fit all samples. The length of this array can be calculated as follows:
+
+Get the sample length (:ref:`get_length<class_Sample_get_length>`). If the sample format is FORMAT_PCM16, multiply it by 2. If the sample format is FORMAT_IMA_ADPCM, divide it by 2 (rounding any fraction up), then add 4. If the sample is stereo (:ref:`is_stereo<class_Sample_is_stereo>`), multiply it by 2.
+
 .. _class_Sample_set_loop_begin:
 
 - void  **set_loop_begin**  **(** :ref:`int<class_int>` pos  **)**
 
 Set the loop begin position. It must be a valid frame and less than the loop end position.
-
-.. _class_Sample_get_loop_begin:
-
-- :ref:`int<class_int>`  **get_loop_begin**  **(** **)** const
-
-Return the loop begin position.
 
 .. _class_Sample_set_loop_end:
 
@@ -154,10 +142,16 @@ Return the loop begin position.
 
 Set the loop end position. It must be a valid frame and greater than the loop begin position.
 
-.. _class_Sample_get_loop_end:
+.. _class_Sample_set_loop_format:
 
-- :ref:`int<class_int>`  **get_loop_end**  **(** **)** const
+- void  **set_loop_format**  **(** :ref:`int<class_int>` format  **)**
 
-Return the loop end position.
+Set the loop format (use LOOP\_\* constants as argument).
+
+.. _class_Sample_set_mix_rate:
+
+- void  **set_mix_rate**  **(** :ref:`int<class_int>` hz  **)**
+
+Set the mix rate for the sample (expected playback frequency).
 
 

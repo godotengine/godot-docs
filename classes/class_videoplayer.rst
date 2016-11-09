@@ -18,106 +18,66 @@ Brief Description
 Member Functions
 ----------------
 
-+--------------------------------+----------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_stream<class_VideoPlayer_set_stream>`  **(** Stream stream  **)**                              |
-+--------------------------------+----------------------------------------------------------------------------------------------------------+
-| Stream                         | :ref:`get_stream<class_VideoPlayer_get_stream>`  **(** **)** const                                       |
-+--------------------------------+----------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`play<class_VideoPlayer_play>`  **(** **)**                                                         |
-+--------------------------------+----------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`stop<class_VideoPlayer_stop>`  **(** **)**                                                         |
-+--------------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_playing<class_VideoPlayer_is_playing>`  **(** **)** const                                       |
-+--------------------------------+----------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_paused<class_VideoPlayer_set_paused>`  **(** :ref:`bool<class_bool>` paused  **)**             |
-+--------------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_paused<class_VideoPlayer_is_paused>`  **(** **)** const                                         |
-+--------------------------------+----------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_volume<class_VideoPlayer_set_volume>`  **(** :ref:`float<class_float>` volume  **)**           |
-+--------------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_volume<class_VideoPlayer_get_volume>`  **(** **)** const                                       |
-+--------------------------------+----------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_volume_db<class_VideoPlayer_set_volume_db>`  **(** :ref:`float<class_float>` db  **)**         |
-+--------------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_volume_db<class_VideoPlayer_get_volume_db>`  **(** **)** const                                 |
-+--------------------------------+----------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_audio_track<class_VideoPlayer_set_audio_track>`  **(** :ref:`int<class_int>` track  **)**      |
-+--------------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_audio_track<class_VideoPlayer_get_audio_track>`  **(** **)** const                             |
-+--------------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`    | :ref:`get_stream_name<class_VideoPlayer_get_stream_name>`  **(** **)** const                             |
-+--------------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_stream_pos<class_VideoPlayer_get_stream_pos>`  **(** **)** const                               |
-+--------------------------------+----------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_autoplay<class_VideoPlayer_set_autoplay>`  **(** :ref:`bool<class_bool>` enabled  **)**        |
-+--------------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`has_autoplay<class_VideoPlayer_has_autoplay>`  **(** **)** const                                   |
-+--------------------------------+----------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_expand<class_VideoPlayer_set_expand>`  **(** :ref:`bool<class_bool>` enable  **)**             |
-+--------------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`has_expand<class_VideoPlayer_has_expand>`  **(** **)** const                                       |
-+--------------------------------+----------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_buffering_msec<class_VideoPlayer_set_buffering_msec>`  **(** :ref:`int<class_int>` msec  **)** |
-+--------------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_buffering_msec<class_VideoPlayer_get_buffering_msec>`  **(** **)** const                       |
-+--------------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_texture>`  | :ref:`get_video_texture<class_VideoPlayer_get_video_texture>`  **(** **)**                               |
-+--------------------------------+----------------------------------------------------------------------------------------------------------+
++----------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`get_audio_track<class_VideoPlayer_get_audio_track>`  **(** **)** const                               |
++----------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`get_buffering_msec<class_VideoPlayer_get_buffering_msec>`  **(** **)** const                         |
++----------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`VideoStream<class_videostream>`  | :ref:`get_stream<class_VideoPlayer_get_stream>`  **(** **)** const                                         |
++----------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`get_stream_name<class_VideoPlayer_get_stream_name>`  **(** **)** const                               |
++----------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_stream_pos<class_VideoPlayer_get_stream_pos>`  **(** **)** const                                 |
++----------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_texture>`          | :ref:`get_video_texture<class_VideoPlayer_get_video_texture>`  **(** **)**                                 |
++----------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_volume<class_VideoPlayer_get_volume>`  **(** **)** const                                         |
++----------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_volume_db<class_VideoPlayer_get_volume_db>`  **(** **)** const                                   |
++----------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`has_autoplay<class_VideoPlayer_has_autoplay>`  **(** **)** const                                     |
++----------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`has_expand<class_VideoPlayer_has_expand>`  **(** **)** const                                         |
++----------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`is_paused<class_VideoPlayer_is_paused>`  **(** **)** const                                           |
++----------------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`is_playing<class_VideoPlayer_is_playing>`  **(** **)** const                                         |
++----------------------------------------+------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`play<class_VideoPlayer_play>`  **(** **)**                                                           |
++----------------------------------------+------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_audio_track<class_VideoPlayer_set_audio_track>`  **(** :ref:`int<class_int>` track  **)**        |
++----------------------------------------+------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_autoplay<class_VideoPlayer_set_autoplay>`  **(** :ref:`bool<class_bool>` enabled  **)**          |
++----------------------------------------+------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_buffering_msec<class_VideoPlayer_set_buffering_msec>`  **(** :ref:`int<class_int>` msec  **)**   |
++----------------------------------------+------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_expand<class_VideoPlayer_set_expand>`  **(** :ref:`bool<class_bool>` enable  **)**               |
++----------------------------------------+------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_paused<class_VideoPlayer_set_paused>`  **(** :ref:`bool<class_bool>` paused  **)**               |
++----------------------------------------+------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_stream<class_VideoPlayer_set_stream>`  **(** :ref:`VideoStream<class_videostream>` stream  **)** |
++----------------------------------------+------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_volume<class_VideoPlayer_set_volume>`  **(** :ref:`float<class_float>` volume  **)**             |
++----------------------------------------+------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_volume_db<class_VideoPlayer_set_volume_db>`  **(** :ref:`float<class_float>` db  **)**           |
++----------------------------------------+------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`stop<class_VideoPlayer_stop>`  **(** **)**                                                           |
++----------------------------------------+------------------------------------------------------------------------------------------------------------+
 
 Member Function Description
 ---------------------------
 
-.. _class_VideoPlayer_set_stream:
-
-- void  **set_stream**  **(** Stream stream  **)**
-
-.. _class_VideoPlayer_get_stream:
-
-- Stream  **get_stream**  **(** **)** const
-
-.. _class_VideoPlayer_play:
-
-- void  **play**  **(** **)**
-
-.. _class_VideoPlayer_stop:
-
-- void  **stop**  **(** **)**
-
-.. _class_VideoPlayer_is_playing:
-
-- :ref:`bool<class_bool>`  **is_playing**  **(** **)** const
-
-.. _class_VideoPlayer_set_paused:
-
-- void  **set_paused**  **(** :ref:`bool<class_bool>` paused  **)**
-
-.. _class_VideoPlayer_is_paused:
-
-- :ref:`bool<class_bool>`  **is_paused**  **(** **)** const
-
-.. _class_VideoPlayer_set_volume:
-
-- void  **set_volume**  **(** :ref:`float<class_float>` volume  **)**
-
-.. _class_VideoPlayer_get_volume:
-
-- :ref:`float<class_float>`  **get_volume**  **(** **)** const
-
-.. _class_VideoPlayer_set_volume_db:
-
-- void  **set_volume_db**  **(** :ref:`float<class_float>` db  **)**
-
-.. _class_VideoPlayer_get_volume_db:
-
-- :ref:`float<class_float>`  **get_volume_db**  **(** **)** const
-
-.. _class_VideoPlayer_set_audio_track:
-
-- void  **set_audio_track**  **(** :ref:`int<class_int>` track  **)**
-
 .. _class_VideoPlayer_get_audio_track:
 
 - :ref:`int<class_int>`  **get_audio_track**  **(** **)** const
+
+.. _class_VideoPlayer_get_buffering_msec:
+
+- :ref:`int<class_int>`  **get_buffering_msec**  **(** **)** const
+
+.. _class_VideoPlayer_get_stream:
+
+- :ref:`VideoStream<class_videostream>`  **get_stream**  **(** **)** const
 
 .. _class_VideoPlayer_get_stream_name:
 
@@ -127,32 +87,72 @@ Member Function Description
 
 - :ref:`float<class_float>`  **get_stream_pos**  **(** **)** const
 
-.. _class_VideoPlayer_set_autoplay:
+.. _class_VideoPlayer_get_video_texture:
 
-- void  **set_autoplay**  **(** :ref:`bool<class_bool>` enabled  **)**
+- :ref:`Texture<class_texture>`  **get_video_texture**  **(** **)**
+
+.. _class_VideoPlayer_get_volume:
+
+- :ref:`float<class_float>`  **get_volume**  **(** **)** const
+
+.. _class_VideoPlayer_get_volume_db:
+
+- :ref:`float<class_float>`  **get_volume_db**  **(** **)** const
 
 .. _class_VideoPlayer_has_autoplay:
 
 - :ref:`bool<class_bool>`  **has_autoplay**  **(** **)** const
 
-.. _class_VideoPlayer_set_expand:
-
-- void  **set_expand**  **(** :ref:`bool<class_bool>` enable  **)**
-
 .. _class_VideoPlayer_has_expand:
 
 - :ref:`bool<class_bool>`  **has_expand**  **(** **)** const
+
+.. _class_VideoPlayer_is_paused:
+
+- :ref:`bool<class_bool>`  **is_paused**  **(** **)** const
+
+.. _class_VideoPlayer_is_playing:
+
+- :ref:`bool<class_bool>`  **is_playing**  **(** **)** const
+
+.. _class_VideoPlayer_play:
+
+- void  **play**  **(** **)**
+
+.. _class_VideoPlayer_set_audio_track:
+
+- void  **set_audio_track**  **(** :ref:`int<class_int>` track  **)**
+
+.. _class_VideoPlayer_set_autoplay:
+
+- void  **set_autoplay**  **(** :ref:`bool<class_bool>` enabled  **)**
 
 .. _class_VideoPlayer_set_buffering_msec:
 
 - void  **set_buffering_msec**  **(** :ref:`int<class_int>` msec  **)**
 
-.. _class_VideoPlayer_get_buffering_msec:
+.. _class_VideoPlayer_set_expand:
 
-- :ref:`int<class_int>`  **get_buffering_msec**  **(** **)** const
+- void  **set_expand**  **(** :ref:`bool<class_bool>` enable  **)**
 
-.. _class_VideoPlayer_get_video_texture:
+.. _class_VideoPlayer_set_paused:
 
-- :ref:`Texture<class_texture>`  **get_video_texture**  **(** **)**
+- void  **set_paused**  **(** :ref:`bool<class_bool>` paused  **)**
+
+.. _class_VideoPlayer_set_stream:
+
+- void  **set_stream**  **(** :ref:`VideoStream<class_videostream>` stream  **)**
+
+.. _class_VideoPlayer_set_volume:
+
+- void  **set_volume**  **(** :ref:`float<class_float>` volume  **)**
+
+.. _class_VideoPlayer_set_volume_db:
+
+- void  **set_volume_db**  **(** :ref:`float<class_float>` db  **)**
+
+.. _class_VideoPlayer_stop:
+
+- void  **stop**  **(** **)**
 
 

@@ -18,15 +18,15 @@ TCP Server.
 Member Functions
 ----------------
 
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`listen<class_TCP_Server_listen>`  **(** :ref:`int<class_int>` port, :ref:`StringArray<class_stringarray>` accepted_hosts=StringArray()  **)** |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`is_connection_available<class_TCP_Server_is_connection_available>`  **(** **)** const                                                         |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`  | :ref:`take_connection<class_TCP_Server_take_connection>`  **(** **)**                                                                               |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`stop<class_TCP_Server_stop>`  **(** **)**                                                                                                     |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`is_connection_available<class_TCP_Server_is_connection_available>`  **(** **)** const                                                           |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`listen<class_TCP_Server_listen>`  **(** :ref:`int<class_int>` port, :ref:`StringArray<class_stringarray>` accepted_hosts=StringArray([])  **)** |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`stop<class_TCP_Server_stop>`  **(** **)**                                                                                                       |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`  | :ref:`take_connection<class_TCP_Server_take_connection>`  **(** **)**                                                                                 |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -36,28 +36,28 @@ TCP Server class. Listens to connections on a port and returns a :ref:`StreamPee
 Member Function Description
 ---------------------------
 
-.. _class_TCP_Server_listen:
-
-- :ref:`int<class_int>`  **listen**  **(** :ref:`int<class_int>` port, :ref:`StringArray<class_stringarray>` accepted_hosts=StringArray()  **)**
-
-Listen on a port, alternatively give a white-list of accepted hosts.
-
 .. _class_TCP_Server_is_connection_available:
 
 - :ref:`bool<class_bool>`  **is_connection_available**  **(** **)** const
 
 Return true if a connection is available for taking.
 
-.. _class_TCP_Server_take_connection:
+.. _class_TCP_Server_listen:
 
-- :ref:`Object<class_object>`  **take_connection**  **(** **)**
+- :ref:`int<class_int>`  **listen**  **(** :ref:`int<class_int>` port, :ref:`StringArray<class_stringarray>` accepted_hosts=StringArray([])  **)**
 
-If a connection is available, return a StreamPeerTCP with the connection/
+Listen on a port, alternatively give a white-list of accepted hosts.
 
 .. _class_TCP_Server_stop:
 
 - void  **stop**  **(** **)**
 
 Stop listening.
+
+.. _class_TCP_Server_take_connection:
+
+- :ref:`Object<class_object>`  **take_connection**  **(** **)**
+
+If a connection is available, return a StreamPeerTCP with the connection/
 
 

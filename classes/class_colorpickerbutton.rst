@@ -13,43 +13,62 @@ ColorPickerButton
 Brief Description
 -----------------
 
-
+Button that pops out a :ref:`ColorPicker<class_colorpicker>`
 
 Member Functions
 ----------------
 
-+----------------------------+----------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_color<class_ColorPickerButton_set_color>`  **(** :ref:`Color<class_color>` color  **)**        |
-+----------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`  | :ref:`get_color<class_ColorPickerButton_get_color>`  **(** **)** const                                   |
-+----------------------------+----------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_edit_alpha<class_ColorPickerButton_set_edit_alpha>`  **(** :ref:`bool<class_bool>` show  **)** |
-+----------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`is_editing_alpha<class_ColorPickerButton_is_editing_alpha>`  **(** **)** const                     |
-+----------------------------+----------------------------------------------------------------------------------------------------------+
++----------------------------------------+----------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`              | :ref:`get_color<class_ColorPickerButton_get_color>`  **(** **)** const                                   |
++----------------------------------------+----------------------------------------------------------------------------------------------------------+
+| :ref:`ColorPicker<class_colorpicker>`  | :ref:`get_picker<class_ColorPickerButton_get_picker>`  **(** **)**                                       |
++----------------------------------------+----------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`is_editing_alpha<class_ColorPickerButton_is_editing_alpha>`  **(** **)** const                     |
++----------------------------------------+----------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_color<class_ColorPickerButton_set_color>`  **(** :ref:`Color<class_color>` color  **)**        |
++----------------------------------------+----------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_edit_alpha<class_ColorPickerButton_set_edit_alpha>`  **(** :ref:`bool<class_bool>` show  **)** |
++----------------------------------------+----------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
 
 -  **color_changed**  **(** :ref:`Color<class_color>` color  **)**
 
+Description
+-----------
+
+Encapsulates a :ref:`ColorPicker<class_colorpicker>` making it accesible by pressing a button, pressing the button will toggle the :ref:`ColorPicker<class_colorpicker>` visibility
+
 Member Function Description
 ---------------------------
-
-.. _class_ColorPickerButton_set_color:
-
-- void  **set_color**  **(** :ref:`Color<class_color>` color  **)**
 
 .. _class_ColorPickerButton_get_color:
 
 - :ref:`Color<class_color>`  **get_color**  **(** **)** const
 
-.. _class_ColorPickerButton_set_edit_alpha:
+Gets the current color
 
-- void  **set_edit_alpha**  **(** :ref:`bool<class_bool>` show  **)**
+.. _class_ColorPickerButton_get_picker:
+
+- :ref:`ColorPicker<class_colorpicker>`  **get_picker**  **(** **)**
 
 .. _class_ColorPickerButton_is_editing_alpha:
 
 - :ref:`bool<class_bool>`  **is_editing_alpha**  **(** **)** const
+
+See :ref:`ColorPicker.is_edit_alpha<class_ColorPicker_is_edit_alpha>`
+
+.. _class_ColorPickerButton_set_color:
+
+- void  **set_color**  **(** :ref:`Color<class_color>` color  **)**
+
+Sets the current color
+
+.. _class_ColorPickerButton_set_edit_alpha:
+
+- void  **set_edit_alpha**  **(** :ref:`bool<class_bool>` show  **)**
+
+See :ref:`ColorPicker.set_edit_alpha<class_ColorPicker_set_edit_alpha>`
 
 

@@ -19,21 +19,21 @@ Member Functions
 ----------------
 
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_length<class_DampedSpringJoint2D_set_length>`  **(** :ref:`float<class_float>` length  **)**                |
+| :ref:`float<class_float>`  | :ref:`get_damping<class_DampedSpringJoint2D_get_damping>`  **(** **)** const                                          |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_length<class_DampedSpringJoint2D_get_length>`  **(** **)** const                                            |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_rest_length<class_DampedSpringJoint2D_set_rest_length>`  **(** :ref:`float<class_float>` rest_length  **)** |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_rest_length<class_DampedSpringJoint2D_get_rest_length>`  **(** **)** const                                  |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_stiffness<class_DampedSpringJoint2D_set_stiffness>`  **(** :ref:`float<class_float>` stiffness  **)**       |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_stiffness<class_DampedSpringJoint2D_get_stiffness>`  **(** **)** const                                      |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`set_damping<class_DampedSpringJoint2D_set_damping>`  **(** :ref:`float<class_float>` damping  **)**             |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_damping<class_DampedSpringJoint2D_get_damping>`  **(** **)** const                                          |
+| void                       | :ref:`set_length<class_DampedSpringJoint2D_set_length>`  **(** :ref:`float<class_float>` length  **)**                |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_rest_length<class_DampedSpringJoint2D_set_rest_length>`  **(** :ref:`float<class_float>` rest_length  **)** |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_stiffness<class_DampedSpringJoint2D_set_stiffness>`  **(** :ref:`float<class_float>` stiffness  **)**       |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -44,11 +44,11 @@ Damped spring constraint for 2D physics. This resembles a spring joint that alwa
 Member Function Description
 ---------------------------
 
-.. _class_DampedSpringJoint2D_set_length:
+.. _class_DampedSpringJoint2D_get_damping:
 
-- void  **set_length**  **(** :ref:`float<class_float>` length  **)**
+- :ref:`float<class_float>`  **get_damping**  **(** **)** const
 
-Set the maximum length of the spring joint.
+Return the damping ratio of the spring joint. A value of 0 indicates an undamped spring, while 1 causes the system to reach equilibrium as fast as possible (critical damping).
 
 .. _class_DampedSpringJoint2D_get_length:
 
@@ -56,23 +56,11 @@ Set the maximum length of the spring joint.
 
 Return the maximum length of the spring joint.
 
-.. _class_DampedSpringJoint2D_set_rest_length:
-
-- void  **set_rest_length**  **(** :ref:`float<class_float>` rest_length  **)**
-
-Set the resting length of the spring joint. The joint will always try to go to back this length when pulled apart.
-
 .. _class_DampedSpringJoint2D_get_rest_length:
 
 - :ref:`float<class_float>`  **get_rest_length**  **(** **)** const
 
 Return the resting length of the spring joint. The joint will always try to go to back this length when pulled apart.
-
-.. _class_DampedSpringJoint2D_set_stiffness:
-
-- void  **set_stiffness**  **(** :ref:`float<class_float>` stiffness  **)**
-
-Set the stiffness of the spring joint. The joint applies a force equal to the stiffness times the distance from its resting length.
 
 .. _class_DampedSpringJoint2D_get_stiffness:
 
@@ -86,10 +74,22 @@ Return the stiffness of the spring joint. The joint applies a force equal to the
 
 Set the damping ratio of the spring joint. A value of 0 indicates an undamped spring, while 1 causes the system to reach equilibrium as fast as possible (critical damping).
 
-.. _class_DampedSpringJoint2D_get_damping:
+.. _class_DampedSpringJoint2D_set_length:
 
-- :ref:`float<class_float>`  **get_damping**  **(** **)** const
+- void  **set_length**  **(** :ref:`float<class_float>` length  **)**
 
-Return the damping ratio of the spring joint. A value of 0 indicates an undamped spring, while 1 causes the system to reach equilibrium as fast as possible (critical damping).
+Set the maximum length of the spring joint.
+
+.. _class_DampedSpringJoint2D_set_rest_length:
+
+- void  **set_rest_length**  **(** :ref:`float<class_float>` rest_length  **)**
+
+Set the resting length of the spring joint. The joint will always try to go to back this length when pulled apart.
+
+.. _class_DampedSpringJoint2D_set_stiffness:
+
+- void  **set_stiffness**  **(** :ref:`float<class_float>` stiffness  **)**
+
+Set the stiffness of the spring joint. The joint applies a force equal to the stiffness times the distance from its resting length.
 
 

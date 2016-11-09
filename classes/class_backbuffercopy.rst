@@ -13,45 +13,58 @@ BackBufferCopy
 Brief Description
 -----------------
 
-
+Copies a region of the screen (or the whole screen) to a buffer so it can be accessed with the texscreen() shader instruction.
 
 Member Functions
 ----------------
 
 +----------------------------+--------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_rect<class_BackBufferCopy_set_rect>`  **(** :ref:`Rect2<class_rect2>` rect  **)**            |
+| :ref:`int<class_int>`      | :ref:`get_copy_mode<class_BackBufferCopy_get_copy_mode>`  **(** **)** const                            |
 +----------------------------+--------------------------------------------------------------------------------------------------------+
 | :ref:`Rect2<class_rect2>`  | :ref:`get_rect<class_BackBufferCopy_get_rect>`  **(** **)** const                                      |
 +----------------------------+--------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`set_copy_mode<class_BackBufferCopy_set_copy_mode>`  **(** :ref:`int<class_int>` copy_mode  **)** |
 +----------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_copy_mode<class_BackBufferCopy_get_copy_mode>`  **(** **)** const                            |
+| void                       | :ref:`set_rect<class_BackBufferCopy_set_rect>`  **(** :ref:`Rect2<class_rect2>` rect  **)**            |
 +----------------------------+--------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
 -----------------
 
-- **COPY_MODE_DISABLED** = **0**
-- **COPY_MODE_RECT** = **1**
-- **COPY_MODE_VIEWPORT** = **2**
+- **COPY_MODE_DISABLED** = **0** --- Disables the buffering mode. This means the BackBufferCopy node will directly use the portion of screen it covers.
+- **COPY_MODE_RECT** = **1** --- Sets the copy mode to a region.
+- **COPY_MODE_VIEWPORT** = **2** --- Sets the copy mode to the entire screen.
+
+Description
+-----------
+
+Node for back-buffering the currently displayed screen. The region defined in the BackBufferCopy node is bufferized with the content of the screen it covers, or the entire screen according to the copy mode set. Accessing this buffer is done with the texscreen() shader instruction.
 
 Member Function Description
 ---------------------------
 
-.. _class_BackBufferCopy_set_rect:
+.. _class_BackBufferCopy_get_copy_mode:
 
-- void  **set_rect**  **(** :ref:`Rect2<class_rect2>` rect  **)**
+- :ref:`int<class_int>`  **get_copy_mode**  **(** **)** const
+
+Return the copy mode currently applied to the BackBufferCopy (refer to constants section).
 
 .. _class_BackBufferCopy_get_rect:
 
 - :ref:`Rect2<class_rect2>`  **get_rect**  **(** **)** const
 
+Return the area covered by the BackBufferCopy.
+
 .. _class_BackBufferCopy_set_copy_mode:
 
 - void  **set_copy_mode**  **(** :ref:`int<class_int>` copy_mode  **)**
 
-.. _class_BackBufferCopy_get_copy_mode:
+Set the copy mode of the BackBufferCopy (refer to constants section).
 
-- :ref:`int<class_int>`  **get_copy_mode**  **(** **)** const
+.. _class_BackBufferCopy_set_rect:
+
+- void  **set_rect**  **(** :ref:`Rect2<class_rect2>` rect  **)**
+
+Defines the area covered by the BackBufferCopy.
 
 

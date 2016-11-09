@@ -13,7 +13,7 @@ RigidBody
 Brief Description
 -----------------
 
-
+Rigid body node.
 
 Member Functions
 ----------------
@@ -21,79 +21,79 @@ Member Functions
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`_integrate_forces<class_RigidBody__integrate_forces>`  **(** :ref:`PhysicsDirectBodyState<class_physicsdirectbodystate>` state  **)** virtual |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_mode<class_RigidBody_set_mode>`  **(** :ref:`int<class_int>` mode  **)**                                                                  |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_mode<class_RigidBody_get_mode>`  **(** **)** const                                                                                        |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_mass<class_RigidBody_set_mass>`  **(** :ref:`float<class_float>` mass  **)**                                                              |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_mass<class_RigidBody_get_mass>`  **(** **)** const                                                                                        |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_weight<class_RigidBody_set_weight>`  **(** :ref:`float<class_float>` weight  **)**                                                        |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_weight<class_RigidBody_get_weight>`  **(** **)** const                                                                                    |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_friction<class_RigidBody_set_friction>`  **(** :ref:`float<class_float>` friction  **)**                                                  |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_friction<class_RigidBody_get_friction>`  **(** **)** const                                                                                |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_bounce<class_RigidBody_set_bounce>`  **(** :ref:`float<class_float>` bounce  **)**                                                        |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_bounce<class_RigidBody_get_bounce>`  **(** **)** const                                                                                    |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_linear_velocity<class_RigidBody_set_linear_velocity>`  **(** :ref:`Vector3<class_vector3>` linear_velocity  **)**                         |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`get_linear_velocity<class_RigidBody_get_linear_velocity>`  **(** **)** const                                                                  |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_angular_velocity<class_RigidBody_set_angular_velocity>`  **(** :ref:`Vector3<class_vector3>` angular_velocity  **)**                      |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`get_angular_velocity<class_RigidBody_get_angular_velocity>`  **(** **)** const                                                                |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_gravity_scale<class_RigidBody_set_gravity_scale>`  **(** :ref:`float<class_float>` gravity_scale  **)**                                   |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_gravity_scale<class_RigidBody_get_gravity_scale>`  **(** **)** const                                                                      |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_linear_damp<class_RigidBody_set_linear_damp>`  **(** :ref:`float<class_float>` linear_damp  **)**                                         |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_linear_damp<class_RigidBody_get_linear_damp>`  **(** **)** const                                                                          |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_angular_damp<class_RigidBody_set_angular_damp>`  **(** :ref:`float<class_float>` angular_damp  **)**                                      |
+| void                           | :ref:`apply_impulse<class_RigidBody_apply_impulse>`  **(** :ref:`Vector3<class_vector3>` pos, :ref:`Vector3<class_vector3>` impulse  **)**          |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_angular_damp<class_RigidBody_get_angular_damp>`  **(** **)** const                                                                        |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_max_contacts_reported<class_RigidBody_set_max_contacts_reported>`  **(** :ref:`int<class_int>` amount  **)**                              |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_max_contacts_reported<class_RigidBody_get_max_contacts_reported>`  **(** **)** const                                                      |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_use_custom_integrator<class_RigidBody_set_use_custom_integrator>`  **(** :ref:`bool<class_bool>` enable  **)**                            |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_using_custom_integrator<class_RigidBody_is_using_custom_integrator>`  **(** **)**                                                          |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_contact_monitor<class_RigidBody_set_contact_monitor>`  **(** :ref:`bool<class_bool>` enabled  **)**                                       |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_contact_monitor_enabled<class_RigidBody_is_contact_monitor_enabled>`  **(** **)** const                                                    |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_use_continuous_collision_detection<class_RigidBody_set_use_continuous_collision_detection>`  **(** :ref:`bool<class_bool>` enable  **)**  |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_using_continuous_collision_detection<class_RigidBody_is_using_continuous_collision_detection>`  **(** **)** const                          |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_axis_velocity<class_RigidBody_set_axis_velocity>`  **(** :ref:`Vector3<class_vector3>` axis_velocity  **)**                               |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`apply_impulse<class_RigidBody_apply_impulse>`  **(** :ref:`Vector3<class_vector3>` pos, :ref:`Vector3<class_vector3>` impulse  **)**          |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_sleeping<class_RigidBody_set_sleeping>`  **(** :ref:`bool<class_bool>` sleeping  **)**                                                    |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_sleeping<class_RigidBody_is_sleeping>`  **(** **)** const                                                                                  |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_can_sleep<class_RigidBody_set_can_sleep>`  **(** :ref:`bool<class_bool>` able_to_sleep  **)**                                             |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_able_to_sleep<class_RigidBody_is_able_to_sleep>`  **(** **)** const                                                                        |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_axis_lock<class_RigidBody_set_axis_lock>`  **(** :ref:`int<class_int>` axis_lock  **)**                                                   |
+| :ref:`Vector3<class_vector3>`  | :ref:`get_angular_velocity<class_RigidBody_get_angular_velocity>`  **(** **)** const                                                                |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_axis_lock<class_RigidBody_get_axis_lock>`  **(** **)** const                                                                              |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_bounce<class_RigidBody_get_bounce>`  **(** **)** const                                                                                    |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_array>`      | :ref:`get_colliding_bodies<class_RigidBody_get_colliding_bodies>`  **(** **)** const                                                                |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_friction<class_RigidBody_get_friction>`  **(** **)** const                                                                                |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_gravity_scale<class_RigidBody_get_gravity_scale>`  **(** **)** const                                                                      |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_linear_damp<class_RigidBody_get_linear_damp>`  **(** **)** const                                                                          |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`  | :ref:`get_linear_velocity<class_RigidBody_get_linear_velocity>`  **(** **)** const                                                                  |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_mass<class_RigidBody_get_mass>`  **(** **)** const                                                                                        |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_max_contacts_reported<class_RigidBody_get_max_contacts_reported>`  **(** **)** const                                                      |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_mode<class_RigidBody_get_mode>`  **(** **)** const                                                                                        |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_weight<class_RigidBody_get_weight>`  **(** **)** const                                                                                    |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_able_to_sleep<class_RigidBody_is_able_to_sleep>`  **(** **)** const                                                                        |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_contact_monitor_enabled<class_RigidBody_is_contact_monitor_enabled>`  **(** **)** const                                                    |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_sleeping<class_RigidBody_is_sleeping>`  **(** **)** const                                                                                  |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_using_continuous_collision_detection<class_RigidBody_is_using_continuous_collision_detection>`  **(** **)** const                          |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_using_custom_integrator<class_RigidBody_is_using_custom_integrator>`  **(** **)**                                                          |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_angular_damp<class_RigidBody_set_angular_damp>`  **(** :ref:`float<class_float>` angular_damp  **)**                                      |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_angular_velocity<class_RigidBody_set_angular_velocity>`  **(** :ref:`Vector3<class_vector3>` angular_velocity  **)**                      |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_axis_lock<class_RigidBody_set_axis_lock>`  **(** :ref:`int<class_int>` axis_lock  **)**                                                   |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_axis_velocity<class_RigidBody_set_axis_velocity>`  **(** :ref:`Vector3<class_vector3>` axis_velocity  **)**                               |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_bounce<class_RigidBody_set_bounce>`  **(** :ref:`float<class_float>` bounce  **)**                                                        |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_can_sleep<class_RigidBody_set_can_sleep>`  **(** :ref:`bool<class_bool>` able_to_sleep  **)**                                             |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_contact_monitor<class_RigidBody_set_contact_monitor>`  **(** :ref:`bool<class_bool>` enabled  **)**                                       |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_friction<class_RigidBody_set_friction>`  **(** :ref:`float<class_float>` friction  **)**                                                  |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_gravity_scale<class_RigidBody_set_gravity_scale>`  **(** :ref:`float<class_float>` gravity_scale  **)**                                   |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_linear_damp<class_RigidBody_set_linear_damp>`  **(** :ref:`float<class_float>` linear_damp  **)**                                         |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_linear_velocity<class_RigidBody_set_linear_velocity>`  **(** :ref:`Vector3<class_vector3>` linear_velocity  **)**                         |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_mass<class_RigidBody_set_mass>`  **(** :ref:`float<class_float>` mass  **)**                                                              |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_max_contacts_reported<class_RigidBody_set_max_contacts_reported>`  **(** :ref:`int<class_int>` amount  **)**                              |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_mode<class_RigidBody_set_mode>`  **(** :ref:`int<class_int>` mode  **)**                                                                  |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_sleeping<class_RigidBody_set_sleeping>`  **(** :ref:`bool<class_bool>` sleeping  **)**                                                    |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_use_continuous_collision_detection<class_RigidBody_set_use_continuous_collision_detection>`  **(** :ref:`bool<class_bool>` enable  **)**  |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_use_custom_integrator<class_RigidBody_set_use_custom_integrator>`  **(** :ref:`bool<class_bool>` enable  **)**                            |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_weight<class_RigidBody_set_weight>`  **(** :ref:`float<class_float>` weight  **)**                                                        |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -103,14 +103,20 @@ Signals
 -  **body_enter_shape**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape  **)**
 -  **body_exit**  **(** :ref:`Object<class_object>` body  **)**
 -  **body_exit_shape**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape  **)**
+-  **sleeping_state_changed**  **(** **)**
 
 Numeric Constants
 -----------------
 
-- **MODE_STATIC** = **1**
-- **MODE_KINEMATIC** = **3**
-- **MODE_RIGID** = **0**
-- **MODE_CHARACTER** = **2**
+- **MODE_STATIC** = **1** --- Static mode. The body behaves like a :ref:`StaticBody<class_staticbody>`, and can only move by user code.
+- **MODE_KINEMATIC** = **3** --- Kinematic body. The body behaves like a :ref:`KinematicBody<class_kinematicbody>`, and can only move by user code.
+- **MODE_RIGID** = **0** --- Rigid body. This is the "natural" state of a rigid body. It is affected by forces, and can move, rotate, and be affected by user code.
+- **MODE_CHARACTER** = **2** --- Character body. This behaves like a rigid body, but can not rotate.
+
+Description
+-----------
+
+Rigid body node. This node is used for placing rigid bodies in the scene. It can contain a number of shapes, and also shift mode between regular Rigid body, Kinematic, Character or Static.
 
 Member Function Description
 ---------------------------
@@ -119,152 +125,232 @@ Member Function Description
 
 - void  **_integrate_forces**  **(** :ref:`PhysicsDirectBodyState<class_physicsdirectbodystate>` state  **)** virtual
 
-.. _class_RigidBody_set_mode:
-
-- void  **set_mode**  **(** :ref:`int<class_int>` mode  **)**
-
-.. _class_RigidBody_get_mode:
-
-- :ref:`int<class_int>`  **get_mode**  **(** **)** const
-
-.. _class_RigidBody_set_mass:
-
-- void  **set_mass**  **(** :ref:`float<class_float>` mass  **)**
-
-.. _class_RigidBody_get_mass:
-
-- :ref:`float<class_float>`  **get_mass**  **(** **)** const
-
-.. _class_RigidBody_set_weight:
-
-- void  **set_weight**  **(** :ref:`float<class_float>` weight  **)**
-
-.. _class_RigidBody_get_weight:
-
-- :ref:`float<class_float>`  **get_weight**  **(** **)** const
-
-.. _class_RigidBody_set_friction:
-
-- void  **set_friction**  **(** :ref:`float<class_float>` friction  **)**
-
-.. _class_RigidBody_get_friction:
-
-- :ref:`float<class_float>`  **get_friction**  **(** **)** const
-
-.. _class_RigidBody_set_bounce:
-
-- void  **set_bounce**  **(** :ref:`float<class_float>` bounce  **)**
-
-.. _class_RigidBody_get_bounce:
-
-- :ref:`float<class_float>`  **get_bounce**  **(** **)** const
-
-.. _class_RigidBody_set_linear_velocity:
-
-- void  **set_linear_velocity**  **(** :ref:`Vector3<class_vector3>` linear_velocity  **)**
-
-.. _class_RigidBody_get_linear_velocity:
-
-- :ref:`Vector3<class_vector3>`  **get_linear_velocity**  **(** **)** const
-
-.. _class_RigidBody_set_angular_velocity:
-
-- void  **set_angular_velocity**  **(** :ref:`Vector3<class_vector3>` angular_velocity  **)**
-
-.. _class_RigidBody_get_angular_velocity:
-
-- :ref:`Vector3<class_vector3>`  **get_angular_velocity**  **(** **)** const
-
-.. _class_RigidBody_set_gravity_scale:
-
-- void  **set_gravity_scale**  **(** :ref:`float<class_float>` gravity_scale  **)**
-
-.. _class_RigidBody_get_gravity_scale:
-
-- :ref:`float<class_float>`  **get_gravity_scale**  **(** **)** const
-
-.. _class_RigidBody_set_linear_damp:
-
-- void  **set_linear_damp**  **(** :ref:`float<class_float>` linear_damp  **)**
-
-.. _class_RigidBody_get_linear_damp:
-
-- :ref:`float<class_float>`  **get_linear_damp**  **(** **)** const
-
-.. _class_RigidBody_set_angular_damp:
-
-- void  **set_angular_damp**  **(** :ref:`float<class_float>` angular_damp  **)**
-
-.. _class_RigidBody_get_angular_damp:
-
-- :ref:`float<class_float>`  **get_angular_damp**  **(** **)** const
-
-.. _class_RigidBody_set_max_contacts_reported:
-
-- void  **set_max_contacts_reported**  **(** :ref:`int<class_int>` amount  **)**
-
-.. _class_RigidBody_get_max_contacts_reported:
-
-- :ref:`int<class_int>`  **get_max_contacts_reported**  **(** **)** const
-
-.. _class_RigidBody_set_use_custom_integrator:
-
-- void  **set_use_custom_integrator**  **(** :ref:`bool<class_bool>` enable  **)**
-
-.. _class_RigidBody_is_using_custom_integrator:
-
-- :ref:`bool<class_bool>`  **is_using_custom_integrator**  **(** **)**
-
-.. _class_RigidBody_set_contact_monitor:
-
-- void  **set_contact_monitor**  **(** :ref:`bool<class_bool>` enabled  **)**
-
-.. _class_RigidBody_is_contact_monitor_enabled:
-
-- :ref:`bool<class_bool>`  **is_contact_monitor_enabled**  **(** **)** const
-
-.. _class_RigidBody_set_use_continuous_collision_detection:
-
-- void  **set_use_continuous_collision_detection**  **(** :ref:`bool<class_bool>` enable  **)**
-
-.. _class_RigidBody_is_using_continuous_collision_detection:
-
-- :ref:`bool<class_bool>`  **is_using_continuous_collision_detection**  **(** **)** const
-
-.. _class_RigidBody_set_axis_velocity:
-
-- void  **set_axis_velocity**  **(** :ref:`Vector3<class_vector3>` axis_velocity  **)**
+Called during physics processing, allowing you to read and safely modify the simulation state for the object. By default it works in addition to the usual physics behavior, but :ref:`set_use_custom_integrator<class_RigidBody_set_use_custom_integrator>` allows you to disable the default behavior and do fully custom force integration for a body.
 
 .. _class_RigidBody_apply_impulse:
 
 - void  **apply_impulse**  **(** :ref:`Vector3<class_vector3>` pos, :ref:`Vector3<class_vector3>` impulse  **)**
 
-.. _class_RigidBody_set_sleeping:
+Apply a positioned impulse (which will be affected by the body mass and shape). This is the equivalent of hitting a billiard ball with a cue: a force that is applied once, and only once. Both the impulse and the offset from the body origin are in global coordinates.
 
-- void  **set_sleeping**  **(** :ref:`bool<class_bool>` sleeping  **)**
+.. _class_RigidBody_get_angular_damp:
 
-.. _class_RigidBody_is_sleeping:
+- :ref:`float<class_float>`  **get_angular_damp**  **(** **)** const
 
-- :ref:`bool<class_bool>`  **is_sleeping**  **(** **)** const
+Return the current body angular damp. Default is -1.
 
-.. _class_RigidBody_set_can_sleep:
+.. _class_RigidBody_get_angular_velocity:
 
-- void  **set_can_sleep**  **(** :ref:`bool<class_bool>` able_to_sleep  **)**
+- :ref:`Vector3<class_vector3>`  **get_angular_velocity**  **(** **)** const
 
-.. _class_RigidBody_is_able_to_sleep:
-
-- :ref:`bool<class_bool>`  **is_able_to_sleep**  **(** **)** const
-
-.. _class_RigidBody_set_axis_lock:
-
-- void  **set_axis_lock**  **(** :ref:`int<class_int>` axis_lock  **)**
+Return the current body angular velocity.
 
 .. _class_RigidBody_get_axis_lock:
 
 - :ref:`int<class_int>`  **get_axis_lock**  **(** **)** const
 
+Return the current axis lock of the body. One of AXIS_LOCK\_\* enum.
+
+.. _class_RigidBody_get_bounce:
+
+- :ref:`float<class_float>`  **get_bounce**  **(** **)** const
+
+Return the current body bounciness.
+
 .. _class_RigidBody_get_colliding_bodies:
 
 - :ref:`Array<class_array>`  **get_colliding_bodies**  **(** **)** const
+
+Return a list of the bodies colliding with this one.
+
+.. _class_RigidBody_get_friction:
+
+- :ref:`float<class_float>`  **get_friction**  **(** **)** const
+
+Return the current body friction, from 0 (frictionless) to 1 (max friction).
+
+.. _class_RigidBody_get_gravity_scale:
+
+- :ref:`float<class_float>`  **get_gravity_scale**  **(** **)** const
+
+Return the current body gravity scale.
+
+.. _class_RigidBody_get_linear_damp:
+
+- :ref:`float<class_float>`  **get_linear_damp**  **(** **)** const
+
+Return the current body linear damp. Default is -1.
+
+.. _class_RigidBody_get_linear_velocity:
+
+- :ref:`Vector3<class_vector3>`  **get_linear_velocity**  **(** **)** const
+
+Return the current body linear velocity.
+
+.. _class_RigidBody_get_mass:
+
+- :ref:`float<class_float>`  **get_mass**  **(** **)** const
+
+Return the current body mass.
+
+.. _class_RigidBody_get_max_contacts_reported:
+
+- :ref:`int<class_int>`  **get_max_contacts_reported**  **(** **)** const
+
+Return the maximum contacts that can be reported. See :ref:`set_max_contacts_reported<class_RigidBody_set_max_contacts_reported>`.
+
+.. _class_RigidBody_get_mode:
+
+- :ref:`int<class_int>`  **get_mode**  **(** **)** const
+
+Return the current body mode, see :ref:`set_mode<class_RigidBody_set_mode>`.
+
+.. _class_RigidBody_get_weight:
+
+- :ref:`float<class_float>`  **get_weight**  **(** **)** const
+
+Return the current body weight, given standard earth-weight (gravity 9.8).
+
+.. _class_RigidBody_is_able_to_sleep:
+
+- :ref:`bool<class_bool>`  **is_able_to_sleep**  **(** **)** const
+
+Return whether the body has the ability to fall asleep when not moving. See :ref:`set_can_sleep<class_RigidBody_set_can_sleep>`.
+
+.. _class_RigidBody_is_contact_monitor_enabled:
+
+- :ref:`bool<class_bool>`  **is_contact_monitor_enabled**  **(** **)** const
+
+Return whether contact monitoring is enabled.
+
+.. _class_RigidBody_is_sleeping:
+
+- :ref:`bool<class_bool>`  **is_sleeping**  **(** **)** const
+
+Return whether the body is sleeping.
+
+.. _class_RigidBody_is_using_continuous_collision_detection:
+
+- :ref:`bool<class_bool>`  **is_using_continuous_collision_detection**  **(** **)** const
+
+Return whether this body is using continuous collision detection.
+
+.. _class_RigidBody_is_using_custom_integrator:
+
+- :ref:`bool<class_bool>`  **is_using_custom_integrator**  **(** **)**
+
+Return whether the body is using a custom integrator.
+
+.. _class_RigidBody_set_angular_damp:
+
+- void  **set_angular_damp**  **(** :ref:`float<class_float>` angular_damp  **)**
+
+Set the angular damp for this body. Default of -1, cannot be less than -1. If this value is different from -1, any angular damp derived from the world or areas will be overridden.
+
+.. _class_RigidBody_set_angular_velocity:
+
+- void  **set_angular_velocity**  **(** :ref:`Vector3<class_vector3>` angular_velocity  **)**
+
+Set the body angular velocity. Can be used sporadically, but **DON'T SET THIS IN EVERY FRAME**, because physics may be running in another thread and definitely runs at a different granularity. Use :ref:`_integrate_forces<class_RigidBody__integrate_forces>` as your process loop if you want to have precise control of the body state.
+
+.. _class_RigidBody_set_axis_lock:
+
+- void  **set_axis_lock**  **(** :ref:`int<class_int>` axis_lock  **)**
+
+Set the axis lock of the body, from the AXIS_LOCK\_\* enum. Axis lock stops the body from moving along the specified axis(X/Y/Z) and rotating along the other two axes.
+
+.. _class_RigidBody_set_axis_velocity:
+
+- void  **set_axis_velocity**  **(** :ref:`Vector3<class_vector3>` axis_velocity  **)**
+
+Set an axis velocity. The velocity in the given vector axis will be set as the given vector length. This is useful for jumping behavior.
+
+.. _class_RigidBody_set_bounce:
+
+- void  **set_bounce**  **(** :ref:`float<class_float>` bounce  **)**
+
+Set the body bounciness, from 0 (no bounciness) to 1 (max bounciness).
+
+.. _class_RigidBody_set_can_sleep:
+
+- void  **set_can_sleep**  **(** :ref:`bool<class_bool>` able_to_sleep  **)**
+
+Set the body ability to fall asleep when not moving. This saves an enormous amount of processor time when there are plenty of rigid bodies (non static) in a scene.
+
+Sleeping bodies are not affected by forces until a collision or an :ref:`apply_impulse<class_RigidBody_apply_impulse>` / :ref:`set_applied_force<class_RigidBody_set_applied_force>` wakes them up. Until then, they behave like a static body.
+
+.. _class_RigidBody_set_contact_monitor:
+
+- void  **set_contact_monitor**  **(** :ref:`bool<class_bool>` enabled  **)**
+
+Enable contact monitoring. This allows the body to emit signals when it collides with another.
+
+.. _class_RigidBody_set_friction:
+
+- void  **set_friction**  **(** :ref:`float<class_float>` friction  **)**
+
+Set the body friction, from 0 (frictionless) to 1 (max friction).
+
+.. _class_RigidBody_set_gravity_scale:
+
+- void  **set_gravity_scale**  **(** :ref:`float<class_float>` gravity_scale  **)**
+
+Set the gravity factor. This factor multiplies gravity intensity just for this body.
+
+.. _class_RigidBody_set_linear_damp:
+
+- void  **set_linear_damp**  **(** :ref:`float<class_float>` linear_damp  **)**
+
+Set the linear damp for this body. Default of -1, cannot be less than -1. If this value is different from -1, any linear damp derived from the world or areas will be overridden.
+
+.. _class_RigidBody_set_linear_velocity:
+
+- void  **set_linear_velocity**  **(** :ref:`Vector3<class_vector3>` linear_velocity  **)**
+
+Set the body linear velocity. Can be used sporadically, but **DON'T SET THIS IN EVERY FRAME**, because physics may be running in another thread and definitely runs at a different granularity. Use :ref:`_integrate_forces<class_RigidBody__integrate_forces>` as your process loop if you want to have precise control of the body state.
+
+.. _class_RigidBody_set_mass:
+
+- void  **set_mass**  **(** :ref:`float<class_float>` mass  **)**
+
+Set the body mass.
+
+.. _class_RigidBody_set_max_contacts_reported:
+
+- void  **set_max_contacts_reported**  **(** :ref:`int<class_int>` amount  **)**
+
+Set the maximum contacts to report. Bodies can keep a log of the contacts with other bodies, this is enabled by setting the maximum amount of contacts reported to a number greater than 0.
+
+.. _class_RigidBody_set_mode:
+
+- void  **set_mode**  **(** :ref:`int<class_int>` mode  **)**
+
+Set the body mode, from the MODE\_\* enum. This allows to change to a static body or a character body.
+
+.. _class_RigidBody_set_sleeping:
+
+- void  **set_sleeping**  **(** :ref:`bool<class_bool>` sleeping  **)**
+
+Set whether a body is sleeping or not. Sleeping bodies are not affected by forces until a collision or an :ref:`apply_impulse<class_RigidBody_apply_impulse>` wakes them up. Until then, they behave like a static body.
+
+.. _class_RigidBody_set_use_continuous_collision_detection:
+
+- void  **set_use_continuous_collision_detection**  **(** :ref:`bool<class_bool>` enable  **)**
+
+Set the continuous collision detection mode from the enum CCD_MODE\_\*.
+
+Continuous collision detection tries to predict where a moving body will collide, instead of moving it and correcting its movement if it collided. The first is more precise, and misses less impacts by small, fast-moving objects. The second is faster to compute, but can miss small, fast-moving objects.
+
+.. _class_RigidBody_set_use_custom_integrator:
+
+- void  **set_use_custom_integrator**  **(** :ref:`bool<class_bool>` enable  **)**
+
+Pass true to disable the internal force integration (like gravity or air friction) for this body. Other than collision response, the body will only move as determined by the :ref:`_integrate_forces<class_RigidBody__integrate_forces>` function, if defined.
+
+.. _class_RigidBody_set_weight:
+
+- void  **set_weight**  **(** :ref:`float<class_float>` weight  **)**
+
+Set the body weight given standard earth-weight (gravity 9.8).
 
 

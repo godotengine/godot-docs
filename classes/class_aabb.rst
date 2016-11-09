@@ -17,6 +17,8 @@ Member Functions
 ----------------
 
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`AABB<class_aabb>`        | :ref:`AABB<class_AABB_AABB>`  **(** :ref:`Vector3<class_vector3>` pos, :ref:`Vector3<class_vector3>` size  **)**                            |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`encloses<class_AABB_encloses>`  **(** :ref:`AABB<class_aabb>` with  **)**                                                             |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`AABB<class_aabb>`        | :ref:`expand<class_AABB_expand>`  **(** :ref:`Vector3<class_vector3>` to_point  **)**                                                       |
@@ -57,15 +59,13 @@ Member Functions
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`AABB<class_aabb>`        | :ref:`merge<class_AABB_merge>`  **(** :ref:`AABB<class_aabb>` with  **)**                                                                   |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AABB<class_aabb>`        | :ref:`AABB<class_AABB_AABB>`  **(** :ref:`Vector3<class_vector3>` pos, :ref:`Vector3<class_vector3>` size  **)**                            |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
 
-- :ref:`Vector3<class_vector3>` **pos**
-- :ref:`Vector3<class_vector3>` **size**
-- :ref:`Vector3<class_vector3>` **end**
+- :ref:`Vector3<class_vector3>` **end** - Ending corner.
+- :ref:`Vector3<class_vector3>` **pos** - Position (starting corner).
+- :ref:`Vector3<class_vector3>` **size** - Size from position to end.
 
 Description
 -----------
@@ -74,6 +74,12 @@ AABB provides an 3D Axis-Aligned Bounding Box. It consists of a position, a size
 
 Member Function Description
 ---------------------------
+
+.. _class_AABB_AABB:
+
+- :ref:`AABB<class_aabb>`  **AABB**  **(** :ref:`Vector3<class_vector3>` pos, :ref:`Vector3<class_vector3>` size  **)**
+
+Optional constructor, accepts position and size.
 
 .. _class_AABB_encloses:
 
@@ -187,16 +193,12 @@ Return true if the :ref:`AABB<class_aabb>` is at both sides of a plane.
 
 - :ref:`bool<class_bool>`  **intersects_segment**  **(** :ref:`Vector3<class_vector3>` from, :ref:`Vector3<class_vector3>` to  **)**
 
+Return true if the :ref:`AABB<class_aabb>` intersects the line segment between from and to
+
 .. _class_AABB_merge:
 
 - :ref:`AABB<class_aabb>`  **merge**  **(** :ref:`AABB<class_aabb>` with  **)**
 
 Combine this :ref:`AABB<class_aabb>` with another, a larger one is returned that contains both.
-
-.. _class_AABB_AABB:
-
-- :ref:`AABB<class_aabb>`  **AABB**  **(** :ref:`Vector3<class_vector3>` pos, :ref:`Vector3<class_vector3>` size  **)**
-
-Optional constructor, accepts position and size.
 
 

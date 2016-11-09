@@ -158,6 +158,19 @@ this module:
 
     env.add_source_files(env.modules_sources,"*.cpp") # just add all cpp files to the build
 
+If you want to add custom compiler flags when building your module, you need to clone
+`env` first, so it won't add those flags to whole Godot build (which can cause errors).
+Example `SCub` with custom flags:
+
+.. code:: python
+
+    # SCsub
+    Import('env')
+
+    module_env = env.Clone()
+    module_env.add_source_files(env.modules_sources,"*.cpp")
+    module_env.Append(CXXFLAGS=['-O2', '-std=c++11'])
+
 And finally, the configuration file for the module, this is a simple
 python script that must be named ``config.py``:
 
@@ -173,11 +186,6 @@ python script that must be named ``config.py``:
 
 The module is asked if it's ok to build for the specific platform (in
 this case, True means it will build for every platform).
-
-The second function allows to customize the build process for the
-module, like adding special compiler flags, options, etc. (This can be
-done in ``SCsub``, but ``configure(env)`` is called at a previous stage).
-If unsure, just ignore this.
 
 And that's it. Hope it was not too complex! Your module should look like
 this:

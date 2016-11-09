@@ -27,7 +27,7 @@ included. If a resource has sub-resources that are built-in, the resource is
 saved in a single file together with all the bundled sub-resources. For
 example, a font resource is often bundled together with the font textures.
 
-In general the the Godot file system avoids using metadata files. The reason for
+In general the Godot file system avoids using metadata files. The reason for
 this is simple, existing asset managers and VCSs are just much better than
 anything we can implement, so Godot tries the best to play along with SVN,
 Git, Mercurial, Perforce, etc.

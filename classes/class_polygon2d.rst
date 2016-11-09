@@ -13,134 +13,197 @@ Polygon2D
 Brief Description
 -----------------
 
-
+2D polygon representation
 
 Member Functions
 ----------------
 
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_polygon<class_Polygon2D_set_polygon>`  **(** :ref:`Vector2Array<class_vector2array>` polygon  **)**              |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2Array<class_vector2array>`  | :ref:`get_polygon<class_Polygon2D_get_polygon>`  **(** **)** const                                                         |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_uv<class_Polygon2D_set_uv>`  **(** :ref:`Vector2Array<class_vector2array>` uv  **)**                             |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2Array<class_vector2array>`  | :ref:`get_uv<class_Polygon2D_get_uv>`  **(** **)** const                                                                   |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_color<class_Polygon2D_set_color>`  **(** :ref:`Color<class_color>` color  **)**                                  |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`                | :ref:`get_color<class_Polygon2D_get_color>`  **(** **)** const                                                             |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_texture<class_Polygon2D_set_texture>`  **(** :ref:`Object<class_object>` texture  **)**                          |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`              | :ref:`get_texture<class_Polygon2D_get_texture>`  **(** **)** const                                                         |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_texture_offset<class_Polygon2D_set_texture_offset>`  **(** :ref:`Vector2<class_vector2>` texture_offset  **)**   |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`            | :ref:`get_texture_offset<class_Polygon2D_get_texture_offset>`  **(** **)** const                                           |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_texture_rotation<class_Polygon2D_set_texture_rotation>`  **(** :ref:`float<class_float>` texture_rotation  **)** |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                | :ref:`get_texture_rotation<class_Polygon2D_get_texture_rotation>`  **(** **)** const                                       |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_texture_scale<class_Polygon2D_set_texture_scale>`  **(** :ref:`Vector2<class_vector2>` texture_scale  **)**      |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`            | :ref:`get_texture_scale<class_Polygon2D_get_texture_scale>`  **(** **)** const                                             |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_invert<class_Polygon2D_set_invert>`  **(** :ref:`bool<class_bool>` invert  **)**                                 |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`get_invert<class_Polygon2D_get_invert>`  **(** **)** const                                                           |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_invert_border<class_Polygon2D_set_invert_border>`  **(** :ref:`float<class_float>` invert_border  **)**          |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                | :ref:`get_invert_border<class_Polygon2D_get_invert_border>`  **(** **)** const                                             |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_offset<class_Polygon2D_set_offset>`  **(** :ref:`Vector2<class_vector2>` offset  **)**                           |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`            | :ref:`get_offset<class_Polygon2D_get_offset>`  **(** **)** const                                                           |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`                | :ref:`get_color<class_Polygon2D_get_color>`  **(** **)** const                                                              |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`get_invert<class_Polygon2D_get_invert>`  **(** **)** const                                                            |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                | :ref:`get_invert_border<class_Polygon2D_get_invert_border>`  **(** **)** const                                              |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`            | :ref:`get_offset<class_Polygon2D_get_offset>`  **(** **)** const                                                            |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2Array<class_vector2array>`  | :ref:`get_polygon<class_Polygon2D_get_polygon>`  **(** **)** const                                                          |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`              | :ref:`get_texture<class_Polygon2D_get_texture>`  **(** **)** const                                                          |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`            | :ref:`get_texture_offset<class_Polygon2D_get_texture_offset>`  **(** **)** const                                            |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                | :ref:`get_texture_rotation<class_Polygon2D_get_texture_rotation>`  **(** **)** const                                        |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`            | :ref:`get_texture_scale<class_Polygon2D_get_texture_scale>`  **(** **)** const                                              |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2Array<class_vector2array>`  | :ref:`get_uv<class_Polygon2D_get_uv>`  **(** **)** const                                                                    |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`ColorArray<class_colorarray>`      | :ref:`get_vertex_colors<class_Polygon2D_get_vertex_colors>`  **(** **)** const                                              |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_color<class_Polygon2D_set_color>`  **(** :ref:`Color<class_color>` color  **)**                                   |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_invert<class_Polygon2D_set_invert>`  **(** :ref:`bool<class_bool>` invert  **)**                                  |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_invert_border<class_Polygon2D_set_invert_border>`  **(** :ref:`float<class_float>` invert_border  **)**           |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_offset<class_Polygon2D_set_offset>`  **(** :ref:`Vector2<class_vector2>` offset  **)**                            |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_polygon<class_Polygon2D_set_polygon>`  **(** :ref:`Vector2Array<class_vector2array>` polygon  **)**               |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_texture<class_Polygon2D_set_texture>`  **(** :ref:`Object<class_object>` texture  **)**                           |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_texture_offset<class_Polygon2D_set_texture_offset>`  **(** :ref:`Vector2<class_vector2>` texture_offset  **)**    |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_texture_rotation<class_Polygon2D_set_texture_rotation>`  **(** :ref:`float<class_float>` texture_rotation  **)**  |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_texture_scale<class_Polygon2D_set_texture_scale>`  **(** :ref:`Vector2<class_vector2>` texture_scale  **)**       |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_uv<class_Polygon2D_set_uv>`  **(** :ref:`Vector2Array<class_vector2array>` uv  **)**                              |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_vertex_colors<class_Polygon2D_set_vertex_colors>`  **(** :ref:`ColorArray<class_colorarray>` vertex_colors  **)** |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+
+Description
+-----------
+
+A Polygon2D is defined by a set of n vertices connected together by line segments, meaning that the vertex 1 will be connected with vertex 2, vertex 2 with vertex 3 ..., vertex n-1 with vertex n and vertex n with vertex 1 in order to close the loop and define a polygon.
 
 Member Function Description
 ---------------------------
-
-.. _class_Polygon2D_set_polygon:
-
-- void  **set_polygon**  **(** :ref:`Vector2Array<class_vector2array>` polygon  **)**
-
-.. _class_Polygon2D_get_polygon:
-
-- :ref:`Vector2Array<class_vector2array>`  **get_polygon**  **(** **)** const
-
-.. _class_Polygon2D_set_uv:
-
-- void  **set_uv**  **(** :ref:`Vector2Array<class_vector2array>` uv  **)**
-
-.. _class_Polygon2D_get_uv:
-
-- :ref:`Vector2Array<class_vector2array>`  **get_uv**  **(** **)** const
-
-.. _class_Polygon2D_set_color:
-
-- void  **set_color**  **(** :ref:`Color<class_color>` color  **)**
 
 .. _class_Polygon2D_get_color:
 
 - :ref:`Color<class_color>`  **get_color**  **(** **)** const
 
-.. _class_Polygon2D_set_texture:
-
-- void  **set_texture**  **(** :ref:`Object<class_object>` texture  **)**
-
-.. _class_Polygon2D_get_texture:
-
-- :ref:`Object<class_object>`  **get_texture**  **(** **)** const
-
-.. _class_Polygon2D_set_texture_offset:
-
-- void  **set_texture_offset**  **(** :ref:`Vector2<class_vector2>` texture_offset  **)**
-
-.. _class_Polygon2D_get_texture_offset:
-
-- :ref:`Vector2<class_vector2>`  **get_texture_offset**  **(** **)** const
-
-.. _class_Polygon2D_set_texture_rotation:
-
-- void  **set_texture_rotation**  **(** :ref:`float<class_float>` texture_rotation  **)**
-
-.. _class_Polygon2D_get_texture_rotation:
-
-- :ref:`float<class_float>`  **get_texture_rotation**  **(** **)** const
-
-.. _class_Polygon2D_set_texture_scale:
-
-- void  **set_texture_scale**  **(** :ref:`Vector2<class_vector2>` texture_scale  **)**
-
-.. _class_Polygon2D_get_texture_scale:
-
-- :ref:`Vector2<class_vector2>`  **get_texture_scale**  **(** **)** const
-
-.. _class_Polygon2D_set_invert:
-
-- void  **set_invert**  **(** :ref:`bool<class_bool>` invert  **)**
+Return the polygon fill color.
 
 .. _class_Polygon2D_get_invert:
 
 - :ref:`bool<class_bool>`  **get_invert**  **(** **)** const
 
-.. _class_Polygon2D_set_invert_border:
-
-- void  **set_invert_border**  **(** :ref:`float<class_float>` invert_border  **)**
+Return whether this polygon is inverted or not.
 
 .. _class_Polygon2D_get_invert_border:
 
 - :ref:`float<class_float>`  **get_invert_border**  **(** **)** const
 
-.. _class_Polygon2D_set_offset:
-
-- void  **set_offset**  **(** :ref:`Vector2<class_vector2>` offset  **)**
+Return the added padding around the bounding box.
 
 .. _class_Polygon2D_get_offset:
 
 - :ref:`Vector2<class_vector2>`  **get_offset**  **(** **)** const
+
+Return the offset for the polygon vertices.
+
+.. _class_Polygon2D_get_polygon:
+
+- :ref:`Vector2Array<class_vector2array>`  **get_polygon**  **(** **)** const
+
+Return the set of vertices that defines this polygon.
+
+.. _class_Polygon2D_get_texture:
+
+- :ref:`Object<class_object>`  **get_texture**  **(** **)** const
+
+Return the polygon texture
+
+.. _class_Polygon2D_get_texture_offset:
+
+- :ref:`Vector2<class_vector2>`  **get_texture_offset**  **(** **)** const
+
+Return the polygon texture offset.
+
+.. _class_Polygon2D_get_texture_rotation:
+
+- :ref:`float<class_float>`  **get_texture_rotation**  **(** **)** const
+
+Return the rotation in radians of the texture polygon.
+
+.. _class_Polygon2D_get_texture_scale:
+
+- :ref:`Vector2<class_vector2>`  **get_texture_scale**  **(** **)** const
+
+Return the uv coordinate multiplier.
+
+.. _class_Polygon2D_get_uv:
+
+- :ref:`Vector2Array<class_vector2array>`  **get_uv**  **(** **)** const
+
+Return the texture coordinates associated with every vertex of the polygon.
+
+.. _class_Polygon2D_get_vertex_colors:
+
+- :ref:`ColorArray<class_colorarray>`  **get_vertex_colors**  **(** **)** const
+
+Return the list of vertex colors.
+
+.. _class_Polygon2D_set_color:
+
+- void  **set_color**  **(** :ref:`Color<class_color>` color  **)**
+
+Set the polygon fill color. If the polygon has a texture defined, the defined texture will be multiplied by the polygon fill color. This, also, is the default color for those vertices that are not defined by :ref:`get_vertex_colors<class_Polygon2D_get_vertex_colors>`.
+
+.. _class_Polygon2D_set_invert:
+
+- void  **set_invert**  **(** :ref:`bool<class_bool>` invert  **)**
+
+Set the polygon as the defined polygon bounding box minus the defined polygon (the defined polygon will appear as a hole on the square that contains the defined polygon).
+
+.. _class_Polygon2D_set_invert_border:
+
+- void  **set_invert_border**  **(** :ref:`float<class_float>` invert_border  **)**
+
+Add extra padding around the bounding box, making it bigger. Too small a value can make the polygon triangulate strangely, due to numerical imprecision.
+
+.. _class_Polygon2D_set_offset:
+
+- void  **set_offset**  **(** :ref:`Vector2<class_vector2>` offset  **)**
+
+Set the an offset that will be added to the vertices' position. E.g. if the offset is set to (10,10) then all the polygon points will move 10 units to the right and 10 units to the bottom.
+
+.. _class_Polygon2D_set_polygon:
+
+- void  **set_polygon**  **(** :ref:`Vector2Array<class_vector2array>` polygon  **)**
+
+Define the set of vertices that will represent the polygon.
+
+.. _class_Polygon2D_set_texture:
+
+- void  **set_texture**  **(** :ref:`Object<class_object>` texture  **)**
+
+Set the polygon texture.
+
+.. _class_Polygon2D_set_texture_offset:
+
+- void  **set_texture_offset**  **(** :ref:`Vector2<class_vector2>` texture_offset  **)**
+
+Set the offset of the polygon texture. Initially the texture will appear anchored to the polygon position, the offset is used to move the texture location away from that point (notice that the texture origin is set to its top left corner, so when offset is 0,0 the top left corner of the texture is at the polygon position), for example setting the offset to 10, 10 will move the texture 10 units to the left and 10 units to the top.
+
+.. _class_Polygon2D_set_texture_rotation:
+
+- void  **set_texture_rotation**  **(** :ref:`float<class_float>` texture_rotation  **)**
+
+Set the amount of rotation of the polygon texture, ``texture_rotation`` is specified in radians and clockwise rotation.
+
+.. _class_Polygon2D_set_texture_scale:
+
+- void  **set_texture_scale**  **(** :ref:`Vector2<class_vector2>` texture_scale  **)**
+
+Set the value that will multiply the uv coordinates (:ref:`get_uv<class_Polygon2D_get_uv>`) when applying the texture. Larger values make the texture smaller, and vice versa.
+
+.. _class_Polygon2D_set_uv:
+
+- void  **set_uv**  **(** :ref:`Vector2Array<class_vector2array>` uv  **)**
+
+Set the texture coordinates for every vertex of the polygon. There should be one uv vertex for every vertex in the polygon. If there are less, the undefined ones will be assumed to be (0,0). Extra uv vertices are ignored.
+
+.. _class_Polygon2D_set_vertex_colors:
+
+- void  **set_vertex_colors**  **(** :ref:`ColorArray<class_colorarray>` vertex_colors  **)**
+
+Set the color for each vertex of the polygon. There should be one color for every vertex in the polygon. If there are less, the undefined ones will be assumed to be :ref:`get_color<class_Polygon2D_get_color>`. Extra color entries are ignored.
+
+Colors are interpolated between vertices, resulting in smooth gradients when they differ.
 
 

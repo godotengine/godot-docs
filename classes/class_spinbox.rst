@@ -19,19 +19,19 @@ Member Functions
 ----------------
 
 +------------------------------+------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_suffix<class_SpinBox_set_suffix>`  **(** :ref:`String<class_string>` suffix  **)**   |
-+------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_suffix<class_SpinBox_get_suffix>`  **(** **)** const                                 |
-+------------------------------+------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_prefix<class_SpinBox_set_prefix>`  **(** :ref:`String<class_string>` prefix  **)**   |
+| :ref:`Object<class_object>`  | :ref:`get_line_edit<class_SpinBox_get_line_edit>`  **(** **)**                                 |
 +------------------------------+------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`  | :ref:`get_prefix<class_SpinBox_get_prefix>`  **(** **)** const                                 |
 +------------------------------+------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_editable<class_SpinBox_set_editable>`  **(** :ref:`bool<class_bool>` editable  **)** |
+| :ref:`String<class_string>`  | :ref:`get_suffix<class_SpinBox_get_suffix>`  **(** **)** const                                 |
 +------------------------------+------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`      | :ref:`is_editable<class_SpinBox_is_editable>`  **(** **)** const                               |
 +------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`  | :ref:`get_line_edit<class_SpinBox_get_line_edit>`  **(** **)**                                 |
+| void                         | :ref:`set_editable<class_SpinBox_set_editable>`  **(** :ref:`bool<class_bool>` editable  **)** |
++------------------------------+------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_prefix<class_SpinBox_set_prefix>`  **(** :ref:`String<class_string>` prefix  **)**   |
++------------------------------+------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_suffix<class_SpinBox_set_suffix>`  **(** :ref:`String<class_string>` suffix  **)**   |
 +------------------------------+------------------------------------------------------------------------------------------------+
 
 Description
@@ -42,11 +42,13 @@ SpinBox is a numerical input text field. It allows entering integers and floats.
 Member Function Description
 ---------------------------
 
-.. _class_SpinBox_set_suffix:
+.. _class_SpinBox_get_line_edit:
 
-- void  **set_suffix**  **(** :ref:`String<class_string>` suffix  **)**
+- :ref:`Object<class_object>`  **get_line_edit**  **(** **)**
 
-Set a specific suffix.
+.. _class_SpinBox_get_prefix:
+
+- :ref:`String<class_string>`  **get_prefix**  **(** **)** const
 
 .. _class_SpinBox_get_suffix:
 
@@ -54,15 +56,11 @@ Set a specific suffix.
 
 Return the specific suffix.
 
-.. _class_SpinBox_set_prefix:
+.. _class_SpinBox_is_editable:
 
-- void  **set_prefix**  **(** :ref:`String<class_string>` prefix  **)**
+- :ref:`bool<class_bool>`  **is_editable**  **(** **)** const
 
-Set a prefix.
-
-.. _class_SpinBox_get_prefix:
-
-- :ref:`String<class_string>`  **get_prefix**  **(** **)** const
+Return if the spinbox is editable.
 
 .. _class_SpinBox_set_editable:
 
@@ -70,14 +68,16 @@ Set a prefix.
 
 Set whether the spinbox is editable.
 
-.. _class_SpinBox_is_editable:
+.. _class_SpinBox_set_prefix:
 
-- :ref:`bool<class_bool>`  **is_editable**  **(** **)** const
+- void  **set_prefix**  **(** :ref:`String<class_string>` prefix  **)**
 
-Return if the spinbox is editable.
+Set a prefix.
 
-.. _class_SpinBox_get_line_edit:
+.. _class_SpinBox_set_suffix:
 
-- :ref:`Object<class_object>`  **get_line_edit**  **(** **)**
+- void  **set_suffix**  **(** :ref:`String<class_string>` suffix  **)**
+
+Set a specific suffix.
 
 

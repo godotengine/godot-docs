@@ -13,297 +13,262 @@ Particles2D
 Brief Description
 -----------------
 
-
+2D Particle emitter
 
 Member Functions
 ----------------
 
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_emitting<class_Particles2D_set_emitting>`  **(** :ref:`bool<class_bool>` active  **)**                                                 |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`is_emitting<class_Particles2D_is_emitting>`  **(** **)** const                                                                             |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_amount<class_Particles2D_set_amount>`  **(** :ref:`int<class_int>` amount  **)**                                                       |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                    | :ref:`get_amount<class_Particles2D_get_amount>`  **(** **)** const                                                                               |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_lifetime<class_Particles2D_set_lifetime>`  **(** :ref:`float<class_float>` lifetime  **)**                                             |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                | :ref:`get_lifetime<class_Particles2D_get_lifetime>`  **(** **)** const                                                                           |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_time_scale<class_Particles2D_set_time_scale>`  **(** :ref:`float<class_float>` time_scale  **)**                                       |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                | :ref:`get_time_scale<class_Particles2D_get_time_scale>`  **(** **)** const                                                                       |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_pre_process_time<class_Particles2D_set_pre_process_time>`  **(** :ref:`float<class_float>` time  **)**                                 |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                | :ref:`get_pre_process_time<class_Particles2D_get_pre_process_time>`  **(** **)** const                                                           |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_emit_timeout<class_Particles2D_set_emit_timeout>`  **(** :ref:`float<class_float>` value  **)**                                        |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                | :ref:`get_emit_timeout<class_Particles2D_get_emit_timeout>`  **(** **)** const                                                                   |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_param<class_Particles2D_set_param>`  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**                         |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                | :ref:`get_param<class_Particles2D_get_param>`  **(** :ref:`int<class_int>` param  **)** const                                                    |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_randomness<class_Particles2D_set_randomness>`  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**               |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                | :ref:`get_randomness<class_Particles2D_get_randomness>`  **(** :ref:`int<class_int>` param  **)** const                                          |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_texture>`            | :ref:`set_texture<class_Particles2D_set_texture>`  **(** :ref:`Object<class_object>` texture  **)**                                              |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_texture>`            | :ref:`get_texture<class_Particles2D_get_texture>`  **(** **)** const                                                                             |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_color<class_Particles2D_set_color>`  **(** :ref:`Color<class_color>` color  **)**                                                      |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_color>`                | :ref:`get_color<class_Particles2D_get_color>`  **(** **)** const                                                                                 |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ColorRamp<class_colorramp>`        | :ref:`set_color_ramp<class_Particles2D_set_color_ramp>`  **(** :ref:`Object<class_object>` color_ramp  **)**                                     |
+| :ref:`Color<class_color>`                | :ref:`get_color_phase_color<class_Particles2D_get_color_phase_color>`  **(** :ref:`int<class_int>` phase  **)** const                            |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ColorRamp<class_colorramp>`        | :ref:`get_color_ramp<class_Particles2D_get_color_ramp>`  **(** **)** const                                                                       |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_emissor_offset<class_Particles2D_set_emissor_offset>`  **(** :ref:`Vector2<class_vector2>` offset  **)**                               |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`            | :ref:`get_emissor_offset<class_Particles2D_get_emissor_offset>`  **(** **)** const                                                               |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_flip_h<class_Particles2D_set_flip_h>`  **(** :ref:`bool<class_bool>` enable  **)**                                                     |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`is_flipped_h<class_Particles2D_is_flipped_h>`  **(** **)** const                                                                           |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_flip_v<class_Particles2D_set_flip_v>`  **(** :ref:`bool<class_bool>` enable  **)**                                                     |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`is_flipped_v<class_Particles2D_is_flipped_v>`  **(** **)** const                                                                           |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_h_frames<class_Particles2D_set_h_frames>`  **(** :ref:`int<class_int>` enable  **)**                                                   |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                    | :ref:`get_h_frames<class_Particles2D_get_h_frames>`  **(** **)** const                                                                           |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_v_frames<class_Particles2D_set_v_frames>`  **(** :ref:`int<class_int>` enable  **)**                                                   |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                    | :ref:`get_v_frames<class_Particles2D_get_v_frames>`  **(** **)** const                                                                           |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_emission_half_extents<class_Particles2D_set_emission_half_extents>`  **(** :ref:`Vector2<class_vector2>` extents  **)**                |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`            | :ref:`get_emission_half_extents<class_Particles2D_get_emission_half_extents>`  **(** **)** const                                                 |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_color_phases<class_Particles2D_set_color_phases>`  **(** :ref:`int<class_int>` phases  **)**                                           |
+| :ref:`float<class_float>`                | :ref:`get_color_phase_pos<class_Particles2D_get_color_phase_pos>`  **(** :ref:`int<class_int>` phase  **)** const                                |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                    | :ref:`get_color_phases<class_Particles2D_get_color_phases>`  **(** **)** const                                                                   |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_color_phase_color<class_Particles2D_set_color_phase_color>`  **(** :ref:`int<class_int>` phase, :ref:`Color<class_color>` color  **)** |
+| :ref:`ColorRamp<class_colorramp>`        | :ref:`get_color_ramp<class_Particles2D_get_color_ramp>`  **(** **)** const                                                                       |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`                | :ref:`get_color_phase_color<class_Particles2D_get_color_phase_color>`  **(** :ref:`int<class_int>` phase  **)** const                            |
+| :ref:`Vector2<class_vector2>`            | :ref:`get_emission_half_extents<class_Particles2D_get_emission_half_extents>`  **(** **)** const                                                 |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_color_phase_pos<class_Particles2D_set_color_phase_pos>`  **(** :ref:`int<class_int>` phase, :ref:`float<class_float>` pos  **)**       |
+| :ref:`Vector2Array<class_vector2array>`  | :ref:`get_emission_points<class_Particles2D_get_emission_points>`  **(** **)** const                                                             |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                | :ref:`get_color_phase_pos<class_Particles2D_get_color_phase_pos>`  **(** :ref:`int<class_int>` phase  **)** const                                |
+| :ref:`Vector2<class_vector2>`            | :ref:`get_emissor_offset<class_Particles2D_get_emissor_offset>`  **(** **)** const                                                               |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                | :ref:`get_emit_timeout<class_Particles2D_get_emit_timeout>`  **(** **)** const                                                                   |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                | :ref:`get_explosiveness<class_Particles2D_get_explosiveness>`  **(** **)** const                                                                 |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                    | :ref:`get_h_frames<class_Particles2D_get_h_frames>`  **(** **)** const                                                                           |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`            | :ref:`get_initial_velocity<class_Particles2D_get_initial_velocity>`  **(** **)** const                                                           |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                | :ref:`get_lifetime<class_Particles2D_get_lifetime>`  **(** **)** const                                                                           |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                | :ref:`get_param<class_Particles2D_get_param>`  **(** :ref:`int<class_int>` param  **)** const                                                    |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                | :ref:`get_pre_process_time<class_Particles2D_get_pre_process_time>`  **(** **)** const                                                           |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                | :ref:`get_randomness<class_Particles2D_get_randomness>`  **(** :ref:`int<class_int>` param  **)** const                                          |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_texture>`            | :ref:`get_texture<class_Particles2D_get_texture>`  **(** **)** const                                                                             |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                | :ref:`get_time_scale<class_Particles2D_get_time_scale>`  **(** **)** const                                                                       |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                    | :ref:`get_v_frames<class_Particles2D_get_v_frames>`  **(** **)** const                                                                           |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`is_emitting<class_Particles2D_is_emitting>`  **(** **)** const                                                                             |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`is_flipped_h<class_Particles2D_is_flipped_h>`  **(** **)** const                                                                           |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`is_flipped_v<class_Particles2D_is_flipped_v>`  **(** **)** const                                                                           |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`is_using_local_space<class_Particles2D_is_using_local_space>`  **(** **)** const                                                           |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`pre_process<class_Particles2D_pre_process>`  **(** :ref:`float<class_float>` time  **)**                                                   |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`reset<class_Particles2D_reset>`  **(** **)**                                                                                               |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_use_local_space<class_Particles2D_set_use_local_space>`  **(** :ref:`bool<class_bool>` enable  **)**                                   |
+| void                                     | :ref:`set_amount<class_Particles2D_set_amount>`  **(** :ref:`int<class_int>` amount  **)**                                                       |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`is_using_local_space<class_Particles2D_is_using_local_space>`  **(** **)** const                                                           |
+| void                                     | :ref:`set_color<class_Particles2D_set_color>`  **(** :ref:`Color<class_color>` color  **)**                                                      |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_initial_velocity<class_Particles2D_set_initial_velocity>`  **(** :ref:`Vector2<class_vector2>` velocity  **)**                         |
+| void                                     | :ref:`set_color_phase_color<class_Particles2D_set_color_phase_color>`  **(** :ref:`int<class_int>` phase, :ref:`Color<class_color>` color  **)** |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`            | :ref:`get_initial_velocity<class_Particles2D_get_initial_velocity>`  **(** **)** const                                                           |
+| void                                     | :ref:`set_color_phase_pos<class_Particles2D_set_color_phase_pos>`  **(** :ref:`int<class_int>` phase, :ref:`float<class_float>` pos  **)**       |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_explosiveness<class_Particles2D_set_explosiveness>`  **(** :ref:`float<class_float>` amount  **)**                                     |
+| void                                     | :ref:`set_color_phases<class_Particles2D_set_color_phases>`  **(** :ref:`int<class_int>` phases  **)**                                           |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                | :ref:`get_explosiveness<class_Particles2D_get_explosiveness>`  **(** **)** const                                                                 |
+| :ref:`ColorRamp<class_colorramp>`        | :ref:`set_color_ramp<class_Particles2D_set_color_ramp>`  **(** :ref:`Object<class_object>` color_ramp  **)**                                     |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_emission_half_extents<class_Particles2D_set_emission_half_extents>`  **(** :ref:`Vector2<class_vector2>` extents  **)**                |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_emission_points<class_Particles2D_set_emission_points>`  **(** :ref:`Vector2Array<class_vector2array>` points  **)**                   |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2Array<class_vector2array>`  | :ref:`get_emission_points<class_Particles2D_get_emission_points>`  **(** **)** const                                                             |
+| void                                     | :ref:`set_emissor_offset<class_Particles2D_set_emissor_offset>`  **(** :ref:`Vector2<class_vector2>` offset  **)**                               |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_emit_timeout<class_Particles2D_set_emit_timeout>`  **(** :ref:`float<class_float>` value  **)**                                        |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_emitting<class_Particles2D_set_emitting>`  **(** :ref:`bool<class_bool>` active  **)**                                                 |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_explosiveness<class_Particles2D_set_explosiveness>`  **(** :ref:`float<class_float>` amount  **)**                                     |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_flip_h<class_Particles2D_set_flip_h>`  **(** :ref:`bool<class_bool>` enable  **)**                                                     |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_flip_v<class_Particles2D_set_flip_v>`  **(** :ref:`bool<class_bool>` enable  **)**                                                     |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_h_frames<class_Particles2D_set_h_frames>`  **(** :ref:`int<class_int>` enable  **)**                                                   |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_initial_velocity<class_Particles2D_set_initial_velocity>`  **(** :ref:`Vector2<class_vector2>` velocity  **)**                         |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_lifetime<class_Particles2D_set_lifetime>`  **(** :ref:`float<class_float>` lifetime  **)**                                             |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_param<class_Particles2D_set_param>`  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**                         |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_pre_process_time<class_Particles2D_set_pre_process_time>`  **(** :ref:`float<class_float>` time  **)**                                 |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_randomness<class_Particles2D_set_randomness>`  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**               |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_texture>`            | :ref:`set_texture<class_Particles2D_set_texture>`  **(** :ref:`Object<class_object>` texture  **)**                                              |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_time_scale<class_Particles2D_set_time_scale>`  **(** :ref:`float<class_float>` time_scale  **)**                                       |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_use_local_space<class_Particles2D_set_use_local_space>`  **(** :ref:`bool<class_bool>` enable  **)**                                   |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_v_frames<class_Particles2D_set_v_frames>`  **(** :ref:`int<class_int>` enable  **)**                                                   |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
 -----------------
 
-- **PARAM_DIRECTION** = **0**
+- **PARAM_DIRECTION** = **0** --- Direction in radians at which the particles will be launched, Notice that when the direction is set to 0 the particles will be launched to the negative
 - **PARAM_SPREAD** = **1**
-- **PARAM_LINEAR_VELOCITY** = **2**
-- **PARAM_SPIN_VELOCITY** = **3**
-- **PARAM_ORBIT_VELOCITY** = **4**
-- **PARAM_GRAVITY_DIRECTION** = **5**
-- **PARAM_GRAVITY_STRENGTH** = **6**
+- **PARAM_LINEAR_VELOCITY** = **2** --- Velocity at which the particles will be launched.
+- **PARAM_SPIN_VELOCITY** = **3** --- The speed at which particles will spin around its own center.
+- **PARAM_ORBIT_VELOCITY** = **4** --- Velocity at which the particles will orbit around the emitter center
+- **PARAM_GRAVITY_DIRECTION** = **5** --- Direction in radians at which the particles will be attracted
+- **PARAM_GRAVITY_STRENGTH** = **6** --- Strength of the gravitation attraction for each particle
 - **PARAM_RADIAL_ACCEL** = **7**
 - **PARAM_TANGENTIAL_ACCEL** = **8**
-- **PARAM_DAMPING** = **9**
-- **PARAM_INITIAL_ANGLE** = **10**
-- **PARAM_INITIAL_SIZE** = **11**
-- **PARAM_FINAL_SIZE** = **12**
+- **PARAM_DAMPING** = **9** --- Amount of damping for each particle
+- **PARAM_INITIAL_ANGLE** = **10** --- Initial angle in radians at which each particle will be spawned
+- **PARAM_INITIAL_SIZE** = **11** --- Initial size of each particle
+- **PARAM_FINAL_SIZE** = **12** --- Final size of each particle, the particle size will interpolate to this value during its lifetime.
 - **PARAM_HUE_VARIATION** = **13**
 - **PARAM_ANIM_SPEED_SCALE** = **14**
 - **PARAM_ANIM_INITIAL_POS** = **15**
 - **PARAM_MAX** = **16**
 - **MAX_COLOR_PHASES** = **4**
 
+Description
+-----------
+
+Particles2D is a particle system 2D :ref:`Node<class_node>` that is used to simulate several types of particle effects, such as explosions, rain, snow, fireflies, or other magical-like shinny sparkles. Particles are drawn using impostors, and given their dynamic behavior, the user must provide a visibility AABB (although helpers to create one automatically exist).
+
 Member Function Description
 ---------------------------
-
-.. _class_Particles2D_set_emitting:
-
-- void  **set_emitting**  **(** :ref:`bool<class_bool>` active  **)**
-
-.. _class_Particles2D_is_emitting:
-
-- :ref:`bool<class_bool>`  **is_emitting**  **(** **)** const
-
-.. _class_Particles2D_set_amount:
-
-- void  **set_amount**  **(** :ref:`int<class_int>` amount  **)**
 
 .. _class_Particles2D_get_amount:
 
 - :ref:`int<class_int>`  **get_amount**  **(** **)** const
 
-.. _class_Particles2D_set_lifetime:
-
-- void  **set_lifetime**  **(** :ref:`float<class_float>` lifetime  **)**
-
-.. _class_Particles2D_get_lifetime:
-
-- :ref:`float<class_float>`  **get_lifetime**  **(** **)** const
-
-.. _class_Particles2D_set_time_scale:
-
-- void  **set_time_scale**  **(** :ref:`float<class_float>` time_scale  **)**
-
-.. _class_Particles2D_get_time_scale:
-
-- :ref:`float<class_float>`  **get_time_scale**  **(** **)** const
-
-.. _class_Particles2D_set_pre_process_time:
-
-- void  **set_pre_process_time**  **(** :ref:`float<class_float>` time  **)**
-
-.. _class_Particles2D_get_pre_process_time:
-
-- :ref:`float<class_float>`  **get_pre_process_time**  **(** **)** const
-
-.. _class_Particles2D_set_emit_timeout:
-
-- void  **set_emit_timeout**  **(** :ref:`float<class_float>` value  **)**
-
-.. _class_Particles2D_get_emit_timeout:
-
-- :ref:`float<class_float>`  **get_emit_timeout**  **(** **)** const
-
-.. _class_Particles2D_set_param:
-
-- void  **set_param**  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**
-
-.. _class_Particles2D_get_param:
-
-- :ref:`float<class_float>`  **get_param**  **(** :ref:`int<class_int>` param  **)** const
-
-.. _class_Particles2D_set_randomness:
-
-- void  **set_randomness**  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**
-
-.. _class_Particles2D_get_randomness:
-
-- :ref:`float<class_float>`  **get_randomness**  **(** :ref:`int<class_int>` param  **)** const
-
-.. _class_Particles2D_set_texture:
-
-- :ref:`Texture<class_texture>`  **set_texture**  **(** :ref:`Object<class_object>` texture  **)**
-
-.. _class_Particles2D_get_texture:
-
-- :ref:`Texture<class_texture>`  **get_texture**  **(** **)** const
-
-.. _class_Particles2D_set_color:
-
-- void  **set_color**  **(** :ref:`Color<class_color>` color  **)**
+Returns the amount of particles spawned at each emission
 
 .. _class_Particles2D_get_color:
 
 - :ref:`Color<class_color>`  **get_color**  **(** **)** const
 
-.. _class_Particles2D_set_color_ramp:
-
-- :ref:`ColorRamp<class_colorramp>`  **set_color_ramp**  **(** :ref:`Object<class_object>` color_ramp  **)**
-
-.. _class_Particles2D_get_color_ramp:
-
-- :ref:`ColorRamp<class_colorramp>`  **get_color_ramp**  **(** **)** const
-
-.. _class_Particles2D_set_emissor_offset:
-
-- void  **set_emissor_offset**  **(** :ref:`Vector2<class_vector2>` offset  **)**
-
-.. _class_Particles2D_get_emissor_offset:
-
-- :ref:`Vector2<class_vector2>`  **get_emissor_offset**  **(** **)** const
-
-.. _class_Particles2D_set_flip_h:
-
-- void  **set_flip_h**  **(** :ref:`bool<class_bool>` enable  **)**
-
-.. _class_Particles2D_is_flipped_h:
-
-- :ref:`bool<class_bool>`  **is_flipped_h**  **(** **)** const
-
-.. _class_Particles2D_set_flip_v:
-
-- void  **set_flip_v**  **(** :ref:`bool<class_bool>` enable  **)**
-
-.. _class_Particles2D_is_flipped_v:
-
-- :ref:`bool<class_bool>`  **is_flipped_v**  **(** **)** const
-
-.. _class_Particles2D_set_h_frames:
-
-- void  **set_h_frames**  **(** :ref:`int<class_int>` enable  **)**
-
-.. _class_Particles2D_get_h_frames:
-
-- :ref:`int<class_int>`  **get_h_frames**  **(** **)** const
-
-.. _class_Particles2D_set_v_frames:
-
-- void  **set_v_frames**  **(** :ref:`int<class_int>` enable  **)**
-
-.. _class_Particles2D_get_v_frames:
-
-- :ref:`int<class_int>`  **get_v_frames**  **(** **)** const
-
-.. _class_Particles2D_set_emission_half_extents:
-
-- void  **set_emission_half_extents**  **(** :ref:`Vector2<class_vector2>` extents  **)**
-
-.. _class_Particles2D_get_emission_half_extents:
-
-- :ref:`Vector2<class_vector2>`  **get_emission_half_extents**  **(** **)** const
-
-.. _class_Particles2D_set_color_phases:
-
-- void  **set_color_phases**  **(** :ref:`int<class_int>` phases  **)**
-
-.. _class_Particles2D_get_color_phases:
-
-- :ref:`int<class_int>`  **get_color_phases**  **(** **)** const
-
-.. _class_Particles2D_set_color_phase_color:
-
-- void  **set_color_phase_color**  **(** :ref:`int<class_int>` phase, :ref:`Color<class_color>` color  **)**
+Returns the tint color for each particle.
 
 .. _class_Particles2D_get_color_phase_color:
 
 - :ref:`Color<class_color>`  **get_color_phase_color**  **(** :ref:`int<class_int>` phase  **)** const
 
-.. _class_Particles2D_set_color_phase_pos:
-
-- void  **set_color_phase_pos**  **(** :ref:`int<class_int>` phase, :ref:`float<class_float>` pos  **)**
-
 .. _class_Particles2D_get_color_phase_pos:
 
 - :ref:`float<class_float>`  **get_color_phase_pos**  **(** :ref:`int<class_int>` phase  **)** const
+
+.. _class_Particles2D_get_color_phases:
+
+- :ref:`int<class_int>`  **get_color_phases**  **(** **)** const
+
+.. _class_Particles2D_get_color_ramp:
+
+- :ref:`ColorRamp<class_colorramp>`  **get_color_ramp**  **(** **)** const
+
+Returns the :ref:`ColorRamp<class_colorramp>` used to tint each particle
+
+.. _class_Particles2D_get_emission_half_extents:
+
+- :ref:`Vector2<class_vector2>`  **get_emission_half_extents**  **(** **)** const
+
+Returns the half extents of the emission box.
+
+.. _class_Particles2D_get_emission_points:
+
+- :ref:`Vector2Array<class_vector2array>`  **get_emission_points**  **(** **)** const
+
+.. _class_Particles2D_get_emissor_offset:
+
+- :ref:`Vector2<class_vector2>`  **get_emissor_offset**  **(** **)** const
+
+Returns the particle spawn origin position relative to the emitter.
+
+.. _class_Particles2D_get_emit_timeout:
+
+- :ref:`float<class_float>`  **get_emit_timeout**  **(** **)** const
+
+Returns the amount of seconds during which the emitter will spawn particles
+
+.. _class_Particles2D_get_explosiveness:
+
+- :ref:`float<class_float>`  **get_explosiveness**  **(** **)** const
+
+.. _class_Particles2D_get_h_frames:
+
+- :ref:`int<class_int>`  **get_h_frames**  **(** **)** const
+
+.. _class_Particles2D_get_initial_velocity:
+
+- :ref:`Vector2<class_vector2>`  **get_initial_velocity**  **(** **)** const
+
+.. _class_Particles2D_get_lifetime:
+
+- :ref:`float<class_float>`  **get_lifetime**  **(** **)** const
+
+Gets the amount of seconds that each particle will be visible.
+
+.. _class_Particles2D_get_param:
+
+- :ref:`float<class_float>`  **get_param**  **(** :ref:`int<class_int>` param  **)** const
+
+Returns the value of the specified emitter parameter
+
+.. _class_Particles2D_get_pre_process_time:
+
+- :ref:`float<class_float>`  **get_pre_process_time**  **(** **)** const
+
+.. _class_Particles2D_get_randomness:
+
+- :ref:`float<class_float>`  **get_randomness**  **(** :ref:`int<class_int>` param  **)** const
+
+Returns the randomness value of the specified emitter parameter
+
+.. _class_Particles2D_get_texture:
+
+- :ref:`Texture<class_texture>`  **get_texture**  **(** **)** const
+
+Returns the texture for emitted particles
+
+.. _class_Particles2D_get_time_scale:
+
+- :ref:`float<class_float>`  **get_time_scale**  **(** **)** const
+
+Returns the emitter time scale
+
+.. _class_Particles2D_get_v_frames:
+
+- :ref:`int<class_int>`  **get_v_frames**  **(** **)** const
+
+.. _class_Particles2D_is_emitting:
+
+- :ref:`bool<class_bool>`  **is_emitting**  **(** **)** const
+
+Returns whether this emitter is currently emitting or not
+
+.. _class_Particles2D_is_flipped_h:
+
+- :ref:`bool<class_bool>`  **is_flipped_h**  **(** **)** const
+
+.. _class_Particles2D_is_flipped_v:
+
+- :ref:`bool<class_bool>`  **is_flipped_v**  **(** **)** const
+
+.. _class_Particles2D_is_using_local_space:
+
+- :ref:`bool<class_bool>`  **is_using_local_space**  **(** **)** const
 
 .. _class_Particles2D_pre_process:
 
@@ -313,36 +278,124 @@ Member Function Description
 
 - void  **reset**  **(** **)**
 
-.. _class_Particles2D_set_use_local_space:
+.. _class_Particles2D_set_amount:
 
-- void  **set_use_local_space**  **(** :ref:`bool<class_bool>` enable  **)**
+- void  **set_amount**  **(** :ref:`int<class_int>` amount  **)**
 
-.. _class_Particles2D_is_using_local_space:
+Sets the amount of particles spawned at each emission
 
-- :ref:`bool<class_bool>`  **is_using_local_space**  **(** **)** const
+.. _class_Particles2D_set_color:
 
-.. _class_Particles2D_set_initial_velocity:
+- void  **set_color**  **(** :ref:`Color<class_color>` color  **)**
 
-- void  **set_initial_velocity**  **(** :ref:`Vector2<class_vector2>` velocity  **)**
+Set the tint color for each particle.
 
-.. _class_Particles2D_get_initial_velocity:
+.. _class_Particles2D_set_color_phase_color:
 
-- :ref:`Vector2<class_vector2>`  **get_initial_velocity**  **(** **)** const
+- void  **set_color_phase_color**  **(** :ref:`int<class_int>` phase, :ref:`Color<class_color>` color  **)**
 
-.. _class_Particles2D_set_explosiveness:
+.. _class_Particles2D_set_color_phase_pos:
 
-- void  **set_explosiveness**  **(** :ref:`float<class_float>` amount  **)**
+- void  **set_color_phase_pos**  **(** :ref:`int<class_int>` phase, :ref:`float<class_float>` pos  **)**
 
-.. _class_Particles2D_get_explosiveness:
+.. _class_Particles2D_set_color_phases:
 
-- :ref:`float<class_float>`  **get_explosiveness**  **(** **)** const
+- void  **set_color_phases**  **(** :ref:`int<class_int>` phases  **)**
+
+.. _class_Particles2D_set_color_ramp:
+
+- :ref:`ColorRamp<class_colorramp>`  **set_color_ramp**  **(** :ref:`Object<class_object>` color_ramp  **)**
+
+Sets the :ref:`ColorRamp<class_colorramp>` used to tint each particle. Particle will be tinted according to their lifetimes.
+
+.. _class_Particles2D_set_emission_half_extents:
+
+- void  **set_emission_half_extents**  **(** :ref:`Vector2<class_vector2>` extents  **)**
+
+Sets the half extents of the emission box, particles will be spawned at random inside this box.
 
 .. _class_Particles2D_set_emission_points:
 
 - void  **set_emission_points**  **(** :ref:`Vector2Array<class_vector2array>` points  **)**
 
-.. _class_Particles2D_get_emission_points:
+.. _class_Particles2D_set_emissor_offset:
 
-- :ref:`Vector2Array<class_vector2array>`  **get_emission_points**  **(** **)** const
+- void  **set_emissor_offset**  **(** :ref:`Vector2<class_vector2>` offset  **)**
+
+Sets the particle spawn origin position relative to the emitter center. for example if this value is set to (50, 50), the particle will spawn 50 units to the right and  50 units to the bottom of the emitter center.
+
+.. _class_Particles2D_set_emit_timeout:
+
+- void  **set_emit_timeout**  **(** :ref:`float<class_float>` value  **)**
+
+Sets the amount of seconds during which the emitter will spawn particles, after the specified seconds the emitter state will be set to non emitting, so calling :ref:`is_emitting<class_Particles2D_is_emitting>` will return false. If the timeout is 0 the emitter will spawn forever.
+
+.. _class_Particles2D_set_emitting:
+
+- void  **set_emitting**  **(** :ref:`bool<class_bool>` active  **)**
+
+If this is set to true then the particle emitter will emit particles, if its false it will not.
+
+.. _class_Particles2D_set_explosiveness:
+
+- void  **set_explosiveness**  **(** :ref:`float<class_float>` amount  **)**
+
+.. _class_Particles2D_set_flip_h:
+
+- void  **set_flip_h**  **(** :ref:`bool<class_bool>` enable  **)**
+
+.. _class_Particles2D_set_flip_v:
+
+- void  **set_flip_v**  **(** :ref:`bool<class_bool>` enable  **)**
+
+.. _class_Particles2D_set_h_frames:
+
+- void  **set_h_frames**  **(** :ref:`int<class_int>` enable  **)**
+
+.. _class_Particles2D_set_initial_velocity:
+
+- void  **set_initial_velocity**  **(** :ref:`Vector2<class_vector2>` velocity  **)**
+
+.. _class_Particles2D_set_lifetime:
+
+- void  **set_lifetime**  **(** :ref:`float<class_float>` lifetime  **)**
+
+Sets the amount of seconds that each particle will be visible.
+
+.. _class_Particles2D_set_param:
+
+- void  **set_param**  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**
+
+Sets the value of the specified emitter parameter (see the constants secction for the list of parameters)
+
+.. _class_Particles2D_set_pre_process_time:
+
+- void  **set_pre_process_time**  **(** :ref:`float<class_float>` time  **)**
+
+.. _class_Particles2D_set_randomness:
+
+- void  **set_randomness**  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**
+
+Sets the randomness value of the specified emitter parameter (see the constants secction for the list of parameters), 0 means no randomness, so every particle will have the parameters specified, 1 means that the parameter will be choosen at random, the closer the randomness value gets to 0 the more conservative the variation of the parameter will be.
+
+.. _class_Particles2D_set_texture:
+
+- :ref:`Texture<class_texture>`  **set_texture**  **(** :ref:`Object<class_object>` texture  **)**
+
+Sets the texture for each particle
+
+.. _class_Particles2D_set_time_scale:
+
+- void  **set_time_scale**  **(** :ref:`float<class_float>` time_scale  **)**
+
+Sets the increment or decrement for the particle lifetime. for example: if the time scale is set to 2, the particles will die and move twice as fast.
+
+.. _class_Particles2D_set_use_local_space:
+
+- void  **set_use_local_space**  **(** :ref:`bool<class_bool>` enable  **)**
+
+.. _class_Particles2D_set_v_frames:
+
+- void  **set_v_frames**  **(** :ref:`int<class_int>` enable  **)**
 
 

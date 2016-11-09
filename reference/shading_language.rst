@@ -216,7 +216,7 @@ Built-in variables
 Depending on the shader type, several built-in variables are available,
 listed as follows:
 
-Material - VertexShader
+Material (3D) - VertexShader
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 +------------------------------------+-------------------------------------------+
@@ -265,7 +265,7 @@ Material - VertexShader
 | const float *TIME*                 | Time (in seconds)                         |
 +------------------------------------+-------------------------------------------+
 
-Material - FragmentShader
+Material (3D) - FragmentShader
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------+----------------------------------------------------------------------------------+
@@ -316,7 +316,7 @@ Material - FragmentShader
 | out mat4 *INV\_CAMERA\_MATRIX*   | Inverse camera matrix, can be used to obtain world coords (see example below).   |
 +----------------------------------+----------------------------------------------------------------------------------+
 
-Material - LightShader
+Material (3D) - LightShader
 ~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------------------------+-------------------------------+
@@ -447,7 +447,13 @@ CanvasItem (2D) - LightShader
 +-------------------------------------+-------------------------------------------------------------------------------+
 | const color *LIGHT\_COLOR*          | Color of Light                                                                |
 +-------------------------------------+-------------------------------------------------------------------------------+
-| out vec4 *LIGHT*                    | Light Output (shader is ignored if this is not used)                           |
+| const color *LIGHT\_SHADOW\_COLOR*  | Color of Light shadow                                                         |
++-------------------------------------+-------------------------------------------------------------------------------+
+| vec2 *LIGHT\_UV*                    | UV for light image                                                            |
++-------------------------------------+-------------------------------------------------------------------------------+
+| color *SHADOW*                      | Light shadow color override                                                   |
++-------------------------------------+-------------------------------------------------------------------------------+
+| out vec4 *LIGHT*                    | Light Output (shader is ignored if this is not used)                          |
 +-------------------------------------+-------------------------------------------------------------------------------+
 
 Examples
@@ -467,7 +473,7 @@ Material that glows from red to white:
 
 ::
 
-    DIFFUSE = vec3(1,0,0) + vec(1,1,1) * mod(TIME, 1.0);
+    DIFFUSE = vec3(1,0,0) + vec3(1,1,1) * mod(TIME, 1.0);
 
 Standard Blinn Lighting Shader
 
@@ -487,8 +493,15 @@ Obtaining world-space normal and position in material fragment program:
 
     // Use reverse multiply because INV_CAMERA_MATRIX is world2cam
 
-    vec3 world_normal = NORMAL * mat3(INV_CAMERA_MATRIX);
-    vec3 world_pos = (VERTEX - INV_CAMERA_MATRIX.w.xyz) * mat3(INV_CAMERA_MATRIX);
+    vec4 invcamx = INV_CAMERA_MATRIX.x;
+    vec4 invcamy = INV_CAMERA_MATRIX.y;
+    vec4 invcamz = INV_CAMERA_MATRIX.z;
+    vec4 invcamw = INV_CAMERA_MATRIX.w;
+
+    mat3 invcam = mat3(invcamx.xyz, invcamy.xyz, invcamz.xyz);
+
+    vec3 world_normal = NORMAL * invcam;
+    vec3 world_pos = (VERTEX - invcamw.xyz) * invcam;
 
 Notes
 -----

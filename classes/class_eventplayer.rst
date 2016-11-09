@@ -19,59 +19,59 @@ Member Functions
 ----------------
 
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_stream<class_EventPlayer_set_stream>`  **(** :ref:`EventStream<class_eventstream>` stream  **)**                                            |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`EventStream<class_eventstream>`  | :ref:`get_stream<class_EventPlayer_get_stream>`  **(** **)** const                                                                                    |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`play<class_EventPlayer_play>`  **(** **)**                                                                                                      |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`stop<class_EventPlayer_stop>`  **(** **)**                                                                                                      |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`is_playing<class_EventPlayer_is_playing>`  **(** **)** const                                                                                    |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_paused<class_EventPlayer_set_paused>`  **(** :ref:`bool<class_bool>` paused  **)**                                                          |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`is_paused<class_EventPlayer_is_paused>`  **(** **)** const                                                                                      |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_loop<class_EventPlayer_set_loop>`  **(** :ref:`bool<class_bool>` enabled  **)**                                                             |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`has_loop<class_EventPlayer_has_loop>`  **(** **)** const                                                                                        |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_volume<class_EventPlayer_set_volume>`  **(** :ref:`float<class_float>` volume  **)**                                                        |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_volume<class_EventPlayer_get_volume>`  **(** **)** const                                                                                    |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_pitch_scale<class_EventPlayer_set_pitch_scale>`  **(** :ref:`float<class_float>` pitch_scale  **)**                                         |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_pitch_scale<class_EventPlayer_get_pitch_scale>`  **(** **)** const                                                                          |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_tempo_scale<class_EventPlayer_set_tempo_scale>`  **(** :ref:`float<class_float>` tempo_scale  **)**                                         |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_tempo_scale<class_EventPlayer_get_tempo_scale>`  **(** **)** const                                                                          |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_volume_db<class_EventPlayer_set_volume_db>`  **(** :ref:`float<class_float>` db  **)**                                                      |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_volume_db<class_EventPlayer_get_volume_db>`  **(** **)** const                                                                              |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`            | :ref:`get_stream_name<class_EventPlayer_get_stream_name>`  **(** **)** const                                                                          |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                  | :ref:`get_loop_count<class_EventPlayer_get_loop_count>`  **(** **)** const                                                                            |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_pos<class_EventPlayer_get_pos>`  **(** **)** const                                                                                          |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`seek_pos<class_EventPlayer_seek_pos>`  **(** :ref:`float<class_float>` time  **)**                                                              |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_length<class_EventPlayer_get_length>`  **(** **)** const                                                                                    |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_autoplay<class_EventPlayer_set_autoplay>`  **(** :ref:`bool<class_bool>` enabled  **)**                                                     |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`has_autoplay<class_EventPlayer_has_autoplay>`  **(** **)** const                                                                                |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_channel_volume<class_EventPlayer_set_channel_volume>`  **(** :ref:`int<class_int>` channel, :ref:`float<class_float>` channel_volume  **)** |
+| :ref:`float<class_float>`              | :ref:`get_channel_last_note_time<class_EventPlayer_get_channel_last_note_time>`  **(** :ref:`int<class_int>` channel  **)** const                     |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`              | :ref:`get_channel_volume<class_EventPlayer_get_channel_volume>`  **(** :ref:`int<class_int>` channel  **)** const                                     |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_channel_last_note_time<class_EventPlayer_get_channel_last_note_time>`  **(** :ref:`int<class_int>` channel  **)** const                     |
+| :ref:`float<class_float>`              | :ref:`get_length<class_EventPlayer_get_length>`  **(** **)** const                                                                                    |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`get_loop_count<class_EventPlayer_get_loop_count>`  **(** **)** const                                                                            |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_pitch_scale<class_EventPlayer_get_pitch_scale>`  **(** **)** const                                                                          |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_pos<class_EventPlayer_get_pos>`  **(** **)** const                                                                                          |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`EventStream<class_eventstream>`  | :ref:`get_stream<class_EventPlayer_get_stream>`  **(** **)** const                                                                                    |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`get_stream_name<class_EventPlayer_get_stream_name>`  **(** **)** const                                                                          |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_tempo_scale<class_EventPlayer_get_tempo_scale>`  **(** **)** const                                                                          |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_volume<class_EventPlayer_get_volume>`  **(** **)** const                                                                                    |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_volume_db<class_EventPlayer_get_volume_db>`  **(** **)** const                                                                              |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`has_autoplay<class_EventPlayer_has_autoplay>`  **(** **)** const                                                                                |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`has_loop<class_EventPlayer_has_loop>`  **(** **)** const                                                                                        |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`is_paused<class_EventPlayer_is_paused>`  **(** **)** const                                                                                      |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`is_playing<class_EventPlayer_is_playing>`  **(** **)** const                                                                                    |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`play<class_EventPlayer_play>`  **(** **)**                                                                                                      |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`seek_pos<class_EventPlayer_seek_pos>`  **(** :ref:`float<class_float>` time  **)**                                                              |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_autoplay<class_EventPlayer_set_autoplay>`  **(** :ref:`bool<class_bool>` enabled  **)**                                                     |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_channel_volume<class_EventPlayer_set_channel_volume>`  **(** :ref:`int<class_int>` channel, :ref:`float<class_float>` channel_volume  **)** |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_loop<class_EventPlayer_set_loop>`  **(** :ref:`bool<class_bool>` enabled  **)**                                                             |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_paused<class_EventPlayer_set_paused>`  **(** :ref:`bool<class_bool>` paused  **)**                                                          |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_pitch_scale<class_EventPlayer_set_pitch_scale>`  **(** :ref:`float<class_float>` pitch_scale  **)**                                         |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_stream<class_EventPlayer_set_stream>`  **(** :ref:`EventStream<class_eventstream>` stream  **)**                                            |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_tempo_scale<class_EventPlayer_set_tempo_scale>`  **(** :ref:`float<class_float>` tempo_scale  **)**                                         |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_volume<class_EventPlayer_set_volume>`  **(** :ref:`float<class_float>` volume  **)**                                                        |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_volume_db<class_EventPlayer_set_volume_db>`  **(** :ref:`float<class_float>` db  **)**                                                      |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`stop<class_EventPlayer_stop>`  **(** **)**                                                                                                      |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -84,133 +84,17 @@ Currently, only MOD, S3M, IT, and XM music is supported.
 Member Function Description
 ---------------------------
 
-.. _class_EventPlayer_set_stream:
+.. _class_EventPlayer_get_channel_last_note_time:
 
-- void  **set_stream**  **(** :ref:`EventStream<class_eventstream>` stream  **)**
+- :ref:`float<class_float>`  **get_channel_last_note_time**  **(** :ref:`int<class_int>` channel  **)** const
 
-Set the :ref:`EventStream<class_eventstream>` this player will play.
+Return the time at which the last note of a given channel in the stream plays.
 
-.. _class_EventPlayer_get_stream:
+.. _class_EventPlayer_get_channel_volume:
 
-- :ref:`EventStream<class_eventstream>`  **get_stream**  **(** **)** const
+- :ref:`float<class_float>`  **get_channel_volume**  **(** :ref:`int<class_int>` channel  **)** const
 
-Return the currently assigned stream.
-
-.. _class_EventPlayer_play:
-
-- void  **play**  **(** **)**
-
-Play the currently assigned stream.
-
-.. _class_EventPlayer_stop:
-
-- void  **stop**  **(** **)**
-
-Stop playing.
-
-.. _class_EventPlayer_is_playing:
-
-- :ref:`bool<class_bool>`  **is_playing**  **(** **)** const
-
-Return whether this player is playing.
-
-.. _class_EventPlayer_set_paused:
-
-- void  **set_paused**  **(** :ref:`bool<class_bool>` paused  **)**
-
-Pause stream playback.
-
-.. _class_EventPlayer_is_paused:
-
-- :ref:`bool<class_bool>`  **is_paused**  **(** **)** const
-
-Return whether the playback is currently paused.
-
-.. _class_EventPlayer_set_loop:
-
-- void  **set_loop**  **(** :ref:`bool<class_bool>` enabled  **)**
-
-Set whether the stream will be restarted at the end.
-
-.. _class_EventPlayer_has_loop:
-
-- :ref:`bool<class_bool>`  **has_loop**  **(** **)** const
-
-Return whether this player will be restart the playback at the end.
-
-.. _class_EventPlayer_set_volume:
-
-- void  **set_volume**  **(** :ref:`float<class_float>` volume  **)**
-
-Set the playback volume for this player. This is a float between 0.0 (silent) and 1.0 (full volume). Values over 1.0 may amplify sound even more, but may introduce distortion. Negative values may just invert the output waveform, which produces no audible difference.
-
-The effect of these special values ultimately depends on the low-level implementation of the file format being played.
-
-.. _class_EventPlayer_get_volume:
-
-- :ref:`float<class_float>`  **get_volume**  **(** **)** const
-
-Return the playback volume for this player.
-
-.. _class_EventPlayer_set_pitch_scale:
-
-- void  **set_pitch_scale**  **(** :ref:`float<class_float>` pitch_scale  **)**
-
-Set the pitch multiplier for all sounds coming from this stream. A value of 2.0 shifts all pitches one octave up, and a value of 0.5 shifts pitches one octave down.
-
-.. _class_EventPlayer_get_pitch_scale:
-
-- :ref:`float<class_float>`  **get_pitch_scale**  **(** **)** const
-
-Return the pitch scale factor for this player.
-
-.. _class_EventPlayer_set_tempo_scale:
-
-- void  **set_tempo_scale**  **(** :ref:`float<class_float>` tempo_scale  **)**
-
-Set the tempo multiplier. This allows to slow down or speed up the music, without affecting its pitch.
-
-.. _class_EventPlayer_get_tempo_scale:
-
-- :ref:`float<class_float>`  **get_tempo_scale**  **(** **)** const
-
-Return the tempo multiplier.
-
-.. _class_EventPlayer_set_volume_db:
-
-- void  **set_volume_db**  **(** :ref:`float<class_float>` db  **)**
-
-Set the playback volume for this player, in decibels. This is a float between -80.0 (silent) and 0.0 (full volume). Values under -79.0 get truncated to -80, but values over 0.0 do not, so the warnings for over amplifying (see :ref:`set_volume<class_EventPlayer_set_volume>`) still apply.
-
-.. _class_EventPlayer_get_volume_db:
-
-- :ref:`float<class_float>`  **get_volume_db**  **(** **)** const
-
-Return the playback volume for this player, in decibels.
-
-.. _class_EventPlayer_get_stream_name:
-
-- :ref:`String<class_string>`  **get_stream_name**  **(** **)** const
-
-Return the name of the currently assigned stream. This is not the file name, but a field inside the file. If no stream is assigned, if returns "<No Stream>".
-
-.. _class_EventPlayer_get_loop_count:
-
-- :ref:`int<class_int>`  **get_loop_count**  **(** **)** const
-
-Return the number of times the playback has looped.
-
-.. _class_EventPlayer_get_pos:
-
-- :ref:`float<class_float>`  **get_pos**  **(** **)** const
-
-Return the playback position. May be in seconds, but depends on the stream type.
-
-.. _class_EventPlayer_seek_pos:
-
-- void  **seek_pos**  **(** :ref:`float<class_float>` time  **)**
-
-Set the playback position. May be in seconds, but depends on the stream type.
+Return the volume scale for an individual channel of the stream.
 
 .. _class_EventPlayer_get_length:
 
@@ -218,17 +102,95 @@ Set the playback position. May be in seconds, but depends on the stream type.
 
 Return the song length. May be in seconds, but depends on the stream type.
 
-.. _class_EventPlayer_set_autoplay:
+.. _class_EventPlayer_get_loop_count:
 
-- void  **set_autoplay**  **(** :ref:`bool<class_bool>` enabled  **)**
+- :ref:`int<class_int>`  **get_loop_count**  **(** **)** const
 
-Set whether this player will start playing as soon as it enters the scene tree.
+Return the number of times the playback has looped.
+
+.. _class_EventPlayer_get_pitch_scale:
+
+- :ref:`float<class_float>`  **get_pitch_scale**  **(** **)** const
+
+Return the pitch scale factor for this player.
+
+.. _class_EventPlayer_get_pos:
+
+- :ref:`float<class_float>`  **get_pos**  **(** **)** const
+
+Return the playback position. May be in seconds, but depends on the stream type.
+
+.. _class_EventPlayer_get_stream:
+
+- :ref:`EventStream<class_eventstream>`  **get_stream**  **(** **)** const
+
+Return the currently assigned stream.
+
+.. _class_EventPlayer_get_stream_name:
+
+- :ref:`String<class_string>`  **get_stream_name**  **(** **)** const
+
+Return the name of the currently assigned stream. This is not the file name, but a field inside the file. If no stream is assigned, if returns "<No Stream>".
+
+.. _class_EventPlayer_get_tempo_scale:
+
+- :ref:`float<class_float>`  **get_tempo_scale**  **(** **)** const
+
+Return the tempo multiplier.
+
+.. _class_EventPlayer_get_volume:
+
+- :ref:`float<class_float>`  **get_volume**  **(** **)** const
+
+Return the playback volume for this player.
+
+.. _class_EventPlayer_get_volume_db:
+
+- :ref:`float<class_float>`  **get_volume_db**  **(** **)** const
+
+Return the playback volume for this player, in decibels.
 
 .. _class_EventPlayer_has_autoplay:
 
 - :ref:`bool<class_bool>`  **has_autoplay**  **(** **)** const
 
 Return whether this player will start playing as soon as it enters the scene tree.
+
+.. _class_EventPlayer_has_loop:
+
+- :ref:`bool<class_bool>`  **has_loop**  **(** **)** const
+
+Return whether this player will be restart the playback at the end.
+
+.. _class_EventPlayer_is_paused:
+
+- :ref:`bool<class_bool>`  **is_paused**  **(** **)** const
+
+Return whether the playback is currently paused.
+
+.. _class_EventPlayer_is_playing:
+
+- :ref:`bool<class_bool>`  **is_playing**  **(** **)** const
+
+Return whether this player is playing.
+
+.. _class_EventPlayer_play:
+
+- void  **play**  **(** **)**
+
+Play the currently assigned stream.
+
+.. _class_EventPlayer_seek_pos:
+
+- void  **seek_pos**  **(** :ref:`float<class_float>` time  **)**
+
+Set the playback position. May be in seconds, but depends on the stream type.
+
+.. _class_EventPlayer_set_autoplay:
+
+- void  **set_autoplay**  **(** :ref:`bool<class_bool>` enabled  **)**
+
+Set whether this player will start playing as soon as it enters the scene tree.
 
 .. _class_EventPlayer_set_channel_volume:
 
@@ -238,16 +200,54 @@ Set the volume scale for an individual channel of the stream, with the same valu
 
 Many stream formats are multichannel, so this allows to affect only a part of the music.
 
-.. _class_EventPlayer_get_channel_volume:
+.. _class_EventPlayer_set_loop:
 
-- :ref:`float<class_float>`  **get_channel_volume**  **(** :ref:`int<class_int>` channel  **)** const
+- void  **set_loop**  **(** :ref:`bool<class_bool>` enabled  **)**
 
-Return the volume scale for an individual channel of the stream.
+Set whether the stream will be restarted at the end.
 
-.. _class_EventPlayer_get_channel_last_note_time:
+.. _class_EventPlayer_set_paused:
 
-- :ref:`float<class_float>`  **get_channel_last_note_time**  **(** :ref:`int<class_int>` channel  **)** const
+- void  **set_paused**  **(** :ref:`bool<class_bool>` paused  **)**
 
-Return the time at which the last note of a given channel in the stream plays.
+Pause stream playback.
+
+.. _class_EventPlayer_set_pitch_scale:
+
+- void  **set_pitch_scale**  **(** :ref:`float<class_float>` pitch_scale  **)**
+
+Set the pitch multiplier for all sounds coming from this stream. A value of 2.0 shifts all pitches one octave up, and a value of 0.5 shifts pitches one octave down.
+
+.. _class_EventPlayer_set_stream:
+
+- void  **set_stream**  **(** :ref:`EventStream<class_eventstream>` stream  **)**
+
+Set the :ref:`EventStream<class_eventstream>` this player will play.
+
+.. _class_EventPlayer_set_tempo_scale:
+
+- void  **set_tempo_scale**  **(** :ref:`float<class_float>` tempo_scale  **)**
+
+Set the tempo multiplier. This allows to slow down or speed up the music, without affecting its pitch.
+
+.. _class_EventPlayer_set_volume:
+
+- void  **set_volume**  **(** :ref:`float<class_float>` volume  **)**
+
+Set the playback volume for this player. This is a float between 0.0 (silent) and 1.0 (full volume). Values over 1.0 may amplify sound even more, but may introduce distortion. Negative values may just invert the output waveform, which produces no audible difference.
+
+The effect of these special values ultimately depends on the low-level implementation of the file format being played.
+
+.. _class_EventPlayer_set_volume_db:
+
+- void  **set_volume_db**  **(** :ref:`float<class_float>` db  **)**
+
+Set the playback volume for this player, in decibels. This is a float between -80.0 (silent) and 0.0 (full volume). Values under -79.0 get truncated to -80, but values over 0.0 do not, so the warnings for over amplifying (see :ref:`set_volume<class_EventPlayer_set_volume>`) still apply.
+
+.. _class_EventPlayer_stop:
+
+- void  **stop**  **(** **)**
+
+Stop playing.
 
 

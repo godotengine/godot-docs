@@ -21,26 +21,33 @@ Member Functions
 ----------------
 
 +--------------------------------+----------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_text<class_Button_set_text>`  **(** :ref:`String<class_string>` text  **)**                    |
-+--------------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`    | :ref:`get_text<class_Button_get_text>`  **(** **)** const                                                |
-+--------------------------------+----------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_button_icon<class_Button_set_button_icon>`  **(** :ref:`Texture<class_texture>` texture  **)** |
-+--------------------------------+----------------------------------------------------------------------------------------------------------+
 | :ref:`Texture<class_texture>`  | :ref:`get_button_icon<class_Button_get_button_icon>`  **(** **)** const                                  |
-+--------------------------------+----------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_flat<class_Button_set_flat>`  **(** :ref:`bool<class_bool>` enabled  **)**                     |
-+--------------------------------+----------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_clip_text<class_Button_set_clip_text>`  **(** :ref:`bool<class_bool>` enabled  **)**           |
 +--------------------------------+----------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`get_clip_text<class_Button_get_clip_text>`  **(** **)** const                                      |
 +--------------------------------+----------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_text_align<class_Button_set_text_align>`  **(** :ref:`int<class_int>` align  **)**             |
+| :ref:`String<class_string>`    | :ref:`get_text<class_Button_get_text>`  **(** **)** const                                                |
 +--------------------------------+----------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_text_align<class_Button_get_text_align>`  **(** **)** const                                    |
 +--------------------------------+----------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`is_flat<class_Button_is_flat>`  **(** **)** const                                                  |
 +--------------------------------+----------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_button_icon<class_Button_set_button_icon>`  **(** :ref:`Texture<class_texture>` texture  **)** |
++--------------------------------+----------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_clip_text<class_Button_set_clip_text>`  **(** :ref:`bool<class_bool>` enabled  **)**           |
++--------------------------------+----------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_flat<class_Button_set_flat>`  **(** :ref:`bool<class_bool>` enabled  **)**                     |
++--------------------------------+----------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_text<class_Button_set_text>`  **(** :ref:`String<class_string>` text  **)**                    |
++--------------------------------+----------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_text_align<class_Button_set_text_align>`  **(** :ref:`int<class_int>` align  **)**             |
++--------------------------------+----------------------------------------------------------------------------------------------------------+
+
+Numeric Constants
+-----------------
+
+- **ALIGN_LEFT** = **0** --- Align the text to the left.
+- **ALIGN_CENTER** = **1** --- Center the text.
+- **ALIGN_RIGHT** = **2** --- Align the text to the right.
 
 Description
 -----------
@@ -50,37 +57,11 @@ Button is the standard themed button. It can contain text and an icon, and will 
 Member Function Description
 ---------------------------
 
-.. _class_Button_set_text:
-
-- void  **set_text**  **(** :ref:`String<class_string>` text  **)**
-
-Set the button text, which will be displayed inside the button area.
-
-.. _class_Button_get_text:
-
-- :ref:`String<class_string>`  **get_text**  **(** **)** const
-
-Return the button text.
-
-.. _class_Button_set_button_icon:
-
-- void  **set_button_icon**  **(** :ref:`Texture<class_texture>` texture  **)**
-
 .. _class_Button_get_button_icon:
 
 - :ref:`Texture<class_texture>`  **get_button_icon**  **(** **)** const
 
-.. _class_Button_set_flat:
-
-- void  **set_flat**  **(** :ref:`bool<class_bool>` enabled  **)**
-
-Set the *flat* property of a Button. Flat buttons don't display decoration unless hovered or pressed.
-
-.. _class_Button_set_clip_text:
-
-- void  **set_clip_text**  **(** :ref:`bool<class_bool>` enabled  **)**
-
-Set the *clip_text* property of a Button. When this property is enabled, text that is too large to fit the button is clipped, when disabled (default) the Button will always be wide enough to hold the text.
+Return the button icon.
 
 .. _class_Button_get_clip_text:
 
@@ -88,18 +69,52 @@ Set the *clip_text* property of a Button. When this property is enabled, text th
 
 Return the state of the *clip_text* property (see :ref:`set_clip_text<class_Button_set_clip_text>`)
 
-.. _class_Button_set_text_align:
+.. _class_Button_get_text:
 
-- void  **set_text_align**  **(** :ref:`int<class_int>` align  **)**
+- :ref:`String<class_string>`  **get_text**  **(** **)** const
+
+Return the button text.
 
 .. _class_Button_get_text_align:
 
 - :ref:`int<class_int>`  **get_text_align**  **(** **)** const
 
+Return the text alignment policy.
+
 .. _class_Button_is_flat:
 
 - :ref:`bool<class_bool>`  **is_flat**  **(** **)** const
 
-Return the state of the *flat* property (see :ref:`set_flat<class_Button_set_flat>`)
+Return the state of the *flat* property (see :ref:`set_flat<class_Button_set_flat>`).
+
+.. _class_Button_set_button_icon:
+
+- void  **set_button_icon**  **(** :ref:`Texture<class_texture>` texture  **)**
+
+Set the icon that will be displayed next to the text inside the button area.
+
+.. _class_Button_set_clip_text:
+
+- void  **set_clip_text**  **(** :ref:`bool<class_bool>` enabled  **)**
+
+Set the *clip_text* property of a Button. When this property is enabled, text that is too large to fit the button is clipped, when disabled (default) the Button will always be wide enough to hold the text.
+
+.. _class_Button_set_flat:
+
+- void  **set_flat**  **(** :ref:`bool<class_bool>` enabled  **)**
+
+Set the *flat* property of a Button. Flat buttons don't display decoration unless hovered or pressed.
+
+.. _class_Button_set_text:
+
+- void  **set_text**  **(** :ref:`String<class_string>` text  **)**
+
+Set the button text, which will be displayed inside the button area.
+
+.. _class_Button_set_text_align:
+
+- void  **set_text_align**  **(** :ref:`int<class_int>` align  **)**
+
+Set the text alignment policy, using one of the ALIGN\_\* constants.
 
 

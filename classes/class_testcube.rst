@@ -13,5 +13,10 @@ TestCube
 Brief Description
 -----------------
 
+A simple cube used for testing in 3D.
 
+Description
+-----------
+
+The TestCube is a simple 2x2x2 cube with a basic texture. It can be used as a placeholder, to verify how the lighting looks, to test shaders, or any other task you may need a textured model to test with.
 

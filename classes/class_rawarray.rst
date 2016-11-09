@@ -16,21 +16,31 @@ Raw byte array.
 Member Functions
 ----------------
 
-+----------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`get_string_from_ascii<class_RawArray_get_string_from_ascii>`  **(** **)**                    |
-+----------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`get_string_from_utf8<class_RawArray_get_string_from_utf8>`  **(** **)**                      |
-+----------------------------------+----------------------------------------------------------------------------------------------------+
-| void                             | :ref:`push_back<class_RawArray_push_back>`  **(** :ref:`int<class_int>` byte  **)**                |
-+----------------------------------+----------------------------------------------------------------------------------------------------+
-| void                             | :ref:`resize<class_RawArray_resize>`  **(** :ref:`int<class_int>` idx  **)**                       |
-+----------------------------------+----------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set<class_RawArray_set>`  **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` byte  **)** |
-+----------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`size<class_RawArray_size>`  **(** **)**                                                      |
-+----------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`RawArray<class_rawarray>`  | :ref:`RawArray<class_RawArray_RawArray>`  **(** :ref:`Array<class_array>` from  **)**              |
-+----------------------------------+----------------------------------------------------------------------------------------------------+
++----------------------------------+----------------------------------------------------------------------------------------------------------+
+| :ref:`RawArray<class_rawarray>`  | :ref:`RawArray<class_RawArray_RawArray>`  **(** :ref:`Array<class_array>` from  **)**                    |
++----------------------------------+----------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`append<class_RawArray_append>`  **(** :ref:`int<class_int>` byte  **)**                            |
++----------------------------------+----------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`append_array<class_RawArray_append_array>`  **(** :ref:`RawArray<class_rawarray>` array  **)**     |
++----------------------------------+----------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`      | :ref:`get_string_from_ascii<class_RawArray_get_string_from_ascii>`  **(** **)**                          |
++----------------------------------+----------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`      | :ref:`get_string_from_utf8<class_RawArray_get_string_from_utf8>`  **(** **)**                            |
++----------------------------------+----------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`insert<class_RawArray_insert>`  **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` byte  **)** |
++----------------------------------+----------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`invert<class_RawArray_invert>`  **(** **)**                                                        |
++----------------------------------+----------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`push_back<class_RawArray_push_back>`  **(** :ref:`int<class_int>` byte  **)**                      |
++----------------------------------+----------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`remove<class_RawArray_remove>`  **(** :ref:`int<class_int>` idx  **)**                             |
++----------------------------------+----------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`resize<class_RawArray_resize>`  **(** :ref:`int<class_int>` idx  **)**                             |
++----------------------------------+----------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set<class_RawArray_set>`  **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` byte  **)**       |
++----------------------------------+----------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`size<class_RawArray_size>`  **(** **)**                                                            |
++----------------------------------+----------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -39,6 +49,22 @@ Raw byte array. Contains bytes. Optimized for memory usage, can't fragment the m
 
 Member Function Description
 ---------------------------
+
+.. _class_RawArray_RawArray:
+
+- :ref:`RawArray<class_rawarray>`  **RawArray**  **(** :ref:`Array<class_array>` from  **)**
+
+Create from a generic array.
+
+.. _class_RawArray_append:
+
+- void  **append**  **(** :ref:`int<class_int>` byte  **)**
+
+.. _class_RawArray_append_array:
+
+- void  **append_array**  **(** :ref:`RawArray<class_rawarray>` array  **)**
+
+Append an :ref:`RawArray<class_rawarray>` at the end of this array.
 
 .. _class_RawArray_get_string_from_ascii:
 
@@ -52,24 +78,46 @@ Returns a copy of the array's contents formatted as String. Fast alternative to 
 
 Returns a copy of the array's contents formatted as String, assuming the array is formatted as UTF-8. Slower than get_string_from_ascii(), but works for UTF-8. Usually you should prefer this function over get_string_from_ascii() to support international input.
 
+.. _class_RawArray_insert:
+
+- :ref:`int<class_int>`  **insert**  **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` byte  **)**
+
+Insert a new element at a given position in the array. The position must be valid, or at the end of the array (pos==size()).
+
+.. _class_RawArray_invert:
+
+- void  **invert**  **(** **)**
+
+Reverse the order of the elements in the array (so first element will now be the last).
+
 .. _class_RawArray_push_back:
 
 - void  **push_back**  **(** :ref:`int<class_int>` byte  **)**
+
+Append an element at the end of the array.
+
+.. _class_RawArray_remove:
+
+- void  **remove**  **(** :ref:`int<class_int>` idx  **)**
+
+Remove an element from the array by index.
 
 .. _class_RawArray_resize:
 
 - void  **resize**  **(** :ref:`int<class_int>` idx  **)**
 
+Set the size of the :ref:`RawArray<class_rawarray>`. If larger than the current size it will reserve some space beforehand, and if it is smaller it will cut off the array.
+
 .. _class_RawArray_set:
 
 - void  **set**  **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` byte  **)**
+
+Change the byte at the given index.
 
 .. _class_RawArray_size:
 
 - :ref:`int<class_int>`  **size**  **(** **)**
 
-.. _class_RawArray_RawArray:
-
-- :ref:`RawArray<class_rawarray>`  **RawArray**  **(** :ref:`Array<class_array>` from  **)**
+Return the size of the array.
 
 

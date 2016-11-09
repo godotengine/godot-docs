@@ -16,17 +16,27 @@ Array of Colors
 Member Functions
 ----------------
 
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------+
-| void                                 | :ref:`push_back<class_ColorArray_push_back>`  **(** :ref:`Color<class_color>` color  **)**                |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------+
-| void                                 | :ref:`resize<class_ColorArray_resize>`  **(** :ref:`int<class_int>` idx  **)**                            |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------+
-| void                                 | :ref:`set<class_ColorArray_set>`  **(** :ref:`int<class_int>` idx, :ref:`Color<class_color>` color  **)** |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                | :ref:`size<class_ColorArray_size>`  **(** **)**                                                           |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`ColorArray<class_colorarray>`  | :ref:`ColorArray<class_ColorArray_ColorArray>`  **(** :ref:`Array<class_array>` from  **)**               |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------+
++--------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| :ref:`ColorArray<class_colorarray>`  | :ref:`ColorArray<class_ColorArray_ColorArray>`  **(** :ref:`Array<class_array>` from  **)**                     |
++--------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| void                                 | :ref:`append<class_ColorArray_append>`  **(** :ref:`Color<class_color>` color  **)**                            |
++--------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| void                                 | :ref:`append_array<class_ColorArray_append_array>`  **(** :ref:`ColorArray<class_colorarray>` array  **)**      |
++--------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                | :ref:`insert<class_ColorArray_insert>`  **(** :ref:`int<class_int>` idx, :ref:`Color<class_color>` color  **)** |
++--------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| void                                 | :ref:`invert<class_ColorArray_invert>`  **(** **)**                                                             |
++--------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| void                                 | :ref:`push_back<class_ColorArray_push_back>`  **(** :ref:`Color<class_color>` color  **)**                      |
++--------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| void                                 | :ref:`remove<class_ColorArray_remove>`  **(** :ref:`int<class_int>` idx  **)**                                  |
++--------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| void                                 | :ref:`resize<class_ColorArray_resize>`  **(** :ref:`int<class_int>` idx  **)**                                  |
++--------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| void                                 | :ref:`set<class_ColorArray_set>`  **(** :ref:`int<class_int>` idx, :ref:`Color<class_color>` color  **)**       |
++--------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                | :ref:`size<class_ColorArray_size>`  **(** **)**                                                                 |
++--------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -36,34 +46,64 @@ Array of Color, can only contains colors. Optimized for memory usage, can't frag
 Member Function Description
 ---------------------------
 
+.. _class_ColorArray_ColorArray:
+
+- :ref:`ColorArray<class_colorarray>`  **ColorArray**  **(** :ref:`Array<class_array>` from  **)**
+
+Create from a generic array.
+
+.. _class_ColorArray_append:
+
+- void  **append**  **(** :ref:`Color<class_color>` color  **)**
+
+Append an element at the end of the array (alias of :ref:`push_back<class_ColorArray_push_back>`).
+
+.. _class_ColorArray_append_array:
+
+- void  **append_array**  **(** :ref:`ColorArray<class_colorarray>` array  **)**
+
+Append an :ref:`ColorArray<class_colorarray>` at the end of this array.
+
+.. _class_ColorArray_insert:
+
+- :ref:`int<class_int>`  **insert**  **(** :ref:`int<class_int>` idx, :ref:`Color<class_color>` color  **)**
+
+Insert a new element at a given position in the array. The position must be valid, or at the end of the array (pos==size()).
+
+.. _class_ColorArray_invert:
+
+- void  **invert**  **(** **)**
+
+Reverse the order of the elements in the array (so first element will now be the last).
+
 .. _class_ColorArray_push_back:
 
 - void  **push_back**  **(** :ref:`Color<class_color>` color  **)**
 
 Append a value to the array.
 
+.. _class_ColorArray_remove:
+
+- void  **remove**  **(** :ref:`int<class_int>` idx  **)**
+
+Remove an element from the array by index.
+
 .. _class_ColorArray_resize:
 
 - void  **resize**  **(** :ref:`int<class_int>` idx  **)**
 
-Resize the array.
+Set the size of the :ref:`ColorArray<class_colorarray>`. If larger than the current size it will reserve some space beforehand, and if it is smaller it will cut off the array.
 
 .. _class_ColorArray_set:
 
 - void  **set**  **(** :ref:`int<class_int>` idx, :ref:`Color<class_color>` color  **)**
 
-Set an index in the array.
+Change the :ref:`Color<class_color>` at the given index.
 
 .. _class_ColorArray_size:
 
 - :ref:`int<class_int>`  **size**  **(** **)**
 
 Return the array size.
-
-.. _class_ColorArray_ColorArray:
-
-- :ref:`ColorArray<class_colorarray>`  **ColorArray**  **(** :ref:`Array<class_array>` from  **)**
-
-Create from a generic array.
 
 

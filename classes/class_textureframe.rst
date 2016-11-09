@@ -18,19 +18,34 @@ Control Frame that draws a texture.
 Member Functions
 ----------------
 
-+------------------------------+-------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_texture<class_TextureFrame_set_texture>`  **(** :ref:`Object<class_object>` texture  **)**  |
-+------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`  | :ref:`get_texture<class_TextureFrame_get_texture>`  **(** **)** const                                 |
-+------------------------------+-------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_modulate<class_TextureFrame_set_modulate>`  **(** :ref:`Color<class_color>` modulate  **)** |
-+------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`    | :ref:`get_modulate<class_TextureFrame_get_modulate>`  **(** **)** const                               |
-+------------------------------+-------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_expand<class_TextureFrame_set_expand>`  **(** :ref:`bool<class_bool>` enable  **)**         |
-+------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`has_expand<class_TextureFrame_has_expand>`  **(** **)** const                                   |
-+------------------------------+-------------------------------------------------------------------------------------------------------+
++------------------------------+---------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`    | :ref:`get_modulate<class_TextureFrame_get_modulate>`  **(** **)** const                                       |
++------------------------------+---------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`get_stretch_mode<class_TextureFrame_get_stretch_mode>`  **(** **)** const                               |
++------------------------------+---------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`  | :ref:`get_texture<class_TextureFrame_get_texture>`  **(** **)** const                                         |
++------------------------------+---------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`has_expand<class_TextureFrame_has_expand>`  **(** **)** const                                           |
++------------------------------+---------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_expand<class_TextureFrame_set_expand>`  **(** :ref:`bool<class_bool>` enable  **)**                 |
++------------------------------+---------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_modulate<class_TextureFrame_set_modulate>`  **(** :ref:`Color<class_color>` modulate  **)**         |
++------------------------------+---------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_stretch_mode<class_TextureFrame_set_stretch_mode>`  **(** :ref:`int<class_int>` stretch_mode  **)** |
++------------------------------+---------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_texture<class_TextureFrame_set_texture>`  **(** :ref:`Object<class_object>` texture  **)**          |
++------------------------------+---------------------------------------------------------------------------------------------------------------+
+
+Numeric Constants
+-----------------
+
+- **STRETCH_SCALE_ON_EXPAND** = **0**
+- **STRETCH_SCALE** = **1**
+- **STRETCH_TILE** = **2**
+- **STRETCH_KEEP** = **3**
+- **STRETCH_KEEP_CENTERED** = **4**
+- **STRETCH_KEEP_ASPECT** = **5**
+- **STRETCH_KEEP_ASPECT_CENTERED** = **6**
 
 Description
 -----------
@@ -40,28 +55,36 @@ Control frame that simply draws an assigned texture. It can stretch or not. It's
 Member Function Description
 ---------------------------
 
-.. _class_TextureFrame_set_texture:
+.. _class_TextureFrame_get_modulate:
 
-- void  **set_texture**  **(** :ref:`Object<class_object>` texture  **)**
+- :ref:`Color<class_color>`  **get_modulate**  **(** **)** const
+
+.. _class_TextureFrame_get_stretch_mode:
+
+- :ref:`int<class_int>`  **get_stretch_mode**  **(** **)** const
 
 .. _class_TextureFrame_get_texture:
 
 - :ref:`Object<class_object>`  **get_texture**  **(** **)** const
 
-.. _class_TextureFrame_set_modulate:
+.. _class_TextureFrame_has_expand:
 
-- void  **set_modulate**  **(** :ref:`Color<class_color>` modulate  **)**
-
-.. _class_TextureFrame_get_modulate:
-
-- :ref:`Color<class_color>`  **get_modulate**  **(** **)** const
+- :ref:`bool<class_bool>`  **has_expand**  **(** **)** const
 
 .. _class_TextureFrame_set_expand:
 
 - void  **set_expand**  **(** :ref:`bool<class_bool>` enable  **)**
 
-.. _class_TextureFrame_has_expand:
+.. _class_TextureFrame_set_modulate:
 
-- :ref:`bool<class_bool>`  **has_expand**  **(** **)** const
+- void  **set_modulate**  **(** :ref:`Color<class_color>` modulate  **)**
+
+.. _class_TextureFrame_set_stretch_mode:
+
+- void  **set_stretch_mode**  **(** :ref:`int<class_int>` stretch_mode  **)**
+
+.. _class_TextureFrame_set_texture:
+
+- void  **set_texture**  **(** :ref:`Object<class_object>` texture  **)**
 
 

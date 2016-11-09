@@ -141,8 +141,8 @@ way, with some additional arguments to provide the correct paths:
 
 ::
 
-    $ scons -j 4 platform=iphone bits=32 target=release_debug IPHONESDK="/path/to/iPhoneSDK" IPHONEPATH="/path/to/iostoolchain" ios_triple="arm-apple-darwin11-"
-    $ scons -j 4 platform=iphone bits=64 target=release_debug IPHONESDK="/path/to/iPhoneSDK" IPHONEPATH="/path/to/iostoolchain" ios_triple="arm-apple-darwin11-"
+    $ scons -j 4 platform=iphone arch=arm target=release_debug IPHONESDK="/path/to/iPhoneSDK" IPHONEPATH="/path/to/iostoolchain" ios_triple="arm-apple-darwin11-"
+    $ scons -j 4 platform=iphone arch=arm64 target=release_debug IPHONESDK="/path/to/iPhoneSDK" IPHONEPATH="/path/to/iostoolchain" ios_triple="arm-apple-darwin11-"
 
 Producing fat binaries
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -154,6 +154,6 @@ you are in the root Godot source directory:
 
 ::
 
-    $ /path/to/iostoolchain/usr/bin/arm-apple-darwin11-lipo -create bin/godot.iphone.opt.debug.32 bin/godot.iphone.opt.debug.64 -output bin/godot.iphone.opt.debug.fat
+    $ /path/to/iostoolchain/usr/bin/arm-apple-darwin11-lipo -create bin/godot.iphone.opt.debug.arm bin/godot.iphone.opt.debug.arm64 -output bin/godot.iphone.opt.debug.fat
 
 Then you will have an iOS fat binary in ``bin/godot.iphone.opt.debug.fat``.

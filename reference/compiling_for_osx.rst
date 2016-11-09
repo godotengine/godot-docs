@@ -27,8 +27,17 @@ Start a terminal, go to the root dir of the engine source code and type:
 If all goes well, the resulting binary executable will be placed in the
 "bin" subdirectory. This executable file contains the whole engine and
 runs without any dependencies. Executing it will bring up the project
-manager. There is a .app template to put the binary into in
-``tools/Godot.app``.
+manager.
+
+To create an .app like in the official builds, you need to use the template
+located in ``tools/Godot.app``. Typically:
+
+::
+
+    user@host:~/godot$ cp -r tools/Godot.app .
+    user@host:~/godot$ mkdir -p Godot.app/Contents/MacOS
+    user@host:~/godot$ cp bin/godot.osx.opt.tools.64 Godot.app/Contents/MacOS/Godot
+    user@host:~/godot$ chmod +x Godot.app/Contents/MacOS/Godot
 
 Cross-compiling
 ---------------
@@ -64,3 +73,9 @@ Now you can compile with SCons like you normally would:
 ::
 
     user@host:~/godot$ scons platform=osx
+
+If you have an OSXCross SDK version different from the one expected by the SCons buildsystem, you can specify a custom one with the ``osxcross_sdk`` argument:
+
+::
+
+    user@host:~/godot$ scons platform=osx osxcross_sdk=darwin15

@@ -19,15 +19,15 @@ Member Functions
 ----------------
 
 +------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_shape<class_CollisionShape2D_set_shape>`  **(** :ref:`Object<class_object>` shape  **)**                  |
+| :ref:`int<class_int>`        | :ref:`get_collision_object_shape_index<class_CollisionShape2D_get_collision_object_shape_index>`  **(** **)** const |
 +------------------------------+---------------------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_object>`  | :ref:`get_shape<class_CollisionShape2D_get_shape>`  **(** **)** const                                               |
 +------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_trigger<class_CollisionShape2D_set_trigger>`  **(** :ref:`bool<class_bool>` enable  **)**                 |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`      | :ref:`is_trigger<class_CollisionShape2D_is_trigger>`  **(** **)** const                                             |
 +------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_collision_object_shape_index<class_CollisionShape2D_get_collision_object_shape_index>`  **(** **)** const |
+| void                         | :ref:`set_shape<class_CollisionShape2D_set_shape>`  **(** :ref:`Object<class_object>` shape  **)**                  |
++------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_trigger<class_CollisionShape2D_set_trigger>`  **(** :ref:`bool<class_bool>` enable  **)**                 |
 +------------------------------+---------------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -38,11 +38,11 @@ Editor-only class. This is not present when running the game. It's used in the e
 Member Function Description
 ---------------------------
 
-.. _class_CollisionShape2D_set_shape:
+.. _class_CollisionShape2D_get_collision_object_shape_index:
 
-- void  **set_shape**  **(** :ref:`Object<class_object>` shape  **)**
+- :ref:`int<class_int>`  **get_collision_object_shape_index**  **(** **)** const
 
-Set this shape's :ref:`Shape2D<class_shape2d>`. This will not appear as a node, but can be directly edited as a property.
+Return the index of this shape inside its container :ref:`CollisionObject2D<class_collisionobject2d>`. This can be used to directly access the underlying :ref:`Shape2D<class_shape2d>`.
 
 .. _class_CollisionShape2D_get_shape:
 
@@ -50,22 +50,22 @@ Set this shape's :ref:`Shape2D<class_shape2d>`. This will not appear as a node, 
 
 Return this shape's :ref:`Shape2D<class_shape2d>`.
 
-.. _class_CollisionShape2D_set_trigger:
-
-- void  **set_trigger**  **(** :ref:`bool<class_bool>` enable  **)**
-
-Set whether this shape is a trigger. A trigger shape detects collisions, but is otherwise unaffected by physics (i.e. will not block movement of colliding objects).
-
 .. _class_CollisionShape2D_is_trigger:
 
 - :ref:`bool<class_bool>`  **is_trigger**  **(** **)** const
 
 Return whether this shape is a trigger.
 
-.. _class_CollisionShape2D_get_collision_object_shape_index:
+.. _class_CollisionShape2D_set_shape:
 
-- :ref:`int<class_int>`  **get_collision_object_shape_index**  **(** **)** const
+- void  **set_shape**  **(** :ref:`Object<class_object>` shape  **)**
 
-Return the index of this shape inside its container :ref:`CollisionObject2D<class_collisionobject2d>`. This can be used to directly access the underlying :ref:`Shape2D<class_shape2d>`.
+Set this shape's :ref:`Shape2D<class_shape2d>`. This will not appear as a node, but can be directly edited as a property.
+
+.. _class_CollisionShape2D_set_trigger:
+
+- void  **set_trigger**  **(** :ref:`bool<class_bool>` enable  **)**
+
+Set whether this shape is a trigger. A trigger shape detects collisions, but is otherwise unaffected by physics (i.e. will not block movement of colliding objects).
 
 

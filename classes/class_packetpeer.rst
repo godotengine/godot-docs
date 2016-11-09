@@ -21,17 +21,17 @@ Member Functions
 ----------------
 
 +----------------------------------+-----------------------------------------------------------------------------------------------------+
-| void                             | :ref:`get_var<class_PacketPeer_get_var>`  **(** **)** const                                         |
-+----------------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`put_var<class_PacketPeer_put_var>`  **(** Variant var  **)**                                  |
+| :ref:`int<class_int>`            | :ref:`get_available_packet_count<class_PacketPeer_get_available_packet_count>`  **(** **)** const   |
 +----------------------------------+-----------------------------------------------------------------------------------------------------+
 | :ref:`RawArray<class_rawarray>`  | :ref:`get_packet<class_PacketPeer_get_packet>`  **(** **)** const                                   |
 +----------------------------------+-----------------------------------------------------------------------------------------------------+
-| Error                            | :ref:`put_packet<class_PacketPeer_put_packet>`  **(** :ref:`RawArray<class_rawarray>` buffer  **)** |
-+----------------------------------+-----------------------------------------------------------------------------------------------------+
 | Error                            | :ref:`get_packet_error<class_PacketPeer_get_packet_error>`  **(** **)** const                       |
 +----------------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_available_packet_count<class_PacketPeer_get_available_packet_count>`  **(** **)** const   |
+| :ref:`Variant<class_variant>`    | :ref:`get_var<class_PacketPeer_get_var>`  **(** **)** const                                         |
++----------------------------------+-----------------------------------------------------------------------------------------------------+
+| Error                            | :ref:`put_packet<class_PacketPeer_put_packet>`  **(** :ref:`RawArray<class_rawarray>` buffer  **)** |
++----------------------------------+-----------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`put_var<class_PacketPeer_put_var>`  **(** :ref:`Variant<class_variant>` var  **)**            |
 +----------------------------------+-----------------------------------------------------------------------------------------------------+
 
 Description
@@ -42,28 +42,40 @@ PacketPeer is an abstraction and base class for packet-based protocols (such as 
 Member Function Description
 ---------------------------
 
-.. _class_PacketPeer_get_var:
+.. _class_PacketPeer_get_available_packet_count:
 
-- void  **get_var**  **(** **)** const
+- :ref:`int<class_int>`  **get_available_packet_count**  **(** **)** const
 
-.. _class_PacketPeer_put_var:
-
-- :ref:`int<class_int>`  **put_var**  **(** Variant var  **)**
+Return the number of packets currently available in the ring-buffer.
 
 .. _class_PacketPeer_get_packet:
 
 - :ref:`RawArray<class_rawarray>`  **get_packet**  **(** **)** const
 
-.. _class_PacketPeer_put_packet:
-
-- Error  **put_packet**  **(** :ref:`RawArray<class_rawarray>` buffer  **)**
+Get a raw packet.
 
 .. _class_PacketPeer_get_packet_error:
 
 - Error  **get_packet_error**  **(** **)** const
 
-.. _class_PacketPeer_get_available_packet_count:
+Return the error state of the last packet received (via :ref:`get_packet<class_PacketPeer_get_packet>` and :ref:`get_var<class_PacketPeer_get_var>`).
 
-- :ref:`int<class_int>`  **get_available_packet_count**  **(** **)** const
+.. _class_PacketPeer_get_var:
+
+- :ref:`Variant<class_variant>`  **get_var**  **(** **)** const
+
+Get a Variant.
+
+.. _class_PacketPeer_put_packet:
+
+- Error  **put_packet**  **(** :ref:`RawArray<class_rawarray>` buffer  **)**
+
+Send a raw packet.
+
+.. _class_PacketPeer_put_var:
+
+- :ref:`int<class_int>`  **put_var**  **(** :ref:`Variant<class_variant>` var  **)**
+
+Send a Variant as a packet.
 
 

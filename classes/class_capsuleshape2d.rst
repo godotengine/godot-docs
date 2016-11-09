@@ -19,13 +19,13 @@ Member Functions
 ----------------
 
 +----------------------------+---------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_radius<class_CapsuleShape2D_set_radius>`  **(** :ref:`float<class_float>` radius  **)** |
+| :ref:`float<class_float>`  | :ref:`get_height<class_CapsuleShape2D_get_height>`  **(** **)** const                             |
 +----------------------------+---------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_radius<class_CapsuleShape2D_get_radius>`  **(** **)** const                             |
 +----------------------------+---------------------------------------------------------------------------------------------------+
 | void                       | :ref:`set_height<class_CapsuleShape2D_set_height>`  **(** :ref:`float<class_float>` height  **)** |
 +----------------------------+---------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_height<class_CapsuleShape2D_get_height>`  **(** **)** const                             |
+| void                       | :ref:`set_radius<class_CapsuleShape2D_set_radius>`  **(** :ref:`float<class_float>` radius  **)** |
 +----------------------------+---------------------------------------------------------------------------------------------------+
 
 Description
@@ -36,11 +36,11 @@ Capsule 2D shape resource for physics. A capsule (or sometimes called "pill") is
 Member Function Description
 ---------------------------
 
-.. _class_CapsuleShape2D_set_radius:
+.. _class_CapsuleShape2D_get_height:
 
-- void  **set_radius**  **(** :ref:`float<class_float>` radius  **)**
+- :ref:`float<class_float>`  **get_height**  **(** **)** const
 
-Set the radius of the :ref:`CapsuleShape2D<class_capsuleshape2d>`.
+Return the height of the :ref:`CapsuleShape2D<class_capsuleshape2d>`.
 
 .. _class_CapsuleShape2D_get_radius:
 
@@ -54,10 +54,10 @@ Return the radius of the :ref:`CapsuleShape2D<class_capsuleshape2d>`.
 
 Set the height of the :ref:`CapsuleShape2D<class_capsuleshape2d>`.
 
-.. _class_CapsuleShape2D_get_height:
+.. _class_CapsuleShape2D_set_radius:
 
-- :ref:`float<class_float>`  **get_height**  **(** **)** const
+- void  **set_radius**  **(** :ref:`float<class_float>` radius  **)**
 
-Return the height of the :ref:`CapsuleShape2D<class_capsuleshape2d>`.
+Set the radius of the :ref:`CapsuleShape2D<class_capsuleshape2d>`.
 
 

@@ -19,13 +19,13 @@ Member Functions
 ----------------
 
 +----------------------------+-------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_radius<class_CapsuleShape_set_radius>`  **(** :ref:`float<class_float>` radius  **)** |
+| :ref:`float<class_float>`  | :ref:`get_height<class_CapsuleShape_get_height>`  **(** **)** const                             |
 +----------------------------+-------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_radius<class_CapsuleShape_get_radius>`  **(** **)** const                             |
 +----------------------------+-------------------------------------------------------------------------------------------------+
 | void                       | :ref:`set_height<class_CapsuleShape_set_height>`  **(** :ref:`float<class_float>` height  **)** |
 +----------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_height<class_CapsuleShape_get_height>`  **(** **)** const                             |
+| void                       | :ref:`set_radius<class_CapsuleShape_set_radius>`  **(** :ref:`float<class_float>` radius  **)** |
 +----------------------------+-------------------------------------------------------------------------------------------------+
 
 Description
@@ -36,11 +36,11 @@ Capsule shape resource, which can be set into a :ref:`PhysicsBody<class_physicsb
 Member Function Description
 ---------------------------
 
-.. _class_CapsuleShape_set_radius:
+.. _class_CapsuleShape_get_height:
 
-- void  **set_radius**  **(** :ref:`float<class_float>` radius  **)**
+- :ref:`float<class_float>`  **get_height**  **(** **)** const
 
-Set the capsule radius.
+Return the capsule height.
 
 .. _class_CapsuleShape_get_radius:
 
@@ -54,10 +54,10 @@ Return the capsule radius.
 
 Set the capsule height.
 
-.. _class_CapsuleShape_get_height:
+.. _class_CapsuleShape_set_radius:
 
-- :ref:`float<class_float>`  **get_height**  **(** **)** const
+- void  **set_radius**  **(** :ref:`float<class_float>` radius  **)**
 
-Return the capsule height.
+Set the capsule radius.
 
 

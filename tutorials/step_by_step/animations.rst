@@ -41,7 +41,9 @@ Editing the animation
 
 Now this is when the magic happens! Several things happen when the
 "edit" button is pressed, the first one is that the animation editor
-appears above the animation panel.
+appears above the animation panel. (In Godot 2.x, this button has been
+removed, instead, click on the 'animation' toggle at the bottom right 
+for similar functionality.)
 
 .. image:: /img/animeditor.png
 

@@ -41,46 +41,54 @@ The following labels are currently defined in the Godot repository:
    what version or commit of Godot the issue could be reproduced; if a
    developer looks at the issue one year later, the *Confirmed* label
    may not be relevant anymore.
--  *Enhancement*: describes a proposed enhancement to an existing
-   functionality.
--  *Feature request*: describes a wish for a new feature to be
-   implemented.
--  *High priority*: the issue should be treated in priority (typically
-   critical bugs).
--  *Needs discussion*: the issue is not consensual and needs further
+-  *Discussion*: the issue is not consensual and needs further
    discussion to define what exactly should be done to address the
    topic.
+-  *Documentation*: issue related to the documentation. Mainly to request
+   documentation that don't exist yet. 
+-  *Enhancement*: describes a proposed enhancement to an existing
+   functionality.
+-  *Feature proposal*: describes a wish for a new feature to be
+   implemented.
+-  *Needs rebase*: the issue need a git rebase to be merged.
+-  *Needs testing*: the issue/pull request could not be completely tested 
+   and thus need further testing. This can mean that it needs to be tested
+   on different hardware/software configurations or even that the steps to 
+   reproduce are not certain.
+-  *PR welcome*: you are welcome to work on this issue and propose a pull request.
+   Note that this **doesn't** mean you can't work on bugs without this label.
+-  *Reviewed*: The pull request has been reviewed by a contributor.
+-  *Tracker*: issue used to track other issues (like all issues related to the plugin system).
+-  *Usability*: issue that directly impact user usability.
 
 The categories are used for general triage of the issues. They can be
-combined in some way when relevant, e.g. an issue can be labelled *Bug*,
-*Confirmed* and *High priority* at the same time if it's a critical bug
-that was confirmed by several users, or *Feature request* and *Needs
-discussion* if it's a non-consensual feature request, or one that is not
+combined in some way when relevant, e.g. an issue can be labelled
+*Enhancement* and *Usability* at the same time if it's an issue to improve usability. 
+Or *Feature proposal* and *Discussion* if it's a non-consensual feature request, or one that is not
 precise enough to be worked on.
 
 **Topics:**
 
+-  *Assetlib*: relates to issues whith the asset library.
 -  *Buildsystem*: relates to building issues, either linked to the SCons
    buildsystem or to compiler peculiarities.
 -  *Core*: anything related to the core engine. It might be further
    split later on as it's a pretty big topic.
--  *Demos*: relates to the official demos.
+-  *Drivers*: relates to issues with the drivers used by the engine.
+-  *Editor*: relates to issues in the editor (mainly UI).
 -  *GDScript*: relates to GDScript.
+-  *Physics*: relates to the physics engine (2D/3D).
+-  *Plugin*: relates to problems encountered while writing plugins. 
 -  *Porting*: relates to some specific platforms.
--  *Rendering engine*: relates to the 2D and 3D rendering engines.
--  *User interface*: relates to the UI design.
+-  *Rendering*: relates to the 2D and 3D rendering engines.
+-  *Visual script*: relates issues with visual scripting.
 
 Issues would typically correspond to only one topic, though it's not
 unthinkable to see issues that fit two bills. The general idea is that
 there will be specialized contributors teams behind all topics, so they
 can focus on the issues labelled with their team topic.
 
-Bug reports concerning the website or the documentation should not be
-filed in GitHub but in the appropriate tool in OpenProject, therefore
-such issues should be closed and archived once they have been moved to
-their rightful platform.
-
-**Platforms:** *Android*, *HTML5*, *iOS*, *Linux*, *OS X*, *Windows*
+**Platforms:** *Android*, *HTML5*, *iOS*, *Linux*, *OS X*, *Windows*, *Winrt*
 
 By default, it is assumed that a given issue applies to all platforms. 
 If one of the platform labels is used, it is the exclusive and the

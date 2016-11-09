@@ -17,15 +17,35 @@ Member Functions
 ----------------
 
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`  | :ref:`Array<class_Array_Array>`  **(** :ref:`ColorArray<class_colorarray>` from  **)**                                      |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`  | :ref:`Array<class_Array_Array>`  **(** :ref:`Vector3Array<class_vector3array>` from  **)**                                  |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`  | :ref:`Array<class_Array_Array>`  **(** :ref:`Vector2Array<class_vector2array>` from  **)**                                  |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`  | :ref:`Array<class_Array_Array>`  **(** :ref:`StringArray<class_stringarray>` from  **)**                                    |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`  | :ref:`Array<class_Array_Array>`  **(** :ref:`RealArray<class_realarray>` from  **)**                                        |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`  | :ref:`Array<class_Array_Array>`  **(** :ref:`IntArray<class_intarray>` from  **)**                                          |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`  | :ref:`Array<class_Array_Array>`  **(** :ref:`RawArray<class_rawarray>` from  **)**                                          |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`append<class_Array_append>`  **(** var value  **)**                                                                   |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`clear<class_Array_clear>`  **(** **)**                                                                                |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`count<class_Array_count>`  **(** var value  **)**                                                                     |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`    | :ref:`empty<class_Array_empty>`  **(** **)**                                                                                |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`erase<class_Array_erase>`  **(** var value  **)**                                                                     |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`find<class_Array_find>`  **(** var value  **)**                                                                       |
+| :ref:`int<class_int>`      | :ref:`find<class_Array_find>`  **(** var what, :ref:`int<class_int>` from=0  **)**                                          |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`find_last<class_Array_find_last>`  **(** var value  **)**                                                             |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`has<class_Array_has>`  **(** var value  **)**                                                                         |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`      | :ref:`hash<class_Array_hash>`  **(** **)**                                                                                  |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
@@ -47,34 +67,64 @@ Member Functions
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`resize<class_Array_resize>`  **(** :ref:`int<class_int>` pos  **)**                                                   |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`rfind<class_Array_rfind>`  **(** var what, :ref:`int<class_int>` from=-1  **)**                                       |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`      | :ref:`size<class_Array_size>`  **(** **)**                                                                                  |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`sort<class_Array_sort>`  **(** **)**                                                                                  |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`sort_custom<class_Array_sort_custom>`  **(** :ref:`Object<class_object>` obj, :ref:`String<class_string>` func  **)** |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`  | :ref:`Array<class_Array_Array>`  **(** :ref:`RawArray<class_rawarray>` from  **)**                                          |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`  | :ref:`Array<class_Array_Array>`  **(** :ref:`IntArray<class_intarray>` from  **)**                                          |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`  | :ref:`Array<class_Array_Array>`  **(** :ref:`RealArray<class_realarray>` from  **)**                                        |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`  | :ref:`Array<class_Array_Array>`  **(** :ref:`StringArray<class_stringarray>` from  **)**                                    |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`  | :ref:`Array<class_Array_Array>`  **(** :ref:`Vector2Array<class_vector2array>` from  **)**                                  |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`  | :ref:`Array<class_Array_Array>`  **(** :ref:`Vector3Array<class_vector3array>` from  **)**                                  |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`  | :ref:`Array<class_Array_Array>`  **(** :ref:`ColorArray<class_colorarray>` from  **)**                                      |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
 
-Generic array, contains several elements of any type, accessible by numerical index starting at 0. Arrays are always passed by reference.
+Generic array, contains several elements of any type, accessible by numerical index starting at 0. Negative indices can be used to count from the right, like in Python. Arrays are always passed by reference.
 
 Member Function Description
 ---------------------------
+
+.. _class_Array_Array:
+
+- :ref:`Array<class_array>`  **Array**  **(** :ref:`ColorArray<class_colorarray>` from  **)**
+
+Construct an array from a :ref:`RawArray<class_rawarray>`.
+
+.. _class_Array_Array:
+
+- :ref:`Array<class_array>`  **Array**  **(** :ref:`Vector3Array<class_vector3array>` from  **)**
+
+Construct an array from a :ref:`RawArray<class_rawarray>`.
+
+.. _class_Array_Array:
+
+- :ref:`Array<class_array>`  **Array**  **(** :ref:`Vector2Array<class_vector2array>` from  **)**
+
+Construct an array from a :ref:`RawArray<class_rawarray>`.
+
+.. _class_Array_Array:
+
+- :ref:`Array<class_array>`  **Array**  **(** :ref:`StringArray<class_stringarray>` from  **)**
+
+Construct an array from a :ref:`RawArray<class_rawarray>`.
+
+.. _class_Array_Array:
+
+- :ref:`Array<class_array>`  **Array**  **(** :ref:`RealArray<class_realarray>` from  **)**
+
+Construct an array from a :ref:`RawArray<class_rawarray>`.
+
+.. _class_Array_Array:
+
+- :ref:`Array<class_array>`  **Array**  **(** :ref:`IntArray<class_intarray>` from  **)**
+
+Construct an array from a :ref:`RawArray<class_rawarray>`.
+
+.. _class_Array_Array:
+
+- :ref:`Array<class_array>`  **Array**  **(** :ref:`RawArray<class_rawarray>` from  **)**
+
+Construct an array from a :ref:`RawArray<class_rawarray>`.
 
 .. _class_Array_append:
 
@@ -87,6 +137,12 @@ Append an element at the end of the array (alias of :ref:`push_back<class_Array_
 - void  **clear**  **(** **)**
 
 Clear the array (resize to 0).
+
+.. _class_Array_count:
+
+- :ref:`int<class_int>`  **count**  **(** var value  **)**
+
+Return the amount of times an element is in the array.
 
 .. _class_Array_empty:
 
@@ -102,9 +158,21 @@ Remove the first occurrence of a value from the array.
 
 .. _class_Array_find:
 
-- :ref:`int<class_int>`  **find**  **(** var value  **)**
+- :ref:`int<class_int>`  **find**  **(** var what, :ref:`int<class_int>` from=0  **)**
 
-Searches the array for a value and returns its index or -1 if not found.
+Searches the array for a value and returns its index or -1 if not found. Optionally, the initial search index can be passed.
+
+.. _class_Array_find_last:
+
+- :ref:`int<class_int>`  **find_last**  **(** var value  **)**
+
+Searches the array in reverse order for a value and returns its index or -1 if not found.
+
+.. _class_Array_has:
+
+- :ref:`bool<class_bool>`  **has**  **(** var value  **)**
+
+Return true if the array contains given value. ``:ref:` "inside", 7 <class_ "inside", 7 >`.has("inside") == true, :ref:` "inside", 7 <class_ "inside", 7 >`.has("outside") == false, :ref:` "inside", 7 <class_ "inside", 7 >`.has(7) == true, :ref:` "inside", 7 <class_ "inside", 7 >`.has("7") == false``
 
 .. _class_Array_hash:
 
@@ -134,9 +202,13 @@ Get whether this is a shared array instance.
 
 - void  **pop_back**  **(** **)**
 
+Remove the last element of the array.
+
 .. _class_Array_pop_front:
 
 - void  **pop_front**  **(** **)**
+
+Remove the first element of the array.
 
 .. _class_Array_push_back:
 
@@ -147,6 +219,8 @@ Append an element at the end of the array.
 .. _class_Array_push_front:
 
 - void  **push_front**  **(** var value  **)**
+
+Add an element at the beginning of the array.
 
 .. _class_Array_remove:
 
@@ -159,6 +233,12 @@ Remove an element from the array by index.
 - void  **resize**  **(** :ref:`int<class_int>` pos  **)**
 
 Resize the array to contain a different number of elements. If the array size is smaller, elements are cleared, if bigger, new elements are Null.
+
+.. _class_Array_rfind:
+
+- :ref:`int<class_int>`  **rfind**  **(** var what, :ref:`int<class_int>` from=-1  **)**
+
+Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array.
 
 .. _class_Array_size:
 
@@ -177,47 +257,5 @@ Sort the array using natural order.
 - void  **sort_custom**  **(** :ref:`Object<class_object>` obj, :ref:`String<class_string>` func  **)**
 
 Sort the array using a custom method. The arguments are an object that holds the method and the name of such method. The custom method receives two arguments (a pair of elements from the array) and must return true if the first argument is less than the second, and return false otherwise.
-
-.. _class_Array_Array:
-
-- :ref:`Array<class_array>`  **Array**  **(** :ref:`RawArray<class_rawarray>` from  **)**
-
-Construct an array from a :ref:`RawArray<class_rawarray>`.
-
-.. _class_Array_Array:
-
-- :ref:`Array<class_array>`  **Array**  **(** :ref:`IntArray<class_intarray>` from  **)**
-
-Construct an array from a :ref:`RawArray<class_rawarray>`.
-
-.. _class_Array_Array:
-
-- :ref:`Array<class_array>`  **Array**  **(** :ref:`RealArray<class_realarray>` from  **)**
-
-Construct an array from a :ref:`RawArray<class_rawarray>`.
-
-.. _class_Array_Array:
-
-- :ref:`Array<class_array>`  **Array**  **(** :ref:`StringArray<class_stringarray>` from  **)**
-
-Construct an array from a :ref:`RawArray<class_rawarray>`.
-
-.. _class_Array_Array:
-
-- :ref:`Array<class_array>`  **Array**  **(** :ref:`Vector2Array<class_vector2array>` from  **)**
-
-Construct an array from a :ref:`RawArray<class_rawarray>`.
-
-.. _class_Array_Array:
-
-- :ref:`Array<class_array>`  **Array**  **(** :ref:`Vector3Array<class_vector3array>` from  **)**
-
-Construct an array from a :ref:`RawArray<class_rawarray>`.
-
-.. _class_Array_Array:
-
-- :ref:`Array<class_array>`  **Array**  **(** :ref:`ColorArray<class_colorarray>` from  **)**
-
-Construct an array from a :ref:`RawArray<class_rawarray>`.
 
 

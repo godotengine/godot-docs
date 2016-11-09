@@ -13,32 +13,45 @@ FuncRef
 Brief Description
 -----------------
 
-
+Reference to a function in an object.
 
 Member Functions
 ----------------
 
-+-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`call_func<class_FuncRef_call_func>`  **(** var arg0=NULL, var arg1=NULL, var arg2=NULL, var arg3=NULL, var arg4=NULL, var arg5=NULL, var arg6=NULL, var arg7=NULL, var arg8=NULL, var arg9=NULL  **)** |
-+-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`set_instance<class_FuncRef_set_instance>`  **(** :ref:`Object<class_object>` instance  **)**                                                                                                           |
-+-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`set_function<class_FuncRef_set_function>`  **(** :ref:`String<class_string>` name  **)**                                                                                                               |
-+-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void  | :ref:`call_func<class_FuncRef_call_func>`  **(** :ref:`Variant<class_variant>` arg0=NULL, :ref:`Variant<class_variant>` arg1=NULL, :ref:`Variant<class_variant>` arg2=NULL, :ref:`Variant<class_variant>` arg3=NULL, :ref:`Variant<class_variant>` arg4=NULL, :ref:`Variant<class_variant>` arg5=NULL, :ref:`Variant<class_variant>` arg6=NULL, :ref:`Variant<class_variant>` arg7=NULL, :ref:`Variant<class_variant>` arg8=NULL, :ref:`Variant<class_variant>` arg9=NULL  **)** |
++-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void  | :ref:`set_function<class_FuncRef_set_function>`  **(** :ref:`String<class_string>` name  **)**                                                                                                                                                                                                                                                                                                                                                                                   |
++-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void  | :ref:`set_instance<class_FuncRef_set_instance>`  **(** :ref:`Object<class_object>` instance  **)**                                                                                                                                                                                                                                                                                                                                                                               |
++-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Description
+-----------
+
+In GDScript, functions are not *first-class objects*. This means it is impossible to store them directly as variables, return them from another function, or pass them as arguments.
+
+However, by creating a :ref:`FuncRef<class_funcref>` using the :ref:`@GDScript.funcref<class_@GDScript_funcref>` function, a reference to a function in a given object can be created, passed around and called.
 
 Member Function Description
 ---------------------------
 
 .. _class_FuncRef_call_func:
 
-- void  **call_func**  **(** var arg0=NULL, var arg1=NULL, var arg2=NULL, var arg3=NULL, var arg4=NULL, var arg5=NULL, var arg6=NULL, var arg7=NULL, var arg8=NULL, var arg9=NULL  **)**
+- void  **call_func**  **(** :ref:`Variant<class_variant>` arg0=NULL, :ref:`Variant<class_variant>` arg1=NULL, :ref:`Variant<class_variant>` arg2=NULL, :ref:`Variant<class_variant>` arg3=NULL, :ref:`Variant<class_variant>` arg4=NULL, :ref:`Variant<class_variant>` arg5=NULL, :ref:`Variant<class_variant>` arg6=NULL, :ref:`Variant<class_variant>` arg7=NULL, :ref:`Variant<class_variant>` arg8=NULL, :ref:`Variant<class_variant>` arg9=NULL  **)**
+
+Call the referenced function with the given arguments. The argument count must correspond to the required number of arguments in the function. Returns the return value of the function call.
+
+.. _class_FuncRef_set_function:
+
+- void  **set_function**  **(** :ref:`String<class_string>` name  **)**
+
+Set the name of the function to call on the object, without parentheses or any parameters.
 
 .. _class_FuncRef_set_instance:
 
 - void  **set_instance**  **(** :ref:`Object<class_object>` instance  **)**
 
-.. _class_FuncRef_set_function:
-
-- void  **set_function**  **(** :ref:`String<class_string>` name  **)**
+Set the object on which to call the referenced function. This object must be of a type actually inheriting from :ref:`Object<class_object>`, not a built-in type such as :ref:`int<class_int>`, :ref:`Vector2<class_vector2>` or :ref:`Dictionary<class_dictionary>`.
 
 

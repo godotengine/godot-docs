@@ -19,77 +19,79 @@ Member Functions
 ----------------
 
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`add_image<class_RichTextLabel_add_image>`  **(** :ref:`Texture<class_texture>` image  **)**                                                                                   |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`add_text<class_RichTextLabel_add_text>`  **(** :ref:`String<class_string>` text  **)**                                                                                        |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`add_image<class_RichTextLabel_add_image>`  **(** :ref:`Texture<class_texture>` image  **)**                                                                                   |
+| :ref:`int<class_int>`        | :ref:`append_bbcode<class_RichTextLabel_append_bbcode>`  **(** :ref:`String<class_string>` bbcode  **)**                                                                            |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`clear<class_RichTextLabel_clear>`  **(** **)**                                                                                                                                |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_bbcode<class_RichTextLabel_get_bbcode>`  **(** **)** const                                                                                                                |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`get_tab_size<class_RichTextLabel_get_tab_size>`  **(** **)** const                                                                                                            |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_text<class_RichTextLabel_get_text>`  **(** **)**                                                                                                                          |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`get_total_character_count<class_RichTextLabel_get_total_character_count>`  **(** **)** const                                                                                  |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`  | :ref:`get_v_scroll<class_RichTextLabel_get_v_scroll>`  **(** **)**                                                                                                                  |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`get_visible_characters<class_RichTextLabel_get_visible_characters>`  **(** **)** const                                                                                        |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`is_meta_underlined<class_RichTextLabel_is_meta_underlined>`  **(** **)** const                                                                                                |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`is_scroll_active<class_RichTextLabel_is_scroll_active>`  **(** **)** const                                                                                                    |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`is_scroll_following<class_RichTextLabel_is_scroll_following>`  **(** **)** const                                                                                              |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`is_selection_enabled<class_RichTextLabel_is_selection_enabled>`  **(** **)** const                                                                                            |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`is_using_bbcode<class_RichTextLabel_is_using_bbcode>`  **(** **)** const                                                                                                      |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`newline<class_RichTextLabel_newline>`  **(** **)**                                                                                                                            |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`push_font<class_RichTextLabel_push_font>`  **(** :ref:`Object<class_object>` font  **)**                                                                                      |
+| :ref:`int<class_int>`        | :ref:`parse_bbcode<class_RichTextLabel_parse_bbcode>`  **(** :ref:`String<class_string>` bbcode  **)**                                                                              |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`pop<class_RichTextLabel_pop>`  **(** **)**                                                                                                                                    |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`push_align<class_RichTextLabel_push_align>`  **(** :ref:`int<class_int>` align  **)**                                                                                         |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`push_cell<class_RichTextLabel_push_cell>`  **(** **)**                                                                                                                        |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`push_color<class_RichTextLabel_push_color>`  **(** :ref:`Color<class_color>` color  **)**                                                                                     |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`push_align<class_RichTextLabel_push_align>`  **(** :ref:`int<class_int>` align  **)**                                                                                         |
+| void                         | :ref:`push_font<class_RichTextLabel_push_font>`  **(** :ref:`Object<class_object>` font  **)**                                                                                      |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`push_indent<class_RichTextLabel_push_indent>`  **(** :ref:`int<class_int>` level  **)**                                                                                       |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`push_list<class_RichTextLabel_push_list>`  **(** :ref:`int<class_int>` type  **)**                                                                                            |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`push_meta<class_RichTextLabel_push_meta>`  **(** var data  **)**                                                                                                              |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`push_underline<class_RichTextLabel_push_underline>`  **(** **)**                                                                                                              |
+| void                         | :ref:`push_meta<class_RichTextLabel_push_meta>`  **(** :ref:`Variant<class_variant>` data  **)**                                                                                    |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`push_table<class_RichTextLabel_push_table>`  **(** :ref:`int<class_int>` columns  **)**                                                                                       |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_table_column_expand<class_RichTextLabel_set_table_column_expand>`  **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` expand, :ref:`int<class_int>` ratio  **)** |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`push_cell<class_RichTextLabel_push_cell>`  **(** **)**                                                                                                                        |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`pop<class_RichTextLabel_pop>`  **(** **)**                                                                                                                                    |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`clear<class_RichTextLabel_clear>`  **(** **)**                                                                                                                                |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_meta_underline<class_RichTextLabel_set_meta_underline>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                      |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`is_meta_underlined<class_RichTextLabel_is_meta_underlined>`  **(** **)** const                                                                                                |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_scroll_active<class_RichTextLabel_set_scroll_active>`  **(** :ref:`bool<class_bool>` active  **)**                                                                        |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`is_scroll_active<class_RichTextLabel_is_scroll_active>`  **(** **)** const                                                                                                    |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_scroll_follow<class_RichTextLabel_set_scroll_follow>`  **(** :ref:`bool<class_bool>` follow  **)**                                                                        |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`is_scroll_following<class_RichTextLabel_is_scroll_following>`  **(** **)** const                                                                                              |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`  | :ref:`get_v_scroll<class_RichTextLabel_get_v_scroll>`  **(** **)**                                                                                                                  |
+| void                         | :ref:`push_underline<class_RichTextLabel_push_underline>`  **(** **)**                                                                                                              |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`scroll_to_line<class_RichTextLabel_scroll_to_line>`  **(** :ref:`int<class_int>` line  **)**                                                                                  |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_tab_size<class_RichTextLabel_set_tab_size>`  **(** :ref:`int<class_int>` spaces  **)**                                                                                    |
+| void                         | :ref:`set_bbcode<class_RichTextLabel_set_bbcode>`  **(** :ref:`String<class_string>` text  **)**                                                                                    |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_tab_size<class_RichTextLabel_get_tab_size>`  **(** **)** const                                                                                                            |
+| void                         | :ref:`set_meta_underline<class_RichTextLabel_set_meta_underline>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                      |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_scroll_active<class_RichTextLabel_set_scroll_active>`  **(** :ref:`bool<class_bool>` active  **)**                                                                        |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_scroll_follow<class_RichTextLabel_set_scroll_follow>`  **(** :ref:`bool<class_bool>` follow  **)**                                                                        |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`set_selection_enabled<class_RichTextLabel_set_selection_enabled>`  **(** :ref:`bool<class_bool>` enabled  **)**                                                               |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`is_selection_enabled<class_RichTextLabel_is_selection_enabled>`  **(** **)** const                                                                                            |
+| void                         | :ref:`set_tab_size<class_RichTextLabel_set_tab_size>`  **(** :ref:`int<class_int>` spaces  **)**                                                                                    |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`parse_bbcode<class_RichTextLabel_parse_bbcode>`  **(** :ref:`String<class_string>` bbcode  **)**                                                                              |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`append_bbcode<class_RichTextLabel_append_bbcode>`  **(** :ref:`String<class_string>` bbcode  **)**                                                                            |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_bbcode<class_RichTextLabel_set_bbcode>`  **(** :ref:`String<class_string>` text  **)**                                                                                    |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_bbcode<class_RichTextLabel_get_bbcode>`  **(** **)** const                                                                                                                |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_visible_characters<class_RichTextLabel_set_visible_characters>`  **(** :ref:`int<class_int>` amount  **)**                                                                |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_visible_characters<class_RichTextLabel_get_visible_characters>`  **(** **)** const                                                                                        |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_total_character_count<class_RichTextLabel_get_total_character_count>`  **(** **)** const                                                                                  |
+| void                         | :ref:`set_table_column_expand<class_RichTextLabel_set_table_column_expand>`  **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` expand, :ref:`int<class_int>` ratio  **)** |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`set_use_bbcode<class_RichTextLabel_set_use_bbcode>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                              |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`is_using_bbcode<class_RichTextLabel_is_using_bbcode>`  **(** **)** const                                                                                                      |
+| void                         | :ref:`set_visible_characters<class_RichTextLabel_set_visible_characters>`  **(** :ref:`int<class_int>` amount  **)**                                                                |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -127,29 +129,97 @@ Label that displays rich text. Rich text can contain custom text, fonts, images 
 Member Function Description
 ---------------------------
 
+.. _class_RichTextLabel_add_image:
+
+- void  **add_image**  **(** :ref:`Texture<class_texture>` image  **)**
+
 .. _class_RichTextLabel_add_text:
 
 - void  **add_text**  **(** :ref:`String<class_string>` text  **)**
 
-.. _class_RichTextLabel_add_image:
+.. _class_RichTextLabel_append_bbcode:
 
-- void  **add_image**  **(** :ref:`Texture<class_texture>` image  **)**
+- :ref:`int<class_int>`  **append_bbcode**  **(** :ref:`String<class_string>` bbcode  **)**
+
+.. _class_RichTextLabel_clear:
+
+- void  **clear**  **(** **)**
+
+.. _class_RichTextLabel_get_bbcode:
+
+- :ref:`String<class_string>`  **get_bbcode**  **(** **)** const
+
+.. _class_RichTextLabel_get_tab_size:
+
+- :ref:`int<class_int>`  **get_tab_size**  **(** **)** const
+
+.. _class_RichTextLabel_get_text:
+
+- :ref:`String<class_string>`  **get_text**  **(** **)**
+
+Returns the raw text, stripping out the formatting information.
+
+.. _class_RichTextLabel_get_total_character_count:
+
+- :ref:`int<class_int>`  **get_total_character_count**  **(** **)** const
+
+.. _class_RichTextLabel_get_v_scroll:
+
+- :ref:`Object<class_object>`  **get_v_scroll**  **(** **)**
+
+.. _class_RichTextLabel_get_visible_characters:
+
+- :ref:`int<class_int>`  **get_visible_characters**  **(** **)** const
+
+.. _class_RichTextLabel_is_meta_underlined:
+
+- :ref:`bool<class_bool>`  **is_meta_underlined**  **(** **)** const
+
+.. _class_RichTextLabel_is_scroll_active:
+
+- :ref:`bool<class_bool>`  **is_scroll_active**  **(** **)** const
+
+.. _class_RichTextLabel_is_scroll_following:
+
+- :ref:`bool<class_bool>`  **is_scroll_following**  **(** **)** const
+
+.. _class_RichTextLabel_is_selection_enabled:
+
+- :ref:`bool<class_bool>`  **is_selection_enabled**  **(** **)** const
+
+Return true if selecting the text inside this richtext is allowed.
+
+.. _class_RichTextLabel_is_using_bbcode:
+
+- :ref:`bool<class_bool>`  **is_using_bbcode**  **(** **)** const
 
 .. _class_RichTextLabel_newline:
 
 - void  **newline**  **(** **)**
 
-.. _class_RichTextLabel_push_font:
+.. _class_RichTextLabel_parse_bbcode:
 
-- void  **push_font**  **(** :ref:`Object<class_object>` font  **)**
+- :ref:`int<class_int>`  **parse_bbcode**  **(** :ref:`String<class_string>` bbcode  **)**
+
+.. _class_RichTextLabel_pop:
+
+- void  **pop**  **(** **)**
+
+.. _class_RichTextLabel_push_align:
+
+- void  **push_align**  **(** :ref:`int<class_int>` align  **)**
+
+.. _class_RichTextLabel_push_cell:
+
+- void  **push_cell**  **(** **)**
 
 .. _class_RichTextLabel_push_color:
 
 - void  **push_color**  **(** :ref:`Color<class_color>` color  **)**
 
-.. _class_RichTextLabel_push_align:
+.. _class_RichTextLabel_push_font:
 
-- void  **push_align**  **(** :ref:`int<class_int>` align  **)**
+- void  **push_font**  **(** :ref:`Object<class_object>` font  **)**
 
 .. _class_RichTextLabel_push_indent:
 
@@ -161,71 +231,35 @@ Member Function Description
 
 .. _class_RichTextLabel_push_meta:
 
-- void  **push_meta**  **(** var data  **)**
-
-.. _class_RichTextLabel_push_underline:
-
-- void  **push_underline**  **(** **)**
+- void  **push_meta**  **(** :ref:`Variant<class_variant>` data  **)**
 
 .. _class_RichTextLabel_push_table:
 
 - void  **push_table**  **(** :ref:`int<class_int>` columns  **)**
 
-.. _class_RichTextLabel_set_table_column_expand:
+.. _class_RichTextLabel_push_underline:
 
-- void  **set_table_column_expand**  **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` expand, :ref:`int<class_int>` ratio  **)**
-
-.. _class_RichTextLabel_push_cell:
-
-- void  **push_cell**  **(** **)**
-
-.. _class_RichTextLabel_pop:
-
-- void  **pop**  **(** **)**
-
-.. _class_RichTextLabel_clear:
-
-- void  **clear**  **(** **)**
-
-.. _class_RichTextLabel_set_meta_underline:
-
-- void  **set_meta_underline**  **(** :ref:`bool<class_bool>` enable  **)**
-
-.. _class_RichTextLabel_is_meta_underlined:
-
-- :ref:`bool<class_bool>`  **is_meta_underlined**  **(** **)** const
-
-.. _class_RichTextLabel_set_scroll_active:
-
-- void  **set_scroll_active**  **(** :ref:`bool<class_bool>` active  **)**
-
-.. _class_RichTextLabel_is_scroll_active:
-
-- :ref:`bool<class_bool>`  **is_scroll_active**  **(** **)** const
-
-.. _class_RichTextLabel_set_scroll_follow:
-
-- void  **set_scroll_follow**  **(** :ref:`bool<class_bool>` follow  **)**
-
-.. _class_RichTextLabel_is_scroll_following:
-
-- :ref:`bool<class_bool>`  **is_scroll_following**  **(** **)** const
-
-.. _class_RichTextLabel_get_v_scroll:
-
-- :ref:`Object<class_object>`  **get_v_scroll**  **(** **)**
+- void  **push_underline**  **(** **)**
 
 .. _class_RichTextLabel_scroll_to_line:
 
 - void  **scroll_to_line**  **(** :ref:`int<class_int>` line  **)**
 
-.. _class_RichTextLabel_set_tab_size:
+.. _class_RichTextLabel_set_bbcode:
 
-- void  **set_tab_size**  **(** :ref:`int<class_int>` spaces  **)**
+- void  **set_bbcode**  **(** :ref:`String<class_string>` text  **)**
 
-.. _class_RichTextLabel_get_tab_size:
+.. _class_RichTextLabel_set_meta_underline:
 
-- :ref:`int<class_int>`  **get_tab_size**  **(** **)** const
+- void  **set_meta_underline**  **(** :ref:`bool<class_bool>` enable  **)**
+
+.. _class_RichTextLabel_set_scroll_active:
+
+- void  **set_scroll_active**  **(** :ref:`bool<class_bool>` active  **)**
+
+.. _class_RichTextLabel_set_scroll_follow:
+
+- void  **set_scroll_follow**  **(** :ref:`bool<class_bool>` follow  **)**
 
 .. _class_RichTextLabel_set_selection_enabled:
 
@@ -233,46 +267,20 @@ Member Function Description
 
 Set to true if selecting the text inside this richtext is allowed.
 
-.. _class_RichTextLabel_is_selection_enabled:
+.. _class_RichTextLabel_set_tab_size:
 
-- :ref:`bool<class_bool>`  **is_selection_enabled**  **(** **)** const
+- void  **set_tab_size**  **(** :ref:`int<class_int>` spaces  **)**
 
-Return true if selecting the text inside this richtext is allowed.
+.. _class_RichTextLabel_set_table_column_expand:
 
-.. _class_RichTextLabel_parse_bbcode:
-
-- :ref:`int<class_int>`  **parse_bbcode**  **(** :ref:`String<class_string>` bbcode  **)**
-
-.. _class_RichTextLabel_append_bbcode:
-
-- :ref:`int<class_int>`  **append_bbcode**  **(** :ref:`String<class_string>` bbcode  **)**
-
-.. _class_RichTextLabel_set_bbcode:
-
-- void  **set_bbcode**  **(** :ref:`String<class_string>` text  **)**
-
-.. _class_RichTextLabel_get_bbcode:
-
-- :ref:`String<class_string>`  **get_bbcode**  **(** **)** const
-
-.. _class_RichTextLabel_set_visible_characters:
-
-- void  **set_visible_characters**  **(** :ref:`int<class_int>` amount  **)**
-
-.. _class_RichTextLabel_get_visible_characters:
-
-- :ref:`int<class_int>`  **get_visible_characters**  **(** **)** const
-
-.. _class_RichTextLabel_get_total_character_count:
-
-- :ref:`int<class_int>`  **get_total_character_count**  **(** **)** const
+- void  **set_table_column_expand**  **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` expand, :ref:`int<class_int>` ratio  **)**
 
 .. _class_RichTextLabel_set_use_bbcode:
 
 - void  **set_use_bbcode**  **(** :ref:`bool<class_bool>` enable  **)**
 
-.. _class_RichTextLabel_is_using_bbcode:
+.. _class_RichTextLabel_set_visible_characters:
 
-- :ref:`bool<class_bool>`  **is_using_bbcode**  **(** **)** const
+- void  **set_visible_characters**  **(** :ref:`int<class_int>` amount  **)**
 
 

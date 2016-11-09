@@ -13,38 +13,51 @@ LightOccluder2D
 Brief Description
 -----------------
 
-
+Occludes light cast by a Light2D, thus casting shadows.
 
 Member Functions
 ----------------
 
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                               | :ref:`set_occluder_polygon<class_LightOccluder2D_set_occluder_polygon>`  **(** :ref:`OccluderPolygon2D<class_occluderpolygon2d>` polygon  **)** |
+| :ref:`int<class_int>`                              | :ref:`get_occluder_light_mask<class_LightOccluder2D_get_occluder_light_mask>`  **(** **)** const                                                |
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`OccluderPolygon2D<class_occluderpolygon2d>`  | :ref:`get_occluder_polygon<class_LightOccluder2D_get_occluder_polygon>`  **(** **)** const                                                      |
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                               | :ref:`set_occluder_light_mask<class_LightOccluder2D_set_occluder_light_mask>`  **(** :ref:`int<class_int>` mask  **)**                          |
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                              | :ref:`get_occluder_light_mask<class_LightOccluder2D_get_occluder_light_mask>`  **(** **)** const                                                |
+| void                                               | :ref:`set_occluder_polygon<class_LightOccluder2D_set_occluder_polygon>`  **(** :ref:`OccluderPolygon2D<class_occluderpolygon2d>` polygon  **)** |
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Description
+-----------
+
+Occludes light cast by a Light2D, thus casting shadows. The LightOccluder2D must be provided with a shape (see OccluderPolygon2D) that allows the shadow to be computed. This shape affects the resulting shadow, while the shape of the representating asset shadowed does not actually affect shadows.
 
 Member Function Description
 ---------------------------
 
-.. _class_LightOccluder2D_set_occluder_polygon:
+.. _class_LightOccluder2D_get_occluder_light_mask:
 
-- void  **set_occluder_polygon**  **(** :ref:`OccluderPolygon2D<class_occluderpolygon2d>` polygon  **)**
+- :ref:`int<class_int>`  **get_occluder_light_mask**  **(** **)** const
+
+Return the light mask of the LightOccluder2D.
 
 .. _class_LightOccluder2D_get_occluder_polygon:
 
 - :ref:`OccluderPolygon2D<class_occluderpolygon2d>`  **get_occluder_polygon**  **(** **)** const
 
+Return the OccluderPolygon2D that defines the LightOccluder2D.
+
 .. _class_LightOccluder2D_set_occluder_light_mask:
 
 - void  **set_occluder_light_mask**  **(** :ref:`int<class_int>` mask  **)**
 
-.. _class_LightOccluder2D_get_occluder_light_mask:
+Set the LightOccluder2D light mask. The LightOccluder2D will cast shadows only from Light2Ds that belong to the same light mask(s).
 
-- :ref:`int<class_int>`  **get_occluder_light_mask**  **(** **)** const
+.. _class_LightOccluder2D_set_occluder_polygon:
+
+- void  **set_occluder_polygon**  **(** :ref:`OccluderPolygon2D<class_occluderpolygon2d>` polygon  **)**
+
+Set the OccluderPolygon2D that defines the LightOccluder2D.
 
 

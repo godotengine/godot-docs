@@ -49,9 +49,9 @@ designed to it's current position? The answer is... a **transform**, the
 ship was *transformed* from their original position to the new one. This
 allows the ship to be displayed where it is.
 
-So, a transform is too generic of a term. To solve this puzzle, we will
-superimpose the ship's original design position at their current
-position:
+But transform is too generic of a term to describe this process. To solve this
+puzzle, we will superimpose the ship's original design position at their
+current position:
 
 .. image:: /img/tutomat4.png
 
@@ -115,15 +115,16 @@ is the offset.
 Basis
 -----
 
-The Origin we know what it is. It's where the 0.0 (origin) of the design
+We know what the Origin is. It's where the 0,0 (origin) of the design
 coordinate system ended up after being transformed to a new position.
 This is why it's called *Origin*, But in practice, it's just an offset
 to the new position.
 
-The Basis is more interesting. The basis is the X and Y of the new,
-transformed, OCS are pointing towards. It's telling what is in change of
-drawing 2D and 3D "Hey, the original X and Y axes or your design are
-*right here*, pointing towards *these directions*".
+The Basis is more interesting. The basis is the direction of X and Y in the OCS
+from the new, transformed location. It tells what has changed, in either 2D or
+3D. The Origin (offset) and Basis (direction) communicate "Hey, the original X
+and Y axes of your design are *right here*, pointing towards *these
+directions*."
 
 So, let's change the representation of the basis. Instead of 2 vectors,
 let's use a *matrix*.
@@ -138,18 +139,17 @@ Transforms in Godot
 -------------------
 
 This tutorial will not explain matrix math (and their operations) in
-depth, only it's practical use. There is plenty of material for that,
+depth, only its practical use. There is plenty of material for that,
 which should be a lot simpler to understand after completing this
 tutorial. We'll just explain how to use transforms.
 
 Matrix32
 --------
 
-:ref:`Matrix32 <class_Matrix32>`
-is a 3x2 matrix. It has 3 Vector2 elements and it's used for 2D. The "X"
-axis is the element 0, "Y" axis is the element 1 and "Origin" is element
-2. It's not divided in basis/origin for convenience, due to it's
-simplicity.
+:ref:`Matrix32 <class_Matrix32>` is a 3x2 matrix. It has 3 Vector2 elements and
+it's used for 2D. The "X" axis is the element 0, "Y" axis is the element 1 and
+"Origin" is element 2. It's not divided in basis/origin for convenience, due to
+it's simplicity.
 
 ::
 
@@ -427,7 +427,7 @@ Revert it just like the example above:
     var B = A * B_local_to_A
 
 OK, hopefully this should be enough! Let's complete the tutorial by
-moving to 3D matrices
+moving to 3D matrices.
 
 Matrices & transforms in 3D
 ---------------------------
@@ -449,7 +449,7 @@ accessed as:
     var y = m[1] # Vector3
     var z = m[2] # Vector3
 
-or, alternatively as:
+Or, alternatively as:
 
 ::
 

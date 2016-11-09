@@ -13,7 +13,7 @@ ImageTexture
 Brief Description
 -----------------
 
-
+A :ref:`Texture<class_texture>` based on an :ref:`Image<class_image>`.
 
 Member Functions
 ----------------
@@ -23,39 +23,44 @@ Member Functions
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`create_from_image<class_ImageTexture_create_from_image>`  **(** :ref:`Image<class_image>` image, :ref:`int<class_int>` flags=7  **)**                                   |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_format<class_ImageTexture_get_format>`  **(** **)** const                                                                                                           |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`load<class_ImageTexture_load>`  **(** :ref:`String<class_string>` path  **)**                                                                                           |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_data<class_ImageTexture_set_data>`  **(** :ref:`Image<class_image>` image  **)**                                                                                    |
+| void                       | :ref:`fix_alpha_edges<class_ImageTexture_fix_alpha_edges>`  **(** **)**                                                                                                       |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Image<class_image>`  | :ref:`get_data<class_ImageTexture_get_data>`  **(** **)** const                                                                                                               |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_storage<class_ImageTexture_set_storage>`  **(** :ref:`int<class_int>` mode  **)**                                                                                   |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_storage<class_ImageTexture_get_storage>`  **(** **)** const                                                                                                         |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_lossy_storage_quality<class_ImageTexture_set_lossy_storage_quality>`  **(** :ref:`float<class_float>` quality  **)**                                                |
+| :ref:`int<class_int>`      | :ref:`get_format<class_ImageTexture_get_format>`  **(** **)** const                                                                                                           |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_lossy_storage_quality<class_ImageTexture_get_lossy_storage_quality>`  **(** **)** const                                                                             |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`fix_alpha_edges<class_ImageTexture_fix_alpha_edges>`  **(** **)**                                                                                                       |
+| :ref:`int<class_int>`      | :ref:`get_storage<class_ImageTexture_get_storage>`  **(** **)** const                                                                                                         |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`premultiply_alpha<class_ImageTexture_premultiply_alpha>`  **(** **)**                                                                                                   |
+| void                       | :ref:`load<class_ImageTexture_load>`  **(** :ref:`String<class_string>` path  **)**                                                                                           |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`normal_to_xy<class_ImageTexture_normal_to_xy>`  **(** **)**                                                                                                             |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`shrink_x2_and_keep_size<class_ImageTexture_shrink_x2_and_keep_size>`  **(** **)**                                                                                       |
+| void                       | :ref:`premultiply_alpha<class_ImageTexture_premultiply_alpha>`  **(** **)**                                                                                                   |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_data<class_ImageTexture_set_data>`  **(** :ref:`Image<class_image>` image  **)**                                                                                    |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_lossy_storage_quality<class_ImageTexture_set_lossy_storage_quality>`  **(** :ref:`float<class_float>` quality  **)**                                                |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`set_size_override<class_ImageTexture_set_size_override>`  **(** :ref:`Vector2<class_vector2>` size  **)**                                                               |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_storage<class_ImageTexture_set_storage>`  **(** :ref:`int<class_int>` mode  **)**                                                                                   |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`shrink_x2_and_keep_size<class_ImageTexture_shrink_x2_and_keep_size>`  **(** **)**                                                                                       |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
 -----------------
 
-- **STORAGE_RAW** = **0**
-- **STORAGE_COMPRESS_LOSSY** = **1**
-- **STORAGE_COMPRESS_LOSSLESS** = **2**
+- **STORAGE_RAW** = **0** --- :ref:`Image<class_image>` data is stored raw and unaltered.
+- **STORAGE_COMPRESS_LOSSY** = **1** --- :ref:`Image<class_image>` data is compressed with a lossy algorithm. You can set the storage quality with :ref:`set_lossy_storage_quality<class_ImageTexture_set_lossy_storage_quality>`.
+- **STORAGE_COMPRESS_LOSSLESS** = **2** --- :ref:`Image<class_image>` data is compressed with a lossless algorithm.
+
+Description
+-----------
+
+A :ref:`Texture<class_texture>` based on an :ref:`Image<class_image>`. Can be created from an :ref:`Image<class_image>`.
 
 Member Function Description
 ---------------------------
@@ -64,60 +69,84 @@ Member Function Description
 
 - void  **create**  **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`int<class_int>` format, :ref:`int<class_int>` flags=7  **)**
 
+Create a new :ref:`ImageTexture<class_imagetexture>` with "width" and "height".
+
+"format" one of :ref:`Image<class_image>`.FORMAT\_\*.
+
+"flags" one or more of :ref:`Texture<class_texture>`.FLAG\_\*.
+
 .. _class_ImageTexture_create_from_image:
 
 - void  **create_from_image**  **(** :ref:`Image<class_image>` image, :ref:`int<class_int>` flags=7  **)**
 
-.. _class_ImageTexture_get_format:
-
-- :ref:`int<class_int>`  **get_format**  **(** **)** const
-
-.. _class_ImageTexture_load:
-
-- void  **load**  **(** :ref:`String<class_string>` path  **)**
-
-.. _class_ImageTexture_set_data:
-
-- void  **set_data**  **(** :ref:`Image<class_image>` image  **)**
-
-.. _class_ImageTexture_get_data:
-
-- :ref:`Image<class_image>`  **get_data**  **(** **)** const
-
-.. _class_ImageTexture_set_storage:
-
-- void  **set_storage**  **(** :ref:`int<class_int>` mode  **)**
-
-.. _class_ImageTexture_get_storage:
-
-- :ref:`int<class_int>`  **get_storage**  **(** **)** const
-
-.. _class_ImageTexture_set_lossy_storage_quality:
-
-- void  **set_lossy_storage_quality**  **(** :ref:`float<class_float>` quality  **)**
-
-.. _class_ImageTexture_get_lossy_storage_quality:
-
-- :ref:`float<class_float>`  **get_lossy_storage_quality**  **(** **)** const
+Create a new :ref:`ImageTexture<class_imagetexture>` from an :ref:`Image<class_image>` with "flags" from :ref:`Texture<class_texture>`.FLAG\_\*.
 
 .. _class_ImageTexture_fix_alpha_edges:
 
 - void  **fix_alpha_edges**  **(** **)**
 
-.. _class_ImageTexture_premultiply_alpha:
+.. _class_ImageTexture_get_data:
 
-- void  **premultiply_alpha**  **(** **)**
+- :ref:`Image<class_image>`  **get_data**  **(** **)** const
+
+Return the :ref:`Image<class_image>` of this :ref:`ImageTexture<class_imagetexture>`.
+
+.. _class_ImageTexture_get_format:
+
+- :ref:`int<class_int>`  **get_format**  **(** **)** const
+
+Return the format of the :ref:`ImageTexture<class_imagetexture>`, one of :ref:`Image<class_image>`.FORMAT\_\*.
+
+.. _class_ImageTexture_get_lossy_storage_quality:
+
+- :ref:`float<class_float>`  **get_lossy_storage_quality**  **(** **)** const
+
+Return the storage quality for :ref:`ImageTexture<class_imagetexture>`.STORAGE_COMPRESS_LOSSY.
+
+.. _class_ImageTexture_get_storage:
+
+- :ref:`int<class_int>`  **get_storage**  **(** **)** const
+
+Return the storage type. One of :ref:`ImageTexture<class_imagetexture>`.STORAGE\_\*.
+
+.. _class_ImageTexture_load:
+
+- void  **load**  **(** :ref:`String<class_string>` path  **)**
+
+Load an :ref:`ImageTexure<class_imagetexure>`.
 
 .. _class_ImageTexture_normal_to_xy:
 
 - void  **normal_to_xy**  **(** **)**
 
-.. _class_ImageTexture_shrink_x2_and_keep_size:
+.. _class_ImageTexture_premultiply_alpha:
 
-- void  **shrink_x2_and_keep_size**  **(** **)**
+- void  **premultiply_alpha**  **(** **)**
+
+.. _class_ImageTexture_set_data:
+
+- void  **set_data**  **(** :ref:`Image<class_image>` image  **)**
+
+Set the :ref:`Image<class_image>` of this :ref:`ImageTexture<class_imagetexture>`.
+
+.. _class_ImageTexture_set_lossy_storage_quality:
+
+- void  **set_lossy_storage_quality**  **(** :ref:`float<class_float>` quality  **)**
+
+Set the storage quality in case of :ref:`ImageTexture<class_imagetexture>`.STORAGE_COMPRESS_LOSSY.
 
 .. _class_ImageTexture_set_size_override:
 
 - void  **set_size_override**  **(** :ref:`Vector2<class_vector2>` size  **)**
+
+.. _class_ImageTexture_set_storage:
+
+- void  **set_storage**  **(** :ref:`int<class_int>` mode  **)**
+
+Set the storage type. One of :ref:`ImageTexture<class_imagetexture>`.STORAGE\_\*.
+
+.. _class_ImageTexture_shrink_x2_and_keep_size:
+
+- void  **shrink_x2_and_keep_size**  **(** **)**
 
 

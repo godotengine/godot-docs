@@ -17,6 +17,10 @@ Member Functions
 ----------------
 
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`Vector2<class_Vector2_Vector2>`  **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y  **)**                                                                                                    |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`abs<class_Vector2_abs>`  **(** **)**                                                                                                                                                                      |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`angle<class_Vector2_angle>`  **(** **)**                                                                                                                                                                  |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`angle_to<class_Vector2_angle_to>`  **(** :ref:`Vector2<class_vector2>` to  **)**                                                                                                                          |
@@ -55,19 +59,32 @@ Member Functions
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`tangent<class_Vector2_tangent>`  **(** **)**                                                                                                                                                              |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`Vector2<class_Vector2_Vector2>`  **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y  **)**                                                                                                    |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
 
-- :ref:`float<class_float>` **x**
-- :ref:`float<class_float>` **y**
-- :ref:`float<class_float>` **width**
-- :ref:`float<class_float>` **height**
+- :ref:`float<class_float>` **height** - Height of the vector (Same as Y).
+- :ref:`float<class_float>` **width** - Width of the vector (Same as X).
+- :ref:`float<class_float>` **x** - X component of the vector.
+- :ref:`float<class_float>` **y** - Y component of the vector.
+
+Description
+-----------
+
+2-element structure that can be used to represent positions in 2d-space, or any other pair of numeric values.
 
 Member Function Description
 ---------------------------
+
+.. _class_Vector2_Vector2:
+
+- :ref:`Vector2<class_vector2>`  **Vector2**  **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y  **)**
+
+Constructs a new Vector2 from the given x and y.
+
+.. _class_Vector2_abs:
+
+- :ref:`Vector2<class_vector2>`  **abs**  **(** **)**
 
 .. _class_Vector2_angle:
 
@@ -122,6 +139,8 @@ Remove the fractional part of x and y.
 .. _class_Vector2_floorf:
 
 - :ref:`Vector2<class_vector2>`  **floorf**  **(** **)**
+
+Remove the fractional part of x and y.
 
 .. _class_Vector2_get_aspect:
 
@@ -182,11 +201,5 @@ Snaps the vector to a grid with the given size.
 - :ref:`Vector2<class_vector2>`  **tangent**  **(** **)**
 
 Returns a perpendicular vector.
-
-.. _class_Vector2_Vector2:
-
-- :ref:`Vector2<class_vector2>`  **Vector2**  **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y  **)**
-
-Constructs a new Vector2 from the given x and y.
 
 

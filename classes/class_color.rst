@@ -17,6 +17,14 @@ Member Functions
 ----------------
 
 +------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`    | :ref:`Color<class_Color_Color>`  **(** :ref:`float<class_float>` r, :ref:`float<class_float>` g, :ref:`float<class_float>` b, :ref:`float<class_float>` a  **)** |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`    | :ref:`Color<class_Color_Color>`  **(** :ref:`float<class_float>` r, :ref:`float<class_float>` g, :ref:`float<class_float>` b  **)**                              |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`    | :ref:`Color<class_Color_Color>`  **(** :ref:`int<class_int>` from  **)**                                                                                         |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`    | :ref:`Color<class_Color_Color>`  **(** :ref:`String<class_string>` from  **)**                                                                                   |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_color>`    | :ref:`blend<class_Color_blend>`  **(** :ref:`Color<class_color>` over  **)**                                                                                     |
 +------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_color>`    | :ref:`contrasted<class_Color_contrasted>`  **(** **)**                                                                                                           |
@@ -33,29 +41,21 @@ Member Functions
 +------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`  | :ref:`to_html<class_Color_to_html>`  **(** :ref:`bool<class_bool>` with_alpha=True  **)**                                                                        |
 +------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`    | :ref:`Color<class_Color_Color>`  **(** :ref:`float<class_float>` r, :ref:`float<class_float>` g, :ref:`float<class_float>` b, :ref:`float<class_float>` a  **)** |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`    | :ref:`Color<class_Color_Color>`  **(** :ref:`float<class_float>` r, :ref:`float<class_float>` g, :ref:`float<class_float>` b  **)**                              |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`    | :ref:`Color<class_Color_Color>`  **(** :ref:`int<class_int>` from  **)**                                                                                         |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`    | :ref:`Color<class_Color_Color>`  **(** :ref:`String<class_string>` from  **)**                                                                                   |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
 
-- :ref:`float<class_float>` **r**
-- :ref:`float<class_float>` **g**
-- :ref:`float<class_float>` **b**
-- :ref:`float<class_float>` **a**
-- :ref:`float<class_float>` **h**
-- :ref:`float<class_float>` **s**
-- :ref:`float<class_float>` **v**
-- :ref:`int<class_int>` **r8**
-- :ref:`int<class_int>` **g8**
-- :ref:`int<class_int>` **b8**
-- :ref:`int<class_int>` **a8**
+- :ref:`float<class_float>` **a** - Alpha (0 to 1)
+- :ref:`int<class_int>` **a8** - Alpha (0 to 255)
+- :ref:`float<class_float>` **b** - Blue (0 to 1)
+- :ref:`int<class_int>` **b8** - Blue (0 to 255)
+- :ref:`float<class_float>` **g** - Green (0 to 1)
+- :ref:`int<class_int>` **g8** - Green (0 to 255)
+- :ref:`float<class_float>` **h** - Hue (0 to 1)
+- :ref:`float<class_float>` **r** - Red (0 to 1)
+- :ref:`int<class_int>` **r8** - Red (0 to 255)
+- :ref:`float<class_float>` **s** - Saturation (0 to 1)
+- :ref:`float<class_float>` **v** - Value (0 to 1)
 
 Description
 -----------
@@ -65,9 +65,35 @@ A color is represented as red, green and blue (r,g,b) components. Additionally, 
 Member Function Description
 ---------------------------
 
+.. _class_Color_Color:
+
+- :ref:`Color<class_color>`  **Color**  **(** :ref:`float<class_float>` r, :ref:`float<class_float>` g, :ref:`float<class_float>` b, :ref:`float<class_float>` a  **)**
+
+Construct the color from an RGBA profile.
+
+.. _class_Color_Color:
+
+- :ref:`Color<class_color>`  **Color**  **(** :ref:`float<class_float>` r, :ref:`float<class_float>` g, :ref:`float<class_float>` b  **)**
+
+Construct the color from an RGBA profile.
+
+.. _class_Color_Color:
+
+- :ref:`Color<class_color>`  **Color**  **(** :ref:`int<class_int>` from  **)**
+
+Construct the color from an RGBA profile.
+
+.. _class_Color_Color:
+
+- :ref:`Color<class_color>`  **Color**  **(** :ref:`String<class_string>` from  **)**
+
+Construct the color from an RGBA profile.
+
 .. _class_Color_blend:
 
 - :ref:`Color<class_color>`  **blend**  **(** :ref:`Color<class_color>` over  **)**
+
+Return a new color blended with anothor one.
 
 .. _class_Color_contrasted:
 
@@ -110,29 +136,5 @@ Convert color to ARGB32, more compatible with DirectX.
 - :ref:`String<class_string>`  **to_html**  **(** :ref:`bool<class_bool>` with_alpha=True  **)**
 
 Return the HTML hexadecimal color string.
-
-.. _class_Color_Color:
-
-- :ref:`Color<class_color>`  **Color**  **(** :ref:`float<class_float>` r, :ref:`float<class_float>` g, :ref:`float<class_float>` b, :ref:`float<class_float>` a  **)**
-
-Construct the color from an RGBA profile.
-
-.. _class_Color_Color:
-
-- :ref:`Color<class_color>`  **Color**  **(** :ref:`float<class_float>` r, :ref:`float<class_float>` g, :ref:`float<class_float>` b  **)**
-
-Construct the color from an RGBA profile.
-
-.. _class_Color_Color:
-
-- :ref:`Color<class_color>`  **Color**  **(** :ref:`int<class_int>` from  **)**
-
-Construct the color from an RGBA profile.
-
-.. _class_Color_Color:
-
-- :ref:`Color<class_color>`  **Color**  **(** :ref:`String<class_string>` from  **)**
-
-Construct the color from an RGBA profile.
 
 

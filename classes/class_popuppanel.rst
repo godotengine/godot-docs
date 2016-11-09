@@ -13,5 +13,10 @@ PopupPanel
 Brief Description
 -----------------
 
-Base class for Popup Panels
+Class for displaying popups with a panel background.
+
+Description
+-----------
+
+Class for displaying popups with a panel background. In some cases it might be simpler to use than :ref:`Popup<class_popup>`, since it provides a configurable background. If you are making windows, better check :ref:`WindowDialog<class_windowdialog>`.
 

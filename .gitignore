@@ -1,6 +1,5 @@
 _build/
 env/
-
-.fscache
+extensions/__pycache__/
 *~
 .directory

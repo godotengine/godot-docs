@@ -15,50 +15,64 @@ Input
 Brief Description
 -----------------
 
-
+A Singleton that deals with inputs.
 
 Member Functions
 ----------------
 
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_key_pressed<class_Input_is_key_pressed>`  **(** :ref:`int<class_int>` scancode  **)**                                                                            |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_mouse_button_pressed<class_Input_is_mouse_button_pressed>`  **(** :ref:`int<class_int>` button  **)**                                                            |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_joy_button_pressed<class_Input_is_joy_button_pressed>`  **(** :ref:`int<class_int>` device, :ref:`int<class_int>` button  **)**                                  |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_action_pressed<class_Input_is_action_pressed>`  **(** :ref:`String<class_string>` action  **)**                                                                  |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`add_joy_mapping<class_Input_add_joy_mapping>`  **(** :ref:`String<class_string>` mapping, :ref:`bool<class_bool>` update_existing=false  **)**                      |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`remove_joy_mapping<class_Input_remove_joy_mapping>`  **(** :ref:`String<class_string>` guid  **)**                                                                  |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_joy_known<class_Input_is_joy_known>`  **(** :ref:`int<class_int>` device  **)**                                                                                  |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_joy_axis<class_Input_get_joy_axis>`  **(** :ref:`int<class_int>` device, :ref:`int<class_int>` axis  **)**                                                      |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`    | :ref:`get_joy_name<class_Input_get_joy_name>`  **(** :ref:`int<class_int>` device  **)**                                                                                  |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`    | :ref:`get_joy_guid<class_Input_get_joy_guid>`  **(** :ref:`int<class_int>` device  **)** const                                                                            |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`get_accelerometer<class_Input_get_accelerometer>`  **(** **)**                                                                                                      |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_mouse_speed<class_Input_get_mouse_speed>`  **(** **)** const                                                                                                    |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_mouse_button_mask<class_Input_get_mouse_button_mask>`  **(** **)** const                                                                                        |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_mouse_mode<class_Input_set_mouse_mode>`  **(** :ref:`int<class_int>` mode  **)**                                                                                |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_mouse_mode<class_Input_get_mouse_mode>`  **(** **)** const                                                                                                      |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`warp_mouse_pos<class_Input_warp_mouse_pos>`  **(** :ref:`Vector2<class_vector2>` to  **)**                                                                          |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`action_press<class_Input_action_press>`  **(** :ref:`String<class_string>` action  **)**                                                                            |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`action_release<class_Input_action_release>`  **(** :ref:`String<class_string>` action  **)**                                                                        |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_custom_mouse_cursor<class_Input_set_custom_mouse_cursor>`  **(** :ref:`Texture<class_texture>` image, :ref:`Vector2<class_vector2>` hotspot=Vector2(0,0)  **)** |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`action_press<class_Input_action_press>`  **(** :ref:`String<class_string>` action  **)**                                                                                                                                     |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`action_release<class_Input_action_release>`  **(** :ref:`String<class_string>` action  **)**                                                                                                                                 |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`add_joy_mapping<class_Input_add_joy_mapping>`  **(** :ref:`String<class_string>` mapping, :ref:`bool<class_bool>` update_existing=false  **)**                                                                               |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`  | :ref:`get_accelerometer<class_Input_get_accelerometer>`  **(** **)**                                                                                                                                                               |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`      | :ref:`get_connected_joysticks<class_Input_get_connected_joysticks>`  **(** **)**                                                                                                                                                   |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`  | :ref:`get_gyroscope<class_Input_get_gyroscope>`  **(** **)**                                                                                                                                                                       |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_joy_axis<class_Input_get_joy_axis>`  **(** :ref:`int<class_int>` device, :ref:`int<class_int>` axis  **)**                                                                                                               |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`    | :ref:`get_joy_guid<class_Input_get_joy_guid>`  **(** :ref:`int<class_int>` device  **)** const                                                                                                                                     |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`    | :ref:`get_joy_name<class_Input_get_joy_name>`  **(** :ref:`int<class_int>` device  **)**                                                                                                                                           |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_joy_vibration_duration<class_Input_get_joy_vibration_duration>`  **(** :ref:`int<class_int>` device  **)**                                                                                                               |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_joy_vibration_strength<class_Input_get_joy_vibration_strength>`  **(** :ref:`int<class_int>` device  **)**                                                                                                               |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`  | :ref:`get_magnetometer<class_Input_get_magnetometer>`  **(** **)**                                                                                                                                                                 |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_mouse_button_mask<class_Input_get_mouse_button_mask>`  **(** **)** const                                                                                                                                                 |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_mouse_mode<class_Input_get_mouse_mode>`  **(** **)** const                                                                                                                                                               |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_mouse_speed<class_Input_get_mouse_speed>`  **(** **)** const                                                                                                                                                             |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_action_pressed<class_Input_is_action_pressed>`  **(** :ref:`String<class_string>` action  **)**                                                                                                                           |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_joy_button_pressed<class_Input_is_joy_button_pressed>`  **(** :ref:`int<class_int>` device, :ref:`int<class_int>` button  **)**                                                                                           |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_joy_known<class_Input_is_joy_known>`  **(** :ref:`int<class_int>` device  **)**                                                                                                                                           |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_key_pressed<class_Input_is_key_pressed>`  **(** :ref:`int<class_int>` scancode  **)**                                                                                                                                     |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_mouse_button_pressed<class_Input_is_mouse_button_pressed>`  **(** :ref:`int<class_int>` button  **)**                                                                                                                     |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`remove_joy_mapping<class_Input_remove_joy_mapping>`  **(** :ref:`String<class_string>` guid  **)**                                                                                                                           |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_custom_mouse_cursor<class_Input_set_custom_mouse_cursor>`  **(** :ref:`Texture<class_texture>` image, :ref:`Vector2<class_vector2>` hotspot=Vector2(0, 0)  **)**                                                         |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_mouse_mode<class_Input_set_mouse_mode>`  **(** :ref:`int<class_int>` mode  **)**                                                                                                                                         |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`start_joy_vibration<class_Input_start_joy_vibration>`  **(** :ref:`int<class_int>` device, :ref:`float<class_float>` weak_magnitude, :ref:`float<class_float>` strong_magnitude, :ref:`float<class_float>` duration=0  **)** |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`stop_joy_vibration<class_Input_stop_joy_vibration>`  **(** :ref:`int<class_int>` device  **)**                                                                                                                               |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`warp_mouse_pos<class_Input_warp_mouse_pos>`  **(** :ref:`Vector2<class_vector2>` to  **)**                                                                                                                                   |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -68,32 +82,29 @@ Signals
 Numeric Constants
 -----------------
 
-- **MOUSE_MODE_VISIBLE** = **0**
-- **MOUSE_MODE_HIDDEN** = **1**
-- **MOUSE_MODE_CAPTURED** = **2**
+- **MOUSE_MODE_VISIBLE** = **0** --- Makes the mouse cursor visible if it is hidden.
+- **MOUSE_MODE_HIDDEN** = **1** --- Makes the mouse cursor hidden if it is visible.
+- **MOUSE_MODE_CAPTURED** = **2** --- Captures the mouse. The mouse will be hidden and unable to leave the game window. But it will still register movement and mouse button presses.
+
+Description
+-----------
+
+A Singleton that deals with inputs. This includes key presses, mouse buttons and movement, joysticks, and input actions.
 
 Member Function Description
 ---------------------------
 
-.. _class_Input_is_key_pressed:
+.. _class_Input_action_press:
 
-- :ref:`bool<class_bool>`  **is_key_pressed**  **(** :ref:`int<class_int>` scancode  **)**
+- void  **action_press**  **(** :ref:`String<class_string>` action  **)**
 
-.. _class_Input_is_mouse_button_pressed:
+This will simulate pressing the specificed action.
 
-- :ref:`bool<class_bool>`  **is_mouse_button_pressed**  **(** :ref:`int<class_int>` button  **)**
+.. _class_Input_action_release:
 
-Returns true or false depending on whether mouse button is pressed or not. You can pass BUTTON\_\*, which are pre-defined constants listed in :ref:`@Global Scope<class_@global scope>`.
+- void  **action_release**  **(** :ref:`String<class_string>` action  **)**
 
-.. _class_Input_is_joy_button_pressed:
-
-- :ref:`bool<class_bool>`  **is_joy_button_pressed**  **(** :ref:`int<class_int>` device, :ref:`int<class_int>` button  **)**
-
-Returns if the joystick button at the given index is currently pressed. (see JOY\_\* constants in :ref:`@Global Scope<class_@global scope>`)
-
-.. _class_Input_is_action_pressed:
-
-- :ref:`bool<class_bool>`  **is_action_pressed**  **(** :ref:`String<class_string>` action  **)**
+If the specified action is already pressed, this will release it.
 
 .. _class_Input_add_joy_mapping:
 
@@ -101,17 +112,23 @@ Returns if the joystick button at the given index is currently pressed. (see JOY
 
 Add a new mapping entry (in SDL2 format) to the mapping database. Optionally update already connected devices.
 
-.. _class_Input_remove_joy_mapping:
+.. _class_Input_get_accelerometer:
 
-- void  **remove_joy_mapping**  **(** :ref:`String<class_string>` guid  **)**
+- :ref:`Vector3<class_vector3>`  **get_accelerometer**  **(** **)**
 
-Removes all mappings from the internal db that match the given uid.
+If the device has an accelerometer, this will return the movement.
 
-.. _class_Input_is_joy_known:
+.. _class_Input_get_connected_joysticks:
 
-- :ref:`bool<class_bool>`  **is_joy_known**  **(** :ref:`int<class_int>` device  **)**
+- :ref:`Array<class_array>`  **get_connected_joysticks**  **(** **)**
 
-Returns if the specified device is known by the system. This means that it sets all button and axis indices exactly as defined in the JOY\_\* constants (see :ref:`@Global Scope<class_@global scope>`). Unknown joysticks are not expected to match these constants, but you can still retrieve events from them.
+Returns an :ref:`Array<class_array>` containing the device IDs of all currently connected joysticks.
+
+.. _class_Input_get_gyroscope:
+
+- :ref:`Vector3<class_vector3>`  **get_gyroscope**  **(** **)**
+
+If the device has a gyroscope, this will return the rate of rotation in rad/s around a device's x, y, and z axis.
 
 .. _class_Input_get_joy_axis:
 
@@ -119,52 +136,118 @@ Returns if the specified device is known by the system. This means that it sets 
 
 Returns the current value of the joystick axis at given index (see JOY\_\* constants in :ref:`@Global Scope<class_@global scope>`)
 
-.. _class_Input_get_joy_name:
-
-- :ref:`String<class_string>`  **get_joy_name**  **(** :ref:`int<class_int>` device  **)**
-
-Returns the name of the joystick at the specified device index
-
 .. _class_Input_get_joy_guid:
 
 - :ref:`String<class_string>`  **get_joy_guid**  **(** :ref:`int<class_int>` device  **)** const
 
 Returns a SDL2 compatible device guid on platforms that use gamepad remapping. Returns "Default Gamepad" otherwise.
 
-.. _class_Input_get_accelerometer:
+.. _class_Input_get_joy_name:
 
-- :ref:`Vector3<class_vector3>`  **get_accelerometer**  **(** **)**
+- :ref:`String<class_string>`  **get_joy_name**  **(** :ref:`int<class_int>` device  **)**
 
-.. _class_Input_get_mouse_speed:
+Returns the name of the joystick at the specified device index
 
-- :ref:`Vector2<class_vector2>`  **get_mouse_speed**  **(** **)** const
+.. _class_Input_get_joy_vibration_duration:
+
+- :ref:`float<class_float>`  **get_joy_vibration_duration**  **(** :ref:`int<class_int>` device  **)**
+
+Returns the duration of the current vibration effect in seconds.
+
+.. _class_Input_get_joy_vibration_strength:
+
+- :ref:`Vector2<class_vector2>`  **get_joy_vibration_strength**  **(** :ref:`int<class_int>` device  **)**
+
+Returns the strength of the joystick vibration: x is the strength of the weak motor, and y is the strength of the strong motor.
+
+.. _class_Input_get_magnetometer:
+
+- :ref:`Vector3<class_vector3>`  **get_magnetometer**  **(** **)**
+
+If the device has a magnetometer, this will return the magnetic field strength in micro-Tesla for all axes.
 
 .. _class_Input_get_mouse_button_mask:
 
 - :ref:`int<class_int>`  **get_mouse_button_mask**  **(** **)** const
 
-.. _class_Input_set_mouse_mode:
-
-- void  **set_mouse_mode**  **(** :ref:`int<class_int>` mode  **)**
+Returns mouse buttons as a bitmask. If multiple mouse buttons are pressed at the same time the bits are added together.
 
 .. _class_Input_get_mouse_mode:
 
 - :ref:`int<class_int>`  **get_mouse_mode**  **(** **)** const
 
+Return the mouse mode. See the constants for more information.
+
+.. _class_Input_get_mouse_speed:
+
+- :ref:`Vector2<class_vector2>`  **get_mouse_speed**  **(** **)** const
+
+Returns the mouse speed for the last time the cursor was moved, and this until the next frame where the mouse moves. This means that even if the mouse is not moving, this function will still return the value of the last motion.
+
+.. _class_Input_is_action_pressed:
+
+- :ref:`bool<class_bool>`  **is_action_pressed**  **(** :ref:`String<class_string>` action  **)**
+
+Returns true or false depending on whether the action event is pressed. Actions and their events can be set in the Project Settings / Input Map tab. Or be set with :ref:`InputMap<class_inputmap>`.
+
+.. _class_Input_is_joy_button_pressed:
+
+- :ref:`bool<class_bool>`  **is_joy_button_pressed**  **(** :ref:`int<class_int>` device, :ref:`int<class_int>` button  **)**
+
+Returns if the joystick button at the given index is currently pressed. (see JOY\_\* constants in :ref:`@Global Scope<class_@global scope>`)
+
+.. _class_Input_is_joy_known:
+
+- :ref:`bool<class_bool>`  **is_joy_known**  **(** :ref:`int<class_int>` device  **)**
+
+Returns if the specified device is known by the system. This means that it sets all button and axis indices exactly as defined in the JOY\_\* constants (see :ref:`@Global Scope<class_@global scope>`). Unknown joysticks are not expected to match these constants, but you can still retrieve events from them.
+
+.. _class_Input_is_key_pressed:
+
+- :ref:`bool<class_bool>`  **is_key_pressed**  **(** :ref:`int<class_int>` scancode  **)**
+
+Returns true or false depending on whether the key is pressed or not. You can pass KEY\_\*, which are pre-defined constants listed in :ref:`@Global Scope<class_@global scope>`.
+
+.. _class_Input_is_mouse_button_pressed:
+
+- :ref:`bool<class_bool>`  **is_mouse_button_pressed**  **(** :ref:`int<class_int>` button  **)**
+
+Returns true or false depending on whether mouse button is pressed or not. You can pass BUTTON\_\*, which are pre-defined constants listed in :ref:`@Global Scope<class_@global scope>`.
+
+.. _class_Input_remove_joy_mapping:
+
+- void  **remove_joy_mapping**  **(** :ref:`String<class_string>` guid  **)**
+
+Removes all mappings from the internal db that match the given uid.
+
+.. _class_Input_set_custom_mouse_cursor:
+
+- void  **set_custom_mouse_cursor**  **(** :ref:`Texture<class_texture>` image, :ref:`Vector2<class_vector2>` hotspot=Vector2(0, 0)  **)**
+
+Set a custom mouse cursor image, which is only visible inside the game window. The hotspot can also be specified.
+
+.. _class_Input_set_mouse_mode:
+
+- void  **set_mouse_mode**  **(** :ref:`int<class_int>` mode  **)**
+
+Set the mouse mode. See the constants for more information.
+
+.. _class_Input_start_joy_vibration:
+
+- void  **start_joy_vibration**  **(** :ref:`int<class_int>` device, :ref:`float<class_float>` weak_magnitude, :ref:`float<class_float>` strong_magnitude, :ref:`float<class_float>` duration=0  **)**
+
+Starts to vibrate the joystick. Joysticks usually come with two rumble motors, a strong and a weak one. weak_magnitude is the strength of the weak motor (between 0 and 1) and strong_magnitude is the strength of the strong motor (between 0 and 1). duration is the duration of the effect in seconds (a duration of 0 will play the vibration indefinitely).
+
+.. _class_Input_stop_joy_vibration:
+
+- void  **stop_joy_vibration**  **(** :ref:`int<class_int>` device  **)**
+
+Stops the vibration of the joystick.
+
 .. _class_Input_warp_mouse_pos:
 
 - void  **warp_mouse_pos**  **(** :ref:`Vector2<class_vector2>` to  **)**
 
-.. _class_Input_action_press:
-
-- void  **action_press**  **(** :ref:`String<class_string>` action  **)**
-
-.. _class_Input_action_release:
-
-- void  **action_release**  **(** :ref:`String<class_string>` action  **)**
-
-.. _class_Input_set_custom_mouse_cursor:
-
-- void  **set_custom_mouse_cursor**  **(** :ref:`Texture<class_texture>` image, :ref:`Vector2<class_vector2>` hotspot=Vector2(0,0)  **)**
+Sets the mouse position to the specified vector.
 
 

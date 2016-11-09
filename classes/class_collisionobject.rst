@@ -25,40 +25,40 @@ Member Functions
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`add_shape<class_CollisionObject_add_shape>`  **(** :ref:`Shape<class_shape>` shape, :ref:`Transform<class_transform>` transform=Transform()  **)**                                                                                                                          |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`              | :ref:`get_shape_count<class_CollisionObject_get_shape_count>`  **(** **)** const                                                                                                                                                                                                  |
-+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_shape<class_CollisionObject_set_shape>`  **(** :ref:`int<class_int>` shape_idx, :ref:`Shape<class_shape>` shape  **)**                                                                                                                                                  |
-+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_shape_transform<class_CollisionObject_set_shape_transform>`  **(** :ref:`int<class_int>` shape_idx, :ref:`Transform<class_transform>` transform  **)**                                                                                                                  |
-+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_shape_as_trigger<class_CollisionObject_set_shape_as_trigger>`  **(** :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` enable  **)**                                                                                                                             |
-+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`            | :ref:`is_shape_set_as_trigger<class_CollisionObject_is_shape_set_as_trigger>`  **(** :ref:`int<class_int>` shape_idx  **)** const                                                                                                                                                 |
-+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Shape<class_shape>`          | :ref:`get_shape<class_CollisionObject_get_shape>`  **(** :ref:`int<class_int>` shape_idx  **)** const                                                                                                                                                                             |
-+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_transform>`  | :ref:`get_shape_transform<class_CollisionObject_get_shape_transform>`  **(** :ref:`int<class_int>` shape_idx  **)** const                                                                                                                                                         |
-+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`remove_shape<class_CollisionObject_remove_shape>`  **(** :ref:`int<class_int>` shape_idx  **)**                                                                                                                                                                             |
-+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`clear_shapes<class_CollisionObject_clear_shapes>`  **(** **)**                                                                                                                                                                                                              |
-+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_ray_pickable<class_CollisionObject_set_ray_pickable>`  **(** :ref:`bool<class_bool>` ray_pickable  **)**                                                                                                                                                                |
-+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`            | :ref:`is_ray_pickable<class_CollisionObject_is_ray_pickable>`  **(** **)** const                                                                                                                                                                                                  |
-+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_capture_input_on_drag<class_CollisionObject_set_capture_input_on_drag>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                                                                                    |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`            | :ref:`get_capture_input_on_drag<class_CollisionObject_get_capture_input_on_drag>`  **(** **)** const                                                                                                                                                                              |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_rid>`              | :ref:`get_rid<class_CollisionObject_get_rid>`  **(** **)** const                                                                                                                                                                                                                  |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Shape<class_shape>`          | :ref:`get_shape<class_CollisionObject_get_shape>`  **(** :ref:`int<class_int>` shape_idx  **)** const                                                                                                                                                                             |
++------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`              | :ref:`get_shape_count<class_CollisionObject_get_shape_count>`  **(** **)** const                                                                                                                                                                                                  |
++------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_transform>`  | :ref:`get_shape_transform<class_CollisionObject_get_shape_transform>`  **(** :ref:`int<class_int>` shape_idx  **)** const                                                                                                                                                         |
++------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`            | :ref:`is_ray_pickable<class_CollisionObject_is_ray_pickable>`  **(** **)** const                                                                                                                                                                                                  |
++------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`            | :ref:`is_shape_set_as_trigger<class_CollisionObject_is_shape_set_as_trigger>`  **(** :ref:`int<class_int>` shape_idx  **)** const                                                                                                                                                 |
++------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`remove_shape<class_CollisionObject_remove_shape>`  **(** :ref:`int<class_int>` shape_idx  **)**                                                                                                                                                                             |
++------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_capture_input_on_drag<class_CollisionObject_set_capture_input_on_drag>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                                                                                    |
++------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_ray_pickable<class_CollisionObject_set_ray_pickable>`  **(** :ref:`bool<class_bool>` ray_pickable  **)**                                                                                                                                                                |
++------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_shape<class_CollisionObject_set_shape>`  **(** :ref:`int<class_int>` shape_idx, :ref:`Shape<class_shape>` shape  **)**                                                                                                                                                  |
++------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_shape_as_trigger<class_CollisionObject_set_shape_as_trigger>`  **(** :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` enable  **)**                                                                                                                             |
++------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_shape_transform<class_CollisionObject_set_shape_transform>`  **(** :ref:`int<class_int>` shape_idx, :ref:`Transform<class_transform>` transform  **)**                                                                                                                  |
++------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
 
--  **mouse_enter**  **(** **)**
 -  **input_event**  **(** :ref:`Object<class_object>` camera, :ref:`InputEvent<class_inputevent>` event, :ref:`Vector3<class_vector3>` click_pos, :ref:`Vector3<class_vector3>` click_normal, :ref:`int<class_int>` shape_idx  **)**
+-  **mouse_enter**  **(** **)**
 -  **mouse_exit**  **(** **)**
 
 Member Function Description
@@ -72,53 +72,9 @@ Member Function Description
 
 - void  **add_shape**  **(** :ref:`Shape<class_shape>` shape, :ref:`Transform<class_transform>` transform=Transform()  **)**
 
-.. _class_CollisionObject_get_shape_count:
-
-- :ref:`int<class_int>`  **get_shape_count**  **(** **)** const
-
-.. _class_CollisionObject_set_shape:
-
-- void  **set_shape**  **(** :ref:`int<class_int>` shape_idx, :ref:`Shape<class_shape>` shape  **)**
-
-.. _class_CollisionObject_set_shape_transform:
-
-- void  **set_shape_transform**  **(** :ref:`int<class_int>` shape_idx, :ref:`Transform<class_transform>` transform  **)**
-
-.. _class_CollisionObject_set_shape_as_trigger:
-
-- void  **set_shape_as_trigger**  **(** :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` enable  **)**
-
-.. _class_CollisionObject_is_shape_set_as_trigger:
-
-- :ref:`bool<class_bool>`  **is_shape_set_as_trigger**  **(** :ref:`int<class_int>` shape_idx  **)** const
-
-.. _class_CollisionObject_get_shape:
-
-- :ref:`Shape<class_shape>`  **get_shape**  **(** :ref:`int<class_int>` shape_idx  **)** const
-
-.. _class_CollisionObject_get_shape_transform:
-
-- :ref:`Transform<class_transform>`  **get_shape_transform**  **(** :ref:`int<class_int>` shape_idx  **)** const
-
-.. _class_CollisionObject_remove_shape:
-
-- void  **remove_shape**  **(** :ref:`int<class_int>` shape_idx  **)**
-
 .. _class_CollisionObject_clear_shapes:
 
 - void  **clear_shapes**  **(** **)**
-
-.. _class_CollisionObject_set_ray_pickable:
-
-- void  **set_ray_pickable**  **(** :ref:`bool<class_bool>` ray_pickable  **)**
-
-.. _class_CollisionObject_is_ray_pickable:
-
-- :ref:`bool<class_bool>`  **is_ray_pickable**  **(** **)** const
-
-.. _class_CollisionObject_set_capture_input_on_drag:
-
-- void  **set_capture_input_on_drag**  **(** :ref:`bool<class_bool>` enable  **)**
 
 .. _class_CollisionObject_get_capture_input_on_drag:
 
@@ -127,5 +83,49 @@ Member Function Description
 .. _class_CollisionObject_get_rid:
 
 - :ref:`RID<class_rid>`  **get_rid**  **(** **)** const
+
+.. _class_CollisionObject_get_shape:
+
+- :ref:`Shape<class_shape>`  **get_shape**  **(** :ref:`int<class_int>` shape_idx  **)** const
+
+.. _class_CollisionObject_get_shape_count:
+
+- :ref:`int<class_int>`  **get_shape_count**  **(** **)** const
+
+.. _class_CollisionObject_get_shape_transform:
+
+- :ref:`Transform<class_transform>`  **get_shape_transform**  **(** :ref:`int<class_int>` shape_idx  **)** const
+
+.. _class_CollisionObject_is_ray_pickable:
+
+- :ref:`bool<class_bool>`  **is_ray_pickable**  **(** **)** const
+
+.. _class_CollisionObject_is_shape_set_as_trigger:
+
+- :ref:`bool<class_bool>`  **is_shape_set_as_trigger**  **(** :ref:`int<class_int>` shape_idx  **)** const
+
+.. _class_CollisionObject_remove_shape:
+
+- void  **remove_shape**  **(** :ref:`int<class_int>` shape_idx  **)**
+
+.. _class_CollisionObject_set_capture_input_on_drag:
+
+- void  **set_capture_input_on_drag**  **(** :ref:`bool<class_bool>` enable  **)**
+
+.. _class_CollisionObject_set_ray_pickable:
+
+- void  **set_ray_pickable**  **(** :ref:`bool<class_bool>` ray_pickable  **)**
+
+.. _class_CollisionObject_set_shape:
+
+- void  **set_shape**  **(** :ref:`int<class_int>` shape_idx, :ref:`Shape<class_shape>` shape  **)**
+
+.. _class_CollisionObject_set_shape_as_trigger:
+
+- void  **set_shape_as_trigger**  **(** :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` enable  **)**
+
+.. _class_CollisionObject_set_shape_transform:
+
+- void  **set_shape_transform**  **(** :ref:`int<class_int>` shape_idx, :ref:`Transform<class_transform>` transform  **)**
 
 

@@ -21,24 +21,24 @@ Member Functions
 +------------------------------+------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`        | :ref:`connect<class_StreamPeerTCP_connect>`  **(** :ref:`String<class_string>` host, :ref:`int<class_int>` port  **)** |
 +------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`is_connected<class_StreamPeerTCP_is_connected>`  **(** **)** const                                               |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_status<class_StreamPeerTCP_get_status>`  **(** **)** const                                                   |
+| void                         | :ref:`disconnect<class_StreamPeerTCP_disconnect>`  **(** **)**                                                         |
 +------------------------------+------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`  | :ref:`get_connected_host<class_StreamPeerTCP_get_connected_host>`  **(** **)** const                                   |
 +------------------------------+------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`        | :ref:`get_connected_port<class_StreamPeerTCP_get_connected_port>`  **(** **)** const                                   |
 +------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`disconnect<class_StreamPeerTCP_disconnect>`  **(** **)**                                                         |
+| :ref:`int<class_int>`        | :ref:`get_status<class_StreamPeerTCP_get_status>`  **(** **)** const                                                   |
++------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`is_connected<class_StreamPeerTCP_is_connected>`  **(** **)** const                                               |
 +------------------------------+------------------------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
 -----------------
 
-- **STATUS_NONE** = **0**
-- **STATUS_CONNECTING** = **1**
-- **STATUS_CONNECTED** = **2**
-- **STATUS_ERROR** = **3**
+- **STATUS_NONE** = **0** --- The initial status of the :ref:`StreamPeerTCP<class_streampeertcp>`, also the status after a disconnect.
+- **STATUS_CONNECTING** = **1** --- A status representing a :ref:`StreamPeerTCP<class_streampeertcp>` that is connecting to a host.
+- **STATUS_CONNECTED** = **2** --- A status representing a :ref:`StreamPeerTCP<class_streampeertcp>` that is connected to a host.
+- **STATUS_ERROR** = **3** --- A staus representing a :ref:`StreamPeerTCP<class_streampeertcp>` in error state.
 
 Description
 -----------
@@ -52,24 +52,36 @@ Member Function Description
 
 - :ref:`int<class_int>`  **connect**  **(** :ref:`String<class_string>` host, :ref:`int<class_int>` port  **)**
 
-.. _class_StreamPeerTCP_is_connected:
+Connect to the specified IP:port pair. Returns :ref:`OK<class_ok>` on success or :ref:`FAILED<class_failed>` on failure.
 
-- :ref:`bool<class_bool>`  **is_connected**  **(** **)** const
+.. _class_StreamPeerTCP_disconnect:
 
-.. _class_StreamPeerTCP_get_status:
+- void  **disconnect**  **(** **)**
 
-- :ref:`int<class_int>`  **get_status**  **(** **)** const
+Disconnect from host.
 
 .. _class_StreamPeerTCP_get_connected_host:
 
 - :ref:`String<class_string>`  **get_connected_host**  **(** **)** const
 
+Return the IP of this peer.
+
 .. _class_StreamPeerTCP_get_connected_port:
 
 - :ref:`int<class_int>`  **get_connected_port**  **(** **)** const
 
-.. _class_StreamPeerTCP_disconnect:
+Return the port of this peer.
 
-- void  **disconnect**  **(** **)**
+.. _class_StreamPeerTCP_get_status:
+
+- :ref:`int<class_int>`  **get_status**  **(** **)** const
+
+Return the status of the connection, one of STATUS\_\* enum.
+
+.. _class_StreamPeerTCP_is_connected:
+
+- :ref:`bool<class_bool>`  **is_connected**  **(** **)** const
+
+Return whether this peer is connected. Returns true while connecting and connected.
 
 

@@ -19,9 +19,9 @@ OK, you *might* want to import them
 -----------------------------------
 
 So, if you have read the previous tutorial on the texture exporter, the
-texture importer gives you more finer grained control on how textures
+texture importer gives you more fine-grained control on how textures
 are imported. If you want to change flags such as repeat, filter,
-mip-maps, fix edges, etc. ***PER texture***, importing them is the best
+mipmaps, fix edges, etc. ***PER texture***, importing them is the best
 way to accomplish this (since you can't save such flags in a standard
 image file).
 
@@ -33,12 +33,12 @@ method has limitations. When images are shrunk too much, two problems
 arise:
 
 -  **Aliasing**: Pixels are skipped too much, and the image shows
-   discontinuities. This decrases quality.
+   discontinuities. This decreases quality.
 -  **Cache Misses**: Pixels being read are too far apart, so texture
    cache reads a lot more data than it should. This decreases
    performance.
 
-(Todo, find image sample of why it looks bad)
+.. image:: /img/imagemipmap.png
 
 To solve this, mipmaps are created. Mipmaps are versions of the image
 shrunk by half in both axis, recursively, until the image is 1 pixel of
@@ -58,7 +58,7 @@ Unwanted MipMaps
 
 Remember the previous point about mipmaps? Yes, they are cool, but
 mobile GPUs only support them if the textures are in power of 2
-dimensions (ie 256x256 or 512x128). In these platforms, Godot will
+dimensions (i.e. 256x256 or 512x128). In these platforms, Godot will
 stretch and enlarge the texture to the closest power of 2 size and then
 generate the mipmaps. This process takes more of a performance hit and
 it might degrade the quality a little more.
@@ -99,7 +99,7 @@ Texture flags
 Textures have flags. The user can choose for them to repeat or clamp to
 edges (when UVs exceed the 0,0,1,1 boundary). The magnifying filter can
 also be turned off (for a Minecraft-like effect). Such values can not be
-edited in standard file formats (png, jpg, etc), but can be edited and
+edited in standard file formats (png, jpg, etc.), but can be edited and
 saved in Godot .tex files. Then again, the user may not want to change
 the values every time the texture changes. Pre-Importing the textures
 also takes care of that.
@@ -107,26 +107,26 @@ also takes care of that.
 Texture compression
 -------------------
 
-Asides from the typical texture compression, which saves space on disk
-(.png, jpg, etc), there are also texture compression formats that save
+Aside from the typical texture compression, which saves space on disk
+(.png, jpg, etc.), there are also texture compression formats that save
 space in memory (more specifically video memory. This allows to have
 much better looking textures in games without running out of memory, and
 decrease memory bandwidth when reading them so they are a big plus.
 
-Video texture compression formats are several and non standard. Apple
-uses PVRTC. PC GPUs, consoles and nVidia Android devices use S3TC (BC),
-other chipsets use other formats. OpenGL ES 3.0 standardized on ETC
+There are several video texture compression formats, none of which are
+standard. Apple uses PVRTC. PC GPUs, consoles and nVidia Android devices use
+S3TC (BC), other chipsets use other formats. OpenGL ES 3.0 standardized on ETC
 format, but we are still a few years away from that working everywhere.
 
 Still, when using this option, Godot converts and compresses to the
 relevant format depending on the target platform (as long as the user
 pre-imported the texture and specified video ram compression!).
 
-This kind of compression is often not desirable for many types 2D games
-and UIs because it has visible visual artifacts. This is specially
+This kind of compression is often not desirable for many types of 2D games
+and UIs because it is lossy, creating visual artifacts. This is especially
 noticeable on games that use the trendy vectory social game artwork.
-However, again, the fact that it saves space and improves performance
-may make up for it.
+However, the fact that it saves space and improves performance may make up for
+it.
 
 The 3D scene importer always imports textures with this option turned
 on.
@@ -138,8 +138,8 @@ Remember how mobile GPUs have this limitation of textures having to be
 in power of 2 sizes to be able to generate mimpmaps for optimum
 stretching? What if we have a lot of images in different random sizes?
 All will have to be scaled and mipmapped when loaded (using more CPU and
-memory) or when imported (using more memory). This is probably still ok,
-but there is a tool that can help improve this situation.
+memory) or when imported (taking more storage space). This is probably still
+OK, but there is a tool that can help improve this situation.
 
 Atlases are big textures that fit a lot of small textures inside
 efficiently. Godot supports creating atlases in the importer, and the
@@ -148,12 +148,12 @@ bigger texture.
 
 Atlases can be a nice solution to save some space on GUI or 2D artwork
 by packing everything together. The current importer is not as useful
-for 3D though (3D Atlasses are created differently, and not all 3D
+for 3D though (3D Atlases are created differently, and not all 3D
 models can use them).
 
 As a small plus, atlases can decrease the amount of "state changes" when
 drawing. If a lot of objects that are drawn using several different
-textures are converted to atlas, then the texture rebinds per object
+textures are converted to an atlas, then the texture rebinds per object
 will go from dozens or hundreds to one. This will give the performance a
 small boost.
 
@@ -247,7 +247,7 @@ Provided are a small amount of options for fine grained import control:
    2D.
 -  **Filter** - Enables linear filtering when a texture texel is larger
    than a screen pixel. This is usually turned on, unless it's required
-   for artistic purposes (minecraft look, for example).
+   for artistic purposes (Minecraft look, for example).
 
 .. |bad| image:: /img/bad.png
 

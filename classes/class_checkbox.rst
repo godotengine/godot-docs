@@ -13,5 +13,10 @@ CheckBox
 Brief Description
 -----------------
 
+Binary choice user interface widget
 
+Description
+-----------
+
+A checkbox allows the user to make a binary choice (choosing only one of two posible options), for example Answer 'yes' or 'no'.
 

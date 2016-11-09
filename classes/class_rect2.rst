@@ -17,6 +17,10 @@ Member Functions
 ----------------
 
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2<class_rect2>`  | :ref:`Rect2<class_Rect2_Rect2>`  **(** :ref:`Vector2<class_vector2>` pos, :ref:`Vector2<class_vector2>` size  **)**                                                       |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2<class_rect2>`  | :ref:`Rect2<class_Rect2_Rect2>`  **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` width, :ref:`float<class_float>` height  **)** |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Rect2<class_rect2>`  | :ref:`clip<class_Rect2_clip>`  **(** :ref:`Rect2<class_rect2>` b  **)**                                                                                                   |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`    | :ref:`encloses<class_Rect2_encloses>`  **(** :ref:`Rect2<class_rect2>` b  **)**                                                                                           |
@@ -35,17 +39,13 @@ Member Functions
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Rect2<class_rect2>`  | :ref:`merge<class_Rect2_merge>`  **(** :ref:`Rect2<class_rect2>` b  **)**                                                                                                 |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_rect2>`  | :ref:`Rect2<class_Rect2_Rect2>`  **(** :ref:`Vector2<class_vector2>` pos, :ref:`Vector2<class_vector2>` size  **)**                                                       |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_rect2>`  | :ref:`Rect2<class_Rect2_Rect2>`  **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` width, :ref:`float<class_float>` height  **)** |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
 
-- :ref:`Vector2<class_vector2>` **pos**
-- :ref:`Vector2<class_vector2>` **size**
-- :ref:`Vector2<class_vector2>` **end**
+- :ref:`Vector2<class_vector2>` **end** - Ending corner.
+- :ref:`Vector2<class_vector2>` **pos** - Position (starting corner).
+- :ref:`Vector2<class_vector2>` **size** - Size from position to end.
 
 Description
 -----------
@@ -54,6 +54,18 @@ Rect2 provides an 2D Axis-Aligned Bounding Box. It consists of a position, a siz
 
 Member Function Description
 ---------------------------
+
+.. _class_Rect2_Rect2:
+
+- :ref:`Rect2<class_rect2>`  **Rect2**  **(** :ref:`Vector2<class_vector2>` pos, :ref:`Vector2<class_vector2>` size  **)**
+
+Construct a :ref:`Rect2<class_rect2>` by position and size.
+
+.. _class_Rect2_Rect2:
+
+- :ref:`Rect2<class_rect2>`  **Rect2**  **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` width, :ref:`float<class_float>` height  **)**
+
+Construct a :ref:`Rect2<class_rect2>` by x, y, width and height.
 
 .. _class_Rect2_clip:
 
@@ -108,17 +120,5 @@ Return true if the :ref:`Rect2<class_rect2>` overlaps with another.
 - :ref:`Rect2<class_rect2>`  **merge**  **(** :ref:`Rect2<class_rect2>` b  **)**
 
 Combine this :ref:`Rect2<class_rect2>` with another, a larger one is returned that contains both.
-
-.. _class_Rect2_Rect2:
-
-- :ref:`Rect2<class_rect2>`  **Rect2**  **(** :ref:`Vector2<class_vector2>` pos, :ref:`Vector2<class_vector2>` size  **)**
-
-Construct a :ref:`Rect2<class_rect2>` by position and size.
-
-.. _class_Rect2_Rect2:
-
-- :ref:`Rect2<class_rect2>`  **Rect2**  **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` width, :ref:`float<class_float>` height  **)**
-
-Construct a :ref:`Rect2<class_rect2>` by x, y, width and height.
 
 

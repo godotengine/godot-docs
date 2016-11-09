@@ -174,7 +174,7 @@ to config.py:
     def configure(env):
         if env['platform'] == 'android':
             # will copy this to the java folder
-            env.android_add_java_dir("Directory that contain MySingelton.java")
+            env.android_add_java_dir("Directory that contain MySingleton.java")
 
 
 
@@ -248,7 +248,7 @@ easiest to integrate, just put it in the module directory and add it:
             # will copy this to the java folder
             env.android_add_java_dir("Directory that contain MySingelton.java") 
             env.android_add_to_manifest("AndroidManifestChunk.xml")
-            env.android_add_dependency("compile files('something_local.jar')") # if you have a jar
+            env.android_add_dependency("compile files('something_local.jar')") # if you have a jar, the path is relative to platform/android/java/gradlew, so it will start with ../../../modules/module_name/
             env.android_add_maven_repository("maven url") #add a maven url
             env.android_add_dependency("compile 'com.google.android.gms:play-services-ads:8'") #get dependency from maven repository
            

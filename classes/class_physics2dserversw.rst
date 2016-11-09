@@ -13,5 +13,10 @@ Physics2DServerSW
 Brief Description
 -----------------
 
+Software implementation of :ref:`Physics2DServer<class_physics2dserver>`.
 
+Description
+-----------
+
+Software implementation of :ref:`Physics2DServer<class_physics2dserver>`. This class exposes no new methods or properties and should not be used, as :ref:`Physics2DServer<class_physics2dserver>` automatically selects the best implementation available.
 

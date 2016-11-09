@@ -18,17 +18,17 @@ General purpose proximity-detection node.
 Member Functions
 ----------------
 
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_group_name<class_ProximityGroup_set_group_name>`  **(** :ref:`String<class_string>` name  **)**       |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`broadcast<class_ProximityGroup_broadcast>`  **(** :ref:`String<class_string>` name, var parameters  **)** |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_dispatch_mode<class_ProximityGroup_set_dispatch_mode>`  **(** :ref:`int<class_int>` mode  **)**       |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_grid_radius<class_ProximityGroup_set_grid_radius>`  **(** :ref:`Vector3<class_vector3>` radius  **)** |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`get_grid_radius<class_ProximityGroup_get_grid_radius>`  **(** **)** const                                 |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------+
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`broadcast<class_ProximityGroup_broadcast>`  **(** :ref:`String<class_string>` name, :ref:`Variant<class_variant>` parameters  **)** |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`  | :ref:`get_grid_radius<class_ProximityGroup_get_grid_radius>`  **(** **)** const                                                           |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_dispatch_mode<class_ProximityGroup_set_dispatch_mode>`  **(** :ref:`int<class_int>` mode  **)**                                 |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_grid_radius<class_ProximityGroup_set_grid_radius>`  **(** :ref:`Vector3<class_vector3>` radius  **)**                           |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_group_name<class_ProximityGroup_set_group_name>`  **(** :ref:`String<class_string>` name  **)**                                 |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -43,13 +43,13 @@ General purpose proximity-detection node.
 Member Function Description
 ---------------------------
 
-.. _class_ProximityGroup_set_group_name:
-
-- void  **set_group_name**  **(** :ref:`String<class_string>` name  **)**
-
 .. _class_ProximityGroup_broadcast:
 
-- void  **broadcast**  **(** :ref:`String<class_string>` name, var parameters  **)**
+- void  **broadcast**  **(** :ref:`String<class_string>` name, :ref:`Variant<class_variant>` parameters  **)**
+
+.. _class_ProximityGroup_get_grid_radius:
+
+- :ref:`Vector3<class_vector3>`  **get_grid_radius**  **(** **)** const
 
 .. _class_ProximityGroup_set_dispatch_mode:
 
@@ -59,8 +59,8 @@ Member Function Description
 
 - void  **set_grid_radius**  **(** :ref:`Vector3<class_vector3>` radius  **)**
 
-.. _class_ProximityGroup_get_grid_radius:
+.. _class_ProximityGroup_set_group_name:
 
-- :ref:`Vector3<class_vector3>`  **get_grid_radius**  **(** **)** const
+- void  **set_group_name**  **(** :ref:`String<class_string>` name  **)**
 
 

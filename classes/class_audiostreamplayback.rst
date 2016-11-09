@@ -19,80 +19,80 @@ Member Functions
 ----------------
 
 +----------------------------+------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`play<class_AudioStreamPlayback_play>`  **(** :ref:`float<class_float>` from_pos_sec=0  **)**   |
-+----------------------------+------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`stop<class_AudioStreamPlayback_stop>`  **(** **)**                                             |
-+----------------------------+------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`is_playing<class_AudioStreamPlayback_is_playing>`  **(** **)** const                           |
-+----------------------------+------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_loop<class_AudioStreamPlayback_set_loop>`  **(** :ref:`bool<class_bool>` enabled  **)**    |
-+----------------------------+------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`has_loop<class_AudioStreamPlayback_has_loop>`  **(** **)** const                               |
-+----------------------------+------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_loop_count<class_AudioStreamPlayback_get_loop_count>`  **(** **)** const                   |
-+----------------------------+------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`seek_pos<class_AudioStreamPlayback_seek_pos>`  **(** :ref:`float<class_float>` pos  **)**      |
-+----------------------------+------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_pos<class_AudioStreamPlayback_get_pos>`  **(** **)** const                                 |
+| :ref:`int<class_int>`      | :ref:`get_channels<class_AudioStreamPlayback_get_channels>`  **(** **)** const                       |
 +----------------------------+------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_length<class_AudioStreamPlayback_get_length>`  **(** **)** const                           |
 +----------------------------+------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_channels<class_AudioStreamPlayback_get_channels>`  **(** **)** const                       |
+| :ref:`int<class_int>`      | :ref:`get_loop_count<class_AudioStreamPlayback_get_loop_count>`  **(** **)** const                   |
++----------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`get_minimum_buffer_size<class_AudioStreamPlayback_get_minimum_buffer_size>`  **(** **)** const |
 +----------------------------+------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`      | :ref:`get_mix_rate<class_AudioStreamPlayback_get_mix_rate>`  **(** **)** const                       |
 +----------------------------+------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_minimum_buffer_size<class_AudioStreamPlayback_get_minimum_buffer_size>`  **(** **)** const |
+| :ref:`float<class_float>`  | :ref:`get_pos<class_AudioStreamPlayback_get_pos>`  **(** **)** const                                 |
++----------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`has_loop<class_AudioStreamPlayback_has_loop>`  **(** **)** const                               |
++----------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`is_playing<class_AudioStreamPlayback_is_playing>`  **(** **)** const                           |
++----------------------------+------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`play<class_AudioStreamPlayback_play>`  **(** :ref:`float<class_float>` from_pos_sec=0  **)**   |
++----------------------------+------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`seek_pos<class_AudioStreamPlayback_seek_pos>`  **(** :ref:`float<class_float>` pos  **)**      |
++----------------------------+------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_loop<class_AudioStreamPlayback_set_loop>`  **(** :ref:`bool<class_bool>` enabled  **)**    |
++----------------------------+------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`stop<class_AudioStreamPlayback_stop>`  **(** **)**                                             |
 +----------------------------+------------------------------------------------------------------------------------------------------+
 
 Member Function Description
 ---------------------------
 
-.. _class_AudioStreamPlayback_play:
+.. _class_AudioStreamPlayback_get_channels:
 
-- void  **play**  **(** :ref:`float<class_float>` from_pos_sec=0  **)**
-
-.. _class_AudioStreamPlayback_stop:
-
-- void  **stop**  **(** **)**
-
-.. _class_AudioStreamPlayback_is_playing:
-
-- :ref:`bool<class_bool>`  **is_playing**  **(** **)** const
-
-.. _class_AudioStreamPlayback_set_loop:
-
-- void  **set_loop**  **(** :ref:`bool<class_bool>` enabled  **)**
-
-.. _class_AudioStreamPlayback_has_loop:
-
-- :ref:`bool<class_bool>`  **has_loop**  **(** **)** const
-
-.. _class_AudioStreamPlayback_get_loop_count:
-
-- :ref:`int<class_int>`  **get_loop_count**  **(** **)** const
-
-.. _class_AudioStreamPlayback_seek_pos:
-
-- void  **seek_pos**  **(** :ref:`float<class_float>` pos  **)**
-
-.. _class_AudioStreamPlayback_get_pos:
-
-- :ref:`float<class_float>`  **get_pos**  **(** **)** const
+- :ref:`int<class_int>`  **get_channels**  **(** **)** const
 
 .. _class_AudioStreamPlayback_get_length:
 
 - :ref:`float<class_float>`  **get_length**  **(** **)** const
 
-.. _class_AudioStreamPlayback_get_channels:
+.. _class_AudioStreamPlayback_get_loop_count:
 
-- :ref:`int<class_int>`  **get_channels**  **(** **)** const
+- :ref:`int<class_int>`  **get_loop_count**  **(** **)** const
+
+.. _class_AudioStreamPlayback_get_minimum_buffer_size:
+
+- :ref:`int<class_int>`  **get_minimum_buffer_size**  **(** **)** const
 
 .. _class_AudioStreamPlayback_get_mix_rate:
 
 - :ref:`int<class_int>`  **get_mix_rate**  **(** **)** const
 
-.. _class_AudioStreamPlayback_get_minimum_buffer_size:
+.. _class_AudioStreamPlayback_get_pos:
 
-- :ref:`int<class_int>`  **get_minimum_buffer_size**  **(** **)** const
+- :ref:`float<class_float>`  **get_pos**  **(** **)** const
+
+.. _class_AudioStreamPlayback_has_loop:
+
+- :ref:`bool<class_bool>`  **has_loop**  **(** **)** const
+
+.. _class_AudioStreamPlayback_is_playing:
+
+- :ref:`bool<class_bool>`  **is_playing**  **(** **)** const
+
+.. _class_AudioStreamPlayback_play:
+
+- void  **play**  **(** :ref:`float<class_float>` from_pos_sec=0  **)**
+
+.. _class_AudioStreamPlayback_seek_pos:
+
+- void  **seek_pos**  **(** :ref:`float<class_float>` pos  **)**
+
+.. _class_AudioStreamPlayback_set_loop:
+
+- void  **set_loop**  **(** :ref:`bool<class_bool>` enabled  **)**
+
+.. _class_AudioStreamPlayback_stop:
+
+- void  **stop**  **(** **)**
 
 

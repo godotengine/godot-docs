@@ -13,7 +13,7 @@ EditorScript
 Brief Description
 -----------------
 
-
+Simple script to perform changes in the currently edited scene.
 
 Member Functions
 ----------------
@@ -25,6 +25,11 @@ Member Functions
 +------------------------------+-------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_object>`  | :ref:`get_scene<class_EditorScript_get_scene>`  **(** **)**                                           |
 +------------------------------+-------------------------------------------------------------------------------------------------------+
+
+Description
+-----------
+
+This script can be run from the Scene -> Run Script menu option.
 
 Member Function Description
 ---------------------------

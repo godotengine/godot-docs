@@ -17,6 +17,12 @@ Member Functions
 ----------------
 
 +----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Matrix32<class_matrix32>`  | :ref:`Matrix32<class_Matrix32_Matrix32>`  **(** :ref:`Transform<class_transform>` from  **)**                                                                           |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Matrix32<class_matrix32>`  | :ref:`Matrix32<class_Matrix32_Matrix32>`  **(** :ref:`Vector2<class_vector2>` x_axis, :ref:`Vector2<class_vector2>` y_axis, :ref:`Vector2<class_vector2>` origin  **)** |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Matrix32<class_matrix32>`  | :ref:`Matrix32<class_Matrix32_Matrix32>`  **(** :ref:`float<class_float>` rot, :ref:`Vector2<class_vector2>` pos  **)**                                                 |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Matrix32<class_matrix32>`  | :ref:`affine_inverse<class_Matrix32_affine_inverse>`  **(** **)**                                                                                                       |
 +----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Matrix32<class_matrix32>`  | :ref:`basis_xform<class_Matrix32_basis_xform>`  **(** var v  **)**                                                                                                      |
@@ -45,19 +51,13 @@ Member Functions
 +----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Matrix32<class_matrix32>`  | :ref:`xform_inv<class_Matrix32_xform_inv>`  **(** var v  **)**                                                                                                          |
 +----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Matrix32<class_matrix32>`  | :ref:`Matrix32<class_Matrix32_Matrix32>`  **(** :ref:`float<class_float>` rot, :ref:`Vector2<class_vector2>` pos  **)**                                                 |
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Matrix32<class_matrix32>`  | :ref:`Matrix32<class_Matrix32_Matrix32>`  **(** :ref:`Vector2<class_vector2>` x_axis, :ref:`Vector2<class_vector2>` y_axis, :ref:`Vector2<class_vector2>` origin  **)** |
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Matrix32<class_matrix32>`  | :ref:`Matrix32<class_Matrix32_Matrix32>`  **(** :ref:`Transform<class_transform>` from  **)**                                                                           |
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
 
+- :ref:`Vector2<class_vector2>` **o**
 - :ref:`Vector2<class_vector2>` **x**
 - :ref:`Vector2<class_vector2>` **y**
-- :ref:`Vector2<class_vector2>` **o**
 
 Description
 -----------
@@ -66,6 +66,18 @@ Description
 
 Member Function Description
 ---------------------------
+
+.. _class_Matrix32_Matrix32:
+
+- :ref:`Matrix32<class_matrix32>`  **Matrix32**  **(** :ref:`Transform<class_transform>` from  **)**
+
+.. _class_Matrix32_Matrix32:
+
+- :ref:`Matrix32<class_matrix32>`  **Matrix32**  **(** :ref:`Vector2<class_vector2>` x_axis, :ref:`Vector2<class_vector2>` y_axis, :ref:`Vector2<class_vector2>` origin  **)**
+
+.. _class_Matrix32_Matrix32:
+
+- :ref:`Matrix32<class_matrix32>`  **Matrix32**  **(** :ref:`float<class_float>` rot, :ref:`Vector2<class_vector2>` pos  **)**
 
 .. _class_Matrix32_affine_inverse:
 
@@ -122,17 +134,5 @@ Member Function Description
 .. _class_Matrix32_xform_inv:
 
 - :ref:`Matrix32<class_matrix32>`  **xform_inv**  **(** var v  **)**
-
-.. _class_Matrix32_Matrix32:
-
-- :ref:`Matrix32<class_matrix32>`  **Matrix32**  **(** :ref:`float<class_float>` rot, :ref:`Vector2<class_vector2>` pos  **)**
-
-.. _class_Matrix32_Matrix32:
-
-- :ref:`Matrix32<class_matrix32>`  **Matrix32**  **(** :ref:`Vector2<class_vector2>` x_axis, :ref:`Vector2<class_vector2>` y_axis, :ref:`Vector2<class_vector2>` origin  **)**
-
-.. _class_Matrix32_Matrix32:
-
-- :ref:`Matrix32<class_matrix32>`  **Matrix32**  **(** :ref:`Transform<class_transform>` from  **)**
 
 

@@ -17,6 +17,12 @@ Member Functions
 ----------------
 
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Matrix3<class_matrix3>`  | :ref:`Matrix3<class_Matrix3_Matrix3>`  **(** :ref:`Quat<class_quat>` from  **)**                                                                                     |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Matrix3<class_matrix3>`  | :ref:`Matrix3<class_Matrix3_Matrix3>`  **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` phi  **)**                                                |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Matrix3<class_matrix3>`  | :ref:`Matrix3<class_Matrix3_Matrix3>`  **(** :ref:`Vector3<class_vector3>` x_axis, :ref:`Vector3<class_vector3>` y_axis, :ref:`Vector3<class_vector3>` z_axis  **)** |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`determinant<class_Matrix3_determinant>`  **(** **)**                                                                                                           |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`  | :ref:`get_euler<class_Matrix3_get_euler>`  **(** **)**                                                                                                               |
@@ -45,12 +51,6 @@ Member Functions
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`  | :ref:`xform_inv<class_Matrix3_xform_inv>`  **(** :ref:`Vector3<class_vector3>` v  **)**                                                                              |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Matrix3<class_matrix3>`  | :ref:`Matrix3<class_Matrix3_Matrix3>`  **(** :ref:`Vector3<class_vector3>` x_axis, :ref:`Vector3<class_vector3>` y_axis, :ref:`Vector3<class_vector3>` z_axis  **)** |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Matrix3<class_matrix3>`  | :ref:`Matrix3<class_Matrix3_Matrix3>`  **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` phi  **)**                                                |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Matrix3<class_matrix3>`  | :ref:`Matrix3<class_Matrix3_Matrix3>`  **(** :ref:`Quat<class_quat>` from  **)**                                                                                     |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -66,6 +66,24 @@ Description
 
 Member Function Description
 ---------------------------
+
+.. _class_Matrix3_Matrix3:
+
+- :ref:`Matrix3<class_matrix3>`  **Matrix3**  **(** :ref:`Quat<class_quat>` from  **)**
+
+Create a matrix from a quaternion.
+
+.. _class_Matrix3_Matrix3:
+
+- :ref:`Matrix3<class_matrix3>`  **Matrix3**  **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` phi  **)**
+
+Create a matrix from an axis vector and an angle.
+
+.. _class_Matrix3_Matrix3:
+
+- :ref:`Matrix3<class_matrix3>`  **Matrix3**  **(** :ref:`Vector3<class_vector3>` x_axis, :ref:`Vector3<class_vector3>` y_axis, :ref:`Vector3<class_vector3>` z_axis  **)**
+
+Create a matrix from 3 axis vectors.
 
 .. _class_Matrix3_determinant:
 
@@ -146,23 +164,5 @@ Return a vector transformed by the matrix and return it.
 - :ref:`Vector3<class_vector3>`  **xform_inv**  **(** :ref:`Vector3<class_vector3>` v  **)**
 
 Return a vector transformed by the transposed matrix and return it.
-
-.. _class_Matrix3_Matrix3:
-
-- :ref:`Matrix3<class_matrix3>`  **Matrix3**  **(** :ref:`Vector3<class_vector3>` x_axis, :ref:`Vector3<class_vector3>` y_axis, :ref:`Vector3<class_vector3>` z_axis  **)**
-
-Create a matrix from 3 axis vectors.
-
-.. _class_Matrix3_Matrix3:
-
-- :ref:`Matrix3<class_matrix3>`  **Matrix3**  **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` phi  **)**
-
-Create a matrix from an axis vector and an angle.
-
-.. _class_Matrix3_Matrix3:
-
-- :ref:`Matrix3<class_matrix3>`  **Matrix3**  **(** :ref:`Quat<class_quat>` from  **)**
-
-Create a matrix from a quaternion.
 
 

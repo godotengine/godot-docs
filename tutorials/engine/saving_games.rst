@@ -121,7 +121,7 @@ load function:
 
         # Load the file line by line and process that dictionary to restore the object it represents
         var currentline = {} # dict.parse_json() requires a declared dict.
-        savegame.open("user://Invasionsave.save", File.READ)
+        savegame.open("user://savegame.save", File.READ)
         while (!savegame.eof_reached()):
             currentline.parse_json(savegame.get_line())
             # First we need to create the object and add it to the tree and set its position.

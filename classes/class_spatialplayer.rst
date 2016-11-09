@@ -21,9 +21,9 @@ Member Functions
 ----------------
 
 +----------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_param<class_SpatialPlayer_set_param>`  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)** |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_param<class_SpatialPlayer_get_param>`  **(** :ref:`int<class_int>` param  **)** const                            |
++----------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_param<class_SpatialPlayer_set_param>`  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)** |
 +----------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
@@ -41,12 +41,12 @@ Numeric Constants
 Member Function Description
 ---------------------------
 
-.. _class_SpatialPlayer_set_param:
-
-- void  **set_param**  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**
-
 .. _class_SpatialPlayer_get_param:
 
 - :ref:`float<class_float>`  **get_param**  **(** :ref:`int<class_int>` param  **)** const
+
+.. _class_SpatialPlayer_set_param:
+
+- void  **set_param**  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**
 
 

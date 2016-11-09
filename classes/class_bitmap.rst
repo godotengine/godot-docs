@@ -23,15 +23,15 @@ Member Functions
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`create_from_image_alpha<class_BitMap_create_from_image_alpha>`  **(** :ref:`Image<class_image>` image  **)**         |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_bit<class_BitMap_set_bit>`  **(** :ref:`Vector2<class_vector2>` pos, :ref:`bool<class_bool>` bit  **)**          |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`get_bit<class_BitMap_get_bit>`  **(** :ref:`Vector2<class_vector2>` pos  **)** const                                 |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_bit_rect<class_BitMap_set_bit_rect>`  **(** :ref:`Rect2<class_rect2>` p_rect, :ref:`bool<class_bool>` bit  **)** |
+| :ref:`Vector2<class_vector2>`  | :ref:`get_size<class_BitMap_get_size>`  **(** **)** const                                                                  |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_true_bit_count<class_BitMap_get_true_bit_count>`  **(** **)** const                                              |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_size<class_BitMap_get_size>`  **(** **)** const                                                                  |
+| void                           | :ref:`set_bit<class_BitMap_set_bit>`  **(** :ref:`Vector2<class_vector2>` pos, :ref:`bool<class_bool>` bit  **)**          |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_bit_rect<class_BitMap_set_bit_rect>`  **(** :ref:`Rect2<class_rect2>` p_rect, :ref:`bool<class_bool>` bit  **)** |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
 Member Function Description
@@ -45,24 +45,24 @@ Member Function Description
 
 - void  **create_from_image_alpha**  **(** :ref:`Image<class_image>` image  **)**
 
-.. _class_BitMap_set_bit:
-
-- void  **set_bit**  **(** :ref:`Vector2<class_vector2>` pos, :ref:`bool<class_bool>` bit  **)**
-
 .. _class_BitMap_get_bit:
 
 - :ref:`bool<class_bool>`  **get_bit**  **(** :ref:`Vector2<class_vector2>` pos  **)** const
 
-.. _class_BitMap_set_bit_rect:
+.. _class_BitMap_get_size:
 
-- void  **set_bit_rect**  **(** :ref:`Rect2<class_rect2>` p_rect, :ref:`bool<class_bool>` bit  **)**
+- :ref:`Vector2<class_vector2>`  **get_size**  **(** **)** const
 
 .. _class_BitMap_get_true_bit_count:
 
 - :ref:`int<class_int>`  **get_true_bit_count**  **(** **)** const
 
-.. _class_BitMap_get_size:
+.. _class_BitMap_set_bit:
 
-- :ref:`Vector2<class_vector2>`  **get_size**  **(** **)** const
+- void  **set_bit**  **(** :ref:`Vector2<class_vector2>` pos, :ref:`bool<class_bool>` bit  **)**
+
+.. _class_BitMap_set_bit_rect:
+
+- void  **set_bit_rect**  **(** :ref:`Rect2<class_rect2>` p_rect, :ref:`bool<class_bool>` bit  **)**
 
 

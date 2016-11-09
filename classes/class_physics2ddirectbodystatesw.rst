@@ -13,5 +13,10 @@ Physics2DDirectBodyStateSW
 Brief Description
 -----------------
 
+Software implementation of :ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>`.
 
+Description
+-----------
+
+Software implementation of :ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>`. This object exposes no new methods or properties and should not be used, as :ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>` selects the best implementation available.
 

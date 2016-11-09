@@ -13,20 +13,20 @@ Thread
 Brief Description
 -----------------
 
-
+A unit of execution in a process.
 
 Member Functions
 ----------------
 
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Error                        | :ref:`start<class_Thread_start>`  **(** :ref:`Object<class_object>` instance, :ref:`String<class_string>` method, var userdata=NULL, :ref:`int<class_int>` priority=1  **)** |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_id<class_Thread_get_id>`  **(** **)** const                                                                                                                        |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`is_active<class_Thread_is_active>`  **(** **)** const                                                                                                                  |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Variant                      | :ref:`wait_to_finish<class_Thread_wait_to_finish>`  **(** **)**                                                                                                              |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`    | :ref:`get_id<class_Thread_get_id>`  **(** **)** const                                                                                                                                                  |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_active<class_Thread_is_active>`  **(** **)** const                                                                                                                                            |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Error                          | :ref:`start<class_Thread_start>`  **(** :ref:`Object<class_object>` instance, :ref:`String<class_string>` method, :ref:`Variant<class_variant>` userdata=NULL, :ref:`int<class_int>` priority=1  **)** |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_variant>`  | :ref:`wait_to_finish<class_Thread_wait_to_finish>`  **(** **)**                                                                                                                                        |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
 -----------------
@@ -35,23 +35,38 @@ Numeric Constants
 - **PRIORITY_NORMAL** = **1**
 - **PRIORITY_HIGH** = **2**
 
+Description
+-----------
+
+A unit of execution in a process. Can run methods on :ref:`Object<class_object>`s simultaneously. The use of synchronization via :ref:`Mutex<class_mutex>`, :ref:`Semaphore<class_semaphore>` is advised if working with shared objects.
+
 Member Function Description
 ---------------------------
-
-.. _class_Thread_start:
-
-- Error  **start**  **(** :ref:`Object<class_object>` instance, :ref:`String<class_string>` method, var userdata=NULL, :ref:`int<class_int>` priority=1  **)**
 
 .. _class_Thread_get_id:
 
 - :ref:`String<class_string>`  **get_id**  **(** **)** const
 
+Return the id of the thread, uniquely identifying it among all threads.
+
 .. _class_Thread_is_active:
 
 - :ref:`bool<class_bool>`  **is_active**  **(** **)** const
 
+Whether this thread is currently active, an active Thread cannot start work on a new method but can be joined with :ref:`wait_to_finish<class_Thread_wait_to_finish>`.
+
+.. _class_Thread_start:
+
+- Error  **start**  **(** :ref:`Object<class_object>` instance, :ref:`String<class_string>` method, :ref:`Variant<class_variant>` userdata=NULL, :ref:`int<class_int>` priority=1  **)**
+
+Start a new :ref:`Thread<class_thread>`, it will run "method" on object "instance" using "userdata" as an argument and running with "priority", one of PRIORITY\_\* enum.
+
+Returns OK on success, or ERR_CANT_CREATE on failure.
+
 .. _class_Thread_wait_to_finish:
 
-- Variant  **wait_to_finish**  **(** **)**
+- :ref:`Variant<class_variant>`  **wait_to_finish**  **(** **)**
+
+Joins the :ref:`Thread<class_thread>` and waits for it to finish. Returns what the method called returned.
 
 
