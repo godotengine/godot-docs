@@ -13,13 +13,13 @@ A good documentation is well written in plain English and well-formed
 sentences. It is clear and objective.
 
 A documentation page is not a tutorial page. We differentiate these
-concepts by these definitions :
+concepts by these definitions:
 
--  tutorial : a page aiming at explaining how to use one or more
+-  *Tutorial*: a page aiming at explaining how to use one or more
    concepts in Godot Editor in order to achieve a specific goal with a
    learning purpose (ie. "make a simple 2d Pong game", "apply forces to
    an object"...)
--  documentation : a page describing precisely one and only one concept
+-  *Documentation*: a page describing precisely one and only one concept
    at the time, if possible exhaustively (ie. the list of methods of the
    Sprite class for example).
 
@@ -65,23 +65,27 @@ with a capitalized letter, and every following word should not. Thus,
 this is a good example:
 
 -  Insert your title here
-   And this is a bad example:
+   
+And this is a bad example:
+
 -  Insert Your Title Here
 
 Only project names (and people names) should have capitalized first
 letter. This is good:
 
 -  Starting up with Godot Engine
-   and this is bad:
+
+And this is bad:
+
 -  Starting up with godot engine
 
 Note for non-English authors
 ----------------------------
 
 For the moment, we will not pull contributed pages that have no English counterpart.
-We aim at providing a tool helping translators and writers to determine whether certain languages have pages that do not exist in other languages, but this is not done yet. When it is done, we will open the documentation to new contributions.
+We aim to provide a tool to help translators and writers determine whether certain languages have pages that do not exist in other languages, but this is not done yet. When it is done, we will open the documentation to new contributions.
 
-Please be patient, we are working on it ;) .
+Please be patient, we are working on it. ;)
 
 ..
    If you intend to create a new page in your language, you are asked to
@@ -106,7 +110,7 @@ Translating existing pages
    language, or from your language to English. If these guidelines were
    respected, an English page already exists for every page of this wiki,
    even if it is empty. To translate an existing page, please follow these
-   few rules :
+   few rules:
    
    -  Respect the grammar and orthography
    -  Make use of the :ref:`doc_wiki_syntax`
