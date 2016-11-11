@@ -92,6 +92,7 @@ the dimensions of the screen and the pad:
     func _ready():
         screen_size = get_viewport_rect().size
         pad_size = get_node("left").get_texture().get_size()
+        pad_size *= get_node("left").get_scale()
         set_process(true)
 
 Then, some variables used for in-game processing will be added:
@@ -122,8 +123,8 @@ must be added.
 ::
 
         var ball_pos = get_node("ball").get_pos()
-        var left_rect = Rect2( get_node("left").get_pos() - pad_size/2, pad_size )
-        var right_rect = Rect2( get_node("right").get_pos() - pad_size/2, pad_size )
+        var left_rect = Rect2( get_node("left").get_pos(), pad_size )
+        var right_rect = Rect2( get_node("right").get_pos(), pad_size )
 
 Since the ball position was obtained, integrating it should be simple:
 
