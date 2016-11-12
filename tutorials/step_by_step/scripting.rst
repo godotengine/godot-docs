@@ -86,7 +86,8 @@ It should look like this in the scene tree:
 
 .. image:: /img/scripting_scene_tree.png
 
-And try to make it look like this in the 2D editor, so it makes sense:
+Use the 2D editor to position and resize the button and label so that they
+look like the image below. You can set the text in the Inspector pane.
 
 .. image:: /img/label_button_example.png
 

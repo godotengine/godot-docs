@@ -72,7 +72,7 @@ global.gd
 ---------
 
 First of all, create a global.gd script. The easy way to create a
-resource from scratch is from the resources tab:
+resource from scratch is from the new resource button in the inspector tab:
 
 .. image:: /img/newscript.png
 

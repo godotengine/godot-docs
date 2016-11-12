@@ -54,4 +54,6 @@ some unique user identifier is needed, for example:
     f.store_var(game_state)
     f.close()
 
+Note that ``OS.get_unique_ID()`` only works on iOS and Android.
+
 This is all! Thanks for your cooperation, citizen.

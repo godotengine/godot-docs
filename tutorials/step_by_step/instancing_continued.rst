@@ -62,8 +62,8 @@ NPCs to the citadel by previously creating their scenes.
 
 With Godot, games can grow as quickly as desired, as only more scenes
 have to be made and instanced. The editor UI is also designed to be
-operated by non programmers too, so an usual team development process
-involves 3D or 2D artists, level designers, game designers, animators,
+operated by non programmers too, so a typical team development process
+can involve 3D or 2D artists, level designers, game designers, animators,
 etc all working with the editor interface.
 
 Information overload!

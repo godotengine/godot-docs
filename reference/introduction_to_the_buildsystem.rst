@@ -229,6 +229,6 @@ create it's own template.
 
 If you are working for multiple platforms, OSX is definitely the best
 host platform for cross compilation, since you can cross-compile for
-almost every target (except for winrt). Linux and Windows come in second
+almost every target (except for UWP). Linux and Windows come in second
 place, but Linux has the advantage of being the easier platform to set
 this up.

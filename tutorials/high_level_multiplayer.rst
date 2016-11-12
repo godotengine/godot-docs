@@ -168,10 +168,10 @@ Let's get back to the lobby. Imagine that each player that connects to the serve
         # If I'm the server, let the new guy know about existing players
         if (get_tree().is_network_server()):
             # Send my info to new player
-            rpc_id(id, "register_info", 1, my_info)
+            rpc_id(id, "register_player", 1, my_info)
             # Send the info of existing players
             for peer_id in player_info:
-                rpc_id(id, "register_info", peer_id, players[peer_id])
+                rpc_id(id, "register_player", peer_id, players[peer_id])
 
         # Call function to update lobby UI here
 

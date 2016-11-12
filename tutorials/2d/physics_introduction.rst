@@ -308,7 +308,7 @@ Area2D
 Areas in Godot physics have three main roles:
 
 1. Override the space parameters for objects entering them (ie.
-gravity, gravity direction, gravity type, density, etc).
+   gravity, gravity direction, gravity type, density, etc).
 
 2. Monitor when rigid or kinematic bodies enter or exit the area.
 
@@ -420,7 +420,7 @@ server must be used directly. For this, the
 class must be used. To obtain it, the following steps must be taken:
 
 1. It must be used inside the ``_fixed_process()`` callback, or at
-``_integrate_forces()``
+   ``_integrate_forces()``
 
 2. The 2D RIDs for the space and physics server must be obtained.
 
