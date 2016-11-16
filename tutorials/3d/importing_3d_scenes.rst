@@ -177,7 +177,7 @@ Import animations
 ^^^^^^^^^^^^^^^^^
 
 Some scene formats (.dae) support one or more animations. If this is
-checked, an `AnimationPlayer <class_animationplayer>`__ node will be
+checked, an :ref:`class_animationplayer` node will be
 created, containing the animations.
 
 Compress geometry
@@ -205,7 +205,7 @@ When rendering using HDR (High Dynamic Range) it might be desirable to
 use linear-space textures to achieve a more real-life lighting.
 Otherwise, colors may saturate and contrast too much when exposure
 changes. This option must be used together with the SRGB option in
-`WorldEnvironment <class_worldenvironment>`__. The texture import
+:ref:`class_worldenvironment`. The texture import
 options also have the option to do this conversion, but if this one is
 turned on, conversion will always be done to diffuse textures (usually
 what is desired). For more information, read the :ref:`doc_high_dynamic_range`
@@ -257,20 +257,20 @@ static collision node will be added, using the same geometry as the mesh.
 However, it is often the case that the visual geometry is too complex or
 too un-smooth for collisions, which end up not working well. To solve
 this, the "-colonly" modifier exists, which will remove the mesh upon
-import and create a `StaticBody <class_staticbody>`__ collision instead.
+import and create a :ref:`class_staticbody` collision instead.
 This helps the visual mesh and actual collision to be separated.
 
 Option "-colonly" can be also used with Blender's empty objects.
-On import it will create a `StaticBody <class_staticbody>`__ with
+On import it will create a :ref:`class_staticbody` with
 collision node as a child. Collision node will have one of predefined shapes,
 depending on the Blender's empty draw type:
 
 .. image:: /img/3dimp_BlenderEmptyDrawTypes.png
 
--  Single arrow will create `RayShape <class_rayshape>`__
--  Cube will create `BoxShape <class_boxshape>`__
--  Image will create `PlaneShape <class_planeshape>`__
--  Sphere (and other non-listed) will create `SphereShape <class_sphereshape>`__
+-  Single arrow will create :ref:`class_rayshape`
+-  Cube will create :ref:`class_boxshape`
+-  Image will create :ref:`class_planeshape`
+-  Sphere (and other non-listed) will create :ref:`class_sphereshape`
 
 For better visibility in Blender's editor user can set "X-Ray" option on collision
 empties and set some distinct color for them in User Preferences / Themes / 3D View / Empty.
