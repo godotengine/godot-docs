@@ -78,10 +78,7 @@ the following arguments:
     C:\godot> cd platform/android/java
     C:\godot\platform\android\java> gradlew build
     
-Linux :
-    ~/godot$ scons platform=android target=release
-    ~/godot$ cd platform/android/java
-    ~/godot/platform/android/java$ ./gradlew
+(on Linux/OSX, execute the `gradlew` script with `./gradlew build`)
 
 The resulting APK is in:
 
@@ -97,11 +94,6 @@ The resulting APK is in:
     C:\godot> cd platform/android/java
     C:\godot\platform\android\java> gradlew build
     
-Linux :
-    ~/godot$ scons platform=android target=release_debug
-    ~/godot$ cd platform/android/java
-    ~/godot/platform/android/java$ ./gradlew
-
 The resulting APK is in:
 
 ::
