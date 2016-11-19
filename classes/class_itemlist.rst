@@ -61,9 +61,13 @@ Member Functions
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`IntArray<class_intarray>`  | :ref:`get_selected_items<class_ItemList_get_selected_items>`  **(** **)**                                                                                                 |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`      | :ref:`get_v_scroll<class_ItemList_get_v_scroll>`  **(** **)**                                                                                                             |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`is_item_disabled<class_ItemList_is_item_disabled>`  **(** :ref:`int<class_int>` idx  **)** const                                                                    |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`is_item_selectable<class_ItemList_is_item_selectable>`  **(** :ref:`int<class_int>` idx  **)** const                                                                |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`is_item_tooltip_enabled<class_ItemList_is_item_tooltip_enabled>`  **(** :ref:`int<class_int>` idx  **)** const                                                      |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`            | :ref:`is_same_column_width<class_ItemList_is_same_column_width>`  **(** **)** const                                                                                       |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -98,6 +102,8 @@ Member Functions
 | void                             | :ref:`set_item_text<class_ItemList_set_item_text>`  **(** :ref:`int<class_int>` idx, :ref:`String<class_string>` text  **)**                                              |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_item_tooltip<class_ItemList_set_item_tooltip>`  **(** :ref:`int<class_int>` idx, :ref:`String<class_string>` tooltip  **)**                                     |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_item_tooltip_enabled<class_ItemList_set_item_tooltip_enabled>`  **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enable  **)**                          |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_max_columns<class_ItemList_set_max_columns>`  **(** :ref:`int<class_int>` amount  **)**                                                                         |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -254,6 +260,12 @@ Return total number of lines currently in use by the list.
 
 Returns the list of selected indexes.
 
+.. _class_ItemList_get_v_scroll:
+
+- :ref:`Object<class_object>`  **get_v_scroll**  **(** **)**
+
+Returns the current vertical scroll bar for the List.
+
 .. _class_ItemList_is_item_disabled:
 
 - :ref:`bool<class_bool>`  **is_item_disabled**  **(** :ref:`int<class_int>` idx  **)** const
@@ -265,6 +277,12 @@ Returns whether or not the item at the specified index is disabled
 - :ref:`bool<class_bool>`  **is_item_selectable**  **(** :ref:`int<class_int>` idx  **)** const
 
 Returns whether or not the item at the specified index is selectable.
+
+.. _class_ItemList_is_item_tooltip_enabled:
+
+- :ref:`bool<class_bool>`  **is_item_tooltip_enabled**  **(** :ref:`int<class_int>` idx  **)** const
+
+Returns whether the tooptip is enabled for specified item index.
 
 .. _class_ItemList_is_same_column_width:
 
@@ -361,6 +379,12 @@ Sets text of item at specified index.
 - void  **set_item_tooltip**  **(** :ref:`int<class_int>` idx, :ref:`String<class_string>` tooltip  **)**
 
 Sets tooltip hint for item at specified index.
+
+.. _class_ItemList_set_item_tooltip_enabled:
+
+- void  **set_item_tooltip_enabled**  **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enable  **)**
+
+Sets whether the tooltip is enabled for specified item index.
 
 .. _class_ItemList_set_max_columns:
 

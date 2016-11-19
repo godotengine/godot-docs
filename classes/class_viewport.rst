@@ -485,6 +485,6 @@ Force update of the 2D and 3D worlds.
 
 - void  **warp_mouse**  **(** :ref:`Vector2<class_vector2>` to_pos  **)**
 
-Wrap the mouse to a position, relative to the viewport.
+Warp the mouse to a position, relative to the viewport.
 
 

@@ -35,6 +35,14 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_joy_axis<class_Input_get_joy_axis>`  **(** :ref:`int<class_int>` device, :ref:`int<class_int>` axis  **)**                                                                                                               |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_joy_axis_index_from_string<class_Input_get_joy_axis_index_from_string>`  **(** :ref:`String<class_string>` axis  **)**                                                                                                   |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`    | :ref:`get_joy_axis_string<class_Input_get_joy_axis_string>`  **(** :ref:`int<class_int>` axis_index  **)**                                                                                                                         |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_joy_button_index_from_string<class_Input_get_joy_button_index_from_string>`  **(** :ref:`String<class_string>` button  **)**                                                                                             |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`    | :ref:`get_joy_button_string<class_Input_get_joy_button_string>`  **(** :ref:`int<class_int>` button_index  **)**                                                                                                                   |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`    | :ref:`get_joy_guid<class_Input_get_joy_guid>`  **(** :ref:`int<class_int>` device  **)** const                                                                                                                                     |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`    | :ref:`get_joy_name<class_Input_get_joy_name>`  **(** :ref:`int<class_int>` device  **)**                                                                                                                                           |
@@ -136,6 +144,22 @@ If the device has a gyroscope, this will return the rate of rotation in rad/s ar
 
 Returns the current value of the joystick axis at given index (see JOY\_\* constants in :ref:`@Global Scope<class_@global scope>`)
 
+.. _class_Input_get_joy_axis_index_from_string:
+
+- :ref:`int<class_int>`  **get_joy_axis_index_from_string**  **(** :ref:`String<class_string>` axis  **)**
+
+.. _class_Input_get_joy_axis_string:
+
+- :ref:`String<class_string>`  **get_joy_axis_string**  **(** :ref:`int<class_int>` axis_index  **)**
+
+.. _class_Input_get_joy_button_index_from_string:
+
+- :ref:`int<class_int>`  **get_joy_button_index_from_string**  **(** :ref:`String<class_string>` button  **)**
+
+.. _class_Input_get_joy_button_string:
+
+- :ref:`String<class_string>`  **get_joy_button_string**  **(** :ref:`int<class_int>` button_index  **)**
+
 .. _class_Input_get_joy_guid:
 
 - :ref:`String<class_string>`  **get_joy_guid**  **(** :ref:`int<class_int>` device  **)** const
@@ -236,7 +260,9 @@ Set the mouse mode. See the constants for more information.
 
 - void  **start_joy_vibration**  **(** :ref:`int<class_int>` device, :ref:`float<class_float>` weak_magnitude, :ref:`float<class_float>` strong_magnitude, :ref:`float<class_float>` duration=0  **)**
 
-Starts to vibrate the joystick. Joysticks usually come with two rumble motors, a strong and a weak one. weak_magnitude is the strength of the weak motor (between 0 and 1) and strong_magnitude is the strength of the strong motor (between 0 and 1). duration is the duration of the effect in seconds (a duration of 0 will play the vibration indefinitely).
+Starts to vibrate the joystick. Joysticks usually come with two rumble motors, a strong and a weak one. weak_magnitude is the strength of the weak motor (between 0 and 1) and strong_magnitude is the strength of the strong motor (between 0 and 1). duration is the duration of the effect in seconds (a duration of 0 will try to play the vibration indefinitely).
+
+Note that not every hardware is compatible with long effect durations, it is recommended to restart an effect if in need to play it for more than a few seconds.
 
 .. _class_Input_stop_joy_vibration:
 

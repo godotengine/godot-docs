@@ -51,11 +51,15 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_z_range_min<class_Light2D_get_z_range_min>`  **(** **)** const                                                     |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_editor_only<class_Light2D_is_editor_only>`  **(** **)** const                                                       |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`is_enabled<class_Light2D_is_enabled>`  **(** **)** const                                                               |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`is_shadow_enabled<class_Light2D_is_shadow_enabled>`  **(** **)** const                                                 |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_color<class_Light2D_set_color>`  **(** :ref:`Color<class_color>` color  **)**                                      |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_editor_only<class_Light2D_set_editor_only>`  **(** :ref:`bool<class_bool>` editor_only  **)**                      |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_enabled<class_Light2D_set_enabled>`  **(** :ref:`bool<class_bool>` enabled  **)**                                  |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
@@ -204,6 +208,10 @@ Get the maximum Z value that objects of the scene can be in order to be affected
 
 Get the minimum Z value that objects of the scene have to be in order to be affected by the Light2D.
 
+.. _class_Light2D_is_editor_only:
+
+- :ref:`bool<class_bool>`  **is_editor_only**  **(** **)** const
+
 .. _class_Light2D_is_enabled:
 
 - :ref:`bool<class_bool>`  **is_enabled**  **(** **)** const
@@ -221,6 +229,10 @@ Return true if shadow casting is enabled for this Light2D, else return false.
 - void  **set_color**  **(** :ref:`Color<class_color>` color  **)**
 
 Set the color of the Light2D.
+
+.. _class_Light2D_set_editor_only:
+
+- void  **set_editor_only**  **(** :ref:`bool<class_bool>` editor_only  **)**
 
 .. _class_Light2D_set_enabled:
 

@@ -17,6 +17,56 @@ Member Functions
 ----------------
 
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`String<class_String_String>`  **(** :ref:`bool<class_bool>` from  **)**                                                              |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`String<class_String_String>`  **(** :ref:`int<class_int>` from  **)**                                                                |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`String<class_String_String>`  **(** :ref:`float<class_float>` from  **)**                                                            |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`String<class_String_String>`  **(** :ref:`Vector2<class_vector2>` from  **)**                                                        |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`String<class_String_String>`  **(** :ref:`Rect2<class_rect2>` from  **)**                                                            |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`String<class_String_String>`  **(** :ref:`Vector3<class_vector3>` from  **)**                                                        |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`String<class_String_String>`  **(** :ref:`Matrix32<class_matrix32>` from  **)**                                                      |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`String<class_String_String>`  **(** :ref:`Plane<class_plane>` from  **)**                                                            |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`String<class_String_String>`  **(** :ref:`Quat<class_quat>` from  **)**                                                              |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`String<class_String_String>`  **(** :ref:`AABB<class_aabb>` from  **)**                                                              |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`String<class_String_String>`  **(** :ref:`Matrix3<class_matrix3>` from  **)**                                                        |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`String<class_String_String>`  **(** :ref:`Transform<class_transform>` from  **)**                                                    |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`String<class_String_String>`  **(** :ref:`Color<class_color>` from  **)**                                                            |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`String<class_String_String>`  **(** :ref:`NodePath<class_nodepath>` from  **)**                                                      |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`String<class_String_String>`  **(** :ref:`RID<class_rid>` from  **)**                                                                |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`String<class_String_String>`  **(** :ref:`InputEvent<class_inputevent>` from  **)**                                                  |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`String<class_String_String>`  **(** :ref:`Dictionary<class_dictionary>` from  **)**                                                  |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`String<class_String_String>`  **(** :ref:`Array<class_array>` from  **)**                                                            |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`String<class_String_String>`  **(** :ref:`RawArray<class_rawarray>` from  **)**                                                      |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`String<class_String_String>`  **(** :ref:`IntArray<class_intarray>` from  **)**                                                      |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`String<class_String_String>`  **(** :ref:`RealArray<class_realarray>` from  **)**                                                    |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`String<class_String_String>`  **(** :ref:`StringArray<class_stringarray>` from  **)**                                                |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`String<class_String_String>`  **(** :ref:`Vector2Array<class_vector2array>` from  **)**                                              |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`String<class_String_String>`  **(** :ref:`Vector3Array<class_vector3array>` from  **)**                                              |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`String<class_String_String>`  **(** :ref:`ColorArray<class_colorarray>` from  **)**                                                  |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`            | :ref:`basename<class_String_basename>`  **(** **)**                                                                                        |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                | :ref:`begins_with<class_String_begins_with>`  **(** :ref:`String<class_string>` text  **)**                                                |
@@ -149,6 +199,106 @@ This is the built-in string class (and the one used by GDScript). It supports Un
 
 Member Function Description
 ---------------------------
+
+.. _class_String_String:
+
+- :ref:`String<class_string>`  **String**  **(** :ref:`bool<class_bool>` from  **)**
+
+.. _class_String_String:
+
+- :ref:`String<class_string>`  **String**  **(** :ref:`int<class_int>` from  **)**
+
+.. _class_String_String:
+
+- :ref:`String<class_string>`  **String**  **(** :ref:`float<class_float>` from  **)**
+
+.. _class_String_String:
+
+- :ref:`String<class_string>`  **String**  **(** :ref:`Vector2<class_vector2>` from  **)**
+
+.. _class_String_String:
+
+- :ref:`String<class_string>`  **String**  **(** :ref:`Rect2<class_rect2>` from  **)**
+
+.. _class_String_String:
+
+- :ref:`String<class_string>`  **String**  **(** :ref:`Vector3<class_vector3>` from  **)**
+
+.. _class_String_String:
+
+- :ref:`String<class_string>`  **String**  **(** :ref:`Matrix32<class_matrix32>` from  **)**
+
+.. _class_String_String:
+
+- :ref:`String<class_string>`  **String**  **(** :ref:`Plane<class_plane>` from  **)**
+
+.. _class_String_String:
+
+- :ref:`String<class_string>`  **String**  **(** :ref:`Quat<class_quat>` from  **)**
+
+.. _class_String_String:
+
+- :ref:`String<class_string>`  **String**  **(** :ref:`AABB<class_aabb>` from  **)**
+
+.. _class_String_String:
+
+- :ref:`String<class_string>`  **String**  **(** :ref:`Matrix3<class_matrix3>` from  **)**
+
+.. _class_String_String:
+
+- :ref:`String<class_string>`  **String**  **(** :ref:`Transform<class_transform>` from  **)**
+
+.. _class_String_String:
+
+- :ref:`String<class_string>`  **String**  **(** :ref:`Color<class_color>` from  **)**
+
+.. _class_String_String:
+
+- :ref:`String<class_string>`  **String**  **(** :ref:`NodePath<class_nodepath>` from  **)**
+
+.. _class_String_String:
+
+- :ref:`String<class_string>`  **String**  **(** :ref:`RID<class_rid>` from  **)**
+
+.. _class_String_String:
+
+- :ref:`String<class_string>`  **String**  **(** :ref:`InputEvent<class_inputevent>` from  **)**
+
+.. _class_String_String:
+
+- :ref:`String<class_string>`  **String**  **(** :ref:`Dictionary<class_dictionary>` from  **)**
+
+.. _class_String_String:
+
+- :ref:`String<class_string>`  **String**  **(** :ref:`Array<class_array>` from  **)**
+
+.. _class_String_String:
+
+- :ref:`String<class_string>`  **String**  **(** :ref:`RawArray<class_rawarray>` from  **)**
+
+.. _class_String_String:
+
+- :ref:`String<class_string>`  **String**  **(** :ref:`IntArray<class_intarray>` from  **)**
+
+.. _class_String_String:
+
+- :ref:`String<class_string>`  **String**  **(** :ref:`RealArray<class_realarray>` from  **)**
+
+.. _class_String_String:
+
+- :ref:`String<class_string>`  **String**  **(** :ref:`StringArray<class_stringarray>` from  **)**
+
+.. _class_String_String:
+
+- :ref:`String<class_string>`  **String**  **(** :ref:`Vector2Array<class_vector2array>` from  **)**
+
+.. _class_String_String:
+
+- :ref:`String<class_string>`  **String**  **(** :ref:`Vector3Array<class_vector3array>` from  **)**
+
+.. _class_String_String:
+
+- :ref:`String<class_string>`  **String**  **(** :ref:`ColorArray<class_colorarray>` from  **)**
 
 .. _class_String_basename:
 

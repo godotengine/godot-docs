@@ -49,6 +49,8 @@ Member Functions
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`EditorSettings<class_editorsettings>`          | :ref:`get_editor_settings<class_EditorPlugin_get_editor_settings>`  **(** **)**                                                                                                                                     |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Control<class_control>`                        | :ref:`get_editor_viewport<class_EditorPlugin_get_editor_viewport>`  **(** **)**                                                                                                                                     |
++------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                          | :ref:`get_name<class_EditorPlugin_get_name>`  **(** **)** virtual                                                                                                                                                   |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`EditorSelection<class_editorselection>`        | :ref:`get_selection<class_EditorPlugin_get_selection>`  **(** **)**                                                                                                                                                 |
@@ -225,6 +227,12 @@ This is for editors that edit script based objects. You can return a list of bre
 - :ref:`EditorSettings<class_editorsettings>`  **get_editor_settings**  **(** **)**
 
 Get the general settings for the editor (the same window that appears in the Settings menu).
+
+.. _class_EditorPlugin_get_editor_viewport:
+
+- :ref:`Control<class_control>`  **get_editor_viewport**  **(** **)**
+
+Get the main editor control. Use this as a parent for main screens.
 
 .. _class_EditorPlugin_get_name:
 

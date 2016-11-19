@@ -59,6 +59,8 @@ Member Functions
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`      | :ref:`get_item_text<class_PopupMenu_get_item_text>`  **(** :ref:`int<class_int>` idx  **)** const                                                                                                                |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`      | :ref:`get_item_tooltip<class_PopupMenu_get_item_tooltip>`  **(** :ref:`int<class_int>` idx  **)** const                                                                                                          |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`is_item_checkable<class_PopupMenu_is_item_checkable>`  **(** :ref:`int<class_int>` idx  **)** const                                                                                                        |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`is_item_checked<class_PopupMenu_is_item_checked>`  **(** :ref:`int<class_int>` idx  **)** const                                                                                                            |
@@ -90,6 +92,10 @@ Member Functions
 | void                             | :ref:`set_item_submenu<class_PopupMenu_set_item_submenu>`  **(** :ref:`int<class_int>` idx, :ref:`String<class_string>` submenu  **)**                                                                           |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_item_text<class_PopupMenu_set_item_text>`  **(** :ref:`int<class_int>` idx, :ref:`String<class_string>` text  **)**                                                                                    |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_item_tooltip<class_PopupMenu_set_item_tooltip>`  **(** :ref:`int<class_int>` idx, :ref:`String<class_string>` tooltip  **)**                                                                           |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`toggle_item_checked<class_PopupMenu_toggle_item_checked>`  **(** :ref:`int<class_int>` idx  **)**                                                                                                          |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -215,6 +221,10 @@ Return the submenu name of the item at index "idx".
 
 Return the text of the item at index "idx".
 
+.. _class_PopupMenu_get_item_tooltip:
+
+- :ref:`String<class_string>`  **get_item_tooltip**  **(** :ref:`int<class_int>` idx  **)** const
+
 .. _class_PopupMenu_is_item_checkable:
 
 - :ref:`bool<class_bool>`  **is_item_checkable**  **(** :ref:`int<class_int>` idx  **)** const
@@ -308,5 +318,13 @@ Sets the submenu of the item at index "idx". The submenu is the name of a child 
 - void  **set_item_text**  **(** :ref:`int<class_int>` idx, :ref:`String<class_string>` text  **)**
 
 Set the text of the item at index "idx".
+
+.. _class_PopupMenu_set_item_tooltip:
+
+- void  **set_item_tooltip**  **(** :ref:`int<class_int>` idx, :ref:`String<class_string>` tooltip  **)**
+
+.. _class_PopupMenu_toggle_item_checked:
+
+- void  **toggle_item_checked**  **(** :ref:`int<class_int>` idx  **)**
 
 

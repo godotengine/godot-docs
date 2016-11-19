@@ -30,6 +30,11 @@ Member Functions
 | void                                 | :ref:`set_pressed_button<class_ButtonGroup_set_pressed_button>`  **(** :ref:`BaseButton<class_basebutton>` button  **)** |
 +--------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
+Signals
+-------
+
+-  **button_selected**  **(** :ref:`Object<class_object>` button  **)**
+
 Description
 -----------
 
