@@ -8,7 +8,7 @@ AudioStream
 
 **Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`AudioStreamSpeex<class_audiostreamspeex>`, :ref:`AudioStreamMPC<class_audiostreammpc>`, :ref:`AudioStreamOGGVorbis<class_audiostreamoggvorbis>`, :ref:`AudioStreamOpus<class_audiostreamopus>`
+**Inherited By:** :ref:`AudioStreamMPC<class_audiostreammpc>`, :ref:`AudioStreamOGGVorbis<class_audiostreamoggvorbis>`, :ref:`AudioStreamOpus<class_audiostreamopus>`
 
 **Category:** Core
 

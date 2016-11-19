@@ -8,7 +8,7 @@ Control
 
 **Inherits:** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`Label<class_label>`, :ref:`Tabs<class_tabs>`, :ref:`TextureFrame<class_textureframe>`, :ref:`ButtonArray<class_buttonarray>`, :ref:`VideoPlayer<class_videoplayer>`, :ref:`LineEdit<class_lineedit>`, :ref:`Container<class_container>`, :ref:`ReferenceFrame<class_referenceframe>`, :ref:`Patch9Frame<class_patch9frame>`, :ref:`TextEdit<class_textedit>`, :ref:`BaseButton<class_basebutton>`, :ref:`Popup<class_popup>`, :ref:`Tree<class_tree>`, :ref:`Separator<class_separator>`, :ref:`Panel<class_panel>`, :ref:`TabContainer<class_tabcontainer>`, :ref:`Range<class_range>`, :ref:`RichTextLabel<class_richtextlabel>`, :ref:`GraphEdit<class_graphedit>`, :ref:`ItemList<class_itemlist>`
+**Inherited By:** :ref:`Label<class_label>`, :ref:`Tabs<class_tabs>`, :ref:`TextureFrame<class_textureframe>`, :ref:`ButtonArray<class_buttonarray>`, :ref:`VideoPlayer<class_videoplayer>`, :ref:`LineEdit<class_lineedit>`, :ref:`ColorFrame<class_colorframe>`, :ref:`Container<class_container>`, :ref:`ReferenceFrame<class_referenceframe>`, :ref:`Patch9Frame<class_patch9frame>`, :ref:`TextEdit<class_textedit>`, :ref:`BaseButton<class_basebutton>`, :ref:`Popup<class_popup>`, :ref:`Tree<class_tree>`, :ref:`Separator<class_separator>`, :ref:`Panel<class_panel>`, :ref:`TabContainer<class_tabcontainer>`, :ref:`Range<class_range>`, :ref:`RichTextLabel<class_richtextlabel>`, :ref:`GraphEdit<class_graphedit>`, :ref:`ItemList<class_itemlist>`
 
 **Category:** Core
 

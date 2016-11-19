@@ -8,7 +8,7 @@ Script
 
 **Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`GDScript<class_gdscript>`
+**Inherited By:** :ref:`VisualScript<class_visualscript>`, :ref:`GDScript<class_gdscript>`
 
 **Category:** Core
 

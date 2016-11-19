@@ -120,6 +120,7 @@ Signals
 -  **breakpoint_toggled**  **(** :ref:`int<class_int>` row  **)**
 -  **cursor_changed**  **(** **)**
 -  **request_completion**  **(** **)**
+-  **symbol_lookup**  **(** :ref:`String<class_string>` symbol, :ref:`int<class_int>` row, :ref:`int<class_int>` column  **)**
 -  **text_changed**  **(** **)**
 
 Numeric Constants

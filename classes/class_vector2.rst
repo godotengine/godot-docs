@@ -27,6 +27,8 @@ Member Functions
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`angle_to_point<class_Vector2_angle_to_point>`  **(** :ref:`Vector2<class_vector2>` to  **)**                                                                                                              |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`clamped<class_Vector2_clamped>`  **(** :ref:`float<class_float>` length  **)**                                                                                                                            |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`cubic_interpolate<class_Vector2_cubic_interpolate>`  **(** :ref:`Vector2<class_vector2>` b, :ref:`Vector2<class_vector2>` pre_a, :ref:`Vector2<class_vector2>` post_b, :ref:`float<class_float>` t  **)** |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`distance_squared_to<class_Vector2_distance_squared_to>`  **(** :ref:`Vector2<class_vector2>` to  **)**                                                                                                    |
@@ -105,6 +107,10 @@ Returns the angle in radians between the two vectors.
 - :ref:`float<class_float>`  **angle_to_point**  **(** :ref:`Vector2<class_vector2>` to  **)**
 
 Returns the angle in radians between the line connecting the two points and the x coordinate.
+
+.. _class_Vector2_clamped:
+
+- :ref:`Vector2<class_vector2>`  **clamped**  **(** :ref:`float<class_float>` length  **)**
 
 .. _class_Vector2_cubic_interpolate:
 

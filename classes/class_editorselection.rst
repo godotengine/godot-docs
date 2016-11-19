@@ -18,15 +18,17 @@ Manages the SceneTree selection in the editor.
 Member Functions
 ----------------
 
-+----------------------------+--------------------------------------------------------------------------------------------------+
-| void                       | :ref:`add_node<class_EditorSelection_add_node>`  **(** :ref:`Node<class_node>` node  **)**       |
-+----------------------------+--------------------------------------------------------------------------------------------------+
-| void                       | :ref:`clear<class_EditorSelection_clear>`  **(** **)**                                           |
-+----------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`  | :ref:`get_selected_nodes<class_EditorSelection_get_selected_nodes>`  **(** **)**                 |
-+----------------------------+--------------------------------------------------------------------------------------------------+
-| void                       | :ref:`remove_node<class_EditorSelection_remove_node>`  **(** :ref:`Node<class_node>` node  **)** |
-+----------------------------+--------------------------------------------------------------------------------------------------+
++----------------------------+--------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`add_node<class_EditorSelection_add_node>`  **(** :ref:`Node<class_node>` node  **)**                   |
++----------------------------+--------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`clear<class_EditorSelection_clear>`  **(** **)**                                                       |
++----------------------------+--------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`  | :ref:`get_selected_nodes<class_EditorSelection_get_selected_nodes>`  **(** **)**                             |
++----------------------------+--------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`  | :ref:`get_transformable_selected_nodes<class_EditorSelection_get_transformable_selected_nodes>`  **(** **)** |
++----------------------------+--------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`remove_node<class_EditorSelection_remove_node>`  **(** :ref:`Node<class_node>` node  **)**             |
++----------------------------+--------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -58,6 +60,12 @@ Clear the selection.
 - :ref:`Array<class_array>`  **get_selected_nodes**  **(** **)**
 
 Get the list of selectes nodes.
+
+.. _class_EditorSelection_get_transformable_selected_nodes:
+
+- :ref:`Array<class_array>`  **get_transformable_selected_nodes**  **(** **)**
+
+Get the list of selected nodes, optimized for transform operations (ie, moving them, rotating, etc). This list avoids situations where a node is selected and also chid/grandchild.
 
 .. _class_EditorSelection_remove_node:
 

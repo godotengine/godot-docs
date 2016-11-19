@@ -18,23 +18,23 @@ UDP packet peer.
 Member Functions
 ----------------
 
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`close<class_PacketPeerUDP_close>`  **(** **)**                                                                                     |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_packet_address<class_PacketPeerUDP_get_packet_address>`  **(** **)** const                                                     |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_packet_ip<class_PacketPeerUDP_get_packet_ip>`  **(** **)** const                                                               |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_packet_port<class_PacketPeerUDP_get_packet_port>`  **(** **)** const                                                           |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`is_listening<class_PacketPeerUDP_is_listening>`  **(** **)** const                                                                 |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| Error                        | :ref:`listen<class_PacketPeerUDP_listen>`  **(** :ref:`int<class_int>` port, :ref:`int<class_int>` recv_buf_size=65536  **)**            |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`set_send_address<class_PacketPeerUDP_set_send_address>`  **(** :ref:`String<class_string>` host, :ref:`int<class_int>` port  **)** |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| Error                        | :ref:`wait<class_PacketPeerUDP_wait>`  **(** **)**                                                                                       |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`close<class_PacketPeerUDP_close>`  **(** **)**                                                                                                                                    |
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`get_packet_address<class_PacketPeerUDP_get_packet_address>`  **(** **)** const                                                                                                    |
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_packet_ip<class_PacketPeerUDP_get_packet_ip>`  **(** **)** const                                                                                                              |
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`get_packet_port<class_PacketPeerUDP_get_packet_port>`  **(** **)** const                                                                                                          |
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`is_listening<class_PacketPeerUDP_is_listening>`  **(** **)** const                                                                                                                |
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Error                        | :ref:`listen<class_PacketPeerUDP_listen>`  **(** :ref:`int<class_int>` port, :ref:`int<class_int>` ip_type=int.IP_TYPE_ANY, :ref:`int<class_int>` recv_buf_size=65536  **)**            |
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`set_send_address<class_PacketPeerUDP_set_send_address>`  **(** :ref:`String<class_string>` host, :ref:`int<class_int>` port, :ref:`int<class_int>` ip_type=int.IP_TYPE_ANY  **)** |
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Error                        | :ref:`wait<class_PacketPeerUDP_wait>`  **(** **)**                                                                                                                                      |
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -76,15 +76,21 @@ Return whether this :ref:`PacketPeerUDP<class_packetpeerudp>` is listening.
 
 .. _class_PacketPeerUDP_listen:
 
-- Error  **listen**  **(** :ref:`int<class_int>` port, :ref:`int<class_int>` recv_buf_size=65536  **)**
+- Error  **listen**  **(** :ref:`int<class_int>` port, :ref:`int<class_int>` ip_type=int.IP_TYPE_ANY, :ref:`int<class_int>` recv_buf_size=65536  **)**
 
-Make this :ref:`PacketPeerUDP<class_packetpeerudp>` listen on the "port" using a buffer size "recv_buf_size". Listens on all available adresses.
+Make this :ref:`PacketPeerUDP<class_packetpeerudp>` listen on the "port" using protocol "ip_type" and a buffer size "recv_buf_size". Listens on all available adresses.
+
+IP_TYPE_IPV4 = IPv4 only
+
+IP_TYPE_IPV6 = IPv6 only
+
+IP_TYPE_ANY  = Dual stack (supports both IPv6 and IPv4 connections).
 
 .. _class_PacketPeerUDP_set_send_address:
 
-- :ref:`int<class_int>`  **set_send_address**  **(** :ref:`String<class_string>` host, :ref:`int<class_int>` port  **)**
+- :ref:`int<class_int>`  **set_send_address**  **(** :ref:`String<class_string>` host, :ref:`int<class_int>` port, :ref:`int<class_int>` ip_type=int.IP_TYPE_ANY  **)**
 
-Set the destination address and port for sending packets and variables, a hostname will be resolved if valid.
+Set the destination address and port for sending packets and variables, a hostname will be resolved using "ip_type" (v4/v6/any) if valid.
 
 .. _class_PacketPeerUDP_wait:
 
