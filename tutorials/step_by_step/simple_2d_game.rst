@@ -97,8 +97,8 @@ in :ref:`doc_scripting-adding_a_script`). This script inherits Node2D:
         
         
 First things first, we need to define some members for our script so it
-can store useful values. Such values are the dimensions of the screen
-and the pad.
+can store useful values. Such values are the dimensions of the screen, the pad
+and the initial direction of the ball.
 
 ::
 
@@ -107,6 +107,7 @@ and the pad.
     # Member variables
     var screen_size
     var pad_size
+    var direction = Vector2(1.0, 0.0)
 
     func _ready():
         pass
