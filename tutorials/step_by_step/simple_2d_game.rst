@@ -148,11 +148,11 @@ our ball move.
     var screen_size
     var pad_size
     
-    # constant for pad speed (in pixels/second)
+    # Constant for pad speed (in pixels/second)
     const INITIAL_BALL_SPEED = 80
-    # speed of the ball (also in pixels/second)
+    # Speed of the ball (also in pixels/second)
     var ball_speed = INITIAL_BALL_SPEED
-    # constant for pads speed
+    # Constant for pads speed
     const PAD_SPEED = 150
 
     func _ready():
@@ -239,7 +239,7 @@ is done using the Input class:
 
 ::
 
-        #move left pad  
+        # Move left pad
         var left_pos = get_node("left").get_pos()
 
         if (left_pos.y > 0 and Input.is_action_pressed("left_move_up")):
@@ -249,7 +249,7 @@ is done using the Input class:
 
         get_node("left").set_pos(left_pos)
 
-        #move right pad 
+        # Move right pad
         var right_pos = get_node("right").get_pos()
 
         if (right_pos.y > 0 and Input.is_action_pressed("right_move_up")):
