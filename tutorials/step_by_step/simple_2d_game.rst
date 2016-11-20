@@ -126,6 +126,7 @@ The second one is to initalize our two member variables.
     # Member variables
     var screen_size
     var pad_size
+    var direction = Vector2(1.0, 0.0)
 
     func _ready():
         screen_size = get_viewport_rect().size
@@ -148,6 +149,7 @@ our ball move.
     # Member variables
     var screen_size
     var pad_size
+    var direction = Vector2(1.0, 0.0)
     
     # constant for pad speed (in pixels/second)
     const INITIAL_BALL_SPEED = 80
