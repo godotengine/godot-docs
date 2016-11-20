@@ -97,8 +97,8 @@ in :ref:`doc_scripting-adding_a_script`). This script inherits Node2D:
         
         
 First things first, we need to define some members for our script so it
-can store useful values. Such values are the dimensions of the screen
-and the pad.
+can store useful values. Such values are the dimensions of the screen, the pad
+and the initial direction of the ball.
 
 ::
 
@@ -107,6 +107,7 @@ and the pad.
     # Member variables
     var screen_size
     var pad_size
+    var direction = Vector2(1.0, 0.0)
 
     func _ready():
         pass
@@ -125,6 +126,7 @@ The second one is to initalize our two member variables.
     # Member variables
     var screen_size
     var pad_size
+    var direction = Vector2(1.0, 0.0)
 
     func _ready():
         screen_size = get_viewport_rect().size
@@ -147,6 +149,7 @@ our ball move.
     # Member variables
     var screen_size
     var pad_size
+    var direction = Vector2(1.0, 0.0)
     
     # Constant for pad speed (in pixels/second)
     const INITIAL_BALL_SPEED = 80
