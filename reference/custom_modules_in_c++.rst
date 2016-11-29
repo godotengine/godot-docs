@@ -309,8 +309,8 @@ using the `ARGUMENT` command:
         # Static compilation
         module_env.add_source_files(env.modules_sources, sources)
 
-Now by default `scons` command will build our module as part of godot's binary
-and as a shared library when passing `sumator_shared=yes`.
+Now by default ``scons`` command will build our module as part of godot's binary
+and as a shared library when passing ``sumator_shared=yes``.
 
 Finally you can even speedup build further by explicitly specifying your
 shared module as target in the scons command:
