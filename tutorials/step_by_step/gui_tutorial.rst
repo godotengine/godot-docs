@@ -114,7 +114,7 @@ Add a script to that node, with the following code:
             tapped=true
             update()
 
-Then run the scene. When the rectangle is clicked/taped, it will go from
+Then run the scene. When the rectangle is clicked/tapped, it will go from
 blue to red. That synergy between the events and drawing is pretty much
 how most controls work internally.
 
