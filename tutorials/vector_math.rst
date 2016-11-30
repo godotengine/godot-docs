@@ -166,10 +166,12 @@ Example:
 ::
 
     var v = Vector2(0,1)
+    
     # rotate right (clockwise)
-    var v_right = Vector2(-v.y, v.x)
-    # rotate left (counter-clockwise)
     var v_right = Vector2(v.y, -v.x)
+    
+    # rotate left (counter-clockwise)
+    var v_left = Vector2(-v.y, v.x)
 
 This is a handy trick that is often of use. It is impossible to do with
 3D vectors, because there are an infinite amount of perpendicular
