@@ -8,8 +8,8 @@ Nodes and resources
 
 So far, :ref:`Nodes <class_Node>`
 have been the most important datatype in Godot, as most of the behaviors
-and features of the engine are implemented through them. There is,
-though, another datatype that is equally as important. That is
+and features of the engine are implemented through them. There is
+another datatype that is equally important:
 :ref:`Resource <class_Resource>`.
 
 Where *Nodes* focus on behaviors, such as drawing a sprite, drawing a
@@ -59,28 +59,28 @@ in a :ref:`Sprite <class_Sprite>` node:
 
 .. image:: /img/spriteprop.png
 
-Pressing the the ">" button the right side of the preview, allows to
+Pressing the ">" button on the right side of the preview allows to
 view and edit the resources properties. One of the properties (path)
-shows where it came from. In this case, it came from a png image.
+shows where it comes from. In this case, it comes from a png image.
 
 .. image:: /img/resourcerobi.png
 
 When the resource comes from a file, it is considered an *external*
-resource. If the path property is erased (or never had a path to begin
-with), it is then considered a built-in resource.
+resource. If the path property is erased (or it never had a path to
+begin with), it is considered a built-in resource.
 
 For example, if the path \`"res://robi.png"\` is erased from the "path"
 property in the above example, and then the scene is saved, the resource
 will be saved inside the .scn scene file, no longer referencing the
 external "robi.png". However, even if saved as built-in, and even though
-the scene can be instanced multiple times, the resource will still
-always be loaded once. That means, different Robi robot scenes instanced
+the scene can be instanced multiple times, the resource will always
+be loaded only once. That means, different Robi robot scenes instanced
 at the same time will still share the same image.
 
 Loading resources from code
 ---------------------------
 
-Loading resources from code is easy, there are two ways to do it. The
+Loading resources from code is easy. There are two ways to do it. The
 first is to use load(), like this:
 
 ::
@@ -139,6 +139,6 @@ resources are freed too.
 Scripting
 ---------
 
-Like any object in Godot, not just nodes, resources can be scripted too.
-However, there isn't generally much of a win, as resources are just data
-containers.
+Like any object in Godot, not just nodes, resources can be scripted,
+too. However, there isn't generally much of an advantage, as resources
+are just data containers.
