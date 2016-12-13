@@ -28,7 +28,7 @@ saved in a single file together with all the bundled sub-resources. For
 example, a font resource is often bundled together with the font textures.
 
 In general the Godot file system avoids using metadata files. The reason for
-this is simple, existing asset managers and VCSs are just much better than
+this is simple, existing asset managers and VCSs are simply much better than
 anything we can implement, so Godot tries the best to play along with SVN,
 Git, Mercurial, Perforce, etc.
 
@@ -46,7 +46,7 @@ engine.cfg
 ----------
 
 The engine.cfg file is the project description file, and it is always found at
-the root of the project, in fact it's location defines where the root is. This
+the root of the project. In fact it's location defines where the root is. This
 is the first file that Godot looks for when opening a project.
 
 This file contains the project configuration in plain text, using the win.ini
@@ -80,7 +80,7 @@ read-only and writing will no longer be permitted.
 User path
 ---------
 
-Writing to disk is still often needed for various tasks such as saving game
+Writing to disk is often still needed for various tasks such as saving game
 state or downloading content packs. To this end, the engine ensures that there is a
 special path ``user://`` that is always writable.
 
@@ -106,6 +106,6 @@ but then references it as "myfile.png", it will work just fine on their platorm,
 on other platforms, such as Linux, Android, etc. This may also apply to exported binaries,
 which use a compressed package to store all files.
 
-It is recommend that your team clearly defines a naming convention for files when
+It is recommended that your team clearly defines a naming convention for files when
 working with Godot! One simple fool-proof convention is to only allow lowercase
 file and path names.

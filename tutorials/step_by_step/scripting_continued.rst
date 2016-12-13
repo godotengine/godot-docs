@@ -59,15 +59,15 @@ ways to do this, the first is from the UI, from the Groups button:
 
 .. image:: /img/groups.png
 
-And the second from code. One useful example would be, for example, to
-tag scenes which are enemies.
+And the second from code. One useful example would be to tag scenes
+which are enemies.
 
 ::
 
     func _ready():
         add_to_group("enemies")
 
-This way, if the player, sneaking into the secret base, is discovered,
+This way, if the player is discovered sneaking into the secret base,
 all enemies can be notified about the alarm sounding, by using
 :ref:`SceneTree.call_group() <class_SceneTree_call_group>`:
 
@@ -94,9 +94,9 @@ later.
 Notifications
 -------------
 
-Godot has a system of notifications. This is usually not needed to be
-used from scripting, as it's too low level and virtual functions are
-provided for most of them. It's just good to know they exists. Simply
+Godot has a system of notifications. This is usually not needed for
+scripting, as it's too low level and virtual functions are provided for
+most of them. It's just good to know they exists. Simply
 add a
 :ref:`Object._notification() <class_Object__notification>`
 function in your script:
@@ -111,14 +111,14 @@ function in your script:
             print("This is the same as overriding _process()...")
 
 The documentation of each class in the :ref:`Class Reference <toc-class-ref>`
-shows the notifications it can receive. However, again, for most cases
-script provides simpler overrideable functions.
+shows the notifications it can receive. However, for most cases GDScript
+provides simpler overrideable functions.
 
 Overrideable functions
 ----------------------
 
-As mentioned before, it's better to use these functions. Nodes provide
-many useful overrideable functions, which are described as follows:
+Nodes provide many useful overrideable functions, which are described as
+follows:
 
 ::
 
@@ -159,10 +159,12 @@ many useful overrideable functions, which are described as follows:
         # Called when game is unpaused.
         pass
 
+As mentioned before, it's best to use these functions.
+
 Creating nodes
 --------------
 
-To create a node from code, just call the .new() method, (like for any
+To create a node from code, just call the .new() method (like for any
 other class based datatype). Example:
 
 ::
@@ -184,14 +186,14 @@ When a node is freed, it also frees all its children nodes. Because of
 this, manually deleting nodes is much simpler than it appears. Just free
 the base node and everything else in the sub-tree goes away with it.
 
-However, it might happen very often that we might want to delete a node
-that is currently "blocked" this means, the node is emitting a signal or
-calling a function. This will result in crashing the game. Running Godot
+However, it might happen very often that we want to delete a node that
+is currently "blocked", because it is emitting a signal or calling a
+function. This will result in crashing the game. Running Godot
 in the debugger often will catch this case and warn you about it.
 
 The safest way to delete a node is by using
-:ref:`Node.queue_free() <class_Node_queue_free>`
-instead. This erases the node during idle, safely.
+:ref:`Node.queue_free() <class_Node_queue_free>`.
+This erases the node safely during idle.
 
 ::
 
@@ -215,7 +217,7 @@ time.
 
     var scene = preload("res://myscene.scn") # will load when parsing the script
 
-But 'scene' is still not a node containing subnodes. It's packed in a
+But 'scene' is not yet a node containing subnodes. It's packed in a
 special resource called :ref:`PackedScene <class_PackedScene>`.
 To create the actual node, the function
 :ref:`PackedScene.instance() <class_PackedScene_instance>`
@@ -229,5 +231,5 @@ the active scene:
 
 The advantage of this two-step process is that a packed scene may be
 kept loaded and ready to use, so it can be used to create as many
-instances as desired. This is specially useful, for example, to instance
-several enemies, bullets, etc. quickly in the active scene.
+instances as desired. This is especially useful to quickly instance
+several enemies, bullets, etc. in the active scene.
