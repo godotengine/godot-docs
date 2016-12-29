@@ -19,7 +19,7 @@ proposition will include that too.
 Organization
 ------------
 
-Other game engines often work by having an asset database, were you can
+Other game engines often work by having an asset database, where you can
 browse images, models, sounds, etc. Godot is more scene-based in nature
 so most of the time the assets are bundled inside the scenes or just
 exist as files but are referenced from scenes.
