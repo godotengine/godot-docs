@@ -55,9 +55,9 @@ Groups
 
 Nodes can be added to groups (as many as desired per node). This is a
 simple yet useful feature for organizing large scenes. There are two
-ways to do this, the first is from the UI, from the Groups button:
+ways to do this, the first is from the UI, from the Groups button under Node-panel:
 
-.. image:: /img/groups.png
+.. image:: /img/groups_in_nodes.PNG
 
 And the second from code. One useful example would be, for example, to
 tag scenes which are enemies.
