@@ -50,7 +50,7 @@ but meanwhile FBX is not really supported.
 Exporting DAE files from Maya and 3DS Max
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Autodesk added built-in collada support to Maya and 3DS Max, but It's
+Autodesk added built-in collada support to Maya and 3DS Max, but it's
 really broken and should not be used. The best way to export this format
 is by using the
 `OpenCollada <https://github.com/KhronosGroup/OpenCOLLADA/wiki/OpenCOLLADA-Tools>`__
@@ -60,7 +60,7 @@ with the latest version of the software.
 Exporting DAE files from Blender
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Blender also has built-in collada support, but It's really broken and
+Blender also has built-in collada support, but it's really broken and
 should not be used either.
 
 Godot provides a `Python
