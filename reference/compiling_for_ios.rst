@@ -19,13 +19,13 @@ Open a Terminal, go to the root dir of the engine source code and type:
 
 ::
 
-    $ scons p=iphone bin/godot.iphone.debug
+    $ scons p=iphone target=debug
 
 for a debug build, or:
 
 ::
 
-    $ scons p=iphone bin/godot.iphone.opt target=release
+    $ scons p=iphone target=release
 
 for a release build (check ``platform/iphone/detect.py`` for the compiler
 flags used for each configuration).
@@ -34,7 +34,7 @@ Alternatively, you can run
 
 ::
 
-    $ scons p=isim bin/godot.isim.tools
+    $ scons p=iphone arch=x86 target=debug
 
 for a Simulator executable.
 
@@ -44,9 +44,9 @@ It can be done in three steps, first compile 32 bit version, then compile 64 bit
 
 ::
 
-    $ scons p=iphone tools=no bits=32 target=release 
-    $ scons p=iphone tools=no bits=64 target=release
-    $ lipo -create bin/godot.iphone.opt.32 arm64 bin/godot.iphone.opt.64 -output bin/godot.iphone.opt.universal
+    $ scons p=iphone tools=no bits=32 target=release arch=arm
+    $ scons p=iphone tools=no bits=64 target=release arch=arm64
+    $ lipo -create bin/godot.iphone.opt.32 bin/godot.iphone.opt.64 -output bin/godot.iphone.opt.universal
 
 
 Run
