@@ -6,11 +6,11 @@ Simple 2D game
 Pong
 ~~~~
 
-In this simple tutorial, a basic game of Pong will be created. There are
-plenty of more complex examples in the demos included with the engine,
-but this should get one introduced to basic functionality for 2D Games.
+In this tutorial, a basic game of Pong will be created. There are plenty
+of more complex examples in the demos included with the engine, but this
+should get you introduced to the basic functionalities for 2D Games.
 
-Run Godot Engine and start a new project.
+To begin with, run the Godot Engine and start a new project.
 
 Assets
 ~~~~~~
@@ -170,7 +170,7 @@ this function.
 
 We have to init some useful values for computation. The first one is the
 ball position (from the node), the second one is the rectangle
-(``Rect2``) for each pad. These rectangles will be used for collisions
+(``Rect2``) for each pad. These rectangles will be used for collision
 tests between the ball and the pads. Sprites center their textures by
 default, so a small adjustment of ``pad_size / 2`` must be added.
 
@@ -194,7 +194,7 @@ This code line is called at each iteration of the ``_process()``
 function. That means the ball position will be updated at each new
 frame.
 
-Then, now that the ball has a new position, we need to test if it
+Now that the ball has a new position, we need to test if it
 collides with anything, that is the window borders and the pads. First,
 the floor and the roof:
 
@@ -204,9 +204,9 @@ the floor and the roof:
         if ((ball_pos.y < 0 and direction.y < 0) or (ball_pos.y > screen_size.y and direction.y > 0)):
             direction.y = -direction.y
 
-Second, the pads: if one of the pads was touched, we need to invert the
+Second, the pads: if one of the pads is touched, we need to invert the
 direction of the ball on the X axis so it goes back, and define a new
-random Y direction using ``randf()`` function. We also increase its
+random Y direction using the ``randf()`` function. We also increase its
 speed a little.
 
 ::
@@ -218,9 +218,9 @@ speed a little.
             direction = direction.normalized()
             ball_speed *= 1.1
 
-If the ball went out of the screen, it's game over. That is, we test if
+Finally, if the ball went out of the screen, it's game over. That is, we test if
 the X position of the ball is less than 0 or greater than the screen
-width. If so, the game then restarts:
+width. If so, the game restarts:
 
 ::
 
@@ -230,15 +230,15 @@ width. If so, the game then restarts:
             ball_speed = INITIAL_BALL_SPEED
             direction = Vector2(-1, 0)
 
-Once everything was done with the ball, the node is updated with the new
-position which was computed before:
+Once everything is done, the node is updated with the new position of
+the ball, which was computed before:
 
 ::
 
         get_node("ball").set_pos(ball_pos)
 
-Pads movement: we only update the pads according to player input. This
-is done using the Input class:
+Next, we allow the pads to move. We only update their position according
+to player input. This is done using the Input class:
 
 ::
 
@@ -262,10 +262,10 @@ is done using the Input class:
 
         get_node("right").set_pos(right_pos)
         
-We use the 4 actions previously defined in the Input actions setup
-section. When the player activates the according key, the corresponding
-action is triggered. When the action is triggered, we simply compute a
-new position for the pad in the wished direction. Finally, we set this
-new position to the node.
+We use the four actions previously defined in the Input actions setup
+section above. When the player activates the respective key, the
+corresponding action is triggered. As soon as this happens, we simply
+compute a new position for the pad in the desired direction and apply it
+to the node.
 
-And that's it! A simple Pong was written with a few lines of code.
+That's it! A simple Pong was written with a few lines of code.

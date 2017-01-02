@@ -52,24 +52,24 @@ inside Godot. It was designed with the following goals:
 Programmers generally take a few days to learn it, and within two weeks
 feel comfortable with it.
 
-As with most dynamically typed languages though, the higher productivity
+As with most dynamically typed languages, the higher productivity
 (code is easier to learn, faster to write, no compilation, etc) is
-balanced with a performance penalty, but most critical code is written
+balanced with a performance penalty. But most critical code is written
 in C++ already in the engine (vector ops, physics, math, indexing, etc),
-making the resulting performance more than enough for most types of
+resulting in a more than sufficient performance for most types of
 games.
 
 In any case, if more performance is required, critical sections can be
 rewritten in C++ and exposed transparently to the script. This allows
-for replacing a GDScript class with a C++ class without altering the
-rest of the game.
+the replacement of a GDScript class with a C++ class without altering
+the rest of the game.
 
 Scripting a scene
 -----------------
 
 Before continuing, please make sure to read the :ref:`doc_gdscript` reference.
-It's a simple language and the reference is short, should not take more
-than a few minutes to glance.
+It's a simple language and the reference is short, it will not take
+more than a few minutes to get an overview of the concepts.
 
 Scene setup
 ~~~~~~~~~~~
@@ -107,7 +107,7 @@ The script creation dialog will pop up. This dialog allows to select
 the language, class name, etc. GDScript does not use class names in
 script files, so that field is not editable. The script should inherit
 from "Panel" (as it is meant to extend the node, which is of Panel type,
-this is automatically filled anyway).
+this is automatically filled).
 
 Enter a path name for the script and then select "Create":
 
@@ -143,7 +143,7 @@ script.
 Handling a signal
 ~~~~~~~~~~~~~~~~~
 
-Signals are used mostly in GUI nodes, (although other nodes have them
+Signals are used mostly in GUI nodes (although other nodes have them
 too). Signals are "emitted" when some specific kind of action happens,
 and can be connected to any function of any script instance. In this
 step, the "pressed" signal from the button will be connected to a custom
@@ -155,13 +155,12 @@ selecting the "Node" tab. Make sure that you have "Signals" selected.
 
 .. image:: /img/signals.png
 
-In any case, at this point it is clear that that we are interested in
-the "pressed" signal. Instead of doing it with the visual
-interface, we will opt to make the connection using code.
+In any case, at this point it is clear that we are interested in
+the "pressed" signal. Instead of using the visual interface, we will opt
+to code the connection.
 
-For this, there is a function that is probably the one that Godot
-programmers will use the most, this is
-:ref:`Node.get_node() <class_Node_get_node>`.
+For this, a function exists that is probably the one most used by Godot
+programmers, namely :ref:`Node.get_node() <class_Node_get_node>`.
 This function uses paths to fetch nodes in the current tree or anywhere
 in the scene, relative to the node holding the script.
 
@@ -171,8 +170,8 @@ To fetch the button, the following must be used:
 
     get_node("Button")
 
-So, next, a callback will be added for when a button is pressed, that
-will change the label's text:
+Next, a callback will be added that will change the label's text when
+the button is pressed:
 
 ::
 
@@ -209,7 +208,7 @@ button:
 
 .. image:: /img/scripting_hello.png
 
-**Note:** As it is a common mistake in this tutorial, let's clarify
+**Note:** As it is a common misunderstanding in this tutorial, let's clarify
 again that get_node(path) works by returning the *immediate* children of
 the node controlled by the script (in this case, *Panel*), so *Button*
 must be a child of *Panel* for the above code to work. To give this
@@ -222,5 +221,4 @@ to obtain it would be:
     # but just in case
     get_node("Label/Button") 
 
-And, also, try to remember that nodes are referenced by name, not by
-type.
+Also, remember that nodes are referenced by name, not by type.

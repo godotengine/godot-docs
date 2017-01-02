@@ -10,14 +10,14 @@ This tutorial will explain how everything is animated in Godot. Godot's
 animation system is extremely powerful and flexible.
 
 To begin, let's just use the scene from the previous tutorial (:ref:`doc_splash_screen`).
-The goal will be to add a simple animation to it. Here's a copy
+The goal is, to add a simple animation to it. Here's a copy
 just in case: :download:`robisplash.zip </files/robisplash.zip>`.
 
 Creating the animation
 ----------------------
 
 First of all, add an :ref:`AnimationPlayer <class_AnimationPlayer>`
-node to the scene as a child of bg (the root node):
+node to the scene as a child of "bg" (the root node):
 
 .. image:: /img/animplayer.png
 
@@ -31,7 +31,7 @@ and name the animation "intro".
 
 .. image:: /img/animnew.png
 
-After the animation has been created, then it's time to edit it, by
+After the animation has been created, it's time to edit it, by
 pressing the "edit" button:
 
 .. image:: /img/animedit.png
@@ -47,8 +47,8 @@ for similar functionality.)
 
 .. image:: /img/animeditor.png
 
-But the second, and most important, is that the property editor enters
-into "animation editing" mode. In this mode, a key icon appears next to
+The second and most important, is that the property editor enters
+"animation editing" mode. In this mode, a key icon appears next to
 every property of the property editor. This means that, in Godot, *any
 property of any object* can be animated:
 
@@ -57,10 +57,10 @@ property of any object* can be animated:
 Making the logo appear
 ----------------------
 
-Next, the logo will appear from the top of the screen. After selecting
+The logo will appear from the top of the screen. After selecting
 the animation player, the editor panel will stay visible until
 manually hidden (or the animation node is erased). Taking advantage of
-this, select the "logo" node and go to the "pos" property, move it up,
+this, select the "logo" node and go to the "pos" property, move it up
 to position: 114,-400.
 
 Once in this position, press the key button next to the property:
@@ -72,11 +72,11 @@ it!
 
 .. image:: /img/addtrack.png
 
-And the keyframe will be added in the animation player editor:
+The keyframe will be added in the animation player editor:
 
 .. image:: /img/keyadded.png
 
-Second, move the editor cursor to the end, by clicking here:
+Move the editor cursor to the end, by clicking here:
 
 .. image:: /img/move_cursor.png
 
