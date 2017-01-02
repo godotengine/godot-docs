@@ -13,7 +13,7 @@ For compiling under Windows, the following is required:
 -  Visual C++, `Visual
    Studio Community <https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx>`__
    (recommended), at least the 2013 version (12.0) up to 2015 (14.0).
-   **Make sure you read Installing Visual Studio caveats bellow or you
+   **Make sure you read Installing Visual Studio caveats below or you
    will have to run/download the installer again.**
 -  `Python 2.7+ <https://www.python.org/downloads/>`__ (3.0 is
    untested as of now). Using the 32-bits installer is recommended.
@@ -92,7 +92,7 @@ need for compilation.
 
 Therefore, you need to start a Visual Studio command prompt. It sets up
 environment variables needed by SCons to locate the compiler.
-It should be called similar to one of the bellow names (for your
+It should be called similar to one of the below names (for your
 respective version of Visual Studio):
 
 * "Developer Command Prompt for VS2013"
@@ -119,7 +119,7 @@ bit version of Godot, but if you want the 64 bit version, you might need
 to setup the prompts manually for easy access.
 
 If you don't see some of the shortcuts, "How the prompts actually work"
-section bellow will explain how to setup these prompts if you need them.
+section below will explain how to setup these prompts if you need them.
 
 About the Developer/Tools Command Prompts and the Visual C++ compiler
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -185,7 +185,7 @@ command to instruct SCons to run parallel builds like this:
 In general, it is OK to have at least as many threads compiling Godot as
 you have cores in your CPU, if not one or two more, I use -j6
 (six threads) for my 4 core CPU, your mileage may vary. Feel free to add
--j option to any SCons command you see bellow if you setup the
+-j option to any SCons command you see below if you setup the
 "Pywin32 Python Extension".
 
 If all goes well, the resulting binary executable will be placed in
@@ -209,7 +209,7 @@ different file called **VsDevCmd.bat** but none of the other tools that
 this batch file enables are needed by Godot/SCons.
 
 Since you are probably using VS2013 or VS2015, if you need to recreate
-them manually, use the bellow folders, or place
+them manually, use the below folders, or place
 them on the desktop/taskbar:
 
 ::
@@ -220,7 +220,7 @@ them on the desktop/taskbar:
 Start the creation of the shortcut by pressing the ``right mouse
 button/New/Shortcut`` in an empty place in your desired location.
 
-Then copy one of these commands bellow for the corresponding tool you
+Then copy one of these commands below for the corresponding tool you
 need into the "Path" and "Name" sections of the shortcut creation
 wizard, and fix the path to the batch file if needed.
 
