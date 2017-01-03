@@ -26,7 +26,7 @@ For compiling under Windows, Linux or OSX, the following is required:
 -  [Windows only] PyWin32 (optional, for parallel compilation)
 -  Android SDK version 23.0.3 [Note: Please install all Tools and Extras of sdk manager]
 -  Android build tools version 19.1
--  Android NDK r10e or later
+-  Android NDK r13 or later
 -  Gradle (will be downloaded and installed automatically if missing)
 -  JDK 6 or later (either OpenJDK or Oracle JDK) - JDK 9 is untested as of now
 
