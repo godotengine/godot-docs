@@ -23,6 +23,8 @@ Member Functions
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`        | :ref:`listen<class_TCP_Server_listen>`  **(** :ref:`int<class_int>` port, :ref:`StringArray<class_stringarray>` accepted_hosts=StringArray([])  **)** |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_ip_type<class_TCP_Server_set_ip_type>`  **(** :ref:`int<class_int>` ip_type  **)**                                                          |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`stop<class_TCP_Server_stop>`  **(** **)**                                                                                                       |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_object>`  | :ref:`take_connection<class_TCP_Server_take_connection>`  **(** **)**                                                                                 |
@@ -46,7 +48,11 @@ Return true if a connection is available for taking.
 
 - :ref:`int<class_int>`  **listen**  **(** :ref:`int<class_int>` port, :ref:`StringArray<class_stringarray>` accepted_hosts=StringArray([])  **)**
 
-Listen on a port, alternatively give a white-list of accepted hosts.
+Listen on a port using protocol, alternatively give a white-list of accepted hosts.
+
+.. _class_TCP_Server_set_ip_type:
+
+- void  **set_ip_type**  **(** :ref:`int<class_int>` ip_type  **)**
 
 .. _class_TCP_Server_stop:
 
