@@ -118,7 +118,7 @@ Returns a transfrom with the basis orthogonal (90 degrees), and normalized axis 
 
 - :ref:`Transform<class_transform>`  **rotated**  **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` phi  **)**
 
-Rotate the transform locally.
+Rotate the transform locally. This introduces an additional pre-rotation to the transform, changing the basis to basis \* Matrix3(axis, phi).
 
 .. _class_Transform_scaled:
 

@@ -62,6 +62,7 @@ Signals
 -------
 
 -  **frame_changed**  **(** **)**
+-  **finished**  **(** **)**
 
 Description
 -----------

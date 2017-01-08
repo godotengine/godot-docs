@@ -53,6 +53,8 @@ Member Functions
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Control<class_control>`                              | :ref:`get_editor_viewport<class_EditorPlugin_get_editor_viewport>`  **(** **)**                                                                                                                                     |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                       | :ref:`edit_resource<class_EditorPlugin_edit_resource>`  **(** :ref:`Resource<class_resource>` p_resource  **)**                                                                                                     |
++------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                                | :ref:`get_name<class_EditorPlugin_get_name>`  **(** **)** virtual                                                                                                                                                   |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`EditorFileSystem<class_editorfilesystem>`            | :ref:`get_resource_filesystem<class_EditorPlugin_get_resource_filesystem>`  **(** **)**                                                                                                                             |
@@ -251,6 +253,12 @@ Get the general settings for the editor (the same window that appears in the Set
 - :ref:`Control<class_control>`  **get_editor_viewport**  **(** **)**
 
 Get the main editor control. Use this as a parent for main screens.
+
+.. _class_EditorPlugin_edit_resource:
+
+- void  **edit_resource**  **(** :ref:`Resource<class_resource>` p_resource  **)**
+
+Tells the editor to handle the edit of the given resource. Ex: If you pass a Script as a argument, the editor will open the scriptEditor.
 
 .. _class_EditorPlugin_get_name:
 

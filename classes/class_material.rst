@@ -8,7 +8,7 @@ Material
 
 **Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`ShaderMaterial<class_shadermaterial>`, :ref:`FixedMaterial<class_fixedmaterial>`
+**Inherited By:** :ref:`ShaderMaterial<class_shadermaterial>`, :ref:`FixedSpatialMaterial<class_fixedspatialmaterial>`
 
 **Category:** Core
 

@@ -77,7 +77,7 @@ Create a matrix from a quaternion.
 
 - :ref:`Matrix3<class_matrix3>`  **Matrix3**  **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` phi  **)**
 
-Create a matrix from an axis vector and an angle.
+Create a matrix which rotates around the given axis by the specified angle.
 
 .. _class_Matrix3_Matrix3:
 
@@ -95,7 +95,7 @@ Return the determinant of the matrix.
 
 - :ref:`Vector3<class_vector3>`  **get_euler**  **(** **)**
 
-Return euler angles from the matrix.
+Return euler angles (in the XYZ convention: first Z, then Y, and X last) from the matrix. Returned vector contains the rotation angles in the format (third,second,first).
 
 .. _class_Matrix3_get_orthogonal_index:
 
@@ -115,13 +115,11 @@ Return the affine inverse of the matrix.
 
 - :ref:`Matrix3<class_matrix3>`  **orthonormalized**  **(** **)**
 
-Return the orthonormalized version of the matrix (useful to call from time to time to avoid rounding error).
+Return the orthonormalized version of the matrix (useful to call from time to time to avoid rounding error for orthogonal matrices). This performs a Gram-Schmidt orthonormalization on the basis of the matrix.
 
 .. _class_Matrix3_rotated:
 
 - :ref:`Matrix3<class_matrix3>`  **rotated**  **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` phi  **)**
-
-Return the rotated version of the matrix, by a given axis and angle.
 
 .. _class_Matrix3_scaled:
 

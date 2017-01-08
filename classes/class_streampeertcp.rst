@@ -18,19 +18,19 @@ TCP Stream peer.
 Member Functions
 ----------------
 
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`connect<class_StreamPeerTCP_connect>`  **(** :ref:`String<class_string>` host, :ref:`int<class_int>` port, :ref:`int<class_int>` ip_type=int.IP_TYPE_ANY  **)** |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`disconnect<class_StreamPeerTCP_disconnect>`  **(** **)**                                                                                                        |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_connected_host<class_StreamPeerTCP_get_connected_host>`  **(** **)** const                                                                                  |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_connected_port<class_StreamPeerTCP_get_connected_port>`  **(** **)** const                                                                                  |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_status<class_StreamPeerTCP_get_status>`  **(** **)** const                                                                                                  |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`is_connected<class_StreamPeerTCP_is_connected>`  **(** **)** const                                                                                              |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`connect<class_StreamPeerTCP_connect>`  **(** :ref:`String<class_string>` host, :ref:`int<class_int>` port  **)** |
++------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`disconnect<class_StreamPeerTCP_disconnect>`  **(** **)**                                                         |
++------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_connected_host<class_StreamPeerTCP_get_connected_host>`  **(** **)** const                                   |
++------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`get_connected_port<class_StreamPeerTCP_get_connected_port>`  **(** **)** const                                   |
++------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`get_status<class_StreamPeerTCP_get_status>`  **(** **)** const                                                   |
++------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`is_connected<class_StreamPeerTCP_is_connected>`  **(** **)** const                                               |
++------------------------------+------------------------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
 -----------------
@@ -50,9 +50,9 @@ Member Function Description
 
 .. _class_StreamPeerTCP_connect:
 
-- :ref:`int<class_int>`  **connect**  **(** :ref:`String<class_string>` host, :ref:`int<class_int>` port, :ref:`int<class_int>` ip_type=int.IP_TYPE_ANY  **)**
+- :ref:`int<class_int>`  **connect**  **(** :ref:`String<class_string>` host, :ref:`int<class_int>` port  **)**
 
-Connect to the specified host:port pair. A hostname will be resolved using "ip_type" (v4/v6/any) if valid. Returns :ref:`OK<class_ok>` on success or :ref:`FAILED<class_failed>` on failure.
+Connect to the specified host:port pair. A hostname will be resolved if valid. Returns :ref:`OK<class_ok>` on success or :ref:`FAILED<class_failed>` on failure.
 
 .. _class_StreamPeerTCP_disconnect:
 
