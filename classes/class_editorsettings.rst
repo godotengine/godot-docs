@@ -64,26 +64,20 @@ Member Function Description
 Add a custom property info to a property. The dictionary must contain: name::ref:`String<class_string>`(the name of the property) and type::ref:`int<class_int>`(see TYPE\_\* in :ref:`@Global Scope<class_@global scope>`), and optionally hint::ref:`int<class_int>`(see PROPERTY_HINT\_\* in :ref:`@Global Scope<class_@global scope>`), hint_string::ref:`String<class_string>`.
 
 Example:
+
 ::
 
+    editor_settings.set("category/property_name", 0)
 
-editor_settings.set("category/property_name", 0)
+    var property_info = {
+        "name": "category/property_name",
+        "type": TYPE_INT,
+        "hint": PROPERTY_HINT_ENUM,
+        "hint_string": "one,two,three"
+    }
 
+    editor_settings.add_property_info(property_info)
 
-
-var property_info = {
-
-    "name": "category/property_name",
-
-    "type": TYPE_INT,
-
-    "hint": PROPERTY_HINT_ENUM,
-
-    "hint_string": "one,two,three"
-
-}
-
-			editor_settings.add_property_info(property_info)
 
 .. _class_EditorSettings_erase:
 
