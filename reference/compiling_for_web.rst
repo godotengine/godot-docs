@@ -1,7 +1,7 @@
 .. _doc_compiling_for_web:
 
 Compiling for the Web
-========================
+=====================
 
 .. highlight:: shell
 
@@ -40,67 +40,62 @@ build or ``release_debug`` for a debug build::
 
 The engine will now be compiled to JavaScript by Emscripten. If all goes well,
 the resulting file will be placed in the ``bin`` subdirectory. Its name is
-``godot.javascript.opt.js`` for release or ``godot.javascript.opt.debug.js``
-for debug. Additionally, a file of the same name but with the extension
-``.html.mem`` will be generated.
+``godot.javascript.opt.asm.js`` for release or
+``godot.javascript.opt.debug.asm.js`` for debug. Additionally, three files of
+the same name but with the extensions ``.html``, ``.html.mem`` and ``.js`` will
+be generated.
 
 Building export templates
 -------------------------
 
 After compiling, further steps are required to build the template.
 The actual web export template has the form of a zip file containing at least
-these 4 files:
+these 5 files:
 
-1. ``godot.js`` — This is the file that was just compiled, but under a different
-   name.
+1. ``godot.asm.js`` — This is the file that was just compiled, but under a
+   different name.
 
    For the release template::
 
-       cp bin/godot.javascript.opt.js godot.js
+       cp bin/godot.javascript.opt.asm.js godot.asm.js
 
    For the debug template::
 
-       cp bin/godot.javascript.opt.debug.js godot.js
+       cp bin/godot.javascript.opt.debug.asm.js godot.asm.js
 
-2. ``godot.mem`` — Also created during compilation, this file initially has the
-   same name as the JavaScript file, except ``.js`` is replaced by
-   ``.html.mem``.
+2. ``godot.js``
+3. ``godot.mem``
+4. ``godot.html`` — other files created during compilation, initially with the
+   same name as the ``.asm.js`` file, except ``.asm.js`` is replaced by
+   ``.js`` for ``godot.js``, ``.html`` for ``godot.html`` and ``.html.mem`` for
+   ``godot.mem``.
 
    For the release template::
 
+       cp bin/godot.javascript.opt.js       godot.js
+       cp bin/godot.javascript.opt.html     godot.html
        cp bin/godot.javascript.opt.html.mem godot.mem
 
    For the debug template::
 
+       cp bin/godot.javascript.opt.debug.js       godot.js
+       cp bin/godot.javascript.opt.debug.html     godot.html
        cp bin/godot.javascript.opt.debug.html.mem godot.mem
 
-3. ``godot.html`` — Another file created during compilation. This file has a
-   ``.html`` extension.
-
-   For the release template::
-
-       cp bin/godot.javascript.opt.html godot.html
-
-   For the debug template::
-
-       cp bin/godot.javascript.opt.debug.html godot.html
-
-4. ``godotfs.js`` — This file is located within the Godot Engine repository,
-   under ``/tools/dist/html_fs/``.
-
-::
+5. ``godotfs.js`` — This file is located within the Godot Engine repository,
+   under ``/tools/dist/html_fs/``::
 
     cp tools/dist/html_fs/godotfs.js .
 
-Once these 4 files are assembled, zip them up and your export template is ready
+Once these 5 files are assembled, zip them up and your export template is ready
 to go. The correct name for the template file is ``javascript_release.zip`` for
 the release template::
 
-    zip javascript_release.zip godot.js godot.mem godotfs.js godot.html
+    zip javascript_release.zip godot.asm.js godot.js godot.mem godotfs.js godot.html
 
 And ``javascript_debug.zip`` for the debug template::
 
-    zip javascript_debug.zip godot.js godot.mem godotfs.js godot.html
+    zip javascript_debug.zip godot.asm.js godot.js godot.mem godotfs.js godot.html
 
 The resulting files must be placed in the ``templates`` directory in your Godot
 user directory::
@@ -162,8 +157,8 @@ The generated files' names contain ``.webassembly`` as an additional file
 suffix before the extension.
 
 In order to build the actual WebAssembly export templates, the WebAssembly
-binary file with the ``.wasm`` extension must be added alongside the usual
-files to the archive as ``godot.wasm``.
+binary file with the ``.wasm`` extension is added to the archive as
+``godot.wasm`` in place of ``godot.asm.js`` alongside the usual files.
 
 For the release template::
 
@@ -183,16 +178,31 @@ export templates with the names ``javascript_release.zip`` and
 Customizing the HTML page
 -------------------------
 
-Rather than the default ``godot.html`` file generated when compiling, it is
+Rather than the default HTML file generated when compiling, it is
 also possible to use a custom HTML page. This allows drastic customization of
 the final web presentation.
 
-The JavaScript object ``Module`` is the page's interface to Emscripten. Check
-the official documentation for information on how to use it: https://kripken.github.io/emscripten-site/docs/api_reference/module.html
+This can be done in two ways. The first is to replace the
+``platform/javascript/godot_shell.html`` file. In this case, the HTML file is
+used at build time, allowing Emscripten so substitute the ``{{{ SCRIPT }}}``
+placeholder by a ``<script>>`` element containing the loader code. This makes
+the HTML file usable for both asm.js and WebAssembly templates, since they use
+different loading code.
 
-The default HTML page offers a good example to start off with, separating the
+The other method is to simply replace the ``godot.html`` file within the
+complete export templates. This method does not require building the engine.
+However, in this case, no ``{{{ SCRIPT }}}`` placeholder should be used in the
+HTML file, since it would never be replaced — the loader code for either asm.js
+or WebAssembly must already be included in the file.
+
+In the HTML page, the JavaScript object ``Module`` is the page's interface to
+Emscripten. Check the official documentation for information on how to use it:
+https://kripken.github.io/emscripten-site/docs/api_reference/module.html
+
+The default HTML page offers an example to start off with, separating the
 Emscripten interface logic in the JavaScript ``Module`` object from the page
-logic in the ``Presentation`` object.
+logic in the ``Presentation`` object. Emscripten's default ``shell.html`` file
+is another example, but does not use Godot's placeholders, listed below.
 
 When exporting a game, several placeholders in the ``godot.html`` file are
 substituted by values dependent on the export:
@@ -200,9 +210,6 @@ substituted by values dependent on the export:
 +------------------------------+-----------------------------------------------+
 | Placeholder                  | substituted by                                |
 +==============================+===============================================+
-| ``{{{ SCRIPT }}}``           | ``<script>`` element responsible for loading  |
-|                              | the engine, generated by Emscripten           |
-+------------------------------+-----------------------------------------------+
 | ``$GODOT_BASE``              | Basename of files referenced within the page, |
 |                              | without file extension or other suffixes      |
 +------------------------------+-----------------------------------------------+
@@ -228,13 +235,14 @@ substituted by values dependent on the export:
 |                              | terminating semicolon                         |
 +------------------------------+-----------------------------------------------+
 | ``$GODOT_STYLE_INCLUDE``     | Custom string to include just before the end  |
-|                              | of the page's CSS style sheet                 |
+|                              | of the page's CSS                             |
++------------------------------+-----------------------------------------------+
+| ``{{{ SCRIPT }}}``           | ``<script>`` that loads the engine,           |
+|                              | substituted only when building, not on export |
 +------------------------------+-----------------------------------------------+
 
-The first four of the placeholders listed should always be implemented in the
+The first three of the placeholders listed should always be implemented in the
 HTML page, since they are important for the correct presentation of the game.
+The last placeholder is important when rewriting the ``godot_shell.html`` file
+and is only substituted during build time, not during export time.
 The other placeholders are optional.
-
-Finally, the custom HTML page is installed by replacing the existing
-``godot.html`` file in the export template with the new one, retaining the name
-of the original.
