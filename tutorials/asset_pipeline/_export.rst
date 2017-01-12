@@ -12,7 +12,7 @@ Export
    exporting_for_android
    exporting_for_ios
    exporting_for_uwp
+   exporting_for_web
 .. exporting_for_bb10
 .. exporting_for_nacl
-.. exporting_for_html5
 .. exporting_for_consoles
