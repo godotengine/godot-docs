@@ -1,7 +1,7 @@
 .. _doc_compiling_for_web:
 
 Compiling for the Web
-========================
+=====================
 
 .. highlight:: shell
 
@@ -40,58 +40,63 @@ build or ``release_debug`` for a debug build::
 
 The engine will now be compiled to JavaScript by Emscripten. If all goes well,
 the resulting file will be placed in the ``bin`` subdirectory. Its name is
-``godot.javascript.opt.js`` for release or ``godot.javascript.opt.debug.js``
-for debug. Additionally, a file of the same name but with the extension
-``.html.mem`` will be generated.
+``godot.javascript.opt.asm.js`` for release or
+``godot.javascript.opt.debug.asm.js`` for debug. Additionally, two files of
+the same name but with the extensions ``.js`` and ``.html.mem`` will be
+generated.
 
 Building export templates
 -------------------------
 
 After compiling, further steps are required to build the template.
 The actual web export template has the form of a zip file containing at least
-these 4 files:
+these 5 files:
 
-1. ``godot.js`` — This is the file that was just compiled, but under a different
-   name.
+1. ``godot.asm.js`` — This is the file that was just compiled, but under a
+   different name.
 
    For the release template::
 
-       cp bin/godot.javascript.opt.js godot.js
+       cp bin/godot.javascript.opt.asm.js godot.asm.js
 
    For the debug template::
 
-       cp bin/godot.javascript.opt.debug.js godot.js
+       cp bin/godot.javascript.opt.debug.asm.js godot.asm.js
 
-2. ``godot.mem`` — Another file created during compilation. This file initially
-   has the same name as the JavaScript file, except ``.js`` is replaced by
-   ``.html.mem``.
+2. ``godot.js``
+3. ``godot.mem`` — other files created during compilation, initially with the
+   same name as the ``.asm.js`` file, except ``.asm.js`` is replaced by
+   ``.js`` for ``godot.js`` and ``.html.mem`` for
+   ``godot.mem``.
 
    For the release template::
 
+       cp bin/godot.javascript.opt.js       godot.js
        cp bin/godot.javascript.opt.html.mem godot.mem
 
    For the debug template::
 
+       cp bin/godot.javascript.opt.debug.js       godot.js
        cp bin/godot.javascript.opt.debug.html.mem godot.mem
 
-3. ``godot.html`` and
-4. ``godotfs.js`` — Both of these files are located within the Godot Engine
-   repository, under ``tools/html_fs/``.
+4. ``godot.html``
+5. ``godotfs.js`` — Both of these files are located within the Godot Engine
+   repository, under ``tools/dist/html_fs/``.
 
 ::
 
-    cp tools/html_fs/godot.html .
-    cp tools/html_fs/godotfs.js .
+    cp tools/dist/html_fs/godot.html .
+    cp tools/dist/html_fs/godotfs.js .
 
-Once these 4 files are assembled, zip them up and your export template is ready
+Once these 5 files are assembled, zip them up and your export template is ready
 to go. The correct name for the template file is ``javascript_release.zip`` for
 the release template::
 
-    zip javascript_release godot.js godot.mem godotfs.js godot.html
+    zip javascript_release.zip godot.asm.js godot.js godot.mem godotfs.js godot.html
 
 And ``javascript_debug.zip`` for the debug template::
 
-    zip javascript_debug godot.js godot.mem godotfs.js godot.html
+    zip javascript_debug.zip godot.asm.js godot.js godot.mem godotfs.js godot.html
 
 The resulting files must be placed in the ``templates`` directory in your Godot
 user directory::
@@ -110,15 +115,17 @@ Customizing the HTML page
 -------------------------
 
 Rather than the default ``godot.html`` file from the Godot Engine repository's
-``tools/html_fs/`` directory, it is also possible to use a custom HTML page.
-This allows drastic customization of the final web presentation.
+``tools/dist/html_fs/`` directory, it is also possible to use a custom HTML
+page. This allows drastic customization of the final web presentation.
 
-The JavaScript object ``Module`` is the page's interface to Emscripten. Check
-the official documentation for information on how to use it: https://kripken.github.io/emscripten-site/docs/api_reference/module.html
+In the HTML page, the JavaScript object ``Module`` is the page's interface to
+Emscripten. Check the official documentation for information on how to use it:
+https://kripken.github.io/emscripten-site/docs/api_reference/module.html
 
-The default HTML page offers a good example to start off with, separating the
+The default HTML page offers an example to start off with, separating the
 Emscripten interface logic in the JavaScript ``Module`` object from the page
-logic in the ``Presentation`` object.
+logic in the ``Presentation`` object. Emscripten's default ``shell.html`` file
+is another example, but does not use Godot's placeholders, listed below.
 
 When exporting a game, several placeholders in the ``godot.html`` file are
 substituted by values dependent on the export:
@@ -156,7 +163,7 @@ substituted by values dependent on the export:
 |                              | terminating semicolon                         |
 +------------------------------+-----------------------------------------------+
 | ``$GODOT_STYLE_INCLUDE``     | Custom string to include just before the end  |
-|                              | of the page's CSS style sheet                 |
+|                              | of the page's CSS                             |
 +------------------------------+-----------------------------------------------+
 
 The first five of the placeholders listed should always be implemented in the
