@@ -159,6 +159,8 @@ keywords are reserved words (tokens), they can't be used as identifiers.
 +------------+---------------------------------------------------------------------------------------------------------------+
 | while      | See while_.                                                                                                   |
 +------------+---------------------------------------------------------------------------------------------------------------+
+| match      | See match_.                                                                                                   |
++------------+---------------------------------------------------------------------------------------------------------------+
 | switch     | Reserved for future implementation.                                                                           |
 +------------+---------------------------------------------------------------------------------------------------------------+
 | case       | Reserved for future implementation.                                                                           |
@@ -693,6 +695,133 @@ in the loop variable.
 
     for i in range(2,8,2):
         statement  # similar to [2, 4, 6] but does not allocate an array
+
+match
+^^^^^
+
+A ``match`` statement is used to branch execution of a program.
+It's the equivalent of the ``switch`` statement found in many other languages but offers some additional features.
+
+Basic syntax:
+::
+    
+    match [expression]:
+        [pattern](s): [block]
+        [pattern](s): [block]
+        [pattern](s): [block]
+
+
+**Crash-course for people who are familiar to switch statements**:
+
+1) replace ``switch`` by ``match``
+2) remove ``case``
+3) remove any ``break`` s. If you don't want to ``break`` by default you can use ``continue`` to get a fallthrough.
+4) change ``default`` to a single underscore.
+
+
+**Control flow**:
+
+The patterns get matched from top to bottom.
+If a pattern matches the corresponding block gets executed. After that the execution will continue after the ``match`` statement.
+If you want to have a fallthrough you can use ``continue`` to stop execution in the current block and check the next one.
+
+
+
+
+There are 6 pattern types:
+
+- constant pattern
+    constant primitives like numbers and strings ::
+    
+        match x:
+            1:      print("I'm number one!")
+            2:      print("Two are better than one!")
+            "test": print("Oh snap! It's a string!")
+
+- variable pattern
+    matching on the contents of a variable/enum ::
+    
+        match typeof(x):
+            TYPE_FLOAT:  print("float")
+            TYPE_STRING: print("text")
+            TYPE_ARRAY:  print("array")
+
+
+- wilcard pattern
+    This pattern matches everything. It's written as a single underscore.
+    
+    It can be used as the equivalent of the ``default`` in a ``switch`` statement in other languages. ::
+    
+        match x:
+            1: print("it's one!")
+            2: print("it's one times two!")
+            _: print("it's not 1 or 2. I don't care tbh")
+
+
+- binding pattern
+    A binding pattern introduces a new variable. It's like the wildcard pattern: it matches everything - but it also gives that value a name.
+    Especially useful in array and dictionary patterns. ::
+        
+        match x:
+            1:           print("it's one!")
+            2:           print("it's one times two!")
+            var new_var: print("it's not 1 or 2, it's ", new_var)
+
+
+- array pattern
+    matches an array. Every single element of the array pattern is a pattern itself so you can nest them.
+    
+    First the length of the array is tested. It has to be the same like the pattern, otherwise the pattern doesn't match.
+
+    **Open-ended array**: An array can be bigger than the pattern by making the last subpattern ``..``
+    
+    Every subpattern has to be comma seperated. ::
+    
+        match x:
+            []:
+                print("emtpy array")
+            [1, 3, "test", null]:
+                print("very specific array")
+            [var start, _, "test"]:
+                print("first element is ", start, " ande the last is \"test\"")
+            [42, ..]:
+                print("open ended array")
+    
+- dictionary pattern
+    works similar to the array pattern. Every key has to be a constant pattern.
+
+    First the size of the dictionary is tested. It has to be the same like the pattern, otherwise the pattern doesn't match.
+
+    **Open-ended dictionary**: A dictionary can be bigger than the pattern by making the last subpattern ``..``
+
+    Every subpattern has to be comma seperated.
+
+    If you don't specify a value then only the existance of the key is checked (treating the dictionary like a set).
+
+    A value pattern is seperated from the key pattern with a ``:`` ::
+
+        match x:
+            {}:
+                print("empty dict")
+            {"name": "dennis"}:
+                print("the name is dennis")
+            {"name": "dennis", "age": var age}:
+                print("dennis is ", age, " years old.")
+            {"name", "age"}:
+                print("has a name and an age, but it's not dennis :(")
+            {"key": "godotisawesome", ..}:
+                print("I only checked for one entry and ignored the rest")
+
+Multipatterns:
+    You can also specify multiple patterns which are seperated by a comma. Those patterns aren't allowed to have any bindings in them. ::
+
+        match x:
+            1, 2, 3:
+                print("it's 1 - 3")
+            "sword", "splashpotion", "fist":
+                print("yep, you've taken damage")
+
+
 
 Classes
 ~~~~~~~

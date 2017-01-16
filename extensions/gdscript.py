@@ -90,7 +90,7 @@ class GDScriptLexer(RegexLexer):
                 'do', 'var', 'const', 'extends', 'export', 'onready', 'tool',
                 'static', 'setget', 'signal', 'breakpoint', 'switch', 'case',
                 'assert', 'break', 'continue', 'elif', 'else', 'for', 'if',
-                'pass', 'return', 'while'), suffix=r'\b'),
+                'pass', 'return', 'while', 'match'), suffix=r'\b'),
              Keyword),
         ],
         'builtins': [
