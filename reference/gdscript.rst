@@ -713,17 +713,17 @@ Basic syntax:
 
 **Crash-course for people who are familiar to switch statements**:
 
-1) replace ``switch`` by ``match``
+1) replace ``switch`` with ``match``
 2) remove ``case``
-3) remove any ``break`` s. If you don't want to ``break`` by default you can use ``continue`` to get a fallthrough.
+3) remove any ``break``'s. If you don't want to ``break`` by default you can use ``continue`` for a fallthrough.
 4) change ``default`` to a single underscore.
 
 
 **Control flow**:
 
-The patterns get matched from top to bottom.
-If a pattern matches the corresponding block gets executed. After that the execution will continue after the ``match`` statement.
-If you want to have a fallthrough you can use ``continue`` to stop execution in the current block and check the next one.
+The patterns are matched from top to bottom.
+If a pattern matches, the corresponding block will be executed. After that, the execution continues below the ``match`` statement.
+If you want to have a fallthrough you can use ``continue`` to stop execution in the current block and check the ones below it.
 
 
 
@@ -731,15 +731,16 @@ If you want to have a fallthrough you can use ``continue`` to stop execution in 
 There are 6 pattern types:
 
 - constant pattern
-    constant primitives like numbers and strings ::
+    constant primitives, like numbers and strings ::
     
         match x:
-            1:      print("I'm number one!")
+            1:      print("We are number one!")
             2:      print("Two are better than one!")
             "test": print("Oh snap! It's a string!")
 
+
 - variable pattern
-    matching on the contents of a variable/enum ::
+    matches the contents of a variable/enum ::
     
         match typeof(x):
             TYPE_FLOAT:  print("float")
@@ -747,7 +748,7 @@ There are 6 pattern types:
             TYPE_ARRAY:  print("array")
 
 
-- wilcard pattern
+- wildcard pattern
     This pattern matches everything. It's written as a single underscore.
     
     It can be used as the equivalent of the ``default`` in a ``switch`` statement in other languages. ::
@@ -755,12 +756,12 @@ There are 6 pattern types:
         match x:
             1: print("it's one!")
             2: print("it's one times two!")
-            _: print("it's not 1 or 2. I don't care tbh")
+            _: print("it's not 1 or 2. I don't care tbh.")
 
 
 - binding pattern
-    A binding pattern introduces a new variable. It's like the wildcard pattern: it matches everything - but it also gives that value a name.
-    Especially useful in array and dictionary patterns. ::
+    A binding pattern introduces a new variable. Like the wildcard pattern, it matches everything - and also gives that value a name.
+    It's especially useful in array and dictionary patterns. ::
         
         match x:
             1:           print("it's one!")
@@ -771,7 +772,7 @@ There are 6 pattern types:
 - array pattern
     matches an array. Every single element of the array pattern is a pattern itself so you can nest them.
     
-    First the length of the array is tested. It has to be the same like the pattern, otherwise the pattern doesn't match.
+    The length of the array is tested first, it has to be the same size as the pattern, otherwise the pattern don't match.
 
     **Open-ended array**: An array can be bigger than the pattern by making the last subpattern ``..``
     
@@ -779,24 +780,24 @@ There are 6 pattern types:
     
         match x:
             []:
-                print("emtpy array")
+                print("empty array")
             [1, 3, "test", null]:
                 print("very specific array")
             [var start, _, "test"]:
-                print("first element is ", start, " ande the last is \"test\"")
+                print("first element is ", start, ", and the last is \"test\"")
             [42, ..]:
                 print("open ended array")
     
 - dictionary pattern
-    works similar to the array pattern. Every key has to be a constant pattern.
+    Works in the same was as the array pattern. Every key has to be a constant pattern.
 
-    First the size of the dictionary is tested. It has to be the same like the pattern, otherwise the pattern doesn't match.
+    The size of the dictionary is tested first, it has to be the same size as the pattern, otherwise the pattern don't match.
 
     **Open-ended dictionary**: A dictionary can be bigger than the pattern by making the last subpattern ``..``
 
     Every subpattern has to be comma seperated.
 
-    If you don't specify a value then only the existance of the key is checked (treating the dictionary like a set).
+    If you don't specify a value, then only the existance of the key is checked.
 
     A value pattern is seperated from the key pattern with a ``:`` ::
 
@@ -813,7 +814,7 @@ There are 6 pattern types:
                 print("I only checked for one entry and ignored the rest")
 
 Multipatterns:
-    You can also specify multiple patterns which are seperated by a comma. Those patterns aren't allowed to have any bindings in them. ::
+    You can also specify multiple patterns seperated by a comma. These patterns aren't allowed to have any bindings in them. ::
 
         match x:
             1, 2, 3:
