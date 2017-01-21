@@ -61,6 +61,7 @@ Member Functions
 Signals
 -------
 
+-  **finished**  **(** **)**
 -  **frame_changed**  **(** **)**
 
 Description

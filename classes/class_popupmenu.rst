@@ -61,6 +61,8 @@ Member Functions
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`      | :ref:`get_item_tooltip<class_PopupMenu_get_item_tooltip>`  **(** :ref:`int<class_int>` idx  **)** const                                                                                                          |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`is_hide_on_item_selection<class_PopupMenu_is_hide_on_item_selection>`  **(** **)**                                                                                                                         |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`is_item_checkable<class_PopupMenu_is_item_checkable>`  **(** :ref:`int<class_int>` idx  **)** const                                                                                                        |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`is_item_checked<class_PopupMenu_is_item_checked>`  **(** :ref:`int<class_int>` idx  **)** const                                                                                                            |
@@ -70,6 +72,8 @@ Member Functions
 | :ref:`bool<class_bool>`          | :ref:`is_item_separator<class_PopupMenu_is_item_separator>`  **(** :ref:`int<class_int>` idx  **)** const                                                                                                        |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`remove_item<class_PopupMenu_remove_item>`  **(** :ref:`int<class_int>` idx  **)**                                                                                                                          |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_hide_on_item_selection<class_PopupMenu_set_hide_on_item_selection>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                       |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_item_ID<class_PopupMenu_set_item_ID>`  **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` id  **)**                                                                                                |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -225,6 +229,12 @@ Return the text of the item at index "idx".
 
 - :ref:`String<class_string>`  **get_item_tooltip**  **(** :ref:`int<class_int>` idx  **)** const
 
+.. _class_PopupMenu_is_hide_on_item_selection:
+
+- :ref:`bool<class_bool>`  **is_hide_on_item_selection**  **(** **)**
+
+Returns a boolean that indicates whether or not the PopupMenu will hide on item selection.
+
 .. _class_PopupMenu_is_item_checkable:
 
 - :ref:`bool<class_bool>`  **is_item_checkable**  **(** :ref:`int<class_int>` idx  **)** const
@@ -254,6 +264,12 @@ Return whether the item is a seperator. If it is, it would be displayed as a lin
 - void  **remove_item**  **(** :ref:`int<class_int>` idx  **)**
 
 Removes the item at index "idx" from the menu. Note that the indexes of items after the removed item are going to be shifted by one.
+
+.. _class_PopupMenu_set_hide_on_item_selection:
+
+- void  **set_hide_on_item_selection**  **(** :ref:`bool<class_bool>` enable  **)**
+
+Sets whether or not the PopupMenu will hide on item selection.
 
 .. _class_PopupMenu_set_item_ID:
 

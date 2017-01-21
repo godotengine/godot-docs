@@ -27,6 +27,12 @@ Member Functions
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`    | :ref:`get_global_pos<class_Node2D_get_global_pos>`  **(** **)** const                                                                         |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`        | :ref:`get_global_rot<class_Node2D_get_global_rot>`  **(** **)** const                                                                         |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`        | :ref:`get_global_rotd<class_Node2D_get_global_rotd>`  **(** **)** const                                                                       |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`    | :ref:`get_global_scale<class_Node2D_get_global_scale>`  **(** **)** const                                                                     |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`    | :ref:`get_pos<class_Node2D_get_pos>`  **(** **)** const                                                                                       |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Matrix32<class_matrix32>`  | :ref:`get_relative_transform_to_parent<class_Node2D_get_relative_transform_to_parent>`  **(** :ref:`Object<class_object>` parent  **)** const |
@@ -54,6 +60,12 @@ Member Functions
 | void                             | :ref:`scale<class_Node2D_scale>`  **(** :ref:`Vector2<class_vector2>` ratio  **)**                                                            |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_global_pos<class_Node2D_set_global_pos>`  **(** :ref:`Vector2<class_vector2>` pos  **)**                                            |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_global_rot<class_Node2D_set_global_rot>`  **(** :ref:`float<class_float>` radians  **)**                                            |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_global_rotd<class_Node2D_set_global_rotd>`  **(** :ref:`float<class_float>` degrees  **)**                                          |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_global_scale<class_Node2D_set_global_scale>`  **(** :ref:`Vector2<class_vector2>` scale  **)**                                      |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_global_transform<class_Node2D_set_global_transform>`  **(** :ref:`Matrix32<class_matrix32>` xform  **)**                            |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -99,6 +111,24 @@ Return the rotation angle in radians needed for the 2d node to point at 'point' 
 - :ref:`Vector2<class_vector2>`  **get_global_pos**  **(** **)** const
 
 Return the global position of the 2D node.
+
+.. _class_Node2D_get_global_rot:
+
+- :ref:`float<class_float>`  **get_global_rot**  **(** **)** const
+
+Return the global rotation in radians of the 2D node.
+
+.. _class_Node2D_get_global_rotd:
+
+- :ref:`float<class_float>`  **get_global_rotd**  **(** **)** const
+
+Return the global rotation in degrees of the 2D node.
+
+.. _class_Node2D_get_global_scale:
+
+- :ref:`Vector2<class_vector2>`  **get_global_scale**  **(** **)** const
+
+Return the global scale of the 2D node.
 
 .. _class_Node2D_get_pos:
 
@@ -181,6 +211,24 @@ Apply the 'ratio' scale to the 2D node, according to its current scale value.
 - void  **set_global_pos**  **(** :ref:`Vector2<class_vector2>` pos  **)**
 
 Set the global position of the 2D node to 'pos'.
+
+.. _class_Node2D_set_global_rot:
+
+- void  **set_global_rot**  **(** :ref:`float<class_float>` radians  **)**
+
+Set the global rotation in radians of the 2D node.
+
+.. _class_Node2D_set_global_rotd:
+
+- void  **set_global_rotd**  **(** :ref:`float<class_float>` degrees  **)**
+
+Set the global rotation in degrees of the 2D node.
+
+.. _class_Node2D_set_global_scale:
+
+- void  **set_global_scale**  **(** :ref:`Vector2<class_vector2>` scale  **)**
+
+Set the global scale of the 2D node.
 
 .. _class_Node2D_set_global_transform:
 

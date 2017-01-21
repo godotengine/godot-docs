@@ -19,6 +19,8 @@ Member Functions
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_color>`                      | :ref:`Color8<class_@GDScript_Color8>`  **(** :ref:`int<class_int>` r8, :ref:`int<class_int>` g8, :ref:`int<class_int>` b8, :ref:`int<class_int>` a8  **)** |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`                      | :ref:`ColorN<class_@GDScript_ColorN>`  **(** :ref:`String<class_string>` name, :ref:`float<class_float>` alpha  **)**                                      |
++------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`abs<class_@GDScript_abs>`  **(** :ref:`float<class_float>` s  **)**                                                                                  |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`acos<class_@GDScript_acos>`  **(** :ref:`float<class_float>` s  **)**                                                                                |
@@ -172,6 +174,10 @@ Member Function Description
 - :ref:`Color<class_color>`  **Color8**  **(** :ref:`int<class_int>` r8, :ref:`int<class_int>` g8, :ref:`int<class_int>` b8, :ref:`int<class_int>` a8  **)**
 
 Make a color from red, green, blue and alpha. Arguments can range from 0 to 255.
+
+.. _class_@GDScript_ColorN:
+
+- :ref:`Color<class_color>`  **ColorN**  **(** :ref:`String<class_string>` name, :ref:`float<class_float>` alpha  **)**
 
 .. _class_@GDScript_abs:
 

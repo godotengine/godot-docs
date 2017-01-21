@@ -192,7 +192,7 @@ Return the body bounciness.
 
 - :ref:`Array<class_array>`  **get_colliding_bodies**  **(** **)** const
 
-Return a list of the bodies colliding with this one.
+Return a list of the bodies colliding with this one. By default, number of max contacts reported is at 0 , see :ref:`set_max_contacts_reported<class_RigidBody2D_set_max_contacts_reported>` to increase it. You must also enable contact monitor, see :ref:`set_contact_monitor<class_RigidBody2D_set_contact_monitor>`
 
 .. _class_RigidBody2D_get_continuous_collision_detection_mode:
 

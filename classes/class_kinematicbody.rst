@@ -29,7 +29,7 @@ Member Functions
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`can_teleport_to<class_KinematicBody_can_teleport_to>`  **(** :ref:`Vector3<class_vector3>` position  **)**                             |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`    | :ref:`get_collider<class_KinematicBody_get_collider>`  **(** **)** const                                                                     |
+| :ref:`Variant<class_variant>`  | :ref:`get_collider<class_KinematicBody_get_collider>`  **(** **)** const                                                                     |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_collider_shape<class_KinematicBody_get_collider_shape>`  **(** **)** const                                                         |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -102,7 +102,7 @@ Returns whether the KinematicBody can be teleported to the destination given as 
 
 .. _class_KinematicBody_get_collider:
 
-- :ref:`Object<class_object>`  **get_collider**  **(** **)** const
+- :ref:`Variant<class_variant>`  **get_collider**  **(** **)** const
 
 Return the body that collided with this one.
 

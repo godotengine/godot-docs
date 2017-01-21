@@ -33,6 +33,8 @@ Member Functions
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`append<class_Array_append>`  **(** var value  **)**                                                                   |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`back<class_Array_back>`  **(** **)**                                                                                  |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`clear<class_Array_clear>`  **(** **)**                                                                                |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`      | :ref:`count<class_Array_count>`  **(** var value  **)**                                                                     |
@@ -44,6 +46,8 @@ Member Functions
 | :ref:`int<class_int>`      | :ref:`find<class_Array_find>`  **(** var what, :ref:`int<class_int>` from=0  **)**                                          |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`      | :ref:`find_last<class_Array_find_last>`  **(** var value  **)**                                                             |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`front<class_Array_front>`  **(** **)**                                                                                |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`    | :ref:`has<class_Array_has>`  **(** var value  **)**                                                                         |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
@@ -132,6 +136,12 @@ Construct an array from a :ref:`RawArray<class_rawarray>`.
 
 Append an element at the end of the array (alias of :ref:`push_back<class_Array_push_back>`).
 
+.. _class_Array_back:
+
+- void  **back**  **(** **)**
+
+Returns the last element of the array if the array is not empty (size>0).
+
 .. _class_Array_clear:
 
 - void  **clear**  **(** **)**
@@ -167,6 +177,12 @@ Searches the array for a value and returns its index or -1 if not found. Optiona
 - :ref:`int<class_int>`  **find_last**  **(** var value  **)**
 
 Searches the array in reverse order for a value and returns its index or -1 if not found.
+
+.. _class_Array_front:
+
+- void  **front**  **(** **)**
+
+Returns the first element of the array if the array is not empty (size>0).
 
 .. _class_Array_has:
 

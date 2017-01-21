@@ -21,6 +21,8 @@ Member Functions
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`add_point<class_Curve3D_add_point>`  **(** :ref:`Vector3<class_vector3>` pos, :ref:`Vector3<class_vector3>` in=Vector3(0, 0, 0), :ref:`Vector3<class_vector3>` out=Vector3(0, 0, 0), :ref:`int<class_int>` atpos=-1  **)** |
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`clear_points<class_Curve3D_clear_points>`  **(** **)**                                                                                                                                                                     |
++------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                | :ref:`get_bake_interval<class_Curve3D_get_bake_interval>`  **(** **)** const                                                                                                                                                     |
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                | :ref:`get_baked_length<class_Curve3D_get_baked_length>`  **(** **)** const                                                                                                                                                       |
@@ -77,6 +79,10 @@ Member Function Description
 Adds a point to a curve, at position "pos", with control points "in" and "out".
 
 If "atpos" is given, the point is inserted before the point number "atpos", moving that point (and every point after) after the inserted point. If "atpos" is not given, or is an illegal value (atpos <0 or atpos >= :ref:`get_point_count<class_Curve3D_get_point_count>`), the point will be appended at the end of the point list.
+
+.. _class_Curve3D_clear_points:
+
+- void  **clear_points**  **(** **)**
 
 .. _class_Curve3D_get_bake_interval:
 

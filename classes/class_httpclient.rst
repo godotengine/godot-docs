@@ -200,7 +200,7 @@ Example: (content-length:12), (Content-Type:application/json; charset=UTF-8)
 
 - :ref:`int<class_int>`  **get_status**  **(** **)** const
 
-Returns a status string like STATUS_REQUESTING. Need to call :ref:`poll<class_HTTPClient_poll>` in order to get status updates.
+Returns a STATUS\_\* enum constant. Need to call :ref:`poll<class_HTTPClient_poll>` in order to get status updates.
 
 .. _class_HTTPClient_has_response:
 

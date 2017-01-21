@@ -19,7 +19,7 @@ Member Functions
 ----------------
 
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`    | :ref:`get_collider<class_KinematicBody2D_get_collider>`  **(** **)** const                                             |
+| :ref:`Variant<class_variant>`  | :ref:`get_collider<class_KinematicBody2D_get_collider>`  **(** **)** const                                             |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_variant>`  | :ref:`get_collider_metadata<class_KinematicBody2D_get_collider_metadata>`  **(** **)** const                           |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------+
@@ -62,7 +62,7 @@ Member Function Description
 
 .. _class_KinematicBody2D_get_collider:
 
-- :ref:`Object<class_object>`  **get_collider**  **(** **)** const
+- :ref:`Variant<class_variant>`  **get_collider**  **(** **)** const
 
 Return the body that collided with this one.
 

@@ -41,11 +41,15 @@ Member Functions
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_selected<class_ButtonArray_get_selected>`  **(** **)** const                                                                                                                  |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_flat<class_ButtonArray_is_flat>`  **(** **)** const                                                                                                                            |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_button_icon<class_ButtonArray_set_button_icon>`  **(** :ref:`int<class_int>` button_idx, :ref:`Texture<class_texture>` icon  **)**                                            |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_button_text<class_ButtonArray_set_button_text>`  **(** :ref:`int<class_int>` button_idx, :ref:`String<class_string>` text  **)**                                              |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_button_tooltip<class_ButtonArray_set_button_tooltip>`  **(** :ref:`int<class_int>` button_idx, :ref:`String<class_string>` text  **)**                                        |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_flat<class_ButtonArray_set_flat>`  **(** :ref:`bool<class_bool>` enabled  **)**                                                                                               |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_selected<class_ButtonArray_set_selected>`  **(** :ref:`int<class_int>` button_idx  **)**                                                                                      |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -132,6 +136,10 @@ Return the index of the currently hovered button in the array.
 
 Return the index of the currently selected button in the array.
 
+.. _class_ButtonArray_is_flat:
+
+- :ref:`bool<class_bool>`  **is_flat**  **(** **)** const
+
 .. _class_ButtonArray_set_button_icon:
 
 - void  **set_button_icon**  **(** :ref:`int<class_int>` button_idx, :ref:`Texture<class_texture>` icon  **)**
@@ -147,6 +155,10 @@ Define the text of the specified button.
 .. _class_ButtonArray_set_button_tooltip:
 
 - void  **set_button_tooltip**  **(** :ref:`int<class_int>` button_idx, :ref:`String<class_string>` text  **)**
+
+.. _class_ButtonArray_set_flat:
+
+- void  **set_flat**  **(** :ref:`bool<class_bool>` enabled  **)**
 
 .. _class_ButtonArray_set_selected:
 

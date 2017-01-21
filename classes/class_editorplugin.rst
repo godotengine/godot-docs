@@ -39,6 +39,8 @@ Member Functions
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`edit<class_EditorPlugin_edit>`  **(** :ref:`Object<class_object>` object  **)** virtual                                                                                                                       |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                 | :ref:`edit_resource<class_EditorPlugin_edit_resource>`  **(** :ref:`Object<class_object>` arg0  **)**                                                                                                               |
++------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                              | :ref:`forward_input_event<class_EditorPlugin_forward_input_event>`  **(** :ref:`InputEvent<class_inputevent>` event  **)** virtual                                                                                  |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                              | :ref:`forward_spatial_input_event<class_EditorPlugin_forward_spatial_input_event>`  **(** :ref:`Camera<class_camera>` camera, :ref:`InputEvent<class_inputevent>` event  **)** virtual                              |
@@ -191,6 +193,12 @@ This is used for plugins that create gizmos used by the spatial editor. Just che
 - void  **edit**  **(** :ref:`Object<class_object>` object  **)** virtual
 
 This function is used for plugins that edit specific object types (nodes or resources). It requests the editor to edit the given object.
+
+.. _class_EditorPlugin_edit_resource:
+
+- void  **edit_resource**  **(** :ref:`Object<class_object>` arg0  **)**
+
+Tells the editor to handle the edit of the given resource. For example, if you pass a script as argument, the editor will open the script editor.
 
 .. _class_EditorPlugin_forward_input_event:
 
