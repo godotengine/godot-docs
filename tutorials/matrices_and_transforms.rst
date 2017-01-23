@@ -157,6 +157,7 @@ it's simplicity.
     var x = m[0] # 'X'
     var y = m[1] # 'Y'
     var o = m[2] # 'Origin'
+    
 
 Most operations will be explained with this datatype (Matrix32), but the
 same logic applies to 3D.
@@ -239,15 +240,15 @@ the scale). It will leave the origin alone:
 .. image:: /img/tutomat15.png
 
 These kind of operations in matrices are accumulative. It means every
-one starts relative to the previous one. For those that have been living
+one starts relative to the previous one. For those which have been living
 on this planet long enough, a good reference of how transform works is
 this:
 
 .. image:: /img/tutomat16.png
 
 A matrix is used similarly to a turtle. The turtle most likely had a
-matrix inside (and you are likely learning this may years *after*
-discovering Santa is not real).
+matrix inside (and you are likely learning this many years *after*
+discovering that Santa is not real).
 
 Transform
 ---------
