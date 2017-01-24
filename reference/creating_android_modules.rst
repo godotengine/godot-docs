@@ -88,13 +88,18 @@ Java singleton
 --------------
 
 An android module will usually have a singleton class that will load it,
-this class inherits from ``Godot.SingletonBase``. A singleton object
-template follows:
+this class inherits from ``Godot.SingletonBase``. Resource identifiers for
+any additional resources you have provided for the module will be in the
+``com.godot.game.R`` class, so you'll likely want to import it.
+
+A singleton object template follows:
 
 .. code:: java
 
     // package com.android.godot; // for 1.1
     package org.godotengine.godot; // for 2.0
+    
+    import com.godot.game.R;
 
     public class MySingleton extends Godot.SingletonBase {
 
@@ -213,6 +218,24 @@ module, add it like this:
             # will copy this to the java folder
             env.android_add_java_dir("Directory that contain MySingelton.java") 
             env.android_add_to_manifest("AndroidManifestChunk.xml")
+
+
+
+Resources
+---------
+
+In order to provide additional resources with your module you have to
+add something like this:
+
+.. code:: python
+
+    def configure(env):
+        if env['platform'] == 'android':
+            # [...]
+            env.android_add_res_dir("Directory that contains resource subdirectories (values, drawable, etc.)") 
+            
+Now you can refer to those resources by their id (``R.string.my_string``, and the like)
+by importing the ``com.godot.game.R`` class in your Java code.
 
 SDK library
 -----------
