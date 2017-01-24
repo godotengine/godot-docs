@@ -8,7 +8,7 @@ Control
 
 **Inherits:** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`Label<class_label>`, :ref:`Tabs<class_tabs>`, :ref:`TextureFrame<class_textureframe>`, :ref:`ButtonArray<class_buttonarray>`, :ref:`VideoPlayer<class_videoplayer>`, :ref:`LineEdit<class_lineedit>`, :ref:`Container<class_container>`, :ref:`ReferenceFrame<class_referenceframe>`, :ref:`Patch9Frame<class_patch9frame>`, :ref:`TextEdit<class_textedit>`, :ref:`BaseButton<class_basebutton>`, :ref:`Popup<class_popup>`, :ref:`Tree<class_tree>`, :ref:`Separator<class_separator>`, :ref:`Panel<class_panel>`, :ref:`TabContainer<class_tabcontainer>`, :ref:`Range<class_range>`, :ref:`RichTextLabel<class_richtextlabel>`, :ref:`GraphEdit<class_graphedit>`, :ref:`ItemList<class_itemlist>`
+**Inherited By:** :ref:`Label<class_label>`, :ref:`Tabs<class_tabs>`, :ref:`TextureFrame<class_textureframe>`, :ref:`ButtonArray<class_buttonarray>`, :ref:`VideoPlayer<class_videoplayer>`, :ref:`LineEdit<class_lineedit>`, :ref:`ColorFrame<class_colorframe>`, :ref:`Container<class_container>`, :ref:`ReferenceFrame<class_referenceframe>`, :ref:`Patch9Frame<class_patch9frame>`, :ref:`TextEdit<class_textedit>`, :ref:`BaseButton<class_basebutton>`, :ref:`Popup<class_popup>`, :ref:`Tree<class_tree>`, :ref:`Separator<class_separator>`, :ref:`Panel<class_panel>`, :ref:`TabContainer<class_tabcontainer>`, :ref:`Range<class_range>`, :ref:`RichTextLabel<class_richtextlabel>`, :ref:`GraphEdit<class_graphedit>`, :ref:`ItemList<class_itemlist>`
 
 **Category:** Core
 
@@ -53,7 +53,7 @@ Member Functions
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`            | :ref:`get_constant<class_Control_get_constant>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type=""  **)** const                                         |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_cursor_shape<class_Control_get_cursor_shape>`  **(** :ref:`Vector2<class_vector2>` pos=Vector2((0, 0))  **)** const                                                     |
+| :ref:`int<class_int>`            | :ref:`get_cursor_shape<class_Control_get_cursor_shape>`  **(** :ref:`Vector2<class_vector2>` pos=Vector2(0, 0)  **)** const                                                       |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`    | :ref:`get_custom_minimum_size<class_Control_get_custom_minimum_size>`  **(** **)** const                                                                                          |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -107,7 +107,7 @@ Member Functions
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Theme<class_theme>`        | :ref:`get_theme<class_Control_get_theme>`  **(** **)** const                                                                                                                      |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`get_tooltip<class_Control_get_tooltip>`  **(** :ref:`Vector2<class_vector2>` atpos=Vector2((0, 0))  **)** const                                                             |
+| :ref:`String<class_string>`      | :ref:`get_tooltip<class_Control_get_tooltip>`  **(** :ref:`Vector2<class_vector2>` atpos=Vector2(0, 0)  **)** const                                                               |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`            | :ref:`get_v_size_flags<class_Control_get_v_size_flags>`  **(** **)** const                                                                                                        |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -351,7 +351,7 @@ Return the anchor type (ANCHOR_BEGIN, ANCHOR_END, ANCHOR_RATIO) for a given marg
 
 .. _class_Control_get_cursor_shape:
 
-- :ref:`int<class_int>`  **get_cursor_shape**  **(** :ref:`Vector2<class_vector2>` pos=Vector2((0, 0))  **)** const
+- :ref:`int<class_int>`  **get_cursor_shape**  **(** :ref:`Vector2<class_vector2>` pos=Vector2(0, 0)  **)** const
 
 Return the cursor shape at a certain position in the control.
 
@@ -493,7 +493,7 @@ Return a :ref:`Theme<class_theme>` override, if one exists (see :ref:`set_theme<
 
 .. _class_Control_get_tooltip:
 
-- :ref:`String<class_string>`  **get_tooltip**  **(** :ref:`Vector2<class_vector2>` atpos=Vector2((0, 0))  **)** const
+- :ref:`String<class_string>`  **get_tooltip**  **(** :ref:`Vector2<class_vector2>` atpos=Vector2(0, 0)  **)** const
 
 Return the tooltip, which will appear when the cursor is resting over this control.
 

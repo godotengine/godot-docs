@@ -50,7 +50,7 @@ but meanwhile FBX is not really supported.
 Exporting DAE files from Maya and 3DS Max
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Autodesk added built-in collada support to Maya and 3DS Max, but It's
+Autodesk added built-in collada support to Maya and 3DS Max, but it's
 really broken and should not be used. The best way to export this format
 is by using the
 `OpenCollada <https://github.com/KhronosGroup/OpenCOLLADA/wiki/OpenCOLLADA-Tools>`__
@@ -60,11 +60,11 @@ with the latest version of the software.
 Exporting DAE files from Blender
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Blender also has built-in collada support, but It's really broken and
+Blender also has built-in collada support, but it's really broken and
 should not be used either.
 
 Godot provides a `Python
-Plugin <https://github.com/godotengine/godot/tree/master/tools/export/blender25>`__
+Plugin <https://github.com/godotengine/collada-exporter>`__
 that will do a much better job at exporting the scenes.
 
 The import process
@@ -177,7 +177,7 @@ Import animations
 ^^^^^^^^^^^^^^^^^
 
 Some scene formats (.dae) support one or more animations. If this is
-checked, an `AnimationPlayer <class_animationplayer>`__ node will be
+checked, an :ref:`class_animationplayer` node will be
 created, containing the animations.
 
 Compress geometry
@@ -205,7 +205,7 @@ When rendering using HDR (High Dynamic Range) it might be desirable to
 use linear-space textures to achieve a more real-life lighting.
 Otherwise, colors may saturate and contrast too much when exposure
 changes. This option must be used together with the SRGB option in
-`WorldEnvironment <class_worldenvironment>`__. The texture import
+:ref:`class_worldenvironment`. The texture import
 options also have the option to do this conversion, but if this one is
 turned on, conversion will always be done to diffuse textures (usually
 what is desired). For more information, read the :ref:`doc_high_dynamic_range`
@@ -257,20 +257,20 @@ static collision node will be added, using the same geometry as the mesh.
 However, it is often the case that the visual geometry is too complex or
 too un-smooth for collisions, which end up not working well. To solve
 this, the "-colonly" modifier exists, which will remove the mesh upon
-import and create a `StaticBody <class_staticbody>`__ collision instead.
+import and create a :ref:`class_staticbody` collision instead.
 This helps the visual mesh and actual collision to be separated.
 
 Option "-colonly" can be also used with Blender's empty objects.
-On import it will create a `StaticBody <class_staticbody>`__ with
+On import it will create a :ref:`class_staticbody` with
 collision node as a child. Collision node will have one of predefined shapes,
 depending on the Blender's empty draw type:
 
 .. image:: /img/3dimp_BlenderEmptyDrawTypes.png
 
--  Single arrow will create `RayShape <class_rayshape>`__
--  Cube will create `BoxShape <class_boxshape>`__
--  Image will create `PlaneShape <class_planeshape>`__
--  Sphere (and other non-listed) will create `SphereShape <class_sphereshape>`__
+-  Single arrow will create :ref:`class_rayshape`
+-  Cube will create :ref:`class_boxshape`
+-  Image will create :ref:`class_planeshape`
+-  Sphere (and other non-listed) will create :ref:`class_sphereshape`
 
 For better visibility in Blender's editor user can set "X-Ray" option on collision
 empties and set some distinct color for them in User Preferences / Themes / 3D View / Empty.

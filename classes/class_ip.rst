@@ -20,19 +20,19 @@ IP Protocol support functions.
 Member Functions
 ----------------
 
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`erase_resolve_item<class_IP_erase_resolve_item>`  **(** :ref:`int<class_int>` id  **)**                           |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`    | :ref:`get_local_addresses<class_IP_get_local_addresses>`  **(** **)** const                                             |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_resolve_item_address<class_IP_get_resolve_item_address>`  **(** :ref:`int<class_int>` id  **)** const         |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_resolve_item_status<class_IP_get_resolve_item_status>`  **(** :ref:`int<class_int>` id  **)** const           |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`resolve_hostname<class_IP_resolve_hostname>`  **(** :ref:`String<class_string>` host  **)**                       |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`resolve_hostname_queue_item<class_IP_resolve_hostname_queue_item>`  **(** :ref:`String<class_string>` host  **)** |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------+
++------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`erase_resolve_item<class_IP_erase_resolve_item>`  **(** :ref:`int<class_int>` id  **)**                                                                      |
++------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`    | :ref:`get_local_addresses<class_IP_get_local_addresses>`  **(** **)** const                                                                                        |
++------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_resolve_item_address<class_IP_get_resolve_item_address>`  **(** :ref:`int<class_int>` id  **)** const                                                    |
++------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`get_resolve_item_status<class_IP_get_resolve_item_status>`  **(** :ref:`int<class_int>` id  **)** const                                                      |
++------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`resolve_hostname<class_IP_resolve_hostname>`  **(** :ref:`String<class_string>` host, :ref:`int<class_int>` ip_type=IP.TYPE_ANY  **)**                       |
++------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`resolve_hostname_queue_item<class_IP_resolve_hostname_queue_item>`  **(** :ref:`String<class_string>` host, :ref:`int<class_int>` ip_type=IP.TYPE_ANY  **)** |
++------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
 -----------------
@@ -76,14 +76,14 @@ Return the status of hostname queued for resolving, given it's queue ID. Returne
 
 .. _class_IP_resolve_hostname:
 
-- :ref:`String<class_string>`  **resolve_hostname**  **(** :ref:`String<class_string>` host  **)**
+- :ref:`String<class_string>`  **resolve_hostname**  **(** :ref:`String<class_string>` host, :ref:`int<class_int>` ip_type=IP.TYPE_ANY  **)**
 
-Resolve a given hostname, blocking. Resolved hostname is returned as an IP.
+Resolve a given hostname, blocking. Resolved hostname is returned as an IPv4 or IPv6 depending on "ip_type".
 
 .. _class_IP_resolve_hostname_queue_item:
 
-- :ref:`int<class_int>`  **resolve_hostname_queue_item**  **(** :ref:`String<class_string>` host  **)**
+- :ref:`int<class_int>`  **resolve_hostname_queue_item**  **(** :ref:`String<class_string>` host, :ref:`int<class_int>` ip_type=IP.TYPE_ANY  **)**
 
-Create a queue item for resolving a given hostname. The queue ID is returned, or RESOLVER_INVALID_ID on error.
+Create a queue item for resolving a given hostname to an IPv4 or IPv6 depending on "ip_type". The queue ID is returned, or RESOLVER_INVALID_ID on error.
 
 

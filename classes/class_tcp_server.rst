@@ -46,7 +46,7 @@ Return true if a connection is available for taking.
 
 - :ref:`int<class_int>`  **listen**  **(** :ref:`int<class_int>` port, :ref:`StringArray<class_stringarray>` accepted_hosts=StringArray([])  **)**
 
-Listen on a port, alternatively give a white-list of accepted hosts.
+Listen on a port using protocol, alternatively give a white-list of accepted hosts.
 
 .. _class_TCP_Server_stop:
 

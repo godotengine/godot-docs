@@ -20,19 +20,19 @@ Base container control for popups and dialogs.
 Member Functions
 ----------------
 
-+--------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_exclusive<class_Popup_is_exclusive>`  **(** **)** const                                                                      |
-+--------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`popup<class_Popup_popup>`  **(** **)**                                                                                          |
-+--------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`popup_centered<class_Popup_popup_centered>`  **(** :ref:`Vector2<class_vector2>` size=Vector2((0, 0))  **)**                    |
-+--------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`popup_centered_minsize<class_Popup_popup_centered_minsize>`  **(** :ref:`Vector2<class_vector2>` minsize=Vector2((0, 0))  **)** |
-+--------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`popup_centered_ratio<class_Popup_popup_centered_ratio>`  **(** :ref:`float<class_float>` ratio=0.75  **)**                      |
-+--------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_exclusive<class_Popup_set_exclusive>`  **(** :ref:`bool<class_bool>` enable  **)**                                          |
-+--------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`is_exclusive<class_Popup_is_exclusive>`  **(** **)** const                                                                    |
++--------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`popup<class_Popup_popup>`  **(** **)**                                                                                        |
++--------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`popup_centered<class_Popup_popup_centered>`  **(** :ref:`Vector2<class_vector2>` size=Vector2(0, 0)  **)**                    |
++--------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`popup_centered_minsize<class_Popup_popup_centered_minsize>`  **(** :ref:`Vector2<class_vector2>` minsize=Vector2(0, 0)  **)** |
++--------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`popup_centered_ratio<class_Popup_popup_centered_ratio>`  **(** :ref:`float<class_float>` ratio=0.75  **)**                    |
++--------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`set_exclusive<class_Popup_set_exclusive>`  **(** :ref:`bool<class_bool>` enable  **)**                                        |
++--------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -68,13 +68,13 @@ Popup (show the control in modal form).
 
 .. _class_Popup_popup_centered:
 
-- void  **popup_centered**  **(** :ref:`Vector2<class_vector2>` size=Vector2((0, 0))  **)**
+- void  **popup_centered**  **(** :ref:`Vector2<class_vector2>` size=Vector2(0, 0)  **)**
 
 Popup (show the control in modal form) in the center of the screen, at the current size, or at a size determined by "size".
 
 .. _class_Popup_popup_centered_minsize:
 
-- void  **popup_centered_minsize**  **(** :ref:`Vector2<class_vector2>` minsize=Vector2((0, 0))  **)**
+- void  **popup_centered_minsize**  **(** :ref:`Vector2<class_vector2>` minsize=Vector2(0, 0)  **)**
 
 Popup (show the control in modal form) in the center of the screen, ensuring the size is never smaller than ``minsize``.
 

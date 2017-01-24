@@ -88,9 +88,9 @@ Signals
 -------
 
 -  **area_enter**  **(** :ref:`Object<class_object>` area  **)**
--  **area_enter_shape**  **(** :ref:`int<class_int>` area_id, :ref:`Object<class_object>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` area_shape  **)**
+-  **area_enter_shape**  **(** :ref:`int<class_int>` area_id, :ref:`Object<class_object>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape  **)**
 -  **area_exit**  **(** :ref:`Object<class_object>` area  **)**
--  **area_exit_shape**  **(** :ref:`int<class_int>` area_id, :ref:`Object<class_object>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` area_shape  **)**
+-  **area_exit_shape**  **(** :ref:`int<class_int>` area_id, :ref:`Object<class_object>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape  **)**
 -  **body_enter**  **(** :ref:`Object<class_object>` body  **)**
 -  **body_enter_shape**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape  **)**
 -  **body_exit**  **(** :ref:`Object<class_object>` body  **)**

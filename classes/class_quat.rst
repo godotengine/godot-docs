@@ -53,7 +53,7 @@ Member Variables
 Description
 -----------
 
-Quaternion is a 4 dimensional vector that is used to represent a rotation. It mainly exists to perform SLERP (spherical-linear interpolation) between to rotations obtained by a Matrix3 cheaply. Adding quaternions also cheaply adds the rotations, however quaternions need to be often normalized, or else they suffer from precision issues.
+Quaternion is a 4 dimensional vector that is used to represent a rotation. It mainly exists to perform SLERP (spherical-linear interpolation) between to rotations obtained by a Matrix3 cheaply. Multiplying quaternions also cheaply reproduces rotation sequences, however quaternions need to be often normalized, or else they suffer from precision issues.
 
 Member Function Description
 ---------------------------
@@ -66,9 +66,13 @@ Member Function Description
 
 - :ref:`Quat<class_quat>`  **Quat**  **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` angle  **)**
 
+Returns a quaternion that will rotate around the given axis by the specified angle.
+
 .. _class_Quat_Quat:
 
 - :ref:`Quat<class_quat>`  **Quat**  **(** :ref:`Matrix3<class_matrix3>` from  **)**
+
+Returns the rotation matrix corresponding to the given quaternion.
 
 .. _class_Quat_cubic_slerp:
 
@@ -78,13 +82,13 @@ Member Function Description
 
 - :ref:`float<class_float>`  **dot**  **(** :ref:`Quat<class_quat>` b  **)**
 
-Returns the dot product between two quaternions.
+Returns the dot product of two quaternions.
 
 .. _class_Quat_inverse:
 
 - :ref:`Quat<class_quat>`  **inverse**  **(** **)**
 
-Returns the inverse of the quaternion (applies to the inverse rotation too).
+Returns the inverse of the quaternion.
 
 .. _class_Quat_length:
 

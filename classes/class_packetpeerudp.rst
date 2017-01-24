@@ -78,13 +78,13 @@ Return whether this :ref:`PacketPeerUDP<class_packetpeerudp>` is listening.
 
 - Error  **listen**  **(** :ref:`int<class_int>` port, :ref:`int<class_int>` recv_buf_size=65536  **)**
 
-Make this :ref:`PacketPeerUDP<class_packetpeerudp>` listen on the "port" using a buffer size "recv_buf_size". Listens on all available adresses.
+Make this :ref:`PacketPeerUDP<class_packetpeerudp>` listen on the "port" with a buffer size "recv_buf_size". Listens on all available addresses.
 
 .. _class_PacketPeerUDP_set_send_address:
 
 - :ref:`int<class_int>`  **set_send_address**  **(** :ref:`String<class_string>` host, :ref:`int<class_int>` port  **)**
 
-Set the destination address and port for sending packets and variables, a hostname will be resolved if valid.
+Set the destination address and port for sending packets and variables, a hostname will be resolved using if valid.
 
 .. _class_PacketPeerUDP_wait:
 

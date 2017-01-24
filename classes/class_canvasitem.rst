@@ -29,7 +29,7 @@ Member Functions
 +------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`draw_colored_polygon<class_CanvasItem_draw_colored_polygon>`  **(** :ref:`Vector2Array<class_vector2array>` points, :ref:`Color<class_color>` color, :ref:`Vector2Array<class_vector2array>` uvs=Vector2Array([]), :ref:`Texture<class_texture>` texture=NULL  **)**                     |
 +------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`draw_line<class_CanvasItem_draw_line>`  **(** :ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to, :ref:`Color<class_color>` color, :ref:`float<class_float>` width=1  **)**                                                                                            |
+| void                                                 | :ref:`draw_line<class_CanvasItem_draw_line>`  **(** :ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to, :ref:`Color<class_color>` color, :ref:`float<class_float>` width=1, :ref:`bool<class_bool>` antialiased=false  **)**                                                 |
 +------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`draw_polygon<class_CanvasItem_draw_polygon>`  **(** :ref:`Vector2Array<class_vector2array>` points, :ref:`ColorArray<class_colorarray>` colors, :ref:`Vector2Array<class_vector2array>` uvs=Vector2Array([]), :ref:`Texture<class_texture>` texture=NULL  **)**                          |
 +------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -198,9 +198,9 @@ Draw a colored polygon of any amount of points, convex or concave.
 
 .. _class_CanvasItem_draw_line:
 
-- void  **draw_line**  **(** :ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to, :ref:`Color<class_color>` color, :ref:`float<class_float>` width=1  **)**
+- void  **draw_line**  **(** :ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to, :ref:`Color<class_color>` color, :ref:`float<class_float>` width=1, :ref:`bool<class_bool>` antialiased=false  **)**
 
-Draw a line from a 2D point to another, with a given color and width.
+Draw a line from a 2D point to another, with a given color and width. It can be optionally antialiased.
 
 .. _class_CanvasItem_draw_polygon:
 

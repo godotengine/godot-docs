@@ -10,19 +10,18 @@ This is where things start getting abstract, but don't panic, as
 there's not really more depth than this.
 
 In previous tutorials, everything revolves around the concept of
-Nodes, scenes are made of them, and they become active once they enter
+nodes, scenes are made of them, and they become active once they enter
 the *scene tree*.
 
-This deserves going a little more into depth. In fact, the scene system
-is not even a core component of Godot, as it is possible to skip it and
-make a script (or C++ code) that talks directly to the servers. But
-making a game that way would be a lot of work and is reserved for other
-uses.
+This concept deserves going into a little more detail. In fact, the
+scene system is not even a core component of Godot, as it is possible to
+skip it and write a script (or C++ code) that talks directly to the
+servers. But making a game that way would be a lot of work.
 
 MainLoop
 --------
 
-The way Godot works internally is as follows. There is the the
+The way Godot works internally is as follows. There is the
 :ref:`OS <class_OS>` class,
 which is the only instance that runs at the beginning. Afterwards, all
 drivers, servers, scripting languages, scene system, etc are loaded.
@@ -50,15 +49,14 @@ and servers are the low level API.
 
 In any case, the scene system provides it's own main loop to OS,
 :ref:`SceneTree <class_SceneTree>`.
-
 This is automatically instanced and set when running a scene, no need
 to do any extra work.
 
 It's important to know that this class exists because it has a few
 important uses:
 
--  It contains the root :ref:`Viewport <class_Viewport>`,
-   when a scene is first opened, it's added as a child of it to become
+-  It contains the root :ref:`Viewport <class_Viewport>`, to which a
+   scene is added as a child when it's first opened, to become
    part of the *Scene Tree* (more on that next)
 -  It contains information about the groups, and has means to call all
    nodes in a group, or get a list of them.
@@ -74,8 +72,8 @@ Root viewport
 -------------
 
 The root :ref:`Viewport <class_Viewport>`
-is always a top of the scene. From a node, it can be obtained in two
-different ways:
+is always at the top of the scene. From a node, it can be obtained in
+two different ways:
 
 ::
 
@@ -97,7 +95,7 @@ Scene tree
 When a node is connected, directly or indirectly, to the root
 viewport, it becomes part of the *scene tree*.
 
-This means that, as explained in previous tutorials, will get the
+This means that, as explained in previous tutorials, it will get the
 _enter_tree() and _ready() callbacks (as well as _exit_tree()).
 
 .. image:: /img/activescene.png
@@ -105,14 +103,15 @@ _enter_tree() and _ready() callbacks (as well as _exit_tree()).
 When nodes enter the *Scene Tree*, they become active. They get access
 to everything they need to process, get input, display 2D and 3D,
 notifications, play sound, groups, etc. When they are removed from the
-*scene tree*, they lose it.
+*scene tree*, they lose access.
 
 Tree order
 ----------
 
 Most node operations in Godot, such as drawing 2D, processing or getting
 notifications are done in tree order. This means that parents and
-siblings with less order will get notified before the current node.
+siblings with a smaller rank in the tree order will get notified before
+the current node.
 
 .. image:: /img/toptobottom.png
 
@@ -137,7 +136,7 @@ Changing current scene
 ----------------------
 
 After a scene is loaded, it is often desired to change this scene for
-another one. The simple way to do this to use the
+another one. The simple way to do this is to use the
 :ref:`SceneTree.change_scene() <class_SceneTree_change_scene>`
 function:
 

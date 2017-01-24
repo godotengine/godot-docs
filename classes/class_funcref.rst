@@ -18,13 +18,13 @@ Reference to a function in an object.
 Member Functions
 ----------------
 
-+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`call_func<class_FuncRef_call_func>`  **(** :ref:`Variant<class_variant>` arg0=NULL, :ref:`Variant<class_variant>` arg1=NULL, :ref:`Variant<class_variant>` arg2=NULL, :ref:`Variant<class_variant>` arg3=NULL, :ref:`Variant<class_variant>` arg4=NULL, :ref:`Variant<class_variant>` arg5=NULL, :ref:`Variant<class_variant>` arg6=NULL, :ref:`Variant<class_variant>` arg7=NULL, :ref:`Variant<class_variant>` arg8=NULL, :ref:`Variant<class_variant>` arg9=NULL  **)** |
-+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`set_function<class_FuncRef_set_function>`  **(** :ref:`String<class_string>` name  **)**                                                                                                                                                                                                                                                                                                                                                                                   |
-+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`set_instance<class_FuncRef_set_instance>`  **(** :ref:`Object<class_object>` instance  **)**                                                                                                                                                                                                                                                                                                                                                                               |
-+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------+----------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_variant>`  | :ref:`call_func<class_FuncRef_call_func>`  **(** **)** vararg                                      |
++--------------------------------+----------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_function<class_FuncRef_set_function>`  **(** :ref:`String<class_string>` name  **)**     |
++--------------------------------+----------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_instance<class_FuncRef_set_instance>`  **(** :ref:`Object<class_object>` instance  **)** |
++--------------------------------+----------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -38,9 +38,7 @@ Member Function Description
 
 .. _class_FuncRef_call_func:
 
-- void  **call_func**  **(** :ref:`Variant<class_variant>` arg0=NULL, :ref:`Variant<class_variant>` arg1=NULL, :ref:`Variant<class_variant>` arg2=NULL, :ref:`Variant<class_variant>` arg3=NULL, :ref:`Variant<class_variant>` arg4=NULL, :ref:`Variant<class_variant>` arg5=NULL, :ref:`Variant<class_variant>` arg6=NULL, :ref:`Variant<class_variant>` arg7=NULL, :ref:`Variant<class_variant>` arg8=NULL, :ref:`Variant<class_variant>` arg9=NULL  **)**
-
-Call the referenced function with the given arguments. The argument count must correspond to the required number of arguments in the function. Returns the return value of the function call.
+- :ref:`Variant<class_variant>`  **call_func**  **(** **)** vararg
 
 .. _class_FuncRef_set_function:
 

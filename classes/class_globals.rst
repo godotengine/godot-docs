@@ -19,6 +19,8 @@ Member Functions
 ----------------
 
 +------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`add_property_info<class_Globals_add_property_info>`  **(** :ref:`Dictionary<class_dictionary>` hint  **)**                   |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`clear<class_Globals_clear>`  **(** :ref:`String<class_string>` name  **)**                                                   |
 +------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`        | :ref:`get_order<class_Globals_get_order>`  **(** :ref:`String<class_string>` name  **)** const                                     |
@@ -53,6 +55,27 @@ Contains global variables accessible from everywhere. Use the normal :ref:`Objec
 
 Member Function Description
 ---------------------------
+
+.. _class_Globals_add_property_info:
+
+- void  **add_property_info**  **(** :ref:`Dictionary<class_dictionary>` hint  **)**
+
+Add a custom property info to a property. The dictionary must contain: name::ref:`String<class_string>`(the name of the property) and type::ref:`int<class_int>`(see TYPE\_\* in :ref:`@Global Scope<class_@global scope>`), and optionally hint::ref:`int<class_int>`(see PROPERTY_HINT\_\* in :ref:`@Global Scope<class_@global scope>`), hint_string::ref:`String<class_string>`.
+
+Example:
+
+::
+
+    Globals.set("category/property_name", 0)
+    
+    var property_info = {
+        "name": "category/property_name",
+        "type": TYPE_INT,
+        "hint": PROPERTY_HINT_ENUM,
+        "hint_string": "one,two,three"
+    }
+    
+    Globals.add_property_info(property_info)
 
 .. _class_Globals_clear:
 

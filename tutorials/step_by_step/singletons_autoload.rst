@@ -34,7 +34,7 @@ Auto-loading nodes and scripts caters to this need.
 AutoLoad
 --------
 
-You can use AutoLoad to load a scene, or a script that inherits from Node (a Node
+You can use AutoLoad to load a scene, or a script that inherits from Node (a node
 will be created and the script will be set to it). 
 
 To autoload a scene or script, select Scene > Project Settings from the menu and switch
@@ -72,7 +72,7 @@ global.gd
 ---------
 
 First of all, create a global.gd script. The easy way to create a
-resource from scratch is from the resources tab:
+resource from scratch is from the new resource button in the inspector tab:
 
 .. image:: /img/newscript.png
 

@@ -59,7 +59,7 @@ Open the container scene, then select the root node:
 
 .. image:: /img/controot.png
 
-Afterwards, push the '+' shaped button, this is the instancing button!
+Afterwards, push the link shaped button, this is the instancing button!
 
 .. image:: /img/continst.png
 
@@ -109,5 +109,5 @@ property to the original value that came from the scene.
 Conclusion
 ----------
 
-Instancing seems handy, but there is more to it than it meets the eye!
+Instancing seems handy, but there is more to it than meets the eye!
 The next part of the instancing tutorial should cover the rest..

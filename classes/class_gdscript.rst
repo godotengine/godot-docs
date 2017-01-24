@@ -21,7 +21,7 @@ Member Functions
 +----------------------------------+-----------------------------------------------------------------------------+
 | :ref:`RawArray<class_rawarray>`  | :ref:`get_as_byte_code<class_GDScript_get_as_byte_code>`  **(** **)** const |
 +----------------------------------+-----------------------------------------------------------------------------+
-| void                             | :ref:`new<class_GDScript_new>`  **(** **)**                                 |
+| :ref:`Object<class_object>`      | :ref:`new<class_GDScript_new>`  **(** **)** vararg                          |
 +----------------------------------+-----------------------------------------------------------------------------+
 
 Member Function Description
@@ -33,6 +33,6 @@ Member Function Description
 
 .. _class_GDScript_new:
 
-- void  **new**  **(** **)**
+- :ref:`Object<class_object>`  **new**  **(** **)** vararg
 
 

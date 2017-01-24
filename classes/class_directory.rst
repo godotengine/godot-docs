@@ -150,7 +150,7 @@ On Unix desktop systems, return the available space on the current directory's d
 
 Initialise the stream used to list all files and directories using the :ref:`get_next<class_Directory_get_next>` function, closing the current opened stream if needed. Once the stream has been processed, it should typically be closed with :ref:`list_dir_end<class_Directory_list_dir_end>`.
 
-Return false if the stream could not be initialised.
+Return true if the stream could not be initialised.
 
 .. _class_Directory_list_dir_end:
 

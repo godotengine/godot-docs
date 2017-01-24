@@ -60,10 +60,10 @@ The house can be part of a citadel, which has many houses. Finally the
 citadel can be put on the world map terrain. Add also guards and other
 NPCs to the citadel by previously creating their scenes.
 
-With Godot, games can grow as quickly as desired, as only more scenes
-have to be made and instanced. The editor UI is also designed to be
-operated by non programmers too, so an usual team development process
-involves 3D or 2D artists, level designers, game designers, animators,
+With Godot, games can grow as quickly as desired, as all it needs is
+to create and instance more scenes. The editor UI is designed to be
+operated by non programmers too, so a typical team development process
+can involve 3D or 2D artists, level designers, game designers, animators,
 etc all working with the editor interface.
 
 Information overload!
@@ -73,5 +73,5 @@ Do not worry too much, the important part of this tutorial is to create
 awareness on how scenes and instancing are used in real life. The best
 way to understand all this is to make some games.
 
-Everything will become very obvious when put to practice, so, please do
+Everything will become very obvious when put to practice, so please do
 not scratch your head and go on to the next tutorial!

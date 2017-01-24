@@ -35,7 +35,7 @@ Member Functions
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`canvas_item_add_circle<class_VisualServer_canvas_item_add_circle>`  **(** :ref:`RID<class_rid>` arg0, :ref:`Vector2<class_vector2>` arg1, :ref:`float<class_float>` arg2, :ref:`Color<class_color>` arg3  **)**                                                                                                      |
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`canvas_item_add_line<class_VisualServer_canvas_item_add_line>`  **(** :ref:`RID<class_rid>` arg0, :ref:`Vector2<class_vector2>` arg1, :ref:`Vector2<class_vector2>` arg2, :ref:`Color<class_color>` arg3, :ref:`float<class_float>` arg4=1  **)**                                                                    |
+| void                                     | :ref:`canvas_item_add_line<class_VisualServer_canvas_item_add_line>`  **(** :ref:`RID<class_rid>` arg0, :ref:`Vector2<class_vector2>` arg1, :ref:`Vector2<class_vector2>` arg2, :ref:`Color<class_color>` arg3, :ref:`float<class_float>` arg4=1, :ref:`bool<class_bool>` arg5=false  **)**                                |
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`canvas_item_add_rect<class_VisualServer_canvas_item_add_rect>`  **(** :ref:`RID<class_rid>` arg0, :ref:`Rect2<class_rect2>` arg1, :ref:`Color<class_color>` arg2  **)**                                                                                                                                              |
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -504,7 +504,7 @@ Member Function Description
 
 .. _class_VisualServer_canvas_item_add_line:
 
-- void  **canvas_item_add_line**  **(** :ref:`RID<class_rid>` arg0, :ref:`Vector2<class_vector2>` arg1, :ref:`Vector2<class_vector2>` arg2, :ref:`Color<class_color>` arg3, :ref:`float<class_float>` arg4=1  **)**
+- void  **canvas_item_add_line**  **(** :ref:`RID<class_rid>` arg0, :ref:`Vector2<class_vector2>` arg1, :ref:`Vector2<class_vector2>` arg2, :ref:`Color<class_color>` arg3, :ref:`float<class_float>` arg4=1, :ref:`bool<class_bool>` arg5=false  **)**
 
 .. _class_VisualServer_canvas_item_add_rect:
 

@@ -153,7 +153,7 @@ Member Functions
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                | :ref:`is_video_mode_resizable<class_OS_is_video_mode_resizable>`  **(** :ref:`int<class_int>` screen=0  **)** const                                                                                                        |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`is_vsnc_enabled<class_OS_is_vsnc_enabled>`  **(** **)** const                                                                                                                                                        |
+| :ref:`bool<class_bool>`                | :ref:`is_vsync_enabled<class_OS_is_vsync_enabled>`  **(** **)** const                                                                                                                                                      |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                | :ref:`is_window_fullscreen<class_OS_is_window_fullscreen>`  **(** **)** const                                                                                                                                              |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -486,7 +486,7 @@ Returns the model name of the current device.
 
 - :ref:`String<class_string>`  **get_name**  **(** **)** const
 
-Return the name of the host OS. Possible values are: "Android", "BlackBerry 10", "Flash", "Haiku", "iOS", "HTML5", "OSX", "Server", "Windows", "WinRT", "X11"
+Return the name of the host OS. Possible values are: "Android", "BlackBerry 10", "Flash", "Haiku", "iOS", "HTML5", "OSX", "Server", "Windows", "UWP", "X11"
 
 .. _class_OS_get_process_ID:
 
@@ -698,9 +698,9 @@ Return true if the current video mode is fullscreen.
 
 Return true if the window is resizable.
 
-.. _class_OS_is_vsnc_enabled:
+.. _class_OS_is_vsync_enabled:
 
-- :ref:`bool<class_bool>`  **is_vsnc_enabled**  **(** **)** const
+- :ref:`bool<class_bool>`  **is_vsync_enabled**  **(** **)** const
 
 .. _class_OS_is_window_fullscreen:
 

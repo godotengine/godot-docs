@@ -220,6 +220,106 @@ now do:
 
 And the output will be ``60``.
 
+Improving the build system for development
+------------------------------------------
+
+So far we defined a clean and simple SCsub that allows us to add the sources
+of our new module as part of the Godot binary.
+
+This static approach is fine when we want to build a release version of our
+game given we want all the modules in a single binary.
+
+However the trade-of is every single change means a full recompilation of the
+game. Even if SCons is able to detect and recompile only the file that have
+changed, finding such files and eventually linking the final binary is a
+long and costly part.
+
+The solution to avoid such a cost is to build our own module as a shared
+library that will be dynamically loaded when starting our game's binary.
+
+.. code:: python
+
+    # SCsub
+    Import('env')
+
+    sources = [
+        "register_types.cpp",
+        "sumator.cpp"
+    ]
+
+    # First, create a custom env for the shared library.
+    module_env = env.Clone()
+    module_env.Append(CXXFLAGS='-fPIC')  # Needed to compile shared library
+    # We don't want godot's dependencies to be injected into our shared library.
+    module_env['LIBS'] = []
+
+    # Now define the shared library. Note that by default it would be built
+    # into the module's folder, however it's better to output it into `bin`
+    # next to the godot binary.
+    shared_lib = module_env.SharedLibrary(target='#bin/sumator', source=sources)
+
+    # Finally notify the main env it has our shared lirary as a new dependency.
+    # To do so, SCons wants the name of the lib with it custom suffixes
+    # (e.g. ".x11.tools.64") but without the final ".so".
+    # We pass this along with the directory of our library to the main env.
+    shared_lib_shim = shared_lib[0].name.rsplit('.', 1)[0]
+    env.Append(LIBS=[shared_lib_shim])
+    env.Append(LIBPATH=['#bin'])
+
+Once compiled, we should end up with a ``bin`` directory containing both the
+``godot*`` binary and our ``libsumator*.so``. However given the .so is not in
+a standard directory (like ``/usr/lib``), we have to help our binary find it
+during runtime with the ``LD_LIBRARY_PATH`` environ variable:
+
+::
+
+    user@host:~/godot$ export LD_LIBRARY_PATH=`pwd`/bin/
+    user@host:~/godot$ ./bin/godot*
+
+**note**: Pay attention you have to ``export`` the environ variable otherwise
+you won't be able to play you project from within the editor.
+
+On top of that, it would be nice to be able to select whether to compile our
+module as shared library (for development) or as a par of the godot binary
+(for release). To do that we can define a custom flag to be passed to SCons
+using the `ARGUMENT` command:
+
+.. code:: python
+
+    # SCsub
+    Import('env')
+
+    sources = [
+        "register_types.cpp",
+        "sumator.cpp"
+    ]
+
+    module_env = env.Clone()
+    module_env.Append(CXXFLAGS=['-O2', '-std=c++11'])
+
+    if ARGUMENTS.get('sumator_shared', 'no') == 'yes':
+        # Shared lib compilation
+        module_env.Append(CXXFLAGS='-fPIC')
+        module_env['LIBS'] = []
+        shared_lib = module_env.SharedLibrary(target='#bin/sumator', source=sources)
+        shared_lib_shim = shared_lib[0].name.rsplit('.', 1)[0]
+        env.Append(LIBS=[shared_lib_shim])
+        env.Append(LIBPATH=['#bin'])
+    else:
+        # Static compilation
+        module_env.add_source_files(env.modules_sources, sources)
+
+Now by default ``scons`` command will build our module as part of godot's binary
+and as a shared library when passing ``sumator_shared=yes``.
+
+Finally you can even speedup build further by explicitly specifying your
+shared module as target in the scons command:
+
+::
+
+    user@host:~/godot$ scons sumator_shared=yes bin/sumator.x11.tools.64.so
+
+
 Summing up
 ----------
 

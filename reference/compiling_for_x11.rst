@@ -11,7 +11,7 @@ Requirements
 For compiling under Linux or other Unix variants, the following is
 required:
 
--  GCC (G++) or Clang (note: use of GCC6 is discouraged because of optimization problems. Prefer GCC versions <6 for the moment).
+-  GCC < 6 or Clang (**warning:** see note below regarding GCC 6).
 -  Python 2.7+ (3.0 is untested as of now)
 -  SCons build system
 -  pkg-config (used to detect the dependencies below)
@@ -23,6 +23,13 @@ required:
 -  OpenSSL (for HTTPS and TLS)
 -  libudev-dev (optional, for gamepad support)
 
+Known issues with GCC 6
+^^^^^^^^^^^^^^^^^^^^^^^
+
+There are known optimisation issues when using GCC 6 (both to compile for X11 and to cross-compile for Windows with MinGW). Until those issues are fixed in Godot's source, or the compiler is made more forgiving again, it is advised not to use GCC 6 to compile Godot as release builds will trigger crashes.
+
+If your distribution provides GCC 6 by default (e.g. Arch or Ubuntu 16.10), you may have to install an older version or Clang (both should be provided in the repositories). You can then force the use of another compiler version via the `CC` and `CXX` scons arguments (e.g. `scons p=x11 CC=gcc-5 CXX=g++-5` if your distribution provides those binaries in its PATH). You can also use `llvm=yes` instead to force the usage of Clang over GCC.
+
 Distro-specific oneliners
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -30,7 +37,8 @@ Distro-specific oneliners
 | **Fedora**    | ::                                                                                                         |
 |               |                                                                                                            |
 |               |     sudo dnf install scons pkgconfig libX11-devel libXcursor-devel libXrandr-devel libXinerama-devel \     |
-|               |         mesa-libGL-devel alsa-lib-devel pulseaudio-libs-devel freetype-devel openssl-devel libudev-devel   |
+|               |         mesa-libGL-devel alsa-lib-devel pulseaudio-libs-devel freetype-devel openssl-devel libudev-devel \ |
+|               |         mesa-libGLU-devel                                                                                  |
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **FreeBSD**   | ::                                                                                                         |
 |               |                                                                                                            |
@@ -41,7 +49,7 @@ Distro-specific oneliners
 |               |                                                                                                            |
 |               |     urpmi scons pkgconfig "pkgconfig(alsa)" "pkgconfig(freetype2)" "pkgconfig(glu)" "pkgconfig(libpulse)" \|
 |               |         "pkgconfig(openssl)" "pkgconfig(udev)" "pkgconfig(x11)" "pkgconfig(xcursor)" "pkgconfig(xinerama)"\|
-|               |         "pkgconfig(xrandr)"                                                                                |
+|               |         "pkgconfig(xrandr)" "pkgconfig(zlib)"                                                              |
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **Ubuntu**    | ::                                                                                                         |
 |               |                                                                                                            |

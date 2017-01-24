@@ -27,13 +27,15 @@ Member Functions
 +------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`          | :ref:`cursor_get_blink_speed<class_LineEdit_cursor_get_blink_speed>`  **(** **)** const                                  |
 +------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`cursor_set_blink_enabled<class_LineEdit_cursor_set_blink_enabled>`  **(** :ref:`bool<class_bool>` enable  **)**    |
+| void                               | :ref:`cursor_set_blink_enabled<class_LineEdit_cursor_set_blink_enabled>`  **(** :ref:`bool<class_bool>` enabled  **)**   |
 +------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`cursor_set_blink_speed<class_LineEdit_cursor_set_blink_speed>`  **(** :ref:`float<class_float>` blink_speed  **)** |
 +------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`              | :ref:`get_align<class_LineEdit_get_align>`  **(** **)** const                                                            |
 +------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`              | :ref:`get_cursor_pos<class_LineEdit_get_cursor_pos>`  **(** **)** const                                                  |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`            | :ref:`get_expand_to_text_length<class_LineEdit_get_expand_to_text_length>`  **(** **)** const                            |
 +------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`              | :ref:`get_max_length<class_LineEdit_get_max_length>`  **(** **)** const                                                  |
 +------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
@@ -60,6 +62,8 @@ Member Functions
 | void                               | :ref:`set_cursor_pos<class_LineEdit_set_cursor_pos>`  **(** :ref:`int<class_int>` pos  **)**                             |
 +------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_editable<class_LineEdit_set_editable>`  **(** :ref:`bool<class_bool>` enabled  **)**                           |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_expand_to_text_length<class_LineEdit_set_expand_to_text_length>`  **(** :ref:`bool<class_bool>` enabled  **)** |
 +------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_max_length<class_LineEdit_set_max_length>`  **(** :ref:`int<class_int>` chars  **)**                           |
 +------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
@@ -127,7 +131,7 @@ Gets the line edit caret blink speed.
 
 .. _class_LineEdit_cursor_set_blink_enabled:
 
-- void  **cursor_set_blink_enabled**  **(** :ref:`bool<class_bool>` enable  **)**
+- void  **cursor_set_blink_enabled**  **(** :ref:`bool<class_bool>` enabled  **)**
 
 Set the line edit caret to blink.
 
@@ -146,6 +150,10 @@ Set the line edit caret blink speed. Cannot be less then or equal to 0.
 - :ref:`int<class_int>`  **get_cursor_pos**  **(** **)** const
 
 Return the cursor position inside the :ref:`LineEdit<class_lineedit>`.
+
+.. _class_LineEdit_get_expand_to_text_length:
+
+- :ref:`bool<class_bool>`  **get_expand_to_text_length**  **(** **)** const
 
 .. _class_LineEdit_get_max_length:
 
@@ -212,6 +220,10 @@ Set the cursor position inside the :ref:`LineEdit<class_lineedit>`, causing it t
 - void  **set_editable**  **(** :ref:`bool<class_bool>` enabled  **)**
 
 Set the *editable* status of the :ref:`LineEdit<class_lineedit>`. When disabled, existing text can't be modified and new text can't be added.
+
+.. _class_LineEdit_set_expand_to_text_length:
+
+- void  **set_expand_to_text_length**  **(** :ref:`bool<class_bool>` enabled  **)**
 
 .. _class_LineEdit_set_max_length:
 

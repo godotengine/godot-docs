@@ -115,7 +115,7 @@ and translations are relative to the parent:
 
 .. image:: /img/tuto_cutout6.png
 
-This seems easy, so continue with the right arm. The rest should be
+This seems easy, so continue with the left arm. The rest should be
 simple! Or maybe not:
 
 .. image:: /img/tuto_cutout7.png
@@ -180,7 +180,7 @@ Skeletons
 ~~~~~~~~~
 
 Godot doesn't actually support *true* Skeketons, but it does feature a
-helper to create "bones" between nodes. This is enough for most cases, 
+helper to create "bones" between nodes. This is enough for most cases,
 but the way it works is not completely obvious.
 
 
@@ -307,7 +307,7 @@ Simply do the following steps:
 4. Select "loc" and "rot" on the top menu.
 
 5. Push the key button. Keys will be inserted for everything, creating
-a default pose.
+   a default pose.
 
 .. image:: /img/tuto_cutout21.png
 

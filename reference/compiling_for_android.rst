@@ -26,7 +26,7 @@ For compiling under Windows, Linux or OSX, the following is required:
 -  [Windows only] PyWin32 (optional, for parallel compilation)
 -  Android SDK version 23.0.3 [Note: Please install all Tools and Extras of sdk manager]
 -  Android build tools version 19.1
--  Android NDK r10e or later
+-  Android NDK r13 or later
 -  Gradle (will be downloaded and installed automatically if missing)
 -  JDK 6 or later (either OpenJDK or Oracle JDK) - JDK 9 is untested as of now
 
@@ -78,10 +78,7 @@ the following arguments:
     C:\godot> cd platform/android/java
     C:\godot\platform\android\java> gradlew build
     
-Linux :
-    ~/godot$ scons platform=android target=release
-    ~/godot$ cd platform/android/java
-    ~/godot/platform/android/java$ ./gradlew
+(on Linux/OSX, execute the `gradlew` script with `./gradlew build`)
 
 The resulting APK is in:
 
@@ -97,11 +94,6 @@ The resulting APK is in:
     C:\godot> cd platform/android/java
     C:\godot\platform\android\java> gradlew build
     
-Linux :
-    ~/godot$ scons platform=android target=release_debug
-    ~/godot$ cd platform/android/java
-    ~/godot/platform/android/java$ ./gradlew
-
 The resulting APK is in:
 
 ::

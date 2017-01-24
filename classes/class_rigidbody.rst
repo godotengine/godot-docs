@@ -161,7 +161,7 @@ Return the current body bounciness.
 
 - :ref:`Array<class_array>`  **get_colliding_bodies**  **(** **)** const
 
-Return a list of the bodies colliding with this one.
+Return a list of the bodies colliding with this one. By default, number of max contacts reported is at 0 , see :ref:`set_max_contacts_reported<class_RigidBody_set_max_contacts_reported>` to increase it.
 
 .. _class_RigidBody_get_friction:
 

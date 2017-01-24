@@ -75,6 +75,11 @@ here's a simple example of how GDScript looks.
     const answer = 42
     const thename = "Charly"
 
+    # enums (Godot 2.2+)
+
+    enum {UNIT_NEUTRAL, UNIT_ENEMY, UNIT_ALLY}
+    enum Named {THING_1, THING_2, ANOTHER_THING = -1}
+
     # built-in vector types
 
     var v2 = Vector2(1, 2)
@@ -154,6 +159,8 @@ keywords are reserved words (tokens), they can't be used as identifiers.
 +------------+---------------------------------------------------------------------------------------------------------------+
 | while      | See while_.                                                                                                   |
 +------------+---------------------------------------------------------------------------------------------------------------+
+| match      | See match_.                                                                                                   |
++------------+---------------------------------------------------------------------------------------------------------------+
 | switch     | Reserved for future implementation.                                                                           |
 +------------+---------------------------------------------------------------------------------------------------------------+
 | case       | Reserved for future implementation.                                                                           |
@@ -179,6 +186,8 @@ keywords are reserved words (tokens), they can't be used as identifiers.
 | static     | Defines a static function. Static member variables are not allowed.                                           |
 +------------+---------------------------------------------------------------------------------------------------------------+
 | const      | Defines a constant.                                                                                           |
++------------+---------------------------------------------------------------------------------------------------------------+
+| enum       | Defines an enum. (Godot 2.2+)                                                                                 |
 +------------+---------------------------------------------------------------------------------------------------------------+
 | var        | Defines a variable.                                                                                           |
 +------------+---------------------------------------------------------------------------------------------------------------+
@@ -231,6 +240,8 @@ The following is the list of supported operators and their precedence
 | ``and`` ``&&``                                                | Boolean AND                             |
 +---------------------------------------------------------------+-----------------------------------------+
 | ``or`` ``||``                                                 | Boolean OR                              |
++---------------------------------------------------------------+-----------------------------------------+
+| ``if x else``                                                 | Ternary if/else (Godot 2.2+)            |
 +---------------------------------------------------------------+-----------------------------------------+
 | ``=`` ``+=`` ``-=`` ``*=`` ``/=`` ``%=`` ``&=`` ``|=``        | Assignment, Lowest Priority             |
 +---------------------------------------------------------------+-----------------------------------------+
@@ -516,6 +527,34 @@ expressions and must be assigned on initialization.
     const e = [1, 2, 3, 4][0]  # constant expression: 1
     const f = sin(20)  # sin() can be used in constant expressions
     const g = x + 20  # invalid; this is not a constant expression!
+    
+Enums
+^^^^^
+
+*Note, only available in Godot 2.2 or higher.*
+
+Enums are basically a shorthand for constants, and are pretty useful if you
+want to assign consecutive integers to some constant.
+
+If you pass a name to the enum, it would also put all the values inside a
+constant dictionary of that name.
+
+::
+
+    enum {TILE_BRICK, TILE_FLOOR, TILE_SPIKE, TILE_TELEPORT}
+    # Is the same as:
+    const TILE_BRICK = 0
+    const TILE_FLOOR = 1
+    const TILE_SPIKE = 2
+    const TILE_TELEPORT = 3
+
+    enum State {STATE_IDLE, STATE_JUMP = 5, STATE_SHOOT}
+    # Is the same as:
+    const STATE_IDLE = 0
+    const STATE_JUMP = 5
+    const STATE_SHOOT = 6
+    const State = {STATE_IDLE = 0, STATE_JUMP = 5, STATE_SHOOT = 6}
+
 
 Functions
 ~~~~~~~~~
@@ -613,6 +652,13 @@ Short statements can be written on the same line as the condition::
         var x = 3 + 3
         return x
 
+Sometimes you might want to assign a different initial value based on a
+boolean expression. In this case ternary-if expressions come in handy
+(Godot 2.2+)::
+
+    var x = [true-value] if [expression] else [false-value]
+    y += 3 if y < 10 else -1
+
 while
 ^^^^^
 
@@ -649,6 +695,133 @@ in the loop variable.
 
     for i in range(2,8,2):
         statement  # similar to [2, 4, 6] but does not allocate an array
+
+match
+^^^^^
+
+A ``match`` statement is used to branch execution of a program.
+It's the equivalent of the ``switch`` statement found in many other languages but offers some additional features.
+
+Basic syntax:
+::
+    
+    match [expression]:
+        [pattern](s): [block]
+        [pattern](s): [block]
+        [pattern](s): [block]
+
+
+**Crash-course for people who are familiar to switch statements**:
+
+1) replace ``switch`` with ``match``
+2) remove ``case``
+3) remove any ``break``'s. If you don't want to ``break`` by default you can use ``continue`` for a fallthrough.
+4) change ``default`` to a single underscore.
+
+
+**Control flow**:
+
+The patterns are matched from top to bottom.
+If a pattern matches, the corresponding block will be executed. After that, the execution continues below the ``match`` statement.
+If you want to have a fallthrough you can use ``continue`` to stop execution in the current block and check the ones below it.
+
+
+
+
+There are 6 pattern types:
+
+- constant pattern
+    constant primitives, like numbers and strings ::
+    
+        match x:
+            1:      print("We are number one!")
+            2:      print("Two are better than one!")
+            "test": print("Oh snap! It's a string!")
+
+
+- variable pattern
+    matches the contents of a variable/enum ::
+    
+        match typeof(x):
+            TYPE_FLOAT:  print("float")
+            TYPE_STRING: print("text")
+            TYPE_ARRAY:  print("array")
+
+
+- wildcard pattern
+    This pattern matches everything. It's written as a single underscore.
+    
+    It can be used as the equivalent of the ``default`` in a ``switch`` statement in other languages. ::
+    
+        match x:
+            1: print("it's one!")
+            2: print("it's one times two!")
+            _: print("it's not 1 or 2. I don't care tbh.")
+
+
+- binding pattern
+    A binding pattern introduces a new variable. Like the wildcard pattern, it matches everything - and also gives that value a name.
+    It's especially useful in array and dictionary patterns. ::
+        
+        match x:
+            1:           print("it's one!")
+            2:           print("it's one times two!")
+            var new_var: print("it's not 1 or 2, it's ", new_var)
+
+
+- array pattern
+    matches an array. Every single element of the array pattern is a pattern itself so you can nest them.
+    
+    The length of the array is tested first, it has to be the same size as the pattern, otherwise the pattern don't match.
+
+    **Open-ended array**: An array can be bigger than the pattern by making the last subpattern ``..``
+    
+    Every subpattern has to be comma seperated. ::
+    
+        match x:
+            []:
+                print("empty array")
+            [1, 3, "test", null]:
+                print("very specific array")
+            [var start, _, "test"]:
+                print("first element is ", start, ", and the last is \"test\"")
+            [42, ..]:
+                print("open ended array")
+    
+- dictionary pattern
+    Works in the same was as the array pattern. Every key has to be a constant pattern.
+
+    The size of the dictionary is tested first, it has to be the same size as the pattern, otherwise the pattern don't match.
+
+    **Open-ended dictionary**: A dictionary can be bigger than the pattern by making the last subpattern ``..``
+
+    Every subpattern has to be comma seperated.
+
+    If you don't specify a value, then only the existance of the key is checked.
+
+    A value pattern is seperated from the key pattern with a ``:`` ::
+
+        match x:
+            {}:
+                print("empty dict")
+            {"name": "dennis"}:
+                print("the name is dennis")
+            {"name": "dennis", "age": var age}:
+                print("dennis is ", age, " years old.")
+            {"name", "age"}:
+                print("has a name and an age, but it's not dennis :(")
+            {"key": "godotisawesome", ..}:
+                print("I only checked for one entry and ignored the rest")
+
+Multipatterns:
+    You can also specify multiple patterns seperated by a comma. These patterns aren't allowed to have any bindings in them. ::
+
+        match x:
+            1, 2, 3:
+                print("it's 1 - 3")
+            "sword", "splashpotion", "fist":
+                print("yep, you've taken damage")
+
 
 
 Classes

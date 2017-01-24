@@ -33,6 +33,7 @@ Numeric Constants
 
 - **UNDERLINE_MODE_ALWAYS** = **0** --- The LinkButton will always show an underline at the bottom of its text
 - **UNDERLINE_MODE_ON_HOVER** = **1** --- The LinkButton will show an underline at the bottom of its text when the mouse cursor is over it.
+- **UNDERLINE_MODE_NEVER** = **2** --- The LinkButton will never show an underline at the bottom of its text.
 
 Description
 -----------

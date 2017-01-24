@@ -25,6 +25,8 @@ Member Functions
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_margin_size<class_StyleBoxTexture_get_margin_size>`  **(** :ref:`int<class_int>` margin  **)** const                                         |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`      | :ref:`get_modulate<class_StyleBoxTexture_get_modulate>`  **(** **)** const                                                                             |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Rect2<class_rect2>`      | :ref:`get_region_rect<class_StyleBoxTexture_get_region_rect>`  **(** **)** const                                                                       |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Texture<class_texture>`  | :ref:`get_texture<class_StyleBoxTexture_get_texture>`  **(** **)** const                                                                               |
@@ -34,6 +36,8 @@ Member Functions
 | void                           | :ref:`set_expand_margin_size<class_StyleBoxTexture_set_expand_margin_size>`  **(** :ref:`int<class_int>` margin, :ref:`float<class_float>` size  **)** |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_margin_size<class_StyleBoxTexture_set_margin_size>`  **(** :ref:`int<class_int>` margin, :ref:`float<class_float>` size  **)**               |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_modulate<class_StyleBoxTexture_set_modulate>`  **(** :ref:`Color<class_color>` color  **)**                                                  |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_region_rect<class_StyleBoxTexture_set_region_rect>`  **(** :ref:`Rect2<class_rect2>` region  **)**                                           |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -65,6 +69,10 @@ Member Function Description
 
 - :ref:`float<class_float>`  **get_margin_size**  **(** :ref:`int<class_int>` margin  **)** const
 
+.. _class_StyleBoxTexture_get_modulate:
+
+- :ref:`Color<class_color>`  **get_modulate**  **(** **)** const
+
 .. _class_StyleBoxTexture_get_region_rect:
 
 - :ref:`Rect2<class_rect2>`  **get_region_rect**  **(** **)** const
@@ -84,6 +92,10 @@ Member Function Description
 .. _class_StyleBoxTexture_set_margin_size:
 
 - void  **set_margin_size**  **(** :ref:`int<class_int>` margin, :ref:`float<class_float>` size  **)**
+
+.. _class_StyleBoxTexture_set_modulate:
+
+- void  **set_modulate**  **(** :ref:`Color<class_color>` color  **)**
 
 .. _class_StyleBoxTexture_set_region_rect:
 

@@ -86,7 +86,7 @@ Remove an action from the :ref:`InputMap<class_inputmap>`.
 
 - :ref:`bool<class_bool>`  **event_is_action**  **(** :ref:`InputEvent<class_inputevent>` event, :ref:`String<class_string>` action  **)** const
 
-Return whether the given event is part of an existing action.
+Return whether the given event is part of an existing action. This method ignores keyboard modifiers if the given :ref:`InputEvent<class_inputevent>` is not pressed (for proper release detection). See :ref:`action_has_event<class_InputMap_action_has_event>` if you don't want this behavior.
 
 .. _class_InputMap_get_action_from_id:
 
