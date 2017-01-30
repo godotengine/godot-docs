@@ -39,7 +39,7 @@ The basic node for UI elements is :ref:`Control <class_Control>`
 provides user interface functionality descends from it.
 
 When controls are put in a scene tree as a child of another control,
-it's coordinates (position, size) are always relative to the parent.
+its coordinates (position, size) are always relative to the parent.
 This sets the basis for editing complex user interfaces quickly and
 visually.
 
