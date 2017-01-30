@@ -72,7 +72,7 @@ Return a resolved item address, or an empty string if an error happened or resol
 
 - :ref:`int<class_int>`  **get_resolve_item_status**  **(** :ref:`int<class_int>` id  **)** const
 
-Return the status of hostname queued for resolving, given it's queue ID. Returned status can be any of the RESOLVER_STATUS\_\* enumeration.
+Return the status of hostname queued for resolving, given its queue ID. Returned status can be any of the RESOLVER_STATUS\_\* enumeration.
 
 .. _class_IP_resolve_hostname:
 

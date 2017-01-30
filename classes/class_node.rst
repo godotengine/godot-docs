@@ -237,7 +237,7 @@ To keep track of the scene hierarchy (especially when instancing scenes into oth
 
 Finally, when a node is freed with :ref:`free<class_Node_free>` or :ref:`queue_free<class_Node_queue_free>`, it will also free all its children.
 
-**Networking with nodes:** After connecting to a server (or making one, see :ref:`NetworkedMultiplayerENet<class_networkedmultiplayerenet>`) it is possible to use the built-in RPC (remote procedure call) system to easily communicate over the network. By calling :ref:`rpc<class_Node_rpc>` with a method name, it will be called locally, and in all connected peers (peers = clients and the server that accepts connections), with behaviour varying depending on the network mode (:ref:`set_network_mode<class_Node_set_network_mode>`) on the receiving peer. To identify which :ref:`Node<class_node>` receives the RPC call Godot will use it's :ref:`NodePath<class_nodepath>` (make sure node names are the same on all peers).
+**Networking with nodes:** After connecting to a server (or making one, see :ref:`NetworkedMultiplayerENet<class_networkedmultiplayerenet>`) it is possible to use the built-in RPC (remote procedure call) system to easily communicate over the network. By calling :ref:`rpc<class_Node_rpc>` with a method name, it will be called locally, and in all connected peers (peers = clients and the server that accepts connections), with behaviour varying depending on the network mode (:ref:`set_network_mode<class_Node_set_network_mode>`) on the receiving peer. To identify which :ref:`Node<class_node>` receives the RPC call Godot will use its :ref:`NodePath<class_nodepath>` (make sure node names are the same on all peers).
 
 Member Function Description
 ---------------------------

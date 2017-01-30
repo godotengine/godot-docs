@@ -46,7 +46,7 @@ engine.cfg
 ----------
 
 The engine.cfg file is the project description file, and it is always found at
-the root of the project. In fact it's location defines where the root is. This
+the root of the project. In fact its location defines where the root is. This
 is the first file that Godot looks for when opening a project.
 
 This file contains the project configuration in plain text, using the win.ini

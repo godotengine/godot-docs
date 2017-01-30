@@ -157,7 +157,7 @@ Member Functions
 Numeric Constants
 -----------------
 
-- **PI** = **3.141593** --- Constant that represents how many times the diameter of a circumference fits around it's perimeter.
+- **PI** = **3.141593** --- Constant that represents how many times the diameter of a circumference fits around its perimeter.
 
 Description
 -----------

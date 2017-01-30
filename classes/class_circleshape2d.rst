@@ -27,7 +27,7 @@ Member Functions
 Description
 -----------
 
-Circular Shape for 2D Physics. This shape is useful for modeling balls or small characters and it's collision detection with everything else is very fast.
+Circular Shape for 2D Physics. This shape is useful for modeling balls or small characters and its collision detection with everything else is very fast.
 
 Member Function Description
 ---------------------------

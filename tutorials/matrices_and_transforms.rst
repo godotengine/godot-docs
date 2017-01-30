@@ -32,7 +32,7 @@ spaceship. Be it for 2D in a drawing such as Paint.net, Gimp,
 Photoshop, etc. or in 3D through a 3D DCC tool such as Blender, Max,
 Maya, etc.
 
-When it was designed, it was not rotated. It was designed in it's own
+When it was designed, it was not rotated. It was designed in its own
 *coordinate system*.
 
 .. image:: /img/tutomat2.png
@@ -45,7 +45,7 @@ So, let's recall again that the ship was somewhere in space:
 .. image:: /img/tutomat3.png
 
 How did it get there? What moved it and rotated it from the place it was
-designed to it's current position? The answer is... a **transform**, the
+designed to its current position? The answer is... a **transform**, the
 ship was *transformed* from their original position to the new one. This
 allows the ship to be displayed where it is.
 
@@ -93,7 +93,7 @@ the point:
 
     var final_pos = x.dot(new_pos) + y.dot(new_pos)
 
-Then what we have is.. wait a minute, it's the ship in it's design
+Then what we have is.. wait a minute, it's the ship in its design
 position!
 
 .. image:: /img/tutomat9.png
@@ -149,7 +149,7 @@ Matrix32
 :ref:`Matrix32 <class_Matrix32>` is a 3x2 matrix. It has 3 Vector2 elements and
 it's used for 2D. The "X" axis is the element 0, "Y" axis is the element 1 and
 "Origin" is element 2. It's not divided in basis/origin for convenience, due to
-it's simplicity.
+its simplicity.
 
 ::
 
@@ -174,7 +174,7 @@ By default, Matrix32 is created as an "identity" matrix. This means:
 .. image:: /img/tutomat11.png
 
 It's easy to guess that an *identity* matrix is just a matrix that
-aligns the transform to it's parent coordinate system. It's an *OCS*
+aligns the transform to its parent coordinate system. It's an *OCS*
 that hasn't been translated, rotated or scaled. All transform types in
 Godot are created with *identity*.
 
@@ -233,7 +233,7 @@ the scale). It will leave the origin alone:
 
 ::
 
-    # Make the basis twice it's size.
+    # Make the basis twice its size.
     var m = Matrix32()
     m = m.scaled( Vector2(2,2) )
 
@@ -378,7 +378,7 @@ Because in matrix math, A + B is not the same as B + A.
 Multiplication by inverse
 -------------------------
 
-Multiplying a matrix by it's inverse, results in identity
+Multiplying a matrix by its inverse, results in identity
 
 ::
 

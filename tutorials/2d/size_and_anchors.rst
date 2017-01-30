@@ -32,7 +32,7 @@ corner of the parent control or viewport.
 
 .. image:: /img/marginend.png
 
-Here the control is set to expand it's bottom-right corner with that of
+Here the control is set to expand its bottom-right corner with that of
 the parent, so when re-sizing the parent, the control will always cover
 it, leaving a 20 pixel margin:
 

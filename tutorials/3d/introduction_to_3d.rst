@@ -222,7 +222,7 @@ each viewport:
    regardless of any other camera in the scene. If the property is set,
    it will become active, replacing the previous camera.
 -  If an active camera leaves the scene tree, the first camera in
-   tree-order will take it's place.
+   tree-order will take its place.
 
 Lights
 ------

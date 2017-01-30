@@ -115,7 +115,7 @@ Collision exceptions
 It is a very common case to attempt casting a ray from a character or
 another game scene to try to infer properties of the world around it.
 The problem with this is that the same character has a collider, so the
-ray can never leave the origin (it will keep hitting it's own collider),
+ray can never leave the origin (it will keep hitting its own collider),
 as evidenced in the following image.
 
 .. image:: /img/raycast_falsepositive.png

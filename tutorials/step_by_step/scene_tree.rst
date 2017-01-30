@@ -47,7 +47,7 @@ game engine over a low level middleware.
 The scene system is the game engine, while the :ref:`OS <class_OS>`
 and servers are the low level API.
 
-In any case, the scene system provides it's own main loop to OS,
+In any case, the scene system provides its own main loop to OS,
 :ref:`SceneTree <class_SceneTree>`.
 This is automatically instanced and set when running a scene, no need
 to do any extra work.
