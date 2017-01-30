@@ -29,7 +29,7 @@ Cutout in Godot
 ~~~~~~~~~~~~~~~
 
 Godot provides a few tools for working with these kind of assets, but
-it's overall design makes it ideal for the workflow. The reason is that,
+its overall design makes it ideal for the workflow. The reason is that,
 unlike other tools meant for this, Godot has the following advantages:
 
 -  **The animation system is fully integrated with the engine**: This
