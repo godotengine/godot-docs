@@ -21,14 +21,14 @@ The main uses in question are:
 -  **Sub-Viewports**: These can be created when a Viewport is a child of
    a :ref:`Control <class_Control>`.
 -  **Render Targets**: Viewports can be set to "RenderTarget" mode. This
-   means that the viewport is not directly visible, but it's contents
+   means that the viewport is not directly visible, but its contents
    can be accessed via a :ref:`Texture <class_Texture>`.
 
 Input
 -----
 
 Viewports are also responsible of delivering properly adjusted and
-scaled input events to all it's children nodes. Both the root viewport
+scaled input events to all its children nodes. Both the root viewport
 and sub-viewports do this automatically, but render targets do not.
 Because of this, the user must do it manually via the
 :ref:`Viewport.input() <class_Viewport_input>` function if needed.
@@ -108,10 +108,10 @@ the game (like in Starcraft).
 
 As a helper for situations where you want to create viewports that
 display single objects and don't want to create a world, viewport has
-the option to use it's own World. This is very useful when you want to
+the option to use its own World. This is very useful when you want to
 instance 3D characters or objects in the 2D world.
 
-For 2D, each Viewport always contains it's own :ref:`World2D <class_World2D>`.
+For 2D, each Viewport always contains its own :ref:`World2D <class_World2D>`.
 This suffices in most cases, but in case sharing them may be desired, it
 is possible to do so by calling the viewport API manually.
 
@@ -147,7 +147,7 @@ display anything it has inside. The layout is something like this:
 
    -  Viewport
 
-The viewport will cover the area of it's parent control completely.
+The viewport will cover the area of its parent control completely.
 
 .. image:: /img/subviewport.png
 
