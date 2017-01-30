@@ -199,10 +199,10 @@ vector?
 Normalization
 -------------
 
-Taking any vector and reducing it's **magnitude** to 1.0 while keeping
-it's **direction** is called **normalization**. Normalization is
+Taking any vector and reducing its **magnitude** to 1.0 while keeping
+its **direction** is called **normalization**. Normalization is
 performed by dividing the x and y (and z in 3D) components of a vector
-by it's magnitude:
+by its magnitude:
 
 ::
 
@@ -418,7 +418,7 @@ orientation of the surface) are called **unit normal vectors**. Though,
 usually they are just abbreviated as \*normals. Normals appear in
 planes, 3D geometry (to determine where each face or vertex is siding),
 etc. A **normal** *is* a **unit vector**, but it's called *normal*
-because of it's usage. (Just like we call Origin to (0,0)!).
+because of its usage. (Just like we call Origin to (0,0)!).
 
 It's as simple as it looks. The plane passes by the origin and the
 surface of it is perpendicular to the unit vector (or *normal*). The
@@ -512,7 +512,7 @@ so doing:
 
 Will work as expected.
 
-So, remember, a plane is just that and it's main practical use is
+So, remember, a plane is just that and its main practical use is
 calculating the distance to it. So, why is it useful to calculate the
 distance from a point to a plane? It's extremely useful! Let's see some
 simple examples..
