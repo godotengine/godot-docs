@@ -211,7 +211,7 @@ platform:
 
 To create those yourself, just follow the instructions detailed for each
 platform in this same tutorial section. Each platform explains how to
-create it's own template.
+create its own template.
 
 If you are working for multiple platforms, OSX is definitely the best
 host platform for cross compilation, since you can cross-compile for

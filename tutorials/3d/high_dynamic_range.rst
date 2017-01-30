@@ -114,7 +114,7 @@ ToneMapper
 The ToneMapper is the heart of the algorithm. Many options for
 tonemappers are provided:
 
--  Linear: Simplest tonemapper. It does it's job for adjusting scene
+-  Linear: Simplest tonemapper. It does its job for adjusting scene
    brightness, but if the differences in light are too big, it will
    cause colors to be too saturated.
 -  Log: Similar to linear, but not as extreme.

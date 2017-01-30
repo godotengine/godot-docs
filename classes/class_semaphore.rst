@@ -42,6 +42,6 @@ Lowers the :ref:`Semaphore<class_semaphore>`, allowing one more thread in.
 
 - Error  **wait**  **(** **)**
 
-Tries to wait for the :ref:`Semaphore<class_semaphore>`, if it's value is zero, blocks until non-zero.
+Tries to wait for the :ref:`Semaphore<class_semaphore>`, if its value is zero, blocks until non-zero.
 
 

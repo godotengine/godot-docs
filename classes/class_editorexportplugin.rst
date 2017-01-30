@@ -40,6 +40,6 @@ This function is called for each file exported and depending from the return val
 
 2) If the returned value is a RawAray (array of bytes), the content of that array becomes the new file being exported.
 
-3) If the file must also change it's name when exported, then a :ref:`Dictionary<class_dictionary>` must be returned with two fields: 'name' with the new filename and 'data' with a :ref:`RawArray<class_rawarray>` containing the raw contents of the file. Even if the name is changed, the run-time will redirect the old file to the new file automatically when accessed.
+3) If the file must also change its name when exported, then a :ref:`Dictionary<class_dictionary>` must be returned with two fields: 'name' with the new filename and 'data' with a :ref:`RawArray<class_rawarray>` containing the raw contents of the file. Even if the name is changed, the run-time will redirect the old file to the new file automatically when accessed.
 
 

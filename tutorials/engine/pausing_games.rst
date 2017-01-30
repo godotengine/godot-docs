@@ -67,7 +67,7 @@ Example
 -------
 
 An example of this is creating a popup or panel with controls inside,
-and set it's pause mode to "Process" then just hide it:
+and set its pause mode to "Process" then just hide it:
 
 .. image:: /img/pause_popup.png
 

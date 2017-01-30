@@ -13,7 +13,7 @@ EditorPlugin
 Brief Description
 -----------------
 
-Used by the editor to extend it's functionality.
+Used by the editor to extend its functionality.
 
 Member Functions
 ----------------
@@ -332,7 +332,7 @@ Remove the import plugin, don't forget to call this on exit.
 
 - void  **save_external_data**  **(** **)** virtual
 
-This method is called after the editor save the project or when the it's closed. It asks the plugin to save edited external scenes/resources.
+This method is called after the editor saves the project or when it's closed. It asks the plugin to save edited external scenes/resources.
 
 .. _class_EditorPlugin_set_state:
 
