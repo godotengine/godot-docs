@@ -123,7 +123,7 @@ follows:
 ::
 
     func _enter_tree():
-        # When the node enters the _Scene Tree_, it become active 
+        # When the node enters the _Scene Tree_, it becomes active 
         # and  this function is called. Children nodes have not entered 
         # the active scene yet. In general, it's better to use _ready() 
         # for most cases.
