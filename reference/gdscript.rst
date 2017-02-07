@@ -650,6 +650,9 @@ in the loop variable.
     for i in range(2,8,2):
         statement  # similar to [2, 4, 6] but does not allocate an array
 
+    for c in "Hello":
+        print(c)   # iterate through all characters in a String, print every letter on new line
+
 Classes
 ~~~~~~~
 
