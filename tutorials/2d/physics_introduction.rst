@@ -62,7 +62,7 @@ Transforming shapes
 
 As seen before in the collide functions, 2D shapes in godot can be
 transformed by using a regular :ref:`Matrix32 <class_Matrix32>`
-transform, meaning the can check collision while scaled, moved and
+transform, meaning they can check collision while scaled, moved and
 rotated. The only limitation to this is that shapes with curved sections
 (such as circle and capsule) can only be scaled uniformly. This means
 that circle or capsule shapes scaled in the form of an ellipse **will
