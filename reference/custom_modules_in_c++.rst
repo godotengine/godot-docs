@@ -160,7 +160,7 @@ this module:
 
 If you want to add custom compiler flags when building your module, you need to clone
 `env` first, so it won't add those flags to whole Godot build (which can cause errors).
-Example `SCub` with custom flags:
+Example `SCsub` with custom flags:
 
 .. code:: python
 
@@ -280,7 +280,7 @@ during runtime with the ``LD_LIBRARY_PATH`` environ variable:
 you won't be able to play you project from within the editor.
 
 On top of that, it would be nice to be able to select whether to compile our
-module as shared library (for development) or as a par of the godot binary
+module as shared library (for development) or as a part of the godot binary
 (for release). To do that we can define a custom flag to be passed to SCons
 using the `ARGUMENT` command:
 
