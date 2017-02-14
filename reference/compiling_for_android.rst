@@ -206,3 +206,51 @@ following reasons:
 -  Device is Intel, and apk is compiled for ARM.
 
 In any case, ``adb logcat`` should also show the cause of the error.
+
+Compilation fails
+~~~~~~~~~~~~~~~~~
+
+On Linux systems with Kernel version 4.3 or newer, compilation may fail 
+with the error "pthread_create failed: Resource temporarily unavailable."
+
+This is because of a change in the way Linux limits thread creation. But 
+you can change those limits through the command line. Please read this 
+section thoroughly before beginning.
+
+First open a terminal, then begin compilation as usual (it may be a good 
+idea to run a --clean first). While compiling enter the following in 
+your terminal:
+
+::
+
+    user@host:~/$ top -b -n 1 | grep scons
+    
+The output should list a scons process, with its PID as the first number
+in the output. For example the PID 1077 in the output shown below:
+
+::
+
+    user@host:~/$ top -b -n 1 | grep scons
+    1077 user     20   0   10544   1628   1508 S 0.000 0.027   0:00.00 grep
+
+Now you can use another command to increase the number of processes that
+scons is allowed to spawn. You can check its current limits with:
+
+::
+
+    user@host:~/$ prlimit --pid=1077 --nproc
+
+You can increase those limits with the command:
+
+::
+
+    user@host:~/$ prlimit --pid=1077 --nproc=60000:60500
+
+Obviously you should substitute the scons PID output by top and a limits 
+that you think suitable. These are in the form --nproc=soft:hard where 
+soft must be lesser than or equal to hard. See the man page for more 
+information.
+
+If all went well, and you entered the prlimit command while scons was 
+running, then your compilation should continue without the error.
+
