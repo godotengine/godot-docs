@@ -16,8 +16,8 @@ To compile export templates for the Web, the following is required:
    untested as of now)
 -  `SCons <http://www.scons.org>`__ build system
 
-Compiling
----------
+Building export templates
+-------------------------
 
 Start a terminal and set the environment variable ``EMSCRIPTEN_ROOT`` to the
 installation directory of Emscripten::
@@ -40,68 +40,18 @@ build or ``release_debug`` for a debug build::
 
 The engine will now be compiled to JavaScript by Emscripten. If all goes well,
 the resulting file will be placed in the ``bin`` subdirectory. Its name is
-``godot.javascript.opt.asm.js`` for release or
-``godot.javascript.opt.debug.asm.js`` for debug. Additionally, three files of
-the same name but with the extensions ``.html``, ``.html.mem`` and ``.js`` will
-be generated.
+``godot.javascript.opt.zip`` for release or ``godot.javascript.opt.debug.zip``
+for debug.
 
-Building export templates
--------------------------
-
-After compiling, further steps are required to build the template.
-The actual web export template has the form of a zip file containing at least
-these 5 files:
-
-1. ``godot.asm.js`` — This is the file that was just compiled, but under a
-   different name.
-
-   For the release template::
-
-       cp bin/godot.javascript.opt.asm.js godot.asm.js
-
-   For the debug template::
-
-       cp bin/godot.javascript.opt.debug.asm.js godot.asm.js
-
-2. ``godot.js``
-3. ``godot.mem``
-4. ``godot.html`` — other files created during compilation, initially with the
-   same name as the ``.asm.js`` file, except ``.asm.js`` is replaced by
-   ``.js`` for ``godot.js``, ``.html`` for ``godot.html`` and ``.html.mem`` for
-   ``godot.mem``.
-
-   For the release template::
-
-       cp bin/godot.javascript.opt.js       godot.js
-       cp bin/godot.javascript.opt.html     godot.html
-       cp bin/godot.javascript.opt.html.mem godot.mem
-
-   For the debug template::
-
-       cp bin/godot.javascript.opt.debug.js       godot.js
-       cp bin/godot.javascript.opt.debug.html     godot.html
-       cp bin/godot.javascript.opt.debug.html.mem godot.mem
-
-5. ``godotfs.js`` — This file is located within the Godot Engine repository,
-   under ``/tools/dist/html_fs/``::
-
-    cp tools/dist/html_fs/godotfs.js .
-
-Once these 5 files are assembled, zip them up and your export template is ready
-to go. The correct name for the template file is ``javascript_release.zip`` for
+To install the templates, place them into the ``templates`` directory in your
+Godot user directory. Rename the zip archive to ``javascript_release.zip`` for
 the release template::
 
-    zip javascript_release.zip godot.asm.js godot.js godot.mem godotfs.js godot.html
+    cp bin/godot.javascript.opt.zip ~/.godot/templates/javascript_release.zip
 
 And ``javascript_debug.zip`` for the debug template::
 
-    zip javascript_debug.zip godot.asm.js godot.js godot.mem godotfs.js godot.html
-
-The resulting files must be placed in the ``templates`` directory in your Godot
-user directory::
-
-    mv javascript_release.zip ~/.godot/templates
-    mv javascript_debug.zip ~/.godot/templates
+    cp bin/godot.javascript.opt.debug.zip ~/.godot/templates/javascript_debug.zip
 
 If you are writing custom modules or using custom C++ code, you may want to
 configure your zip files as custom export templates. This can be done in the
@@ -144,7 +94,9 @@ Emscripten configuration file ``~/.emscripten`` is set. If it points to a
 directory containing binaries of Emscripten's *fastcomp* fork of clang,
 ``asm2wasm`` is used. This is the default in a normal Emscripten installation.
 Otherwise, LLVM binaries built with the WebAssembly backend will be expected
-and ``s2wasm`` is used.
+and ``s2wasm`` is used. On Windows, make sure to escape backslashes of paths
+within this file as double backslashes ``\\`` or use Unix-style paths with
+a single forward slash ``/``.
 
 With ``LLVM_ROOT`` set up correctly, compiling to WebAssembly is as easy as
 adding ``wasm=yes`` to the SCons arguments::
@@ -152,28 +104,14 @@ adding ``wasm=yes`` to the SCons arguments::
     scons platform=javascript target=release wasm=yes
     scons platform=javascript target=release_debug wasm=yes
 
-These commands will build WebAssembly binaries in either release or debug mode.
-The generated files' names contain ``.webassembly`` as an additional file
-suffix before the extension.
+These commands will build WebAssembly export templates in either release or
+debug mode. The generated files' names contain ``.webassembly`` as an
+additional file suffix before the extension.
+The templates simply replace the previous asm.js-based web export templates
+with the names ``javascript_release.zip`` and ``javascript_debug.zip``::
 
-In order to build the actual WebAssembly export templates, the WebAssembly
-binary file with the ``.wasm`` extension is added to the archive as
-``godot.wasm`` in place of ``godot.asm.js`` alongside the usual files.
-
-For the release template::
-
-   cp bin/godot.javascript.opt.webassembly.wasm godot.wasm
-
-For the debug template::
-
-   cp bin/godot.javascript.opt.debug.webassembly.wasm godot.wasm
-
-WebAssembly builds do not use a memory initializer file, so do not add a
-``godot.mem`` file to the archive — there is none.
-
-The WebAssembly export templates simply replace the previous asm.js-based web
-export templates with the names ``javascript_release.zip`` and
-``javascript_debug.zip``
+   cp bin/godot.javascript.opt.webassembly.zip       ~/.godot/templates/javascript_release.zip
+   cp bin/godot.javascript.opt.debug.webassembly.zip ~/.godot/templates/javascript_debug.zip
 
 Customizing the HTML page
 -------------------------
@@ -184,8 +122,8 @@ the final web presentation.
 
 This can be done in two ways. The first is to replace the
 ``platform/javascript/godot_shell.html`` file. In this case, the HTML file is
-used at build time, allowing Emscripten so substitute the ``{{{ SCRIPT }}}``
-placeholder by a ``<script>>`` element containing the loader code. This makes
+used at build time, allowing Emscripten to substitute the ``{{{ SCRIPT }}}``
+placeholder by a ``<script>`` element containing the loader code. This makes
 the HTML file usable for both asm.js and WebAssembly templates, since they use
 different loading code.
 
