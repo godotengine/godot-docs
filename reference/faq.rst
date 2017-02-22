@@ -74,7 +74,7 @@ provided by Godot.
 That said, Godot's Collada support is really good, please use the
 `OpenCollada <https://github.com/KhronosGroup/OpenCOLLADA/wiki/OpenCOLLADA-Tools>`_
 exporter for maximum compatibility if you are using Maya or 3DS Max.
-If you are use Blender, take a look at our own
+If you are using Blender, take a look at our own
 `Better Collada Exporter <https://godotengine.org/download>`_.
 
 Will [Insert closed SDK such as PhysX, GameWorks, etc.] be supported in Godot?
