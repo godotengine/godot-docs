@@ -6,10 +6,9 @@ Custom drawing in 2D
 Why?
 ----
 
-Godot has nodes to draw sprites, polygons, particles, and all sort of
-stuff. For most cases this is enough, but not always. If something
-desired is not supported, and before crying in fear, angst and range
-because a node to draw that-specific-something does not exist... it would
+Godot has nodes to draw sprites, polygons, particles, and all sorts of
+stuff. For most cases this is enough, but not always. Before crying in fear, 
+angst, and rage because a node to draw that-specific-something does not exist... it would
 be good to know that it is possible to easily make any 2D node (be it
 :ref:`Control <class_Control>` or :ref:`Node2D <class_Node2D>`
 based) draw custom commands. It is *really* easy to do it too.
@@ -99,7 +98,7 @@ call update() from the _process() callback, like this:
 An example: drawing circular arcs
 ----------------------------------
 
-We will now use the custom drawing functionality of Godot Engine to draw something Godot doesn't provide functions for. As an example, Godot provides a draw_circle() function that draws a whole circle. However, what about drawing a portion of a circle? You will have to code a function to perform this, and draw it yourself.
+We will now use the custom drawing functionality of the Godot Engine to draw something that Godot doesn't provide functions for. As an example, Godot provides a draw_circle() function that draws a whole circle. However, what about drawing a portion of a circle? You will have to code a function to perform this, and draw it yourself.
 
 Arc function
 ^^^^^^^^^^^^
