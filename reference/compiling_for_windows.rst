@@ -26,7 +26,8 @@ Setting up SCons
 
 Python adds the interpreter (python.exe) to the path. It usually
 installs in ``C:\Python`` (or ``C:\Python[Version]``). SCons installs
-inside the Python install and provides a batch file called "scons.bat".
+inside the Python install (typically in the ``Scripts`` folder) and 
+provides a batch file called "scons.bat".
 The location of this file can be added to the path or it can simply be
 copied to ``C:\Python`` together with the interpreter executable.
 
