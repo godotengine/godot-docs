@@ -30,9 +30,12 @@ Delivering the files with gzip compression is recommended especially for the
 Export options
 --------------
 
-Turning on **Debugging Enabled** when exporting will display a debug output
-below the canvas, displaying JavaScript and engine errors. If controls are
+Turning on **Debugging Enabled** when exporting will, in addition to enabling
+various debug features of the engine, display a debug output below the canvas,
+displaying JavaScript and engine errors. If controls are
 enabled as well, display of this output can be toggled.
+You can also use the browser-integrated developer console, usually opened with
+the F12 key, which often shows more information, including WebGL errors.
 
 **Memory Size** is fixed and must thus be set during export. Try using no more
 than necessary to strain users' browsers as little as possible.
@@ -59,3 +62,29 @@ semicolon.
 output display in debug mode and a fullscreen button.
 In the default page, the controls are displayed in the top-right corner on top
 of the canvas, which can get in the way in games that use the cursor.
+
+Security restrictions
+---------------------
+
+Browsers do not allow arbitrarily **entering full screen** at any time.
+Instead, these actions have to occur as a response to a JavaScript input event.
+In Godot, this is most easily done by entering full screen from within an
+``_input()`` callback.
+
+Chromium-derived browsers will not load exported projects when
+**opened locally** per ``file://`` protocol. To get around this, you can start
+the browser with the ``--allow-file-access-from-files`` flag, or use a local
+server. Python offers an easy way for this, using ``python -m SimpleHTTPServer``
+with Python 2 or ``python -m http.server`` with Python 3 will serve the
+current working directory on ``http://localhost:8000``.
+
+Locale
+------
+
+Godot tries to detect the user's locale using information provided by the
+browser, but this is rather unreliable. A better way is to use CGI to read the
+HTTP ``Accept-Language`` header. If you assign its value to the JavaScript
+property ``Module.locale`` after the ``Module`` objects is created, but before
+the engine starts, Godot will use that value to initialize the locale.
+In any case, users should always be offered the option to configure the locale
+manually.
