@@ -13,7 +13,7 @@ required:
 
 -  Python 2.7+ (3.0 is untested as of now)
 -  SCons build system
--  XCode
+-  Xcode (or the more lightweight Command Line Tools for Xcode)
 
 Compiling
 ---------
