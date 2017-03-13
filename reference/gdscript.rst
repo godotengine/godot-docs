@@ -977,6 +977,7 @@ special export syntax is provided.
     # Export can also take a resource type to use as a hint
 
     export(Texture) var character_face
+    export(PackedScene) var scene_file
 
     # Integers and strings hint enumerated values
 
