@@ -1034,8 +1034,10 @@ special export syntax is provided.
     export(Color, RGBA) var col  # Color is RGBA
    
     # another node in the scene can be exported too
-    
     export(NodePath) var node
+    
+    # you can select a scene file from your project
+    export (PackedScene) var scene_file
 
 It must be noted that even if the script is not being run while at the
 editor, the exported properties are still editable (see below for
