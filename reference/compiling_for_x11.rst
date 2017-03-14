@@ -86,6 +86,19 @@ If you wish to compile using Clang rather than GCC, use this command:
 ::
 
     user@host:~/godot$ scons platform=x11 use_llvm=yes
+    
+If you are using Ubuntu >=16.10, it includes GCC 6.2 as default,
+which could cause runtime issues.
+
+To force use of GCC 5, install gcc-5 and g++-5 with:
+::
+
+    sudo apt install gcc-5 g++-5
+
+then compile using:
+::
+
+    user@host:~/godot$ scons platform=x11 CC="/usr/bin/gcc-5" CXX="/usr/bin/g++-5"
 
 Building export templates
 -------------------------
