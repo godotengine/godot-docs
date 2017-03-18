@@ -33,6 +33,8 @@ Member Functions
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_skeleton_path<class_MeshInstance_set_skeleton_path>`  **(** :ref:`NodePath<class_nodepath>` skeleton_path  **)** |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set<class_MeshInstance_set>`  **(** :ref:`String<class_string>` property, :ref:`float<class_float>` value **)**      |                              |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -78,4 +80,8 @@ Set the :ref:`Mesh<class_mesh>` resource for the instance.
 
 - void  **set_skeleton_path**  **(** :ref:`NodePath<class_nodepath>` skeleton_path  **)**
 
+.. _class_MeshInstance_set:
 
+- void  **set**  **(** :ref:`String<class_string>` property, :ref:`float<class_float>` value  **)**
+
+Set a morph value by string property for the instance.
