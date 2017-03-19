@@ -6,10 +6,10 @@ Materials
 Introduction
 ------------
 
-Materials can be applied to most visible 3D objects, they basically
-are a description to how light reacts to that object. There are many
+Materials can be applied to most visible 3D objects. Basically they
+describe how light interacts with that object. There are many
 types of materials, but the main ones are the
-:ref:`FixedMaterial <class_FixedMaterial>` and
+:ref:`FixedMaterial <class_FixedMaterial>` and the
 :ref:`ShaderMaterial <class_ShaderMaterial>`.
 Tutorials for each of them exist :ref:`doc_fixed_materials` and :ref:`doc_shader_materials`.
 
@@ -20,8 +20,8 @@ This tutorial is about the basic properties shared between them.
 Flags
 -----
 
-Materials, no matter which type they are, have a set of flags
-associated. Each has a different use and will be explained as follows.
+Materials, no matter which type they are, have an associated set of flags.
+Their use will be explained in the following.
 
 Visible
 ~~~~~~~
@@ -29,18 +29,20 @@ Visible
 Toggles whether the material is visible. If unchecked, the object will
 not be shown.
 
-Double sided & invert faces
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Double sided & inverted faces
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Godot by default only shows geometry faces (triangles) when facing the
-camera. To do this it needs them to be in view in clockwise order.
-This saves a lot of GPU power by ensuring that not visible triangles
-are not drawn.
+Godot by default only shows geometry faces (triangles) when their front-side
+faces the camera. If looking at the front-side of a face, its vertices
+have to be oriented clockwise by definition. For closed objects, the
+back-side of faces is never visible because they are hidden by other
+faces. SO not drawing invisible triangles (whose vertices are oriented
+counter-clockwise on the view plane) saves a lot of GPU power.
 
-Some flat objects might need to be drawn all the times though, for
-this the "double sided" flag will make sure that no matter the facing,
+However, for flat or open objects, the back-side of faces might be visible
+and needs to be drawn as well. The "double sided" flag makes sure that no matter the facing,
 the triangle will always be drawn. It is also possible to invert this
-check and draw counter-clockwise looking faces too, though it's not
+check and draw only counter-clockwise looking faces, though it's not
 very useful except for a few cases (like drawing outlines).
 
 Unshaded
@@ -57,8 +59,9 @@ On top
 ~~~~~~
 
 When this flag is turned on, the object will be drawn after everything
-else has been drawn and without a depth test. This is generally only
-useful for HUD effects or gizmos.
+else has been drawn and without a depth test. This is generally useful
+for objects which shall never be hidden by other objects such as HUD effects
+or gizmos.
 
 Ligthmap on UV2
 ~~~~~~~~~~~~~~~
