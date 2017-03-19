@@ -36,8 +36,8 @@ Use alpha
 This flag needs to be active for transparent materials to blend with
 what is behind, otherwise display will always be opaque. Do not enable
 this flag unless the material really needs it, because it can severely
-affect performance and quality. Materials with transparency will also
-not cast shadows (unless they contain opaque areas and the "opaque
+affect performance and quality. Materials with transparency also won't
+cast shadows (unless they contain opaque areas and the "opaque
 pre-pass" hint is turned on, see the :ref:`doc_materials` tutorial for more
 information).
 
@@ -46,7 +46,7 @@ information).
 Use vertex colors
 ~~~~~~~~~~~~~~~~~
 
-Vertex color painting is a very common technique to add detail to
+Vertex color painting is a very common technique to add detail to a
 geometry. 3D DCCs all support this, and many even support baking
 occlusion to it. Godot allows this information to be used in the fixed
 material by modulating the diffuse color when enabled.
@@ -57,14 +57,14 @@ Point size
 ~~~~~~~~~~
 
 Point size is used to set the point size (in pixels) for when rendering
-points. This feature is mostly used in tools and HUDs
+points. This feature is mostly used in tools and HUDs.
 
 Discard alpha
 ~~~~~~~~~~~~~
 
-When alpha is enabled (see above) the invisible pixels are blended
+When alpha is enabled (see above) the transparent pixels are blended
 with what is behind them. In some combinations (of using alpha to
-render depth) it may be possible that invisible pixels cover other
+render depth) it may be possible that transparent pixels cover other
 objects.
 
 If this is the case, enable this option for the material. This option
@@ -80,10 +80,11 @@ Diffuse, specular, emission and specular exponent
 These are the base colors for the material.
 
 -  Diffuse color is responsible for the light that reaches the material,
-   then gets diffused around. This color varies by the angle to the
-   light and the distance (in the case of spot and omni lights). It is
+   and is diffusely back-scattered then. This color varies by the angle between
+   the face and the light and the distance to the light source 
+   (in the case of spot and omni lights). It is
    the color that best represents the material. It can also have alpha
-   (transparency)
+   (transparency).
 -  Specular color is the color of the reflected light and responsible
    for shines. It is affected by the specular exponent.
 -  Emission is the color of the light generated within the material
@@ -127,10 +128,13 @@ added together, here's an example of what detail textures are for:
 Normal depth
 ~~~~~~~~~~~~
 
-Normal depth controls the intensity of the normal-mapping as well as the
-direction. On 1 (the default) normalmapping applies normally, on -1 the
-map is inverted and on 0 is disabled. Intermediate or greater values are
-accepted. Here's how it's supposed to look:
+Normal depth controls the strength and the direction of normal-mapping.
+If it is set to 1 (the default), the un-scaled normal map is applied.
+Values larger than 1 make normal-mapping more pronounced (dents and bumps
+become larger), while values smaller than 1 reduce the effect. A normal
+depth of 0 disables normal-mapping. Negative values invert the normal map
+so dents become bumps and vice versa. Here is an example showing the
+influence of the normal depth on the outcome:
 
 .. image:: /img/fixed_material_normal_depth.png
 
