@@ -60,9 +60,10 @@ motion casting, etc.
 Transforming shapes
 ~~~~~~~~~~~~~~~~~~~
 
-As seen before in the collide functions, 2D shapes in godot can be
+As seen before in the collide functions, 2D shapes in Godot can be
 transformed by using a regular :ref:`Matrix32 <class_Matrix32>`
-transform, meaning they can check collision while scaled, moved and
+transform, meaning the functions can check for collisions while the 
+shapes are scaled, moved and
 rotated. The only limitation to this is that shapes with curved sections
 (such as circle and capsule) can only be scaled uniformly. This means
 that circle or capsule shapes scaled in the form of an ellipse **will
@@ -152,57 +153,34 @@ for circle and capsule shapes**.
 
 .. image:: /img/collision_inheritance.png
 
-StaticBody2D
-~~~~~~~~~~~~
-
-The simplest node in the physics engine is the StaticBody2D, which
-provides a static collision. This means that other objects can collide
-against it, but StaticBody2D will not move by itself or generate any
-kind of interaction when colliding other bodies. It's just there to be
-collided.
-
-Creating one of those bodies is not enough, because it lacks collision:
-
-.. image:: /img/collision_inheritance.png
-
-From the previous point, we know that CollisionObject2D derived nodes
-have an internal lists of shapes and transforms for collisions, but how
-to edit them? There are two special nodes for that.
+A CollisionObject2D comes in different flavors: StaticBody2D, RigidBody2D,
+KinematicBody2D and Area2D. However, before we dig into them, let's have
+a look how to define the shape of a collision object.
+There are two special nodes for that.
 
 CollisionShape2D
 ~~~~~~~~~~~~~~~~
 
-This node is a helper node. It must be created as a direct children of a
-CollisionObject2D derived node: :ref:`Area2D <class_Area2D>`,
+This node is a helper node, which must be created as a direct child of a
+CollisionObject2D-derived node: :ref:`Area2D <class_Area2D>`,
 :ref:`StaticBody2D <class_StaticBody2D>`, :ref:`KinematicBody2D <class_KinematicBody2D>`,
 :ref:`RigidBody2D <class_RigidBody2D>`.
 
-By itself it does nothing, but when created as a child of the above
-mentioned nodes, it adds collision shapes to them. Any amount of
-CollisionShape2D children can be created, meaning the parent object will
-simply have more collision shapes. When added/deleted/moved/edited, it
-updates the list of shapes in the parent node.
+The purpose of a CollisionShape2D instance is to add collision shapes to
+its parent class. Multiple children of type CollisionShape2D can be added to a
+CollisionObject2D-derived object with the effect that the parent will
+simply get more collision shapes. When a CollisionShape2D is edited (or added, moved,
+deleted) the list of shapes in the parent node is updated.
 
-At run time, though, this node does not exist (can't be accessed with
-``get_node()``), since it's only meant to be an editor helper. To access
-the shapes created at runtime, use the CollisionObject2D API directly.
+At run time, though, this node does not exist and it can't be accessed with
+``get_node()``. This is because it is a helper node only for editing the collision shapes.
+To access the shapes created at runtime, use the CollisionObject2D API directly.
 
 As an example, here's the scene from the platformer, containing an
-Area2D with child CollisionObject2D and coin sprite:
+Area2D (named 'coin') having two children: a CollisionShape2D (named 'collision')
+and a sprite (called 'sprite'):
 
 .. image:: /img/area2dcoin.png
-
-Triggers
-~~~~~~~~
-
-A CollisionShape2D or CollisionPolygon2D can be set as a trigger. When
-used in a RigidBody2D or KinematicBody2D, "trigger" shapes become
-non-collidable (objects can't collide against it). They just move around
-with the object as ghosts. This makes them useful in two situations:
-
--  Disabling collision in a specific shape.
--  Get an Area2D to trigger a body_enter / body_exit signals with non
-   collidable objects (useful in several situations).
 
 CollisionPolygon2D
 ~~~~~~~~~~~~~~~~~~
@@ -212,27 +190,52 @@ assigning a shape, a polygon can be edited (drawn by the user) to
 determine the shape. The polygon can be convex or concave, it doesn't
 matter.
 
-Going back, here's the scene with the StaticBody2D, the static body is
-the child of a sprite (meaning if the sprite moves, the collision does
-too). In turn, the CollisionPolygon is a child of staticbody, meaning it
+Here is another scene involving a CollisionPolygon2D: A StaticBody2D has
+been added as a child of a sprite so that the collision object moves together
+with the sprite. In turn, the CollisionPolygon is a child of StaticBody2D, meaning it
 adds collision shapes to it.
 
 .. image:: /img/spritewithcollision.png
 
-In fact, what CollisionPolygon does is to decompose the polygon in
-convex shapes (shapes can only be convex, remember?) and adds them to
-the CollisionObject2D:
+The CollisionPolygon2D will decompose the user-defined polygon into conves shapes
+convex shapes (shapes can only be convex, remember?) before adding them to
+the CollisionObject2D. The following image shows such a decomposition:
 
 .. image:: /img/decomposed.png
+
+Triggers
+~~~~~~~~
+
+A CollisionShape2D or CollisionPolygon2D can be set as a trigger by setting
+the boolean flag with the same name. When
+used in a RigidBody2D or KinematicBody2D, "trigger" shapes take part
+in collision detection but are unaffected by physics (they don't block
+movement etc).
+Defining a collision shape as a trigger is mostly useful in two situations:
+
+-  Collisions for a specific shape shall be disabled.
+-  An Area2D shall send ``body_enter`` and ``body_exit`` signals when the
+   trigger shape enters it (useful in several situations).
+
+StaticBody2D
+~~~~~~~~~~~~
+
+The simplest node in the physics engine is the :ref:`StaticBody2D <class_StaticBody2D>`.
+This node takes part in collision detection. However, it does not move or rotate
+after a collision, so physics do not influence them. The node is static.
+Other nodes can collide against it and will be influenced accordingly.
+
+The platformer example uses StaticBody2D objects for the floors and walls.
+These are the static parts of a level and shall stay right where they
+are even if the player jumps onto them.
 
 KinematicBody2D
 ~~~~~~~~~~~~~~~
 
-:ref:`KinematicBody2D <class_KinematicBody2D>` bodies are special types
-of bodies that are meant to be user-controlled.
-They are not affected by the physics at all (to other types of bodies,
-such a character or a rigidbody, these are the same as a staticbody).
-They have however, two main uses:
+Similar to StaticBody2D, objects of type :ref:`KinematicBody2D <class_KinematicBody2D>`
+are not affected by physics (although they take part in collision detection, of course).
+However, KinematicBody2D are not static but can be moved via code or an animation.
+They have two main uses:
 
 -  **Simulated Motion**: When these bodies are moved manually, either
    from code or from an :ref:`AnimationPlayer <class_AnimationPlayer>`
@@ -242,17 +245,17 @@ They have however, two main uses:
    AnimationPlayer-controlled objects (like a door, a bridge that opens,
    etc). As an example, the 2d/platformer demo uses them for moving
    platforms.
--  **Kinematic Characters**: KinematicBody2D also has an api for moving
-   objects (the move() function) while performing collision tests. This
+-  **Kinematic Characters**: KinematicBody2D also has an API for moving
+   objects (the ``move()`` function) while performing collision tests. This
    makes them really useful to implement characters that collide against
    a world, but that don't require advanced physics. There is a tutorial
-   about :ref:`doc_kinematic_character_2d`.
+   about it :ref:`doc_kinematic_character_2d`.
 
 RigidBody2D
 ~~~~~~~~~~~
 
-This type of body simulates newtonian physics. It has mass, friction,
-bounce, and the 0,0 coordinates simulates the center of mass. When real
+This type of body simulates Newtonian physics. It has mass, friction,
+bounce, and the (0,0) coordinates simulate the center of mass. When real
 physics are needed, :ref:`RigidBody2D <class_RigidBody2D>`
 is the node to use. The motion of this body is affected by gravity
 and/or other bodies.
@@ -266,17 +269,15 @@ by the simulation from a position, linear velocity and angular velocity.
 As a result, [STRIKEOUT:this node can't be scaled]. Scaling the children
 nodes should work fine though.
 
-As a plus, as this is very common in games, it is possible to change a
-RigidBody2D node to behave like a Character (no rotation), StaticBody or
-KinematicBody according to different situations (example, an enemy
-frozen by an ice beam becomes a StaticBody)
+A RigidBody2D has a ``Mode`` flag to change its behavior (something 
+which is very common in games). It can behave like a rigid body, 
+a character (a rigid body without the ability to rotate so that it is
+always upright), a kinematic body or a static body. This flag can be
+changed dynamically according to the current situation. For example,
+an enemy frozen by an ice beam becomes a static body.
 
 The best way to interact with a RigidBody2D is during the force
-integration callback. In this very moment, the physics engine
-synchronizes state with the scene and allows full modification of the
-internal parameters (otherwise, as it may be running in a thread,
-changes will not take place until next frame). To do this, the following
-function must be overridden:
+integration callback by overriding the function
 
 ::
 
@@ -284,8 +285,13 @@ function must be overridden:
         [use state to change the object]
 
 The "state" parameter is of type :ref:`Physics2DDirectBodyState <class_Physics2DDirectBodyState>`.
-Please do not use this object (state) outside the callback as it will
+Please do not use the state object outside the callback as it will
 result in an error.
+
+During the evaluation of the aforementioned function, the physics engine
+synchronizes state with the scene and allows full modification of the
+object's parameters.  Since physics may run in its own thread, parameter
+changes outside that callback will not take place until the next frame.
 
 Contact reporting
 -----------------
