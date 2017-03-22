@@ -81,14 +81,14 @@ approximately in a point.
 .. image:: /img/light_omni.png
 
 In reality, the attenuation of omni light is proportional to the squared distance
-from the point source. This can be easily understood if you imagine a sqhere around
+from the point source. This can be easily understood if you imagine a sphere around
 the omni light with a certain radius. No matter how large the sphere is, the number
 of rays passing through it is always the same. If the radius of the sphere is doubled,
 the area of the sphere increases by four. In other words, the density of rays
-(the number of rays per squere area) decreases quadratically with the distance.
+(the number of rays per square area) decreases quadratically with the distance.
 
 Inverse-quadratic attenuation curves are inconvenient for artists: they
-never reach zero and have almost intinitely large values near the emitter.
+never reach zero and have almost infinitely large values near the emitter.
 So Godot simulates omni light with an artist-controlled exponential curve
 instead.
 
@@ -119,4 +119,4 @@ Baked light
 Baked light stands for pre-computed ambient light. It can serve multiple
 purposes, such as baking light emitters that are not going to be used in
 real-time, and baking light bounces from real-time lights to add more
-realism to a scene (see Baked Light]] tutorial for more information).
+realism to a scene (see :ref:`doc_light_baking` tutorial for more information).
