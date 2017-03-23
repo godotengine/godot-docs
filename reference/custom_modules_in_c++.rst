@@ -158,9 +158,24 @@ this module:
 
     env.add_source_files(env.modules_sources,"*.cpp") # just add all cpp files to the build
 
+With multiple sources, you can also add each file individually to a python string list:
+
+.. code:: python
+
+    src_list = ["summator.cpp", "other.cpp", "etc.cpp"]
+    env.add_source_files(env.modules_sources,src_list)
+
+This allows for some powerful possibilities using python to contruct the file list using loops and logic statements. Look at some of the other modules that ship with Godot by default for examples. 
+
+To add include directories for the compiler to look at you can append it to the environment's paths:
+
+.. code:: python
+
+    env.Append(CPPPATH="mylib/include")#this is a relative path
+
 If you want to add custom compiler flags when building your module, you need to clone
 `env` first, so it won't add those flags to whole Godot build (which can cause errors).
-Example `SCsub` with custom flags:
+Example `SCub` with custom flags:
 
 .. code:: python
 
@@ -280,7 +295,7 @@ during runtime with the ``LD_LIBRARY_PATH`` environ variable:
 you won't be able to play you project from within the editor.
 
 On top of that, it would be nice to be able to select whether to compile our
-module as shared library (for development) or as a part of the godot binary
+module as shared library (for development) or as a par of the godot binary
 (for release). To do that we can define a custom flag to be passed to SCons
 using the `ARGUMENT` command:
 
