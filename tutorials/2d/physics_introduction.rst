@@ -197,9 +197,9 @@ adds collision shapes to it.
 
 .. image:: /img/spritewithcollision.png
 
-The CollisionPolygon2D will decompose the user-defined polygon into conves shapes
-convex shapes (shapes can only be convex, remember?) before adding them to
-the CollisionObject2D. The following image shows such a decomposition:
+The CollisionPolygon2D will decompose the user-defined polygon into convex shapes
+(shapes can only be convex, remember?) before adding them to the CollisionObject2D.
+The following image shows such a decomposition:
 
 .. image:: /img/decomposed.png
 
