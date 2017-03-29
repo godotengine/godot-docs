@@ -1,8 +1,0 @@
-Internationalization
-====================
-
-.. toctree::
-   :maxdepth: 1
-   :name: toc-i18n
-
-   internationalizing_games
