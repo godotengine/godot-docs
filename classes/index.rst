@@ -1,5 +1,5 @@
-Class reference
-===============
+Godot API
+=========
 
 .. toctree::
    :maxdepth: 1

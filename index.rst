@@ -18,41 +18,60 @@ or annoy us at the #godotengine-devel IRC channel!
 
 The main documentation for the site is organized into a few sections:
 
-* :ref:`sec-tutorials`
-* :ref:`sec-reference`
+* :ref:`sec-general`
+* :ref:`sec-learn`
+* :ref:`sec-devel`
 * :ref:`sec-community`
+* :ref:`sec-class-ref`
+
+--------------
 
 .. toctree::
    :maxdepth: 1
-   :caption: Tutorials
-   :name: sec-tutorials
+   :caption: General
+   :name: sec-general
 
-   tutorials/step_by_step/_step_by_step
-   tutorials/engine/_engine
-   tutorials/2d/_2d
-   tutorials/3d/_3d
-   tutorials/_networking
-   tutorials/_plugins
-   tutorials/_misc_tutorials
-   tutorials/asset_pipeline/_asset_pipeline
+   about/index
+
 
 .. toctree::
    :maxdepth: 1
-   :caption: Reference
-   :name: sec-reference
+   :caption: Learning
+   :name: sec-learn
 
-   classes/_classes
-   reference/_languages
-   reference/_cheat_sheets
-   reference/_compiling
-   reference/_advanced
+   learning/step_by_step/index
+   learning/editor/index
+   learning/features/index
+   learning/scripting/index
+   learning/workflow/index
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Development
+   :name: sec-devel
+
+   development/plugins/index
+   development/compiling/index
+   development/cpp/index
+
 
 .. toctree::
    :maxdepth: 1
    :caption: Community
    :name: sec-community
 
-   contributing/_contributing
+   community/contributing/index
+   community/tutorials/index
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Class reference
+   :name: sec-class-ref
+
+   classes/index
+
 
 .. Indices and tables
 .. ------------------
