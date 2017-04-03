@@ -3,28 +3,34 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Documentation for Godot Engine 2.1.x (stable)
-=============================================
+Godot Docs – *2.1* branch
+=========================
 
-Looking for the documentation of the current **development** branch?
-`Have a look here </en/latest/>`_.
+.. tip:: This is the documentation for the stable 2.1 branch.
+         Looking for the documentation of the current **development** branch?
+         `Have a look here <http://docs.godotengine.org/en/latest>`_.
 
-**Note:** Godot Engine is an open source project developed by a community of volunteers.
-It means that the documentation team can always use your feedback and help to improve our
-tutorials and class reference. So if you don't manage to understand something, or can't find
-what you are looking for in the docs, help us make the documentation better and let us know!
-Submit an issue `to the GitHub repository <https://github.com/godotengine/godot-docs/issues>`_,
-or annoy us at the #godotengine-devel IRC channel!
+Welcome to the official documentation of Godot Engine, the free and open source
+community-driven 2D and 3D game engine! If you are new to this documentation,
+we recommend that you read the :ref:`introduction page <doc_about_intro>` to
+get an overview of what this documentation has to offer.
 
-The main documentation for the site is organized into a few sections:
+The table of contents below and in the sidebar should let you easily access the
+documentation for your topic of interest. You can also use the search function
+in the top left corner.
 
-* :ref:`sec-general`
-* :ref:`sec-learn`
-* :ref:`sec-devel`
-* :ref:`sec-community`
-* :ref:`sec-class-ref`
+.. note:: Godot Engine is an open source project developed by a community of
+          volunteers. It means that the documentation team can always use your
+          feedback and help to improve the tutorials and class reference. If
+          you do not manage to understand something, or cannot find what you
+          are looking for in the docs, help us make the documentation better
+          by letting us know!
 
---------------
+          Submit an issue or pull request on the `GitHub repository
+          <https://github.com/godotengine/godot-docs/issues>`_, or discuss with
+          us on the #godotengine-devel IRC channel!
+
+The main documentation for the site is organized into the following sections:
 
 .. toctree::
    :maxdepth: 1
