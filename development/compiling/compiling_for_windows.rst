@@ -39,7 +39,7 @@ If commands above do not work, make sure you add Python to your PATH
 environment variable after installing it, and check again.
 
 Setting up Pywin32
--------------------------
+------------------
 
 Pywin32 is required for -j (parallel) builds for multiple cores (for a
 32 bit Python version). If SCons is issuing a warning about Pywin32
@@ -57,7 +57,7 @@ Amd64 version of Pywin32 is for a 64 bit version of Python
 your version of python (check via ``python --version`` mentioned above).
 
 Installing Visual Studio caveats
------------------------------------
+--------------------------------
 
 If installing VS 2015, make sure to run **Custom** installation, not
 **Typical** and select C++ as language there (and any other things you might
@@ -123,7 +123,7 @@ If you don't see some of the shortcuts, "How the prompts actually work"
 section below will explain how to setup these prompts if you need them.
 
 About the Developer/Tools Command Prompts and the Visual C++ compiler
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 There is a few things you need to know about these consoles and the
 Visual C++ compiler.
@@ -167,7 +167,7 @@ Native Prompts if you are not sure yet what exactly Cross Compile
 Prompts do.
 
 Running SCons
-~~~~~~~~~~~~
+~~~~~~~~~~~~~
 
 Once inside the **Developer Console/Tools Console Prompt**, go to the
 root directory of the engine source code and type:
@@ -343,7 +343,7 @@ other build configurations (debug, release_debug, release) or
 architectures (Win32/x64). They are equivalent.
 
 Cross-compiling for Windows from other operating systems
----------------
+--------------------------------------------------------
 
 If you are a Linux or Mac user, you need to install mingw32 and
 mingw-w64. Under Ubuntu or Debian, just run the following commands:

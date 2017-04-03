@@ -1,7 +1,7 @@
 .. _doc_filesystem:
 
 File system
-==========
+===========
 
 Introduction
 ------------
@@ -54,7 +54,7 @@ format. Even an empty engine.cfg can function as a basic definition of a blank
 project.
 
 Path delimiter
--------------------
+--------------
 
 Godot only supports ``/`` as a path delimiter. This is done for
 portability reasons. All operating systems support this, even Windows,
@@ -85,7 +85,7 @@ state or downloading content packs. To this end, the engine ensures that there i
 special path ``user://`` that is always writable.
 
 Host file system
----------------
+----------------
 
 Alternatively host file system paths can also be used, but this is not recommended
 for a released product as these paths are not guaranteed to work on all platforms.

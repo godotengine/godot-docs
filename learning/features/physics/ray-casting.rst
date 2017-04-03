@@ -35,7 +35,7 @@ The resulting space :ref:`RID <class_RID>` can be used in
 :ref:`Physics2DServer <class_Physics2DServer>` respectively for 3D and 2D.
 
 Accessing space
---------------
+---------------
 
 Godot physics runs by default in the same thread as game logic, but may
 be set to run on a separate thread to work more efficiently. Due to

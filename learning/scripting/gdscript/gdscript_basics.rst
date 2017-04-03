@@ -698,6 +698,7 @@ in the loop variable.
 
     for c in "Hello":
         print(c)   # iterate through all characters in a String, print every letter on new line
+
 match
 ^^^^^
 
@@ -705,6 +706,7 @@ A ``match`` statement is used to branch execution of a program.
 It's the equivalent of the ``switch`` statement found in many other languages but offers some additional features.
 
 Basic syntax:
+
 ::
     
     match [expression]:
@@ -715,10 +717,10 @@ Basic syntax:
 
 **Crash-course for people who are familiar to switch statements**:
 
-1) replace ``switch`` with ``match``
-2) remove ``case``
-3) remove any ``break``'s. If you don't want to ``break`` by default you can use ``continue`` for a fallthrough.
-4) change ``default`` to a single underscore.
+1. Replace ``switch`` with ``match``
+2. Remove ``case``
+3. Remove any ``break``'s. If you don't want to ``break`` by default you can use ``continue`` for a fallthrough.
+4. Change ``default`` to a single underscore.
 
 
 **Control flow**:
@@ -726,9 +728,6 @@ Basic syntax:
 The patterns are matched from top to bottom.
 If a pattern matches, the corresponding block will be executed. After that, the execution continues below the ``match`` statement.
 If you want to have a fallthrough you can use ``continue`` to stop execution in the current block and check the ones below it.
-
-
-
 
 There are 6 pattern types:
 

@@ -15,7 +15,7 @@ Also, make sure the Publisher name you set when export the package matches
 the name on the certificate.
 
 Limitations on Xbox One
-------------
+-----------------------
 
 As described in `UWP documentation <https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/system-resource-allocation>`__:
 

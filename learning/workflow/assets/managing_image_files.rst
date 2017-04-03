@@ -126,7 +126,8 @@ iCC profile (in some tools this profile can even be manually changed on export)
 or using a tool that removes/fixes the iCC chunks.
 
 Linux/Mac
-~~~~~
+~~~~~~~~~
+
 Using ImageMagicks ``convert`` or ``mogrify`` fixes these warnings.
 To fix all PNGs in a project folder do:
 
@@ -142,6 +143,7 @@ To fix all PNGs in a project folder do:
 
 Windows
 ~~~~~~~
+
 Using `optiPNG <http://optipng.sourceforge.net/>` fixes these warnings on Windows.
 To fix a PNG inplace do:
 

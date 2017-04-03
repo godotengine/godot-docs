@@ -403,7 +403,7 @@ Then what follows is, for amount of "elements", values one after the
 other, using this same format.
 
 22: :ref:`class_ByteArray`
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------+-------+-----------+------------------------+
 | Offset        | Len   | Type      | Description            |
@@ -416,7 +416,7 @@ other, using this same format.
 The array data is padded to 4 bytes.
 
 23: :ref:`class_IntArray`
-~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +------------------+-------+-----------+---------------------------+
 | Offset           | Len   | Type      | Description               |
@@ -427,7 +427,7 @@ The array data is padded to 4 bytes.
 +------------------+-------+-----------+---------------------------+
 
 24: :ref:`class_FloatArray`
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +------------------+-------+-----------+---------------------------+
 | Offset           | Len   | Type      | Description               |
@@ -438,7 +438,7 @@ The array data is padded to 4 bytes.
 +------------------+-------+-----------+---------------------------+
 
 25: :ref:`class_StringArray`
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------+-------+-----------+--------------------------+
 | Offset   | Len   | Type      | Description              |
@@ -459,7 +459,7 @@ For each String:
 Every string is is padded to 4 bytes.
 
 26: :ref:`class_Vector2Array`
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-------------------+-------+-----------+----------------+
 | Offset            | Len   | Type      | Description    |
@@ -472,7 +472,7 @@ Every string is is padded to 4 bytes.
 +-------------------+-------+-----------+----------------+
 
 27: :ref:`class_Vector3Array`
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------------+-------+-----------+----------------+
 | Offset             | Len   | Type      | Description    |
@@ -487,7 +487,7 @@ Every string is is padded to 4 bytes.
 +--------------------+-------+-----------+----------------+
 
 28: :ref:`class_ColorArray`
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------------+-------+-----------+----------------+
 | Offset             | Len   | Type      | Description    |

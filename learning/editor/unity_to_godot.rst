@@ -17,7 +17,7 @@ Differences
 +===================+===================================================================================+================================================================================================================+
 | License           | Proprietary, closed, free license with revenue caps and usage restrictions        | MIT License,  free and fully open souce without any restriction                                                |
 +-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| OS (editor)       | Windows, OSX, Linux (unofficial and unsupported)                                  | Windows, X11 (Linux, *BSD), Haiku, OSX                                                                         |
+| OS (editor)       | Windows, OSX, Linux (unofficial and unsupported)                                  | Windows, X11 (Linux, \*BSD), Haiku, OSX                                                                        |
 +-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 | OS (export)       | | Desktop: Windows, Linux/SteamOS, OSX                                            | | Desktop: Windows, X11, OSX                                                                                   |
 |                   | | Mobile: Android, iOS, Windows Phone, Tizen,                                     | | Mobile: Android, iOS, Blackberry (deprecated)                                                                |

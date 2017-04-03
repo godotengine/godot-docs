@@ -1,7 +1,7 @@
 .. _doc_compiling_for_x11:
 
-Compiling for X11 (Linux, *BSD)
-===============================
+Compiling for X11 (Linux, \*BSD)
+================================
 
 .. highlight:: shell
 
@@ -90,7 +90,7 @@ If you wish to compile using Clang rather than GCC, use this command:
 Building export templates
 -------------------------
 
-To build X11 (Linux, *BSD) export templates, run the build system with the
+To build X11 (Linux, \*BSD) export templates, run the build system with the
 following parameters:
 
 -  (32 bits)
@@ -116,7 +116,7 @@ To create standard export templates, the resulting files must be copied to:
 
     /home/youruser/.godot/templates
 
-and named like this (even for *BSD which is seen as "Linux X11" by Godot):
+and named like this (even for \*BSD which is seen as "Linux X11" by Godot):
 
 ::
 
