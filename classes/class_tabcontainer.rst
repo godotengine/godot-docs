@@ -27,6 +27,8 @@ Member Functions
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Popup<class_popup>`      | :ref:`get_popup<class_TabContainer_get_popup>`  **(** **)** const                                                                     |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_previous_tab<class_TabContainer_get_previous_tab>`  **(** **)** const                                                       |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_tab_align<class_TabContainer_get_tab_align>`  **(** **)** const                                                             |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Control<class_control>`  | :ref:`get_tab_control<class_TabContainer_get_tab_control>`  **(** :ref:`int<class_int>` idx  **)** const                              |
@@ -55,6 +57,7 @@ Signals
 
 -  **pre_popup_pressed**  **(** **)**
 -  **tab_changed**  **(** :ref:`int<class_int>` tab  **)**
+-  **tab_selected**  **(** :ref:`int<class_int>` tab  **)**
 
 Description
 -----------
@@ -76,15 +79,23 @@ Return whether the tabs should be visible or hidden.
 
 - :ref:`int<class_int>`  **get_current_tab**  **(** **)** const
 
-Return the current tab that is being showed.
+Return the current tab index that is being shown.
 
 .. _class_TabContainer_get_current_tab_control:
 
 - :ref:`Control<class_control>`  **get_current_tab_control**  **(** **)** const
 
+Return the current tab control that is being shown.
+
 .. _class_TabContainer_get_popup:
 
 - :ref:`Popup<class_popup>`  **get_popup**  **(** **)** const
+
+.. _class_TabContainer_get_previous_tab:
+
+- :ref:`int<class_int>`  **get_previous_tab**  **(** **)** const
+
+Return the previous tab index that was being shown.
 
 .. _class_TabContainer_get_tab_align:
 

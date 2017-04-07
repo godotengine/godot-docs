@@ -27,6 +27,12 @@ Member Functions
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`            | :ref:`get_closest_point_to_segment<class_Geometry_get_closest_point_to_segment>`  **(** :ref:`Vector3<class_vector3>` point, :ref:`Vector3<class_vector3>` s1, :ref:`Vector3<class_vector3>` s2  **)**                                                               |
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`            | :ref:`get_closest_point_to_segment_2d<class_Geometry_get_closest_point_to_segment_2d>`  **(** :ref:`Vector2<class_vector2>` point, :ref:`Vector2<class_vector2>` s1, :ref:`Vector2<class_vector2>` s2  **)**                                                         |
++------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`            | :ref:`get_closest_point_to_segment_uncapped<class_Geometry_get_closest_point_to_segment_uncapped>`  **(** :ref:`Vector3<class_vector3>` point, :ref:`Vector3<class_vector3>` s1, :ref:`Vector3<class_vector3>` s2  **)**                                             |
++------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`            | :ref:`get_closest_point_to_segment_uncapped_2d<class_Geometry_get_closest_point_to_segment_uncapped_2d>`  **(** :ref:`Vector2<class_vector2>` point, :ref:`Vector2<class_vector2>` s1, :ref:`Vector2<class_vector2>` s2  **)**                                       |
++------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3Array<class_vector3array>`  | :ref:`get_closest_points_between_segments<class_Geometry_get_closest_points_between_segments>`  **(** :ref:`Vector3<class_vector3>` p1, :ref:`Vector3<class_vector3>` p2, :ref:`Vector3<class_vector3>` q1, :ref:`Vector3<class_vector3>` q2  **)**                  |
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2Array<class_vector2array>`  | :ref:`get_closest_points_between_segments_2d<class_Geometry_get_closest_points_between_segments_2d>`  **(** :ref:`Vector2<class_vector2>` p1, :ref:`Vector2<class_vector2>` q1, :ref:`Vector2<class_vector2>` p2, :ref:`Vector2<class_vector2>` q2  **)**            |
@@ -72,6 +78,18 @@ Member Function Description
 .. _class_Geometry_get_closest_point_to_segment:
 
 - :ref:`Vector3<class_vector3>`  **get_closest_point_to_segment**  **(** :ref:`Vector3<class_vector3>` point, :ref:`Vector3<class_vector3>` s1, :ref:`Vector3<class_vector3>` s2  **)**
+
+.. _class_Geometry_get_closest_point_to_segment_2d:
+
+- :ref:`Vector2<class_vector2>`  **get_closest_point_to_segment_2d**  **(** :ref:`Vector2<class_vector2>` point, :ref:`Vector2<class_vector2>` s1, :ref:`Vector2<class_vector2>` s2  **)**
+
+.. _class_Geometry_get_closest_point_to_segment_uncapped:
+
+- :ref:`Vector3<class_vector3>`  **get_closest_point_to_segment_uncapped**  **(** :ref:`Vector3<class_vector3>` point, :ref:`Vector3<class_vector3>` s1, :ref:`Vector3<class_vector3>` s2  **)**
+
+.. _class_Geometry_get_closest_point_to_segment_uncapped_2d:
+
+- :ref:`Vector2<class_vector2>`  **get_closest_point_to_segment_uncapped_2d**  **(** :ref:`Vector2<class_vector2>` point, :ref:`Vector2<class_vector2>` s1, :ref:`Vector2<class_vector2>` s2  **)**
 
 .. _class_Geometry_get_closest_points_between_segments:
 

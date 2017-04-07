@@ -19,6 +19,10 @@ Member Functions
 ----------------
 
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`_compute_cost<class_AStar__compute_cost>`  **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id  **)** virtual                            |
++------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`_estimate_cost<class_AStar__estimate_cost>`  **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id  **)** virtual                          |
++------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`add_point<class_AStar_add_point>`  **(** :ref:`int<class_int>` id, :ref:`Vector3<class_vector3>` pos, :ref:`float<class_float>` weight_scale=1  **)** |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                  | :ref:`are_points_connected<class_AStar_are_points_connected>`  **(** :ref:`int<class_int>` id, :ref:`int<class_int>` to_id  **)** const                     |
@@ -48,6 +52,14 @@ Member Functions
 
 Member Function Description
 ---------------------------
+
+.. _class_AStar__compute_cost:
+
+- void  **_compute_cost**  **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id  **)** virtual
+
+.. _class_AStar__estimate_cost:
+
+- void  **_estimate_cost**  **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id  **)** virtual
 
 .. _class_AStar_add_point:
 

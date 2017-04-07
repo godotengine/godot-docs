@@ -53,6 +53,8 @@ Member Functions
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`            | :ref:`get_md5<class_File_get_md5>`  **(** :ref:`String<class_string>` path  **)** const                                                                                                 |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`get_modified_time<class_File_get_modified_time>`  **(** :ref:`String<class_string>` file  **)** const                                                                             |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`            | :ref:`get_pascal_string<class_File_get_pascal_string>`  **(** **)**                                                                                                                     |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`get_pos<class_File_get_pos>`  **(** **)** const                                                                                                                                   |
@@ -236,6 +238,10 @@ Get the next line of the file as a :ref:`String<class_string>`.
 - :ref:`String<class_string>`  **get_md5**  **(** :ref:`String<class_string>` path  **)** const
 
 Return a md5 String representing the file at the given path or an empty :ref:`String<class_string>` on failure.
+
+.. _class_File_get_modified_time:
+
+- :ref:`int<class_int>`  **get_modified_time**  **(** :ref:`String<class_string>` file  **)** const
 
 .. _class_File_get_pascal_string:
 

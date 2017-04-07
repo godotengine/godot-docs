@@ -31,6 +31,8 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_array>`      | :ref:`get_connected_joysticks<class_Input_get_connected_joysticks>`  **(** **)**                                                                                                                                                   |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`  | :ref:`get_gravity<class_Input_get_gravity>`  **(** **)**                                                                                                                                                                           |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`  | :ref:`get_gyroscope<class_Input_get_gyroscope>`  **(** **)**                                                                                                                                                                       |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_joy_axis<class_Input_get_joy_axis>`  **(** :ref:`int<class_int>` device, :ref:`int<class_int>` axis  **)**                                                                                                               |
@@ -68,6 +70,8 @@ Member Functions
 | :ref:`bool<class_bool>`        | :ref:`is_key_pressed<class_Input_is_key_pressed>`  **(** :ref:`int<class_int>` scancode  **)**                                                                                                                                     |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`is_mouse_button_pressed<class_Input_is_mouse_button_pressed>`  **(** :ref:`int<class_int>` button  **)**                                                                                                                     |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`parse_input_event<class_Input_parse_input_event>`  **(** :ref:`InputEvent<class_inputevent>` event  **)**                                                                                                                    |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`remove_joy_mapping<class_Input_remove_joy_mapping>`  **(** :ref:`String<class_string>` guid  **)**                                                                                                                           |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -131,6 +135,10 @@ If the device has an accelerometer, this will return the movement.
 - :ref:`Array<class_array>`  **get_connected_joysticks**  **(** **)**
 
 Returns an :ref:`Array<class_array>` containing the device IDs of all currently connected joysticks.
+
+.. _class_Input_get_gravity:
+
+- :ref:`Vector3<class_vector3>`  **get_gravity**  **(** **)**
 
 .. _class_Input_get_gyroscope:
 
@@ -237,6 +245,10 @@ Returns true or false depending on whether the key is pressed or not. You can pa
 - :ref:`bool<class_bool>`  **is_mouse_button_pressed**  **(** :ref:`int<class_int>` button  **)**
 
 Returns true or false depending on whether mouse button is pressed or not. You can pass BUTTON\_\*, which are pre-defined constants listed in :ref:`@Global Scope<class_@global scope>`.
+
+.. _class_Input_parse_input_event:
+
+- void  **parse_input_event**  **(** :ref:`InputEvent<class_inputevent>` event  **)**
 
 .. _class_Input_remove_joy_mapping:
 

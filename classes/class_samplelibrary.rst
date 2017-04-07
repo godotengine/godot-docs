@@ -31,9 +31,13 @@ Member Functions
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`    | :ref:`sample_get_pitch_scale<class_SampleLibrary_sample_get_pitch_scale>`  **(** :ref:`String<class_string>` name  **)** const                            |
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`sample_get_priority<class_SampleLibrary_sample_get_priority>`  **(** :ref:`String<class_string>` name  **)** const                                  |
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`    | :ref:`sample_get_volume_db<class_SampleLibrary_sample_get_volume_db>`  **(** :ref:`String<class_string>` name  **)** const                                |
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`sample_set_pitch_scale<class_SampleLibrary_sample_set_pitch_scale>`  **(** :ref:`String<class_string>` name, :ref:`float<class_float>` pitch  **)** |
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`sample_set_priority<class_SampleLibrary_sample_set_priority>`  **(** :ref:`String<class_string>` name, :ref:`int<class_int>` priority  **)**        |
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`sample_set_volume_db<class_SampleLibrary_sample_set_volume_db>`  **(** :ref:`String<class_string>` name, :ref:`float<class_float>` db  **)**        |
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -42,6 +46,8 @@ Description
 -----------
 
 Library that contains a collection of :ref:`Sample<class_sample>`, each identified by a text ID. This is used as a data container for the majority of the SamplePlayer classes and derivatives.
+
+Sample players will never yield an active (currently playing) voice for a new playback request when there are no inactive voices available if the priority of the sample requested to be played is lower than that of every currently played samples.
 
 Member Function Description
 ---------------------------
@@ -80,6 +86,12 @@ Remove the sample matching the given text ID.
 
 Return the pitch scale for the given sample.
 
+.. _class_SampleLibrary_sample_get_priority:
+
+- :ref:`int<class_int>`  **sample_get_priority**  **(** :ref:`String<class_string>` name  **)** const
+
+Return the priority for the given sample.
+
 .. _class_SampleLibrary_sample_get_volume_db:
 
 - :ref:`float<class_float>`  **sample_get_volume_db**  **(** :ref:`String<class_string>` name  **)** const
@@ -91,6 +103,12 @@ Return the volume (in dB) for the given sample.
 - void  **sample_set_pitch_scale**  **(** :ref:`String<class_string>` name, :ref:`float<class_float>` pitch  **)**
 
 Set the pitch scale for the given sample.
+
+.. _class_SampleLibrary_sample_set_priority:
+
+- void  **sample_set_priority**  **(** :ref:`String<class_string>` name, :ref:`int<class_int>` priority  **)**
+
+Set the priority for the given sample.
 
 .. _class_SampleLibrary_sample_set_volume_db:
 

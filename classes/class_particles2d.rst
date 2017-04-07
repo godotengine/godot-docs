@@ -51,6 +51,8 @@ Member Functions
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                | :ref:`get_pre_process_time<class_Particles2D_get_pre_process_time>`  **(** **)** const                                                           |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                    | :ref:`get_process_mode<class_Particles2D_get_process_mode>`  **(** **)** const                                                                   |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                | :ref:`get_randomness<class_Particles2D_get_randomness>`  **(** :ref:`int<class_int>` param  **)** const                                          |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Texture<class_texture>`            | :ref:`get_texture<class_Particles2D_get_texture>`  **(** **)** const                                                                             |
@@ -108,6 +110,8 @@ Member Functions
 | void                                     | :ref:`set_param<class_Particles2D_set_param>`  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**                         |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_pre_process_time<class_Particles2D_set_pre_process_time>`  **(** :ref:`float<class_float>` time  **)**                                 |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_process_mode<class_Particles2D_set_process_mode>`  **(** :ref:`int<class_int>` mode  **)**                                             |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_randomness<class_Particles2D_set_randomness>`  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**               |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -229,6 +233,10 @@ Returns the value of the specified emitter parameter
 .. _class_Particles2D_get_pre_process_time:
 
 - :ref:`float<class_float>`  **get_pre_process_time**  **(** **)** const
+
+.. _class_Particles2D_get_process_mode:
+
+- :ref:`int<class_int>`  **get_process_mode**  **(** **)** const
 
 .. _class_Particles2D_get_randomness:
 
@@ -371,6 +379,10 @@ Sets the value of the specified emitter parameter (see the constants secction fo
 .. _class_Particles2D_set_pre_process_time:
 
 - void  **set_pre_process_time**  **(** :ref:`float<class_float>` time  **)**
+
+.. _class_Particles2D_set_process_mode:
+
+- void  **set_process_mode**  **(** :ref:`int<class_int>` mode  **)**
 
 .. _class_Particles2D_set_randomness:
 

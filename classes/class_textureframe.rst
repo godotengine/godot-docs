@@ -46,6 +46,7 @@ Numeric Constants
 - **STRETCH_KEEP_CENTERED** = **4**
 - **STRETCH_KEEP_ASPECT** = **5**
 - **STRETCH_KEEP_ASPECT_CENTERED** = **6**
+- **STRETCH_KEEP_ASPECT_COVERED** = **7**
 
 Description
 -----------

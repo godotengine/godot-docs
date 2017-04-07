@@ -31,8 +31,6 @@ Member Functions
 +------------------------------+------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`      | :ref:`is_connected<class_StreamPeerTCP_is_connected>`  **(** **)** const                                               |
 +------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_ip_type<class_StreamPeerTCP_set_ip_type>`  **(** :ref:`int<class_int>` ip_type  **)**                        |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
 -----------------
@@ -85,9 +83,5 @@ Return the status of the connection, one of STATUS\_\* enum.
 - :ref:`bool<class_bool>`  **is_connected**  **(** **)** const
 
 Return whether this peer is connected. Returns true while connecting and connected.
-
-.. _class_StreamPeerTCP_set_ip_type:
-
-- void  **set_ip_type**  **(** :ref:`int<class_int>` ip_type  **)**
 
 

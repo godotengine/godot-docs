@@ -43,7 +43,7 @@ Member Functions
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`            | :ref:`can_process<class_Node_can_process>`  **(** **)** const                                                                                                           |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_node>`            | :ref:`duplicate<class_Node_duplicate>`  **(** :ref:`bool<class_bool>` use_instancing=false  **)** const                                                                 |
+| :ref:`Node<class_node>`            | :ref:`duplicate<class_Node_duplicate>`  **(** :ref:`bool<class_bool>` use_instancing=false, :ref:`int<class_int>` flags=7  **)** const                                  |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Node<class_node>`            | :ref:`find_node<class_Node_find_node>`  **(** :ref:`String<class_string>` mask, :ref:`bool<class_bool>` recursive=true, :ref:`bool<class_bool>` owned=true  **)** const |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -180,6 +180,9 @@ Numeric Constants
 - **PAUSE_MODE_INHERIT** = **0**
 - **PAUSE_MODE_STOP** = **1**
 - **PAUSE_MODE_PROCESS** = **2**
+- **DUPLICATE_SIGNALS** = **1**
+- **DUPLICATE_GROUPS** = **2**
+- **DUPLICATE_SCRIPTS** = **4**
 
 Description
 -----------
@@ -295,9 +298,11 @@ Return true if the node can process, i.e. whether its pause mode allows processi
 
 .. _class_Node_duplicate:
 
-- :ref:`Node<class_node>`  **duplicate**  **(** :ref:`bool<class_bool>` use_instancing=false  **)** const
+- :ref:`Node<class_node>`  **duplicate**  **(** :ref:`bool<class_bool>` use_instancing=false, :ref:`int<class_int>` flags=7  **)** const
 
-Duplicate the node, returning a new :ref:`Node<class_node>`. If ``use_instancing`` is true, the duplicated node will be a new instance of the original :ref:`PackedScene<class_packedscene>`, if not it will be an independent node. The duplicated node has the same group assignments and signals as the original one.
+Duplicate the node, returning a new :ref:`Node<class_node>`. If ``use_instancing`` is true, the duplicated node will be a new instance of the original :ref:`PackedScene<class_packedscene>`, if not it will be an independent node.
+
+The flags are used to define what attributes (groups, signals, scripts) should be duplicated, as specified by the DUPLICATE\_\* constants. The default value is all of them.
 
 .. _class_Node_find_node:
 
