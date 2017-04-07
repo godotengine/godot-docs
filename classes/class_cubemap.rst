@@ -25,8 +25,6 @@ Member Functions
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_lossy_storage_quality<class_CubeMap_get_lossy_storage_quality>`  **(** **)** const                              |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`      | :ref:`get_rid<class_CubeMap_get_rid>`  **(** **)** const                                                                  |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Image<class_image>`  | :ref:`get_side<class_CubeMap_get_side>`  **(** :ref:`int<class_int>` side  **)** const                                    |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`      | :ref:`get_storage<class_CubeMap_get_storage>`  **(** **)** const                                                          |
@@ -73,10 +71,6 @@ Member Function Description
 .. _class_CubeMap_get_lossy_storage_quality:
 
 - :ref:`float<class_float>`  **get_lossy_storage_quality**  **(** **)** const
-
-.. _class_CubeMap_get_rid:
-
-- :ref:`RID<class_rid>`  **get_rid**  **(** **)** const
 
 .. _class_CubeMap_get_side:
 

@@ -23,6 +23,8 @@ Member Functions
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_object>`  | :ref:`get_bitmask<class_TouchScreenButton_get_bitmask>`  **(** **)** const                                                        |
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`  | :ref:`get_shape<class_TouchScreenButton_get_shape>`  **(** **)** const                                                            |
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_object>`  | :ref:`get_texture<class_TouchScreenButton_get_texture>`  **(** **)** const                                                        |
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_object>`  | :ref:`get_texture_pressed<class_TouchScreenButton_get_texture_pressed>`  **(** **)** const                                        |
@@ -33,11 +35,21 @@ Member Functions
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`      | :ref:`is_pressed<class_TouchScreenButton_is_pressed>`  **(** **)** const                                                          |
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`is_shape_centered<class_TouchScreenButton_is_shape_centered>`  **(** **)** const                                            |
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`is_shape_visible<class_TouchScreenButton_is_shape_visible>`  **(** **)** const                                              |
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`set_action<class_TouchScreenButton_set_action>`  **(** :ref:`String<class_string>` action  **)**                            |
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`set_bitmask<class_TouchScreenButton_set_bitmask>`  **(** :ref:`Object<class_object>` bitmask  **)**                         |
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`set_passby_press<class_TouchScreenButton_set_passby_press>`  **(** :ref:`bool<class_bool>` enabled  **)**                   |
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_shape<class_TouchScreenButton_set_shape>`  **(** :ref:`Object<class_object>` shape  **)**                               |
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_shape_centered<class_TouchScreenButton_set_shape_centered>`  **(** :ref:`bool<class_bool>` bool  **)**                  |
++------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_shape_visible<class_TouchScreenButton_set_shape_visible>`  **(** :ref:`bool<class_bool>` bool  **)**                    |
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`set_texture<class_TouchScreenButton_set_texture>`  **(** :ref:`Object<class_object>` texture  **)**                         |
 +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
@@ -52,6 +64,19 @@ Signals
 -  **pressed**  **(** **)**
 -  **released**  **(** **)**
 
+Member Variables
+----------------
+
+- :ref:`String<class_string>` **action**
+- :ref:`BitMap<class_bitmap>` **bitmask**
+- :ref:`Texture<class_texture>` **normal**
+- :ref:`bool<class_bool>` **passby_press**
+- :ref:`Texture<class_texture>` **pressed**
+- :ref:`Shape2D<class_shape2d>` **shape**
+- :ref:`bool<class_bool>` **shape_centered**
+- :ref:`bool<class_bool>` **shape_visible**
+- :ref:`int<class_int>` **visibility_mode**
+
 Member Function Description
 ---------------------------
 
@@ -62,6 +87,10 @@ Member Function Description
 .. _class_TouchScreenButton_get_bitmask:
 
 - :ref:`Object<class_object>`  **get_bitmask**  **(** **)** const
+
+.. _class_TouchScreenButton_get_shape:
+
+- :ref:`Object<class_object>`  **get_shape**  **(** **)** const
 
 .. _class_TouchScreenButton_get_texture:
 
@@ -83,6 +112,14 @@ Member Function Description
 
 - :ref:`bool<class_bool>`  **is_pressed**  **(** **)** const
 
+.. _class_TouchScreenButton_is_shape_centered:
+
+- :ref:`bool<class_bool>`  **is_shape_centered**  **(** **)** const
+
+.. _class_TouchScreenButton_is_shape_visible:
+
+- :ref:`bool<class_bool>`  **is_shape_visible**  **(** **)** const
+
 .. _class_TouchScreenButton_set_action:
 
 - void  **set_action**  **(** :ref:`String<class_string>` action  **)**
@@ -94,6 +131,18 @@ Member Function Description
 .. _class_TouchScreenButton_set_passby_press:
 
 - void  **set_passby_press**  **(** :ref:`bool<class_bool>` enabled  **)**
+
+.. _class_TouchScreenButton_set_shape:
+
+- void  **set_shape**  **(** :ref:`Object<class_object>` shape  **)**
+
+.. _class_TouchScreenButton_set_shape_centered:
+
+- void  **set_shape_centered**  **(** :ref:`bool<class_bool>` bool  **)**
+
+.. _class_TouchScreenButton_set_shape_visible:
+
+- void  **set_shape_visible**  **(** :ref:`bool<class_bool>` bool  **)**
 
 .. _class_TouchScreenButton_set_texture:
 

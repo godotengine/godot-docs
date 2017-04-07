@@ -18,50 +18,57 @@ Brief Description
 Member Functions
 ----------------
 
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`add_outline<class_NavigationPolygon_add_outline>`  **(** :ref:`Vector2Array<class_vector2array>` outline  **)**                                                |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`add_outline_at_index<class_NavigationPolygon_add_outline_at_index>`  **(** :ref:`Vector2Array<class_vector2array>` outline, :ref:`int<class_int>` index  **)** |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`add_polygon<class_NavigationPolygon_add_polygon>`  **(** :ref:`IntArray<class_intarray>` polygon  **)**                                                        |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`clear_outlines<class_NavigationPolygon_clear_outlines>`  **(** **)**                                                                                           |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`clear_polygons<class_NavigationPolygon_clear_polygons>`  **(** **)**                                                                                           |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2Array<class_vector2array>`  | :ref:`get_outline<class_NavigationPolygon_get_outline>`  **(** :ref:`int<class_int>` idx  **)** const                                                                |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                    | :ref:`get_outline_count<class_NavigationPolygon_get_outline_count>`  **(** **)** const                                                                               |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`IntArray<class_intarray>`          | :ref:`get_polygon<class_NavigationPolygon_get_polygon>`  **(** :ref:`int<class_int>` idx  **)**                                                                      |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                    | :ref:`get_polygon_count<class_NavigationPolygon_get_polygon_count>`  **(** **)** const                                                                               |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2Array<class_vector2array>`  | :ref:`get_vertices<class_NavigationPolygon_get_vertices>`  **(** **)** const                                                                                         |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`make_polygons_from_outlines<class_NavigationPolygon_make_polygons_from_outlines>`  **(** **)**                                                                 |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`remove_outline<class_NavigationPolygon_remove_outline>`  **(** :ref:`int<class_int>` idx  **)**                                                                |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_outline<class_NavigationPolygon_set_outline>`  **(** :ref:`int<class_int>` idx, :ref:`Vector2Array<class_vector2array>` outline  **)**                     |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_vertices<class_NavigationPolygon_set_vertices>`  **(** :ref:`Vector2Array<class_vector2array>` vertices  **)**                                             |
-+------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`add_outline<class_NavigationPolygon_add_outline>`  **(** :ref:`PoolVector2Array<class_poolvector2array>` outline  **)**                                                |
++--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`add_outline_at_index<class_NavigationPolygon_add_outline_at_index>`  **(** :ref:`PoolVector2Array<class_poolvector2array>` outline, :ref:`int<class_int>` index  **)** |
++--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`add_polygon<class_NavigationPolygon_add_polygon>`  **(** :ref:`PoolIntArray<class_poolintarray>` polygon  **)**                                                        |
++--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`clear_outlines<class_NavigationPolygon_clear_outlines>`  **(** **)**                                                                                                   |
++--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`clear_polygons<class_NavigationPolygon_clear_polygons>`  **(** **)**                                                                                                   |
++--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolVector2Array<class_poolvector2array>`  | :ref:`get_outline<class_NavigationPolygon_get_outline>`  **(** :ref:`int<class_int>` idx  **)** const                                                                        |
++--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                            | :ref:`get_outline_count<class_NavigationPolygon_get_outline_count>`  **(** **)** const                                                                                       |
++--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolIntArray<class_poolintarray>`          | :ref:`get_polygon<class_NavigationPolygon_get_polygon>`  **(** :ref:`int<class_int>` idx  **)**                                                                              |
++--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                            | :ref:`get_polygon_count<class_NavigationPolygon_get_polygon_count>`  **(** **)** const                                                                                       |
++--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolVector2Array<class_poolvector2array>`  | :ref:`get_vertices<class_NavigationPolygon_get_vertices>`  **(** **)** const                                                                                                 |
++--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`make_polygons_from_outlines<class_NavigationPolygon_make_polygons_from_outlines>`  **(** **)**                                                                         |
++--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`remove_outline<class_NavigationPolygon_remove_outline>`  **(** :ref:`int<class_int>` idx  **)**                                                                        |
++--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_outline<class_NavigationPolygon_set_outline>`  **(** :ref:`int<class_int>` idx, :ref:`PoolVector2Array<class_poolvector2array>` outline  **)**                     |
++--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_vertices<class_NavigationPolygon_set_vertices>`  **(** :ref:`PoolVector2Array<class_poolvector2array>` vertices  **)**                                             |
++--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+- :ref:`Array<class_array>` **outlines**
+- :ref:`Array<class_array>` **polygons**
+- :ref:`PoolVector3Array<class_poolvector3array>` **vertices**
 
 Member Function Description
 ---------------------------
 
 .. _class_NavigationPolygon_add_outline:
 
-- void  **add_outline**  **(** :ref:`Vector2Array<class_vector2array>` outline  **)**
+- void  **add_outline**  **(** :ref:`PoolVector2Array<class_poolvector2array>` outline  **)**
 
 .. _class_NavigationPolygon_add_outline_at_index:
 
-- void  **add_outline_at_index**  **(** :ref:`Vector2Array<class_vector2array>` outline, :ref:`int<class_int>` index  **)**
+- void  **add_outline_at_index**  **(** :ref:`PoolVector2Array<class_poolvector2array>` outline, :ref:`int<class_int>` index  **)**
 
 .. _class_NavigationPolygon_add_polygon:
 
-- void  **add_polygon**  **(** :ref:`IntArray<class_intarray>` polygon  **)**
+- void  **add_polygon**  **(** :ref:`PoolIntArray<class_poolintarray>` polygon  **)**
 
 .. _class_NavigationPolygon_clear_outlines:
 
@@ -73,7 +80,7 @@ Member Function Description
 
 .. _class_NavigationPolygon_get_outline:
 
-- :ref:`Vector2Array<class_vector2array>`  **get_outline**  **(** :ref:`int<class_int>` idx  **)** const
+- :ref:`PoolVector2Array<class_poolvector2array>`  **get_outline**  **(** :ref:`int<class_int>` idx  **)** const
 
 .. _class_NavigationPolygon_get_outline_count:
 
@@ -81,7 +88,7 @@ Member Function Description
 
 .. _class_NavigationPolygon_get_polygon:
 
-- :ref:`IntArray<class_intarray>`  **get_polygon**  **(** :ref:`int<class_int>` idx  **)**
+- :ref:`PoolIntArray<class_poolintarray>`  **get_polygon**  **(** :ref:`int<class_int>` idx  **)**
 
 .. _class_NavigationPolygon_get_polygon_count:
 
@@ -89,7 +96,7 @@ Member Function Description
 
 .. _class_NavigationPolygon_get_vertices:
 
-- :ref:`Vector2Array<class_vector2array>`  **get_vertices**  **(** **)** const
+- :ref:`PoolVector2Array<class_poolvector2array>`  **get_vertices**  **(** **)** const
 
 .. _class_NavigationPolygon_make_polygons_from_outlines:
 
@@ -101,10 +108,10 @@ Member Function Description
 
 .. _class_NavigationPolygon_set_outline:
 
-- void  **set_outline**  **(** :ref:`int<class_int>` idx, :ref:`Vector2Array<class_vector2array>` outline  **)**
+- void  **set_outline**  **(** :ref:`int<class_int>` idx, :ref:`PoolVector2Array<class_poolvector2array>` outline  **)**
 
 .. _class_NavigationPolygon_set_vertices:
 
-- void  **set_vertices**  **(** :ref:`Vector2Array<class_vector2array>` vertices  **)**
+- void  **set_vertices**  **(** :ref:`PoolVector2Array<class_poolvector2array>` vertices  **)**
 
 

@@ -24,6 +24,11 @@ Member Functions
 | void                           | :ref:`set_extents<class_RectangleShape2D_set_extents>`  **(** :ref:`Vector2<class_vector2>` extents  **)** |
 +--------------------------------+------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`Vector2<class_vector2>` **extents**
+
 Description
 -----------
 

@@ -50,6 +50,12 @@ Member Functions
 | void                         | :ref:`set_frame<class_SpriteFrames_set_frame>`  **(** :ref:`String<class_string>` anim, :ref:`int<class_int>` idx, :ref:`Object<class_object>` txt  **)**        |
 +------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`Array<class_array>` **animations**
+- :ref:`Array<class_array>` **frames**
+
 Description
 -----------
 

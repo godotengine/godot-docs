@@ -28,6 +28,20 @@ Member Functions
 | void                       | :ref:`set_param<class_HingeJoint_set_param>`  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)** |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`float<class_float>` **angular_limit/bias**
+- :ref:`bool<class_bool>` **angular_limit/enable**
+- :ref:`float<class_float>` **angular_limit/lower**
+- :ref:`float<class_float>` **angular_limit/relaxation**
+- :ref:`float<class_float>` **angular_limit/softness**
+- :ref:`float<class_float>` **angular_limit/upper**
+- :ref:`bool<class_bool>` **motor/enable**
+- :ref:`float<class_float>` **motor/max_impulse**
+- :ref:`float<class_float>` **motor/target_velocity**
+- :ref:`float<class_float>` **params/bias**
+
 Numeric Constants
 -----------------
 

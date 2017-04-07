@@ -75,6 +75,8 @@ Member Functions
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`body_apply_impulse<class_PhysicsServer_body_apply_impulse>`  **(** :ref:`RID<class_rid>` body, :ref:`Vector3<class_vector3>` pos, :ref:`Vector3<class_vector3>` impulse  **)**                                                                                |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                           | :ref:`body_apply_torque_impulse<class_PhysicsServer_body_apply_torque_impulse>`  **(** :ref:`RID<class_rid>` body, :ref:`Vector3<class_vector3>` impulse  **)**                                                                                                     |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`body_attach_object_instance_ID<class_PhysicsServer_body_attach_object_instance_ID>`  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` id  **)**                                                                                                        |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`body_clear_shapes<class_PhysicsServer_body_clear_shapes>`  **(** :ref:`RID<class_rid>` body  **)**                                                                                                                                                            |
@@ -444,6 +446,10 @@ Member Function Description
 .. _class_PhysicsServer_body_apply_impulse:
 
 - void  **body_apply_impulse**  **(** :ref:`RID<class_rid>` body, :ref:`Vector3<class_vector3>` pos, :ref:`Vector3<class_vector3>` impulse  **)**
+
+.. _class_PhysicsServer_body_apply_torque_impulse:
+
+- void  **body_apply_torque_impulse**  **(** :ref:`RID<class_rid>` body, :ref:`Vector3<class_vector3>` impulse  **)**
 
 .. _class_PhysicsServer_body_attach_object_instance_ID:
 

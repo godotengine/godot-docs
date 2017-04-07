@@ -35,6 +35,11 @@ Signals
 
 -  **broadcast**  **(** :ref:`String<class_string>` name, :ref:`Array<class_array>` parameters  **)**
 
+Member Variables
+----------------
+
+- :ref:`Vector3<class_vector3>` **grid_radius**
+
 Description
 -----------
 

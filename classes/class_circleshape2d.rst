@@ -24,6 +24,11 @@ Member Functions
 | void                       | :ref:`set_radius<class_CircleShape2D_set_radius>`  **(** :ref:`float<class_float>` radius  **)** |
 +----------------------------+--------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`float<class_float>` **radius**
+
 Description
 -----------
 

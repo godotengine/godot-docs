@@ -28,6 +28,12 @@ Member Functions
 | void                       | :ref:`set_rect<class_BackBufferCopy_set_rect>`  **(** :ref:`Rect2<class_rect2>` rect  **)**            |
 +----------------------------+--------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`int<class_int>` **copy_mode**
+- :ref:`Rect2<class_rect2>` **rect**
+
 Numeric Constants
 -----------------
 

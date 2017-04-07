@@ -8,7 +8,7 @@ StyleBox
 
 **Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`StyleBoxImageMask<class_styleboximagemask>`, :ref:`StyleBoxFlat<class_styleboxflat>`, :ref:`StyleBoxTexture<class_styleboxtexture>`, :ref:`StyleBoxEmpty<class_styleboxempty>`
+**Inherited By:** :ref:`StyleBoxFlat<class_styleboxflat>`, :ref:`StyleBoxTexture<class_styleboxtexture>`, :ref:`StyleBoxEmpty<class_styleboxempty>`
 
 **Category:** Core
 
@@ -37,6 +37,14 @@ Member Functions
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`test_mask<class_StyleBox_test_mask>`  **(** :ref:`Vector2<class_vector2>` point, :ref:`Rect2<class_rect2>` rect  **)** const        |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+- :ref:`float<class_float>` **content_margin_bottom**
+- :ref:`float<class_float>` **content_margin_left**
+- :ref:`float<class_float>` **content_margin_right**
+- :ref:`float<class_float>` **content_margin_top**
 
 Description
 -----------

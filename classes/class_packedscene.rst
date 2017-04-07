@@ -18,15 +18,27 @@ Brief Description
 Member Functions
 ----------------
 
-+--------------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`              | :ref:`can_instance<class_PackedScene_can_instance>`  **(** **)** const                                       |
-+--------------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`SceneState<class_scenestate>`  | :ref:`get_state<class_PackedScene_get_state>`  **(** **)**                                                   |
-+--------------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_node>`              | :ref:`instance<class_PackedScene_instance>`  **(** :ref:`bool<class_bool>` gen_edit_state=false  **)** const |
-+--------------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                | :ref:`pack<class_PackedScene_pack>`  **(** :ref:`Node<class_node>` path  **)**                               |
-+--------------------------------------+--------------------------------------------------------------------------------------------------------------+
++--------------------------------------+--------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`              | :ref:`can_instance<class_PackedScene_can_instance>`  **(** **)** const                                 |
++--------------------------------------+--------------------------------------------------------------------------------------------------------+
+| :ref:`SceneState<class_scenestate>`  | :ref:`get_state<class_PackedScene_get_state>`  **(** **)**                                             |
++--------------------------------------+--------------------------------------------------------------------------------------------------------+
+| :ref:`Node<class_node>`              | :ref:`instance<class_PackedScene_instance>`  **(** :ref:`int<class_int>` edit_state=false  **)** const |
++--------------------------------------+--------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                | :ref:`pack<class_PackedScene_pack>`  **(** :ref:`Node<class_node>` path  **)**                         |
++--------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+- :ref:`Dictionary<class_dictionary>` **_bundled**
+
+Numeric Constants
+-----------------
+
+- **GEN_EDIT_STATE_DISABLED** = **0**
+- **GEN_EDIT_STATE_INSTANCE** = **1**
+- **GEN_EDIT_STATE_MAIN** = **2**
 
 Description
 -----------
@@ -46,7 +58,7 @@ Member Function Description
 
 .. _class_PackedScene_instance:
 
-- :ref:`Node<class_node>`  **instance**  **(** :ref:`bool<class_bool>` gen_edit_state=false  **)** const
+- :ref:`Node<class_node>`  **instance**  **(** :ref:`int<class_int>` edit_state=false  **)** const
 
 .. _class_PackedScene_pack:
 

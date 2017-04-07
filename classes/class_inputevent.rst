@@ -44,8 +44,8 @@ Numeric Constants
 - **KEY** = **1** --- Key event.
 - **MOUSE_MOTION** = **2** --- Mouse motion event.
 - **MOUSE_BUTTON** = **3** --- Mouse button event.
-- **JOYSTICK_MOTION** = **4** --- Joystick motion event.
-- **JOYSTICK_BUTTON** = **5** --- Joystick button event.
+- **JOYPAD_MOTION** = **4** --- Joypad motion event.
+- **JOYPAD_BUTTON** = **5** --- Joypad button event.
 - **SCREEN_TOUCH** = **6** --- Screen touch event.
 - **SCREEN_DRAG** = **7** --- Screen drag event.
 - **ACTION** = **8** --- Pre-defined action event (see :ref:`InputMap<class_inputmap>`).

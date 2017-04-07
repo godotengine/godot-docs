@@ -8,7 +8,7 @@ Texture
 
 **Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`RenderTargetTexture<class_rendertargettexture>`, :ref:`AtlasTexture<class_atlastexture>`, :ref:`ImageTexture<class_imagetexture>`, :ref:`LargeTexture<class_largetexture>`
+**Inherited By:** :ref:`CurveTexture<class_curvetexture>`, :ref:`AtlasTexture<class_atlastexture>`, :ref:`GradientTexture<class_gradienttexture>`, :ref:`ViewportTexture<class_viewporttexture>`, :ref:`StreamTexture<class_streamtexture>`, :ref:`ImageTexture<class_imagetexture>`, :ref:`LargeTexture<class_largetexture>`
 
 **Category:** Core
 
@@ -30,8 +30,6 @@ Member Functions
 | :ref:`int<class_int>`          | :ref:`get_flags<class_Texture_get_flags>`  **(** **)** const                                                                                                                                                                                                                  |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_height<class_Texture_get_height>`  **(** **)** const                                                                                                                                                                                                                |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`          | :ref:`get_rid<class_Texture_get_rid>`  **(** **)** const                                                                                                                                                                                                                      |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`get_size<class_Texture_get_size>`  **(** **)** const                                                                                                                                                                                                                    |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -85,12 +83,6 @@ Return the current texture flags.
 - :ref:`int<class_int>`  **get_height**  **(** **)** const
 
 Return the texture height.
-
-.. _class_Texture_get_rid:
-
-- :ref:`RID<class_rid>`  **get_rid**  **(** **)** const
-
-Return the texture RID as used in the :ref:`VisualServer<class_visualserver>`.
 
 .. _class_Texture_get_size:
 

@@ -23,8 +23,6 @@ Member Functions
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                    | :ref:`get_frame<class_AnimatedSprite_get_frame>`  **(** **)** const                                                                  |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`                | :ref:`get_modulate<class_AnimatedSprite_get_modulate>`  **(** **)** const                                                            |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`            | :ref:`get_offset<class_AnimatedSprite_get_offset>`  **(** **)** const                                                                |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`SpriteFrames<class_spriteframes>`  | :ref:`get_sprite_frames<class_AnimatedSprite_get_sprite_frames>`  **(** **)** const                                                  |
@@ -49,8 +47,6 @@ Member Functions
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_frame<class_AnimatedSprite_set_frame>`  **(** :ref:`int<class_int>` frame  **)**                                           |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_modulate<class_AnimatedSprite_set_modulate>`  **(** :ref:`Color<class_color>` modulate  **)**                              |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_offset<class_AnimatedSprite_set_offset>`  **(** :ref:`Vector2<class_vector2>` offset  **)**                                |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_sprite_frames<class_AnimatedSprite_set_sprite_frames>`  **(** :ref:`SpriteFrames<class_spriteframes>` sprite_frames  **)** |
@@ -61,8 +57,20 @@ Member Functions
 Signals
 -------
 
+-  **animation_finished**  **(** **)**
 -  **frame_changed**  **(** **)**
--  **finished**  **(** **)**
+
+Member Variables
+----------------
+
+- :ref:`String<class_string>` **animation**
+- :ref:`bool<class_bool>` **centered**
+- :ref:`bool<class_bool>` **flip_h**
+- :ref:`bool<class_bool>` **flip_v**
+- :ref:`int<class_int>` **frame**
+- :ref:`SpriteFrames<class_spriteframes>` **frames**
+- :ref:`Vector2<class_vector2>` **offset**
+- :ref:`bool<class_bool>` **playing**
 
 Description
 -----------
@@ -83,12 +91,6 @@ Return the name of the current animation set to the node.
 - :ref:`int<class_int>`  **get_frame**  **(** **)** const
 
 Return the visible frame index.
-
-.. _class_AnimatedSprite_get_modulate:
-
-- :ref:`Color<class_color>`  **get_modulate**  **(** **)** const
-
-Return the color modulation for this sprite.
 
 .. _class_AnimatedSprite_get_offset:
 
@@ -161,12 +163,6 @@ If true, sprite is flipped vertically.
 - void  **set_frame**  **(** :ref:`int<class_int>` frame  **)**
 
 Set the visible sprite frame index (from the list of frames inside the :ref:`SpriteFrames<class_spriteframes>` resource).
-
-.. _class_AnimatedSprite_set_modulate:
-
-- void  **set_modulate**  **(** :ref:`Color<class_color>` modulate  **)**
-
-Change the color modulation (multiplication) for this sprite.
 
 .. _class_AnimatedSprite_set_offset:
 

@@ -28,6 +28,12 @@ Member Functions
 | void                                               | :ref:`set_occluder_polygon<class_LightOccluder2D_set_occluder_polygon>`  **(** :ref:`OccluderPolygon2D<class_occluderpolygon2d>` polygon  **)** |
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`int<class_int>` **light_mask**
+- :ref:`OccluderPolygon2D<class_occluderpolygon2d>` **occluder**
+
 Description
 -----------
 

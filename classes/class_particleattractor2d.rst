@@ -44,6 +44,16 @@ Member Functions
 | void                             | :ref:`set_radius<class_ParticleAttractor2D_set_radius>`  **(** :ref:`float<class_float>` radius  **)**                     |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`float<class_float>` **absorption**
+- :ref:`float<class_float>` **disable_radius**
+- :ref:`bool<class_bool>` **enabled**
+- :ref:`float<class_float>` **gravity**
+- :ref:`NodePath<class_nodepath>` **particles_path**
+- :ref:`float<class_float>` **radius**
+
 Member Function Description
 ---------------------------
 

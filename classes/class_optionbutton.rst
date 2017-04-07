@@ -65,6 +65,12 @@ Signals
 
 -  **item_selected**  **(** :ref:`int<class_int>` ID  **)**
 
+Member Variables
+----------------
+
+- :ref:`Array<class_array>` **items**
+- :ref:`int<class_int>` **selected**
+
 Description
 -----------
 

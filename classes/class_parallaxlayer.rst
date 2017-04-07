@@ -32,6 +32,13 @@ Member Functions
 | void                           | :ref:`set_motion_scale<class_ParallaxLayer_set_motion_scale>`  **(** :ref:`Vector2<class_vector2>` scale  **)**    |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`Vector2<class_vector2>` **motion_mirroring**
+- :ref:`Vector2<class_vector2>` **motion_offset**
+- :ref:`Vector2<class_vector2>` **motion_scale**
+
 Description
 -----------
 

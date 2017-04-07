@@ -24,6 +24,11 @@ Member Functions
 | void                           | :ref:`set_extents<class_BoxShape_set_extents>`  **(** :ref:`Vector3<class_vector3>` extents  **)** |
 +--------------------------------+----------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`Vector3<class_vector3>` **extents**
+
 Description
 -----------
 

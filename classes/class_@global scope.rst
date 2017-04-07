@@ -16,30 +16,22 @@ Global scope constants and variables.
 Member Variables
 ----------------
 
-- :ref:`AudioServer<class_audioserver>` **AS** - [AudioServer] singleton
 - :ref:`AudioServer<class_audioserver>` **AudioServer** - [AudioServer] singleton
+- :ref:`ClassDB<class_classdb>` **ClassDB**
+- :ref:`Engine<class_engine>` **Engine**
 - :ref:`Geometry<class_geometry>` **Geometry** - [Geometry] singleton
-- :ref:`Globals<class_globals>` **Globals** - [Globals] singleton
+- :ref:`GlobalConfig<class_globalconfig>` **GlobalConfig**
 - :ref:`IP<class_ip>` **IP** - [IP] singleton
 - :ref:`Input<class_input>` **Input** - [Input] singleton
 - :ref:`InputMap<class_inputmap>` **InputMap** - [InputMap] singleton
 - :ref:`Reference<class_reference>` **Marshalls** - [Marshalls] singleton
 - :ref:`OS<class_os>` **OS** - [OS] singleton
-- :ref:`PhysicsServer<class_physicsserver>` **PS** - [PhysicsServer] singleton
-- :ref:`Physics2DServer<class_physics2dserver>` **PS2D** - [Physics2DServer] singleton
-- :ref:`PathRemap<class_pathremap>` **PathRemap** - [PathRemap] singleton
 - :ref:`Performance<class_performance>` **Performance** - [Performance] singleton
 - :ref:`Physics2DServer<class_physics2dserver>` **Physics2DServer** - [Physics2DServer] singleton
 - :ref:`PhysicsServer<class_physicsserver>` **PhysicsServer** - [PhysicsServer] singleton
 - :ref:`ResourceLoader<class_resourceloader>` **ResourceLoader** - [ResourceLoader] singleton
 - :ref:`ResourceSaver<class_resourcesaver>` **ResourceSaver** - [ResourceSaver] singleton
-- :ref:`SpatialSoundServer<class_spatialsoundserver>` **SS** - [SpatialSoundServer] singleton
-- :ref:`SpatialSound2DServer<class_spatialsound2dserver>` **SS2D** - [SpatialSound2DServer] singleton
-- :ref:`SpatialSound2DServer<class_spatialsound2dserver>` **SpatialSound2DServer** - [SpatialSound2DServer] singleton
-- :ref:`SpatialSoundServer<class_spatialsoundserver>` **SpatialSoundServer** - [SpatialSoundServer] singleton
-- :ref:`TranslationServer<class_translationserver>` **TS** - [TranslationServer] singleton
 - :ref:`TranslationServer<class_translationserver>` **TranslationServer** - [TranslationServer] singleton
-- :ref:`VisualServer<class_visualserver>` **VS** - [VisualServer] singleton
 - :ref:`VisualServer<class_visualserver>` **VisualServer** - [VisualServer] singleton
 
 Numeric Constants
@@ -320,35 +312,27 @@ Numeric Constants
 - **BUTTON_MASK_LEFT** = **1**
 - **BUTTON_MASK_RIGHT** = **2**
 - **BUTTON_MASK_MIDDLE** = **4**
-- **JOY_BUTTON_0** = **0** --- Joystick Button 0
-- **JOY_BUTTON_1** = **1** --- Joystick Button 1
-- **JOY_BUTTON_2** = **2** --- Joystick Button 2
-- **JOY_BUTTON_3** = **3** --- Joystick Button 3
-- **JOY_BUTTON_4** = **4** --- Joystick Button 4
-- **JOY_BUTTON_5** = **5** --- Joystick Button 5
-- **JOY_BUTTON_6** = **6** --- Joystick Button 6
-- **JOY_BUTTON_7** = **7** --- Joystick Button 7
-- **JOY_BUTTON_8** = **8** --- Joystick Button 8
-- **JOY_BUTTON_9** = **9** --- Joystick Button 9
-- **JOY_BUTTON_10** = **10** --- Joystick Button 10
-- **JOY_BUTTON_11** = **11** --- Joystick Button 11
-- **JOY_BUTTON_12** = **12** --- Joystick Button 12
-- **JOY_BUTTON_13** = **13** --- Joystick Button 13
-- **JOY_BUTTON_14** = **14** --- Joystick Button 14
-- **JOY_BUTTON_15** = **15** --- Joystick Button 15
-- **JOY_BUTTON_MAX** = **16** --- Joystick Button 16
-- **JOY_SNES_A** = **1** --- Super Nintendo Entertaiment System controller A button
-- **JOY_SNES_B** = **0** --- Super Nintendo Entertaiment System controller B button
-- **JOY_SNES_X** = **3** --- Super Nintendo Entertaiment System controller X button
-- **JOY_SNES_Y** = **2** --- Super Nintendo Entertaiment System controller Y button
+- **JOY_BUTTON_0** = **0** --- Joypad Button 0
+- **JOY_BUTTON_1** = **1** --- Joypad Button 1
+- **JOY_BUTTON_2** = **2** --- Joypad Button 2
+- **JOY_BUTTON_3** = **3** --- Joypad Button 3
+- **JOY_BUTTON_4** = **4** --- Joypad Button 4
+- **JOY_BUTTON_5** = **5** --- Joypad Button 5
+- **JOY_BUTTON_6** = **6** --- Joypad Button 6
+- **JOY_BUTTON_7** = **7** --- Joypad Button 7
+- **JOY_BUTTON_8** = **8** --- Joypad Button 8
+- **JOY_BUTTON_9** = **9** --- Joypad Button 9
+- **JOY_BUTTON_10** = **10** --- Joypad Button 10
+- **JOY_BUTTON_11** = **11** --- Joypad Button 11
+- **JOY_BUTTON_12** = **12** --- Joypad Button 12
+- **JOY_BUTTON_13** = **13** --- Joypad Button 13
+- **JOY_BUTTON_14** = **14** --- Joypad Button 14
+- **JOY_BUTTON_15** = **15** --- Joypad Button 15
+- **JOY_BUTTON_MAX** = **16** --- Joypad Button 16
 - **JOY_SONY_CIRCLE** = **1** --- DUALSHOCK circle button
 - **JOY_SONY_X** = **0** --- DUALSHOCK X button
 - **JOY_SONY_SQUARE** = **2** --- DUALSHOCK square button
 - **JOY_SONY_TRIANGLE** = **3** --- DUALSHOCK triangle button
-- **JOY_SEGA_B** = **1** --- SEGA controller B button
-- **JOY_SEGA_A** = **0** --- SEGA controller A button
-- **JOY_SEGA_X** = **2** --- SEGA controller X button
-- **JOY_SEGA_Y** = **3** --- SEGA controller Y button
 - **JOY_XBOX_B** = **1** --- XBOX controller B button
 - **JOY_XBOX_A** = **0** --- XBOX controller A button
 - **JOY_XBOX_X** = **2** --- XBOX controller X button
@@ -357,33 +341,31 @@ Numeric Constants
 - **JOY_DS_B** = **0**
 - **JOY_DS_X** = **3**
 - **JOY_DS_Y** = **2**
-- **JOY_SELECT** = **10** --- Joystick Button Select
-- **JOY_START** = **11** --- Joystick Button Start
-- **JOY_DPAD_UP** = **12** --- Joystick DPad Up
-- **JOY_DPAD_DOWN** = **13** --- Joystick DPad Down
-- **JOY_DPAD_LEFT** = **14** --- Joystick DPad Left
-- **JOY_DPAD_RIGHT** = **15** --- Joystick DPad Right
-- **JOY_L** = **4** --- Joystick Left Shoulder Button
-- **JOY_L2** = **6** --- Joystick Left Trigger
-- **JOY_L3** = **8** --- Joystick Left Stick Click
-- **JOY_R** = **5** --- Joystick Right Shoulder Button
-- **JOY_R2** = **7** --- Joystick Right Trigger
-- **JOY_R3** = **9** --- Joystick Right Stick Click
-- **JOY_AXIS_0** = **0** --- Joystick Left Stick Horizontal Axis
-- **JOY_AXIS_1** = **1** --- Joystick Left Stick Vertical Axis
-- **JOY_AXIS_2** = **2** --- Joystick Right Stick Horizontal Axis
-- **JOY_AXIS_3** = **3** --- Joystick Right Stick Vertical Axis
+- **JOY_SELECT** = **10** --- Joypad Button Select
+- **JOY_START** = **11** --- Joypad Button Start
+- **JOY_DPAD_UP** = **12** --- Joypad DPad Up
+- **JOY_DPAD_DOWN** = **13** --- Joypad DPad Down
+- **JOY_DPAD_LEFT** = **14** --- Joypad DPad Left
+- **JOY_DPAD_RIGHT** = **15** --- Joypad DPad Right
+- **JOY_L** = **4** --- Joypad Left Shoulder Button
+- **JOY_L2** = **6** --- Joypad Left Trigger
+- **JOY_L3** = **8** --- Joypad Left Stick Click
+- **JOY_R** = **5** --- Joypad Right Shoulder Button
+- **JOY_R2** = **7** --- Joypad Right Trigger
+- **JOY_R3** = **9** --- Joypad Right Stick Click
+- **JOY_AXIS_0** = **0** --- Joypad Left Stick Horizontal Axis
+- **JOY_AXIS_1** = **1** --- Joypad Left Stick Vertical Axis
+- **JOY_AXIS_2** = **2** --- Joypad Right Stick Horizontal Axis
+- **JOY_AXIS_3** = **3** --- Joypad Right Stick Vertical Axis
 - **JOY_AXIS_4** = **4**
 - **JOY_AXIS_5** = **5**
-- **JOY_AXIS_6** = **6** --- Joystick Left Trigger Analog Axis
-- **JOY_AXIS_7** = **7** --- Joystick Right Trigger Analog Axis
+- **JOY_AXIS_6** = **6** --- Joypad Left Trigger Analog Axis
+- **JOY_AXIS_7** = **7** --- Joypad Right Trigger Analog Axis
 - **JOY_AXIS_MAX** = **8**
-- **JOY_ANALOG_0_X** = **0** --- Joystick Left Stick Horizontal Axis
-- **JOY_ANALOG_0_Y** = **1** --- Joystick Left Stick Vertical Axis
-- **JOY_ANALOG_1_X** = **2** --- Joystick Right Stick Horizontal Axis
-- **JOY_ANALOG_1_Y** = **3** --- Joystick Right Stick Vertical Axis
-- **JOY_ANALOG_2_X** = **4**
-- **JOY_ANALOG_2_Y** = **5**
+- **JOY_ANALOG_LX** = **0** --- Joypad Left Stick Horizontal Axis
+- **JOY_ANALOG_LY** = **1** --- Joypad Left Stick Vertical Axis
+- **JOY_ANALOG_RX** = **2** --- Joypad Right Stick Horizontal Axis
+- **JOY_ANALOG_RY** = **3** --- Joypad Right Stick Vertical Axis
 - **JOY_ANALOG_L2** = **6**
 - **JOY_ANALOG_R2** = **7**
 - **OK** = **0** --- Functions that return Error return OK when everything went ok. Most functions don't return error anyway and/or just print errors to stdout.
@@ -408,7 +390,7 @@ Numeric Constants
 - **ERR_CANT_OPEN** = **19**
 - **ERR_CANT_CREATE** = **20**
 - **ERR_PARSE_ERROR** = **43**
-- **ERROR_QUERY_FAILED** = **21**
+- **ERR_QUERY_FAILED** = **21**
 - **ERR_ALREADY_IN_USE** = **22**
 - **ERR_LOCKED** = **23**
 - **ERR_TIMEOUT** = **24**
@@ -436,16 +418,19 @@ Numeric Constants
 - **PROPERTY_HINT_LENGTH** = **5**
 - **PROPERTY_HINT_KEY_ACCEL** = **7**
 - **PROPERTY_HINT_FLAGS** = **8** --- Property hint for a bitmask description, for bits 0,1,2,3 and 5 the hint would be like "Bit0,Bit1,Bit2,Bit3,,Bit5". Valid only for integers.
-- **PROPERTY_HINT_ALL_FLAGS** = **9** --- Property hint for a bitmask description that covers all 32 bits. Valid only for integers.
-- **PROPERTY_HINT_FILE** = **10** --- String property is a file (so pop up a file dialog when edited). Hint string can be a set of wildcards like "\*.doc".
-- **PROPERTY_HINT_DIR** = **11** --- String property is a directory (so pop up a file dialog when edited).
-- **PROPERTY_HINT_GLOBAL_FILE** = **12**
-- **PROPERTY_HINT_GLOBAL_DIR** = **13**
-- **PROPERTY_HINT_RESOURCE_TYPE** = **14** --- String property is a resource, so open the resource popup menu when edited.
-- **PROPERTY_HINT_MULTILINE_TEXT** = **15**
-- **PROPERTY_HINT_COLOR_NO_ALPHA** = **16**
-- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSY** = **17**
-- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSLESS** = **18**
+- **PROPERTY_HINT_LAYERS_2D_RENDER** = **9**
+- **PROPERTY_HINT_LAYERS_2D_PHYSICS** = **10**
+- **PROPERTY_HINT_LAYERS_3D_RENDER** = **11**
+- **PROPERTY_HINT_LAYERS_3D_PHYSICS** = **12**
+- **PROPERTY_HINT_FILE** = **13** --- String property is a file (so pop up a file dialog when edited). Hint string can be a set of wildcards like "\*.doc".
+- **PROPERTY_HINT_DIR** = **14** --- String property is a directory (so pop up a file dialog when edited).
+- **PROPERTY_HINT_GLOBAL_FILE** = **15**
+- **PROPERTY_HINT_GLOBAL_DIR** = **16**
+- **PROPERTY_HINT_RESOURCE_TYPE** = **17** --- String property is a resource, so open the resource popup menu when edited.
+- **PROPERTY_HINT_MULTILINE_TEXT** = **18**
+- **PROPERTY_HINT_COLOR_NO_ALPHA** = **19**
+- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSY** = **20**
+- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSLESS** = **21**
 - **PROPERTY_USAGE_STORAGE** = **1** --- Property will be used as storage (default).
 - **PROPERTY_USAGE_EDITOR** = **2** --- Property will be visible in editor (default).
 - **PROPERTY_USAGE_NETWORK** = **4**
@@ -453,7 +438,7 @@ Numeric Constants
 - **PROPERTY_USAGE_CHECKABLE** = **16**
 - **PROPERTY_USAGE_CHECKED** = **32**
 - **PROPERTY_USAGE_INTERNATIONALIZED** = **64**
-- **PROPERTY_USAGE_BUNDLE** = **128**
+- **PROPERTY_USAGE_GROUP** = **128**
 - **PROPERTY_USAGE_CATEGORY** = **256**
 - **PROPERTY_USAGE_STORE_IF_NONZERO** = **512**
 - **PROPERTY_USAGE_STORE_IF_NONONE** = **1024**
@@ -479,11 +464,11 @@ Numeric Constants
 - **TYPE_VECTOR2** = **5** --- Variable is of type :ref:`Vector2<class_vector2>`.
 - **TYPE_RECT2** = **6** --- Variable is of type :ref:`Rect2<class_rect2>`.
 - **TYPE_VECTOR3** = **7** --- Variable is of type :ref:`Vector3<class_vector3>`.
-- **TYPE_MATRIX32** = **8** --- Variable is of type :ref:`Matrix32<class_matrix32>`.
+- **TYPE_TRANSFORM2D** = **8** --- Variable is of type :ref:`Transform2D<class_transform2d>`.
 - **TYPE_PLANE** = **9** --- Variable is of type :ref:`Plane<class_plane>`.
 - **TYPE_QUAT** = **10** --- Variable is of type :ref:`Quat<class_quat>`.
-- **TYPE_AABB** = **11** --- Variable is of type :ref:`AABB<class_aabb>`.
-- **TYPE_MATRIX3** = **12** --- Variable is of type :ref:`Matrix3<class_matrix3>`.
+- **TYPE_RECT3** = **11** --- Variable is of type :ref:`Rect3<class_rect3>`.
+- **TYPE_BASIS** = **12** --- Variable is of type :ref:`Basis<class_basis>`.
 - **TYPE_TRANSFORM** = **13** --- Variable is of type :ref:`Transform<class_transform>`.
 - **TYPE_COLOR** = **14** --- Variable is of type :ref:`Color<class_color>`.
 - **TYPE_IMAGE** = **15** --- Variable is of type :ref:`Image<class_image>`.

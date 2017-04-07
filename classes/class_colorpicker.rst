@@ -18,21 +18,21 @@ Color picker control.
 Member Functions
 ----------------
 
-+----------------------------+----------------------------------------------------------------------------------------------------+
-| void                       | :ref:`add_preset<class_ColorPicker_add_preset>`  **(** :ref:`Color<class_color>` arg0  **)**       |
-+----------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`  | :ref:`get_color<class_ColorPicker_get_color>`  **(** **)** const                                   |
-+----------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`is_editing_alpha<class_ColorPicker_is_editing_alpha>`  **(** **)** const                     |
-+----------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`is_raw_mode<class_ColorPicker_is_raw_mode>`  **(** **)** const                               |
-+----------------------------+----------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_color<class_ColorPicker_set_color>`  **(** :ref:`Color<class_color>` color  **)**        |
-+----------------------------+----------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_edit_alpha<class_ColorPicker_set_edit_alpha>`  **(** :ref:`bool<class_bool>` show  **)** |
-+----------------------------+----------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_raw_mode<class_ColorPicker_set_raw_mode>`  **(** :ref:`bool<class_bool>` mode  **)**     |
-+----------------------------+----------------------------------------------------------------------------------------------------+
++----------------------------+-------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`add_preset<class_ColorPicker_add_preset>`  **(** :ref:`Color<class_color>` arg0  **)**          |
++----------------------------+-------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`  | :ref:`get_pick_color<class_ColorPicker_get_pick_color>`  **(** **)** const                            |
++----------------------------+-------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`is_editing_alpha<class_ColorPicker_is_editing_alpha>`  **(** **)** const                        |
++----------------------------+-------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`is_raw_mode<class_ColorPicker_is_raw_mode>`  **(** **)** const                                  |
++----------------------------+-------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_edit_alpha<class_ColorPicker_set_edit_alpha>`  **(** :ref:`bool<class_bool>` show  **)**    |
++----------------------------+-------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_pick_color<class_ColorPicker_set_pick_color>`  **(** :ref:`Color<class_color>` color  **)** |
++----------------------------+-------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_raw_mode<class_ColorPicker_set_raw_mode>`  **(** :ref:`bool<class_bool>` mode  **)**        |
++----------------------------+-------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -53,11 +53,11 @@ Member Function Description
 
 Adds the current selected to color to a list of colors (presets), the presets will be displayed in the color picker and the user will be able to select them, notice that the presets list is only for this color picker.
 
-.. _class_ColorPicker_get_color:
+.. _class_ColorPicker_get_pick_color:
 
-- :ref:`Color<class_color>`  **get_color**  **(** **)** const
+- :ref:`Color<class_color>`  **get_pick_color**  **(** **)** const
 
-Return the current (edited) color.
+Gets the current color.
 
 .. _class_ColorPicker_is_editing_alpha:
 
@@ -71,17 +71,17 @@ Returns whether the color has transparency or not.
 
 Returns whether this color picker is in raw mode or not, raw mode will allow the color R, G, B component values to go beyond 1, you have to consider that the max value for color components is 1, going beyond that value will not have effect in the color, but can be used for special operations that require it (like tinting without darkening or rendering sprites in HDR).
 
-.. _class_ColorPicker_set_color:
-
-- void  **set_color**  **(** :ref:`Color<class_color>` color  **)**
-
-Select the current color.
-
 .. _class_ColorPicker_set_edit_alpha:
 
 - void  **set_edit_alpha**  **(** :ref:`bool<class_bool>` show  **)**
 
 Set true if you want the color to have an alpha channel (transparency), or false if you want a solid color.
+
+.. _class_ColorPicker_set_pick_color:
+
+- void  **set_pick_color**  **(** :ref:`Color<class_color>` color  **)**
+
+Select the current color.
 
 .. _class_ColorPicker_set_raw_mode:
 

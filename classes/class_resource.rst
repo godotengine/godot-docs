@@ -8,7 +8,7 @@ Resource
 
 **Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`Theme<class_theme>`, :ref:`AudioStream<class_audiostream>`, :ref:`EventStream<class_eventstream>`, :ref:`CubeMap<class_cubemap>`, :ref:`DynamicFontData<class_dynamicfontdata>`, :ref:`Translation<class_translation>`, :ref:`Curve2D<class_curve2d>`, :ref:`Shape<class_shape>`, :ref:`Shape2D<class_shape2d>`, :ref:`Shader<class_shader>`, :ref:`ColorRamp<class_colorramp>`, :ref:`StyleBox<class_stylebox>`, :ref:`Material<class_material>`, :ref:`VideoStream<class_videostream>`, :ref:`RoomBounds<class_roombounds>`, :ref:`PackedScene<class_packedscene>`, :ref:`Texture<class_texture>`, :ref:`Script<class_script>`, :ref:`OccluderPolygon2D<class_occluderpolygon2d>`, :ref:`Mesh<class_mesh>`, :ref:`TileSet<class_tileset>`, :ref:`ShortCut<class_shortcut>`, :ref:`BitMap<class_bitmap>`, :ref:`Animation<class_animation>`, :ref:`Sample<class_sample>`, :ref:`PolygonPathFinder<class_polygonpathfinder>`, :ref:`BakedLight<class_bakedlight>`, :ref:`World<class_world>`, :ref:`SampleLibrary<class_samplelibrary>`, :ref:`VisualScriptNode<class_visualscriptnode>`, :ref:`World2D<class_world2d>`, :ref:`Font<class_font>`, :ref:`SpriteFrames<class_spriteframes>`, :ref:`MeshLibrary<class_meshlibrary>`, :ref:`Curve3D<class_curve3d>`, :ref:`NavigationPolygon<class_navigationpolygon>`, :ref:`EditorSettings<class_editorsettings>`, :ref:`Environment<class_environment>`, :ref:`MultiMesh<class_multimesh>`, :ref:`CanvasItemMaterial<class_canvasitemmaterial>`, :ref:`PackedDataContainer<class_packeddatacontainer>`, :ref:`NavigationMesh<class_navigationmesh>`
+**Inherited By:** :ref:`Theme<class_theme>`, :ref:`AudioStream<class_audiostream>`, :ref:`RegEx<class_regex>`, :ref:`CubeMap<class_cubemap>`, :ref:`DynamicFontData<class_dynamicfontdata>`, :ref:`SpriteFrames<class_spriteframes>`, :ref:`Translation<class_translation>`, :ref:`Curve2D<class_curve2d>`, :ref:`Shape<class_shape>`, :ref:`Shape2D<class_shape2d>`, :ref:`Shader<class_shader>`, :ref:`ColorRamp<class_colorramp>`, :ref:`StyleBox<class_stylebox>`, :ref:`Material<class_material>`, :ref:`VideoStream<class_videostream>`, :ref:`RoomBounds<class_roombounds>`, :ref:`PackedScene<class_packedscene>`, :ref:`Texture<class_texture>`, :ref:`Script<class_script>`, :ref:`OccluderPolygon2D<class_occluderpolygon2d>`, :ref:`Mesh<class_mesh>`, :ref:`ButtonGroup<class_buttongroup>`, :ref:`TileSet<class_tileset>`, :ref:`ShortCut<class_shortcut>`, :ref:`BitMap<class_bitmap>`, :ref:`Animation<class_animation>`, :ref:`PolygonPathFinder<class_polygonpathfinder>`, :ref:`SkyBox<class_skybox>`, :ref:`AudioBusLayout<class_audiobuslayout>`, :ref:`World<class_world>`, :ref:`AudioEffect<class_audioeffect>`, :ref:`DLLibrary<class_dllibrary>`, :ref:`VisualScriptNode<class_visualscriptnode>`, :ref:`World2D<class_world2d>`, :ref:`GIProbeData<class_giprobedata>`, :ref:`Font<class_font>`, :ref:`MeshLibrary<class_meshlibrary>`, :ref:`Curve3D<class_curve3d>`, :ref:`NavigationPolygon<class_navigationpolygon>`, :ref:`EditorSettings<class_editorsettings>`, :ref:`Environment<class_environment>`, :ref:`MultiMesh<class_multimesh>`, :ref:`PackedDataContainer<class_packeddatacontainer>`, :ref:`NavigationMesh<class_navigationmesh>`
 
 **Category:** Core
 
@@ -20,30 +20,43 @@ Base class for all resources.
 Member Functions
 ----------------
 
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`  | :ref:`duplicate<class_Resource_duplicate>`  **(** :ref:`bool<class_bool>` subresources=false  **)**               |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`  | :ref:`get_import_metadata<class_Resource_get_import_metadata>`  **(** **)** const                                 |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_name<class_Resource_get_name>`  **(** **)** const                                                       |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_path<class_Resource_get_path>`  **(** **)** const                                                       |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`        | :ref:`get_rid<class_Resource_get_rid>`  **(** **)** const                                                         |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_import_metadata<class_Resource_set_import_metadata>`  **(** :ref:`Object<class_object>` metadata  **)** |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_name<class_Resource_set_name>`  **(** :ref:`String<class_string>` name  **)**                           |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_path<class_Resource_set_path>`  **(** :ref:`String<class_string>` path  **)**                           |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`take_over_path<class_Resource_take_over_path>`  **(** :ref:`String<class_string>` path  **)**               |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
++------------------------------+-----------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`_setup_local_to_scene<class_Resource__setup_local_to_scene>`  **(** **)** virtual                   |
++------------------------------+-----------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`  | :ref:`duplicate<class_Resource_duplicate>`  **(** :ref:`bool<class_bool>` subresources=false  **)**       |
++------------------------------+-----------------------------------------------------------------------------------------------------------+
+| :ref:`Node<class_node>`      | :ref:`get_local_scene<class_Resource_get_local_scene>`  **(** **)** const                                 |
++------------------------------+-----------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_name<class_Resource_get_name>`  **(** **)** const                                               |
++------------------------------+-----------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_path<class_Resource_get_path>`  **(** **)** const                                               |
++------------------------------+-----------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_rid>`        | :ref:`get_rid<class_Resource_get_rid>`  **(** **)** const                                                 |
++------------------------------+-----------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`is_local_to_scene<class_Resource_is_local_to_scene>`  **(** **)** const                             |
++------------------------------+-----------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_local_to_scene<class_Resource_set_local_to_scene>`  **(** :ref:`bool<class_bool>` enable  **)** |
++------------------------------+-----------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_name<class_Resource_set_name>`  **(** :ref:`String<class_string>` name  **)**                   |
++------------------------------+-----------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_path<class_Resource_set_path>`  **(** :ref:`String<class_string>` path  **)**                   |
++------------------------------+-----------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`setup_local_to_scene<class_Resource_setup_local_to_scene>`  **(** **)**                             |
++------------------------------+-----------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`take_over_path<class_Resource_take_over_path>`  **(** :ref:`String<class_string>` path  **)**       |
++------------------------------+-----------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
 
 -  **changed**  **(** **)**
+
+Member Variables
+----------------
+
+- :ref:`bool<class_bool>` **resource_local_to_scene**
+- :ref:`String<class_string>` **resource_name**
+- :ref:`String<class_string>` **resource_path**
 
 Description
 -----------
@@ -53,13 +66,17 @@ Resource is the base class for all resource types. Resources are primarily data 
 Member Function Description
 ---------------------------
 
+.. _class_Resource__setup_local_to_scene:
+
+- void  **_setup_local_to_scene**  **(** **)** virtual
+
 .. _class_Resource_duplicate:
 
 - :ref:`Object<class_object>`  **duplicate**  **(** :ref:`bool<class_bool>` subresources=false  **)**
 
-.. _class_Resource_get_import_metadata:
+.. _class_Resource_get_local_scene:
 
-- :ref:`Object<class_object>`  **get_import_metadata**  **(** **)** const
+- :ref:`Node<class_node>`  **get_local_scene**  **(** **)** const
 
 .. _class_Resource_get_name:
 
@@ -79,9 +96,13 @@ Return the path of the resource. This is useful mainly for editors when saving/l
 
 Return the RID of the resource (or an empty RID). Many resources (such as :ref:`Texture<class_texture>`, :ref:`Mesh<class_mesh>`, etc) are high level abstractions of resources stored in a server, so this function will return the original RID.
 
-.. _class_Resource_set_import_metadata:
+.. _class_Resource_is_local_to_scene:
 
-- void  **set_import_metadata**  **(** :ref:`Object<class_object>` metadata  **)**
+- :ref:`bool<class_bool>`  **is_local_to_scene**  **(** **)** const
+
+.. _class_Resource_set_local_to_scene:
+
+- void  **set_local_to_scene**  **(** :ref:`bool<class_bool>` enable  **)**
 
 .. _class_Resource_set_name:
 
@@ -94,6 +115,10 @@ Set the name of the resources, any name is valid (it doesn't have to be unique).
 - void  **set_path**  **(** :ref:`String<class_string>` path  **)**
 
 Set the path of the resource. This is useful mainly for editors when saving/loading, and shouldn't be changed by anything else. Fails if another :ref:`Resource<class_resource>` already has path "path".
+
+.. _class_Resource_setup_local_to_scene:
+
+- void  **setup_local_to_scene**  **(** **)**
 
 .. _class_Resource_take_over_path:
 

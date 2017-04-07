@@ -24,6 +24,13 @@ Member Functions
 | void                       | :ref:`set_param<class_PinJoint_set_param>`  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)** |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`float<class_float>` **params/bias**
+- :ref:`float<class_float>` **params/damping**
+- :ref:`float<class_float>` **params/impulse_clamp**
+
 Numeric Constants
 -----------------
 

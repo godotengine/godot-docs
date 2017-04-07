@@ -37,6 +37,13 @@ Signals
 
 -  **atlas_changed**  **(** **)**
 
+Member Variables
+----------------
+
+- :ref:`Texture<class_texture>` **atlas**
+- :ref:`Rect2<class_rect2>` **margin**
+- :ref:`Rect2<class_rect2>` **region**
+
 Member Function Description
 ---------------------------
 

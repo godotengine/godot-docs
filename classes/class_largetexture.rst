@@ -36,6 +36,11 @@ Member Functions
 | void                           | :ref:`set_size<class_LargeTexture_set_size>`  **(** :ref:`Vector2<class_vector2>` size  **)**                                                 |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`Array<class_array>` **_data**
+
 Description
 -----------
 

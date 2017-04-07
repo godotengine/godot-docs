@@ -68,6 +68,19 @@ Member Functions
 | void                         | :ref:`set_visible_characters<class_Label_set_visible_characters>`  **(** :ref:`int<class_int>` amount  **)**        |
 +------------------------------+---------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`int<class_int>` **align**
+- :ref:`bool<class_bool>` **autowrap**
+- :ref:`bool<class_bool>` **clip_text**
+- :ref:`int<class_int>` **lines_skipped**
+- :ref:`int<class_int>` **max_lines_visible**
+- :ref:`float<class_float>` **percent_visible**
+- :ref:`String<class_string>` **text**
+- :ref:`bool<class_bool>` **uppercase**
+- :ref:`int<class_int>` **valign**
+
 Numeric Constants
 -----------------
 

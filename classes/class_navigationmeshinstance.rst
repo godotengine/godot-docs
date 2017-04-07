@@ -28,6 +28,12 @@ Member Functions
 | void                         | :ref:`set_navigation_mesh<class_NavigationMeshInstance_set_navigation_mesh>`  **(** :ref:`Object<class_object>` navmesh  **)** |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`bool<class_bool>` **enabled**
+- :ref:`NavigationMesh<class_navigationmesh>` **navmesh**
+
 Member Function Description
 ---------------------------
 

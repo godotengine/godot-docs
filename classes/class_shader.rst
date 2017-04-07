@@ -8,8 +8,6 @@ Shader
 
 **Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`MaterialShader<class_materialshader>`, :ref:`CanvasItemShader<class_canvasitemshader>`, :ref:`ShaderGraph<class_shadergraph>`
-
 **Category:** Core
 
 Brief Description
@@ -20,30 +18,31 @@ To be changed, ignore.
 Member Functions
 ----------------
 
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_texture>`  | :ref:`get_default_texture_param<class_Shader_get_default_texture_param>`  **(** :ref:`String<class_string>` param  **)** const                                                                                           |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`    | :ref:`get_fragment_code<class_Shader_get_fragment_code>`  **(** **)** const                                                                                                                                              |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`    | :ref:`get_light_code<class_Shader_get_light_code>`  **(** **)** const                                                                                                                                                    |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_mode<class_Shader_get_mode>`  **(** **)** const                                                                                                                                                                |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`    | :ref:`get_vertex_code<class_Shader_get_vertex_code>`  **(** **)** const                                                                                                                                                  |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`has_param<class_Shader_has_param>`  **(** :ref:`String<class_string>` name  **)** const                                                                                                                            |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_code<class_Shader_set_code>`  **(** :ref:`String<class_string>` vcode, :ref:`String<class_string>` fcode, :ref:`String<class_string>` lcode, :ref:`int<class_int>` fofs=0, :ref:`int<class_int>` lofs=0  **)** |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_default_texture_param<class_Shader_set_default_texture_param>`  **(** :ref:`String<class_string>` param, :ref:`Texture<class_texture>` texture  **)**                                                          |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`    | :ref:`get_code<class_Shader_get_code>`  **(** **)** const                                                                                                       |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_texture>`  | :ref:`get_default_texture_param<class_Shader_get_default_texture_param>`  **(** :ref:`String<class_string>` param  **)** const                                  |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_mode<class_Shader_get_mode>`  **(** **)** const                                                                                                       |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`has_param<class_Shader_has_param>`  **(** :ref:`String<class_string>` name  **)** const                                                                   |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_code<class_Shader_set_code>`  **(** :ref:`String<class_string>` code  **)**                                                                           |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_default_texture_param<class_Shader_set_default_texture_param>`  **(** :ref:`String<class_string>` param, :ref:`Texture<class_texture>` texture  **)** |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+- :ref:`String<class_string>` **code**
 
 Numeric Constants
 -----------------
 
-- **MODE_MATERIAL** = **0**
+- **MODE_SPATIAL** = **0**
 - **MODE_CANVAS_ITEM** = **1**
-- **MODE_POST_PROCESS** = **2**
+- **MODE_PARTICLES** = **2**
 
 Description
 -----------
@@ -53,25 +52,17 @@ To be changed, ignore.
 Member Function Description
 ---------------------------
 
+.. _class_Shader_get_code:
+
+- :ref:`String<class_string>`  **get_code**  **(** **)** const
+
 .. _class_Shader_get_default_texture_param:
 
 - :ref:`Texture<class_texture>`  **get_default_texture_param**  **(** :ref:`String<class_string>` param  **)** const
 
-.. _class_Shader_get_fragment_code:
-
-- :ref:`String<class_string>`  **get_fragment_code**  **(** **)** const
-
-.. _class_Shader_get_light_code:
-
-- :ref:`String<class_string>`  **get_light_code**  **(** **)** const
-
 .. _class_Shader_get_mode:
 
 - :ref:`int<class_int>`  **get_mode**  **(** **)** const
-
-.. _class_Shader_get_vertex_code:
-
-- :ref:`String<class_string>`  **get_vertex_code**  **(** **)** const
 
 .. _class_Shader_has_param:
 
@@ -79,7 +70,7 @@ Member Function Description
 
 .. _class_Shader_set_code:
 
-- void  **set_code**  **(** :ref:`String<class_string>` vcode, :ref:`String<class_string>` fcode, :ref:`String<class_string>` lcode, :ref:`int<class_int>` fofs=0, :ref:`int<class_int>` lofs=0  **)**
+- void  **set_code**  **(** :ref:`String<class_string>` code  **)**
 
 .. _class_Shader_set_default_texture_param:
 

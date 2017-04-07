@@ -36,6 +36,14 @@ Member Functions
 | void                           | :ref:`set_size<class_Quad_set_size>`  **(** :ref:`Vector2<class_vector2>` size  **)**       |
 +--------------------------------+---------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`int<class_int>` **axis**
+- :ref:`bool<class_bool>` **centered**
+- :ref:`Vector2<class_vector2>` **offset**
+- :ref:`Vector2<class_vector2>` **size**
+
 Member Function Description
 ---------------------------
 

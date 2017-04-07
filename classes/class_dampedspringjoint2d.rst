@@ -36,6 +36,14 @@ Member Functions
 | void                       | :ref:`set_stiffness<class_DampedSpringJoint2D_set_stiffness>`  **(** :ref:`float<class_float>` stiffness  **)**       |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`float<class_float>` **damping**
+- :ref:`float<class_float>` **length**
+- :ref:`float<class_float>` **rest_length**
+- :ref:`float<class_float>` **stiffness**
+
 Description
 -----------
 

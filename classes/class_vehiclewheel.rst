@@ -60,6 +60,20 @@ Member Functions
 | void                       | :ref:`set_use_as_traction<class_VehicleWheel_set_use_as_traction>`  **(** :ref:`bool<class_bool>` enable  **)**                 |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`float<class_float>` **damping_compression**
+- :ref:`float<class_float>` **damping_relaxation**
+- :ref:`float<class_float>` **suspension_max_force**
+- :ref:`float<class_float>` **suspension_stiffness**
+- :ref:`float<class_float>` **suspension_travel**
+- :ref:`bool<class_bool>` **use_as_steering**
+- :ref:`bool<class_bool>` **use_as_traction**
+- :ref:`float<class_float>` **wheel_friction_slip**
+- :ref:`float<class_float>` **wheel_radius**
+- :ref:`float<class_float>` **wheel_rest_length**
+
 Member Function Description
 ---------------------------
 

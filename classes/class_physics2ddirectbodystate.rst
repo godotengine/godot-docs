@@ -61,7 +61,7 @@ Member Functions
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                          | :ref:`get_total_linear_damp<class_Physics2DDirectBodyState_get_total_linear_damp>`  **(** **)** const                                                                  |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Matrix32<class_matrix32>`                                    | :ref:`get_transform<class_Physics2DDirectBodyState_get_transform>`  **(** **)** const                                                                                  |
+| :ref:`Transform2D<class_transform2d>`                              | :ref:`get_transform<class_Physics2DDirectBodyState_get_transform>`  **(** **)** const                                                                                  |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`integrate_forces<class_Physics2DDirectBodyState_integrate_forces>`  **(** **)**                                                                                  |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -73,7 +73,7 @@ Member Functions
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`set_sleep_state<class_Physics2DDirectBodyState_set_sleep_state>`  **(** :ref:`bool<class_bool>` enabled  **)**                                                   |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                               | :ref:`set_transform<class_Physics2DDirectBodyState_set_transform>`  **(** :ref:`Matrix32<class_matrix32>` transform  **)**                                             |
+| void                                                               | :ref:`set_transform<class_Physics2DDirectBodyState_set_transform>`  **(** :ref:`Transform2D<class_transform2d>` transform  **)**                                       |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -206,7 +206,7 @@ Return the rate at which the body stops moving, if there are not any other force
 
 .. _class_Physics2DDirectBodyState_get_transform:
 
-- :ref:`Matrix32<class_matrix32>`  **get_transform**  **(** **)** const
+- :ref:`Transform2D<class_transform2d>`  **get_transform**  **(** **)** const
 
 Return the transform matrix of the body.
 
@@ -242,7 +242,7 @@ Set the sleeping state of the body, only affects character/rigid bodies.
 
 .. _class_Physics2DDirectBodyState_set_transform:
 
-- void  **set_transform**  **(** :ref:`Matrix32<class_matrix32>` transform  **)**
+- void  **set_transform**  **(** :ref:`Transform2D<class_transform2d>` transform  **)**
 
 Change the transform matrix of the body.
 

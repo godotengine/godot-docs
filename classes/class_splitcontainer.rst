@@ -39,6 +39,13 @@ Signals
 
 -  **dragged**  **(** :ref:`int<class_int>` offset  **)**
 
+Member Variables
+----------------
+
+- :ref:`bool<class_bool>` **collapsed**
+- :ref:`int<class_int>` **dragger_visibility**
+- :ref:`int<class_int>` **split_offset**
+
 Numeric Constants
 -----------------
 
@@ -58,7 +65,7 @@ Member Function Description
 
 - :ref:`int<class_int>`  **get_dragger_visibility**  **(** **)** const
 
-Return visibility of the split dragger(One of :ref:`DRAGGER_VISIBLE<class_dragger_visible>`, :ref:`DRAGGER_HIDDEN<class_dragger_hidden>` or :ref:`DRAGGER_HIDDEN_COLLAPSED<class_dragger_hidden_collapsed>`).
+Return visibility of the split dragger (one of :ref:`DRAGGER_VISIBLE<class_dragger_visible>`, :ref:`DRAGGER_HIDDEN<class_dragger_hidden>` or :ref:`DRAGGER_HIDDEN_COLLAPSED<class_dragger_hidden_collapsed>`).
 
 .. _class_SplitContainer_get_split_offset:
 
@@ -82,7 +89,7 @@ Set if the split must be collapsed.
 
 - void  **set_dragger_visibility**  **(** :ref:`int<class_int>` mode  **)**
 
-Set visibility of the split dragger(*mode* must be one of :ref:`DRAGGER_VISIBLE<class_dragger_visible>`, :ref:`DRAGGER_HIDDEN<class_dragger_hidden>` or :ref:`DRAGGER_HIDDEN_COLLAPSED<class_dragger_hidden_collapsed>`).
+Set visibility of the split dragger (*mode* must be one of :ref:`DRAGGER_VISIBLE<class_dragger_visible>`, :ref:`DRAGGER_HIDDEN<class_dragger_hidden>` or :ref:`DRAGGER_HIDDEN_COLLAPSED<class_dragger_hidden_collapsed>`).
 
 .. _class_SplitContainer_set_split_offset:
 

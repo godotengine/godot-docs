@@ -18,18 +18,18 @@ Brief Description
 Member Functions
 ----------------
 
-+----------------------------------+-----------------------------------------------------------------------------+
-| :ref:`RawArray<class_rawarray>`  | :ref:`get_as_byte_code<class_GDScript_get_as_byte_code>`  **(** **)** const |
-+----------------------------------+-----------------------------------------------------------------------------+
-| :ref:`Object<class_object>`      | :ref:`new<class_GDScript_new>`  **(** **)** vararg                          |
-+----------------------------------+-----------------------------------------------------------------------------+
++--------------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`PoolByteArray<class_poolbytearray>`  | :ref:`get_as_byte_code<class_GDScript_get_as_byte_code>`  **(** **)** const |
++--------------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`Object<class_object>`                | :ref:`new<class_GDScript_new>`  **(** **)** vararg                          |
++--------------------------------------------+-----------------------------------------------------------------------------+
 
 Member Function Description
 ---------------------------
 
 .. _class_GDScript_get_as_byte_code:
 
-- :ref:`RawArray<class_rawarray>`  **get_as_byte_code**  **(** **)** const
+- :ref:`PoolByteArray<class_poolbytearray>`  **get_as_byte_code**  **(** **)** const
 
 .. _class_GDScript_new:
 

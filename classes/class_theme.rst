@@ -18,67 +18,72 @@ Theme for controls.
 Member Functions
 ----------------
 
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`clear_color<class_Theme_clear_color>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type  **)**                                            |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`clear_constant<class_Theme_clear_constant>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type  **)**                                      |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`clear_font<class_Theme_clear_font>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type  **)**                                              |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`clear_icon<class_Theme_clear_icon>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type  **)**                                              |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`clear_stylebox<class_Theme_clear_stylebox>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type  **)**                                      |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`copy_default_theme<class_Theme_copy_default_theme>`  **(** **)**                                                                                                  |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`              | :ref:`get_color<class_Theme_get_color>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type  **)** const                                          |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StringArray<class_stringarray>`  | :ref:`get_color_list<class_Theme_get_color_list>`  **(** :ref:`String<class_string>` type  **)** const                                                                  |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                  | :ref:`get_constant<class_Theme_get_constant>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type  **)** const                                    |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StringArray<class_stringarray>`  | :ref:`get_constant_list<class_Theme_get_constant_list>`  **(** :ref:`String<class_string>` type  **)** const                                                            |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`            | :ref:`get_default_font<class_Theme_get_default_font>`  **(** **)** const                                                                                                |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Font<class_font>`                | :ref:`get_font<class_Theme_get_font>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type  **)** const                                            |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StringArray<class_stringarray>`  | :ref:`get_font_list<class_Theme_get_font_list>`  **(** :ref:`String<class_string>` type  **)** const                                                                    |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_texture>`          | :ref:`get_icon<class_Theme_get_icon>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type  **)** const                                            |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StringArray<class_stringarray>`  | :ref:`get_icon_list<class_Theme_get_icon_list>`  **(** :ref:`String<class_string>` type  **)** const                                                                    |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StyleBox<class_stylebox>`        | :ref:`get_stylebox<class_Theme_get_stylebox>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type  **)** const                                    |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StringArray<class_stringarray>`  | :ref:`get_stylebox_list<class_Theme_get_stylebox_list>`  **(** :ref:`String<class_string>` type  **)** const                                                            |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StringArray<class_stringarray>`  | :ref:`get_stylebox_types<class_Theme_get_stylebox_types>`  **(** **)** const                                                                                            |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StringArray<class_stringarray>`  | :ref:`get_type_list<class_Theme_get_type_list>`  **(** :ref:`String<class_string>` type  **)** const                                                                    |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`has_color<class_Theme_has_color>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type  **)** const                                          |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`has_constant<class_Theme_has_constant>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type  **)** const                                    |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`has_font<class_Theme_has_font>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type  **)** const                                            |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`has_icon<class_Theme_has_icon>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type  **)** const                                            |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`has_stylebox<class_Theme_has_stylebox>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type  **)** const                                    |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_color<class_Theme_set_color>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type, :ref:`Color<class_color>` color  **)**               |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_constant<class_Theme_set_constant>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type, :ref:`int<class_int>` constant  **)**          |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_default_font<class_Theme_set_default_font>`  **(** :ref:`Object<class_object>` font  **)**                                                                    |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_font<class_Theme_set_font>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type, :ref:`Font<class_font>` font  **)**                    |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_icon<class_Theme_set_icon>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type, :ref:`Texture<class_texture>` texture  **)**           |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_stylebox<class_Theme_set_stylebox>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type, :ref:`StyleBox<class_stylebox>` texture  **)** |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`clear_color<class_Theme_clear_color>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type  **)**                                            |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`clear_constant<class_Theme_clear_constant>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type  **)**                                      |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`clear_font<class_Theme_clear_font>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type  **)**                                              |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`clear_icon<class_Theme_clear_icon>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type  **)**                                              |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`clear_stylebox<class_Theme_clear_stylebox>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type  **)**                                      |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`copy_default_theme<class_Theme_copy_default_theme>`  **(** **)**                                                                                                  |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`                      | :ref:`get_color<class_Theme_get_color>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type  **)** const                                          |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_color_list<class_Theme_get_color_list>`  **(** :ref:`String<class_string>` type  **)** const                                                                  |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                          | :ref:`get_constant<class_Theme_get_constant>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type  **)** const                                    |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_constant_list<class_Theme_get_constant_list>`  **(** :ref:`String<class_string>` type  **)** const                                                            |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`                    | :ref:`get_default_font<class_Theme_get_default_font>`  **(** **)** const                                                                                                |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Font<class_font>`                        | :ref:`get_font<class_Theme_get_font>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type  **)** const                                            |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_font_list<class_Theme_get_font_list>`  **(** :ref:`String<class_string>` type  **)** const                                                                    |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_texture>`                  | :ref:`get_icon<class_Theme_get_icon>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type  **)** const                                            |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_icon_list<class_Theme_get_icon_list>`  **(** :ref:`String<class_string>` type  **)** const                                                                    |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`StyleBox<class_stylebox>`                | :ref:`get_stylebox<class_Theme_get_stylebox>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type  **)** const                                    |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_stylebox_list<class_Theme_get_stylebox_list>`  **(** :ref:`String<class_string>` type  **)** const                                                            |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_stylebox_types<class_Theme_get_stylebox_types>`  **(** **)** const                                                                                            |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_type_list<class_Theme_get_type_list>`  **(** :ref:`String<class_string>` type  **)** const                                                                    |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                        | :ref:`has_color<class_Theme_has_color>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type  **)** const                                          |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                        | :ref:`has_constant<class_Theme_has_constant>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type  **)** const                                    |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                        | :ref:`has_font<class_Theme_has_font>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type  **)** const                                            |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                        | :ref:`has_icon<class_Theme_has_icon>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type  **)** const                                            |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                        | :ref:`has_stylebox<class_Theme_has_stylebox>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type  **)** const                                    |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`set_color<class_Theme_set_color>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type, :ref:`Color<class_color>` color  **)**               |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`set_constant<class_Theme_set_constant>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type, :ref:`int<class_int>` constant  **)**          |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`set_default_font<class_Theme_set_default_font>`  **(** :ref:`Object<class_object>` font  **)**                                                                    |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`set_font<class_Theme_set_font>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type, :ref:`Font<class_font>` font  **)**                    |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`set_icon<class_Theme_set_icon>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type, :ref:`Texture<class_texture>` texture  **)**           |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`set_stylebox<class_Theme_set_stylebox>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type, :ref:`StyleBox<class_stylebox>` texture  **)** |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+- :ref:`Font<class_font>` **default_font**
 
 Description
 -----------
@@ -120,7 +125,7 @@ Member Function Description
 
 .. _class_Theme_get_color_list:
 
-- :ref:`StringArray<class_stringarray>`  **get_color_list**  **(** :ref:`String<class_string>` type  **)** const
+- :ref:`PoolStringArray<class_poolstringarray>`  **get_color_list**  **(** :ref:`String<class_string>` type  **)** const
 
 .. _class_Theme_get_constant:
 
@@ -128,7 +133,7 @@ Member Function Description
 
 .. _class_Theme_get_constant_list:
 
-- :ref:`StringArray<class_stringarray>`  **get_constant_list**  **(** :ref:`String<class_string>` type  **)** const
+- :ref:`PoolStringArray<class_poolstringarray>`  **get_constant_list**  **(** :ref:`String<class_string>` type  **)** const
 
 .. _class_Theme_get_default_font:
 
@@ -140,7 +145,7 @@ Member Function Description
 
 .. _class_Theme_get_font_list:
 
-- :ref:`StringArray<class_stringarray>`  **get_font_list**  **(** :ref:`String<class_string>` type  **)** const
+- :ref:`PoolStringArray<class_poolstringarray>`  **get_font_list**  **(** :ref:`String<class_string>` type  **)** const
 
 .. _class_Theme_get_icon:
 
@@ -148,7 +153,7 @@ Member Function Description
 
 .. _class_Theme_get_icon_list:
 
-- :ref:`StringArray<class_stringarray>`  **get_icon_list**  **(** :ref:`String<class_string>` type  **)** const
+- :ref:`PoolStringArray<class_poolstringarray>`  **get_icon_list**  **(** :ref:`String<class_string>` type  **)** const
 
 .. _class_Theme_get_stylebox:
 
@@ -156,15 +161,15 @@ Member Function Description
 
 .. _class_Theme_get_stylebox_list:
 
-- :ref:`StringArray<class_stringarray>`  **get_stylebox_list**  **(** :ref:`String<class_string>` type  **)** const
+- :ref:`PoolStringArray<class_poolstringarray>`  **get_stylebox_list**  **(** :ref:`String<class_string>` type  **)** const
 
 .. _class_Theme_get_stylebox_types:
 
-- :ref:`StringArray<class_stringarray>`  **get_stylebox_types**  **(** **)** const
+- :ref:`PoolStringArray<class_poolstringarray>`  **get_stylebox_types**  **(** **)** const
 
 .. _class_Theme_get_type_list:
 
-- :ref:`StringArray<class_stringarray>`  **get_type_list**  **(** :ref:`String<class_string>` type  **)** const
+- :ref:`PoolStringArray<class_poolstringarray>`  **get_type_list**  **(** :ref:`String<class_string>` type  **)** const
 
 .. _class_Theme_has_color:
 

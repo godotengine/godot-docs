@@ -8,7 +8,7 @@ Node
 
 **Inherits:** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`Viewport<class_viewport>`, :ref:`Timer<class_timer>`, :ref:`CanvasLayer<class_canvaslayer>`, :ref:`EventPlayer<class_eventplayer>`, :ref:`SoundRoomParams<class_soundroomparams>`, :ref:`Tween<class_tween>`, :ref:`Spatial<class_spatial>`, :ref:`AnimationPlayer<class_animationplayer>`, :ref:`EditorFileSystem<class_editorfilesystem>`, :ref:`EditorPlugin<class_editorplugin>`, :ref:`ResourcePreloader<class_resourcepreloader>`, :ref:`AnimationTreePlayer<class_animationtreeplayer>`, :ref:`SamplePlayer<class_sampleplayer>`, :ref:`InstancePlaceholder<class_instanceplaceholder>`, :ref:`HTTPRequest<class_httprequest>`, :ref:`StreamPlayer<class_streamplayer>`, :ref:`EditorResourcePreview<class_editorresourcepreview>`, :ref:`CanvasItem<class_canvasitem>`
+**Inherited By:** :ref:`Viewport<class_viewport>`, :ref:`Timer<class_timer>`, :ref:`CanvasLayer<class_canvaslayer>`, :ref:`Tween<class_tween>`, :ref:`Spatial<class_spatial>`, :ref:`AnimationPlayer<class_animationplayer>`, :ref:`EditorFileSystem<class_editorfilesystem>`, :ref:`EditorPlugin<class_editorplugin>`, :ref:`ResourcePreloader<class_resourcepreloader>`, :ref:`AnimationTreePlayer<class_animationtreeplayer>`, :ref:`InstancePlaceholder<class_instanceplaceholder>`, :ref:`HTTPRequest<class_httprequest>`, :ref:`EditorResourcePreview<class_editorresourcepreview>`, :ref:`CanvasItem<class_canvasitem>`, :ref:`AudioPlayer<class_audioplayer>`
 
 **Category:** Core
 
@@ -43,7 +43,7 @@ Member Functions
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`            | :ref:`can_process<class_Node_can_process>`  **(** **)** const                                                                                                                   |
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_node>`            | :ref:`duplicate<class_Node_duplicate>`  **(** :ref:`bool<class_bool>` use_instancing=false  **)** const                                                                         |
+| :ref:`Node<class_node>`            | :ref:`duplicate<class_Node_duplicate>`  **(** :ref:`int<class_int>` flags=15  **)** const                                                                                       |
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Node<class_node>`            | :ref:`find_node<class_Node_find_node>`  **(** :ref:`String<class_string>` mask, :ref:`bool<class_bool>` recursive=true, :ref:`bool<class_bool>` owned=true  **)** const         |
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -99,6 +99,8 @@ Member Functions
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`            | :ref:`is_fixed_processing<class_Node_is_fixed_processing>`  **(** **)** const                                                                                                   |
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`            | :ref:`is_fixed_processing_internal<class_Node_is_fixed_processing_internal>`  **(** **)** const                                                                                 |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`            | :ref:`is_greater_than<class_Node_is_greater_than>`  **(** :ref:`Node<class_node>` node  **)** const                                                                             |
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`            | :ref:`is_in_group<class_Node_is_in_group>`  **(** :ref:`String<class_string>` group  **)** const                                                                                |
@@ -110,6 +112,8 @@ Member Functions
 | :ref:`bool<class_bool>`            | :ref:`is_processing<class_Node_is_processing>`  **(** **)** const                                                                                                               |
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`            | :ref:`is_processing_input<class_Node_is_processing_input>`  **(** **)** const                                                                                                   |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`            | :ref:`is_processing_internal<class_Node_is_processing_internal>`  **(** **)** const                                                                                             |
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`            | :ref:`is_processing_unhandled_input<class_Node_is_processing_unhandled_input>`  **(** **)** const                                                                               |
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -134,6 +138,8 @@ Member Functions
 | void                               | :ref:`remove_from_group<class_Node_remove_from_group>`  **(** :ref:`String<class_string>` group  **)**                                                                          |
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`replace_by<class_Node_replace_by>`  **(** :ref:`Node<class_node>` node, :ref:`bool<class_bool>` keep_data=false  **)**                                                    |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`request_ready<class_Node_request_ready>`  **(** **)**                                                                                                                     |
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`rpc<class_Node_rpc>`  **(** :ref:`String<class_string>` method  **)** vararg                                                                                              |
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -161,6 +167,8 @@ Member Functions
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_fixed_process<class_Node_set_fixed_process>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                             |
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_fixed_process_internal<class_Node_set_fixed_process_internal>`  **(** :ref:`bool<class_bool>` enable  **)**                                                           |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_name<class_Node_set_name>`  **(** :ref:`String<class_string>` name  **)**                                                                                             |
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_network_mode<class_Node_set_network_mode>`  **(** :ref:`int<class_int>` mode  **)**                                                                                   |
@@ -173,6 +181,8 @@ Member Functions
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_process_input<class_Node_set_process_input>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                             |
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_process_internal<class_Node_set_process_internal>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                       |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_process_unhandled_input<class_Node_set_process_unhandled_input>`  **(** :ref:`bool<class_bool>` enable  **)**                                                         |
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_process_unhandled_key_input<class_Node_set_process_unhandled_key_input>`  **(** :ref:`bool<class_bool>` enable  **)**                                                 |
@@ -183,9 +193,16 @@ Member Functions
 Signals
 -------
 
--  **enter_tree**  **(** **)**
--  **exit_tree**  **(** **)**
 -  **renamed**  **(** **)**
+-  **tree_entered**  **(** **)**
+-  **tree_exited**  **(** **)**
+
+Member Variables
+----------------
+
+- :ref:`NodePath<class_nodepath>` **_import_path**
+- :ref:`bool<class_bool>` **editor/display_folded**
+- :ref:`int<class_int>` **pause_mode**
 
 Numeric Constants
 -----------------
@@ -204,6 +221,9 @@ Numeric Constants
 - **NOTIFICATION_DRAG_BEGIN** = **21**
 - **NOTIFICATION_DRAG_END** = **22**
 - **NOTIFICATION_PATH_CHANGED** = **23**
+- **NOTIFICATION_TRANSLATION_CHANGED** = **24**
+- **NOTIFICATION_INTERNAL_PROCESS** = **25**
+- **NOTIFICATION_INTERNAL_FIXED_PROCESS** = **26**
 - **NETWORK_MODE_INHERIT** = **0**
 - **NETWORK_MODE_MASTER** = **1**
 - **NETWORK_MODE_SLAVE** = **2**
@@ -215,6 +235,10 @@ Numeric Constants
 - **PAUSE_MODE_INHERIT** = **0**
 - **PAUSE_MODE_STOP** = **1**
 - **PAUSE_MODE_PROCESS** = **2**
+- **DUPLICATE_SIGNALS** = **1**
+- **DUPLICATE_GROUPS** = **2**
+- **DUPLICATE_SCRIPTS** = **4**
+- **DUPLICATE_USE_INSTANCING** = **8**
 
 Description
 -----------
@@ -332,9 +356,11 @@ Return true if the node can process, i.e. whether its pause mode allows processi
 
 .. _class_Node_duplicate:
 
-- :ref:`Node<class_node>`  **duplicate**  **(** :ref:`bool<class_bool>` use_instancing=false  **)** const
+- :ref:`Node<class_node>`  **duplicate**  **(** :ref:`int<class_int>` flags=15  **)** const
 
-Duplicate the node, returning a new :ref:`Node<class_node>`. If ``use_instancing`` is true, the duplicated node will be a new instance of the original :ref:`PackedScene<class_packedscene>`, if not it will be an independent node. The duplicated node has the same group assignments and signals as the original one.
+Duplicate the node, returning a new :ref:`Node<class_node>`.
+
+You can fine-tune the behavior using the ``flags``, which are based on the DUPLICATE\_\* constants.
 
 .. _class_Node_find_node:
 
@@ -502,6 +528,10 @@ Return *true* if the "node" argument is a direct or indirect child of the curren
 
 Return true if fixed processing is enabled (see :ref:`set_fixed_process<class_Node_set_fixed_process>`).
 
+.. _class_Node_is_fixed_processing_internal:
+
+- :ref:`bool<class_bool>`  **is_fixed_processing_internal**  **(** **)** const
+
 .. _class_Node_is_greater_than:
 
 - :ref:`bool<class_bool>`  **is_greater_than**  **(** :ref:`Node<class_node>` node  **)** const
@@ -531,6 +561,10 @@ Return whether processing is enabled in the current node (see :ref:`set_process<
 - :ref:`bool<class_bool>`  **is_processing_input**  **(** **)** const
 
 Return true if the node is processing input (see :ref:`set_process_input<class_Node_set_process_input>`).
+
+.. _class_Node_is_processing_internal:
+
+- :ref:`bool<class_bool>`  **is_processing_internal**  **(** **)** const
 
 .. _class_Node_is_processing_unhandled_input:
 
@@ -597,6 +631,10 @@ Remove a node from a group.
 - void  **replace_by**  **(** :ref:`Node<class_node>` node, :ref:`bool<class_bool>` keep_data=false  **)**
 
 Replace a node in a scene by a given one. Subscriptions that pass through this node will be lost.
+
+.. _class_Node_request_ready:
+
+- void  **request_ready**  **(** **)**
 
 .. _class_Node_rpc:
 
@@ -674,6 +712,10 @@ A node can contain a filename. This filename should not be changed by the user, 
 
 Enables or disables node fixed framerate processing. When a node is being processed, it will receive a NOTIFICATION_PROCESS at a fixed (usually 60 fps, check :ref:`OS<class_os>` to change that) interval (and the :ref:`_fixed_process<class_Node__fixed_process>` callback will be called if exists). It is common to check how much time was elapsed since the previous frame by calling :ref:`get_fixed_process_delta_time<class_Node_get_fixed_process_delta_time>`.
 
+.. _class_Node_set_fixed_process_internal:
+
+- void  **set_fixed_process_internal**  **(** :ref:`bool<class_bool>` enable  **)**
+
 .. _class_Node_set_name:
 
 - void  **set_name**  **(** :ref:`String<class_string>` name  **)**
@@ -707,6 +749,10 @@ Enables or disables node processing. When a node is being processed, it will rec
 - void  **set_process_input**  **(** :ref:`bool<class_bool>` enable  **)**
 
 Enable input processing for node. This is not required for GUI controls! It hooks up the node to receive all input (see :ref:`_input<class_Node__input>`).
+
+.. _class_Node_set_process_internal:
+
+- void  **set_process_internal**  **(** :ref:`bool<class_bool>` enable  **)**
 
 .. _class_Node_set_process_unhandled_input:
 

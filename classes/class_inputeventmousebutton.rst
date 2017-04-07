@@ -41,15 +41,15 @@ Member Variables
 - :ref:`int<class_int>` **device** - Device identifier.
 - :ref:`bool<class_bool>` **doubleclick** - Whether the event is a double-click.
 - :ref:`Vector2<class_vector2>` **global_pos** - Global position of the mouse click.
-- :ref:`int<class_int>` **global_x** - Global X coordinate of the mouse click.
-- :ref:`int<class_int>` **global_y** - Global Y coordinate of the mouse click.
+- :ref:`float<class_float>` **global_x** - Global X coordinate of the mouse click.
+- :ref:`float<class_float>` **global_y** - Global Y coordinate of the mouse click.
 - :ref:`bool<class_bool>` **meta** - State of the Meta modifier.
 - :ref:`Vector2<class_vector2>` **pos** - Local position of the mouse click.
 - :ref:`bool<class_bool>` **pressed** - Pressed state of the mouse button.
 - :ref:`bool<class_bool>` **shift** - State of the Shift modifier.
 - :ref:`int<class_int>` **type** - Type of event (one of the [InputEvent] constants).
-- :ref:`int<class_int>` **x** - Local X coordinate of the mouse click.
-- :ref:`int<class_int>` **y** - Local Y coordinate of the mouse click.
+- :ref:`float<class_float>` **x** - Local X coordinate of the mouse click.
+- :ref:`float<class_float>` **y** - Local Y coordinate of the mouse click.
 
 Numeric Constants
 -----------------
@@ -58,8 +58,8 @@ Numeric Constants
 - **KEY** = **1** --- Key event.
 - **MOUSE_MOTION** = **2** --- Mouse motion event.
 - **MOUSE_BUTTON** = **3** --- Mouse button event.
-- **JOYSTICK_MOTION** = **4** --- Joystick motion event.
-- **JOYSTICK_BUTTON** = **5** --- Joystick button event.
+- **JOYPAD_MOTION** = **4** --- Joypad motion event.
+- **JOYPAD_BUTTON** = **5** --- Joypad button event.
 - **SCREEN_TOUCH** = **6** --- Screen touch event.
 - **SCREEN_DRAG** = **7** --- Screen drag event.
 - **ACTION** = **8** --- Pre-defined action event (see :ref:`InputMap<class_inputmap>`).

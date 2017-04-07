@@ -28,6 +28,12 @@ Member Functions
 | void                         | :ref:`set_class_constant<class_VisualScriptClassConstant_set_class_constant>`  **(** :ref:`String<class_string>` name  **)** |
 +------------------------------+------------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`String<class_string>` **base_type**
+- :ref:`String<class_string>` **constant**
+
 Member Function Description
 ---------------------------
 

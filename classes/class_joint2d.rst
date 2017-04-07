@@ -38,6 +38,14 @@ Member Functions
 | void                             | :ref:`set_node_b<class_Joint2D_set_node_b>`  **(** :ref:`NodePath<class_nodepath>` node  **)**                                       |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`float<class_float>` **bias**
+- :ref:`bool<class_bool>` **disable_collision**
+- :ref:`NodePath<class_nodepath>` **node_a**
+- :ref:`NodePath<class_nodepath>` **node_b**
+
 Description
 -----------
 

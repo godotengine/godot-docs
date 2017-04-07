@@ -8,7 +8,7 @@ Separator
 
 **Inherits:** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`VSeparator<class_vseparator>`, :ref:`HSeparator<class_hseparator>`
+**Inherited By:** :ref:`HSeparator<class_hseparator>`, :ref:`VSeparator<class_vseparator>`
 
 **Category:** Core
 

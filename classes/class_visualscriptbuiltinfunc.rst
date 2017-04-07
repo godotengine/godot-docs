@@ -24,6 +24,11 @@ Member Functions
 | void                   | :ref:`set_func<class_VisualScriptBuiltinFunc_set_func>`  **(** :ref:`int<class_int>` which  **)** |
 +------------------------+---------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`int<class_int>` **function**
+
 Member Function Description
 ---------------------------
 

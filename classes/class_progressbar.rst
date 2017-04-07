@@ -24,6 +24,11 @@ Member Functions
 | void                     | :ref:`set_percent_visible<class_ProgressBar_set_percent_visible>`  **(** :ref:`bool<class_bool>` visible  **)** |
 +--------------------------+-----------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`bool<class_bool>` **percent_visible**
+
 Description
 -----------
 

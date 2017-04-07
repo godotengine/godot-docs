@@ -48,6 +48,18 @@ Member Functions
 | void                             | :ref:`set_property<class_VisualScriptPropertyGet_set_property>`  **(** :ref:`String<class_string>` property  **)**          |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`String<class_string>` **property/base_script**
+- :ref:`String<class_string>` **property/base_type**
+- :ref:`int<class_int>` **property/basic_type**
+- :ref:`int<class_int>` **property/event_type**
+- :ref:`NodePath<class_nodepath>` **property/node_path**
+- :ref:`String<class_string>` **property/property**
+- :ref:`int<class_int>` **property/set_mode**
+- :ref:`int<class_int>` **property/type_cache**
+
 Numeric Constants
 -----------------
 

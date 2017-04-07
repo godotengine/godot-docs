@@ -50,6 +50,18 @@ Member Functions
 | void                                           | :ref:`set_use_mipmaps<class_DynamicFont_set_use_mipmaps>`  **(** :ref:`bool<class_bool>` enable  **)**                                          |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`int<class_int>` **extra_spacing_bottom**
+- :ref:`int<class_int>` **extra_spacing_char**
+- :ref:`int<class_int>` **extra_spacing_space**
+- :ref:`int<class_int>` **extra_spacing_top**
+- :ref:`DynamicFontData<class_dynamicfontdata>` **font_data**
+- :ref:`int<class_int>` **size**
+- :ref:`bool<class_bool>` **use_filter**
+- :ref:`bool<class_bool>` **use_mipmaps**
+
 Numeric Constants
 -----------------
 

@@ -24,6 +24,11 @@ Member Functions
 | void                   | :ref:`set_columns<class_GridContainer_set_columns>`  **(** :ref:`int<class_int>` columns  **)** |
 +------------------------+-------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`int<class_int>` **columns**
+
 Description
 -----------
 

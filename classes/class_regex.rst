@@ -6,7 +6,7 @@
 RegEx
 =====
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
 
@@ -35,6 +35,11 @@ Member Functions
 +------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`  | :ref:`sub<class_RegEx_sub>`  **(** :ref:`String<class_string>` text, :ref:`String<class_string>` replacement, :ref:`bool<class_bool>` all=false, :ref:`int<class_int>` start=0, :ref:`int<class_int>` end=-1  **)** const |
 +------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+- :ref:`String<class_string>` **pattern**
 
 Description
 -----------

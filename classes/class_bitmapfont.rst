@@ -48,6 +48,17 @@ Member Functions
 | void                           | :ref:`set_height<class_BitmapFont_set_height>`  **(** :ref:`float<class_float>` px  **)**                                                                                                                                                        |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`float<class_float>` **ascent**
+- :ref:`PoolIntArray<class_poolintarray>` **chars**
+- :ref:`bool<class_bool>` **distance_field**
+- :ref:`BitmapFont<class_bitmapfont>` **fallback**
+- :ref:`float<class_float>` **height**
+- :ref:`PoolIntArray<class_poolintarray>` **kernings**
+- :ref:`Array<class_array>` **textures**
+
 Member Function Description
 ---------------------------
 

@@ -18,30 +18,35 @@ Brief Description
 Member Functions
 ----------------
 
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2Array<class_vector2array>`  | :ref:`find_path<class_PolygonPathFinder_find_path>`  **(** :ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to  **)**                       |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_rect2>`                | :ref:`get_bounds<class_PolygonPathFinder_get_bounds>`  **(** **)** const                                                                                     |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`            | :ref:`get_closest_point<class_PolygonPathFinder_get_closest_point>`  **(** :ref:`Vector2<class_vector2>` point  **)** const                                  |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2Array<class_vector2array>`  | :ref:`get_intersections<class_PolygonPathFinder_get_intersections>`  **(** :ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to  **)** const |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                | :ref:`get_point_penalty<class_PolygonPathFinder_get_point_penalty>`  **(** :ref:`int<class_int>` idx  **)** const                                            |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`is_point_inside<class_PolygonPathFinder_is_point_inside>`  **(** :ref:`Vector2<class_vector2>` point  **)** const                                      |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_point_penalty<class_PolygonPathFinder_set_point_penalty>`  **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` penalty  **)**               |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`setup<class_PolygonPathFinder_setup>`  **(** :ref:`Vector2Array<class_vector2array>` points, :ref:`IntArray<class_intarray>` connections  **)**        |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolVector2Array<class_poolvector2array>`  | :ref:`find_path<class_PolygonPathFinder_find_path>`  **(** :ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to  **)**                                |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2<class_rect2>`                        | :ref:`get_bounds<class_PolygonPathFinder_get_bounds>`  **(** **)** const                                                                                              |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`                    | :ref:`get_closest_point<class_PolygonPathFinder_get_closest_point>`  **(** :ref:`Vector2<class_vector2>` point  **)** const                                           |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolVector2Array<class_poolvector2array>`  | :ref:`get_intersections<class_PolygonPathFinder_get_intersections>`  **(** :ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to  **)** const          |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                        | :ref:`get_point_penalty<class_PolygonPathFinder_get_point_penalty>`  **(** :ref:`int<class_int>` idx  **)** const                                                     |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                          | :ref:`is_point_inside<class_PolygonPathFinder_is_point_inside>`  **(** :ref:`Vector2<class_vector2>` point  **)** const                                               |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_point_penalty<class_PolygonPathFinder_set_point_penalty>`  **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` penalty  **)**                        |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`setup<class_PolygonPathFinder_setup>`  **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`PoolIntArray<class_poolintarray>` connections  **)** |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+- :ref:`Dictionary<class_dictionary>` **data**
 
 Member Function Description
 ---------------------------
 
 .. _class_PolygonPathFinder_find_path:
 
-- :ref:`Vector2Array<class_vector2array>`  **find_path**  **(** :ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to  **)**
+- :ref:`PoolVector2Array<class_poolvector2array>`  **find_path**  **(** :ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to  **)**
 
 .. _class_PolygonPathFinder_get_bounds:
 
@@ -53,7 +58,7 @@ Member Function Description
 
 .. _class_PolygonPathFinder_get_intersections:
 
-- :ref:`Vector2Array<class_vector2array>`  **get_intersections**  **(** :ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to  **)** const
+- :ref:`PoolVector2Array<class_poolvector2array>`  **get_intersections**  **(** :ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to  **)** const
 
 .. _class_PolygonPathFinder_get_point_penalty:
 
@@ -69,6 +74,6 @@ Member Function Description
 
 .. _class_PolygonPathFinder_setup:
 
-- void  **setup**  **(** :ref:`Vector2Array<class_vector2array>` points, :ref:`IntArray<class_intarray>` connections  **)**
+- void  **setup**  **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`PoolIntArray<class_poolintarray>` connections  **)**
 
 

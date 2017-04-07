@@ -28,6 +28,12 @@ Member Functions
 | void                         | :ref:`set_action_name<class_VisualScriptInputAction_set_action_name>`  **(** :ref:`String<class_string>` name  **)** |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`String<class_string>` **action**
+- :ref:`int<class_int>` **mode**
+
 Member Function Description
 ---------------------------
 

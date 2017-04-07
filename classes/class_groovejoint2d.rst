@@ -28,6 +28,12 @@ Member Functions
 | void                       | :ref:`set_length<class_GrooveJoint2D_set_length>`  **(** :ref:`float<class_float>` length  **)**                 |
 +----------------------------+------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`float<class_float>` **initial_offset**
+- :ref:`float<class_float>` **length**
+
 Description
 -----------
 

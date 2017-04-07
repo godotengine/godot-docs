@@ -27,9 +27,7 @@ Member Functions
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`add_custom_type<class_EditorPlugin_add_custom_type>`  **(** :ref:`String<class_string>` type, :ref:`String<class_string>` base, :ref:`Script<class_script>` script, :ref:`Texture<class_texture>` icon  **)** |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                       | :ref:`add_export_plugin<class_EditorPlugin_add_export_plugin>`  **(** :ref:`EditorExportPlugin<class_editorexportplugin>` plugin  **)**                                                                             |
-+------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                       | :ref:`add_import_plugin<class_EditorPlugin_add_import_plugin>`  **(** :ref:`EditorImportPlugin<class_editorimportplugin>` plugin  **)**                                                                             |
+| void                                                       | :ref:`add_tool_submenu_item<class_EditorPlugin_add_tool_submenu_item>`  **(** :ref:`String<class_string>` name, :ref:`PopupMenu<class_popupmenu>` submenu  **)**                                                    |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`apply_changes<class_EditorPlugin_apply_changes>`  **(** **)** virtual                                                                                                                                         |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -39,21 +37,21 @@ Member Functions
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`edit<class_EditorPlugin_edit>`  **(** :ref:`Object<class_object>` object  **)** virtual                                                                                                                       |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                    | :ref:`forward_canvas_input_event<class_EditorPlugin_forward_canvas_input_event>`  **(** :ref:`Matrix32<class_matrix32>` canvas_xform, :ref:`InputEvent<class_inputevent>` event  **)** virtual                      |
+| void                                                       | :ref:`edit_resource<class_EditorPlugin_edit_resource>`  **(** :ref:`Object<class_object>` arg0  **)**                                                                                                               |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                       | :ref:`forward_draw_over_canvas<class_EditorPlugin_forward_draw_over_canvas>`  **(** :ref:`Matrix32<class_matrix32>` canvas_xform, :ref:`Control<class_control>` canvas  **)** virtual                               |
+| :ref:`bool<class_bool>`                                    | :ref:`forward_canvas_gui_input<class_EditorPlugin_forward_canvas_gui_input>`  **(** :ref:`Transform2D<class_transform2d>` canvas_xform, :ref:`InputEvent<class_inputevent>` event  **)** virtual                    |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                    | :ref:`forward_spatial_input_event<class_EditorPlugin_forward_spatial_input_event>`  **(** :ref:`Camera<class_camera>` camera, :ref:`InputEvent<class_inputevent>` event  **)** virtual                              |
+| void                                                       | :ref:`forward_draw_over_canvas<class_EditorPlugin_forward_draw_over_canvas>`  **(** :ref:`Transform2D<class_transform2d>` canvas_xform, :ref:`Control<class_control>` canvas  **)** virtual                         |
++------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                    | :ref:`forward_spatial_gui_input<class_EditorPlugin_forward_spatial_gui_input>`  **(** :ref:`Camera<class_camera>` camera, :ref:`InputEvent<class_inputevent>` event  **)** virtual                                  |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Control<class_control>`                              | :ref:`get_base_control<class_EditorPlugin_get_base_control>`  **(** **)**                                                                                                                                           |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StringArray<class_stringarray>`                      | :ref:`get_breakpoints<class_EditorPlugin_get_breakpoints>`  **(** **)** virtual                                                                                                                                     |
+| :ref:`PoolStringArray<class_poolstringarray>`              | :ref:`get_breakpoints<class_EditorPlugin_get_breakpoints>`  **(** **)** virtual                                                                                                                                     |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`EditorSettings<class_editorsettings>`                | :ref:`get_editor_settings<class_EditorPlugin_get_editor_settings>`  **(** **)**                                                                                                                                     |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Control<class_control>`                              | :ref:`get_editor_viewport<class_EditorPlugin_get_editor_viewport>`  **(** **)**                                                                                                                                     |
-+------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                       | :ref:`edit_resource<class_EditorPlugin_edit_resource>`  **(** :ref:`Resource<class_resource>` p_resource  **)**                                                                                                     |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                                | :ref:`get_name<class_EditorPlugin_get_name>`  **(** **)** virtual                                                                                                                                                   |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -88,10 +86,6 @@ Member Functions
 | void                                                       | :ref:`remove_control_from_docks<class_EditorPlugin_remove_control_from_docks>`  **(** :ref:`Control<class_control>` control  **)**                                                                                  |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`remove_custom_type<class_EditorPlugin_remove_custom_type>`  **(** :ref:`String<class_string>` type  **)**                                                                                                     |
-+------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                       | :ref:`remove_export_plugin<class_EditorPlugin_remove_export_plugin>`  **(** :ref:`EditorExportPlugin<class_editorexportplugin>` plugin  **)**                                                                       |
-+------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                       | :ref:`remove_import_plugin<class_EditorPlugin_remove_import_plugin>`  **(** :ref:`EditorImportPlugin<class_editorimportplugin>` plugin  **)**                                                                       |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`save_external_data<class_EditorPlugin_save_external_data>`  **(** **)** virtual                                                                                                                               |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -168,19 +162,9 @@ You can use the :ref:`EditorPlugin.handles<class_EditorPlugin_handles>` to check
 
 During run-time, this will be a simple object with a script so this function does not need to be called then.
 
-.. _class_EditorPlugin_add_export_plugin:
+.. _class_EditorPlugin_add_tool_submenu_item:
 
-- void  **add_export_plugin**  **(** :ref:`EditorExportPlugin<class_editorexportplugin>` plugin  **)**
-
-Add an export plugin. Plugins of this kind can change files being exported. On exit don't forget to call :ref:`remove_export_plugin<class_EditorPlugin_remove_export_plugin>`.
-
-.. _class_EditorPlugin_add_import_plugin:
-
-- void  **add_import_plugin**  **(** :ref:`EditorImportPlugin<class_editorimportplugin>` plugin  **)**
-
-Add an import plugin. These plugins manage importing external content (from outside the project) into formats the engine can understand.
-
-On exit, don't forget to remove the plugin by calling :ref:`remove_import_plugin<class_EditorPlugin_remove_import_plugin>`
+- void  **add_tool_submenu_item**  **(** :ref:`String<class_string>` name, :ref:`PopupMenu<class_popupmenu>` submenu  **)**
 
 .. _class_EditorPlugin_apply_changes:
 
@@ -208,21 +192,25 @@ This is used for plugins that create gizmos used by the spatial editor. Just che
 
 This function is used for plugins that edit specific object types (nodes or resources). It requests the editor to edit the given object.
 
-.. _class_EditorPlugin_forward_canvas_input_event:
+.. _class_EditorPlugin_edit_resource:
 
-- :ref:`bool<class_bool>`  **forward_canvas_input_event**  **(** :ref:`Matrix32<class_matrix32>` canvas_xform, :ref:`InputEvent<class_inputevent>` event  **)** virtual
+- void  **edit_resource**  **(** :ref:`Object<class_object>` arg0  **)**
+
+.. _class_EditorPlugin_forward_canvas_gui_input:
+
+- :ref:`bool<class_bool>`  **forward_canvas_gui_input**  **(** :ref:`Transform2D<class_transform2d>` canvas_xform, :ref:`InputEvent<class_inputevent>` event  **)** virtual
 
 If your plugin is active (because handles() returned true to the object), any input interaction with the 2D canvas editor will be first forwarded here. The canvas transform (containing zoom and offset to transform to edited world coordinates) is provided, but the input supplied is in untransformed coordinates to the canvas editor. Return true if you want to eat this event and not pass it to the canvas editor.
 
 .. _class_EditorPlugin_forward_draw_over_canvas:
 
-- void  **forward_draw_over_canvas**  **(** :ref:`Matrix32<class_matrix32>` canvas_xform, :ref:`Control<class_control>` canvas  **)** virtual
+- void  **forward_draw_over_canvas**  **(** :ref:`Transform2D<class_transform2d>` canvas_xform, :ref:`Control<class_control>` canvas  **)** virtual
 
 This function is called every time the 2D canvas editor draws (which overlays over the edited scene). Drawing over the supplied control will draw over the edited scene. To convert from control coordinates to edited scene coordinates (including zoom and offset), a transform is also provided. If you require this control to be redraw, call :ref:`update_canvas<class_EditorPlugin_update_canvas>`.
 
-.. _class_EditorPlugin_forward_spatial_input_event:
+.. _class_EditorPlugin_forward_spatial_gui_input:
 
-- :ref:`bool<class_bool>`  **forward_spatial_input_event**  **(** :ref:`Camera<class_camera>` camera, :ref:`InputEvent<class_inputevent>` event  **)** virtual
+- :ref:`bool<class_bool>`  **forward_spatial_gui_input**  **(** :ref:`Camera<class_camera>` camera, :ref:`InputEvent<class_inputevent>` event  **)** virtual
 
 This is a low level function for plugins that edit a given objet type derived from Spatial to capture the input of the viewport. The function is only being called if your object is being edited.
 
@@ -238,7 +226,7 @@ Get a base control where it's safe to place dialogs. Many plugins open dialogs a
 
 .. _class_EditorPlugin_get_breakpoints:
 
-- :ref:`StringArray<class_stringarray>`  **get_breakpoints**  **(** **)** virtual
+- :ref:`PoolStringArray<class_poolstringarray>`  **get_breakpoints**  **(** **)** virtual
 
 This is for editors that edit script based objects. You can return a list of breakpoints in the format (script:line), for example: res://path_to_script.gd:25
 
@@ -253,12 +241,6 @@ Get the general settings for the editor (the same window that appears in the Set
 - :ref:`Control<class_control>`  **get_editor_viewport**  **(** **)**
 
 Get the main editor control. Use this as a parent for main screens.
-
-.. _class_EditorPlugin_edit_resource:
-
-- void  **edit_resource**  **(** :ref:`Resource<class_resource>` p_resource  **)**
-
-Tells the editor to handle the edit of the given resource. Ex: If you pass a Script as a argument, the editor will open the scriptEditor.
 
 .. _class_EditorPlugin_get_name:
 
@@ -359,18 +341,6 @@ Remove the control from the dock. Don't forget to call this if you added one, so
 - void  **remove_custom_type**  **(** :ref:`String<class_string>` type  **)**
 
 Remove a custom type added by :ref:`EditorPlugin.add_custom_type<class_EditorPlugin_add_custom_type>`
-
-.. _class_EditorPlugin_remove_export_plugin:
-
-- void  **remove_export_plugin**  **(** :ref:`EditorExportPlugin<class_editorexportplugin>` plugin  **)**
-
-Remove the export plugin, don't forget to call this on exit.
-
-.. _class_EditorPlugin_remove_import_plugin:
-
-- void  **remove_import_plugin**  **(** :ref:`EditorImportPlugin<class_editorimportplugin>` plugin  **)**
-
-Remove the import plugin, don't forget to call this on exit.
 
 .. _class_EditorPlugin_save_external_data:
 

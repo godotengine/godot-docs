@@ -24,6 +24,11 @@ Member Functions
 | void                     | :ref:`set_sort_enabled<class_YSort_set_sort_enabled>`  **(** :ref:`bool<class_bool>` enabled  **)** |
 +--------------------------+-----------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`bool<class_bool>` **sort_enabled**
+
 Description
 -----------
 

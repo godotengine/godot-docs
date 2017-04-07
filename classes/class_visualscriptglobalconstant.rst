@@ -24,6 +24,11 @@ Member Functions
 | void                   | :ref:`set_global_constant<class_VisualScriptGlobalConstant_set_global_constant>`  **(** :ref:`int<class_int>` index  **)** |
 +------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`int<class_int>` **constant**
+
 Member Function Description
 ---------------------------
 

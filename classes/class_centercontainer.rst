@@ -24,6 +24,11 @@ Member Functions
 | void                     | :ref:`set_use_top_left<class_CenterContainer_set_use_top_left>`  **(** :ref:`bool<class_bool>` enable  **)** |
 +--------------------------+--------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`bool<class_bool>` **use_top_left**
+
 Description
 -----------
 

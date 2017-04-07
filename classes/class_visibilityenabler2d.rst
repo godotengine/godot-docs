@@ -24,6 +24,16 @@ Member Functions
 | void                     | :ref:`set_enabler<class_VisibilityEnabler2D_set_enabler>`  **(** :ref:`int<class_int>` enabler, :ref:`bool<class_bool>` enabled  **)** |
 +--------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`bool<class_bool>` **fixed_process_parent**
+- :ref:`bool<class_bool>` **freeze_bodies**
+- :ref:`bool<class_bool>` **pause_animated_sprites**
+- :ref:`bool<class_bool>` **pause_animations**
+- :ref:`bool<class_bool>` **pause_particles**
+- :ref:`bool<class_bool>` **process_parent**
+
 Numeric Constants
 -----------------
 

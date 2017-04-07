@@ -8,7 +8,7 @@ BoxContainer
 
 **Inherits:** :ref:`Container<class_container>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`VBoxContainer<class_vboxcontainer>`, :ref:`ButtonGroup<class_buttongroup>`, :ref:`HBoxContainer<class_hboxcontainer>`, :ref:`ColorPicker<class_colorpicker>`
+**Inherited By:** :ref:`VBoxContainer<class_vboxcontainer>`, :ref:`HBoxContainer<class_hboxcontainer>`, :ref:`ColorPicker<class_colorpicker>`
 
 **Category:** Core
 
@@ -27,6 +27,11 @@ Member Functions
 +------------------------+------------------------------------------------------------------------------------------------------+
 | void                   | :ref:`set_alignment<class_BoxContainer_set_alignment>`  **(** :ref:`int<class_int>` alignment  **)** |
 +------------------------+------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+- :ref:`int<class_int>` **alignment**
 
 Numeric Constants
 -----------------

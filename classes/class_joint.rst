@@ -38,6 +38,14 @@ Member Functions
 | void                             | :ref:`set_solver_priority<class_Joint_set_solver_priority>`  **(** :ref:`int<class_int>` priority  **)**                           |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`bool<class_bool>` **collision/exclude_nodes**
+- :ref:`NodePath<class_nodepath>` **nodes/node_a**
+- :ref:`NodePath<class_nodepath>` **nodes/node_b**
+- :ref:`int<class_int>` **solver/priority**
+
 Member Function Description
 ---------------------------
 

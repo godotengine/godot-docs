@@ -18,11 +18,13 @@ Placeholder for the root :ref:`Node<class_node>` of a :ref:`PackedScene<class_pa
 Member Functions
 ----------------
 
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_instance_path<class_InstancePlaceholder_get_instance_path>`  **(** **)** const                                                        |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`replace_by_instance<class_InstancePlaceholder_replace_by_instance>`  **(** :ref:`PackedScene<class_packedscene>` custom_scene=NULL  **)** |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`          | :ref:`get_instance_path<class_InstancePlaceholder_get_instance_path>`  **(** **)** const                                                        |
++--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_dictionary>`  | :ref:`get_stored_values<class_InstancePlaceholder_get_stored_values>`  **(** :ref:`bool<class_bool>` with_order=false  **)**                    |
++--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                 | :ref:`replace_by_instance<class_InstancePlaceholder_replace_by_instance>`  **(** :ref:`PackedScene<class_packedscene>` custom_scene=NULL  **)** |
++--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -39,6 +41,10 @@ Member Function Description
 - :ref:`String<class_string>`  **get_instance_path**  **(** **)** const
 
 Retrieve the path to the :ref:`PackedScene<class_packedscene>` resource file that is loaded by default when calling :ref:`replace_by_instance<class_InstancePlaceholder_replace_by_instance>`.
+
+.. _class_InstancePlaceholder_get_stored_values:
+
+- :ref:`Dictionary<class_dictionary>`  **get_stored_values**  **(** :ref:`bool<class_bool>` with_order=false  **)**
 
 .. _class_InstancePlaceholder_replace_by_instance:
 

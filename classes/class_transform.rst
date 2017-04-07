@@ -19,13 +19,13 @@ Member Functions
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform<class_transform>`  | :ref:`Transform<class_Transform_Transform>`  **(** :ref:`Vector3<class_vector3>` x_axis, :ref:`Vector3<class_vector3>` y_axis, :ref:`Vector3<class_vector3>` z_axis, :ref:`Vector3<class_vector3>` origin  **)** |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_transform>`  | :ref:`Transform<class_Transform_Transform>`  **(** :ref:`Matrix3<class_matrix3>` basis, :ref:`Vector3<class_vector3>` origin  **)**                                                                              |
+| :ref:`Transform<class_transform>`  | :ref:`Transform<class_Transform_Transform>`  **(** :ref:`Basis<class_basis>` basis, :ref:`Vector3<class_vector3>` origin  **)**                                                                                  |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_transform>`  | :ref:`Transform<class_Transform_Transform>`  **(** :ref:`Matrix32<class_matrix32>` from  **)**                                                                                                                   |
+| :ref:`Transform<class_transform>`  | :ref:`Transform<class_Transform_Transform>`  **(** :ref:`Transform2D<class_transform2d>` from  **)**                                                                                                             |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform<class_transform>`  | :ref:`Transform<class_Transform_Transform>`  **(** :ref:`Quat<class_quat>` from  **)**                                                                                                                           |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_transform>`  | :ref:`Transform<class_Transform_Transform>`  **(** :ref:`Matrix3<class_matrix3>` from  **)**                                                                                                                     |
+| :ref:`Transform<class_transform>`  | :ref:`Transform<class_Transform_Transform>`  **(** :ref:`Basis<class_basis>` from  **)**                                                                                                                         |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform<class_transform>`  | :ref:`affine_inverse<class_Transform_affine_inverse>`  **(** **)**                                                                                                                                               |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -49,13 +49,13 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`Matrix3<class_matrix3>` **basis** - The basis contains 3 [Vector3]. X axis, Y axis, and Z axis.
+- :ref:`Basis<class_basis>` **basis** - The basis is a matrix containing 3 [Vector3] as its columns: X axis, Y axis, and Z axis. These vectors can be interpreted as the basis vectors of local coordinate system travelling with the object.
 - :ref:`Vector3<class_vector3>` **origin** - The origin of the transform. Which is the translation offset.
 
 Description
 -----------
 
-Transform is used to store transformations, including translations. It consists of a Matrix3 "basis" and Vector3 "origin". Transform is used to represent transformations of any object in space. It is similar to a 4x3 matrix.
+Transform is used to store translation, rotation and scaling transformations. It consists of a Basis "basis" and Vector3 "origin". Transform is used to represent transformations of objects in space, and as such, determine their position, orientation and scale. It is similar to a 3x4 matrix.
 
 Member Function Description
 ---------------------------
@@ -64,43 +64,43 @@ Member Function Description
 
 - :ref:`Transform<class_transform>`  **Transform**  **(** :ref:`Vector3<class_vector3>` x_axis, :ref:`Vector3<class_vector3>` y_axis, :ref:`Vector3<class_vector3>` z_axis, :ref:`Vector3<class_vector3>` origin  **)**
 
-Construct the Transform from four Vector3. Each axis creates the basis.
+Construct the Transform from four Vector3. Each axis corresponds to local basis vectors (some of which may be scaled).
 
 .. _class_Transform_Transform:
 
-- :ref:`Transform<class_transform>`  **Transform**  **(** :ref:`Matrix3<class_matrix3>` basis, :ref:`Vector3<class_vector3>` origin  **)**
+- :ref:`Transform<class_transform>`  **Transform**  **(** :ref:`Basis<class_basis>` basis, :ref:`Vector3<class_vector3>` origin  **)**
 
-Construct the Transform from a Matrix3 and Vector3.
+Construct the Transform from a Basis and Vector3.
 
 .. _class_Transform_Transform:
 
-- :ref:`Transform<class_transform>`  **Transform**  **(** :ref:`Matrix32<class_matrix32>` from  **)**
+- :ref:`Transform<class_transform>`  **Transform**  **(** :ref:`Transform2D<class_transform2d>` from  **)**
 
-Construct the Transform from a Matrix32.
+Construct the Transform from a Transform2D.
 
 .. _class_Transform_Transform:
 
 - :ref:`Transform<class_transform>`  **Transform**  **(** :ref:`Quat<class_quat>` from  **)**
 
-Construct the Transform from a Quat. The origin will be Vector3(0, 0, 0)
+Construct the Transform from a Quat. The origin will be Vector3(0, 0, 0).
 
 .. _class_Transform_Transform:
 
-- :ref:`Transform<class_transform>`  **Transform**  **(** :ref:`Matrix3<class_matrix3>` from  **)**
+- :ref:`Transform<class_transform>`  **Transform**  **(** :ref:`Basis<class_basis>` from  **)**
 
-Construct the Transform from a Matrix3. The origin will be Vector3(0, 0, 0)
+Construct the Transform from a Basis. The origin will be Vector3(0, 0, 0).
 
 .. _class_Transform_affine_inverse:
 
 - :ref:`Transform<class_transform>`  **affine_inverse**  **(** **)**
 
-Returns the inverse of the transfrom, even if the transform has scale or the axis vectors are not orthogonal.
+Returns the inverse of the transfrom, under the assumption that the transformation is composed of rotation, scaling and translation.
 
 .. _class_Transform_inverse:
 
 - :ref:`Transform<class_transform>`  **inverse**  **(** **)**
 
-Returns the inverse of the transform.
+Returns the inverse of the transform, under the assumption that the transformation is composed of rotation and translation (no scaling).
 
 .. _class_Transform_looking_at:
 
@@ -118,25 +118,25 @@ Returns a transfrom with the basis orthogonal (90 degrees), and normalized axis 
 
 - :ref:`Transform<class_transform>`  **rotated**  **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` phi  **)**
 
-Rotate the transform locally. This introduces an additional pre-rotation to the transform, changing the basis to basis \* Matrix3(axis, phi).
+Rotate the transform around given axis by phi. The axis must be a normalized vector.
 
 .. _class_Transform_scaled:
 
 - :ref:`Transform<class_transform>`  **scaled**  **(** :ref:`Vector3<class_vector3>` scale  **)**
 
-Scale the transform locally.
+Scale the transform by the specified 3D scaling factors.
 
 .. _class_Transform_translated:
 
 - :ref:`Transform<class_transform>`  **translated**  **(** :ref:`Vector3<class_vector3>` ofs  **)**
 
-Translate the transform locally.
+Translate the transform by the specified displacement.
 
 .. _class_Transform_xform:
 
 - var  **xform**  **(** var v  **)**
 
-Transforms vector "v" by this transform.
+Transforms the given vector "v" by this transform.
 
 .. _class_Transform_xform_inv:
 

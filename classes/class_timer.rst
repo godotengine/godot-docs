@@ -27,15 +27,17 @@ Member Functions
 +----------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`    | :ref:`has_autostart<class_Timer_has_autostart>`  **(** **)** const                                         |
 +----------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`is_active<class_Timer_is_active>`  **(** **)** const                                                 |
-+----------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`    | :ref:`is_one_shot<class_Timer_is_one_shot>`  **(** **)** const                                             |
 +----------------------------+------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_active<class_Timer_set_active>`  **(** :ref:`bool<class_bool>` active  **)**                     |
+| :ref:`bool<class_bool>`    | :ref:`is_paused<class_Timer_is_paused>`  **(** **)** const                                                 |
++----------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`is_stopped<class_Timer_is_stopped>`  **(** **)** const                                               |
 +----------------------------+------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`set_autostart<class_Timer_set_autostart>`  **(** :ref:`bool<class_bool>` enable  **)**               |
 +----------------------------+------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`set_one_shot<class_Timer_set_one_shot>`  **(** :ref:`bool<class_bool>` enable  **)**                 |
++----------------------------+------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_paused<class_Timer_set_paused>`  **(** :ref:`bool<class_bool>` paused  **)**                     |
 +----------------------------+------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`set_timer_process_mode<class_Timer_set_timer_process_mode>`  **(** :ref:`int<class_int>` mode  **)** |
 +----------------------------+------------------------------------------------------------------------------------------------------------+
@@ -50,6 +52,14 @@ Signals
 -------
 
 -  **timeout**  **(** **)**
+
+Member Variables
+----------------
+
+- :ref:`bool<class_bool>` **autostart**
+- :ref:`bool<class_bool>` **one_shot**
+- :ref:`int<class_int>` **process_mode**
+- :ref:`float<class_float>` **wait_time**
 
 Numeric Constants
 -----------------
@@ -89,23 +99,21 @@ Return the wait time in seconds.
 
 Return true if set to automatically start when entering the scene.
 
-.. _class_Timer_is_active:
-
-- :ref:`bool<class_bool>`  **is_active**  **(** **)** const
-
-Return if the timer is active or not.
-
 .. _class_Timer_is_one_shot:
 
 - :ref:`bool<class_bool>`  **is_one_shot**  **(** **)** const
 
 Return true if configured as one-shot.
 
-.. _class_Timer_set_active:
+.. _class_Timer_is_paused:
 
-- void  **set_active**  **(** :ref:`bool<class_bool>` active  **)**
+- :ref:`bool<class_bool>`  **is_paused**  **(** **)** const
 
-Set whether the timer is active or not. An inactive timer will be paused until it is activated again.
+Return if the timer is paused or not.
+
+.. _class_Timer_is_stopped:
+
+- :ref:`bool<class_bool>`  **is_stopped**  **(** **)** const
 
 .. _class_Timer_set_autostart:
 
@@ -118,6 +126,12 @@ Set to automatically start when entering the scene.
 - void  **set_one_shot**  **(** :ref:`bool<class_bool>` enable  **)**
 
 Set as one-shot. If enabled, the timer will stop after timeout, otherwise it will automatically restart.
+
+.. _class_Timer_set_paused:
+
+- void  **set_paused**  **(** :ref:`bool<class_bool>` paused  **)**
+
+Set whether the timer is paused or not. A paused timer will be inactive until it is unpaused again.
 
 .. _class_Timer_set_timer_process_mode:
 

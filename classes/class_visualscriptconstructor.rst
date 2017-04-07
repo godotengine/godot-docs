@@ -28,6 +28,12 @@ Member Functions
 | void                                 | :ref:`set_constructor_type<class_VisualScriptConstructor_set_constructor_type>`  **(** :ref:`int<class_int>` type  **)**            |
 +--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`Dictionary<class_dictionary>` **constructor**
+- :ref:`int<class_int>` **type**
+
 Member Function Description
 ---------------------------
 

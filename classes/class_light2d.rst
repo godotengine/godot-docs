@@ -18,85 +18,117 @@ Node that casts light in a 2D environment.
 Member Functions
 ----------------
 
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`      | :ref:`get_color<class_Light2D_get_color>`  **(** **)** const                                                                 |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_energy<class_Light2D_get_energy>`  **(** **)** const                                                               |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_height<class_Light2D_get_height>`  **(** **)** const                                                               |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_item_mask<class_Light2D_get_item_mask>`  **(** **)** const                                                         |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_item_shadow_mask<class_Light2D_get_item_shadow_mask>`  **(** **)** const                                           |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_layer_range_max<class_Light2D_get_layer_range_max>`  **(** **)** const                                             |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_layer_range_min<class_Light2D_get_layer_range_min>`  **(** **)** const                                             |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_mode<class_Light2D_get_mode>`  **(** **)** const                                                                   |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_shadow_buffer_size<class_Light2D_get_shadow_buffer_size>`  **(** **)** const                                       |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`      | :ref:`get_shadow_color<class_Light2D_get_shadow_color>`  **(** **)** const                                                   |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_shadow_esm_multiplier<class_Light2D_get_shadow_esm_multiplier>`  **(** **)** const                                 |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`    | :ref:`get_texture<class_Light2D_get_texture>`  **(** **)** const                                                             |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_texture_offset<class_Light2D_get_texture_offset>`  **(** **)** const                                               |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_texture_scale<class_Light2D_get_texture_scale>`  **(** **)** const                                                 |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_z_range_max<class_Light2D_get_z_range_max>`  **(** **)** const                                                     |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_z_range_min<class_Light2D_get_z_range_min>`  **(** **)** const                                                     |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_enabled<class_Light2D_is_enabled>`  **(** **)** const                                                               |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_shadow_enabled<class_Light2D_is_shadow_enabled>`  **(** **)** const                                                 |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_color<class_Light2D_set_color>`  **(** :ref:`Color<class_color>` color  **)**                                      |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_enabled<class_Light2D_set_enabled>`  **(** :ref:`bool<class_bool>` enabled  **)**                                  |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_energy<class_Light2D_set_energy>`  **(** :ref:`float<class_float>` energy  **)**                                   |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_height<class_Light2D_set_height>`  **(** :ref:`float<class_float>` height  **)**                                   |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_item_mask<class_Light2D_set_item_mask>`  **(** :ref:`int<class_int>` item_mask  **)**                              |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_item_shadow_mask<class_Light2D_set_item_shadow_mask>`  **(** :ref:`int<class_int>` item_shadow_mask  **)**         |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_layer_range_max<class_Light2D_set_layer_range_max>`  **(** :ref:`int<class_int>` layer  **)**                      |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_layer_range_min<class_Light2D_set_layer_range_min>`  **(** :ref:`int<class_int>` layer  **)**                      |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_mode<class_Light2D_set_mode>`  **(** :ref:`int<class_int>` mode  **)**                                             |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_shadow_buffer_size<class_Light2D_set_shadow_buffer_size>`  **(** :ref:`int<class_int>` size  **)**                 |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_shadow_color<class_Light2D_set_shadow_color>`  **(** :ref:`Color<class_color>` shadow_color  **)**                 |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_shadow_enabled<class_Light2D_set_shadow_enabled>`  **(** :ref:`bool<class_bool>` enabled  **)**                    |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_shadow_esm_multiplier<class_Light2D_set_shadow_esm_multiplier>`  **(** :ref:`float<class_float>` multiplier  **)** |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_texture<class_Light2D_set_texture>`  **(** :ref:`Object<class_object>` texture  **)**                              |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_texture_offset<class_Light2D_set_texture_offset>`  **(** :ref:`Vector2<class_vector2>` texture_offset  **)**       |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_texture_scale<class_Light2D_set_texture_scale>`  **(** :ref:`float<class_float>` texture_scale  **)**              |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_z_range_max<class_Light2D_set_z_range_max>`  **(** :ref:`int<class_int>` z  **)**                                  |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_z_range_min<class_Light2D_set_z_range_min>`  **(** :ref:`int<class_int>` z  **)**                                  |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`      | :ref:`get_color<class_Light2D_get_color>`  **(** **)** const                                                                        |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_energy<class_Light2D_get_energy>`  **(** **)** const                                                                      |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_height<class_Light2D_get_height>`  **(** **)** const                                                                      |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_item_cull_mask<class_Light2D_get_item_cull_mask>`  **(** **)** const                                                      |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_item_shadow_cull_mask<class_Light2D_get_item_shadow_cull_mask>`  **(** **)** const                                        |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_layer_range_max<class_Light2D_get_layer_range_max>`  **(** **)** const                                                    |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_layer_range_min<class_Light2D_get_layer_range_min>`  **(** **)** const                                                    |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_mode<class_Light2D_get_mode>`  **(** **)** const                                                                          |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_shadow_buffer_size<class_Light2D_get_shadow_buffer_size>`  **(** **)** const                                              |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`      | :ref:`get_shadow_color<class_Light2D_get_shadow_color>`  **(** **)** const                                                          |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_shadow_filter<class_Light2D_get_shadow_filter>`  **(** **)** const                                                        |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_shadow_gradient_length<class_Light2D_get_shadow_gradient_length>`  **(** **)** const                                      |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`    | :ref:`get_texture<class_Light2D_get_texture>`  **(** **)** const                                                                    |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_texture_offset<class_Light2D_get_texture_offset>`  **(** **)** const                                                      |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_texture_scale<class_Light2D_get_texture_scale>`  **(** **)** const                                                        |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_z_range_max<class_Light2D_get_z_range_max>`  **(** **)** const                                                            |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_z_range_min<class_Light2D_get_z_range_min>`  **(** **)** const                                                            |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_editor_only<class_Light2D_is_editor_only>`  **(** **)** const                                                              |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_enabled<class_Light2D_is_enabled>`  **(** **)** const                                                                      |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_shadow_enabled<class_Light2D_is_shadow_enabled>`  **(** **)** const                                                        |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_color<class_Light2D_set_color>`  **(** :ref:`Color<class_color>` color  **)**                                             |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_editor_only<class_Light2D_set_editor_only>`  **(** :ref:`bool<class_bool>` editor_only  **)**                             |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_enabled<class_Light2D_set_enabled>`  **(** :ref:`bool<class_bool>` enabled  **)**                                         |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_energy<class_Light2D_set_energy>`  **(** :ref:`float<class_float>` energy  **)**                                          |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_height<class_Light2D_set_height>`  **(** :ref:`float<class_float>` height  **)**                                          |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_item_cull_mask<class_Light2D_set_item_cull_mask>`  **(** :ref:`int<class_int>` item_cull_mask  **)**                      |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_item_shadow_cull_mask<class_Light2D_set_item_shadow_cull_mask>`  **(** :ref:`int<class_int>` item_shadow_cull_mask  **)** |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_layer_range_max<class_Light2D_set_layer_range_max>`  **(** :ref:`int<class_int>` layer  **)**                             |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_layer_range_min<class_Light2D_set_layer_range_min>`  **(** :ref:`int<class_int>` layer  **)**                             |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_mode<class_Light2D_set_mode>`  **(** :ref:`int<class_int>` mode  **)**                                                    |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_shadow_buffer_size<class_Light2D_set_shadow_buffer_size>`  **(** :ref:`int<class_int>` size  **)**                        |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_shadow_color<class_Light2D_set_shadow_color>`  **(** :ref:`Color<class_color>` shadow_color  **)**                        |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_shadow_enabled<class_Light2D_set_shadow_enabled>`  **(** :ref:`bool<class_bool>` enabled  **)**                           |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_shadow_filter<class_Light2D_set_shadow_filter>`  **(** :ref:`int<class_int>` filter  **)**                                |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_shadow_gradient_length<class_Light2D_set_shadow_gradient_length>`  **(** :ref:`float<class_float>` multiplier  **)**      |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_texture<class_Light2D_set_texture>`  **(** :ref:`Object<class_object>` texture  **)**                                     |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_texture_offset<class_Light2D_set_texture_offset>`  **(** :ref:`Vector2<class_vector2>` texture_offset  **)**              |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_texture_scale<class_Light2D_set_texture_scale>`  **(** :ref:`float<class_float>` texture_scale  **)**                     |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_z_range_max<class_Light2D_set_z_range_max>`  **(** :ref:`int<class_int>` z  **)**                                         |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_z_range_min<class_Light2D_set_z_range_min>`  **(** :ref:`int<class_int>` z  **)**                                         |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+- :ref:`Color<class_color>` **color**
+- :ref:`bool<class_bool>` **editor_only**
+- :ref:`bool<class_bool>` **enabled**
+- :ref:`float<class_float>` **energy**
+- :ref:`int<class_int>` **mode**
+- :ref:`Vector2<class_vector2>` **offset**
+- :ref:`float<class_float>` **range_height**
+- :ref:`int<class_int>` **range_item_cull_mask**
+- :ref:`int<class_int>` **range_layer_max**
+- :ref:`int<class_int>` **range_layer_min**
+- :ref:`int<class_int>` **range_z_max**
+- :ref:`int<class_int>` **range_z_min**
+- :ref:`float<class_float>` **scale**
+- :ref:`int<class_int>` **shadow_buffer_size**
+- :ref:`Color<class_color>` **shadow_color**
+- :ref:`bool<class_bool>` **shadow_enabled**
+- :ref:`float<class_float>` **shadow_filter**
+- :ref:`float<class_float>` **shadow_gradient_length**
+- :ref:`int<class_int>` **shadow_item_cull_mask**
+- :ref:`Texture<class_texture>` **texture**
 
 Numeric Constants
 -----------------
 
 - **MODE_ADD** = **0** --- Adds the value of pixels corresponding to the Light2D to the values of pixels under it. This is the common behaviour of a light.
-- **MODE_SUB** = **1** --- Substract the value of pixels corresponding to the Light2D to the values of pixels under it, resulting in inversed light effect.
+- **MODE_SUB** = **1** --- Subtract the value of pixels corresponding to the Light2D to the values of pixels under it, resulting in inversed light effect.
 - **MODE_MIX** = **2** --- Mix the value of pixels corresponding to the Light2D to the values of pixels under it by linear interpolation.
 - **MODE_MASK** = **3** --- The light texture of the Light2D is used as a mask, hiding or revealing parts of the screen underneath depending on the value of each pixel of the light (mask) texture.
 
@@ -126,17 +158,13 @@ Return the energy value of the Light2D.
 
 Return the height of the Light2D. Used with 2D normalmapping.
 
-.. _class_Light2D_get_item_mask:
+.. _class_Light2D_get_item_cull_mask:
 
-- :ref:`int<class_int>`  **get_item_mask**  **(** **)** const
+- :ref:`int<class_int>`  **get_item_cull_mask**  **(** **)** const
 
-Return the item mask of the Light2D.
+.. _class_Light2D_get_item_shadow_cull_mask:
 
-.. _class_Light2D_get_item_shadow_mask:
-
-- :ref:`int<class_int>`  **get_item_shadow_mask**  **(** **)** const
-
-Return the item shadow mask of the Light2D.
+- :ref:`int<class_int>`  **get_item_shadow_cull_mask**  **(** **)** const
 
 .. _class_Light2D_get_layer_range_max:
 
@@ -168,11 +196,13 @@ Return the shadow buffer size.
 
 Return the color of casted shadows for this Light2D.
 
-.. _class_Light2D_get_shadow_esm_multiplier:
+.. _class_Light2D_get_shadow_filter:
 
-- :ref:`float<class_float>`  **get_shadow_esm_multiplier**  **(** **)** const
+- :ref:`int<class_int>`  **get_shadow_filter**  **(** **)** const
 
-Return the Exponential Shadow Multiplier (ESM) value of the Light2D.
+.. _class_Light2D_get_shadow_gradient_length:
+
+- :ref:`float<class_float>`  **get_shadow_gradient_length**  **(** **)** const
 
 .. _class_Light2D_get_texture:
 
@@ -204,6 +234,10 @@ Get the maximum Z value that objects of the scene can be in order to be affected
 
 Get the minimum Z value that objects of the scene have to be in order to be affected by the Light2D.
 
+.. _class_Light2D_is_editor_only:
+
+- :ref:`bool<class_bool>`  **is_editor_only**  **(** **)** const
+
 .. _class_Light2D_is_enabled:
 
 - :ref:`bool<class_bool>`  **is_enabled**  **(** **)** const
@@ -221,6 +255,10 @@ Return true if shadow casting is enabled for this Light2D, else return false.
 - void  **set_color**  **(** :ref:`Color<class_color>` color  **)**
 
 Set the color of the Light2D.
+
+.. _class_Light2D_set_editor_only:
+
+- void  **set_editor_only**  **(** :ref:`bool<class_bool>` editor_only  **)**
 
 .. _class_Light2D_set_enabled:
 
@@ -240,15 +278,15 @@ Set the energy value of the Light2D. The bigger the value, the stronger the ligh
 
 Set the height of the Light2D. Used with 2D normalmapping.
 
-.. _class_Light2D_set_item_mask:
+.. _class_Light2D_set_item_cull_mask:
 
-- void  **set_item_mask**  **(** :ref:`int<class_int>` item_mask  **)**
+- void  **set_item_cull_mask**  **(** :ref:`int<class_int>` item_cull_mask  **)**
 
 Set the item mask of the Light2D to 'item_mask' value.
 
-.. _class_Light2D_set_item_shadow_mask:
+.. _class_Light2D_set_item_shadow_cull_mask:
 
-- void  **set_item_shadow_mask**  **(** :ref:`int<class_int>` item_shadow_mask  **)**
+- void  **set_item_shadow_cull_mask**  **(** :ref:`int<class_int>` item_shadow_cull_mask  **)**
 
 Set the item shadow mask to 'item_shadow_mask' value.
 
@@ -288,11 +326,13 @@ Set the color of casted shadows for this Light2D.
 
 Enable or disable shadows casting from this Light2D according to the 'enabled' parameter.
 
-.. _class_Light2D_set_shadow_esm_multiplier:
+.. _class_Light2D_set_shadow_filter:
 
-- void  **set_shadow_esm_multiplier**  **(** :ref:`float<class_float>` multiplier  **)**
+- void  **set_shadow_filter**  **(** :ref:`int<class_int>` filter  **)**
 
-Set the Exponential Shadow Multiplier (ESM) value of the Light2D.
+.. _class_Light2D_set_shadow_gradient_length:
+
+- void  **set_shadow_gradient_length**  **(** :ref:`float<class_float>` multiplier  **)**
 
 .. _class_Light2D_set_texture:
 

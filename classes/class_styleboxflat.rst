@@ -44,6 +44,16 @@ Member Functions
 | void                       | :ref:`set_light_color<class_StyleBoxFlat_set_light_color>`  **(** :ref:`Color<class_color>` color  **)** |
 +----------------------------+----------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`Color<class_color>` **bg_color**
+- :ref:`bool<class_bool>` **border_blend**
+- :ref:`int<class_int>` **border_size**
+- :ref:`Color<class_color>` **dark_color**
+- :ref:`bool<class_bool>` **draw_bg**
+- :ref:`Color<class_color>` **light_color**
+
 Description
 -----------
 

@@ -24,6 +24,11 @@ Member Functions
 | void                         | :ref:`set_resource_path<class_VisualScriptResourcePath_set_resource_path>`  **(** :ref:`String<class_string>` path  **)** |
 +------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`String<class_string>` **path**
+
 Member Function Description
 ---------------------------
 

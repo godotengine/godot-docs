@@ -6,7 +6,7 @@
 ButtonGroup
 ===========
 
-**Inherits:** :ref:`BoxContainer<class_boxcontainer>` **<** :ref:`Container<class_container>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
 
@@ -18,17 +18,9 @@ Group of Buttons.
 Member Functions
 ----------------
 
-+--------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`            | :ref:`get_button_list<class_ButtonGroup_get_button_list>`  **(** **)** const                                             |
-+--------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`BaseButton<class_basebutton>`  | :ref:`get_focused_button<class_ButtonGroup_get_focused_button>`  **(** **)** const                                       |
-+--------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`BaseButton<class_basebutton>`  | :ref:`get_pressed_button<class_ButtonGroup_get_pressed_button>`  **(** **)** const                                       |
-+--------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                | :ref:`get_pressed_button_index<class_ButtonGroup_get_pressed_button_index>`  **(** **)** const                           |
-+--------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| void                                 | :ref:`set_pressed_button<class_ButtonGroup_set_pressed_button>`  **(** :ref:`BaseButton<class_basebutton>` button  **)** |
-+--------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------+------------------------------------------------------------------------------+
+| :ref:`BaseButton<class_basebutton>`  | :ref:`get_pressed_button<class_ButtonGroup_get_pressed_button>`  **(** **)** |
++--------------------------------------+------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -38,34 +30,10 @@ Group of :ref:`Button<class_button>`. All direct and indirect children buttons b
 Member Function Description
 ---------------------------
 
-.. _class_ButtonGroup_get_button_list:
-
-- :ref:`Array<class_array>`  **get_button_list**  **(** **)** const
-
-Return the list of all the buttons in the group.
-
-.. _class_ButtonGroup_get_focused_button:
-
-- :ref:`BaseButton<class_basebutton>`  **get_focused_button**  **(** **)** const
-
-Return the focused button.
-
 .. _class_ButtonGroup_get_pressed_button:
 
-- :ref:`BaseButton<class_basebutton>`  **get_pressed_button**  **(** **)** const
+- :ref:`BaseButton<class_basebutton>`  **get_pressed_button**  **(** **)**
 
 Return the pressed button.
-
-.. _class_ButtonGroup_get_pressed_button_index:
-
-- :ref:`int<class_int>`  **get_pressed_button_index**  **(** **)** const
-
-Return the index of the pressed button (by tree order).
-
-.. _class_ButtonGroup_set_pressed_button:
-
-- void  **set_pressed_button**  **(** :ref:`BaseButton<class_basebutton>` button  **)**
-
-Set the button to be pressed.
 
 

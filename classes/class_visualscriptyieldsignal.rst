@@ -36,6 +36,14 @@ Member Functions
 | void                             | :ref:`set_signal<class_VisualScriptYieldSignal_set_signal>`  **(** :ref:`String<class_string>` signal  **)**              |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`String<class_string>` **signal/base_type**
+- :ref:`int<class_int>` **signal/call_mode**
+- :ref:`NodePath<class_nodepath>` **signal/node_path**
+- :ref:`String<class_string>` **signal/signal**
+
 Numeric Constants
 -----------------
 

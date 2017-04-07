@@ -63,8 +63,6 @@ Member Functions
 +----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`get_single_select_cell_editing_only_when_already_selected<class_Tree_get_single_select_cell_editing_only_when_already_selected>`  **(** **)** const                           |
 +----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`          | :ref:`is_delayed_text_editor_enabled<class_Tree_is_delayed_text_editor_enabled>`  **(** **)** const                                                                                 |
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`is_folding_hidden<class_Tree_is_folding_hidden>`  **(** **)** const                                                                                                           |
 +----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_allow_rmb_select<class_Tree_set_allow_rmb_select>`  **(** :ref:`bool<class_bool>` allow  **)**                                                                            |
@@ -78,8 +76,6 @@ Member Functions
 | void                             | :ref:`set_column_titles_visible<class_Tree_set_column_titles_visible>`  **(** :ref:`bool<class_bool>` visible  **)**                                                                |
 +----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_columns<class_Tree_set_columns>`  **(** :ref:`int<class_int>` amount  **)**                                                                                               |
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_delayed_text_editor<class_Tree_set_delayed_text_editor>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                     |
 +----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_drop_mode_flags<class_Tree_set_drop_mode_flags>`  **(** :ref:`int<class_int>` flags  **)**                                                                                |
 +----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -270,10 +266,6 @@ Get the column number of the current selection.
 
 Get whether the editing of a cell should only happen when it is already selected.
 
-.. _class_Tree_is_delayed_text_editor_enabled:
-
-- :ref:`bool<class_bool>`  **is_delayed_text_editor_enabled**  **(** **)** const
-
 .. _class_Tree_is_folding_hidden:
 
 - :ref:`bool<class_bool>`  **is_folding_hidden**  **(** **)** const
@@ -315,10 +307,6 @@ Set whether the column titles visibility.
 - void  **set_columns**  **(** :ref:`int<class_int>` amount  **)**
 
 Set the amount of columns.
-
-.. _class_Tree_set_delayed_text_editor:
-
-- void  **set_delayed_text_editor**  **(** :ref:`bool<class_bool>` enable  **)**
 
 .. _class_Tree_set_drop_mode_flags:
 

@@ -99,11 +99,32 @@ Member Functions
 Signals
 -------
 
--  **body_enter**  **(** :ref:`Object<class_object>` body  **)**
--  **body_enter_shape**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape  **)**
--  **body_exit**  **(** :ref:`Object<class_object>` body  **)**
--  **body_exit_shape**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape  **)**
+-  **body_entered**  **(** :ref:`Object<class_object>` body  **)**
+-  **body_exited**  **(** :ref:`Object<class_object>` body  **)**
+-  **body_shape_entered**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape  **)**
+-  **body_shape_exited**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape  **)**
 -  **sleeping_state_changed**  **(** **)**
+
+Member Variables
+----------------
+
+- :ref:`float<class_float>` **angular_damp**
+- :ref:`Vector3<class_vector3>` **angular_velocity**
+- :ref:`int<class_int>` **axis_lock**
+- :ref:`float<class_float>` **bounce**
+- :ref:`bool<class_bool>` **can_sleep**
+- :ref:`bool<class_bool>` **contact_monitor**
+- :ref:`int<class_int>` **contacts_reported**
+- :ref:`bool<class_bool>` **continuous_cd**
+- :ref:`bool<class_bool>` **custom_integrator**
+- :ref:`float<class_float>` **friction**
+- :ref:`float<class_float>` **gravity_scale**
+- :ref:`float<class_float>` **linear_damp**
+- :ref:`Vector3<class_vector3>` **linear_velocity**
+- :ref:`float<class_float>` **mass**
+- :ref:`int<class_int>` **mode**
+- :ref:`bool<class_bool>` **sleeping**
+- :ref:`float<class_float>` **weight**
 
 Numeric Constants
 -----------------

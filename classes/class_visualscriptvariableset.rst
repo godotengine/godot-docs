@@ -24,6 +24,11 @@ Member Functions
 | void                         | :ref:`set_variable<class_VisualScriptVariableSet_set_variable>`  **(** :ref:`String<class_string>` name  **)** |
 +------------------------------+----------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`String<class_string>` **variable/name**
+
 Member Function Description
 ---------------------------
 

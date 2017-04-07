@@ -30,6 +30,11 @@ Member Functions
 | void                                 | :ref:`set_shortcut<class_ShortCut_set_shortcut>`  **(** :ref:`InputEvent<class_inputevent>` event  **)**     |
 +--------------------------------------+--------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`InputEvent<class_inputevent>` **shortcut**
+
 Member Function Description
 ---------------------------
 

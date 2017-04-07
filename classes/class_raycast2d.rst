@@ -62,6 +62,15 @@ Member Functions
 | void                           | :ref:`set_type_mask<class_RayCast2D_set_type_mask>`  **(** :ref:`int<class_int>` mask  **)**                       |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`Vector2<class_vector2>` **cast_to**
+- :ref:`bool<class_bool>` **enabled**
+- :ref:`bool<class_bool>` **exclude_parent**
+- :ref:`int<class_int>` **layer_mask**
+- :ref:`int<class_int>` **type_mask**
+
 Description
 -----------
 

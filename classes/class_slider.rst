@@ -30,6 +30,13 @@ Member Functions
 | void                     | :ref:`set_ticks_on_borders<class_Slider_set_ticks_on_borders>`  **(** :ref:`bool<class_bool>` ticks_on_border  **)** |
 +--------------------------+----------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`int<class_int>` **focus_mode**
+- :ref:`int<class_int>` **tick_count**
+- :ref:`bool<class_bool>` **ticks_on_borders**
+
 Description
 -----------
 

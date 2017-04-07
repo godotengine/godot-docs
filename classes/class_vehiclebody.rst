@@ -42,6 +42,15 @@ Member Functions
 | void                           | :ref:`set_steering<class_VehicleBody_set_steering>`  **(** :ref:`float<class_float>` steering  **)**             |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`float<class_float>` **brake**
+- :ref:`float<class_float>` **engine_force**
+- :ref:`float<class_float>` **friction**
+- :ref:`float<class_float>` **mass**
+- :ref:`float<class_float>` **steering**
+
 Member Function Description
 ---------------------------
 

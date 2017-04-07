@@ -18,19 +18,19 @@ Brief Description
 Member Functions
 ----------------
 
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`            | :ref:`get_closest_point<class_Navigation2D_get_closest_point>`  **(** :ref:`Vector2<class_vector2>` to_point  **)**                                                                                          |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`              | :ref:`get_closest_point_owner<class_Navigation2D_get_closest_point_owner>`  **(** :ref:`Vector2<class_vector2>` to_point  **)**                                                                              |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2Array<class_vector2array>`  | :ref:`get_simple_path<class_Navigation2D_get_simple_path>`  **(** :ref:`Vector2<class_vector2>` start, :ref:`Vector2<class_vector2>` end, :ref:`bool<class_bool>` optimize=true  **)**                       |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                    | :ref:`navpoly_create<class_Navigation2D_navpoly_create>`  **(** :ref:`NavigationPolygon<class_navigationpolygon>` mesh, :ref:`Matrix32<class_matrix32>` xform, :ref:`Object<class_object>` owner=NULL  **)** |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`navpoly_remove<class_Navigation2D_navpoly_remove>`  **(** :ref:`int<class_int>` id  **)**                                                                                                              |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`navpoly_set_transform<class_Navigation2D_navpoly_set_transform>`  **(** :ref:`int<class_int>` id, :ref:`Matrix32<class_matrix32>` xform  **)**                                                         |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`                    | :ref:`get_closest_point<class_Navigation2D_get_closest_point>`  **(** :ref:`Vector2<class_vector2>` to_point  **)**                                                                                                |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`                      | :ref:`get_closest_point_owner<class_Navigation2D_get_closest_point_owner>`  **(** :ref:`Vector2<class_vector2>` to_point  **)**                                                                                    |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolVector2Array<class_poolvector2array>`  | :ref:`get_simple_path<class_Navigation2D_get_simple_path>`  **(** :ref:`Vector2<class_vector2>` start, :ref:`Vector2<class_vector2>` end, :ref:`bool<class_bool>` optimize=true  **)**                             |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                            | :ref:`navpoly_create<class_Navigation2D_navpoly_create>`  **(** :ref:`NavigationPolygon<class_navigationpolygon>` mesh, :ref:`Transform2D<class_transform2d>` xform, :ref:`Object<class_object>` owner=NULL  **)** |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`navpoly_remove<class_Navigation2D_navpoly_remove>`  **(** :ref:`int<class_int>` id  **)**                                                                                                                    |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`navpoly_set_transform<class_Navigation2D_navpoly_set_transform>`  **(** :ref:`int<class_int>` id, :ref:`Transform2D<class_transform2d>` xform  **)**                                                         |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Function Description
 ---------------------------
@@ -45,11 +45,11 @@ Member Function Description
 
 .. _class_Navigation2D_get_simple_path:
 
-- :ref:`Vector2Array<class_vector2array>`  **get_simple_path**  **(** :ref:`Vector2<class_vector2>` start, :ref:`Vector2<class_vector2>` end, :ref:`bool<class_bool>` optimize=true  **)**
+- :ref:`PoolVector2Array<class_poolvector2array>`  **get_simple_path**  **(** :ref:`Vector2<class_vector2>` start, :ref:`Vector2<class_vector2>` end, :ref:`bool<class_bool>` optimize=true  **)**
 
 .. _class_Navigation2D_navpoly_create:
 
-- :ref:`int<class_int>`  **navpoly_create**  **(** :ref:`NavigationPolygon<class_navigationpolygon>` mesh, :ref:`Matrix32<class_matrix32>` xform, :ref:`Object<class_object>` owner=NULL  **)**
+- :ref:`int<class_int>`  **navpoly_create**  **(** :ref:`NavigationPolygon<class_navigationpolygon>` mesh, :ref:`Transform2D<class_transform2d>` xform, :ref:`Object<class_object>` owner=NULL  **)**
 
 .. _class_Navigation2D_navpoly_remove:
 
@@ -57,6 +57,6 @@ Member Function Description
 
 .. _class_Navigation2D_navpoly_set_transform:
 
-- void  **navpoly_set_transform**  **(** :ref:`int<class_int>` id, :ref:`Matrix32<class_matrix32>` xform  **)**
+- void  **navpoly_set_transform**  **(** :ref:`int<class_int>` id, :ref:`Transform2D<class_transform2d>` xform  **)**
 
 

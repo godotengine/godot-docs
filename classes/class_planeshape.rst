@@ -24,6 +24,11 @@ Member Functions
 | void                       | :ref:`set_plane<class_PlaneShape_set_plane>`  **(** :ref:`Plane<class_plane>` plane  **)** |
 +----------------------------+--------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`Plane<class_plane>` **plane**
+
 Member Function Description
 ---------------------------
 

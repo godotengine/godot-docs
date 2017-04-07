@@ -24,6 +24,11 @@ Member Functions
 | void                             | :ref:`set_node_path<class_VisualScriptSceneNode_set_node_path>`  **(** :ref:`NodePath<class_nodepath>` path  **)** |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`NodePath<class_nodepath>` **node_path**
+
 Member Function Description
 ---------------------------
 

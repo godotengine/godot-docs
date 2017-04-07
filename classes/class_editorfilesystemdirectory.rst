@@ -41,8 +41,6 @@ Member Functions
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                              | :ref:`get_subdir_count<class_EditorFileSystemDirectory_get_subdir_count>`  **(** **)** const                                 |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                            | :ref:`is_missing_sources<class_EditorFileSystemDirectory_is_missing_sources>`  **(** :ref:`int<class_int>` idx  **)** const  |
-+--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
 
 Member Function Description
 ---------------------------
@@ -90,9 +88,5 @@ Member Function Description
 .. _class_EditorFileSystemDirectory_get_subdir_count:
 
 - :ref:`int<class_int>`  **get_subdir_count**  **(** **)** const
-
-.. _class_EditorFileSystemDirectory_is_missing_sources:
-
-- :ref:`bool<class_bool>`  **is_missing_sources**  **(** :ref:`int<class_int>` idx  **)** const
 
 

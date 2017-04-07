@@ -24,6 +24,11 @@ Member Functions
 | void                             | :ref:`set_remote_node<class_RemoteTransform_set_remote_node>`  **(** :ref:`NodePath<class_nodepath>` path  **)** |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`NodePath<class_nodepath>` **remote_path**
+
 Member Function Description
 ---------------------------
 

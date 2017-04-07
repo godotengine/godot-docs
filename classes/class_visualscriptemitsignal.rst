@@ -24,6 +24,11 @@ Member Functions
 | void                         | :ref:`set_signal<class_VisualScriptEmitSignal_set_signal>`  **(** :ref:`String<class_string>` name  **)** |
 +------------------------------+-----------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`String<class_string>` **signal/signal**
+
 Member Function Description
 ---------------------------
 

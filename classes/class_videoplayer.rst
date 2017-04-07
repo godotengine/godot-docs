@@ -64,6 +64,16 @@ Member Functions
 | void                                   | :ref:`stop<class_VideoPlayer_stop>`  **(** **)**                                                           |
 +----------------------------------------+------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`int<class_int>` **audio_track**
+- :ref:`bool<class_bool>` **autoplay**
+- :ref:`bool<class_bool>` **expand**
+- :ref:`bool<class_bool>` **paused**
+- :ref:`VideoStream<class_videostream>` **stream**
+- :ref:`float<class_float>` **volume_db**
+
 Description
 -----------
 

@@ -30,6 +30,13 @@ Member Functions
 | void                         | :ref:`set_trigger<class_CollisionShape2D_set_trigger>`  **(** :ref:`bool<class_bool>` enable  **)**                 |
 +------------------------------+---------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`int<class_int>` **_update_shape_index**
+- :ref:`Shape2D<class_shape2d>` **shape**
+- :ref:`bool<class_bool>` **trigger**
+
 Description
 -----------
 

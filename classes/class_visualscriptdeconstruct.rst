@@ -28,6 +28,13 @@ Member Functions
 | void                   | :ref:`set_deconstruct_type<class_VisualScriptDeconstruct_set_deconstruct_type>`  **(** :ref:`int<class_int>` type  **)**                   |
 +------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`Array<class_array>` **elem_cache**
+- :ref:`int<class_int>` **input_type**
+- :ref:`int<class_int>` **type**
+
 Member Function Description
 ---------------------------
 

@@ -24,6 +24,11 @@ Member Functions
 | void                   | :ref:`set_steps<class_VisualScriptSequence_set_steps>`  **(** :ref:`int<class_int>` steps  **)** |
 +------------------------+--------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`int<class_int>` **steps**
+
 Member Function Description
 ---------------------------
 

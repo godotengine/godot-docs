@@ -18,11 +18,16 @@ Concave polygon 2D shape resource for physics.
 Member Functions
 ----------------
 
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2Array<class_vector2array>`  | :ref:`get_segments<class_ConcavePolygonShape2D_get_segments>`  **(** **)** const                                             |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_segments<class_ConcavePolygonShape2D_set_segments>`  **(** :ref:`Vector2Array<class_vector2array>` segments  **)** |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolVector2Array<class_poolvector2array>`  | :ref:`get_segments<class_ConcavePolygonShape2D_get_segments>`  **(** **)** const                                                     |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_segments<class_ConcavePolygonShape2D_set_segments>`  **(** :ref:`PoolVector2Array<class_poolvector2array>` segments  **)** |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+- :ref:`PoolVector2Array<class_poolvector2array>` **segments**
 
 Description
 -----------
@@ -36,13 +41,13 @@ Member Function Description
 
 .. _class_ConcavePolygonShape2D_get_segments:
 
-- :ref:`Vector2Array<class_vector2array>`  **get_segments**  **(** **)** const
+- :ref:`PoolVector2Array<class_poolvector2array>`  **get_segments**  **(** **)** const
 
 Return the array of segments.
 
 .. _class_ConcavePolygonShape2D_set_segments:
 
-- void  **set_segments**  **(** :ref:`Vector2Array<class_vector2array>` segments  **)**
+- void  **set_segments**  **(** :ref:`PoolVector2Array<class_poolvector2array>` segments  **)**
 
 Set the array of segments.
 

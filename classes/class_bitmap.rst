@@ -34,6 +34,11 @@ Member Functions
 | void                           | :ref:`set_bit_rect<class_BitMap_set_bit_rect>`  **(** :ref:`Rect2<class_rect2>` p_rect, :ref:`bool<class_bool>` bit  **)** |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`Dictionary<class_dictionary>` **data**
+
 Member Function Description
 ---------------------------
 

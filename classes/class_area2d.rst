@@ -49,7 +49,7 @@ Member Functions
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`is_monitorable<class_Area2D_is_monitorable>`  **(** **)** const                                                                     |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_monitoring_enabled<class_Area2D_is_monitoring_enabled>`  **(** **)** const                                                       |
+| :ref:`bool<class_bool>`        | :ref:`is_monitoring<class_Area2D_is_monitoring>`  **(** **)** const                                                                       |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`overlaps_area<class_Area2D_overlaps_area>`  **(** :ref:`Object<class_object>` area  **)** const                                     |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
@@ -60,8 +60,6 @@ Member Functions
 | void                           | :ref:`set_collision_mask<class_Area2D_set_collision_mask>`  **(** :ref:`int<class_int>` collision_mask  **)**                             |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_collision_mask_bit<class_Area2D_set_collision_mask_bit>`  **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value  **)** |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_enable_monitoring<class_Area2D_set_enable_monitoring>`  **(** :ref:`bool<class_bool>` enable  **)**                             |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_gravity<class_Area2D_set_gravity>`  **(** :ref:`float<class_float>` gravity  **)**                                              |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
@@ -79,6 +77,8 @@ Member Functions
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_monitorable<class_Area2D_set_monitorable>`  **(** :ref:`bool<class_bool>` enable  **)**                                         |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_monitoring<class_Area2D_set_monitoring>`  **(** :ref:`bool<class_bool>` enable  **)**                                           |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_priority<class_Area2D_set_priority>`  **(** :ref:`float<class_float>` priority  **)**                                           |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_space_override_mode<class_Area2D_set_space_override_mode>`  **(** :ref:`int<class_int>` enable  **)**                           |
@@ -87,14 +87,30 @@ Member Functions
 Signals
 -------
 
--  **area_enter**  **(** :ref:`Object<class_object>` area  **)**
--  **area_enter_shape**  **(** :ref:`int<class_int>` area_id, :ref:`Object<class_object>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape  **)**
--  **area_exit**  **(** :ref:`Object<class_object>` area  **)**
--  **area_exit_shape**  **(** :ref:`int<class_int>` area_id, :ref:`Object<class_object>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape  **)**
--  **body_enter**  **(** :ref:`Object<class_object>` body  **)**
--  **body_enter_shape**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape  **)**
--  **body_exit**  **(** :ref:`Object<class_object>` body  **)**
--  **body_exit_shape**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape  **)**
+-  **area_entered**  **(** :ref:`Object<class_object>` area  **)**
+-  **area_exited**  **(** :ref:`Object<class_object>` area  **)**
+-  **area_shape_entered**  **(** :ref:`int<class_int>` area_id, :ref:`Object<class_object>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape  **)**
+-  **area_shape_exited**  **(** :ref:`int<class_int>` area_id, :ref:`Object<class_object>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape  **)**
+-  **body_entered**  **(** :ref:`Object<class_object>` body  **)**
+-  **body_exited**  **(** :ref:`Object<class_object>` body  **)**
+-  **body_shape_entered**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape  **)**
+-  **body_shape_exited**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape  **)**
+
+Member Variables
+----------------
+
+- :ref:`float<class_float>` **angular_damp**
+- :ref:`int<class_int>` **collision_layers**
+- :ref:`int<class_int>` **collision_mask**
+- :ref:`float<class_float>` **gravity**
+- :ref:`float<class_float>` **gravity_distance_scale**
+- :ref:`bool<class_bool>` **gravity_point**
+- :ref:`Vector2<class_vector2>` **gravity_vec**
+- :ref:`float<class_float>` **linear_damp**
+- :ref:`bool<class_bool>` **monitorable**
+- :ref:`bool<class_bool>` **monitoring**
+- :ref:`int<class_int>` **priority**
+- :ref:`int<class_int>` **space_override**
 
 Description
 -----------
@@ -194,9 +210,9 @@ Return whether gravity is a point. A point gravity will attract objects towards 
 
 Return whether this area can be detected by other, monitoring, areas.
 
-.. _class_Area2D_is_monitoring_enabled:
+.. _class_Area2D_is_monitoring:
 
-- :ref:`bool<class_bool>`  **is_monitoring_enabled**  **(** **)** const
+- :ref:`bool<class_bool>`  **is_monitoring**  **(** **)** const
 
 Return whether this area detects bodies/areas entering/exiting it.
 
@@ -231,12 +247,6 @@ Set the physics layers this area can scan for collisions.
 - void  **set_collision_mask_bit**  **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value  **)**
 
 Set/clear individual bits on the collision mask. This makes selecting the areas scanned easier.
-
-.. _class_Area2D_set_enable_monitoring:
-
-- void  **set_enable_monitoring**  **(** :ref:`bool<class_bool>` enable  **)**
-
-Set whether this area can detect bodies/areas entering/exiting it.
 
 .. _class_Area2D_set_gravity:
 
@@ -295,6 +305,12 @@ In practice, as the fraction of speed lost gets smaller with each frame, a value
 - void  **set_monitorable**  **(** :ref:`bool<class_bool>` enable  **)**
 
 Set whether this area can be detected by other, monitoring, areas. Only areas need to be marked as monitorable. Bodies are always so.
+
+.. _class_Area2D_set_monitoring:
+
+- void  **set_monitoring**  **(** :ref:`bool<class_bool>` enable  **)**
+
+Set whether this area can detect bodies/areas entering/exiting it.
 
 .. _class_Area2D_set_priority:
 

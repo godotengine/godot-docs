@@ -20,19 +20,19 @@ Abstraction and base class for packet-based protocols.
 Member Functions
 ----------------
 
-+----------------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_available_packet_count<class_PacketPeer_get_available_packet_count>`  **(** **)** const   |
-+----------------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`RawArray<class_rawarray>`  | :ref:`get_packet<class_PacketPeer_get_packet>`  **(** **)** const                                   |
-+----------------------------------+-----------------------------------------------------------------------------------------------------+
-| Error                            | :ref:`get_packet_error<class_PacketPeer_get_packet_error>`  **(** **)** const                       |
-+----------------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`    | :ref:`get_var<class_PacketPeer_get_var>`  **(** **)** const                                         |
-+----------------------------------+-----------------------------------------------------------------------------------------------------+
-| Error                            | :ref:`put_packet<class_PacketPeer_put_packet>`  **(** :ref:`RawArray<class_rawarray>` buffer  **)** |
-+----------------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`put_var<class_PacketPeer_put_var>`  **(** :ref:`Variant<class_variant>` var  **)**            |
-+----------------------------------+-----------------------------------------------------------------------------------------------------+
++--------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                      | :ref:`get_available_packet_count<class_PacketPeer_get_available_packet_count>`  **(** **)** const             |
++--------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolByteArray<class_poolbytearray>`  | :ref:`get_packet<class_PacketPeer_get_packet>`  **(** **)** const                                             |
++--------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+| Error                                      | :ref:`get_packet_error<class_PacketPeer_get_packet_error>`  **(** **)** const                                 |
++--------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_variant>`              | :ref:`get_var<class_PacketPeer_get_var>`  **(** **)** const                                                   |
++--------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+| Error                                      | :ref:`put_packet<class_PacketPeer_put_packet>`  **(** :ref:`PoolByteArray<class_poolbytearray>` buffer  **)** |
++--------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                      | :ref:`put_var<class_PacketPeer_put_var>`  **(** :ref:`Variant<class_variant>` var  **)**                      |
++--------------------------------------------+---------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -50,7 +50,7 @@ Return the number of packets currently available in the ring-buffer.
 
 .. _class_PacketPeer_get_packet:
 
-- :ref:`RawArray<class_rawarray>`  **get_packet**  **(** **)** const
+- :ref:`PoolByteArray<class_poolbytearray>`  **get_packet**  **(** **)** const
 
 Get a raw packet.
 
@@ -68,7 +68,7 @@ Get a Variant.
 
 .. _class_PacketPeer_put_packet:
 
-- Error  **put_packet**  **(** :ref:`RawArray<class_rawarray>` buffer  **)**
+- Error  **put_packet**  **(** :ref:`PoolByteArray<class_poolbytearray>` buffer  **)**
 
 Send a raw packet.
 

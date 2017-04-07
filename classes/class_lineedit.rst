@@ -82,6 +82,21 @@ Signals
 -  **text_changed**  **(** :ref:`String<class_string>` text  **)**
 -  **text_entered**  **(** :ref:`String<class_string>` text  **)**
 
+Member Variables
+----------------
+
+- :ref:`int<class_int>` **align**
+- :ref:`bool<class_bool>` **caret_blink**
+- :ref:`float<class_float>` **caret_blink_speed**
+- :ref:`bool<class_bool>` **editable**
+- :ref:`bool<class_bool>` **expand_to_len**
+- :ref:`int<class_int>` **focus_mode**
+- :ref:`int<class_int>` **max_length**
+- :ref:`float<class_float>` **placeholder_alpha**
+- :ref:`String<class_string>` **placeholder_text**
+- :ref:`bool<class_bool>` **secret**
+- :ref:`String<class_string>` **text**
+
 Numeric Constants
 -----------------
 

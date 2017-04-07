@@ -19,15 +19,13 @@ Member Functions
 ----------------
 
 +--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StringArray<class_stringarray>`                              | :ref:`get_dependencies<class_ResourceLoader_get_dependencies>`  **(** :ref:`String<class_string>` path  **)**                                                             |
+| :ref:`PoolStringArray<class_poolstringarray>`                      | :ref:`get_dependencies<class_ResourceLoader_get_dependencies>`  **(** :ref:`String<class_string>` path  **)**                                                             |
 +--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StringArray<class_stringarray>`                              | :ref:`get_recognized_extensions_for_type<class_ResourceLoader_get_recognized_extensions_for_type>`  **(** :ref:`String<class_string>` type  **)**                         |
+| :ref:`PoolStringArray<class_poolstringarray>`                      | :ref:`get_recognized_extensions_for_type<class_ResourceLoader_get_recognized_extensions_for_type>`  **(** :ref:`String<class_string>` type  **)**                         |
 +--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                            | :ref:`has<class_ResourceLoader_has>`  **(** :ref:`String<class_string>` path  **)**                                                                                       |
 +--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Resource<class_resource>`                                    | :ref:`load<class_ResourceLoader_load>`  **(** :ref:`String<class_string>` path, :ref:`String<class_string>` type_hint="", :ref:`bool<class_bool>` p_no_cache=false  **)** |
-+--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ResourceImportMetadata<class_resourceimportmetadata>`        | :ref:`load_import_metadata<class_ResourceLoader_load_import_metadata>`  **(** :ref:`String<class_string>` path  **)**                                                     |
 +--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`ResourceInteractiveLoader<class_resourceinteractiveloader>`  | :ref:`load_interactive<class_ResourceLoader_load_interactive>`  **(** :ref:`String<class_string>` path, :ref:`String<class_string>` type_hint=""  **)**                   |
 +--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -44,11 +42,11 @@ Member Function Description
 
 .. _class_ResourceLoader_get_dependencies:
 
-- :ref:`StringArray<class_stringarray>`  **get_dependencies**  **(** :ref:`String<class_string>` path  **)**
+- :ref:`PoolStringArray<class_poolstringarray>`  **get_dependencies**  **(** :ref:`String<class_string>` path  **)**
 
 .. _class_ResourceLoader_get_recognized_extensions_for_type:
 
-- :ref:`StringArray<class_stringarray>`  **get_recognized_extensions_for_type**  **(** :ref:`String<class_string>` type  **)**
+- :ref:`PoolStringArray<class_poolstringarray>`  **get_recognized_extensions_for_type**  **(** :ref:`String<class_string>` type  **)**
 
 Return the list of recognized extensions for a resource type.
 
@@ -59,10 +57,6 @@ Return the list of recognized extensions for a resource type.
 .. _class_ResourceLoader_load:
 
 - :ref:`Resource<class_resource>`  **load**  **(** :ref:`String<class_string>` path, :ref:`String<class_string>` type_hint="", :ref:`bool<class_bool>` p_no_cache=false  **)**
-
-.. _class_ResourceLoader_load_import_metadata:
-
-- :ref:`ResourceImportMetadata<class_resourceimportmetadata>`  **load_import_metadata**  **(** :ref:`String<class_string>` path  **)**
 
 .. _class_ResourceLoader_load_interactive:
 

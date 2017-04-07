@@ -24,6 +24,11 @@ Member Functions
 | void                         | :ref:`set_singleton<class_VisualScriptEngineSingleton_set_singleton>`  **(** :ref:`String<class_string>` name  **)** |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`String<class_string>` **constant**
+
 Member Function Description
 ---------------------------
 

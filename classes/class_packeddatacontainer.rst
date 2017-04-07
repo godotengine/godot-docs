@@ -24,6 +24,11 @@ Member Functions
 | :ref:`int<class_int>`  | :ref:`size<class_PackedDataContainer_size>`  **(** **)** const                                |
 +------------------------+-----------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`PoolByteArray<class_poolbytearray>` **__data__**
+
 Member Function Description
 ---------------------------
 

@@ -34,6 +34,13 @@ Member Functions
 | void                             | :ref:`set_target_path<class_InterpolatedCamera_set_target_path>`  **(** :ref:`NodePath<class_nodepath>` target_path  **)**             |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`bool<class_bool>` **enabled**
+- :ref:`float<class_float>` **speed**
+- :ref:`NodePath<class_nodepath>` **target**
+
 Member Function Description
 ---------------------------
 

@@ -15,6 +15,14 @@ Brief Description
 
 Spotlight :ref:`Light<class_light>`, such as a reflector spotlight or a lantern.
 
+Member Variables
+----------------
+
+- :ref:`float<class_float>` **spot_angle**
+- :ref:`float<class_float>` **spot_angle_attenuation**
+- :ref:`float<class_float>` **spot_attenuation**
+- :ref:`float<class_float>` **spot_range**
+
 Description
 -----------
 

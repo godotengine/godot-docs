@@ -25,7 +25,11 @@ Member Functions
 +----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`apply_impulse<class_PhysicsDirectBodyState_apply_impulse>`  **(** :ref:`Vector3<class_vector3>` pos, :ref:`Vector3<class_vector3>` j  **)**                    |
 +----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                           | :ref:`apply_torqe_impulse<class_PhysicsDirectBodyState_apply_torqe_impulse>`  **(** :ref:`Vector3<class_vector3>` j  **)**                                           |
++----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`                                  | :ref:`get_angular_velocity<class_PhysicsDirectBodyState_get_angular_velocity>`  **(** **)** const                                                                    |
++----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`                                  | :ref:`get_center_of_mass<class_PhysicsDirectBodyState_get_center_of_mass>`  **(** **)** const                                                                        |
 +----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_rid>`                                          | :ref:`get_contact_collider<class_PhysicsDirectBodyState_get_contact_collider>`  **(** :ref:`int<class_int>` contact_idx  **)** const                                 |
 +----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -52,6 +56,8 @@ Member Functions
 | :ref:`float<class_float>`                                      | :ref:`get_inverse_mass<class_PhysicsDirectBodyState_get_inverse_mass>`  **(** **)** const                                                                            |
 +----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`                                  | :ref:`get_linear_velocity<class_PhysicsDirectBodyState_get_linear_velocity>`  **(** **)** const                                                                      |
++----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Basis<class_basis>`                                      | :ref:`get_principal_inetria_axes<class_PhysicsDirectBodyState_get_principal_inetria_axes>`  **(** **)** const                                                        |
 +----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PhysicsDirectSpaceState<class_physicsdirectspacestate>`  | :ref:`get_space_state<class_PhysicsDirectBodyState_get_space_state>`  **(** **)**                                                                                    |
 +----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -89,9 +95,17 @@ Member Function Description
 
 - void  **apply_impulse**  **(** :ref:`Vector3<class_vector3>` pos, :ref:`Vector3<class_vector3>` j  **)**
 
+.. _class_PhysicsDirectBodyState_apply_torqe_impulse:
+
+- void  **apply_torqe_impulse**  **(** :ref:`Vector3<class_vector3>` j  **)**
+
 .. _class_PhysicsDirectBodyState_get_angular_velocity:
 
 - :ref:`Vector3<class_vector3>`  **get_angular_velocity**  **(** **)** const
+
+.. _class_PhysicsDirectBodyState_get_center_of_mass:
+
+- :ref:`Vector3<class_vector3>`  **get_center_of_mass**  **(** **)** const
 
 .. _class_PhysicsDirectBodyState_get_contact_collider:
 
@@ -144,6 +158,10 @@ Member Function Description
 .. _class_PhysicsDirectBodyState_get_linear_velocity:
 
 - :ref:`Vector3<class_vector3>`  **get_linear_velocity**  **(** **)** const
+
+.. _class_PhysicsDirectBodyState_get_principal_inetria_axes:
+
+- :ref:`Basis<class_basis>`  **get_principal_inetria_axes**  **(** **)** const
 
 .. _class_PhysicsDirectBodyState_get_space_state:
 

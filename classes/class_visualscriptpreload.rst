@@ -24,6 +24,11 @@ Member Functions
 | void                         | :ref:`set_preload<class_VisualScriptPreload_set_preload>`  **(** :ref:`Object<class_object>` resource  **)** |
 +------------------------------+--------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`Resource<class_resource>` **resource**
+
 Member Function Description
 ---------------------------
 

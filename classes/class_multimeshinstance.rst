@@ -24,6 +24,11 @@ Member Functions
 | void                         | :ref:`set_multimesh<class_MultiMeshInstance_set_multimesh>`  **(** :ref:`Object<class_object>` multimesh  **)** |
 +------------------------------+-----------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`MultiMesh<class_multimesh>` **multimesh**
+
 Description
 -----------
 

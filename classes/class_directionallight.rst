@@ -18,26 +18,33 @@ Directional Light, such as the Sun or the Moon.
 Member Functions
 ----------------
 
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_shadow_mode<class_DirectionalLight_get_shadow_mode>`  **(** **)** const                                                           |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_shadow_param<class_DirectionalLight_get_shadow_param>`  **(** :ref:`int<class_int>` param  **)** const                            |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_shadow_mode<class_DirectionalLight_set_shadow_mode>`  **(** :ref:`int<class_int>` mode  **)**                                     |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_shadow_param<class_DirectionalLight_set_shadow_param>`  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)** |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------+----------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`    | :ref:`get_shadow_mode<class_DirectionalLight_get_shadow_mode>`  **(** **)** const                              |
++--------------------------+----------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`is_blend_splits_enabled<class_DirectionalLight_is_blend_splits_enabled>`  **(** **)** const              |
++--------------------------+----------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`set_blend_splits<class_DirectionalLight_set_blend_splits>`  **(** :ref:`bool<class_bool>` enabled  **)** |
++--------------------------+----------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`set_shadow_mode<class_DirectionalLight_set_shadow_mode>`  **(** :ref:`int<class_int>` mode  **)**        |
++--------------------------+----------------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+- :ref:`float<class_float>` **directional_shadow_bias_split_scale**
+- :ref:`bool<class_bool>` **directional_shadow_blend_splits**
+- :ref:`int<class_int>` **directional_shadow_mode**
+- :ref:`float<class_float>` **directional_shadow_normal_bias**
+- :ref:`float<class_float>` **directional_shadow_split_1**
+- :ref:`float<class_float>` **directional_shadow_split_2**
+- :ref:`float<class_float>` **directional_shadow_split_3**
 
 Numeric Constants
 -----------------
 
 - **SHADOW_ORTHOGONAL** = **0**
-- **SHADOW_PERSPECTIVE** = **1**
-- **SHADOW_PARALLEL_2_SPLITS** = **2**
-- **SHADOW_PARALLEL_4_SPLITS** = **3**
-- **SHADOW_PARAM_MAX_DISTANCE** = **0**
-- **SHADOW_PARAM_PSSM_SPLIT_WEIGHT** = **1**
-- **SHADOW_PARAM_PSSM_ZOFFSET_SCALE** = **2**
+- **SHADOW_PARALLEL_2_SPLITS** = **1**
+- **SHADOW_PARALLEL_4_SPLITS** = **2**
 
 Description
 -----------
@@ -51,16 +58,16 @@ Member Function Description
 
 - :ref:`int<class_int>`  **get_shadow_mode**  **(** **)** const
 
-.. _class_DirectionalLight_get_shadow_param:
+.. _class_DirectionalLight_is_blend_splits_enabled:
 
-- :ref:`float<class_float>`  **get_shadow_param**  **(** :ref:`int<class_int>` param  **)** const
+- :ref:`bool<class_bool>`  **is_blend_splits_enabled**  **(** **)** const
+
+.. _class_DirectionalLight_set_blend_splits:
+
+- void  **set_blend_splits**  **(** :ref:`bool<class_bool>` enabled  **)**
 
 .. _class_DirectionalLight_set_shadow_mode:
 
 - void  **set_shadow_mode**  **(** :ref:`int<class_int>` mode  **)**
-
-.. _class_DirectionalLight_set_shadow_param:
-
-- void  **set_shadow_param**  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**
 
 

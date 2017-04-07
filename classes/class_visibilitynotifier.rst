@@ -20,21 +20,26 @@ Detect when the node is visible on screen.
 Member Functions
 ----------------
 
-+--------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`AABB<class_aabb>`  | :ref:`get_aabb<class_VisibilityNotifier_get_aabb>`  **(** **)** const                         |
-+--------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_on_screen<class_VisibilityNotifier_is_on_screen>`  **(** **)** const                 |
-+--------------------------+-----------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_aabb<class_VisibilityNotifier_set_aabb>`  **(** :ref:`AABB<class_aabb>` rect  **)** |
-+--------------------------+-----------------------------------------------------------------------------------------------+
++----------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`Rect3<class_rect3>`  | :ref:`get_aabb<class_VisibilityNotifier_get_aabb>`  **(** **)** const                           |
++----------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`is_on_screen<class_VisibilityNotifier_is_on_screen>`  **(** **)** const                   |
++----------------------------+-------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_aabb<class_VisibilityNotifier_set_aabb>`  **(** :ref:`Rect3<class_rect3>` rect  **)** |
++----------------------------+-------------------------------------------------------------------------------------------------+
 
 Signals
 -------
 
--  **enter_camera**  **(** :ref:`Object<class_object>` camera  **)**
--  **enter_screen**  **(** **)**
--  **exit_camera**  **(** :ref:`Object<class_object>` camera  **)**
--  **exit_screen**  **(** **)**
+-  **camera_entered**  **(** :ref:`Object<class_object>` camera  **)**
+-  **camera_exited**  **(** :ref:`Object<class_object>` camera  **)**
+-  **screen_entered**  **(** **)**
+-  **screen_exited**  **(** **)**
+
+Member Variables
+----------------
+
+- :ref:`Rect3<class_rect3>` **aabb**
 
 Description
 -----------
@@ -46,7 +51,7 @@ Member Function Description
 
 .. _class_VisibilityNotifier_get_aabb:
 
-- :ref:`AABB<class_aabb>`  **get_aabb**  **(** **)** const
+- :ref:`Rect3<class_rect3>`  **get_aabb**  **(** **)** const
 
 Return the visibility bounding box of the VisibilityNotifier.
 
@@ -58,7 +63,7 @@ Return true if any part of the bounding box is on the screen.
 
 .. _class_VisibilityNotifier_set_aabb:
 
-- void  **set_aabb**  **(** :ref:`AABB<class_aabb>` rect  **)**
+- void  **set_aabb**  **(** :ref:`Rect3<class_rect3>` rect  **)**
 
 Set the visibility bounding box of the VisibilityNotifier.
 

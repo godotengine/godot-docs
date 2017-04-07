@@ -8,7 +8,7 @@ Spatial
 
 **Inherits:** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`Joint<class_joint>`, :ref:`RayCast<class_raycast>`, :ref:`VehicleWheel<class_vehiclewheel>`, :ref:`Camera<class_camera>`, :ref:`BoneAttachment<class_boneattachment>`, :ref:`CollisionShape<class_collisionshape>`, :ref:`Path<class_path>`, :ref:`VisualInstance<class_visualinstance>`, :ref:`Position3D<class_position3d>`, :ref:`ProximityGroup<class_proximitygroup>`, :ref:`RemoteTransform<class_remotetransform>`, :ref:`SpatialPlayer<class_spatialplayer>`, :ref:`WorldEnvironment<class_worldenvironment>`, :ref:`PathFollow<class_pathfollow>`, :ref:`NavigationMeshInstance<class_navigationmeshinstance>`, :ref:`Listener<class_listener>`, :ref:`InverseKinematics<class_inversekinematics>`, :ref:`VisibilityNotifier<class_visibilitynotifier>`, :ref:`Navigation<class_navigation>`, :ref:`CollisionPolygon<class_collisionpolygon>`, :ref:`GridMap<class_gridmap>`, :ref:`Skeleton<class_skeleton>`, :ref:`CollisionObject<class_collisionobject>`
+**Inherited By:** :ref:`Joint<class_joint>`, :ref:`RayCast<class_raycast>`, :ref:`Camera<class_camera>`, :ref:`BoneAttachment<class_boneattachment>`, :ref:`CollisionShape<class_collisionshape>`, :ref:`Path<class_path>`, :ref:`VisualInstance<class_visualinstance>`, :ref:`VehicleWheel<class_vehiclewheel>`, :ref:`Position3D<class_position3d>`, :ref:`ProximityGroup<class_proximitygroup>`, :ref:`RemoteTransform<class_remotetransform>`, :ref:`CollisionObject<class_collisionobject>`, :ref:`WorldEnvironment<class_worldenvironment>`, :ref:`Listener<class_listener>`, :ref:`PathFollow<class_pathfollow>`, :ref:`NavigationMeshInstance<class_navigationmeshinstance>`, :ref:`VisibilityNotifier<class_visibilitynotifier>`, :ref:`Navigation<class_navigation>`, :ref:`CollisionPolygon<class_collisionpolygon>`, :ref:`GridMap<class_gridmap>`, :ref:`Skeleton<class_skeleton>`
 
 **Category:** Core
 
@@ -45,13 +45,15 @@ Member Functions
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`hide<class_Spatial_hide>`  **(** **)**                                                                                                                                    |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`is_hidden<class_Spatial_is_hidden>`  **(** **)** const                                                                                                                    |
-+------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                  | :ref:`is_local_transform_notification_enabled<class_Spatial_is_local_transform_notification_enabled>`  **(** **)** const                                                        |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                  | :ref:`is_set_as_toplevel<class_Spatial_is_set_as_toplevel>`  **(** **)** const                                                                                                  |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`is_transform_notification_enabled<class_Spatial_is_transform_notification_enabled>`  **(** **)** const                                                                    |
++------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                  | :ref:`is_visible<class_Spatial_is_visible>`  **(** **)** const                                                                                                                  |
++------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`is_visible_in_tree<class_Spatial_is_visible_in_tree>`  **(** **)** const                                                                                                  |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`look_at<class_Spatial_look_at>`  **(** :ref:`Vector3<class_vector3>` target, :ref:`Vector3<class_vector3>` up  **)**                                                      |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -73,13 +75,13 @@ Member Functions
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_global_transform<class_Spatial_set_global_transform>`  **(** :ref:`Transform<class_transform>` global  **)**                                                          |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_hidden<class_Spatial_set_hidden>`  **(** :ref:`bool<class_bool>` hidden  **)**                                                                                        |
-+------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_identity<class_Spatial_set_identity>`  **(** **)**                                                                                                                    |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_ignore_transform_notification<class_Spatial_set_ignore_transform_notification>`  **(** :ref:`bool<class_bool>` enabled  **)**                                         |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_notify_local_transform<class_Spatial_set_notify_local_transform>`  **(** :ref:`bool<class_bool>` enable  **)**                                                        |
++------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_notify_transform<class_Spatial_set_notify_transform>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                    |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_rotation<class_Spatial_set_rotation>`  **(** :ref:`Vector3<class_vector3>` rotation_rad  **)**                                                                        |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -90,6 +92,8 @@ Member Functions
 | void                                     | :ref:`set_transform<class_Spatial_set_transform>`  **(** :ref:`Transform<class_transform>` local  **)**                                                                         |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_translation<class_Spatial_set_translation>`  **(** :ref:`Vector3<class_vector3>` translation  **)**                                                                   |
++------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_visible<class_Spatial_set_visible>`  **(** :ref:`bool<class_bool>` arg0  **)**                                                                                        |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`show<class_Spatial_show>`  **(** **)**                                                                                                                                    |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -102,6 +106,17 @@ Signals
 -------
 
 -  **visibility_changed**  **(** **)**
+
+Member Variables
+----------------
+
+- :ref:`Transform<class_transform>` **global_transform**
+- :ref:`Vector3<class_vector3>` **rotation**
+- :ref:`Vector3<class_vector3>` **rotation_deg**
+- :ref:`Vector3<class_vector3>` **scale**
+- :ref:`Transform<class_transform>` **transform**
+- :ref:`Vector3<class_vector3>` **translation**
+- :ref:`bool<class_bool>` **visible**
 
 Numeric Constants
 -----------------
@@ -173,10 +188,6 @@ Return the local transform, relative to the bone parent.
 
 - void  **hide**  **(** **)**
 
-.. _class_Spatial_is_hidden:
-
-- :ref:`bool<class_bool>`  **is_hidden**  **(** **)** const
-
 .. _class_Spatial_is_local_transform_notification_enabled:
 
 - :ref:`bool<class_bool>`  **is_local_transform_notification_enabled**  **(** **)** const
@@ -185,9 +196,17 @@ Return the local transform, relative to the bone parent.
 
 - :ref:`bool<class_bool>`  **is_set_as_toplevel**  **(** **)** const
 
+.. _class_Spatial_is_transform_notification_enabled:
+
+- :ref:`bool<class_bool>`  **is_transform_notification_enabled**  **(** **)** const
+
 .. _class_Spatial_is_visible:
 
 - :ref:`bool<class_bool>`  **is_visible**  **(** **)** const
+
+.. _class_Spatial_is_visible_in_tree:
+
+- :ref:`bool<class_bool>`  **is_visible_in_tree**  **(** **)** const
 
 .. _class_Spatial_look_at:
 
@@ -231,10 +250,6 @@ Return the local transform, relative to the bone parent.
 
 Set the transform globally, relative to worldspace.
 
-.. _class_Spatial_set_hidden:
-
-- void  **set_hidden**  **(** :ref:`bool<class_bool>` hidden  **)**
-
 .. _class_Spatial_set_identity:
 
 - void  **set_identity**  **(** **)**
@@ -246,6 +261,10 @@ Set the transform globally, relative to worldspace.
 .. _class_Spatial_set_notify_local_transform:
 
 - void  **set_notify_local_transform**  **(** :ref:`bool<class_bool>` enable  **)**
+
+.. _class_Spatial_set_notify_transform:
+
+- void  **set_notify_transform**  **(** :ref:`bool<class_bool>` enable  **)**
 
 .. _class_Spatial_set_rotation:
 
@@ -268,6 +287,10 @@ Set the transform locally, relative to the parent spatial node.
 .. _class_Spatial_set_translation:
 
 - void  **set_translation**  **(** :ref:`Vector3<class_vector3>` translation  **)**
+
+.. _class_Spatial_set_visible:
+
+- void  **set_visible**  **(** :ref:`bool<class_bool>` arg0  **)**
 
 .. _class_Spatial_show:
 

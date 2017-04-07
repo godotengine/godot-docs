@@ -49,7 +49,7 @@ Using results from the search, returns the specified string with escapes and bac
 
 - :ref:`int<class_int>`  **get_end**  **(** :ref:`Variant<class_variant>` name=0  **)** const
 
-Returns the end position of the match in the string. An interger can be specified for numeric groups or a string for named groups. Returns -1 if that group wasn't found or doesn't exist. Defaults to 0 (whole pattern).
+Returns the end position of the match in the string. An integer can be specified for numeric groups or a string for named groups. Returns -1 if that group wasn't found or doesn't exist. Defaults to 0 (whole pattern).
 
 .. _class_RegExMatch_get_group_array:
 
@@ -79,12 +79,12 @@ Returns an array of names of named capturing groups.
 
 - :ref:`int<class_int>`  **get_start**  **(** :ref:`Variant<class_variant>` name=0  **)** const
 
-Returns the starting position of the match in the string. An interger can be specified for numeric groups or a string for named groups. Returns -1 if that group wasn't found or doesn't exist. Defaults to 0 (whole pattern).
+Returns the starting position of the match in the string. An integer can be specified for numeric groups or a string for named groups. Returns -1 if that group wasn't found or doesn't exist. Defaults to 0 (whole pattern).
 
 .. _class_RegExMatch_get_string:
 
 - :ref:`String<class_string>`  **get_string**  **(** :ref:`Variant<class_variant>` name=0  **)** const
 
-Returns the result of the match in the string. An interger can be specified for numeric groups or a string for named groups. Returns -1 if that group wasn't found or doesn't exist. Defaults to 0 (whole pattern).
+Returns the result of the match in the string. An integer can be specified for numeric groups or a string for named groups. Returns -1 if that group wasn't found or doesn't exist. Defaults to 0 (whole pattern).
 
 

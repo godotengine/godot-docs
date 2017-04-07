@@ -24,10 +24,15 @@ Member Functions
 | void                       | :ref:`set_color<class_CanvasModulate_set_color>`  **(** :ref:`Color<class_color>` color  **)** |
 +----------------------------+------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`Color<class_color>` **color**
+
 Description
 -----------
 
-CanvasModulate tints the canvas elements using its asigned color
+CanvasModulate tints the canvas elements using its assigned color
 
 Member Function Description
 ---------------------------

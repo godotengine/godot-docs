@@ -24,6 +24,11 @@ Member Functions
 | void                       | :ref:`set_softness<class_PinJoint2D_set_softness>`  **(** :ref:`float<class_float>` softness  **)** |
 +----------------------------+-----------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`float<class_float>` **softness**
+
 Description
 -----------
 

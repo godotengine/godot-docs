@@ -27,6 +27,10 @@ Member Functions
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`angle_to_point<class_Vector2_angle_to_point>`  **(** :ref:`Vector2<class_vector2>` to  **)**                                                                                                              |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`aspect<class_Vector2_aspect>`  **(** **)**                                                                                                                                                                |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`bounce<class_Vector2_bounce>`  **(** :ref:`Vector2<class_vector2>` n  **)**                                                                                                                               |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`clamped<class_Vector2_clamped>`  **(** :ref:`float<class_float>` length  **)**                                                                                                                            |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`cubic_interpolate<class_Vector2_cubic_interpolate>`  **(** :ref:`Vector2<class_vector2>` b, :ref:`Vector2<class_vector2>` pre_a, :ref:`Vector2<class_vector2>` post_b, :ref:`float<class_float>` t  **)** |
@@ -39,10 +43,6 @@ Member Functions
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`floor<class_Vector2_floor>`  **(** **)**                                                                                                                                                                  |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`floorf<class_Vector2_floorf>`  **(** **)**                                                                                                                                                                |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_aspect<class_Vector2_get_aspect>`  **(** **)**                                                                                                                                                        |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`length<class_Vector2_length>`  **(** **)**                                                                                                                                                                |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`length_squared<class_Vector2_length_squared>`  **(** **)**                                                                                                                                                |
@@ -51,11 +51,11 @@ Member Functions
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`normalized<class_Vector2_normalized>`  **(** **)**                                                                                                                                                        |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`reflect<class_Vector2_reflect>`  **(** :ref:`Vector2<class_vector2>` vec  **)**                                                                                                                           |
+| :ref:`Vector2<class_vector2>`  | :ref:`reflect<class_Vector2_reflect>`  **(** :ref:`Vector2<class_vector2>` n  **)**                                                                                                                             |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`rotated<class_Vector2_rotated>`  **(** :ref:`float<class_float>` phi  **)**                                                                                                                               |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`slide<class_Vector2_slide>`  **(** :ref:`Vector2<class_vector2>` vec  **)**                                                                                                                               |
+| :ref:`Vector2<class_vector2>`  | :ref:`slide<class_Vector2_slide>`  **(** :ref:`Vector2<class_vector2>` n  **)**                                                                                                                                 |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`snapped<class_Vector2_snapped>`  **(** :ref:`Vector2<class_vector2>` by  **)**                                                                                                                            |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -108,6 +108,18 @@ Returns the angle in radians between the two vectors.
 
 Returns the angle in radians between the line connecting the two points and the x coordinate.
 
+.. _class_Vector2_aspect:
+
+- :ref:`float<class_float>`  **aspect**  **(** **)**
+
+Returns the ratio of X to Y.
+
+.. _class_Vector2_bounce:
+
+- :ref:`Vector2<class_vector2>`  **bounce**  **(** :ref:`Vector2<class_vector2>` n  **)**
+
+Bounce returns the vector "bounced off" from the given plane, specified by its normal vector.
+
 .. _class_Vector2_clamped:
 
 - :ref:`Vector2<class_vector2>`  **clamped**  **(** :ref:`float<class_float>` length  **)**
@@ -142,18 +154,6 @@ Returns the dot product with vector "b".
 
 Remove the fractional part of x and y.
 
-.. _class_Vector2_floorf:
-
-- :ref:`Vector2<class_vector2>`  **floorf**  **(** **)**
-
-Remove the fractional part of x and y.
-
-.. _class_Vector2_get_aspect:
-
-- :ref:`float<class_float>`  **get_aspect**  **(** **)**
-
-Returns the ratio of X to Y.
-
 .. _class_Vector2_length:
 
 - :ref:`float<class_float>`  **length**  **(** **)**
@@ -180,9 +180,9 @@ Returns a normalized vector to unit length.
 
 .. _class_Vector2_reflect:
 
-- :ref:`Vector2<class_vector2>`  **reflect**  **(** :ref:`Vector2<class_vector2>` vec  **)**
+- :ref:`Vector2<class_vector2>`  **reflect**  **(** :ref:`Vector2<class_vector2>` n  **)**
 
-Like "slide", but reflects the Vector instead of continuing along the wall.
+Reflects the vector along the given plane, specified by its normal vector.
 
 .. _class_Vector2_rotated:
 
@@ -192,9 +192,9 @@ Rotates the vector by "phi" radians.
 
 .. _class_Vector2_slide:
 
-- :ref:`Vector2<class_vector2>`  **slide**  **(** :ref:`Vector2<class_vector2>` vec  **)**
+- :ref:`Vector2<class_vector2>`  **slide**  **(** :ref:`Vector2<class_vector2>` n  **)**
 
-Slides the vector by the other vector.
+Slide returns the component of the vector along the given plane, specified by its normal vector.
 
 .. _class_Vector2_snapped:
 

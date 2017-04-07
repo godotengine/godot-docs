@@ -26,6 +26,11 @@ Member Functions
 | void                       | :ref:`set_custom_step<class_ScrollBar_set_custom_step>`  **(** :ref:`float<class_float>` step  **)** |
 +----------------------------+------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`float<class_float>` **custom_step**
+
 Description
 -----------
 

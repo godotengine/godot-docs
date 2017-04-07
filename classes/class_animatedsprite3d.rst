@@ -43,6 +43,14 @@ Signals
 
 -  **frame_changed**  **(** **)**
 
+Member Variables
+----------------
+
+- :ref:`String<class_string>` **animation**
+- :ref:`int<class_int>` **frame**
+- :ref:`SpriteFrames<class_spriteframes>` **frames**
+- :ref:`bool<class_bool>` **playing**
+
 Member Function Description
 ---------------------------
 

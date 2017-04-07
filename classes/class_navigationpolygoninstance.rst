@@ -28,6 +28,12 @@ Member Functions
 | void                                               | :ref:`set_navigation_polygon<class_NavigationPolygonInstance_set_navigation_polygon>`  **(** :ref:`NavigationPolygon<class_navigationpolygon>` navpoly  **)** |
 +----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`bool<class_bool>` **enabled**
+- :ref:`NavigationPolygon<class_navigationpolygon>` **navpoly**
+
 Member Function Description
 ---------------------------
 

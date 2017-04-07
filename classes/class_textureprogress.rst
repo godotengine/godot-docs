@@ -48,6 +48,17 @@ Member Functions
 | void                           | :ref:`set_under_texture<class_TextureProgress_set_under_texture>`  **(** :ref:`Object<class_object>` tex  **)**                  |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`int<class_int>` **fill_mode**
+- :ref:`Vector2<class_vector2>` **radial_center_offset**
+- :ref:`float<class_float>` **radial_fill_degrees**
+- :ref:`float<class_float>` **radial_initial_angle**
+- :ref:`Texture<class_texture>` **texture_over**
+- :ref:`Texture<class_texture>` **texture_progress**
+- :ref:`Texture<class_texture>` **texture_under**
+
 Numeric Constants
 -----------------
 

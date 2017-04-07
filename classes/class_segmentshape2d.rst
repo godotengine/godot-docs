@@ -28,6 +28,12 @@ Member Functions
 | void                           | :ref:`set_b<class_SegmentShape2D_set_b>`  **(** :ref:`Vector2<class_vector2>` b  **)** |
 +--------------------------------+----------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`Vector2<class_vector2>` **a**
+- :ref:`Vector2<class_vector2>` **b**
+
 Description
 -----------
 

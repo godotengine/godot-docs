@@ -28,6 +28,12 @@ Member Functions
 | void                     | :ref:`set_return_type<class_VisualScriptReturn_set_return_type>`  **(** :ref:`int<class_int>` type  **)**                     |
 +--------------------------+-------------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`bool<class_bool>` **return_value/enabled**
+- :ref:`int<class_int>` **return_value/type**
+
 Member Function Description
 ---------------------------
 

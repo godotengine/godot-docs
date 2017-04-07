@@ -60,6 +60,21 @@ Member Functions
 | void                             | :ref:`set_validate<class_VisualScriptFunctionCall_set_validate>`  **(** :ref:`bool<class_bool>` enable  **)**                |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`Dictionary<class_dictionary>` **function/argument_cache**
+- :ref:`String<class_string>` **function/base_script**
+- :ref:`String<class_string>` **function/base_type**
+- :ref:`int<class_int>` **function/basic_type**
+- :ref:`int<class_int>` **function/call_mode**
+- :ref:`String<class_string>` **function/function**
+- :ref:`NodePath<class_nodepath>` **function/node_path**
+- :ref:`String<class_string>` **function/singleton**
+- :ref:`int<class_int>` **function/use_default_args**
+- :ref:`bool<class_bool>` **function/validate**
+- :ref:`int<class_int>` **rpc/call_mode**
+
 Numeric Constants
 -----------------
 

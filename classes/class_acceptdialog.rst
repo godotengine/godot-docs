@@ -35,8 +35,6 @@ Member Functions
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`LineEdit<class_lineedit>`  | :ref:`register_text_enter<class_AcceptDialog_register_text_enter>`  **(** :ref:`Object<class_object>` line_edit  **)**                                                      |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_child_rect<class_AcceptDialog_set_child_rect>`  **(** :ref:`Control<class_control>` child  **)**                                                                  |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_hide_on_ok<class_AcceptDialog_set_hide_on_ok>`  **(** :ref:`bool<class_bool>` enabled  **)**                                                                      |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_text<class_AcceptDialog_set_text>`  **(** :ref:`String<class_string>` text  **)**                                                                                 |
@@ -47,6 +45,12 @@ Signals
 
 -  **confirmed**  **(** **)**
 -  **custom_action**  **(** :ref:`String<class_string>` action  **)**
+
+Member Variables
+----------------
+
+- :ref:`bool<class_bool>` **dialog_hide_on_ok**
+- :ref:`String<class_string>` **dialog_text**
 
 Description
 -----------
@@ -99,10 +103,6 @@ Return the built-in label text.
 - :ref:`LineEdit<class_lineedit>`  **register_text_enter**  **(** :ref:`Object<class_object>` line_edit  **)**
 
 Register a :ref:`LineEdit<class_lineedit>` in the dialog. When the enter key is pressed, the dialog will be accepted.
-
-.. _class_AcceptDialog_set_child_rect:
-
-- void  **set_child_rect**  **(** :ref:`Control<class_control>` child  **)**
 
 .. _class_AcceptDialog_set_hide_on_ok:
 

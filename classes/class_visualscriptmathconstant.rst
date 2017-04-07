@@ -24,6 +24,11 @@ Member Functions
 | void                   | :ref:`set_math_constant<class_VisualScriptMathConstant_set_math_constant>`  **(** :ref:`int<class_int>` which  **)** |
 +------------------------+----------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`int<class_int>` **constant**
+
 Member Function Description
 ---------------------------
 

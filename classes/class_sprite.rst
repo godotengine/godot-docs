@@ -23,8 +23,6 @@ Member Functions
 +--------------------------------+---------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_hframes<class_Sprite_get_hframes>`  **(** **)** const                                   |
 +--------------------------------+---------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`      | :ref:`get_modulate<class_Sprite_get_modulate>`  **(** **)** const                                 |
-+--------------------------------+---------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`get_offset<class_Sprite_get_offset>`  **(** **)** const                                     |
 +--------------------------------+---------------------------------------------------------------------------------------------------+
 | :ref:`Rect2<class_rect2>`      | :ref:`get_region_rect<class_Sprite_get_region_rect>`  **(** **)** const                           |
@@ -51,8 +49,6 @@ Member Functions
 +--------------------------------+---------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_hframes<class_Sprite_set_hframes>`  **(** :ref:`int<class_int>` hframes  **)**          |
 +--------------------------------+---------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_modulate<class_Sprite_set_modulate>`  **(** :ref:`Color<class_color>` modulate  **)**   |
-+--------------------------------+---------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_offset<class_Sprite_set_offset>`  **(** :ref:`Vector2<class_vector2>` offset  **)**     |
 +--------------------------------+---------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_region<class_Sprite_set_region>`  **(** :ref:`bool<class_bool>` enabled  **)**          |
@@ -69,6 +65,20 @@ Signals
 
 -  **frame_changed**  **(** **)**
 -  **texture_changed**  **(** **)**
+
+Member Variables
+----------------
+
+- :ref:`bool<class_bool>` **centered**
+- :ref:`bool<class_bool>` **flip_h**
+- :ref:`bool<class_bool>` **flip_v**
+- :ref:`int<class_int>` **frame**
+- :ref:`int<class_int>` **hframes**
+- :ref:`Vector2<class_vector2>` **offset**
+- :ref:`bool<class_bool>` **region**
+- :ref:`Rect2<class_rect2>` **region_rect**
+- :ref:`Texture<class_texture>` **texture**
+- :ref:`int<class_int>` **vframes**
 
 Description
 -----------
@@ -89,12 +99,6 @@ Return the texture frame for a sprite-sheet, works when vframes or hframes are g
 - :ref:`int<class_int>`  **get_hframes**  **(** **)** const
 
 Return the amount of horizontal frames. See :ref:`set_hframes<class_Sprite_set_hframes>`.
-
-.. _class_Sprite_get_modulate:
-
-- :ref:`Color<class_color>`  **get_modulate**  **(** **)** const
-
-Return color modulation for the sprite. All sprite pixels are multiplied by this color.
 
 .. _class_Sprite_get_offset:
 
@@ -173,12 +177,6 @@ Set the texture frame for a sprite-sheet, works when vframes or hframes are grea
 - void  **set_hframes**  **(** :ref:`int<class_int>` hframes  **)**
 
 Set the amount of horizontal frames and converts the sprite into a sprite-sheet. This is useful for animation.
-
-.. _class_Sprite_set_modulate:
-
-- void  **set_modulate**  **(** :ref:`Color<class_color>` modulate  **)**
-
-Set color modulation for the sprite. All sprite pixels are multiplied by this color.  Color may contain rgb values above 1 to achieve a highlight effect.
 
 .. _class_Sprite_set_offset:
 

@@ -28,6 +28,12 @@ Member Functions
 | void                         | :ref:`set_underline_mode<class_LinkButton_set_underline_mode>`  **(** :ref:`int<class_int>` underline_mode  **)** |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`String<class_string>` **text**
+- :ref:`int<class_int>` **underline**
+
 Numeric Constants
 -----------------
 

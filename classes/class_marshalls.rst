@@ -18,26 +18,26 @@ Brief Description
 Member Functions
 ----------------
 
-+----------------------------------+------------------------------------------------------------------------------------------------------------------+
-| :ref:`RawArray<class_rawarray>`  | :ref:`base64_to_raw<class_Marshalls_base64_to_raw>`  **(** :ref:`String<class_string>` base64_str  **)**         |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`base64_to_utf8<class_Marshalls_base64_to_utf8>`  **(** :ref:`String<class_string>` base64_str  **)**       |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`    | :ref:`base64_to_variant<class_Marshalls_base64_to_variant>`  **(** :ref:`String<class_string>` base64_str  **)** |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`raw_to_base64<class_Marshalls_raw_to_base64>`  **(** :ref:`RawArray<class_rawarray>` array  **)**          |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`utf8_to_base64<class_Marshalls_utf8_to_base64>`  **(** :ref:`String<class_string>` utf8_str  **)**         |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`variant_to_base64<class_Marshalls_variant_to_base64>`  **(** :ref:`Variant<class_variant>` variant  **)**  |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolByteArray<class_poolbytearray>`  | :ref:`base64_to_raw<class_Marshalls_base64_to_raw>`  **(** :ref:`String<class_string>` base64_str  **)**          |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                | :ref:`base64_to_utf8<class_Marshalls_base64_to_utf8>`  **(** :ref:`String<class_string>` base64_str  **)**        |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_variant>`              | :ref:`base64_to_variant<class_Marshalls_base64_to_variant>`  **(** :ref:`String<class_string>` base64_str  **)**  |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                | :ref:`raw_to_base64<class_Marshalls_raw_to_base64>`  **(** :ref:`PoolByteArray<class_poolbytearray>` array  **)** |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                | :ref:`utf8_to_base64<class_Marshalls_utf8_to_base64>`  **(** :ref:`String<class_string>` utf8_str  **)**          |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                | :ref:`variant_to_base64<class_Marshalls_variant_to_base64>`  **(** :ref:`Variant<class_variant>` variant  **)**   |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
 
 Member Function Description
 ---------------------------
 
 .. _class_Marshalls_base64_to_raw:
 
-- :ref:`RawArray<class_rawarray>`  **base64_to_raw**  **(** :ref:`String<class_string>` base64_str  **)**
+- :ref:`PoolByteArray<class_poolbytearray>`  **base64_to_raw**  **(** :ref:`String<class_string>` base64_str  **)**
 
 .. _class_Marshalls_base64_to_utf8:
 
@@ -49,7 +49,7 @@ Member Function Description
 
 .. _class_Marshalls_raw_to_base64:
 
-- :ref:`String<class_string>`  **raw_to_base64**  **(** :ref:`RawArray<class_rawarray>` array  **)**
+- :ref:`String<class_string>`  **raw_to_base64**  **(** :ref:`PoolByteArray<class_poolbytearray>` array  **)**
 
 .. _class_Marshalls_utf8_to_base64:
 

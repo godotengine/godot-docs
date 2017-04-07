@@ -42,6 +42,15 @@ Member Functions
 | void                           | :ref:`set_text_align<class_Button_set_text_align>`  **(** :ref:`int<class_int>` align  **)**             |
 +--------------------------------+----------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`int<class_int>` **align**
+- :ref:`bool<class_bool>` **clip_text**
+- :ref:`bool<class_bool>` **flat**
+- :ref:`Texture<class_texture>` **icon**
+- :ref:`String<class_string>` **text**
+
 Numeric Constants
 -----------------
 

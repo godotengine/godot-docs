@@ -27,6 +27,11 @@ Signals
 
 -  **about_to_show**  **(** **)**
 
+Member Variables
+----------------
+
+- :ref:`Array<class_array>` **items**
+
 Description
 -----------
 

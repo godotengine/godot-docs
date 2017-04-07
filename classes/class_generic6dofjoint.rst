@@ -44,6 +44,61 @@ Member Functions
 | void                       | :ref:`set_param_z<class_Generic6DOFJoint_set_param_z>`  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)** |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`float<class_float>` **angular_limit_x/damping**
+- :ref:`bool<class_bool>` **angular_limit_x/enabled**
+- :ref:`float<class_float>` **angular_limit_x/erp**
+- :ref:`float<class_float>` **angular_limit_x/force_limit**
+- :ref:`float<class_float>` **angular_limit_x/lower_angle**
+- :ref:`float<class_float>` **angular_limit_x/restitution**
+- :ref:`float<class_float>` **angular_limit_x/softness**
+- :ref:`float<class_float>` **angular_limit_x/upper_angle**
+- :ref:`float<class_float>` **angular_limit_y/damping**
+- :ref:`bool<class_bool>` **angular_limit_y/enabled**
+- :ref:`float<class_float>` **angular_limit_y/erp**
+- :ref:`float<class_float>` **angular_limit_y/force_limit**
+- :ref:`float<class_float>` **angular_limit_y/lower_angle**
+- :ref:`float<class_float>` **angular_limit_y/restitution**
+- :ref:`float<class_float>` **angular_limit_y/softness**
+- :ref:`float<class_float>` **angular_limit_y/upper_angle**
+- :ref:`float<class_float>` **angular_limit_z/damping**
+- :ref:`bool<class_bool>` **angular_limit_z/enabled**
+- :ref:`float<class_float>` **angular_limit_z/erp**
+- :ref:`float<class_float>` **angular_limit_z/force_limit**
+- :ref:`float<class_float>` **angular_limit_z/lower_angle**
+- :ref:`float<class_float>` **angular_limit_z/restitution**
+- :ref:`float<class_float>` **angular_limit_z/softness**
+- :ref:`float<class_float>` **angular_limit_z/upper_angle**
+- :ref:`bool<class_bool>` **angular_motor_x/enabled**
+- :ref:`float<class_float>` **angular_motor_x/force_limit**
+- :ref:`float<class_float>` **angular_motor_x/target_velocity**
+- :ref:`bool<class_bool>` **angular_motor_y/enabled**
+- :ref:`float<class_float>` **angular_motor_y/force_limit**
+- :ref:`float<class_float>` **angular_motor_y/target_velocity**
+- :ref:`bool<class_bool>` **angular_motor_z/enabled**
+- :ref:`float<class_float>` **angular_motor_z/force_limit**
+- :ref:`float<class_float>` **angular_motor_z/target_velocity**
+- :ref:`float<class_float>` **linear_limit_x/damping**
+- :ref:`bool<class_bool>` **linear_limit_x/enabled**
+- :ref:`float<class_float>` **linear_limit_x/lower_distance**
+- :ref:`float<class_float>` **linear_limit_x/restitution**
+- :ref:`float<class_float>` **linear_limit_x/softness**
+- :ref:`float<class_float>` **linear_limit_x/upper_distance**
+- :ref:`float<class_float>` **linear_limit_y/damping**
+- :ref:`bool<class_bool>` **linear_limit_y/enabled**
+- :ref:`float<class_float>` **linear_limit_y/lower_distance**
+- :ref:`float<class_float>` **linear_limit_y/restitution**
+- :ref:`float<class_float>` **linear_limit_y/softness**
+- :ref:`float<class_float>` **linear_limit_y/upper_distance**
+- :ref:`float<class_float>` **linear_limit_z/damping**
+- :ref:`bool<class_bool>` **linear_limit_z/enabled**
+- :ref:`float<class_float>` **linear_limit_z/lower_distance**
+- :ref:`float<class_float>` **linear_limit_z/restitution**
+- :ref:`float<class_float>` **linear_limit_z/softness**
+- :ref:`float<class_float>` **linear_limit_z/upper_distance**
+
 Numeric Constants
 -----------------
 

@@ -16,69 +16,67 @@ Generic array datatype.
 Member Functions
 ----------------
 
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`      | :ref:`Array<class_Array_Array>`  **(** :ref:`ColorArray<class_colorarray>` from  **)**                                      |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`      | :ref:`Array<class_Array_Array>`  **(** :ref:`Vector3Array<class_vector3array>` from  **)**                                  |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`      | :ref:`Array<class_Array_Array>`  **(** :ref:`Vector2Array<class_vector2array>` from  **)**                                  |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`      | :ref:`Array<class_Array_Array>`  **(** :ref:`StringArray<class_stringarray>` from  **)**                                    |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`      | :ref:`Array<class_Array_Array>`  **(** :ref:`RealArray<class_realarray>` from  **)**                                        |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`      | :ref:`Array<class_Array_Array>`  **(** :ref:`IntArray<class_intarray>` from  **)**                                          |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`      | :ref:`Array<class_Array_Array>`  **(** :ref:`RawArray<class_rawarray>` from  **)**                                          |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`append<class_Array_append>`  **(** var value  **)**                                                                   |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`clear<class_Array_clear>`  **(** **)**                                                                                |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`count<class_Array_count>`  **(** var value  **)**                                                                     |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`empty<class_Array_empty>`  **(** **)**                                                                                |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`erase<class_Array_erase>`  **(** var value  **)**                                                                     |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`  | :ref:`front<class_Array_front>`  **(** **)**                                                                                |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`  | :ref:`back<class_Array_back>`  **(** **)**                                                                                  |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`find<class_Array_find>`  **(** var what, :ref:`int<class_int>` from=0  **)**                                          |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`find_last<class_Array_find_last>`  **(** var value  **)**                                                             |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`has<class_Array_has>`  **(** var value  **)**                                                                         |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`hash<class_Array_hash>`  **(** **)**                                                                                  |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`insert<class_Array_insert>`  **(** :ref:`int<class_int>` pos, var value  **)**                                        |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`invert<class_Array_invert>`  **(** **)**                                                                              |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_shared<class_Array_is_shared>`  **(** **)**                                                                        |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`pop_back<class_Array_pop_back>`  **(** **)**                                                                          |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`pop_front<class_Array_pop_front>`  **(** **)**                                                                        |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`push_back<class_Array_push_back>`  **(** var value  **)**                                                             |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`push_front<class_Array_push_front>`  **(** var value  **)**                                                           |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`remove<class_Array_remove>`  **(** :ref:`int<class_int>` pos  **)**                                                   |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`resize<class_Array_resize>`  **(** :ref:`int<class_int>` pos  **)**                                                   |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`rfind<class_Array_rfind>`  **(** var what, :ref:`int<class_int>` from=-1  **)**                                       |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`size<class_Array_size>`  **(** **)**                                                                                  |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`sort<class_Array_sort>`  **(** **)**                                                                                  |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`sort_custom<class_Array_sort_custom>`  **(** :ref:`Object<class_object>` obj, :ref:`String<class_string>` func  **)** |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`  | :ref:`Array<class_Array_Array>`  **(** :ref:`PoolColorArray<class_poolcolorarray>` from  **)**                              |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`  | :ref:`Array<class_Array_Array>`  **(** :ref:`PoolVector3Array<class_poolvector3array>` from  **)**                          |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`  | :ref:`Array<class_Array_Array>`  **(** :ref:`PoolVector2Array<class_poolvector2array>` from  **)**                          |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`  | :ref:`Array<class_Array_Array>`  **(** :ref:`PoolStringArray<class_poolstringarray>` from  **)**                            |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`  | :ref:`Array<class_Array_Array>`  **(** :ref:`PoolRealArray<class_poolrealarray>` from  **)**                                |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`  | :ref:`Array<class_Array_Array>`  **(** :ref:`PoolIntArray<class_poolintarray>` from  **)**                                  |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`  | :ref:`Array<class_Array_Array>`  **(** :ref:`PoolByteArray<class_poolbytearray>` from  **)**                                |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`append<class_Array_append>`  **(** var value  **)**                                                                   |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`back<class_Array_back>`  **(** **)**                                                                                  |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`clear<class_Array_clear>`  **(** **)**                                                                                |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`count<class_Array_count>`  **(** var value  **)**                                                                     |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`empty<class_Array_empty>`  **(** **)**                                                                                |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`erase<class_Array_erase>`  **(** var value  **)**                                                                     |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`find<class_Array_find>`  **(** var what, :ref:`int<class_int>` from=0  **)**                                          |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`find_last<class_Array_find_last>`  **(** var value  **)**                                                             |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`front<class_Array_front>`  **(** **)**                                                                                |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`has<class_Array_has>`  **(** var value  **)**                                                                         |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`hash<class_Array_hash>`  **(** **)**                                                                                  |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`insert<class_Array_insert>`  **(** :ref:`int<class_int>` pos, var value  **)**                                        |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`invert<class_Array_invert>`  **(** **)**                                                                              |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`pop_back<class_Array_pop_back>`  **(** **)**                                                                          |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`pop_front<class_Array_pop_front>`  **(** **)**                                                                        |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`push_back<class_Array_push_back>`  **(** var value  **)**                                                             |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`push_front<class_Array_push_front>`  **(** var value  **)**                                                           |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`remove<class_Array_remove>`  **(** :ref:`int<class_int>` pos  **)**                                                   |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`resize<class_Array_resize>`  **(** :ref:`int<class_int>` pos  **)**                                                   |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`rfind<class_Array_rfind>`  **(** var what, :ref:`int<class_int>` from=-1  **)**                                       |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`size<class_Array_size>`  **(** **)**                                                                                  |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`sort<class_Array_sort>`  **(** **)**                                                                                  |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`sort_custom<class_Array_sort_custom>`  **(** :ref:`Object<class_object>` obj, :ref:`String<class_string>` func  **)** |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -90,51 +88,57 @@ Member Function Description
 
 .. _class_Array_Array:
 
-- :ref:`Array<class_array>`  **Array**  **(** :ref:`ColorArray<class_colorarray>` from  **)**
+- :ref:`Array<class_array>`  **Array**  **(** :ref:`PoolColorArray<class_poolcolorarray>` from  **)**
 
-Construct an array from a :ref:`RawArray<class_rawarray>`.
-
-.. _class_Array_Array:
-
-- :ref:`Array<class_array>`  **Array**  **(** :ref:`Vector3Array<class_vector3array>` from  **)**
-
-Construct an array from a :ref:`RawArray<class_rawarray>`.
+Construct an array from a :ref:`PoolByteArray<class_poolbytearray>`.
 
 .. _class_Array_Array:
 
-- :ref:`Array<class_array>`  **Array**  **(** :ref:`Vector2Array<class_vector2array>` from  **)**
+- :ref:`Array<class_array>`  **Array**  **(** :ref:`PoolVector3Array<class_poolvector3array>` from  **)**
 
-Construct an array from a :ref:`RawArray<class_rawarray>`.
-
-.. _class_Array_Array:
-
-- :ref:`Array<class_array>`  **Array**  **(** :ref:`StringArray<class_stringarray>` from  **)**
-
-Construct an array from a :ref:`RawArray<class_rawarray>`.
+Construct an array from a :ref:`PoolByteArray<class_poolbytearray>`.
 
 .. _class_Array_Array:
 
-- :ref:`Array<class_array>`  **Array**  **(** :ref:`RealArray<class_realarray>` from  **)**
+- :ref:`Array<class_array>`  **Array**  **(** :ref:`PoolVector2Array<class_poolvector2array>` from  **)**
 
-Construct an array from a :ref:`RawArray<class_rawarray>`.
-
-.. _class_Array_Array:
-
-- :ref:`Array<class_array>`  **Array**  **(** :ref:`IntArray<class_intarray>` from  **)**
-
-Construct an array from a :ref:`RawArray<class_rawarray>`.
+Construct an array from a :ref:`PoolByteArray<class_poolbytearray>`.
 
 .. _class_Array_Array:
 
-- :ref:`Array<class_array>`  **Array**  **(** :ref:`RawArray<class_rawarray>` from  **)**
+- :ref:`Array<class_array>`  **Array**  **(** :ref:`PoolStringArray<class_poolstringarray>` from  **)**
 
-Construct an array from a :ref:`RawArray<class_rawarray>`.
+Construct an array from a :ref:`PoolStringArray<class_poolstringarray>`.
+
+.. _class_Array_Array:
+
+- :ref:`Array<class_array>`  **Array**  **(** :ref:`PoolRealArray<class_poolrealarray>` from  **)**
+
+Construct an array from a :ref:`PoolRealArray<class_poolrealarray>`.
+
+.. _class_Array_Array:
+
+- :ref:`Array<class_array>`  **Array**  **(** :ref:`PoolIntArray<class_poolintarray>` from  **)**
+
+Construct an array from a :ref:`PoolByteArray<class_poolbytearray>`.
+
+.. _class_Array_Array:
+
+- :ref:`Array<class_array>`  **Array**  **(** :ref:`PoolByteArray<class_poolbytearray>` from  **)**
+
+Construct an array from a :ref:`PoolByteArray<class_poolbytearray>`.
 
 .. _class_Array_append:
 
 - void  **append**  **(** var value  **)**
 
 Append an element at the end of the array (alias of :ref:`push_back<class_Array_push_back>`).
+
+.. _class_Array_back:
+
+- void  **back**  **(** **)**
+
+Returns the last element of the array if the array is not empty (size>0).
 
 .. _class_Array_clear:
 
@@ -160,18 +164,6 @@ Return true if the array is empty (size==0).
 
 Remove the first occurrence of a value from the array.
 
-.. _class_Array_front:
-
-- :ref:`Variant<class_variant>`  **front**  **(** **)**
-
-Returns the first element of the array if the array is not empty (size>0).
-
-.. _class_Array_back:
-
-- :ref:`Variant<class_variant>`  **back**  **(** **)**
-
-Returns the last element of the array if the array is not empty (size>0).
-
 .. _class_Array_find:
 
 - :ref:`int<class_int>`  **find**  **(** var what, :ref:`int<class_int>` from=0  **)**
@@ -183,6 +175,12 @@ Searches the array for a value and returns its index or -1 if not found. Optiona
 - :ref:`int<class_int>`  **find_last**  **(** var value  **)**
 
 Searches the array in reverse order for a value and returns its index or -1 if not found.
+
+.. _class_Array_front:
+
+- void  **front**  **(** **)**
+
+Returns the first element of the array if the array is not empty (size>0).
 
 .. _class_Array_has:
 
@@ -207,12 +205,6 @@ Insert a new element at a given position in the array. The position must be vali
 - void  **invert**  **(** **)**
 
 Reverse the order of the elements in the array (so first element will now be the last).
-
-.. _class_Array_is_shared:
-
-- :ref:`bool<class_bool>`  **is_shared**  **(** **)**
-
-Get whether this is a shared array instance.
 
 .. _class_Array_pop_back:
 

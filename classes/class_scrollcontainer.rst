@@ -36,6 +36,12 @@ Member Functions
 | void                     | :ref:`set_v_scroll<class_ScrollContainer_set_v_scroll>`  **(** :ref:`int<class_int>` val  **)**                    |
 +--------------------------+--------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`bool<class_bool>` **scroll_horizontal**
+- :ref:`bool<class_bool>` **scroll_vertical**
+
 Description
 -----------
 

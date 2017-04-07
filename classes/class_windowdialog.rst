@@ -20,13 +20,23 @@ Base class for window dialogs.
 Member Functions
 ----------------
 
-+--------------------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`TextureButton<class_texturebutton>`  | :ref:`get_close_button<class_WindowDialog_get_close_button>`  **(** **)**                      |
-+--------------------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                | :ref:`get_title<class_WindowDialog_get_title>`  **(** **)** const                              |
-+--------------------------------------------+------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_title<class_WindowDialog_set_title>`  **(** :ref:`String<class_string>` title  **)** |
-+--------------------------------------------+------------------------------------------------------------------------------------------------+
++--------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| :ref:`TextureButton<class_texturebutton>`  | :ref:`get_close_button<class_WindowDialog_get_close_button>`  **(** **)**                              |
++--------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                    | :ref:`get_resizable<class_WindowDialog_get_resizable>`  **(** **)** const                              |
++--------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                | :ref:`get_title<class_WindowDialog_get_title>`  **(** **)** const                                      |
++--------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`set_resizable<class_WindowDialog_set_resizable>`  **(** :ref:`bool<class_bool>` resizable  **)** |
++--------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`set_title<class_WindowDialog_set_title>`  **(** :ref:`String<class_string>` title  **)**         |
++--------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+- :ref:`bool<class_bool>` **resizable**
+- :ref:`String<class_string>` **window_title**
 
 Description
 -----------
@@ -42,11 +52,19 @@ Member Function Description
 
 Return the close :ref:`TextureButton<class_texturebutton>`.
 
+.. _class_WindowDialog_get_resizable:
+
+- :ref:`bool<class_bool>`  **get_resizable**  **(** **)** const
+
 .. _class_WindowDialog_get_title:
 
 - :ref:`String<class_string>`  **get_title**  **(** **)** const
 
 Return the title of the window.
+
+.. _class_WindowDialog_set_resizable:
+
+- void  **set_resizable**  **(** :ref:`bool<class_bool>` resizable  **)**
 
 .. _class_WindowDialog_set_title:
 

@@ -28,6 +28,12 @@ Member Functions
 | void                       | :ref:`set_radius<class_CapsuleShape2D_set_radius>`  **(** :ref:`float<class_float>` radius  **)** |
 +----------------------------+---------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`float<class_float>` **height**
+- :ref:`float<class_float>` **radius**
+
 Description
 -----------
 

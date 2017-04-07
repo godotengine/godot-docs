@@ -24,6 +24,15 @@ Member Functions
 | void                       | :ref:`set_param<class_ConeTwistJoint_set_param>`  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)** |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`float<class_float>` **bias**
+- :ref:`float<class_float>` **relaxation**
+- :ref:`float<class_float>` **softness**
+- :ref:`float<class_float>` **swing_span**
+- :ref:`float<class_float>` **twist_span**
+
 Numeric Constants
 -----------------
 

@@ -45,7 +45,7 @@ Member Functions
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`        | :ref:`open<class_XMLParser_open>`  **(** :ref:`String<class_string>` file  **)**                                                           |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`open_buffer<class_XMLParser_open_buffer>`  **(** :ref:`RawArray<class_rawarray>` buffer  **)**                                       |
+| :ref:`int<class_int>`        | :ref:`open_buffer<class_XMLParser_open_buffer>`  **(** :ref:`PoolByteArray<class_poolbytearray>` buffer  **)**                             |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`        | :ref:`read<class_XMLParser_read>`  **(** **)**                                                                                             |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -153,7 +153,7 @@ Open a XML file for parsing. This returns an error code.
 
 .. _class_XMLParser_open_buffer:
 
-- :ref:`int<class_int>`  **open_buffer**  **(** :ref:`RawArray<class_rawarray>` buffer  **)**
+- :ref:`int<class_int>`  **open_buffer**  **(** :ref:`PoolByteArray<class_poolbytearray>` buffer  **)**
 
 Open a XML raw buffer for parsing. This returns an error code.
 

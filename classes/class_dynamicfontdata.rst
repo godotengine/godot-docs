@@ -24,6 +24,11 @@ Member Functions
 | void                         | :ref:`set_font_path<class_DynamicFontData_set_font_path>`  **(** :ref:`String<class_string>` path  **)** |
 +------------------------------+----------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`String<class_string>` **font_path**
+
 Member Function Description
 ---------------------------
 

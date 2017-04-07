@@ -58,8 +58,14 @@ Signals
 -------
 
 -  **input_event**  **(** :ref:`Object<class_object>` camera, :ref:`InputEvent<class_inputevent>` event, :ref:`Vector3<class_vector3>` click_pos, :ref:`Vector3<class_vector3>` click_normal, :ref:`int<class_int>` shape_idx  **)**
--  **mouse_enter**  **(** **)**
--  **mouse_exit**  **(** **)**
+-  **mouse_entered**  **(** **)**
+-  **mouse_exited**  **(** **)**
+
+Member Variables
+----------------
+
+- :ref:`bool<class_bool>` **input_capture_on_drag**
+- :ref:`bool<class_bool>` **input_ray_pickable**
 
 Member Function Description
 ---------------------------

@@ -28,6 +28,12 @@ Member Functions
 | void                         | :ref:`set_base_type<class_VisualScriptTypeCast_set_base_type>`  **(** :ref:`String<class_string>` type  **)**     |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`String<class_string>` **function/base_type**
+- :ref:`String<class_string>` **property/base_script**
+
 Member Function Description
 ---------------------------
 

@@ -92,6 +92,28 @@ Member Functions
 | void                             | :ref:`set_zoom<class_Camera2D_set_zoom>`  **(** :ref:`Vector2<class_vector2>` zoom  **)**                                                    |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`int<class_int>` **anchor_mode**
+- :ref:`bool<class_bool>` **current**
+- :ref:`float<class_float>` **drag_margin_bottom**
+- :ref:`bool<class_bool>` **drag_margin_h_enabled**
+- :ref:`float<class_float>` **drag_margin_left**
+- :ref:`float<class_float>` **drag_margin_right**
+- :ref:`float<class_float>` **drag_margin_top**
+- :ref:`bool<class_bool>` **drag_margin_v_enabled**
+- :ref:`int<class_int>` **limit_bottom**
+- :ref:`int<class_int>` **limit_left**
+- :ref:`int<class_int>` **limit_right**
+- :ref:`bool<class_bool>` **limit_smoothed**
+- :ref:`int<class_int>` **limit_top**
+- :ref:`Vector2<class_vector2>` **offset**
+- :ref:`bool<class_bool>` **rotating**
+- :ref:`bool<class_bool>` **smoothing_enabled**
+- :ref:`float<class_float>` **smoothing_speed**
+- :ref:`Vector2<class_vector2>` **zoom**
+
 Numeric Constants
 -----------------
 

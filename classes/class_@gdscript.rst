@@ -19,6 +19,8 @@ Member Functions
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_color>`                      | :ref:`Color8<class_@GDScript_Color8>`  **(** :ref:`int<class_int>` r8, :ref:`int<class_int>` g8, :ref:`int<class_int>` b8, :ref:`int<class_int>` a8  **)** |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`                      | :ref:`ColorN<class_@GDScript_ColorN>`  **(** :ref:`String<class_string>` name, :ref:`float<class_float>` alpha  **)**                                      |
++------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`abs<class_@GDScript_abs>`  **(** :ref:`float<class_float>` s  **)**                                                                                  |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`acos<class_@GDScript_acos>`  **(** :ref:`float<class_float>` s  **)**                                                                                |
@@ -31,9 +33,11 @@ Member Functions
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`atan2<class_@GDScript_atan2>`  **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y  **)**                                                 |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`                  | :ref:`bytes2var<class_@GDScript_bytes2var>`  **(** :ref:`RawArray<class_rawarray>` bytes  **)**                                                            |
+| :ref:`Variant<class_variant>`                  | :ref:`bytes2var<class_@GDScript_bytes2var>`  **(** :ref:`PoolByteArray<class_poolbytearray>` bytes  **)**                                                  |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`ceil<class_@GDScript_ceil>`  **(** :ref:`float<class_float>` s  **)**                                                                                |
++------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                    | :ref:`char<class_@GDScript_char>`  **(** :ref:`int<class_int>` ascii  **)**                                                                                |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`clamp<class_@GDScript_clamp>`  **(** :ref:`float<class_float>` val, :ref:`float<class_float>` min, :ref:`float<class_float>` max  **)**              |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -89,6 +93,8 @@ Member Functions
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`nearest_po2<class_@GDScript_nearest_po2>`  **(** :ref:`int<class_int>` val  **)**                                                                    |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_variant>`                  | :ref:`parse_json<class_@GDScript_parse_json>`  **(** :ref:`String<class_string>` json  **)**                                                               |
++------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`pow<class_@GDScript_pow>`  **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y  **)**                                                     |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Resource<class_resource>`                | :ref:`preload<class_@GDScript_preload>`  **(** :ref:`String<class_string>` path  **)**                                                                     |
@@ -141,11 +147,15 @@ Member Functions
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`tanh<class_@GDScript_tanh>`  **(** :ref:`float<class_float>` s  **)**                                                                                |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                    | :ref:`to_json<class_@GDScript_to_json>`  **(** :ref:`Variant<class_variant>` var:Variant  **)**                                                            |
++------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`type_exists<class_@GDScript_type_exists>`  **(** :ref:`String<class_string>` type  **)**                                                             |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`typeof<class_@GDScript_typeof>`  **(** :ref:`Variant<class_variant>` what  **)**                                                                     |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RawArray<class_rawarray>`                | :ref:`var2bytes<class_@GDScript_var2bytes>`  **(** :ref:`Variant<class_variant>` var  **)**                                                                |
+| :ref:`Variant<class_variant>`                  | :ref:`validate_json<class_@GDScript_validate_json>`  **(** :ref:`String<class_string>` json  **)**                                                         |
++------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolByteArray<class_poolbytearray>`      | :ref:`var2bytes<class_@GDScript_var2bytes>`  **(** :ref:`Variant<class_variant>` var  **)**                                                                |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                    | :ref:`var2str<class_@GDScript_var2str>`  **(** :ref:`Variant<class_variant>` var  **)**                                                                    |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -158,6 +168,8 @@ Numeric Constants
 -----------------
 
 - **PI** = **3.141593** --- Constant that represents how many times the diameter of a circumference fits around its perimeter.
+- **INF** = **inf**
+- **NAN** = **nan**
 
 Description
 -----------
@@ -172,6 +184,10 @@ Member Function Description
 - :ref:`Color<class_color>`  **Color8**  **(** :ref:`int<class_int>` r8, :ref:`int<class_int>` g8, :ref:`int<class_int>` b8, :ref:`int<class_int>` a8  **)**
 
 Make a color from red, green, blue and alpha. Arguments can range from 0 to 255.
+
+.. _class_@GDScript_ColorN:
+
+- :ref:`Color<class_color>`  **ColorN**  **(** :ref:`String<class_string>` name, :ref:`float<class_float>` alpha  **)**
 
 .. _class_@GDScript_abs:
 
@@ -211,7 +227,7 @@ Arc-tangent that takes a 2D vector as argument, returns the full -pi to +pi rang
 
 .. _class_@GDScript_bytes2var:
 
-- :ref:`Variant<class_variant>`  **bytes2var**  **(** :ref:`RawArray<class_rawarray>` bytes  **)**
+- :ref:`Variant<class_variant>`  **bytes2var**  **(** :ref:`PoolByteArray<class_poolbytearray>` bytes  **)**
 
 Decode a byte array back to a value.
 
@@ -220,6 +236,10 @@ Decode a byte array back to a value.
 - :ref:`float<class_float>`  **ceil**  **(** :ref:`float<class_float>` s  **)**
 
 Ceiling (rounds up to nearest integer).
+
+.. _class_@GDScript_char:
+
+- :ref:`String<class_string>`  **char**  **(** :ref:`int<class_int>` ascii  **)**
 
 .. _class_@GDScript_clamp:
 
@@ -379,6 +399,12 @@ Return the minimum of two values.
 
 Return the nearest larger power of 2 for an integer.
 
+.. _class_@GDScript_parse_json:
+
+- :ref:`Variant<class_variant>`  **parse_json**  **(** :ref:`String<class_string>` json  **)**
+
+Parse json text to a Variant (use :ref:`typeof<class_@GDScript_typeof>` to check if it is what you expect).
+
 .. _class_@GDScript_pow:
 
 - :ref:`float<class_float>`  **pow**  **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y  **)**
@@ -437,31 +463,31 @@ Convert from radians to degrees.
 
 - :ref:`float<class_float>`  **rand_range**  **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to  **)**
 
-Random range, any floating point value between 'from' and 'to'
+Random range, any floating point value between 'from' and 'to'.
 
 .. _class_@GDScript_rand_seed:
 
 - :ref:`Array<class_array>`  **rand_seed**  **(** :ref:`int<class_int>` seed  **)**
 
-Random from seed, pass a seed and an array with both number and new seed is returned.
+Random from seed: pass a seed, and an array with both number and new seed is returned. "Seed" here refers to the internal state of the pseudo random number generator. The internal state of the current implementation is 64 bits.
 
 .. _class_@GDScript_randf:
 
 - :ref:`float<class_float>`  **randf**  **(** **)**
 
-Random value (0 to 1 float).
+Return a random floating point value between 0 and 1.
 
 .. _class_@GDScript_randi:
 
 - :ref:`int<class_int>`  **randi**  **(** **)**
 
-Random 32 bits value (integer). To obtain a value	from 0 to N, you can use remainder, like (for random from 0 to 19): randi() % 20.
+Return a random 32 bits integer value. To obtain a random value between 0 to N (where N is smaller than 2^32 - 1), you can use remainder. For example, to get a random integer between 0 and 19 inclusive, you can use randi() % 20.
 
 .. _class_@GDScript_randomize:
 
 - :ref:`Nil<class_nil>`  **randomize**  **(** **)**
 
-Reset the seed of the random number generator with a new, different one.
+Randomize the seed (or the internal state) of the random number generator. Current implementation reseeds using a number based on time.
 
 .. _class_@GDScript_range:
 
@@ -535,6 +561,12 @@ Standard tangent function.
 
 Hyperbolic tangent.
 
+.. _class_@GDScript_to_json:
+
+- :ref:`String<class_string>`  **to_json**  **(** :ref:`Variant<class_variant>` var:Variant  **)**
+
+Convert a Variant to json text.
+
 .. _class_@GDScript_type_exists:
 
 - :ref:`bool<class_bool>`  **type_exists**  **(** :ref:`String<class_string>` type  **)**
@@ -545,9 +577,13 @@ Hyperbolic tangent.
 
 Return the internal type of the given Variant object, using the TYPE\_\* enum in :ref:`@Global Scope<class_@global scope>`.
 
+.. _class_@GDScript_validate_json:
+
+- :ref:`Variant<class_variant>`  **validate_json**  **(** :ref:`String<class_string>` json  **)**
+
 .. _class_@GDScript_var2bytes:
 
-- :ref:`RawArray<class_rawarray>`  **var2bytes**  **(** :ref:`Variant<class_variant>` var  **)**
+- :ref:`PoolByteArray<class_poolbytearray>`  **var2bytes**  **(** :ref:`Variant<class_variant>` var  **)**
 
 Encode a variable value to a byte array.
 
@@ -569,6 +605,6 @@ Return a weak reference to an object.
 
 Stop the function execution and return the current state. Call :ref:`GDFunctionState.resume<class_GDFunctionState_resume>` on the state to resume execution. This invalidates the state.
 
-Returns anything that was passed to the resume function call. If passed an object and a signal, the execution is resumed when the object's signal is emmited.
+Returns anything that was passed to the resume function call. If passed an object and a signal, the execution is resumed when the object's signal is emitted.
 
 

@@ -34,6 +34,13 @@ Member Functions
 | void                         | :ref:`set_suffix<class_SpinBox_set_suffix>`  **(** :ref:`String<class_string>` suffix  **)**   |
 +------------------------------+------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`bool<class_bool>` **editable**
+- :ref:`String<class_string>` **prefix**
+- :ref:`String<class_string>` **suffix**
+
 Description
 -----------
 

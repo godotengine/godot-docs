@@ -18,15 +18,15 @@ TCP Server.
 Member Functions
 ----------------
 
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`is_connection_available<class_TCP_Server_is_connection_available>`  **(** **)** const                                                           |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`listen<class_TCP_Server_listen>`  **(** :ref:`int<class_int>` port, :ref:`StringArray<class_stringarray>` accepted_hosts=StringArray([])  **)** |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`stop<class_TCP_Server_stop>`  **(** **)**                                                                                                       |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`  | :ref:`take_connection<class_TCP_Server_take_connection>`  **(** **)**                                                                                 |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`is_connection_available<class_TCP_Server_is_connection_available>`  **(** **)** const                                   |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`listen<class_TCP_Server_listen>`  **(** :ref:`int<class_int>` port, :ref:`String<class_string>` bind_address="*"  **)** |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`stop<class_TCP_Server_stop>`  **(** **)**                                                                               |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`  | :ref:`take_connection<class_TCP_Server_take_connection>`  **(** **)**                                                         |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -44,9 +44,15 @@ Return true if a connection is available for taking.
 
 .. _class_TCP_Server_listen:
 
-- :ref:`int<class_int>`  **listen**  **(** :ref:`int<class_int>` port, :ref:`StringArray<class_stringarray>` accepted_hosts=StringArray([])  **)**
+- :ref:`int<class_int>`  **listen**  **(** :ref:`int<class_int>` port, :ref:`String<class_string>` bind_address="*"  **)**
 
-Listen on a port using protocol, alternatively give a white-list of accepted hosts.
+Listen on the "port" binding to "bind_address".
+
+If "bind_address" is set as "\*" (default), the server will listen on all available addresses (both IPv4 and IPv6).
+
+If "bind_address" is set as "0.0.0.0" (for IPv4) or "::" (for IPv6), the server will listen on all available addresses matching that IP type.
+
+If "bind_address" is set to any valid address (e.g. "192.168.1.101", "::1", etc), the server will only listen on the interface with that addresses (or fail if no interface with the given address exists).
 
 .. _class_TCP_Server_stop:
 

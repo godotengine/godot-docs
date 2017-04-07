@@ -20,56 +20,69 @@ Provides a base class for different kinds of light nodes.
 Member Functions
 ----------------
 
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_bake_mode<class_Light_get_bake_mode>`  **(** **)** const                                                            |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`      | :ref:`get_color<class_Light_get_color>`  **(** :ref:`int<class_int>` color  **)** const                                       |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_operator<class_Light_get_operator>`  **(** **)** const                                                              |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_parameter<class_Light_get_parameter>`  **(** :ref:`int<class_int>` variable  **)** const                            |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_texture>`  | :ref:`get_projector<class_Light_get_projector>`  **(** **)** const                                                            |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`has_project_shadows<class_Light_has_project_shadows>`  **(** **)** const                                                |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_editor_only<class_Light_is_editor_only>`  **(** **)** const                                                          |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_enabled<class_Light_is_enabled>`  **(** **)** const                                                                  |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_bake_mode<class_Light_set_bake_mode>`  **(** :ref:`int<class_int>` bake_mode  **)**                                 |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_color<class_Light_set_color>`  **(** :ref:`int<class_int>` color, :ref:`Color<class_color>` value  **)**            |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_editor_only<class_Light_set_editor_only>`  **(** :ref:`bool<class_bool>` editor_only  **)**                         |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_enabled<class_Light_set_enabled>`  **(** :ref:`bool<class_bool>` enabled  **)**                                     |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_operator<class_Light_set_operator>`  **(** :ref:`int<class_int>` operator  **)**                                    |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_parameter<class_Light_set_parameter>`  **(** :ref:`int<class_int>` variable, :ref:`float<class_float>` value  **)** |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_project_shadows<class_Light_set_project_shadows>`  **(** :ref:`bool<class_bool>` enable  **)**                      |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_projector<class_Light_set_projector>`  **(** :ref:`Texture<class_texture>` projector  **)**                         |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
++----------------------------+--------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`  | :ref:`get_color<class_Light_get_color>`  **(** **)** const                                                         |
++----------------------------+--------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`get_cull_mask<class_Light_get_cull_mask>`  **(** **)** const                                                 |
++----------------------------+--------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_param<class_Light_get_param>`  **(** :ref:`int<class_int>` param  **)** const                            |
++----------------------------+--------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`  | :ref:`get_shadow_color<class_Light_get_shadow_color>`  **(** **)** const                                           |
++----------------------------+--------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`has_shadow<class_Light_has_shadow>`  **(** **)** const                                                       |
++----------------------------+--------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`is_editor_only<class_Light_is_editor_only>`  **(** **)** const                                               |
++----------------------------+--------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`is_negative<class_Light_is_negative>`  **(** **)** const                                                     |
++----------------------------+--------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_color<class_Light_set_color>`  **(** :ref:`Color<class_color>` color  **)**                              |
++----------------------------+--------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_cull_mask<class_Light_set_cull_mask>`  **(** :ref:`int<class_int>` cull_mask  **)**                      |
++----------------------------+--------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_editor_only<class_Light_set_editor_only>`  **(** :ref:`bool<class_bool>` editor_only  **)**              |
++----------------------------+--------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_negative<class_Light_set_negative>`  **(** :ref:`bool<class_bool>` enabled  **)**                        |
++----------------------------+--------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_param<class_Light_set_param>`  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)** |
++----------------------------+--------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_shadow<class_Light_set_shadow>`  **(** :ref:`bool<class_bool>` enabled  **)**                            |
++----------------------------+--------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_shadow_color<class_Light_set_shadow_color>`  **(** :ref:`Color<class_color>` shadow_color  **)**         |
++----------------------------+--------------------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+- :ref:`bool<class_bool>` **editor_only**
+- :ref:`Color<class_color>` **light_color**
+- :ref:`int<class_int>` **light_cull_mask**
+- :ref:`float<class_float>` **light_energy**
+- :ref:`bool<class_bool>` **light_negative**
+- :ref:`float<class_float>` **light_specular**
+- :ref:`float<class_float>` **shadow_bias**
+- :ref:`Color<class_color>` **shadow_color**
+- :ref:`float<class_float>` **shadow_contact**
+- :ref:`bool<class_bool>` **shadow_enabled**
+- :ref:`float<class_float>` **shadow_max_distance**
 
 Numeric Constants
 -----------------
 
-- **PARAM_RADIUS** = **2**
-- **PARAM_ENERGY** = **3**
-- **PARAM_ATTENUATION** = **4**
-- **PARAM_SPOT_ANGLE** = **1**
-- **PARAM_SPOT_ATTENUATION** = **0**
-- **PARAM_SHADOW_DARKENING** = **5**
-- **PARAM_SHADOW_Z_OFFSET** = **6**
-- **COLOR_DIFFUSE** = **0**
-- **COLOR_SPECULAR** = **1**
-- **BAKE_MODE_DISABLED** = **0**
-- **BAKE_MODE_INDIRECT** = **1**
-- **BAKE_MODE_INDIRECT_AND_SHADOWS** = **2**
-- **BAKE_MODE_FULL** = **3**
+- **PARAM_ENERGY** = **0**
+- **PARAM_SPECULAR** = **1**
+- **PARAM_RANGE** = **2**
+- **PARAM_ATTENUATION** = **3**
+- **PARAM_SPOT_ANGLE** = **4**
+- **PARAM_SPOT_ATTENUATION** = **5**
+- **PARAM_CONTACT_SHADOW_SIZE** = **6**
+- **PARAM_SHADOW_MAX_DISTANCE** = **7**
+- **PARAM_SHADOW_SPLIT_1_OFFSET** = **8**
+- **PARAM_SHADOW_SPLIT_2_OFFSET** = **9**
+- **PARAM_SHADOW_SPLIT_3_OFFSET** = **10**
+- **PARAM_SHADOW_NORMAL_BIAS** = **11**
+- **PARAM_SHADOW_BIAS** = **12**
+- **PARAM_SHADOW_BIAS_SPLIT_SCALE** = **13**
+- **PARAM_MAX** = **14**
 
 Description
 -----------
@@ -79,68 +92,60 @@ Light is the abstract base class for light nodes, so it shouldn't be used direct
 Member Function Description
 ---------------------------
 
-.. _class_Light_get_bake_mode:
-
-- :ref:`int<class_int>`  **get_bake_mode**  **(** **)** const
-
 .. _class_Light_get_color:
 
-- :ref:`Color<class_color>`  **get_color**  **(** :ref:`int<class_int>` color  **)** const
+- :ref:`Color<class_color>`  **get_color**  **(** **)** const
 
-.. _class_Light_get_operator:
+.. _class_Light_get_cull_mask:
 
-- :ref:`int<class_int>`  **get_operator**  **(** **)** const
+- :ref:`int<class_int>`  **get_cull_mask**  **(** **)** const
 
-.. _class_Light_get_parameter:
+.. _class_Light_get_param:
 
-- :ref:`float<class_float>`  **get_parameter**  **(** :ref:`int<class_int>` variable  **)** const
+- :ref:`float<class_float>`  **get_param**  **(** :ref:`int<class_int>` param  **)** const
 
-.. _class_Light_get_projector:
+.. _class_Light_get_shadow_color:
 
-- :ref:`Texture<class_texture>`  **get_projector**  **(** **)** const
+- :ref:`Color<class_color>`  **get_shadow_color**  **(** **)** const
 
-.. _class_Light_has_project_shadows:
+.. _class_Light_has_shadow:
 
-- :ref:`bool<class_bool>`  **has_project_shadows**  **(** **)** const
+- :ref:`bool<class_bool>`  **has_shadow**  **(** **)** const
 
 .. _class_Light_is_editor_only:
 
 - :ref:`bool<class_bool>`  **is_editor_only**  **(** **)** const
 
-.. _class_Light_is_enabled:
+.. _class_Light_is_negative:
 
-- :ref:`bool<class_bool>`  **is_enabled**  **(** **)** const
-
-.. _class_Light_set_bake_mode:
-
-- void  **set_bake_mode**  **(** :ref:`int<class_int>` bake_mode  **)**
+- :ref:`bool<class_bool>`  **is_negative**  **(** **)** const
 
 .. _class_Light_set_color:
 
-- void  **set_color**  **(** :ref:`int<class_int>` color, :ref:`Color<class_color>` value  **)**
+- void  **set_color**  **(** :ref:`Color<class_color>` color  **)**
+
+.. _class_Light_set_cull_mask:
+
+- void  **set_cull_mask**  **(** :ref:`int<class_int>` cull_mask  **)**
 
 .. _class_Light_set_editor_only:
 
 - void  **set_editor_only**  **(** :ref:`bool<class_bool>` editor_only  **)**
 
-.. _class_Light_set_enabled:
+.. _class_Light_set_negative:
 
-- void  **set_enabled**  **(** :ref:`bool<class_bool>` enabled  **)**
+- void  **set_negative**  **(** :ref:`bool<class_bool>` enabled  **)**
 
-.. _class_Light_set_operator:
+.. _class_Light_set_param:
 
-- void  **set_operator**  **(** :ref:`int<class_int>` operator  **)**
+- void  **set_param**  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**
 
-.. _class_Light_set_parameter:
+.. _class_Light_set_shadow:
 
-- void  **set_parameter**  **(** :ref:`int<class_int>` variable, :ref:`float<class_float>` value  **)**
+- void  **set_shadow**  **(** :ref:`bool<class_bool>` enabled  **)**
 
-.. _class_Light_set_project_shadows:
+.. _class_Light_set_shadow_color:
 
-- void  **set_project_shadows**  **(** :ref:`bool<class_bool>` enable  **)**
-
-.. _class_Light_set_projector:
-
-- void  **set_projector**  **(** :ref:`Texture<class_texture>` projector  **)**
+- void  **set_shadow_color**  **(** :ref:`Color<class_color>` shadow_color  **)**
 
 

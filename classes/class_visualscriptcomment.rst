@@ -32,6 +32,13 @@ Member Functions
 | void                           | :ref:`set_title<class_VisualScriptComment_set_title>`  **(** :ref:`String<class_string>` title  **)**                   |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`String<class_string>` **description**
+- :ref:`Vector2<class_vector2>` **size**
+- :ref:`String<class_string>` **title**
+
 Member Function Description
 ---------------------------
 

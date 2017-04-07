@@ -18,27 +18,27 @@ Portals provide virtual openings to rooms.
 Member Functions
 ----------------
 
-+------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                | :ref:`get_connect_range<class_Portal_get_connect_range>`  **(** **)** const                                     |
-+------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                | :ref:`get_disable_distance<class_Portal_get_disable_distance>`  **(** **)** const                               |
-+------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`                | :ref:`get_disabled_color<class_Portal_get_disabled_color>`  **(** **)** const                                   |
-+------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2Array<class_vector2array>`  | :ref:`get_shape<class_Portal_get_shape>`  **(** **)** const                                                     |
-+------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`is_enabled<class_Portal_is_enabled>`  **(** **)** const                                                   |
-+------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_connect_range<class_Portal_set_connect_range>`  **(** :ref:`float<class_float>` range  **)**          |
-+------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_disable_distance<class_Portal_set_disable_distance>`  **(** :ref:`float<class_float>` distance  **)** |
-+------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_disabled_color<class_Portal_set_disabled_color>`  **(** :ref:`Color<class_color>` color  **)**        |
-+------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_enabled<class_Portal_set_enabled>`  **(** :ref:`bool<class_bool>` enable  **)**                       |
-+------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_shape<class_Portal_set_shape>`  **(** :ref:`Vector2Array<class_vector2array>` points  **)**           |
-+------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                        | :ref:`get_connect_range<class_Portal_get_connect_range>`  **(** **)** const                                     |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                        | :ref:`get_disable_distance<class_Portal_get_disable_distance>`  **(** **)** const                               |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`                        | :ref:`get_disabled_color<class_Portal_get_disabled_color>`  **(** **)** const                                   |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolVector2Array<class_poolvector2array>`  | :ref:`get_shape<class_Portal_get_shape>`  **(** **)** const                                                     |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                          | :ref:`is_enabled<class_Portal_is_enabled>`  **(** **)** const                                                   |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_connect_range<class_Portal_set_connect_range>`  **(** :ref:`float<class_float>` range  **)**          |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_disable_distance<class_Portal_set_disable_distance>`  **(** :ref:`float<class_float>` distance  **)** |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_disabled_color<class_Portal_set_disabled_color>`  **(** :ref:`Color<class_color>` color  **)**        |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_enabled<class_Portal_set_enabled>`  **(** :ref:`bool<class_bool>` enable  **)**                       |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_shape<class_Portal_set_shape>`  **(** :ref:`PoolVector2Array<class_poolvector2array>` points  **)**   |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -68,7 +68,7 @@ Return the color for when the portal goes beyond the disable distance (see :ref:
 
 .. _class_Portal_get_shape:
 
-- :ref:`Vector2Array<class_vector2array>`  **get_shape**  **(** **)** const
+- :ref:`PoolVector2Array<class_poolvector2array>`  **get_shape**  **(** **)** const
 
 Return the portal shape. The shape is an array of :ref:`Vector2<class_vector2>` points, representing a convex polygon in the X,Y plane.
 
@@ -104,7 +104,7 @@ Enable the portal (it is enabled by default though), disabling it will cause the
 
 .. _class_Portal_set_shape:
 
-- void  **set_shape**  **(** :ref:`Vector2Array<class_vector2array>` points  **)**
+- void  **set_shape**  **(** :ref:`PoolVector2Array<class_poolvector2array>` points  **)**
 
 Set the portal shape. The shape is an array of :ref:`Vector2<class_vector2>` points, representing a convex polygon in the X,Y plane.
 

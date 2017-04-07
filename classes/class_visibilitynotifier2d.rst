@@ -31,10 +31,15 @@ Member Functions
 Signals
 -------
 
--  **enter_screen**  **(** **)**
--  **enter_viewport**  **(** :ref:`Object<class_object>` viewport  **)**
--  **exit_screen**  **(** **)**
--  **exit_viewport**  **(** :ref:`Object<class_object>` viewport  **)**
+-  **screen_entered**  **(** **)**
+-  **screen_exited**  **(** **)**
+-  **viewport_entered**  **(** :ref:`Object<class_object>` viewport  **)**
+-  **viewport_exited**  **(** :ref:`Object<class_object>` viewport  **)**
+
+Member Variables
+----------------
+
+- :ref:`Rect2<class_rect2>` **rect**
 
 Description
 -----------

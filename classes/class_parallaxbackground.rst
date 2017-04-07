@@ -44,6 +44,16 @@ Member Functions
 | void                           | :ref:`set_scroll_offset<class_ParallaxBackground_set_scroll_offset>`  **(** :ref:`Vector2<class_vector2>` ofs  **)**           |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`Vector2<class_vector2>` **scroll_base_offset**
+- :ref:`Vector2<class_vector2>` **scroll_base_scale**
+- :ref:`bool<class_bool>` **scroll_ignore_camera_zoom**
+- :ref:`Vector2<class_vector2>` **scroll_limit_begin**
+- :ref:`Vector2<class_vector2>` **scroll_limit_end**
+- :ref:`Vector2<class_vector2>` **scroll_offset**
+
 Description
 -----------
 

@@ -18,23 +18,23 @@ Object that holds the project-independent editor settings.
 Member Functions
 ----------------
 
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`add_property_info<class_EditorSettings_add_property_info>`  **(** :ref:`Dictionary<class_dictionary>` info  **)**   |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`erase<class_EditorSettings_erase>`  **(** :ref:`String<class_string>` property  **)**                               |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StringArray<class_stringarray>`  | :ref:`get_favorite_dirs<class_EditorSettings_get_favorite_dirs>`  **(** **)** const                                       |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`            | :ref:`get_project_settings_path<class_EditorSettings_get_project_settings_path>`  **(** **)** const                       |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StringArray<class_stringarray>`  | :ref:`get_recent_dirs<class_EditorSettings_get_recent_dirs>`  **(** **)** const                                           |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`            | :ref:`get_settings_path<class_EditorSettings_get_settings_path>`  **(** **)** const                                       |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_favorite_dirs<class_EditorSettings_set_favorite_dirs>`  **(** :ref:`StringArray<class_stringarray>` dirs  **)** |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_recent_dirs<class_EditorSettings_set_recent_dirs>`  **(** :ref:`StringArray<class_stringarray>` dirs  **)**     |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`add_property_info<class_EditorSettings_add_property_info>`  **(** :ref:`Dictionary<class_dictionary>` info  **)**           |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`erase<class_EditorSettings_erase>`  **(** :ref:`String<class_string>` property  **)**                                       |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_favorite_dirs<class_EditorSettings_get_favorite_dirs>`  **(** **)** const                                               |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                    | :ref:`get_project_settings_path<class_EditorSettings_get_project_settings_path>`  **(** **)** const                               |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_recent_dirs<class_EditorSettings_get_recent_dirs>`  **(** **)** const                                                   |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                    | :ref:`get_settings_path<class_EditorSettings_get_settings_path>`  **(** **)** const                                               |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`set_favorite_dirs<class_EditorSettings_set_favorite_dirs>`  **(** :ref:`PoolStringArray<class_poolstringarray>` dirs  **)** |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`set_recent_dirs<class_EditorSettings_set_recent_dirs>`  **(** :ref:`PoolStringArray<class_poolstringarray>` dirs  **)**     |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -86,7 +86,7 @@ Erase a given setting (pass full property path).
 
 .. _class_EditorSettings_get_favorite_dirs:
 
-- :ref:`StringArray<class_stringarray>`  **get_favorite_dirs**  **(** **)** const
+- :ref:`PoolStringArray<class_poolstringarray>`  **get_favorite_dirs**  **(** **)** const
 
 Get the list of favorite directories for this project.
 
@@ -98,7 +98,7 @@ Get the specific project settings path. Projects all have an unique sub-director
 
 .. _class_EditorSettings_get_recent_dirs:
 
-- :ref:`StringArray<class_stringarray>`  **get_recent_dirs**  **(** **)** const
+- :ref:`PoolStringArray<class_poolstringarray>`  **get_recent_dirs**  **(** **)** const
 
 Get the list of recently visited folders in the file dialog for this project.
 
@@ -114,13 +114,13 @@ settings/templates - where export templates are located
 
 .. _class_EditorSettings_set_favorite_dirs:
 
-- void  **set_favorite_dirs**  **(** :ref:`StringArray<class_stringarray>` dirs  **)**
+- void  **set_favorite_dirs**  **(** :ref:`PoolStringArray<class_poolstringarray>` dirs  **)**
 
 Set the list of favorite directories for this project.
 
 .. _class_EditorSettings_set_recent_dirs:
 
-- void  **set_recent_dirs**  **(** :ref:`StringArray<class_stringarray>` dirs  **)**
+- void  **set_recent_dirs**  **(** :ref:`PoolStringArray<class_poolstringarray>` dirs  **)**
 
 Set the list of recently visited folders in the file dialog for this project.
 

@@ -146,6 +146,6 @@ collider: Object the shape intersected.
 
 rid: :ref:`RID<class_rid>` of the object the shape intersected.
 
-The number of intersections can be limited with the second paramater, to reduce the processing time.
+The number of intersections can be limited with the second parameter, to reduce the processing time.
 
 

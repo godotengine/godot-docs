@@ -18,23 +18,31 @@ Editor-only class for easy editing of collision polygons.
 Member Functions
 ----------------
 
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                    | :ref:`get_build_mode<class_CollisionPolygon2D_get_build_mode>`  **(** **)** const                                      |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                    | :ref:`get_collision_object_first_shape<class_CollisionPolygon2D_get_collision_object_first_shape>`  **(** **)** const  |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                    | :ref:`get_collision_object_last_shape<class_CollisionPolygon2D_get_collision_object_last_shape>`  **(** **)** const    |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2Array<class_vector2array>`  | :ref:`get_polygon<class_CollisionPolygon2D_get_polygon>`  **(** **)** const                                            |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`is_trigger<class_CollisionPolygon2D_is_trigger>`  **(** **)** const                                              |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_build_mode<class_CollisionPolygon2D_set_build_mode>`  **(** :ref:`int<class_int>` build_mode  **)**          |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_polygon<class_CollisionPolygon2D_set_polygon>`  **(** :ref:`Vector2Array<class_vector2array>` polygon  **)** |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_trigger<class_CollisionPolygon2D_set_trigger>`  **(** :ref:`bool<class_bool>` trigger  **)**                 |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                            | :ref:`get_build_mode<class_CollisionPolygon2D_get_build_mode>`  **(** **)** const                                              |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                            | :ref:`get_collision_object_first_shape<class_CollisionPolygon2D_get_collision_object_first_shape>`  **(** **)** const          |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                            | :ref:`get_collision_object_last_shape<class_CollisionPolygon2D_get_collision_object_last_shape>`  **(** **)** const            |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolVector2Array<class_poolvector2array>`  | :ref:`get_polygon<class_CollisionPolygon2D_get_polygon>`  **(** **)** const                                                    |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                          | :ref:`is_trigger<class_CollisionPolygon2D_is_trigger>`  **(** **)** const                                                      |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_build_mode<class_CollisionPolygon2D_set_build_mode>`  **(** :ref:`int<class_int>` build_mode  **)**                  |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_polygon<class_CollisionPolygon2D_set_polygon>`  **(** :ref:`PoolVector2Array<class_poolvector2array>` polygon  **)** |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_trigger<class_CollisionPolygon2D_set_trigger>`  **(** :ref:`bool<class_bool>` trigger  **)**                         |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+- :ref:`int<class_int>` **build_mode**
+- :ref:`PoolVector2Array<class_poolvector2array>` **polygon**
+- :ref:`Vector2<class_vector2>` **shape_range**
+- :ref:`bool<class_bool>` **trigger**
 
 Description
 -----------
@@ -68,7 +76,7 @@ Return the index of the last shape generated by the editor.
 
 .. _class_CollisionPolygon2D_get_polygon:
 
-- :ref:`Vector2Array<class_vector2array>`  **get_polygon**  **(** **)** const
+- :ref:`PoolVector2Array<class_poolvector2array>`  **get_polygon**  **(** **)** const
 
 Return the list of points that define the polygon.
 
@@ -86,7 +94,7 @@ Set whether the polygon is to be a :ref:`ConvexPolygonShape2D<class_convexpolygo
 
 .. _class_CollisionPolygon2D_set_polygon:
 
-- void  **set_polygon**  **(** :ref:`Vector2Array<class_vector2array>` polygon  **)**
+- void  **set_polygon**  **(** :ref:`PoolVector2Array<class_poolvector2array>` polygon  **)**
 
 Set the array of points forming the polygon.
 

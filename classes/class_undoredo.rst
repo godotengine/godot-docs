@@ -54,7 +54,7 @@ Description
 
 Helper to maange UndoRedo in the editor or custom tools. It works by storing calls to functions in both 'do' an 'undo' lists.
 
-Common behavior is to create an action, then add do/undo calls to functions or property changes, then commiting the action.
+Common behavior is to create an action, then add do/undo calls to functions or property changes, then committing the action.
 
 Member Function Description
 ---------------------------
@@ -125,7 +125,7 @@ Get the name of the current action.
 
 - :ref:`int<class_int>`  **get_version**  **(** **)** const
 
-Get the version, each time a new action is commited, the version number of the UndoRedo is increased automatically.
+Get the version, each time a new action is committed, the version number of the UndoRedo is increased automatically.
 
 This is useful mostly to check if something changed from a saved version.
 

@@ -28,6 +28,12 @@ Member Functions
 | void                           | :ref:`set_normal<class_LineShape2D_set_normal>`  **(** :ref:`Vector2<class_vector2>` normal  **)** |
 +--------------------------------+----------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`float<class_float>` **d**
+- :ref:`Vector2<class_vector2>` **normal**
+
 Description
 -----------
 

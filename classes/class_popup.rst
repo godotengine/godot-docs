@@ -23,7 +23,7 @@ Member Functions
 +--------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`  | :ref:`is_exclusive<class_Popup_is_exclusive>`  **(** **)** const                                                                    |
 +--------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`popup<class_Popup_popup>`  **(** **)**                                                                                        |
+| void                     | :ref:`popup<class_Popup_popup>`  **(** :ref:`Rect2<class_rect2>` bounds=Rect2(0, 0, 0, 0)  **)**                                    |
 +--------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | void                     | :ref:`popup_centered<class_Popup_popup_centered>`  **(** :ref:`Vector2<class_vector2>` size=Vector2(0, 0)  **)**                    |
 +--------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
@@ -39,6 +39,11 @@ Signals
 
 -  **about_to_show**  **(** **)**
 -  **popup_hide**  **(** **)**
+
+Member Variables
+----------------
+
+- :ref:`bool<class_bool>` **popup_exclusive**
 
 Numeric Constants
 -----------------
@@ -62,7 +67,7 @@ Returns whether the popup will hide other popups when shown on the screen.
 
 .. _class_Popup_popup:
 
-- void  **popup**  **(** **)**
+- void  **popup**  **(** :ref:`Rect2<class_rect2>` bounds=Rect2(0, 0, 0, 0)  **)**
 
 Popup (show the control in modal form).
 

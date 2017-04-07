@@ -15,8 +15,47 @@ Brief Description
 
 OGG Vorbis audio stream driver.
 
+Member Functions
+----------------
+
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolByteArray<class_poolbytearray>`  | :ref:`get_data<class_AudioStreamOGGVorbis_get_data>`  **(** **)** const                                           |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                    | :ref:`has_loop<class_AudioStreamOGGVorbis_has_loop>`  **(** **)** const                                           |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`set_data<class_AudioStreamOGGVorbis_set_data>`  **(** :ref:`PoolByteArray<class_poolbytearray>` data  **)** |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`set_loop<class_AudioStreamOGGVorbis_set_loop>`  **(** :ref:`bool<class_bool>` enable  **)**                 |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+- :ref:`PoolByteArray<class_poolbytearray>` **data**
+- :ref:`bool<class_bool>` **loop**
+
 Description
 -----------
 
 OGG Vorbis audio stream driver.
+
+Member Function Description
+---------------------------
+
+.. _class_AudioStreamOGGVorbis_get_data:
+
+- :ref:`PoolByteArray<class_poolbytearray>`  **get_data**  **(** **)** const
+
+.. _class_AudioStreamOGGVorbis_has_loop:
+
+- :ref:`bool<class_bool>`  **has_loop**  **(** **)** const
+
+.. _class_AudioStreamOGGVorbis_set_data:
+
+- void  **set_data**  **(** :ref:`PoolByteArray<class_poolbytearray>` data  **)**
+
+.. _class_AudioStreamOGGVorbis_set_loop:
+
+- void  **set_loop**  **(** :ref:`bool<class_bool>` enable  **)**
+
 

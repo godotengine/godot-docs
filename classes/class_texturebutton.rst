@@ -23,34 +23,57 @@ Member Functions
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Texture<class_texture>`  | :ref:`get_disabled_texture<class_TextureButton_get_disabled_texture>`  **(** **)** const                                  |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`get_expand<class_TextureButton_get_expand>`  **(** **)** const                                                      |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Texture<class_texture>`  | :ref:`get_focused_texture<class_TextureButton_get_focused_texture>`  **(** **)** const                                    |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Texture<class_texture>`  | :ref:`get_hover_texture<class_TextureButton_get_hover_texture>`  **(** **)** const                                        |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`      | :ref:`get_modulate<class_TextureButton_get_modulate>`  **(** **)** const                                                  |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Texture<class_texture>`  | :ref:`get_normal_texture<class_TextureButton_get_normal_texture>`  **(** **)** const                                      |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Texture<class_texture>`  | :ref:`get_pressed_texture<class_TextureButton_get_pressed_texture>`  **(** **)** const                                    |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_texture_scale<class_TextureButton_get_texture_scale>`  **(** **)** const                                        |
+| :ref:`int<class_int>`          | :ref:`get_stretch_mode<class_TextureButton_get_stretch_mode>`  **(** **)** const                                          |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_click_mask<class_TextureButton_set_click_mask>`  **(** :ref:`BitMap<class_bitmap>` mask  **)**                  |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_disabled_texture<class_TextureButton_set_disabled_texture>`  **(** :ref:`Texture<class_texture>` texture  **)** |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_expand<class_TextureButton_set_expand>`  **(** :ref:`bool<class_bool>` p_expand  **)**                          |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_focused_texture<class_TextureButton_set_focused_texture>`  **(** :ref:`Texture<class_texture>` texture  **)**   |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_hover_texture<class_TextureButton_set_hover_texture>`  **(** :ref:`Texture<class_texture>` texture  **)**       |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_modulate<class_TextureButton_set_modulate>`  **(** :ref:`Color<class_color>` color  **)**                       |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_normal_texture<class_TextureButton_set_normal_texture>`  **(** :ref:`Texture<class_texture>` texture  **)**     |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_pressed_texture<class_TextureButton_set_pressed_texture>`  **(** :ref:`Texture<class_texture>` texture  **)**   |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_texture_scale<class_TextureButton_set_texture_scale>`  **(** :ref:`Vector2<class_vector2>` scale  **)**         |
+| void                           | :ref:`set_stretch_mode<class_TextureButton_set_stretch_mode>`  **(** :ref:`int<class_int>` p_mode  **)**                  |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+- :ref:`bool<class_bool>` **expand**
+- :ref:`int<class_int>` **stretch_mode**
+- :ref:`BitMap<class_bitmap>` **texture_click_mask**
+- :ref:`Texture<class_texture>` **texture_disabled**
+- :ref:`Texture<class_texture>` **texture_focused**
+- :ref:`Texture<class_texture>` **texture_hover**
+- :ref:`Texture<class_texture>` **texture_normal**
+- :ref:`Texture<class_texture>` **texture_pressed**
+
+Numeric Constants
+-----------------
+
+- **STRETCH_SCALE** = **0**
+- **STRETCH_TILE** = **1**
+- **STRETCH_KEEP** = **2**
+- **STRETCH_KEEP_CENTERED** = **3**
+- **STRETCH_KEEP_ASPECT** = **4**
+- **STRETCH_KEEP_ASPECT_CENTERED** = **5**
+- **STRETCH_KEEP_ASPECT_COVERED** = **6**
 
 Description
 -----------
@@ -70,6 +93,10 @@ Member Function Description
 
 - :ref:`Texture<class_texture>`  **get_disabled_texture**  **(** **)** const
 
+.. _class_TextureButton_get_expand:
+
+- :ref:`bool<class_bool>`  **get_expand**  **(** **)** const
+
 .. _class_TextureButton_get_focused_texture:
 
 - :ref:`Texture<class_texture>`  **get_focused_texture**  **(** **)** const
@@ -77,10 +104,6 @@ Member Function Description
 .. _class_TextureButton_get_hover_texture:
 
 - :ref:`Texture<class_texture>`  **get_hover_texture**  **(** **)** const
-
-.. _class_TextureButton_get_modulate:
-
-- :ref:`Color<class_color>`  **get_modulate**  **(** **)** const
 
 .. _class_TextureButton_get_normal_texture:
 
@@ -90,9 +113,9 @@ Member Function Description
 
 - :ref:`Texture<class_texture>`  **get_pressed_texture**  **(** **)** const
 
-.. _class_TextureButton_get_texture_scale:
+.. _class_TextureButton_get_stretch_mode:
 
-- :ref:`Vector2<class_vector2>`  **get_texture_scale**  **(** **)** const
+- :ref:`int<class_int>`  **get_stretch_mode**  **(** **)** const
 
 .. _class_TextureButton_set_click_mask:
 
@@ -102,6 +125,10 @@ Member Function Description
 
 - void  **set_disabled_texture**  **(** :ref:`Texture<class_texture>` texture  **)**
 
+.. _class_TextureButton_set_expand:
+
+- void  **set_expand**  **(** :ref:`bool<class_bool>` p_expand  **)**
+
 .. _class_TextureButton_set_focused_texture:
 
 - void  **set_focused_texture**  **(** :ref:`Texture<class_texture>` texture  **)**
@@ -109,10 +136,6 @@ Member Function Description
 .. _class_TextureButton_set_hover_texture:
 
 - void  **set_hover_texture**  **(** :ref:`Texture<class_texture>` texture  **)**
-
-.. _class_TextureButton_set_modulate:
-
-- void  **set_modulate**  **(** :ref:`Color<class_color>` color  **)**
 
 .. _class_TextureButton_set_normal_texture:
 
@@ -122,8 +145,8 @@ Member Function Description
 
 - void  **set_pressed_texture**  **(** :ref:`Texture<class_texture>` texture  **)**
 
-.. _class_TextureButton_set_texture_scale:
+.. _class_TextureButton_set_stretch_mode:
 
-- void  **set_texture_scale**  **(** :ref:`Vector2<class_vector2>` scale  **)**
+- void  **set_stretch_mode**  **(** :ref:`int<class_int>` p_mode  **)**
 
 

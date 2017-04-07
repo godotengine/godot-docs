@@ -24,6 +24,11 @@ Member Functions
 | void                           | :ref:`set_curve<class_Path2D_set_curve>`  **(** :ref:`Curve2D<class_curve2d>` curve  **)** |
 +--------------------------------+--------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`Curve2D<class_curve2d>` **curve**
+
 Description
 -----------
 

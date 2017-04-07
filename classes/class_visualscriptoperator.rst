@@ -28,6 +28,12 @@ Member Functions
 | void                   | :ref:`set_typed<class_VisualScriptOperator_set_typed>`  **(** :ref:`int<class_int>` type  **)**     |
 +------------------------+-----------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`int<class_int>` **operator_value/type**
+- :ref:`int<class_int>` **typed_value/typed**
+
 Member Function Description
 ---------------------------
 

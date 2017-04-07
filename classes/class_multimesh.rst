@@ -19,9 +19,9 @@ Member Functions
 ----------------
 
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`generate_aabb<class_MultiMesh_generate_aabb>`  **(** **)**                                                                                                |
+| :ref:`Rect3<class_rect3>`          | :ref:`get_aabb<class_MultiMesh_get_aabb>`  **(** **)** const                                                                                                    |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AABB<class_aabb>`            | :ref:`get_aabb<class_MultiMesh_get_aabb>`  **(** **)** const                                                                                                    |
+| :ref:`int<class_int>`              | :ref:`get_color_format<class_MultiMesh_get_color_format>`  **(** **)** const                                                                                    |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_color>`          | :ref:`get_instance_color<class_MultiMesh_get_instance_color>`  **(** :ref:`int<class_int>` instance  **)** const                                                |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -31,7 +31,9 @@ Member Functions
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Mesh<class_mesh>`            | :ref:`get_mesh<class_MultiMesh_get_mesh>`  **(** **)** const                                                                                                    |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_aabb<class_MultiMesh_set_aabb>`  **(** :ref:`AABB<class_aabb>` visibility_aabb  **)**                                                                 |
+| :ref:`int<class_int>`              | :ref:`get_transform_format<class_MultiMesh_get_transform_format>`  **(** **)** const                                                                            |
++------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_color_format<class_MultiMesh_set_color_format>`  **(** :ref:`int<class_int>` format  **)**                                                            |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_instance_color<class_MultiMesh_set_instance_color>`  **(** :ref:`int<class_int>` instance, :ref:`Color<class_color>` color  **)**                     |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -41,6 +43,27 @@ Member Functions
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_mesh<class_MultiMesh_set_mesh>`  **(** :ref:`Mesh<class_mesh>` mesh  **)**                                                                            |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_transform_format<class_MultiMesh_set_transform_format>`  **(** :ref:`int<class_int>` format  **)**                                                    |
++------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+- :ref:`PoolColorArray<class_poolcolorarray>` **color_array**
+- :ref:`int<class_int>` **color_format**
+- :ref:`int<class_int>` **instance_count**
+- :ref:`Mesh<class_mesh>` **mesh**
+- :ref:`PoolVector3Array<class_poolvector3array>` **transform_array**
+- :ref:`int<class_int>` **transform_format**
+
+Numeric Constants
+-----------------
+
+- **TRANSFORM_2D** = **0**
+- **TRANSFORM_3D** = **1**
+- **COLOR_NONE** = **0**
+- **COLOR_8BIT** = **1**
+- **COLOR_FLOAT** = **2**
 
 Description
 -----------
@@ -51,22 +74,20 @@ For this case a MultiMesh becomes very useful, as it can draw thousands of insta
 
 As a drawback, if the instances are too far away of each other, performance may be reduced as every single instance will always rendered (they are spatially indexed as one, for the whole object).
 
-Since instances may have any behavior, the AABB used for visibility must be provided by the user, or generated with :ref:`generate_aabb<class_MultiMesh_generate_aabb>`.
+Since instances may have any behavior, the Rect3 used for visibility must be provided by the user, or generated with :ref:`generate_aabb<class_MultiMesh_generate_aabb>`.
 
 Member Function Description
 ---------------------------
 
-.. _class_MultiMesh_generate_aabb:
-
-- void  **generate_aabb**  **(** **)**
-
-Generate a new visibility AABB, using mesh AABB and instance transforms. Since instance information is stored in the :ref:`VisualServer<class_visualserver>`, this function is VERY SLOW and must NOT be used often.
-
 .. _class_MultiMesh_get_aabb:
 
-- :ref:`AABB<class_aabb>`  **get_aabb**  **(** **)** const
+- :ref:`Rect3<class_rect3>`  **get_aabb**  **(** **)** const
 
-Return the visibility AABB.
+Return the visibility Rect3.
+
+.. _class_MultiMesh_get_color_format:
+
+- :ref:`int<class_int>`  **get_color_format**  **(** **)** const
 
 .. _class_MultiMesh_get_instance_color:
 
@@ -92,11 +113,13 @@ Return the transform of a specific instance.
 
 Return the :ref:`Mesh<class_mesh>` resource drawn as multiple instances.
 
-.. _class_MultiMesh_set_aabb:
+.. _class_MultiMesh_get_transform_format:
 
-- void  **set_aabb**  **(** :ref:`AABB<class_aabb>` visibility_aabb  **)**
+- :ref:`int<class_int>`  **get_transform_format**  **(** **)** const
 
-Set the visibility AABB. If not provided, MultiMesh will not be visible.
+.. _class_MultiMesh_set_color_format:
+
+- void  **set_color_format**  **(** :ref:`int<class_int>` format  **)**
 
 .. _class_MultiMesh_set_instance_color:
 
@@ -121,5 +144,9 @@ Set the transform for a specific instance.
 - void  **set_mesh**  **(** :ref:`Mesh<class_mesh>` mesh  **)**
 
 Set the :ref:`Mesh<class_mesh>` resource to be drawn in multiple instances.
+
+.. _class_MultiMesh_set_transform_format:
+
+- void  **set_transform_format**  **(** :ref:`int<class_int>` format  **)**
 
 

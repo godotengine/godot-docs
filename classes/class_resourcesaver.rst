@@ -18,11 +18,11 @@ Resource Saving Interface.
 Member Functions
 ----------------
 
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StringArray<class_stringarray>`  | :ref:`get_recognized_extensions<class_ResourceSaver_get_recognized_extensions>`  **(** :ref:`Object<class_object>` type  **)**                                |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                  | :ref:`save<class_ResourceSaver_save>`  **(** :ref:`String<class_string>` path, :ref:`Resource<class_resource>` resource, :ref:`int<class_int>` flags=0  **)** |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_recognized_extensions<class_ResourceSaver_get_recognized_extensions>`  **(** :ref:`Object<class_object>` type  **)**                                |
++------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                          | :ref:`save<class_ResourceSaver_save>`  **(** :ref:`String<class_string>` path, :ref:`Resource<class_resource>` resource, :ref:`int<class_int>` flags=0  **)** |
++------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
 -----------------
@@ -44,7 +44,7 @@ Member Function Description
 
 .. _class_ResourceSaver_get_recognized_extensions:
 
-- :ref:`StringArray<class_stringarray>`  **get_recognized_extensions**  **(** :ref:`Object<class_object>` type  **)**
+- :ref:`PoolStringArray<class_poolstringarray>`  **get_recognized_extensions**  **(** :ref:`Object<class_object>` type  **)**
 
 Return the list of extensions available for saving a resource of a given type.
 

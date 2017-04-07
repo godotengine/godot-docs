@@ -13,99 +13,102 @@ Particles
 Brief Description
 -----------------
 
-Particle system 3D Node
+
 
 Member Functions
 ----------------
 
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                    | :ref:`get_amount<class_Particles_get_amount>`  **(** **)** const                                                                               |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`                | :ref:`get_color_phase_color<class_Particles_get_color_phase_color>`  **(** :ref:`int<class_int>` phase  **)** const                            |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                | :ref:`get_color_phase_pos<class_Particles_get_color_phase_pos>`  **(** :ref:`int<class_int>` phase  **)** const                                |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                    | :ref:`get_color_phases<class_Particles_get_color_phases>`  **(** **)** const                                                                   |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`            | :ref:`get_emission_base_velocity<class_Particles_get_emission_base_velocity>`  **(** **)** const                                               |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`            | :ref:`get_emission_half_extents<class_Particles_get_emission_half_extents>`  **(** **)** const                                                 |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3Array<class_vector3array>`  | :ref:`get_emission_points<class_Particles_get_emission_points>`  **(** **)** const                                                             |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                | :ref:`get_emit_timeout<class_Particles_get_emit_timeout>`  **(** **)** const                                                                   |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`            | :ref:`get_gravity_normal<class_Particles_get_gravity_normal>`  **(** **)** const                                                               |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Material<class_material>`          | :ref:`get_material<class_Particles_get_material>`  **(** **)** const                                                                           |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                | :ref:`get_randomness<class_Particles_get_randomness>`  **(** :ref:`int<class_int>` variable  **)** const                                       |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                | :ref:`get_variable<class_Particles_get_variable>`  **(** :ref:`int<class_int>` variable  **)** const                                           |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AABB<class_aabb>`                  | :ref:`get_visibility_aabb<class_Particles_get_visibility_aabb>`  **(** **)** const                                                             |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`has_height_from_velocity<class_Particles_has_height_from_velocity>`  **(** **)** const                                                   |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`is_emitting<class_Particles_is_emitting>`  **(** **)** const                                                                             |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`is_using_local_coordinates<class_Particles_is_using_local_coordinates>`  **(** **)** const                                               |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_amount<class_Particles_set_amount>`  **(** :ref:`int<class_int>` amount  **)**                                                       |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_color_phase_color<class_Particles_set_color_phase_color>`  **(** :ref:`int<class_int>` phase, :ref:`Color<class_color>` color  **)** |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_color_phase_pos<class_Particles_set_color_phase_pos>`  **(** :ref:`int<class_int>` phase, :ref:`float<class_float>` pos  **)**       |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_color_phases<class_Particles_set_color_phases>`  **(** :ref:`int<class_int>` count  **)**                                            |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_emission_base_velocity<class_Particles_set_emission_base_velocity>`  **(** :ref:`Vector3<class_vector3>` base_velocity  **)**        |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_emission_half_extents<class_Particles_set_emission_half_extents>`  **(** :ref:`Vector3<class_vector3>` half_extents  **)**           |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_emission_points<class_Particles_set_emission_points>`  **(** :ref:`Vector3Array<class_vector3array>` points  **)**                   |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_emit_timeout<class_Particles_set_emit_timeout>`  **(** :ref:`float<class_float>` timeout  **)**                                      |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_emitting<class_Particles_set_emitting>`  **(** :ref:`bool<class_bool>` enabled  **)**                                                |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_gravity_normal<class_Particles_set_gravity_normal>`  **(** :ref:`Vector3<class_vector3>` normal  **)**                               |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_height_from_velocity<class_Particles_set_height_from_velocity>`  **(** :ref:`bool<class_bool>` enable  **)**                         |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_material<class_Particles_set_material>`  **(** :ref:`Material<class_material>` material  **)**                                       |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_randomness<class_Particles_set_randomness>`  **(** :ref:`int<class_int>` variable, :ref:`float<class_float>` randomness  **)**       |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_use_local_coordinates<class_Particles_set_use_local_coordinates>`  **(** :ref:`bool<class_bool>` enable  **)**                       |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_variable<class_Particles_set_variable>`  **(** :ref:`int<class_int>` variable, :ref:`float<class_float>` value  **)**                |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_visibility_aabb<class_Particles_set_visibility_aabb>`  **(** :ref:`AABB<class_aabb>` aabb  **)**                                     |
-+------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_amount<class_Particles_get_amount>`  **(** **)** const                                                                     |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect3<class_rect3>`        | :ref:`get_custom_aabb<class_Particles_get_custom_aabb>`  **(** **)** const                                                           |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_draw_order<class_Particles_get_draw_order>`  **(** **)** const                                                             |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Mesh<class_mesh>`          | :ref:`get_draw_pass_mesh<class_Particles_get_draw_pass_mesh>`  **(** :ref:`int<class_int>` pass  **)** const                         |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_draw_passes<class_Particles_get_draw_passes>`  **(** **)** const                                                           |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`        | :ref:`get_explosiveness_ratio<class_Particles_get_explosiveness_ratio>`  **(** **)** const                                           |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_fixed_fps<class_Particles_get_fixed_fps>`  **(** **)** const                                                               |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`get_fractional_delta<class_Particles_get_fractional_delta>`  **(** **)** const                                                 |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`    | :ref:`get_gravity<class_Particles_get_gravity>`  **(** **)** const                                                                   |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`        | :ref:`get_lifetime<class_Particles_get_lifetime>`  **(** **)** const                                                                 |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`        | :ref:`get_pre_process_time<class_Particles_get_pre_process_time>`  **(** **)** const                                                 |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Material<class_material>`  | :ref:`get_process_material<class_Particles_get_process_material>`  **(** **)** const                                                 |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`        | :ref:`get_randomness_ratio<class_Particles_get_randomness_ratio>`  **(** **)** const                                                 |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`get_use_local_coordinates<class_Particles_get_use_local_coordinates>`  **(** **)** const                                       |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`is_emitting<class_Particles_is_emitting>`  **(** **)** const                                                                   |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_amount<class_Particles_set_amount>`  **(** :ref:`int<class_int>` amount  **)**                                             |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_custom_aabb<class_Particles_set_custom_aabb>`  **(** :ref:`Rect3<class_rect3>` aabb  **)**                                 |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_draw_order<class_Particles_set_draw_order>`  **(** :ref:`int<class_int>` order  **)**                                      |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_draw_pass_mesh<class_Particles_set_draw_pass_mesh>`  **(** :ref:`int<class_int>` pass, :ref:`Mesh<class_mesh>` mesh  **)** |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_draw_passes<class_Particles_set_draw_passes>`  **(** :ref:`int<class_int>` passes  **)**                                   |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_emitting<class_Particles_set_emitting>`  **(** :ref:`bool<class_bool>` emitting  **)**                                     |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_explosiveness_ratio<class_Particles_set_explosiveness_ratio>`  **(** :ref:`float<class_float>` ratio  **)**                |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_fixed_fps<class_Particles_set_fixed_fps>`  **(** :ref:`int<class_int>` fps  **)**                                          |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_fractional_delta<class_Particles_set_fractional_delta>`  **(** :ref:`bool<class_bool>` enable  **)**                       |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_gravity<class_Particles_set_gravity>`  **(** :ref:`Vector3<class_vector3>` accel_vec  **)**                                |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_lifetime<class_Particles_set_lifetime>`  **(** :ref:`float<class_float>` secs  **)**                                       |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_pre_process_time<class_Particles_set_pre_process_time>`  **(** :ref:`float<class_float>` secs  **)**                       |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_process_material<class_Particles_set_process_material>`  **(** :ref:`Material<class_material>` material  **)**             |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_randomness_ratio<class_Particles_set_randomness_ratio>`  **(** :ref:`float<class_float>` ratio  **)**                      |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_use_local_coordinates<class_Particles_set_use_local_coordinates>`  **(** :ref:`bool<class_bool>` enable  **)**             |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+- :ref:`int<class_int>` **amount**
+- :ref:`Rect3<class_rect3>` **custom_aabb**
+- :ref:`int<class_int>` **draw_order**
+- :ref:`Mesh<class_mesh>` **draw_pass_1**
+- :ref:`Mesh<class_mesh>` **draw_pass_2**
+- :ref:`Mesh<class_mesh>` **draw_pass_3**
+- :ref:`Mesh<class_mesh>` **draw_pass_4**
+- :ref:`int<class_int>` **draw_passes**
+- :ref:`bool<class_bool>` **emitting**
+- :ref:`float<class_float>` **explosiveness**
+- :ref:`int<class_int>` **fixed_fps**
+- :ref:`bool<class_bool>` **fract_delta**
+- :ref:`Vector3<class_vector3>` **gravity**
+- :ref:`float<class_float>` **lifetime**
+- :ref:`bool<class_bool>` **local_coords**
+- :ref:`float<class_float>` **preprocess**
+- ParticlesMaterial,ShaderMaterial **process_material**
+- :ref:`float<class_float>` **randomness**
 
 Numeric Constants
 -----------------
 
-- **VAR_LIFETIME** = **0**
-- **VAR_SPREAD** = **1**
-- **VAR_GRAVITY** = **2**
-- **VAR_LINEAR_VELOCITY** = **3**
-- **VAR_ANGULAR_VELOCITY** = **4**
-- **VAR_LINEAR_ACCELERATION** = **5**
-- **VAR_DRAG** = **6**
-- **VAR_TANGENTIAL_ACCELERATION** = **7**
-- **VAR_INITIAL_SIZE** = **9**
-- **VAR_FINAL_SIZE** = **10**
-- **VAR_INITIAL_ANGLE** = **11**
-- **VAR_HEIGHT** = **12**
-- **VAR_HEIGHT_SPEED_SCALE** = **13**
-- **VAR_MAX** = **14**
-
-Description
------------
-
-Particles is a particle system 3D :ref:`Node<class_node>` that is used to simulate several types of particle effects, such as explosions, rain, snow, fireflies, or other magical-like shinny sparkles. Particles are drawn using impostors, and given their dynamic behavior, the user must provide a visibility AABB (although helpers to create one automatically exist).
+- **DRAW_ORDER_INDEX** = **0**
+- **DRAW_ORDER_LIFETIME** = **1**
+- **DRAW_ORDER_VIEW_DEPTH** = **2**
+- **MAX_DRAW_PASSES** = **4**
 
 Member Function Description
 ---------------------------
@@ -114,168 +117,120 @@ Member Function Description
 
 - :ref:`int<class_int>`  **get_amount**  **(** **)** const
 
-Return the total amount of particles in the system.
+.. _class_Particles_get_custom_aabb:
 
-.. _class_Particles_get_color_phase_color:
+- :ref:`Rect3<class_rect3>`  **get_custom_aabb**  **(** **)** const
 
-- :ref:`Color<class_color>`  **get_color_phase_color**  **(** :ref:`int<class_int>` phase  **)** const
+.. _class_Particles_get_draw_order:
 
-Return the color of a color phase.
+- :ref:`int<class_int>`  **get_draw_order**  **(** **)** const
 
-.. _class_Particles_get_color_phase_pos:
+.. _class_Particles_get_draw_pass_mesh:
 
-- :ref:`float<class_float>`  **get_color_phase_pos**  **(** :ref:`int<class_int>` phase  **)** const
+- :ref:`Mesh<class_mesh>`  **get_draw_pass_mesh**  **(** :ref:`int<class_int>` pass  **)** const
 
-Return the position of a color phase (0 to 1).
+.. _class_Particles_get_draw_passes:
 
-.. _class_Particles_get_color_phases:
+- :ref:`int<class_int>`  **get_draw_passes**  **(** **)** const
 
-- :ref:`int<class_int>`  **get_color_phases**  **(** **)** const
+.. _class_Particles_get_explosiveness_ratio:
 
-.. _class_Particles_get_emission_base_velocity:
+- :ref:`float<class_float>`  **get_explosiveness_ratio**  **(** **)** const
 
-- :ref:`Vector3<class_vector3>`  **get_emission_base_velocity**  **(** **)** const
+.. _class_Particles_get_fixed_fps:
 
-.. _class_Particles_get_emission_half_extents:
+- :ref:`int<class_int>`  **get_fixed_fps**  **(** **)** const
 
-- :ref:`Vector3<class_vector3>`  **get_emission_half_extents**  **(** **)** const
+.. _class_Particles_get_fractional_delta:
 
-Return the half extents for the emission box.
+- :ref:`bool<class_bool>`  **get_fractional_delta**  **(** **)** const
 
-.. _class_Particles_get_emission_points:
+.. _class_Particles_get_gravity:
 
-- :ref:`Vector3Array<class_vector3array>`  **get_emission_points**  **(** **)** const
+- :ref:`Vector3<class_vector3>`  **get_gravity**  **(** **)** const
 
-.. _class_Particles_get_emit_timeout:
+.. _class_Particles_get_lifetime:
 
-- :ref:`float<class_float>`  **get_emit_timeout**  **(** **)** const
+- :ref:`float<class_float>`  **get_lifetime**  **(** **)** const
 
-.. _class_Particles_get_gravity_normal:
+.. _class_Particles_get_pre_process_time:
 
-- :ref:`Vector3<class_vector3>`  **get_gravity_normal**  **(** **)** const
+- :ref:`float<class_float>`  **get_pre_process_time**  **(** **)** const
 
-Return the normal vector towards where gravity is pulling (by default, negative Y).
+.. _class_Particles_get_process_material:
 
-.. _class_Particles_get_material:
+- :ref:`Material<class_material>`  **get_process_material**  **(** **)** const
 
-- :ref:`Material<class_material>`  **get_material**  **(** **)** const
+.. _class_Particles_get_randomness_ratio:
 
-Return the material used to draw particles.
+- :ref:`float<class_float>`  **get_randomness_ratio**  **(** **)** const
 
-.. _class_Particles_get_randomness:
+.. _class_Particles_get_use_local_coordinates:
 
-- :ref:`float<class_float>`  **get_randomness**  **(** :ref:`int<class_int>` variable  **)** const
-
-Return the randomness for a specific variable of the particle system. Randomness produces small changes from the default each time a particle is emitted.
-
-.. _class_Particles_get_variable:
-
-- :ref:`float<class_float>`  **get_variable**  **(** :ref:`int<class_int>` variable  **)** const
-
-Return a specific variable for the particle system (see VAR\_\* enum).
-
-.. _class_Particles_get_visibility_aabb:
-
-- :ref:`AABB<class_aabb>`  **get_visibility_aabb**  **(** **)** const
-
-Return the current visibility AABB.
-
-.. _class_Particles_has_height_from_velocity:
-
-- :ref:`bool<class_bool>`  **has_height_from_velocity**  **(** **)** const
+- :ref:`bool<class_bool>`  **get_use_local_coordinates**  **(** **)** const
 
 .. _class_Particles_is_emitting:
 
 - :ref:`bool<class_bool>`  **is_emitting**  **(** **)** const
 
-Return the "emitting" property state (see :ref:`set_emitting<class_Particles_set_emitting>`).
-
-.. _class_Particles_is_using_local_coordinates:
-
-- :ref:`bool<class_bool>`  **is_using_local_coordinates**  **(** **)** const
-
 .. _class_Particles_set_amount:
 
 - void  **set_amount**  **(** :ref:`int<class_int>` amount  **)**
 
-Set total amount of particles in the system.
+.. _class_Particles_set_custom_aabb:
 
-.. _class_Particles_set_color_phase_color:
+- void  **set_custom_aabb**  **(** :ref:`Rect3<class_rect3>` aabb  **)**
 
-- void  **set_color_phase_color**  **(** :ref:`int<class_int>` phase, :ref:`Color<class_color>` color  **)**
+.. _class_Particles_set_draw_order:
 
-Set the color of a color phase.
+- void  **set_draw_order**  **(** :ref:`int<class_int>` order  **)**
 
-.. _class_Particles_set_color_phase_pos:
+.. _class_Particles_set_draw_pass_mesh:
 
-- void  **set_color_phase_pos**  **(** :ref:`int<class_int>` phase, :ref:`float<class_float>` pos  **)**
+- void  **set_draw_pass_mesh**  **(** :ref:`int<class_int>` pass, :ref:`Mesh<class_mesh>` mesh  **)**
 
-Set the position of a color phase (0 to 1).
+.. _class_Particles_set_draw_passes:
 
-.. _class_Particles_set_color_phases:
-
-- void  **set_color_phases**  **(** :ref:`int<class_int>` count  **)**
-
-.. _class_Particles_set_emission_base_velocity:
-
-- void  **set_emission_base_velocity**  **(** :ref:`Vector3<class_vector3>` base_velocity  **)**
-
-.. _class_Particles_set_emission_half_extents:
-
-- void  **set_emission_half_extents**  **(** :ref:`Vector3<class_vector3>` half_extents  **)**
-
-Set the half extents for the emission box.
-
-.. _class_Particles_set_emission_points:
-
-- void  **set_emission_points**  **(** :ref:`Vector3Array<class_vector3array>` points  **)**
-
-.. _class_Particles_set_emit_timeout:
-
-- void  **set_emit_timeout**  **(** :ref:`float<class_float>` timeout  **)**
+- void  **set_draw_passes**  **(** :ref:`int<class_int>` passes  **)**
 
 .. _class_Particles_set_emitting:
 
-- void  **set_emitting**  **(** :ref:`bool<class_bool>` enabled  **)**
+- void  **set_emitting**  **(** :ref:`bool<class_bool>` emitting  **)**
 
-Set the "emitting" property state. When emitting, the particle system generates new particles at constant rate.
+.. _class_Particles_set_explosiveness_ratio:
 
-.. _class_Particles_set_gravity_normal:
+- void  **set_explosiveness_ratio**  **(** :ref:`float<class_float>` ratio  **)**
 
-- void  **set_gravity_normal**  **(** :ref:`Vector3<class_vector3>` normal  **)**
+.. _class_Particles_set_fixed_fps:
 
-Set the normal vector towards where gravity is pulling (by default, negative Y).
+- void  **set_fixed_fps**  **(** :ref:`int<class_int>` fps  **)**
 
-.. _class_Particles_set_height_from_velocity:
+.. _class_Particles_set_fractional_delta:
 
-- void  **set_height_from_velocity**  **(** :ref:`bool<class_bool>` enable  **)**
+- void  **set_fractional_delta**  **(** :ref:`bool<class_bool>` enable  **)**
 
-.. _class_Particles_set_material:
+.. _class_Particles_set_gravity:
 
-- void  **set_material**  **(** :ref:`Material<class_material>` material  **)**
+- void  **set_gravity**  **(** :ref:`Vector3<class_vector3>` accel_vec  **)**
 
-Set the material used to draw particles.
+.. _class_Particles_set_lifetime:
 
-.. _class_Particles_set_randomness:
+- void  **set_lifetime**  **(** :ref:`float<class_float>` secs  **)**
 
-- void  **set_randomness**  **(** :ref:`int<class_int>` variable, :ref:`float<class_float>` randomness  **)**
+.. _class_Particles_set_pre_process_time:
 
-Set the randomness for a specific variable of the particle system. Randomness produces small changes from the default each time a particle is emitted.
+- void  **set_pre_process_time**  **(** :ref:`float<class_float>` secs  **)**
+
+.. _class_Particles_set_process_material:
+
+- void  **set_process_material**  **(** :ref:`Material<class_material>` material  **)**
+
+.. _class_Particles_set_randomness_ratio:
+
+- void  **set_randomness_ratio**  **(** :ref:`float<class_float>` ratio  **)**
 
 .. _class_Particles_set_use_local_coordinates:
 
 - void  **set_use_local_coordinates**  **(** :ref:`bool<class_bool>` enable  **)**
-
-.. _class_Particles_set_variable:
-
-- void  **set_variable**  **(** :ref:`int<class_int>` variable, :ref:`float<class_float>` value  **)**
-
-Set a specific variable for the particle system (see VAR\_\* enum).
-
-.. _class_Particles_set_visibility_aabb:
-
-- void  **set_visibility_aabb**  **(** :ref:`AABB<class_aabb>` aabb  **)**
-
-Set the visibility AABB for the particle system, since the default one will not work properly most of the time.
 
 

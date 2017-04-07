@@ -8,7 +8,7 @@ Control
 
 **Inherits:** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`Label<class_label>`, :ref:`Tabs<class_tabs>`, :ref:`TextureFrame<class_textureframe>`, :ref:`ButtonArray<class_buttonarray>`, :ref:`VideoPlayer<class_videoplayer>`, :ref:`LineEdit<class_lineedit>`, :ref:`ColorFrame<class_colorframe>`, :ref:`Container<class_container>`, :ref:`ReferenceFrame<class_referenceframe>`, :ref:`Patch9Frame<class_patch9frame>`, :ref:`TextEdit<class_textedit>`, :ref:`BaseButton<class_basebutton>`, :ref:`Popup<class_popup>`, :ref:`Tree<class_tree>`, :ref:`Separator<class_separator>`, :ref:`Panel<class_panel>`, :ref:`TabContainer<class_tabcontainer>`, :ref:`Range<class_range>`, :ref:`RichTextLabel<class_richtextlabel>`, :ref:`GraphEdit<class_graphedit>`, :ref:`ItemList<class_itemlist>`
+**Inherited By:** :ref:`TextureRect<class_texturerect>`, :ref:`ColorRect<class_colorrect>`, :ref:`Label<class_label>`, :ref:`Tabs<class_tabs>`, :ref:`ButtonArray<class_buttonarray>`, :ref:`GraphEdit<class_graphedit>`, :ref:`VideoPlayer<class_videoplayer>`, :ref:`NinePatchRect<class_ninepatchrect>`, :ref:`LineEdit<class_lineedit>`, :ref:`Container<class_container>`, :ref:`TextEdit<class_textedit>`, :ref:`BaseButton<class_basebutton>`, :ref:`Popup<class_popup>`, :ref:`Tree<class_tree>`, :ref:`Separator<class_separator>`, :ref:`ReferenceRect<class_referencerect>`, :ref:`Panel<class_panel>`, :ref:`TabContainer<class_tabcontainer>`, :ref:`Range<class_range>`, :ref:`RichTextLabel<class_richtextlabel>`, :ref:`ItemList<class_itemlist>`
 
 **Category:** Core
 
@@ -21,7 +21,9 @@ Member Functions
 ----------------
 
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`_input_event<class_Control__input_event>`  **(** :ref:`InputEvent<class_inputevent>` event  **)** virtual                                                                   |
+| :ref:`Vector2<class_vector2>`    | :ref:`_get_minimum_size<class_Control__get_minimum_size>`  **(** **)** virtual                                                                                                    |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`_gui_input<class_Control__gui_input>`  **(** :ref:`InputEvent<class_inputevent>` event  **)** virtual                                                                       |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`accept_event<class_Control_accept_event>`  **(** **)**                                                                                                                      |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -83,7 +85,7 @@ Member Functions
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`    | :ref:`get_minimum_size<class_Control_get_minimum_size>`  **(** **)** const                                                                                                        |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`    | :ref:`get_minimum_size<class_Control_get_minimum_size>`  **(** **)** virtual                                                                                                      |
+| :ref:`int<class_int>`            | :ref:`get_mouse_filter<class_Control_get_mouse_filter>`  **(** **)** const                                                                                                        |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`    | :ref:`get_parent_area_size<class_Control_get_parent_area_size>`  **(** **)** const                                                                                                |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -133,13 +135,13 @@ Member Functions
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`has_icon_override<class_Control_has_icon_override>`  **(** :ref:`String<class_string>` name  **)** const                                                                    |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`has_point<class_Control_has_point>`  **(** :ref:`Vector2<class_vector2>` point  **)** virtual                                                                               |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`has_stylebox<class_Control_has_stylebox>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type=""  **)** const                                         |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`has_stylebox_override<class_Control_has_stylebox_override>`  **(** :ref:`String<class_string>` name  **)** const                                                            |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`          | :ref:`is_ignoring_mouse<class_Control_is_ignoring_mouse>`  **(** **)** const                                                                                                      |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`          | :ref:`is_stopping_mouse<class_Control_is_stopping_mouse>`  **(** **)** const                                                                                                      |
+| :ref:`bool<class_bool>`          | :ref:`is_clipping_contents<class_Control_is_clipping_contents>`  **(** **)**                                                                                                      |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`minimum_size_changed<class_Control_minimum_size_changed>`  **(** **)**                                                                                                      |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -152,6 +154,8 @@ Member Functions
 | void                             | :ref:`set_area_as_parent_rect<class_Control_set_area_as_parent_rect>`  **(** :ref:`int<class_int>` margin=0  **)**                                                                |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_begin<class_Control_set_begin>`  **(** :ref:`Vector2<class_vector2>` pos  **)**                                                                                         |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_clip_contents<class_Control_set_clip_contents>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                            |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_custom_minimum_size<class_Control_set_custom_minimum_size>`  **(** :ref:`Vector2<class_vector2>` size  **)**                                                            |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -171,9 +175,9 @@ Member Functions
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_h_size_flags<class_Control_set_h_size_flags>`  **(** :ref:`int<class_int>` flags  **)**                                                                                 |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_ignore_mouse<class_Control_set_ignore_mouse>`  **(** :ref:`bool<class_bool>` ignore  **)**                                                                              |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_margin<class_Control_set_margin>`  **(** :ref:`int<class_int>` margin, :ref:`float<class_float>` offset  **)**                                                          |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_mouse_filter<class_Control_set_mouse_filter>`  **(** :ref:`int<class_int>` filter  **)**                                                                                |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_pos<class_Control_set_pos>`  **(** :ref:`Vector2<class_vector2>` pos  **)**                                                                                             |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -184,8 +188,6 @@ Member Functions
 | void                             | :ref:`set_scale<class_Control_set_scale>`  **(** :ref:`Vector2<class_vector2>` scale  **)**                                                                                       |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_size<class_Control_set_size>`  **(** :ref:`Vector2<class_vector2>` size  **)**                                                                                          |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_stop_mouse<class_Control_set_stop_mouse>`  **(** :ref:`bool<class_bool>` stop  **)**                                                                                    |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_stretch_ratio<class_Control_set_stretch_ratio>`  **(** :ref:`float<class_float>` ratio  **)**                                                                           |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -203,23 +205,50 @@ Member Functions
 Signals
 -------
 
--  **focus_enter**  **(** **)**
--  **focus_exit**  **(** **)**
--  **input_event**  **(** :ref:`InputEvent<class_inputevent>` ev  **)**
+-  **focus_entered**  **(** **)**
+-  **focus_exited**  **(** **)**
+-  **gui_input**  **(** :ref:`InputEvent<class_inputevent>` ev  **)**
 -  **minimum_size_changed**  **(** **)**
--  **modal_close**  **(** **)**
--  **mouse_enter**  **(** **)**
--  **mouse_exit**  **(** **)**
+-  **modal_closed**  **(** **)**
+-  **mouse_entered**  **(** **)**
+-  **mouse_exited**  **(** **)**
 -  **resized**  **(** **)**
 -  **size_flags_changed**  **(** **)**
+
+Member Variables
+----------------
+
+- :ref:`int<class_int>` **anchor_bottom**
+- :ref:`int<class_int>` **anchor_left**
+- :ref:`int<class_int>` **anchor_right**
+- :ref:`int<class_int>` **anchor_top**
+- :ref:`NodePath<class_nodepath>` **focus_neighbour_bottom**
+- :ref:`NodePath<class_nodepath>` **focus_neighbour_left**
+- :ref:`NodePath<class_nodepath>` **focus_neighbour_right**
+- :ref:`NodePath<class_nodepath>` **focus_neighbour_top**
+- :ref:`String<class_string>` **hint_tooltip**
+- :ref:`int<class_int>` **margin_bottom**
+- :ref:`int<class_int>` **margin_left**
+- :ref:`int<class_int>` **margin_right**
+- :ref:`int<class_int>` **margin_top**
+- :ref:`int<class_int>` **mouse_filter**
+- :ref:`bool<class_bool>` **rect_clip_content**
+- :ref:`Vector2<class_vector2>` **rect_min_size**
+- :ref:`Vector2<class_vector2>` **rect_pos**
+- :ref:`float<class_float>` **rect_rotation**
+- :ref:`Vector2<class_vector2>` **rect_scale**
+- :ref:`Vector2<class_vector2>` **rect_size**
+- :ref:`int<class_int>` **size_flags_horizontal**
+- :ref:`int<class_int>` **size_flags_stretch_ratio**
+- :ref:`int<class_int>` **size_flags_vertical**
+- :ref:`Theme<class_theme>` **theme**
 
 Numeric Constants
 -----------------
 
 - **ANCHOR_BEGIN** = **0** --- X is relative to MARGIN_LEFT, Y is relative to MARGIN_TOP.
 - **ANCHOR_END** = **1** --- X is relative to -MARGIN_RIGHT, Y is relative to -MARGIN_BOTTOM.
-- **ANCHOR_RATIO** = **2** --- X and Y are a ratio (0 to 1) relative to the parent size 0 is left/top, 1 is right/bottom.
-- **ANCHOR_CENTER** = **3**
+- **ANCHOR_CENTER** = **2**
 - **FOCUS_NONE** = **0** --- Control can't acquire focus.
 - **FOCUS_CLICK** = **1** --- Control can acquire focus only if clicked.
 - **FOCUS_ALL** = **2** --- Control can acquire focus if clicked, or by pressing TAB/Directionals in the keyboard from another Control.
@@ -247,9 +276,12 @@ Numeric Constants
 - **CURSOR_VSPLIT** = **14**
 - **CURSOR_HSPLIT** = **15**
 - **CURSOR_HELP** = **16**
-- **SIZE_EXPAND** = **1**
-- **SIZE_FILL** = **2**
+- **SIZE_EXPAND** = **2**
+- **SIZE_FILL** = **1**
 - **SIZE_EXPAND_FILL** = **3**
+- **MOUSE_FILTER_STOP** = **0**
+- **MOUSE_FILTER_PASS** = **1**
+- **MOUSE_FILTER_IGNORE** = **2**
 
 Description
 -----------
@@ -271,9 +303,15 @@ Finally, controls are skinned according to a :ref:`Theme<class_theme>`. Setting 
 Member Function Description
 ---------------------------
 
-.. _class_Control__input_event:
+.. _class_Control__get_minimum_size:
 
-- void  **_input_event**  **(** :ref:`InputEvent<class_inputevent>` event  **)** virtual
+- :ref:`Vector2<class_vector2>`  **_get_minimum_size**  **(** **)** virtual
+
+Return the minimum size this Control can shrink to. A control will never be displayed or resized smaller than its minimum size.
+
+.. _class_Control__gui_input:
+
+- void  **_gui_input**  **(** :ref:`InputEvent<class_inputevent>` event  **)** virtual
 
 Called when an input event reaches the control.
 
@@ -431,11 +469,11 @@ Return a margin offset. Margin can be one of (MARGIN_LEFT, MARGIN_TOP, MARGIN_RI
 
 Return the minimum size this Control can shrink to. A control will never be displayed or resized smaller than its minimum size.
 
-.. _class_Control_get_minimum_size:
+.. _class_Control_get_mouse_filter:
 
-- :ref:`Vector2<class_vector2>`  **get_minimum_size**  **(** **)** virtual
+- :ref:`int<class_int>`  **get_mouse_filter**  **(** **)** const
 
-Return the minimum size this Control can shrink to. A control will never be displayed or resized smaller than its minimum size.
+Return when the control is ignoring mouse events (even touchpad events send mouse events).
 
 .. _class_Control_get_parent_area_size:
 
@@ -551,6 +589,10 @@ Return whether the Control is the current focused control (see :ref:`set_focus_m
 
 - :ref:`bool<class_bool>`  **has_icon_override**  **(** :ref:`String<class_string>` name  **)** const
 
+.. _class_Control_has_point:
+
+- void  **has_point**  **(** :ref:`Vector2<class_vector2>` point  **)** virtual
+
 .. _class_Control_has_stylebox:
 
 - :ref:`bool<class_bool>`  **has_stylebox**  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type=""  **)** const
@@ -559,15 +601,9 @@ Return whether the Control is the current focused control (see :ref:`set_focus_m
 
 - :ref:`bool<class_bool>`  **has_stylebox_override**  **(** :ref:`String<class_string>` name  **)** const
 
-.. _class_Control_is_ignoring_mouse:
+.. _class_Control_is_clipping_contents:
 
-- :ref:`bool<class_bool>`  **is_ignoring_mouse**  **(** **)** const
-
-Return if the control is ignoring mouse events (even touchpad events send mouse events).
-
-.. _class_Control_is_stopping_mouse:
-
-- :ref:`bool<class_bool>`  **is_stopping_mouse**  **(** **)** const
+- :ref:`bool<class_bool>`  **is_clipping_contents**  **(** **)**
 
 .. _class_Control_minimum_size_changed:
 
@@ -604,6 +640,10 @@ Change all margins and anchors, so this Control always takes up the same area as
 - void  **set_begin**  **(** :ref:`Vector2<class_vector2>` pos  **)**
 
 Sets MARGIN_LEFT and MARGIN_TOP at the same time. This is a helper (see :ref:`set_margin<class_Control_set_margin>`).
+
+.. _class_Control_set_clip_contents:
+
+- void  **set_clip_contents**  **(** :ref:`bool<class_bool>` enable  **)**
 
 .. _class_Control_set_custom_minimum_size:
 
@@ -653,17 +693,17 @@ Move the Control to a new position, relative to the top-left corner of the *wind
 
 Hint for containers, set horizontal positioning flags.
 
-.. _class_Control_set_ignore_mouse:
-
-- void  **set_ignore_mouse**  **(** :ref:`bool<class_bool>` ignore  **)**
-
-Ignore mouse events on this control (even touchpad events send mouse events).
-
 .. _class_Control_set_margin:
 
 - void  **set_margin**  **(** :ref:`int<class_int>` margin, :ref:`float<class_float>` offset  **)**
 
 Set a margin offset. Margin can be one of (MARGIN_LEFT, MARGIN_TOP, MARGIN_RIGHT, MARGIN_BOTTOM). Offset value being set depends on the anchor mode.
+
+.. _class_Control_set_mouse_filter:
+
+- void  **set_mouse_filter**  **(** :ref:`int<class_int>` filter  **)**
+
+Set when the control is ignoring mouse events (even touchpad events send mouse events). (see the MOUSE_FILTER\_\* constants)
 
 .. _class_Control_set_pos:
 
@@ -688,10 +728,6 @@ Move the Control to a new position, relative to the top-left corner of the paren
 - void  **set_size**  **(** :ref:`Vector2<class_vector2>` size  **)**
 
 Changes MARGIN_RIGHT and MARGIN_BOTTOM to fit a given size. This is a helper (see :ref:`set_margin<class_Control_set_margin>`).
-
-.. _class_Control_set_stop_mouse:
-
-- void  **set_stop_mouse**  **(** :ref:`bool<class_bool>` stop  **)**
 
 .. _class_Control_set_stretch_ratio:
 

@@ -73,6 +73,8 @@ Member Functions
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`push_underline<class_RichTextLabel_push_underline>`  **(** **)**                                                                                                              |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`remove_line<class_RichTextLabel_remove_line>`  **(** :ref:`int<class_int>` arg0  **)**                                                                                        |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`scroll_to_line<class_RichTextLabel_scroll_to_line>`  **(** :ref:`int<class_int>` line  **)**                                                                                  |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`set_bbcode<class_RichTextLabel_set_bbcode>`  **(** :ref:`String<class_string>` text  **)**                                                                                    |
@@ -98,6 +100,13 @@ Signals
 -------
 
 -  **meta_clicked**  **(** :ref:`Nil<class_nil>` meta  **)**
+
+Member Variables
+----------------
+
+- :ref:`bool<class_bool>` **bbcode_enabled**
+- :ref:`String<class_string>` **bbcode_text**
+- :ref:`int<class_int>` **visible_characters**
 
 Numeric Constants
 -----------------
@@ -240,6 +249,10 @@ Return true if selecting the text inside this richtext is allowed.
 .. _class_RichTextLabel_push_underline:
 
 - void  **push_underline**  **(** **)**
+
+.. _class_RichTextLabel_remove_line:
+
+- :ref:`bool<class_bool>`  **remove_line**  **(** :ref:`int<class_int>` arg0  **)**
 
 .. _class_RichTextLabel_scroll_to_line:
 

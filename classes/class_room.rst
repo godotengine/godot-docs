@@ -18,17 +18,16 @@ Room data resource.
 Member Functions
 ----------------
 
-+--------------------------+---------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`compute_room_from_subtree<class_Room_compute_room_from_subtree>`  **(** **)**                           |
-+--------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`Room<class_room>`  | :ref:`get_room<class_Room_get_room>`  **(** **)** const                                                       |
-+--------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_simulating_acoustics<class_Room_is_simulating_acoustics>`  **(** **)** const                         |
-+--------------------------+---------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_room<class_Room_set_room>`  **(** :ref:`Room<class_room>` room  **)**                               |
-+--------------------------+---------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_simulate_acoustics<class_Room_set_simulate_acoustics>`  **(** :ref:`bool<class_bool>` enable  **)** |
-+--------------------------+---------------------------------------------------------------------------------------------------------------+
++--------------------------+---------------------------------------------------------------------------------+
+| :ref:`Room<class_room>`  | :ref:`get_room<class_Room_get_room>`  **(** **)** const                         |
++--------------------------+---------------------------------------------------------------------------------+
+| void                     | :ref:`set_room<class_Room_set_room>`  **(** :ref:`Room<class_room>` room  **)** |
++--------------------------+---------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+- :ref:`Area<class_area>` **room/room**
 
 Description
 -----------
@@ -38,24 +37,12 @@ Room contains the data to define the bounds of a scene (using a BSP Tree). It is
 Member Function Description
 ---------------------------
 
-.. _class_Room_compute_room_from_subtree:
-
-- void  **compute_room_from_subtree**  **(** **)**
-
 .. _class_Room_get_room:
 
 - :ref:`Room<class_room>`  **get_room**  **(** **)** const
 
-.. _class_Room_is_simulating_acoustics:
-
-- :ref:`bool<class_bool>`  **is_simulating_acoustics**  **(** **)** const
-
 .. _class_Room_set_room:
 
 - void  **set_room**  **(** :ref:`Room<class_room>` room  **)**
-
-.. _class_Room_set_simulate_acoustics:
-
-- void  **set_simulate_acoustics**  **(** :ref:`bool<class_bool>` enable  **)**
 
 

@@ -64,6 +64,21 @@ Member Functions
 | void                           | :ref:`set_pixel_size<class_SpriteBase3D_set_pixel_size>`  **(** :ref:`float<class_float>` pixel_size  **)**                      |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`int<class_int>` **alpha_cut**
+- :ref:`int<class_int>` **axis**
+- :ref:`bool<class_bool>` **centered**
+- :ref:`bool<class_bool>` **flip_h**
+- :ref:`bool<class_bool>` **flip_v**
+- :ref:`Color<class_color>` **modulate**
+- :ref:`Vector2<class_vector2>` **offset**
+- :ref:`float<class_float>` **opacity**
+- :ref:`float<class_float>` **pixel_size**
+- :ref:`bool<class_bool>` **shaded**
+- :ref:`bool<class_bool>` **transparent**
+
 Numeric Constants
 -----------------
 

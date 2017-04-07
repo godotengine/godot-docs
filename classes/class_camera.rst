@@ -25,9 +25,13 @@ Member Functions
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform<class_transform>`      | :ref:`get_camera_transform<class_Camera_get_camera_transform>`  **(** **)** const                                                                                   |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`get_cull_mask<class_Camera_get_cull_mask>`  **(** **)** const                                                                                                 |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Environment<class_environment>`  | :ref:`get_environment<class_Camera_get_environment>`  **(** **)** const                                                                                             |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`              | :ref:`get_fov<class_Camera_get_fov>`  **(** **)** const                                                                                                             |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_h_offset<class_Camera_get_h_offset>`  **(** **)** const                                                                                                   |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`get_keep_aspect_mode<class_Camera_get_keep_aspect_mode>`  **(** **)** const                                                                                   |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -35,7 +39,7 @@ Member Functions
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`              | :ref:`get_size<class_Camera_get_size>`  **(** **)** const                                                                                                           |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                  | :ref:`get_visible_layers<class_Camera_get_visible_layers>`  **(** **)** const                                                                                       |
+| :ref:`float<class_float>`              | :ref:`get_v_offset<class_Camera_get_v_offset>`  **(** **)** const                                                                                                   |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`              | :ref:`get_zfar<class_Camera_get_zfar>`  **(** **)** const                                                                                                           |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -55,7 +59,11 @@ Member Functions
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`          | :ref:`project_ray_origin<class_Camera_project_ray_origin>`  **(** :ref:`Vector2<class_vector2>` screen_point  **)** const                                           |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_cull_mask<class_Camera_set_cull_mask>`  **(** :ref:`int<class_int>` mask  **)**                                                                           |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`set_environment<class_Camera_set_environment>`  **(** :ref:`Environment<class_environment>` env  **)**                                                        |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_h_offset<class_Camera_set_h_offset>`  **(** :ref:`float<class_float>` ofs  **)**                                                                          |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`set_keep_aspect_mode<class_Camera_set_keep_aspect_mode>`  **(** :ref:`int<class_int>` mode  **)**                                                             |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -63,7 +71,7 @@ Member Functions
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`set_perspective<class_Camera_set_perspective>`  **(** :ref:`float<class_float>` fov, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far  **)** |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_visible_layers<class_Camera_set_visible_layers>`  **(** :ref:`int<class_int>` mask  **)**                                                                 |
+| void                                   | :ref:`set_v_offset<class_Camera_set_v_offset>`  **(** :ref:`float<class_float>` ofs  **)**                                                                          |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`          | :ref:`unproject_position<class_Camera_unproject_position>`  **(** :ref:`Vector3<class_vector3>` world_point  **)** const                                            |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -94,6 +102,10 @@ Member Function Description
 
 Get the camera transform. Subclassed cameras (such as CharacterCamera) may provide different transforms than the :ref:`Node<class_node>` transform.
 
+.. _class_Camera_get_cull_mask:
+
+- :ref:`int<class_int>`  **get_cull_mask**  **(** **)** const
+
 .. _class_Camera_get_environment:
 
 - :ref:`Environment<class_environment>`  **get_environment**  **(** **)** const
@@ -101,6 +113,10 @@ Get the camera transform. Subclassed cameras (such as CharacterCamera) may provi
 .. _class_Camera_get_fov:
 
 - :ref:`float<class_float>`  **get_fov**  **(** **)** const
+
+.. _class_Camera_get_h_offset:
+
+- :ref:`float<class_float>`  **get_h_offset**  **(** **)** const
 
 .. _class_Camera_get_keep_aspect_mode:
 
@@ -114,9 +130,9 @@ Get the camera transform. Subclassed cameras (such as CharacterCamera) may provi
 
 - :ref:`float<class_float>`  **get_size**  **(** **)** const
 
-.. _class_Camera_get_visible_layers:
+.. _class_Camera_get_v_offset:
 
-- :ref:`int<class_int>`  **get_visible_layers**  **(** **)** const
+- :ref:`float<class_float>`  **get_v_offset**  **(** **)** const
 
 .. _class_Camera_get_zfar:
 
@@ -162,9 +178,17 @@ Return a normal vector in worldspace, that is the result of projecting a point o
 
 Return a 3D position in worldspace, that is the result of projecting a point on the :ref:`Viewport<class_viewport>` rectangle by the camera projection. This is useful for casting rays in the form of (origin,normal) for object intersection or picking.
 
+.. _class_Camera_set_cull_mask:
+
+- void  **set_cull_mask**  **(** :ref:`int<class_int>` mask  **)**
+
 .. _class_Camera_set_environment:
 
 - void  **set_environment**  **(** :ref:`Environment<class_environment>` env  **)**
+
+.. _class_Camera_set_h_offset:
+
+- void  **set_h_offset**  **(** :ref:`float<class_float>` ofs  **)**
 
 .. _class_Camera_set_keep_aspect_mode:
 
@@ -182,9 +206,9 @@ Set the camera projection to orthogonal mode, by specifying a width and the *nea
 
 Set the camera projection to perspective mode, by specifying a *FOV* Y angle in degrees (FOV means Field of View), and the *near* and *far* clip planes in worldspace units.
 
-.. _class_Camera_set_visible_layers:
+.. _class_Camera_set_v_offset:
 
-- void  **set_visible_layers**  **(** :ref:`int<class_int>` mask  **)**
+- void  **set_v_offset**  **(** :ref:`float<class_float>` ofs  **)**
 
 .. _class_Camera_unproject_position:
 

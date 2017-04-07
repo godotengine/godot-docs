@@ -36,6 +36,14 @@ Member Functions
 | void                           | :ref:`set_friction<class_StaticBody_set_friction>`  **(** :ref:`float<class_float>` friction  **)**                                  |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`float<class_float>` **bounce**
+- :ref:`Vector3<class_vector3>` **constant_angular_velocity**
+- :ref:`Vector3<class_vector3>` **constant_linear_velocity**
+- :ref:`float<class_float>` **friction**
+
 Description
 -----------
 

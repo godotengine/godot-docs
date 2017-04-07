@@ -23,8 +23,6 @@ Member Functions
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`create_trimesh_collision<class_MeshInstance_create_trimesh_collision>`  **(** **)**                                  |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AABB<class_aabb>`          | :ref:`get_aabb<class_MeshInstance_get_aabb>`  **(** **)** const                                                            |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Mesh<class_mesh>`          | :ref:`get_mesh<class_MeshInstance_get_mesh>`  **(** **)** const                                                            |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`NodePath<class_nodepath>`  | :ref:`get_skeleton_path<class_MeshInstance_get_skeleton_path>`  **(** **)**                                                |
@@ -33,6 +31,12 @@ Member Functions
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_skeleton_path<class_MeshInstance_set_skeleton_path>`  **(** :ref:`NodePath<class_nodepath>` skeleton_path  **)** |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+- :ref:`Mesh<class_mesh>` **mesh**
+- :ref:`NodePath<class_nodepath>` **skeleton**
 
 Description
 -----------
@@ -51,12 +55,6 @@ Member Function Description
 - void  **create_trimesh_collision**  **(** **)**
 
 This helper creates a :ref:`StaticBody<class_staticbody>` child :ref:`Node<class_node>` using the mesh geometry as collision. It's mainly used for testing.
-
-.. _class_MeshInstance_get_aabb:
-
-- :ref:`AABB<class_aabb>`  **get_aabb**  **(** **)** const
-
-Return the AABB of the mesh, in local coordinates.
 
 .. _class_MeshInstance_get_mesh:
 

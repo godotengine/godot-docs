@@ -58,6 +58,14 @@ Member Functions
 | void                           | :ref:`set_type_mask<class_RayCast_set_type_mask>`  **(** :ref:`int<class_int>` mask  **)**              |
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`Vector3<class_vector3>` **cast_to**
+- :ref:`bool<class_bool>` **enabled**
+- :ref:`int<class_int>` **layer_mask**
+- :ref:`int<class_int>` **type_mask**
+
 Description
 -----------
 

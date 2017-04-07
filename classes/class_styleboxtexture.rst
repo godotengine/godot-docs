@@ -49,6 +49,22 @@ Signals
 
 -  **texture_changed**  **(** **)**
 
+Member Variables
+----------------
+
+- :ref:`bool<class_bool>` **draw_center**
+- :ref:`float<class_float>` **expand_margin_bottom**
+- :ref:`float<class_float>` **expand_margin_left**
+- :ref:`float<class_float>` **expand_margin_right**
+- :ref:`float<class_float>` **expand_margin_top**
+- :ref:`float<class_float>` **margin_bottom**
+- :ref:`float<class_float>` **margin_left**
+- :ref:`float<class_float>` **margin_right**
+- :ref:`float<class_float>` **margin_top**
+- :ref:`Color<class_color>` **modulate_color**
+- :ref:`Rect2<class_rect2>` **region_rect**
+- :ref:`Texture<class_texture>` **texture**
+
 Description
 -----------
 

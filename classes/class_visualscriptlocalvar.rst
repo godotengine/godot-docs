@@ -28,6 +28,12 @@ Member Functions
 | void                         | :ref:`set_var_type<class_VisualScriptLocalVar_set_var_type>`  **(** :ref:`int<class_int>` type  **)**       |
 +------------------------------+-------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`String<class_string>` **variable/name**
+- :ref:`int<class_int>` **variable/type**
+
 Member Function Description
 ---------------------------
 

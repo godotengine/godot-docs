@@ -28,6 +28,12 @@ Member Functions
 | void                       | :ref:`set_yield_mode<class_VisualScriptYield_set_yield_mode>`  **(** :ref:`int<class_int>` mode  **)**  |
 +----------------------------+---------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+- :ref:`int<class_int>` **mode**
+- :ref:`float<class_float>` **wait_time**
+
 Numeric Constants
 -----------------
 

@@ -109,6 +109,11 @@ Signals
 
 -  **node_ports_changed**  **(** :ref:`String<class_string>` function, :ref:`int<class_int>` id  **)**
 
+Member Variables
+----------------
+
+- :ref:`Dictionary<class_dictionary>` **data**
+
 Member Function Description
 ---------------------------
 
