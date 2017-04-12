@@ -11,7 +11,11 @@ Uncheck the checkbox or choose a custom splash screen
 
 .. image:: /img/boot_splash_options.png
 
+<<<<<<< HEAD
 Adding more splash screens
+=======
+Adding more splash screen
+>>>>>>> 18e8946ba7baa4bc5c71575d5f8ff8bb37361144
 -----
 
 Godot is awesome, why not let everyone know about it?
@@ -20,7 +24,11 @@ If you want to add one more splash screen after the engine's one, you can create
 
 .. image:: /img/boot_splash_main_scene.png
 
+<<<<<<< HEAD
 You can do this by creating a scene with an animationplayer node and use the 'finished()' signal to change the scene, remember to **enable autoplay** in the animationplayer.
+=======
+You can do this by creating a scene with a animationplayer node and use the finished() signal for changing the scene, remember to **enable autoplay** in the animationplayer.
+>>>>>>> 18e8946ba7baa4bc5c71575d5f8ff8bb37361144
 
 ::
 
