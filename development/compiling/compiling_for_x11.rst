@@ -32,7 +32,10 @@ If your distribution provides GCC 6 by default (e.g. Arch or Ubuntu 16.10), you 
 
 Distro-specific oneliners
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-
++---------------+------------------------------------------------------------------------------------------------------------+
+| **Arch**      | ::                                                                                                         |
+|               |                                                                                                            |
+|               |     pacman -S scons libxcursor libxinerama libxrandr mesa glu alsa-lib pulseaudio freetype2                |
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **Fedora**    | ::                                                                                                         |
 |               |                                                                                                            |
@@ -45,26 +48,28 @@ Distro-specific oneliners
 |               |     sudo pkg install scons pkg-config xorg-libraries libXcursor libXrandr xineramaproto libglapi libGLU \  |
 |               |         freetype2 openssl                                                                                  |
 +---------------+------------------------------------------------------------------------------------------------------------+
+| **Gentoo**    | ::                                                                                                         |
+|               |                                                                                                            |
+|               |     emerge -an dev-util/scons x11-libs/libX11 x11-libs/libXcursor x11-libs/libXinerama media-libs/mesa \   |
+|               |         media-libs/glu media-libs/alsa-lib media-sound/pulseaudio media-libs/freetype                      |
++---------------+------------------------------------------------------------------------------------------------------------+
 | **Mageia**    | ::                                                                                                         |
 |               |                                                                                                            |
 |               |     urpmi scons pkgconfig "pkgconfig(alsa)" "pkgconfig(freetype2)" "pkgconfig(glu)" "pkgconfig(libpulse)" \|
 |               |         "pkgconfig(openssl)" "pkgconfig(udev)" "pkgconfig(x11)" "pkgconfig(xcursor)" "pkgconfig(xinerama)"\|
 |               |         "pkgconfig(xrandr)" "pkgconfig(zlib)"                                                              |
 +---------------+------------------------------------------------------------------------------------------------------------+
+| **openSUSE**  | ::                                                                                                         |
+|               |                                                                                                            |
+|               |     sudo zypper install scons pkgconfig libX11-devel libXcursor-devel libXrandr-devel libXinerama-devel \  |
+|               |             Mesa-libGL-devel alsa-devel libpulse-devel freetype-devel openssl-devel libudev-devel \        |
+|               |             libGLU1                                                                                        | 
++---------------+------------------------------------------------------------------------------------------------------------+
 | **Ubuntu**    | ::                                                                                                         |
 |               |                                                                                                            |
 |               |     sudo apt-get install build-essential scons pkg-config libx11-dev libxcursor-dev libxinerama-dev \      |
 |               |         libgl1-mesa-dev libglu-dev libasound2-dev libpulse-dev libfreetype6-dev libssl-dev libudev-dev \   |
 |               |         libxrandr-dev                                                                                      |
-+---------------+------------------------------------------------------------------------------------------------------------+
-| **Arch**      | ::                                                                                                         |
-|               |                                                                                                            |
-|               |     pacman -S scons libxcursor libxinerama libxrandr mesa glu alsa-lib pulseaudio freetype2                |
-+---------------+------------------------------------------------------------------------------------------------------------+
-| **Gentoo**    | ::                                                                                                         |
-|               |                                                                                                            |
-|               |     emerge -an dev-util/scons x11-libs/libX11 x11-libs/libXcursor x11-libs/libXinerama media-libs/mesa \   |
-|               |         media-libs/glu media-libs/alsa-lib media-sound/pulseaudio media-libs/freetype                      |
 +---------------+------------------------------------------------------------------------------------------------------------+
 
 Compiling
