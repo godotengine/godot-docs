@@ -35,9 +35,9 @@ supports both 32-bit and 64-bit architectures):
 
 ::
 
-    user@host:~/godot$ cp -r tools/dist/osx_tools.app ./Godot.app
+    user@host:~/godot$ cp -r misc/dist/osx_tools.app ./Godot.app
     user@host:~/godot$ mkdir -p Godot.app/Contents/MacOS
-    user@host:~/godot$ cp bin/godot.osx.opt.tools.fat Godot.app/Contents/MacOS/Godot
+    user@host:~/godot$ cp bin/godot.osx.tools.fat Godot.app/Contents/MacOS/Godot
     user@host:~/godot$ chmod +x Godot.app/Contents/MacOS/Godot
 
 Cross-compiling
