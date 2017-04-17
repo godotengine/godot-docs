@@ -3,6 +3,8 @@
 Batch building templates
 ========================
 
+.. note:: This page is outdated and needs to be updated or removed.
+
 The following is almost the same script that we use to build all the
 export templates that go to the website. If you want to build or roll them
 yourself, this might be of use.
