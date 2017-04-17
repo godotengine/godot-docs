@@ -265,7 +265,7 @@ formula:
 And you realize it's time to give up making 3D games or complex 2D
 games. How can something so simple be so complex? Someone else will have
 to make the next Zelda or Call of Duty. Top down RPGs don't look so bad
-after all. Yeah I hear someone did pretty will with one of those on
+after all. Yeah I hear someone did pretty well with one of those on
 Steam...
 
 So this is your moment, this is your time to shine. **DO NOT GIVE UP**!
