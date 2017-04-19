@@ -85,7 +85,7 @@ Source & target paths
 ~~~~~~~~~~~~~~~~~~~~~
 
 To import, two options are needed. The first is a source .dae file
-(.dae stands for Collada. More import formats will eventually added,
+(.dae stands for Digital Asset Exchange; the extension of COLLADA files. More import formats will eventually added,
 but Collada is the most complete open format as of this writing).
 
 A target folder needs to be provided, so the importer can import the
