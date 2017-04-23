@@ -69,7 +69,7 @@ precise enough to be worked on.
 
 **Topics:**
 
--  *Assetlib*: relates to issues whith the asset library.
+-  *Assetlib*: relates to issues with the asset library.
 -  *Buildsystem*: relates to building issues, either linked to the SCons
    buildsystem or to compiler peculiarities.
 -  *Core*: anything related to the core engine. It might be further
