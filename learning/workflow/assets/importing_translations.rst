@@ -26,21 +26,21 @@ languages, but a complete nightmare if working with many languages at
 the same time.
 
 In general, games use the second approach and a unique ID is used for
-each string. This allows to revise the text while it's being translated
-to others. The unique ID can be a number, a string, or a string with a
-number (it's just a unique string anyway).
+each string. This allows you to revise the text while it is being
+translated to other languages. The unique ID can be a number, a string,
+or a string with a number (it's just a unique string anyway).
 
-Translators also, most of the time prefer to work with spreadsheets
-(either as a Microsoft Excel file or a shared Google Spreadsheet).
+Translators also usually prefer to work with spreadsheets.
 
 Translation format
 ------------------
 
 To complete the picture and allow efficient support for translations,
-Godot has a special importer that can read csv files. Both Microsoft
-Excel and Google Spreadsheet can export to this format, so the only
-requirement is that the files have a special arrangement. The csv files must
-be saved in utf-8 encoding and be formatted as follows:
+Godot has a special importer that can read CSV files. All spreadsheet
+editors (be it Libreoffice, Microsoft Office, Google Docs, etc.) can
+export to this format, so the only requirement is that the files have
+a special arrangement. The CSV files must be saved in UTF-8 encoding
+and be formatted as follows:
 
 +--------+----------+----------+----------+
 |        | <lang1>  | <lang2>  | <langN>  |
@@ -70,11 +70,11 @@ uppercase, to differentiate from other strings). Here's an example:
 Import dialog
 -------------
 
-The import dialog takes a csv file in the previously described format
+The import dialog takes a CSV file in the previously described format
 and generates several compressed translation resource files inside the
 project.
 
-Selecting a csv file autodetects the languages from the first row and
+Selecting a CSV file autodetects the languages from the first row and
 determines which column represents which language. It is possible to
 change this manually, by selecting the language for each column.
 

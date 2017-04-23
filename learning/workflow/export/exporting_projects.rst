@@ -28,7 +28,7 @@ to distribute loads of files. Some developers may not like curious users
 peeking at how the game was made, others may just find it inelegant,
 etc.
 
-Another reason is that, for distribution, the developer might use a
+Another reason is that, for distribution, the developer might prefer a
 specially compiled binary, which is smaller in size, more optimized and
 does not include tools inside (like the editor, debugger, etc.).
 
@@ -44,15 +44,15 @@ added to a native project together with the game data.
 
 This can be troublesome because it means that the developer must be
 familiarized with the SDK of each platform before even being able to
-export. In other words, while learning each SDK is always encouraged, it
-can be frustrating to be forced to do it at an undesired time.
+export. While learning each SDK is always encouraged, it can be
+frustrating to be forced to do it at an undesired time.
 
-There is also another problem with this approach, which is the fact that
-different devices prefer some data in different formats to run. The main
-example of this is texture compression. All PC hardware uses S3TC (BC)
-compression and that has been standardized for more than a decade, but
-mobile devices use different formats for texture compression, such as
-PVRCT (iOS) or ETC (Android).
+There is also another problem with this approach. Different devices
+prefer some data in different formats to run. The main example of this
+is texture compression. All PC hardware uses S3TC (BC) compression and
+that has been standardized for more than a decade, but mobile devices
+use different formats for texture compression, such as PVRCT (iOS) or
+ETC (Android).
 
 Export dialog
 -------------
@@ -72,7 +72,7 @@ The dialog will open, showing all the supported export platforms:
 The default options are often enough to export, so tweaking them is not
 necessary, but provide extra control. However, many platforms require additional
 tools (SDKs) to be installed to be able to export. Additionally, Godot
-needs exports templates installed to create packages. The export dialog
+needs export templates installed to create packages. The export dialog
 will complain when something is missing and will not allow the user to
 export for that platform until they resolve it:
 

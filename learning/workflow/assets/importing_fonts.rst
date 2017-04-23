@@ -102,7 +102,7 @@ To solve this, Godot allows the user to specify a text file (in UTF-8
 format) where it expects to find all the characters that will be used in
 the project. This seems difficult to provide at first, and more to keep
 up to date, but it becomes rather easy when one realizes that the .csv
-with the translations can be used as such source file (see the
+with the translations can be used as such a source file (see the
 :ref:`doc_importing_translations` section). As Godot re-imports assets when
 their dependencies change, both the translation and font files will be
 updated and re-imported automatically if the translation csv changes.

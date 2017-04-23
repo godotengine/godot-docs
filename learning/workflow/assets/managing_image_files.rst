@@ -47,7 +47,7 @@ Mipmaps
 ~~~~~~~
 
 When the mipmaps option is enabled, Godot will generate mipmaps.
-Mipmaps are versions of the image shrunk by half in both axis,
+Mipmaps are versions of the image shrunk by half in both axes,
 recursively, until the image is 1 pixel of size. When the 3D hardware
 needs to shrink the image, it finds the largest mipmap it can scale
 from, and scales from there. This improves performance and image
@@ -90,7 +90,7 @@ Texture Import and Image Export can also perform this operation.
 Texture import
 ~~~~~~~~~~~~~~
 
-Sometimes, it might be desired to change the above settings per image.
+Sometimes, it might be desirable to change the above settings per image.
 Unfortunately, the image loader settings are global. Texture flags also
 can't be saved in a regular .png or .jpg file.
 
