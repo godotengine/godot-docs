@@ -56,7 +56,7 @@ there to achieve our goal.
 For our goal (tip of the bone moved within area of target), we need to know
 where the tip of our IK bone is. As we don't use a leaf bone as IK bone, we
 know the coordinate of the bone base is the tip of parent bone. All these
-calculations are quite dependant on the skeleton's structure. You can use
+calculations are quite dependent on the skeleton's structure. You can use
 pre-calculated constants as well. You can add an extra bone for the tip of
 IK and calculate using that.
 

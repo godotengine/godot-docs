@@ -117,7 +117,7 @@ As you know, the ``_ready()`` function is the first function called
 (after ``_enter_tree()`` which we don't need here). In this function,
 two things have to be done. The first one is to enable
 processing: this is the purpose of the ``set_process(true)`` function.
-The second one is to initalize our two member variables.
+The second one is to initialize our two member variables.
 
 ::
 
@@ -187,7 +187,7 @@ integrating it is simple:
 
 ::
 
-        # Integrate new ball postion
+        # Integrate new ball position
         ball_pos += direction * ball_speed * delta
 
 This code line is called at each iteration of the ``_process()``

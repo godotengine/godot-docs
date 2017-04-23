@@ -774,7 +774,7 @@ There are 6 pattern types:
 
     **Open-ended array**: An array can be bigger than the pattern by making the last subpattern ``..``
     
-    Every subpattern has to be comma seperated. ::
+    Every subpattern has to be comma separated. ::
     
         match x:
             []:
@@ -793,11 +793,11 @@ There are 6 pattern types:
 
     **Open-ended dictionary**: A dictionary can be bigger than the pattern by making the last subpattern ``..``
 
-    Every subpattern has to be comma seperated.
+    Every subpattern has to be comma separated.
 
-    If you don't specify a value, then only the existance of the key is checked.
+    If you don't specify a value, then only the existence of the key is checked.
 
-    A value pattern is seperated from the key pattern with a ``:`` ::
+    A value pattern is separated from the key pattern with a ``:`` ::
 
         match x:
             {}:
@@ -812,7 +812,7 @@ There are 6 pattern types:
                 print("I only checked for one entry and ignored the rest")
 
 Multipatterns:
-    You can also specify multiple patterns seperated by a comma. These patterns aren't allowed to have any bindings in them. ::
+    You can also specify multiple patterns separated by a comma. These patterns aren't allowed to have any bindings in them. ::
 
         match x:
             1, 2, 3:

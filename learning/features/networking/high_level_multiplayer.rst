@@ -70,7 +70,7 @@ Terminating the networking feature:
 Managing connections
 --------------------
 
-Some games accept conections at any time, others during the lobby phase. Godot can be requested to no longer accept 
+Some games accept connections at any time, others during the lobby phase. Godot can be requested to no longer accept 
 connections at any point. To manage who connects, Godot provides the following signals in SceneTree:
 
 Server and Clients:

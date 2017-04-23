@@ -43,7 +43,7 @@ Setting up Pywin32
 
 Pywin32 is required for -j (parallel) builds for multiple cores (for a
 32 bit Python version). If SCons is issuing a warning about Pywin32
-after parsing SConstruct build instructions, when begining to build,
+after parsing SConstruct build instructions, when beginning to build,
 you need to install it properly from the correct installer executable
 for your python version `located at Sourceforge. <https://sourceforge.net/projects/pywin32/files/pywin32/>`__
 
