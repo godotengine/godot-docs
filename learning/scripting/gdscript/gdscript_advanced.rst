@@ -7,11 +7,11 @@ About
 -----
 
 This tutorial aims to be a quick reference for how to use GDScript more
-efficiently. It focuses in common cases specific to the language, but
-also covers a lot related to using dynamically typed languages.
+efficiently. It focuses on common cases specific to the language, but
+also covers a lot of information on dynamically typed languages.
 
-It's meant to be specially useful for programmers without previous or
-little experience of dynamically typed languages.
+It's meant to be specially useful for programmers with little or no previous 
+experience with dynamically typed languages.
 
 Dynamic nature
 --------------
@@ -22,7 +22,7 @@ Pros & cons of dynamic typing
 GDScript is a Dynamically Typed language. As such, it's main advantages
 are that:
 
--  Language is very simple to learn.
+-  The language is very simple to learn.
 -  Most code can be written and changed quickly and without hassle.
 -  Less code written means less errors & mistakes to fix.
 -  Easier to read the code (less clutter).
@@ -30,7 +30,7 @@ are that:
 -  Runtime is tiny.
 -  Duck-typing and polymorphism by nature.
 
-While the main cons are:
+While the main disadvantages are:
 
 -  Less performance than statically typed languages.
 -  More difficult to refactor (symbols can't be traced)
@@ -41,12 +41,12 @@ While the main cons are:
    known at run-time).
 
 This, translated to reality, means that Godot+GDScript are a combination
-designed to games very quickly and efficiently. For games that are very
+designed to create games very quickly and efficiently. For games that are very
 computationally intensive and can't benefit from the engine built-in
 tools (such as the Vector types, Physics Engine, Math library, etc), the
 possibility of using C++ is present too. This allows to still create the
 entire game in GDScript and add small bits of C++ in the areas that need
-a boost.
+a performance boost.
 
 Variables & assignment
 ~~~~~~~~~~~~~~~~~~~~~~
