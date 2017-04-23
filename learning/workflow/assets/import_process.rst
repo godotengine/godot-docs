@@ -6,14 +6,12 @@ Import process
 What is it for?
 ---------------
 
-When Godot was created, it was probably after several failed and not so
-failed engine attempts (well, each attempt failed a little less.. and so
-on). One of the most difficult areas of creating game engines is
-managing the import process. That means, getting the assets that artists
+One of the most difficult things to get right when creating game engines
+is managing the import process. That means, getting the assets that artists
 make into the game, in a way that functions optimally.
 
 Artists use certain tools and formats, and programmers would rather have
-their data into a different format. This is because artists put their
+their data in a different format. This is because artists put their
 focus on creating assets with the best quality possible, while
 programmers have to make sure they actually run at decent speed (or run
 at all), use a certain amount of memory, and don't take ages loading
@@ -22,8 +20,8 @@ from disk.
 One would think that just writing a converter/importer would be enough,
 but this is not all there is to it. The same way programmers iterate
 several times over their code, artists keep making changes to their
-assets. This generates some bottleneck, because *someone* has to keep
-re-importing that artwork right? And importing assets is often something
+assets. This generates a bottleneck, because *someone* has to keep
+re-importing that artwork, right? And importing assets is often something
 that has to be agreed by both parties, as the programmer needs to decide
 how the artwork is imported and the artists needs to see how it looks.
 
@@ -91,11 +89,10 @@ from the project path to the asset (In windows, this works as long as
 they are on the same drive, otherwise an absolute path is stored). This
 ensures that the same asset can be re-imported in another computer.
 
-The usual approach to this, when using a VCS such as Subversion,
-Perforce or GIT, is to create the project in a subfolder, so both it and
-the source assets can be committed to a same repository. For example:
-
-Repository layout:
+The usual approach to this, when using a VCS such as Git, Mercurial or
+Subversion, is to create the project in a subfolder, so both the game's
+project files and the source assets can be committed to a same repository.
+For example, the repository layout can look like this:
 
 ::
 
@@ -119,7 +116,7 @@ accessed from the import dialog:
 
 .. image:: /img/import.png
 
-Each of the dialog shares a similar function, a source file (or several
+Each of the dialogs shares a similar function, a source file (or several
 of them) must be provided, as well as a target destination inside the
 project folders. Once imported, Godot saves this information as metadata
 in the imported asset itself.

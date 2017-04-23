@@ -3,9 +3,9 @@
 Exporting images
 ================
 
-It is often desired to do an operation to all or a group of images upon
-export. Godot provides some tools for this. Examples of such operations
-are:
+It is often desirable to perform an operation on all or a group of
+images upon export. Godot provides some tools for this. Examples of
+such operations are:
 
 -  Converting all images from a lossless format to a lossy one (ie: png
    -> WebP) for greater compression.
@@ -31,7 +31,7 @@ groups, see the next section for those):
 -  **Shrink**: This allows to shrink all images by a given amount. It's
    useful to export a game to half or less resolution for special
    devices.
--  **Compress Formats**: Allows to select which image exensions to
+-  **Compress Formats**: Allows to select which image extensions to
    convert.
 
 On export, Godot will perform the desired operation. The first export
@@ -44,9 +44,8 @@ Image group export options
 This section is similar to the previous one, except it can operate on a
 selected group of images. When a image is in a group, the settings from
 the global export options are overridden by the ones from the group. An
-image can only be in one group at the same time. So if the image is in
-another group different to the current one being edited, it will not be
-selectable.
+image can only be in one group at a time. So if the image is in a group
+other than the current one being edited, it will not be selectable.
 
 .. image:: /img/imagegroup.png
 
@@ -60,7 +59,7 @@ support textures bigger than 2048x2048 pixels. If this happens, just
 create another atlas.
 
 The atlas can be useful to speed up drawing of some scenes, as state
-changes are minimized when drawing from it (through unlike other
+changes are minimized when drawing from it (though unlike other
 engines, Godot is designed so state changes do not affect it as much).
 Textures added to an atlas get cropped (empty spaces around the image
 are removed), so this is another reason to use them (save space). If
