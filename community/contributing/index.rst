@@ -5,6 +5,7 @@ Contributing
    :maxdepth: 1
    :name: toc-community-contributing
 
+   ways_to_contribute
    bug_triage_guidelines
    doc_and_l10n_guidelines
    updating_the_class_reference
