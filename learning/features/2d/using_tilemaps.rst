@@ -142,6 +142,15 @@ using the lock button:
 
 .. image:: /img/tile_lock.png
 
+You can also flip and rotate sprites in the TileMap editor (note:
+flipping the sprite in the TileSet will have no effect). Icons at the
+top right of the editor allow flipping and rotating of the currently
+selected sprite - you can also use A and S to flip horizontally and
+vertically. With a brick pattern like this tutorial uses, flipping the
+sprites would create unpleasant discontinuities unless you're flipping
+an entire region of bricks, but for some kinds of tiles flipping can
+be a convenient and space-saving feature.
+
 Offset and scaling artifacts
 ----------------------------
 
