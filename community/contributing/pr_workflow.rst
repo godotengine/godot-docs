@@ -26,8 +26,8 @@ organisation of Godot's Git repository.
 Git source repository
 ---------------------
 
-The ``repository on GitHub <https://github.com/godotengine/godot>``_ is a
-``Git <https://git-scm.com>``_ code repository together with an embedded
+The `repository on GitHub <https://github.com/godotengine/godot>`_ is a
+`Git <https://git-scm.com>`_ code repository together with an embedded
 issue tracker and PR system.
 
 The Git version control system is the tool used to keep track of successive
@@ -40,7 +40,7 @@ use them (especially GitHub's online editor).
 .. seealso:: The first sections of Git's "Book" are a good introduction to
              the tool's philosophy and the various commands you need to
              master in your daily workflow. You can read them online on the
-             ``Git SCM <https://git-scm.com/book/en/v2>``_ website.
+             `Git SCM <https://git-scm.com/book/en/v2>`_ website.
 
 The branches on the Git repository are organized as follows:
 
@@ -62,7 +62,7 @@ The branches on the Git repository are organized as follows:
 Forking and cloning
 -------------------
 
-The first step is to *fork* the ``godotengine/godot <https://github.com/godotengine/godot>``_
+The first step is to *fork* the `godotengine/godot <https://github.com/godotengine/godot>`_
 repository on GitHub. To do so, you will need to have a GitHub account and to
 be logged in. In the top right corner of the repository's GitHub page, you
 should see the "Fork" button as shown below:
