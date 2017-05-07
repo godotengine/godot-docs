@@ -82,8 +82,8 @@ To ensure a good collaboration and overall quality, the Godot developers
 enforce some rules for code contribution, for example regarding the style to
 use in the C++ code (indentation, brackets, etc.) or the git and PR workflow.
 
-.. TODO. Those technical details are outlined in a specific section,
-   :ref:`doc_code_contribution_guidelines`.
+.. seealso:: Technical details about the PR workflow are outlined in a
+             specific section, :ref:`doc_pr_workflow`.
 
 Testing and reporting issues
 ----------------------------
@@ -171,7 +171,7 @@ There are two separate resources referred to as "documentation" in Godot:
    :ref:`Godot API <toc-class-ref>`.
    To contribute to the class reference, you have to edit the
    `doc/base/classes.xml` in Godot's git repository, and make a pull request.
-   See :ref:`updating_the_class_reference` for more details.
+   See :ref:`doc_updating_the_class_reference` for more details.
 
 -  **The tutorials and engine documentation.** This is the part you are reading
    now, which is distributed in the HTML, PDF and EPUB formats. Its contents
@@ -179,4 +179,4 @@ There are two separate resources referred to as "documentation" in Godot:
    to which you can contribute via pull requests on the
    `godot-docs <https://github.com/godotengine/godot-docs>`_ GitHub repository.
 
-.. TODO. See :ref:`documentation_guidelines` for more details.
+.. TODO. See :ref:`doc_documentation_guidelines` for more details.
