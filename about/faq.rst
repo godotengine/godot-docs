@@ -81,7 +81,7 @@ Will [Insert closed SDK such as PhysX, GameWorks, etc.] be supported in Godot?
 ------------------------------------------------------------------------------
 
 No, the aim of Godot is to create a complete open source engine
-licensed under MIT, so you have complete control about over single
+licensed under MIT, so you have complete control over every single
 piece of it. Open versions of functionality or features from such SDKs
 may be eventually added though.
 
