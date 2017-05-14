@@ -178,5 +178,4 @@ There are two separate resources referred to as "documentation" in Godot:
    are generated from plain text files in the reStructured Text (rst) format,
    to which you can contribute via pull requests on the
    `godot-docs <https://github.com/godotengine/godot-docs>`_ GitHub repository.
-
-.. TODO. See :ref:`doc_documentation_guidelines` for more details.
+   See :ref:`doc_documentation_guidelines` for more details.
