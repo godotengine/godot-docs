@@ -135,8 +135,8 @@ Any event has the methods :ref:`InputEvent.is_action() <class_InputEvent_is_acti
 
 Alternatively, it may be desired to supply the game back with an action
 from the game code (a good example of this is detecting gestures).
-SceneTree (derived from MainLoop) has a method for this:
-:ref:`MainLoop.input_event() <class_MainLoop_input_event>`. You would normally use it like this:
+The Input singleton has a method for this:
+:ref:`Input.parse_input_event() <class_input_parse_input_event>`. You would normally use it like this:
 
 ::
 
@@ -145,7 +145,7 @@ SceneTree (derived from MainLoop) has a method for this:
     # set as move_left, pressed
     ev.set_as_action("move_left", true) 
     # feedback
-    get_tree().input_event(ev)
+    Input.parse_input_event(ev)
 
 InputMap
 --------
