@@ -72,6 +72,18 @@ Distro-specific oneliners
 |               |         libxrandr-dev                                                                                      |
 +---------------+------------------------------------------------------------------------------------------------------------+
 
+Get the Source Code
+-------------------
+
+To get the latest (unstable) current source code, in a terminal enter:
+
+::
+
+    git clone https://github.com/godotengine/godot.git
+
+For any stable release, visit the releases page ( https://github.com/godotengine/godot/releases ) and click on the link for the release you want. You can then download and extract the source from the download link on the page.
+
+
 Compiling
 ---------
 
