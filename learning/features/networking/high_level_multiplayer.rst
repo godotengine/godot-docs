@@ -171,7 +171,7 @@ Let's get back to the lobby. Imagine that each player that connects to the serve
             rpc_id(id, "register_player", 1, my_info)
             # Send the info of existing players
             for peer_id in player_info:
-                rpc_id(id, "register_player", peer_id, players[peer_id])
+                rpc_id(id, "register_player", peer_id, player_info[peer_id])
 
         # Call function to update lobby UI here
 
