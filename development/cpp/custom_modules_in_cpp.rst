@@ -40,29 +40,29 @@ To create a new module, the first step is creating a directory inside
 ``modules/``. If you want to maintain the module separately, you can checkout
 a different VCS into modules and use it.
 
-The example module will be called "sumator", and is placed inside the
+The example module will be called "summator", and is placed inside the
 Godot source tree (``C:\godot`` refers to wherever the Godot sources are
 located):
 
 ::
 
     C:\godot> cd modules
-    C:\godot\modules> mkdir sumator
-    C:\godot\modules> cd sumator
-    C:\godot\modules\sumator>
+    C:\godot\modules> mkdir summator
+    C:\godot\modules> cd summator
+    C:\godot\modules\summator>
 
-Inside we will create a simple sumator class:
+Inside we will create a simple summator class:
 
 .. code:: cpp
 
-    /* sumator.h */
-    #ifndef SUMATOR_H
-    #define SUMATOR_H
+    /* summator.h */
+    #ifndef SUMMATOR_H
+    #define SUMMATOR_H
 
     #include "reference.h"
 
-    class Sumator : public Reference {
-        OBJ_TYPE(Sumator,Reference);
+    class Summator : public Reference {
+        GDCLASS(Summator, Reference);
 
         int count;
 
@@ -74,7 +74,7 @@ Inside we will create a simple sumator class:
         void reset();
         int get_total() const;
 
-        Sumator();
+        Summator();
     };
 
     #endif
@@ -83,34 +83,34 @@ And then the cpp file.
 
 .. code:: cpp
 
-    /* sumator.cpp */
+    /* summator.cpp */
 
-    #include "sumator.h"
+    #include "summator.h"
 
-    void Sumator::add(int value) {
+    void Summator::add(int value) {
 
-        count+=value;
+        count += value;
     }
 
-    void Sumator::reset() {
+    void Summator::reset() {
 
-        count=0;
+        count = 0;
     }
 
-    int Sumator::get_total() const {
+    int Summator::get_total() const {
 
         return count;
     }
 
-    void Sumator::_bind_methods() {
+    void Summator::_bind_methods() {
 
-        ObjectTypeDB::bind_method("add",&Sumator::add);
-        ObjectTypeDB::bind_method("reset",&Sumator::reset);
-        ObjectTypeDB::bind_method("get_total",&Sumator::get_total);
+        ClassDB::bind_method(D_METHOD("add", "value"), &Summator::add);
+        ClassDB::bind_method(D_METHOD("reset"), &Summator::reset);
+        ClassDB::bind_method(D_METHOD("get_total"), &Summator::get_total);
     }
 
-    Sumator::Sumator() {
-        count=0;
+    Summator::Summator() {
+        count = 0;
     }
 
 Then, the new class needs to be registered somehow, so two more files
@@ -127,8 +127,8 @@ With the following contents:
 
     /* register_types.h */
 
-    void register_sumator_types();
-    void unregister_sumator_types();
+    void register_summator_types();
+    void unregister_summator_types();
     /* yes, the word in the middle must be the same as the module folder name */
 
 .. code:: cpp
@@ -136,15 +136,15 @@ With the following contents:
     /* register_types.cpp */
 
     #include "register_types.h"
-    #include "object_type_db.h"
-    #include "sumator.h"
+    #include "class_db.h"
+    #include "summator.h"
 
-    void register_sumator_types() {
+    void register_summator_types() {
 
-            ObjectTypeDB::register_type<Sumator>();
+            ClassDB::register_type<Summator>();
     }
 
-    void unregister_sumator_types() {
+    void unregister_summator_types() {
        //nothing to do here
     }
 
@@ -212,12 +212,12 @@ this:
 
 ::
 
-    godot/modules/sumator/config.py
-    godot/modules/sumator/sumator.h
-    godot/modules/sumator/sumator.cpp
-    godot/modules/sumator/register_types.h
-    godot/modules/sumator/register_types.cpp
-    godot/modules/sumator/SCsub
+    godot/modules/summator/config.py
+    godot/modules/summator/summator.h
+    godot/modules/summator/summator.cpp
+    godot/modules/summator/register_types.h
+    godot/modules/summator/register_types.cpp
+    godot/modules/summator/SCsub
 
 You can then zip it and share the module with everyone else. When
 building for every platform (instructions in the previous sections),
@@ -231,7 +231,7 @@ now do:
 
 ::
 
-    var s = Sumator.new()
+    var s = Summator.new()
     s.add(10)
     s.add(20)
     s.add(30)
@@ -264,7 +264,7 @@ library that will be dynamically loaded when starting our game's binary.
 
     sources = [
         "register_types.cpp",
-        "sumator.cpp"
+        "summator.cpp"
     ]
 
     # First, create a custom env for the shared library.
@@ -276,7 +276,7 @@ library that will be dynamically loaded when starting our game's binary.
     # Now define the shared library. Note that by default it would be built
     # into the module's folder, however it's better to output it into `bin`
     # next to the godot binary.
-    shared_lib = module_env.SharedLibrary(target='#bin/sumator', source=sources)
+    shared_lib = module_env.SharedLibrary(target='#bin/summator', source=sources)
 
     # Finally notify the main env it has our shared lirary as a new dependency.
     # To do so, SCons wants the name of the lib with it custom suffixes
@@ -287,7 +287,7 @@ library that will be dynamically loaded when starting our game's binary.
     env.Append(LIBPATH=['#bin'])
 
 Once compiled, we should end up with a ``bin`` directory containing both the
-``godot*`` binary and our ``libsumator*.so``. However given the .so is not in
+``godot*`` binary and our ``libsummator*.so``. However given the .so is not in
 a standard directory (like ``/usr/lib``), we have to help our binary find it
 during runtime with the ``LD_LIBRARY_PATH`` environ variable:
 
@@ -311,17 +311,17 @@ using the `ARGUMENT` command:
 
     sources = [
         "register_types.cpp",
-        "sumator.cpp"
+        "summator.cpp"
     ]
 
     module_env = env.Clone()
     module_env.Append(CXXFLAGS=['-O2', '-std=c++11'])
 
-    if ARGUMENTS.get('sumator_shared', 'no') == 'yes':
+    if ARGUMENTS.get('summator_shared', 'no') == 'yes':
         # Shared lib compilation
         module_env.Append(CXXFLAGS='-fPIC')
         module_env['LIBS'] = []
-        shared_lib = module_env.SharedLibrary(target='#bin/sumator', source=sources)
+        shared_lib = module_env.SharedLibrary(target='#bin/summator', source=sources)
         shared_lib_shim = shared_lib[0].name.rsplit('.', 1)[0]
         env.Append(LIBS=[shared_lib_shim])
         env.Append(LIBPATH=['#bin'])
@@ -330,14 +330,14 @@ using the `ARGUMENT` command:
         module_env.add_source_files(env.modules_sources, sources)
 
 Now by default ``scons`` command will build our module as part of godot's binary
-and as a shared library when passing ``sumator_shared=yes``.
+and as a shared library when passing ``summator_shared=yes``.
 
 Finally you can even speedup build further by explicitly specifying your
 shared module as target in the scons command:
 
 ::
 
-    user@host:~/godot$ scons sumator_shared=yes bin/sumator.x11.tools.64.so
+    user@host:~/godot$ scons summator_shared=yes bin/summator.x11.tools.64.so
 
 
 Summing up
