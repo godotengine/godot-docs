@@ -96,7 +96,7 @@ Consider the player as a reusable element in other levels. It is composed of one
 
 2. Second, a scene for the Enemy.
 
-There again, an enemy is a reusable element in other levels. It is almost the same as the Player node - the only differences are the script (that manages IA, mostly) and sprite textures used by the AnimatedSprite.
+There again, an enemy is a reusable element in other levels. It is almost the same as the Player node - the only differences are the script (that manages AI, mostly) and sprite textures used by the AnimatedSprite.
 
 3. Lastly, the Level scene.
 
@@ -114,7 +114,7 @@ As you can see, every scene is organized as a tree. The same goes for nodes' pro
     - Second, it allows the extraction a subtree of scene to make it a scene of its own, which answers to the second and third questions: even if a scene tree gets too deep, it can be split into smaller subtrees. This also allows a better solution for reusability, as you can include any subtree as a child of any node. Putting multiple nodes in an empty GameObject in Unity does not provide the same possibility, apart from a visual organization.
 
 
-These are the most important concepts you need to remind: "node", "parent node" and "child node".
+These are the most important concepts you need to remember: "node", "parent node" and "child node".
 
 
 Project organization
@@ -172,7 +172,7 @@ As you can see, it can be easy to turn a scene tree to a mess. This is why it is
 Connections : groups and signals
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can control nodes by accessing them using a script, and call functions (built-in or user-defined) on them. But there's more: you can also place them in a group and call a function on all nodes contained it this group! This is explained in `this page <../tutorials/step_by_step/scripting_continued#groups>`_.
+You can control nodes by accessing them using a script, and call functions (built-in or user-defined) on them. But there's more: you can also place them in a group and call a function on all nodes contained in this group! This is explained in `this page <../tutorials/step_by_step/scripting_continued#groups>`_.
 
 But there's more! Certain nodes throw signals when certain actions happen. You can connect these signals to call a specific function when they happen. Note that you can define your own signals and send them whenever you want. This feature is documented `here <gdscript.html#signals>`_.
 
