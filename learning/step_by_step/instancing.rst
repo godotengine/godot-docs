@@ -9,7 +9,7 @@ Rationale
 Having a scene and throwing nodes into it might work for small projects,
 but as a project grows, more and more nodes are used and it can quickly
 become unmanageable. To solve this, Godot allows a project to be
-separated in several scenes. This, however, does not work the same way
+separated into several scenes. This, however, does not work the same way
 as in other game engines. In fact, it's quite different, so please do
 not skip this tutorial!
 
@@ -38,7 +38,7 @@ Instancing, step by step
 To learn how to do instancing, let's start with downloading a sample
 project: :download:`instancing.zip </files/instancing.zip>`.
 
-Unzip this scene in any place of your preference. Then, add this scene to
+Unzip this project in any place of your preference. Then, add this project to
 the project manager using the 'Import' option:
 
 .. image:: /img/importproject.png
@@ -63,8 +63,8 @@ Afterwards, push the link shaped button, this is the instancing button!
 
 .. image:: /img/continst.png
 
-Select the ball scene (ball.scn), the ball should appear in the origin
-(0,0), move it to around the center
+Select the ball scene (ball.scn), the ball should appear at the origin
+(0,0), move it to the center
 
 of the scene, like this:
 
@@ -80,7 +80,7 @@ A little more
 -------------
 
 There can be as many instances as desired in a scene, just try
-instancing more balls, or duplicating them (ctrl-D or duplicate button):
+instancing more balls, or duplicating them (Ctrl-D or duplicate button):
 
 .. image:: /img/instmany.png
 
@@ -94,14 +94,14 @@ Editing instances
 -----------------
 
 Select one of the many copies of the balls and go to the property
-editor. Let's make it bounce a lot more, so look for the bounce
+editor. Let's make it bounce a lot more, so look for the Bounce
 parameter and set it to 1.0:
 
 .. image:: /img/instedit.png
 
-The next it will happen is that a green "revert" button appears. When
-this button is present, it means we modified a property from the
-instanced scene to override for a specific value in this instance. Even
+Grey "revert" button will appear. When
+this button is present, it means we modified a property in the
+instanced scene to override a specific value in this instance. Even
 if that property is modified in the original scene, the custom value
 will always overwrite it. Pressing the revert button will restore the
 property to the original value that came from the scene.
