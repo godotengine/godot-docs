@@ -97,7 +97,7 @@ Select one of the many copies of the balls and go to the property
 editor. Let's make it bounce a lot more, so look for the Bounce
 parameter and set it to 1.0:
 
-.. image:: /img/instedit.PNG
+.. image:: /img/instedit.png
 
 Grey "revert" button will appear. When
 this button is present, it means we modified a property in the
