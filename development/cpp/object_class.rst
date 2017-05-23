@@ -15,7 +15,7 @@ macro like this.
 
     class CustomObject : public Object {
 
-        OBJ_TYPE(CustomObject,Object); // this is required to inherit
+        GDCLASS(CustomObject,Object); // this is required to inherit
     };
 
 This makes Objects gain a lot of functionality, like for example
@@ -35,7 +35,7 @@ References:
 Registering an Object
 ---------------------
 
-ObjectTypeDB is a static class that holds the entire list of registered
+ClassDB is a static class that holds the entire list of registered
 classes that inherit from Object, as well as dynamic bindings to all
 their methods properties and integer constants.
 
@@ -43,7 +43,7 @@ Classes are registered by calling:
 
 .. code:: cpp
 
-    ObjectTypeDB::register_type<MyCustomType>()
+    ClassDB::register_type<MyCustomType>()
 
 Registering it will allow the type to be instanced by scripts, code, or
 creating them again when deserializing.
@@ -52,7 +52,7 @@ Registering as virtual is the same but it can't be instanced.
 
 .. code:: cpp
 
-    ObjectTypeDB::register_virtual_type<MyCustomType>()
+    ClassDB::register_virtual_type<MyCustomType>()
 
 Object-derived classes can override the static function
 ``static void _bind_methods()``. When one class is registered, this
@@ -66,15 +66,15 @@ Registering functions is one:
 
 .. code:: cpp
 
-    ObjectTypeDB::register_method(_MD("methodname","arg1name","arg2name"),&MyCustomMethod);
+    ClassDB::register_method(D_METHOD("methodname","arg1name","arg2name"),&MyCustomMethod);
 
 Default values for arguments can be passed in reverse order:
 
 .. code:: cpp
 
-    ObjectTypeDB::register_method(_MD("methodname","arg1name","arg2name"),&MyCustomType::method,DEFVAL(-1)); //default value for arg2name
+    ClassDB::register_method(D_METHOD("methodname","arg1name","arg2name"),&MyCustomType::method,DEFVAL(-1)); //default value for arg2name
 
-``_MD`` is a macro that converts "methodname" to a StringName for more
+``D_METHOD`` is a macro that converts "methodname" to a StringName for more
 efficiency. Argument names are used for introspection, but when
 compiling on release, the macro ignores them, so the strings are unused
 and optimized away.
@@ -82,7 +82,7 @@ and optimized away.
 Check ``_bind_methods`` of Control or Object for more examples.
 
 If just adding modules and functionality that is not expected to be
-documented as thoroughly, the ``_MD()`` macro can safely be ignored and a
+documented as thoroughly, the ``D_METHOD()`` macro can safely be ignored and a
 string passing the name can be passed for brevity.
 
 References:
@@ -221,7 +221,7 @@ languages). Connecting to them is rather easy:
     obj->connect("enter_tree",this,"_node_entered_tree")
 
 The method ``_node_entered_tree`` must be registered to the class using
-``ObjectTypeDB::register_method`` (explained before).
+``ClassDB::register_method`` (explained before).
 
 Adding signals to a class is done in ``_bind_methods``, using the
 ``ADD_SIGNAL`` macro, for example:
@@ -240,7 +240,7 @@ Declaring them must be done using Ref<> template. For example:
 .. code:: cpp
 
     class MyReference: public Reference {
-        OBJ_TYPE( MyReference,Reference );
+        GDCLASS( MyReference,Reference );
     };
 
     Ref<MyReference> myref = memnew( MyReference );
