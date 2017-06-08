@@ -38,7 +38,7 @@ built with `scons p=osx target=release_debug`:
 
     user@host:~/godot$ cp -r misc/dist/osx_tools.app ./Godot.app
     user@host:~/godot$ mkdir -p Godot.app/Contents/MacOS
-    user@host:~/godot$ cp bin/godot.osx.opt.tools.fat Godot.app/Contents/MacOS/Godot
+    user@host:~/godot$ cp bin/godot.osx.tools.fat Godot.app/Contents/MacOS/Godot
     user@host:~/godot$ chmod +x Godot.app/Contents/MacOS/Godot
 
 Cross-compiling
