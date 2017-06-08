@@ -21,7 +21,7 @@ required:
 -  PulseAudio development libraries (for sound support)
 -  Freetype (for the editor)
 -  OpenSSL (for HTTPS and TLS)
--  libudev-dev (optional, for gamepad support)
+-  libudev-dev (optional, build with `udev=yes`)
 
 Known issues with GCC 6
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -59,6 +59,10 @@ Distro-specific oneliners
 |               |         "pkgconfig(openssl)" "pkgconfig(udev)" "pkgconfig(x11)" "pkgconfig(xcursor)" "pkgconfig(xinerama)"\|
 |               |         "pkgconfig(xrandr)" "pkgconfig(zlib)"                                                              |
 +---------------+------------------------------------------------------------------------------------------------------------+
+| **OpenBSD**   | ::                                                                                                         |
+|               |                                                                                                            |
+|               |     pkg_add python scons png llvm                                                                          | 
++---------------+------------------------------------------------------------------------------------------------------------+
 | **openSUSE**  | ::                                                                                                         |
 |               |                                                                                                            |
 |               |     sudo zypper install scons pkgconfig libX11-devel libXcursor-devel libXrandr-devel libXinerama-devel \  |
@@ -86,11 +90,16 @@ If all goes well, the resulting binary executable will be placed in the
 runs without any dependencies. Executing it will bring up the project
 manager.
 
-If you wish to compile using Clang rather than GCC, use this command:
+.. note::
 
-::
+    If you wish to compile using Clang rather than GCC, use this command:
 
-    user@host:~/godot$ scons platform=x11 use_llvm=yes
+    ::
+
+        user@host:~/godot$ scons platform=x11 use_llvm=yes
+
+    Using Clang appears to be a requirement for OpenBSD, otherwise fonts
+    would not build.
 
 Building export templates
 -------------------------
