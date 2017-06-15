@@ -414,7 +414,7 @@ CanvasItem (2D) - FragmentShader
 +-------------------------------------+-----------------------------------------------------------------------------------+
 | const float *TIME*                  | Time (in seconds)                                                                 |
 +-------------------------------------+-----------------------------------------------------------------------------------+
-| const bool *AT_LIGHT_PASS*          | Whether the shader is being run for a lighting pass (happens per affecting light) |         |
+| const bool *AT_LIGHT_PASS*          | Whether the shader is being run for a lighting pass (happens per affecting light) |
 +-------------------------------------+-----------------------------------------------------------------------------------+
 
 CanvasItem (2D) - LightShader
