@@ -138,6 +138,8 @@ Signals
 -------
 
 -  **size_changed**  **(** **)**
+Emitted when the size of the viewport is changed, whether by :ref:`set_size_override<class_Viewport_set_size_override>`, resize of window, or some other means.
+
 
 Numeric Constants
 -----------------

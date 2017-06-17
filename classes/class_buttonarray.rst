@@ -58,6 +58,8 @@ Signals
 -------
 
 -  **button_selected**  **(** :ref:`int<class_int>` button_idx  **)**
+A button has been selected, its index is given as the argument.
+
 
 Numeric Constants
 -----------------

@@ -160,6 +160,8 @@ Signals
 -  **enter_tree**  **(** **)**
 -  **exit_tree**  **(** **)**
 -  **renamed**  **(** **)**
+Emitted when the node is renamed.
+
 
 Numeric Constants
 -----------------

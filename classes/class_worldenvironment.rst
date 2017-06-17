@@ -13,7 +13,7 @@ WorldEnvironment
 Brief Description
 -----------------
 
-
+Sets environment properties for the entire scene
 
 Member Functions
 ----------------
@@ -24,6 +24,11 @@ Member Functions
 | void                                   | :ref:`set_environment<class_WorldEnvironment_set_environment>`  **(** :ref:`Environment<class_environment>` env  **)** |
 +----------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 
+Description
+-----------
+
+The :ref:`WorldEnvironment<class_worldenvironment>` node can be added to a scene in order to set default :ref:`Environment<class_environment>` variables for the scene. The :ref:`WorldEnvironment<class_worldenvironment>` can be overridden by an :ref:`Environment<class_environment>` node set on the current :ref:`Camera<class_camera>`. Additionally, only one :ref:`WorldEnvironment<class_worldenvironment>` may be instanced in a given scene at a time. The :ref:`WorldEnvironment<class_worldenvironment>` allows the user to specify default lighting parameters (e.g. ambient lighting), various post-processing effects (e.g. SSAO, DOF, Tonemapping), and how to draw the background (e.g. solid color, skybox).
+
 Member Function Description
 ---------------------------
 
@@ -31,8 +36,12 @@ Member Function Description
 
 - :ref:`Environment<class_environment>`  **get_environment**  **(** **)** const
 
+Return the :ref:`Environment<class_environment>` currently bound.
+
 .. _class_WorldEnvironment_set_environment:
 
 - void  **set_environment**  **(** :ref:`Environment<class_environment>` env  **)**
+
+Set the currently bound :ref:`Environment<class_environment>` to the one specified.
 
 

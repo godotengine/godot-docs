@@ -38,6 +38,8 @@ Signals
 -------
 
 -  **dragged**  **(** :ref:`int<class_int>` offset  **)**
+Emmited when the dragger is gragged by user.
+
 
 Numeric Constants
 -----------------

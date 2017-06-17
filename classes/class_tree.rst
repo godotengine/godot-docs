@@ -92,14 +92,33 @@ Signals
 -------
 
 -  **button_pressed**  **(** :ref:`Object<class_object>` item, :ref:`int<class_int>` column, :ref:`int<class_int>` id  **)**
+Emitted when a button on the tree was pressed (see :ref:`TreeItem.add_button<class_TreeItem_add_button>`).
+
 -  **cell_selected**  **(** **)**
+Emitted when a cell is selected.
+
+-  **column_title_pressed**  **(** :ref:`int<class_int>` column  **)**
 -  **custom_popup_edited**  **(** :ref:`bool<class_bool>` arrow_clicked  **)**
+Emitted when a cell with the ``CELL_MODE_CUSTOM`` is clicked to be edited.
+
 -  **empty_tree_rmb_selected**  **(** :ref:`Vector2<class_vector2>` pos  **)**
+Emitted when the right mouse button is pressed if RMB selection is active and the tree is empty.
+
 -  **item_activated**  **(** **)**
+Emitted when an item is activated (double-clicked).
+
 -  **item_collapsed**  **(** :ref:`Object<class_object>` item  **)**
+Emitted when an item is collapsed by a click on the folding arrow.
+
 -  **item_edited**  **(** **)**
+Emitted when an item is editted.
+
 -  **item_rmb_selected**  **(** :ref:`Vector2<class_vector2>` pos  **)**
+Emitted when an item is selected with right mouse button.
+
 -  **item_selected**  **(** **)**
+Emitted when an item is selected with right mouse button.
+
 -  **multi_selected**  **(** :ref:`Object<class_object>` item, :ref:`int<class_int>` column, :ref:`bool<class_bool>` selected  **)**
 
 Numeric Constants

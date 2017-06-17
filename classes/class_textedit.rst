@@ -118,9 +118,15 @@ Signals
 -------
 
 -  **breakpoint_toggled**  **(** :ref:`int<class_int>` row  **)**
+Emitted when a breakpoint is placed via the breakpoint gutter.
+
 -  **cursor_changed**  **(** **)**
+Emitted when the cursor changes.
+
 -  **request_completion**  **(** **)**
 -  **text_changed**  **(** **)**
+Emitted when the text changes.
+
 
 Numeric Constants
 -----------------

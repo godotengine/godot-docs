@@ -88,13 +88,29 @@ Signals
 -------
 
 -  **area_enter**  **(** :ref:`Object<class_object>` area  **)**
+This signal is triggered only once when an area enters this area. The only parameter passed is the area that entered this area.
+
 -  **area_enter_shape**  **(** :ref:`int<class_int>` area_id, :ref:`Object<class_object>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape  **)**
+This signal triggers only once when an area enters this area. The first parameter is the area's :ref:`RID<class_rid>`. The second one is the area as an object. The third one is the index of the shape entering this area, and the fourth one is the index of the shape in this area that reported the entering.
+
 -  **area_exit**  **(** :ref:`Object<class_object>` area  **)**
+This signal is triggered only once when an area exits this area. The only parameter passed is the area that exited this area.
+
 -  **area_exit_shape**  **(** :ref:`int<class_int>` area_id, :ref:`Object<class_object>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape  **)**
+This signal triggers only once when an area exits this area. The first parameter is the area's :ref:`RID<class_rid>`. The second one is the area as an object. The third one is the index of the shape entering this area, and the fourth one is the index of the shape in this area that reported the entering.
+
 -  **body_enter**  **(** :ref:`Object<class_object>` body  **)**
+This signal is triggered only once when a body enters this area. The only parameter passed is the body that entered this area.
+
 -  **body_enter_shape**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape  **)**
+This signal triggers only once when a body enters this area. The first parameter is the body's :ref:`RID<class_rid>`. The second one is the body as an object. The third one is the index of the shape of the body that entered this area, and the fourth one is the index of the shape in this area that reported the entering.
+
 -  **body_exit**  **(** :ref:`Object<class_object>` body  **)**
+This signal is triggered only once when a body exits this area. The only parameter passed is the body that exited this area.
+
 -  **body_exit_shape**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape  **)**
+This signal triggers only once when a body exits this area. The first parameter is the body's :ref:`RID<class_rid>`. The second one is the body as an object. The third one is the index of the shape exiting this area, and the fourth one is the index of the shape in this area that reported the exit.
+
 
 Description
 -----------

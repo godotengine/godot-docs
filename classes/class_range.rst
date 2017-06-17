@@ -66,7 +66,11 @@ Signals
 -------
 
 -  **changed**  **(** **)**
+This signal is emitted when min, max, range or step change.
+
 -  **value_changed**  **(** :ref:`float<class_float>` value  **)**
+This signal is emitted when value changes.
+
 
 Description
 -----------

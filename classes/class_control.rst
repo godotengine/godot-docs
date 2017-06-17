@@ -206,14 +206,30 @@ Signals
 -------
 
 -  **focus_enter**  **(** **)**
+Emitted when keyboard focus is gained.
+
 -  **focus_exit**  **(** **)**
+Emitted when the keyboard focus is lost.
+
 -  **input_event**  **(** :ref:`InputEvent<class_inputevent>` ev  **)**
+Emitted when an input event is received. Connecting in realtime is recommended for accepting the events.
+
 -  **minimum_size_changed**  **(** **)**
+Emitted when the minimum size of the control changed.
+
 -  **modal_close**  **(** **)**
 -  **mouse_enter**  **(** **)**
+Emitted when the mouse enters the control area.
+
 -  **mouse_exit**  **(** **)**
+Emitted when the mouse left the control area.
+
 -  **resized**  **(** **)**
+Emitted when the control changed size.
+
 -  **size_flags_changed**  **(** **)**
+Emitted when the size flags changed.
+
 
 Numeric Constants
 -----------------

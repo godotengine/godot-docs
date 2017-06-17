@@ -19,6 +19,8 @@ Member Functions
 +----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Image<class_image>`        | :ref:`Image<class_Image_Image>`  **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` mipmaps, :ref:`int<class_int>` format  **)**        |
 +----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`blend_rect<class_Image_blend_rect>`  **(** :ref:`Image<class_image>` src, :ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` dest=0  **)**               |
++----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`blit_rect<class_Image_blit_rect>`  **(** :ref:`Image<class_image>` src, :ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` dest=0  **)**                 |
 +----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`brush_transfer<class_Image_brush_transfer>`  **(** :ref:`Image<class_image>` src, :ref:`Image<class_image>` brush, :ref:`Vector2<class_vector2>` pos=0  **)**           |
@@ -105,6 +107,12 @@ Member Function Description
 - :ref:`Image<class_image>`  **Image**  **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` mipmaps, :ref:`int<class_int>` format  **)**
 
 Create an empty image of a specific size and format.
+
+.. _class_Image_blend_rect:
+
+- void  **blend_rect**  **(** :ref:`Image<class_image>` src, :ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` dest=0  **)**
+
+Alpha-blends a "src_rect" :ref:`Rect2<class_rect2>` from "src" :ref:`Image<class_image>` to this :ref:`Image<class_image>` on coordinates "dest".
 
 .. _class_Image_blit_rect:
 

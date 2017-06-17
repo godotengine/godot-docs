@@ -37,7 +37,11 @@ Member Functions
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`            | :ref:`get_collision_layer<class_TileMap_get_collision_layer>`  **(** **)** const                                                                                                                                                                        |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`get_collision_layer_bit<class_TileMap_get_collision_layer_bit>`  **(** :ref:`int<class_int>` bit  **)** const                                                                                                                                     |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`            | :ref:`get_collision_mask<class_TileMap_get_collision_mask>`  **(** **)** const                                                                                                                                                                          |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`get_collision_mask_bit<class_TileMap_get_collision_mask_bit>`  **(** :ref:`int<class_int>` bit  **)** const                                                                                                                                       |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`get_collision_use_kinematic<class_TileMap_get_collision_use_kinematic>`  **(** **)** const                                                                                                                                                        |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -83,9 +87,13 @@ Member Functions
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_collision_friction<class_TileMap_set_collision_friction>`  **(** :ref:`float<class_float>` value  **)**                                                                                                                                       |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_collision_layer<class_TileMap_set_collision_layer>`  **(** :ref:`int<class_int>` mask  **)**                                                                                                                                                  |
+| void                             | :ref:`set_collision_layer<class_TileMap_set_collision_layer>`  **(** :ref:`int<class_int>` layer  **)**                                                                                                                                                 |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_collision_layer_bit<class_TileMap_set_collision_layer_bit>`  **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value  **)**                                                                                                            |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_collision_mask<class_TileMap_set_collision_mask>`  **(** :ref:`int<class_int>` mask  **)**                                                                                                                                                    |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_collision_mask_bit<class_TileMap_set_collision_mask_bit>`  **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value  **)**                                                                                                              |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_collision_use_kinematic<class_TileMap_set_collision_use_kinematic>`  **(** :ref:`bool<class_bool>` use_kinematic  **)**                                                                                                                       |
 +----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -112,6 +120,8 @@ Signals
 -------
 
 -  **settings_changed**  **(** **)**
+Signal indicating that a tilemap setting has changed.
+
 
 Numeric Constants
 -----------------
@@ -191,11 +201,19 @@ Return the collision friction parameter.
 
 Return the collision layer.
 
+.. _class_TileMap_get_collision_layer_bit:
+
+- :ref:`bool<class_bool>`  **get_collision_layer_bit**  **(** :ref:`int<class_int>` bit  **)** const
+
 .. _class_TileMap_get_collision_mask:
 
 - :ref:`int<class_int>`  **get_collision_mask**  **(** **)** const
 
 Return the collision mask.
+
+.. _class_TileMap_get_collision_mask_bit:
+
+- :ref:`bool<class_bool>`  **get_collision_mask_bit**  **(** :ref:`int<class_int>` bit  **)** const
 
 .. _class_TileMap_get_collision_use_kinematic:
 
@@ -337,11 +355,15 @@ Set the collision friction parameter. Allowable values range from 0 to 1.
 
 .. _class_TileMap_set_collision_layer:
 
-- void  **set_collision_layer**  **(** :ref:`int<class_int>` mask  **)**
+- void  **set_collision_layer**  **(** :ref:`int<class_int>` layer  **)**
 
 Set the collision layer.
 
 Layers are referenced by binary indexes, so allowable values to describe the 20 available layers range from 0 to 2^20-1.
+
+.. _class_TileMap_set_collision_layer_bit:
+
+- void  **set_collision_layer_bit**  **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value  **)**
 
 .. _class_TileMap_set_collision_mask:
 
@@ -350,6 +372,10 @@ Layers are referenced by binary indexes, so allowable values to describe the 20 
 Set the collision masks.
 
 Masks are referenced by binary indexes, so allowable values to describe the 20 available masks range from 0 to 2^20-1.
+
+.. _class_TileMap_set_collision_mask_bit:
+
+- void  **set_collision_mask_bit**  **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value  **)**
 
 .. _class_TileMap_set_collision_use_kinematic:
 

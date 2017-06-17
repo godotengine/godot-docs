@@ -50,6 +50,8 @@ Signals
 -------
 
 -  **request_completed**  **(** :ref:`int<class_int>` result, :ref:`int<class_int>` response_code, :ref:`StringArray<class_stringarray>` headers, :ref:`RawArray<class_rawarray>` body  **)**
+This signal is emitted upon request completion.
+
 
 Numeric Constants
 -----------------

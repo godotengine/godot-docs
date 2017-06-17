@@ -90,6 +90,8 @@ Signals
 -------
 
 -  **joy_connection_changed**  **(** :ref:`int<class_int>` index, :ref:`bool<class_bool>` connected  **)**
+Emitted when a joystick device has been connected or disconnected
+
 
 Numeric Constants
 -----------------

@@ -50,6 +50,8 @@ Signals
 -------
 
 -  **timeout**  **(** **)**
+Emitted when the time runs out.
+
 
 Numeric Constants
 -----------------

@@ -80,8 +80,14 @@ Signals
 -------
 
 -  **tween_complete**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key  **)**
+This signal is emitted when a tween ends.
+
 -  **tween_start**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key  **)**
+This signal is emitted when a tween starts.
+
 -  **tween_step**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key, :ref:`float<class_float>` elapsed, :ref:`Object<class_object>` value  **)**
+This signal is emitted each step of the tweening.
+
 
 Numeric Constants
 -----------------

@@ -63,6 +63,8 @@ Member Functions
 Numeric Constants
 -----------------
 
+- **RESIZE_SCALE** = **0**
+- **RESIZE_STRETCH** = **1**
 - **STRETCH_SCALE_ON_EXPAND** = **0**
 - **STRETCH_SCALE** = **1**
 - **STRETCH_TILE** = **2**

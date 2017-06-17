@@ -44,7 +44,11 @@ Signals
 -------
 
 -  **confirmed**  **(** **)**
+Emitted when accepted.
+
 -  **custom_action**  **(** :ref:`String<class_string>` action  **)**
+Emitted with a custom button is added.
+
 
 Description
 -----------

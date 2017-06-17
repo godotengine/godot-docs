@@ -59,7 +59,19 @@ Member Functions
 Description
 -----------
 
-Helper tool to create geometry.
+The :ref:`SurfaceTool<class_surfacetool>` is used to construct a :ref:`Mesh<class_mesh>` by specifying vertex attributes individually. It can be used to construct a :ref:`Mesh<class_mesh>` from script. All properties except index need to be added before a call to :ref:`add_vertex<class_SurfaceTool_add_vertex>`. For example adding vertex colors and UVs looks like
+
+::
+
+    var st = SurfaceTool.new()
+    st.begin(Mesh.PRIMITIVE_TRIANGLES)
+    st.add_color(Color(1, 0, 0))
+    st.add_uv(Vector2(0, 0))
+    st.add_vertex(Vector3(0, 0, 0))
+
+The :ref:`SurfaceTool<class_surfacetool>` now contains one vertex of a triangle which has a UV coordinate and a specified :ref:`Color<class_color>`. If another vertex were added without calls to :ref:`add_uv<class_SurfaceTool_add_uv>` or :ref:`add_color<class_SurfaceTool_add_color>` then the last values would be used.
+
+It is very important that vertex attributes are passed **before** the call to :ref:`add_vertex<class_SurfaceTool_add_vertex>`, failure to do this will result in an error when committing the vertex information to a mesh.
 
 Member Function Description
 ---------------------------
@@ -68,72 +80,108 @@ Member Function Description
 
 - void  **add_bones**  **(** :ref:`IntArray<class_intarray>` bones  **)**
 
+Add an array of bones for the next Vertex to use.
+
 .. _class_SurfaceTool_add_color:
 
 - void  **add_color**  **(** :ref:`Color<class_color>` color  **)**
+
+Specify a :ref:`Color<class_color>` for the next Vertex to use.
 
 .. _class_SurfaceTool_add_index:
 
 - void  **add_index**  **(** :ref:`int<class_int>` index  **)**
 
+Adds an index to index array if you are using indexed Vertices. Does not need to be called before adding Vertex.
+
 .. _class_SurfaceTool_add_normal:
 
 - void  **add_normal**  **(** :ref:`Vector3<class_vector3>` normal  **)**
+
+Specify a normal for the next Vertex to use.
 
 .. _class_SurfaceTool_add_smooth_group:
 
 - void  **add_smooth_group**  **(** :ref:`bool<class_bool>` smooth  **)**
 
+Specify whether current Vertex (if using only Vertex arrays) or current index (if also using index arrays) should utilize smooth normals for normal calculation.
+
 .. _class_SurfaceTool_add_tangent:
 
 - void  **add_tangent**  **(** :ref:`Plane<class_plane>` tangent  **)**
+
+Specify a Tangent for the next Vertex to use.
 
 .. _class_SurfaceTool_add_triangle_fan:
 
 - void  **add_triangle_fan**  **(** :ref:`Vector3Array<class_vector3array>` vertexes, :ref:`Vector2Array<class_vector2array>` uvs=Vector2Array([]), :ref:`ColorArray<class_colorarray>` colors=ColorArray([ColorArray]), :ref:`Vector2Array<class_vector2array>` uv2s=Vector2Array([]), :ref:`Vector3Array<class_vector3array>` normals=Vector3Array([]), :ref:`Array<class_array>` tangents=Array()  **)**
 
+Insert a triangle fan made of array data into :ref:`Mesh<class_mesh>` being constructed.
+
 .. _class_SurfaceTool_add_uv:
 
 - void  **add_uv**  **(** :ref:`Vector2<class_vector2>` uv  **)**
+
+Specify UV Coordinate for next Vertex to use.
 
 .. _class_SurfaceTool_add_uv2:
 
 - void  **add_uv2**  **(** :ref:`Vector2<class_vector2>` uv2  **)**
 
+Specify an optional second set of UV coordinates for next Vertex to use.
+
 .. _class_SurfaceTool_add_vertex:
 
 - void  **add_vertex**  **(** :ref:`Vector3<class_vector3>` vertex  **)**
+
+Specify position of current Vertex. Should be called after specifying other vertex properties (e.g. Color, UV).
 
 .. _class_SurfaceTool_add_weights:
 
 - void  **add_weights**  **(** :ref:`RealArray<class_realarray>` weights  **)**
 
+Specify weight value for next Vertex to use.
+
 .. _class_SurfaceTool_begin:
 
 - void  **begin**  **(** :ref:`int<class_int>` primitive  **)**
+
+Called before adding any Vertices. Takes the primitive type as an argument (e.g. Mesh.PRIMITIVE_TRIANGLES).
 
 .. _class_SurfaceTool_clear:
 
 - void  **clear**  **(** **)**
 
+Clear all information passed into the surface tool so far.
+
 .. _class_SurfaceTool_commit:
 
 - :ref:`Mesh<class_mesh>`  **commit**  **(** :ref:`Mesh<class_mesh>` existing=NULL  **)**
+
+Returns a constructed :ref:`Mesh<class_mesh>` from current information passed in. If an existing :ref:`Mesh<class_mesh>` is passed in as an argument, will add an extra surface to the existing :ref:`Mesh<class_mesh>`.
 
 .. _class_SurfaceTool_deindex:
 
 - void  **deindex**  **(** **)**
 
+Removes index array by expanding Vertex array.
+
 .. _class_SurfaceTool_generate_normals:
 
 - void  **generate_normals**  **(** **)**
+
+Generates normals from Vertices so you do not have to do it manually.
 
 .. _class_SurfaceTool_index:
 
 - void  **index**  **(** **)**
 
+Shrinks Vertex array by creating an index array. Avoids reusing Vertices.
+
 .. _class_SurfaceTool_set_material:
 
 - void  **set_material**  **(** :ref:`Material<class_material>` material  **)**
+
+Sets :ref:`Material<class_material>` to be used by the :ref:`Mesh<class_mesh>` you are constructing.
 
 

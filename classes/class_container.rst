@@ -30,6 +30,8 @@ Signals
 -------
 
 -  **sort_children**  **(** **)**
+Emitted when sorting the children is needed.
+
 
 Numeric Constants
 -----------------

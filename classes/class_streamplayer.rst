@@ -72,6 +72,8 @@ Signals
 -------
 
 -  **finished**  **(** **)**
+This signal triggers when the player stops playing. It will not trigger on each loop.
+
 
 Description
 -----------

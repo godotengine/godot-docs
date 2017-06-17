@@ -32,6 +32,8 @@ Signals
 -------
 
 -  **selection_changed**  **(** **)**
+Emitted when the selection changes.
+
 
 Description
 -----------

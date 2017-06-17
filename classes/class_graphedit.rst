@@ -42,12 +42,26 @@ Signals
 -------
 
 -  **_begin_node_move**  **(** **)**
+Signal sent at the beginning of a GraphNode movement.
+
 -  **_end_node_move**  **(** **)**
+Signal sent at the end of a GraphNode movement.
+
 -  **connection_request**  **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_slot, :ref:`String<class_string>` to, :ref:`int<class_int>` to_slot  **)**
+Signal sent to the GraphEdit when the connection between 'from_slot' slot of 'from' GraphNode and 'to_slot' slot of 'to' GraphNode is attempted to be created.
+
 -  **delete_nodes_request**  **(** **)**
+Signal sent when a GraphNode is attempted to be removed from the GraphEdit.
+
 -  **disconnection_request**  **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_slot, :ref:`String<class_string>` to, :ref:`int<class_int>` to_slot  **)**
+Signal sent to the GraphEdit when the connection between 'from_slot' slot of 'from' GraphNode and 'to_slot' slot of 'to' GraphNode is attempted to be removed.
+
 -  **duplicate_nodes_request**  **(** **)**
+Signal sent when a GraphNode is attempted to be duplicated in the GraphEdit.
+
 -  **popup_request**  **(** :ref:`Vector2<class_vector2>` p_position  **)**
+Signal sent when a popup is requested. Happens on right-clicking in the GraphEdit. 'p_position' is the position of the mouse pointer when the signal is sent.
+
 
 Description
 -----------

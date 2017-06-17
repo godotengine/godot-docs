@@ -60,8 +60,14 @@ Signals
 -------
 
 -  **dir_selected**  **(** :ref:`String<class_string>` dir  **)**
+Event emitted when the user selects a directory.
+
 -  **file_selected**  **(** :ref:`String<class_string>` path  **)**
+Event emitted when the user selects a file (double clicks it or presses the OK button).
+
 -  **files_selected**  **(** :ref:`StringArray<class_stringarray>` paths  **)**
+Event emitted when the user selects multiple files.
+
 
 Numeric Constants
 -----------------

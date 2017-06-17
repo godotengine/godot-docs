@@ -42,6 +42,8 @@ Signals
 -------
 
 -  **frame_changed**  **(** **)**
+Emitted when frame is changed.
+
 
 Member Function Description
 ---------------------------

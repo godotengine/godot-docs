@@ -60,7 +60,7 @@ Return the total amount of stages (calls to :ref:`poll<class_ResourceInteractive
 
 - :ref:`int<class_int>`  **poll**  **(** **)**
 
-Poll the load. If OK is returned, this means poll will have to be called again. If ERR_EOF is returned, them the load has finished and the resource can be obtained by calling :ref:`get_resource<class_ResourceInteractiveLoader_get_resource>`.
+Poll the load. If OK is returned, this means poll will have to be called again. If ERR_FILE_EOF is returned, them the load has finished and the resource can be obtained by calling :ref:`get_resource<class_ResourceInteractiveLoader_get_resource>`.
 
 .. _class_ResourceInteractiveLoader_wait:
 

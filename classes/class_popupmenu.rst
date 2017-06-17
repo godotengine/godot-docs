@@ -106,6 +106,8 @@ Signals
 -------
 
 -  **item_pressed**  **(** :ref:`int<class_int>` ID  **)**
+This even is emitted when an item is pressed or its accelerator is activated. The id of the item is returned if it exists, else the index.
+
 
 Description
 -----------
