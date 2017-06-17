@@ -100,8 +100,14 @@ Signals
 -------
 
 -  **animation_changed**  **(** :ref:`String<class_string>` old_name, :ref:`String<class_string>` new_name  **)**
+If the currently being played animation changes, this signal will notify of such change.
+
 -  **animation_finished**  **(** :ref:`String<class_string>` name  **)**
+Notifies when an animation finished playing.
+
 -  **animation_started**  **(** :ref:`String<class_string>` name  **)**
+Notifies when an animation starts playing.
+
 
 Member Variables
 ----------------

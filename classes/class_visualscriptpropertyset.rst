@@ -29,8 +29,6 @@ Member Functions
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`            | :ref:`get_call_mode<class_VisualScriptPropertySet_get_call_mode>`  **(** **)** const                                        |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_event_type<class_VisualScriptPropertySet_get_event_type>`  **(** **)** const                                      |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`      | :ref:`get_property<class_VisualScriptPropertySet_get_property>`  **(** **)** const                                          |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_base_path<class_VisualScriptPropertySet_set_base_path>`  **(** :ref:`NodePath<class_nodepath>` base_path  **)**   |
@@ -43,8 +41,6 @@ Member Functions
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_call_mode<class_VisualScriptPropertySet_set_call_mode>`  **(** :ref:`int<class_int>` mode  **)**                  |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_event_type<class_VisualScriptPropertySet_set_event_type>`  **(** :ref:`int<class_int>` event_type  **)**          |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_property<class_VisualScriptPropertySet_set_property>`  **(** :ref:`String<class_string>` property  **)**          |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 
@@ -54,7 +50,6 @@ Member Variables
 - :ref:`String<class_string>` **property/base_script**
 - :ref:`String<class_string>` **property/base_type**
 - :ref:`int<class_int>` **property/basic_type**
-- :ref:`int<class_int>` **property/event_type**
 - :ref:`NodePath<class_nodepath>` **property/node_path**
 - :ref:`String<class_string>` **property/property**
 - :ref:`int<class_int>` **property/set_mode**
@@ -90,10 +85,6 @@ Member Function Description
 
 - :ref:`int<class_int>`  **get_call_mode**  **(** **)** const
 
-.. _class_VisualScriptPropertySet_get_event_type:
-
-- :ref:`int<class_int>`  **get_event_type**  **(** **)** const
-
 .. _class_VisualScriptPropertySet_get_property:
 
 - :ref:`String<class_string>`  **get_property**  **(** **)** const
@@ -117,10 +108,6 @@ Member Function Description
 .. _class_VisualScriptPropertySet_set_call_mode:
 
 - void  **set_call_mode**  **(** :ref:`int<class_int>` mode  **)**
-
-.. _class_VisualScriptPropertySet_set_event_type:
-
-- void  **set_event_type**  **(** :ref:`int<class_int>` event_type  **)**
 
 .. _class_VisualScriptPropertySet_set_property:
 

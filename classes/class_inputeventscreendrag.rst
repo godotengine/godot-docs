@@ -6,102 +6,77 @@
 InputEventScreenDrag
 ====================
 
-**Category:** Built-In Types
+**Inherits:** :ref:`InputEvent<class_inputevent>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+
+**Category:** Core
 
 Brief Description
 -----------------
 
-Built-in input event type for screen drag events.
+Input event type for screen drag events.
 
 Member Functions
 ----------------
 
-+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_action<class_InputEventScreenDrag_is_action>`  **(** :ref:`String<class_string>` action  **)**                                          |
-+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_action_pressed<class_InputEventScreenDrag_is_action_pressed>`  **(** :ref:`String<class_string>` action  **)**                          |
-+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_action_released<class_InputEventScreenDrag_is_action_released>`  **(** :ref:`String<class_string>` action  **)**                        |
-+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_echo<class_InputEventScreenDrag_is_echo>`  **(** **)**                                                                                  |
-+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_pressed<class_InputEventScreenDrag_is_pressed>`  **(** **)**                                                                            |
-+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_as_action<class_InputEventScreenDrag_set_as_action>`  **(** :ref:`String<class_string>` action, :ref:`bool<class_bool>` pressed  **)** |
-+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_index<class_InputEventScreenDrag_get_index>`  **(** **)** const                                         |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_position<class_InputEventScreenDrag_get_position>`  **(** **)** const                                   |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_relative<class_InputEventScreenDrag_get_relative>`  **(** **)** const                                   |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_speed<class_InputEventScreenDrag_get_speed>`  **(** **)** const                                         |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_index<class_InputEventScreenDrag_set_index>`  **(** :ref:`int<class_int>` index  **)**                  |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_position<class_InputEventScreenDrag_set_position>`  **(** :ref:`Vector2<class_vector2>` position  **)** |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_relative<class_InputEventScreenDrag_set_relative>`  **(** :ref:`Vector2<class_vector2>` relative  **)** |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_speed<class_InputEventScreenDrag_set_speed>`  **(** :ref:`Vector2<class_vector2>` speed  **)**          |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **ID** - Event identifier, positive integer increased at each new event.
-- :ref:`int<class_int>` **device** - Device identifier.
 - :ref:`int<class_int>` **index** - Drag event index in the case of a multi-drag event.
-- :ref:`Vector2<class_vector2>` **pos** - Position of the drag event.
-- :ref:`Vector2<class_vector2>` **relative_pos** - Position of the drag event relative to its start position.
-- :ref:`float<class_float>` **relative_x** - X coordinate of the drag event relative to its start position.
-- :ref:`float<class_float>` **relative_y** - Y coordinate of the drag event relative to its start position.
+- :ref:`Vector2<class_vector2>` **position** - Position of the drag event.
+- :ref:`Vector2<class_vector2>` **relative** - Position of the drag event relative to its start position.
 - :ref:`Vector2<class_vector2>` **speed** - Speed of the drag event.
-- :ref:`float<class_float>` **speed_x** - Speed of the drag event on the X axis.
-- :ref:`float<class_float>` **speed_y** - Speed of the drag event on the Y axis.
-- :ref:`int<class_int>` **type** - Type of event (one of the [InputEvent] constants).
-- :ref:`float<class_float>` **x** - X coordinate of the drag event.
-- :ref:`float<class_float>` **y** - Y coordinate of the drag event.
-
-Numeric Constants
------------------
-
-- **NONE** = **0** --- Empty input event.
-- **KEY** = **1** --- Key event.
-- **MOUSE_MOTION** = **2** --- Mouse motion event.
-- **MOUSE_BUTTON** = **3** --- Mouse button event.
-- **JOYPAD_MOTION** = **4** --- Joypad motion event.
-- **JOYPAD_BUTTON** = **5** --- Joypad button event.
-- **SCREEN_TOUCH** = **6** --- Screen touch event.
-- **SCREEN_DRAG** = **7** --- Screen drag event.
-- **ACTION** = **8** --- Pre-defined action event (see :ref:`InputMap<class_inputmap>`).
-
-Description
------------
-
-Input event type for screen drag events that extends the global :ref:`InputEvent<class_inputevent>` type.
 
 Member Function Description
 ---------------------------
 
-.. _class_InputEventScreenDrag_is_action:
+.. _class_InputEventScreenDrag_get_index:
 
-- :ref:`bool<class_bool>`  **is_action**  **(** :ref:`String<class_string>` action  **)**
+- :ref:`int<class_int>`  **get_index**  **(** **)** const
 
-Return if this input event matches a pre-defined action.
+.. _class_InputEventScreenDrag_get_position:
 
-.. _class_InputEventScreenDrag_is_action_pressed:
+- :ref:`Vector2<class_vector2>`  **get_position**  **(** **)** const
 
-- :ref:`bool<class_bool>`  **is_action_pressed**  **(** :ref:`String<class_string>` action  **)**
+.. _class_InputEventScreenDrag_get_relative:
 
-Return whether the given action is being pressed. Not relevant for SCREEN_DRAG events, always false.
+- :ref:`Vector2<class_vector2>`  **get_relative**  **(** **)** const
 
-.. _class_InputEventScreenDrag_is_action_released:
+.. _class_InputEventScreenDrag_get_speed:
 
-- :ref:`bool<class_bool>`  **is_action_released**  **(** :ref:`String<class_string>` action  **)**
+- :ref:`Vector2<class_vector2>`  **get_speed**  **(** **)** const
 
-Return whether the given action is released (i.e. not pressed). Not relevant for SCREEN_DRAG events, can be true or false depending on whether :ref:`is_action<class_InputEventScreenDrag_is_action>` is true.
+.. _class_InputEventScreenDrag_set_index:
 
-.. _class_InputEventScreenDrag_is_echo:
+- void  **set_index**  **(** :ref:`int<class_int>` index  **)**
 
-- :ref:`bool<class_bool>`  **is_echo**  **(** **)**
+.. _class_InputEventScreenDrag_set_position:
 
-Return if this input event is an echo event (only for events of type KEY, i.e. always false for this type).
+- void  **set_position**  **(** :ref:`Vector2<class_vector2>` position  **)**
 
-.. _class_InputEventScreenDrag_is_pressed:
+.. _class_InputEventScreenDrag_set_relative:
 
-- :ref:`bool<class_bool>`  **is_pressed**  **(** **)**
+- void  **set_relative**  **(** :ref:`Vector2<class_vector2>` relative  **)**
 
-Return if this input event is pressed. Not relevant for SCREEN_DRAG events, always false.
+.. _class_InputEventScreenDrag_set_speed:
 
-.. _class_InputEventScreenDrag_set_as_action:
-
-- void  **set_as_action**  **(** :ref:`String<class_string>` action, :ref:`bool<class_bool>` pressed  **)**
-
-Change the input event to an action event of the given name with the (irrelevant for this type) pressed status passed as argument.
+- void  **set_speed**  **(** :ref:`Vector2<class_vector2>` speed  **)**
 
 

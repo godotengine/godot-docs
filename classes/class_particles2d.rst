@@ -29,8 +29,6 @@ Member Functions
 +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                            | :ref:`get_color_phases<class_Particles2D_get_color_phases>`  **(** **)** const                                                                   |
 +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ColorRamp<class_colorramp>`                | :ref:`get_color_ramp<class_Particles2D_get_color_ramp>`  **(** **)** const                                                                       |
-+--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`                    | :ref:`get_emission_half_extents<class_Particles2D_get_emission_half_extents>`  **(** **)** const                                                 |
 +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolVector2Array<class_poolvector2array>`  | :ref:`get_emission_points<class_Particles2D_get_emission_points>`  **(** **)** const                                                             |
@@ -40,6 +38,8 @@ Member Functions
 | :ref:`float<class_float>`                        | :ref:`get_emit_timeout<class_Particles2D_get_emit_timeout>`  **(** **)** const                                                                   |
 +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                        | :ref:`get_explosiveness<class_Particles2D_get_explosiveness>`  **(** **)** const                                                                 |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Gradient<class_gradient>`                  | :ref:`get_gradient<class_Particles2D_get_gradient>`  **(** **)** const                                                                           |
 +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                            | :ref:`get_h_frames<class_Particles2D_get_h_frames>`  **(** **)** const                                                                           |
 +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -83,8 +83,6 @@ Member Functions
 +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`set_color_phases<class_Particles2D_set_color_phases>`  **(** :ref:`int<class_int>` phases  **)**                                           |
 +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ColorRamp<class_colorramp>`                | :ref:`set_color_ramp<class_Particles2D_set_color_ramp>`  **(** :ref:`Object<class_object>` color_ramp  **)**                                     |
-+--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`set_emission_half_extents<class_Particles2D_set_emission_half_extents>`  **(** :ref:`Vector2<class_vector2>` extents  **)**                |
 +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`set_emission_points<class_Particles2D_set_emission_points>`  **(** :ref:`PoolVector2Array<class_poolvector2array>` points  **)**           |
@@ -100,6 +98,8 @@ Member Functions
 | void                                             | :ref:`set_flip_h<class_Particles2D_set_flip_h>`  **(** :ref:`bool<class_bool>` enable  **)**                                                     |
 +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`set_flip_v<class_Particles2D_set_flip_v>`  **(** :ref:`bool<class_bool>` enable  **)**                                                     |
++--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Gradient<class_gradient>`                  | :ref:`set_gradient<class_Particles2D_set_gradient>`  **(** :ref:`Object<class_object>` gradient  **)**                                           |
 +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`set_h_frames<class_Particles2D_set_h_frames>`  **(** :ref:`int<class_int>` enable  **)**                                                   |
 +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -133,7 +133,7 @@ Member Variables
 ----------------
 
 - :ref:`Color<class_color>` **color/color**
-- :ref:`ColorRamp<class_colorramp>` **color/color_ramp**
+- :ref:`Gradient<class_gradient>` **color/color_ramp**
 - :ref:`int<class_int>` **color_phases/count**
 - :ref:`int<class_int>` **config/amount**
 - :ref:`float<class_float>` **config/emit_timeout**
@@ -247,12 +247,6 @@ Returns the tint color for each particle.
 
 - :ref:`int<class_int>`  **get_color_phases**  **(** **)** const
 
-.. _class_Particles2D_get_color_ramp:
-
-- :ref:`ColorRamp<class_colorramp>`  **get_color_ramp**  **(** **)** const
-
-Returns the :ref:`ColorRamp<class_colorramp>` used to tint each particle
-
 .. _class_Particles2D_get_emission_half_extents:
 
 - :ref:`Vector2<class_vector2>`  **get_emission_half_extents**  **(** **)** const
@@ -278,6 +272,12 @@ Returns the amount of seconds during which the emitter will spawn particles
 .. _class_Particles2D_get_explosiveness:
 
 - :ref:`float<class_float>`  **get_explosiveness**  **(** **)** const
+
+.. _class_Particles2D_get_gradient:
+
+- :ref:`Gradient<class_gradient>`  **get_gradient**  **(** **)** const
+
+Returns the :ref:`Gradient<class_gradient>` used to tint each particle.
 
 .. _class_Particles2D_get_h_frames:
 
@@ -379,12 +379,6 @@ Set the tint color for each particle.
 
 - void  **set_color_phases**  **(** :ref:`int<class_int>` phases  **)**
 
-.. _class_Particles2D_set_color_ramp:
-
-- :ref:`ColorRamp<class_colorramp>`  **set_color_ramp**  **(** :ref:`Object<class_object>` color_ramp  **)**
-
-Sets the :ref:`ColorRamp<class_colorramp>` used to tint each particle. Particle will be tinted according to their lifetimes.
-
 .. _class_Particles2D_set_emission_half_extents:
 
 - void  **set_emission_half_extents**  **(** :ref:`Vector2<class_vector2>` extents  **)**
@@ -424,6 +418,12 @@ If this is set to true then the particle emitter will emit particles, if its fal
 .. _class_Particles2D_set_flip_v:
 
 - void  **set_flip_v**  **(** :ref:`bool<class_bool>` enable  **)**
+
+.. _class_Particles2D_set_gradient:
+
+- :ref:`Gradient<class_gradient>`  **set_gradient**  **(** :ref:`Object<class_object>` gradient  **)**
+
+Sets the :ref:`Gradient<class_gradient>` used to tint each particle. Particle will be tinted according to their lifetimes.
 
 .. _class_Particles2D_set_h_frames:
 

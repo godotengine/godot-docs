@@ -65,7 +65,7 @@ Member Functions
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform2D<class_transform2d>`        | :ref:`get_canvas_transform<class_CanvasItem_get_canvas_transform>`  **(** **)** const                                                                                                                                                                                                                               |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`                | :ref:`get_global_mouse_pos<class_CanvasItem_get_global_mouse_pos>`  **(** **)** const                                                                                                                                                                                                                               |
+| :ref:`Vector2<class_vector2>`                | :ref:`get_global_mouse_position<class_CanvasItem_get_global_mouse_position>`  **(** **)** const                                                                                                                                                                                                                     |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform2D<class_transform2d>`        | :ref:`get_global_transform<class_CanvasItem_get_global_transform>`  **(** **)** const                                                                                                                                                                                                                               |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -111,7 +111,7 @@ Member Functions
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`                | :ref:`make_canvas_pos_local<class_CanvasItem_make_canvas_pos_local>`  **(** :ref:`Vector2<class_vector2>` screen_point  **)** const                                                                                                                                                                                 |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`InputEvent<class_inputevent>`          | :ref:`make_input_local<class_CanvasItem_make_input_local>`  **(** :ref:`InputEvent<class_inputevent>` event  **)** const                                                                                                                                                                                            |
+| :ref:`Object<class_object>`                  | :ref:`make_input_local<class_CanvasItem_make_input_local>`  **(** :ref:`Object<class_object>` event  **)** const                                                                                                                                                                                                    |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`set_as_toplevel<class_CanvasItem_set_as_toplevel>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                                                                                                                                               |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -142,9 +142,17 @@ Signals
 -------
 
 -  **draw**  **(** **)**
+Emitted when the CanvasItem must redraw. This can only be connected realtime, as deferred will not allow drawing.
+
 -  **hide**  **(** **)**
+Emitted when becoming hidden.
+
 -  **item_rect_changed**  **(** **)**
+Emitted when the item rect has changed.
+
 -  **visibility_changed**  **(** **)**
+Emitted when the visibility (hidden/visible) changes.
+
 
 Member Variables
 ----------------
@@ -296,7 +304,7 @@ Used for editing, handle rotation.
 
 - void  **edit_set_state**  **(** :ref:`Variant<class_variant>` state  **)**
 
-Set the transform state of this CanvasItem. For :ref:`Node2D<class_node2d>`, this is an :ref:`Array<class_array>` with (in order) a :ref:`Vector2<class_vector2>` for position, a float for rotation and another :ref:`Vector2<class_vector2>` for scale. For :ref:`Control<class_control>` this is a :ref:`Rect2<class_rect2>` with the position and size.
+Set the transform state of this CanvasItem. For :ref:`Node2D<class_node2d>`, this is an :ref:`Array<class_array>` with (in order) a :ref:`Vector2<class_vector2>` for position, a float for rotation (radians) and another :ref:`Vector2<class_vector2>` for scale. For :ref:`Control<class_control>` this is a :ref:`Rect2<class_rect2>` with the position and size.
 
 .. _class_CanvasItem_get_canvas:
 
@@ -316,9 +324,9 @@ Return the canvas item RID used by :ref:`VisualServer<class_visualserver>` for t
 
 Get the transform matrix of this item's canvas.
 
-.. _class_CanvasItem_get_global_mouse_pos:
+.. _class_CanvasItem_get_global_mouse_position:
 
-- :ref:`Vector2<class_vector2>`  **get_global_mouse_pos**  **(** **)** const
+- :ref:`Vector2<class_vector2>`  **get_global_mouse_position**  **(** **)** const
 
 Get the global position of the mouse.
 
@@ -448,9 +456,7 @@ Return true if this CanvasItem is visible. It may be invisible because itself or
 
 .. _class_CanvasItem_make_input_local:
 
-- :ref:`InputEvent<class_inputevent>`  **make_input_local**  **(** :ref:`InputEvent<class_inputevent>` event  **)** const
-
-Takes a global input event and convert to this item's coordinate system.
+- :ref:`Object<class_object>`  **make_input_local**  **(** :ref:`Object<class_object>` event  **)** const
 
 .. _class_CanvasItem_set_as_toplevel:
 

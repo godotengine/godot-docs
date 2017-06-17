@@ -62,9 +62,17 @@ Signals
 -------
 
 -  **button_down**  **(** **)**
+Emitted when the button starts being held down.
+
 -  **button_up**  **(** **)**
+Emitted when the button stops being held down.
+
 -  **pressed**  **(** **)**
+This signal is emitted every time the button is toggled or pressed (i.e. activated, so on ``button_down`` if "Click on press" is active and on ``button_up`` otherwise).
+
 -  **toggled**  **(** :ref:`bool<class_bool>` pressed  **)**
+This signal is emitted when the button was just toggled between pressed and normal states (only if toggle_mode is active). The new state is contained in the *pressed* argument.
+
 
 Member Variables
 ----------------

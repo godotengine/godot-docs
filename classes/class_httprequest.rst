@@ -50,6 +50,8 @@ Signals
 -------
 
 -  **request_completed**  **(** :ref:`int<class_int>` result, :ref:`int<class_int>` response_code, :ref:`PoolStringArray<class_poolstringarray>` headers, :ref:`PoolByteArray<class_poolbytearray>` body  **)**
+This signal is emitted upon request completion.
+
 
 Member Variables
 ----------------

@@ -6,38 +6,12 @@
 QuadMesh
 ========
 
-**Inherits:** :ref:`Mesh<class_mesh>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`PrimitiveMesh<class_primitivemesh>` **<** :ref:`Mesh<class_mesh>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
-
-
-Member Functions
-----------------
-
-+----------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`Material<class_material>`  | :ref:`get_material<class_QuadMesh_get_material>`  **(** **)** const                                     |
-+----------------------------------+---------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_material<class_QuadMesh_set_material>`  **(** :ref:`Material<class_material>` material  **)** |
-+----------------------------------+---------------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-- :ref:`Material<class_material>` **material**
-
-Member Function Description
----------------------------
-
-.. _class_QuadMesh_get_material:
-
-- :ref:`Material<class_material>`  **get_material**  **(** **)** const
-
-.. _class_QuadMesh_set_material:
-
-- void  **set_material**  **(** :ref:`Material<class_material>` material  **)**
 
 

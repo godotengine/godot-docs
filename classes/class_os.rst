@@ -33,7 +33,7 @@ Member Functions
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`dump_resources_to_file<class_OS_dump_resources_to_file>`  **(** :ref:`String<class_string>` file  **)**                                                                                                              |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`execute<class_OS_execute>`  **(** :ref:`String<class_string>` path, :ref:`PoolStringArray<class_poolstringarray>` arguments, :ref:`bool<class_bool>` blocking, :ref:`Array<class_array>` output=Array()  **)**       |
+| :ref:`int<class_int>`                          | :ref:`execute<class_OS_execute>`  **(** :ref:`String<class_string>` path, :ref:`PoolStringArray<class_poolstringarray>` arguments, :ref:`bool<class_bool>` blocking, :ref:`Array<class_array>` output=[]  **)**            |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`find_scancode_from_string<class_OS_find_scancode_from_string>`  **(** :ref:`String<class_string>` string  **)** const                                                                                                |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -177,7 +177,7 @@ Member Functions
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_exit_code<class_OS_set_exit_code>`  **(** :ref:`int<class_int>` code  **)**                                                                                                                                      |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_icon<class_OS_set_icon>`  **(** :ref:`Image<class_image>` icon  **)**                                                                                                                                            |
+| void                                           | :ref:`set_icon<class_OS_set_icon>`  **(** :ref:`Object<class_object>` icon  **)**                                                                                                                                          |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_keep_screen_on<class_OS_set_keep_screen_on>`  **(** :ref:`bool<class_bool>` enabled  **)**                                                                                                                       |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -311,7 +311,7 @@ At the end of the file is a statistic of all used Resource Types.
 
 .. _class_OS_execute:
 
-- :ref:`int<class_int>`  **execute**  **(** :ref:`String<class_string>` path, :ref:`PoolStringArray<class_poolstringarray>` arguments, :ref:`bool<class_bool>` blocking, :ref:`Array<class_array>` output=Array()  **)**
+- :ref:`int<class_int>`  **execute**  **(** :ref:`String<class_string>` path, :ref:`PoolStringArray<class_poolstringarray>` arguments, :ref:`bool<class_bool>` blocking, :ref:`Array<class_array>` output=[]  **)**
 
 Execute the binary file in given path, optionally blocking until it returns. A process ID is returned.
 
@@ -417,7 +417,7 @@ Returns the model name of the current device.
 
 - :ref:`String<class_string>`  **get_name**  **(** **)** const
 
-Return the name of the host OS. Possible values are: "Android", "BlackBerry 10", "Flash", "Haiku", "iOS", "HTML5", "OSX", "Server", "Windows", "UWP", "X11"
+Return the name of the host OS. Possible values are: "Android", "Haiku", "iOS", "HTML5", "OSX", "Server", "Windows", "UWP", "X11".
 
 .. _class_OS_get_power_percent_left:
 
@@ -711,7 +711,7 @@ Set clipboard to the OS.
 
 .. _class_OS_set_icon:
 
-- void  **set_icon**  **(** :ref:`Image<class_image>` icon  **)**
+- void  **set_icon**  **(** :ref:`Object<class_object>` icon  **)**
 
 .. _class_OS_set_keep_screen_on:
 

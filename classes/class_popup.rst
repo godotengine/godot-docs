@@ -38,7 +38,11 @@ Signals
 -------
 
 -  **about_to_show**  **(** **)**
+This signal is emitted when a popup is about to be shown. (often used in :ref:`PopupMenu<class_popupmenu>` for clearing the list of options and creating a new one according to the current context).
+
 -  **popup_hide**  **(** **)**
+This signal is emitted when a popup is hidden.
+
 
 Member Variables
 ----------------

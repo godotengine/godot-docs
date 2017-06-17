@@ -61,7 +61,11 @@ Signals
 
 -  **pre_popup_pressed**  **(** **)**
 -  **tab_changed**  **(** :ref:`int<class_int>` tab  **)**
+Emitted only when the current tab changes.
+
 -  **tab_selected**  **(** :ref:`int<class_int>` tab  **)**
+Emitted when a tab is being selected, even if it is the same tab.
+
 
 Member Variables
 ----------------

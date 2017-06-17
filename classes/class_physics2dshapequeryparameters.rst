@@ -19,9 +19,9 @@ Member Functions
 ----------------
 
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`              | :ref:`get_exclude<class_Physics2DShapeQueryParameters_get_exclude>`  **(** **)** const                                                     |
+| :ref:`int<class_int>`                  | :ref:`get_collision_layer<class_Physics2DShapeQueryParameters_get_collision_layer>`  **(** **)** const                                     |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                  | :ref:`get_layer_mask<class_Physics2DShapeQueryParameters_get_layer_mask>`  **(** **)** const                                               |
+| :ref:`Array<class_array>`              | :ref:`get_exclude<class_Physics2DShapeQueryParameters_get_exclude>`  **(** **)** const                                                     |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`              | :ref:`get_margin<class_Physics2DShapeQueryParameters_get_margin>`  **(** **)** const                                                       |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -33,9 +33,9 @@ Member Functions
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform2D<class_transform2d>`  | :ref:`get_transform<class_Physics2DShapeQueryParameters_get_transform>`  **(** **)** const                                                 |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_exclude<class_Physics2DShapeQueryParameters_set_exclude>`  **(** :ref:`Array<class_array>` exclude  **)**                        |
+| void                                   | :ref:`set_collision_layer<class_Physics2DShapeQueryParameters_set_collision_layer>`  **(** :ref:`int<class_int>` collision_layer  **)**    |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_layer_mask<class_Physics2DShapeQueryParameters_set_layer_mask>`  **(** :ref:`int<class_int>` layer_mask  **)**                   |
+| void                                   | :ref:`set_exclude<class_Physics2DShapeQueryParameters_set_exclude>`  **(** :ref:`Array<class_array>` exclude  **)**                        |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`set_margin<class_Physics2DShapeQueryParameters_set_margin>`  **(** :ref:`float<class_float>` margin  **)**                           |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -58,17 +58,17 @@ This class contains the shape and other parameters for intersection/collision qu
 Member Function Description
 ---------------------------
 
+.. _class_Physics2DShapeQueryParameters_get_collision_layer:
+
+- :ref:`int<class_int>`  **get_collision_layer**  **(** **)** const
+
+Return the physics layer the shape belongs to.
+
 .. _class_Physics2DShapeQueryParameters_get_exclude:
 
 - :ref:`Array<class_array>`  **get_exclude**  **(** **)** const
 
 Return the list of objects, or object :ref:`RID<class_rid>`s, that will be excluded from collisions.
-
-.. _class_Physics2DShapeQueryParameters_get_layer_mask:
-
-- :ref:`int<class_int>`  **get_layer_mask**  **(** **)** const
-
-Return the physics layer(s) the shape belongs to.
 
 .. _class_Physics2DShapeQueryParameters_get_margin:
 
@@ -100,17 +100,17 @@ Return the :ref:`RID<class_rid>` of the shape queried.
 
 Return the transform matrix of the shape queried.
 
+.. _class_Physics2DShapeQueryParameters_set_collision_layer:
+
+- void  **set_collision_layer**  **(** :ref:`int<class_int>` collision_layer  **)**
+
+Set the physics layer the shape belongs to.
+
 .. _class_Physics2DShapeQueryParameters_set_exclude:
 
 - void  **set_exclude**  **(** :ref:`Array<class_array>` exclude  **)**
 
 Set the list of objects, or object :ref:`RID<class_rid>`s, that will be excluded from collisions.
-
-.. _class_Physics2DShapeQueryParameters_set_layer_mask:
-
-- void  **set_layer_mask**  **(** :ref:`int<class_int>` layer_mask  **)**
-
-Set the physics layer(s) the shape belongs to.
 
 .. _class_Physics2DShapeQueryParameters_set_margin:
 

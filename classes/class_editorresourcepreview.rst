@@ -34,6 +34,8 @@ Signals
 -------
 
 -  **preview_invalidated**  **(** :ref:`String<class_string>` path  **)**
+If a preview was invalidated (changed) this signal will emit (using the path of the preview)
+
 
 Description
 -----------

@@ -88,13 +88,13 @@ Return the base offset for this layer (helper).
 
 - :ref:`float<class_float>`  **get_rotation**  **(** **)** const
 
-Return the base rotation for this layer (helper).
+Return the base rotation for this layer in radians (helper).
 
 .. _class_CanvasLayer_get_rotationd:
 
 - :ref:`float<class_float>`  **get_rotationd**  **(** **)** const
 
-Get rotation of the layer in degree.
+Return the base rotation for this layer in degrees.
 
 .. _class_CanvasLayer_get_scale:
 
@@ -134,13 +134,13 @@ Set the base offset for this layer (helper).
 
 - void  **set_rotation**  **(** :ref:`float<class_float>` radians  **)**
 
-Set the base rotation for this layer (helper).
+Set the base rotation for this layer in radians (helper).
 
 .. _class_CanvasLayer_set_rotationd:
 
 - void  **set_rotationd**  **(** :ref:`float<class_float>` degrees  **)**
 
-Set rotation of the layer in degree.
+Set the base rotation for this layer in degrees (helper).
 
 .. _class_CanvasLayer_set_scale:
 

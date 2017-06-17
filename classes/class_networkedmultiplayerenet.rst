@@ -39,6 +39,7 @@ Numeric Constants
 - **COMPRESS_RANGE_CODER** = **1**
 - **COMPRESS_FASTLZ** = **2**
 - **COMPRESS_ZLIB** = **3**
+- **COMPRESS_ZSTD** = **4**
 
 Description
 -----------

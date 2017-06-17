@@ -6,92 +6,51 @@
 InputEventJoypadMotion
 ======================
 
-**Category:** Built-In Types
+**Inherits:** :ref:`InputEvent<class_inputevent>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+
+**Category:** Core
 
 Brief Description
 -----------------
 
-Built-in input event type for joypad motion/axis events.
+Input event type for joypad motion/axis events.
 
 Member Functions
 ----------------
 
-+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_action<class_InputEventJoypadMotion_is_action>`  **(** :ref:`String<class_string>` action  **)**                                          |
-+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_action_pressed<class_InputEventJoypadMotion_is_action_pressed>`  **(** :ref:`String<class_string>` action  **)**                          |
-+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_action_released<class_InputEventJoypadMotion_is_action_released>`  **(** :ref:`String<class_string>` action  **)**                        |
-+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_echo<class_InputEventJoypadMotion_is_echo>`  **(** **)**                                                                                  |
-+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_pressed<class_InputEventJoypadMotion_is_pressed>`  **(** **)**                                                                            |
-+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_as_action<class_InputEventJoypadMotion_set_as_action>`  **(** :ref:`String<class_string>` action, :ref:`bool<class_bool>` pressed  **)** |
-+--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`get_axis<class_InputEventJoypadMotion_get_axis>`  **(** **)** const                                             |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_axis_value<class_InputEventJoypadMotion_get_axis_value>`  **(** **)** const                                 |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_axis<class_InputEventJoypadMotion_set_axis>`  **(** :ref:`int<class_int>` axis  **)**                       |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_axis_value<class_InputEventJoypadMotion_set_axis_value>`  **(** :ref:`float<class_float>` axis_value  **)** |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **ID** - Event identifier, positive integer increased at each new event.
 - :ref:`int<class_int>` **axis** - Joypad axis identifier, one of the JOY_AXIS_* constants in [@Global Scope].
-- :ref:`int<class_int>` **device** - Device identifier.
-- :ref:`int<class_int>` **type** - Type of event (one of the [InputEvent] constants).
-- :ref:`float<class_float>` **value** - Position of the axis, ranging from -1.0 to 1.0. A value of 0 means that the axis is in its neutral position.
-
-Numeric Constants
------------------
-
-- **NONE** = **0** --- Empty input event.
-- **KEY** = **1** --- Key event.
-- **MOUSE_MOTION** = **2** --- Mouse motion event.
-- **MOUSE_BUTTON** = **3** --- Mouse button event.
-- **JOYPAD_MOTION** = **4** --- Joypad motion event.
-- **JOYPAD_BUTTON** = **5** --- Joypad button event.
-- **SCREEN_TOUCH** = **6** --- Screen touch event.
-- **SCREEN_DRAG** = **7** --- Screen drag event.
-- **ACTION** = **8** --- Pre-defined action event (see :ref:`InputMap<class_inputmap>`).
-
-Description
------------
-
-Input event type for joypad motion/axis events that extends the global :ref:`InputEvent<class_inputevent>` type.
+- :ref:`float<class_float>` **axis_value** - Position of the axis, ranging from -1.0 to 1.0. A value of 0 means that the axis is in its neutral position.
 
 Member Function Description
 ---------------------------
 
-.. _class_InputEventJoypadMotion_is_action:
+.. _class_InputEventJoypadMotion_get_axis:
 
-- :ref:`bool<class_bool>`  **is_action**  **(** :ref:`String<class_string>` action  **)**
+- :ref:`int<class_int>`  **get_axis**  **(** **)** const
 
-.. _class_InputEventJoypadMotion_is_action_pressed:
+.. _class_InputEventJoypadMotion_get_axis_value:
 
-- :ref:`bool<class_bool>`  **is_action_pressed**  **(** :ref:`String<class_string>` action  **)**
+- :ref:`float<class_float>`  **get_axis_value**  **(** **)** const
 
-Return whether the given action is being pressed.
+.. _class_InputEventJoypadMotion_set_axis:
 
-.. _class_InputEventJoypadMotion_is_action_released:
+- void  **set_axis**  **(** :ref:`int<class_int>` axis  **)**
 
-- :ref:`bool<class_bool>`  **is_action_released**  **(** :ref:`String<class_string>` action  **)**
+.. _class_InputEventJoypadMotion_set_axis_value:
 
-Return whether the given action is released (i.e. not pressed).
-
-.. _class_InputEventJoypadMotion_is_echo:
-
-- :ref:`bool<class_bool>`  **is_echo**  **(** **)**
-
-Return if this input event is an echo event (only for events of type KEY, i.e. always false for this type).
-
-.. _class_InputEventJoypadMotion_is_pressed:
-
-- :ref:`bool<class_bool>`  **is_pressed**  **(** **)**
-
-Return if this input event is pressed.
-
-.. _class_InputEventJoypadMotion_set_as_action:
-
-- void  **set_as_action**  **(** :ref:`String<class_string>` action, :ref:`bool<class_bool>` pressed  **)**
-
-Change the input event to an action event of the given name with the pressed status passed as argument.
+- void  **set_axis_value**  **(** :ref:`float<class_float>` axis_value  **)**
 
 

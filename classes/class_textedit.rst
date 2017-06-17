@@ -45,9 +45,9 @@ Member Functions
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`cursor_set_block_mode<class_TextEdit_cursor_set_block_mode>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                                             |
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`cursor_set_column<class_TextEdit_cursor_set_column>`  **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` adjust_viewport=false  **)**                                                                        |
+| void                                     | :ref:`cursor_set_column<class_TextEdit_cursor_set_column>`  **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` adjust_viewport=true  **)**                                                                         |
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`cursor_set_line<class_TextEdit_cursor_set_line>`  **(** :ref:`int<class_int>` line, :ref:`bool<class_bool>` adjust_viewport=false  **)**                                                                              |
+| void                                     | :ref:`cursor_set_line<class_TextEdit_cursor_set_line>`  **(** :ref:`int<class_int>` line, :ref:`bool<class_bool>` adjust_viewport=true  **)**                                                                               |
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`cut<class_TextEdit_cut>`  **(** **)**                                                                                                                                                                                 |
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -114,10 +114,16 @@ Signals
 -------
 
 -  **breakpoint_toggled**  **(** :ref:`int<class_int>` row  **)**
+Emitted when a breakpoint is placed via the breakpoint gutter.
+
 -  **cursor_changed**  **(** **)**
+Emitted when the cursor changes.
+
 -  **request_completion**  **(** **)**
 -  **symbol_lookup**  **(** :ref:`String<class_string>` symbol, :ref:`int<class_int>` row, :ref:`int<class_int>` column  **)**
 -  **text_changed**  **(** **)**
+Emitted when the text changes.
+
 
 Member Variables
 ----------------
@@ -231,11 +237,11 @@ Set the text editor caret to block mode.
 
 .. _class_TextEdit_cursor_set_column:
 
-- void  **cursor_set_column**  **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` adjust_viewport=false  **)**
+- void  **cursor_set_column**  **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` adjust_viewport=true  **)**
 
 .. _class_TextEdit_cursor_set_line:
 
-- void  **cursor_set_line**  **(** :ref:`int<class_int>` line, :ref:`bool<class_bool>` adjust_viewport=false  **)**
+- void  **cursor_set_line**  **(** :ref:`int<class_int>` line, :ref:`bool<class_bool>` adjust_viewport=true  **)**
 
 .. _class_TextEdit_cut:
 

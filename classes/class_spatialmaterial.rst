@@ -33,7 +33,13 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_cull_mode<class_SpatialMaterial_get_cull_mode>`  **(** **)** const                                                                         |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_depth_deep_parallax_max_layers<class_SpatialMaterial_get_depth_deep_parallax_max_layers>`  **(** **)** const                               |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_depth_deep_parallax_min_layers<class_SpatialMaterial_get_depth_deep_parallax_min_layers>`  **(** **)** const                               |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_depth_draw_mode<class_SpatialMaterial_get_depth_draw_mode>`  **(** **)** const                                                             |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_depth_scale<class_SpatialMaterial_get_depth_scale>`  **(** **)** const                                                                     |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_detail_blend_mode<class_SpatialMaterial_get_detail_blend_mode>`  **(** **)** const                                                         |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -49,11 +55,9 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`get_flag<class_SpatialMaterial_get_flag>`  **(** :ref:`int<class_int>` arg0  **)** const                                                       |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_height_scale<class_SpatialMaterial_get_height_scale>`  **(** **)** const                                                                   |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_line_width<class_SpatialMaterial_get_line_width>`  **(** **)** const                                                                       |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_metalness<class_SpatialMaterial_get_metalness>`  **(** **)** const                                                                         |
+| :ref:`float<class_float>`      | :ref:`get_metallic<class_SpatialMaterial_get_metallic>`  **(** **)** const                                                                           |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_normal_scale<class_SpatialMaterial_get_normal_scale>`  **(** **)** const                                                                   |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -67,17 +71,13 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_refraction<class_SpatialMaterial_get_refraction>`  **(** **)** const                                                                       |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_refraction_roughness<class_SpatialMaterial_get_refraction_roughness>`  **(** **)** const                                                   |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_rim<class_SpatialMaterial_get_rim>`  **(** **)** const                                                                                     |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_rim_tint<class_SpatialMaterial_get_rim_tint>`  **(** **)** const                                                                           |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_roughness<class_SpatialMaterial_get_roughness>`  **(** **)** const                                                                         |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`      | :ref:`get_specular<class_SpatialMaterial_get_specular>`  **(** **)** const                                                                           |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_specular_mode<class_SpatialMaterial_get_specular_mode>`  **(** **)** const                                                                 |
+| :ref:`float<class_float>`      | :ref:`get_specular<class_SpatialMaterial_get_specular>`  **(** **)** const                                                                           |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_subsurface_scattering_strength<class_SpatialMaterial_get_subsurface_scattering_strength>`  **(** **)** const                               |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -90,6 +90,8 @@ Member Functions
 | :ref:`Vector2<class_vector2>`  | :ref:`get_uv2_offset<class_SpatialMaterial_get_uv2_offset>`  **(** **)** const                                                                       |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`get_uv2_scale<class_SpatialMaterial_get_uv2_scale>`  **(** **)** const                                                                         |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_depth_deep_parallax_enabled<class_SpatialMaterial_is_depth_deep_parallax_enabled>`  **(** **)** const                                       |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_albedo<class_SpatialMaterial_set_albedo>`  **(** :ref:`Color<class_color>` albedo  **)**                                                   |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -105,7 +107,15 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_cull_mode<class_SpatialMaterial_set_cull_mode>`  **(** :ref:`int<class_int>` cull_mode  **)**                                              |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_depth_deep_parallax<class_SpatialMaterial_set_depth_deep_parallax>`  **(** :ref:`bool<class_bool>` enable  **)**                           |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_depth_deep_parallax_max_layers<class_SpatialMaterial_set_depth_deep_parallax_max_layers>`  **(** :ref:`int<class_int>` layer  **)**        |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_depth_deep_parallax_min_layers<class_SpatialMaterial_set_depth_deep_parallax_min_layers>`  **(** :ref:`int<class_int>` layer  **)**        |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_depth_draw_mode<class_SpatialMaterial_set_depth_draw_mode>`  **(** :ref:`int<class_int>` depth_draw_mode  **)**                            |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_depth_scale<class_SpatialMaterial_set_depth_scale>`  **(** :ref:`float<class_float>` depth_scale  **)**                                    |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_detail_blend_mode<class_SpatialMaterial_set_detail_blend_mode>`  **(** :ref:`int<class_int>` detail_blend_mode  **)**                      |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -121,11 +131,9 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_flag<class_SpatialMaterial_set_flag>`  **(** :ref:`int<class_int>` flag, :ref:`bool<class_bool>` enable  **)**                             |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_height_scale<class_SpatialMaterial_set_height_scale>`  **(** :ref:`float<class_float>` height_scale  **)**                                 |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_line_width<class_SpatialMaterial_set_line_width>`  **(** :ref:`float<class_float>` line_width  **)**                                       |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_metalness<class_SpatialMaterial_set_metalness>`  **(** :ref:`float<class_float>` metalness  **)**                                          |
+| void                           | :ref:`set_metallic<class_SpatialMaterial_set_metallic>`  **(** :ref:`float<class_float>` metallic  **)**                                             |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_normal_scale<class_SpatialMaterial_set_normal_scale>`  **(** :ref:`float<class_float>` normal_scale  **)**                                 |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -139,17 +147,13 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_refraction<class_SpatialMaterial_set_refraction>`  **(** :ref:`float<class_float>` refraction  **)**                                       |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_refraction_roughness<class_SpatialMaterial_set_refraction_roughness>`  **(** :ref:`float<class_float>` refraction_roughness  **)**         |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_rim<class_SpatialMaterial_set_rim>`  **(** :ref:`float<class_float>` rim  **)**                                                            |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_rim_tint<class_SpatialMaterial_set_rim_tint>`  **(** :ref:`float<class_float>` rim_tint  **)**                                             |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_roughness<class_SpatialMaterial_set_roughness>`  **(** :ref:`float<class_float>` roughness  **)**                                          |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_specular<class_SpatialMaterial_set_specular>`  **(** :ref:`Color<class_color>` specular  **)**                                             |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_specular_mode<class_SpatialMaterial_set_specular_mode>`  **(** :ref:`int<class_int>` specular_mode  **)**                                  |
+| void                           | :ref:`set_specular<class_SpatialMaterial_set_specular>`  **(** :ref:`float<class_float>` specular  **)**                                             |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_subsurface_scattering_strength<class_SpatialMaterial_set_subsurface_scattering_strength>`  **(** :ref:`float<class_float>` strength  **)** |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -178,6 +182,12 @@ Member Variables
 - :ref:`bool<class_bool>` **clearcoat_enabled**
 - :ref:`float<class_float>` **clearcoat_gloss**
 - :ref:`Texture<class_texture>` **clearcoat_texture**
+- :ref:`bool<class_bool>` **depth_deep_parallax**
+- :ref:`bool<class_bool>` **depth_enabled**
+- :ref:`int<class_int>` **depth_max_layers**
+- :ref:`int<class_int>` **depth_min_layers**
+- :ref:`float<class_float>` **depth_scale**
+- :ref:`Texture<class_texture>` **depth_texture**
 - :ref:`Texture<class_texture>` **detail_albedo**
 - :ref:`int<class_int>` **detail_blend_mode**
 - :ref:`bool<class_bool>` **detail_enabled**
@@ -193,9 +203,9 @@ Member Variables
 - :ref:`bool<class_bool>` **flags_transparent**
 - :ref:`bool<class_bool>` **flags_unshaded**
 - :ref:`bool<class_bool>` **flags_use_point_size**
-- :ref:`bool<class_bool>` **height_enabled**
-- :ref:`float<class_float>` **height_scale**
-- :ref:`Texture<class_texture>` **height_texture**
+- :ref:`float<class_float>` **metallic_amount**
+- :ref:`float<class_float>` **metallic_specular**
+- :ref:`Texture<class_texture>` **metallic_texture**
 - :ref:`bool<class_bool>` **normal_enabled**
 - :ref:`float<class_float>` **normal_scale**
 - :ref:`Texture<class_texture>` **normal_texture**
@@ -209,19 +219,15 @@ Member Variables
 - :ref:`int<class_int>` **particles_anim_h_frames**
 - :ref:`bool<class_bool>` **particles_anim_loop**
 - :ref:`int<class_int>` **particles_anim_v_frames**
-- :ref:`float<class_float>` **refraction_displacement**
 - :ref:`bool<class_bool>` **refraction_enabled**
-- :ref:`float<class_float>` **refraction_roughness**
+- :ref:`float<class_float>` **refraction_scale**
 - :ref:`Texture<class_texture>` **refraction_texture**
 - :ref:`float<class_float>` **rim_amount**
 - :ref:`bool<class_bool>` **rim_enabled**
 - :ref:`Texture<class_texture>` **rim_texture**
 - :ref:`float<class_float>` **rim_tint**
-- :ref:`Color<class_color>` **specular_color**
-- :ref:`float<class_float>` **specular_metalness**
-- :ref:`int<class_int>` **specular_mode**
-- :ref:`float<class_float>` **specular_roughness**
-- :ref:`Texture<class_texture>` **specular_texture**
+- :ref:`float<class_float>` **roughness_amount**
+- :ref:`Texture<class_texture>` **roughness_texture**
 - :ref:`bool<class_bool>` **subsurf_scatter_enabled**
 - :ref:`float<class_float>` **subsurf_scatter_strength**
 - :ref:`Texture<class_texture>` **subsurf_scatter_texture**
@@ -236,17 +242,17 @@ Numeric Constants
 -----------------
 
 - **TEXTURE_ALBEDO** = **0**
-- **TEXTURE_SPECULAR** = **1**
-- **TEXTURE_EMISSION** = **2**
-- **TEXTURE_NORMAL** = **3**
-- **TEXTURE_RIM** = **4**
-- **TEXTURE_CLEARCOAT** = **5**
-- **TEXTURE_FLOWMAP** = **6**
-- **TEXTURE_AMBIENT_OCCLUSION** = **7**
-- **TEXTURE_HEIGHT** = **8**
-- **TEXTURE_SUBSURFACE_SCATTERING** = **9**
-- **TEXTURE_REFRACTION** = **10**
-- **TEXTURE_REFRACTION_ROUGHNESS** = **11**
+- **TEXTURE_METALLIC** = **1**
+- **TEXTURE_ROUGHNESS** = **2**
+- **TEXTURE_EMISSION** = **3**
+- **TEXTURE_NORMAL** = **4**
+- **TEXTURE_RIM** = **5**
+- **TEXTURE_CLEARCOAT** = **6**
+- **TEXTURE_FLOWMAP** = **7**
+- **TEXTURE_AMBIENT_OCCLUSION** = **8**
+- **TEXTURE_DEPTH** = **9**
+- **TEXTURE_SUBSURFACE_SCATTERING** = **10**
+- **TEXTURE_REFRACTION** = **11**
 - **TEXTURE_DETAIL_MASK** = **12**
 - **TEXTURE_DETAIL_ALBEDO** = **13**
 - **TEXTURE_DETAIL_NORMAL** = **14**
@@ -260,7 +266,7 @@ Numeric Constants
 - **FEATURE_CLEARCOAT** = **4**
 - **FEATURE_ANISOTROPY** = **5**
 - **FEATURE_AMBIENT_OCCLUSION** = **6**
-- **FEATURE_HEIGHT_MAPPING** = **7**
+- **FEATURE_DEPTH_MAPPING** = **7**
 - **FEATURE_SUBSURACE_SCATTERING** = **8**
 - **FEATURE_REFRACTION** = **9**
 - **FEATURE_DETAIL** = **10**
@@ -284,11 +290,9 @@ Numeric Constants
 - **FLAG_FIXED_SIZE** = **5**
 - **FLAG_MAX** = **6**
 - **DIFFUSE_LAMBERT** = **0**
-- **DIFFUSE_LAMBERT_WRAP** = **1**
+- **DIFFUSE_HALF_LAMBERT** = **1**
 - **DIFFUSE_OREN_NAYAR** = **2**
 - **DIFFUSE_BURLEY** = **3**
-- **SPECULAR_MODE_METALLIC** = **0**
-- **SPECULAR_MODE_SPECULAR** = **1**
 - **BILLBOARD_DISABLED** = **0**
 - **BILLBOARD_ENABLED** = **1**
 - **BILLBOARD_FIXED_Y** = **2**
@@ -325,9 +329,21 @@ Member Function Description
 
 - :ref:`int<class_int>`  **get_cull_mode**  **(** **)** const
 
+.. _class_SpatialMaterial_get_depth_deep_parallax_max_layers:
+
+- :ref:`int<class_int>`  **get_depth_deep_parallax_max_layers**  **(** **)** const
+
+.. _class_SpatialMaterial_get_depth_deep_parallax_min_layers:
+
+- :ref:`int<class_int>`  **get_depth_deep_parallax_min_layers**  **(** **)** const
+
 .. _class_SpatialMaterial_get_depth_draw_mode:
 
 - :ref:`int<class_int>`  **get_depth_draw_mode**  **(** **)** const
+
+.. _class_SpatialMaterial_get_depth_scale:
+
+- :ref:`float<class_float>`  **get_depth_scale**  **(** **)** const
 
 .. _class_SpatialMaterial_get_detail_blend_mode:
 
@@ -357,17 +373,13 @@ Member Function Description
 
 - :ref:`bool<class_bool>`  **get_flag**  **(** :ref:`int<class_int>` arg0  **)** const
 
-.. _class_SpatialMaterial_get_height_scale:
-
-- :ref:`float<class_float>`  **get_height_scale**  **(** **)** const
-
 .. _class_SpatialMaterial_get_line_width:
 
 - :ref:`float<class_float>`  **get_line_width**  **(** **)** const
 
-.. _class_SpatialMaterial_get_metalness:
+.. _class_SpatialMaterial_get_metallic:
 
-- :ref:`float<class_float>`  **get_metalness**  **(** **)** const
+- :ref:`float<class_float>`  **get_metallic**  **(** **)** const
 
 .. _class_SpatialMaterial_get_normal_scale:
 
@@ -393,10 +405,6 @@ Member Function Description
 
 - :ref:`float<class_float>`  **get_refraction**  **(** **)** const
 
-.. _class_SpatialMaterial_get_refraction_roughness:
-
-- :ref:`float<class_float>`  **get_refraction_roughness**  **(** **)** const
-
 .. _class_SpatialMaterial_get_rim:
 
 - :ref:`float<class_float>`  **get_rim**  **(** **)** const
@@ -411,11 +419,7 @@ Member Function Description
 
 .. _class_SpatialMaterial_get_specular:
 
-- :ref:`Color<class_color>`  **get_specular**  **(** **)** const
-
-.. _class_SpatialMaterial_get_specular_mode:
-
-- :ref:`int<class_int>`  **get_specular_mode**  **(** **)** const
+- :ref:`float<class_float>`  **get_specular**  **(** **)** const
 
 .. _class_SpatialMaterial_get_subsurface_scattering_strength:
 
@@ -440,6 +444,10 @@ Member Function Description
 .. _class_SpatialMaterial_get_uv2_scale:
 
 - :ref:`Vector2<class_vector2>`  **get_uv2_scale**  **(** **)** const
+
+.. _class_SpatialMaterial_is_depth_deep_parallax_enabled:
+
+- :ref:`bool<class_bool>`  **is_depth_deep_parallax_enabled**  **(** **)** const
 
 .. _class_SpatialMaterial_set_albedo:
 
@@ -469,9 +477,25 @@ Member Function Description
 
 - void  **set_cull_mode**  **(** :ref:`int<class_int>` cull_mode  **)**
 
+.. _class_SpatialMaterial_set_depth_deep_parallax:
+
+- void  **set_depth_deep_parallax**  **(** :ref:`bool<class_bool>` enable  **)**
+
+.. _class_SpatialMaterial_set_depth_deep_parallax_max_layers:
+
+- void  **set_depth_deep_parallax_max_layers**  **(** :ref:`int<class_int>` layer  **)**
+
+.. _class_SpatialMaterial_set_depth_deep_parallax_min_layers:
+
+- void  **set_depth_deep_parallax_min_layers**  **(** :ref:`int<class_int>` layer  **)**
+
 .. _class_SpatialMaterial_set_depth_draw_mode:
 
 - void  **set_depth_draw_mode**  **(** :ref:`int<class_int>` depth_draw_mode  **)**
+
+.. _class_SpatialMaterial_set_depth_scale:
+
+- void  **set_depth_scale**  **(** :ref:`float<class_float>` depth_scale  **)**
 
 .. _class_SpatialMaterial_set_detail_blend_mode:
 
@@ -501,17 +525,13 @@ Member Function Description
 
 - void  **set_flag**  **(** :ref:`int<class_int>` flag, :ref:`bool<class_bool>` enable  **)**
 
-.. _class_SpatialMaterial_set_height_scale:
-
-- void  **set_height_scale**  **(** :ref:`float<class_float>` height_scale  **)**
-
 .. _class_SpatialMaterial_set_line_width:
 
 - void  **set_line_width**  **(** :ref:`float<class_float>` line_width  **)**
 
-.. _class_SpatialMaterial_set_metalness:
+.. _class_SpatialMaterial_set_metallic:
 
-- void  **set_metalness**  **(** :ref:`float<class_float>` metalness  **)**
+- void  **set_metallic**  **(** :ref:`float<class_float>` metallic  **)**
 
 .. _class_SpatialMaterial_set_normal_scale:
 
@@ -537,10 +557,6 @@ Member Function Description
 
 - void  **set_refraction**  **(** :ref:`float<class_float>` refraction  **)**
 
-.. _class_SpatialMaterial_set_refraction_roughness:
-
-- void  **set_refraction_roughness**  **(** :ref:`float<class_float>` refraction_roughness  **)**
-
 .. _class_SpatialMaterial_set_rim:
 
 - void  **set_rim**  **(** :ref:`float<class_float>` rim  **)**
@@ -555,11 +571,7 @@ Member Function Description
 
 .. _class_SpatialMaterial_set_specular:
 
-- void  **set_specular**  **(** :ref:`Color<class_color>` specular  **)**
-
-.. _class_SpatialMaterial_set_specular_mode:
-
-- void  **set_specular_mode**  **(** :ref:`int<class_int>` specular_mode  **)**
+- void  **set_specular**  **(** :ref:`float<class_float>` specular  **)**
 
 .. _class_SpatialMaterial_set_subsurface_scattering_strength:
 

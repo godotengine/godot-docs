@@ -216,7 +216,7 @@ Apply a local translation on Y axis to the 2D node according to the 'delta' of t
 
 - void  **rotate**  **(** :ref:`float<class_float>` radians  **)**
 
-Apply a 'radians' rotation to the 2D node, starting from its current rotation.
+Apply a rotation (in radians) to the 2D node, starting from its current rotation.
 
 .. _class_Node2D_scale:
 

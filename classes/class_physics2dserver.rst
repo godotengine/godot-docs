@@ -47,9 +47,9 @@ Member Functions
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`area_remove_shape<class_Physics2DServer_area_remove_shape>`  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx  **)**                                                                                                                                                                      |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                               | :ref:`area_set_collision_mask<class_Physics2DServer_area_set_collision_mask>`  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` mask  **)**                                                                                                                                                               |
+| void                                                               | :ref:`area_set_collision_layer<class_Physics2DServer_area_set_collision_layer>`  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` layer  **)**                                                                                                                                                            |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                               | :ref:`area_set_layer_mask<class_Physics2DServer_area_set_layer_mask>`  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` mask  **)**                                                                                                                                                                       |
+| void                                                               | :ref:`area_set_collision_mask<class_Physics2DServer_area_set_collision_mask>`  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` mask  **)**                                                                                                                                                               |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`area_set_monitor_callback<class_Physics2DServer_area_set_monitor_callback>`  **(** :ref:`RID<class_rid>` area, :ref:`Object<class_object>` receiver, :ref:`String<class_string>` method  **)**                                                                                                             |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -79,11 +79,11 @@ Member Functions
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_rid>`                                              | :ref:`body_create<class_Physics2DServer_body_create>`  **(** :ref:`int<class_int>` mode=2, :ref:`bool<class_bool>` init_sleeping=false  **)**                                                                                                                                                                    |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                              | :ref:`body_get_collision_layer<class_Physics2DServer_body_get_collision_layer>`  **(** :ref:`RID<class_rid>` body  **)** const                                                                                                                                                                                   |
++--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                              | :ref:`body_get_collision_mask<class_Physics2DServer_body_get_collision_mask>`  **(** :ref:`RID<class_rid>` body  **)** const                                                                                                                                                                                     |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                              | :ref:`body_get_continuous_collision_detection_mode<class_Physics2DServer_body_get_continuous_collision_detection_mode>`  **(** :ref:`RID<class_rid>` body  **)** const                                                                                                                                           |
-+--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                              | :ref:`body_get_layer_mask<class_Physics2DServer_body_get_layer_mask>`  **(** :ref:`RID<class_rid>` body  **)** const                                                                                                                                                                                             |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                              | :ref:`body_get_max_contacts_reported<class_Physics2DServer_body_get_max_contacts_reported>`  **(** :ref:`RID<class_rid>` body  **)** const                                                                                                                                                                       |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -119,13 +119,13 @@ Member Functions
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`body_set_axis_velocity<class_Physics2DServer_body_set_axis_velocity>`  **(** :ref:`RID<class_rid>` body, :ref:`Vector2<class_vector2>` axis_velocity  **)**                                                                                                                                                |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                               | :ref:`body_set_collision_layer<class_Physics2DServer_body_set_collision_layer>`  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` layer  **)**                                                                                                                                                            |
++--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`body_set_collision_mask<class_Physics2DServer_body_set_collision_mask>`  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` mask  **)**                                                                                                                                                               |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`body_set_continuous_collision_detection_mode<class_Physics2DServer_body_set_continuous_collision_detection_mode>`  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` mode  **)**                                                                                                                     |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`body_set_force_integration_callback<class_Physics2DServer_body_set_force_integration_callback>`  **(** :ref:`RID<class_rid>` body, :ref:`Object<class_object>` receiver, :ref:`String<class_string>` method, :ref:`Variant<class_variant>` userdata=NULL  **)**                                            |
-+--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                               | :ref:`body_set_layer_mask<class_Physics2DServer_body_set_layer_mask>`  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` mask  **)**                                                                                                                                                                       |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`body_set_max_contacts_reported<class_Physics2DServer_body_set_max_contacts_reported>`  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` amount  **)**                                                                                                                                               |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -153,7 +153,7 @@ Member Functions
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                            | :ref:`body_test_motion<class_Physics2DServer_body_test_motion>`  **(** :ref:`RID<class_rid>` body, :ref:`Transform2D<class_transform2d>` from, :ref:`Vector2<class_vector2>` motion, :ref:`float<class_float>` margin=0.08, :ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>` result=NULL  **)** |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                              | :ref:`damped_spring_joint_create<class_Physics2DServer_damped_spring_joint_create>`  **(** :ref:`Vector2<class_vector2>` anchor_a, :ref:`Vector2<class_vector2>` anchor_b, :ref:`RID<class_rid>` body_a, :ref:`RID<class_rid>` body_b=RID()  **)**                                                               |
+| :ref:`RID<class_rid>`                                              | :ref:`damped_spring_joint_create<class_Physics2DServer_damped_spring_joint_create>`  **(** :ref:`Vector2<class_vector2>` anchor_a, :ref:`Vector2<class_vector2>` anchor_b, :ref:`RID<class_rid>` body_a, :ref:`RID<class_rid>` body_b=[RID]  **)**                                                               |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                          | :ref:`damped_string_joint_get_param<class_Physics2DServer_damped_string_joint_get_param>`  **(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` param  **)** const                                                                                                                                           |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -163,7 +163,7 @@ Member Functions
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                              | :ref:`get_process_info<class_Physics2DServer_get_process_info>`  **(** :ref:`int<class_int>` process_info  **)**                                                                                                                                                                                                 |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                              | :ref:`groove_joint_create<class_Physics2DServer_groove_joint_create>`  **(** :ref:`Vector2<class_vector2>` groove1_a, :ref:`Vector2<class_vector2>` groove2_a, :ref:`Vector2<class_vector2>` anchor_b, :ref:`RID<class_rid>` body_a=RID(), :ref:`RID<class_rid>` body_b=RID()  **)**                             |
+| :ref:`RID<class_rid>`                                              | :ref:`groove_joint_create<class_Physics2DServer_groove_joint_create>`  **(** :ref:`Vector2<class_vector2>` groove1_a, :ref:`Vector2<class_vector2>` groove2_a, :ref:`Vector2<class_vector2>` anchor_b, :ref:`RID<class_rid>` body_a=[RID], :ref:`RID<class_rid>` body_b=[RID]  **)**                             |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                          | :ref:`joint_get_param<class_Physics2DServer_joint_get_param>`  **(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` param  **)** const                                                                                                                                                                       |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -171,7 +171,7 @@ Member Functions
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`joint_set_param<class_Physics2DServer_joint_set_param>`  **(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**                                                                                                                                            |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                              | :ref:`pin_joint_create<class_Physics2DServer_pin_joint_create>`  **(** :ref:`Vector2<class_vector2>` anchor, :ref:`RID<class_rid>` body_a, :ref:`RID<class_rid>` body_b=RID()  **)**                                                                                                                             |
+| :ref:`RID<class_rid>`                                              | :ref:`pin_joint_create<class_Physics2DServer_pin_joint_create>`  **(** :ref:`Vector2<class_vector2>` anchor, :ref:`RID<class_rid>` body_a, :ref:`RID<class_rid>` body_b=[RID]  **)**                                                                                                                             |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`set_active<class_Physics2DServer_set_active>`  **(** :ref:`bool<class_bool>` active  **)**                                                                                                                                                                                                                 |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -345,17 +345,17 @@ Return the transform matrix for an area.
 
 Remove a shape from an area. It does not delete the shape, so it can be reassigned later.
 
+.. _class_Physics2DServer_area_set_collision_layer:
+
+- void  **area_set_collision_layer**  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` layer  **)**
+
+Assign the area to one or many physics layers.
+
 .. _class_Physics2DServer_area_set_collision_mask:
 
 - void  **area_set_collision_mask**  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` mask  **)**
 
 Set which physics layers the area will monitor.
-
-.. _class_Physics2DServer_area_set_layer_mask:
-
-- void  **area_set_layer_mask**  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` mask  **)**
-
-Assign the area to one or many physics layers.
 
 .. _class_Physics2DServer_area_set_monitor_callback:
 
@@ -451,6 +451,12 @@ Remove all shapes from a body.
 
 Create a physics body. The first parameter can be any value from constants BODY_MODE\*, for the type of body created. Additionally, the body can be created in sleeping state to save processing time.
 
+.. _class_Physics2DServer_body_get_collision_layer:
+
+- :ref:`int<class_int>`  **body_get_collision_layer**  **(** :ref:`RID<class_rid>` body  **)** const
+
+Return the physics layer or layers a body belongs to.
+
 .. _class_Physics2DServer_body_get_collision_mask:
 
 - :ref:`int<class_int>`  **body_get_collision_mask**  **(** :ref:`RID<class_rid>` body  **)** const
@@ -462,12 +468,6 @@ Return the physics layer or layers a body can collide with.
 - :ref:`int<class_int>`  **body_get_continuous_collision_detection_mode**  **(** :ref:`RID<class_rid>` body  **)** const
 
 Return the continuous collision detection mode.
-
-.. _class_Physics2DServer_body_get_layer_mask:
-
-- :ref:`int<class_int>`  **body_get_layer_mask**  **(** :ref:`RID<class_rid>` body  **)** const
-
-Return the physics layer or layers a body belongs to.
 
 .. _class_Physics2DServer_body_get_max_contacts_reported:
 
@@ -571,6 +571,12 @@ Remove a shape from a body. The shape is not deleted, so it can be reused afterw
 
 Set an axis velocity. The velocity in the given vector axis will be set as the given vector length. This is useful for jumping behavior.
 
+.. _class_Physics2DServer_body_set_collision_layer:
+
+- void  **body_set_collision_layer**  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` layer  **)**
+
+Set the physics layer or layers a body belongs to.
+
 .. _class_Physics2DServer_body_set_collision_mask:
 
 - void  **body_set_collision_mask**  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` mask  **)**
@@ -590,12 +596,6 @@ Continuous collision detection tries to predict where a moving body will collide
 - void  **body_set_force_integration_callback**  **(** :ref:`RID<class_rid>` body, :ref:`Object<class_object>` receiver, :ref:`String<class_string>` method, :ref:`Variant<class_variant>` userdata=NULL  **)**
 
 Set the function used to calculate physics for an object, if that object allows it (see :ref:`body_set_omit_force integration<class_Physics2DServer_body_set_omit_force integration>`).
-
-.. _class_Physics2DServer_body_set_layer_mask:
-
-- void  **body_set_layer_mask**  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` mask  **)**
-
-Set the physics layer or layers a body belongs to.
 
 .. _class_Physics2DServer_body_set_max_contacts_reported:
 
@@ -677,7 +677,7 @@ Return whether a body can move from a given point in a given direction. Apart fr
 
 .. _class_Physics2DServer_damped_spring_joint_create:
 
-- :ref:`RID<class_rid>`  **damped_spring_joint_create**  **(** :ref:`Vector2<class_vector2>` anchor_a, :ref:`Vector2<class_vector2>` anchor_b, :ref:`RID<class_rid>` body_a, :ref:`RID<class_rid>` body_b=RID()  **)**
+- :ref:`RID<class_rid>`  **damped_spring_joint_create**  **(** :ref:`Vector2<class_vector2>` anchor_a, :ref:`Vector2<class_vector2>` anchor_b, :ref:`RID<class_rid>` body_a, :ref:`RID<class_rid>` body_b=[RID]  **)**
 
 Create a damped spring joint between two bodies. If not specified, the second body is assumed to be the joint itself.
 
@@ -707,7 +707,7 @@ Return information about the current state of the 2D physics engine. The states 
 
 .. _class_Physics2DServer_groove_joint_create:
 
-- :ref:`RID<class_rid>`  **groove_joint_create**  **(** :ref:`Vector2<class_vector2>` groove1_a, :ref:`Vector2<class_vector2>` groove2_a, :ref:`Vector2<class_vector2>` anchor_b, :ref:`RID<class_rid>` body_a=RID(), :ref:`RID<class_rid>` body_b=RID()  **)**
+- :ref:`RID<class_rid>`  **groove_joint_create**  **(** :ref:`Vector2<class_vector2>` groove1_a, :ref:`Vector2<class_vector2>` groove2_a, :ref:`Vector2<class_vector2>` anchor_b, :ref:`RID<class_rid>` body_a=[RID], :ref:`RID<class_rid>` body_b=[RID]  **)**
 
 Create a groove joint between two bodies. If not specified, the bodyies are assumed to be the joint itself.
 
@@ -731,7 +731,7 @@ Set a joint parameter. Parameters are explained in the JOINT_PARAM\* constants.
 
 .. _class_Physics2DServer_pin_joint_create:
 
-- :ref:`RID<class_rid>`  **pin_joint_create**  **(** :ref:`Vector2<class_vector2>` anchor, :ref:`RID<class_rid>` body_a, :ref:`RID<class_rid>` body_b=RID()  **)**
+- :ref:`RID<class_rid>`  **pin_joint_create**  **(** :ref:`Vector2<class_vector2>` anchor, :ref:`RID<class_rid>` body_a, :ref:`RID<class_rid>` body_b=[RID]  **)**
 
 Create a pin joint between two bodies. If not specified, the second body is assumed to be the joint itself.
 

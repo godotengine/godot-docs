@@ -35,15 +35,11 @@ Member Functions
 +-------+----------------------------------------------------------------------------------------------+
 | void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`Dictionary<class_dictionary>` from  **)**             |
 +-------+----------------------------------------------------------------------------------------------+
-| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`InputEvent<class_inputevent>` from  **)**             |
-+-------+----------------------------------------------------------------------------------------------+
 | void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`Object<class_object>` from  **)**                     |
 +-------+----------------------------------------------------------------------------------------------+
 | void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`RID<class_rid>` from  **)**                           |
 +-------+----------------------------------------------------------------------------------------------+
 | void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`NodePath<class_nodepath>` from  **)**                 |
-+-------+----------------------------------------------------------------------------------------------+
-| void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`Image<class_image>` from  **)**                       |
 +-------+----------------------------------------------------------------------------------------------+
 | void  | :ref:`Nil<class_Nil_Nil>`  **(** :ref:`Color<class_color>` from  **)**                       |
 +-------+----------------------------------------------------------------------------------------------+
@@ -115,10 +111,6 @@ Member Function Description
 
 .. _class_Nil_Nil:
 
-- void  **Nil**  **(** :ref:`InputEvent<class_inputevent>` from  **)**
-
-.. _class_Nil_Nil:
-
 - void  **Nil**  **(** :ref:`Object<class_object>` from  **)**
 
 .. _class_Nil_Nil:
@@ -128,10 +120,6 @@ Member Function Description
 .. _class_Nil_Nil:
 
 - void  **Nil**  **(** :ref:`NodePath<class_nodepath>` from  **)**
-
-.. _class_Nil_Nil:
-
-- void  **Nil**  **(** :ref:`Image<class_image>` from  **)**
 
 .. _class_Nil_Nil:
 

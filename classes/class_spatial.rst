@@ -154,9 +154,13 @@ Return the parent :ref:`Spatial<class_spatial>`, or an empty :ref:`Object<class_
 
 - :ref:`Vector3<class_vector3>`  **get_rotation**  **(** **)** const
 
+Return the rotation (in radians).
+
 .. _class_Spatial_get_rotation_deg:
 
 - :ref:`Vector3<class_vector3>`  **get_rotation_deg**  **(** **)** const
+
+Return the rotation (in degrees).
 
 .. _class_Spatial_get_scale:
 
@@ -270,9 +274,13 @@ Set the transform globally, relative to worldspace.
 
 - void  **set_rotation**  **(** :ref:`Vector3<class_vector3>` rotation_rad  **)**
 
+Set the rotation (in radians).
+
 .. _class_Spatial_set_rotation_deg:
 
 - void  **set_rotation_deg**  **(** :ref:`Vector3<class_vector3>` rotation_deg  **)**
+
+Set the rotation (in degrees).
 
 .. _class_Spatial_set_scale:
 

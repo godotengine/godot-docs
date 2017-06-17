@@ -39,6 +39,8 @@ Member Functions
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`get_flatness<class_ParticlesMaterial_get_flatness>`  **(** **)** const                                                                              |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`                  | :ref:`get_gravity<class_ParticlesMaterial_get_gravity>`  **(** **)** const                                                                                |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`get_param<class_ParticlesMaterial_get_param>`  **(** :ref:`int<class_int>` param  **)** const                                                       |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`get_param_randomness<class_ParticlesMaterial_get_param_randomness>`  **(** :ref:`int<class_int>` param  **)** const                                 |
@@ -72,6 +74,8 @@ Member Functions
 | void                                           | :ref:`set_flag<class_ParticlesMaterial_set_flag>`  **(** :ref:`int<class_int>` flag, :ref:`bool<class_bool>` enable  **)**                                |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_flatness<class_ParticlesMaterial_set_flatness>`  **(** :ref:`float<class_float>` amount  **)**                                                  |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`set_gravity<class_ParticlesMaterial_set_gravity>`  **(** :ref:`Vector3<class_vector3>` accel_vec  **)**                                             |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_param<class_ParticlesMaterial_set_param>`  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**                            |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -117,6 +121,7 @@ Member Variables
 - :ref:`bool<class_bool>` **flag_align_y**
 - :ref:`bool<class_bool>` **flag_rotate_y**
 - :ref:`float<class_float>` **flatness**
+- :ref:`Vector3<class_vector3>` **gravity**
 - :ref:`float<class_float>` **hue_variation**
 - :ref:`CurveTexture<class_curvetexture>` **hue_variation_curve**
 - :ref:`float<class_float>` **hue_variation_random**
@@ -210,6 +215,10 @@ Member Function Description
 
 - :ref:`float<class_float>`  **get_flatness**  **(** **)** const
 
+.. _class_ParticlesMaterial_get_gravity:
+
+- :ref:`Vector3<class_vector3>`  **get_gravity**  **(** **)** const
+
 .. _class_ParticlesMaterial_get_param:
 
 - :ref:`float<class_float>`  **get_param**  **(** :ref:`int<class_int>` param  **)** const
@@ -277,6 +286,10 @@ Member Function Description
 .. _class_ParticlesMaterial_set_flatness:
 
 - void  **set_flatness**  **(** :ref:`float<class_float>` amount  **)**
+
+.. _class_ParticlesMaterial_set_gravity:
+
+- void  **set_gravity**  **(** :ref:`Vector3<class_vector3>` accel_vec  **)**
 
 .. _class_ParticlesMaterial_set_param:
 

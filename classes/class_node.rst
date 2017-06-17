@@ -35,7 +35,7 @@ Member Functions
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`_unhandled_input<class_Node__unhandled_input>`  **(** :ref:`InputEvent<class_inputevent>` event  **)** virtual                                                            |
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`_unhandled_key_input<class_Node__unhandled_key_input>`  **(** :ref:`InputEvent<class_inputevent>` key_event  **)** virtual                                                |
+| void                               | :ref:`_unhandled_key_input<class_Node__unhandled_key_input>`  **(** :ref:`InputEventKey<class_inputeventkey>` event  **)** virtual                                              |
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`add_child<class_Node_add_child>`  **(** :ref:`Node<class_node>` node, :ref:`bool<class_bool>` legible_unique_name=false  **)**                                            |
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -194,6 +194,8 @@ Signals
 -------
 
 -  **renamed**  **(** **)**
+Emitted when the node is renamed.
+
 -  **tree_entered**  **(** **)**
 -  **tree_exited**  **(** **)**
 
@@ -296,10 +298,6 @@ Corresponds to the NOTIFICATION_FIXED_PROCESS notification in :ref:`Object._noti
 
 - void  **_input**  **(** :ref:`InputEvent<class_inputevent>` event  **)** virtual
 
-Called for every input event.
-
-It has to be enabled with :ref:`set_process_input<class_Node_set_process_input>` or the corresponding property in the inspector.
-
 .. _class_Node__process:
 
 - void  **_process**  **(** :ref:`float<class_float>` delta  **)** virtual
@@ -322,17 +320,9 @@ Corresponds to the NOTIFICATION_READY notification in :ref:`Object._notification
 
 - void  **_unhandled_input**  **(** :ref:`InputEvent<class_inputevent>` event  **)** virtual
 
-Called for every input event that has not already been handled by another node.
-
-It has to be enabled with :ref:`set_process_unhandled_input<class_Node_set_process_unhandled_input>` or the corresponding property in the inspector.
-
 .. _class_Node__unhandled_key_input:
 
-- void  **_unhandled_key_input**  **(** :ref:`InputEvent<class_inputevent>` key_event  **)** virtual
-
-Called for every *key* input event that has not already been handled by another node.
-
-It has to be enabled with :ref:`set_process_unhandled_key_input<class_Node_set_process_unhandled_key_input>` or the corresponding property in the inspector.
+- void  **_unhandled_key_input**  **(** :ref:`InputEventKey<class_inputeventkey>` event  **)** virtual
 
 .. _class_Node_add_child:
 

@@ -8,7 +8,7 @@ Resource
 
 **Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`Theme<class_theme>`, :ref:`AudioStream<class_audiostream>`, :ref:`RegEx<class_regex>`, :ref:`CubeMap<class_cubemap>`, :ref:`DynamicFontData<class_dynamicfontdata>`, :ref:`SpriteFrames<class_spriteframes>`, :ref:`Translation<class_translation>`, :ref:`Curve2D<class_curve2d>`, :ref:`Shape<class_shape>`, :ref:`Shape2D<class_shape2d>`, :ref:`Shader<class_shader>`, :ref:`ColorRamp<class_colorramp>`, :ref:`StyleBox<class_stylebox>`, :ref:`Material<class_material>`, :ref:`VideoStream<class_videostream>`, :ref:`RoomBounds<class_roombounds>`, :ref:`PackedScene<class_packedscene>`, :ref:`Texture<class_texture>`, :ref:`Script<class_script>`, :ref:`OccluderPolygon2D<class_occluderpolygon2d>`, :ref:`Mesh<class_mesh>`, :ref:`ButtonGroup<class_buttongroup>`, :ref:`TileSet<class_tileset>`, :ref:`ShortCut<class_shortcut>`, :ref:`BitMap<class_bitmap>`, :ref:`Animation<class_animation>`, :ref:`PolygonPathFinder<class_polygonpathfinder>`, :ref:`SkyBox<class_skybox>`, :ref:`AudioBusLayout<class_audiobuslayout>`, :ref:`World<class_world>`, :ref:`AudioEffect<class_audioeffect>`, :ref:`DLLibrary<class_dllibrary>`, :ref:`VisualScriptNode<class_visualscriptnode>`, :ref:`World2D<class_world2d>`, :ref:`GIProbeData<class_giprobedata>`, :ref:`Font<class_font>`, :ref:`MeshLibrary<class_meshlibrary>`, :ref:`Curve3D<class_curve3d>`, :ref:`NavigationPolygon<class_navigationpolygon>`, :ref:`EditorSettings<class_editorsettings>`, :ref:`Environment<class_environment>`, :ref:`MultiMesh<class_multimesh>`, :ref:`PackedDataContainer<class_packeddatacontainer>`, :ref:`NavigationMesh<class_navigationmesh>`
+**Inherited By:** :ref:`Theme<class_theme>`, :ref:`AudioStream<class_audiostream>`, :ref:`Sky<class_sky>`, :ref:`CubeMap<class_cubemap>`, :ref:`DynamicFontData<class_dynamicfontdata>`, :ref:`SpriteFrames<class_spriteframes>`, :ref:`Translation<class_translation>`, :ref:`Curve2D<class_curve2d>`, :ref:`Shape<class_shape>`, :ref:`Shape2D<class_shape2d>`, :ref:`StyleBox<class_stylebox>`, :ref:`GDNativeLibrary<class_gdnativelibrary>`, :ref:`Material<class_material>`, :ref:`VideoStream<class_videostream>`, :ref:`RoomBounds<class_roombounds>`, :ref:`Texture<class_texture>`, :ref:`PackedScene<class_packedscene>`, :ref:`OccluderPolygon2D<class_occluderpolygon2d>`, :ref:`Mesh<class_mesh>`, :ref:`ButtonGroup<class_buttongroup>`, :ref:`TileSet<class_tileset>`, :ref:`ShortCut<class_shortcut>`, :ref:`BitMap<class_bitmap>`, :ref:`Animation<class_animation>`, :ref:`Script<class_script>`, :ref:`PolygonPathFinder<class_polygonpathfinder>`, :ref:`Shader<class_shader>`, :ref:`AudioBusLayout<class_audiobuslayout>`, :ref:`World<class_world>`, :ref:`RegEx<class_regex>`, :ref:`AudioEffect<class_audioeffect>`, :ref:`VisualScriptNode<class_visualscriptnode>`, :ref:`World2D<class_world2d>`, :ref:`GIProbeData<class_giprobedata>`, :ref:`Font<class_font>`, :ref:`MeshLibrary<class_meshlibrary>`, :ref:`Curve3D<class_curve3d>`, :ref:`NavigationPolygon<class_navigationpolygon>`, :ref:`InputEvent<class_inputevent>`, :ref:`EditorSettings<class_editorsettings>`, :ref:`Image<class_image>`, :ref:`Gradient<class_gradient>`, :ref:`Environment<class_environment>`, :ref:`MultiMesh<class_multimesh>`, :ref:`PackedDataContainer<class_packeddatacontainer>`, :ref:`NavigationMesh<class_navigationmesh>`
 
 **Category:** Core
 
@@ -23,7 +23,7 @@ Member Functions
 +------------------------------+-----------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`_setup_local_to_scene<class_Resource__setup_local_to_scene>`  **(** **)** virtual                   |
 +------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`  | :ref:`duplicate<class_Resource_duplicate>`  **(** :ref:`bool<class_bool>` subresources=false  **)**       |
+| :ref:`Object<class_object>`  | :ref:`duplicate<class_Resource_duplicate>`  **(** :ref:`bool<class_bool>` subresources=false  **)** const |
 +------------------------------+-----------------------------------------------------------------------------------------------------------+
 | :ref:`Node<class_node>`      | :ref:`get_local_scene<class_Resource_get_local_scene>`  **(** **)** const                                 |
 +------------------------------+-----------------------------------------------------------------------------------------------------------+
@@ -72,7 +72,7 @@ Member Function Description
 
 .. _class_Resource_duplicate:
 
-- :ref:`Object<class_object>`  **duplicate**  **(** :ref:`bool<class_bool>` subresources=false  **)**
+- :ref:`Object<class_object>`  **duplicate**  **(** :ref:`bool<class_bool>` subresources=false  **)** const
 
 .. _class_Resource_get_local_scene:
 

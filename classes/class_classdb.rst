@@ -31,6 +31,8 @@ Member Functions
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_array>`                      | :ref:`class_get_method_list<class_ClassDB_class_get_method_list>`  **(** :ref:`String<class_string>` class, :ref:`bool<class_bool>` no_inheritance=false  **)** const                           |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_variant>`                  | :ref:`class_get_property<class_ClassDB_class_get_property>`  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property  **)** const                                        |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_array>`                      | :ref:`class_get_property_list<class_ClassDB_class_get_property_list>`  **(** :ref:`String<class_string>` class, :ref:`bool<class_bool>` no_inheritance=false  **)** const                       |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_dictionary>`            | :ref:`class_get_signal<class_ClassDB_class_get_signal>`  **(** :ref:`String<class_string>` class, :ref:`String<class_string>` signal  **)** const                                               |
@@ -42,6 +44,8 @@ Member Functions
 | :ref:`bool<class_bool>`                        | :ref:`class_has_method<class_ClassDB_class_has_method>`  **(** :ref:`String<class_string>` class, :ref:`String<class_string>` method, :ref:`bool<class_bool>` no_inheritance=false  **)** const |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`class_has_signal<class_ClassDB_class_has_signal>`  **(** :ref:`String<class_string>` class, :ref:`String<class_string>` signal  **)** const                                               |
++------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Error                                          | :ref:`class_set_property<class_ClassDB_class_set_property>`  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value  **)** const   |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_class_list<class_ClassDB_get_class_list>`  **(** **)** const                                                                                                                          |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -83,6 +87,10 @@ Member Function Description
 
 - :ref:`Array<class_array>`  **class_get_method_list**  **(** :ref:`String<class_string>` class, :ref:`bool<class_bool>` no_inheritance=false  **)** const
 
+.. _class_ClassDB_class_get_property:
+
+- :ref:`Variant<class_variant>`  **class_get_property**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property  **)** const
+
 .. _class_ClassDB_class_get_property_list:
 
 - :ref:`Array<class_array>`  **class_get_property_list**  **(** :ref:`String<class_string>` class, :ref:`bool<class_bool>` no_inheritance=false  **)** const
@@ -106,6 +114,10 @@ Member Function Description
 .. _class_ClassDB_class_has_signal:
 
 - :ref:`bool<class_bool>`  **class_has_signal**  **(** :ref:`String<class_string>` class, :ref:`String<class_string>` signal  **)** const
+
+.. _class_ClassDB_class_set_property:
+
+- Error  **class_set_property**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value  **)** const
 
 .. _class_ClassDB_get_class_list:
 

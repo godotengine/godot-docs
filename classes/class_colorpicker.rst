@@ -38,6 +38,8 @@ Signals
 -------
 
 -  **color_changed**  **(** :ref:`Color<class_color>` color  **)**
+Emitted when the color is changed.
+
 
 Description
 -----------

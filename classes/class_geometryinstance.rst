@@ -8,7 +8,7 @@ GeometryInstance
 
 **Inherits:** :ref:`VisualInstance<class_visualinstance>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`MultiMeshInstance<class_multimeshinstance>`, :ref:`SpriteBase3D<class_spritebase3d>`, :ref:`MeshInstance<class_meshinstance>`, :ref:`Particles<class_particles>`, :ref:`Quad<class_quad>`, :ref:`TestCube<class_testcube>`, :ref:`ImmediateGeometry<class_immediategeometry>`
+**Inherited By:** :ref:`MultiMeshInstance<class_multimeshinstance>`, :ref:`SpriteBase3D<class_spritebase3d>`, :ref:`MeshInstance<class_meshinstance>`, :ref:`Particles<class_particles>`, :ref:`ImmediateGeometry<class_immediategeometry>`
 
 **Category:** Core
 

@@ -75,7 +75,7 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`is_mouse_button_pressed<class_Input_is_mouse_button_pressed>`  **(** :ref:`int<class_int>` button  **)** const                                                                                                               |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`parse_input_event<class_Input_parse_input_event>`  **(** :ref:`InputEvent<class_inputevent>` event  **)**                                                                                                                    |
+| void                           | :ref:`parse_input_event<class_Input_parse_input_event>`  **(** :ref:`Object<class_object>` event  **)**                                                                                                                            |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`remove_joy_mapping<class_Input_remove_joy_mapping>`  **(** :ref:`String<class_string>` guid  **)**                                                                                                                           |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -94,6 +94,8 @@ Signals
 -------
 
 -  **joy_connection_changed**  **(** :ref:`int<class_int>` index, :ref:`bool<class_bool>` connected  **)**
+Emitted when a joypad device has been connected or disconnected
+
 
 Numeric Constants
 -----------------
@@ -261,7 +263,7 @@ Returns true or false depending on whether mouse button is pressed or not. You c
 
 .. _class_Input_parse_input_event:
 
-- void  **parse_input_event**  **(** :ref:`InputEvent<class_inputevent>` event  **)**
+- void  **parse_input_event**  **(** :ref:`Object<class_object>` event  **)**
 
 .. _class_Input_remove_joy_mapping:
 

@@ -27,7 +27,7 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`add_lines<class_EditorSpatialGizmo_add_lines>`  **(** :ref:`PoolVector3Array<class_poolvector3array>` lines, :ref:`Material<class_material>` material, :ref:`bool<class_bool>` billboard=false  **)**      |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`add_mesh<class_EditorSpatialGizmo_add_mesh>`  **(** :ref:`Mesh<class_mesh>` mesh, :ref:`bool<class_bool>` billboard=false, :ref:`RID<class_rid>` skeleton=RID()  **)**                                     |
+| void                           | :ref:`add_mesh<class_EditorSpatialGizmo_add_mesh>`  **(** :ref:`Mesh<class_mesh>` mesh, :ref:`bool<class_bool>` billboard=false, :ref:`RID<class_rid>` skeleton=[RID]  **)**                                     |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`add_unscaled_billboard<class_EditorSpatialGizmo_add_unscaled_billboard>`  **(** :ref:`Material<class_material>` material, :ref:`float<class_float>` default_scale=1  **)**                                 |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -80,7 +80,7 @@ Add lines to the gizmo (as sets of 2 points), with a given material. The lines a
 
 .. _class_EditorSpatialGizmo_add_mesh:
 
-- void  **add_mesh**  **(** :ref:`Mesh<class_mesh>` mesh, :ref:`bool<class_bool>` billboard=false, :ref:`RID<class_rid>` skeleton=RID()  **)**
+- void  **add_mesh**  **(** :ref:`Mesh<class_mesh>` mesh, :ref:`bool<class_bool>` billboard=false, :ref:`RID<class_rid>` skeleton=[RID]  **)**
 
 Add a mesh to the gizmo, this is used for visualization. Call this function during :ref:`redraw<class_EditorSpatialGizmo_redraw>`.
 

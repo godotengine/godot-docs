@@ -31,7 +31,7 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_ambient_light_energy<class_Environment_get_ambient_light_energy>`  **(** **)** const                                                       |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_ambient_light_skybox_contribution<class_Environment_get_ambient_light_skybox_contribution>`  **(** **)** const                             |
+| :ref:`float<class_float>`      | :ref:`get_ambient_light_sky_contribution<class_Environment_get_ambient_light_sky_contribution>`  **(** **)** const                                   |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_background<class_Environment_get_background>`  **(** **)** const                                                                           |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -57,6 +57,24 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_dof_blur_near_transition<class_Environment_get_dof_blur_near_transition>`  **(** **)** const                                               |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`      | :ref:`get_fog_color<class_Environment_get_fog_color>`  **(** **)** const                                                                             |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_fog_depth_begin<class_Environment_get_fog_depth_begin>`  **(** **)** const                                                                 |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_fog_depth_curve<class_Environment_get_fog_depth_curve>`  **(** **)** const                                                                 |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_fog_height_curve<class_Environment_get_fog_height_curve>`  **(** **)** const                                                               |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_fog_height_max<class_Environment_get_fog_height_max>`  **(** **)** const                                                                   |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_fog_height_min<class_Environment_get_fog_height_min>`  **(** **)** const                                                                   |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_fog_sun_amount<class_Environment_get_fog_sun_amount>`  **(** **)** const                                                                   |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`      | :ref:`get_fog_sun_color<class_Environment_get_fog_sun_color>`  **(** **)** const                                                                     |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_fog_transmit_curve<class_Environment_get_fog_transmit_curve>`  **(** **)** const                                                           |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_glow_blend_mode<class_Environment_get_glow_blend_mode>`  **(** **)** const                                                                 |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_glow_bloom<class_Environment_get_glow_bloom>`  **(** **)** const                                                                           |
@@ -69,9 +87,9 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_glow_strength<class_Environment_get_glow_strength>`  **(** **)** const                                                                     |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`CubeMap<class_cubemap>`  | :ref:`get_skybox<class_Environment_get_skybox>`  **(** **)** const                                                                                   |
+| :ref:`CubeMap<class_cubemap>`  | :ref:`get_sky<class_Environment_get_sky>`  **(** **)** const                                                                                         |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_skybox_scale<class_Environment_get_skybox_scale>`  **(** **)** const                                                                       |
+| :ref:`float<class_float>`      | :ref:`get_sky_scale<class_Environment_get_sky_scale>`  **(** **)** const                                                                             |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_ssao_bias<class_Environment_get_ssao_bias>`  **(** **)** const                                                                             |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -87,11 +105,11 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_ssao_radius2<class_Environment_get_ssao_radius2>`  **(** **)** const                                                                       |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_ssr_accel<class_Environment_get_ssr_accel>`  **(** **)** const                                                                             |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_ssr_depth_tolerance<class_Environment_get_ssr_depth_tolerance>`  **(** **)** const                                                         |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_ssr_fade<class_Environment_get_ssr_fade>`  **(** **)** const                                                                               |
+| :ref:`float<class_float>`      | :ref:`get_ssr_fade_in<class_Environment_get_ssr_fade_in>`  **(** **)** const                                                                         |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_ssr_fade_out<class_Environment_get_ssr_fade_out>`  **(** **)** const                                                                       |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_ssr_max_steps<class_Environment_get_ssr_max_steps>`  **(** **)** const                                                                     |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -117,6 +135,14 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`is_dof_blur_near_enabled<class_Environment_is_dof_blur_near_enabled>`  **(** **)** const                                                       |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_fog_depth_enabled<class_Environment_is_fog_depth_enabled>`  **(** **)** const                                                               |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_fog_enabled<class_Environment_is_fog_enabled>`  **(** **)** const                                                                           |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_fog_height_enabled<class_Environment_is_fog_height_enabled>`  **(** **)** const                                                             |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_fog_transmit_enabled<class_Environment_is_fog_transmit_enabled>`  **(** **)** const                                                         |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`is_glow_bicubic_upscale_enabled<class_Environment_is_glow_bicubic_upscale_enabled>`  **(** **)** const                                         |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`is_glow_enabled<class_Environment_is_glow_enabled>`  **(** **)** const                                                                         |
@@ -130,8 +156,6 @@ Member Functions
 | :ref:`bool<class_bool>`        | :ref:`is_ssr_enabled<class_Environment_is_ssr_enabled>`  **(** **)** const                                                                           |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`is_ssr_rough<class_Environment_is_ssr_rough>`  **(** **)** const                                                                               |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_ssr_smooth<class_Environment_is_ssr_smooth>`  **(** **)** const                                                                             |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_adjustment_brightness<class_Environment_set_adjustment_brightness>`  **(** :ref:`float<class_float>` brightness  **)**                     |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -147,7 +171,7 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_ambient_light_energy<class_Environment_set_ambient_light_energy>`  **(** :ref:`float<class_float>` energy  **)**                           |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_ambient_light_skybox_contribution<class_Environment_set_ambient_light_skybox_contribution>`  **(** :ref:`float<class_float>` energy  **)** |
+| void                           | :ref:`set_ambient_light_sky_contribution<class_Environment_set_ambient_light_sky_contribution>`  **(** :ref:`float<class_float>` energy  **)**       |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_background<class_Environment_set_background>`  **(** :ref:`int<class_int>` mode  **)**                                                     |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -177,6 +201,32 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_dof_blur_near_transition<class_Environment_set_dof_blur_near_transition>`  **(** :ref:`float<class_float>` intensity  **)**                |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_fog_color<class_Environment_set_fog_color>`  **(** :ref:`Color<class_color>` color  **)**                                                  |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_fog_depth_begin<class_Environment_set_fog_depth_begin>`  **(** :ref:`float<class_float>` distance  **)**                                   |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_fog_depth_curve<class_Environment_set_fog_depth_curve>`  **(** :ref:`float<class_float>` curve  **)**                                      |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_fog_depth_enabled<class_Environment_set_fog_depth_enabled>`  **(** :ref:`bool<class_bool>` enabled  **)**                                  |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_fog_enabled<class_Environment_set_fog_enabled>`  **(** :ref:`bool<class_bool>` enabled  **)**                                              |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_fog_height_curve<class_Environment_set_fog_height_curve>`  **(** :ref:`float<class_float>` curve  **)**                                    |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_fog_height_enabled<class_Environment_set_fog_height_enabled>`  **(** :ref:`bool<class_bool>` enabled  **)**                                |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_fog_height_max<class_Environment_set_fog_height_max>`  **(** :ref:`float<class_float>` height  **)**                                       |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_fog_height_min<class_Environment_set_fog_height_min>`  **(** :ref:`float<class_float>` height  **)**                                       |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_fog_sun_amount<class_Environment_set_fog_sun_amount>`  **(** :ref:`float<class_float>` amount  **)**                                       |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_fog_sun_color<class_Environment_set_fog_sun_color>`  **(** :ref:`Color<class_color>` color  **)**                                          |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_fog_transmit_curve<class_Environment_set_fog_transmit_curve>`  **(** :ref:`float<class_float>` curve  **)**                                |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_fog_transmit_enabled<class_Environment_set_fog_transmit_enabled>`  **(** :ref:`bool<class_bool>` enabled  **)**                            |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_glow_bicubic_upscale<class_Environment_set_glow_bicubic_upscale>`  **(** :ref:`bool<class_bool>` enabled  **)**                            |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_glow_blend_mode<class_Environment_set_glow_blend_mode>`  **(** :ref:`int<class_int>` mode  **)**                                           |
@@ -195,9 +245,9 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_glow_strength<class_Environment_set_glow_strength>`  **(** :ref:`float<class_float>` strength  **)**                                       |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_skybox<class_Environment_set_skybox>`  **(** :ref:`CubeMap<class_cubemap>` skybox  **)**                                                   |
+| void                           | :ref:`set_sky<class_Environment_set_sky>`  **(** :ref:`CubeMap<class_cubemap>` sky  **)**                                                            |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_skybox_scale<class_Environment_set_skybox_scale>`  **(** :ref:`float<class_float>` scale  **)**                                            |
+| void                           | :ref:`set_sky_scale<class_Environment_set_sky_scale>`  **(** :ref:`float<class_float>` scale  **)**                                                  |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_ssao_bias<class_Environment_set_ssao_bias>`  **(** :ref:`float<class_float>` bias  **)**                                                   |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -217,19 +267,17 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_ssao_radius2<class_Environment_set_ssao_radius2>`  **(** :ref:`float<class_float>` radius  **)**                                           |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_ssr_accel<class_Environment_set_ssr_accel>`  **(** :ref:`float<class_float>` accel  **)**                                                  |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_ssr_depth_tolerance<class_Environment_set_ssr_depth_tolerance>`  **(** :ref:`float<class_float>` depth_tolerance  **)**                    |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_ssr_enabled<class_Environment_set_ssr_enabled>`  **(** :ref:`bool<class_bool>` enabled  **)**                                              |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_ssr_fade<class_Environment_set_ssr_fade>`  **(** :ref:`float<class_float>` fade  **)**                                                     |
+| void                           | :ref:`set_ssr_fade_in<class_Environment_set_ssr_fade_in>`  **(** :ref:`float<class_float>` fade_in  **)**                                            |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_ssr_fade_out<class_Environment_set_ssr_fade_out>`  **(** :ref:`float<class_float>` fade_out  **)**                                         |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_ssr_max_steps<class_Environment_set_ssr_max_steps>`  **(** :ref:`int<class_int>` max_steps  **)**                                          |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_ssr_rough<class_Environment_set_ssr_rough>`  **(** :ref:`bool<class_bool>` rough  **)**                                                    |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_ssr_smooth<class_Environment_set_ssr_smooth>`  **(** :ref:`bool<class_bool>` smooth  **)**                                                 |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_tonemap_auto_exposure<class_Environment_set_tonemap_auto_exposure>`  **(** :ref:`bool<class_bool>` auto_exposure  **)**                    |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -258,18 +306,18 @@ Member Variables
 - :ref:`float<class_float>` **adjustment_saturation**
 - :ref:`Color<class_color>` **ambient_light_color**
 - :ref:`float<class_float>` **ambient_light_energy**
-- :ref:`float<class_float>` **ambient_light_skybox_contribution**
-- :ref:`bool<class_bool>` **auto_expoure_enabled**
-- :ref:`float<class_float>` **auto_expoure_max_luma**
-- :ref:`float<class_float>` **auto_expoure_min_luma**
-- :ref:`float<class_float>` **auto_expoure_scale**
-- :ref:`float<class_float>` **auto_expoure_speed**
+- :ref:`float<class_float>` **ambient_light_sky_contribution**
+- :ref:`bool<class_bool>` **auto_exposure_enabled**
+- :ref:`float<class_float>` **auto_exposure_max_luma**
+- :ref:`float<class_float>` **auto_exposure_min_luma**
+- :ref:`float<class_float>` **auto_exposure_scale**
+- :ref:`float<class_float>` **auto_exposure_speed**
 - :ref:`int<class_int>` **background_canvas_max_layer**
 - :ref:`Color<class_color>` **background_color**
 - :ref:`float<class_float>` **background_energy**
 - :ref:`int<class_int>` **background_mode**
-- :ref:`SkyBox<class_skybox>` **background_skybox**
-- :ref:`float<class_float>` **background_skybox_scale**
+- :ref:`Sky<class_sky>` **background_sky**
+- :ref:`float<class_float>` **background_sky_scale**
 - :ref:`float<class_float>` **dof_blur_far_amount**
 - :ref:`float<class_float>` **dof_blur_far_distance**
 - :ref:`bool<class_bool>` **dof_blur_far_enabled**
@@ -280,6 +328,19 @@ Member Variables
 - :ref:`bool<class_bool>` **dof_blur_near_enabled**
 - :ref:`int<class_int>` **dof_blur_near_quality**
 - :ref:`float<class_float>` **dof_blur_near_transition**
+- :ref:`Color<class_color>` **fog_color**
+- :ref:`float<class_float>` **fog_depth_begin**
+- :ref:`float<class_float>` **fog_depth_curve**
+- :ref:`bool<class_bool>` **fog_depth_enabled**
+- :ref:`bool<class_bool>` **fog_enabled**
+- :ref:`float<class_float>` **fog_height_curve**
+- :ref:`bool<class_bool>` **fog_height_enabled**
+- :ref:`float<class_float>` **fog_height_max**
+- :ref:`float<class_float>` **fog_height_min**
+- :ref:`float<class_float>` **fog_sun_amount**
+- :ref:`Color<class_color>` **fog_sun_color**
+- :ref:`float<class_float>` **fog_transmit_curve**
+- :ref:`bool<class_bool>` **fog_transmit_enabled**
 - :ref:`bool<class_bool>` **glow_bicubic_upscale**
 - :ref:`int<class_int>` **glow_blend_mode**
 - :ref:`float<class_float>` **glow_bloom**
@@ -295,11 +356,10 @@ Member Variables
 - :ref:`bool<class_bool>` **glow_levels/6**
 - :ref:`bool<class_bool>` **glow_levels/7**
 - :ref:`float<class_float>` **glow_strength**
-- :ref:`float<class_float>` **ss_reflections_accel**
-- :ref:`bool<class_bool>` **ss_reflections_accel_smooth**
 - :ref:`float<class_float>` **ss_reflections_depth_tolerance**
 - :ref:`bool<class_bool>` **ss_reflections_enabled**
-- :ref:`float<class_float>` **ss_reflections_fade**
+- :ref:`float<class_float>` **ss_reflections_fade_in**
+- :ref:`float<class_float>` **ss_reflections_fade_out**
 - :ref:`int<class_int>` **ss_reflections_max_steps**
 - :ref:`bool<class_bool>` **ss_reflections_roughness**
 - :ref:`float<class_float>` **ssao_bias**
@@ -321,7 +381,7 @@ Numeric Constants
 - **BG_KEEP** = **4**
 - **BG_CLEAR_COLOR** = **0**
 - **BG_COLOR** = **1**
-- **BG_SKYBOX** = **2**
+- **BG_SKY** = **2**
 - **BG_CANVAS** = **3**
 - **BG_MAX** = **5**
 - **GLOW_BLEND_MODE_ADDITIVE** = **0**
@@ -363,9 +423,9 @@ Member Function Description
 
 - :ref:`float<class_float>`  **get_ambient_light_energy**  **(** **)** const
 
-.. _class_Environment_get_ambient_light_skybox_contribution:
+.. _class_Environment_get_ambient_light_sky_contribution:
 
-- :ref:`float<class_float>`  **get_ambient_light_skybox_contribution**  **(** **)** const
+- :ref:`float<class_float>`  **get_ambient_light_sky_contribution**  **(** **)** const
 
 .. _class_Environment_get_background:
 
@@ -415,6 +475,42 @@ Member Function Description
 
 - :ref:`float<class_float>`  **get_dof_blur_near_transition**  **(** **)** const
 
+.. _class_Environment_get_fog_color:
+
+- :ref:`Color<class_color>`  **get_fog_color**  **(** **)** const
+
+.. _class_Environment_get_fog_depth_begin:
+
+- :ref:`float<class_float>`  **get_fog_depth_begin**  **(** **)** const
+
+.. _class_Environment_get_fog_depth_curve:
+
+- :ref:`float<class_float>`  **get_fog_depth_curve**  **(** **)** const
+
+.. _class_Environment_get_fog_height_curve:
+
+- :ref:`float<class_float>`  **get_fog_height_curve**  **(** **)** const
+
+.. _class_Environment_get_fog_height_max:
+
+- :ref:`float<class_float>`  **get_fog_height_max**  **(** **)** const
+
+.. _class_Environment_get_fog_height_min:
+
+- :ref:`float<class_float>`  **get_fog_height_min**  **(** **)** const
+
+.. _class_Environment_get_fog_sun_amount:
+
+- :ref:`float<class_float>`  **get_fog_sun_amount**  **(** **)** const
+
+.. _class_Environment_get_fog_sun_color:
+
+- :ref:`Color<class_color>`  **get_fog_sun_color**  **(** **)** const
+
+.. _class_Environment_get_fog_transmit_curve:
+
+- :ref:`float<class_float>`  **get_fog_transmit_curve**  **(** **)** const
+
 .. _class_Environment_get_glow_blend_mode:
 
 - :ref:`int<class_int>`  **get_glow_blend_mode**  **(** **)** const
@@ -439,13 +535,13 @@ Member Function Description
 
 - :ref:`float<class_float>`  **get_glow_strength**  **(** **)** const
 
-.. _class_Environment_get_skybox:
+.. _class_Environment_get_sky:
 
-- :ref:`CubeMap<class_cubemap>`  **get_skybox**  **(** **)** const
+- :ref:`CubeMap<class_cubemap>`  **get_sky**  **(** **)** const
 
-.. _class_Environment_get_skybox_scale:
+.. _class_Environment_get_sky_scale:
 
-- :ref:`float<class_float>`  **get_skybox_scale**  **(** **)** const
+- :ref:`float<class_float>`  **get_sky_scale**  **(** **)** const
 
 .. _class_Environment_get_ssao_bias:
 
@@ -475,17 +571,17 @@ Member Function Description
 
 - :ref:`float<class_float>`  **get_ssao_radius2**  **(** **)** const
 
-.. _class_Environment_get_ssr_accel:
-
-- :ref:`float<class_float>`  **get_ssr_accel**  **(** **)** const
-
 .. _class_Environment_get_ssr_depth_tolerance:
 
 - :ref:`float<class_float>`  **get_ssr_depth_tolerance**  **(** **)** const
 
-.. _class_Environment_get_ssr_fade:
+.. _class_Environment_get_ssr_fade_in:
 
-- :ref:`float<class_float>`  **get_ssr_fade**  **(** **)** const
+- :ref:`float<class_float>`  **get_ssr_fade_in**  **(** **)** const
+
+.. _class_Environment_get_ssr_fade_out:
+
+- :ref:`float<class_float>`  **get_ssr_fade_out**  **(** **)** const
 
 .. _class_Environment_get_ssr_max_steps:
 
@@ -535,6 +631,22 @@ Member Function Description
 
 - :ref:`bool<class_bool>`  **is_dof_blur_near_enabled**  **(** **)** const
 
+.. _class_Environment_is_fog_depth_enabled:
+
+- :ref:`bool<class_bool>`  **is_fog_depth_enabled**  **(** **)** const
+
+.. _class_Environment_is_fog_enabled:
+
+- :ref:`bool<class_bool>`  **is_fog_enabled**  **(** **)** const
+
+.. _class_Environment_is_fog_height_enabled:
+
+- :ref:`bool<class_bool>`  **is_fog_height_enabled**  **(** **)** const
+
+.. _class_Environment_is_fog_transmit_enabled:
+
+- :ref:`bool<class_bool>`  **is_fog_transmit_enabled**  **(** **)** const
+
 .. _class_Environment_is_glow_bicubic_upscale_enabled:
 
 - :ref:`bool<class_bool>`  **is_glow_bicubic_upscale_enabled**  **(** **)** const
@@ -562,10 +674,6 @@ Member Function Description
 .. _class_Environment_is_ssr_rough:
 
 - :ref:`bool<class_bool>`  **is_ssr_rough**  **(** **)** const
-
-.. _class_Environment_is_ssr_smooth:
-
-- :ref:`bool<class_bool>`  **is_ssr_smooth**  **(** **)** const
 
 .. _class_Environment_set_adjustment_brightness:
 
@@ -595,9 +703,9 @@ Member Function Description
 
 - void  **set_ambient_light_energy**  **(** :ref:`float<class_float>` energy  **)**
 
-.. _class_Environment_set_ambient_light_skybox_contribution:
+.. _class_Environment_set_ambient_light_sky_contribution:
 
-- void  **set_ambient_light_skybox_contribution**  **(** :ref:`float<class_float>` energy  **)**
+- void  **set_ambient_light_sky_contribution**  **(** :ref:`float<class_float>` energy  **)**
 
 .. _class_Environment_set_background:
 
@@ -655,6 +763,58 @@ Member Function Description
 
 - void  **set_dof_blur_near_transition**  **(** :ref:`float<class_float>` intensity  **)**
 
+.. _class_Environment_set_fog_color:
+
+- void  **set_fog_color**  **(** :ref:`Color<class_color>` color  **)**
+
+.. _class_Environment_set_fog_depth_begin:
+
+- void  **set_fog_depth_begin**  **(** :ref:`float<class_float>` distance  **)**
+
+.. _class_Environment_set_fog_depth_curve:
+
+- void  **set_fog_depth_curve**  **(** :ref:`float<class_float>` curve  **)**
+
+.. _class_Environment_set_fog_depth_enabled:
+
+- void  **set_fog_depth_enabled**  **(** :ref:`bool<class_bool>` enabled  **)**
+
+.. _class_Environment_set_fog_enabled:
+
+- void  **set_fog_enabled**  **(** :ref:`bool<class_bool>` enabled  **)**
+
+.. _class_Environment_set_fog_height_curve:
+
+- void  **set_fog_height_curve**  **(** :ref:`float<class_float>` curve  **)**
+
+.. _class_Environment_set_fog_height_enabled:
+
+- void  **set_fog_height_enabled**  **(** :ref:`bool<class_bool>` enabled  **)**
+
+.. _class_Environment_set_fog_height_max:
+
+- void  **set_fog_height_max**  **(** :ref:`float<class_float>` height  **)**
+
+.. _class_Environment_set_fog_height_min:
+
+- void  **set_fog_height_min**  **(** :ref:`float<class_float>` height  **)**
+
+.. _class_Environment_set_fog_sun_amount:
+
+- void  **set_fog_sun_amount**  **(** :ref:`float<class_float>` amount  **)**
+
+.. _class_Environment_set_fog_sun_color:
+
+- void  **set_fog_sun_color**  **(** :ref:`Color<class_color>` color  **)**
+
+.. _class_Environment_set_fog_transmit_curve:
+
+- void  **set_fog_transmit_curve**  **(** :ref:`float<class_float>` curve  **)**
+
+.. _class_Environment_set_fog_transmit_enabled:
+
+- void  **set_fog_transmit_enabled**  **(** :ref:`bool<class_bool>` enabled  **)**
+
 .. _class_Environment_set_glow_bicubic_upscale:
 
 - void  **set_glow_bicubic_upscale**  **(** :ref:`bool<class_bool>` enabled  **)**
@@ -691,13 +851,13 @@ Member Function Description
 
 - void  **set_glow_strength**  **(** :ref:`float<class_float>` strength  **)**
 
-.. _class_Environment_set_skybox:
+.. _class_Environment_set_sky:
 
-- void  **set_skybox**  **(** :ref:`CubeMap<class_cubemap>` skybox  **)**
+- void  **set_sky**  **(** :ref:`CubeMap<class_cubemap>` sky  **)**
 
-.. _class_Environment_set_skybox_scale:
+.. _class_Environment_set_sky_scale:
 
-- void  **set_skybox_scale**  **(** :ref:`float<class_float>` scale  **)**
+- void  **set_sky_scale**  **(** :ref:`float<class_float>` scale  **)**
 
 .. _class_Environment_set_ssao_bias:
 
@@ -735,10 +895,6 @@ Member Function Description
 
 - void  **set_ssao_radius2**  **(** :ref:`float<class_float>` radius  **)**
 
-.. _class_Environment_set_ssr_accel:
-
-- void  **set_ssr_accel**  **(** :ref:`float<class_float>` accel  **)**
-
 .. _class_Environment_set_ssr_depth_tolerance:
 
 - void  **set_ssr_depth_tolerance**  **(** :ref:`float<class_float>` depth_tolerance  **)**
@@ -747,9 +903,13 @@ Member Function Description
 
 - void  **set_ssr_enabled**  **(** :ref:`bool<class_bool>` enabled  **)**
 
-.. _class_Environment_set_ssr_fade:
+.. _class_Environment_set_ssr_fade_in:
 
-- void  **set_ssr_fade**  **(** :ref:`float<class_float>` fade  **)**
+- void  **set_ssr_fade_in**  **(** :ref:`float<class_float>` fade_in  **)**
+
+.. _class_Environment_set_ssr_fade_out:
+
+- void  **set_ssr_fade_out**  **(** :ref:`float<class_float>` fade_out  **)**
 
 .. _class_Environment_set_ssr_max_steps:
 
@@ -758,10 +918,6 @@ Member Function Description
 .. _class_Environment_set_ssr_rough:
 
 - void  **set_ssr_rough**  **(** :ref:`bool<class_bool>` rough  **)**
-
-.. _class_Environment_set_ssr_smooth:
-
-- void  **set_ssr_smooth**  **(** :ref:`bool<class_bool>` smooth  **)**
 
 .. _class_Environment_set_tonemap_auto_exposure:
 

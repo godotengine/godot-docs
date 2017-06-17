@@ -58,7 +58,11 @@ Signals
 -------
 
 -  **animation_finished**  **(** **)**
+Emitted when the animation is finished (when it plays the last frame). If the animation is looping, this signal is emitted every time the last frame is drawn, before looping.
+
 -  **frame_changed**  **(** **)**
+Emitted when frame is changed.
+
 
 Member Variables
 ----------------

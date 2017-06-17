@@ -37,7 +37,7 @@ Member Functions
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`remove_collision_exception_with<class_PhysicsBody2D_remove_collision_exception_with>`  **(** :ref:`PhysicsBody2D<class_physicsbody2d>` body  **)** |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_collision_layer<class_PhysicsBody2D_set_collision_layer>`  **(** :ref:`int<class_int>` mask  **)**                                             |
+| void                           | :ref:`set_collision_layer<class_PhysicsBody2D_set_collision_layer>`  **(** :ref:`int<class_int>` layer  **)**                                            |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_collision_layer_bit<class_PhysicsBody2D_set_collision_layer_bit>`  **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value  **)**       |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -117,7 +117,7 @@ Removes a body from the collision exception list.
 
 .. _class_PhysicsBody2D_set_collision_layer:
 
-- void  **set_collision_layer**  **(** :ref:`int<class_int>` mask  **)**
+- void  **set_collision_layer**  **(** :ref:`int<class_int>` layer  **)**
 
 Set the physics layers this area is in.
 

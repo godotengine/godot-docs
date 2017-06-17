@@ -19,9 +19,9 @@ Member Functions
 ----------------
 
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`          | :ref:`get_exclude<class_PhysicsShapeQueryParameters_get_exclude>`  **(** **)** const                                                     |
+| :ref:`int<class_int>`              | :ref:`get_collision_layer<class_PhysicsShapeQueryParameters_get_collision_layer>`  **(** **)** const                                     |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`              | :ref:`get_layer_mask<class_PhysicsShapeQueryParameters_get_layer_mask>`  **(** **)** const                                               |
+| :ref:`Array<class_array>`          | :ref:`get_exclude<class_PhysicsShapeQueryParameters_get_exclude>`  **(** **)** const                                                     |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`          | :ref:`get_margin<class_PhysicsShapeQueryParameters_get_margin>`  **(** **)** const                                                       |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
@@ -31,9 +31,9 @@ Member Functions
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform<class_transform>`  | :ref:`get_transform<class_PhysicsShapeQueryParameters_get_transform>`  **(** **)** const                                                 |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_exclude<class_PhysicsShapeQueryParameters_set_exclude>`  **(** :ref:`Array<class_array>` exclude  **)**                        |
+| void                               | :ref:`set_collision_layer<class_PhysicsShapeQueryParameters_set_collision_layer>`  **(** :ref:`int<class_int>` collision_layer  **)**    |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_layer_mask<class_PhysicsShapeQueryParameters_set_layer_mask>`  **(** :ref:`int<class_int>` layer_mask  **)**                   |
+| void                               | :ref:`set_exclude<class_PhysicsShapeQueryParameters_set_exclude>`  **(** :ref:`Array<class_array>` exclude  **)**                        |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_margin<class_PhysicsShapeQueryParameters_set_margin>`  **(** :ref:`float<class_float>` margin  **)**                           |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
@@ -49,13 +49,13 @@ Member Functions
 Member Function Description
 ---------------------------
 
+.. _class_PhysicsShapeQueryParameters_get_collision_layer:
+
+- :ref:`int<class_int>`  **get_collision_layer**  **(** **)** const
+
 .. _class_PhysicsShapeQueryParameters_get_exclude:
 
 - :ref:`Array<class_array>`  **get_exclude**  **(** **)** const
-
-.. _class_PhysicsShapeQueryParameters_get_layer_mask:
-
-- :ref:`int<class_int>`  **get_layer_mask**  **(** **)** const
 
 .. _class_PhysicsShapeQueryParameters_get_margin:
 
@@ -73,13 +73,13 @@ Member Function Description
 
 - :ref:`Transform<class_transform>`  **get_transform**  **(** **)** const
 
+.. _class_PhysicsShapeQueryParameters_set_collision_layer:
+
+- void  **set_collision_layer**  **(** :ref:`int<class_int>` collision_layer  **)**
+
 .. _class_PhysicsShapeQueryParameters_set_exclude:
 
 - void  **set_exclude**  **(** :ref:`Array<class_array>` exclude  **)**
-
-.. _class_PhysicsShapeQueryParameters_set_layer_mask:
-
-- void  **set_layer_mask**  **(** :ref:`int<class_int>` layer_mask  **)**
 
 .. _class_PhysicsShapeQueryParameters_set_margin:
 

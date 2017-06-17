@@ -54,6 +54,7 @@ Signals
 -  **right_button_pressed**  **(** :ref:`int<class_int>` tab  **)**
 -  **tab_changed**  **(** :ref:`int<class_int>` tab  **)**
 -  **tab_close**  **(** :ref:`int<class_int>` tab  **)**
+-  **tab_hover**  **(** :ref:`int<class_int>` tab  **)**
 
 Member Variables
 ----------------

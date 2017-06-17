@@ -25,9 +25,9 @@ Member Functions
 +--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_dictionary>`  | :ref:`get_rest_info<class_Physics2DDirectSpaceState_get_rest_info>`  **(** :ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>` shape  **)**                                                                                                                           |
 +--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`            | :ref:`intersect_point<class_Physics2DDirectSpaceState_intersect_point>`  **(** :ref:`Vector2<class_vector2>` point, :ref:`int<class_int>` max_results=32, :ref:`Array<class_array>` exclude=Array(), :ref:`int<class_int>` layer_mask=2147483647, :ref:`int<class_int>` type_mask=15  **)** |
+| :ref:`Array<class_array>`            | :ref:`intersect_point<class_Physics2DDirectSpaceState_intersect_point>`  **(** :ref:`Vector2<class_vector2>` point, :ref:`int<class_int>` max_results=32, :ref:`Array<class_array>` exclude=[], :ref:`int<class_int>` collision_layer=2147483647, :ref:`int<class_int>` type_mask=15  **)** |
 +--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_dictionary>`  | :ref:`intersect_ray<class_Physics2DDirectSpaceState_intersect_ray>`  **(** :ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to, :ref:`Array<class_array>` exclude=Array(), :ref:`int<class_int>` layer_mask=2147483647, :ref:`int<class_int>` type_mask=15  **)**          |
+| :ref:`Dictionary<class_dictionary>`  | :ref:`intersect_ray<class_Physics2DDirectSpaceState_intersect_ray>`  **(** :ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to, :ref:`Array<class_array>` exclude=[], :ref:`int<class_int>` collision_layer=2147483647, :ref:`int<class_int>` type_mask=15  **)**          |
 +--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_array>`            | :ref:`intersect_shape<class_Physics2DDirectSpaceState_intersect_shape>`  **(** :ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>` shape, :ref:`int<class_int>` max_results=32  **)**                                                                                 |
 +--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -90,7 +90,7 @@ If the shape did not intersect anything, then an empty dictionary (dir.empty()==
 
 .. _class_Physics2DDirectSpaceState_intersect_point:
 
-- :ref:`Array<class_array>`  **intersect_point**  **(** :ref:`Vector2<class_vector2>` point, :ref:`int<class_int>` max_results=32, :ref:`Array<class_array>` exclude=Array(), :ref:`int<class_int>` layer_mask=2147483647, :ref:`int<class_int>` type_mask=15  **)**
+- :ref:`Array<class_array>`  **intersect_point**  **(** :ref:`Vector2<class_vector2>` point, :ref:`int<class_int>` max_results=32, :ref:`Array<class_array>` exclude=[], :ref:`int<class_int>` collision_layer=2147483647, :ref:`int<class_int>` type_mask=15  **)**
 
 Check whether a point is inside any shape. The shapes the point is inside of are returned in an array containing dictionaries with the following fields:
 
@@ -108,7 +108,7 @@ Additionally, the method can take an array of objects or :ref:`RID<class_rid>`s 
 
 .. _class_Physics2DDirectSpaceState_intersect_ray:
 
-- :ref:`Dictionary<class_dictionary>`  **intersect_ray**  **(** :ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to, :ref:`Array<class_array>` exclude=Array(), :ref:`int<class_int>` layer_mask=2147483647, :ref:`int<class_int>` type_mask=15  **)**
+- :ref:`Dictionary<class_dictionary>`  **intersect_ray**  **(** :ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to, :ref:`Array<class_array>` exclude=[], :ref:`int<class_int>` collision_layer=2147483647, :ref:`int<class_int>` type_mask=15  **)**
 
 Intersect a ray in a given space. The returned object is a dictionary with the following fields:
 

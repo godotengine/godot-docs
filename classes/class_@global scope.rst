@@ -471,21 +471,19 @@ Numeric Constants
 - **TYPE_BASIS** = **12** --- Variable is of type :ref:`Basis<class_basis>`.
 - **TYPE_TRANSFORM** = **13** --- Variable is of type :ref:`Transform<class_transform>`.
 - **TYPE_COLOR** = **14** --- Variable is of type :ref:`Color<class_color>`.
-- **TYPE_IMAGE** = **15** --- Variable is of type :ref:`Image<class_image>`.
-- **TYPE_NODE_PATH** = **16** --- Variable is of type :ref:`NodePath<class_nodepath>`.
-- **TYPE_RID** = **17** --- Variable is of type :ref:`RID<class_rid>`.
-- **TYPE_OBJECT** = **18** --- Variable is of type :ref:`Object<class_object>`.
-- **TYPE_INPUT_EVENT** = **19** --- Variable is of type :ref:`InputEvent<class_inputevent>`.
-- **TYPE_DICTIONARY** = **20** --- Variable is of type :ref:`Dictionary<class_dictionary>`.
-- **TYPE_ARRAY** = **21** --- Variable is of type :ref:`Array<class_array>`.
-- **TYPE_RAW_ARRAY** = **22**
-- **TYPE_INT_ARRAY** = **23**
-- **TYPE_REAL_ARRAY** = **24**
-- **TYPE_STRING_ARRAY** = **25**
-- **TYPE_VECTOR2_ARRAY** = **26**
-- **TYPE_VECTOR3_ARRAY** = **27**
-- **TYPE_COLOR_ARRAY** = **28**
-- **TYPE_MAX** = **29**
+- **TYPE_NODE_PATH** = **15** --- Variable is of type :ref:`NodePath<class_nodepath>`.
+- **TYPE_RID** = **16** --- Variable is of type :ref:`RID<class_rid>`.
+- **TYPE_OBJECT** = **17** --- Variable is of type :ref:`Object<class_object>`.
+- **TYPE_DICTIONARY** = **18** --- Variable is of type :ref:`Dictionary<class_dictionary>`.
+- **TYPE_ARRAY** = **19** --- Variable is of type :ref:`Array<class_array>`.
+- **TYPE_RAW_ARRAY** = **20**
+- **TYPE_INT_ARRAY** = **21**
+- **TYPE_REAL_ARRAY** = **22**
+- **TYPE_STRING_ARRAY** = **23**
+- **TYPE_VECTOR2_ARRAY** = **24**
+- **TYPE_VECTOR3_ARRAY** = **25**
+- **TYPE_COLOR_ARRAY** = **26**
+- **TYPE_MAX** = **27**
 
 Description
 -----------

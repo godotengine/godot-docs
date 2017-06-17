@@ -101,6 +101,8 @@ Return the inverse of the matrix.
 
 - :ref:`float<class_float>`  **get_rotation**  **(** **)**
 
+Return the rotation (in radians).
+
 .. _class_Transform2D_get_scale:
 
 - :ref:`Vector2<class_vector2>`  **get_scale**  **(** **)**

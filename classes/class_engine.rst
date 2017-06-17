@@ -35,6 +35,8 @@ Member Functions
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_dictionary>`  | :ref:`get_version_info<class_Engine_get_version_info>`  **(** **)** const                                                          |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`              | :ref:`is_in_fixed_frame<class_Engine_is_in_fixed_frame>`  **(** **)** const                                                        |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | void                                 | :ref:`set_iterations_per_second<class_Engine_set_iterations_per_second>`  **(** :ref:`int<class_int>` iterations_per_second  **)** |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | void                                 | :ref:`set_target_fps<class_Engine_set_target_fps>`  **(** :ref:`int<class_int>` target_fps  **)**                                  |
@@ -102,6 +104,10 @@ Returns the current engine version information in a Dictionary.
 "revision" - Holds the revision (e.g. "custom-build") as a String
 
 "string"   - major + minor + patch + status + revision in a single String
+
+.. _class_Engine_is_in_fixed_frame:
+
+- :ref:`bool<class_bool>`  **is_in_fixed_frame**  **(** **)** const
 
 .. _class_Engine_set_iterations_per_second:
 

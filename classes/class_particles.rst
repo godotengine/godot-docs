@@ -19,9 +19,9 @@ Member Functions
 ----------------
 
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_amount<class_Particles_get_amount>`  **(** **)** const                                                                     |
+| :ref:`Rect3<class_rect3>`        | :ref:`capture_aabb<class_Particles_capture_aabb>`  **(** **)** const                                                                 |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect3<class_rect3>`        | :ref:`get_custom_aabb<class_Particles_get_custom_aabb>`  **(** **)** const                                                           |
+| :ref:`int<class_int>`            | :ref:`get_amount<class_Particles_get_amount>`  **(** **)** const                                                                     |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`            | :ref:`get_draw_order<class_Particles_get_draw_order>`  **(** **)** const                                                             |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
@@ -35,8 +35,6 @@ Member Functions
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`get_fractional_delta<class_Particles_get_fractional_delta>`  **(** **)** const                                                 |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`    | :ref:`get_gravity<class_Particles_get_gravity>`  **(** **)** const                                                                   |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`        | :ref:`get_lifetime<class_Particles_get_lifetime>`  **(** **)** const                                                                 |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`        | :ref:`get_pre_process_time<class_Particles_get_pre_process_time>`  **(** **)** const                                                 |
@@ -45,13 +43,15 @@ Member Functions
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`        | :ref:`get_randomness_ratio<class_Particles_get_randomness_ratio>`  **(** **)** const                                                 |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`        | :ref:`get_speed_scale<class_Particles_get_speed_scale>`  **(** **)** const                                                           |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`get_use_local_coordinates<class_Particles_get_use_local_coordinates>`  **(** **)** const                                       |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect3<class_rect3>`        | :ref:`get_visibility_aabb<class_Particles_get_visibility_aabb>`  **(** **)** const                                                   |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`is_emitting<class_Particles_is_emitting>`  **(** **)** const                                                                   |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_amount<class_Particles_set_amount>`  **(** :ref:`int<class_int>` amount  **)**                                             |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_custom_aabb<class_Particles_set_custom_aabb>`  **(** :ref:`Rect3<class_rect3>` aabb  **)**                                 |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_draw_order<class_Particles_set_draw_order>`  **(** :ref:`int<class_int>` order  **)**                                      |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
@@ -67,8 +67,6 @@ Member Functions
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_fractional_delta<class_Particles_set_fractional_delta>`  **(** :ref:`bool<class_bool>` enable  **)**                       |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_gravity<class_Particles_set_gravity>`  **(** :ref:`Vector3<class_vector3>` accel_vec  **)**                                |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_lifetime<class_Particles_set_lifetime>`  **(** :ref:`float<class_float>` secs  **)**                                       |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_pre_process_time<class_Particles_set_pre_process_time>`  **(** :ref:`float<class_float>` secs  **)**                       |
@@ -77,14 +75,17 @@ Member Functions
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_randomness_ratio<class_Particles_set_randomness_ratio>`  **(** :ref:`float<class_float>` ratio  **)**                      |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_speed_scale<class_Particles_set_speed_scale>`  **(** :ref:`float<class_float>` scale  **)**                                |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_use_local_coordinates<class_Particles_set_use_local_coordinates>`  **(** :ref:`bool<class_bool>` enable  **)**             |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_visibility_aabb<class_Particles_set_visibility_aabb>`  **(** :ref:`Rect3<class_rect3>` aabb  **)**                         |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
 
 - :ref:`int<class_int>` **amount**
-- :ref:`Rect3<class_rect3>` **custom_aabb**
 - :ref:`int<class_int>` **draw_order**
 - :ref:`Mesh<class_mesh>` **draw_pass_1**
 - :ref:`Mesh<class_mesh>` **draw_pass_2**
@@ -95,12 +96,13 @@ Member Variables
 - :ref:`float<class_float>` **explosiveness**
 - :ref:`int<class_int>` **fixed_fps**
 - :ref:`bool<class_bool>` **fract_delta**
-- :ref:`Vector3<class_vector3>` **gravity**
 - :ref:`float<class_float>` **lifetime**
 - :ref:`bool<class_bool>` **local_coords**
 - :ref:`float<class_float>` **preprocess**
 - ParticlesMaterial,ShaderMaterial **process_material**
 - :ref:`float<class_float>` **randomness**
+- :ref:`float<class_float>` **speed_scale**
+- :ref:`Rect3<class_rect3>` **visibility_aabb**
 
 Numeric Constants
 -----------------
@@ -113,13 +115,13 @@ Numeric Constants
 Member Function Description
 ---------------------------
 
+.. _class_Particles_capture_aabb:
+
+- :ref:`Rect3<class_rect3>`  **capture_aabb**  **(** **)** const
+
 .. _class_Particles_get_amount:
 
 - :ref:`int<class_int>`  **get_amount**  **(** **)** const
-
-.. _class_Particles_get_custom_aabb:
-
-- :ref:`Rect3<class_rect3>`  **get_custom_aabb**  **(** **)** const
 
 .. _class_Particles_get_draw_order:
 
@@ -145,10 +147,6 @@ Member Function Description
 
 - :ref:`bool<class_bool>`  **get_fractional_delta**  **(** **)** const
 
-.. _class_Particles_get_gravity:
-
-- :ref:`Vector3<class_vector3>`  **get_gravity**  **(** **)** const
-
 .. _class_Particles_get_lifetime:
 
 - :ref:`float<class_float>`  **get_lifetime**  **(** **)** const
@@ -165,9 +163,17 @@ Member Function Description
 
 - :ref:`float<class_float>`  **get_randomness_ratio**  **(** **)** const
 
+.. _class_Particles_get_speed_scale:
+
+- :ref:`float<class_float>`  **get_speed_scale**  **(** **)** const
+
 .. _class_Particles_get_use_local_coordinates:
 
 - :ref:`bool<class_bool>`  **get_use_local_coordinates**  **(** **)** const
+
+.. _class_Particles_get_visibility_aabb:
+
+- :ref:`Rect3<class_rect3>`  **get_visibility_aabb**  **(** **)** const
 
 .. _class_Particles_is_emitting:
 
@@ -176,10 +182,6 @@ Member Function Description
 .. _class_Particles_set_amount:
 
 - void  **set_amount**  **(** :ref:`int<class_int>` amount  **)**
-
-.. _class_Particles_set_custom_aabb:
-
-- void  **set_custom_aabb**  **(** :ref:`Rect3<class_rect3>` aabb  **)**
 
 .. _class_Particles_set_draw_order:
 
@@ -209,10 +211,6 @@ Member Function Description
 
 - void  **set_fractional_delta**  **(** :ref:`bool<class_bool>` enable  **)**
 
-.. _class_Particles_set_gravity:
-
-- void  **set_gravity**  **(** :ref:`Vector3<class_vector3>` accel_vec  **)**
-
 .. _class_Particles_set_lifetime:
 
 - void  **set_lifetime**  **(** :ref:`float<class_float>` secs  **)**
@@ -229,8 +227,16 @@ Member Function Description
 
 - void  **set_randomness_ratio**  **(** :ref:`float<class_float>` ratio  **)**
 
+.. _class_Particles_set_speed_scale:
+
+- void  **set_speed_scale**  **(** :ref:`float<class_float>` scale  **)**
+
 .. _class_Particles_set_use_local_coordinates:
 
 - void  **set_use_local_coordinates**  **(** :ref:`bool<class_bool>` enable  **)**
+
+.. _class_Particles_set_visibility_aabb:
+
+- void  **set_visibility_aabb**  **(** :ref:`Rect3<class_rect3>` aabb  **)**
 
 

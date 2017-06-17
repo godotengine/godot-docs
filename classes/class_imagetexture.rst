@@ -23,8 +23,6 @@ Member Functions
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`create_from_image<class_ImageTexture_create_from_image>`  **(** :ref:`Image<class_image>` image, :ref:`int<class_int>` flags=7  **)**                                   |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`fix_alpha_edges<class_ImageTexture_fix_alpha_edges>`  **(** **)**                                                                                                       |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Image<class_image>`  | :ref:`get_data<class_ImageTexture_get_data>`  **(** **)** const                                                                                                               |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`      | :ref:`get_format<class_ImageTexture_get_format>`  **(** **)** const                                                                                                           |
@@ -35,10 +33,6 @@ Member Functions
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`load<class_ImageTexture_load>`  **(** :ref:`String<class_string>` path  **)**                                                                                           |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`normal_to_xy<class_ImageTexture_normal_to_xy>`  **(** **)**                                                                                                             |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`premultiply_alpha<class_ImageTexture_premultiply_alpha>`  **(** **)**                                                                                                   |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`set_data<class_ImageTexture_set_data>`  **(** :ref:`Image<class_image>` image  **)**                                                                                    |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`set_lossy_storage_quality<class_ImageTexture_set_lossy_storage_quality>`  **(** :ref:`float<class_float>` quality  **)**                                                |
@@ -46,8 +40,6 @@ Member Functions
 | void                       | :ref:`set_size_override<class_ImageTexture_set_size_override>`  **(** :ref:`Vector2<class_vector2>` size  **)**                                                               |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`set_storage<class_ImageTexture_set_storage>`  **(** :ref:`int<class_int>` mode  **)**                                                                                   |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`shrink_x2_and_keep_size<class_ImageTexture_shrink_x2_and_keep_size>`  **(** **)**                                                                                       |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
@@ -81,10 +73,6 @@ Create a new :ref:`ImageTexture<class_imagetexture>` with "width" and "height".
 
 Create a new :ref:`ImageTexture<class_imagetexture>` from an :ref:`Image<class_image>` with "flags" from :ref:`Texture<class_texture>`.FLAG\_\*.
 
-.. _class_ImageTexture_fix_alpha_edges:
-
-- void  **fix_alpha_edges**  **(** **)**
-
 .. _class_ImageTexture_get_data:
 
 - :ref:`Image<class_image>`  **get_data**  **(** **)** const
@@ -115,14 +103,6 @@ Return the storage type. One of :ref:`ImageTexture<class_imagetexture>`.STORAGE\
 
 Load an :ref:`ImageTexure<class_imagetexure>`.
 
-.. _class_ImageTexture_normal_to_xy:
-
-- void  **normal_to_xy**  **(** **)**
-
-.. _class_ImageTexture_premultiply_alpha:
-
-- void  **premultiply_alpha**  **(** **)**
-
 .. _class_ImageTexture_set_data:
 
 - void  **set_data**  **(** :ref:`Image<class_image>` image  **)**
@@ -144,9 +124,5 @@ Set the storage quality in case of :ref:`ImageTexture<class_imagetexture>`.STORA
 - void  **set_storage**  **(** :ref:`int<class_int>` mode  **)**
 
 Set the storage type. One of :ref:`ImageTexture<class_imagetexture>`.STORAGE\_\*.
-
-.. _class_ImageTexture_shrink_x2_and_keep_size:
-
-- void  **shrink_x2_and_keep_size**  **(** **)**
 
 

@@ -47,8 +47,6 @@ Member Functions
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                    | :ref:`String<class_String_String>`  **(** :ref:`RID<class_rid>` from  **)**                                                                |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`String<class_String_String>`  **(** :ref:`InputEvent<class_inputevent>` from  **)**                                                  |
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                    | :ref:`String<class_String_String>`  **(** :ref:`Dictionary<class_dictionary>` from  **)**                                                  |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                    | :ref:`String<class_String_String>`  **(** :ref:`Array<class_array>` from  **)**                                                            |
@@ -261,10 +259,6 @@ Member Function Description
 .. _class_String_String:
 
 - :ref:`String<class_string>`  **String**  **(** :ref:`RID<class_rid>` from  **)**
-
-.. _class_String_String:
-
-- :ref:`String<class_string>`  **String**  **(** :ref:`InputEvent<class_inputevent>` from  **)**
 
 .. _class_String_String:
 

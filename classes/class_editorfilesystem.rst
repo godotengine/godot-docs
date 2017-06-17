@@ -40,7 +40,11 @@ Signals
 -------
 
 -  **filesystem_changed**  **(** **)**
+Emitted if the filesystem changed.
+
 -  **sources_changed**  **(** :ref:`bool<class_bool>` exist  **)**
+Emitted if the source of any imported file changed.
+
 
 Description
 -----------

@@ -31,19 +31,21 @@ Member Functions
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`get_clear_on_new_frame<class_Viewport_get_clear_on_new_frame>`  **(** **)** const                                                                                                                         |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                          | :ref:`get_debug_draw<class_Viewport_get_debug_draw>`  **(** **)** const                                                                                                                                         |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform2D<class_transform2d>`          | :ref:`get_final_transform<class_Viewport_get_final_transform>`  **(** **)** const                                                                                                                               |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform2D<class_transform2d>`          | :ref:`get_global_canvas_transform<class_Viewport_get_global_canvas_transform>`  **(** **)** const                                                                                                               |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`get_hdr<class_Viewport_get_hdr>`  **(** **)** const                                                                                                                                                       |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`                  | :ref:`get_mouse_pos<class_Viewport_get_mouse_pos>`  **(** **)** const                                                                                                                                           |
+| :ref:`Vector2<class_vector2>`                  | :ref:`get_mouse_position<class_Viewport_get_mouse_position>`  **(** **)** const                                                                                                                                 |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_msaa<class_Viewport_get_msaa>`  **(** **)** const                                                                                                                                                     |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`get_physics_object_picking<class_Viewport_get_physics_object_picking>`  **(** **)**                                                                                                                       |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Image<class_image>`                      | :ref:`get_screen_capture<class_Viewport_get_screen_capture>`  **(** **)** const                                                                                                                                 |
+| :ref:`int<class_int>`                          | :ref:`get_render_info<class_Viewport_get_render_info>`  **(** :ref:`int<class_int>` info  **)**                                                                                                                 |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_shadow_atlas_quadrant_subdiv<class_Viewport_get_shadow_atlas_quadrant_subdiv>`  **(** :ref:`int<class_int>` quadrant  **)** const                                                                     |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -56,6 +58,8 @@ Member Functions
 | :ref:`ViewportTexture<class_viewporttexture>`  | :ref:`get_texture<class_Viewport_get_texture>`  **(** **)** const                                                                                                                                               |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_update_mode<class_Viewport_get_update_mode>`  **(** **)** const                                                                                                                                       |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                          | :ref:`get_usage<class_Viewport_get_usage>`  **(** **)** const                                                                                                                                                   |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`get_vflip<class_Viewport_get_vflip>`  **(** **)** const                                                                                                                                                   |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -73,7 +77,7 @@ Member Functions
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`has_transparent_background<class_Viewport_has_transparent_background>`  **(** **)** const                                                                                                                 |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`input<class_Viewport_input>`  **(** :ref:`InputEvent<class_inputevent>` local_event  **)**                                                                                                                |
+| void                                           | :ref:`input<class_Viewport_input>`  **(** :ref:`Object<class_object>` local_event  **)**                                                                                                                        |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`is_3d_disabled<class_Viewport_is_3d_disabled>`  **(** **)** const                                                                                                                                         |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -89,8 +93,6 @@ Member Functions
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`is_using_own_world<class_Viewport_is_using_own_world>`  **(** **)** const                                                                                                                                 |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`queue_screen_capture<class_Viewport_queue_screen_capture>`  **(** **)**                                                                                                                                   |
-+------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_as_audio_listener<class_Viewport_set_as_audio_listener>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                                 |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_as_audio_listener_2d<class_Viewport_set_as_audio_listener_2d>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                           |
@@ -100,6 +102,8 @@ Member Functions
 | void                                           | :ref:`set_canvas_transform<class_Viewport_set_canvas_transform>`  **(** :ref:`Transform2D<class_transform2d>` xform  **)**                                                                                      |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_clear_on_new_frame<class_Viewport_set_clear_on_new_frame>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                               |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`set_debug_draw<class_Viewport_set_debug_draw>`  **(** :ref:`int<class_int>` debug_draw  **)**                                                                                                             |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_disable_3d<class_Viewport_set_disable_3d>`  **(** :ref:`bool<class_bool>` disable  **)**                                                                                                              |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -127,6 +131,8 @@ Member Functions
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_update_mode<class_Viewport_set_update_mode>`  **(** :ref:`int<class_int>` mode  **)**                                                                                                                 |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`set_usage<class_Viewport_set_usage>`  **(** :ref:`int<class_int>` usage  **)**                                                                                                                            |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_use_own_world<class_Viewport_set_use_own_world>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                                         |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_vflip<class_Viewport_set_vflip>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                                                         |
@@ -135,7 +141,7 @@ Member Functions
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_world_2d<class_Viewport_set_world_2d>`  **(** :ref:`World2D<class_world2d>` world_2d  **)**                                                                                                           |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`unhandled_input<class_Viewport_unhandled_input>`  **(** :ref:`InputEvent<class_inputevent>` local_event  **)**                                                                                            |
+| void                                           | :ref:`unhandled_input<class_Viewport_unhandled_input>`  **(** :ref:`Object<class_object>` local_event  **)**                                                                                                    |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`update_worlds<class_Viewport_update_worlds>`  **(** **)**                                                                                                                                                 |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -146,12 +152,15 @@ Signals
 -------
 
 -  **size_changed**  **(** **)**
+Emitted when the size of the viewport is changed, whether by :ref:`set_size_override<class_Viewport_set_size_override>`, resize of window, or some other means.
+
 
 Member Variables
 ----------------
 
 - :ref:`bool<class_bool>` **audio_listener_enable_2d**
 - :ref:`bool<class_bool>` **audio_listener_enable_3d**
+- :ref:`int<class_int>` **debug_draw**
 - :ref:`bool<class_bool>` **disable_3d**
 - :ref:`bool<class_bool>` **gui_disable_input**
 - :ref:`bool<class_bool>` **hdr**
@@ -168,6 +177,7 @@ Member Variables
 - :ref:`int<class_int>` **shadow_atlas_size**
 - :ref:`Rect2<class_rect2>` **size**
 - :ref:`bool<class_bool>` **transparent_bg**
+- :ref:`int<class_int>` **usage**
 - :ref:`World<class_world>` **world**
 
 Numeric Constants
@@ -185,6 +195,17 @@ Numeric Constants
 - **SHADOW_ATLAS_QUADRANT_SUBDIV_256** = **5**
 - **SHADOW_ATLAS_QUADRANT_SUBDIV_1024** = **6**
 - **SHADOW_ATLAS_QUADRANT_SUBDIV_MAX** = **7**
+- **RENDER_INFO_OBJECTS_IN_FRAME** = **0**
+- **RENDER_INFO_VERTICES_IN_FRAME** = **1**
+- **RENDER_INFO_MATERIAL_CHANGES_IN_FRAME** = **2**
+- **RENDER_INFO_SHADER_CHANGES_IN_FRAME** = **3**
+- **RENDER_INFO_SURFACE_CHANGES_IN_FRAME** = **4**
+- **RENDER_INFO_DRAW_CALLS_IN_FRAME** = **5**
+- **RENDER_INFO_MAX** = **6**
+- **DEBUG_DRAW_DISABLED** = **0**
+- **DEBUG_DRAW_UNSHADED** = **1**
+- **DEBUG_DRAW_OVERDRAW** = **2**
+- **DEBUG_DRAW_WIREFRAME** = **3**
 - **MSAA_DISABLED** = **0**
 - **MSAA_2X** = **1**
 - **MSAA_4X** = **2**
@@ -245,6 +266,10 @@ Get the canvas transform of the viewport.
 
 Return whether automatic clearing of the render target on each frame is enabled.
 
+.. _class_Viewport_get_debug_draw:
+
+- :ref:`int<class_int>`  **get_debug_draw**  **(** **)** const
+
 .. _class_Viewport_get_final_transform:
 
 - :ref:`Transform2D<class_transform2d>`  **get_final_transform**  **(** **)** const
@@ -263,9 +288,9 @@ Get the global canvas transform of the viewport.
 
 Get whether the rendered texture has filters enabled.
 
-.. _class_Viewport_get_mouse_pos:
+.. _class_Viewport_get_mouse_position:
 
-- :ref:`Vector2<class_vector2>`  **get_mouse_pos**  **(** **)** const
+- :ref:`Vector2<class_vector2>`  **get_mouse_position**  **(** **)** const
 
 Get the mouse position, relative to the viewport.
 
@@ -279,11 +304,9 @@ Get the mouse position, relative to the viewport.
 
 Get whether picking for all physics objects inside the viewport is enabled.
 
-.. _class_Viewport_get_screen_capture:
+.. _class_Viewport_get_render_info:
 
-- :ref:`Image<class_image>`  **get_screen_capture**  **(** **)** const
-
-Return the captured screenshot after :ref:`queue_screen_capture<class_Viewport_queue_screen_capture>`. You might need to check more than one frame until the right image is returned.
+- :ref:`int<class_int>`  **get_render_info**  **(** :ref:`int<class_int>` info  **)**
 
 .. _class_Viewport_get_shadow_atlas_quadrant_subdiv:
 
@@ -316,6 +339,10 @@ Get the viewport's texture, for use with various objects that you want to textur
 - :ref:`int<class_int>`  **get_update_mode**  **(** **)** const
 
 Get when the viewport would be updated, will be one of the ``UPDATE\_\*`` constants.
+
+.. _class_Viewport_get_usage:
+
+- :ref:`int<class_int>`  **get_usage**  **(** **)** const
 
 .. _class_Viewport_get_vflip:
 
@@ -367,7 +394,7 @@ Return whether the viewport lets whatever is behind it to show.
 
 .. _class_Viewport_input:
 
-- void  **input**  **(** :ref:`InputEvent<class_inputevent>` local_event  **)**
+- void  **input**  **(** :ref:`Object<class_object>` local_event  **)**
 
 .. _class_Viewport_is_3d_disabled:
 
@@ -409,12 +436,6 @@ Get the enabled status of the size strech override set with :ref:`set_size_overr
 
 Return whether the viewport is using a world separate from the parent viewport's world.
 
-.. _class_Viewport_queue_screen_capture:
-
-- void  **queue_screen_capture**  **(** **)**
-
-Queue a multithreaded screenshot, you can retrive it at a later frame via :ref:`get_screen_capture<class_Viewport_get_screen_capture>`.
-
 .. _class_Viewport_set_as_audio_listener:
 
 - void  **set_as_audio_listener**  **(** :ref:`bool<class_bool>` enable  **)**
@@ -440,6 +461,10 @@ Set the canvas transform of the viewport, useful for changing the on-screen posi
 .. _class_Viewport_set_clear_on_new_frame:
 
 - void  **set_clear_on_new_frame**  **(** :ref:`bool<class_bool>` enable  **)**
+
+.. _class_Viewport_set_debug_draw:
+
+- void  **set_debug_draw**  **(** :ref:`int<class_int>` debug_draw  **)**
 
 .. _class_Viewport_set_disable_3d:
 
@@ -509,6 +534,10 @@ If this viewport is a child of another viewport, keep the previously drawn backg
 
 Set when the render target would be updated, using the ``UPDATE\_\*`` constants
 
+.. _class_Viewport_set_usage:
+
+- void  **set_usage**  **(** :ref:`int<class_int>` usage  **)**
+
 .. _class_Viewport_set_use_own_world:
 
 - void  **set_use_own_world**  **(** :ref:`bool<class_bool>` enable  **)**
@@ -533,7 +562,7 @@ Change the 3D world of the viewport.
 
 .. _class_Viewport_unhandled_input:
 
-- void  **unhandled_input**  **(** :ref:`InputEvent<class_inputevent>` local_event  **)**
+- void  **unhandled_input**  **(** :ref:`Object<class_object>` local_event  **)**
 
 .. _class_Viewport_update_worlds:
 

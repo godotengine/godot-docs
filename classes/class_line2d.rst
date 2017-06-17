@@ -80,7 +80,7 @@ Member Variables
 - :ref:`int<class_int>` **begin_cap_mode**
 - :ref:`Color<class_color>` **default_color**
 - :ref:`int<class_int>` **end_cap_mode**
-- :ref:`ColorRamp<class_colorramp>` **gradient**
+- :ref:`Gradient<class_gradient>` **gradient**
 - :ref:`int<class_int>` **joint_mode**
 - :ref:`PoolVector2Array<class_poolvector2array>` **points**
 - :ref:`int<class_int>` **round_precision**

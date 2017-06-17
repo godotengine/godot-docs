@@ -27,6 +27,8 @@ Member Functions
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`add_custom_type<class_EditorPlugin_add_custom_type>`  **(** :ref:`String<class_string>` type, :ref:`String<class_string>` base, :ref:`Script<class_script>` script, :ref:`Texture<class_texture>` icon  **)** |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                       | :ref:`add_import_plugin<class_EditorPlugin_add_import_plugin>`  **(** :ref:`Object<class_object>` arg0  **)**                                                                                                       |
++------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`add_tool_submenu_item<class_EditorPlugin_add_tool_submenu_item>`  **(** :ref:`String<class_string>` name, :ref:`PopupMenu<class_popupmenu>` submenu  **)**                                                    |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`apply_changes<class_EditorPlugin_apply_changes>`  **(** **)** virtual                                                                                                                                         |
@@ -86,6 +88,8 @@ Member Functions
 | void                                                       | :ref:`remove_control_from_docks<class_EditorPlugin_remove_control_from_docks>`  **(** :ref:`Control<class_control>` control  **)**                                                                                  |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`remove_custom_type<class_EditorPlugin_remove_custom_type>`  **(** :ref:`String<class_string>` type  **)**                                                                                                     |
++------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                       | :ref:`remove_import_plugin<class_EditorPlugin_remove_import_plugin>`  **(** :ref:`Object<class_object>` arg0  **)**                                                                                                 |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`save_external_data<class_EditorPlugin_save_external_data>`  **(** **)** virtual                                                                                                                               |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -162,6 +166,10 @@ You can use the :ref:`EditorPlugin.handles<class_EditorPlugin_handles>` to check
 
 During run-time, this will be a simple object with a script so this function does not need to be called then.
 
+.. _class_EditorPlugin_add_import_plugin:
+
+- void  **add_import_plugin**  **(** :ref:`Object<class_object>` arg0  **)**
+
 .. _class_EditorPlugin_add_tool_submenu_item:
 
 - void  **add_tool_submenu_item**  **(** :ref:`String<class_string>` name, :ref:`PopupMenu<class_popupmenu>` submenu  **)**
@@ -200,8 +208,6 @@ This function is used for plugins that edit specific object types (nodes or reso
 
 - :ref:`bool<class_bool>`  **forward_canvas_gui_input**  **(** :ref:`Transform2D<class_transform2d>` canvas_xform, :ref:`InputEvent<class_inputevent>` event  **)** virtual
 
-If your plugin is active (because handles() returned true to the object), any input interaction with the 2D canvas editor will be first forwarded here. The canvas transform (containing zoom and offset to transform to edited world coordinates) is provided, but the input supplied is in untransformed coordinates to the canvas editor. Return true if you want to eat this event and not pass it to the canvas editor.
-
 .. _class_EditorPlugin_forward_draw_over_canvas:
 
 - void  **forward_draw_over_canvas**  **(** :ref:`Transform2D<class_transform2d>` canvas_xform, :ref:`Control<class_control>` canvas  **)** virtual
@@ -211,12 +217,6 @@ This function is called every time the 2D canvas editor draws (which overlays ov
 .. _class_EditorPlugin_forward_spatial_gui_input:
 
 - :ref:`bool<class_bool>`  **forward_spatial_gui_input**  **(** :ref:`Camera<class_camera>` camera, :ref:`InputEvent<class_inputevent>` event  **)** virtual
-
-This is a low level function for plugins that edit a given objet type derived from Spatial to capture the input of the viewport. The function is only being called if your object is being edited.
-
-By using the :ref:`InputEvent<class_inputevent>` and the :ref:`Camera<class_camera>` arguments it's pretty easy to do raycasts into space using Camera functions.
-
-Return true if you want to capture the input, otherwise false.
 
 .. _class_EditorPlugin_get_base_control:
 
@@ -341,6 +341,10 @@ Remove the control from the dock. Don't forget to call this if you added one, so
 - void  **remove_custom_type**  **(** :ref:`String<class_string>` type  **)**
 
 Remove a custom type added by :ref:`EditorPlugin.add_custom_type<class_EditorPlugin_add_custom_type>`
+
+.. _class_EditorPlugin_remove_import_plugin:
+
+- void  **remove_import_plugin**  **(** :ref:`Object<class_object>` arg0  **)**
 
 .. _class_EditorPlugin_save_external_data:
 

@@ -85,6 +85,8 @@ Returns the VehicleBody's velocity vector. To get the absolute speed in scalar v
 
 - :ref:`float<class_float>`  **get_steering**  **(** **)** const
 
+Return the steering angle (in radians).
+
 .. _class_VehicleBody_set_brake:
 
 - void  **set_brake**  **(** :ref:`float<class_float>` brake  **)**
@@ -104,5 +106,7 @@ Returns the VehicleBody's velocity vector. To get the absolute speed in scalar v
 .. _class_VehicleBody_set_steering:
 
 - void  **set_steering**  **(** :ref:`float<class_float>` steering  **)**
+
+Set the steering angle (in radians).
 
 

@@ -49,9 +49,9 @@ Member Functions
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`area_remove_shape<class_PhysicsServer_area_remove_shape>`  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx  **)**                                                                                                                           |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                           | :ref:`area_set_collision_mask<class_PhysicsServer_area_set_collision_mask>`  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` mask  **)**                                                                                                                    |
+| void                                                           | :ref:`area_set_collision_layer<class_PhysicsServer_area_set_collision_layer>`  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` layer  **)**                                                                                                                 |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                           | :ref:`area_set_layer_mask<class_PhysicsServer_area_set_layer_mask>`  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` mask  **)**                                                                                                                            |
+| void                                                           | :ref:`area_set_collision_mask<class_PhysicsServer_area_set_collision_mask>`  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` mask  **)**                                                                                                                    |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`area_set_monitor_callback<class_PhysicsServer_area_set_monitor_callback>`  **(** :ref:`RID<class_rid>` area, :ref:`Object<class_object>` receiver, :ref:`String<class_string>` method  **)**                                                                  |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -85,9 +85,9 @@ Member Functions
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                          | :ref:`body_get_axis_lock<class_PhysicsServer_body_get_axis_lock>`  **(** :ref:`RID<class_rid>` body  **)** const                                                                                                                                                    |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                          | :ref:`body_get_collision_mask<class_PhysicsServer_body_get_collision_mask>`  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` arg1  **)** const                                                                                                              |
+| :ref:`int<class_int>`                                          | :ref:`body_get_collision_layer<class_PhysicsServer_body_get_collision_layer>`  **(** :ref:`RID<class_rid>` body  **)** const                                                                                                                                        |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                          | :ref:`body_get_layer_mask<class_PhysicsServer_body_get_layer_mask>`  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` arg1  **)** const                                                                                                                      |
+| :ref:`int<class_int>`                                          | :ref:`body_get_collision_mask<class_PhysicsServer_body_get_collision_mask>`  **(** :ref:`RID<class_rid>` body  **)** const                                                                                                                                          |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                          | :ref:`body_get_max_contacts_reported<class_PhysicsServer_body_get_max_contacts_reported>`  **(** :ref:`RID<class_rid>` body  **)** const                                                                                                                            |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -121,13 +121,13 @@ Member Functions
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`body_set_axis_velocity<class_PhysicsServer_body_set_axis_velocity>`  **(** :ref:`RID<class_rid>` body, :ref:`Vector3<class_vector3>` axis_velocity  **)**                                                                                                     |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                           | :ref:`body_set_collision_layer<class_PhysicsServer_body_set_collision_layer>`  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` layer  **)**                                                                                                                 |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`body_set_collision_mask<class_PhysicsServer_body_set_collision_mask>`  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` mask  **)**                                                                                                                    |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`body_set_enable_continuous_collision_detection<class_PhysicsServer_body_set_enable_continuous_collision_detection>`  **(** :ref:`RID<class_rid>` body, :ref:`bool<class_bool>` enable  **)**                                                                  |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`body_set_force_integration_callback<class_PhysicsServer_body_set_force_integration_callback>`  **(** :ref:`RID<class_rid>` body, :ref:`Object<class_object>` receiver, :ref:`String<class_string>` method, :ref:`Variant<class_variant>` userdata=NULL  **)** |
-+----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                           | :ref:`body_set_layer_mask<class_PhysicsServer_body_set_layer_mask>`  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` mask  **)**                                                                                                                            |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`body_set_max_contacts_reported<class_PhysicsServer_body_set_max_contacts_reported>`  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` amount  **)**                                                                                                    |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -395,13 +395,13 @@ Member Function Description
 
 - void  **area_remove_shape**  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx  **)**
 
+.. _class_PhysicsServer_area_set_collision_layer:
+
+- void  **area_set_collision_layer**  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` layer  **)**
+
 .. _class_PhysicsServer_area_set_collision_mask:
 
 - void  **area_set_collision_mask**  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` mask  **)**
-
-.. _class_PhysicsServer_area_set_layer_mask:
-
-- void  **area_set_layer_mask**  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` mask  **)**
 
 .. _class_PhysicsServer_area_set_monitor_callback:
 
@@ -467,13 +467,13 @@ Member Function Description
 
 - :ref:`int<class_int>`  **body_get_axis_lock**  **(** :ref:`RID<class_rid>` body  **)** const
 
+.. _class_PhysicsServer_body_get_collision_layer:
+
+- :ref:`int<class_int>`  **body_get_collision_layer**  **(** :ref:`RID<class_rid>` body  **)** const
+
 .. _class_PhysicsServer_body_get_collision_mask:
 
-- :ref:`int<class_int>`  **body_get_collision_mask**  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` arg1  **)** const
-
-.. _class_PhysicsServer_body_get_layer_mask:
-
-- :ref:`int<class_int>`  **body_get_layer_mask**  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` arg1  **)** const
+- :ref:`int<class_int>`  **body_get_collision_mask**  **(** :ref:`RID<class_rid>` body  **)** const
 
 .. _class_PhysicsServer_body_get_max_contacts_reported:
 
@@ -539,6 +539,10 @@ Member Function Description
 
 - void  **body_set_axis_velocity**  **(** :ref:`RID<class_rid>` body, :ref:`Vector3<class_vector3>` axis_velocity  **)**
 
+.. _class_PhysicsServer_body_set_collision_layer:
+
+- void  **body_set_collision_layer**  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` layer  **)**
+
 .. _class_PhysicsServer_body_set_collision_mask:
 
 - void  **body_set_collision_mask**  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` mask  **)**
@@ -550,10 +554,6 @@ Member Function Description
 .. _class_PhysicsServer_body_set_force_integration_callback:
 
 - void  **body_set_force_integration_callback**  **(** :ref:`RID<class_rid>` body, :ref:`Object<class_object>` receiver, :ref:`String<class_string>` method, :ref:`Variant<class_variant>` userdata=NULL  **)**
-
-.. _class_PhysicsServer_body_set_layer_mask:
-
-- void  **body_set_layer_mask**  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` mask  **)**
 
 .. _class_PhysicsServer_body_set_max_contacts_reported:
 

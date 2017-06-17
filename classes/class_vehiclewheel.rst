@@ -27,6 +27,8 @@ Member Functions
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_radius<class_VehicleWheel_get_radius>`  **(** **)** const                                                             |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_roll_influence<class_VehicleWheel_get_roll_influence>`  **(** **)** const                                             |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_suspension_max_force<class_VehicleWheel_get_suspension_max_force>`  **(** **)** const                                 |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_suspension_rest_length<class_VehicleWheel_get_suspension_rest_length>`  **(** **)** const                             |
@@ -34,6 +36,8 @@ Member Functions
 | :ref:`float<class_float>`  | :ref:`get_suspension_stiffness<class_VehicleWheel_get_suspension_stiffness>`  **(** **)** const                                 |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_suspension_travel<class_VehicleWheel_get_suspension_travel>`  **(** **)** const                                       |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`is_in_contact<class_VehicleWheel_is_in_contact>`  **(** **)** const                                                       |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`    | :ref:`is_used_as_steering<class_VehicleWheel_is_used_as_steering>`  **(** **)** const                                           |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
@@ -46,6 +50,8 @@ Member Functions
 | void                       | :ref:`set_friction_slip<class_VehicleWheel_set_friction_slip>`  **(** :ref:`float<class_float>` length  **)**                   |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`set_radius<class_VehicleWheel_set_radius>`  **(** :ref:`float<class_float>` length  **)**                                 |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_roll_influence<class_VehicleWheel_set_roll_influence>`  **(** :ref:`float<class_float>` roll_influence  **)**         |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`set_suspension_max_force<class_VehicleWheel_set_suspension_max_force>`  **(** :ref:`float<class_float>` length  **)**     |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
@@ -73,6 +79,7 @@ Member Variables
 - :ref:`float<class_float>` **wheel_friction_slip**
 - :ref:`float<class_float>` **wheel_radius**
 - :ref:`float<class_float>` **wheel_rest_length**
+- :ref:`float<class_float>` **wheel_roll_influence**
 
 Member Function Description
 ---------------------------
@@ -93,6 +100,10 @@ Member Function Description
 
 - :ref:`float<class_float>`  **get_radius**  **(** **)** const
 
+.. _class_VehicleWheel_get_roll_influence:
+
+- :ref:`float<class_float>`  **get_roll_influence**  **(** **)** const
+
 .. _class_VehicleWheel_get_suspension_max_force:
 
 - :ref:`float<class_float>`  **get_suspension_max_force**  **(** **)** const
@@ -108,6 +119,10 @@ Member Function Description
 .. _class_VehicleWheel_get_suspension_travel:
 
 - :ref:`float<class_float>`  **get_suspension_travel**  **(** **)** const
+
+.. _class_VehicleWheel_is_in_contact:
+
+- :ref:`bool<class_bool>`  **is_in_contact**  **(** **)** const
 
 .. _class_VehicleWheel_is_used_as_steering:
 
@@ -132,6 +147,10 @@ Member Function Description
 .. _class_VehicleWheel_set_radius:
 
 - void  **set_radius**  **(** :ref:`float<class_float>` length  **)**
+
+.. _class_VehicleWheel_set_roll_influence:
+
+- void  **set_roll_influence**  **(** :ref:`float<class_float>` roll_influence  **)**
 
 .. _class_VehicleWheel_set_suspension_max_force:
 

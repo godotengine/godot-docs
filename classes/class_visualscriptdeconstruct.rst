@@ -18,37 +18,24 @@ Brief Description
 Member Functions
 ----------------
 
-+------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_deconstruct_input_type<class_VisualScriptDeconstruct_get_deconstruct_input_type>`  **(** **)** const                             |
-+------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_deconstruct_type<class_VisualScriptDeconstruct_get_deconstruct_type>`  **(** **)** const                                         |
-+------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_deconstruct_input_type<class_VisualScriptDeconstruct_set_deconstruct_input_type>`  **(** :ref:`int<class_int>` input_type  **)** |
-+------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_deconstruct_type<class_VisualScriptDeconstruct_set_deconstruct_type>`  **(** :ref:`int<class_int>` type  **)**                   |
-+------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`get_deconstruct_type<class_VisualScriptDeconstruct_get_deconstruct_type>`  **(** **)** const                       |
++------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                   | :ref:`set_deconstruct_type<class_VisualScriptDeconstruct_set_deconstruct_type>`  **(** :ref:`int<class_int>` type  **)** |
++------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
 
 - :ref:`Array<class_array>` **elem_cache**
-- :ref:`int<class_int>` **input_type**
 - :ref:`int<class_int>` **type**
 
 Member Function Description
 ---------------------------
 
-.. _class_VisualScriptDeconstruct_get_deconstruct_input_type:
-
-- :ref:`int<class_int>`  **get_deconstruct_input_type**  **(** **)** const
-
 .. _class_VisualScriptDeconstruct_get_deconstruct_type:
 
 - :ref:`int<class_int>`  **get_deconstruct_type**  **(** **)** const
-
-.. _class_VisualScriptDeconstruct_set_deconstruct_input_type:
-
-- void  **set_deconstruct_input_type**  **(** :ref:`int<class_int>` input_type  **)**
 
 .. _class_VisualScriptDeconstruct_set_deconstruct_type:
 

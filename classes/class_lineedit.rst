@@ -80,7 +80,11 @@ Signals
 -------
 
 -  **text_changed**  **(** :ref:`String<class_string>` text  **)**
+When the text changes, this signal is emitted.
+
 -  **text_entered**  **(** :ref:`String<class_string>` text  **)**
+This signal is emitted when the user presses KEY_ENTER on the :ref:`LineEdit<class_lineedit>`. This signal is often used as an alternate confirmation mechanism in dialogs.
+
 
 Member Variables
 ----------------

@@ -57,7 +57,7 @@ Member Functions
 Signals
 -------
 
--  **input_event**  **(** :ref:`Object<class_object>` camera, :ref:`InputEvent<class_inputevent>` event, :ref:`Vector3<class_vector3>` click_pos, :ref:`Vector3<class_vector3>` click_normal, :ref:`int<class_int>` shape_idx  **)**
+-  **input_event**  **(** :ref:`Object<class_object>` camera, :ref:`Object<class_object>` event, :ref:`Vector3<class_vector3>` click_pos, :ref:`Vector3<class_vector3>` click_normal, :ref:`int<class_int>` shape_idx  **)**
 -  **mouse_entered**  **(** **)**
 -  **mouse_exited**  **(** **)**
 

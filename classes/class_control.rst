@@ -8,7 +8,7 @@ Control
 
 **Inherits:** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`TextureRect<class_texturerect>`, :ref:`ColorRect<class_colorrect>`, :ref:`Label<class_label>`, :ref:`Tabs<class_tabs>`, :ref:`ButtonArray<class_buttonarray>`, :ref:`GraphEdit<class_graphedit>`, :ref:`VideoPlayer<class_videoplayer>`, :ref:`NinePatchRect<class_ninepatchrect>`, :ref:`LineEdit<class_lineedit>`, :ref:`Container<class_container>`, :ref:`TextEdit<class_textedit>`, :ref:`BaseButton<class_basebutton>`, :ref:`Popup<class_popup>`, :ref:`Tree<class_tree>`, :ref:`Separator<class_separator>`, :ref:`ReferenceRect<class_referencerect>`, :ref:`Panel<class_panel>`, :ref:`TabContainer<class_tabcontainer>`, :ref:`Range<class_range>`, :ref:`RichTextLabel<class_richtextlabel>`, :ref:`ItemList<class_itemlist>`
+**Inherited By:** :ref:`TextureRect<class_texturerect>`, :ref:`ColorRect<class_colorrect>`, :ref:`Label<class_label>`, :ref:`Tabs<class_tabs>`, :ref:`GraphEdit<class_graphedit>`, :ref:`VideoPlayer<class_videoplayer>`, :ref:`NinePatchRect<class_ninepatchrect>`, :ref:`LineEdit<class_lineedit>`, :ref:`Container<class_container>`, :ref:`TextEdit<class_textedit>`, :ref:`BaseButton<class_basebutton>`, :ref:`Popup<class_popup>`, :ref:`Tree<class_tree>`, :ref:`Separator<class_separator>`, :ref:`ReferenceRect<class_referencerect>`, :ref:`Panel<class_panel>`, :ref:`TabContainer<class_tabcontainer>`, :ref:`Range<class_range>`, :ref:`RichTextLabel<class_richtextlabel>`, :ref:`ItemList<class_itemlist>`
 
 **Category:** Core
 
@@ -73,7 +73,7 @@ Member Functions
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Font<class_font>`          | :ref:`get_font<class_Control_get_font>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type=""  **)** const                                                 |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`    | :ref:`get_global_pos<class_Control_get_global_pos>`  **(** **)** const                                                                                                            |
+| :ref:`Vector2<class_vector2>`    | :ref:`get_global_position<class_Control_get_global_position>`  **(** **)** const                                                                                                  |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Rect2<class_rect2>`        | :ref:`get_global_rect<class_Control_get_global_rect>`  **(** **)** const                                                                                                          |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -91,7 +91,7 @@ Member Functions
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Control<class_control>`    | :ref:`get_parent_control<class_Control_get_parent_control>`  **(** **)** const                                                                                                    |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`    | :ref:`get_pos<class_Control_get_pos>`  **(** **)** const                                                                                                                          |
+| :ref:`Vector2<class_vector2>`    | :ref:`get_position<class_Control_get_position>`  **(** **)** const                                                                                                                |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Rect2<class_rect2>`        | :ref:`get_rect<class_Control_get_rect>`  **(** **)** const                                                                                                                        |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -171,7 +171,7 @@ Member Functions
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_focus_neighbour<class_Control_set_focus_neighbour>`  **(** :ref:`int<class_int>` margin, :ref:`NodePath<class_nodepath>` neighbour  **)**                               |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_global_pos<class_Control_set_global_pos>`  **(** :ref:`Vector2<class_vector2>` pos  **)**                                                                               |
+| void                             | :ref:`set_global_position<class_Control_set_global_position>`  **(** :ref:`Vector2<class_vector2>` pos  **)**                                                                     |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_h_size_flags<class_Control_set_h_size_flags>`  **(** :ref:`int<class_int>` flags  **)**                                                                                 |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -179,7 +179,7 @@ Member Functions
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_mouse_filter<class_Control_set_mouse_filter>`  **(** :ref:`int<class_int>` filter  **)**                                                                                |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_pos<class_Control_set_pos>`  **(** :ref:`Vector2<class_vector2>` pos  **)**                                                                                             |
+| void                             | :ref:`set_position<class_Control_set_position>`  **(** :ref:`Vector2<class_vector2>` pos  **)**                                                                                   |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_rotation<class_Control_set_rotation>`  **(** :ref:`float<class_float>` radians  **)**                                                                                   |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -206,14 +206,28 @@ Signals
 -------
 
 -  **focus_entered**  **(** **)**
+Emitted when keyboard focus is gained.
+
 -  **focus_exited**  **(** **)**
--  **gui_input**  **(** :ref:`InputEvent<class_inputevent>` ev  **)**
+Emitted when the keyboard focus is lost.
+
+-  **gui_input**  **(** :ref:`Object<class_object>` ev  **)**
 -  **minimum_size_changed**  **(** **)**
+Emitted when the minimum size of the control changed.
+
 -  **modal_closed**  **(** **)**
 -  **mouse_entered**  **(** **)**
+Emitted when the mouse enters the control area.
+
 -  **mouse_exited**  **(** **)**
+Emitted when the mouse left the control area.
+
 -  **resized**  **(** **)**
+Emitted when the control changed size.
+
 -  **size_flags_changed**  **(** **)**
+Emitted when the size flags changed.
+
 
 Member Variables
 ----------------
@@ -234,7 +248,7 @@ Member Variables
 - :ref:`int<class_int>` **mouse_filter**
 - :ref:`bool<class_bool>` **rect_clip_content**
 - :ref:`Vector2<class_vector2>` **rect_min_size**
-- :ref:`Vector2<class_vector2>` **rect_pos**
+- :ref:`Vector2<class_vector2>` **rect_position**
 - :ref:`float<class_float>` **rect_rotation**
 - :ref:`Vector2<class_vector2>` **rect_scale**
 - :ref:`Vector2<class_vector2>` **rect_size**
@@ -292,7 +306,7 @@ Controls are relative to the parent position and size by using anchors and margi
 
 Anchors work by defining which margin do they follow, and a value relative to it. Allowed anchoring modes are ANCHOR_BEGIN, where the margin is relative to the top or left margins of the parent (in pixels), ANCHOR_END for the right and bottom margins of the parent and ANCHOR_RATIO, which is a ratio from 0 to 1 in the parent range.
 
-Input device events (:ref:`InputEvent<class_inputevent>`) are first sent to the root controls via the :ref:`Node._input<class_Node__input>`, which distribute it through the tree, then delivers them to the adequate one (under cursor or keyboard focus based) by calling :ref:`MainLoop._input_event<class_MainLoop__input_event>`. There is no need to enable input processing on controls to receive such events. To ensure that no one else will receive the event (not even :ref:`Node._unhandled_input<class_Node__unhandled_input>`), the control can accept it by calling :ref:`accept_event<class_Control_accept_event>`.
+Input device events are first sent to the root controls via the :ref:`Node._input<class_Node__input>`, which distribute it through the tree, then delivers them to the adequate one (under cursor or keyboard focus based) by calling :ref:`MainLoop._input_event<class_MainLoop__input_event>`. There is no need to enable input processing on controls to receive such events. To ensure that no one else will receive the event (not even :ref:`Node._unhandled_input<class_Node__unhandled_input>`), the control can accept it by calling :ref:`accept_event<class_Control_accept_event>`.
 
 Only one control can hold the keyboard focus (receiving keyboard events), for that the control must define the focus mode with :ref:`set_focus_mode<class_Control_set_focus_mode>`. Focus is lost when another control gains it, or the current focus owner is hidden.
 
@@ -312,8 +326,6 @@ Return the minimum size this Control can shrink to. A control will never be disp
 .. _class_Control__gui_input:
 
 - void  **_gui_input**  **(** :ref:`InputEvent<class_inputevent>` event  **)** virtual
-
-Called when an input event reaches the control.
 
 .. _class_Control_accept_event:
 
@@ -435,9 +447,9 @@ Return which control is owning the keyboard focus, or null if no one.
 
 - :ref:`Font<class_font>`  **get_font**  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type=""  **)** const
 
-.. _class_Control_get_global_pos:
+.. _class_Control_get_global_position:
 
-- :ref:`Vector2<class_vector2>`  **get_global_pos**  **(** **)** const
+- :ref:`Vector2<class_vector2>`  **get_global_position**  **(** **)** const
 
 Returns the Control position, relative to the top-left corner of the parent Control and independent of the anchor mode.
 
@@ -483,9 +495,9 @@ Return when the control is ignoring mouse events (even touchpad events send mous
 
 - :ref:`Control<class_control>`  **get_parent_control**  **(** **)** const
 
-.. _class_Control_get_pos:
+.. _class_Control_get_position:
 
-- :ref:`Vector2<class_vector2>`  **get_pos**  **(** **)** const
+- :ref:`Vector2<class_vector2>`  **get_position**  **(** **)** const
 
 Returns the Control position, relative to the top-left corner of the parent Control and independent of the anchor mode.
 
@@ -499,9 +511,13 @@ Return position and size of the Control, relative to the top-left corner of the 
 
 - :ref:`float<class_float>`  **get_rotation**  **(** **)** const
 
+Return the rotation (in radians)
+
 .. _class_Control_get_rotation_deg:
 
 - :ref:`float<class_float>`  **get_rotation_deg**  **(** **)** const
+
+Return the rotation (in degrees)
 
 .. _class_Control_get_scale:
 
@@ -681,9 +697,9 @@ Set the focus access mode for the control (FOCUS_NONE, FOCUS_CLICK, FOCUS_ALL). 
 
 Force a neighbour for moving the input focus to. When pressing TAB or directional/joypad directions focus is moved to the next control in that direction. However, the neighbour to move to can be forced with this function.
 
-.. _class_Control_set_global_pos:
+.. _class_Control_set_global_position:
 
-- void  **set_global_pos**  **(** :ref:`Vector2<class_vector2>` pos  **)**
+- void  **set_global_position**  **(** :ref:`Vector2<class_vector2>` pos  **)**
 
 Move the Control to a new position, relative to the top-left corner of the *window* Control, and without changing current anchor mode. (see :ref:`set_margin<class_Control_set_margin>`).
 
@@ -705,9 +721,9 @@ Set a margin offset. Margin can be one of (MARGIN_LEFT, MARGIN_TOP, MARGIN_RIGHT
 
 Set when the control is ignoring mouse events (even touchpad events send mouse events). (see the MOUSE_FILTER\_\* constants)
 
-.. _class_Control_set_pos:
+.. _class_Control_set_position:
 
-- void  **set_pos**  **(** :ref:`Vector2<class_vector2>` pos  **)**
+- void  **set_position**  **(** :ref:`Vector2<class_vector2>` pos  **)**
 
 Move the Control to a new position, relative to the top-left corner of the parent Control, changing all margins if needed and without changing current anchor mode. This is a helper (see :ref:`set_margin<class_Control_set_margin>`).
 
@@ -715,9 +731,13 @@ Move the Control to a new position, relative to the top-left corner of the paren
 
 - void  **set_rotation**  **(** :ref:`float<class_float>` radians  **)**
 
+Set the rotation (in radians).
+
 .. _class_Control_set_rotation_deg:
 
 - void  **set_rotation_deg**  **(** :ref:`float<class_float>` degrees  **)**
+
+Set the rotation (in degrees).
 
 .. _class_Control_set_scale:
 

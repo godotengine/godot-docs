@@ -53,9 +53,13 @@ Member Functions
 Signals
 -------
 
--  **input_event**  **(** :ref:`Object<class_object>` viewport, :ref:`InputEvent<class_inputevent>` event, :ref:`int<class_int>` shape_idx  **)**
+-  **input_event**  **(** :ref:`Object<class_object>` viewport, :ref:`Object<class_object>` event, :ref:`int<class_int>` shape_idx  **)**
 -  **mouse_entered**  **(** **)**
+This event fires only once when the mouse pointer enters any shape of this object.
+
 -  **mouse_exited**  **(** **)**
+This event fires only once when the mouse pointer exits all shapes of this object.
+
 
 Member Variables
 ----------------
@@ -73,8 +77,6 @@ Member Function Description
 .. _class_CollisionObject2D__input_event:
 
 - void  **_input_event**  **(** :ref:`Object<class_object>` viewport, :ref:`InputEvent<class_inputevent>` event, :ref:`int<class_int>` shape_idx  **)** virtual
-
-This method can be used to override normal input processing. The first parameter is the viewport where the event took place. The second holds the input event received, and the third the shape of this object where it happened.
 
 .. _class_CollisionObject2D_add_shape:
 

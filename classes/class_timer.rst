@@ -52,6 +52,8 @@ Signals
 -------
 
 -  **timeout**  **(** **)**
+Emitted when the time runs out.
+
 
 Member Variables
 ----------------
