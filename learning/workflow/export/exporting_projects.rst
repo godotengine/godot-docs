@@ -90,7 +90,7 @@ installed to be able to export projects. They can be obtained as a
 <https://www.godotengine.org/download>`_.
 
 Once downloaded, they can be installed using the "Install Export
-Templates" option in the editor:
+Templates" option under the "Settings" menu in the top right coner of the editor:
 
 .. image:: /img/exptemp.png
 
