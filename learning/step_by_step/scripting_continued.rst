@@ -96,7 +96,7 @@ Notifications
 
 Godot has a system of notifications. This is usually not needed for
 scripting, as it's too low level and virtual functions are provided for
-most of them. It's just good to know they exists. Simply
+most of them. It's just good to know they exist. Simply
 add a
 :ref:`Object._notification() <class_Object__notification>`
 function in your script:
