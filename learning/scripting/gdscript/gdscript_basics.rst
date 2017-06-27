@@ -7,9 +7,9 @@ Introduction
 ------------
 
 *GDScript* is a high level, dynamically typed programming language used to
-create content. It uses a syntax similar to 
-`Python <https://en.wikipedia.org/wiki/Python_%28programming_language%29>`_ 
-(blocks are indent-based and many keywords are similar). Its goal is 
+create content. It uses a syntax similar to
+`Python <https://en.wikipedia.org/wiki/Python_%28programming_language%29>`_
+(blocks are indent-based and many keywords are similar). Its goal is
 to be optimized for and tightly integrated with Godot Engine, allowing great
 flexibility for content creation and integration.
 
@@ -28,7 +28,7 @@ enormous amount of code. After some experiments with
 
 The last third party scripting language that was used for shipped games
 was `Squirrel <http://squirrel-lang.org>`__, but it was dropped as well.
-At that point, it became evident that a custom scripting language could 
+At that point, it became evident that a custom scripting language could
 more optimally make use of Godot's particular architecture:
 
 -  Godot embeds scripts in nodes. Most languages are not designed with
@@ -65,7 +65,7 @@ here's a simple example of how GDScript looks.
 
     # member variables
 
-    var a = 5 
+    var a = 5
     var s = "Hello"
     var arr = [1, 2, 3]
     var dict = {"key":"value", 2:3}
@@ -126,9 +126,9 @@ read this tutorial: :ref:`doc_gdscript_more_efficiently`.
 Language
 --------
 
-In the following, an overview is given to GDScript. Details, such as which 
+In the following, an overview is given to GDScript. Details, such as which
 methods are available to arrays or other objects, should be looked up in
-the linked class descriptions. 
+the linked class descriptions.
 
 Identifiers
 ~~~~~~~~~~~
@@ -220,6 +220,15 @@ The following is the list of supported operators and their precedence
 | ``-x``                                                        | Negative                                |
 +---------------------------------------------------------------+-----------------------------------------+
 | ``*`` ``/`` ``%``                                             | Multiplication / Division / Remainder   |
+|                                                               |                                         |
+|                                                               | NOTE: The result of these operations    |
+|                                                               | depends on the operands types. If both  |
+|                                                               | are Integers, then the result will be   |
+|                                                               | an Integer. That means 1/10 returns 0   |
+|                                                               | instead of 0.1. If at least one of the  |
+|                                                               | operands is a float, then the result is |
+|                                                               | a float: float(1)/10 or 1.0/10 return   |
+|                                                               | both 0.1.                               |
 +---------------------------------------------------------------+-----------------------------------------+
 | ``+`` ``-``                                                   | Addition / Subtraction                  |
 +---------------------------------------------------------------+-----------------------------------------+
@@ -276,13 +285,13 @@ considered a comment.
     # This is a comment
 
 ..  Uncomment me if/when https://github.com/godotengine/godot/issues/1320 gets fixed
-    
+
     Multi-line comments can be created using """ (three quotes in a row) at
     the beginning and end of a block of text.
-    
+
     ::
-    
-        """ Everything on these 
+
+        """ Everything on these
         lines is considered
         a comment """
 
@@ -298,7 +307,7 @@ null
 ^^^^
 
 ``null`` is an empty data type that contains no information and can not
-be assigned any other value. 
+be assigned any other value.
 
 bool
 ^^^^
@@ -428,7 +437,7 @@ Container built-in types
 :ref:`Array <class_Array>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Generic sequence of arbitrary object types, including other arrays or dictionaries (see below). 
+Generic sequence of arbitrary object types, including other arrays or dictionaries (see below).
 The array can resize dynamically. Arrays are indexed starting from index ``0``.
 Starting with Godot 2.1, indices may be negative like in Python, to count from the end.
 
@@ -444,10 +453,10 @@ Starting with Godot 2.1, indices may be negative like in Python, to count from t
 
 GDScript arrays are allocated linearly in memory for speed. Very
 large arrays (more than tens of thousands of elements) may however cause
-memory fragmentation. If this is a concern special types of 
-arrays are available. These only accept a single data type. They avoid memory 
+memory fragmentation. If this is a concern special types of
+arrays are available. These only accept a single data type. They avoid memory
 fragmentation and also use less memory but are atomic and tend to run slower than generic
-arrays. They are therefore only recommended to use for very large data sets: 
+arrays. They are therefore only recommended to use for very large data sets:
 
 - :ref:`ByteArray <class_ByteArray>`: An array of bytes (integers from 0 to 255).
 - :ref:`IntArray <class_IntArray>`: An array of integers.
@@ -473,15 +482,15 @@ Associative container which contains values referenced by unique keys.
         "morekey"  : "Hello"
     }
 
-Lua-style table syntax is also supported. Lua-style uses ``=`` instead of ``:`` 
-and doesn't use quotes to mark string keys (making for slightly less to write). 
-Note however that like any GDScript identifier, keys written in this form cannot 
+Lua-style table syntax is also supported. Lua-style uses ``=`` instead of ``:``
+and doesn't use quotes to mark string keys (making for slightly less to write).
+Note however that like any GDScript identifier, keys written in this form cannot
 start with a digit.
 
 ::
 
     var d = {
-        test22 = "Value", 
+        test22 = "Value",
         somekey = 2,
         otherkey = [2,3,4],
         morekey = "Hello"
@@ -516,7 +525,7 @@ Constants
 ~~~~~~~~~
 
 Constants are similar to variables, but must be constants or constant
-expressions and must be assigned on initialization. 
+expressions and must be assigned on initialization.
 
 ::
 
@@ -527,7 +536,7 @@ expressions and must be assigned on initialization.
     const e = [1, 2, 3, 4][0]  # constant expression: 1
     const f = sin(20)  # sin() can be used in constant expressions
     const g = x + 20  # invalid; this is not a constant expression!
-    
+
 Enums
 ^^^^^
 
@@ -589,13 +598,13 @@ function or be returned from other functions. This is for performance reasons.
 To reference a function by name at runtime, (e.g. to store it in a variable, or
 pass it to another function as an argument) one must use the ``call`` or
 ``funcref`` helpers::
-   
-    # Call a function by name in one step
-    mynode.call("myfunction", args)  
 
-    # Store a function reference 
+    # Call a function by name in one step
+    mynode.call("myfunction", args)
+
+    # Store a function reference
     var myfunc = funcref(mynode, "myfunction")
-    # Call stored function reference 
+    # Call stored function reference
     myfunc.call_func(args)
 
 
@@ -603,7 +612,7 @@ Remember that default functions like  ``_init``, and most
 notifications such as ``_enter_tree``, ``_exit_tree``, ``_process``,
 ``_fixed_process``, etc. are called in all base classes automatically.
 So there is only a need to call the function explicitly when overloading
-them in some way. 
+them in some way.
 
 
 Static functions
@@ -705,7 +714,7 @@ It's the equivalent of the ``switch`` statement found in many other languages bu
 Basic syntax:
 
 ::
-    
+
     match [expression]:
         [pattern](s): [block]
         [pattern](s): [block]
@@ -730,7 +739,7 @@ There are 6 pattern types:
 
 - constant pattern
     constant primitives, like numbers and strings ::
-    
+
         match x:
             1:      print("We are number one!")
             2:      print("Two are better than one!")
@@ -739,7 +748,7 @@ There are 6 pattern types:
 
 - variable pattern
     matches the contents of a variable/enum ::
-    
+
         match typeof(x):
             TYPE_FLOAT:  print("float")
             TYPE_STRING: print("text")
@@ -748,9 +757,9 @@ There are 6 pattern types:
 
 - wildcard pattern
     This pattern matches everything. It's written as a single underscore.
-    
+
     It can be used as the equivalent of the ``default`` in a ``switch`` statement in other languages. ::
-    
+
         match x:
             1: print("it's one!")
             2: print("it's one times two!")
@@ -760,7 +769,7 @@ There are 6 pattern types:
 - binding pattern
     A binding pattern introduces a new variable. Like the wildcard pattern, it matches everything - and also gives that value a name.
     It's especially useful in array and dictionary patterns. ::
-        
+
         match x:
             1:           print("it's one!")
             2:           print("it's one times two!")
@@ -769,13 +778,13 @@ There are 6 pattern types:
 
 - array pattern
     matches an array. Every single element of the array pattern is a pattern itself so you can nest them.
-    
+
     The length of the array is tested first, it has to be the same size as the pattern, otherwise the pattern don't match.
 
     **Open-ended array**: An array can be bigger than the pattern by making the last subpattern ``..``
-    
+
     Every subpattern has to be comma separated. ::
-    
+
         match x:
             []:
                 print("empty array")
@@ -785,7 +794,7 @@ There are 6 pattern types:
                 print("first element is ", start, ", and the last is \"test\"")
             [42, ..]:
                 print("open ended array")
-    
+
 - dictionary pattern
     Works in the same was as the array pattern. Every key has to be a constant pattern.
 
@@ -834,7 +843,7 @@ separate threads without the user knowing). In the same way, member
 variables (including arrays and dictionaries) are initialized every time
 an instance is created.
 
-Below is an example of a class file. 
+Below is an example of a class file.
 
 ::
 
@@ -848,29 +857,29 @@ Below is an example of a class file.
 Inheritance
 ^^^^^^^^^^^
 
-A class (stored as a file) can inherit from 
+A class (stored as a file) can inherit from
 
 - A global class
-- Another class file 
-- An inner class inside another class file. 
+- Another class file
+- An inner class inside another class file.
 
-Multiple inheritance is not allowed. 
+Multiple inheritance is not allowed.
 
 Inheritance uses the ``extends`` keyword:
 
 ::
 
     # Inherit/extend a globally available class
-    extends SomeClass 
-    
+    extends SomeClass
+
     # Inherit/extend a named class file
-    extends "somefile.gd" 
-    
+    extends "somefile.gd"
+
     # Inherit/extend an inner class in another file
     extends "somefile.gd".SomeInnerClass
 
 
-To check if a given instance inherits from a given class 
+To check if a given instance inherits from a given class
 the ``extends`` keyword can be used as an operator instead:
 
 ::
@@ -887,7 +896,7 @@ the ``extends`` keyword can be used as an operator instead:
 Class Constructor
 ^^^^^^^^^^^^^^^^^
 
-The class constructor, called on class instantiation, is named ``_init``. 
+The class constructor, called on class instantiation, is named ``_init``.
 As mentioned earlier, the constructors of parent classes are called automatically when
 inheriting a class. So there is usually no need to call ``._init()`` explicitly.
 
@@ -902,7 +911,7 @@ Inner classes
 ^^^^^^^^^^^^^
 
 A class file can contain inner classes. Inner classes are defined using the
-``class`` keyword. They are instanced using the ``ClassName.new()`` 
+``class`` keyword. They are instanced using the ``ClassName.new()``
 function.
 
 ::
@@ -917,7 +926,7 @@ function.
 
     # This is the constructor of the class file's main class
     func _init():
-        var c = SomeInnerClass.new() 
+        var c = SomeInnerClass.new()
         c.print_value_of_a()
 
 Classes as resources
@@ -960,12 +969,12 @@ special export syntax is provided.
 
 ::
 
-    # If the exported value assigns a constant or constant expression, 
+    # If the exported value assigns a constant or constant expression,
     # the type will be inferred and used in the editor
 
     export var number = 5
 
-    # Export can take a basic data type as an argument which will be 
+    # Export can take a basic data type as an argument which will be
     # used in the editor
 
     export(int) var number
@@ -978,49 +987,49 @@ special export syntax is provided.
     # Integers and strings hint enumerated values
 
     # Editor will enumerate as 0, 1 and 2
-    export(int, "Warrior", "Magician", "Thief") var character_class   
-    # Editor will enumerate with string names 
-    export(String, "Rebecca", "Mary", "Leah") var character_name 
+    export(int, "Warrior", "Magician", "Thief") var character_class
+    # Editor will enumerate with string names
+    export(String, "Rebecca", "Mary", "Leah") var character_name
 
     # Strings as paths
 
     # String is a path to a file
-    export(String, FILE) var f  
+    export(String, FILE) var f
     # String is a path to a directory
-    export(String, DIR) var f  
+    export(String, DIR) var f
     # String is a path to a file, custom filter provided as hint
-    export(String, FILE, "*.txt") var f  
+    export(String, FILE, "*.txt") var f
 
-    # Using paths in the global filesystem is also possible, 
+    # Using paths in the global filesystem is also possible,
     # but only in tool scripts (see further below)
 
     # String is a path to a PNG file in the global filesystem
-    export(String, FILE, GLOBAL, "*.png") var tool_image 
+    export(String, FILE, GLOBAL, "*.png") var tool_image
     # String is a path to a directory in the global filesystem
     export(String, DIR, GLOBAL) var tool_dir
 
-    # The MULTILINE setting tells the editor to show a large input 
+    # The MULTILINE setting tells the editor to show a large input
     # field for editing over multiple lines
     export(String, MULTILINE) var text
 
     # Limiting editor input ranges
 
     # Allow integer values from 0 to 20
-    export(int, 20) var i  
-    # Allow integer values from -10 to 20 
-    export(int, -10, 20) var j 
+    export(int, 20) var i
+    # Allow integer values from -10 to 20
+    export(int, -10, 20) var j
     # Allow floats from -10 to 20, with a step of 0.2
-    export(float, -10, 20, 0.2) var k 
-    # Allow values y = exp(x) where y varies betwee 100 and 1000 
-    # while snapping to steps of 20. The editor will present a 
-    # slider for easily editing the value. 
-    export(float, EXP, 100, 1000, 20) var l 
+    export(float, -10, 20, 0.2) var k
+    # Allow values y = exp(x) where y varies betwee 100 and 1000
+    # while snapping to steps of 20. The editor will present a
+    # slider for easily editing the value.
+    export(float, EXP, 100, 1000, 20) var l
 
     # Floats with easing hint
 
-    # Display a visual representation of the ease() function 
+    # Display a visual representation of the ease() function
     # when editing
-    export(float, EASE) var transition_speed 
+    export(float, EASE) var transition_speed
 
     # Colors
 
@@ -1028,9 +1037,9 @@ special export syntax is provided.
     export(Color, RGB) var col  # Color is RGB
     # Color given as Red-Green-Blue-Alpha value
     export(Color, RGBA) var col  # Color is RGBA
-   
+
     # another node in the scene can be exported too
-    
+
     export(NodePath) var node
 
 It must be noted that even if the script is not being run while at the
@@ -1047,7 +1056,7 @@ can be set from the editor:
 ::
 
     # Individually edit the bits of an integer
-    export(int, FLAGS) var spell_elements = ELEMENT_WIND | ELEMENT_WATER 
+    export(int, FLAGS) var spell_elements = ELEMENT_WIND | ELEMENT_WATER
 
 Restricting the flags to a certain number of named flags is also
 possible. The syntax is very similar to the enumeration syntax:
@@ -1055,7 +1064,7 @@ possible. The syntax is very similar to the enumeration syntax:
 ::
 
     # Set any of the given flags from the editor
-    export(int, FLAGS, "Fire", "Water", "Earth", "Wind") var spell_elements = 0 
+    export(int, FLAGS, "Fire", "Water", "Earth", "Wind") var spell_elements = 0
 
 In this example, ``Fire`` has value 1, ``Water`` has value 2, ``Earth``
 has value 4 and ``Wind`` corresponds to value 8. Usually, constants
@@ -1096,21 +1105,21 @@ initializers, but they must be constant expressions.
 Setters/getters
 ~~~~~~~~~~~~~~~
 
-It is often useful to know when a class' member variable changes for 
-whatever reason. It may also be desired to encapsulate its access in some way. 
+It is often useful to know when a class' member variable changes for
+whatever reason. It may also be desired to encapsulate its access in some way.
 
-For this, GDScript provides a *setter/getter* syntax using the ``setget`` keyword. 
+For this, GDScript provides a *setter/getter* syntax using the ``setget`` keyword.
 It is used directly after a variable definition:
 
 ::
 
     var variable = value setget setterfunc, getterfunc
 
-Whenever the value of ``variable`` is modified by an *external* source 
+Whenever the value of ``variable`` is modified by an *external* source
 (i.e. not from local usage in the class), the *setter* function (``setterfunc`` above)
-will be called. This happens *before* the value is changed. The *setter* must decide what to do 
-with the new value. Vice-versa, when ``variable`` is accessed, the *getter* function 
-(``getterfunc`` above) must ``return`` the desired value. Below is an example: 
+will be called. This happens *before* the value is changed. The *setter* must decide what to do
+with the new value. Vice-versa, when ``variable`` is accessed, the *getter* function
+(``getterfunc`` above) must ``return`` the desired value. Below is an example:
 
 
 ::
@@ -1135,8 +1144,8 @@ Either of the *setter* or *getter* functions can be omitted:
 Get/Setters are especially useful when exporting variables to editor in tool
 scripts or plugins, for validating input.
 
-As said *local* access will *not* trigger the setter and getter. Here is an 
-illustration of this: 
+As said *local* access will *not* trigger the setter and getter. Here is an
+illustration of this:
 
 ::
 
@@ -1144,7 +1153,7 @@ illustration of this:
         # Does not trigger setter/getter
         myinteger=5
         print(myinteger)
-        
+
         # Does trigger setter/getter
         self.myinteger=5
         print(self.myinteger)
@@ -1183,7 +1192,7 @@ Signals
 
 It is often desired to send a notification that something happened in an
 instance. GDScript supports creation of built-in Godot signals.
-Declaring a signal in GDScript is easy using the `signal` keyword. 
+Declaring a signal in GDScript is easy using the `signal` keyword.
 
 ::
 
@@ -1241,7 +1250,7 @@ Object.emit_signal method:
 Coroutines
 ~~~~~~~~~~
 
-GDScript offers support for `coroutines <https://en.wikipedia.org/wiki/Coroutine>`_ 
+GDScript offers support for `coroutines <https://en.wikipedia.org/wiki/Coroutine>`_
 via the ``yield`` built-in function. Calling ``yield()`` will
 immediately return from the current function, with the current frozen
 state of the same function as the return value. Calling ``resume`` on
