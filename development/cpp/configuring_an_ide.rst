@@ -111,31 +111,47 @@ Xcode
 Project Setup
 ^^^^^^^^^^^^^
 
-- Create an |xcode external build| project anywhere
+- Create an Xcode external build project anywhere
+
+.. image:: /img/xcode_1_create_external_build_project.png
+
 - Set the *Build tool* to the path to scons
 
-Modify Build Target's |xcode Info Tab|:
+Modify Build Target's Xcode Info Tab:
 
 - Set *Arguments* to something like: platform=osx tools=yes bits=64 target=debug
 - Set *Directory* to the path to Godot's source folder. Keep it blank if project is already there.
 - You may uncheck *Pass build settings in environment*
 
+.. image:: /img/xcode_2_configure_scons.png
+
 Add a Command Line Target:
 
-- Go to |xcode File > New > Target...| and add a new |xcode command line target|
+- Go to Xcode File > New > Target... and add a new Xcode command line target
+
+.. image:: /img/xcode_3_add_new_target.png
+
+.. image:: /img/xcode_4_select_command_line_target.png
+
 - Name it something so you know not to compile with this target
-- e.g. GodotXcodeIndex
+- e.g. ``GodotXcodeIndex``
 - Goto the newly created target's *Build Settings* tab and search for *Header Search Paths*
 - Set *Header Search Paths* to an absolute path to Godot's source folder
 - Make it recursive by adding two \*'s to the end of the path
-- e.g. /Users/me/repos/godot-source/\**
+- e.g. ``/Users/me/repos/godot-source/\**``
 
 Add Godot Source to the Project:
 
 - Drag and drop godot source into project file browser.
-- |xcode Uncheck| *Create External Build System*
+- Uncheck *Create External Build System*
+
+.. image:: /img/xcode_5_after_add_godot_source_to_project.png
+
 - Click Next
-- |xcode Select| *create groups*
+- Select *create groups*
+
+.. image:: /img/xcode_6_after_add_godot_source_to_project_2.png
+
 - Check off only your command line target in the *Add to targets* section
 - Click finish. Xcode will now index the files.
 - Grab a cup of coffee... Maybe make something to eat, too
@@ -149,33 +165,31 @@ Edit Build Scheme of External Build Target:
 - Open scheme editor of external build target
 - Expand the *Build* menu
 - Goto *Post Actions*
-- Add a new script |xcode run action|
+- Add a new script run action, select your project in ``Provide build settings from`` as this allows you to use ``${PROJECT_DIR}`` variable.
+
+.. image:: /img/xcode_7_setup_build_post_action.png
+
 - Write a script that gives the binary a name that Xcode will recognize
-- e.g. ln -f "$SRCROOT"/bin/godot.osx.tools.64 "$SRCROOT"/bin/godot
+- e.g. ``ln -f ${PROJECT_DIR}/godot/bin/godot.osx.tools.64 ${PROJECT_DIR}/godot/bin/godot``
 - Build the external build target
 
 Edit Run Scheme of External Build Target:
 
 - Open the scheme editor again
-- |xcode Click Run|
+- Click Run
+
+.. image:: /img/xcode_8_setup_run_scheme.png
+
 - Set the *Executable* to the file you linked in your post build action script
 - Check *Debug executable* if it isn't already
 - You can go to *Arguments* tab and add an -e and a -path to a project to debug the editor
   not the project selection screen
 
-Test It:
+Test it:
 
-- set a breakpoint in platform/osx/godot_main_osx.mm
-- it should break at the point!
+- Set a breakpoint in platform/osx/godot_main_osx.mm
+- It should break at the point!
 
-.. |xcode external build|         replace:: :download:`external build </img/xcode_1_create_external_build_project.png>`
-.. |xcode Info Tab|               replace:: :download:`Info Tab </img/xcode_2_configure_scons.png>`
-.. |xcode File > New > Target...| replace:: :download:`File > New > Target... </img/xcode_3_add_new_target.png>`
-.. |xcode command line target|    replace:: :download:`command line target </img/xcode_4_select_command_line_target.png>`
-.. |xcode Uncheck|                replace:: :download:`Uncheck </img/xcode_5_after_add_godot_source_to_project.png>`
-.. |xcode Select|                 replace:: :download:`Select </img/xcode_6_after_add_godot_source_to_project_2.png>`
-.. |xcode run action|             replace:: :download:`run action </img/xcode_7_setup_build_post_action.png>`
-.. |xcode Click Run|              replace:: :download:`Click Run </img/xcode_8_setup_run_scheme.png>`
 
 Other editors (vim, emacs, Atom...)
 -----------------------------------
