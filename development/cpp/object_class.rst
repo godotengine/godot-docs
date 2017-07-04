@@ -43,7 +43,7 @@ Classes are registered by calling:
 
 .. code:: cpp
 
-    ClassDB::register_type<MyCustomType>()
+    ClassDB::register_class<MyCustomType>()
 
 Registering it will allow the type to be instanced by scripts, code, or
 creating them again when deserializing.
