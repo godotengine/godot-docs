@@ -24,8 +24,8 @@ from the ground up around this concept.
 
 When making games with Godot, the recommended approach is to leave aside
 other design patterns such as MVC or Entity-Relationship diagrams and
-start thinking games in a more natural way. Start by imagining the
-visible elements in a game, the ones that can be named not by just a
+start thinking about games in a more natural way. Start by imagining the
+visible elements in a game, the ones that can be named not just by a
 programmer but by anyone.
 
 For example, here's how a simple shooter game can be imagined:
@@ -37,12 +37,12 @@ of game. Just write down the elements that come to mind, and then the
 arrows that represent ownership.
 
 Once this diagram exists, making a game is about creating a scene for
-each of those nodes, and use instancing (either by code or from the editor) to represent ownership.
+each of those nodes, and using instancing (either by code or from the editor) to represent ownership.
 
 Most of the time programming games (or software in general) is spent
 designing an architecture and fitting game components to that
 architecture. Designing based on scenes replaces that and makes
-development much faster and more straightforward, allowing to
+development much faster and more straightforward, allowing you to
 concentrate on the game itself. Scene/Instancing based design is
 extremely efficient at saving a large part of that work, since most of
 the components designed map directly to a scene. This way, none or
@@ -60,8 +60,8 @@ The house can be part of a citadel, which has many houses. Finally the
 citadel can be put on the world map terrain. Add also guards and other
 NPCs to the citadel by previously creating their scenes.
 
-With Godot, games can grow as quickly as desired, as all it needs is
-to create and instance more scenes. The editor UI is designed to be
+With Godot, games can grow as quickly as desired, as all it needs is for
+more scenes to be created and instanced . The editor UI is designed to be
 operated by non programmers too, so a typical team development process
 can involve 3D or 2D artists, level designers, game designers, animators,
 etc all working with the editor interface.
@@ -70,7 +70,7 @@ Information overload!
 ---------------------
 
 Do not worry too much, the important part of this tutorial is to create
-awareness on how scenes and instancing are used in real life. The best
+awareness of how scenes and instancing are used in real life. The best
 way to understand all this is to make some games.
 
 Everything will become very obvious when put to practice, so please do
