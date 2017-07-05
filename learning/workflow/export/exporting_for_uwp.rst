@@ -30,7 +30,7 @@ This requires the tools ``MakeCert.exe`` and ``Pvk2Pfx.exe`` which comes
 with the Windows SDK. If you use Visual Studio, open one of its Developer
 Prompts since they come with those tools available and in the path.
 
-You can get more detailed instructions from `Microsof documentation
+You can get more detailed instructions from `Microsoft documentation
 <https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832(v=vs.85).aspx>`__.
 
 First, run ``MakeCert`` to create a private key::
