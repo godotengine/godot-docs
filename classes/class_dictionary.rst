@@ -94,7 +94,9 @@ Return the list of keys in the :ref:`Dictionary<class_dictionary>`.
 
 - :ref:`int<class_int>`  **parse_json**  **(** :ref:`String<class_string>` json  **)**
 
-Parse json text to the dictionary. Return OK when successed or the error code when failed.
+Parse json text to the dictionary. Return OK when successed or the error code when failed. 
+
+Be aware that the `JSON specification <https://tools.ietf.org/html/rfc7159#section-6/>`_ does not define integer or float types, but only a *number* type. Therefore, parsing a JSON text into a dictionary will convert every numerical values to :ref:`float<class_float>` types.
 
 .. _class_Dictionary_size:
 
