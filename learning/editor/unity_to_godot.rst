@@ -126,7 +126,7 @@ We previously observed that there is no perfect solution to set a project archit
 
 However, we often observe a common architecture for Unity projects, which consists in having one Assets folder in the root directory, that contains various folders, one per type of asset: Audio, Graphics, Models, Materials, Scripts, Scenes, etc.
 
-As described before, Godot scene system allows splitting scenes in smaller scenes. Since each scene and subscene is actually one scene file in the project, we recommend organizing your project a bit differently. This wiki provides a page for this: `Project Organization <engine/project_organization.html>`_.
+As described before, Godot scene system allows splitting scenes in smaller scenes. Since each scene and subscene is actually one scene file in the project, we recommend organizing your project a bit differently. This wiki provides a page for this: :ref:`doc_project_organization`.
 
 
 Where are my prefabs?
