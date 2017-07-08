@@ -18,5 +18,5 @@ Simple margin container.
 Description
 -----------
 
-Simple margin container. Adds a left margin to anything contained.
+Simple margin container. Adds custom margins to anything contained.
 
