@@ -9,17 +9,17 @@ Recap
 Instancing has many handy uses. At a glance, with instancing you have:
 
 -  The ability to subdivide scenes and make them easier to manage.
--  A more flexible alternative to prefabs (and much more powerful given
+-  A more flexible alternative to prefabs (and much more powerful, given
    instances work at many levels).
 -  A way to design more complex game flows or even UIs (UI Elements are
-   nodes in Godot too).
+   nodes in Godot, too).
 
 Design language
 ---------------
 
 But the real strong point of instancing scenes is that it works as an
 excellent design language. This is pretty much what makes Godot special
-and different to any other engine out there. The entire engine was designed
+and different from any other engine out there. The entire engine was designed
 from the ground up around this concept.
 
 When making games with Godot, the recommended approach is to leave aside
@@ -39,16 +39,16 @@ arrows that represent ownership.
 Once this diagram exists, making a game is about creating a scene for
 each of those nodes, and use instancing (either by code or from the editor) to represent ownership.
 
-Most of the time programming games (or software in general) is spent
+Most of the time, programming games (or software in general) is spent
 designing an architecture and fitting game components to that
 architecture. Designing based on scenes replaces that and makes
 development much faster and more straightforward, allowing to
-concentrate on the game itself. Scene/Instancing based design is
+concentrate on the game itself. Scene-/Instancing-based design is
 extremely efficient at saving a large part of that work, since most of
-the components designed map directly to a scene. This way, none or
+the designed components map directly to a scene. This way, none or
 little architectural code is needed.
 
-The following is a more complex example, an open-world type of game with
+The following is a more complex example: an open-world type of game with
 lots of assets and parts that interact:
 
 .. image:: /img/openworld_instancing.png
@@ -56,22 +56,22 @@ lots of assets and parts that interact:
 Make some rooms with furniture, then connect them. Make a house later,
 and use those rooms as the interior.
 
-The house can be part of a citadel, which has many houses. Finally the
+The house can be part of a citadel, which has many houses. Finally, the
 citadel can be put on the world map terrain. Add also guards and other
-NPCs to the citadel by previously creating their scenes.
+NPCs to the citadel by adding them to the previously created scenes.
 
 With Godot, games can grow as quickly as desired, as all it needs is
 to create and instance more scenes. The editor UI is designed to be
-operated by non programmers too, so a typical team development process
+operated by non-programmers too, so a typical team development process
 can involve 3D or 2D artists, level designers, game designers, animators,
-etc all working with the editor interface.
+etc., all working with the editor interface.
 
 Information overload!
 ---------------------
 
-Do not worry too much, the important part of this tutorial is to create
+Do not worry too much; the important part of this tutorial is to create
 awareness on how scenes and instancing are used in real life. The best
 way to understand all this is to make some games.
 
 Everything will become very obvious when put to practice, so please do
-not scratch your head and go on to the next tutorial!
+not scratch your head. Instead, go on to the next tutorial!

@@ -8,8 +8,8 @@ Why?
 
 Godot has nodes to draw sprites, polygons, particles, and all sorts of
 stuff. For most cases this is enough, but not always. Before crying in fear, 
-angst, and rage because a node to draw that-specific-something does not exist... it would
-be good to know that it is possible to easily make any 2D node (be it
+angst, and rage because a node to draw that specific *something* does not exist...
+it would be good to know that it is possible to easily make any 2D node (be it
 :ref:`Control <class_Control>` or :ref:`Node2D <class_Node2D>`
 based) draw custom commands. It is *really* easy to do it too.
 
@@ -37,7 +37,7 @@ OK, how?
 
 Add a script to any :ref:`CanvasItem <class_CanvasItem>`
 derived node, like :ref:`Control <class_Control>` or
-:ref:`Node2D <class_Node2D>`. Override the _draw() function.
+:ref:`Node2D <class_Node2D>`. Then override the _draw() function.
 
 ::
 
@@ -104,9 +104,9 @@ Arc function
 ^^^^^^^^^^^^
 
 
-An arc is defined by its support circle parameters, that is: the center position, and the radius. And the arc itself is then defined by the angle it starts from, and the angle it stops at. These are the 4 parameters we have to provide to our drawing. We'll also provide the color value so we can draw the arc in different colors if we wish.
+An arc is defined by its support circle parameters. That is: the center position, and the radius. And the arc itself is then defined by the angle it starts from, and the angle at which it stops. These are the 4 parameters we have to provide to our drawing. We'll also provide the color value so we can draw the arc in different colors if we wish.
 
-Basically, drawing a shape on screen requires it to be decomposed into a certain number of points linked one to the following one. As you can imagine, the more points your shape is made of, the smoother it will appear, but the heavier it will be in terms of processing cost. In general, if your shape is huge (or in 3D, close to the camera), it will require more points to be drawn without showing angular-looking. On the contrary, if your shape is small (or in 3D, far from the camera), you may reduce its number of points to save processing costs. This is called *Level of Detail (LoD)*. In our example, we will simply use a fixed number of points, no matter the radius.
+Basically, drawing a shape on screen requires it to be decomposed into a certain number of points, linked from one to the following one. As you can imagine, the more points your shape is made of, the smoother it will appear, but the heavier it will be, in terms of processing cost. In general, if your shape is huge (or in 3D, close to the camera), it will require more points to be drawn without it being angular-looking. On the contrary, if your shape is small (or in 3D, far from the camera), you may reduce its number of points to save processing costs. This is called *Level of Detail (LoD)*. In our example, we will simply use a fixed number of points, no matter the radius.
 
 ::
 
@@ -124,17 +124,17 @@ Basically, drawing a shape on screen requires it to be decomposed into a certain
 
 Remember the number of points our shape has to be decomposed into? We fixed this number in the nb_points variable to a value of 32. Then, we initialize an empty Vector2Array, which is simply an array of Vector2.
 
-Next step consists in computing the actual positions of these 32 points that compose arc. This is done in the first for-loop: we iterate over the number of points we want to compute the positions, plus one to include the last point. We first determine the angle of each point, between the starting and ending angles. 
+The next step consists of computing the actual positions of these 32 points that compose an arc. This is done in the first for-loop: we iterate over the number of points for which we want to compute the positions, plus one to include the last point. We first determine the angle of each point, between the starting and ending angles. 
 
-The reason why each angle is reduced of 90° is that we will compute 2D positions out of each angle using trigonometry (you know, cosine and sine stuff...). However, to be simple, cos() and sin() use radians, not degrees. The angle of 0° (0 radian) starts at 3 o'clock, although we want to start counting at 0 o'clock. So, we just reduce each angle of 90° in order to start counting from 0'clock.
+The reason why each angle is reduced by 90° is that we will compute 2D positions out of each angle using trigonometry (you know, cosine and sine stuff...). However, to be simple, cos() and sin() use radians, not degrees. The angle of 0° (0 radian) starts at 3 o'clock, although we want to start counting at 0 o'clock. So, we just reduce each angle by 90° in order to start counting from 0 o'clock.
 
 The actual position of a point located on a circle at angle 'angle' (in radians) is given by Vector2(cos(angle), sin(angle)). Since cos() and sin() return values between -1 and 1, the position is located on a circle of radius 1. To have this position on our support circle, which has a radius of 'radius', we simply need to multiply the position by 'radius'. Finally, we need to position our support circle at the 'center' position, which is performed by adding it to our Vector2 value. Finally, we insert the point in the Vector2Array which was previously defined.
 
-Now, we need to actually draw our points. As you can imagine, we will not simply draw our 32 points: we need to draw everything that is between each of them. We could have computed every point ourselves using the previous method, and draw it one by one, but this it too complicated and inefficient (except if explicitly needed). So, we simply draw lines between each pair of points. Unless the radius of our support circle is very big, the length of each line between a pair of points will never be long enough to see them. If this happens, we simply would need to increase the number of points.
+Now, we need to actually draw our points. As you can imagine, we will not simply draw our 32 points: we need to draw everything that is between each of them. We could have computed every point ourselves using the previous method, and drew it one by one. But this is too complicated and inefficient (except if explicitly needed). So, we simply draw lines between each pair of points. Unless the radius of our support circle is very big, the length of each line between a pair of points will never be long enough to see them. If this happens, we simply would need to increase the number of points.
 
 Draw the arc on screen
 ^^^^^^^^^^^^^^^^^^^^^^
-We now have a function that draws stuff on screen: it is time to call it in the _draw() function.
+We now have a function that draws stuff on the screen: it is time to call in the _draw() function.
 
 ::
 
@@ -154,7 +154,7 @@ Result:
 
 Arc polygon function
 ^^^^^^^^^^^^^^^^^^^^
-We can take this a step further and write a function that draws the plain portion of the disc defined by the arc, not only its shape. The method is exactly the same a previously, except that we draw a polygon instead of lines:
+We can take this a step further and not only write a function that draws the plain portion of the disc defined by the arc, but also its shape. The method is exactly the same as previously, except that we draw a polygon instead of lines:
 
 ::
 
@@ -190,7 +190,7 @@ First, we have to make both angle_from and angle_to variables global at the top 
 
 We make these values change in the _process(delta) function. To activate this function, we need to call set_process(true) in the _ready() function. 
 
-We also increment our angle_from and angle_to values here. However, we must not forget to wrap() the resulting values between 0 and 360°! That is, if the angle is 361°, then it is actually 1°. If you don't wrap these values, the script will work correctly but angles values will grow bigger and bigger over time, until they reach the maximum integer value Godot can manage (2^31 - 1). When this happens, Godot may crash or produce unexpected behavior. Since Godot doesn't provide a wrap() function, we'll create it here, as it is relatively simple.
+We also increment our angle_from and angle_to values here. However, we must not forget to wrap() the resulting values between 0 and 360°! That is, if the angle is 361°, then it is actually 1°. If you don't wrap these values, the script will work correctly. But angle values will grow bigger and bigger over time, until they reach the maximum integer value Godot can manage (2^31 - 1). When this happens, Godot may crash or produce unexpected behavior. Since Godot doesn't provide a wrap() function, we'll create it here, as it is relatively simple.
 
 Finally, we must not forget to call the update() function, which automatically calls _draw(). This way, you can control when you want to refresh the frame.
 
@@ -227,7 +227,7 @@ Also, don't forget to modify the _draw() function to make use of these variables
 Let's run!
 It works, but the arc is rotating insanely fast! What's wrong?
 
-The reason is that your GPU is actually displaying the frames as fast as he can. We need to "normalize" the drawing by this speed. To achieve, we have to make use of the 'delta' parameter of the _process() function. 'delta' contains the time elapsed between the two last rendered frames. It is generally small (about 0.0003 seconds, but this depends on your hardware). So, using 'delta' to control your drawing ensures your program to run at the same speed on every hardware.
+The reason is that your GPU is actually displaying the frames as fast as he can. We need to "normalize" the drawing by this speed. To achieve, we have to make use of the 'delta' parameter of the _process() function. 'delta' contains the time elapsed between the two last rendered frames. It is generally small (about 0.0003 seconds, but this depends on your hardware). So, using 'delta' to control your drawing ensures that your program runs at the same speed on everybody's hardware.
 
 In our case, we simply need to multiply our 'rotation_ang' variable by 'delta' in the _process() function. This way, our 2 angles will be increased by a much smaller value, which directly depends on the rendering speed.
 
@@ -252,5 +252,5 @@ Drawing your own nodes might also be desired while running them in the
 editor, to use as preview or visualization of some feature or
 behavior.
 
-Remember to just use the "tool" keyword at the top of the script
+Remember, to just use the "tool" keyword at the top of the script
 (check the :ref:`doc_gdscript` reference if you forgot what this does).

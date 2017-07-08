@@ -20,19 +20,19 @@ savor your magnificent creation.
 
 Making games in Godot feels pretty much the same way. Using the engine
 feels like being in a kitchen. In this kitchen, *nodes* are like a
-refrigerator full of fresh ingredients to cook with.
+refrigerator full of fresh ingredients with which to cook.
 
-There are many types of nodes, some show images, others play sound,
+There are many types of nodes: some show images, others play sound,
 other nodes display 3D models, etc. There's dozens of them.
 
 Nodes
 -----
 
 But let's start with the basics. A node is a basic element for creating a
-game, it has the following characteristics:
+game which has the following characteristics:
 
--  Has a name.
--  Has editable properties.
+-  A name.
+-  Editable properties.
 -  Can receive a callback to process every frame.
 -  Can be extended (to have more functions).
 -  Can be added to other nodes as children.
@@ -44,9 +44,9 @@ children. When arranged in this way, the nodes become a **tree**.
 
 In Godot, the ability to arrange nodes in this way creates a powerful
 tool for organizing projects. Since different nodes have different
-functions, combining them allows for creation of more complex functions.
+functions, combining them allows for the creation of more complex functions.
 
-This is probably not clear yet and makes little sense, but everything
+This is probably not clear yet, and makes little sense. But everything
 will click a few sections ahead. The most important fact to remember for
 now is that nodes exist and can be arranged this way.
 
@@ -65,11 +65,11 @@ tree fashion). It has the following properties:
 -  Scenes can be saved to disk and loaded back.
 -  Scenes can be *instanced* (more on that later).
 -  Running a game means running a scene.
--  There can be several scenes in a project, but for it to start, one of
+-  There can be several scenes in a project. But for it to start, one of
    them must be selected to be loaded first.
 
 Basically, the Godot editor is a **scene editor**. It has plenty of
-tools for editing 2D and 3D scenes as well as user interfaces, but the 
+tools for editing 2D and 3D scenes, as well as user interfaces. But the 
 editor is based on the concept of editing a scene and the nodes
 that compose it.
 
@@ -86,7 +86,7 @@ appears. This helps developers manage their projects.
 .. image:: /img/project_manager.png
 
 To create a new project, the "New Project" option must be used. Choose
-and create a path for the project and specify the project name:
+and create a path for the project, and specify the project name:
 
 .. image:: /img/create_new_project.png
 
@@ -128,7 +128,7 @@ The node appears in the scene tree editor (box in the top left
 corner), and the label properties appear in the Inspector (box on the
 right side).
 
-The next step will be to change the "Text" Property of the label, let's
+The next step will be to change the "Text" Property of the label. Let's
 change it to "Hello, World!":
 
 .. image:: /img/hw.png
@@ -169,15 +169,15 @@ Configuring the project
 
 Ok, It's time to do some configuration to the project. Right now, the
 only way to run something is to execute the current scene. Projects,
-however, have several scenes so one of them must be set as the main
+however, have several scenes. So one of them must be set as the main
 scene. This scene is the one that will be loaded at the time the project
 is run.
 
 These settings are all stored in the engine.cfg file, which is a
-plaintext file in win.ini format, for easy editing. There are dozens of
-settings that can be changed in this file to alter how a project executes,
-so to make matters simpler, a project setting dialog exists, which is
-sort of a frontend to editing engine.cfg
+plaintext file in `win.ini <https://en.wikipedia.org/wiki/INI_file>`_ format,
+for easy editing. There are dozens of settings that can be changed in this
+file to alter how a project executes. So to make matters simpler, a project
+setting dialog exists, which is sort of a frontend to editing engine.cfg.
 
 To access that dialog, simply go to Scene -> Project Settings.
 
@@ -190,18 +190,18 @@ selecting 'hello.scn'.
 With this change, pressing the regular Play button (or F5) will run the
 project, no matter which scene is being edited.
 
-Going back to the project settings dialog. This dialog provides a lot
+Let's go back to the project settings dialog. This dialog provides a lot
 of options that can be added to engine.cfg, and shows their default
 values. If the default value is ok, then there isn't any need to
 change it.
 
-When a value is changed, a tick is marked to the left of the name.
+When a value is changed, a checkmark is placed to the left of the name.
 This means that the property will be saved to the engine.cfg file and
 remembered.
 
 As a side note, for future reference and a little out of context (this
 is the first tutorial after all!), it is also possible to add custom
-configuration options and read them in run-time using the
+configuration options and read them at run-time using the
 :ref:`Globals <class_Globals>` singleton.
 
 To be continued...

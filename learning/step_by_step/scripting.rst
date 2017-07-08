@@ -20,14 +20,14 @@ tools that try to reduce the amount of code that needs to be written for
 specific tasks, to speed up development.
 
 In that sense, Godot has taken some useful design decisions towards that
-goal. The first and most important is the scene system. The aim of it is
-not obvious at first, but works well later on. That is, to relieve
-programmers from the responsibility of architecting code.
+goal. The first, and most important, is the scene system. The aim of it is
+not obvious at first, but is understandable later on. That is, it relieves
+programmers from the responsibility of designing and structuring code.
 
 When designing games using the scene system, the whole project is
 fragmented into *complementary* scenes (not individual ones). Scenes
-complement each other, instead of being separate. There will be plenty
-of examples about this later on, but it's very important to remember it.
+complement (i.e. help) each other, instead of being separate. There will be
+plenty of examples of this later on, but it's very important to remember it.
 
 For those with a good amount of programming expertise, this means a
 different design pattern to MVC. Godot promises efficiency at the
@@ -41,8 +41,8 @@ available engine classes.
 GDScript
 --------
 
-:ref:`doc_gdscript` is a dynamically typed scripting language to fit
-inside Godot. It was designed with the following goals:
+:ref:`doc_gdscript` is a dynamically-typed scripting language designed to
+fit inside Godot. It was designed with the following goals:
 
 -  First and most importantly, making it simple, familiar and as easy to
    learn as possible.
@@ -56,7 +56,7 @@ As with most dynamically typed languages, the higher productivity
 (code is easier to learn, faster to write, no compilation, etc) is
 balanced with a performance penalty. But most critical code is written
 in C++ already in the engine (vector ops, physics, math, indexing, etc),
-resulting in a more than sufficient performance for most types of
+resulting in more than sufficient performance for most types of
 games.
 
 In any case, if more performance is required, critical sections can be

@@ -6,8 +6,8 @@ Instancing
 Rationale
 ---------
 
-Having a scene and throwing nodes into it might work for small projects,
-but as a project grows, more and more nodes are used and it can quickly
+Having a scene and throwing nodes into it might work for small projects.
+But as a project grows, more and more nodes are used and it can quickly
 become unmanageable. To solve this, Godot allows a project to be
 separated into several scenes. This, however, does not work the same way
 as in other game engines. In fact, it's quite different, so please do
@@ -59,14 +59,12 @@ Open the container scene, then select the root node:
 
 .. image:: /img/controot.png
 
-Afterwards, push the link shaped button, this is the instancing button!
+Afterwards, push the link shaped button. This is the instancing button!
 
 .. image:: /img/continst.png
 
-Select the ball scene (ball.scn), the ball should appear at the origin
-(0,0), move it to the center
-
-of the scene, like this:
+Select the ball scene (ball.scn). The ball should appear at the origin
+(0,0). Move it to the center of the scene, like this:
 
 .. image:: /img/continstanced.png
 
@@ -79,7 +77,7 @@ The instanced ball fell to the bottom of the pit.
 A little more
 -------------
 
-There can be as many instances as desired in a scene, just try
+There can be as many instances as desired in a scene. Just try
 instancing more balls, or duplicating them (Ctrl-D or duplicate button):
 
 .. image:: /img/instmany.png

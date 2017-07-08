@@ -54,8 +54,8 @@ keyboard/joypad events (see
 and :ref:`Control.grab_focus() <class_Control_grab_focus>`).
 
 Mouse motion events are received by the control directly below the mouse
-pointer. When a control receives a mouse button pressed event, all
-subsequent motion events are received by the pressed control until that
+pointer. When a control receives a "mouse button pressed" event, all
+subsequent motion events are received by the "pressed" control until that
 button is released, even if the pointer moves outside the control
 boundary.
 
@@ -68,10 +68,10 @@ to enqueue the CanvasItem for redraw). If the control is not visible
 (yet another CanvasItem property), the control does not receive any
 input.
 
-In general though, the programmer does not need to deal with drawing and
+In general, though, the programmer does not need to deal with drawing and
 input events directly when building UIs (that is more useful when
 creating custom controls). Instead, controls emit different kinds of
-signals with contextual information for when action occurs. For
+signals with contextual information for when an action occurs. For
 example, a :ref:`Button <class_Button>` emits
 a "pressed" signal when pressed, a :ref:`Slider <class_Slider>` will
 emit a "value_changed" when dragged, etc.
@@ -158,7 +158,7 @@ list of elements (for a high score table, for example), which needs a
 :ref:`ScrollContainer <class_ScrollContainer>`
 and a :ref:`VBoxContainer <class_VBoxContainer>`.
 These kind of more advanced controls can be mixed with the regular ones
-seamlessly (they are all controls after all).
+seamlessly (they are all controls, after all).
 
 Complex UI controls
 ~~~~~~~~~~~~~~~~~~~
