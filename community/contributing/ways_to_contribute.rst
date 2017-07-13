@@ -85,6 +85,10 @@ use in the C++ code (indentation, brackets, etc.) or the git and PR workflow.
 .. seealso:: Technical details about the PR workflow are outlined in a
              specific section, :ref:`doc_pr_workflow`.
 
+             Details about the code style guidelines and the ``clang-format``
+             tool used to enforce them are outlined in
+             :ref:`doc_code_style_guidelines`.
+
 Testing and reporting issues
 ----------------------------
 
