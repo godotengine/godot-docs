@@ -21,68 +21,76 @@ It can also be inserted into another HTML file as an ``<iframe>`` element.
 Users must allow **third-party** cookies when playing a game presented in an
 iframe.
 
-The ``.mem``, ``.pck`` (and ``.wasm`` when using WebAssembly) files are
-binary, usually delivered with MIME-type ``application/octet-stream``.
+The other exported files are served as they are next to the ``.html`` file,
+names unchanged.
+
+The ``.mem`` and ``.pck`` files are binary, usually delivered with the
+MIME-type ``application/octet-stream``. The ``.wasm`` file is the WebAssembly
+module, delivered as ``application/wasm``.
 
 Delivering the files with gzip compression is recommended especially for the
 ``.pck``, ``.asm.js``, ``.mem`` and ``.wasm`` files, which are usually large in
-size. The WebAssembly binary (``.wasm``) file compresses particularly well.
+size.
 
 Export options
 --------------
 
+If a runnable web export template is available, a button appears between the
+*Stop scene* and *Play edited Scene* buttons in the editor to quickly open the
+game in the default browser for testing.
+
+**Target** sets the format of the engine. *WebAssembly* is a newer and more
+performant technology that is only supported by recent browser versions.
+*asm.js* is a highly optimizable subset of JavaScript and supported by some
+older browser versions. A 64-bit browser is required to run games in asm.js
+format. Most notably, this is a problem with Firefox, which on Windows is
+shipped as a 32-bit application by default.
+
+For asm.js **Memory Size** is fixed and must thus be set during export. Try
+using no more than necessary to strain users' browsers as little as possible.
+For WebAssembly, memory growth is enabled, so this option is not needed nor
+displayed.
+
+**Head Include** is appended into the ``<head>`` element of the generated
+HTML page. This allows, for example, linking web fonts for use in the page.
+
 Turning on **Debugging Enabled** when exporting will, in addition to enabling
 various debug features of the engine, display a debug output below the canvas,
-displaying JavaScript and engine errors. If controls are
-enabled as well, display of this output can be toggled.
+displaying JavaScript and engine errors.
 You can also use the browser-integrated developer console, usually opened with
 the F12 key, which often shows more information, including WebGL errors.
 
-**Memory Size** is fixed and must thus be set during export. Try using no more
-than necessary to strain users' browsers as little as possible.
-For WebAssembly builds, memory growth is enabled, so this only sets the
-initially allocated amount, which will grow as needed.
+Web export limitations
+----------------------
 
-**Enable Run** will add a button between the *Stop scene* and *Play edited Scene*
-buttons in the editor to quickly open the game in the default browser for
-testing.
+Exported files must not be reused
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The remaining options customize the generated HTML page:
+The exported files ending with ``.html`` and ``fs.js`` are adjusted on export
+specifically for that game's version and the given export options. They must
+not be reused in futher exports.
 
-**Title** is the content of the ``<title>`` element of the page, usually used by
-browsers as the tab and window name. The title set here is only displayed until
-the game is started, afterwards the title is set to the application name set in
-the project settings.
-
-**Head Include** and **Style Include** are appended into the ``<head>`` and
-CSS ``<style>`` elements respectively. This allows, for example, linking
-web fonts for use in the page.
-
-**Font Family** is the CSS ``font-family`` used on the page, without terminating
-semicolon.
-
-**Controls Enabled** toggles display of controls, offering e.g. a toggle for
-output display in debug mode and a fullscreen button.
-In the default page, the controls are displayed in the top-right corner on top
-of the canvas, which can get in the way in games that use the cursor.
-
-Security restrictions
----------------------
+Some functions must be called from input callbacks
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Browsers do not allow arbitrarily **entering full screen** at any time. The same
 goes for **capturing the cursor**. Instead, these actions have to occur as a
 response to a JavaScript input event. In Godot, this is most easily done by
-entering full screen from within an ``_input()`` callback.
+entering full screen from within an input callback such ``_input`` or
+``_unhandled_input``.
 
-Chromium-derived browsers will not load exported projects when
-**opened locally** per ``file://`` protocol. To get around this, you can start
-the browser with the ``--allow-file-access-from-files`` flag, or use a local
-server. Python offers an easy way for this, using ``python -m SimpleHTTPServer``
-with Python 2 or ``python -m http.server`` with Python 3 will serve the
-current working directory on ``http://localhost:8000``.
+Starting exported games from the local file system
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Locale
-------
+Many browsers will not load exported projects when **opened locally**
+per ``file://`` protocol. To get around this, use a local server.
+
+Python offers an easy method for this, using ``python -m SimpleHTTPServer``
+with Python 2 or ``python -m http.server`` with Python 3 will serve the current
+working directory on ``http://localhost:8000``.
+
+Locale lookup
+~~~~~~~~~~~~~
 
 Godot tries to detect the user's locale using information provided by the
 browser, but this is rather unreliable. A better way is to use CGI to read the
@@ -130,7 +138,8 @@ value and returned by ``eval()`` under certain circumstances:
     * Objects with ``x`` and ``y`` properties are returned as a :ref:`class_Vector2`
     * Objects with an ``r``, ``g``, ``b`` and an optional ``a``  property are
       returned as a :ref:`class_Color`, the JavaScript values are interpreted
-      as 8-bit values (0-255)
+      as 8-bit values (0-255) for the color components and
+      floating point values (0.0-1.0) for the alpha channel
 
 Any other JavaScript value is returned as ``null``.
 
