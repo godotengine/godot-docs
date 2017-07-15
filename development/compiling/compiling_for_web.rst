@@ -43,22 +43,14 @@ the resulting file will be placed in the ``bin`` subdirectory. Its name is
 ``godot.javascript.opt.zip`` for release or ``godot.javascript.opt.debug.zip``
 for debug.
 
-To install the templates, place them into the ``templates`` directory in your
-Godot user directory. Rename the zip archive to ``javascript_release.zip`` for
-the release template::
+Finally, rename the zip archive to ``javascript_release.zip`` for the
+release template::
 
-    cp bin/godot.javascript.opt.zip ~/.godot/templates/javascript_release.zip
+    mv bin/godot.javascript.opt.zip bin/javascript_release.zip
 
 And ``javascript_debug.zip`` for the debug template::
 
-    cp bin/godot.javascript.opt.debug.zip ~/.godot/templates/javascript_debug.zip
-
-If you are writing custom modules or using custom C++ code, you may want to
-configure your zip files as custom export templates. This can be done in the
-export GUI, using the "Custom Package" option.
-There's no need to copy the templates in this case — you can simply reference
-the resulting files in your Godot source folder, so the next time you build,
-the custom templates will already be referenced.
+    mv bin/godot.javascript.opt.debug.zip bin/javascript_debug.zip
 
 Compiling to WebAssembly
 -------------------------
@@ -66,28 +58,24 @@ Compiling to WebAssembly
 The current default for exporting to the web is to compile to *asm.js*, a
 highly optimizable subset of JavaScript.
 
-It is also possible to compile to the experimental *WebAssembly* format, which
-should eventually offer better performance and loading times. Its specification
-is still in flux and compile tools may sporadically fail to build Godot.
-Running a game per WebAssembly requires nightly browser builds with special
-flags set. As such, WebAssembly builds are currently not suitable for
-publishing.
+It is also possible to compile to the *WebAssembly* format, which offers better
+performance and loading times. Running a game in this format requires a browser
+with WebAssembly support.
 
-Compiling to WebAssembly requires using the `incoming branch of Emscripten <http://kripken.github.io/emscripten-site/docs/building_from_source/building_emscripten_from_source_using_the_sdk.html#building-emscripten-from-the-main-repositories>`_.
+Compiling to WebAssembly requires using the latest version of Emscripten.
+If your OS does not offer up-to-date packages for Emscripten, the easiest way
+is usually to install using Emscripten's `emsdk <http://kripken.github.io/emscripten-site/docs/getting_started/downloads.html>`_.
 
 WebAssembly can be compiled in two ways: The default way is to first
 compile to asm.js similarly to the default method, then translate to
 WebAssembly using a tool called ``asm2wasm``. Emscripten automatically takes
 care of both processes, we simply run SCons.
 
-The other method uses LLVM's WebAssembly backend, which should eventually
-produce more performant binaries. To build LLVM with this backend, set the
-CMake variable ``LLVM_EXPERIMENTAL_TARGETS_TO_BUILD`` to ``WebAssembly`` when
-building LLVM.
-
+The other method uses LLVM's WebAssembly backend. This backend is not yet
+available in release versions of LLVM, only in development builds.
 Compiling with this backend outputs files in LLVM's ``.s`` format, which is
-translated to actual WebAssembly using a tool called ``s2wasm``. Emscripten
-manages these processes as well, so we just invoke SCons.
+translated into actual WebAssembly using a tool called ``s2wasm``.
+Emscripten manages these processes as well, so we just invoke SCons.
 
 In order to choose one of the two methods, the ``LLVM_ROOT`` variable in the
 Emscripten configuration file ``~/.emscripten`` is set. If it points to a
@@ -107,11 +95,12 @@ adding ``wasm=yes`` to the SCons arguments::
 These commands will build WebAssembly export templates in either release or
 debug mode. The generated files' names contain ``.webassembly`` as an
 additional file suffix before the extension.
-The templates simply replace the previous asm.js-based web export templates
-with the names ``javascript_release.zip`` and ``javascript_debug.zip``::
 
-   cp bin/godot.javascript.opt.webassembly.zip       ~/.godot/templates/javascript_release.zip
-   cp bin/godot.javascript.opt.debug.webassembly.zip ~/.godot/templates/javascript_debug.zip
+Finally, the WebAssembly templates are renamed to ``webassembly_release.zip``
+and ``webassembly_debug.zip``::
+
+    mv bin/godot.javascript.opt.webassembly.zip       bin/webassembly_release.zip
+    mv bin/godot.javascript.opt.debug.webassembly.zip bin/webassembly_debug.zip
 
 Customizing the HTML page
 -------------------------
@@ -149,31 +138,12 @@ substituted by values dependent on the export:
 | Placeholder                  | substituted by                                |
 +==============================+===============================================+
 | ``$GODOT_BASE``              | Basename of files referenced within the page, |
-|                              | without file extension or other suffixes      |
+|                              | without suffixes                              |
 +------------------------------+-----------------------------------------------+
-| ``$GODOT_CANVAS_WIDTH``      | Integer specifying the initial display width  |
-|                              | of the game                                   |
-+------------------------------+-----------------------------------------------+
-| ``$GODOT_CANVAS_HEIGHT``     | Integer specifying the initial display height |
-|                              | of the game                                   |
-+------------------------------+-----------------------------------------------+
-| ``$GODOT_DEBUG_ENABLED``     | String ``true`` if debugging, ``false``       |
-|                              | otherwise                                     |
-+------------------------------+-----------------------------------------------+
-| ``$GODOT_CONTROLS_ENABLED``  | String ``true`` if ``html/controls_enabled``  |
-|                              | is enabled, ``false`` otherwise               |
-+------------------------------+-----------------------------------------------+
-| ``$GODOT_HEAD_TITLE``        | Title of the page, normally used as content   |
-|                              | of the HTML ``<title>`` element               |
+| ``$GODOT_DEBUG_ENABLED``     | ``true`` if debugging, ``false`` otherwise    |
 +------------------------------+-----------------------------------------------+
 | ``$GODOT_HEAD_INCLUDE``      | Custom string to include just before the end  |
 |                              | of the HTML ``<head>`` element                |
-+------------------------------+-----------------------------------------------+
-| ``$GODOT_STYLE_FONT_FAMILY`` | CSS format ``font-family`` to use, without    |
-|                              | terminating semicolon                         |
-+------------------------------+-----------------------------------------------+
-| ``$GODOT_STYLE_INCLUDE``     | Custom string to include just before the end  |
-|                              | of the page's CSS                             |
 +------------------------------+-----------------------------------------------+
 | ``{{{ SCRIPT }}}``           | ``<script>`` that loads the engine,           |
 |                              | substituted only when building, not on export |
@@ -182,5 +152,4 @@ substituted by values dependent on the export:
 The first three of the placeholders listed should always be implemented in the
 HTML page, since they are important for the correct presentation of the game.
 The last placeholder is important when rewriting the ``godot_shell.html`` file
-and is only substituted during build time, not during export time.
-The other placeholders are optional.
+and is substituted during build time rather than export.
