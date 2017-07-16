@@ -290,7 +290,7 @@ Example:
     if queue.is_ready("res://level_1.xml"):
         show_new_level(queue.get_resource("res://level_1.xml"))
     else:
-        update_progress(queue.get_process("res://level_1.xml"))
+        update_progress(queue.get_progress("res://level_1.xml"))
 
     # when the user walks away from the trigger zone in your Metroidvania game:
     queue.cancel_resource("res://zone_2.xml")
