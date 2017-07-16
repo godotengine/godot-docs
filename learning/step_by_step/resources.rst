@@ -24,13 +24,12 @@ Examples of resources are
 :ref:`Script <class_Script>`,
 :ref:`Mesh <class_Mesh>`,
 :ref:`Animation <class_Animation>`,
-:ref:`Sample <class_Sample>`,
 :ref:`AudioStream <class_AudioStream>`,
 :ref:`Font <class_Font>`,
 :ref:`Translation <class_Translation>`,
 etc.
 
-When Godot saves or loads (from disk) a scene (.scn or .xml), an image
+When Godot saves or loads (from disk) a scene (.tscn or .scn), an image
 (png, jpg), a script (.gd) or pretty much anything, that file is
 considered a resource.
 
@@ -71,7 +70,7 @@ begin with), it is considered a built-in resource.
 
 For example, if the path \`"res://robi.png"\` is erased from the "path"
 property in the above example, and then the scene is saved, the resource
-will be saved inside the .scn scene file, no longer referencing the
+will be saved inside the .tscn scene file, no longer referencing the
 external "robi.png". However, even if saved as built-in, and even though
 the scene can be instanced multiple times, the resource will always
 be loaded only once. That means, different Robi robot scenes instanced
@@ -112,7 +111,7 @@ must be used.
 ::
 
     func _on_shoot():
-            var bullet = preload("res://bullet.scn").instance()
+            var bullet = preload("res://bullet.tscn").instance()
             add_child(bullet)                  
 
 This method creates the nodes in hierarchy, configures them (sets all

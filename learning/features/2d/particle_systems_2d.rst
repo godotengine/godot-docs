@@ -198,7 +198,7 @@ Emit timeout
 ------------
 
 This variable will switch emission off after given amount of seconds
-being on. When zero, itś disabled.
+being on. When zero, it is disabled.
 
 Offset
 ------
@@ -253,7 +253,7 @@ Randomness
 ----------
 
 All physics parameters can be randomized. Random variables go from 0 to
-1. the formula to randomize a parameter is:
+1. The formula to randomize a parameter is:
 
 ::
 

@@ -74,7 +74,7 @@ all enemies can be notified about the alarm sounding, by using
 ::
 
     func _on_discovered():
-        get_tree().call_group(0, "guards", "player_was_discovered")
+        get_tree().call_group("guards", "player_was_discovered")
 
 The above code calls the function "player_was_discovered" on every
 member of the group "guards".
@@ -208,14 +208,14 @@ first one is to load the scene from disk.
 
 ::
 
-    var scene = load("res://myscene.scn") # will load when the script is instanced
+    var scene = load("res://myscene.tscn") # will load when the script is instanced
 
 Preloading it can be more convenient sometimes, as it happens at parse
 time.
 
 ::
 
-    var scene = preload("res://myscene.scn") # will load when parsing the script
+    var scene = preload("res://myscene.tscn") # will load when parsing the script
 
 But 'scene' is not yet a node containing subnodes. It's packed in a
 special resource called :ref:`PackedScene <class_PackedScene>`.

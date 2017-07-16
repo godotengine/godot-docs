@@ -62,10 +62,10 @@ more complex behavior when switching between scenes.
 First download the template from here:
 :download:`autoload.zip </files/autoload.zip>`, then open it.
 
-Two scenes are present, scene_a.scn and scene_b.scn on an otherwise
+Two scenes are present, scene_a.tscn and scene_b.tscn on an otherwise
 empty project. Each are identical and contain a button connected to a
 callback for switching to the other scene. When the project runs, it
-starts in scene_a.scn. However, this currently does nothing and pressing the
+starts in scene_a.tscn. However, this currently does nothing and pressing the
 button does not work.
 
 global.gd
@@ -160,7 +160,7 @@ and scene_b.gd:
     #add to scene_a.gd
 
     func _on_goto_scene_pressed():
-            get_node("/root/global").goto_scene("res://scene_b.scn")
+            get_node("/root/global").goto_scene("res://scene_b.tscn")
 
 and
 
@@ -169,7 +169,7 @@ and
     #add to scene_b.gd
 
     func _on_goto_scene_pressed():
-            get_node("/root/global").goto_scene("res://scene_a.scn")
+            get_node("/root/global").goto_scene("res://scene_a.tscn")
 
 Now if you run the project, you can switch between both scenes by pressing
 the button!

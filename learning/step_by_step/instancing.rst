@@ -43,11 +43,11 @@ the project manager using the 'Import' option:
 
 .. image:: /img/importproject.png
 
-Simply browse to inside the project location and open the "engine.cfg"
+Simply browse to inside the project location and open the "project.godot"
 file. The new project will appear on the list of projects. Edit the
 project by using the 'Edit' option.
 
-This project contains two scenes "ball.scn" and "container.scn". The
+This project contains two scenes "ball.tscn" and "container.tscn". The
 ball scene is just a ball with physics, while container scene has a
 nicely shaped collision, so balls can be thrown in there.
 
@@ -63,7 +63,7 @@ Afterwards, push the link shaped button, this is the instancing button!
 
 .. image:: /img/continst.png
 
-Select the ball scene (ball.scn), the ball should appear at the origin
+Select the ball scene (ball.tscn), the ball should appear at the origin
 (0,0), move it to the center
 
 of the scene, like this:

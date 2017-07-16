@@ -47,7 +47,7 @@ Input and drawing
 ~~~~~~~~~~~~~~~~~
 
 Controls receive input events by means of the
-:ref:`Control._input_event() <class_Control__input_event>`
+:ref:`Control._gui_input() <class_Control__gui_input>`
 callback. Only one control, the one in focus, will receive
 keyboard/joypad events (see
 :ref:`Control.set_focus_mode() <class_Control_set_focus_mode>`
@@ -108,9 +108,9 @@ Add a script to that node, with the following code:
         else:
             draw_rect(r, Color(0,0,1) )
 
-    func _input_event(ev):
+    func _gui_input(ev):
 
-        if (ev.type==InputEvent.MOUSE_BUTTON and ev.pressed):
+        if (ev is InputEventMouseButton and ev.pressed):
             tapped=true
             update()
 
@@ -141,7 +141,7 @@ interactions or ways to present information are not necessary. They can
 be skinned easily with regular textures.
 
 -  :ref:`Label <class_Label>`: Node used for showing text.
--  :ref:`TextureFrame <class_TextureFrame>`: Displays a single texture,
+-  :ref:`TextureRect <class_TextureRect>`: Displays a single texture,
    which can be scaled or kept fixed.
 -  :ref:`TextureButton <class_TextureButton>`: Displays a simple textured
    button, states such as pressed, hover, disabled, etc. can be set.

@@ -23,7 +23,7 @@ Set the display resolution to 800x450 in Project Settings, and set up a new scen
 
 .. image:: /img/robisplashpreview.png
 
-The nodes "background" and "logo" are of :ref:`TextureFrame <class_TextureFrame>`
+The nodes "background" and "logo" are of :ref:`TextureRect <class_TextureRect>`
 type. These have a special property for setting the texture to be
 displayed, just load the corresponding file.
 

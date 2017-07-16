@@ -89,7 +89,7 @@ a background, so it should not have a collision.
 .. image:: /img/tile_example5.png
 
 OK! We're done! Remember to save this scene for future edit, call it
-"tileset_edit.scn" or something like that.
+"tileset_edit.tscn" or something like that.
 
 Exporting a TileSet
 -------------------
@@ -99,7 +99,7 @@ create a tileset. Use Scene > Convert To > Tile Set from the Scene Menu:
 
 .. image:: /img/tileset_export.png
 
-Then choose a filename, like "mytiles.res". Make sure the "Merge With
+Then choose a filename, like "mytiles.tres". Make sure the "Merge With
 Existing" option is toggled on. This way, every time the tileset
 resource file is overwritten, existing tiles are merged and updated
 (they are referenced by their unique name, so again, **name your tiles
@@ -110,13 +110,13 @@ properly**).
 Using the TileSet in a TileMap
 ------------------------------
 
-Create a new scene, use any node or node2d as root, then create a
+Create a new scene, use any Node or Node2D as root, then create a
 :ref:`TileMap <class_TileMap>` as
 a child.
 
 .. image:: /img/tilemap_scene.png
 
-Go to the tileset property of this node and assign the one created in
+Go to the TileSet property of this node and assign the one created in
 previous steps:
 
 .. image:: /img/tileset_property.png

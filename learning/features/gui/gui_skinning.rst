@@ -8,7 +8,7 @@ Oh beautiful GUI!
 
 This tutorial is about advanced skinning of an user interface. Most
 games generally don't need this, as they end up just relying on
-:ref:`Label <class_Label>`, :ref:`TextureFrame <class_TextureFrame>`,
+:ref:`Label <class_Label>`, :ref:`TextureRect <class_TextureRect>`,
 :ref:`TextureButton <class_TextureButton>` and
 :ref:`TextureProgress <class_TextureProgress>`.
 
