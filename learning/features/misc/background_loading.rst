@@ -3,11 +3,11 @@
 Background loading
 ==================
 
-When switching the main scene of your game (for example going to a new
+When switching the main scene of your game (e.g. going to a new
 level), you might want to show a loading screen with some indication
 that progress is being made. The main load method
-(``ResourceLoader::load`` or just ``load`` from gdscript) blocks your
-thread while the resource is being loaded, so It's not good. This
+(``ResourceLoader::load`` or just ``load`` from GDScript) blocks your
+thread while the resource is being loaded, so it's not good. This
 document discusses the ``ResourceInteractiveLoader`` class for smoother
 load screens.
 
@@ -273,27 +273,27 @@ Example:
     queue = preload("res://resource_queue.gd").new()
     queue.start()
 
-    # suppose your game starts with a 10 second custscene, during which the user can't interact with the game.
+    # suppose your game starts with a 10 second cutscene, during which the user can't interact with the game.
     # For that time we know they won't use the pause menu, so we can queue it to load during the cutscene:
-    queue.queue_resource("res://pause_menu.xml")
+    queue.queue_resource("res://pause_menu.tres")
     start_curscene()
 
     # later when the user presses the pause button for the first time:
-    pause_menu = queue.get_resource("res://pause_menu.xml").instance()
+    pause_menu = queue.get_resource("res://pause_menu.tres").instance()
     pause_menu.show()
 
     # when you need a new scene:
-    queue.queue_resource("res://level_1.xml", true) # use "true" as the second parameter to put it at the front
-                                                    # of the queue, pausing the load of any other resource
+    queue.queue_resource("res://level_1.tscn", true) # use "true" as the second parameter to put it at the front
+                                                     # of the queue, pausing the load of any other resource
 
     # to check progress
-    if queue.is_ready("res://level_1.xml"):
-        show_new_level(queue.get_resource("res://level_1.xml"))
+    if queue.is_ready("res://level_1.tscn"):
+        show_new_level(queue.get_resource("res://level_1.tscn"))
     else:
-        update_progress(queue.get_process("res://level_1.xml"))
+        update_progress(queue.get_process("res://level_1.tscn"))
 
     # when the user walks away from the trigger zone in your Metroidvania game:
-    queue.cancel_resource("res://zone_2.xml")
+    queue.cancel_resource("res://zone_2.tscn")
 
 **Note**: this code in its current form is not tested in real world
 scenarios. Ask punto on IRC (#godotengine on irc.freenode.net) for help.

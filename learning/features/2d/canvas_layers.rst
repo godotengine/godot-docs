@@ -19,7 +19,7 @@ These nodes are placed as direct or indirect children to a
 Viewport has a property "canvas_transform"
 :ref:`Viewport.set_canvas_transform() <class_Viewport_set_canvas_transform>`,
 which allows to transform all the CanvasItem hierarchy by a custom
-:ref:`Matrix32 <class_Matrix32>` transform. Nodes such as
+:ref:`Transform2D <class_Transform2D>` transform. Nodes such as
 :ref:`Camera2D <class_Camera2D>`, work by changing that transform.
 
 Changing the canvas transform is useful because it is a lot more

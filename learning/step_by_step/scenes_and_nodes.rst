@@ -143,7 +143,7 @@ Aaaand... Oops.
 .. image:: /img/neversaved.png
 
 Scenes need to be saved to be run, so save the scene to something like
-hello.scn in Scene -> Save:
+hello.tscn in Scene -> Save:
 
 .. image:: /img/save_scene.png
 
@@ -173,17 +173,17 @@ however, have several scenes so one of them must be set as the main
 scene. This scene is the one that will be loaded at the time the project
 is run.
 
-These settings are all stored in the engine.cfg file, which is a
+These settings are all stored in the project.godot file, which is a
 plaintext file in win.ini format, for easy editing. There are dozens of
 settings that can be changed in this file to alter how a project executes,
 so to make matters simpler, a project setting dialog exists, which is
-sort of a frontend to editing engine.cfg
+sort of a frontend to editing project.godot
 
 To access that dialog, simply go to Scene -> Project Settings.
 
 Once the window opens, the task will be to select a main scene. This can
 be done easily by changing the application/main_scene property and
-selecting 'hello.scn'.
+selecting 'hello.tscn'.
 
 .. image:: /img/main_scene.png
 
@@ -196,13 +196,13 @@ values. If the default value is ok, then there isn't any need to
 change it.
 
 When a value is changed, a tick is marked to the left of the name.
-This means that the property will be saved to the engine.cfg file and
+This means that the property will be saved to the project.godot file and
 remembered.
 
 As a side note, for future reference and a little out of context (this
 is the first tutorial after all!), it is also possible to add custom
 configuration options and read them in run-time using the
-:ref:`Globals <class_Globals>` singleton.
+:ref:`GlobalConfig <class_GlobalConfig>` singleton.
 
 To be continued...
 ------------------

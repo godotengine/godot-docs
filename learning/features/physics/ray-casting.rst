@@ -159,11 +159,11 @@ To obtain it using a camera, the following code can be used:
     const ray_length = 1000
 
     func _input(ev):
-        if ev.type==InputEvent.MOUSE_BUTTON and ev.pressed and ev.button_index==1:
+        if ev is InputEventMouseButton and ev.pressed and ev.button_index==1:
 
               var camera = get_node("camera")
-              var from = camera.project_ray_origin(ev.pos)
-              var to = from + camera.project_ray_normal(ev.pos) * ray_length
+              var from = camera.project_ray_origin(ev.position)
+              var to = from + camera.project_ray_normal(ev.position) * ray_length
 
 Of course, remember that during ``_input()``, space may be locked, so save
 your query for ``_fixed_process()``.

@@ -31,7 +31,7 @@ time, and the system will apply those rules automatically each time the
 asset is re-imported.
 
 Godot does not do the re-import process automatically, though. It gives
-the team the option to do it at any time ( a red icon on the top right
+the team the option to do it at any time (a red icon on the top right
 of the screen, allows the ability to do it at any desired time).
 
 Does it always work?
@@ -101,7 +101,7 @@ For example, the repository layout can look like this:
     source_assets/fonts/myfont.ttf
     source_assets/translation/strings.csv
     source_assets/art/niceart.psd
-    game/engine.cfg
+    game/project.godot
 
 In the above example, artists, musician, translators, etc. can work in
 the source_assets/ folder, then import the assets to the game/ folder.

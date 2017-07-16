@@ -50,8 +50,8 @@ Then also, the game itself is, in this case, inside a game/ folder:
 
 ::
 
-    myproject/game/engine.cfg
-    myproject/game/scenes/house/house.scn
+    myproject/game/project.godot
+    myproject/game/scenes/house/house.tscn
     myproject/game/scenes/house/sometexture.tex
     myproject/game/sound/door_open.smp
     myproject/game/sound/door_close.smp
@@ -83,9 +83,9 @@ like this:
 
 ::
 
-    game/engine.cfg
-    game/scenes/scene1.scn
-    game/scenes/scene2.scn
+    game/project.godot
+    game/scenes/scene1.tscn
+    game/scenes/scene2.tscn
     game/textures/texturea.png
     game/textures/another.tex
     game/sounds/sound1.smp
@@ -101,20 +101,20 @@ something like this:
 
 ::
 
-    game/engine.cfg
-    game/scenes/house/house.scn
+    game/project.godot
+    game/scenes/house/house.tscn
     game/scenes/house/texture.tex
-    game/scenes/valley/canyon.scn
-    game/scenes/valley/rock.scn
+    game/scenes/valley/canyon.tscn
+    game/scenes/valley/rock.tscn
     game/scenes/valley/rock.tex
-    game/scenes/common/tree.scn
+    game/scenes/common/tree.tscn
     game/scenes/common/tree.tex
-    game/player/player.scn
+    game/player/player.tscn
     game/player/player.gd
-    game/npc/theking.scn
+    game/npc/theking.tscn
     game/npc/theking.gd
-    game/gui/main_screen/main_sceen.scn
-    game/gui/options/options.scn
+    game/gui/main_screen/main_sceen.tscn
+    game/gui/options/options.tscn
 
 This model or similar models allows projects to grow to really large
 sizes and still be completely manageable. Notice that everything is

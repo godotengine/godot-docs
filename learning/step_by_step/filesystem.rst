@@ -36,21 +36,21 @@ Example of a file system contents:
 
 ::
 
-    /engine.cfg
-    /enemy/enemy.scn
+    /project.godot
+    /enemy/enemy.tscn
     /enemy/enemy.gd
     /enemy/enemysprite.png
     /player/player.gd
     
-engine.cfg
+project.godot
 ----------
 
-The engine.cfg file is the project description file, and it is always found at
+The project.godot file is the project description file, and it is always found at
 the root of the project. In fact its location defines where the root is. This
 is the first file that Godot looks for when opening a project.
 
 This file contains the project configuration in plain text, using the win.ini
-format. Even an empty engine.cfg can function as a basic definition of a blank
+format. Even an empty project.godot can function as a basic definition of a blank
 project.
 
 Path delimiter
@@ -58,8 +58,8 @@ Path delimiter
 
 Godot only supports ``/`` as a path delimiter. This is done for
 portability reasons. All operating systems support this, even Windows,
-so a path such as ``c:\project\engine.cfg`` needs to be typed as
-``c:/project/engine.cfg``.
+so a path such as ``c:\project\project.godot`` needs to be typed as
+``c:/project/project.godot``.
 
 Resource path
 -------------
@@ -69,7 +69,7 @@ cumbersome and non-portable. To solve this problem, the special path
 ``res://`` was created.
 
 The path ``res://`` will always point at the project root (where
-engine.cfg is located, so in fact ``res://engine.cfg`` is always
+project.godot is located, so in fact ``res://project.godot`` is always
 valid).
 
 This file system is read-write only when running the project locally from

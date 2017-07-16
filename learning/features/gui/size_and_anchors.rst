@@ -38,5 +38,3 @@ it, leaving a 20 pixel margin:
 
 .. image:: /img/marginaround.png
 
-Finally, there is also a ratio option, where 0 means left, 1 means right
-and anything in between is interpolated.

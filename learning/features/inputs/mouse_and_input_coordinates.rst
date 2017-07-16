@@ -30,10 +30,10 @@ for example:
     func _input(ev):
        # Mouse in viewport coordinates
 
-       if (ev.type==InputEvent.MOUSE_BUTTON):
-           print("Mouse Click/Unclick at: ",ev.pos)
-       elif (ev.type==InputEvent.MOUSE_MOTION):
-           print("Mouse Motion at: ",ev.pos)
+       if (ev is InputEventMouseButton):
+           print("Mouse Click/Unclick at: ",ev.position)
+       elif (ev is InputEventMouseMotion):
+           print("Mouse Motion at: ",ev.position)
 
        # Print the size of the viewport
 
@@ -46,4 +46,4 @@ Alternatively it's possible to ask the viewport for the mouse position:
 
 ::
 
-    get_viewport().get_mouse_pos()
+    get_viewport().get_mouse_position()
