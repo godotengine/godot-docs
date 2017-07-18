@@ -141,7 +141,7 @@ With the following contents:
 
     void register_summator_types() {
 
-            ClassDB::register_type<Summator>();
+            ClassDB::register_class<Summator>();
     }
 
     void unregister_summator_types() {
