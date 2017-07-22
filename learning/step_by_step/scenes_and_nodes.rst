@@ -202,7 +202,7 @@ remembered.
 As a side note, for future reference and a little out of context (this
 is the first tutorial after all!), it is also possible to add custom
 configuration options and read them in run-time using the
-:ref:`GlobalConfig <class_GlobalConfig>` singleton.
+:ref:`ProjectSettings <class_ProjectSettings>` singleton.
 
 To be continued...
 ------------------
