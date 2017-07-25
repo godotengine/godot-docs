@@ -46,7 +46,7 @@ func queue_resource(path, p_in_front = false):
 func cancel_resource(path):
 	_lock("cancel_resource")
 	if path in pending:
-		if pending[path] extends ResourceInteractiveLoader:
+		if pending[path] is ResourceInteractiveLoader:
 			queue.erase(pending[path])
 		pending.erase(path)
 	_unlock("cancel_resource")
@@ -55,7 +55,7 @@ func get_progress(path):
 	_lock("get_progress")
 	var ret = -1
 	if path in pending:
-		if pending[path] extends ResourceInteractiveLoader:
+		if pending[path] is ResourceInteractiveLoader:
 			ret = float(pending[path].get_stage()) / float(pending[path].get_stage_count())
 		else:
 			ret = 1.0
@@ -67,7 +67,7 @@ func is_ready(path):
 	var ret
 	_lock("is_ready")
 	if path in pending:
-		ret = !(pending[path] extends ResourceInteractiveLoader)
+		ret = !(pending[path] is ResourceInteractiveLoader)
 	else:
 		ret = false
 
@@ -89,7 +89,7 @@ func _wait_for_resource(res, path):
 func get_resource(path):
 	_lock("get_resource")
 	if path in pending:
-		if pending[path] extends ResourceInteractiveLoader:
+		if pending[path] is ResourceInteractiveLoader:
 			var res = pending[path]
 			if res != queue[0]:
 				var pos = queue.find(res)

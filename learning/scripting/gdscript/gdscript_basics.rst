@@ -175,7 +175,9 @@ keywords are reserved words (tokens), they can't be used as identifiers.
 +------------+---------------------------------------------------------------------------------------------------------------+
 | class      | Defines a class.                                                                                              |
 +------------+---------------------------------------------------------------------------------------------------------------+
-| extends    | Defines what class to extend with the current class. Also tests whether a variable extends a given class.     |
+| extends    | Defines what class to extend with the current class.                                                          |
++------------+---------------------------------------------------------------------------------------------------------------+
+| is         | Tests whether a variable extends a given class.                                                               |
 +------------+---------------------------------------------------------------------------------------------------------------+
 | tool       | Executes the script in the editor.                                                                            |
 +------------+---------------------------------------------------------------------------------------------------------------+
@@ -213,7 +215,7 @@ The following is the list of supported operators and their precedence
 +---------------------------------------------------------------+-----------------------------------------+
 | ``x.attribute``                                               | Attribute Reference                     |
 +---------------------------------------------------------------+-----------------------------------------+
-| ``extends``                                                   | Instance Type Checker                   |
+| ``is``                                                        | Instance Type Checker                   |
 +---------------------------------------------------------------+-----------------------------------------+
 | ``~``                                                         | Bitwise NOT                             |
 +---------------------------------------------------------------+-----------------------------------------+
@@ -865,7 +867,7 @@ Inheritance uses the ``extends`` keyword:
 
 
 To check if a given instance inherits from a given class
-the ``extends`` keyword can be used as an operator instead:
+the ``is`` keyword can be used:
 
 ::
 
@@ -874,8 +876,8 @@ the ``extends`` keyword can be used as an operator instead:
 
     # [...]
 
-    # use 'extends' to check inheritance
-    if (entity extends enemy_class):
+    # use 'is' to check inheritance
+    if (entity is enemy_class):
         entity.apply_damage()
 
 Class Constructor

@@ -87,7 +87,7 @@ class GDScriptLexer(RegexLexer):
         ],
         'keywords': [
             (words((
-                'do', 'var', 'const', 'extends', 'export', 'onready', 'tool',
+                'do', 'var', 'const', 'extends', 'is', 'export', 'onready', 'tool',
                 'static', 'setget', 'signal', 'breakpoint', 'switch', 'case',
                 'assert', 'break', 'continue', 'elif', 'else', 'for', 'if',
                 'pass', 'return', 'while', 'match'), suffix=r'\b'),
