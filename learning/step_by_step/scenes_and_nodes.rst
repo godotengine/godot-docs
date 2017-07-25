@@ -22,14 +22,14 @@ Making games in Godot feels pretty much the same way. Using the engine
 feels like being in a kitchen. In this kitchen, *nodes* are like a
 refrigerator full of fresh ingredients to cook with.
 
-There are many types of nodes, some show images, others play sound,
-other nodes display 3D models, etc. There's dozens of them.
+There are many types of nodes. Some show images, others play sound,
+other nodes display 3D models, etc. There are dozens of them.
 
 Nodes
 -----
 
-But let's start with the basics. A node is a basic element for creating a
-game, it has the following characteristics:
+But let's start with the basics. A node is a fundamental building block for
+creating a game. A node:
 
 -  Has a name.
 -  Has editable properties.
@@ -44,65 +44,65 @@ children. When arranged in this way, the nodes become a **tree**.
 
 In Godot, the ability to arrange nodes in this way creates a powerful
 tool for organizing projects. Since different nodes have different
-functions, combining them allows for creation of more complex functions.
+functions, combining them allows for the creation of more complex functions.
 
-This is probably not clear yet and makes little sense, but everything
-will click a few sections ahead. The most important fact to remember for
-now is that nodes exist and can be arranged this way.
+Don't worry if this doesn't click yet. We will continue to explore this over
+the next few sections. The most important fact to remember for now is that
+nodes exist and can be arranged this way.
+
+Now that the concept of nodes has been defined, the next logical
+step is to explain what a scene is.
 
 Scenes
 ------
 
 .. image:: /img/scene_tree_example.png
 
-Now that the concept of nodes has been defined, the next logical
-step is to explain what a Scene is.
-
 A scene is composed of a group of nodes organized hierarchically (in
-tree fashion). It has the following properties:
+tree fashion). Furthermore, a scene:
 
--  A scene always has only one root node.
--  Scenes can be saved to disk and loaded back.
--  Scenes can be *instanced* (more on that later).
--  Running a game means running a scene.
--  There can be several scenes in a project, but for it to start, one of
-   them must be selected to be loaded first.
+-  always has only one root node.
+-  can be saved to disk and loaded back.
+-  can be *instanced* (more on that later).
 
-Basically, the Godot editor is a **scene editor**. It has plenty of
-tools for editing 2D and 3D scenes as well as user interfaces, but the 
-editor is based on the concept of editing a scene and the nodes
-that compose it.
+Running a game means running a scene. A project can contain several scenes,
+but for the game to start, one of them must be selected as the main scene.
+
+Basically, the Godot editor is a **scene editor**. It has plenty of tools for
+editing 2D and 3D scenes as well as user interfaces, but the editor is based on
+the concept of editing a scene and the nodes that compose it.
 
 Creating a new project
 ----------------------
 
-Theory is boring, so let's change the subject and go practical. Following a
-long tradition in tutorials, the first project will be a Hello World.
-For this, the editor will be used.
+Let's make these abstract concepts more concrete with an example. Following a
+long tradition in tutorials, we'll start with a "Hello World" project.
+This will introduce us to using the editor.
 
-When the godot executable is run outside a project, the Project Manager
+If you run the godot executable outside of a project, the Project Manager
 appears. This helps developers manage their projects.
 
 .. image:: /img/project_manager.png
 
-To create a new project, the "New Project" option must be used. Choose
-and create a path for the project and specify the project name:
+To create a new project, click the "New Project" option. Choose and create a
+path for the project and specify the project name "New Project":
 
 .. image:: /img/create_new_project.png
 
 Editor
 ------
 
-Once the "New Project" is created, the next step is opening it. This
-will open the Godot editor. Here is how the editor looks when freshly
-opened:
+Once you've created the "New Project", then open it. This will open the Godot
+editor:
 
 .. image:: /img/empty_editor.png
 
 As mentioned before, making games in Godot feels like being in a
 kitchen, so let's open the refrigerator and add some fresh nodes to the
-project. We'll begin with a Hello World! To do this, the "New Node"
-button must be pressed (looks like a plus symbol):
+project. We'll begin with a "Hello World!" message that we'll put on the
+screen.
+
+To do this, press the "New Node" button (which looks like a plus symbol):
 
 .. image:: /img/newnode_button.png
 
@@ -120,9 +120,8 @@ And finally, create the Label! A lot happens when Create is pressed:
 
 .. image:: /img/editor_with_label.png
 
-First of all, the scene is changed to the 2D editor (because Label is
-a 2D Node type), and the Label appears, selected, at the top left
-corner of the viewport.
+First of all, the scene changes to the 2D editor (because Label is a 2D Node
+type), and the Label appears, selected, at the top left corner of the viewport.
 
 The node appears in the scene tree editor (box in the top left
 corner), and the label properties appear in the Inspector (box on the
@@ -167,46 +166,40 @@ Success!
 Configuring the project
 -----------------------
 
-Ok, It's time to do some configuration to the project. Right now, the
-only way to run something is to execute the current scene. Projects,
-however, have several scenes so one of them must be set as the main
-scene. This scene is the one that will be loaded at the time the project
-is run.
+Ok, it's time to configure the project. Right now, the only way to run
+something is to execute the current scene. Projects, however, may have several
+scenes, so one of them must be set as the main scene. This is the scene that
+will be loaded any time the project is run. 
 
-These settings are all stored in the project.godot file, which is a
-plaintext file in win.ini format, for easy editing. There are dozens of
-settings that can be changed in this file to alter how a project executes,
-so to make matters simpler, a project setting dialog exists, which is
-sort of a frontend to editing project.godot
+These settings are all stored in a project.godot file, which is a plaintext
+file in win.ini format (for easy editing). There are dozens of settings that
+you can change in this file to alter how a project executes. To simplify this
+process, Godot provides a project settings dialog, which acts as a sort of
+frontend to editing a project.godot file.
 
-To access that dialog, simply go to Scene -> Project Settings.
+To access that dialog, select Scene -> Project Settings. Try it now.
 
-Once the window opens, the task will be to select a main scene. This can
-be done easily by changing the application/main_scene property and
-selecting 'hello.tscn'.
+Once the window opens, let's select a main scene. Locate the
+application/main_scene property and click on it to select 'hello.tscn'.
 
 .. image:: /img/main_scene.png
 
-With this change, pressing the regular Play button (or F5) will run the
-project, no matter which scene is being edited.
+With this change, now when you press the regular Play button (or F5), this
+scene will run, no matter which scene is actively being edited.
 
-Going back to the project settings dialog. This dialog provides a lot
-of options that can be added to engine.cfg, and shows their default
-values. If the default value is ok, then there isn't any need to
-change it.
+The project settings dialog provides a lot of options that can be saved to a
+project.godot file and shows their default values. If you change a value, a
+tick is marked to the left of its name. This means that the property will be
+saved to the project.godot file and remembered.
 
-When a value is changed, a tick is marked to the left of the name.
-This means that the property will be saved to the project.godot file and
-remembered.
-
-As a side note, for future reference and a little out of context (this
-is the first tutorial after all!), it is also possible to add custom
-configuration options and read them in run-time using the
-:ref:`ProjectSettings <class_ProjectSettings>` singleton.
+As a side note, it is possible to add custom configuration options and read
+them at run-time using the :ref:`ProjectSettings <class_ProjectSettings>`
+singleton. This is not something you need to worry about now (this is the
+first tutorial after all!), but we mention it for future reference.
 
 To be continued...
 ------------------
 
-This tutorial talks about "scenes and nodes", but so far there has been
+This tutorial talked about "scenes and nodes", but so far there has been
 only *one* scene and *one* node! Don't worry, the next tutorial will
-deal with that...
+expand on that...
