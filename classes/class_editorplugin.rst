@@ -162,7 +162,7 @@ Add a custom type, which will appear in the list of nodes or resources. An icon 
 
 When given node or resource is selected, the base type will be instanced (ie, "Spatial", "Control", "Resource"), then the script will be loaded and set to this object.
 
-You can use the :ref:`EditorPlugin.handles<class_EditorPlugin_handles>` to check if your custom object is being edited by checking the script or using 'extends' keyword.
+You can use the :ref:`EditorPlugin.handles<class_EditorPlugin_handles>` to check if your custom object is being edited by checking the script or using 'is' keyword.
 
 During run-time, this will be a simple object with a script so this function does not need to be called then.
 
@@ -369,5 +369,3 @@ Restore the plugin GUI layout saved by :ref:`EditorPlugin.get_window_layout<clas
 - void  **update_canvas**  **(** **)**
 
 Updates the control used to draw the edited scene over the 2D canvas. This is used together with :ref:`forward_canvas_input_event<class_EditorPlugin_forward_canvas_input_event>`.
-
-
