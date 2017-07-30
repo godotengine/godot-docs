@@ -122,8 +122,8 @@ load function:
         # Load the file line by line and process that dictionary to restore the object it represents
         var currentline = {} # dict.parse_json() requires a declared dict.
         savegame.open("user://savegame.save", File.READ)
+        currentline.parse_json(savegame.get_line())
         while (!savegame.eof_reached()):
-            currentline.parse_json(savegame.get_line())
             # First we need to create the object and add it to the tree and set its position.
             var newobject = load(currentline["filename"]).instance()
             get_node(currentline["parent"]).add_child(newobject)
@@ -133,6 +133,7 @@ load function:
                 if (i == "filename" or i == "parent" or i == "posx" or i == "posy"):
                     continue
                 newobject.set(i, currentline[i])
+            currentline.parse_json(savegame.get_line())
         savegame.close()
 
 And now we can save and load an arbitrary number of objects laid out
