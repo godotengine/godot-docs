@@ -91,7 +91,7 @@ look like the image below. You can set the text in the Inspector pane.
 
 .. image:: /img/label_button_example.png
 
-Finally, save the scene, a fitting name could be "sayhello.scn"
+Finally, save the scene, a fitting name could be "sayhello.tscn"
 
 .. _doc_scripting-adding_a_script:
 
@@ -127,7 +127,7 @@ be included by default:
 
 There is not much in there. The "_ready()" function is called when the
 node (and all its children) entered the active scene. (Remember, it's
-not a constructor, the constructor is "_init()" ).
+not a constructor, the constructor is "_init()").
 
 The role of the script
 ~~~~~~~~~~~~~~~~~~~~~~

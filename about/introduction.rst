@@ -54,7 +54,7 @@ open source `Sphinx <http://www.sphinx-doc.org>`_ and `ReadTheDocs
 
 .. note:: You can contribute to Godot's documentation by opening issue tickets
           or sending patches via pull requests on its GitHub
-          `source repository <http://github.com/godotengine/godot-docs>`_.
+          `source repository <https://github.com/godotengine/godot-docs>`_.
 
 All the contents are under the permissive Creative Commons Attribution 3.0
 (`CC-BY 3.0 <https://creativecommons.org/licenses/by/3.0/>`_) license, with

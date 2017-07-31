@@ -99,7 +99,7 @@ create a tileset. Use Scene > Convert To > Tile Set from the Scene Menu:
 
 .. image:: /img/tileset_export.png
 
-Then choose a filename, like "mytiles.res". Make sure the "Merge With
+Then choose a filename, like "mytiles.tres". Make sure the "Merge With
 Existing" option is toggled on. This way, every time the tileset
 resource file is overwritten, existing tiles are merged and updated
 (they are referenced by their unique name, so again, **name your tiles
@@ -116,7 +116,7 @@ a child.
 
 .. image:: /img/tilemap_scene.png
 
-Go to the tileset property of this node and assign the one created in
+Go to the TileSet property of this node and assign the one created in
 previous steps:
 
 .. image:: /img/tileset_property.png

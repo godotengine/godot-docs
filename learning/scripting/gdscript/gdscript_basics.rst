@@ -175,7 +175,9 @@ keywords are reserved words (tokens), they can't be used as identifiers.
 +------------+---------------------------------------------------------------------------------------------------------------+
 | class      | Defines a class.                                                                                              |
 +------------+---------------------------------------------------------------------------------------------------------------+
-| extends    | Defines what class to extend with the current class. Also tests whether a variable extends a given class.     |
+| extends    | Defines what class to extend with the current class.                                                          |
++------------+---------------------------------------------------------------------------------------------------------------+
+| is         | Tests whether a variable extends a given class.                                                               |
 +------------+---------------------------------------------------------------------------------------------------------------+
 | tool       | Executes the script in the editor.                                                                            |
 +------------+---------------------------------------------------------------------------------------------------------------+
@@ -213,7 +215,7 @@ The following is the list of supported operators and their precedence
 +---------------------------------------------------------------+-----------------------------------------+
 | ``x.attribute``                                               | Attribute Reference                     |
 +---------------------------------------------------------------+-----------------------------------------+
-| ``extends``                                                   | Instance Type Checker                   |
+| ``is``                                                        | Instance Type Checker                   |
 +---------------------------------------------------------------+-----------------------------------------+
 | ``~``                                                         | Bitwise NOT                             |
 +---------------------------------------------------------------+-----------------------------------------+
@@ -339,15 +341,14 @@ Vector built-in types
 :ref:`Vector2 <class_Vector2>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-2D vector type containing ``x`` and ``y`` fields. Can alternatively
-access fields as ``width`` and ``height`` for readability. Can also be
+2D vector type containing ``x`` and ``y`` fields. Can also be
 accessed as array.
 
 :ref:`Rect2 <class_Rect2>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-2D Rectangle type containing two vectors fields: ``pos`` and ``size``.
-Alternatively contains an ``end`` field which is ``pos+size``.
+2D Rectangle type containing two vectors fields: ``position`` and ``size``.
+Alternatively contains an ``end`` field which is ``position+size``.
 
 :ref:`Vector3 <class_Vector3>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -355,7 +356,7 @@ Alternatively contains an ``end`` field which is ``pos+size``.
 3D vector type containing ``x``, ``y`` and ``z`` fields. This can also
 be accessed as an array.
 
-:ref:`Matrix32 <class_Matrix32>`
+:ref:`Transform2D <class_Transform2D>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3x2 matrix used for 2D transforms.
@@ -372,15 +373,14 @@ and a ``d`` scalar distance.
 Quaternion is a datatype used for representing a 3D rotation. It's
 useful for interpolating rotations.
 
-:ref:`AABB <class_AABB>`
+:ref:`Rect3 <class_Rect3>`
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Axis Aligned bounding box (or 3D box) contains 2 vectors fields: ``pos``
+Axis Aligned bounding box (or 3D box) contains 2 vectors fields: ``position``
 and ``size``. Alternatively contains an ``end`` field which is
-``pos+size``. As an alias of this type, ``Rect3`` can be used
-interchangeably.
+``position+size``.
 
-:ref:`Matrix3 <class_Matrix3>`
+:ref:`Basis <class_Basis>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3x3 matrix used for 3D rotation and scale. It contains 3 vector fields
@@ -390,7 +390,7 @@ vectors.
 :ref:`Transform <class_Transform>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-3D Transform contains a Matrix3 field ``basis`` and a Vector3 field
+3D Transform contains a Basis field ``basis`` and a Vector3 field
 ``origin``.
 
 Engine built-in types
@@ -401,12 +401,6 @@ Engine built-in types
 
 Color data type contains ``r``, ``g``, ``b``, and ``a`` fields. It can
 also be accessed as ``h``, ``s``, and ``v`` for hue/saturation/value.
-
-:ref:`Image <class_Image>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Contains a custom format 2D image and allows direct access to the
-pixels.
 
 :ref:`NodePath <class_NodePath>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -423,13 +417,6 @@ Resource ID (RID). Servers use generic RIDs to reference opaque data.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Base class for anything that is not a built-in type.
-
-:ref:`InputEvent <class_InputEvent>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Events from input devices are contained in very compact form in
-InputEvent objects. Due to the fact that they can be received in high
-amounts from frame to frame they are optimized as their own data type.
 
 Container built-in types
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -458,13 +445,13 @@ arrays are available. These only accept a single data type. They avoid memory
 fragmentation and also use less memory but are atomic and tend to run slower than generic
 arrays. They are therefore only recommended to use for very large data sets:
 
-- :ref:`ByteArray <class_ByteArray>`: An array of bytes (integers from 0 to 255).
-- :ref:`IntArray <class_IntArray>`: An array of integers.
-- :ref:`FloatArray <class_FloatArray>`: An array of floats.
-- :ref:`StringArray <class_StringArray>`: An array of strings.
-- :ref:`Vector2Array <class_Vector2Array>`: An array of :ref:`Vector2 <class_Vector2>` objects.
-- :ref:`Vector3Array <class_Vector3Array>`: An array of :ref:`Vector3 <class_Vector3>` objects.
-- :ref:`ColorArray <class_ColorArray>`: An array of :ref:`Color <class_Color>` objects.
+- :ref:`PoolByteArray <class_PoolByteArray>`: An array of bytes (integers from 0 to 255).
+- :ref:`PoolIntArray <class_PoolIntArray>`: An array of integers.
+- :ref:`PoolRealArray <class_PoolRealArray>`: An array of floats.
+- :ref:`PoolStringArray <class_PoolStringArray>`: An array of strings.
+- :ref:`PoolVector2Array <class_PoolVector2Array>`: An array of :ref:`Vector2 <class_Vector2>` objects.
+- :ref:`PoolVector3Array <class_PoolVector3Array>`: An array of :ref:`Vector3 <class_Vector3>` objects.
+- :ref:`PoolColorArray <class_PoolColorArray>`: An array of :ref:`Color <class_Color>` objects.
 
 :ref:`Dictionary <class_Dictionary>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -475,7 +462,7 @@ Associative container which contains values referenced by unique keys.
 
     var d={4:5, "a key":"a value", 28:[1,2,3]}
     d["Hi!"] = 0
-    var d = {
+    d = {
         22         : "Value",
         "somekey"  : 2,
         "otherkey" : [2,3,4],
@@ -880,7 +867,7 @@ Inheritance uses the ``extends`` keyword:
 
 
 To check if a given instance inherits from a given class
-the ``extends`` keyword can be used as an operator instead:
+the ``is`` keyword can be used:
 
 ::
 
@@ -889,8 +876,8 @@ the ``extends`` keyword can be used as an operator instead:
 
     # [...]
 
-    # use 'extends' to check inheritance
-    if (entity extends enemy_class):
+    # use 'is' to check inheritance
+    if (entity is enemy_class):
         entity.apply_damage()
 
 Class Constructor
@@ -1092,8 +1079,8 @@ initializers, but they must be constant expressions.
 
     # Typed arrays also work, only initialized empty:
 
-    export var vector3s = Vector3Array()
-    export var strings = StringArray()
+    export var vector3s = PoolVector3Array()
+    export var strings = PoolStringArray()
 
     # Regular array, created local for every instance.
     # Default value can include run-time values, but can't

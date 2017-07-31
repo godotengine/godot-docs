@@ -61,7 +61,7 @@ Transforming shapes
 ~~~~~~~~~~~~~~~~~~~
 
 As seen before in the collide functions, 2D shapes in Godot can be
-transformed by using a regular :ref:`Matrix32 <class_Matrix32>`
+transformed by using a regular :ref:`Transform2D <class_Transform2D>`
 transform, meaning the functions can check for collisions while the 
 shapes are scaled, moved and
 rotated. The only limitation to this is that shapes with curved sections

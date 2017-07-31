@@ -18,7 +18,7 @@ As mentioned in the previous tutorial, :ref:`doc_canvas_layers`, every
 CanvasItem node (remember that Node2D and Control based nodes use
 CanvasItem as their common root) will reside in a *Canvas Layer*. Every
 canvas layer has a transform (translation, rotation, scale, etc.) that
-can be accessed as a :ref:`Matrix32 <class_Matrix32>`.
+can be accessed as a :ref:`Transform2D <class_Transform2D>`.
 
 Also covered in the previous tutorial, nodes are drawn by default in Layer 0,
 in the built-in canvas. To put nodes in a different layer, a :ref:`CanvasLayer
@@ -28,7 +28,7 @@ Global canvas transform
 -----------------------
 
 Viewports also have a Global Canvas transform (also a
-:ref:`Matrix32 <class_Matrix32>`). This is the master transform and
+:ref:`Transform2D <class_Transform2D>`). This is the master transform and
 affects all individual *Canvas Layer* transforms. Generally this
 transform is not of much use, but is used in the CanvasItem Editor
 in Godot's editor.
@@ -92,8 +92,7 @@ way:
 ::
 
     var local_pos = Vector2(10,20) # local to Control/Node2D
-    var ie = InputEvent()
-    ie.type = InputEvent.MOUSE_BUTTON
+    var ie = InputEventMouseButton.new()
     ie.button_index = BUTTON_LEFT
-    ie.pos = get_viewport_transform() * (get_global_transform() * local_pos)
+    ie.position = get_viewport_transform() * (get_global_transform() * local_pos)
     get_tree().input_event(ie)

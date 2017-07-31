@@ -176,9 +176,9 @@ default, so a small adjustment of ``pad_size / 2`` must be added.
 ::
 
     func _process(delta):
-        var ball_pos = get_node("ball").get_pos()
-        var left_rect = Rect2( get_node("left").get_pos() - pad_size*0.5, pad_size )
-        var right_rect = Rect2( get_node("right").get_pos() - pad_size*0.5, pad_size )
+        var ball_pos = get_node("ball").get_position()
+        var left_rect = Rect2( get_node("left").get_position() - pad_size*0.5, pad_size )
+        var right_rect = Rect2( get_node("right").get_position() - pad_size*0.5, pad_size )
 
 Now, let's add some movement to the ball in the ``_process()`` function.
 Since the ball position is stored in the ``ball_pos`` variable,
@@ -234,7 +234,7 @@ the ball, which was computed before:
 
 ::
 
-        get_node("ball").set_pos(ball_pos)
+        get_node("ball").set_position(ball_pos)
 
 Next, we allow the pads to move. We only update their position according
 to player input. This is done using the Input class:
@@ -242,24 +242,24 @@ to player input. This is done using the Input class:
 ::
 
         # Move left pad
-        var left_pos = get_node("left").get_pos()
+        var left_pos = get_node("left").get_position()
 
         if (left_pos.y > 0 and Input.is_action_pressed("left_move_up")):
             left_pos.y += -PAD_SPEED * delta
         if (left_pos.y < screen_size.y and Input.is_action_pressed("left_move_down")):
             left_pos.y += PAD_SPEED * delta
 
-        get_node("left").set_pos(left_pos)
+        get_node("left").set_position(left_pos)
 
         # Move right pad
-        var right_pos = get_node("right").get_pos()
+        var right_pos = get_node("right").get_position()
 
         if (right_pos.y > 0 and Input.is_action_pressed("right_move_up")):
             right_pos.y += -PAD_SPEED * delta
         if (right_pos.y < screen_size.y and Input.is_action_pressed("right_move_down")):
             right_pos.y += PAD_SPEED * delta
 
-        get_node("right").set_pos(right_pos)
+        get_node("right").set_position(right_pos)
         
 We use the four actions previously defined in the Input actions setup
 section above. When the player activates the respective key, the

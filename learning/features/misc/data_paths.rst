@@ -16,7 +16,7 @@ Resource path
 -------------
 
 As mentioned before. Godot considers that a project exists at any
-given folder that contains an "engine.cfg" text file, even if such
+given folder that contains an "project.godot" text file, even if such
 file is empty.
 
 Accessing project files can be done by opening any path with ``res://``

@@ -127,7 +127,7 @@ load function:
             # First we need to create the object and add it to the tree and set its position.
             var newobject = load(currentline["filename"]).instance()
             get_node(currentline["parent"]).add_child(newobject)
-            newobject.set_pos(Vector2(currentline["posx"],currentline["posy"]))
+            newobject.set_position(Vector2(currentline["posx"],currentline["posy"]))
             # Now we set the remaining variables.
             for i in currentline.keys():
                 if (i == "filename" or i == "parent" or i == "posx" or i == "posy"):
@@ -152,4 +152,4 @@ the needs of a project this needs to be considered. Saving objects in
 stages (parent objects first) so they are available when child objects
 are loaded will make sure they're available for the add_child() call.
 There will also need to be some way to link children to parents as the
-nodepath will likely be invalid.
+NodePath will likely be invalid.

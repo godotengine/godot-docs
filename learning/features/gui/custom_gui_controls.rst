@@ -97,15 +97,15 @@ when:
    :ref:`Control.set_focus_mode() <class_Control_set_focus_mode>`.
 
 This function is
-:ref:`Control._input_event() <class_Control__input_event>`.
+:ref:`Control._gui_input() <class_Control__gui_input>`.
 Simply override it in your control. No processing needs to be set.
 
 ::
 
     extends Control
 
-    func _input_event(ev):
-       if (ev.type==InputEvent.MOUSE_BUTTON and ev.button_index==BUTTON_LEFT and ev.pressed):
+    func _gui_input(ev):
+       if (ev is InputEventMouseButton and ev.button_index==BUTTON_LEFT and ev.pressed):
            print("Left mouse button was pressed!")
 
 For more information about events themselves, check the :ref:`doc_inputevent`

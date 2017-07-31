@@ -39,7 +39,7 @@ received input, in order:
    For gameplay input, the _unhandled_input() is generally a better fit, because it allows the GUI to intercept the events.
 2. Second, it will try to feed the input to the GUI, and see if any
    control can receive it. If so, the :ref:`Control <class_Control>` will be called via the
-   virtual function :ref:`Control._input_event() <class_Control__input_event>` and the signal
+   virtual function :ref:`Control._gui_input() <class_Control__gui_input>` and the signal
    "input_event" will be emitted (this function is re-implementable by
    script by inheriting from it). If the control wants to "consume" the
    event, it will call :ref:`Control.accept_event() <class_Control_accept_event>` and the event will
@@ -75,9 +75,7 @@ Example of changing event type.
 ::
 
     # create event
-    var ev = InputEvent()
-    # set type index
-    ev.type = InputEvent.MOUSE_BUTTON
+    var ev = InputEventMouseButton.new()
     # button_index is only available for the above type
     ev.button_index = BUTTON_LEFT
 
@@ -140,8 +138,7 @@ The Input singleton has a method for this:
 
 ::
 
-    var ev = InputEvent()
-    ev.type = InputEvent.ACTION
+    var ev = InputEventAction.new()
     # set as move_left, pressed
     ev.set_as_action("move_left", true) 
     # feedback
@@ -154,5 +151,5 @@ Customizing and re-mapping input from code is often desired. If your
 whole workflow depends on actions, the :ref:`InputMap <class_InputMap>` singleton is
 ideal for reassigning or creating different actions at run-time. This
 singleton is not saved (must be modified manually) and its state is run
-from the project settings (engine.cfg). So any dynamic system of this
+from the project settings (project.godot). So any dynamic system of this
 type needs to store settings in the way the programmer best sees fit.

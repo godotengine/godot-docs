@@ -23,14 +23,14 @@ Creating a project
 ------------------
 
 Creating a project from the command line is simple, just navigate the
-shell to the desired place and just make an engine.cfg file exist, even
+shell to the desired place and just make project.godot file exist, even
 if empty.
 
 ::
 
     user@host:~$ mkdir newgame
     user@host:~$ cd newgame
-    user@host:~/newgame$ touch engine.cfg
+    user@host:~/newgame$ touch project.godot
 
 That alone makes for an empty Godot project.
 
@@ -50,7 +50,7 @@ the same code with that scene as argument.
 
 ::
 
-    user@host:~/newgame$ godot -e scene.xml
+    user@host:~/newgame$ godot -e scene.tscn
 
 Erasing a scene
 ---------------
@@ -61,7 +61,7 @@ references that scene, or else an error will be thrown upon opening.
 
 ::
 
-    user@host:~/newgame$ rm scene.xml
+    user@host:~/newgame$ rm scene.tscn
 
 Running the game
 ----------------
@@ -78,7 +78,7 @@ line.
 
 ::
 
-    user@host:~/newgame$ godot scene.xml
+    user@host:~/newgame$ godot scene.tscn
 
 Debugging
 ---------
@@ -93,7 +93,7 @@ just fly by. For this, a command line debugger is provided by adding
 
 ::
 
-    user@host:~/newgame$ godot -d scene.xml
+    user@host:~/newgame$ godot -d scene.tscn
 
 Exporting
 ---------
