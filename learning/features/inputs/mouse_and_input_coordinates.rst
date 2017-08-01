@@ -46,4 +46,4 @@ Alternatively it's possible to ask the viewport for the mouse position:
 
 ::
 
-    get_viewport().get_mouse_position()
+    get_viewport().get_mouse_pos()
