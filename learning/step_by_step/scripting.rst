@@ -138,7 +138,7 @@ you to the script editor where an existing template will be included by default:
 
 There is not much in there. The "_ready()" function is called when the
 node (and all its children) enter the active scene. (Note: "_ready()" is not
-the script's constructor; the constructor is "_init()").
+the a constructor; the constructor is "_init()").
 
 The role of the script
 ~~~~~~~~~~~~~~~~~~~~~~
