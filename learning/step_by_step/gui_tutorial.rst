@@ -108,9 +108,9 @@ Add a script to that node, with the following code:
         else:
             draw_rect(r, Color(0,0,1) )
 
-    func _gui_input(ev):
+    func _input_event(ev):
 
-        if (ev is InputEventMouseButton and ev.pressed):
+        if (ev.is_pressed()):
             tapped=true
             update()
 
