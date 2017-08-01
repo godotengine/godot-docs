@@ -151,7 +151,7 @@ our ball move.
     var pad_size
     var direction = Vector2(1.0, 0.0)
     
-    # Constant for pad speed (in pixels/second)
+    # Constant for ball speed (in pixels/second)
     const INITIAL_BALL_SPEED = 80
     # Speed of the ball (also in pixels/second)
     var ball_speed = INITIAL_BALL_SPEED
