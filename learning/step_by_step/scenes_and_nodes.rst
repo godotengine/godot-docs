@@ -20,7 +20,7 @@ savor your magnificent creation.
 
 Making games in Godot feels pretty much the same way. Using the engine
 feels like being in a kitchen. In this kitchen, *nodes* are like a
-refrigerator full of fresh ingredients to cook with.
+refrigerator full of fresh ingredients with which to cook.
 
 There are many types of nodes. Some show images, others play sound,
 other nodes display 3D models, etc. There are dozens of them.
@@ -57,6 +57,9 @@ Scenes
 ------
 
 .. image:: /img/scene_tree_example.png
+
+Now that the concept of nodes has been defined, the next logical
+step is to explain what a Scene is.
 
 A scene is composed of a group of nodes organized hierarchically (in
 tree fashion). Furthermore, a scene:
@@ -127,7 +130,7 @@ The node appears in the scene tree editor (box in the top left
 corner), and the label properties appear in the Inspector (box on the
 right side).
 
-The next step will be to change the "Text" Property of the label, let's
+The next step will be to change the "Text" Property of the label. Let's
 change it to "Hello, World!":
 
 .. image:: /img/hw.png
@@ -184,7 +187,7 @@ application/main_scene property and click on it to select 'hello.tscn'.
 
 .. image:: /img/main_scene.png
 
-With this change, now when you press the regular Play button (or F5), this
+Now, with this change, when you press the regular Play button (or F5), this
 scene will run, no matter which scene is actively being edited.
 
 The project settings dialog provides a lot of options that can be saved to a

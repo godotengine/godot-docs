@@ -11,7 +11,7 @@ functions, so there is no need to check for writing code that runs all
 the time. Additionally, a lot can be done with animation players.
 
 However, it is still a very common case to have a script process on every
-frame. There are two types of processing, idle processing and fixed
+frame. There are two types of processing: idle processing and fixed
 processing.
 
 Idle processing is activated with the
@@ -28,7 +28,7 @@ callback will be called every frame. Example:
         # do something...
 
 The delta parameter describes the time elapsed (in seconds, as
-floating point) since the previous call to _process().
+floating point) since the previous call to "_process()".
 Fixed processing is similar, but only needed for synchronization with
 the physics engine.
 
@@ -55,7 +55,7 @@ Groups
 
 Nodes can be added to groups (as many as desired per node). This is a
 simple yet useful feature for organizing large scenes. There are two
-ways to do this, the first is from the UI, from the Groups button under Node-panel:
+ways to do this: the first is from the UI, from the Groups button under the Node panel:
 
 .. image:: /img/groups_in_nodes.PNG
 
@@ -164,8 +164,8 @@ As mentioned before, it's best to use these functions.
 Creating nodes
 --------------
 
-To create a node from code, just call the .new() method (like for any
-other class based datatype). Example:
+To create a node from code, just call the ".new()" method (like for any
+other class-based datatype). Example:
 
 ::
 
@@ -174,7 +174,7 @@ other class based datatype). Example:
         s = Sprite.new() # create a new sprite!
         add_child(s) # add it as a child of this node
 
-To delete a node, be it inside or outside the scene, free() must be
+To delete a node, be it inside or outside the scene, "free()" must be
 used:
 
 ::
@@ -217,7 +217,7 @@ time.
 
     var scene = preload("res://myscene.tscn") # will load when parsing the script
 
-But 'scene' is not yet a node containing subnodes. It's packed in a
+But 'scene' is not yet a node for containing subnodes. It's packed in a
 special resource called :ref:`PackedScene <class_PackedScene>`.
 To create the actual node, the function
 :ref:`PackedScene.instance() <class_PackedScene_instance>`
@@ -232,4 +232,4 @@ the active scene:
 The advantage of this two-step process is that a packed scene may be
 kept loaded and ready to use, so it can be used to create as many
 instances as desired. This is especially useful to quickly instance
-several enemies, bullets, etc. in the active scene.
+several enemies, bullets, etc., in the active scene.

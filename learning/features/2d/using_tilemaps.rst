@@ -33,8 +33,8 @@ manually edit the resource:
 
 .. image:: /img/tileset_edit_resource.png
 
-There's enough properties to get by, and with some effort editing this
-way can work, but the easiest way to edit and maintain a tileset is exporting
+There's enough properties to get by. With some effort, editing this
+way can work. But the easiest way to edit and maintain a tileset is exporting
 it from a specially-crafted scene!
 
 TileSet scene
@@ -48,7 +48,7 @@ If more than one tile is present in the source image, make sure to use
 the region property of the sprite to adjust which part of the texture is being
 used.
 
-Finally, make sure to name your sprite node correctly, this will ensure
+Finally, make sure to name your sprite node correctly. This will ensure
 that, in subsequent edits to the tileset (for example, if added
 collision, changed the region, etc), the tile will still be **identified
 correctly and updated**. This name should be unique.
@@ -58,9 +58,9 @@ where everything of relevance is:
 
 .. image:: /img/tile_example.png
 
-Continue adding all the tiles, adjusting the offsets if needed (if you have
-multiple tiles in a single source image). Again, remember that their names must
-be unique.
+Continue adding all the tiles, adjusting the offsets if needed (that is, if you have
+multiple tiles in a single source image). Again, *remember that their names must
+be unique*.
 
 .. image:: /img/tile_example2.png
 
@@ -68,33 +68,33 @@ Collision
 ---------
 
 To add collision to a tile, create a StaticBody2D child for each sprite.
-This is a static collision node. Then, as a child of the StaticBody2D,
-create a CollisionShape2D or CollisionPolygon. The latter is recommended
-because it is easier to edit:
+This is a static collision node. Then create a CollisionShape2D or
+CollisionPolygon as a child of the StaticBody2D. The CollisionPolygon is
+recommended because it is easier to edit.
 
 .. image:: /img/tile_example3.png
 
 Finally, edit the polygon, this will give the tile a collision.
-**Remember to use snap!**. Using snap will make sure collision polygons
+**Remember to use snap!** Using snap will make sure collision polygons
 are aligned properly, allowing a character to walk seamlessly from tile
 to tile. Also **do not scale or move** the collision and/or collision
-polygon nodes. leave them at offset 0,0, with scale 1,1 and rotation 0
-respect to the parent sprite.
+polygon nodes. Leave them at offset 0,0, with scale 1,1 and rotation 0
+with respect to the parent sprite.
 
 .. image:: /img/tile_example4.png
 
-Keep adding collisions to tiles until we are done. Note that BG is just
+Keep adding collisions to the tiles until we are done. Note that BG is just
 a background, so it should not have a collision.
 
 .. image:: /img/tile_example5.png
 
-OK! We're done! Remember to save this scene for future edit, call it
-"tileset_edit.tscn" or something like that.
+OK! We're done! Remember to save this scene for future edit. Name it
+"tileset_edit.scn" or something like that.
 
 Exporting a TileSet
 -------------------
 
-With the scene created and opened in the editor, next step will be to
+With the scene created and opened in the editor, the next step will be to
 create a tileset. Use Scene > Convert To > Tile Set from the Scene Menu:
 
 .. image:: /img/tileset_export.png
@@ -110,7 +110,7 @@ properly**).
 Using the TileSet in a TileMap
 ------------------------------
 
-Create a new scene, use any Node or Node2D as root, then create a
+Create a new scene, using any node or node2d as root, and then create a
 :ref:`TileMap <class_TileMap>` as
 a child.
 
@@ -124,7 +124,7 @@ previous steps:
 Also set the cell size to '50', since that is the size used by the
 tiles. Quadrant size is a tuning value, which means that the engine will
 draw and cull the tilemap in blocks of 16x16 tiles. This value is
-usually fine and does not need to be changed, but can be used to tune
+usually fine and does not need to be changed, but can be used to fine tune
 performance in specific cases (if you know what you are doing).
 
 Painting your world
@@ -136,8 +136,8 @@ left palette.
 
 .. image:: /img/tile_example6.png
 
-To avoid moving and selecting the tilemap node accidentally (something
-common given it's a huge node), it is recommended that you lock it,
+To avoid accidentally moving and selecting the tilemap node (something
+common, given it's a huge node), it is recommended that you lock it,
 using the lock button:
 
 .. image:: /img/tile_lock.png
@@ -145,30 +145,31 @@ using the lock button:
 You can also flip and rotate sprites in the TileMap editor (note:
 flipping the sprite in the TileSet will have no effect). Icons at the
 top right of the editor allow flipping and rotating of the currently
-selected sprite - you can also use A and S to flip horizontally and
-vertically. With a brick pattern like this tutorial uses, flipping the
-sprites would create unpleasant discontinuities unless you're flipping
-an entire region of bricks, but for some kinds of tiles flipping can
-be a convenient and space-saving feature.
+selected sprite - you can also use the A and S keys to flip the sprite
+horizontally and vertically. With a brick pattern like this tutorial uses,
+flipping the sprites would create unpleasant discontinuities unless you're
+flipping an entire region of bricks. But for some kinds of tiles, flipping
+can be a convenient and space-saving feature.
 
 Offset and scaling artifacts
 ----------------------------
 
 When using a single texture for all the tiles, scaling the tileset (or
 even moving to a non pixel-aligned location) will most likely result in
-filtering artifacts like this:
+filtering artifacts like so:
 
 .. image:: /img/tileset_filter.png
 
-This can't be avoided, as it is the way the hardware bilinear filter
-works. So, to avoid this situation, there are a few workarounds, try the
-ones that look better for you:
+This is unavoidable, as it is the way the hardware bilinear filter
+works. So, to avoid this situation, there are a few workarounds. Try the
+one that looks better for you:
 
--  Use a single image for each tile, this will remove all artifacts but
-   can be more cumbersome to implement, so try the options below first.
+
 -  Disable filtering for either the tileset texture or the entire image
    loader (see the :ref:`doc_managing_image_files` asset pipeline tutorial).
 -  Enable pixel snap (set: "Scene > Project Settings >
    Display/use_2d_pixel_snap" to true).
 -  Viewport Scaling can often help with shrinking the map (see the
    :ref:`doc_viewports` tutorial).
+-  Use a single image for each tile. This will remove all artifacts, but
+   can be more cumbersome to implement.

@@ -33,8 +33,8 @@ weird at first, but by the end of this tutorial it should make complete sense.
 Instancing, step by step
 ------------------------
 
-To learn how to do instancing, let's start by downloading a sample project:
-:download:`instancing.zip </files/instancing.zip>`.
+To learn how to do instancing, let's start with downloading a sample
+project: :download:`instancing.zip </files/instancing.zip>`.
 
 Unzip this project anywhere you like. Then, open Godot and add this project to
 the project manager using the 'Import' option:
@@ -91,22 +91,21 @@ Cool, huh? This is how instancing works.
 Editing instances
 -----------------
 
-Select one of the many copies of the balls and go to the property editor. Let's
-make it much more bouncy. To do this, look for the Bounce parameter and set it
-to 1.0:
+Select one of the many copies of the balls and go to the property
+editor. Let's make it bounce a lot more, so look for the Bounce
+parameter and set it to 1.0:
 
 .. image:: /img/instedit.png
 
-Notice that a grey "revert" button appeared. When this button is present, it
-means we modified a property in the instanced scene to override a specific
-value that differs from the original scene. Even if that property is modified
-in the original scene later, our custom value here will continue to overwrite
-it. Pressing the revert button will restore the property to the value that
-comes from the original scene.
+Grey "revert" button will appear. When
+this button is present, it means we modified a property in the
+instanced scene to override a specific value in this instance. Even
+if that property is modified in the original scene, the custom value
+will always overwrite it. Pressing the revert button will restore the
+property to the original value that came from the scene.
 
 Conclusion
 ----------
 
 Instancing seems handy, but there is more to it than meets the eye!
-The next part of the tutorial will show how this feature can help you organize
-your entire game...
+The next part of the instancing tutorial should cover the rest..

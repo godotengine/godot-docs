@@ -22,16 +22,16 @@ in your project folder.
 Scene setup
 ~~~~~~~~~~~
 
-For the sake of the old times, the game will be in 640x400 pixels
+To pay homage to the olden times, the game will be in 640x400 pixels
 resolution. This can be configured in the Project Settings (see
-:ref:`doc_scenes_and_nodes-configuring_the_project`) under Scene/Project
+:ref:`doc_scenes_and_nodes-configuring_the_project`) under the Scene/Project
 settings menu. The default background color should be set to black:
 
 .. image:: /img/clearcolor.png
 
 Create a :ref:`class_Node2D` node for the project root. Node2D is the
 base type for the 2D engine. After this, add some sprites
-(:ref:`class_Sprite` node) for the left and right paddles, the separator
+(:ref:`class_Sprite` node) for the left and right paddles, the separator,
 and ball. You can set a custom name for each node, and set the texture
 for each sprite in the Inspector. 
 
@@ -60,11 +60,11 @@ Input actions setup
 ~~~~~~~~~~~~~~~~~~~
 
 Video games can be played using various input methods: Keyboard, Joypad,
-Mouse, Touchscreen (multitouch)... Godot is able to use them all.
+Mouse, Touchscreen (even multitouch)... Godot is able to use them all.
 However, it would be interesting to define the inputs as "Input Actions"
 instead of hardware actions that you'd manage separately. This way, any
 input method can be used: each of them only require the user to connect
-buttons to game actions that you defined. 
+buttons to game actions that you define. 
 
 This is Pong. The only input that matters is for the pads going up and
 down.
@@ -76,9 +76,8 @@ this time move to the
 In this tab, add 4 actions:
 ``left_move_up``, ``left_move_down``, ``right_move_up``,
 ``right_move_down``.
-Assign the keys that you desire. A/Z (for the left player) and Up/Down
-(for the right player) as keys
-should work in most cases.
+Assign the keys that you desire. The A/Z keys (for the left player) and
+the Up/Down keys (for the right player) should work in most cases.
 
 .. image:: /img/inputmap.png
 
@@ -168,8 +167,8 @@ our ball move.
 Finally, the ``_process()`` function. All the code below is contained by
 this function.
 
-We have to init some useful values for computation. The first one is the
-ball position (from the node), the second one is the rectangle
+We have to initialize some useful values for computation. The first one is the
+ball position (from the node),and the second one is the rectangle
 (``Rect2``) for each pad. These rectangles will be used for collision
 tests between the ball and the pads. Sprites center their textures by
 default, so a small adjustment of ``pad_size / 2`` must be added.
@@ -195,7 +194,7 @@ function. That means the ball position will be updated at each new
 frame.
 
 Now that the ball has a new position, we need to test if it
-collides with anything, that is the window borders and the pads. First,
+collides with anything. That is, the window borders and the pads. First,
 the floor and the roof:
 
 ::
@@ -218,7 +217,7 @@ speed a little.
             direction = direction.normalized()
             ball_speed *= 1.1
 
-Finally, if the ball went out of the screen, it's game over. That is, we test if
+Finally, if the ball moves off of the screen, it's game over. That is, we test if
 the X position of the ball is less than 0 or greater than the screen
 width. If so, the game restarts:
 
@@ -268,4 +267,4 @@ corresponding action is triggered. As soon as this happens, we simply
 compute a new position for the pad in the desired direction and apply it
 to the node.
 
-That's it! A simple Pong was written with a few lines of code.
+That's it! A simple Pong game was written with a few lines of code.
