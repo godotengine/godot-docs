@@ -8,6 +8,8 @@ PanelContainer
 
 **Inherits:** :ref:`Container<class_container>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
+**Inherited By:** :ref:`ScriptEditor<class_scripteditor>`
+
 **Category:** Core
 
 Brief Description

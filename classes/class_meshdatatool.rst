@@ -29,7 +29,7 @@ Member Functions
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolIntArray<class_poolintarray>`    | :ref:`get_edge_faces<class_MeshDataTool_get_edge_faces>`  **(** :ref:`int<class_int>` idx  **)** const                                                      |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`get_edge_meta<class_MeshDataTool_get_edge_meta>`  **(** :ref:`int<class_int>` idx  **)** const                                                        |
+| :ref:`Variant<class_variant>`              | :ref:`get_edge_meta<class_MeshDataTool_get_edge_meta>`  **(** :ref:`int<class_int>` idx  **)** const                                                        |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                      | :ref:`get_edge_vertex<class_MeshDataTool_get_edge_vertex>`  **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` vertex  **)** const                      |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -37,7 +37,7 @@ Member Functions
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                      | :ref:`get_face_edge<class_MeshDataTool_get_face_edge>`  **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` edge  **)** const                            |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`get_face_meta<class_MeshDataTool_get_face_meta>`  **(** :ref:`int<class_int>` idx  **)** const                                                        |
+| :ref:`Variant<class_variant>`              | :ref:`get_face_meta<class_MeshDataTool_get_face_meta>`  **(** :ref:`int<class_int>` idx  **)** const                                                        |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`              | :ref:`get_face_normal<class_MeshDataTool_get_face_normal>`  **(** :ref:`int<class_int>` idx  **)** const                                                    |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -59,7 +59,7 @@ Member Functions
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolIntArray<class_poolintarray>`    | :ref:`get_vertex_faces<class_MeshDataTool_get_vertex_faces>`  **(** :ref:`int<class_int>` idx  **)** const                                                  |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`get_vertex_meta<class_MeshDataTool_get_vertex_meta>`  **(** :ref:`int<class_int>` idx  **)** const                                                    |
+| :ref:`Variant<class_variant>`              | :ref:`get_vertex_meta<class_MeshDataTool_get_vertex_meta>`  **(** :ref:`int<class_int>` idx  **)** const                                                    |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`              | :ref:`get_vertex_normal<class_MeshDataTool_get_vertex_normal>`  **(** :ref:`int<class_int>` idx  **)** const                                                |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -121,7 +121,7 @@ Member Function Description
 
 .. _class_MeshDataTool_get_edge_meta:
 
-- void  **get_edge_meta**  **(** :ref:`int<class_int>` idx  **)** const
+- :ref:`Variant<class_variant>`  **get_edge_meta**  **(** :ref:`int<class_int>` idx  **)** const
 
 .. _class_MeshDataTool_get_edge_vertex:
 
@@ -137,7 +137,7 @@ Member Function Description
 
 .. _class_MeshDataTool_get_face_meta:
 
-- void  **get_face_meta**  **(** :ref:`int<class_int>` idx  **)** const
+- :ref:`Variant<class_variant>`  **get_face_meta**  **(** :ref:`int<class_int>` idx  **)** const
 
 .. _class_MeshDataTool_get_face_normal:
 
@@ -181,7 +181,7 @@ Member Function Description
 
 .. _class_MeshDataTool_get_vertex_meta:
 
-- void  **get_vertex_meta**  **(** :ref:`int<class_int>` idx  **)** const
+- :ref:`Variant<class_variant>`  **get_vertex_meta**  **(** :ref:`int<class_int>` idx  **)** const
 
 .. _class_MeshDataTool_get_vertex_normal:
 

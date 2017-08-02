@@ -55,7 +55,7 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`Vector2<class_vector2>` **o**
+- :ref:`Vector2<class_vector2>` **origin**
 - :ref:`Vector2<class_vector2>` **x**
 - :ref:`Vector2<class_vector2>` **y**
 

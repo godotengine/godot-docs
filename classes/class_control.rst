@@ -77,6 +77,8 @@ Member Functions
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Rect2<class_rect2>`        | :ref:`get_global_rect<class_Control_get_global_rect>`  **(** **)** const                                                                                                          |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_h_grow_direction<class_Control_get_h_grow_direction>`  **(** **)** const                                                                                                |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`            | :ref:`get_h_size_flags<class_Control_get_h_size_flags>`  **(** **)** const                                                                                                        |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Texture<class_texture>`    | :ref:`get_icon<class_Control_get_icon>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type=""  **)** const                                                 |
@@ -90,6 +92,8 @@ Member Functions
 | :ref:`Vector2<class_vector2>`    | :ref:`get_parent_area_size<class_Control_get_parent_area_size>`  **(** **)** const                                                                                                |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Control<class_control>`    | :ref:`get_parent_control<class_Control_get_parent_control>`  **(** **)** const                                                                                                    |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`    | :ref:`get_pivot_offset<class_Control_get_pivot_offset>`  **(** **)** const                                                                                                        |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`    | :ref:`get_position<class_Control_get_position>`  **(** **)** const                                                                                                                |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -110,6 +114,8 @@ Member Functions
 | :ref:`Theme<class_theme>`        | :ref:`get_theme<class_Control_get_theme>`  **(** **)** const                                                                                                                      |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`      | :ref:`get_tooltip<class_Control_get_tooltip>`  **(** :ref:`Vector2<class_vector2>` atpos=Vector2(0, 0)  **)** const                                                               |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_v_grow_direction<class_Control_get_v_grow_direction>`  **(** **)** const                                                                                                |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`            | :ref:`get_v_size_flags<class_Control_get_v_size_flags>`  **(** **)** const                                                                                                        |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -173,11 +179,15 @@ Member Functions
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_global_position<class_Control_set_global_position>`  **(** :ref:`Vector2<class_vector2>` pos  **)**                                                                     |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_h_grow_direction<class_Control_set_h_grow_direction>`  **(** :ref:`int<class_int>` direction  **)**                                                                     |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_h_size_flags<class_Control_set_h_size_flags>`  **(** :ref:`int<class_int>` flags  **)**                                                                                 |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_margin<class_Control_set_margin>`  **(** :ref:`int<class_int>` margin, :ref:`float<class_float>` offset  **)**                                                          |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_mouse_filter<class_Control_set_mouse_filter>`  **(** :ref:`int<class_int>` filter  **)**                                                                                |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_pivot_offset<class_Control_set_pivot_offset>`  **(** :ref:`Vector2<class_vector2>` pivot_offset  **)**                                                                  |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_position<class_Control_set_position>`  **(** :ref:`Vector2<class_vector2>` pos  **)**                                                                                   |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -194,6 +204,8 @@ Member Functions
 | void                             | :ref:`set_theme<class_Control_set_theme>`  **(** :ref:`Theme<class_theme>` theme  **)**                                                                                           |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_tooltip<class_Control_set_tooltip>`  **(** :ref:`String<class_string>` tooltip  **)**                                                                                   |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_v_grow_direction<class_Control_set_v_grow_direction>`  **(** :ref:`int<class_int>` direction  **)**                                                                     |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_v_size_flags<class_Control_set_v_size_flags>`  **(** :ref:`int<class_int>` flags  **)**                                                                                 |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -240,6 +252,8 @@ Member Variables
 - :ref:`NodePath<class_nodepath>` **focus_neighbour_left**
 - :ref:`NodePath<class_nodepath>` **focus_neighbour_right**
 - :ref:`NodePath<class_nodepath>` **focus_neighbour_top**
+- :ref:`int<class_int>` **grow_horizontal**
+- :ref:`int<class_int>` **grow_vertical**
 - :ref:`String<class_string>` **hint_tooltip**
 - :ref:`int<class_int>` **margin_bottom**
 - :ref:`int<class_int>` **margin_left**
@@ -248,6 +262,7 @@ Member Variables
 - :ref:`int<class_int>` **mouse_filter**
 - :ref:`bool<class_bool>` **rect_clip_content**
 - :ref:`Vector2<class_vector2>` **rect_min_size**
+- :ref:`Vector2<class_vector2>` **rect_pivot_offset**
 - :ref:`Vector2<class_vector2>` **rect_position**
 - :ref:`float<class_float>` **rect_rotation**
 - :ref:`Vector2<class_vector2>` **rect_scale**
@@ -293,9 +308,13 @@ Numeric Constants
 - **SIZE_EXPAND** = **2**
 - **SIZE_FILL** = **1**
 - **SIZE_EXPAND_FILL** = **3**
+- **SIZE_SHRINK_CENTER** = **4**
+- **SIZE_SHRINK_END** = **8**
 - **MOUSE_FILTER_STOP** = **0**
 - **MOUSE_FILTER_PASS** = **1**
 - **MOUSE_FILTER_IGNORE** = **2**
+- **GROW_DIRECTION_BEGIN** = **0**
+- **GROW_DIRECTION_END** = **1**
 
 Description
 -----------
@@ -363,7 +382,7 @@ Override a single icon (:ref:`Texture<class_texture>`) in the theme of this Cont
 
 - void  **add_style_override**  **(** :ref:`String<class_string>` name, :ref:`StyleBox<class_stylebox>` stylebox  **)**
 
-Override a single stylebox (:ref:`Stylebox<class_stylebox>`) in the theme of this Control. If stylebox is empty, override is cleared.
+Override a single stylebox (Stylebox) in the theme of this Control. If stylebox is empty, override is cleared.
 
 .. _class_Control_can_drop_data:
 
@@ -457,7 +476,11 @@ Returns the Control position, relative to the top-left corner of the parent Cont
 
 - :ref:`Rect2<class_rect2>`  **get_global_rect**  **(** **)** const
 
-Return position and size of the Control, relative to the top-left corner of the *window* Control. This is a helper (see :ref:`get_global_pos<class_Control_get_global_pos>`, :ref:`get_size<class_Control_get_size>`).
+Return position and size of the Control, relative to the top-left corner of the *window* Control. This is a helper (see :ref:`get_global_position<class_Control_get_global_position>`, :ref:`get_size<class_Control_get_size>`).
+
+.. _class_Control_get_h_grow_direction:
+
+- :ref:`int<class_int>`  **get_h_grow_direction**  **(** **)** const
 
 .. _class_Control_get_h_size_flags:
 
@@ -495,6 +518,10 @@ Return when the control is ignoring mouse events (even touchpad events send mous
 
 - :ref:`Control<class_control>`  **get_parent_control**  **(** **)** const
 
+.. _class_Control_get_pivot_offset:
+
+- :ref:`Vector2<class_vector2>`  **get_pivot_offset**  **(** **)** const
+
 .. _class_Control_get_position:
 
 - :ref:`Vector2<class_vector2>`  **get_position**  **(** **)** const
@@ -505,7 +532,7 @@ Returns the Control position, relative to the top-left corner of the parent Cont
 
 - :ref:`Rect2<class_rect2>`  **get_rect**  **(** **)** const
 
-Return position and size of the Control, relative to the top-left corner of the parent Control. This is a helper (see :ref:`get_pos<class_Control_get_pos>`, :ref:`get_size<class_Control_get_size>`).
+Return position and size of the Control, relative to the top-left corner of the parent Control. This is a helper (see :ref:`get_position<class_Control_get_position>`, :ref:`get_size<class_Control_get_size>`).
 
 .. _class_Control_get_rotation:
 
@@ -527,7 +554,7 @@ Return the rotation (in degrees)
 
 - :ref:`Vector2<class_vector2>`  **get_size**  **(** **)** const
 
-Returns the size of the Control, computed from all margins, however the size returned will **never be smaller than the minimum size reported by :ref:`get_minimum_size<class_Control_get_minimum_size>`**. This means that even if end position of the Control rectangle is smaller than the begin position, the Control will still display and interact correctly. (see description, :ref:`get_minimum_size<class_Control_get_minimum_size>`, :ref:`set_margin<class_Control_set_margin>`, :ref:`set_anchor<class_Control_set_anchor>`).
+Returns the size of the Control, computed from all margins, however the size returned will **never be smaller than the minimum size reported by** :ref:`get_minimum_size<class_Control_get_minimum_size>`. This means that even if end position of the Control rectangle is smaller than the begin position, the Control will still display and interact correctly. (see description, :ref:`get_minimum_size<class_Control_get_minimum_size>`, :ref:`set_margin<class_Control_set_margin>`, :ref:`set_anchor<class_Control_set_anchor>`).
 
 .. _class_Control_get_stretch_ratio:
 
@@ -550,6 +577,10 @@ Return a :ref:`Theme<class_theme>` override, if one exists (see :ref:`set_theme<
 - :ref:`String<class_string>`  **get_tooltip**  **(** :ref:`Vector2<class_vector2>` atpos=Vector2(0, 0)  **)** const
 
 Return the tooltip, which will appear when the cursor is resting over this control.
+
+.. _class_Control_get_v_grow_direction:
+
+- :ref:`int<class_int>`  **get_v_grow_direction**  **(** **)** const
 
 .. _class_Control_get_v_size_flags:
 
@@ -703,6 +734,10 @@ Force a neighbour for moving the input focus to. When pressing TAB or directiona
 
 Move the Control to a new position, relative to the top-left corner of the *window* Control, and without changing current anchor mode. (see :ref:`set_margin<class_Control_set_margin>`).
 
+.. _class_Control_set_h_grow_direction:
+
+- void  **set_h_grow_direction**  **(** :ref:`int<class_int>` direction  **)**
+
 .. _class_Control_set_h_size_flags:
 
 - void  **set_h_size_flags**  **(** :ref:`int<class_int>` flags  **)**
@@ -720,6 +755,10 @@ Set a margin offset. Margin can be one of (MARGIN_LEFT, MARGIN_TOP, MARGIN_RIGHT
 - void  **set_mouse_filter**  **(** :ref:`int<class_int>` filter  **)**
 
 Set when the control is ignoring mouse events (even touchpad events send mouse events). (see the MOUSE_FILTER\_\* constants)
+
+.. _class_Control_set_pivot_offset:
+
+- void  **set_pivot_offset**  **(** :ref:`Vector2<class_vector2>` pivot_offset  **)**
 
 .. _class_Control_set_position:
 
@@ -766,6 +805,10 @@ Override whole the :ref:`Theme<class_theme>` for this Control and all its childr
 - void  **set_tooltip**  **(** :ref:`String<class_string>` tooltip  **)**
 
 Set a tooltip, which will appear when the cursor is resting over this control.
+
+.. _class_Control_set_v_grow_direction:
+
+- void  **set_v_grow_direction**  **(** :ref:`int<class_int>` direction  **)**
 
 .. _class_Control_set_v_size_flags:
 

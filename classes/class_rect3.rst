@@ -64,7 +64,7 @@ Member Variables
 ----------------
 
 - :ref:`Vector3<class_vector3>` **end** - Ending corner.
-- :ref:`Vector3<class_vector3>` **pos** - Position (starting corner).
+- :ref:`Vector3<class_vector3>` **position**
 - :ref:`Vector3<class_vector3>` **size** - Size from position to end.
 
 Description
@@ -175,7 +175,7 @@ Return true if the :ref:`Rect3<class_rect3>` contains a point.
 
 - :ref:`Rect3<class_rect3>`  **intersection**  **(** :ref:`Rect3<class_rect3>` with  **)**
 
-Return the intersection between two :ref:`Rect3<class_rect3>`. An empty AABB (size 0,0,0) is returned on failure.
+Return the intersection between two :ref:`Rect3<class_rect3>`. An empty Rect3 (size 0,0,0) is returned on failure.
 
 .. _class_Rect3_intersects:
 

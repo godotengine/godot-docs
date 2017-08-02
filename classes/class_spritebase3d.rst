@@ -70,6 +70,7 @@ Member Variables
 - :ref:`int<class_int>` **alpha_cut**
 - :ref:`int<class_int>` **axis**
 - :ref:`bool<class_bool>` **centered**
+- :ref:`bool<class_bool>` **double_sided**
 - :ref:`bool<class_bool>` **flip_h**
 - :ref:`bool<class_bool>` **flip_v**
 - :ref:`Color<class_color>` **modulate**
@@ -84,7 +85,8 @@ Numeric Constants
 
 - **FLAG_TRANSPARENT** = **0**
 - **FLAG_SHADED** = **1**
-- **FLAG_MAX** = **2**
+- **FLAG_DOUBLE_SIDED** = **2**
+- **FLAG_MAX** = **3**
 - **ALPHA_CUT_DISABLED** = **0**
 - **ALPHA_CUT_DISCARD** = **1**
 - **ALPHA_CUT_OPAQUE_PREPASS** = **2**

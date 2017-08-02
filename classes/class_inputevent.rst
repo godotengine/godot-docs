@@ -45,8 +45,15 @@ Member Functions
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                 | :ref:`set_id<class_InputEvent_set_id>`  **(** :ref:`int<class_int>` id  **)**                                                                                         |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`              | :ref:`shortcut_match<class_InputEvent_shortcut_match>`  **(** :ref:`InputEvent<class_inputevent>` event  **)** const                                                  |
++--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`InputEvent<class_inputevent>`  | :ref:`xformed_by<class_InputEvent_xformed_by>`  **(** :ref:`Transform2D<class_transform2d>` xform, :ref:`Vector2<class_vector2>` local_ofs=Vector2(0, 0)  **)** const |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+- :ref:`int<class_int>` **device**
 
 Member Function Description
 ---------------------------
@@ -108,6 +115,10 @@ Return if this input event is pressed. Not relevant for the event types MOUSE_MO
 .. _class_InputEvent_set_id:
 
 - void  **set_id**  **(** :ref:`int<class_int>` id  **)**
+
+.. _class_InputEvent_shortcut_match:
+
+- :ref:`bool<class_bool>`  **shortcut_match**  **(** :ref:`InputEvent<class_inputevent>` event  **)** const
 
 .. _class_InputEvent_xformed_by:
 

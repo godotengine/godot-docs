@@ -23,8 +23,6 @@ Member Functions
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------+
 | :ref:`Physics2DDirectSpaceState<class_physics2ddirectspacestate>`  | :ref:`get_direct_space_state<class_World2D_get_direct_space_state>`  **(** **)** |
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                              | :ref:`get_sound_space<class_World2D_get_sound_space>`  **(** **)**               |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------+
 | :ref:`RID<class_rid>`                                              | :ref:`get_space<class_World2D_get_space>`  **(** **)**                           |
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
@@ -47,12 +45,6 @@ Retrieve the :ref:`RID<class_rid>` of this world's canvas resource. Used by the 
 - :ref:`Physics2DDirectSpaceState<class_physics2ddirectspacestate>`  **get_direct_space_state**  **(** **)**
 
 Retrieve the state of this world's physics space. This allows arbitrary querying for collision.
-
-.. _class_World2D_get_sound_space:
-
-- :ref:`RID<class_rid>`  **get_sound_space**  **(** **)**
-
-Retrieve the :ref:`RID<class_rid>` of this world's sound space resource. Used by the :ref:`SpatialSound2DServer<class_spatialsound2dserver>` for 2D spatial audio.
 
 .. _class_World2D_get_space:
 

@@ -31,8 +31,8 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`bool<class_bool>` **return_value/enabled**
-- :ref:`int<class_int>` **return_value/type**
+- :ref:`bool<class_bool>` **return_enabled**
+- :ref:`int<class_int>` **return_type**
 
 Member Function Description
 ---------------------------

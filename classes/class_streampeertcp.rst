@@ -52,7 +52,7 @@ Member Function Description
 
 - :ref:`int<class_int>`  **connect_to_host**  **(** :ref:`String<class_string>` host, :ref:`int<class_int>` port  **)**
 
-Connect to the specified host:port pair. A hostname will be resolved if valid. Returns :ref:`OK<class_ok>` on success or :ref:`FAILED<class_failed>` on failure.
+Connect to the specified host:port pair. A hostname will be resolved if valid. Returns OK on success or FAILED on failure.
 
 .. _class_StreamPeerTCP_disconnect_from_host:
 

@@ -44,7 +44,7 @@ Lock this :ref:`Mutex<class_mutex>`, blocks until it is unlocked by the current 
 
 - Error  **try_lock**  **(** **)**
 
-Try locking this :ref:`Mutex<class_mutex>`, does not block. Returns :ref:`OK<class_ok>` on success else :ref:`ERR_BUSY<class_err_busy>`.
+Try locking this :ref:`Mutex<class_mutex>`, does not block. Returns OK on success else ERR_BUSY.
 
 .. _class_Mutex_unlock:
 

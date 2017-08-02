@@ -62,7 +62,7 @@ Append an element at the end of the array (alias of :ref:`push_back<class_PoolRe
 
 - void  **append_array**  **(** :ref:`PoolRealArray<class_poolrealarray>` array  **)**
 
-Append an :ref:`RealArray<class_realarray>` at the end of this array.
+Append an RealArray at the end of this array.
 
 .. _class_PoolRealArray_insert:
 
@@ -92,7 +92,7 @@ Remove an element from the array by index.
 
 - void  **resize**  **(** :ref:`int<class_int>` idx  **)**
 
-Set the size of the :ref:`RealArray<class_realarray>`. If larger than the current size it will reserve some space beforehand, and if it is smaller it will cut off the array.
+Set the size of the RealArray. If larger than the current size it will reserve some space beforehand, and if it is smaller it will cut off the array.
 
 .. _class_PoolRealArray_set:
 

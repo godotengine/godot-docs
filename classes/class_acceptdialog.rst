@@ -70,7 +70,7 @@ Member Function Description
 
 Add custom button to the dialog and return the created button.
 
-The button titled with *text* and the *action* will be passed to :ref:`custom_action<class_custom_action>` signal when it is pressed.
+The button titled with *text* and the *action* will be passed to custom_action signal when it is pressed.
 
 .. _class_AcceptDialog_add_cancel:
 

@@ -18,21 +18,21 @@ Brief Description
 Member Functions
 ----------------
 
-+------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_constant_type<class_VisualScriptConstant_get_constant_type>`  **(** **)** const                                  |
-+------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`get_constant_value<class_VisualScriptConstant_get_constant_value>`  **(** **)** const                                |
-+------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_constant_type<class_VisualScriptConstant_set_constant_type>`  **(** :ref:`int<class_int>` type  **)**            |
-+------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_constant_value<class_VisualScriptConstant_set_constant_value>`  **(** :ref:`Variant<class_variant>` value  **)** |
-+------------------------+----------------------------------------------------------------------------------------------------------------------------+
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_constant_type<class_VisualScriptConstant_get_constant_type>`  **(** **)** const                                  |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_variant>`  | :ref:`get_constant_value<class_VisualScriptConstant_get_constant_value>`  **(** **)** const                                |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_constant_type<class_VisualScriptConstant_set_constant_type>`  **(** :ref:`int<class_int>` type  **)**            |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_constant_value<class_VisualScriptConstant_set_constant_value>`  **(** :ref:`Variant<class_variant>` value  **)** |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **constant/type**
-- :ref:`Nil<class_nil>` **constant/value**
+- :ref:`int<class_int>` **type**
+- :ref:`Nil<class_nil>` **value**
 
 Member Function Description
 ---------------------------
@@ -43,7 +43,7 @@ Member Function Description
 
 .. _class_VisualScriptConstant_get_constant_value:
 
-- void  **get_constant_value**  **(** **)** const
+- :ref:`Variant<class_variant>`  **get_constant_value**  **(** **)** const
 
 .. _class_VisualScriptConstant_set_constant_type:
 

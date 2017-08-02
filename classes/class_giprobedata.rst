@@ -31,6 +31,8 @@ Member Functions
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                | :ref:`get_energy<class_GIProbeData_get_energy>`  **(** **)** const                                                             |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                | :ref:`get_normal_bias<class_GIProbeData_get_normal_bias>`  **(** **)** const                                                   |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                | :ref:`get_propagation<class_GIProbeData_get_propagation>`  **(** **)** const                                                   |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform<class_transform>`        | :ref:`get_to_cell_xform<class_GIProbeData_get_to_cell_xform>`  **(** **)** const                                               |
@@ -55,6 +57,8 @@ Member Functions
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_interior<class_GIProbeData_set_interior>`  **(** :ref:`bool<class_bool>` interior  **)**                             |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_normal_bias<class_GIProbeData_set_normal_bias>`  **(** :ref:`float<class_float>` bias  **)**                         |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_propagation<class_GIProbeData_set_propagation>`  **(** :ref:`float<class_float>` propagation  **)**                  |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_to_cell_xform<class_GIProbeData_set_to_cell_xform>`  **(** :ref:`Transform<class_transform>` to_cell_xform  **)**    |
@@ -71,6 +75,7 @@ Member Variables
 - :ref:`int<class_int>` **dynamic_range**
 - :ref:`float<class_float>` **energy**
 - :ref:`bool<class_bool>` **interior**
+- :ref:`float<class_float>` **normal_bias**
 - :ref:`float<class_float>` **propagation**
 - :ref:`Transform<class_transform>` **to_cell_xform**
 
@@ -100,6 +105,10 @@ Member Function Description
 .. _class_GIProbeData_get_energy:
 
 - :ref:`float<class_float>`  **get_energy**  **(** **)** const
+
+.. _class_GIProbeData_get_normal_bias:
+
+- :ref:`float<class_float>`  **get_normal_bias**  **(** **)** const
 
 .. _class_GIProbeData_get_propagation:
 
@@ -148,6 +157,10 @@ Member Function Description
 .. _class_GIProbeData_set_interior:
 
 - void  **set_interior**  **(** :ref:`bool<class_bool>` interior  **)**
+
+.. _class_GIProbeData_set_normal_bias:
+
+- void  **set_normal_bias**  **(** :ref:`float<class_float>` bias  **)**
 
 .. _class_GIProbeData_set_propagation:
 

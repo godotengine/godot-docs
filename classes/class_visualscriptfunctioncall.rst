@@ -63,17 +63,17 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`Dictionary<class_dictionary>` **function/argument_cache**
-- :ref:`String<class_string>` **function/base_script**
-- :ref:`String<class_string>` **function/base_type**
-- :ref:`int<class_int>` **function/basic_type**
-- :ref:`int<class_int>` **function/call_mode**
-- :ref:`String<class_string>` **function/function**
-- :ref:`NodePath<class_nodepath>` **function/node_path**
-- :ref:`String<class_string>` **function/singleton**
-- :ref:`int<class_int>` **function/use_default_args**
-- :ref:`bool<class_bool>` **function/validate**
-- :ref:`int<class_int>` **rpc/call_mode**
+- :ref:`Dictionary<class_dictionary>` **argument_cache**
+- :ref:`String<class_string>` **base_script**
+- :ref:`String<class_string>` **base_type**
+- :ref:`int<class_int>` **basic_type**
+- :ref:`int<class_int>` **call_mode**
+- :ref:`String<class_string>` **function**
+- :ref:`NodePath<class_nodepath>` **node_path**
+- :ref:`int<class_int>` **rpc_call_mode**
+- :ref:`String<class_string>` **singleton**
+- :ref:`int<class_int>` **use_default_args**
+- :ref:`bool<class_bool>` **validate**
 
 Numeric Constants
 -----------------

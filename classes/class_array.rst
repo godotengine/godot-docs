@@ -90,19 +90,19 @@ Member Function Description
 
 - :ref:`Array<class_array>`  **Array**  **(** :ref:`PoolColorArray<class_poolcolorarray>` from  **)**
 
-Construct an array from a :ref:`PoolByteArray<class_poolbytearray>`.
+Construct an array from a :ref:`PoolColorArray<class_poolcolorarray>`.
 
 .. _class_Array_Array:
 
 - :ref:`Array<class_array>`  **Array**  **(** :ref:`PoolVector3Array<class_poolvector3array>` from  **)**
 
-Construct an array from a :ref:`PoolByteArray<class_poolbytearray>`.
+Construct an array from a :ref:`PoolVector3Array<class_poolvector3array>`.
 
 .. _class_Array_Array:
 
 - :ref:`Array<class_array>`  **Array**  **(** :ref:`PoolVector2Array<class_poolvector2array>` from  **)**
 
-Construct an array from a :ref:`PoolByteArray<class_poolbytearray>`.
+Construct an array from a :ref:`PoolVector2Array<class_poolvector2array>`.
 
 .. _class_Array_Array:
 
@@ -120,7 +120,7 @@ Construct an array from a :ref:`PoolRealArray<class_poolrealarray>`.
 
 - :ref:`Array<class_array>`  **Array**  **(** :ref:`PoolIntArray<class_poolintarray>` from  **)**
 
-Construct an array from a :ref:`PoolByteArray<class_poolbytearray>`.
+Construct an array from a :ref:`PoolIntArray<class_poolintarray>`.
 
 .. _class_Array_Array:
 
@@ -186,7 +186,14 @@ Returns the first element of the array if the array is not empty (size>0).
 
 - :ref:`bool<class_bool>`  **has**  **(** var value  **)**
 
-Return true if the array contains given value. ``:ref:` "inside", 7 <class_ "inside", 7 >`.has("inside") == true, :ref:` "inside", 7 <class_ "inside", 7 >`.has("outside") == false, :ref:` "inside", 7 <class_ "inside", 7 >`.has(7) == true, :ref:` "inside", 7 <class_ "inside", 7 >`.has("7") == false``
+Return true if the array contains given value.
+
+::
+
+    [ "inside", 7 ].has("inside") == true
+    [ "inside", 7 ].has("outside") == false
+    [ "inside", 7 ].has(7) == true
+    [ "inside", 7 ].has("7") == false
 
 .. _class_Array_hash:
 

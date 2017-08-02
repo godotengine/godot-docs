@@ -25,7 +25,7 @@ Member Functions
 +----------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_soft_clip_ratio<class_AudioEffectLimiter_get_soft_clip_ratio>`  **(** **)** const                                |
 +----------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_treshold_db<class_AudioEffectLimiter_get_treshold_db>`  **(** **)** const                                        |
+| :ref:`float<class_float>`  | :ref:`get_threshold_db<class_AudioEffectLimiter_get_threshold_db>`  **(** **)** const                                      |
 +----------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`set_ceiling_db<class_AudioEffectLimiter_set_ceiling_db>`  **(** :ref:`float<class_float>` ceiling  **)**             |
 +----------------------------+----------------------------------------------------------------------------------------------------------------------------+
@@ -33,7 +33,7 @@ Member Functions
 +----------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`set_soft_clip_ratio<class_AudioEffectLimiter_set_soft_clip_ratio>`  **(** :ref:`float<class_float>` soft_clip  **)** |
 +----------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_treshold_db<class_AudioEffectLimiter_set_treshold_db>`  **(** :ref:`float<class_float>` treshold  **)**          |
+| void                       | :ref:`set_threshold_db<class_AudioEffectLimiter_set_threshold_db>`  **(** :ref:`float<class_float>` threshold  **)**       |
 +----------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
@@ -42,7 +42,7 @@ Member Variables
 - :ref:`float<class_float>` **ceiling_db**
 - :ref:`float<class_float>` **soft_clip_db**
 - :ref:`float<class_float>` **soft_clip_ratio**
-- :ref:`float<class_float>` **treshold_db**
+- :ref:`float<class_float>` **threshold_db**
 
 Member Function Description
 ---------------------------
@@ -59,9 +59,9 @@ Member Function Description
 
 - :ref:`float<class_float>`  **get_soft_clip_ratio**  **(** **)** const
 
-.. _class_AudioEffectLimiter_get_treshold_db:
+.. _class_AudioEffectLimiter_get_threshold_db:
 
-- :ref:`float<class_float>`  **get_treshold_db**  **(** **)** const
+- :ref:`float<class_float>`  **get_threshold_db**  **(** **)** const
 
 .. _class_AudioEffectLimiter_set_ceiling_db:
 
@@ -75,8 +75,8 @@ Member Function Description
 
 - void  **set_soft_clip_ratio**  **(** :ref:`float<class_float>` soft_clip  **)**
 
-.. _class_AudioEffectLimiter_set_treshold_db:
+.. _class_AudioEffectLimiter_set_threshold_db:
 
-- void  **set_treshold_db**  **(** :ref:`float<class_float>` treshold  **)**
+- void  **set_threshold_db**  **(** :ref:`float<class_float>` threshold  **)**
 
 

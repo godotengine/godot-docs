@@ -52,7 +52,7 @@ Numeric Constants
 Description
 -----------
 
-Helper to maange UndoRedo in the editor or custom tools. It works by storing calls to functions in both 'do' an 'undo' lists.
+Helper to manage UndoRedo in the editor or custom tools. It works by storing calls to functions in both 'do' an 'undo' lists.
 
 Common behavior is to create an action, then add do/undo calls to functions or property changes, then committing the action.
 
@@ -89,15 +89,13 @@ Undo setting of a property with a custom value.
 
 - void  **add_undo_reference**  **(** :ref:`Object<class_object>` object  **)**
 
-Add an 'undo' reference that will be erased if the 'undo' history is lost. This is useful mostly for nodes rmoved with the 'do' call (not the 'undo' call!).
+Add an 'undo' reference that will be erased if the 'undo' history is lost. This is useful mostly for nodes removed with the 'do' call (not the 'undo' call!).
 
 .. _class_UndoRedo_clear_history:
 
 - void  **clear_history**  **(** **)**
 
-Clear the undo/redo history and associated
-
-references.
+Clear the undo/redo history and associated references.
 
 .. _class_UndoRedo_commit_action:
 
@@ -109,11 +107,7 @@ Commit the action. All 'do' methods/properties are called/set when this function
 
 - void  **create_action**  **(** :ref:`String<class_string>` name, :ref:`int<class_int>` merge_mode=0  **)**
 
-Create a new action. After this is called, do all your calls to :ref:`add_do_method<class_UndoRedo_add_do_method>`, :ref:`add_undo_method<class_UndoRedo_add_undo_method>`, :ref:`add_do_property<class_UndoRedo_add_do_property>` and :ref:`add_un
-
-do_property<class_UndoRedo_add_un
-
-do_property>`.
+Create a new action. After this is called, do all your calls to :ref:`add_do_method<class_UndoRedo_add_do_method>`, :ref:`add_undo_method<class_UndoRedo_add_undo_method>`, :ref:`add_do_property<class_UndoRedo_add_do_property>` and :ref:`add_undo_property<class_UndoRedo_add_undo_property>`.
 
 .. _class_UndoRedo_get_current_action_name:
 

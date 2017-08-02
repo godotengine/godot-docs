@@ -33,7 +33,11 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Texture<class_texture>`  | :ref:`get_tab_icon<class_Tabs_get_tab_icon>`  **(** :ref:`int<class_int>` tab_idx  **)** const                                     |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2<class_rect2>`      | :ref:`get_tab_rect<class_Tabs_get_tab_rect>`  **(** :ref:`int<class_int>` tab_idx  **)**                                           |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`    | :ref:`get_tab_title<class_Tabs_get_tab_title>`  **(** :ref:`int<class_int>` tab_idx  **)** const                                   |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`move_tab<class_Tabs_move_tab>`  **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to  **)**                            |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`remove_tab<class_Tabs_remove_tab>`  **(** :ref:`int<class_int>` tab_idx  **)**                                               |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
@@ -51,6 +55,7 @@ Member Functions
 Signals
 -------
 
+-  **reposition_active_tab_request**  **(** :ref:`int<class_int>` idx_to  **)**
 -  **right_button_pressed**  **(** :ref:`int<class_int>` tab  **)**
 -  **tab_changed**  **(** :ref:`int<class_int>` tab  **)**
 -  **tab_close**  **(** :ref:`int<class_int>` tab  **)**
@@ -107,9 +112,21 @@ Member Function Description
 
 - :ref:`Texture<class_texture>`  **get_tab_icon**  **(** :ref:`int<class_int>` tab_idx  **)** const
 
+.. _class_Tabs_get_tab_rect:
+
+- :ref:`Rect2<class_rect2>`  **get_tab_rect**  **(** :ref:`int<class_int>` tab_idx  **)**
+
+Returns tab :ref:`Rect2<class_rect2>` with local position and size.
+
 .. _class_Tabs_get_tab_title:
 
 - :ref:`String<class_string>`  **get_tab_title**  **(** :ref:`int<class_int>` tab_idx  **)** const
+
+.. _class_Tabs_move_tab:
+
+- void  **move_tab**  **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to  **)**
+
+Rearrange tab.
 
 .. _class_Tabs_remove_tab:
 

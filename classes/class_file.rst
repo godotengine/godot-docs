@@ -69,6 +69,8 @@ Member Functions
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`open<class_File_open>`  **(** :ref:`String<class_string>` path, :ref:`int<class_int>` flags  **)**                                                                                |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                          | :ref:`open_compressed<class_File_open_compressed>`  **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`int<class_int>` compression_mode=0  **)**           |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`open_encrypted<class_File_open_encrypted>`  **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`PoolByteArray<class_poolbytearray>` key  **)**        |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`open_encrypted_with_pass<class_File_open_encrypted_with_pass>`  **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`String<class_string>` pass  **)** |
@@ -111,6 +113,10 @@ Numeric Constants
 - **WRITE** = **2** --- Open the file for writing. Create it if the file not exists and truncate if it exists.
 - **READ_WRITE** = **3** --- Open the file for reading and writing, without truncating the file.
 - **WRITE_READ** = **7** --- Open the file for reading and writing. Create it if the file not exists and truncate if it exists.
+- **COMPRESSION_FASTLZ** = **0** --- Use the FastLZ compression method.
+- **COMPRESSION_DEFLATE** = **1** --- Use the Deflate compression method.
+- **COMPRESSION_ZSTD** = **2** --- Use the Zstd compression method.
+- **COMPRESSION_GZIP** = **3**
 
 Description
 -----------
@@ -284,6 +290,12 @@ Return whether the file is currently opened.
 - :ref:`int<class_int>`  **open**  **(** :ref:`String<class_string>` path, :ref:`int<class_int>` flags  **)**
 
 Open the file for writing or reading, depending on the flags.
+
+.. _class_File_open_compressed:
+
+- :ref:`int<class_int>`  **open_compressed**  **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`int<class_int>` compression_mode=0  **)**
+
+Open a compressed file for reading or writing. The compression_mode can be set as one of the COMPRESSION\_\* constants.
 
 .. _class_File_open_encrypted:
 

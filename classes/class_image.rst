@@ -19,7 +19,13 @@ Member Functions
 ----------------
 
 +--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`blend_rect<class_Image_blend_rect>`  **(** :ref:`Image<class_image>` src, :ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` dst  **)**                                                                                     |
++--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`blend_rect_mask<class_Image_blend_rect_mask>`  **(** :ref:`Image<class_image>` src, :ref:`Image<class_image>` mask, :ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` dst  **)**                                           |
++--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`blit_rect<class_Image_blit_rect>`  **(** :ref:`Image<class_image>` src, :ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` dst  **)**                                                                                       |
++--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`blit_rect_mask<class_Image_blit_rect_mask>`  **(** :ref:`Image<class_image>` src, :ref:`Image<class_image>` mask, :ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` dst  **)**                                             |
 +--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`clear_mipmaps<class_Image_clear_mipmaps>`  **(** **)**                                                                                                                                                                                     |
 +--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -40,6 +46,8 @@ Member Functions
 | :ref:`int<class_int>`                      | :ref:`detect_alpha<class_Image_detect_alpha>`  **(** **)** const                                                                                                                                                                                 |
 +--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`expand_x2_hq2x<class_Image_expand_x2_hq2x>`  **(** **)**                                                                                                                                                                                   |
++--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`fill<class_Image_fill>`  **(** :ref:`Color<class_color>` color  **)**                                                                                                                                                                      |
 +--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`fix_alpha_edges<class_Image_fix_alpha_edges>`  **(** **)**                                                                                                                                                                                 |
 +--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -81,13 +89,13 @@ Member Functions
 +--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`premultiply_alpha<class_Image_premultiply_alpha>`  **(** **)**                                                                                                                                                                             |
 +--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`put_pixel<class_Image_put_pixel>`  **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`Color<class_color>` color  **)**                                                                                                          |
-+--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`resize<class_Image_resize>`  **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`int<class_int>` interpolation=1  **)**                                                                                                 |
 +--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`resize_to_po2<class_Image_resize_to_po2>`  **(** :ref:`bool<class_bool>` square="false"  **)**                                                                                                                                             |
+| void                                       | :ref:`resize_to_po2<class_Image_resize_to_po2>`  **(** :ref:`bool<class_bool>` square=false  **)**                                                                                                                                               |
 +--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                      | :ref:`save_png<class_Image_save_png>`  **(** :ref:`String<class_string>` path  **)** const                                                                                                                                                       |
++--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`set_pixel<class_Image_set_pixel>`  **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`Color<class_color>` color  **)**                                                                                                          |
 +--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`shrink_x2<class_Image_shrink_x2>`  **(** **)**                                                                                                                                                                                             |
 +--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -165,11 +173,29 @@ Native image datatype. Contains image data, which can be converted to a texture,
 Member Function Description
 ---------------------------
 
+.. _class_Image_blend_rect:
+
+- void  **blend_rect**  **(** :ref:`Image<class_image>` src, :ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` dst  **)**
+
+Alpha-blends a "src_rect" :ref:`Rect2<class_rect2>` from "src" :ref:`Image<class_image>` to this :ref:`Image<class_image>` on coordinates "dest".
+
+.. _class_Image_blend_rect_mask:
+
+- void  **blend_rect_mask**  **(** :ref:`Image<class_image>` src, :ref:`Image<class_image>` mask, :ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` dst  **)**
+
+Alpha-blends a "src_rect" :ref:`Rect2<class_rect2>` from "src" :ref:`Image<class_image>` to this :ref:`Image<class_image>` using a "mask" :ref:`Image<class_image>` on coordinates "dest". Alpha channels are required for both "src" and "mask", dest pixels and src pixels will blend if the corresponding mask pixel's alpha value is not 0. "src" :ref:`Image<class_image>` and "mask" :ref:`Image<class_image>` \*must\* have the same size (width and height) but they can have different formats
+
 .. _class_Image_blit_rect:
 
 - void  **blit_rect**  **(** :ref:`Image<class_image>` src, :ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` dst  **)**
 
 Copy a "src_rect" :ref:`Rect2<class_rect2>` from "src" :ref:`Image<class_image>` to this :ref:`Image<class_image>` on coordinates "dest".
+
+.. _class_Image_blit_rect_mask:
+
+- void  **blit_rect_mask**  **(** :ref:`Image<class_image>` src, :ref:`Image<class_image>` mask, :ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` dst  **)**
+
+Blits a "src_rect" :ref:`Rect2<class_rect2>` from "src" :ref:`Image<class_image>` to this :ref:`Image<class_image>` using a "mask" :ref:`Image<class_image>` on coordinates "dest". Alpha channel is required for "mask", will copy src pixel onto dest if the corresponding mask pixel's alpha value is not 0. "src" :ref:`Image<class_image>` and "mask" :ref:`Image<class_image>` \*must\* have the same size (width and height) but they can have different formats
 
 .. _class_Image_clear_mipmaps:
 
@@ -212,6 +238,12 @@ Create an empty image of a specific size and format.
 .. _class_Image_expand_x2_hq2x:
 
 - void  **expand_x2_hq2x**  **(** **)**
+
+.. _class_Image_fill:
+
+- void  **fill**  **(** :ref:`Color<class_color>` color  **)**
+
+Fills an :ref:`Image<class_image>` with a specified :ref:`Color<class_color>`
 
 .. _class_Image_fix_alpha_edges:
 
@@ -307,23 +339,23 @@ Load an :ref:`Image<class_image>`.
 
 - void  **premultiply_alpha**  **(** **)**
 
-.. _class_Image_put_pixel:
-
-- void  **put_pixel**  **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`Color<class_color>` color  **)**
-
 .. _class_Image_resize:
 
 - void  **resize**  **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`int<class_int>` interpolation=1  **)**
 
 .. _class_Image_resize_to_po2:
 
-- void  **resize_to_po2**  **(** :ref:`bool<class_bool>` square="false"  **)**
+- void  **resize_to_po2**  **(** :ref:`bool<class_bool>` square=false  **)**
 
 .. _class_Image_save_png:
 
 - :ref:`int<class_int>`  **save_png**  **(** :ref:`String<class_string>` path  **)** const
 
 Save this :ref:`Image<class_image>` as a png.
+
+.. _class_Image_set_pixel:
+
+- void  **set_pixel**  **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`Color<class_color>` color  **)**
 
 .. _class_Image_shrink_x2:
 

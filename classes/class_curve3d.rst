@@ -112,7 +112,7 @@ Returns the cache of points as a :ref:`PoolVector3Array<class_poolvector3array>`
 
 - :ref:`PoolRealArray<class_poolrealarray>`  **get_baked_tilts**  **(** **)** const
 
-Returns the cache of tilts as a :ref:`RealArray<class_realarray>`.
+Returns the cache of tilts as a RealArray.
 
 .. _class_Curve3D_get_point_count:
 

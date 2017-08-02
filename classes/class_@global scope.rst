@@ -17,10 +17,10 @@ Member Variables
 ----------------
 
 - :ref:`AudioServer<class_audioserver>` **AudioServer** - [AudioServer] singleton
-- :ref:`ClassDB<class_classdb>` **ClassDB**
-- :ref:`Engine<class_engine>` **Engine**
+- :ref:`ClassDB<class_classdb>` **ClassDB** - [ClassDB] singleton
+- :ref:`Engine<class_engine>` **Engine** - [Engine] singleton
 - :ref:`Geometry<class_geometry>` **Geometry** - [Geometry] singleton
-- :ref:`GlobalConfig<class_globalconfig>` **GlobalConfig**
+- :ref:`ProjectSettings<class_projectsettings>` **ProjectSettings** - [ProjectSettings] singleton
 - :ref:`IP<class_ip>` **IP** - [IP] singleton
 - :ref:`Input<class_input>` **Input** - [Input] singleton
 - :ref:`InputMap<class_inputmap>` **InputMap** - [InputMap] singleton
@@ -93,7 +93,6 @@ Numeric Constants
 - **KEY_F14** = **16777257** --- F14 Key
 - **KEY_F15** = **16777258** --- F15 Key
 - **KEY_F16** = **16777259** --- F16 Key
-- **KEY_KP_ENTER** = **16777344** --- Enter Key on Numpad
 - **KEY_KP_MULTIPLY** = **16777345** --- Multiply Key on Numpad
 - **KEY_KP_DIVIDE** = **16777346** --- Divide Key on Numpad
 - **KEY_KP_SUBTRACT** = **16777347** --- Subtract Key on Numpad

@@ -18,19 +18,25 @@ Node that instances meshes into a scenario.
 Member Functions
 ----------------
 
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`create_convex_collision<class_MeshInstance_create_convex_collision>`  **(** **)**                                    |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`create_trimesh_collision<class_MeshInstance_create_trimesh_collision>`  **(** **)**                                  |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Mesh<class_mesh>`          | :ref:`get_mesh<class_MeshInstance_get_mesh>`  **(** **)** const                                                            |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_nodepath>`  | :ref:`get_skeleton_path<class_MeshInstance_get_skeleton_path>`  **(** **)**                                                |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_mesh<class_MeshInstance_set_mesh>`  **(** :ref:`Mesh<class_mesh>` mesh  **)**                                    |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_skeleton_path<class_MeshInstance_set_skeleton_path>`  **(** :ref:`NodePath<class_nodepath>` skeleton_path  **)** |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`create_convex_collision<class_MeshInstance_create_convex_collision>`  **(** **)**                                                                    |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`create_debug_tangents<class_MeshInstance_create_debug_tangents>`  **(** **)**                                                                        |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`create_trimesh_collision<class_MeshInstance_create_trimesh_collision>`  **(** **)**                                                                  |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Mesh<class_mesh>`          | :ref:`get_mesh<class_MeshInstance_get_mesh>`  **(** **)** const                                                                                            |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`NodePath<class_nodepath>`  | :ref:`get_skeleton_path<class_MeshInstance_get_skeleton_path>`  **(** **)**                                                                                |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Material<class_material>`  | :ref:`get_surface_material<class_MeshInstance_get_surface_material>`  **(** :ref:`int<class_int>` surface  **)** const                                     |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_mesh<class_MeshInstance_set_mesh>`  **(** :ref:`Mesh<class_mesh>` mesh  **)**                                                                    |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_skeleton_path<class_MeshInstance_set_skeleton_path>`  **(** :ref:`NodePath<class_nodepath>` skeleton_path  **)**                                 |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_surface_material<class_MeshInstance_set_surface_material>`  **(** :ref:`int<class_int>` surface, :ref:`Material<class_material>` material  **)** |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -50,6 +56,10 @@ Member Function Description
 
 - void  **create_convex_collision**  **(** **)**
 
+.. _class_MeshInstance_create_debug_tangents:
+
+- void  **create_debug_tangents**  **(** **)**
+
 .. _class_MeshInstance_create_trimesh_collision:
 
 - void  **create_trimesh_collision**  **(** **)**
@@ -66,6 +76,10 @@ Return the current :ref:`Mesh<class_mesh>` resource for the instance.
 
 - :ref:`NodePath<class_nodepath>`  **get_skeleton_path**  **(** **)**
 
+.. _class_MeshInstance_get_surface_material:
+
+- :ref:`Material<class_material>`  **get_surface_material**  **(** :ref:`int<class_int>` surface  **)** const
+
 .. _class_MeshInstance_set_mesh:
 
 - void  **set_mesh**  **(** :ref:`Mesh<class_mesh>` mesh  **)**
@@ -75,5 +89,9 @@ Set the :ref:`Mesh<class_mesh>` resource for the instance.
 .. _class_MeshInstance_set_skeleton_path:
 
 - void  **set_skeleton_path**  **(** :ref:`NodePath<class_nodepath>` skeleton_path  **)**
+
+.. _class_MeshInstance_set_surface_material:
+
+- void  **set_surface_material**  **(** :ref:`int<class_int>` surface, :ref:`Material<class_material>` material  **)**
 
 

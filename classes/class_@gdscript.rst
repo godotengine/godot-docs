@@ -168,8 +168,10 @@ Numeric Constants
 -----------------
 
 - **PI** = **3.141593** --- Constant that represents how many times the diameter of a circumference fits around its perimeter.
-- **INF** = **inf**
-- **NAN** = **nan**
+- **INF** = **inf** --- A positive infinity. (For negative infinity, use -INF).
+- **NAN** = **nan** --- Macro constant that expands to an expression of type float that represents a NaN.
+
+The NaN values are used to identify undefined or non-representable values for floating-point elements, such as the square root of negative numbers or the result of 0/0.
 
 Description
 -----------
@@ -193,19 +195,19 @@ Make a color from red, green, blue and alpha. Arguments can range from 0 to 255.
 
 - :ref:`float<class_float>`  **abs**  **(** :ref:`float<class_float>` s  **)**
 
-Remove sign (works for integer and float).
+Returns the absolute value of parameter s  (i.e. unsigned value, works for integer and float).
 
 .. _class_@GDScript_acos:
 
 - :ref:`float<class_float>`  **acos**  **(** :ref:`float<class_float>` s  **)**
 
-Arc-cosine.
+Returns the principal value of the arc cosine of s, expressed in radians. In trigonometrics, arc cosine is the inverse operation of cosine.
 
 .. _class_@GDScript_asin:
 
 - :ref:`float<class_float>`  **asin**  **(** :ref:`float<class_float>` s  **)**
 
-Arc-sine.
+Returns the principal value of the arc sine of s, expressed in radians. In trigonometrics, arc sine is the inverse operation of sine.
 
 .. _class_@GDScript_assert:
 
@@ -217,13 +219,13 @@ Assert that the condition is true. If the condition is false, generates an error
 
 - :ref:`float<class_float>`  **atan**  **(** :ref:`float<class_float>` s  **)**
 
-Arc-tangent.
+Returns the principal value of the arc tangent of s, expressed in radians. In trigonometrics, arc tangent is the inverse operation of tangent. Notice that because of the sign ambiguity, the function cannot determine with certainty in which quadrant the angle falls only by its tangent value. See :ref:`atan2<class_@GDScript_atan2>` for an alternative that takes a fractional argument instead.
 
 .. _class_@GDScript_atan2:
 
 - :ref:`float<class_float>`  **atan2**  **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y  **)**
 
-Arc-tangent that takes a 2D vector as argument, returns the full -pi to +pi range.
+Returns the principal value of the arc tangent of y/x, expressed in radians. To compute the value, the function takes into account the sign of both arguments in order to determine the quadrant.
 
 .. _class_@GDScript_bytes2var:
 
@@ -235,7 +237,7 @@ Decode a byte array back to a value.
 
 - :ref:`float<class_float>`  **ceil**  **(** :ref:`float<class_float>` s  **)**
 
-Ceiling (rounds up to nearest integer).
+Rounds s upward, returning the smallest integral value that is not less than s.
 
 .. _class_@GDScript_char:
 
@@ -245,7 +247,7 @@ Ceiling (rounds up to nearest integer).
 
 - :ref:`float<class_float>`  **clamp**  **(** :ref:`float<class_float>` val, :ref:`float<class_float>` min, :ref:`float<class_float>` max  **)**
 
-Clamp both values to a range.
+Clamps a value between a minimum and maximum value.
 
 .. _class_@GDScript_convert:
 
@@ -257,13 +259,13 @@ Convert from a type to another in the best way possible. The "type" parameter us
 
 - :ref:`float<class_float>`  **cos**  **(** :ref:`float<class_float>` s  **)**
 
-Standard cosine function.
+Returns the cosine of an angle of s radians.
 
 .. _class_@GDScript_cosh:
 
 - :ref:`float<class_float>`  **cosh**  **(** :ref:`float<class_float>` s  **)**
 
-Hyperbolic cosine.
+Returns the hyperbolic cosine of s.
 
 .. _class_@GDScript_db2linear:
 
@@ -305,19 +307,25 @@ Easing function, based on exponent. 0 is constant, 1 is linear, 0 to 1 is ease-i
 
 - :ref:`float<class_float>`  **exp**  **(** :ref:`float<class_float>` s  **)**
 
-Exponential logarithm.
+Returns the base-e exponential function of s, which is e raised to the power s: e^s.
 
 .. _class_@GDScript_floor:
 
 - :ref:`float<class_float>`  **floor**  **(** :ref:`float<class_float>` s  **)**
 
-Floor (rounds down to nearest integer).
+Rounds s downward, returning the largest integral value that is not greater than s.
 
 .. _class_@GDScript_fmod:
 
 - :ref:`float<class_float>`  **fmod**  **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y  **)**
 
-Module (remainder of x/y).
+Returns the floating-point remainder of x/y (rounded towards zero):
+
+::
+
+    fmod = x - tquot \* y
+
+Where tquot is the truncated (i.e., rounded towards zero) result of: x/y.
 
 .. _class_@GDScript_fposmod:
 
@@ -353,9 +361,13 @@ Get an object by its ID.
 
 - :ref:`float<class_float>`  **is_inf**  **(** :ref:`float<class_float>` s  **)**
 
+Returns whether s is an infinity value (either positive infinity or negative infinity).
+
 .. _class_@GDScript_is_nan:
 
 - :ref:`float<class_float>`  **is_nan**  **(** :ref:`float<class_float>` s  **)**
+
+Returns whether s is a NaN (Not-A-Number) value.
 
 .. _class_@GDScript_lerp:
 
@@ -403,7 +415,9 @@ Return the nearest larger power of 2 for an integer.
 
 - :ref:`Variant<class_variant>`  **parse_json**  **(** :ref:`String<class_string>` json  **)**
 
-Parse json text to a Variant (use :ref:`typeof<class_@GDScript_typeof>` to check if it is what you expect).
+Parse JSON text to a Variant (use :ref:`typeof<class_@GDScript_typeof>` to check if it is what you expect).
+
+Be aware that the JSON specification does not define integer or float types, but only a number type. Therefore, parsing a JSON text will convert every numerical values to :ref:`float<class_float>` types.
 
 .. _class_@GDScript_pow:
 
@@ -499,7 +513,7 @@ Return an array with the given range. Range can be 1 argument N (0 to N-1), two 
 
 - :ref:`float<class_float>`  **round**  **(** :ref:`float<class_float>` s  **)**
 
-Round to nearest integer.
+Returns the integral value that is nearest to s, with halfway cases rounded away from zero.
 
 .. _class_@GDScript_seed:
 
@@ -517,19 +531,19 @@ Return sign (-1 or +1).
 
 - :ref:`float<class_float>`  **sin**  **(** :ref:`float<class_float>` s  **)**
 
-Standard sine function.
+Returns the sine of an angle of s radians.
 
 .. _class_@GDScript_sinh:
 
 - :ref:`float<class_float>`  **sinh**  **(** :ref:`float<class_float>` s  **)**
 
-Hyperbolic sine.
+Returns the hyperbolic sine of s.
 
 .. _class_@GDScript_sqrt:
 
 - :ref:`float<class_float>`  **sqrt**  **(** :ref:`float<class_float>` s  **)**
 
-Square root.
+Returns the square root of s.
 
 .. _class_@GDScript_stepify:
 
@@ -541,7 +555,7 @@ Snap float value to a given step.
 
 - :ref:`String<class_string>`  **str**  **(** :ref:`Variant<class_variant>` what, :ref:`Variant<class_variant>` ...  **)**
 
-Convert one or more arguments to strings in the best way possible.
+Convert one or more arguments to string in the best way possible.
 
 .. _class_@GDScript_str2var:
 
@@ -553,13 +567,13 @@ Convert a formatted string that was returned by :ref:`var2str<class_@GDScript_va
 
 - :ref:`float<class_float>`  **tan**  **(** :ref:`float<class_float>` s  **)**
 
-Standard tangent function.
+Returns the tangent of an angle of s radians.
 
 .. _class_@GDScript_tanh:
 
 - :ref:`float<class_float>`  **tanh**  **(** :ref:`float<class_float>` s  **)**
 
-Hyperbolic tangent.
+Returns the hyperbolic tangent of s.
 
 .. _class_@GDScript_to_json:
 
@@ -581,6 +595,8 @@ Return the internal type of the given Variant object, using the TYPE\_\* enum in
 
 - :ref:`Variant<class_variant>`  **validate_json**  **(** :ref:`String<class_string>` json  **)**
 
+This method is used to validate the structure and data types of a piece of JSON, similar to XML Schema for XML.
+
 .. _class_@GDScript_var2bytes:
 
 - :ref:`PoolByteArray<class_poolbytearray>`  **var2bytes**  **(** :ref:`Variant<class_variant>` var  **)**
@@ -598,6 +614,8 @@ Convert a value to a formatted string that can later be parsed using :ref:`str2v
 - :ref:`WeakRef<class_weakref>`  **weakref**  **(** :ref:`Object<class_object>` obj  **)**
 
 Return a weak reference to an object.
+
+A weak reference to an object is not enough to keep the object alive: when the only remaining references to a referent are weak references, garbage collection is free to destroy the referent and reuse its memory for something else. However, until the object is actually destroyed the weak reference may return the object even if there are no strong references to it.
 
 .. _class_@GDScript_yield:
 

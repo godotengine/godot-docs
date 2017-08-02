@@ -602,13 +602,13 @@ Return the similarity index of the text compared to this string. 1 means totally
 
 - :ref:`PoolStringArray<class_poolstringarray>`  **split**  **(** :ref:`String<class_string>` divisor, :ref:`bool<class_bool>` allow_empty=True  **)**
 
-Split the string by a divisor string, return an array of the substrings. Example "One,Two,Three" will return :ref:`"One","Two","Three"<class_"one","two","three">` if split by ",".
+Split the string by a divisor string, return an array of the substrings. Example "One,Two,Three" will return "One","Two","Three" if split by ",".
 
 .. _class_String_split_floats:
 
 - :ref:`PoolRealArray<class_poolrealarray>`  **split_floats**  **(** :ref:`String<class_string>` divisor, :ref:`bool<class_bool>` allow_empty=True  **)**
 
-Split the string in floats by using a divisor string, return an array of the substrings. Example "1,2.5,3" will return :ref:`1,2.5,3<class_1,2.5,3>` if split by ",".
+Split the string in floats by using a divisor string, return an array of the substrings. Example "1,2.5,3" will return 1,2.5,3 if split by ",".
 
 .. _class_String_strip_edges:
 

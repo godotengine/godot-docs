@@ -18,16 +18,36 @@ Brief Description
 Member Functions
 ----------------
 
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_nodepath>`  | :ref:`get_remote_node<class_RemoteTransform2D_get_remote_node>`  **(** **)** const                                 |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_remote_node<class_RemoteTransform2D_set_remote_node>`  **(** :ref:`NodePath<class_nodepath>` path  **)** |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------+
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`NodePath<class_nodepath>`  | :ref:`get_remote_node<class_RemoteTransform2D_get_remote_node>`  **(** **)** const                                                                 |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`get_update_position<class_RemoteTransform2D_get_update_position>`  **(** **)** const                                                         |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`get_update_rotation<class_RemoteTransform2D_get_update_rotation>`  **(** **)** const                                                         |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`get_update_scale<class_RemoteTransform2D_get_update_scale>`  **(** **)** const                                                               |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`get_use_global_coordinates<class_RemoteTransform2D_get_use_global_coordinates>`  **(** **)** const                                           |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_remote_node<class_RemoteTransform2D_set_remote_node>`  **(** :ref:`NodePath<class_nodepath>` path  **)**                                 |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_update_position<class_RemoteTransform2D_set_update_position>`  **(** :ref:`bool<class_bool>` update_remote_position  **)**               |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_update_rotation<class_RemoteTransform2D_set_update_rotation>`  **(** :ref:`bool<class_bool>` update_remote_rotation  **)**               |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_update_scale<class_RemoteTransform2D_set_update_scale>`  **(** :ref:`bool<class_bool>` update_remote_scale  **)**                        |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_use_global_coordinates<class_RemoteTransform2D_set_use_global_coordinates>`  **(** :ref:`bool<class_bool>` use_global_coordinates  **)** |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
 
 - :ref:`NodePath<class_nodepath>` **remote_path**
+- :ref:`bool<class_bool>` **update_position**
+- :ref:`bool<class_bool>` **update_rotation**
+- :ref:`bool<class_bool>` **update_scale**
+- :ref:`bool<class_bool>` **use_global_coordinates**
 
 Member Function Description
 ---------------------------
@@ -36,8 +56,40 @@ Member Function Description
 
 - :ref:`NodePath<class_nodepath>`  **get_remote_node**  **(** **)** const
 
+.. _class_RemoteTransform2D_get_update_position:
+
+- :ref:`bool<class_bool>`  **get_update_position**  **(** **)** const
+
+.. _class_RemoteTransform2D_get_update_rotation:
+
+- :ref:`bool<class_bool>`  **get_update_rotation**  **(** **)** const
+
+.. _class_RemoteTransform2D_get_update_scale:
+
+- :ref:`bool<class_bool>`  **get_update_scale**  **(** **)** const
+
+.. _class_RemoteTransform2D_get_use_global_coordinates:
+
+- :ref:`bool<class_bool>`  **get_use_global_coordinates**  **(** **)** const
+
 .. _class_RemoteTransform2D_set_remote_node:
 
 - void  **set_remote_node**  **(** :ref:`NodePath<class_nodepath>` path  **)**
+
+.. _class_RemoteTransform2D_set_update_position:
+
+- void  **set_update_position**  **(** :ref:`bool<class_bool>` update_remote_position  **)**
+
+.. _class_RemoteTransform2D_set_update_rotation:
+
+- void  **set_update_rotation**  **(** :ref:`bool<class_bool>` update_remote_rotation  **)**
+
+.. _class_RemoteTransform2D_set_update_scale:
+
+- void  **set_update_scale**  **(** :ref:`bool<class_bool>` update_remote_scale  **)**
+
+.. _class_RemoteTransform2D_set_use_global_coordinates:
+
+- void  **set_use_global_coordinates**  **(** :ref:`bool<class_bool>` use_global_coordinates  **)**
 
 

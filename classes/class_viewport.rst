@@ -456,7 +456,7 @@ Makes the viewport send sounds from 2D emitters to the speakers.
 
 - void  **set_canvas_transform**  **(** :ref:`Transform2D<class_transform2d>` xform  **)**
 
-Set the canvas transform of the viewport, useful for changing the on-screen positions of all child :ref:`CanvasItem<class_canvasitem>`s. This is relative to the global canvas transform of the viewport.
+Set the canvas transform of the viewport, useful for changing the on-screen positions of all child :ref:`CanvasItem<class_canvasitem>`\ s. This is relative to the global canvas transform of the viewport.
 
 .. _class_Viewport_set_clear_on_new_frame:
 

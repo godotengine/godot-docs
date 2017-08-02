@@ -24,6 +24,11 @@ Member Functions
 | :ref:`Variant<class_variant>`  | :ref:`resume<class_GDFunctionState_resume>`  **(** :ref:`Variant<class_variant>` arg=NULL  **)**                 |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------+
 
+Signals
+-------
+
+-  **completed**  **(** :ref:`Nil<class_nil>` result  **)**
+
 Description
 -----------
 

@@ -63,7 +63,7 @@ Member Variables
 - :ref:`int<class_int>` **lod_max_hysteresis**
 - :ref:`int<class_int>` **lod_min_distance**
 - :ref:`int<class_int>` **lod_min_hysteresis**
-- :ref:`Material<class_material>` **material_override**
+- ShaderMaterial,SpatialMaterial **material_override**
 - :ref:`bool<class_bool>` **use_in_baked_light**
 - :ref:`bool<class_bool>` **visible_in_all_rooms**
 

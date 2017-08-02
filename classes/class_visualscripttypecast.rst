@@ -31,8 +31,8 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`String<class_string>` **function/base_type**
-- :ref:`String<class_string>` **property/base_script**
+- :ref:`String<class_string>` **base_script**
+- :ref:`String<class_string>` **base_type**
 
 Member Function Description
 ---------------------------

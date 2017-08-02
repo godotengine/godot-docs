@@ -8,7 +8,7 @@ Material
 
 **Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`ParticlesMaterial<class_particlesmaterial>`, :ref:`ShaderMaterial<class_shadermaterial>`, :ref:`SpatialMaterial<class_spatialmaterial>`
+**Inherited By:** :ref:`ParticlesMaterial<class_particlesmaterial>`, :ref:`ShaderMaterial<class_shadermaterial>`, :ref:`SpatialMaterial<class_spatialmaterial>`, :ref:`CanvasItemMaterial<class_canvasitemmaterial>`
 
 **Category:** Core
 
@@ -17,8 +17,34 @@ Brief Description
 
 Abstract base :ref:`Resource<class_resource>` for coloring and shading geometry.
 
+Member Functions
+----------------
+
++----------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`Material<class_material>`  | :ref:`get_next_pass<class_Material_get_next_pass>`  **(** **)** const                                      |
++----------------------------------+------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_next_pass<class_Material_set_next_pass>`  **(** :ref:`Material<class_material>` next_pass  **)** |
++----------------------------------+------------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+- :ref:`Material<class_material>` **next_pass**
+
 Description
 -----------
 
 Material is a base :ref:`Resource<class_resource>` used for coloring and shading geometry. All materials inherit from it and almost all :ref:`VisualInstance<class_visualinstance>` derived nodes carry a Material. A few flags and parameters are shared between all material types and are configured here.
+
+Member Function Description
+---------------------------
+
+.. _class_Material_get_next_pass:
+
+- :ref:`Material<class_material>`  **get_next_pass**  **(** **)** const
+
+.. _class_Material_set_next_pass:
+
+- void  **set_next_pass**  **(** :ref:`Material<class_material>` next_pass  **)**
+
 

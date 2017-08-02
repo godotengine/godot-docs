@@ -33,7 +33,7 @@ Member Functions
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Texture<class_texture>`  | :ref:`get_item_icon<class_OptionButton_get_item_icon>`  **(** :ref:`int<class_int>` idx  **)** const                                                                    |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`get_item_metadata<class_OptionButton_get_item_metadata>`  **(** :ref:`int<class_int>` idx  **)** const                                                            |
+| :ref:`Variant<class_variant>`  | :ref:`get_item_metadata<class_OptionButton_get_item_metadata>`  **(** :ref:`int<class_int>` idx  **)** const                                                            |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`    | :ref:`get_item_text<class_OptionButton_get_item_text>`  **(** :ref:`int<class_int>` idx  **)** const                                                                    |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -41,7 +41,7 @@ Member Functions
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_selected_ID<class_OptionButton_get_selected_ID>`  **(** **)** const                                                                                           |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`get_selected_metadata<class_OptionButton_get_selected_metadata>`  **(** **)** const                                                                               |
+| :ref:`Variant<class_variant>`  | :ref:`get_selected_metadata<class_OptionButton_get_selected_metadata>`  **(** **)** const                                                                               |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`is_item_disabled<class_OptionButton_is_item_disabled>`  **(** :ref:`int<class_int>` idx  **)** const                                                              |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -125,7 +125,7 @@ Return the icon of the item at index "idx".
 
 .. _class_OptionButton_get_item_metadata:
 
-- void  **get_item_metadata**  **(** :ref:`int<class_int>` idx  **)** const
+- :ref:`Variant<class_variant>`  **get_item_metadata**  **(** :ref:`int<class_int>` idx  **)** const
 
 .. _class_OptionButton_get_item_text:
 
@@ -145,7 +145,7 @@ Return the current item index
 
 .. _class_OptionButton_get_selected_metadata:
 
-- void  **get_selected_metadata**  **(** **)** const
+- :ref:`Variant<class_variant>`  **get_selected_metadata**  **(** **)** const
 
 .. _class_OptionButton_is_item_disabled:
 

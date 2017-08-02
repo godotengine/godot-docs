@@ -27,6 +27,8 @@ Member Functions
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`get_cull_mask<class_Camera_get_cull_mask>`  **(** **)** const                                                                                                 |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`get_doppler_tracking<class_Camera_get_doppler_tracking>`  **(** **)** const                                                                                   |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Environment<class_environment>`  | :ref:`get_environment<class_Camera_get_environment>`  **(** **)** const                                                                                             |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`              | :ref:`get_fov<class_Camera_get_fov>`  **(** **)** const                                                                                                             |
@@ -61,6 +63,8 @@ Member Functions
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`set_cull_mask<class_Camera_set_cull_mask>`  **(** :ref:`int<class_int>` mask  **)**                                                                           |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_doppler_tracking<class_Camera_set_doppler_tracking>`  **(** :ref:`int<class_int>` mode  **)**                                                             |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`set_environment<class_Camera_set_environment>`  **(** :ref:`Environment<class_environment>` env  **)**                                                        |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`set_h_offset<class_Camera_set_h_offset>`  **(** :ref:`float<class_float>` ofs  **)**                                                                          |
@@ -83,6 +87,9 @@ Numeric Constants
 - **PROJECTION_ORTHOGONAL** = **1** --- Orthogonal Projection (objects remain the same size on the screen no matter how far away they are).
 - **KEEP_WIDTH** = **0**
 - **KEEP_HEIGHT** = **1**
+- **DOPPLER_TRACKING_DISABLED** = **0**
+- **DOPPLER_TRACKING_IDLE_STEP** = **1**
+- **DOPPLER_TRACKING_FIXED_STEP** = **2**
 
 Description
 -----------
@@ -105,6 +112,10 @@ Get the camera transform. Subclassed cameras (such as CharacterCamera) may provi
 .. _class_Camera_get_cull_mask:
 
 - :ref:`int<class_int>`  **get_cull_mask**  **(** **)** const
+
+.. _class_Camera_get_doppler_tracking:
+
+- :ref:`int<class_int>`  **get_doppler_tracking**  **(** **)** const
 
 .. _class_Camera_get_environment:
 
@@ -181,6 +192,10 @@ Return a 3D position in worldspace, that is the result of projecting a point on 
 .. _class_Camera_set_cull_mask:
 
 - void  **set_cull_mask**  **(** :ref:`int<class_int>` mask  **)**
+
+.. _class_Camera_set_doppler_tracking:
+
+- void  **set_doppler_tracking**  **(** :ref:`int<class_int>` mode  **)**
 
 .. _class_Camera_set_environment:
 

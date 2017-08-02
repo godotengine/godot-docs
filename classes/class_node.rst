@@ -8,7 +8,7 @@ Node
 
 **Inherits:** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`Viewport<class_viewport>`, :ref:`Timer<class_timer>`, :ref:`CanvasLayer<class_canvaslayer>`, :ref:`Tween<class_tween>`, :ref:`Spatial<class_spatial>`, :ref:`AnimationPlayer<class_animationplayer>`, :ref:`EditorFileSystem<class_editorfilesystem>`, :ref:`EditorPlugin<class_editorplugin>`, :ref:`ResourcePreloader<class_resourcepreloader>`, :ref:`AnimationTreePlayer<class_animationtreeplayer>`, :ref:`InstancePlaceholder<class_instanceplaceholder>`, :ref:`HTTPRequest<class_httprequest>`, :ref:`EditorResourcePreview<class_editorresourcepreview>`, :ref:`CanvasItem<class_canvasitem>`, :ref:`AudioPlayer<class_audioplayer>`
+**Inherited By:** :ref:`Viewport<class_viewport>`, :ref:`Timer<class_timer>`, :ref:`AudioStreamPlayer<class_audiostreamplayer>`, :ref:`CanvasLayer<class_canvaslayer>`, :ref:`Tween<class_tween>`, :ref:`Spatial<class_spatial>`, :ref:`AnimationPlayer<class_animationplayer>`, :ref:`EditorFileSystem<class_editorfilesystem>`, :ref:`EditorPlugin<class_editorplugin>`, :ref:`ResourcePreloader<class_resourcepreloader>`, :ref:`AnimationTreePlayer<class_animationtreeplayer>`, :ref:`WorldEnvironment<class_worldenvironment>`, :ref:`InstancePlaceholder<class_instanceplaceholder>`, :ref:`HTTPRequest<class_httprequest>`, :ref:`EditorResourcePreview<class_editorresourcepreview>`, :ref:`CanvasItem<class_canvasitem>`
 
 **Category:** Core
 
@@ -63,7 +63,7 @@ Member Functions
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`        | :ref:`get_name<class_Node_get_name>`  **(** **)** const                                                                                                                         |
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`              | :ref:`get_network_mode<class_Node_get_network_mode>`  **(** **)** const                                                                                                         |
+| :ref:`int<class_int>`              | :ref:`get_network_master<class_Node_get_network_master>`  **(** **)** const                                                                                                     |
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Node<class_node>`            | :ref:`get_node<class_Node_get_node>`  **(** :ref:`NodePath<class_nodepath>` path  **)** const                                                                                   |
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -171,7 +171,7 @@ Member Functions
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_name<class_Node_set_name>`  **(** :ref:`String<class_string>` name  **)**                                                                                             |
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_network_mode<class_Node_set_network_mode>`  **(** :ref:`int<class_int>` mode  **)**                                                                                   |
+| void                               | :ref:`set_network_master<class_Node_set_network_master>`  **(** :ref:`int<class_int>` id, :ref:`bool<class_bool>` recursive=true  **)**                                         |
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_owner<class_Node_set_owner>`  **(** :ref:`Node<class_node>` owner  **)**                                                                                              |
 +------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -226,9 +226,6 @@ Numeric Constants
 - **NOTIFICATION_TRANSLATION_CHANGED** = **24**
 - **NOTIFICATION_INTERNAL_PROCESS** = **25**
 - **NOTIFICATION_INTERNAL_FIXED_PROCESS** = **26**
-- **NETWORK_MODE_INHERIT** = **0**
-- **NETWORK_MODE_MASTER** = **1**
-- **NETWORK_MODE_SLAVE** = **2**
 - **RPC_MODE_DISABLED** = **0**
 - **RPC_MODE_REMOTE** = **1**
 - **RPC_MODE_SYNC** = **2**
@@ -406,9 +403,9 @@ Get the node index, i.e. its position among the siblings of its parent.
 
 Return the name of the node. This name is unique among the siblings (other child nodes from the same parent).
 
-.. _class_Node_get_network_mode:
+.. _class_Node_get_network_master:
 
-- :ref:`int<class_int>`  **get_network_mode**  **(** **)** const
+- :ref:`int<class_int>`  **get_network_master**  **(** **)** const
 
 .. _class_Node_get_node:
 
@@ -712,11 +709,9 @@ Enables or disables node fixed framerate processing. When a node is being proces
 
 Set the name of the :ref:`Node<class_node>`. Name must be unique within parent, and setting an already existing name will cause for the node to be automatically renamed.
 
-.. _class_Node_set_network_mode:
+.. _class_Node_set_network_master:
 
-- void  **set_network_mode**  **(** :ref:`int<class_int>` mode  **)**
-
-Change the networking mode of the :ref:`Node<class_node>`, where *mode* is one of the constants NETWORK_MODE\_\*. Master nodes will only call gdscript methods defined as *master func* if a RPC call is received (slave nodes will only call *slave func*; both will call *remote func* if the call is not local, and *sync func* in any case). Inherit mode looks at the parent node to determine the value (root node depends on the :ref:`SceneTree<class_scenetree>` having a networking peer set with :ref:`SceneTree.set_network_peer<class_SceneTree_set_network_peer>`)
+- void  **set_network_master**  **(** :ref:`int<class_int>` id, :ref:`bool<class_bool>` recursive=true  **)**
 
 .. _class_Node_set_owner:
 
