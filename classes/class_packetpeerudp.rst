@@ -37,7 +37,7 @@ Member Functions
 Description
 -----------
 
-UDP packet peer. Can be used to send raw UDP packets as well as :ref:`Variant<class_variant>`s.
+UDP packet peer. Can be used to send raw UDP packets as well as :ref:`Variant<class_variant>`\ s.
 
 Member Function Description
 ---------------------------

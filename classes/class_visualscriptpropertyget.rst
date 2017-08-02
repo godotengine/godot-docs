@@ -29,6 +29,8 @@ Member Functions
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`            | :ref:`get_call_mode<class_VisualScriptPropertyGet_get_call_mode>`  **(** **)** const                                        |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`      | :ref:`get_index<class_VisualScriptPropertyGet_get_index>`  **(** **)** const                                                |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`      | :ref:`get_property<class_VisualScriptPropertyGet_get_property>`  **(** **)** const                                          |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_base_path<class_VisualScriptPropertyGet_set_base_path>`  **(** :ref:`NodePath<class_nodepath>` base_path  **)**   |
@@ -41,19 +43,22 @@ Member Functions
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_call_mode<class_VisualScriptPropertyGet_set_call_mode>`  **(** :ref:`int<class_int>` mode  **)**                  |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_index<class_VisualScriptPropertyGet_set_index>`  **(** :ref:`String<class_string>` index  **)**                   |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_property<class_VisualScriptPropertyGet_set_property>`  **(** :ref:`String<class_string>` property  **)**          |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
 
-- :ref:`String<class_string>` **property/base_script**
-- :ref:`String<class_string>` **property/base_type**
-- :ref:`int<class_int>` **property/basic_type**
-- :ref:`NodePath<class_nodepath>` **property/node_path**
-- :ref:`String<class_string>` **property/property**
-- :ref:`int<class_int>` **property/set_mode**
-- :ref:`int<class_int>` **property/type_cache**
+- :ref:`String<class_string>` **base_script**
+- :ref:`String<class_string>` **base_type**
+- :ref:`int<class_int>` **basic_type**
+- :ref:`String<class_string>` **index**
+- :ref:`NodePath<class_nodepath>` **node_path**
+- :ref:`String<class_string>` **property**
+- :ref:`int<class_int>` **set_mode**
+- :ref:`int<class_int>` **type_cache**
 
 Numeric Constants
 -----------------
@@ -85,6 +90,10 @@ Member Function Description
 
 - :ref:`int<class_int>`  **get_call_mode**  **(** **)** const
 
+.. _class_VisualScriptPropertyGet_get_index:
+
+- :ref:`String<class_string>`  **get_index**  **(** **)** const
+
 .. _class_VisualScriptPropertyGet_get_property:
 
 - :ref:`String<class_string>`  **get_property**  **(** **)** const
@@ -108,6 +117,10 @@ Member Function Description
 .. _class_VisualScriptPropertyGet_set_call_mode:
 
 - void  **set_call_mode**  **(** :ref:`int<class_int>` mode  **)**
+
+.. _class_VisualScriptPropertyGet_set_index:
+
+- void  **set_index**  **(** :ref:`String<class_string>` index  **)**
 
 .. _class_VisualScriptPropertyGet_set_property:
 

@@ -53,9 +53,15 @@ Member Functions
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`is_h_drag_enabled<class_Camera2D_is_h_drag_enabled>`  **(** **)** const                                                                |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`is_limit_drawing_enabled<class_Camera2D_is_limit_drawing_enabled>`  **(** **)** const                                                  |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`is_limit_smoothing_enabled<class_Camera2D_is_limit_smoothing_enabled>`  **(** **)** const                                              |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`is_margin_drawing_enabled<class_Camera2D_is_margin_drawing_enabled>`  **(** **)** const                                                |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`is_rotating<class_Camera2D_is_rotating>`  **(** **)** const                                                                            |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`is_screen_drawing_enabled<class_Camera2D_is_screen_drawing_enabled>`  **(** **)** const                                                |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`is_v_drag_enabled<class_Camera2D_is_v_drag_enabled>`  **(** **)** const                                                                |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -79,11 +85,17 @@ Member Functions
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_limit<class_Camera2D_set_limit>`  **(** :ref:`int<class_int>` margin, :ref:`int<class_int>` limit  **)**                           |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_limit_drawing_enabled<class_Camera2D_set_limit_drawing_enabled>`  **(** :ref:`bool<class_bool>` limit_drawing_enabled  **)**       |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_limit_smoothing_enabled<class_Camera2D_set_limit_smoothing_enabled>`  **(** :ref:`bool<class_bool>` limit_smoothing_enabled  **)** |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_margin_drawing_enabled<class_Camera2D_set_margin_drawing_enabled>`  **(** :ref:`bool<class_bool>` margin_drawing_enabled  **)**    |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_offset<class_Camera2D_set_offset>`  **(** :ref:`Vector2<class_vector2>` offset  **)**                                              |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_rotating<class_Camera2D_set_rotating>`  **(** :ref:`bool<class_bool>` rotating  **)**                                              |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_screen_drawing_enabled<class_Camera2D_set_screen_drawing_enabled>`  **(** :ref:`bool<class_bool>` screen_drawing_enabled  **)**    |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_v_drag_enabled<class_Camera2D_set_v_drag_enabled>`  **(** :ref:`bool<class_bool>` enabled  **)**                                   |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -103,6 +115,9 @@ Member Variables
 - :ref:`float<class_float>` **drag_margin_right**
 - :ref:`float<class_float>` **drag_margin_top**
 - :ref:`bool<class_bool>` **drag_margin_v_enabled**
+- :ref:`bool<class_bool>` **editor_draw_drag_margin**
+- :ref:`bool<class_bool>` **editor_draw_limits**
+- :ref:`bool<class_bool>` **editor_draw_screen**
 - :ref:`int<class_int>` **limit_bottom**
 - :ref:`int<class_int>` **limit_left**
 - :ref:`int<class_int>` **limit_right**
@@ -212,13 +227,25 @@ Return true of this is the current camera (see :ref:`make_current<class_Camera2D
 
 - :ref:`bool<class_bool>`  **is_h_drag_enabled**  **(** **)** const
 
+.. _class_Camera2D_is_limit_drawing_enabled:
+
+- :ref:`bool<class_bool>`  **is_limit_drawing_enabled**  **(** **)** const
+
 .. _class_Camera2D_is_limit_smoothing_enabled:
 
 - :ref:`bool<class_bool>`  **is_limit_smoothing_enabled**  **(** **)** const
 
+.. _class_Camera2D_is_margin_drawing_enabled:
+
+- :ref:`bool<class_bool>`  **is_margin_drawing_enabled**  **(** **)** const
+
 .. _class_Camera2D_is_rotating:
 
 - :ref:`bool<class_bool>`  **is_rotating**  **(** **)** const
+
+.. _class_Camera2D_is_screen_drawing_enabled:
+
+- :ref:`bool<class_bool>`  **is_screen_drawing_enabled**  **(** **)** const
 
 .. _class_Camera2D_is_v_drag_enabled:
 
@@ -274,6 +301,10 @@ Set the margins needed to drag the camera (relative to the screen size). Margin 
 
 Set the scrolling limit in pixels.
 
+.. _class_Camera2D_set_limit_drawing_enabled:
+
+- void  **set_limit_drawing_enabled**  **(** :ref:`bool<class_bool>` limit_drawing_enabled  **)**
+
 .. _class_Camera2D_set_limit_smoothing_enabled:
 
 - void  **set_limit_smoothing_enabled**  **(** :ref:`bool<class_bool>` limit_smoothing_enabled  **)**
@@ -281,6 +312,10 @@ Set the scrolling limit in pixels.
 Smooth camera when reaching camera limits.
 
 This requires camera smoothing being enabled to have a noticeable effect.
+
+.. _class_Camera2D_set_margin_drawing_enabled:
+
+- void  **set_margin_drawing_enabled**  **(** :ref:`bool<class_bool>` margin_drawing_enabled  **)**
 
 .. _class_Camera2D_set_offset:
 
@@ -291,6 +326,10 @@ Set the scroll offset. Useful for looking around or camera shake animations.
 .. _class_Camera2D_set_rotating:
 
 - void  **set_rotating**  **(** :ref:`bool<class_bool>` rotating  **)**
+
+.. _class_Camera2D_set_screen_drawing_enabled:
+
+- void  **set_screen_drawing_enabled**  **(** :ref:`bool<class_bool>` screen_drawing_enabled  **)**
 
 .. _class_Camera2D_set_v_drag_enabled:
 

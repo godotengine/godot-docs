@@ -81,7 +81,7 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_glow_hdr_bleed_scale<class_Environment_get_glow_hdr_bleed_scale>`  **(** **)** const                                                       |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_glow_hdr_bleed_treshold<class_Environment_get_glow_hdr_bleed_treshold>`  **(** **)** const                                                 |
+| :ref:`float<class_float>`      | :ref:`get_glow_hdr_bleed_threshold<class_Environment_get_glow_hdr_bleed_threshold>`  **(** **)** const                                               |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_glow_intensity<class_Environment_get_glow_intensity>`  **(** **)** const                                                                   |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -237,7 +237,7 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_glow_hdr_bleed_scale<class_Environment_set_glow_hdr_bleed_scale>`  **(** :ref:`float<class_float>` scale  **)**                            |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_glow_hdr_bleed_treshold<class_Environment_set_glow_hdr_bleed_treshold>`  **(** :ref:`float<class_float>` treshold  **)**                   |
+| void                           | :ref:`set_glow_hdr_bleed_threshold<class_Environment_set_glow_hdr_bleed_threshold>`  **(** :ref:`float<class_float>` threshold  **)**                |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_glow_intensity<class_Environment_set_glow_intensity>`  **(** :ref:`float<class_float>` intensity  **)**                                    |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -245,7 +245,7 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_glow_strength<class_Environment_set_glow_strength>`  **(** :ref:`float<class_float>` strength  **)**                                       |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_sky<class_Environment_set_sky>`  **(** :ref:`CubeMap<class_cubemap>` sky  **)**                                                            |
+| void                           | :ref:`set_sky<class_Environment_set_sky>`  **(** :ref:`Sky<class_sky>` sky  **)**                                                                    |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_sky_scale<class_Environment_set_sky_scale>`  **(** :ref:`float<class_float>` scale  **)**                                                  |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -346,7 +346,7 @@ Member Variables
 - :ref:`float<class_float>` **glow_bloom**
 - :ref:`bool<class_bool>` **glow_enabled**
 - :ref:`float<class_float>` **glow_hdr_scale**
-- :ref:`float<class_float>` **glow_hdr_treshold**
+- :ref:`float<class_float>` **glow_hdr_threshold**
 - :ref:`float<class_float>` **glow_intensity**
 - :ref:`bool<class_bool>` **glow_levels/1**
 - :ref:`bool<class_bool>` **glow_levels/2**
@@ -523,9 +523,9 @@ Member Function Description
 
 - :ref:`float<class_float>`  **get_glow_hdr_bleed_scale**  **(** **)** const
 
-.. _class_Environment_get_glow_hdr_bleed_treshold:
+.. _class_Environment_get_glow_hdr_bleed_threshold:
 
-- :ref:`float<class_float>`  **get_glow_hdr_bleed_treshold**  **(** **)** const
+- :ref:`float<class_float>`  **get_glow_hdr_bleed_threshold**  **(** **)** const
 
 .. _class_Environment_get_glow_intensity:
 
@@ -835,9 +835,9 @@ Member Function Description
 
 - void  **set_glow_hdr_bleed_scale**  **(** :ref:`float<class_float>` scale  **)**
 
-.. _class_Environment_set_glow_hdr_bleed_treshold:
+.. _class_Environment_set_glow_hdr_bleed_threshold:
 
-- void  **set_glow_hdr_bleed_treshold**  **(** :ref:`float<class_float>` treshold  **)**
+- void  **set_glow_hdr_bleed_threshold**  **(** :ref:`float<class_float>` threshold  **)**
 
 .. _class_Environment_set_glow_intensity:
 
@@ -853,7 +853,7 @@ Member Function Description
 
 .. _class_Environment_set_sky:
 
-- void  **set_sky**  **(** :ref:`CubeMap<class_cubemap>` sky  **)**
+- void  **set_sky**  **(** :ref:`Sky<class_sky>` sky  **)**
 
 .. _class_Environment_set_sky_scale:
 

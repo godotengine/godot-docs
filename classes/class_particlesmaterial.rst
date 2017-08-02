@@ -25,6 +25,8 @@ Member Functions
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`                  | :ref:`get_emission_box_extents<class_ParticlesMaterial_get_emission_box_extents>`  **(** **)** const                                                      |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_texture>`                  | :ref:`get_emission_color_texture<class_ParticlesMaterial_get_emission_color_texture>`  **(** **)** const                                                  |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Texture<class_texture>`                  | :ref:`get_emission_normal_texture<class_ParticlesMaterial_get_emission_normal_texture>`  **(** **)** const                                                |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_emission_point_count<class_ParticlesMaterial_get_emission_point_count>`  **(** **)** const                                                      |
@@ -60,6 +62,8 @@ Member Functions
 | void                                           | :ref:`set_color_ramp<class_ParticlesMaterial_set_color_ramp>`  **(** :ref:`Texture<class_texture>` ramp  **)**                                            |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_emission_box_extents<class_ParticlesMaterial_set_emission_box_extents>`  **(** :ref:`Vector3<class_vector3>` extents  **)**                     |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`set_emission_color_texture<class_ParticlesMaterial_set_emission_color_texture>`  **(** :ref:`Texture<class_texture>` texture  **)**                 |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_emission_normal_texture<class_ParticlesMaterial_set_emission_normal_texture>`  **(** :ref:`Texture<class_texture>` texture  **)**               |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -101,6 +105,7 @@ Member Variables
 - :ref:`float<class_float>` **angular_velocity**
 - :ref:`CurveTexture<class_curvetexture>` **angular_velocity_curve**
 - :ref:`float<class_float>` **angular_velocity_random**
+- :ref:`bool<class_bool>` **anim_loop**
 - :ref:`float<class_float>` **anim_offset**
 - :ref:`CurveTexture<class_curvetexture>` **anim_offset_curve**
 - :ref:`float<class_float>` **anim_offset_random**
@@ -113,12 +118,14 @@ Member Variables
 - :ref:`CurveTexture<class_curvetexture>` **damping_curve**
 - :ref:`float<class_float>` **damping_random**
 - :ref:`Vector3<class_vector3>` **emission_box_extents**
+- :ref:`Texture<class_texture>` **emission_color_texture**
 - :ref:`Texture<class_texture>` **emission_normal_texture**
 - :ref:`int<class_int>` **emission_point_count**
 - :ref:`Texture<class_texture>` **emission_point_texture**
 - :ref:`int<class_int>` **emission_shape**
 - :ref:`float<class_float>` **emission_sphere_radius**
 - :ref:`bool<class_bool>` **flag_align_y**
+- :ref:`bool<class_bool>` **flag_disable_z**
 - :ref:`bool<class_bool>` **flag_rotate_y**
 - :ref:`float<class_float>` **flatness**
 - :ref:`Vector3<class_vector3>` **gravity**
@@ -165,7 +172,7 @@ Numeric Constants
 - **PARAM_MAX** = **12**
 - **FLAG_ALIGN_Y_TO_VELOCITY** = **0**
 - **FLAG_ROTATE_Y** = **1**
-- **FLAG_MAX** = **2**
+- **FLAG_MAX** = **4**
 - **EMISSION_SHAPE_POINT** = **0**
 - **EMISSION_SHAPE_SPHERE** = **1**
 - **EMISSION_SHAPE_BOX** = **2**
@@ -186,6 +193,10 @@ Member Function Description
 .. _class_ParticlesMaterial_get_emission_box_extents:
 
 - :ref:`Vector3<class_vector3>`  **get_emission_box_extents**  **(** **)** const
+
+.. _class_ParticlesMaterial_get_emission_color_texture:
+
+- :ref:`Texture<class_texture>`  **get_emission_color_texture**  **(** **)** const
 
 .. _class_ParticlesMaterial_get_emission_normal_texture:
 
@@ -258,6 +269,10 @@ Member Function Description
 .. _class_ParticlesMaterial_set_emission_box_extents:
 
 - void  **set_emission_box_extents**  **(** :ref:`Vector3<class_vector3>` extents  **)**
+
+.. _class_ParticlesMaterial_set_emission_color_texture:
+
+- void  **set_emission_color_texture**  **(** :ref:`Texture<class_texture>` texture  **)**
 
 .. _class_ParticlesMaterial_set_emission_normal_texture:
 

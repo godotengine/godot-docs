@@ -164,6 +164,6 @@ Enable the disconnection of existing connections in the visual GraphEdit by left
 
 - void  **set_zoom**  **(** :ref:`float<class_float>` p_zoom  **)**
 
-Set the zoom value of the GraphEdit. Zoom value is between :ref:`0.01; 1.728<class_0.01; 1.728>`.
+Set the zoom value of the GraphEdit. Zoom value is between 0.01; 1.728.
 
 

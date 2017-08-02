@@ -47,7 +47,7 @@ Member Variables
 Description
 -----------
 
-Static body for 3D Physics. A static body is a simple body that is not intended to move. They don't consume any CPU resources in contrast to a :ref:`RigidBody3D<class_rigidbody3d>` so they are great for scenario collision.
+Static body for 3D Physics. A static body is a simple body that is not intended to move. They don't consume any CPU resources in contrast to a RigidBody3D so they are great for scenario collision.
 
 A static body can also be animated by using simulated motion mode. This is useful for implementing functionalities such as moving platforms. When this mode is active the body can be animated and automatically computes linear and angular velocity to apply in that frame and to influence other bodies.
 

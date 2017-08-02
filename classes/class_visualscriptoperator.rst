@@ -31,8 +31,8 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **operator_value/type**
-- :ref:`int<class_int>` **typed_value/typed**
+- :ref:`int<class_int>` **operator**
+- :ref:`int<class_int>` **type**
 
 Member Function Description
 ---------------------------

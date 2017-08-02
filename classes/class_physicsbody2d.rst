@@ -20,35 +20,27 @@ Base class for all objects affected by physics.
 Member Functions
 ----------------
 
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`add_collision_exception_with<class_PhysicsBody2D_add_collision_exception_with>`  **(** :ref:`PhysicsBody2D<class_physicsbody2d>` body  **)**       |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_collision_layer<class_PhysicsBody2D_get_collision_layer>`  **(** **)** const                                                                   |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`get_collision_layer_bit<class_PhysicsBody2D_get_collision_layer_bit>`  **(** :ref:`int<class_int>` bit  **)** const                                |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_collision_mask<class_PhysicsBody2D_get_collision_mask>`  **(** **)** const                                                                     |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`get_collision_mask_bit<class_PhysicsBody2D_get_collision_mask_bit>`  **(** :ref:`int<class_int>` bit  **)** const                                  |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_one_way_collision_direction<class_PhysicsBody2D_get_one_way_collision_direction>`  **(** **)** const                                           |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_one_way_collision_max_depth<class_PhysicsBody2D_get_one_way_collision_max_depth>`  **(** **)** const                                           |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`remove_collision_exception_with<class_PhysicsBody2D_remove_collision_exception_with>`  **(** :ref:`PhysicsBody2D<class_physicsbody2d>` body  **)** |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_collision_layer<class_PhysicsBody2D_set_collision_layer>`  **(** :ref:`int<class_int>` layer  **)**                                            |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_collision_layer_bit<class_PhysicsBody2D_set_collision_layer_bit>`  **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value  **)**       |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_collision_mask<class_PhysicsBody2D_set_collision_mask>`  **(** :ref:`int<class_int>` mask  **)**                                               |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_collision_mask_bit<class_PhysicsBody2D_set_collision_mask_bit>`  **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value  **)**         |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_one_way_collision_direction<class_PhysicsBody2D_set_one_way_collision_direction>`  **(** :ref:`Vector2<class_vector2>` dir  **)**              |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_one_way_collision_max_depth<class_PhysicsBody2D_set_one_way_collision_max_depth>`  **(** :ref:`float<class_float>` depth  **)**                |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`add_collision_exception_with<class_PhysicsBody2D_add_collision_exception_with>`  **(** :ref:`PhysicsBody2D<class_physicsbody2d>` body  **)**       |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`    | :ref:`get_collision_layer<class_PhysicsBody2D_get_collision_layer>`  **(** **)** const                                                                   |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`get_collision_layer_bit<class_PhysicsBody2D_get_collision_layer_bit>`  **(** :ref:`int<class_int>` bit  **)** const                                |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`    | :ref:`get_collision_mask<class_PhysicsBody2D_get_collision_mask>`  **(** **)** const                                                                     |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`get_collision_mask_bit<class_PhysicsBody2D_get_collision_mask_bit>`  **(** :ref:`int<class_int>` bit  **)** const                                  |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`remove_collision_exception_with<class_PhysicsBody2D_remove_collision_exception_with>`  **(** :ref:`PhysicsBody2D<class_physicsbody2d>` body  **)** |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`set_collision_layer<class_PhysicsBody2D_set_collision_layer>`  **(** :ref:`int<class_int>` layer  **)**                                            |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`set_collision_layer_bit<class_PhysicsBody2D_set_collision_layer_bit>`  **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value  **)**       |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`set_collision_mask<class_PhysicsBody2D_set_collision_mask>`  **(** :ref:`int<class_int>` mask  **)**                                               |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`set_collision_mask_bit<class_PhysicsBody2D_set_collision_mask_bit>`  **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value  **)**         |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -56,8 +48,6 @@ Member Variables
 - :ref:`int<class_int>` **collision_layer**
 - :ref:`int<class_int>` **collision_mask**
 - :ref:`int<class_int>` **layers**
-- :ref:`Vector2<class_vector2>` **one_way_collision/direction**
-- :ref:`float<class_float>` **one_way_collision/max_depth**
 
 Description
 -----------
@@ -97,18 +87,6 @@ Return the physics layers this area can scan for collisions.
 
 Return an individual bit on the collision mask.
 
-.. _class_PhysicsBody2D_get_one_way_collision_direction:
-
-- :ref:`Vector2<class_vector2>`  **get_one_way_collision_direction**  **(** **)** const
-
-Return the direction used for one-way collision detection.
-
-.. _class_PhysicsBody2D_get_one_way_collision_max_depth:
-
-- :ref:`float<class_float>`  **get_one_way_collision_max_depth**  **(** **)** const
-
-Return how far a body can go through this one, when it allows one-way collisions.
-
 .. _class_PhysicsBody2D_remove_collision_exception_with:
 
 - void  **remove_collision_exception_with**  **(** :ref:`PhysicsBody2D<class_physicsbody2d>` body  **)**
@@ -142,17 +120,5 @@ Set the physics layers this area can scan for collisions.
 - void  **set_collision_mask_bit**  **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value  **)**
 
 Set/clear individual bits on the collision mask. This makes selecting the areas scanned easier.
-
-.. _class_PhysicsBody2D_set_one_way_collision_direction:
-
-- void  **set_one_way_collision_direction**  **(** :ref:`Vector2<class_vector2>` dir  **)**
-
-Set a direction in which bodies can go through this one. If this value is different from (0,0), any movement within 90 degrees of this vector is considered a valid movement. Set this direction to (0,0) to disable one-way collisions.
-
-.. _class_PhysicsBody2D_set_one_way_collision_max_depth:
-
-- void  **set_one_way_collision_max_depth**  **(** :ref:`float<class_float>` depth  **)**
-
-Set how far a body can go through this one, when it allows one-way collisions (see :ref:`set_one_way_collision_direction<class_PhysicsBody2D_set_one_way_collision_direction>`).
 
 

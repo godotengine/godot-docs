@@ -54,7 +54,7 @@ Member Variables
 
 - :ref:`int<class_int>` **frame**
 - :ref:`int<class_int>` **hframes**
-- :ref:`bool<class_bool>` **region**
+- :ref:`bool<class_bool>` **region_enabled**
 - :ref:`Rect2<class_rect2>` **region_rect**
 - :ref:`Texture<class_texture>` **texture**
 - :ref:`int<class_int>` **vframes**

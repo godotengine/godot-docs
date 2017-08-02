@@ -31,6 +31,8 @@ Member Functions
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`  | :ref:`get_extents<class_GIProbe_get_extents>`  **(** **)** const                                                                            |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_normal_bias<class_GIProbe_get_normal_bias>`  **(** **)** const                                                                    |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_object>`    | :ref:`get_probe_data<class_GIProbe_get_probe_data>`  **(** **)** const                                                                      |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_propagation<class_GIProbe_get_propagation>`  **(** **)** const                                                                    |
@@ -53,6 +55,8 @@ Member Functions
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_interior<class_GIProbe_set_interior>`  **(** :ref:`bool<class_bool>` enable  **)**                                                |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_normal_bias<class_GIProbe_set_normal_bias>`  **(** :ref:`float<class_float>` max  **)**                                           |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_probe_data<class_GIProbe_set_probe_data>`  **(** :ref:`Object<class_object>` data  **)**                                          |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_propagation<class_GIProbe_set_propagation>`  **(** :ref:`float<class_float>` max  **)**                                           |
@@ -70,6 +74,7 @@ Member Variables
 - :ref:`float<class_float>` **energy**
 - :ref:`Vector3<class_vector3>` **extents**
 - :ref:`bool<class_bool>` **interior**
+- :ref:`float<class_float>` **normal_bias**
 - :ref:`float<class_float>` **propagation**
 - :ref:`int<class_int>` **subdiv**
 
@@ -107,6 +112,10 @@ Member Function Description
 .. _class_GIProbe_get_extents:
 
 - :ref:`Vector3<class_vector3>`  **get_extents**  **(** **)** const
+
+.. _class_GIProbe_get_normal_bias:
+
+- :ref:`float<class_float>`  **get_normal_bias**  **(** **)** const
 
 .. _class_GIProbe_get_probe_data:
 
@@ -151,6 +160,10 @@ Member Function Description
 .. _class_GIProbe_set_interior:
 
 - void  **set_interior**  **(** :ref:`bool<class_bool>` enable  **)**
+
+.. _class_GIProbe_set_normal_bias:
+
+- void  **set_normal_bias**  **(** :ref:`float<class_float>` max  **)**
 
 .. _class_GIProbe_set_probe_data:
 

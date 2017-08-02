@@ -104,7 +104,7 @@ collider: Object the point is inside of.
 
 rid: :ref:`RID<class_rid>` of the object the point is in.
 
-Additionally, the method can take an array of objects or :ref:`RID<class_rid>`s that are to be excluded from collisions, a bitmask representing the physics layers to check in, and another bitmask for the types of objects to check (see TYPE_MASK\_\* constants).
+Additionally, the method can take an array of objects or :ref:`RID<class_rid>`\ s that are to be excluded from collisions, a bitmask representing the physics layers to check in, and another bitmask for the types of objects to check (see TYPE_MASK\_\* constants).
 
 .. _class_Physics2DDirectSpaceState_intersect_ray:
 
@@ -128,7 +128,7 @@ rid: :ref:`RID<class_rid>` of the object against which the ray was stopped.
 
 If the ray did not intersect anything, then an empty dictionary (dir.empty()==true) is returned instead.
 
-Additionally, the method can take an array of objects or :ref:`RID<class_rid>`s that are to be excluded from collisions, a bitmask representing the physics layers to check in, and another bitmask for the types of objects to check (see TYPE_MASK\_\* constants).
+Additionally, the method can take an array of objects or :ref:`RID<class_rid>`\ s that are to be excluded from collisions, a bitmask representing the physics layers to check in, and another bitmask for the types of objects to check (see TYPE_MASK\_\* constants).
 
 .. _class_Physics2DDirectSpaceState_intersect_shape:
 

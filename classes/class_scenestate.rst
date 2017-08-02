@@ -51,7 +51,7 @@ Member Functions
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                    | :ref:`get_node_property_name<class_SceneState_get_node_property_name>`  **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` prop_idx  **)** const   |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`get_node_property_value<class_SceneState_get_node_property_value>`  **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` prop_idx  **)** const |
+| :ref:`Variant<class_variant>`                  | :ref:`get_node_property_value<class_SceneState_get_node_property_value>`  **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` prop_idx  **)** const |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                    | :ref:`get_node_type<class_SceneState_get_node_type>`  **(** :ref:`int<class_int>` idx  **)** const                                                     |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -134,7 +134,7 @@ Member Function Description
 
 .. _class_SceneState_get_node_property_value:
 
-- void  **get_node_property_value**  **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` prop_idx  **)** const
+- :ref:`Variant<class_variant>`  **get_node_property_value**  **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` prop_idx  **)** const
 
 .. _class_SceneState_get_node_type:
 

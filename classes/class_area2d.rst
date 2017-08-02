@@ -21,6 +21,8 @@ Member Functions
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_angular_damp<class_Area2D_get_angular_damp>`  **(** **)** const                                                                   |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`    | :ref:`get_audio_bus<class_Area2D_get_audio_bus>`  **(** **)** const                                                                         |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_collision_layer<class_Area2D_get_collision_layer>`  **(** **)** const                                                             |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`get_collision_layer_bit<class_Area2D_get_collision_layer_bit>`  **(** :ref:`int<class_int>` bit  **)** const                          |
@@ -51,11 +53,17 @@ Member Functions
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`is_monitoring<class_Area2D_is_monitoring>`  **(** **)** const                                                                         |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_overriding_audio_bus<class_Area2D_is_overriding_audio_bus>`  **(** **)** const                                                     |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`overlaps_area<class_Area2D_overlaps_area>`  **(** :ref:`Object<class_object>` area  **)** const                                       |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`overlaps_body<class_Area2D_overlaps_body>`  **(** :ref:`Object<class_object>` body  **)** const                                       |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_angular_damp<class_Area2D_set_angular_damp>`  **(** :ref:`float<class_float>` angular_damp  **)**                                 |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_audio_bus<class_Area2D_set_audio_bus>`  **(** :ref:`String<class_string>` name  **)**                                             |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_audio_bus_override<class_Area2D_set_audio_bus_override>`  **(** :ref:`bool<class_bool>` enable  **)**                             |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_collision_layer<class_Area2D_set_collision_layer>`  **(** :ref:`int<class_int>` collision_layer  **)**                            |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
@@ -116,6 +124,8 @@ Member Variables
 ----------------
 
 - :ref:`float<class_float>` **angular_damp**
+- :ref:`String<class_string>` **audio_bus_name**
+- :ref:`bool<class_bool>` **audio_bus_override**
 - :ref:`int<class_int>` **collision_layer**
 - :ref:`int<class_int>` **collision_mask**
 - :ref:`float<class_float>` **gravity**
@@ -141,6 +151,10 @@ Member Function Description
 - :ref:`float<class_float>`  **get_angular_damp**  **(** **)** const
 
 Return the angular damp rate.
+
+.. _class_Area2D_get_audio_bus:
+
+- :ref:`String<class_string>`  **get_audio_bus**  **(** **)** const
 
 .. _class_Area2D_get_collision_layer:
 
@@ -232,6 +246,10 @@ Return whether this area can be detected by other, monitoring, areas.
 
 Return whether this area detects bodies/areas entering/exiting it.
 
+.. _class_Area2D_is_overriding_audio_bus:
+
+- :ref:`bool<class_bool>`  **is_overriding_audio_bus**  **(** **)** const
+
 .. _class_Area2D_overlaps_area:
 
 - :ref:`bool<class_bool>`  **overlaps_area**  **(** :ref:`Object<class_object>` area  **)** const
@@ -251,6 +269,14 @@ Return whether the body passed is totally or partially inside this area.
 Set the rate at which objects stop spinning in this area, if there are not any other forces making it spin. The value is a fraction of its current speed, lost per second. Thus, a value of 1.0 should mean stopping immediately, and 0.0 means the object never stops.
 
 In practice, as the fraction of speed lost gets smaller with each frame, a value of 1.0 does not mean the object will stop in exactly one second. Only when the physics calculations are done at 1 frame per second, it does stop in a second.
+
+.. _class_Area2D_set_audio_bus:
+
+- void  **set_audio_bus**  **(** :ref:`String<class_string>` name  **)**
+
+.. _class_Area2D_set_audio_bus_override:
+
+- void  **set_audio_bus_override**  **(** :ref:`bool<class_bool>` enable  **)**
 
 .. _class_Area2D_set_collision_layer:
 

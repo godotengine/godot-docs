@@ -85,13 +85,6 @@ Numeric Constants
 - **ARRAY_FORMAT_BONES** = **64** --- Array format will include bone indices.
 - **ARRAY_FORMAT_WEIGHTS** = **128** --- Array format will include bone weights.
 - **ARRAY_FORMAT_INDEX** = **256** --- Index array will be used.
-- **PRIMITIVE_POINTS** = **0** --- Render array as points (one vertex equals one point).
-- **PRIMITIVE_LINES** = **1** --- Render array as lines (every two vertices a line is created).
-- **PRIMITIVE_LINE_STRIP** = **2** --- Render array as line strip.
-- **PRIMITIVE_LINE_LOOP** = **3** --- Render array as line loop (like line strip, but closed).
-- **PRIMITIVE_TRIANGLES** = **4** --- Render array as triangles (every three vertices a triangle is created).
-- **PRIMITIVE_TRIANGLE_STRIP** = **5** --- Render array as triangle strips.
-- **PRIMITIVE_TRIANGLE_FAN** = **6** --- Render array as triangle fans.
 
 Member Function Description
 ---------------------------

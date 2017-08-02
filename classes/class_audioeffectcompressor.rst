@@ -31,7 +31,7 @@ Member Functions
 +------------------------------+----------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`  | :ref:`get_sidechain<class_AudioEffectCompressor_get_sidechain>`  **(** **)** const                                   |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`    | :ref:`get_treshold<class_AudioEffectCompressor_get_treshold>`  **(** **)** const                                     |
+| :ref:`float<class_float>`    | :ref:`get_threshold<class_AudioEffectCompressor_get_threshold>`  **(** **)** const                                   |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`set_attack_us<class_AudioEffectCompressor_set_attack_us>`  **(** :ref:`float<class_float>` attack_us  **)**    |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------+
@@ -45,7 +45,7 @@ Member Functions
 +------------------------------+----------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`set_sidechain<class_AudioEffectCompressor_set_sidechain>`  **(** :ref:`String<class_string>` sidechain  **)**  |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_treshold<class_AudioEffectCompressor_set_treshold>`  **(** :ref:`float<class_float>` treshold  **)**       |
+| void                         | :ref:`set_threshold<class_AudioEffectCompressor_set_threshold>`  **(** :ref:`float<class_float>` threshold  **)**    |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
@@ -57,7 +57,7 @@ Member Variables
 - :ref:`float<class_float>` **ratio**
 - :ref:`float<class_float>` **release_ms**
 - :ref:`float<class_float>` **sidechain**
-- :ref:`float<class_float>` **treshold**
+- :ref:`float<class_float>` **threshold**
 
 Member Function Description
 ---------------------------
@@ -86,9 +86,9 @@ Member Function Description
 
 - :ref:`String<class_string>`  **get_sidechain**  **(** **)** const
 
-.. _class_AudioEffectCompressor_get_treshold:
+.. _class_AudioEffectCompressor_get_threshold:
 
-- :ref:`float<class_float>`  **get_treshold**  **(** **)** const
+- :ref:`float<class_float>`  **get_threshold**  **(** **)** const
 
 .. _class_AudioEffectCompressor_set_attack_us:
 
@@ -114,8 +114,8 @@ Member Function Description
 
 - void  **set_sidechain**  **(** :ref:`String<class_string>` sidechain  **)**
 
-.. _class_AudioEffectCompressor_set_treshold:
+.. _class_AudioEffectCompressor_set_threshold:
 
-- void  **set_treshold**  **(** :ref:`float<class_float>` treshold  **)**
+- void  **set_threshold**  **(** :ref:`float<class_float>` threshold  **)**
 
 

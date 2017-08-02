@@ -19,19 +19,15 @@ Member Functions
 ----------------
 
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                            | :ref:`get_build_mode<class_CollisionPolygon_get_build_mode>`  **(** **)** const                                              |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                            | :ref:`get_collision_object_first_shape<class_CollisionPolygon_get_collision_object_first_shape>`  **(** **)** const          |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                            | :ref:`get_collision_object_last_shape<class_CollisionPolygon_get_collision_object_last_shape>`  **(** **)** const            |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                        | :ref:`get_depth<class_CollisionPolygon_get_depth>`  **(** **)** const                                                        |
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolVector2Array<class_poolvector2array>`  | :ref:`get_polygon<class_CollisionPolygon_get_polygon>`  **(** **)** const                                                    |
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_build_mode<class_CollisionPolygon_set_build_mode>`  **(** :ref:`int<class_int>` build_mode  **)**                  |
+| :ref:`bool<class_bool>`                          | :ref:`is_disabled<class_CollisionPolygon_is_disabled>`  **(** **)** const                                                    |
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`set_depth<class_CollisionPolygon_set_depth>`  **(** :ref:`float<class_float>` depth  **)**                             |
++--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_disabled<class_CollisionPolygon_set_disabled>`  **(** :ref:`bool<class_bool>` disabled  **)**                      |
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`set_polygon<class_CollisionPolygon_set_polygon>`  **(** :ref:`PoolVector2Array<class_poolvector2array>` polygon  **)** |
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
@@ -39,25 +35,12 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **build_mode**
 - :ref:`float<class_float>` **depth**
+- :ref:`bool<class_bool>` **disabled**
 - :ref:`PoolVector2Array<class_poolvector2array>` **polygon**
-- :ref:`Vector2<class_vector2>` **shape_range**
 
 Member Function Description
 ---------------------------
-
-.. _class_CollisionPolygon_get_build_mode:
-
-- :ref:`int<class_int>`  **get_build_mode**  **(** **)** const
-
-.. _class_CollisionPolygon_get_collision_object_first_shape:
-
-- :ref:`int<class_int>`  **get_collision_object_first_shape**  **(** **)** const
-
-.. _class_CollisionPolygon_get_collision_object_last_shape:
-
-- :ref:`int<class_int>`  **get_collision_object_last_shape**  **(** **)** const
 
 .. _class_CollisionPolygon_get_depth:
 
@@ -67,13 +50,17 @@ Member Function Description
 
 - :ref:`PoolVector2Array<class_poolvector2array>`  **get_polygon**  **(** **)** const
 
-.. _class_CollisionPolygon_set_build_mode:
+.. _class_CollisionPolygon_is_disabled:
 
-- void  **set_build_mode**  **(** :ref:`int<class_int>` build_mode  **)**
+- :ref:`bool<class_bool>`  **is_disabled**  **(** **)** const
 
 .. _class_CollisionPolygon_set_depth:
 
 - void  **set_depth**  **(** :ref:`float<class_float>` depth  **)**
+
+.. _class_CollisionPolygon_set_disabled:
+
+- void  **set_disabled**  **(** :ref:`bool<class_bool>` disabled  **)**
 
 .. _class_CollisionPolygon_set_polygon:
 

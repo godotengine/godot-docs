@@ -31,8 +31,8 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`String<class_string>` **variable/name**
-- :ref:`int<class_int>` **variable/type**
+- :ref:`int<class_int>` **type**
+- :ref:`String<class_string>` **var_name**
 
 Member Function Description
 ---------------------------

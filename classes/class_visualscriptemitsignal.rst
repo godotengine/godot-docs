@@ -27,7 +27,7 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`String<class_string>` **signal/signal**
+- :ref:`String<class_string>` **signal**
 
 Member Function Description
 ---------------------------

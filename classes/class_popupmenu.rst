@@ -51,7 +51,7 @@ Member Functions
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`            | :ref:`get_item_index<class_PopupMenu_get_item_index>`  **(** :ref:`int<class_int>` id  **)** const                                                                                                                                     |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`get_item_metadata<class_PopupMenu_get_item_metadata>`  **(** :ref:`int<class_int>` idx  **)** const                                                                                                                              |
+| :ref:`Variant<class_variant>`    | :ref:`get_item_metadata<class_PopupMenu_get_item_metadata>`  **(** :ref:`int<class_int>` idx  **)** const                                                                                                                              |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`ShortCut<class_shortcut>`  | :ref:`get_item_shortcut<class_PopupMenu_get_item_shortcut>`  **(** :ref:`int<class_int>` idx  **)** const                                                                                                                              |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -60,6 +60,8 @@ Member Functions
 | :ref:`String<class_string>`      | :ref:`get_item_text<class_PopupMenu_get_item_text>`  **(** :ref:`int<class_int>` idx  **)** const                                                                                                                                      |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`      | :ref:`get_item_tooltip<class_PopupMenu_get_item_tooltip>`  **(** :ref:`int<class_int>` idx  **)** const                                                                                                                                |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`is_hide_on_checkable_item_selection<class_PopupMenu_is_hide_on_checkable_item_selection>`  **(** **)**                                                                                                                           |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`is_hide_on_item_selection<class_PopupMenu_is_hide_on_item_selection>`  **(** **)**                                                                                                                                               |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -72,6 +74,8 @@ Member Functions
 | :ref:`bool<class_bool>`          | :ref:`is_item_separator<class_PopupMenu_is_item_separator>`  **(** :ref:`int<class_int>` idx  **)** const                                                                                                                              |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`remove_item<class_PopupMenu_remove_item>`  **(** :ref:`int<class_int>` idx  **)**                                                                                                                                                |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_hide_on_checkable_item_selection<class_PopupMenu_set_hide_on_checkable_item_selection>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                         |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_hide_on_item_selection<class_PopupMenu_set_hide_on_item_selection>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                                             |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -115,6 +119,7 @@ This event is emitted when an item of some index is pressed or its accelerator i
 Member Variables
 ----------------
 
+- :ref:`bool<class_bool>` **hide_on_checkable_item_selection**
 - :ref:`bool<class_bool>` **hide_on_item_selection**
 - :ref:`Array<class_array>` **items**
 
@@ -216,7 +221,7 @@ Find and return the index of the item containing a given id.
 
 .. _class_PopupMenu_get_item_metadata:
 
-- void  **get_item_metadata**  **(** :ref:`int<class_int>` idx  **)** const
+- :ref:`Variant<class_variant>`  **get_item_metadata**  **(** :ref:`int<class_int>` idx  **)** const
 
 Return the metadata of an item, which might be of any type. You can set it with :ref:`set_item_metadata<class_PopupMenu_set_item_metadata>`, which provides a simple way of assigning context data to items.
 
@@ -239,6 +244,12 @@ Return the text of the item at index "idx".
 .. _class_PopupMenu_get_item_tooltip:
 
 - :ref:`String<class_string>`  **get_item_tooltip**  **(** :ref:`int<class_int>` idx  **)** const
+
+.. _class_PopupMenu_is_hide_on_checkable_item_selection:
+
+- :ref:`bool<class_bool>`  **is_hide_on_checkable_item_selection**  **(** **)**
+
+Returns a boolean that indicates whether or not the PopupMenu will hide on checkable item selection.
 
 .. _class_PopupMenu_is_hide_on_item_selection:
 
@@ -275,6 +286,12 @@ Return whether the item is a seperator. If it is, it would be displayed as a lin
 - void  **remove_item**  **(** :ref:`int<class_int>` idx  **)**
 
 Removes the item at index "idx" from the menu. Note that the indexes of items after the removed item are going to be shifted by one.
+
+.. _class_PopupMenu_set_hide_on_checkable_item_selection:
+
+- void  **set_hide_on_checkable_item_selection**  **(** :ref:`bool<class_bool>` enable  **)**
+
+Sets whether or not the PopupMenu will hide on checkable item selection.
 
 .. _class_PopupMenu_set_hide_on_item_selection:
 

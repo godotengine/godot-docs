@@ -39,10 +39,10 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`String<class_string>` **signal/base_type**
-- :ref:`int<class_int>` **signal/call_mode**
-- :ref:`NodePath<class_nodepath>` **signal/node_path**
-- :ref:`String<class_string>` **signal/signal**
+- :ref:`String<class_string>` **base_type**
+- :ref:`int<class_int>` **call_mode**
+- :ref:`NodePath<class_nodepath>` **node_path**
+- :ref:`String<class_string>` **signal**
 
 Numeric Constants
 -----------------

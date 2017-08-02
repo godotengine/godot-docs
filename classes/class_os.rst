@@ -179,6 +179,8 @@ Member Functions
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_icon<class_OS_set_icon>`  **(** :ref:`Object<class_object>` icon  **)**                                                                                                                                          |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`set_ime_position<class_OS_set_ime_position>`  **(** :ref:`Vector2<class_vector2>` arg0  **)**                                                                                                                        |
++------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_keep_screen_on<class_OS_set_keep_screen_on>`  **(** :ref:`bool<class_bool>` enabled  **)**                                                                                                                       |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_low_processor_usage_mode<class_OS_set_low_processor_usage_mode>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                                    |
@@ -349,7 +351,7 @@ Returns the current screen index (0 padded).
 
 - :ref:`String<class_string>`  **get_data_dir**  **(** **)** const
 
-Return the absolute directory path of user data path(:ref:`user://<class_user://>`).
+Return the absolute directory path of user data path(user://).
 
 .. _class_OS_get_date:
 
@@ -712,6 +714,10 @@ Set clipboard to the OS.
 .. _class_OS_set_icon:
 
 - void  **set_icon**  **(** :ref:`Object<class_object>` icon  **)**
+
+.. _class_OS_set_ime_position:
+
+- void  **set_ime_position**  **(** :ref:`Vector2<class_vector2>` arg0  **)**
 
 .. _class_OS_set_keep_screen_on:
 

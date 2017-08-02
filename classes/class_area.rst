@@ -21,6 +21,8 @@ Member Functions
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_angular_damp<class_Area_get_angular_damp>`  **(** **)** const                                                                   |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`    | :ref:`get_audio_bus<class_Area_get_audio_bus>`  **(** **)** const                                                                         |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_collision_layer<class_Area_get_collision_layer>`  **(** **)** const                                                             |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`get_collision_layer_bit<class_Area_get_collision_layer_bit>`  **(** :ref:`int<class_int>` bit  **)** const                          |
@@ -43,6 +45,12 @@ Member Functions
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_priority<class_Area_get_priority>`  **(** **)** const                                                                           |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_reverb_amount<class_Area_get_reverb_amount>`  **(** **)** const                                                                 |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`    | :ref:`get_reverb_bus<class_Area_get_reverb_bus>`  **(** **)** const                                                                       |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_reverb_uniformity<class_Area_get_reverb_uniformity>`  **(** **)** const                                                         |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_space_override_mode<class_Area_get_space_override_mode>`  **(** **)** const                                                     |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`is_gravity_a_point<class_Area_is_gravity_a_point>`  **(** **)** const                                                               |
@@ -51,11 +59,19 @@ Member Functions
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`is_monitoring<class_Area_is_monitoring>`  **(** **)** const                                                                         |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_overriding_audio_bus<class_Area_is_overriding_audio_bus>`  **(** **)** const                                                     |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_using_reverb_bus<class_Area_is_using_reverb_bus>`  **(** **)** const                                                             |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`overlaps_area<class_Area_overlaps_area>`  **(** :ref:`Object<class_object>` area  **)** const                                       |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`overlaps_body<class_Area_overlaps_body>`  **(** :ref:`Object<class_object>` body  **)** const                                       |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_angular_damp<class_Area_set_angular_damp>`  **(** :ref:`float<class_float>` angular_damp  **)**                                 |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_audio_bus<class_Area_set_audio_bus>`  **(** :ref:`String<class_string>` name  **)**                                             |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_audio_bus_override<class_Area_set_audio_bus_override>`  **(** :ref:`bool<class_bool>` enable  **)**                             |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_collision_layer<class_Area_set_collision_layer>`  **(** :ref:`int<class_int>` collision_layer  **)**                            |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
@@ -81,7 +97,15 @@ Member Functions
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_priority<class_Area_set_priority>`  **(** :ref:`float<class_float>` priority  **)**                                             |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_reverb_amount<class_Area_set_reverb_amount>`  **(** :ref:`float<class_float>` amount  **)**                                     |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_reverb_bus<class_Area_set_reverb_bus>`  **(** :ref:`String<class_string>` name  **)**                                           |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_reverb_uniformity<class_Area_set_reverb_uniformity>`  **(** :ref:`float<class_float>` amount  **)**                             |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_space_override_mode<class_Area_set_space_override_mode>`  **(** :ref:`int<class_int>` enable  **)**                             |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_use_reverb_bus<class_Area_set_use_reverb_bus>`  **(** :ref:`bool<class_bool>` enable  **)**                                     |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -116,6 +140,8 @@ Member Variables
 ----------------
 
 - :ref:`float<class_float>` **angular_damp**
+- :ref:`String<class_string>` **audio_bus_name**
+- :ref:`bool<class_bool>` **audio_bus_override**
 - :ref:`int<class_int>` **collision_layer**
 - :ref:`int<class_int>` **collision_mask**
 - :ref:`float<class_float>` **gravity**
@@ -126,6 +152,10 @@ Member Variables
 - :ref:`bool<class_bool>` **monitorable**
 - :ref:`bool<class_bool>` **monitoring**
 - :ref:`int<class_int>` **priority**
+- :ref:`float<class_float>` **reverb_bus_amount**
+- :ref:`bool<class_bool>` **reverb_bus_enable**
+- :ref:`String<class_string>` **reverb_bus_name**
+- :ref:`float<class_float>` **reverb_bus_uniformity**
 - :ref:`int<class_int>` **space_override**
 
 Description
@@ -141,6 +171,10 @@ Member Function Description
 - :ref:`float<class_float>`  **get_angular_damp**  **(** **)** const
 
 Return the angular damp rate.
+
+.. _class_Area_get_audio_bus:
+
+- :ref:`String<class_string>`  **get_audio_bus**  **(** **)** const
 
 .. _class_Area_get_collision_layer:
 
@@ -208,6 +242,18 @@ Return a list of the bodies (:ref:`PhysicsBody<class_physicsbody>`) that are tot
 
 Return the processing order of this area.
 
+.. _class_Area_get_reverb_amount:
+
+- :ref:`float<class_float>`  **get_reverb_amount**  **(** **)** const
+
+.. _class_Area_get_reverb_bus:
+
+- :ref:`String<class_string>`  **get_reverb_bus**  **(** **)** const
+
+.. _class_Area_get_reverb_uniformity:
+
+- :ref:`float<class_float>`  **get_reverb_uniformity**  **(** **)** const
+
 .. _class_Area_get_space_override_mode:
 
 - :ref:`int<class_int>`  **get_space_override_mode**  **(** **)** const
@@ -232,6 +278,14 @@ Return whether this area can be detected by other, monitoring, areas.
 
 Return whether this area detects bodies/areas entering/exiting it.
 
+.. _class_Area_is_overriding_audio_bus:
+
+- :ref:`bool<class_bool>`  **is_overriding_audio_bus**  **(** **)** const
+
+.. _class_Area_is_using_reverb_bus:
+
+- :ref:`bool<class_bool>`  **is_using_reverb_bus**  **(** **)** const
+
 .. _class_Area_overlaps_area:
 
 - :ref:`bool<class_bool>`  **overlaps_area**  **(** :ref:`Object<class_object>` area  **)** const
@@ -251,6 +305,14 @@ Return whether the body passed is totally or partially inside this area.
 Set the rate at which objects stop spinning in this area, if there are not any other forces making it spin. The value is a fraction of its current speed, lost per second. Thus, a value of 1.0 should mean stopping immediately, and 0.0 means the object never stops.
 
 In practice, as the fraction of speed lost gets smaller with each frame, a value of 1.0 does not mean the object will stop in exactly one second. Only when the physics calculations are done at 1 frame per second, it does stop in a second.
+
+.. _class_Area_set_audio_bus:
+
+- void  **set_audio_bus**  **(** :ref:`String<class_string>` name  **)**
+
+.. _class_Area_set_audio_bus_override:
+
+- void  **set_audio_bus_override**  **(** :ref:`bool<class_bool>` enable  **)**
 
 .. _class_Area_set_collision_layer:
 
@@ -336,6 +398,18 @@ Set the order in which the area is processed. Greater values mean the area gets 
 
 Areas with the same priority value get evaluated in an unpredictable order, and should be differentiated if evaluation order is to be important.
 
+.. _class_Area_set_reverb_amount:
+
+- void  **set_reverb_amount**  **(** :ref:`float<class_float>` amount  **)**
+
+.. _class_Area_set_reverb_bus:
+
+- void  **set_reverb_bus**  **(** :ref:`String<class_string>` name  **)**
+
+.. _class_Area_set_reverb_uniformity:
+
+- void  **set_reverb_uniformity**  **(** :ref:`float<class_float>` amount  **)**
+
 .. _class_Area_set_space_override_mode:
 
 - void  **set_space_override_mode**  **(** :ref:`int<class_int>` enable  **)**
@@ -351,5 +425,9 @@ AREA_SPACE_OVERRIDE_COMBINE_REPLACE: This area adds its gravity/damp values to w
 AREA_SPACE_OVERRIDE_REPLACE: This area replaces any gravity/damp, even the default one, and stops taking into account the rest of the areas.
 
 AREA_SPACE_OVERRIDE_REPLACE_COMBINE: This area replaces any gravity/damp calculated so far, but keeps calculating the rest of the areas, down to the default one.
+
+.. _class_Area_set_use_reverb_bus:
+
+- void  **set_use_reverb_bus**  **(** :ref:`bool<class_bool>` enable  **)**
 
 

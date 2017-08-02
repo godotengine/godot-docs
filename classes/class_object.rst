@@ -6,7 +6,7 @@
 Object
 ======
 
-**Inherited By:** :ref:`Reference<class_reference>`, :ref:`Physics2DServer<class_physics2dserver>`, :ref:`PhysicsDirectBodyState<class_physicsdirectbodystate>`, :ref:`Input<class_input>`, :ref:`Node<class_node>`, :ref:`Geometry<class_geometry>`, :ref:`TreeItem<class_treeitem>`, :ref:`PhysicsDirectSpaceState<class_physicsdirectspacestate>`, :ref:`Engine<class_engine>`, :ref:`Physics2DDirectSpaceState<class_physics2ddirectspacestate>`, :ref:`MainLoop<class_mainloop>`, :ref:`InputMap<class_inputmap>`, :ref:`UndoRedo<class_undoredo>`, :ref:`PhysicsServer<class_physicsserver>`, :ref:`ResourceSaver<class_resourcesaver>`, :ref:`Performance<class_performance>`, :ref:`ResourceLoader<class_resourceloader>`, :ref:`AudioServer<class_audioserver>`, :ref:`VisualServer<class_visualserver>`, :ref:`IP<class_ip>`, :ref:`ClassDB<class_classdb>`, :ref:`OS<class_os>`, :ref:`GlobalConfig<class_globalconfig>`, :ref:`EditorSelection<class_editorselection>`, :ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>`, :ref:`TranslationServer<class_translationserver>`, :ref:`EditorFileSystemDirectory<class_editorfilesystemdirectory>`
+**Inherited By:** :ref:`Reference<class_reference>`, :ref:`Physics2DServer<class_physics2dserver>`, :ref:`Input<class_input>`, :ref:`Node<class_node>`, :ref:`Geometry<class_geometry>`, :ref:`TreeItem<class_treeitem>`, :ref:`PhysicsDirectSpaceState<class_physicsdirectspacestate>`, :ref:`Engine<class_engine>`, :ref:`Physics2DDirectSpaceState<class_physics2ddirectspacestate>`, :ref:`MainLoop<class_mainloop>`, :ref:`InputMap<class_inputmap>`, :ref:`UndoRedo<class_undoredo>`, :ref:`PhysicsServer<class_physicsserver>`, :ref:`ProjectSettings<class_projectsettings>`, :ref:`ResourceSaver<class_resourcesaver>`, :ref:`Performance<class_performance>`, :ref:`ResourceLoader<class_resourceloader>`, :ref:`AudioServer<class_audioserver>`, :ref:`VisualServer<class_visualserver>`, :ref:`IP<class_ip>`, :ref:`ClassDB<class_classdb>`, :ref:`OS<class_os>`, :ref:`PhysicsDirectBodyState<class_physicsdirectbodystate>`, :ref:`EditorSelection<class_editorselection>`, :ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>`, :ref:`TranslationServer<class_translationserver>`, :ref:`EditorFileSystemDirectory<class_editorfilesystemdirectory>`
 
 **Category:** Core
 
@@ -53,9 +53,11 @@ Member Functions
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                    | :ref:`get_class<class_Object_get_class>`  **(** **)** const                                                                                                                                                                      |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`                      | :ref:`get_incoming_connections<class_Object_get_incoming_connections>`  **(** **)** const                                                                                                                                        |
++------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_instance_ID<class_Object_get_instance_ID>`  **(** **)** const                                                                                                                                                          |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`get_meta<class_Object_get_meta>`  **(** :ref:`String<class_string>` name  **)** const                                                                                                                                      |
+| :ref:`Variant<class_variant>`                  | :ref:`get_meta<class_Object_get_meta>`  **(** :ref:`String<class_string>` name  **)** const                                                                                                                                      |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_meta_list<class_Object_get_meta_list>`  **(** **)** const                                                                                                                                                              |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -146,7 +148,7 @@ Return a property, return null if the property does not exist.
 
 - :ref:`Array<class_array>`  **_get_property_list**  **(** **)** virtual
 
-Return the property list, array of dictionaries, dictionaries must contain: name:String, type:int (see TYPE\_\* enum in globals) and optionally: hint:int (see PROPERTY_HINT\_\* in globals), hint_string:String, usage:int (see PROPERTY_USAGE\_\* in globals).
+Return the property list, array of dictionaries, dictionaries must contain: name:String, type:int (see TYPE\_\* enum in :ref:`@Global Scope<class_@global scope>`) and optionally: hint:int (see PROPERTY_HINT\_\* in :ref:`@Global Scope<class_@global scope>`), hint_string:String, usage:int (see PROPERTY_USAGE\_\* in :ref:`@Global Scope<class_@global scope>`).
 
 .. _class_Object__init:
 
@@ -220,6 +222,20 @@ Get a property from the object.
 
 Return the class of the object as a string.
 
+.. _class_Object_get_incoming_connections:
+
+- :ref:`Array<class_array>`  **get_incoming_connections**  **(** **)** const
+
+Returns an :ref:`Array<class_array>` of dictionaries with informations about signals that are connected to this object.
+
+Inside each :ref:`Dictionary<class_dictionary>` there are 3 fields:
+
+- "source" is a reference to signal emitter.
+
+- "signal_name" is name of connected signal.
+
+- "method_name" is a name of method to which signal is connected.
+
 .. _class_Object_get_instance_ID:
 
 - :ref:`int<class_int>`  **get_instance_ID**  **(** **)** const
@@ -228,7 +244,7 @@ Return the instance ID. All objects have a unique instance ID.
 
 .. _class_Object_get_meta:
 
-- void  **get_meta**  **(** :ref:`String<class_string>` name  **)** const
+- :ref:`Variant<class_variant>`  **get_meta**  **(** :ref:`String<class_string>` name  **)** const
 
 Return a metadata from the object.
 
@@ -246,7 +262,7 @@ Return the list of metadata in the object.
 
 - :ref:`Array<class_array>`  **get_property_list**  **(** **)** const
 
-Return the list of properties as an array of dictionaries, dictionaries contain: name:String, type:int (see TYPE\_\* enum in globals) and optionally: hint:int (see PROPERTY_HINT\_\* in globals), hint_string:String, usage:int (see PROPERTY_USAGE\_\* in globals).
+Return the list of properties as an array of dictionaries, dictionaries contain: name:String, type:int (see TYPE\_\* enum in :ref:`@Global Scope<class_@global scope>`) and optionally: hint:int (see PROPERTY_HINT\_\* in :ref:`@Global Scope<class_@global scope>`), hint_string:String, usage:int (see PROPERTY_USAGE\_\* in :ref:`@Global Scope<class_@global scope>`).
 
 .. _class_Object_get_script:
 

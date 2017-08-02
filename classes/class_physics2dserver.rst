@@ -57,6 +57,8 @@ Member Functions
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`area_set_shape<class_Physics2DServer_area_set_shape>`  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx, :ref:`RID<class_rid>` shape  **)**                                                                                                                                               |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                               | :ref:`area_set_shape_disabled<class_Physics2DServer_area_set_shape_disabled>`  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` disable  **)**                                                                                                                         |
++--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`area_set_shape_transform<class_Physics2DServer_area_set_shape_transform>`  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx, :ref:`Transform2D<class_transform2d>` transform  **)**                                                                                                       |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`area_set_space<class_Physics2DServer_area_set_space>`  **(** :ref:`RID<class_rid>` area, :ref:`RID<class_rid>` space  **)**                                                                                                                                                                                |
@@ -91,10 +93,6 @@ Member Functions
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                              | :ref:`body_get_object_instance_ID<class_Physics2DServer_body_get_object_instance_ID>`  **(** :ref:`RID<class_rid>` body  **)** const                                                                                                                                                                             |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`                                      | :ref:`body_get_one_way_collision_direction<class_Physics2DServer_body_get_one_way_collision_direction>`  **(** :ref:`RID<class_rid>` body  **)** const                                                                                                                                                           |
-+--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                          | :ref:`body_get_one_way_collision_max_depth<class_Physics2DServer_body_get_one_way_collision_max_depth>`  **(** :ref:`RID<class_rid>` body  **)** const                                                                                                                                                           |
-+--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                          | :ref:`body_get_param<class_Physics2DServer_body_get_param>`  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` param  **)** const                                                                                                                                                                          |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_rid>`                                              | :ref:`body_get_shape<class_Physics2DServer_body_get_shape>`  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx  **)** const                                                                                                                                                                      |
@@ -110,8 +108,6 @@ Member Functions
 | void                                                               | :ref:`body_get_state<class_Physics2DServer_body_get_state>`  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` state  **)** const                                                                                                                                                                          |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                            | :ref:`body_is_omitting_force_integration<class_Physics2DServer_body_is_omitting_force_integration>`  **(** :ref:`RID<class_rid>` body  **)** const                                                                                                                                                               |
-+--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                            | :ref:`body_is_shape_set_as_trigger<class_Physics2DServer_body_is_shape_set_as_trigger>`  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx  **)** const                                                                                                                                          |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`body_remove_collision_exception<class_Physics2DServer_body_remove_collision_exception>`  **(** :ref:`RID<class_rid>` body, :ref:`RID<class_rid>` excepted_body  **)**                                                                                                                                      |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -133,15 +129,13 @@ Member Functions
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`body_set_omit_force_integration<class_Physics2DServer_body_set_omit_force_integration>`  **(** :ref:`RID<class_rid>` body, :ref:`bool<class_bool>` enable  **)**                                                                                                                                           |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                               | :ref:`body_set_one_way_collision_direction<class_Physics2DServer_body_set_one_way_collision_direction>`  **(** :ref:`RID<class_rid>` body, :ref:`Vector2<class_vector2>` normal  **)**                                                                                                                           |
-+--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                               | :ref:`body_set_one_way_collision_max_depth<class_Physics2DServer_body_set_one_way_collision_max_depth>`  **(** :ref:`RID<class_rid>` body, :ref:`float<class_float>` depth  **)**                                                                                                                                |
-+--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`body_set_param<class_Physics2DServer_body_set_param>`  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**                                                                                                                                               |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`body_set_shape<class_Physics2DServer_body_set_shape>`  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx, :ref:`RID<class_rid>` shape  **)**                                                                                                                                               |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                               | :ref:`body_set_shape_as_trigger<class_Physics2DServer_body_set_shape_as_trigger>`  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` enable  **)**                                                                                                                      |
+| void                                                               | :ref:`body_set_shape_as_one_way_collision<class_Physics2DServer_body_set_shape_as_one_way_collision>`  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` enable  **)**                                                                                                  |
++--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                               | :ref:`body_set_shape_disabled<class_Physics2DServer_body_set_shape_disabled>`  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` disable  **)**                                                                                                                         |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`body_set_shape_metadata<class_Physics2DServer_body_set_shape_metadata>`  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx, :ref:`Variant<class_variant>` metadata  **)**                                                                                                                  |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -202,8 +196,8 @@ Numeric Constants
 - **SPACE_PARAM_CONTACT_RECYCLE_RADIUS** = **0** --- Constant to set/get the maximum distance a pair of bodies has to move before their collision status has to be recalculated.
 - **SPACE_PARAM_CONTACT_MAX_SEPARATION** = **1** --- Constant to set/get the maximum distance a shape can be from another before they are considered separated.
 - **SPACE_PARAM_BODY_MAX_ALLOWED_PENETRATION** = **2** --- Constant to set/get the maximum distance a shape can penetrate another shape before it is considered a collision.
-- **SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_TRESHOLD** = **3** --- Constant to set/get the linear velocity threshold. Bodies slower than this will be marked as potentially inactive.
-- **SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_TRESHOLD** = **4** --- Constant to set/get the angular velocity threshold. Bodies slower than this will be marked as potentially inactive.
+- **SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD** = **3**
+- **SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD** = **4**
 - **SPACE_PARAM_BODY_TIME_TO_SLEEP** = **5** --- Constant to set/get the maximum time of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after this time.
 - **SPACE_PARAM_CONSTRAINT_DEFAULT_BIAS** = **6** --- Constant to set/get the default solver bias for all physics constraints. A solver bias is a factor controlling how much two objects "rebound", after violating a constraint, to avoid leaving them in that state because of numerical imprecision.
 - **SHAPE_LINE** = **0** --- This is the constant for creating line shapes. A line shape is an infinite line with an origin point, and a normal. Thus, it can be used for front/behind checks.
@@ -385,6 +379,10 @@ Set the value for an area parameter. A list of available parameters is on the AR
 
 Substitute a given area shape by another. The old shape is selected by its index, the new one by its :ref:`RID<class_rid>`.
 
+.. _class_Physics2DServer_area_set_shape_disabled:
+
+- void  **area_set_shape_disabled**  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` disable  **)**
+
 .. _class_Physics2DServer_area_set_shape_transform:
 
 - void  **area_set_shape_transform**  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx, :ref:`Transform2D<class_transform2d>` transform  **)**
@@ -487,18 +485,6 @@ Return the body mode.
 
 Get the instance ID of the object the area is assigned to.
 
-.. _class_Physics2DServer_body_get_one_way_collision_direction:
-
-- :ref:`Vector2<class_vector2>`  **body_get_one_way_collision_direction**  **(** :ref:`RID<class_rid>` body  **)** const
-
-Return the direction used for one-way collision detection.
-
-.. _class_Physics2DServer_body_get_one_way_collision_max_depth:
-
-- :ref:`float<class_float>`  **body_get_one_way_collision_max_depth**  **(** :ref:`RID<class_rid>` body  **)** const
-
-Return how far a body can go through the given one, when it allows one-way collisions.
-
 .. _class_Physics2DServer_body_get_param:
 
 - :ref:`float<class_float>`  **body_get_param**  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` param  **)** const
@@ -546,12 +532,6 @@ Return a body state.
 - :ref:`bool<class_bool>`  **body_is_omitting_force_integration**  **(** :ref:`RID<class_rid>` body  **)** const
 
 Return whether a body uses a callback function to calculate its own physics (see :ref:`body_set_force_integration_callback<class_Physics2DServer_body_set_force_integration_callback>`).
-
-.. _class_Physics2DServer_body_is_shape_set_as_trigger:
-
-- :ref:`bool<class_bool>`  **body_is_shape_set_as_trigger**  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx  **)** const
-
-Return whether a body's shape is marked as a trigger.
 
 .. _class_Physics2DServer_body_remove_collision_exception:
 
@@ -615,18 +595,6 @@ Set the body mode, from one of the constants BODY_MODE\*.
 
 Set whether a body uses a callback function to calculate its own physics (see :ref:`body_set_force_integration_callback<class_Physics2DServer_body_set_force_integration_callback>`).
 
-.. _class_Physics2DServer_body_set_one_way_collision_direction:
-
-- void  **body_set_one_way_collision_direction**  **(** :ref:`RID<class_rid>` body, :ref:`Vector2<class_vector2>` normal  **)**
-
-Set a direction in which bodies can go through the given one. If this value is different from (0,0), any movement within 90 degrees of this vector is considered a valid movement. Set this direction to (0,0) to disable one-way collisions.
-
-.. _class_Physics2DServer_body_set_one_way_collision_max_depth:
-
-- void  **body_set_one_way_collision_max_depth**  **(** :ref:`RID<class_rid>` body, :ref:`float<class_float>` depth  **)**
-
-Set how far a body can go through the given one, if it allows one-way collisions (see :ref:`body_set_one_way_collision_direction<class_Physics2DServer_body_set_one_way_collision_direction>`).
-
 .. _class_Physics2DServer_body_set_param:
 
 - void  **body_set_param**  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**
@@ -639,11 +607,13 @@ Set a body parameter (see BODY_PARAM\* constants).
 
 Substitute a given body shape by another. The old shape is selected by its index, the new one by its :ref:`RID<class_rid>`.
 
-.. _class_Physics2DServer_body_set_shape_as_trigger:
+.. _class_Physics2DServer_body_set_shape_as_one_way_collision:
 
-- void  **body_set_shape_as_trigger**  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` enable  **)**
+- void  **body_set_shape_as_one_way_collision**  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` enable  **)**
 
-Mark a body's shape as a trigger. A trigger shape cannot affect other bodies, but detects other shapes entering and exiting it.
+.. _class_Physics2DServer_body_set_shape_disabled:
+
+- void  **body_set_shape_disabled**  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` disable  **)**
 
 .. _class_Physics2DServer_body_set_shape_metadata:
 

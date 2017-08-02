@@ -18,24 +18,26 @@ Editor-only class for easy editing of shapes.
 Member Functions
 ----------------
 
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_collision_object_shape_index<class_CollisionShape2D_get_collision_object_shape_index>`  **(** **)** const |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`  | :ref:`get_shape<class_CollisionShape2D_get_shape>`  **(** **)** const                                               |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`is_trigger<class_CollisionShape2D_is_trigger>`  **(** **)** const                                             |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_shape<class_CollisionShape2D_set_shape>`  **(** :ref:`Object<class_object>` shape  **)**                  |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_trigger<class_CollisionShape2D_set_trigger>`  **(** :ref:`bool<class_bool>` enable  **)**                 |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
++------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`  | :ref:`get_shape<class_CollisionShape2D_get_shape>`  **(** **)** const                                                    |
++------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`is_disabled<class_CollisionShape2D_is_disabled>`  **(** **)** const                                                |
++------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`is_one_way_collision_enabled<class_CollisionShape2D_is_one_way_collision_enabled>`  **(** **)** const              |
++------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_disabled<class_CollisionShape2D_set_disabled>`  **(** :ref:`bool<class_bool>` disabled  **)**                  |
++------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_one_way_collision<class_CollisionShape2D_set_one_way_collision>`  **(** :ref:`bool<class_bool>` enabled  **)** |
++------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_shape<class_CollisionShape2D_set_shape>`  **(** :ref:`Object<class_object>` shape  **)**                       |
++------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **_update_shape_index**
+- :ref:`bool<class_bool>` **disabled**
+- :ref:`bool<class_bool>` **one_way_collision**
 - :ref:`Shape2D<class_shape2d>` **shape**
-- :ref:`bool<class_bool>` **trigger**
 
 Description
 -----------
@@ -45,34 +47,32 @@ Editor-only class. This is not present when running the game. It's used in the e
 Member Function Description
 ---------------------------
 
-.. _class_CollisionShape2D_get_collision_object_shape_index:
-
-- :ref:`int<class_int>`  **get_collision_object_shape_index**  **(** **)** const
-
-Return the index of this shape inside its container :ref:`CollisionObject2D<class_collisionobject2d>`. This can be used to directly access the underlying :ref:`Shape2D<class_shape2d>`.
-
 .. _class_CollisionShape2D_get_shape:
 
 - :ref:`Object<class_object>`  **get_shape**  **(** **)** const
 
 Return this shape's :ref:`Shape2D<class_shape2d>`.
 
-.. _class_CollisionShape2D_is_trigger:
+.. _class_CollisionShape2D_is_disabled:
 
-- :ref:`bool<class_bool>`  **is_trigger**  **(** **)** const
+- :ref:`bool<class_bool>`  **is_disabled**  **(** **)** const
 
-Return whether this shape is a trigger.
+.. _class_CollisionShape2D_is_one_way_collision_enabled:
+
+- :ref:`bool<class_bool>`  **is_one_way_collision_enabled**  **(** **)** const
+
+.. _class_CollisionShape2D_set_disabled:
+
+- void  **set_disabled**  **(** :ref:`bool<class_bool>` disabled  **)**
+
+.. _class_CollisionShape2D_set_one_way_collision:
+
+- void  **set_one_way_collision**  **(** :ref:`bool<class_bool>` enabled  **)**
 
 .. _class_CollisionShape2D_set_shape:
 
 - void  **set_shape**  **(** :ref:`Object<class_object>` shape  **)**
 
 Set this shape's :ref:`Shape2D<class_shape2d>`. This will not appear as a node, but can be directly edited as a property.
-
-.. _class_CollisionShape2D_set_trigger:
-
-- void  **set_trigger**  **(** :ref:`bool<class_bool>` enable  **)**
-
-Set whether this shape is a trigger. A trigger shape detects collisions, but is otherwise unaffected by physics (i.e. will not block movement of colliding objects).
 
 

@@ -53,13 +53,19 @@ Member Functions
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`EditorSettings<class_editorsettings>`                | :ref:`get_editor_settings<class_EditorPlugin_get_editor_settings>`  **(** **)**                                                                                                                                     |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Node<class_node>`                                    | :ref:`get_edited_scene_root<class_EditorPlugin_get_edited_scene_root>`  **(** **)**                                                                                                                                 |
++------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Control<class_control>`                              | :ref:`get_editor_viewport<class_EditorPlugin_get_editor_viewport>`  **(** **)**                                                                                                                                     |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                                | :ref:`get_name<class_EditorPlugin_get_name>`  **(** **)** virtual                                                                                                                                                   |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`                                  | :ref:`get_open_scenes<class_EditorPlugin_get_open_scenes>`  **(** **)**                                                                                                                                             |
++------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`EditorFileSystem<class_editorfilesystem>`            | :ref:`get_resource_filesystem<class_EditorPlugin_get_resource_filesystem>`  **(** **)**                                                                                                                             |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`EditorResourcePreview<class_editorresourcepreview>`  | :ref:`get_resource_previewer<class_EditorPlugin_get_resource_previewer>`  **(** **)**                                                                                                                               |
++------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`ScriptEditor<class_scripteditor>`                    | :ref:`get_script_editor<class_EditorPlugin_get_script_editor>`  **(** **)**                                                                                                                                         |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`EditorSelection<class_editorselection>`              | :ref:`get_selection<class_EditorPlugin_get_selection>`  **(** **)**                                                                                                                                                 |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -81,7 +87,11 @@ Member Functions
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`make_visible<class_EditorPlugin_make_visible>`  **(** :ref:`bool<class_bool>` visible  **)** virtual                                                                                                          |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                       | :ref:`open_scene_from_path<class_EditorPlugin_open_scene_from_path>`  **(** :ref:`String<class_string>` scene_filepath  **)**                                                                                       |
++------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`queue_save_layout<class_EditorPlugin_queue_save_layout>`  **(** **)** const                                                                                                                                   |
++------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                       | :ref:`reload_scene_from_path<class_EditorPlugin_reload_scene_from_path>`  **(** :ref:`String<class_string>` scene_filepath  **)**                                                                                   |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`remove_control_from_bottom_panel<class_EditorPlugin_remove_control_from_bottom_panel>`  **(** :ref:`Control<class_control>` control  **)**                                                                    |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -93,12 +103,27 @@ Member Functions
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`save_external_data<class_EditorPlugin_save_external_data>`  **(** **)** virtual                                                                                                                               |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                       | :ref:`set_input_event_forwarding_always_enabled<class_EditorPlugin_set_input_event_forwarding_always_enabled>`  **(** **)**                                                                                         |
++------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`set_state<class_EditorPlugin_set_state>`  **(** :ref:`Dictionary<class_dictionary>` state  **)** virtual                                                                                                      |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`set_window_layout<class_EditorPlugin_set_window_layout>`  **(** :ref:`ConfigFile<class_configfile>` layout  **)** virtual                                                                                     |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`update_canvas<class_EditorPlugin_update_canvas>`  **(** **)**                                                                                                                                                 |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Signals
+-------
+
+-  **main_screen_changed**  **(** :ref:`String<class_string>` screen_name  **)**
+Emitted when user change main screen view (2D, 3D, Script, AssetLib). Works also with screens which are defined by plugins.
+
+-  **scene_changed**  **(** :ref:`Node<class_node>` scene_root  **)**
+Emitted when user change scene. The argument is a root node of freshly opened scene.
+
+-  **scene_closed**  **(** :ref:`String<class_string>` filepath  **)**
+Emitted when user close scene. The argument is file path to a closed scene.
+
 
 Numeric Constants
 -----------------
@@ -218,6 +243,10 @@ This function is called every time the 2D canvas editor draws (which overlays ov
 
 - :ref:`bool<class_bool>`  **forward_spatial_gui_input**  **(** :ref:`Camera<class_camera>` camera, :ref:`InputEvent<class_inputevent>` event  **)** virtual
 
+Implement this function if you are interested in 3D view screen input events. It will be called only if currently selected node is handled by your plugin.
+
+If you would like to always gets those input events then additionally use :ref:`set_input_forwarding_always_enabled<class_EditorPlugin_set_input_forwarding_always_enabled>`.
+
 .. _class_EditorPlugin_get_base_control:
 
 - :ref:`Control<class_control>`  **get_base_control**  **(** **)**
@@ -236,6 +265,12 @@ This is for editors that edit script based objects. You can return a list of bre
 
 Get the general settings for the editor (the same window that appears in the Settings menu).
 
+.. _class_EditorPlugin_get_edited_scene_root:
+
+- :ref:`Node<class_node>`  **get_edited_scene_root**  **(** **)**
+
+Returns root node of currently edited scene.
+
 .. _class_EditorPlugin_get_editor_viewport:
 
 - :ref:`Control<class_control>`  **get_editor_viewport**  **(** **)**
@@ -248,6 +283,12 @@ Get the main editor control. Use this as a parent for main screens.
 
 Get the name of the editor plugin. For main scren plugins this is what will appear in the selector (which by default is 2D, 3D, Script).
 
+.. _class_EditorPlugin_get_open_scenes:
+
+- :ref:`Array<class_array>`  **get_open_scenes**  **(** **)**
+
+Will return an Array of Strings which represent file paths to currently open scenes.
+
 .. _class_EditorPlugin_get_resource_filesystem:
 
 - :ref:`EditorFileSystem<class_editorfilesystem>`  **get_resource_filesystem**  **(** **)**
@@ -259,6 +300,12 @@ Get the filesystem cache for all resources in the project.
 - :ref:`EditorResourcePreview<class_editorresourcepreview>`  **get_resource_previewer**  **(** **)**
 
 Get tool for generating resource previews.
+
+.. _class_EditorPlugin_get_script_editor:
+
+- :ref:`ScriptEditor<class_scripteditor>`  **get_script_editor**  **(** **)**
+
+Will return ScriptEditor object which contains informations about state of the scripts which are currently open by the editor.
 
 .. _class_EditorPlugin_get_selection:
 
@@ -318,11 +365,23 @@ This function will be called when the editor is requested to become visible. It 
 
 Remember that you have to manage the visibility of all your editor controls manually.
 
+.. _class_EditorPlugin_open_scene_from_path:
+
+- void  **open_scene_from_path**  **(** :ref:`String<class_string>` scene_filepath  **)**
+
+Opens scene in editor. Do not use during plugin initialization. If you need, then use it together with :ref:`Object.call_deferred<class_Object_call_deferred>`.
+
 .. _class_EditorPlugin_queue_save_layout:
 
 - void  **queue_save_layout**  **(** **)** const
 
 Queue save the project's editor layout.
+
+.. _class_EditorPlugin_reload_scene_from_path:
+
+- void  **reload_scene_from_path**  **(** :ref:`String<class_string>` scene_filepath  **)**
+
+Reloads already loaded editor scene.
 
 .. _class_EditorPlugin_remove_control_from_bottom_panel:
 
@@ -352,6 +411,12 @@ Remove a custom type added by :ref:`EditorPlugin.add_custom_type<class_EditorPlu
 
 This method is called after the editor saves the project or when it's closed. It asks the plugin to save edited external scenes/resources.
 
+.. _class_EditorPlugin_set_input_event_forwarding_always_enabled:
+
+- void  **set_input_event_forwarding_always_enabled**  **(** **)**
+
+Use this method if you always want to receive inputs from 3D view screen inside :ref:`forward_spatial_gui_input<class_EditorPlugin_forward_spatial_gui_input>`. It might be especially usable if your plugin will want to use raycast in the scene.
+
 .. _class_EditorPlugin_set_state:
 
 - void  **set_state**  **(** :ref:`Dictionary<class_dictionary>` state  **)** virtual
@@ -369,3 +434,5 @@ Restore the plugin GUI layout saved by :ref:`EditorPlugin.get_window_layout<clas
 - void  **update_canvas**  **(** **)**
 
 Updates the control used to draw the edited scene over the 2D canvas. This is used together with :ref:`forward_canvas_input_event<class_EditorPlugin_forward_canvas_input_event>`.
+
+

@@ -37,6 +37,8 @@ Member Functions
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`        | :ref:`get_lifetime<class_Particles_get_lifetime>`  **(** **)** const                                                                 |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`get_one_shot<class_Particles_get_one_shot>`  **(** **)** const                                                                 |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`        | :ref:`get_pre_process_time<class_Particles_get_pre_process_time>`  **(** **)** const                                                 |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Material<class_material>`  | :ref:`get_process_material<class_Particles_get_process_material>`  **(** **)** const                                                 |
@@ -50,6 +52,8 @@ Member Functions
 | :ref:`Rect3<class_rect3>`        | :ref:`get_visibility_aabb<class_Particles_get_visibility_aabb>`  **(** **)** const                                                   |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`is_emitting<class_Particles_is_emitting>`  **(** **)** const                                                                   |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`restart<class_Particles_restart>`  **(** **)**                                                                                 |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_amount<class_Particles_set_amount>`  **(** :ref:`int<class_int>` amount  **)**                                             |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
@@ -68,6 +72,8 @@ Member Functions
 | void                             | :ref:`set_fractional_delta<class_Particles_set_fractional_delta>`  **(** :ref:`bool<class_bool>` enable  **)**                       |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_lifetime<class_Particles_set_lifetime>`  **(** :ref:`float<class_float>` secs  **)**                                       |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_one_shot<class_Particles_set_one_shot>`  **(** :ref:`bool<class_bool>` enable  **)**                                       |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_pre_process_time<class_Particles_set_pre_process_time>`  **(** :ref:`float<class_float>` secs  **)**                       |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
@@ -98,8 +104,9 @@ Member Variables
 - :ref:`bool<class_bool>` **fract_delta**
 - :ref:`float<class_float>` **lifetime**
 - :ref:`bool<class_bool>` **local_coords**
+- :ref:`bool<class_bool>` **one_shot**
 - :ref:`float<class_float>` **preprocess**
-- ParticlesMaterial,ShaderMaterial **process_material**
+- ShaderMaterial,ParticlesMaterial **process_material**
 - :ref:`float<class_float>` **randomness**
 - :ref:`float<class_float>` **speed_scale**
 - :ref:`Rect3<class_rect3>` **visibility_aabb**
@@ -151,6 +158,10 @@ Member Function Description
 
 - :ref:`float<class_float>`  **get_lifetime**  **(** **)** const
 
+.. _class_Particles_get_one_shot:
+
+- :ref:`bool<class_bool>`  **get_one_shot**  **(** **)** const
+
 .. _class_Particles_get_pre_process_time:
 
 - :ref:`float<class_float>`  **get_pre_process_time**  **(** **)** const
@@ -178,6 +189,10 @@ Member Function Description
 .. _class_Particles_is_emitting:
 
 - :ref:`bool<class_bool>`  **is_emitting**  **(** **)** const
+
+.. _class_Particles_restart:
+
+- void  **restart**  **(** **)**
 
 .. _class_Particles_set_amount:
 
@@ -214,6 +229,10 @@ Member Function Description
 .. _class_Particles_set_lifetime:
 
 - void  **set_lifetime**  **(** :ref:`float<class_float>` secs  **)**
+
+.. _class_Particles_set_one_shot:
+
+- void  **set_one_shot**  **(** :ref:`bool<class_bool>` enable  **)**
 
 .. _class_Particles_set_pre_process_time:
 

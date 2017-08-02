@@ -31,6 +31,8 @@ Member Functions
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`get_bus_effect_count<class_AudioServer_get_bus_effect_count>`  **(** :ref:`int<class_int>` bus_idx, :ref:`Object<class_object>` arg1, :ref:`int<class_int>` arg2  **)**          |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                        | :ref:`get_bus_index<class_AudioServer_get_bus_index>`  **(** :ref:`String<class_string>` bus_name  **)** const                                                                         |
++----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                  | :ref:`get_bus_name<class_AudioServer_get_bus_name>`  **(** :ref:`int<class_int>` bus_idx  **)** const                                                                                  |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                    | :ref:`get_bus_peak_volume_left_db<class_AudioServer_get_bus_peak_volume_left_db>`  **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` channel  **)** const                     |
@@ -120,6 +122,10 @@ Member Function Description
 .. _class_AudioServer_get_bus_effect_count:
 
 - void  **get_bus_effect_count**  **(** :ref:`int<class_int>` bus_idx, :ref:`Object<class_object>` arg1, :ref:`int<class_int>` arg2  **)**
+
+.. _class_AudioServer_get_bus_index:
+
+- :ref:`int<class_int>`  **get_bus_index**  **(** :ref:`String<class_string>` bus_name  **)** const
 
 .. _class_AudioServer_get_bus_name:
 

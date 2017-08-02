@@ -64,7 +64,7 @@ Append an element at the end of the array (alias of :ref:`push_back<class_PoolSt
 
 - void  **append_array**  **(** :ref:`PoolStringArray<class_poolstringarray>` array  **)**
 
-Append an :ref:`StringArray<class_stringarray>` at the end of this array.
+Append an StringArray at the end of this array.
 
 .. _class_PoolStringArray_insert:
 
@@ -98,7 +98,7 @@ Remove an element from the array by index.
 
 - void  **resize**  **(** :ref:`int<class_int>` idx  **)**
 
-Set the size of the :ref:`StringArray<class_stringarray>`. If larger than the current size it will reserve some space beforehand, and if it is smaller it will cut off the array.
+Set the size of the StringArray. If larger than the current size it will reserve some space beforehand, and if it is smaller it will cut off the array.
 
 .. _class_PoolStringArray_set:
 

@@ -47,7 +47,7 @@ Member Functions
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Rect2<class_rect2>`                | :ref:`get_item_icon_region<class_ItemList_get_item_icon_region>`  **(** :ref:`int<class_int>` idx  **)** const                                                            |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`get_item_metadata<class_ItemList_get_item_metadata>`  **(** :ref:`int<class_int>` idx  **)** const                                                                  |
+| :ref:`Variant<class_variant>`            | :ref:`get_item_metadata<class_ItemList_get_item_metadata>`  **(** :ref:`int<class_int>` idx  **)** const                                                                  |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`              | :ref:`get_item_text<class_ItemList_get_item_text>`  **(** :ref:`int<class_int>` idx  **)** const                                                                          |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -137,6 +137,19 @@ Fired when specified item has been selected.
 -  **multi_selected**  **(** :ref:`int<class_int>` index, :ref:`bool<class_bool>` selected  **)**
 Fired when a multiple selection is altered on a list allowing mutliple selection.
 
+
+Member Variables
+----------------
+
+- :ref:`bool<class_bool>` **allow_rmb_select**
+- :ref:`int<class_int>` **fixed_column_width**
+- :ref:`int<class_int>` **icon_mode**
+- :ref:`float<class_float>` **icon_scale**
+- :ref:`Array<class_array>` **items**
+- :ref:`int<class_int>` **max_columns**
+- :ref:`int<class_int>` **max_text_lines**
+- :ref:`bool<class_bool>` **same_column_width**
+- :ref:`int<class_int>` **select_mode**
 
 Numeric Constants
 -----------------
@@ -236,7 +249,7 @@ Return count of items currently in the item list.
 
 .. _class_ItemList_get_item_metadata:
 
-- void  **get_item_metadata**  **(** :ref:`int<class_int>` idx  **)** const
+- :ref:`Variant<class_variant>`  **get_item_metadata**  **(** :ref:`int<class_int>` idx  **)** const
 
 .. _class_ItemList_get_item_text:
 

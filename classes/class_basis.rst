@@ -195,12 +195,12 @@ Return the transposed version of the matrix.
 
 - :ref:`Vector3<class_vector3>`  **xform**  **(** :ref:`Vector3<class_vector3>` v  **)**
 
-Return a vector transformed (multiplied) by the matrix and return it.
+Return a vector transformed (multiplied) by the matrix.
 
 .. _class_Basis_xform_inv:
 
 - :ref:`Vector3<class_vector3>`  **xform_inv**  **(** :ref:`Vector3<class_vector3>` v  **)**
 
-Return a vector transformed (multiplied) by the transposed matrix and return it. Note that this is a multiplication by inverse only when the matrix represents a rotation-reflection.
+Return a vector transformed (multiplied) by the transposed matrix. Note that this results in a multiplication by the inverse of the matrix only if it represents a rotation-reflection.
 
 

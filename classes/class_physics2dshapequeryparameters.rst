@@ -68,7 +68,7 @@ Return the physics layer the shape belongs to.
 
 - :ref:`Array<class_array>`  **get_exclude**  **(** **)** const
 
-Return the list of objects, or object :ref:`RID<class_rid>`s, that will be excluded from collisions.
+Return the list of objects, or object :ref:`RID<class_rid>`\ s, that will be excluded from collisions.
 
 .. _class_Physics2DShapeQueryParameters_get_margin:
 
@@ -110,7 +110,7 @@ Set the physics layer the shape belongs to.
 
 - void  **set_exclude**  **(** :ref:`Array<class_array>` exclude  **)**
 
-Set the list of objects, or object :ref:`RID<class_rid>`s, that will be excluded from collisions.
+Set the list of objects, or object :ref:`RID<class_rid>`\ s, that will be excluded from collisions.
 
 .. _class_Physics2DShapeQueryParameters_set_margin:
 

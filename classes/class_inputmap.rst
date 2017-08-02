@@ -101,6 +101,6 @@ Whether this InputMap has a registered action with the given name.
 
 - void  **load_from_globals**  **(** **)**
 
-Clear the :ref:`InputMap<class_inputmap>` and load it anew from :ref:`Globals<class_globals>`.
+Clear the :ref:`InputMap<class_inputmap>` and load it anew from :ref:`ProjectSettings<class_projectsettings>`.
 
 
