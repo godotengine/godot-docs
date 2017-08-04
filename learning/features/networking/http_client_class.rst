@@ -24,7 +24,7 @@ It will connect and fetch a website.
         var err=0
         var http = HTTPClient.new() # Create the Client
 
-        var err = http.connect("www.php.net",80) # Connect to host/port
+        err = http.connect_to_host("www.php.net",80) # Connect to host/port
         assert(err==OK) # Make sure connection was OK
 
         # Wait until resolved and connected
@@ -61,7 +61,7 @@ It will connect and fetch a website.
         if (http.has_response()):
             # If there is a response..
 
-            var headers = http.get_response_headers_as_dictionary() # Get response headers
+            headers = http.get_response_headers_as_dictionary() # Get response headers
             print("code: ",http.get_response_code()) # Show response code
             print("**headers:\\n",headers) # Show headers
 
@@ -77,7 +77,7 @@ It will connect and fetch a website.
 
             # This method works for both anyway
 
-            var rb = RawArray() # Array that will hold the data
+            var rb = PoolByteArray() # Array that will hold the data
 
             while(http.get_status()==HTTPClient.STATUS_BODY):
                 # While there is body left to be read
