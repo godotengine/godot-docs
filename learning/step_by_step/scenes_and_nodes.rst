@@ -172,7 +172,7 @@ Configuring the project
 Ok, it's time to configure the project. Right now, the only way to run
 something is to execute the current scene. Projects, however, may have several
 scenes, so one of them must be set as the main scene. This is the scene that
-will be loaded any time the project is run. 
+will be loaded any time the project is run.
 
 These settings are all stored in a project.godot file, which is a plaintext
 file in win.ini format (for easy editing). There are dozens of settings that
@@ -180,7 +180,7 @@ you can change in this file to alter how a project executes. To simplify this
 process, Godot provides a project settings dialog, which acts as a sort of
 frontend to editing a project.godot file.
 
-To access that dialog, select Scene -> Project Settings. Try it now.
+To access that dialog, select Project -> Project Settings. Try it now.
 
 Once the window opens, let's select a main scene. Locate the
 application/main_scene property and click on it to select 'hello.tscn'.
