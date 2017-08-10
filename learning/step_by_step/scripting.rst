@@ -98,10 +98,10 @@ Finally, save the scene, a fitting name could be "sayhello.tscn"
 Adding a script
 ~~~~~~~~~~~~~~~
 
-Right click on the panel node, then select "Add Script" in the context
+Right click on the panel node, then select "Attach Script" in the context
 menu:
 
-.. image:: /img/add_script.png
+.. image:: /img/attach_script.png
 
 The script creation dialog will pop up. This dialog allows to select
 the language, class name, etc. GDScript does not use class names in
@@ -119,7 +119,7 @@ property:
 
 .. image:: /img/script_added.png
 
-To edit the script, select either of the highlighted buttons. 
+To edit the script, select either of the highlighted buttons.
 This will bring you to the script editor where an existing template will
 be included by default:
 
@@ -149,7 +149,7 @@ and can be connected to any function of any script instance. In this
 step, the "pressed" signal from the button will be connected to a custom
 function.
 
-An interface for connecting signals to your scripts exists in the editor. 
+An interface for connecting signals to your scripts exists in the editor.
 You can access this by selecting the node in the scene tree and then
 selecting the "Node" tab. Make sure that you have "Signals" selected.
 
@@ -175,7 +175,7 @@ the button is pressed:
 
 ::
 
-    func _on_button_pressed():  
+    func _on_button_pressed():
         get_node("Label").set_text("HELLO!")
 
 Finally, the button "pressed" signal will be connected to that callback
@@ -219,6 +219,6 @@ to obtain it would be:
 
     # not for this case
     # but just in case
-    get_node("Label/Button") 
+    get_node("Label/Button")
 
 Also, remember that nodes are referenced by name, not by type.
