@@ -94,7 +94,7 @@ against everything in two for loops like this:
             if (i.collides(j)):
                 do_collision_code()
 
-But this scales really bad. Let's imagine there are only 100 objects in
+But this scales really badly. Let's imagine there are only 100 objects in
 the game. This means that 100\*100=10000 collisions will need to be
 tested each frame. This is a lot!
 
