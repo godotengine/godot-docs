@@ -293,6 +293,16 @@ synchronizes state with the scene and allows full modification of the
 object's parameters.  Since physics may run in its own thread, parameter
 changes outside that callback will not take place until the next frame.
 
+.. note::
+    
+    When a RigidBody goes to sleep then the :ref:`_integrate_forces() <class_RigidBody2D__integrate_forces>` 
+    method will not be called (I.E. they act like a static body until a 
+    collision or a force is applied to them). To override this behavior you will 
+    need to keep the rigid body "awake" by creating a collision, applying a force to it 
+    (e.g. :ref:`set_linear_velocity <class_RigidBody2D_set_linear_velocity>`) 
+    or by disabling the `can_sleep` property (see :ref:`set_can_sleep <class_RigidBody2D_set_can_sleep>`). 
+    Be aware that this can have an effect on performance.
+
 Contact reporting
 -----------------
 
