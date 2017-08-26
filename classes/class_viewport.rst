@@ -175,7 +175,7 @@ Member Variables
 - :ref:`int<class_int>` **shadow_atlas_quad_2**
 - :ref:`int<class_int>` **shadow_atlas_quad_3**
 - :ref:`int<class_int>` **shadow_atlas_size**
-- :ref:`Rect2<class_rect2>` **size**
+- :ref:`Vector2<class_vector2>` **size**
 - :ref:`bool<class_bool>` **transparent_bg**
 - :ref:`int<class_int>` **usage**
 - :ref:`World<class_world>` **world**
