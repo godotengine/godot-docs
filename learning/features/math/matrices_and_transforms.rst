@@ -373,7 +373,7 @@ However, this is not the same:
     # yields a different results
     pos = (transform1 * transform2).xform(pos)
 
-Because in matrix math, A + B is not the same as B + A.
+Because in matrix math, A * B is not the same as B * A.
 
 Multiplication by inverse
 -------------------------
@@ -409,8 +409,7 @@ For 3 levels:
 
 ::
 
-    # due to reverse order, parenthesis are needed
-    var global_xform = gradparent_matrix + (parent_matrix + child_matrix)
+    var global_xform = gradparent_matrix * parent_matrix * child_matrix
 
 To make a matrix relative to the parent, use the affine inverse (or
 regular inverse for orthonormal matrices).
