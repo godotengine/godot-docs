@@ -69,6 +69,11 @@ Distro-specific oneliners
 |               |             Mesa-libGL-devel alsa-devel libpulse-devel freetype-devel openssl-devel libudev-devel \        |
 |               |             libGLU1                                                                                        | 
 +---------------+------------------------------------------------------------------------------------------------------------+
+| **Solus**     | ::                                                                                                         |
+|               |                                                                                                            |
+|               |     sudo eopkg install scons libxcursor-devel libxinerama-devel libxrandr-devel mesalib libglu alsa-lib \  |
+|               |             pulseaudio freetype2-devel                                                                     |                                  
++---------------+------------------------------------------------------------------------------------------------------------+
 | **Ubuntu**    | ::                                                                                                         |
 |               |                                                                                                            |
 |               |     sudo apt-get install build-essential scons pkg-config libx11-dev libxcursor-dev libxinerama-dev \      |
