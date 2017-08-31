@@ -148,7 +148,7 @@ following command (assuming 64-bit Linux):
 
 ::
 
-    ./bin/godot.x11.tools.64 -doctool doc/base/classes.xml
+    ./bin/godot.x11.tools.64 --doctool doc/base/classes.xml
 
 The doc/base/classes.xml should then be up-to-date with current Godot
 Engine features. You can then check what changed using the
