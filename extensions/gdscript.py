@@ -61,7 +61,7 @@ class GDScriptLexer(RegexLexer):
             (r'\\\n', Text),
             (r'\\', Text),
             (r'(in|and|or|not)\b', Operator.Word),
-            (r'!=|==|<<|>>|&&|\+=|-=|\*=|/=|%=|&=|\|=|\|\||[-~+/*%=<>&^.!|]', Operator),
+            (r'!=|==|<<|>>|&&|\+=|-=|\*=|/=|%=|&=|\|=|\|\||[-~+/*%=<>&^.!|$]', Operator),
             include('keywords'),
             (r'(func)((?:\s|\\\s)+)', bygroups(Keyword, Text), 'funcname'),
             (r'(class)((?:\s|\\\s)+)', bygroups(Keyword, Text), 'classname'),
@@ -90,13 +90,13 @@ class GDScriptLexer(RegexLexer):
                 'do', 'var', 'const', 'extends', 'is', 'export', 'onready', 'tool',
                 'static', 'setget', 'signal', 'breakpoint', 'switch', 'case',
                 'assert', 'break', 'continue', 'elif', 'else', 'for', 'if',
-                'pass', 'return', 'while', 'match'), suffix=r'\b'),
+                'pass', 'return', 'while', 'match', 'master', 'sync', 'slave', 'rpc', 'enum'), suffix=r'\b'),
              Keyword),
         ],
         'builtins': [
             (words((
-                'Color8', 'abs', 'acos', 'asin', 'assert', 'atan', 'atan2',
-                'bytes2var', 'ceil', 'clamp', 'convert', 'cos', 'cosh',
+                'Color8', 'ColorN', 'abs', 'acos', 'asin', 'assert', 'atan', 'atan2',
+                'bytes2var', 'ceil', 'char', 'clamp', 'convert', 'cos', 'cosh',
                 'db2linear', 'decimals', 'dectime', 'deg2rad', 'dict2inst',
                 'ease', 'exp', 'floor', 'fmod', 'fposmod', 'funcref', 'hash',
                 'inst2dict', 'instance_from_id', 'is_inf', 'is_nan', 'lerp',
@@ -109,14 +109,16 @@ class GDScriptLexer(RegexLexer):
                 'weakref', 'yield'),
                 prefix=r'(?<!\.)', suffix=r'\b'),
              Name.Builtin),
-            (r'(?<!\.)(self|false|true'
+            (r'((?<!\.)(self|false|true)|(PI|NAN|INF)'
              r')\b', Name.Builtin.Pseudo),
             (words((
-                'null', 'bool', 'int', 'float', 'String', 'Vector2', 'Vector3',
-                'Matrix32', 'Array', 'ByteArray', 'IntArray', 'FloatArray',
-                'StringArray', 'Vector2Array', 'Vector3Array', 'ColorArray',
-                'Plane', 'Quat', 'AABB', 'Matrix3', 'Transform', 'Color',
-                'Image', 'NodePath', 'RID', 'Object', 'InputEvent', 'Rect2'
+                'bool', 'int', 'float', 'String', 'NodePath'
+                'Vector2', 'Rect2', 'Transform2D',
+                'Vector3', 'Rect3', 'Plane', 'Quat', 'Basis', 'Transform',
+                'Color', "RID", 'Object', 'NodePath', 'Dictionary',
+                'Array', 'PoolByteArray', 'PoolIntArray', 'PoolRealArray',
+                'PoolStringArray', 'PoolVector2Array', 'PoolVector3Array', 'PoolColorArray',
+                'null',
             ), prefix=r'(?<!\.)', suffix=r'\b'), Name.Builtin.Type),
         ],
         'numbers': [
