@@ -357,7 +357,7 @@ Alternatively contains an ``end`` field which is ``position+size``.
 be accessed as an array.
 
 :ref:`Transform2D <class_Transform2D>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3x2 matrix used for 2D transforms.
 
@@ -374,14 +374,14 @@ Quaternion is a datatype used for representing a 3D rotation. It's
 useful for interpolating rotations.
 
 :ref:`Rect3 <class_Rect3>`
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Axis Aligned bounding box (or 3D box) contains 2 vectors fields: ``position``
 and ``size``. Alternatively contains an ``end`` field which is
 ``position+size``.
 
 :ref:`Basis <class_Basis>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3x3 matrix used for 3D rotation and scale. It contains 3 vector fields
 (``x``, ``y`` and ``z``) and can also be accessed as an array of 3D

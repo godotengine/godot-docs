@@ -43,7 +43,7 @@ Example of a file system contents:
     /player/player.gd
     
 project.godot
-----------
+-------------
 
 The project.godot file is the project description file, and it is always found at
 the root of the project. In fact its location defines where the root is. This
