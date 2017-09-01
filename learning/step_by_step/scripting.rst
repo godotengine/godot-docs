@@ -185,10 +185,19 @@ where the script is attached, you can fetch the button as follows:
 
 Next, write a function which will be called when the button is pressed:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _on_button_pressed():  
         get_node("Label").set_text("HELLO!")
+
+ .. code-tab:: csharp
+
+   // i dont know how this is supposed to be in C#
+
+ .. group-tab:: VS
+
+    .. image:: /img/signals.png
 
 Finally, connect the button's "pressed" signal to that callback in _ready(), by
 using :ref:`Object.connect() <class_Object_connect>`.

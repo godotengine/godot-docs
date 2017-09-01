@@ -162,3 +162,6 @@ class GDScriptLexer(RegexLexer):
             (r'\n', String.Single)
         ],
     }
+
+def setup(sphinx):
+    sphinx.add_lexer('gdscript', GDScriptLexer())
