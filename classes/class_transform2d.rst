@@ -35,7 +35,7 @@ Member Functions
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`          | :ref:`get_scale<class_Transform2D_get_scale>`  **(** **)**                                                                                                                       |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`  | :ref:`interpolate_with<class_Transform2D_interpolate_with>`  **(** :ref:`Transform2D<class_transform2d>` m, :ref:`float<class_float>` c  **)**                                   |
+| :ref:`Transform2D<class_transform2d>`  | :ref:`interpolate_with<class_Transform2D_interpolate_with>`  **(** :ref:`Transform2D<class_transform2d>` transform, :ref:`float<class_float>` weight  **)**                      |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform2D<class_transform2d>`  | :ref:`inverse<class_Transform2D_inverse>`  **(** **)**                                                                                                                           |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -109,7 +109,7 @@ Return the rotation (in radians).
 
 .. _class_Transform2D_interpolate_with:
 
-- :ref:`Transform2D<class_transform2d>`  **interpolate_with**  **(** :ref:`Transform2D<class_transform2d>` m, :ref:`float<class_float>` c  **)**
+- :ref:`Transform2D<class_transform2d>`  **interpolate_with**  **(** :ref:`Transform2D<class_transform2d>` transform, :ref:`float<class_float>` weight  **)**
 
 .. _class_Transform2D_inverse:
 

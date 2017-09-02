@@ -19,9 +19,9 @@ Member Functions
 ----------------
 
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`add_icon_item<class_ItemList_add_icon_item>`  **(** :ref:`Texture<class_texture>` icon, :ref:`bool<class_bool>` selectable=true  **)**                              |
+| void                                     | :ref:`add_icon_item<class_ItemList_add_icon_item>`  **(** :ref:`Texture<class_texture>` icon, :ref:`bool<class_bool>` selectable=null  **)**                              |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`add_item<class_ItemList_add_item>`  **(** :ref:`String<class_string>` text, :ref:`Texture<class_texture>` icon=NULL, :ref:`bool<class_bool>` selectable=true  **)** |
+| void                                     | :ref:`add_item<class_ItemList_add_item>`  **(** :ref:`String<class_string>` text, :ref:`Texture<class_texture>` icon=null, :ref:`bool<class_bool>` selectable=null  **)** |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`clear<class_ItemList_clear>`  **(** **)**                                                                                                                           |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -37,7 +37,7 @@ Member Functions
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                | :ref:`get_icon_scale<class_ItemList_get_icon_scale>`  **(** **)** const                                                                                                   |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                    | :ref:`get_item_at_pos<class_ItemList_get_item_at_pos>`  **(** :ref:`Vector2<class_vector2>` pos, :ref:`bool<class_bool>` exact=false  **)** const                         |
+| :ref:`int<class_int>`                    | :ref:`get_item_at_pos<class_ItemList_get_item_at_pos>`  **(** :ref:`Vector2<class_vector2>` pos, :ref:`bool<class_bool>` exact=null  **)** const                          |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                    | :ref:`get_item_count<class_ItemList_get_item_count>`  **(** **)** const                                                                                                   |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -61,7 +61,9 @@ Member Functions
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolIntArray<class_poolintarray>`  | :ref:`get_selected_items<class_ItemList_get_selected_items>`  **(** **)**                                                                                                 |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`              | :ref:`get_v_scroll<class_ItemList_get_v_scroll>`  **(** **)**                                                                                                             |
+| :ref:`VScrollBar<class_vscrollbar>`      | :ref:`get_v_scroll<class_ItemList_get_v_scroll>`  **(** **)**                                                                                                             |
++------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`has_auto_height<class_ItemList_has_auto_height>`  **(** **)** const                                                                                                 |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                  | :ref:`is_item_disabled<class_ItemList_is_item_disabled>`  **(** :ref:`int<class_int>` idx  **)** const                                                                    |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -69,15 +71,17 @@ Member Functions
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                  | :ref:`is_item_tooltip_enabled<class_ItemList_is_item_tooltip_enabled>`  **(** :ref:`int<class_int>` idx  **)** const                                                      |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                    | :ref:`is_same_column_width<class_ItemList_is_same_column_width>`  **(** **)** const                                                                                       |
+| :ref:`bool<class_bool>`                  | :ref:`is_same_column_width<class_ItemList_is_same_column_width>`  **(** **)** const                                                                                       |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                  | :ref:`is_selected<class_ItemList_is_selected>`  **(** :ref:`int<class_int>` idx  **)** const                                                                              |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`remove_item<class_ItemList_remove_item>`  **(** :ref:`int<class_int>` idx  **)**                                                                                    |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`select<class_ItemList_select>`  **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` single=true  **)**                                                         |
+| void                                     | :ref:`select<class_ItemList_select>`  **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` single=null  **)**                                                         |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_allow_rmb_select<class_ItemList_set_allow_rmb_select>`  **(** :ref:`bool<class_bool>` allow  **)**                                                              |
++------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_auto_height<class_ItemList_set_auto_height>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                       |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_fixed_column_width<class_ItemList_set_fixed_column_width>`  **(** :ref:`int<class_int>` width  **)**                                                            |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -142,6 +146,7 @@ Member Variables
 ----------------
 
 - :ref:`bool<class_bool>` **allow_rmb_select**
+- :ref:`bool<class_bool>` **auto_height**
 - :ref:`int<class_int>` **fixed_column_width**
 - :ref:`int<class_int>` **icon_mode**
 - :ref:`float<class_float>` **icon_scale**
@@ -175,13 +180,13 @@ Member Function Description
 
 .. _class_ItemList_add_icon_item:
 
-- void  **add_icon_item**  **(** :ref:`Texture<class_texture>` icon, :ref:`bool<class_bool>` selectable=true  **)**
+- void  **add_icon_item**  **(** :ref:`Texture<class_texture>` icon, :ref:`bool<class_bool>` selectable=null  **)**
 
 Adds an item to the item list with no text, only an icon.
 
 .. _class_ItemList_add_item:
 
-- void  **add_item**  **(** :ref:`String<class_string>` text, :ref:`Texture<class_texture>` icon=NULL, :ref:`bool<class_bool>` selectable=true  **)**
+- void  **add_item**  **(** :ref:`String<class_string>` text, :ref:`Texture<class_texture>` icon=null, :ref:`bool<class_bool>` selectable=null  **)**
 
 Adds an item to the item list with specified text.  Specify an icon of null for a list item with no icon.
 
@@ -225,7 +230,7 @@ If column size has been fixed to a value, return that value.
 
 .. _class_ItemList_get_item_at_pos:
 
-- :ref:`int<class_int>`  **get_item_at_pos**  **(** :ref:`Vector2<class_vector2>` pos, :ref:`bool<class_bool>` exact=false  **)** const
+- :ref:`int<class_int>`  **get_item_at_pos**  **(** :ref:`Vector2<class_vector2>` pos, :ref:`bool<class_bool>` exact=null  **)** const
 
 Given a position within the control return the item (if any) at that point.
 
@@ -287,9 +292,13 @@ Returns the list of selected indexes.
 
 .. _class_ItemList_get_v_scroll:
 
-- :ref:`Object<class_object>`  **get_v_scroll**  **(** **)**
+- :ref:`VScrollBar<class_vscrollbar>`  **get_v_scroll**  **(** **)**
 
 Returns the current vertical scroll bar for the List.
+
+.. _class_ItemList_has_auto_height:
+
+- :ref:`bool<class_bool>`  **has_auto_height**  **(** **)** const
 
 .. _class_ItemList_is_item_disabled:
 
@@ -311,7 +320,7 @@ Returns whether the tooptip is enabled for specified item index.
 
 .. _class_ItemList_is_same_column_width:
 
-- :ref:`int<class_int>`  **is_same_column_width**  **(** **)** const
+- :ref:`bool<class_bool>`  **is_same_column_width**  **(** **)** const
 
 Returns whether or not all columns of the list are of the same size.
 
@@ -329,7 +338,7 @@ Remove item at specified index from the list.
 
 .. _class_ItemList_select:
 
-- void  **select**  **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` single=true  **)**
+- void  **select**  **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` single=null  **)**
 
 Select the item at the specified index.
 
@@ -340,6 +349,10 @@ Note:  This method does not trigger the item selection signal.
 - void  **set_allow_rmb_select**  **(** :ref:`bool<class_bool>` allow  **)**
 
 Allow (or disallow) selection of (selectable) items in the list using right mouse button.
+
+.. _class_ItemList_set_auto_height:
+
+- void  **set_auto_height**  **(** :ref:`bool<class_bool>` enable  **)**
 
 .. _class_ItemList_set_fixed_column_width:
 

@@ -182,7 +182,7 @@ Get an unsigned byte from the stream.
 
 - :ref:`String<class_string>`  **get_utf8_string**  **(** :ref:`int<class_int>` bytes  **)**
 
-Get an utf8 string with byte-length "bytes" from the stream (this decodes the string sent as utf8).
+Get a utf8 string with byte-length "bytes" from the stream (this decodes the string sent as utf8).
 
 .. _class_StreamPeer_get_var:
 

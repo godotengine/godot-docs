@@ -43,7 +43,7 @@ Member Functions
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`get_endian_swap<class_File_get_endian_swap>`  **(** **)**                                                                                                                         |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Error                                          | :ref:`get_error<class_File_get_error>`  **(** **)** const                                                                                                                               |
+| :ref:`int<class_int>`                          | :ref:`get_error<class_File_get_error>`  **(** **)** const                                                                                                                               |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`get_float<class_File_get_float>`  **(** **)** const                                                                                                                               |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -63,13 +63,13 @@ Member Functions
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                    | :ref:`get_sha256<class_File_get_sha256>`  **(** :ref:`String<class_string>` path  **)** const                                                                                           |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`get_var<class_File_get_var>`  **(** **)** const                                                                                                                                   |
+| :ref:`Variant<class_variant>`                  | :ref:`get_var<class_File_get_var>`  **(** **)** const                                                                                                                                   |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`is_open<class_File_is_open>`  **(** **)** const                                                                                                                                   |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`open<class_File_open>`  **(** :ref:`String<class_string>` path, :ref:`int<class_int>` flags  **)**                                                                                |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`open_compressed<class_File_open_compressed>`  **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`int<class_int>` compression_mode=0  **)**           |
+| :ref:`int<class_int>`                          | :ref:`open_compressed<class_File_open_compressed>`  **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`int<class_int>` compression_mode=null  **)**        |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`open_encrypted<class_File_open_encrypted>`  **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`PoolByteArray<class_poolbytearray>` key  **)**        |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -217,7 +217,7 @@ Get whether endian swap is enabled for this file.
 
 .. _class_File_get_error:
 
-- Error  **get_error**  **(** **)** const
+- :ref:`int<class_int>`  **get_error**  **(** **)** const
 
 Get the last error that happened when trying to perform operations. Compare with the ``ERR_FILE\_\*`` constants from :ref:`@Global Scope<class_@global scope>`.
 
@@ -275,7 +275,7 @@ Return a sha256 String representing the file at the given path or an empty :ref:
 
 .. _class_File_get_var:
 
-- void  **get_var**  **(** **)** const
+- :ref:`Variant<class_variant>`  **get_var**  **(** **)** const
 
 Get the next Variant value from the file.
 
@@ -293,7 +293,7 @@ Open the file for writing or reading, depending on the flags.
 
 .. _class_File_open_compressed:
 
-- :ref:`int<class_int>`  **open_compressed**  **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`int<class_int>` compression_mode=0  **)**
+- :ref:`int<class_int>`  **open_compressed**  **(** :ref:`String<class_string>` path, :ref:`int<class_int>` mode_flags, :ref:`int<class_int>` compression_mode=null  **)**
 
 Open a compressed file for reading or writing. The compression_mode can be set as one of the COMPRESSION\_\* constants.
 

@@ -18,15 +18,15 @@ Brief Description
 Member Functions
 ----------------
 
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`  | :ref:`get_audio_stream<class_AudioStreamRandomPitch_get_audio_stream>`  **(** **)** const                               |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`    | :ref:`get_random_pitch<class_AudioStreamRandomPitch_get_random_pitch>`  **(** **)** const                               |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_audio_stream<class_AudioStreamRandomPitch_set_audio_stream>`  **(** :ref:`Object<class_object>` stream  **)** |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_random_pitch<class_AudioStreamRandomPitch_set_random_pitch>`  **(** :ref:`float<class_float>` scale  **)**    |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`AudioStream<class_audiostream>`  | :ref:`get_audio_stream<class_AudioStreamRandomPitch_get_audio_stream>`  **(** **)** const                                         |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_random_pitch<class_AudioStreamRandomPitch_get_random_pitch>`  **(** **)** const                                         |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_audio_stream<class_AudioStreamRandomPitch_set_audio_stream>`  **(** :ref:`AudioStream<class_audiostream>` stream  **)** |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_random_pitch<class_AudioStreamRandomPitch_set_random_pitch>`  **(** :ref:`float<class_float>` scale  **)**              |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -39,7 +39,7 @@ Member Function Description
 
 .. _class_AudioStreamRandomPitch_get_audio_stream:
 
-- :ref:`Object<class_object>`  **get_audio_stream**  **(** **)** const
+- :ref:`AudioStream<class_audiostream>`  **get_audio_stream**  **(** **)** const
 
 .. _class_AudioStreamRandomPitch_get_random_pitch:
 
@@ -47,7 +47,7 @@ Member Function Description
 
 .. _class_AudioStreamRandomPitch_set_audio_stream:
 
-- void  **set_audio_stream**  **(** :ref:`Object<class_object>` stream  **)**
+- void  **set_audio_stream**  **(** :ref:`AudioStream<class_audiostream>` stream  **)**
 
 .. _class_AudioStreamRandomPitch_set_random_pitch:
 

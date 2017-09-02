@@ -20,16 +20,27 @@ Abstract base :ref:`Resource<class_resource>` for coloring and shading geometry.
 Member Functions
 ----------------
 
-+----------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`Material<class_material>`  | :ref:`get_next_pass<class_Material_get_next_pass>`  **(** **)** const                                      |
-+----------------------------------+------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_next_pass<class_Material_set_next_pass>`  **(** :ref:`Material<class_material>` next_pass  **)** |
-+----------------------------------+------------------------------------------------------------------------------------------------------------+
++----------------------------------+-------------------------------------------------------------------------------------------------------------+
+| :ref:`Material<class_material>`  | :ref:`get_next_pass<class_Material_get_next_pass>`  **(** **)** const                                       |
++----------------------------------+-------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_render_priority<class_Material_get_render_priority>`  **(** **)** const                           |
++----------------------------------+-------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_next_pass<class_Material_set_next_pass>`  **(** :ref:`Material<class_material>` next_pass  **)**  |
++----------------------------------+-------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_render_priority<class_Material_set_render_priority>`  **(** :ref:`int<class_int>` priority  **)** |
++----------------------------------+-------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
 
 - :ref:`Material<class_material>` **next_pass**
+- :ref:`int<class_int>` **render_priority**
+
+Numeric Constants
+-----------------
+
+- **RENDER_PRIORITY_MAX** = **127**
+- **RENDER_PRIORITY_MIN** = **-128**
 
 Description
 -----------
@@ -43,8 +54,16 @@ Member Function Description
 
 - :ref:`Material<class_material>`  **get_next_pass**  **(** **)** const
 
+.. _class_Material_get_render_priority:
+
+- :ref:`int<class_int>`  **get_render_priority**  **(** **)** const
+
 .. _class_Material_set_next_pass:
 
 - void  **set_next_pass**  **(** :ref:`Material<class_material>` next_pass  **)**
+
+.. _class_Material_set_render_priority:
+
+- void  **set_render_priority**  **(** :ref:`int<class_int>` priority  **)**
 
 

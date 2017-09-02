@@ -19,6 +19,8 @@ Member Functions
 ----------------
 
 +--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                          | :ref:`get_antialiased<class_Polygon2D_get_antialiased>`  **(** **)** const                                                          |
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_color>`                        | :ref:`get_color<class_Polygon2D_get_color>`  **(** **)** const                                                                      |
 +--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                          | :ref:`get_invert<class_Polygon2D_get_invert>`  **(** **)** const                                                                    |
@@ -29,7 +31,7 @@ Member Functions
 +--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolVector2Array<class_poolvector2array>`  | :ref:`get_polygon<class_Polygon2D_get_polygon>`  **(** **)** const                                                                  |
 +--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`                      | :ref:`get_texture<class_Polygon2D_get_texture>`  **(** **)** const                                                                  |
+| :ref:`Texture<class_texture>`                    | :ref:`get_texture<class_Polygon2D_get_texture>`  **(** **)** const                                                                  |
 +--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`                    | :ref:`get_texture_offset<class_Polygon2D_get_texture_offset>`  **(** **)** const                                                    |
 +--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
@@ -41,6 +43,8 @@ Member Functions
 +--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolColorArray<class_poolcolorarray>`      | :ref:`get_vertex_colors<class_Polygon2D_get_vertex_colors>`  **(** **)** const                                                      |
 +--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_antialiased<class_Polygon2D_set_antialiased>`  **(** :ref:`bool<class_bool>` antialiased  **)**                           |
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`set_color<class_Polygon2D_set_color>`  **(** :ref:`Color<class_color>` color  **)**                                           |
 +--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`set_invert<class_Polygon2D_set_invert>`  **(** :ref:`bool<class_bool>` invert  **)**                                          |
@@ -51,7 +55,7 @@ Member Functions
 +--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`set_polygon<class_Polygon2D_set_polygon>`  **(** :ref:`PoolVector2Array<class_poolvector2array>` polygon  **)**               |
 +--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_texture<class_Polygon2D_set_texture>`  **(** :ref:`Object<class_object>` texture  **)**                                   |
+| void                                             | :ref:`set_texture<class_Polygon2D_set_texture>`  **(** :ref:`Texture<class_texture>` texture  **)**                                 |
 +--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`set_texture_offset<class_Polygon2D_set_texture_offset>`  **(** :ref:`Vector2<class_vector2>` texture_offset  **)**            |
 +--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
@@ -67,6 +71,7 @@ Member Functions
 Member Variables
 ----------------
 
+- :ref:`bool<class_bool>` **antialiased**
 - :ref:`Color<class_color>` **color**
 - :ref:`float<class_float>` **invert_border**
 - :ref:`bool<class_bool>` **invert_enable**
@@ -86,6 +91,10 @@ A Polygon2D is defined by a set of n vertices connected together by line segment
 
 Member Function Description
 ---------------------------
+
+.. _class_Polygon2D_get_antialiased:
+
+- :ref:`bool<class_bool>`  **get_antialiased**  **(** **)** const
 
 .. _class_Polygon2D_get_color:
 
@@ -119,7 +128,7 @@ Return the set of vertices that defines this polygon.
 
 .. _class_Polygon2D_get_texture:
 
-- :ref:`Object<class_object>`  **get_texture**  **(** **)** const
+- :ref:`Texture<class_texture>`  **get_texture**  **(** **)** const
 
 Return the polygon texture
 
@@ -153,6 +162,10 @@ Return the texture coordinates associated with every vertex of the polygon.
 
 Return the list of vertex colors.
 
+.. _class_Polygon2D_set_antialiased:
+
+- void  **set_antialiased**  **(** :ref:`bool<class_bool>` antialiased  **)**
+
 .. _class_Polygon2D_set_color:
 
 - void  **set_color**  **(** :ref:`Color<class_color>` color  **)**
@@ -185,9 +198,7 @@ Define the set of vertices that will represent the polygon.
 
 .. _class_Polygon2D_set_texture:
 
-- void  **set_texture**  **(** :ref:`Object<class_object>` texture  **)**
-
-Set the polygon texture.
+- void  **set_texture**  **(** :ref:`Texture<class_texture>` texture  **)**
 
 .. _class_Polygon2D_set_texture_offset:
 

@@ -19,9 +19,9 @@ Member Functions
 ----------------
 
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Error                        | :ref:`change_dir<class_Directory_change_dir>`  **(** :ref:`String<class_string>` todir  **)**                                                                  |
+| :ref:`int<class_int>`        | :ref:`change_dir<class_Directory_change_dir>`  **(** :ref:`String<class_string>` todir  **)**                                                                  |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Error                        | :ref:`copy<class_Directory_copy>`  **(** :ref:`String<class_string>` from, :ref:`String<class_string>` to  **)**                                               |
+| :ref:`int<class_int>`        | :ref:`copy<class_Directory_copy>`  **(** :ref:`String<class_string>` from, :ref:`String<class_string>` to  **)**                                               |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`      | :ref:`current_is_dir<class_Directory_current_is_dir>`  **(** **)** const                                                                                       |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -45,15 +45,15 @@ Member Functions
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`list_dir_end<class_Directory_list_dir_end>`  **(** **)**                                                                                                 |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Error                        | :ref:`make_dir<class_Directory_make_dir>`  **(** :ref:`String<class_string>` path  **)**                                                                       |
+| :ref:`int<class_int>`        | :ref:`make_dir<class_Directory_make_dir>`  **(** :ref:`String<class_string>` path  **)**                                                                       |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Error                        | :ref:`make_dir_recursive<class_Directory_make_dir_recursive>`  **(** :ref:`String<class_string>` path  **)**                                                   |
+| :ref:`int<class_int>`        | :ref:`make_dir_recursive<class_Directory_make_dir_recursive>`  **(** :ref:`String<class_string>` path  **)**                                                   |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Error                        | :ref:`open<class_Directory_open>`  **(** :ref:`String<class_string>` path  **)**                                                                               |
+| :ref:`int<class_int>`        | :ref:`open<class_Directory_open>`  **(** :ref:`String<class_string>` path  **)**                                                                               |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Error                        | :ref:`remove<class_Directory_remove>`  **(** :ref:`String<class_string>` path  **)**                                                                           |
+| :ref:`int<class_int>`        | :ref:`remove<class_Directory_remove>`  **(** :ref:`String<class_string>` path  **)**                                                                           |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Error                        | :ref:`rename<class_Directory_rename>`  **(** :ref:`String<class_string>` from, :ref:`String<class_string>` to  **)**                                           |
+| :ref:`int<class_int>`        | :ref:`rename<class_Directory_rename>`  **(** :ref:`String<class_string>` from, :ref:`String<class_string>` to  **)**                                           |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -84,7 +84,7 @@ Member Function Description
 
 .. _class_Directory_change_dir:
 
-- Error  **change_dir**  **(** :ref:`String<class_string>` todir  **)**
+- :ref:`int<class_int>`  **change_dir**  **(** :ref:`String<class_string>` todir  **)**
 
 Change the currently opened directory to the one passed as an argument. The argument can be relative to the current directory (e.g. ``newdir`` or ``../newdir``), or an absolute path (e.g. ``/tmp/newdir`` or ``res://somedir/newdir``).
 
@@ -92,7 +92,7 @@ The method returns one of the error code constants defined in :ref:`@Global Scop
 
 .. _class_Directory_copy:
 
-- Error  **copy**  **(** :ref:`String<class_string>` from, :ref:`String<class_string>` to  **)**
+- :ref:`int<class_int>`  **copy**  **(** :ref:`String<class_string>` from, :ref:`String<class_string>` to  **)**
 
 Copy the *from* file to the *to* destination. Both arguments should be paths to files, either relative or absolute. If the destination file exists and is not access-protected, it will be overwritten.
 
@@ -170,7 +170,7 @@ Close the current stream opened with :ref:`list_dir_begin<class_Directory_list_d
 
 .. _class_Directory_make_dir:
 
-- Error  **make_dir**  **(** :ref:`String<class_string>` path  **)**
+- :ref:`int<class_int>`  **make_dir**  **(** :ref:`String<class_string>` path  **)**
 
 Create a directory. The argument can be relative to the current directory, or an absolute path. The target directory should be placed in an already existing directory (to create the full path recursively, see :ref:`make_dir_recursive<class_Directory_make_dir_recursive>`).
 
@@ -178,7 +178,7 @@ The method returns one of the error code constants defined in :ref:`@Global Scop
 
 .. _class_Directory_make_dir_recursive:
 
-- Error  **make_dir_recursive**  **(** :ref:`String<class_string>` path  **)**
+- :ref:`int<class_int>`  **make_dir_recursive**  **(** :ref:`String<class_string>` path  **)**
 
 Create a target directory and all necessary intermediate directories in its path, by calling :ref:`make_dir<class_Directory_make_dir>` recursively. The argument can be relative to the current directory, or an absolute path.
 
@@ -186,7 +186,7 @@ Return one of the error code constants defined in :ref:`@Global Scope<class_@glo
 
 .. _class_Directory_open:
 
-- Error  **open**  **(** :ref:`String<class_string>` path  **)**
+- :ref:`int<class_int>`  **open**  **(** :ref:`String<class_string>` path  **)**
 
 Open an existing directory of the filesystem. The *path* argument can be within the project tree (``res://folder``), the user directory (``user://folder``) or an absolute path of the user filesystem (e.g. ``/tmp/folder`` or ``C:\tmp\folder``).
 
@@ -194,7 +194,7 @@ The method returns one of the error code constants defined in :ref:`@Global Scop
 
 .. _class_Directory_remove:
 
-- Error  **remove**  **(** :ref:`String<class_string>` path  **)**
+- :ref:`int<class_int>`  **remove**  **(** :ref:`String<class_string>` path  **)**
 
 Delete the target file or an empty directory. The argument can be relative to the current directory, or an absolute path. If the target directory is not empty, the operation will fail.
 
@@ -202,7 +202,7 @@ Return one of the error code constants defined in :ref:`@Global Scope<class_@glo
 
 .. _class_Directory_rename:
 
-- Error  **rename**  **(** :ref:`String<class_string>` from, :ref:`String<class_string>` to  **)**
+- :ref:`int<class_int>`  **rename**  **(** :ref:`String<class_string>` from, :ref:`String<class_string>` to  **)**
 
 Rename (move) the *from* file to the *to* destination. Both arguments should be paths to files, either relative or absolute. If the destination file exists and is not access-protected, it will be overwritten.
 

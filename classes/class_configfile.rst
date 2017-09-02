@@ -25,15 +25,15 @@ Member Functions
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_sections<class_ConfigFile_get_sections>`  **(** **)** const                                                                                                             |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`                  | :ref:`get_value<class_ConfigFile_get_value>`  **(** :ref:`String<class_string>` section, :ref:`String<class_string>` key, :ref:`Variant<class_variant>` default=NULL  **)** const |
+| :ref:`Variant<class_variant>`                  | :ref:`get_value<class_ConfigFile_get_value>`  **(** :ref:`String<class_string>` section, :ref:`String<class_string>` key, :ref:`Variant<class_variant>` default=null  **)** const |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`has_section<class_ConfigFile_has_section>`  **(** :ref:`String<class_string>` section  **)** const                                                                          |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`has_section_key<class_ConfigFile_has_section_key>`  **(** :ref:`String<class_string>` section, :ref:`String<class_string>` key  **)** const                                 |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Error                                          | :ref:`load<class_ConfigFile_load>`  **(** :ref:`String<class_string>` path  **)**                                                                                                 |
+| :ref:`int<class_int>`                          | :ref:`load<class_ConfigFile_load>`  **(** :ref:`String<class_string>` path  **)**                                                                                                 |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Error                                          | :ref:`save<class_ConfigFile_save>`  **(** :ref:`String<class_string>` path  **)**                                                                                                 |
+| :ref:`int<class_int>`                          | :ref:`save<class_ConfigFile_save>`  **(** :ref:`String<class_string>` path  **)**                                                                                                 |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_value<class_ConfigFile_set_value>`  **(** :ref:`String<class_string>` section, :ref:`String<class_string>` key, :ref:`Variant<class_variant>` value  **)**              |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -79,7 +79,7 @@ Return an array of all defined section identifiers.
 
 .. _class_ConfigFile_get_value:
 
-- :ref:`Variant<class_variant>`  **get_value**  **(** :ref:`String<class_string>` section, :ref:`String<class_string>` key, :ref:`Variant<class_variant>` default=NULL  **)** const
+- :ref:`Variant<class_variant>`  **get_value**  **(** :ref:`String<class_string>` section, :ref:`String<class_string>` key, :ref:`Variant<class_variant>` default=null  **)** const
 
 Return the current value for the specified section and key. If the section and/or the key do not exist, the method returns the value of the optional *default* argument (and thus ``NULL`` if not specified).
 
@@ -97,13 +97,13 @@ Check if the specified section-key pair exists.
 
 .. _class_ConfigFile_load:
 
-- Error  **load**  **(** :ref:`String<class_string>` path  **)**
+- :ref:`int<class_int>`  **load**  **(** :ref:`String<class_string>` path  **)**
 
 Load the config file specified as a parameter. The file's contents are parsed and loaded in the ConfigFile object from which the method was called. The return value is one of the OK, FAILED or ERR\_\* constants listed in :ref:`@Global Scope<class_@global scope>` (if the load was successful, it returns OK).
 
 .. _class_ConfigFile_save:
 
-- Error  **save**  **(** :ref:`String<class_string>` path  **)**
+- :ref:`int<class_int>`  **save**  **(** :ref:`String<class_string>` path  **)**
 
 Save the contents of the ConfigFile object to the file specified as a parameter. The output file uses an INI-style structure.
 

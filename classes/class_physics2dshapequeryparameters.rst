@@ -43,7 +43,7 @@ Member Functions
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`set_object_type_mask<class_Physics2DShapeQueryParameters_set_object_type_mask>`  **(** :ref:`int<class_int>` object_type_mask  **)** |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_shape<class_Physics2DShapeQueryParameters_set_shape>`  **(** :ref:`Shape2D<class_shape2d>` shape  **)**                          |
+| void                                   | :ref:`set_shape<class_Physics2DShapeQueryParameters_set_shape>`  **(** :ref:`Resource<class_resource>` shape  **)**                        |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`set_shape_rid<class_Physics2DShapeQueryParameters_set_shape_rid>`  **(** :ref:`RID<class_rid>` shape  **)**                          |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -132,7 +132,7 @@ Set the type of object the shape belongs to (see Physics2DDirectSpaceState.TYPE_
 
 .. _class_Physics2DShapeQueryParameters_set_shape:
 
-- void  **set_shape**  **(** :ref:`Shape2D<class_shape2d>` shape  **)**
+- void  **set_shape**  **(** :ref:`Resource<class_resource>` shape  **)**
 
 Set the :ref:`Shape2D<class_shape2d>` that will be used for collision/intersection queries.
 

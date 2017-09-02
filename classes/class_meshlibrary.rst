@@ -31,7 +31,9 @@ Member Functions
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`NavigationMesh<class_navigationmesh>`  | :ref:`get_item_navmesh<class_MeshLibrary_get_item_navmesh>`  **(** :ref:`int<class_int>` id  **)** const                                                |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Shape<class_shape>`                    | :ref:`get_item_shape<class_MeshLibrary_get_item_shape>`  **(** :ref:`int<class_int>` id  **)** const                                                    |
+| :ref:`Texture<class_texture>`                | :ref:`get_item_preview<class_MeshLibrary_get_item_preview>`  **(** :ref:`int<class_int>` id  **)** const                                                |
++----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`                    | :ref:`get_item_shapes<class_MeshLibrary_get_item_shapes>`  **(** :ref:`int<class_int>` id  **)** const                                                  |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                        | :ref:`get_last_unused_item_id<class_MeshLibrary_get_last_unused_item_id>`  **(** **)** const                                                            |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -43,7 +45,9 @@ Member Functions
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`set_item_navmesh<class_MeshLibrary_set_item_navmesh>`  **(** :ref:`int<class_int>` id, :ref:`NavigationMesh<class_navigationmesh>` navmesh  **)** |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set_item_shape<class_MeshLibrary_set_item_shape>`  **(** :ref:`int<class_int>` id, :ref:`Shape<class_shape>` shape  **)**                         |
+| void                                         | :ref:`set_item_preview<class_MeshLibrary_set_item_preview>`  **(** :ref:`int<class_int>` id, :ref:`Texture<class_texture>` texture  **)**               |
++----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                         | :ref:`set_item_shapes<class_MeshLibrary_set_item_shapes>`  **(** :ref:`int<class_int>` id, :ref:`Array<class_array>` shapes  **)**                      |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -88,9 +92,13 @@ Return the name of the item.
 
 - :ref:`NavigationMesh<class_navigationmesh>`  **get_item_navmesh**  **(** :ref:`int<class_int>` id  **)** const
 
-.. _class_MeshLibrary_get_item_shape:
+.. _class_MeshLibrary_get_item_preview:
 
-- :ref:`Shape<class_shape>`  **get_item_shape**  **(** :ref:`int<class_int>` id  **)** const
+- :ref:`Texture<class_texture>`  **get_item_preview**  **(** :ref:`int<class_int>` id  **)** const
+
+.. _class_MeshLibrary_get_item_shapes:
+
+- :ref:`Array<class_array>`  **get_item_shapes**  **(** :ref:`int<class_int>` id  **)** const
 
 .. _class_MeshLibrary_get_last_unused_item_id:
 
@@ -120,8 +128,12 @@ Set the name of the item.
 
 - void  **set_item_navmesh**  **(** :ref:`int<class_int>` id, :ref:`NavigationMesh<class_navigationmesh>` navmesh  **)**
 
-.. _class_MeshLibrary_set_item_shape:
+.. _class_MeshLibrary_set_item_preview:
 
-- void  **set_item_shape**  **(** :ref:`int<class_int>` id, :ref:`Shape<class_shape>` shape  **)**
+- void  **set_item_preview**  **(** :ref:`int<class_int>` id, :ref:`Texture<class_texture>` texture  **)**
+
+.. _class_MeshLibrary_set_item_shapes:
+
+- void  **set_item_shapes**  **(** :ref:`int<class_int>` id, :ref:`Array<class_array>` shapes  **)**
 
 

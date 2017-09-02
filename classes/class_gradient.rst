@@ -47,8 +47,8 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`float<class_float>` **colors**
-- :ref:`float<class_float>` **offsets**
+- :ref:`PoolColorArray<class_poolcolorarray>` **colors**
+- :ref:`PoolRealArray<class_poolrealarray>` **offsets**
 
 Description
 -----------

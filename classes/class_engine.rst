@@ -19,8 +19,6 @@ Member Functions
 ----------------
 
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`          | :ref:`get_custom_level<class_Engine_get_custom_level>`  **(** **)** const                                                          |
-+--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                | :ref:`get_frames_drawn<class_Engine_get_frames_drawn>`  **(** **)**                                                                |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`            | :ref:`get_frames_per_second<class_Engine_get_frames_per_second>`  **(** **)** const                                                |
@@ -35,7 +33,11 @@ Member Functions
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_dictionary>`  | :ref:`get_version_info<class_Engine_get_version_info>`  **(** **)** const                                                          |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`              | :ref:`is_editor_hint<class_Engine_is_editor_hint>`  **(** **)** const                                                              |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`              | :ref:`is_in_fixed_frame<class_Engine_is_in_fixed_frame>`  **(** **)** const                                                        |
++--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| void                                 | :ref:`set_editor_hint<class_Engine_set_editor_hint>`  **(** :ref:`bool<class_bool>` enabled  **)**                                 |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | void                                 | :ref:`set_iterations_per_second<class_Engine_set_iterations_per_second>`  **(** :ref:`int<class_int>` iterations_per_second  **)** |
 +--------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
@@ -46,12 +48,6 @@ Member Functions
 
 Member Function Description
 ---------------------------
-
-.. _class_Engine_get_custom_level:
-
-- :ref:`String<class_string>`  **get_custom_level**  **(** **)** const
-
-Returns the value of the commandline argument "-level".
 
 .. _class_Engine_get_frames_drawn:
 
@@ -105,9 +101,17 @@ Returns the current engine version information in a Dictionary.
 
 "string"   - major + minor + patch + status + revision in a single String
 
+.. _class_Engine_is_editor_hint:
+
+- :ref:`bool<class_bool>`  **is_editor_hint**  **(** **)** const
+
 .. _class_Engine_is_in_fixed_frame:
 
 - :ref:`bool<class_bool>`  **is_in_fixed_frame**  **(** **)** const
+
+.. _class_Engine_set_editor_hint:
+
+- void  **set_editor_hint**  **(** :ref:`bool<class_bool>` enabled  **)**
 
 .. _class_Engine_set_iterations_per_second:
 

@@ -105,7 +105,7 @@ Member Functions
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_weight<class_RigidBody2D_set_weight>`  **(** :ref:`float<class_float>` weight  **)**                                                                                                                             |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`test_motion<class_RigidBody2D_test_motion>`  **(** :ref:`Vector2<class_vector2>` motion, :ref:`float<class_float>` margin=0.08, :ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>` result=NULL  **)** |
+| :ref:`bool<class_bool>`        | :ref:`test_motion<class_RigidBody2D_test_motion>`  **(** :ref:`Vector2<class_vector2>` motion, :ref:`float<class_float>` margin=0.08, :ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>` result=null  **)** |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -438,7 +438,7 @@ Set the body weight given standard earth-weight (gravity 9.8). Not really useful
 
 .. _class_RigidBody2D_test_motion:
 
-- :ref:`bool<class_bool>`  **test_motion**  **(** :ref:`Vector2<class_vector2>` motion, :ref:`float<class_float>` margin=0.08, :ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>` result=NULL  **)**
+- :ref:`bool<class_bool>`  **test_motion**  **(** :ref:`Vector2<class_vector2>` motion, :ref:`float<class_float>` margin=0.08, :ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>` result=null  **)**
 
 Return whether the body would collide, if it tried to move in the given vector. This method allows two extra parameters: A margin, which increases slightly the size of the shapes involved in the collision detection, and an object of type :ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>`, which will store additional information about the collision (should there be one).
 

@@ -27,7 +27,7 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`String<class_string>` **constant**
+- :ref:`String<class_string>` **constant/constant**
 
 Member Function Description
 ---------------------------

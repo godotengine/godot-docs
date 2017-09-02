@@ -34,11 +34,14 @@ Member Variables
 Numeric Constants
 -----------------
 
-- **RADIANCE_SIZE_256** = **0**
-- **RADIANCE_SIZE_512** = **1**
-- **RADIANCE_SIZE_1024** = **2**
-- **RADIANCE_SIZE_2048** = **3**
-- **RADIANCE_SIZE_MAX** = **4**
+- **RADIANCE_SIZE_32** = **0**
+- **RADIANCE_SIZE_64** = **1**
+- **RADIANCE_SIZE_128** = **2**
+- **RADIANCE_SIZE_256** = **3**
+- **RADIANCE_SIZE_512** = **4**
+- **RADIANCE_SIZE_1024** = **5**
+- **RADIANCE_SIZE_2048** = **6**
+- **RADIANCE_SIZE_MAX** = **7**
 
 Member Function Description
 ---------------------------

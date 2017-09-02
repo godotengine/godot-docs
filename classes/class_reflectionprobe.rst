@@ -74,14 +74,14 @@ Member Variables
 - :ref:`bool<class_bool>` **box_projection**
 - :ref:`int<class_int>` **cull_mask**
 - :ref:`bool<class_bool>` **enable_shadows**
-- :ref:`Vector2<class_vector2>` **extents**
+- :ref:`Vector3<class_vector3>` **extents**
 - :ref:`float<class_float>` **intensity**
 - :ref:`Color<class_color>` **interior_ambient_color**
 - :ref:`float<class_float>` **interior_ambient_contrib**
 - :ref:`float<class_float>` **interior_ambient_energy**
 - :ref:`bool<class_bool>` **interior_enable**
 - :ref:`float<class_float>` **max_distance**
-- :ref:`Vector2<class_vector2>` **origin_offset**
+- :ref:`Vector3<class_vector3>` **origin_offset**
 - :ref:`int<class_int>` **update_mode**
 
 Numeric Constants

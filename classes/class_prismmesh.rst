@@ -44,7 +44,7 @@ Member Variables
 ----------------
 
 - :ref:`float<class_float>` **left_to_right**
-- :ref:`Vector2<class_vector2>` **size**
+- :ref:`Vector3<class_vector3>` **size**
 - :ref:`int<class_int>` **subdivide_depth**
 - :ref:`int<class_int>` **subdivide_height**
 - :ref:`int<class_int>` **subdivide_width**

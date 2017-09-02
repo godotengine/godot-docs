@@ -18,33 +18,33 @@ Custom gizmo for editing Spatial objects.
 Member Functions
 ----------------
 
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`add_collision_segments<class_EditorSpatialGizmo_add_collision_segments>`  **(** :ref:`PoolVector3Array<class_poolvector3array>` segments  **)**                                                            |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`add_collision_triangles<class_EditorSpatialGizmo_add_collision_triangles>`  **(** :ref:`TriangleMesh<class_trianglemesh>` triangles  **)**                                                                 |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`add_handles<class_EditorSpatialGizmo_add_handles>`  **(** :ref:`PoolVector3Array<class_poolvector3array>` handles, :ref:`bool<class_bool>` billboard=false, :ref:`bool<class_bool>` secondary=false  **)** |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`add_lines<class_EditorSpatialGizmo_add_lines>`  **(** :ref:`PoolVector3Array<class_poolvector3array>` lines, :ref:`Material<class_material>` material, :ref:`bool<class_bool>` billboard=false  **)**      |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`add_mesh<class_EditorSpatialGizmo_add_mesh>`  **(** :ref:`Mesh<class_mesh>` mesh, :ref:`bool<class_bool>` billboard=false, :ref:`RID<class_rid>` skeleton=[RID]  **)**                                     |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`add_unscaled_billboard<class_EditorSpatialGizmo_add_unscaled_billboard>`  **(** :ref:`Material<class_material>` material, :ref:`float<class_float>` default_scale=1  **)**                                 |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`clear<class_EditorSpatialGizmo_clear>`  **(** **)**                                                                                                                                                        |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`commit_handle<class_EditorSpatialGizmo_commit_handle>`  **(** :ref:`int<class_int>` index, :ref:`Variant<class_variant>` restore, :ref:`bool<class_bool>` cancel  **)** virtual                            |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`    | :ref:`get_handle_name<class_EditorSpatialGizmo_get_handle_name>`  **(** :ref:`int<class_int>` index  **)** virtual                                                                                               |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`  | :ref:`get_handle_value<class_EditorSpatialGizmo_get_handle_value>`  **(** :ref:`int<class_int>` index  **)** virtual                                                                                             |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`redraw<class_EditorSpatialGizmo_redraw>`  **(** **)** virtual                                                                                                                                              |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_handle<class_EditorSpatialGizmo_set_handle>`  **(** :ref:`int<class_int>` index, :ref:`Camera<class_camera>` camera, :ref:`Vector2<class_vector2>` point  **)** virtual                                |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_spatial_node<class_EditorSpatialGizmo_set_spatial_node>`  **(** :ref:`Spatial<class_spatial>` node  **)**                                                                                              |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`add_collision_segments<class_EditorSpatialGizmo_add_collision_segments>`  **(** :ref:`PoolVector3Array<class_poolvector3array>` segments  **)**                                                           |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`add_collision_triangles<class_EditorSpatialGizmo_add_collision_triangles>`  **(** :ref:`TriangleMesh<class_trianglemesh>` triangles  **)**                                                                |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`add_handles<class_EditorSpatialGizmo_add_handles>`  **(** :ref:`PoolVector3Array<class_poolvector3array>` handles, :ref:`bool<class_bool>` billboard=false, :ref:`bool<class_bool>` secondary=null  **)** |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`add_lines<class_EditorSpatialGizmo_add_lines>`  **(** :ref:`PoolVector3Array<class_poolvector3array>` lines, :ref:`Material<class_material>` material, :ref:`bool<class_bool>` billboard=null  **)**      |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`add_mesh<class_EditorSpatialGizmo_add_mesh>`  **(** :ref:`ArrayMesh<class_arraymesh>` mesh, :ref:`bool<class_bool>` billboard=false, :ref:`RID<class_rid>` skeleton=null  **)**                           |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`add_unscaled_billboard<class_EditorSpatialGizmo_add_unscaled_billboard>`  **(** :ref:`Material<class_material>` material, :ref:`float<class_float>` default_scale=null  **)**                             |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`clear<class_EditorSpatialGizmo_clear>`  **(** **)**                                                                                                                                                       |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`commit_handle<class_EditorSpatialGizmo_commit_handle>`  **(** :ref:`int<class_int>` index, :ref:`Variant<class_variant>` restore, :ref:`bool<class_bool>` cancel=false  **)** virtual                     |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`    | :ref:`get_handle_name<class_EditorSpatialGizmo_get_handle_name>`  **(** :ref:`int<class_int>` index  **)** virtual                                                                                              |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_variant>`  | :ref:`get_handle_value<class_EditorSpatialGizmo_get_handle_value>`  **(** :ref:`int<class_int>` index  **)** virtual                                                                                            |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`redraw<class_EditorSpatialGizmo_redraw>`  **(** **)** virtual                                                                                                                                             |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_handle<class_EditorSpatialGizmo_set_handle>`  **(** :ref:`int<class_int>` index, :ref:`Camera<class_camera>` camera, :ref:`Vector2<class_vector2>` point  **)** virtual                               |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_spatial_node<class_EditorSpatialGizmo_set_spatial_node>`  **(** :ref:`Node<class_node>` node  **)**                                                                                                   |
++--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -66,7 +66,7 @@ Add collision triangles to the gizmo for picking. A :ref:`TriangleMesh<class_tri
 
 .. _class_EditorSpatialGizmo_add_handles:
 
-- void  **add_handles**  **(** :ref:`PoolVector3Array<class_poolvector3array>` handles, :ref:`bool<class_bool>` billboard=false, :ref:`bool<class_bool>` secondary=false  **)**
+- void  **add_handles**  **(** :ref:`PoolVector3Array<class_poolvector3array>` handles, :ref:`bool<class_bool>` billboard=false, :ref:`bool<class_bool>` secondary=null  **)**
 
 Add a list of handles (points) which can be used to deform the object being edited.
 
@@ -74,19 +74,17 @@ There are virtual functions which will be called upon editing of these handles. 
 
 .. _class_EditorSpatialGizmo_add_lines:
 
-- void  **add_lines**  **(** :ref:`PoolVector3Array<class_poolvector3array>` lines, :ref:`Material<class_material>` material, :ref:`bool<class_bool>` billboard=false  **)**
+- void  **add_lines**  **(** :ref:`PoolVector3Array<class_poolvector3array>` lines, :ref:`Material<class_material>` material, :ref:`bool<class_bool>` billboard=null  **)**
 
 Add lines to the gizmo (as sets of 2 points), with a given material. The lines are used for visualizing the gizmo. Call this function during :ref:`redraw<class_EditorSpatialGizmo_redraw>`.
 
 .. _class_EditorSpatialGizmo_add_mesh:
 
-- void  **add_mesh**  **(** :ref:`Mesh<class_mesh>` mesh, :ref:`bool<class_bool>` billboard=false, :ref:`RID<class_rid>` skeleton=[RID]  **)**
-
-Add a mesh to the gizmo, this is used for visualization. Call this function during :ref:`redraw<class_EditorSpatialGizmo_redraw>`.
+- void  **add_mesh**  **(** :ref:`ArrayMesh<class_arraymesh>` mesh, :ref:`bool<class_bool>` billboard=false, :ref:`RID<class_rid>` skeleton=null  **)**
 
 .. _class_EditorSpatialGizmo_add_unscaled_billboard:
 
-- void  **add_unscaled_billboard**  **(** :ref:`Material<class_material>` material, :ref:`float<class_float>` default_scale=1  **)**
+- void  **add_unscaled_billboard**  **(** :ref:`Material<class_material>` material, :ref:`float<class_float>` default_scale=null  **)**
 
 Add an unscaled billboard for visualization. Call this function during :ref:`redraw<class_EditorSpatialGizmo_redraw>`.
 
@@ -96,7 +94,7 @@ Add an unscaled billboard for visualization. Call this function during :ref:`red
 
 .. _class_EditorSpatialGizmo_commit_handle:
 
-- void  **commit_handle**  **(** :ref:`int<class_int>` index, :ref:`Variant<class_variant>` restore, :ref:`bool<class_bool>` cancel  **)** virtual
+- void  **commit_handle**  **(** :ref:`int<class_int>` index, :ref:`Variant<class_variant>` restore, :ref:`bool<class_bool>` cancel=false  **)** virtual
 
 Commit a handle being edited (handles must have been prevously added by :ref:`add_handles<class_EditorSpatialGizmo_add_handles>`).
 
@@ -132,8 +130,6 @@ The :ref:`Camera<class_camera>` is also provided so screen coordinates can be co
 
 .. _class_EditorSpatialGizmo_set_spatial_node:
 
-- void  **set_spatial_node**  **(** :ref:`Spatial<class_spatial>` node  **)**
-
-Call this function once and upon creation of the gizmo, otherwise no other function will work. The argument is the node being edited by the gizmo.
+- void  **set_spatial_node**  **(** :ref:`Node<class_node>` node  **)**
 
 

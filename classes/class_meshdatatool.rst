@@ -21,9 +21,9 @@ Member Functions
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`clear<class_MeshDataTool_clear>`  **(** **)**                                                                                                         |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                      | :ref:`commit_to_surface<class_MeshDataTool_commit_to_surface>`  **(** :ref:`Object<class_object>` mesh  **)**                                               |
+| :ref:`int<class_int>`                      | :ref:`commit_to_surface<class_MeshDataTool_commit_to_surface>`  **(** :ref:`ArrayMesh<class_arraymesh>` mesh  **)**                                         |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                      | :ref:`create_from_surface<class_MeshDataTool_create_from_surface>`  **(** :ref:`Object<class_object>` mesh, :ref:`int<class_int>` surface  **)**            |
+| :ref:`int<class_int>`                      | :ref:`create_from_surface<class_MeshDataTool_create_from_surface>`  **(** :ref:`ArrayMesh<class_arraymesh>` mesh, :ref:`int<class_int>` surface  **)**      |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                      | :ref:`get_edge_count<class_MeshDataTool_get_edge_count>`  **(** **)** const                                                                                 |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -45,7 +45,7 @@ Member Functions
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                      | :ref:`get_format<class_MeshDataTool_get_format>`  **(** **)** const                                                                                         |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`                | :ref:`get_material<class_MeshDataTool_get_material>`  **(** **)** const                                                                                     |
+| :ref:`Material<class_material>`            | :ref:`get_material<class_MeshDataTool_get_material>`  **(** **)** const                                                                                     |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`              | :ref:`get_vertex<class_MeshDataTool_get_vertex>`  **(** :ref:`int<class_int>` idx  **)** const                                                              |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -105,11 +105,11 @@ Member Function Description
 
 .. _class_MeshDataTool_commit_to_surface:
 
-- :ref:`int<class_int>`  **commit_to_surface**  **(** :ref:`Object<class_object>` mesh  **)**
+- :ref:`int<class_int>`  **commit_to_surface**  **(** :ref:`ArrayMesh<class_arraymesh>` mesh  **)**
 
 .. _class_MeshDataTool_create_from_surface:
 
-- :ref:`int<class_int>`  **create_from_surface**  **(** :ref:`Object<class_object>` mesh, :ref:`int<class_int>` surface  **)**
+- :ref:`int<class_int>`  **create_from_surface**  **(** :ref:`ArrayMesh<class_arraymesh>` mesh, :ref:`int<class_int>` surface  **)**
 
 .. _class_MeshDataTool_get_edge_count:
 
@@ -153,7 +153,7 @@ Member Function Description
 
 .. _class_MeshDataTool_get_material:
 
-- :ref:`Object<class_object>`  **get_material**  **(** **)** const
+- :ref:`Material<class_material>`  **get_material**  **(** **)** const
 
 .. _class_MeshDataTool_get_vertex:
 

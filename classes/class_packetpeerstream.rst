@@ -18,9 +18,17 @@ Wrapper to use a PacketPeer over a StreamPeer.
 Member Functions
 ----------------
 
-+-------+-----------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`set_stream_peer<class_PacketPeerStream_set_stream_peer>`  **(** :ref:`StreamPeer<class_streampeer>` peer  **)** |
-+-------+-----------------------------------------------------------------------------------------------------------------------+
++------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`get_input_buffer_max_size<class_PacketPeerStream_get_input_buffer_max_size>`  **(** **)** const                                   |
++------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`get_output_buffer_max_size<class_PacketPeerStream_get_output_buffer_max_size>`  **(** **)** const                                 |
++------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                   | :ref:`set_input_buffer_max_size<class_PacketPeerStream_set_input_buffer_max_size>`  **(** :ref:`int<class_int>` max_size_bytes  **)**   |
++------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                   | :ref:`set_output_buffer_max_size<class_PacketPeerStream_set_output_buffer_max_size>`  **(** :ref:`int<class_int>` max_size_bytes  **)** |
++------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                   | :ref:`set_stream_peer<class_PacketPeerStream_set_stream_peer>`  **(** :ref:`Reference<class_reference>` peer  **)**                     |
++------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -30,10 +38,26 @@ PacketStreamPeer provides a wrapper for working using packets over a stream. Thi
 Member Function Description
 ---------------------------
 
+.. _class_PacketPeerStream_get_input_buffer_max_size:
+
+- :ref:`int<class_int>`  **get_input_buffer_max_size**  **(** **)** const
+
+.. _class_PacketPeerStream_get_output_buffer_max_size:
+
+- :ref:`int<class_int>`  **get_output_buffer_max_size**  **(** **)** const
+
+.. _class_PacketPeerStream_set_input_buffer_max_size:
+
+- void  **set_input_buffer_max_size**  **(** :ref:`int<class_int>` max_size_bytes  **)**
+
+.. _class_PacketPeerStream_set_output_buffer_max_size:
+
+- void  **set_output_buffer_max_size**  **(** :ref:`int<class_int>` max_size_bytes  **)**
+
 .. _class_PacketPeerStream_set_stream_peer:
 
-- void  **set_stream_peer**  **(** :ref:`StreamPeer<class_streampeer>` peer  **)**
+- void  **set_stream_peer**  **(** :ref:`Reference<class_reference>` peer  **)**
 
-Set the StreamPeer object to be wrapped
+Set the :ref:`StreamPeer<class_streampeer>` object to be wrapped.
 
 

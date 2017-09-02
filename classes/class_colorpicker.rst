@@ -19,7 +19,7 @@ Member Functions
 ----------------
 
 +----------------------------+-------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`add_preset<class_ColorPicker_add_preset>`  **(** :ref:`Color<class_color>` arg0  **)**          |
+| void                       | :ref:`add_preset<class_ColorPicker_add_preset>`  **(** :ref:`Color<class_color>` color  **)**         |
 +----------------------------+-------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_color>`  | :ref:`get_pick_color<class_ColorPicker_get_pick_color>`  **(** **)** const                            |
 +----------------------------+-------------------------------------------------------------------------------------------------------+
@@ -51,7 +51,7 @@ Member Function Description
 
 .. _class_ColorPicker_add_preset:
 
-- void  **add_preset**  **(** :ref:`Color<class_color>` arg0  **)**
+- void  **add_preset**  **(** :ref:`Color<class_color>` color  **)**
 
 Adds the current selected to color to a list of colors (presets), the presets will be displayed in the color picker and the user will be able to select them, notice that the presets list is only for this color picker.
 

@@ -27,7 +27,7 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`Array<class_array>` **points**
+- :ref:`PoolVector3Array<class_poolvector3array>` **points**
 
 Description
 -----------

@@ -29,7 +29,7 @@ Member Functions
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_speed<class_InterpolatedCamera_set_speed>`  **(** :ref:`float<class_float>` speed  **)**                                     |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_target<class_InterpolatedCamera_set_target>`  **(** :ref:`Camera<class_camera>` target  **)**                                |
+| void                             | :ref:`set_target<class_InterpolatedCamera_set_target>`  **(** :ref:`Object<class_object>` target  **)**                                |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_target_path<class_InterpolatedCamera_set_target_path>`  **(** :ref:`NodePath<class_nodepath>` target_path  **)**             |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
@@ -66,7 +66,7 @@ Member Function Description
 
 .. _class_InterpolatedCamera_set_target:
 
-- void  **set_target**  **(** :ref:`Camera<class_camera>` target  **)**
+- void  **set_target**  **(** :ref:`Object<class_object>` target  **)**
 
 .. _class_InterpolatedCamera_set_target_path:
 

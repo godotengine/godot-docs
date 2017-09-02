@@ -57,7 +57,7 @@ Member Functions
 +----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`                                  | :ref:`get_linear_velocity<class_PhysicsDirectBodyState_get_linear_velocity>`  **(** **)** const                                                                      |
 +----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Basis<class_basis>`                                      | :ref:`get_principal_inetria_axes<class_PhysicsDirectBodyState_get_principal_inetria_axes>`  **(** **)** const                                                        |
+| :ref:`Basis<class_basis>`                                      | :ref:`get_principal_inertia_axes<class_PhysicsDirectBodyState_get_principal_inertia_axes>`  **(** **)** const                                                        |
 +----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PhysicsDirectSpaceState<class_physicsdirectspacestate>`  | :ref:`get_space_state<class_PhysicsDirectBodyState_get_space_state>`  **(** **)**                                                                                    |
 +----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -159,9 +159,9 @@ Member Function Description
 
 - :ref:`Vector3<class_vector3>`  **get_linear_velocity**  **(** **)** const
 
-.. _class_PhysicsDirectBodyState_get_principal_inetria_axes:
+.. _class_PhysicsDirectBodyState_get_principal_inertia_axes:
 
-- :ref:`Basis<class_basis>`  **get_principal_inetria_axes**  **(** **)** const
+- :ref:`Basis<class_basis>`  **get_principal_inertia_axes**  **(** **)** const
 
 .. _class_PhysicsDirectBodyState_get_space_state:
 

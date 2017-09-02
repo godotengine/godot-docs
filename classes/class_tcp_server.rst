@@ -18,15 +18,15 @@ TCP Server.
 Member Functions
 ----------------
 
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`is_connection_available<class_TCP_Server_is_connection_available>`  **(** **)** const                                   |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`listen<class_TCP_Server_listen>`  **(** :ref:`int<class_int>` port, :ref:`String<class_string>` bind_address="*"  **)** |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`stop<class_TCP_Server_stop>`  **(** **)**                                                                               |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`  | :ref:`take_connection<class_TCP_Server_take_connection>`  **(** **)**                                                         |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                    | :ref:`is_connection_available<class_TCP_Server_is_connection_available>`  **(** **)** const                                    |
++--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                      | :ref:`listen<class_TCP_Server_listen>`  **(** :ref:`int<class_int>` port, :ref:`String<class_string>` bind_address=null  **)** |
++--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`stop<class_TCP_Server_stop>`  **(** **)**                                                                                |
++--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`StreamPeerTCP<class_streampeertcp>`  | :ref:`take_connection<class_TCP_Server_take_connection>`  **(** **)**                                                          |
++--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -44,7 +44,7 @@ Return true if a connection is available for taking.
 
 .. _class_TCP_Server_listen:
 
-- :ref:`int<class_int>`  **listen**  **(** :ref:`int<class_int>` port, :ref:`String<class_string>` bind_address="*"  **)**
+- :ref:`int<class_int>`  **listen**  **(** :ref:`int<class_int>` port, :ref:`String<class_string>` bind_address=null  **)**
 
 Listen on the "port" binding to "bind_address".
 
@@ -62,7 +62,7 @@ Stop listening.
 
 .. _class_TCP_Server_take_connection:
 
-- :ref:`Object<class_object>`  **take_connection**  **(** **)**
+- :ref:`StreamPeerTCP<class_streampeertcp>`  **take_connection**  **(** **)**
 
 If a connection is available, return a StreamPeerTCP with the connection/
 

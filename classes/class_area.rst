@@ -63,9 +63,9 @@ Member Functions
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`is_using_reverb_bus<class_Area_is_using_reverb_bus>`  **(** **)** const                                                             |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`overlaps_area<class_Area_overlaps_area>`  **(** :ref:`Object<class_object>` area  **)** const                                       |
+| :ref:`bool<class_bool>`        | :ref:`overlaps_area<class_Area_overlaps_area>`  **(** :ref:`Node<class_node>` area  **)** const                                           |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`overlaps_body<class_Area_overlaps_body>`  **(** :ref:`Object<class_object>` body  **)** const                                       |
+| :ref:`bool<class_bool>`        | :ref:`overlaps_body<class_Area_overlaps_body>`  **(** :ref:`Node<class_node>` body  **)** const                                           |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_angular_damp<class_Area_set_angular_damp>`  **(** :ref:`float<class_float>` angular_damp  **)**                                 |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
@@ -151,7 +151,7 @@ Member Variables
 - :ref:`float<class_float>` **linear_damp**
 - :ref:`bool<class_bool>` **monitorable**
 - :ref:`bool<class_bool>` **monitoring**
-- :ref:`int<class_int>` **priority**
+- :ref:`float<class_float>` **priority**
 - :ref:`float<class_float>` **reverb_bus_amount**
 - :ref:`bool<class_bool>` **reverb_bus_enable**
 - :ref:`String<class_string>` **reverb_bus_name**
@@ -288,13 +288,13 @@ Return whether this area detects bodies/areas entering/exiting it.
 
 .. _class_Area_overlaps_area:
 
-- :ref:`bool<class_bool>`  **overlaps_area**  **(** :ref:`Object<class_object>` area  **)** const
+- :ref:`bool<class_bool>`  **overlaps_area**  **(** :ref:`Node<class_node>` area  **)** const
 
 Return whether the area passed is totally or partially inside this area.
 
 .. _class_Area_overlaps_body:
 
-- :ref:`bool<class_bool>`  **overlaps_body**  **(** :ref:`Object<class_object>` body  **)** const
+- :ref:`bool<class_bool>`  **overlaps_body**  **(** :ref:`Node<class_node>` body  **)** const
 
 Return whether the body passed is totally or partially inside this area.
 
@@ -394,7 +394,7 @@ Set whether this area can detect bodies/areas entering/exiting it.
 
 - void  **set_priority**  **(** :ref:`float<class_float>` priority  **)**
 
-Set the order in which the area is processed. Greater values mean the area gets processed first. This is useful for areas which have an space override different from AREA_SPACE_OVERRIDE_DISABLED or AREA_SPACE_OVERRIDE_COMBINE, as they replace values, and are thus order-dependent.
+Set the order in which the area is processed. Greater values mean the area gets processed first. This is useful for areas which have a space override different from AREA_SPACE_OVERRIDE_DISABLED or AREA_SPACE_OVERRIDE_COMBINE, as they replace values, and are thus order-dependent.
 
 Areas with the same priority value get evaluated in an unpredictable order, and should be differentiated if evaluation order is to be important.
 

@@ -18,11 +18,11 @@ Brief Description
 Member Functions
 ----------------
 
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`  | :ref:`get_preload<class_VisualScriptPreload_get_preload>`  **(** **)** const                                 |
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_preload<class_VisualScriptPreload_set_preload>`  **(** :ref:`Object<class_object>` resource  **)** |
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
++----------------------------------+------------------------------------------------------------------------------------------------------------------+
+| :ref:`Resource<class_resource>`  | :ref:`get_preload<class_VisualScriptPreload_get_preload>`  **(** **)** const                                     |
++----------------------------------+------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_preload<class_VisualScriptPreload_set_preload>`  **(** :ref:`Resource<class_resource>` resource  **)** |
++----------------------------------+------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -34,10 +34,10 @@ Member Function Description
 
 .. _class_VisualScriptPreload_get_preload:
 
-- :ref:`Object<class_object>`  **get_preload**  **(** **)** const
+- :ref:`Resource<class_resource>`  **get_preload**  **(** **)** const
 
 .. _class_VisualScriptPreload_set_preload:
 
-- void  **set_preload**  **(** :ref:`Object<class_object>` resource  **)**
+- void  **set_preload**  **(** :ref:`Resource<class_resource>` resource  **)**
 
 

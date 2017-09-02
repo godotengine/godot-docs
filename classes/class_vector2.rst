@@ -88,6 +88,8 @@ Constructs a new Vector2 from the given x and y.
 
 - :ref:`Vector2<class_vector2>`  **abs**  **(** **)**
 
+Returns a new vector with all components in absolute values (i.e. positive).
+
 .. _class_Vector2_angle:
 
 - :ref:`float<class_float>`  **angle**  **(** **)**
@@ -123,6 +125,8 @@ Bounce returns the vector "bounced off" from the given plane, specified by its n
 .. _class_Vector2_clamped:
 
 - :ref:`Vector2<class_vector2>`  **clamped**  **(** :ref:`float<class_float>` length  **)**
+
+Returns the vector with a maximum length.
 
 .. _class_Vector2_cubic_interpolate:
 

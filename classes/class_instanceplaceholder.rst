@@ -23,7 +23,7 @@ Member Functions
 +--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_dictionary>`  | :ref:`get_stored_values<class_InstancePlaceholder_get_stored_values>`  **(** :ref:`bool<class_bool>` with_order=false  **)**                    |
 +--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                 | :ref:`replace_by_instance<class_InstancePlaceholder_replace_by_instance>`  **(** :ref:`PackedScene<class_packedscene>` custom_scene=NULL  **)** |
+| void                                 | :ref:`replace_by_instance<class_InstancePlaceholder_replace_by_instance>`  **(** :ref:`PackedScene<class_packedscene>` custom_scene=null  **)** |
 +--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -48,7 +48,7 @@ Retrieve the path to the :ref:`PackedScene<class_packedscene>` resource file tha
 
 .. _class_InstancePlaceholder_replace_by_instance:
 
-- void  **replace_by_instance**  **(** :ref:`PackedScene<class_packedscene>` custom_scene=NULL  **)**
+- void  **replace_by_instance**  **(** :ref:`PackedScene<class_packedscene>` custom_scene=null  **)**
 
 Replace this placeholder by the scene handed as an argument, or the original scene if no argument is given. As for all resources, the scene is loaded only if it's not loaded already. By manually loading the scene beforehand, delays caused by this function can be avoided.
 

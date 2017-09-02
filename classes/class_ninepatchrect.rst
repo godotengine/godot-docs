@@ -18,31 +18,31 @@ Brief Description
 Member Functions
 ----------------
 
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`get_draw_center<class_NinePatchRect_get_draw_center>`  **(** **)** const                                                        |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_h_axis_stretch_mode<class_NinePatchRect_get_h_axis_stretch_mode>`  **(** **)** const                                        |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_patch_margin<class_NinePatchRect_get_patch_margin>`  **(** :ref:`int<class_int>` margin  **)** const                        |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_rect2>`    | :ref:`get_region_rect<class_NinePatchRect_get_region_rect>`  **(** **)** const                                                        |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`  | :ref:`get_texture<class_NinePatchRect_get_texture>`  **(** **)** const                                                                |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_v_axis_stretch_mode<class_NinePatchRect_get_v_axis_stretch_mode>`  **(** **)** const                                        |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_draw_center<class_NinePatchRect_set_draw_center>`  **(** :ref:`bool<class_bool>` draw_center  **)**                         |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_h_axis_stretch_mode<class_NinePatchRect_set_h_axis_stretch_mode>`  **(** :ref:`int<class_int>` mode  **)**                  |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_patch_margin<class_NinePatchRect_set_patch_margin>`  **(** :ref:`int<class_int>` margin, :ref:`int<class_int>` value  **)** |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_region_rect<class_NinePatchRect_set_region_rect>`  **(** :ref:`Rect2<class_rect2>` rect  **)**                              |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_texture<class_NinePatchRect_set_texture>`  **(** :ref:`Object<class_object>` texture  **)**                                 |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_v_axis_stretch_mode<class_NinePatchRect_set_v_axis_stretch_mode>`  **(** :ref:`int<class_int>` mode  **)**                  |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_h_axis_stretch_mode<class_NinePatchRect_get_h_axis_stretch_mode>`  **(** **)** const                                        |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_patch_margin<class_NinePatchRect_get_patch_margin>`  **(** :ref:`int<class_int>` margin  **)** const                        |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2<class_rect2>`      | :ref:`get_region_rect<class_NinePatchRect_get_region_rect>`  **(** **)** const                                                        |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_texture>`  | :ref:`get_texture<class_NinePatchRect_get_texture>`  **(** **)** const                                                                |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_v_axis_stretch_mode<class_NinePatchRect_get_v_axis_stretch_mode>`  **(** **)** const                                        |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_draw_center_enabled<class_NinePatchRect_is_draw_center_enabled>`  **(** **)** const                                          |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_draw_center<class_NinePatchRect_set_draw_center>`  **(** :ref:`bool<class_bool>` draw_center  **)**                         |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_h_axis_stretch_mode<class_NinePatchRect_set_h_axis_stretch_mode>`  **(** :ref:`int<class_int>` mode  **)**                  |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_patch_margin<class_NinePatchRect_set_patch_margin>`  **(** :ref:`int<class_int>` margin, :ref:`int<class_int>` value  **)** |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_region_rect<class_NinePatchRect_set_region_rect>`  **(** :ref:`Rect2<class_rect2>` rect  **)**                              |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_texture<class_NinePatchRect_set_texture>`  **(** :ref:`Texture<class_texture>` texture  **)**                               |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_v_axis_stretch_mode<class_NinePatchRect_set_v_axis_stretch_mode>`  **(** :ref:`int<class_int>` mode  **)**                  |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -72,10 +72,6 @@ Numeric Constants
 Member Function Description
 ---------------------------
 
-.. _class_NinePatchRect_get_draw_center:
-
-- :ref:`bool<class_bool>`  **get_draw_center**  **(** **)** const
-
 .. _class_NinePatchRect_get_h_axis_stretch_mode:
 
 - :ref:`int<class_int>`  **get_h_axis_stretch_mode**  **(** **)** const
@@ -90,11 +86,15 @@ Member Function Description
 
 .. _class_NinePatchRect_get_texture:
 
-- :ref:`Object<class_object>`  **get_texture**  **(** **)** const
+- :ref:`Texture<class_texture>`  **get_texture**  **(** **)** const
 
 .. _class_NinePatchRect_get_v_axis_stretch_mode:
 
 - :ref:`int<class_int>`  **get_v_axis_stretch_mode**  **(** **)** const
+
+.. _class_NinePatchRect_is_draw_center_enabled:
+
+- :ref:`bool<class_bool>`  **is_draw_center_enabled**  **(** **)** const
 
 .. _class_NinePatchRect_set_draw_center:
 
@@ -114,7 +114,7 @@ Member Function Description
 
 .. _class_NinePatchRect_set_texture:
 
-- void  **set_texture**  **(** :ref:`Object<class_object>` texture  **)**
+- void  **set_texture**  **(** :ref:`Texture<class_texture>` texture  **)**
 
 .. _class_NinePatchRect_set_v_axis_stretch_mode:
 

@@ -21,7 +21,7 @@ Member Functions
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`add_bus<class_AudioServer_add_bus>`  **(** :ref:`int<class_int>` at_pos=-1  **)**                                                                                                |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`add_bus_effect<class_AudioServer_add_bus_effect>`  **(** :ref:`int<class_int>` bus_idx, :ref:`AudioEffect<class_audioeffect>` effect, :ref:`int<class_int>` arg2=-1  **)**       |
+| void                                         | :ref:`add_bus_effect<class_AudioServer_add_bus_effect>`  **(** :ref:`int<class_int>` bus_idx, :ref:`AudioEffect<class_audioeffect>` effect, :ref:`int<class_int>` at_pos=null  **)**   |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`AudioBusLayout<class_audiobuslayout>`  | :ref:`generate_bus_layout<class_AudioServer_generate_bus_layout>`  **(** **)** const                                                                                                   |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -29,7 +29,7 @@ Member Functions
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`AudioEffect<class_audioeffect>`        | :ref:`get_bus_effect<class_AudioServer_get_bus_effect>`  **(** :ref:`int<class_int>` bus_idx, :ref:`int<class_int>` effect_idx  **)**                                                  |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`get_bus_effect_count<class_AudioServer_get_bus_effect_count>`  **(** :ref:`int<class_int>` bus_idx, :ref:`Object<class_object>` arg1, :ref:`int<class_int>` arg2  **)**          |
+| :ref:`int<class_int>`                        | :ref:`get_bus_effect_count<class_AudioServer_get_bus_effect_count>`  **(** :ref:`int<class_int>` bus_idx  **)**                                                                        |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                        | :ref:`get_bus_index<class_AudioServer_get_bus_index>`  **(** :ref:`String<class_string>` bus_name  **)** const                                                                         |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -105,7 +105,7 @@ Member Function Description
 
 .. _class_AudioServer_add_bus_effect:
 
-- void  **add_bus_effect**  **(** :ref:`int<class_int>` bus_idx, :ref:`AudioEffect<class_audioeffect>` effect, :ref:`int<class_int>` arg2=-1  **)**
+- void  **add_bus_effect**  **(** :ref:`int<class_int>` bus_idx, :ref:`AudioEffect<class_audioeffect>` effect, :ref:`int<class_int>` at_pos=null  **)**
 
 .. _class_AudioServer_generate_bus_layout:
 
@@ -121,7 +121,7 @@ Member Function Description
 
 .. _class_AudioServer_get_bus_effect_count:
 
-- void  **get_bus_effect_count**  **(** :ref:`int<class_int>` bus_idx, :ref:`Object<class_object>` arg1, :ref:`int<class_int>` arg2  **)**
+- :ref:`int<class_int>`  **get_bus_effect_count**  **(** :ref:`int<class_int>` bus_idx  **)**
 
 .. _class_AudioServer_get_bus_index:
 

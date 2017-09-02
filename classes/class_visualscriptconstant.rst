@@ -32,7 +32,7 @@ Member Variables
 ----------------
 
 - :ref:`int<class_int>` **type**
-- :ref:`Nil<class_nil>` **value**
+- :ref:`Variant<class_variant>` **value**
 
 Member Function Description
 ---------------------------

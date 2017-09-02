@@ -53,7 +53,7 @@ Member Variables
 
 - :ref:`Array<class_array>` **outlines**
 - :ref:`Array<class_array>` **polygons**
-- :ref:`PoolVector3Array<class_poolvector3array>` **vertices**
+- :ref:`PoolVector2Array<class_poolvector2array>` **vertices**
 
 Member Function Description
 ---------------------------

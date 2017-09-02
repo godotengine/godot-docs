@@ -8,7 +8,7 @@ Camera
 
 **Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`InterpolatedCamera<class_interpolatedcamera>`
+**Inherited By:** :ref:`InterpolatedCamera<class_interpolatedcamera>`, :ref:`ARVRCamera<class_arvrcamera>`
 
 **Category:** Core
 

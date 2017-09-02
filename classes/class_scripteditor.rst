@@ -18,19 +18,19 @@ Brief Description
 Member Functions
 ----------------
 
-+------------------------------+-------------------------------------------------------------------------------+
-| :ref:`Script<class_script>`  | :ref:`get_current_script<class_ScriptEditor_get_current_script>`  **(** **)** |
-+------------------------------+-------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`    | :ref:`get_open_scripts<class_ScriptEditor_get_open_scripts>`  **(** **)**     |
-+------------------------------+-------------------------------------------------------------------------------+
++------------------------------+---------------------------------------------------------------------------------+
+| :ref:`Script<class_script>`  | :ref:`get_current_script<class_ScriptEditor_get_current_script>`  **(** **)**   |
++------------------------------+---------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`    | :ref:`get_open_scripts<class_ScriptEditor_get_open_scripts>`  **(** **)** const |
++------------------------------+---------------------------------------------------------------------------------+
 
 Signals
 -------
 
--  **editor_script_changed**  **(** :ref:`Script<class_script>` script  **)**
+-  **editor_script_changed**  **(** :ref:`Object<class_object>` script  **)**
 Emitted when user changed active script. Argument is a freshly activated :ref:`Script<class_script>`.
 
--  **script_close**  **(** :ref:`Script<class_script>` script  **)**
+-  **script_close**  **(** :ref:`Object<class_object>` script  **)**
 Emitted when editor is about to close the active script. Argument is a :ref:`Script<class_script>` that is going to be closed.
 
 
@@ -45,7 +45,7 @@ Returns a :ref:`Script<class_script>` that is currently active in editor.
 
 .. _class_ScriptEditor_get_open_scripts:
 
-- :ref:`Array<class_array>`  **get_open_scripts**  **(** **)**
+- :ref:`Array<class_array>`  **get_open_scripts**  **(** **)** const
 
 Returns an array with all :ref:`Script<class_script>` objects which are currently open in editor.
 

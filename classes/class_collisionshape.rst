@@ -18,19 +18,19 @@ Brief Description
 Member Functions
 ----------------
 
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`  | :ref:`get_shape<class_CollisionShape_get_shape>`  **(** **)** const                                               |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`is_disabled<class_CollisionShape_is_disabled>`  **(** **)** const                                           |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`make_convex_from_brothers<class_CollisionShape_make_convex_from_brothers>`  **(** **)**                     |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`resource_changed<class_CollisionShape_resource_changed>`  **(** :ref:`Object<class_object>` resource  **)** |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_disabled<class_CollisionShape_set_disabled>`  **(** :ref:`bool<class_bool>` enable  **)**               |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_shape<class_CollisionShape_set_shape>`  **(** :ref:`Object<class_object>` shape  **)**                  |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
++----------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`Shape<class_shape>`  | :ref:`get_shape<class_CollisionShape_get_shape>`  **(** **)** const                                                   |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`is_disabled<class_CollisionShape_is_disabled>`  **(** **)** const                                               |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`make_convex_from_brothers<class_CollisionShape_make_convex_from_brothers>`  **(** **)**                         |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`resource_changed<class_CollisionShape_resource_changed>`  **(** :ref:`Resource<class_resource>` resource  **)** |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_disabled<class_CollisionShape_set_disabled>`  **(** :ref:`bool<class_bool>` enable  **)**                   |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_shape<class_CollisionShape_set_shape>`  **(** :ref:`Shape<class_shape>` shape  **)**                        |
++----------------------------+-----------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -43,7 +43,7 @@ Member Function Description
 
 .. _class_CollisionShape_get_shape:
 
-- :ref:`Object<class_object>`  **get_shape**  **(** **)** const
+- :ref:`Shape<class_shape>`  **get_shape**  **(** **)** const
 
 .. _class_CollisionShape_is_disabled:
 
@@ -55,7 +55,7 @@ Member Function Description
 
 .. _class_CollisionShape_resource_changed:
 
-- void  **resource_changed**  **(** :ref:`Object<class_object>` resource  **)**
+- void  **resource_changed**  **(** :ref:`Resource<class_resource>` resource  **)**
 
 .. _class_CollisionShape_set_disabled:
 
@@ -63,6 +63,6 @@ Member Function Description
 
 .. _class_CollisionShape_set_shape:
 
-- void  **set_shape**  **(** :ref:`Object<class_object>` shape  **)**
+- void  **set_shape**  **(** :ref:`Shape<class_shape>` shape  **)**
 
 

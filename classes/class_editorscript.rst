@@ -18,13 +18,15 @@ Simple script to perform changes in the currently edited scene.
 Member Functions
 ----------------
 
-+------------------------------+-------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`_run<class_EditorScript__run>`  **(** **)** virtual                                             |
-+------------------------------+-------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`add_root_node<class_EditorScript_add_root_node>`  **(** :ref:`Object<class_object>` node  **)** |
-+------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`  | :ref:`get_scene<class_EditorScript_get_scene>`  **(** **)**                                           |
-+------------------------------+-------------------------------------------------------------------------------------------------------+
++------------------------------------------------+---------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`_run<class_EditorScript__run>`  **(** **)** virtual                                         |
++------------------------------------------------+---------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`add_root_node<class_EditorScript_add_root_node>`  **(** :ref:`Node<class_node>` node  **)** |
++------------------------------------------------+---------------------------------------------------------------------------------------------------+
+| :ref:`EditorInterface<class_editorinterface>`  | :ref:`get_editor_interface<class_EditorScript_get_editor_interface>`  **(** **)**                 |
++------------------------------------------------+---------------------------------------------------------------------------------------------------+
+| :ref:`Node<class_node>`                        | :ref:`get_scene<class_EditorScript_get_scene>`  **(** **)**                                       |
++------------------------------------------------+---------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -40,10 +42,14 @@ Member Function Description
 
 .. _class_EditorScript_add_root_node:
 
-- void  **add_root_node**  **(** :ref:`Object<class_object>` node  **)**
+- void  **add_root_node**  **(** :ref:`Node<class_node>` node  **)**
+
+.. _class_EditorScript_get_editor_interface:
+
+- :ref:`EditorInterface<class_editorinterface>`  **get_editor_interface**  **(** **)**
 
 .. _class_EditorScript_get_scene:
 
-- :ref:`Object<class_object>`  **get_scene**  **(** **)**
+- :ref:`Node<class_node>`  **get_scene**  **(** **)**
 
 

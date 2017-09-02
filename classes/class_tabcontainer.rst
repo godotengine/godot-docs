@@ -43,7 +43,7 @@ Member Functions
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_current_tab<class_TabContainer_set_current_tab>`  **(** :ref:`int<class_int>` tab_idx  **)**                                     |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_popup<class_TabContainer_set_popup>`  **(** :ref:`Popup<class_popup>` popup  **)**                                               |
+| void                           | :ref:`set_popup<class_TabContainer_set_popup>`  **(** :ref:`Node<class_node>` popup  **)**                                                 |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_tab_align<class_TabContainer_set_tab_align>`  **(** :ref:`int<class_int>` align  **)**                                           |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -150,7 +150,7 @@ Bring a tab (and the Control it represents) to the front, and hide the rest.
 
 .. _class_TabContainer_set_popup:
 
-- void  **set_popup**  **(** :ref:`Popup<class_popup>` popup  **)**
+- void  **set_popup**  **(** :ref:`Node<class_node>` popup  **)**
 
 .. _class_TabContainer_set_tab_align:
 

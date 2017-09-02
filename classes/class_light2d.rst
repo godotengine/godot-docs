@@ -45,7 +45,7 @@ Member Functions
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_shadow_smooth<class_Light2D_get_shadow_smooth>`  **(** **)** const                                                        |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`    | :ref:`get_texture<class_Light2D_get_texture>`  **(** **)** const                                                                    |
+| :ref:`Texture<class_texture>`  | :ref:`get_texture<class_Light2D_get_texture>`  **(** **)** const                                                                    |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`get_texture_offset<class_Light2D_get_texture_offset>`  **(** **)** const                                                      |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
@@ -93,7 +93,7 @@ Member Functions
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_shadow_smooth<class_Light2D_set_shadow_smooth>`  **(** :ref:`float<class_float>` smooth  **)**                            |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_texture<class_Light2D_set_texture>`  **(** :ref:`Object<class_object>` texture  **)**                                     |
+| void                           | :ref:`set_texture<class_Light2D_set_texture>`  **(** :ref:`Texture<class_texture>` texture  **)**                                   |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_texture_offset<class_Light2D_set_texture_offset>`  **(** :ref:`Vector2<class_vector2>` texture_offset  **)**              |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
@@ -119,15 +119,15 @@ Member Variables
 - :ref:`int<class_int>` **range_layer_min**
 - :ref:`int<class_int>` **range_z_max**
 - :ref:`int<class_int>` **range_z_min**
-- :ref:`float<class_float>` **scale**
 - :ref:`int<class_int>` **shadow_buffer_size**
 - :ref:`Color<class_color>` **shadow_color**
 - :ref:`bool<class_bool>` **shadow_enabled**
-- :ref:`float<class_float>` **shadow_filter**
+- :ref:`int<class_int>` **shadow_filter**
 - :ref:`float<class_float>` **shadow_filter_smooth**
 - :ref:`float<class_float>` **shadow_gradient_length**
 - :ref:`int<class_int>` **shadow_item_cull_mask**
 - :ref:`Texture<class_texture>` **texture**
+- :ref:`float<class_float>` **texture_scale**
 
 Numeric Constants
 -----------------
@@ -215,7 +215,7 @@ Return the color of casted shadows for this Light2D.
 
 .. _class_Light2D_get_texture:
 
-- :ref:`Object<class_object>`  **get_texture**  **(** **)** const
+- :ref:`Texture<class_texture>`  **get_texture**  **(** **)** const
 
 Return the texture of the Light2D.
 
@@ -349,7 +349,7 @@ Enable or disable shadows casting from this Light2D according to the 'enabled' p
 
 .. _class_Light2D_set_texture:
 
-- void  **set_texture**  **(** :ref:`Object<class_object>` texture  **)**
+- void  **set_texture**  **(** :ref:`Texture<class_texture>` texture  **)**
 
 Set the texture of the Light2D.
 

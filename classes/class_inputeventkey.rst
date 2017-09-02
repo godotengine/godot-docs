@@ -37,7 +37,7 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **echo** - Echo state of the key, i.e. whether it's a repeat event or not.
+- :ref:`bool<class_bool>` **echo** - Echo state of the key, i.e. whether it's a repeat event or not.
 - :ref:`bool<class_bool>` **pressed** - Pressed state of the key.
 - :ref:`int<class_int>` **scancode** - Scancode of the key, one of the KEY_* constants in [@Global Scope].
 - :ref:`int<class_int>` **unicode** - Unicode identifier of the key (when relevant).

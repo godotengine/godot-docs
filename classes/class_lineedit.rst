@@ -53,7 +53,7 @@ Member Functions
 +------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`menu_option<class_LineEdit_menu_option>`  **(** :ref:`int<class_int>` option  **)**                                |
 +------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`select<class_LineEdit_select>`  **(** :ref:`int<class_int>` from=0, :ref:`int<class_int>` to=-1  **)**             |
+| void                               | :ref:`select<class_LineEdit_select>`  **(** :ref:`int<class_int>` from=-1, :ref:`int<class_int>` to=0  **)**             |
 +------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`select_all<class_LineEdit_select_all>`  **(** **)**                                                                |
 +------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
@@ -216,7 +216,7 @@ Return the *secret* status of the :ref:`LineEdit<class_lineedit>` (see :ref:`set
 
 .. _class_LineEdit_select:
 
-- void  **select**  **(** :ref:`int<class_int>` from=0, :ref:`int<class_int>` to=-1  **)**
+- void  **select**  **(** :ref:`int<class_int>` from=-1, :ref:`int<class_int>` to=0  **)**
 
 .. _class_LineEdit_select_all:
 

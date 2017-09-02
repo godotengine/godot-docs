@@ -18,21 +18,21 @@ Brief Description
 Member Functions
 ----------------
 
-+------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_platform_file<class_GDNativeLibrary_get_platform_file>`  **(** :ref:`String<class_string>` platform  **)** const                             |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_platform_file<class_GDNativeLibrary_set_platform_file>`  **(** :ref:`String<class_string>` platform, :ref:`String<class_string>` file  **)** |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_library_path<class_GDNativeLibrary_get_library_path>`  **(** :ref:`String<class_string>` platform  **)** const                             |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_library_path<class_GDNativeLibrary_set_library_path>`  **(** :ref:`String<class_string>` platform, :ref:`String<class_string>` path  **)** |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Function Description
 ---------------------------
 
-.. _class_GDNativeLibrary_get_platform_file:
+.. _class_GDNativeLibrary_get_library_path:
 
-- :ref:`String<class_string>`  **get_platform_file**  **(** :ref:`String<class_string>` platform  **)** const
+- :ref:`String<class_string>`  **get_library_path**  **(** :ref:`String<class_string>` platform  **)** const
 
-.. _class_GDNativeLibrary_set_platform_file:
+.. _class_GDNativeLibrary_set_library_path:
 
-- void  **set_platform_file**  **(** :ref:`String<class_string>` platform, :ref:`String<class_string>` file  **)**
+- void  **set_library_path**  **(** :ref:`String<class_string>` platform, :ref:`String<class_string>` path  **)**
 
 

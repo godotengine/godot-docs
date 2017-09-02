@@ -19,9 +19,9 @@ Member Functions
 ----------------
 
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`add_resource<class_ResourcePreloader_add_resource>`  **(** :ref:`String<class_string>` name, :ref:`Object<class_object>` resource  **)**      |
+| void                                           | :ref:`add_resource<class_ResourcePreloader_add_resource>`  **(** :ref:`String<class_string>` name, :ref:`Resource<class_resource>` resource  **)**  |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`                    | :ref:`get_resource<class_ResourcePreloader_get_resource>`  **(** :ref:`String<class_string>` name  **)** const                                      |
+| :ref:`Resource<class_resource>`                | :ref:`get_resource<class_ResourcePreloader_get_resource>`  **(** :ref:`String<class_string>` name  **)** const                                      |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_resource_list<class_ResourcePreloader_get_resource_list>`  **(** **)** const                                                              |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -47,13 +47,11 @@ Member Function Description
 
 .. _class_ResourcePreloader_add_resource:
 
-- void  **add_resource**  **(** :ref:`String<class_string>` name, :ref:`Object<class_object>` resource  **)**
-
-Add a resource to the preloader. Set the text-id that will be used to identify it (retrieve it/erase it/etc).
+- void  **add_resource**  **(** :ref:`String<class_string>` name, :ref:`Resource<class_resource>` resource  **)**
 
 .. _class_ResourcePreloader_get_resource:
 
-- :ref:`Object<class_object>`  **get_resource**  **(** :ref:`String<class_string>` name  **)** const
+- :ref:`Resource<class_resource>`  **get_resource**  **(** :ref:`String<class_string>` name  **)** const
 
 Return the resource given a text-id.
 

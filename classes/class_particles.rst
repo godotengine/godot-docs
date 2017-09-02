@@ -106,7 +106,7 @@ Member Variables
 - :ref:`bool<class_bool>` **local_coords**
 - :ref:`bool<class_bool>` **one_shot**
 - :ref:`float<class_float>` **preprocess**
-- ShaderMaterial,ParticlesMaterial **process_material**
+- :ref:`Material<class_material>` **process_material**
 - :ref:`float<class_float>` **randomness**
 - :ref:`float<class_float>` **speed_scale**
 - :ref:`Rect3<class_rect3>` **visibility_aabb**

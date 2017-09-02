@@ -16,11 +16,11 @@ Global scope constants and variables.
 Member Variables
 ----------------
 
+- :ref:`ARVRServer<class_arvrserver>` **ARVRServer**
 - :ref:`AudioServer<class_audioserver>` **AudioServer** - [AudioServer] singleton
 - :ref:`ClassDB<class_classdb>` **ClassDB** - [ClassDB] singleton
 - :ref:`Engine<class_engine>` **Engine** - [Engine] singleton
 - :ref:`Geometry<class_geometry>` **Geometry** - [Geometry] singleton
-- :ref:`ProjectSettings<class_projectsettings>` **ProjectSettings** - [ProjectSettings] singleton
 - :ref:`IP<class_ip>` **IP** - [IP] singleton
 - :ref:`Input<class_input>` **Input** - [Input] singleton
 - :ref:`InputMap<class_inputmap>` **InputMap** - [InputMap] singleton
@@ -29,6 +29,7 @@ Member Variables
 - :ref:`Performance<class_performance>` **Performance** - [Performance] singleton
 - :ref:`Physics2DServer<class_physics2dserver>` **Physics2DServer** - [Physics2DServer] singleton
 - :ref:`PhysicsServer<class_physicsserver>` **PhysicsServer** - [PhysicsServer] singleton
+- :ref:`ProjectSettings<class_projectsettings>` **ProjectSettings** - [ProjectSettings] singleton
 - :ref:`ResourceLoader<class_resourceloader>` **ResourceLoader** - [ResourceLoader] singleton
 - :ref:`ResourceSaver<class_resourcesaver>` **ResourceSaver** - [ResourceSaver] singleton
 - :ref:`TranslationServer<class_translationserver>` **TranslationServer** - [TranslationServer] singleton
@@ -54,8 +55,8 @@ Numeric Constants
 - **KEY_TAB** = **16777218** --- Tab Key
 - **KEY_BACKTAB** = **16777219** --- Shift-Tab Key
 - **KEY_BACKSPACE** = **16777220** --- Backspace Key
-- **KEY_RETURN** = **16777221** --- Return Key (On Main Keyboard)
-- **KEY_ENTER** = **16777222** --- Enter Key (On Numpad)
+- **KEY_ENTER** = **16777221** --- Return Key (On Main Keyboard)
+- **KEY_KP_ENTER** = **16777222** --- Enter Key (On Numpad)
 - **KEY_INSERT** = **16777223** --- Insert Key
 - **KEY_DELETE** = **16777224** --- Delete Key
 - **KEY_PAUSE** = **16777225** --- Pause Key

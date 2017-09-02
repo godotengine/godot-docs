@@ -47,7 +47,7 @@ Member Functions
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`get_param_randomness<class_ParticlesMaterial_get_param_randomness>`  **(** :ref:`int<class_int>` param  **)** const                                 |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`                    | :ref:`get_param_texture<class_ParticlesMaterial_get_param_texture>`  **(** :ref:`int<class_int>` param  **)** const                                       |
+| :ref:`Texture<class_texture>`                  | :ref:`get_param_texture<class_ParticlesMaterial_get_param_texture>`  **(** :ref:`int<class_int>` param  **)** const                                       |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`get_spread<class_ParticlesMaterial_get_spread>`  **(** **)** const                                                                                  |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -85,7 +85,7 @@ Member Functions
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_param_randomness<class_ParticlesMaterial_set_param_randomness>`  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` randomness  **)** |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_param_texture<class_ParticlesMaterial_set_param_texture>`  **(** :ref:`int<class_int>` param, :ref:`Object<class_object>` texture  **)**        |
+| void                                           | :ref:`set_param_texture<class_ParticlesMaterial_set_param_texture>`  **(** :ref:`int<class_int>` param, :ref:`Texture<class_texture>` texture  **)**      |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_spread<class_ParticlesMaterial_set_spread>`  **(** :ref:`float<class_float>` degrees  **)**                                                     |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -100,22 +100,22 @@ Member Variables
 ----------------
 
 - :ref:`float<class_float>` **angle**
-- :ref:`CurveTexture<class_curvetexture>` **angle_curve**
+- :ref:`Texture<class_texture>` **angle_curve**
 - :ref:`float<class_float>` **angle_random**
 - :ref:`float<class_float>` **angular_velocity**
-- :ref:`CurveTexture<class_curvetexture>` **angular_velocity_curve**
+- :ref:`Texture<class_texture>` **angular_velocity_curve**
 - :ref:`float<class_float>` **angular_velocity_random**
 - :ref:`bool<class_bool>` **anim_loop**
 - :ref:`float<class_float>` **anim_offset**
-- :ref:`CurveTexture<class_curvetexture>` **anim_offset_curve**
+- :ref:`Texture<class_texture>` **anim_offset_curve**
 - :ref:`float<class_float>` **anim_offset_random**
 - :ref:`float<class_float>` **anim_speed**
-- :ref:`CurveTexture<class_curvetexture>` **anim_speed_curve**
+- :ref:`Texture<class_texture>` **anim_speed_curve**
 - :ref:`float<class_float>` **anim_speed_random**
 - :ref:`Color<class_color>` **color**
-- :ref:`GradientTexture<class_gradienttexture>` **color_ramp**
+- :ref:`Texture<class_texture>` **color_ramp**
 - :ref:`float<class_float>` **damping**
-- :ref:`CurveTexture<class_curvetexture>` **damping_curve**
+- :ref:`Texture<class_texture>` **damping_curve**
 - :ref:`float<class_float>` **damping_random**
 - :ref:`Vector3<class_vector3>` **emission_box_extents**
 - :ref:`Texture<class_texture>` **emission_color_texture**
@@ -130,25 +130,25 @@ Member Variables
 - :ref:`float<class_float>` **flatness**
 - :ref:`Vector3<class_vector3>` **gravity**
 - :ref:`float<class_float>` **hue_variation**
-- :ref:`CurveTexture<class_curvetexture>` **hue_variation_curve**
+- :ref:`Texture<class_texture>` **hue_variation_curve**
 - :ref:`float<class_float>` **hue_variation_random**
 - :ref:`float<class_float>` **initial_velocity**
 - :ref:`float<class_float>` **initial_velocity_random**
 - :ref:`float<class_float>` **linear_accel**
-- :ref:`CurveTexture<class_curvetexture>` **linear_accel_curve**
+- :ref:`Texture<class_texture>` **linear_accel_curve**
 - :ref:`float<class_float>` **linear_accel_random**
 - :ref:`float<class_float>` **orbit_velocity**
-- :ref:`CurveTexture<class_curvetexture>` **orbit_velocity_curve**
+- :ref:`Texture<class_texture>` **orbit_velocity_curve**
 - :ref:`float<class_float>` **orbit_velocity_random**
 - :ref:`float<class_float>` **radial_accel**
-- :ref:`CurveTexture<class_curvetexture>` **radial_accel_curve**
+- :ref:`Texture<class_texture>` **radial_accel_curve**
 - :ref:`float<class_float>` **radial_accel_random**
 - :ref:`float<class_float>` **scale**
-- :ref:`CurveTexture<class_curvetexture>` **scale_curve**
+- :ref:`Texture<class_texture>` **scale_curve**
 - :ref:`float<class_float>` **scale_random**
 - :ref:`float<class_float>` **spread**
 - :ref:`float<class_float>` **tangential_accel**
-- :ref:`CurveTexture<class_curvetexture>` **tangential_accel_curve**
+- :ref:`Texture<class_texture>` **tangential_accel_curve**
 - :ref:`float<class_float>` **tangential_accel_random**
 - :ref:`GradientTexture<class_gradienttexture>` **trail_color_modifier**
 - :ref:`int<class_int>` **trail_divisor**
@@ -240,7 +240,7 @@ Member Function Description
 
 .. _class_ParticlesMaterial_get_param_texture:
 
-- :ref:`Object<class_object>`  **get_param_texture**  **(** :ref:`int<class_int>` param  **)** const
+- :ref:`Texture<class_texture>`  **get_param_texture**  **(** :ref:`int<class_int>` param  **)** const
 
 .. _class_ParticlesMaterial_get_spread:
 
@@ -316,7 +316,7 @@ Member Function Description
 
 .. _class_ParticlesMaterial_set_param_texture:
 
-- void  **set_param_texture**  **(** :ref:`int<class_int>` param, :ref:`Object<class_object>` texture  **)**
+- void  **set_param_texture**  **(** :ref:`int<class_int>` param, :ref:`Texture<class_texture>` texture  **)**
 
 .. _class_ParticlesMaterial_set_spread:
 

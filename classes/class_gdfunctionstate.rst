@@ -21,7 +21,7 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`is_valid<class_GDFunctionState_is_valid>`  **(** :ref:`bool<class_bool>` extended_check=false  **)** const |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`  | :ref:`resume<class_GDFunctionState_resume>`  **(** :ref:`Variant<class_variant>` arg=NULL  **)**                 |
+| :ref:`Variant<class_variant>`  | :ref:`resume<class_GDFunctionState_resume>`  **(** :ref:`Variant<class_variant>` arg=null  **)**                 |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -47,7 +47,7 @@ If ``extended_check`` is enabled, it also checks if the associated script and ob
 
 .. _class_GDFunctionState_resume:
 
-- :ref:`Variant<class_variant>`  **resume**  **(** :ref:`Variant<class_variant>` arg=NULL  **)**
+- :ref:`Variant<class_variant>`  **resume**  **(** :ref:`Variant<class_variant>` arg=null  **)**
 
 Resume execution of the yielded function call.
 

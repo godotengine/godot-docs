@@ -18,19 +18,19 @@ Editor-only class for easy editing of shapes.
 Member Functions
 ----------------
 
-+------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`  | :ref:`get_shape<class_CollisionShape2D_get_shape>`  **(** **)** const                                                    |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`is_disabled<class_CollisionShape2D_is_disabled>`  **(** **)** const                                                |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`is_one_way_collision_enabled<class_CollisionShape2D_is_one_way_collision_enabled>`  **(** **)** const              |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_disabled<class_CollisionShape2D_set_disabled>`  **(** :ref:`bool<class_bool>` disabled  **)**                  |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_one_way_collision<class_CollisionShape2D_set_one_way_collision>`  **(** :ref:`bool<class_bool>` enabled  **)** |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_shape<class_CollisionShape2D_set_shape>`  **(** :ref:`Object<class_object>` shape  **)**                       |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------------+
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Shape2D<class_shape2d>`  | :ref:`get_shape<class_CollisionShape2D_get_shape>`  **(** **)** const                                                    |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_disabled<class_CollisionShape2D_is_disabled>`  **(** **)** const                                                |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_one_way_collision_enabled<class_CollisionShape2D_is_one_way_collision_enabled>`  **(** **)** const              |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_disabled<class_CollisionShape2D_set_disabled>`  **(** :ref:`bool<class_bool>` disabled  **)**                  |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_one_way_collision<class_CollisionShape2D_set_one_way_collision>`  **(** :ref:`bool<class_bool>` enabled  **)** |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_shape<class_CollisionShape2D_set_shape>`  **(** :ref:`Shape2D<class_shape2d>` shape  **)**                     |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -49,7 +49,7 @@ Member Function Description
 
 .. _class_CollisionShape2D_get_shape:
 
-- :ref:`Object<class_object>`  **get_shape**  **(** **)** const
+- :ref:`Shape2D<class_shape2d>`  **get_shape**  **(** **)** const
 
 Return this shape's :ref:`Shape2D<class_shape2d>`.
 
@@ -71,7 +71,7 @@ Return this shape's :ref:`Shape2D<class_shape2d>`.
 
 .. _class_CollisionShape2D_set_shape:
 
-- void  **set_shape**  **(** :ref:`Object<class_object>` shape  **)**
+- void  **set_shape**  **(** :ref:`Shape2D<class_shape2d>` shape  **)**
 
 Set this shape's :ref:`Shape2D<class_shape2d>`. This will not appear as a node, but can be directly edited as a property.
 

@@ -19,31 +19,23 @@ Member Functions
 ----------------
 
 +--------------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`          | :ref:`expand<class_RegExMatch_expand>`  **(** :ref:`String<class_string>` template  **)** const         |
-+--------------------------------------+---------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                | :ref:`get_end<class_RegExMatch_get_end>`  **(** :ref:`Variant<class_variant>` name=0  **)** const       |
-+--------------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`            | :ref:`get_group_array<class_RegExMatch_get_group_array>`  **(** **)** const                             |
 +--------------------------------------+---------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                | :ref:`get_group_count<class_RegExMatch_get_group_count>`  **(** **)** const                             |
 +--------------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_dictionary>`  | :ref:`get_name_dict<class_RegExMatch_get_name_dict>`  **(** **)** const                                 |
-+--------------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`            | :ref:`get_names<class_RegExMatch_get_names>`  **(** **)** const                                         |
+| :ref:`Dictionary<class_dictionary>`  | :ref:`get_names<class_RegExMatch_get_names>`  **(** **)** const                                         |
 +--------------------------------------+---------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                | :ref:`get_start<class_RegExMatch_get_start>`  **(** :ref:`Variant<class_variant>` name=0  **)** const   |
 +--------------------------------------+---------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`          | :ref:`get_string<class_RegExMatch_get_string>`  **(** :ref:`Variant<class_variant>` name=0  **)** const |
 +--------------------------------------+---------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`            | :ref:`get_strings<class_RegExMatch_get_strings>`  **(** **)** const                                     |
++--------------------------------------+---------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`          | :ref:`get_subject<class_RegExMatch_get_subject>`  **(** **)** const                                     |
++--------------------------------------+---------------------------------------------------------------------------------------------------------+
 
 Member Function Description
 ---------------------------
-
-.. _class_RegExMatch_expand:
-
-- :ref:`String<class_string>`  **expand**  **(** :ref:`String<class_string>` template  **)** const
-
-Using results from the search, returns the specified string with escapes and backreferences such as ``\1`` and ``\g<name>`` expanded and resolved.
 
 .. _class_RegExMatch_get_end:
 
@@ -51,27 +43,15 @@ Using results from the search, returns the specified string with escapes and bac
 
 Returns the end position of the match in the string. An integer can be specified for numeric groups or a string for named groups. Returns -1 if that group wasn't found or doesn't exist. Defaults to 0 (whole pattern).
 
-.. _class_RegExMatch_get_group_array:
-
-- :ref:`Array<class_array>`  **get_group_array**  **(** **)** const
-
-Returns an array of the results of the numeric groups.
-
 .. _class_RegExMatch_get_group_count:
 
 - :ref:`int<class_int>`  **get_group_count**  **(** **)** const
 
 Returns the number of numeric capturing groups.
 
-.. _class_RegExMatch_get_name_dict:
-
-- :ref:`Dictionary<class_dictionary>`  **get_name_dict**  **(** **)** const
-
-Returns a dictionary containing the named capturing groups and their results.
-
 .. _class_RegExMatch_get_names:
 
-- :ref:`Array<class_array>`  **get_names**  **(** **)** const
+- :ref:`Dictionary<class_dictionary>`  **get_names**  **(** **)** const
 
 Returns an array of names of named capturing groups.
 
@@ -86,5 +66,13 @@ Returns the starting position of the match in the string. An integer can be spec
 - :ref:`String<class_string>`  **get_string**  **(** :ref:`Variant<class_variant>` name=0  **)** const
 
 Returns the result of the match in the string. An integer can be specified for numeric groups or a string for named groups. Returns -1 if that group wasn't found or doesn't exist. Defaults to 0 (whole pattern).
+
+.. _class_RegExMatch_get_strings:
+
+- :ref:`Array<class_array>`  **get_strings**  **(** **)** const
+
+.. _class_RegExMatch_get_subject:
+
+- :ref:`String<class_string>`  **get_subject**  **(** **)** const
 
 

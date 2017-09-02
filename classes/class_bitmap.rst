@@ -21,7 +21,7 @@ Member Functions
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`create<class_BitMap_create>`  **(** :ref:`Vector2<class_vector2>` size  **)**                                        |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`create_from_image_alpha<class_BitMap_create_from_image_alpha>`  **(** :ref:`Object<class_object>` image  **)**       |
+| void                           | :ref:`create_from_image_alpha<class_BitMap_create_from_image_alpha>`  **(** :ref:`Image<class_image>` image  **)**         |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`get_bit<class_BitMap_get_bit>`  **(** :ref:`Vector2<class_vector2>` pos  **)** const                                 |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
@@ -48,7 +48,7 @@ Member Function Description
 
 .. _class_BitMap_create_from_image_alpha:
 
-- void  **create_from_image_alpha**  **(** :ref:`Object<class_object>` image  **)**
+- void  **create_from_image_alpha**  **(** :ref:`Image<class_image>` image  **)**
 
 .. _class_BitMap_get_bit:
 

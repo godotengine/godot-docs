@@ -39,7 +39,7 @@ Member Functions
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_constant_list<class_Theme_get_constant_list>`  **(** :ref:`String<class_string>` type  **)** const                                                            |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`                    | :ref:`get_default_font<class_Theme_get_default_font>`  **(** **)** const                                                                                                |
+| :ref:`Font<class_font>`                        | :ref:`get_default_font<class_Theme_get_default_font>`  **(** **)** const                                                                                                |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Font<class_font>`                        | :ref:`get_font<class_Theme_get_font>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type  **)** const                                            |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -71,7 +71,7 @@ Member Functions
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_constant<class_Theme_set_constant>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type, :ref:`int<class_int>` constant  **)**          |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_default_font<class_Theme_set_default_font>`  **(** :ref:`Object<class_object>` font  **)**                                                                    |
+| void                                           | :ref:`set_default_font<class_Theme_set_default_font>`  **(** :ref:`Font<class_font>` font  **)**                                                                        |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_font<class_Theme_set_font>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type, :ref:`Font<class_font>` font  **)**                    |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -137,7 +137,7 @@ Member Function Description
 
 .. _class_Theme_get_default_font:
 
-- :ref:`Object<class_object>`  **get_default_font**  **(** **)** const
+- :ref:`Font<class_font>`  **get_default_font**  **(** **)** const
 
 .. _class_Theme_get_font:
 
@@ -201,7 +201,7 @@ Member Function Description
 
 .. _class_Theme_set_default_font:
 
-- void  **set_default_font**  **(** :ref:`Object<class_object>` font  **)**
+- void  **set_default_font**  **(** :ref:`Font<class_font>` font  **)**
 
 .. _class_Theme_set_font:
 

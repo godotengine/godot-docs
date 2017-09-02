@@ -29,6 +29,8 @@ Member Functions
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform<class_transform>`  | :ref:`affine_inverse<class_Transform_affine_inverse>`  **(** **)**                                                                                                                                               |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_transform>`  | :ref:`interpolate_with<class_Transform_interpolate_with>`  **(** :ref:`Transform<class_transform>` transform, :ref:`float<class_float>` weight  **)**                                                            |
++------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform<class_transform>`  | :ref:`inverse<class_Transform_inverse>`  **(** **)**                                                                                                                                                             |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform<class_transform>`  | :ref:`looking_at<class_Transform_looking_at>`  **(** :ref:`Vector3<class_vector3>` target, :ref:`Vector3<class_vector3>` up  **)**                                                                               |
@@ -95,6 +97,10 @@ Construct the Transform from a Basis. The origin will be Vector3(0, 0, 0).
 - :ref:`Transform<class_transform>`  **affine_inverse**  **(** **)**
 
 Returns the inverse of the transfrom, under the assumption that the transformation is composed of rotation, scaling and translation.
+
+.. _class_Transform_interpolate_with:
+
+- :ref:`Transform<class_transform>`  **interpolate_with**  **(** :ref:`Transform<class_transform>` transform, :ref:`float<class_float>` weight  **)**
 
 .. _class_Transform_inverse:
 

@@ -111,12 +111,12 @@ Member Variables
 - :ref:`Texture<class_texture>` **normal_map**
 - :ref:`bool<class_bool>` **one_shot**
 - :ref:`float<class_float>` **preprocess**
-- ShaderMaterial,ParticlesMaterial **process_material**
+- :ref:`Material<class_material>` **process_material**
 - :ref:`float<class_float>` **randomness**
 - :ref:`float<class_float>` **speed_scale**
 - :ref:`Texture<class_texture>` **texture**
 - :ref:`int<class_int>` **v_frames**
-- :ref:`Rect3<class_rect3>` **visibility_rect**
+- :ref:`Rect2<class_rect2>` **visibility_rect**
 
 Numeric Constants
 -----------------

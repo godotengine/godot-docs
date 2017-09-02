@@ -18,15 +18,15 @@ Brief Description
 Member Functions
 ----------------
 
-+-------+-------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`_subcall<class_VisualScriptSubCall__subcall>`  **(** :ref:`Variant<class_variant>` arguments  **)** virtual |
-+-------+-------------------------------------------------------------------------------------------------------------------+
++--------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_variant>`  | :ref:`_subcall<class_VisualScriptSubCall__subcall>`  **(** :ref:`Variant<class_variant>` arguments  **)** virtual |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------+
 
 Member Function Description
 ---------------------------
 
 .. _class_VisualScriptSubCall__subcall:
 
-- void  **_subcall**  **(** :ref:`Variant<class_variant>` arguments  **)** virtual
+- :ref:`Variant<class_variant>`  **_subcall**  **(** :ref:`Variant<class_variant>` arguments  **)** virtual
 
 

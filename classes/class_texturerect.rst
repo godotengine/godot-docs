@@ -18,19 +18,19 @@ Control Frame that draws a texture.
 Member Functions
 ----------------
 
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_stretch_mode<class_TextureRect_get_stretch_mode>`  **(** **)** const                               |
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`  | :ref:`get_texture<class_TextureRect_get_texture>`  **(** **)** const                                         |
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`has_expand<class_TextureRect_has_expand>`  **(** **)** const                                           |
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_expand<class_TextureRect_set_expand>`  **(** :ref:`bool<class_bool>` enable  **)**                 |
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_stretch_mode<class_TextureRect_set_stretch_mode>`  **(** :ref:`int<class_int>` stretch_mode  **)** |
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_texture<class_TextureRect_set_texture>`  **(** :ref:`Object<class_object>` texture  **)**          |
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
++--------------------------------+--------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_stretch_mode<class_TextureRect_get_stretch_mode>`  **(** **)** const                               |
++--------------------------------+--------------------------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_texture>`  | :ref:`get_texture<class_TextureRect_get_texture>`  **(** **)** const                                         |
++--------------------------------+--------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`has_expand<class_TextureRect_has_expand>`  **(** **)** const                                           |
++--------------------------------+--------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_expand<class_TextureRect_set_expand>`  **(** :ref:`bool<class_bool>` enable  **)**                 |
++--------------------------------+--------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_stretch_mode<class_TextureRect_set_stretch_mode>`  **(** :ref:`int<class_int>` stretch_mode  **)** |
++--------------------------------+--------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_texture<class_TextureRect_set_texture>`  **(** :ref:`Texture<class_texture>` texture  **)**        |
++--------------------------------+--------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -65,7 +65,7 @@ Member Function Description
 
 .. _class_TextureRect_get_texture:
 
-- :ref:`Object<class_object>`  **get_texture**  **(** **)** const
+- :ref:`Texture<class_texture>`  **get_texture**  **(** **)** const
 
 .. _class_TextureRect_has_expand:
 
@@ -81,6 +81,6 @@ Member Function Description
 
 .. _class_TextureRect_set_texture:
 
-- void  **set_texture**  **(** :ref:`Object<class_object>` texture  **)**
+- void  **set_texture**  **(** :ref:`Texture<class_texture>` texture  **)**
 
 

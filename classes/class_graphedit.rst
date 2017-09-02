@@ -19,7 +19,7 @@ Member Functions
 ----------------
 
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Error                          | :ref:`connect_node<class_GraphEdit_connect_node>`  **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_port, :ref:`String<class_string>` to, :ref:`int<class_int>` to_port  **)**           |
+| :ref:`int<class_int>`          | :ref:`connect_node<class_GraphEdit_connect_node>`  **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_port, :ref:`String<class_string>` to, :ref:`int<class_int>` to_port  **)**           |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`disconnect_node<class_GraphEdit_disconnect_node>`  **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_port, :ref:`String<class_string>` to, :ref:`int<class_int>` to_port  **)**     |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -41,7 +41,7 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_scroll_ofs<class_GraphEdit_set_scroll_ofs>`  **(** :ref:`Vector2<class_vector2>` ofs  **)**                                                                                                      |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_selected<class_GraphEdit_set_selected>`  **(** :ref:`Object<class_object>` node  **)**                                                                                                           |
+| void                           | :ref:`set_selected<class_GraphEdit_set_selected>`  **(** :ref:`Node<class_node>` node  **)**                                                                                                               |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_snap<class_GraphEdit_set_snap>`  **(** :ref:`int<class_int>` pixels  **)**                                                                                                                       |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -81,7 +81,7 @@ Signal sent when a popup is requested. Happens on right-clicking in the GraphEdi
 Description
 -----------
 
-GraphEdit manages the showing of GraphNodes it contains, as well as connections an disconnections between them. Signals are sent for each of these two events. Disconnection between GraphNodes slots is disabled by default.
+GraphEdit manages the showing of GraphNodes it contains, as well as connections and disconnections between them. Signals are sent for each of these two events. Disconnection between GraphNodes slots is disabled by default.
 
 It is greatly advised to enable low processor usage mode (see :ref:`OS.set_low_processor_usage_mode<class_OS_set_low_processor_usage_mode>`) when using GraphEdits.
 
@@ -90,7 +90,7 @@ Member Function Description
 
 .. _class_GraphEdit_connect_node:
 
-- Error  **connect_node**  **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_port, :ref:`String<class_string>` to, :ref:`int<class_int>` to_port  **)**
+- :ref:`int<class_int>`  **connect_node**  **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_port, :ref:`String<class_string>` to, :ref:`int<class_int>` to_port  **)**
 
 Create a connection between 'from_port' slot of 'from' GraphNode and 'to_port' slot of 'to' GraphNode. If the connection already exists, no connection is created.
 
@@ -150,7 +150,7 @@ Enable the disconnection of existing connections in the visual GraphEdit by left
 
 .. _class_GraphEdit_set_selected:
 
-- void  **set_selected**  **(** :ref:`Object<class_object>` node  **)**
+- void  **set_selected**  **(** :ref:`Node<class_node>` node  **)**
 
 .. _class_GraphEdit_set_snap:
 

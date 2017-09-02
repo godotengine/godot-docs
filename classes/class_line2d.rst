@@ -27,7 +27,7 @@ Member Functions
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                            | :ref:`get_end_cap_mode<class_Line2D_get_end_cap_mode>`  **(** **)** const                                                 |
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`                      | :ref:`get_gradient<class_Line2D_get_gradient>`  **(** **)** const                                                         |
+| :ref:`Gradient<class_gradient>`                  | :ref:`get_gradient<class_Line2D_get_gradient>`  **(** **)** const                                                         |
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                            | :ref:`get_joint_mode<class_Line2D_get_joint_mode>`  **(** **)** const                                                     |
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
@@ -41,7 +41,7 @@ Member Functions
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                        | :ref:`get_sharp_limit<class_Line2D_get_sharp_limit>`  **(** **)** const                                                   |
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`                      | :ref:`get_texture<class_Line2D_get_texture>`  **(** **)** const                                                           |
+| :ref:`Texture<class_texture>`                    | :ref:`get_texture<class_Line2D_get_texture>`  **(** **)** const                                                           |
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                            | :ref:`get_texture_mode<class_Line2D_get_texture_mode>`  **(** **)** const                                                 |
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
@@ -55,7 +55,7 @@ Member Functions
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`set_end_cap_mode<class_Line2D_set_end_cap_mode>`  **(** :ref:`int<class_int>` mode  **)**                           |
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_gradient<class_Line2D_set_gradient>`  **(** :ref:`Object<class_object>` color  **)**                            |
+| void                                             | :ref:`set_gradient<class_Line2D_set_gradient>`  **(** :ref:`Gradient<class_gradient>` color  **)**                        |
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`set_joint_mode<class_Line2D_set_joint_mode>`  **(** :ref:`int<class_int>` mode  **)**                               |
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
@@ -67,7 +67,7 @@ Member Functions
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`set_sharp_limit<class_Line2D_set_sharp_limit>`  **(** :ref:`float<class_float>` limit  **)**                        |
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_texture<class_Line2D_set_texture>`  **(** :ref:`Object<class_object>` texture  **)**                            |
+| void                                             | :ref:`set_texture<class_Line2D_set_texture>`  **(** :ref:`Texture<class_texture>` texture  **)**                          |
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`set_texture_mode<class_Line2D_set_texture_mode>`  **(** :ref:`int<class_int>` mode  **)**                           |
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
@@ -122,7 +122,7 @@ Member Function Description
 
 .. _class_Line2D_get_gradient:
 
-- :ref:`Object<class_object>`  **get_gradient**  **(** **)** const
+- :ref:`Gradient<class_gradient>`  **get_gradient**  **(** **)** const
 
 .. _class_Line2D_get_joint_mode:
 
@@ -150,7 +150,7 @@ Member Function Description
 
 .. _class_Line2D_get_texture:
 
-- :ref:`Object<class_object>`  **get_texture**  **(** **)** const
+- :ref:`Texture<class_texture>`  **get_texture**  **(** **)** const
 
 .. _class_Line2D_get_texture_mode:
 
@@ -178,7 +178,7 @@ Member Function Description
 
 .. _class_Line2D_set_gradient:
 
-- void  **set_gradient**  **(** :ref:`Object<class_object>` color  **)**
+- void  **set_gradient**  **(** :ref:`Gradient<class_gradient>` color  **)**
 
 .. _class_Line2D_set_joint_mode:
 
@@ -202,7 +202,7 @@ Member Function Description
 
 .. _class_Line2D_set_texture:
 
-- void  **set_texture**  **(** :ref:`Object<class_object>` texture  **)**
+- void  **set_texture**  **(** :ref:`Texture<class_texture>` texture  **)**
 
 .. _class_Line2D_set_texture_mode:
 

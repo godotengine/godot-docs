@@ -39,7 +39,7 @@ Member Functions
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_object_type_mask<class_PhysicsShapeQueryParameters_set_object_type_mask>`  **(** :ref:`int<class_int>` object_type_mask  **)** |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_shape<class_PhysicsShapeQueryParameters_set_shape>`  **(** :ref:`Shape<class_shape>` shape  **)**                              |
+| void                               | :ref:`set_shape<class_PhysicsShapeQueryParameters_set_shape>`  **(** :ref:`Resource<class_resource>` shape  **)**                        |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_shape_rid<class_PhysicsShapeQueryParameters_set_shape_rid>`  **(** :ref:`RID<class_rid>` shape  **)**                          |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
@@ -91,7 +91,7 @@ Member Function Description
 
 .. _class_PhysicsShapeQueryParameters_set_shape:
 
-- void  **set_shape**  **(** :ref:`Shape<class_shape>` shape  **)**
+- void  **set_shape**  **(** :ref:`Resource<class_resource>` shape  **)**
 
 .. _class_PhysicsShapeQueryParameters_set_shape_rid:
 

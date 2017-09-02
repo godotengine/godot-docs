@@ -94,7 +94,7 @@ Get the list of favorite directories for this project.
 
 - :ref:`String<class_string>`  **get_project_settings_path**  **(** **)** const
 
-Get the specific project settings path. Projects all have an unique sub-directory inside the settings path where project specific settings are saved.
+Get the specific project settings path. Projects all have a unique sub-directory inside the settings path where project specific settings are saved.
 
 .. _class_EditorSettings_get_recent_dirs:
 

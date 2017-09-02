@@ -31,6 +31,7 @@ Member Functions
 Member Variables
 ----------------
 
+- :ref:`float<class_float>` **directional_shadow_bias_split_scale**
 - :ref:`bool<class_bool>` **directional_shadow_blend_splits**
 - :ref:`int<class_int>` **directional_shadow_mode**
 - :ref:`float<class_float>` **directional_shadow_normal_bias**

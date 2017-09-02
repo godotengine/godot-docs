@@ -41,12 +41,6 @@ Member Functions
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Basis<class_basis>`      | :ref:`scaled<class_Basis_scaled>`  **(** :ref:`Vector3<class_vector3>` scale  **)**                                                                            |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_rotation_axis_angle<class_Basis_set_rotation_axis_angle>`  **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` angle  **)**          |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_rotation_euler<class_Basis_set_rotation_euler>`  **(** :ref:`Vector3<class_vector3>` euler  **)**                                                    |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_scale<class_Basis_set_scale>`  **(** :ref:`Vector3<class_vector3>` scale  **)**                                                                      |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`tdotx<class_Basis_tdotx>`  **(** :ref:`Vector3<class_vector3>` with  **)**                                                                               |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`tdoty<class_Basis_tdoty>`  **(** :ref:`Vector3<class_vector3>` with  **)**                                                                               |
@@ -87,7 +81,7 @@ Create a rotation matrix from the given quaternion.
 
 - :ref:`Basis<class_basis>`  **Basis**  **(** :ref:`Vector3<class_vector3>` euler  **)**
 
-Create a rotation matrix (in the XYZ convention: first Z, then Y, and X last) from the specified Euler angles, given in the vector format as (third, second, first).
+Create a rotation matrix (in the YXZ convention: first Z, then X, and Y last) from the specified Euler angles, given in the vector format as (X-angle, Y-angle, Z-angle).
 
 .. _class_Basis_Basis:
 
@@ -111,7 +105,7 @@ Return the determinant of the matrix.
 
 - :ref:`Vector3<class_vector3>`  **get_euler**  **(** **)**
 
-Assuming that the matrix is a proper rotation matrix (orthonormal matrix with determinant +1), return Euler angles (in the XYZ convention: first Z, then Y, and X last). Returned vector contains the rotation angles in the format (third,second,first).
+Assuming that the matrix is a proper rotation matrix (orthonormal matrix with determinant +1), return Euler angles (in the YXZ convention: first Z, then X, and Y last). Returned vector contains the rotation angles in the format (X-angle, Y-angle, Z-angle).
 
 .. _class_Basis_get_orthogonal_index:
 
@@ -148,24 +142,6 @@ Introduce an additional rotation around the given axis by phi (radians). Only re
 - :ref:`Basis<class_basis>`  **scaled**  **(** :ref:`Vector3<class_vector3>` scale  **)**
 
 Introduce an additional scaling specified by the given 3D scaling factor. Only relevant when the matrix is being used as a part of :ref:`Transform<class_transform>`.
-
-.. _class_Basis_set_rotation_axis_angle:
-
-- void  **set_rotation_axis_angle**  **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` angle  **)**
-
-Changes only the rotation part of the :ref:`Basis<class_basis>` to a rotation around given axis by phi, while preserving the scaling part (as determined by get_scale).
-
-.. _class_Basis_set_rotation_euler:
-
-- void  **set_rotation_euler**  **(** :ref:`Vector3<class_vector3>` euler  **)**
-
-Changes only the rotation part of the :ref:`Basis<class_basis>` to a rotation corresponding to given Euler angles, while preserving the scaling part (as determined by get_scale).
-
-.. _class_Basis_set_scale:
-
-- void  **set_scale**  **(** :ref:`Vector3<class_vector3>` scale  **)**
-
-Changes only the scaling part of the Basis to the specified scaling, while preserving the rotation part (as determined by get_rotation).
 
 .. _class_Basis_tdotx:
 

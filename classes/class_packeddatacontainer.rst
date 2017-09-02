@@ -19,7 +19,7 @@ Member Functions
 ----------------
 
 +------------------------+-----------------------------------------------------------------------------------------------+
-| Error                  | :ref:`pack<class_PackedDataContainer_pack>`  **(** :ref:`Variant<class_variant>` value  **)** |
+| :ref:`int<class_int>`  | :ref:`pack<class_PackedDataContainer_pack>`  **(** :ref:`Variant<class_variant>` value  **)** |
 +------------------------+-----------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`  | :ref:`size<class_PackedDataContainer_size>`  **(** **)** const                                |
 +------------------------+-----------------------------------------------------------------------------------------------+
@@ -34,7 +34,7 @@ Member Function Description
 
 .. _class_PackedDataContainer_pack:
 
-- Error  **pack**  **(** :ref:`Variant<class_variant>` value  **)**
+- :ref:`int<class_int>`  **pack**  **(** :ref:`Variant<class_variant>` value  **)**
 
 .. _class_PackedDataContainer_size:
 

@@ -18,17 +18,17 @@ Interactive Resource Loader.
 Member Functions
 ----------------
 
-+------------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`  | :ref:`get_resource<class_ResourceInteractiveLoader_get_resource>`  **(** **)**             |
-+------------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_stage<class_ResourceInteractiveLoader_get_stage>`  **(** **)** const             |
-+------------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_stage_count<class_ResourceInteractiveLoader_get_stage_count>`  **(** **)** const |
-+------------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`poll<class_ResourceInteractiveLoader_poll>`  **(** **)**                             |
-+------------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`wait<class_ResourceInteractiveLoader_wait>`  **(** **)**                             |
-+------------------------------+--------------------------------------------------------------------------------------------+
++----------------------------------+--------------------------------------------------------------------------------------------+
+| :ref:`Resource<class_resource>`  | :ref:`get_resource<class_ResourceInteractiveLoader_get_resource>`  **(** **)**             |
++----------------------------------+--------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_stage<class_ResourceInteractiveLoader_get_stage>`  **(** **)** const             |
++----------------------------------+--------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_stage_count<class_ResourceInteractiveLoader_get_stage_count>`  **(** **)** const |
++----------------------------------+--------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`poll<class_ResourceInteractiveLoader_poll>`  **(** **)**                             |
++----------------------------------+--------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`wait<class_ResourceInteractiveLoader_wait>`  **(** **)**                             |
++----------------------------------+--------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -40,7 +40,7 @@ Member Function Description
 
 .. _class_ResourceInteractiveLoader_get_resource:
 
-- :ref:`Object<class_object>`  **get_resource**  **(** **)**
+- :ref:`Resource<class_resource>`  **get_resource**  **(** **)**
 
 Return the loaded resource (only if loaded). Otherwise, returns null.
 

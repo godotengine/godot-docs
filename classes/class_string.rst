@@ -406,7 +406,7 @@ Hash the string and return a 32 bits integer.
 
 - :ref:`int<class_int>`  **hex_to_int**  **(** **)**
 
-Convert a string containing an hexadecimal number into an int.
+Convert a string containing a hexadecimal number into an int.
 
 .. _class_String_insert:
 

@@ -19,7 +19,7 @@ Member Functions
 ----------------
 
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`alert<class_OS_alert>`  **(** :ref:`String<class_string>` text, :ref:`String<class_string>` title="Alert!"  **)**                                                                                                    |
+| void                                           | :ref:`alert<class_OS_alert>`  **(** :ref:`String<class_string>` text, :ref:`String<class_string>` title=null  **)**                                                                                                        |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`can_draw<class_OS_can_draw>`  **(** **)** const                                                                                                                                                                      |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -33,7 +33,7 @@ Member Functions
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`dump_resources_to_file<class_OS_dump_resources_to_file>`  **(** :ref:`String<class_string>` file  **)**                                                                                                              |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`execute<class_OS_execute>`  **(** :ref:`String<class_string>` path, :ref:`PoolStringArray<class_poolstringarray>` arguments, :ref:`bool<class_bool>` blocking, :ref:`Array<class_array>` output=[]  **)**            |
+| :ref:`int<class_int>`                          | :ref:`execute<class_OS_execute>`  **(** :ref:`String<class_string>` path, :ref:`PoolStringArray<class_poolstringarray>` arguments, :ref:`bool<class_bool>` blocking, :ref:`Array<class_array>` output=null  **)**          |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`find_scancode_from_string<class_OS_find_scancode_from_string>`  **(** :ref:`String<class_string>` string  **)** const                                                                                                |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -75,7 +75,7 @@ Member Functions
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_power_state<class_OS_get_power_state>`  **(** **)**                                                                                                                                                              |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`get_process_ID<class_OS_get_process_ID>`  **(** **)** const                                                                                                                                                          |
+| :ref:`int<class_int>`                          | :ref:`get_process_id<class_OS_get_process_id>`  **(** **)** const                                                                                                                                                          |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_processor_count<class_OS_get_processor_count>`  **(** **)** const                                                                                                                                                |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -83,13 +83,13 @@ Member Functions
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_screen_count<class_OS_get_screen_count>`  **(** **)** const                                                                                                                                                      |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`get_screen_dpi<class_OS_get_screen_dpi>`  **(** :ref:`int<class_int>` screen=0  **)** const                                                                                                                          |
+| :ref:`int<class_int>`                          | :ref:`get_screen_dpi<class_OS_get_screen_dpi>`  **(** :ref:`int<class_int>` screen=-1  **)** const                                                                                                                         |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_screen_orientation<class_OS_get_screen_orientation>`  **(** **)** const                                                                                                                                          |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`                  | :ref:`get_screen_position<class_OS_get_screen_position>`  **(** :ref:`int<class_int>` screen=0  **)** const                                                                                                                |
+| :ref:`Vector2<class_vector2>`                  | :ref:`get_screen_position<class_OS_get_screen_position>`  **(** :ref:`int<class_int>` screen=-1  **)** const                                                                                                               |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`                  | :ref:`get_screen_size<class_OS_get_screen_size>`  **(** :ref:`int<class_int>` screen=0  **)** const                                                                                                                        |
+| :ref:`Vector2<class_vector2>`                  | :ref:`get_screen_size<class_OS_get_screen_size>`  **(** :ref:`int<class_int>` screen=-1  **)** const                                                                                                                       |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_splash_tick_msec<class_OS_get_splash_tick_msec>`  **(** **)** const                                                                                                                                              |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -107,7 +107,7 @@ Member Functions
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_dictionary>`            | :ref:`get_time_zone_info<class_OS_get_time_zone_info>`  **(** **)** const                                                                                                                                                  |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`get_unique_ID<class_OS_get_unique_ID>`  **(** **)** const                                                                                                                                                            |
+| :ref:`String<class_string>`                    | :ref:`get_unique_id<class_OS_get_unique_id>`  **(** **)** const                                                                                                                                                            |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_unix_time<class_OS_get_unix_time>`  **(** **)** const                                                                                                                                                            |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -177,9 +177,9 @@ Member Functions
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_exit_code<class_OS_set_exit_code>`  **(** :ref:`int<class_int>` code  **)**                                                                                                                                      |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_icon<class_OS_set_icon>`  **(** :ref:`Object<class_object>` icon  **)**                                                                                                                                          |
+| void                                           | :ref:`set_icon<class_OS_set_icon>`  **(** :ref:`Image<class_image>` icon  **)**                                                                                                                                            |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_ime_position<class_OS_set_ime_position>`  **(** :ref:`Vector2<class_vector2>` arg0  **)**                                                                                                                        |
+| void                                           | :ref:`set_ime_position<class_OS_set_ime_position>`  **(** :ref:`Vector2<class_vector2>` position  **)**                                                                                                                    |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_keep_screen_on<class_OS_set_keep_screen_on>`  **(** :ref:`bool<class_bool>` enabled  **)**                                                                                                                       |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -265,7 +265,7 @@ Member Function Description
 
 .. _class_OS_alert:
 
-- void  **alert**  **(** :ref:`String<class_string>` text, :ref:`String<class_string>` title="Alert!"  **)**
+- void  **alert**  **(** :ref:`String<class_string>` text, :ref:`String<class_string>` title=null  **)**
 
 Displays a modal dialog box utilizing the host OS.
 
@@ -313,7 +313,7 @@ At the end of the file is a statistic of all used Resource Types.
 
 .. _class_OS_execute:
 
-- :ref:`int<class_int>`  **execute**  **(** :ref:`String<class_string>` path, :ref:`PoolStringArray<class_poolstringarray>` arguments, :ref:`bool<class_bool>` blocking, :ref:`Array<class_array>` output=[]  **)**
+- :ref:`int<class_int>`  **execute**  **(** :ref:`String<class_string>` path, :ref:`PoolStringArray<class_poolstringarray>` arguments, :ref:`bool<class_bool>` blocking, :ref:`Array<class_array>` output=null  **)**
 
 Execute the binary file in given path, optionally blocking until it returns. A process ID is returned.
 
@@ -433,9 +433,9 @@ Return the name of the host OS. Possible values are: "Android", "Haiku", "iOS", 
 
 - :ref:`int<class_int>`  **get_power_state**  **(** **)**
 
-.. _class_OS_get_process_ID:
+.. _class_OS_get_process_id:
 
-- :ref:`int<class_int>`  **get_process_ID**  **(** **)** const
+- :ref:`int<class_int>`  **get_process_id**  **(** **)** const
 
 Returns the game process ID
 
@@ -459,7 +459,7 @@ Returns the number of displays attached to the host machine
 
 .. _class_OS_get_screen_dpi:
 
-- :ref:`int<class_int>`  **get_screen_dpi**  **(** :ref:`int<class_int>` screen=0  **)** const
+- :ref:`int<class_int>`  **get_screen_dpi**  **(** :ref:`int<class_int>` screen=-1  **)** const
 
 Returns the dots per inch density of the specified screen.
 
@@ -487,11 +487,11 @@ Returns the current screen orientation, the return value will be one of the SCRE
 
 .. _class_OS_get_screen_position:
 
-- :ref:`Vector2<class_vector2>`  **get_screen_position**  **(** :ref:`int<class_int>` screen=0  **)** const
+- :ref:`Vector2<class_vector2>`  **get_screen_position**  **(** :ref:`int<class_int>` screen=-1  **)** const
 
 .. _class_OS_get_screen_size:
 
-- :ref:`Vector2<class_vector2>`  **get_screen_size**  **(** :ref:`int<class_int>` screen=0  **)** const
+- :ref:`Vector2<class_vector2>`  **get_screen_size**  **(** :ref:`int<class_int>` screen=-1  **)** const
 
 Returns the dimensions in pixels of the specified screen.
 
@@ -533,9 +533,9 @@ Returns current time as a dictionary of keys: hour, minute, second
 
 - :ref:`Dictionary<class_dictionary>`  **get_time_zone_info**  **(** **)** const
 
-.. _class_OS_get_unique_ID:
+.. _class_OS_get_unique_id:
 
-- :ref:`String<class_string>`  **get_unique_ID**  **(** **)** const
+- :ref:`String<class_string>`  **get_unique_id**  **(** **)** const
 
 .. _class_OS_get_unix_time:
 
@@ -713,11 +713,11 @@ Set clipboard to the OS.
 
 .. _class_OS_set_icon:
 
-- void  **set_icon**  **(** :ref:`Object<class_object>` icon  **)**
+- void  **set_icon**  **(** :ref:`Image<class_image>` icon  **)**
 
 .. _class_OS_set_ime_position:
 
-- void  **set_ime_position**  **(** :ref:`Vector2<class_vector2>` arg0  **)**
+- void  **set_ime_position**  **(** :ref:`Vector2<class_vector2>` position  **)**
 
 .. _class_OS_set_keep_screen_on:
 

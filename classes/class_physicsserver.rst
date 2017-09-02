@@ -21,17 +21,17 @@ Member Functions
 ----------------
 
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                           | :ref:`area_add_shape<class_PhysicsServer_area_add_shape>`  **(** :ref:`RID<class_rid>` area, :ref:`RID<class_rid>` shape, :ref:`Transform<class_transform>` transform=Transform()  **)**                                                                            |
+| void                                                           | :ref:`area_add_shape<class_PhysicsServer_area_add_shape>`  **(** :ref:`RID<class_rid>` area, :ref:`RID<class_rid>` shape, :ref:`Transform<class_transform>` transform=null  **)**                                                                                   |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                           | :ref:`area_attach_object_instance_ID<class_PhysicsServer_area_attach_object_instance_ID>`  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` id  **)**                                                                                                        |
+| void                                                           | :ref:`area_attach_object_instance_id<class_PhysicsServer_area_attach_object_instance_id>`  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` id  **)**                                                                                                        |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`area_clear_shapes<class_PhysicsServer_area_clear_shapes>`  **(** :ref:`RID<class_rid>` area  **)**                                                                                                                                                            |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_rid>`                                          | :ref:`area_create<class_PhysicsServer_area_create>`  **(** **)**                                                                                                                                                                                                    |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                          | :ref:`area_get_object_instance_ID<class_PhysicsServer_area_get_object_instance_ID>`  **(** :ref:`RID<class_rid>` area  **)** const                                                                                                                                  |
+| :ref:`int<class_int>`                                          | :ref:`area_get_object_instance_id<class_PhysicsServer_area_get_object_instance_id>`  **(** :ref:`RID<class_rid>` area  **)** const                                                                                                                                  |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                           | :ref:`area_get_param<class_PhysicsServer_area_get_param>`  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` param  **)** const                                                                                                                               |
+| :ref:`Variant<class_variant>`                                  | :ref:`area_get_param<class_PhysicsServer_area_get_param>`  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` param  **)** const                                                                                                                               |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_rid>`                                          | :ref:`area_get_shape<class_PhysicsServer_area_get_shape>`  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx  **)** const                                                                                                                           |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -71,17 +71,17 @@ Member Functions
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`body_add_collision_exception<class_PhysicsServer_body_add_collision_exception>`  **(** :ref:`RID<class_rid>` body, :ref:`RID<class_rid>` excepted_body  **)**                                                                                                 |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                           | :ref:`body_add_shape<class_PhysicsServer_body_add_shape>`  **(** :ref:`RID<class_rid>` body, :ref:`RID<class_rid>` shape, :ref:`Transform<class_transform>` transform=Transform()  **)**                                                                            |
+| void                                                           | :ref:`body_add_shape<class_PhysicsServer_body_add_shape>`  **(** :ref:`RID<class_rid>` body, :ref:`RID<class_rid>` shape, :ref:`Transform<class_transform>` transform=null  **)**                                                                                   |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`body_apply_impulse<class_PhysicsServer_body_apply_impulse>`  **(** :ref:`RID<class_rid>` body, :ref:`Vector3<class_vector3>` pos, :ref:`Vector3<class_vector3>` impulse  **)**                                                                                |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`body_apply_torque_impulse<class_PhysicsServer_body_apply_torque_impulse>`  **(** :ref:`RID<class_rid>` body, :ref:`Vector3<class_vector3>` impulse  **)**                                                                                                     |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                           | :ref:`body_attach_object_instance_ID<class_PhysicsServer_body_attach_object_instance_ID>`  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` id  **)**                                                                                                        |
+| void                                                           | :ref:`body_attach_object_instance_id<class_PhysicsServer_body_attach_object_instance_id>`  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` id  **)**                                                                                                        |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`body_clear_shapes<class_PhysicsServer_body_clear_shapes>`  **(** :ref:`RID<class_rid>` body  **)**                                                                                                                                                            |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                          | :ref:`body_create<class_PhysicsServer_body_create>`  **(** :ref:`int<class_int>` mode=2, :ref:`bool<class_bool>` init_sleeping=false  **)**                                                                                                                         |
+| :ref:`RID<class_rid>`                                          | :ref:`body_create<class_PhysicsServer_body_create>`  **(** :ref:`int<class_int>` mode=false, :ref:`bool<class_bool>` init_sleeping=2  **)**                                                                                                                         |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                          | :ref:`body_get_axis_lock<class_PhysicsServer_body_get_axis_lock>`  **(** :ref:`RID<class_rid>` body  **)** const                                                                                                                                                    |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -93,7 +93,7 @@ Member Functions
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                          | :ref:`body_get_mode<class_PhysicsServer_body_get_mode>`  **(** :ref:`RID<class_rid>` body  **)** const                                                                                                                                                              |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                          | :ref:`body_get_object_instance_ID<class_PhysicsServer_body_get_object_instance_ID>`  **(** :ref:`RID<class_rid>` body  **)** const                                                                                                                                  |
+| :ref:`int<class_int>`                                          | :ref:`body_get_object_instance_id<class_PhysicsServer_body_get_object_instance_id>`  **(** :ref:`RID<class_rid>` body  **)** const                                                                                                                                  |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                      | :ref:`body_get_param<class_PhysicsServer_body_get_param>`  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` param  **)** const                                                                                                                               |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -105,7 +105,7 @@ Member Functions
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_rid>`                                          | :ref:`body_get_space<class_PhysicsServer_body_get_space>`  **(** :ref:`RID<class_rid>` body  **)** const                                                                                                                                                            |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                           | :ref:`body_get_state<class_PhysicsServer_body_get_state>`  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` state  **)** const                                                                                                                               |
+| :ref:`Variant<class_variant>`                                  | :ref:`body_get_state<class_PhysicsServer_body_get_state>`  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` state  **)** const                                                                                                                               |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                        | :ref:`body_is_continuous_collision_detection_enabled<class_PhysicsServer_body_is_continuous_collision_detection_enabled>`  **(** :ref:`RID<class_rid>` body  **)** const                                                                                            |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -127,7 +127,7 @@ Member Functions
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`body_set_enable_continuous_collision_detection<class_PhysicsServer_body_set_enable_continuous_collision_detection>`  **(** :ref:`RID<class_rid>` body, :ref:`bool<class_bool>` enable  **)**                                                                  |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                           | :ref:`body_set_force_integration_callback<class_PhysicsServer_body_set_force_integration_callback>`  **(** :ref:`RID<class_rid>` body, :ref:`Object<class_object>` receiver, :ref:`String<class_string>` method, :ref:`Variant<class_variant>` userdata=NULL  **)** |
+| void                                                           | :ref:`body_set_force_integration_callback<class_PhysicsServer_body_set_force_integration_callback>`  **(** :ref:`RID<class_rid>` body, :ref:`Object<class_object>` receiver, :ref:`String<class_string>` method, :ref:`Variant<class_variant>` userdata=null  **)** |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`body_set_max_contacts_reported<class_PhysicsServer_body_set_max_contacts_reported>`  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` amount  **)**                                                                                                    |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -187,15 +187,15 @@ Member Functions
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`joint_set_solver_priority<class_PhysicsServer_joint_set_solver_priority>`  **(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` priority  **)**                                                                                                           |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`                                  | :ref:`pin_joint_get_local_A<class_PhysicsServer_pin_joint_get_local_A>`  **(** :ref:`RID<class_rid>` joint  **)** const                                                                                                                                             |
+| :ref:`Vector3<class_vector3>`                                  | :ref:`pin_joint_get_local_a<class_PhysicsServer_pin_joint_get_local_a>`  **(** :ref:`RID<class_rid>` joint  **)** const                                                                                                                                             |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`                                  | :ref:`pin_joint_get_local_B<class_PhysicsServer_pin_joint_get_local_B>`  **(** :ref:`RID<class_rid>` joint  **)** const                                                                                                                                             |
+| :ref:`Vector3<class_vector3>`                                  | :ref:`pin_joint_get_local_b<class_PhysicsServer_pin_joint_get_local_b>`  **(** :ref:`RID<class_rid>` joint  **)** const                                                                                                                                             |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                      | :ref:`pin_joint_get_param<class_PhysicsServer_pin_joint_get_param>`  **(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` param  **)** const                                                                                                                    |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                           | :ref:`pin_joint_set_local_A<class_PhysicsServer_pin_joint_set_local_A>`  **(** :ref:`RID<class_rid>` joint, :ref:`Vector3<class_vector3>` local_A  **)**                                                                                                            |
+| void                                                           | :ref:`pin_joint_set_local_a<class_PhysicsServer_pin_joint_set_local_a>`  **(** :ref:`RID<class_rid>` joint, :ref:`Vector3<class_vector3>` local_A  **)**                                                                                                            |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                           | :ref:`pin_joint_set_local_B<class_PhysicsServer_pin_joint_set_local_B>`  **(** :ref:`RID<class_rid>` joint, :ref:`Vector3<class_vector3>` local_B  **)**                                                                                                            |
+| void                                                           | :ref:`pin_joint_set_local_b<class_PhysicsServer_pin_joint_set_local_b>`  **(** :ref:`RID<class_rid>` joint, :ref:`Vector3<class_vector3>` local_B  **)**                                                                                                            |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`pin_joint_set_param<class_PhysicsServer_pin_joint_set_param>`  **(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**                                                                                         |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -203,7 +203,7 @@ Member Functions
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_rid>`                                          | :ref:`shape_create<class_PhysicsServer_shape_create>`  **(** :ref:`int<class_int>` type  **)**                                                                                                                                                                      |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                           | :ref:`shape_get_data<class_PhysicsServer_shape_get_data>`  **(** :ref:`RID<class_rid>` shape  **)** const                                                                                                                                                           |
+| :ref:`Variant<class_variant>`                                  | :ref:`shape_get_data<class_PhysicsServer_shape_get_data>`  **(** :ref:`RID<class_rid>` shape  **)** const                                                                                                                                                           |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                          | :ref:`shape_get_type<class_PhysicsServer_shape_get_type>`  **(** :ref:`RID<class_rid>` shape  **)** const                                                                                                                                                           |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -341,11 +341,11 @@ Member Function Description
 
 .. _class_PhysicsServer_area_add_shape:
 
-- void  **area_add_shape**  **(** :ref:`RID<class_rid>` area, :ref:`RID<class_rid>` shape, :ref:`Transform<class_transform>` transform=Transform()  **)**
+- void  **area_add_shape**  **(** :ref:`RID<class_rid>` area, :ref:`RID<class_rid>` shape, :ref:`Transform<class_transform>` transform=null  **)**
 
-.. _class_PhysicsServer_area_attach_object_instance_ID:
+.. _class_PhysicsServer_area_attach_object_instance_id:
 
-- void  **area_attach_object_instance_ID**  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` id  **)**
+- void  **area_attach_object_instance_id**  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` id  **)**
 
 .. _class_PhysicsServer_area_clear_shapes:
 
@@ -355,13 +355,13 @@ Member Function Description
 
 - :ref:`RID<class_rid>`  **area_create**  **(** **)**
 
-.. _class_PhysicsServer_area_get_object_instance_ID:
+.. _class_PhysicsServer_area_get_object_instance_id:
 
-- :ref:`int<class_int>`  **area_get_object_instance_ID**  **(** :ref:`RID<class_rid>` area  **)** const
+- :ref:`int<class_int>`  **area_get_object_instance_id**  **(** :ref:`RID<class_rid>` area  **)** const
 
 .. _class_PhysicsServer_area_get_param:
 
-- void  **area_get_param**  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` param  **)** const
+- :ref:`Variant<class_variant>`  **area_get_param**  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` param  **)** const
 
 .. _class_PhysicsServer_area_get_shape:
 
@@ -441,7 +441,7 @@ Member Function Description
 
 .. _class_PhysicsServer_body_add_shape:
 
-- void  **body_add_shape**  **(** :ref:`RID<class_rid>` body, :ref:`RID<class_rid>` shape, :ref:`Transform<class_transform>` transform=Transform()  **)**
+- void  **body_add_shape**  **(** :ref:`RID<class_rid>` body, :ref:`RID<class_rid>` shape, :ref:`Transform<class_transform>` transform=null  **)**
 
 .. _class_PhysicsServer_body_apply_impulse:
 
@@ -451,9 +451,9 @@ Member Function Description
 
 - void  **body_apply_torque_impulse**  **(** :ref:`RID<class_rid>` body, :ref:`Vector3<class_vector3>` impulse  **)**
 
-.. _class_PhysicsServer_body_attach_object_instance_ID:
+.. _class_PhysicsServer_body_attach_object_instance_id:
 
-- void  **body_attach_object_instance_ID**  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` id  **)**
+- void  **body_attach_object_instance_id**  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` id  **)**
 
 .. _class_PhysicsServer_body_clear_shapes:
 
@@ -461,7 +461,7 @@ Member Function Description
 
 .. _class_PhysicsServer_body_create:
 
-- :ref:`RID<class_rid>`  **body_create**  **(** :ref:`int<class_int>` mode=2, :ref:`bool<class_bool>` init_sleeping=false  **)**
+- :ref:`RID<class_rid>`  **body_create**  **(** :ref:`int<class_int>` mode=false, :ref:`bool<class_bool>` init_sleeping=2  **)**
 
 .. _class_PhysicsServer_body_get_axis_lock:
 
@@ -483,9 +483,9 @@ Member Function Description
 
 - :ref:`int<class_int>`  **body_get_mode**  **(** :ref:`RID<class_rid>` body  **)** const
 
-.. _class_PhysicsServer_body_get_object_instance_ID:
+.. _class_PhysicsServer_body_get_object_instance_id:
 
-- :ref:`int<class_int>`  **body_get_object_instance_ID**  **(** :ref:`RID<class_rid>` body  **)** const
+- :ref:`int<class_int>`  **body_get_object_instance_id**  **(** :ref:`RID<class_rid>` body  **)** const
 
 .. _class_PhysicsServer_body_get_param:
 
@@ -509,7 +509,7 @@ Member Function Description
 
 .. _class_PhysicsServer_body_get_state:
 
-- void  **body_get_state**  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` state  **)** const
+- :ref:`Variant<class_variant>`  **body_get_state**  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` state  **)** const
 
 .. _class_PhysicsServer_body_is_continuous_collision_detection_enabled:
 
@@ -553,7 +553,7 @@ Member Function Description
 
 .. _class_PhysicsServer_body_set_force_integration_callback:
 
-- void  **body_set_force_integration_callback**  **(** :ref:`RID<class_rid>` body, :ref:`Object<class_object>` receiver, :ref:`String<class_string>` method, :ref:`Variant<class_variant>` userdata=NULL  **)**
+- void  **body_set_force_integration_callback**  **(** :ref:`RID<class_rid>` body, :ref:`Object<class_object>` receiver, :ref:`String<class_string>` method, :ref:`Variant<class_variant>` userdata=null  **)**
 
 .. _class_PhysicsServer_body_set_max_contacts_reported:
 
@@ -671,25 +671,25 @@ Member Function Description
 
 - void  **joint_set_solver_priority**  **(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` priority  **)**
 
-.. _class_PhysicsServer_pin_joint_get_local_A:
+.. _class_PhysicsServer_pin_joint_get_local_a:
 
-- :ref:`Vector3<class_vector3>`  **pin_joint_get_local_A**  **(** :ref:`RID<class_rid>` joint  **)** const
+- :ref:`Vector3<class_vector3>`  **pin_joint_get_local_a**  **(** :ref:`RID<class_rid>` joint  **)** const
 
-.. _class_PhysicsServer_pin_joint_get_local_B:
+.. _class_PhysicsServer_pin_joint_get_local_b:
 
-- :ref:`Vector3<class_vector3>`  **pin_joint_get_local_B**  **(** :ref:`RID<class_rid>` joint  **)** const
+- :ref:`Vector3<class_vector3>`  **pin_joint_get_local_b**  **(** :ref:`RID<class_rid>` joint  **)** const
 
 .. _class_PhysicsServer_pin_joint_get_param:
 
 - :ref:`float<class_float>`  **pin_joint_get_param**  **(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` param  **)** const
 
-.. _class_PhysicsServer_pin_joint_set_local_A:
+.. _class_PhysicsServer_pin_joint_set_local_a:
 
-- void  **pin_joint_set_local_A**  **(** :ref:`RID<class_rid>` joint, :ref:`Vector3<class_vector3>` local_A  **)**
+- void  **pin_joint_set_local_a**  **(** :ref:`RID<class_rid>` joint, :ref:`Vector3<class_vector3>` local_A  **)**
 
-.. _class_PhysicsServer_pin_joint_set_local_B:
+.. _class_PhysicsServer_pin_joint_set_local_b:
 
-- void  **pin_joint_set_local_B**  **(** :ref:`RID<class_rid>` joint, :ref:`Vector3<class_vector3>` local_B  **)**
+- void  **pin_joint_set_local_b**  **(** :ref:`RID<class_rid>` joint, :ref:`Vector3<class_vector3>` local_B  **)**
 
 .. _class_PhysicsServer_pin_joint_set_param:
 
@@ -705,7 +705,7 @@ Member Function Description
 
 .. _class_PhysicsServer_shape_get_data:
 
-- void  **shape_get_data**  **(** :ref:`RID<class_rid>` shape  **)** const
+- :ref:`Variant<class_variant>`  **shape_get_data**  **(** :ref:`RID<class_rid>` shape  **)** const
 
 .. _class_PhysicsServer_shape_get_type:
 

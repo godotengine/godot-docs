@@ -8,7 +8,7 @@ GeometryInstance
 
 **Inherits:** :ref:`VisualInstance<class_visualinstance>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`MultiMeshInstance<class_multimeshinstance>`, :ref:`SpriteBase3D<class_spritebase3d>`, :ref:`MeshInstance<class_meshinstance>`, :ref:`Particles<class_particles>`, :ref:`ImmediateGeometry<class_immediategeometry>`
+**Inherited By:** :ref:`MultiMeshInstance<class_multimeshinstance>`, :ref:`MeshInstance<class_meshinstance>`, :ref:`Particles<class_particles>`, :ref:`SpriteBase3D<class_spritebase3d>`, :ref:`ImmediateGeometry<class_immediategeometry>`
 
 **Category:** Core
 
@@ -20,59 +20,56 @@ Base node for geometry based visual instances.
 Member Functions
 ----------------
 
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_cast_shadows_setting<class_GeometryInstance_get_cast_shadows_setting>`  **(** **)** const                                         |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`    | :ref:`get_extra_cull_margin<class_GeometryInstance_get_extra_cull_margin>`  **(** **)** const                                               |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`get_flag<class_GeometryInstance_get_flag>`  **(** :ref:`int<class_int>` flag  **)** const                                             |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`    | :ref:`get_lod_max_distance<class_GeometryInstance_get_lod_max_distance>`  **(** **)** const                                                 |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`    | :ref:`get_lod_max_hysteresis<class_GeometryInstance_get_lod_max_hysteresis>`  **(** **)** const                                             |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`    | :ref:`get_lod_min_distance<class_GeometryInstance_get_lod_min_distance>`  **(** **)** const                                                 |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`    | :ref:`get_lod_min_hysteresis<class_GeometryInstance_get_lod_min_hysteresis>`  **(** **)** const                                             |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`  | :ref:`get_material_override<class_GeometryInstance_get_material_override>`  **(** **)** const                                               |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_cast_shadows_setting<class_GeometryInstance_set_cast_shadows_setting>`  **(** :ref:`int<class_int>` shadow_casting_setting  **)** |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_extra_cull_margin<class_GeometryInstance_set_extra_cull_margin>`  **(** :ref:`float<class_float>` margin  **)**                   |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_flag<class_GeometryInstance_set_flag>`  **(** :ref:`int<class_int>` flag, :ref:`bool<class_bool>` value  **)**                    |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_lod_max_distance<class_GeometryInstance_set_lod_max_distance>`  **(** :ref:`float<class_float>` mode  **)**                       |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_lod_max_hysteresis<class_GeometryInstance_set_lod_max_hysteresis>`  **(** :ref:`float<class_float>` mode  **)**                   |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_lod_min_distance<class_GeometryInstance_set_lod_min_distance>`  **(** :ref:`float<class_float>` mode  **)**                       |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_lod_min_hysteresis<class_GeometryInstance_set_lod_min_hysteresis>`  **(** :ref:`float<class_float>` mode  **)**                   |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_material_override<class_GeometryInstance_set_material_override>`  **(** :ref:`Object<class_object>` material  **)**               |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_cast_shadows_setting<class_GeometryInstance_get_cast_shadows_setting>`  **(** **)** const                                         |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`        | :ref:`get_extra_cull_margin<class_GeometryInstance_get_extra_cull_margin>`  **(** **)** const                                               |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`get_flag<class_GeometryInstance_get_flag>`  **(** :ref:`int<class_int>` flag  **)** const                                             |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`        | :ref:`get_lod_max_distance<class_GeometryInstance_get_lod_max_distance>`  **(** **)** const                                                 |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`        | :ref:`get_lod_max_hysteresis<class_GeometryInstance_get_lod_max_hysteresis>`  **(** **)** const                                             |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`        | :ref:`get_lod_min_distance<class_GeometryInstance_get_lod_min_distance>`  **(** **)** const                                                 |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`        | :ref:`get_lod_min_hysteresis<class_GeometryInstance_get_lod_min_hysteresis>`  **(** **)** const                                             |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Material<class_material>`  | :ref:`get_material_override<class_GeometryInstance_get_material_override>`  **(** **)** const                                               |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_cast_shadows_setting<class_GeometryInstance_set_cast_shadows_setting>`  **(** :ref:`int<class_int>` shadow_casting_setting  **)** |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_extra_cull_margin<class_GeometryInstance_set_extra_cull_margin>`  **(** :ref:`float<class_float>` margin  **)**                   |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_flag<class_GeometryInstance_set_flag>`  **(** :ref:`int<class_int>` flag, :ref:`bool<class_bool>` value  **)**                    |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_lod_max_distance<class_GeometryInstance_set_lod_max_distance>`  **(** :ref:`float<class_float>` mode  **)**                       |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_lod_max_hysteresis<class_GeometryInstance_set_lod_max_hysteresis>`  **(** :ref:`float<class_float>` mode  **)**                   |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_lod_min_distance<class_GeometryInstance_set_lod_min_distance>`  **(** :ref:`float<class_float>` mode  **)**                       |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_lod_min_hysteresis<class_GeometryInstance_set_lod_min_hysteresis>`  **(** :ref:`float<class_float>` mode  **)**                   |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_material_override<class_GeometryInstance_set_material_override>`  **(** :ref:`Material<class_material>` material  **)**           |
++----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
 
 - :ref:`int<class_int>` **cast_shadow**
 - :ref:`float<class_float>` **extra_cull_margin**
-- :ref:`int<class_int>` **lod_max_distance**
-- :ref:`int<class_int>` **lod_max_hysteresis**
-- :ref:`int<class_int>` **lod_min_distance**
-- :ref:`int<class_int>` **lod_min_hysteresis**
-- ShaderMaterial,SpatialMaterial **material_override**
+- :ref:`float<class_float>` **lod_max_distance**
+- :ref:`float<class_float>` **lod_max_hysteresis**
+- :ref:`float<class_float>` **lod_min_distance**
+- :ref:`float<class_float>` **lod_min_hysteresis**
+- :ref:`Material<class_material>` **material_override**
 - :ref:`bool<class_bool>` **use_in_baked_light**
-- :ref:`bool<class_bool>` **visible_in_all_rooms**
 
 Numeric Constants
 -----------------
 
-- **FLAG_CAST_SHADOW** = **0**
-- **FLAG_VISIBLE_IN_ALL_ROOMS** = **1**
-- **FLAG_MAX** = **3**
+- **FLAG_MAX** = **1**
 - **SHADOW_CASTING_SETTING_OFF** = **0**
 - **SHADOW_CASTING_SETTING_ON** = **1**
 - **SHADOW_CASTING_SETTING_DOUBLE_SIDED** = **2**
@@ -116,7 +113,7 @@ Member Function Description
 
 .. _class_GeometryInstance_get_material_override:
 
-- :ref:`Object<class_object>`  **get_material_override**  **(** **)** const
+- :ref:`Material<class_material>`  **get_material_override**  **(** **)** const
 
 Return the material override for the whole geometry.
 
@@ -150,7 +147,7 @@ Return the material override for the whole geometry.
 
 .. _class_GeometryInstance_set_material_override:
 
-- void  **set_material_override**  **(** :ref:`Object<class_object>` material  **)**
+- void  **set_material_override**  **(** :ref:`Material<class_material>` material  **)**
 
 Set the material override for the whole geometry.
 

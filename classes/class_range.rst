@@ -53,7 +53,7 @@ Member Functions
 +----------------------------+-----------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`set_value<class_Range_set_value>`  **(** :ref:`float<class_float>` value  **)**                           |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`share<class_Range_share>`  **(** :ref:`Object<class_object>` with  **)**                                  |
+| void                       | :ref:`share<class_Range_share>`  **(** :ref:`Node<class_node>` with  **)**                                      |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`unshare<class_Range_unshare>`  **(** **)**                                                                |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------+
@@ -171,7 +171,7 @@ Set step value. If step is 0, stepping will be disabled.
 
 .. _class_Range_share:
 
-- void  **share**  **(** :ref:`Object<class_object>` with  **)**
+- void  **share**  **(** :ref:`Node<class_node>` with  **)**
 
 .. _class_Range_unshare:
 

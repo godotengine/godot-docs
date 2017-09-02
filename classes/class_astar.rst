@@ -23,13 +23,13 @@ Member Functions
 +--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`_estimate_cost<class_AStar__estimate_cost>`  **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id  **)** virtual                                |
 +--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`add_point<class_AStar_add_point>`  **(** :ref:`int<class_int>` id, :ref:`Vector3<class_vector3>` pos, :ref:`float<class_float>` weight_scale=1  **)**       |
+| void                                             | :ref:`add_point<class_AStar_add_point>`  **(** :ref:`int<class_int>` id, :ref:`Vector3<class_vector3>` pos, :ref:`float<class_float>` weight_scale=null  **)**    |
 +--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                          | :ref:`are_points_connected<class_AStar_are_points_connected>`  **(** :ref:`int<class_int>` id, :ref:`int<class_int>` to_id  **)** const                           |
 +--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`clear<class_AStar_clear>`  **(** **)**                                                                                                                      |
 +--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`connect_points<class_AStar_connect_points>`  **(** :ref:`int<class_int>` id, :ref:`int<class_int>` to_id, :ref:`bool<class_bool>` bidirectional=true  **)** |
+| void                                             | :ref:`connect_points<class_AStar_connect_points>`  **(** :ref:`int<class_int>` id, :ref:`int<class_int>` to_id, :ref:`bool<class_bool>` bidirectional=null  **)** |
 +--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`disconnect_points<class_AStar_disconnect_points>`  **(** :ref:`int<class_int>` id, :ref:`int<class_int>` to_id  **)**                                       |
 +--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -72,7 +72,7 @@ Member Function Description
 
 .. _class_AStar_add_point:
 
-- void  **add_point**  **(** :ref:`int<class_int>` id, :ref:`Vector3<class_vector3>` pos, :ref:`float<class_float>` weight_scale=1  **)**
+- void  **add_point**  **(** :ref:`int<class_int>` id, :ref:`Vector3<class_vector3>` pos, :ref:`float<class_float>` weight_scale=null  **)**
 
 Add a new point at the given position ``pos`` with the given identifier ``id``. The ``weight_scale`` has to be 1 or larger.
 
@@ -90,7 +90,7 @@ Clear all the points and segments from AStar instance.
 
 .. _class_AStar_connect_points:
 
-- void  **connect_points**  **(** :ref:`int<class_int>` id, :ref:`int<class_int>` to_id, :ref:`bool<class_bool>` bidirectional=true  **)**
+- void  **connect_points**  **(** :ref:`int<class_int>` id, :ref:`int<class_int>` to_id, :ref:`bool<class_bool>` bidirectional=null  **)**
 
 Create a segment between points ``id`` and ``to_id``.
 

@@ -56,7 +56,7 @@ Member Variables
 - :ref:`float<class_float>` **mix**
 - :ref:`float<class_float>` **ratio**
 - :ref:`float<class_float>` **release_ms**
-- :ref:`float<class_float>` **sidechain**
+- :ref:`String<class_string>` **sidechain**
 - :ref:`float<class_float>` **threshold**
 
 Member Function Description

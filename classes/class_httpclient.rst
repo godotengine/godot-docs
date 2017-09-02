@@ -21,7 +21,7 @@ Member Functions
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`close<class_HTTPClient_close>`  **(** **)**                                                                                                                                                                                   |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Error                                          | :ref:`connect_to_host<class_HTTPClient_connect_to_host>`  **(** :ref:`String<class_string>` host, :ref:`int<class_int>` port, :ref:`bool<class_bool>` use_ssl=false, :ref:`bool<class_bool>` verify_host=true  **)**                |
+| :ref:`int<class_int>`                          | :ref:`connect_to_host<class_HTTPClient_connect_to_host>`  **(** :ref:`String<class_string>` host, :ref:`int<class_int>` port, :ref:`bool<class_bool>` use_ssl=null, :ref:`bool<class_bool>` verify_host=null  **)**                 |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`StreamPeer<class_streampeer>`            | :ref:`get_connection<class_HTTPClient_get_connection>`  **(** **)** const                                                                                                                                                           |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -41,13 +41,13 @@ Member Functions
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`is_response_chunked<class_HTTPClient_is_response_chunked>`  **(** **)** const                                                                                                                                                 |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Error                                          | :ref:`poll<class_HTTPClient_poll>`  **(** **)**                                                                                                                                                                                     |
+| :ref:`int<class_int>`                          | :ref:`poll<class_HTTPClient_poll>`  **(** **)**                                                                                                                                                                                     |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                    | :ref:`query_string_from_dict<class_HTTPClient_query_string_from_dict>`  **(** :ref:`Dictionary<class_dictionary>` fields  **)**                                                                                                     |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolByteArray<class_poolbytearray>`      | :ref:`read_response_body_chunk<class_HTTPClient_read_response_body_chunk>`  **(** **)**                                                                                                                                             |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`request<class_HTTPClient_request>`  **(** :ref:`int<class_int>` method, :ref:`String<class_string>` url, :ref:`PoolStringArray<class_poolstringarray>` headers, :ref:`String<class_string>` body=""  **)**                    |
+| :ref:`int<class_int>`                          | :ref:`request<class_HTTPClient_request>`  **(** :ref:`int<class_int>` method, :ref:`String<class_string>` url, :ref:`PoolStringArray<class_poolstringarray>` headers, :ref:`String<class_string>` body=null  **)**                  |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`request_raw<class_HTTPClient_request_raw>`  **(** :ref:`int<class_int>` method, :ref:`String<class_string>` url, :ref:`PoolStringArray<class_poolstringarray>` headers, :ref:`PoolByteArray<class_poolbytearray>` body  **)** |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -152,7 +152,7 @@ Cloces the current connection, allows for reusal of :ref:`HTTPClient<class_httpc
 
 .. _class_HTTPClient_connect_to_host:
 
-- Error  **connect_to_host**  **(** :ref:`String<class_string>` host, :ref:`int<class_int>` port, :ref:`bool<class_bool>` use_ssl=false, :ref:`bool<class_bool>` verify_host=true  **)**
+- :ref:`int<class_int>`  **connect_to_host**  **(** :ref:`String<class_string>` host, :ref:`int<class_int>` port, :ref:`bool<class_bool>` use_ssl=null, :ref:`bool<class_bool>` verify_host=null  **)**
 
 Connect to a host. This needs to be done before any requests are sent.
 
@@ -220,7 +220,7 @@ Return whether this :ref:`HTTPClient<class_httpclient>` has a response that is c
 
 .. _class_HTTPClient_poll:
 
-- Error  **poll**  **(** **)**
+- :ref:`int<class_int>`  **poll**  **(** **)**
 
 This needs to be called in order to have any request processed. Check results with :ref:`get_status<class_HTTPClient_get_status>`
 
@@ -244,7 +244,7 @@ Reads one chunk from the response.
 
 .. _class_HTTPClient_request:
 
-- :ref:`int<class_int>`  **request**  **(** :ref:`int<class_int>` method, :ref:`String<class_string>` url, :ref:`PoolStringArray<class_poolstringarray>` headers, :ref:`String<class_string>` body=""  **)**
+- :ref:`int<class_int>`  **request**  **(** :ref:`int<class_int>` method, :ref:`String<class_string>` url, :ref:`PoolStringArray<class_poolstringarray>` headers, :ref:`String<class_string>` body=null  **)**
 
 Sends a request to the connected host. The url is what is normally behind the hostname, i.e. in ``http://somehost.com/index.php``, url would be "index.php".
 

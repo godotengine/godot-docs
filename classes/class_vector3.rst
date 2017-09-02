@@ -100,7 +100,7 @@ Returns a Vector3 with the given components.
 
 - :ref:`Vector3<class_vector3>`  **abs**  **(** **)**
 
-Returns a new vector with all components in absolute values (e.g. positive).
+Returns a new vector with all components in absolute values (i.e. positive).
 
 .. _class_Vector3_angle_to:
 

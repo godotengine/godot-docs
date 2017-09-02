@@ -18,29 +18,31 @@ A diretory for the resource filesystem.
 Member Functions
 ----------------
 
-+--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                              | :ref:`find_dir_index<class_EditorFileSystemDirectory_find_dir_index>`  **(** :ref:`String<class_string>` name  **)** const   |
-+--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                              | :ref:`find_file_index<class_EditorFileSystemDirectory_find_file_index>`  **(** :ref:`String<class_string>` name  **)** const |
-+--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                                        | :ref:`get_file<class_EditorFileSystemDirectory_get_file>`  **(** :ref:`int<class_int>` idx  **)** const                      |
-+--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                              | :ref:`get_file_count<class_EditorFileSystemDirectory_get_file_count>`  **(** **)** const                                     |
-+--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                                        | :ref:`get_file_path<class_EditorFileSystemDirectory_get_file_path>`  **(** :ref:`int<class_int>` idx  **)** const            |
-+--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                                        | :ref:`get_file_type<class_EditorFileSystemDirectory_get_file_type>`  **(** :ref:`int<class_int>` idx  **)** const            |
-+--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                                        | :ref:`get_name<class_EditorFileSystemDirectory_get_name>`  **(** **)**                                                       |
-+--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`EditorFileSystemDirectory<class_editorfilesystemdirectory>`  | :ref:`get_parent<class_EditorFileSystemDirectory_get_parent>`  **(** **)**                                                   |
-+--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                                        | :ref:`get_path<class_EditorFileSystemDirectory_get_path>`  **(** **)** const                                                 |
-+--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`                                        | :ref:`get_subdir<class_EditorFileSystemDirectory_get_subdir>`  **(** :ref:`int<class_int>` idx  **)**                        |
-+--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                              | :ref:`get_subdir_count<class_EditorFileSystemDirectory_get_subdir_count>`  **(** **)** const                                 |
-+--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                              | :ref:`find_dir_index<class_EditorFileSystemDirectory_find_dir_index>`  **(** :ref:`String<class_string>` name  **)** const              |
++--------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                              | :ref:`find_file_index<class_EditorFileSystemDirectory_find_file_index>`  **(** :ref:`String<class_string>` name  **)** const            |
++--------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                                        | :ref:`get_file<class_EditorFileSystemDirectory_get_file>`  **(** :ref:`int<class_int>` idx  **)** const                                 |
++--------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                              | :ref:`get_file_count<class_EditorFileSystemDirectory_get_file_count>`  **(** **)** const                                                |
++--------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                            | :ref:`get_file_import_is_valid<class_EditorFileSystemDirectory_get_file_import_is_valid>`  **(** :ref:`int<class_int>` idx  **)** const |
++--------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                                        | :ref:`get_file_path<class_EditorFileSystemDirectory_get_file_path>`  **(** :ref:`int<class_int>` idx  **)** const                       |
++--------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                                        | :ref:`get_file_type<class_EditorFileSystemDirectory_get_file_type>`  **(** :ref:`int<class_int>` idx  **)** const                       |
++--------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                                        | :ref:`get_name<class_EditorFileSystemDirectory_get_name>`  **(** **)**                                                                  |
++--------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`EditorFileSystemDirectory<class_editorfilesystemdirectory>`  | :ref:`get_parent<class_EditorFileSystemDirectory_get_parent>`  **(** **)**                                                              |
++--------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                                        | :ref:`get_path<class_EditorFileSystemDirectory_get_path>`  **(** **)** const                                                            |
++--------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`EditorFileSystemDirectory<class_editorfilesystemdirectory>`  | :ref:`get_subdir<class_EditorFileSystemDirectory_get_subdir>`  **(** :ref:`int<class_int>` idx  **)**                                   |
++--------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                              | :ref:`get_subdir_count<class_EditorFileSystemDirectory_get_subdir_count>`  **(** **)** const                                            |
++--------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Function Description
 ---------------------------
@@ -60,6 +62,10 @@ Member Function Description
 .. _class_EditorFileSystemDirectory_get_file_count:
 
 - :ref:`int<class_int>`  **get_file_count**  **(** **)** const
+
+.. _class_EditorFileSystemDirectory_get_file_import_is_valid:
+
+- :ref:`bool<class_bool>`  **get_file_import_is_valid**  **(** :ref:`int<class_int>` idx  **)** const
 
 .. _class_EditorFileSystemDirectory_get_file_path:
 
@@ -83,7 +89,7 @@ Member Function Description
 
 .. _class_EditorFileSystemDirectory_get_subdir:
 
-- :ref:`Object<class_object>`  **get_subdir**  **(** :ref:`int<class_int>` idx  **)**
+- :ref:`EditorFileSystemDirectory<class_editorfilesystemdirectory>`  **get_subdir**  **(** :ref:`int<class_int>` idx  **)**
 
 .. _class_EditorFileSystemDirectory_get_subdir_count:
 

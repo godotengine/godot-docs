@@ -63,7 +63,7 @@ Member Variables
 - :ref:`NodePath<class_nodepath>` **node_path**
 - :ref:`String<class_string>` **property**
 - :ref:`int<class_int>` **set_mode**
-- :ref:`int<class_int>` **type_cache**
+- :ref:`Dictionary<class_dictionary>` **type_cache**
 
 Numeric Constants
 -----------------

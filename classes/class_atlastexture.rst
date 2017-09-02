@@ -32,11 +32,6 @@ Member Functions
 | void                           | :ref:`set_region<class_AtlasTexture_set_region>`  **(** :ref:`Rect2<class_rect2>` region  **)**  |
 +--------------------------------+--------------------------------------------------------------------------------------------------+
 
-Signals
--------
-
--  **atlas_changed**  **(** **)**
-
 Member Variables
 ----------------
 

@@ -19,11 +19,11 @@ Member Functions
 ----------------
 
 +-------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`add_sphere<class_ImmediateGeometry_add_sphere>`  **(** :ref:`int<class_int>` lats, :ref:`int<class_int>` lons, :ref:`float<class_float>` radius, :ref:`bool<class_bool>` add_uv=true  **)** |
+| void  | :ref:`add_sphere<class_ImmediateGeometry_add_sphere>`  **(** :ref:`int<class_int>` lats, :ref:`int<class_int>` lons, :ref:`float<class_float>` radius, :ref:`bool<class_bool>` add_uv=null  **)** |
 +-------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void  | :ref:`add_vertex<class_ImmediateGeometry_add_vertex>`  **(** :ref:`Vector3<class_vector3>` pos  **)**                                                                                             |
 +-------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`begin<class_ImmediateGeometry_begin>`  **(** :ref:`int<class_int>` primitive, :ref:`Texture<class_texture>` texture=NULL  **)**                                                             |
+| void  | :ref:`begin<class_ImmediateGeometry_begin>`  **(** :ref:`int<class_int>` primitive, :ref:`Texture<class_texture>` texture=null  **)**                                                             |
 +-------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void  | :ref:`clear<class_ImmediateGeometry_clear>`  **(** **)**                                                                                                                                          |
 +-------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -45,9 +45,9 @@ Member Function Description
 
 .. _class_ImmediateGeometry_add_sphere:
 
-- void  **add_sphere**  **(** :ref:`int<class_int>` lats, :ref:`int<class_int>` lons, :ref:`float<class_float>` radius, :ref:`bool<class_bool>` add_uv=true  **)**
+- void  **add_sphere**  **(** :ref:`int<class_int>` lats, :ref:`int<class_int>` lons, :ref:`float<class_float>` radius, :ref:`bool<class_bool>` add_uv=null  **)**
 
-Simple helper to draw an uvsphere, with given latitudes, longitude and radius.
+Simple helper to draw a uvsphere, with given latitudes, longitude and radius.
 
 .. _class_ImmediateGeometry_add_vertex:
 
@@ -57,7 +57,7 @@ Add a vertex with the currently set color/uv/etc.
 
 .. _class_ImmediateGeometry_begin:
 
-- void  **begin**  **(** :ref:`int<class_int>` primitive, :ref:`Texture<class_texture>` texture=NULL  **)**
+- void  **begin**  **(** :ref:`int<class_int>` primitive, :ref:`Texture<class_texture>` texture=null  **)**
 
 Begin drawing (And optionally pass a texture override). When done call end(). For more information on how this works, search for glBegin() glEnd() references.
 

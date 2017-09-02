@@ -27,7 +27,7 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **constant**
+- :ref:`int<class_int>` **constant/constant**
 
 Member Function Description
 ---------------------------

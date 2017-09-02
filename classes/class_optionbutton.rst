@@ -21,17 +21,17 @@ Member Functions
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`add_icon_item<class_OptionButton_add_icon_item>`  **(** :ref:`Texture<class_texture>` texture, :ref:`String<class_string>` label, :ref:`int<class_int>` id  **)** |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`add_item<class_OptionButton_add_item>`  **(** :ref:`String<class_string>` label, :ref:`int<class_int>` id=-1  **)**                                               |
+| void                           | :ref:`add_item<class_OptionButton_add_item>`  **(** :ref:`String<class_string>` label, :ref:`int<class_int>` id=null  **)**                                             |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`add_separator<class_OptionButton_add_separator>`  **(** **)**                                                                                                     |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`clear<class_OptionButton_clear>`  **(** **)**                                                                                                                     |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_item_ID<class_OptionButton_get_item_ID>`  **(** :ref:`int<class_int>` idx  **)** const                                                                        |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_item_count<class_OptionButton_get_item_count>`  **(** **)** const                                                                                             |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Texture<class_texture>`  | :ref:`get_item_icon<class_OptionButton_get_item_icon>`  **(** :ref:`int<class_int>` idx  **)** const                                                                    |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_item_id<class_OptionButton_get_item_id>`  **(** :ref:`int<class_int>` idx  **)** const                                                                        |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_variant>`  | :ref:`get_item_metadata<class_OptionButton_get_item_metadata>`  **(** :ref:`int<class_int>` idx  **)** const                                                            |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -39,7 +39,7 @@ Member Functions
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_selected<class_OptionButton_get_selected>`  **(** **)** const                                                                                                 |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_selected_ID<class_OptionButton_get_selected_ID>`  **(** **)** const                                                                                           |
+| :ref:`int<class_int>`          | :ref:`get_selected_id<class_OptionButton_get_selected_id>`  **(** **)** const                                                                                           |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_variant>`  | :ref:`get_selected_metadata<class_OptionButton_get_selected_metadata>`  **(** **)** const                                                                               |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -49,11 +49,11 @@ Member Functions
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`select<class_OptionButton_select>`  **(** :ref:`int<class_int>` idx  **)**                                                                                        |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_item_ID<class_OptionButton_set_item_ID>`  **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` id  **)**                                                    |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_item_disabled<class_OptionButton_set_item_disabled>`  **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` disabled  **)**                                |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_item_icon<class_OptionButton_set_item_icon>`  **(** :ref:`int<class_int>` idx, :ref:`Texture<class_texture>` texture  **)**                                   |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_item_id<class_OptionButton_set_item_id>`  **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` id  **)**                                                    |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_item_metadata<class_OptionButton_set_item_metadata>`  **(** :ref:`int<class_int>` idx, :ref:`Variant<class_variant>` metadata  **)**                          |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -89,7 +89,7 @@ Add an item, with a "texture" icon, text "label" and (optionally) id. If no "id"
 
 .. _class_OptionButton_add_item:
 
-- void  **add_item**  **(** :ref:`String<class_string>` label, :ref:`int<class_int>` id=-1  **)**
+- void  **add_item**  **(** :ref:`String<class_string>` label, :ref:`int<class_int>` id=null  **)**
 
 Add an item, with text "label" and (optionally) id. If no "id" is passed, "id" becomes the item index. New items are appended at the end.
 
@@ -105,12 +105,6 @@ Add a separator to the list of items. Separators help to group items. Separator 
 
 Clear all the items in the :ref:`OptionButton<class_optionbutton>`.
 
-.. _class_OptionButton_get_item_ID:
-
-- :ref:`int<class_int>`  **get_item_ID**  **(** :ref:`int<class_int>` idx  **)** const
-
-Return the ID of the item at index "idx".
-
 .. _class_OptionButton_get_item_count:
 
 - :ref:`int<class_int>`  **get_item_count**  **(** **)** const
@@ -122,6 +116,12 @@ Return the amount of items in the OptionButton.
 - :ref:`Texture<class_texture>`  **get_item_icon**  **(** :ref:`int<class_int>` idx  **)** const
 
 Return the icon of the item at index "idx".
+
+.. _class_OptionButton_get_item_id:
+
+- :ref:`int<class_int>`  **get_item_id**  **(** :ref:`int<class_int>` idx  **)** const
+
+Return the ID of the item at index "idx".
 
 .. _class_OptionButton_get_item_metadata:
 
@@ -139,9 +139,9 @@ Return the text of the item at index "idx".
 
 Return the current item index
 
-.. _class_OptionButton_get_selected_ID:
+.. _class_OptionButton_get_selected_id:
 
-- :ref:`int<class_int>`  **get_selected_ID**  **(** **)** const
+- :ref:`int<class_int>`  **get_selected_id**  **(** **)** const
 
 .. _class_OptionButton_get_selected_metadata:
 
@@ -161,12 +161,6 @@ Return the current item index
 
 Select an item by index and make it the current item.
 
-.. _class_OptionButton_set_item_ID:
-
-- void  **set_item_ID**  **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` id  **)**
-
-Set the ID of an item at index "idx".
-
 .. _class_OptionButton_set_item_disabled:
 
 - void  **set_item_disabled**  **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` disabled  **)**
@@ -176,6 +170,12 @@ Set the ID of an item at index "idx".
 - void  **set_item_icon**  **(** :ref:`int<class_int>` idx, :ref:`Texture<class_texture>` texture  **)**
 
 Set the icon of an item at index "idx".
+
+.. _class_OptionButton_set_item_id:
+
+- void  **set_item_id**  **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` id  **)**
+
+Set the ID of an item at index "idx".
 
 .. _class_OptionButton_set_item_metadata:
 

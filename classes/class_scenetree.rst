@@ -19,19 +19,19 @@ Member Functions
 ----------------
 
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`call_group<class_SceneTree_call_group>`  **(** :ref:`String<class_string>` group, :ref:`String<class_string>` method  **)** vararg                                                                             |
+| :ref:`Variant<class_variant>`                | :ref:`call_group<class_SceneTree_call_group>`  **(** :ref:`String<class_string>` group, :ref:`String<class_string>` method  **)** vararg                                                                             |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`call_group_flags<class_SceneTree_call_group_flags>`  **(** :ref:`int<class_int>` flags, :ref:`String<class_string>` group, :ref:`String<class_string>` method  **)** vararg                                    |
+| :ref:`Variant<class_variant>`                | :ref:`call_group_flags<class_SceneTree_call_group_flags>`  **(** :ref:`int<class_int>` flags, :ref:`String<class_string>` group, :ref:`String<class_string>` method  **)** vararg                                    |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                        | :ref:`change_scene<class_SceneTree_change_scene>`  **(** :ref:`String<class_string>` path  **)**                                                                                                                     |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                        | :ref:`change_scene_to<class_SceneTree_change_scene_to>`  **(** :ref:`PackedScene<class_packedscene>` packed_scene  **)**                                                                                             |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`SceneTreeTimer<class_scenetreetimer>`  | :ref:`create_timer<class_SceneTree_create_timer>`  **(** :ref:`float<class_float>` time_sec, :ref:`bool<class_bool>` pause_mode_process=true  **)**                                                                  |
+| :ref:`SceneTreeTimer<class_scenetreetimer>`  | :ref:`create_timer<class_SceneTree_create_timer>`  **(** :ref:`float<class_float>` time_sec, :ref:`bool<class_bool>` pause_mode_process=null  **)**                                                                  |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Node<class_node>`                      | :ref:`get_current_scene<class_SceneTree_get_current_scene>`  **(** **)** const                                                                                                                                       |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`                  | :ref:`get_edited_scene_root<class_SceneTree_get_edited_scene_root>`  **(** **)** const                                                                                                                               |
+| :ref:`Node<class_node>`                      | :ref:`get_edited_scene_root<class_SceneTree_get_edited_scene_root>`  **(** **)** const                                                                                                                               |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                        | :ref:`get_frame<class_SceneTree_get_frame>`  **(** **)** const                                                                                                                                                       |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -45,6 +45,8 @@ Member Functions
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Viewport<class_viewport>`              | :ref:`get_root<class_SceneTree_get_root>`  **(** **)** const                                                                                                                                                         |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                        | :ref:`get_rpc_sender_id<class_SceneTree_get_rpc_sender_id>`  **(** **)** const                                                                                                                                       |
++----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                      | :ref:`has_group<class_SceneTree_has_group>`  **(** :ref:`String<class_string>` name  **)** const                                                                                                                     |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                      | :ref:`has_network_peer<class_SceneTree_has_network_peer>`  **(** **)** const                                                                                                                                         |
@@ -52,8 +54,6 @@ Member Functions
 | :ref:`bool<class_bool>`                      | :ref:`is_debugging_collisions_hint<class_SceneTree_is_debugging_collisions_hint>`  **(** **)** const                                                                                                                 |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                      | :ref:`is_debugging_navigation_hint<class_SceneTree_is_debugging_navigation_hint>`  **(** **)** const                                                                                                                 |
-+----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`is_editor_hint<class_SceneTree_is_editor_hint>`  **(** **)** const                                                                                                                                             |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                      | :ref:`is_input_handled<class_SceneTree_is_input_handled>`  **(** **)**                                                                                                                                               |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -63,7 +63,7 @@ Member Functions
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                      | :ref:`is_refusing_new_network_connections<class_SceneTree_is_refusing_new_network_connections>`  **(** **)** const                                                                                                   |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`notify_group<class_SceneTree_notify_group>`  **(** :ref:`String<class_string>` call_flags, :ref:`int<class_int>` group  **)**                                                                                  |
+| void                                         | :ref:`notify_group<class_SceneTree_notify_group>`  **(** :ref:`String<class_string>` group, :ref:`int<class_int>` notification  **)**                                                                                |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`notify_group_flags<class_SceneTree_notify_group_flags>`  **(** :ref:`int<class_int>` call_flags, :ref:`String<class_string>` group, :ref:`int<class_int>` notification  **)**                                  |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -81,11 +81,9 @@ Member Functions
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`set_debug_navigation_hint<class_SceneTree_set_debug_navigation_hint>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                             |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set_edited_scene_root<class_SceneTree_set_edited_scene_root>`  **(** :ref:`Object<class_object>` scene  **)**                                                                                                  |
+| void                                         | :ref:`set_edited_scene_root<class_SceneTree_set_edited_scene_root>`  **(** :ref:`Node<class_node>` scene  **)**                                                                                                      |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set_editor_hint<class_SceneTree_set_editor_hint>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                                                 |
-+----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set_group<class_SceneTree_set_group>`  **(** :ref:`String<class_string>` call_flags, :ref:`String<class_string>` group, :ref:`Variant<class_variant>` property  **)**                                          |
+| void                                         | :ref:`set_group<class_SceneTree_set_group>`  **(** :ref:`String<class_string>` group, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value  **)**                                               |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`set_group_flags<class_SceneTree_set_group_flags>`  **(** :ref:`int<class_int>` call_flags, :ref:`String<class_string>` group, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value  **)** |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -97,7 +95,7 @@ Member Functions
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`set_refuse_new_network_connections<class_SceneTree_set_refuse_new_network_connections>`  **(** :ref:`bool<class_bool>` refuse  **)**                                                                           |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set_screen_stretch<class_SceneTree_set_screen_stretch>`  **(** :ref:`int<class_int>` mode, :ref:`int<class_int>` aspect, :ref:`Vector2<class_vector2>` minsize  **)**                                          |
+| void                                         | :ref:`set_screen_stretch<class_SceneTree_set_screen_stretch>`  **(** :ref:`int<class_int>` mode, :ref:`int<class_int>` aspect, :ref:`Vector2<class_vector2>` minsize, :ref:`int<class_int>` shrink=null  **)**       |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -136,11 +134,11 @@ Member Function Description
 
 .. _class_SceneTree_call_group:
 
-- void  **call_group**  **(** :ref:`String<class_string>` group, :ref:`String<class_string>` method  **)** vararg
+- :ref:`Variant<class_variant>`  **call_group**  **(** :ref:`String<class_string>` group, :ref:`String<class_string>` method  **)** vararg
 
 .. _class_SceneTree_call_group_flags:
 
-- void  **call_group_flags**  **(** :ref:`int<class_int>` flags, :ref:`String<class_string>` group, :ref:`String<class_string>` method  **)** vararg
+- :ref:`Variant<class_variant>`  **call_group_flags**  **(** :ref:`int<class_int>` flags, :ref:`String<class_string>` group, :ref:`String<class_string>` method  **)** vararg
 
 .. _class_SceneTree_change_scene:
 
@@ -152,7 +150,7 @@ Member Function Description
 
 .. _class_SceneTree_create_timer:
 
-- :ref:`SceneTreeTimer<class_scenetreetimer>`  **create_timer**  **(** :ref:`float<class_float>` time_sec, :ref:`bool<class_bool>` pause_mode_process=true  **)**
+- :ref:`SceneTreeTimer<class_scenetreetimer>`  **create_timer**  **(** :ref:`float<class_float>` time_sec, :ref:`bool<class_bool>` pause_mode_process=null  **)**
 
 .. _class_SceneTree_get_current_scene:
 
@@ -160,7 +158,7 @@ Member Function Description
 
 .. _class_SceneTree_get_edited_scene_root:
 
-- :ref:`Object<class_object>`  **get_edited_scene_root**  **(** **)** const
+- :ref:`Node<class_node>`  **get_edited_scene_root**  **(** **)** const
 
 .. _class_SceneTree_get_frame:
 
@@ -186,6 +184,10 @@ Member Function Description
 
 - :ref:`Viewport<class_viewport>`  **get_root**  **(** **)** const
 
+.. _class_SceneTree_get_rpc_sender_id:
+
+- :ref:`int<class_int>`  **get_rpc_sender_id**  **(** **)** const
+
 .. _class_SceneTree_has_group:
 
 - :ref:`bool<class_bool>`  **has_group**  **(** :ref:`String<class_string>` name  **)** const
@@ -203,10 +205,6 @@ Returns true if there is a :ref:`NetworkedMultiplayerPeer<class_networkedmultipl
 .. _class_SceneTree_is_debugging_navigation_hint:
 
 - :ref:`bool<class_bool>`  **is_debugging_navigation_hint**  **(** **)** const
-
-.. _class_SceneTree_is_editor_hint:
-
-- :ref:`bool<class_bool>`  **is_editor_hint**  **(** **)** const
 
 .. _class_SceneTree_is_input_handled:
 
@@ -228,7 +226,7 @@ Returns true if this SceneTree's :ref:`NetworkedMultiplayerPeer<class_networkedm
 
 .. _class_SceneTree_notify_group:
 
-- void  **notify_group**  **(** :ref:`String<class_string>` call_flags, :ref:`int<class_int>` group  **)**
+- void  **notify_group**  **(** :ref:`String<class_string>` group, :ref:`int<class_int>` notification  **)**
 
 .. _class_SceneTree_notify_group_flags:
 
@@ -264,15 +262,11 @@ Returns true if this SceneTree's :ref:`NetworkedMultiplayerPeer<class_networkedm
 
 .. _class_SceneTree_set_edited_scene_root:
 
-- void  **set_edited_scene_root**  **(** :ref:`Object<class_object>` scene  **)**
-
-.. _class_SceneTree_set_editor_hint:
-
-- void  **set_editor_hint**  **(** :ref:`bool<class_bool>` enable  **)**
+- void  **set_edited_scene_root**  **(** :ref:`Node<class_node>` scene  **)**
 
 .. _class_SceneTree_set_group:
 
-- void  **set_group**  **(** :ref:`String<class_string>` call_flags, :ref:`String<class_string>` group, :ref:`Variant<class_variant>` property  **)**
+- void  **set_group**  **(** :ref:`String<class_string>` group, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value  **)**
 
 .. _class_SceneTree_set_group_flags:
 
@@ -298,6 +292,6 @@ Set the peer object to handle the RPC system (effectively enabling networking). 
 
 .. _class_SceneTree_set_screen_stretch:
 
-- void  **set_screen_stretch**  **(** :ref:`int<class_int>` mode, :ref:`int<class_int>` aspect, :ref:`Vector2<class_vector2>` minsize  **)**
+- void  **set_screen_stretch**  **(** :ref:`int<class_int>` mode, :ref:`int<class_int>` aspect, :ref:`Vector2<class_vector2>` minsize, :ref:`int<class_int>` shrink=null  **)**
 
 

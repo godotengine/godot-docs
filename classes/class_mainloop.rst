@@ -41,7 +41,7 @@ Member Functions
 +--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                     | :ref:`init<class_MainLoop_init>`  **(** **)**                                                                                                          |
 +--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`input_event<class_MainLoop_input_event>`  **(** :ref:`Object<class_object>` ev  **)**                                                            |
+| void                     | :ref:`input_event<class_MainLoop_input_event>`  **(** :ref:`InputEvent<class_inputevent>` ev  **)**                                                    |
 +--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                     | :ref:`input_text<class_MainLoop_input_text>`  **(** :ref:`String<class_string>` text  **)**                                                            |
 +--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -58,6 +58,8 @@ Numeric Constants
 - **NOTIFICATION_WM_QUIT_REQUEST** = **6**
 - **NOTIFICATION_WM_UNFOCUS_REQUEST** = **8**
 - **NOTIFICATION_OS_MEMORY_WARNING** = **9**
+- **NOTIFICATION_TRANSLATION_CHANGED** = **90**
+- **NOTIFICATION_WM_ABOUT** = **91**
 
 Description
 -----------
@@ -109,7 +111,7 @@ Member Function Description
 
 .. _class_MainLoop_input_event:
 
-- void  **input_event**  **(** :ref:`Object<class_object>` ev  **)**
+- void  **input_event**  **(** :ref:`InputEvent<class_inputevent>` ev  **)**
 
 .. _class_MainLoop_input_text:
 

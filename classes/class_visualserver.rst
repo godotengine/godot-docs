@@ -18,21 +18,23 @@ Server for anything visible.
 Member Functions
 ----------------
 
-+------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`  | :ref:`texture_create<class_VisualServer_texture_create>`  **(** **)**                                                                                       |
-+------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`  | :ref:`texture_create_from_image<class_VisualServer_texture_create_from_image>`  **(** :ref:`Object<class_object>` arg0, :ref:`int<class_int>` arg1=7  **)** |
-+------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`texture_get_flags<class_VisualServer_texture_get_flags>`  **(** :ref:`RID<class_rid>` arg0  **)** const                                               |
-+------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`texture_get_height<class_VisualServer_texture_get_height>`  **(** :ref:`RID<class_rid>` arg0  **)** const                                             |
-+------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`texture_get_width<class_VisualServer_texture_get_width>`  **(** :ref:`RID<class_rid>` arg0  **)** const                                               |
-+------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`texture_set_flags<class_VisualServer_texture_set_flags>`  **(** :ref:`RID<class_rid>` arg0, :ref:`int<class_int>` arg1  **)**                         |
-+------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`texture_set_shrink_all_x2_on_set_data<class_VisualServer_texture_set_shrink_all_x2_on_set_data>`  **(** :ref:`bool<class_bool>` shrink  **)**         |
-+------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                   | :ref:`force_draw<class_VisualServer_force_draw>`  **(** **)**                                                                                                  |
++------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_rid>`  | :ref:`texture_create<class_VisualServer_texture_create>`  **(** **)**                                                                                          |
++------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_rid>`  | :ref:`texture_create_from_image<class_VisualServer_texture_create_from_image>`  **(** :ref:`Image<class_image>` image, :ref:`int<class_int>` flags=null  **)** |
++------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`texture_get_flags<class_VisualServer_texture_get_flags>`  **(** :ref:`RID<class_rid>` texture  **)** const                                               |
++------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`texture_get_height<class_VisualServer_texture_get_height>`  **(** :ref:`RID<class_rid>` texture  **)** const                                             |
++------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`texture_get_width<class_VisualServer_texture_get_width>`  **(** :ref:`RID<class_rid>` texture  **)** const                                               |
++------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                   | :ref:`texture_set_flags<class_VisualServer_texture_set_flags>`  **(** :ref:`RID<class_rid>` texture, :ref:`int<class_int>` flags  **)**                        |
++------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                   | :ref:`texture_set_shrink_all_x2_on_set_data<class_VisualServer_texture_set_shrink_all_x2_on_set_data>`  **(** :ref:`bool<class_bool>` shrink  **)**            |
++------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -44,29 +46,33 @@ The visual server is completely opaque, the internals are entirely implementatio
 Member Function Description
 ---------------------------
 
+.. _class_VisualServer_force_draw:
+
+- void  **force_draw**  **(** **)**
+
 .. _class_VisualServer_texture_create:
 
 - :ref:`RID<class_rid>`  **texture_create**  **(** **)**
 
 .. _class_VisualServer_texture_create_from_image:
 
-- :ref:`RID<class_rid>`  **texture_create_from_image**  **(** :ref:`Object<class_object>` arg0, :ref:`int<class_int>` arg1=7  **)**
+- :ref:`RID<class_rid>`  **texture_create_from_image**  **(** :ref:`Image<class_image>` image, :ref:`int<class_int>` flags=null  **)**
 
 .. _class_VisualServer_texture_get_flags:
 
-- :ref:`int<class_int>`  **texture_get_flags**  **(** :ref:`RID<class_rid>` arg0  **)** const
+- :ref:`int<class_int>`  **texture_get_flags**  **(** :ref:`RID<class_rid>` texture  **)** const
 
 .. _class_VisualServer_texture_get_height:
 
-- :ref:`int<class_int>`  **texture_get_height**  **(** :ref:`RID<class_rid>` arg0  **)** const
+- :ref:`int<class_int>`  **texture_get_height**  **(** :ref:`RID<class_rid>` texture  **)** const
 
 .. _class_VisualServer_texture_get_width:
 
-- :ref:`int<class_int>`  **texture_get_width**  **(** :ref:`RID<class_rid>` arg0  **)** const
+- :ref:`int<class_int>`  **texture_get_width**  **(** :ref:`RID<class_rid>` texture  **)** const
 
 .. _class_VisualServer_texture_set_flags:
 
-- void  **texture_set_flags**  **(** :ref:`RID<class_rid>` arg0, :ref:`int<class_int>` arg1  **)**
+- void  **texture_set_flags**  **(** :ref:`RID<class_rid>` texture, :ref:`int<class_int>` flags  **)**
 
 .. _class_VisualServer_texture_set_shrink_all_x2_on_set_data:
 

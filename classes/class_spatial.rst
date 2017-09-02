@@ -8,7 +8,7 @@ Spatial
 
 **Inherits:** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`Joint<class_joint>`, :ref:`RayCast<class_raycast>`, :ref:`Camera<class_camera>`, :ref:`BoneAttachment<class_boneattachment>`, :ref:`CollisionShape<class_collisionshape>`, :ref:`AudioStreamPlayer3D<class_audiostreamplayer3d>`, :ref:`Path<class_path>`, :ref:`VisualInstance<class_visualinstance>`, :ref:`VehicleWheel<class_vehiclewheel>`, :ref:`Position3D<class_position3d>`, :ref:`ProximityGroup<class_proximitygroup>`, :ref:`RemoteTransform<class_remotetransform>`, :ref:`CollisionObject<class_collisionobject>`, :ref:`Listener<class_listener>`, :ref:`PathFollow<class_pathfollow>`, :ref:`NavigationMeshInstance<class_navigationmeshinstance>`, :ref:`VisibilityNotifier<class_visibilitynotifier>`, :ref:`Navigation<class_navigation>`, :ref:`CollisionPolygon<class_collisionpolygon>`, :ref:`GridMap<class_gridmap>`, :ref:`Skeleton<class_skeleton>`
+**Inherited By:** :ref:`Joint<class_joint>`, :ref:`RayCast<class_raycast>`, :ref:`Camera<class_camera>`, :ref:`BoneAttachment<class_boneattachment>`, :ref:`CollisionShape<class_collisionshape>`, :ref:`AudioStreamPlayer3D<class_audiostreamplayer3d>`, :ref:`Path<class_path>`, :ref:`ARVRController<class_arvrcontroller>`, :ref:`VisualInstance<class_visualinstance>`, :ref:`VehicleWheel<class_vehiclewheel>`, :ref:`Position3D<class_position3d>`, :ref:`ProximityGroup<class_proximitygroup>`, :ref:`ARVRAnchor<class_arvranchor>`, :ref:`RemoteTransform<class_remotetransform>`, :ref:`CollisionObject<class_collisionobject>`, :ref:`Listener<class_listener>`, :ref:`PathFollow<class_pathfollow>`, :ref:`NavigationMeshInstance<class_navigationmeshinstance>`, :ref:`VisibilityNotifier<class_visibilitynotifier>`, :ref:`Navigation<class_navigation>`, :ref:`CollisionPolygon<class_collisionpolygon>`, :ref:`GridMap<class_gridmap>`, :ref:`Skeleton<class_skeleton>`, :ref:`ARVROrigin<class_arvrorigin>`
 
 **Category:** Core
 
@@ -25,7 +25,7 @@ Member Functions
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform<class_transform>`        | :ref:`get_global_transform<class_Spatial_get_global_transform>`  **(** **)** const                                                                                              |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`              | :ref:`get_parent_spatial<class_Spatial_get_parent_spatial>`  **(** **)** const                                                                                                  |
+| :ref:`Spatial<class_spatial>`            | :ref:`get_parent_spatial<class_Spatial_get_parent_spatial>`  **(** **)** const                                                                                                  |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`            | :ref:`get_rotation<class_Spatial_get_rotation>`  **(** **)** const                                                                                                              |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -93,9 +93,13 @@ Member Functions
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_translation<class_Spatial_set_translation>`  **(** :ref:`Vector3<class_vector3>` translation  **)**                                                                   |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_visible<class_Spatial_set_visible>`  **(** :ref:`bool<class_bool>` arg0  **)**                                                                                        |
+| void                                     | :ref:`set_visible<class_Spatial_set_visible>`  **(** :ref:`bool<class_bool>` visible  **)**                                                                                     |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`show<class_Spatial_show>`  **(** **)**                                                                                                                                    |
++------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`            | :ref:`to_global<class_Spatial_to_global>`  **(** :ref:`Vector3<class_vector3>` local_point  **)** const                                                                         |
++------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`            | :ref:`to_local<class_Spatial_to_local>`  **(** :ref:`Vector3<class_vector3>` global_point  **)** const                                                                          |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`translate<class_Spatial_translate>`  **(** :ref:`Vector3<class_vector3>` offset  **)**                                                                                    |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -146,7 +150,7 @@ Return the global transform, relative to worldspace.
 
 .. _class_Spatial_get_parent_spatial:
 
-- :ref:`Object<class_object>`  **get_parent_spatial**  **(** **)** const
+- :ref:`Spatial<class_spatial>`  **get_parent_spatial**  **(** **)** const
 
 Return the parent :ref:`Spatial<class_spatial>`, or an empty :ref:`Object<class_object>` if no parent exists or parent is not of type :ref:`Spatial<class_spatial>`.
 
@@ -298,11 +302,19 @@ Set the transform locally, relative to the parent spatial node.
 
 .. _class_Spatial_set_visible:
 
-- void  **set_visible**  **(** :ref:`bool<class_bool>` arg0  **)**
+- void  **set_visible**  **(** :ref:`bool<class_bool>` visible  **)**
 
 .. _class_Spatial_show:
 
 - void  **show**  **(** **)**
+
+.. _class_Spatial_to_global:
+
+- :ref:`Vector3<class_vector3>`  **to_global**  **(** :ref:`Vector3<class_vector3>` local_point  **)** const
+
+.. _class_Spatial_to_local:
+
+- :ref:`Vector3<class_vector3>`  **to_local**  **(** :ref:`Vector3<class_vector3>` global_point  **)** const
 
 .. _class_Spatial_translate:
 

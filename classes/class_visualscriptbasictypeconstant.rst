@@ -32,7 +32,7 @@ Member Variables
 ----------------
 
 - :ref:`int<class_int>` **basic_type**
-- :ref:`String<class_string>` **constant**
+- :ref:`String<class_string>` **constant/constant**
 
 Member Function Description
 ---------------------------

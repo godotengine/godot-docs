@@ -23,7 +23,7 @@ Member Functions
 +--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
 | :ref:`Shape<class_shape>`                        | :ref:`create_convex_shape<class_Mesh_create_convex_shape>`  **(** **)** const                         |
 +--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`ArrayMesh<class_arraymesh>`                | :ref:`create_outline<class_Mesh_create_outline>`  **(** :ref:`float<class_float>` margin  **)** const |
+| :ref:`Mesh<class_mesh>`                          | :ref:`create_outline<class_Mesh_create_outline>`  **(** :ref:`float<class_float>` margin  **)** const |
 +--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
 | :ref:`Shape<class_shape>`                        | :ref:`create_trimesh_shape<class_Mesh_create_trimesh_shape>`  **(** **)** const                       |
 +--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
@@ -57,7 +57,7 @@ Member Function Description
 
 .. _class_Mesh_create_outline:
 
-- :ref:`ArrayMesh<class_arraymesh>`  **create_outline**  **(** :ref:`float<class_float>` margin  **)** const
+- :ref:`Mesh<class_mesh>`  **create_outline**  **(** :ref:`float<class_float>` margin  **)** const
 
 .. _class_Mesh_create_trimesh_shape:
 
