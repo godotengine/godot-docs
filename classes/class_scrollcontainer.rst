@@ -39,7 +39,7 @@ Member Functions
 Description
 -----------
 
-A ScrollContainer node with a :ref:`Control<class_control>` child and scrollbar child (:ref:`HScrollbar<class_hscrollbar>`, :ref:`VScrollBar<class_vscrollbar>`, or both) will only draw the Control within the ScrollContainer area.  Scrollbars will automatically be drawn at the right (for vertical) or bottom (for horizontal) and will enable dragging to move the viewable Control (and its children) within the ScrollContainer.  Scrollbars will also automatically resize the grabber based on the minimum_size of the Control relative to the ScrollContainer.  Works great with a :ref:`Panel<class_panel>` control.  You can set EXPAND on children size flags, so they will upscale to ScrollContainer size if ScrollContainer size is bigger (scroll is invisible for chosen dimension).
+A ScrollContainer node with a :ref:`Control<class_control>` child and scrollbar child (HScrollbar, :ref:`VScrollBar<class_vscrollbar>`, or both) will only draw the Control within the ScrollContainer area.  Scrollbars will automatically be drawn at the right (for vertical) or bottom (for horizontal) and will enable dragging to move the viewable Control (and its children) within the ScrollContainer.  Scrollbars will also automatically resize the grabber based on the minimum_size of the Control relative to the ScrollContainer.  Works great with a :ref:`Panel<class_panel>` control.  You can set EXPAND on children size flags, so they will upscale to ScrollContainer size if ScrollContainer size is bigger (scroll is invisible for chosen dimension).
 
 Member Function Description
 ---------------------------

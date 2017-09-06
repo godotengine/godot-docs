@@ -23,6 +23,8 @@ Member Functions
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`clear_polygons<class_NavigationMesh_clear_polygons>`  **(** **)**                                               |
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`create_from_mesh<class_NavigationMesh_create_from_mesh>`  **(** :ref:`Object<class_object>` mesh  **)**         |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | :ref:`IntArray<class_intarray>`          | :ref:`get_polygon<class_NavigationMesh_get_polygon>`  **(** :ref:`int<class_int>` idx  **)**                          |
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                    | :ref:`get_polygon_count<class_NavigationMesh_get_polygon_count>`  **(** **)** const                                   |
@@ -42,6 +44,10 @@ Member Function Description
 .. _class_NavigationMesh_clear_polygons:
 
 - void  **clear_polygons**  **(** **)**
+
+.. _class_NavigationMesh_create_from_mesh:
+
+- void  **create_from_mesh**  **(** :ref:`Object<class_object>` mesh  **)**
 
 .. _class_NavigationMesh_get_polygon:
 

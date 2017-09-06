@@ -39,7 +39,7 @@ Member Functions
 Description
 -----------
 
-Used to display a :ref:`Viewport<class_viewport>` node at some position in the world, without having to mess with :ref:`RenderTargetTexture<class_rendertargettexture>`s.
+Used to display a :ref:`Viewport<class_viewport>` node at some position in the world, without having to mess with :ref:`RenderTargetTexture<class_rendertargettexture>`\ s.
 
 Member Function Description
 ---------------------------

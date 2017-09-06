@@ -38,7 +38,7 @@ Numeric Constants
 Description
 -----------
 
-A unit of execution in a process. Can run methods on :ref:`Object<class_object>`s simultaneously. The use of synchronization via :ref:`Mutex<class_mutex>`, :ref:`Semaphore<class_semaphore>` is advised if working with shared objects.
+A unit of execution in a process. Can run methods on :ref:`Object<class_object>`\ s simultaneously. The use of synchronization via :ref:`Mutex<class_mutex>`, :ref:`Semaphore<class_semaphore>` is advised if working with shared objects.
 
 Member Function Description
 ---------------------------

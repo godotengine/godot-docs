@@ -88,6 +88,8 @@ Constructs a new Vector2 from the given x and y.
 
 - :ref:`Vector2<class_vector2>`  **abs**  **(** **)**
 
+Returns a new vector with all components in absolute values (i.e. positive).
+
 .. _class_Vector2_angle:
 
 - :ref:`float<class_float>`  **angle**  **(** **)**
@@ -111,6 +113,8 @@ Returns the angle in radians between the line connecting the two points and the 
 .. _class_Vector2_clamped:
 
 - :ref:`Vector2<class_vector2>`  **clamped**  **(** :ref:`float<class_float>` length  **)**
+
+Returns the vector with a maximum length.
 
 .. _class_Vector2_cubic_interpolate:
 

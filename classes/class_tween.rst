@@ -174,7 +174,7 @@ Call ``callback`` of ``object`` after ``times_in_sec``. ``arg1``-``arg5`` are ar
 
 - :ref:`bool<class_bool>`  **interpolate_deferred_callback**  **(** :ref:`Object<class_object>` object, :ref:`float<class_float>` times_in_sec, :ref:`String<class_string>` callback, :ref:`Variant<class_variant>` arg1=NULL, :ref:`Variant<class_variant>` arg2=NULL, :ref:`Variant<class_variant>` arg3=NULL, :ref:`Variant<class_variant>` arg4=NULL, :ref:`Variant<class_variant>` arg5=NULL  **)**
 
-Call ``callback`` of ``object`` after ``times_in_sec`` on the main thread (similar to :ref:`methog Object.call_deferred). [code<class_methog object.call_deferred). [code>`arg1``-``arg5`` are arguments to be passed to the callback.
+Call ``callback`` of ``object`` after ``times_in_sec`` on the main thread (similar to methog Object.call_deferred). [codearg1``-``arg5`` are arguments to be passed to the callback.
 
 .. _class_Tween_interpolate_method:
 

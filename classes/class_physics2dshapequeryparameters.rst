@@ -62,7 +62,7 @@ Member Function Description
 
 - :ref:`Array<class_array>`  **get_exclude**  **(** **)** const
 
-Return the list of objects, or object :ref:`RID<class_rid>`s, that will be excluded from collisions.
+Return the list of objects, or object :ref:`RID<class_rid>`\ s, that will be excluded from collisions.
 
 .. _class_Physics2DShapeQueryParameters_get_layer_mask:
 
@@ -104,7 +104,7 @@ Return the transform matrix of the shape queried.
 
 - void  **set_exclude**  **(** :ref:`Array<class_array>` exclude  **)**
 
-Set the list of objects, or object :ref:`RID<class_rid>`s, that will be excluded from collisions.
+Set the list of objects, or object :ref:`RID<class_rid>`\ s, that will be excluded from collisions.
 
 .. _class_Physics2DShapeQueryParameters_set_layer_mask:
 

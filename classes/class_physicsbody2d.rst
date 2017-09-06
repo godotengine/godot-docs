@@ -138,12 +138,12 @@ Set/clear individual bits on the layer mask. This makes getting a body in/out of
 
 - void  **set_one_way_collision_direction**  **(** :ref:`Vector2<class_vector2>` dir  **)**
 
-Set a direction in which bodies can go through this one. If this value is different from (0,0), any movement within 90 degrees of this vector is considered a valid movement. Set this direction to (0,0) to disable one-way collisions.
+Set a direction from which bodies can go through this one; that is, the passed vector is the normal of the pass-through side of the surface. If this value is different from (0,0), any movement within 90 degrees of the opposite of this vector is considered an valid movement. Set this direction to (0,0) to disable one-way collisions.
 
 .. _class_PhysicsBody2D_set_one_way_collision_max_depth:
 
 - void  **set_one_way_collision_max_depth**  **(** :ref:`float<class_float>` depth  **)**
 
-Set how far a body can go through this one, when it allows one-way collisions (see :ref:`set_one_way_collision_direction<class_PhysicsBody2D_set_one_way_collision_direction>`).
+Set how deep at most a body can be with respect to this one for the physics server to force it to a non-overlapping position, if it allows one-way collisions (see :ref:`body_set_one_way_collision_direction<class_PhysicsBody2D_body_set_one_way_collision_direction>`).
 
 

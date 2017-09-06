@@ -57,7 +57,7 @@ Signals
 
 -  **pre_popup_pressed**  **(** **)**
 -  **tab_changed**  **(** :ref:`int<class_int>` tab  **)**
-Emitted when a tab gets selected. Same behavior as :ref:`tab_selected<class_tab_selected>` signal for backward compatibility. Note: In Godot v3.0+ this will change to be only emitted when tab gets changed.
+Emitted when a tab gets selected. Same behavior as tab_selected signal for backward compatibility. Note: In Godot v3.0+ this will change to be only emitted when tab gets changed.
 
 -  **tab_selected**  **(** :ref:`int<class_int>` tab  **)**
 Emitted when a tab is being selected, even if it is the same tab.

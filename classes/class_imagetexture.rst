@@ -113,7 +113,7 @@ Return the storage type. One of :ref:`ImageTexture<class_imagetexture>`.STORAGE\
 
 - void  **load**  **(** :ref:`String<class_string>` path  **)**
 
-Load an :ref:`ImageTexure<class_imagetexure>`.
+Load an ImageTexure.
 
 .. _class_ImageTexture_normal_to_xy:
 

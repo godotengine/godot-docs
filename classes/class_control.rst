@@ -331,7 +331,7 @@ Override a single icon (:ref:`Texture<class_texture>`) in the theme of this Cont
 
 - void  **add_style_override**  **(** :ref:`String<class_string>` name, :ref:`StyleBox<class_stylebox>` stylebox  **)**
 
-Override a single stylebox (:ref:`Stylebox<class_stylebox>`) in the theme of this Control. If stylebox is empty, override is cleared.
+Override a single stylebox (Stylebox) in the theme of this Control. If stylebox is empty, override is cleared.
 
 .. _class_Control_can_drop_data:
 
@@ -491,7 +491,7 @@ Return position and size of the Control, relative to the top-left corner of the 
 
 - :ref:`Vector2<class_vector2>`  **get_size**  **(** **)** const
 
-Returns the size of the Control, computed from all margins, however the size returned will **never be smaller than the minimum size reported by :ref:`get_minimum_size<class_Control_get_minimum_size>`**. This means that even if end position of the Control rectangle is smaller than the begin position, the Control will still display and interact correctly. (see description, :ref:`get_minimum_size<class_Control_get_minimum_size>`, :ref:`set_margin<class_Control_set_margin>`, :ref:`set_anchor<class_Control_set_anchor>`).
+Returns the size of the Control, computed from all margins, however the size returned will **never be smaller than the minimum size reported by** :ref:`get_minimum_size<class_Control_get_minimum_size>`. This means that even if end position of the Control rectangle is smaller than the begin position, the Control will still display and interact correctly. (see description, :ref:`get_minimum_size<class_Control_get_minimum_size>`, :ref:`set_margin<class_Control_set_margin>`, :ref:`set_anchor<class_Control_set_anchor>`).
 
 .. _class_Control_get_stretch_ratio:
 

@@ -62,7 +62,7 @@ Member Function Description
 
 - void  **add_collision_triangles**  **(** TriangleMesh triangles  **)**
 
-Add collision triangles to the gizmo for picking. A :ref:`TriangleMesh<class_trianglemesh>` can be generated from a regular :ref:`Mesh<class_mesh>` too. Call this function during :ref:`redraw<class_EditorSpatialGizmo_redraw>`.
+Add collision triangles to the gizmo for picking. A TriangleMesh can be generated from a regular :ref:`Mesh<class_mesh>` too. Call this function during :ref:`redraw<class_EditorSpatialGizmo_redraw>`.
 
 .. _class_EditorSpatialGizmo_add_handles:
 

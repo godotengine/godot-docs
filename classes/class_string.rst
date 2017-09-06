@@ -95,6 +95,8 @@ Member Functions
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`findn<class_String_findn>`  **(** :ref:`String<class_string>` what, :ref:`int<class_int>` from=0  **)**                              |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`format<class_String_format>`  **(** var values, :ref:`String<class_string>` placeholder={_}  **)**                                   |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`            | :ref:`get_base_dir<class_String_get_base_dir>`  **(** **)**                                                                                |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`            | :ref:`get_file<class_String_get_file>`  **(** **)**                                                                                        |
@@ -384,6 +386,10 @@ Find the last occurrence of a substring, return the starting position of the sub
 
 Find the first occurrence of a substring but search as case-insensitive, return the starting position of the substring or -1 if not found. Optionally, the initial search index can be passed.
 
+.. _class_String_format:
+
+- :ref:`String<class_string>`  **format**  **(** var values, :ref:`String<class_string>` placeholder={_}  **)**
+
 .. _class_String_get_base_dir:
 
 - :ref:`String<class_string>`  **get_base_dir**  **(** **)**
@@ -602,13 +608,13 @@ Return the similarity index of the text compared to this string. 1 means totally
 
 - :ref:`StringArray<class_stringarray>`  **split**  **(** :ref:`String<class_string>` divisor, :ref:`bool<class_bool>` allow_empty=True  **)**
 
-Split the string by a divisor string, return an array of the substrings. Example "One,Two,Three" will return :ref:`"One","Two","Three"<class_"one","two","three">` if split by ",".
+Split the string by a divisor string, return an array of the substrings. Example "One,Two,Three" will return "One","Two","Three" if split by ",".
 
 .. _class_String_split_floats:
 
 - :ref:`RealArray<class_realarray>`  **split_floats**  **(** :ref:`String<class_string>` divisor, :ref:`bool<class_bool>` allow_empty=True  **)**
 
-Split the string in floats by using a divisor string, return an array of the substrings. Example "1,2.5,3" will return :ref:`1,2.5,3<class_1,2.5,3>` if split by ",".
+Split the string in floats by using a divisor string, return an array of the substrings. Example "1,2.5,3" will return 1,2.5,3 if split by ",".
 
 .. _class_String_strip_edges:
 

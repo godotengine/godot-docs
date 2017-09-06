@@ -60,7 +60,7 @@ Member Function Description
 
 - :ref:`int<class_int>`  **get_dragger_visibility**  **(** **)** const
 
-Return visibility of the split dragger(One of :ref:`DRAGGER_VISIBLE<class_dragger_visible>`, :ref:`DRAGGER_HIDDEN<class_dragger_hidden>` or :ref:`DRAGGER_HIDDEN_COLLAPSED<class_dragger_hidden_collapsed>`).
+Return visibility of the split dragger(One of DRAGGER_VISIBLE, DRAGGER_HIDDEN or DRAGGER_HIDDEN_COLLAPSED).
 
 .. _class_SplitContainer_get_split_offset:
 
@@ -84,7 +84,7 @@ Set if the split must be collapsed.
 
 - void  **set_dragger_visibility**  **(** :ref:`int<class_int>` mode  **)**
 
-Set visibility of the split dragger(*mode* must be one of :ref:`DRAGGER_VISIBLE<class_dragger_visible>`, :ref:`DRAGGER_HIDDEN<class_dragger_hidden>` or :ref:`DRAGGER_HIDDEN_COLLAPSED<class_dragger_hidden_collapsed>`).
+Set visibility of the split dragger(*mode* must be one of DRAGGER_VISIBLE, DRAGGER_HIDDEN or DRAGGER_HIDDEN_COLLAPSED).
 
 .. _class_SplitContainer_set_split_offset:
 

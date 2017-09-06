@@ -188,7 +188,14 @@ Returns the first element of the array if the array is not empty (size>0).
 
 - :ref:`bool<class_bool>`  **has**  **(** var value  **)**
 
-Return true if the array contains given value. ``:ref:` "inside", 7 <class_ "inside", 7 >`.has("inside") == true, :ref:` "inside", 7 <class_ "inside", 7 >`.has("outside") == false, :ref:` "inside", 7 <class_ "inside", 7 >`.has(7) == true, :ref:` "inside", 7 <class_ "inside", 7 >`.has("7") == false``
+Return true if the array contains given value.
+
+::
+
+    [ "inside", 7 ].has("inside") == true
+    [ "inside", 7 ].has("outside") == false
+    [ "inside", 7 ].has(7) == true
+    [ "inside", 7 ].has("7") == false
 
 .. _class_Array_hash:
 

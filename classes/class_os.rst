@@ -376,7 +376,7 @@ Returns the value of the commandline argument "-level".
 
 - :ref:`String<class_string>`  **get_data_dir**  **(** **)** const
 
-Return the absolute directory path of user data path(:ref:`user://<class_user://>`).
+Return the absolute directory path of user data path(user://).
 
 .. _class_OS_get_date:
 

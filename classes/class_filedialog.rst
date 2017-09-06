@@ -157,7 +157,7 @@ Return true if the diaog allows show hidden files.
 
 - void  **set_access**  **(** :ref:`int<class_int>` access  **)**
 
-Set the file access permission of the dialog(Must be one of :ref:`ACCESS_RESOURCES<class_access_resources>`, :ref:`ACCESS_USERDATA<class_access_userdata>` or :ref:`ACCESS_FILESYSTEM<class_access_filesystem>`).
+Set the file access permission of the dialog(Must be one of ACCESS_RESOURCES, ACCESS_USERDATA or ACCESS_FILESYSTEM).
 
 .. _class_FileDialog_set_current_dir:
 

@@ -256,7 +256,7 @@ To create a POST request with query strings to push to the server, do:
 
     var fields = {"username" : "user", "password" : "pass"}
     var queryString = httpClient.query_string_from_dict(fields)
-    var headers = :ref:`"Content-Type: application/x-www-form-urlencoded", "Content-Length: " + str(queryString.length())<class_"content-type: application/x-www-form-urlencoded", "content-length: " + str(querystring.length())>`
+    var headers = ["Content-Type: application/x-www-form-urlencoded", "Content-Length: " + str(queryString.length())]
     var result = httpClient.request(httpClient.METHOD_POST, "index.php", headers, queryString)
 
 .. _class_HTTPClient_request_raw:

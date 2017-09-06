@@ -8,7 +8,7 @@ Node
 
 **Inherits:** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`Viewport<class_viewport>`, :ref:`Timer<class_timer>`, :ref:`CanvasLayer<class_canvaslayer>`, :ref:`EventPlayer<class_eventplayer>`, :ref:`SoundRoomParams<class_soundroomparams>`, :ref:`Spatial<class_spatial>`, :ref:`AnimationPlayer<class_animationplayer>`, :ref:`EditorPlugin<class_editorplugin>`, :ref:`ResourcePreloader<class_resourcepreloader>`, :ref:`AnimationTreePlayer<class_animationtreeplayer>`, :ref:`SamplePlayer<class_sampleplayer>`, :ref:`InstancePlaceholder<class_instanceplaceholder>`, :ref:`HTTPRequest<class_httprequest>`, :ref:`StreamPlayer<class_streamplayer>`, :ref:`CanvasItem<class_canvasitem>`, :ref:`Tween<class_tween>`
+**Inherited By:** :ref:`Viewport<class_viewport>`, :ref:`Timer<class_timer>`, :ref:`CanvasLayer<class_canvaslayer>`, :ref:`EventPlayer<class_eventplayer>`, :ref:`SoundRoomParams<class_soundroomparams>`, :ref:`Tween<class_tween>`, :ref:`Spatial<class_spatial>`, :ref:`AnimationPlayer<class_animationplayer>`, :ref:`EditorPlugin<class_editorplugin>`, :ref:`ResourcePreloader<class_resourcepreloader>`, :ref:`AnimationTreePlayer<class_animationtreeplayer>`, :ref:`SamplePlayer<class_sampleplayer>`, :ref:`InstancePlaceholder<class_instanceplaceholder>`, :ref:`HTTPRequest<class_httprequest>`, :ref:`StreamPlayer<class_streamplayer>`, :ref:`CanvasItem<class_canvasitem>`
 
 **Category:** Core
 

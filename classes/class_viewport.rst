@@ -389,7 +389,7 @@ Set the viewport's render target mode.
 
 - void  **set_canvas_transform**  **(** :ref:`Matrix32<class_matrix32>` xform  **)**
 
-Set the canvas transform of the viewport, useful for changing the on-screen positions of all child :ref:`CanvasItem<class_canvasitem>`s. This is relative to the global canvas transform of the viewport.
+Set the canvas transform of the viewport, useful for changing the on-screen positions of all child :ref:`CanvasItem<class_canvasitem>`\ s. This is relative to the global canvas transform of the viewport.
 
 .. _class_Viewport_set_disable_input:
 

@@ -51,9 +51,9 @@ would be read by RegEx as ``\d+``
 
 Similarly:
 
-``exp.compile("\"(?:\\\\.|:ref:`^\"<class_^\">`)\*\"")``
+``exp.compile("\"(?:\\\\.|[^\"])\*\"")``
 
-would be read as ``"(?:\\.|:ref:`^"<class_^">`)\*"``
+would be read as ``"(?:\\.|[^"])\*"``
 
 Currently supported features:
 
@@ -63,7 +63,7 @@ Currently supported features:
 
 \* Shorthand character classes ``\w \W \s \S \d \D``
 
-\* User-defined character classes such as ``:ref:`A-Za-z<class_a-za-z>```
+\* User-defined character classes such as ``[A-Za-z]``
 
 \* Simple quantifiers ``?``, ``\*`` and ``+``
 
@@ -77,7 +77,7 @@ Currently supported features:
 
 \* Backreferences ``\1`` and ``\g{1}``
 
-\* POSIX character classes ``:ref:`[:alnum:<class_[:alnum:>`]``
+\* POSIX character classes ``[[:alnum:]]``
 
 \* Lookahead ``(?=)``, ``(?!)`` and lookbehind ``(?<=)``, ``(?<!)``
 
