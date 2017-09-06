@@ -19,9 +19,9 @@ Member Functions
 ----------------
 
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`add_icon_item<class_ItemList_add_icon_item>`  **(** :ref:`Texture<class_texture>` icon, :ref:`bool<class_bool>` selectable=null  **)**                              |
+| void                                     | :ref:`add_icon_item<class_ItemList_add_icon_item>`  **(** :ref:`Texture<class_texture>` icon, :ref:`bool<class_bool>` selectable=true  **)**                              |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`add_item<class_ItemList_add_item>`  **(** :ref:`String<class_string>` text, :ref:`Texture<class_texture>` icon=null, :ref:`bool<class_bool>` selectable=null  **)** |
+| void                                     | :ref:`add_item<class_ItemList_add_item>`  **(** :ref:`String<class_string>` text, :ref:`Texture<class_texture>` icon=null, :ref:`bool<class_bool>` selectable=true  **)** |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`clear<class_ItemList_clear>`  **(** **)**                                                                                                                           |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -37,7 +37,7 @@ Member Functions
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                | :ref:`get_icon_scale<class_ItemList_get_icon_scale>`  **(** **)** const                                                                                                   |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                    | :ref:`get_item_at_pos<class_ItemList_get_item_at_pos>`  **(** :ref:`Vector2<class_vector2>` pos, :ref:`bool<class_bool>` exact=null  **)** const                          |
+| :ref:`int<class_int>`                    | :ref:`get_item_at_pos<class_ItemList_get_item_at_pos>`  **(** :ref:`Vector2<class_vector2>` pos, :ref:`bool<class_bool>` exact=false  **)** const                         |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                    | :ref:`get_item_count<class_ItemList_get_item_count>`  **(** **)** const                                                                                                   |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -77,7 +77,7 @@ Member Functions
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`remove_item<class_ItemList_remove_item>`  **(** :ref:`int<class_int>` idx  **)**                                                                                    |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`select<class_ItemList_select>`  **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` single=null  **)**                                                         |
+| void                                     | :ref:`select<class_ItemList_select>`  **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` single=true  **)**                                                         |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_allow_rmb_select<class_ItemList_set_allow_rmb_select>`  **(** :ref:`bool<class_bool>` allow  **)**                                                              |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -180,13 +180,13 @@ Member Function Description
 
 .. _class_ItemList_add_icon_item:
 
-- void  **add_icon_item**  **(** :ref:`Texture<class_texture>` icon, :ref:`bool<class_bool>` selectable=null  **)**
+- void  **add_icon_item**  **(** :ref:`Texture<class_texture>` icon, :ref:`bool<class_bool>` selectable=true  **)**
 
 Adds an item to the item list with no text, only an icon.
 
 .. _class_ItemList_add_item:
 
-- void  **add_item**  **(** :ref:`String<class_string>` text, :ref:`Texture<class_texture>` icon=null, :ref:`bool<class_bool>` selectable=null  **)**
+- void  **add_item**  **(** :ref:`String<class_string>` text, :ref:`Texture<class_texture>` icon=null, :ref:`bool<class_bool>` selectable=true  **)**
 
 Adds an item to the item list with specified text.  Specify an icon of null for a list item with no icon.
 
@@ -230,7 +230,7 @@ If column size has been fixed to a value, return that value.
 
 .. _class_ItemList_get_item_at_pos:
 
-- :ref:`int<class_int>`  **get_item_at_pos**  **(** :ref:`Vector2<class_vector2>` pos, :ref:`bool<class_bool>` exact=null  **)** const
+- :ref:`int<class_int>`  **get_item_at_pos**  **(** :ref:`Vector2<class_vector2>` pos, :ref:`bool<class_bool>` exact=false  **)** const
 
 Given a position within the control return the item (if any) at that point.
 
@@ -338,7 +338,7 @@ Remove item at specified index from the list.
 
 .. _class_ItemList_select:
 
-- void  **select**  **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` single=null  **)**
+- void  **select**  **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` single=true  **)**
 
 Select the item at the specified index.
 

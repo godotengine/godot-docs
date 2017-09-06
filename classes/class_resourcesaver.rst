@@ -18,11 +18,11 @@ Resource Saving Interface.
 Member Functions
 ----------------
 
-+------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_recognized_extensions<class_ResourceSaver_get_recognized_extensions>`  **(** :ref:`Resource<class_resource>` type  **)**                               |
-+------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`save<class_ResourceSaver_save>`  **(** :ref:`String<class_string>` path, :ref:`Resource<class_resource>` resource, :ref:`int<class_int>` flags=null  **)** |
-+------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_recognized_extensions<class_ResourceSaver_get_recognized_extensions>`  **(** :ref:`Resource<class_resource>` type  **)**                            |
++------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                          | :ref:`save<class_ResourceSaver_save>`  **(** :ref:`String<class_string>` path, :ref:`Resource<class_resource>` resource, :ref:`int<class_int>` flags=0  **)** |
++------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
 -----------------
@@ -50,7 +50,7 @@ Return the list of extensions available for saving a resource of a given type.
 
 .. _class_ResourceSaver_save:
 
-- :ref:`int<class_int>`  **save**  **(** :ref:`String<class_string>` path, :ref:`Resource<class_resource>` resource, :ref:`int<class_int>` flags=null  **)**
+- :ref:`int<class_int>`  **save**  **(** :ref:`String<class_string>` path, :ref:`Resource<class_resource>` resource, :ref:`int<class_int>` flags=0  **)**
 
 Save a resource to disk, to a given path.
 

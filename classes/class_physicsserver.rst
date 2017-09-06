@@ -21,7 +21,7 @@ Member Functions
 ----------------
 
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                           | :ref:`area_add_shape<class_PhysicsServer_area_add_shape>`  **(** :ref:`RID<class_rid>` area, :ref:`RID<class_rid>` shape, :ref:`Transform<class_transform>` transform=null  **)**                                                                                   |
+| void                                                           | :ref:`area_add_shape<class_PhysicsServer_area_add_shape>`  **(** :ref:`RID<class_rid>` area, :ref:`RID<class_rid>` shape, :ref:`Transform<class_transform>` transform=Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )  **)**                                        |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`area_attach_object_instance_id<class_PhysicsServer_area_attach_object_instance_id>`  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` id  **)**                                                                                                        |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -71,7 +71,7 @@ Member Functions
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`body_add_collision_exception<class_PhysicsServer_body_add_collision_exception>`  **(** :ref:`RID<class_rid>` body, :ref:`RID<class_rid>` excepted_body  **)**                                                                                                 |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                           | :ref:`body_add_shape<class_PhysicsServer_body_add_shape>`  **(** :ref:`RID<class_rid>` body, :ref:`RID<class_rid>` shape, :ref:`Transform<class_transform>` transform=null  **)**                                                                                   |
+| void                                                           | :ref:`body_add_shape<class_PhysicsServer_body_add_shape>`  **(** :ref:`RID<class_rid>` body, :ref:`RID<class_rid>` shape, :ref:`Transform<class_transform>` transform=Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )  **)**                                        |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`body_apply_impulse<class_PhysicsServer_body_apply_impulse>`  **(** :ref:`RID<class_rid>` body, :ref:`Vector3<class_vector3>` pos, :ref:`Vector3<class_vector3>` impulse  **)**                                                                                |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -81,7 +81,7 @@ Member Functions
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`body_clear_shapes<class_PhysicsServer_body_clear_shapes>`  **(** :ref:`RID<class_rid>` body  **)**                                                                                                                                                            |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                          | :ref:`body_create<class_PhysicsServer_body_create>`  **(** :ref:`int<class_int>` mode=false, :ref:`bool<class_bool>` init_sleeping=2  **)**                                                                                                                         |
+| :ref:`RID<class_rid>`                                          | :ref:`body_create<class_PhysicsServer_body_create>`  **(** :ref:`int<class_int>` mode=2, :ref:`bool<class_bool>` init_sleeping=false  **)**                                                                                                                         |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                          | :ref:`body_get_axis_lock<class_PhysicsServer_body_get_axis_lock>`  **(** :ref:`RID<class_rid>` body  **)** const                                                                                                                                                    |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -341,7 +341,7 @@ Member Function Description
 
 .. _class_PhysicsServer_area_add_shape:
 
-- void  **area_add_shape**  **(** :ref:`RID<class_rid>` area, :ref:`RID<class_rid>` shape, :ref:`Transform<class_transform>` transform=null  **)**
+- void  **area_add_shape**  **(** :ref:`RID<class_rid>` area, :ref:`RID<class_rid>` shape, :ref:`Transform<class_transform>` transform=Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )  **)**
 
 .. _class_PhysicsServer_area_attach_object_instance_id:
 
@@ -441,7 +441,7 @@ Member Function Description
 
 .. _class_PhysicsServer_body_add_shape:
 
-- void  **body_add_shape**  **(** :ref:`RID<class_rid>` body, :ref:`RID<class_rid>` shape, :ref:`Transform<class_transform>` transform=null  **)**
+- void  **body_add_shape**  **(** :ref:`RID<class_rid>` body, :ref:`RID<class_rid>` shape, :ref:`Transform<class_transform>` transform=Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )  **)**
 
 .. _class_PhysicsServer_body_apply_impulse:
 
@@ -461,7 +461,7 @@ Member Function Description
 
 .. _class_PhysicsServer_body_create:
 
-- :ref:`RID<class_rid>`  **body_create**  **(** :ref:`int<class_int>` mode=false, :ref:`bool<class_bool>` init_sleeping=2  **)**
+- :ref:`RID<class_rid>`  **body_create**  **(** :ref:`int<class_int>` mode=2, :ref:`bool<class_bool>` init_sleeping=false  **)**
 
 .. _class_PhysicsServer_body_get_axis_lock:
 

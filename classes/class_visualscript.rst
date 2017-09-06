@@ -23,11 +23,11 @@ Member Functions
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`add_function<class_VisualScript_add_function>`  **(** :ref:`String<class_string>` name  **)**                                                                                                                                                     |
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`add_node<class_VisualScript_add_node>`  **(** :ref:`String<class_string>` func, :ref:`int<class_int>` id, :ref:`VisualScriptNode<class_visualscriptnode>` node, :ref:`Vector2<class_vector2>` pos=null  **)**                                     |
+| void                                             | :ref:`add_node<class_VisualScript_add_node>`  **(** :ref:`String<class_string>` func, :ref:`int<class_int>` id, :ref:`VisualScriptNode<class_visualscriptnode>` node, :ref:`Vector2<class_vector2>` pos=Vector2( 0, 0 )  **)**                          |
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`add_variable<class_VisualScript_add_variable>`  **(** :ref:`String<class_string>` name, :ref:`Variant<class_variant>` default_value=null, :ref:`bool<class_bool>` export=null  **)**                                                              |
+| void                                             | :ref:`add_variable<class_VisualScript_add_variable>`  **(** :ref:`String<class_string>` name, :ref:`Variant<class_variant>` default_value=null, :ref:`bool<class_bool>` export=false  **)**                                                             |
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`custom_signal_add_argument<class_VisualScript_custom_signal_add_argument>`  **(** :ref:`String<class_string>` name, :ref:`int<class_int>` type, :ref:`String<class_string>` argname, :ref:`int<class_int>` index=null  **)**                      |
+| void                                             | :ref:`custom_signal_add_argument<class_VisualScript_custom_signal_add_argument>`  **(** :ref:`String<class_string>` name, :ref:`int<class_int>` type, :ref:`String<class_string>` argname, :ref:`int<class_int>` index=-1  **)**                        |
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                            | :ref:`custom_signal_get_argument_count<class_VisualScript_custom_signal_get_argument_count>`  **(** :ref:`String<class_string>` name  **)** const                                                                                                       |
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -127,15 +127,15 @@ Member Function Description
 
 .. _class_VisualScript_add_node:
 
-- void  **add_node**  **(** :ref:`String<class_string>` func, :ref:`int<class_int>` id, :ref:`VisualScriptNode<class_visualscriptnode>` node, :ref:`Vector2<class_vector2>` pos=null  **)**
+- void  **add_node**  **(** :ref:`String<class_string>` func, :ref:`int<class_int>` id, :ref:`VisualScriptNode<class_visualscriptnode>` node, :ref:`Vector2<class_vector2>` pos=Vector2( 0, 0 )  **)**
 
 .. _class_VisualScript_add_variable:
 
-- void  **add_variable**  **(** :ref:`String<class_string>` name, :ref:`Variant<class_variant>` default_value=null, :ref:`bool<class_bool>` export=null  **)**
+- void  **add_variable**  **(** :ref:`String<class_string>` name, :ref:`Variant<class_variant>` default_value=null, :ref:`bool<class_bool>` export=false  **)**
 
 .. _class_VisualScript_custom_signal_add_argument:
 
-- void  **custom_signal_add_argument**  **(** :ref:`String<class_string>` name, :ref:`int<class_int>` type, :ref:`String<class_string>` argname, :ref:`int<class_int>` index=null  **)**
+- void  **custom_signal_add_argument**  **(** :ref:`String<class_string>` name, :ref:`int<class_int>` type, :ref:`String<class_string>` argname, :ref:`int<class_int>` index=-1  **)**
 
 .. _class_VisualScript_custom_signal_get_argument_count:
 

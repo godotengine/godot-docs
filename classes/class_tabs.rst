@@ -19,7 +19,7 @@ Member Functions
 ----------------
 
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`add_tab<class_Tabs_add_tab>`  **(** :ref:`String<class_string>` title=null, :ref:`Texture<class_texture>` icon=""  **)**     |
+| void                           | :ref:`add_tab<class_Tabs_add_tab>`  **(** :ref:`String<class_string>` title="", :ref:`Texture<class_texture>` icon=null  **)**     |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`ensure_tab_visible<class_Tabs_ensure_tab_visible>`  **(** :ref:`int<class_int>` idx  **)**                                   |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
@@ -94,7 +94,7 @@ Member Function Description
 
 .. _class_Tabs_add_tab:
 
-- void  **add_tab**  **(** :ref:`String<class_string>` title=null, :ref:`Texture<class_texture>` icon=""  **)**
+- void  **add_tab**  **(** :ref:`String<class_string>` title="", :ref:`Texture<class_texture>` icon=null  **)**
 
 .. _class_Tabs_ensure_tab_visible:
 

@@ -19,7 +19,7 @@ Member Functions
 ----------------
 
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`alert<class_OS_alert>`  **(** :ref:`String<class_string>` text, :ref:`String<class_string>` title=null  **)**                                                                                                        |
+| void                                           | :ref:`alert<class_OS_alert>`  **(** :ref:`String<class_string>` text, :ref:`String<class_string>` title="Alert!"  **)**                                                                                                    |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`can_draw<class_OS_can_draw>`  **(** **)** const                                                                                                                                                                      |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -33,7 +33,7 @@ Member Functions
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`dump_resources_to_file<class_OS_dump_resources_to_file>`  **(** :ref:`String<class_string>` file  **)**                                                                                                              |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`execute<class_OS_execute>`  **(** :ref:`String<class_string>` path, :ref:`PoolStringArray<class_poolstringarray>` arguments, :ref:`bool<class_bool>` blocking, :ref:`Array<class_array>` output=null  **)**          |
+| :ref:`int<class_int>`                          | :ref:`execute<class_OS_execute>`  **(** :ref:`String<class_string>` path, :ref:`PoolStringArray<class_poolstringarray>` arguments, :ref:`bool<class_bool>` blocking, :ref:`Array<class_array>` output=[  ]  **)**          |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`find_scancode_from_string<class_OS_find_scancode_from_string>`  **(** :ref:`String<class_string>` string  **)** const                                                                                                |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -265,7 +265,7 @@ Member Function Description
 
 .. _class_OS_alert:
 
-- void  **alert**  **(** :ref:`String<class_string>` text, :ref:`String<class_string>` title=null  **)**
+- void  **alert**  **(** :ref:`String<class_string>` text, :ref:`String<class_string>` title="Alert!"  **)**
 
 Displays a modal dialog box utilizing the host OS.
 
@@ -313,7 +313,7 @@ At the end of the file is a statistic of all used Resource Types.
 
 .. _class_OS_execute:
 
-- :ref:`int<class_int>`  **execute**  **(** :ref:`String<class_string>` path, :ref:`PoolStringArray<class_poolstringarray>` arguments, :ref:`bool<class_bool>` blocking, :ref:`Array<class_array>` output=null  **)**
+- :ref:`int<class_int>`  **execute**  **(** :ref:`String<class_string>` path, :ref:`PoolStringArray<class_poolstringarray>` arguments, :ref:`bool<class_bool>` blocking, :ref:`Array<class_array>` output=[  ]  **)**
 
 Execute the binary file in given path, optionally blocking until it returns. A process ID is returned.
 

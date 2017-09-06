@@ -45,7 +45,7 @@ Member Functions
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`NodePath<class_nodepath>`                | :ref:`get_node_owner_path<class_SceneState_get_node_owner_path>`  **(** :ref:`int<class_int>` idx  **)** const                                         |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_nodepath>`                | :ref:`get_node_path<class_SceneState_get_node_path>`  **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` for_parent=null  **)** const            |
+| :ref:`NodePath<class_nodepath>`                | :ref:`get_node_path<class_SceneState_get_node_path>`  **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` for_parent=false  **)** const           |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_node_property_count<class_SceneState_get_node_property_count>`  **(** :ref:`int<class_int>` idx  **)** const                                 |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -122,7 +122,7 @@ Member Function Description
 
 .. _class_SceneState_get_node_path:
 
-- :ref:`NodePath<class_nodepath>`  **get_node_path**  **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` for_parent=null  **)** const
+- :ref:`NodePath<class_nodepath>`  **get_node_path**  **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` for_parent=false  **)** const
 
 .. _class_SceneState_get_node_property_count:
 

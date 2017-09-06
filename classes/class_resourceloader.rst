@@ -18,19 +18,19 @@ Resource Loader.
 Member Functions
 ----------------
 
-+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_poolstringarray>`                      | :ref:`get_dependencies<class_ResourceLoader_get_dependencies>`  **(** :ref:`String<class_string>` path  **)**                                                            |
-+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_poolstringarray>`                      | :ref:`get_recognized_extensions_for_type<class_ResourceLoader_get_recognized_extensions_for_type>`  **(** :ref:`String<class_string>` type  **)**                        |
-+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                            | :ref:`has<class_ResourceLoader_has>`  **(** :ref:`String<class_string>` path  **)**                                                                                      |
-+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Resource<class_resource>`                                    | :ref:`load<class_ResourceLoader_load>`  **(** :ref:`String<class_string>` path, :ref:`String<class_string>` type_hint="", :ref:`bool<class_bool>` p_no_cache=null  **)** |
-+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ResourceInteractiveLoader<class_resourceinteractiveloader>`  | :ref:`load_interactive<class_ResourceLoader_load_interactive>`  **(** :ref:`String<class_string>` path, :ref:`String<class_string>` type_hint=null  **)**                |
-+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                               | :ref:`set_abort_on_missing_resources<class_ResourceLoader_set_abort_on_missing_resources>`  **(** :ref:`bool<class_bool>` abort  **)**                                   |
-+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_poolstringarray>`                      | :ref:`get_dependencies<class_ResourceLoader_get_dependencies>`  **(** :ref:`String<class_string>` path  **)**                                                             |
++--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_poolstringarray>`                      | :ref:`get_recognized_extensions_for_type<class_ResourceLoader_get_recognized_extensions_for_type>`  **(** :ref:`String<class_string>` type  **)**                         |
++--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                            | :ref:`has<class_ResourceLoader_has>`  **(** :ref:`String<class_string>` path  **)**                                                                                       |
++--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Resource<class_resource>`                                    | :ref:`load<class_ResourceLoader_load>`  **(** :ref:`String<class_string>` path, :ref:`String<class_string>` type_hint="", :ref:`bool<class_bool>` p_no_cache=false  **)** |
++--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`ResourceInteractiveLoader<class_resourceinteractiveloader>`  | :ref:`load_interactive<class_ResourceLoader_load_interactive>`  **(** :ref:`String<class_string>` path, :ref:`String<class_string>` type_hint=""  **)**                   |
++--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                               | :ref:`set_abort_on_missing_resources<class_ResourceLoader_set_abort_on_missing_resources>`  **(** :ref:`bool<class_bool>` abort  **)**                                    |
++--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -56,11 +56,11 @@ Return the list of recognized extensions for a resource type.
 
 .. _class_ResourceLoader_load:
 
-- :ref:`Resource<class_resource>`  **load**  **(** :ref:`String<class_string>` path, :ref:`String<class_string>` type_hint="", :ref:`bool<class_bool>` p_no_cache=null  **)**
+- :ref:`Resource<class_resource>`  **load**  **(** :ref:`String<class_string>` path, :ref:`String<class_string>` type_hint="", :ref:`bool<class_bool>` p_no_cache=false  **)**
 
 .. _class_ResourceLoader_load_interactive:
 
-- :ref:`ResourceInteractiveLoader<class_resourceinteractiveloader>`  **load_interactive**  **(** :ref:`String<class_string>` path, :ref:`String<class_string>` type_hint=null  **)**
+- :ref:`ResourceInteractiveLoader<class_resourceinteractiveloader>`  **load_interactive**  **(** :ref:`String<class_string>` path, :ref:`String<class_string>` type_hint=""  **)**
 
 Load a resource interactively, the returned object allows to load with high granularity.
 

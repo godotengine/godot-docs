@@ -21,7 +21,7 @@ Member Functions
 ----------------
 
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                               | :ref:`area_add_shape<class_Physics2DServer_area_add_shape>`  **(** :ref:`RID<class_rid>` area, :ref:`RID<class_rid>` shape, :ref:`Transform2D<class_transform2d>` transform=null  **)**                                                                                                                          |
+| void                                                               | :ref:`area_add_shape<class_Physics2DServer_area_add_shape>`  **(** :ref:`RID<class_rid>` area, :ref:`RID<class_rid>` shape, :ref:`Transform2D<class_transform2d>` transform=Transform2D( 1, 0, 0, 1, 0, 0 )  **)**                                                                                               |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`area_attach_object_instance_id<class_Physics2DServer_area_attach_object_instance_id>`  **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` id  **)**                                                                                                                                                   |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -71,7 +71,7 @@ Member Functions
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`body_add_force<class_Physics2DServer_body_add_force>`  **(** :ref:`RID<class_rid>` body, :ref:`Vector2<class_vector2>` offset, :ref:`Vector2<class_vector2>` force  **)**                                                                                                                                  |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                               | :ref:`body_add_shape<class_Physics2DServer_body_add_shape>`  **(** :ref:`RID<class_rid>` body, :ref:`RID<class_rid>` shape, :ref:`Transform2D<class_transform2d>` transform=null  **)**                                                                                                                          |
+| void                                                               | :ref:`body_add_shape<class_Physics2DServer_body_add_shape>`  **(** :ref:`RID<class_rid>` body, :ref:`RID<class_rid>` shape, :ref:`Transform2D<class_transform2d>` transform=Transform2D( 1, 0, 0, 1, 0, 0 )  **)**                                                                                               |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`body_apply_impulse<class_Physics2DServer_body_apply_impulse>`  **(** :ref:`RID<class_rid>` body, :ref:`Vector2<class_vector2>` pos, :ref:`Vector2<class_vector2>` impulse  **)**                                                                                                                           |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -79,7 +79,7 @@ Member Functions
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`body_clear_shapes<class_Physics2DServer_body_clear_shapes>`  **(** :ref:`RID<class_rid>` body  **)**                                                                                                                                                                                                       |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                              | :ref:`body_create<class_Physics2DServer_body_create>`  **(** :ref:`int<class_int>` mode=false, :ref:`bool<class_bool>` init_sleeping=2  **)**                                                                                                                                                                    |
+| :ref:`RID<class_rid>`                                              | :ref:`body_create<class_Physics2DServer_body_create>`  **(** :ref:`int<class_int>` mode=2, :ref:`bool<class_bool>` init_sleeping=false  **)**                                                                                                                                                                    |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                              | :ref:`body_get_collision_layer<class_Physics2DServer_body_get_collision_layer>`  **(** :ref:`RID<class_rid>` body  **)** const                                                                                                                                                                                   |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -145,9 +145,9 @@ Member Functions
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`body_set_state<class_Physics2DServer_body_set_state>`  **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` state, :ref:`Variant<class_variant>` value  **)**                                                                                                                                           |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                            | :ref:`body_test_motion<class_Physics2DServer_body_test_motion>`  **(** :ref:`RID<class_rid>` body, :ref:`Transform2D<class_transform2d>` from, :ref:`Vector2<class_vector2>` motion, :ref:`float<class_float>` margin=null, :ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>` result=null  **)** |
+| :ref:`bool<class_bool>`                                            | :ref:`body_test_motion<class_Physics2DServer_body_test_motion>`  **(** :ref:`RID<class_rid>` body, :ref:`Transform2D<class_transform2d>` from, :ref:`Vector2<class_vector2>` motion, :ref:`float<class_float>` margin=0.08, :ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>` result=null  **)** |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                              | :ref:`damped_spring_joint_create<class_Physics2DServer_damped_spring_joint_create>`  **(** :ref:`Vector2<class_vector2>` anchor_a, :ref:`Vector2<class_vector2>` anchor_b, :ref:`RID<class_rid>` body_a, :ref:`RID<class_rid>` body_b=null  **)**                                                                |
+| :ref:`RID<class_rid>`                                              | :ref:`damped_spring_joint_create<class_Physics2DServer_damped_spring_joint_create>`  **(** :ref:`Vector2<class_vector2>` anchor_a, :ref:`Vector2<class_vector2>` anchor_b, :ref:`RID<class_rid>` body_a, :ref:`RID<class_rid>` body_b  **)**                                                                     |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                          | :ref:`damped_string_joint_get_param<class_Physics2DServer_damped_string_joint_get_param>`  **(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` param  **)** const                                                                                                                                           |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -157,7 +157,7 @@ Member Functions
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                              | :ref:`get_process_info<class_Physics2DServer_get_process_info>`  **(** :ref:`int<class_int>` process_info  **)**                                                                                                                                                                                                 |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                              | :ref:`groove_joint_create<class_Physics2DServer_groove_joint_create>`  **(** :ref:`Vector2<class_vector2>` groove1_a, :ref:`Vector2<class_vector2>` groove2_a, :ref:`Vector2<class_vector2>` anchor_b, :ref:`RID<class_rid>` body_a=null, :ref:`RID<class_rid>` body_b=null  **)**                               |
+| :ref:`RID<class_rid>`                                              | :ref:`groove_joint_create<class_Physics2DServer_groove_joint_create>`  **(** :ref:`Vector2<class_vector2>` groove1_a, :ref:`Vector2<class_vector2>` groove2_a, :ref:`Vector2<class_vector2>` anchor_b, :ref:`RID<class_rid>` body_a, :ref:`RID<class_rid>` body_b  **)**                                         |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                          | :ref:`joint_get_param<class_Physics2DServer_joint_get_param>`  **(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` param  **)** const                                                                                                                                                                       |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -165,7 +165,7 @@ Member Functions
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`joint_set_param<class_Physics2DServer_joint_set_param>`  **(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**                                                                                                                                            |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                              | :ref:`pin_joint_create<class_Physics2DServer_pin_joint_create>`  **(** :ref:`Vector2<class_vector2>` anchor, :ref:`RID<class_rid>` body_a, :ref:`RID<class_rid>` body_b=null  **)**                                                                                                                              |
+| :ref:`RID<class_rid>`                                              | :ref:`pin_joint_create<class_Physics2DServer_pin_joint_create>`  **(** :ref:`Vector2<class_vector2>` anchor, :ref:`RID<class_rid>` body_a, :ref:`RID<class_rid>` body_b  **)**                                                                                                                                   |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`set_active<class_Physics2DServer_set_active>`  **(** :ref:`bool<class_bool>` active  **)**                                                                                                                                                                                                                 |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -263,7 +263,7 @@ Member Function Description
 
 .. _class_Physics2DServer_area_add_shape:
 
-- void  **area_add_shape**  **(** :ref:`RID<class_rid>` area, :ref:`RID<class_rid>` shape, :ref:`Transform2D<class_transform2d>` transform=null  **)**
+- void  **area_add_shape**  **(** :ref:`RID<class_rid>` area, :ref:`RID<class_rid>` shape, :ref:`Transform2D<class_transform2d>` transform=Transform2D( 1, 0, 0, 1, 0, 0 )  **)**
 
 Add a shape to the area, along with a transform matrix. Shapes are usually referenced by their index, so you should track which shape has a given index.
 
@@ -421,7 +421,7 @@ Add a positioned force to the applied force and torque. As with :ref:`body_apply
 
 .. _class_Physics2DServer_body_add_shape:
 
-- void  **body_add_shape**  **(** :ref:`RID<class_rid>` body, :ref:`RID<class_rid>` shape, :ref:`Transform2D<class_transform2d>` transform=null  **)**
+- void  **body_add_shape**  **(** :ref:`RID<class_rid>` body, :ref:`RID<class_rid>` shape, :ref:`Transform2D<class_transform2d>` transform=Transform2D( 1, 0, 0, 1, 0, 0 )  **)**
 
 Add a shape to the body, along with a transform matrix. Shapes are usually referenced by their index, so you should track which shape has a given index.
 
@@ -445,7 +445,7 @@ Remove all shapes from a body.
 
 .. _class_Physics2DServer_body_create:
 
-- :ref:`RID<class_rid>`  **body_create**  **(** :ref:`int<class_int>` mode=false, :ref:`bool<class_bool>` init_sleeping=2  **)**
+- :ref:`RID<class_rid>`  **body_create**  **(** :ref:`int<class_int>` mode=2, :ref:`bool<class_bool>` init_sleeping=false  **)**
 
 Create a physics body. The first parameter can be any value from constants BODY_MODE\*, for the type of body created. Additionally, the body can be created in sleeping state to save processing time.
 
@@ -641,13 +641,13 @@ Set a body state (see BODY_STATE\* constants).
 
 .. _class_Physics2DServer_body_test_motion:
 
-- :ref:`bool<class_bool>`  **body_test_motion**  **(** :ref:`RID<class_rid>` body, :ref:`Transform2D<class_transform2d>` from, :ref:`Vector2<class_vector2>` motion, :ref:`float<class_float>` margin=null, :ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>` result=null  **)**
+- :ref:`bool<class_bool>`  **body_test_motion**  **(** :ref:`RID<class_rid>` body, :ref:`Transform2D<class_transform2d>` from, :ref:`Vector2<class_vector2>` motion, :ref:`float<class_float>` margin=0.08, :ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>` result=null  **)**
 
 Return whether a body can move from a given point in a given direction. Apart from the boolean return value, a :ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>` can be passed to return additional information in.
 
 .. _class_Physics2DServer_damped_spring_joint_create:
 
-- :ref:`RID<class_rid>`  **damped_spring_joint_create**  **(** :ref:`Vector2<class_vector2>` anchor_a, :ref:`Vector2<class_vector2>` anchor_b, :ref:`RID<class_rid>` body_a, :ref:`RID<class_rid>` body_b=null  **)**
+- :ref:`RID<class_rid>`  **damped_spring_joint_create**  **(** :ref:`Vector2<class_vector2>` anchor_a, :ref:`Vector2<class_vector2>` anchor_b, :ref:`RID<class_rid>` body_a, :ref:`RID<class_rid>` body_b  **)**
 
 Create a damped spring joint between two bodies. If not specified, the second body is assumed to be the joint itself.
 
@@ -677,7 +677,7 @@ Return information about the current state of the 2D physics engine. The states 
 
 .. _class_Physics2DServer_groove_joint_create:
 
-- :ref:`RID<class_rid>`  **groove_joint_create**  **(** :ref:`Vector2<class_vector2>` groove1_a, :ref:`Vector2<class_vector2>` groove2_a, :ref:`Vector2<class_vector2>` anchor_b, :ref:`RID<class_rid>` body_a=null, :ref:`RID<class_rid>` body_b=null  **)**
+- :ref:`RID<class_rid>`  **groove_joint_create**  **(** :ref:`Vector2<class_vector2>` groove1_a, :ref:`Vector2<class_vector2>` groove2_a, :ref:`Vector2<class_vector2>` anchor_b, :ref:`RID<class_rid>` body_a, :ref:`RID<class_rid>` body_b  **)**
 
 Create a groove joint between two bodies. If not specified, the bodyies are assumed to be the joint itself.
 
@@ -701,7 +701,7 @@ Set a joint parameter. Parameters are explained in the JOINT_PARAM\* constants.
 
 .. _class_Physics2DServer_pin_joint_create:
 
-- :ref:`RID<class_rid>`  **pin_joint_create**  **(** :ref:`Vector2<class_vector2>` anchor, :ref:`RID<class_rid>` body_a, :ref:`RID<class_rid>` body_b=null  **)**
+- :ref:`RID<class_rid>`  **pin_joint_create**  **(** :ref:`Vector2<class_vector2>` anchor, :ref:`RID<class_rid>` body_a, :ref:`RID<class_rid>` body_b  **)**
 
 Create a pin joint between two bodies. If not specified, the second body is assumed to be the joint itself.
 

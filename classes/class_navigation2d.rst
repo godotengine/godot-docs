@@ -23,7 +23,7 @@ Member Functions
 +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_object>`                      | :ref:`get_closest_point_owner<class_Navigation2D_get_closest_point_owner>`  **(** :ref:`Vector2<class_vector2>` to_point  **)**                                                                                    |
 +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector2Array<class_poolvector2array>`  | :ref:`get_simple_path<class_Navigation2D_get_simple_path>`  **(** :ref:`Vector2<class_vector2>` start, :ref:`Vector2<class_vector2>` end, :ref:`bool<class_bool>` optimize=null  **)**                             |
+| :ref:`PoolVector2Array<class_poolvector2array>`  | :ref:`get_simple_path<class_Navigation2D_get_simple_path>`  **(** :ref:`Vector2<class_vector2>` start, :ref:`Vector2<class_vector2>` end, :ref:`bool<class_bool>` optimize=true  **)**                             |
 +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                            | :ref:`navpoly_create<class_Navigation2D_navpoly_create>`  **(** :ref:`NavigationPolygon<class_navigationpolygon>` mesh, :ref:`Transform2D<class_transform2d>` xform, :ref:`Object<class_object>` owner=null  **)** |
 +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -45,7 +45,7 @@ Member Function Description
 
 .. _class_Navigation2D_get_simple_path:
 
-- :ref:`PoolVector2Array<class_poolvector2array>`  **get_simple_path**  **(** :ref:`Vector2<class_vector2>` start, :ref:`Vector2<class_vector2>` end, :ref:`bool<class_bool>` optimize=null  **)**
+- :ref:`PoolVector2Array<class_poolvector2array>`  **get_simple_path**  **(** :ref:`Vector2<class_vector2>` start, :ref:`Vector2<class_vector2>` end, :ref:`bool<class_bool>` optimize=true  **)**
 
 .. _class_Navigation2D_navpoly_create:
 

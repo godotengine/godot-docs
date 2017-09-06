@@ -97,6 +97,8 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Texture<class_texture>`  | :ref:`get_texture<class_SpatialMaterial_get_texture>`  **(** :ref:`int<class_int>` param  **)** const                                                |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`      | :ref:`get_transmission<class_SpatialMaterial_get_transmission>`  **(** **)** const                                                                   |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`  | :ref:`get_uv1_offset<class_SpatialMaterial_get_uv1_offset>`  **(** **)** const                                                                       |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`  | :ref:`get_uv1_scale<class_SpatialMaterial_get_uv1_scale>`  **(** **)** const                                                                         |
@@ -195,6 +197,8 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_texture<class_SpatialMaterial_set_texture>`  **(** :ref:`int<class_int>` param, :ref:`Texture<class_texture>` texture  **)**               |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_transmission<class_SpatialMaterial_set_transmission>`  **(** :ref:`Color<class_color>` transmission  **)**                                 |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_uv1_offset<class_SpatialMaterial_set_uv1_offset>`  **(** :ref:`Vector3<class_vector3>` offset  **)**                                       |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_uv1_scale<class_SpatialMaterial_set_uv1_scale>`  **(** :ref:`Vector3<class_vector3>` scale  **)**                                          |
@@ -246,6 +250,7 @@ Member Variables
 - :ref:`bool<class_bool>` **flags_unshaded**
 - :ref:`bool<class_bool>` **flags_use_point_size**
 - :ref:`bool<class_bool>` **flags_vertex_lighting**
+- :ref:`bool<class_bool>` **flags_world_triplanar**
 - :ref:`float<class_float>` **metallic**
 - :ref:`float<class_float>` **metallic_specular**
 - :ref:`Texture<class_texture>` **metallic_texture**
@@ -282,6 +287,9 @@ Member Variables
 - :ref:`bool<class_bool>` **subsurf_scatter_enabled**
 - :ref:`float<class_float>` **subsurf_scatter_strength**
 - :ref:`Texture<class_texture>` **subsurf_scatter_texture**
+- :ref:`Color<class_color>` **transmission**
+- :ref:`bool<class_bool>` **transmission_enabled**
+- :ref:`Texture<class_texture>` **transmission_texture**
 - :ref:`Vector3<class_vector3>` **uv1_offset**
 - :ref:`Vector3<class_vector3>` **uv1_scale**
 - :ref:`bool<class_bool>` **uv1_triplanar**
@@ -307,11 +315,12 @@ Numeric Constants
 - **TEXTURE_AMBIENT_OCCLUSION** = **8**
 - **TEXTURE_DEPTH** = **9**
 - **TEXTURE_SUBSURFACE_SCATTERING** = **10**
-- **TEXTURE_REFRACTION** = **11**
-- **TEXTURE_DETAIL_MASK** = **12**
-- **TEXTURE_DETAIL_ALBEDO** = **13**
-- **TEXTURE_DETAIL_NORMAL** = **14**
-- **TEXTURE_MAX** = **15**
+- **TEXTURE_TRANSMISSION** = **11**
+- **TEXTURE_REFRACTION** = **12**
+- **TEXTURE_DETAIL_MASK** = **13**
+- **TEXTURE_DETAIL_ALBEDO** = **14**
+- **TEXTURE_DETAIL_NORMAL** = **15**
+- **TEXTURE_MAX** = **16**
 - **DETAIL_UV_1** = **0**
 - **DETAIL_UV_2** = **1**
 - **FEATURE_TRANSPARENT** = **0**
@@ -323,9 +332,10 @@ Numeric Constants
 - **FEATURE_AMBIENT_OCCLUSION** = **6**
 - **FEATURE_DEPTH_MAPPING** = **7**
 - **FEATURE_SUBSURACE_SCATTERING** = **8**
-- **FEATURE_REFRACTION** = **9**
-- **FEATURE_DETAIL** = **10**
-- **FEATURE_MAX** = **11**
+- **FEATURE_TRANSMISSION** = **9**
+- **FEATURE_REFRACTION** = **10**
+- **FEATURE_DETAIL** = **11**
+- **FEATURE_MAX** = **12**
 - **BLEND_MODE_MIX** = **0**
 - **BLEND_MODE_ADD** = **1**
 - **BLEND_MODE_SUB** = **2**
@@ -346,11 +356,12 @@ Numeric Constants
 - **FLAG_FIXED_SIZE** = **6**
 - **FLAG_UV1_USE_TRIPLANAR** = **7**
 - **FLAG_UV2_USE_TRIPLANAR** = **8**
-- **FLAG_AO_ON_UV2** = **9**
-- **FLAG_USE_ALPHA_SCISSOR** = **10**
-- **FLAG_MAX** = **11**
+- **FLAG_AO_ON_UV2** = **10**
+- **FLAG_USE_ALPHA_SCISSOR** = **11**
+- **FLAG_TRIPLANAR_USE_WORLD** = **9**
+- **FLAG_MAX** = **12**
 - **DIFFUSE_LAMBERT** = **0**
-- **DIFFUSE_HALF_LAMBERT** = **1**
+- **DIFFUSE_LAMBERT_WRAP** = **1**
 - **DIFFUSE_OREN_NAYAR** = **2**
 - **DIFFUSE_BURLEY** = **3**
 - **DIFFUSE_TOON** = **4**
@@ -527,6 +538,10 @@ Member Function Description
 .. _class_SpatialMaterial_get_texture:
 
 - :ref:`Texture<class_texture>`  **get_texture**  **(** :ref:`int<class_int>` param  **)** const
+
+.. _class_SpatialMaterial_get_transmission:
+
+- :ref:`Color<class_color>`  **get_transmission**  **(** **)** const
 
 .. _class_SpatialMaterial_get_uv1_offset:
 
@@ -723,6 +738,10 @@ Member Function Description
 .. _class_SpatialMaterial_set_texture:
 
 - void  **set_texture**  **(** :ref:`int<class_int>` param, :ref:`Texture<class_texture>` texture  **)**
+
+.. _class_SpatialMaterial_set_transmission:
+
+- void  **set_transmission**  **(** :ref:`Color<class_color>` transmission  **)**
 
 .. _class_SpatialMaterial_set_uv1_offset:
 

@@ -19,7 +19,7 @@ Member Functions
 ----------------
 
 +-------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`add_sphere<class_ImmediateGeometry_add_sphere>`  **(** :ref:`int<class_int>` lats, :ref:`int<class_int>` lons, :ref:`float<class_float>` radius, :ref:`bool<class_bool>` add_uv=null  **)** |
+| void  | :ref:`add_sphere<class_ImmediateGeometry_add_sphere>`  **(** :ref:`int<class_int>` lats, :ref:`int<class_int>` lons, :ref:`float<class_float>` radius, :ref:`bool<class_bool>` add_uv=true  **)** |
 +-------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void  | :ref:`add_vertex<class_ImmediateGeometry_add_vertex>`  **(** :ref:`Vector3<class_vector3>` pos  **)**                                                                                             |
 +-------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -45,7 +45,7 @@ Member Function Description
 
 .. _class_ImmediateGeometry_add_sphere:
 
-- void  **add_sphere**  **(** :ref:`int<class_int>` lats, :ref:`int<class_int>` lons, :ref:`float<class_float>` radius, :ref:`bool<class_bool>` add_uv=null  **)**
+- void  **add_sphere**  **(** :ref:`int<class_int>` lats, :ref:`int<class_int>` lons, :ref:`float<class_float>` radius, :ref:`bool<class_bool>` add_uv=true  **)**
 
 Simple helper to draw a uvsphere, with given latitudes, longitude and radius.
 

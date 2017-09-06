@@ -23,6 +23,8 @@ Member Functions
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`create_item<class_MeshLibrary_create_item>`  **(** :ref:`int<class_int>` id  **)**                                                                |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                        | :ref:`find_item_by_name<class_MeshLibrary_find_item_by_name>`  **(** :ref:`String<class_string>` name  **)** const                                      |
++----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolIntArray<class_poolintarray>`      | :ref:`get_item_list<class_MeshLibrary_get_item_list>`  **(** **)** const                                                                                |
 +----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Mesh<class_mesh>`                      | :ref:`get_item_mesh<class_MeshLibrary_get_item_mesh>`  **(** :ref:`int<class_int>` id  **)** const                                                      |
@@ -69,6 +71,10 @@ Clear the library.
 - void  **create_item**  **(** :ref:`int<class_int>` id  **)**
 
 Create a new item in the library, supplied an id.
+
+.. _class_MeshLibrary_find_item_by_name:
+
+- :ref:`int<class_int>`  **find_item_by_name**  **(** :ref:`String<class_string>` name  **)** const
 
 .. _class_MeshLibrary_get_item_list:
 

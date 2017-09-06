@@ -18,19 +18,19 @@ PacketPeer implementation using the ENet library.
 Member Functions
 ----------------
 
-+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`close_connection<class_NetworkedMultiplayerENet_close_connection>`  **(** **)**                                                                                                                                             |
-+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`create_client<class_NetworkedMultiplayerENet_create_client>`  **(** :ref:`String<class_string>` ip, :ref:`int<class_int>` port, :ref:`int<class_int>` in_bandwidth=null, :ref:`int<class_int>` out_bandwidth=null  **)**    |
-+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`create_server<class_NetworkedMultiplayerENet_create_server>`  **(** :ref:`int<class_int>` port, :ref:`int<class_int>` max_clients=0, :ref:`int<class_int>` in_bandwidth=32, :ref:`int<class_int>` out_bandwidth=null  **)** |
-+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_compression_mode<class_NetworkedMultiplayerENet_get_compression_mode>`  **(** **)** const                                                                                                                               |
-+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_bind_ip<class_NetworkedMultiplayerENet_set_bind_ip>`  **(** :ref:`String<class_string>` ip  **)**                                                                                                                       |
-+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_compression_mode<class_NetworkedMultiplayerENet_set_compression_mode>`  **(** :ref:`int<class_int>` mode  **)**                                                                                                         |
-+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                   | :ref:`close_connection<class_NetworkedMultiplayerENet_close_connection>`  **(** **)**                                                                                                                                          |
++------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`create_client<class_NetworkedMultiplayerENet_create_client>`  **(** :ref:`String<class_string>` ip, :ref:`int<class_int>` port, :ref:`int<class_int>` in_bandwidth=0, :ref:`int<class_int>` out_bandwidth=0  **)**       |
++------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`create_server<class_NetworkedMultiplayerENet_create_server>`  **(** :ref:`int<class_int>` port, :ref:`int<class_int>` max_clients=32, :ref:`int<class_int>` in_bandwidth=0, :ref:`int<class_int>` out_bandwidth=0  **)** |
++------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`get_compression_mode<class_NetworkedMultiplayerENet_get_compression_mode>`  **(** **)** const                                                                                                                            |
++------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                   | :ref:`set_bind_ip<class_NetworkedMultiplayerENet_set_bind_ip>`  **(** :ref:`String<class_string>` ip  **)**                                                                                                                    |
++------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                   | :ref:`set_compression_mode<class_NetworkedMultiplayerENet_set_compression_mode>`  **(** :ref:`int<class_int>` mode  **)**                                                                                                      |
++------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
 -----------------
@@ -55,11 +55,11 @@ Member Function Description
 
 .. _class_NetworkedMultiplayerENet_create_client:
 
-- :ref:`int<class_int>`  **create_client**  **(** :ref:`String<class_string>` ip, :ref:`int<class_int>` port, :ref:`int<class_int>` in_bandwidth=null, :ref:`int<class_int>` out_bandwidth=null  **)**
+- :ref:`int<class_int>`  **create_client**  **(** :ref:`String<class_string>` ip, :ref:`int<class_int>` port, :ref:`int<class_int>` in_bandwidth=0, :ref:`int<class_int>` out_bandwidth=0  **)**
 
 .. _class_NetworkedMultiplayerENet_create_server:
 
-- :ref:`int<class_int>`  **create_server**  **(** :ref:`int<class_int>` port, :ref:`int<class_int>` max_clients=0, :ref:`int<class_int>` in_bandwidth=32, :ref:`int<class_int>` out_bandwidth=null  **)**
+- :ref:`int<class_int>`  **create_server**  **(** :ref:`int<class_int>` port, :ref:`int<class_int>` max_clients=32, :ref:`int<class_int>` in_bandwidth=0, :ref:`int<class_int>` out_bandwidth=0  **)**
 
 .. _class_NetworkedMultiplayerENet_get_compression_mode:
 

@@ -27,7 +27,7 @@ Member Functions
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                        | :ref:`change_scene_to<class_SceneTree_change_scene_to>`  **(** :ref:`PackedScene<class_packedscene>` packed_scene  **)**                                                                                             |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`SceneTreeTimer<class_scenetreetimer>`  | :ref:`create_timer<class_SceneTree_create_timer>`  **(** :ref:`float<class_float>` time_sec, :ref:`bool<class_bool>` pause_mode_process=null  **)**                                                                  |
+| :ref:`SceneTreeTimer<class_scenetreetimer>`  | :ref:`create_timer<class_SceneTree_create_timer>`  **(** :ref:`float<class_float>` time_sec, :ref:`bool<class_bool>` pause_mode_process=true  **)**                                                                  |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Node<class_node>`                      | :ref:`get_current_scene<class_SceneTree_get_current_scene>`  **(** **)** const                                                                                                                                       |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -95,7 +95,7 @@ Member Functions
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`set_refuse_new_network_connections<class_SceneTree_set_refuse_new_network_connections>`  **(** :ref:`bool<class_bool>` refuse  **)**                                                                           |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set_screen_stretch<class_SceneTree_set_screen_stretch>`  **(** :ref:`int<class_int>` mode, :ref:`int<class_int>` aspect, :ref:`Vector2<class_vector2>` minsize, :ref:`int<class_int>` shrink=null  **)**       |
+| void                                         | :ref:`set_screen_stretch<class_SceneTree_set_screen_stretch>`  **(** :ref:`int<class_int>` mode, :ref:`int<class_int>` aspect, :ref:`Vector2<class_vector2>` minsize, :ref:`int<class_int>` shrink=1  **)**          |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -150,7 +150,7 @@ Member Function Description
 
 .. _class_SceneTree_create_timer:
 
-- :ref:`SceneTreeTimer<class_scenetreetimer>`  **create_timer**  **(** :ref:`float<class_float>` time_sec, :ref:`bool<class_bool>` pause_mode_process=null  **)**
+- :ref:`SceneTreeTimer<class_scenetreetimer>`  **create_timer**  **(** :ref:`float<class_float>` time_sec, :ref:`bool<class_bool>` pause_mode_process=true  **)**
 
 .. _class_SceneTree_get_current_scene:
 
@@ -292,6 +292,6 @@ Set the peer object to handle the RPC system (effectively enabling networking). 
 
 .. _class_SceneTree_set_screen_stretch:
 
-- void  **set_screen_stretch**  **(** :ref:`int<class_int>` mode, :ref:`int<class_int>` aspect, :ref:`Vector2<class_vector2>` minsize, :ref:`int<class_int>` shrink=null  **)**
+- void  **set_screen_stretch**  **(** :ref:`int<class_int>` mode, :ref:`int<class_int>` aspect, :ref:`Vector2<class_vector2>` minsize, :ref:`int<class_int>` shrink=1  **)**
 
 

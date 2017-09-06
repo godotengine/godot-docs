@@ -21,7 +21,7 @@ Member Functions
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`add_icon_item<class_OptionButton_add_icon_item>`  **(** :ref:`Texture<class_texture>` texture, :ref:`String<class_string>` label, :ref:`int<class_int>` id  **)** |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`add_item<class_OptionButton_add_item>`  **(** :ref:`String<class_string>` label, :ref:`int<class_int>` id=null  **)**                                             |
+| void                           | :ref:`add_item<class_OptionButton_add_item>`  **(** :ref:`String<class_string>` label, :ref:`int<class_int>` id=-1  **)**                                               |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`add_separator<class_OptionButton_add_separator>`  **(** **)**                                                                                                     |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -89,7 +89,7 @@ Add an item, with a "texture" icon, text "label" and (optionally) id. If no "id"
 
 .. _class_OptionButton_add_item:
 
-- void  **add_item**  **(** :ref:`String<class_string>` label, :ref:`int<class_int>` id=null  **)**
+- void  **add_item**  **(** :ref:`String<class_string>` label, :ref:`int<class_int>` id=-1  **)**
 
 Add an item, with text "label" and (optionally) id. If no "id" is passed, "id" becomes the item index. New items are appended at the end.
 

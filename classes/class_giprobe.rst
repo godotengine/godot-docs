@@ -19,7 +19,7 @@ Member Functions
 ----------------
 
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`bake<class_GIProbe_bake>`  **(** :ref:`Node<class_node>` from_node=false, :ref:`bool<class_bool>` create_visual_debug=null  **)** |
+| void                                   | :ref:`bake<class_GIProbe_bake>`  **(** :ref:`Node<class_node>` from_node=null, :ref:`bool<class_bool>` create_visual_debug=false  **)** |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`debug_bake<class_GIProbe_debug_bake>`  **(** **)**                                                                                |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
@@ -91,7 +91,7 @@ Member Function Description
 
 .. _class_GIProbe_bake:
 
-- void  **bake**  **(** :ref:`Node<class_node>` from_node=false, :ref:`bool<class_bool>` create_visual_debug=null  **)**
+- void  **bake**  **(** :ref:`Node<class_node>` from_node=null, :ref:`bool<class_bool>` create_visual_debug=false  **)**
 
 .. _class_GIProbe_debug_bake:
 

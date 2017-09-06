@@ -21,9 +21,9 @@ Member Functions
 +--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_array>`                        | :ref:`build_box_planes<class_Geometry_build_box_planes>`  **(** :ref:`Vector3<class_vector3>` extents  **)**                                                                                                                                                         |
 +--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`                        | :ref:`build_capsule_planes<class_Geometry_build_capsule_planes>`  **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, :ref:`int<class_int>` lats, :ref:`int<class_int>` axis=null  **)**                          |
+| :ref:`Array<class_array>`                        | :ref:`build_capsule_planes<class_Geometry_build_capsule_planes>`  **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, :ref:`int<class_int>` lats, :ref:`int<class_int>` axis=2  **)**                             |
 +--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`                        | :ref:`build_cylinder_planes<class_Geometry_build_cylinder_planes>`  **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, :ref:`int<class_int>` axis=null  **)**                                                    |
+| :ref:`Array<class_array>`                        | :ref:`build_cylinder_planes<class_Geometry_build_cylinder_planes>`  **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, :ref:`int<class_int>` axis=2  **)**                                                       |
 +--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`                    | :ref:`get_closest_point_to_segment<class_Geometry_get_closest_point_to_segment>`  **(** :ref:`Vector3<class_vector3>` point, :ref:`Vector3<class_vector3>` s1, :ref:`Vector3<class_vector3>` s2  **)**                                                               |
 +--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -69,11 +69,11 @@ Member Function Description
 
 .. _class_Geometry_build_capsule_planes:
 
-- :ref:`Array<class_array>`  **build_capsule_planes**  **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, :ref:`int<class_int>` lats, :ref:`int<class_int>` axis=null  **)**
+- :ref:`Array<class_array>`  **build_capsule_planes**  **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, :ref:`int<class_int>` lats, :ref:`int<class_int>` axis=2  **)**
 
 .. _class_Geometry_build_cylinder_planes:
 
-- :ref:`Array<class_array>`  **build_cylinder_planes**  **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, :ref:`int<class_int>` axis=null  **)**
+- :ref:`Array<class_array>`  **build_cylinder_planes**  **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, :ref:`int<class_int>` axis=2  **)**
 
 .. _class_Geometry_get_closest_point_to_segment:
 

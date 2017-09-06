@@ -53,9 +53,9 @@ Member Functions
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`look_at<class_Node2D_look_at>`  **(** :ref:`Vector2<class_vector2>` point  **)**                                                    |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`move_local_x<class_Node2D_move_local_x>`  **(** :ref:`float<class_float>` delta, :ref:`bool<class_bool>` scaled=null  **)**         |
+| void                                   | :ref:`move_local_x<class_Node2D_move_local_x>`  **(** :ref:`float<class_float>` delta, :ref:`bool<class_bool>` scaled=false  **)**        |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`move_local_y<class_Node2D_move_local_y>`  **(** :ref:`float<class_float>` delta, :ref:`bool<class_bool>` scaled=null  **)**         |
+| void                                   | :ref:`move_local_y<class_Node2D_move_local_y>`  **(** :ref:`float<class_float>` delta, :ref:`bool<class_bool>` scaled=false  **)**        |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`rotate<class_Node2D_rotate>`  **(** :ref:`float<class_float>` radians  **)**                                                        |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
@@ -212,13 +212,13 @@ Rotate the 2d node so it points at 'point' position.
 
 .. _class_Node2D_move_local_x:
 
-- void  **move_local_x**  **(** :ref:`float<class_float>` delta, :ref:`bool<class_bool>` scaled=null  **)**
+- void  **move_local_x**  **(** :ref:`float<class_float>` delta, :ref:`bool<class_bool>` scaled=false  **)**
 
 Apply a local translation on X axis to the 2D node according to the 'delta' of the process. If 'scaled' is false, the movement is normalized.
 
 .. _class_Node2D_move_local_y:
 
-- void  **move_local_y**  **(** :ref:`float<class_float>` delta, :ref:`bool<class_bool>` scaled=null  **)**
+- void  **move_local_y**  **(** :ref:`float<class_float>` delta, :ref:`bool<class_bool>` scaled=false  **)**
 
 Apply a local translation on Y axis to the 2D node according to the 'delta' of the process. If 'scaled' is false, the movement is normalized.
 

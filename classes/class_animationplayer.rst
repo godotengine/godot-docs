@@ -63,9 +63,9 @@ Member Functions
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`is_playing<class_AnimationPlayer_is_playing>`  **(** **)** const                                                                                                                                                   |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`play<class_AnimationPlayer_play>`  **(** :ref:`String<class_string>` name=false, :ref:`float<class_float>` custom_blend=1.0, :ref:`float<class_float>` custom_speed=-1, :ref:`bool<class_bool>` from_end=""  **)** |
+| void                                           | :ref:`play<class_AnimationPlayer_play>`  **(** :ref:`String<class_string>` name="", :ref:`float<class_float>` custom_blend=-1, :ref:`float<class_float>` custom_speed=1.0, :ref:`bool<class_bool>` from_end=false  **)** |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`play_backwards<class_AnimationPlayer_play_backwards>`  **(** :ref:`String<class_string>` name=-1, :ref:`float<class_float>` custom_blend=""  **)**                                                                 |
+| void                                           | :ref:`play_backwards<class_AnimationPlayer_play_backwards>`  **(** :ref:`String<class_string>` name="", :ref:`float<class_float>` custom_blend=-1  **)**                                                                 |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`queue<class_AnimationPlayer_queue>`  **(** :ref:`String<class_string>` name  **)**                                                                                                                                 |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -73,7 +73,7 @@ Member Functions
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`rename_animation<class_AnimationPlayer_rename_animation>`  **(** :ref:`String<class_string>` name, :ref:`String<class_string>` newname  **)**                                                                      |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`seek<class_AnimationPlayer_seek>`  **(** :ref:`float<class_float>` pos_sec, :ref:`bool<class_bool>` update=null  **)**                                                                                             |
+| void                                           | :ref:`seek<class_AnimationPlayer_seek>`  **(** :ref:`float<class_float>` pos_sec, :ref:`bool<class_bool>` update=false  **)**                                                                                            |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_active<class_AnimationPlayer_set_active>`  **(** :ref:`bool<class_bool>` active  **)**                                                                                                                         |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -260,13 +260,13 @@ Return whether an animation is playing.
 
 .. _class_AnimationPlayer_play:
 
-- void  **play**  **(** :ref:`String<class_string>` name=false, :ref:`float<class_float>` custom_blend=1.0, :ref:`float<class_float>` custom_speed=-1, :ref:`bool<class_bool>` from_end=""  **)**
+- void  **play**  **(** :ref:`String<class_string>` name="", :ref:`float<class_float>` custom_blend=-1, :ref:`float<class_float>` custom_speed=1.0, :ref:`bool<class_bool>` from_end=false  **)**
 
 Play a given animation by the animation name. Custom speed and blend times can be set. If custom speed is negative (-1), 'from_end' being true can play the animation backwards.
 
 .. _class_AnimationPlayer_play_backwards:
 
-- void  **play_backwards**  **(** :ref:`String<class_string>` name=-1, :ref:`float<class_float>` custom_blend=""  **)**
+- void  **play_backwards**  **(** :ref:`String<class_string>` name="", :ref:`float<class_float>` custom_blend=-1  **)**
 
 Play a given animation by the animation name in reverse.
 
@@ -290,7 +290,7 @@ Rename an existing animation.
 
 .. _class_AnimationPlayer_seek:
 
-- void  **seek**  **(** :ref:`float<class_float>` pos_sec, :ref:`bool<class_bool>` update=null  **)**
+- void  **seek**  **(** :ref:`float<class_float>` pos_sec, :ref:`bool<class_bool>` update=false  **)**
 
 Seek the animation to a given position in time (in seconds). If 'update' is true, the animation will be updated too, otherwise it will be updated at process time.
 
