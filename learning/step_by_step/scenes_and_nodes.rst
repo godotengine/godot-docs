@@ -180,10 +180,10 @@ you can change in this file to alter how a project executes. To simplify this
 process, Godot provides a project settings dialog, which acts as a sort of
 frontend to editing a project.godot file.
 
-To access that dialog, select Scene -> Project Settings. Try it now.
+To access that dialog, select Project -> Project Settings. Try it now.
 
 Once the window opens, let's select a main scene. Locate the
-application/main_scene property and click on it to select 'hello.tscn'.
+`Application/Run/Main Scene` property and click on it to select 'hello.tscn'.
 
 .. image:: /img/main_scene.png
 
