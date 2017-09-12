@@ -342,6 +342,8 @@ Below the member panel, exists the list of all available node types:
 
 .. image:: /img/visual_script33.png
 
+Once you re conmfortable and familiar with them, the Ctrl-F (Command-F on
+Mac) is very useful for searching the list.
 
 Any of them can be dragged to the scene. Remember that, unlike the nodes previously discussed (e.g. dragging a property
 from the inspector sets the context to the node being edited automatically), these are
