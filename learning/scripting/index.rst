@@ -6,3 +6,4 @@ Scripting
    :name: toc-learn-scripting
 
    gdscript/index
+   visual_script/index
