@@ -6,13 +6,13 @@ Visual Scripting
 Introduction
 ------------
 
-Visual Scripting is always a controversial topic, surronded by many misunderstandings.
+Visual Scripting is always a controversial topic, surrounded by many misunderstandings.
 Programmers often think the aim of it is replacing their beloved code, so they
 act defensively against it. Artists and game designers think that, with it,
 they can write any game they want with little effort without the need of programmers.
 
 This situation is the result of really bad marketing from many products over time 
-which, in their aim to capure the interest of artists and game designers, also
+which, in their aim to capture the interest of artists and game designers, also
 made programmers feel like they are being replaced by visual tools.
 
 Truth is mostly, somewhat, in the middle. First of all, programmers can rest
@@ -30,7 +30,7 @@ It takes considerably more time to create code with it, and it's often more diff
 to modify than just writing a few characters.
 
 With the misunderstanding cleared up, the question that remains is what are the practical
-uses is for Visual Scripting.
+uses for Visual Scripting.
 
 The most common use cases are are as follows:
 
@@ -51,7 +51,7 @@ In Godot, a Visual Script fits smoothly together with regular scripts in the Edi
 
 .. image:: /img/visual_script1.png
 
-In fact, Visual Scripting integrates so well to Godot that It's hard to believe it was added only
+In fact, Visual Scripting integrates so well to Godot that it's hard to believe it was added only
 in version 3.0. This is because, when editing, the rest of Godot panels and
 docks act like a palette from where you can drag and drop all sorts of information to the script canvas:
 
@@ -84,7 +84,7 @@ In Godot, the scripting interface is universal and all implementations conform t
 
 A function is an individual canvas with nodes connected.
 
-A single script can contain many functions, each of which will have a canvas of it's own. This makes scripts
+A single script can contain many functions, each of which will have a canvas of its own. This makes scripts
 more organized.
 
 There are three main ways to add functions in a script:
@@ -100,7 +100,7 @@ are listed when pressing the "Override" icon in the member panel:
 
 
 In the following example, a function will be executed when the node is loaded and added to the running scene.
-For this, the _ready() virtual method will be overriden:
+For this, the _ready() virtual method will be overridden:
 
 .. image:: /img/visual_script7.png
 
@@ -110,7 +110,7 @@ Finally, a canvas appears for this function, showing the override:
 .. image:: /img/visual_script8.png
 
 As some functions expect you to return a value, they will also add a return node where such value is supposed to be
-provided
+provided:
 
 .. image:: /img/visual_script9.png
 
@@ -139,7 +139,7 @@ connected to it:
 Creating a Function Manually
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The last way to create functions is to do it manualy. In general this is not as common unless you
+The last way to create functions is to do it manually. In general this is not as common unless you
 really need it. Custom functions work when another (or the same) script calls them manually.
 The main use case for this is to separate a function into more, or reusing your visual code.
 
@@ -148,7 +148,7 @@ with a default name:
 
 .. image:: /img/visual_script13.png
 
-This will add a new function, which can be renamed by simply double clicking it's name:
+This will add a new function, which can be renamed by simply double clicking its name:
 
 .. image:: /img/visual_script14.png
 
@@ -178,10 +178,10 @@ Like in most visual scripting implementations, each node has editable properties
 bloating the nodes with editable controls for the sake of readability. 
 
 Nodes still display the required information as text, but editing is done via the *Inspector*. To edit them, just
-select andy node and edit it's properties in the *Inspector*.
+select any node and edit its properties in the *Inspector*.
 
 Ports and Connections
---------------------
+---------------------
 
 Programming in Godot Visual Scripting is done via *Nodes* and *Port Connections* inside each function. 
 
@@ -337,12 +337,12 @@ Remember that emitting a signal is a sequenced operation, so it must come from a
 Adding More Nodes
 -----------------
 
-Now that the basics are covered, let's discuss the large amount of utilitary nodes available for your canvas!
+Now that the basics are covered, let's discuss the large amount of utility nodes available for your canvas!
 Below the member panel, exists the list of all available node types:
 
 .. image:: /img/visual_script33.png
 
-Once you re conmfortable and familiar with them, the Ctrl-F (Command-F on
+Once you're comfortable and familiar with them, the Ctrl-F (Command-F on
 Mac) is very useful for searching the list.
 
 Any of them can be dragged to the scene. Remember that, unlike the nodes previously discussed (e.g. dragging a property
@@ -395,7 +395,7 @@ Engine Singleton
 ^^^^^^^^^^^^^^^^
 
 Engine singletons are global interfaces (meaning they can be accessed without a reference, unlike Scene Nodes, they are always available).
-They have several purposes, but in general they are useful for low level access or OS-Related access.
+They have several purposes, but in general they are useful for low level access or OS-related access.
 
 .. image:: /img/visual_script39.png
 
@@ -453,14 +453,14 @@ Comment
 ^^^^^^^
 
 A Comment node works as a node you can resize to put around other nodes. It will not try to get focus or be brought
-to top when seleting it. It can also be used to write text on it.
+to top when selecting it. It can also be used to write text on it.
 
 .. image:: /img/visual_script42.png
 
 Flow Control
 ~~~~~~~~~~~~
 
-Flow control nodes are all sequenecd, and allow the execution take different branches, usually depending on a
+Flow control nodes are all sequenced, and allow the execution take different branches, usually depending on a
 given condition.
 
 .. image:: /img/visual_script43.png
@@ -470,7 +470,7 @@ Condition
 
 This is a simple node that checks a bool port. If true, it will go via the "true" sequence port. If false,
 the second. After going for either of them, it goes via the "done" port. Leaving sequence
-ports disconnected is fine if no all of them are used.
+ports disconnected is fine if not all of them are used.
 
 Iterator
 ^^^^^^^^
@@ -492,7 +492,7 @@ A return node forces the function to end.
 Sequence
 ^^^^^^^^
 
-This node is useful mostly for organizing your graph. It calls it's sequence ports in order.
+This node is useful mostly for organizing your graph. It calls its sequence ports in order.
 
 TypeCast
 ^^^^^^^^
@@ -541,12 +541,12 @@ In most cases just search the list of nodes, it should be faster.
 Call
 ^^^^
 
-This is the generic calling node. It is rarely used directly but by dragging to empty space on an already cofigured node.
+This is the generic calling node. It is rarely used directly but by dragging to empty space on an already configured node.
 
 Constructors
 ^^^^^^^^^^^^
 
-These are all the functions needed to create godot basic datatypes. If you need to, for example, create a Vector3 out of 3 floats, a
+These are all the functions needed to create Godot basic datatypes. If you need to, for example, create a Vector3 out of 3 floats, a
 constructor must be used.
 
 .. image:: /img/visual_script44.png
@@ -555,7 +555,7 @@ constructor must be used.
 Destructor
 ^^^^^^^^^^
 
-This is the opposite to Constructor, it allows to separate any basic type (ie, Vector3) into it's sub-elements.
+This is the opposite to Constructor, it allows to separate any basic type (ie, Vector3) into its sub-elements.
 
 .. image:: /img/visual_script45.png
 
@@ -563,13 +563,7 @@ This is the opposite to Constructor, it allows to separate any basic type (ie, V
 Emit Signal
 ^^^^^^^^^^^
 
-Emits signals from any object.
-
-
-Emit Signal
-^^^^^^^^^^^
-
-Emits signals from any object. In general not very useful, as dragging a signal to the canvas works better.
+Emits signals from any object. In general it's not very useful, as dragging a signal to the canvas works better.
 
 
 Get/Set
@@ -605,7 +599,7 @@ Operators
 
 These are mostly generic operators such as addition, multiplication, comparison, etc.
 By default, these mostly accept any datatype (and will error in run-time if the types
-feeded do not match for the operator). Is is always recommended to set the right
+feeded do not match for the operator). It is always recommended to set the right
 type for operators to catch errors faster and make the graph easier to read.
 
 .. image:: /img/visual_script46.png
