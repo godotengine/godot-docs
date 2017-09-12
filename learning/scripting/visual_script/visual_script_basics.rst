@@ -165,7 +165,7 @@ Nodes and Terminology
 Before continuing, it must be noted that the *Node* termonology needs to be used with care. 
 When refering to *Visual Script Nodes* (or generally just *Nodes*) this text will refer to the little boxes you connect with lines, 
 which are part of a graph. When refering to just *Scene Nodes*, it is implied that the elements
- that make up a Scene are being refered, which ar part of a tere. Their naming is similar, but their function is different.
+that make up a Scene are being refered, which are part of a tree. Their naming is similar, but their function is different.
 When refering to *Node* here, it will be implied that a *Visual Script Node* is refered to unless indicated otherwise.
 
 .. image:: /img/visual_script16.png
