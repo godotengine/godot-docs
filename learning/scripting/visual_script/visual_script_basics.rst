@@ -115,7 +115,7 @@ provided:
 .. image:: /img/visual_script9.png
 
 Connecting a Signal to a Function
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Nodes in a tree emit signals when something happens. Godot uses signals for all sorts of things.
 A typical example would be a button that emits a "pressed" signal when actually pressed.
@@ -205,7 +205,7 @@ such as a boolean, an integer, a string, a Vector3, an array, any Object or Scen
 A *Data Port* on the right side of a node is considered an output, while, 
 a port on the left side is an input. Connecting them allows to transfer information from a node to the next. 
 
-Not all *Data Port types are compatible and will allow connections, though. 
+Not all *Data Port* types are compatible and will allow connections, though.
 Pay special attention to colors and icons, as each type has a different representation:
 
 .. image:: /img/visual_script18.png
@@ -614,16 +614,21 @@ visual scripts that are math or logic heavy. Just type any expression on it and 
 Expression nodes can:
 
 - Perform math and logic expressions based on custom inputs (eg: "a*5+b", where a and b are custom inputs):
+
 .. image:: /img/visual_script47.png
+
 - Access local variables or properties:
+
 .. image:: /img/visual_script48.png
+
 - Use most of the existing built-in functions and available to GDScript, such as sin(),cos(),print(), as well as constructors, such as Vector3(x,y,z),Rect2(..), etc.:
+
 .. image:: /img/visual_script49.png
+
 - Call API functions:
+
 .. image:: /img/visual_script50.png
+
 - Use sequenced mode, which makes more sense in case of respecting the processing order:
+
 .. image:: /img/visual_script51.png
-
-
-
-

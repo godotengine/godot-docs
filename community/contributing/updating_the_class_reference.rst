@@ -59,7 +59,7 @@ Create a new branch to make your changes. It makes it a lot easier to sync your 
 The new branch is the same as your master branch, until you start to write API docs. In the ``doc/`` folder, you'll find the class reference.
 
 How to keep your local clone up-to-date
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Other writers contribute to Godot's documentation. Your local repository will fall behind it, and you'll have to synchronize it. Especially if other contributors update the class reference while you work on it.
 
