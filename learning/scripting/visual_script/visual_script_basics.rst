@@ -6,62 +6,50 @@ Visual Scripting
 Introduction
 ------------
 
-Visual Scripting is always a controversial topic, surrounded by many misunderstandings.
-Programmers often think the aim of it is replacing their beloved code, so they
-act defensively against it. Artists and game designers think that, with it,
-they can write any game they want with little effort without the need of programmers.
+Visual Scripting is a controversial topic, surrounded by misunderstanding.
+Programmers often think it's coming to replace their beloved code, so they
+vote against it. Artists and designers tend to think that,
+they can write any game they want without the need for programmers.
 
-This situation is the result of really bad marketing from many products over time 
-which, in their aim to capture the interest of artists and game designers, also
-made programmers feel like they are being replaced by visual tools.
+This is the result of years of bad marketing from other tools.
+They tried to attract artists and game designers, and
+made programmers feel like visual tools would replace them.
 
-Truth is mostly, somewhat, in the middle. First of all, programmers can rest
-assured that Visual Scripting in no way makes code obsolete. Artists and game
-designers can also rest assured that they will be able to do a lot of things
-without programming.
+The truth is in the middle. Visual Scripting certainly does not make code obsolete. 
+Artists and game designers will also be able to do a lot of things without the need to write traditional code.
 
-Visual Scripting is a tool designed to make the entry barrier to programming
-much lower. As code is more visual, it needs less abstract thinking to be
-understood. Any artist, animator, game designer, etc. can look at it and quickly
-grasp the flow of logic.
+Visual Scripting is a tool designed to lower entry barrier to programming.
+With it, code is more visual, it needs less abstract thinking.
+It's friendlier for artists, animators, game designers...
 
-The reason it does not make existing programming obsolete is, simply, that it does not scale as well.
-It takes considerably more time to create code with it, and it's often more difficult
-to modify than just writing a few characters.
+But it does not scale well. It takes a lot more time to code with it, 
+and it's often more difficult to edit than text.
 
-With the misunderstanding cleared up, the question that remains is what are the practical
-uses for Visual Scripting.
+Here are the 2 types of users Visual Scripting will help:
 
-The most common use cases are are as follows:
+* Beginners, artists and designers who want to learn the engine, but have no programming experience. They can use VisualScript to build prototypes and simple games.
+* Programmers in a team who need to delegate some work to designers. They connect parts of the game logic with VisualScript.
 
-* Beginners into game development who want to learn an engine but have no programming experience yet.
-* Artists and Game Designers who have no experience in programming and want to create quick prototypes or simple games.
-* Programmers working in a team that want to make part of the game logic available to Artists or Game Designers in order to offload some of their work.
-
-These scenarios are far more common than one might think, so this is why Godot has added this feature.
+Both scenarios are very common. This is why Godot got this feature.
 
 Visual Scripting in Godot
 -------------------------
 
-As with everything in Godot, we prioritize a good experience over copying or integrating third party solutions 
-which might not fit nicely in the current workflow. This led us to write our own version of how we believe
-this feature would work best with the engine.
+As with everything in Godot, we designed and wrote our own Visual Scripting tools so they integrate well with the rest of the engine.
 
-In Godot, a Visual Script fits smoothly together with regular scripts in the Editor tab
+Visual Scripts open in the Script workspace, like regular script files.
 
 .. image:: /img/visual_script1.png
 
-In fact, Visual Scripting integrates so well to Godot that it's hard to believe it was added only
-in version 3.0. This is because, when editing, the rest of Godot panels and
-docks act like a palette from where you can drag and drop all sorts of information to the script canvas:
+When you edit a Visual Script, panels and docks let you drag and drop Nodes to get their path, Inspector properties to set or get their value, etc.
 
 .. image:: /img/visual_script2.png
 
-Creating a Script
+Create your first Visual Script
 -----------------
 
-Creating scripts works the same as with other scripting languages: Just select any node in the scene
-and push the "New Script" button at the top right corner of the Scene Tree dock:
+Creating scripts works the same as with other scripting languages: select any node in the scene
+and click the "New Script" button at the top right corner of the Scene Tree dock:
 
 .. image:: /img/visual_script3.png
 
@@ -163,8 +151,8 @@ Nodes and Terminology
 ----------------------
 
 Before continuing, it must be noted that the *Node* terminology needs to be used with care. 
-When referring to *Visual Script Nodes* (or generally just *Nodes*) this text will refer to the little boxes you connect with lines, 
-which are part of a graph. When referring to just *Scene Nodes*, it is implied that the elements
+When referring to *Visual Script Nodes* (or generally *Nodes*) this text will refer to the little boxes you connect with lines, 
+which are part of a graph. When referring to *Scene Nodes*, it is implied that the elements
 that make up a Scene are being referred, which are part of a tree. Their naming is similar, but their function is different.
 When referring to *Node* here, it will be implied that a *Visual Script Node* is referred to unless indicated otherwise.
 
@@ -197,7 +185,7 @@ There are two types of *Ports*: *Sequence* and *Data*.
 *Sequence Ports* indicate the order in which operations are executed. 
 Typically when a *Node* is done processing, it will go to the next node from one of the ports at the right. 
 If nothing is connected the function may end, or another output *Sequence Port* might be tried (this depends on the node). 
-Thanks to this, it's easy to understand the logic within a function by just following the white lines.
+Thanks to this, it's easy to understand the logic within a function by following the white lines.
 Not every *Node* has *Sequence Ports*. In fact, most do not.
 
 *Data Ports* ports contain typed values. Types can be any regular Godot types, 
@@ -214,7 +202,7 @@ Pay special attention to colors and icons, as each type has a different represen
 Connections
 ~~~~~~~~~~~
 
-Connecting is a relatively simple process. Just drag an *Output Port* towards an *Input Port*. 
+To connect nodes, drag a line from an *Output Port* to an *Input Port*. 
 
 .. image:: /img/visual_script_connect.gif
 
@@ -271,7 +259,7 @@ go the the inspector, find *The Name* of the property you want to edit (hint, *n
 
 The result is that this value can be changed from your script by writing to a *Data Port*.
 
-If instead reading this value is desired, just drag the node again but hold the *Control* key (or Command on Mac). This will create a getter:
+If instead reading this value is desired, drag the node again but hold the *Control* key (or Command on Mac). This will create a getter:
 
 .. image:: /img/visual_script22.png
 
@@ -284,7 +272,7 @@ Variables
 Variables are memory containers local the script, which can hold a value. This value can be read from any of the functions of the script, or
 from other scripts via the method described in the previous step.
 
-Adding a Variable is simple, just push the "Plus" Button on the *Variables* section of the members panel. Afterwards, doubleclick the
+To add a variable, push the "Plus" Button on the *Variables* section of the members panel. Afterwards, doubleclick the
 new variable to rename it:
 
 .. image:: /img/visual_script23.png
@@ -314,7 +302,7 @@ Signals
 ~~~~~~~
 
 In the *Connecting Signals to a Function* item we have already learned about *Signals*. It is also possible to create your own
-signals in a script and use them. For this, just do the same steps you did for variables in the previous step, except for *Signals*:
+signals in a script and use them. For this, do the same steps you did for variables in the previous step, except for *Signals*:
 
 .. image:: /img/visual_script29.png
 
@@ -322,7 +310,7 @@ Signal can also be edited via right click menu to customize arguments:
 
 .. image:: /img/visual_script30.png
 
-The signal you have just created will also show together with the other node signals, this allows to eventually connect to it from another script
+The signal you have created will also show together with the other node signals, this allows to eventually connect to it from another script
 from another *Scene Node*:
 
 .. image:: /img/visual_script31.png
@@ -406,7 +394,7 @@ Remember that dragging a connection to empty space will help you call functions 
 Local Variables
 ^^^^^^^^^^^^^^^
 
-These are nodes you can use as temporary storage for your graphs. Just make sure they all have the same name and type when using them
+These are nodes you can use as temporary storage for your graphs. make sure they all have the same name and type when using them
 and they will reference the same piece of memory.
 
 .. image:: /img/visual_script41.png
@@ -417,14 +405,14 @@ As it can be seen above, there are two nodes available: A simple getter, and a s
 Scene Node
 ^^^^^^^^^^
 
-This is just a reference to a node in the tree, but it's easier to use this node by just dragging the actual node 
+This is a reference to a node in the tree, but it's easier to use this node by dragging the actual node 
 from the scene tree to the canvas (this will create it and configure it).
 
 Self
 ^^^^
 
 In some rare ocassions, it may be desired to pass this Scene Node as argument. 
-It can be used to call functions and set/get properties, but it's easier to just 
+It can be used to call functions and set/get properties, but it's easier to 
 drag nodes (or event he node itself that has the script) from the Scene Tree to the canvas for this.
 
 SceneTree
@@ -441,12 +429,12 @@ Preload
 ^^^^^^^
 
 This does the same function as preload() in GDScript. It maintains this resource loaded and ready to use. Rather than
-instancing the node, it's simpler to just drag the desired resource from the filesystem dock to the canvas.
+instancing the node, it's simpler to drag the desired resource from the filesystem dock to the canvas.
 
 Resource Path
 ^^^^^^^^^^^^^
 
-This node is a simple helper to get a string with a path to a resource you can pick. It's useful in functions that
+This node is a helper to get a string with a path to a resource you can pick. It's useful in functions that
 load things from disk.
 
 Comment
@@ -468,7 +456,7 @@ given condition.
 Condition
 ^^^^^^^^^
 
-This is a simple node that checks a bool port. If true, it will go via the "true" sequence port. If false,
+The Condition node checks a bool port. If true, it will go via the "true" sequence port. If false,
 the second. After going for either of them, it goes via the "done" port. Leaving sequence
 ports disconnected is fine if not all of them are used.
 
@@ -521,14 +509,14 @@ the condition in the "cond" data port is met.
 Functions
 ~~~~~~~~~
 
-Functions are simple helpers, most of the time deterministic. They take some arguments as
+Functions are helpers, most of the time deterministic. They take some arguments as
 input and return an output. They are almost never sequenced.
 
 Built-In
 ^^^^^^^^
 
 There is a list of built in helpers. The list is almost identical to the one from GDScript (@TODO, link to gdscript methods?)
-Most of them are mathematical functions, but others can be very useful helpers. Just make sure to take a look at the list
+Most of them are mathematical functions, but others can be very useful helpers. make sure to take a look at the list
 at some point.
 
 
@@ -536,7 +524,7 @@ By Type
 ^^^^^^^
 
 Those are the methods available to basic types. For example, if you want a dot-product, you can search for "dot" intead of the Vector3 category.
-In most cases just search the list of nodes, it should be faster.
+In most cases search the list of nodes, it should be faster.
 
 Call
 ^^^^
@@ -592,7 +580,7 @@ Same as Yield, but will wait until a given signal is emitted.
 Index
 ~~~~~
 
-Generic indexing operator, not often used but it's good that exists just in case.
+Generic indexing operator, not often used but it's good that exists in case.
 
 Operators
 ~~~~~~~~~
@@ -609,7 +597,7 @@ Expression Node
 ^^^^^^^^^^^^^^^
 
 Among the operators, the *Expression* node is the most powerful. If well used, it allows to enormously simplify
-visual scripts that are math or logic heavy. Just type any expression on it and it will be executed in real-time.
+visual scripts that are math or logic heavy. type any expression on it and it will be executed in real-time.
 
 Expression nodes can:
 
@@ -623,7 +611,4 @@ Expression nodes can:
 .. image:: /img/visual_script50.png
 - Use sequenced mode, which makes more sense in case of respecting the processing order:
 .. image:: /img/visual_script51.png
-
-
-
 
