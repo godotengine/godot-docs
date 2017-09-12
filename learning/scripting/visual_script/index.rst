@@ -1,5 +1,5 @@
-GDScript
-========
+VisualScript
+============
 
 .. toctree::
    :maxdepth: 1
