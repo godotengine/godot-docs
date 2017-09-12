@@ -162,11 +162,11 @@ More on that will be explained later in this document.
 Nodes and Terminology
 ----------------------
 
-Before continuing, it must be noted that the *Node* termonology needs to be used with care. 
-When refering to *Visual Script Nodes* (or generally just *Nodes*) this text will refer to the little boxes you connect with lines, 
-which are part of a graph. When refering to just *Scene Nodes*, it is implied that the elements
-that make up a Scene are being refered, which are part of a tree. Their naming is similar, but their function is different.
-When refering to *Node* here, it will be implied that a *Visual Script Node* is refered to unless indicated otherwise.
+Before continuing, it must be noted that the *Node* terminology needs to be used with care. 
+When referring to *Visual Script Nodes* (or generally just *Nodes*) this text will refer to the little boxes you connect with lines, 
+which are part of a graph. When referring to just *Scene Nodes*, it is implied that the elements
+that make up a Scene are being referred, which are part of a tree. Their naming is similar, but their function is different.
+When referring to *Node* here, it will be implied that a *Visual Script Node* is referred to unless indicated otherwise.
 
 .. image:: /img/visual_script16.png
 
@@ -248,7 +248,7 @@ Accessing Scene Nodes
 ~~~~~~~~~~~~~~~~~~~~~
 
 One of the most common tasks is accessing Scene Tree Nodes (again, not to mistake with *Visual Script Nodes*).
-Dragging from the Scene Tree and dropping into the canvas, by default, will ask you to *call a method* (sometimes refered to as *member function*) on
+Dragging from the Scene Tree and dropping into the canvas, by default, will ask you to *call a method* (sometimes referred to as *member function*) on
 this node. 
 
 .. image:: /img/visual_script19.png
