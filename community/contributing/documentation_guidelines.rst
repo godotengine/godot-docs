@@ -28,8 +28,8 @@ reference documentation about the reStructuredText markup language.
 
 .. warning:: If you want to edit the **API reference**, please note that it
              should *not* be done in the godot-docs repository. Instead, you
-             should edit the ``doc/base/classes.xml`` XML file of Godot's
-             main repository. This file is then later used to generate the
+             should edit the ``doc/classes/*`` XML files of Godot's
+             main repository. These files are then later used to generate the
              in-editor documentation as well as the API reference of the
              online docs.
 
