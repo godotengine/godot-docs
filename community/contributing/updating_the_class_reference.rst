@@ -15,17 +15,17 @@ This guide is available as a `Youtube video <https://www.youtube.com/watch?v=mKK
 How to contribute
 -----------------
 
-The class reference lies in the following XML file, in Godot's GitHub repository: `doc/base/classes.xml <https://github.com/godotengine/godot/blob/master/doc/base/classes.xml>`_. As it's over 1MB, you can't edit it online. To update the class reference:
+The class reference lies in the following XML files, in Godot's GitHub repository: `doc/classes/ <https://github.com/godotengine/godot/tree/master/doc/classes>`_.
 
 There are 5 steps to update the class reference (full guide below):
 
 1. Fork `Godot's repository <https://github.com/godotengine/godot>`_ 
 2. Clone your fork on your computer
-3. Edit the ``doc/base/classes.xml`` file to write documentation
+3. Edit the class file in ``doc/classes.xml`` to write documentation
 4. Commit your changes and push them to your fork
 5. Make a pull request on the Godot repository
 
-**Important:** always use this XML file to edit the API reference. Do not edit the generated .rST files :ref:`in the online documentation <toc-class-ref>`, hosted in the `godot-docs <https://github.com/godotengine/godot-docs>`_ repository.
+**Important:** always use these XML files to edit the API reference. Do not edit the generated .rST files :ref:`in the online documentation <toc-class-ref>`, hosted in the `godot-docs <https://github.com/godotengine/godot-docs>`_ repository.
 
 Get started with GitHub
 -----------------------
@@ -141,16 +141,16 @@ repository:
 
 ::
 
-    git add doc/base/classes.xml
+    git add doc/classes/<edited_file>.xml
     git commit -m "Explain your modifications."
     git push
 
 When it's done, you can ask for a Pull Request via the GitHub UI of your Godot fork.
 
-How to edit classes.xml
------------------------
+How to edit class XML
+---------------------
 
-Edit the file doc/base/classes.xml to update the class reference. It lists all the classes, constants and methods in the class reference. Godot generates and updates it automatically.
+Edit the file for your chosen class in doc/classes/ to update the class reference. The folder contains a file for each class, listing constants and methods in the class reference. Godot generates and updates it automatically.
 
 Edit it using your favourite text editor. If you use a code editor, make sure that it doesn't change the indent style. E.g. change all tabs to spaces.
 
