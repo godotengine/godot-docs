@@ -1,7 +1,7 @@
 .. _doc_audio-streams:
 
 Audio Streams
-===========
+=============
 
 Introduction
 ------------
@@ -28,7 +28,7 @@ Keep in mind both .wav and .ogg generally don't contain looping information, so 
 
 .. image:: /img/audio_stream_import.png
 
-There are other types of AudioStreams, such as AudioStreamRandPitch, which takes an existing AudioStream and modulates the pitch every time it's played back randomly (great for some sound effects),
+There are other types of AudioStreams, such as AudioStreamRandomPitch, which takes an existing AudioStream and modulates the pitch every time it's played back randomly (great for some sound effects),
 and more will keep appearing in the future.
 
 AudioStreamPlayer
@@ -66,11 +66,11 @@ This is done by enabling this type of reverb in the *Reverb Bus* section of *Are
 
 .. image:: /img/audio_stream_reverb_bus.png
 
-At the same time, a special buys layout is created where each area receives the reverb info from each area. Of course, an actual Reverb effect must be created in that bus for anything to happen:
+At the same time, a special bus layout is created where each area receives the reverb info from each area. Of course, an actual Reverb effect must be created in that bus for anything to happen:
 
 .. image:: /img/audio_stream_reverb_bus2.png
 
-The Area Reverb Bus section has also a specific parameter named "Uniformity". Some types of rooms bounce sounds more than others (like for example, a typical warehouse), so reverberation can be heard 
+The Area Reverb Bus section has also a specific parameter named "Uniformity". Some types of rooms bounce sounds more than others (like for example, a typical warehouse), so reverberation can be heard
 almost uniformly across the room even though the source is far away. Playing around with this parameter can simulate that effect.
 
 Doppler
@@ -82,5 +82,3 @@ Both have this property, which must be enabled manually:
 .. image:: /img/audio_stream_doppler.png
 
 Simply enable it by setting it depending on how objects will be moved (whether on regular *process* or *fixed_process* step) and the tracking will happen automatically!
-
-
