@@ -6,7 +6,7 @@ Audio Buses
 Introduction
 ------------
 
-Begining Godot 3.0, the audio engine has been rewritten from scratch.
+Beginning Godot 3.0, the audio engine has been rewritten from scratch.
 The aim now is to present an interface much friendlier to sound design
 professionals. To achieve this, the audio engine contains a virtual rack
 where unlimited audio buses can be created and, on each of it, unlimited
@@ -39,23 +39,23 @@ For those unfamiliar with it, it can be explained with a few facts:
 This can take a bit getting used to, but it's friendlier in the end and will allow you to communicate better with audio professionals.
 
 Audio Buses
-------------
+-----------
 
 Audio buses can be found in the bottom panel of Godot Editor:
 
 .. image:: /img/audio_buses1.png
 
 An *Audio Bus* bus (often called "Audio Channels" too) is a device where audio is channeled. Audio data passes through it and can be *modified* and *re-routed*. A VU-Meter (the bars that go up and down when sound is played) can measure the loudness of the sound in Decibel scale.
-rythm of sound)
-The leftmost bus is the *Master Bus*. This bus outputs the mix to your speakers so, as mentioned in the item above (Decibel Scale), make sure that your mix rarely or never goes above 0dB in this bus. 
+
+The leftmost bus is the *Master Bus*. This bus outputs the mix to your speakers so, as mentioned in the item above (Decibel Scale), make sure that your mix rarely or never goes above 0dB in this bus.
 The rest of the audio buses are used for *routing*. This means that, after modifying the sound, they must send it to another bus to the left. Routing is always from right to left without exception as this
 avoids creating infinite routing loops!
 
 .. image:: /img/audio_buses2.png
 
-In the above image, *Bus 2* is routing it's output to *Master* bus. 
+In the above image, *Bus 2* is routing its output to *Master* bus.
 
-Playbck of Audio to a Bus
+Playback of Audio to a Bus
 --------------------------
 
 To test playback to a bus, create an AudioStreamPlayer node, load an AudioStream and select a target bus for playback:
@@ -73,12 +73,12 @@ Audio buses can contain all sorts of effects. These effects modify the sound in 
 
 .. image:: /img/audio_buses4.png
 
-Follownig is a short description of available effects:
+Following is a short description of available effects:
 
 Amplify
 ~~~~~~~
 
-It's the most basic effect, it changes the sound volume. Amplifying too much can make the sound clip, so be wary of that.
+It's the most basic effect. It changes the sound volume. Amplifying too much can make the sound clip, so be wary of that.
 
 BandLimit and BandPass
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -135,7 +135,7 @@ A limiter is similar to a compressor, but it's less flexible and designed to dis
 to reduce the effects of clipping.
 
 LowPassFilter, LowShelfFilter
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 These are the most common filters, they cut frequencies above a specific *Cutoff* and can also resonate. They can be used for a wide amount of effects, from underwater sound to simulating
 a sound coming from far away.
@@ -159,12 +159,12 @@ It will be sufficient to note that you can make a Darth Vader voice with it, or 
 PitchShift
 ~~~~~~~~~~
 
-This effect allows modulating pitch separatedly from tempo. All frequencies can go and up and down with transients kept as bet as possible. It's amazing for making funny voices!
+This effect allows for modulating pitch independently of tempo. All frequencies can be increased/decreased with minimal effect on transients. Can be used for effects such as voice modulation.
 
 Reverb
 ~~~~~~
 
-Reverb simulates rooms of different sizes. It has adjustable parameters that can be tweaked to obtain the sound of a specific room. Reverb is commonly outputed from Areas (@TODO LINK TO TUTORIAL WHEN DONE), or
+Reverb simulates rooms of different sizes. It has adjustable parameters that can be tweaked to obtain the sound of a specific room. Reverb is commonly outputted from Areas (@TODO LINK TO TUTORIAL WHEN DONE), or
 to apply chamber feel to all sounds.
 
 StereoEnhance
@@ -186,8 +186,7 @@ Stream Players use bus names to identify a bus, which allows adding, removing an
 If a bus is renamed, however, the reference will be lost and the Stream Player will output to Master. This system was chosen because rearranging buses is a more common process than renaming them.
 
 Default Bus Layout
--------------------
+------------------
 
 The default bus layout is automatically saved to the "res://default_bus_layout.res" file. Other bus layouts can be saved/retrieved from files in case of having
 to change snapshots, but in most cases this is not necessary.
-
