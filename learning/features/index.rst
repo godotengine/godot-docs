@@ -17,6 +17,6 @@ Engine features
    shading/index
    networking/index
    platform/index
+   audio/index
    misc/index
 
-.. audio/index
