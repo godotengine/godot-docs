@@ -6,7 +6,7 @@ Introduction
 ::
 
     func _ready():
-        get_node("Label").set_text("Hello world!")
+        $Label.text = "Hello world!"
 
 Welcome to the official documentation of Godot Engine, the free and open source
 community-driven 2D and 3D game engine! Behind this mouthful, you will find a
