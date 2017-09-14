@@ -6,7 +6,7 @@ Audio Buses
 Introduction
 ------------
 
-Begining Godot 3.0, the audio engine has been rewritten from scratch.
+Beginning Godot 3.0, the audio engine has been rewritten from scratch.
 The aim now is to present an interface much friendlier to sound design
 professionals. To achieve this, the audio engine contains a virtual rack
 where unlimited audio buses can be created and, on each of it, unlimited
@@ -55,7 +55,7 @@ avoids creating infinite routing loops!
 
 In the above image, *Bus 2* is routing it's output to *Master* bus. 
 
-Playbck of Audio to a Bus
+Playback of Audio to a Bus
 --------------------------
 
 To test playback to a bus, create an AudioStreamPlayer node, load an AudioStream and select a target bus for playback:
@@ -73,7 +73,7 @@ Audio buses can contain all sorts of effects. These effects modify the sound in 
 
 .. image:: /img/audio_buses4.png
 
-Follownig is a short description of available effects:
+Following is a short description of available effects:
 
 Amplify
 ~~~~~~~
