@@ -6,64 +6,86 @@ Scripting
 Introduction
 ------------
 
-Much has been said about tools that allow users to create video games
-without programming. This appeals to many people who would love to be able to
-make a game without having to learn how to code. This need has been around for
-a long time, even inside game companies, where game designers would like to
-have more control of their game's flow.
+Before Godot 3.0, the only choice for scripting a game in Godot was to use
+:ref:`doc_gdscript`. Nowadays, Godot has four (yes four!) official languages
+and the ability to add extra scripting languages dynamically!
 
-Many products have been shipped promising such a no-programming environment,
-but the results often fall short of expectations. The projects they produce end
-up being too complex or require solutions that are too inefficient compared to
-what could have been accomplished with traditional code.
+This is great, mostly, due the large amount of flexibility provided, but
+it also makes our work of supporitng languages more difficult.
 
-As a result, we think that programming is here to stay. In fact, game engines
-have been moving in this direction, adding tools that try to reduce the amount
-of code that needs to be written rather than eliminating it. The engine can
-provide many general solutions, while the developer can use code to accomplish
-specific tasks.
+The "Main" languages in Godot, though, are GDScript and VisualScript. The
+main reason to choose them is the level of integration with Godot, as this
+makes the experience smoother (both have very slick editor integration, while
+C# and C++ need to be edited in a separate IDE). If you are a big fan of statically typed languages, though, go with C# and C++.
 
-Godot has embraced this goal from the beginning, and it has influenced many of
-its design decisions. First and foremost is the scene system. This system has
-many benefits, but fundamentally its goal is to relieve programmers from the
-responsibility of having to implement an overall architecture.
-
-When designing games using the scene system, the whole project is fragmented
-into *complementary* scenes (not individual ones). Scenes complement
-(i.e. help) each other, instead of being separate. There will be plenty of
-examples of this later on, but it's very important to remember it.
+There are more languages available via GDNative interface, but keep in mind
+we don't have official support for them so you will have to work with the
+provided in that case.
 
 GDScript
---------
+~~~~~~~~
 
-:ref:`doc_gdscript` is a dynamically typed scripting language which was
-designed with the following goals:
+:ref:`doc_gdscript` is, as mentioned above, the main language used in Godot.
+Using it has some really positive points compared to other languages due
+to the high integration with Godot:
 
-- Most importantly, it should feel simple, familiar, and as easy to learn as
-  possible.
-- It should have a syntax that's very readable. The syntax is mostly borrowed
-  from Python.
-- It should integrate tightly with Godot itself, for example sharing its memory
-  model, taking advantage of the scene/node system, and exposing useful
-  game-related classes already part of the Godot engine.
+* It's simple, elegant and designed to be friendly with users of other languages such as Lua, Python, Squirrel, etc.
+* Loads and compiles blazingly fast.
+* The editor integration is a pleasure to work with, with code completion expanding as far as completing nodes, signals, and many other items pertaining to the current scene being edited.
+* Has vector types built-in (such as Vectors, transorms etc), making it efficient for heavy linear algebra.
+* It supports multiple threads as well as statically typed languages (which is one of the limitation that avoided us going for other VMs such as Lua, Squirrel, etc).
+* It uses no garbage collector, so it trades a small bit of automation (most
+objects are reference counted anyway), by determinism.
+* The dynamic nature of it makes it easy to optimize chunks of it in C++ (via GDNative) if more performance is required at some point, without recompiling the engine.
 
-Programmers generally take a few days to learn GDScript and feel comfortable
-with it within two weeks.
+If undecided, and have experience in programming (specially dynamically
+typed languages), go for GDScript!
 
-As with most dynamically typed languages, the higher productivity (code is
-easier to learn, faster to write, no compilation, etc.) is balanced with a
-performance penalty. However, keep in mind that most critical code is already
-written in C++ in the engine (vector ops, physics, math, indexing, etc.), which
-results in more than sufficient performance for most types of games.
+Visual Script
+~~~~~~~~~~~~~
 
-In any case, if more performance is required, critical sections can be
-rewritten in C++ and registered with Godot, which in turn exposes them to all
-scripts. In this way, you can write a class in GDScript first but convert it to
-a C++ class later, and the rest of the game will work the same as before.
+Begining 3.0, Godot offers :ref:`visualscript<Visual Scripting>`. This is a
+somewhat typical implementation of blocks and connections language, but
+adapted to how Godot works. 
 
-Finally, note that GDScript provides the powerful
-`extend <http://c2.com/cgi/wiki?EmbedVsExtend>`__ keyword. Many classes in the
-Godot engine are available as base classes to be extended from.
+Visual Scripting is a great tool for non-programmers, or even for developers
+with ample programming experience that want to make parts of the code more
+accessible to others (like Game/Level Designers or Artists).
+
+It can also be used by programmers to build state machines or custom
+visual node workflows (like a Dialogue System).
+
+
+Microsoft C#
+~~~~~~~~~~~~
+
+As Microsoft's C# is a favorite amongst game developers, we have added
+solid and official support for it. C# is a very mature language with tons of code
+written for it. Support for this language was added thanks to a generous
+donation from Microsoft.
+
+It has an excellent tradeoff between performance and ease to use, although
+the main item one must be aware of is the garbage collector.
+
+For companies, this is usually the best choice, given the large amount of
+programmers that can be found in the labor market familiar with it, which
+reduces the learning time of the engine.
+
+GDNative C++
+~~~~~~~~~~~~
+
+Finally, this is one of our brightest additions for the 3.0 release.
+GDNative allows scripting in C++ without requiring to recompile (or even
+restart) Godot. 
+
+Any C++ version can be used, and mixing compiler brands and versions for the 
+generated shared libraries works perfectly, thanks to our use of an internal C
+API Bridge.
+
+This language is the best choice for performance and does not need to be
+used for an entire game (other parts can be written in GDScript or Visual
+Script). Yet, the API is very clear and easy to use as it resembles, mostly,
+Godot actual C++ API.
 
 Scripting a scene
 -----------------
@@ -189,7 +211,7 @@ Next, write a function which will be called when the button is pressed:
  .. code-tab:: gdscript GDScript
 
     func _on_button_pressed():  
-        get_node("Label").set_text("HELLO!")
+        get_node("Label").text="HELLO!"
 
  .. code-tab:: csharp
 
@@ -214,7 +236,7 @@ The final script should look basically like this:
     extends Panel
 
     func _on_button_pressed():
-        get_node("Label").set_text("HELLO!")
+        get_node("Label").text="HELLO!"
 
     func _ready():
         get_node("Button").connect("pressed",self,"_on_button_pressed")
