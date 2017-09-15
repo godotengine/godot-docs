@@ -19,115 +19,37 @@ proposition will include that too.
 Organization
 ------------
 
-Other game engines often work by having an asset database, where you can
-browse images, models, sounds, etc. Godot is more scene-based in nature
-so most of the time the assets are bundled inside the scenes or just
-exist as files but are referenced from scenes.
+Godot is scene based in nature, and uses the filesystem as-is,
+without metadata or an asset database. 
 
-Importing & game folder
------------------------
+Unlike other engines, a lot of resource are contained within the scene
+itself, so the amount of files in the filesystem is considerably lower.
 
-It is very often necessary to use asset importing in Godot. As the
-source assets for importing are also recognized as resources by the
-engine, this can become a problem if both are inside the project folder,
-because at the time of export the exporter will recognize them and
-export both.
+Considering that, the most common approach is to group assets close to scenes as,
+when a project grows, it makes it more maintainable.
 
-To solve this, it is a good practice to have your game folder inside
-another folder (the actual project folder). This allows to have the game
-assets separated from the source assets, and also allows to use version
-control (such as svn or git) for both. Here is an example:
+As example, base sprite images, 3D model scenes or meshes, materials, etc.
+can usually be organized in a place, while a separate folder is used
+to store built levels that use them.
 
 ::
+	/models/town/house/house.dae
+	/models/town/house/window.png
+	/models/town/house/door.png
+	/characters/player/cubio.dae
+	/characters/player/cubio.png
+	/characters/enemies/goblin/goblin.dae
+	/characters/enemies/goblin/goblin.png
+	/characters/npcs/suzanne/suzanne.dae
+	/characters/npcs/suzanne/suzanne.png
+	/levels/riverdale/riverdale.scn
 
-    myproject/art/models/house.max
-    myproject/art/models/sometexture.png
-    myproject/sound/door_open.wav
-    myproject/sound/door_close.wav
-    myproject/translations/sheet.csv
+Importing
+---------
 
-Then also, the game itself is, in this case, inside a game/ folder:
+Godot version previous to 3.0 did the import process from files outside
+the project. While this can be useful in very large projects, it
+resulted in an organization hazzle for most developers.
 
-::
-
-    myproject/game/project.godot
-    myproject/game/scenes/house/house.tscn
-    myproject/game/scenes/house/sometexture.tex
-    myproject/game/sound/door_open.smp
-    myproject/game/sound/door_close.smp
-    myproject/game/translations/sheet.en.xl
-    myproject/game/translations/sheet.es.xl
-
-Following this layout, many things can be done:
-
--  The whole project is still inside a folder (myproject/).
--  Exporting the project will not export the .wav and .png files which
-   were imported.
--  myproject/ can be put directly inside a VCS (like svn or git) for
-   version control, both game and source assets are kept track of.
--  If a team is working on the project, assets can be re-imported by
-   other project members, because Godot keeps track of source assets
-   using relative paths.
-
-Scene organization
-------------------
-
-Inside the game folder, a question that often arises is how to organize
-the scenes in the filesystem. Many developers try asset-type based
-organization and end up having a mess after a while, so the best answer
-is probably to organize them based on how the game works and not based
-on asset type. Here are some examples.
-
-If you were organizing your project based on asset type, it would look
-like this:
-
-::
-
-    game/project.godot
-    game/scenes/scene1.tscn
-    game/scenes/scene2.tscn
-    game/textures/texturea.png
-    game/textures/another.tex
-    game/sounds/sound1.smp
-    game/sounds/sound2.wav
-    game/music/music1.ogg
-
-Which is generally a bad idea. When a project starts growing beyond a
-certain point, this becomes unmanageable. It's really difficult to tell
-what belongs to what.
-
-It's generally a better idea to use game-context based organization,
-something like this:
-
-::
-
-    game/project.godot
-    game/scenes/house/house.tscn
-    game/scenes/house/texture.tex
-    game/scenes/valley/canyon.tscn
-    game/scenes/valley/rock.tscn
-    game/scenes/valley/rock.tex
-    game/scenes/common/tree.tscn
-    game/scenes/common/tree.tex
-    game/player/player.tscn
-    game/player/player.gd
-    game/npc/theking.tscn
-    game/npc/theking.gd
-    game/gui/main_screen/main_sceen.tscn
-    game/gui/options/options.tscn
-
-This model or similar models allows projects to grow to really large
-sizes and still be completely manageable. Notice that everything is
-based on parts of the game that can be named or described, like the
-settings screen or the valley. Since everything in Godot is done with
-scenes, and everything that can be named or described can be a scene,
-this workflow is very smooth and easygoing.
-
-Cache files
------------
-
-Godot uses a hidden file called ".fscache" at the root of the project.
-On it, it caches project files and is used to quickly know when one is
-modified. Make sure to **not commit this file** to git or svn, as it
-contains local information and might confuse another editor instance in
-another computer.
+Because of this, assets are now imported from within the project
+folder transparently.
