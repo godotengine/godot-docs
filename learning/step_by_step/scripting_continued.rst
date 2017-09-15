@@ -14,23 +14,24 @@ However, it is still a very common case to have a script process on every
 frame. There are two types of processing: idle processing and fixed
 processing.
 
-Idle processing is activated with the
-:ref:`Node.set_process() <class_Node_set_process>`
-function. Once active, the :ref:`Node._process() <class_Node__process>`
-callback will be called every frame. Example:
+Idle processing is activated automatically when the method :ref:`Node._process() <class_Node__process>`
+is found in a script. It can be turned off (and back on) with the
+:ref:`Node.set_process() <class_Node_set_process>` function.
+
+This method will be called every frame drawn, so it's fully depend on the
+frames per second (FPS) of the application:
 
 ::
-
-    func _ready():
-        set_process(true)
 
     func _process(delta):
         # do something...
 
 The delta parameter describes the time elapsed (in seconds, as
 floating point) since the previous call to "_process()".
+
 Fixed processing is similar, but only needed for synchronization with
-the physics engine.
+the physics engine. It is called a fixed amount of times per second
+(defined in the Project Settings, but 60 by default).
 
 A simple way to test this is to create a scene with a single Label node,
 with the following script:
@@ -41,12 +42,9 @@ with the following script:
 
     var accum=0
 
-    func _ready():
-        set_process(true)
-
     func _process(delta):
         accum += delta
-        set_text(str(accum))
+        text = (str(accum) # text is a built-in label property
 
 Which will show a counter increasing each frame.
 
@@ -73,7 +71,7 @@ all enemies can be notified about the alarm sounding, by using
 
 ::
 
-    func _on_discovered():
+    func _on_discovered(): # this is a fictional function
         get_tree().call_group("guards", "player_was_discovered")
 
 The above code calls the function "player_was_discovered" on every
@@ -142,12 +140,11 @@ follows:
         pass
 
     func _process(delta):
-        # When set_process() is enabled, this function is called every frame.
+        # This function is called every frame.
         pass
 
     func _fixed_process(delta):
-        # When set_fixed_process() is enabled, this is called every physics 
-        # frame.
+        # This is called every physics frame.
         pass
 
     func _paused():

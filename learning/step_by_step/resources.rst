@@ -86,7 +86,7 @@ first is to use load(), like this:
 
     func _ready():
             var res = load("res://robi.png") # resource is loaded when line is executed
-            get_node("sprite").set_texture(res)
+            get_node("sprite").texture = res
 
 The second way is more optimal, but only works with a string constant
 parameter, because it loads the resource at compile-time.
@@ -95,7 +95,7 @@ parameter, because it loads the resource at compile-time.
 
     func _ready():
             var res = preload("res://robi.png") # resource is loaded at compile time
-            get_node("sprite").set_texture(res)
+            get_node("sprite").texture = res
 
 Loading scenes
 --------------

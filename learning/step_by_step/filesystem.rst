@@ -98,7 +98,12 @@ Drawbacks
 There are some drawbacks to this simple file system design. The first issue is that
 moving assets around (renaming them or moving them from one path to another inside
 the project) will break existing references to these assets. These references will
-have to be re-defined to point at the new asset location.
+have to be re-defined to point at the new asset location. 
+
+To avoid this, do all your move, delete and rename operations from within Godot, on the FileSystem
+dock. Never move assets from outside Godot, or dependencies will have to be
+fixed manually (Godot detects this and helps you fix them anyway, but why
+going the hardest route?).
 
 The second is that under Windows and OSX file and path names are case insensitive.
 If a developer working in a case insensitive host file system saves an asset as "myfile.PNG",
