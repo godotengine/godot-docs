@@ -9,7 +9,7 @@ But it's incomplete. Many methods, variables and signals lack descriptions. Othe
 
 **Important:** we use `a collaborative document <https://hackmd.io/s/H1es51Oeqb>`_ to track who's working on what class. Always notify other writers about what you are working on. You'll find the instructions in the doc.
 
-This guide is available as a `Youtube video <https://www.youtube.com/watch?v=mKKjOulm5XI>`_.
+.. note:: This guide is available as a `Youtube video <https://www.youtube.com/watch?v=mKKjOulm5XI>`_.
 
 
 How to contribute
@@ -21,11 +21,11 @@ There are 5 steps to update the class reference (full guide below):
 
 1. Fork `Godot's repository <https://github.com/godotengine/godot>`_ 
 2. Clone your fork on your computer
-3. Edit the class file in ``doc/classes.xml`` to write documentation
+3. Edit the class file in ``doc/classes/`` to write documentation
 4. Commit your changes and push them to your fork
 5. Make a pull request on the Godot repository
 
-**Important:** always use these XML files to edit the API reference. Do not edit the generated .rST files :ref:`in the online documentation <toc-class-ref>`, hosted in the `godot-docs <https://github.com/godotengine/godot-docs>`_ repository.
+.. warning:: always use these XML files to edit the API reference. Do not edit the generated .rST files :ref:`in the online documentation <toc-class-ref>`, hosted in the `godot-docs <https://github.com/godotengine/godot-docs>`_ repository.
 
 Get started with GitHub
 -----------------------
@@ -36,8 +36,7 @@ If you're new to git and GitHub, this guide will help you get started. You'll le
 - Keep your fork up to date with other contributors
 - Create a pull request so your improvements end in the official docs
 
-If you're brand new to git, the version-control system Godot uses, go through GitHub's interactive guide. You'll learn some essential vocabulary and get a sense for the tool.
-https://try.github.io/levels/1/challenges/1
+.. note:: If you're new to git, the version-control system Godot uses, go through `GitHub's interactive guide <https://try.github.io/levels/1/challenges/1>`_. You'll learn some essential vocabulary and get a sense for the tool.
 
 Fork Godot
 ~~~~~~~~~~
@@ -147,12 +146,18 @@ repository:
 
 When it's done, you can ask for a Pull Request via the GitHub UI of your Godot fork.
 
+.. warning::
+
+    Although you can edit files on GitHub, it's not recommended. As hundreds of contributors work on Godot, the git history must stay clean. Each commit should bundle all related improvements you make to the class reference, a new feature, bug fixes... When you edit from GitHub, it will create a new branch and a Pull Request every time you want to save it. If a few days pass before your changes get a review, you won't be able to update to the latest version of the repository cleanly. Also, it's harder to keep clean indents from GitHub. And they're very important in the docs.
+
+    TL;DR: If you don't know what you're doing exactly, do not edit files from GitHub.
+
 How to edit class XML
 ---------------------
 
-Edit the file for your chosen class in doc/classes/ to update the class reference. The folder contains a file for each class, listing constants and methods in the class reference. Godot generates and updates it automatically.
+Edit the file for your chosen class in ``doc/classes/`` to update the class reference. The folder contains an XML file for each class. The XML lists the constants and methods you'll find in the class reference. Godot generates and updates the XML automatically.
 
-Edit it using your favourite text editor. If you use a code editor, make sure that it doesn't change the indent style. E.g. change all tabs to spaces.
+Edit it using your favourite text editor. If you use a code editor, make sure that it doesn't change the indent style: tabs for the XML, and 4 spaces inside BBcode-style blocks. More on that below.
 
 How to write the class reference
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -169,7 +174,7 @@ Our job is to add the missing text between these marks:
 
 Write in a clear and simple language. Always follow the :ref:`class_reference_styleguide` to keep your descriptions short and easy to read. **Do not leave empty lines** in the descriptions: each line in the XML file will result in a new paragraph. 
 
-For setters and getters, describe what the setter does in-depth, and only say the minimum in the getter to avoid content duplication. Setters and getters are methods that starts with set\_ or get\_.
+.. warning:: In Godot 3.0, the <member> tags replace the old setters and getters. As soon as we moved all descriptions to the <member> tags, most methods starting with set\_ or get\_ will disappear. Skip them for now, and document all <member> tags.
 
 Here's how a class looks like in XML:
 
@@ -210,7 +215,7 @@ Here's how a class looks like in XML:
     </class>
 
 
-Use a code editor like Vim, Atom, Code, Notepad++ or anything similar to edit the file quickly. Use the search function to find classes fast, and fold the XML to navigate it faster.
+Use a code editor like Vim, Atom, Code, Notepad++ or anything similar to edit the file quickly. Use the search function to find classes fast.
 
 
 Improve formatting with BBcode style tags
@@ -236,7 +241,7 @@ Godot's class reference supports BBcode-like tags. They add nice formatting to t
 | [codeblock] [/codeblock]  | Multiline preformatted block   | *See below.*                      | *See below.*                               |
 +---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
 
-Use ``[codeblock]`` for pre-formatted code blocks, using spaces for indentation (the parser will delete tabs). Example:
+Use ``[codeblock]`` for pre-formatted code blocks. Inside ``[codeblock]``, always use spaces for indentation (the parser will delete tabs). Example:
 
 .. code:: xml
 
