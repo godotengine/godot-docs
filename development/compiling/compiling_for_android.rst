@@ -157,6 +157,13 @@ The templates folder can be located in:
 -  Linux: ``/home/[username]/.godot/templates``
 -  Mac OSX: ``/users/[username]/.godot/templates``
 
+Note: If using Godot version 3 or above, the templates must be put into the
+editor version subfolder. For instance, for version '3.0.alpha' of the editor
+the correct templates folders are:
+-  Windows: ``C:\Users\[username]\AppData\Roaming\Godot\templates\3.0-alpha``
+-  Linux: ``/home/[username]/.godot/templates/3.0-alpha``
+-  Mac OSX: ``/users/[username]/.godot/templates/3.0-alpha``
+
 .. TODO: Move these paths to a common reference page
 
 However, if you are writing your custom modules or custom C++ code, you

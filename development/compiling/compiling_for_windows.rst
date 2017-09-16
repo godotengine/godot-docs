@@ -419,6 +419,11 @@ With the following names:
     windows_64_debug.exe
     windows_64_release.exe
 
+Note: If using Godot version 3 or above, the templates must be put into the
+editor version subfolder. For instance, for version '3.0.alpha' of the editor
+the correct templates folder is:
+-  Windows: ``C:\USERS/YOURUSER\AppData\Roaming\Godot\Templates\3.0-alpha``
+
 However, if you are writing your custom modules or custom C++ code, you
 might instead want to configure your binaries as custom export templates
 here:
