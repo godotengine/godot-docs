@@ -75,7 +75,7 @@ Move those templates to the ``templates`` folder in Godot settings path. If
 you don't want to replace the templates, you can set the "Custom Package"
 property in the export window.
 
-Note: If using Godot version 3 or above, the templates must be put into the
+.. note:: If using Godot version 3 or above, the templates must be put into the
 editor version subfolder. For instance, for version '3.0.alpha' of the editor
 the correct templates folders are:
 -  Windows: ``C:\Users\[username]\AppData\Roaming\Godot\templates\3.0-alpha``

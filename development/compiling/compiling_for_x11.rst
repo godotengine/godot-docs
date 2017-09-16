@@ -144,7 +144,7 @@ and named like this (even for \*BSD which is seen as "Linux X11" by Godot):
     linux_x11_64_debug
     linux_x11_64_release
 
-Note: If using Godot version 3 or above, the templates must be put into the
+.. note:: If using Godot version 3 or above, the templates must be put into the
 editor version subfolder. For instance, for version '3.0.alpha' of the editor
 the correct templates folder is:
 -  Linux: ``/home/youruser/.godot/templates/3.0-alpha``
