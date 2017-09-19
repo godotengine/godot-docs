@@ -26,7 +26,7 @@ Setting up SCons
 
 Python adds the interpreter (python.exe) to the path. It usually
 installs in ``C:\Python`` (or ``C:\Python[Version]``). SCons installs
-inside the Python install (typically in the ``Scripts`` folder) and 
+inside the Python install (typically in the ``Scripts`` folder) and
 provides a batch file called "scons.bat".
 The location of this file can be added to the path or it can simply be
 copied to ``C:\Python`` together with the interpreter executable.
@@ -114,7 +114,7 @@ automatically searched by the start menu search option:
    Win 7:
    C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Visual Studio 2015\Visual Studio Tools
    C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Visual Studio 2013\Visual Studio Tools
-   
+
 If you found the Developer Console, it will do for now to create a 32
 bit version of Godot, but if you want the 64 bit version, you might need
 to setup the prompts manually for easy access.
@@ -250,7 +250,7 @@ After you create the shortcut, in the shortcut's properties, that you
 can access by right clicking with your mouse on the shortcut itself, you
 can choose the starting directory of the command prompt ("Start in"
 field).
-   
+
 Some of these shortcuts (namely the 64 bit compilers) seem to not be
 available in the Express edition of Visual Studio or Visual C++. Before
 recreating the commands, make sure that cl.exe executables are present
@@ -280,7 +280,7 @@ standard cmd.exe with \\k option and have it run a batch file...
    %comspec% - path to cmd.exe
    \k - keep alive option of the command prompt
    remainder - command to run via cmd.exe
-   
+
    cmd.exe \k(eep cmd.exe alive after commands behind this option run) ""runme.bat"" with_this_option
 
 How to run an automated build of Godot
@@ -313,7 +313,7 @@ or  you can do them together:
 
    32 bit Godot
    "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" x86 && scons platform=windows
-   
+
    64 bit Godot
    "C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\vcvarsall.bat" amd64 && scons platform=windows
 
@@ -408,7 +408,10 @@ If you plan on replacing the standard templates, copy these to:
 
 ::
 
-    C:\USERS\YOURUSER\AppData\Roaming\Godot\Templates
+    C:\USERS\YOURUSER\AppData\Roaming\Godot\Templates\[versionstring]
+
+, where  `versionstring` is the version of Godot you compiled the export
+templates for - e.g. `3.0.alpha` for the alpha version of Godot 3,
 
 With the following names:
 
@@ -418,11 +421,6 @@ With the following names:
     windows_32_release.exe
     windows_64_debug.exe
     windows_64_release.exe
-
-.. note:: If using Godot version 3 or above, the templates must be put into the
-editor version subfolder. For instance, for version '3.0.alpha' of the editor
-the correct templates folder is:
--  Windows: ``C:\USERS/YOURUSER\AppData\Roaming\Godot\Templates\3.0-alpha``
 
 However, if you are writing your custom modules or custom C++ code, you
 might instead want to configure your binaries as custom export templates

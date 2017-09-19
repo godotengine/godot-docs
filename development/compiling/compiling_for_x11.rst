@@ -61,18 +61,18 @@ Distro-specific oneliners
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **OpenBSD**   | ::                                                                                                         |
 |               |                                                                                                            |
-|               |     pkg_add python scons png llvm                                                                          | 
+|               |     pkg_add python scons png llvm                                                                          |
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **openSUSE**  | ::                                                                                                         |
 |               |                                                                                                            |
 |               |     sudo zypper install scons pkgconfig libX11-devel libXcursor-devel libXrandr-devel libXinerama-devel \  |
 |               |             Mesa-libGL-devel alsa-devel libpulse-devel freetype-devel openssl-devel libudev-devel \        |
-|               |             libGLU1                                                                                        | 
+|               |             libGLU1                                                                                        |
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **Solus**     | ::                                                                                                         |
 |               |                                                                                                            |
 |               |     sudo eopkg install -c system.devel scons libxcursor-devel libxinerama-devel libxrandr-devel mesalib \  |
-|               |         libglu alsa-lib pulseaudio freetype2-devel                                                         |                                  
+|               |         libglu alsa-lib pulseaudio freetype2-devel                                                         |
 +---------------+------------------------------------------------------------------------------------------------------------+
 | **Ubuntu**    | ::                                                                                                         |
 |               |                                                                                                            |
@@ -133,7 +133,10 @@ To create standard export templates, the resulting files must be copied to:
 
 ::
 
-    /home/youruser/.godot/templates
+    /home/youruser/.godot/templates/[versionstring]
+
+, where `versionstring` is the version of Godot you compiled the templates
+for - e.g. `3.0.alpha` for the alpha release of Godot 3,
 
 and named like this (even for \*BSD which is seen as "Linux X11" by Godot):
 
