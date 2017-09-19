@@ -67,20 +67,15 @@ uppercase, to differentiate from other strings). Here's an example:
 | BYE     | Good Bye         | Adiós          | さようなら   |
 +---------+------------------+----------------+--------------+
 
-Import dialog
--------------
+CSV Importer
+------------
 
-The import dialog takes a CSV file in the previously described format
-and generates several compressed translation resource files inside the
-project.
+Godot will treat CSV files as translations by default. It will import them
+and generate one or more compressed translation resource files next to it.
 
-Selecting a CSV file autodetects the languages from the first row and
-determines which column represents which language. It is possible to
-change this manually, by selecting the language for each column.
-
-.. image:: /img/trans.png
-
-The import dialog also can add the translation to the list of
-translations to load when the game runs, specified in engine.cfg (or the
-project properties). Godot allows loading and removing translations at
+Importing will also add the translation to the list of
+translations to load when the game runs, specified in project.godot (or the
+project settings). Godot allows loading and removing translations at
 runtime as well.
+
+

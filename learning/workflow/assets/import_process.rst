@@ -3,162 +3,90 @@
 Import process
 ==============
 
-What is it for?
----------------
+Importing assets in Godot 3.0+
+------------------------------
 
-One of the most difficult things to get right when creating game engines
-is managing the import process. That means, getting the assets that artists
-make into the game, in a way that functions optimally.
+Previously, importing assets in Godot 2.x required manual maintainance
+of a separate directory with source assets. Without doing this, it was
+impossible to specify how to convert and change import flags for
+textures, audios, scenes, etc.
 
-Artists use certain tools and formats, and programmers would rather have
-their data in a different format. This is because artists put their
-focus on creating assets with the best quality possible, while
-programmers have to make sure they actually run at decent speed (or run
-at all), use a certain amount of memory, and don't take ages loading
-from disk.
+In Godot 3.0, we use a more modern approach to importing: Simply drop
+your assets (image files, scenes, audios, fonts, etc) directly in the
+project folder (copy them manually with your OS file exporer). 
+Godot will automatically import these files internally
+and keep the imported resources hidden in a res://.import folder.
 
-One would think that just writing a converter/importer would be enough,
-but this is not all there is to it. The same way programmers iterate
-several times over their code, artists keep making changes to their
-assets. This generates a bottleneck, because *someone* has to keep
-re-importing that artwork, right? And importing assets is often something
-that has to be agreed by both parties, as the programmer needs to decide
-how the artwork is imported and the artists needs to see how it looks.
+This allows changing all the import parameters transparently.
 
-The goal to establishing an import process is that both can agree on how
-the rules under which the assets are going to be imported the first
-time, and the system will apply those rules automatically each time the
-asset is re-imported.
+Changing import parameters
+--------------------------
 
-Godot does not do the re-import process automatically, though. It gives
-the team the option to do it at any time (a red icon on the top right
-of the screen, allows the ability to do it at any desired time).
+Changing the import parameters of an asset in Godot (again, keep in mind
+import parameters are only present in non-native Godot resource types) is
+easy. Just select in the filesystem dock the relevant resource:
 
-Does it always work?
---------------------
+.. image:: /img/asset_workflow1.png
 
-The aim of the import system is that it works well enough for most
-common cases and projects. What is there has been tested and seems to
-cover most needs.
+And, after adjusting the parameters, just press "Reimport". The parameters
+used will be only for this asset and will be used on future reimports.
 
-However, as mentioned before, this is one of the most difficult areas of
-writing a game engine. It may happen often (specially on large projects,
-ports, or projects with unusual requirement) that what is provided is
-not enough. It's easy to say that the engine is open source and that the
-programmer should make their own if they don't like what is there, but
-that would be making a huge disservice to the users and not the right
-attitude. Because of that, we made sure to provide as many tools and
-helpers as possible to support a custom import process, for example:
+Changing import parameters of several assets at the same time is also
+possible. Simply select all of them together in the resources dock and the
+exposed parameters will apply to all of them when reimporting.
 
--  Access to the internals of almost all data structures is provided to
-   the scripting and C++ API, as well as saving and loading in all
-   supported file formats.
--  Some importers (like the 3D asset importer) support scripts to modify
-   the data being imported.
--  Support for creating custom import plugins is also provided, even for
-   replacing the existing ones.
--  If all else fails, Godot supports adding custom resource loaders,
-   to load data in alternative formats, without intermediate conversion.
+Automatic reimport
+------------------
 
-Both the import system and the custom tools provided will improve over
-time as more use cases are revealed to us.
+When the source asset changes, Godot will perform and automatic reimport
+of it, applying the preset configured for that specific asset.
 
-Importing assets
-----------------
+Files generated
+-----------------
 
-Source asset location
-~~~~~~~~~~~~~~~~~~~~~
+Importing will add an extra <asset>.import file, containing the import
+configuration. Make sure to commit these to your version control system!
 
-To begin, it is a good idea to define where the original assets created
-by the artists (before they are imported) will be located. Normally,
-Godot does not mind much about the location, but if the project has
-several developers, it is a good idea to understand the simple rule for
-it to work for everyone.
+.. image:: /img/asset_workflow4.png
 
-First of all, it would be really good for this location to **not** be
-inside the project path (where engine.cfg is located, or any
-sub-folder). Godot expects regular resources in there, and may consider
-many of the files used as source art as regular resources. This would
-lead to it bundling all of them when the project is exported, something
-which is undesired.
+Additionally, extra assets will be presset in the hidden res://.import folder:
 
-Now that it is clear that this location must be outside the project
-folder, the rule that Godot uses to reference external assets can be
-explained. When an asset is imported, the engine stores a relative path
-from the project path to the asset (In windows, this works as long as
-they are on the same drive, otherwise an absolute path is stored). This
-ensures that the same asset can be re-imported in another computer.
+.. image:: /img/asset_workflow5.png
 
-The usual approach to this, when using a VCS such as Git, Mercurial or
-Subversion, is to create the project in a subfolder, so both the game's
-project files and the source assets can be committed to a same repository.
-For example, the repository layout can look like this:
+If any of the files present in this folder is erased (or the whole folder), the
+asset or asssets will be reimported automatically. As such, Commiting this folder 
+to the version control system is optional. It can save time on
+reimporting time when checking out in another computer, but it takes considerably 
+more space and transfer time. Pick your poison!
 
-::
+Changing import resource type
+-----------------------------
 
-    source_assets/sfx/explosion.wav
-    source_assets/sfx/crash.wav
-    source_assets/fonts/myfont.ttf
-    source_assets/translation/strings.csv
-    source_assets/art/niceart.psd
-    game/project.godot
+Some source assets can be imported as different types of resources. 
+For this, just select the relevant type of resource desired and
+press "Reimport":
 
-In the above example, artists, musician, translators, etc. can work in
-the source_assets/ folder, then import the assets to the game/ folder.
-When the repository is updated, anyone can re-import the assets if they
-changed.
+.. image:: /img/asset_workflow2.png
 
-Import dialogs
-~~~~~~~~~~~~~~
 
-Godot provides for importing several types of assets, all of them can be
-accessed from the import dialog:
+Changing default import parameters
+-----------------------------------
 
-.. image:: /img/import.png
+Different types of games might require different defaults.
+Changing the defaults per project can be achieved by using the
+"Preset.." Menu. Besides some resource types offering presets,
+the default setting can be saved and cleared too:
 
-Each of the dialogs shares a similar function, a source file (or several
-of them) must be provided, as well as a target destination inside the
-project folders. Once imported, Godot saves this information as metadata
-in the imported asset itself.
+.. image:: /img/asset_workflow3.png
 
-.. image:: /img/importdialogs.png
+Simplicity is key!
+------------------
 
-More information about each specific type of asset can be found in
-specific sections, such as `Importing Textures <import_textures>`__.
+This is a very simple workflow which should take very little time to get used to. It also enforces a more
+correct way to deal with resources. 
 
-Tracking changes and re-importing
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+There are many types of assets available for import, so please continue reading to understand how to work
+with all of them!
 
-Godot tracks changes in the source assets constantly. If at least one
-asset has been found to be modified (md5 is different than when it was
-imported), a small red indicator will appear in the top right corner of
-the screen.
 
-.. image:: /img/changes.png
 
-From that moment onward, the user can choose to re-import at any given
-time by clicking on the red-icon. When this action is done, a dialog
-will pop-up showing which resources can be re-imported (all selected
-by default).
-
-Accepting that dialog will immediately re-import the resources and
-will update any of them currently in use in the editor (like a
-texture, model or audio file).
-
-.. image:: /img/changed.png
-
-Manually re-importing
-~~~~~~~~~~~~~~~~~~~~~
-
-The re-import process is automatic, but it may be desired at some point
-to change the settings of an already imported file, so it can be
-re-imported differently. For this, the Import Settings window is
-provided.
-
-.. image:: /img/isettings.png
-
-This screen allows the user to re-open the corresponding import-window
-to re-import that asset again, with the ability to change any of the
-settings.
-
-.. image:: /img/reimported.png
