@@ -10,4 +10,5 @@ Contributing
    code_style_guidelines
    bug_triage_guidelines
    documentation_guidelines
+   docs_writing_guidelines
    updating_the_class_reference
