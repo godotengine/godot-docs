@@ -12,7 +12,7 @@ For compiling under Windows, the following is required:
 
 -  Visual C++, `Visual
    Studio Community <https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx>`__
-   (recommended), at least the 2013 version (12.0) up to 2015 (14.0).
+   (recommended), version 2013 (12.0) or later.
    **Make sure you read Installing Visual Studio caveats below or you
    will have to run/download the installer again.**
 -  `Python 2.7+ <https://www.python.org/downloads/>`__ (3.0 is
@@ -59,7 +59,7 @@ your version of python (check via ``python --version`` mentioned above).
 Installing Visual Studio caveats
 --------------------------------
 
-If installing VS 2015, make sure to run **Custom** installation, not
+If installing VS 2015 or later, make sure to run **Custom** installation, not
 **Typical** and select C++ as language there (and any other things you might
 need). The installer does not install C++ by default. C++ was the
 `only language made optional <https://blogs.msdn.microsoft.com/vcblog/2015/07/24/setup-changes-in-visual-studio-2015-affecting-c-developers/>`__
