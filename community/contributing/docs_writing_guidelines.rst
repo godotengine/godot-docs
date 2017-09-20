@@ -1,6 +1,6 @@
 .. _doc_docs_writing_guidelines:
 
-Godot docs writing guidelines
+Docs writing guidelines
 =============================
 
 The Godot community is rich and international. Users come from all
@@ -333,7 +333,7 @@ interface. They're used in the sources, in the documentation, and you
 should always use them instead of synonyms, so the users know what
 you're talking about.
 
-.. figure:: img/editor-vocabulary-overview.png
+.. figure:: /img/editor-vocabulary-overview.png
    :alt: Overview of the interface and common vocabulary
 
    Overview of the interface and common vocabulary
