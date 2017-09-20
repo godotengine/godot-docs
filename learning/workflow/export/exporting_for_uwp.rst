@@ -35,7 +35,7 @@ You can get more detailed instructions from `Microsoft documentation
 
 First, run ``MakeCert`` to create a private key::
 
-    MakeCert /n publisherName /r /h 0 /eku "1.3.6.1.5.5.7.3.3,1.3.6.1.4.1.311.10.3.13" /e expirationDate /sv MyKey.pvk MyKey.cer
+    MakeCert /n "CN=publisherName" /r /h 0 /eku "1.3.6.1.5.5.7.3.3,1.3.6.1.4.1.311.10.3.13" /e expirationDate /sv MyKey.pvk MyKey.cer
 
 Where ``publisherName`` matches the Publisher Name of your package and
 ``expirationDate`` is in the ``mm/dd/yyyy`` format.
