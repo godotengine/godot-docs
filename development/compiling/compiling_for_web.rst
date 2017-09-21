@@ -10,21 +10,31 @@ Requirements
 
 To compile export templates for the Web, the following is required:
 
--  `Emscripten SDK <http://emscripten.org/>`__ (Install in a path without
-   spaces, i.e. not on "Program Files")
--  `Python 2.7+ <https://www.python.org/>`__ (3.0 is
-   untested as of now)
+-  `Emscripten <http://emscripten.org/>`__: The easiest way to install it, if it's not up to date in your Linux package manager, is to use the `Emscripten SDK <http://emscripten.org/>`__ (Install in a path without spaces, i.e. not on "Program Files")
+-  `Python 2.7+ <https://www.python.org/>`__ (3.0 is untested as of now)
 -  `SCons <http://www.scons.org>`__ build system
 
 Building export templates
 -------------------------
 
 Start a terminal and set the environment variable ``EMSCRIPTEN_ROOT`` to the
-installation directory of Emscripten::
+installation directory of Emscripten:
+
+-  If you installed Emscripten via the Emscripten SDK, you will declare the variable with a path to your downloaded folder::
 
     export EMSCRIPTEN_ROOT=~/emsdk/emscripten/master
+    
+-  If you installed Emscripten via your package manager, you can know the path with the ``em-config`` command::
 
-If you are on Windows, start a regular prompt or the Emscripten Command Prompt.
+    em-config EMSCRIPTEN_ROOT
+
+   So you will declare the variable as for example::
+
+    export EMSCRIPTEN_ROOT=/usr/lib/emscripten
+    
+The Emscripten variables are defined in the ``~/.emscripten`` file, so this is an alternative way to check. Erase this file if you want to reinstall Emscripten with a fresh new method.
+
+If you are on Windows and used Emscripten SDK, start a regular prompt or the Emscripten Command Prompt.
 Do **not** use the Developer Command Prompt nor any of the ones that come with
 Visual Studio. You can set the environment variable in the system settings or
 in the prompt itself::
@@ -42,6 +52,8 @@ The engine will now be compiled to JavaScript by Emscripten. If all goes well,
 the resulting file will be placed in the ``bin`` subdirectory. Its name is
 ``godot.javascript.opt.zip`` for release or ``godot.javascript.opt.debug.zip``
 for debug.
+
+If it's not, check if you have properly installed everything, and if EMSCRIPTEN_ROOT path is correctly defined, including in the ``~/.emscripten`` file.
 
 Finally, rename the zip archive to ``javascript_release.zip`` for the
 release template::
@@ -95,6 +107,8 @@ adding ``wasm=yes`` to the SCons arguments::
 These commands will build WebAssembly export templates in either release or
 debug mode. The generated files' names contain ``.webassembly`` as an
 additional file suffix before the extension.
+
+If it's not compiling, check if you have properly installed everything, and if ``LLVM_ROOT`` and ``BINARYEN_ROOT`` variables are defined in the ``~/.emscripten`` file. You can define the ``BINARYEN_ROOT`` path manually in this file if you already installed Binaryen an other way and want to avoid SCons to compile it from ports during template compilation. Emscripten SDK comes with its own fork of LLVM called fastcomp, which has the JSBackend needed for asm.js and asm2wasm, so the ``LLVM_ROOT`` path must lead to an ``/emscripten-fastcomp`` directory.
 
 Finally, the WebAssembly templates are renamed to ``webassembly_release.zip``
 and ``webassembly_debug.zip``::
