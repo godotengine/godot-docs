@@ -6,10 +6,17 @@ Importing 3D Scenes
 Godot Scene Importer
 --------------------
 
-When dealing with 3D assets, Godot has a very flexible and configurable asset pipeline. While the defaults may be
-enough for most users.
+When dealing with 3D assets, Godot has a very flexible and configurable importer.
 
-Godot mainly works with *scenes*. By default, it can import *scene files* in GLTF2.0, DAE (Collada), and OBJ (Wavefront) formats.
+Godot works with *scenes*. This means that the entire scene being worked on in your favorite 3D DCC will be
+transfered as close as possible.
+
+Godot supports the following 3D *scene file fomats*: 
+
+* DAE (Collada), which is currently the most mature workflow.
+* GLTF 2.0. Both text and binary formats are supported. Godot has full support for it, but the format is new and gaining traction.
+* OBJ (Wavefront) formats. It is also fully supported, but pretty limited (no support for pivots, skeletons, etc).
+
 Just copy the scene file together with the texture to the project repository, and Godot will do a full import.
 
 Why not FBX?
@@ -18,15 +25,15 @@ Why not FBX?
 Most game engines use the FBX format for importing 3D scenes, which is
 definitely one of the most standardized in the industry. However, this
 format requires the use of a closed library from Autodesk which is
-distributed with a more restrictive licensing terms than Godot. The plan
-is, sometime in the future, to implement an external conversion binary,
-but meanwhile FBX is not supported.
+distributed with a more restrictive licensing terms than Godot. 
+
+The plan is, sometime in the future, to offer a binary plug-in using GDNative.
 
 Exporting DAE files from Maya and 3DS Max
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Autodesk added built-in collada support to Maya and 3DS Max, but it's
-really broken and should not be used. The best way to export this format
+broken by default and should not be used. The best way to export this format
 is by using the
 `OpenCollada <https://github.com/KhronosGroup/OpenCOLLADA/wiki/OpenCOLLADA-Tools>`__
 plugins. They work really well, although they are not always up-to date
@@ -35,7 +42,7 @@ with the latest version of the software.
 Exporting DAE files from Blender
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Blender also has built-in collada support, but it's really broken and
+Blender also has built-in collada support, but it's also broken and
 should not be used either.
 
 Godot provides a `Python
@@ -65,18 +72,21 @@ The importer has several options, which will be discussed below:
 
 .. image:: /img/scene_import2.png
 
-Nodes : Root Type
-^^^^^^^^^^^^^^^^^
+Nodes:
+~~~~~~~
+
+Root Type
+^^^^^^^^^
 
 By default the type of the root node in imported scenes is "Spatial", but this can be modified.
 
-Nodes : Root Name
-^^^^^^^^^^^^^^^^^
+Root Name
+^^^^^^^^^
 
 Allows setting a specific name to the generated root node.
 
-Nodes : Custom Script
-^^^^^^^^^^^^^^^^^^^^^
+Custom Script
+^^^^^^^^^^^^^
 
 A special script to process the whole scene after imported can be provided. 
 This is great for post processing, changing materials, doing funny stuff
@@ -97,8 +107,8 @@ The post-import function takes the imported scene as argument (the
 parameter is actually the root node of the scene). The scene that
 will finally be used must be returned. It can be a different one.
 
-Nodes : Storage
-^^^^^^^^^^^^^^^
+Storage
+^^^^^^^
 
 By default Godot imports a single scene. This option allows specifying
 that nodes below the root will each be a separate scene and instanced
@@ -107,14 +117,17 @@ into the imported one.
 Of course, instancing such imported scenes in other places manually works too.
 
 
-Materials : Location
-^^^^^^^^^^^^^^^^^^^^
+Materials 
+~~~~~~~~~
+
+Location
+^^^^^^^^
 
 Godot supports materials in meshes or nodes. By default, materials will be put
 on each node.
 
-Materials : Storage
-^^^^^^^^^^^^^^^^^^^
+Storage
+^^^^^^^
 
 Materials can be stored within the scene or in external files. By default
 they are stored in external files so editing them is possible. This is because
@@ -123,30 +136,33 @@ most 3D DCCs don't have the same material options that are present in Godot.
 When materials are built-in, they will be lost each time the source scene
 is modified and re-imported.
 
-Materials : Keep on Reimport
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Keep on Reimport
+^^^^^^^^^^^^^^^^
 
 Once materials are edited to use Godot features, the importer will keep the
 edited ones and ignore the ones coming from the source scene. This option
 is only present if materials are saved as files.
 
-Meshes : Compress
-^^^^^^^^^^^^^^^^^
+Compress
+^^^^^^^^
 
 Makes meshes compact 3D vertices to more efficient data types for rendering.
 In few cases, this might lead to precision loss so disabling this option
 is allowed.
 
-Meshes : Ensure Tangents
-^^^^^^^^^^^^^^^^^^^^^^^^
+Meshes
+~~~~~~~
+
+Ensure Tangents
+^^^^^^^^^^^^^^^
 
 If textures with normalmapping are to be used, meshes need to have tangent arrays.
 This option ensures that these are generated if not present in the source scene.
 Godot uses Mikktspace for this, but it's always better to have them generated in
 the exporter.
 
-Meshes : Storage
-^^^^^^^^^^^^^^^^
+Storage
+^^^^^^^
 
 Meshes can be stored in separate files (resources) instead of built in. This does
 not have much practical use unless wanting to build objects with them directly.
@@ -154,14 +170,14 @@ not have much practical use unless wanting to build objects with them directly.
 This option is provided to help those who prefer working directly with meshes
 instead of scenes.
 
-External Files : Store in Subdir
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+External Files
+~~~~~~~~~~~~~~
 
 Generated meshes and materials can be optionally, stored in a subdirectory with the
 name of the scene.
 
 Animation Options
------------------
+------------------
 
 Godot provides many options regarding how animation data is deal with. Some exporters
 (such as Blender), can generate many animations in a single file. Others, such as
@@ -234,13 +250,13 @@ objects in your 3D modelling software. When imported, Godot will detect them and
 actions automatically:
 
 Remove nodes (-noimp)
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 Node names that have this suffix will be removed at import time, mo
 matter what their type is. They will not appear in the imported scene.
 
 Create collisions (-col, -colonly)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Option "-col" will work only for Mesh nodes. If it is detected, a child
 static collision node will be added, using the same geometry as the mesh.
@@ -268,13 +284,13 @@ For better visibility in Blender's editor user can set "X-Ray" option on collisi
 empties and set some distinct color for them in User Preferences / Themes / 3D View / Empty.
 
 Create navigatopm (-navmesh)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A mesh node with this suffix will be converted to a navigation mesh. Original Mesh node will be
 removed.
 
-Create navigatopm (-rigid)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Rigid Body (-rigid)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Creates a rigid body from this mesh
 
