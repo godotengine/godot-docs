@@ -9,4 +9,5 @@ Assets workflow
    importing_images
    importing_audio_samples
    importing_translations
+   importing_scenes
 

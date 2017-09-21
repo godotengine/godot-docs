@@ -1,0 +1,281 @@
+.. _doc_importing_3d_scenes:
+
+Importing 3D Scenes
+==================
+
+Godot Scene Importer
+--------------------
+
+When dealing with 3D assets, Godot has a very flexible and configurable asset pipeline. While the defaults may be
+enough for most users.
+
+Godot mainly works with *scenes*. By default, it can import *scene files* in GLTF2.0, DAE (Collada), and OBJ (Wavefront) formats.
+Just copy the scene file together with the texture to the project repository, and Godot will do a full import.
+
+Why not FBX?
+~~~~~~~~~~~~
+
+Most game engines use the FBX format for importing 3D scenes, which is
+definitely one of the most standardized in the industry. However, this
+format requires the use of a closed library from Autodesk which is
+distributed with a more restrictive licensing terms than Godot. The plan
+is, sometime in the future, to implement an external conversion binary,
+but meanwhile FBX is not supported.
+
+Exporting DAE files from Maya and 3DS Max
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Autodesk added built-in collada support to Maya and 3DS Max, but it's
+really broken and should not be used. The best way to export this format
+is by using the
+`OpenCollada <https://github.com/KhronosGroup/OpenCOLLADA/wiki/OpenCOLLADA-Tools>`__
+plugins. They work really well, although they are not always up-to date
+with the latest version of the software.
+
+Exporting DAE files from Blender
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Blender also has built-in collada support, but it's really broken and
+should not be used either.
+
+Godot provides a `Python
+Plugin <https://github.com/godotengine/collada-exporter>`__
+that will do a much better job at exporting the scenes.
+
+Import workflows
+----------------
+
+Godot scene importer allows different workflows regarding how data is imported. Depending on many options, it is possible to
+import a scene with:
+
+* Extenal materials (default): Where each material is saved to a file resource. Modifications to them are kept.
+* External meshes: Where each mesh is saved to a different file. Many users prefer to deal with meshes directly.
+* External animations: Allowing animations saved to be modified and merged when sources change.
+* External scenes: Save the root nodes of the imported scenes each as a separate scene.
+* Single Scene: A single scene file with everything built in.
+
+.. image:: /img/scene_import1.png
+
+As different developers have different needs, this import process is highly customizable.
+
+Import Options
+---------------
+
+The importer has several options, which will be discussed below:
+
+.. image:: /img/scene_import2.png
+
+Nodes : Root Type
+^^^^^^^^^^^^^^^^^
+
+By default the type of the root node in imported scenes is "Spatial", but this can be modified.
+
+Nodes : Root Name
+^^^^^^^^^^^^^^^^^
+
+Allows setting a specific name to the generated root node.
+
+Nodes : Custom Script
+^^^^^^^^^^^^^^^^^^^^^
+
+A special script to process the whole scene after imported can be provided. 
+This is great for post processing, changing materials, doing funny stuff
+with the geometry, etc.
+
+Create a script that basically looks like this:
+
+::
+
+    tool # needed so it runs in editor
+    extends EditorScenePostImport
+
+    func post_import(scene):
+      # do your stuff here
+      return scene # remember to return the imported scene
+
+The post-import function takes the imported scene as argument (the
+parameter is actually the root node of the scene). The scene that
+will finally be used must be returned. It can be a different one.
+
+Nodes : Storage
+^^^^^^^^^^^^^^^
+
+By default Godot imports a single scene. This option allows specifying
+that nodes below the root will each be a separate scene and instanced
+into the imported one. 
+
+Of course, instancing such imported scenes in other places manually works too.
+
+
+Materials : Location
+^^^^^^^^^^^^^^^^^^^^
+
+Godot supports materials in meshes or nodes. By default, materials will be put
+on each node.
+
+Materials : Storage
+^^^^^^^^^^^^^^^^^^^
+
+Materials can be stored within the scene or in external files. By default
+they are stored in external files so editing them is possible. This is because
+most 3D DCCs don't have the same material options that are present in Godot.
+
+When materials are built-in, they will be lost each time the source scene
+is modified and re-imported.
+
+Materials : Keep on Reimport
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Once materials are edited to use Godot features, the importer will keep the
+edited ones and ignore the ones coming from the source scene. This option
+is only present if materials are saved as files.
+
+Meshes : Compress
+^^^^^^^^^^^^^^^^^
+
+Makes meshes compact 3D vertices to more efficient data types for rendering.
+In few cases, this might lead to precision loss so disabling this option
+is allowed.
+
+Meshes : Ensure Tangents
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+If textures with normalmapping are to be used, meshes need to have tangent arrays.
+This option ensures that these are generated if not present in the source scene.
+Godot uses Mikktspace for this, but it's always better to have them generated in
+the exporter.
+
+Meshes : Storage
+^^^^^^^^^^^^^^^^
+
+Meshes can be stored in separate files (resources) instead of built in. This does
+not have much practical use unless wanting to build objects with them directly.
+
+This option is provided to help those who prefer working directly with meshes
+instead of scenes.
+
+External Files : Store in Subdir
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Generated meshes and materials can be optionally, stored in a subdirectory with the
+name of the scene.
+
+Animation Options
+-----------------
+
+Godot provides many options regarding how animation data is deal with. Some exporters
+(such as Blender), can generate many animations in a single file. Others, such as
+3DS Max or Maya, need many animatiosn put into the same timeline or, at worse, put
+each animation in a separate file.
+
+.. image:: /img/scene_import3.png
+
+Import of animations is enabled by default.
+
+Animation : FPS
+~~~~~~~~~~~~~~~
+
+Most 3D export formats store animation timeline in seconds instead of frames. To ensure
+animations are imported as faithfully as possible, please specify the frames per second
+used to edit them. Failing to do this may result in minimal jitter.
+
+Animation : Filter Script
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+It is possible to specify a filter script in a special syntax to decide which tracks from which
+animations should be kept. (@TODO this needs documentation)
+
+Animation : Storage
+~~~~~~~~~~~~~~~~~~~
+
+By default, animations are saved as built-in. It is possible to save them to a file instead. This
+allows adding custom tracks to the animations and keeping them after a reimport.
+
+
+Animation : Optimizer
+~~~~~~~~~~~~~~~~~~~~~
+
+When animations are imported, an optimizer is run which reduces considerable the size of the animation.
+In general this should always be turned on unless you suspect that an animation might be broken due to it being enabled.
+
+Animation : Clips
+~~~~~~~~~~~~~~~~~~~~~
+
+It is possible to specify multiple animations from a single timeline as clips. Just specify from which frame to which frame each
+clip must be taken from (and, of course, don't forget to specify the FPS option above)
+
+Scene Inheritance
+-----------------
+
+In many cases, it may be desired to do modifications to the imported scene. By default, this is not really possible because
+if the source asset changes (source .dae,.gltf,.obj file re-exported from 3D modelling app) Godot will re-import the whole scene.
+
+It is possible, however, to do local modifications by using *Scene Inheritance*. Just try to open the imported scene and the
+following dialog will appear:
+
+.. image:: /img/scene_import4.png
+
+In inherited scenes, the only limitations for modifications are: 
+* Nodes can't be removed (but can be added anywhere).
+* Sub-Resources can't be edited (save them externally as described above for this)
+
+Other than that, everything is allowed!
+
+Import Hints
+------------
+
+Many times, when editing a scene, there are common tasks that need to be done after exporting:
+* Adding collision detection to objects:
+* Setting objects as navigation meshes
+* Deleting nodes that are not used in the game engine (like specific lights used for modelling)
+
+To simplify this workflow, Godot offers a few suffixes that can be added to the names of the
+objects in your 3D modelling software. When imported, Godot will detect them and perform
+actions automatically:
+
+Remove nodes (-noimp)
+^^^^^^^^^^^^^^^^^^^^^
+
+Node names that have this suffix will be removed at import time, mo
+matter what their type is. They will not appear in the imported scene.
+
+Create collisions (-col, -colonly)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Option "-col" will work only for Mesh nodes. If it is detected, a child
+static collision node will be added, using the same geometry as the mesh.
+
+However, it is often the case that the visual geometry is too complex or
+too un-smooth for collisions, which ends up not working well. 
+
+To solve this, the "-colonly" modifier exists, which will remove the mesh upon
+import and create a :ref:`class_staticbody` collision instead.
+This helps the visual mesh and actual collision to be separated.
+
+Option "-colonly" can be also used with Blender's empty objects.
+On import it will create a :ref:`class_staticbody` with
+collision node as a child. Collision node will have one of predefined shapes,
+depending on the Blender's empty draw type:
+
+.. image:: /img/3dimp_BlenderEmptyDrawTypes.png
+
+-  Single arrow will create :ref:`class_rayshape`
+-  Cube will create :ref:`class_boxshape`
+-  Image will create :ref:`class_planeshape`
+-  Sphere (and other non-listed) will create :ref:`class_sphereshape`
+
+For better visibility in Blender's editor user can set "X-Ray" option on collision
+empties and set some distinct color for them in User Preferences / Themes / 3D View / Empty.
+
+Create navigatopm (-navmesh)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A mesh node with this suffix will be converted to a navigation mesh. Original Mesh node will be
+removed.
+
+Create navigatopm (-rigid)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Creates a rigid body from this mesh
+
+
