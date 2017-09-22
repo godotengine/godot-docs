@@ -42,12 +42,12 @@ with the latest version of the software.
 Exporting DAE files from Blender
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Blender also has built-in collada support, but it's also broken and
-should not be used either.
+Blender has built-in collada support too, but it's also broken and
+should not be used.
 
 Godot provides a `Python
 Plugin <https://github.com/godotengine/collada-exporter>`__
-that will do a much better job at exporting the scenes.
+that will do a much better job of exporting the scenes.
 
 Import workflows
 ----------------
@@ -55,9 +55,9 @@ Import workflows
 Godot scene importer allows different workflows regarding how data is imported. Depending on many options, it is possible to
 import a scene with:
 
-* Extenal materials (default): Where each material is saved to a file resource. Modifications to them are kept.
+* External materials (default): Where each material is saved to a file resource. Modifications to them are kept.
 * External meshes: Where each mesh is saved to a different file. Many users prefer to deal with meshes directly.
-* External animations: Allowing animations saved to be modified and merged when sources change.
+* External animations: Allowing saved animations to be modified and merged when sources change.
 * External scenes: Save the root nodes of the imported scenes each as a separate scene.
 * Single Scene: A single scene file with everything built in.
 
@@ -78,7 +78,7 @@ Nodes:
 Root Type
 ^^^^^^^^^
 
-By default the type of the root node in imported scenes is "Spatial", but this can be modified.
+By default, the type of the root node in imported scenes is "Spatial", but this can be modified.
 
 Root Name
 ^^^^^^^^^
@@ -88,9 +88,9 @@ Allows setting a specific name to the generated root node.
 Custom Script
 ^^^^^^^^^^^^^
 
-A special script to process the whole scene after imported can be provided. 
+A special script to process the whole scene after import can be provided. 
 This is great for post processing, changing materials, doing funny stuff
-with the geometry, etc.
+with the geometry etc.
 
 Create a script that basically looks like this:
 
@@ -110,7 +110,7 @@ will finally be used must be returned. It can be a different one.
 Storage
 ^^^^^^^
 
-By default Godot imports a single scene. This option allows specifying
+By default, Godot imports a single scene. This option allows specifying
 that nodes below the root will each be a separate scene and instanced
 into the imported one. 
 
@@ -129,9 +129,9 @@ on each node.
 Storage
 ^^^^^^^
 
-Materials can be stored within the scene or in external files. By default
+Materials can be stored within the scene or in external files. By default,
 they are stored in external files so editing them is possible. This is because
-most 3D DCCs don't have the same material options that are present in Godot.
+most 3D DCCs don't have the same material options as those present in Godot.
 
 When materials are built-in, they will be lost each time the source scene
 is modified and re-imported.
@@ -147,7 +147,7 @@ Compress
 ^^^^^^^^
 
 Makes meshes compact 3D vertices to more efficient data types for rendering.
-In few cases, this might lead to precision loss so disabling this option
+In few cases, this might lead to loss of precision so disabling this option
 is allowed.
 
 Meshes
@@ -164,8 +164,8 @@ the exporter.
 Storage
 ^^^^^^^
 
-Meshes can be stored in separate files (resources) instead of built in. This does
-not have much practical use unless wanting to build objects with them directly.
+Meshes can be stored in separate files (resources) instead of built-in. This does
+not have much practical use unless one wants to build objects with them directly.
 
 This option is provided to help those who prefer working directly with meshes
 instead of scenes.
@@ -173,15 +173,15 @@ instead of scenes.
 External Files
 ~~~~~~~~~~~~~~
 
-Generated meshes and materials can be optionally, stored in a subdirectory with the
+Generated meshes and materials can be optionally stored in a subdirectory with the
 name of the scene.
 
 Animation Options
 ------------------
 
-Godot provides many options regarding how animation data is deal with. Some exporters
+Godot provides many options regarding how animation data is dealt with. Some exporters
 (such as Blender), can generate many animations in a single file. Others, such as
-3DS Max or Maya, need many animatiosn put into the same timeline or, at worse, put
+3DS Max or Maya, need many animations put into the same timeline or, at worst, put
 each animation in a separate file.
 
 .. image:: /img/scene_import3.png
@@ -211,20 +211,20 @@ allows adding custom tracks to the animations and keeping them after a reimport.
 Animation : Optimizer
 ~~~~~~~~~~~~~~~~~~~~~
 
-When animations are imported, an optimizer is run which reduces considerable the size of the animation.
-In general this should always be turned on unless you suspect that an animation might be broken due to it being enabled.
+When animations are imported, an optimizer is run which reduces the size of the animation considerably.
+In general, this should always be turned on unless you suspect that an animation might be broken due to it being enabled.
 
 Animation : Clips
 ~~~~~~~~~~~~~~~~~~~~~
 
 It is possible to specify multiple animations from a single timeline as clips. Just specify from which frame to which frame each
-clip must be taken from (and, of course, don't forget to specify the FPS option above)
+clip must be taken (and, of course, don't forget to specify the FPS option above).
 
 Scene Inheritance
 -----------------
 
 In many cases, it may be desired to do modifications to the imported scene. By default, this is not really possible because
-if the source asset changes (source .dae,.gltf,.obj file re-exported from 3D modelling app) Godot will re-import the whole scene.
+if the source asset changes (source .dae,.gltf,.obj file re-exported from 3D modelling app), Godot will re-import the whole scene.
 
 It is possible, however, to do local modifications by using *Scene Inheritance*. Just try to open the imported scene and the
 following dialog will appear:
