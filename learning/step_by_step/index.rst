@@ -10,7 +10,7 @@ Step by step
    instancing_continued
    scripting
    scripting_continued
-   simple_2d_game
+   your_first_game
    gui_tutorial
    splash_screen
    animations
