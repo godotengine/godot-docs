@@ -7,9 +7,7 @@
 
    introduction_to_3d
    3d_performance_and_limitations
-   importing_3d_meshes
-   importing_3d_scenes
-   materials
-   fixed_materials
+   spatial_material
+   shader_material
    high_dynamic_range
    using_gridmaps

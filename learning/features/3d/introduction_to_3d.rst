@@ -169,30 +169,16 @@ this little menu inside the window because it is often overlooked!
 
 .. image:: /img/tuto_3d6.png
 
-Default lighting
+Default environment
 ----------------
 
-The 3D view has by some default options on lighting:
-
--  There is a directional light that makes objects visible while editing
-   turned on by default. It is no longer visible when running the game.
--  There is subtle default environment light to avoid places not reached
-   by the light to remain visible. It is also no longer visible when
-   running the game (and when the default light is turned off).
-
-These can be turned off by toggling the "Default Light" option:
+When created from the Project Manager, the 3D environment has a default sky.
 
 .. image:: /img/tuto_3d8.png
 
-Customizing this (and other default view options) is also possible via
-the settings menu:
-
-.. image:: /img/tuto_3d7.png
-
-Which opens this window, allowing to customize ambient light color and
-default light direction:
-
-.. image:: /img/tuto_3d9.png
+Given how physically based rendering works, it is advised to always try to
+work with a default environment in order to provide indirect and reflected
+light to your objects.
 
 Cameras
 -------
@@ -228,9 +214,5 @@ Lights
 ------
 
 There is no limitation on the number of lights nor of types of lights in
-Godot. As many as desired can be added (as long as performance allows). Shadow
-maps are, however, limited. The more they are used, the less the quality
-overall.
+Godot. As many as desired can be added (as long as performance allows). 
 
-It is possible to use :ref:`doc_light_baking`, to avoid using large amount of
-real-time lights and improve performance.
