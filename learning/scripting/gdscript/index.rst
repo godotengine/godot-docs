@@ -7,4 +7,5 @@ GDScript
 
    gdscript_basics
    gdscript_advanced
+   gdscript_styleguide
    gdscript_format_string
