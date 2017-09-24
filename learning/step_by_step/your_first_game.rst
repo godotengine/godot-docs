@@ -50,7 +50,7 @@ game, you can save your scenes and scripts in the root folder, which is
 referred to as ``res://``.  You can see your project folders in the Filesystem 
 Dock in the upper left corner:
 
-.. image:: /img/filesystem_dock.gif
+.. image:: /img/filesystem_dock.png
 
 Player Scene
 ------------
