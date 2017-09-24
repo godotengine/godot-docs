@@ -6,13 +6,13 @@ Spatial Material
 Introduction
 ------------
 
-For Godot 3, instead of following the trend and focusing in shader graphs,
-we put most of the work offering a default material that covers far
-most use cases. This replaces the old "FixedMaterial" in Godot 2.x
+For Godot 3, instead of following the trend and focusing on shader graphs,
+we put in most of the work offering a default material that covers far
+more use cases. This replaces the old "FixedMaterial" in Godot 2.x
 
-SpatialMaterial is a 3D material and aims to have most features that
+SpatialMaterial is a 3D material and aims to have most features
 artists look for in a material. Additionally, it can be converted
-to shader code to be further modified in case this is desired.
+to shader code and be further modified if desired.
 
 This tutorial will attempt to cover most parameters present in SpatialMaterial.
 
@@ -30,7 +30,7 @@ In Godot, materials are not transparent unless specifically toggled as such.
 The main reason behind this is that transparent materials are rendered
 using a different technique (sorted from back to front and rendered in order).
 
-This technique is less efficient (many state changes hapen) and makes the materials
+This technique is less efficient (many state changes happen) and makes the materials
 unusable with many mid and post processing effects (such as SSAO, SSR, etc) that
 require perfectly opaque geometry.
 
@@ -44,10 +44,9 @@ The main settings that enable transparency are:
 Unshaded
 ~~~~~~~~
 
-In most cases, it is common that materials are affected by lighting (shaded).
+In most cases, it is common for materials to be affected by lighting (shaded).
 
-Sometimes, however, one might want to show just the albedo (color) part
-of it and ignore the rest. Toggling this flag on will remove all
+Sometimes, however, one might want to show just the albedo (color) and ignore the rest. Toggling this flag on will remove all
 shading and show pure, unlit, color.
 
 .. image:: /img/spatial_material26.png
@@ -61,7 +60,7 @@ by running the lighting shader on every pixel.
 As these calculations are costly, performance can be brought down considerably in some corner cases such as drawing
 several layers of transparency (common in particle systems). Switching to per vertex lighting may help these cases.
 
-Additionaly, on very low end devices cuch as mobile, switching to vertex lighting can considerably increase rendering performance.
+Additionaly, on very low end devices such as mobile, switching to vertex lighting can considerably increase rendering performance.
 
 
 .. image:: /img/spatial_material2.png
@@ -94,20 +93,20 @@ makes triplanar work in world space.
 Fixed Size
 ~~~~~~~~~~
 
-Makes the object rendered at the same sizen no matter the distance. This is, again, useful mostly for indicators (no depth test and high render priority)
+Makes the object rendered at the same size no matter the distance. This is, again, useful mostly for indicators (no depth test and high render priority)
 and some types of billboards.
 
 Vertex Color
 ------------
 
-This menu allows choosing what is done by default to vertex colors that come from your 3D modelling application. By default they are ignored.
+This menu allows choosing what is done by default to vertex colors that come from your 3D modelling application. By default, they are ignored.
 
 .. image:: /img/spatial_material4.png
 
 Use as Albedo
 ~~~~~~~~~~~~~
 
-Vertex color is used as albedo color
+Vertex color is used as albedo color.
 
 Is SRGB
 ~~~~~~~
@@ -119,7 +118,7 @@ look correct.
 Parameters
 -----------
 
-SpatialMaterial also has several, configurable parameters to tweak many aspects of the rendering:
+SpatialMaterial also has several configurable parameters to tweak many aspects of the rendering:
 
 .. image:: /img/spatial_material5.png
 
@@ -203,7 +202,7 @@ Enables billboard mode for drawing materials. This control how the object faces 
 * Disabled: Billboard mode is disabled
 * Enabled: Billboard mode is enabled, object -Z axis will always face the camera.
 * Y-Billboard: Object X axis will always be aligned with the camera
-* Particles: When using particle systems, this type of billboar is best, because it allows specifying animation options.
+* Particles: When using particle systems, this type of billboard is best, because it allows specifying animation options.
 
 .. image:: /img/spatial_material9.png
 
@@ -235,7 +234,7 @@ Material colors, maps and channels
 ----------------------------------
 
 Besides the parameters, what defines materials themselves are the colors, textures and channels. Godot supports a very extensive list
-of them (arguably far more than any of the other big game engines). They will be described in detail below:
+of them (arguably far more than any of the other prominent game engines). They will be described in detail below:
 
 Albedo
 ~~~~~~
@@ -264,7 +263,7 @@ The minimum internal reflectivity is 0.04, so (just like in real life) it's impo
 Roughness
 ~~~~~~~~~
 
-Roughness affects mainly the way the reflection happens. A value if 0 makes it a perfect mirror, while a value of 1 completely blurs the reflection (simulating the natural microsurfacetting).
+Roughness affects mainly the way reflection happens. A value of 0 makes it a perfect mirror, while a value of 1 completely blurs the reflection (simulating the natural microsurfacetting).
 Most common types of materials can be achieved from the right combination of *Metallic* and *Roughness*.
 
 .. image:: /img/spatial_material14.png
@@ -272,7 +271,7 @@ Most common types of materials can be achieved from the right combination of *Me
 Emission
 ~~~~~~~~
 
-Emission allows to specify how much light is emitted by the material (keep in mind this does not do lighting on surrounding geometry unless GI Probe is used). This value is just added to the resulting
+Emission specifies how much light is emitted by the material (keep in mind this does not do lighting on surrounding geometry unless GI Probe is used). This value is just added to the resulting
 final image, and is not affected by other lighting in the scene.
 
 
@@ -282,7 +281,7 @@ final image, and is not affected by other lighting in the scene.
 Normalmap
 ~~~~~~~~~
 
-Normap mapping allows to set a texture that represents finer shape detail. This does not modify geometry, just the incident angle for light.
+Normal mapping allows to set a texture that represents finer shape detail. This does not modify geometry, just the incident angle for light.
 In Godot, only R and G are used for normalmaps, in order to attain better compatibility.
 
 .. image:: /img/spatial_material16.png
@@ -290,7 +289,7 @@ In Godot, only R and G are used for normalmaps, in order to attain better compat
 Rim
 ~~~
 
-Some fabrics have small micro fur that causes light to scatter around it. Godot emulates this with the *rim* parameter. Unlike other rim lighting implementations,
+Some fabrics have small micro fur that causes light to scatter around it. Godot emulates this with the *rim* parameter. Unlike other rim lighting implementations
 which just use the emission channel, this one actually takes light into account (no light means no rim). This makes the effect considerably more believable.
 
 .. image:: /img/spatial_material17.png
@@ -308,7 +307,7 @@ Anisotropy
 ~~~~~~~~~~
 
 Changes the shape of the specular blow and aligns it to tangent space. Anisotropy is commonly used with hair, or to make materials such as brushed alluminium more realistic.
-It works specially well when combined with flowmaps.
+It works especially well when combined with flowmaps.
 
 .. image:: /img/spatial_material18.png
 
@@ -317,7 +316,7 @@ Ambient Occlusion
 ~~~~~~~~~~~~~~~~~~
 
 In Godot's new PBR workflow, it is possible to specify a pre-baked ambient occlusion map. This map affects how much ambient light reaches each surface of the object (it does not affect direct light).
-While it is possible to use Scren Space Ambient Occlusion (SSAO) to generate AO, nothing will beat the quality of a nicely baked AO map. It is recommended to pre-bake AO whenever possible.
+While it is possible to use Screen Space Ambient Occlusion (SSAO) to generate AO, nothing will beat the quality of a nicely baked AO map. It is recommended to pre-bake AO whenever possible.
 
 .. image:: /img/spatial_material19.png
 
@@ -356,7 +355,7 @@ in a way very similar to refraction.
 Detail
 ~~~~~~
 
-Godot allows using secondary albedo and normal to generate a detail texture, which can be blended in many ways. Combining with secondary UV or triplanar modes, many interesting textures can be achieved.
+Godot allows using secondary albedo and normal maps to generate a detail texture, which can be blended in many ways. Combining with secondary UV or triplanar modes, many interesting textures can be achieved.
 
 .. image:: /img/spatial_material24.png
 
@@ -378,7 +377,7 @@ In the image below, you can see how all primitives share the same material with 
 Proximity and Distance Fade
 ----------------------------
 
-Godot allows material to fade in proximity to another, as well as depending on the distance to the viewer.
+Godot allows materials to fade by proximity to another, as well as depending on the distance to the viewer.
 Proximity fade is very useful for effecs such as soft particles, or a mass of water with a smooth blending to the shores.
 Distance fade is useful for light shafts or indicators that are only present after a given distance.
 
