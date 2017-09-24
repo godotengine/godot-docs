@@ -130,7 +130,7 @@ default one is Lambert, which does not vary with roughness. Other modes are also
 
 * Lambert: Default mode, is not affected by roughness.
 * Lambert Wrap: Extends lambert to cover more than 90 degrees when roughness increases. Works great for hair and simulating cheap subsurface scattering. This implementation is energy conserving.
-* Oren Nayar: This implementation aims to take microsurfacetting into account (via roughness). Works really well for clay-like materials and some types of cloth. 
+* Oren Nayar: This implementation aims to take microsurfacing into account (via roughness). Works really well for clay-like materials and some types of cloth. 
 * Burley: The original Disney Principled PBS diffuse algorithm.
 * Toon: Provides a hard cut for lighting, with smoothing affected by roughness.
 
@@ -263,7 +263,7 @@ The minimum internal reflectivity is 0.04, so (just like in real life) it's impo
 Roughness
 ~~~~~~~~~
 
-Roughness affects mainly the way reflection happens. A value of 0 makes it a perfect mirror, while a value of 1 completely blurs the reflection (simulating the natural microsurfacetting).
+Roughness affects mainly the way reflection happens. A value of 0 makes it a perfect mirror, while a value of 1 completely blurs the reflection (simulating the natural microsurfacing).
 Most common types of materials can be achieved from the right combination of *Metallic* and *Roughness*.
 
 .. image:: /img/spatial_material14.png
