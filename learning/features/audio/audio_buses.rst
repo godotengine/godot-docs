@@ -11,7 +11,7 @@ The aim now is to present an interface much friendlier to sound design
 professionals. To achieve this, the audio engine contains a virtual rack
 where unlimited audio buses can be created and, on each of it, unlimited
 amount of effect processors can be added (or more like, as long as your
-GPU holds up!)
+CPU holds up!)
 
 The implementation in Godot is pretty efficient and has been written
 entirely from the ground up, without relying on any existing audio libraries.
