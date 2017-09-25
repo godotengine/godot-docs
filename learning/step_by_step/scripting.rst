@@ -11,7 +11,7 @@ Before Godot 3.0, the only choice for scripting a game in Godot was to use
 and the ability to add extra scripting languages dynamically!
 
 This is great, mostly, due the large amount of flexibility provided, but
-it also makes our work of supporitng languages more difficult.
+it also makes our work of supporting languages more difficult.
 
 The "Main" languages in Godot, though, are GDScript and VisualScript. The
 main reason to choose them is the level of integration with Godot, as this
