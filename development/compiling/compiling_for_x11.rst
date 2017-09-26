@@ -11,8 +11,8 @@ Requirements
 For compiling under Linux or other Unix variants, the following is
 required:
 
--  GCC < 6 or Clang (**warning:** see note below regarding GCC 6).
--  Python 2.7+ (3.0 is untested as of now)
+-  GCC or Clang
+-  Python 2.7+ (Python 3 only supported as of SCons 3.0)
 -  SCons build system
 -  pkg-config (used to detect the dependencies below)
 -  X11, Xcursor, Xinerama and XRandR development libraries
@@ -21,14 +21,7 @@ required:
 -  PulseAudio development libraries (for sound support)
 -  Freetype (for the editor)
 -  OpenSSL (for HTTPS and TLS)
--  libudev-dev (optional, build with `udev=yes`)
-
-Known issues with GCC 6
-^^^^^^^^^^^^^^^^^^^^^^^
-
-There are known optimisation issues when using GCC 6 (both to compile for X11 and to cross-compile for Windows with MinGW). Until those issues are fixed in Godot's source, or the compiler is made more forgiving again, it is advised not to use GCC 6 to compile Godot as release builds will trigger crashes.
-
-If your distribution provides GCC 6 by default (e.g. Arch or Ubuntu 16.10), you may have to install an older version or Clang (both should be provided in the repositories). You can then force the use of another compiler version via the `CC` and `CXX` scons arguments (e.g. `scons p=x11 CC=gcc-5 CXX=g++-5` if your distribution provides those binaries in its PATH). You can also use `llvm=yes` instead to force the usage of Clang over GCC.
+-  libudev (optional, build with `udev=yes`)
 
 Distro-specific oneliners
 ^^^^^^^^^^^^^^^^^^^^^^^^^
