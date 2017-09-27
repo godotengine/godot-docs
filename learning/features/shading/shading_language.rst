@@ -20,7 +20,7 @@ modes, built-in variables and processing functions are supported.
 
 Any shader needs a first line specifying this type, in the following format:
 
-.. highlight:: glsl
+.. code-block:: glsl
 	shader_type <type>;
 
 Valid types are:
@@ -36,7 +36,7 @@ Render Modes
 Different shader types support different render modes. They are optional but, if specified, must
 be after the *shader_type*. Example syntax is:
 
-.. highlight:: glsl
+.. code-block:: glsl
 	shader_type spatial;
 	render_mode unshaded,cull_disabled;
 
@@ -106,14 +106,14 @@ Casting of types of different size is also not allowed. Conversion must be done 
 
 Example:
 
-.. highlight:: glsl
+.. code-block:: glsl
 	float a = 2; // valid
 	float a = 2.0; // valid
 	float a = float(2); // valid
  
 Default integer constants are signed, so casting is always needed to convert to unsigned:
 
-.. highlight:: glsl
+.. code-block:: glsl
 	int a = 2; // valid
 	uint a = 2; // invalid
 	uint a = uint(2); // valid
@@ -131,7 +131,7 @@ Constructing
 
 Construction of vector types must always pass:
 
-.. highlight:: glsl
+.. code-block:: glsl
 	// The required amount of scalars
 	vec4 a = vec4(0.0, 1.0, 2.0, 3.0);
 	// Complementary vectors and/or scalars
@@ -146,7 +146,7 @@ Swizzling
 It is possible to obtain any combination of them in any order, as long as the result is another vector type (or scalar). 
 This is easier shown than explained:
 
-.. highlight:: glsl
+.. code-block:: glsl
 	vec4 a = vec4(0.0, 1.0, 2.0, 3.0);
 	vec3 b = a.rgb; // Creates a vec3 with vec4 components 
 	vec3 b = a.aaa; // Also valid, creates a vec3 and fills it with "a".
@@ -159,7 +159,7 @@ Precision
 
 It is possible to add precision modifiers to datatypes, use them for uniforms, variables, arguments and varyings:
 
-.. highlight:: glsl
+.. code-block:: glsl
 	lowp vec4 a = vec4(0.0, 1.0, 2.0, 3.0); // low precision, usually 8 bits per component mapped to 0-1
 	mediump vec4 a = vec4(0.0, 1.0, 2.0, 3.0); // medium precision, usually 16 bits or half float
 	highp vec4 a = vec4(0.0, 1.0, 2.0, 3.0); // high precision, uses full float or integer range (default)
@@ -210,7 +210,7 @@ Flow Control
 
 Godot Shading language supports the most common types of flow control:
 
-.. highlight:: glsl
+.. code-block:: glsl
 	//if and else
 	if (cond) {
 
@@ -237,7 +237,7 @@ Functions
 
 It's possible to define any function in a Godot shader. They take the following syntax:
 
-.. highlight:: glsl
+.. code-block:: glsl
 	ret_type func_name(args) {
 
 		return ret_type; // if returning a value
@@ -260,7 +260,7 @@ Function argument can have special qualifiers:
 
 Example below:
 
-.. highlight:: glsl
+.. code-block:: glsl
 
 	void sum2(int a, int b, inout int result) {
 		result = a+b;
@@ -284,7 +284,7 @@ particle.
 Depending on shader type, a different set of built-in inputs and outputs are provided. In general,
 vertex functions are not that commonly used.
 
-.. highlight:: glsl
+.. code-block:: glsl
 
 	shader_type spatial;
 
@@ -299,7 +299,7 @@ Fragment Processor
 The "fragent" processor is used to set up the Godot material parameters per pixel. This code
 runs on every visible pixel the object or primitive is drawn to.
 
-.. highlight:: glsl
+.. code-block:: glsl
 
 	shader_type spatial;
 
@@ -313,7 +313,7 @@ Light Processor
 The "light" processor runs per pixel too, but also runs for every light that affects the object (
 and does not run if no lights affect the object).
 
-.. highlight:: glsl
+.. code-block:: glsl
 
 	shader_type spatial;
 
@@ -330,7 +330,7 @@ in the *vertex processor*, and the value is interpolated (and perspective correc
 pixel in the fragment processor.
 
 
-.. highlight:: glsl
+.. code-block:: glsl
 
 	shader_type spatial;
 
@@ -350,7 +350,7 @@ Passing values to shaders is possible. These are global to the whole shader and 
 When a shader is later assigned to a material, the uniforms will appear as editable parameters on it.
 Uniforms can't be written from within the shadr.
 
-.. highlight:: glsl
+.. code-block:: glsl
 
 	shader_type spatial;
 
@@ -361,7 +361,7 @@ Any type except for *void* can be a uniform. Additionally, Godot provides option
 to make the compiler understand what the uniform is used for.
 
 
-.. highlight:: glsl
+.. code-block:: glsl
 
 	shader_type spatial;
 
@@ -395,7 +395,7 @@ Full list of hints below:
 Uniforms can also be assigned default values:
 
 
-.. highlight:: glsl
+.. code-block:: glsl
 
 	shader_type spatial;
 
