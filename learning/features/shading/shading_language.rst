@@ -6,137 +6,410 @@ Shading language
 Introduction
 ------------
 
-Godot uses a simplified shader language (almost a subset of GLSL).
-Shaders can be used for:
+Godot uses a shading language very similar to GLSL ES 3.0. Most datatypes and functions are supported,
+and the remaining will likely be added over time.
 
--  Materials
--  Post-Processing
--  2D
+Unlike the shader language in Godot 2.x, this implementaiton is much closer to the original.
 
-and are divided in *Vertex*, *Fragment* and *Light* sections.
+Shader Types
+------------
 
-Language
---------
+Instead of supplying a general purpose configuration, Godot Shading Language must
+specify what shader is intended for. Depending on the type, different render
+modes, built-in variables and processing functions are supported.
 
-Typing
-~~~~~~
+Any shader needs a first line specifying this type, in the following format:
 
-The language is statically type and supports only a few operations.
-Arrays, classes, structures, etc are not supported. Several built-in
-datatypes are provided:
+.. highlight:: glsl
+	shader_type <type>;
 
-Data types
-~~~~~~~~~~
+Valid types are:
 
-+-------------------+--------------------------------------------------------------+
-| DataType          | Description                                                  |
-+===================+==============================================================+
-| *void*            | Void                                                         |
-+-------------------+--------------------------------------------------------------+
-| *bool*            | boolean (true or false)                                      |
-+-------------------+--------------------------------------------------------------+
-| *float*           | floating point                                               |
-+-------------------+--------------------------------------------------------------+
-| *vec2*            | 2-component vector, float subindices (x,y or r,g )           |
-+-------------------+--------------------------------------------------------------+
-| *vec3*            | 3-component vector, float subindices (x,y,z or r,g,b )       |
-+-------------------+--------------------------------------------------------------+
-| *vec4*, *color*   | 4-component vector, float subindices (x,y,z,w or r,g,b,a )   |
-+-------------------+--------------------------------------------------------------+
-| *mat2*            | 2x2 matrix, vec3 subindices (x,y)                            |
-+-------------------+--------------------------------------------------------------+
-| *mat3*            | 3x3 matrix, vec3 subindices (x,y,z)                          |
-+-------------------+--------------------------------------------------------------+
-| *mat4*            | 4x4 matrix, vec4 subindices (x,y,z,w)                        |
-+-------------------+--------------------------------------------------------------+
-| *texture*         | texture sampler, can only be used as uniform                 |
-+-------------------+--------------------------------------------------------------+
-| *cubemap*         | cubemap sampler, can only be used as uniform                 |
-+-------------------+--------------------------------------------------------------+
+* "spatial": For 3D rendering.
+* "canvas_item": For 2D rendering.
+* "particles": For particle systems.
 
-Syntax
-~~~~~~
 
-The syntax is similar to C, with statements ending with ``;`` and comments
-as ``//`` and ``/* */``. Example:
+Render Modes
+------------
 
-::
+Different shader types support different render modes. They are optional but, if specified, must
+be after the *shader_type*. Example syntax is:
 
-    float a = 3;
-    vec3 b;
-    b.x = a;
+.. highlight:: glsl
+	shader_type spatial;
+	render_mode unshaded,cull_disabled;
+
+Data types:
+-----------
+
+Most GLSL ES 3.0 datatypes are supported. Following is the list:
+
++-----------------+---------------------------------------------------------------------------+
+| Type            | Description                                                               |
++=================+===========================================================================+
+| **void**        | Void datatype, useful only for functions that return nothing.             |
++-----------------+---------------------------------------------------------------------------+
+| **bool**        | Boolean datatype, can only contain "true" or "false"                      |
++-----------------+---------------------------------------------------------------------------+
+| **bvec2**       | Two component vector of booleans.                                         |
++-----------------+---------------------------------------------------------------------------+
+| **bvec3**       | Three component vector of booleans.                                       |
++-----------------+---------------------------------------------------------------------------+
+| **bvec4**       | Four component vector of booleans.                                        |
++-----------------+---------------------------------------------------------------------------+
+| **int**         | Signed scalar integer                                                     |
++-----------------+---------------------------------------------------------------------------+
+| **ivec2**       | Two component vector of signed integers                                   |
++-----------------+---------------------------------------------------------------------------+
+| **ivec3**       | Three component vector of signed integers.                                |
++-----------------+---------------------------------------------------------------------------+
+| **ivec4**       | Four component vector of signed integers.                                 |
++-----------------+---------------------------------------------------------------------------+
+| **uint**        | Unsigned scalar integer, can't contain negative numbers.                  |
++-----------------+---------------------------------------------------------------------------+
+| **uvec2**       | Two component vector of unsigned integers.                                |
++-----------------+---------------------------------------------------------------------------+
+| **uvec3**       | Three component vector of unsigned integers.                              |
++-----------------+---------------------------------------------------------------------------+
+| **uvec4**       | Four component vector of unsigned integers.                               |
++-----------------+---------------------------------------------------------------------------+
+| **float**       | Floating point scalar.                                                    |
++-----------------+---------------------------------------------------------------------------+
+| **vec2**        | Two component vector of floating point values.                            |
++-----------------+---------------------------------------------------------------------------+
+| **vec3**        | Three component vector of floating point values.                          |
++-----------------+---------------------------------------------------------------------------+
+| **vec4**        | Four component vector of floating point values.                           |
++-----------------+---------------------------------------------------------------------------+
+| **mat2**        | 2x2 matrix, in column major order.                                        |
++-----------------+---------------------------------------------------------------------------+
+| **mat3**        | 3x3 matrix, in column major order.                                        |
++-----------------+---------------------------------------------------------------------------+
+| **mat4**        | 4x4 matrix, in column major order.                                        |
++-----------------+---------------------------------------------------------------------------+
+| **sampler2D**   | Sampler type, for binding 2D textures, which are read as float.           |
++-----------------+---------------------------------------------------------------------------+
+| **isampler2D**  | Sampler type for binding 2D textures, which are read as signed integer.   |
++-----------------+---------------------------------------------------------------------------+
+| **usampler2D**  | Sampler type for binding 2D textures, which are read as unsigned integer. |
++-----------------+---------------------------------------------------------------------------+
+| **samplerCube** | Sampler type for binding Cubemaps, which are read as floats.              |
++-----------------+---------------------------------------------------------------------------+
+
+
+Casting
+~~~~~~~
+
+Just like GLSL ES 3.0, implicit castling is not allowed between scalars and vectors of the same size but different type.
+Casting of types of different size is also not allowed. Conversion must be done explicitly via constructors.
+
+Example:
+
+.. highlight:: glsl
+	float a = 2; // valid
+	float a = 2.0; // valid
+	float a = float(2); // valid
+ 
+Default integer constants are signed, so casting is always needed to convert to unsigned:
+
+.. highlight:: glsl
+	int a = 2; // valid
+	uint a = 2; // invalid
+	uint a = uint(2); // valid
+
+Members
+~~~~~~~
+
+Individual scalar members of vector types are accessed via the "x", "y", "z" and "w" members. Alternatively, using "r", "g", "b" and "a" also works and is equivalent. 
+Use whathever fits best for your use case.
+
+For matrices, use [idx] indexing syntax to access each vector.
+
+Constructing
+~~~~~~~~~~~~
+
+Construction of vector types must always pass:
+
+.. highlight:: glsl
+	// The required amount of scalars
+	vec4 a = vec4(0.0, 1.0, 2.0, 3.0);
+	// Complementary vectors and/or scalars
+	vec4 a = vec4( vec2(0.0, 1.0), vec2(2.0, 3.0) );
+	vec4 a = vec4( vec3(0.0, 1.0, 2.0), 3.0 );
+	// A single scalar for the whole vector
+	vec4 a = vec4( 0.0 );
 
 Swizzling
 ~~~~~~~~~
 
-It is possible to use swizzling to reassigning subindices or groups of
-subindices, in order:
+It is possible to obtain any combination of them in any order, as long as the result is another vector type (or scalar). 
+This is easier shown than explained:
 
-::
+.. highlight:: glsl
+	vec4 a = vec4(0.0, 1.0, 2.0, 3.0);
+	vec3 b = a.rgb; // Creates a vec3 with vec4 components 
+	vec3 b = a.aaa; // Also valid, creates a vec3 and fills it with "a".
+	vec3 b = a.bgr; // Order does not matter
+	vec3 b = a.xyz; // Also rgba, xyzw are equivalent
+	float c = b.w; // Invalid, because "w" is not present in vec3 b
 
-    vec3 a = vec3(1,2,3);
-    vec3 b = a.zyx; // b will contain vec3(3,2,1)
-    vec2 c = a.xy; // c will contain vec2(1,2)
-    vec4 d = a.xyzz; // d will contain vec4(1,2,3,3)
+Precision
+~~~~~~~~~
 
-Constructors
-~~~~~~~~~~~~
+It is possible to add precision modifiers to datatypes, use them for uniforms, variables, arguments and varyings:
 
-Constructors take the regular amount of elements, but can also accept
-less if the element has more subindices, for example:
+.. highlight:: glsl
+	lowp vec4 a = vec4(0.0, 1.0, 2.0, 3.0); // low precision, usually 8 bits per component mapped to 0-1
+	mediump vec4 a = vec4(0.0, 1.0, 2.0, 3.0); // medium precision, usually 16 bits or half float
+	highp vec4 a = vec4(0.0, 1.0, 2.0, 3.0); // high precision, uses full float or integer range (default)
 
-::
 
-    vec3 a = vec3(1,vec2(2,3));
-    vec3 b = vec3(a);
-    vec3 c = vec3(vec2(2,3),1);
-    vec4 d = vec4(a,5);
-    mat3 m = mat3(a,b,c);
+Using lower precision for some operations can speed up the math involved (at the cost of, of course, less precision).
+This is rarely needed in the vertex shader (where full precision is needed most of the time), but often needed in the fragment one.
 
-Conditionals
-~~~~~~~~~~~~
+Keep in mind that some architectures (mainly mobile) benefit a lot on this, but are also restricted (conversion between precisions has a cost).
+Please read the relevant documentation on the target architecture to find out more. In all honesty though, mobile drivers are really buggy
+so just stay out of trouble and make simple shaders without specifying precission unless you *really* need to.
 
-For now, only the ``if`` conditional is supported. Example:
+Operators:
+----------
 
-::
+Godot shading language supports the same set of operators as GLSL ES 3.0. Below is the list of them in precedence order:
 
-    if (a < b) {
-        c = b;
-    }
++-------------+-----------------------+--------------------+
+| Precedence  | Class                 | Operator           |
++-------------+-----------------------+--------------------+
+| 1 (highest) | parenthical grouping  | **()**             |
++-------------+-----------------------+--------------------+
+| 2           | unary                 | **+, -, !, ~**     |
++-------------+-----------------------+--------------------+
+| 3           | multiplicative        | ***, /, % **       |
++-------------+-----------------------+--------------------+
+| 4           | additive              | **+, -**           |
++-------------+-----------------------+--------------------+
+| 5           | bit-wise shift        | **<<, >>**         |
++-------------+-----------------------+--------------------+
+| 6           | relational            | **<, >, <=, >=**   |
++-------------+-----------------------+--------------------+
+| 7           | equality              | **==, !=**         |
++-------------+-----------------------+--------------------+
+| 8           | bit-wise and          | **&**              |
++-------------+-----------------------+--------------------+
+| 9           | bit-wise exclusive or | **^**              |
++-------------+-----------------------+--------------------+
+| 10          | bit-wise inclusive or | **|**              |
++-------------+-----------------------+--------------------+
+| 11          | logical and           | **&&**             |
++-------------+-----------------------+--------------------+
+| 12 (lowest) | logical inclusive or  | **||**             |
++-------------+-----------------------+--------------------+
+
+Flow Control
+------------
+
+Godot Shading language supports the most common types of flow control:
+
+.. highlight:: glsl
+	//if and else
+	if (cond) {
+
+	} else {
+
+	}
+
+	//for loops
+	for(int i=0;i<10;i++) {
+
+	}
+
+	//whiles
+	while (true) {
+
+	}
+	
+
+Keep in mind that, in modern GPUs, an infinite loop can exist and can freeze your application (including editor).
+Godot can't protect you from this, so be careful to not make this mistake!
+
+Functions
+---------
+
+It's possible to define any function in a Godot shader. They take the following syntax:
+
+.. highlight:: glsl
+	ret_type func_name(args) {
+
+		return ret_type; // if returning a value
+	}
+
+	// a better example:
+
+	int sum2(int a, int b) {
+		return a+b;
+	}
+
+
+Functions can be used from any other function that is below it.
+
+Function argument can have special qualifiers:
+
+* **in**: Means the argument is only for reading (default).
+* **out**: Means the argument is only for writing.
+* **inout**: Means the argument is fully passed via reference.
+
+Example below:
+
+.. highlight:: glsl
+
+	void sum2(int a, int b, inout int result) {
+		result = a+b;
+	}
+
+
+ 
+Processor Functions
+-------------------
+
+Depending on shader type, processor functions may be available to optionally override.
+For "spatial" and "canvas_item", it is possible to override "vertex", "fragment" and "light".
+For "particles", only "vertex" can be overriden.
+
+Vertex Processor
+~~~~~~~~~~~~~~~~~
+
+The "vertex" processing function is called for every vertex, 2D or 3D. For particles, it's called for every
+particle.
+
+Depending on shader type, a different set of built-in inputs and outputs are provided. In general,
+vertex functions are not that commonly used.
+
+.. highlight:: glsl
+
+	shader_type spatial;
+
+	void vertex() {
+		VERTEX.x+=sin(TIME); //offset vertex x by sine function on time elapsed
+	}
+
+
+Fragment Processor
+~~~~~~~~~~~~~~~~~~
+
+The "fragent" processor is used to set up the Godot material parameters per pixel. This code
+runs on every visible pixel the object or primitive is drawn to.
+
+.. highlight:: glsl
+
+	shader_type spatial;
+
+	void fragment() {
+		ALBEDO=vec3(1.0,0.0,0.0); // use red for material albedo
+	}
+
+Light Processor
+~~~~~~~~~~~~~~~
+
+The "light" processor runs per pixel too, but also runs for every light that affects the object (
+and does not run if no lights affect the object).
+
+.. highlight:: glsl
+
+	shader_type spatial;
+
+	void light() {
+		COLOR=vec3(0.0,1.0,0.0); 
+	}
+
+
+Varyings
+~~~~~~~~
+
+To send data from vertex to fragment shader, *varyings* are used. They are set for every primitive vertex
+in the *vertex processor*, and the value is interpolated (and perspective corrected) when reaching every
+pixel in the fragment processor.
+
+
+.. highlight:: glsl
+
+	shader_type spatial;
+
+	varying vec3 some_color;
+	void vertex() {
+		some_color = NORMAL; // make the normal the color
+	}
+
+	void fragment() {
+		ALBEDO = some_color;
+	}
 
 Uniforms
 ~~~~~~~~
 
-A variable can be declared as uniform. In this case, its value will
-come from outside the shader (it will be the responsibility of the
-material or whatever using the shader to provide it).
+Passing values to shaders is possible. These are global to the whole shader and called *uniforms*. 
+When a shader is later assigned to a material, the uniforms will appear as editable parameters on it.
+Uniforms can't be written from within the shadr.
 
-::
+.. highlight:: glsl
 
-    uniform vec3 direction;
-    uniform color tint;
+	shader_type spatial;
 
-    vec3 result = tint.rgb * direction;
+	uniform float some_value;
 
-Functions
-~~~~~~~~~
 
-Simple support for functions is provided. Functions can't access
-uniforms or other shader variables.
+Any type except for *void* can be a uniform. Additionally, Godot provides optional shader hints
+to make the compiler understand what the uniform is used for.
 
-::
 
-    vec3 addtwo(vec3 a, vec3 b) {
-        return a+b;
-    }
+.. highlight:: glsl
 
-    vec3 c = addtwo(vec3(1,1,1), vec3(2,2,2));
+	shader_type spatial;
 
-Built-in functions
+	uniform vec4 color : hint_color;
+	uniform float amonut : hint_range(0,1);
+
+
+Full list of hints below:
+
++-------------------+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Type              | Hint                          | Description                                                                                                                                                                                                            |
++===================+===============================+========================================================================================================================================================================================================================+
+| **vec4**          | hint_color                    | This uniform is exported as a color parameter in property editor. Color is also converted from SRGB for 3D shaders.                                                                                                    |
++-------------------+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **int**,**float** | hint_range(min,max [,step] )  | This scalar uniform is exported as a given range in property editor.                                                                                                                                                   |
++-------------------+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **sampler2D**     | hint_albedo                   | This texture is used as albedo color. Godot will try to make sure the texture has SRGB -> Linear conversion turned on. If no texture is supplied, this is assumed to be white.                                         |
++-------------------+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **sampler2D**     | hint_black_albedo             | Same as above but, if no texture is supplied, it's assumed to be black.                                                                                                                                                |
++-------------------+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **sampler2D**     | hint_normal                   | The texture supplied is a normal map. Godot will attempt to convert the texture to a more efficient normalmap format when used here. Also, an empty texture results in a vec3(0.0,0.0,1.0) normal assigned by default. |
++-------------------+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **sampler2D**     | hint_white                    | Regular texture (non albedo). White is used if unasigned.                                                                                                                                                              |
++-------------------+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **sampler2D**     | hint_black                    | Regular texture (non albedo). Black is used if unassigned.                                                                                                                                                             |
++-------------------+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **sampler2D**     | hint_aniso                    | Same as above, but vec3(1.0, 0.5, 0.0) is assigned by default (useful for flowmaps)                                                                                                                                    |
++-------------------+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+Uniforms can also be assigned default values:
+
+
+.. highlight:: glsl
+
+	shader_type spatial;
+
+	uniform vec4 some_vector = vec4(0.0);
+
+
+
+Built-in Functions
 ------------------
 
-Several built-in functions are provided for convenience, listed as
-follows:
+A large amount of built-in functions is supported, confirming mostly to GLSL ES 3.0.
+When vec_type (float), vec_int_type, vec_uint_type, vec_bool_type, nomenclature is used, it can be scalar or vcetor.
+
+
 
 +-----------------------------------------------------------------------+---------------------------------------------+
 | Function                                                              | Description                                 |
@@ -153,7 +426,15 @@ follows:
 +-----------------------------------------------------------------------+---------------------------------------------+
 | float *atan* ( float )                                                | arc-Tangent                                 |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec\_type *pow* ( vec\_type, float )                                  | Power                                       |
+| float *atan2* ( float x, float y)                                     | arc-Tangent to convert vector to angle      |
++-----------------------------------------------------------------------+---------------------------------------------+
+| float *sinh* ( float )                                                | Hyperbolic-Sine                             |
++-----------------------------------------------------------------------+---------------------------------------------+
+| float *cosh* ( float )                                                | Hyperbolic-Cosine                           |
++-----------------------------------------------------------------------+---------------------------------------------+
+| float *tanh* ( float )                                                | Hyperbolic-Tangent                          |
++-----------------------------------------------------------------------+---------------------------------------------+
+| vec\_type *pow* ( float x, float y)                                   | Power, x elevated to y                      |
 +-----------------------------------------------------------------------+---------------------------------------------+
 | vec\_type *pow* ( vec\_type, vec\_type )                              | Power (Vec. Exponent)                       |
 +-----------------------------------------------------------------------+---------------------------------------------+
@@ -163,11 +444,15 @@ follows:
 +-----------------------------------------------------------------------+---------------------------------------------+
 | vec\_type *sqrt* ( vec\_type )                                        | Square Root                                 |
 +-----------------------------------------------------------------------+---------------------------------------------+
+| vec\_type *inversesqrt* ( vec\_type )                                 | Inverse Square Root                         |
++-----------------------------------------------------------------------+---------------------------------------------+
 | vec\_type *abs* ( vec\_type )                                         | Absolute                                    |
 +-----------------------------------------------------------------------+---------------------------------------------+
 | vec\_type *sign* ( vec\_type )                                        | Sign                                        |
 +-----------------------------------------------------------------------+---------------------------------------------+
 | vec\_type *floor* ( vec\_type )                                       | Floor                                       |
++-----------------------------------------------------------------------+---------------------------------------------+
+| vec\_type *round* ( vec\_type )                                       | Round                                       |
 +-----------------------------------------------------------------------+---------------------------------------------+
 | vec\_type *trunc* ( vec\_type )                                       | Trunc                                       |
 +-----------------------------------------------------------------------+---------------------------------------------+
@@ -177,9 +462,11 @@ follows:
 +-----------------------------------------------------------------------+---------------------------------------------+
 | vec\_type *mod* ( vec\_type,vec\_type )                               | Remainder                                   |
 +-----------------------------------------------------------------------+---------------------------------------------+
+| vec\_type *modf* ( vec\_type x,out vec\_type i)                       | Fractional of x, with i has integer part    |
++-----------------------------------------------------------------------+---------------------------------------------+
 | vec\_type *min* ( vec\_type,vec\_type )                               | Minimum                                     |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec\_type *max* ( vec\_type,vec\_type )                               | Maximum                                     |
+| vec\_type *min* ( vec\_type,vec\_type )                               | Maximum                                     |
 +-----------------------------------------------------------------------+---------------------------------------------+
 | vec\_type *clamp* ( vec\_type value,vec\_type min, vec\_type max )    | Clamp to Min-Max                            |
 +-----------------------------------------------------------------------+---------------------------------------------+
@@ -190,6 +477,18 @@ follows:
 | vec\_type *step* ( vec\_type a,vec\_type b)                           | \` a[i] < b[i] ? 0.0 : 1.0\`                |
 +-----------------------------------------------------------------------+---------------------------------------------+
 | vec\_type *smoothstep* ( vec\_type a,vec\_type b,vec\_type c)         |                                             |
++-----------------------------------------------------------------------+---------------------------------------------+
+| vec_bool_type *isnan* ( vec\_type )                                   | scalar, or vector component being nan       |
++-----------------------------------------------------------------------+---------------------------------------------+
+| vec_bool_type *isinf* ( vec\_type )                                   | scalar, or vector component being inf       |
++-----------------------------------------------------------------------+---------------------------------------------+
+| vec_int_type *floatBitsToInt* ( vec_type )                            | Float->Int bit copying, no conversion       |
++-----------------------------------------------------------------------+---------------------------------------------+
+| vec_uint_type *floatBitsToUInt* ( vec_type )                          | Float->UInt bit copying, no conversion      |
++-----------------------------------------------------------------------+---------------------------------------------+
+| vec_type *intBitsToFloat* ( vec_int_type )                            | Int->Float bit copying, no conversion       |
++-----------------------------------------------------------------------+---------------------------------------------+
+| vec_type *uintBitsToFloat* ( vec_uint_type )                          | UInt->Float bit copying, no conversion      |
 +-----------------------------------------------------------------------+---------------------------------------------+
 | float *length* ( vec\_type )                                          | Vector Length                               |
 +-----------------------------------------------------------------------+---------------------------------------------+
@@ -203,320 +502,72 @@ follows:
 +-----------------------------------------------------------------------+---------------------------------------------+
 | vec3 *reflect* ( vec3, vec3 )                                         | Reflect                                     |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| color *tex* ( texture, vec2 )                                         | Read from a texture in normalized coords    |
+| vec3 *refract* ( vec3, vec3 )                                         | Refract                                     |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| color *texcube* ( texture, vec3 )                                     | Read from a cubemap                         |
+| vec_type *faceforward* ( vec_type N, vec_type I, vec_type NRef)       | If dot(Nref, I) < 0 return N, otherwise –N  |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| color *texscreen* ( vec2 )                                            | Read from screen (generates a copy)         |
+| mat_type *matrixCompMult* ( mat_type, mat_type )                      | Matrix Component Multiplication             |
++-----------------------------------------------------------------------+---------------------------------------------+
+| mat_type *outerProduct* ( vec_type, vec_type )                        | Matrix Outer Product                        |
++-----------------------------------------------------------------------+---------------------------------------------+
+| mat_type *transpose* ( mat_type )                                     | Transpose Matrix                            |
++-----------------------------------------------------------------------+---------------------------------------------+
+| float *determinant* ( mat_type )                                      | Matrix Determinant                          |
++-----------------------------------------------------------------------+---------------------------------------------+
+| mat_type *inverse* ( mat_type )                                       | Inverse Matrix                              |
++-----------------------------------------------------------------------+---------------------------------------------+
+| vec\_bool_type *lessThan* ( vec_scalar_type )                         | Bool vector cmp on < int/uint/float vectors |
++-----------------------------------------------------------------------+---------------------------------------------+
+| vec\_bool_type *greaterThan* ( vec_scalar_type )                      | Bool vector cmp on > int/uint/float vectors |
++-----------------------------------------------------------------------+---------------------------------------------+
+| vec\_bool_type *lessThanEqual* ( vec_scalar_type )                    | Bool vector cmp on <=int/uint/float vectors |
++-----------------------------------------------------------------------+---------------------------------------------+
+| vec\_bool_type *greaterThanEqual* ( vec_scalar_type )                 | Bool vector cmp on >=int/uint/float vectors |
++-----------------------------------------------------------------------+---------------------------------------------+
+| vec\_bool_type *equal* ( vec_scalar_type )                            | Bool vector cmp on ==int/uint/float vectors |
++-----------------------------------------------------------------------+---------------------------------------------+
+| vec\_bool_type *notEqual* ( vec_scalar_type )                         | Bool vector cmp on !=int/uint/float vectors |
++-----------------------------------------------------------------------+---------------------------------------------+
+| bool *any* ( vec_bool_type )                                          | Any component is true                       |
++-----------------------------------------------------------------------+---------------------------------------------+
+| bool *all* ( vec_bool_type )                                          | All components are true                     |
++-----------------------------------------------------------------------+---------------------------------------------+
+| bool *not* ( vec_bool_type )                                          | No components are true                      |
++-----------------------------------------------------------------------+---------------------------------------------+
+| ivec2 *textureSize* ( sampler2D_type s, int lod )                     | Get the size of a texture                   |
++-----------------------------------------------------------------------+---------------------------------------------+
+| ivec2 *textureSize* ( samplerCube s, int lod )                        | Get the size of a cubemap                   |
++-----------------------------------------------------------------------+---------------------------------------------+
+| vec4_type *texture* ( sampler2D_type s, vec2 uv [, float bias])       | Perform a 2D texture read                   |
++-----------------------------------------------------------------------+---------------------------------------------+
+| vec4 *texture* ( samplerCube s, vec3 uv [, float bias])               | Perform a Cube texture read                 |
++-----------------------------------------------------------------------+---------------------------------------------+
+| vec4_type *textureProj* ( sampler2d_type s, vec3 uv [, float bias])   | Perform a texture read with projection      |
++-----------------------------------------------------------------------+---------------------------------------------+
+| vec4_type *textureProj* ( sampler2d_type s, vec4 uv [, float bias])   | Perform a texture read with projection      |
++-----------------------------------------------------------------------+---------------------------------------------+
+| vec4_type *textureLod* ( sampler2D_type s, vec2 uv , float lod)       | Perform a 2D texture read at custom mipmap  |
++-----------------------------------------------------------------------+---------------------------------------------+
+| vec4_type *textureProjLod* ( sampler2d_type s, vec3 uv , float lod)   | Perform a texture read with projection/lod  |
++-----------------------------------------------------------------------+---------------------------------------------+
+| vec4_type *textureProjLod* ( sampler2d_type s, vec4 uv , float lod)   | Perform a texture read with projection/lod  |
++-----------------------------------------------------------------------+---------------------------------------------+
+| vec_type *texelFetch* ( samplerCube s, ivec2 uv, int lod )            | Fetch a single texel using integer coords   |
++-----------------------------------------------------------------------+---------------------------------------------+
+| vec_type *dFdx* ( vec_type )                                          | Derivative in x using local differencing    |
++-----------------------------------------------------------------------+---------------------------------------------+
+| vec_type *dFdy* ( vec_type )                                          | Derivative in y using local differencing    |
++-----------------------------------------------------------------------+---------------------------------------------+
+| vec_type *fwidth* ( vec_type )                                        | Sum of absolute derivative in x and y       |
 +-----------------------------------------------------------------------+---------------------------------------------+
 
-Built-in variables
-------------------
 
-Depending on the shader type, several built-in variables are available,
-listed as follows:
 
-Material (3D) - VertexShader
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+------------------------------------+-------------------------------------------+
-| Variable                           | Description                               |
-+====================================+===========================================+
-| const vec3 *SRC\_VERTEX*           | Model-Space Vertex                        |
-+------------------------------------+-------------------------------------------+
-| const vec3 *SRC\_NORMAL*           | Model-Space Normal                        |
-+------------------------------------+-------------------------------------------+
-| const vec3 *SRC\_TANGENT*          | Model-Space Tangent                       |
-+------------------------------------+-------------------------------------------+
-| const float *SRC\_BINORMALF*       | Direction to Compute Binormal             |
-+------------------------------------+-------------------------------------------+
-| vec3 *VERTEX*                      | View-Space Vertex                         |
-+------------------------------------+-------------------------------------------+
-| vec3 *NORMAL*                      | View-Space Normal                         |
-+------------------------------------+-------------------------------------------+
-| vec3 *TANGENT*                     | View-Space Tangent                        |
-+------------------------------------+-------------------------------------------+
-| vec3 *BINORMAL*                    | View-Space Binormal                       |
-+------------------------------------+-------------------------------------------+
-| vec2 *UV*                          | UV                                        |
-+------------------------------------+-------------------------------------------+
-| vec2 *UV2*                         | UV2                                       |
-+------------------------------------+-------------------------------------------+
-| color *COLOR*                      | Vertex Color                              |
-+------------------------------------+-------------------------------------------+
-| out vec4 *VAR1*                    | Varying 1 Output                          |
-+------------------------------------+-------------------------------------------+
-| out vec4 *VAR2*                    | Varying 2 Output                          |
-+------------------------------------+-------------------------------------------+
-| out float *SPEC\_EXP*              | Specular Exponent (for Vertex Lighting)   |
-+------------------------------------+-------------------------------------------+
-| out float *POINT\_SIZE*            | Point Size (for points)                   |
-+------------------------------------+-------------------------------------------+
-| const mat4 *WORLD\_MATRIX*         | Object World Matrix                       |
-+------------------------------------+-------------------------------------------+
-| const mat4 *INV\_CAMERA\_MATRIX*   | Inverse Camera Matrix                     |
-+------------------------------------+-------------------------------------------+
-| const mat4 *PROJECTION\_MATRIX*    | Projection Matrix                         |
-+------------------------------------+-------------------------------------------+
-| const mat4 *MODELVIEW\_MATRIX*     | (InvCamera \* Projection)                 |
-+------------------------------------+-------------------------------------------+
-| const float *INSTANCE\_ID*         | Instance ID (for multimesh)               |
-+------------------------------------+-------------------------------------------+
-| const float *TIME*                 | Time (in seconds)                         |
-+------------------------------------+-------------------------------------------+
 
-Material (3D) - FragmentShader
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+----------------------------------+----------------------------------------------------------------------------------+
-| Variable                         | Description                                                                      |
-+==================================+==================================================================================+
-| const vec3 *VERTEX*              | View-Space vertex                                                                |
-+----------------------------------+----------------------------------------------------------------------------------+
-| const vec4 *POSITION*            | View-Space Position                                                              |
-+----------------------------------+----------------------------------------------------------------------------------+
-| const vec3 *NORMAL*              | View-Space Normal                                                                |
-+----------------------------------+----------------------------------------------------------------------------------+
-| const vec3 *TANGENT*             | View-Space Tangent                                                               |
-+----------------------------------+----------------------------------------------------------------------------------+
-| const vec3 *BINORMAL*            | View-Space Binormal                                                              |
-+----------------------------------+----------------------------------------------------------------------------------+
-| const vec3 *NORMALMAP*           | Alternative to NORMAL, use for normal texture output.                            |
-+----------------------------------+----------------------------------------------------------------------------------+
-| const vec3 *NORMALMAP\_DEPTH*    | Complementary to the above, allows changing depth of normalmap.                  |
-+----------------------------------+----------------------------------------------------------------------------------+
-| const vec2 *UV*                  | UV                                                                               |
-+----------------------------------+----------------------------------------------------------------------------------+
-| const vec2 *UV2*                 | UV2                                                                              |
-+----------------------------------+----------------------------------------------------------------------------------+
-| const color *COLOR*              | Vertex Color                                                                     |
-+----------------------------------+----------------------------------------------------------------------------------+
-| const vec4 *VAR1*                | Varying 1                                                                        |
-+----------------------------------+----------------------------------------------------------------------------------+
-| const vec4 *VAR2*                | Varying 2                                                                        |
-+----------------------------------+----------------------------------------------------------------------------------+
-| const vec2 *SCREEN\_UV*          | Screen Texture Coordinate (for using with texscreen)                             |
-+----------------------------------+----------------------------------------------------------------------------------+
-| const float *TIME*               | Time (in seconds)                                                                |
-+----------------------------------+----------------------------------------------------------------------------------+
-| const vec2 *POINT\_COORD*        | UV for point, when drawing point sprites.                                        |
-+----------------------------------+----------------------------------------------------------------------------------+
-| out vec3 *DIFFUSE*               | Diffuse Color                                                                    |
-+----------------------------------+----------------------------------------------------------------------------------+
-| out vec4 *DIFFUSE\_ALPHA*        | Diffuse Color with Alpha (using this sends geometry to alpha pipeline)           |
-+----------------------------------+----------------------------------------------------------------------------------+
-| out vec3 *SPECULAR*              | Specular Color                                                                   |
-+----------------------------------+----------------------------------------------------------------------------------+
-| out vec3 *EMISSION*              | Emission Color                                                                   |
-+----------------------------------+----------------------------------------------------------------------------------+
-| out float *SPEC\_EXP*            | Specular Exponent (Fragment Version)                                             |
-+----------------------------------+----------------------------------------------------------------------------------+
-| out float *GLOW*                 | Glow                                                                             |
-+----------------------------------+----------------------------------------------------------------------------------+
-| out mat4 *INV\_CAMERA\_MATRIX*   | Inverse camera matrix, can be used to obtain world coords (see example below).   |
-+----------------------------------+----------------------------------------------------------------------------------+
 
-Material (3D) - LightShader
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+--------------------------------+-------------------------------+
-| Variable                       | Description                   |
-+================================+===============================+
-| const vec3 *NORMAL*            | View-Space normal             |
-+--------------------------------+-------------------------------+
-| const vec3 *LIGHT\_DIR*        | View-Space Light Direction    |
-+--------------------------------+-------------------------------+
-| const vec3 *EYE\_VEC*          | View-Space Eye-Point Vector   |
-+--------------------------------+-------------------------------+
-| const vec3 *DIFFUSE*           | Material Diffuse Color        |
-+--------------------------------+-------------------------------+
-| const vec3 *LIGHT\_DIFFUSE*    | Light Diffuse Color           |
-+--------------------------------+-------------------------------+
-| const vec3 *SPECULAR*          | Material Specular Color       |
-+--------------------------------+-------------------------------+
-| const vec3 *LIGHT\_SPECULAR*   | Light Specular Color          |
-+--------------------------------+-------------------------------+
-| const float *SPECULAR\_EXP*    | Specular Exponent             |
-+--------------------------------+-------------------------------+
-| const vec1 *SHADE\_PARAM*      | Generic Shade Parameter       |
-+--------------------------------+-------------------------------+
-| const vec2 *POINT\_COORD*      | Current UV for Point Sprite   |
-+--------------------------------+-------------------------------+
-| out vec2 *LIGHT*               | Resulting Light               |
-+--------------------------------+-------------------------------+
-| const float *TIME*             | Time (in seconds)             |
-+--------------------------------+-------------------------------+
 
-CanvasItem (2D) - VertexShader
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------+--------------------------------------------------------------------------------------------+
-| Variable                          | Description                                                                                |
-+===================================+============================================================================================+
-| const vec2 *SRC\_VERTEX*          | CanvasItem space vertex.                                                                   |
-+-----------------------------------+--------------------------------------------------------------------------------------------+
-| vec2 *UV*                         | UV                                                                                         |
-+-----------------------------------+--------------------------------------------------------------------------------------------+
-| out vec2 *VERTEX*                 | Output LocalSpace vertex.                                                                  |
-+-----------------------------------+--------------------------------------------------------------------------------------------+
-| out vec2 *WORLD\_VERTEX*          | Output WorldSpace vertex. (use this or the one above)                                      |
-+-----------------------------------+--------------------------------------------------------------------------------------------+
-| color *COLOR*                     | Vertex Color                                                                               |
-+-----------------------------------+--------------------------------------------------------------------------------------------+
-| out vec4 *VAR1*                   | Varying 1 Output                                                                           |
-+-----------------------------------+--------------------------------------------------------------------------------------------+
-| out vec4 *VAR2*                   | Varying 2 Output                                                                           |
-+-----------------------------------+--------------------------------------------------------------------------------------------+
-| out float *POINT\_SIZE*           | Point Size (for points)                                                                    |
-+-----------------------------------+--------------------------------------------------------------------------------------------+
-| const mat4 *WORLD\_MATRIX*        | Object World Matrix                                                                        |
-+-----------------------------------+--------------------------------------------------------------------------------------------+
-| const mat4 *EXTRA\_MATRIX*        | Extra (user supplied) matrix via CanvasItem.draw\_set\_transform(). Identity by default.   |
-+-----------------------------------+--------------------------------------------------------------------------------------------+
-| const mat4 *PROJECTION\_MATRIX*   | Projection Matrix (model coords to screen).                                                |
-+-----------------------------------+--------------------------------------------------------------------------------------------+
-| const float *TIME*                | Time (in seconds)                                                                          |
-+-----------------------------------+--------------------------------------------------------------------------------------------+
-| const bool *AT_LIGHT_PASS*        | Whether the shader is being run for a lighting pass (happens per affecting light)          |
-+-----------------------------------+--------------------------------------------------------------------------------------------+
 
-CanvasItem (2D) - FragmentShader
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+-------------------------------------+-----------------------------------------------------------------------------------+
-| Variable                            | Description                                                                       |
-+=====================================+===================================================================================+
-| const vec4 *SRC\_COLOR*             | Vertex color                                                                      |
-+-------------------------------------+-----------------------------------------------------------------------------------+
-| const vec4 *POSITION*               | Screen Position                                                                   |
-+-------------------------------------+-----------------------------------------------------------------------------------+
-| vec2 *UV*                           | UV                                                                                |
-+-------------------------------------+-----------------------------------------------------------------------------------+
-| out color *COLOR*                   | Output Color                                                                      |
-+-------------------------------------+-----------------------------------------------------------------------------------+
-| out vec3 *NORMAL*                   | Optional Normal (used for 2D Lighting)                                            |
-+-------------------------------------+-----------------------------------------------------------------------------------+
-| out vec3 *NORMALMAP*                | Optional Normal in standard normalmap format (flipped y and Z from 0 to 1)        |
-+-------------------------------------+-----------------------------------------------------------------------------------+
-| out float *NORMALMAP\_DEPTH*        | Depth option for above normalmap output, default value is 1.0                     |
-+-------------------------------------+-----------------------------------------------------------------------------------+
-| const texture *TEXTURE*             | Current texture in use for CanvasItem                                             |
-+-------------------------------------+-----------------------------------------------------------------------------------+
-| const vec2 *TEXTURE\_PIXEL\_SIZE*   | Pixel size for current 2D texture                                                 |
-+-------------------------------------+-----------------------------------------------------------------------------------+
-| in vec4 *VAR1*                      | Varying 1 Output                                                                  |
-+-------------------------------------+-----------------------------------------------------------------------------------+
-| in vec4 *VAR2*                      | Varying 2 Output                                                                  |
-+-------------------------------------+-----------------------------------------------------------------------------------+
-| const vec2 *SCREEN\_UV*             | Screen Texture Coordinate (for using with texscreen)                              |
-+-------------------------------------+-----------------------------------------------------------------------------------+
-| const vec2 *POINT\_COORD*           | Current UV for Point Sprite                                                       |
-+-------------------------------------+-----------------------------------------------------------------------------------+
-| const float *TIME*                  | Time (in seconds)                                                                 |
-+-------------------------------------+-----------------------------------------------------------------------------------+
-| const bool *AT_LIGHT_PASS*          | Whether the shader is being run for a lighting pass (happens per affecting light) |
-+-------------------------------------+-----------------------------------------------------------------------------------+
-
-CanvasItem (2D) - LightShader
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+-------------------------------------+-------------------------------------------------------------------------------+
-| Variable                            | Description                                                                   |
-+=====================================+===============================================================================+
-| const vec4 *POSITION*               | Screen Position                                                               |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| in vec3 *NORMAL*                    | Input Normal                                                                  |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| in vec2 *UV*                        | UV                                                                            |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| in color *COLOR*                    | Input Color                                                                   |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| const texture *TEXTURE*             | Current texture in use for CanvasItem                                         |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| const vec2 *TEXTURE\_PIXEL\_SIZE*   | Pixel size for current 2D texture                                             |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| in vec4 *VAR1*                      | Varying 1 Output                                                              |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| in vec4 *VAR2*                      | Varying 2 Output                                                              |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| const vec2 *SCREEN\_UV*             | Screen Texture Coordinate (for using with texscreen)                          |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| const vec2 *POINT\_COORD*           | Current UV for Point Sprite                                                   |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| const float *TIME*                  | Time (in seconds)                                                             |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| vec2 *LIGHT\_VEC*                   | Vector from light to fragment, can be modified to alter shadow computation.   |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| const float *LIGHT\_HEIGHT*         | Height of Light                                                               |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| const color *LIGHT\_COLOR*          | Color of Light                                                                |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| const color *LIGHT\_SHADOW\_COLOR*  | Color of Light shadow                                                         |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| vec2 *LIGHT\_UV*                    | UV for light image                                                            |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| color *SHADOW*                      | Light shadow color override                                                   |
-+-------------------------------------+-------------------------------------------------------------------------------+
-| out vec4 *LIGHT*                    | Light Output (shader is ignored if this is not used)                          |
-+-------------------------------------+-------------------------------------------------------------------------------+
-
-Examples
---------
-
-Material that reads a texture, a color and multiples them, fragment
-program:
-
-::
-
-    uniform color modulate;
-    uniform texture source;
-
-    DIFFUSE = modulate.rgb * tex(source, UV).rgb;
-
-Material that glows from red to white:
-
-::
-
-    DIFFUSE = vec3(1,0,0) + vec3(1,1,1) * mod(TIME, 1.0);
-
-Standard Blinn Lighting Shader
-
-::
-
-    float NdotL = max(0.0, dot(NORMAL, LIGHT_DIR));
-    vec3 half_vec = normalize(LIGHT_DIR + EYE_VEC);
-    float eye_light = max(dot(NORMAL, half_vec), 0.0);
-    LIGHT = LIGHT_DIFFUSE + DIFFUSE + NdotL;
-    if (NdotL > 0.0) {
-        LIGHT += LIGHT_SPECULAR + SPECULAR + pow(eye_light, SPECULAR_EXP);
-    };
-
-Obtaining world-space normal and position in material fragment program:
-
-::
-
-    // Use reverse multiply because INV_CAMERA_MATRIX is world2cam
-
-    vec4 invcamx = INV_CAMERA_MATRIX.x;
-    vec4 invcamy = INV_CAMERA_MATRIX.y;
-    vec4 invcamz = INV_CAMERA_MATRIX.z;
-    vec4 invcamw = INV_CAMERA_MATRIX.w;
-
-    mat3 invcam = mat3(invcamx.xyz, invcamy.xyz, invcamz.xyz);
-
-    vec3 world_normal = NORMAL * invcam;
-    vec3 world_pos = (VERTEX - invcamw.xyz) * invcam;
-
-Notes
------
-
--  **Do not** use DIFFUSE_ALPHA unless you really intend to use
-   transparency. Transparent materials must be sorted by depth and slow
-   down the rendering pipeline. For opaque materials, just use DIFFUSE.
--  **Do not** use DISCARD unless you really need it. Discard makes
-   rendering slower, specially on mobile devices.
--  TIME may reset after a while (may last an hour or so), it's meant
-   for effects that vary over time.
--  In general, every built-in variable not used results in less shader
-   code generated, so writing a single giant shader with a lot of code
-   and optional scenarios is often not a good idea.
