@@ -21,6 +21,7 @@ modes, built-in variables and processing functions are supported.
 Any shader needs a first line specifying this type, in the following format:
 
 .. code-block:: glsl
+
 	shader_type <type>;
 
 Valid types are:
@@ -37,6 +38,7 @@ Different shader types support different render modes. They are optional but, if
 be after the *shader_type*. Example syntax is:
 
 .. code-block:: glsl
+
 	shader_type spatial;
 	render_mode unshaded,cull_disabled;
 
@@ -107,6 +109,7 @@ Casting of types of different size is also not allowed. Conversion must be done 
 Example:
 
 .. code-block:: glsl
+
 	float a = 2; // valid
 	float a = 2.0; // valid
 	float a = float(2); // valid
@@ -114,6 +117,7 @@ Example:
 Default integer constants are signed, so casting is always needed to convert to unsigned:
 
 .. code-block:: glsl
+
 	int a = 2; // valid
 	uint a = 2; // invalid
 	uint a = uint(2); // valid
@@ -132,6 +136,7 @@ Constructing
 Construction of vector types must always pass:
 
 .. code-block:: glsl
+
 	// The required amount of scalars
 	vec4 a = vec4(0.0, 1.0, 2.0, 3.0);
 	// Complementary vectors and/or scalars
@@ -160,6 +165,7 @@ Precision
 It is possible to add precision modifiers to datatypes, use them for uniforms, variables, arguments and varyings:
 
 .. code-block:: glsl
+
 	lowp vec4 a = vec4(0.0, 1.0, 2.0, 3.0); // low precision, usually 8 bits per component mapped to 0-1
 	mediump vec4 a = vec4(0.0, 1.0, 2.0, 3.0); // medium precision, usually 16 bits or half float
 	highp vec4 a = vec4(0.0, 1.0, 2.0, 3.0); // high precision, uses full float or integer range (default)
@@ -211,6 +217,7 @@ Flow Control
 Godot Shading language supports the most common types of flow control:
 
 .. code-block:: glsl
+
 	//if and else
 	if (cond) {
 
@@ -238,6 +245,7 @@ Functions
 It's possible to define any function in a Godot shader. They take the following syntax:
 
 .. code-block:: glsl
+
 	ret_type func_name(args) {
 
 		return ret_type; // if returning a value
