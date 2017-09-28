@@ -239,6 +239,11 @@ Godot Shading language supports the most common types of flow control:
 Keep in mind that, in modern GPUs, an infinite loop can exist and can freeze your application (including editor).
 Godot can't protect you from this, so be careful to not make this mistake!
 
+Discarding
+-----------
+
+Fragment and light functions can use the *discard* keyword. If used, the fragment is discarded and nothing is written.
+
 Functions
 ---------
 
@@ -570,12 +575,502 @@ When vec_type (float), vec_int_type, vec_uint_type, vec_bool_type, nomenclature 
 +-----------------------------------------------------------------------+---------------------------------------------+
 
 
+Shader Types In-Depth
+------------------
+
+Spatial
+~~~~~~~
+
+Accepted render modes and build-ins for "shader_type spatial;".
+
+Render Modes
+^^^^^^^^^^^^
+
++---------------------------------+----------------------------------------------------------------------+
+| Render Mode                     | Description                                                          |
++=================================+======================================================================+
+| **blend_mix**                   | Mix blend mode (alpha is transparency), default.                     |
++---------------------------------+----------------------------------------------------------------------+
+| **blend_add**                   | Additive blend mode.                                                 |
++---------------------------------+----------------------------------------------------------------------+
+| **blend_sub**                   | Substractive blend mode.                                             |
++---------------------------------+----------------------------------------------------------------------+
+| **blend_mul**                   | Multiplicative blend mode.                                           |
++---------------------------------+----------------------------------------------------------------------+
+| **depth_draw_opaque**           | Only draw depth for opaque geometry (not trasparent).                |
++---------------------------------+----------------------------------------------------------------------+
+| **depth_draw_always**           | Always draw depth (opaque and transparent).                          |
++---------------------------------+----------------------------------------------------------------------+
+| **depth_draw_never**            | Never draw depth.                                                    |
++---------------------------------+----------------------------------------------------------------------+
+| **depth_draw_alpha_prepass**    | Do opaque depth pre-pass for transparent geometry.                   |
++---------------------------------+----------------------------------------------------------------------+
+| **depth_test_disable**          | Disable depth testing.                                               |
++---------------------------------+----------------------------------------------------------------------+
+| **cull_front**                  | Cull front-faces.                                                    |
++---------------------------------+----------------------------------------------------------------------+
+| **cull_back**                   | Cull back-faces (default).                                           |
++---------------------------------+----------------------------------------------------------------------+
+| **cull_disabled**               | Culling disabled (double sided)                                      |
++---------------------------------+----------------------------------------------------------------------+
+| **unshaded**                    | Result is just albedo. No lighting/shading happens in material.      |
++---------------------------------+----------------------------------------------------------------------+
+| **diffuse_lambert**             | Lambert shading for diffuse (default)                                |
++---------------------------------+----------------------------------------------------------------------+
+| **diffuse_lambert_wrap**        | Lambert wrapping (roughness dependent) for diffuse.                  |
++---------------------------------+----------------------------------------------------------------------+
+| **diffuse_oren_nayar**          | Oren nayar for diffuse.                                              |
++---------------------------------+----------------------------------------------------------------------+
+| **diffuse_burley**              | Burley (Disney PBS) for diffuse.                                     |
++---------------------------------+----------------------------------------------------------------------+
+| **diffuse toon**                | Toon shading for diffuse.                                            |
++---------------------------------+----------------------------------------------------------------------+
+| **specular_schlick_ggx**        | Schick-GGX for specular (default)                                    |
++---------------------------------+----------------------------------------------------------------------+
+| **specular_blinn**              | Blinn for specular (compatibility)                                   |
++---------------------------------+----------------------------------------------------------------------+
+| **specular_phong**              | Phong for specular (compatibility)                                   |
++---------------------------------+----------------------------------------------------------------------+
+| **specular_toon**               | Toon for specular.                                                   |
++---------------------------------+----------------------------------------------------------------------+
+| **skip_vertex_transform**       | VERTEX/NORMAL/etc need to be transformed manually in VS.             |
++---------------------------------+----------------------------------------------------------------------+
+| **world_vertex_coords**         | VERTEX/NORMAL/etc are modified in world coordinates instead of local |
++---------------------------------+----------------------------------------------------------------------+
+| **vertex_lighting**             | Use vertex-based lighting.                                           |
++---------------------------------+----------------------------------------------------------------------+
 
 
+Vertex Built-Ins
+^^^^^^^^^^^^^^^^
+
++----------------------------------+-------------------------------------------------------+
+| Built-In                         | Object vertex to world space transform.               |
++==================================+=======================================================+
+| mat4 **WORLD_MATRIX**            | Model space to world space transform.                 |
++----------------------------------+-------------------------------------------------------+
+| mat4 **INV_CAMERA_MATRIX**       | World space to view space transform.                  |
++----------------------------------+-------------------------------------------------------+
+| mat4 **PROJECTION_MATRIX**       | View space to  clip space transform.                  |
++----------------------------------+-------------------------------------------------------+
+| mat4 **CAMERA_MATRIX**           | View space to world space transform.                  |
++----------------------------------+-------------------------------------------------------+
+| mat4 **MODELVIEW_MATRIX**        | Model space to view space transform (use if possible) |
++----------------------------------+-------------------------------------------------------+
+| mat4 **INV_PROJECTION_MATRIX**   | Clip space to view space transform.                   |
++----------------------------------+-------------------------------------------------------+
+| float **TIME**                   | Elapsed total time in seconds.                        |
++----------------------------------+-------------------------------------------------------+
+| vec2 **VIEWPORT_SIZE**           | Size of viewport (in pixels).                         |
++----------------------------------+-------------------------------------------------------+
+| vec3 **VERTEX**                  | Vertex in local coords (see doc below)                |
++----------------------------------+-------------------------------------------------------+
+| vec3 **NORMAL**                  | Normal in local coords.                               |
++----------------------------------+-------------------------------------------------------+
+| vec3 **TANGENT**                 | Tangent in local coords.                              |
++----------------------------------+-------------------------------------------------------+
+| vec3 **BINORMAL**                | Binormal in local coords.                             |
++----------------------------------+-------------------------------------------------------+
+| vec2 **UV**                      | UV main channel.                                      |
++----------------------------------+-------------------------------------------------------+
+| vec2 **UV2**                     | UV secondary channel.                                 |
++----------------------------------+-------------------------------------------------------+
+| vec4 **COLOR**                   | Color from vertices.                                  |
++----------------------------------+-------------------------------------------------------+
+| vec2 **POINT_SIZE**              | Point size for point rendering.                       |
++----------------------------------+-------------------------------------------------------+
+| int **INSTANCE_ID**              | Instance ID for instancing.                           |
++----------------------------------+-------------------------------------------------------+
+| vec4 **INSTANCE_CUSTOM**         | Instance custom data (for particles, mostly)          |
++----------------------------------+-------------------------------------------------------+
+| float **ROUGHNESS**              | Roughness for vertex lighting.                        |
++----------------------------------+-------------------------------------------------------+
 
 
+Vertex data (VERTEX, NORMAL, TANGENT, BITANGENT) is presented in local model space. If not
+written to, these values will not be modified and be passed through as they came.
+
+They can be optionally set to be presented in world space (after being transformed by world) 
+by adding the *world_vertex_coords* render mode. 
+
+It is also possible to completely disable the built-in modelview transform (projection will still
+happen later, though) with the following code, so it can be done manually:
+
+.. code-block:: glsl
+
+	shader_type spatial;
+	render_mode skip_vertex_transform;
+
+	void vertex() {
+
+		VERTEX = (MODELVIEW_MATRIX * vec4(VERTEX,1.0)).xyz;
+		NORMAL = (MODELVIEW_MATRIX * vec4(VERTEX,0.0)).xyz; 
+		//same as above for binormal and tangent, if normal mapping is used
+	}
 
 
+Other built-ins such as UV, UV2 and COLOR are also passed through to the fragment function if not modified.
+
+For instancing, the INSTANCE_CUSTOM variable contains the instance custom data. When using particles, this information
+is usually: 
+
+* **x**: Rotation angle in radians.
+* **y**: Phase during lifetime (0 to 1).
+* **z**: Animation frame.
+
+This allows to easily adjust the shader to a particle system using default particles material. When writing a custom particles
+shader, this value can be used as desired.
+
+
+Fragment Built-Ins
+^^^^^^^^^^^^^^^^^^
+
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| Built-In                         | Description                                                                                      |
++==================================+==================================================================================================+
+| in mat4 **WORLD_MATRIX**         | Model space to world space transform.                                                            |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| in mat4 **INV_CAMERA_MATRIX**    | World space to view space transform.                                                             |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| in mat4 **PROJECTION_MATRIX**    | View space to  clip space transform.                                                             |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| in mat4 **CAMERA_MATRIX**        | View space to world space transform.                                                             |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| in mat4 **INV_PROJECTION_MATRIX**| Clip space to view space transform.                                                              |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| float **TIME**                   | Elapsed total time in seconds.                                                                   |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| vec2 **VIEWPORT_SIZE**           | Size of viewport (in pixels).                                                                    |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| vec3 **VERTEX**                  | Vertex that comes from  vertex function, in view space.                                          |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| in vec4 **FRAGCOORD**            | Fragment cordinate, pixel adjusted.                                                              |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| in bool **FRONT_FACING**         | true whether current face is front face.                                                         |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| inout vec3 **NORMAL**            | Normal that comes from vertex function, in view space.                                           |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| inout vec3 **TANGENT**           | Tangent that comes from vertex function.                                                         |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| inout vec3 **BINORMAL**          | Binormal that comes from vertex function.                                                        |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| out vec3 **NORMALMAP**           | Output this if reading normal from a texture instead of NORMAL.                                  |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| out float **NORMALMAP_DEPTH**    | Depth from variable avobe. Defaults to 1.0.                                                      |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| in vec2 **UV**                   | UV that comes from vertex frunction.                                                             |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| in vec2 **UV2**                  | UV2 that coems from vertex function.                                                             |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| in vec4 **COLOR**                | COLOR that comes from vertex function.                                                           |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| out vec3 **ALBEDO**              | Albedo (default white)                                                                           |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| out float **ALPHA**              | Alpha (0..1), if written to the material will go to transparent pipeline.                        |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| out float **METALLIC**           | Metallic (0..1)                                                                                  |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| out float **SPECULAR**           | Specular. Defaults to 0.5, best to not modify unless you want to change IOR.                     |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| out float **ROUGHNESS**          | Roughness (0..1)                                                                                 |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| out float **RIM**                | Rim (0..1)                                                                                       |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| out float **RIM_TINT**           | Rim Tint, goes from 0 (white) to 1 (albedo)                                                      |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| out float **CLEARCOAT**          | Small added specular blob.                                                                       |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| out float **CLEARCOAT_GLOSS**    | Gloss of Clearcoat.                                                                              |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| out float **ANISOTROPY**         | For distorting the specular blob according to tangent space.                                     |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| out float **ANISOTROPY_FLOW**    | Distortion direction, use with flowmaps.                                                         |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| out float **SSS_STRENGTH**       | Strength of Subsurface Scattering (default 0)                                                    |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| out vec3 **TRANSMISSION**        | Transmission mask (default 0,0,0).                                                               |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| out foat **AO**                  | Ambient Occlusion (pre-baked).                                                                   |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| out float **AO_LIGHT_AFFECT**    | How much AO affects lights (0..1. defalt 0, none)                                                |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| out vec3 **EMISSION**            | Emission color (can go over 1,1,1 for HDR)                                                       |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| in sampler2D **SCREEN_TEXTURE**  | Built-in Texture for reading from the screen. Mipmaps contain increasingly blurred copies.       |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| in sampler2D **DEPTH_TEXTURE**   | Built-in Textue for reading depth from the screen. Must convert to linear using INV_PROJECTION.  |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| in vec2 **SCREEN_UV**            | Screen UV coordinate for current pixel.                                                          |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| in vec2 **POINT_COORD**          | Point Coord for drawing points with POINT_SIZE.                                                  |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| in float **SIDE**                | SIDE multiplier, for double sided materials.                                                     |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+| out float **ALPHA_SCISSOR**      | If written to, values below a certain amount of alpha are discarded.                             |
++----------------------------------+--------------------------------------------------------------------------------------------------+
+
+
+Values marked as "in" are read-only. Values marked as "out" are for optional writing. If nothing is written, a default value is used.
+
+Light Built-Ins
+^^^^^^^^^^^^^^^
+
++----------------------------------+------------------------------------------+
+| Built-in                         | Description                              |
++==================================+==========================================+
+| in mat4 **WORLD_MATRIX**         | Model space to world space transform.    |
++----------------------------------+------------------------------------------+
+| in mat4 **INV_CAMERA_MATRIX**    | World space to view space transform.     |
++----------------------------------+------------------------------------------+
+| in mat4 **PROJECTION_MATRIX**    | View space to  clip space transform.     |
++----------------------------------+------------------------------------------+
+| in mat4 **CAMERA_MATRIX**        | View space to world space transform.     |
++----------------------------------+------------------------------------------+
+| in mat4 **INV_PROJECTION_MATRIX**| Clip space to view space transform.      |
++----------------------------------+------------------------------------------+
+| in float **TIME**                | Elapsed total time in seconds.           |
++----------------------------------+------------------------------------------+
+| in vec2 **VIEWPORT_SIZE**        | Size of viewport (in pixels).            |
++----------------------------------+------------------------------------------+
+| in vec3 **NORMAL**               | Normal vector.                           |
++----------------------------------+------------------------------------------+
+| in vec3 **VIEW**                 | View vector.                             |
++----------------------------------+------------------------------------------+
+| in vec3  **LIGHT**               | Light Vector.                            |
++----------------------------------+------------------------------------------+
+| in vec3 **LIGHT_COLOR**          | Color of light multipled by energy.      |
++----------------------------------+------------------------------------------+
+| in vec3 **ATTENUATION**          | Attenuation based on distance or shadow. |
++----------------------------------+------------------------------------------+
+| in vec3 **ALBEDO**               | Base albedo.                             |
++----------------------------------+------------------------------------------+
+| in vec3 **TRANSMISSION**         | Transmission mask.                       |
++----------------------------------+------------------------------------------+
+| in float **roughness**           | Roughness.                               |
++----------------------------------+------------------------------------------+
+| out vec3 **DIFFUSE_LIGHT**       | Diffuse light result.                    |
++----------------------------------+------------------------------------------+
+| out vec3 **SPECULAR_LIGHT**      | Specular light result.                   |
++----------------------------------+------------------------------------------+
+
+Writing light shaders is completely optional. Unlike other game engines, they dont affect
+performacne or force a specific pipeline. 
+
+To write a light shader, simply make sure to assign something to DIFFUSE_LIGHT or SPECULAR_LIGHT.
+Assigning nothing means no light is processed.
+
+
+Canvas Item
+~~~~~~~~~~~~
+
+Accepted render modes and build-ins for "shader_type canvas_item;".
+
+Render Modes
+^^^^^^^^^^^^
+
++---------------------------------+----------------------------------------------------------------------+
+| Render Mode                     | Description                                                          |
++=================================+======================================================================+
+| **blend_mix**                   | Mix blend mode (alpha is transparency), default.                     |
++---------------------------------+----------------------------------------------------------------------+
+| **blend_add**                   | Additive blend mode.                                                 |
++---------------------------------+----------------------------------------------------------------------+
+| **blend_sub**                   | Substractive blend mode.                                             |
++---------------------------------+----------------------------------------------------------------------+
+| **blend_mul**                   | Multiplicative blend mode.                                           |
++---------------------------------+----------------------------------------------------------------------+
+| **blend_premul_alpha**          | Premultiplied alpha blend mode.                                      |
++---------------------------------+----------------------------------------------------------------------+
+| **unshaded**                    | Result is just albedo. No lighting/shading happens in material.      |
++---------------------------------+----------------------------------------------------------------------+
+| **light_only**                  | Only draw for light pass (when multipass is used)                    |
++---------------------------------+----------------------------------------------------------------------+
+| **skip_vertex_transform**       | VERTEX/NORMAL/etc need to be transformed manually in VS.             |
++---------------------------------+----------------------------------------------------------------------+
+
+Vertex Built-Ins
+^^^^^^^^^^^^^^^^
+
++--------------------------------+----------------------------------------------------------------+
+| Built-In                       | Description                                                    |
++================================+================================================================+
+| in mat4 **WORLD_MATRIX**       | Image to World transform.                                      |
++--------------------------------+----------------------------------------------------------------+
+| in mat4 **EXTRA_MATRIX**       | Extra transform                                                |
++--------------------------------+----------------------------------------------------------------+
+| in mat4 **PROJECTION_MATRIX**  | World to view transform.                                       |
++--------------------------------+----------------------------------------------------------------+
+| in float **TIME**              | Global time, in seconds.                                       |
++--------------------------------+----------------------------------------------------------------+
+| in vec4 **INSTANCE_CUSTOM**    | Instance custom data.                                          |
++--------------------------------+----------------------------------------------------------------+
+| in bool **AT_LIGHT_PASS**      | True if this is a light pass (for multi-pass light rendering). |
++--------------------------------+----------------------------------------------------------------+
+| inout vec2 **VERTEX**          | Vertex in image space.                                         |
++--------------------------------+----------------------------------------------------------------+
+| inout vec2 **UV**              | UV                                                             |
++--------------------------------+----------------------------------------------------------------+
+| inout vec4 **COLOR**           | Color from vertex primitive.                                   |
++--------------------------------+----------------------------------------------------------------+
+| out vec2 **POINT_SIZE**        | Point size for point drawing.                                  |
++--------------------------------+----------------------------------------------------------------+
+
+
+Vertex data (VERTEX) is presented in local space.
+If not written to, these values will not be modified and be passed through as they came.
+
+It is possible to completely disable the built-in modelview transform (projection will still
+happen later, though) with the following code, so it can be done manually:
+
+.. code-block:: glsl
+
+	shader_type spatial;
+	render_mode skip_vertex_transform;
+
+	void vertex() {
+
+		VERTEX = (EXTRA_MATRIX * (WORLD_MATRIX * vec4(VERTEX,0.0,1.0))).xy;
+	}
+
+
+Other built-ins such as UV and COLOR are also passed through to the fragment function if not modified.
+
+For instancing, the INSTANCE_CUSTOM variable contains the instance custom data. When using particles, this information
+is usually: 
+
+* **x**: Rotation angle in radians.
+* **y**: Phase during lifetime (0 to 1).
+* **z**: Animation frame.
+
+This allows to easily adjust the shader to a particle system using default particles material. When writing a custom particles
+shader, this value can be used as desired.
+
+Fragment Built-Ins
+^^^^^^^^^^^^^^^^^
+
++----------------------------------+------------------------------------------------------------+
+| Built-In                         | Description                                                |
++==================================+============================================================+
+| in vec4 **FRAGCOORD**            | Fragment cordinate, pixel adjusted.                        |
++----------------------------------+------------------------------------------------------------+
+| out  vec3 **NORMAL**             | Normal, writable.                                          |
++----------------------------------+------------------------------------------------------------+
+| out vec3 **NORMALMAP**           | Normal from texture, default is read from NORMAL_TEXTURE.  |
++----------------------------------+------------------------------------------------------------+
+| out float **NORMALMAP_DEPTH**    | Normalmap depth for scaling.                               |
++----------------------------------+------------------------------------------------------------+
+| in vec2 **UV**                   | UV from vertex function.                                   |
++----------------------------------+------------------------------------------------------------+
+| in vec4 **COLOR**                | Color from vertex function.                                |
++----------------------------------+------------------------------------------------------------+
+| in sampler2D **TEXTURE**         | Default 2D texture.                                        |
++----------------------------------+------------------------------------------------------------+
+| in sampler2D **NORMAL_TEXTURE**  | Default 2D normal texture.                                 |
++----------------------------------+------------------------------------------------------------+
+| in vec2 **TEXTURE_PIXEL_SIZE**   | Default 2D texture pixel size.                             |
++----------------------------------+------------------------------------------------------------+
+| in vec2 **SCREEN_UV**            | Screen UV for use with SCREEN_TEXTURE.                     |
++----------------------------------+------------------------------------------------------------+
+| in vec2 **SCREEN_PIXEL_SIZE**    | Screen pixel size.                                         |
++----------------------------------+------------------------------------------------------------+
+| in vec2 **POINT_COORD**          | Coordinate for drawing points.                             |
++----------------------------------+------------------------------------------------------------+
+| in float **TIME**                | Global time in seconds.                                    |
++----------------------------------+------------------------------------------------------------+
+| in sampler2D **SCREEN_TEXTURE**  | Screen texture, mipmaps contain gaussian blurred versions. |
++----------------------------------+------------------------------------------------------------+
+
+Light Built-Ins
+^^^^^^^^^^^^^^^^
+
++-------------------------------------+-------------------------------------------------------------------------------+
+| Built-In                            | Description                                                                   |
++=====================================+===============================================================================+
+| in vec4 **POSITION**                | Screen Position                                                               |
++-------------------------------------+-------------------------------------------------------------------------------+
+| in vec3 **NORMAL**                  | Input Normal                                                                  |
++-------------------------------------+-------------------------------------------------------------------------------+
+| in vec2 **UV**                      | UV                                                                            |
++-------------------------------------+-------------------------------------------------------------------------------+
+| in vec4 **COLOR**                   | Input Color                                                                   |
++-------------------------------------+-------------------------------------------------------------------------------+
+| in sampler2D **TEXTURE**            | Current texture in use for CanvasItem                                         |
++-------------------------------------+-------------------------------------------------------------------------------+
+| in vec2 **TEXTURE_PIXEL_SIZE**      | Pixel size for current 2D texture                                             |
++-------------------------------------+-------------------------------------------------------------------------------+
+| in vec2 **SCREEN_UV**               | Screen Texture Coordinate (for using with texscreen)                          |
++-------------------------------------+-------------------------------------------------------------------------------+
+| in vec2 **POINT_COORD**             | Current UV for Point Sprite                                                   |
++-------------------------------------+-------------------------------------------------------------------------------+
+| in float **TIME**                   | Time (in seconds)                                                             |
++-------------------------------------+-------------------------------------------------------------------------------+
+| vec2 **LIGHT\_VEC**                 | Vector from light to fragment, can be modified to alter shadow computation.   |
++-------------------------------------+-------------------------------------------------------------------------------+
+| in float **LIGHT\_HEIGHT**          | Height of Light                                                               |
++-------------------------------------+-------------------------------------------------------------------------------+
+| in color **LIGHT\_COLOR**           | Color of Light                                                                |
++-------------------------------------+-------------------------------------------------------------------------------+
+| in color **LIGHT\_SHADOW\_COLOR**   | Color of Light shadow                                                         |
++-------------------------------------+-------------------------------------------------------------------------------+
+| in vec2 **LIGHT\_UV**               | UV for light image                                                            |
++-------------------------------------+-------------------------------------------------------------------------------+
+| in vec4 **SHADOW**                  | Light shadow color override                                                   |
++-------------------------------------+-------------------------------------------------------------------------------+
+| out vec4 **LIGHT**                  | Light Output (shader is ignored if this is not used)                          |
++-------------------------------------+-------------------------------------------------------------------------------+
+
+
+Particles
+~~~~~~~~~
+
+Accepted render modes and build-ins for "shader_type particles;".
+
+Render Modes
+^^^^^^^^^^^^
+
++---------------------------------+----------------------------------------------------------------------+
+| Render Mode                     | Description                                                          |
++=================================+======================================================================+
+| **billboard**                   | Particle will be shown as a billboard.                               |
++---------------------------------+----------------------------------------------------------------------+
+| **keep_data**                   | Do not clear previous data on restart.                               |
++---------------------------------+----------------------------------------------------------------------+
+
+Vertex Built-Ins
+^^^^^^^^^^^^^^^^
+
++---------------------------------+-----------------------------------------------------------+
+| Built-In                        | Description                                               |
++=================================+===========================================================+
+| inout vec4 **COLOR**            | Particle color, can be written to.                        |
++---------------------------------+-----------------------------------------------------------+
+| inout vec3 **VELOCITY**         | Particle velocity, can be modified.                       |
++---------------------------------+-----------------------------------------------------------+
+| out float **MASS**              | Particle mass, use for attractors (default 1)             |
++---------------------------------+-----------------------------------------------------------+
+| inout bool **ACTIVE**           | Particle is active, can be set to false.                  |
++---------------------------------+-----------------------------------------------------------+
+| in bool **RESTART**             | Set to true when particle must restart (lifetime cycled). |
++---------------------------------+-----------------------------------------------------------+
+| inout vec4 **CUSTOM**           | Custom particle data.                                     |
++---------------------------------+-----------------------------------------------------------+
+| inout mat4 **TRANSFORM**        | Particle transform.                                       |
++---------------------------------+-----------------------------------------------------------+
+| in float **TIME**               | Global time in seconds.                                   |
++---------------------------------+-----------------------------------------------------------+
+| in float **DELTA**              | Delta process time.                                       |
++---------------------------------+-----------------------------------------------------------+
+| in uint **NUMBER**              | Unique number since emission start.                       |
++---------------------------------+-----------------------------------------------------------+
+| in int **INDEX**                | Particle index (from total particles).                    |
++---------------------------------+-----------------------------------------------------------+
+| in mat4 **EMISSION_TRANSFORM**  | Emitter transform (used for non-local systems)            |
++---------------------------------+-----------------------------------------------------------+
+| in uint **RANDOM_SEED**         | Random seed used as base for random.                      |
++---------------------------------+-----------------------------------------------------------+
+
+Particle shades only support vertex processing. They are drawn with any regular material for CanvasItem or Spatial, depending on
+whether they are 2D or 3D.
 
 
 
