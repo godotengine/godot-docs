@@ -765,7 +765,7 @@ Fragment Built-Ins
 +----------------------------------+--------------------------------------------------------------------------------------------------+
 | out float **NORMALMAP_DEPTH**    | Depth from variable above. Defaults to 1.0.                                                      |
 +----------------------------------+--------------------------------------------------------------------------------------------------+
-| in vec2 **UV**                   | UV that comes from vertex frunction.                                                             |
+| in vec2 **UV**                   | UV that comes from vertex function.                                                              |
 +----------------------------------+--------------------------------------------------------------------------------------------------+
 | in vec2 **UV2**                  | UV2 that coems from vertex function.                                                             |
 +----------------------------------+--------------------------------------------------------------------------------------------------+
@@ -799,7 +799,7 @@ Fragment Built-Ins
 +----------------------------------+--------------------------------------------------------------------------------------------------+
 | out foat **AO**                  | Ambient Occlusion (pre-baked).                                                                   |
 +----------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **AO_LIGHT_AFFECT**    | How much AO affects lights (0..1. defalt 0, none)                                                |
+| out float **AO_LIGHT_AFFECT**    | How much AO affects lights (0..1. default 0, none)                                               |
 +----------------------------------+--------------------------------------------------------------------------------------------------+
 | out vec3 **EMISSION**            | Emission color (can go over 1,1,1 for HDR)                                                       |
 +----------------------------------+--------------------------------------------------------------------------------------------------+
@@ -860,8 +860,8 @@ Light Built-Ins
 | out vec3 **SPECULAR_LIGHT**      | Specular light result.                   |
 +----------------------------------+------------------------------------------+
 
-Writing light shaders is completely optional. Unlike other game engines, they dont affect
-performacne or force a specific pipeline. 
+Writing light shaders is completely optional. Unlike other game engines, they don't affect
+performance or force a specific pipeline. 
 
 To write a light shader, simply make sure to assign something to DIFFUSE_LIGHT or SPECULAR_LIGHT.
 Assigning nothing means no light is processed.
@@ -958,7 +958,7 @@ Fragment Built-Ins
 +----------------------------------+------------------------------------------------------------+
 | Built-In                         | Description                                                |
 +==================================+============================================================+
-| in vec4 **FRAGCOORD**            | Fragment cordinate, pixel adjusted.                        |
+| in vec4 **FRAGCOORD**            | Fragment coordinate, pixel adjusted.                       |
 +----------------------------------+------------------------------------------------------------+
 | out  vec3 **NORMAL**             | Normal, writable.                                          |
 +----------------------------------+------------------------------------------------------------+
