@@ -103,7 +103,7 @@ Most GLSL ES 3.0 datatypes are supported. Following is the list:
 Casting
 ~~~~~~~
 
-Just like GLSL ES 3.0, implicit castling is not allowed between scalars and vectors of the same size but different type.
+Just like GLSL ES 3.0, implicit casting is not allowed between scalars and vectors of the same size but different type.
 Casting of types of different size is also not allowed. Conversion must be done explicitly via constructors.
 
 Example:
@@ -174,7 +174,7 @@ It is possible to add precision modifiers to datatypes, use them for uniforms, v
 Using lower precision for some operations can speed up the math involved (at the cost of, of course, less precision).
 This is rarely needed in the vertex shader (where full precision is needed most of the time), but often needed in the fragment one.
 
-Keep in mind that some architectures (mainly mobile) benefit a lot on this, but are also restricted (conversion between precisions has a cost).
+Keep in mind that some architectures (mainly mobile) benefit a lot from this, but are also restricted (conversion between precisions has a cost).
 Please read the relevant documentation on the target architecture to find out more. In all honesty though, mobile drivers are really buggy
 so just stay out of trouble and make simple shaders without specifying precission unless you *really* need to.
 
@@ -186,7 +186,7 @@ Godot shading language supports the same set of operators as GLSL ES 3.0. Below 
 +-------------+-----------------------+--------------------+
 | Precedence  | Class                 | Operator           |
 +-------------+-----------------------+--------------------+
-| 1 (highest) | parenthical grouping  | **()**             |
+| 1 (highest) | parenthetical grouping| **()**             |
 +-------------+-----------------------+--------------------+
 | 2           | unary                 | **+, -, !, ~**     |
 +-------------+-----------------------+--------------------+
@@ -309,7 +309,7 @@ vertex functions are not that commonly used.
 Fragment Processor
 ~~~~~~~~~~~~~~~~~~
 
-The "fragent" processor is used to set up the Godot material parameters per pixel. This code
+The "fragment" processor is used to set up the Godot material parameters per pixel. This code
 runs on every visible pixel the object or primitive is drawn to.
 
 .. code-block:: glsl
@@ -361,7 +361,7 @@ Uniforms
 
 Passing values to shaders is possible. These are global to the whole shader and called *uniforms*. 
 When a shader is later assigned to a material, the uniforms will appear as editable parameters on it.
-Uniforms can't be written from within the shadr.
+Uniforms can't be written from within the shader.
 
 .. code-block:: glsl
 
@@ -424,8 +424,8 @@ Uniforms can also be assigned default values:
 Built-in Functions
 ------------------
 
-A large amount of built-in functions is supported, confirming mostly to GLSL ES 3.0.
-When vec_type (float), vec_int_type, vec_uint_type, vec_bool_type, nomenclature is used, it can be scalar or vcetor.
+A large number of built-in functions are supported, conforming mostly to GLSL ES 3.0.
+When vec_type (float), vec_int_type, vec_uint_type, vec_bool_type, nomenclature is used, it can be scalar or vector.
 
 
 
@@ -588,7 +588,7 @@ Shader Types In-Depth
 Spatial
 ~~~~~~~
 
-Accepted render modes and build-ins for "shader_type spatial;".
+Accepted render modes and built-ins for "shader_type spatial;".
 
 Render Modes
 ^^^^^^^^^^^^
@@ -626,13 +626,13 @@ Render Modes
 +---------------------------------+----------------------------------------------------------------------+
 | **diffuse_lambert_wrap**        | Lambert wrapping (roughness dependent) for diffuse.                  |
 +---------------------------------+----------------------------------------------------------------------+
-| **diffuse_oren_nayar**          | Oren nayar for diffuse.                                              |
+| **diffuse_oren_nayar**          | Oren Nayar for diffuse.                                              |
 +---------------------------------+----------------------------------------------------------------------+
 | **diffuse_burley**              | Burley (Disney PBS) for diffuse.                                     |
 +---------------------------------+----------------------------------------------------------------------+
 | **diffuse toon**                | Toon shading for diffuse.                                            |
 +---------------------------------+----------------------------------------------------------------------+
-| **specular_schlick_ggx**        | Schick-GGX for specular (default)                                    |
+| **specular_schlick_ggx**        | Schlick-GGX for specular (default)                                    |
 +---------------------------------+----------------------------------------------------------------------+
 | **specular_blinn**              | Blinn for specular (compatibility)                                   |
 +---------------------------------+----------------------------------------------------------------------+
@@ -658,7 +658,7 @@ Vertex Built-Ins
 +----------------------------------+-------------------------------------------------------+
 | mat4 **INV_CAMERA_MATRIX**       | World space to view space transform.                  |
 +----------------------------------+-------------------------------------------------------+
-| mat4 **PROJECTION_MATRIX**       | View space to  clip space transform.                  |
+| mat4 **PROJECTION_MATRIX**       | View space to clip space transform.                   |
 +----------------------------------+-------------------------------------------------------+
 | mat4 **CAMERA_MATRIX**           | View space to world space transform.                  |
 +----------------------------------+-------------------------------------------------------+
@@ -739,7 +739,7 @@ Fragment Built-Ins
 +----------------------------------+--------------------------------------------------------------------------------------------------+
 | in mat4 **INV_CAMERA_MATRIX**    | World space to view space transform.                                                             |
 +----------------------------------+--------------------------------------------------------------------------------------------------+
-| in mat4 **PROJECTION_MATRIX**    | View space to  clip space transform.                                                             |
+| in mat4 **PROJECTION_MATRIX**    | View space to clip space transform.                                                              |
 +----------------------------------+--------------------------------------------------------------------------------------------------+
 | in mat4 **CAMERA_MATRIX**        | View space to world space transform.                                                             |
 +----------------------------------+--------------------------------------------------------------------------------------------------+
@@ -763,7 +763,7 @@ Fragment Built-Ins
 +----------------------------------+--------------------------------------------------------------------------------------------------+
 | out vec3 **NORMALMAP**           | Output this if reading normal from a texture instead of NORMAL.                                  |
 +----------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **NORMALMAP_DEPTH**    | Depth from variable avobe. Defaults to 1.0.                                                      |
+| out float **NORMALMAP_DEPTH**    | Depth from variable above. Defaults to 1.0.                                                      |
 +----------------------------------+--------------------------------------------------------------------------------------------------+
 | in vec2 **UV**                   | UV that comes from vertex frunction.                                                             |
 +----------------------------------+--------------------------------------------------------------------------------------------------+
@@ -805,7 +805,7 @@ Fragment Built-Ins
 +----------------------------------+--------------------------------------------------------------------------------------------------+
 | in sampler2D **SCREEN_TEXTURE**  | Built-in Texture for reading from the screen. Mipmaps contain increasingly blurred copies.       |
 +----------------------------------+--------------------------------------------------------------------------------------------------+
-| in sampler2D **DEPTH_TEXTURE**   | Built-in Textue for reading depth from the screen. Must convert to linear using INV_PROJECTION.  |
+| in sampler2D **DEPTH_TEXTURE**   | Built-in Texture for reading depth from the screen. Must convert to linear using INV_PROJECTION. |
 +----------------------------------+--------------------------------------------------------------------------------------------------+
 | in vec2 **SCREEN_UV**            | Screen UV coordinate for current pixel.                                                          |
 +----------------------------------+--------------------------------------------------------------------------------------------------+
@@ -829,7 +829,7 @@ Light Built-Ins
 +----------------------------------+------------------------------------------+
 | in mat4 **INV_CAMERA_MATRIX**    | World space to view space transform.     |
 +----------------------------------+------------------------------------------+
-| in mat4 **PROJECTION_MATRIX**    | View space to  clip space transform.     |
+| in mat4 **PROJECTION_MATRIX**    | View space to clip space transform.      |
 +----------------------------------+------------------------------------------+
 | in mat4 **CAMERA_MATRIX**        | View space to world space transform.     |
 +----------------------------------+------------------------------------------+
@@ -845,7 +845,7 @@ Light Built-Ins
 +----------------------------------+------------------------------------------+
 | in vec3  **LIGHT**               | Light Vector.                            |
 +----------------------------------+------------------------------------------+
-| in vec3 **LIGHT_COLOR**          | Color of light multipled by energy.      |
+| in vec3 **LIGHT_COLOR**          | Color of light multiplied by energy.     |
 +----------------------------------+------------------------------------------+
 | in vec3 **ATTENUATION**          | Attenuation based on distance or shadow. |
 +----------------------------------+------------------------------------------+
@@ -870,7 +870,7 @@ Assigning nothing means no light is processed.
 Canvas Item
 ~~~~~~~~~~~~
 
-Accepted render modes and build-ins for "shader_type canvas_item;".
+Accepted render modes and built-ins for "shader_type canvas_item;".
 
 Render Modes
 ^^^^^^^^^^^^
@@ -1030,7 +1030,7 @@ Light Built-Ins
 Particles
 ~~~~~~~~~
 
-Accepted render modes and build-ins for "shader_type particles;".
+Accepted render modes and built-ins for "shader_type particles;".
 
 Render Modes
 ^^^^^^^^^^^^
