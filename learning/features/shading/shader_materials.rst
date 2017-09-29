@@ -6,9 +6,13 @@ Shader materials
 Introduction
 ------------
 
-For the most common cases, :ref:`doc_fixed_materials` are enough to create the
-desired textures or look and feel. Shader materials are a step beyond
-that, adding a huge amount of flexibility. With them, it is possible to:
+For the most common cases, Godot provides ready to use materials for
+most types of shaders, such as SpatialMaterial, CanvasItemMaterial and
+ParticlesMaterial (@TODO link to tutorials/classes). They are flexible implementations that cover most
+use cases. 
+
+Shader materials allow writing a custom shader directly, for maximum flexibility.
+Examples of this are:
 
 -  Create procedural textures.
 -  Create complex texture blendings.
@@ -16,6 +20,7 @@ that, adding a huge amount of flexibility. With them, it is possible to:
 -  Create refractive effects or other advanced effects.
 -  Create special lighting shaders for more exotic materials.
 -  Animate vertices, like tree leaves or grass.
+-  Create custom particle code, that responds to baked animations or force fields.
 -  And much more!
 
 Traditionally, most engines will ask you to learn GLSL, HLSL or CG,
@@ -28,8 +33,7 @@ Creating a ShaderMaterial
 -------------------------
 
 Create a new ShaderMaterial in some object of your choice. Go to the
-"Shader" property, then create a new "MaterialShader" (use
-"MaterialShaderGraph" for access to the visual graph editor):
+"Material" property and create a ShaderMaterial.
 
 .. image:: /img/shader_material_create.png
 
@@ -37,28 +41,15 @@ Edit the newly created shader, and the shader editor will open:
 
 .. image:: /img/shader_material_editor.png
 
-There are three code tabs open, the first is for the vertex shader, the
-second for the fragment and the third for the lighting. The shader
-language is documented in :ref:`doc_shading_language` so a small example will be
-presented next.
+Converting to ShaderMaterial
+----------------------------
 
-Create a very simple fragment shader that writes a color:
+It is possible to convert from SpatialMaterial, CanvasItemMaterial and
+ParticlesMaterial to ShaderMaterial. Just go to the material properties
+and enable the convert option.
 
-::
+.. image:: /img/shader_material_convert.png
 
-    uniform color col;
-    DIFFUSE = col.rgb;
 
-Code changes take place in real-time. If the code is modified, it will
-be instantly recompiled and the object will be updated. If a typo is
-made, the editor will notify of the compilation failure:
 
-.. image:: /img/shader_material_typo.png
 
-Finally, go back and edit the material, and the exported uniform will be
-instantly visible:
-
-.. image:: /img/shader_material_col.png
-
-This allows to very quickly create custom, complex materials for every
-type of object.

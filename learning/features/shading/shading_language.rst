@@ -384,25 +384,30 @@ to make the compiler understand what the uniform is used for.
 
 Full list of hints below:
 
-+-------------------+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Type              | Hint                          | Description                                                                                                                                                                                                            |
-+===================+===============================+========================================================================================================================================================================================================================+
-| **vec4**          | hint_color                    | This uniform is exported as a color parameter in property editor. Color is also converted from SRGB for 3D shaders.                                                                                                    |
-+-------------------+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **int**, **float**| hint_range(min,max [,step] )  | This scalar uniform is exported as a given range in property editor.                                                                                                                                                   |
-+-------------------+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **sampler2D**     | hint_albedo                   | This texture is used as albedo color. Godot will try to make sure the texture has SRGB -> Linear conversion turned on. If no texture is supplied, this is assumed to be white.                                         |
-+-------------------+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **sampler2D**     | hint_black_albedo             | Same as above but, if no texture is supplied, it's assumed to be black.                                                                                                                                                |
-+-------------------+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **sampler2D**     | hint_normal                   | The texture supplied is a normal map. Godot will attempt to convert the texture to a more efficient normalmap format when used here. Also, an empty texture results in a vec3(0.0,0.0,1.0) normal assigned by default. |
-+-------------------+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **sampler2D**     | hint_white                    | Regular texture (non albedo). White is used if unasigned.                                                                                                                                                              |
-+-------------------+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **sampler2D**     | hint_black                    | Regular texture (non albedo). Black is used if unassigned.                                                                                                                                                             |
-+-------------------+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **sampler2D**     | hint_aniso                    | Same as above, but vec3(1.0, 0.5, 0.0) is assigned by default (useful for flowmaps)                                                                                                                                    |
-+-------------------+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------+-------------------------------+-------------------------------------+
+| Type           | Hint                          | Description                         |
++================+===============================+=====================================+
+| **vec4**       | hint_color                    | Used as color                       |
++----------------+-------------------------------+-------------------------------------+
+| **int, float** | hint_range(min,max [,step] )  | Used as range (with min/max/step)   |
++----------------+-------------------------------+-------------------------------------+
+| **sampler2D**  | hint_albedo                   | Used as albedo color, default white |
++----------------+-------------------------------+-------------------------------------+
+| **sampler2D**  | hint_black_albedo             | Used as albedo color, default black |
++----------------+-------------------------------+-------------------------------------+
+| **sampler2D**  | hint_normal                   | Used as normalmap                   |
++----------------+-------------------------------+-------------------------------------+
+| **sampler2D**  | hint_white                    | As value, default to white.         |
++----------------+-------------------------------+-------------------------------------+
+| **sampler2D**  | hint_black                    | As value, default to black          |
++----------------+-------------------------------+-------------------------------------+
+| **sampler2D**  | hint_aniso                    | As flowmap, default to right.       |
++----------------+-------------------------------+-------------------------------------+
+
+
+As Godot 3D engine renders in linear color space, it's important to understand that textures
+that are supplied as color (ie, albedo) need to be specified as such for proper SRGB->linear
+conversion.
 
 
 Uniforms can also be assigned default values:
@@ -424,155 +429,157 @@ When vec_type (float), vec_int_type, vec_uint_type, vec_bool_type, nomenclature 
 
 
 
+
 +-----------------------------------------------------------------------+---------------------------------------------+
 | Function                                                              | Description                                 |
 +=======================================================================+=============================================+
-| float *sin* ( float )                                                 | Sine                                        |
+| float **sin** ( float )                                               | Sine                                        |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| float *cos* ( float )                                                 | Cosine                                      |
+| float **cos** ( float )                                               | Cosine                                      |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| float *tan* ( float )                                                 | Tangent                                     |
+| float **tan** ( float )                                               | Tangent                                     |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| float *asin* ( float )                                                | arc-Sine                                    |
+| float **asin** ( float )                                              | arc-Sine                                    |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| float *acos* ( float )                                                | arc-Cosine                                  |
+| float **acos** ( float )                                              | arc-Cosine                                  |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| float *atan* ( float )                                                | arc-Tangent                                 |
+| float **atan** ( float )                                              | arc-Tangent                                 |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| float *atan2* ( float x, float y)                                     | arc-Tangent to convert vector to angle      |
+| float **atan2** ( float x, float y)                                   | arc-Tangent to convert vector to angle      |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| float *sinh* ( float )                                                | Hyperbolic-Sine                             |
+| float **sinh** ( float )                                              | Hyperbolic-Sine                             |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| float *cosh* ( float )                                                | Hyperbolic-Cosine                           |
+| float **cosh** ( float )                                              | Hyperbolic-Cosine                           |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| float *tanh* ( float )                                                | Hyperbolic-Tangent                          |
+| float **tanh** ( float )                                              | Hyperbolic-Tangent                          |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec\_type *pow* ( float x, float y)                                   | Power, x elevated to y                      |
+| vec\_type **pow** ( float x, float y)                                 | Power, x elevated to y                      |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec\_type *pow* ( vec\_type, vec\_type )                              | Power (Vec. Exponent)                       |
+| vec\_type **pow** ( vec\_type, vec\_type )                            | Power (Vec. Exponent)                       |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec\_type *exp* ( vec\_type )                                         | Base-e Exponential                          |
+| vec\_type **exp** ( vec\_type )                                       | Base-e Exponential                          |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec\_type *log* ( vec\_type )                                         | Natural Logarithm                           |
+| vec\_type **log** ( vec\_type )                                       | Natural Logarithm                           |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec\_type *sqrt* ( vec\_type )                                        | Square Root                                 |
+| vec\_type **sqrt** ( vec\_type )                                      | Square Root                                 |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec\_type *inversesqrt* ( vec\_type )                                 | Inverse Square Root                         |
+| vec\_type **inversesqrt** ( vec\_type )                               | Inverse Square Root                         |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec\_type *abs* ( vec\_type )                                         | Absolute                                    |
+| vec\_type **abs** ( vec\_type )                                       | Absolute                                    |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec\_type *sign* ( vec\_type )                                        | Sign                                        |
+| vec\_type **sign** ( vec\_type )                                      | Sign                                        |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec\_type *floor* ( vec\_type )                                       | Floor                                       |
+| vec\_type **floor** ( vec\_type )                                     | Floor                                       |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec\_type *round* ( vec\_type )                                       | Round                                       |
+| vec\_type **round** ( vec\_type )                                     | Round                                       |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec\_type *trunc* ( vec\_type )                                       | Trunc                                       |
+| vec\_type **trunc** ( vec\_type )                                     | Trunc                                       |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec\_type *ceil* ( vec\_type )                                        | Ceiling                                     |
+| vec\_type **ceil** ( vec\_type )                                      | Ceiling                                     |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec\_type *fract* ( vec\_type )                                       | Fractional                                  |
+| vec\_type **fract** ( vec\_type )                                     | Fractional                                  |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec\_type *mod* ( vec\_type,vec\_type )                               | Remainder                                   |
+| vec\_type **mod** ( vec\_type,vec\_type )                             | Remainder                                   |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec\_type *modf* ( vec\_type x,out vec\_type i)                       | Fractional of x, with i has integer part    |
+| vec\_type **modf** ( vec\_type x,out vec\_type i)                     | Fractional of x, with i has integer part    |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec\_type *min* ( vec\_type,vec\_type )                               | Minimum                                     |
+| vec\_type **min** ( vec\_type,vec\_type )                             | Minimum                                     |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec\_type *min* ( vec\_type,vec\_type )                               | Maximum                                     |
+| vec\_type **min** ( vec\_type,vec\_type )                             | Maximum                                     |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec\_type *clamp* ( vec\_type value,vec\_type min, vec\_type max )    | Clamp to Min-Max                            |
+| vec\_type **clamp** ( vec\_type value,vec\_type min, vec\_type max )  | Clamp to Min-Max                            |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec\_type *mix* ( vec\_type a,vec\_type b, float c )                  | Linear Interpolate                          |
+| vec\_type **mix** ( vec\_type a,vec\_type b, float c )                | Linear Interpolate                          |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec\_type *mix* ( vec\_type a,vec\_type b, vec\_type c )              | Linear Interpolate (Vector Coef.)           |
+| vec\_type **mix** ( vec\_type a,vec\_type b, vec\_type c )            | Linear Interpolate (Vector Coef.)           |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec\_type *step* ( vec\_type a,vec\_type b)                           | \` a[i] < b[i] ? 0.0 : 1.0\`                |
+| vec\_type **step** ( vec\_type a,vec\_type b)                         | \` a[i] < b[i] ? 0.0 : 1.0\`                |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec\_type *smoothstep* ( vec\_type a,vec\_type b,vec\_type c)         |                                             |
+| vec\_type **smoothstep** ( vec\_type a,vec\_type b,vec\_type c)       |                                             |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec_bool_type *isnan* ( vec\_type )                                   | scalar, or vector component being nan       |
+| vec_bool_type **isnan** ( vec\_type )                                 | scalar, or vector component being nan       |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec_bool_type *isinf* ( vec\_type )                                   | scalar, or vector component being inf       |
+| vec_bool_type **isinf** ( vec\_type )                                 | scalar, or vector component being inf       |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec_int_type *floatBitsToInt* ( vec_type )                            | Float->Int bit copying, no conversion       |
+| vec_int_type **floatBitsToInt** ( vec_type )                          | Float->Int bit copying, no conversion       |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec_uint_type *floatBitsToUInt* ( vec_type )                          | Float->UInt bit copying, no conversion      |
+| vec_uint_type **floatBitsToUInt** ( vec_type )                        | Float->UInt bit copying, no conversion      |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec_type *intBitsToFloat* ( vec_int_type )                            | Int->Float bit copying, no conversion       |
+| vec_type **intBitsToFloat** ( vec_int_type )                          | Int->Float bit copying, no conversion       |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec_type *uintBitsToFloat* ( vec_uint_type )                          | UInt->Float bit copying, no conversion      |
+| vec_type **uintBitsToFloat** ( vec_uint_type )                        | UInt->Float bit copying, no conversion      |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| float *length* ( vec\_type )                                          | Vector Length                               |
+| float **length** ( vec\_type )                                        | Vector Length                               |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| float *distance* ( vec\_type, vec\_type )                             | Distance between vector.                    |
+| float **distance** ( vec\_type, vec\_type )                           | Distance between vector.                    |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| float *dot* ( vec\_type, vec\_type )                                  | Dot Product                                 |
+| float **dot** ( vec\_type, vec\_type )                                | Dot Product                                 |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec3 *cross* ( vec3, vec3 )                                           | Cross Product                               |
+| vec3 **cross** ( vec3, vec3 )                                         | Cross Product                               |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec\_type *normalize* ( vec\_type )                                   | Normalize to unit length                    |
+| vec\_type **normalize** ( vec\_type )                                 | Normalize to unit length                    |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec3 *reflect* ( vec3, vec3 )                                         | Reflect                                     |
+| vec3 **reflect** ( vec3, vec3 )                                       | Reflect                                     |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec3 *refract* ( vec3, vec3 )                                         | Refract                                     |
+| vec3 **refract** ( vec3, vec3 )                                       | Refract                                     |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec_type *faceforward* ( vec_type N, vec_type I, vec_type NRef)       | If dot(Nref, I) < 0 return N, otherwise –N  |
+| vec_type **faceforward** ( vec_type N, vec_type I, vec_type NRef)     | If dot(Nref, I) < 0 return N, otherwise –N  |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| mat_type *matrixCompMult* ( mat_type, mat_type )                      | Matrix Component Multiplication             |
+| mat_type **matrixCompMult** ( mat_type, mat_type )                    | Matrix Component Multiplication             |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| mat_type *outerProduct* ( vec_type, vec_type )                        | Matrix Outer Product                        |
+| mat_type **outerProduct** ( vec_type, vec_type )                      | Matrix Outer Product                        |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| mat_type *transpose* ( mat_type )                                     | Transpose Matrix                            |
+| mat_type **transpose** ( mat_type )                                   | Transpose Matrix                            |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| float *determinant* ( mat_type )                                      | Matrix Determinant                          |
+| float **determinant** ( mat_type )                                    | Matrix Determinant                          |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| mat_type *inverse* ( mat_type )                                       | Inverse Matrix                              |
+| mat_type **inverse** ( mat_type )                                     | Inverse Matrix                              |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec\_bool_type *lessThan* ( vec_scalar_type )                         | Bool vector cmp on < int/uint/float vectors |
+| vec\_bool_type **lessThan** ( vec_scalar_type )                       | Bool vector cmp on < int/uint/float vectors |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec\_bool_type *greaterThan* ( vec_scalar_type )                      | Bool vector cmp on > int/uint/float vectors |
+| vec\_bool_type **greaterThan** ( vec_scalar_type )                    | Bool vector cmp on > int/uint/float vectors |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec\_bool_type *lessThanEqual* ( vec_scalar_type )                    | Bool vector cmp on <=int/uint/float vectors |
+| vec\_bool_type **lessThanEqual** ( vec_scalar_type )                  | Bool vector cmp on <=int/uint/float vectors |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec\_bool_type *greaterThanEqual* ( vec_scalar_type )                 | Bool vector cmp on >=int/uint/float vectors |
+| vec\_bool_type **greaterThanEqual** ( vec_scalar_type )               | Bool vector cmp on >=int/uint/float vectors |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec\_bool_type *equal* ( vec_scalar_type )                            | Bool vector cmp on ==int/uint/float vectors |
+| vec\_bool_type **equal** ( vec_scalar_type )                          | Bool vector cmp on ==int/uint/float vectors |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec\_bool_type *notEqual* ( vec_scalar_type )                         | Bool vector cmp on !=int/uint/float vectors |
+| vec\_bool_type **notEqual** ( vec_scalar_type )                       | Bool vector cmp on !=int/uint/float vectors |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| bool *any* ( vec_bool_type )                                          | Any component is true                       |
+| bool **any** ( vec_bool_type )                                        | Any component is true                       |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| bool *all* ( vec_bool_type )                                          | All components are true                     |
+| bool **all** ( vec_bool_type )                                        | All components are true                     |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| bool *not* ( vec_bool_type )                                          | No components are true                      |
+| bool **not** ( vec_bool_type )                                        | No components are true                      |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| ivec2 *textureSize* ( sampler2D_type s, int lod )                     | Get the size of a texture                   |
+| ivec2 **textureSize** ( sampler2D_type s, int lod )                   | Get the size of a texture                   |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| ivec2 *textureSize* ( samplerCube s, int lod )                        | Get the size of a cubemap                   |
+| ivec2 **textureSize** ( samplerCube s, int lod )                      | Get the size of a cubemap                   |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec4_type *texture* ( sampler2D_type s, vec2 uv [, float bias])       | Perform a 2D texture read                   |
+| vec4_type **texture** ( sampler2D_type s, vec2 uv [, float bias])     | Perform a 2D texture read                   |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec4 *texture* ( samplerCube s, vec3 uv [, float bias])               | Perform a Cube texture read                 |
+| vec4 **texture** ( samplerCube s, vec3 uv [, float bias])             | Perform a Cube texture read                 |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec4_type *textureProj* ( sampler2d_type s, vec3 uv [, float bias])   | Perform a texture read with projection      |
+| vec4_type **textureProj** ( sampler2d_type s, vec3 uv [, float bias]) | Perform a texture read with projection      |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec4_type *textureProj* ( sampler2d_type s, vec4 uv [, float bias])   | Perform a texture read with projection      |
+| vec4_type **textureProj** ( sampler2d_type s, vec4 uv [, float bias]) | Perform a texture read with projection      |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec4_type *textureLod* ( sampler2D_type s, vec2 uv , float lod)       | Perform a 2D texture read at custom mipmap  |
+| vec4_type **textureLod** ( sampler2D_type s, vec2 uv , float lod)     | Perform a 2D texture read at custom mipmap  |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec4_type *textureProjLod* ( sampler2d_type s, vec3 uv , float lod)   | Perform a texture read with projection/lod  |
+| vec4_type **textureProjLod** ( sampler2d_type s, vec3 uv , float lod) | Perform a texture read with projection/lod  |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec4_type *textureProjLod* ( sampler2d_type s, vec4 uv , float lod)   | Perform a texture read with projection/lod  |
+| vec4_type **textureProjLod** ( sampler2d_type s, vec4 uv , float lod) | Perform a texture read with projection/lod  |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec_type *texelFetch* ( samplerCube s, ivec2 uv, int lod )            | Fetch a single texel using integer coords   |
+| vec_type **texelFetch** ( samplerCube s, ivec2 uv, int lod )          | Fetch a single texel using integer coords   |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec_type *dFdx* ( vec_type )                                          | Derivative in x using local differencing    |
+| vec_type **dFdx** ( vec_type )                                        | Derivative in x using local differencing    |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec_type *dFdy* ( vec_type )                                          | Derivative in y using local differencing    |
+| vec_type **dFdy** ( vec_type )                                        | Derivative in y using local differencing    |
 +-----------------------------------------------------------------------+---------------------------------------------+
-| vec_type *fwidth* ( vec_type )                                        | Sum of absolute derivative in x and y       |
+| vec_type **fwidth** ( vec_type )                                      | Sum of absolute derivative in x and y       |
 +-----------------------------------------------------------------------+---------------------------------------------+
+
 
 
 Shader Types In-Depth
@@ -846,7 +853,7 @@ Light Built-Ins
 +----------------------------------+------------------------------------------+
 | in vec3 **TRANSMISSION**         | Transmission mask.                       |
 +----------------------------------+------------------------------------------+
-| in float **roughness**           | Roughness.                               |
+| in float **ROUGHNESS**           | Roughness.                               |
 +----------------------------------+------------------------------------------+
 | out vec3 **DIFFUSE_LIGHT**       | Diffuse light result.                    |
 +----------------------------------+------------------------------------------+
