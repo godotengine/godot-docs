@@ -9,7 +9,7 @@ Introduction
 Godot uses a shading language very similar to GLSL ES 3.0. Most datatypes and functions are supported,
 and the remaining will likely be added over time.
 
-Unlike the shader language in Godot 2.x, this implementaiton is much closer to the original.
+Unlike the shader language in Godot 2.x, this implementation is much closer to the original.
 
 Shader Types
 ------------
@@ -103,7 +103,7 @@ Most GLSL ES 3.0 datatypes are supported. Following is the list:
 Casting
 ~~~~~~~
 
-Just like GLSL ES 3.0, implicit castling is not allowed between scalars and vectors of the same size but different type.
+Just like GLSL ES 3.0, implicit casting is not allowed between scalars and vectors of the same size but different type.
 Casting of types of different size is also not allowed. Conversion must be done explicitly via constructors.
 
 Example:
@@ -126,7 +126,7 @@ Members
 ~~~~~~~
 
 Individual scalar members of vector types are accessed via the "x", "y", "z" and "w" members. Alternatively, using "r", "g", "b" and "a" also works and is equivalent. 
-Use whathever fits best for your use case.
+Use whatever fits best for your use case.
 
 For matrices, use [idx] indexing syntax to access each vector.
 
@@ -176,7 +176,7 @@ This is rarely needed in the vertex shader (where full precision is needed most 
 
 Keep in mind that some architectures (mainly mobile) benefit a lot on this, but are also restricted (conversion between precisions has a cost).
 Please read the relevant documentation on the target architecture to find out more. In all honesty though, mobile drivers are really buggy
-so just stay out of trouble and make simple shaders without specifying precission unless you *really* need to.
+so just stay out of trouble and make simple shaders without specifying precision unless you *really* need to.
 
 Operators:
 ----------
@@ -309,7 +309,7 @@ vertex functions are not that commonly used.
 Fragment Processor
 ~~~~~~~~~~~~~~~~~~
 
-The "fragent" processor is used to set up the Godot material parameters per pixel. This code
+The "fragment" processor is used to set up the Godot material parameters per pixel. This code
 runs on every visible pixel the object or primitive is drawn to.
 
 .. code-block:: glsl
@@ -361,7 +361,7 @@ Uniforms
 
 Passing values to shaders is possible. These are global to the whole shader and called *uniforms*. 
 When a shader is later assigned to a material, the uniforms will appear as editable parameters on it.
-Uniforms can't be written from within the shadr.
+Uniforms can't be written from within the shader.
 
 .. code-block:: glsl
 
@@ -588,7 +588,7 @@ Shader Types In-Depth
 Spatial
 ~~~~~~~
 
-Accepted render modes and build-ins for "shader_type spatial;".
+Accepted render modes and built-ins for "shader_type spatial;".
 
 Render Modes
 ^^^^^^^^^^^^
@@ -870,7 +870,7 @@ Assigning nothing means no light is processed.
 Canvas Item
 ~~~~~~~~~~~~
 
-Accepted render modes and build-ins for "shader_type canvas_item;".
+Accepted render modes and built-ins for "shader_type canvas_item;".
 
 Render Modes
 ^^^^^^^^^^^^
@@ -1030,7 +1030,7 @@ Light Built-Ins
 Particles
 ~~~~~~~~~
 
-Accepted render modes and build-ins for "shader_type particles;".
+Accepted render modes and built-ins for "shader_type particles;".
 
 Render Modes
 ^^^^^^^^^^^^
