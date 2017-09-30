@@ -62,7 +62,7 @@ Transforming shapes
 
 As seen before in the collide functions, 2D shapes in Godot can be
 transformed by using a regular :ref:`Transform2D <class_Transform2D>`
-transform, meaning the functions can check for collisions while the 
+transform, meaning the functions can check for collisions while the
 shapes are scaled, moved and
 rotated. The only limitation to this is that shapes with curved sections
 (such as circle and capsule) can only be scaled uniformly. This means
@@ -239,7 +239,7 @@ They have two main uses:
 
 -  **Simulated Motion**: When these bodies are moved manually, either
    from code or from an :ref:`AnimationPlayer <class_AnimationPlayer>`
-   (with process mode set to fixed!), the physics will automatically
+   (with process mode set to physics!), the physics will automatically
    compute an estimate of their linear and angular velocity. This makes
    them very useful for moving platforms or other
    AnimationPlayer-controlled objects (like a door, a bridge that opens,
@@ -269,8 +269,8 @@ by the simulation from a position, linear velocity and angular velocity.
 As a result, [STRIKEOUT:this node can't be scaled]. Scaling the children
 nodes should work fine though.
 
-A RigidBody2D has a ``Mode`` flag to change its behavior (something 
-which is very common in games). It can behave like a rigid body, 
+A RigidBody2D has a ``Mode`` flag to change its behavior (something
+which is very common in games). It can behave like a rigid body,
 a character (a rigid body without the ability to rotate so that it is
 always upright), a kinematic body or a static body. This flag can be
 changed dynamically according to the current situation. For example,
@@ -294,13 +294,13 @@ object's parameters.  Since physics may run in its own thread, parameter
 changes outside that callback will not take place until the next frame.
 
 .. note::
-    
-    When a RigidBody goes to sleep then the :ref:`_integrate_forces() <class_RigidBody2D__integrate_forces>` 
-    method will not be called (I.E. they act like a static body until a 
-    collision or a force is applied to them). To override this behavior you will 
-    need to keep the rigid body "awake" by creating a collision, applying a force to it 
-    (e.g. :ref:`set_linear_velocity <class_RigidBody2D_set_linear_velocity>`) 
-    or by disabling the `can_sleep` property (see :ref:`set_can_sleep <class_RigidBody2D_set_can_sleep>`). 
+
+    When a RigidBody goes to sleep then the :ref:`_integrate_forces() <class_RigidBody2D__integrate_forces>`
+    method will not be called (I.E. they act like a static body until a
+    collision or a force is applied to them). To override this behavior you will
+    need to keep the rigid body "awake" by creating a collision, applying a force to it
+    (e.g. :ref:`set_linear_velocity <class_RigidBody2D_set_linear_velocity>`)
+    or by disabling the `can_sleep` property (see :ref:`set_can_sleep <class_RigidBody2D_set_can_sleep>`).
     Be aware that this can have an effect on performance.
 
 Contact reporting
@@ -404,23 +404,24 @@ it can use up to a full frame to process physics. Because of this, when
 accessing physics variables such as position, linear velocity, etc. they
 might not be representative of what is going on in the current frame.
 
-To solve this, Godot has a fixed process callback, which is like process
-but it's called once per physics frame (by default 60 times per second).
+To solve this, Godot has a physics process callback, which is like process
+but it's called before each physics step always at the same frame rate
+(by default 60 times per second).
 During this time, the physics engine is in *synchronization* state and
 can be accessed directly and without delays.
 
-To enable a fixed process callback, use the ``set_fixed_process()``
+To enable a physics process callback, use the ``set_physics_process()``
 function, example:
 
 ::
 
     extends KinematicBody2D
 
-    func _fixed_process(delta):
+    func _physics_process(delta):
         move(direction * delta)
 
     func _ready():
-        set_fixed_process(true)
+        set_physics_process(true)
 
 Casting rays and motion queries
 -------------------------------
@@ -435,7 +436,7 @@ server must be used directly. For this, the
 :ref:`Physics2DDirectspaceState <class_Physics2DDirectspaceState>`
 class must be used. To obtain it, the following steps must be taken:
 
-1. It must be used inside the ``_fixed_process()`` callback, or at
+1. It must be used inside the ``_physics_process()`` callback, or at
    ``_integrate_forces()``
 
 2. The 2D RIDs for the space and physics server must be obtained.
@@ -444,7 +445,7 @@ The following code should work:
 
 ::
 
-    func _fixed_process(delta):
+    func _physics_process(delta):
         var space = get_world_2d().get_space()
         var space_state = Physics2DServer.space_get_direct_state(space)
 

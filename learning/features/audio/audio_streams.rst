@@ -81,4 +81,4 @@ Both have this property, which must be enabled manually:
 
 .. image:: /img/audio_stream_doppler.png
 
-Simply enable it by setting it depending on how objects will be moved (whether on regular *process* or *fixed_process* step) and the tracking will happen automatically!
+Simply enable it by setting it depending on how objects will be moved (whether on regular *process* or *physics_process* step) and the tracking will happen automatically!

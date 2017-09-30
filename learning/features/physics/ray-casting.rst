@@ -40,7 +40,7 @@ Accessing space
 Godot physics runs by default in the same thread as game logic, but may
 be set to run on a separate thread to work more efficiently. Due to
 this, the only time accessing space is safe is during the
-:ref:`Node._fixed_process() <class_Node__fixed_process>`
+:ref:`Node._physics_process() <class_Node__physics_process>`
 callback. Accessing it from outside this function may result in an error
 due to space being *locked*.
 
@@ -53,7 +53,7 @@ In code, for 2D spacestate, this code must be used:
 
 ::
 
-    func _fixed_process(delta):
+    func _physics_process(delta):
         var space_rid = get_world_2d().get_space()
         var space_state = Physics2DServer.space_get_direct_state(space_rid)
 
@@ -61,14 +61,14 @@ Of course, there is a simpler shortcut:
 
 ::
 
-    func _fixed_process(delta):
+    func _physics_process(delta):
         var space_state = get_world_2d().get_direct_space_state()
 
 For 3D:
 
 ::
 
-    func _fixed_process(delta):
+    func _physics_process(delta):
         var space_state = get_world().get_direct_space_state()
 
 Raycast query
@@ -80,7 +80,7 @@ must be used, for example:
 
 ::
 
-    func _fixed_process(delta):
+    func _physics_process(delta):
         var space_state = get_world().get_direct_space_state()
         # use global coordinates, not local to node
         var result = space_state.intersect_ray( Vector2(0,0), Vector2(50,100) )
@@ -129,7 +129,7 @@ collisionobject based node:
 
     extends KinematicBody2D
 
-    func _fixed_process(delta):
+    func _physics_process(delta):
         var space_state = get_world().get_direct_space_state()
         var result = space_state.intersect_ray( get_global_pos(), enemy_pos, [ self ] )
 
@@ -166,4 +166,4 @@ To obtain it using a camera, the following code can be used:
               var to = from + camera.project_ray_normal(ev.position) * ray_length
 
 Of course, remember that during ``_input()``, space may be locked, so save
-your query for ``_fixed_process()``.
+your query for ``_physics_process()``.
