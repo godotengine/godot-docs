@@ -48,7 +48,8 @@ Fixed process
 ~~~~~~~~~~~~~
 
 To manage the logic of a kinematic body or character, it is always
-advised to use fixed process, which is called the same amount of times
+advised to use physics process, because it's called before physics step and its execution is
+in sync with physics server, also it is called the same amount of times
 per second, always. This makes physics and motion calculation work in a
 more predictable way than using regular process, which might have spikes
 or lose precision if the frame rate is too high or too low.
@@ -57,11 +58,11 @@ or lose precision if the frame rate is too high or too low.
 
     extends KinematicBody2D
 
-    func _fixed_process(delta):
+    func _physics_process(delta):
         pass
 
     func _ready():
-        set_fixed_process(true)
+        set_physics_process(true)
 
 Scene setup
 ~~~~~~~~~~~
@@ -109,11 +110,11 @@ So, let's move our sprite downwards until it hits the floor:
 
     extends KinematicBody2D
 
-    func _fixed_process(delta):
+    func _physics_process(delta):
         move( Vector2(0,1) ) #move down 1 pixel per physics frame
 
     func _ready():
-        set_fixed_process(true)
+        set_physics_process(true)
 
 The result is that the character will move, but stop right when
 hitting the floor. Pretty cool, huh?
@@ -128,15 +129,15 @@ little more like an actual game character:
     const GRAVITY = 200.0
     var velocity = Vector2()
 
-    func _fixed_process(delta):
+    func _physics_process(delta):
 
         velocity.y += delta * GRAVITY
 
         var motion = velocity * delta
-        move( motion )  
+        move( motion )
 
     func _ready():
-        set_fixed_process(true)
+        set_physics_process(true)
 
 Now the character falls smoothly. Let's make it walk to the sides, left
 and right when touching the directional keys. Remember that the values
@@ -153,7 +154,7 @@ This adds simple walking support by pressing left and right:
 
     var velocity = Vector2()
 
-    func _fixed_process(delta):
+    func _physics_process(delta):
 
         velocity.y += delta * GRAVITY
 
@@ -165,10 +166,10 @@ This adds simple walking support by pressing left and right:
             velocity.x = 0
 
         var motion = velocity * delta
-        move(motion)  
+        move(motion)
 
     func _ready():
-        set_fixed_process(true)
+        set_physics_process(true)
 
 And give it a try.
 
@@ -214,7 +215,7 @@ this way:
 
 ::
 
-    func _fixed_process(delta):
+    func _physics_process(delta):
 
         velocity.y += delta * GRAVITY
         if (Input.is_action_pressed("ui_left")):
@@ -225,17 +226,17 @@ this way:
             velocity.x = 0
 
         var motion = velocity * delta
-        motion = move(motion) 
+        motion = move(motion)
 
         if (is_colliding()):
             var n = get_collision_normal()
-            motion = n.slide(motion) 
+            motion = n.slide(motion)
             velocity = n.slide(velocity)
             move(motion)
 
 
     func _ready():
-        set_fixed_process(true)
+        set_physics_process(true)
 
 Note that not only the motion has been modified but also the velocity.
 This makes sense as it helps keep the new direction too.

@@ -597,7 +597,7 @@ pass it to another function as an argument) one must use the ``call`` or
 
 Remember that default functions like  ``_init``, and most
 notifications such as ``_enter_tree``, ``_exit_tree``, ``_process``,
-``_fixed_process``, etc. are called in all base classes automatically.
+``_physics_process``, etc. are called in all base classes automatically.
 So there is only a need to call the function explicitly when overloading
 them in some way.
 

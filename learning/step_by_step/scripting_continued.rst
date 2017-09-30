@@ -11,7 +11,7 @@ functions, so there is no need to check for writing code that runs all
 the time. Additionally, a lot can be done with animation players.
 
 However, it is still a very common case to have a script process on every
-frame. There are two types of processing: idle processing and fixed
+frame. There are two types of processing: idle processing and physics
 processing.
 
 Idle processing is activated automatically when the method :ref:`Node._process() <class_Node__process>`
@@ -29,9 +29,13 @@ frames per second (FPS) of the application:
 The delta parameter describes the time elapsed (in seconds, as
 floating point) since the previous call to "_process()".
 
-Fixed processing is similar, but only needed for synchronization with
-the physics engine. It is called a fixed amount of times per second
-(defined in the Project Settings, but 60 by default).
+Physics processing is similar, but it should be used for all the processes that
+must happen before each physics step. For example, to move a character.
+It is always runs before a physics step and it is called at fixed time intervals,
+60 times per second by default. Change the value in the Project Settings.
+
+The function _process() instead is not sync with physics, and its frame rate is not constant and depend by hardware and game optimization.
+Its execution is done after physics step on single thread games.
 
 A simple way to test this is to create a scene with a single Label node,
 with the following script:
@@ -104,7 +108,7 @@ function in your script:
     func _notification(what):
         if (what == NOTIFICATION_READY):
             print("This is the same as overriding _ready()...")
-        elif (what == NOTIFICATION_PROCESS):     
+        elif (what == NOTIFICATION_PROCESS):
             var delta = get_process_time()
             print("This is the same as overriding _process()...")
 
@@ -121,21 +125,21 @@ follows:
 ::
 
     func _enter_tree():
-        # When the node enters the _Scene Tree_, it becomes active 
-        # and  this function is called. Children nodes have not entered 
-        # the active scene yet. In general, it's better to use _ready() 
+        # When the node enters the _Scene Tree_, it becomes active
+        # and  this function is called. Children nodes have not entered
+        # the active scene yet. In general, it's better to use _ready()
         # for most cases.
         pass
 
     func _ready():
-        # This function is called after _enter_tree, but it ensures 
-        # that all children nodes have also entered the _Scene Tree_, 
+        # This function is called after _enter_tree, but it ensures
+        # that all children nodes have also entered the _Scene Tree_,
         # and became active.
-        pass 
+        pass
 
     func _exit_tree():
-        # When the node exits the _Scene Tree_, this function is called. 
-        # Children nodes have all exited the _Scene Tree_ at this point 
+        # When the node exits the _Scene Tree_, this function is called.
+        # Children nodes have all exited the _Scene Tree_ at this point
         # and all became inactive.
         pass
 
@@ -143,12 +147,12 @@ follows:
         # This function is called every frame.
         pass
 
-    func _fixed_process(delta):
+    func _physics_process(delta):
         # This is called every physics frame.
         pass
 
     func _paused():
-        # Called when game is paused. After this call, the node will not receive 
+        # Called when game is paused. After this call, the node will not receive
         # any more process callbacks.
         pass
 
