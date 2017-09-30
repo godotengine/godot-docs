@@ -331,10 +331,10 @@ box. This will ensure that the mobs do not collide with each other.
 
 .. image:: /img/set_collision_mask.png
 
-Set up the :ref:`AnimatedSprite <class_AnimatedSprite>` like you did for the player. This time, we
-have 3 animations: "fly", "swim", and "walk". Don't forget to adjust the
-"Speed (FPS)" setting as shown below. We'll select one of these randomly
-so that the mobs will have some variety.
+Set up the :ref:`AnimatedSprite <class_AnimatedSprite>` like you did for the player.
+This time, we have 3 animations: "fly", "swim", and "walk". Set the ``Playing``
+property in the Inspector to "On" and adjust the "Speed (FPS)" setting as shown below.
+We'll select one of these randomly so that the mobs will have some variety.
 
 .. image:: /img/mob_animations.gif
 
@@ -344,7 +344,7 @@ collision and then save the scene.
 Enemy Script
 ~~~~~~~~~~~~
 
-Add a script to the ``Enemy`` and add the following member variables:
+Add a script to the ``Mob`` and add the following member variables:
 
 ::
 
@@ -411,7 +411,7 @@ follows:
 -  ``StartTimer``: ``2``
 
 In addition, set the ``One Shot`` property of ``StartTimer`` to "On" and
-set ``Position`` of the ``StartPos`` node to ``(240, 450)``. Now add a
+set ``Position`` of the ``StartPosition`` node to ``(240, 450)``. Now add a
 script to ``Main``.
 
 Spawning Mobs
@@ -470,7 +470,7 @@ up for a new game:
 
     func new_game():
         score = 0
-        $Player.start($StartPos.position)
+        $Player.start($StartPosition.position)
         $StartTimer.start()
 
     func game_over():
