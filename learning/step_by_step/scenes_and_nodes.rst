@@ -102,7 +102,7 @@ opened:
 As mentioned before, making games in Godot feels like being in a
 kitchen, so let's open the refrigerator and add some fresh nodes to the
 project. We'll begin with a Hello World! To do this, the "New Node"
-button must be pressed (looks like a plus symbol):
+button must be pressed (looks like a plus symbol underneath the "Scene" tab):
 
 .. image:: /img/newnode_button.png
 
@@ -111,7 +111,7 @@ that can be created:
 
 .. image:: /img/node_classes.png
 
-From there, select the "Label" node first. Searching for it is probably
+From there, select the "Label" node first. It is under the "Control" node, but searching for it is probably
 the quickest way:
 
 .. image:: /img/node_search_label.png
