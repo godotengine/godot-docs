@@ -13,7 +13,7 @@ not changing it for anything else. We are not even sure other build
 systems are up to the task of building Godot. We constantly get requests
 to move the build system to CMake, or Visual Studio, but this is not
 going to happen. There are many reasons why we have chosen SCons over
-other alternatives and are listed as follows:
+other alternatives, for example:
 
 -  Godot can be compiled for a dozen different platforms. All PC
    platforms, all mobile platforms, many consoles, and many web-based
@@ -34,8 +34,14 @@ other alternatives and are listed as follows:
    platform has a specific detection process, and all these must be
    handled as specific cases with special code written for each.
 
-So, please get at least a little familiar with it if you are planning to
+So, please try to keep an open mind and get at least a little familiar with it if you are planning to
 build Godot yourself.
+
+Setup
+------------------
+Please refer to the documentation for :ref:`doc_compiling_for_android`, :ref:`doc_compiling_for_ios`, :ref:`doc_compiling_for_osx`, :ref:`doc_compiling_for_uwp`, :ref:`doc_compiling_for_web`, :ref:`doc_compiling_for_windows` and :ref:`doc_compiling_for_x11`.
+
+Note that for **Windows/Visual Studio**, you need to use ``x86_x64 Cross Tools Command Prompt for VS 2017`` or similar, depending on your install, instead of the standard Windows command prompt to enter the commands below.
 
 Platform selection
 ------------------
@@ -86,6 +92,8 @@ Example for using 4 cores:
 
     user@host:~/godot$ scons platform=x11 -j 4
 
+Note that there are currently `issues <https://github.com/godotengine/godot/issues/5182>`__ with parallel builds for at least some users, so if you are running into errors, try building without the ``-j`` parameter.
+
 Resulting binary
 ----------------
 
@@ -113,19 +121,19 @@ A Windows binary with the same configuration will look like this.
     C:\GODOT> DIR BIN/
     godot.windows.tools.64.exe
 
-Just copy that binary to wherever you like, as it self-contains the
+Just copy that binary to wherever you like, as it contains the
 project manager, editor and all means to execute the game. However, it
 lacks the data to export it to the different platforms. For that the
 export templates are needed (which can be either downloaded from
-`godotengine.org <http://godotengine.org>`, or you can build them yourself).
+`godotengine.org <https://godotengine.org/>`__, or you can build them yourself).
 
 Aside from that, there are a few standard options that can be set in all
-build targets, and will be explained as follows.
+build targets, and which will be explained below.
 
 Tools
 -----
 
-Tools are enabled by default in al PC targets (Linux, Windows, OSX),
+Tools are enabled by default in all PC targets (Linux, Windows, OSX),
 disabled for everything else. Disabling tools produces a binary that can
 run projects but that does not include the editor or the project
 manager.
@@ -153,7 +161,7 @@ Target controls optimization and debug flags. Each mode means:
 
     scons platform=<platform> target=debug/release_debug/release
 
-This flag appends ".debug" suffix (for debug), or ".tools" (for debug
+This flag appends the ".debug" suffix (for debug), or ".tools" (for debug
 with tools enabled). When optimization is enabled (release) it appends
 the ".opt" suffix.
 
@@ -161,7 +169,7 @@ Bits
 ----
 
 Bits is meant to control the CPU or OS version intended to run the
-binaries. It works mostly on desktop platforms and ignored everywhere
+binaries. It is focused mostly on desktop platforms and ignored everywhere
 else.
 
 -  **32**: Build binaries for 32 bits platform.
@@ -182,7 +190,7 @@ Export templates
 ----------------
 
 Official export templates are downloaded from the Godot Engine site:
-`godotengine.org <http://godotengine.org>`. However, you might want
+`godotengine.org <https://godotengine.org/>`__. However, you might want
 to build them yourself (in case you want newer ones, you are using custom
 modules, or simply don't trust your own shadow).
 
@@ -213,7 +221,7 @@ To create those yourself, just follow the instructions detailed for each
 platform in this same tutorial section. Each platform explains how to
 create its own template.
 
-If you are working for multiple platforms, OSX is definitely the best
+If you are developing for multiple platforms, OSX is definitely the most convenient
 host platform for cross compilation, since you can cross-compile for
 almost every target (except for UWP). Linux and Windows come in second
 place, but Linux has the advantage of being the easier platform to set
