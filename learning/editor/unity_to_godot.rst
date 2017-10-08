@@ -15,7 +15,7 @@ Differences
 +-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 |                   | Unity                                                                             | Godot                                                                                                          |
 +===================+===================================================================================+================================================================================================================+
-| License           | Proprietary, closed, free license with revenue caps and usage restrictions        | MIT License,  free and fully open souce without any restriction                                                |
+| License           | Proprietary, closed, free license with revenue caps and usage restrictions        | MIT License,  free and fully open source without any restriction                                                |
 +-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 | OS (editor)       | Windows, OSX, Linux (unofficial and unsupported)                                  | Windows, X11 (Linux, \*BSD), Haiku, OSX                                                                        |
 +-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
@@ -23,7 +23,7 @@ Differences
 |                   | | Mobile: Android, iOS, Windows Phone, Tizen,                                     | | Mobile: Android, iOS, Blackberry (deprecated)                                                                |
 |                   | | Web: WebGL                                                                      | | Web: WebGL, HTML5 (via emscripten, broken)                                                                   |
 |                   | | Consoles: PS4, PS Vita, XBox One, XBox 360, WiiU, 3DS                           |                                                                                                                |
-|                   | | VR: Occulus Rift, SteamVR, Google Cardboard, Playstation VR, Gear VR, HoloLens  |                                                                                                                |
+|                   | | VR: Oculus Rift, SteamVR, Google Cardboard, Playstation VR, Gear VR, HoloLens  |                                                                                                                |
 |                   | | TV: AndroidTV, Samsung SMARTTV, tvOS                                            |                                                                                                                |
 +-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 | Scene system      | | Component/Scene (GameObject > Component)                                        | Scene tree and nodes, allowing scenes to be nested and/or inherit other scenes                                 |
@@ -142,7 +142,7 @@ To be precise, you can modify the parameters of the instance in the Inspector pa
 
 .. image:: /img/editable-children.png
 
-Glossary correspondance
+Glossary correspondence
 -----------------------
 
 GameObject -> Node

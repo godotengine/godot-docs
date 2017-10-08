@@ -65,7 +65,7 @@ translations and convert it if found:
     level.set_text(tr("LEVEL_5_NAME"))
     status.set_text(tr("GAME_STATUS_" + str(status_index)))
 
-Making controls resizeable
+Making controls resizable
 --------------------------
 
 The same text in different languages can vary greatly in length. For
