@@ -5,10 +5,10 @@ Introduction to the buildsystem
 
 .. highlight:: shell
 
-Scons
+SCons
 -----
 
-Godot uses `Scons <http://www.scons.org>`__ to build. We love it, we are
+Godot uses `SCons <http://www.scons.org>`__ to build. We love it, we are
 not changing it for anything else. We are not even sure other build
 systems are up to the task of building Godot. We constantly get requests
 to move the build system to CMake, or Visual Studio, but this is not
@@ -51,7 +51,7 @@ for. If not detected, the platform will simply not appear on the list of
 available platforms. The build requirements for each platform are
 described in the rest of this tutorial section.
 
-Scons is invoked by just calling ``scons``.
+SCons is invoked by just calling ``scons``.
 
 However, this will do nothing except list the available platforms, for
 example:
