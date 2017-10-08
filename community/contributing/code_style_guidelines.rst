@@ -133,5 +133,5 @@ in the source tree are either in Python 2 or Python 3.
 
 For those, we follow the `PEP-8 style guide <https://www.python.org/dev/peps/pep-0008/>`_,
 this is however not as strongly enforced as for the C++ code. If you are so
-enclined, you can check and format your Python changes using
+inclined, you can check and format your Python changes using
 `autopep8 <https://pypi.python.org/pypi/autopep8>`_.

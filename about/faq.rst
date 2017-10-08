@@ -105,7 +105,7 @@ wide range of sizes an DPIs.
 The most common and proper way to this is to, instead, is to use a
 single base resolution for the game and only handle different screen
 aspects. This is mostly needed for 2D, as in 3D it's just a matter of
-Cameara XFov or YFov.
+Camera XFov or YFov.
 
 1. Choose a single base resolution for your game. Even if there are
    devices that go up to 2K and devices that go down to 400p, regular
