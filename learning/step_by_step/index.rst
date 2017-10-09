@@ -11,7 +11,9 @@ Step by step
    scripting
    scripting_continued
    your_first_game
-   gui_tutorial
+   ui_introduction_to_the_ui_system
+   ui_main_menu
+   ui_game_user_interface
    ui_code_a_life_bar
    splash_screen
    animations
