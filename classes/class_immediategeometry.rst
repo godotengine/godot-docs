@@ -14,7 +14,7 @@ ImmediateGeometry
 Brief Description
 -----------------
 
-Node to draw simple geometry from code, ala OpenGL 1.x
+Draws simple geometry from code.
 
 Member Functions
 ----------------
@@ -41,6 +41,11 @@ Member Functions
 | void  | :ref:`set_uv2<class_ImmediateGeometry_set_uv2>`  **(** :ref:`Vector2<class_vector2>` uv  **)**                                                                                                    |
 +-------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Description
+-----------
+
+Draws simple geometry from code. Uses a drawing mode similar to OpenGL 1.x.
+
 Member Function Description
 ---------------------------
 
@@ -54,7 +59,7 @@ Simple helper to draw a uvsphere, with given latitudes, longitude and radius.
 
 - void  **add_vertex**  **(** :ref:`Vector3<class_vector3>` position  **)**
 
-Add a vertex with the currently set color/uv/etc.
+Adds a vertex with the currently set color/uv/etc.
 
 .. _class_ImmediateGeometry_begin:
 
@@ -68,42 +73,42 @@ For the type of primitive, use the :ref:`Mesh<class_mesh>`.PRIMITIVE\_\* enumera
 
 - void  **clear**  **(** **)**
 
-Clear everything that was drawn using begin/end.
+Clears everything that was drawn using begin/end.
 
 .. _class_ImmediateGeometry_end:
 
 - void  **end**  **(** **)**
 
-Call this when done adding a batch of geometry, otherwise it can't be displayed.
+Ends a drawing context and displays the results.
 
 .. _class_ImmediateGeometry_set_color:
 
 - void  **set_color**  **(** :ref:`Color<class_color>` color  **)**
 
-Set the color that the next vertex will use to be drawn.
+The current drawing color.
 
 .. _class_ImmediateGeometry_set_normal:
 
 - void  **set_normal**  **(** :ref:`Vector3<class_vector3>` normal  **)**
 
-Set the normal that the next vertex will use to be drawn.
+The next vertex's normal.
 
 .. _class_ImmediateGeometry_set_tangent:
 
 - void  **set_tangent**  **(** :ref:`Plane<class_plane>` tangent  **)**
 
-Set the tangent (and binormal facing) that the next vertex will use to be drawn.
+The next vertex's tangent (and binormal facing).
 
 .. _class_ImmediateGeometry_set_uv:
 
 - void  **set_uv**  **(** :ref:`Vector2<class_vector2>` uv  **)**
 
-Set the UV that the next vertex will use to be drawn.
+The next vertex's UV.
 
 .. _class_ImmediateGeometry_set_uv2:
 
 - void  **set_uv2**  **(** :ref:`Vector2<class_vector2>` uv  **)**
 
-Set the second layer of UV that the next vertex will use to be drawn.
+The next vertex's second layer UV.
 
 

@@ -14,7 +14,7 @@ CollisionPolygon2D
 Brief Description
 -----------------
 
-Editor-only class for defining a collision polygon in 2D space.
+Defines a 2D collision polygon.
 
 Member Functions
 ----------------
@@ -40,21 +40,21 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **build_mode** - If BUILD_SOLIDS, the polygon and the area within it will have collision. If BUILD_SEGMENTS, only the edges of the polygon will have collision.
-- :ref:`bool<class_bool>` **disabled** - If true, no collision will be produced.
-- :ref:`bool<class_bool>` **one_way_collision** - If true, only edges that face up, relative to CollisionPolygon2D's rotation, will collide with other objects.
-- :ref:`PoolVector2Array<class_poolvector2array>` **polygon** - Array of vertices which define the polygon.
+- :ref:`int<class_int>` **build_mode** - Collision build mode. Use one of the [code]BUILD_*[/code] constants. Default value: [code]BUILD_SOLIDS[/code].
+- :ref:`bool<class_bool>` **disabled** - If [code]true[/code] no collisions will be detected.
+- :ref:`bool<class_bool>` **one_way_collision** - If [code]true[/code] only edges that face up, relative to CollisionPolygon2D's rotation, will collide with other objects.
+- :ref:`PoolVector2Array<class_poolvector2array>` **polygon** - The polygon's list of vertices. The final point will be connected to the first.
 
 Numeric Constants
 -----------------
 
-- **BUILD_SOLIDS** = **0**
-- **BUILD_SEGMENTS** = **1**
+- **BUILD_SOLIDS** = **0** --- Collisions will include the polygon and its contained area.
+- **BUILD_SEGMENTS** = **1** --- Collisions will only include the polygon edges.
 
 Description
 -----------
 
-Allows editing a collision polygon's vertices. This class is only available in the editor. It will not appear in the scene tree at runtime. Creates a :ref:`Shape2D<class_shape2d>` for gameplay. Properties modified during gameplay will have no effect.
+Provides a 2D collision polygon to a :ref:`CollisionObject2D<class_collisionobject2d>` parent. Polygon can be drawn in the editor or specified by a list of vertices.
 
 Member Function Description
 ---------------------------

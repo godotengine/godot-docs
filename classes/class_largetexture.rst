@@ -40,14 +40,17 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`Array<class_array>` **_data**
+- :ref:`Array<class_array>` **_data** - Returns an [Array] with offsets and textures data of each added piece. Schema is [offsets1, texture1, offsets2, texture2, large_texture_size].
+			[code]offsets[/code] : [Vector2] offsets of the texture piece.
+			[code]second[/code] : [StreamTexture] data of the texture piece.
+			[code]last entry[/code] : [Vector2] size of the entire large texture.
 
 Description
 -----------
 
 A Texture capable of storing many smaller Textures with offsets.
 
-You can dynamically add pieces(Textures) to this fLargeTexture] using different offsets.
+You can dynamically add pieces(:ref:`Texture<class_texture>`) to this ``LargeTexture`` using different offsets.
 
 Member Function Description
 ---------------------------
@@ -56,48 +59,48 @@ Member Function Description
 
 - :ref:`int<class_int>`  **add_piece**  **(** :ref:`Vector2<class_vector2>` ofs, :ref:`Texture<class_texture>` texture  **)**
 
-Add another :ref:`Texture<class_texture>` to this :ref:`LargeTexture<class_largetexture>`, starting on offset "ofs".
+Add another :ref:`Texture<class_texture>` to this ``LargeTexture``, starting on offset "ofs".
 
 .. _class_LargeTexture_clear:
 
 - void  **clear**  **(** **)**
 
-Clear the :ref:`LargeTexture<class_largetexture>`.
+Clears the ``LargeTexture``.
 
 .. _class_LargeTexture_get_piece_count:
 
 - :ref:`int<class_int>`  **get_piece_count**  **(** **)** const
 
-Return the number of pieces currently in this :ref:`LargeTexture<class_largetexture>`.
+Returns the number of pieces currently in this ``LargeTexture``.
 
 .. _class_LargeTexture_get_piece_offset:
 
 - :ref:`Vector2<class_vector2>`  **get_piece_offset**  **(** :ref:`int<class_int>` idx  **)** const
 
-Return the offset of the piece with index "idx".
+Returns the offset of the piece with index "idx".
 
 .. _class_LargeTexture_get_piece_texture:
 
 - :ref:`Texture<class_texture>`  **get_piece_texture**  **(** :ref:`int<class_int>` idx  **)** const
 
-Return the :ref:`Texture<class_texture>` of the piece with index "idx".
+Returns the :ref:`Texture<class_texture>` of the piece with index "idx".
 
 .. _class_LargeTexture_set_piece_offset:
 
 - void  **set_piece_offset**  **(** :ref:`int<class_int>` idx, :ref:`Vector2<class_vector2>` ofs  **)**
 
-Set the offset of the piece with index "idx" to "ofs".
+Sets the offset of the piece with index "idx" to "ofs".
 
 .. _class_LargeTexture_set_piece_texture:
 
 - void  **set_piece_texture**  **(** :ref:`int<class_int>` idx, :ref:`Texture<class_texture>` texture  **)**
 
-Set the :ref:`Texture<class_texture>` of the piece with index "idx" to  "ofs".
+Sets the :ref:`Texture<class_texture>` of the piece with index "idx" to  "ofs".
 
 .. _class_LargeTexture_set_size:
 
 - void  **set_size**  **(** :ref:`Vector2<class_vector2>` size  **)**
 
-Set the size of this :ref:`LargeTexture<class_largetexture>`.
+Sets the size of this ``LargeTexture``.
 
 

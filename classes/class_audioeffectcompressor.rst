@@ -14,7 +14,9 @@ AudioEffectCompressor
 Brief Description
 -----------------
 
+Adds a Compressor audio effect to an Audio bus.
 
+Reduces sounds that exceed a certain threshold level, smooths out the dynamics and increases the overall volume.
 
 Member Functions
 ----------------
@@ -52,13 +54,28 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`float<class_float>` **attack_us**
-- :ref:`float<class_float>` **gain**
-- :ref:`float<class_float>` **mix**
-- :ref:`float<class_float>` **ratio**
-- :ref:`float<class_float>` **release_ms**
-- :ref:`String<class_string>` **sidechain**
-- :ref:`float<class_float>` **threshold**
+- :ref:`float<class_float>` **attack_us** - Compressor's reaction time when the signal exceeds the threshold. Value can range from 20 to 2000. Default value: [code]20ms[/code].
+- :ref:`float<class_float>` **gain** - Gain applied to the output signal.
+- :ref:`float<class_float>` **mix** - Balance between original signal and effect signal. Value can range from 0 (totally dry) to 1 (totally wet). Default value: [code]1[/code].
+- :ref:`float<class_float>` **ratio** - Amount of compression applied to the audio once it passes the threshold level. The higher the ratio the more the loud parts of the audio will be compressed. Value can range from 1 to 48. Default value: [code]4[/code].
+- :ref:`float<class_float>` **release_ms** - Compressor's delay time to stop reducing the signal after the signal level falls below the threshold. Value can range from 20 to 2000. Default value: [code]250ms[/code].
+- :ref:`String<class_string>` **sidechain** - Reduce the sound level using another audio bus for threshold detection.
+- :ref:`float<class_float>` **threshold** - The level above which compression is applied to the audio. Value can range from -60 to 0. Default value: [code]0[/code].
+
+Description
+-----------
+
+Dynamic range compressor reduces the level of the sound when the amplitude goes over a certain threshold in Decibels. One of the main uses of a compressor is to increase the dynamic range by clipping as little as possible (when sound goes over 0dB).
+
+Compressor has many uses in the mix:
+
+- In the Master bus to compress the whole output (Although a :ref:`AudioEffectLimiter<class_audioeffectlimiter>` is probably better)
+
+- In voice channels to ensure they sound as balanced as possible.
+
+- Sidechained. Sidechained, which can reduce the sound level sidechained with another audio bus for threshold detection.. This technique is very common in video game mixing to download the level of Music/SFX while voices are being heard.
+
+- Accentuates transients by using a wider attack, making effects sound more punchy.
 
 Member Function Description
 ---------------------------

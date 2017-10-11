@@ -38,7 +38,9 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`Dictionary<class_dictionary>` **data**
+- :ref:`Dictionary<class_dictionary>` **data** - Returns a [Dictionary] with two keys :
+			[code]data[/code] : [PoolByteArray] with [code]true[/code]/[code]false[/code] [code]BitMap[/code] data.
+			[code]size[/code] : The [code]Bitmap[/code]'s size.
 
 Description
 -----------

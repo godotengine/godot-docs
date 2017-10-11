@@ -62,13 +62,13 @@ Check if the resource changed, if so it will be invalidated and the correspondin
 
 - void  **queue_edited_resource_preview**  **(** :ref:`Resource<class_resource>` resource, :ref:`Object<class_object>` receiver, :ref:`String<class_string>` receiver_func, :ref:`Variant<class_variant>` userdata  **)**
 
-Queue a resource being edited for preview (using an instance). Once the preview is ready, your receiver.receiver_func will be called either containing the preview texture or an empty texure (if no preview was possible). Callback must have the format: (path,texture,userdata). Userdata can be anything.
+Queue a resource being edited for preview (using an instance). Once the preview is ready, your receiver.receiver_func will be called either containing the preview texture or an empty texture (if no preview was possible). Callback must have the format: (path,texture,userdata). Userdata can be anything.
 
 .. _class_EditorResourcePreview_queue_resource_preview:
 
 - void  **queue_resource_preview**  **(** :ref:`String<class_string>` path, :ref:`Object<class_object>` receiver, :ref:`String<class_string>` receiver_func, :ref:`Variant<class_variant>` userdata  **)**
 
-Queue a resource file for preview (using a path). Once the preview is ready, your receiver.receiver_func will be called either containing the preview texture or an empty texure (if no preview was possible). Callback must have the format: (path,texture,userdata). Userdata can be anything.
+Queue a resource file for preview (using a path). Once the preview is ready, your receiver.receiver_func will be called either containing the preview texture or an empty texture (if no preview was possible). Callback must have the format: (path,texture,userdata). Userdata can be anything.
 
 .. _class_EditorResourcePreview_remove_preview_generator:
 

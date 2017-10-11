@@ -40,19 +40,17 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`float<class_float>` **bounce**
-- :ref:`float<class_float>` **constant_angular_velocity**
-- :ref:`Vector2<class_vector2>` **constant_linear_velocity**
-- :ref:`float<class_float>` **friction**
+- :ref:`float<class_float>` **bounce** - The body's bounciness. Values range from [code]0[/code] (no bounce) to [code]1[/code] (full bounciness).
+- :ref:`float<class_float>` **constant_angular_velocity** - Constant angular velocity for the body. This does not rotate the body, but affects colliding bodies, as if it were rotating.
+- :ref:`Vector2<class_vector2>` **constant_linear_velocity** - Constant linear velocity for the body. This does not move the body, but affects colliding bodies, as if it were moving.
+- :ref:`float<class_float>` **friction** - The body's friction. Values range from [code]0[/code] (no friction) to [code]1[/code] (full friction).
 
 Description
 -----------
 
-Static body for 2D Physics. A static body is a simple body that is not intended to move. They don't consume any CPU resources in contrast to a :ref:`RigidBody2D<class_rigidbody2d>` so they are great for scenario collision.
+Static body for 2D Physics. A StaticBody2D is a body that is not intended to move. It is ideal for implementing objects in the environment, such as walls or platforms.
 
-A static body can also be animated by using simulated motion mode. This is useful for implementing functionalities such as moving platforms. When this mode is active the body can be animated and automatically computes linear and angular velocity to apply in that frame and to influence other bodies.
-
-Alternatively, a constant linear or angular velocity can be set for the static body, so even if it doesn't move, it affects other bodies as if it was moving (this is useful for simulating conveyor belts or conveyor wheels).
+Additionally, a constant linear or angular velocity can be set for the static body, which will affect colliding bodies as if it were moving (for example, a conveyor belt).
 
 Member Function Description
 ---------------------------

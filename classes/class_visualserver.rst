@@ -22,6 +22,8 @@ Member Functions
 +------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                   | :ref:`force_draw<class_VisualServer_force_draw>`  **(** **)**                                                                                               |
 +------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                   | :ref:`force_sync<class_VisualServer_force_sync>`  **(** **)**                                                                                               |
++------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_rid>`  | :ref:`texture_create<class_VisualServer_texture_create>`  **(** **)**                                                                                       |
 +------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_rid>`  | :ref:`texture_create_from_image<class_VisualServer_texture_create_from_image>`  **(** :ref:`Image<class_image>` image, :ref:`int<class_int>` flags=7  **)** |
@@ -50,6 +52,10 @@ Member Function Description
 .. _class_VisualServer_force_draw:
 
 - void  **force_draw**  **(** **)**
+
+.. _class_VisualServer_force_sync:
+
+- void  **force_sync**  **(** **)**
 
 .. _class_VisualServer_texture_create:
 

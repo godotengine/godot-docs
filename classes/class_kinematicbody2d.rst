@@ -46,7 +46,7 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`float<class_float>` **collision/safe_margin**
+- :ref:`float<class_float>` **collision/safe_margin** - If the body is at least this close to another body, this body will consider them to be colliding.
 
 Description
 -----------
@@ -55,7 +55,7 @@ Kinematic bodies are special types of bodies that are meant to be user-controlle
 
 Simulated Motion: When these bodies are moved manually, either from code or from an AnimationPlayer (with process mode set to fixed), the physics will automatically compute an estimate of their linear and angular velocity. This makes them very useful for moving platforms or other AnimationPlayer-controlled objects (like a door, a bridge that opens, etc).
 
-Kinematic Characters: KinematicBody2D also has an api for moving objects (the :ref:`move<class_KinematicBody2D_move>` method) while performing collision tests. This makes them really useful to implement characters that collide against a world, but that don't require advanced physics.
+Kinematic Characters: KinematicBody2D also has an API for moving objects (the :ref:`move_and_collide<class_KinematicBody2D_move_and_collide>` and :ref:`move_and_slide<class_KinematicBody2D_move_and_slide>` methods) while performing collision tests. This makes them really useful to implement characters that collide against a world, but that don't require advanced physics.
 
 Member Function Description
 ---------------------------
@@ -63,6 +63,8 @@ Member Function Description
 .. _class_KinematicBody2D_get_floor_velocity:
 
 - :ref:`Vector2<class_vector2>`  **get_floor_velocity**  **(** **)** const
+
+Returns the velocity of the floor. Only updates when calling :ref:`move_and_slide<class_KinematicBody2D_move_and_slide>`.
 
 .. _class_KinematicBody2D_get_safe_margin:
 
@@ -72,31 +74,55 @@ Member Function Description
 
 - :ref:`KinematicCollision2D<class_kinematiccollision2d>`  **get_slide_collision**  **(** :ref:`int<class_int>` slide_idx  **)**
 
+Returns a :ref:`KinematicCollision2D<class_kinematiccollision2d>`, which contains information about a collision that occured during the last :ref:`move_and_slide<class_KinematicBody2D_move_and_slide>` call. Since the body can collide several times in a single call to :ref:`move_and_slide<class_KinematicBody2D_move_and_slide>`, you must specify the index of the collision in the range 0 to (:ref:`get_slide_count<class_KinematicBody2D_get_slide_count>`()-1).
+
 .. _class_KinematicBody2D_get_slide_count:
 
 - :ref:`int<class_int>`  **get_slide_count**  **(** **)** const
+
+Returns the number of times the body collided and changed direction during the last call to :ref:`move_and_slide<class_KinematicBody2D_move_and_slide>`.
 
 .. _class_KinematicBody2D_is_on_ceiling:
 
 - :ref:`bool<class_bool>`  **is_on_ceiling**  **(** **)** const
 
+Returns ``true`` if the body is on the ceiling. Only updates when calling :ref:`move_and_slide<class_KinematicBody2D_move_and_slide>`.
+
 .. _class_KinematicBody2D_is_on_floor:
 
 - :ref:`bool<class_bool>`  **is_on_floor**  **(** **)** const
+
+Returns ``true`` if the body is on the floor. Only updates when calling :ref:`move_and_slide<class_KinematicBody2D_move_and_slide>`.
 
 .. _class_KinematicBody2D_is_on_wall:
 
 - :ref:`bool<class_bool>`  **is_on_wall**  **(** **)** const
 
+Returns ``true`` if the body is on a wall. Only updates when calling :ref:`move_and_slide<class_KinematicBody2D_move_and_slide>`.
+
 .. _class_KinematicBody2D_move_and_collide:
 
 - :ref:`KinematicCollision2D<class_kinematiccollision2d>`  **move_and_collide**  **(** :ref:`Vector2<class_vector2>` rel_vec  **)**
 
-Moves the body along the given vector. The body will stop if it collides. Returns a :ref:`KinematicCollision2D<class_kinematiccollision2d>`, which contains information about the colliding body.
+Moves the body along the vector ``rel_vec``. The body will stop if it collides. Returns a :ref:`KinematicCollision2D<class_kinematiccollision2d>`, which contains information about the collision.
 
 .. _class_KinematicBody2D_move_and_slide:
 
 - :ref:`Vector2<class_vector2>`  **move_and_slide**  **(** :ref:`Vector2<class_vector2>` linear_velocity, :ref:`Vector2<class_vector2>` floor_normal=Vector2( 0, 0 ), :ref:`float<class_float>` slope_stop_min_velocity=5, :ref:`int<class_int>` max_bounces=4, :ref:`float<class_float>` floor_max_angle=0.785398  **)**
+
+Moves the body along a vector. If the body collides with another, it will slide along the other body rather than stop immediately. If the other body is a :ref:`KinematicBody2D<class_kinematicbody2d>` or :ref:`RigidBody2D<class_rigidbody2d>`, it will also be affected by the motion of the other body. You can use this to make moving or rotating platforms, or to make nodes push other nodes.
+
+``linear_velocity`` is a value in pixels per second. Unlike in for example :ref:`move_and_collide<class_KinematicBody2D_move_and_collide>`, you should *not* multiply it with ``delta`` — this is done by the method.
+
+``floor_normal`` is the up direction, used to determine what is a wall and what is a floor or a ceiling. If set to the default value of ``Vector2(0, 0)``, everything is considered a wall. This is useful for topdown games.
+
+If the body is standing on a slope and the horizontal speed (relative to the floor's speed) goes below ``slope_stop_min_velocity``, the body will stop completely. This prevents the body from sliding down slopes when you include gravity in ``linear_velocity``. When set to lower values, the body will not be able to stand still on steep slopes.
+
+If the body collides, it will change direction a maximum of ``max_bounces`` times before it stops.
+
+``floor_max_angle`` is the maximum angle (in radians) where a slope is still considered a floor (or a ceiling), rather than a wall. The default value equals 45 degrees.
+
+Returns the movement that remained when the body stopped. To get more detailed information about collisions that occured, use :ref:`get_slide_collision<class_KinematicBody2D_get_slide_collision>`.
 
 .. _class_KinematicBody2D_set_safe_margin:
 
@@ -106,6 +132,6 @@ Moves the body along the given vector. The body will stop if it collides. Return
 
 - :ref:`bool<class_bool>`  **test_move**  **(** :ref:`Transform2D<class_transform2d>` from, :ref:`Vector2<class_vector2>` rel_vec  **)**
 
-Returns true if there would be a collision if the body moved from the given point in the given direction.
+Checks for collisions without moving the body. Virtually sets the node's position, scale and rotation to that of the given :ref:`Transform2D<class_transform2d>`, then tries to move the body along the vector ``rel_vec``. Returns ``true`` if a collision would occur.
 
 

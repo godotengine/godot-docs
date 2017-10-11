@@ -14,7 +14,7 @@ Sprite3D
 Brief Description
 -----------------
 
-
+2D Sprite node in 3D world.
 
 Member Functions
 ----------------
@@ -49,16 +49,23 @@ Signals
 -------
 
 -  **frame_changed**  **(** **)**
+Emitted when the member frame changes.
+
 
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **frame**
-- :ref:`int<class_int>` **hframes**
-- :ref:`bool<class_bool>` **region_enabled**
-- :ref:`Rect2<class_rect2>` **region_rect**
-- :ref:`Texture<class_texture>` **texture**
-- :ref:`int<class_int>` **vframes**
+- :ref:`int<class_int>` **frame** - Current frame to display from sprite sheet. [member vframes] or [member hframes] must be greater than 1.
+- :ref:`int<class_int>` **hframes** - The number of columns in the sprite sheet.
+- :ref:`bool<class_bool>` **region_enabled** - If [code]true[/code] texture will be cut from a larger atlas texture. See [member region_rect]. Default value: [code]false[/code].
+- :ref:`Rect2<class_rect2>` **region_rect** - The region of the atlas texture to display. [member region_enabled] must be [code]true[/code].
+- :ref:`Texture<class_texture>` **texture** - [Texture] object to draw.
+- :ref:`int<class_int>` **vframes** - The number of rows in the sprite sheet.
+
+Description
+-----------
+
+A node that displays a 2D texture in a 3D environment. The texture displayed can be a region from a larger atlas texture, or a frame from a sprite sheet animation.
 
 Member Function Description
 ---------------------------

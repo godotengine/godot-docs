@@ -26,6 +26,8 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_anisotropy<class_SpatialMaterial_get_anisotropy>`  **(** **)** const                                                                       |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_ao_light_affect<class_SpatialMaterial_get_ao_light_affect>`  **(** **)** const                                                             |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_ao_texture_channel<class_SpatialMaterial_get_ao_texture_channel>`  **(** **)** const                                                       |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_billboard_mode<class_SpatialMaterial_get_billboard_mode>`  **(** **)** const                                                               |
@@ -131,6 +133,8 @@ Member Functions
 | void                           | :ref:`set_alpha_scissor_threshold<class_SpatialMaterial_set_alpha_scissor_threshold>`  **(** :ref:`float<class_float>` threshold  **)**              |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_anisotropy<class_SpatialMaterial_set_anisotropy>`  **(** :ref:`float<class_float>` anisotropy  **)**                                       |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_ao_light_affect<class_SpatialMaterial_set_ao_light_affect>`  **(** :ref:`float<class_float>` amount  **)**                                 |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_ao_texture_channel<class_SpatialMaterial_set_ao_texture_channel>`  **(** :ref:`int<class_int>` channel  **)**                              |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -242,6 +246,7 @@ Member Variables
 - :ref:`bool<class_bool>` **anisotropy_enabled**
 - :ref:`Texture<class_texture>` **anisotropy_flowmap**
 - :ref:`bool<class_bool>` **ao_enabled**
+- :ref:`float<class_float>` **ao_light_affect**
 - :ref:`bool<class_bool>` **ao_on_uv2**
 - :ref:`Texture<class_texture>` **ao_texture**
 - :ref:`int<class_int>` **ao_texture_channel**
@@ -386,10 +391,10 @@ Numeric Constants
 - **FLAG_USE_ALPHA_SCISSOR** = **11**
 - **FLAG_TRIPLANAR_USE_WORLD** = **9**
 - **FLAG_MAX** = **12**
-- **DIFFUSE_LAMBERT** = **0**
-- **DIFFUSE_LAMBERT_WRAP** = **1**
-- **DIFFUSE_OREN_NAYAR** = **2**
-- **DIFFUSE_BURLEY** = **3**
+- **DIFFUSE_BURLEY** = **0**
+- **DIFFUSE_LAMBERT** = **1**
+- **DIFFUSE_LAMBERT_WRAP** = **2**
+- **DIFFUSE_OREN_NAYAR** = **3**
 - **DIFFUSE_TOON** = **4**
 - **SPECULAR_SCHLICK_GGX** = **0**
 - **SPECULAR_BLINN** = **1**
@@ -420,6 +425,10 @@ Member Function Description
 .. _class_SpatialMaterial_get_anisotropy:
 
 - :ref:`float<class_float>`  **get_anisotropy**  **(** **)** const
+
+.. _class_SpatialMaterial_get_ao_light_affect:
+
+- :ref:`float<class_float>`  **get_ao_light_affect**  **(** **)** const
 
 .. _class_SpatialMaterial_get_ao_texture_channel:
 
@@ -632,6 +641,10 @@ Member Function Description
 .. _class_SpatialMaterial_set_anisotropy:
 
 - void  **set_anisotropy**  **(** :ref:`float<class_float>` anisotropy  **)**
+
+.. _class_SpatialMaterial_set_ao_light_affect:
+
+- void  **set_ao_light_affect**  **(** :ref:`float<class_float>` amount  **)**
 
 .. _class_SpatialMaterial_set_ao_texture_channel:
 

@@ -14,7 +14,7 @@ JSONParseResult
 Brief Description
 -----------------
 
-
+Data class wrapper for decoded JSON.
 
 Member Functions
 ----------------
@@ -40,10 +40,23 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **error**
-- :ref:`int<class_int>` **error_line**
-- :ref:`String<class_string>` **error_string**
-- :ref:`Variant<class_variant>` **result**
+- :ref:`int<class_int>` **error** - The error type if JSON source was not successfully parsed. See [@Global Scope]ERR_* constants.
+- :ref:`int<class_int>` **error_line** - The line number where the error occurred if JSON source was not successfully parsed.
+- :ref:`String<class_string>` **error_string** - The error message if JSON source was not successfully parsed. See [@Global Scope]ERR_* constants.
+- :ref:`Variant<class_variant>` **result** - A [Variant] containing the parsed JSON. Use typeof() to check if it is what you expect. For exemple, if JSON source starts with braces [code]{}[/code] a [Dictionary] will be returned, if JSON source starts with array braces [code][][/code] an [Array] will be returned.
+			[i]Be aware that the JSON specification does not define integer or float types, but only a number type. Therefore, parsing a JSON text will convert all numerical values to float types.[/i]
+			[codeblock]
+			p = JSON.parse('["hello", "world", "!"]')
+			if typeof(p) == TYPE_ARRAY:
+				print(p[0]) # prints 'hello'
+			else:
+				print("unexpected results")
+			[/codeblock]
+
+Description
+-----------
+
+Returned by :ref:`JSON.parse<class_JSON_parse>`, :ref:`JSONParseResult<class_jsonparseresult>` contains decoded JSON or error information if JSON source not successfully parsed. You can check if JSON source was successfully parsed with ``if json_result.error == 0``.
 
 Member Function Description
 ---------------------------

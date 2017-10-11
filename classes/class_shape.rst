@@ -16,5 +16,10 @@ Shape
 Brief Description
 -----------------
 
+Base class for all 3D shape resources.
 
+Description
+-----------
+
+Base class for all 3D shape resources. All 3D shapes that inherit from this can be set into a :ref:`PhysicsBody<class_physicsbody>` or :ref:`Area<class_area>`.
 

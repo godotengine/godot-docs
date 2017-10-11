@@ -14,7 +14,7 @@ VisualScriptBasicTypeConstant
 Brief Description
 -----------------
 
-
+A Visual Script node representing a constant from the base types.
 
 Member Functions
 ----------------
@@ -32,8 +32,13 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **basic_type**
-- :ref:`String<class_string>` **constant**
+- :ref:`int<class_int>` **basic_type** - The type to get the constant from.
+- :ref:`String<class_string>` **constant** - The name of the constant to return.
+
+Description
+-----------
+
+A Visual Script node representing a constant from base types, such as Vector3.AXIS_X.
 
 Member Function Description
 ---------------------------

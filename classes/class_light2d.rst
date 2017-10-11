@@ -14,7 +14,7 @@ Light2D
 Brief Description
 -----------------
 
-Node that casts light in a 2D environment.
+Casts light in a 2D environment.
 
 Member Functions
 ----------------
@@ -123,7 +123,7 @@ Member Variables
 - :ref:`int<class_int>` **shadow_buffer_size** - Shadow buffer size. Default value: [code]2048[/code].
 - :ref:`Color<class_color>` **shadow_color** - [Color] of shadows cast by the Light2D.
 - :ref:`bool<class_bool>` **shadow_enabled** - If [code]true[/code] the Light2D will cast shadows. Default value: [code]false[/code].
-- :ref:`int<class_int>` **shadow_filter** - Shadow filter type. May be one of [code][None, PCF5, PCF9, PCF13][/code]. Default value: [code]None[/code].
+- :ref:`int<class_int>` **shadow_filter** - Shadow filter type. Use SHADOW_FILTER_* constants to set [code]shadow_filter[/code]. Default value: [code]None[/code].
 - :ref:`float<class_float>` **shadow_filter_smooth** - Smoothing value for shadows.
 - :ref:`float<class_float>` **shadow_gradient_length** - Smooth shadow gradient length.
 - :ref:`int<class_int>` **shadow_item_cull_mask** - The shadow mask. Used with [LightOccluder2D] to cast shadows. Only occluders with a matching shadow mask will cast shadows.
@@ -134,20 +134,20 @@ Numeric Constants
 -----------------
 
 - **MODE_ADD** = **0** --- Adds the value of pixels corresponding to the Light2D to the values of pixels under it. This is the common behaviour of a light.
-- **MODE_SUB** = **1** --- Subtract the value of pixels corresponding to the Light2D to the values of pixels under it, resulting in inversed light effect.
+- **MODE_SUB** = **1** --- Subtracts the value of pixels corresponding to the Light2D to the values of pixels under it, resulting in inversed light effect.
 - **MODE_MIX** = **2** --- Mix the value of pixels corresponding to the Light2D to the values of pixels under it by linear interpolation.
 - **MODE_MASK** = **3** --- The light texture of the Light2D is used as a mask, hiding or revealing parts of the screen underneath depending on the value of each pixel of the light (mask) texture.
-- **SHADOW_FILTER_NONE** = **0**
-- **SHADOW_FILTER_PCF3** = **1**
-- **SHADOW_FILTER_PCF5** = **2**
-- **SHADOW_FILTER_PCF7** = **3**
-- **SHADOW_FILTER_PCF9** = **4**
-- **SHADOW_FILTER_PCF13** = **5**
+- **SHADOW_FILTER_NONE** = **0** --- No filter applies to the shadow map. See :ref:`shadow_filter<class_Light2D_shadow_filter>`.
+- **SHADOW_FILTER_PCF3** = **1** --- Percentage closer filtering (3 samples) applies to the shadow map. See :ref:`shadow_filter<class_Light2D_shadow_filter>`.
+- **SHADOW_FILTER_PCF5** = **2** --- Percentage closer filtering (5 samples) applies to the shadow map. See :ref:`shadow_filter<class_Light2D_shadow_filter>`.
+- **SHADOW_FILTER_PCF7** = **3** --- Percentage closer filtering (7 samples) applies to the shadow map. See :ref:`shadow_filter<class_Light2D_shadow_filter>`.
+- **SHADOW_FILTER_PCF9** = **4** --- Percentage closer filtering (9 samples) applies to the shadow map. See :ref:`shadow_filter<class_Light2D_shadow_filter>`.
+- **SHADOW_FILTER_PCF13** = **5** --- Percentage closer filtering (13 samples) applies to the shadow map. See :ref:`shadow_filter<class_Light2D_shadow_filter>`.
 
 Description
 -----------
 
-Node that casts light in a 2D environment. Light is defined by a (usually grayscale) texture, a color, an energy value, a mode (see constants), and various other parameters (range and shadows-related). Note that Light2D can be used as a mask.
+Casts light in a 2D environment. Light is defined by a (usually grayscale) texture, a color, an energy value, a mode (see constants), and various other parameters (range and shadows-related). Note that Light2D can be used as a mask.
 
 Member Function Description
 ---------------------------

@@ -14,7 +14,7 @@ Particles2D
 Brief Description
 -----------------
 
-2D Particle emitter
+2D particle emitter.
 
 Member Functions
 ----------------
@@ -100,35 +100,37 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **amount**
-- :ref:`int<class_int>` **draw_order**
-- :ref:`bool<class_bool>` **emitting**
-- :ref:`float<class_float>` **explosiveness**
+- :ref:`int<class_int>` **amount** - Number of particles to emit.
+- :ref:`int<class_int>` **draw_order** - Particle draw order. Uses [code]DRAW_ORDER_*[/code] values. Default value: [code]DRAW_ORDER_INDEX[/code].
+- :ref:`bool<class_bool>` **emitting** - If [code]true[/code] particles are being emitted. Default value: [code]true[/code].
+- :ref:`float<class_float>` **explosiveness** - Time ratio between each emission. If [code]0[/code] particles are emitted continuously. If [code]1[/code] all particles are emitted simultaneously. Default value: [code]0[/code].
 - :ref:`int<class_int>` **fixed_fps**
 - :ref:`bool<class_bool>` **fract_delta**
-- :ref:`int<class_int>` **h_frames**
-- :ref:`float<class_float>` **lifetime**
-- :ref:`bool<class_bool>` **local_coords**
+- :ref:`int<class_int>` **h_frames** - Number of horizontal frames in [code]texture[/code].
+- :ref:`float<class_float>` **lifetime** - Amount of time each particle will exist. Default value: [code]1[/code].
+- :ref:`bool<class_bool>` **local_coords** - If [code]true[/code] particles use the parent node's coordinate space. If [code]false[/code] they use global coordinates. Default value: [code]true[/code].
 - :ref:`Texture<class_texture>` **normal_map**
-- :ref:`bool<class_bool>` **one_shot**
+- :ref:`bool<class_bool>` **one_shot** - If [code]true[/code] only [code]amount[/code] particles will be emitted. Default value: [code]false[/code].
 - :ref:`float<class_float>` **preprocess**
-- :ref:`Material<class_material>` **process_material**
-- :ref:`float<class_float>` **randomness**
-- :ref:`float<class_float>` **speed_scale**
-- :ref:`Texture<class_texture>` **texture**
-- :ref:`int<class_int>` **v_frames**
+- :ref:`Material<class_material>` **process_material** - [Material] for processing particles. Can be a [ParticlesMaterial] or a [ShaderMaterial].
+- :ref:`float<class_float>` **randomness** - Emission randomness ratio. Default value: [code]0[/code].
+- :ref:`float<class_float>` **speed_scale** - Speed scaling ratio. Default value: [code]1[/code].
+- :ref:`Texture<class_texture>` **texture** - Particle texture. If [code]null[/code] particles will be squares.
+- :ref:`int<class_int>` **v_frames** - Number of vertical frames in [code]texture[/code].
 - :ref:`Rect2<class_rect2>` **visibility_rect**
 
 Numeric Constants
 -----------------
 
-- **DRAW_ORDER_INDEX** = **0**
-- **DRAW_ORDER_LIFETIME** = **1**
+- **DRAW_ORDER_INDEX** = **0** --- Particles are drawn in the order emitted.
+- **DRAW_ORDER_LIFETIME** = **1** --- Particles are drawn in order of remaining lifetime.
 
 Description
 -----------
 
-Particles2D is a particle system 2D :ref:`Node<class_node>` that is used to simulate several types of particle effects, such as explosions, rain, snow, fireflies, or other magical-like shinny sparkles. Particles are drawn using impostors, and given their dynamic behavior, the user must provide a visibility bounding box (although helpers to create one automatically exist).
+2D particle node used to create a variety of particle systems and effects. ``Particles2D`` features an emitter that generates some number of particles at a given rate.
+
+Use the ``process_material`` property to add a :ref:`ParticlesMaterial<class_particlesmaterial>` to configure particle appearance and behavior. Alternatively, you can add a :ref:`ShaderMaterial<class_shadermaterial>` which will be applied to all particles.
 
 Member Function Description
 ---------------------------

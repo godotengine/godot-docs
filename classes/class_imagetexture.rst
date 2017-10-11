@@ -51,7 +51,7 @@ Numeric Constants
 Description
 -----------
 
-A :ref:`Texture<class_texture>` based on an :ref:`Image<class_image>`. Can be created from an :ref:`Image<class_image>`.
+A :ref:`Texture<class_texture>` based on an :ref:`Image<class_image>`. Can be created from an :ref:`Image<class_image>` with :ref:`create_from_image<class_ImageTexture_create_from_image>`.
 
 Member Function Description
 ---------------------------
@@ -94,7 +94,7 @@ Return the storage type. One of :ref:`ImageTexture<class_imagetexture>`.STORAGE\
 
 - void  **load**  **(** :ref:`String<class_string>` path  **)**
 
-Load an ImageTexure.
+Load an :ref:`ImageTexture<class_imagetexture>`.
 
 .. _class_ImageTexture_set_data:
 
@@ -111,6 +111,8 @@ Set the storage quality in case of :ref:`ImageTexture<class_imagetexture>`.STORA
 .. _class_ImageTexture_set_size_override:
 
 - void  **set_size_override**  **(** :ref:`Vector2<class_vector2>` size  **)**
+
+Resizes the ``ImageTexture`` to the specified dimensions.
 
 .. _class_ImageTexture_set_storage:
 

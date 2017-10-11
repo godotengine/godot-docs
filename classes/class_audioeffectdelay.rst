@@ -14,7 +14,9 @@ AudioEffectDelay
 Brief Description
 -----------------
 
+Adds a Delay audio effect to an Audio bus. Plays input signal back after a period of time.
 
+Two tap delay and feedback options.
 
 Member Functions
 ----------------
@@ -76,19 +78,24 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`float<class_float>` **dry**
-- :ref:`bool<class_bool>` **feedback/active**
-- :ref:`float<class_float>` **feedback/delay_ms**
-- :ref:`float<class_float>` **feedback/level_db**
-- :ref:`float<class_float>` **feedback/lowpass**
-- :ref:`bool<class_bool>` **tap1/active**
-- :ref:`float<class_float>` **tap1/delay_ms**
-- :ref:`float<class_float>` **tap1/level_db**
-- :ref:`float<class_float>` **tap1/pan**
-- :ref:`bool<class_bool>` **tap2/active**
-- :ref:`float<class_float>` **tap2/delay_ms**
-- :ref:`float<class_float>` **tap2/level_db**
-- :ref:`float<class_float>` **tap2/pan**
+- :ref:`float<class_float>` **dry** - Output percent of original sound. At 0, only delayed sounds are output. Value can range from 0 to 1. Default value: [code]1[/code].
+- :ref:`bool<class_bool>` **feedback/active** - If [code]true[/code] feedback is enabled. Default value: [code]false[/code].
+- :ref:`float<class_float>` **feedback/delay_ms** - Feedback delay time in milliseconds. Default value: [code]340[/code].
+- :ref:`float<class_float>` **feedback/level_db** - Sound level for [code]tap1[/code]. Default value: [code]-6 dB[/code].
+- :ref:`float<class_float>` **feedback/lowpass** - Low-pass filter for feedback. Frequencies below the Low Cut value are filtered out of the source signal. Default value: [code]16000[/code].
+- :ref:`bool<class_bool>` **tap1/active** - If [code]true[/code], [code]tap1[/code] will be enabled. Default value: [code]true[/code].
+- :ref:`float<class_float>` **tap1/delay_ms** - [b]Tap1[/b] delay time in milliseconds. Default value: [code]250ms[/code].
+- :ref:`float<class_float>` **tap1/level_db** - Sound level for [code]tap1[/code]. Default value: [code]-6 dB[/code].
+- :ref:`float<class_float>` **tap1/pan** - Pan position for [code]tap1[/code]. Value can range from -1 (fully left) to 1 (fully right). Default value: [code]0.2[/code].
+- :ref:`bool<class_bool>` **tap2/active** - If [code]true[/code], [code]tap2[/code] will be enabled. Default value: [code]true[/code].
+- :ref:`float<class_float>` **tap2/delay_ms** - [b]Tap2[/b] delay time in milliseconds. Default value: [code]500ms[/code].
+- :ref:`float<class_float>` **tap2/level_db** - Sound level for [code]tap2[/code]. Default value: [code]-12 dB[/code].
+- :ref:`float<class_float>` **tap2/pan** - Pan position for [code]tap2[/code]. Value can range from -1 (fully left) to 1 (fully right). Default value: [code]-0.4[/code].
+
+Description
+-----------
+
+Plays input signal back after a period of time. The delayed signal may be played back multiple times to create the sound of a repeating, decaying echo. Delay effects range from a subtle echo effect to a pronounced blending of previous sounds with new sounds.
 
 Member Function Description
 ---------------------------

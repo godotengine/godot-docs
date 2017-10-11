@@ -73,28 +73,32 @@ Signals
 -------
 
 -  **frame_changed**  **(** **)**
+Emitted when the member frame changes.
+
 -  **texture_changed**  **(** **)**
+Emitted when the member texture changes.
+
 
 Member Variables
 ----------------
 
-- :ref:`bool<class_bool>` **centered**
-- :ref:`bool<class_bool>` **flip_h**
-- :ref:`bool<class_bool>` **flip_v**
-- :ref:`int<class_int>` **frame**
-- :ref:`int<class_int>` **hframes**
-- :ref:`Texture<class_texture>` **normal_map**
-- :ref:`Vector2<class_vector2>` **offset**
-- :ref:`bool<class_bool>` **region_enabled**
-- :ref:`bool<class_bool>` **region_filter_clip**
-- :ref:`Rect2<class_rect2>` **region_rect**
-- :ref:`Texture<class_texture>` **texture**
-- :ref:`int<class_int>` **vframes**
+- :ref:`bool<class_bool>` **centered** - If [code]true[/code] texture is centered. Default value: [code]true[/code].
+- :ref:`bool<class_bool>` **flip_h** - If [code]true[/code] texture is flipped horizontally. Default value: [code]false[/code].
+- :ref:`bool<class_bool>` **flip_v** - If [code]true[/code] texture is flipped vertically. Default value: [code]false[/code].
+- :ref:`int<class_int>` **frame** - Current frame to display from sprite sheet. [member vframes] or [member hframes] must be greater than 1.
+- :ref:`int<class_int>` **hframes** - The number of collumns in the sprite sheet.
+- :ref:`Texture<class_texture>` **normal_map** - The normal map gives depth to the Sprite.
+- :ref:`Vector2<class_vector2>` **offset** - The texture's drawing offset.
+- :ref:`bool<class_bool>` **region_enabled** - If [code]true[/code] texture is cut from a larger atlas texture. See [code]region_rect[/code]. Default value: [code]false[/code].
+- :ref:`bool<class_bool>` **region_filter_clip** - If [code]true[/code] the outermost pixels get blurred out.
+- :ref:`Rect2<class_rect2>` **region_rect** - The region of the atlas texture to display. [member region_enabled] must be [code]true[/code].
+- :ref:`Texture<class_texture>` **texture** - [Texture] object to draw.
+- :ref:`int<class_int>` **vframes** - The number of rows in the sprite sheet.
 
 Description
 -----------
 
-General purpose Sprite node. This Sprite node can show any texture as a sprite. The texture can be used as a spritesheet for animation, or only a region from a bigger texture can referenced, like an atlas.
+A node that displays a 2D texture. The texture displayed can be a region from a larger atlas texture, or a frame from a sprite sheet animation.
 
 Member Function Description
 ---------------------------

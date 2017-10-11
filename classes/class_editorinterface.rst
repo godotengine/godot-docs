@@ -42,7 +42,7 @@ Member Functions
 +------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`inspect_object<class_EditorInterface_inspect_object>`  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` for_property=""  **)** |
 +------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`                                  | :ref:`make_mesh_previews<class_EditorInterface_make_mesh_previews>`  **(** :ref:`Array<class_array>` arg0, :ref:`int<class_int>` arg1  **)**              |
+| :ref:`Array<class_array>`                                  | :ref:`make_mesh_previews<class_EditorInterface_make_mesh_previews>`  **(** :ref:`Array<class_array>` meshes, :ref:`int<class_int>` preview_size  **)**    |
 +------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`open_scene_from_path<class_EditorInterface_open_scene_from_path>`  **(** :ref:`String<class_string>` scene_filepath  **)**                          |
 +------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -102,7 +102,7 @@ Member Function Description
 
 .. _class_EditorInterface_make_mesh_previews:
 
-- :ref:`Array<class_array>`  **make_mesh_previews**  **(** :ref:`Array<class_array>` arg0, :ref:`int<class_int>` arg1  **)**
+- :ref:`Array<class_array>`  **make_mesh_previews**  **(** :ref:`Array<class_array>` meshes, :ref:`int<class_int>` preview_size  **)**
 
 .. _class_EditorInterface_open_scene_from_path:
 

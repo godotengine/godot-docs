@@ -42,7 +42,7 @@ Description
 
 Class for finding text patterns in a string using regular expressions. It can not perform replacements. Regular expressions are a way to define patterns of text to be searched. Details on writing patterns are too long to explain here but the Internet is full of tutorials and detailed explanations.
 
-Once created, the RegEx object needs to be compiled with the pattern before it can be used. The pattern must be escaped first for gdscript before it is escaped for the expression. For example:
+Once created, the RegEx object needs to be compiled with the search pattern before it can be used. The search pattern must be escaped first for gdscript before it is escaped for the expression. For example:
 
 ``var exp = RegEx.new()``
 
@@ -101,7 +101,7 @@ This method resets the state of the object, as it was freshly created. Namely, i
 
 - :ref:`int<class_int>`  **compile**  **(** :ref:`String<class_string>` pattern  **)**
 
-Compiles and assign the regular expression pattern to use.
+Compiles and assign the search pattern to use.
 
 .. _class_RegEx_get_group_count:
 
@@ -119,19 +119,19 @@ Returns an array of names of named capturing groups.
 
 - :ref:`String<class_string>`  **get_pattern**  **(** **)** const
 
-Returns the expression used to compile the code.
+Returns the search pattern used to compile the code.
 
 .. _class_RegEx_is_valid:
 
 - :ref:`bool<class_bool>`  **is_valid**  **(** **)** const
 
-Returns whether this object has a valid regular expression assigned.
+Returns whether this object has a valid search pattern assigned.
 
 .. _class_RegEx_search:
 
 - :ref:`RegExMatch<class_regexmatch>`  **search**  **(** :ref:`String<class_string>` subject, :ref:`int<class_int>` offset=0, :ref:`int<class_int>` end=-1  **)** const
 
-Searches the text for the compiled pattern. Returns a :ref:`RegExMatch<class_regexmatch>` container of the first matching reult if found, otherwise null. The region to search within can be specified without modifying where the start and end anchor would be.
+Searches the text for the compiled pattern. Returns a :ref:`RegExMatch<class_regexmatch>` container of the first matching result if found, otherwise null. The region to search within can be specified without modifying where the start and end anchor would be.
 
 .. _class_RegEx_sub:
 

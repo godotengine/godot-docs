@@ -98,7 +98,7 @@ Member Variables
 Numeric Constants
 -----------------
 
-- **TWEEN_PROCESS_FIXED** = **0** --- The :ref:`Tween<class_tween>` should use ``_fixed_process`` for timekeeping when this is enabled.
+- **TWEEN_PROCESS_PHYSICS** = **0** --- The :ref:`Tween<class_tween>` should use ``_physics_process`` for timekeeping when this is enabled.
 - **TWEEN_PROCESS_IDLE** = **1** --- The :ref:`Tween<class_tween>` should use ``_process`` for timekeeping when this is enabled (default).
 - **TRANS_LINEAR** = **0** --- Means that the animation is interpolated linearly.
 - **TRANS_SINE** = **1** --- Means that the animation is interpolated using a sine wave.
@@ -274,7 +274,7 @@ Set the speed multiplier of the tween. Set it to 1 for normal speed, 2 for two t
 
 - void  **set_tween_process_mode**  **(** :ref:`int<class_int>` mode  **)**
 
-Set whether the Tween uses ``_process`` or ``_fixed_process`` (accepts TWEEN_PROCESS_IDLE and TWEEN_PROCESS_FIXED constants, respectively).
+Set whether the Tween uses ``_process`` or ``_physics_process`` (accepts TWEEN_PROCESS_IDLE and TWEEN_PROCESS_PHYSICS constants, respectively).
 
 .. _class_Tween_start:
 

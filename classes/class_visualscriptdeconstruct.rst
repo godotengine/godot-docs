@@ -14,7 +14,7 @@ VisualScriptDeconstruct
 Brief Description
 -----------------
 
-
+A Visual Script node which deconstructs a base type instance into its parts.
 
 Member Functions
 ----------------
@@ -29,7 +29,12 @@ Member Variables
 ----------------
 
 - :ref:`Array<class_array>` **elem_cache**
-- :ref:`int<class_int>` **type**
+- :ref:`int<class_int>` **type** - The type to deconstruct.
+
+Description
+-----------
+
+A Visual Script node which deconstructs a base type instance into its parts.
 
 Member Function Description
 ---------------------------

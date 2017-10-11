@@ -101,6 +101,8 @@ Emitted when a button on the tree was pressed (see :ref:`TreeItem.add_button<cla
 Emitted when a cell is selected.
 
 -  **column_title_pressed**  **(** :ref:`int<class_int>` column  **)**
+Emitted when a column's title is pressed.
+
 -  **custom_popup_edited**  **(** :ref:`bool<class_bool>` arrow_clicked  **)**
 Emitted when a cell with the ``CELL_MODE_CUSTOM`` is clicked to be edited.
 
@@ -115,10 +117,14 @@ Emitted when an item is collapsed by a click on the folding arrow.
 
 -  **item_custom_button_pressed**  **(** **)**
 -  **item_double_clicked**  **(** **)**
+Emitted when an item is double clicked.
+
 -  **item_edited**  **(** **)**
-Emitted when an item is editted.
+Emitted when an item is edited.
 
 -  **item_rmb_edited**  **(** **)**
+Emitted when an item is edited using the right mouse button.
+
 -  **item_rmb_selected**  **(** :ref:`Vector2<class_vector2>` position  **)**
 Emitted when an item is selected with right mouse button.
 
@@ -126,13 +132,15 @@ Emitted when an item is selected with right mouse button.
 Emitted when an item is selected with right mouse button.
 
 -  **multi_selected**  **(** :ref:`Object<class_object>` item, :ref:`int<class_int>` column, :ref:`bool<class_bool>` selected  **)**
+Emitted instead of ``item_selected`` when ``select_mode`` is ``SELECT_MULTI``.
+
 
 Numeric Constants
 -----------------
 
-- **SELECT_SINGLE** = **0**
+- **SELECT_SINGLE** = **0** --- Allow selection of a single item at a time.
 - **SELECT_ROW** = **1**
-- **SELECT_MULTI** = **2**
+- **SELECT_MULTI** = **2** --- Allow selection of multiple items at the same time.
 - **DROP_MODE_DISABLED** = **0**
 - **DROP_MODE_ON_ITEM** = **1**
 - **DROP_MODE_INBETWEEN** = **2**
@@ -140,9 +148,9 @@ Numeric Constants
 Description
 -----------
 
-This shows a tree of items that can be selected, expanded and collapsed. The tree can have multiple columns with custom controls like text editing, buttons and popups. It can be useful for structural displaying and interactions.
+This shows a tree of items that can be selected, expanded and collapsed. The tree can have multiple columns with custom controls like text editing, buttons and popups. It can be useful for structured displays and interactions.
 
-Trees are built via code, using :ref:`TreeItem<class_treeitem>` objects to create the structure. They have a single root but multiple root can be simulated if a dummy hidden root is added.
+Trees are built via code, using :ref:`TreeItem<class_treeitem>` objects to create the structure. They have a single root but multiple roots can be simulated if a dummy hidden root is added.
 
 ::
 
@@ -162,71 +170,73 @@ Member Function Description
 
 - :ref:`bool<class_bool>`  **are_column_titles_visible**  **(** **)** const
 
-Get whether the column titles are being shown.
+Returns ``true`` if the column titles are being shown.
 
 .. _class_Tree_clear:
 
 - void  **clear**  **(** **)**
 
-Clear the tree. This erases all of the items.
+Clears the tree. This removes all items.
 
 .. _class_Tree_create_item:
 
 - :ref:`Object<class_object>`  **create_item**  **(** :ref:`Object<class_object>` parent=null  **)**
 
-Create an item in the tree and add it as the last child of ``parent``. If parent is not given, it will be added as the last child of the root, or it'll the be the root itself if the tree is empty.
+Create an item in the tree and add it as the last child of ``parent``. If parent is not given, it will be added as the root's last child, or it'll the be the root itself if the tree is empty.
 
 .. _class_Tree_ensure_cursor_is_visible:
 
 - void  **ensure_cursor_is_visible**  **(** **)**
 
-Make the current selected item visible. This will scroll the tree to make sure the selected item is in sight.
+Makes the currently selected item visible. This will scroll the tree to make sure the selected item is visible.
 
 .. _class_Tree_get_allow_reselect:
 
 - :ref:`bool<class_bool>`  **get_allow_reselect**  **(** **)** const
 
+Returns ``true`` if a cell that is currently already selected may be selected again.
+
 .. _class_Tree_get_allow_rmb_select:
 
 - :ref:`bool<class_bool>`  **get_allow_rmb_select**  **(** **)** const
 
-Get whether a right click can select items.
+Returns ``true`` if a right click can select items.
 
 .. _class_Tree_get_column_at_position:
 
 - :ref:`int<class_int>`  **get_column_at_position**  **(** :ref:`Vector2<class_vector2>` position  **)** const
 
-Get the column index under the given point.
+Returns the column index under the given point.
 
 .. _class_Tree_get_column_title:
 
 - :ref:`String<class_string>`  **get_column_title**  **(** :ref:`int<class_int>` column  **)** const
 
-Get the title of the given column.
+Returns the column's title.
 
 .. _class_Tree_get_column_width:
 
 - :ref:`int<class_int>`  **get_column_width**  **(** :ref:`int<class_int>` column  **)** const
 
-Get the width of the given column in pixels.
+Returns the column's width in pixels.
 
 .. _class_Tree_get_columns:
 
 - :ref:`int<class_int>`  **get_columns**  **(** **)** const
 
-Get the amount of columns.
+Returns the amount of columns.
 
 .. _class_Tree_get_custom_popup_rect:
 
 - :ref:`Rect2<class_rect2>`  **get_custom_popup_rect**  **(** **)** const
 
-Get the rectangle for custom popups. Helper to create custom cell controls that display a popup. See :ref:`TreeItem.set_cell_mode<class_TreeItem_set_cell_mode>`.
+Returns the rectangle for custom popups. Helper to create custom cell controls that display a popup. See :ref:`TreeItem.set_cell_mode<class_TreeItem_set_cell_mode>`.
 
 .. _class_Tree_get_drop_mode_flags:
 
 - :ref:`int<class_int>`  **get_drop_mode_flags**  **(** **)** const
 
-Get the flags of the current drop mode.
+Returns the current drop mode's flags.
 
 .. _class_Tree_get_drop_section_at_position:
 
@@ -236,83 +246,85 @@ Get the flags of the current drop mode.
 
 - :ref:`TreeItem<class_treeitem>`  **get_edited**  **(** **)** const
 
-Get the current edited item. This is only available for custom cell mode.
+Returns the currently edited item. This is only available for custom cell mode.
 
 .. _class_Tree_get_edited_column:
 
 - :ref:`int<class_int>`  **get_edited_column**  **(** **)** const
 
-Get the column of the cell for the current edited icon. This is only available for custom cell mode.
+Returns the column for the currently edited item. This is only available for custom cell mode.
 
 .. _class_Tree_get_item_area_rect:
 
 - :ref:`Rect2<class_rect2>`  **get_item_area_rect**  **(** :ref:`Object<class_object>` item, :ref:`int<class_int>` column=-1  **)** const
 
-Get the rectangle area of the the specified item. If column is specified, only get the position and size of that column, otherwise get the rectangle containing all columns.
+Returns the rectangle area for the specified item. If column is specified, only get the position and size of that column, otherwise get the rectangle containing all columns.
 
 .. _class_Tree_get_item_at_position:
 
 - :ref:`TreeItem<class_treeitem>`  **get_item_at_position**  **(** :ref:`Vector2<class_vector2>` position  **)** const
 
-Get the tree item at the specified position (relative to the tree origin position).
+Returns the tree item at the specified position (relative to the tree origin position).
 
 .. _class_Tree_get_next_selected:
 
 - :ref:`TreeItem<class_treeitem>`  **get_next_selected**  **(** :ref:`Object<class_object>` from  **)**
 
-Get the next selected item after the given one.
+Returns the next selected item after the given one.
 
 .. _class_Tree_get_pressed_button:
 
 - :ref:`int<class_int>`  **get_pressed_button**  **(** **)** const
 
-Get the index of the last pressed button.
+Returns the last pressed button's index.
 
 .. _class_Tree_get_root:
 
 - :ref:`TreeItem<class_treeitem>`  **get_root**  **(** **)**
 
-Get the root item of the tree.
+Returns the tree's root item.
 
 .. _class_Tree_get_scroll:
 
 - :ref:`Vector2<class_vector2>`  **get_scroll**  **(** **)** const
 
-Get the current scrolling position.
+Returns the current scrolling position.
 
 .. _class_Tree_get_selected:
 
 - :ref:`TreeItem<class_treeitem>`  **get_selected**  **(** **)** const
 
-Get the currently selected item.
+Returns the currently selected item.
 
 .. _class_Tree_get_selected_column:
 
 - :ref:`int<class_int>`  **get_selected_column**  **(** **)** const
 
-Get the column number of the current selection.
+Returns the current selection's column.
 
 .. _class_Tree_is_folding_hidden:
 
 - :ref:`bool<class_bool>`  **is_folding_hidden**  **(** **)** const
 
-Get whether the folding arrow is hidden.
+Returns ``true`` if the folding arrow is hidden.
 
 .. _class_Tree_set_allow_reselect:
 
 - void  **set_allow_reselect**  **(** :ref:`bool<class_bool>` allow  **)**
 
+If ``true`` the currently selected cell may be selected again.
+
 .. _class_Tree_set_allow_rmb_select:
 
 - void  **set_allow_rmb_select**  **(** :ref:`bool<class_bool>` allow  **)**
 
-Set whether or not a right mouse button click can select items.
+If ``true`` a right mouse button click can select items.
 
 .. _class_Tree_set_column_expand:
 
 - void  **set_column_expand**  **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` expand  **)**
 
-Set whether a column will have the "Expand" flag of :ref:`Control<class_control>`.
+If ``true`` the column will have the "Expand" flag of :ref:`Control<class_control>`.
 
 .. _class_Tree_set_column_min_width:
 
@@ -330,7 +342,7 @@ Set the title of a column.
 
 - void  **set_column_titles_visible**  **(** :ref:`bool<class_bool>` visible  **)**
 
-Set whether the column titles visibility.
+If ``true`` column titles are visible.
 
 .. _class_Tree_set_columns:
 
@@ -348,18 +360,18 @@ Set the drop mode as an OR combination of flags. See ``DROP_MODE\_\*`` constants
 
 - void  **set_hide_folding**  **(** :ref:`bool<class_bool>` hide  **)**
 
-Set whether the folding arrow should be hidden.
+If ``true`` the folding arrow is hidden.
 
 .. _class_Tree_set_hide_root:
 
 - void  **set_hide_root**  **(** :ref:`bool<class_bool>` enable  **)**
 
-Set whether the root of the tree should be hidden.
+If ``true`` the tree's root is hidden.
 
 .. _class_Tree_set_select_mode:
 
 - void  **set_select_mode**  **(** :ref:`int<class_int>` mode  **)**
 
-Set the selection mode. Use one of the ``SELECT\_\*`` constants.
+Allow single or multiple selection. See the ``SELECT\_\*`` constants.
 
 

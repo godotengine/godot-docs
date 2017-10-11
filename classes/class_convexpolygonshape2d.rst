@@ -30,7 +30,7 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`PoolVector2Array<class_poolvector2array>` **points**
+- :ref:`PoolVector2Array<class_poolvector2array>` **points** - The polygon's list of vertices. Can be in either clockwise or counterclockwise order.
 
 Description
 -----------
@@ -46,7 +46,7 @@ Member Function Description
 
 - :ref:`PoolVector2Array<class_poolvector2array>`  **get_points**  **(** **)** const
 
-Return a list of points in either clockwise or counter clockwise order, forming a convex polygon.
+Returns a list of points in either clockwise or counter clockwise order, forming a convex polygon.
 
 .. _class_ConvexPolygonShape2D_set_point_cloud:
 
@@ -58,6 +58,6 @@ Currently, this method does nothing.
 
 - void  **set_points**  **(** :ref:`PoolVector2Array<class_poolvector2array>` points  **)**
 
-Set a list of points in either clockwise or counter clockwise order, forming a convex polygon.
+Sets a list of points in either clockwise or counter clockwise order, forming a convex polygon.
 
 

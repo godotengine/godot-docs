@@ -26,9 +26,9 @@ Member Functions
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`_exit_tree<class_Node__exit_tree>`  **(** **)** virtual                                                                                                                                  |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`_fixed_process<class_Node__fixed_process>`  **(** :ref:`float<class_float>` delta  **)** virtual                                                                                         |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`_input<class_Node__input>`  **(** :ref:`InputEvent<class_inputevent>` event  **)** virtual                                                                                               |
++------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`_physics_process<class_Node__physics_process>`  **(** :ref:`float<class_float>` delta  **)** virtual                                                                                     |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`_process<class_Node__process>`  **(** :ref:`float<class_float>` delta  **)** virtual                                                                                                     |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -58,8 +58,6 @@ Member Functions
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`        | :ref:`get_filename<class_Node_get_filename>`  **(** **)** const                                                                                                                                |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`          | :ref:`get_fixed_process_delta_time<class_Node_get_fixed_process_delta_time>`  **(** **)** const                                                                                                |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_array>`          | :ref:`get_groups<class_Node_get_groups>`  **(** **)** const                                                                                                                                    |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`              | :ref:`get_index<class_Node_get_index>`  **(** **)** const                                                                                                                                      |
@@ -82,6 +80,8 @@ Member Functions
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`              | :ref:`get_pause_mode<class_Node_get_pause_mode>`  **(** **)** const                                                                                                                            |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`          | :ref:`get_physics_process_delta_time<class_Node_get_physics_process_delta_time>`  **(** **)** const                                                                                            |
++------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`              | :ref:`get_position_in_parent<class_Node_get_position_in_parent>`  **(** **)** const                                                                                                            |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`          | :ref:`get_process_delta_time<class_Node_get_process_delta_time>`  **(** **)** const                                                                                                            |
@@ -100,10 +100,6 @@ Member Functions
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`            | :ref:`is_displayed_folded<class_Node_is_displayed_folded>`  **(** **)** const                                                                                                                  |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`            | :ref:`is_fixed_processing<class_Node_is_fixed_processing>`  **(** **)** const                                                                                                                  |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`            | :ref:`is_fixed_processing_internal<class_Node_is_fixed_processing_internal>`  **(** **)** const                                                                                                |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`            | :ref:`is_greater_than<class_Node_is_greater_than>`  **(** :ref:`Node<class_node>` node  **)** const                                                                                            |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`            | :ref:`is_in_group<class_Node_is_in_group>`  **(** :ref:`String<class_string>` group  **)** const                                                                                               |
@@ -111,6 +107,10 @@ Member Functions
 | :ref:`bool<class_bool>`            | :ref:`is_inside_tree<class_Node_is_inside_tree>`  **(** **)** const                                                                                                                            |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`            | :ref:`is_network_master<class_Node_is_network_master>`  **(** **)** const                                                                                                                      |
++------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`            | :ref:`is_physics_processing<class_Node_is_physics_processing>`  **(** **)** const                                                                                                              |
++------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`            | :ref:`is_physics_processing_internal<class_Node_is_physics_processing_internal>`  **(** **)** const                                                                                            |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`            | :ref:`is_processing<class_Node_is_processing>`  **(** **)** const                                                                                                                              |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -170,10 +170,6 @@ Member Functions
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_filename<class_Node_set_filename>`  **(** :ref:`String<class_string>` filename  **)**                                                                                                |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_fixed_process<class_Node_set_fixed_process>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                            |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_fixed_process_internal<class_Node_set_fixed_process_internal>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                          |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_name<class_Node_set_name>`  **(** :ref:`String<class_string>` name  **)**                                                                                                            |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_network_master<class_Node_set_network_master>`  **(** :ref:`int<class_int>` id, :ref:`bool<class_bool>` recursive=true  **)**                                                        |
@@ -181,6 +177,10 @@ Member Functions
 | void                               | :ref:`set_owner<class_Node_set_owner>`  **(** :ref:`Node<class_node>` owner  **)**                                                                                                             |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_pause_mode<class_Node_set_pause_mode>`  **(** :ref:`int<class_int>` mode  **)**                                                                                                      |
++------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_physics_process<class_Node_set_physics_process>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                        |
++------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_physics_process_internal<class_Node_set_physics_process_internal>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                      |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_process<class_Node_set_process>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                                        |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -222,7 +222,7 @@ Numeric Constants
 - **NOTIFICATION_EXIT_TREE** = **11**
 - **NOTIFICATION_MOVED_IN_PARENT** = **12**
 - **NOTIFICATION_READY** = **13**
-- **NOTIFICATION_FIXED_PROCESS** = **16**
+- **NOTIFICATION_PHYSICS_PROCESS** = **16** --- Notification received every frame when the physics process flag is set (see :ref:`set_physics_process<class_Node_set_physics_process>`).
 - **NOTIFICATION_PROCESS** = **17** --- Notification received every frame when the process flag is set (see :ref:`set_process<class_Node_set_process>`).
 - **NOTIFICATION_PARENTED** = **18** --- Notification received when a node is set as a child of another node. Note that this doesn't mean that a node entered the Scene Tree.
 - **NOTIFICATION_UNPARENTED** = **19** --- Notification received when a node is unparented (parent removed it from the list of children).
@@ -234,7 +234,7 @@ Numeric Constants
 - **NOTIFICATION_PATH_CHANGED** = **23**
 - **NOTIFICATION_TRANSLATION_CHANGED** = **24**
 - **NOTIFICATION_INTERNAL_PROCESS** = **25**
-- **NOTIFICATION_INTERNAL_FIXED_PROCESS** = **26**
+- **NOTIFICATION_INTERNAL_PHYSICS_PROCESS** = **26**
 - **RPC_MODE_DISABLED** = **0**
 - **RPC_MODE_REMOTE** = **1** --- Call a method remotely.
 - **RPC_MODE_SYNC** = **2** --- Call a method both remotely and locally.
@@ -261,7 +261,7 @@ Once all nodes have been added in the scene tree, they receive the NOTIFICATION_
 
 It means that when adding a scene to the scene tree, the following order will be used for the callbacks: :ref:`_enter_tree<class_Node__enter_tree>` of the parent, :ref:`_enter_tree<class_Node__enter_tree>` of the children, :ref:`_ready<class_Node__ready>` of the children and finally :ref:`_ready<class_Node__ready>` of the parent (and that recursively for the whole scene).
 
-**Processing:** Nodes can be set to the "process" state, so that they receive a callback on each frame requesting them to process (do something). Normal processing (callback :ref:`_process<class_Node__process>`, toggled with :ref:`set_process<class_Node_set_process>`) happens as fast as possible and is dependent on the frame rate, so the processing time *delta* is variable. Fixed processing (callback :ref:`_fixed_process<class_Node__fixed_process>`, toggled with :ref:`set_fixed_process<class_Node_set_fixed_process>`) happens a fixed amount of times per second (by default 60) and is useful to link itself to the physics.
+**Processing:** Nodes can be set to the "process" state, so that they receive a callback on each frame requesting them to process (do something). Normal processing (callback :ref:`_process<class_Node__process>`, toggled with :ref:`set_process<class_Node_set_process>`) happens as fast as possible and is dependent on the frame rate, so the processing time *delta* is variable. Physics processing (callback :ref:`_physics_process<class_Node__physics_process>`, toggled with :ref:`set_physics_process<class_Node_set_physics_process>`) happens a fixed amount of times per second (by default 60) and is useful to link itself to the physics.
 
 Nodes can also process input events. When set, the :ref:`_input<class_Node__input>` function will be called for each input that the program receives. In many cases, this can be overkill (unless used for simple projects), and the :ref:`_unhandled_input<class_Node__unhandled_input>` function might be preferred; it is called when the input event was not handled by anyone else (typically, GUI :ref:`Control<class_control>` nodes), ensuring that the node only receives the events that were meant for it.
 
@@ -290,21 +290,21 @@ Called when the node leaves the :ref:`SceneTree<class_scenetree>` (e.g. upon fre
 
 Corresponds to the NOTIFICATION_EXIT_TREE notification in :ref:`Object._notification<class_Object__notification>`.
 
-.. _class_Node__fixed_process:
-
-- void  **_fixed_process**  **(** :ref:`float<class_float>` delta  **)** virtual
-
-Called during the fixed processing step of the main loop. Fixed processing means that the frame rate is synced to the physics, i.e. the ``delta`` variable should be constant.
-
-It is only called if fixed processing has been enabled with :ref:`set_fixed_process<class_Node_set_fixed_process>`.
-
-Corresponds to the NOTIFICATION_FIXED_PROCESS notification in :ref:`Object._notification<class_Object__notification>`.
-
 .. _class_Node__input:
 
 - void  **_input**  **(** :ref:`InputEvent<class_inputevent>` event  **)** virtual
 
 Called when there is a change to input devices. Propagated through the node tree until a Node consumes it.
+
+.. _class_Node__physics_process:
+
+- void  **_physics_process**  **(** :ref:`float<class_float>` delta  **)** virtual
+
+Called during the physics processing step of the main loop. Physics processing means that the frame rate is synced to the physics, i.e. the ``delta`` variable should be constant.
+
+It is only called if physics processing has been enabled with :ref:`set_physics_process<class_Node_set_physics_process>`.
+
+Corresponds to the NOTIFICATION_PHYSICS_PROCESS notification in :ref:`Object._notification<class_Object__notification>`.
 
 .. _class_Node__process:
 
@@ -396,12 +396,6 @@ Return an array of references (:ref:`Node<class_node>`) to the child nodes.
 
 Return a filename that may be contained by the node. When a scene is instanced from a file, it topmost node contains the filename from where it was loaded (see :ref:`set_filename<class_Node_set_filename>`).
 
-.. _class_Node_get_fixed_process_delta_time:
-
-- :ref:`float<class_float>`  **get_fixed_process_delta_time**  **(** **)** const
-
-Return the time elapsed since the last fixed frame (see :ref:`_fixed_process<class_Node__fixed_process>`). This is always the same in fixed processing unless the frames per second is changed in :ref:`OS<class_os>`.
-
 .. _class_Node_get_groups:
 
 - :ref:`Array<class_array>`  **get_groups**  **(** **)** const
@@ -488,6 +482,12 @@ Return the relative path from the current node to the specified node in "node" a
 
 Return the pause mode (PAUSE_MODE\_\*) of this Node.
 
+.. _class_Node_get_physics_process_delta_time:
+
+- :ref:`float<class_float>`  **get_physics_process_delta_time**  **(** **)** const
+
+Return the time elapsed since the last physics-bound frame (see :ref:`_physics_process<class_Node__physics_process>`). This is always a constant value in physics processing unless the frames per second is changed in :ref:`OS<class_os>`.
+
 .. _class_Node_get_position_in_parent:
 
 - :ref:`int<class_int>`  **get_position_in_parent**  **(** **)** const
@@ -534,16 +534,6 @@ Return *true* if the "node" argument is a direct or indirect child of the curren
 
 - :ref:`bool<class_bool>`  **is_displayed_folded**  **(** **)** const
 
-.. _class_Node_is_fixed_processing:
-
-- :ref:`bool<class_bool>`  **is_fixed_processing**  **(** **)** const
-
-Return true if fixed processing is enabled (see :ref:`set_fixed_process<class_Node_set_fixed_process>`).
-
-.. _class_Node_is_fixed_processing_internal:
-
-- :ref:`bool<class_bool>`  **is_fixed_processing_internal**  **(** **)** const
-
 .. _class_Node_is_greater_than:
 
 - :ref:`bool<class_bool>`  **is_greater_than**  **(** :ref:`Node<class_node>` node  **)** const
@@ -565,6 +555,16 @@ Return whether this Node is inside a :ref:`SceneTree<class_scenetree>`.
 .. _class_Node_is_network_master:
 
 - :ref:`bool<class_bool>`  **is_network_master**  **(** **)** const
+
+.. _class_Node_is_physics_processing:
+
+- :ref:`bool<class_bool>`  **is_physics_processing**  **(** **)** const
+
+Return true if physics processing is enabled (see :ref:`set_physics_process<class_Node_set_physics_process>`).
+
+.. _class_Node_is_physics_processing_internal:
+
+- :ref:`bool<class_bool>`  **is_physics_processing_internal**  **(** **)** const
 
 .. _class_Node_is_processing:
 
@@ -732,16 +732,6 @@ Remotely change property's value on a specific peer identified by *peer_id* usin
 
 A node can contain a filename. This filename should not be changed by the user, unless writing editors and tools. When a scene is instanced from a file, it topmost node contains the filename from where it was loaded.
 
-.. _class_Node_set_fixed_process:
-
-- void  **set_fixed_process**  **(** :ref:`bool<class_bool>` enable  **)**
-
-Enables or disables node fixed framerate processing. When a node is being processed, it will receive a NOTIFICATION_PROCESS at a fixed (usually 60 fps, check :ref:`OS<class_os>` to change that) interval (and the :ref:`_fixed_process<class_Node__fixed_process>` callback will be called if exists). It is common to check how much time was elapsed since the previous frame by calling :ref:`get_fixed_process_delta_time<class_Node_get_fixed_process_delta_time>`.
-
-.. _class_Node_set_fixed_process_internal:
-
-- void  **set_fixed_process_internal**  **(** :ref:`bool<class_bool>` enable  **)**
-
 .. _class_Node_set_name:
 
 - void  **set_name**  **(** :ref:`String<class_string>` name  **)**
@@ -763,6 +753,16 @@ Set the node owner. A node can have any other node as owner (as long as a valid 
 - void  **set_pause_mode**  **(** :ref:`int<class_int>` mode  **)**
 
 Set pause mode (PAUSE_MODE\_\*) of this Node.
+
+.. _class_Node_set_physics_process:
+
+- void  **set_physics_process**  **(** :ref:`bool<class_bool>` enable  **)**
+
+Enables or disables the node's physics (alias fixed framerate) processing. When a node is being processed, it will receive a NOTIFICATION_PHYSICS_PROCESS at a fixed (usually 60 fps, check :ref:`OS<class_os>` to change that) interval (and the :ref:`_physics_process<class_Node__physics_process>` callback will be called if exists). It is common to check how much time was elapsed since the previous frame by calling :ref:`get_physics_process_delta_time<class_Node_get_physics_process_delta_time>`.
+
+.. _class_Node_set_physics_process_internal:
+
+- void  **set_physics_process_internal**  **(** :ref:`bool<class_bool>` enable  **)**
 
 .. _class_Node_set_process:
 

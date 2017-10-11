@@ -108,27 +108,27 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **anchor_mode**
-- :ref:`bool<class_bool>` **current**
-- :ref:`float<class_float>` **drag_margin_bottom**
+- :ref:`int<class_int>` **anchor_mode** - The Camera2D's anchor point. See [code]ANCHOR_MODE_*[/code] constants.
+- :ref:`bool<class_bool>` **current** - If [code]true[/code] this camera is the active camera for the current scene. Only one camera can be current, so setting a different camera [code]current[/code] will disable this one.
+- :ref:`float<class_float>` **drag_margin_bottom** - Bottom margin needed to drag the camera. A value of [code]1[/code] makes the camera move only when reaching the edge of the screen.
 - :ref:`bool<class_bool>` **drag_margin_h_enabled**
-- :ref:`float<class_float>` **drag_margin_left**
-- :ref:`float<class_float>` **drag_margin_right**
-- :ref:`float<class_float>` **drag_margin_top**
+- :ref:`float<class_float>` **drag_margin_left** - Left margin needed to drag the camera. A value of [code]1[/code] makes the camera move only when reaching the edge of the screen.
+- :ref:`float<class_float>` **drag_margin_right** - Right margin needed to drag the camera. A value of [code]1[/code] makes the camera move only when reaching the edge of the screen.
+- :ref:`float<class_float>` **drag_margin_top** - Top margin needed to drag the camera. A value of [code]1[/code] makes the camera move only when reaching the edge of the screen.
 - :ref:`bool<class_bool>` **drag_margin_v_enabled**
 - :ref:`bool<class_bool>` **editor_draw_drag_margin**
 - :ref:`bool<class_bool>` **editor_draw_limits**
 - :ref:`bool<class_bool>` **editor_draw_screen**
-- :ref:`int<class_int>` **limit_bottom**
-- :ref:`int<class_int>` **limit_left**
-- :ref:`int<class_int>` **limit_right**
+- :ref:`int<class_int>` **limit_bottom** - Bottom scroll limit in pixels. The camera stops moving when reaching this value.
+- :ref:`int<class_int>` **limit_left** - Left scroll limit in pixels. The camera stops moving when reaching this value.
+- :ref:`int<class_int>` **limit_right** - Right scroll limit in pixels. The camera stops moving when reaching this value.
 - :ref:`bool<class_bool>` **limit_smoothed**
-- :ref:`int<class_int>` **limit_top**
-- :ref:`Vector2<class_vector2>` **offset**
+- :ref:`int<class_int>` **limit_top** - Top scroll limit in pixels. The camera stops moving when reaching this value.
+- :ref:`Vector2<class_vector2>` **offset** - The camera's offset, useful for looking around or camera shake animations.
 - :ref:`bool<class_bool>` **rotating**
 - :ref:`bool<class_bool>` **smoothing_enabled**
 - :ref:`float<class_float>` **smoothing_speed**
-- :ref:`Vector2<class_vector2>` **zoom**
+- :ref:`Vector2<class_vector2>` **zoom** - The camera's zoom relative to the viewport. Values larger than [code]Vector2(1, 1)[/code] zoom out and smaller values zoom in. For an example, use [code]Vector2(0.5, 0.5)[/code] for a 2x zoom in, and [code]Vector2(4, 4)[/code] for a 4x zoom out.
 
 Numeric Constants
 -----------------
@@ -141,7 +141,7 @@ Description
 
 Camera node for 2D scenes. It forces the screen (current layer) to scroll following this node. This makes it easier (and faster) to program scrollable scenes than manually changing the position of :ref:`CanvasItem<class_canvasitem>` based nodes.
 
-This node is intended to be a simple helper get get things going quickly and it may happen often that more functionality is desired to change how the camera works. To make your own custom camera node, simply inherit from :ref:`Node2D<class_node2d>` and change the transform of the canvas by calling get_viewport().set_canvas_transform(m) in :ref:`Viewport<class_viewport>`.
+This node is intended to be a simple helper to get things going quickly and it may happen often that more functionality is desired to change how the camera works. To make your own custom camera node, simply inherit from :ref:`Node2D<class_node2d>` and change the transform of the canvas by calling get_viewport().set_canvas_transform(m) in :ref:`Viewport<class_viewport>`.
 
 Member Function Description
 ---------------------------

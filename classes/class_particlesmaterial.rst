@@ -14,7 +14,7 @@ ParticlesMaterial
 Brief Description
 -----------------
 
-
+Particle properties for :ref:`Particles<class_particles>` and :ref:`Particles2D<class_particles2d>` nodes.
 
 Member Functions
 ----------------
@@ -100,85 +100,92 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`float<class_float>` **angle**
-- :ref:`Texture<class_texture>` **angle_curve**
-- :ref:`float<class_float>` **angle_random**
-- :ref:`float<class_float>` **angular_velocity**
-- :ref:`Texture<class_texture>` **angular_velocity_curve**
-- :ref:`float<class_float>` **angular_velocity_random**
-- :ref:`bool<class_bool>` **anim_loop**
-- :ref:`float<class_float>` **anim_offset**
-- :ref:`Texture<class_texture>` **anim_offset_curve**
-- :ref:`float<class_float>` **anim_offset_random**
-- :ref:`float<class_float>` **anim_speed**
-- :ref:`Texture<class_texture>` **anim_speed_curve**
-- :ref:`float<class_float>` **anim_speed_random**
-- :ref:`Color<class_color>` **color**
-- :ref:`Texture<class_texture>` **color_ramp**
-- :ref:`float<class_float>` **damping**
-- :ref:`Texture<class_texture>` **damping_curve**
-- :ref:`float<class_float>` **damping_random**
-- :ref:`Vector3<class_vector3>` **emission_box_extents**
+- :ref:`float<class_float>` **angle** - Initial rotation applied to each particle.
+- :ref:`Texture<class_texture>` **angle_curve** - Each particle's rotation will be animated along this [CurveTexture].
+- :ref:`float<class_float>` **angle_random** - Rotation randomness ratio. Default value: [code]0[/code].
+- :ref:`float<class_float>` **angular_velocity** - Initial angular velocity applied to each particle.
+- :ref:`Texture<class_texture>` **angular_velocity_curve** - Each particle's angular velocity will vary along this [CurveTexture].
+- :ref:`float<class_float>` **angular_velocity_random** - Angular velocity randomness ratio. Default value: [code]0[/code].
+- :ref:`bool<class_bool>` **anim_loop** - If [code]true[/code] animation will loop. Default value: [code]false[/code].
+- :ref:`float<class_float>` **anim_offset** - Particle animation offset.
+- :ref:`Texture<class_texture>` **anim_offset_curve** - Each particle's animation offset will vary along this [CurveTexture].
+- :ref:`float<class_float>` **anim_offset_random** - Animation offset randomness ratio. Default value: [code]0[/code].
+- :ref:`float<class_float>` **anim_speed** - Particle animation speed.
+- :ref:`Texture<class_texture>` **anim_speed_curve** - Each particle's animation speed will vary along this [CurveTexture].
+- :ref:`float<class_float>` **anim_speed_random** - Animation speed randomness ratio. Default value: [code]0[/code].
+- :ref:`Color<class_color>` **color** - Each particle's initial color. If the [Particle2D]'s [code]texture[/code] is defined, it will be multiplied by this color.
+- :ref:`Texture<class_texture>` **color_ramp** - Each particle's color will vary along this [GradientTexture].
+- :ref:`float<class_float>` **damping** - The rate at which particles lose velocity.
+- :ref:`Texture<class_texture>` **damping_curve** - Damping will vary along this [CurveTexture].
+- :ref:`float<class_float>` **damping_random** - Damping randomness ratio. Default value: [code]0[/code].
+- :ref:`Vector3<class_vector3>` **emission_box_extents** - The box's extents if [code]emission_shape[/code] is set to [code]EMISSION_SHAPE_BOX[/code].
 - :ref:`Texture<class_texture>` **emission_color_texture**
 - :ref:`Texture<class_texture>` **emission_normal_texture**
-- :ref:`int<class_int>` **emission_point_count**
+- :ref:`int<class_int>` **emission_point_count** - The number of emission points if [code]emission_shape[/code] is set to [code]EMISSION_SHAPE_POINTS[/code] or [code]EMISSION_SHAPE_DIRECTED_POINTS[/code].
 - :ref:`Texture<class_texture>` **emission_point_texture**
-- :ref:`int<class_int>` **emission_shape**
-- :ref:`float<class_float>` **emission_sphere_radius**
+- :ref:`int<class_int>` **emission_shape** - Particles will be emitted inside this region. Use [code]EMISSION_SHAPE_*[/code] constants for values. Default value: [code]EMISSION_SHAPE_POINT[/code].
+- :ref:`float<class_float>` **emission_sphere_radius** - The sphere's radius if [code]emission_shape[/code] is set to [code]EMISSION_SHAPE_SPHERE[/code].
 - :ref:`bool<class_bool>` **flag_align_y**
-- :ref:`bool<class_bool>` **flag_disable_z**
+- :ref:`bool<class_bool>` **flag_disable_z** - If [code]true[/code] particles will not move on the z axis. Default value: [code]true[/code] for [Particles2D], [code]false[/code] for [Particles].
 - :ref:`bool<class_bool>` **flag_rotate_y**
 - :ref:`float<class_float>` **flatness**
-- :ref:`Vector3<class_vector3>` **gravity**
-- :ref:`float<class_float>` **hue_variation**
-- :ref:`Texture<class_texture>` **hue_variation_curve**
-- :ref:`float<class_float>` **hue_variation_random**
-- :ref:`float<class_float>` **initial_velocity**
-- :ref:`float<class_float>` **initial_velocity_random**
-- :ref:`float<class_float>` **linear_accel**
-- :ref:`Texture<class_texture>` **linear_accel_curve**
-- :ref:`float<class_float>` **linear_accel_random**
-- :ref:`float<class_float>` **orbit_velocity**
-- :ref:`Texture<class_texture>` **orbit_velocity_curve**
-- :ref:`float<class_float>` **orbit_velocity_random**
-- :ref:`float<class_float>` **radial_accel**
-- :ref:`Texture<class_texture>` **radial_accel_curve**
-- :ref:`float<class_float>` **radial_accel_random**
-- :ref:`float<class_float>` **scale**
-- :ref:`Texture<class_texture>` **scale_curve**
-- :ref:`float<class_float>` **scale_random**
-- :ref:`float<class_float>` **spread**
-- :ref:`float<class_float>` **tangential_accel**
-- :ref:`Texture<class_texture>` **tangential_accel_curve**
-- :ref:`float<class_float>` **tangential_accel_random**
-- :ref:`GradientTexture<class_gradienttexture>` **trail_color_modifier**
-- :ref:`int<class_int>` **trail_divisor**
-- :ref:`CurveTexture<class_curvetexture>` **trail_size_modifier**
+- :ref:`Vector3<class_vector3>` **gravity** - Gravity applied to every particle. Default value: [code](0, 98, 0)[/code].
+- :ref:`float<class_float>` **hue_variation** - Initial hue variation applied to each particle.
+- :ref:`Texture<class_texture>` **hue_variation_curve** - Each particle's hue will vary along this [CurveTexture].
+- :ref:`float<class_float>` **hue_variation_random** - Hue variation randomness ratio. Default value: [code]0[/code].
+- :ref:`float<class_float>` **initial_velocity** - Initial velocity for each particle.
+- :ref:`float<class_float>` **initial_velocity_random** - Initial velocity randomness ratio. Default value: [code]0[/code].
+- :ref:`float<class_float>` **linear_accel** - Linear acceleration applied to each particle.
+- :ref:`Texture<class_texture>` **linear_accel_curve** - Each particle's linear acceleration will vary along this [CurveTexture].
+- :ref:`float<class_float>` **linear_accel_random** - Linear acceleration randomness ratio. Default value: [code]0[/code].
+- :ref:`float<class_float>` **orbit_velocity** - Orbital velocity applied to each particle.
+- :ref:`Texture<class_texture>` **orbit_velocity_curve** - Each particle's orbital velocity will vary along this [CurveTexture].
+- :ref:`float<class_float>` **orbit_velocity_random** - Orbital velocity randomness ratio. Default value: [code]0[/code].
+- :ref:`float<class_float>` **radial_accel** - Linear acceleration applied to each particle.
+- :ref:`Texture<class_texture>` **radial_accel_curve** - Each particle's radial acceleration will vary along this [CurveTexture].
+- :ref:`float<class_float>` **radial_accel_random** - Radial acceleration randomness ratio. Default value: [code]0[/code].
+- :ref:`float<class_float>` **scale** - Initial scale applied to each particle.
+- :ref:`Texture<class_texture>` **scale_curve** - Each particle's scale will vary along this [CurveTexture].
+- :ref:`float<class_float>` **scale_random** - Scale randomness ratio. Default value: [code]0[/code].
+- :ref:`float<class_float>` **spread** - Each particle's initial direction range from [code]+spread[/code] to [code]-spread[/code] degrees. Default value: [code]45[/code].
+- :ref:`float<class_float>` **tangential_accel** - Tangential acceleration applied to each particle. Tangential acceleration is perpendicular to the particle's velocity.
+- :ref:`Texture<class_texture>` **tangential_accel_curve** - Each particle's tangential acceleration will vary along this [CurveTexture].
+- :ref:`float<class_float>` **tangential_accel_random** - Tangential acceleration randomness ratio. Default value: [code]0[/code].
+- :ref:`GradientTexture<class_gradienttexture>` **trail_color_modifier** - Trail particles' color will vary along this [GradientTexture].
+- :ref:`int<class_int>` **trail_divisor** - Emitter will emit [code]amount[/code] divided by [code]trail_divisor[/code] particles. The remaining particles will be used as trail(s).
+- :ref:`CurveTexture<class_curvetexture>` **trail_size_modifier** - Trail particles' size will vary along this [CurveTexture].
 
 Numeric Constants
 -----------------
 
-- **PARAM_INITIAL_LINEAR_VELOCITY** = **0**
-- **PARAM_ANGULAR_VELOCITY** = **1**
-- **PARAM_ORBIT_VELOCITY** = **2**
-- **PARAM_LINEAR_ACCEL** = **3**
-- **PARAM_RADIAL_ACCEL** = **4**
-- **PARAM_TANGENTIAL_ACCEL** = **5**
-- **PARAM_DAMPING** = **6**
-- **PARAM_ANGLE** = **7**
-- **PARAM_SCALE** = **8**
-- **PARAM_HUE_VARIATION** = **9**
-- **PARAM_ANIM_SPEED** = **10**
-- **PARAM_ANIM_OFFSET** = **11**
+- **PARAM_INITIAL_LINEAR_VELOCITY** = **0** --- Use with :ref:`set_param<class_ParticlesMaterial_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_set_param_texture>` to set initial velocity properties.
+- **PARAM_ANGULAR_VELOCITY** = **1** --- Use with :ref:`set_param<class_ParticlesMaterial_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_set_param_texture>` to set angular velocity properties.
+- **PARAM_ORBIT_VELOCITY** = **2** --- Use with :ref:`set_param<class_ParticlesMaterial_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_set_param_texture>` to set orbital_velocity properties.
+- **PARAM_LINEAR_ACCEL** = **3** --- Use with :ref:`set_param<class_ParticlesMaterial_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_set_param_texture>` to set linear acceleration properties.
+- **PARAM_RADIAL_ACCEL** = **4** --- Use with :ref:`set_param<class_ParticlesMaterial_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_set_param_texture>` to set radial acceleration properties.
+- **PARAM_TANGENTIAL_ACCEL** = **5** --- Use with :ref:`set_param<class_ParticlesMaterial_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_set_param_texture>` to set tangential acceleration properties.
+- **PARAM_DAMPING** = **6** --- Use with :ref:`set_param<class_ParticlesMaterial_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_set_param_texture>` to set damping properties.
+- **PARAM_ANGLE** = **7** --- Use with :ref:`set_param<class_ParticlesMaterial_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_set_param_texture>` to set angle properties.
+- **PARAM_SCALE** = **8** --- Use with :ref:`set_param<class_ParticlesMaterial_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_set_param_texture>` to set scale properties.
+- **PARAM_HUE_VARIATION** = **9** --- Use with :ref:`set_param<class_ParticlesMaterial_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_set_param_texture>` to set hue_variation properties.
+- **PARAM_ANIM_SPEED** = **10** --- Use with :ref:`set_param<class_ParticlesMaterial_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_set_param_texture>` to set animation speed properties.
+- **PARAM_ANIM_OFFSET** = **11** --- Use with :ref:`set_param<class_ParticlesMaterial_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_set_param_texture>` to set animation offset properties.
 - **PARAM_MAX** = **12**
-- **FLAG_ALIGN_Y_TO_VELOCITY** = **0**
-- **FLAG_ROTATE_Y** = **1**
+- **FLAG_ALIGN_Y_TO_VELOCITY** = **0** --- Use with :ref:`set_flag<class_ParticlesMaterial_set_flag>` to set member flag_align_y.
+- **FLAG_ROTATE_Y** = **1** --- Use with :ref:`set_flag<class_ParticlesMaterial_set_flag>` to set member flag_rotate_y
 - **FLAG_MAX** = **4**
-- **EMISSION_SHAPE_POINT** = **0**
-- **EMISSION_SHAPE_SPHERE** = **1**
-- **EMISSION_SHAPE_BOX** = **2**
+- **EMISSION_SHAPE_POINT** = **0** --- All particles will be emitted from a single point.
+- **EMISSION_SHAPE_SPHERE** = **1** --- Particles will be emitted in the volume of a sphere.
+- **EMISSION_SHAPE_BOX** = **2** --- Particles will be emitted in the volume of a box.
 - **EMISSION_SHAPE_POINTS** = **3**
 - **EMISSION_SHAPE_DIRECTED_POINTS** = **4**
+
+Description
+-----------
+
+ParticlesMaterial defines particle properties and behavior. It is used in the ``process_material`` of :ref:`Particles<class_particles>` and :ref:`Particles2D<class_particles2d>` emitter nodes.
+
+Some of this material's properties are applied to each particle when emitted, while others can have a :ref:`CurveTexture<class_curvetexture>` applied to vary values over the lifetime of the particle.
 
 Member Function Description
 ---------------------------

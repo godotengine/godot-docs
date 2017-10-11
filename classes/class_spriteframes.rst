@@ -54,13 +54,13 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`Array<class_array>` **animations**
+- :ref:`Array<class_array>` **animations** - An [Array] containing the [code]name[/code], [code]speed[/code], [code]loop[/code], and [code]frames[/code] of each animation.
 - :ref:`Array<class_array>` **frames**
 
 Description
 -----------
 
-Sprite frame library for :ref:`AnimatedSprite<class_animatedsprite>`.
+Sprite frame library for :ref:`AnimatedSprite<class_animatedsprite>`. Contains frames and animation data for playback.
 
 Member Function Description
 ---------------------------
@@ -69,60 +69,90 @@ Member Function Description
 
 - void  **add_animation**  **(** :ref:`String<class_string>` anim  **)**
 
+Adds a new animation to the the library.
+
 .. _class_SpriteFrames_add_frame:
 
 - void  **add_frame**  **(** :ref:`String<class_string>` anim, :ref:`Texture<class_texture>` frame, :ref:`int<class_int>` at_position=-1  **)**
+
+Adds a frame to the given animation.
 
 .. _class_SpriteFrames_clear:
 
 - void  **clear**  **(** :ref:`String<class_string>` anim  **)**
 
+Removes all frames from the given animation.
+
 .. _class_SpriteFrames_clear_all:
 
 - void  **clear_all**  **(** **)**
+
+Removes all animations. A "default" animation will be created.
 
 .. _class_SpriteFrames_get_animation_loop:
 
 - :ref:`bool<class_bool>`  **get_animation_loop**  **(** :ref:`String<class_string>` anim  **)** const
 
+If ``true`` the given animation will loop.
+
 .. _class_SpriteFrames_get_animation_speed:
 
 - :ref:`float<class_float>`  **get_animation_speed**  **(** :ref:`String<class_string>` anim  **)** const
+
+The animation's speed in frames per second.
 
 .. _class_SpriteFrames_get_frame:
 
 - :ref:`Texture<class_texture>`  **get_frame**  **(** :ref:`String<class_string>` anim, :ref:`int<class_int>` idx  **)** const
 
+Returns the animation's selected frame.
+
 .. _class_SpriteFrames_get_frame_count:
 
 - :ref:`int<class_int>`  **get_frame_count**  **(** :ref:`String<class_string>` anim  **)** const
+
+Returns the number of frames in the animation.
 
 .. _class_SpriteFrames_has_animation:
 
 - :ref:`bool<class_bool>`  **has_animation**  **(** :ref:`String<class_string>` anim  **)** const
 
+If ``true`` the named animation exists.
+
 .. _class_SpriteFrames_remove_animation:
 
 - void  **remove_animation**  **(** :ref:`String<class_string>` anim  **)**
+
+Removes the given animation.
 
 .. _class_SpriteFrames_remove_frame:
 
 - void  **remove_frame**  **(** :ref:`String<class_string>` anim, :ref:`int<class_int>` idx  **)**
 
+Removes the animation's selected frame.
+
 .. _class_SpriteFrames_rename_animation:
 
 - void  **rename_animation**  **(** :ref:`String<class_string>` anim, :ref:`String<class_string>` newname  **)**
+
+Changes the animation's name to ``newname``.
 
 .. _class_SpriteFrames_set_animation_loop:
 
 - void  **set_animation_loop**  **(** :ref:`String<class_string>` anim, :ref:`bool<class_bool>` loop  **)**
 
+If ``true`` the animation will loop.
+
 .. _class_SpriteFrames_set_animation_speed:
 
 - void  **set_animation_speed**  **(** :ref:`String<class_string>` anim, :ref:`float<class_float>` speed  **)**
 
+The animation's speed in frames per second.
+
 .. _class_SpriteFrames_set_frame:
 
 - void  **set_frame**  **(** :ref:`String<class_string>` anim, :ref:`int<class_int>` idx, :ref:`Texture<class_texture>` txt  **)**
+
+Sets the texture of the given frame.
 
 

@@ -14,7 +14,7 @@ VisualScriptSceneNode
 Brief Description
 -----------------
 
-
+Node reference.
 
 Member Functions
 ----------------
@@ -28,7 +28,20 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`NodePath<class_nodepath>` **node_path**
+- :ref:`NodePath<class_nodepath>` **node_path** - The node's path in the scene tree.
+
+Description
+-----------
+
+A direct reference to a node.
+
+**Input Ports:**
+
+none
+
+**Output Ports:**
+
+- Data: ``node`` (obj)
 
 Member Function Description
 ---------------------------

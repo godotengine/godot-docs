@@ -24,23 +24,25 @@ Member Functions
 +------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`commit_for_eye<class_ARVRScriptInterface_commit_for_eye>`  **(** :ref:`int<class_int>` eye, :ref:`RID<class_rid>` render_target  **)** virtual                           |
 +------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`            | :ref:`get_anchor_detection_is_enabled<class_ARVRScriptInterface_get_anchor_detection_is_enabled>`  **(** **)** virtual                                                         |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`              | :ref:`get_capabilities<class_ARVRScriptInterface_get_capabilities>`  **(** **)** virtual                                                                                       |
++------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`      | :ref:`get_recommended_render_targetsize<class_ARVRScriptInterface_get_recommended_render_targetsize>`  **(** **)** virtual                                                     |
 +------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_transform>`  | :ref:`get_transform_for_eye<class_ARVRScriptInterface_get_transform_for_eye>`  **(** :ref:`int<class_int>` eye, :ref:`Transform<class_transform>` cam_transform  **)** virtual |
+| :ref:`int<class_int>`              | :ref:`get_tracking_status<class_ARVRScriptInterface_get_tracking_status>`  **(** **)** virtual                                                                                 |
 +------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`            | :ref:`hmd_is_present<class_ARVRScriptInterface_hmd_is_present>`  **(** **)** virtual                                                                                           |
+| :ref:`Transform<class_transform>`  | :ref:`get_transform_for_eye<class_ARVRScriptInterface_get_transform_for_eye>`  **(** :ref:`int<class_int>` eye, :ref:`Transform<class_transform>` cam_transform  **)** virtual |
 +------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`            | :ref:`initialize<class_ARVRScriptInterface_initialize>`  **(** **)** virtual                                                                                                   |
 +------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`            | :ref:`is_initialized<class_ARVRScriptInterface_is_initialized>`  **(** **)** virtual                                                                                           |
 +------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`            | :ref:`is_installed<class_ARVRScriptInterface_is_installed>`  **(** **)** virtual                                                                                               |
-+------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`            | :ref:`is_stereo<class_ARVRScriptInterface_is_stereo>`  **(** **)** virtual                                                                                                     |
 +------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`process<class_ARVRScriptInterface_process>`  **(** **)** virtual                                                                                                         |
 +------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`            | :ref:`supports_hmd<class_ARVRScriptInterface_supports_hmd>`  **(** **)** virtual                                                                                               |
+| void                               | :ref:`set_anchor_detection_is_enabled<class_ARVRScriptInterface_set_anchor_detection_is_enabled>`  **(** :ref:`bool<class_bool>` enabled  **)** virtual                        |
 +------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`uninitialize<class_ARVRScriptInterface_uninitialize>`  **(** **)** virtual                                                                                               |
 +------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -65,23 +67,35 @@ Should return the projection 4x4 matrix for the requested eye.
 
 Outputs a finished render buffer to the AR/VR device for the given eye.
 
+.. _class_ARVRScriptInterface_get_anchor_detection_is_enabled:
+
+- :ref:`bool<class_bool>`  **get_anchor_detection_is_enabled**  **(** **)** virtual
+
+Returns true if achor detection is enabled (AR only).
+
+.. _class_ARVRScriptInterface_get_capabilities:
+
+- :ref:`int<class_int>`  **get_capabilities**  **(** **)** virtual
+
+Returns a combination of flags providing information about the capabilities of this interface.
+
 .. _class_ARVRScriptInterface_get_recommended_render_targetsize:
 
 - :ref:`Vector2<class_vector2>`  **get_recommended_render_targetsize**  **(** **)** virtual
 
 Returns the size at which we should render our scene to get optimal quality on the output device.
 
+.. _class_ARVRScriptInterface_get_tracking_status:
+
+- :ref:`int<class_int>`  **get_tracking_status**  **(** **)** virtual
+
+If supported, returns the status of our tracking. This will allow you to provide feedback to the user whether there are issues with positional tracking.
+
 .. _class_ARVRScriptInterface_get_transform_for_eye:
 
 - :ref:`Transform<class_transform>`  **get_transform_for_eye**  **(** :ref:`int<class_int>` eye, :ref:`Transform<class_transform>` cam_transform  **)** virtual
 
 Get the location and orientation transform used when rendering a specific eye.
-
-.. _class_ARVRScriptInterface_hmd_is_present:
-
-- :ref:`bool<class_bool>`  **hmd_is_present**  **(** **)** virtual
-
-Return true is an HMD is available.
 
 .. _class_ARVRScriptInterface_initialize:
 
@@ -95,12 +109,6 @@ Initialize this interface.
 
 Returns true if this interface has been initialized and is active.
 
-.. _class_ARVRScriptInterface_is_installed:
-
-- :ref:`bool<class_bool>`  **is_installed**  **(** **)** virtual
-
-Returns true if the required middleware is installed.
-
 .. _class_ARVRScriptInterface_is_stereo:
 
 - :ref:`bool<class_bool>`  **is_stereo**  **(** **)** virtual
@@ -113,11 +121,11 @@ Returns true if we require stereoscopic rendering for this interface.
 
 Gets called before rendering each frame so tracking data gets updated in time.
 
-.. _class_ARVRScriptInterface_supports_hmd:
+.. _class_ARVRScriptInterface_set_anchor_detection_is_enabled:
 
-- :ref:`bool<class_bool>`  **supports_hmd**  **(** **)** virtual
+- void  **set_anchor_detection_is_enabled**  **(** :ref:`bool<class_bool>` enabled  **)** virtual
 
-Returns true if this interface supports HMDs.
+Enables anchor detection, this is used on AR interfaces and enables the extra logic that will detect planes, features, objects, etc. and adds/modifies anchor points.
 
 .. _class_ARVRScriptInterface_uninitialize:
 

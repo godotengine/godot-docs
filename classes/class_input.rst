@@ -76,6 +76,8 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`is_mouse_button_pressed<class_Input_is_mouse_button_pressed>`  **(** :ref:`int<class_int>` button  **)** const                                                                                                               |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`joy_connection_changed<class_Input_joy_connection_changed>`  **(** :ref:`int<class_int>` device, :ref:`bool<class_bool>` connected, :ref:`String<class_string>` name, :ref:`String<class_string>` guid  **)**                |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`parse_input_event<class_Input_parse_input_event>`  **(** :ref:`InputEvent<class_inputevent>` event  **)**                                                                                                                    |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`remove_joy_mapping<class_Input_remove_joy_mapping>`  **(** :ref:`String<class_string>` guid  **)**                                                                                                                           |
@@ -261,6 +263,10 @@ Returns true or false depending on whether the key is pressed or not. You can pa
 - :ref:`bool<class_bool>`  **is_mouse_button_pressed**  **(** :ref:`int<class_int>` button  **)** const
 
 Returns true or false depending on whether mouse button is pressed or not. You can pass BUTTON\_\*, which are pre-defined constants listed in :ref:`@Global Scope<class_@global scope>`.
+
+.. _class_Input_joy_connection_changed:
+
+- void  **joy_connection_changed**  **(** :ref:`int<class_int>` device, :ref:`bool<class_bool>` connected, :ref:`String<class_string>` name, :ref:`String<class_string>` guid  **)**
 
 .. _class_Input_parse_input_event:
 

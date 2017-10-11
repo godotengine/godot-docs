@@ -14,7 +14,7 @@ JSON
 Brief Description
 -----------------
 
-
+Helper class for parsing JSON data.
 
 Member Functions
 ----------------
@@ -25,6 +25,11 @@ Member Functions
 | :ref:`String<class_string>`                    | :ref:`print<class_JSON_print>`  **(** :ref:`Variant<class_variant>` value  **)** |
 +------------------------------------------------+----------------------------------------------------------------------------------+
 
+Description
+-----------
+
+Helper class for parsing JSON data.
+
 Member Function Description
 ---------------------------
 
@@ -32,8 +37,12 @@ Member Function Description
 
 - :ref:`JSONParseResult<class_jsonparseresult>`  **parse**  **(** :ref:`String<class_string>` json  **)**
 
+Parses a JSON encoded string and returns a :ref:`JSONParseResult<class_jsonparseresult>` containing the result.
+
 .. _class_JSON_print:
 
 - :ref:`String<class_string>`  **print**  **(** :ref:`Variant<class_variant>` value  **)**
+
+Converts a Variant var to JSON text and returns the result. Useful for serializing data to store or send over the network.
 
 

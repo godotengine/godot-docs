@@ -14,7 +14,7 @@ Particles
 Brief Description
 -----------------
 
-
+3D particle emitter.
 
 Member Functions
 ----------------
@@ -92,33 +92,40 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **amount**
-- :ref:`int<class_int>` **draw_order**
+- :ref:`int<class_int>` **amount** - Number of particles to emit.
+- :ref:`int<class_int>` **draw_order** - Particle draw order. Uses [code]DRAW_ORDER_*[/code] values. Default value: [code]DRAW_ORDER_INDEX[/code].
 - :ref:`Mesh<class_mesh>` **draw_pass_1**
 - :ref:`Mesh<class_mesh>` **draw_pass_2**
 - :ref:`Mesh<class_mesh>` **draw_pass_3**
 - :ref:`Mesh<class_mesh>` **draw_pass_4**
 - :ref:`int<class_int>` **draw_passes**
-- :ref:`bool<class_bool>` **emitting**
-- :ref:`float<class_float>` **explosiveness**
+- :ref:`bool<class_bool>` **emitting** - If [code]true[/code] particles are being emitted. Default value: [code]true[/code].
+- :ref:`float<class_float>` **explosiveness** - Time ratio between each emission. If [code]0[/code] particles are emitted continuously. If [code]1[/code] all particles are emitted simultaneously. Default value: [code]0[/code].
 - :ref:`int<class_int>` **fixed_fps**
 - :ref:`bool<class_bool>` **fract_delta**
-- :ref:`float<class_float>` **lifetime**
-- :ref:`bool<class_bool>` **local_coords**
-- :ref:`bool<class_bool>` **one_shot**
+- :ref:`float<class_float>` **lifetime** - Amount of time each particle will exist. Default value: [code]1[/code].
+- :ref:`bool<class_bool>` **local_coords** - If [code]true[/code] particles use the parent node's coordinate space. If [code]false[/code] they use global coordinates. Default value: [code]true[/code].
+- :ref:`bool<class_bool>` **one_shot** - If [code]true[/code] only [code]amount[/code] particles will be emitted. Default value: [code]false[/code].
 - :ref:`float<class_float>` **preprocess**
-- :ref:`Material<class_material>` **process_material**
-- :ref:`float<class_float>` **randomness**
-- :ref:`float<class_float>` **speed_scale**
+- :ref:`Material<class_material>` **process_material** - [Material] for processing particles. Can be a [ParticlesMaterial] or a [ShaderMaterial].
+- :ref:`float<class_float>` **randomness** - Emission randomness ratio. Default value: [code]0[/code].
+- :ref:`float<class_float>` **speed_scale** - Speed scaling ratio. Default value: [code]1[/code].
 - :ref:`Rect3<class_rect3>` **visibility_aabb**
 
 Numeric Constants
 -----------------
 
-- **DRAW_ORDER_INDEX** = **0**
-- **DRAW_ORDER_LIFETIME** = **1**
-- **DRAW_ORDER_VIEW_DEPTH** = **2**
+- **DRAW_ORDER_INDEX** = **0** --- Particles are drawn in the order emitted.
+- **DRAW_ORDER_LIFETIME** = **1** --- Particles are drawn in order of remaining lifetime.
+- **DRAW_ORDER_VIEW_DEPTH** = **2** --- Particles are drawn in order of depth.
 - **MAX_DRAW_PASSES** = **4**
+
+Description
+-----------
+
+3D particle node used to create a variety of particle systems and effects. ``Particles`` features an emitter that generates some number of particles at a given rate.
+
+Use the ``process_material`` property to add a :ref:`ParticlesMaterial<class_particlesmaterial>` to configure particle appearance and behavior. Alternatively, you can add a :ref:`ShaderMaterial<class_shadermaterial>` which will be applied to all particles.
 
 Member Function Description
 ---------------------------

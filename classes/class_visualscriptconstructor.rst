@@ -14,7 +14,7 @@ VisualScriptConstructor
 Brief Description
 -----------------
 
-
+A Visual Script node which calls a base type constructor.
 
 Member Functions
 ----------------
@@ -32,8 +32,29 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`Dictionary<class_dictionary>` **constructor**
-- :ref:`int<class_int>` **type**
+- :ref:`Dictionary<class_dictionary>` **constructor** - The constructor function's method info. Has roughly the following structure:
+			[codeblock]
+			{
+				name = "string",
+				args = [{
+					name = "string"
+					class_name = "string"
+					type = TYPE_*
+					hint = PROPERTY_HINT_*
+					hint_string = "string"
+				}]
+				default_args = [] # Array of variants
+				flags = METHOD_FLAG_*
+				id = 0
+				return = {type = TYPE_*}
+			}
+			[/codeblock]
+- :ref:`int<class_int>` **type** - The type to be constructed.
+
+Description
+-----------
+
+A Visual Script node which calls a base type constructor. It can be used for type conversion as well.
 
 Member Function Description
 ---------------------------

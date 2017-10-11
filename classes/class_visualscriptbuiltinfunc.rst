@@ -14,7 +14,7 @@ VisualScriptBuiltinFunc
 Brief Description
 -----------------
 
-
+A Visual Script node used to call built-in functions.
 
 Member Functions
 ----------------
@@ -28,69 +28,76 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **function**
+- :ref:`int<class_int>` **function** - The function to be executed.
 
 Numeric Constants
 -----------------
 
-- **MATH_SIN** = **0**
-- **MATH_COS** = **1**
-- **MATH_TAN** = **2**
-- **MATH_SINH** = **3**
-- **MATH_COSH** = **4**
-- **MATH_TANH** = **5**
-- **MATH_ASIN** = **6**
-- **MATH_ACOS** = **7**
-- **MATH_ATAN** = **8**
-- **MATH_ATAN2** = **9**
-- **MATH_SQRT** = **10**
-- **MATH_FMOD** = **11**
-- **MATH_FPOSMOD** = **12**
-- **MATH_FLOOR** = **13**
-- **MATH_CEIL** = **14**
-- **MATH_ROUND** = **15**
-- **MATH_ABS** = **16**
-- **MATH_SIGN** = **17**
-- **MATH_POW** = **18**
-- **MATH_LOG** = **19**
-- **MATH_EXP** = **20**
-- **MATH_ISNAN** = **21**
-- **MATH_ISINF** = **22**
-- **MATH_EASE** = **23**
-- **MATH_DECIMALS** = **24**
-- **MATH_STEPIFY** = **25**
-- **MATH_LERP** = **26**
-- **MATH_DECTIME** = **27**
-- **MATH_RANDOMIZE** = **28**
-- **MATH_RAND** = **29**
-- **MATH_RANDF** = **30**
-- **MATH_RANDOM** = **31**
-- **MATH_SEED** = **32**
-- **MATH_RANDSEED** = **33**
-- **MATH_DEG2RAD** = **34**
-- **MATH_RAD2DEG** = **35**
-- **MATH_LINEAR2DB** = **36**
-- **MATH_DB2LINEAR** = **37**
-- **LOGIC_MAX** = **38**
-- **LOGIC_MIN** = **39**
-- **LOGIC_CLAMP** = **40**
-- **LOGIC_NEAREST_PO2** = **41**
-- **OBJ_WEAKREF** = **42**
-- **FUNC_FUNCREF** = **43**
-- **TYPE_CONVERT** = **44**
-- **TYPE_OF** = **45**
-- **TYPE_EXISTS** = **46**
-- **TEXT_CHAR** = **47**
-- **TEXT_STR** = **48**
-- **TEXT_PRINT** = **49**
-- **TEXT_PRINTERR** = **50**
-- **TEXT_PRINTRAW** = **51**
-- **VAR_TO_STR** = **52**
-- **STR_TO_VAR** = **53**
-- **VAR_TO_BYTES** = **54**
-- **BYTES_TO_VAR** = **55**
-- **COLORN** = **56**
-- **FUNC_MAX** = **57**
+- **MATH_SIN** = **0** --- Return the sine of the input.
+- **MATH_COS** = **1** --- Return the cosine of the input.
+- **MATH_TAN** = **2** --- Return the tangent of the input.
+- **MATH_SINH** = **3** --- Return the hyperbolic sine of the input.
+- **MATH_COSH** = **4** --- Return the hyperbolic cosine of the input.
+- **MATH_TANH** = **5** --- Return the hyperbolic tangent of the input.
+- **MATH_ASIN** = **6** --- Return the arc sine of the input.
+- **MATH_ACOS** = **7** --- Return the arc cosine of the input.
+- **MATH_ATAN** = **8** --- Return the arc tangent of the input.
+- **MATH_ATAN2** = **9** --- Return the arc tangent of the input, using the signs of both parameters to determine the exact angle.
+- **MATH_SQRT** = **10** --- Return the square root of the input.
+- **MATH_FMOD** = **11** --- Return the remainder of one input divided by the other, using floating-point numbers.
+- **MATH_FPOSMOD** = **12** --- Return the positive remainder of one input divided by the other, using floating-point numbers.
+- **MATH_FLOOR** = **13** --- Return the input rounded down.
+- **MATH_CEIL** = **14** --- Return the input rounded up.
+- **MATH_ROUND** = **15** --- Return the input rounded to the nearest integer.
+- **MATH_ABS** = **16** --- Return the absolute value of the input.
+- **MATH_SIGN** = **17** --- Return the sign of the input, turning it into 1, -1, or 0. Useful to determine if the input is positive or negative.
+- **MATH_POW** = **18** --- Return the input raised to a given power.
+- **MATH_LOG** = **19** --- Return the natural logarithm of the input. Note that this is not the typical base-10 logarithm function calculators use.
+- **MATH_EXP** = **20** --- Return **e** raised to the power of the input. **e** sometimes called "Euler's number" is a mathematical constant whose value is approximately 2.71828.
+- **MATH_ISNAN** = **21** --- Return whether the input is NaN (Not a Number) or not. NaN is usually produced by dividing 0 by 0, though other ways exist.
+- **MATH_ISINF** = **22** --- Return whether the input is an infinite floating-point number or not. Infinity is usually produced by dividing a number by 0, though other ways exist.
+- **MATH_EASE** = **23** --- Easing function, based on exponent. 0 is constant, 1 is linear, 0 to 1 is ease-in, 1+ is ease out. Negative values are in-out/out in.
+- **MATH_DECIMALS** = **24** --- Return the number of digit places after the decimal that the first non-zero digit occurs.
+- **MATH_STEPIFY** = **25** --- Return the input snapped to a given step.
+- **MATH_LERP** = **26** --- Return a number linearly interpolated between the first two inputs, based on the third input. Uses the formula ``a + (a - b) \* t``.
+- **MATH_DECTIME** = **27** --- Return the result of 'value' decreased by 'step' \* 'amount'.
+- **MATH_RANDOMIZE** = **28** --- Randomize the seed (or the internal state) of the random number generator. Current implementation reseeds using a number based on time.
+- **MATH_RAND** = **29** --- Return a random 32 bits integer value. To obtain a random value between 0 to N (where N is smaller than 2^32 - 1), you can use it with the remainder function.
+- **MATH_RANDF** = **30** --- Return a random floating-point value between 0 and 1. To obtain a random value between 0 to N, you can use it with multiplication.
+- **MATH_RANDOM** = **31** --- Return a random floating-point value between the two inputs.
+- **MATH_SEED** = **32** --- Set the seed for the random number generator.
+- **MATH_RANDSEED** = **33** --- Return a random value from the given seed, along with the new seed.
+- **MATH_DEG2RAD** = **34** --- Convert the input from degrees to radians.
+- **MATH_RAD2DEG** = **35** --- Convert the input from radians to degrees.
+- **MATH_LINEAR2DB** = **36** --- Convert the input from linear volume to decibel volume.
+- **MATH_DB2LINEAR** = **37** --- Convert the input from decibel volume to linear volume.
+- **LOGIC_MAX** = **38** --- Return the greater of the two numbers, also known as their maximum.
+- **LOGIC_MIN** = **39** --- Return the lesser of the two numbers, also known as their minimum.
+- **LOGIC_CLAMP** = **40** --- Return the input clamped inside the given range, ensuring the result is never outside it. Equivalent to `min(max(input, range_low), range_high)`
+- **LOGIC_NEAREST_PO2** = **41** --- Return the nearest power of 2 to the input.
+- **OBJ_WEAKREF** = **42** --- Create a :ref:`WeakRef<class_weakref>` from the input.
+- **FUNC_FUNCREF** = **43** --- Create a :ref:`FuncRef<class_funcref>` from the input.
+- **TYPE_CONVERT** = **44** --- Convert between types.
+- **TYPE_OF** = **45** --- Return the type of the input as an integer. Check enum Variant.Type for the integers that might be returned.
+- **TYPE_EXISTS** = **46** --- Checks if a type is registered in the :ref:`ClassDB<class_classdb>`.
+- **TEXT_CHAR** = **47** --- Return a character with the given ascii value.
+- **TEXT_STR** = **48** --- Convert the input to a string.
+- **TEXT_PRINT** = **49** --- Print the given string to the output window.
+- **TEXT_PRINTERR** = **50** --- Print the given string to the standard error output.
+- **TEXT_PRINTRAW** = **51** --- Print the given string to the standard output, without adding a newline.
+- **VAR_TO_STR** = **52** --- Serialize a :ref:`Variant<class_variant>` to a string.
+- **STR_TO_VAR** = **53** --- Deserialize a :ref:`Variant<class_variant>` from a string serialized using VAR_TO_STR.
+- **VAR_TO_BYTES** = **54** --- Serialize a :ref:`Variant<class_variant>` to a :ref:`PoolByteArray<class_poolbytearray>`.
+- **BYTES_TO_VAR** = **55** --- Deserialize a :ref:`Variant<class_variant>` from a :ref:`PoolByteArray<class_poolbytearray>` serialized using VAR_TO_BYTES.
+- **COLORN** = **56** --- Return the :ref:`Color<class_color>` with the given name and alpha ranging from 0 to 1. Note: names are defined in color_names.inc.
+- **FUNC_MAX** = **57** --- The maximum value the member function property can have.
+
+Description
+-----------
+
+A built-in function used inside a :ref:`VisualScript<class_visualscript>`. It is usually a math function or an utility function.
+
+See also :ref:`@GDScript<class_@gdscript>`, for the same functions in the GDScript language.
 
 Member Function Description
 ---------------------------

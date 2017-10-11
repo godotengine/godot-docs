@@ -14,7 +14,7 @@ VisualScriptConstant
 Brief Description
 -----------------
 
-
+A Visual Script node which returns a constant value.
 
 Member Functions
 ----------------
@@ -32,8 +32,13 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **type**
-- :ref:`Variant<class_variant>` **value**
+- :ref:`int<class_int>` **type** - The constant's type.
+- :ref:`Variant<class_variant>` **value** - The constant's value.
+
+Description
+-----------
+
+A Visual Script node which returns the specified constant value.
 
 Member Function Description
 ---------------------------

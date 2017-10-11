@@ -14,7 +14,7 @@ AudioEffectLimiter
 Brief Description
 -----------------
 
-
+Adds a soft clip Limiter audio effect to an Audio bus.
 
 Member Functions
 ----------------
@@ -40,10 +40,17 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`float<class_float>` **ceiling_db**
-- :ref:`float<class_float>` **soft_clip_db**
+- :ref:`float<class_float>` **ceiling_db** - The waveform's maximum allowed value. Value can range from -20 to -0.1. Default value: [code]-0.1dB[/code].
+- :ref:`float<class_float>` **soft_clip_db** - Applies a gain to the limited waves. Value can range from 0 to 6. Default value: [code]2dB[/code].
 - :ref:`float<class_float>` **soft_clip_ratio**
-- :ref:`float<class_float>` **threshold_db**
+- :ref:`float<class_float>` **threshold_db** - Threshold from which the limiter begins to be active. Value can range from -30 to 0. Default value: [code]0dB[/code].
+
+Description
+-----------
+
+A limiter is similar to a compressor, but it’s less flexible and designed to disallow sound going over a given dB threshold. Adding one in the Master Bus is always recommended to reduce the effects of clipping.
+
+Soft clipping starts to reduce the peaks a little below the threshold level and progressively increases its effect as the input level increases such that the threshold is never exceeded.
 
 Member Function Description
 ---------------------------

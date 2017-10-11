@@ -39,7 +39,7 @@ Numeric Constants
 -----------------
 
 - **YIELD_FRAME** = **1**
-- **YIELD_FIXED_FRAME** = **2**
+- **YIELD_PHYSICS_FRAME** = **2**
 - **YIELD_WAIT** = **3**
 
 Member Function Description

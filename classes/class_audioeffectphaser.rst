@@ -14,7 +14,9 @@ AudioEffectPhaser
 Brief Description
 -----------------
 
+Adds a Phaser audio effect to an Audio bus.
 
+Combines the original signal with a copy that is slightly out of phase with the original.
 
 Member Functions
 ----------------
@@ -44,11 +46,16 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`float<class_float>` **depth**
-- :ref:`float<class_float>` **feedback**
-- :ref:`float<class_float>` **range_max_hz**
-- :ref:`float<class_float>` **range_min_hz**
-- :ref:`float<class_float>` **rate_hz**
+- :ref:`float<class_float>` **depth** - Governs how high the filter frequencies sweep. Low value will primarily affect bass frequencies. High value can sweep high into the treble. Value can range from 0.1 to 4. Default value: [code]1[/code].
+- :ref:`float<class_float>` **feedback** - Output percent of modified sound. Value can range from 0.1 to 0.9. Default value: [code]0.7[/code].
+- :ref:`float<class_float>` **range_max_hz** - Determines the maximum frequency affected by the LFO modulations. Value can range from 10 to 10000. Default value: [code]1600hz[/code].
+- :ref:`float<class_float>` **range_min_hz** - Determines the minimum frequency affected by the LFO modulations. Value can range from 10 to 10000. Default value: [code]440hz[/code].
+- :ref:`float<class_float>` **rate_hz** - Adjusts the rate at which the effect sweeps up and down across the frequency range.
+
+Description
+-----------
+
+Combines phase-shifted signals with the original signal. The movement of the phase-shifted signals is controlled using a Low Frequency Oscillator.
 
 Member Function Description
 ---------------------------

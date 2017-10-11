@@ -14,7 +14,7 @@ Polygon2D
 Brief Description
 -----------------
 
-2D polygon representation
+A 2D polygon.
 
 Member Functions
 ----------------
@@ -72,23 +72,23 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`bool<class_bool>` **antialiased**
-- :ref:`Color<class_color>` **color**
-- :ref:`float<class_float>` **invert_border**
-- :ref:`bool<class_bool>` **invert_enable**
-- :ref:`Vector2<class_vector2>` **offset**
-- :ref:`PoolVector2Array<class_poolvector2array>` **polygon**
-- :ref:`Texture<class_texture>` **texture**
-- :ref:`Vector2<class_vector2>` **texture_offset**
-- :ref:`float<class_float>` **texture_rotation**
-- :ref:`Vector2<class_vector2>` **texture_scale**
-- :ref:`PoolVector2Array<class_poolvector2array>` **uv**
-- :ref:`PoolColorArray<class_poolcolorarray>` **vertex_colors**
+- :ref:`bool<class_bool>` **antialiased** - If [code]true[/code] polygon edges will be anti-aliased. Default value: [code]false[/code].
+- :ref:`Color<class_color>` **color** - The polygon's fill color. If [code]texture[/code] is defined, it will be multiplied by this color. It will also be the default color for vertices not set in [code]vertex_colors[/code].
+- :ref:`float<class_float>` **invert_border** - Added padding applied to the bounding box when using [code]invert[/code]. Setting this value too small may result in a "Bad Polygon" error. Default value: [code]100[/code].
+- :ref:`bool<class_bool>` **invert_enable** - If [code]true[/code] polygon will be inverted, containing the area outside the defined points and extending to the [code]invert_border[/code]. Default value: [code]false[/code].
+- :ref:`Vector2<class_vector2>` **offset** - The offset applied to each vertex.
+- :ref:`PoolVector2Array<class_poolvector2array>` **polygon** - The polygon's list of vertices. The final point will be connected to the first.
+- :ref:`Texture<class_texture>` **texture** - The polygon's fill texture. Use [code]uv[/code] to set texture coordinates.
+- :ref:`Vector2<class_vector2>` **texture_offset** - Amount to offset the polygon's [code]texture[/code]. If [code](0, 0)[/code] the texture's origin (its top-left corner) will be placed at the polygon's [code]position[/code].
+- :ref:`float<class_float>` **texture_rotation** - The texture's rotation in degrees.
+- :ref:`Vector2<class_vector2>` **texture_scale** - Amount to multiply the [code]uv[/code] coordinates when using a [code]texture[/code]. Larger values make the texture smaller, and vice versa.
+- :ref:`PoolVector2Array<class_poolvector2array>` **uv** - Texture coordinates for each vertex of the polygon. There should be one [code]uv[/code] per polygon vertex. If there are fewer, undefined vertices will use [code](0, 0)[/code].
+- :ref:`PoolColorArray<class_poolcolorarray>` **vertex_colors** - Color for each vertex. Colors are interpolated between vertices, resulting in smooth gradients. There should be one per polygon vertex. If there are fewer, undefined vertices will use [code]color[/code].
 
 Description
 -----------
 
-A Polygon2D is defined by a set of n vertices connected together by line segments, meaning that the vertex 1 will be connected with vertex 2, vertex 2 with vertex 3 ..., vertex n-1 with vertex n and vertex n with vertex 1 in order to close the loop and define a polygon.
+A Polygon2D is defined by a set of points. Each point is connected to the next, with the final point being connected to the first, resulting in a closed polygon. Polygon2Ds can be filled with color (solid or gradient) or filled with a given texture.
 
 Member Function Description
 ---------------------------

@@ -24,7 +24,7 @@ Member Functions
 +----------------------------------------+------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`get_mix_target<class_AudioStreamPlayer_get_mix_target>`  **(** **)** const                                 |
 +----------------------------------------+------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_position<class_AudioStreamPlayer_get_position>`  **(** **)**                                           |
+| :ref:`float<class_float>`              | :ref:`get_playback_position<class_AudioStreamPlayer_get_playback_position>`  **(** **)**                         |
 +----------------------------------------+------------------------------------------------------------------------------------------------------------------+
 | :ref:`AudioStream<class_audiostream>`  | :ref:`get_stream<class_AudioStreamPlayer_get_stream>`  **(** **)** const                                         |
 +----------------------------------------+------------------------------------------------------------------------------------------------------------------+
@@ -61,19 +61,19 @@ Emitted when the audio stops playing.
 Member Variables
 ----------------
 
-- :ref:`bool<class_bool>` **autoplay** - If [code]true[/code], audio plays when added to scene tree. Default value: [code]false[/code].
+- :ref:`bool<class_bool>` **autoplay** - If [code]true[/code] audio plays when added to scene tree. Default value: [code]false[/code].
 - :ref:`String<class_string>` **bus** - Bus on which this audio is playing.
-- :ref:`int<class_int>` **mix_target**
-- :ref:`bool<class_bool>` **playing** - If [code]true[/code], audio is playing.
+- :ref:`int<class_int>` **mix_target** - If the audio configuration has more than two speakers, this sets the target channels. See [code]MIX_TARGET_*[/code] constants.
+- :ref:`bool<class_bool>` **playing** - If [code]true[/code] audio is playing.
 - :ref:`AudioStream<class_audiostream>` **stream** - The [AudioStream] object to be played.
 - :ref:`float<class_float>` **volume_db** - Volume of sound, in dB.
 
 Numeric Constants
 -----------------
 
-- **MIX_TARGET_STEREO** = **0**
-- **MIX_TARGET_SURROUND** = **1**
-- **MIX_TARGET_CENTER** = **2**
+- **MIX_TARGET_STEREO** = **0** --- The audio will be played only on the first channel.
+- **MIX_TARGET_SURROUND** = **1** --- The audio will be played on all surround channels.
+- **MIX_TARGET_CENTER** = **2** --- The audio will be played on the second channel, which is usually the center.
 
 Description
 -----------
@@ -91,9 +91,11 @@ Member Function Description
 
 - :ref:`int<class_int>`  **get_mix_target**  **(** **)** const
 
-.. _class_AudioStreamPlayer_get_position:
+.. _class_AudioStreamPlayer_get_playback_position:
 
-- :ref:`float<class_float>`  **get_position**  **(** **)**
+- :ref:`float<class_float>`  **get_playback_position**  **(** **)**
+
+Returns the position in the :ref:`AudioStream<class_audiostream>`.
 
 .. _class_AudioStreamPlayer_get_stream:
 

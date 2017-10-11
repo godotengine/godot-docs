@@ -72,13 +72,13 @@ This signal is emitted when value changes.
 Member Variables
 ----------------
 
-- :ref:`bool<class_bool>` **exp_edit**
-- :ref:`float<class_float>` **max_value**
-- :ref:`float<class_float>` **min_value**
-- :ref:`float<class_float>` **page**
-- :ref:`bool<class_bool>` **rounded**
-- :ref:`float<class_float>` **step**
-- :ref:`float<class_float>` **value**
+- :ref:`bool<class_bool>` **exp_edit** - If [code]true[/code] and [code]min_value[/code] is greater than 0, [code]value[/code] will be represented exponentially rather than linearly.
+- :ref:`float<class_float>` **max_value** - Maximum value. Range is clamped if [code]value[/code] is greater than [code]max_value[/code]. Default value: 100.
+- :ref:`float<class_float>` **min_value** - Minimum value. Range is clamped if [code]value[/code] is less than [code]min_value[/code]. Default value: 0.
+- :ref:`float<class_float>` **page** - Page size. Used mainly for [ScrollBar]. ScrollBar's length is its size multiplied by [code]page[/code] over the difference between [code]min_value[/code] and [code]max_value[/code].
+- :ref:`bool<class_bool>` **rounded** - If [code]true[/code], [code]value[/code] will always be rounded to the nearest integer.
+- :ref:`float<class_float>` **step** - If greater than 0, [code]value[/code] will always be rounded to a multiple of [code]step[/code]. If [code]rounded[/code] is also [code]true[/code], [code]value[/code] will first be rounded to a multiple of [code]step[/code] then rounded to the nearest integer.
+- :ref:`float<class_float>` **value** - Range's current value.
 
 Description
 -----------
@@ -174,8 +174,12 @@ Set step value. If step is 0, stepping will be disabled.
 
 - void  **share**  **(** :ref:`Node<class_node>` with  **)**
 
+Binds two Ranges together along with any Ranges previously grouped with either of them. When any of Range's member variables change, it will share the new value with all other Ranges in its group.
+
 .. _class_Range_unshare:
 
 - void  **unshare**  **(** **)**
+
+Stop Range from sharing its member variables with any other Range.
 
 

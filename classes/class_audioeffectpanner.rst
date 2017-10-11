@@ -14,7 +14,7 @@ AudioEffectPanner
 Brief Description
 -----------------
 
-
+Adds a Panner audio effect to an Audio bus. Pans sound left or right.
 
 Member Functions
 ----------------
@@ -28,7 +28,12 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`float<class_float>` **pan**
+- :ref:`float<class_float>` **pan** - Pan position. Value can range from -1 (fully left) to 1 (fully right).
+
+Description
+-----------
+
+Determines how much of an audio signal is sent to the left and right buses.
 
 Member Function Description
 ---------------------------

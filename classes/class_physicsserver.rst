@@ -90,6 +90,8 @@ Member Functions
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                          | :ref:`body_get_collision_mask<class_PhysicsServer_body_get_collision_mask>`  **(** :ref:`RID<class_rid>` body  **)** const                                                                                                                                          |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PhysicsDirectBodyState<class_physicsdirectbodystate>`    | :ref:`body_get_direct_state<class_PhysicsServer_body_get_direct_state>`  **(** :ref:`RID<class_rid>` body  **)**                                                                                                                                                    |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                          | :ref:`body_get_max_contacts_reported<class_PhysicsServer_body_get_max_contacts_reported>`  **(** :ref:`RID<class_rid>` body  **)** const                                                                                                                            |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                          | :ref:`body_get_mode<class_PhysicsServer_body_get_mode>`  **(** :ref:`RID<class_rid>` body  **)** const                                                                                                                                                              |
@@ -487,6 +489,10 @@ Member Function Description
 .. _class_PhysicsServer_body_get_collision_mask:
 
 - :ref:`int<class_int>`  **body_get_collision_mask**  **(** :ref:`RID<class_rid>` body  **)** const
+
+.. _class_PhysicsServer_body_get_direct_state:
+
+- :ref:`PhysicsDirectBodyState<class_physicsdirectbodystate>`  **body_get_direct_state**  **(** :ref:`RID<class_rid>` body  **)**
 
 .. _class_PhysicsServer_body_get_max_contacts_reported:
 

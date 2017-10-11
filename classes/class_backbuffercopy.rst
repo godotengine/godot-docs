@@ -32,15 +32,15 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **copy_mode**
-- :ref:`Rect2<class_rect2>` **rect**
+- :ref:`int<class_int>` **copy_mode** - Buffer mode. See [code]COPY_MODE_*[/code] constants.
+- :ref:`Rect2<class_rect2>` **rect** - The area covered by the BackBufferCopy. Only used if [code]copy_mode[/code] is [code]COPY_MODE_RECT[/code].
 
 Numeric Constants
 -----------------
 
 - **COPY_MODE_DISABLED** = **0** --- Disables the buffering mode. This means the BackBufferCopy node will directly use the portion of screen it covers.
-- **COPY_MODE_RECT** = **1** --- Sets the copy mode to a region.
-- **COPY_MODE_VIEWPORT** = **2** --- Sets the copy mode to the entire screen.
+- **COPY_MODE_RECT** = **1** --- BackBufferCopy buffers a rectangular region.
+- **COPY_MODE_VIEWPORT** = **2** --- BackBufferCopy buffers the entire screen.
 
 Description
 -----------
@@ -54,7 +54,7 @@ Member Function Description
 
 - :ref:`int<class_int>`  **get_copy_mode**  **(** **)** const
 
-Return the copy mode currently applied to the BackBufferCopy (refer to constants section).
+Return the copy mode currently applied to the BackBufferCopy. See ``COPY_MODE\_\*`` constants.
 
 .. _class_BackBufferCopy_get_rect:
 
@@ -66,7 +66,7 @@ Return the area covered by the BackBufferCopy.
 
 - void  **set_copy_mode**  **(** :ref:`int<class_int>` copy_mode  **)**
 
-Set the copy mode of the BackBufferCopy (refer to constants section).
+Set the copy mode of the BackBufferCopy. See ``COPY_MODE\_\*`` constants.
 
 .. _class_BackBufferCopy_set_rect:
 

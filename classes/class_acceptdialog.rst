@@ -54,8 +54,8 @@ Emitted when a custom button is pressed. See :ref:`add_button<class_AcceptDialog
 Member Variables
 ----------------
 
-- :ref:`bool<class_bool>` **dialog_hide_on_ok**
-- :ref:`String<class_string>` **dialog_text**
+- :ref:`bool<class_bool>` **dialog_hide_on_ok** - If [code]true[/code] the dialog is hidden when accepted. Default value: [code]true[/code].
+- :ref:`String<class_string>` **dialog_text** - The text displayed by this dialog.
 
 Description
 -----------

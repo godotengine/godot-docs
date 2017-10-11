@@ -20,6 +20,8 @@ Member Functions
 ----------------
 
 +------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_active_library_path<class_GDNativeLibrary_get_active_library_path>`  **(** **)** const                                                     |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`  | :ref:`get_library_path<class_GDNativeLibrary_get_library_path>`  **(** :ref:`String<class_string>` platform  **)** const                             |
 +------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`      | :ref:`is_singleton_gdnative<class_GDNativeLibrary_is_singleton_gdnative>`  **(** **)** const                                                         |
@@ -36,6 +38,10 @@ Member Variables
 
 Member Function Description
 ---------------------------
+
+.. _class_GDNativeLibrary_get_active_library_path:
+
+- :ref:`String<class_string>`  **get_active_library_path**  **(** **)** const
 
 .. _class_GDNativeLibrary_get_library_path:
 

@@ -19,31 +19,31 @@ This is our AR/VR Server.
 Member Functions
 ----------------
 
-+------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                       | :ref:`add_interface<class_ARVRServer_add_interface>`  **(** :ref:`ARVRInterface<class_arvrinterface>` arg0  **)**                                               |
-+------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ARVRInterface<class_arvrinterface>`                  | :ref:`find_interface<class_ARVRServer_find_interface>`  **(** :ref:`String<class_string>` name  **)** const                                                     |
-+------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ARVRInterface<class_arvrinterface>`                  | :ref:`get_interface<class_ARVRServer_get_interface>`  **(** :ref:`int<class_int>` idx  **)** const                                                              |
-+------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                      | :ref:`get_interface_count<class_ARVRServer_get_interface_count>`  **(** **)** const                                                                             |
-+------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_transform>`                          | :ref:`get_reference_frame<class_ARVRServer_get_reference_frame>`  **(** **)** const                                                                             |
-+------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ARVRPositionalTracker<class_arvrpositionaltracker>`  | :ref:`get_tracker<class_ARVRServer_get_tracker>`  **(** :ref:`int<class_int>` idx  **)** const                                                                  |
-+------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                      | :ref:`get_tracker_count<class_ARVRServer_get_tracker_count>`  **(** **)** const                                                                                 |
-+------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`get_world_scale<class_ARVRServer_get_world_scale>`  **(** **)** const                                                                                     |
-+------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                       | :ref:`remove_interface<class_ARVRServer_remove_interface>`  **(** :ref:`ARVRInterface<class_arvrinterface>` arg0  **)**                                         |
-+------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                       | :ref:`request_reference_frame<class_ARVRServer_request_reference_frame>`  **(** :ref:`bool<class_bool>` ignore_tilt, :ref:`bool<class_bool>` keep_height  **)** |
-+------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                       | :ref:`set_primary_interface<class_ARVRServer_set_primary_interface>`  **(** :ref:`ARVRInterface<class_arvrinterface>` arg0  **)**                               |
-+------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                       | :ref:`set_world_scale<class_ARVRServer_set_world_scale>`  **(** :ref:`float<class_float>` arg0  **)**                                                           |
-+------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                       | :ref:`add_interface<class_ARVRServer_add_interface>`  **(** :ref:`ARVRInterface<class_arvrinterface>` interface  **)**                      |
++------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                       | :ref:`center_on_hmd<class_ARVRServer_center_on_hmd>`  **(** :ref:`bool<class_bool>` ignore_tilt, :ref:`bool<class_bool>` keep_height  **)** |
++------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`ARVRInterface<class_arvrinterface>`                  | :ref:`find_interface<class_ARVRServer_find_interface>`  **(** :ref:`String<class_string>` name  **)** const                                 |
++------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`ARVRInterface<class_arvrinterface>`                  | :ref:`get_interface<class_ARVRServer_get_interface>`  **(** :ref:`int<class_int>` idx  **)** const                                          |
++------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                      | :ref:`get_interface_count<class_ARVRServer_get_interface_count>`  **(** **)** const                                                         |
++------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_transform>`                          | :ref:`get_reference_frame<class_ARVRServer_get_reference_frame>`  **(** **)** const                                                         |
++------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`ARVRPositionalTracker<class_arvrpositionaltracker>`  | :ref:`get_tracker<class_ARVRServer_get_tracker>`  **(** :ref:`int<class_int>` idx  **)** const                                              |
++------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                      | :ref:`get_tracker_count<class_ARVRServer_get_tracker_count>`  **(** **)** const                                                             |
++------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                  | :ref:`get_world_scale<class_ARVRServer_get_world_scale>`  **(** **)** const                                                                 |
++------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                       | :ref:`remove_interface<class_ARVRServer_remove_interface>`  **(** :ref:`ARVRInterface<class_arvrinterface>` interface  **)**                |
++------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                       | :ref:`set_primary_interface<class_ARVRServer_set_primary_interface>`  **(** :ref:`ARVRInterface<class_arvrinterface>` interface  **)**      |
++------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                       | :ref:`set_world_scale<class_ARVRServer_set_world_scale>`  **(** :ref:`float<class_float>` arg0  **)**                                       |
++------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -86,9 +86,25 @@ Member Function Description
 
 .. _class_ARVRServer_add_interface:
 
-- void  **add_interface**  **(** :ref:`ARVRInterface<class_arvrinterface>` arg0  **)**
+- void  **add_interface**  **(** :ref:`ARVRInterface<class_arvrinterface>` interface  **)**
 
 Mostly exposed for GDNative based interfaces, this is called to register an available interface with the AR/VR server.
+
+.. _class_ARVRServer_center_on_hmd:
+
+- void  **center_on_hmd**  **(** :ref:`bool<class_bool>` ignore_tilt, :ref:`bool<class_bool>` keep_height  **)**
+
+This is a really important function to understand correctly. AR and VR platforms all handle positioning slightly differently.
+
+For platforms that do not offer spatial tracking our origin point (0,0,0) is the location of our HMD but you have little control over the direction the player is facing in the real world.
+
+For platforms that do offer spatial tracking our origin point depends very much on the system. For OpenVR our origin point is usually the center of the tracking space, on the ground. For other platforms its often the location of the tracking camera.
+
+This method allows you to center our tracker on the location of the HMD, it will take the current location of the HMD and use that to adjust all our tracking data in essence realigning the real world to your players current position in your game world.
+
+For this method to produce usable results tracking information should be available and this often takes a few frames after starting your game.
+
+You should call this method after a few seconds have passed, when the user requests a realignment of the display holding a designated button on a controller for a short period of time, and when implementing a teleport mechanism.
 
 .. _class_ARVRServer_find_interface:
 
@@ -134,29 +150,13 @@ Returns our world scale (see ARVROrigin for more information).
 
 .. _class_ARVRServer_remove_interface:
 
-- void  **remove_interface**  **(** :ref:`ARVRInterface<class_arvrinterface>` arg0  **)**
+- void  **remove_interface**  **(** :ref:`ARVRInterface<class_arvrinterface>` interface  **)**
 
 Removes a registered interface, again exposed mostly for GDNative based interfaces.
 
-.. _class_ARVRServer_request_reference_frame:
-
-- void  **request_reference_frame**  **(** :ref:`bool<class_bool>` ignore_tilt, :ref:`bool<class_bool>` keep_height  **)**
-
-This is a really important function to understand correctly. AR and VR platforms all handle positioning slightly differently.
-
-For platforms that do not offer spatial tracking our origin point (0,0,0) is the location of our HMD but you have little control over the direction the player is facing in the real world.
-
-For platforms that do offer spatial tracking our origin point depends very much on the system. For OpenVR our origin point is usually the center of the tracking space, on the ground. For other platforms its often the location of the tracking camera.
-
-This method allows you to create a reference frame, it will take the current location of the HMD and use that to adjust all our tracking data in essence realigning the real world to your players current position in your game world.
-
-For this method to produce usable results tracking information should be available and this often takes a few frames after starting your game.
-
-You should call this method after a few seconds have passed, when the user requests a realignment of the display holding a designated button on a controller for a short period of time, and when implementing a teleport mechanism.
-
 .. _class_ARVRServer_set_primary_interface:
 
-- void  **set_primary_interface**  **(** :ref:`ARVRInterface<class_arvrinterface>` arg0  **)**
+- void  **set_primary_interface**  **(** :ref:`ARVRInterface<class_arvrinterface>` interface  **)**
 
 Changes the primary interface to the specified interface. Again mostly exposed for GDNative interfaces.
 

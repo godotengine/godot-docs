@@ -14,7 +14,7 @@ Gradient
 Brief Description
 -----------------
 
-Color interpolator node
+Color interpolator node.
 
 Member Functions
 ----------------
@@ -48,8 +48,8 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`PoolColorArray<class_poolcolorarray>` **colors**
-- :ref:`PoolRealArray<class_poolrealarray>` **offsets**
+- :ref:`PoolColorArray<class_poolcolorarray>` **colors** - Gradient's colors returned as a [PoolColorArray].
+- :ref:`PoolRealArray<class_poolrealarray>` **offsets** - Gradient's offsets returned as a [PoolRealArray].
 
 Description
 -----------

@@ -76,17 +76,11 @@ Description
 
 A RayCast represents a line from its origin to its destination position, ``cast_to``. It is used to query the 3D space in order to find the closest object along the path of the ray.
 
-
-
 RayCast can ignore some objects by adding them to the exception list via ``add_exception``, by setting proper filtering with collision layers, or by filtering object types with type masks.
-
-
 
 Only enabled raycasts will be able to query the space and report collisions.
 
-
-
-RayCast calculates intersection every fixed frame (see :ref:`Node<class_node>`), and the result is cached so it can be used later until the next frame. If multiple queries are required between fixed frames (or during the same frame) use :ref:`force_raycast_update<class_RayCast_force_raycast_update>` after adjusting the raycast.
+RayCast calculates intersection every physics frame (see :ref:`Node<class_node>`), and the result is cached so it can be used later until the next frame. If multiple queries are required between physics frames (or during the same frame) use :ref:`force_raycast_update<class_RayCast_force_raycast_update>` after adjusting the raycast.
 
 Member Function Description
 ---------------------------
@@ -115,7 +109,7 @@ Removes all collision exceptions for this ray.
 
 Updates the collision information for the ray.
 
-Use this method to update the collision information immediately instead of waiting for the next ``_fixed_process`` call, for example if the ray or its parent has changed state. Note: ``enabled == true`` is not required for this to work.
+Use this method to update the collision information immediately instead of waiting for the next ``_physics_process`` call, for example if the ray or its parent has changed state. Note: ``enabled == true`` is not required for this to work.
 
 .. _class_RayCast_get_cast_to:
 

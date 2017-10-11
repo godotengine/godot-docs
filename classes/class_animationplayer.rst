@@ -120,8 +120,8 @@ Member Variables
 Numeric Constants
 -----------------
 
-- **ANIMATION_PROCESS_FIXED** = **0** --- Process animation on fixed process. This is specially useful when animating kinematic bodies.
-- **ANIMATION_PROCESS_IDLE** = **1** --- Process animation on idle process.
+- **ANIMATION_PROCESS_PHYSICS** = **0** --- Process animation during the physics process. This is specially useful when animating physics bodies.
+- **ANIMATION_PROCESS_IDLE** = **1** --- Process animation during the idle process.
 
 Description
 -----------

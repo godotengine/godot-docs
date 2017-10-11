@@ -78,29 +78,29 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **begin_cap_mode**
-- :ref:`Color<class_color>` **default_color**
-- :ref:`int<class_int>` **end_cap_mode**
-- :ref:`Gradient<class_gradient>` **gradient**
-- :ref:`int<class_int>` **joint_mode**
-- :ref:`PoolVector2Array<class_poolvector2array>` **points**
-- :ref:`int<class_int>` **round_precision**
-- :ref:`float<class_float>` **sharp_limit**
-- :ref:`Texture<class_texture>` **texture**
-- :ref:`int<class_int>` **texture_mode**
-- :ref:`float<class_float>` **width**
+- :ref:`int<class_int>` **begin_cap_mode** - Controls the style of the line's first point. Use [code]LINE_CAP_*[/code] constants. Default value: [code]LINE_CAP_NONE[/code].
+- :ref:`Color<class_color>` **default_color** - The line's color. Will not be used if a gradient is set.
+- :ref:`int<class_int>` **end_cap_mode** - Controls the style of the line's last point. Use [code]LINE_CAP_*[/code] constants. Default value: [code]LINE_CAP_NONE[/code].
+- :ref:`Gradient<class_gradient>` **gradient** - The gradient is drawn through the whole line from start to finish. The default color will not be used if a gradient is set.
+- :ref:`int<class_int>` **joint_mode** - The style for the points inbetween the start and the end.
+- :ref:`PoolVector2Array<class_poolvector2array>` **points** - The points that form the lines. The line is drawn between every point set in this array.
+- :ref:`int<class_int>` **round_precision** - The smoothness of the rounded joints and caps. This is only used if a cap or joint is set as round.
+- :ref:`float<class_float>` **sharp_limit** - The direction difference in radians between vector points. This value is only used if [code]joint mode[/code] is set to [code]LINE_JOINT_SHARP[/code].
+- :ref:`Texture<class_texture>` **texture** - The texture used for the line's texture. Uses [code]texture_mode[/code] for drawing style.
+- :ref:`int<class_int>` **texture_mode** - The style to render the [code]texture[/code] on the line. Use [code]LINE_TEXTURE_*[/code] constants. Default value: [code]LINE_TEXTURE_NONE[/code].
+- :ref:`float<class_float>` **width** - The line's width.
 
 Numeric Constants
 -----------------
 
-- **LINE_JOINT_SHARP** = **0**
-- **LINE_JOINT_BEVEL** = **1**
-- **LINE_JOINT_ROUND** = **2**
-- **LINE_CAP_NONE** = **0**
-- **LINE_CAP_BOX** = **1**
-- **LINE_CAP_ROUND** = **2**
-- **LINE_TEXTURE_NONE** = **0**
-- **LINE_TEXTURE_TILE** = **1**
+- **LINE_JOINT_SHARP** = **0** --- The line's joints will be pointy. If ``sharp_limit`` is greater than the rotation of a joint, it becomes a bevel joint instead.
+- **LINE_JOINT_BEVEL** = **1** --- The line's joints will be bevelled/chamfered.
+- **LINE_JOINT_ROUND** = **2** --- The line's joints will be rounded.
+- **LINE_CAP_NONE** = **0** --- Don't have a line cap.
+- **LINE_CAP_BOX** = **1** --- Draws the line cap as a box.
+- **LINE_CAP_ROUND** = **2** --- Draws the line cap as a circle.
+- **LINE_TEXTURE_NONE** = **0** --- Takes the left pixels of the texture and renders it over the whole line.
+- **LINE_TEXTURE_TILE** = **1** --- Tiles the texture over the line. The texture need to be imported with Repeat Enabled for it to work properly.
 
 Description
 -----------
@@ -114,7 +114,7 @@ Member Function Description
 
 - void  **add_point**  **(** :ref:`Vector2<class_vector2>` position  **)**
 
-Add a point at the x/y position in the supplied :ref:`Vector2<class_vector2>`
+Add a point at the ``position``. Appends the point at the end of the line.
 
 .. _class_Line2D_get_begin_cap_mode:
 
@@ -140,9 +140,13 @@ Add a point at the x/y position in the supplied :ref:`Vector2<class_vector2>`
 
 - :ref:`int<class_int>`  **get_point_count**  **(** **)** const
 
+Returns the Line2D's amount of points.
+
 .. _class_Line2D_get_point_position:
 
 - :ref:`Vector2<class_vector2>`  **get_point_position**  **(** :ref:`int<class_int>` i  **)** const
+
+Returns point ``i[code]'s position.
 
 .. _class_Line2D_get_points:
 
@@ -172,7 +176,7 @@ Add a point at the x/y position in the supplied :ref:`Vector2<class_vector2>`
 
 - void  **remove_point**  **(** :ref:`int<class_int>` i  **)**
 
-Remove the point at index 'i' from the line.
+Remove the point at index ``i`` from the line.
 
 .. _class_Line2D_set_begin_cap_mode:
 
@@ -197,6 +201,8 @@ Remove the point at index 'i' from the line.
 .. _class_Line2D_set_point_position:
 
 - void  **set_point_position**  **(** :ref:`int<class_int>` i, :ref:`Vector2<class_vector2>` position  **)**
+
+Overwites the position in point ``i`` with the supplied ``position``.
 
 .. _class_Line2D_set_points:
 

@@ -35,6 +35,23 @@ Member Variables
 - :ref:`int<class_int>` **operator**
 - :ref:`int<class_int>` **type**
 
+Description
+-----------
+
+**Input Ports:**
+
+- Data (variant): ``A``
+
+- Data (variant): ``B``
+
+**Output Ports:**
+
+- Sequence: ``true``
+
+- Sequence: ``false``
+
+- Sequence: ``done``
+
 Member Function Description
 ---------------------------
 

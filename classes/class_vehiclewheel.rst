@@ -30,6 +30,8 @@ Member Functions
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_roll_influence<class_VehicleWheel_get_roll_influence>`  **(** **)** const                                             |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_skidinfo<class_VehicleWheel_get_skidinfo>`  **(** **)** const                                                         |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_suspension_max_force<class_VehicleWheel_get_suspension_max_force>`  **(** **)** const                                 |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_suspension_rest_length<class_VehicleWheel_get_suspension_rest_length>`  **(** **)** const                             |
@@ -104,6 +106,10 @@ Member Function Description
 .. _class_VehicleWheel_get_roll_influence:
 
 - :ref:`float<class_float>`  **get_roll_influence**  **(** **)** const
+
+.. _class_VehicleWheel_get_skidinfo:
+
+- :ref:`float<class_float>`  **get_skidinfo**  **(** **)** const
 
 .. _class_VehicleWheel_get_suspension_max_force:
 

@@ -41,16 +41,18 @@ Member Function Description
 
 - :ref:`Variant<class_variant>`  **call_func**  **(** **)** vararg
 
+Calls the referenced function previously set by :ref:`set_function<class_FuncRef_set_function>` or :ref:`@GDScript.funcref<class_@GDScript_funcref>`.
+
 .. _class_FuncRef_set_function:
 
 - void  **set_function**  **(** :ref:`String<class_string>` name  **)**
 
-Set the name of the function to call on the object, without parentheses or any parameters.
+The name of the referenced function to call on the object, without parentheses or any parameters.
 
 .. _class_FuncRef_set_instance:
 
 - void  **set_instance**  **(** :ref:`Object<class_object>` instance  **)**
 
-Set the object on which to call the referenced function. This object must be of a type actually inheriting from :ref:`Object<class_object>`, not a built-in type such as :ref:`int<class_int>`, :ref:`Vector2<class_vector2>` or :ref:`Dictionary<class_dictionary>`.
+The object containing the referenced function. This object must be of a type actually inheriting from :ref:`Object<class_object>`, not a built-in type such as :ref:`int<class_int>`, :ref:`Vector2<class_vector2>` or :ref:`Dictionary<class_dictionary>`.
 
 

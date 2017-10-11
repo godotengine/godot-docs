@@ -14,7 +14,7 @@ VisualScriptEmitSignal
 Brief Description
 -----------------
 
-
+A Visual Script node which emits a specified signal.
 
 Member Functions
 ----------------
@@ -28,7 +28,12 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`String<class_string>` **signal**
+- :ref:`String<class_string>` **signal** - The signal to emit.
+
+Description
+-----------
+
+A Visual Script node which emits a specified signal when it is executed.
 
 Member Function Description
 ---------------------------

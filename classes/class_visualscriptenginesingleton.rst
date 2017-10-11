@@ -14,7 +14,7 @@ VisualScriptEngineSingleton
 Brief Description
 -----------------
 
-
+A Visual Script node returning a singleton from @GlobalScope
 
 Member Functions
 ----------------
@@ -28,7 +28,12 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`String<class_string>` **constant**
+- :ref:`String<class_string>` **constant** - The singleton's name.
+
+Description
+-----------
+
+A Visual Script node returning a singleton from @GlobalScope
 
 Member Function Description
 ---------------------------

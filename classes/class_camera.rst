@@ -86,11 +86,11 @@ Numeric Constants
 
 - **PROJECTION_PERSPECTIVE** = **0** --- Perspective Projection (object's size on the screen becomes smaller when far away).
 - **PROJECTION_ORTHOGONAL** = **1** --- Orthogonal Projection (objects remain the same size on the screen no matter how far away they are).
-- **KEEP_WIDTH** = **0**
-- **KEEP_HEIGHT** = **1**
-- **DOPPLER_TRACKING_DISABLED** = **0**
-- **DOPPLER_TRACKING_IDLE_STEP** = **1**
-- **DOPPLER_TRACKING_FIXED_STEP** = **2**
+- **KEEP_WIDTH** = **0** --- Try to keep the aspect ratio when scaling the Camera's viewport to the screen. If not possible, preserve the viewport's width by changing the height. Height is ``sizey`` for orthographic projection, ``fovy`` for perspective projection.
+- **KEEP_HEIGHT** = **1** --- Try to keep the aspect ratio when scaling the Camera's viewport to the screen. If not possible, preserve the viewport's height by changing the width. Width is ``sizex`` for orthographic projection, ``fovx`` for perspective projection.
+- **DOPPLER_TRACKING_DISABLED** = **0** --- Disable Doppler effect simulation (default).
+- **DOPPLER_TRACKING_IDLE_STEP** = **1** --- Simulate Doppler effect by tracking positions of objects that are changed in ``_process``. Changes in the relative velocity of this Camera compared to those objects affect how Audio is perceived (changing the Audio's ``pitch shift``).
+- **DOPPLER_TRACKING_PHYSICS_STEP** = **2** --- Simulate Doppler effect by tracking positions of objects that are changed in ``_physics_process``. Changes in the relative velocity of this Camera compared to those objects affect how Audio is perceived (changing the Audio's ``pitch shift``).
 
 Description
 -----------
@@ -104,6 +104,8 @@ Member Function Description
 
 - void  **clear_current**  **(** **)**
 
+If this is the current Camera, remove it from being current. If it is inside the node tree, request to make the next Camera current, if any.
+
 .. _class_Camera_get_camera_transform:
 
 - :ref:`Transform<class_transform>`  **get_camera_transform**  **(** **)** const
@@ -114,6 +116,8 @@ Get the camera transform. Subclassed cameras (such as CharacterCamera) may provi
 
 - :ref:`int<class_int>`  **get_cull_mask**  **(** **)** const
 
+Returns the culling mask, describing which 3D render layers are rendered by this Camera.
+
 .. _class_Camera_get_doppler_tracking:
 
 - :ref:`int<class_int>`  **get_doppler_tracking**  **(** **)** const
@@ -122,21 +126,31 @@ Get the camera transform. Subclassed cameras (such as CharacterCamera) may provi
 
 - :ref:`Environment<class_environment>`  **get_environment**  **(** **)** const
 
+Returns the :ref:`Environment<class_environment>` used by this Camera.
+
 .. _class_Camera_get_fov:
 
 - :ref:`float<class_float>`  **get_fov**  **(** **)** const
+
+Returns the *FOV* Y angle in degrees (FOV means Field of View).
 
 .. _class_Camera_get_h_offset:
 
 - :ref:`float<class_float>`  **get_h_offset**  **(** **)** const
 
+Returns the horizontal (X) offset of the Camera viewport.
+
 .. _class_Camera_get_keep_aspect_mode:
 
 - :ref:`int<class_int>`  **get_keep_aspect_mode**  **(** **)** const
 
+Returns the current mode for keeping the aspect ratio. See ``KEEP\_\*`` constants.
+
 .. _class_Camera_get_projection:
 
 - :ref:`int<class_int>`  **get_projection**  **(** **)** const
+
+Returns the Camera's projection. See PROJECTION\_\* constants.
 
 .. _class_Camera_get_size:
 
@@ -146,23 +160,31 @@ Get the camera transform. Subclassed cameras (such as CharacterCamera) may provi
 
 - :ref:`float<class_float>`  **get_v_offset**  **(** **)** const
 
+Returns the vertical (Y) offset of the Camera viewport.
+
 .. _class_Camera_get_zfar:
 
 - :ref:`float<class_float>`  **get_zfar**  **(** **)** const
+
+Returns the far clip plane in world space units.
 
 .. _class_Camera_get_znear:
 
 - :ref:`float<class_float>`  **get_znear**  **(** **)** const
 
+Returns the near clip plane in world space units.
+
 .. _class_Camera_is_current:
 
 - :ref:`bool<class_bool>`  **is_current**  **(** **)** const
 
-Return whether the Camera is the current one in the :ref:`Viewport<class_viewport>`, or plans to become current (if outside the scene tree).
+Returns ``true`` if the Camera is the current one in the :ref:`Viewport<class_viewport>`, or plans to become current (if outside the scene tree).
 
 .. _class_Camera_is_position_behind:
 
 - :ref:`bool<class_bool>`  **is_position_behind**  **(** :ref:`Vector3<class_vector3>` world_point  **)** const
+
+Returns ``true`` if the given position is behind the Camera.
 
 .. _class_Camera_make_current:
 
@@ -178,37 +200,49 @@ Make this camera the current Camera for the :ref:`Viewport<class_viewport>` (see
 
 - :ref:`Vector3<class_vector3>`  **project_position**  **(** :ref:`Vector2<class_vector2>` screen_point  **)** const
 
+Returns how a 2D coordinate in the Viewport rectangle maps to a 3D point in worldspace.
+
 .. _class_Camera_project_ray_normal:
 
 - :ref:`Vector3<class_vector3>`  **project_ray_normal**  **(** :ref:`Vector2<class_vector2>` screen_point  **)** const
 
-Return a normal vector in worldspace, that is the result of projecting a point on the :ref:`Viewport<class_viewport>` rectangle by the camera projection. This is useful for casting rays in the form of (origin,normal) for object intersection or picking.
+Returns a normal vector in worldspace, that is the result of projecting a point on the :ref:`Viewport<class_viewport>` rectangle by the camera projection. This is useful for casting rays in the form of (origin, normal) for object intersection or picking.
 
 .. _class_Camera_project_ray_origin:
 
 - :ref:`Vector3<class_vector3>`  **project_ray_origin**  **(** :ref:`Vector2<class_vector2>` screen_point  **)** const
 
-Return a 3D position in worldspace, that is the result of projecting a point on the :ref:`Viewport<class_viewport>` rectangle by the camera projection. This is useful for casting rays in the form of (origin,normal) for object intersection or picking.
+Returns a 3D position in worldspace, that is the result of projecting a point on the :ref:`Viewport<class_viewport>` rectangle by the camera projection. This is useful for casting rays in the form of (origin, normal) for object intersection or picking.
 
 .. _class_Camera_set_cull_mask:
 
 - void  **set_cull_mask**  **(** :ref:`int<class_int>` mask  **)**
 
+Sets the cull mask, describing which 3D render layers are rendered by this Camera.
+
 .. _class_Camera_set_doppler_tracking:
 
 - void  **set_doppler_tracking**  **(** :ref:`int<class_int>` mode  **)**
+
+Changes Doppler effect tracking. See ``DOPPLER\_\*`` constants.
 
 .. _class_Camera_set_environment:
 
 - void  **set_environment**  **(** :ref:`Environment<class_environment>` env  **)**
 
+Sets the :ref:`Environment<class_environment>` to use for this Camera.
+
 .. _class_Camera_set_h_offset:
 
 - void  **set_h_offset**  **(** :ref:`float<class_float>` ofs  **)**
 
+Sets the horizontal (X) offset of the Camera viewport.
+
 .. _class_Camera_set_keep_aspect_mode:
 
 - void  **set_keep_aspect_mode**  **(** :ref:`int<class_int>` mode  **)**
+
+Sets the mode for keeping the aspect ratio. See ``KEEP\_\*`` constants.
 
 .. _class_Camera_set_orthogonal:
 
@@ -226,10 +260,12 @@ Set the camera projection to perspective mode, by specifying a *FOV* Y angle in 
 
 - void  **set_v_offset**  **(** :ref:`float<class_float>` ofs  **)**
 
+Sets the vertical (Y) offset of the Camera viewport.
+
 .. _class_Camera_unproject_position:
 
 - :ref:`Vector2<class_vector2>`  **unproject_position**  **(** :ref:`Vector3<class_vector3>` world_point  **)** const
 
-Return how a 3D point in worldspace maps to a 2D coordinate in the :ref:`Viewport<class_viewport>` rectangle.
+Returns how a 3D point in worldspace maps to a 2D coordinate in the :ref:`Viewport<class_viewport>` rectangle.
 
 

@@ -14,7 +14,7 @@ RegExMatch
 Brief Description
 -----------------
 
-
+Contains the results of a regex search.
 
 Member Functions
 ----------------
@@ -35,6 +35,11 @@ Member Functions
 | :ref:`String<class_string>`          | :ref:`get_subject<class_RegExMatch_get_subject>`  **(** **)** const                                     |
 +--------------------------------------+---------------------------------------------------------------------------------------------------------+
 
+Description
+-----------
+
+Contains the results of a regex search. :ref:`RegEx.search<class_RegEx_search>` returns an instance of ``RegExMatch`` if it finds the search pattern in the source string.
+
 Member Function Description
 ---------------------------
 
@@ -42,7 +47,7 @@ Member Function Description
 
 - :ref:`int<class_int>`  **get_end**  **(** :ref:`Variant<class_variant>` name=0  **)** const
 
-Returns the end position of the match in the string. An integer can be specified for numeric groups or a string for named groups. Returns -1 if that group wasn't found or doesn't exist. Defaults to 0 (whole pattern).
+Returns the end position of the match in the source string. An integer can be specified for numeric groups or a string for named groups. Returns -1 if that group wasn't found or doesn't exist. Defaults to 0 (whole pattern).
 
 .. _class_RegExMatch_get_group_count:
 
@@ -60,20 +65,24 @@ Returns an array of names of named capturing groups.
 
 - :ref:`int<class_int>`  **get_start**  **(** :ref:`Variant<class_variant>` name=0  **)** const
 
-Returns the starting position of the match in the string. An integer can be specified for numeric groups or a string for named groups. Returns -1 if that group wasn't found or doesn't exist. Defaults to 0 (whole pattern).
+Returns the starting position of the match in the source string. An integer can be specified for numeric groups or a string for named groups. Returns -1 if that group wasn't found or doesn't exist. Defaults to 0 (whole pattern).
 
 .. _class_RegExMatch_get_string:
 
 - :ref:`String<class_string>`  **get_string**  **(** :ref:`Variant<class_variant>` name=0  **)** const
 
-Returns the result of the match in the string. An integer can be specified for numeric groups or a string for named groups. Returns -1 if that group wasn't found or doesn't exist. Defaults to 0 (whole pattern).
+Returns the result of the match in the source string. An integer can be specified for numeric groups or a string for named groups. Returns -1 if that group wasn't found or doesn't exist. Defaults to 0 (whole pattern).
 
 .. _class_RegExMatch_get_strings:
 
 - :ref:`Array<class_array>`  **get_strings**  **(** **)** const
 
+Returns an :ref:`Array<class_array>` of the matches in the source string.
+
 .. _class_RegExMatch_get_subject:
 
 - :ref:`String<class_string>`  **get_subject**  **(** **)** const
+
+Returns the source string used with the search pattern to find this matching result.
 
 

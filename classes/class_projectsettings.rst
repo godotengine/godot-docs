@@ -26,11 +26,13 @@ Member Functions
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_order<class_ProjectSettings_get_order>`  **(** :ref:`String<class_string>` name  **)** const                                                |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_variant>`  | :ref:`get_setting<class_ProjectSettings_get_setting>`  **(** :ref:`String<class_string>` name  **)** const                                            |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_object>`    | :ref:`get_singleton<class_ProjectSettings_get_singleton>`  **(** :ref:`String<class_string>` name  **)** const                                        |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`    | :ref:`globalize_path<class_ProjectSettings_globalize_path>`  **(** :ref:`String<class_string>` path  **)** const                                      |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`has<class_ProjectSettings_has>`  **(** :ref:`String<class_string>` name  **)** const                                                            |
+| :ref:`bool<class_bool>`        | :ref:`has_setting<class_ProjectSettings_has_setting>`  **(** :ref:`String<class_string>` name  **)** const                                            |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`has_singleton<class_ProjectSettings_has_singleton>`  **(** :ref:`String<class_string>` name  **)** const                                        |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -49,6 +51,8 @@ Member Functions
 | void                           | :ref:`set_initial_value<class_ProjectSettings_set_initial_value>`  **(** :ref:`String<class_string>` name, :ref:`Variant<class_variant>` value  **)** |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_order<class_ProjectSettings_set_order>`  **(** :ref:`String<class_string>` name, :ref:`int<class_int>` position  **)**                      |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_setting<class_ProjectSettings_set_setting>`  **(** :ref:`String<class_string>` name, :ref:`Variant<class_variant>` value  **)**             |
 +--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -92,6 +96,10 @@ Clear the whole configuration (not recommended, may break things).
 
 Return the order of a configuration value (influences when saved to the config file).
 
+.. _class_ProjectSettings_get_setting:
+
+- :ref:`Variant<class_variant>`  **get_setting**  **(** :ref:`String<class_string>` name  **)** const
+
 .. _class_ProjectSettings_get_singleton:
 
 - :ref:`Object<class_object>`  **get_singleton**  **(** :ref:`String<class_string>` name  **)** const
@@ -102,9 +110,9 @@ Return the order of a configuration value (influences when saved to the config f
 
 Convert a localized path (res://) to a full native OS path.
 
-.. _class_ProjectSettings_has:
+.. _class_ProjectSettings_has_setting:
 
-- :ref:`bool<class_bool>`  **has**  **(** :ref:`String<class_string>` name  **)** const
+- :ref:`bool<class_bool>`  **has_setting**  **(** :ref:`String<class_string>` name  **)** const
 
 Return true if a configuration value is present.
 
@@ -147,5 +155,9 @@ Convert a path to a localized path (res:// path).
 - void  **set_order**  **(** :ref:`String<class_string>` name, :ref:`int<class_int>` position  **)**
 
 Set the order of a configuration value (influences when saved to the config file).
+
+.. _class_ProjectSettings_set_setting:
+
+- void  **set_setting**  **(** :ref:`String<class_string>` name, :ref:`Variant<class_variant>` value  **)**
 
 

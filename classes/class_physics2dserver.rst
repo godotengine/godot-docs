@@ -88,6 +88,8 @@ Member Functions
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                              | :ref:`body_get_continuous_collision_detection_mode<class_Physics2DServer_body_get_continuous_collision_detection_mode>`  **(** :ref:`RID<class_rid>` body  **)** const                                                                                                                                           |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>`    | :ref:`body_get_direct_state<class_Physics2DServer_body_get_direct_state>`  **(** :ref:`RID<class_rid>` body  **)**                                                                                                                                                                                               |
++--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                              | :ref:`body_get_max_contacts_reported<class_Physics2DServer_body_get_max_contacts_reported>`  **(** :ref:`RID<class_rid>` body  **)** const                                                                                                                                                                       |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                              | :ref:`body_get_mode<class_Physics2DServer_body_get_mode>`  **(** :ref:`RID<class_rid>` body  **)** const                                                                                                                                                                                                         |
@@ -467,6 +469,10 @@ Return the physics layer or layers a body can collide with.
 - :ref:`int<class_int>`  **body_get_continuous_collision_detection_mode**  **(** :ref:`RID<class_rid>` body  **)** const
 
 Return the continuous collision detection mode.
+
+.. _class_Physics2DServer_body_get_direct_state:
+
+- :ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>`  **body_get_direct_state**  **(** :ref:`RID<class_rid>` body  **)**
 
 .. _class_Physics2DServer_body_get_max_contacts_reported:
 

@@ -14,7 +14,7 @@ TextureButton
 Brief Description
 -----------------
 
-Button that can be themed with textures.
+Texture-based button. Supports Pressed, Hover, Disabled and Focused states.
 
 Member Functions
 ----------------
@@ -56,32 +56,32 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`bool<class_bool>` **expand**
-- :ref:`int<class_int>` **stretch_mode**
-- :ref:`BitMap<class_bitmap>` **texture_click_mask**
-- :ref:`Texture<class_texture>` **texture_disabled**
-- :ref:`Texture<class_texture>` **texture_focused**
-- :ref:`Texture<class_texture>` **texture_hover**
-- :ref:`Texture<class_texture>` **texture_normal**
-- :ref:`Texture<class_texture>` **texture_pressed**
+- :ref:`bool<class_bool>` **expand** - If [code]true[/code] the texture stretches to the edges of the node's bounding rectangle using the [member stretch_mode]. If [code]false[/code] the texture will not scale with the node. Default value: [code]false[/code].
+- :ref:`int<class_int>` **stretch_mode** - Controls the texture's behavior when you resize the node's bounding rectangle, [b]only if[/b] [member expand] is [code]true[/code]. Set it to one of the [code]STRETCH_*[/code] constants. See the constants to learn more.
+- :ref:`BitMap<class_bitmap>` **texture_click_mask** - Pure black and white [Bitmap] image to use for click detection. On the mask, white pixels represent the button's clickable area. Use it to create buttons with curved shapes.
+- :ref:`Texture<class_texture>` **texture_disabled** - Texture to display when the node is disabled. See [member BaseButton.disabled].
+- :ref:`Texture<class_texture>` **texture_focused** - Texture to display when the node has mouse or keyboard focus.
+- :ref:`Texture<class_texture>` **texture_hover** - Texture to display when the mouse hovers the node.
+- :ref:`Texture<class_texture>` **texture_normal** - Texture to display by default, when the node is [b]not[/b] in the disabled, focused, hover or pressed state.
+- :ref:`Texture<class_texture>` **texture_pressed** - Texture to display on mouse down over the node, if the node has keyboard focus and the player presses the enter key or if the player presses the [member BaseButton.shortcut] key.
 
 Numeric Constants
 -----------------
 
-- **STRETCH_SCALE** = **0**
-- **STRETCH_TILE** = **1**
-- **STRETCH_KEEP** = **2**
-- **STRETCH_KEEP_CENTERED** = **3**
-- **STRETCH_KEEP_ASPECT** = **4**
-- **STRETCH_KEEP_ASPECT_CENTERED** = **5**
-- **STRETCH_KEEP_ASPECT_COVERED** = **6**
+- **STRETCH_SCALE** = **0** --- Scale to fit the node's bounding rectangle.
+- **STRETCH_TILE** = **1** --- Tile inside the node's bounding rectangle.
+- **STRETCH_KEEP** = **2** --- The texture keeps its original size and stays in the bounding rectangle's top-left corner.
+- **STRETCH_KEEP_CENTERED** = **3** --- The texture keeps its original size and stays centered in the node's bounding rectangle.
+- **STRETCH_KEEP_ASPECT** = **4** --- Scale the texture to fit the node's bounding rectangle, but maintain the texture's aspect ratio.
+- **STRETCH_KEEP_ASPECT_CENTERED** = **5** --- Scale the texture to fit the node's bounding rectangle, center it, and maintain its aspect ratio.
+- **STRETCH_KEEP_ASPECT_COVERED** = **6** --- Scale the texture so that the shorter side fits the bounding rectangle. The other side clips to the node's limits.
 
 Description
 -----------
 
-Button that can be themed with textures. This is like a regular :ref:`Button<class_button>` but can be themed by assigning textures to it. This button is intended to be easy to theme, however a regular button can expand (that uses styleboxes) and still be better if the interface is expect to have internationalization of texts.
+``TextureButton`` has the same functionality as :ref:`Button<class_button>`, except it uses sprites instead of Godot's :ref:`Theme<class_theme>` resource. It is faster to create, but it doesn't support localization like more complex Controls.
 
-Only the normal texture is required, the others are optional.
+The Normal state's texture is required. Others are optional.
 
 Member Function Description
 ---------------------------

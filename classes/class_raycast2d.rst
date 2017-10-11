@@ -85,7 +85,7 @@ RayCast2D can ignore some objects by adding them to the exception list via ``add
 
 Only enabled raycasts will be able to query the space and report collisions.
 
-RayCast2D calculates intersection every fixed frame (see :ref:`Node<class_node>`), and the result is cached so it can be used later until the next frame. If multiple queries are required between fixed frames (or during the same frame) use :ref:`force_raycast_update<class_RayCast2D_force_raycast_update>` after adjusting the raycast.
+RayCast2D calculates intersection every physics frame (see :ref:`Node<class_node>`), and the result is cached so it can be used later until the next frame. If multiple queries are required between physics frames (or during the same frame) use :ref:`force_raycast_update<class_RayCast2D_force_raycast_update>` after adjusting the raycast.
 
 Member Function Description
 ---------------------------
@@ -112,7 +112,7 @@ Removes all collision exceptions for this ray.
 
 - void  **force_raycast_update**  **(** **)**
 
-Updates the collision information for the ray.  Use this method to update the collision information immediately instead of waiting for the next ``_fixed_process`` call, for example if the ray or its parent has changed state. Note: ``enabled == true`` is not required for this to work.
+Updates the collision information for the ray.  Use this method to update the collision information immediately instead of waiting for the next ``_physics_process`` call, for example if the ray or its parent has changed state. Note: ``enabled == true`` is not required for this to work.
 
 .. _class_RayCast2D_get_cast_to:
 

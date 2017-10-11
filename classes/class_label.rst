@@ -106,7 +106,7 @@ Member Function Description
 
 - :ref:`int<class_int>`  **get_align**  **(** **)** const
 
-Return the alignment mode (any of the ALIGN\_\* enumeration values).
+Returns the alignment mode (any of the ALIGN\_\* enumeration values).
 
 .. _class_Label_get_line_count:
 
@@ -124,65 +124,67 @@ Returns the font size in pixels.
 
 - :ref:`int<class_int>`  **get_lines_skipped**  **(** **)** const
 
-Return the the number of lines to skipped before displaying.
+Returns the the number of lines to skip before displaying.
 
 .. _class_Label_get_max_lines_visible:
 
 - :ref:`int<class_int>`  **get_max_lines_visible**  **(** **)** const
 
-Return the restricted number of lines to display. Returns -1 if unrestricted.
+Returns the maximum number of lines to display. Returns -1 if unrestricted.
 
 .. _class_Label_get_percent_visible:
 
 - :ref:`float<class_float>`  **get_percent_visible**  **(** **)** const
 
-Return the restricted number of characters to display (as a percentage of the total text).
+Returns the maximum number of characters to display as a percentage of the total text.
 
 .. _class_Label_get_text:
 
 - :ref:`String<class_string>`  **get_text**  **(** **)** const
 
-Return the label text. Text can contain newlines.
+Returns the label text. Text can contain newlines.
 
 .. _class_Label_get_total_character_count:
 
 - :ref:`int<class_int>`  **get_total_character_count**  **(** **)** const
 
-Return the total length of the text.
+Returns the total length of the text.
 
 .. _class_Label_get_valign:
 
 - :ref:`int<class_int>`  **get_valign**  **(** **)** const
 
-Return the vertical alignment mode (any of the VALIGN\_\* enumeration values).
+Returns the vertical alignment mode (any of the VALIGN\_\* enumeration values).
 
 .. _class_Label_get_visible_characters:
 
 - :ref:`int<class_int>`  **get_visible_characters**  **(** **)** const
 
-Return the restricted number of characters to display. Returns -1 if unrestricted.
+Returns the restricted number of characters to display. Returns -1 if unrestricted.
 
 .. _class_Label_get_visible_line_count:
 
 - :ref:`int<class_int>`  **get_visible_line_count**  **(** **)** const
 
+Returns the number of lines shown. Useful if the ``Label`` 's height cannot currently display all lines.
+
 .. _class_Label_has_autowrap:
 
 - :ref:`bool<class_bool>`  **has_autowrap**  **(** **)** const
 
-Return the state of the *autowrap* mode (see :ref:`set_autowrap<class_Label_set_autowrap>`).
+Returns ``true`` if *autowrap* mode (see :ref:`set_autowrap<class_Label_set_autowrap>`).
 
 .. _class_Label_is_clipping_text:
 
 - :ref:`bool<class_bool>`  **is_clipping_text**  **(** **)** const
 
-Return ``true`` if text would be cut off if it is too wide.
+Returns ``true`` if text would be cut off if it is too wide.
 
 .. _class_Label_is_uppercase:
 
 - :ref:`bool<class_bool>`  **is_uppercase**  **(** **)** const
 
-Return ``true`` if text is displayed in all capitals.
+Returns ``true`` if text is displayed in all capitals.
 
 .. _class_Label_set_align:
 

@@ -14,5 +14,10 @@ AudioStreamPlayback
 Brief Description
 -----------------
 
+Meta class for playing back audio.
 
+Description
+-----------
+
+Can play, loop, pause a scroll through Audio. See :ref:`AudioStream<class_audiostream>` and :ref:`AudioStreamOGGVorbis<class_audiostreamoggvorbis>` for usage.
 

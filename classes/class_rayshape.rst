@@ -14,7 +14,7 @@ RayShape
 Brief Description
 -----------------
 
-
+Ray shape for 3D collisions.
 
 Member Functions
 ----------------
@@ -28,7 +28,12 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`float<class_float>` **length**
+- :ref:`float<class_float>` **length** - The ray's length.
+
+Description
+-----------
+
+Ray shape for 3D collisions, which can be set into a :ref:`PhysicsBody<class_physicsbody>` or :ref:`Area<class_area>`. A ray is not really a collision body, instead it tries to separate itself from whatever is touching its far endpoint. It's often useful for characters.
 
 Member Function Description
 ---------------------------

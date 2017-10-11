@@ -42,7 +42,7 @@ Member Functions
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`get_out_of_range_mode<class_AudioStreamPlayer3D_get_out_of_range_mode>`  **(** **)** const                                                               |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_position<class_AudioStreamPlayer3D_get_position>`  **(** **)**                                                                                       |
+| :ref:`float<class_float>`              | :ref:`get_playback_position<class_AudioStreamPlayer3D_get_playback_position>`  **(** **)**                                                                     |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`AudioStream<class_audiostream>`  | :ref:`get_stream<class_AudioStreamPlayer3D_get_stream>`  **(** **)** const                                                                                     |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -109,11 +109,11 @@ Member Variables
 - :ref:`float<class_float>` **attenuation_filter_cutoff_hz** - Dampens audio above this frequency, in Hz.
 - :ref:`float<class_float>` **attenuation_filter_db** - Amount how much the filter affects the loudness, in dB.
 - :ref:`int<class_int>` **attenuation_model** - Decides if audio should get quieter with distance linearly, quadratically or logarithmically.
-- :ref:`bool<class_bool>` **autoplay** - If [code]true[/code], audio plays audio plays when added to scene tree. Default value: [code]false[/code].
+- :ref:`bool<class_bool>` **autoplay** - If [code]true[/code] audio plays when added to scene tree. Default value: [code]false[/code].
 - :ref:`String<class_string>` **bus** - Bus on which this audio is playing.
 - :ref:`int<class_int>` **doppler_tracking** - Decides in which step the Doppler effect should be calculated.
 - :ref:`float<class_float>` **emission_angle_degrees** - The angle in which the audio reaches cameras undampened.
-- :ref:`bool<class_bool>` **emission_angle_enabled** - If [code]true[/code], the audio should be dampened according to the direction of the sound.
+- :ref:`bool<class_bool>` **emission_angle_enabled** - If [code]true[/code] the audio should be dampened according to the direction of the sound.
 - :ref:`float<class_float>` **emission_angle_filter_attenuation_db** - dampens audio if camera is outside of 'emission_angle_degrees' and 'emission_angle_enabled' is set by this factor, in dB.
 - :ref:`float<class_float>` **max_db** - Sets the absolute maximum of the soundlevel, in dB.
 - :ref:`float<class_float>` **max_distance** - Sets the distance from wich the 'out_of_range_mode' takes effect. Has no effect if set to 0.
@@ -133,7 +133,7 @@ Numeric Constants
 - **OUT_OF_RANGE_PAUSE** = **1** --- Pause this audio when it gets out of range.
 - **DOPPLER_TRACKING_DISABLED** = **0** --- Disables doppler tracking.
 - **DOPPLER_TRACKING_IDLE_STEP** = **1** --- Executes doppler trackin in idle step.
-- **DOPPLER_TRACKING_FIXED_STEP** = **2** --- Executes doppler tracking in fixed step.
+- **DOPPLER_TRACKING_PHYSICS_STEP** = **2** --- Executes doppler tracking in physics step.
 
 Description
 -----------
@@ -187,9 +187,11 @@ Member Function Description
 
 - :ref:`int<class_int>`  **get_out_of_range_mode**  **(** **)** const
 
-.. _class_AudioStreamPlayer3D_get_position:
+.. _class_AudioStreamPlayer3D_get_playback_position:
 
-- :ref:`float<class_float>`  **get_position**  **(** **)**
+- :ref:`float<class_float>`  **get_playback_position**  **(** **)**
+
+Returns the position in the :ref:`AudioStream<class_audiostream>`.
 
 .. _class_AudioStreamPlayer3D_get_stream:
 

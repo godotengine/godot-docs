@@ -16,7 +16,7 @@ SpriteBase3D
 Brief Description
 -----------------
 
-
+2D Sprite node in 3D environment.
 
 Member Functions
 ----------------
@@ -69,28 +69,33 @@ Member Variables
 ----------------
 
 - :ref:`int<class_int>` **alpha_cut**
-- :ref:`int<class_int>` **axis**
-- :ref:`bool<class_bool>` **centered**
-- :ref:`bool<class_bool>` **double_sided**
-- :ref:`bool<class_bool>` **flip_h**
-- :ref:`bool<class_bool>` **flip_v**
-- :ref:`Color<class_color>` **modulate**
-- :ref:`Vector2<class_vector2>` **offset**
-- :ref:`float<class_float>` **opacity**
-- :ref:`float<class_float>` **pixel_size**
-- :ref:`bool<class_bool>` **shaded**
-- :ref:`bool<class_bool>` **transparent**
+- :ref:`int<class_int>` **axis** - The direction in which the front of the texture faces.
+- :ref:`bool<class_bool>` **centered** - If [code]true[/code] texture will be centered. Default value: [code]true[/code].
+- :ref:`bool<class_bool>` **double_sided** - If [code]true[/code] texture can be seen from the back as well, if [code]false[/code], it is invisible when looking at it from behind. Default value: [code]true[/code].
+- :ref:`bool<class_bool>` **flip_h** - If [code]true[/code] texture is flipped horizontally. Default value: [code]false[/code].
+- :ref:`bool<class_bool>` **flip_v** - If [code]true[/code] texture is flipped vertically. Default value: [code]false[/code].
+- :ref:`Color<class_color>` **modulate** - A color value that gets multiplied on, could be used for mood-coloring or to simulate the color of light.
+- :ref:`Vector2<class_vector2>` **offset** - The texture's drawing offset.
+- :ref:`float<class_float>` **opacity** - The objects visibility on a scale from [code]0[/code] fully invisible to [code]1[/code] fully visible.
+- :ref:`float<class_float>` **pixel_size** - The size of one pixel's width on the Sprite to scale it in 3D.
+- :ref:`bool<class_bool>` **shaded** - If [code]true[/code] the [Light] in the [Environment] has effects on the Sprite. Default value: [code]false[/code].
+- :ref:`bool<class_bool>` **transparent** - If [code]true[/code] the texture's transparency and the opacity are used to make those parts of the Sprite invisible. Default value: [code]true[/code].
 
 Numeric Constants
 -----------------
 
-- **FLAG_TRANSPARENT** = **0**
-- **FLAG_SHADED** = **1**
-- **FLAG_DOUBLE_SIDED** = **2**
-- **FLAG_MAX** = **3**
+- **FLAG_TRANSPARENT** = **0** --- If set, the texture's transparency and the opacity are used to make those parts of the Sprite invisible.
+- **FLAG_SHADED** = **1** --- If set, the Light in the Environment has effects on the Sprite.
+- **FLAG_DOUBLE_SIDED** = **2** --- If set, texture can be seen from the back as well, if not, it is invisible when looking at it from behind.
+- **FLAG_MAX** = **3** --- Used internally to mark the end of the Flags section.
 - **ALPHA_CUT_DISABLED** = **0**
 - **ALPHA_CUT_DISCARD** = **1**
 - **ALPHA_CUT_OPAQUE_PREPASS** = **2**
+
+Description
+-----------
+
+A node that displays 2D texture information in a 3D environment.
 
 Member Function Description
 ---------------------------

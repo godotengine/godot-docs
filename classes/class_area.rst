@@ -14,7 +14,7 @@ Area
 Brief Description
 -----------------
 
-General purpose area detection and influence for 3D physics.
+General purpose area node for detection and 3D physics influence.
 
 Member Functions
 ----------------
@@ -113,65 +113,65 @@ Signals
 -------
 
 -  **area_entered**  **(** :ref:`Object<class_object>` area  **)**
-This signal is triggered only once when an area enters this area. The only parameter passed is the area that entered this area.
+Emitted when another area enters.
 
 -  **area_exited**  **(** :ref:`Object<class_object>` area  **)**
-This signal is triggered only once when an area exits this area. The only parameter passed is the area that exited this area.
+Emitted when another area exits.
 
 -  **area_shape_entered**  **(** :ref:`int<class_int>` area_id, :ref:`Object<class_object>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape  **)**
-This signal triggers only once when an area enters this area. The first parameter is the area's :ref:`RID<class_rid>`. The second one is the area as an object. The third one is the index of the shape entering this area, and the fourth one is the index of the shape in this area that reported the entering.
+Emitted when another area enters, reporting which areas overlapped.
 
 -  **area_shape_exited**  **(** :ref:`int<class_int>` area_id, :ref:`Object<class_object>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape  **)**
-This signal triggers only once when an area exits this area. The first parameter is the area's :ref:`RID<class_rid>`. The second one is the area as an object. The third one is the index of the shape entering this area, and the fourth one is the index of the shape in this area that reported the entering.
+Emitted when another area exits, reporting which areas were overlapping.
 
 -  **body_entered**  **(** :ref:`Object<class_object>` body  **)**
-This signal is triggered only once when a body enters this area. The only parameter passed is the body that entered this area.
+Emitted when a :ref:`PhysicsBody<class_physicsbody>` object enters.
 
 -  **body_exited**  **(** :ref:`Object<class_object>` body  **)**
-This signal is triggered only once when a body exits this area. The only parameter passed is the body that exited this area.
+Emitted when a :ref:`PhysicsBody2D<class_physicsbody2d>` object exits.
 
 -  **body_shape_entered**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape  **)**
-This signal triggers only once when a body enters this area. The first parameter is the body's :ref:`RID<class_rid>`. The second one is the body as an object. The third one is the index of the shape of the body that entered this area, and the fourth one is the index of the shape in this area that reported the entering.
+Emitted when a :ref:`PhysicsBody2D<class_physicsbody2d>` object enters, reporting which shapes overlapped.
 
 -  **body_shape_exited**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape  **)**
-This signal triggers only once when a body exits this area. The first parameter is the body's :ref:`RID<class_rid>`. The second one is the body as an object. The third one is the index of the shape exiting this area, and the fourth one is the index of the shape in this area that reported the exit.
+Emitted when a :ref:`PhysicsBody2D<class_physicsbody2d>` object exits, reporting which shapes were overlapping.
 
 
 Member Variables
 ----------------
 
-- :ref:`float<class_float>` **angular_damp**
-- :ref:`String<class_string>` **audio_bus_name**
-- :ref:`bool<class_bool>` **audio_bus_override**
-- :ref:`int<class_int>` **collision_layer**
-- :ref:`int<class_int>` **collision_mask**
-- :ref:`float<class_float>` **gravity**
-- :ref:`float<class_float>` **gravity_distance_scale**
-- :ref:`bool<class_bool>` **gravity_point**
-- :ref:`Vector3<class_vector3>` **gravity_vec**
-- :ref:`float<class_float>` **linear_damp**
-- :ref:`bool<class_bool>` **monitorable**
-- :ref:`bool<class_bool>` **monitoring**
-- :ref:`float<class_float>` **priority**
+- :ref:`float<class_float>` **angular_damp** - The rate at which objects stop spinning in this area. Represents the angular velocity lost per second. Values range from [code]0[/code] (no damping) to [code]1[/code] (full damping).
+- :ref:`String<class_string>` **audio_bus_name** - The name of the area's audio bus.
+- :ref:`bool<class_bool>` **audio_bus_override** - If [code]true[/code] the area's audio bus overrides the default audio bus. Default value: [code]false[/code].
+- :ref:`int<class_int>` **collision_layer** - The area's physics layer(s). Collidable objects can exist in any of 32 different layers. A contact is detected if object A is in any of the layers that object B scans, or object B is in any layers that object A scans. See also [code]collision_mask[/code].
+- :ref:`int<class_int>` **collision_mask** - The physics layers this area scans to determine collision detection.
+- :ref:`float<class_float>` **gravity** - The area's gravity intensity (ranges from -1024 to 1024). This value multiplies the gravity vector. This is useful to alter the force of gravity without altering its direction.
+- :ref:`float<class_float>` **gravity_distance_scale** - The falloff factor for point gravity. The greater the value, the faster gravity decreases with distance.
+- :ref:`bool<class_bool>` **gravity_point** - If [code]true[/code] gravity is calculated from a point (set via [code]gravity_vec[/code]). Also see [code]space_override[/code]. Default value: [code]false[/code].
+- :ref:`Vector3<class_vector3>` **gravity_vec** - The area's gravity vector (not normalized). If gravity is a point (see [method is_gravity_a_point]), this will be the point of attraction.
+- :ref:`float<class_float>` **linear_damp** - The rate at which objects stop moving in this area. Represents the linear velocity lost per second. Values range from [code]0[/code] (no damping) to [code]1[/code] (full damping).
+- :ref:`bool<class_bool>` **monitorable** - If [code]true[/code] other monitoring areas can detect this area. Default value: [code]true[/code].
+- :ref:`bool<class_bool>` **monitoring** - If [code]true[/code] the area detects bodies or areas entering and exiting it. Default value: [code]true[/code].
+- :ref:`float<class_float>` **priority** - The area's priority. Higher priority areas are processed first. Default value: 0.
 - :ref:`float<class_float>` **reverb_bus_amount**
 - :ref:`bool<class_bool>` **reverb_bus_enable**
 - :ref:`String<class_string>` **reverb_bus_name**
 - :ref:`float<class_float>` **reverb_bus_uniformity**
-- :ref:`int<class_int>` **space_override**
+- :ref:`int<class_int>` **space_override** - Override mode for gravity and damping calculations within this area. See the SPACE_OVERRIDE_* constants for values.
 
 Numeric Constants
 -----------------
 
-- **SPACE_OVERRIDE_DISABLED** = **0**
-- **SPACE_OVERRIDE_COMBINE** = **1**
-- **SPACE_OVERRIDE_COMBINE_REPLACE** = **2**
-- **SPACE_OVERRIDE_REPLACE** = **3**
-- **SPACE_OVERRIDE_REPLACE_COMBINE** = **4**
+- **SPACE_OVERRIDE_DISABLED** = **0** --- This area does not affect gravity/damping.
+- **SPACE_OVERRIDE_COMBINE** = **1** --- This area adds its gravity/damping values to whatever has been calculated so far (in ``priority`` order).
+- **SPACE_OVERRIDE_COMBINE_REPLACE** = **2** --- This area adds its gravity/damping values to whatever has been calculated so far (in ``priority`` order), ignoring any lower priority areas.
+- **SPACE_OVERRIDE_REPLACE** = **3** --- This area replaces any gravity/damping, even the defaults, ignoring any lower priority areas.
+- **SPACE_OVERRIDE_REPLACE_COMBINE** = **4** --- This area replaces any gravity/damping calculated so far (in ``priority`` order), but keeps calculating the rest of the areas.
 
 Description
 -----------
 
-General purpose area detection for 3D physics. Areas can be used for detection of objects that enter/exit them, as well as overriding space parameters (changing gravity, damping, etc). For this, use any space override different from AREA_SPACE_OVERRIDE_DISABLE and point gravity at the center of mass.
+3D area that detects :ref:`CollisionObject<class_collisionobject>` nodes overlapping, entering, or exiting. Can also alter or override local physics parameters (gravity, damping).
 
 Member Function Description
 ---------------------------
@@ -238,13 +238,13 @@ Return the linear damp rate.
 
 - :ref:`Array<class_array>`  **get_overlapping_areas**  **(** **)** const
 
-Return a list of the areas that are totally or partially inside this area.
+Returns a list of intersecting :ref:`Area<class_area>`\ s.
 
 .. _class_Area_get_overlapping_bodies:
 
 - :ref:`Array<class_array>`  **get_overlapping_bodies**  **(** **)** const
 
-Return a list of the bodies (:ref:`PhysicsBody<class_physicsbody>`) that are totally or partially inside this area.
+Returns a list of intersecting :ref:`PhysicsBody<class_physicsbody>`\ s.
 
 .. _class_Area_get_priority:
 
@@ -300,13 +300,13 @@ Return whether this area detects bodies/areas entering/exiting it.
 
 - :ref:`bool<class_bool>`  **overlaps_area**  **(** :ref:`Node<class_node>` area  **)** const
 
-Return whether the area passed is totally or partially inside this area.
+If ``true`` the given area overlaps the Area.
 
 .. _class_Area_overlaps_body:
 
 - :ref:`bool<class_bool>`  **overlaps_body**  **(** :ref:`Node<class_node>` body  **)** const
 
-Return whether the body passed is totally or partially inside this area.
+If ``true`` the given body overlaps the Area.
 
 .. _class_Area_set_angular_damp:
 

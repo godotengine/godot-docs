@@ -28,11 +28,11 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`bool<class_bool>` **fixed_process_parent**
 - :ref:`bool<class_bool>` **freeze_bodies**
 - :ref:`bool<class_bool>` **pause_animated_sprites**
 - :ref:`bool<class_bool>` **pause_animations**
 - :ref:`bool<class_bool>` **pause_particles**
+- :ref:`bool<class_bool>` **physics_process_parent**
 - :ref:`bool<class_bool>` **process_parent**
 
 Numeric Constants
@@ -43,7 +43,7 @@ Numeric Constants
 - **ENABLER_PAUSE_PARTICLES** = **2** --- This enabler will stop :ref:`Particles2D<class_particles2d>` nodes.
 - **ENABLER_PAUSE_ANIMATED_SPRITES** = **5**
 - **ENABLER_PARENT_PROCESS** = **3** --- This enabler will stop the parent's _process function.
-- **ENABLER_PARENT_FIXED_PROCESS** = **4** --- This enabler will stop the parent's _fixed_process function.
+- **ENABLER_PARENT_PHYSICS_PROCESS** = **4** --- This enabler will stop the parent's _physics_process function.
 - **ENABLER_MAX** = **6**
 
 Description

@@ -14,7 +14,7 @@ VisualScriptCustomNode
 Brief Description
 -----------------
 
-
+A scripted Visual Script node.
 
 Member Functions
 ----------------
@@ -52,14 +52,23 @@ Member Functions
 Numeric Constants
 -----------------
 
-- **START_MODE_BEGIN_SEQUENCE** = **0**
-- **START_MODE_CONTINUE_SEQUENCE** = **1**
-- **START_MODE_RESUME_YIELD** = **2**
-- **STEP_PUSH_STACK_BIT** = **16777216**
-- **STEP_GO_BACK_BIT** = **33554432**
+- **START_MODE_BEGIN_SEQUENCE** = **0** --- The start mode used the first time when :ref:`_step<class_VisualScriptCustomNode__step>` is called.
+- **START_MODE_CONTINUE_SEQUENCE** = **1** --- The start mode used when :ref:`_step<class_VisualScriptCustomNode__step>` is called after coming back from a STEP_PUSH_STACK_BIT.
+- **START_MODE_RESUME_YIELD** = **2** --- The start mode used when :ref:`_step<class_VisualScriptCustomNode__step>` is called after resuming from STEP_YIELD_BIT.
+- **STEP_PUSH_STACK_BIT** = **16777216** --- Hint used by :ref:`_step<class_VisualScriptCustomNode__step>` to tell that control should return to it when there is no other node left to execute.
+
+This is used by :ref:`VisualScriptCondition<class_visualscriptcondition>` to redirect the sequence to the "Done" port after the true/false branch has finished execution.
+- **STEP_GO_BACK_BIT** = **33554432** --- Hint used by :ref:`_step<class_VisualScriptCustomNode__step>` to tell that control should return back, either hitting a previous STEP_PUSH_STACK_BIT or exiting the function.
 - **STEP_NO_ADVANCE_BIT** = **67108864**
-- **STEP_EXIT_FUNCTION_BIT** = **134217728**
-- **STEP_YIELD_BIT** = **268435456**
+- **STEP_EXIT_FUNCTION_BIT** = **134217728** --- Hint used by :ref:`_step<class_VisualScriptCustomNode__step>` to tell that control should stop and exit the function.
+- **STEP_YIELD_BIT** = **268435456** --- Hint used by :ref:`_step<class_VisualScriptCustomNode__step>` to tell that the function should be yielded.
+
+Using this requires you to have at least one working memory slot, which is used for the :ref:`VisualScriptFunctionState<class_visualscriptfunctionstate>`.
+
+Description
+-----------
+
+A custom Visual Script node which can be scripted in powerful ways.
 
 Member Function Description
 ---------------------------
@@ -68,56 +77,96 @@ Member Function Description
 
 - :ref:`String<class_string>`  **_get_caption**  **(** **)** virtual
 
+Return the node's title.
+
 .. _class_VisualScriptCustomNode__get_category:
 
 - :ref:`String<class_string>`  **_get_category**  **(** **)** virtual
+
+Return the node's category.
 
 .. _class_VisualScriptCustomNode__get_input_value_port_count:
 
 - :ref:`int<class_int>`  **_get_input_value_port_count**  **(** **)** virtual
 
+Return the count of input value ports.
+
 .. _class_VisualScriptCustomNode__get_input_value_port_name:
 
 - :ref:`String<class_string>`  **_get_input_value_port_name**  **(** :ref:`int<class_int>` idx  **)** virtual
+
+Return the specified input port's name.
 
 .. _class_VisualScriptCustomNode__get_input_value_port_type:
 
 - :ref:`int<class_int>`  **_get_input_value_port_type**  **(** :ref:`int<class_int>` idx  **)** virtual
 
+Return the specified input port's type. See the TYPE\_\* enum in @GlobalScope.
+
 .. _class_VisualScriptCustomNode__get_output_sequence_port_count:
 
 - :ref:`int<class_int>`  **_get_output_sequence_port_count**  **(** **)** virtual
+
+Return the amount of output **sequence** ports.
 
 .. _class_VisualScriptCustomNode__get_output_sequence_port_text:
 
 - :ref:`String<class_string>`  **_get_output_sequence_port_text**  **(** :ref:`int<class_int>` idx  **)** virtual
 
+Return the specified **sequence** output's name.
+
 .. _class_VisualScriptCustomNode__get_output_value_port_count:
 
 - :ref:`int<class_int>`  **_get_output_value_port_count**  **(** **)** virtual
+
+Return the amount of output value ports.
 
 .. _class_VisualScriptCustomNode__get_output_value_port_name:
 
 - :ref:`String<class_string>`  **_get_output_value_port_name**  **(** :ref:`int<class_int>` idx  **)** virtual
 
+Return the specified output's name.
+
 .. _class_VisualScriptCustomNode__get_output_value_port_type:
 
 - :ref:`int<class_int>`  **_get_output_value_port_type**  **(** :ref:`int<class_int>` idx  **)** virtual
+
+Return the specified output's type. See the TYPE\_\* enum in @GlobalScope.
 
 .. _class_VisualScriptCustomNode__get_text:
 
 - :ref:`String<class_string>`  **_get_text**  **(** **)** virtual
 
+Return the custom node's text, which is shown right next to the input **sequence** port (if there is none, on the place that is usually taken by it).
+
 .. _class_VisualScriptCustomNode__get_working_memory_size:
 
 - :ref:`int<class_int>`  **_get_working_memory_size**  **(** **)** virtual
+
+Return the size of the custom node's working memory. See :ref:`_step<class_VisualScriptCustomNode__step>` for more details.
 
 .. _class_VisualScriptCustomNode__has_input_sequence_port:
 
 - :ref:`bool<class_bool>`  **_has_input_sequence_port**  **(** **)** virtual
 
+Return whether the custom node has an input **sequence** port.
+
 .. _class_VisualScriptCustomNode__step:
 
 - :ref:`Variant<class_variant>`  **_step**  **(** :ref:`Array<class_array>` inputs, :ref:`Array<class_array>` outputs, :ref:`int<class_int>` start_mode, :ref:`Array<class_array>` working_mem  **)** virtual
+
+Execute the custom node's logic, returning the index of the output sequence port to use or a :ref:`String<class_string>` when there is an error.
+
+
+				The ``inputs`` array contains the values of the input ports.
+
+``outputs`` is an array whose indices should be set to the respective outputs.
+
+The ``start_mode`` is usually ``START_MODE_BEGIN_SEQUENCE``, unless you have used the STEP\_\* constants.
+
+``working_mem`` is an array which can be used to persist information between runs of the custom node.
+
+
+				When returning, you can mask the returned value with one of the STEP\_\* constants.
 
 

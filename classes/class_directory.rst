@@ -127,6 +127,8 @@ Return the absolute path to the currently opened directory (e.g. ``res://folder`
 
 - :ref:`int<class_int>`  **get_current_drive**  **(** **)**
 
+Returns the currently opened directory's drive index. See :ref:`get_drive<class_Directory_get_drive>` to convert returned index to the name of the drive.
+
 .. _class_Directory_get_drive:
 
 - :ref:`String<class_string>`  **get_drive**  **(** :ref:`int<class_int>` idx  **)**

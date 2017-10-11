@@ -28,6 +28,8 @@ Member Functions
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`              | :ref:`get_max_distance<class_AudioStreamPlayer2D_get_max_distance>`  **(** **)** const                             |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_playback_position<class_AudioStreamPlayer2D_get_playback_position>`  **(** **)**                         |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 | :ref:`AudioStream<class_audiostream>`  | :ref:`get_stream<class_AudioStreamPlayer2D_get_stream>`  **(** **)** const                                         |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`              | :ref:`get_volume_db<class_AudioStreamPlayer2D_get_volume_db>`  **(** **)** const                                   |
@@ -69,10 +71,10 @@ Member Variables
 
 - :ref:`int<class_int>` **area_mask** - Areas in which this sound plays.
 - :ref:`float<class_float>` **attenuation** - Dampens audio over distance with this as an exponent.
-- :ref:`bool<class_bool>` **autoplay** - If [code]true[/code], audio plays when added to scene tree. Default value: [code]false[/code].
+- :ref:`bool<class_bool>` **autoplay** - If [code]true[/code] audio plays when added to scene tree. Default value: [code]false[/code].
 - :ref:`String<class_string>` **bus** - Bus on which this audio is playing.
 - :ref:`float<class_float>` **max_distance** - Maximum distance from which audio is still hearable.
-- :ref:`bool<class_bool>` **playing** - If [code]true[/code], audio is playing.
+- :ref:`bool<class_bool>` **playing** - If [code]true[/code] audio is playing.
 - :ref:`AudioStream<class_audiostream>` **stream** - The [AudioStream] object to be played.
 - :ref:`float<class_float>` **volume_db** - Base volume without dampening.
 
@@ -99,6 +101,12 @@ Member Function Description
 .. _class_AudioStreamPlayer2D_get_max_distance:
 
 - :ref:`float<class_float>`  **get_max_distance**  **(** **)** const
+
+.. _class_AudioStreamPlayer2D_get_playback_position:
+
+- :ref:`float<class_float>`  **get_playback_position**  **(** **)**
+
+Returns the position in the :ref:`AudioStream<class_audiostream>`.
 
 .. _class_AudioStreamPlayer2D_get_stream:
 

@@ -14,7 +14,7 @@ CanvasModulate
 Brief Description
 -----------------
 
-Tint the entire canvas
+Tint the entire canvas.
 
 Member Functions
 ----------------
@@ -28,12 +28,12 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`Color<class_color>` **color**
+- :ref:`Color<class_color>` **color** - The tint color to apply.
 
 Description
 -----------
 
-CanvasModulate tints the canvas elements using its assigned color
+``CanvasModulate`` tints the canvas elements using its assigned ``color``.
 
 Member Function Description
 ---------------------------

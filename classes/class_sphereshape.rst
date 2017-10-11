@@ -14,7 +14,7 @@ SphereShape
 Brief Description
 -----------------
 
-
+Sphere shape for 3D collisions.
 
 Member Functions
 ----------------
@@ -28,7 +28,12 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`float<class_float>` **radius**
+- :ref:`float<class_float>` **radius** - The sphere's radius. The shape's diameter is double the radius.
+
+Description
+-----------
+
+Sphere shape for 3D collisions, which can be set into a :ref:`PhysicsBody<class_physicsbody>` or :ref:`Area<class_area>`. This shape is useful for modeling sphere-like 3D objects.
 
 Member Function Description
 ---------------------------

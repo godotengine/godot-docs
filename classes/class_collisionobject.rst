@@ -16,7 +16,7 @@ CollisionObject
 Brief Description
 -----------------
 
-
+Base node for collision objects.
 
 Member Functions
 ----------------
@@ -70,13 +70,22 @@ Signals
 
 -  **input_event**  **(** :ref:`Object<class_object>` camera, :ref:`Object<class_object>` event, :ref:`Vector3<class_vector3>` click_position, :ref:`Vector3<class_vector3>` click_normal, :ref:`int<class_int>` shape_idx  **)**
 -  **mouse_entered**  **(** **)**
+Emitted when the mouse pointer enters any of this object's shapes.
+
 -  **mouse_exited**  **(** **)**
+Emitted when the mouse pointer exits all this object's shapes.
+
 
 Member Variables
 ----------------
 
 - :ref:`bool<class_bool>` **input_capture_on_drag**
 - :ref:`bool<class_bool>` **input_ray_pickable**
+
+Description
+-----------
+
+CollisionObject is the base class for physics objects. It can hold any number of collision :ref:`Shape<class_shape>`\ s. Each shape must be assigned to a *shape owner*. The CollisionObject can have any number of shape owners. Shape owners are not nodes and do not appear in the editor, but are accessible through code using the ``shape_owner\_\*`` methods.
 
 Member Function Description
 ---------------------------
@@ -89,7 +98,7 @@ Member Function Description
 
 - :ref:`int<class_int>`  **create_shape_owner**  **(** :ref:`Object<class_object>` owner  **)**
 
-Creates new holder for the shapes. Argument is a :ref:`CollisionShape<class_collisionshape>` node. It will return owner_id which usually you will want to save for later use.
+Creates a new shape owner for the given object. Returns ``owner_id`` of the new owner for future reference.
 
 .. _class_CollisionObject_get_capture_input_on_drag:
 
@@ -99,11 +108,13 @@ Creates new holder for the shapes. Argument is a :ref:`CollisionShape<class_coll
 
 - :ref:`RID<class_rid>`  **get_rid**  **(** **)** const
 
+Returns the object's :ref:`RID<class_rid>`.
+
 .. _class_CollisionObject_get_shape_owners:
 
 - :ref:`Array<class_array>`  **get_shape_owners**  **(** **)**
 
-Shape owner is a node which is holding concrete shape resources. This method will return an array which is holding an integer numbers that are representing unique ID of each owner. You can use those ids when you are using others shape_owner methods.
+Returns an :ref:`Array<class_array>` of ``owner_id`` identifiers. You can use these ids in other methods that take ``owner_id`` as an argument.
 
 .. _class_CollisionObject_is_ray_pickable:
 
@@ -113,9 +124,13 @@ Shape owner is a node which is holding concrete shape resources. This method wil
 
 - :ref:`bool<class_bool>`  **is_shape_owner_disabled**  **(** :ref:`int<class_int>` owner_id  **)** const
 
+If ``true`` the shape owner and its shapes are disabled.
+
 .. _class_CollisionObject_remove_shape_owner:
 
 - void  **remove_shape_owner**  **(** :ref:`int<class_int>` owner_id  **)**
+
+Removes the given shape owner.
 
 .. _class_CollisionObject_set_capture_input_on_drag:
 
@@ -129,31 +144,37 @@ Shape owner is a node which is holding concrete shape resources. This method wil
 
 - :ref:`int<class_int>`  **shape_find_owner**  **(** :ref:`int<class_int>` shape_index  **)** const
 
+Returns the ``owner_id`` of the given shape.
+
 .. _class_CollisionObject_shape_owner_add_shape:
 
 - void  **shape_owner_add_shape**  **(** :ref:`int<class_int>` owner_id, :ref:`Shape<class_shape>` shape  **)**
+
+Adds a :ref:`Shape<class_shape>` to the shape owner.
 
 .. _class_CollisionObject_shape_owner_clear_shapes:
 
 - void  **shape_owner_clear_shapes**  **(** :ref:`int<class_int>` owner_id  **)**
 
-Will remove all the shapes associated with given owner.
+Removes all shapes from the shape owner.
 
 .. _class_CollisionObject_shape_owner_get_owner:
 
 - :ref:`Object<class_object>`  **shape_owner_get_owner**  **(** :ref:`int<class_int>` owner_id  **)** const
 
+Returns the parent object of the given shape owner.
+
 .. _class_CollisionObject_shape_owner_get_shape:
 
 - :ref:`Shape<class_shape>`  **shape_owner_get_shape**  **(** :ref:`int<class_int>` owner_id, :ref:`int<class_int>` shape_id  **)** const
 
-Will return a :ref:`Shape<class_shape>`. First argument owner_id is an integer that can be obtained from :ref:`get_shape_owners<class_CollisionObject_get_shape_owners>`. Shape_id is a position of the shape inside owner; it's a value in range from 0 to :ref:`shape_owner_get_shape_count<class_CollisionObject_shape_owner_get_shape_count>`.
+Returns the :ref:`Shape<class_shape>` with the given id from the given shape owner.
 
 .. _class_CollisionObject_shape_owner_get_shape_count:
 
 - :ref:`int<class_int>`  **shape_owner_get_shape_count**  **(** :ref:`int<class_int>` owner_id  **)** const
 
-Returns number of shapes to which given owner is associated to.
+Returns the number of shapes the given shape owner contains.
 
 .. _class_CollisionObject_shape_owner_get_shape_index:
 
@@ -163,20 +184,24 @@ Returns number of shapes to which given owner is associated to.
 
 - :ref:`Transform<class_transform>`  **shape_owner_get_transform**  **(** :ref:`int<class_int>` owner_id  **)** const
 
-Will return :ref:`Transform<class_transform>` of an owner node.
+Returns the shape owner's :ref:`Transform<class_transform>`.
 
 .. _class_CollisionObject_shape_owner_remove_shape:
 
 - void  **shape_owner_remove_shape**  **(** :ref:`int<class_int>` owner_id, :ref:`int<class_int>` shape_id  **)**
 
-Removes related shape from the owner.
+Removes a shape from the given shape owner.
 
 .. _class_CollisionObject_shape_owner_set_disabled:
 
 - void  **shape_owner_set_disabled**  **(** :ref:`int<class_int>` owner_id, :ref:`bool<class_bool>` disabled  **)**
 
+If ``true`` disables the given shape owner.
+
 .. _class_CollisionObject_shape_owner_set_transform:
 
 - void  **shape_owner_set_transform**  **(** :ref:`int<class_int>` owner_id, :ref:`Transform<class_transform>` transform  **)**
+
+Sets the :ref:`Transform<class_transform>` of the given shape owner.
 
 

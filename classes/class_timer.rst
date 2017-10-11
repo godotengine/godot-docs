@@ -67,7 +67,7 @@ Member Variables
 Numeric Constants
 -----------------
 
-- **TIMER_PROCESS_FIXED** = **0** --- Update the Timer at fixed intervals (framerate processing).
+- **TIMER_PROCESS_PHYSICS** = **0** --- Update the Timer during the physics step at each frame (fixed framerate processing).
 - **TIMER_PROCESS_IDLE** = **1** --- Update the Timer during the idle time at each frame.
 
 Description

@@ -167,7 +167,7 @@ Numeric Constants
 - **NODE_TIMESCALE** = **7** --- TimeScale node.
 - **NODE_TIMESEEK** = **8** --- TimeSeek node.
 - **NODE_TRANSITION** = **9** --- Transition node.
-- **ANIMATION_PROCESS_FIXED** = **0**
+- **ANIMATION_PROCESS_PHYSICS** = **0**
 - **ANIMATION_PROCESS_IDLE** = **1**
 
 Description

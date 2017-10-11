@@ -26,6 +26,8 @@ Member Functions
 +--------------------------------+----------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`get_is_active<class_ARVRAnchor_get_is_active>`  **(** **)** const                            |
 +--------------------------------+----------------------------------------------------------------------------------------------------+
+| :ref:`Plane<class_plane>`      | :ref:`get_plane<class_ARVRAnchor_get_plane>`  **(** **)** const                                    |
++--------------------------------+----------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`  | :ref:`get_size<class_ARVRAnchor_get_size>`  **(** **)** const                                      |
 +--------------------------------+----------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_anchor_id<class_ARVRAnchor_set_anchor_id>`  **(** :ref:`int<class_int>` anchor_id  **)** |
@@ -65,6 +67,12 @@ Returns the name given to this anchor.
 - :ref:`bool<class_bool>`  **get_is_active**  **(** **)** const
 
 Returns true if the anchor is being tracked and false if no anchor with this id is currently known.
+
+.. _class_ARVRAnchor_get_plane:
+
+- :ref:`Plane<class_plane>`  **get_plane**  **(** **)** const
+
+Returns a plane aligned with our anchor, handy for intersection testing
 
 .. _class_ARVRAnchor_get_size:
 

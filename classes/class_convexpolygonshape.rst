@@ -14,7 +14,7 @@ ConvexPolygonShape
 Brief Description
 -----------------
 
-Convex Polygon Shape.
+Convex polygon shape for 3D physics.
 
 Member Functions
 ----------------
@@ -28,12 +28,12 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`PoolVector3Array<class_poolvector3array>` **points**
+- :ref:`PoolVector3Array<class_poolvector3array>` **points** - The list of 3D points forming the convex polygon shape.
 
 Description
 -----------
 
-Convex polygon shape resource, which can be set into a :ref:`PhysicsBody<class_physicsbody>` or area.
+Convex polygon shape resource, which can be added to a :ref:`PhysicsBody<class_physicsbody>` or area.
 
 Member Function Description
 ---------------------------
