@@ -565,9 +565,9 @@ ScoreLabel
 -  ``Anchor``: "Center Top"
 -  ``Margin``:
 
-   -  Left: ``240``
+   -  Left: ``-240``
    -  Top: ``0``
-   -  Right: ``-240``
+   -  Right: ``240``
    -  Bottom: ``100``
 
 -  Text: ``0``
@@ -578,10 +578,10 @@ MessageLabel
 -  ``Anchor``: "Center"
 -  ``Margin``:
 
-   -  Left: ``240``
-   -  Top: ``260``
-   -  Right: ``-240``
-   -  Bottom: ``-60``
+   -  Left: ``-240``
+   -  Top: ``-260``
+   -  Right: ``240``
+   -  Bottom: ``60``
 
 -  Text: ``Dodge the Creeps!``
 
@@ -591,10 +591,10 @@ StartButton
 -  ``Anchor``: "Center"
 -  ``Margin``:
 
-   -  Left: ``60``
-   -  Top: ``-70``
-   -  Right: ``-60``
-   -  Bottom: ``-150``
+   -  Left: ``-60``
+   -  Top: ``70``
+   -  Right: ``60``
+   -  Bottom: ``150``
 
 -  Text: ``Start``
 
