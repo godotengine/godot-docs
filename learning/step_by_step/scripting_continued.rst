@@ -48,7 +48,7 @@ with the following script:
 
     func _process(delta):
         accum += delta
-        text = (str(accum) # text is a built-in label property
+        text = str(accum) # text is a built-in label property
 
 Which will show a counter increasing each frame.
 
