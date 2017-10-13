@@ -323,7 +323,7 @@ create any number of independent mobs in the game.
 Node Setup
 ~~~~~~~~~~
 
-Click Scene -> New Scene and we'll create the Mob!
+Click Scene -> New Scene and we'll create the Mob.
 
 The Mob scene will use the following nodes:
 
@@ -335,7 +335,7 @@ The Mob scene will use the following nodes:
 
 In the :ref:`RigidBody2D <class_RigidBody2D>` properties, set ``Gravity Scale`` to ``0`` (so
 that the mob will not fall downward). In addition, under the
-``PhysicsBody2D`` section of the Inspector, click the ``Mask`` property and
+``PhysicsBody2D`` section in the Inspector, click the ``Mask`` property and
 uncheck the first box. This will ensure that the mobs do not collide with each other.
 
 .. image:: /img/set_collision_mask.png
@@ -689,7 +689,7 @@ Connecting HUD to Main
 
 Now that we're done creating the ``HUD`` scene, save it and go back to ``Main``.
 Instance the ``HUD`` scene in ``Main`` like you did the ``Player`` scene, and place it at the
-bottom of tree. The full tree should look like this, so make sure you didn't miss anything!
+bottom of tree. The full tree should look like this, so make sure you didn't miss anything:
 
 .. image:: /img/completed_main_scene.png
 
