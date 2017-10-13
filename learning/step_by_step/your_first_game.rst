@@ -33,7 +33,8 @@ Launch Godot and create a new project. Then, download
 using to make the game. Unzip these files in your new project folder.
 
 .. note:: For this tutorial, we will assume you are already familiar with the
-          Godot Engine editor. If you haven't read :ref:`doc_scenes_and_nodes`, do so now.
+          Godot Engine editor. If you haven't read :ref:`doc_scenes_and_nodes`, do so now
+          for an explanation of setting up a project and using the editor.
 
 This game will use "portrait" mode, so we need to adjust the size of the
 game window. Click on Project -> Project Settings -> Display -> Window and
@@ -150,8 +151,9 @@ that's a good time to find the size of the game window:
     func _ready():
         screensize = get_viewport_rect().size
 
-Now we can use the ``_process()`` function to define what the player
-will do every frame: 
+Now we can use the ``_process()`` function to define what the player will do.
+The ``_process()`` function is called on every frame, so we'll use it to update
+elements of our game which we expect to be changing often. Here we'll have it:
 
 - check for input 
 - move in the given direction 
@@ -196,6 +198,10 @@ We can prevent that if we *normalize* the velocity, which means we set
 its *length* to ``1``, and multiply by the desired speed. This means no
 more fast diagonal movement.
 
+.. tip:: If you've never used vector math before (or just need a refresher)
+         you can see an explanation of vector usage in Godot at :ref:`doc_vector_math`.
+         It's good to know but won't be necessary for the rest of this tutorial.
+
 We also check whether the player is moving so we can start or stop the
 AnimatedSprite animation.
 
@@ -222,6 +228,7 @@ AnimatedSprite is playing based on direction. We have a "right"
 animation, which should be flipped horizontally (using the ``flip_h``
 property) for left movement, and an "up" animation, which should be
 flipped vertically (``flip_v``) for downward movement.
+Let's place this code at the end of our ``_process()`` function:
 
 ::
 
@@ -273,7 +280,7 @@ Add this code to the function:
 ::
 
     func _on_Player_body_entered( area ):
-        hide()
+        hide() # Player disappears after being hit
         emit_signal("hit")
         monitoring = false
 
@@ -316,6 +323,8 @@ create any number of independent mobs in the game.
 Node Setup
 ~~~~~~~~~~
 
+Click Scene -> New Scene and we'll create the Mob.
+
 The Mob scene will use the following nodes:
 
 -  :ref:`RigidBody2D <class_RigidBody2D>` (named ``Mob``)
@@ -325,9 +334,9 @@ The Mob scene will use the following nodes:
    -  :ref:`VisibilityNotifier2D <class_VisibilityNotifier2D>` (named ``Visibility``)
 
 In the :ref:`RigidBody2D <class_RigidBody2D>` properties, set ``Gravity Scale`` to ``0`` (so
-that the mob will not fall downward). In addition, under
-``PhysicsBody2D``, click the ``Mask`` property and uncheck the first
-box. This will ensure that the mobs do not collide with each other.
+that the mob will not fall downward). In addition, under the
+``PhysicsBody2D`` section in the Inspector, click the ``Mask`` property and
+uncheck the first box. This will ensure that the mobs do not collide with each other.
 
 .. image:: /img/set_collision_mask.png
 
@@ -411,8 +420,7 @@ follows:
 -  ``StartTimer``: ``2``
 
 In addition, set the ``One Shot`` property of ``StartTimer`` to "On" and
-set ``Position`` of the ``StartPosition`` node to ``(240, 450)``. Now add a
-script to ``Main``.
+set ``Position`` of the ``StartPosition`` node to ``(240, 450)``.
 
 Spawning Mobs
 ~~~~~~~~~~~~~
@@ -425,7 +433,8 @@ you will see some new buttons appear at the top of the editor:
 .. image:: /img/path2d_buttons.png
 
 Select the middle one ("Add Point") and draw the path by clicking to add
-the points shown. 
+the points shown. To have the points snap to the grid, make sure "Use Snap" is
+checked. This option can be found under the "Edit" button to the left of the Path2D buttons.
 
 .. image:: /img/draw_path2d.png
 
@@ -527,15 +536,23 @@ HUD
 
 The final piece our game needs is a UI: an interface to display things
 like score, a "game over" message, and a restart button. Create a new
-scene, and add a ``CanvasLayer`` node named ``HUD`` ("HUD" stands for
+scene, and add a :ref:`CanvasLayer <class_CanvasLayer>` node named ``HUD`` ("HUD" stands for
 "heads-up display", meaning an informational display that appears as an
 overlay, on top of the game view).
+
+The :ref:`CanvasLayer <class_CanvasLayer>` node lets us draw our UI elements on
+the layer above the rest of the game so that the information it displays doesn't get
+covered up by any game elements like the player or the mobs.
 
 The HUD displays the following information:
 
 -  Score, changed by ``ScoreTimer``
 -  A message, such as "Game Over" or "Get Ready!"
 -  A "Start" button to begin the game
+
+The basic node for UI elements is :ref:`Control <class_Control>`. To create our UI,
+we'll use two types of :ref:`Control <class_Control>` nodes: The :ref:`Label <class_Label>`
+and the :ref:`Button <class_Button>`.
 
 Create the following children of the ``HUD`` node:
 
@@ -669,6 +686,12 @@ Connect the ``timout()`` signal of ``MessageTimer`` and the
 
 Connecting HUD to Main
 ~~~~~~~~~~~~~~~~~~~~~~
+
+Now that we're done creating the ``HUD`` scene, save it and go back to ``Main``.
+Instance the ``HUD`` scene in ``Main`` like you did the ``Player`` scene, and place it at the
+bottom of tree. The full tree should look like this, so make sure you didn't miss anything:
+
+.. image:: /img/completed_main_scene.png
 
 Now we need to connect the ``HUD`` functionality to our ``Main`` script.
 This requires a few additions to the ``Main`` scene:
