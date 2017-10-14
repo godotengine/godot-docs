@@ -10,7 +10,7 @@ Though arguably less convenient to edit than a wiki, this git repository is mean
 
 ### Editing existing pages
 
-To edit an existing page, just locate its .rst source file and open it in your favourite text editor. You can then commit the changes, push them to your fork and make a pull request. **Note that the pages in `classes/`should not be edited here, they are automatically generated from Godot's [XML class references](https://github.com/godotengine/godot/tree/master/doc/classes).**
+To edit an existing page, just locate its .rst source file and open it in your favourite text editor. You can then commit the changes, push them to your fork and make a pull request. **Note that the pages in `classes/` should not be edited here, they are automatically generated from Godot's [XML class references](https://github.com/godotengine/godot/tree/master/doc/classes).**
 
 ### Adding new pages
 
@@ -26,14 +26,14 @@ Sphinx uses specific reST comments to do specific operations, like defining the 
 
 ### Adding images and attachments
 
-To add images, please put them in the `img/` folder with a meaningful name and include them in your page with:
+To add images, please put them in an `img/` folder next to the .rst file with a meaningful name and include them in your page with:
 ```rst
-.. image:: /img/image_name.png
+.. image:: img/image_name.png
 ```
 
-Similarly, you can include attachments (like assets as support material for a tutorial) by placing them in to the `files/` folder, and using this inline markup:
+Similarly, you can include attachments (like assets as support material for a tutorial) by placing them into a `files/` folder next to the .rst file, and using this inline markup:
 ```rst
-:download:`myfilename.zip </files/myfilename.zip>`
+:download:`myfilename.zip <files/myfilename.zip>`
 ```
 
 ## Building with Sphinx
