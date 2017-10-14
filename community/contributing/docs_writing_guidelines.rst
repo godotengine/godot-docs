@@ -18,6 +18,7 @@ In summary, always try to:
 5. Ban these 8 words: obvious, simple, basic, easy, actual, just, clear, and however
 6. Use explicit references
 7. Use 's to show possession
+8. Use the Oxford comma
 
 There are 3 rules to describe classes:
 
@@ -246,6 +247,31 @@ sentence, and keep it short:
 ::
 
     The **AtlasTexture's** used region.
+
+Use the Oxford comma to enumerate anything
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+From the Oxford dictionary:
+
+    The 'Oxford comma' is an optional comma before the word 'and' at the end of a list:
+    *We sell books, videos, and magazines.*
+
+    [...] Not all writers and publishers use it, but it can clarify the meaning of a sentence when the items in a list are not single words:
+    *These items are available in black and white, red and yellow, and blue and green.*
+
+**Don't** leave the last element of a list without a comma:
+
+::
+
+    Create a KinematicBody2D node, a CollisionShape2D node and a sprite node.
+
+**Do** add a comma before `and` or `or`, for the last
+element of a list with more than two elements.
+
+::
+
+    Create a KinematicBody2D node, a CollisionShape2D node, and a sprite node.
+
 
 How to write methods and classes
 --------------------------------
