@@ -34,7 +34,7 @@ Instancing, step by step
 ------------------------
 
 To learn how to do instancing, let's start with downloading a sample
-project: :download:`instancing.zip </files/instancing.zip>`.
+project: :download:`instancing.zip <files/instancing.zip>`.
 
 Unzip this project anywhere you like. Then, open Godot and add this project to
 the project manager using the 'Import' option:

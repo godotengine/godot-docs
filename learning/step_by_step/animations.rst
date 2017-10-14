@@ -11,7 +11,7 @@ animation system is extremely powerful and flexible.
 
 To begin, let's just use the scene from the previous tutorial (:ref:`doc_splash_screen`).
 The goal is, to add a simple animation to it. Here's a copy
-just in case: :download:`robisplash.zip </files/robisplash.zip>`.
+just in case: :download:`robisplash.zip <files/robisplash.zip>`.
 
 Creating the animation
 ----------------------

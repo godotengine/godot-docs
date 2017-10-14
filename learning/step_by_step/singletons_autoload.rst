@@ -60,7 +60,7 @@ method suffices (described in :ref:`doc_scene_tree`), so this method is for
 more complex behavior when switching between scenes.
 
 First download the template from here:
-:download:`autoload.zip </files/autoload.zip>`, then open it.
+:download:`autoload.zip <files/autoload.zip>`, then open it.
 
 Two scenes are present, scene_a.tscn and scene_b.tscn on an otherwise
 empty project. Each are identical and contain a button connected to a

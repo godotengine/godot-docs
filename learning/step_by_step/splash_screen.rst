@@ -12,7 +12,7 @@ splash screen.
 
 Following is a file with the assets that will be used. These can be added directly to your project folder - no need to import them:
 
-:download:`robisplash_assets.zip </files/robisplash_assets.zip>`.
+:download:`robisplash_assets.zip <files/robisplash_assets.zip>`.
 
 Setting up
 ----------

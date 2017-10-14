@@ -60,7 +60,7 @@ character, created by Andreas Esau.
 
 .. image:: img/tuto_cutout_walk.gif
 
-Get your assets: :download:`gbot_resources.zip </files/gbot_resources.zip>`.
+Get your assets: :download:`gbot_resources.zip <files/gbot_resources.zip>`.
 
 Setting up the rig
 ~~~~~~~~~~~~~~~~~~

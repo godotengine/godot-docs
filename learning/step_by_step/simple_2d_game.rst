@@ -16,7 +16,7 @@ Assets
 ~~~~~~
 
 Some assets are included for this tutorial:
-:download:`pong_assets.zip </files/pong_assets.zip>`. Unzip its content
+:download:`pong_assets.zip <files/pong_assets.zip>`. Unzip its content
 in your project folder.
 
 Scene setup

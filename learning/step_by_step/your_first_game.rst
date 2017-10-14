@@ -29,7 +29,7 @@ Project Setup
 -------------
 
 Launch Godot and create a new project. Then, download
-:download:`dodge_assets.zip </files/dodge_assets.zip>` - the images and sounds you'll be
+:download:`dodge_assets.zip <files/dodge_assets.zip>` - the images and sounds you'll be
 using to make the game. Unzip these files in your new project folder.
 
 .. note:: For this tutorial, we will assume you are already familiar with the

@@ -68,7 +68,7 @@ Scene setup
 ~~~~~~~~~~~
 
 To have something to test, here's the scene (from the tilemap tutorial):
-:download:`kbscene.zip </files/kbscene.zip>`. We'll be creating a new scene
+:download:`kbscene.zip <files/kbscene.zip>`. We'll be creating a new scene
 for the character. Use the robot sprite and create a scene like this:
 
 .. image:: img/kbscene.png

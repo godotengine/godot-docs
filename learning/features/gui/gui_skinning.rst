@@ -119,7 +119,7 @@ controls.
 Example: theming a button
 --------------------------
 
-Take some assets (:download:`skin_assets.zip </files/skin_assets.zip>`),
+Take some assets (:download:`skin_assets.zip <files/skin_assets.zip>`),
 go to the "theme" menu and select "Add Class Item":
 
 .. image:: img/themeci.png
