@@ -61,11 +61,17 @@ Signals
 -------
 
 -  **reposition_active_tab_request**  **(** :ref:`int<class_int>` idx_to  **)**
+
 -  **right_button_pressed**  **(** :ref:`int<class_int>` tab  **)**
+
 -  **tab_changed**  **(** :ref:`int<class_int>` tab  **)**
+
 -  **tab_clicked**  **(** :ref:`int<class_int>` tab  **)**
+
 -  **tab_close**  **(** :ref:`int<class_int>` tab  **)**
+
 -  **tab_hover**  **(** :ref:`int<class_int>` tab  **)**
+
 
 Member Variables
 ----------------

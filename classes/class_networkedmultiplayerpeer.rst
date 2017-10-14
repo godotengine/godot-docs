@@ -43,18 +43,23 @@ Signals
 -------
 
 -  **connection_failed**  **(** **)**
+
 Emitted when failed to connect to server.
 
 -  **connection_succeeded**  **(** **)**
+
 Emitted when successfully connected to server.
 
 -  **peer_connected**  **(** :ref:`int<class_int>` id  **)**
+
 Emitted by the server when a client is connected.
 
 -  **peer_disconnected**  **(** :ref:`int<class_int>` id  **)**
+
 Emitted by the server when a client is disconnected.
 
 -  **server_disconnected**  **(** **)**
+
 Emitted by clients when server is disconnected.
 
 

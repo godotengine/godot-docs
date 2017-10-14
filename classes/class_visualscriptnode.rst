@@ -35,6 +35,7 @@ Signals
 -------
 
 -  **ports_changed**  **(** **)**
+
 Emitted when the available input/output ports are changed.
 
 

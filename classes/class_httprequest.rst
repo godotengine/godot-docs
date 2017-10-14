@@ -51,6 +51,7 @@ Signals
 -------
 
 -  **request_completed**  **(** :ref:`int<class_int>` result, :ref:`int<class_int>` response_code, :ref:`PoolStringArray<class_poolstringarray>` headers, :ref:`PoolByteArray<class_poolbytearray>` body  **)**
+
 This signal is emitted upon request completion.
 
 
@@ -71,7 +72,7 @@ Numeric Constants
 - **RESULT_CONNECTION_ERROR** = **4** --- Request failed due to connection(read/write) error.
 - **RESULT_SSL_HANDSHAKE_ERROR** = **5** --- Request failed on SSL handshake.
 - **RESULT_NO_RESPONSE** = **6** --- Request does not have a response(yet).
-- **RESULT_BODY_SIZE_LIMIT_EXCEEDED** = **7** --- Request exceded its maximum size limit, see :ref:`set_body_size_limit<class_HTTPRequest_set_body_size_limit>`.
+- **RESULT_BODY_SIZE_LIMIT_EXCEEDED** = **7** --- Request exceeded its maximum size limit, see :ref:`set_body_size_limit<class_HTTPRequest_set_body_size_limit>`.
 - **RESULT_REQUEST_FAILED** = **8** --- Request failed. (unused)
 - **RESULT_DOWNLOAD_FILE_CANT_OPEN** = **9** --- HTTPRequest couldn't open the download file.
 - **RESULT_DOWNLOAD_FILE_WRITE_ERROR** = **10** --- HTTPRequest couldn't write to the download file.

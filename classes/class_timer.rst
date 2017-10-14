@@ -53,6 +53,7 @@ Signals
 -------
 
 -  **timeout**  **(** **)**
+
 Emitted when the Timer reaches 0.
 
 

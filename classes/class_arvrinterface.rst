@@ -9,7 +9,7 @@ ARVRInterface
 
 **Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`ARVRScriptInterface<class_arvrscriptinterface>`, :ref:`MobileVRInterface<class_mobilevrinterface>`
+**Inherited By:** :ref:`ARVRInterfaceGDNative<class_arvrinterfacegdnative>`, :ref:`MobileVRInterface<class_mobilevrinterface>`
 
 **Category:** Core
 
@@ -155,7 +155,7 @@ Enables anchor detection, this is used on AR interfaces and enables the extra lo
 
 - void  **set_is_initialized**  **(** :ref:`bool<class_bool>` initialized  **)**
 
-Initialise/uninitilise this interface (same effect as calling intialize/uninitialize).
+Initialize/uninitialize this interface (same effect as calling initialize/uninitialize).
 
 .. _class_ARVRInterface_set_is_primary:
 

@@ -61,19 +61,22 @@ Signals
 -------
 
 -  **pre_popup_pressed**  **(** **)**
+
 -  **tab_changed**  **(** :ref:`int<class_int>` tab  **)**
+
 Emitted only when the current tab changes.
 
 -  **tab_selected**  **(** :ref:`int<class_int>` tab  **)**
+
 Emitted when a tab is being selected, even if it is the same tab.
 
 
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **current_tab**
-- :ref:`int<class_int>` **tab_align**
-- :ref:`bool<class_bool>` **tabs_visible**
+- :ref:`int<class_int>` **current_tab** - The current tab.
+- :ref:`int<class_int>` **tab_align** - The alignment of all the tabs of the tab container. See the [code]ALIGN_*[/code] constants.
+- :ref:`bool<class_bool>` **tabs_visible** - If [code]true[/code] all tabs that are children of the TabContainer will be visible.
 
 Numeric Constants
 -----------------
@@ -96,13 +99,13 @@ Member Function Description
 
 - :ref:`bool<class_bool>`  **are_tabs_visible**  **(** **)** const
 
-Return whether the tabs should be visible or hidden.
+Returns ``true`` if the tabs are visible.
 
 .. _class_TabContainer_get_current_tab:
 
 - :ref:`int<class_int>`  **get_current_tab**  **(** **)** const
 
-Return the current tab index that is being shown.
+Returns the current tab index that is being shown.
 
 .. _class_TabContainer_get_current_tab_control:
 
@@ -116,39 +119,43 @@ Return the current tab index that is being shown.
 
 - :ref:`int<class_int>`  **get_previous_tab**  **(** **)** const
 
-Return the previous tab index that was being shown.
+Returns the previous tab index that was being shown.
 
 .. _class_TabContainer_get_tab_align:
 
 - :ref:`int<class_int>`  **get_tab_align**  **(** **)** const
 
-Return tab alignment, from the ALIGN\_\* enum.
+Returns the tab alignment.See the ALIGN\_\* constants.
 
 .. _class_TabContainer_get_tab_control:
 
 - :ref:`Control<class_control>`  **get_tab_control**  **(** :ref:`int<class_int>` idx  **)** const
 
-Return the current tab control that is being shown.
+Returns the current tab control that is being shown.
 
 .. _class_TabContainer_get_tab_count:
 
 - :ref:`int<class_int>`  **get_tab_count**  **(** **)** const
 
-Return the amount of tabs.
+Returns the amount of tabs.
 
 .. _class_TabContainer_get_tab_disabled:
 
 - :ref:`bool<class_bool>`  **get_tab_disabled**  **(** :ref:`int<class_int>` tab_idx  **)** const
 
+Returns ``true`` if the tab at index ``tab_idx`` is disabled.
+
 .. _class_TabContainer_get_tab_icon:
 
 - :ref:`Texture<class_texture>`  **get_tab_icon**  **(** :ref:`int<class_int>` tab_idx  **)** const
+
+Returns the :ref:`Texture<class_texture>` for the tab at index ``tab_idx`` or null if the tab has no :ref:`Texture<class_texture>`.
 
 .. _class_TabContainer_get_tab_title:
 
 - :ref:`String<class_string>`  **get_tab_title**  **(** :ref:`int<class_int>` tab_idx  **)** const
 
-Return the title for the tab. Tab titles are by default the children node name, but this can be overridden.
+Returns the title for the tab at index ``tab_idx``. Tab titles are by default the children node name, but this can be overridden.
 
 .. _class_TabContainer_set_current_tab:
 
@@ -170,22 +177,24 @@ Set tab alignment, from the ALIGN\_\* enum. Moves tabs to the left, right or cen
 
 - void  **set_tab_disabled**  **(** :ref:`int<class_int>` tab_idx, :ref:`bool<class_bool>` disabled  **)**
 
+Set tab at index ``tab_idx`` disabled.
+
 .. _class_TabContainer_set_tab_icon:
 
 - void  **set_tab_icon**  **(** :ref:`int<class_int>` tab_idx, :ref:`Texture<class_texture>` icon  **)**
 
-Set an icon for a tab.
+Set an icon for a tab at index ``tab_idx``.
 
 .. _class_TabContainer_set_tab_title:
 
 - void  **set_tab_title**  **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_string>` title  **)**
 
-Set a title for the tab. Tab titles are by default the children node name, but this can be overridden.
+Set a title for the tab at index ``tab_idx``. Tab titles are by default the children node name, but this can be overridden.
 
 .. _class_TabContainer_set_tabs_visible:
 
 - void  **set_tabs_visible**  **(** :ref:`bool<class_bool>` visible  **)**
 
-Set whether the tabs should be visible or hidden.
+If ``true`` all the tabs will be visible.
 
 

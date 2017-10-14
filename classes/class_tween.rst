@@ -81,12 +81,15 @@ Signals
 -------
 
 -  **tween_completed**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key  **)**
+
 This signal is emitted when a tween ends.
 
 -  **tween_started**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key  **)**
+
 This signal is emitted when a tween starts.
 
 -  **tween_step**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key, :ref:`float<class_float>` elapsed, :ref:`Object<class_object>` value  **)**
+
 This signal is emitted each step of the tweening.
 
 
@@ -131,7 +134,7 @@ Because it is easy to get it wrong, here is a quick usage example:
 
 Some of the methods of this class require a property name. You can get the property name by hovering over the property in the inspector of the editor.
 
-Many of the methods accept ``trans_type`` and ``ease_type``. The first accepts an TRANS\_\* constant, and refers to the way the timing of the animation is handled (you might want to see ``http://easings.net/`` for some examples). The second accepts an EASE\_\* constant, and controls the where ``trans_type`` is applied to the interpolation (in the beginning, the end, or both). If you don't know which transision and easing to pick, you can try different TRANS\_\* constants with EASE_IN_OUT, and use the one that looks best.
+Many of the methods accept ``trans_type`` and ``ease_type``. The first accepts an TRANS\_\* constant, and refers to the way the timing of the animation is handled (you might want to see ``http://easings.net/`` for some examples). The second accepts an EASE\_\* constant, and controls the where ``trans_type`` is applied to the interpolation (in the beginning, the end, or both). If you don't know which transition and easing to pick, you can try different TRANS\_\* constants with EASE_IN_OUT, and use the one that looks best.
 
 Member Function Description
 ---------------------------
@@ -180,13 +183,13 @@ Call ``callback`` of ``object`` after ``duration``. ``arg1``-``arg5`` are argume
 
 - :ref:`bool<class_bool>`  **interpolate_deferred_callback**  **(** :ref:`Object<class_object>` object, :ref:`float<class_float>` duration, :ref:`String<class_string>` callback, :ref:`Variant<class_variant>` arg1=null, :ref:`Variant<class_variant>` arg2=null, :ref:`Variant<class_variant>` arg3=null, :ref:`Variant<class_variant>` arg4=null, :ref:`Variant<class_variant>` arg5=null  **)**
 
-Call ``callback`` of ``object`` after ``duration`` on the main thread (similar to methog Object.call_deferred). [codearg1``-``arg5`` are arguments to be passed to the callback.
+Call ``callback`` of ``object`` after ``duration`` on the main thread (similar to :ref:`Object.call_deferred<class_Object_call_deferred>`). ``arg1``-``arg5`` are arguments to be passed to the callback.
 
 .. _class_Tween_interpolate_method:
 
 - :ref:`bool<class_bool>`  **interpolate_method**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` method, :ref:`Variant<class_variant>` initial_val, :ref:`Variant<class_variant>` final_val, :ref:`float<class_float>` duration, :ref:`int<class_int>` trans_type, :ref:`int<class_int>` ease_type, :ref:`float<class_float>` delay=0  **)**
 
-Animate ``method`` of ``object`` from ``initial_val`` to ``final_val`` for ``duration`` seconds, ``delay`` seconds later. Methods are animated by calling them with consecuitive values.
+Animate ``method`` of ``object`` from ``initial_val`` to ``final_val`` for ``duration`` seconds, ``delay`` seconds later. Methods are animated by calling them with consecutive values.
 
 ``trans_type`` accepts TRANS\_\* constants, and is the way the animation is interpolated, while ``ease_type`` accepts EASE\_\* constants, and controls the place of the interpolation (the beginning, the end, or both). You can read more about them in the class description.
 
@@ -298,7 +301,7 @@ Stop animating all tweens.
 
 - :ref:`bool<class_bool>`  **targeting_method**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` method, :ref:`Object<class_object>` initial, :ref:`String<class_string>` initial_method, :ref:`Variant<class_variant>` final_val, :ref:`float<class_float>` duration, :ref:`int<class_int>` trans_type, :ref:`int<class_int>` ease_type, :ref:`float<class_float>` delay=0  **)**
 
-Animate ``method`` of ``object`` from the value returned by ``initial.initial_method`` to ``final_val`` for ``duration`` seconds, ``delay`` seconds later. Methods are animated by calling them with consecuitive values.
+Animate ``method`` of ``object`` from the value returned by ``initial.initial_method`` to ``final_val`` for ``duration`` seconds, ``delay`` seconds later. Methods are animated by calling them with consecutive values.
 
 ``trans_type`` accepts TRANS\_\* constants, and is the way the animation is interpolated, while ``ease_type`` accepts EASE\_\* constants, and controls the place of the interpolation (the beginning, the end, or both). You can read more about them in the class description.
 

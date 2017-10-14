@@ -29,9 +29,11 @@ Signals
 -------
 
 -  **editor_script_changed**  **(** :ref:`Object<class_object>` script  **)**
+
 Emitted when user changed active script. Argument is a freshly activated :ref:`Script<class_script>`.
 
 -  **script_close**  **(** :ref:`Object<class_object>` script  **)**
+
 Emitted when editor is about to close the active script. Argument is a :ref:`Script<class_script>` that is going to be closed.
 
 

@@ -97,7 +97,7 @@ Add an unscaled billboard for visualization. Call this function during :ref:`red
 
 - void  **commit_handle**  **(** :ref:`int<class_int>` index, :ref:`Variant<class_variant>` restore, :ref:`bool<class_bool>` cancel=false  **)** virtual
 
-Commit a handle being edited (handles must have been prevously added by :ref:`add_handles<class_EditorSpatialGizmo_add_handles>`).
+Commit a handle being edited (handles must have been previously added by :ref:`add_handles<class_EditorSpatialGizmo_add_handles>`).
 
 If the cancel parameter is true, an option to restore the edited value to the original is provided.
 

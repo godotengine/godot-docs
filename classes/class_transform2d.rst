@@ -138,7 +138,7 @@ Returns the inverse of the transform, under the assumption that the transformati
 
 - :ref:`Transform2D<class_transform2d>`  **orthonormalized**  **(** **)**
 
-Returns the transfrom with the basis orthogonal (90 degrees), and normalized axis vectors.
+Returns the transform with the basis orthogonal (90 degrees), and normalized axis vectors.
 
 .. _class_Transform2D_rotated:
 

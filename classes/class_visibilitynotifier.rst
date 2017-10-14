@@ -33,15 +33,19 @@ Signals
 -------
 
 -  **camera_entered**  **(** :ref:`Object<class_object>` camera  **)**
+
 Emitted when the VisibilityNotifier enters a :ref:`Camera<class_camera>`'s view.
 
 -  **camera_exited**  **(** :ref:`Object<class_object>` camera  **)**
+
 Emitted when the VisibilityNotifier exits a :ref:`Camera<class_camera>`'s view.
 
 -  **screen_entered**  **(** **)**
+
 Emitted when the VisibilityNotifier enters the screen.
 
 -  **screen_exited**  **(** **)**
+
 Emitted when the VisibilityNotifier exits the screen.
 
 

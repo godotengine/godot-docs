@@ -45,9 +45,11 @@ Signals
 -------
 
 -  **confirmed**  **(** **)**
+
 Emitted when the dialog is accepted.
 
 -  **custom_action**  **(** :ref:`String<class_string>` action  **)**
+
 Emitted when a custom button is pressed. See :ref:`add_button<class_AcceptDialog_add_button>`.
 
 

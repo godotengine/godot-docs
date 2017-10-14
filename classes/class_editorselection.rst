@@ -35,6 +35,7 @@ Signals
 -------
 
 -  **selection_changed**  **(** **)**
+
 Emitted when the selection changes.
 
 
@@ -62,7 +63,7 @@ Clear the selection.
 
 - :ref:`Array<class_array>`  **get_selected_nodes**  **(** **)**
 
-Get the list of selectes nodes.
+Get the list of selected nodes.
 
 .. _class_EditorSelection_get_transformable_selected_nodes:
 

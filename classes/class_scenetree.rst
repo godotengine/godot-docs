@@ -103,17 +103,29 @@ Signals
 -------
 
 -  **connected_to_server**  **(** **)**
+
 -  **connection_failed**  **(** **)**
+
 -  **files_dropped**  **(** :ref:`PoolStringArray<class_poolstringarray>` files, :ref:`int<class_int>` screen  **)**
+
 -  **idle_frame**  **(** **)**
+
 -  **network_peer_connected**  **(** :ref:`int<class_int>` id  **)**
+
 -  **network_peer_disconnected**  **(** :ref:`int<class_int>` id  **)**
+
 -  **node_configuration_warning_changed**  **(** :ref:`Object<class_object>` node  **)**
+
 -  **node_removed**  **(** :ref:`Object<class_object>` node  **)**
+
 -  **physics_frame**  **(** **)**
+
 -  **screen_resized**  **(** **)**
+
 -  **server_disconnected**  **(** **)**
+
 -  **tree_changed**  **(** **)**
+
 
 Numeric Constants
 -----------------

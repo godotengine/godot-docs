@@ -97,7 +97,7 @@ Constructs the Transform from a :ref:`Basis<class_basis>`. The origin will be Ve
 
 - :ref:`Transform<class_transform>`  **affine_inverse**  **(** **)**
 
-Returns the inverse of the transfrom, under the assumption that the transformation is composed of rotation, scaling and translation.
+Returns the inverse of the transform, under the assumption that the transformation is composed of rotation, scaling and translation.
 
 .. _class_Transform_interpolate_with:
 
@@ -121,7 +121,7 @@ Rotate the transform around the up vector to face the target.
 
 - :ref:`Transform<class_transform>`  **orthonormalized**  **(** **)**
 
-Returns the transfrom with the basis orthogonal (90 degrees), and normalized axis vectors.
+Returns the transform with the basis orthogonal (90 degrees), and normalized axis vectors.
 
 .. _class_Transform_rotated:
 

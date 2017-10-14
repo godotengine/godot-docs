@@ -14,7 +14,7 @@ DynamicFont
 Brief Description
 -----------------
 
-
+DynamicFont renders vector font files at runtime.
 
 Member Functions
 ----------------
@@ -54,22 +54,27 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **extra_spacing_bottom**
-- :ref:`int<class_int>` **extra_spacing_char**
-- :ref:`int<class_int>` **extra_spacing_space**
-- :ref:`int<class_int>` **extra_spacing_top**
-- :ref:`DynamicFontData<class_dynamicfontdata>` **font_data**
-- :ref:`int<class_int>` **size**
-- :ref:`bool<class_bool>` **use_filter**
-- :ref:`bool<class_bool>` **use_mipmaps**
+- :ref:`int<class_int>` **extra_spacing_bottom** - Extra spacing at the bottom in pixels.
+- :ref:`int<class_int>` **extra_spacing_char** - Extra character spacing in pixels.
+- :ref:`int<class_int>` **extra_spacing_space** - Extra space spacing in pixels.
+- :ref:`int<class_int>` **extra_spacing_top** - Extra spacing at the top in pixels.
+- :ref:`DynamicFontData<class_dynamicfontdata>` **font_data** - The font data.
+- :ref:`int<class_int>` **size** - The font size.
+- :ref:`bool<class_bool>` **use_filter** - If [code]true[/code] filtering is used.
+- :ref:`bool<class_bool>` **use_mipmaps** - If [code]true[/code] mipmapping is used.
 
 Numeric Constants
 -----------------
 
-- **SPACING_TOP** = **0**
-- **SPACING_BOTTOM** = **1**
-- **SPACING_CHAR** = **2**
-- **SPACING_SPACE** = **3**
+- **SPACING_TOP** = **0** --- Spacing at the top.
+- **SPACING_BOTTOM** = **1** --- Spacing at the bottom.
+- **SPACING_CHAR** = **2** --- Character spacing.
+- **SPACING_SPACE** = **3** --- Space spacing.
+
+Description
+-----------
+
+DynamicFont renders vector font files (such as TTF or OTF) dynamically at runtime instead of using a prerendered texture atlas like :ref:`BitmapFont<class_bitmapfont>`. This trades the faster loading time of :ref:`BitmapFont<class_bitmapfont>`\ s for the ability to change font parameters like size and spacing during runtime. :ref:`DynamicFontData<class_dynamicfontdata>` is used for referencing the font file paths.
 
 Member Function Description
 ---------------------------
@@ -78,13 +83,19 @@ Member Function Description
 
 - void  **add_fallback**  **(** :ref:`DynamicFontData<class_dynamicfontdata>` data  **)**
 
+Adds a fallback font.
+
 .. _class_DynamicFont_get_fallback:
 
 - :ref:`DynamicFontData<class_dynamicfontdata>`  **get_fallback**  **(** :ref:`int<class_int>` idx  **)** const
 
+Returns the fallback font at index ``idx``.
+
 .. _class_DynamicFont_get_fallback_count:
 
 - :ref:`int<class_int>`  **get_fallback_count**  **(** **)** const
+
+Returns the number of fallback fonts.
 
 .. _class_DynamicFont_get_font_data:
 
@@ -94,44 +105,66 @@ Member Function Description
 
 - :ref:`int<class_int>`  **get_size**  **(** **)** const
 
+Returns the font size in pixels.
+
 .. _class_DynamicFont_get_spacing:
 
 - :ref:`int<class_int>`  **get_spacing**  **(** :ref:`int<class_int>` type  **)** const
+
+Returns the given type of spacing in pixels. See ``SPACING\_\*`` constants.
 
 .. _class_DynamicFont_get_use_filter:
 
 - :ref:`bool<class_bool>`  **get_use_filter**  **(** **)** const
 
+Returns ``true`` if filtering is used.
+
 .. _class_DynamicFont_get_use_mipmaps:
 
 - :ref:`bool<class_bool>`  **get_use_mipmaps**  **(** **)** const
+
+Returns ``true`` if mipmapping is used.
 
 .. _class_DynamicFont_remove_fallback:
 
 - void  **remove_fallback**  **(** :ref:`int<class_int>` idx  **)**
 
+Removes the fallback font at index ``idx``.
+
 .. _class_DynamicFont_set_fallback:
 
 - void  **set_fallback**  **(** :ref:`int<class_int>` idx, :ref:`DynamicFontData<class_dynamicfontdata>` data  **)**
+
+Sets the fallback font at index ``idx``.
 
 .. _class_DynamicFont_set_font_data:
 
 - void  **set_font_data**  **(** :ref:`DynamicFontData<class_dynamicfontdata>` data  **)**
 
+Sets the :ref:`DynamicFontData<class_dynamicfontdata>`.
+
 .. _class_DynamicFont_set_size:
 
 - void  **set_size**  **(** :ref:`int<class_int>` data  **)**
+
+Sets the font size.
 
 .. _class_DynamicFont_set_spacing:
 
 - void  **set_spacing**  **(** :ref:`int<class_int>` type, :ref:`int<class_int>` value  **)**
 
+Sets the spacing of the given type. See ``SPACING\_\*`` constants.
+
 .. _class_DynamicFont_set_use_filter:
 
 - void  **set_use_filter**  **(** :ref:`bool<class_bool>` enable  **)**
 
+Set to ``true`` to use filtering.
+
 .. _class_DynamicFont_set_use_mipmaps:
 
 - void  **set_use_mipmaps**  **(** :ref:`bool<class_bool>` enable  **)**
+
+Set to ``true`` to use mipmapping.
 
 

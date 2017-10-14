@@ -14,7 +14,7 @@ DynamicFontData
 Brief Description
 -----------------
 
-
+Used with :ref:`DynamicFont<class_dynamicfont>` to describe the location of a font file.
 
 Member Functions
 ----------------
@@ -28,7 +28,12 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`String<class_string>` **font_path**
+- :ref:`String<class_string>` **font_path** - The path to the vector font file.
+
+Description
+-----------
+
+Used with :ref:`DynamicFont<class_dynamicfont>` to describe the location of a vector font file for dynamic rendering at runtime.
 
 Member Function Description
 ---------------------------
@@ -37,8 +42,12 @@ Member Function Description
 
 - :ref:`String<class_string>`  **get_font_path**  **(** **)** const
 
+Returns the font path.
+
 .. _class_DynamicFontData_set_font_path:
 
 - void  **set_font_path**  **(** :ref:`String<class_string>` path  **)**
+
+Sets the font path.
 
 

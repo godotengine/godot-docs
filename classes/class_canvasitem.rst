@@ -147,15 +147,19 @@ Signals
 -------
 
 -  **draw**  **(** **)**
+
 Emitted when the CanvasItem must redraw. This can only be connected realtime, as deferred will not allow drawing.
 
 -  **hide**  **(** **)**
+
 Emitted when becoming hidden.
 
 -  **item_rect_changed**  **(** **)**
+
 Emitted when the item rect has changed.
 
 -  **visibility_changed**  **(** **)**
+
 Emitted when the visibility (hidden/visible) changes.
 
 

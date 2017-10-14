@@ -41,9 +41,11 @@ Signals
 -------
 
 -  **button_pressed**  **(** :ref:`int<class_int>` button  **)**
+
 When a button on this controller is pressed, this signal is given.
 
 -  **button_release**  **(** :ref:`int<class_int>` button  **)**
+
 When a button on this controller is released, this signal is given.
 
 

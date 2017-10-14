@@ -73,9 +73,11 @@ Signals
 -------
 
 -  **frame_changed**  **(** **)**
+
 Emitted when the member frame changes.
 
 -  **texture_changed**  **(** **)**
+
 Emitted when the member texture changes.
 
 

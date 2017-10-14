@@ -111,6 +111,7 @@ Signals
 -------
 
 -  **visibility_changed**  **(** **)**
+
 Emitted when node visibility changes.
 
 
@@ -287,7 +288,7 @@ Rotates the node in local space on Z axis by angle in radians.
 
 - void  **set_as_toplevel**  **(** :ref:`bool<class_bool>` enable  **)**
 
-Makes the node ignore its parents tranformations. Node tranformations are only in global space.
+Makes the node ignore its parents transformations. Node transformations are only in global space.
 
 .. _class_Spatial_set_gizmo:
 
@@ -305,7 +306,7 @@ Set the transform globally, relative to world space.
 
 - void  **set_identity**  **(** **)**
 
-Reset all tranformations for this node. Set its Transform3D to identity matrix.
+Reset all transformations for this node. Set its Transform3D to identity matrix.
 
 .. _class_Spatial_set_ignore_transform_notification:
 
@@ -367,13 +368,13 @@ Enables rendering of this node. Change Spatial Visible property to "True".
 
 - :ref:`Vector3<class_vector3>`  **to_global**  **(** :ref:`Vector3<class_vector3>` local_point  **)** const
 
-Tranforms :ref:`Vector3<class_vector3>` "local_point" from this node's local space to world space.
+Transforms :ref:`Vector3<class_vector3>` "local_point" from this node's local space to world space.
 
 .. _class_Spatial_to_local:
 
 - :ref:`Vector3<class_vector3>`  **to_local**  **(** :ref:`Vector3<class_vector3>` global_point  **)** const
 
-Tranforms :ref:`Vector3<class_vector3>` "global_point" from world space to this node's local space.
+Transforms :ref:`Vector3<class_vector3>` "global_point" from world space to this node's local space.
 
 .. _class_Spatial_translate:
 

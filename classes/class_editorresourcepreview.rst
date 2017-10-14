@@ -14,7 +14,7 @@ EditorResourcePreview
 Brief Description
 -----------------
 
-Helper to generate previews of reources or files.
+Helper to generate previews of resources or files.
 
 Member Functions
 ----------------
@@ -35,6 +35,7 @@ Signals
 -------
 
 -  **preview_invalidated**  **(** :ref:`String<class_string>` path  **)**
+
 If a preview was invalidated (changed) this signal will emit (using the path of the preview)
 
 

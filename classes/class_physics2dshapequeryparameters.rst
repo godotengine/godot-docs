@@ -147,6 +147,6 @@ Set the :ref:`RID<class_rid>` of the shape to be used in queries.
 
 - void  **set_transform**  **(** :ref:`Transform2D<class_transform2d>` transform  **)**
 
-Set the transormation matrix of the shape. This is necessary to set its position/rotation/scale.
+Set the transformation matrix of the shape. This is necessary to set its position/rotation/scale.
 
 

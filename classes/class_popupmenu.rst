@@ -111,9 +111,11 @@ Signals
 -------
 
 -  **id_pressed**  **(** :ref:`int<class_int>` ID  **)**
+
 This event is emitted when an item of some id is pressed or its accelerator is activated.
 
 -  **index_pressed**  **(** :ref:`int<class_int>` index  **)**
+
 This event is emitted when an item of some index is pressed or its accelerator is activated.
 
 

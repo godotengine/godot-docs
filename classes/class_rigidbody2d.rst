@@ -113,22 +113,27 @@ Signals
 -------
 
 -  **body_entered**  **(** :ref:`Object<class_object>` body  **)**
+
 Emitted when a body enters into contact with this one. Contact monitor and contacts reported must be enabled for this to work.
 
 -  **body_exited**  **(** :ref:`Object<class_object>` body  **)**
+
 Emitted when a body exits contact with this one. Contact monitor and contacts reported must be enabled for this to work.
 
 -  **body_shape_entered**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape  **)**
+
 Emitted when a body enters into contact with this one. Contact monitor and contacts reported must be enabled for this to work.
 
 This signal not only receives the body that collided with this one, but also its :ref:`RID<class_rid>` (body_id), the shape index from the colliding body (body_shape), and the shape index from this body (local_shape) the other body collided with.
 
 -  **body_shape_exited**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape  **)**
+
 Emitted when a body shape exits contact with this one. Contact monitor and contacts reported must be enabled for this to work.
 
 This signal not only receives the body that stopped colliding with this one, but also its :ref:`RID<class_rid>` (body_id), the shape index from the colliding body (body_shape), and the shape index from this body (local_shape) the other body stopped colliding with.
 
 -  **sleeping_state_changed**  **(** **)**
+
 Emitted when the body changes its sleeping state. Either by sleeping or waking up.
 
 

@@ -49,15 +49,19 @@ Signals
 -------
 
 -  **interface_added**  **(** :ref:`String<class_string>` name  **)**
+
 Signal send when a new interface has been added.
 
 -  **interface_removed**  **(** :ref:`String<class_string>` name  **)**
+
 Signal send when an interface is removed.
 
 -  **tracker_added**  **(** :ref:`String<class_string>` name, :ref:`int<class_int>` type, :ref:`int<class_int>` id  **)**
+
 Signal send when a new tracker has been added. If you don't use a fixed number of controllers or if you're using ARVRAnchors for an AR solution it is important to react to this signal and add the appropriate ARVRController or ARVRAnchor node related to this new tracker.
 
 -  **tracker_removed**  **(** :ref:`String<class_string>` name, :ref:`int<class_int>` type, :ref:`int<class_int>` id  **)**
+
 Signal send when a tracker is removed, you should remove any ARVRController or ARVRAnchor points if applicable. This is not mandatory, the nodes simply become inactive and will be made active again when a new tracker becomes available (i.e. a new controller is switched on that takes the place of the previous one).
 
 
@@ -74,7 +78,7 @@ Numeric Constants
 - **TRACKER_ANCHOR** = **4** --- Our tracker tracks the location and size of an AR anchor.
 - **TRACKER_UNKNOWN** = **128** --- Used internally if we haven't set the tracker type yet.
 - **TRACKER_ANY_KNOWN** = **127** --- Used internally to filter trackers of any known type.
-- **TRACKER_ANY** = **255** --- Used interally to select all trackers.
+- **TRACKER_ANY** = **255** --- Used internally to select all trackers.
 
 Description
 -----------

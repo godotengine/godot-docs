@@ -127,9 +127,11 @@ Signals
 -------
 
 -  **item_activated**  **(** :ref:`int<class_int>` index  **)**
+
 Fired when specified list item is activated via double click or Enter.
 
 -  **item_rmb_selected**  **(** :ref:`int<class_int>` index, :ref:`Vector2<class_vector2>` at_position  **)**
+
 Fired when specified list item has been selected via right mouse clicking.
 
 The click position is also provided to allow appropriate popup of context menus
@@ -137,10 +139,12 @@ The click position is also provided to allow appropriate popup of context menus
 at the correct location.
 
 -  **item_selected**  **(** :ref:`int<class_int>` index  **)**
+
 Fired when specified item has been selected.
 
 -  **multi_selected**  **(** :ref:`int<class_int>` index, :ref:`bool<class_bool>` selected  **)**
-Fired when a multiple selection is altered on a list allowing mutliple selection.
+
+Fired when a multiple selection is altered on a list allowing multiple selection.
 
 
 Member Variables
@@ -317,7 +321,7 @@ Returns whether or not the item at the specified index is selectable.
 
 - :ref:`bool<class_bool>`  **is_item_tooltip_enabled**  **(** :ref:`int<class_int>` idx  **)** const
 
-Returns whether the tooptip is enabled for specified item index.
+Returns whether the tooltip is enabled for specified item index.
 
 .. _class_ItemList_is_same_column_width:
 
