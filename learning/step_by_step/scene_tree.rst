@@ -98,7 +98,7 @@ viewport, it becomes part of the *scene tree*.
 This means that, as explained in previous tutorials, it will get the
 _enter_tree() and _ready() callbacks (as well as _exit_tree()).
 
-.. image:: /img/activescene.png
+.. image:: img/activescene.png
 
 When nodes enter the *Scene Tree*, they become active. They get access
 to everything they need to process, get input, display 2D and 3D,
@@ -113,7 +113,7 @@ notifications are done in tree order. This means that parents and
 siblings with a smaller rank in the tree order will get notified before
 the current node.
 
-.. image:: /img/toptobottom.png
+.. image:: img/toptobottom.png
 
 "Becoming active" by entering the *Scene Tree*
 ----------------------------------------------

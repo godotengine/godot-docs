@@ -218,7 +218,7 @@ Example class
 -------------
 
 You can find an example class for loading resources in threads here:
-:download:`resource_queue.gd </files/resource_queue.gd>`. Usage is as follows:
+:download:`resource_queue.gd <files/resource_queue.gd>`. Usage is as follows:
 
 ::
 

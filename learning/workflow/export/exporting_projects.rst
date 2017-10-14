@@ -63,11 +63,11 @@ supported yet, but the supported platforms continue to grow.
 
 To open the export dialog, just click the "Export" button:
 
-.. image:: /img/export.png
+.. image:: img/export.png
 
 The dialog will open, showing all the supported export platforms:
 
-.. image:: /img/export_dialog.png
+.. image:: img/export_dialog.png
 
 The default options are often enough to export, so tweaking them is not
 necessary, but provide extra control. However, many platforms require additional
@@ -76,7 +76,7 @@ needs export templates installed to create packages. The export dialog
 will complain when something is missing and will not allow the user to
 export for that platform until they resolve it:
 
-.. image:: /img/export_error.png
+.. image:: img/export_error.png
 
 At that time, the user is expected to come back to the documentation and follow
 instructions on how to properly set up that platform.
@@ -92,7 +92,7 @@ installed to be able to export projects. They can be obtained as a
 Once downloaded, they can be installed using the "Install Export
 Templates" option in the editor:
 
-.. image:: /img/exptemp.png
+.. image:: img/exptemp.png
 
 Export mode
 ~~~~~~~~~~~
@@ -104,7 +104,7 @@ creates the package. There are 3 different modes for exporting:
 -  Export only resources (+custom filter), this is default.
 -  Export only selected resources (+custom filter)
 
-.. image:: /img/expres.png
+.. image:: img/expres.png
 
 -  **Export every single file** - This mode exports every single file in
    the project. This is good to test if something is being forgotten,
@@ -125,4 +125,4 @@ creates the package. There are 3 different modes for exporting:
    "Bundle" scenes and dependencies into a single file, which is
    *really* useful for games distributed on optical media.
 
-.. image:: /img/expselected.png
+.. image:: img/expselected.png

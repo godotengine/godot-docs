@@ -98,7 +98,7 @@ If only a few controls need to be skinned, it is often not necessary to
 create a new theme. Controls offer their theme options as special kinds
 of properties. If checked, overriding will take place:
 
-.. image:: /img/themecheck.png
+.. image:: img/themecheck.png
 
 As can be see in the image above, theme options have little check-boxes.
 If checked, they can be used to override the value of the theme just for
@@ -111,7 +111,7 @@ The simplest way to create a theme is to edit a theme resource. Create a
 Theme from the resource menu, the editor will appear immediately.
 Following to this, save it (to, as example, mytheme.thm):
 
-.. image:: /img/themecheck.png
+.. image:: img/themecheck.png
 
 This will create an empty theme that can later be loaded and assigned to
 controls.
@@ -119,43 +119,43 @@ controls.
 Example: theming a button
 --------------------------
 
-Take some assets (:download:`skin_assets.zip </files/skin_assets.zip>`),
+Take some assets (:download:`skin_assets.zip <files/skin_assets.zip>`),
 go to the "theme" menu and select "Add Class Item":
 
-.. image:: /img/themeci.png
+.. image:: img/themeci.png
 
 A menu will appear promting the type of control to create. Select
 "Button":
 
-.. image:: /img/themeci2.png
+.. image:: img/themeci2.png
 
 Immediately, all button theme options will appear in the property
 editor, where they can be edited:
 
-.. image:: /img/themeci3.png
+.. image:: img/themeci3.png
 
 Select the "normal" stylebox and create a new "StyleBoxTexture", then
 edit it. A texture stylebox basically contains a texture and the size of
 the margins that will not stretch when the texture is stretched. This is
 called "3x3" stretching:
 
-.. image:: /img/sb1.png
+.. image:: img/sb1.png
 
 Repeat the steps and add the other assets. There is no hover or disabled
 image in the example files, so use the same stylebox as in normal. Set
 the supplied font as the button font and change the font color to black.
 Soon, your button will look different and retro:
 
-.. image:: /img/sb2.png
+.. image:: img/sb2.png
 
 Save this theme to the .thm file. Go to the 2D editor and create a few
 buttons:
 
-.. image:: /img/skinbuttons1.png
+.. image:: img/skinbuttons1.png
 
 Now, go to the root node of the scene and locate the "theme" property,
 replace it by the theme that was just created. It should look like this:
 
-.. image:: /img/skinbuttons2.png
+.. image:: img/skinbuttons2.png
 
 Congratulations! You have created a reusable GUI Theme!

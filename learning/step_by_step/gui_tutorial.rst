@@ -90,7 +90,7 @@ specific functionality by creating a new one.
 To begin, create a single-node scene. The node is of type "Control" and
 has a certain area of the screen in the 2D editor, like this:
 
-.. image:: /img/singlecontrol.png
+.. image:: img/singlecontrol.png
 
 Add a script to that node, with the following code:
 
@@ -118,9 +118,9 @@ Then run the scene. When the rectangle is clicked/tapped, it will change
 color from blue to red. That synergy between the events and the drawing
 is pretty much how most controls work internally.
 
-.. image:: /img/ctrl_normal.png
+.. image:: img/ctrl_normal.png
 
-.. image:: /img/ctrl_tapped.png
+.. image:: img/ctrl_tapped.png
 
 UI complexity
 ~~~~~~~~~~~~~

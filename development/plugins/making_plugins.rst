@@ -37,7 +37,7 @@ Plugins have a standard path like ``addons/plugin_name`` inside the project
 folder. So create the folder ``my_custom_node`` inside ``addons``. So you'll
 have a directory structure like this:
 
-.. image:: /img/making_plugins-my_custom_mode_folder.png
+.. image:: img/making_plugins-my_custom_mode_folder.png
 
 To make the ``plugin.cfg`` file, open your favorite text editor with a blank
 file. Godot is not able (yet) to open text files besides scripts, so this must
@@ -125,7 +125,7 @@ That's it for our basic button. You can save this as ``button.gd`` inside the
 plugin folder. You'll also need a 16x16 icon to show in the scene tree. If you
 don't have one, you can grab the default one from the engine:
 
-.. image:: /img/making_plugins-custom_node_icon.png
+.. image:: img/making_plugins-custom_node_icon.png
 
 Now we need to add it as a custom type so it shows on the Create New Node
 dialog. For that, change the ``custom_node.gd`` script to the following::
@@ -146,13 +146,13 @@ dialog. For that, change the ``custom_node.gd`` script to the following::
 With that done, the plugin should already be available in the plugin list at
 Project Settings. So activate it and try to add a new node to see the result:
 
-.. image:: /img/making_plugins-custom_node_create.png
+.. image:: img/making_plugins-custom_node_create.png
 
 When you add the node, you can see that it already have the script you created
 attached to it. Set a text to the button, save and run the scene. When you
 click the button, you can see a text in the console:
 
-.. image:: /img/making_plugins-custom_node_console.png
+.. image:: img/making_plugins-custom_node_console.png
 
 
 A custom dock
@@ -188,7 +188,7 @@ you can make a single button. The name of the root node will also be the name
 that appears on the dock tab, so be sure to put a descriptive but short one.
 Don't forget to add a text to your button.
 
-.. image:: /img/making_plugins-my_custom_dock_scene.png
+.. image:: img/making_plugins-my_custom_dock_scene.png
 
 Save this scene as ``my_dock.tscn``.
 
@@ -233,14 +233,14 @@ Settings* and click on the *Plugins* tab. Your plugin should be the only on
 the list. If it is not showing, click on the *Update* button at the top right
 corner.
 
-.. image:: /img/making_plugins-project_settings.png
+.. image:: img/making_plugins-project_settings.png
 
 At the *Status* column, you can see that the plugin is inactive. So you just
 need to click on the status to select *Active*. The dock should be immediately
 visible, even before you close the settings window. And now, lo and behold, you
 have a custom dock! In just a bit of coding and a simple scene.
 
-.. image:: /img/making_plugins-custom_dock.png
+.. image:: img/making_plugins-custom_dock.png
 
 Going beyond
 ~~~~~~~~~~~~

@@ -61,7 +61,7 @@ counter and pause button can also be created at layer "1".
 
 Here's a diagram of how it looks:
 
-.. image:: /img/canvaslayers.png
+.. image:: img/canvaslayers.png
 
 CanvasLayers are independent of tree order, and they only depend on
 their layer number, so they can be instantiated when needed.

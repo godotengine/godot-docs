@@ -71,7 +71,7 @@ not work properly**. This is a limitation on the collision algorithm
 used (SAT), so make sure that your circle and capsule shapes are always
 scaled uniformly!
 
-.. image:: /img/shape_rules.png
+.. image:: img/shape_rules.png
 
 When problems begin
 -------------------
@@ -151,7 +151,7 @@ multiple shapes at different transforms (offset/scale/rotation). Just
 remember that, as mentioned before, **non-uniform scale will not work
 for circle and capsule shapes**.
 
-.. image:: /img/collision_inheritance.png
+.. image:: img/collision_inheritance.png
 
 A CollisionObject2D comes in different flavors: StaticBody2D, RigidBody2D,
 KinematicBody2D and Area2D. However, before we dig into them, let's have
@@ -180,7 +180,7 @@ As an example, here's the scene from the platformer, containing an
 Area2D (named 'coin') having two children: a CollisionShape2D (named 'collision')
 and a sprite (called 'sprite'):
 
-.. image:: /img/area2dcoin.png
+.. image:: img/area2dcoin.png
 
 CollisionPolygon2D
 ~~~~~~~~~~~~~~~~~~
@@ -195,13 +195,13 @@ been added as a child of a sprite so that the collision object moves together
 with the sprite. In turn, the CollisionPolygon is a child of StaticBody2D, meaning it
 adds collision shapes to it.
 
-.. image:: /img/spritewithcollision.png
+.. image:: img/spritewithcollision.png
 
 The CollisionPolygon2D will decompose the user-defined polygon into convex shapes
 (shapes can only be convex, remember?) before adding them to the CollisionObject2D.
 The following image shows such a decomposition:
 
-.. image:: /img/decomposed.png
+.. image:: img/decomposed.png
 
 Triggers
 ~~~~~~~~
@@ -382,7 +382,7 @@ Physics global variables
 A few global variables can be tweaked in the project settings for
 adjusting how 2D physics works:
 
-.. image:: /img/physics2d_options.png
+.. image:: img/physics2d_options.png
 
 Leaving them alone is best (except for the gravity, that needs to be
 adjusted in most games), but there is one specific parameter that might

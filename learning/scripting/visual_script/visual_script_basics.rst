@@ -49,13 +49,13 @@ this feature would work best with the engine.
 
 In Godot, a Visual Script fits smoothly together with regular scripts in the Editor tab
 
-.. image:: /img/visual_script1.png
+.. image:: img/visual_script1.png
 
 In fact, Visual Scripting integrates so well to Godot that it's hard to believe it was added only
 in version 3.0. This is because, when editing, the rest of Godot panels and
 docks act like a palette from where you can drag and drop all sorts of information to the script canvas:
 
-.. image:: /img/visual_script2.png
+.. image:: img/visual_script2.png
 
 Creating a Script
 -----------------
@@ -63,16 +63,16 @@ Creating a Script
 Creating scripts works the same as with other scripting languages: Just select any node in the scene
 and push the "New Script" button at the top right corner of the Scene Tree dock:
 
-.. image:: /img/visual_script3.png
+.. image:: img/visual_script3.png
 
 Once it opens, the script type "Visual Script" must be selected from the drop down list. The script extension
 must be ".vs" (for Visual Script!).
 
-.. image:: /img/visual_script4.png
+.. image:: img/visual_script4.png
 
 Finally, the script editor will open, allowing to start the editing of the visual script:
 
-.. image:: /img/visual_script5.png
+.. image:: img/visual_script5.png
 
 
 Adding a Function
@@ -96,23 +96,23 @@ Most types of nodes and other types of objects in Godot contain virtual function
 will be called (run your code) when something happens and can be looked up in the reference. Virtual functions
 are listed when pressing the "Override" icon in the member panel:
 
-.. image:: /img/visual_script6.png
+.. image:: img/visual_script6.png
 
 
 In the following example, a function will be executed when the node is loaded and added to the running scene.
 For this, the _ready() virtual method will be overridden:
 
-.. image:: /img/visual_script7.png
+.. image:: img/visual_script7.png
 
 
 Finally, a canvas appears for this function, showing the override:
 
-.. image:: /img/visual_script8.png
+.. image:: img/visual_script8.png
 
 As some functions expect you to return a value, they will also add a return node where such value is supposed to be
 provided:
 
-.. image:: /img/visual_script9.png
+.. image:: img/visual_script9.png
 
 Connecting a Signal to a Function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -123,18 +123,18 @@ A typical example would be a button that emits a "pressed" signal when actually 
 For this, a node must be selected and the Node tab opened. This will allow inspecting the signals.
 Once they are displayed, connect the "pressed" signal:
 
-.. image:: /img/visual_script10.png
+.. image:: img/visual_script10.png
 
 This will open the connection dialog. In this dialog, we must select the node where the signal be
 connected to, and the function that will receive the signal:
 
-.. image:: /img/visual_script11.png
+.. image:: img/visual_script11.png
 
 If this is done right, a new function will be created in our script and a signal will automatically be
 connected to it:
 
 
-.. image:: /img/visual_script12.png
+.. image:: img/visual_script12.png
 
 Creating a Function Manually
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -146,16 +146,16 @@ The main use case for this is to separate a function into more, or reusing your 
 To create a function manually, push the big "Plus" button, and a new function will be added
 with a default name:
 
-.. image:: /img/visual_script13.png
+.. image:: img/visual_script13.png
 
 This will add a new function, which can be renamed by simply double clicking its name:
 
-.. image:: /img/visual_script14.png
+.. image:: img/visual_script14.png
 
 To edit the "arguments" this function can get (the values you pass to it when you call this function),
 simply click the Function node and check the inspector:
 
-.. image:: /img/visual_script15.png
+.. image:: img/visual_script15.png
 
 More on that will be explained later in this document.
 
@@ -168,7 +168,7 @@ which are part of a graph. When referring to just *Scene Nodes*, it is implied t
 that make up a Scene are being referred, which are part of a tree. Their naming is similar, but their function is different.
 When referring to *Node* here, it will be implied that a *Visual Script Node* is referred to unless indicated otherwise.
 
-.. image:: /img/visual_script16.png
+.. image:: img/visual_script16.png
 
 
 Node Properties
@@ -192,7 +192,7 @@ Nodes in Godot Visual Scripting have *Ports*. These are endpoints that appear to
 left and right of nodes and which can be used to make *Connnections*:
 There are two types of *Ports*: *Sequence* and *Data*.
 
-.. image:: /img/visual_script17.png
+.. image:: img/visual_script17.png
 
 *Sequence Ports* indicate the order in which operations are executed. 
 Typically when a *Node* is done processing, it will go to the next node from one of the ports at the right. 
@@ -208,7 +208,7 @@ a port on the left side is an input. Connecting them allows to transfer informat
 Not all *Data Port* types are compatible and will allow connections, though.
 Pay special attention to colors and icons, as each type has a different representation:
 
-.. image:: /img/visual_script18.png
+.. image:: img/visual_script18.png
 
 
 Connections
@@ -216,12 +216,12 @@ Connections
 
 Connecting is a relatively simple process. Just drag an *Output Port* towards an *Input Port*. 
 
-.. image:: /img/visual_script_connect.gif
+.. image:: img/visual_script_connect.gif
 
 Disconnecting takes a bit more practice. Disconnecting in *Data Ports* happens by 
 dragging the *Input* away, while for *Sequence Ports*, this happens by dragging the *Output* away.
 
-.. image:: /img/visual_script_disconnect.gif
+.. image:: img/visual_script_disconnect.gif
 
 This may seem strange at the beginning, but it happens because *Data Ports* are 1:N 
 (A single output port can connect to many inputs), while *Sequence Ports* are N:1 
@@ -230,11 +230,11 @@ This may seem strange at the beginning, but it happens because *Data Ports* are 
 Connecting to empty space (drag to connect but unpress over empty space) is also context sensitive, it will supply
 a list of most common operations. For sequences, it will be conditional nodes:
 
-.. image:: /img/visual_script52.png
+.. image:: img/visual_script52.png
 
 While, for data, a contextual set/get/call menu will open:
 
-.. image:: /img/visual_script53.png
+.. image:: img/visual_script53.png
 
 
 Adding Nodes
@@ -251,13 +251,13 @@ One of the most common tasks is accessing Scene Tree Nodes (again, not to mistak
 Dragging from the Scene Tree and dropping into the canvas, by default, will ask you to *call a method* (sometimes referred to as *member function*) on
 this node. 
 
-.. image:: /img/visual_script19.png
+.. image:: img/visual_script19.png
 
 While accessing properties is desired in most cases (more on that below), sometimes *calling methods* can be useful too.
 Methods execute specific actions on objects. In the above case, the mouse pointer can be warped to a position in local
 coordinates to the control. Another common use case is queueing a node for deletion, which is done with the *queue_free* method.
 
-.. image:: /img/visual_script20.png
+.. image:: img/visual_script20.png
 
 Care must be taken that this only works if the scene being edited contains your *Visual Script* in one of the nodes! Otherwise, a warning will be shown.
 
@@ -267,13 +267,13 @@ Accessing Scene Node Properties
 This will be by far the most common way to *Scene Nodes* in Visual Scripting. Simply select a *Scene Node* from the *Scene Tree*,
 go the the inspector, find *The Name* of the property you want to edit (hint, *not* the value!) and drag it to the canvas:
 
-.. image:: /img/visual_script21.png
+.. image:: img/visual_script21.png
 
 The result is that this value can be changed from your script by writing to a *Data Port*.
 
 If instead reading this value is desired, just drag the node again but hold the *Control* key (or Command on Mac). This will create a getter:
 
-.. image:: /img/visual_script22.png
+.. image:: img/visual_script22.png
 
 In this case, the value can be read from a *Data Port*.
 
@@ -287,27 +287,27 @@ from other scripts via the method described in the previous step.
 Adding a Variable is simple, just push the "Plus" Button on the *Variables* section of the members panel. Afterwards, doubleclick the
 new variable to rename it:
 
-.. image:: /img/visual_script23.png
+.. image:: img/visual_script23.png
 
 Right clicking the variable allows to configure the type, as well as other properties:
 
-.. image:: /img/visual_script24.png
+.. image:: img/visual_script24.png
 
-.. image:: /img/visual_script25.png
+.. image:: img/visual_script25.png
 
 As it can be seen above, the type and initial value of the variable can be changed, as well as some property hints (@TODO, document this).
 Ticking the "Export" options makes the variable visible in the property editor when selecting the node. This makes it available also to 
 othe scripts via the method described in the previous step.
 
-.. image:: /img/visual_script28.png
+.. image:: img/visual_script28.png
 
 To use the variable in the script, simply drag it to the canvas to create a getter:
 
-.. image:: /img/visual_script26.png
+.. image:: img/visual_script26.png
 
 Likewise, hold *Control* (*Command* on Mac) to drop a setter:
 
-.. image:: /img/visual_script27.png
+.. image:: img/visual_script27.png
 
 
 Signals
@@ -316,20 +316,20 @@ Signals
 In the *Connecting Signals to a Function* item we have already learned about *Signals*. It is also possible to create your own
 signals in a script and use them. For this, just do the same steps you did for variables in the previous step, except for *Signals*:
 
-.. image:: /img/visual_script29.png
+.. image:: img/visual_script29.png
 
 Signal can also be edited via right click menu to customize arguments:
 
-.. image:: /img/visual_script30.png
+.. image:: img/visual_script30.png
 
 The signal you have just created will also show together with the other node signals, this allows to eventually connect to it from another script
 from another *Scene Node*:
 
-.. image:: /img/visual_script31.png
+.. image:: img/visual_script31.png
 
 Finally, to emit the signal, simply drag it to the canvas:
 
-.. image:: /img/visual_script32.png
+.. image:: img/visual_script32.png
 
 Remember that emitting a signal is a sequenced operation, so it must come from a Sequence port.
 
@@ -340,7 +340,7 @@ Adding More Nodes
 Now that the basics are covered, let's discuss the large amount of utility nodes available for your canvas!
 Below the member panel, exists the list of all available node types:
 
-.. image:: /img/visual_script33.png
+.. image:: img/visual_script33.png
 
 Once you're comfortable and familiar with them, the Ctrl-F (Command-F on
 Mac) is very useful for searching the list.
@@ -349,7 +349,7 @@ Any of them can be dragged to the scene. Remember that, unlike the nodes previou
 from the inspector sets the context to the node being edited automatically), these are
 added without any "contextual" information, so this has to be done manually.
 
-.. image:: /img/visual_script34.png
+.. image:: img/visual_script34.png
 
 
 Remember that you can check the class reference for what each node does, as they are documented there. That mentioned,
@@ -361,7 +361,7 @@ Constants
 Constant nodes are nodes that provide values that, while not changing over time, can be useful as reference values. 
 Most of the time they are integer or float.
 
-.. image:: /img/visual_script36.png
+.. image:: img/visual_script36.png
 
 Of interest here are mainly three nodes. The first one is "Constant" which allows to select any value of any type as constant,
 from an integer (42) to a String ("Hello!"). In general this node is not used that often because of default input
@@ -378,7 +378,7 @@ Data
 Data nodes deal with all sorts of access to information. Any information in Godot is accessed via these nodes, so
 they are some of the most important ones to use and pretty diverse.
 
-.. image:: /img/visual_script37.png
+.. image:: img/visual_script37.png
 
 There are many types of nodes of interest here, so a short attempt to describe them will follow:
 
@@ -388,7 +388,7 @@ Action
 Action nodes are vital when dealing with input from a device. You can read more about actions in the (@TODO ACTION TUTE LINK).
 In the following example below, the control is moved to the right when the "move_right" action is pressed.
 
-.. image:: /img/visual_script38.png
+.. image:: img/visual_script38.png
 
 
 Engine Singleton
@@ -397,11 +397,11 @@ Engine Singleton
 Engine singletons are global interfaces (meaning they can be accessed without a reference, unlike Scene Nodes, they are always available).
 They have several purposes, but in general they are useful for low level access or OS-related access.
 
-.. image:: /img/visual_script39.png
+.. image:: img/visual_script39.png
 
 Remember that dragging a connection to empty space will help you call functions or set/get properties on these:
 
-.. image:: /img/visual_script40.png
+.. image:: img/visual_script40.png
 
 Local Variables
 ^^^^^^^^^^^^^^^
@@ -409,7 +409,7 @@ Local Variables
 These are nodes you can use as temporary storage for your graphs. Just make sure they all have the same name and type when using them
 and they will reference the same piece of memory.
 
-.. image:: /img/visual_script41.png
+.. image:: img/visual_script41.png
 
 As it can be seen above, there are two nodes available: A simple getter, and a sequenced getter (setting requires a sequence port).
 
@@ -455,7 +455,7 @@ Comment
 A Comment node works as a node you can resize to put around other nodes. It will not try to get focus or be brought
 to top when selecting it. It can also be used to write text on it.
 
-.. image:: /img/visual_script42.png
+.. image:: img/visual_script42.png
 
 Flow Control
 ~~~~~~~~~~~~
@@ -463,7 +463,7 @@ Flow Control
 Flow control nodes are all sequenced, and allow the execution take different branches, usually depending on a
 given condition.
 
-.. image:: /img/visual_script43.png
+.. image:: img/visual_script43.png
 
 Condition
 ^^^^^^^^^
@@ -500,12 +500,12 @@ TypeCast
 This is a very useful and commonly used node. You can use it to cast arguments or other objects
 to the type you desire. Afterwards, you can even drag the obj output to get full completion.
 
-.. image:: /img/visual_script55.png
+.. image:: img/visual_script55.png
 
 It is also possible to cast to a script, which will allow to complete script properties and functions:
 
 
-.. image:: /img/visual_script54.png
+.. image:: img/visual_script54.png
 
 Switch
 ^^^^^^
@@ -549,7 +549,7 @@ Constructors
 These are all the functions needed to create Godot basic datatypes. If you need to, for example, create a Vector3 out of 3 floats, a
 constructor must be used.
 
-.. image:: /img/visual_script44.png
+.. image:: img/visual_script44.png
 
 
 Destructor
@@ -557,7 +557,7 @@ Destructor
 
 This is the opposite to Constructor, it allows to separate any basic type (ie, Vector3) into its sub-elements.
 
-.. image:: /img/visual_script45.png
+.. image:: img/visual_script45.png
 
 
 Emit Signal
@@ -602,7 +602,7 @@ By default, these mostly accept any datatype (and will error in run-time if the 
 feeded do not match for the operator). It is always recommended to set the right
 type for operators to catch errors faster and make the graph easier to read.
 
-.. image:: /img/visual_script46.png
+.. image:: img/visual_script46.png
 
 
 Expression Node
@@ -615,20 +615,20 @@ Expression nodes can:
 
 - Perform math and logic expressions based on custom inputs (eg: "a*5+b", where a and b are custom inputs):
 
-.. image:: /img/visual_script47.png
+.. image:: img/visual_script47.png
 
 - Access local variables or properties:
 
-.. image:: /img/visual_script48.png
+.. image:: img/visual_script48.png
 
 - Use most of the existing built-in functions and available to GDScript, such as sin(),cos(),print(), as well as constructors, such as Vector3(x,y,z),Rect2(..), etc.:
 
-.. image:: /img/visual_script49.png
+.. image:: img/visual_script49.png
 
 - Call API functions:
 
-.. image:: /img/visual_script50.png
+.. image:: img/visual_script50.png
 
 - Use sequenced mode, which makes more sense in case of respecting the processing order:
 
-.. image:: /img/visual_script51.png
+.. image:: img/visual_script51.png

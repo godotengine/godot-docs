@@ -42,7 +42,7 @@ to the AutoLoad tab. Each entry in the list requires a name, which is used as th
 of the node, and the node is always added to the root viewport before any other scenes 
 are loaded.
 
-.. image:: /img/singleton.png
+.. image:: img/singleton.png
 
 This means that any node can access a singleton named "playervariables" with:
 
@@ -60,7 +60,7 @@ method suffices (described in :ref:`doc_scene_tree`), so this method is for
 more complex behavior when switching between scenes.
 
 First download the template from here:
-:download:`autoload.zip </files/autoload.zip>`, then open it.
+:download:`autoload.zip <files/autoload.zip>`, then open it.
 
 Two scenes are present, scene_a.tscn and scene_b.tscn on an otherwise
 empty project. Each are identical and contain a button connected to a
@@ -74,18 +74,18 @@ global.gd
 First of all, create a global.gd script. The easy way to create a
 resource from scratch is from the new resource button in the inspector tab:
 
-.. image:: /img/newscript.png
+.. image:: img/newscript.png
 
 Save the script as `global.gd`:
 
-.. image:: /img/saveasscript.png
+.. image:: img/saveasscript.png
 
 The script should open in the script editor. The next step is to add
 it to AutoLoad list. Select Scene > Project Settings from the menu,
 switch to the AutoLoad tab and add a new entry with name "global" that
 points to this file:
 
-.. image:: /img/addglobal.png
+.. image:: img/addglobal.png
 
 Now, whenever you run any of your scenes, the script is always loaded.
 

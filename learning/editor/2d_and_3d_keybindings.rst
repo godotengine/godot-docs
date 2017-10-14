@@ -6,11 +6,11 @@
 2D viewport
 -----------
 
-.. image:: /img/keybinds_2d.png
+.. image:: img/keybinds_2d.png
 
 3D viewport
 -----------
 
-.. image:: /img/keybinds_3d.png
+.. image:: img/keybinds_3d.png
 
 

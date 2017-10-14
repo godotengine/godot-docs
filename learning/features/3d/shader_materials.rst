@@ -15,7 +15,7 @@ Tutorials for each of them exist :ref:`doc_fixed_materials` and :ref:`doc_shader
 
 This tutorial is about the basic properties shared between them.
 
-.. image:: /img/material_flags.png
+.. image:: img/material_flags.png
 
 Flags
 -----
@@ -53,7 +53,7 @@ changes according to the type and direction of lights. When this flag is
 turned on, the diffuse color is displayed right the same as it appears
 in the texture or parameter:
 
-.. image:: /img/material_unshaded.png
+.. image:: img/material_unshaded.png
 
 On top
 ~~~~~~
@@ -82,7 +82,7 @@ Objects are usually blended in Mix mode. Other blend modes (Add and Sub)
 exist for special cases (usually particle effects, light rays, etc.) but
 materials can be set to them:
 
-.. image:: /img/fixed_material_blend.png
+.. image:: img/fixed_material_blend.png
 
 Line width
 ~~~~~~~~~~
@@ -116,4 +116,4 @@ sorted by depth). This behavior can be changed here. The options are:
 -  **Never**: Never use the depth buffer for this material. This is
    mostly useful in combination with the "On Top" flag explained above.
 
-.. image:: /img/material_depth_draw.png
+.. image:: img/material_depth_draw.png

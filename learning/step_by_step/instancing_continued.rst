@@ -30,7 +30,7 @@ programmer, but by anyone.
 
 For example, here's how a simple shooter game could be imagined:
 
-.. image:: /img/shooter_instancing.png
+.. image:: img/shooter_instancing.png
 
 It's pretty easy to come up with a diagram like this for almost any kind
 of game. Just write down the parts of the game that you can visualize, and then
@@ -49,7 +49,7 @@ itself. Because most game components map directly to a scene, using a design-bas
 Let's take a look at one more, somewhat more complex, example of an open-world
 type game with lots of assets and nested elements:
 
-.. image:: /img/openworld_instancing.png
+.. image:: img/openworld_instancing.png
 
 Take a look at the room element. Let's say we started there. We could make a
 couple of different room scenes, with different arrangements of furniture (also

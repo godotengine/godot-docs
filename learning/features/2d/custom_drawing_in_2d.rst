@@ -148,7 +148,7 @@ We now have a function that draws stuff on the screen: it is time to call in the
 
 Result:
 
-.. image:: /img/result_drawarc.png
+.. image:: img/result_drawarc.png
 
 
 
@@ -170,7 +170,7 @@ We can take this a step further and not only write a function that draws the pla
         draw_polygon(points_arc, colors)
         
         
-.. image:: /img/result_drawarc_poly.png
+.. image:: img/result_drawarc_poly.png
 
 Dynamic custom drawing
 ^^^^^^^^^^^^^^^^^^^^^^

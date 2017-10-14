@@ -27,7 +27,7 @@ horizontal offset and y the vertical one. This makes sense given the
 screen is just a rectangle in two dimensions. As an example, here is a
 position in 2D space:
 
-.. image:: /img/tutovec1.png
+.. image:: img/tutovec1.png
 
 A position can be anywhere in space. The position (0,0) has a name, it's
 called the **origin**. Remember this term well because it has more
@@ -39,14 +39,14 @@ important. They are used to represent a *position* but also a *vector*.
 The same position as before, when imagined as a vector, has a different
 meaning.
 
-.. image:: /img/tutovec2.png
+.. image:: img/tutovec2.png
 
 When imagined as a vector, two properties can be inferred, the
 **direction** and the **magnitude**. Every position in space can be a
 vector, with the exception of the **origin**. This is because
 coordinates (0,0) can't represent direction (magnitude 0).
 
-.. image:: /img/tutovec2b.png
+.. image:: img/tutovec2b.png
 
 Direction
 ---------
@@ -56,7 +56,7 @@ that starts at the **origin** and goes towards a [STRIKEOUT:position].
 The tip of the arrow is in the position, so it always points outwards,
 away from the origin. Imagining vectors as arrows helps a lot.
 
-.. image:: /img/tutovec3b.png
+.. image:: img/tutovec3b.png
 
 Magnitude
 ---------
@@ -159,7 +159,7 @@ Rotating a 2D vector 90° degrees to either side, left or right, is
 really easy, just swap x and y, then negate either x or y (direction of
 rotation depends on which is negated).
 
-.. image:: /img/tutovec15.png
+.. image:: img/tutovec15.png
 
 Example:
 
@@ -187,7 +187,7 @@ learning about **unit vectors**. Any vector with **magnitude** of length
 radius one. That circle contains all unit vectors in existence for 2
 dimensions:
 
-.. image:: /img/tutovec3.png
+.. image:: img/tutovec3.png
 
 So, what is so special about unit vectors? Unit vectors are amazing. In
 other words, unit vectors have **several, very useful properties**.
@@ -260,7 +260,7 @@ same value as ``b.dot(a)``.
 This is where despair begins and books and tutorials show you this
 formula:
 
-.. image:: /img/tutovec4.png
+.. image:: img/tutovec4.png
 
 And you realize it's time to give up making 3D games or complex 2D
 games. How can something so simple be so complex? Someone else will have
@@ -299,7 +299,7 @@ from now on). This number will tell us the following:
 -  If the number is zero, vectors are shaped in L (the angle between
    them *is* 90° degrees).
 
-.. image:: /img/tutovec5.png
+.. image:: img/tutovec5.png
 
 So let's think of a real use-case scenario. Imagine Snake is going
 through a forest, and then there is an enemy nearby. How can we quickly
@@ -310,7 +310,7 @@ the enemy must be able to *see* Snake. Let's say, then that:
 -  The enemy is in position **B**.
 -  The enemy is *facing* towards direction vector **F**.
 
-.. image:: /img/tutovec6.png
+.. image:: img/tutovec6.png
 
 So, let's create a new vector **BA** that goes from the guard (**B**) to
 Snake (**A**), by subtracting the two:
@@ -319,7 +319,7 @@ Snake (**A**), by subtracting the two:
 
     var BA = A - B
 
-.. image:: /img/tutovec7.png
+.. image:: img/tutovec7.png
 
 Ideally, if the guard was looking straight towards snake, to make eye to
 eye contact, it would do it in the same direction as vector BA.
@@ -367,11 +367,11 @@ Let's take two unit vectors. The first one is pointing up, the second
 too but we will rotate it all the way from up (0°) to down (180°
 degrees)...
 
-.. image:: /img/tutovec8.png
+.. image:: img/tutovec8.png
 
 While plotting the resulting scalar!
 
-.. image:: /img/tutovec9.png
+.. image:: img/tutovec9.png
 
 Aha! It all makes sense now, this is a
 `Cosine <http://mathworld.wolfram.com/Cosine.html>`__ function!
@@ -411,7 +411,7 @@ passes a plane. Planes divide the entire space into positive
 (over the plane) and negative (under the plane), and (contrary to
 popular belief) you can also use their math in 2D:
 
-.. image:: /img/tutovec10.png
+.. image:: img/tutovec10.png
 
 Unit vectors that are perpendicular to a surface (so, they describe the
 orientation of the surface) are called **unit normal vectors**. Though,
@@ -443,7 +443,7 @@ the **distance from the point to the plane**:
 But not just the absolute distance, if the point is in the negative half
 space the distance will be negative, too:
 
-.. image:: /img/tutovec11.png
+.. image:: img/tutovec11.png
 
 This allows us to tell which side of the plane a point is.
 
@@ -462,7 +462,7 @@ With this in mind, let's describe a full plane as a **normal** *N* and a
 **distance from the origin** scalar *D*. Thus, our plane is represented
 by N and D. For example:
 
-.. image:: /img/tutovec12.png
+.. image:: img/tutovec12.png
 
 For 3D math, Godot provides a :ref:`Plane <class_Plane>`
 built-in type that handles this.
@@ -578,7 +578,7 @@ We go through all planes, if we can find a plane where the distance to
 the point is positive, then the point is outside the polygon. If we
 can't, then the point is inside.
 
-.. image:: /img/tutovec13.png
+.. image:: img/tutovec13.png
 
 Code should be something like this:
 
@@ -603,7 +603,7 @@ polygon points* return a positive distance to it. This check is
 performed with the planes of A against the points of B, and then with
 the planes of B against the points of A:
 
-.. image:: /img/tutovec14.png
+.. image:: img/tutovec14.png
 
 Code should be something like this:
 
@@ -669,7 +669,7 @@ returned third vector is always perpendicular to the first two. The
 source vectors, of course, must not be the same, and must not be
 parallel or opposite, else the resulting vector will be (0,0,0):
 
-.. image:: /img/tutovec16.png
+.. image:: img/tutovec16.png
 
 The formula for the cross product is:
 
@@ -701,7 +701,7 @@ Area of a triangle
 Cross product can be used to obtain the surface area of a triangle in
 3D. Given a triangle consisting of 3 points, **A**, **B** and **C**:
 
-.. image:: /img/tutovec17.png
+.. image:: img/tutovec17.png
 
 Take any of them as a pivot and compute the adjacent vectors to the
 other two points. As example, we will use B as a pivot:
@@ -711,7 +711,7 @@ other two points. As example, we will use B as a pivot:
     var BA = A - B
     var BC = C - B
 
-.. image:: /img/tutovec18.png
+.. image:: img/tutovec18.png
 
 Compute the cross product between **BA** and **BC** to obtain the
 perpendicular vector **P**:
@@ -720,7 +720,7 @@ perpendicular vector **P**:
 
     var P = BA.cross(BC)
 
-.. image:: /img/tutovec19.png
+.. image:: img/tutovec19.png
 
 The length (magnitude) of **P** is the surface area of the parallelogram
 built by the two vectors **BA** and **BC**, therefore the surface area
@@ -763,13 +763,13 @@ To make it a little clearer, in the image below, the triangle **ABC**
 appears clock-wise when looked at from the *Front Camera*, but to the
 *Rear Camera* it appears counter-clockwise so it will not be drawn.
 
-.. image:: /img/tutovec20.png
+.. image:: img/tutovec20.png
 
 Normals of triangles often are sided towards the direction they can be
 viewed from, so in this case, the normal of triangle ABC would point
 towards the front camera:
 
-.. image:: /img/tutovec21.png
+.. image:: img/tutovec21.png
 
 So, to obtain N, the correct formula is:
 
@@ -808,13 +808,13 @@ In 3D though, there is a problem to this approach, because it is
 possible that, in some cases a separating plane can't be found. This is
 an example of such situation:
 
-.. image:: /img/tutovec22.png
+.. image:: img/tutovec22.png
 
 To avoid it, some extra planes need to be tested as separators, these
 planes are the cross product between the edges of polygon A and the
 edges of polygon B
 
-.. image:: /img/tutovec23.png
+.. image:: img/tutovec23.png
 
 So the final algorithm is something like:
 

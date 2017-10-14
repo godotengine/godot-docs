@@ -24,7 +24,7 @@ Spatial node
 Following this reasoning, the 3D engine uses the :ref:`Spatial <class_Spatial>`
 node for everything 3D.
 
-.. image:: /img/tuto_3d1.png
+.. image:: img/tuto_3d1.png
 
 Spatial nodes have a local transform, which is relative to the parent
 node (as long as the parent node is also **or inherits** of type
@@ -33,7 +33,7 @@ Spatial). This transform can be accessed as a 4x3
 members representing location, Euler rotation (x,y and z angles) and
 scale.
 
-.. image:: /img/tuto_3d2.png
+.. image:: img/tuto_3d2.png
 
 3D content
 ~~~~~~~~~~
@@ -111,14 +111,14 @@ Editing 3D scenes is done in the 3D tab. This tab can be selected
 manually, but it will be automatically enabled when a Spatial node is
 selected.
 
-.. image:: /img/tuto_3d3.png
+.. image:: img/tuto_3d3.png
 
 Default 3D scene navigation controls are similar to Blender (aiming to
 have some sort of consistency in the free software pipeline..), but
 options are included to customize mouse buttons and behavior to be
 similar to other tools in Editor Settings:
 
-.. image:: /img/tuto_3d4.png
+.. image:: img/tuto_3d4.png
 
 Coordinate system
 -----------------
@@ -153,7 +153,7 @@ respectively. This convention applies to the grid and other gizmos too
 (and also to the shader language, ordering of components for
 Vector3,Color,etc.).
 
-.. image:: /img/tuto_3d5.png
+.. image:: img/tuto_3d5.png
 
 Some useful keybindings:
 
@@ -167,14 +167,14 @@ View menu
 The view options are controlled by the "[ view ]" menu. Pay attention to
 this little menu inside the window because it is often overlooked!
 
-.. image:: /img/tuto_3d6.png
+.. image:: img/tuto_3d6.png
 
 Default environment
 ----------------
 
 When created from the Project Manager, the 3D environment has a default sky.
 
-.. image:: /img/tuto_3d8.png
+.. image:: img/tuto_3d8.png
 
 Given how physically based rendering works, it is advised to always try to
 work with a default environment in order to provide indirect and reflected
@@ -188,7 +188,7 @@ displayed unless a :ref:`Camera <class_Camera>` is
 also added to the scene. Cameras can either work in orthogonal or
 perspective projections:
 
-.. image:: /img/tuto_3d10.png
+.. image:: img/tuto_3d10.png
 
 Cameras are associated and only display to a parent or grand-parent
 viewport. Since the root of the scene tree is a viewport, cameras will
@@ -196,7 +196,7 @@ display on it by default, but if sub-viewports (either as render target
 or picture-in-picture) are desired, they need their own children cameras
 to display.
 
-.. image:: /img/tuto_3d11.png
+.. image:: img/tuto_3d11.png
 
 When dealing with multiple cameras, the following rules are followed for
 each viewport:

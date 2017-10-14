@@ -21,7 +21,7 @@ Oriented coordinate system (OCS)
 Imagine we have a spaceship somewhere in space. In Godot this is easy,
 just move the ship somewhere and rotate it:
 
-.. image:: /img/tutomat1.png
+.. image:: img/tutomat1.png
 
 Ok, so in 2D this looks simple, a position and an angle for a rotation.
 But remember, we are grown ups here and don't use angles (plus, angles
@@ -35,14 +35,14 @@ Maya, etc.
 When it was designed, it was not rotated. It was designed in its own
 *coordinate system*.
 
-.. image:: /img/tutomat2.png
+.. image:: img/tutomat2.png
 
 This means that the tip of the ship has a coordinate, the fin has
 another, etc. Be it in pixels (2D) or vertices (3D).
 
 So, let's recall again that the ship was somewhere in space:
 
-.. image:: /img/tutomat3.png
+.. image:: img/tutomat3.png
 
 How did it get there? What moved it and rotated it from the place it was
 designed to its current position? The answer is... a **transform**, the
@@ -53,26 +53,26 @@ But transform is too generic of a term to describe this process. To solve this
 puzzle, we will superimpose the ship's original design position at their
 current position:
 
-.. image:: /img/tutomat4.png
+.. image:: img/tutomat4.png
 
 So, we can see that the "design space" has been transformed too. How can
 we best represent this transformation? Let's use 3 vectors for this (in
 2D), a unit vector pointing towards X positive, a unit vector pointing
 towards Y positive and a translation.
 
-.. image:: /img/tutomat5.png
+.. image:: img/tutomat5.png
 
 Let's call the 3 vectors "X", "Y" and "Origin", and let's also
 superimpose them over the ship so it makes more sense:
 
-.. image:: /img/tutomat6.png
+.. image:: img/tutomat6.png
 
 Ok, this is nicer, but it still does not make sense. What do X,Y and
 Origin have to do with how the ship got there?
 
 Well, let's take the point from top tip of the ship as reference:
 
-.. image:: /img/tutomat7.png
+.. image:: img/tutomat7.png
 
 And let's apply the following operation to it (and to all the points in
 the ship too, but we'll track the top tip as our reference point):
@@ -83,7 +83,7 @@ the ship too, but we'll track the top tip as our reference point):
 
 Doing this to the selected point will move it back to the center:
 
-.. image:: /img/tutomat8.png
+.. image:: img/tutomat8.png
 
 This was expected, but then let's do something more interesting. Use the
 dot product of X and the point, and add it to the dot product of Y and
@@ -96,7 +96,7 @@ the point:
 Then what we have is.. wait a minute, it's the ship in its design
 position!
 
-.. image:: /img/tutomat9.png
+.. image:: img/tutomat9.png
 
 How did this black magic happen? The ship was lost in space, and now
 it's back home!
@@ -129,7 +129,7 @@ directions*."
 So, let's change the representation of the basis. Instead of 2 vectors,
 let's use a *matrix*.
 
-.. image:: /img/tutomat10.png
+.. image:: img/tutomat10.png
 
 The vectors are up there in the matrix, horizontally. The next problem
 now is that.. what is this matrix thing? Well, we'll assume you've never
@@ -171,7 +171,7 @@ By default, Matrix32 is created as an "identity" matrix. This means:
 -  'Y' Points up (or down in pixels): Vector2(0,1)
 -  'Origin' is the origin Vector2(0,0)
 
-.. image:: /img/tutomat11.png
+.. image:: img/tutomat11.png
 
 It's easy to guess that an *identity* matrix is just a matrix that
 aligns the transform to its parent coordinate system. It's an *OCS*
@@ -191,7 +191,7 @@ Rotating Matrix32 is done by using the "rotated" function:
     var m = Matrix32()
     m = m.rotated(PI/2) # rotate 90°
 
-.. image:: /img/tutomat12.png
+.. image:: img/tutomat12.png
 
 Translation
 -----------
@@ -206,7 +206,7 @@ the origin:
     m = m.rotated(PI/2) # rotate 90°
     m[2]+=Vector2(2,0)
 
-.. image:: /img/tutomat13.png
+.. image:: img/tutomat13.png
 
 This will always work in global coordinates.
 
@@ -222,7 +222,7 @@ method:
     m = m.rotated(PI/2) # rotate 90°
     m=m.translated( Vector2(2,0) )
 
-.. image:: /img/tutomat14.png
+.. image:: img/tutomat14.png
 
 Scale
 -----
@@ -237,14 +237,14 @@ the scale). It will leave the origin alone:
     var m = Matrix32()
     m = m.scaled( Vector2(2,2) )
 
-.. image:: /img/tutomat15.png
+.. image:: img/tutomat15.png
 
 These kind of operations in matrices are accumulative. It means every
 one starts relative to the previous one. For those who have been living
 on this planet long enough, a good reference of how transform works is
 this:
 
-.. image:: /img/tutomat16.png
+.. image:: img/tutomat16.png
 
 A matrix is used similarly to a turtle. The turtle most likely had a
 matrix inside (and you are likely learning this many years *after*
@@ -460,7 +460,7 @@ Or, alternatively as:
 
 Matrix3 is also initialized to Identity by default:
 
-.. image:: /img/tutomat17.png
+.. image:: img/tutomat17.png
 
 Rotation in 3D
 --------------

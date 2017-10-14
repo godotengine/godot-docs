@@ -45,7 +45,7 @@ integer, Vector2, etc) and one of those types can be a resource. This
 means that both nodes and resources can contain resources as properties.
 To make it a little more visual:
 
-.. image:: /img/nodes_resources.png
+.. image:: img/nodes_resources.png
 
 External vs built-in
 --------------------
@@ -56,13 +56,13 @@ The resource properties can reference resources in two ways,
 To be more specific, here's a :ref:`Texture <class_Texture>`
 in a :ref:`Sprite <class_Sprite>` node:
 
-.. image:: /img/spriteprop.png
+.. image:: img/spriteprop.png
 
 Pressing the ">" button on the right side of the preview allows to
 view and edit the resources properties. One of the properties (path)
 shows where it comes from. In this case, it comes from a png image.
 
-.. image:: /img/resourcerobi.png
+.. image:: img/resourcerobi.png
 
 When the resource comes from a file, it is considered an *external*
 resource. If the path property is erased (or it never had a path to

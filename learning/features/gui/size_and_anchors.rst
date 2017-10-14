@@ -17,24 +17,24 @@ that the screen resolution has changed and the controls need to be
 re-positioned. Some will need to follow the bottom of the screen, others
 the top of the screen, or maybe the right or left margins.
 
-.. image:: /img/anchors.png
+.. image:: img/anchors.png
 
 This is done by editing the *margin* properties of controls. Each
 control has four margins: left, right, bottom and top. By default all of
 them represent a distance in pixels relative to the top-left corner of
 the parent control or (in case there is no parent control) the viewport.
 
-.. image:: /img/margin.png
+.. image:: img/margin.png
 
 When horizontal (left,right) and/or vertical (top,bottom) anchors are
 changed to END, the margin values become relative to the bottom-right
 corner of the parent control or viewport.
 
-.. image:: /img/marginend.png
+.. image:: img/marginend.png
 
 Here the control is set to expand its bottom-right corner with that of
 the parent, so when re-sizing the parent, the control will always cover
 it, leaving a 20 pixel margin:
 
-.. image:: /img/marginaround.png
+.. image:: img/marginaround.png
 

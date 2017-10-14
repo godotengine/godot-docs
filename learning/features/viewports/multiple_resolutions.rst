@@ -9,7 +9,7 @@ Base resolution
 A base screen resolution for the project can be specified in the project
 settings.
 
-.. image:: /img/screenres.png
+.. image:: img/screenres.png
 
 However, what it does is not completely obvious. When running on PC, the
 engine will attempt to set this resolution (or use something smaller if
@@ -42,7 +42,7 @@ Stretch settings
 Stretch settings are located in the project settings, it's just a bunch
 of configuration variables that provide several options:
 
-.. image:: /img/stretchsettings.png
+.. image:: img/stretchsettings.png
 
 Stretch mode
 ------------
@@ -64,7 +64,7 @@ Stretch mode
    just for the sake of rendering to a lower resolution for improving
    performance.
 
-.. image:: /img/stretch.png
+.. image:: img/stretch.png
 
 Stretch aspect
 --------------

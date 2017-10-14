@@ -53,7 +53,7 @@ Transform order
 For a coordinate in CanvasItem local properties to become an actual
 screen coordinate, the following chain of transforms must be applied:
 
-.. image:: /img/viewport_transforms2.png
+.. image:: img/viewport_transforms2.png
 
 Transform functions
 -------------------

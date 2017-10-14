@@ -21,7 +21,7 @@ resolved by analytical equation solve. So, it is an underconstrained
 problem, which means there is unlimited number of solutions to the
 equation.
 
-.. image:: /img/inverse_kinematics.png
+.. image:: img/inverse_kinematics.png
 
 For easy calculation, for this chapter we consider target is also
 child of Skeleton. If it is not the case for your setup you can always

@@ -25,7 +25,7 @@ Before going into how we would like to synchronize a game across the network, it
 for synchronization works. Godot uses a mid-level object :ref:`NetworkedMultiplayerPeer <class_NetworkedMultiplayerPeer>`.
 This object is not meant to be created directly, but is designed so that several implementations can provide it:
 
-.. image:: /img/nmpeer.png
+.. image:: img/nmpeer.png
 
 This object extends from :ref:`PacketPeer <class_PacketPeer>`, so it has all the useful methods for serializing data you are used to, thanks to
 Godot's beautiful object-oriented design. It adds methods to set a peer, transfer mode, etc. It also includes signals that will let you know
@@ -320,7 +320,7 @@ Here, each time this piece of code is executed on each peer, the peer makes the 
 The modes for each are different on each peer. To clarify, here is an example of how this looks in the
 `bomber demo <https://github.com/godotengine/godot-demo-projects/tree/master/networking/simple_multiplayer>`_:
 
-.. image:: /img/nmms.png
+.. image:: img/nmms.png
 
 
 Master and slave keywords

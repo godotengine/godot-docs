@@ -28,7 +28,7 @@ The translations can get updated and re-imported when they change, but
 they still have to be added to the project. This is done in Scene
 > Project Settings > Localization:
 
-.. image:: /img/localization_dialog.png
+.. image:: img/localization_dialog.png
 
 This dialog allows to add or remove translations project-wide.
 
@@ -39,7 +39,7 @@ It is also possible to instruct Godot to open alternative versions of
 assets (resources) depending on the current language. For this the
 "Remaps" tab exists:
 
-.. image:: /img/localization_remaps.png
+.. image:: img/localization_remaps.png
 
 Select the resource to be remapped, and the alternatives for each
 locale.
@@ -101,7 +101,7 @@ operating systems and platforms. To specify the project name in more
 than one language, create a new setting application/name in the project
 settings dialog and append the locale identifier to it. For example:
 
-.. image:: /img/localized_name.png
+.. image:: img/localized_name.png
 
 As always, If you don't know the code of a language or zone, :ref:`check the
 list <doc_locales>`.

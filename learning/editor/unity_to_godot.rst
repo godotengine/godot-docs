@@ -47,8 +47,8 @@ The editor
 
 Godot Engine provides a rich-featured editor that allows you to build your games. The pictures below display both editors with colored blocks to indicate common functionalities.
 
-.. image:: /img/unity-gui-overlay.png
-.. image:: /img/godot-gui-overlay.png
+.. image:: img/unity-gui-overlay.png
+.. image:: img/godot-gui-overlay.png
 
 
 Note that Godot editor allows you to dock each panel at the side of the scene editor you wish.
@@ -120,7 +120,7 @@ These are the most important concepts you need to remember: "node", "parent node
 Project organization
 --------------------
 
-.. image:: /img/unity-project-organization-example.png
+.. image:: img/unity-project-organization-example.png
 
 We previously observed that there is no perfect solution to set a project architecture. Any solution will work for Unity and Godot, so this point has a lesser importance.
 
@@ -136,11 +136,11 @@ The concept of prefabs as provided by Unity is a 'template' element of the scene
 
 Godot does not provide prefabs as such, but this functionality is here again filled thanks to its scene system: as we saw the scene system is organized as a tree. Godot allows you to save a subtree of a scene as its own scene, thus saved in its own file. This new scene can then be instanced as many times as you want. Any change you make to this new, separate scene will be applied to its instances. However, any change you make to the instance will not have any impact on the 'template' scene.
 
-.. image:: /img/save-branch-as-scene.png
+.. image:: img/save-branch-as-scene.png
 
 To be precise, you can modify the parameters of the instance in the Inspector panel. However, the nodes that compose this instance are locked and you can unlock them if you need to by clicking the clapperboard icon next to the instance in the Scene tree, and select "Editable children" in the menu. You don't need to do this to add new children nodes to this node, but remember that these new children will belong to the instance, not the 'template' scene. If you want to add new children to all the instances of your 'template' scene, then you need to add it once in the 'template' scene.
 
-.. image:: /img/editable-children.png
+.. image:: img/editable-children.png
 
 Glossary correspondence
 -----------------------

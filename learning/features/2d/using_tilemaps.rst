@@ -10,7 +10,7 @@ Tilemaps are a simple and quick way to make 2D game levels. Basically,
 you start with bunch of reference tiles (or pieces) that can be put in a
 grid, as many times each as desired:
 
-.. image:: /img/tilemap.png
+.. image:: img/tilemap.png
 
 Collisions can also be added to the tiles, allowing for both 2D side
 scrolling and top down games.
@@ -22,7 +22,7 @@ To begin, a tileset needs to be made. Here are some tiles for it.
 They are all in the same image because artists will often prefer this.
 Having them as separate images also works.
 
-.. image:: /img/tileset.png
+.. image:: img/tileset.png
 
 Create a new project and move the above png image into the directory.
 
@@ -31,7 +31,7 @@ resource. While this resource exports properties, it's pretty difficult
 to get complex data into it and maintain it. Here is what it would look like to
 manually edit the resource:
 
-.. image:: /img/tileset_edit_resource.png
+.. image:: img/tileset_edit_resource.png
 
 There's enough properties to get by. With some effort, editing this
 way can work. But the easiest way to edit and maintain a tileset is exporting
@@ -56,13 +56,13 @@ correctly and updated**. This name should be unique.
 Sounds like a lot of requirements, so here's a screenshot that shows
 where everything of relevance is:
 
-.. image:: /img/tile_example.png
+.. image:: img/tile_example.png
 
 Continue adding all the tiles, adjusting the offsets if needed (that is, if you have
 multiple tiles in a single source image). Again, *remember that their names must
 be unique*.
 
-.. image:: /img/tile_example2.png
+.. image:: img/tile_example2.png
 
 Collision
 ---------
@@ -72,7 +72,7 @@ This is a static collision node. Then create a CollisionShape2D or
 CollisionPolygon as a child of the StaticBody2D. The CollisionPolygon is
 recommended because it is easier to edit.
 
-.. image:: /img/tile_example3.png
+.. image:: img/tile_example3.png
 
 Finally, edit the polygon, this will give the tile a collision.
 **Remember to use snap!** Using snap will make sure collision polygons
@@ -81,12 +81,12 @@ to tile. Also **do not scale or move** the collision and/or collision
 polygon nodes. Leave them at offset 0,0, with scale 1,1 and rotation 0
 with respect to the parent sprite.
 
-.. image:: /img/tile_example4.png
+.. image:: img/tile_example4.png
 
 Keep adding collisions to the tiles until we are done. Note that BG is just
 a background, so it should not have a collision.
 
-.. image:: /img/tile_example5.png
+.. image:: img/tile_example5.png
 
 OK! We're done! Remember to save this scene for future edit. Name it
 "tileset_edit.scn" or something like that.
@@ -97,7 +97,7 @@ Exporting a TileSet
 With the scene created and opened in the editor, the next step will be to
 create a tileset. Use Scene > Convert To > Tile Set from the Scene Menu:
 
-.. image:: /img/tileset_export.png
+.. image:: img/tileset_export.png
 
 Then choose a filename, like "mytiles.tres". Make sure the "Merge With
 Existing" option is toggled on. This way, every time the tileset
@@ -105,7 +105,7 @@ resource file is overwritten, existing tiles are merged and updated
 (they are referenced by their unique name, so again, **name your tiles
 properly**).
 
-.. image:: /img/tileset_merge.png
+.. image:: img/tileset_merge.png
 
 Using the TileSet in a TileMap
 ------------------------------
@@ -114,12 +114,12 @@ Create a new scene, using any node or node2d as root, and then create a
 :ref:`TileMap <class_TileMap>` as
 a child.
 
-.. image:: /img/tilemap_scene.png
+.. image:: img/tilemap_scene.png
 
 Go to the TileSet property of this node and assign the one created in
 previous steps:
 
-.. image:: /img/tileset_property.png
+.. image:: img/tileset_property.png
 
 Also set the cell size to '50', since that is the size used by the
 tiles. Quadrant size is a tuning value, which means that the engine will
@@ -134,13 +134,13 @@ With all set, make sure the TileMap node is selected. A red grid will
 appear on screen, allowing to paint on it with the selected tile on the
 left palette.
 
-.. image:: /img/tile_example6.png
+.. image:: img/tile_example6.png
 
 To avoid accidentally moving and selecting the tilemap node (something
 common, given it's a huge node), it is recommended that you lock it,
 using the lock button:
 
-.. image:: /img/tile_lock.png
+.. image:: img/tile_lock.png
 
 You can also flip and rotate sprites in the TileMap editor (note:
 flipping the sprite in the TileSet will have no effect). Icons at the
@@ -158,7 +158,7 @@ When using a single texture for all the tiles, scaling the tileset (or
 even moving to a non pixel-aligned location) will most likely result in
 filtering artifacts like so:
 
-.. image:: /img/tileset_filter.png
+.. image:: img/tileset_filter.png
 
 This is unavoidable, as it is the way the hardware bilinear filter
 works. So, to avoid this situation, there are a few workarounds. Try the
