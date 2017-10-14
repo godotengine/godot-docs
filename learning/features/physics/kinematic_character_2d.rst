@@ -71,13 +71,13 @@ To have something to test, here's the scene (from the tilemap tutorial):
 :download:`kbscene.zip </files/kbscene.zip>`. We'll be creating a new scene
 for the character. Use the robot sprite and create a scene like this:
 
-.. image:: /img/kbscene.png
+.. image:: img/kbscene.png
 
 Let's add a circular collision shape to the collision body, create a new
 CircleShape2D in the shape property of CollisionShape2D. Set the radius
 to 30:
 
-.. image:: /img/kbradius.png
+.. image:: img/kbradius.png
 
 **Note: As mentioned before in the physics tutorial, the physics engine
 can't handle scale on most types of shapes (only collision polygons,
@@ -92,7 +92,7 @@ above should work as a base.
 Finally, instance that character scene in the tilemap, and make the
 map scene the main one, so it runs when pressing play.
 
-.. image:: /img/kbinstance.png
+.. image:: img/kbinstance.png
 
 Moving the Kinematic character
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -185,7 +185,7 @@ simple in reality. If the motion can't be completed, the character will
 stop moving. It's as simple as that. This diagram should illustrate
 better what is going on:
 
-.. image:: /img/motion_diagram.png
+.. image:: img/motion_diagram.png
 
 Basically, the desired motion vector will never complete because it hits
 the floor and the wall too early in the motion trajectory and that makes
@@ -203,7 +203,7 @@ normal. KinematicBody2D provides two useful functions:
 
 So what we want to do is this:
 
-.. image:: /img/motion_reflect.png
+.. image:: img/motion_reflect.png
 
 When colliding, the function ``move()`` returns the "remainder" of the
 motion vector. That means, if the motion vector is 40 pixels, but

@@ -22,7 +22,7 @@ efficient.
 
 Import options are vast:
 
-.. image:: /img/image_import1.png
+.. image:: img/image_import1.png
 
 Compression:
 -------------
@@ -129,7 +129,7 @@ Fix Alpha Border
 This puts pixels of the same surrounding color in transition from transparency to non transparency. It helps mitigate the outline effect when exporting images
 from Photoshop and the likes.
 
-.. image:: /img/fixedborder.png
+.. image:: img/fixedborder.png
 
 It's a good idea to leave it on by default, unless specific values are needed.
 

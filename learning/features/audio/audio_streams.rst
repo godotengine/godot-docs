@@ -26,7 +26,7 @@ When using these kind of files, you should choose which one is best for your spe
 
 Keep in mind both .wav and .ogg generally don't contain looping information, so this information must be set on the import options of each:
 
-.. image:: /img/audio_stream_import.png
+.. image:: img/audio_stream_import.png
 
 There are other types of AudioStreams, such as AudioStreamRandomPitch, which takes an existing AudioStream and modulates the pitch every time it's played back randomly (great for some sound effects),
 and more will keep appearing in the future.
@@ -44,7 +44,7 @@ This is a variant of AudioStreamPlayer but emits sound in a 2D positional enviro
 While it's possible to send these effects to specific audio buses, one of the best strategies is to use an Area2D to divert sound to a specific bus. This allows to create buses with different
 reverb or sound qualities and make the emitter will automatically send to them when entering the Area2D shapes.
 
-.. image:: /img/audio_stream_2d_area.png
+.. image:: img/audio_stream_2d_area.png
 
 AudioStreamPlayer3D
 -------------------
@@ -54,7 +54,7 @@ on the chosen audio setup.
 
 Similar to AudioStreamPlayer2D, an Area can divert the sound to an audio bus.
 
-.. image:: /img/audio_stream_3d_area.png
+.. image:: img/audio_stream_3d_area.png
 
 Unlike for 2D, the 3D version of AudioStreamPlayer has a few more advanced options:
 
@@ -64,11 +64,11 @@ Reverb Buses
 Godot allows 3D Audio Streams that enter a specific *Area* to send dry and wet audio to separate buses. This is really useful when you have several reverb configurations for different types of rooms.
 This is done by enabling this type of reverb in the *Reverb Bus* section of *Area* properties:
 
-.. image:: /img/audio_stream_reverb_bus.png
+.. image:: img/audio_stream_reverb_bus.png
 
 At the same time, a special bus layout is created where each area receives the reverb info from each area. Of course, an actual Reverb effect must be created in that bus for anything to happen:
 
-.. image:: /img/audio_stream_reverb_bus2.png
+.. image:: img/audio_stream_reverb_bus2.png
 
 The Area Reverb Bus section has also a specific parameter named "Uniformity". Some types of rooms bounce sounds more than others (like for example, a typical warehouse), so reverberation can be heard
 almost uniformly across the room even though the source is far away. Playing around with this parameter can simulate that effect.
@@ -79,6 +79,6 @@ Doppler
 When the relative velocity between an emitter and listener changes, this is perceived as an increase or decrease of the pitch shift. Godot can track changes in velocities of *AudioStreamPlayer3D* or *Camera*.
 Both have this property, which must be enabled manually:
 
-.. image:: /img/audio_stream_doppler.png
+.. image:: img/audio_stream_doppler.png
 
 Simply enable it by setting it depending on how objects will be moved (whether on regular *process* or *physics_process* step) and the tracking will happen automatically!

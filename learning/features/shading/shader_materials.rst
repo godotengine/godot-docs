@@ -35,11 +35,11 @@ Creating a ShaderMaterial
 Create a new ShaderMaterial in some object of your choice. Go to the
 "Material" property and create a ShaderMaterial.
 
-.. image:: /img/shader_material_create.png
+.. image:: img/shader_material_create.png
 
 Edit the newly created shader, and the shader editor will open:
 
-.. image:: /img/shader_material_editor.png
+.. image:: img/shader_material_editor.png
 
 Converting to ShaderMaterial
 ----------------------------
@@ -48,7 +48,7 @@ It is possible to convert from SpatialMaterial, CanvasItemMaterial and
 ParticlesMaterial to ShaderMaterial. Just go to the material properties
 and enable the convert option.
 
-.. image:: /img/shader_material_convert.png
+.. image:: img/shader_material_convert.png
 
 
 

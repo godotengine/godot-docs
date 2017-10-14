@@ -163,7 +163,7 @@ However, if you are writing your custom modules or custom C++ code, you
 might instead want to configure your APKs as custom export templates
 here:
 
-.. image:: /img/andtemplates.png
+.. image:: img/andtemplates.png
 
 You don't even need to copy them, you can just reference the resulting
 file in the ``bin\`` directory of your Godot source folder, so that the

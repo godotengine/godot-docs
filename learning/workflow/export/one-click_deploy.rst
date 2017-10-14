@@ -28,6 +28,6 @@ Steps for one-click deploy
 #. Connect the device..
 #. And voila!
 
-.. image:: /img/oneclick.png
+.. image:: img/oneclick.png
 
 Click once.. and deploy!

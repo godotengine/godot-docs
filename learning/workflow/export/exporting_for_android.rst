@@ -48,11 +48,11 @@ Enter the Editor Settings screen. This screens contains the editor
 settings for the user account in the computer (It's independent from the
 project).
 
-.. image:: /img/editorsettings.png
+.. image:: img/editorsettings.png
 
 Scroll down to the section where the Android settings are located:
 
-.. image:: /img/androidsdk.png
+.. image:: img/androidsdk.png
 
 In that screen, the path to 3 files needs to be set:
 

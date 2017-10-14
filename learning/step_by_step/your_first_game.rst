@@ -19,7 +19,7 @@ The game is called *"Dodge the Creeps"*. Your character must move and
 avoid the enemies for as long as possible. Here is a preview of the
 final result:
 
-.. image:: /img/dodge_preview.gif
+.. image:: img/dodge_preview.gif
 
 **Why 2D?** 
     3D games are much more complex than 2D ones. You should stick to 2D 
@@ -51,7 +51,7 @@ game, you can save your scenes and scripts in the root folder, which is
 referred to as ``res://``.  You can see your project folders in the Filesystem 
 Dock in the upper left corner:
 
-.. image:: /img/filesystem_dock.png
+.. image:: img/filesystem_dock.png
 
 Player Scene
 ------------
@@ -66,7 +66,7 @@ Node Structure
 To begin, click the "Add/Create a New Node" button and add an :ref:`Area2D <class_Area2D>`
 node to the scene.
 
-.. image:: /img/add_node.png
+.. image:: img/add_node.png
 
 With ``Area2D`` we can detect other objects that overlap or run into the player. 
 Change its name to ``Player``. This is the scene's "root" or top-level node. 
@@ -90,7 +90,7 @@ list of the animation(s) it can display. To create one, find the
 "New SpriteFrames". Next, in the same location, click
 ``<SpriteFrames>`` to open the "SpriteFrames" panel:
 
-.. image:: /img/spriteframes_panel.png
+.. image:: img/spriteframes_panel.png
 
 
 On the left is a list of animations. Click the "default" one and rename
@@ -98,7 +98,7 @@ it to "right". Then click the "Add" button to create a second animation
 named "up". Drag the two images for each animation into "Animation
 Frames" side of the panel:
 
-.. image:: /img/spriteframes_panel2.png
+.. image:: img/spriteframes_panel2.png
 
 
 Finally, add a :ref:`CollisionShape2D <class_CollisionShape2D>` as a child 
@@ -107,14 +107,14 @@ bounds of its collision area.  For this character, a ``CapsuleShape2D``
 gives the best fit, so next to "Shape" in the Inspector, click 
 "<null>"" -> "New CapsuleShape2D".  Resize the shape to cover the sprite:
 
-.. image:: /img/player_coll_shape.png
+.. image:: img/player_coll_shape.png
 
 .. warning:: Remember not to scale the shape's outline! Only use the
              size handles (red) to adjust the shape!
 
 When you're finished, your ``Player`` scene should look like this:
 
-.. image:: /img/player_scene_nodes.png
+.. image:: img/player_scene_nodes.png
 
 Moving the Player
 ~~~~~~~~~~~~~~~~~
@@ -123,12 +123,12 @@ Now we need to add some functionality that we can't get from a built-in
 node, so we'll add a script. Click the ``Player`` node and click the
 "Add Script" button:
 
-.. image:: /img/add_script_button.png
+.. image:: img/add_script_button.png
 
 In the script settings window, you can leave the default settings, just
 click "Create": 
 
-.. image:: /img/attach_node_window.png
+.. image:: img/attach_node_window.png
 
 .. note:: If this is your first time encountering GDScript please read
           :ref:`doc_scripting` first.
@@ -261,7 +261,7 @@ emit (send out) when it collides with an enemy. We will use the Area2D to
 detect the collision. Select the ``Player`` node and click the "Node" tab 
 next to the Inspector to see the list of signals the player can emit:
 
-.. image:: /img/player_signals.png
+.. image:: img/player_signals.png
 
 Notice our custom "hit" signal is there as well! Since our enemies are
 going to be ``RigidBody2D`` nodes, we want the
@@ -338,14 +338,14 @@ that the mob will not fall downward). In addition, under the
 ``PhysicsBody2D`` section in the Inspector, click the ``Mask`` property and
 uncheck the first box. This will ensure that the mobs do not collide with each other.
 
-.. image:: /img/set_collision_mask.png
+.. image:: img/set_collision_mask.png
 
 Set up the :ref:`AnimatedSprite <class_AnimatedSprite>` like you did for the player.
 This time, we have 3 animations: "fly", "swim", and "walk". Set the ``Playing``
 property in the Inspector to "On" and adjust the "Speed (FPS)" setting as shown below.
 We'll select one of these randomly so that the mobs will have some variety.
 
-.. image:: /img/mob_animations.gif
+.. image:: img/mob_animations.gif
 
 As in the ``Player`` scene, add a ``CapsuleShape2D`` for the
 collision and then save the scene.
@@ -400,7 +400,7 @@ Now it's time to bring it all together. Create a new scene and add a
 :ref:`Node <class_Node>` named ``Main``. Click the "Instance" button and select your
 saved ``Player.tscn``.
 
-.. image:: /img/instance_scene.png
+.. image:: img/instance_scene.png
 
 .. note:: See :ref:`doc_instancing` to learn more about instancing.
 
@@ -430,13 +430,13 @@ random location on the edge of the screen. Add a :ref:`Path2D <class_Path2D>` na
 ``MobPath`` as a child of ``Main``. When you select the ``Path2D`` node
 you will see some new buttons appear at the top of the editor:
 
-.. image:: /img/path2d_buttons.png
+.. image:: img/path2d_buttons.png
 
 Select the middle one ("Add Point") and draw the path by clicking to add
 the points shown. To have the points snap to the grid, make sure "Use Snap" is
 checked. This option can be found under the "Edit" button to the left of the Path2D buttons.
 
-.. image:: /img/draw_path2d.png
+.. image:: img/draw_path2d.png
 
 .. important:: Draw the path in *clockwise* order, or your mobs will spawn 
                pointing *outwards* instead of *inwards*!
@@ -466,7 +466,7 @@ instance.
 Using ``export`` lets you set the value of a variable in the Inspector
 like so:
 
-.. image:: /img/load_mob_scene.png
+.. image:: img/load_mob_scene.png
 
 Click on "<null>"" and choose "Load", then select ``Mob.tscn``.
 
@@ -571,7 +571,7 @@ Create the following children of the ``HUD`` node:
 Arrange the nodes as shown below. Click the "Anchor" button to
 set a Control node's anchor:
 
-.. image:: /img/ui_anchor.png
+.. image:: img/ui_anchor.png
 
 You can drag the nodes to place them manually, or for more precise
 placement, use the following settings:
@@ -622,13 +622,13 @@ the three ``Control`` nodes:
 
 1. Under "Custom Fonts", choose "New DynamicFont" 
 
-.. image:: /img/custom_font1.png
+.. image:: img/custom_font1.png
 
 2. Click on the "DynamicFont" you just added, and under "Font Data",
    choose "Load" and select the "Xolonium-Regular.ttf" file. You must
    also set the font's ``Size``. A setting of ``64`` works well. 
    
-.. image:: /img/custom_font2.png
+.. image:: img/custom_font2.png
 
 Now add this script to the ``HUD``:
 
@@ -691,7 +691,7 @@ Now that we're done creating the ``HUD`` scene, save it and go back to ``Main``.
 Instance the ``HUD`` scene in ``Main`` like you did the ``Player`` scene, and place it at the
 bottom of tree. The full tree should look like this, so make sure you didn't miss anything:
 
-.. image:: /img/completed_main_scene.png
+.. image:: img/completed_main_scene.png
 
 Now we need to connect the ``HUD`` functionality to our ``Main`` script.
 This requires a few additions to the ``Main`` scene:
@@ -770,12 +770,12 @@ There are a very large number of properties to choose from when
 configuring particles. Feel free to experiment and create different
 effects. For the effect in the example, use the following settings:
 
-.. image:: /img/particle_trail_settings.png
+.. image:: img/particle_trail_settings.png
    
 You also need to create a ``Material`` by clicking on ``<null>`` and
 then "New ParticlesMaterial". The settings for that are below:
 
-.. image:: /img/particle_trail_settings2.png
+.. image:: img/particle_trail_settings2.png
 
 .. seealso:: See :ref:`Particles2D <class_Particles2D>` for more details on using
              particle effects.

@@ -43,7 +43,7 @@ Audio Buses
 
 Audio buses can be found in the bottom panel of Godot Editor:
 
-.. image:: /img/audio_buses1.png
+.. image:: img/audio_buses1.png
 
 An *Audio Bus* bus (often called "Audio Channels" too) is a device where audio is channeled. Audio data passes through it and can be *modified* and *re-routed*. A VU-Meter (the bars that go up and down when sound is played) can measure the loudness of the sound in Decibel scale.
 
@@ -51,7 +51,7 @@ The leftmost bus is the *Master Bus*. This bus outputs the mix to your speakers 
 The rest of the audio buses are used for *routing*. This means that, after modifying the sound, they must send it to another bus to the left. Routing is always from right to left without exception as this
 avoids creating infinite routing loops!
 
-.. image:: /img/audio_buses2.png
+.. image:: img/audio_buses2.png
 
 In the above image, *Bus 2* is routing its output to *Master* bus.
 
@@ -60,7 +60,7 @@ Playback of Audio to a Bus
 
 To test playback to a bus, create an AudioStreamPlayer node, load an AudioStream and select a target bus for playback:
 
-.. image:: /img/audio_buses3.png
+.. image:: img/audio_buses3.png
 
 Finally toggle the "playing" property to on and sound will flow.
 
@@ -71,7 +71,7 @@ Adding Effects
 
 Audio buses can contain all sorts of effects. These effects modify the sound in one way or another and are applied in order.
 
-.. image:: /img/audio_buses4.png
+.. image:: img/audio_buses4.png
 
 Following is a short description of available effects:
 
@@ -177,7 +177,7 @@ Automatic Bus Disabling
 
 There is no need to disable buses manually when not in use, Godot detects that the bus has been silent for a few seconds and disable it (including all effects).
 
-.. image:: /img/audio_buses5.png
+.. image:: img/audio_buses5.png
 
 Bus Rearrangement
 -----------------

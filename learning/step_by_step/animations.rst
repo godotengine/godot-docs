@@ -19,22 +19,22 @@ Creating the animation
 First of all, add an :ref:`AnimationPlayer <class_AnimationPlayer>`
 node to the scene as a child of "bg" (the root node):
 
-.. image:: /img/animplayer.png
+.. image:: img/animplayer.png
 
 When a node of this type is selected, the animation editor panel will
 appear:
 
-.. image:: /img/animpanel.png
+.. image:: img/animpanel.png
 
 So, it's time to create a new animation! Press the new animation button
 and name the animation "intro".
 
-.. image:: /img/animnew.png
+.. image:: img/animnew.png
 
 After the animation has been created, it's time to edit it, by
 pressing the "edit" button:
 
-.. image:: /img/animedit.png
+.. image:: img/animedit.png
 
 Editing the animation
 ---------------------
@@ -45,14 +45,14 @@ appears above the animation panel. (In Godot 2.x, this button has been
 removed, instead, click on the 'animation' toggle at the bottom right 
 for similar functionality.)
 
-.. image:: /img/animeditor.png
+.. image:: img/animeditor.png
 
 The second and most important, is that the property editor enters
 "animation editing" mode. In this mode, a key icon appears next to
 every property of the property editor. This means that, in Godot, *any
 property of any object* can be animated:
 
-.. image:: /img/propertykeys.png
+.. image:: img/propertykeys.png
 
 Making the logo appear
 ----------------------
@@ -65,33 +65,33 @@ to position: 114,-400.
 
 Once in this position, press the key button next to the property:
 
-.. image:: /img/keypress.png
+.. image:: img/keypress.png
 
 As the track is new, a dialog will appear asking to create it. Confirm
 it!
 
-.. image:: /img/addtrack.png
+.. image:: img/addtrack.png
 
 The keyframe will be added in the animation player editor:
 
-.. image:: /img/keyadded.png
+.. image:: img/keyadded.png
 
 Move the editor cursor to the end, by clicking here:
 
-.. image:: /img/move_cursor.png
+.. image:: img/move_cursor.png
 
 Change the logo position to 114,0 and add a keyframe again. With two
 keyframes, the animation happens.
 
-.. image:: /img/animation.png
+.. image:: img/animation.png
 
 Pressing Play on the animation panel will make the logo descend. To test
 it by running the scene, the autoplay button can tag the animation to
 start automatically when the scene starts:
 
-.. image:: /img/autoplay.png
+.. image:: img/autoplay.png
 
 And finally, when running the scene, the animation should look like
 this:
 
-.. image:: /img/out.gif
+.. image:: img/out.gif

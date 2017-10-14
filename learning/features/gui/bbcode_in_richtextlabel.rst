@@ -18,7 +18,7 @@ Setting up
 For RichTextLabel to work properly, it must be set up. This means loading
 the intended fonts in the relevant properties:
 
-.. image:: /img/rtl_setup.png
+.. image:: img/rtl_setup.png
 
 Reference
 ---------

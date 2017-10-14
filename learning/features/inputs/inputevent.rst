@@ -28,7 +28,7 @@ it to the viewports, starting by the "root" :ref:`Viewport <class_Viewport>` (th
 node of the scene tree). Viewport does quite a lot of stuff with the
 received input, in order:
 
-.. image:: /img/input_event_flow.png
+.. image:: img/input_event_flow.png
 
 1. First of all, the standard _input function
    will be called in any node with input processing enabled (enable with

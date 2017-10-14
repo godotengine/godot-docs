@@ -43,7 +43,7 @@ same, the same amount of shadow pixels cover a bigger area, resulting in
 blocky shadows. Multiple techniques exist to deal with resolution
 problems, but the most common one is PSSM (Parallel Split Shadow Maps):
 
-.. image:: /img/shadow_directional.png
+.. image:: img/shadow_directional.png
 
 These techniques divide the view in 2 or 4 sections, and a shadow is
 rendered for each. This way, close objects can use larger shadow while
@@ -73,7 +73,7 @@ look tight. The second option is to simply not use a shadow map, and use
 a shadow cubemap. This is faster, but requires six passes to render all
 directions and is not supported on the current (GLES2) renderer.
 
-.. image:: /img/shadow_omni.png
+.. image:: img/shadow_omni.png
 
 As few considerations when using DPSM shadow maps:
 
@@ -115,7 +115,7 @@ just takes a while of tweaking. Let's go step by step.
 First step is to turn on the shadows, let's assume that both Z-Offset
 and Z-Slope-Scale are at 0. You will be greeted by this:
 
-.. image:: /img/shadow_offset_1.png
+.. image:: img/shadow_offset_1.png
 
 Holy crap, the shadow is all over the place and extremely glitchy! This
 happens because the shadow is fighting with the same geometry that is
@@ -124,13 +124,13 @@ fight, you realize you need to make peace between the shadow and the
 geometry, so you push back the shadow a little by increasing the shadow
 Z-Offset. This improves things a lot:
 
-.. image:: /img/shadow_offset_2.png
+.. image:: img/shadow_offset_2.png
 
 But it's not quite perfect, self shadowing did not disappear completely.
 So close to perfection but still not there.. so in a turn of greed you
 increase the Z-Offset even more!
 
-.. image:: /img/shadow_offset_3.png
+.. image:: img/shadow_offset_3.png
 
 And it gets rid of those self-shadowings! Hooray! Except something is
 wrong.. oh, right. Being pushed back too much, the shadows start
@@ -140,7 +140,7 @@ back to the previous Z-offset.
 This is when Z-Slope-Scale comes to save the day. This setting makes
 shadow caster objects thinner, so the borders don't self-shadow:
 
-.. image:: /img/shadow_offset_4.png
+.. image:: img/shadow_offset_4.png
 
 Aha! Finally something that looks acceptable. It's perfectly acceptable
 and you can perfectly ship a game that looks like this (imagine you are
@@ -149,7 +149,7 @@ modelling). There may be very tiny bits left of self shadowing that no
 one cares about, so your inextinguishable greed kicks in again and you
 raise the Z-Slope Scale again:
 
-.. image:: /img/shadow_offset_5.png
+.. image:: img/shadow_offset_5.png
 
 Well, that was too much, shadows casted are way too thin and don't look
 good anymore. Well, though luck, the previous setting was good anyway,
@@ -177,7 +177,7 @@ blocks, but they are still blocks.
 Godot offers a few ways to filter them (shadow in the example is
 low-resolution on purpose!):
 
-.. image:: /img/shadow_filter_options.png
+.. image:: img/shadow_filter_options.png
 
 PCF5 and PCF13 are simple texture-space filtering. Will make the texture
 a little more acceptable but still needs considerable resolution for it

@@ -118,7 +118,7 @@ The problem with this is that the same character has a collider, so the
 ray can never leave the origin (it will keep hitting its own collider),
 as evidenced in the following image.
 
-.. image:: /img/raycast_falsepositive.png
+.. image:: img/raycast_falsepositive.png
 
 To avoid self-intersection, the intersect_ray() function can take an
 optional third parameter which is an array of exceptions. This is an
@@ -150,7 +150,7 @@ orthogonal. Because of this, both the ray origin and direction must be
 obtained. (origin changes in orthogonal, while direction changes in
 perspective):
 
-.. image:: /img/raycast_projection.png
+.. image:: img/raycast_projection.png
 
 To obtain it using a camera, the following code can be used:
 

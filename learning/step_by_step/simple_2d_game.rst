@@ -27,7 +27,7 @@ resolution. This can be configured in the Project Settings (see
 :ref:`doc_scenes_and_nodes-configuring_the_project`) under the Scene/Project
 settings menu. The default background color should be set to black:
 
-.. image:: /img/clearcolor.png
+.. image:: img/clearcolor.png
 
 Create a :ref:`class_Node2D` node for the project root. Node2D is the
 base type for the 2D engine. After this, add some sprites
@@ -35,7 +35,7 @@ base type for the 2D engine. After this, add some sprites
 and ball. You can set a custom name for each node, and set the texture
 for each sprite in the Inspector. 
 
-.. image:: /img/pong_nodes.png
+.. image:: img/pong_nodes.png
 
 Set nodes positions:
  - "left" node: (67, 183)
@@ -47,7 +47,7 @@ Set nodes positions:
 The final scene layout should look similar to this (note: the ball is in
 the middle!):
 
-.. image:: /img/pong_layout.png
+.. image:: img/pong_layout.png
 
 
 Save the scene as "pong.tscn" and set it as the main scene in the
@@ -79,7 +79,7 @@ In this tab, add 4 actions:
 Assign the keys that you desire. The A/Z keys (for the left player) and
 the Up/Down keys (for the right player) should work in most cases.
 
-.. image:: /img/inputmap.png
+.. image:: img/inputmap.png
 
 Script
 ~~~~~~

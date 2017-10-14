@@ -61,7 +61,7 @@ import a scene with:
 * External scenes: Save the root nodes of the imported scenes each as a separate scene.
 * Single Scene: A single scene file with everything built in.
 
-.. image:: /img/scene_import1.png
+.. image:: img/scene_import1.png
 
 As different developers have different needs, this import process is highly customizable.
 
@@ -70,7 +70,7 @@ Import Options
 
 The importer has several options, which will be discussed below:
 
-.. image:: /img/scene_import2.png
+.. image:: img/scene_import2.png
 
 Nodes:
 ~~~~~~~
@@ -184,7 +184,7 @@ Godot provides many options regarding how animation data is dealt with. Some exp
 3DS Max or Maya, need many animations put into the same timeline or, at worst, put
 each animation in a separate file.
 
-.. image:: /img/scene_import3.png
+.. image:: img/scene_import3.png
 
 Import of animations is enabled by default.
 
@@ -229,7 +229,7 @@ if the source asset changes (source .dae,.gltf,.obj file re-exported from 3D mod
 It is possible, however, to do local modifications by using *Scene Inheritance*. Just try to open the imported scene and the
 following dialog will appear:
 
-.. image:: /img/scene_import4.png
+.. image:: img/scene_import4.png
 
 In inherited scenes, the only limitations for modifications are: 
 * Nodes can't be removed (but can be added anywhere).
@@ -273,7 +273,7 @@ On import it will create a :ref:`class_staticbody` with
 collision node as a child. Collision node will have one of predefined shapes,
 depending on the Blender's empty draw type:
 
-.. image:: /img/3dimp_BlenderEmptyDrawTypes.png
+.. image:: img/3dimp_BlenderEmptyDrawTypes.png
 
 -  Single arrow will create :ref:`class_rayshape`
 -  Cube will create :ref:`class_boxshape`

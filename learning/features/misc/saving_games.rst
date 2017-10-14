@@ -24,7 +24,7 @@ We will start by adding objects we wish to save to the "Persist" group.
 As in the :ref:`doc_scripting_continued` tutorial, we can do this through
 the GUI or through script. Let's add the relevant nodes using the GUI:
 
-.. image:: /img/groups.png
+.. image:: img/groups.png
 
 Once this is done when we need to save the game we can get all objects
 to save them and then tell them all to save with this script:

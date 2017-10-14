@@ -11,7 +11,7 @@ are, as they name implies, rectangles where the world is drawn. They
 have three main uses, but can flexibly adapted to a lot more. All this
 is done via the :ref:`Viewport <class_Viewport>` node.
 
-.. image:: /img/viewportnode.png
+.. image:: img/viewportnode.png
 
 The main uses in question are:
 
@@ -149,7 +149,7 @@ display anything it has inside. The layout is something like this:
 
 The viewport will cover the area of its parent control completely.
 
-.. image:: /img/subviewport.png
+.. image:: img/subviewport.png
 
 Render target
 -------------

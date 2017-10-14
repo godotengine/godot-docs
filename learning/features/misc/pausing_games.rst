@@ -44,7 +44,7 @@ Before enabling pause, make sure that nodes that must keep working
 during pause are white-listed. This is done by editing the "Pause Mode"
 property in a node:
 
-.. image:: /img/pausemode.png
+.. image:: img/pausemode.png
 
 By default all nodes have this property in the "Inherit" state. This
 means, that they will only process (or not) depending on what this same
@@ -69,7 +69,7 @@ Example
 An example of this is creating a popup or panel with controls inside,
 and set its pause mode to "Process" then just hide it:
 
-.. image:: /img/pause_popup.png
+.. image:: img/pause_popup.png
 
 Just by setting the root of the pause popup to "Process", all children
 and grandchildren will inherit that state. This way, this branch of the
