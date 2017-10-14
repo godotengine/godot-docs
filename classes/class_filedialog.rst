@@ -61,12 +61,15 @@ Signals
 -------
 
 -  **dir_selected**  **(** :ref:`String<class_string>` dir  **)**
+
 Event emitted when the user selects a directory.
 
 -  **file_selected**  **(** :ref:`String<class_string>` path  **)**
+
 Event emitted when the user selects a file (double clicks it or presses the OK button).
 
 -  **files_selected**  **(** :ref:`PoolStringArray<class_poolstringarray>` paths  **)**
+
 Event emitted when the user selects multiple files.
 
 
@@ -87,8 +90,8 @@ Numeric Constants
 - **MODE_OPEN_ANY** = **3** --- The dialog allows the selection of a file or a directory.
 - **MODE_SAVE_FILE** = **4** --- The dialog will warn when a file exists.
 - **ACCESS_RESOURCES** = **0** --- The dialog allows the selection of file and directory.
-- **ACCESS_USERDATA** = **1** --- The dialog allows ascess files under :ref:`Resource<class_resource>` path(res://) .
-- **ACCESS_FILESYSTEM** = **2** --- The dialog allows ascess files in whole file system.
+- **ACCESS_USERDATA** = **1** --- The dialog allows access files under :ref:`Resource<class_resource>` path(res://) .
+- **ACCESS_FILESYSTEM** = **2** --- The dialog allows access files in whole file system.
 
 Description
 -----------
@@ -160,7 +163,7 @@ Invalidate and update the current dialog content list.
 
 - :ref:`bool<class_bool>`  **is_showing_hidden_files**  **(** **)** const
 
-Return true if the diaog allows show hidden files.
+Return true if the dialog allows show hidden files.
 
 .. _class_FileDialog_set_access:
 

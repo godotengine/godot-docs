@@ -15,7 +15,7 @@ Differences
 +-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 |                   | Unity                                                                             | Godot                                                                                                          |
 +===================+===================================================================================+================================================================================================================+
-| License           | Proprietary, closed, free license with revenue caps and usage restrictions        | MIT License,  free and fully open source without any restriction                                                |
+| License           | Proprietary, closed, free license with revenue caps and usage restrictions        | MIT license, free and fully open source without any restriction                                                |
 +-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 | OS (editor)       | Windows, OSX, Linux (unofficial and unsupported)                                  | Windows, X11 (Linux, \*BSD), Haiku, OSX                                                                        |
 +-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
@@ -23,7 +23,7 @@ Differences
 |                   | | Mobile: Android, iOS, Windows Phone, Tizen,                                     | | Mobile: Android, iOS, Blackberry (deprecated)                                                                |
 |                   | | Web: WebGL                                                                      | | Web: WebGL, HTML5 (via emscripten, broken)                                                                   |
 |                   | | Consoles: PS4, PS Vita, XBox One, XBox 360, WiiU, 3DS                           |                                                                                                                |
-|                   | | VR: Oculus Rift, SteamVR, Google Cardboard, Playstation VR, Gear VR, HoloLens  |                                                                                                                |
+|                   | | VR: Oculus Rift, SteamVR, Google Cardboard, Playstation VR, Gear VR, HoloLens   |                                                                                                                |
 |                   | | TV: AndroidTV, Samsung SMARTTV, tvOS                                            |                                                                                                                |
 +-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 | Scene system      | | Component/Scene (GameObject > Component)                                        | Scene tree and nodes, allowing scenes to be nested and/or inherit other scenes                                 |
@@ -177,11 +177,9 @@ You can control nodes by accessing them using a script, and call functions (buil
 But there's more! Certain nodes throw signals when certain actions happen. You can connect these signals to call a specific function when they happen. Note that you can define your own signals and send them whenever you want. This feature is documented `here <gdscript.html#signals>`_.
 
 
-
 Using Godot in C++
 ------------------
 
 Just for your information, Godot also allows you to develop your project directly in C++ by using its API, which is not possible with Unity at the moment. As an example, you can consider Godot Engine's editor as a "game" written in C++ using Godot API. 
 
 If you are interested in using Godot in C++, you may want to start reading the `Developing in C++ <_developing.html>`_ page.
-

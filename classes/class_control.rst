@@ -223,30 +223,39 @@ Signals
 -------
 
 -  **focus_entered**  **(** **)**
+
 Emitted when the node gains keyboard focus.
 
 -  **focus_exited**  **(** **)**
+
 Emitted when the node loses keyboard focus.
 
 -  **gui_input**  **(** :ref:`Object<class_object>` ev  **)**
+
 Emitted when the node receives an :ref:`InputEvent<class_inputevent>`.
 
 -  **minimum_size_changed**  **(** **)**
+
 Emitted when the node's minimum size changes.
 
 -  **modal_closed**  **(** **)**
+
 Emitted when a modal ``Control`` is closed. See :ref:`show_modal<class_Control_show_modal>`.
 
 -  **mouse_entered**  **(** **)**
+
 Emitted when the mouse enters the control's ``Rect`` area.
 
 -  **mouse_exited**  **(** **)**
+
 Emitted when the mouse leaves the control's ``Rect`` area.
 
 -  **resized**  **(** **)**
+
 Emitted when the control changes size.
 
 -  **size_flags_changed**  **(** **)**
+
 Emitted when one of the size flags changes. See member size_flags_horizontal and member size_flags_vertical.
 
 

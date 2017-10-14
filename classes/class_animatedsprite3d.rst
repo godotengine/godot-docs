@@ -43,6 +43,7 @@ Signals
 -------
 
 -  **frame_changed**  **(** **)**
+
 Emitted when member frame changed.
 
 

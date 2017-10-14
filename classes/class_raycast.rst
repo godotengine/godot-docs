@@ -63,7 +63,7 @@ Member Variables
 ----------------
 
 - :ref:`Vector3<class_vector3>` **cast_to** - The ray's destination point, relative to the RayCast's [code]position[/code].
-- :ref:`int<class_int>` **collision_layer** - The RayCast's collison layer(s). Only bodies in the same collision layer(s) will be detected.
+- :ref:`int<class_int>` **collision_layer** - The RayCast's collision layer(s). Only bodies in the same collision layer(s) will be detected.
 - :ref:`bool<class_bool>` **enabled** - If [code]true[/code], collisions will be reported. Default value: [code]false[/code].
 - :ref:`int<class_int>` **type_mask** - Object types to detect using a logical sum (OR operation) of type constants defined in [Physics2DDirectSpaceState].
 			Example:

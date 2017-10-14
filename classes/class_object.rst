@@ -7,7 +7,7 @@
 Object
 ======
 
-**Inherited By:** :ref:`Physics2DServer<class_physics2dserver>`, :ref:`MainLoop<class_mainloop>`, :ref:`Input<class_input>`, :ref:`Node<class_node>`, :ref:`Geometry<class_geometry>`, :ref:`ARVRPositionalTracker<class_arvrpositionaltracker>`, :ref:`TreeItem<class_treeitem>`, :ref:`PhysicsDirectBodyState<class_physicsdirectbodystate>`, :ref:`ARVRServer<class_arvrserver>`, :ref:`PhysicsDirectSpaceState<class_physicsdirectspacestate>`, :ref:`Reference<class_reference>`, :ref:`Engine<class_engine>`, :ref:`Physics2DDirectSpaceState<class_physics2ddirectspacestate>`, :ref:`InputMap<class_inputmap>`, :ref:`UndoRedo<class_undoredo>`, :ref:`PhysicsServer<class_physicsserver>`, :ref:`ProjectSettings<class_projectsettings>`, :ref:`ResourceSaver<class_resourcesaver>`, :ref:`Performance<class_performance>`, :ref:`ResourceLoader<class_resourceloader>`, :ref:`JSON<class_json>`, :ref:`AudioServer<class_audioserver>`, :ref:`IP<class_ip>`, :ref:`ClassDB<class_classdb>`, :ref:`VisualServer<class_visualserver>`, :ref:`OS<class_os>`, :ref:`EditorSelection<class_editorselection>`, :ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>`, :ref:`TranslationServer<class_translationserver>`, :ref:`EditorFileSystemDirectory<class_editorfilesystemdirectory>`
+**Inherited By:** :ref:`Physics2DServer<class_physics2dserver>`, :ref:`MainLoop<class_mainloop>`, :ref:`Input<class_input>`, :ref:`Node<class_node>`, :ref:`Geometry<class_geometry>`, :ref:`ARVRPositionalTracker<class_arvrpositionaltracker>`, :ref:`TreeItem<class_treeitem>`, :ref:`PhysicsDirectBodyState<class_physicsdirectbodystate>`, :ref:`ARVRServer<class_arvrserver>`, :ref:`PhysicsDirectSpaceState<class_physicsdirectspacestate>`, :ref:`Reference<class_reference>`, :ref:`Engine<class_engine>`, :ref:`Physics2DDirectSpaceState<class_physics2ddirectspacestate>`, :ref:`InputMap<class_inputmap>`, :ref:`UndoRedo<class_undoredo>`, :ref:`PhysicsServer<class_physicsserver>`, :ref:`ProjectSettings<class_projectsettings>`, :ref:`ResourceSaver<class_resourcesaver>`, :ref:`Performance<class_performance>`, :ref:`ResourceLoader<class_resourceloader>`, :ref:`JSON<class_json>`, :ref:`AudioServer<class_audioserver>`, :ref:`IP<class_ip>`, :ref:`ClassDB<class_classdb>`, :ref:`VisualServer<class_visualserver>`, :ref:`OS<class_os>`, :ref:`GodotSharp<class_godotsharp>`, :ref:`EditorSelection<class_editorselection>`, :ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>`, :ref:`TranslationServer<class_translationserver>`, :ref:`EditorFileSystemDirectory<class_editorfilesystemdirectory>`
 
 **Category:** Core
 
@@ -106,6 +106,7 @@ Signals
 
 -  **script_changed**  **(** **)**
 
+
 Numeric Constants
 -----------------
 
@@ -122,7 +123,7 @@ Base class for all non built-in types. Everything not a built-in type starts the
 
 Objects do not manage memory, if inheriting from one the object will most likely have to be deleted manually (call the :ref:`free<class_Object_free>` function from the script or delete from C++).
 
-Some derivates add memory management, such as :ref:`Reference<class_reference>` (which keeps a reference count and deletes itself automatically when no longer referenced) and :ref:`Node<class_node>`, which deletes the children tree when deleted.
+Some derivatives add memory management, such as :ref:`Reference<class_reference>` (which keeps a reference count and deletes itself automatically when no longer referenced) and :ref:`Node<class_node>`, which deletes the children tree when deleted.
 
 Objects export properties, which are mainly useful for storage and editing, but not really so much in programming. Properties are exported in :ref:`_get_property_list<class_Object__get_property_list>` and handled in :ref:`_get<class_Object__get>` and :ref:`_set<class_Object__set>`. However, scripting languages and C++ have simpler means to export them.
 
@@ -219,7 +220,7 @@ Return the class of the object as a string.
 
 - :ref:`Array<class_array>`  **get_incoming_connections**  **(** **)** const
 
-Returns an :ref:`Array<class_array>` of dictionaries with informations about signals that are connected to this object.
+Returns an :ref:`Array<class_array>` of dictionaries with information about signals that are connected to this object.
 
 Inside each :ref:`Dictionary<class_dictionary>` there are 3 fields:
 

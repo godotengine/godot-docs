@@ -14,7 +14,7 @@ BitmapFont
 Brief Description
 -----------------
 
-
+Renders text using ``\*.fnt`` fonts.
 
 Member Functions
 ----------------
@@ -52,13 +52,18 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`float<class_float>` **ascent**
-- :ref:`PoolIntArray<class_poolintarray>` **chars**
-- :ref:`bool<class_bool>` **distance_field**
-- :ref:`BitmapFont<class_bitmapfont>` **fallback**
-- :ref:`float<class_float>` **height**
-- :ref:`PoolIntArray<class_poolintarray>` **kernings**
-- :ref:`Array<class_array>` **textures**
+- :ref:`float<class_float>` **ascent** - Ascent (number of pixels above the baseline).
+- :ref:`PoolIntArray<class_poolintarray>` **chars** - The characters in the BitmapFont.
+- :ref:`bool<class_bool>` **distance_field** - If [code]true[/code] distance field hint is enabled.
+- :ref:`BitmapFont<class_bitmapfont>` **fallback** - The fallback font.
+- :ref:`float<class_float>` **height** - Total font height (ascent plus descent) in pixels.
+- :ref:`PoolIntArray<class_poolintarray>` **kernings** - The font's kernings as [PoolIntArray].
+- :ref:`Array<class_array>` **textures** - The font's [Texture]\ s.
+
+Description
+-----------
+
+Renders text using ``\*.fnt`` fonts containing texture atlases. Supports distance fields. For using vector font files like TTF directly, see :ref:`DynamicFont<class_dynamicfont>`.
 
 Member Function Description
 ---------------------------
@@ -67,72 +72,84 @@ Member Function Description
 
 - void  **add_char**  **(** :ref:`int<class_int>` character, :ref:`int<class_int>` texture, :ref:`Rect2<class_rect2>` rect, :ref:`Vector2<class_vector2>` align=Vector2( 0, 0 ), :ref:`float<class_float>` advance=-1  **)**
 
-Add a character to the font, where *character* is the unicode value, *texture* is the texture index, *rect* is the region in the texture (in pixels!), *align* is the (optional) alignment for the character and *advance* is the (optional) advance.
+Adds a character to the font, where ``character`` is the unicode value, ``texture`` is the texture index, ``rect`` is the region in the texture (in pixels!), ``align`` is the (optional) alignment for the character and ``advance`` is the (optional) advance.
 
 .. _class_BitmapFont_add_kerning_pair:
 
 - void  **add_kerning_pair**  **(** :ref:`int<class_int>` char_a, :ref:`int<class_int>` char_b, :ref:`int<class_int>` kerning  **)**
 
-Add a kerning pair to the :ref:`BitmapFont<class_bitmapfont>` as a difference. Kerning pairs are special cases where a typeface advance is determined by the next character.
+Adds a kerning pair to the :ref:`BitmapFont<class_bitmapfont>` as a difference. Kerning pairs are special cases where a typeface advance is determined by the next character.
 
 .. _class_BitmapFont_add_texture:
 
 - void  **add_texture**  **(** :ref:`Texture<class_texture>` texture  **)**
 
-Add a texture to the :ref:`BitmapFont<class_bitmapfont>`.
+Adds a texture to the :ref:`BitmapFont<class_bitmapfont>`.
 
 .. _class_BitmapFont_clear:
 
 - void  **clear**  **(** **)**
 
-Clear all the font data.
+Clears all the font data and settings.
 
 .. _class_BitmapFont_create_from_fnt:
 
 - :ref:`int<class_int>`  **create_from_fnt**  **(** :ref:`String<class_string>` path  **)**
 
+Creates a BitmapFont from the ``\*.fnt`` file at ``path``.
+
 .. _class_BitmapFont_get_char_size:
 
 - :ref:`Vector2<class_vector2>`  **get_char_size**  **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0  **)** const
 
-Return the size of a character, optionally taking kerning into account if the next character is provided.
+Returns the size of a character, optionally taking kerning into account if the next character is provided.
 
 .. _class_BitmapFont_get_fallback:
 
 - :ref:`BitmapFont<class_bitmapfont>`  **get_fallback**  **(** **)** const
 
+Returns the fallback BitmapFont.
+
 .. _class_BitmapFont_get_kerning_pair:
 
 - :ref:`int<class_int>`  **get_kerning_pair**  **(** :ref:`int<class_int>` char_a, :ref:`int<class_int>` char_b  **)** const
 
-Return a kerning pair as a difference.
+Returns a kerning pair as a difference.
 
 .. _class_BitmapFont_get_texture:
 
 - :ref:`Texture<class_texture>`  **get_texture**  **(** :ref:`int<class_int>` idx  **)** const
 
+Returns the font atlas texture at index ``idx``.
+
 .. _class_BitmapFont_get_texture_count:
 
 - :ref:`int<class_int>`  **get_texture_count**  **(** **)** const
+
+Returns the number of textures in the BitmapFont atlas.
 
 .. _class_BitmapFont_set_ascent:
 
 - void  **set_ascent**  **(** :ref:`float<class_float>` px  **)**
 
-Set the font ascent (number of pixels above the baseline).
+Sets the font ascent (number of pixels above the baseline).
 
 .. _class_BitmapFont_set_distance_field_hint:
 
 - void  **set_distance_field_hint**  **(** :ref:`bool<class_bool>` enable  **)**
 
+If ``true`` distance field hint is enabled.
+
 .. _class_BitmapFont_set_fallback:
 
 - void  **set_fallback**  **(** :ref:`BitmapFont<class_bitmapfont>` fallback  **)**
+
+Sets the fallback BitmapFont.
 
 .. _class_BitmapFont_set_height:
 
 - void  **set_height**  **(** :ref:`float<class_float>` px  **)**
 
-Set the total font height (ascent plus descent) in pixels.
+Sets the total font height (ascent plus descent) in pixels.
 
 

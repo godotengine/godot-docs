@@ -199,12 +199,15 @@ Signals
 -------
 
 -  **renamed**  **(** **)**
+
 Emitted when the node is renamed.
 
 -  **tree_entered**  **(** **)**
+
 Emitted when Node enters the tree.
 
 -  **tree_exited**  **(** **)**
+
 Emitted when Node exits the tree.
 
 

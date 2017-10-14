@@ -123,6 +123,7 @@ Signals
 -------
 
 -  **settings_changed**  **(** **)**
+
 Emitted when a tilemap setting has changed.
 
 

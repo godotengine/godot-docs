@@ -65,8 +65,11 @@ Signals
 -------
 
 -  **dir_selected**  **(** :ref:`String<class_string>` dir  **)**
+
 -  **file_selected**  **(** :ref:`String<class_string>` path  **)**
+
 -  **files_selected**  **(** :ref:`PoolStringArray<class_poolstringarray>` paths  **)**
+
 
 Numeric Constants
 -----------------

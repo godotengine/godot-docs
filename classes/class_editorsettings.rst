@@ -54,6 +54,7 @@ Signals
 
 -  **settings_changed**  **(** **)**
 
+
 Description
 -----------
 

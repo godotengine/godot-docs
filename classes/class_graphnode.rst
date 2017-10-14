@@ -87,18 +87,23 @@ Signals
 -------
 
 -  **close_request**  **(** **)**
+
 Signal sent on closing the GraphNode.
 
 -  **dragged**  **(** :ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to  **)**
+
 Signal sent when the GraphNode is dragged.
 
 -  **offset_changed**  **(** **)**
+
 Signal sent when the GraphNode is moved.
 
 -  **raise_request**  **(** **)**
+
 Signal sent when the GraphNode is requested to be displayed over other ones. Happens on focusing (clicking into) the GraphNode.
 
 -  **resize_request**  **(** :ref:`Vector2<class_vector2>` new_minsize  **)**
+
 
 Member Variables
 ----------------

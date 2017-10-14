@@ -97,12 +97,15 @@ Signals
 -------
 
 -  **main_screen_changed**  **(** :ref:`String<class_string>` screen_name  **)**
+
 Emitted when user change main screen view (2D, 3D, Script, AssetLib). Works also with screens which are defined by plugins.
 
 -  **scene_changed**  **(** :ref:`Object<class_object>` scene_root  **)**
+
 Emitted when user change scene. The argument is a root node of freshly opened scene.
 
 -  **scene_closed**  **(** :ref:`String<class_string>` filepath  **)**
+
 Emitted when user close scene. The argument is file path to a closed scene.
 
 

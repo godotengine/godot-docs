@@ -82,7 +82,7 @@ Below is an example EditorImportPlugin that imports a :ref:`Mesh<class_mesh>` fr
     func get_preset_name(i):
         return "Default"
     
-    func get_import_optons(i):
+    func get_import_options(i):
         return [{"name": "my_option", "default_value": false}]
     
     func load(src, dst, opts, r_platform_variants, r_gen_files):

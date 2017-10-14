@@ -27,6 +27,7 @@ Signals
 -------
 
 -  **about_to_show**  **(** **)**
+
 Emitted when :ref:`PopupMenu<class_popupmenu>` of this MenuButton is about to show.
 
 

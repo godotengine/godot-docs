@@ -91,6 +91,7 @@ Signals
 -------
 
 -  **bus_layout_changed**  **(** **)**
+
 Emitted when the :ref:`AudioBusLayout<class_audiobuslayout>` changes.
 
 

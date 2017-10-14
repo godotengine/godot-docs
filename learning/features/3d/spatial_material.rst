@@ -1,7 +1,7 @@
 .. _doc_spatial_material:
 
 Spatial Material
-===============
+================
 
 Introduction
 ------------
@@ -68,7 +68,7 @@ Additionaly, on very low end devices such as mobile, switching to vertex lightin
 Keep in mind that, when vertex lighting is enabled, only directional lighting can produce shadows (for performance reasons).
 
 No Depth Test
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
 
 In order for close objects to appear over far away objects, depth testing is performed.
 Disabling it has the result of objects appearing over (or under) everything else.
@@ -179,8 +179,8 @@ Specifies when depth rendering must take place.
 * Opaque Only (default): Depth is only drawn for opaque objects
 * Always: Depth draw is drawn for both opaque and transparent objects
 * Never: No depth draw takes place (note: do not confuse with depth test option above)
-* Depth Pre-Pass: For transparent objects, an opaque pass is made first with the opaque parts, then tranparency is drawn above. Use this option
-with transparent grass or tree foliage.
+* Depth Pre-Pass: For transparent objects, an opaque pass is made first with the opaque parts,
+  then tranparency is drawn above. Use this option with transparent grass or tree foliage.
 
 .. image:: img/material_depth_draw.png
 
@@ -389,5 +389,3 @@ Render Priority
 ---------------
 
 Rendering order can be changed for objects, although this is mostly useful for transparent ojects (or opaque objects that do depth draw but no color draw, useful for cracks on the floor).
-
-

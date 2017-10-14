@@ -55,6 +55,7 @@ Signals
 -------
 
 -  **finished**  **(** **)**
+
 Emitted when the audio stops playing.
 
 

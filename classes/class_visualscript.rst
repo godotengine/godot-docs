@@ -109,6 +109,7 @@ Signals
 -------
 
 -  **node_ports_changed**  **(** :ref:`String<class_string>` function, :ref:`int<class_int>` id  **)**
+
 Emitted when the ports of a node are changed.
 
 
@@ -120,7 +121,7 @@ Member Variables
 Description
 -----------
 
-A script implemented in the  Visual Script programming environment. The script exends the functionality of all objects that instance it.
+A script implemented in the  Visual Script programming environment. The script extends the functionality of all objects that instance it.
 
 :ref:`Object.set_script<class_Object_set_script>` extends an existing object, if that object's class matches one of the script's base classes.
 

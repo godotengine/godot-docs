@@ -39,6 +39,7 @@ Signals
 -------
 
 -  **dragged**  **(** :ref:`int<class_int>` offset  **)**
+
 Emitted when the dragger is dragged by user.
 
 

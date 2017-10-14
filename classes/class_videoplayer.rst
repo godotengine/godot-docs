@@ -95,7 +95,7 @@ Get the selected audio track (for multitrack videos).
 
 - :ref:`int<class_int>`  **get_buffering_msec**  **(** **)** const
 
-Get the amount of miliseconds to store in buffer while playing.
+Get the amount of milliseconds to store in buffer while playing.
 
 .. _class_VideoPlayer_get_stream:
 
@@ -179,7 +179,7 @@ Set whether this node should start playing automatically.
 
 - void  **set_buffering_msec**  **(** :ref:`int<class_int>` msec  **)**
 
-Set the amount of miliseconds to buffer during playback.
+Set the amount of milliseconds to buffer during playback.
 
 .. _class_VideoPlayer_set_expand:
 

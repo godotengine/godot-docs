@@ -84,7 +84,7 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`bool<class_bool>` **anti_aliasing** - Anti Aliasing draws a small ring around edges. This ring fades to transparent. As a result edges look much smoother. This is only noticable when using rounded corners.
+- :ref:`bool<class_bool>` **anti_aliasing** - Anti Aliasing draws a small ring around edges. This ring fades to transparent. As a result edges look much smoother. This is only noticeable when using rounded corners.
 - :ref:`int<class_int>` **anti_aliasing_size** - This changes the size of the faded ring. Higher values can be used to achieve a "blurry" effect.
 - :ref:`Color<class_color>` **bg_color** - The background color of the stylebox.
 - :ref:`bool<class_bool>` **border_blend** - When set to true, the border will fade into the background color.
@@ -129,14 +129,14 @@ This stylebox can be used to achieve all kinds of looks without the need of a te
 
     height = 30
     corner_radius_top_left = 50
-    corner_raidus_bottom_left = 100
+    corner_radius_bottom_left = 100
 
 The relative system now would take the 1:2 ratio of the two left corners to calculate the actual corner width. Both corners added will **never** be more than the height. Result:
 
 ::
 
     corner_radius_top_left: 10
-    corner_raidus_bottom_left: 20
+    corner_radius_bottom_left: 20
 
 Member Function Description
 ---------------------------

@@ -159,6 +159,7 @@ Signals
 -------
 
 -  **size_changed**  **(** **)**
+
 Emitted when the size of the viewport is changed, whether by :ref:`set_size_override<class_Viewport_set_size_override>`, resize of window, or some other means.
 
 
@@ -386,13 +387,13 @@ Return the 2D world of the viewport.
 
 - :ref:`Variant<class_variant>`  **gui_get_drag_data**  **(** **)** const
 
-Returs the drag data from the GUI, that was previously returned by :ref:`Control.get_drag_data<class_Control_get_drag_data>`.
+Returns the drag data from the GUI, that was previously returned by :ref:`Control.get_drag_data<class_Control_get_drag_data>`.
 
 .. _class_Viewport_gui_has_modal_stack:
 
 - :ref:`bool<class_bool>`  **gui_has_modal_stack**  **(** **)** const
 
-Returs whether there are shown modals on-screen.
+Returns whether there are shown modals on-screen.
 
 .. _class_Viewport_has_transparent_background:
 

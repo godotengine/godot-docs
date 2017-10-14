@@ -97,27 +97,35 @@ Signals
 -------
 
 -  **area_entered**  **(** :ref:`Object<class_object>` area  **)**
+
 Emitted when another area enters.
 
 -  **area_exited**  **(** :ref:`Object<class_object>` area  **)**
+
 Emitted when another area exits.
 
 -  **area_shape_entered**  **(** :ref:`int<class_int>` area_id, :ref:`Object<class_object>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape  **)**
+
 Emitted when another area enters, reporting which shapes overlapped.
 
 -  **area_shape_exited**  **(** :ref:`int<class_int>` area_id, :ref:`Object<class_object>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape  **)**
+
 Emitted when another area exits, reporting which shapes were overlapping.
 
 -  **body_entered**  **(** :ref:`Object<class_object>` body  **)**
+
 Emitted when a :ref:`PhysicsBody2D<class_physicsbody2d>` object enters.
 
 -  **body_exited**  **(** :ref:`Object<class_object>` body  **)**
+
 Emitted when a :ref:`PhysicsBody2D<class_physicsbody2d>` object exits.
 
 -  **body_shape_entered**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape  **)**
+
 Emitted when a :ref:`PhysicsBody2D<class_physicsbody2d>` object enters, reporting which shapes overlapped.
 
 -  **body_shape_exited**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape  **)**
+
 Emitted when a :ref:`PhysicsBody2D<class_physicsbody2d>` object exits, reporting which shapes were overlapping.
 
 

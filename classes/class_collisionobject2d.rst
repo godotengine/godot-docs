@@ -69,12 +69,15 @@ Signals
 -------
 
 -  **input_event**  **(** :ref:`Object<class_object>` viewport, :ref:`Object<class_object>` event, :ref:`int<class_int>` shape_idx  **)**
+
 Emitted when an input event occurs and ``input_pickable`` is ``true``.
 
 -  **mouse_entered**  **(** **)**
+
 Emitted when the mouse pointer enters any of this object's shapes.
 
 -  **mouse_exited**  **(** **)**
+
 Emitted when the mouse pointer exits all this object's shapes.
 
 

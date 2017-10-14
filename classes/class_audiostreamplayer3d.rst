@@ -99,6 +99,7 @@ Signals
 -------
 
 -  **finished**  **(** **)**
+
 Fires when the audio stops playing.
 
 
@@ -116,7 +117,7 @@ Member Variables
 - :ref:`bool<class_bool>` **emission_angle_enabled** - If [code]true[/code] the audio should be dampened according to the direction of the sound.
 - :ref:`float<class_float>` **emission_angle_filter_attenuation_db** - dampens audio if camera is outside of 'emission_angle_degrees' and 'emission_angle_enabled' is set by this factor, in dB.
 - :ref:`float<class_float>` **max_db** - Sets the absolute maximum of the soundlevel, in dB.
-- :ref:`float<class_float>` **max_distance** - Sets the distance from wich the 'out_of_range_mode' takes effect. Has no effect if set to 0.
+- :ref:`float<class_float>` **max_distance** - Sets the distance from which the 'out_of_range_mode' takes effect. Has no effect if set to 0.
 - :ref:`int<class_int>` **out_of_range_mode** - Decides if audio should pause when source is outside of 'max_distance' range.
 - :ref:`bool<class_bool>` **playing** - If [code]true[/code], audio is playing.
 - :ref:`AudioStream<class_audiostream>` **stream** - The [AudioStream] object to be played.
@@ -132,7 +133,7 @@ Numeric Constants
 - **OUT_OF_RANGE_MIX** = **0** --- Mix this audio in, even when it's out of range.
 - **OUT_OF_RANGE_PAUSE** = **1** --- Pause this audio when it gets out of range.
 - **DOPPLER_TRACKING_DISABLED** = **0** --- Disables doppler tracking.
-- **DOPPLER_TRACKING_IDLE_STEP** = **1** --- Executes doppler trackin in idle step.
+- **DOPPLER_TRACKING_IDLE_STEP** = **1** --- Executes doppler tracking in idle step.
 - **DOPPLER_TRACKING_PHYSICS_STEP** = **2** --- Executes doppler tracking in physics step.
 
 Description
