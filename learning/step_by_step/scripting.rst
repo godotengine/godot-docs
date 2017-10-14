@@ -34,8 +34,7 @@ to the high integration with Godot:
 * The editor integration is a pleasure to work with, with code completion expanding as far as completing nodes, signals, and many other items pertaining to the current scene being edited.
 * Has vector types built-in (such as Vectors, transorms etc), making it efficient for heavy linear algebra.
 * It supports multiple threads as well as statically typed languages (which is one of the limitation that avoided us going for other VMs such as Lua, Squirrel, etc).
-* It uses no garbage collector, so it trades a small bit of automation (most
-objects are reference counted anyway), by determinism.
+* It uses no garbage collector, so it trades a small bit of automation (most objects are reference counted anyway), by determinism.
 * The dynamic nature of it makes it easy to optimize chunks of it in C++ (via GDNative) if more performance is required at some point, without recompiling the engine.
 
 If undecided, and have experience in programming (specially dynamically

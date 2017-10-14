@@ -170,7 +170,7 @@ this little menu inside the window because it is often overlooked!
 .. image:: img/tuto_3d6.png
 
 Default environment
-----------------
+-------------------
 
 When created from the Project Manager, the 3D environment has a default sky.
 
@@ -215,4 +215,3 @@ Lights
 
 There is no limitation on the number of lights nor of types of lights in
 Godot. As many as desired can be added (as long as performance allows). 
-

@@ -117,7 +117,7 @@ Godot:
 
 
 DEPTH_TEXTURE
-~~~~~~~~~~~~
+~~~~~~~~~~~~~
 
 For 3D Shaders, it's also possible to access the screen depth buffer. For this,
 the DEPTH_TEXTURE built-in is used. This texture is not linear, it must be
@@ -130,6 +130,3 @@ The following code retrieves the 3D position below the pixel being drawn:
 	float depth = textureLod(DEPTH_TEXTURE,SCREEN_UV,0.0).r;
 	vec4 upos = INV_PROJECTION_MATRIX * vec4(SCREEN_UV*2.0-1.0,depth*2.0-1.0,1.0);
 	vec3 pixel_position = upos.xyz/upos.w;
-
-
-

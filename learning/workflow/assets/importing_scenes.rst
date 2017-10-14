@@ -1,7 +1,7 @@
 .. _doc_importing_3d_scenes:
 
 Importing 3D Scenes
-==================
+===================
 
 Godot Scene Importer
 --------------------
@@ -250,7 +250,7 @@ objects in your 3D modelling software. When imported, Godot will detect them and
 actions automatically:
 
 Remove nodes (-noimp)
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 Node names that have this suffix will be removed at import time, mo
 matter what their type is. They will not appear in the imported scene.

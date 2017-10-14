@@ -22,7 +22,7 @@ Any shader needs a first line specifying this type, in the following format:
 
 .. code-block:: glsl
 
-	shader_type <type>;
+    shader_type <type>;
 
 Valid types are:
 
@@ -39,8 +39,8 @@ be after the *shader_type*. Example syntax is:
 
 .. code-block:: glsl
 
-	shader_type spatial;
-	render_mode unshaded,cull_disabled;
+    shader_type spatial;
+    render_mode unshaded, cull_disabled;
 
 Data types:
 -----------
@@ -110,22 +110,22 @@ Example:
 
 .. code-block:: glsl
 
-	float a = 2; // valid
-	float a = 2.0; // valid
-	float a = float(2); // valid
- 
+    float a = 2; // valid
+    float a = 2.0; // valid
+    float a = float(2); // valid
+
 Default integer constants are signed, so casting is always needed to convert to unsigned:
 
 .. code-block:: glsl
 
-	int a = 2; // valid
-	uint a = 2; // invalid
-	uint a = uint(2); // valid
+    int a = 2; // valid
+    uint a = 2; // invalid
+    uint a = uint(2); // valid
 
 Members
 ~~~~~~~
 
-Individual scalar members of vector types are accessed via the "x", "y", "z" and "w" members. Alternatively, using "r", "g", "b" and "a" also works and is equivalent. 
+Individual scalar members of vector types are accessed via the "x", "y", "z" and "w" members. Alternatively, using "r", "g", "b" and "a" also works and is equivalent.
 Use whatever fits best for your use case.
 
 For matrices, use [idx] indexing syntax to access each vector.
@@ -137,28 +137,28 @@ Construction of vector types must always pass:
 
 .. code-block:: glsl
 
-	// The required amount of scalars
-	vec4 a = vec4(0.0, 1.0, 2.0, 3.0);
-	// Complementary vectors and/or scalars
-	vec4 a = vec4( vec2(0.0, 1.0), vec2(2.0, 3.0) );
-	vec4 a = vec4( vec3(0.0, 1.0, 2.0), 3.0 );
-	// A single scalar for the whole vector
-	vec4 a = vec4( 0.0 );
+    // The required amount of scalars
+    vec4 a = vec4(0.0, 1.0, 2.0, 3.0);
+    // Complementary vectors and/or scalars
+    vec4 a = vec4(vec2(0.0, 1.0), vec2(2.0, 3.0));
+    vec4 a = vec4(vec3(0.0, 1.0, 2.0), 3.0);
+    // A single scalar for the whole vector
+    vec4 a = vec4(0.0);
 
 Swizzling
 ~~~~~~~~~
 
-It is possible to obtain any combination of them in any order, as long as the result is another vector type (or scalar). 
+It is possible to obtain any combination of them in any order, as long as the result is another vector type (or scalar).
 This is easier shown than explained:
 
 .. code-block:: glsl
 
-	vec4 a = vec4(0.0, 1.0, 2.0, 3.0);
-	vec3 b = a.rgb; // Creates a vec3 with vec4 components 
-	vec3 b = a.aaa; // Also valid, creates a vec3 and fills it with "a".
-	vec3 b = a.bgr; // Order does not matter
-	vec3 b = a.xyz; // Also rgba, xyzw are equivalent
-	float c = b.w; // Invalid, because "w" is not present in vec3 b
+    vec4 a = vec4(0.0, 1.0, 2.0, 3.0);
+    vec3 b = a.rgb; // Creates a vec3 with vec4 components
+    vec3 b = a.aaa; // Also valid, creates a vec3 and fills it with "a".
+    vec3 b = a.bgr; // Order does not matter
+    vec3 b = a.xyz; // Also rgba, xyzw are equivalent
+    float c = b.w; // Invalid, because "w" is not present in vec3 b
 
 Precision
 ~~~~~~~~~
@@ -167,9 +167,9 @@ It is possible to add precision modifiers to datatypes, use them for uniforms, v
 
 .. code-block:: glsl
 
-	lowp vec4 a = vec4(0.0, 1.0, 2.0, 3.0); // low precision, usually 8 bits per component mapped to 0-1
-	mediump vec4 a = vec4(0.0, 1.0, 2.0, 3.0); // medium precision, usually 16 bits or half float
-	highp vec4 a = vec4(0.0, 1.0, 2.0, 3.0); // high precision, uses full float or integer range (default)
+    lowp vec4 a = vec4(0.0, 1.0, 2.0, 3.0); // low precision, usually 8 bits per component mapped to 0-1
+    mediump vec4 a = vec4(0.0, 1.0, 2.0, 3.0); // medium precision, usually 16 bits or half float
+    highp vec4 a = vec4(0.0, 1.0, 2.0, 3.0); // high precision, uses full float or integer range (default)
 
 
 Using lower precision for some operations can speed up the math involved (at the cost of, of course, less precision).
@@ -191,7 +191,7 @@ Godot shading language supports the same set of operators as GLSL ES 3.0. Below 
 +-------------+-----------------------+--------------------+
 | 2           | unary                 | **+, -, !, ~**     |
 +-------------+-----------------------+--------------------+
-| 3           | multiplicative        | **/, *, % **       |
+| 3           | multiplicative        | **/, \*, %**       |
 +-------------+-----------------------+--------------------+
 | 4           | additive              | **+, -**           |
 +-------------+-----------------------+--------------------+
@@ -219,23 +219,23 @@ Godot Shading language supports the most common types of flow control:
 
 .. code-block:: glsl
 
-	//if and else
-	if (cond) {
+    // if and else
+    if (cond) {
 
-	} else {
+    } else {
 
-	}
+    }
 
-	//for loops
-	for(int i=0;i<10;i++) {
+    // for loops
+    for     (int i = 0; i < 10; i++) {
 
-	}
+    }
 
-	//whiles
-	while (true) {
+    // while
+    while (true) {
 
-	}
-	
+    }
+
 
 Keep in mind that, in modern GPUs, an infinite loop can exist and can freeze your application (including editor).
 Godot can't protect you from this, so be careful to not make this mistake!
@@ -252,16 +252,16 @@ It's possible to define any function in a Godot shader. They take the following 
 
 .. code-block:: glsl
 
-	ret_type func_name(args) {
+    ret_type func_name(args) {
 
-		return ret_type; // if returning a value
-	}
+        return ret_type; // if returning a value
+    }
 
-	// a better example:
+    // a better example:
 
-	int sum2(int a, int b) {
-		return a+b;
-	}
+    int sum2(int a, int b) {
+        return a + b;
+    }
 
 
 Functions can be used from any other function that is below it.
@@ -276,12 +276,12 @@ Example below:
 
 .. code-block:: glsl
 
-	void sum2(int a, int b, inout int result) {
-		result = a+b;
-	}
+    void sum2(int a, int b, inout int result) {
+        result = a + b;
+    }
 
 
- 
+
 Processor Functions
 -------------------
 
@@ -300,11 +300,11 @@ vertex functions are not that commonly used.
 
 .. code-block:: glsl
 
-	shader_type spatial;
+    shader_type spatial;
 
-	void vertex() {
-		VERTEX.x+=sin(TIME); //offset vertex x by sine function on time elapsed
-	}
+    void vertex() {
+        VERTEX.x += sin(TIME); // offset vertex x by sine function on time elapsed
+    }
 
 
 Fragment Processor
@@ -315,11 +315,11 @@ runs on every visible pixel the object or primitive is drawn to.
 
 .. code-block:: glsl
 
-	shader_type spatial;
+    shader_type spatial;
 
-	void fragment() {
-		ALBEDO=vec3(1.0,0.0,0.0); // use red for material albedo
-	}
+    void fragment() {
+        ALBEDO = vec3(1.0, 0.0, 0.0); // use red for material albedo
+    }
 
 Light Processor
 ~~~~~~~~~~~~~~~
@@ -329,11 +329,11 @@ and does not run if no lights affect the object).
 
 .. code-block:: glsl
 
-	shader_type spatial;
+    shader_type spatial;
 
-	void light() {
-		COLOR=vec3(0.0,1.0,0.0); 
-	}
+    void light() {
+        COLOR = vec3(0.0, 1.0, 0.0);
+    }
 
 
 Varyings
@@ -346,29 +346,29 @@ pixel in the fragment processor.
 
 .. code-block:: glsl
 
-	shader_type spatial;
+    shader_type spatial;
 
-	varying vec3 some_color;
-	void vertex() {
-		some_color = NORMAL; // make the normal the color
-	}
+    varying vec3 some_color;
+    void vertex() {
+        some_color = NORMAL; // make the normal the color
+    }
 
-	void fragment() {
-		ALBEDO = some_color;
-	}
+    void fragment() {
+        ALBEDO = some_color;
+    }
 
 Uniforms
 ~~~~~~~~
 
-Passing values to shaders is possible. These are global to the whole shader and called *uniforms*. 
+Passing values to shaders is possible. These are global to the whole shader and called *uniforms*.
 When a shader is later assigned to a material, the uniforms will appear as editable parameters on it.
 Uniforms can't be written from within the shader.
 
 .. code-block:: glsl
 
-	shader_type spatial;
+    shader_type spatial;
 
-	uniform float some_value;
+    uniform float some_value;
 
 
 Any type except for *void* can be a uniform. Additionally, Godot provides optional shader hints
@@ -377,10 +377,10 @@ to make the compiler understand what the uniform is used for.
 
 .. code-block:: glsl
 
-	shader_type spatial;
+    shader_type spatial;
 
-	uniform vec4 color : hint_color;
-	uniform float amount : hint_range(0,1);
+    uniform vec4 color : hint_color;
+    uniform float amount : hint_range(0, 1);
 
 
 Full list of hints below:
@@ -416,9 +416,9 @@ Uniforms can also be assigned default values:
 
 .. code-block:: glsl
 
-	shader_type spatial;
+    shader_type spatial;
 
-	uniform vec4 some_vector = vec4(0.0);
+    uniform vec4 some_vector = vec4(0.0);
 
 
 
@@ -427,8 +427,6 @@ Built-in Functions
 
 A large number of built-in functions are supported, conforming mostly to GLSL ES 3.0.
 When vec_type (float), vec_int_type, vec_uint_type, vec_bool_type nomenclature is used, it can be scalar or vector.
-
-
 
 
 +-----------------------------------------------------------------------+---------------------------------------------+
@@ -584,7 +582,7 @@ When vec_type (float), vec_int_type, vec_uint_type, vec_bool_type nomenclature i
 
 
 Shader Types In-Depth
-------------------
+---------------------
 
 Spatial
 ~~~~~~~
@@ -605,7 +603,7 @@ Render Modes
 +---------------------------------+----------------------------------------------------------------------+
 | **blend_mul**                   | Multiplicative blend mode.                                           |
 +---------------------------------+----------------------------------------------------------------------+
-| **depth_draw_opaque**           | Only draw depth for opaque geometry (not transparent).                |
+| **depth_draw_opaque**           | Only draw depth for opaque geometry (not transparent).               |
 +---------------------------------+----------------------------------------------------------------------+
 | **depth_draw_always**           | Always draw depth (opaque and transparent).                          |
 +---------------------------------+----------------------------------------------------------------------+
@@ -698,29 +696,29 @@ Vertex Built-Ins
 Vertex data (VERTEX, NORMAL, TANGENT, BITANGENT) is presented in local model space. If not
 written to, these values will not be modified and be passed through as they came.
 
-They can be optionally set to be presented in world space (after being transformed by world) 
-by adding the *world_vertex_coords* render mode. 
+They can be optionally set to be presented in world space (after being transformed by world)
+by adding the *world_vertex_coords* render mode.
 
 It is also possible to completely disable the built-in modelview transform (projection will still
 happen later, though) with the following code, so it can be done manually:
 
 .. code-block:: glsl
 
-	shader_type spatial;
-	render_mode skip_vertex_transform;
+    shader_type spatial;
+    render_mode skip_vertex_transform;
 
-	void vertex() {
+    void vertex() {
 
-		VERTEX = (MODELVIEW_MATRIX * vec4(VERTEX,1.0)).xyz;
-		NORMAL = (MODELVIEW_MATRIX * vec4(VERTEX,0.0)).xyz; 
-		//same as above for binormal and tangent, if normal mapping is used
-	}
+        VERTEX = (MODELVIEW_MATRIX * vec4(VERTEX, 1.0)).xyz;
+        NORMAL = (MODELVIEW_MATRIX * vec4(VERTEX, 0.0)).xyz;
+        // same as above for binormal and tangent, if normal mapping is used
+    }
 
 
 Other built-ins such as UV, UV2 and COLOR are also passed through to the fragment function if not modified.
 
 For instancing, the INSTANCE_CUSTOM variable contains the instance custom data. When using particles, this information
-is usually: 
+is usually:
 
 * **x**: Rotation angle in radians.
 * **y**: Phase during lifetime (0 to 1).
@@ -862,7 +860,7 @@ Light Built-Ins
 +-----------------------------------+------------------------------------------+
 
 Writing light shaders is completely optional. Unlike other game engines, they don't affect
-performance or force a specific pipeline. 
+performance or force a specific pipeline.
 
 To write a light shader, simply make sure to assign something to DIFFUSE_LIGHT or SPECULAR_LIGHT.
 Assigning nothing means no light is processed.
@@ -932,19 +930,19 @@ happen later, though) with the following code, so it can be done manually:
 
 .. code-block:: glsl
 
-	shader_type spatial;
-	render_mode skip_vertex_transform;
+    shader_type spatial;
+    render_mode skip_vertex_transform;
 
-	void vertex() {
+    void vertex() {
 
-		VERTEX = (EXTRA_MATRIX * (WORLD_MATRIX * vec4(VERTEX,0.0,1.0))).xy;
-	}
+        VERTEX = (EXTRA_MATRIX * (WORLD_MATRIX * vec4(VERTEX, 0.0, 1.0))).xy;
+    }
 
 
 Other built-ins such as UV and COLOR are also passed through to the fragment function if not modified.
 
 For instancing, the INSTANCE_CUSTOM variable contains the instance custom data. When using particles, this information
-is usually: 
+is usually:
 
 * **x**: Rotation angle in radians.
 * **y**: Phase during lifetime (0 to 1).
@@ -1079,6 +1077,3 @@ Vertex Built-Ins
 
 Particle shades only support vertex processing. They are drawn with any regular material for CanvasItem or Spatial, depending on
 whether they are 2D or 3D.
-
-
-
