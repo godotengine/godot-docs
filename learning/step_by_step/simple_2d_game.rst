@@ -25,7 +25,8 @@ Scene setup
 To pay homage to the olden times, the game will be in 640x400 pixels
 resolution. This can be configured in the Project Settings (see
 :ref:`doc_scenes_and_nodes-configuring_the_project`) under the Scene/Project
-settings menu. The default background color should be set to black:
+settings menu. Set Stretch Mode in Display to 2d.
+The default background color should be set to black:
 
 .. image:: img/clearcolor.png
 
