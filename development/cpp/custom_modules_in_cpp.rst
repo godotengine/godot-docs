@@ -12,8 +12,9 @@ functionality at every level without modifying the core, which can be
 split for use and reuse in different modules.
 
 Modules are located in the ``modules/`` subdirectory of the build system.
-By default, two modules exist, GDScript (which, yes, is not part of the
-core engine), and the GridMap. As many new modules as desired can be
+By default, many different modules exist, such as GDScript (which, yes,
+is not part of the base engine), the Mono runtime, a regular expressions
+module, and others. As many new modules as desired can be
 created and combined, and the SCons build system will take care of it
 transparently.
 
