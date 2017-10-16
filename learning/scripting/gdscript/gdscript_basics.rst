@@ -548,6 +548,8 @@ constant dictionary of that name.
     const STATE_JUMP = 5
     const STATE_SHOOT = 6
     const State = {STATE_IDLE = 0, STATE_JUMP = 5, STATE_SHOOT = 6}
+    
+**Note**: Since GDScript does not have class variables, to access constans or enums (defined for example with ``enum State {STATE_IDLE, STATE_JUMP = 5, STATE_SHOOT}``) from another class/script you need to access them through the instance: e.g. ``MyScript.instance().State.STATE_SHOOT``
 
 
 Functions
