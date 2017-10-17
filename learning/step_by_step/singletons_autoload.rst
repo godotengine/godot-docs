@@ -49,6 +49,13 @@ This means that any node can access a singleton named "playervariables" with:
 ::
 
    var player_vars = get_node("/root/playervariables")
+   player_vars.health
+
+Or even simpler using the name directly:
+
+::
+
+   playervariables.health
 
 Custom scene switcher
 ---------------------
