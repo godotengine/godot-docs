@@ -672,7 +672,7 @@ Over" for 2 seconds, and then return to the game title and show the
 
 This function is called in ``Main`` whenever the score changes.
 
-Connect the ``timout()`` signal of ``MessageTimer`` and the
+Connect the ``timeout()`` signal of ``MessageTimer`` and the
 ``pressed()`` signal of ``StartButton``.
 
 ::
