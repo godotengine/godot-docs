@@ -149,6 +149,7 @@ that's a good time to find the size of the game window:
 ::
 
     func _ready():
+        hide()
         screensize = get_viewport_rect().size
 
 Now we can use the ``_process()`` function to define what the player will do.
