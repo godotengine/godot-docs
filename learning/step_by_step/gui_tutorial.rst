@@ -110,7 +110,7 @@ Add a script to that node, with the following code:
 
     func _gui_input(ev):
 
-        if (ev is InputEventMouseButton and ev.pressed):
+        if (ev is InputEventMouseButton and ev.is_pressed()):
             tapped=true
             update()
 
