@@ -345,6 +345,10 @@ This time, we have 3 animations: "fly", "swim", and "walk". Set the ``Playing``
 property in the Inspector to "On" and adjust the "Speed (FPS)" setting as shown below.
 We'll select one of these randomly so that the mobs will have some variety.
 
+In Godot's 2D space, a heading of zero degrees points to the right. However, our mob art
+is drawn pointing upward. To correct for this, set the ``AnimatedSprite``'s "Rotation Deg"
+property to ``90``.
+
 .. image:: img/mob_animations.gif
 
 As in the ``Player`` scene, add a ``CapsuleShape2D`` for the
@@ -521,8 +525,7 @@ Note that a new instance must be added to the scene using
         mob.position = $"MobPath/MobSpawnLocation".position
         # add some randomness to the direction
         direction += rand_range(-PI/4, PI/4)
-        # textures are oriented pointing up, so add 90 degrees
-        mob.rotation = direction + PI/2
+        mob.rotation = direction
         # choose the velocity
         mob.set_linear_velocity(Vector2(rand_range(mob.MIN_SPEED, mob.MAX_SPEED), 0).rotated(direction))
 
@@ -650,7 +653,7 @@ has been pressed.
 
 This function is called when we want to display a message
 temporarily, such as "Get Ready". On the ``MessageTimer``, set the
-``Wait Time`` to ``2`` and check ``One Shot``.
+``Wait Time`` to ``2`` and set the ``One Shot`` property to "On".
 
 ::
 
