@@ -125,7 +125,7 @@ Once they are displayed, connect the "pressed" signal:
 
 .. image:: img/visual_script10.png
 
-This will open the connection dialog. In this dialog, we must select the node where the signal be
+This will open the connection dialog. In this dialog, we must select the node where the signal will be
 connected to, and the function that will receive the signal:
 
 .. image:: img/visual_script11.png
@@ -163,8 +163,7 @@ Nodes and Terminology
 ----------------------
 
 Before continuing, it must be noted that the *Node* terminology needs to be used with care. 
-When referring to *Visual Script Nodes* (or generally just *Nodes*) this text will refer to the little boxes you connect with lines, 
-which are part of a graph. When referring to just *Scene Nodes*, it is implied that the elements
+When referring to *Visual Script Nodes* (or generally just *Nodes*) this text will refer to the little boxes you connect with lines, which are part of a graph. When referring to just *Scene Nodes*, it is implied that the elements
 that make up a Scene are being referred, which are part of a tree. Their naming is similar, but their function is different.
 When referring to *Node* here, it will be implied that a *Visual Script Node* is referred to unless indicated otherwise.
 
