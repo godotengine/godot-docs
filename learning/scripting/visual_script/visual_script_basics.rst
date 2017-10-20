@@ -34,7 +34,7 @@ uses for Visual Scripting.
 
 The most common use cases are are as follows:
 
-* Beginners into game development who want to learn an engine but have no programming experience yet.
+* Beginners starting game development who want to learn an engine but have no programming experience yet.
 * Artists and Game Designers who have no experience in programming and want to create quick prototypes or simple games.
 * Programmers working in a team that want to make part of the game logic available to Artists or Game Designers in order to offload some of their work.
 
