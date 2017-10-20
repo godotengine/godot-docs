@@ -12,6 +12,7 @@ Step by step
    scripting_continued
    your_first_game
    gui_tutorial
+   ui_code_a_life_bar
    splash_screen
    animations
    resources
