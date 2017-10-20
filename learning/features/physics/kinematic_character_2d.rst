@@ -13,7 +13,7 @@ responses). Many attempts were made to create a character controller
 using the dynamics engines but it wasn't as easy as it seems. Godot
 has one of the best implementations of dynamic character controller
 you can find (as it can be seen in the 2d/platformer demo), but using
-it requieres a considerable level of skill and understanding of
+it requires a considerable level of skill and understanding of
 physics engines (or a lot of patience with trial and error).
 
 Some physics engines such as Havok seem to swear by dynamic character
