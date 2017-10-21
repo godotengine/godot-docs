@@ -32,8 +32,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_VisualScriptClassConstant_base_type:
+
 - :ref:`String<class_string>` **base_type** - The constant's parent class.
+
+  .. _class_VisualScriptClassConstant_constant:
+
 - :ref:`String<class_string>` **constant** - The constant to return. See the given class for its available constants.
+
 
 Description
 -----------

@@ -32,8 +32,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_VisualScriptOperator_operator:
+
 - :ref:`int<class_int>` **operator**
+
+  .. _class_VisualScriptOperator_type:
+
 - :ref:`int<class_int>` **type**
+
 
 Description
 -----------

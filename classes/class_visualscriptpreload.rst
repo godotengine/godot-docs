@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_VisualScriptPreload_resource:
+
 - :ref:`Resource<class_resource>` **resource** - The :ref:`Resource<class_resource>` to load.
+
 
 Description
 -----------

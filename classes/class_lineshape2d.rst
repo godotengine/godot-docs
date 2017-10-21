@@ -32,8 +32,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_LineShape2D_d:
+
 - :ref:`float<class_float>` **d** - The line's distance from the origin.
+
+  .. _class_LineShape2D_normal:
+
 - :ref:`Vector2<class_vector2>` **normal** - The line's normal.
+
 
 Description
 -----------

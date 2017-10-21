@@ -32,8 +32,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_LightOccluder2D_light_mask:
+
 - :ref:`int<class_int>` **light_mask** - The LightOccluder2D's light mask. The LightOccluder2D will cast shadows only from Light2D(s) that have the same light mask(s).
+
+  .. _class_LightOccluder2D_occluder:
+
 - :ref:`OccluderPolygon2D<class_occluderpolygon2d>` **occluder** - The :ref:`OccluderPolygon2D<class_occluderpolygon2d>` used to compute the shadow.
+
 
 Description
 -----------

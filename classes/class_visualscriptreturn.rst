@@ -32,8 +32,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_VisualScriptReturn_return_enabled:
+
 - :ref:`bool<class_bool>` **return_enabled** - If ``true`` the ``return`` input port is available.
+
+  .. _class_VisualScriptReturn_return_type:
+
 - :ref:`int<class_int>` **return_type** - The return value's data type.
+
 
 Description
 -----------

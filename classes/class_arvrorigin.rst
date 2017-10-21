@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_ARVROrigin_world_scale:
+
 - :ref:`float<class_float>` **world_scale**
+
 
 Description
 -----------

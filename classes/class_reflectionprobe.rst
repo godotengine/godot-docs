@@ -72,18 +72,54 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_ReflectionProbe_box_projection:
+
 - :ref:`bool<class_bool>` **box_projection**
+
+  .. _class_ReflectionProbe_cull_mask:
+
 - :ref:`int<class_int>` **cull_mask**
+
+  .. _class_ReflectionProbe_enable_shadows:
+
 - :ref:`bool<class_bool>` **enable_shadows**
+
+  .. _class_ReflectionProbe_extents:
+
 - :ref:`Vector3<class_vector3>` **extents**
+
+  .. _class_ReflectionProbe_intensity:
+
 - :ref:`float<class_float>` **intensity**
+
+  .. _class_ReflectionProbe_interior_ambient_color:
+
 - :ref:`Color<class_color>` **interior_ambient_color**
+
+  .. _class_ReflectionProbe_interior_ambient_contrib:
+
 - :ref:`float<class_float>` **interior_ambient_contrib**
+
+  .. _class_ReflectionProbe_interior_ambient_energy:
+
 - :ref:`float<class_float>` **interior_ambient_energy**
+
+  .. _class_ReflectionProbe_interior_enable:
+
 - :ref:`bool<class_bool>` **interior_enable**
+
+  .. _class_ReflectionProbe_max_distance:
+
 - :ref:`float<class_float>` **max_distance**
+
+  .. _class_ReflectionProbe_origin_offset:
+
 - :ref:`Vector3<class_vector3>` **origin_offset**
+
+  .. _class_ReflectionProbe_update_mode:
+
 - :ref:`int<class_int>` **update_mode**
+
 
 Numeric Constants
 -----------------

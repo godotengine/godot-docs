@@ -48,12 +48,30 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_ParallaxBackground_scroll_base_offset:
+
 - :ref:`Vector2<class_vector2>` **scroll_base_offset**
+
+  .. _class_ParallaxBackground_scroll_base_scale:
+
 - :ref:`Vector2<class_vector2>` **scroll_base_scale**
+
+  .. _class_ParallaxBackground_scroll_ignore_camera_zoom:
+
 - :ref:`bool<class_bool>` **scroll_ignore_camera_zoom**
+
+  .. _class_ParallaxBackground_scroll_limit_begin:
+
 - :ref:`Vector2<class_vector2>` **scroll_limit_begin**
+
+  .. _class_ParallaxBackground_scroll_limit_end:
+
 - :ref:`Vector2<class_vector2>` **scroll_limit_end**
+
+  .. _class_ParallaxBackground_scroll_offset:
+
 - :ref:`Vector2<class_vector2>` **scroll_offset**
+
 
 Description
 -----------

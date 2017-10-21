@@ -36,8 +36,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_CollisionShape_disabled:
+
 - :ref:`bool<class_bool>` **disabled** - A disabled collision shape has no effect in the world.
+
+  .. _class_CollisionShape_shape:
+
 - :ref:`Shape<class_shape>` **shape** - The actual shape owned by this collision shape.
+
 
 Description
 -----------

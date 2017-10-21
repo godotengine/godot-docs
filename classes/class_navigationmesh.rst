@@ -106,25 +106,82 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_NavigationMesh_agent/height:
+
 - :ref:`float<class_float>` **agent/height**
+
+  .. _class_NavigationMesh_agent/max_climb:
+
 - :ref:`float<class_float>` **agent/max_climb**
+
+  .. _class_NavigationMesh_agent/max_slope:
+
 - :ref:`float<class_float>` **agent/max_slope**
+
+  .. _class_NavigationMesh_agent/radius:
+
 - :ref:`float<class_float>` **agent/radius**
+
+  .. _class_NavigationMesh_cell/height:
+
 - :ref:`float<class_float>` **cell/height**
+
+  .. _class_NavigationMesh_cell/size:
+
 - :ref:`float<class_float>` **cell/size**
+
+  .. _class_NavigationMesh_detail/sample_distance:
+
 - :ref:`float<class_float>` **detail/sample_distance**
+
+  .. _class_NavigationMesh_detail/sample_max_error:
+
 - :ref:`float<class_float>` **detail/sample_max_error**
+
+  .. _class_NavigationMesh_edge/max_error:
+
 - :ref:`float<class_float>` **edge/max_error**
+
+  .. _class_NavigationMesh_edge/max_length:
+
 - :ref:`float<class_float>` **edge/max_length**
+
+  .. _class_NavigationMesh_filter/filter_walkable_low_height_spans:
+
 - :ref:`bool<class_bool>` **filter/filter_walkable_low_height_spans**
+
+  .. _class_NavigationMesh_filter/ledge_spans:
+
 - :ref:`bool<class_bool>` **filter/ledge_spans**
+
+  .. _class_NavigationMesh_filter/low_hanging_obstacles:
+
 - :ref:`bool<class_bool>` **filter/low_hanging_obstacles**
+
+  .. _class_NavigationMesh_polygon/verts_per_poly:
+
 - :ref:`float<class_float>` **polygon/verts_per_poly**
+
+  .. _class_NavigationMesh_polygons:
+
 - :ref:`Array<class_array>` **polygons**
+
+  .. _class_NavigationMesh_region/merge_size:
+
 - :ref:`float<class_float>` **region/merge_size**
+
+  .. _class_NavigationMesh_region/min_size:
+
 - :ref:`float<class_float>` **region/min_size**
+
+  .. _class_NavigationMesh_sample_partition_type/sample_partition_type:
+
 - :ref:`int<class_int>` **sample_partition_type/sample_partition_type**
+
+  .. _class_NavigationMesh_vertices:
+
 - :ref:`PoolVector3Array<class_poolvector3array>` **vertices**
+
 
 Numeric Constants
 -----------------

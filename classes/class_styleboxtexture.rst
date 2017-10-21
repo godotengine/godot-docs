@@ -64,27 +64,74 @@ Member Functions
 Signals
 -------
 
+.. _class_StyleBoxTexture_texture_changed:
+
 -  **texture_changed**  **(** **)**
 
 
 Member Variables
 ----------------
 
+  .. _class_StyleBoxTexture_axis_stretch_horizontal:
+
 - :ref:`int<class_int>` **axis_stretch_horizontal**
+
+  .. _class_StyleBoxTexture_axis_stretch_vertical:
+
 - :ref:`int<class_int>` **axis_stretch_vertical**
+
+  .. _class_StyleBoxTexture_draw_center:
+
 - :ref:`bool<class_bool>` **draw_center**
+
+  .. _class_StyleBoxTexture_expand_margin_bottom:
+
 - :ref:`float<class_float>` **expand_margin_bottom**
+
+  .. _class_StyleBoxTexture_expand_margin_left:
+
 - :ref:`float<class_float>` **expand_margin_left**
+
+  .. _class_StyleBoxTexture_expand_margin_right:
+
 - :ref:`float<class_float>` **expand_margin_right**
+
+  .. _class_StyleBoxTexture_expand_margin_top:
+
 - :ref:`float<class_float>` **expand_margin_top**
+
+  .. _class_StyleBoxTexture_margin_bottom:
+
 - :ref:`float<class_float>` **margin_bottom**
+
+  .. _class_StyleBoxTexture_margin_left:
+
 - :ref:`float<class_float>` **margin_left**
+
+  .. _class_StyleBoxTexture_margin_right:
+
 - :ref:`float<class_float>` **margin_right**
+
+  .. _class_StyleBoxTexture_margin_top:
+
 - :ref:`float<class_float>` **margin_top**
+
+  .. _class_StyleBoxTexture_modulate_color:
+
 - :ref:`Color<class_color>` **modulate_color**
+
+  .. _class_StyleBoxTexture_normal_map:
+
 - :ref:`Resource<class_resource>` **normal_map**
+
+  .. _class_StyleBoxTexture_region_rect:
+
 - :ref:`Rect2<class_rect2>` **region_rect**
+
+  .. _class_StyleBoxTexture_texture:
+
 - :ref:`Resource<class_resource>` **texture**
+
 
 Numeric Constants
 -----------------

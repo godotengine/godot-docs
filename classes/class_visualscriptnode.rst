@@ -34,6 +34,8 @@ Member Functions
 Signals
 -------
 
+.. _class_VisualScriptNode_ports_changed:
+
 -  **ports_changed**  **(** **)**
 
 Emitted when the available input/output ports are changed.
@@ -42,7 +44,10 @@ Emitted when the available input/output ports are changed.
 Member Variables
 ----------------
 
+  .. _class_VisualScriptNode__default_input_values:
+
 - :ref:`Array<class_array>` **_default_input_values**
+
 
 Description
 -----------

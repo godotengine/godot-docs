@@ -32,8 +32,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_LinkButton_text:
+
 - :ref:`String<class_string>` **text**
+
+  .. _class_LinkButton_underline:
+
 - :ref:`int<class_int>` **underline**
+
 
 Numeric Constants
 -----------------

@@ -52,14 +52,38 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_VisualScriptPropertyGet_base_script:
+
 - :ref:`String<class_string>` **base_script**
+
+  .. _class_VisualScriptPropertyGet_base_type:
+
 - :ref:`String<class_string>` **base_type**
+
+  .. _class_VisualScriptPropertyGet_basic_type:
+
 - :ref:`int<class_int>` **basic_type**
+
+  .. _class_VisualScriptPropertyGet_index:
+
 - :ref:`String<class_string>` **index**
+
+  .. _class_VisualScriptPropertyGet_node_path:
+
 - :ref:`NodePath<class_nodepath>` **node_path**
+
+  .. _class_VisualScriptPropertyGet_property:
+
 - :ref:`String<class_string>` **property**
+
+  .. _class_VisualScriptPropertyGet_set_mode:
+
 - :ref:`int<class_int>` **set_mode**
+
+  .. _class_VisualScriptPropertyGet_type_cache:
+
 - :ref:`int<class_int>` **type_cache**
+
 
 Numeric Constants
 -----------------

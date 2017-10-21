@@ -300,81 +300,306 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_Environment_adjustment_brightness:
+
 - :ref:`float<class_float>` **adjustment_brightness** - Global brightness value of the rendered scene (default value is 1).
+
+  .. _class_Environment_adjustment_color_correction:
+
 - :ref:`Texture<class_texture>` **adjustment_color_correction** - Applies the provided :ref:`Texture<class_texture>` resource to affect the global color aspect of the rendered scene.
+
+  .. _class_Environment_adjustment_contrast:
+
 - :ref:`float<class_float>` **adjustment_contrast** - Global contrast value of the rendered scene (default value is 1).
+
+  .. _class_Environment_adjustment_enabled:
+
 - :ref:`bool<class_bool>` **adjustment_enabled** - Enables the adjustment\_\* options provided by this resource. If false, adjustments modifications will have no effect on the rendered scene.
+
+  .. _class_Environment_adjustment_saturation:
+
 - :ref:`float<class_float>` **adjustment_saturation** - Global color saturation value of the rendered scene (default value is 1).
+
+  .. _class_Environment_ambient_light_color:
+
 - :ref:`Color<class_color>` **ambient_light_color** - :ref:`Color<class_color>` of the ambient light.
+
+  .. _class_Environment_ambient_light_energy:
+
 - :ref:`float<class_float>` **ambient_light_energy** - Energy of the ambient light. The higher the value, the stronger the light.
+
+  .. _class_Environment_ambient_light_sky_contribution:
+
 - :ref:`float<class_float>` **ambient_light_sky_contribution** - Defines the amount of light that the sky brings on the scene. A value of 0 means that the sky's light emission has no effect on the scene illumination, thus all ambient illumination is provided by the ambient light. On the contrary, a value of 1 means that all the light that affects the scene is provided by the sky, thus the ambient light parameter has no effect on the scene.
+
+  .. _class_Environment_auto_exposure_enabled:
+
 - :ref:`bool<class_bool>` **auto_exposure_enabled** - Enables the tonemapping auto exposure mode of the scene renderer. If activated, the renderer will automatically determine the exposure setting to adapt to the illumination of the scene and the observed light.
+
+  .. _class_Environment_auto_exposure_max_luma:
+
 - :ref:`float<class_float>` **auto_exposure_max_luma** - Maximum luminance value for the auto exposure.
+
+  .. _class_Environment_auto_exposure_min_luma:
+
 - :ref:`float<class_float>` **auto_exposure_min_luma** - Minimum luminance value for the auto exposure.
+
+  .. _class_Environment_auto_exposure_scale:
+
 - :ref:`float<class_float>` **auto_exposure_scale** - Scale of the auto exposure effect. Affects the intensity of auto exposure.
+
+  .. _class_Environment_auto_exposure_speed:
+
 - :ref:`float<class_float>` **auto_exposure_speed** - Speed of the auto exposure effect. Affects the time needed for the camera to perform auto exposure.
+
+  .. _class_Environment_background_canvas_max_layer:
+
 - :ref:`int<class_int>` **background_canvas_max_layer** - Maximum layer id (if using Layer background mode).
+
+  .. _class_Environment_background_color:
+
 - :ref:`Color<class_color>` **background_color** - Color displayed for clear areas of the scene (if using Custom color or Color+Sky background modes).
+
+  .. _class_Environment_background_energy:
+
 - :ref:`float<class_float>` **background_energy** - Power of light emitted by the background.
+
+  .. _class_Environment_background_mode:
+
 - :ref:`int<class_int>` **background_mode** - Defines the mode of background.
+
+  .. _class_Environment_background_sky:
+
 - :ref:`Sky<class_sky>` **background_sky** - :ref:`Sky<class_sky>` resource defined as background.
+
+  .. _class_Environment_background_sky_custom_fov:
+
 - :ref:`float<class_float>` **background_sky_custom_fov** - :ref:`Sky<class_sky>` resource's custom field of view.
+
+  .. _class_Environment_dof_blur_far_amount:
+
 - :ref:`float<class_float>` **dof_blur_far_amount** - Amount of far blur.
+
+  .. _class_Environment_dof_blur_far_distance:
+
 - :ref:`float<class_float>` **dof_blur_far_distance** - Distance from the camera where the far blur effect affects the rendering.
+
+  .. _class_Environment_dof_blur_far_enabled:
+
 - :ref:`bool<class_bool>` **dof_blur_far_enabled** - Enables the far blur effect.
+
+  .. _class_Environment_dof_blur_far_quality:
+
 - :ref:`int<class_int>` **dof_blur_far_quality** - Quality of the far blur quality.
+
+  .. _class_Environment_dof_blur_far_transition:
+
 - :ref:`float<class_float>` **dof_blur_far_transition** - Transition between no-blur area and far blur.
+
+  .. _class_Environment_dof_blur_near_amount:
+
 - :ref:`float<class_float>` **dof_blur_near_amount** - Amount of near blur.
+
+  .. _class_Environment_dof_blur_near_distance:
+
 - :ref:`float<class_float>` **dof_blur_near_distance** - Distance from the camera where the near blur effect affects the rendering.
+
+  .. _class_Environment_dof_blur_near_enabled:
+
 - :ref:`bool<class_bool>` **dof_blur_near_enabled** - Enables the near blur effect.
+
+  .. _class_Environment_dof_blur_near_quality:
+
 - :ref:`int<class_int>` **dof_blur_near_quality** - Quality of the near blur quality.
+
+  .. _class_Environment_dof_blur_near_transition:
+
 - :ref:`float<class_float>` **dof_blur_near_transition** - Transition between near blur and no-blur area.
+
+  .. _class_Environment_fog_color:
+
 - :ref:`Color<class_color>` **fog_color** - Fog's :ref:`Color<class_color>`.
+
+  .. _class_Environment_fog_depth_begin:
+
 - :ref:`float<class_float>` **fog_depth_begin** - Fog's depth starting distance from the camera.
+
+  .. _class_Environment_fog_depth_curve:
+
 - :ref:`float<class_float>` **fog_depth_curve** - Value defining the fog depth intensity.
+
+  .. _class_Environment_fog_depth_enabled:
+
 - :ref:`bool<class_bool>` **fog_depth_enabled** - Enables the fog depth.
+
+  .. _class_Environment_fog_enabled:
+
 - :ref:`bool<class_bool>` **fog_enabled** - Enables the fog. Needs fog_height_enabled and/or for_depth_enabled to actually display fog.
+
+  .. _class_Environment_fog_height_curve:
+
 - :ref:`float<class_float>` **fog_height_curve** - Value defining the fog height intensity.
+
+  .. _class_Environment_fog_height_enabled:
+
 - :ref:`bool<class_bool>` **fog_height_enabled** - Enables the fog height.
+
+  .. _class_Environment_fog_height_max:
+
 - :ref:`float<class_float>` **fog_height_max** - Maximum height of fog.
+
+  .. _class_Environment_fog_height_min:
+
 - :ref:`float<class_float>` **fog_height_min** - Minimum height of fog.
+
+  .. _class_Environment_fog_sun_amount:
+
 - :ref:`float<class_float>` **fog_sun_amount** - Amount of sun that affects the fog rendering.
+
+  .. _class_Environment_fog_sun_color:
+
 - :ref:`Color<class_color>` **fog_sun_color** - Sun :ref:`Color<class_color>`.
+
+  .. _class_Environment_fog_transmit_curve:
+
 - :ref:`float<class_float>` **fog_transmit_curve** - Amount of light that the fog transmits.
+
+  .. _class_Environment_fog_transmit_enabled:
+
 - :ref:`bool<class_bool>` **fog_transmit_enabled** - Enables fog's light transmission. If enabled, lets reflections light to be transmitted by the fog.
+
+  .. _class_Environment_glow_bicubic_upscale:
+
 - :ref:`bool<class_bool>` **glow_bicubic_upscale**
+
+  .. _class_Environment_glow_blend_mode:
+
 - :ref:`int<class_int>` **glow_blend_mode** - Glow blending mode.
+
+  .. _class_Environment_glow_bloom:
+
 - :ref:`float<class_float>` **glow_bloom** - Bloom value (global glow).
+
+  .. _class_Environment_glow_enabled:
+
 - :ref:`bool<class_bool>` **glow_enabled** - Enables glow rendering.
+
+  .. _class_Environment_glow_hdr_scale:
+
 - :ref:`float<class_float>` **glow_hdr_scale** - Bleed scale of the HDR glow.
+
+  .. _class_Environment_glow_hdr_threshold:
+
 - :ref:`float<class_float>` **glow_hdr_threshold** - Bleed threshold of the HDR glow.
+
+  .. _class_Environment_glow_intensity:
+
 - :ref:`float<class_float>` **glow_intensity** - Glow intensity.
+
+  .. _class_Environment_glow_levels/1:
+
 - :ref:`bool<class_bool>` **glow_levels/1** - First level of glow (most local).
+
+  .. _class_Environment_glow_levels/2:
+
 - :ref:`bool<class_bool>` **glow_levels/2** - Second level of glow.
+
+  .. _class_Environment_glow_levels/3:
+
 - :ref:`bool<class_bool>` **glow_levels/3** - Third level of glow.
+
+  .. _class_Environment_glow_levels/4:
+
 - :ref:`bool<class_bool>` **glow_levels/4** - Fourth level of glow.
+
+  .. _class_Environment_glow_levels/5:
+
 - :ref:`bool<class_bool>` **glow_levels/5** - Fifth level of glow.
+
+  .. _class_Environment_glow_levels/6:
+
 - :ref:`bool<class_bool>` **glow_levels/6** - Sixth level of glow.
+
+  .. _class_Environment_glow_levels/7:
+
 - :ref:`bool<class_bool>` **glow_levels/7** - Seventh level of glow (most global).
+
+  .. _class_Environment_glow_strength:
+
 - :ref:`float<class_float>` **glow_strength** - Glow strength.
+
+  .. _class_Environment_ss_reflections_depth_tolerance:
+
 - :ref:`float<class_float>` **ss_reflections_depth_tolerance**
+
+  .. _class_Environment_ss_reflections_enabled:
+
 - :ref:`bool<class_bool>` **ss_reflections_enabled**
+
+  .. _class_Environment_ss_reflections_fade_in:
+
 - :ref:`float<class_float>` **ss_reflections_fade_in**
+
+  .. _class_Environment_ss_reflections_fade_out:
+
 - :ref:`float<class_float>` **ss_reflections_fade_out**
+
+  .. _class_Environment_ss_reflections_max_steps:
+
 - :ref:`int<class_int>` **ss_reflections_max_steps**
+
+  .. _class_Environment_ss_reflections_roughness:
+
 - :ref:`bool<class_bool>` **ss_reflections_roughness**
+
+  .. _class_Environment_ssao_bias:
+
 - :ref:`float<class_float>` **ssao_bias**
+
+  .. _class_Environment_ssao_blur:
+
 - :ref:`bool<class_bool>` **ssao_blur**
+
+  .. _class_Environment_ssao_color:
+
 - :ref:`Color<class_color>` **ssao_color**
+
+  .. _class_Environment_ssao_enabled:
+
 - :ref:`bool<class_bool>` **ssao_enabled**
+
+  .. _class_Environment_ssao_intensity:
+
 - :ref:`float<class_float>` **ssao_intensity**
+
+  .. _class_Environment_ssao_intensity2:
+
 - :ref:`float<class_float>` **ssao_intensity2**
+
+  .. _class_Environment_ssao_light_affect:
+
 - :ref:`float<class_float>` **ssao_light_affect**
+
+  .. _class_Environment_ssao_radius:
+
 - :ref:`float<class_float>` **ssao_radius**
+
+  .. _class_Environment_ssao_radius2:
+
 - :ref:`float<class_float>` **ssao_radius2**
+
+  .. _class_Environment_tonemap_exposure:
+
 - :ref:`float<class_float>` **tonemap_exposure** - Default exposure for tonemap.
+
+  .. _class_Environment_tonemap_mode:
+
 - :ref:`int<class_int>` **tonemap_mode** - Tonemapping mode.
+
+  .. _class_Environment_tonemap_white:
+
 - :ref:`float<class_float>` **tonemap_white** - White reference value for tonemap.
+
 
 Numeric Constants
 -----------------

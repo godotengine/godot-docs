@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_PinJoint2D_softness:
+
 - :ref:`float<class_float>` **softness** - The higher this value, the more the bond to the pinned partner can flex.
+
 
 Description
 -----------

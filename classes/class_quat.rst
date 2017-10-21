@@ -48,10 +48,22 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_Quat_w:
+
 - :ref:`float<class_float>` **w**
+
+  .. _class_Quat_x:
+
 - :ref:`float<class_float>` **x**
+
+  .. _class_Quat_y:
+
 - :ref:`float<class_float>` **y**
+
+  .. _class_Quat_z:
+
 - :ref:`float<class_float>` **z**
+
 
 Description
 -----------

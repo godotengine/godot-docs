@@ -90,6 +90,8 @@ Member Functions
 Signals
 -------
 
+.. _class_AudioServer_bus_layout_changed:
+
 -  **bus_layout_changed**  **(** **)**
 
 Emitted when the :ref:`AudioBusLayout<class_audiobuslayout>` changes.

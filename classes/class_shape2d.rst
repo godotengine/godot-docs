@@ -38,7 +38,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_Shape2D_custom_solver_bias:
+
 - :ref:`float<class_float>` **custom_solver_bias**
+
 
 Description
 -----------

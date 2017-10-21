@@ -70,12 +70,30 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_VideoPlayer_audio_track:
+
 - :ref:`int<class_int>` **audio_track**
+
+  .. _class_VideoPlayer_autoplay:
+
 - :ref:`bool<class_bool>` **autoplay**
+
+  .. _class_VideoPlayer_expand:
+
 - :ref:`bool<class_bool>` **expand**
+
+  .. _class_VideoPlayer_paused:
+
 - :ref:`bool<class_bool>` **paused**
+
+  .. _class_VideoPlayer_stream:
+
 - :ref:`VideoStream<class_videostream>` **stream**
+
+  .. _class_VideoPlayer_volume_db:
+
 - :ref:`float<class_float>` **volume_db**
+
 
 Description
 -----------

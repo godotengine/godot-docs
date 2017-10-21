@@ -44,7 +44,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_Navigation_up_vector:
+
 - :ref:`Vector3<class_vector3>` **up_vector**
+
 
 Member Function Description
 ---------------------------

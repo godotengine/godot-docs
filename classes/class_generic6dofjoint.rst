@@ -48,59 +48,212 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_Generic6DOFJoint_angular_limit_x/damping:
+
 - :ref:`float<class_float>` **angular_limit_x/damping** - The amount of rotational damping across the x-axis.
 
 The lower, the longer an impulse from one side takes to travel to the other side.
+
+  .. _class_Generic6DOFJoint_angular_limit_x/enabled:
+
 - :ref:`bool<class_bool>` **angular_limit_x/enabled** - If ``true`` rotation across the x-axis is enabled.
+
+  .. _class_Generic6DOFJoint_angular_limit_x/erp:
+
 - :ref:`float<class_float>` **angular_limit_x/erp** - When rotating across x-axis, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
+
+  .. _class_Generic6DOFJoint_angular_limit_x/force_limit:
+
 - :ref:`float<class_float>` **angular_limit_x/force_limit** - The maximum amount of force that can occur, when rotating arround x-axis.
+
+  .. _class_Generic6DOFJoint_angular_limit_x/lower_angle:
+
 - :ref:`float<class_float>` **angular_limit_x/lower_angle** - The minimum rotation in negative direction to break loose and rotate arround the x-axis.
+
+  .. _class_Generic6DOFJoint_angular_limit_x/restitution:
+
 - :ref:`float<class_float>` **angular_limit_x/restitution** - The amount of rotational restitution across the x-axis. The lower, the more restitution occurs.
+
+  .. _class_Generic6DOFJoint_angular_limit_x/softness:
+
 - :ref:`float<class_float>` **angular_limit_x/softness** - The speed of all rotations across the x-axis.
+
+  .. _class_Generic6DOFJoint_angular_limit_x/upper_angle:
+
 - :ref:`float<class_float>` **angular_limit_x/upper_angle** - The minimum rotation in positive direction to break loose and rotate arround the x-axis.
+
+  .. _class_Generic6DOFJoint_angular_limit_y/damping:
+
 - :ref:`float<class_float>` **angular_limit_y/damping** - The amount of rotational damping across the y-axis. The lower, the more dampening occurs.
+
+  .. _class_Generic6DOFJoint_angular_limit_y/enabled:
+
 - :ref:`bool<class_bool>` **angular_limit_y/enabled** - If ``true`` rotation across the y-axis is enabled.
+
+  .. _class_Generic6DOFJoint_angular_limit_y/erp:
+
 - :ref:`float<class_float>` **angular_limit_y/erp** - When rotating across y-axis, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
+
+  .. _class_Generic6DOFJoint_angular_limit_y/force_limit:
+
 - :ref:`float<class_float>` **angular_limit_y/force_limit** - The maximum amount of force that can occur, when rotating arround y-axis.
+
+  .. _class_Generic6DOFJoint_angular_limit_y/lower_angle:
+
 - :ref:`float<class_float>` **angular_limit_y/lower_angle** - The minimum rotation in negative direction to break loose and rotate arround the y-axis.
+
+  .. _class_Generic6DOFJoint_angular_limit_y/restitution:
+
 - :ref:`float<class_float>` **angular_limit_y/restitution** - The amount of rotational restitution across the y-axis. The lower, the more restitution occurs.
+
+  .. _class_Generic6DOFJoint_angular_limit_y/softness:
+
 - :ref:`float<class_float>` **angular_limit_y/softness** - The speed of all rotations across the y-axis.
+
+  .. _class_Generic6DOFJoint_angular_limit_y/upper_angle:
+
 - :ref:`float<class_float>` **angular_limit_y/upper_angle** - The minimum rotation in positive direction to break loose and rotate arround the y-axis.
+
+  .. _class_Generic6DOFJoint_angular_limit_z/damping:
+
 - :ref:`float<class_float>` **angular_limit_z/damping** - The amount of rotational damping across the z-axis. The lower, the more dampening occurs.
+
+  .. _class_Generic6DOFJoint_angular_limit_z/enabled:
+
 - :ref:`bool<class_bool>` **angular_limit_z/enabled** - If ``true`` rotation across the z-axis is enabled.
+
+  .. _class_Generic6DOFJoint_angular_limit_z/erp:
+
 - :ref:`float<class_float>` **angular_limit_z/erp** - When rotating across z-axis, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
+
+  .. _class_Generic6DOFJoint_angular_limit_z/force_limit:
+
 - :ref:`float<class_float>` **angular_limit_z/force_limit** - The maximum amount of force that can occur, when rotating arround z-axis.
+
+  .. _class_Generic6DOFJoint_angular_limit_z/lower_angle:
+
 - :ref:`float<class_float>` **angular_limit_z/lower_angle** - The minimum rotation in negative direction to break loose and rotate arround the z-axis.
+
+  .. _class_Generic6DOFJoint_angular_limit_z/restitution:
+
 - :ref:`float<class_float>` **angular_limit_z/restitution** - The amount of rotational restitution across the z-axis. The lower, the more restitution occurs.
+
+  .. _class_Generic6DOFJoint_angular_limit_z/softness:
+
 - :ref:`float<class_float>` **angular_limit_z/softness** - The speed of all rotations across the z-axis.
+
+  .. _class_Generic6DOFJoint_angular_limit_z/upper_angle:
+
 - :ref:`float<class_float>` **angular_limit_z/upper_angle** - The minimum rotation in positive direction to break loose and rotate arround the z-axis.
+
+  .. _class_Generic6DOFJoint_angular_motor_x/enabled:
+
 - :ref:`bool<class_bool>` **angular_motor_x/enabled** - If ``true`` a rotating motor at the x-axis is enabled.
+
+  .. _class_Generic6DOFJoint_angular_motor_x/force_limit:
+
 - :ref:`float<class_float>` **angular_motor_x/force_limit** - Maximum acceleration for the motor at the x-axis.
+
+  .. _class_Generic6DOFJoint_angular_motor_x/target_velocity:
+
 - :ref:`float<class_float>` **angular_motor_x/target_velocity** - Target speed for the motor at the x-axis.
+
+  .. _class_Generic6DOFJoint_angular_motor_y/enabled:
+
 - :ref:`bool<class_bool>` **angular_motor_y/enabled** - If ``true`` a rotating motor at the y-axis is enabled.
+
+  .. _class_Generic6DOFJoint_angular_motor_y/force_limit:
+
 - :ref:`float<class_float>` **angular_motor_y/force_limit** - Maximum acceleration for the motor at the y-axis.
+
+  .. _class_Generic6DOFJoint_angular_motor_y/target_velocity:
+
 - :ref:`float<class_float>` **angular_motor_y/target_velocity** - Target speed for the motor at the y-axis.
+
+  .. _class_Generic6DOFJoint_angular_motor_z/enabled:
+
 - :ref:`bool<class_bool>` **angular_motor_z/enabled** - If ``true`` a rotating motor at the z-axis is enabled.
+
+  .. _class_Generic6DOFJoint_angular_motor_z/force_limit:
+
 - :ref:`float<class_float>` **angular_motor_z/force_limit** - Maximum acceleration for the motor at the z-axis.
+
+  .. _class_Generic6DOFJoint_angular_motor_z/target_velocity:
+
 - :ref:`float<class_float>` **angular_motor_z/target_velocity** - Target speed for the motor at the z-axis.
+
+  .. _class_Generic6DOFJoint_linear_limit_x/damping:
+
 - :ref:`float<class_float>` **linear_limit_x/damping** - The amount of damping that happens at the x-motion.
+
+  .. _class_Generic6DOFJoint_linear_limit_x/enabled:
+
 - :ref:`bool<class_bool>` **linear_limit_x/enabled** - If ``true`` the linear motion across the x-axis is enabled.
+
+  .. _class_Generic6DOFJoint_linear_limit_x/lower_distance:
+
 - :ref:`float<class_float>` **linear_limit_x/lower_distance** - The minimum difference between the pivot points' x-axis.
+
+  .. _class_Generic6DOFJoint_linear_limit_x/restitution:
+
 - :ref:`float<class_float>` **linear_limit_x/restitution** - The amount of restitution on the x-axis movement The lower, the more momentum gets lost.
+
+  .. _class_Generic6DOFJoint_linear_limit_x/softness:
+
 - :ref:`float<class_float>` **linear_limit_x/softness** - A factor applied to the movement across the x-axis The lower, the slower the movement.
+
+  .. _class_Generic6DOFJoint_linear_limit_x/upper_distance:
+
 - :ref:`float<class_float>` **linear_limit_x/upper_distance** - The maximum difference between the pivot points' x-axis.
+
+  .. _class_Generic6DOFJoint_linear_limit_y/damping:
+
 - :ref:`float<class_float>` **linear_limit_y/damping** - The amount of damping that happens at the y-motion.
+
+  .. _class_Generic6DOFJoint_linear_limit_y/enabled:
+
 - :ref:`bool<class_bool>` **linear_limit_y/enabled** - If ``true`` the linear motion across the y-axis is enabled.
+
+  .. _class_Generic6DOFJoint_linear_limit_y/lower_distance:
+
 - :ref:`float<class_float>` **linear_limit_y/lower_distance** - The minimum difference between the pivot points' y-axis.
+
+  .. _class_Generic6DOFJoint_linear_limit_y/restitution:
+
 - :ref:`float<class_float>` **linear_limit_y/restitution** - The amount of restitution on the y-axis movement The lower, the more momentum gets lost.
+
+  .. _class_Generic6DOFJoint_linear_limit_y/softness:
+
 - :ref:`float<class_float>` **linear_limit_y/softness** - A factor applied to the movement across the y-axis The lower, the slower the movement.
+
+  .. _class_Generic6DOFJoint_linear_limit_y/upper_distance:
+
 - :ref:`float<class_float>` **linear_limit_y/upper_distance** - The maximum difference between the pivot points' y-axis.
+
+  .. _class_Generic6DOFJoint_linear_limit_z/damping:
+
 - :ref:`float<class_float>` **linear_limit_z/damping** - The amount of damping that happens at the z-motion.
+
+  .. _class_Generic6DOFJoint_linear_limit_z/enabled:
+
 - :ref:`bool<class_bool>` **linear_limit_z/enabled** - If ``true`` the linear motion across the z-axis is enabled.
+
+  .. _class_Generic6DOFJoint_linear_limit_z/lower_distance:
+
 - :ref:`float<class_float>` **linear_limit_z/lower_distance** - The minimum difference between the pivot points' z-axis.
+
+  .. _class_Generic6DOFJoint_linear_limit_z/restitution:
+
 - :ref:`float<class_float>` **linear_limit_z/restitution** - The amount of restitution on the z-axis movement The lower, the more momentum gets lost.
+
+  .. _class_Generic6DOFJoint_linear_limit_z/softness:
+
 - :ref:`float<class_float>` **linear_limit_z/softness** - A factor applied to the movement across the z-axis The lower, the slower the movement.
+
+  .. _class_Generic6DOFJoint_linear_limit_z/upper_distance:
+
 - :ref:`float<class_float>` **linear_limit_z/upper_distance** - The maximum difference between the pivot points' z-axis.
+
 
 Numeric Constants
 -----------------

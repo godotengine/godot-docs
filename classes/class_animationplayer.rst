@@ -100,13 +100,19 @@ Member Functions
 Signals
 -------
 
+.. _class_AnimationPlayer_animation_changed:
+
 -  **animation_changed**  **(** :ref:`String<class_string>` old_name, :ref:`String<class_string>` new_name  **)**
 
 If the currently being played animation changes, this signal will notify of such change.
 
+.. _class_AnimationPlayer_animation_finished:
+
 -  **animation_finished**  **(** :ref:`String<class_string>` name  **)**
 
 Notifies when an animation finished playing.
+
+.. _class_AnimationPlayer_animation_started:
 
 -  **animation_started**  **(** :ref:`String<class_string>` name  **)**
 
@@ -116,9 +122,18 @@ Notifies when an animation starts playing.
 Member Variables
 ----------------
 
+  .. _class_AnimationPlayer_playback_default_blend_time:
+
 - :ref:`float<class_float>` **playback_default_blend_time**
+
+  .. _class_AnimationPlayer_playback_process_mode:
+
 - :ref:`int<class_int>` **playback_process_mode**
+
+  .. _class_AnimationPlayer_root_node:
+
 - :ref:`NodePath<class_nodepath>` **root_node**
+
 
 Numeric Constants
 -----------------

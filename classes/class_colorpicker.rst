@@ -38,6 +38,8 @@ Member Functions
 Signals
 -------
 
+.. _class_ColorPicker_color_changed:
+
 -  **color_changed**  **(** :ref:`Color<class_color>` color  **)**
 
 Emitted when the color is changed.

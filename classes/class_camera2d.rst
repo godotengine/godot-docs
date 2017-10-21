@@ -108,27 +108,90 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_Camera2D_anchor_mode:
+
 - :ref:`int<class_int>` **anchor_mode** - The Camera2D's anchor point. See ``ANCHOR_MODE\_\*`` constants.
+
+  .. _class_Camera2D_current:
+
 - :ref:`bool<class_bool>` **current** - If ``true`` this camera is the active camera for the current scene. Only one camera can be current, so setting a different camera ``current`` will disable this one.
+
+  .. _class_Camera2D_drag_margin_bottom:
+
 - :ref:`float<class_float>` **drag_margin_bottom** - Bottom margin needed to drag the camera. A value of ``1`` makes the camera move only when reaching the edge of the screen.
+
+  .. _class_Camera2D_drag_margin_h_enabled:
+
 - :ref:`bool<class_bool>` **drag_margin_h_enabled**
+
+  .. _class_Camera2D_drag_margin_left:
+
 - :ref:`float<class_float>` **drag_margin_left** - Left margin needed to drag the camera. A value of ``1`` makes the camera move only when reaching the edge of the screen.
+
+  .. _class_Camera2D_drag_margin_right:
+
 - :ref:`float<class_float>` **drag_margin_right** - Right margin needed to drag the camera. A value of ``1`` makes the camera move only when reaching the edge of the screen.
+
+  .. _class_Camera2D_drag_margin_top:
+
 - :ref:`float<class_float>` **drag_margin_top** - Top margin needed to drag the camera. A value of ``1`` makes the camera move only when reaching the edge of the screen.
+
+  .. _class_Camera2D_drag_margin_v_enabled:
+
 - :ref:`bool<class_bool>` **drag_margin_v_enabled**
+
+  .. _class_Camera2D_editor_draw_drag_margin:
+
 - :ref:`bool<class_bool>` **editor_draw_drag_margin**
+
+  .. _class_Camera2D_editor_draw_limits:
+
 - :ref:`bool<class_bool>` **editor_draw_limits**
+
+  .. _class_Camera2D_editor_draw_screen:
+
 - :ref:`bool<class_bool>` **editor_draw_screen**
+
+  .. _class_Camera2D_limit_bottom:
+
 - :ref:`int<class_int>` **limit_bottom** - Bottom scroll limit in pixels. The camera stops moving when reaching this value.
+
+  .. _class_Camera2D_limit_left:
+
 - :ref:`int<class_int>` **limit_left** - Left scroll limit in pixels. The camera stops moving when reaching this value.
+
+  .. _class_Camera2D_limit_right:
+
 - :ref:`int<class_int>` **limit_right** - Right scroll limit in pixels. The camera stops moving when reaching this value.
+
+  .. _class_Camera2D_limit_smoothed:
+
 - :ref:`bool<class_bool>` **limit_smoothed**
+
+  .. _class_Camera2D_limit_top:
+
 - :ref:`int<class_int>` **limit_top** - Top scroll limit in pixels. The camera stops moving when reaching this value.
+
+  .. _class_Camera2D_offset:
+
 - :ref:`Vector2<class_vector2>` **offset** - The camera's offset, useful for looking around or camera shake animations.
+
+  .. _class_Camera2D_rotating:
+
 - :ref:`bool<class_bool>` **rotating**
+
+  .. _class_Camera2D_smoothing_enabled:
+
 - :ref:`bool<class_bool>` **smoothing_enabled**
+
+  .. _class_Camera2D_smoothing_speed:
+
 - :ref:`float<class_float>` **smoothing_speed**
+
+  .. _class_Camera2D_zoom:
+
 - :ref:`Vector2<class_vector2>` **zoom** - The camera's zoom relative to the viewport. Values larger than ``Vector2(1, 1)`` zoom out and smaller values zoom in. For an example, use ``Vector2(0.5, 0.5)`` for a 2x zoom in, and ``Vector2(4, 4)`` for a 4x zoom out.
+
 
 Numeric Constants
 -----------------

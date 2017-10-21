@@ -42,10 +42,22 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_Joint_collision/exclude_nodes:
+
 - :ref:`bool<class_bool>` **collision/exclude_nodes** - If ``true`` the two bodies of the nodes are not able to collide with each other.
+
+  .. _class_Joint_nodes/node_a:
+
 - :ref:`NodePath<class_nodepath>` **nodes/node_a** - The :ref:`Node<class_node>`, the first side of the Joint attaches to.
+
+  .. _class_Joint_nodes/node_b:
+
 - :ref:`NodePath<class_nodepath>` **nodes/node_b** - The :ref:`Node<class_node>`, the second side of the Joint attaches to.
+
+  .. _class_Joint_solver/priority:
+
 - :ref:`int<class_int>` **solver/priority** - The order in wich the solver is executed compared to the other Joints, the lower, the earlier.
+
 
 Description
 -----------

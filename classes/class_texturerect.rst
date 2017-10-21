@@ -36,9 +36,18 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_TextureRect_expand:
+
 - :ref:`bool<class_bool>` **expand** - If ``true``, the texture scales to fit its bounding rectangle. Default value: ``false``.
+
+  .. _class_TextureRect_stretch_mode:
+
 - :ref:`int<class_int>` **stretch_mode** - Controls the texture's behavior when you resize the node's bounding rectangle. Set it to one of the ``STRETCH\_\*`` constants. See the constants to learn more.
+
+  .. _class_TextureRect_texture:
+
 - :ref:`Texture<class_texture>` **texture** - The node's :ref:`Texture<class_texture>` resource.
+
 
 Numeric Constants
 -----------------

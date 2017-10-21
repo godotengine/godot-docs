@@ -30,7 +30,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_ConvexPolygonShape2D_points:
+
 - :ref:`PoolVector2Array<class_poolvector2array>` **points** - The polygon's list of vertices. Can be in either clockwise or counterclockwise order.
+
 
 Description
 -----------

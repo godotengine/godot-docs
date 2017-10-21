@@ -36,7 +36,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_ResourcePreloader_resources:
+
 - :ref:`Array<class_array>` **resources**
+
 
 Description
 -----------

@@ -32,7 +32,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_BoxContainer_alignment:
+
 - :ref:`int<class_int>` **alignment** - The alignment of the container's children (must be one of ALIGN_BEGIN, ALIGN_CENTER, or ALIGN_END).
+
 
 Numeric Constants
 -----------------

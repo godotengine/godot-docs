@@ -48,20 +48,40 @@ Member Functions
 Signals
 -------
 
+.. _class_Sprite3D_frame_changed:
+
 -  **frame_changed**  **(** **)**
 
-Emitted when the member frame changes.
+Emitted when the :ref:`frame<class_Sprite3D_frame>` changes.
 
 
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **frame** - Current frame to display from sprite sheet. member vframes or member hframes must be greater than 1.
+  .. _class_Sprite3D_frame:
+
+- :ref:`int<class_int>` **frame** - Current frame to display from sprite sheet. :ref:`vframes<class_Sprite3D_vframes>` or :ref:`hframes<class_Sprite3D_hframes>` must be greater than 1.
+
+  .. _class_Sprite3D_hframes:
+
 - :ref:`int<class_int>` **hframes** - The number of columns in the sprite sheet.
-- :ref:`bool<class_bool>` **region_enabled** - If ``true`` texture will be cut from a larger atlas texture. See member region_rect. Default value: ``false``.
-- :ref:`Rect2<class_rect2>` **region_rect** - The region of the atlas texture to display. member region_enabled must be ``true``.
+
+  .. _class_Sprite3D_region_enabled:
+
+- :ref:`bool<class_bool>` **region_enabled** - If ``true`` texture will be cut from a larger atlas texture. See :ref:`region_rect<class_Sprite3D_region_rect>`. Default value: ``false``.
+
+  .. _class_Sprite3D_region_rect:
+
+- :ref:`Rect2<class_rect2>` **region_rect** - The region of the atlas texture to display. :ref:`region_enabled<class_Sprite3D_region_enabled>` must be ``true``.
+
+  .. _class_Sprite3D_texture:
+
 - :ref:`Texture<class_texture>` **texture** - :ref:`Texture<class_texture>` object to draw.
+
+  .. _class_Sprite3D_vframes:
+
 - :ref:`int<class_int>` **vframes** - The number of rows in the sprite sheet.
+
 
 Description
 -----------

@@ -28,12 +28,30 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_VisibilityEnabler2D_freeze_bodies:
+
 - :ref:`bool<class_bool>` **freeze_bodies**
+
+  .. _class_VisibilityEnabler2D_pause_animated_sprites:
+
 - :ref:`bool<class_bool>` **pause_animated_sprites**
+
+  .. _class_VisibilityEnabler2D_pause_animations:
+
 - :ref:`bool<class_bool>` **pause_animations**
+
+  .. _class_VisibilityEnabler2D_pause_particles:
+
 - :ref:`bool<class_bool>` **pause_particles**
+
+  .. _class_VisibilityEnabler2D_physics_process_parent:
+
 - :ref:`bool<class_bool>` **physics_process_parent**
+
+  .. _class_VisibilityEnabler2D_process_parent:
+
 - :ref:`bool<class_bool>` **process_parent**
+
 
 Numeric Constants
 -----------------

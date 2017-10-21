@@ -110,9 +110,13 @@ Member Functions
 Signals
 -------
 
+.. _class_PopupMenu_id_pressed:
+
 -  **id_pressed**  **(** :ref:`int<class_int>` ID  **)**
 
 This event is emitted when an item of some id is pressed or its accelerator is activated.
+
+.. _class_PopupMenu_index_pressed:
 
 -  **index_pressed**  **(** :ref:`int<class_int>` index  **)**
 
@@ -122,9 +126,18 @@ This event is emitted when an item of some index is pressed or its accelerator i
 Member Variables
 ----------------
 
+  .. _class_PopupMenu_hide_on_checkable_item_selection:
+
 - :ref:`bool<class_bool>` **hide_on_checkable_item_selection**
+
+  .. _class_PopupMenu_hide_on_item_selection:
+
 - :ref:`bool<class_bool>` **hide_on_item_selection**
+
+  .. _class_PopupMenu_items:
+
 - :ref:`Array<class_array>` **items**
+
 
 Description
 -----------

@@ -46,11 +46,26 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_AudioEffectPhaser_depth:
+
 - :ref:`float<class_float>` **depth** - Governs how high the filter frequencies sweep. Low value will primarily affect bass frequencies. High value can sweep high into the treble. Value can range from 0.1 to 4. Default value: ``1``.
+
+  .. _class_AudioEffectPhaser_feedback:
+
 - :ref:`float<class_float>` **feedback** - Output percent of modified sound. Value can range from 0.1 to 0.9. Default value: ``0.7``.
+
+  .. _class_AudioEffectPhaser_range_max_hz:
+
 - :ref:`float<class_float>` **range_max_hz** - Determines the maximum frequency affected by the LFO modulations. Value can range from 10 to 10000. Default value: ``1600hz``.
+
+  .. _class_AudioEffectPhaser_range_min_hz:
+
 - :ref:`float<class_float>` **range_min_hz** - Determines the minimum frequency affected by the LFO modulations. Value can range from 10 to 10000. Default value: ``440hz``.
+
+  .. _class_AudioEffectPhaser_rate_hz:
+
 - :ref:`float<class_float>` **rate_hz** - Adjusts the rate at which the effect sweeps up and down across the frequency range.
+
 
 Description
 -----------

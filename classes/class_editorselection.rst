@@ -34,6 +34,8 @@ Member Functions
 Signals
 -------
 
+.. _class_EditorSelection_selection_changed:
+
 -  **selection_changed**  **(** **)**
 
 Emitted when the selection changes.

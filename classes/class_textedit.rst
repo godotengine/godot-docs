@@ -126,17 +126,27 @@ Member Functions
 Signals
 -------
 
+.. _class_TextEdit_breakpoint_toggled:
+
 -  **breakpoint_toggled**  **(** :ref:`int<class_int>` row  **)**
 
 Emitted when a breakpoint is placed via the breakpoint gutter.
+
+.. _class_TextEdit_cursor_changed:
 
 -  **cursor_changed**  **(** **)**
 
 Emitted when the cursor changes.
 
+.. _class_TextEdit_request_completion:
+
 -  **request_completion**  **(** **)**
 
+.. _class_TextEdit_symbol_lookup:
+
 -  **symbol_lookup**  **(** :ref:`String<class_string>` symbol, :ref:`int<class_int>` row, :ref:`int<class_int>` column  **)**
+
+.. _class_TextEdit_text_changed:
 
 -  **text_changed**  **(** **)**
 
@@ -146,15 +156,42 @@ Emitted when the text changes.
 Member Variables
 ----------------
 
+  .. _class_TextEdit_caret_blink:
+
 - :ref:`bool<class_bool>` **caret_blink**
+
+  .. _class_TextEdit_caret_blink_speed:
+
 - :ref:`float<class_float>` **caret_blink_speed**
+
+  .. _class_TextEdit_caret_block_mode:
+
 - :ref:`bool<class_bool>` **caret_block_mode**
+
+  .. _class_TextEdit_highlight_all_occurrences:
+
 - :ref:`bool<class_bool>` **highlight_all_occurrences**
+
+  .. _class_TextEdit_override_selected_font_color:
+
 - :ref:`bool<class_bool>` **override_selected_font_color**
+
+  .. _class_TextEdit_show_line_numbers:
+
 - :ref:`bool<class_bool>` **show_line_numbers**
+
+  .. _class_TextEdit_smooth_scrolling:
+
 - :ref:`bool<class_bool>` **smooth_scrolling**
+
+  .. _class_TextEdit_syntax_highlighting:
+
 - :ref:`bool<class_bool>` **syntax_highlighting**
+
+  .. _class_TextEdit_v_scroll_speed:
+
 - :ref:`float<class_float>` **v_scroll_speed**
+
 
 Numeric Constants
 -----------------

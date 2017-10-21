@@ -50,15 +50,26 @@ Member Functions
 Signals
 -------
 
+.. _class_Resource_changed:
+
 -  **changed**  **(** **)**
 
 
 Member Variables
 ----------------
 
+  .. _class_Resource_resource_local_to_scene:
+
 - :ref:`bool<class_bool>` **resource_local_to_scene**
+
+  .. _class_Resource_resource_name:
+
 - :ref:`String<class_string>` **resource_name**
+
+  .. _class_Resource_resource_path:
+
 - :ref:`String<class_string>` **resource_path**
+
 
 Description
 -----------

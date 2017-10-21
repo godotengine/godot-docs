@@ -46,17 +46,50 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_KinematicCollision2D_collider:
+
 - :ref:`Object<class_object>` **collider** - The colliding body.
+
+  .. _class_KinematicCollision2D_collider_id:
+
 - :ref:`int<class_int>` **collider_id** - The colliding body's unique :ref:`RID<class_rid>`.
+
+  .. _class_KinematicCollision2D_collider_metadata:
+
 - :ref:`Variant<class_variant>` **collider_metadata** - The colliding body's metadata. See :ref:`Object<class_object>`.
+
+  .. _class_KinematicCollision2D_collider_shape:
+
 - :ref:`Object<class_object>` **collider_shape** - The colliding body's shape.
+
+  .. _class_KinematicCollision2D_collider_shape_index:
+
 - :ref:`int<class_int>` **collider_shape_index** - The colliding shape's index. See :ref:`CollisionObject2D<class_collisionobject2d>`.
+
+  .. _class_KinematicCollision2D_collider_velocity:
+
 - :ref:`Vector2<class_vector2>` **collider_velocity** - The colliding object's velocity.
+
+  .. _class_KinematicCollision2D_local_shape:
+
 - :ref:`Object<class_object>` **local_shape** - The moving object's colliding shape.
+
+  .. _class_KinematicCollision2D_normal:
+
 - :ref:`Vector2<class_vector2>` **normal** - The colliding body's shape's normal at the point of collision.
+
+  .. _class_KinematicCollision2D_position:
+
 - :ref:`Vector2<class_vector2>` **position** - The point of collision.
+
+  .. _class_KinematicCollision2D_remainder:
+
 - :ref:`Vector2<class_vector2>` **remainder** - The moving object's remaining movement vector.
+
+  .. _class_KinematicCollision2D_travel:
+
 - :ref:`Vector2<class_vector2>` **travel** - The distance the moving object traveled before collision.
+
 
 Description
 -----------

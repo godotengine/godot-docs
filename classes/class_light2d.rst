@@ -108,27 +108,90 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_Light2D_color:
+
 - :ref:`Color<class_color>` **color** - The Light2D's :ref:`Color<class_color>`.
+
+  .. _class_Light2D_editor_only:
+
 - :ref:`bool<class_bool>` **editor_only** - If ``true`` Light2D will only appear when editing the scene. Default value: ``false``.
+
+  .. _class_Light2D_enabled:
+
 - :ref:`bool<class_bool>` **enabled** - If ``true`` Light2D will emit light. Default value: ``true``.
+
+  .. _class_Light2D_energy:
+
 - :ref:`float<class_float>` **energy** - The Light2D's energy value. The larger the value, the stronger the light.
+
+  .. _class_Light2D_mode:
+
 - :ref:`int<class_int>` **mode** - The Light2D's mode. See MODE\_\* constants for values.
+
+  .. _class_Light2D_offset:
+
 - :ref:`Vector2<class_vector2>` **offset** - The offset of the Light2D's ``texture``.
+
+  .. _class_Light2D_range_height:
+
 - :ref:`float<class_float>` **range_height** - The height of the Light2D. Used with 2D normal mapping.
+
+  .. _class_Light2D_range_item_cull_mask:
+
 - :ref:`int<class_int>` **range_item_cull_mask** - The layer mask. Only objects with a matching mask will be affected by the Light2D.
+
+  .. _class_Light2D_range_layer_max:
+
 - :ref:`int<class_int>` **range_layer_max** - Maximum layer value of objects that are affected by the Light2D. Default value: ``0``.
+
+  .. _class_Light2D_range_layer_min:
+
 - :ref:`int<class_int>` **range_layer_min** - Minimum layer value of objects that are affected by the Light2D. Default value: ``0``.
+
+  .. _class_Light2D_range_z_max:
+
 - :ref:`int<class_int>` **range_z_max** - Maximum ``Z`` value of objects that are affected by the Light2D. Default value: ``1024``.
+
+  .. _class_Light2D_range_z_min:
+
 - :ref:`int<class_int>` **range_z_min** - Minimum ``z`` value of objects that are affected by the Light2D. Default value: ``-1024``.
+
+  .. _class_Light2D_shadow_buffer_size:
+
 - :ref:`int<class_int>` **shadow_buffer_size** - Shadow buffer size. Default value: ``2048``.
+
+  .. _class_Light2D_shadow_color:
+
 - :ref:`Color<class_color>` **shadow_color** - :ref:`Color<class_color>` of shadows cast by the Light2D.
+
+  .. _class_Light2D_shadow_enabled:
+
 - :ref:`bool<class_bool>` **shadow_enabled** - If ``true`` the Light2D will cast shadows. Default value: ``false``.
+
+  .. _class_Light2D_shadow_filter:
+
 - :ref:`int<class_int>` **shadow_filter** - Shadow filter type. Use SHADOW_FILTER\_\* constants to set ``shadow_filter``. Default value: ``None``.
+
+  .. _class_Light2D_shadow_filter_smooth:
+
 - :ref:`float<class_float>` **shadow_filter_smooth** - Smoothing value for shadows.
+
+  .. _class_Light2D_shadow_gradient_length:
+
 - :ref:`float<class_float>` **shadow_gradient_length** - Smooth shadow gradient length.
+
+  .. _class_Light2D_shadow_item_cull_mask:
+
 - :ref:`int<class_int>` **shadow_item_cull_mask** - The shadow mask. Used with :ref:`LightOccluder2D<class_lightoccluder2d>` to cast shadows. Only occluders with a matching shadow mask will cast shadows.
+
+  .. _class_Light2D_texture:
+
 - :ref:`Texture<class_texture>` **texture** - :ref:`Texture<class_texture>` used for the Light2D's appearance.
+
+  .. _class_Light2D_texture_scale:
+
 - :ref:`float<class_float>` **texture_scale** - The ``texture``'s scale factor.
+
 
 Numeric Constants
 -----------------

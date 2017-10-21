@@ -72,17 +72,50 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_VehicleWheel_damping_compression:
+
 - :ref:`float<class_float>` **damping_compression**
+
+  .. _class_VehicleWheel_damping_relaxation:
+
 - :ref:`float<class_float>` **damping_relaxation**
+
+  .. _class_VehicleWheel_suspension_max_force:
+
 - :ref:`float<class_float>` **suspension_max_force**
+
+  .. _class_VehicleWheel_suspension_stiffness:
+
 - :ref:`float<class_float>` **suspension_stiffness**
+
+  .. _class_VehicleWheel_suspension_travel:
+
 - :ref:`float<class_float>` **suspension_travel**
+
+  .. _class_VehicleWheel_use_as_steering:
+
 - :ref:`bool<class_bool>` **use_as_steering**
+
+  .. _class_VehicleWheel_use_as_traction:
+
 - :ref:`bool<class_bool>` **use_as_traction**
+
+  .. _class_VehicleWheel_wheel_friction_slip:
+
 - :ref:`float<class_float>` **wheel_friction_slip**
+
+  .. _class_VehicleWheel_wheel_radius:
+
 - :ref:`float<class_float>` **wheel_radius**
+
+  .. _class_VehicleWheel_wheel_rest_length:
+
 - :ref:`float<class_float>` **wheel_rest_length**
+
+  .. _class_VehicleWheel_wheel_roll_influence:
+
 - :ref:`float<class_float>` **wheel_roll_influence**
+
 
 Member Function Description
 ---------------------------

@@ -112,33 +112,49 @@ Member Functions
 Signals
 -------
 
+.. _class_Area_area_entered:
+
 -  **area_entered**  **(** :ref:`Object<class_object>` area  **)**
 
 Emitted when another area enters.
+
+.. _class_Area_area_exited:
 
 -  **area_exited**  **(** :ref:`Object<class_object>` area  **)**
 
 Emitted when another area exits.
 
+.. _class_Area_area_shape_entered:
+
 -  **area_shape_entered**  **(** :ref:`int<class_int>` area_id, :ref:`Object<class_object>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape  **)**
 
 Emitted when another area enters, reporting which areas overlapped.
+
+.. _class_Area_area_shape_exited:
 
 -  **area_shape_exited**  **(** :ref:`int<class_int>` area_id, :ref:`Object<class_object>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape  **)**
 
 Emitted when another area exits, reporting which areas were overlapping.
 
+.. _class_Area_body_entered:
+
 -  **body_entered**  **(** :ref:`Object<class_object>` body  **)**
 
 Emitted when a :ref:`PhysicsBody<class_physicsbody>` object enters.
+
+.. _class_Area_body_exited:
 
 -  **body_exited**  **(** :ref:`Object<class_object>` body  **)**
 
 Emitted when a :ref:`PhysicsBody2D<class_physicsbody2d>` object exits.
 
+.. _class_Area_body_shape_entered:
+
 -  **body_shape_entered**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape  **)**
 
 Emitted when a :ref:`PhysicsBody2D<class_physicsbody2d>` object enters, reporting which shapes overlapped.
+
+.. _class_Area_body_shape_exited:
 
 -  **body_shape_exited**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape  **)**
 
@@ -148,24 +164,78 @@ Emitted when a :ref:`PhysicsBody2D<class_physicsbody2d>` object exits, reporting
 Member Variables
 ----------------
 
+  .. _class_Area_angular_damp:
+
 - :ref:`float<class_float>` **angular_damp** - The rate at which objects stop spinning in this area. Represents the angular velocity lost per second. Values range from ``0`` (no damping) to ``1`` (full damping).
+
+  .. _class_Area_audio_bus_name:
+
 - :ref:`String<class_string>` **audio_bus_name** - The name of the area's audio bus.
+
+  .. _class_Area_audio_bus_override:
+
 - :ref:`bool<class_bool>` **audio_bus_override** - If ``true`` the area's audio bus overrides the default audio bus. Default value: ``false``.
+
+  .. _class_Area_collision_layer:
+
 - :ref:`int<class_int>` **collision_layer** - The area's physics layer(s). Collidable objects can exist in any of 32 different layers. A contact is detected if object A is in any of the layers that object B scans, or object B is in any layers that object A scans. See also ``collision_mask``.
+
+  .. _class_Area_collision_mask:
+
 - :ref:`int<class_int>` **collision_mask** - The physics layers this area scans to determine collision detection.
+
+  .. _class_Area_gravity:
+
 - :ref:`float<class_float>` **gravity** - The area's gravity intensity (ranges from -1024 to 1024). This value multiplies the gravity vector. This is useful to alter the force of gravity without altering its direction.
+
+  .. _class_Area_gravity_distance_scale:
+
 - :ref:`float<class_float>` **gravity_distance_scale** - The falloff factor for point gravity. The greater the value, the faster gravity decreases with distance.
+
+  .. _class_Area_gravity_point:
+
 - :ref:`bool<class_bool>` **gravity_point** - If ``true`` gravity is calculated from a point (set via ``gravity_vec``). Also see ``space_override``. Default value: ``false``.
+
+  .. _class_Area_gravity_vec:
+
 - :ref:`Vector3<class_vector3>` **gravity_vec** - The area's gravity vector (not normalized). If gravity is a point (see :ref:`is_gravity_a_point<class_Area_is_gravity_a_point>`), this will be the point of attraction.
+
+  .. _class_Area_linear_damp:
+
 - :ref:`float<class_float>` **linear_damp** - The rate at which objects stop moving in this area. Represents the linear velocity lost per second. Values range from ``0`` (no damping) to ``1`` (full damping).
+
+  .. _class_Area_monitorable:
+
 - :ref:`bool<class_bool>` **monitorable** - If ``true`` other monitoring areas can detect this area. Default value: ``true``.
+
+  .. _class_Area_monitoring:
+
 - :ref:`bool<class_bool>` **monitoring** - If ``true`` the area detects bodies or areas entering and exiting it. Default value: ``true``.
+
+  .. _class_Area_priority:
+
 - :ref:`float<class_float>` **priority** - The area's priority. Higher priority areas are processed first. Default value: 0.
+
+  .. _class_Area_reverb_bus_amount:
+
 - :ref:`float<class_float>` **reverb_bus_amount**
+
+  .. _class_Area_reverb_bus_enable:
+
 - :ref:`bool<class_bool>` **reverb_bus_enable**
+
+  .. _class_Area_reverb_bus_name:
+
 - :ref:`String<class_string>` **reverb_bus_name**
+
+  .. _class_Area_reverb_bus_uniformity:
+
 - :ref:`float<class_float>` **reverb_bus_uniformity**
+
+  .. _class_Area_space_override:
+
 - :ref:`int<class_int>` **space_override** - Override mode for gravity and damping calculations within this area. See the SPACE_OVERRIDE\_\* constants for values.
+
 
 Numeric Constants
 -----------------

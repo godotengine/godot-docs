@@ -36,9 +36,18 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_PlaneMesh_size:
+
 - :ref:`Vector2<class_vector2>` **size** - Size of the generated plane. Defaults to (2.0, 2.0).
+
+  .. _class_PlaneMesh_subdivide_depth:
+
 - :ref:`int<class_int>` **subdivide_depth** - Number of subdivision along the z-axis. Defaults to 0.
+
+  .. _class_PlaneMesh_subdivide_width:
+
 - :ref:`int<class_int>` **subdivide_width** - Number of subdivision along the x-axis. Defaults to 0.
+
 
 Description
 -----------

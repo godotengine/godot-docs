@@ -92,25 +92,82 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_Particles_amount:
+
 - :ref:`int<class_int>` **amount** - Number of particles to emit.
+
+  .. _class_Particles_draw_order:
+
 - :ref:`int<class_int>` **draw_order** - Particle draw order. Uses ``DRAW_ORDER\_\*`` values. Default value: ``DRAW_ORDER_INDEX``.
+
+  .. _class_Particles_draw_pass_1:
+
 - :ref:`Mesh<class_mesh>` **draw_pass_1**
+
+  .. _class_Particles_draw_pass_2:
+
 - :ref:`Mesh<class_mesh>` **draw_pass_2**
+
+  .. _class_Particles_draw_pass_3:
+
 - :ref:`Mesh<class_mesh>` **draw_pass_3**
+
+  .. _class_Particles_draw_pass_4:
+
 - :ref:`Mesh<class_mesh>` **draw_pass_4**
+
+  .. _class_Particles_draw_passes:
+
 - :ref:`int<class_int>` **draw_passes**
+
+  .. _class_Particles_emitting:
+
 - :ref:`bool<class_bool>` **emitting** - If ``true`` particles are being emitted. Default value: ``true``.
+
+  .. _class_Particles_explosiveness:
+
 - :ref:`float<class_float>` **explosiveness** - Time ratio between each emission. If ``0`` particles are emitted continuously. If ``1`` all particles are emitted simultaneously. Default value: ``0``.
+
+  .. _class_Particles_fixed_fps:
+
 - :ref:`int<class_int>` **fixed_fps**
+
+  .. _class_Particles_fract_delta:
+
 - :ref:`bool<class_bool>` **fract_delta**
+
+  .. _class_Particles_lifetime:
+
 - :ref:`float<class_float>` **lifetime** - Amount of time each particle will exist. Default value: ``1``.
+
+  .. _class_Particles_local_coords:
+
 - :ref:`bool<class_bool>` **local_coords** - If ``true`` particles use the parent node's coordinate space. If ``false`` they use global coordinates. Default value: ``true``.
+
+  .. _class_Particles_one_shot:
+
 - :ref:`bool<class_bool>` **one_shot** - If ``true`` only ``amount`` particles will be emitted. Default value: ``false``.
+
+  .. _class_Particles_preprocess:
+
 - :ref:`float<class_float>` **preprocess**
+
+  .. _class_Particles_process_material:
+
 - :ref:`Material<class_material>` **process_material** - :ref:`Material<class_material>` for processing particles. Can be a :ref:`ParticlesMaterial<class_particlesmaterial>` or a :ref:`ShaderMaterial<class_shadermaterial>`.
+
+  .. _class_Particles_randomness:
+
 - :ref:`float<class_float>` **randomness** - Emission randomness ratio. Default value: ``0``.
+
+  .. _class_Particles_speed_scale:
+
 - :ref:`float<class_float>` **speed_scale** - Speed scaling ratio. Default value: ``1``.
+
+  .. _class_Particles_visibility_aabb:
+
 - :ref:`Rect3<class_rect3>` **visibility_aabb**
+
 
 Numeric Constants
 -----------------

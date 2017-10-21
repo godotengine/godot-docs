@@ -36,8 +36,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_WindowDialog_resizable:
+
 - :ref:`bool<class_bool>` **resizable**
+
+  .. _class_WindowDialog_window_title:
+
 - :ref:`String<class_string>` **window_title**
+
 
 Description
 -----------

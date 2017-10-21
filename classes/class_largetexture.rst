@@ -40,6 +40,8 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_LargeTexture__data:
+
 - :ref:`Array<class_array>` **_data** - Returns an :ref:`Array<class_array>` with offsets and textures data of each added piece. Schema is offsets1, texture1, offsets2, texture2, large_texture_size.
 
 ``offsets`` : :ref:`Vector2<class_vector2>` offsets of the texture piece.
@@ -47,6 +49,7 @@ Member Variables
 ``second`` : :ref:`StreamTexture<class_streamtexture>` data of the texture piece.
 
 ``last entry`` : :ref:`Vector2<class_vector2>` size of the entire large texture.
+
 
 Description
 -----------

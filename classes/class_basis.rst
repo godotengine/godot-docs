@@ -58,9 +58,18 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_Basis_x:
+
 - :ref:`Vector3<class_vector3>` **x**
+
+  .. _class_Basis_y:
+
 - :ref:`Vector3<class_vector3>` **y**
+
+  .. _class_Basis_z:
+
 - :ref:`Vector3<class_vector3>` **z**
+
 
 Description
 -----------

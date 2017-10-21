@@ -32,8 +32,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_NavigationMeshInstance_enabled:
+
 - :ref:`bool<class_bool>` **enabled**
+
+  .. _class_NavigationMeshInstance_navmesh:
+
 - :ref:`NavigationMesh<class_navigationmesh>` **navmesh**
+
 
 Member Function Description
 ---------------------------

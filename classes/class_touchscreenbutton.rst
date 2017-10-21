@@ -62,9 +62,13 @@ Member Functions
 Signals
 -------
 
+.. _class_TouchScreenButton_pressed:
+
 -  **pressed**  **(** **)**
 
 Emitted when the button is pressed (down).
+
+.. _class_TouchScreenButton_released:
 
 -  **released**  **(** **)**
 
@@ -74,15 +78,42 @@ Emitted when the button is released (up).
 Member Variables
 ----------------
 
+  .. _class_TouchScreenButton_action:
+
 - :ref:`String<class_string>` **action** - The button's action. Actions can be handled with :ref:`InputEventAction<class_inputeventaction>`.
+
+  .. _class_TouchScreenButton_bitmask:
+
 - :ref:`BitMap<class_bitmap>` **bitmask** - The button's bitmask.
+
+  .. _class_TouchScreenButton_normal:
+
 - :ref:`Texture<class_texture>` **normal** - The button's texture for the normal state.
+
+  .. _class_TouchScreenButton_passby_press:
+
 - :ref:`bool<class_bool>` **passby_press** - If ``true`` passby presses are enabled.
+
+  .. _class_TouchScreenButton_pressed:
+
 - :ref:`Texture<class_texture>` **pressed** - The button's texture for the pressed state.
+
+  .. _class_TouchScreenButton_shape:
+
 - :ref:`Shape2D<class_shape2d>` **shape** - The button's shape.
+
+  .. _class_TouchScreenButton_shape_centered:
+
 - :ref:`bool<class_bool>` **shape_centered** - If ``true`` the button's shape is centered.
+
+  .. _class_TouchScreenButton_shape_visible:
+
 - :ref:`bool<class_bool>` **shape_visible** - If ``true`` the button's shape is visible.
+
+  .. _class_TouchScreenButton_visibility_mode:
+
 - :ref:`int<class_int>` **visibility_mode** - The button's visibility mode. See ``VISIBILITY\_\*`` constants.
+
 
 Numeric Constants
 -----------------

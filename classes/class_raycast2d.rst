@@ -66,10 +66,24 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_RayCast2D_cast_to:
+
 - :ref:`Vector2<class_vector2>` **cast_to** - The ray's destination point, relative to the RayCast's ``position``.
+
+  .. _class_RayCast2D_collision_layer:
+
 - :ref:`int<class_int>` **collision_layer** - The RayCast2D's collision layer(s). Only bodies in the same collision layer(s) will be detected.
+
+  .. _class_RayCast2D_enabled:
+
 - :ref:`bool<class_bool>` **enabled** - If ``true``, collisions will be reported. Default value: ``false``.
+
+  .. _class_RayCast2D_exclude_parent:
+
 - :ref:`bool<class_bool>` **exclude_parent** - If ``true``, the parent node will be excluded from collision detection. Default value: ``true``.
+
+  .. _class_RayCast2D_type_mask:
+
 - :ref:`int<class_int>` **type_mask** - Object types to detect using a logical sum (OR operation) of type constants defined in :ref:`Physics2DDirectSpaceState<class_physics2ddirectspacestate>`.
 
 Example:
@@ -77,6 +91,7 @@ Example:
 ::
 
     RayCast.type_mask = Physics2DDirectSpaceState.TYPE_MASK_STATIC_BODY | Physics2DDirectSpaceState.TYPE_MASK_KINEMATIC_BODY
+
 
 Description
 -----------

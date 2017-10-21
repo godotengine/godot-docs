@@ -72,9 +72,18 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_Vector3_x:
+
 - :ref:`float<class_float>` **x** - X component of the vector.
+
+  .. _class_Vector3_y:
+
 - :ref:`float<class_float>` **y** - Y component of the vector.
+
+  .. _class_Vector3_z:
+
 - :ref:`float<class_float>` **z** - Z component of the vector.
+
 
 Numeric Constants
 -----------------

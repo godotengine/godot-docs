@@ -240,97 +240,370 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_SpatialMaterial_albedo_color:
+
 - :ref:`Color<class_color>` **albedo_color**
+
+  .. _class_SpatialMaterial_albedo_texture:
+
 - :ref:`Texture<class_texture>` **albedo_texture**
+
+  .. _class_SpatialMaterial_anisotropy:
+
 - :ref:`float<class_float>` **anisotropy**
+
+  .. _class_SpatialMaterial_anisotropy_enabled:
+
 - :ref:`bool<class_bool>` **anisotropy_enabled**
+
+  .. _class_SpatialMaterial_anisotropy_flowmap:
+
 - :ref:`Texture<class_texture>` **anisotropy_flowmap**
+
+  .. _class_SpatialMaterial_ao_enabled:
+
 - :ref:`bool<class_bool>` **ao_enabled**
+
+  .. _class_SpatialMaterial_ao_light_affect:
+
 - :ref:`float<class_float>` **ao_light_affect**
+
+  .. _class_SpatialMaterial_ao_on_uv2:
+
 - :ref:`bool<class_bool>` **ao_on_uv2**
+
+  .. _class_SpatialMaterial_ao_texture:
+
 - :ref:`Texture<class_texture>` **ao_texture**
+
+  .. _class_SpatialMaterial_ao_texture_channel:
+
 - :ref:`int<class_int>` **ao_texture_channel**
+
+  .. _class_SpatialMaterial_clearcoat:
+
 - :ref:`float<class_float>` **clearcoat**
+
+  .. _class_SpatialMaterial_clearcoat_enabled:
+
 - :ref:`bool<class_bool>` **clearcoat_enabled**
+
+  .. _class_SpatialMaterial_clearcoat_gloss:
+
 - :ref:`float<class_float>` **clearcoat_gloss**
+
+  .. _class_SpatialMaterial_clearcoat_texture:
+
 - :ref:`Texture<class_texture>` **clearcoat_texture**
+
+  .. _class_SpatialMaterial_depth_deep_parallax:
+
 - :ref:`bool<class_bool>` **depth_deep_parallax**
+
+  .. _class_SpatialMaterial_depth_enabled:
+
 - :ref:`bool<class_bool>` **depth_enabled**
+
+  .. _class_SpatialMaterial_depth_max_layers:
+
 - :ref:`int<class_int>` **depth_max_layers**
+
+  .. _class_SpatialMaterial_depth_min_layers:
+
 - :ref:`int<class_int>` **depth_min_layers**
+
+  .. _class_SpatialMaterial_depth_scale:
+
 - :ref:`float<class_float>` **depth_scale**
+
+  .. _class_SpatialMaterial_depth_texture:
+
 - :ref:`Texture<class_texture>` **depth_texture**
+
+  .. _class_SpatialMaterial_detail_albedo:
+
 - :ref:`Texture<class_texture>` **detail_albedo**
+
+  .. _class_SpatialMaterial_detail_blend_mode:
+
 - :ref:`int<class_int>` **detail_blend_mode**
+
+  .. _class_SpatialMaterial_detail_enabled:
+
 - :ref:`bool<class_bool>` **detail_enabled**
+
+  .. _class_SpatialMaterial_detail_mask:
+
 - :ref:`Texture<class_texture>` **detail_mask**
+
+  .. _class_SpatialMaterial_detail_normal:
+
 - :ref:`Texture<class_texture>` **detail_normal**
+
+  .. _class_SpatialMaterial_detail_uv_layer:
+
 - :ref:`int<class_int>` **detail_uv_layer**
+
+  .. _class_SpatialMaterial_distance_fade_enable:
+
 - :ref:`bool<class_bool>` **distance_fade_enable**
+
+  .. _class_SpatialMaterial_distance_fade_max_distance:
+
 - :ref:`float<class_float>` **distance_fade_max_distance**
+
+  .. _class_SpatialMaterial_distance_fade_min_distance:
+
 - :ref:`float<class_float>` **distance_fade_min_distance**
+
+  .. _class_SpatialMaterial_emission:
+
 - :ref:`Color<class_color>` **emission**
+
+  .. _class_SpatialMaterial_emission_enabled:
+
 - :ref:`bool<class_bool>` **emission_enabled**
+
+  .. _class_SpatialMaterial_emission_energy:
+
 - :ref:`float<class_float>` **emission_energy**
+
+  .. _class_SpatialMaterial_emission_texture:
+
 - :ref:`Texture<class_texture>` **emission_texture**
+
+  .. _class_SpatialMaterial_flags_fixed_size:
+
 - :ref:`bool<class_bool>` **flags_fixed_size**
+
+  .. _class_SpatialMaterial_flags_no_depth_test:
+
 - :ref:`bool<class_bool>` **flags_no_depth_test**
+
+  .. _class_SpatialMaterial_flags_transparent:
+
 - :ref:`bool<class_bool>` **flags_transparent**
+
+  .. _class_SpatialMaterial_flags_unshaded:
+
 - :ref:`bool<class_bool>` **flags_unshaded**
+
+  .. _class_SpatialMaterial_flags_use_point_size:
+
 - :ref:`bool<class_bool>` **flags_use_point_size**
+
+  .. _class_SpatialMaterial_flags_vertex_lighting:
+
 - :ref:`bool<class_bool>` **flags_vertex_lighting**
+
+  .. _class_SpatialMaterial_flags_world_triplanar:
+
 - :ref:`bool<class_bool>` **flags_world_triplanar**
+
+  .. _class_SpatialMaterial_metallic:
+
 - :ref:`float<class_float>` **metallic**
+
+  .. _class_SpatialMaterial_metallic_specular:
+
 - :ref:`float<class_float>` **metallic_specular**
+
+  .. _class_SpatialMaterial_metallic_texture:
+
 - :ref:`Texture<class_texture>` **metallic_texture**
+
+  .. _class_SpatialMaterial_metallic_texture_channel:
+
 - :ref:`int<class_int>` **metallic_texture_channel**
+
+  .. _class_SpatialMaterial_normal_enabled:
+
 - :ref:`bool<class_bool>` **normal_enabled**
+
+  .. _class_SpatialMaterial_normal_scale:
+
 - :ref:`float<class_float>` **normal_scale**
+
+  .. _class_SpatialMaterial_normal_texture:
+
 - :ref:`Texture<class_texture>` **normal_texture**
+
+  .. _class_SpatialMaterial_params_alpha_scissor_threshold:
+
 - :ref:`float<class_float>` **params_alpha_scissor_threshold**
+
+  .. _class_SpatialMaterial_params_billboard_mode:
+
 - :ref:`int<class_int>` **params_billboard_mode**
+
+  .. _class_SpatialMaterial_params_blend_mode:
+
 - :ref:`int<class_int>` **params_blend_mode**
+
+  .. _class_SpatialMaterial_params_cull_mode:
+
 - :ref:`int<class_int>` **params_cull_mode**
+
+  .. _class_SpatialMaterial_params_depth_draw_mode:
+
 - :ref:`int<class_int>` **params_depth_draw_mode**
+
+  .. _class_SpatialMaterial_params_diffuse_mode:
+
 - :ref:`int<class_int>` **params_diffuse_mode**
+
+  .. _class_SpatialMaterial_params_grow:
+
 - :ref:`bool<class_bool>` **params_grow**
+
+  .. _class_SpatialMaterial_params_grow_amount:
+
 - :ref:`float<class_float>` **params_grow_amount**
+
+  .. _class_SpatialMaterial_params_line_width:
+
 - :ref:`float<class_float>` **params_line_width**
+
+  .. _class_SpatialMaterial_params_point_size:
+
 - :ref:`float<class_float>` **params_point_size**
+
+  .. _class_SpatialMaterial_params_specular_mode:
+
 - :ref:`int<class_int>` **params_specular_mode**
+
+  .. _class_SpatialMaterial_params_use_alpha_scissor:
+
 - :ref:`bool<class_bool>` **params_use_alpha_scissor**
+
+  .. _class_SpatialMaterial_particles_anim_h_frames:
+
 - :ref:`int<class_int>` **particles_anim_h_frames**
+
+  .. _class_SpatialMaterial_particles_anim_loop:
+
 - :ref:`int<class_int>` **particles_anim_loop**
+
+  .. _class_SpatialMaterial_particles_anim_v_frames:
+
 - :ref:`int<class_int>` **particles_anim_v_frames**
+
+  .. _class_SpatialMaterial_proximity_fade_distance:
+
 - :ref:`float<class_float>` **proximity_fade_distance**
+
+  .. _class_SpatialMaterial_proximity_fade_enable:
+
 - :ref:`bool<class_bool>` **proximity_fade_enable**
+
+  .. _class_SpatialMaterial_refraction_enabled:
+
 - :ref:`bool<class_bool>` **refraction_enabled**
+
+  .. _class_SpatialMaterial_refraction_scale:
+
 - :ref:`float<class_float>` **refraction_scale**
+
+  .. _class_SpatialMaterial_refraction_texture:
+
 - :ref:`Texture<class_texture>` **refraction_texture**
+
+  .. _class_SpatialMaterial_refraction_texture_channel:
+
 - :ref:`int<class_int>` **refraction_texture_channel**
+
+  .. _class_SpatialMaterial_rim:
+
 - :ref:`float<class_float>` **rim**
+
+  .. _class_SpatialMaterial_rim_enabled:
+
 - :ref:`bool<class_bool>` **rim_enabled**
+
+  .. _class_SpatialMaterial_rim_texture:
+
 - :ref:`Texture<class_texture>` **rim_texture**
+
+  .. _class_SpatialMaterial_rim_tint:
+
 - :ref:`float<class_float>` **rim_tint**
+
+  .. _class_SpatialMaterial_roughness:
+
 - :ref:`float<class_float>` **roughness**
+
+  .. _class_SpatialMaterial_roughness_texture:
+
 - :ref:`Texture<class_texture>` **roughness_texture**
+
+  .. _class_SpatialMaterial_roughness_texture_channel:
+
 - :ref:`int<class_int>` **roughness_texture_channel**
+
+  .. _class_SpatialMaterial_subsurf_scatter_enabled:
+
 - :ref:`bool<class_bool>` **subsurf_scatter_enabled**
+
+  .. _class_SpatialMaterial_subsurf_scatter_strength:
+
 - :ref:`float<class_float>` **subsurf_scatter_strength**
+
+  .. _class_SpatialMaterial_subsurf_scatter_texture:
+
 - :ref:`Texture<class_texture>` **subsurf_scatter_texture**
+
+  .. _class_SpatialMaterial_transmission:
+
 - :ref:`Color<class_color>` **transmission**
+
+  .. _class_SpatialMaterial_transmission_enabled:
+
 - :ref:`bool<class_bool>` **transmission_enabled**
+
+  .. _class_SpatialMaterial_transmission_texture:
+
 - :ref:`Texture<class_texture>` **transmission_texture**
+
+  .. _class_SpatialMaterial_uv1_offset:
+
 - :ref:`Vector3<class_vector3>` **uv1_offset**
+
+  .. _class_SpatialMaterial_uv1_scale:
+
 - :ref:`Vector3<class_vector3>` **uv1_scale**
+
+  .. _class_SpatialMaterial_uv1_triplanar:
+
 - :ref:`bool<class_bool>` **uv1_triplanar**
+
+  .. _class_SpatialMaterial_uv1_triplanar_sharpness:
+
 - :ref:`float<class_float>` **uv1_triplanar_sharpness**
+
+  .. _class_SpatialMaterial_uv2_offset:
+
 - :ref:`Vector3<class_vector3>` **uv2_offset**
+
+  .. _class_SpatialMaterial_uv2_scale:
+
 - :ref:`Vector3<class_vector3>` **uv2_scale**
+
+  .. _class_SpatialMaterial_uv2_triplanar:
+
 - :ref:`bool<class_bool>` **uv2_triplanar**
+
+  .. _class_SpatialMaterial_uv2_triplanar_sharpness:
+
 - :ref:`float<class_float>` **uv2_triplanar_sharpness**
+
+  .. _class_SpatialMaterial_vertex_color_is_srgb:
+
 - :ref:`bool<class_bool>` **vertex_color_is_srgb**
+
+  .. _class_SpatialMaterial_vertex_color_use_as_albedo:
+
 - :ref:`bool<class_bool>` **vertex_color_use_as_albedo**
+
 
 Numeric Constants
 -----------------

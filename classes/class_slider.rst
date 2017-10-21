@@ -38,10 +38,22 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_Slider_editable:
+
 - :ref:`bool<class_bool>` **editable**
+
+  .. _class_Slider_focus_mode:
+
 - :ref:`int<class_int>` **focus_mode**
+
+  .. _class_Slider_tick_count:
+
 - :ref:`int<class_int>` **tick_count**
+
+  .. _class_Slider_ticks_on_borders:
+
 - :ref:`bool<class_bool>` **ticks_on_borders**
+
 
 Description
 -----------

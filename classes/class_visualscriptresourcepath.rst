@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_VisualScriptResourcePath_path:
+
 - :ref:`String<class_string>` **path**
+
 
 Member Function Description
 ---------------------------

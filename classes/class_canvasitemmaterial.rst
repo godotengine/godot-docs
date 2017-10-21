@@ -32,8 +32,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_CanvasItemMaterial_blend_mode:
+
 - :ref:`int<class_int>` **blend_mode**
+
+  .. _class_CanvasItemMaterial_light_mode:
+
 - :ref:`int<class_int>` **light_mode**
+
 
 Numeric Constants
 -----------------

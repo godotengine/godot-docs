@@ -40,9 +40,20 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_JSONParseResult_error:
+
 - :ref:`int<class_int>` **error** - The error type if JSON source was not successfully parsed. See :ref:`@Global Scope<class_@global scope>`\ ERR\_\* constants.
+
+  .. _class_JSONParseResult_error_line:
+
 - :ref:`int<class_int>` **error_line** - The line number where the error occurred if JSON source was not successfully parsed.
+
+  .. _class_JSONParseResult_error_string:
+
 - :ref:`String<class_string>` **error_string** - The error message if JSON source was not successfully parsed. See :ref:`@Global Scope<class_@global scope>`\ ERR\_\* constants.
+
+  .. _class_JSONParseResult_result:
+
 - :ref:`Variant<class_variant>` **result** - A :ref:`Variant<class_variant>` containing the parsed JSON. Use typeof() to check if it is what you expect. For example, if JSON source starts with braces ``{}`` a :ref:`Dictionary<class_dictionary>` will be returned, if JSON source starts with array braces ``[]`` an :ref:`Array<class_array>` will be returned.
 
 *Be aware that the JSON specification does not define integer or float types, but only a number type. Therefore, parsing a JSON text will convert all numerical values to float types.*
@@ -54,6 +65,7 @@ Member Variables
     print(p[0]) # prints 'hello'
     else:
     print("unexpected results")
+
 
 Description
 -----------

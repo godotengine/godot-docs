@@ -42,10 +42,22 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_InputEventScreenDrag_index:
+
 - :ref:`int<class_int>` **index** - Drag event index in the case of a multi-drag event.
+
+  .. _class_InputEventScreenDrag_position:
+
 - :ref:`Vector2<class_vector2>` **position** - Drag position.
+
+  .. _class_InputEventScreenDrag_relative:
+
 - :ref:`Vector2<class_vector2>` **relative** - Drag position relative to its start position.
+
+  .. _class_InputEventScreenDrag_speed:
+
 - :ref:`Vector2<class_vector2>` **speed** - Drag speed.
+
 
 Description
 -----------

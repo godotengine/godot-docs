@@ -46,11 +46,26 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_AudioEffectDistortion_drive:
+
 - :ref:`float<class_float>` **drive** - Distortion power. Value can range from 0 to 1. Default value: ``0``.
+
+  .. _class_AudioEffectDistortion_keep_hf_hz:
+
 - :ref:`float<class_float>` **keep_hf_hz** - High-pass filter. Frequencies higher than this value will not be affected by the distortion. Value can range from 1 to 20000. Default value: ``16000``.
+
+  .. _class_AudioEffectDistortion_mode:
+
 - :ref:`int<class_int>` **mode** - Distortion type. Default value: ``MODE_CLIP``.
+
+  .. _class_AudioEffectDistortion_post_gain:
+
 - :ref:`float<class_float>` **post_gain** - Increases or decreases the volume after the effect. Value can range from -80 to 24. Default value: ``0``.
+
+  .. _class_AudioEffectDistortion_pre_gain:
+
 - :ref:`float<class_float>` **pre_gain** - Increases or decreases the volume before the effect. Value can range from -60 to 60. Default value: ``0``.
+
 
 Numeric Constants
 -----------------

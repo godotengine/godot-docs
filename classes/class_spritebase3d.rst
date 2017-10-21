@@ -68,18 +68,54 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_SpriteBase3D_alpha_cut:
+
 - :ref:`int<class_int>` **alpha_cut**
+
+  .. _class_SpriteBase3D_axis:
+
 - :ref:`int<class_int>` **axis** - The direction in which the front of the texture faces.
+
+  .. _class_SpriteBase3D_centered:
+
 - :ref:`bool<class_bool>` **centered** - If ``true`` texture will be centered. Default value: ``true``.
+
+  .. _class_SpriteBase3D_double_sided:
+
 - :ref:`bool<class_bool>` **double_sided** - If ``true`` texture can be seen from the back as well, if ``false``, it is invisible when looking at it from behind. Default value: ``true``.
+
+  .. _class_SpriteBase3D_flip_h:
+
 - :ref:`bool<class_bool>` **flip_h** - If ``true`` texture is flipped horizontally. Default value: ``false``.
+
+  .. _class_SpriteBase3D_flip_v:
+
 - :ref:`bool<class_bool>` **flip_v** - If ``true`` texture is flipped vertically. Default value: ``false``.
+
+  .. _class_SpriteBase3D_modulate:
+
 - :ref:`Color<class_color>` **modulate** - A color value that gets multiplied on, could be used for mood-coloring or to simulate the color of light.
+
+  .. _class_SpriteBase3D_offset:
+
 - :ref:`Vector2<class_vector2>` **offset** - The texture's drawing offset.
+
+  .. _class_SpriteBase3D_opacity:
+
 - :ref:`float<class_float>` **opacity** - The objects visibility on a scale from ``0`` fully invisible to ``1`` fully visible.
+
+  .. _class_SpriteBase3D_pixel_size:
+
 - :ref:`float<class_float>` **pixel_size** - The size of one pixel's width on the Sprite to scale it in 3D.
+
+  .. _class_SpriteBase3D_shaded:
+
 - :ref:`bool<class_bool>` **shaded** - If ``true`` the :ref:`Light<class_light>` in the :ref:`Environment<class_environment>` has effects on the Sprite. Default value: ``false``.
+
+  .. _class_SpriteBase3D_transparent:
+
 - :ref:`bool<class_bool>` **transparent** - If ``true`` the texture's transparency and the opacity are used to make those parts of the Sprite invisible. Default value: ``true``.
+
 
 Numeric Constants
 -----------------

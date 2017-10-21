@@ -60,11 +60,17 @@ Member Functions
 Signals
 -------
 
+.. _class_TabContainer_pre_popup_pressed:
+
 -  **pre_popup_pressed**  **(** **)**
+
+.. _class_TabContainer_tab_changed:
 
 -  **tab_changed**  **(** :ref:`int<class_int>` tab  **)**
 
 Emitted only when the current tab changes.
+
+.. _class_TabContainer_tab_selected:
 
 -  **tab_selected**  **(** :ref:`int<class_int>` tab  **)**
 
@@ -74,9 +80,18 @@ Emitted when a tab is being selected, even if it is the same tab.
 Member Variables
 ----------------
 
+  .. _class_TabContainer_current_tab:
+
 - :ref:`int<class_int>` **current_tab** - The current tab.
+
+  .. _class_TabContainer_tab_align:
+
 - :ref:`int<class_int>` **tab_align** - The alignment of all the tabs of the tab container. See the ``ALIGN\_\*`` constants.
+
+  .. _class_TabContainer_tabs_visible:
+
 - :ref:`bool<class_bool>` **tabs_visible** - If ``true`` all tabs that are children of the TabContainer will be visible.
+
 
 Numeric Constants
 -----------------

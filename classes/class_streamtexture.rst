@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_StreamTexture_load_path:
+
 - :ref:`String<class_string>` **load_path**
+
 
 Member Function Description
 ---------------------------

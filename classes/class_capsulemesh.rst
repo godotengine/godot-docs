@@ -40,10 +40,22 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_CapsuleMesh_mid_height:
+
 - :ref:`float<class_float>` **mid_height** - Height of the capsule mesh from the center point. Defaults to 1.0.
+
+  .. _class_CapsuleMesh_radial_segments:
+
 - :ref:`int<class_int>` **radial_segments** - Number of radial segments on the capsule mesh. Defaults to 64.
+
+  .. _class_CapsuleMesh_radius:
+
 - :ref:`float<class_float>` **radius** - Radius of the capsule mesh. Defaults to 1.0.
+
+  .. _class_CapsuleMesh_rings:
+
 - :ref:`int<class_int>` **rings** - Number of rings along the height of the capsule. Defaults to 8.
+
 
 Description
 -----------

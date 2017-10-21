@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_ConcavePolygonShape2D_segments:
+
 - :ref:`PoolVector2Array<class_poolvector2array>` **segments**
+
 
 Description
 -----------

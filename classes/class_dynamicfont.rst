@@ -54,14 +54,38 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_DynamicFont_extra_spacing_bottom:
+
 - :ref:`int<class_int>` **extra_spacing_bottom** - Extra spacing at the bottom in pixels.
+
+  .. _class_DynamicFont_extra_spacing_char:
+
 - :ref:`int<class_int>` **extra_spacing_char** - Extra character spacing in pixels.
+
+  .. _class_DynamicFont_extra_spacing_space:
+
 - :ref:`int<class_int>` **extra_spacing_space** - Extra space spacing in pixels.
+
+  .. _class_DynamicFont_extra_spacing_top:
+
 - :ref:`int<class_int>` **extra_spacing_top** - Extra spacing at the top in pixels.
+
+  .. _class_DynamicFont_font_data:
+
 - :ref:`DynamicFontData<class_dynamicfontdata>` **font_data** - The font data.
+
+  .. _class_DynamicFont_size:
+
 - :ref:`int<class_int>` **size** - The font size.
+
+  .. _class_DynamicFont_use_filter:
+
 - :ref:`bool<class_bool>` **use_filter** - If ``true`` filtering is used.
+
+  .. _class_DynamicFont_use_mipmaps:
+
 - :ref:`bool<class_bool>` **use_mipmaps** - If ``true`` mipmapping is used.
+
 
 Numeric Constants
 -----------------

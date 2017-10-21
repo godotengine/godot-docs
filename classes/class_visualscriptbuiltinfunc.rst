@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_VisualScriptBuiltinFunc_function:
+
 - :ref:`int<class_int>` **function** - The function to be executed.
+
 
 Numeric Constants
 -----------------
@@ -92,7 +95,7 @@ Numeric Constants
 - **VAR_TO_BYTES** = **56** --- Serialize a :ref:`Variant<class_variant>` to a :ref:`PoolByteArray<class_poolbytearray>`.
 - **BYTES_TO_VAR** = **57** --- Deserialize a :ref:`Variant<class_variant>` from a :ref:`PoolByteArray<class_poolbytearray>` serialized using VAR_TO_BYTES.
 - **COLORN** = **58** --- Return the :ref:`Color<class_color>` with the given name and alpha ranging from 0 to 1. Note: names are defined in color_names.inc.
-- **FUNC_MAX** = **59** --- The maximum value the member function property can have.
+- **FUNC_MAX** = **59** --- The maximum value the :ref:`function<class_VisualScriptBuiltinFunc_function>` property can have.
 
 Description
 -----------

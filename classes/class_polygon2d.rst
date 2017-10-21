@@ -72,18 +72,54 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_Polygon2D_antialiased:
+
 - :ref:`bool<class_bool>` **antialiased** - If ``true`` polygon edges will be anti-aliased. Default value: ``false``.
+
+  .. _class_Polygon2D_color:
+
 - :ref:`Color<class_color>` **color** - The polygon's fill color. If ``texture`` is defined, it will be multiplied by this color. It will also be the default color for vertices not set in ``vertex_colors``.
+
+  .. _class_Polygon2D_invert_border:
+
 - :ref:`float<class_float>` **invert_border** - Added padding applied to the bounding box when using ``invert``. Setting this value too small may result in a "Bad Polygon" error. Default value: ``100``.
+
+  .. _class_Polygon2D_invert_enable:
+
 - :ref:`bool<class_bool>` **invert_enable** - If ``true`` polygon will be inverted, containing the area outside the defined points and extending to the ``invert_border``. Default value: ``false``.
+
+  .. _class_Polygon2D_offset:
+
 - :ref:`Vector2<class_vector2>` **offset** - The offset applied to each vertex.
+
+  .. _class_Polygon2D_polygon:
+
 - :ref:`PoolVector2Array<class_poolvector2array>` **polygon** - The polygon's list of vertices. The final point will be connected to the first.
+
+  .. _class_Polygon2D_texture:
+
 - :ref:`Texture<class_texture>` **texture** - The polygon's fill texture. Use ``uv`` to set texture coordinates.
+
+  .. _class_Polygon2D_texture_offset:
+
 - :ref:`Vector2<class_vector2>` **texture_offset** - Amount to offset the polygon's ``texture``. If ``(0, 0)`` the texture's origin (its top-left corner) will be placed at the polygon's ``position``.
+
+  .. _class_Polygon2D_texture_rotation:
+
 - :ref:`float<class_float>` **texture_rotation** - The texture's rotation in degrees.
+
+  .. _class_Polygon2D_texture_scale:
+
 - :ref:`Vector2<class_vector2>` **texture_scale** - Amount to multiply the ``uv`` coordinates when using a ``texture``. Larger values make the texture smaller, and vice versa.
+
+  .. _class_Polygon2D_uv:
+
 - :ref:`PoolVector2Array<class_poolvector2array>` **uv** - Texture coordinates for each vertex of the polygon. There should be one ``uv`` per polygon vertex. If there are fewer, undefined vertices will use ``(0, 0)``.
+
+  .. _class_Polygon2D_vertex_colors:
+
 - :ref:`PoolColorArray<class_poolcolorarray>` **vertex_colors** - Color for each vertex. Colors are interpolated between vertices, resulting in smooth gradients. There should be one per polygon vertex. If there are fewer, undefined vertices will use ``color``.
+
 
 Description
 -----------

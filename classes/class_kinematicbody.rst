@@ -46,7 +46,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_KinematicBody_collision/safe_margin:
+
 - :ref:`float<class_float>` **collision/safe_margin** - If the body is at least this close to another body, this body will consider them to be colliding.
+
 
 Description
 -----------

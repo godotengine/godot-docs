@@ -60,8 +60,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_Curve2D__data:
+
 - :ref:`Dictionary<class_dictionary>` **_data**
+
+  .. _class_Curve2D_bake_interval:
+
 - :ref:`float<class_float>` **bake_interval**
+
 
 Description
 -----------

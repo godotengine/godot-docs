@@ -34,6 +34,8 @@ Member Functions
 Signals
 -------
 
+.. _class_EditorResourcePreview_preview_invalidated:
+
 -  **preview_invalidated**  **(** :ref:`String<class_string>` path  **)**
 
 If a preview was invalidated (changed) this signal will emit (using the path of the preview)

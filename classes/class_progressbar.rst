@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_ProgressBar_percent_visible:
+
 - :ref:`bool<class_bool>` **percent_visible**
+
 
 Description
 -----------

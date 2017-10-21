@@ -30,8 +30,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_GradientTexture_gradient:
+
 - :ref:`Gradient<class_gradient>` **gradient** - The :ref:`Gradient<class_gradient>` that will be used to fill the texture.
+
+  .. _class_GradientTexture_width:
+
 - :ref:`int<class_int>` **width** - The number of color samples that will be obtained from the :ref:`Gradient<class_gradient>`.
+
 
 Description
 -----------

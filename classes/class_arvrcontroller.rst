@@ -40,9 +40,13 @@ Member Functions
 Signals
 -------
 
+.. _class_ARVRController_button_pressed:
+
 -  **button_pressed**  **(** :ref:`int<class_int>` button  **)**
 
 When a button on this controller is pressed, this signal is given.
+
+.. _class_ARVRController_button_release:
 
 -  **button_release**  **(** :ref:`int<class_int>` button  **)**
 
@@ -52,7 +56,10 @@ When a button on this controller is released, this signal is given.
 Member Variables
 ----------------
 
+  .. _class_ARVRController_controller_id:
+
 - :ref:`int<class_int>` **controller_id**
+
 
 Description
 -----------

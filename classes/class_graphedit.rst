@@ -54,37 +54,57 @@ Member Functions
 Signals
 -------
 
+.. _class_GraphEdit__begin_node_move:
+
 -  **_begin_node_move**  **(** **)**
 
 Signal sent at the beginning of a GraphNode movement.
+
+.. _class_GraphEdit__end_node_move:
 
 -  **_end_node_move**  **(** **)**
 
 Signal sent at the end of a GraphNode movement.
 
+.. _class_GraphEdit_connection_request:
+
 -  **connection_request**  **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_slot, :ref:`String<class_string>` to, :ref:`int<class_int>` to_slot  **)**
 
 Signal sent to the GraphEdit when the connection between 'from_slot' slot of 'from' GraphNode and 'to_slot' slot of 'to' GraphNode is attempted to be created.
 
+.. _class_GraphEdit_connection_to_empty:
+
 -  **connection_to_empty**  **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_slot, :ref:`Vector2<class_vector2>` release_position  **)**
+
+.. _class_GraphEdit_delete_nodes_request:
 
 -  **delete_nodes_request**  **(** **)**
 
 Signal sent when a GraphNode is attempted to be removed from the GraphEdit.
 
+.. _class_GraphEdit_disconnection_request:
+
 -  **disconnection_request**  **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_slot, :ref:`String<class_string>` to, :ref:`int<class_int>` to_slot  **)**
 
 Signal sent to the GraphEdit when the connection between 'from_slot' slot of 'from' GraphNode and 'to_slot' slot of 'to' GraphNode is attempted to be removed.
+
+.. _class_GraphEdit_duplicate_nodes_request:
 
 -  **duplicate_nodes_request**  **(** **)**
 
 Signal sent when a GraphNode is attempted to be duplicated in the GraphEdit.
 
+.. _class_GraphEdit_node_selected:
+
 -  **node_selected**  **(** :ref:`Object<class_object>` node  **)**
+
+.. _class_GraphEdit_popup_request:
 
 -  **popup_request**  **(** :ref:`Vector2<class_vector2>` p_position  **)**
 
 Signal sent when a popup is requested. Happens on right-clicking in the GraphEdit. 'p_position' is the position of the mouse pointer when the signal is sent.
+
+.. _class_GraphEdit_scroll_offset_changed:
 
 -  **scroll_offset_changed**  **(** :ref:`Vector2<class_vector2>` ofs  **)**
 

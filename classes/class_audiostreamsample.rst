@@ -52,13 +52,34 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_AudioStreamSample_data:
+
 - :ref:`PoolByteArray<class_poolbytearray>` **data** - Raw audio data.
+
+  .. _class_AudioStreamSample_format:
+
 - :ref:`int<class_int>` **format** - Audio format. See FORMAT\_\* constants for values.
+
+  .. _class_AudioStreamSample_loop_begin:
+
 - :ref:`int<class_int>` **loop_begin** - Loop start in bytes.
+
+  .. _class_AudioStreamSample_loop_end:
+
 - :ref:`int<class_int>` **loop_end** - Loop end in bytes.
+
+  .. _class_AudioStreamSample_loop_mode:
+
 - :ref:`int<class_int>` **loop_mode** - Loop mode. See LOOP\_\* constants for values.
+
+  .. _class_AudioStreamSample_mix_rate:
+
 - :ref:`int<class_int>` **mix_rate** - The sample rate for mixing this audio.
+
+  .. _class_AudioStreamSample_stereo:
+
 - :ref:`bool<class_bool>` **stereo** - If ``true``, audio is stereo. Default value: ``false``.
+
 
 Numeric Constants
 -----------------

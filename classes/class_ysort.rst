@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_YSort_sort_enabled:
+
 - :ref:`bool<class_bool>` **sort_enabled**
+
 
 Description
 -----------

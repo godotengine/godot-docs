@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_WorldEnvironment_environment:
+
 - :ref:`Environment<class_environment>` **environment**
+
 
 Description
 -----------

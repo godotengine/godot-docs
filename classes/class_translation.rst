@@ -40,8 +40,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_Translation_locale:
+
 - :ref:`String<class_string>` **locale**
+
+  .. _class_Translation_messages:
+
 - :ref:`PoolStringArray<class_poolstringarray>` **messages**
+
 
 Description
 -----------

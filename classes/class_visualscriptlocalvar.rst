@@ -32,8 +32,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_VisualScriptLocalVar_type:
+
 - :ref:`int<class_int>` **type** - The local variable's type.
+
+  .. _class_VisualScriptLocalVar_var_name:
+
 - :ref:`String<class_string>` **var_name** - The local variable's name.
+
 
 Description
 -----------

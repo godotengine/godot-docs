@@ -64,9 +64,18 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_Rect3_end:
+
 - :ref:`Vector3<class_vector3>` **end** - Ending corner.
+
+  .. _class_Rect3_position:
+
 - :ref:`Vector3<class_vector3>` **position**
+
+  .. _class_Rect3_size:
+
 - :ref:`Vector3<class_vector3>` **size** - Size from position to end.
+
 
 Description
 -----------

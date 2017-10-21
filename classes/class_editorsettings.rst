@@ -52,6 +52,8 @@ Member Functions
 Signals
 -------
 
+.. _class_EditorSettings_settings_changed:
+
 -  **settings_changed**  **(** **)**
 
 

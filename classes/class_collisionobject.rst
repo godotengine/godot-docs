@@ -68,11 +68,17 @@ Member Functions
 Signals
 -------
 
+.. _class_CollisionObject_input_event:
+
 -  **input_event**  **(** :ref:`Object<class_object>` camera, :ref:`Object<class_object>` event, :ref:`Vector3<class_vector3>` click_position, :ref:`Vector3<class_vector3>` click_normal, :ref:`int<class_int>` shape_idx  **)**
+
+.. _class_CollisionObject_mouse_entered:
 
 -  **mouse_entered**  **(** **)**
 
 Emitted when the mouse pointer enters any of this object's shapes.
+
+.. _class_CollisionObject_mouse_exited:
 
 -  **mouse_exited**  **(** **)**
 
@@ -82,8 +88,14 @@ Emitted when the mouse pointer exits all this object's shapes.
 Member Variables
 ----------------
 
+  .. _class_CollisionObject_input_capture_on_drag:
+
 - :ref:`bool<class_bool>` **input_capture_on_drag**
+
+  .. _class_CollisionObject_input_ray_pickable:
+
 - :ref:`bool<class_bool>` **input_ray_pickable**
+
 
 Description
 -----------

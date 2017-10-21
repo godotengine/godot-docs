@@ -44,11 +44,26 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_SphereMesh_height:
+
 - :ref:`float<class_float>` **height** - Full height of the sphere. Defaults to 2.0.
+
+  .. _class_SphereMesh_is_hemisphere:
+
 - :ref:`bool<class_bool>` **is_hemisphere** - Determines whether a full sphere or a hemisphere is created. Attention: To get a regular hemisphere the height and radius of the sphere have to equal. Defaults to false.
+
+  .. _class_SphereMesh_radial_segments:
+
 - :ref:`int<class_int>` **radial_segments** - Number of radial segments on the sphere. Defaults to 64.
+
+  .. _class_SphereMesh_radius:
+
 - :ref:`float<class_float>` **radius** - Radius of sphere. Defaults to 1.0.
+
+  .. _class_SphereMesh_rings:
+
 - :ref:`int<class_int>` **rings** - Number of segments along the height of the sphere. Defaults to 32.
+
 
 Description
 -----------

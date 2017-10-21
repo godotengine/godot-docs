@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_VisualScriptEmitSignal_signal:
+
 - :ref:`String<class_string>` **signal** - The signal to emit.
+
 
 Description
 -----------

@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_CanvasModulate_color:
+
 - :ref:`Color<class_color>` **color** - The tint color to apply.
+
 
 Description
 -----------

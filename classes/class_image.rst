@@ -110,7 +110,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_Image_data:
+
 - :ref:`Dictionary<class_dictionary>` **data**
+
 
 Numeric Constants
 -----------------

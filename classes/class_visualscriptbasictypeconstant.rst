@@ -32,8 +32,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_VisualScriptBasicTypeConstant_basic_type:
+
 - :ref:`int<class_int>` **basic_type** - The type to get the constant from.
+
+  .. _class_VisualScriptBasicTypeConstant_constant:
+
 - :ref:`String<class_string>` **constant** - The name of the constant to return.
+
 
 Description
 -----------

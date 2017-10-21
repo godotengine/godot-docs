@@ -34,13 +34,18 @@ Member Functions
 Signals
 -------
 
+.. _class_ProximityGroup_broadcast:
+
 -  **broadcast**  **(** :ref:`String<class_string>` name, :ref:`Array<class_array>` parameters  **)**
 
 
 Member Variables
 ----------------
 
+  .. _class_ProximityGroup_grid_radius:
+
 - :ref:`Vector3<class_vector3>` **grid_radius**
+
 
 Description
 -----------

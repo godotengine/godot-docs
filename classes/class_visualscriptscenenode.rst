@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_VisualScriptSceneNode_node_path:
+
 - :ref:`NodePath<class_nodepath>` **node_path** - The node's path in the scene tree.
+
 
 Description
 -----------

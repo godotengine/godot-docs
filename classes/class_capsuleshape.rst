@@ -32,8 +32,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_CapsuleShape_height:
+
 - :ref:`float<class_float>` **height** - The capsule's height.
+
+  .. _class_CapsuleShape_radius:
+
 - :ref:`float<class_float>` **radius** - The capsule's radius.
+
 
 Description
 -----------

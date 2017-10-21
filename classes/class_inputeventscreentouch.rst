@@ -36,14 +36,23 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_InputEventScreenTouch_index:
+
 - :ref:`int<class_int>` **index** - Touch index in the case of a multi-touch event. One index = one finger.
+
+  .. _class_InputEventScreenTouch_position:
+
 - :ref:`Vector2<class_vector2>` **position** - Touch position.
+
+  .. _class_InputEventScreenTouch_pressed:
+
 - :ref:`bool<class_bool>` **pressed** - If ``true`` the touch's state is pressed. If ``false`` the touch's state is released.
+
 
 Description
 -----------
 
-Stores multi-touch press/release information. Supports touch press, touch release and member index for multi-touch count and order.
+Stores multi-touch press/release information. Supports touch press, touch release and :ref:`index<class_InputEventScreenTouch_index>` for multi-touch count and order.
 
 Member Function Description
 ---------------------------

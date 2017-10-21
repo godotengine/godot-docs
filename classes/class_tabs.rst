@@ -60,15 +60,27 @@ Member Functions
 Signals
 -------
 
+.. _class_Tabs_reposition_active_tab_request:
+
 -  **reposition_active_tab_request**  **(** :ref:`int<class_int>` idx_to  **)**
+
+.. _class_Tabs_right_button_pressed:
 
 -  **right_button_pressed**  **(** :ref:`int<class_int>` tab  **)**
 
+.. _class_Tabs_tab_changed:
+
 -  **tab_changed**  **(** :ref:`int<class_int>` tab  **)**
+
+.. _class_Tabs_tab_clicked:
 
 -  **tab_clicked**  **(** :ref:`int<class_int>` tab  **)**
 
+.. _class_Tabs_tab_close:
+
 -  **tab_close**  **(** :ref:`int<class_int>` tab  **)**
+
+.. _class_Tabs_tab_hover:
 
 -  **tab_hover**  **(** :ref:`int<class_int>` tab  **)**
 
@@ -76,8 +88,14 @@ Signals
 Member Variables
 ----------------
 
+  .. _class_Tabs_current_tab:
+
 - :ref:`int<class_int>` **current_tab**
+
+  .. _class_Tabs_tab_close_display_policy:
+
 - :ref:`int<class_int>` **tab_close_display_policy**
+
 
 Numeric Constants
 -----------------

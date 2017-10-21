@@ -88,22 +88,70 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_ProceduralSky_ground_bottom_color:
+
 - :ref:`Color<class_color>` **ground_bottom_color**
+
+  .. _class_ProceduralSky_ground_curve:
+
 - :ref:`float<class_float>` **ground_curve**
+
+  .. _class_ProceduralSky_ground_energy:
+
 - :ref:`float<class_float>` **ground_energy**
+
+  .. _class_ProceduralSky_ground_horizon_color:
+
 - :ref:`Color<class_color>` **ground_horizon_color**
+
+  .. _class_ProceduralSky_sky_curve:
+
 - :ref:`float<class_float>` **sky_curve**
+
+  .. _class_ProceduralSky_sky_energy:
+
 - :ref:`float<class_float>` **sky_energy**
+
+  .. _class_ProceduralSky_sky_horizon_color:
+
 - :ref:`Color<class_color>` **sky_horizon_color**
+
+  .. _class_ProceduralSky_sky_top_color:
+
 - :ref:`Color<class_color>` **sky_top_color**
+
+  .. _class_ProceduralSky_sun_angle_max:
+
 - :ref:`float<class_float>` **sun_angle_max**
+
+  .. _class_ProceduralSky_sun_angle_min:
+
 - :ref:`float<class_float>` **sun_angle_min**
+
+  .. _class_ProceduralSky_sun_color:
+
 - :ref:`Color<class_color>` **sun_color**
+
+  .. _class_ProceduralSky_sun_curve:
+
 - :ref:`float<class_float>` **sun_curve**
+
+  .. _class_ProceduralSky_sun_energy:
+
 - :ref:`float<class_float>` **sun_energy**
+
+  .. _class_ProceduralSky_sun_latitude:
+
 - :ref:`float<class_float>` **sun_latitude**
+
+  .. _class_ProceduralSky_sun_longitude:
+
 - :ref:`float<class_float>` **sun_longitude**
+
+  .. _class_ProceduralSky_texture_size:
+
 - :ref:`int<class_int>` **texture_size**
+
 
 Numeric Constants
 -----------------

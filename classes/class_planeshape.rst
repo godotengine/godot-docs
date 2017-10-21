@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_PlaneShape_plane:
+
 - :ref:`Plane<class_plane>` **plane**
+
 
 Member Function Description
 ---------------------------

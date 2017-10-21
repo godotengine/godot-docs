@@ -48,17 +48,25 @@ Member Functions
 Signals
 -------
 
+.. _class_ARVRServer_interface_added:
+
 -  **interface_added**  **(** :ref:`String<class_string>` name  **)**
 
 Signal send when a new interface has been added.
+
+.. _class_ARVRServer_interface_removed:
 
 -  **interface_removed**  **(** :ref:`String<class_string>` name  **)**
 
 Signal send when an interface is removed.
 
+.. _class_ARVRServer_tracker_added:
+
 -  **tracker_added**  **(** :ref:`String<class_string>` name, :ref:`int<class_int>` type, :ref:`int<class_int>` id  **)**
 
 Signal send when a new tracker has been added. If you don't use a fixed number of controllers or if you're using ARVRAnchors for an AR solution it is important to react to this signal and add the appropriate ARVRController or ARVRAnchor node related to this new tracker.
+
+.. _class_ARVRServer_tracker_removed:
 
 -  **tracker_removed**  **(** :ref:`String<class_string>` name, :ref:`int<class_int>` type, :ref:`int<class_int>` id  **)**
 
@@ -68,7 +76,10 @@ Signal send when a tracker is removed, you should remove any ARVRController or A
 Member Variables
 ----------------
 
+  .. _class_ARVRServer_world_scale:
+
 - :ref:`float<class_float>` **world_scale**
+
 
 Numeric Constants
 -----------------

@@ -32,7 +32,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_PackedScene__bundled:
+
 - :ref:`Dictionary<class_dictionary>` **_bundled**
+
 
 Numeric Constants
 -----------------

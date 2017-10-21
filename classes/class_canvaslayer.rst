@@ -56,10 +56,22 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_CanvasLayer_layer:
+
 - :ref:`int<class_int>` **layer** - Layer index for draw order. Lower values are drawn first. Default value: ``1``.
+
+  .. _class_CanvasLayer_offset:
+
 - :ref:`Vector2<class_vector2>` **offset** - The layer's base offset.
+
+  .. _class_CanvasLayer_rotation:
+
 - :ref:`float<class_float>` **rotation** - The layer's rotation in degrees.
+
+  .. _class_CanvasLayer_scale:
+
 - :ref:`Vector2<class_vector2>` **scale** - The layer's scale.
+
 
 Description
 -----------

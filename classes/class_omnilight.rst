@@ -32,10 +32,22 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_OmniLight_omni_attenuation:
+
 - :ref:`float<class_float>` **omni_attenuation**
+
+  .. _class_OmniLight_omni_range:
+
 - :ref:`float<class_float>` **omni_range**
+
+  .. _class_OmniLight_omni_shadow_detail:
+
 - :ref:`int<class_int>` **omni_shadow_detail**
+
+  .. _class_OmniLight_omni_shadow_mode:
+
 - :ref:`int<class_int>` **omni_shadow_mode**
+
 
 Numeric Constants
 -----------------

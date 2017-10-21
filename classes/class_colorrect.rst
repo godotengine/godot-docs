@@ -28,11 +28,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_ColorRect_color:
+
 - :ref:`Color<class_color>` **color** - The color to fill the ``ColorRect``.
 
 ::
 
     $ColorRect.color = Color(1, 0, 0, 1) # Set ColorRect node's color to red
+
 
 Description
 -----------

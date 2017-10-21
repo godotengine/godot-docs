@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_BoxShape_extents:
+
 - :ref:`Vector3<class_vector3>` **extents** - The shape's half extents.
+
 
 Description
 -----------

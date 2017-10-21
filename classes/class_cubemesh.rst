@@ -40,10 +40,22 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_CubeMesh_size:
+
 - :ref:`Vector3<class_vector3>` **size** - Size of the cuboid mesh. Defaults to (2, 2, 2).
+
+  .. _class_CubeMesh_subdivide_depth:
+
 - :ref:`int<class_int>` **subdivide_depth** - Number of extra edge loops inserted along the z-axis. Defaults to 0.
+
+  .. _class_CubeMesh_subdivide_height:
+
 - :ref:`int<class_int>` **subdivide_height** - Number of extra edge loops inserted along the y-axis. Defaults to 0.
+
+  .. _class_CubeMesh_subdivide_width:
+
 - :ref:`int<class_int>` **subdivide_width** - Number of extra edge loops inserted along the x-axis. Defaults to 0.
+
 
 Description
 -----------

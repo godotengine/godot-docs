@@ -58,26 +58,54 @@ Member Functions
 Signals
 -------
 
+.. _class_AnimatedSprite_animation_finished:
+
 -  **animation_finished**  **(** **)**
 
 Emitted when the animation is finished (when it plays the last frame). If the animation is looping, this signal is emitted every time the last frame is drawn.
 
+.. _class_AnimatedSprite_frame_changed:
+
 -  **frame_changed**  **(** **)**
 
-Emitted when member frame changed.
+Emitted when :ref:`frame<class_AnimatedSprite_frame>` changed.
 
 
 Member Variables
 ----------------
 
+  .. _class_AnimatedSprite_animation:
+
 - :ref:`String<class_string>` **animation** - The current animation from the ``frames`` resource. If this value changes, the ``frame`` counter is reset.
+
+  .. _class_AnimatedSprite_centered:
+
 - :ref:`bool<class_bool>` **centered** - If ``true`` texture will be centered. Default value: ``true``.
+
+  .. _class_AnimatedSprite_flip_h:
+
 - :ref:`bool<class_bool>` **flip_h** - If ``true`` texture is flipped horizontally. Default value: ``false``.
+
+  .. _class_AnimatedSprite_flip_v:
+
 - :ref:`bool<class_bool>` **flip_v** - If ``true`` texture is flipped vertically. Default value: ``false``.
+
+  .. _class_AnimatedSprite_frame:
+
 - :ref:`int<class_int>` **frame** - The displayed animation frame's index.
+
+  .. _class_AnimatedSprite_frames:
+
 - :ref:`SpriteFrames<class_spriteframes>` **frames** - The :ref:`SpriteFrames<class_spriteframes>` resource containing the animation(s).
+
+  .. _class_AnimatedSprite_offset:
+
 - :ref:`Vector2<class_vector2>` **offset** - The texture's drawing offset.
-- :ref:`bool<class_bool>` **playing** - If ``true`` the member animation is currently playing.
+
+  .. _class_AnimatedSprite_playing:
+
+- :ref:`bool<class_bool>` **playing** - If ``true`` the :ref:`animation<class_AnimatedSprite_animation>` is currently playing.
+
 
 Description
 -----------

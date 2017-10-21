@@ -42,8 +42,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_MeshInstance_mesh:
+
 - :ref:`Mesh<class_mesh>` **mesh** - The :ref:`Mesh<class_mesh>` resource for the instance.
+
+  .. _class_MeshInstance_skeleton:
+
 - :ref:`NodePath<class_nodepath>` **skeleton** - :ref:`NodePath<class_nodepath>` to the :ref:`Skeleton<class_skeleton>` associated with the instance.
+
 
 Description
 -----------

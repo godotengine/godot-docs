@@ -102,29 +102,55 @@ Member Functions
 Signals
 -------
 
+.. _class_SceneTree_connected_to_server:
+
 -  **connected_to_server**  **(** **)**
+
+.. _class_SceneTree_connection_failed:
 
 -  **connection_failed**  **(** **)**
 
+.. _class_SceneTree_files_dropped:
+
 -  **files_dropped**  **(** :ref:`PoolStringArray<class_poolstringarray>` files, :ref:`int<class_int>` screen  **)**
+
+.. _class_SceneTree_idle_frame:
 
 -  **idle_frame**  **(** **)**
 
+.. _class_SceneTree_network_peer_connected:
+
 -  **network_peer_connected**  **(** :ref:`int<class_int>` id  **)**
+
+.. _class_SceneTree_network_peer_disconnected:
 
 -  **network_peer_disconnected**  **(** :ref:`int<class_int>` id  **)**
 
+.. _class_SceneTree_node_added:
+
 -  **node_added**  **(** :ref:`Object<class_object>` node  **)**
+
+.. _class_SceneTree_node_configuration_warning_changed:
 
 -  **node_configuration_warning_changed**  **(** :ref:`Object<class_object>` node  **)**
 
+.. _class_SceneTree_node_removed:
+
 -  **node_removed**  **(** :ref:`Object<class_object>` node  **)**
+
+.. _class_SceneTree_physics_frame:
 
 -  **physics_frame**  **(** **)**
 
+.. _class_SceneTree_screen_resized:
+
 -  **screen_resized**  **(** **)**
 
+.. _class_SceneTree_server_disconnected:
+
 -  **server_disconnected**  **(** **)**
+
+.. _class_SceneTree_tree_changed:
 
 -  **tree_changed**  **(** **)**
 

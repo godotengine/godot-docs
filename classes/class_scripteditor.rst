@@ -28,9 +28,13 @@ Member Functions
 Signals
 -------
 
+.. _class_ScriptEditor_editor_script_changed:
+
 -  **editor_script_changed**  **(** :ref:`Object<class_object>` script  **)**
 
 Emitted when user changed active script. Argument is a freshly activated :ref:`Script<class_script>`.
+
+.. _class_ScriptEditor_script_close:
 
 -  **script_close**  **(** :ref:`Object<class_object>` script  **)**
 

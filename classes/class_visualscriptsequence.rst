@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_VisualScriptSequence_steps:
+
 - :ref:`int<class_int>` **steps** - The number of steps in the sequence.
+
 
 Description
 -----------

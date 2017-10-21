@@ -32,8 +32,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_VisualScriptYield_mode:
+
 - :ref:`int<class_int>` **mode**
+
+  .. _class_VisualScriptYield_wait_time:
+
 - :ref:`float<class_float>` **wait_time**
+
 
 Numeric Constants
 -----------------

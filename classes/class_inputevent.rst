@@ -54,7 +54,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_InputEvent_device:
+
 - :ref:`int<class_int>` **device** - The event's device ID.
+
 
 Description
 -----------

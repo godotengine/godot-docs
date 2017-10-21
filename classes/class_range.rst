@@ -62,9 +62,13 @@ Member Functions
 Signals
 -------
 
+.. _class_Range_changed:
+
 -  **changed**  **(** **)**
 
 This signal is emitted when min, max, range or step change.
+
+.. _class_Range_value_changed:
 
 -  **value_changed**  **(** :ref:`float<class_float>` value  **)**
 
@@ -74,13 +78,34 @@ This signal is emitted when value changes.
 Member Variables
 ----------------
 
+  .. _class_Range_exp_edit:
+
 - :ref:`bool<class_bool>` **exp_edit** - If ``true`` and ``min_value`` is greater than 0, ``value`` will be represented exponentially rather than linearly.
+
+  .. _class_Range_max_value:
+
 - :ref:`float<class_float>` **max_value** - Maximum value. Range is clamped if ``value`` is greater than ``max_value``. Default value: 100.
+
+  .. _class_Range_min_value:
+
 - :ref:`float<class_float>` **min_value** - Minimum value. Range is clamped if ``value`` is less than ``min_value``. Default value: 0.
+
+  .. _class_Range_page:
+
 - :ref:`float<class_float>` **page** - Page size. Used mainly for :ref:`ScrollBar<class_scrollbar>`. ScrollBar's length is its size multiplied by ``page`` over the difference between ``min_value`` and ``max_value``.
+
+  .. _class_Range_rounded:
+
 - :ref:`bool<class_bool>` **rounded** - If ``true``, ``value`` will always be rounded to the nearest integer.
+
+  .. _class_Range_step:
+
 - :ref:`float<class_float>` **step** - If greater than 0, ``value`` will always be rounded to a multiple of ``step``. If ``rounded`` is also ``true``, ``value`` will first be rounded to a multiple of ``step`` then rounded to the nearest integer.
+
+  .. _class_Range_value:
+
 - :ref:`float<class_float>` **value** - Range's current value.
+
 
 Description
 -----------

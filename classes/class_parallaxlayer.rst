@@ -36,9 +36,18 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_ParallaxLayer_motion_mirroring:
+
 - :ref:`Vector2<class_vector2>` **motion_mirroring**
+
+  .. _class_ParallaxLayer_motion_offset:
+
 - :ref:`Vector2<class_vector2>` **motion_offset**
+
+  .. _class_ParallaxLayer_motion_scale:
+
 - :ref:`Vector2<class_vector2>` **motion_scale**
+
 
 Description
 -----------

@@ -86,21 +86,31 @@ Member Functions
 Signals
 -------
 
+.. _class_GraphNode_close_request:
+
 -  **close_request**  **(** **)**
 
 Signal sent on closing the GraphNode.
+
+.. _class_GraphNode_dragged:
 
 -  **dragged**  **(** :ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to  **)**
 
 Signal sent when the GraphNode is dragged.
 
+.. _class_GraphNode_offset_changed:
+
 -  **offset_changed**  **(** **)**
 
 Signal sent when the GraphNode is moved.
 
+.. _class_GraphNode_raise_request:
+
 -  **raise_request**  **(** **)**
 
 Signal sent when the GraphNode is requested to be displayed over other ones. Happens on focusing (clicking into) the GraphNode.
+
+.. _class_GraphNode_resize_request:
 
 -  **resize_request**  **(** :ref:`Vector2<class_vector2>` new_minsize  **)**
 
@@ -108,9 +118,18 @@ Signal sent when the GraphNode is requested to be displayed over other ones. Hap
 Member Variables
 ----------------
 
+  .. _class_GraphNode_resizable:
+
 - :ref:`bool<class_bool>` **resizable**
+
+  .. _class_GraphNode_show_close:
+
 - :ref:`bool<class_bool>` **show_close**
+
+  .. _class_GraphNode_title:
+
 - :ref:`String<class_string>` **title**
+
 
 Numeric Constants
 -----------------

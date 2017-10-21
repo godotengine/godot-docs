@@ -40,8 +40,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_ScrollContainer_scroll_horizontal:
+
 - :ref:`bool<class_bool>` **scroll_horizontal**
+
+  .. _class_ScrollContainer_scroll_vertical:
+
 - :ref:`bool<class_bool>` **scroll_vertical**
+
 
 Description
 -----------

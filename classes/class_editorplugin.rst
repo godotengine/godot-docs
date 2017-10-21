@@ -96,13 +96,19 @@ Member Functions
 Signals
 -------
 
+.. _class_EditorPlugin_main_screen_changed:
+
 -  **main_screen_changed**  **(** :ref:`String<class_string>` screen_name  **)**
 
 Emitted when user change main screen view (2D, 3D, Script, AssetLib). Works also with screens which are defined by plugins.
 
+.. _class_EditorPlugin_scene_changed:
+
 -  **scene_changed**  **(** :ref:`Object<class_object>` scene_root  **)**
 
 Emitted when user change scene. The argument is a root node of freshly opened scene.
+
+.. _class_EditorPlugin_scene_closed:
 
 -  **scene_closed**  **(** :ref:`String<class_string>` filepath  **)**
 

@@ -32,8 +32,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_GrooveJoint2D_initial_offset:
+
 - :ref:`float<class_float>` **initial_offset**
+
+  .. _class_GrooveJoint2D_length:
+
 - :ref:`float<class_float>` **length**
+
 
 Description
 -----------

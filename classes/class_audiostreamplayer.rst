@@ -54,6 +54,8 @@ Member Functions
 Signals
 -------
 
+.. _class_AudioStreamPlayer_finished:
+
 -  **finished**  **(** **)**
 
 Emitted when the audio stops playing.
@@ -62,12 +64,30 @@ Emitted when the audio stops playing.
 Member Variables
 ----------------
 
+  .. _class_AudioStreamPlayer_autoplay:
+
 - :ref:`bool<class_bool>` **autoplay** - If ``true`` audio plays when added to scene tree. Default value: ``false``.
+
+  .. _class_AudioStreamPlayer_bus:
+
 - :ref:`String<class_string>` **bus** - Bus on which this audio is playing.
+
+  .. _class_AudioStreamPlayer_mix_target:
+
 - :ref:`int<class_int>` **mix_target** - If the audio configuration has more than two speakers, this sets the target channels. See ``MIX_TARGET\_\*`` constants.
+
+  .. _class_AudioStreamPlayer_playing:
+
 - :ref:`bool<class_bool>` **playing** - If ``true`` audio is playing.
+
+  .. _class_AudioStreamPlayer_stream:
+
 - :ref:`AudioStream<class_audiostream>` **stream** - The :ref:`AudioStream<class_audiostream>` object to be played.
+
+  .. _class_AudioStreamPlayer_volume_db:
+
 - :ref:`float<class_float>` **volume_db** - Volume of sound, in dB.
+
 
 Numeric Constants
 -----------------

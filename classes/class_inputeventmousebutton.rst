@@ -38,10 +38,22 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_InputEventMouseButton_button_index:
+
 - :ref:`int<class_int>` **button_index** - Mouse button identifier, one of the BUTTON\_\* or BUTTON_WHEEL\_\* constants in :ref:`@Global Scope<class_@global scope>`.
+
+  .. _class_InputEventMouseButton_doubleclick:
+
 - :ref:`bool<class_bool>` **doubleclick** - If ``true`` the mouse button's state is a double-click. If ``false`` the mouse button's state is released.
+
+  .. _class_InputEventMouseButton_factor:
+
 - :ref:`float<class_float>` **factor** - TO TALK in PR, reduz said : i think it's used for apple touch but i don't remember what it does
+
+  .. _class_InputEventMouseButton_pressed:
+
 - :ref:`bool<class_bool>` **pressed** - If ``true`` the mouse button's state is pressed. If ``false`` the mouse button's state is released.
+
 
 Description
 -----------

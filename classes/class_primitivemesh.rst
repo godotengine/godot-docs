@@ -32,7 +32,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_PrimitiveMesh_material:
+
 - :ref:`Material<class_material>` **material** - The current :ref:`Material<class_material>` of the primitive mesh.
+
 
 Description
 -----------

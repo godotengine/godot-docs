@@ -68,17 +68,50 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_GIProbeData_bias:
+
 - :ref:`float<class_float>` **bias**
+
+  .. _class_GIProbeData_bounds:
+
 - :ref:`Rect3<class_rect3>` **bounds**
+
+  .. _class_GIProbeData_cell_size:
+
 - :ref:`float<class_float>` **cell_size**
+
+  .. _class_GIProbeData_compress:
+
 - :ref:`bool<class_bool>` **compress**
+
+  .. _class_GIProbeData_dynamic_data:
+
 - :ref:`PoolIntArray<class_poolintarray>` **dynamic_data**
+
+  .. _class_GIProbeData_dynamic_range:
+
 - :ref:`int<class_int>` **dynamic_range**
+
+  .. _class_GIProbeData_energy:
+
 - :ref:`float<class_float>` **energy**
+
+  .. _class_GIProbeData_interior:
+
 - :ref:`bool<class_bool>` **interior**
+
+  .. _class_GIProbeData_normal_bias:
+
 - :ref:`float<class_float>` **normal_bias**
+
+  .. _class_GIProbeData_propagation:
+
 - :ref:`float<class_float>` **propagation**
+
+  .. _class_GIProbeData_to_cell_xform:
+
 - :ref:`Transform<class_transform>` **to_cell_xform**
+
 
 Member Function Description
 ---------------------------

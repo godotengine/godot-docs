@@ -36,9 +36,18 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_CollisionPolygon_depth:
+
 - :ref:`float<class_float>` **depth** - Length that the resulting collision extends in either direction perpendicular to its polygon.
+
+  .. _class_CollisionPolygon_disabled:
+
 - :ref:`bool<class_bool>` **disabled** - If true, no collision will be produced.
+
+  .. _class_CollisionPolygon_polygon:
+
 - :ref:`PoolVector2Array<class_poolvector2array>` **polygon** - Array of vertices which define the polygon.
+
 
 Description
 -----------

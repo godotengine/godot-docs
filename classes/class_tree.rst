@@ -94,55 +94,83 @@ Member Functions
 Signals
 -------
 
+.. _class_Tree_button_pressed:
+
 -  **button_pressed**  **(** :ref:`Object<class_object>` item, :ref:`int<class_int>` column, :ref:`int<class_int>` id  **)**
 
 Emitted when a button on the tree was pressed (see :ref:`TreeItem.add_button<class_TreeItem_add_button>`).
+
+.. _class_Tree_cell_selected:
 
 -  **cell_selected**  **(** **)**
 
 Emitted when a cell is selected.
 
+.. _class_Tree_column_title_pressed:
+
 -  **column_title_pressed**  **(** :ref:`int<class_int>` column  **)**
 
 Emitted when a column's title is pressed.
+
+.. _class_Tree_custom_popup_edited:
 
 -  **custom_popup_edited**  **(** :ref:`bool<class_bool>` arrow_clicked  **)**
 
 Emitted when a cell with the ``CELL_MODE_CUSTOM`` is clicked to be edited.
 
+.. _class_Tree_empty_tree_rmb_selected:
+
 -  **empty_tree_rmb_selected**  **(** :ref:`Vector2<class_vector2>` position  **)**
 
 Emitted when the right mouse button is pressed if RMB selection is active and the tree is empty.
+
+.. _class_Tree_item_activated:
 
 -  **item_activated**  **(** **)**
 
 Emitted when an item is activated (double-clicked).
 
+.. _class_Tree_item_collapsed:
+
 -  **item_collapsed**  **(** :ref:`Object<class_object>` item  **)**
 
 Emitted when an item is collapsed by a click on the folding arrow.
 
+.. _class_Tree_item_custom_button_pressed:
+
 -  **item_custom_button_pressed**  **(** **)**
+
+.. _class_Tree_item_double_clicked:
 
 -  **item_double_clicked**  **(** **)**
 
 Emitted when an item is double clicked.
 
+.. _class_Tree_item_edited:
+
 -  **item_edited**  **(** **)**
 
 Emitted when an item is edited.
+
+.. _class_Tree_item_rmb_edited:
 
 -  **item_rmb_edited**  **(** **)**
 
 Emitted when an item is edited using the right mouse button.
 
+.. _class_Tree_item_rmb_selected:
+
 -  **item_rmb_selected**  **(** :ref:`Vector2<class_vector2>` position  **)**
 
 Emitted when an item is selected with right mouse button.
 
+.. _class_Tree_item_selected:
+
 -  **item_selected**  **(** **)**
 
 Emitted when an item is selected with right mouse button.
+
+.. _class_Tree_multi_selected:
 
 -  **multi_selected**  **(** :ref:`Object<class_object>` item, :ref:`int<class_int>` column, :ref:`bool<class_bool>` selected  **)**
 

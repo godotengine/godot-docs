@@ -198,13 +198,19 @@ Member Functions
 Signals
 -------
 
+.. _class_Node_renamed:
+
 -  **renamed**  **(** **)**
 
 Emitted when the node is renamed.
 
+.. _class_Node_tree_entered:
+
 -  **tree_entered**  **(** **)**
 
 Emitted when Node enters the tree.
+
+.. _class_Node_tree_exited:
 
 -  **tree_exited**  **(** **)**
 
@@ -214,9 +220,18 @@ Emitted when Node exits the tree.
 Member Variables
 ----------------
 
+  .. _class_Node__import_path:
+
 - :ref:`NodePath<class_nodepath>` **_import_path**
+
+  .. _class_Node_editor/display_folded:
+
 - :ref:`bool<class_bool>` **editor/display_folded**
+
+  .. _class_Node_pause_mode:
+
 - :ref:`int<class_int>` **pause_mode**
+
 
 Numeric Constants
 -----------------

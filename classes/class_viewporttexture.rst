@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_ViewportTexture_viewport_path:
+
 - :ref:`NodePath<class_nodepath>` **viewport_path**
+
 
 Member Function Description
 ---------------------------

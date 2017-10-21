@@ -58,14 +58,38 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_GeometryInstance_cast_shadow:
+
 - :ref:`int<class_int>` **cast_shadow**
+
+  .. _class_GeometryInstance_extra_cull_margin:
+
 - :ref:`float<class_float>` **extra_cull_margin**
+
+  .. _class_GeometryInstance_lod_max_distance:
+
 - :ref:`float<class_float>` **lod_max_distance**
+
+  .. _class_GeometryInstance_lod_max_hysteresis:
+
 - :ref:`float<class_float>` **lod_max_hysteresis**
+
+  .. _class_GeometryInstance_lod_min_distance:
+
 - :ref:`float<class_float>` **lod_min_distance**
+
+  .. _class_GeometryInstance_lod_min_hysteresis:
+
 - :ref:`float<class_float>` **lod_min_hysteresis**
+
+  .. _class_GeometryInstance_material_override:
+
 - :ref:`Material<class_material>` **material_override**
+
+  .. _class_GeometryInstance_use_in_baked_light:
+
 - :ref:`bool<class_bool>` **use_in_baked_light**
+
 
 Numeric Constants
 -----------------

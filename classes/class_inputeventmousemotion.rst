@@ -32,8 +32,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_InputEventMouseMotion_relative:
+
 - :ref:`Vector2<class_vector2>` **relative** - Mouse position relative to the previous position (position at the last frame).
+
+  .. _class_InputEventMouseMotion_speed:
+
 - :ref:`Vector2<class_vector2>` **speed** - Mouse speed.
+
 
 Description
 -----------

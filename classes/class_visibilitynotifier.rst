@@ -32,17 +32,25 @@ Member Functions
 Signals
 -------
 
+.. _class_VisibilityNotifier_camera_entered:
+
 -  **camera_entered**  **(** :ref:`Object<class_object>` camera  **)**
 
 Emitted when the VisibilityNotifier enters a :ref:`Camera<class_camera>`'s view.
+
+.. _class_VisibilityNotifier_camera_exited:
 
 -  **camera_exited**  **(** :ref:`Object<class_object>` camera  **)**
 
 Emitted when the VisibilityNotifier exits a :ref:`Camera<class_camera>`'s view.
 
+.. _class_VisibilityNotifier_screen_entered:
+
 -  **screen_entered**  **(** **)**
 
 Emitted when the VisibilityNotifier enters the screen.
+
+.. _class_VisibilityNotifier_screen_exited:
 
 -  **screen_exited**  **(** **)**
 
@@ -52,7 +60,10 @@ Emitted when the VisibilityNotifier exits the screen.
 Member Variables
 ----------------
 
+  .. _class_VisibilityNotifier_aabb:
+
 - :ref:`Rect3<class_rect3>` **aabb** - The VisibilityNotifier's bounding box.
+
 
 Description
 -----------

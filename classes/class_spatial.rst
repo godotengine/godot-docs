@@ -110,6 +110,8 @@ Member Functions
 Signals
 -------
 
+.. _class_Spatial_visibility_changed:
+
 -  **visibility_changed**  **(** **)**
 
 Emitted when node visibility changes.
@@ -118,13 +120,34 @@ Emitted when node visibility changes.
 Member Variables
 ----------------
 
+  .. _class_Spatial_global_transform:
+
 - :ref:`Transform<class_transform>` **global_transform** - World space (global) :ref:`Transform<class_transform>` of this node.
+
+  .. _class_Spatial_rotation:
+
 - :ref:`Vector3<class_vector3>` **rotation** - Local euler rotation in radians of this node.
+
+  .. _class_Spatial_rotation_deg:
+
 - :ref:`Vector3<class_vector3>` **rotation_deg** - Local euler rotation in degrees of this node.
+
+  .. _class_Spatial_scale:
+
 - :ref:`Vector3<class_vector3>` **scale** - Local scale of this node.
+
+  .. _class_Spatial_transform:
+
 - :ref:`Transform<class_transform>` **transform** - Local space :ref:`Transform<class_transform>` of this node.
+
+  .. _class_Spatial_translation:
+
 - :ref:`Vector3<class_vector3>` **translation** - Local translation of this node.
+
+  .. _class_Spatial_visible:
+
 - :ref:`bool<class_bool>` **visible** - Visibility of this node. Toggles if this node is rendered.
+
 
 Numeric Constants
 -----------------

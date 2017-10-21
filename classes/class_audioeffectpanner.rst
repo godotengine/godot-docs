@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_AudioEffectPanner_pan:
+
 - :ref:`float<class_float>` **pan** - Pan position. Value can range from -1 (fully left) to 1 (fully right).
+
 
 Description
 -----------

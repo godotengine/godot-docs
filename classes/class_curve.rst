@@ -72,16 +72,30 @@ Member Functions
 Signals
 -------
 
+.. _class_Curve_range_changed:
+
 -  **range_changed**  **(** **)**
 
 
 Member Variables
 ----------------
 
+  .. _class_Curve__data:
+
 - :ref:`Array<class_array>` **_data**
+
+  .. _class_Curve_bake_resolution:
+
 - :ref:`int<class_int>` **bake_resolution**
+
+  .. _class_Curve_max_value:
+
 - :ref:`float<class_float>` **max_value**
+
+  .. _class_Curve_min_value:
+
 - :ref:`float<class_float>` **min_value**
+
 
 Numeric Constants
 -----------------

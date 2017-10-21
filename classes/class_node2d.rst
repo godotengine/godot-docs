@@ -94,18 +94,54 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_Node2D_global_position:
+
 - :ref:`Vector2<class_vector2>` **global_position** - Global position.
+
+  .. _class_Node2D_global_rotation:
+
 - :ref:`float<class_float>` **global_rotation** - Global rotation in radians.
+
+  .. _class_Node2D_global_rotation_deg:
+
 - :ref:`float<class_float>` **global_rotation_deg** - Global rotation in degrees.
+
+  .. _class_Node2D_global_scale:
+
 - :ref:`Vector2<class_vector2>` **global_scale** - Global scale.
+
+  .. _class_Node2D_global_transform:
+
 - :ref:`Transform2D<class_transform2d>` **global_transform** - Global :ref:`Transform2D<class_transform2d>`.
+
+  .. _class_Node2D_position:
+
 - :ref:`Vector2<class_vector2>` **position** - Position, relative to the node's parent.
+
+  .. _class_Node2D_rotation:
+
 - :ref:`float<class_float>` **rotation** - Rotation in radians.
+
+  .. _class_Node2D_rotation_deg:
+
 - :ref:`float<class_float>` **rotation_deg** - Rotation in degrees.
+
+  .. _class_Node2D_scale:
+
 - :ref:`Vector2<class_vector2>` **scale** - Rotation in degrees.
+
+  .. _class_Node2D_transform:
+
 - :ref:`Transform2D<class_transform2d>` **transform** - Local :ref:`Transform2D<class_transform2d>`.
+
+  .. _class_Node2D_z:
+
 - :ref:`int<class_int>` **z** - Z-index. Controls the order in which the nodes render. A node with a higher Z-index will display in front of others.
+
+  .. _class_Node2D_z_as_relative:
+
 - :ref:`bool<class_bool>` **z_as_relative** - Make the node's Z-index relative to its parent's Z-index. If this node's Z-index is 2 and its parent's effective Z-index is 3, then this node's effective Z-index will be 2 + 3 = 5.
+
 
 Description
 -----------

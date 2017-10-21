@@ -36,15 +36,42 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_DirectionalLight_directional_shadow_bias_split_scale:
+
 - :ref:`float<class_float>` **directional_shadow_bias_split_scale**
+
+  .. _class_DirectionalLight_directional_shadow_blend_splits:
+
 - :ref:`bool<class_bool>` **directional_shadow_blend_splits**
+
+  .. _class_DirectionalLight_directional_shadow_depth_range:
+
 - :ref:`int<class_int>` **directional_shadow_depth_range**
+
+  .. _class_DirectionalLight_directional_shadow_max_distance:
+
 - :ref:`float<class_float>` **directional_shadow_max_distance**
+
+  .. _class_DirectionalLight_directional_shadow_mode:
+
 - :ref:`int<class_int>` **directional_shadow_mode**
+
+  .. _class_DirectionalLight_directional_shadow_normal_bias:
+
 - :ref:`float<class_float>` **directional_shadow_normal_bias**
+
+  .. _class_DirectionalLight_directional_shadow_split_1:
+
 - :ref:`float<class_float>` **directional_shadow_split_1**
+
+  .. _class_DirectionalLight_directional_shadow_split_2:
+
 - :ref:`float<class_float>` **directional_shadow_split_2**
+
+  .. _class_DirectionalLight_directional_shadow_split_3:
+
 - :ref:`float<class_float>` **directional_shadow_split_3**
+
 
 Numeric Constants
 -----------------

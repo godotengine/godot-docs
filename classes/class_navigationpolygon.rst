@@ -52,9 +52,18 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_NavigationPolygon_outlines:
+
 - :ref:`Array<class_array>` **outlines**
+
+  .. _class_NavigationPolygon_polygons:
+
 - :ref:`Array<class_array>` **polygons**
+
+  .. _class_NavigationPolygon_vertices:
+
 - :ref:`PoolVector2Array<class_poolvector2array>` **vertices**
+
 
 Member Function Description
 ---------------------------

@@ -44,9 +44,13 @@ Member Functions
 Signals
 -------
 
+.. _class_AcceptDialog_confirmed:
+
 -  **confirmed**  **(** **)**
 
 Emitted when the dialog is accepted.
+
+.. _class_AcceptDialog_custom_action:
 
 -  **custom_action**  **(** :ref:`String<class_string>` action  **)**
 
@@ -56,8 +60,14 @@ Emitted when a custom button is pressed. See :ref:`add_button<class_AcceptDialog
 Member Variables
 ----------------
 
+  .. _class_AcceptDialog_dialog_hide_on_ok:
+
 - :ref:`bool<class_bool>` **dialog_hide_on_ok** - If ``true`` the dialog is hidden when accepted. Default value: ``true``.
+
+  .. _class_AcceptDialog_dialog_text:
+
 - :ref:`String<class_string>` **dialog_text** - The text displayed by this dialog.
+
 
 Description
 -----------

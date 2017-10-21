@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_CircleShape2D_radius:
+
 - :ref:`float<class_float>` **radius** - The circle's radius.
+
 
 Description
 -----------

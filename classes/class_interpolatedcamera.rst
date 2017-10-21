@@ -38,9 +38,18 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_InterpolatedCamera_enabled:
+
 - :ref:`bool<class_bool>` **enabled**
+
+  .. _class_InterpolatedCamera_speed:
+
 - :ref:`float<class_float>` **speed**
+
+  .. _class_InterpolatedCamera_target:
+
 - :ref:`NodePath<class_nodepath>` **target**
+
 
 Member Function Description
 ---------------------------

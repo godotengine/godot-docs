@@ -100,24 +100,78 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_Particles2D_amount:
+
 - :ref:`int<class_int>` **amount** - Number of particles emitted in one emission cycle.
+
+  .. _class_Particles2D_draw_order:
+
 - :ref:`int<class_int>` **draw_order** - Particle draw order. Uses ``DRAW_ORDER\_\*`` values. Default value: ``DRAW_ORDER_INDEX``.
+
+  .. _class_Particles2D_emitting:
+
 - :ref:`bool<class_bool>` **emitting** - If ``true`` particles are being emitted. Default value: ``true``.
+
+  .. _class_Particles2D_explosiveness:
+
 - :ref:`float<class_float>` **explosiveness** - How rapidly particles in an emission cycle are emitted. If greater than ``0``, there will be a gap in emissions before the next cycle begins. Default value: ``0``.
+
+  .. _class_Particles2D_fixed_fps:
+
 - :ref:`int<class_int>` **fixed_fps**
+
+  .. _class_Particles2D_fract_delta:
+
 - :ref:`bool<class_bool>` **fract_delta**
+
+  .. _class_Particles2D_h_frames:
+
 - :ref:`int<class_int>` **h_frames** - Number of horizontal frames in ``texture``.
+
+  .. _class_Particles2D_lifetime:
+
 - :ref:`float<class_float>` **lifetime** - Amount of time each particle will exist. Default value: ``1``.
+
+  .. _class_Particles2D_local_coords:
+
 - :ref:`bool<class_bool>` **local_coords** - If ``true`` particles use the parent node's coordinate space. If ``false`` they use global coordinates. Default value: ``true``.
+
+  .. _class_Particles2D_normal_map:
+
 - :ref:`Texture<class_texture>` **normal_map**
+
+  .. _class_Particles2D_one_shot:
+
 - :ref:`bool<class_bool>` **one_shot** - If ``true`` only one emission cycle occurs. If set ``true`` during a cycle, emission will stop at the cycle's end. Default value: ``false``.
+
+  .. _class_Particles2D_preprocess:
+
 - :ref:`float<class_float>` **preprocess** - Particle system starts as if it had already run for this many seconds.
+
+  .. _class_Particles2D_process_material:
+
 - :ref:`Material<class_material>` **process_material** - :ref:`Material<class_material>` for processing particles. Can be a :ref:`ParticlesMaterial<class_particlesmaterial>` or a :ref:`ShaderMaterial<class_shadermaterial>`.
+
+  .. _class_Particles2D_randomness:
+
 - :ref:`float<class_float>` **randomness** - Emission lifetime randomness ratio. Default value: ``0``.
+
+  .. _class_Particles2D_speed_scale:
+
 - :ref:`float<class_float>` **speed_scale** - Particle system's running speed scaling ratio. Default value: ``1``.
+
+  .. _class_Particles2D_texture:
+
 - :ref:`Texture<class_texture>` **texture** - Particle texture. If ``null`` particles will be squares.
+
+  .. _class_Particles2D_v_frames:
+
 - :ref:`int<class_int>` **v_frames** - Number of vertical frames in ``texture``.
+
+  .. _class_Particles2D_visibility_rect:
+
 - :ref:`Rect2<class_rect2>` **visibility_rect** - Editor visibility helper.
+
 
 Numeric Constants
 -----------------

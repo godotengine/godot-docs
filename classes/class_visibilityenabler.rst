@@ -28,8 +28,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_VisibilityEnabler_freeze_bodies:
+
 - :ref:`bool<class_bool>` **freeze_bodies**
+
+  .. _class_VisibilityEnabler_pause_animations:
+
 - :ref:`bool<class_bool>` **pause_animations**
+
 
 Numeric Constants
 -----------------

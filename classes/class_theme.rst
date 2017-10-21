@@ -84,7 +84,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_Theme_default_font:
+
 - :ref:`Font<class_font>` **default_font**
+
 
 Description
 -----------

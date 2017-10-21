@@ -64,6 +64,8 @@ Member Functions
 Signals
 -------
 
+.. _class_OptionButton_item_selected:
+
 -  **item_selected**  **(** :ref:`int<class_int>` ID  **)**
 
 This signal is emitted when the current item was changed by the user. ID of the item selected is passed as argument (if no IDs were added, ID will be just the item index).
@@ -72,8 +74,14 @@ This signal is emitted when the current item was changed by the user. ID of the 
 Member Variables
 ----------------
 
+  .. _class_OptionButton_items:
+
 - :ref:`Array<class_array>` **items**
+
+  .. _class_OptionButton_selected:
+
 - :ref:`int<class_int>` **selected**
+
 
 Description
 -----------

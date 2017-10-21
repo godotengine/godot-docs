@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_RayShape2D_length:
+
 - :ref:`float<class_float>` **length** - The ray's length.
+
 
 Description
 -----------

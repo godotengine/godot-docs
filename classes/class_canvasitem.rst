@@ -146,17 +146,25 @@ Member Functions
 Signals
 -------
 
+.. _class_CanvasItem_draw:
+
 -  **draw**  **(** **)**
 
 Emitted when the CanvasItem must redraw. This can only be connected realtime, as deferred will not allow drawing.
+
+.. _class_CanvasItem_hide:
 
 -  **hide**  **(** **)**
 
 Emitted when becoming hidden.
 
+.. _class_CanvasItem_item_rect_changed:
+
 -  **item_rect_changed**  **(** **)**
 
 Emitted when the item rect has changed.
+
+.. _class_CanvasItem_visibility_changed:
 
 -  **visibility_changed**  **(** **)**
 
@@ -166,14 +174,38 @@ Emitted when the visibility (hidden/visible) changes.
 Member Variables
 ----------------
 
+  .. _class_CanvasItem_light_mask:
+
 - :ref:`int<class_int>` **light_mask**
+
+  .. _class_CanvasItem_material:
+
 - :ref:`Material<class_material>` **material**
+
+  .. _class_CanvasItem_modulate:
+
 - :ref:`Color<class_color>` **modulate**
+
+  .. _class_CanvasItem_self_modulate:
+
 - :ref:`Color<class_color>` **self_modulate**
+
+  .. _class_CanvasItem_show_behind_parent:
+
 - :ref:`bool<class_bool>` **show_behind_parent**
+
+  .. _class_CanvasItem_show_on_top:
+
 - :ref:`bool<class_bool>` **show_on_top**
+
+  .. _class_CanvasItem_use_parent_material:
+
 - :ref:`bool<class_bool>` **use_parent_material**
+
+  .. _class_CanvasItem_visible:
+
 - :ref:`bool<class_bool>` **visible**
+
 
 Numeric Constants
 -----------------

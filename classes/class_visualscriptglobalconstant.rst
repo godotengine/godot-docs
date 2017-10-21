@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_VisualScriptGlobalConstant_constant:
+
 - :ref:`int<class_int>` **constant**
+
 
 Member Function Description
 ---------------------------

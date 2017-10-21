@@ -42,10 +42,22 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_StyleBox_content_margin_bottom:
+
 - :ref:`float<class_float>` **content_margin_bottom**
+
+  .. _class_StyleBox_content_margin_left:
+
 - :ref:`float<class_float>` **content_margin_left**
+
+  .. _class_StyleBox_content_margin_right:
+
 - :ref:`float<class_float>` **content_margin_right**
+
+  .. _class_StyleBox_content_margin_top:
+
 - :ref:`float<class_float>` **content_margin_top**
+
 
 Description
 -----------

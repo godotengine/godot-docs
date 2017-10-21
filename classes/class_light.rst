@@ -58,17 +58,50 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_Light_editor_only:
+
 - :ref:`bool<class_bool>` **editor_only**
+
+  .. _class_Light_light_color:
+
 - :ref:`Color<class_color>` **light_color**
+
+  .. _class_Light_light_cull_mask:
+
 - :ref:`int<class_int>` **light_cull_mask**
+
+  .. _class_Light_light_energy:
+
 - :ref:`float<class_float>` **light_energy**
+
+  .. _class_Light_light_negative:
+
 - :ref:`bool<class_bool>` **light_negative**
+
+  .. _class_Light_light_specular:
+
 - :ref:`float<class_float>` **light_specular**
+
+  .. _class_Light_shadow_bias:
+
 - :ref:`float<class_float>` **shadow_bias**
+
+  .. _class_Light_shadow_color:
+
 - :ref:`Color<class_color>` **shadow_color**
+
+  .. _class_Light_shadow_contact:
+
 - :ref:`float<class_float>` **shadow_contact**
+
+  .. _class_Light_shadow_enabled:
+
 - :ref:`bool<class_bool>` **shadow_enabled**
+
+  .. _class_Light_shadow_reverse_cull_face:
+
 - :ref:`bool<class_bool>` **shadow_reverse_cull_face**
+
 
 Numeric Constants
 -----------------

@@ -38,9 +38,18 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_SpinBox_editable:
+
 - :ref:`bool<class_bool>` **editable**
+
+  .. _class_SpinBox_prefix:
+
 - :ref:`String<class_string>` **prefix**
+
+  .. _class_SpinBox_suffix:
+
 - :ref:`String<class_string>` **suffix**
+
 
 Description
 -----------

@@ -84,31 +84,94 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_StyleBoxFlat_anti_aliasing:
+
 - :ref:`bool<class_bool>` **anti_aliasing** - Anti Aliasing draws a small ring around edges. This ring fades to transparent. As a result edges look much smoother. This is only noticeable when using rounded corners.
+
+  .. _class_StyleBoxFlat_anti_aliasing_size:
+
 - :ref:`int<class_int>` **anti_aliasing_size** - This changes the size of the faded ring. Higher values can be used to achieve a "blurry" effect.
+
+  .. _class_StyleBoxFlat_bg_color:
+
 - :ref:`Color<class_color>` **bg_color** - The background color of the stylebox.
+
+  .. _class_StyleBoxFlat_border_blend:
+
 - :ref:`bool<class_bool>` **border_blend** - When set to true, the border will fade into the background color.
+
+  .. _class_StyleBoxFlat_border_color:
+
 - :ref:`Color<class_color>` **border_color** - Sets the color of the border.
+
+  .. _class_StyleBoxFlat_border_width_bottom:
+
 - :ref:`int<class_int>` **border_width_bottom** - Border width for the bottom border.
+
+  .. _class_StyleBoxFlat_border_width_left:
+
 - :ref:`int<class_int>` **border_width_left** - Border width for the left border.
+
+  .. _class_StyleBoxFlat_border_width_right:
+
 - :ref:`int<class_int>` **border_width_right** - Border width for the right border.
+
+  .. _class_StyleBoxFlat_border_width_top:
+
 - :ref:`int<class_int>` **border_width_top** - Border width for the top border.
+
+  .. _class_StyleBoxFlat_corner_detail:
+
 - :ref:`int<class_int>` **corner_detail** - This sets the amount of vertices used for each corner. Higher values result in rounder corners but take more processing power to compute. When choosing a value you should take the corner radius (:ref:`set_corner_radius<class_StyleBoxFlat_set_corner_radius>`) into account.
 
 For corner radius smaller than 10: 4-5 should be enough
 
 For corner radius smaller than 30: 8-12 should be enough ...
+
+  .. _class_StyleBoxFlat_corner_radius_bottom_left:
+
 - :ref:`int<class_int>` **corner_radius_bottom_left** - The corner radius of the bottom left corner. When set to 0 the corner is not rounded.
+
+  .. _class_StyleBoxFlat_corner_radius_bottom_right:
+
 - :ref:`int<class_int>` **corner_radius_bottom_right** - The corner radius of the bottom right corner. When set to 0 the corner is not rounded.
+
+  .. _class_StyleBoxFlat_corner_radius_top_left:
+
 - :ref:`int<class_int>` **corner_radius_top_left** - The corner radius of the top left corner. When set to 0 the corner is not rounded.
+
+  .. _class_StyleBoxFlat_corner_radius_top_right:
+
 - :ref:`int<class_int>` **corner_radius_top_right** - The corner radius of the top right corner. When set to 0 the corner is not rounded.
+
+  .. _class_StyleBoxFlat_draw_center:
+
 - :ref:`bool<class_bool>` **draw_center** - Toggels drawing of the inner part of the stylebox.
+
+  .. _class_StyleBoxFlat_expand_margin_bottom:
+
 - :ref:`float<class_float>` **expand_margin_bottom** - Expands the stylebox outside of the control rect on the bottom edge. Useful in combination with border_width_bottom. To draw a border outside the control rect.
+
+  .. _class_StyleBoxFlat_expand_margin_left:
+
 - :ref:`float<class_float>` **expand_margin_left** - Expands the stylebox outside of the control rect on the left edge. Useful in combination with border_width_left. To draw a border outside the control rect.
+
+  .. _class_StyleBoxFlat_expand_margin_right:
+
 - :ref:`float<class_float>` **expand_margin_right** - Expands the stylebox outside of the control rect on the right edge. Useful in combination with border_width_right. To draw a border outside the control rect.
+
+  .. _class_StyleBoxFlat_expand_margin_top:
+
 - :ref:`float<class_float>` **expand_margin_top** - Expands the stylebox outside of the control rect on the top edge. Useful in combination with border_width_top. To draw a border outside the control rect.
+
+  .. _class_StyleBoxFlat_shadow_color:
+
 - :ref:`Color<class_color>` **shadow_color** - The color of the shadow. (This has no effect when shadow_size < 1)
+
+  .. _class_StyleBoxFlat_shadow_size:
+
 - :ref:`int<class_int>` **shadow_size** - The shadow size in pixels.
+
 
 Description
 -----------

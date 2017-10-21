@@ -42,10 +42,22 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_Joint2D_bias:
+
 - :ref:`float<class_float>` **bias**
+
+  .. _class_Joint2D_disable_collision:
+
 - :ref:`bool<class_bool>` **disable_collision**
+
+  .. _class_Joint2D_node_a:
+
 - :ref:`NodePath<class_nodepath>` **node_a**
+
+  .. _class_Joint2D_node_b:
+
 - :ref:`NodePath<class_nodepath>` **node_b**
+
 
 Description
 -----------

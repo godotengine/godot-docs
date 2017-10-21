@@ -50,6 +50,8 @@ Member Functions
 Signals
 -------
 
+.. _class_HTTPRequest_request_completed:
+
 -  **request_completed**  **(** :ref:`int<class_int>` result, :ref:`int<class_int>` response_code, :ref:`PoolStringArray<class_poolstringarray>` headers, :ref:`PoolByteArray<class_poolbytearray>` body  **)**
 
 This signal is emitted upon request completion.
@@ -58,9 +60,18 @@ This signal is emitted upon request completion.
 Member Variables
 ----------------
 
+  .. _class_HTTPRequest_body_size_limit:
+
 - :ref:`int<class_int>` **body_size_limit**
+
+  .. _class_HTTPRequest_max_redirects:
+
 - :ref:`int<class_int>` **max_redirects**
+
+  .. _class_HTTPRequest_use_threads:
+
 - :ref:`bool<class_bool>` **use_threads**
+
 
 Numeric Constants
 -----------------

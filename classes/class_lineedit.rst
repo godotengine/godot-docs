@@ -80,9 +80,13 @@ Member Functions
 Signals
 -------
 
+.. _class_LineEdit_text_changed:
+
 -  **text_changed**  **(** :ref:`String<class_string>` text  **)**
 
 When the text changes, this signal is emitted.
+
+.. _class_LineEdit_text_entered:
 
 -  **text_entered**  **(** :ref:`String<class_string>` text  **)**
 
@@ -92,17 +96,50 @@ This signal is emitted when the user presses KEY_ENTER on the :ref:`LineEdit<cla
 Member Variables
 ----------------
 
+  .. _class_LineEdit_align:
+
 - :ref:`int<class_int>` **align**
+
+  .. _class_LineEdit_caret_blink:
+
 - :ref:`bool<class_bool>` **caret_blink**
+
+  .. _class_LineEdit_caret_blink_speed:
+
 - :ref:`float<class_float>` **caret_blink_speed**
+
+  .. _class_LineEdit_editable:
+
 - :ref:`bool<class_bool>` **editable**
+
+  .. _class_LineEdit_expand_to_len:
+
 - :ref:`bool<class_bool>` **expand_to_len**
+
+  .. _class_LineEdit_focus_mode:
+
 - :ref:`int<class_int>` **focus_mode**
+
+  .. _class_LineEdit_max_length:
+
 - :ref:`int<class_int>` **max_length**
+
+  .. _class_LineEdit_placeholder_alpha:
+
 - :ref:`float<class_float>` **placeholder_alpha**
+
+  .. _class_LineEdit_placeholder_text:
+
 - :ref:`String<class_string>` **placeholder_text**
+
+  .. _class_LineEdit_secret:
+
 - :ref:`bool<class_bool>` **secret**
+
+  .. _class_LineEdit_text:
+
 - :ref:`String<class_string>` **text**
+
 
 Numeric Constants
 -----------------

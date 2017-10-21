@@ -52,6 +52,8 @@ Member Functions
 Signals
 -------
 
+.. _class_Timer_timeout:
+
 -  **timeout**  **(** **)**
 
 Emitted when the Timer reaches 0.
@@ -60,10 +62,22 @@ Emitted when the Timer reaches 0.
 Member Variables
 ----------------
 
+  .. _class_Timer_autostart:
+
 - :ref:`bool<class_bool>` **autostart** - If ``true``, Timer will automatically start when entering the scene tree. Default value: ``false``.
+
+  .. _class_Timer_one_shot:
+
 - :ref:`bool<class_bool>` **one_shot** - If ``true``, Timer will stop when reaching 0. If ``false``, it will restart. Default value: ``false``.
+
+  .. _class_Timer_process_mode:
+
 - :ref:`int<class_int>` **process_mode** - Processing mode. Uses TIMER_PROCESS\_\* constants as value.
+
+  .. _class_Timer_wait_time:
+
 - :ref:`float<class_float>` **wait_time** - Wait time in seconds.
+
 
 Numeric Constants
 -----------------

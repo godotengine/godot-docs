@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_RectangleShape2D_extents:
+
 - :ref:`Vector2<class_vector2>` **extents** - The rectangle's half extents. The width and height of this shape is twice the half extents.
+
 
 Description
 -----------

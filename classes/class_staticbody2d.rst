@@ -40,10 +40,22 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_StaticBody2D_bounce:
+
 - :ref:`float<class_float>` **bounce** - The body's bounciness. Values range from ``0`` (no bounce) to ``1`` (full bounciness).
+
+  .. _class_StaticBody2D_constant_angular_velocity:
+
 - :ref:`float<class_float>` **constant_angular_velocity** - Constant angular velocity for the body. This does not rotate the body, but affects colliding bodies, as if it were rotating.
+
+  .. _class_StaticBody2D_constant_linear_velocity:
+
 - :ref:`Vector2<class_vector2>` **constant_linear_velocity** - Constant linear velocity for the body. This does not move the body, but affects colliding bodies, as if it were moving.
+
+  .. _class_StaticBody2D_friction:
+
 - :ref:`float<class_float>` **friction** - The body's friction. Values range from ``0`` (no friction) to ``1`` (full friction).
+
 
 Description
 -----------

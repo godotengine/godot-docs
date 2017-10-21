@@ -40,10 +40,22 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_CollisionPolygon2D_build_mode:
+
 - :ref:`int<class_int>` **build_mode** - Collision build mode. Use one of the ``BUILD\_\*`` constants. Default value: ``BUILD_SOLIDS``.
+
+  .. _class_CollisionPolygon2D_disabled:
+
 - :ref:`bool<class_bool>` **disabled** - If ``true`` no collisions will be detected.
+
+  .. _class_CollisionPolygon2D_one_way_collision:
+
 - :ref:`bool<class_bool>` **one_way_collision** - If ``true`` only edges that face up, relative to CollisionPolygon2D's rotation, will collide with other objects.
+
+  .. _class_CollisionPolygon2D_polygon:
+
 - :ref:`PoolVector2Array<class_poolvector2array>` **polygon** - The polygon's list of vertices. The final point will be connected to the first.
+
 
 Numeric Constants
 -----------------

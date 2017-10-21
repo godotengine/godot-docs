@@ -78,17 +78,50 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_Line2D_begin_cap_mode:
+
 - :ref:`int<class_int>` **begin_cap_mode** - Controls the style of the line's first point. Use ``LINE_CAP\_\*`` constants. Default value: ``LINE_CAP_NONE``.
+
+  .. _class_Line2D_default_color:
+
 - :ref:`Color<class_color>` **default_color** - The line's color. Will not be used if a gradient is set.
+
+  .. _class_Line2D_end_cap_mode:
+
 - :ref:`int<class_int>` **end_cap_mode** - Controls the style of the line's last point. Use ``LINE_CAP\_\*`` constants. Default value: ``LINE_CAP_NONE``.
+
+  .. _class_Line2D_gradient:
+
 - :ref:`Gradient<class_gradient>` **gradient** - The gradient is drawn through the whole line from start to finish. The default color will not be used if a gradient is set.
+
+  .. _class_Line2D_joint_mode:
+
 - :ref:`int<class_int>` **joint_mode** - The style for the points inbetween the start and the end.
+
+  .. _class_Line2D_points:
+
 - :ref:`PoolVector2Array<class_poolvector2array>` **points** - The points that form the lines. The line is drawn between every point set in this array.
+
+  .. _class_Line2D_round_precision:
+
 - :ref:`int<class_int>` **round_precision** - The smoothness of the rounded joints and caps. This is only used if a cap or joint is set as round.
+
+  .. _class_Line2D_sharp_limit:
+
 - :ref:`float<class_float>` **sharp_limit** - The direction difference in radians between vector points. This value is only used if ``joint mode`` is set to ``LINE_JOINT_SHARP``.
+
+  .. _class_Line2D_texture:
+
 - :ref:`Texture<class_texture>` **texture** - The texture used for the line's texture. Uses ``texture_mode`` for drawing style.
+
+  .. _class_Line2D_texture_mode:
+
 - :ref:`int<class_int>` **texture_mode** - The style to render the ``texture`` on the line. Use ``LINE_TEXTURE\_\*`` constants. Default value: ``LINE_TEXTURE_NONE``.
+
+  .. _class_Line2D_width:
+
 - :ref:`float<class_float>` **width** - The line's width.
+
 
 Numeric Constants
 -----------------

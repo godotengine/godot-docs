@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_Path_curve:
+
 - :ref:`Curve3D<class_curve3d>` **curve**
+
 
 Description
 -----------

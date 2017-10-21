@@ -36,9 +36,18 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_AudioStreamOGGVorbis_data:
+
 - :ref:`PoolByteArray<class_poolbytearray>` **data** - Raw audio data.
+
+  .. _class_AudioStreamOGGVorbis_loop:
+
 - :ref:`bool<class_bool>` **loop** - If ``true``, audio will loop continuously. Default value: ``false``.
+
+  .. _class_AudioStreamOGGVorbis_loop_offset:
+
 - :ref:`float<class_float>` **loop_offset** - If loop is ``true``, loop starts from this position, in seconds.
+
 
 Description
 -----------

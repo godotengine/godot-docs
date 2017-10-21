@@ -30,8 +30,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_InputEventAction_action:
+
 - :ref:`String<class_string>` **action** - The action's name. Actions are accessed via this :ref:`String<class_string>`.
+
+  .. _class_InputEventAction_pressed:
+
 - :ref:`bool<class_bool>` **pressed** - If ``true`` the action's state is pressed. If ``false`` the action's state is released.
+
 
 Description
 -----------

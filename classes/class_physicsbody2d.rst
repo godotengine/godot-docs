@@ -46,13 +46,22 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_PhysicsBody2D_collision_layer:
+
 - :ref:`int<class_int>` **collision_layer** - The physics layers this area is in.
 
 Collidable objects can exist in any of 32 different layers. These layers work like a tagging system, and are not visual. A collidable can use these layers to select with which objects it can collide, using the collision_mask property.
 
 A contact is detected if object A is in any of the layers that object B scans, or object B is in any layer scanned by object A.
+
+  .. _class_PhysicsBody2D_collision_mask:
+
 - :ref:`int<class_int>` **collision_mask** - The physics layers this area can scan for collisions.
+
+  .. _class_PhysicsBody2D_layers:
+
 - :ref:`int<class_int>` **layers** - Both collision_layer and collision_mask. Returns collision_layer when accessed. Updates collision_layers and collision_mask when modified.
+
 
 Description
 -----------

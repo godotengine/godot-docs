@@ -26,6 +26,8 @@ Member Functions
 Signals
 -------
 
+.. _class_MenuButton_about_to_show:
+
 -  **about_to_show**  **(** **)**
 
 Emitted when :ref:`PopupMenu<class_popupmenu>` of this MenuButton is about to show.
@@ -34,7 +36,10 @@ Emitted when :ref:`PopupMenu<class_popupmenu>` of this MenuButton is about to sh
 Member Variables
 ----------------
 
+  .. _class_MenuButton_items:
+
 - :ref:`Array<class_array>` **items**
+
 
 Description
 -----------

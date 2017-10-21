@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_VisualScriptMathConstant_constant:
+
 - :ref:`int<class_int>` **constant** - The math constant.
+
 
 Numeric Constants
 -----------------

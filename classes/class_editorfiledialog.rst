@@ -64,9 +64,15 @@ Member Functions
 Signals
 -------
 
+.. _class_EditorFileDialog_dir_selected:
+
 -  **dir_selected**  **(** :ref:`String<class_string>` dir  **)**
 
+.. _class_EditorFileDialog_file_selected:
+
 -  **file_selected**  **(** :ref:`String<class_string>` path  **)**
+
+.. _class_EditorFileDialog_files_selected:
 
 -  **files_selected**  **(** :ref:`PoolStringArray<class_poolstringarray>` paths  **)**
 

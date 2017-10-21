@@ -72,30 +72,70 @@ Member Functions
 Signals
 -------
 
+.. _class_Sprite_frame_changed:
+
 -  **frame_changed**  **(** **)**
 
-Emitted when the member frame changes.
+Emitted when the :ref:`frame<class_Sprite_frame>` changes.
+
+.. _class_Sprite_texture_changed:
 
 -  **texture_changed**  **(** **)**
 
-Emitted when the member texture changes.
+Emitted when the :ref:`texture<class_Sprite_texture>` changes.
 
 
 Member Variables
 ----------------
 
+  .. _class_Sprite_centered:
+
 - :ref:`bool<class_bool>` **centered** - If ``true`` texture is centered. Default value: ``true``.
+
+  .. _class_Sprite_flip_h:
+
 - :ref:`bool<class_bool>` **flip_h** - If ``true`` texture is flipped horizontally. Default value: ``false``.
+
+  .. _class_Sprite_flip_v:
+
 - :ref:`bool<class_bool>` **flip_v** - If ``true`` texture is flipped vertically. Default value: ``false``.
-- :ref:`int<class_int>` **frame** - Current frame to display from sprite sheet. member vframes or member hframes must be greater than 1.
+
+  .. _class_Sprite_frame:
+
+- :ref:`int<class_int>` **frame** - Current frame to display from sprite sheet. :ref:`vframes<class_Sprite_vframes>` or :ref:`hframes<class_Sprite_hframes>` must be greater than 1.
+
+  .. _class_Sprite_hframes:
+
 - :ref:`int<class_int>` **hframes** - The number of collumns in the sprite sheet.
+
+  .. _class_Sprite_normal_map:
+
 - :ref:`Texture<class_texture>` **normal_map** - The normal map gives depth to the Sprite.
+
+  .. _class_Sprite_offset:
+
 - :ref:`Vector2<class_vector2>` **offset** - The texture's drawing offset.
+
+  .. _class_Sprite_region_enabled:
+
 - :ref:`bool<class_bool>` **region_enabled** - If ``true`` texture is cut from a larger atlas texture. See ``region_rect``. Default value: ``false``.
+
+  .. _class_Sprite_region_filter_clip:
+
 - :ref:`bool<class_bool>` **region_filter_clip** - If ``true`` the outermost pixels get blurred out.
-- :ref:`Rect2<class_rect2>` **region_rect** - The region of the atlas texture to display. member region_enabled must be ``true``.
+
+  .. _class_Sprite_region_rect:
+
+- :ref:`Rect2<class_rect2>` **region_rect** - The region of the atlas texture to display. :ref:`region_enabled<class_Sprite_region_enabled>` must be ``true``.
+
+  .. _class_Sprite_texture:
+
 - :ref:`Texture<class_texture>` **texture** - :ref:`Texture<class_texture>` object to draw.
+
+  .. _class_Sprite_vframes:
+
 - :ref:`int<class_int>` **vframes** - The number of rows in the sprite sheet.
+
 
 Description
 -----------

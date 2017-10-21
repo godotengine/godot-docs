@@ -30,13 +30,18 @@ Member Functions
 Signals
 -------
 
+.. _class_ScrollBar_scrolling:
+
 -  **scrolling**  **(** **)**
 
 
 Member Variables
 ----------------
 
+  .. _class_ScrollBar_custom_step:
+
 - :ref:`float<class_float>` **custom_step**
+
 
 Description
 -----------

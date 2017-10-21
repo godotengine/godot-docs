@@ -32,8 +32,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_NavigationPolygonInstance_enabled:
+
 - :ref:`bool<class_bool>` **enabled**
+
+  .. _class_NavigationPolygonInstance_navpoly:
+
 - :ref:`NavigationPolygon<class_navigationpolygon>` **navpoly**
+
 
 Member Function Description
 ---------------------------

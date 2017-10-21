@@ -112,48 +112,106 @@ Member Functions
 Signals
 -------
 
+.. _class_RigidBody2D_body_entered:
+
 -  **body_entered**  **(** :ref:`Object<class_object>` body  **)**
 
-Emitted when a body enters into contact with this one. member contact_monitor must be ``true`` and member contacts_reported greater than ``0``.
+Emitted when a body enters into contact with this one. :ref:`contact_monitor<class_RigidBody2D_contact_monitor>` must be ``true`` and :ref:`contacts_reported<class_RigidBody2D_contacts_reported>` greater than ``0``.
+
+.. _class_RigidBody2D_body_exited:
 
 -  **body_exited**  **(** :ref:`Object<class_object>` body  **)**
 
-Emitted when a body exits contact with this one. member contact_monitor must be ``true`` and member contacts_reported greater than ``0``.
+Emitted when a body exits contact with this one. :ref:`contact_monitor<class_RigidBody2D_contact_monitor>` must be ``true`` and :ref:`contacts_reported<class_RigidBody2D_contacts_reported>` greater than ``0``.
+
+.. _class_RigidBody2D_body_shape_entered:
 
 -  **body_shape_entered**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape  **)**
 
-Emitted when a body enters into contact with this one. Reports colliding shape information. See :ref:`CollisionObject2D<class_collisionobject2d>` for shape index information. member contact_monitor must be ``true`` and member contacts_reported greater than ``0``.
+Emitted when a body enters into contact with this one. Reports colliding shape information. See :ref:`CollisionObject2D<class_collisionobject2d>` for shape index information. :ref:`contact_monitor<class_RigidBody2D_contact_monitor>` must be ``true`` and :ref:`contacts_reported<class_RigidBody2D_contacts_reported>` greater than ``0``.
+
+.. _class_RigidBody2D_body_shape_exited:
 
 -  **body_shape_exited**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape  **)**
 
-Emitted when a body shape exits contact with this one. Reports colliding shape information. See :ref:`CollisionObject2D<class_collisionobject2d>` for shape index information. member contact_monitor must be ``true`` and member contacts_reported greater than ``0``.
+Emitted when a body shape exits contact with this one. Reports colliding shape information. See :ref:`CollisionObject2D<class_collisionobject2d>` for shape index information. :ref:`contact_monitor<class_RigidBody2D_contact_monitor>` must be ``true`` and :ref:`contacts_reported<class_RigidBody2D_contacts_reported>` greater than ``0``.
+
+.. _class_RigidBody2D_sleeping_state_changed:
 
 -  **sleeping_state_changed**  **(** **)**
 
-Emitted when member sleeping changes.
+Emitted when :ref:`sleeping<class_RigidBody2D_sleeping>` changes.
 
 
 Member Variables
 ----------------
 
-- :ref:`float<class_float>` **angular_damp** - Damps the body's member angular_velocity. If ``-1`` the body will use the "Default Angular Damp" in "Project > Project Settings > Physics > 2d". Default value: ``-1``.
+  .. _class_RigidBody2D_angular_damp:
+
+- :ref:`float<class_float>` **angular_damp** - Damps the body's :ref:`angular_velocity<class_RigidBody2D_angular_velocity>`. If ``-1`` the body will use the "Default Angular Damp" in "Project > Project Settings > Physics > 2d". Default value: ``-1``.
+
+  .. _class_RigidBody2D_angular_velocity:
+
 - :ref:`float<class_float>` **angular_velocity** - The body's rotational velocity.
+
+  .. _class_RigidBody2D_bounce:
+
 - :ref:`float<class_float>` **bounce** - The body's bounciness. Default value: ``0``.
+
+  .. _class_RigidBody2D_can_sleep:
+
 - :ref:`bool<class_bool>` **can_sleep** - If ``true`` the body will not calculate forces and will act as a static body if there is no movement. The body will wake up when other forces are applied via collisions or by using :ref:`apply_impulse<class_RigidBody2D_apply_impulse>` or :ref:`add_force<class_RigidBody2D_add_force>`. Default value: ``true``.
-- :ref:`bool<class_bool>` **contact_monitor** - If ``true`` the body will emit signals when it collides with another RigidBody2D. See also member contacts_reported. Default value: ``false``.
+
+  .. _class_RigidBody2D_contact_monitor:
+
+- :ref:`bool<class_bool>` **contact_monitor** - If ``true`` the body will emit signals when it collides with another RigidBody2D. See also :ref:`contacts_reported<class_RigidBody2D_contacts_reported>`. Default value: ``false``.
+
+  .. _class_RigidBody2D_contacts_reported:
+
 - :ref:`int<class_int>` **contacts_reported** - The maximum number of contacts to report. Default value: ``0``.
+
+  .. _class_RigidBody2D_continuous_cd:
+
 - :ref:`int<class_int>` **continuous_cd** - Continuous collision detection mode. Default value: ``CCD_MODE_DISABLED``.
 
 Continuous collision detection tries to predict where a moving body will collide instead of moving it and correcting its movement after collision. Continuous collision detection is slower, but more precise and misses fewer collisions with small, fast-moving objects. Raycasting and shapecasting methods are available. See ``CCD_MODE\_`` constants for details.
+
+  .. _class_RigidBody2D_custom_integrator:
+
 - :ref:`bool<class_bool>` **custom_integrator** - If ``true`` internal force integration is disabled for this body. Aside from collision response, the body will only move as determined by the :ref:`_integrate_forces<class_RigidBody2D__integrate_forces>` function.
+
+  .. _class_RigidBody2D_friction:
+
 - :ref:`float<class_float>` **friction** - The body's friction. Values range from ``0`` (frictionless) to ``1`` (maximum friction). Default value: ``1``.
+
+  .. _class_RigidBody2D_gravity_scale:
+
 - :ref:`float<class_float>` **gravity_scale** - Multiplies the gravity applied to the body. The body's gravity is calculated from the "Default Gravity" value in "Project > Project Settings > Physics > 2d" and/or any additional gravity vector applied by :ref:`Area2D<class_area2d>`\ s. Default value: ``1``.
-- :ref:`float<class_float>` **linear_damp** - Damps the body's member linear_velocity. If ``-1`` the body will use the "Default Linear Damp" in "Project > Project Settings > Physics > 2d". Default value: ``-1``.
+
+  .. _class_RigidBody2D_linear_damp:
+
+- :ref:`float<class_float>` **linear_damp** - Damps the body's :ref:`linear_velocity<class_RigidBody2D_linear_velocity>`. If ``-1`` the body will use the "Default Linear Damp" in "Project > Project Settings > Physics > 2d". Default value: ``-1``.
+
+  .. _class_RigidBody2D_linear_velocity:
+
 - :ref:`Vector2<class_vector2>` **linear_velocity** - The body's linear velocity.
+
+  .. _class_RigidBody2D_mass:
+
 - :ref:`float<class_float>` **mass** - The body's mass. Default value: ``1``.
+
+  .. _class_RigidBody2D_mode:
+
 - :ref:`int<class_int>` **mode** - The body's mode. See ``MODE\_\*`` constants. Default value: ``MODE_RIGID``.
+
+  .. _class_RigidBody2D_sleeping:
+
 - :ref:`bool<class_bool>` **sleeping** - If ``true`` the body is sleeping and will not calculate forces until woken up by a collision or by using :ref:`apply_impulse<class_RigidBody2D_apply_impulse>` or :ref:`add_force<class_RigidBody2D_add_force>`.
+
+  .. _class_RigidBody2D_weight:
+
 - :ref:`float<class_float>` **weight** - The body's weight based on its mass and the "Default Gravity" value in "Project > Project Settings > Physics > 2d".
+
 
 Numeric Constants
 -----------------
@@ -171,7 +229,7 @@ Description
 
 This node implements simulated 2D physics. You do not control a RigidBody2D directly. Instead you apply forces to it (gravity, impulses, etc.) and the physics simulation calculates the resulting movement based on its mass, friction, and other physical properties.
 
-A RigidBody2D has 4 behavior modes (see member mode):
+A RigidBody2D has 4 behavior modes (see :ref:`mode<class_RigidBody2D_mode>`):
 
 - **Rigid**: The body behaves as a physical object. It collides with other bodies and responds to forces applied to it. This is the default mode.
 
@@ -183,7 +241,7 @@ A RigidBody2D has 4 behavior modes (see member mode):
 
 **Note:** You should not change a RigidBody2D's ``position`` or ``linear_velocity`` every frame or even very often. If you need to directly affect the body's state, use :ref:`_integrate_forces<class_RigidBody2D__integrate_forces>`, which allows you to directly access the physics state.
 
-If you need to override the default physics behavior, you can write a custom force integration. See member custom_integrator.
+If you need to override the default physics behavior, you can write a custom force integration. See :ref:`custom_integrator<class_RigidBody2D_custom_integrator>`.
 
 Member Function Description
 ---------------------------
@@ -192,7 +250,7 @@ Member Function Description
 
 - void  **_integrate_forces**  **(** :ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>` state  **)** virtual
 
-Allows you to read and safely modify the simulation state for the object. Use this instead of Node._physics_process if you need to directly change the body's ``position`` or other physics properties. By default it works in addition to the usual physics behavior, but member custom_integrator allows you to disable the default behavior and write custom force integration for a body.
+Allows you to read and safely modify the simulation state for the object. Use this instead of Node._physics_process if you need to directly change the body's ``position`` or other physics properties. By default it works in addition to the usual physics behavior, but :ref:`custom_integrator<class_RigidBody2D_custom_integrator>` allows you to disable the default behavior and write custom force integration for a body.
 
 .. _class_RigidBody2D_add_force:
 
@@ -240,7 +298,7 @@ Return the body bounciness.
 
 - :ref:`Array<class_array>`  **get_colliding_bodies**  **(** **)** const
 
-Returns a list of the bodies colliding with this one. Use member contacts_reported to set the maximum number reported. You must also set member contact_monitor to ``true``.
+Returns a list of the bodies colliding with this one. Use :ref:`contacts_reported<class_RigidBody2D_contacts_reported>` to set the maximum number reported. You must also set :ref:`contact_monitor<class_RigidBody2D_contact_monitor>` to ``true``.
 
 .. _class_RigidBody2D_get_continuous_collision_detection_mode:
 

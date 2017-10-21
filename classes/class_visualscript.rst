@@ -108,6 +108,8 @@ Member Functions
 Signals
 -------
 
+.. _class_VisualScript_node_ports_changed:
+
 -  **node_ports_changed**  **(** :ref:`String<class_string>` function, :ref:`int<class_int>` id  **)**
 
 Emitted when the ports of a node are changed.
@@ -116,7 +118,10 @@ Emitted when the ports of a node are changed.
 Member Variables
 ----------------
 
+  .. _class_VisualScript_data:
+
 - :ref:`Dictionary<class_dictionary>` **data**
+
 
 Description
 -----------

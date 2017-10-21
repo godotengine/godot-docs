@@ -34,7 +34,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_GDNative_library:
+
 - :ref:`GDNativeLibrary<class_gdnativelibrary>` **library**
+
 
 Member Function Description
 ---------------------------

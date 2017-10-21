@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_SphereShape_radius:
+
 - :ref:`float<class_float>` **radius** - The sphere's radius. The shape's diameter is double the radius.
+
 
 Description
 -----------

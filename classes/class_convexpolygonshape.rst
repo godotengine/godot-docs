@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_ConvexPolygonShape_points:
+
 - :ref:`PoolVector3Array<class_poolvector3array>` **points** - The list of 3D points forming the convex polygon shape.
+
 
 Description
 -----------

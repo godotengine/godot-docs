@@ -34,7 +34,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_ShortCut_shortcut:
+
 - :ref:`InputEvent<class_inputevent>` **shortcut**
+
 
 Member Function Description
 ---------------------------

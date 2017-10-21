@@ -34,8 +34,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_Material_next_pass:
+
 - :ref:`Material<class_material>` **next_pass**
+
+  .. _class_Material_render_priority:
+
 - :ref:`int<class_int>` **render_priority**
+
 
 Numeric Constants
 -----------------

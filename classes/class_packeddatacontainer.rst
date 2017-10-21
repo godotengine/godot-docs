@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_PackedDataContainer___data__:
+
 - :ref:`PoolByteArray<class_poolbytearray>` **__data__**
+
 
 Member Function Description
 ---------------------------

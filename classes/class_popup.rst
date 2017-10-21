@@ -38,9 +38,13 @@ Member Functions
 Signals
 -------
 
+.. _class_Popup_about_to_show:
+
 -  **about_to_show**  **(** **)**
 
 This signal is emitted when a popup is about to be shown. (often used in :ref:`PopupMenu<class_popupmenu>` for clearing the list of options and creating a new one according to the current context).
+
+.. _class_Popup_popup_hide:
 
 -  **popup_hide**  **(** **)**
 
@@ -50,7 +54,10 @@ This signal is emitted when a popup is hidden.
 Member Variables
 ----------------
 
+  .. _class_Popup_popup_exclusive:
+
 - :ref:`bool<class_bool>` **popup_exclusive**
+
 
 Numeric Constants
 -----------------

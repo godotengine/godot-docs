@@ -32,8 +32,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_AudioStreamRandomPitch_audio_stream:
+
 - :ref:`AudioStream<class_audiostream>` **audio_stream** - The current :ref:`AudioStream<class_audiostream>`.
+
+  .. _class_AudioStreamRandomPitch_random_pitch:
+
 - :ref:`float<class_float>` **random_pitch** - The intensity of random pitch variation.
+
 
 Description
 -----------

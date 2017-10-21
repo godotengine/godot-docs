@@ -36,9 +36,18 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_AudioEffectStereoEnhance_pan_pullout:
+
 - :ref:`float<class_float>` **pan_pullout**
+
+  .. _class_AudioEffectStereoEnhance_surround:
+
 - :ref:`float<class_float>` **surround**
+
+  .. _class_AudioEffectStereoEnhance_time_pullout_ms:
+
 - :ref:`float<class_float>` **time_pullout_ms**
+
 
 Member Function Description
 ---------------------------

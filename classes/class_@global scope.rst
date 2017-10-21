@@ -17,26 +17,86 @@ Global scope constants and variables.
 Member Variables
 ----------------
 
+  .. _class_@Global Scope_ARVRServer:
+
 - :ref:`ARVRServer<class_arvrserver>` **ARVRServer** - :ref:`ARVRServer<class_arvrserver>` singleton
+
+  .. _class_@Global Scope_AudioServer:
+
 - :ref:`AudioServer<class_audioserver>` **AudioServer** - :ref:`AudioServer<class_audioserver>` singleton
+
+  .. _class_@Global Scope_ClassDB:
+
 - :ref:`ClassDB<class_classdb>` **ClassDB** - :ref:`ClassDB<class_classdb>` singleton
+
+  .. _class_@Global Scope_Engine:
+
 - :ref:`Engine<class_engine>` **Engine** - :ref:`Engine<class_engine>` singleton
+
+  .. _class_@Global Scope_Geometry:
+
 - :ref:`Geometry<class_geometry>` **Geometry** - :ref:`Geometry<class_geometry>` singleton
+
+  .. _class_@Global Scope_GodotSharp:
+
 - :ref:`GodotSharp<class_godotsharp>` **GodotSharp**
+
+  .. _class_@Global Scope_IP:
+
 - :ref:`IP<class_ip>` **IP** - :ref:`IP<class_ip>` singleton
+
+  .. _class_@Global Scope_Input:
+
 - :ref:`Input<class_input>` **Input** - :ref:`Input<class_input>` singleton
+
+  .. _class_@Global Scope_InputMap:
+
 - :ref:`InputMap<class_inputmap>` **InputMap** - :ref:`InputMap<class_inputmap>` singleton
+
+  .. _class_@Global Scope_JSON:
+
 - :ref:`JSON<class_json>` **JSON**
+
+  .. _class_@Global Scope_Marshalls:
+
 - :ref:`Reference<class_reference>` **Marshalls** - :ref:`Marshalls<class_marshalls>` singleton
+
+  .. _class_@Global Scope_OS:
+
 - :ref:`OS<class_os>` **OS** - :ref:`OS<class_os>` singleton
+
+  .. _class_@Global Scope_Performance:
+
 - :ref:`Performance<class_performance>` **Performance** - :ref:`Performance<class_performance>` singleton
+
+  .. _class_@Global Scope_Physics2DServer:
+
 - :ref:`Physics2DServer<class_physics2dserver>` **Physics2DServer** - :ref:`Physics2DServer<class_physics2dserver>` singleton
+
+  .. _class_@Global Scope_PhysicsServer:
+
 - :ref:`PhysicsServer<class_physicsserver>` **PhysicsServer** - :ref:`PhysicsServer<class_physicsserver>` singleton
+
+  .. _class_@Global Scope_ProjectSettings:
+
 - :ref:`ProjectSettings<class_projectsettings>` **ProjectSettings** - :ref:`ProjectSettings<class_projectsettings>` singleton
+
+  .. _class_@Global Scope_ResourceLoader:
+
 - :ref:`ResourceLoader<class_resourceloader>` **ResourceLoader** - :ref:`ResourceLoader<class_resourceloader>` singleton
+
+  .. _class_@Global Scope_ResourceSaver:
+
 - :ref:`ResourceSaver<class_resourcesaver>` **ResourceSaver** - :ref:`ResourceSaver<class_resourcesaver>` singleton
+
+  .. _class_@Global Scope_TranslationServer:
+
 - :ref:`TranslationServer<class_translationserver>` **TranslationServer** - :ref:`TranslationServer<class_translationserver>` singleton
+
+  .. _class_@Global Scope_VisualServer:
+
 - :ref:`VisualServer<class_visualserver>` **VisualServer** - :ref:`VisualServer<class_visualserver>` singleton
+
 
 Numeric Constants
 -----------------

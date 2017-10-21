@@ -62,17 +62,25 @@ Member Functions
 Signals
 -------
 
+.. _class_BaseButton_button_down:
+
 -  **button_down**  **(** **)**
 
 Emitted when the button starts being held down.
+
+.. _class_BaseButton_button_up:
 
 -  **button_up**  **(** **)**
 
 Emitted when the button stops being held down.
 
+.. _class_BaseButton_pressed:
+
 -  **pressed**  **(** **)**
 
 This signal is emitted every time the button is toggled or pressed (i.e. activated, so on ``button_down`` if "Click on press" is active and on ``button_up`` otherwise).
+
+.. _class_BaseButton_toggled:
 
 -  **toggled**  **(** :ref:`bool<class_bool>` pressed  **)**
 
@@ -82,13 +90,34 @@ This signal is emitted when the button was just toggled between pressed and norm
 Member Variables
 ----------------
 
+  .. _class_BaseButton_action_mode:
+
 - :ref:`int<class_int>` **action_mode**
+
+  .. _class_BaseButton_disabled:
+
 - :ref:`bool<class_bool>` **disabled**
+
+  .. _class_BaseButton_enabled_focus_mode:
+
 - :ref:`int<class_int>` **enabled_focus_mode**
+
+  .. _class_BaseButton_group:
+
 - :ref:`ButtonGroup<class_buttongroup>` **group**
+
+  .. _class_BaseButton_pressed:
+
 - :ref:`bool<class_bool>` **pressed**
+
+  .. _class_BaseButton_shortcut:
+
 - :ref:`ShortCut<class_shortcut>` **shortcut**
+
+  .. _class_BaseButton_toggle_mode:
+
 - :ref:`bool<class_bool>` **toggle_mode**
+
 
 Numeric Constants
 -----------------

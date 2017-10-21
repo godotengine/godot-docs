@@ -36,7 +36,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_Shader_code:
+
 - :ref:`String<class_string>` **code**
+
 
 Numeric Constants
 -----------------

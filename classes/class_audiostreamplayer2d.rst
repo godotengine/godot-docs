@@ -62,6 +62,8 @@ Member Functions
 Signals
 -------
 
+.. _class_AudioStreamPlayer2D_finished:
+
 -  **finished**  **(** **)**
 
 Emitted when the audio stops playing.
@@ -70,14 +72,38 @@ Emitted when the audio stops playing.
 Member Variables
 ----------------
 
+  .. _class_AudioStreamPlayer2D_area_mask:
+
 - :ref:`int<class_int>` **area_mask** - Areas in which this sound plays.
+
+  .. _class_AudioStreamPlayer2D_attenuation:
+
 - :ref:`float<class_float>` **attenuation** - Dampens audio over distance with this as an exponent.
+
+  .. _class_AudioStreamPlayer2D_autoplay:
+
 - :ref:`bool<class_bool>` **autoplay** - If ``true`` audio plays when added to scene tree. Default value: ``false``.
+
+  .. _class_AudioStreamPlayer2D_bus:
+
 - :ref:`String<class_string>` **bus** - Bus on which this audio is playing.
+
+  .. _class_AudioStreamPlayer2D_max_distance:
+
 - :ref:`float<class_float>` **max_distance** - Maximum distance from which audio is still hearable.
+
+  .. _class_AudioStreamPlayer2D_playing:
+
 - :ref:`bool<class_bool>` **playing** - If ``true`` audio is playing.
+
+  .. _class_AudioStreamPlayer2D_stream:
+
 - :ref:`AudioStream<class_audiostream>` **stream** - The :ref:`AudioStream<class_audiostream>` object to be played.
+
+  .. _class_AudioStreamPlayer2D_volume_db:
+
 - :ref:`float<class_float>` **volume_db** - Base volume without dampening.
+
 
 Description
 -----------

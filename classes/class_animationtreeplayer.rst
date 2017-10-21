@@ -152,7 +152,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_AnimationTreePlayer_playback_process_mode:
+
 - :ref:`int<class_int>` **playback_process_mode**
+
 
 Numeric Constants
 -----------------

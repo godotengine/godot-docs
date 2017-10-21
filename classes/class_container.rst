@@ -30,6 +30,8 @@ Member Functions
 Signals
 -------
 
+.. _class_Container_sort_children:
+
 -  **sort_children**  **(** **)**
 
 Emitted when sorting the children is needed.

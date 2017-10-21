@@ -52,9 +52,18 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_ARVRInterface_ar_is_anchor_detection_enabled:
+
 - :ref:`bool<class_bool>` **ar_is_anchor_detection_enabled** - On an AR interface, is our anchor detection enabled?
+
+  .. _class_ARVRInterface_interface_is_initialized:
+
 - :ref:`bool<class_bool>` **interface_is_initialized** - Has this interface been initialized?
+
+  .. _class_ARVRInterface_interface_is_primary:
+
 - :ref:`bool<class_bool>` **interface_is_primary** - Is this our primary interface?
+
 
 Numeric Constants
 -----------------

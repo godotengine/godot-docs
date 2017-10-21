@@ -34,7 +34,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_GDNativeLibrary_singleton_gdnative:
+
 - :ref:`bool<class_bool>` **singleton_gdnative**
+
 
 Member Function Description
 ---------------------------

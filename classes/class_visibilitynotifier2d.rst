@@ -32,17 +32,25 @@ Member Functions
 Signals
 -------
 
+.. _class_VisibilityNotifier2D_screen_entered:
+
 -  **screen_entered**  **(** **)**
 
 Emitted when the VisibilityNotifier2D enters the screen.
+
+.. _class_VisibilityNotifier2D_screen_exited:
 
 -  **screen_exited**  **(** **)**
 
 Emitted when the VisibilityNotifier2D exits the screen.
 
+.. _class_VisibilityNotifier2D_viewport_entered:
+
 -  **viewport_entered**  **(** :ref:`Object<class_object>` viewport  **)**
 
 Emitted when the VisibilityNotifier2D enters a :ref:`Viewport<class_viewport>`'s view.
+
+.. _class_VisibilityNotifier2D_viewport_exited:
 
 -  **viewport_exited**  **(** :ref:`Object<class_object>` viewport  **)**
 
@@ -52,7 +60,10 @@ Emitted when the VisibilityNotifier2D exits a :ref:`Viewport<class_viewport>`'s 
 Member Variables
 ----------------
 
+  .. _class_VisibilityNotifier2D_rect:
+
 - :ref:`Rect2<class_rect2>` **rect** - The VisibilityNotifier2D's bounding rectangle.
+
 
 Description
 -----------

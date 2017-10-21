@@ -40,7 +40,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_PolygonPathFinder_data:
+
 - :ref:`Dictionary<class_dictionary>` **data**
+
 
 Member Function Description
 ---------------------------

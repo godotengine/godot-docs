@@ -40,10 +40,22 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_VisualScriptYieldSignal_base_type:
+
 - :ref:`String<class_string>` **base_type**
+
+  .. _class_VisualScriptYieldSignal_call_mode:
+
 - :ref:`int<class_int>` **call_mode**
+
+  .. _class_VisualScriptYieldSignal_node_path:
+
 - :ref:`NodePath<class_nodepath>` **node_path**
+
+  .. _class_VisualScriptYieldSignal_signal:
+
 - :ref:`String<class_string>` **signal**
+
 
 Numeric Constants
 -----------------

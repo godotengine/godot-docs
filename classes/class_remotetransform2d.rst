@@ -44,11 +44,26 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_RemoteTransform2D_remote_path:
+
 - :ref:`NodePath<class_nodepath>` **remote_path**
+
+  .. _class_RemoteTransform2D_update_position:
+
 - :ref:`bool<class_bool>` **update_position**
+
+  .. _class_RemoteTransform2D_update_rotation:
+
 - :ref:`bool<class_bool>` **update_rotation**
+
+  .. _class_RemoteTransform2D_update_scale:
+
 - :ref:`bool<class_bool>` **update_scale**
+
+  .. _class_RemoteTransform2D_use_global_coordinates:
+
 - :ref:`bool<class_bool>` **use_global_coordinates**
+
 
 Member Function Description
 ---------------------------

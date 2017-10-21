@@ -34,8 +34,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_NativeScript_class_name:
+
 - :ref:`String<class_string>` **class_name**
+
+  .. _class_NativeScript_library:
+
 - :ref:`GDNativeLibrary<class_gdnativelibrary>` **library**
+
 
 Member Function Description
 ---------------------------

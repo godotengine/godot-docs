@@ -104,6 +104,8 @@ Member Functions
 Signals
 -------
 
+.. _class_Object_script_changed:
+
 -  **script_changed**  **(** **)**
 
 

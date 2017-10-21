@@ -126,9 +126,13 @@ Member Functions
 Signals
 -------
 
+.. _class_ItemList_item_activated:
+
 -  **item_activated**  **(** :ref:`int<class_int>` index  **)**
 
 Fired when specified list item is activated via double click or Enter.
+
+.. _class_ItemList_item_rmb_selected:
 
 -  **item_rmb_selected**  **(** :ref:`int<class_int>` index, :ref:`Vector2<class_vector2>` at_position  **)**
 
@@ -138,9 +142,13 @@ The click position is also provided to allow appropriate popup of context menus
 
 at the correct location.
 
+.. _class_ItemList_item_selected:
+
 -  **item_selected**  **(** :ref:`int<class_int>` index  **)**
 
 Fired when specified item has been selected.
+
+.. _class_ItemList_multi_selected:
 
 -  **multi_selected**  **(** :ref:`int<class_int>` index, :ref:`bool<class_bool>` selected  **)**
 
@@ -150,16 +158,46 @@ Fired when a multiple selection is altered on a list allowing multiple selection
 Member Variables
 ----------------
 
+  .. _class_ItemList_allow_rmb_select:
+
 - :ref:`bool<class_bool>` **allow_rmb_select**
+
+  .. _class_ItemList_auto_height:
+
 - :ref:`bool<class_bool>` **auto_height**
+
+  .. _class_ItemList_fixed_column_width:
+
 - :ref:`int<class_int>` **fixed_column_width**
+
+  .. _class_ItemList_icon_mode:
+
 - :ref:`int<class_int>` **icon_mode**
+
+  .. _class_ItemList_icon_scale:
+
 - :ref:`float<class_float>` **icon_scale**
+
+  .. _class_ItemList_items:
+
 - :ref:`Array<class_array>` **items**
+
+  .. _class_ItemList_max_columns:
+
 - :ref:`int<class_int>` **max_columns**
+
+  .. _class_ItemList_max_text_lines:
+
 - :ref:`int<class_int>` **max_text_lines**
+
+  .. _class_ItemList_same_column_width:
+
 - :ref:`bool<class_bool>` **same_column_width**
+
+  .. _class_ItemList_select_mode:
+
 - :ref:`int<class_int>` **select_mode**
+
 
 Numeric Constants
 -----------------

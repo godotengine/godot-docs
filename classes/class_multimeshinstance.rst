@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_MultiMeshInstance_multimesh:
+
 - :ref:`MultiMesh<class_multimesh>` **multimesh**
+
 
 Description
 -----------

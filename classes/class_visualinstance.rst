@@ -36,7 +36,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_VisualInstance_layers:
+
 - :ref:`int<class_int>` **layers**
+
 
 Member Function Description
 ---------------------------

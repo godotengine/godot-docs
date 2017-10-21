@@ -38,6 +38,8 @@ Member Functions
 Signals
 -------
 
+.. _class_SplitContainer_dragged:
+
 -  **dragged**  **(** :ref:`int<class_int>` offset  **)**
 
 Emitted when the dragger is dragged by user.
@@ -46,9 +48,18 @@ Emitted when the dragger is dragged by user.
 Member Variables
 ----------------
 
+  .. _class_SplitContainer_collapsed:
+
 - :ref:`bool<class_bool>` **collapsed**
+
+  .. _class_SplitContainer_dragger_visibility:
+
 - :ref:`int<class_int>` **dragger_visibility**
+
+  .. _class_SplitContainer_split_offset:
+
 - :ref:`int<class_int>` **split_offset**
+
 
 Numeric Constants
 -----------------

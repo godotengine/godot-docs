@@ -78,19 +78,58 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_AudioEffectDelay_dry:
+
 - :ref:`float<class_float>` **dry** - Output percent of original sound. At 0, only delayed sounds are output. Value can range from 0 to 1. Default value: ``1``.
+
+  .. _class_AudioEffectDelay_feedback/active:
+
 - :ref:`bool<class_bool>` **feedback/active** - If ``true`` feedback is enabled. Default value: ``false``.
+
+  .. _class_AudioEffectDelay_feedback/delay_ms:
+
 - :ref:`float<class_float>` **feedback/delay_ms** - Feedback delay time in milliseconds. Default value: ``340``.
+
+  .. _class_AudioEffectDelay_feedback/level_db:
+
 - :ref:`float<class_float>` **feedback/level_db** - Sound level for ``tap1``. Default value: ``-6 dB``.
+
+  .. _class_AudioEffectDelay_feedback/lowpass:
+
 - :ref:`float<class_float>` **feedback/lowpass** - Low-pass filter for feedback. Frequencies below the Low Cut value are filtered out of the source signal. Default value: ``16000``.
+
+  .. _class_AudioEffectDelay_tap1/active:
+
 - :ref:`bool<class_bool>` **tap1/active** - If ``true``, ``tap1`` will be enabled. Default value: ``true``.
+
+  .. _class_AudioEffectDelay_tap1/delay_ms:
+
 - :ref:`float<class_float>` **tap1/delay_ms** - **Tap1** delay time in milliseconds. Default value: ``250ms``.
+
+  .. _class_AudioEffectDelay_tap1/level_db:
+
 - :ref:`float<class_float>` **tap1/level_db** - Sound level for ``tap1``. Default value: ``-6 dB``.
+
+  .. _class_AudioEffectDelay_tap1/pan:
+
 - :ref:`float<class_float>` **tap1/pan** - Pan position for ``tap1``. Value can range from -1 (fully left) to 1 (fully right). Default value: ``0.2``.
+
+  .. _class_AudioEffectDelay_tap2/active:
+
 - :ref:`bool<class_bool>` **tap2/active** - If ``true``, ``tap2`` will be enabled. Default value: ``true``.
+
+  .. _class_AudioEffectDelay_tap2/delay_ms:
+
 - :ref:`float<class_float>` **tap2/delay_ms** - **Tap2** delay time in milliseconds. Default value: ``500ms``.
+
+  .. _class_AudioEffectDelay_tap2/level_db:
+
 - :ref:`float<class_float>` **tap2/level_db** - Sound level for ``tap2``. Default value: ``-12 dB``.
+
+  .. _class_AudioEffectDelay_tap2/pan:
+
 - :ref:`float<class_float>` **tap2/pan** - Pan position for ``tap2``. Value can range from -1 (fully left) to 1 (fully right). Default value: ``-0.4``.
+
 
 Description
 -----------

@@ -68,8 +68,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_Vector2_x:
+
 - :ref:`float<class_float>` **x** - X component of the vector.
+
+  .. _class_Vector2_y:
+
 - :ref:`float<class_float>` **y** - Y component of the vector.
+
 
 Description
 -----------

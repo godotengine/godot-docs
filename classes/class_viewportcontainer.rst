@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_ViewportContainer_stretch:
+
 - :ref:`bool<class_bool>` **stretch**
+
 
 Member Function Description
 ---------------------------

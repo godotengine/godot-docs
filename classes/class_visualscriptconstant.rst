@@ -32,8 +32,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_VisualScriptConstant_type:
+
 - :ref:`int<class_int>` **type** - The constant's type.
+
+  .. _class_VisualScriptConstant_value:
+
 - :ref:`Variant<class_variant>` **value** - The constant's value.
+
 
 Description
 -----------

@@ -28,6 +28,8 @@ Member Functions
 Signals
 -------
 
+.. _class_GDFunctionState_completed:
+
 -  **completed**  **(** :ref:`Nil<class_nil>` result  **)**
 
 

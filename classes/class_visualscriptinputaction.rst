@@ -32,8 +32,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_VisualScriptInputAction_action:
+
 - :ref:`String<class_string>` **action**
+
+  .. _class_VisualScriptInputAction_mode:
+
 - :ref:`int<class_int>` **mode**
+
 
 Numeric Constants
 -----------------

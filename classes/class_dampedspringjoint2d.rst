@@ -40,10 +40,22 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_DampedSpringJoint2D_damping:
+
 - :ref:`float<class_float>` **damping**
+
+  .. _class_DampedSpringJoint2D_length:
+
 - :ref:`float<class_float>` **length**
+
+  .. _class_DampedSpringJoint2D_rest_length:
+
 - :ref:`float<class_float>` **rest_length**
+
+  .. _class_DampedSpringJoint2D_stiffness:
+
 - :ref:`float<class_float>` **stiffness**
+
 
 Description
 -----------

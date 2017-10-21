@@ -34,6 +34,8 @@ Member Functions
 Signals
 -------
 
+.. _class_ColorPickerButton_color_changed:
+
 -  **color_changed**  **(** :ref:`Color<class_color>` color  **)**
 
 Emitted when the color is changed.
@@ -42,8 +44,14 @@ Emitted when the color is changed.
 Member Variables
 ----------------
 
+  .. _class_ColorPickerButton_color:
+
 - :ref:`Color<class_color>` **color**
+
+  .. _class_ColorPickerButton_edit_alpha:
+
 - :ref:`bool<class_bool>` **edit_alpha**
+
 
 Description
 -----------

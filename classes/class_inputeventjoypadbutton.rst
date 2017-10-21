@@ -34,9 +34,18 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_InputEventJoypadButton_button_index:
+
 - :ref:`int<class_int>` **button_index** - Button identifier. One of the ``JOY_BUTTON\_\*`` constants from @global Scope.
+
+  .. _class_InputEventJoypadButton_pressed:
+
 - :ref:`bool<class_bool>` **pressed** - If ``true`` the button's state is pressed. If ``false`` the button's state is released.
+
+  .. _class_InputEventJoypadButton_pressure:
+
 - :ref:`float<class_float>` **pressure** - Represents the pressure the user puts on the button with his finger, if the controller supports it. Ranges from ``0`` to ``1``.
+
 
 Description
 -----------

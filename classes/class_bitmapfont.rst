@@ -52,13 +52,34 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_BitmapFont_ascent:
+
 - :ref:`float<class_float>` **ascent** - Ascent (number of pixels above the baseline).
+
+  .. _class_BitmapFont_chars:
+
 - :ref:`PoolIntArray<class_poolintarray>` **chars** - The characters in the BitmapFont.
+
+  .. _class_BitmapFont_distance_field:
+
 - :ref:`bool<class_bool>` **distance_field** - If ``true`` distance field hint is enabled.
+
+  .. _class_BitmapFont_fallback:
+
 - :ref:`BitmapFont<class_bitmapfont>` **fallback** - The fallback font.
+
+  .. _class_BitmapFont_height:
+
 - :ref:`float<class_float>` **height** - Total font height (ascent plus descent) in pixels.
+
+  .. _class_BitmapFont_kernings:
+
 - :ref:`PoolIntArray<class_poolintarray>` **kernings** - The font's kernings as :ref:`PoolIntArray<class_poolintarray>`.
+
+  .. _class_BitmapFont_textures:
+
 - :ref:`Array<class_array>` **textures** - The font's :ref:`Texture<class_texture>`\ s.
+
 
 Description
 -----------

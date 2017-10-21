@@ -32,6 +32,8 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_VisualScriptConstructor_constructor:
+
 - :ref:`Dictionary<class_dictionary>` **constructor** - The constructor function's method info. Has roughly the following structure:
 
 ::
@@ -50,7 +52,11 @@ Member Variables
     id = 0
     return = {type = TYPE\_\*}
     }
+
+  .. _class_VisualScriptConstructor_type:
+
 - :ref:`int<class_int>` **type** - The type to be constructed.
+
 
 Description
 -----------

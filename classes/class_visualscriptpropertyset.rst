@@ -56,15 +56,42 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_VisualScriptPropertySet_assign_op:
+
 - :ref:`int<class_int>` **assign_op**
+
+  .. _class_VisualScriptPropertySet_base_script:
+
 - :ref:`String<class_string>` **base_script**
+
+  .. _class_VisualScriptPropertySet_base_type:
+
 - :ref:`String<class_string>` **base_type**
+
+  .. _class_VisualScriptPropertySet_basic_type:
+
 - :ref:`int<class_int>` **basic_type**
+
+  .. _class_VisualScriptPropertySet_index:
+
 - :ref:`String<class_string>` **index**
+
+  .. _class_VisualScriptPropertySet_node_path:
+
 - :ref:`NodePath<class_nodepath>` **node_path**
+
+  .. _class_VisualScriptPropertySet_property:
+
 - :ref:`String<class_string>` **property**
+
+  .. _class_VisualScriptPropertySet_set_mode:
+
 - :ref:`int<class_int>` **set_mode**
+
+  .. _class_VisualScriptPropertySet_type_cache:
+
 - :ref:`Dictionary<class_dictionary>` **type_cache**
+
 
 Numeric Constants
 -----------------

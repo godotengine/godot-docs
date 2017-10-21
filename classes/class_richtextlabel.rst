@@ -114,17 +114,34 @@ Member Functions
 Signals
 -------
 
+.. _class_RichTextLabel_meta_clicked:
+
 -  **meta_clicked**  **(** :ref:`Nil<class_nil>` meta  **)**
 
 
 Member Variables
 ----------------
 
+  .. _class_RichTextLabel_bbcode_enabled:
+
 - :ref:`bool<class_bool>` **bbcode_enabled**
+
+  .. _class_RichTextLabel_bbcode_text:
+
 - :ref:`String<class_string>` **bbcode_text**
+
+  .. _class_RichTextLabel_override_selected_font_color:
+
 - :ref:`bool<class_bool>` **override_selected_font_color**
+
+  .. _class_RichTextLabel_percent_visible:
+
 - :ref:`float<class_float>` **percent_visible**
+
+  .. _class_RichTextLabel_visible_characters:
+
 - :ref:`int<class_int>` **visible_characters**
+
 
 Numeric Constants
 -----------------

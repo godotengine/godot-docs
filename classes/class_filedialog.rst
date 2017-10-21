@@ -60,13 +60,19 @@ Member Functions
 Signals
 -------
 
+.. _class_FileDialog_dir_selected:
+
 -  **dir_selected**  **(** :ref:`String<class_string>` dir  **)**
 
 Event emitted when the user selects a directory.
 
+.. _class_FileDialog_file_selected:
+
 -  **file_selected**  **(** :ref:`String<class_string>` path  **)**
 
 Event emitted when the user selects a file (double clicks it or presses the OK button).
+
+.. _class_FileDialog_files_selected:
 
 -  **files_selected**  **(** :ref:`PoolStringArray<class_poolstringarray>` paths  **)**
 
@@ -76,10 +82,22 @@ Event emitted when the user selects multiple files.
 Member Variables
 ----------------
 
+  .. _class_FileDialog_access:
+
 - :ref:`int<class_int>` **access**
+
+  .. _class_FileDialog_filters:
+
 - :ref:`PoolStringArray<class_poolstringarray>` **filters**
+
+  .. _class_FileDialog_mode:
+
 - :ref:`int<class_int>` **mode**
+
+  .. _class_FileDialog_show_hidden_files:
+
 - :ref:`bool<class_bool>` **show_hidden_files**
+
 
 Numeric Constants
 -----------------

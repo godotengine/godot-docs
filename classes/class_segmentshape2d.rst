@@ -32,8 +32,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_SegmentShape2D_a:
+
 - :ref:`Vector2<class_vector2>` **a** - The segment's first point position.
+
+  .. _class_SegmentShape2D_b:
+
 - :ref:`Vector2<class_vector2>` **b** - The segment's second point position.
+
 
 Description
 -----------

@@ -38,8 +38,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_World_environment:
+
 - :ref:`Environment<class_environment>` **environment**
+
+  .. _class_World_fallback_environment:
+
 - :ref:`Environment<class_environment>` **fallback_environment**
+
 
 Description
 -----------

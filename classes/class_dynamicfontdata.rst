@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_DynamicFontData_font_path:
+
 - :ref:`String<class_string>` **font_path** - The path to the vector font file.
+
 
 Description
 -----------

@@ -30,8 +30,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_CurveTexture_curve:
+
 - :ref:`Curve<class_curve>` **curve**
+
+  .. _class_CurveTexture_width:
+
 - :ref:`int<class_int>` **width**
+
 
 Member Function Description
 ---------------------------

@@ -36,9 +36,18 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_OccluderPolygon2D_closed:
+
 - :ref:`bool<class_bool>` **closed**
+
+  .. _class_OccluderPolygon2D_cull_mode:
+
 - :ref:`int<class_int>` **cull_mode**
+
+  .. _class_OccluderPolygon2D_polygon:
+
 - :ref:`PoolVector2Array<class_poolvector2array>` **polygon**
+
 
 Numeric Constants
 -----------------

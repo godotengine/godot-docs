@@ -32,8 +32,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_VisualScriptTypeCast_base_script:
+
 - :ref:`String<class_string>` **base_script**
+
+  .. _class_VisualScriptTypeCast_base_type:
+
 - :ref:`String<class_string>` **base_type**
+
 
 Member Function Description
 ---------------------------

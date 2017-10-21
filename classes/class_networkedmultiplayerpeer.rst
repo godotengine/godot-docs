@@ -42,21 +42,31 @@ Member Functions
 Signals
 -------
 
+.. _class_NetworkedMultiplayerPeer_connection_failed:
+
 -  **connection_failed**  **(** **)**
 
 Emitted when failed to connect to server.
+
+.. _class_NetworkedMultiplayerPeer_connection_succeeded:
 
 -  **connection_succeeded**  **(** **)**
 
 Emitted when successfully connected to server.
 
+.. _class_NetworkedMultiplayerPeer_peer_connected:
+
 -  **peer_connected**  **(** :ref:`int<class_int>` id  **)**
 
 Emitted by the server when a client is connected.
 
+.. _class_NetworkedMultiplayerPeer_peer_disconnected:
+
 -  **peer_disconnected**  **(** :ref:`int<class_int>` id  **)**
 
 Emitted by the server when a client is disconnected.
+
+.. _class_NetworkedMultiplayerPeer_server_disconnected:
 
 -  **server_disconnected**  **(** **)**
 

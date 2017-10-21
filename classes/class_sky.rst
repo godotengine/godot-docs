@@ -30,7 +30,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_Sky_radiance_size:
+
 - :ref:`int<class_int>` **radiance_size**
+
 
 Numeric Constants
 -----------------

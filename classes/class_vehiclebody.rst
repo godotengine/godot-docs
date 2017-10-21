@@ -46,11 +46,26 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_VehicleBody_brake:
+
 - :ref:`float<class_float>` **brake**
+
+  .. _class_VehicleBody_engine_force:
+
 - :ref:`float<class_float>` **engine_force**
+
+  .. _class_VehicleBody_friction:
+
 - :ref:`float<class_float>` **friction**
+
+  .. _class_VehicleBody_mass:
+
 - :ref:`float<class_float>` **mass**
+
+  .. _class_VehicleBody_steering:
+
 - :ref:`float<class_float>` **steering**
+
 
 Member Function Description
 ---------------------------

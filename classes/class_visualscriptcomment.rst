@@ -36,9 +36,18 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_VisualScriptComment_description:
+
 - :ref:`String<class_string>` **description** - The text inside the comment node.
+
+  .. _class_VisualScriptComment_size:
+
 - :ref:`Vector2<class_vector2>` **size** - The comment node's size (in pixels).
+
+  .. _class_VisualScriptComment_title:
+
 - :ref:`String<class_string>` **title** - The comment node's title.
+
 
 Description
 -----------

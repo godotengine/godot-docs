@@ -158,6 +158,8 @@ Member Functions
 Signals
 -------
 
+.. _class_Viewport_size_changed:
+
 -  **size_changed**  **(** **)**
 
 Emitted when the size of the viewport is changed, whether by :ref:`set_size_override<class_Viewport_set_size_override>`, resize of window, or some other means.
@@ -166,29 +168,98 @@ Emitted when the size of the viewport is changed, whether by :ref:`set_size_over
 Member Variables
 ----------------
 
+  .. _class_Viewport_arvr:
+
 - :ref:`bool<class_bool>` **arvr**
+
+  .. _class_Viewport_audio_listener_enable_2d:
+
 - :ref:`bool<class_bool>` **audio_listener_enable_2d**
+
+  .. _class_Viewport_audio_listener_enable_3d:
+
 - :ref:`bool<class_bool>` **audio_listener_enable_3d**
+
+  .. _class_Viewport_debug_draw:
+
 - :ref:`int<class_int>` **debug_draw**
+
+  .. _class_Viewport_disable_3d:
+
 - :ref:`bool<class_bool>` **disable_3d**
+
+  .. _class_Viewport_gui_disable_input:
+
 - :ref:`bool<class_bool>` **gui_disable_input**
+
+  .. _class_Viewport_gui_snap_controls_to_pixels:
+
 - :ref:`bool<class_bool>` **gui_snap_controls_to_pixels**
+
+  .. _class_Viewport_hdr:
+
 - :ref:`bool<class_bool>` **hdr**
+
+  .. _class_Viewport_msaa:
+
 - :ref:`int<class_int>` **msaa**
+
+  .. _class_Viewport_own_world:
+
 - :ref:`bool<class_bool>` **own_world**
+
+  .. _class_Viewport_physics_object_picking:
+
 - :ref:`bool<class_bool>` **physics_object_picking**
+
+  .. _class_Viewport_render_target_clear_mode:
+
 - :ref:`int<class_int>` **render_target_clear_mode**
+
+  .. _class_Viewport_render_target_update_mode:
+
 - :ref:`int<class_int>` **render_target_update_mode**
+
+  .. _class_Viewport_render_target_v_flip:
+
 - :ref:`bool<class_bool>` **render_target_v_flip**
+
+  .. _class_Viewport_shadow_atlas_quad_0:
+
 - :ref:`int<class_int>` **shadow_atlas_quad_0**
+
+  .. _class_Viewport_shadow_atlas_quad_1:
+
 - :ref:`int<class_int>` **shadow_atlas_quad_1**
+
+  .. _class_Viewport_shadow_atlas_quad_2:
+
 - :ref:`int<class_int>` **shadow_atlas_quad_2**
+
+  .. _class_Viewport_shadow_atlas_quad_3:
+
 - :ref:`int<class_int>` **shadow_atlas_quad_3**
+
+  .. _class_Viewport_shadow_atlas_size:
+
 - :ref:`int<class_int>` **shadow_atlas_size**
+
+  .. _class_Viewport_size:
+
 - :ref:`Vector2<class_vector2>` **size**
+
+  .. _class_Viewport_transparent_bg:
+
 - :ref:`bool<class_bool>` **transparent_bg**
+
+  .. _class_Viewport_usage:
+
 - :ref:`int<class_int>` **usage**
+
+  .. _class_Viewport_world:
+
 - :ref:`World<class_world>` **world**
+
 
 Numeric Constants
 -----------------

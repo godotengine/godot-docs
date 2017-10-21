@@ -42,10 +42,22 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_AudioEffectFilter_cutoff_hz:
+
 - :ref:`float<class_float>` **cutoff_hz**
+
+  .. _class_AudioEffectFilter_dB:
+
 - :ref:`int<class_int>` **dB**
+
+  .. _class_AudioEffectFilter_gain:
+
 - :ref:`float<class_float>` **gain**
+
+  .. _class_AudioEffectFilter_resonance:
+
 - :ref:`float<class_float>` **resonance**
+
 
 Numeric Constants
 -----------------

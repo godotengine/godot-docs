@@ -40,11 +40,17 @@ Member Functions
 Signals
 -------
 
+.. _class_EditorFileSystem_filesystem_changed:
+
 -  **filesystem_changed**  **(** **)**
 
 Emitted if the filesystem changed.
 
+.. _class_EditorFileSystem_resources_reimported:
+
 -  **resources_reimported**  **(** :ref:`PoolStringArray<class_poolstringarray>` resources  **)**
+
+.. _class_EditorFileSystem_sources_changed:
 
 -  **sources_changed**  **(** :ref:`bool<class_bool>` exist  **)**
 

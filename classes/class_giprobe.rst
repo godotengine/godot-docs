@@ -68,16 +68,46 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_GIProbe_bias:
+
 - :ref:`float<class_float>` **bias**
+
+  .. _class_GIProbe_compress:
+
 - :ref:`bool<class_bool>` **compress**
+
+  .. _class_GIProbe_data:
+
 - :ref:`GIProbeData<class_giprobedata>` **data**
+
+  .. _class_GIProbe_dynamic_range:
+
 - :ref:`int<class_int>` **dynamic_range**
+
+  .. _class_GIProbe_energy:
+
 - :ref:`float<class_float>` **energy**
+
+  .. _class_GIProbe_extents:
+
 - :ref:`Vector3<class_vector3>` **extents**
+
+  .. _class_GIProbe_interior:
+
 - :ref:`bool<class_bool>` **interior**
+
+  .. _class_GIProbe_normal_bias:
+
 - :ref:`float<class_float>` **normal_bias**
+
+  .. _class_GIProbe_propagation:
+
 - :ref:`float<class_float>` **propagation**
+
+  .. _class_GIProbe_subdiv:
+
 - :ref:`int<class_int>` **subdiv**
+
 
 Numeric Constants
 -----------------

@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_VisualScriptVariableGet_var_name:
+
 - :ref:`String<class_string>` **var_name** - The variable's name.
+
 
 Description
 -----------

@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_PanoramaSky_panorama:
+
 - :ref:`Texture<class_texture>` **panorama**
+
 
 Member Function Description
 ---------------------------

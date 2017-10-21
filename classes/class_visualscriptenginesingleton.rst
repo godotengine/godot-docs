@@ -28,7 +28,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_VisualScriptEngineSingleton_constant:
+
 - :ref:`String<class_string>` **constant** - The singleton's name.
+
 
 Description
 -----------

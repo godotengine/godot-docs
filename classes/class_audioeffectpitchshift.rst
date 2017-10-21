@@ -30,7 +30,10 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_AudioEffectPitchShift_pitch_scale:
+
 - :ref:`float<class_float>` **pitch_scale** - Pitch value. Can range from 0 (-1 octave) to 16 (+16 octaves).
+
 
 Description
 -----------

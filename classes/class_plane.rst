@@ -48,11 +48,26 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_Plane_d:
+
 - :ref:`float<class_float>` **d**
+
+  .. _class_Plane_normal:
+
 - :ref:`Vector3<class_vector3>` **normal**
+
+  .. _class_Plane_x:
+
 - :ref:`float<class_float>` **x**
+
+  .. _class_Plane_y:
+
 - :ref:`float<class_float>` **y**
+
+  .. _class_Plane_z:
+
 - :ref:`float<class_float>` **z**
+
 
 Description
 -----------

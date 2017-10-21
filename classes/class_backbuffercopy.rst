@@ -32,8 +32,14 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_BackBufferCopy_copy_mode:
+
 - :ref:`int<class_int>` **copy_mode** - Buffer mode. See ``COPY_MODE\_\*`` constants.
+
+  .. _class_BackBufferCopy_rect:
+
 - :ref:`Rect2<class_rect2>` **rect** - The area covered by the BackBufferCopy. Only used if ``copy_mode`` is ``COPY_MODE_RECT``.
+
 
 Numeric Constants
 -----------------

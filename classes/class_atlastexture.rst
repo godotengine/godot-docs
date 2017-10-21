@@ -36,9 +36,18 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_AtlasTexture_atlas:
+
 - :ref:`Texture<class_texture>` **atlas** - The texture that contains the atlas. Can be any :ref:`Texture<class_texture>` subtype.
+
+  .. _class_AtlasTexture_margin:
+
 - :ref:`Rect2<class_rect2>` **margin** - The margin around the region. The :ref:`Rect2<class_rect2>`'s 'size' parameter ('w' and 'h' in the editor) resizes the texture so it fits within the margin.
+
+  .. _class_AtlasTexture_region:
+
 - :ref:`Rect2<class_rect2>` **region** - The AtlasTexture's used region.
+
 
 Description
 -----------
