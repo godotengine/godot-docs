@@ -118,11 +118,11 @@ Emitted when node visibility changes.
 Member Variables
 ----------------
 
-- :ref:`Transform<class_transform>` **global_transform** - World space (global) [Transform] of this node.
+- :ref:`Transform<class_transform>` **global_transform** - World space (global) :ref:`Transform<class_transform>` of this node.
 - :ref:`Vector3<class_vector3>` **rotation** - Local euler rotation in radians of this node.
 - :ref:`Vector3<class_vector3>` **rotation_deg** - Local euler rotation in degrees of this node.
 - :ref:`Vector3<class_vector3>` **scale** - Local scale of this node.
-- :ref:`Transform<class_transform>` **transform** - Local space [Transform] of this node.
+- :ref:`Transform<class_transform>` **transform** - Local space :ref:`Transform<class_transform>` of this node.
 - :ref:`Vector3<class_vector3>` **translation** - Local translation of this node.
 - :ref:`bool<class_bool>` **visible** - Visibility of this node. Toggles if this node is rendered.
 

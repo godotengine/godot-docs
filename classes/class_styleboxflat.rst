@@ -66,7 +66,7 @@ Member Functions
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`set_corner_radius_all<class_StyleBoxFlat_set_corner_radius_all>`  **(** :ref:`int<class_int>` radius  **)**                                                                                                                                                     |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_corner_radius_individual<class_StyleBoxFlat_set_corner_radius_individual>`  **(** :ref:`int<class_int>` radius_top_left, :ref:`int<class_int>` radius_top_right, :ref:`int<class_int>` radius_botton_right, :ref:`int<class_int>` radius_bottom_left  **)** |
+| void                       | :ref:`set_corner_radius_individual<class_StyleBoxFlat_set_corner_radius_individual>`  **(** :ref:`int<class_int>` radius_top_left, :ref:`int<class_int>` radius_top_right, :ref:`int<class_int>` radius_bottom_right, :ref:`int<class_int>` radius_bottom_left  **)** |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`set_draw_center<class_StyleBoxFlat_set_draw_center>`  **(** :ref:`bool<class_bool>` draw_center  **)**                                                                                                                                                          |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -93,9 +93,11 @@ Member Variables
 - :ref:`int<class_int>` **border_width_left** - Border width for the left border.
 - :ref:`int<class_int>` **border_width_right** - Border width for the right border.
 - :ref:`int<class_int>` **border_width_top** - Border width for the top border.
-- :ref:`int<class_int>` **corner_detail** - This sets the amount of vertices used for each corner. Higher values result in rounder corners but take more processing power to compute. When choosing a value you should take the corner radius ([method set_corner_radius]) into account.
-			For corner radius smaller than 10: 4-5 should be enough
-			For corner radius smaller than 30: 8-12 should be enough ...
+- :ref:`int<class_int>` **corner_detail** - This sets the amount of vertices used for each corner. Higher values result in rounder corners but take more processing power to compute. When choosing a value you should take the corner radius (:ref:`set_corner_radius<class_StyleBoxFlat_set_corner_radius>`) into account.
+
+For corner radius smaller than 10: 4-5 should be enough
+
+For corner radius smaller than 30: 8-12 should be enough ...
 - :ref:`int<class_int>` **corner_radius_bottom_left** - The corner radius of the bottom left corner. When set to 0 the corner is not rounded.
 - :ref:`int<class_int>` **corner_radius_bottom_right** - The corner radius of the bottom right corner. When set to 0 the corner is not rounded.
 - :ref:`int<class_int>` **corner_radius_top_left** - The corner radius of the top left corner. When set to 0 the corner is not rounded.
@@ -235,7 +237,7 @@ Member Function Description
 
 .. _class_StyleBoxFlat_set_corner_radius_individual:
 
-- void  **set_corner_radius_individual**  **(** :ref:`int<class_int>` radius_top_left, :ref:`int<class_int>` radius_top_right, :ref:`int<class_int>` radius_botton_right, :ref:`int<class_int>` radius_bottom_left  **)**
+- void  **set_corner_radius_individual**  **(** :ref:`int<class_int>` radius_top_left, :ref:`int<class_int>` radius_top_right, :ref:`int<class_int>` radius_bottom_right, :ref:`int<class_int>` radius_bottom_left  **)**
 
 .. _class_StyleBoxFlat_set_draw_center:
 

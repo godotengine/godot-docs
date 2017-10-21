@@ -46,11 +46,7 @@ Description
 
 **Output Ports:**
 
-- Sequence: ``true``
-
-- Sequence: ``false``
-
-- Sequence: ``done``
+- Data (variant): ``result``
 
 Member Function Description
 ---------------------------

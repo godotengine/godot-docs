@@ -9,7 +9,7 @@ Script
 
 **Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`VisualScript<class_visualscript>`, :ref:`GDScript<class_gdscript>`, :ref:`CSharpScript<class_csharpscript>`, :ref:`NativeScript<class_nativescript>`
+**Inherited By:** :ref:`VisualScript<class_visualscript>`, :ref:`GDScript<class_gdscript>`, :ref:`CSharpScript<class_csharpscript>`, :ref:`NativeScript<class_nativescript>`, :ref:`PluginScript<class_pluginscript>`
 
 **Category:** Core
 

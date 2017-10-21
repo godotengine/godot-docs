@@ -53,12 +53,12 @@ Member Variables
 ----------------
 
 - :ref:`PoolByteArray<class_poolbytearray>` **data** - Raw audio data.
-- :ref:`int<class_int>` **format** - Audio format. See FORMAT_* constants for values.
+- :ref:`int<class_int>` **format** - Audio format. See FORMAT\_\* constants for values.
 - :ref:`int<class_int>` **loop_begin** - Loop start in bytes.
 - :ref:`int<class_int>` **loop_end** - Loop end in bytes.
-- :ref:`int<class_int>` **loop_mode** - Loop mode. See LOOP_* constants for values.
+- :ref:`int<class_int>` **loop_mode** - Loop mode. See LOOP\_\* constants for values.
 - :ref:`int<class_int>` **mix_rate** - The sample rate for mixing this audio.
-- :ref:`bool<class_bool>` **stereo** - If [code]true[/code], audio is stereo. Default value: [code]false[/code].
+- :ref:`bool<class_bool>` **stereo** - If ``true``, audio is stereo. Default value: ``false``.
 
 Numeric Constants
 -----------------

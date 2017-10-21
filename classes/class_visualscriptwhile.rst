@@ -14,5 +14,22 @@ VisualScriptWhile
 Brief Description
 -----------------
 
+Conditional loop.
 
+Description
+-----------
+
+Loops while a condition is ``true``. Execution continues out the ``exit`` Sequence port when the loop terminates.
+
+**Input Ports:**
+
+- Sequence: ``while(cond)``
+
+- Data (bool): ``cond``
+
+**Output Ports:**
+
+- Sequence: ``repeat``
+
+- Sequence: ``exit``
 

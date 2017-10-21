@@ -17,25 +17,26 @@ Global scope constants and variables.
 Member Variables
 ----------------
 
-- :ref:`ARVRServer<class_arvrserver>` **ARVRServer** - [ARVRServer] singleton
-- :ref:`AudioServer<class_audioserver>` **AudioServer** - [AudioServer] singleton
-- :ref:`ClassDB<class_classdb>` **ClassDB** - [ClassDB] singleton
-- :ref:`Engine<class_engine>` **Engine** - [Engine] singleton
-- :ref:`Geometry<class_geometry>` **Geometry** - [Geometry] singleton
-- :ref:`IP<class_ip>` **IP** - [IP] singleton
-- :ref:`Input<class_input>` **Input** - [Input] singleton
-- :ref:`InputMap<class_inputmap>` **InputMap** - [InputMap] singleton
+- :ref:`ARVRServer<class_arvrserver>` **ARVRServer** - :ref:`ARVRServer<class_arvrserver>` singleton
+- :ref:`AudioServer<class_audioserver>` **AudioServer** - :ref:`AudioServer<class_audioserver>` singleton
+- :ref:`ClassDB<class_classdb>` **ClassDB** - :ref:`ClassDB<class_classdb>` singleton
+- :ref:`Engine<class_engine>` **Engine** - :ref:`Engine<class_engine>` singleton
+- :ref:`Geometry<class_geometry>` **Geometry** - :ref:`Geometry<class_geometry>` singleton
+- :ref:`GodotSharp<class_godotsharp>` **GodotSharp**
+- :ref:`IP<class_ip>` **IP** - :ref:`IP<class_ip>` singleton
+- :ref:`Input<class_input>` **Input** - :ref:`Input<class_input>` singleton
+- :ref:`InputMap<class_inputmap>` **InputMap** - :ref:`InputMap<class_inputmap>` singleton
 - :ref:`JSON<class_json>` **JSON**
-- :ref:`Reference<class_reference>` **Marshalls** - [Marshalls] singleton
-- :ref:`OS<class_os>` **OS** - [OS] singleton
-- :ref:`Performance<class_performance>` **Performance** - [Performance] singleton
-- :ref:`Physics2DServer<class_physics2dserver>` **Physics2DServer** - [Physics2DServer] singleton
-- :ref:`PhysicsServer<class_physicsserver>` **PhysicsServer** - [PhysicsServer] singleton
-- :ref:`ProjectSettings<class_projectsettings>` **ProjectSettings** - [ProjectSettings] singleton
-- :ref:`ResourceLoader<class_resourceloader>` **ResourceLoader** - [ResourceLoader] singleton
-- :ref:`ResourceSaver<class_resourcesaver>` **ResourceSaver** - [ResourceSaver] singleton
-- :ref:`TranslationServer<class_translationserver>` **TranslationServer** - [TranslationServer] singleton
-- :ref:`VisualServer<class_visualserver>` **VisualServer** - [VisualServer] singleton
+- :ref:`Reference<class_reference>` **Marshalls** - :ref:`Marshalls<class_marshalls>` singleton
+- :ref:`OS<class_os>` **OS** - :ref:`OS<class_os>` singleton
+- :ref:`Performance<class_performance>` **Performance** - :ref:`Performance<class_performance>` singleton
+- :ref:`Physics2DServer<class_physics2dserver>` **Physics2DServer** - :ref:`Physics2DServer<class_physics2dserver>` singleton
+- :ref:`PhysicsServer<class_physicsserver>` **PhysicsServer** - :ref:`PhysicsServer<class_physicsserver>` singleton
+- :ref:`ProjectSettings<class_projectsettings>` **ProjectSettings** - :ref:`ProjectSettings<class_projectsettings>` singleton
+- :ref:`ResourceLoader<class_resourceloader>` **ResourceLoader** - :ref:`ResourceLoader<class_resourceloader>` singleton
+- :ref:`ResourceSaver<class_resourcesaver>` **ResourceSaver** - :ref:`ResourceSaver<class_resourcesaver>` singleton
+- :ref:`TranslationServer<class_translationserver>` **TranslationServer** - :ref:`TranslationServer<class_translationserver>` singleton
+- :ref:`VisualServer<class_visualserver>` **VisualServer** - :ref:`VisualServer<class_visualserver>` singleton
 
 Numeric Constants
 -----------------

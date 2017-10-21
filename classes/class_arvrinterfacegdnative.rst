@@ -16,25 +16,8 @@ Brief Description
 
 GDNative wrapper for an ARVR interface
 
-Member Functions
-----------------
-
-+-------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`set_gdnative_library<class_ARVRInterfaceGDNative_set_gdnative_library>`  **(** :ref:`GDNativeLibrary<class_gdnativelibrary>` library  **)** |
-+-------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-
 Description
 -----------
 
 This is a wrapper class for GDNative implementations of the ARVR interface. To use a GDNative ARVR interface simply instantiate this object and set your GDNative library containing the ARVR interface implementation.
-
-Member Function Description
----------------------------
-
-.. _class_ARVRInterfaceGDNative_set_gdnative_library:
-
-- void  **set_gdnative_library**  **(** :ref:`GDNativeLibrary<class_gdnativelibrary>` library  **)**
-
-Bind this GDNative library to our interface. The library must be a GDNative ARVR Interface for this to work.
-
 

@@ -14,7 +14,7 @@ VisualScriptVariableGet
 Brief Description
 -----------------
 
-
+Gets a variable's value.
 
 Member Functions
 ----------------
@@ -28,7 +28,20 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`String<class_string>` **var_name**
+- :ref:`String<class_string>` **var_name** - The variable's name.
+
+Description
+-----------
+
+Returns a variable's value. "Var Name" must be supplied, with an optional type.
+
+**Input Ports:**
+
+none
+
+**Output Ports:**
+
+- Data (variant): ``value``
 
 Member Function Description
 ---------------------------

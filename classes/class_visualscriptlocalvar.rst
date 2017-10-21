@@ -14,7 +14,7 @@ VisualScriptLocalVar
 Brief Description
 -----------------
 
-
+Gets a local variable's value.
 
 Member Functions
 ----------------
@@ -32,8 +32,21 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **type**
-- :ref:`String<class_string>` **var_name**
+- :ref:`int<class_int>` **type** - The local variable's type.
+- :ref:`String<class_string>` **var_name** - The local variable's name.
+
+Description
+-----------
+
+Returns a local variable's value. "Var Name" must be supplied, with an optional type.
+
+**Input Ports:**
+
+none
+
+**Output Ports:**
+
+- Data (variant): ``get``
 
 Member Function Description
 ---------------------------

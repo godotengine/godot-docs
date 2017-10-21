@@ -38,10 +38,15 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`bool<class_bool>` **echo** - Echo state of the key, i.e. whether it's a repeat event or not.
-- :ref:`bool<class_bool>` **pressed** - Pressed state of the key.
-- :ref:`int<class_int>` **scancode** - Scancode of the key, one of the KEY_* constants in [@Global Scope].
-- :ref:`int<class_int>` **unicode** - Unicode identifier of the key (when relevant).
+- :ref:`bool<class_bool>` **echo** - If ``true`` the key was already pressed before this event. It means the user is holding the key down.
+- :ref:`bool<class_bool>` **pressed** - If ``true`` the key's state is pressed. If ``false`` the key's state is released.
+- :ref:`int<class_int>` **scancode** - Key scancode, one of the ``KEY\_\*`` constants in @global Scope.
+- :ref:`int<class_int>` **unicode** - Key unicode identifier when relevant.
+
+Description
+-----------
+
+Stores key presses on the keyboard. Supports key presses, key releases and member echo events.
 
 Member Function Description
 ---------------------------

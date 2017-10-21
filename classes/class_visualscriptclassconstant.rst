@@ -14,7 +14,7 @@ VisualScriptClassConstant
 Brief Description
 -----------------
 
-A Visual Script node representing a constant from a class.
+Gets a constant from a given class.
 
 Member Functions
 ----------------
@@ -32,13 +32,21 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`String<class_string>` **base_type** - The type to get the constant from.
-- :ref:`String<class_string>` **constant** - The name of the constant to return.
+- :ref:`String<class_string>` **base_type** - The constant's parent class.
+- :ref:`String<class_string>` **constant** - The constant to return. See the given class for its available constants.
 
 Description
 -----------
 
-A Visual Script node representing a constant from the classes, such as @GlobalScope.TYPE_INT.
+This node returns a constant from a given class, such as @GlobalScope.TYPE_INT. See the given class' documentation for available constants.
+
+**Input Ports:**
+
+none
+
+**Output Ports:**
+
+- Data (variant): ``value``
 
 Member Function Description
 ---------------------------

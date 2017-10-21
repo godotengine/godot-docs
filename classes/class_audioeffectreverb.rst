@@ -58,14 +58,14 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`float<class_float>` **damping** - Widens or narrows the stereo image of the reverb tail. 1 means fully widens. Value can range from 0 to 1. Default value: [code]1[/code].
-- :ref:`float<class_float>` **dry** - Output percent of original sound. At 0, only modified sound is outputted. Value can range from 0 to 1. Default value: [code]1[/code].
-- :ref:`float<class_float>` **hipass** - High-pass filter passes signals with a frequency higher than a certain cutoff frequency and attenuates signals with frequencies lower than the cutoff frequency. Value can range from 0 to 1. Default value: [code]0[/code].
-- :ref:`float<class_float>` **predelay_feedback** - Output percent of predelay. Value can range from 0 to 1. Default value: [code]1[/code].
-- :ref:`float<class_float>` **predelay_msec** - Time between the original signal and the early reflections of the reverb signal. Default value: [code]150ms[/code].
-- :ref:`float<class_float>` **room_size** - Dimensions of simulated room. Bigger means more echoes. Value can range from 0 to 1. Default value: [code]0.8[/code].
-- :ref:`float<class_float>` **spread** - Defines how reflective the imaginary room's walls are. Value can range from 0 to 1. Default value: [code]1[/code].
-- :ref:`float<class_float>` **wet** - Output percent of modified sound. At 0, only original sound is outputted. Value can range from 0 to 1. Default value: [code]0.5[/code].
+- :ref:`float<class_float>` **damping** - Widens or narrows the stereo image of the reverb tail. 1 means fully widens. Value can range from 0 to 1. Default value: ``1``.
+- :ref:`float<class_float>` **dry** - Output percent of original sound. At 0, only modified sound is outputted. Value can range from 0 to 1. Default value: ``1``.
+- :ref:`float<class_float>` **hipass** - High-pass filter passes signals with a frequency higher than a certain cutoff frequency and attenuates signals with frequencies lower than the cutoff frequency. Value can range from 0 to 1. Default value: ``0``.
+- :ref:`float<class_float>` **predelay_feedback** - Output percent of predelay. Value can range from 0 to 1. Default value: ``1``.
+- :ref:`float<class_float>` **predelay_msec** - Time between the original signal and the early reflections of the reverb signal. Default value: ``150ms``.
+- :ref:`float<class_float>` **room_size** - Dimensions of simulated room. Bigger means more echoes. Value can range from 0 to 1. Default value: ``0.8``.
+- :ref:`float<class_float>` **spread** - Defines how reflective the imaginary room's walls are. Value can range from 0 to 1. Default value: ``1``.
+- :ref:`float<class_float>` **wet** - Output percent of modified sound. At 0, only original sound is outputted. Value can range from 0 to 1. Default value: ``0.5``.
 
 Description
 -----------

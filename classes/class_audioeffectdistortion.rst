@@ -46,11 +46,11 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`float<class_float>` **drive** - Distortion power. Value can range from 0 to 1. Default value: [code]0[/code].
-- :ref:`float<class_float>` **keep_hf_hz** - High-pass filter. Frequencies higher than this value will not be affected by the distortion. Value can range from 1 to 20000. Default value: [code]16000[/code].
-- :ref:`int<class_int>` **mode** - Distortion type. Default value: [code]MODE_CLIP[/code].
-- :ref:`float<class_float>` **post_gain** - Increases or decreases the volume after the effect. Value can range from -80 to 24. Default value: [code]0[/code].
-- :ref:`float<class_float>` **pre_gain** - Increases or decreases the volume before the effect. Value can range from -60 to 60. Default value: [code]0[/code].
+- :ref:`float<class_float>` **drive** - Distortion power. Value can range from 0 to 1. Default value: ``0``.
+- :ref:`float<class_float>` **keep_hf_hz** - High-pass filter. Frequencies higher than this value will not be affected by the distortion. Value can range from 1 to 20000. Default value: ``16000``.
+- :ref:`int<class_int>` **mode** - Distortion type. Default value: ``MODE_CLIP``.
+- :ref:`float<class_float>` **post_gain** - Increases or decreases the volume after the effect. Value can range from -80 to 24. Default value: ``0``.
+- :ref:`float<class_float>` **pre_gain** - Increases or decreases the volume before the effect. Value can range from -60 to 60. Default value: ``0``.
 
 Numeric Constants
 -----------------

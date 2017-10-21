@@ -14,5 +14,18 @@ VisualScriptSelf
 Brief Description
 -----------------
 
+Outputs a reference to the current instance.
 
+Description
+-----------
+
+Provides a reference to the node running the visual script.
+
+**Input Ports:**
+
+none
+
+**Output Ports:**
+
+- Data (object): ``instance``
 

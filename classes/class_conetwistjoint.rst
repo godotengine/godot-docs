@@ -14,7 +14,7 @@ ConeTwistJoint
 Brief Description
 -----------------
 
-
+A twist joint between two 3D bodies
 
 Member Functions
 ----------------
@@ -28,21 +28,50 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`float<class_float>` **bias**
-- :ref:`float<class_float>` **relaxation**
-- :ref:`float<class_float>` **softness**
-- :ref:`float<class_float>` **swing_span**
-- :ref:`float<class_float>` **twist_span**
+- :ref:`float<class_float>` **bias** - The speed with which the swing or twist will take place.
+
+The higher, the faster.
+- :ref:`float<class_float>` **relaxation** - Defines, how fast the swing- and twist-speed-difference on both sides gets synced.
+- :ref:`float<class_float>` **softness** - The ease with which the joint starts to twist. If it's too low, it takes more force to start twisting the joint.
+- :ref:`float<class_float>` **swing_span** - Swing is rotation from side to side, around the axis perpendicular to the twist axis.
+
+The swing span defines, how much rotation will not get corrected allong the swing axis.
+
+Could be defined as looseness in the :ref:`ConeTwistJoint<class_conetwistjoint>`.
+
+If below 0.05, this behaviour is locked. Default value: ``PI/4``.
+- :ref:`float<class_float>` **twist_span** - Twist is the rotation around the twist axis, this value defined how far the joint can twist.
+
+Twist is locked if below 0.05.
 
 Numeric Constants
 -----------------
 
-- **PARAM_SWING_SPAN** = **0**
-- **PARAM_TWIST_SPAN** = **1**
-- **PARAM_BIAS** = **2**
-- **PARAM_SOFTNESS** = **3**
-- **PARAM_RELAXATION** = **4**
-- **PARAM_MAX** = **5**
+- **PARAM_SWING_SPAN** = **0** --- Swing is rotation from side to side, around the axis perpendicular to the twist axis.
+
+The swing span defines, how much rotation will not get corrected allong the swing axis.
+
+Could be defined as looseness in the :ref:`ConeTwistJoint<class_conetwistjoint>`.
+
+If below 0.05, this behaviour is locked. Default value: ``PI/4``.
+- **PARAM_TWIST_SPAN** = **1** --- Twist is the rotation around the twist axis, this value defined how far the joint can twist.
+
+Twist is locked if below 0.05.
+- **PARAM_BIAS** = **2** --- The speed with which the swing or twist will take place.
+
+The higher, the faster.
+- **PARAM_SOFTNESS** = **3** --- The ease with which the joint starts to twist. If it's too low, it takes more force to start twisting the joint.
+- **PARAM_RELAXATION** = **4** --- Defines, how fast the swing- and twist-speed-difference on both sides gets synced.
+- **PARAM_MAX** = **5** --- End flag of PARAM\_\* constants, used internally.
+
+Description
+-----------
+
+The joint can rotate the bodies across an axis defined by the local x-axes of the :ref:`Joint<class_joint>`.
+
+The twist axis is initiated as the x-axis of the :ref:`Joint<class_joint>`.
+
+Once the Bodies swing, the twist axis is calculated as the middle of the x-axes of the Joint in the local space of the two Bodies.
 
 Member Function Description
 ---------------------------

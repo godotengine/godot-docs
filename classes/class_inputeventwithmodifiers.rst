@@ -16,7 +16,7 @@ InputEventWithModifiers
 Brief Description
 -----------------
 
-Base class for input events with modifiers.
+Base class for keys events with modifiers.
 
 Member Functions
 ----------------
@@ -51,6 +51,11 @@ Member Variables
 - :ref:`bool<class_bool>` **control** - State of the Ctrl modifier.
 - :ref:`bool<class_bool>` **meta** - State of the Meta modifier.
 - :ref:`bool<class_bool>` **shift** - State of the Shift modifier.
+
+Description
+-----------
+
+Contains keys events informations with modifiers support like ``SHIFT`` or ``ALT``. See :ref:`Node._input<class_Node__input>`.
 
 Member Function Description
 ---------------------------

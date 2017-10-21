@@ -75,8 +75,8 @@ Member Variables
 ----------------
 
 - :ref:`int<class_int>` **current_tab** - The current tab.
-- :ref:`int<class_int>` **tab_align** - The alignment of all the tabs of the tab container. See the [code]ALIGN_*[/code] constants.
-- :ref:`bool<class_bool>` **tabs_visible** - If [code]true[/code] all tabs that are children of the TabContainer will be visible.
+- :ref:`int<class_int>` **tab_align** - The alignment of all the tabs of the tab container. See the ``ALIGN\_\*`` constants.
+- :ref:`bool<class_bool>` **tabs_visible** - If ``true`` all tabs that are children of the TabContainer will be visible.
 
 Numeric Constants
 -----------------

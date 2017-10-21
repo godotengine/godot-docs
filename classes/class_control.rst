@@ -262,35 +262,37 @@ Emitted when one of the size flags changes. See member size_flags_horizontal and
 Member Variables
 ----------------
 
-- :ref:`float<class_float>` **anchor_bottom** - Anchors the bottom edge of the node to the origin, the center, or the end of its parent container. It changes how the bottom margin updates when the node moves or changes size. Use one of the [code]ANCHOR_*[/code] constants. Default value: [code]ANCHOR_BEGIN[/code].
-- :ref:`float<class_float>` **anchor_left** - Anchors the left edge of the node to the origin, the center or the end of its parent container. It changes how the left margin updates when the node moves or changes size. Use one of the [code]ANCHOR_*[/code] constants. Default value: [code]ANCHOR_BEGIN[/code].
-- :ref:`float<class_float>` **anchor_right** - Anchors the right edge of the node to the origin, the center or the end of its parent container. It changes how the right margin updates when the node moves or changes size. Use one of the [code]ANCHOR_*[/code] constants. Default value: [code]ANCHOR_BEGIN[/code].
-- :ref:`float<class_float>` **anchor_top** - Anchors the top edge of the node to the origin, the center or the end of its parent container. It changes how the top margin updates when the node moves or changes size. Use one of the [code]ANCHOR_*[/code] constants. Default value: [code]ANCHOR_BEGIN[/code].
-- :ref:`NodePath<class_nodepath>` **focus_neighbour_bottom** - Tells Godot which node it should give keyboard focus to if the user presses Tab, the down arrow on the keyboard, or down on a gamepad. The node must be a [code]Control[/code]. If this property is not set, Godot will give focus to the closest [code]Control[/code] to the bottom of this one.
-			If the user presses Tab, Godot will give focus to the closest node to the right first, then to the bottom. If the user presses Shift+Tab, Godot will look to the left of the node, then above it.
-- :ref:`NodePath<class_nodepath>` **focus_neighbour_left** - Tells Godot which node it should give keyboard focus to if the user presses Shift+Tab, the left arrow on the keyboard or left on a gamepad. The node must be a [code]Control[/code]. If this property is not set, Godot will give focus to the closest [code]Control[/code] to the left of this one.
-- :ref:`NodePath<class_nodepath>` **focus_neighbour_right** - Tells Godot which node it should give keyboard focus to if the user presses Tab, the right arrow on the keyboard or right on a gamepad. The node must be a [code]Control[/code]. If this property is not set, Godot will give focus to the closest [code]Control[/code] to the bottom of this one.
-- :ref:`NodePath<class_nodepath>` **focus_neighbour_top** - Tells Godot which node it should give keyboard focus to if the user presses Shift+Tab, the top arrow on the keyboard or top on a gamepad. The node must be a [code]Control[/code]. If this property is not set, Godot will give focus to the closest [code]Control[/code] to the bottom of this one.
+- :ref:`float<class_float>` **anchor_bottom** - Anchors the bottom edge of the node to the origin, the center, or the end of its parent container. It changes how the bottom margin updates when the node moves or changes size. Use one of the ``ANCHOR\_\*`` constants. Default value: ``ANCHOR_BEGIN``.
+- :ref:`float<class_float>` **anchor_left** - Anchors the left edge of the node to the origin, the center or the end of its parent container. It changes how the left margin updates when the node moves or changes size. Use one of the ``ANCHOR\_\*`` constants. Default value: ``ANCHOR_BEGIN``.
+- :ref:`float<class_float>` **anchor_right** - Anchors the right edge of the node to the origin, the center or the end of its parent container. It changes how the right margin updates when the node moves or changes size. Use one of the ``ANCHOR\_\*`` constants. Default value: ``ANCHOR_BEGIN``.
+- :ref:`float<class_float>` **anchor_top** - Anchors the top edge of the node to the origin, the center or the end of its parent container. It changes how the top margin updates when the node moves or changes size. Use one of the ``ANCHOR\_\*`` constants. Default value: ``ANCHOR_BEGIN``.
+- :ref:`NodePath<class_nodepath>` **focus_neighbour_bottom** - Tells Godot which node it should give keyboard focus to if the user presses Tab, the down arrow on the keyboard, or down on a gamepad. The node must be a ``Control``. If this property is not set, Godot will give focus to the closest ``Control`` to the bottom of this one.
+
+If the user presses Tab, Godot will give focus to the closest node to the right first, then to the bottom. If the user presses Shift+Tab, Godot will look to the left of the node, then above it.
+- :ref:`NodePath<class_nodepath>` **focus_neighbour_left** - Tells Godot which node it should give keyboard focus to if the user presses Shift+Tab, the left arrow on the keyboard or left on a gamepad. The node must be a ``Control``. If this property is not set, Godot will give focus to the closest ``Control`` to the left of this one.
+- :ref:`NodePath<class_nodepath>` **focus_neighbour_right** - Tells Godot which node it should give keyboard focus to if the user presses Tab, the right arrow on the keyboard or right on a gamepad. The node must be a ``Control``. If this property is not set, Godot will give focus to the closest ``Control`` to the bottom of this one.
+- :ref:`NodePath<class_nodepath>` **focus_neighbour_top** - Tells Godot which node it should give keyboard focus to if the user presses Shift+Tab, the top arrow on the keyboard or top on a gamepad. The node must be a ``Control``. If this property is not set, Godot will give focus to the closest ``Control`` to the bottom of this one.
 - :ref:`int<class_int>` **grow_horizontal**
 - :ref:`int<class_int>` **grow_vertical**
 - :ref:`String<class_string>` **hint_tooltip** - Changes the tooltip text. The tooltip appears when the user's mouse cursor stays idle over this control for a few moments.
-- :ref:`float<class_float>` **margin_bottom** - Distance between the node's bottom edge and its parent container, based on [member anchor_bottom].
-			Margins are often controlled by one or multiple parent [Container] nodes. Margins update automatically when you move or resize the node.
-- :ref:`float<class_float>` **margin_left** - Distance between the node's left edge and its parent container, based on [member anchor_left].
-- :ref:`float<class_float>` **margin_right** - Distance between the node's right edge and its parent container, based on [member anchor_right].
-- :ref:`float<class_float>` **margin_top** - Distance between the node's top edge and its parent container, based on [member anchor_top].
+- :ref:`float<class_float>` **margin_bottom** - Distance between the node's bottom edge and its parent container, based on member anchor_bottom.
+
+Margins are often controlled by one or multiple parent :ref:`Container<class_container>` nodes. Margins update automatically when you move or resize the node.
+- :ref:`float<class_float>` **margin_left** - Distance between the node's left edge and its parent container, based on member anchor_left.
+- :ref:`float<class_float>` **margin_right** - Distance between the node's right edge and its parent container, based on member anchor_right.
+- :ref:`float<class_float>` **margin_top** - Distance between the node's top edge and its parent container, based on member anchor_top.
 - :ref:`int<class_int>` **mouse_filter**
 - :ref:`bool<class_bool>` **rect_clip_content**
 - :ref:`Vector2<class_vector2>` **rect_min_size** - The minimum size of the node's bounding rectangle. If you set it to a value greater than (0, 0), the node's bounding rectangle will always have at least this size, even if its content is smaller. If it's set to (0, 0), the node sizes automatically to fit its content, be it a texture or child nodes.
-- :ref:`Vector2<class_vector2>` **rect_pivot_offset** - By default, the node's pivot is its top-left corner. When you change its [member rect_scale], it will scale around this pivot. Set this property to [member rect_size] / 2 to center the pivot in the node's rectangle.
-- :ref:`Vector2<class_vector2>` **rect_position** - The node's position, relative to its parent. It corresponds to the rectangle's top-left corner. The property is not affected by [member rect_pivot_offset].
-- :ref:`float<class_float>` **rect_rotation** - The node's rotation around its pivot, in degrees. See [member rect_pivot_offset] to change the pivot's position.
-- :ref:`Vector2<class_vector2>` **rect_scale** - The node's scale, relative to its [member rect_size]. Change this property to scale the node around its [member rect_pivot_offset].
-- :ref:`Vector2<class_vector2>` **rect_size** - The size of the node's bounding rectangle, in pixels. [Container] nodes update this property automatically.
-- :ref:`int<class_int>` **size_flags_horizontal** - Tells the parent [Container] nodes how they should resize and place the node on the X axis. Use one of the [code]SIZE_*[/code] constants to change the flags. See the constants to learn what each does.
-- :ref:`float<class_float>` **size_flags_stretch_ratio** - If the node and at least one of its neighbours uses the [code]SIZE_EXPAND[/code] size flag, the parent [Container] will let it take more or less space depending on this property. If this node has a stretch ratio of 2 and its neighbour a ratio of 1, this node will take two thirds of the available space.
-- :ref:`int<class_int>` **size_flags_vertical** - Tells the parent [Container] nodes how they should resize and place the node on the Y axis. Use one of the [code]SIZE_*[/code] constants to change the flags. See the constants to learn what each does.
-- :ref:`Theme<class_theme>` **theme** - Changing this property replaces the current [Theme] resource this node and all its [code]Control[/code] children use.
+- :ref:`Vector2<class_vector2>` **rect_pivot_offset** - By default, the node's pivot is its top-left corner. When you change its member rect_scale, it will scale around this pivot. Set this property to member rect_size / 2 to center the pivot in the node's rectangle.
+- :ref:`Vector2<class_vector2>` **rect_position** - The node's position, relative to its parent. It corresponds to the rectangle's top-left corner. The property is not affected by member rect_pivot_offset.
+- :ref:`float<class_float>` **rect_rotation** - The node's rotation around its pivot, in degrees. See member rect_pivot_offset to change the pivot's position.
+- :ref:`Vector2<class_vector2>` **rect_scale** - The node's scale, relative to its member rect_size. Change this property to scale the node around its member rect_pivot_offset.
+- :ref:`Vector2<class_vector2>` **rect_size** - The size of the node's bounding rectangle, in pixels. :ref:`Container<class_container>` nodes update this property automatically.
+- :ref:`int<class_int>` **size_flags_horizontal** - Tells the parent :ref:`Container<class_container>` nodes how they should resize and place the node on the X axis. Use one of the ``SIZE\_\*`` constants to change the flags. See the constants to learn what each does.
+- :ref:`float<class_float>` **size_flags_stretch_ratio** - If the node and at least one of its neighbours uses the ``SIZE_EXPAND`` size flag, the parent :ref:`Container<class_container>` will let it take more or less space depending on this property. If this node has a stretch ratio of 2 and its neighbour a ratio of 1, this node will take two thirds of the available space.
+- :ref:`int<class_int>` **size_flags_vertical** - Tells the parent :ref:`Container<class_container>` nodes how they should resize and place the node on the Y axis. Use one of the ``SIZE\_\*`` constants to change the flags. See the constants to learn what each does.
+- :ref:`Theme<class_theme>` **theme** - Changing this property replaces the current :ref:`Theme<class_theme>` resource this node and all its ``Control`` children use.
 
 Numeric Constants
 -----------------

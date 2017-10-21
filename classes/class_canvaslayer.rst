@@ -56,7 +56,7 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **layer** - Layer index for draw order. Lower values are drawn first. Default value: [code]1[/code].
+- :ref:`int<class_int>` **layer** - Layer index for draw order. Lower values are drawn first. Default value: ``1``.
 - :ref:`Vector2<class_vector2>` **offset** - The layer's base offset.
 - :ref:`float<class_float>` **rotation** - The layer's rotation in degrees.
 - :ref:`Vector2<class_vector2>` **scale** - The layer's scale.

@@ -54,7 +54,12 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **device**
+- :ref:`int<class_int>` **device** - The event's device ID.
+
+Description
+-----------
+
+Base class of all sort of input event. See :ref:`Node._input<class_Node__input>`.
 
 Member Function Description
 ---------------------------
@@ -63,7 +68,7 @@ Member Function Description
 
 - :ref:`bool<class_bool>`  **action_match**  **(** :ref:`InputEvent<class_inputevent>` event  **)** const
 
-Returns true if this input event matches the event passed.
+Returns ``true`` if this event matches ``event[event].
 
 .. _class_InputEvent_as_text:
 
@@ -75,47 +80,49 @@ Returns a :ref:`String<class_string>` representation of the event.
 
 - :ref:`int<class_int>`  **get_device**  **(** **)** const
 
-Returns the id of the device that generated the event.
+Returns the device's id that generated the event.
 
 .. _class_InputEvent_get_id:
 
 - :ref:`int<class_int>`  **get_id**  **(** **)** const
 
-Returns the id of the event.
+Returns the event's ID.
 
 .. _class_InputEvent_is_action:
 
 - :ref:`bool<class_bool>`  **is_action**  **(** :ref:`String<class_string>` action  **)** const
 
-Returns true if this input event matches a pre-defined action, no matter the type.
+Returns ``true`` if this input event matches a pre-defined action of any type.
 
 .. _class_InputEvent_is_action_pressed:
 
 - :ref:`bool<class_bool>`  **is_action_pressed**  **(** :ref:`String<class_string>` action  **)** const
 
-Returns true if the given action is being pressed (and is not an echo event for KEY events). Not relevant for the event types MOUSE_MOTION, SCREEN_DRAG and NONE.
+Returns ``true`` if the given action is being pressed (and is not an echo event for KEY events). Not relevant for the event types ``MOUSE_MOTION``, ``SCREEN_DRAG`` or ``NONE``.
 
 .. _class_InputEvent_is_action_released:
 
 - :ref:`bool<class_bool>`  **is_action_released**  **(** :ref:`String<class_string>` action  **)** const
 
-Returns true if the given action is released (i.e. not pressed). Not relevant for the event types MOUSE_MOTION, SCREEN_DRAG and NONE.
+Returns ``true`` if the given action is released (i.e. not pressed). Not relevant for the event types ``MOUSE_MOTION``, ``SCREEN_DRAG`` or ``NONE``.
 
 .. _class_InputEvent_is_action_type:
 
 - :ref:`bool<class_bool>`  **is_action_type**  **(** **)** const
 
+Returns ``true`` if this input event's type is one of the ``InputEvent`` constants.
+
 .. _class_InputEvent_is_echo:
 
 - :ref:`bool<class_bool>`  **is_echo**  **(** **)** const
 
-Returns true if this input event is an echo event (only for events of type KEY, it will return false for other types).
+Returns ``true`` if this input event is an echo event (only for events of type KEY).
 
 .. _class_InputEvent_is_pressed:
 
 - :ref:`bool<class_bool>`  **is_pressed**  **(** **)** const
 
-Returns true if this input event is pressed. Not relevant for the event types MOUSE_MOTION, SCREEN_DRAG and NONE.
+Returns ``true`` if this input event is pressed. Not relevant for the event types ``MOUSE_MOTION``, ``SCREEN_DRAG`` or ``NONE``.
 
 .. _class_InputEvent_set_device:
 

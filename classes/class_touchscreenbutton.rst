@@ -74,15 +74,15 @@ Emitted when the button is released (up).
 Member Variables
 ----------------
 
-- :ref:`String<class_string>` **action** - The button's action. Actions can be handled with [InputEventAction].
+- :ref:`String<class_string>` **action** - The button's action. Actions can be handled with :ref:`InputEventAction<class_inputeventaction>`.
 - :ref:`BitMap<class_bitmap>` **bitmask** - The button's bitmask.
 - :ref:`Texture<class_texture>` **normal** - The button's texture for the normal state.
-- :ref:`bool<class_bool>` **passby_press** - If [code]true[/code] passby presses are enabled.
+- :ref:`bool<class_bool>` **passby_press** - If ``true`` passby presses are enabled.
 - :ref:`Texture<class_texture>` **pressed** - The button's texture for the pressed state.
 - :ref:`Shape2D<class_shape2d>` **shape** - The button's shape.
-- :ref:`bool<class_bool>` **shape_centered** - If [code]true[/code] the button's shape is centered.
-- :ref:`bool<class_bool>` **shape_visible** - If [code]true[/code] the button's shape is visible.
-- :ref:`int<class_int>` **visibility_mode** - The button's visibility mode. See [code]VISIBILITY_*[/code] constants.
+- :ref:`bool<class_bool>` **shape_centered** - If ``true`` the button's shape is centered.
+- :ref:`bool<class_bool>` **shape_visible** - If ``true`` the button's shape is visible.
+- :ref:`int<class_int>` **visibility_mode** - The button's visibility mode. See ``VISIBILITY\_\*`` constants.
 
 Numeric Constants
 -----------------

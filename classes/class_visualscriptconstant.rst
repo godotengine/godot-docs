@@ -14,7 +14,7 @@ VisualScriptConstant
 Brief Description
 -----------------
 
-A Visual Script node which returns a constant value.
+Gets a contant's value.
 
 Member Functions
 ----------------
@@ -38,7 +38,15 @@ Member Variables
 Description
 -----------
 
-A Visual Script node which returns the specified constant value.
+This node returns a constant's value.
+
+**Input Ports:**
+
+none
+
+**Output Ports:**
+
+- Data (variant): ``get``
 
 Member Function Description
 ---------------------------

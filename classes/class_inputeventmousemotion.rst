@@ -32,8 +32,13 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`Vector2<class_vector2>` **relative** - Position of the mouse pointer relative to the previous mouse position.
-- :ref:`Vector2<class_vector2>` **speed** - Speed of the mouse pointer.
+- :ref:`Vector2<class_vector2>` **relative** - Mouse position relative to the previous position (position at the last frame).
+- :ref:`Vector2<class_vector2>` **speed** - Mouse speed.
+
+Description
+-----------
+
+Contains mouse motion informations. Supports relative, absolute positions and speed. See :ref:`Node._input<class_Node__input>`.
 
 Member Function Description
 ---------------------------

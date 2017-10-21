@@ -57,8 +57,8 @@ Member Variables
 ----------------
 
 - :ref:`Vector2<class_vector2>` **origin** - The translation offset of the transform.
-- :ref:`Vector2<class_vector2>` **x** - The X axis of 2x2 basis matrix containing 2 [Vector2] as its columns: X axis and Y axis. These vectors can be interpreted as the basis vectors of local coordinate system traveling with the object.
-- :ref:`Vector2<class_vector2>` **y** - The Y axis of 2x2 basis matrix containing 2 [Vector2] as its columns: X axis and Y axis. These vectors can be interpreted as the basis vectors of local coordinate system traveling with the object.
+- :ref:`Vector2<class_vector2>` **x** - The X axis of 2x2 basis matrix containing 2 :ref:`Vector2<class_vector2>` as its columns: X axis and Y axis. These vectors can be interpreted as the basis vectors of local coordinate system traveling with the object.
+- :ref:`Vector2<class_vector2>` **y** - The Y axis of 2x2 basis matrix containing 2 :ref:`Vector2<class_vector2>` as its columns: X axis and Y axis. These vectors can be interpreted as the basis vectors of local coordinate system traveling with the object.
 
 Description
 -----------

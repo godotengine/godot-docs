@@ -30,7 +30,7 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`float<class_float>` **volume_db** - Amount of amplification. Positive values make the sound louder, negative values make it quieter. Value can range from -80 to 24. Default value: [code]0[/code].
+- :ref:`float<class_float>` **volume_db** - Amount of amplification. Positive values make the sound louder, negative values make it quieter. Value can range from -80 to 24. Default value: ``0``.
 
 Description
 -----------

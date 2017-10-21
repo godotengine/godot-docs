@@ -54,11 +54,11 @@ Member Variables
 
 - :ref:`float<class_float>` **ascent** - Ascent (number of pixels above the baseline).
 - :ref:`PoolIntArray<class_poolintarray>` **chars** - The characters in the BitmapFont.
-- :ref:`bool<class_bool>` **distance_field** - If [code]true[/code] distance field hint is enabled.
+- :ref:`bool<class_bool>` **distance_field** - If ``true`` distance field hint is enabled.
 - :ref:`BitmapFont<class_bitmapfont>` **fallback** - The fallback font.
 - :ref:`float<class_float>` **height** - Total font height (ascent plus descent) in pixels.
-- :ref:`PoolIntArray<class_poolintarray>` **kernings** - The font's kernings as [PoolIntArray].
-- :ref:`Array<class_array>` **textures** - The font's [Texture]\ s.
+- :ref:`PoolIntArray<class_poolintarray>` **kernings** - The font's kernings as :ref:`PoolIntArray<class_poolintarray>`.
+- :ref:`Array<class_array>` **textures** - The font's :ref:`Texture<class_texture>`\ s.
 
 Description
 -----------

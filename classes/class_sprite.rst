@@ -84,17 +84,17 @@ Emitted when the member texture changes.
 Member Variables
 ----------------
 
-- :ref:`bool<class_bool>` **centered** - If [code]true[/code] texture is centered. Default value: [code]true[/code].
-- :ref:`bool<class_bool>` **flip_h** - If [code]true[/code] texture is flipped horizontally. Default value: [code]false[/code].
-- :ref:`bool<class_bool>` **flip_v** - If [code]true[/code] texture is flipped vertically. Default value: [code]false[/code].
-- :ref:`int<class_int>` **frame** - Current frame to display from sprite sheet. [member vframes] or [member hframes] must be greater than 1.
+- :ref:`bool<class_bool>` **centered** - If ``true`` texture is centered. Default value: ``true``.
+- :ref:`bool<class_bool>` **flip_h** - If ``true`` texture is flipped horizontally. Default value: ``false``.
+- :ref:`bool<class_bool>` **flip_v** - If ``true`` texture is flipped vertically. Default value: ``false``.
+- :ref:`int<class_int>` **frame** - Current frame to display from sprite sheet. member vframes or member hframes must be greater than 1.
 - :ref:`int<class_int>` **hframes** - The number of collumns in the sprite sheet.
 - :ref:`Texture<class_texture>` **normal_map** - The normal map gives depth to the Sprite.
 - :ref:`Vector2<class_vector2>` **offset** - The texture's drawing offset.
-- :ref:`bool<class_bool>` **region_enabled** - If [code]true[/code] texture is cut from a larger atlas texture. See [code]region_rect[/code]. Default value: [code]false[/code].
-- :ref:`bool<class_bool>` **region_filter_clip** - If [code]true[/code] the outermost pixels get blurred out.
-- :ref:`Rect2<class_rect2>` **region_rect** - The region of the atlas texture to display. [member region_enabled] must be [code]true[/code].
-- :ref:`Texture<class_texture>` **texture** - [Texture] object to draw.
+- :ref:`bool<class_bool>` **region_enabled** - If ``true`` texture is cut from a larger atlas texture. See ``region_rect``. Default value: ``false``.
+- :ref:`bool<class_bool>` **region_filter_clip** - If ``true`` the outermost pixels get blurred out.
+- :ref:`Rect2<class_rect2>` **region_rect** - The region of the atlas texture to display. member region_enabled must be ``true``.
+- :ref:`Texture<class_texture>` **texture** - :ref:`Texture<class_texture>` object to draw.
 - :ref:`int<class_int>` **vframes** - The number of rows in the sprite sheet.
 
 Description

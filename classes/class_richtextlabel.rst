@@ -48,6 +48,8 @@ Member Functions
 +--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`              | :ref:`is_meta_underlined<class_RichTextLabel_is_meta_underlined>`  **(** **)** const                                                                                                |
 +--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`              | :ref:`is_overriding_selected_font_color<class_RichTextLabel_is_overriding_selected_font_color>`  **(** **)** const                                                                  |
++--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`              | :ref:`is_scroll_active<class_RichTextLabel_is_scroll_active>`  **(** **)** const                                                                                                    |
 +--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`              | :ref:`is_scroll_following<class_RichTextLabel_is_scroll_following>`  **(** **)** const                                                                                              |
@@ -88,6 +90,8 @@ Member Functions
 +--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                 | :ref:`set_meta_underline<class_RichTextLabel_set_meta_underline>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                      |
 +--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                 | :ref:`set_override_selected_font_color<class_RichTextLabel_set_override_selected_font_color>`  **(** :ref:`bool<class_bool>` override  **)**                                        |
++--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                 | :ref:`set_percent_visible<class_RichTextLabel_set_percent_visible>`  **(** :ref:`float<class_float>` percent_visible  **)**                                                         |
 +--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                 | :ref:`set_scroll_active<class_RichTextLabel_set_scroll_active>`  **(** :ref:`bool<class_bool>` active  **)**                                                                        |
@@ -118,6 +122,7 @@ Member Variables
 
 - :ref:`bool<class_bool>` **bbcode_enabled**
 - :ref:`String<class_string>` **bbcode_text**
+- :ref:`bool<class_bool>` **override_selected_font_color**
 - :ref:`float<class_float>` **percent_visible**
 - :ref:`int<class_int>` **visible_characters**
 
@@ -209,6 +214,10 @@ Returns the raw text, stripping out the formatting information.
 
 - :ref:`bool<class_bool>`  **is_meta_underlined**  **(** **)** const
 
+.. _class_RichTextLabel_is_overriding_selected_font_color:
+
+- :ref:`bool<class_bool>`  **is_overriding_selected_font_color**  **(** **)** const
+
 .. _class_RichTextLabel_is_scroll_active:
 
 - :ref:`bool<class_bool>`  **is_scroll_active**  **(** **)** const
@@ -290,6 +299,10 @@ Return true if selecting the text inside this richtext is allowed.
 .. _class_RichTextLabel_set_meta_underline:
 
 - void  **set_meta_underline**  **(** :ref:`bool<class_bool>` enable  **)**
+
+.. _class_RichTextLabel_set_override_selected_font_color:
+
+- void  **set_override_selected_font_color**  **(** :ref:`bool<class_bool>` override  **)**
 
 .. _class_RichTextLabel_set_percent_visible:
 

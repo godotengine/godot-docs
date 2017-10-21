@@ -54,7 +54,7 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`Array<class_array>` **animations** - An [Array] containing the [code]name[/code], [code]speed[/code], [code]loop[/code], and [code]frames[/code] of each animation.
+- :ref:`Array<class_array>` **animations** - An :ref:`Array<class_array>` containing the ``name``, ``speed``, ``loop``, and ``frames`` of each animation.
 - :ref:`Array<class_array>` **frames**
 
 Description

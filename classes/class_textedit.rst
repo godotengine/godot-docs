@@ -78,6 +78,8 @@ Member Functions
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                  | :ref:`is_highlight_all_occurrences_enabled<class_TextEdit_is_highlight_all_occurrences_enabled>`  **(** **)** const                                                                                                         |
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`is_overriding_selected_font_color<class_TextEdit_is_overriding_selected_font_color>`  **(** **)** const                                                                                                               |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                  | :ref:`is_selection_active<class_TextEdit_is_selection_active>`  **(** **)** const                                                                                                                                           |
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                  | :ref:`is_show_line_numbers_enabled<class_TextEdit_is_show_line_numbers_enabled>`  **(** **)** const                                                                                                                         |
@@ -101,6 +103,8 @@ Member Functions
 | void                                     | :ref:`set_highlight_all_occurrences<class_TextEdit_set_highlight_all_occurrences>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                             |
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_max_chars<class_TextEdit_set_max_chars>`  **(** :ref:`int<class_int>` amount  **)**                                                                                                                               |
++------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_override_selected_font_color<class_TextEdit_set_override_selected_font_color>`  **(** :ref:`bool<class_bool>` override  **)**                                                                                     |
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_readonly<class_TextEdit_set_readonly>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                                                               |
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -146,6 +150,7 @@ Member Variables
 - :ref:`float<class_float>` **caret_blink_speed**
 - :ref:`bool<class_bool>` **caret_block_mode**
 - :ref:`bool<class_bool>` **highlight_all_occurrences**
+- :ref:`bool<class_bool>` **override_selected_font_color**
 - :ref:`bool<class_bool>` **show_line_numbers**
 - :ref:`bool<class_bool>` **smooth_scrolling**
 - :ref:`bool<class_bool>` **syntax_highlighting**
@@ -337,6 +342,10 @@ Insert a given text at the cursor position.
 
 Returns true if highlight all occurrences is enabled.
 
+.. _class_TextEdit_is_overriding_selected_font_color:
+
+- :ref:`bool<class_bool>`  **is_overriding_selected_font_color**  **(** **)** const
+
 .. _class_TextEdit_is_selection_active:
 
 - :ref:`bool<class_bool>`  **is_selection_active**  **(** **)** const
@@ -404,6 +413,10 @@ Set to enable highlighting all occurrences of the current selection.
 - void  **set_max_chars**  **(** :ref:`int<class_int>` amount  **)**
 
 Set the maximum amount of characters editable.
+
+.. _class_TextEdit_set_override_selected_font_color:
+
+- void  **set_override_selected_font_color**  **(** :ref:`bool<class_bool>` override  **)**
 
 .. _class_TextEdit_set_readonly:
 

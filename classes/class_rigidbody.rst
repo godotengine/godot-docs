@@ -132,19 +132,20 @@ Member Variables
 - :ref:`Vector3<class_vector3>` **angular_velocity** - RigidBody's rotational velocity.
 - :ref:`int<class_int>` **axis_lock** - Locks the rotational forces to a particular axis, preventing rotations on other axes.
 - :ref:`float<class_float>` **bounce** - RigidBody's bounciness.
-- :ref:`bool<class_bool>` **can_sleep** - If [code]true[/code] the RigidBody will not calculate forces and will act as a static body while there is no movement. It will wake up when forces are applied through other collisions or when the [code]apply_impulse[/code] method is used.
+- :ref:`bool<class_bool>` **can_sleep** - If ``true`` the RigidBody will not calculate forces and will act as a static body while there is no movement. It will wake up when forces are applied through other collisions or when the ``apply_impulse`` method is used.
 - :ref:`bool<class_bool>` **contact_monitor** - If true, the RigidBody will emit signals when it collides with another RigidBody.
 - :ref:`int<class_int>` **contacts_reported** - The maximum contacts to report. Bodies can keep a log of the contacts with other bodies, this is enabled by setting the maximum amount of contacts reported to a number greater than 0.
-- :ref:`bool<class_bool>` **continuous_cd** - If [code]true[/code] continuous collision detection is used.
-			Continuous collision detection tries to predict where a moving body will collide, instead of moving it and correcting its movement if it collided. Continuous collision detection is more precise, and misses less impacts by small, fast-moving objects. Not using continuous collision detection is faster to compute, but can miss small, fast-moving objects.
-- :ref:`bool<class_bool>` **custom_integrator** - If [code]true[/code] internal force integration will be disabled (like gravity or air friction) for this body. Other than collision response, the body will only move as determined by the [method _integrate_forces] function, if defined.
+- :ref:`bool<class_bool>` **continuous_cd** - If ``true`` continuous collision detection is used.
+
+Continuous collision detection tries to predict where a moving body will collide, instead of moving it and correcting its movement if it collided. Continuous collision detection is more precise, and misses less impacts by small, fast-moving objects. Not using continuous collision detection is faster to compute, but can miss small, fast-moving objects.
+- :ref:`bool<class_bool>` **custom_integrator** - If ``true`` internal force integration will be disabled (like gravity or air friction) for this body. Other than collision response, the body will only move as determined by the :ref:`_integrate_forces<class_RigidBody__integrate_forces>` function, if defined.
 - :ref:`float<class_float>` **friction** - The body friction, from 0 (frictionless) to 1 (max friction).
 - :ref:`float<class_float>` **gravity_scale** - This is multiplied by the global 3D gravity setting found in "Project > Project Settings > Physics > 3d" to produce RigidBody's gravity. E.g. a value of 1 will be normal gravity, 2 will apply double gravity, and 0.5 will apply half gravity to this object.
 - :ref:`float<class_float>` **linear_damp** - RigidBody's linear damp. Default value: -1, cannot be less than -1. If this value is different from -1, any linear damp derived from the world or areas will be overridden.
-- :ref:`Vector3<class_vector3>` **linear_velocity** - RigidBody's linear velocity. Can be used sporadically, but [b]DON'T SET THIS IN EVERY FRAME[/b], because physics may run in another thread and runs at a different granularity. Use [method _integrate_forces] as your process loop for precise control of the body state.
+- :ref:`Vector3<class_vector3>` **linear_velocity** - RigidBody's linear velocity. Can be used sporadically, but **DON'T SET THIS IN EVERY FRAME**, because physics may run in another thread and runs at a different granularity. Use :ref:`_integrate_forces<class_RigidBody__integrate_forces>` as your process loop for precise control of the body state.
 - :ref:`float<class_float>` **mass** - RigidBody's mass.
-- :ref:`int<class_int>` **mode** - The body mode from the MODE_* enum. Modes include: MODE_STATIC, MODE_KINEMATIC, MODE_RIGID, and MODE_CHARACTER.
-- :ref:`bool<class_bool>` **sleeping** - If [code]true[/code] RigidBody is sleeping and will not calculate forces until woken up by a collision or the [code]apply_impulse[/code] method.
+- :ref:`int<class_int>` **mode** - The body mode from the MODE\_\* enum. Modes include: MODE_STATIC, MODE_KINEMATIC, MODE_RIGID, and MODE_CHARACTER.
+- :ref:`bool<class_bool>` **sleeping** - If ``true`` RigidBody is sleeping and will not calculate forces until woken up by a collision or the ``apply_impulse`` method.
 - :ref:`float<class_float>` **weight** - RigidBody's weight based on its mass and the global 3D gravity. Global values are set in "Project > Project Settings > Physics > 3d".
 
 Numeric Constants

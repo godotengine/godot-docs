@@ -16,6 +16,8 @@ Brief Description
 
 Input event type for screen drag events.
 
+(only available on mobile devices)
+
 Member Functions
 ----------------
 
@@ -41,9 +43,14 @@ Member Variables
 ----------------
 
 - :ref:`int<class_int>` **index** - Drag event index in the case of a multi-drag event.
-- :ref:`Vector2<class_vector2>` **position** - Position of the drag event.
-- :ref:`Vector2<class_vector2>` **relative** - Position of the drag event relative to its start position.
-- :ref:`Vector2<class_vector2>` **speed** - Speed of the drag event.
+- :ref:`Vector2<class_vector2>` **position** - Drag position.
+- :ref:`Vector2<class_vector2>` **relative** - Drag position relative to its start position.
+- :ref:`Vector2<class_vector2>` **speed** - Drag speed.
+
+Description
+-----------
+
+Contains screen drag informations. See :ref:`Node._input<class_Node__input>`.
 
 Member Function Description
 ---------------------------

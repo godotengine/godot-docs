@@ -48,8 +48,8 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`PoolColorArray<class_poolcolorarray>` **colors** - Gradient's colors returned as a [PoolColorArray].
-- :ref:`PoolRealArray<class_poolrealarray>` **offsets** - Gradient's offsets returned as a [PoolRealArray].
+- :ref:`PoolColorArray<class_poolcolorarray>` **colors** - Gradient's colors returned as a :ref:`PoolColorArray<class_poolcolorarray>`.
+- :ref:`PoolRealArray<class_poolrealarray>` **offsets** - Gradient's offsets returned as a :ref:`PoolRealArray<class_poolrealarray>`.
 
 Description
 -----------

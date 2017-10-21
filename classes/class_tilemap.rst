@@ -130,21 +130,21 @@ Emitted when a tilemap setting has changed.
 Member Variables
 ----------------
 
-- :ref:`Transform2D<class_transform2d>` **cell_custom_transform** - The custom [Transform2D] to be applied to the TileMap's cells.
-- :ref:`int<class_int>` **cell_half_offset** - Amount to offset alternating tiles. Uses HALF_OFFSET_* constants. Default value: HALF_OFFSET_DISABLED.
+- :ref:`Transform2D<class_transform2d>` **cell_custom_transform** - The custom :ref:`Transform2D<class_transform2d>` to be applied to the TileMap's cells.
+- :ref:`int<class_int>` **cell_half_offset** - Amount to offset alternating tiles. Uses HALF_OFFSET\_\* constants. Default value: HALF_OFFSET_DISABLED.
 - :ref:`int<class_int>` **cell_quadrant_size** - The TileMap's quadrant size.  Optimizes drawing by batching, using chunks of this size. Default value: 16.
 - :ref:`Vector2<class_vector2>` **cell_size** - The TileMap's cell size.
-- :ref:`int<class_int>` **cell_tile_origin** - Position for tile origin. Uses TILE_ORIGIN_* constants. Default value: TILE_ORIGIN_TOP_LEFT.
-- :ref:`bool<class_bool>` **cell_y_sort** - If [code]true[/code] the TileMap's children will be drawn in order of their Y coordinate. Default value: [code]false[/code].
-- :ref:`float<class_float>` **collision_bounce** - Bounce value for static body collisions (see [code]collision_use_kinematic[/code]). Default value: 0.
-- :ref:`float<class_float>` **collision_friction** - Friction value for static body collisions (see [code]collision_use_kinematic[/code]). Default value: 1.
+- :ref:`int<class_int>` **cell_tile_origin** - Position for tile origin. Uses TILE_ORIGIN\_\* constants. Default value: TILE_ORIGIN_TOP_LEFT.
+- :ref:`bool<class_bool>` **cell_y_sort** - If ``true`` the TileMap's children will be drawn in order of their Y coordinate. Default value: ``false``.
+- :ref:`float<class_float>` **collision_bounce** - Bounce value for static body collisions (see ``collision_use_kinematic``). Default value: 0.
+- :ref:`float<class_float>` **collision_friction** - Friction value for static body collisions (see ``collision_use_kinematic``). Default value: 1.
 - :ref:`int<class_int>` **collision_layer** - The collision layer(s) for all colliders in the TileMap.
 - :ref:`int<class_int>` **collision_mask** - The collision mask(s) for all colliders in the TileMap.
-- :ref:`bool<class_bool>` **collision_use_kinematic** - If [code]true[/code] TileMap collisions will be handled as a kinematic body. If [code]false[/code] collisions will be handled as static body. Default value: [code]false[/code].
-- :ref:`int<class_int>` **mode** - The TileMap orientation mode. Uses MODE_* constants. Default value: MODE_SQUARE.
+- :ref:`bool<class_bool>` **collision_use_kinematic** - If ``true`` TileMap collisions will be handled as a kinematic body. If ``false`` collisions will be handled as static body. Default value: ``false``.
+- :ref:`int<class_int>` **mode** - The TileMap orientation mode. Uses MODE\_\* constants. Default value: MODE_SQUARE.
 - :ref:`int<class_int>` **occluder_light_mask** - The light mask assigned to all light occluders in the TileMap.  The TileSet's light occluders will cast shadows only from Light2D(s) that have the same light mask(s).
-- :ref:`PoolIntArray<class_poolintarray>` **tile_data** - A [PoolIntArray] containing
-- :ref:`TileSet<class_tileset>` **tile_set** - The assigned [TileSet].
+- :ref:`PoolIntArray<class_poolintarray>` **tile_data** - A :ref:`PoolIntArray<class_poolintarray>` containing
+- :ref:`TileSet<class_tileset>` **tile_set** - The assigned :ref:`TileSet<class_tileset>`.
 
 Numeric Constants
 -----------------

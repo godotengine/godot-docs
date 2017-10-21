@@ -78,16 +78,16 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **begin_cap_mode** - Controls the style of the line's first point. Use [code]LINE_CAP_*[/code] constants. Default value: [code]LINE_CAP_NONE[/code].
+- :ref:`int<class_int>` **begin_cap_mode** - Controls the style of the line's first point. Use ``LINE_CAP\_\*`` constants. Default value: ``LINE_CAP_NONE``.
 - :ref:`Color<class_color>` **default_color** - The line's color. Will not be used if a gradient is set.
-- :ref:`int<class_int>` **end_cap_mode** - Controls the style of the line's last point. Use [code]LINE_CAP_*[/code] constants. Default value: [code]LINE_CAP_NONE[/code].
+- :ref:`int<class_int>` **end_cap_mode** - Controls the style of the line's last point. Use ``LINE_CAP\_\*`` constants. Default value: ``LINE_CAP_NONE``.
 - :ref:`Gradient<class_gradient>` **gradient** - The gradient is drawn through the whole line from start to finish. The default color will not be used if a gradient is set.
 - :ref:`int<class_int>` **joint_mode** - The style for the points inbetween the start and the end.
 - :ref:`PoolVector2Array<class_poolvector2array>` **points** - The points that form the lines. The line is drawn between every point set in this array.
 - :ref:`int<class_int>` **round_precision** - The smoothness of the rounded joints and caps. This is only used if a cap or joint is set as round.
-- :ref:`float<class_float>` **sharp_limit** - The direction difference in radians between vector points. This value is only used if [code]joint mode[/code] is set to [code]LINE_JOINT_SHARP[/code].
-- :ref:`Texture<class_texture>` **texture** - The texture used for the line's texture. Uses [code]texture_mode[/code] for drawing style.
-- :ref:`int<class_int>` **texture_mode** - The style to render the [code]texture[/code] on the line. Use [code]LINE_TEXTURE_*[/code] constants. Default value: [code]LINE_TEXTURE_NONE[/code].
+- :ref:`float<class_float>` **sharp_limit** - The direction difference in radians between vector points. This value is only used if ``joint mode`` is set to ``LINE_JOINT_SHARP``.
+- :ref:`Texture<class_texture>` **texture** - The texture used for the line's texture. Uses ``texture_mode`` for drawing style.
+- :ref:`int<class_int>` **texture_mode** - The style to render the ``texture`` on the line. Use ``LINE_TEXTURE\_\*`` constants. Default value: ``LINE_TEXTURE_NONE``.
 - :ref:`float<class_float>` **width** - The line's width.
 
 Numeric Constants

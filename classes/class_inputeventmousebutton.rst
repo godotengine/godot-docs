@@ -38,10 +38,15 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **button_index** - Mouse button identifier, one of the BUTTON_* or BUTTON_WHEEL_* constants in [@Global Scope].
-- :ref:`bool<class_bool>` **doubleclick** - Whether the event is a double-click.
-- :ref:`float<class_float>` **factor**
-- :ref:`bool<class_bool>` **pressed** - Pressed state of the mouse button.
+- :ref:`int<class_int>` **button_index** - Mouse button identifier, one of the BUTTON\_\* or BUTTON_WHEEL\_\* constants in :ref:`@Global Scope<class_@global scope>`.
+- :ref:`bool<class_bool>` **doubleclick** - If ``true`` the mouse button's state is a double-click. If ``false`` the mouse button's state is released.
+- :ref:`float<class_float>` **factor** - TO TALK in PR, reduz said : i think it's used for apple touch but i don't remember what it does
+- :ref:`bool<class_bool>` **pressed** - If ``true`` the mouse button's state is pressed. If ``false`` the mouse button's state is released.
+
+Description
+-----------
+
+Contains mouse click informations. See :ref:`Node._input<class_Node__input>`.
 
 Member Function Description
 ---------------------------

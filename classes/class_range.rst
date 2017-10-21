@@ -74,12 +74,12 @@ This signal is emitted when value changes.
 Member Variables
 ----------------
 
-- :ref:`bool<class_bool>` **exp_edit** - If [code]true[/code] and [code]min_value[/code] is greater than 0, [code]value[/code] will be represented exponentially rather than linearly.
-- :ref:`float<class_float>` **max_value** - Maximum value. Range is clamped if [code]value[/code] is greater than [code]max_value[/code]. Default value: 100.
-- :ref:`float<class_float>` **min_value** - Minimum value. Range is clamped if [code]value[/code] is less than [code]min_value[/code]. Default value: 0.
-- :ref:`float<class_float>` **page** - Page size. Used mainly for [ScrollBar]. ScrollBar's length is its size multiplied by [code]page[/code] over the difference between [code]min_value[/code] and [code]max_value[/code].
-- :ref:`bool<class_bool>` **rounded** - If [code]true[/code], [code]value[/code] will always be rounded to the nearest integer.
-- :ref:`float<class_float>` **step** - If greater than 0, [code]value[/code] will always be rounded to a multiple of [code]step[/code]. If [code]rounded[/code] is also [code]true[/code], [code]value[/code] will first be rounded to a multiple of [code]step[/code] then rounded to the nearest integer.
+- :ref:`bool<class_bool>` **exp_edit** - If ``true`` and ``min_value`` is greater than 0, ``value`` will be represented exponentially rather than linearly.
+- :ref:`float<class_float>` **max_value** - Maximum value. Range is clamped if ``value`` is greater than ``max_value``. Default value: 100.
+- :ref:`float<class_float>` **min_value** - Minimum value. Range is clamped if ``value`` is less than ``min_value``. Default value: 0.
+- :ref:`float<class_float>` **page** - Page size. Used mainly for :ref:`ScrollBar<class_scrollbar>`. ScrollBar's length is its size multiplied by ``page`` over the difference between ``min_value`` and ``max_value``.
+- :ref:`bool<class_bool>` **rounded** - If ``true``, ``value`` will always be rounded to the nearest integer.
+- :ref:`float<class_float>` **step** - If greater than 0, ``value`` will always be rounded to a multiple of ``step``. If ``rounded`` is also ``true``, ``value`` will first be rounded to a multiple of ``step`` then rounded to the nearest integer.
 - :ref:`float<class_float>` **value** - Range's current value.
 
 Description

@@ -148,24 +148,24 @@ Emitted when a :ref:`PhysicsBody2D<class_physicsbody2d>` object exits, reporting
 Member Variables
 ----------------
 
-- :ref:`float<class_float>` **angular_damp** - The rate at which objects stop spinning in this area. Represents the angular velocity lost per second. Values range from [code]0[/code] (no damping) to [code]1[/code] (full damping).
+- :ref:`float<class_float>` **angular_damp** - The rate at which objects stop spinning in this area. Represents the angular velocity lost per second. Values range from ``0`` (no damping) to ``1`` (full damping).
 - :ref:`String<class_string>` **audio_bus_name** - The name of the area's audio bus.
-- :ref:`bool<class_bool>` **audio_bus_override** - If [code]true[/code] the area's audio bus overrides the default audio bus. Default value: [code]false[/code].
-- :ref:`int<class_int>` **collision_layer** - The area's physics layer(s). Collidable objects can exist in any of 32 different layers. A contact is detected if object A is in any of the layers that object B scans, or object B is in any layers that object A scans. See also [code]collision_mask[/code].
+- :ref:`bool<class_bool>` **audio_bus_override** - If ``true`` the area's audio bus overrides the default audio bus. Default value: ``false``.
+- :ref:`int<class_int>` **collision_layer** - The area's physics layer(s). Collidable objects can exist in any of 32 different layers. A contact is detected if object A is in any of the layers that object B scans, or object B is in any layers that object A scans. See also ``collision_mask``.
 - :ref:`int<class_int>` **collision_mask** - The physics layers this area scans to determine collision detection.
 - :ref:`float<class_float>` **gravity** - The area's gravity intensity (ranges from -1024 to 1024). This value multiplies the gravity vector. This is useful to alter the force of gravity without altering its direction.
 - :ref:`float<class_float>` **gravity_distance_scale** - The falloff factor for point gravity. The greater the value, the faster gravity decreases with distance.
-- :ref:`bool<class_bool>` **gravity_point** - If [code]true[/code] gravity is calculated from a point (set via [code]gravity_vec[/code]). Also see [code]space_override[/code]. Default value: [code]false[/code].
-- :ref:`Vector3<class_vector3>` **gravity_vec** - The area's gravity vector (not normalized). If gravity is a point (see [method is_gravity_a_point]), this will be the point of attraction.
-- :ref:`float<class_float>` **linear_damp** - The rate at which objects stop moving in this area. Represents the linear velocity lost per second. Values range from [code]0[/code] (no damping) to [code]1[/code] (full damping).
-- :ref:`bool<class_bool>` **monitorable** - If [code]true[/code] other monitoring areas can detect this area. Default value: [code]true[/code].
-- :ref:`bool<class_bool>` **monitoring** - If [code]true[/code] the area detects bodies or areas entering and exiting it. Default value: [code]true[/code].
+- :ref:`bool<class_bool>` **gravity_point** - If ``true`` gravity is calculated from a point (set via ``gravity_vec``). Also see ``space_override``. Default value: ``false``.
+- :ref:`Vector3<class_vector3>` **gravity_vec** - The area's gravity vector (not normalized). If gravity is a point (see :ref:`is_gravity_a_point<class_Area_is_gravity_a_point>`), this will be the point of attraction.
+- :ref:`float<class_float>` **linear_damp** - The rate at which objects stop moving in this area. Represents the linear velocity lost per second. Values range from ``0`` (no damping) to ``1`` (full damping).
+- :ref:`bool<class_bool>` **monitorable** - If ``true`` other monitoring areas can detect this area. Default value: ``true``.
+- :ref:`bool<class_bool>` **monitoring** - If ``true`` the area detects bodies or areas entering and exiting it. Default value: ``true``.
 - :ref:`float<class_float>` **priority** - The area's priority. Higher priority areas are processed first. Default value: 0.
 - :ref:`float<class_float>` **reverb_bus_amount**
 - :ref:`bool<class_bool>` **reverb_bus_enable**
 - :ref:`String<class_string>` **reverb_bus_name**
 - :ref:`float<class_float>` **reverb_bus_uniformity**
-- :ref:`int<class_int>` **space_override** - Override mode for gravity and damping calculations within this area. See the SPACE_OVERRIDE_* constants for values.
+- :ref:`int<class_int>` **space_override** - Override mode for gravity and damping calculations within this area. See the SPACE_OVERRIDE\_\* constants for values.
 
 Numeric Constants
 -----------------

@@ -56,14 +56,14 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`bool<class_bool>` **expand** - If [code]true[/code] the texture stretches to the edges of the node's bounding rectangle using the [member stretch_mode]. If [code]false[/code] the texture will not scale with the node. Default value: [code]false[/code].
-- :ref:`int<class_int>` **stretch_mode** - Controls the texture's behavior when you resize the node's bounding rectangle, [b]only if[/b] [member expand] is [code]true[/code]. Set it to one of the [code]STRETCH_*[/code] constants. See the constants to learn more.
-- :ref:`BitMap<class_bitmap>` **texture_click_mask** - Pure black and white [Bitmap] image to use for click detection. On the mask, white pixels represent the button's clickable area. Use it to create buttons with curved shapes.
-- :ref:`Texture<class_texture>` **texture_disabled** - Texture to display when the node is disabled. See [member BaseButton.disabled].
+- :ref:`bool<class_bool>` **expand** - If ``true`` the texture stretches to the edges of the node's bounding rectangle using the member stretch_mode. If ``false`` the texture will not scale with the node. Default value: ``false``.
+- :ref:`int<class_int>` **stretch_mode** - Controls the texture's behavior when you resize the node's bounding rectangle, **only if** member expand is ``true``. Set it to one of the ``STRETCH\_\*`` constants. See the constants to learn more.
+- :ref:`BitMap<class_bitmap>` **texture_click_mask** - Pure black and white Bitmap image to use for click detection. On the mask, white pixels represent the button's clickable area. Use it to create buttons with curved shapes.
+- :ref:`Texture<class_texture>` **texture_disabled** - Texture to display when the node is disabled. See member BaseButton.disabled.
 - :ref:`Texture<class_texture>` **texture_focused** - Texture to display when the node has mouse or keyboard focus.
 - :ref:`Texture<class_texture>` **texture_hover** - Texture to display when the mouse hovers the node.
-- :ref:`Texture<class_texture>` **texture_normal** - Texture to display by default, when the node is [b]not[/b] in the disabled, focused, hover or pressed state.
-- :ref:`Texture<class_texture>` **texture_pressed** - Texture to display on mouse down over the node, if the node has keyboard focus and the player presses the enter key or if the player presses the [member BaseButton.shortcut] key.
+- :ref:`Texture<class_texture>` **texture_normal** - Texture to display by default, when the node is **not** in the disabled, focused, hover or pressed state.
+- :ref:`Texture<class_texture>` **texture_pressed** - Texture to display on mouse down over the node, if the node has keyboard focus and the player presses the enter key or if the player presses the member BaseButton.shortcut key.
 
 Numeric Constants
 -----------------

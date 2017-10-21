@@ -60,20 +60,22 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **fill_mode** - The fill direction. Uses FILL_* constants.
-- :ref:`bool<class_bool>` **nine_patch_stretch** - If [code]true[/code] Godot treats the bar's textures like [NinePatchRect]. Use [code]stretch_margin_*[/code], like [member stretch_margin_bottom], to set up the nine patch's 3x3 grid. Default value: [code]false[/code].
-- :ref:`Vector2<class_vector2>` **radial_center_offset** - Offsets [member texture_progress] if [member fill_mode] is [code]FILL_CLOCKWISE[/code] or [code]FILL_COUNTER_CLOCKWISE[/code].
-- :ref:`float<class_float>` **radial_fill_degrees** - Upper limit for the fill of [member texture_progress] if [member fill_mode] is [code]FILL_CLOCKWISE[/code] or [code]FILL_COUNTER_CLOCKWISE[/code]. When the node's [code]value[/code] is equal to its [code]max_value[/code], the texture fills up to this angle.
-			See [member Range.value], [member Range.max_value].
-- :ref:`float<class_float>` **radial_initial_angle** - Starting angle for the fill of [member texture_progress] if [member fill_mode] is [code]FILL_CLOCKWISE[/code] or [code]FILL_COUNTER_CLOCKWISE[/code]. When the node's [code]value[/code] is equal to its [code]min_value[/code], the texture doesn't show up at all. When the [code]value[/code] increases, the texture fills and tends towards [member radial_fill_degrees].
+- :ref:`int<class_int>` **fill_mode** - The fill direction. Uses FILL\_\* constants.
+- :ref:`bool<class_bool>` **nine_patch_stretch** - If ``true`` Godot treats the bar's textures like :ref:`NinePatchRect<class_ninepatchrect>`. Use ``stretch_margin\_\*``, like member stretch_margin_bottom, to set up the nine patch's 3x3 grid. Default value: ``false``.
+- :ref:`Vector2<class_vector2>` **radial_center_offset** - Offsets member texture_progress if member fill_mode is ``FILL_CLOCKWISE`` or ``FILL_COUNTER_CLOCKWISE``.
+- :ref:`float<class_float>` **radial_fill_degrees** - Upper limit for the fill of member texture_progress if member fill_mode is ``FILL_CLOCKWISE`` or ``FILL_COUNTER_CLOCKWISE``. When the node's ``value`` is equal to its ``max_value``, the texture fills up to this angle.
+
+See member Range.value, member Range.max_value.
+- :ref:`float<class_float>` **radial_initial_angle** - Starting angle for the fill of member texture_progress if member fill_mode is ``FILL_CLOCKWISE`` or ``FILL_COUNTER_CLOCKWISE``. When the node's ``value`` is equal to its ``min_value``, the texture doesn't show up at all. When the ``value`` increases, the texture fills and tends towards member radial_fill_degrees.
 - :ref:`int<class_int>` **stretch_margin_bottom** - The height of the 9-patch's bottom row. A margin of 16 means the 9-slice's bottom corners and side will have a height of 16 pixels. You can set all 4 margin values individually to create panels with non-uniform borders.
 - :ref:`int<class_int>` **stretch_margin_left** - The width of the 9-patch's left column.
 - :ref:`int<class_int>` **stretch_margin_right** - The width of the 9-patch's right column.
 - :ref:`int<class_int>` **stretch_margin_top** - The height of the 9-patch's top row.
-- :ref:`Texture<class_texture>` **texture_over** - [Texture] that draws over the progress bar. Use it to add highlights or an upper-frame that hides part of [member texture_progress].
-- :ref:`Texture<class_texture>` **texture_progress** - [Texture] that clips based on the node's [code]value[/code] and [member fill_mode]. As [code]value[/code] increased, the texture fills up. It shows entirely when [code]value[/code] reaches [code]max_value[/code]. It doesn't show at all if [code]value[/code] is equal to [code]min_value[/code].
-			The [code]value[/code] property comes from [Range]. See [member Range.value], [member Range.min_value], [member Range.max_value].
-- :ref:`Texture<class_texture>` **texture_under** - [Texture] that draws under the progress bar. The bar's background.
+- :ref:`Texture<class_texture>` **texture_over** - :ref:`Texture<class_texture>` that draws over the progress bar. Use it to add highlights or an upper-frame that hides part of member texture_progress.
+- :ref:`Texture<class_texture>` **texture_progress** - :ref:`Texture<class_texture>` that clips based on the node's ``value`` and member fill_mode. As ``value`` increased, the texture fills up. It shows entirely when ``value`` reaches ``max_value``. It doesn't show at all if ``value`` is equal to ``min_value``.
+
+The ``value`` property comes from :ref:`Range<class_range>`. See member Range.value, member Range.min_value, member Range.max_value.
+- :ref:`Texture<class_texture>` **texture_under** - :ref:`Texture<class_texture>` that draws under the progress bar. The bar's background.
 
 Numeric Constants
 -----------------

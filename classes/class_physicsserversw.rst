@@ -14,5 +14,10 @@ PhysicsServerSW
 Brief Description
 -----------------
 
+Software implementation of :ref:`PhysicsServer<class_physicsserver>`.
 
+Description
+-----------
+
+This class exposes no new methods or properties and should not be used, as :ref:`PhysicsServer<class_physicsserver>` automatically selects the best implementation available.
 

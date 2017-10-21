@@ -14,7 +14,7 @@ VisualScriptMathConstant
 Brief Description
 -----------------
 
-
+Commonly used mathematical constants.
 
 Member Functions
 ----------------
@@ -28,20 +28,33 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **constant**
+- :ref:`int<class_int>` **constant** - The math constant.
 
 Numeric Constants
 -----------------
 
-- **MATH_CONSTANT_ONE** = **0**
-- **MATH_CONSTANT_PI** = **1**
-- **MATH_CONSTANT_2PI** = **2**
-- **MATH_CONSTANT_HALF_PI** = **3**
-- **MATH_CONSTANT_E** = **4**
-- **MATH_CONSTANT_SQRT2** = **5**
-- **MATH_CONSTANT_INF** = **6**
-- **MATH_CONSTANT_NAN** = **7**
+- **MATH_CONSTANT_ONE** = **0** --- Unity: ``1``
+- **MATH_CONSTANT_PI** = **1** --- Pi: ``3.141593``
+- **MATH_CONSTANT_2PI** = **2** --- Pi times two: ``6.283185``
+- **MATH_CONSTANT_HALF_PI** = **3** --- Pi divided by two: ``1.570796``
+- **MATH_CONSTANT_E** = **4** --- Natural log: ``2.718282``
+- **MATH_CONSTANT_SQRT2** = **5** --- Square root of two: ``1.414214``
+- **MATH_CONSTANT_INF** = **6** --- Infinity: ``inf``
+- **MATH_CONSTANT_NAN** = **7** --- Not a number: ``nan``
 - **MATH_CONSTANT_MAX** = **8**
+
+Description
+-----------
+
+Provides common math constants, such as Pi or Euler's constant, on an output Data port.
+
+**Input Ports:**
+
+none
+
+**Output Ports:**
+
+- Data (variant): ``get``
 
 Member Function Description
 ---------------------------

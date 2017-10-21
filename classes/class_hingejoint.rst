@@ -14,7 +14,7 @@ HingeJoint
 Brief Description
 -----------------
 
-
+A hinge between two 3D bodies.
 
 Member Functions
 ----------------
@@ -32,32 +32,37 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`float<class_float>` **angular_limit/bias**
-- :ref:`bool<class_bool>` **angular_limit/enable**
-- :ref:`float<class_float>` **angular_limit/lower**
-- :ref:`float<class_float>` **angular_limit/relaxation**
+- :ref:`float<class_float>` **angular_limit/bias** - The speed with which the rotation across the axis perpendicular to the hinge gets corrected.
+- :ref:`bool<class_bool>` **angular_limit/enable** - If ``true`` the hinges maximum and minimum rotation, defined by member angular_limit/lower and member angular_limit/upper has effects.
+- :ref:`float<class_float>` **angular_limit/lower** - The minimum rotation. only active if member angular_limit/enable is ``true``.
+- :ref:`float<class_float>` **angular_limit/relaxation** - The lower this value, the more the rotation gets slowed down.
 - :ref:`float<class_float>` **angular_limit/softness**
-- :ref:`float<class_float>` **angular_limit/upper**
-- :ref:`bool<class_bool>` **motor/enable**
-- :ref:`float<class_float>` **motor/max_impulse**
-- :ref:`float<class_float>` **motor/target_velocity**
-- :ref:`float<class_float>` **params/bias**
+- :ref:`float<class_float>` **angular_limit/upper** - The maximum rotation. only active if member angular_limit/enable is ``true``.
+- :ref:`bool<class_bool>` **motor/enable** - When activated, a motor turns the hinge.
+- :ref:`float<class_float>` **motor/max_impulse** - Maximum acceleration for the motor.
+- :ref:`float<class_float>` **motor/target_velocity** - Target speed for the motor.
+- :ref:`float<class_float>` **params/bias** - The speed with wich the two bodies get pulled together when they move in different directions.
 
 Numeric Constants
 -----------------
 
-- **PARAM_BIAS** = **0**
-- **PARAM_LIMIT_UPPER** = **1**
-- **PARAM_LIMIT_LOWER** = **2**
-- **PARAM_LIMIT_BIAS** = **3**
+- **PARAM_BIAS** = **0** --- The speed with wich the two bodies get pulled together when they move in different directions.
+- **PARAM_LIMIT_UPPER** = **1** --- The maximum rotation. only active if member angular_limit/enable is ``true``.
+- **PARAM_LIMIT_LOWER** = **2** --- The minimum rotation. only active if member angular_limit/enable is ``true``.
+- **PARAM_LIMIT_BIAS** = **3** --- The speed with which the rotation across the axis perpendicular to the hinge gets corrected.
 - **PARAM_LIMIT_SOFTNESS** = **4**
-- **PARAM_LIMIT_RELAXATION** = **5**
-- **PARAM_MOTOR_TARGET_VELOCITY** = **6**
-- **PARAM_MOTOR_MAX_IMPULSE** = **7**
-- **PARAM_MAX** = **8**
-- **FLAG_USE_LIMIT** = **0**
-- **FLAG_ENABLE_MOTOR** = **1**
-- **FLAG_MAX** = **2**
+- **PARAM_LIMIT_RELAXATION** = **5** --- The lower this value, the more the rotation gets slowed down.
+- **PARAM_MOTOR_TARGET_VELOCITY** = **6** --- Target speed for the motor.
+- **PARAM_MOTOR_MAX_IMPULSE** = **7** --- Maximum acceleration for the motor.
+- **PARAM_MAX** = **8** --- End flag of PARAM\_\* constants, used internally.
+- **FLAG_USE_LIMIT** = **0** --- If ``true`` the hinges maximum and minimum rotation, defined by member angular_limit/lower and member angular_limit/upper has effects.
+- **FLAG_ENABLE_MOTOR** = **1** --- When activated, a motor turns the hinge.
+- **FLAG_MAX** = **2** --- End flag of FLAG\_\* constants, used internally.
+
+Description
+-----------
+
+Normaly uses the z-axis of body A as the hinge axis, another axis can be specified when adding it manually though.
 
 Member Function Description
 ---------------------------

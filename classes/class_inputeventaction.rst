@@ -30,8 +30,13 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`String<class_string>` **action**
-- :ref:`bool<class_bool>` **pressed**
+- :ref:`String<class_string>` **action** - The action's name. Actions are accessed via this :ref:`String<class_string>`.
+- :ref:`bool<class_bool>` **pressed** - If ``true`` the action's state is pressed. If ``false`` the action's state is released.
+
+Description
+-----------
+
+Contains a generic action which can be targeted from several type of inputs. Actions can be created from the project settings menu ``Project > Project Settings > Input Map[/Code]. See [method Node._input].
 
 Member Function Description
 ---------------------------

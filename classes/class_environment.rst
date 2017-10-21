@@ -301,11 +301,11 @@ Member Variables
 ----------------
 
 - :ref:`float<class_float>` **adjustment_brightness** - Global brightness value of the rendered scene (default value is 1).
-- :ref:`Texture<class_texture>` **adjustment_color_correction** - Applies the provided [Texture] resource to affect the global color aspect of the rendered scene.
+- :ref:`Texture<class_texture>` **adjustment_color_correction** - Applies the provided :ref:`Texture<class_texture>` resource to affect the global color aspect of the rendered scene.
 - :ref:`float<class_float>` **adjustment_contrast** - Global contrast value of the rendered scene (default value is 1).
-- :ref:`bool<class_bool>` **adjustment_enabled** - Enables the adjustment_* options provided by this resource. If false, adjustments modifications will have no effect on the rendered scene.
+- :ref:`bool<class_bool>` **adjustment_enabled** - Enables the adjustment\_\* options provided by this resource. If false, adjustments modifications will have no effect on the rendered scene.
 - :ref:`float<class_float>` **adjustment_saturation** - Global color saturation value of the rendered scene (default value is 1).
-- :ref:`Color<class_color>` **ambient_light_color** - [Color] of the ambient light.
+- :ref:`Color<class_color>` **ambient_light_color** - :ref:`Color<class_color>` of the ambient light.
 - :ref:`float<class_float>` **ambient_light_energy** - Energy of the ambient light. The higher the value, the stronger the light.
 - :ref:`float<class_float>` **ambient_light_sky_contribution** - Defines the amount of light that the sky brings on the scene. A value of 0 means that the sky's light emission has no effect on the scene illumination, thus all ambient illumination is provided by the ambient light. On the contrary, a value of 1 means that all the light that affects the scene is provided by the sky, thus the ambient light parameter has no effect on the scene.
 - :ref:`bool<class_bool>` **auto_exposure_enabled** - Enables the tonemapping auto exposure mode of the scene renderer. If activated, the renderer will automatically determine the exposure setting to adapt to the illumination of the scene and the observed light.
@@ -317,8 +317,8 @@ Member Variables
 - :ref:`Color<class_color>` **background_color** - Color displayed for clear areas of the scene (if using Custom color or Color+Sky background modes).
 - :ref:`float<class_float>` **background_energy** - Power of light emitted by the background.
 - :ref:`int<class_int>` **background_mode** - Defines the mode of background.
-- :ref:`Sky<class_sky>` **background_sky** - [Sky] resource defined as background.
-- :ref:`float<class_float>` **background_sky_custom_fov** - [Sky] resource's custom field of view.
+- :ref:`Sky<class_sky>` **background_sky** - :ref:`Sky<class_sky>` resource defined as background.
+- :ref:`float<class_float>` **background_sky_custom_fov** - :ref:`Sky<class_sky>` resource's custom field of view.
 - :ref:`float<class_float>` **dof_blur_far_amount** - Amount of far blur.
 - :ref:`float<class_float>` **dof_blur_far_distance** - Distance from the camera where the far blur effect affects the rendering.
 - :ref:`bool<class_bool>` **dof_blur_far_enabled** - Enables the far blur effect.
@@ -329,7 +329,7 @@ Member Variables
 - :ref:`bool<class_bool>` **dof_blur_near_enabled** - Enables the near blur effect.
 - :ref:`int<class_int>` **dof_blur_near_quality** - Quality of the near blur quality.
 - :ref:`float<class_float>` **dof_blur_near_transition** - Transition between near blur and no-blur area.
-- :ref:`Color<class_color>` **fog_color** - Fog's [Color].
+- :ref:`Color<class_color>` **fog_color** - Fog's :ref:`Color<class_color>`.
 - :ref:`float<class_float>` **fog_depth_begin** - Fog's depth starting distance from the camera.
 - :ref:`float<class_float>` **fog_depth_curve** - Value defining the fog depth intensity.
 - :ref:`bool<class_bool>` **fog_depth_enabled** - Enables the fog depth.
@@ -339,7 +339,7 @@ Member Variables
 - :ref:`float<class_float>` **fog_height_max** - Maximum height of fog.
 - :ref:`float<class_float>` **fog_height_min** - Minimum height of fog.
 - :ref:`float<class_float>` **fog_sun_amount** - Amount of sun that affects the fog rendering.
-- :ref:`Color<class_color>` **fog_sun_color** - Sun [Color].
+- :ref:`Color<class_color>` **fog_sun_color** - Sun :ref:`Color<class_color>`.
 - :ref:`float<class_float>` **fog_transmit_curve** - Amount of light that the fog transmits.
 - :ref:`bool<class_bool>` **fog_transmit_enabled** - Enables fog's light transmission. If enabled, lets reflections light to be transmitted by the fog.
 - :ref:`bool<class_bool>` **glow_bicubic_upscale**

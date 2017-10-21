@@ -14,7 +14,7 @@ VisualScriptLocalVarSet
 Brief Description
 -----------------
 
-
+Changes a local variable's value.
 
 Member Functions
 ----------------
@@ -32,8 +32,25 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **type**
-- :ref:`String<class_string>` **var_name**
+- :ref:`int<class_int>` **type** - The local variable's type.
+- :ref:`String<class_string>` **var_name** - The local variable's name.
+
+Description
+-----------
+
+Changes a local variable's value to the given input. The new value is also provided on an output Data port.
+
+**Input Ports:**
+
+- Sequence
+
+- Data (variant): ``set``
+
+**Output Ports:**
+
+- Sequence
+
+- Data (variant): ``get``
 
 Member Function Description
 ---------------------------

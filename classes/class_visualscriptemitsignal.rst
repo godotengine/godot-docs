@@ -14,7 +14,7 @@ VisualScriptEmitSignal
 Brief Description
 -----------------
 
-A Visual Script node which emits a specified signal.
+Emits a specified signal.
 
 Member Functions
 ----------------
@@ -33,7 +33,15 @@ Member Variables
 Description
 -----------
 
-A Visual Script node which emits a specified signal when it is executed.
+Emits a specified signal when it is executed.
+
+**Input Ports:**
+
+- Sequence: ``emit``
+
+**Output Ports:**
+
+- Sequence
 
 Member Function Description
 ---------------------------

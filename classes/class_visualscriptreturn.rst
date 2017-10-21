@@ -14,7 +14,7 @@ VisualScriptReturn
 Brief Description
 -----------------
 
-
+Exits a function and returns an optional value.
 
 Member Functions
 ----------------
@@ -32,8 +32,23 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`bool<class_bool>` **return_enabled**
-- :ref:`int<class_int>` **return_type**
+- :ref:`bool<class_bool>` **return_enabled** - If ``true`` the ``return`` input port is available.
+- :ref:`int<class_int>` **return_type** - The return value's data type.
+
+Description
+-----------
+
+Ends the execution of a function and returns control to the calling function. Optionally, it can return a :ref:`Variant<class_variant>` value.
+
+**Input Ports:**
+
+- Sequence
+
+- Data (variant): ``result`` (optional)
+
+**Output Ports:**
+
+none
 
 Member Function Description
 ---------------------------

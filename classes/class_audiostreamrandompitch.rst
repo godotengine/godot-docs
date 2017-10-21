@@ -32,7 +32,7 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`AudioStream<class_audiostream>` **audio_stream** - The current [AudioStream].
+- :ref:`AudioStream<class_audiostream>` **audio_stream** - The current :ref:`AudioStream<class_audiostream>`.
 - :ref:`float<class_float>` **random_pitch** - The intensity of random pitch variation.
 
 Description

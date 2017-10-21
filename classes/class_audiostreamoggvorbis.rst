@@ -37,8 +37,8 @@ Member Variables
 ----------------
 
 - :ref:`PoolByteArray<class_poolbytearray>` **data** - Raw audio data.
-- :ref:`bool<class_bool>` **loop** - If [code]true[/code], audio will loop continuously. Default value: [code]false[/code].
-- :ref:`float<class_float>` **loop_offset** - If loop is [code]true[/code], loop starts from this position, in seconds.
+- :ref:`bool<class_bool>` **loop** - If ``true``, audio will loop continuously. Default value: ``false``.
+- :ref:`float<class_float>` **loop_offset** - If loop is ``true``, loop starts from this position, in seconds.
 
 Description
 -----------

@@ -108,13 +108,13 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **anchor_mode** - The Camera2D's anchor point. See [code]ANCHOR_MODE_*[/code] constants.
-- :ref:`bool<class_bool>` **current** - If [code]true[/code] this camera is the active camera for the current scene. Only one camera can be current, so setting a different camera [code]current[/code] will disable this one.
-- :ref:`float<class_float>` **drag_margin_bottom** - Bottom margin needed to drag the camera. A value of [code]1[/code] makes the camera move only when reaching the edge of the screen.
+- :ref:`int<class_int>` **anchor_mode** - The Camera2D's anchor point. See ``ANCHOR_MODE\_\*`` constants.
+- :ref:`bool<class_bool>` **current** - If ``true`` this camera is the active camera for the current scene. Only one camera can be current, so setting a different camera ``current`` will disable this one.
+- :ref:`float<class_float>` **drag_margin_bottom** - Bottom margin needed to drag the camera. A value of ``1`` makes the camera move only when reaching the edge of the screen.
 - :ref:`bool<class_bool>` **drag_margin_h_enabled**
-- :ref:`float<class_float>` **drag_margin_left** - Left margin needed to drag the camera. A value of [code]1[/code] makes the camera move only when reaching the edge of the screen.
-- :ref:`float<class_float>` **drag_margin_right** - Right margin needed to drag the camera. A value of [code]1[/code] makes the camera move only when reaching the edge of the screen.
-- :ref:`float<class_float>` **drag_margin_top** - Top margin needed to drag the camera. A value of [code]1[/code] makes the camera move only when reaching the edge of the screen.
+- :ref:`float<class_float>` **drag_margin_left** - Left margin needed to drag the camera. A value of ``1`` makes the camera move only when reaching the edge of the screen.
+- :ref:`float<class_float>` **drag_margin_right** - Right margin needed to drag the camera. A value of ``1`` makes the camera move only when reaching the edge of the screen.
+- :ref:`float<class_float>` **drag_margin_top** - Top margin needed to drag the camera. A value of ``1`` makes the camera move only when reaching the edge of the screen.
 - :ref:`bool<class_bool>` **drag_margin_v_enabled**
 - :ref:`bool<class_bool>` **editor_draw_drag_margin**
 - :ref:`bool<class_bool>` **editor_draw_limits**
@@ -128,7 +128,7 @@ Member Variables
 - :ref:`bool<class_bool>` **rotating**
 - :ref:`bool<class_bool>` **smoothing_enabled**
 - :ref:`float<class_float>` **smoothing_speed**
-- :ref:`Vector2<class_vector2>` **zoom** - The camera's zoom relative to the viewport. Values larger than [code]Vector2(1, 1)[/code] zoom out and smaller values zoom in. For an example, use [code]Vector2(0.5, 0.5)[/code] for a 2x zoom in, and [code]Vector2(4, 4)[/code] for a 4x zoom out.
+- :ref:`Vector2<class_vector2>` **zoom** - The camera's zoom relative to the viewport. Values larger than ``Vector2(1, 1)`` zoom out and smaller values zoom in. For an example, use ``Vector2(0.5, 0.5)`` for a 2x zoom in, and ``Vector2(4, 4)`` for a 4x zoom out.
 
 Numeric Constants
 -----------------

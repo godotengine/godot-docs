@@ -14,7 +14,7 @@ VisualScriptSelect
 Brief Description
 -----------------
 
-
+Chooses between two input values.
 
 Member Functions
 ----------------
@@ -28,7 +28,24 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **type**
+- :ref:`int<class_int>` **type** - The input variables' type.
+
+Description
+-----------
+
+Chooses between two input values based on a Boolean condition.
+
+**Input Ports:**
+
+- Data (boolean): ``cond``
+
+- Data (variant): ``a``
+
+- Data (variant): ``b``
+
+**Output Ports:**
+
+- Data (variant): ``out``
 
 Member Function Description
 ---------------------------

@@ -14,7 +14,7 @@ PinJoint
 Brief Description
 -----------------
 
-
+Pin Joint for 3D Shapes.
 
 Member Functions
 ----------------
@@ -28,16 +28,29 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`float<class_float>` **params/bias**
-- :ref:`float<class_float>` **params/damping**
-- :ref:`float<class_float>` **params/impulse_clamp**
+- :ref:`float<class_float>` **params/bias** - The force with wich the pinned objects stay in positional relation to each other.
+
+The higher, the stronger.
+- :ref:`float<class_float>` **params/damping** - The force with wich the pinned objects stay in velocity relation to each other.
+
+The higher, the stronger.
+- :ref:`float<class_float>` **params/impulse_clamp** - If above 0, this value is the maximum value for an impulse that this Joint produces.
 
 Numeric Constants
 -----------------
 
-- **PARAM_BIAS** = **0**
-- **PARAM_DAMPING** = **1**
-- **PARAM_IMPULSE_CLAMP** = **2**
+- **PARAM_BIAS** = **0** --- The force with wich the pinned objects stay in positional relation to each other.
+
+The higher, the stronger.
+- **PARAM_DAMPING** = **1** --- The force with wich the pinned objects stay in velocity relation to each other.
+
+The higher, the stronger.
+- **PARAM_IMPULSE_CLAMP** = **2** --- If above 0, this value is the maximum value for an impulse that this Joint produces.
+
+Description
+-----------
+
+Pin Joint for 3D Rigid Bodies. It pins 2 bodies (rigid or static) together.
 
 Member Function Description
 ---------------------------

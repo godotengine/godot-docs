@@ -52,7 +52,7 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`Basis<class_basis>` **basis** - The basis is a matrix containing 3 [Vector3] as its columns: X axis, Y axis, and Z axis. These vectors can be interpreted as the basis vectors of local coordinate system traveling with the object.
+- :ref:`Basis<class_basis>` **basis** - The basis is a matrix containing 3 :ref:`Vector3<class_vector3>` as its columns: X axis, Y axis, and Z axis. These vectors can be interpreted as the basis vectors of local coordinate system traveling with the object.
 - :ref:`Vector3<class_vector3>` **origin** - The translation offset of the transform.
 
 Description

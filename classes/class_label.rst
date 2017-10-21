@@ -72,15 +72,15 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **align** - Controls the text's horizontal align. Supports left, center, right, and fill, or justify. Set it to one of the [code]ALIGN_*[/code] constants.
-- :ref:`bool<class_bool>` **autowrap** - If [code]true[/code], wraps the text inside the node's bounding rectangle. If you resize the node, it will change its height automatically to show all the text. Default: false.
-- :ref:`bool<class_bool>` **clip_text** - If [code]true[/code], the Label only shows the text that fits inside its bounding rectangle. It also lets you scale the node down freely.
-- :ref:`int<class_int>` **lines_skipped** - The node ignores the first [code]lines_skipped[/code] lines before it starts to display text.
+- :ref:`int<class_int>` **align** - Controls the text's horizontal align. Supports left, center, right, and fill, or justify. Set it to one of the ``ALIGN\_\*`` constants.
+- :ref:`bool<class_bool>` **autowrap** - If ``true``, wraps the text inside the node's bounding rectangle. If you resize the node, it will change its height automatically to show all the text. Default: false.
+- :ref:`bool<class_bool>` **clip_text** - If ``true``, the Label only shows the text that fits inside its bounding rectangle. It also lets you scale the node down freely.
+- :ref:`int<class_int>` **lines_skipped** - The node ignores the first ``lines_skipped`` lines before it starts to display text.
 - :ref:`int<class_int>` **max_lines_visible** - Limits the lines of text the node shows on screen.
-- :ref:`float<class_float>` **percent_visible** - Limits the count of visible characters. If you set [code]percent_visible[/code] to 50, only up to half of the text's characters will display on screen. Useful to animate the text in a dialog box.
+- :ref:`float<class_float>` **percent_visible** - Limits the count of visible characters. If you set ``percent_visible`` to 50, only up to half of the text's characters will display on screen. Useful to animate the text in a dialog box.
 - :ref:`String<class_string>` **text** - The text to display on screen.
-- :ref:`bool<class_bool>` **uppercase** - If [code]true[/code], all the text displays as UPPERCASE.
-- :ref:`int<class_int>` **valign** - Controls the text's vertical align. Supports top, center, bottom, and fill. Set it to one of the [code]VALIGN_*[/code] constants.
+- :ref:`bool<class_bool>` **uppercase** - If ``true``, all the text displays as UPPERCASE.
+- :ref:`int<class_int>` **valign** - Controls the text's vertical align. Supports top, center, bottom, and fill. Set it to one of the ``VALIGN\_\*`` constants.
 
 Numeric Constants
 -----------------

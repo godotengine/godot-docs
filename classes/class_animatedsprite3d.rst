@@ -50,10 +50,10 @@ Emitted when member frame changed.
 Member Variables
 ----------------
 
-- :ref:`String<class_string>` **animation** - The current animation from the [code]frames[/code] resource. If this value changes, the [code]frame[/code] counter is reset.
+- :ref:`String<class_string>` **animation** - The current animation from the ``frames`` resource. If this value changes, the ``frame`` counter is reset.
 - :ref:`int<class_int>` **frame** - The displayed animation frame's index.
-- :ref:`SpriteFrames<class_spriteframes>` **frames** - The [SpriteFrames] resource containing the animation(s).
-- :ref:`bool<class_bool>` **playing** - If [code]true[/code] the [member animation] is currently playing.
+- :ref:`SpriteFrames<class_spriteframes>` **frames** - The :ref:`SpriteFrames<class_spriteframes>` resource containing the animation(s).
+- :ref:`bool<class_bool>` **playing** - If ``true`` the member animation is currently playing.
 
 Description
 -----------

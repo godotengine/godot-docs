@@ -60,8 +60,8 @@ Member Variables
 - :ref:`int<class_int>` **extra_spacing_top** - Extra spacing at the top in pixels.
 - :ref:`DynamicFontData<class_dynamicfontdata>` **font_data** - The font data.
 - :ref:`int<class_int>` **size** - The font size.
-- :ref:`bool<class_bool>` **use_filter** - If [code]true[/code] filtering is used.
-- :ref:`bool<class_bool>` **use_mipmaps** - If [code]true[/code] mipmapping is used.
+- :ref:`bool<class_bool>` **use_filter** - If ``true`` filtering is used.
+- :ref:`bool<class_bool>` **use_mipmaps** - If ``true`` mipmapping is used.
 
 Numeric Constants
 -----------------

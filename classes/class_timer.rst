@@ -60,9 +60,9 @@ Emitted when the Timer reaches 0.
 Member Variables
 ----------------
 
-- :ref:`bool<class_bool>` **autostart** - If [code]true[/code], Timer will automatically start when entering the scene tree. Default value: [code]false[/code].
-- :ref:`bool<class_bool>` **one_shot** - If [code]true[/code], Timer will stop when reaching 0. If [code]false[/code], it will restart. Default value: [code]false[/code].
-- :ref:`int<class_int>` **process_mode** - Processing mode. Uses TIMER_PROCESS_* constants as value.
+- :ref:`bool<class_bool>` **autostart** - If ``true``, Timer will automatically start when entering the scene tree. Default value: ``false``.
+- :ref:`bool<class_bool>` **one_shot** - If ``true``, Timer will stop when reaching 0. If ``false``, it will restart. Default value: ``false``.
+- :ref:`int<class_int>` **process_mode** - Processing mode. Uses TIMER_PROCESS\_\* constants as value.
 - :ref:`float<class_float>` **wait_time** - Wait time in seconds.
 
 Numeric Constants

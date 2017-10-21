@@ -33,22 +33,23 @@ Member Variables
 ----------------
 
 - :ref:`Dictionary<class_dictionary>` **constructor** - The constructor function's method info. Has roughly the following structure:
-			[codeblock]
-			{
-				name = "string",
-				args = [{
-					name = "string"
-					class_name = "string"
-					type = TYPE_*
-					hint = PROPERTY_HINT_*
-					hint_string = "string"
-				}]
-				default_args = [] # Array of variants
-				flags = METHOD_FLAG_*
-				id = 0
-				return = {type = TYPE_*}
-			}
-			[/codeblock]
+
+::
+
+    {
+    name = "string",
+    args = [{
+        name = "string"
+        class_name = "string"
+        type = TYPE\_\*
+        hint = PROPERTY_HINT\_\*
+        hint_string = "string"
+    }]
+    default_args = [] # Array of variants
+    flags = METHOD_FLAG\_\*
+    id = 0
+    return = {type = TYPE\_\*}
+    }
 - :ref:`int<class_int>` **type** - The type to be constructed.
 
 Description

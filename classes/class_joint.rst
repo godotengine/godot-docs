@@ -16,7 +16,7 @@ Joint
 Brief Description
 -----------------
 
-
+Base class for all 3D joints
 
 Member Functions
 ----------------
@@ -42,10 +42,15 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`bool<class_bool>` **collision/exclude_nodes**
-- :ref:`NodePath<class_nodepath>` **nodes/node_a**
-- :ref:`NodePath<class_nodepath>` **nodes/node_b**
-- :ref:`int<class_int>` **solver/priority**
+- :ref:`bool<class_bool>` **collision/exclude_nodes** - If ``true`` the two bodies of the nodes are not able to collide with each other.
+- :ref:`NodePath<class_nodepath>` **nodes/node_a** - The :ref:`Node<class_node>`, the first side of the Joint attaches to.
+- :ref:`NodePath<class_nodepath>` **nodes/node_b** - The :ref:`Node<class_node>`, the second side of the Joint attaches to.
+- :ref:`int<class_int>` **solver/priority** - The order in wich the solver is executed compared to the other Joints, the lower, the earlier.
+
+Description
+-----------
+
+All 3D joints link two nodes, has a priority, and can decide if the two bodies of the nodes should be able to collide with each other
 
 Member Function Description
 ---------------------------

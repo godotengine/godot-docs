@@ -14,7 +14,7 @@ VisualScriptPreload
 Brief Description
 -----------------
 
-
+Creates a new :ref:`Resource<class_resource>` or loads one from the filesystem.
 
 Member Functions
 ----------------
@@ -28,7 +28,20 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`Resource<class_resource>` **resource**
+- :ref:`Resource<class_resource>` **resource** - The :ref:`Resource<class_resource>` to load.
+
+Description
+-----------
+
+Creates a new :ref:`Resource<class_resource>` or loads one from the filesystem.
+
+**Input Ports:**
+
+none
+
+**Output Ports:**
+
+- Data (object): ``res``
 
 Member Function Description
 ---------------------------

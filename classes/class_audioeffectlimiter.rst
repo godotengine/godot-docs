@@ -40,10 +40,10 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`float<class_float>` **ceiling_db** - The waveform's maximum allowed value. Value can range from -20 to -0.1. Default value: [code]-0.1dB[/code].
-- :ref:`float<class_float>` **soft_clip_db** - Applies a gain to the limited waves. Value can range from 0 to 6. Default value: [code]2dB[/code].
+- :ref:`float<class_float>` **ceiling_db** - The waveform's maximum allowed value. Value can range from -20 to -0.1. Default value: ``-0.1dB``.
+- :ref:`float<class_float>` **soft_clip_db** - Applies a gain to the limited waves. Value can range from 0 to 6. Default value: ``2dB``.
 - :ref:`float<class_float>` **soft_clip_ratio**
-- :ref:`float<class_float>` **threshold_db** - Threshold from which the limiter begins to be active. Value can range from -30 to 0. Default value: [code]0dB[/code].
+- :ref:`float<class_float>` **threshold_db** - Threshold from which the limiter begins to be active. Value can range from -30 to 0. Default value: ``0dB``.
 
 Description
 -----------

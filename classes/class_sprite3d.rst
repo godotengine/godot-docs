@@ -56,11 +56,11 @@ Emitted when the member frame changes.
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **frame** - Current frame to display from sprite sheet. [member vframes] or [member hframes] must be greater than 1.
+- :ref:`int<class_int>` **frame** - Current frame to display from sprite sheet. member vframes or member hframes must be greater than 1.
 - :ref:`int<class_int>` **hframes** - The number of columns in the sprite sheet.
-- :ref:`bool<class_bool>` **region_enabled** - If [code]true[/code] texture will be cut from a larger atlas texture. See [member region_rect]. Default value: [code]false[/code].
-- :ref:`Rect2<class_rect2>` **region_rect** - The region of the atlas texture to display. [member region_enabled] must be [code]true[/code].
-- :ref:`Texture<class_texture>` **texture** - [Texture] object to draw.
+- :ref:`bool<class_bool>` **region_enabled** - If ``true`` texture will be cut from a larger atlas texture. See member region_rect. Default value: ``false``.
+- :ref:`Rect2<class_rect2>` **region_rect** - The region of the atlas texture to display. member region_enabled must be ``true``.
+- :ref:`Texture<class_texture>` **texture** - :ref:`Texture<class_texture>` object to draw.
 - :ref:`int<class_int>` **vframes** - The number of rows in the sprite sheet.
 
 Description

@@ -14,7 +14,7 @@ VisualScriptSequence
 Brief Description
 -----------------
 
-
+Executes a series of Sequence ports.
 
 Member Functions
 ----------------
@@ -28,7 +28,24 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **steps**
+- :ref:`int<class_int>` **steps** - The number of steps in the sequence.
+
+Description
+-----------
+
+Steps through a series of one or more output Sequence ports. The ``current`` data port outputs the currently executing item.
+
+**Input Ports:**
+
+- Sequence: ``in order``
+
+**Output Ports:**
+
+- Sequence: ``1``
+
+- Sequence: ``2 - n`` (optional)
+
+- Data (int): ``current``
 
 Member Function Description
 ---------------------------

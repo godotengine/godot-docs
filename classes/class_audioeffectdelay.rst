@@ -78,19 +78,19 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`float<class_float>` **dry** - Output percent of original sound. At 0, only delayed sounds are output. Value can range from 0 to 1. Default value: [code]1[/code].
-- :ref:`bool<class_bool>` **feedback/active** - If [code]true[/code] feedback is enabled. Default value: [code]false[/code].
-- :ref:`float<class_float>` **feedback/delay_ms** - Feedback delay time in milliseconds. Default value: [code]340[/code].
-- :ref:`float<class_float>` **feedback/level_db** - Sound level for [code]tap1[/code]. Default value: [code]-6 dB[/code].
-- :ref:`float<class_float>` **feedback/lowpass** - Low-pass filter for feedback. Frequencies below the Low Cut value are filtered out of the source signal. Default value: [code]16000[/code].
-- :ref:`bool<class_bool>` **tap1/active** - If [code]true[/code], [code]tap1[/code] will be enabled. Default value: [code]true[/code].
-- :ref:`float<class_float>` **tap1/delay_ms** - [b]Tap1[/b] delay time in milliseconds. Default value: [code]250ms[/code].
-- :ref:`float<class_float>` **tap1/level_db** - Sound level for [code]tap1[/code]. Default value: [code]-6 dB[/code].
-- :ref:`float<class_float>` **tap1/pan** - Pan position for [code]tap1[/code]. Value can range from -1 (fully left) to 1 (fully right). Default value: [code]0.2[/code].
-- :ref:`bool<class_bool>` **tap2/active** - If [code]true[/code], [code]tap2[/code] will be enabled. Default value: [code]true[/code].
-- :ref:`float<class_float>` **tap2/delay_ms** - [b]Tap2[/b] delay time in milliseconds. Default value: [code]500ms[/code].
-- :ref:`float<class_float>` **tap2/level_db** - Sound level for [code]tap2[/code]. Default value: [code]-12 dB[/code].
-- :ref:`float<class_float>` **tap2/pan** - Pan position for [code]tap2[/code]. Value can range from -1 (fully left) to 1 (fully right). Default value: [code]-0.4[/code].
+- :ref:`float<class_float>` **dry** - Output percent of original sound. At 0, only delayed sounds are output. Value can range from 0 to 1. Default value: ``1``.
+- :ref:`bool<class_bool>` **feedback/active** - If ``true`` feedback is enabled. Default value: ``false``.
+- :ref:`float<class_float>` **feedback/delay_ms** - Feedback delay time in milliseconds. Default value: ``340``.
+- :ref:`float<class_float>` **feedback/level_db** - Sound level for ``tap1``. Default value: ``-6 dB``.
+- :ref:`float<class_float>` **feedback/lowpass** - Low-pass filter for feedback. Frequencies below the Low Cut value are filtered out of the source signal. Default value: ``16000``.
+- :ref:`bool<class_bool>` **tap1/active** - If ``true``, ``tap1`` will be enabled. Default value: ``true``.
+- :ref:`float<class_float>` **tap1/delay_ms** - **Tap1** delay time in milliseconds. Default value: ``250ms``.
+- :ref:`float<class_float>` **tap1/level_db** - Sound level for ``tap1``. Default value: ``-6 dB``.
+- :ref:`float<class_float>` **tap1/pan** - Pan position for ``tap1``. Value can range from -1 (fully left) to 1 (fully right). Default value: ``0.2``.
+- :ref:`bool<class_bool>` **tap2/active** - If ``true``, ``tap2`` will be enabled. Default value: ``true``.
+- :ref:`float<class_float>` **tap2/delay_ms** - **Tap2** delay time in milliseconds. Default value: ``500ms``.
+- :ref:`float<class_float>` **tap2/level_db** - Sound level for ``tap2``. Default value: ``-12 dB``.
+- :ref:`float<class_float>` **tap2/pan** - Pan position for ``tap2``. Value can range from -1 (fully left) to 1 (fully right). Default value: ``-0.4``.
 
 Description
 -----------

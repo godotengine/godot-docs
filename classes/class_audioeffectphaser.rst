@@ -46,10 +46,10 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`float<class_float>` **depth** - Governs how high the filter frequencies sweep. Low value will primarily affect bass frequencies. High value can sweep high into the treble. Value can range from 0.1 to 4. Default value: [code]1[/code].
-- :ref:`float<class_float>` **feedback** - Output percent of modified sound. Value can range from 0.1 to 0.9. Default value: [code]0.7[/code].
-- :ref:`float<class_float>` **range_max_hz** - Determines the maximum frequency affected by the LFO modulations. Value can range from 10 to 10000. Default value: [code]1600hz[/code].
-- :ref:`float<class_float>` **range_min_hz** - Determines the minimum frequency affected by the LFO modulations. Value can range from 10 to 10000. Default value: [code]440hz[/code].
+- :ref:`float<class_float>` **depth** - Governs how high the filter frequencies sweep. Low value will primarily affect bass frequencies. High value can sweep high into the treble. Value can range from 0.1 to 4. Default value: ``1``.
+- :ref:`float<class_float>` **feedback** - Output percent of modified sound. Value can range from 0.1 to 0.9. Default value: ``0.7``.
+- :ref:`float<class_float>` **range_max_hz** - Determines the maximum frequency affected by the LFO modulations. Value can range from 10 to 10000. Default value: ``1600hz``.
+- :ref:`float<class_float>` **range_min_hz** - Determines the minimum frequency affected by the LFO modulations. Value can range from 10 to 10000. Default value: ``440hz``.
 - :ref:`float<class_float>` **rate_hz** - Adjusts the rate at which the effect sweeps up and down across the frequency range.
 
 Description

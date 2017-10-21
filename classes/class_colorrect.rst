@@ -28,10 +28,11 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`Color<class_color>` **color** - The color to fill the [code]ColorRect[/code].
-			[codeblock]
-			$ColorRect.color = Color(1, 0, 0, 1) # Set ColorRect node's color to red
-			[/codeblock]
+- :ref:`Color<class_color>` **color** - The color to fill the ``ColorRect``.
+
+::
+
+    $ColorRect.color = Color(1, 0, 0, 1) # Set ColorRect node's color to red
 
 Description
 -----------

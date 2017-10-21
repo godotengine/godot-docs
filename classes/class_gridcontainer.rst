@@ -28,7 +28,7 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **columns** - The number of columns in the [code]GridContainer[/code]. If modified, [code]GridContainer[/code] reorders its children to accommodate the new layout.
+- :ref:`int<class_int>` **columns** - The number of columns in the ``GridContainer``. If modified, ``GridContainer`` reorders its children to accommodate the new layout.
 
 Description
 -----------

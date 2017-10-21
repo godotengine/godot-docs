@@ -16,6 +16,8 @@ Brief Description
 
 Input event type for screen touch events.
 
+(only available on mobile devices)
+
 Member Functions
 ----------------
 
@@ -34,9 +36,14 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **index** - Touch event index in the case of a multi-touch event.
-- :ref:`Vector2<class_vector2>` **position** - Position of the touch event.
-- :ref:`bool<class_bool>` **pressed** - Pressed state of the touch event.
+- :ref:`int<class_int>` **index** - Touch index in the case of a multi-touch event. One index = one finger.
+- :ref:`Vector2<class_vector2>` **position** - Touch position.
+- :ref:`bool<class_bool>` **pressed** - If ``true`` the touch's state is pressed. If ``false`` the touch's state is released.
+
+Description
+-----------
+
+Stores multi-touch press/release information. Supports touch press, touch release and member index for multi-touch count and order.
 
 Member Function Description
 ---------------------------

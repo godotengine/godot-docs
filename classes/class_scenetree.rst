@@ -96,7 +96,7 @@ Member Functions
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`set_refuse_new_network_connections<class_SceneTree_set_refuse_new_network_connections>`  **(** :ref:`bool<class_bool>` refuse  **)**                                                                           |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set_screen_stretch<class_SceneTree_set_screen_stretch>`  **(** :ref:`int<class_int>` mode, :ref:`int<class_int>` aspect, :ref:`Vector2<class_vector2>` minsize, :ref:`int<class_int>` shrink=1  **)**          |
+| void                                         | :ref:`set_screen_stretch<class_SceneTree_set_screen_stretch>`  **(** :ref:`int<class_int>` mode, :ref:`int<class_int>` aspect, :ref:`Vector2<class_vector2>` minsize, :ref:`float<class_float>` shrink=1  **)**      |
 +----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -113,6 +113,8 @@ Signals
 -  **network_peer_connected**  **(** :ref:`int<class_int>` id  **)**
 
 -  **network_peer_disconnected**  **(** :ref:`int<class_int>` id  **)**
+
+-  **node_added**  **(** :ref:`Object<class_object>` node  **)**
 
 -  **node_configuration_warning_changed**  **(** :ref:`Object<class_object>` node  **)**
 
@@ -306,6 +308,6 @@ Set the peer object to handle the RPC system (effectively enabling networking). 
 
 .. _class_SceneTree_set_screen_stretch:
 
-- void  **set_screen_stretch**  **(** :ref:`int<class_int>` mode, :ref:`int<class_int>` aspect, :ref:`Vector2<class_vector2>` minsize, :ref:`int<class_int>` shrink=1  **)**
+- void  **set_screen_stretch**  **(** :ref:`int<class_int>` mode, :ref:`int<class_int>` aspect, :ref:`Vector2<class_vector2>` minsize, :ref:`float<class_float>` shrink=1  **)**
 
 

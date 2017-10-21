@@ -72,11 +72,11 @@ Member Variables
 
 - :ref:`int<class_int>` **area_mask** - Areas in which this sound plays.
 - :ref:`float<class_float>` **attenuation** - Dampens audio over distance with this as an exponent.
-- :ref:`bool<class_bool>` **autoplay** - If [code]true[/code] audio plays when added to scene tree. Default value: [code]false[/code].
+- :ref:`bool<class_bool>` **autoplay** - If ``true`` audio plays when added to scene tree. Default value: ``false``.
 - :ref:`String<class_string>` **bus** - Bus on which this audio is playing.
 - :ref:`float<class_float>` **max_distance** - Maximum distance from which audio is still hearable.
-- :ref:`bool<class_bool>` **playing** - If [code]true[/code] audio is playing.
-- :ref:`AudioStream<class_audiostream>` **stream** - The [AudioStream] object to be played.
+- :ref:`bool<class_bool>` **playing** - If ``true`` audio is playing.
+- :ref:`AudioStream<class_audiostream>` **stream** - The :ref:`AudioStream<class_audiostream>` object to be played.
 - :ref:`float<class_float>` **volume_db** - Base volume without dampening.
 
 Description

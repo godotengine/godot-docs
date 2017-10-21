@@ -40,10 +40,10 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`float<class_float>` **bounce** - The body's bounciness. Values range from [code]0[/code] (no bounce) to [code]1[/code] (full bounciness).
+- :ref:`float<class_float>` **bounce** - The body's bounciness. Values range from ``0`` (no bounce) to ``1`` (full bounciness).
 - :ref:`float<class_float>` **constant_angular_velocity** - Constant angular velocity for the body. This does not rotate the body, but affects colliding bodies, as if it were rotating.
 - :ref:`Vector2<class_vector2>` **constant_linear_velocity** - Constant linear velocity for the body. This does not move the body, but affects colliding bodies, as if it were moving.
-- :ref:`float<class_float>` **friction** - The body's friction. Values range from [code]0[/code] (no friction) to [code]1[/code] (full friction).
+- :ref:`float<class_float>` **friction** - The body's friction. Values range from ``0`` (no friction) to ``1`` (full friction).
 
 Description
 -----------

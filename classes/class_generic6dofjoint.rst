@@ -14,7 +14,7 @@ Generic6DOFJoint
 Brief Description
 -----------------
 
-
+The generic 6 degrees of freedom joint can implement a variety of joint-types by locking certain axes' rotation or translation.
 
 Member Functions
 ----------------
@@ -48,80 +48,87 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`float<class_float>` **angular_limit_x/damping**
-- :ref:`bool<class_bool>` **angular_limit_x/enabled**
-- :ref:`float<class_float>` **angular_limit_x/erp**
-- :ref:`float<class_float>` **angular_limit_x/force_limit**
-- :ref:`float<class_float>` **angular_limit_x/lower_angle**
-- :ref:`float<class_float>` **angular_limit_x/restitution**
-- :ref:`float<class_float>` **angular_limit_x/softness**
-- :ref:`float<class_float>` **angular_limit_x/upper_angle**
-- :ref:`float<class_float>` **angular_limit_y/damping**
-- :ref:`bool<class_bool>` **angular_limit_y/enabled**
-- :ref:`float<class_float>` **angular_limit_y/erp**
-- :ref:`float<class_float>` **angular_limit_y/force_limit**
-- :ref:`float<class_float>` **angular_limit_y/lower_angle**
-- :ref:`float<class_float>` **angular_limit_y/restitution**
-- :ref:`float<class_float>` **angular_limit_y/softness**
-- :ref:`float<class_float>` **angular_limit_y/upper_angle**
-- :ref:`float<class_float>` **angular_limit_z/damping**
-- :ref:`bool<class_bool>` **angular_limit_z/enabled**
-- :ref:`float<class_float>` **angular_limit_z/erp**
-- :ref:`float<class_float>` **angular_limit_z/force_limit**
-- :ref:`float<class_float>` **angular_limit_z/lower_angle**
-- :ref:`float<class_float>` **angular_limit_z/restitution**
-- :ref:`float<class_float>` **angular_limit_z/softness**
-- :ref:`float<class_float>` **angular_limit_z/upper_angle**
-- :ref:`bool<class_bool>` **angular_motor_x/enabled**
-- :ref:`float<class_float>` **angular_motor_x/force_limit**
-- :ref:`float<class_float>` **angular_motor_x/target_velocity**
-- :ref:`bool<class_bool>` **angular_motor_y/enabled**
-- :ref:`float<class_float>` **angular_motor_y/force_limit**
-- :ref:`float<class_float>` **angular_motor_y/target_velocity**
-- :ref:`bool<class_bool>` **angular_motor_z/enabled**
-- :ref:`float<class_float>` **angular_motor_z/force_limit**
-- :ref:`float<class_float>` **angular_motor_z/target_velocity**
-- :ref:`float<class_float>` **linear_limit_x/damping**
-- :ref:`bool<class_bool>` **linear_limit_x/enabled**
-- :ref:`float<class_float>` **linear_limit_x/lower_distance**
-- :ref:`float<class_float>` **linear_limit_x/restitution**
-- :ref:`float<class_float>` **linear_limit_x/softness**
-- :ref:`float<class_float>` **linear_limit_x/upper_distance**
-- :ref:`float<class_float>` **linear_limit_y/damping**
-- :ref:`bool<class_bool>` **linear_limit_y/enabled**
-- :ref:`float<class_float>` **linear_limit_y/lower_distance**
-- :ref:`float<class_float>` **linear_limit_y/restitution**
-- :ref:`float<class_float>` **linear_limit_y/softness**
-- :ref:`float<class_float>` **linear_limit_y/upper_distance**
-- :ref:`float<class_float>` **linear_limit_z/damping**
-- :ref:`bool<class_bool>` **linear_limit_z/enabled**
-- :ref:`float<class_float>` **linear_limit_z/lower_distance**
-- :ref:`float<class_float>` **linear_limit_z/restitution**
-- :ref:`float<class_float>` **linear_limit_z/softness**
-- :ref:`float<class_float>` **linear_limit_z/upper_distance**
+- :ref:`float<class_float>` **angular_limit_x/damping** - The amount of rotational damping across the x-axis.
+
+The lower, the longer an impulse from one side takes to travel to the other side.
+- :ref:`bool<class_bool>` **angular_limit_x/enabled** - If ``true`` rotation across the x-axis is enabled.
+- :ref:`float<class_float>` **angular_limit_x/erp** - When rotating across x-axis, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
+- :ref:`float<class_float>` **angular_limit_x/force_limit** - The maximum amount of force that can occur, when rotating arround x-axis.
+- :ref:`float<class_float>` **angular_limit_x/lower_angle** - The minimum rotation in negative direction to break loose and rotate arround the x-axis.
+- :ref:`float<class_float>` **angular_limit_x/restitution** - The amount of rotational restitution across the x-axis. The lower, the more restitution occurs.
+- :ref:`float<class_float>` **angular_limit_x/softness** - The speed of all rotations across the x-axis.
+- :ref:`float<class_float>` **angular_limit_x/upper_angle** - The minimum rotation in positive direction to break loose and rotate arround the x-axis.
+- :ref:`float<class_float>` **angular_limit_y/damping** - The amount of rotational damping across the y-axis. The lower, the more dampening occurs.
+- :ref:`bool<class_bool>` **angular_limit_y/enabled** - If ``true`` rotation across the y-axis is enabled.
+- :ref:`float<class_float>` **angular_limit_y/erp** - When rotating across y-axis, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
+- :ref:`float<class_float>` **angular_limit_y/force_limit** - The maximum amount of force that can occur, when rotating arround y-axis.
+- :ref:`float<class_float>` **angular_limit_y/lower_angle** - The minimum rotation in negative direction to break loose and rotate arround the y-axis.
+- :ref:`float<class_float>` **angular_limit_y/restitution** - The amount of rotational restitution across the y-axis. The lower, the more restitution occurs.
+- :ref:`float<class_float>` **angular_limit_y/softness** - The speed of all rotations across the y-axis.
+- :ref:`float<class_float>` **angular_limit_y/upper_angle** - The minimum rotation in positive direction to break loose and rotate arround the y-axis.
+- :ref:`float<class_float>` **angular_limit_z/damping** - The amount of rotational damping across the z-axis. The lower, the more dampening occurs.
+- :ref:`bool<class_bool>` **angular_limit_z/enabled** - If ``true`` rotation across the z-axis is enabled.
+- :ref:`float<class_float>` **angular_limit_z/erp** - When rotating across z-axis, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
+- :ref:`float<class_float>` **angular_limit_z/force_limit** - The maximum amount of force that can occur, when rotating arround z-axis.
+- :ref:`float<class_float>` **angular_limit_z/lower_angle** - The minimum rotation in negative direction to break loose and rotate arround the z-axis.
+- :ref:`float<class_float>` **angular_limit_z/restitution** - The amount of rotational restitution across the z-axis. The lower, the more restitution occurs.
+- :ref:`float<class_float>` **angular_limit_z/softness** - The speed of all rotations across the z-axis.
+- :ref:`float<class_float>` **angular_limit_z/upper_angle** - The minimum rotation in positive direction to break loose and rotate arround the z-axis.
+- :ref:`bool<class_bool>` **angular_motor_x/enabled** - If ``true`` a rotating motor at the x-axis is enabled.
+- :ref:`float<class_float>` **angular_motor_x/force_limit** - Maximum acceleration for the motor at the x-axis.
+- :ref:`float<class_float>` **angular_motor_x/target_velocity** - Target speed for the motor at the x-axis.
+- :ref:`bool<class_bool>` **angular_motor_y/enabled** - If ``true`` a rotating motor at the y-axis is enabled.
+- :ref:`float<class_float>` **angular_motor_y/force_limit** - Maximum acceleration for the motor at the y-axis.
+- :ref:`float<class_float>` **angular_motor_y/target_velocity** - Target speed for the motor at the y-axis.
+- :ref:`bool<class_bool>` **angular_motor_z/enabled** - If ``true`` a rotating motor at the z-axis is enabled.
+- :ref:`float<class_float>` **angular_motor_z/force_limit** - Maximum acceleration for the motor at the z-axis.
+- :ref:`float<class_float>` **angular_motor_z/target_velocity** - Target speed for the motor at the z-axis.
+- :ref:`float<class_float>` **linear_limit_x/damping** - The amount of damping that happens at the x-motion.
+- :ref:`bool<class_bool>` **linear_limit_x/enabled** - If ``true`` the linear motion across the x-axis is enabled.
+- :ref:`float<class_float>` **linear_limit_x/lower_distance** - The minimum difference between the pivot points' x-axis.
+- :ref:`float<class_float>` **linear_limit_x/restitution** - The amount of restitution on the x-axis movement The lower, the more momentum gets lost.
+- :ref:`float<class_float>` **linear_limit_x/softness** - A factor applied to the movement across the x-axis The lower, the slower the movement.
+- :ref:`float<class_float>` **linear_limit_x/upper_distance** - The maximum difference between the pivot points' x-axis.
+- :ref:`float<class_float>` **linear_limit_y/damping** - The amount of damping that happens at the y-motion.
+- :ref:`bool<class_bool>` **linear_limit_y/enabled** - If ``true`` the linear motion across the y-axis is enabled.
+- :ref:`float<class_float>` **linear_limit_y/lower_distance** - The minimum difference between the pivot points' y-axis.
+- :ref:`float<class_float>` **linear_limit_y/restitution** - The amount of restitution on the y-axis movement The lower, the more momentum gets lost.
+- :ref:`float<class_float>` **linear_limit_y/softness** - A factor applied to the movement across the y-axis The lower, the slower the movement.
+- :ref:`float<class_float>` **linear_limit_y/upper_distance** - The maximum difference between the pivot points' y-axis.
+- :ref:`float<class_float>` **linear_limit_z/damping** - The amount of damping that happens at the z-motion.
+- :ref:`bool<class_bool>` **linear_limit_z/enabled** - If ``true`` the linear motion across the z-axis is enabled.
+- :ref:`float<class_float>` **linear_limit_z/lower_distance** - The minimum difference between the pivot points' z-axis.
+- :ref:`float<class_float>` **linear_limit_z/restitution** - The amount of restitution on the z-axis movement The lower, the more momentum gets lost.
+- :ref:`float<class_float>` **linear_limit_z/softness** - A factor applied to the movement across the z-axis The lower, the slower the movement.
+- :ref:`float<class_float>` **linear_limit_z/upper_distance** - The maximum difference between the pivot points' z-axis.
 
 Numeric Constants
 -----------------
 
-- **PARAM_LINEAR_LOWER_LIMIT** = **0**
-- **PARAM_LINEAR_UPPER_LIMIT** = **1**
-- **PARAM_LINEAR_LIMIT_SOFTNESS** = **2**
-- **PARAM_LINEAR_RESTITUTION** = **3**
-- **PARAM_LINEAR_DAMPING** = **4**
-- **PARAM_ANGULAR_LOWER_LIMIT** = **5**
-- **PARAM_ANGULAR_UPPER_LIMIT** = **6**
-- **PARAM_ANGULAR_LIMIT_SOFTNESS** = **7**
-- **PARAM_ANGULAR_DAMPING** = **8**
-- **PARAM_ANGULAR_RESTITUTION** = **9**
-- **PARAM_ANGULAR_FORCE_LIMIT** = **10**
-- **PARAM_ANGULAR_ERP** = **11**
-- **PARAM_ANGULAR_MOTOR_TARGET_VELOCITY** = **12**
-- **PARAM_ANGULAR_MOTOR_FORCE_LIMIT** = **13**
-- **PARAM_MAX** = **14**
-- **FLAG_ENABLE_LINEAR_LIMIT** = **0**
-- **FLAG_ENABLE_ANGULAR_LIMIT** = **1**
-- **FLAG_ENABLE_MOTOR** = **2**
-- **FLAG_MAX** = **3**
+- **PARAM_LINEAR_LOWER_LIMIT** = **0** --- The minimum difference between the pivot points' axes.
+- **PARAM_LINEAR_UPPER_LIMIT** = **1** --- The maximum difference between the pivot points' axes.
+- **PARAM_LINEAR_LIMIT_SOFTNESS** = **2** --- A factor applied to the movement across the axes The lower, the slower the movement.
+- **PARAM_LINEAR_RESTITUTION** = **3** --- The amount of restitution on the axes movement The lower, the more momentum gets lost.
+- **PARAM_LINEAR_DAMPING** = **4** --- The amount of damping that happens at the linear motion across the axes.
+- **PARAM_ANGULAR_LOWER_LIMIT** = **5** --- The minimum rotation in negative direction to break loose and rotate arround the axes.
+- **PARAM_ANGULAR_UPPER_LIMIT** = **6** --- The minimum rotation in positive direction to break loose and rotate arround the axes.
+- **PARAM_ANGULAR_LIMIT_SOFTNESS** = **7** --- The speed of all rotations across the axes.
+- **PARAM_ANGULAR_DAMPING** = **8** --- The amount of rotational damping across the axes. The lower, the more dampening occurs.
+- **PARAM_ANGULAR_RESTITUTION** = **9** --- The amount of rotational restitution across the axes. The lower, the more restitution occurs.
+- **PARAM_ANGULAR_FORCE_LIMIT** = **10** --- The maximum amount of force that can occur, when rotating arround the axes.
+- **PARAM_ANGULAR_ERP** = **11** --- When rotating across the axes, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
+- **PARAM_ANGULAR_MOTOR_TARGET_VELOCITY** = **12** --- Target speed for the motor at the axes.
+- **PARAM_ANGULAR_MOTOR_FORCE_LIMIT** = **13** --- Maximum acceleration for the motor at the axes.
+- **PARAM_MAX** = **14** --- End flag of PARAM\_\* constants, used internally.
+- **FLAG_ENABLE_LINEAR_LIMIT** = **0** --- If ``set`` there is linear motion possible within the given limits.
+- **FLAG_ENABLE_ANGULAR_LIMIT** = **1** --- If ``set`` there is rotational motion possible.
+- **FLAG_ENABLE_MOTOR** = **2** --- If ``set`` there is a rotational motor across these axes.
+- **FLAG_MAX** = **3** --- End flag of FLAG\_\* constants, used internally.
+
+Description
+-----------
+
+The first 3 dof axes are linear axes, which represent translation of Bodies, and the latter 3 dof axes represent the angular motion. Each axis can be either locked, or limited.
 
 Member Function Description
 ---------------------------

@@ -47,10 +47,10 @@ Member Variables
 ----------------
 
 - :ref:`Object<class_object>` **collider** - The colliding body.
-- :ref:`int<class_int>` **collider_id** - The colliding body's unique [RID].
-- :ref:`Variant<class_variant>` **collider_metadata** - The colliding body's metadata. See [Object].
+- :ref:`int<class_int>` **collider_id** - The colliding body's unique :ref:`RID<class_rid>`.
+- :ref:`Variant<class_variant>` **collider_metadata** - The colliding body's metadata. See :ref:`Object<class_object>`.
 - :ref:`Object<class_object>` **collider_shape** - The colliding body's shape.
-- :ref:`int<class_int>` **collider_shape_index** - The colliding shape's index. See [CollisionObject].
+- :ref:`int<class_int>` **collider_shape_index** - The colliding shape's index. See :ref:`CollisionObject<class_collisionobject>`.
 - :ref:`Vector3<class_vector3>` **collider_velocity** - The colliding object's velocity.
 - :ref:`Object<class_object>` **local_shape** - The moving object's colliding shape.
 - :ref:`Vector3<class_vector3>` **normal** - The colliding body's shape's normal at the point of collision.

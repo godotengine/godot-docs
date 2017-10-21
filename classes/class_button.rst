@@ -46,7 +46,7 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **align** - Text alignment policy for the button's text, use one of the ALIGN_* constants.
+- :ref:`int<class_int>` **align** - Text alignment policy for the button's text, use one of the ALIGN\_\* constants.
 - :ref:`bool<class_bool>` **clip_text** - When this property is enabled, text that is too large to fit the button is clipped, when disabled the Button will always be wide enough to hold the text. This property is disabled by default.
 - :ref:`bool<class_bool>` **flat** - Flat buttons don't display decoration.
 - :ref:`Texture<class_texture>` **icon** - Button's icon, if text is present the icon will be placed before the text.

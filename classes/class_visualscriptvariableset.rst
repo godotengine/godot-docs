@@ -14,7 +14,7 @@ VisualScriptVariableSet
 Brief Description
 -----------------
 
-
+Changes a variable's value.
 
 Member Functions
 ----------------
@@ -28,7 +28,22 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`String<class_string>` **var_name**
+- :ref:`String<class_string>` **var_name** - The variable's name.
+
+Description
+-----------
+
+Changes a variable's value to the given input.
+
+**Input Ports:**
+
+- Sequence
+
+- Data (variant): ``set``
+
+**Output Ports:**
+
+- Sequence
 
 Member Function Description
 ---------------------------

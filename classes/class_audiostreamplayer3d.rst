@@ -110,17 +110,17 @@ Member Variables
 - :ref:`float<class_float>` **attenuation_filter_cutoff_hz** - Dampens audio above this frequency, in Hz.
 - :ref:`float<class_float>` **attenuation_filter_db** - Amount how much the filter affects the loudness, in dB.
 - :ref:`int<class_int>` **attenuation_model** - Decides if audio should get quieter with distance linearly, quadratically or logarithmically.
-- :ref:`bool<class_bool>` **autoplay** - If [code]true[/code] audio plays when added to scene tree. Default value: [code]false[/code].
+- :ref:`bool<class_bool>` **autoplay** - If ``true`` audio plays when added to scene tree. Default value: ``false``.
 - :ref:`String<class_string>` **bus** - Bus on which this audio is playing.
 - :ref:`int<class_int>` **doppler_tracking** - Decides in which step the Doppler effect should be calculated.
 - :ref:`float<class_float>` **emission_angle_degrees** - The angle in which the audio reaches cameras undampened.
-- :ref:`bool<class_bool>` **emission_angle_enabled** - If [code]true[/code] the audio should be dampened according to the direction of the sound.
+- :ref:`bool<class_bool>` **emission_angle_enabled** - If ``true`` the audio should be dampened according to the direction of the sound.
 - :ref:`float<class_float>` **emission_angle_filter_attenuation_db** - dampens audio if camera is outside of 'emission_angle_degrees' and 'emission_angle_enabled' is set by this factor, in dB.
 - :ref:`float<class_float>` **max_db** - Sets the absolute maximum of the soundlevel, in dB.
 - :ref:`float<class_float>` **max_distance** - Sets the distance from which the 'out_of_range_mode' takes effect. Has no effect if set to 0.
 - :ref:`int<class_int>` **out_of_range_mode** - Decides if audio should pause when source is outside of 'max_distance' range.
-- :ref:`bool<class_bool>` **playing** - If [code]true[/code], audio is playing.
-- :ref:`AudioStream<class_audiostream>` **stream** - The [AudioStream] object to be played.
+- :ref:`bool<class_bool>` **playing** - If ``true``, audio is playing.
+- :ref:`AudioStream<class_audiostream>` **stream** - The :ref:`AudioStream<class_audiostream>` object to be played.
 - :ref:`float<class_float>` **unit_db** - Base sound level unaffected by dampening, in dB.
 - :ref:`float<class_float>` **unit_size** - Factor for the attenuation effect.
 

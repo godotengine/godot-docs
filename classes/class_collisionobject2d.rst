@@ -84,7 +84,7 @@ Emitted when the mouse pointer exits all this object's shapes.
 Member Variables
 ----------------
 
-- :ref:`bool<class_bool>` **input_pickable** - If [code]true[/code] this object is pickable. A pickable object can detect the mouse pointer entering/leaving, and if the mouse is inside it, report input events.
+- :ref:`bool<class_bool>` **input_pickable** - If ``true`` this object is pickable. A pickable object can detect the mouse pointer entering/leaving, and if the mouse is inside it, report input events.
 
 Description
 -----------

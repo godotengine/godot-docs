@@ -58,7 +58,7 @@ Member Variables
 
 - :ref:`int<class_int>` **axis_stretch_horizontal** - Doesn't do anything at the time of writing.
 - :ref:`int<class_int>` **axis_stretch_vertical** - Doesn't do anything at the time of writing.
-- :ref:`bool<class_bool>` **draw_center** - If [code]true[/code], draw the panel's center. Else, only draw the 9-slice's borders. Default value: [code]true[/code]
+- :ref:`bool<class_bool>` **draw_center** - If ``true``, draw the panel's center. Else, only draw the 9-slice's borders. Default value: ``true``
 - :ref:`int<class_int>` **patch_margin_bottom** - The height of the 9-slice's bottom row. A margin of 16 means the 9-slice's bottom corners and side will have a height of 16 pixels. You can set all 4 margin values individually to create panels with non-uniform borders.
 - :ref:`int<class_int>` **patch_margin_left** - The height of the 9-slice's left column.
 - :ref:`int<class_int>` **patch_margin_right** - The height of the 9-slice's right column.

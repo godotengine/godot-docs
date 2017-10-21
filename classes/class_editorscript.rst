@@ -14,7 +14,7 @@ EditorScript
 Brief Description
 -----------------
 
-Simple script to perform changes in the currently edited scene.
+Base script that can be used to add extension functions to the editor.
 
 Member Functions
 ----------------
@@ -32,7 +32,19 @@ Member Functions
 Description
 -----------
 
-This script can be run from the Scene -> Run Script menu option.
+Scripts extending this class and implementing its ``_run()`` method can be executed from the Script Editor's ``File -> Run`` menu option (or by pressing ``CTRL+Shift+X``) while the editor is running. This is useful for adding custom in-editor functionality to Godot. For more complex additions, consider using :ref:`EditorPlugin<class_editorplugin>`\ s instead. Note that extending scripts need to have ``tool mode`` enabled.
+
+Example script:
+
+::
+
+    tool
+    extends EditorScript
+    
+    func _run():
+    print("Hello from the Godot Editor!")
+
+Note that the script is run in the Editor context, which means the output is visible in the console window started with the Editor (STDOUT) instead of the usual Godot \*Output\* dock.
 
 Member Function Description
 ---------------------------
@@ -40,6 +52,8 @@ Member Function Description
 .. _class_EditorScript__run:
 
 - void  **_run**  **(** **)** virtual
+
+This method is executed by the Editor when ``File -> Run`` is used.
 
 .. _class_EditorScript_add_root_node:
 
@@ -49,8 +63,12 @@ Member Function Description
 
 - :ref:`EditorInterface<class_editorinterface>`  **get_editor_interface**  **(** **)**
 
+Returns the :ref:`EditorInterface<class_editorinterface>` singleton instance.
+
 .. _class_EditorScript_get_scene:
 
 - :ref:`Node<class_node>`  **get_scene**  **(** **)**
+
+Returns the Editor's currently active scene.
 
 

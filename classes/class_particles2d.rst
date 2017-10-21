@@ -100,24 +100,24 @@ Member Functions
 Member Variables
 ----------------
 
-- :ref:`int<class_int>` **amount** - Number of particles to emit.
-- :ref:`int<class_int>` **draw_order** - Particle draw order. Uses [code]DRAW_ORDER_*[/code] values. Default value: [code]DRAW_ORDER_INDEX[/code].
-- :ref:`bool<class_bool>` **emitting** - If [code]true[/code] particles are being emitted. Default value: [code]true[/code].
-- :ref:`float<class_float>` **explosiveness** - Time ratio between each emission. If [code]0[/code] particles are emitted continuously. If [code]1[/code] all particles are emitted simultaneously. Default value: [code]0[/code].
+- :ref:`int<class_int>` **amount** - Number of particles emitted in one emission cycle.
+- :ref:`int<class_int>` **draw_order** - Particle draw order. Uses ``DRAW_ORDER\_\*`` values. Default value: ``DRAW_ORDER_INDEX``.
+- :ref:`bool<class_bool>` **emitting** - If ``true`` particles are being emitted. Default value: ``true``.
+- :ref:`float<class_float>` **explosiveness** - How rapidly particles in an emission cycle are emitted. If greater than ``0``, there will be a gap in emissions before the next cycle begins. Default value: ``0``.
 - :ref:`int<class_int>` **fixed_fps**
 - :ref:`bool<class_bool>` **fract_delta**
-- :ref:`int<class_int>` **h_frames** - Number of horizontal frames in [code]texture[/code].
-- :ref:`float<class_float>` **lifetime** - Amount of time each particle will exist. Default value: [code]1[/code].
-- :ref:`bool<class_bool>` **local_coords** - If [code]true[/code] particles use the parent node's coordinate space. If [code]false[/code] they use global coordinates. Default value: [code]true[/code].
+- :ref:`int<class_int>` **h_frames** - Number of horizontal frames in ``texture``.
+- :ref:`float<class_float>` **lifetime** - Amount of time each particle will exist. Default value: ``1``.
+- :ref:`bool<class_bool>` **local_coords** - If ``true`` particles use the parent node's coordinate space. If ``false`` they use global coordinates. Default value: ``true``.
 - :ref:`Texture<class_texture>` **normal_map**
-- :ref:`bool<class_bool>` **one_shot** - If [code]true[/code] only [code]amount[/code] particles will be emitted. Default value: [code]false[/code].
-- :ref:`float<class_float>` **preprocess**
-- :ref:`Material<class_material>` **process_material** - [Material] for processing particles. Can be a [ParticlesMaterial] or a [ShaderMaterial].
-- :ref:`float<class_float>` **randomness** - Emission randomness ratio. Default value: [code]0[/code].
-- :ref:`float<class_float>` **speed_scale** - Speed scaling ratio. Default value: [code]1[/code].
-- :ref:`Texture<class_texture>` **texture** - Particle texture. If [code]null[/code] particles will be squares.
-- :ref:`int<class_int>` **v_frames** - Number of vertical frames in [code]texture[/code].
-- :ref:`Rect2<class_rect2>` **visibility_rect**
+- :ref:`bool<class_bool>` **one_shot** - If ``true`` only one emission cycle occurs. If set ``true`` during a cycle, emission will stop at the cycle's end. Default value: ``false``.
+- :ref:`float<class_float>` **preprocess** - Particle system starts as if it had already run for this many seconds.
+- :ref:`Material<class_material>` **process_material** - :ref:`Material<class_material>` for processing particles. Can be a :ref:`ParticlesMaterial<class_particlesmaterial>` or a :ref:`ShaderMaterial<class_shadermaterial>`.
+- :ref:`float<class_float>` **randomness** - Emission lifetime randomness ratio. Default value: ``0``.
+- :ref:`float<class_float>` **speed_scale** - Particle system's running speed scaling ratio. Default value: ``1``.
+- :ref:`Texture<class_texture>` **texture** - Particle texture. If ``null`` particles will be squares.
+- :ref:`int<class_int>` **v_frames** - Number of vertical frames in ``texture``.
+- :ref:`Rect2<class_rect2>` **visibility_rect** - Editor visibility helper.
 
 Numeric Constants
 -----------------

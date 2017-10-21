@@ -62,11 +62,11 @@ Emitted when the audio stops playing.
 Member Variables
 ----------------
 
-- :ref:`bool<class_bool>` **autoplay** - If [code]true[/code] audio plays when added to scene tree. Default value: [code]false[/code].
+- :ref:`bool<class_bool>` **autoplay** - If ``true`` audio plays when added to scene tree. Default value: ``false``.
 - :ref:`String<class_string>` **bus** - Bus on which this audio is playing.
-- :ref:`int<class_int>` **mix_target** - If the audio configuration has more than two speakers, this sets the target channels. See [code]MIX_TARGET_*[/code] constants.
-- :ref:`bool<class_bool>` **playing** - If [code]true[/code] audio is playing.
-- :ref:`AudioStream<class_audiostream>` **stream** - The [AudioStream] object to be played.
+- :ref:`int<class_int>` **mix_target** - If the audio configuration has more than two speakers, this sets the target channels. See ``MIX_TARGET\_\*`` constants.
+- :ref:`bool<class_bool>` **playing** - If ``true`` audio is playing.
+- :ref:`AudioStream<class_audiostream>` **stream** - The :ref:`AudioStream<class_audiostream>` object to be played.
 - :ref:`float<class_float>` **volume_db** - Volume of sound, in dB.
 
 Numeric Constants
