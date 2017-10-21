@@ -19,11 +19,11 @@ Brief Description
 Member Functions
 ----------------
 
-+--------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_texture>`  | :ref:`get_panorama<class_PanoramaSky_get_panorama>`  **(** **)** const                                  |
-+--------------------------------+---------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_panorama<class_PanoramaSky_set_panorama>`  **(** :ref:`Texture<class_texture>` texture  **)** |
-+--------------------------------+---------------------------------------------------------------------------------------------------------+
++--------------------------------+-------------------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_texture>`  | :ref:`get_panorama<class_PanoramaSky_get_panorama>` **(** **)** const                                 |
++--------------------------------+-------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_panorama<class_PanoramaSky_set_panorama>` **(** :ref:`Texture<class_texture>` texture **)** |
++--------------------------------+-------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -38,10 +38,10 @@ Member Function Description
 
 .. _class_PanoramaSky_get_panorama:
 
-- :ref:`Texture<class_texture>`  **get_panorama**  **(** **)** const
+- :ref:`Texture<class_texture>` **get_panorama** **(** **)** const
 
 .. _class_PanoramaSky_set_panorama:
 
-- void  **set_panorama**  **(** :ref:`Texture<class_texture>` texture  **)**
+- void **set_panorama** **(** :ref:`Texture<class_texture>` texture **)**
 
 

@@ -21,38 +21,38 @@ Base class for all resources.
 Member Functions
 ----------------
 
-+----------------------------------+-----------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`_setup_local_to_scene<class_Resource__setup_local_to_scene>`  **(** **)** virtual                   |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`Resource<class_resource>`  | :ref:`duplicate<class_Resource_duplicate>`  **(** :ref:`bool<class_bool>` subresources=false  **)** const |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_node>`          | :ref:`get_local_scene<class_Resource_get_local_scene>`  **(** **)** const                                 |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`get_name<class_Resource_get_name>`  **(** **)** const                                               |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`get_path<class_Resource_get_path>`  **(** **)** const                                               |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`            | :ref:`get_rid<class_Resource_get_rid>`  **(** **)** const                                                 |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`          | :ref:`is_local_to_scene<class_Resource_is_local_to_scene>`  **(** **)** const                             |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_local_to_scene<class_Resource_set_local_to_scene>`  **(** :ref:`bool<class_bool>` enable  **)** |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_name<class_Resource_set_name>`  **(** :ref:`String<class_string>` name  **)**                   |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_path<class_Resource_set_path>`  **(** :ref:`String<class_string>` path  **)**                   |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`setup_local_to_scene<class_Resource_setup_local_to_scene>`  **(** **)**                             |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`take_over_path<class_Resource_take_over_path>`  **(** :ref:`String<class_string>` path  **)**       |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------+
++----------------------------------+---------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`_setup_local_to_scene<class_Resource__setup_local_to_scene>` **(** **)** virtual                  |
++----------------------------------+---------------------------------------------------------------------------------------------------------+
+| :ref:`Resource<class_resource>`  | :ref:`duplicate<class_Resource_duplicate>` **(** :ref:`bool<class_bool>` subresources=false **)** const |
++----------------------------------+---------------------------------------------------------------------------------------------------------+
+| :ref:`Node<class_node>`          | :ref:`get_local_scene<class_Resource_get_local_scene>` **(** **)** const                                |
++----------------------------------+---------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`      | :ref:`get_name<class_Resource_get_name>` **(** **)** const                                              |
++----------------------------------+---------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`      | :ref:`get_path<class_Resource_get_path>` **(** **)** const                                              |
++----------------------------------+---------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_rid>`            | :ref:`get_rid<class_Resource_get_rid>` **(** **)** const                                                |
++----------------------------------+---------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`is_local_to_scene<class_Resource_is_local_to_scene>` **(** **)** const                            |
++----------------------------------+---------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_local_to_scene<class_Resource_set_local_to_scene>` **(** :ref:`bool<class_bool>` enable **)** |
++----------------------------------+---------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_name<class_Resource_set_name>` **(** :ref:`String<class_string>` name **)**                   |
++----------------------------------+---------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_path<class_Resource_set_path>` **(** :ref:`String<class_string>` path **)**                   |
++----------------------------------+---------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`setup_local_to_scene<class_Resource_setup_local_to_scene>` **(** **)**                            |
++----------------------------------+---------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`take_over_path<class_Resource_take_over_path>` **(** :ref:`String<class_string>` path **)**       |
++----------------------------------+---------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
 
 .. _class_Resource_changed:
 
--  **changed**  **(** **)**
+- **changed** **(** **)**
 
 
 Member Variables
@@ -81,61 +81,61 @@ Member Function Description
 
 .. _class_Resource__setup_local_to_scene:
 
-- void  **_setup_local_to_scene**  **(** **)** virtual
+- void **_setup_local_to_scene** **(** **)** virtual
 
 .. _class_Resource_duplicate:
 
-- :ref:`Resource<class_resource>`  **duplicate**  **(** :ref:`bool<class_bool>` subresources=false  **)** const
+- :ref:`Resource<class_resource>` **duplicate** **(** :ref:`bool<class_bool>` subresources=false **)** const
 
 .. _class_Resource_get_local_scene:
 
-- :ref:`Node<class_node>`  **get_local_scene**  **(** **)** const
+- :ref:`Node<class_node>` **get_local_scene** **(** **)** const
 
 .. _class_Resource_get_name:
 
-- :ref:`String<class_string>`  **get_name**  **(** **)** const
+- :ref:`String<class_string>` **get_name** **(** **)** const
 
 Return the name of the resources, any name is valid (it doesn't have to be unique). Name is for descriptive purposes only.
 
 .. _class_Resource_get_path:
 
-- :ref:`String<class_string>`  **get_path**  **(** **)** const
+- :ref:`String<class_string>` **get_path** **(** **)** const
 
 Return the path of the resource. This is useful mainly for editors when saving/loading, and shouldn't be changed by anything else.
 
 .. _class_Resource_get_rid:
 
-- :ref:`RID<class_rid>`  **get_rid**  **(** **)** const
+- :ref:`RID<class_rid>` **get_rid** **(** **)** const
 
 Return the RID of the resource (or an empty RID). Many resources (such as :ref:`Texture<class_texture>`, :ref:`Mesh<class_mesh>`, etc) are high level abstractions of resources stored in a server, so this function will return the original RID.
 
 .. _class_Resource_is_local_to_scene:
 
-- :ref:`bool<class_bool>`  **is_local_to_scene**  **(** **)** const
+- :ref:`bool<class_bool>` **is_local_to_scene** **(** **)** const
 
 .. _class_Resource_set_local_to_scene:
 
-- void  **set_local_to_scene**  **(** :ref:`bool<class_bool>` enable  **)**
+- void **set_local_to_scene** **(** :ref:`bool<class_bool>` enable **)**
 
 .. _class_Resource_set_name:
 
-- void  **set_name**  **(** :ref:`String<class_string>` name  **)**
+- void **set_name** **(** :ref:`String<class_string>` name **)**
 
 Set the name of the resources, any name is valid (it doesn't have to be unique). Name is for descriptive purposes only.
 
 .. _class_Resource_set_path:
 
-- void  **set_path**  **(** :ref:`String<class_string>` path  **)**
+- void **set_path** **(** :ref:`String<class_string>` path **)**
 
 Set the path of the resource. This is useful mainly for editors when saving/loading, and shouldn't be changed by anything else. Fails if another :ref:`Resource<class_resource>` already has path "path".
 
 .. _class_Resource_setup_local_to_scene:
 
-- void  **setup_local_to_scene**  **(** **)**
+- void **setup_local_to_scene** **(** **)**
 
 .. _class_Resource_take_over_path:
 
-- void  **take_over_path**  **(** :ref:`String<class_string>` path  **)**
+- void **take_over_path** **(** :ref:`String<class_string>` path **)**
 
 Set the path of the resource. Differs from set_path(), if another :ref:`Resource<class_resource>` exists with "path" it over-takes it, instead of failing.
 

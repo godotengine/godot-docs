@@ -19,19 +19,19 @@ To be changed, ignore.
 Member Functions
 ----------------
 
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`    | :ref:`get_code<class_Shader_get_code>`  **(** **)** const                                                                                                       |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_texture>`  | :ref:`get_default_texture_param<class_Shader_get_default_texture_param>`  **(** :ref:`String<class_string>` param  **)** const                                  |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_mode<class_Shader_get_mode>`  **(** **)** const                                                                                                       |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`has_param<class_Shader_has_param>`  **(** :ref:`String<class_string>` name  **)** const                                                                   |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_code<class_Shader_set_code>`  **(** :ref:`String<class_string>` code  **)**                                                                           |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_default_texture_param<class_Shader_set_default_texture_param>`  **(** :ref:`String<class_string>` param, :ref:`Texture<class_texture>` texture  **)** |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`    | :ref:`get_code<class_Shader_get_code>` **(** **)** const                                                                                                      |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_texture>`  | :ref:`get_default_texture_param<class_Shader_get_default_texture_param>` **(** :ref:`String<class_string>` param **)** const                                  |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_mode<class_Shader_get_mode>` **(** **)** const                                                                                                      |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`has_param<class_Shader_has_param>` **(** :ref:`String<class_string>` name **)** const                                                                   |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_code<class_Shader_set_code>` **(** :ref:`String<class_string>` code **)**                                                                           |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_default_texture_param<class_Shader_set_default_texture_param>` **(** :ref:`String<class_string>` param, :ref:`Texture<class_texture>` texture **)** |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -58,26 +58,26 @@ Member Function Description
 
 .. _class_Shader_get_code:
 
-- :ref:`String<class_string>`  **get_code**  **(** **)** const
+- :ref:`String<class_string>` **get_code** **(** **)** const
 
 .. _class_Shader_get_default_texture_param:
 
-- :ref:`Texture<class_texture>`  **get_default_texture_param**  **(** :ref:`String<class_string>` param  **)** const
+- :ref:`Texture<class_texture>` **get_default_texture_param** **(** :ref:`String<class_string>` param **)** const
 
 .. _class_Shader_get_mode:
 
-- :ref:`int<class_int>`  **get_mode**  **(** **)** const
+- :ref:`int<class_int>` **get_mode** **(** **)** const
 
 .. _class_Shader_has_param:
 
-- :ref:`bool<class_bool>`  **has_param**  **(** :ref:`String<class_string>` name  **)** const
+- :ref:`bool<class_bool>` **has_param** **(** :ref:`String<class_string>` name **)** const
 
 .. _class_Shader_set_code:
 
-- void  **set_code**  **(** :ref:`String<class_string>` code  **)**
+- void **set_code** **(** :ref:`String<class_string>` code **)**
 
 .. _class_Shader_set_default_texture_param:
 
-- void  **set_default_texture_param**  **(** :ref:`String<class_string>` param, :ref:`Texture<class_texture>` texture  **)**
+- void **set_default_texture_param** **(** :ref:`String<class_string>` param, :ref:`Texture<class_texture>` texture **)**
 
 

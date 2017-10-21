@@ -19,15 +19,15 @@ Brief Description
 Member Functions
 ----------------
 
-+------------------------------+--------------------------------------------------------+
-| :ref:`Object<class_object>`  | :ref:`new<class_CSharpScript_new>`  **(** **)** vararg |
-+------------------------------+--------------------------------------------------------+
++------------------------------+-------------------------------------------------------+
+| :ref:`Object<class_object>`  | :ref:`new<class_CSharpScript_new>` **(** **)** vararg |
++------------------------------+-------------------------------------------------------+
 
 Member Function Description
 ---------------------------
 
 .. _class_CSharpScript_new:
 
-- :ref:`Object<class_object>`  **new**  **(** **)** vararg
+- :ref:`Object<class_object>` **new** **(** **)** vararg
 
 

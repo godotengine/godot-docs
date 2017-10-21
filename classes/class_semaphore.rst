@@ -19,11 +19,11 @@ A synchronization Semaphore.
 Member Functions
 ----------------
 
-+------------------------+------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`post<class_Semaphore_post>`  **(** **)** |
-+------------------------+------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`wait<class_Semaphore_wait>`  **(** **)** |
-+------------------------+------------------------------------------------+
++------------------------+-----------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`post<class_Semaphore_post>` **(** **)** |
++------------------------+-----------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`wait<class_Semaphore_wait>` **(** **)** |
++------------------------+-----------------------------------------------+
 
 Description
 -----------
@@ -35,13 +35,13 @@ Member Function Description
 
 .. _class_Semaphore_post:
 
-- :ref:`int<class_int>`  **post**  **(** **)**
+- :ref:`int<class_int>` **post** **(** **)**
 
 Lowers the :ref:`Semaphore<class_semaphore>`, allowing one more thread in.
 
 .. _class_Semaphore_wait:
 
-- :ref:`int<class_int>`  **wait**  **(** **)**
+- :ref:`int<class_int>` **wait** **(** **)**
 
 Tries to wait for the :ref:`Semaphore<class_semaphore>`, if its value is zero, blocks until non-zero.
 

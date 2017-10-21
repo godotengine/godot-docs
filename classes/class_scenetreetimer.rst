@@ -19,18 +19,18 @@ Brief Description
 Member Functions
 ----------------
 
-+----------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_time_left<class_SceneTreeTimer_get_time_left>`  **(** **)** const                           |
-+----------------------------+-------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_time_left<class_SceneTreeTimer_set_time_left>`  **(** :ref:`float<class_float>` time  **)** |
-+----------------------------+-------------------------------------------------------------------------------------------------------+
++----------------------------+-----------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_time_left<class_SceneTreeTimer_get_time_left>` **(** **)** const                          |
++----------------------------+-----------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_time_left<class_SceneTreeTimer_set_time_left>` **(** :ref:`float<class_float>` time **)** |
++----------------------------+-----------------------------------------------------------------------------------------------------+
 
 Signals
 -------
 
 .. _class_SceneTreeTimer_timeout:
 
--  **timeout**  **(** **)**
+- **timeout** **(** **)**
 
 
 Member Function Description
@@ -38,10 +38,10 @@ Member Function Description
 
 .. _class_SceneTreeTimer_get_time_left:
 
-- :ref:`float<class_float>`  **get_time_left**  **(** **)** const
+- :ref:`float<class_float>` **get_time_left** **(** **)** const
 
 .. _class_SceneTreeTimer_set_time_left:
 
-- void  **set_time_left**  **(** :ref:`float<class_float>` time  **)**
+- void **set_time_left** **(** :ref:`float<class_float>` time **)**
 
 

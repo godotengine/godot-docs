@@ -19,27 +19,27 @@ Draws simple geometry from code.
 Member Functions
 ----------------
 
-+-------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`add_sphere<class_ImmediateGeometry_add_sphere>`  **(** :ref:`int<class_int>` lats, :ref:`int<class_int>` lons, :ref:`float<class_float>` radius, :ref:`bool<class_bool>` add_uv=true  **)** |
-+-------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`add_vertex<class_ImmediateGeometry_add_vertex>`  **(** :ref:`Vector3<class_vector3>` position  **)**                                                                                        |
-+-------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`begin<class_ImmediateGeometry_begin>`  **(** :ref:`int<class_int>` primitive, :ref:`Texture<class_texture>` texture=null  **)**                                                             |
-+-------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`clear<class_ImmediateGeometry_clear>`  **(** **)**                                                                                                                                          |
-+-------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`end<class_ImmediateGeometry_end>`  **(** **)**                                                                                                                                              |
-+-------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`set_color<class_ImmediateGeometry_set_color>`  **(** :ref:`Color<class_color>` color  **)**                                                                                                 |
-+-------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`set_normal<class_ImmediateGeometry_set_normal>`  **(** :ref:`Vector3<class_vector3>` normal  **)**                                                                                          |
-+-------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`set_tangent<class_ImmediateGeometry_set_tangent>`  **(** :ref:`Plane<class_plane>` tangent  **)**                                                                                           |
-+-------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`set_uv<class_ImmediateGeometry_set_uv>`  **(** :ref:`Vector2<class_vector2>` uv  **)**                                                                                                      |
-+-------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`set_uv2<class_ImmediateGeometry_set_uv2>`  **(** :ref:`Vector2<class_vector2>` uv  **)**                                                                                                    |
-+-------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void  | :ref:`add_sphere<class_ImmediateGeometry_add_sphere>` **(** :ref:`int<class_int>` lats, :ref:`int<class_int>` lons, :ref:`float<class_float>` radius, :ref:`bool<class_bool>` add_uv=true **)** |
++-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void  | :ref:`add_vertex<class_ImmediateGeometry_add_vertex>` **(** :ref:`Vector3<class_vector3>` position **)**                                                                                        |
++-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void  | :ref:`begin<class_ImmediateGeometry_begin>` **(** :ref:`int<class_int>` primitive, :ref:`Texture<class_texture>` texture=null **)**                                                             |
++-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void  | :ref:`clear<class_ImmediateGeometry_clear>` **(** **)**                                                                                                                                         |
++-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void  | :ref:`end<class_ImmediateGeometry_end>` **(** **)**                                                                                                                                             |
++-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void  | :ref:`set_color<class_ImmediateGeometry_set_color>` **(** :ref:`Color<class_color>` color **)**                                                                                                 |
++-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void  | :ref:`set_normal<class_ImmediateGeometry_set_normal>` **(** :ref:`Vector3<class_vector3>` normal **)**                                                                                          |
++-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void  | :ref:`set_tangent<class_ImmediateGeometry_set_tangent>` **(** :ref:`Plane<class_plane>` tangent **)**                                                                                           |
++-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void  | :ref:`set_uv<class_ImmediateGeometry_set_uv>` **(** :ref:`Vector2<class_vector2>` uv **)**                                                                                                      |
++-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void  | :ref:`set_uv2<class_ImmediateGeometry_set_uv2>` **(** :ref:`Vector2<class_vector2>` uv **)**                                                                                                    |
++-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -51,19 +51,19 @@ Member Function Description
 
 .. _class_ImmediateGeometry_add_sphere:
 
-- void  **add_sphere**  **(** :ref:`int<class_int>` lats, :ref:`int<class_int>` lons, :ref:`float<class_float>` radius, :ref:`bool<class_bool>` add_uv=true  **)**
+- void **add_sphere** **(** :ref:`int<class_int>` lats, :ref:`int<class_int>` lons, :ref:`float<class_float>` radius, :ref:`bool<class_bool>` add_uv=true **)**
 
 Simple helper to draw a uvsphere, with given latitudes, longitude and radius.
 
 .. _class_ImmediateGeometry_add_vertex:
 
-- void  **add_vertex**  **(** :ref:`Vector3<class_vector3>` position  **)**
+- void **add_vertex** **(** :ref:`Vector3<class_vector3>` position **)**
 
 Adds a vertex with the currently set color/uv/etc.
 
 .. _class_ImmediateGeometry_begin:
 
-- void  **begin**  **(** :ref:`int<class_int>` primitive, :ref:`Texture<class_texture>` texture=null  **)**
+- void **begin** **(** :ref:`int<class_int>` primitive, :ref:`Texture<class_texture>` texture=null **)**
 
 Begin drawing (And optionally pass a texture override). When done call end(). For more information on how this works, search for glBegin() glEnd() references.
 
@@ -71,43 +71,43 @@ For the type of primitive, use the :ref:`Mesh<class_mesh>`.PRIMITIVE\_\* enumera
 
 .. _class_ImmediateGeometry_clear:
 
-- void  **clear**  **(** **)**
+- void **clear** **(** **)**
 
 Clears everything that was drawn using begin/end.
 
 .. _class_ImmediateGeometry_end:
 
-- void  **end**  **(** **)**
+- void **end** **(** **)**
 
 Ends a drawing context and displays the results.
 
 .. _class_ImmediateGeometry_set_color:
 
-- void  **set_color**  **(** :ref:`Color<class_color>` color  **)**
+- void **set_color** **(** :ref:`Color<class_color>` color **)**
 
 The current drawing color.
 
 .. _class_ImmediateGeometry_set_normal:
 
-- void  **set_normal**  **(** :ref:`Vector3<class_vector3>` normal  **)**
+- void **set_normal** **(** :ref:`Vector3<class_vector3>` normal **)**
 
 The next vertex's normal.
 
 .. _class_ImmediateGeometry_set_tangent:
 
-- void  **set_tangent**  **(** :ref:`Plane<class_plane>` tangent  **)**
+- void **set_tangent** **(** :ref:`Plane<class_plane>` tangent **)**
 
 The next vertex's tangent (and binormal facing).
 
 .. _class_ImmediateGeometry_set_uv:
 
-- void  **set_uv**  **(** :ref:`Vector2<class_vector2>` uv  **)**
+- void **set_uv** **(** :ref:`Vector2<class_vector2>` uv **)**
 
 The next vertex's UV.
 
 .. _class_ImmediateGeometry_set_uv2:
 
-- void  **set_uv2**  **(** :ref:`Vector2<class_vector2>` uv  **)**
+- void **set_uv2** **(** :ref:`Vector2<class_vector2>` uv **)**
 
 The next vertex's second layer UV.
 

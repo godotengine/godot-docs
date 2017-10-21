@@ -19,11 +19,11 @@ Sets environment properties for the entire scene
 Member Functions
 ----------------
 
-+----------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Environment<class_environment>`  | :ref:`get_environment<class_WorldEnvironment_get_environment>`  **(** **)** const                                      |
-+----------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_environment<class_WorldEnvironment_set_environment>`  **(** :ref:`Environment<class_environment>` env  **)** |
-+----------------------------------------+------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| :ref:`Environment<class_environment>`  | :ref:`get_environment<class_WorldEnvironment_get_environment>` **(** **)** const                                     |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_environment<class_WorldEnvironment_set_environment>` **(** :ref:`Environment<class_environment>` env **)** |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -43,13 +43,13 @@ Member Function Description
 
 .. _class_WorldEnvironment_get_environment:
 
-- :ref:`Environment<class_environment>`  **get_environment**  **(** **)** const
+- :ref:`Environment<class_environment>` **get_environment** **(** **)** const
 
 Return the :ref:`Environment<class_environment>` currently bound.
 
 .. _class_WorldEnvironment_set_environment:
 
-- void  **set_environment**  **(** :ref:`Environment<class_environment>` env  **)**
+- void **set_environment** **(** :ref:`Environment<class_environment>` env **)**
 
 Set the currently bound :ref:`Environment<class_environment>` to the one specified.
 

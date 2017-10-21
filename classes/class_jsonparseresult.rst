@@ -19,23 +19,23 @@ Data class wrapper for decoded JSON.
 Member Functions
 ----------------
 
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_error<class_JSONParseResult_get_error>`  **(** **)** const                                                   |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_error_line<class_JSONParseResult_get_error_line>`  **(** **)** const                                         |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`    | :ref:`get_error_string<class_JSONParseResult_get_error_string>`  **(** **)** const                                     |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`  | :ref:`get_result<class_JSONParseResult_get_result>`  **(** **)** const                                                 |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_error<class_JSONParseResult_set_error>`  **(** :ref:`int<class_int>` error  **)**                            |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_error_line<class_JSONParseResult_set_error_line>`  **(** :ref:`int<class_int>` error_line  **)**             |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_error_string<class_JSONParseResult_set_error_string>`  **(** :ref:`String<class_string>` error_string  **)** |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_result<class_JSONParseResult_set_result>`  **(** :ref:`Variant<class_variant>` result  **)**                 |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
++--------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_error<class_JSONParseResult_get_error>` **(** **)** const                                                  |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_error_line<class_JSONParseResult_get_error_line>` **(** **)** const                                        |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`    | :ref:`get_error_string<class_JSONParseResult_get_error_string>` **(** **)** const                                    |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_variant>`  | :ref:`get_result<class_JSONParseResult_get_result>` **(** **)** const                                                |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_error<class_JSONParseResult_set_error>` **(** :ref:`int<class_int>` error **)**                            |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_error_line<class_JSONParseResult_set_error_line>` **(** :ref:`int<class_int>` error_line **)**             |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_error_string<class_JSONParseResult_set_error_string>` **(** :ref:`String<class_string>` error_string **)** |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_result<class_JSONParseResult_set_result>` **(** :ref:`Variant<class_variant>` result **)**                 |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -77,34 +77,34 @@ Member Function Description
 
 .. _class_JSONParseResult_get_error:
 
-- :ref:`int<class_int>`  **get_error**  **(** **)** const
+- :ref:`int<class_int>` **get_error** **(** **)** const
 
 .. _class_JSONParseResult_get_error_line:
 
-- :ref:`int<class_int>`  **get_error_line**  **(** **)** const
+- :ref:`int<class_int>` **get_error_line** **(** **)** const
 
 .. _class_JSONParseResult_get_error_string:
 
-- :ref:`String<class_string>`  **get_error_string**  **(** **)** const
+- :ref:`String<class_string>` **get_error_string** **(** **)** const
 
 .. _class_JSONParseResult_get_result:
 
-- :ref:`Variant<class_variant>`  **get_result**  **(** **)** const
+- :ref:`Variant<class_variant>` **get_result** **(** **)** const
 
 .. _class_JSONParseResult_set_error:
 
-- void  **set_error**  **(** :ref:`int<class_int>` error  **)**
+- void **set_error** **(** :ref:`int<class_int>` error **)**
 
 .. _class_JSONParseResult_set_error_line:
 
-- void  **set_error_line**  **(** :ref:`int<class_int>` error_line  **)**
+- void **set_error_line** **(** :ref:`int<class_int>` error_line **)**
 
 .. _class_JSONParseResult_set_error_string:
 
-- void  **set_error_string**  **(** :ref:`String<class_string>` error_string  **)**
+- void **set_error_string** **(** :ref:`String<class_string>` error_string **)**
 
 .. _class_JSONParseResult_set_result:
 
-- void  **set_result**  **(** :ref:`Variant<class_variant>` result  **)**
+- void **set_result** **(** :ref:`Variant<class_variant>` result **)**
 
 

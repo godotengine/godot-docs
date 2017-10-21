@@ -19,11 +19,11 @@ Brief Description
 Member Functions
 ----------------
 
-+------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_global_constant<class_VisualScriptGlobalConstant_get_global_constant>`  **(** **)**                              |
-+------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_global_constant<class_VisualScriptGlobalConstant_set_global_constant>`  **(** :ref:`int<class_int>` index  **)** |
-+------------------------+----------------------------------------------------------------------------------------------------------------------------+
++------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`get_global_constant<class_VisualScriptGlobalConstant_get_global_constant>` **(** **)**                             |
++------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                   | :ref:`set_global_constant<class_VisualScriptGlobalConstant_set_global_constant>` **(** :ref:`int<class_int>` index **)** |
++------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -38,10 +38,10 @@ Member Function Description
 
 .. _class_VisualScriptGlobalConstant_get_global_constant:
 
-- :ref:`int<class_int>`  **get_global_constant**  **(** **)**
+- :ref:`int<class_int>` **get_global_constant** **(** **)**
 
 .. _class_VisualScriptGlobalConstant_set_global_constant:
 
-- void  **set_global_constant**  **(** :ref:`int<class_int>` index  **)**
+- void **set_global_constant** **(** :ref:`int<class_int>` index **)**
 
 

@@ -19,160 +19,160 @@ Control to show a tree of items.
 Member Functions
 ----------------
 
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`          | :ref:`are_column_titles_visible<class_Tree_are_column_titles_visible>`  **(** **)** const                                                      |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`clear<class_Tree_clear>`  **(** **)**                                                                                                    |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`      | :ref:`create_item<class_Tree_create_item>`  **(** :ref:`Object<class_object>` parent=null  **)**                                               |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`ensure_cursor_is_visible<class_Tree_ensure_cursor_is_visible>`  **(** **)**                                                              |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`          | :ref:`get_allow_reselect<class_Tree_get_allow_reselect>`  **(** **)** const                                                                    |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`          | :ref:`get_allow_rmb_select<class_Tree_get_allow_rmb_select>`  **(** **)** const                                                                |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_column_at_position<class_Tree_get_column_at_position>`  **(** :ref:`Vector2<class_vector2>` position  **)** const                    |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`get_column_title<class_Tree_get_column_title>`  **(** :ref:`int<class_int>` column  **)** const                                          |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_column_width<class_Tree_get_column_width>`  **(** :ref:`int<class_int>` column  **)** const                                          |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_columns<class_Tree_get_columns>`  **(** **)** const                                                                                  |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_rect2>`        | :ref:`get_custom_popup_rect<class_Tree_get_custom_popup_rect>`  **(** **)** const                                                              |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_drop_mode_flags<class_Tree_get_drop_mode_flags>`  **(** **)** const                                                                  |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_drop_section_at_position<class_Tree_get_drop_section_at_position>`  **(** :ref:`Vector2<class_vector2>` position  **)** const        |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`TreeItem<class_treeitem>`  | :ref:`get_edited<class_Tree_get_edited>`  **(** **)** const                                                                                    |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_edited_column<class_Tree_get_edited_column>`  **(** **)** const                                                                      |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_rect2>`        | :ref:`get_item_area_rect<class_Tree_get_item_area_rect>`  **(** :ref:`Object<class_object>` item, :ref:`int<class_int>` column=-1  **)** const |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`TreeItem<class_treeitem>`  | :ref:`get_item_at_position<class_Tree_get_item_at_position>`  **(** :ref:`Vector2<class_vector2>` position  **)** const                        |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`TreeItem<class_treeitem>`  | :ref:`get_next_selected<class_Tree_get_next_selected>`  **(** :ref:`Object<class_object>` from  **)**                                          |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_pressed_button<class_Tree_get_pressed_button>`  **(** **)** const                                                                    |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`TreeItem<class_treeitem>`  | :ref:`get_root<class_Tree_get_root>`  **(** **)**                                                                                              |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`    | :ref:`get_scroll<class_Tree_get_scroll>`  **(** **)** const                                                                                    |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`TreeItem<class_treeitem>`  | :ref:`get_selected<class_Tree_get_selected>`  **(** **)** const                                                                                |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_selected_column<class_Tree_get_selected_column>`  **(** **)** const                                                                  |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`          | :ref:`is_folding_hidden<class_Tree_is_folding_hidden>`  **(** **)** const                                                                      |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_allow_reselect<class_Tree_set_allow_reselect>`  **(** :ref:`bool<class_bool>` allow  **)**                                           |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_allow_rmb_select<class_Tree_set_allow_rmb_select>`  **(** :ref:`bool<class_bool>` allow  **)**                                       |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_column_expand<class_Tree_set_column_expand>`  **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` expand  **)**              |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_column_min_width<class_Tree_set_column_min_width>`  **(** :ref:`int<class_int>` column, :ref:`int<class_int>` min_width  **)**       |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_column_title<class_Tree_set_column_title>`  **(** :ref:`int<class_int>` column, :ref:`String<class_string>` title  **)**             |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_column_titles_visible<class_Tree_set_column_titles_visible>`  **(** :ref:`bool<class_bool>` visible  **)**                           |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_columns<class_Tree_set_columns>`  **(** :ref:`int<class_int>` amount  **)**                                                          |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_drop_mode_flags<class_Tree_set_drop_mode_flags>`  **(** :ref:`int<class_int>` flags  **)**                                           |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_hide_folding<class_Tree_set_hide_folding>`  **(** :ref:`bool<class_bool>` hide  **)**                                                |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_hide_root<class_Tree_set_hide_root>`  **(** :ref:`bool<class_bool>` enable  **)**                                                    |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_select_mode<class_Tree_set_select_mode>`  **(** :ref:`int<class_int>` mode  **)**                                                    |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`are_column_titles_visible<class_Tree_are_column_titles_visible>` **(** **)** const                                                     |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`clear<class_Tree_clear>` **(** **)**                                                                                                   |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`      | :ref:`create_item<class_Tree_create_item>` **(** :ref:`Object<class_object>` parent=null **)**                                               |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`ensure_cursor_is_visible<class_Tree_ensure_cursor_is_visible>` **(** **)**                                                             |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`get_allow_reselect<class_Tree_get_allow_reselect>` **(** **)** const                                                                   |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`get_allow_rmb_select<class_Tree_get_allow_rmb_select>` **(** **)** const                                                               |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_column_at_position<class_Tree_get_column_at_position>` **(** :ref:`Vector2<class_vector2>` position **)** const                    |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`      | :ref:`get_column_title<class_Tree_get_column_title>` **(** :ref:`int<class_int>` column **)** const                                          |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_column_width<class_Tree_get_column_width>` **(** :ref:`int<class_int>` column **)** const                                          |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_columns<class_Tree_get_columns>` **(** **)** const                                                                                 |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2<class_rect2>`        | :ref:`get_custom_popup_rect<class_Tree_get_custom_popup_rect>` **(** **)** const                                                             |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_drop_mode_flags<class_Tree_get_drop_mode_flags>` **(** **)** const                                                                 |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_drop_section_at_position<class_Tree_get_drop_section_at_position>` **(** :ref:`Vector2<class_vector2>` position **)** const        |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`TreeItem<class_treeitem>`  | :ref:`get_edited<class_Tree_get_edited>` **(** **)** const                                                                                   |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_edited_column<class_Tree_get_edited_column>` **(** **)** const                                                                     |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2<class_rect2>`        | :ref:`get_item_area_rect<class_Tree_get_item_area_rect>` **(** :ref:`Object<class_object>` item, :ref:`int<class_int>` column=-1 **)** const |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`TreeItem<class_treeitem>`  | :ref:`get_item_at_position<class_Tree_get_item_at_position>` **(** :ref:`Vector2<class_vector2>` position **)** const                        |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`TreeItem<class_treeitem>`  | :ref:`get_next_selected<class_Tree_get_next_selected>` **(** :ref:`Object<class_object>` from **)**                                          |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_pressed_button<class_Tree_get_pressed_button>` **(** **)** const                                                                   |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`TreeItem<class_treeitem>`  | :ref:`get_root<class_Tree_get_root>` **(** **)**                                                                                             |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`    | :ref:`get_scroll<class_Tree_get_scroll>` **(** **)** const                                                                                   |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`TreeItem<class_treeitem>`  | :ref:`get_selected<class_Tree_get_selected>` **(** **)** const                                                                               |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_selected_column<class_Tree_get_selected_column>` **(** **)** const                                                                 |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`is_folding_hidden<class_Tree_is_folding_hidden>` **(** **)** const                                                                     |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_allow_reselect<class_Tree_set_allow_reselect>` **(** :ref:`bool<class_bool>` allow **)**                                           |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_allow_rmb_select<class_Tree_set_allow_rmb_select>` **(** :ref:`bool<class_bool>` allow **)**                                       |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_column_expand<class_Tree_set_column_expand>` **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` expand **)**              |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_column_min_width<class_Tree_set_column_min_width>` **(** :ref:`int<class_int>` column, :ref:`int<class_int>` min_width **)**       |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_column_title<class_Tree_set_column_title>` **(** :ref:`int<class_int>` column, :ref:`String<class_string>` title **)**             |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_column_titles_visible<class_Tree_set_column_titles_visible>` **(** :ref:`bool<class_bool>` visible **)**                           |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_columns<class_Tree_set_columns>` **(** :ref:`int<class_int>` amount **)**                                                          |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_drop_mode_flags<class_Tree_set_drop_mode_flags>` **(** :ref:`int<class_int>` flags **)**                                           |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_hide_folding<class_Tree_set_hide_folding>` **(** :ref:`bool<class_bool>` hide **)**                                                |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_hide_root<class_Tree_set_hide_root>` **(** :ref:`bool<class_bool>` enable **)**                                                    |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_select_mode<class_Tree_set_select_mode>` **(** :ref:`int<class_int>` mode **)**                                                    |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
 
 .. _class_Tree_button_pressed:
 
--  **button_pressed**  **(** :ref:`Object<class_object>` item, :ref:`int<class_int>` column, :ref:`int<class_int>` id  **)**
+- **button_pressed** **(** :ref:`Object<class_object>` item, :ref:`int<class_int>` column, :ref:`int<class_int>` id **)**
 
 Emitted when a button on the tree was pressed (see :ref:`TreeItem.add_button<class_TreeItem_add_button>`).
 
 .. _class_Tree_cell_selected:
 
--  **cell_selected**  **(** **)**
+- **cell_selected** **(** **)**
 
 Emitted when a cell is selected.
 
 .. _class_Tree_column_title_pressed:
 
--  **column_title_pressed**  **(** :ref:`int<class_int>` column  **)**
+- **column_title_pressed** **(** :ref:`int<class_int>` column **)**
 
 Emitted when a column's title is pressed.
 
 .. _class_Tree_custom_popup_edited:
 
--  **custom_popup_edited**  **(** :ref:`bool<class_bool>` arrow_clicked  **)**
+- **custom_popup_edited** **(** :ref:`bool<class_bool>` arrow_clicked **)**
 
 Emitted when a cell with the ``CELL_MODE_CUSTOM`` is clicked to be edited.
 
 .. _class_Tree_empty_tree_rmb_selected:
 
--  **empty_tree_rmb_selected**  **(** :ref:`Vector2<class_vector2>` position  **)**
+- **empty_tree_rmb_selected** **(** :ref:`Vector2<class_vector2>` position **)**
 
 Emitted when the right mouse button is pressed if RMB selection is active and the tree is empty.
 
 .. _class_Tree_item_activated:
 
--  **item_activated**  **(** **)**
+- **item_activated** **(** **)**
 
 Emitted when an item is activated (double-clicked).
 
 .. _class_Tree_item_collapsed:
 
--  **item_collapsed**  **(** :ref:`Object<class_object>` item  **)**
+- **item_collapsed** **(** :ref:`Object<class_object>` item **)**
 
 Emitted when an item is collapsed by a click on the folding arrow.
 
 .. _class_Tree_item_custom_button_pressed:
 
--  **item_custom_button_pressed**  **(** **)**
+- **item_custom_button_pressed** **(** **)**
 
 .. _class_Tree_item_double_clicked:
 
--  **item_double_clicked**  **(** **)**
+- **item_double_clicked** **(** **)**
 
 Emitted when an item is double clicked.
 
 .. _class_Tree_item_edited:
 
--  **item_edited**  **(** **)**
+- **item_edited** **(** **)**
 
 Emitted when an item is edited.
 
 .. _class_Tree_item_rmb_edited:
 
--  **item_rmb_edited**  **(** **)**
+- **item_rmb_edited** **(** **)**
 
 Emitted when an item is edited using the right mouse button.
 
 .. _class_Tree_item_rmb_selected:
 
--  **item_rmb_selected**  **(** :ref:`Vector2<class_vector2>` position  **)**
+- **item_rmb_selected** **(** :ref:`Vector2<class_vector2>` position **)**
 
 Emitted when an item is selected with right mouse button.
 
 .. _class_Tree_item_selected:
 
--  **item_selected**  **(** **)**
+- **item_selected** **(** **)**
 
 Emitted when an item is selected with right mouse button.
 
 .. _class_Tree_multi_selected:
 
--  **multi_selected**  **(** :ref:`Object<class_object>` item, :ref:`int<class_int>` column, :ref:`bool<class_bool>` selected  **)**
+- **multi_selected** **(** :ref:`Object<class_object>` item, :ref:`int<class_int>` column, :ref:`bool<class_bool>` selected **)**
 
 Emitted instead of ``item_selected`` when ``select_mode`` is ``SELECT_MULTI``.
 
@@ -210,209 +210,209 @@ Member Function Description
 
 .. _class_Tree_are_column_titles_visible:
 
-- :ref:`bool<class_bool>`  **are_column_titles_visible**  **(** **)** const
+- :ref:`bool<class_bool>` **are_column_titles_visible** **(** **)** const
 
 Returns ``true`` if the column titles are being shown.
 
 .. _class_Tree_clear:
 
-- void  **clear**  **(** **)**
+- void **clear** **(** **)**
 
 Clears the tree. This removes all items.
 
 .. _class_Tree_create_item:
 
-- :ref:`Object<class_object>`  **create_item**  **(** :ref:`Object<class_object>` parent=null  **)**
+- :ref:`Object<class_object>` **create_item** **(** :ref:`Object<class_object>` parent=null **)**
 
 Create an item in the tree and add it as the last child of ``parent``. If parent is not given, it will be added as the root's last child, or it'll the be the root itself if the tree is empty.
 
 .. _class_Tree_ensure_cursor_is_visible:
 
-- void  **ensure_cursor_is_visible**  **(** **)**
+- void **ensure_cursor_is_visible** **(** **)**
 
 Makes the currently selected item visible. This will scroll the tree to make sure the selected item is visible.
 
 .. _class_Tree_get_allow_reselect:
 
-- :ref:`bool<class_bool>`  **get_allow_reselect**  **(** **)** const
+- :ref:`bool<class_bool>` **get_allow_reselect** **(** **)** const
 
 Returns ``true`` if a cell that is currently already selected may be selected again.
 
 .. _class_Tree_get_allow_rmb_select:
 
-- :ref:`bool<class_bool>`  **get_allow_rmb_select**  **(** **)** const
+- :ref:`bool<class_bool>` **get_allow_rmb_select** **(** **)** const
 
 Returns ``true`` if a right click can select items.
 
 .. _class_Tree_get_column_at_position:
 
-- :ref:`int<class_int>`  **get_column_at_position**  **(** :ref:`Vector2<class_vector2>` position  **)** const
+- :ref:`int<class_int>` **get_column_at_position** **(** :ref:`Vector2<class_vector2>` position **)** const
 
 Returns the column index under the given point.
 
 .. _class_Tree_get_column_title:
 
-- :ref:`String<class_string>`  **get_column_title**  **(** :ref:`int<class_int>` column  **)** const
+- :ref:`String<class_string>` **get_column_title** **(** :ref:`int<class_int>` column **)** const
 
 Returns the column's title.
 
 .. _class_Tree_get_column_width:
 
-- :ref:`int<class_int>`  **get_column_width**  **(** :ref:`int<class_int>` column  **)** const
+- :ref:`int<class_int>` **get_column_width** **(** :ref:`int<class_int>` column **)** const
 
 Returns the column's width in pixels.
 
 .. _class_Tree_get_columns:
 
-- :ref:`int<class_int>`  **get_columns**  **(** **)** const
+- :ref:`int<class_int>` **get_columns** **(** **)** const
 
 Returns the amount of columns.
 
 .. _class_Tree_get_custom_popup_rect:
 
-- :ref:`Rect2<class_rect2>`  **get_custom_popup_rect**  **(** **)** const
+- :ref:`Rect2<class_rect2>` **get_custom_popup_rect** **(** **)** const
 
 Returns the rectangle for custom popups. Helper to create custom cell controls that display a popup. See :ref:`TreeItem.set_cell_mode<class_TreeItem_set_cell_mode>`.
 
 .. _class_Tree_get_drop_mode_flags:
 
-- :ref:`int<class_int>`  **get_drop_mode_flags**  **(** **)** const
+- :ref:`int<class_int>` **get_drop_mode_flags** **(** **)** const
 
 Returns the current drop mode's flags.
 
 .. _class_Tree_get_drop_section_at_position:
 
-- :ref:`int<class_int>`  **get_drop_section_at_position**  **(** :ref:`Vector2<class_vector2>` position  **)** const
+- :ref:`int<class_int>` **get_drop_section_at_position** **(** :ref:`Vector2<class_vector2>` position **)** const
 
 .. _class_Tree_get_edited:
 
-- :ref:`TreeItem<class_treeitem>`  **get_edited**  **(** **)** const
+- :ref:`TreeItem<class_treeitem>` **get_edited** **(** **)** const
 
 Returns the currently edited item. This is only available for custom cell mode.
 
 .. _class_Tree_get_edited_column:
 
-- :ref:`int<class_int>`  **get_edited_column**  **(** **)** const
+- :ref:`int<class_int>` **get_edited_column** **(** **)** const
 
 Returns the column for the currently edited item. This is only available for custom cell mode.
 
 .. _class_Tree_get_item_area_rect:
 
-- :ref:`Rect2<class_rect2>`  **get_item_area_rect**  **(** :ref:`Object<class_object>` item, :ref:`int<class_int>` column=-1  **)** const
+- :ref:`Rect2<class_rect2>` **get_item_area_rect** **(** :ref:`Object<class_object>` item, :ref:`int<class_int>` column=-1 **)** const
 
 Returns the rectangle area for the specified item. If column is specified, only get the position and size of that column, otherwise get the rectangle containing all columns.
 
 .. _class_Tree_get_item_at_position:
 
-- :ref:`TreeItem<class_treeitem>`  **get_item_at_position**  **(** :ref:`Vector2<class_vector2>` position  **)** const
+- :ref:`TreeItem<class_treeitem>` **get_item_at_position** **(** :ref:`Vector2<class_vector2>` position **)** const
 
 Returns the tree item at the specified position (relative to the tree origin position).
 
 .. _class_Tree_get_next_selected:
 
-- :ref:`TreeItem<class_treeitem>`  **get_next_selected**  **(** :ref:`Object<class_object>` from  **)**
+- :ref:`TreeItem<class_treeitem>` **get_next_selected** **(** :ref:`Object<class_object>` from **)**
 
 Returns the next selected item after the given one.
 
 .. _class_Tree_get_pressed_button:
 
-- :ref:`int<class_int>`  **get_pressed_button**  **(** **)** const
+- :ref:`int<class_int>` **get_pressed_button** **(** **)** const
 
 Returns the last pressed button's index.
 
 .. _class_Tree_get_root:
 
-- :ref:`TreeItem<class_treeitem>`  **get_root**  **(** **)**
+- :ref:`TreeItem<class_treeitem>` **get_root** **(** **)**
 
 Returns the tree's root item.
 
 .. _class_Tree_get_scroll:
 
-- :ref:`Vector2<class_vector2>`  **get_scroll**  **(** **)** const
+- :ref:`Vector2<class_vector2>` **get_scroll** **(** **)** const
 
 Returns the current scrolling position.
 
 .. _class_Tree_get_selected:
 
-- :ref:`TreeItem<class_treeitem>`  **get_selected**  **(** **)** const
+- :ref:`TreeItem<class_treeitem>` **get_selected** **(** **)** const
 
 Returns the currently selected item.
 
 .. _class_Tree_get_selected_column:
 
-- :ref:`int<class_int>`  **get_selected_column**  **(** **)** const
+- :ref:`int<class_int>` **get_selected_column** **(** **)** const
 
 Returns the current selection's column.
 
 .. _class_Tree_is_folding_hidden:
 
-- :ref:`bool<class_bool>`  **is_folding_hidden**  **(** **)** const
+- :ref:`bool<class_bool>` **is_folding_hidden** **(** **)** const
 
 Returns ``true`` if the folding arrow is hidden.
 
 .. _class_Tree_set_allow_reselect:
 
-- void  **set_allow_reselect**  **(** :ref:`bool<class_bool>` allow  **)**
+- void **set_allow_reselect** **(** :ref:`bool<class_bool>` allow **)**
 
 If ``true`` the currently selected cell may be selected again.
 
 .. _class_Tree_set_allow_rmb_select:
 
-- void  **set_allow_rmb_select**  **(** :ref:`bool<class_bool>` allow  **)**
+- void **set_allow_rmb_select** **(** :ref:`bool<class_bool>` allow **)**
 
 If ``true`` a right mouse button click can select items.
 
 .. _class_Tree_set_column_expand:
 
-- void  **set_column_expand**  **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` expand  **)**
+- void **set_column_expand** **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` expand **)**
 
 If ``true`` the column will have the "Expand" flag of :ref:`Control<class_control>`.
 
 .. _class_Tree_set_column_min_width:
 
-- void  **set_column_min_width**  **(** :ref:`int<class_int>` column, :ref:`int<class_int>` min_width  **)**
+- void **set_column_min_width** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` min_width **)**
 
 Set the minimum width of a column.
 
 .. _class_Tree_set_column_title:
 
-- void  **set_column_title**  **(** :ref:`int<class_int>` column, :ref:`String<class_string>` title  **)**
+- void **set_column_title** **(** :ref:`int<class_int>` column, :ref:`String<class_string>` title **)**
 
 Set the title of a column.
 
 .. _class_Tree_set_column_titles_visible:
 
-- void  **set_column_titles_visible**  **(** :ref:`bool<class_bool>` visible  **)**
+- void **set_column_titles_visible** **(** :ref:`bool<class_bool>` visible **)**
 
 If ``true`` column titles are visible.
 
 .. _class_Tree_set_columns:
 
-- void  **set_columns**  **(** :ref:`int<class_int>` amount  **)**
+- void **set_columns** **(** :ref:`int<class_int>` amount **)**
 
 Set the amount of columns.
 
 .. _class_Tree_set_drop_mode_flags:
 
-- void  **set_drop_mode_flags**  **(** :ref:`int<class_int>` flags  **)**
+- void **set_drop_mode_flags** **(** :ref:`int<class_int>` flags **)**
 
 Set the drop mode as an OR combination of flags. See ``DROP_MODE\_\*`` constants.
 
 .. _class_Tree_set_hide_folding:
 
-- void  **set_hide_folding**  **(** :ref:`bool<class_bool>` hide  **)**
+- void **set_hide_folding** **(** :ref:`bool<class_bool>` hide **)**
 
 If ``true`` the folding arrow is hidden.
 
 .. _class_Tree_set_hide_root:
 
-- void  **set_hide_root**  **(** :ref:`bool<class_bool>` enable  **)**
+- void **set_hide_root** **(** :ref:`bool<class_bool>` enable **)**
 
 If ``true`` the tree's root is hidden.
 
 .. _class_Tree_set_select_mode:
 
-- void  **set_select_mode**  **(** :ref:`int<class_int>` mode  **)**
+- void **set_select_mode** **(** :ref:`int<class_int>` mode **)**
 
 Allow single or multiple selection. See the ``SELECT\_\*`` constants.
 

@@ -21,17 +21,17 @@ A :ref:`Resource<class_resource>` that contains vertex-array based geometry.
 Member Functions
 ----------------
 
-+--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`Shape<class_shape>`                        | :ref:`create_convex_shape<class_Mesh_create_convex_shape>`  **(** **)** const                         |
-+--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`Mesh<class_mesh>`                          | :ref:`create_outline<class_Mesh_create_outline>`  **(** :ref:`float<class_float>` margin  **)** const |
-+--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`Shape<class_shape>`                        | :ref:`create_trimesh_shape<class_Mesh_create_trimesh_shape>`  **(** **)** const                       |
-+--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`TriangleMesh<class_trianglemesh>`          | :ref:`generate_triangle_mesh<class_Mesh_generate_triangle_mesh>`  **(** **)** const                   |
-+--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector3Array<class_poolvector3array>`  | :ref:`get_faces<class_Mesh_get_faces>`  **(** **)** const                                             |
-+--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+| :ref:`Shape<class_shape>`                        | :ref:`create_convex_shape<class_Mesh_create_convex_shape>` **(** **)** const                        |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+| :ref:`Mesh<class_mesh>`                          | :ref:`create_outline<class_Mesh_create_outline>` **(** :ref:`float<class_float>` margin **)** const |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+| :ref:`Shape<class_shape>`                        | :ref:`create_trimesh_shape<class_Mesh_create_trimesh_shape>` **(** **)** const                      |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+| :ref:`TriangleMesh<class_trianglemesh>`          | :ref:`generate_triangle_mesh<class_Mesh_generate_triangle_mesh>` **(** **)** const                  |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+| :ref:`PoolVector3Array<class_poolvector3array>`  | :ref:`get_faces<class_Mesh_get_faces>` **(** **)** const                                            |
++--------------------------------------------------+-----------------------------------------------------------------------------------------------------+
 
 Numeric Constants
 -----------------
@@ -88,31 +88,31 @@ Member Function Description
 
 .. _class_Mesh_create_convex_shape:
 
-- :ref:`Shape<class_shape>`  **create_convex_shape**  **(** **)** const
+- :ref:`Shape<class_shape>` **create_convex_shape** **(** **)** const
 
 Calculate a :ref:`ConvexPolygonShape<class_convexpolygonshape>` from the mesh.
 
 .. _class_Mesh_create_outline:
 
-- :ref:`Mesh<class_mesh>`  **create_outline**  **(** :ref:`float<class_float>` margin  **)** const
+- :ref:`Mesh<class_mesh>` **create_outline** **(** :ref:`float<class_float>` margin **)** const
 
 Calculate an outline mesh at a defined offset (margin) from the original mesh. Note: Typically returns the vertices in reverse order (e.g. clockwise to anti-clockwise).
 
 .. _class_Mesh_create_trimesh_shape:
 
-- :ref:`Shape<class_shape>`  **create_trimesh_shape**  **(** **)** const
+- :ref:`Shape<class_shape>` **create_trimesh_shape** **(** **)** const
 
 Calculate a :ref:`ConcavePolygonShape<class_concavepolygonshape>` from the mesh.
 
 .. _class_Mesh_generate_triangle_mesh:
 
-- :ref:`TriangleMesh<class_trianglemesh>`  **generate_triangle_mesh**  **(** **)** const
+- :ref:`TriangleMesh<class_trianglemesh>` **generate_triangle_mesh** **(** **)** const
 
 Generate a :ref:`TriangleMesh<class_trianglemesh>` from the mesh.
 
 .. _class_Mesh_get_faces:
 
-- :ref:`PoolVector3Array<class_poolvector3array>`  **get_faces**  **(** **)** const
+- :ref:`PoolVector3Array<class_poolvector3array>` **get_faces** **(** **)** const
 
 Returns all the vertices that make up the faces of the mesh. Each three vertices represent one triangle.
 

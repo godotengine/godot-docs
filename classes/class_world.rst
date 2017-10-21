@@ -19,21 +19,21 @@ Class that has everything pertaining to a world.
 Member Functions
 ----------------
 
-+----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PhysicsDirectSpaceState<class_physicsdirectspacestate>`  | :ref:`get_direct_space_state<class_World_get_direct_space_state>`  **(** **)**                                                |
-+----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Environment<class_environment>`                          | :ref:`get_environment<class_World_get_environment>`  **(** **)** const                                                        |
-+----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Environment<class_environment>`                          | :ref:`get_fallback_environment<class_World_get_fallback_environment>`  **(** **)** const                                      |
-+----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                          | :ref:`get_scenario<class_World_get_scenario>`  **(** **)** const                                                              |
-+----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                          | :ref:`get_space<class_World_get_space>`  **(** **)** const                                                                    |
-+----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| void                                                           | :ref:`set_environment<class_World_set_environment>`  **(** :ref:`Environment<class_environment>` env  **)**                   |
-+----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| void                                                           | :ref:`set_fallback_environment<class_World_set_fallback_environment>`  **(** :ref:`Environment<class_environment>` env  **)** |
-+----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PhysicsDirectSpaceState<class_physicsdirectspacestate>`  | :ref:`get_direct_space_state<class_World_get_direct_space_state>` **(** **)**                                               |
++----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Environment<class_environment>`                          | :ref:`get_environment<class_World_get_environment>` **(** **)** const                                                       |
++----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Environment<class_environment>`                          | :ref:`get_fallback_environment<class_World_get_fallback_environment>` **(** **)** const                                     |
++----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_rid>`                                          | :ref:`get_scenario<class_World_get_scenario>` **(** **)** const                                                             |
++----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_rid>`                                          | :ref:`get_space<class_World_get_space>` **(** **)** const                                                                   |
++----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                                                           | :ref:`set_environment<class_World_set_environment>` **(** :ref:`Environment<class_environment>` env **)**                   |
++----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                                                           | :ref:`set_fallback_environment<class_World_set_fallback_environment>` **(** :ref:`Environment<class_environment>` env **)** |
++----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -57,30 +57,30 @@ Member Function Description
 
 .. _class_World_get_direct_space_state:
 
-- :ref:`PhysicsDirectSpaceState<class_physicsdirectspacestate>`  **get_direct_space_state**  **(** **)**
+- :ref:`PhysicsDirectSpaceState<class_physicsdirectspacestate>` **get_direct_space_state** **(** **)**
 
 .. _class_World_get_environment:
 
-- :ref:`Environment<class_environment>`  **get_environment**  **(** **)** const
+- :ref:`Environment<class_environment>` **get_environment** **(** **)** const
 
 .. _class_World_get_fallback_environment:
 
-- :ref:`Environment<class_environment>`  **get_fallback_environment**  **(** **)** const
+- :ref:`Environment<class_environment>` **get_fallback_environment** **(** **)** const
 
 .. _class_World_get_scenario:
 
-- :ref:`RID<class_rid>`  **get_scenario**  **(** **)** const
+- :ref:`RID<class_rid>` **get_scenario** **(** **)** const
 
 .. _class_World_get_space:
 
-- :ref:`RID<class_rid>`  **get_space**  **(** **)** const
+- :ref:`RID<class_rid>` **get_space** **(** **)** const
 
 .. _class_World_set_environment:
 
-- void  **set_environment**  **(** :ref:`Environment<class_environment>` env  **)**
+- void **set_environment** **(** :ref:`Environment<class_environment>` env **)**
 
 .. _class_World_set_fallback_environment:
 
-- void  **set_fallback_environment**  **(** :ref:`Environment<class_environment>` env  **)**
+- void **set_fallback_environment** **(** :ref:`Environment<class_environment>` env **)**
 
 

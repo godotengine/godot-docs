@@ -19,15 +19,15 @@ Input event type for gamepad joysticks and other motions. For buttons see :ref:`
 Member Functions
 ----------------
 
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_axis<class_InputEventJoypadMotion_get_axis>`  **(** **)** const                                             |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_axis_value<class_InputEventJoypadMotion_get_axis_value>`  **(** **)** const                                 |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_axis<class_InputEventJoypadMotion_set_axis>`  **(** :ref:`int<class_int>` axis  **)**                       |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_axis_value<class_InputEventJoypadMotion_set_axis_value>`  **(** :ref:`float<class_float>` axis_value  **)** |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------+
++----------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`get_axis<class_InputEventJoypadMotion_get_axis>` **(** **)** const                                            |
++----------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_axis_value<class_InputEventJoypadMotion_get_axis_value>` **(** **)** const                                |
++----------------------------+---------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_axis<class_InputEventJoypadMotion_set_axis>` **(** :ref:`int<class_int>` axis **)**                       |
++----------------------------+---------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_axis_value<class_InputEventJoypadMotion_set_axis_value>` **(** :ref:`float<class_float>` axis_value **)** |
++----------------------------+---------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -51,18 +51,18 @@ Member Function Description
 
 .. _class_InputEventJoypadMotion_get_axis:
 
-- :ref:`int<class_int>`  **get_axis**  **(** **)** const
+- :ref:`int<class_int>` **get_axis** **(** **)** const
 
 .. _class_InputEventJoypadMotion_get_axis_value:
 
-- :ref:`float<class_float>`  **get_axis_value**  **(** **)** const
+- :ref:`float<class_float>` **get_axis_value** **(** **)** const
 
 .. _class_InputEventJoypadMotion_set_axis:
 
-- void  **set_axis**  **(** :ref:`int<class_int>` axis  **)**
+- void **set_axis** **(** :ref:`int<class_int>` axis **)**
 
 .. _class_InputEventJoypadMotion_set_axis_value:
 
-- void  **set_axis_value**  **(** :ref:`float<class_float>` axis_value  **)**
+- void **set_axis_value** **(** :ref:`float<class_float>` axis_value **)**
 
 

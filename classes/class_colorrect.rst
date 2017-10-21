@@ -19,11 +19,11 @@ Colored rect for canvas.
 Member Functions
 ----------------
 
-+----------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`  | :ref:`get_frame_color<class_ColorRect_get_frame_color>`  **(** **)** const                            |
-+----------------------------+-------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_frame_color<class_ColorRect_set_frame_color>`  **(** :ref:`Color<class_color>` color  **)** |
-+----------------------------+-------------------------------------------------------------------------------------------------------+
++----------------------------+-----------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`  | :ref:`get_frame_color<class_ColorRect_get_frame_color>` **(** **)** const                           |
++----------------------------+-----------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_frame_color<class_ColorRect_set_frame_color>` **(** :ref:`Color<class_color>` color **)** |
++----------------------------+-----------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -47,7 +47,7 @@ Member Function Description
 
 .. _class_ColorRect_get_frame_color:
 
-- :ref:`Color<class_color>`  **get_frame_color**  **(** **)** const
+- :ref:`Color<class_color>` **get_frame_color** **(** **)** const
 
 Return the color in RGBA format.
 
@@ -58,7 +58,7 @@ Return the color in RGBA format.
 
 .. _class_ColorRect_set_frame_color:
 
-- void  **set_frame_color**  **(** :ref:`Color<class_color>` color  **)**
+- void **set_frame_color** **(** :ref:`Color<class_color>` color **)**
 
 Set new color to ColorRect.
 

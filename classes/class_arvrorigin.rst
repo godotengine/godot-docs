@@ -19,11 +19,11 @@ Our origin point in AR/VR.
 Member Functions
 ----------------
 
-+----------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_world_scale<class_ARVROrigin_get_world_scale>`  **(** **)** const                                  |
-+----------------------------+--------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_world_scale<class_ARVROrigin_set_world_scale>`  **(** :ref:`float<class_float>` world_scale  **)** |
-+----------------------------+--------------------------------------------------------------------------------------------------------------+
++----------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_world_scale<class_ARVROrigin_get_world_scale>` **(** **)** const                                 |
++----------------------------+------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_world_scale<class_ARVROrigin_set_world_scale>` **(** :ref:`float<class_float>` world_scale **)** |
++----------------------------+------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -49,13 +49,13 @@ Member Function Description
 
 .. _class_ARVROrigin_get_world_scale:
 
-- :ref:`float<class_float>`  **get_world_scale**  **(** **)** const
+- :ref:`float<class_float>` **get_world_scale** **(** **)** const
 
 Get the world scale applied to our positioning.
 
 .. _class_ARVROrigin_set_world_scale:
 
-- void  **set_world_scale**  **(** :ref:`float<class_float>` world_scale  **)**
+- void **set_world_scale** **(** :ref:`float<class_float>` world_scale **)**
 
 Changes the world scaling factor.
 

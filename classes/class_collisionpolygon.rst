@@ -19,19 +19,19 @@ Editor-only class for defining a collision polygon in 3D space.
 Member Functions
 ----------------
 
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                        | :ref:`get_depth<class_CollisionPolygon_get_depth>`  **(** **)** const                                                        |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector2Array<class_poolvector2array>`  | :ref:`get_polygon<class_CollisionPolygon_get_polygon>`  **(** **)** const                                                    |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                          | :ref:`is_disabled<class_CollisionPolygon_is_disabled>`  **(** **)** const                                                    |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_depth<class_CollisionPolygon_set_depth>`  **(** :ref:`float<class_float>` depth  **)**                             |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_disabled<class_CollisionPolygon_set_disabled>`  **(** :ref:`bool<class_bool>` disabled  **)**                      |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_polygon<class_CollisionPolygon_set_polygon>`  **(** :ref:`PoolVector2Array<class_poolvector2array>` polygon  **)** |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                        | :ref:`get_depth<class_CollisionPolygon_get_depth>` **(** **)** const                                                       |
++--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolVector2Array<class_poolvector2array>`  | :ref:`get_polygon<class_CollisionPolygon_get_polygon>` **(** **)** const                                                   |
++--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                          | :ref:`is_disabled<class_CollisionPolygon_is_disabled>` **(** **)** const                                                   |
++--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_depth<class_CollisionPolygon_set_depth>` **(** :ref:`float<class_float>` depth **)**                             |
++--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_disabled<class_CollisionPolygon_set_disabled>` **(** :ref:`bool<class_bool>` disabled **)**                      |
++--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_polygon<class_CollisionPolygon_set_polygon>` **(** :ref:`PoolVector2Array<class_poolvector2array>` polygon **)** |
++--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -59,26 +59,26 @@ Member Function Description
 
 .. _class_CollisionPolygon_get_depth:
 
-- :ref:`float<class_float>`  **get_depth**  **(** **)** const
+- :ref:`float<class_float>` **get_depth** **(** **)** const
 
 .. _class_CollisionPolygon_get_polygon:
 
-- :ref:`PoolVector2Array<class_poolvector2array>`  **get_polygon**  **(** **)** const
+- :ref:`PoolVector2Array<class_poolvector2array>` **get_polygon** **(** **)** const
 
 .. _class_CollisionPolygon_is_disabled:
 
-- :ref:`bool<class_bool>`  **is_disabled**  **(** **)** const
+- :ref:`bool<class_bool>` **is_disabled** **(** **)** const
 
 .. _class_CollisionPolygon_set_depth:
 
-- void  **set_depth**  **(** :ref:`float<class_float>` depth  **)**
+- void **set_depth** **(** :ref:`float<class_float>` depth **)**
 
 .. _class_CollisionPolygon_set_disabled:
 
-- void  **set_disabled**  **(** :ref:`bool<class_bool>` disabled  **)**
+- void **set_disabled** **(** :ref:`bool<class_bool>` disabled **)**
 
 .. _class_CollisionPolygon_set_polygon:
 
-- void  **set_polygon**  **(** :ref:`PoolVector2Array<class_poolvector2array>` polygon  **)**
+- void **set_polygon** **(** :ref:`PoolVector2Array<class_poolvector2array>` polygon **)**
 
 

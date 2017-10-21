@@ -19,40 +19,40 @@ Brief Description
 Member Functions
 ----------------
 
-+--------------------------+---------------------------------------------------------------------------------+
-| void                     | :ref:`attach_thread<class_GodotSharp_attach_thread>`  **(** **)**               |
-+--------------------------+---------------------------------------------------------------------------------+
-| void                     | :ref:`detach_thread<class_GodotSharp_detach_thread>`  **(** **)**               |
-+--------------------------+---------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_domain_loaded<class_GodotSharp_is_domain_loaded>`  **(** **)**         |
-+--------------------------+---------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_finalizing_domain<class_GodotSharp_is_finalizing_domain>`  **(** **)** |
-+--------------------------+---------------------------------------------------------------------------------+
++--------------------------+--------------------------------------------------------------------------------+
+| void                     | :ref:`attach_thread<class_GodotSharp_attach_thread>` **(** **)**               |
++--------------------------+--------------------------------------------------------------------------------+
+| void                     | :ref:`detach_thread<class_GodotSharp_detach_thread>` **(** **)**               |
++--------------------------+--------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`is_domain_loaded<class_GodotSharp_is_domain_loaded>` **(** **)**         |
++--------------------------+--------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`is_finalizing_domain<class_GodotSharp_is_finalizing_domain>` **(** **)** |
++--------------------------+--------------------------------------------------------------------------------+
 
 Member Function Description
 ---------------------------
 
 .. _class_GodotSharp_attach_thread:
 
-- void  **attach_thread**  **(** **)**
+- void **attach_thread** **(** **)**
 
 Attaches the current thread to the mono runtime.
 
 .. _class_GodotSharp_detach_thread:
 
-- void  **detach_thread**  **(** **)**
+- void **detach_thread** **(** **)**
 
 Detaches the current thread from the mono runtime.
 
 .. _class_GodotSharp_is_domain_loaded:
 
-- :ref:`bool<class_bool>`  **is_domain_loaded**  **(** **)**
+- :ref:`bool<class_bool>` **is_domain_loaded** **(** **)**
 
 Returns whether the scripts domain is loaded.
 
 .. _class_GodotSharp_is_finalizing_domain:
 
-- :ref:`bool<class_bool>`  **is_finalizing_domain**  **(** **)**
+- :ref:`bool<class_bool>` **is_finalizing_domain** **(** **)**
 
 Returns whether the scripts domain is being finalized.
 

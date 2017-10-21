@@ -19,23 +19,23 @@ A helper node for displaying scrollable elements (e.g. lists).
 Member Functions
 ----------------
 
-+--------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`    | :ref:`get_h_scroll<class_ScrollContainer_get_h_scroll>`  **(** **)** const                                         |
-+--------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`    | :ref:`get_v_scroll<class_ScrollContainer_get_v_scroll>`  **(** **)** const                                         |
-+--------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_h_scroll_enabled<class_ScrollContainer_is_h_scroll_enabled>`  **(** **)** const                           |
-+--------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_v_scroll_enabled<class_ScrollContainer_is_v_scroll_enabled>`  **(** **)** const                           |
-+--------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_enable_h_scroll<class_ScrollContainer_set_enable_h_scroll>`  **(** :ref:`bool<class_bool>` enable  **)** |
-+--------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_enable_v_scroll<class_ScrollContainer_set_enable_v_scroll>`  **(** :ref:`bool<class_bool>` enable  **)** |
-+--------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_h_scroll<class_ScrollContainer_set_h_scroll>`  **(** :ref:`int<class_int>` val  **)**                    |
-+--------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_v_scroll<class_ScrollContainer_set_v_scroll>`  **(** :ref:`int<class_int>` val  **)**                    |
-+--------------------------+--------------------------------------------------------------------------------------------------------------------+
++--------------------------+------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`    | :ref:`get_h_scroll<class_ScrollContainer_get_h_scroll>` **(** **)** const                                        |
++--------------------------+------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`    | :ref:`get_v_scroll<class_ScrollContainer_get_v_scroll>` **(** **)** const                                        |
++--------------------------+------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`is_h_scroll_enabled<class_ScrollContainer_is_h_scroll_enabled>` **(** **)** const                          |
++--------------------------+------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`is_v_scroll_enabled<class_ScrollContainer_is_v_scroll_enabled>` **(** **)** const                          |
++--------------------------+------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`set_enable_h_scroll<class_ScrollContainer_set_enable_h_scroll>` **(** :ref:`bool<class_bool>` enable **)** |
++--------------------------+------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`set_enable_v_scroll<class_ScrollContainer_set_enable_v_scroll>` **(** :ref:`bool<class_bool>` enable **)** |
++--------------------------+------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`set_h_scroll<class_ScrollContainer_set_h_scroll>` **(** :ref:`int<class_int>` val **)**                    |
++--------------------------+------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`set_v_scroll<class_ScrollContainer_set_v_scroll>` **(** :ref:`int<class_int>` val **)**                    |
++--------------------------+------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -59,49 +59,49 @@ Member Function Description
 
 .. _class_ScrollContainer_get_h_scroll:
 
-- :ref:`int<class_int>`  **get_h_scroll**  **(** **)** const
+- :ref:`int<class_int>` **get_h_scroll** **(** **)** const
 
 Return current horizontal scroll value.
 
 .. _class_ScrollContainer_get_v_scroll:
 
-- :ref:`int<class_int>`  **get_v_scroll**  **(** **)** const
+- :ref:`int<class_int>` **get_v_scroll** **(** **)** const
 
 Return current vertical scroll value.
 
 .. _class_ScrollContainer_is_h_scroll_enabled:
 
-- :ref:`bool<class_bool>`  **is_h_scroll_enabled**  **(** **)** const
+- :ref:`bool<class_bool>` **is_h_scroll_enabled** **(** **)** const
 
 Return true if horizontal scroll is allowed.
 
 .. _class_ScrollContainer_is_v_scroll_enabled:
 
-- :ref:`bool<class_bool>`  **is_v_scroll_enabled**  **(** **)** const
+- :ref:`bool<class_bool>` **is_v_scroll_enabled** **(** **)** const
 
 Return true if vertical scroll is allowed.
 
 .. _class_ScrollContainer_set_enable_h_scroll:
 
-- void  **set_enable_h_scroll**  **(** :ref:`bool<class_bool>` enable  **)**
+- void **set_enable_h_scroll** **(** :ref:`bool<class_bool>` enable **)**
 
 Set allows horizontal scroll.
 
 .. _class_ScrollContainer_set_enable_v_scroll:
 
-- void  **set_enable_v_scroll**  **(** :ref:`bool<class_bool>` enable  **)**
+- void **set_enable_v_scroll** **(** :ref:`bool<class_bool>` enable **)**
 
 Set allows vertical scroll.
 
 .. _class_ScrollContainer_set_h_scroll:
 
-- void  **set_h_scroll**  **(** :ref:`int<class_int>` val  **)**
+- void **set_h_scroll** **(** :ref:`int<class_int>` val **)**
 
 Set horizontal scroll value.
 
 .. _class_ScrollContainer_set_v_scroll:
 
-- void  **set_v_scroll**  **(** :ref:`int<class_int>` val  **)**
+- void **set_v_scroll** **(** :ref:`int<class_int>` val **)**
 
 Set vertical scroll value.
 

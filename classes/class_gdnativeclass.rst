@@ -19,15 +19,15 @@ Brief Description
 Member Functions
 ----------------
 
-+--------------------------------+--------------------------------------------------+
-| :ref:`Variant<class_variant>`  | :ref:`new<class_GDNativeClass_new>`  **(** **)** |
-+--------------------------------+--------------------------------------------------+
++--------------------------------+-------------------------------------------------+
+| :ref:`Variant<class_variant>`  | :ref:`new<class_GDNativeClass_new>` **(** **)** |
++--------------------------------+-------------------------------------------------+
 
 Member Function Description
 ---------------------------
 
 .. _class_GDNativeClass_new:
 
-- :ref:`Variant<class_variant>`  **new**  **(** **)**
+- :ref:`Variant<class_variant>` **new** **(** **)**
 
 

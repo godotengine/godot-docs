@@ -19,11 +19,11 @@ A script implemented in the GDScript programming language.
 Member Functions
 ----------------
 
-+--------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_poolbytearray>`  | :ref:`get_as_byte_code<class_GDScript_get_as_byte_code>`  **(** **)** const |
-+--------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`Object<class_object>`                | :ref:`new<class_GDScript_new>`  **(** **)** vararg                          |
-+--------------------------------------------+-----------------------------------------------------------------------------+
++--------------------------------------------+----------------------------------------------------------------------------+
+| :ref:`PoolByteArray<class_poolbytearray>`  | :ref:`get_as_byte_code<class_GDScript_get_as_byte_code>` **(** **)** const |
++--------------------------------------------+----------------------------------------------------------------------------+
+| :ref:`Object<class_object>`                | :ref:`new<class_GDScript_new>` **(** **)** vararg                          |
++--------------------------------------------+----------------------------------------------------------------------------+
 
 Description
 -----------
@@ -37,13 +37,13 @@ Member Function Description
 
 .. _class_GDScript_get_as_byte_code:
 
-- :ref:`PoolByteArray<class_poolbytearray>`  **get_as_byte_code**  **(** **)** const
+- :ref:`PoolByteArray<class_poolbytearray>` **get_as_byte_code** **(** **)** const
 
 Returns byte code for the script source code.
 
 .. _class_GDScript_new:
 
-- :ref:`Object<class_object>`  **new**  **(** **)** vararg
+- :ref:`Object<class_object>` **new** **(** **)** vararg
 
 Returns a new instance of the script.
 

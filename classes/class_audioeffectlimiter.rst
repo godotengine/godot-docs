@@ -19,23 +19,23 @@ Adds a soft clip Limiter audio effect to an Audio bus.
 Member Functions
 ----------------
 
-+----------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_ceiling_db<class_AudioEffectLimiter_get_ceiling_db>`  **(** **)** const                                          |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_soft_clip_db<class_AudioEffectLimiter_get_soft_clip_db>`  **(** **)** const                                      |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_soft_clip_ratio<class_AudioEffectLimiter_get_soft_clip_ratio>`  **(** **)** const                                |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_threshold_db<class_AudioEffectLimiter_get_threshold_db>`  **(** **)** const                                      |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_ceiling_db<class_AudioEffectLimiter_set_ceiling_db>`  **(** :ref:`float<class_float>` ceiling  **)**             |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_soft_clip_db<class_AudioEffectLimiter_set_soft_clip_db>`  **(** :ref:`float<class_float>` soft_clip  **)**       |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_soft_clip_ratio<class_AudioEffectLimiter_set_soft_clip_ratio>`  **(** :ref:`float<class_float>` soft_clip  **)** |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_threshold_db<class_AudioEffectLimiter_set_threshold_db>`  **(** :ref:`float<class_float>` threshold  **)**       |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------------+
++----------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_ceiling_db<class_AudioEffectLimiter_get_ceiling_db>` **(** **)** const                                         |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_soft_clip_db<class_AudioEffectLimiter_get_soft_clip_db>` **(** **)** const                                     |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_soft_clip_ratio<class_AudioEffectLimiter_get_soft_clip_ratio>` **(** **)** const                               |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_threshold_db<class_AudioEffectLimiter_get_threshold_db>` **(** **)** const                                     |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_ceiling_db<class_AudioEffectLimiter_set_ceiling_db>` **(** :ref:`float<class_float>` ceiling **)**             |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_soft_clip_db<class_AudioEffectLimiter_set_soft_clip_db>` **(** :ref:`float<class_float>` soft_clip **)**       |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_soft_clip_ratio<class_AudioEffectLimiter_set_soft_clip_ratio>` **(** :ref:`float<class_float>` soft_clip **)** |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_threshold_db<class_AudioEffectLimiter_set_threshold_db>` **(** :ref:`float<class_float>` threshold **)**       |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -69,34 +69,34 @@ Member Function Description
 
 .. _class_AudioEffectLimiter_get_ceiling_db:
 
-- :ref:`float<class_float>`  **get_ceiling_db**  **(** **)** const
+- :ref:`float<class_float>` **get_ceiling_db** **(** **)** const
 
 .. _class_AudioEffectLimiter_get_soft_clip_db:
 
-- :ref:`float<class_float>`  **get_soft_clip_db**  **(** **)** const
+- :ref:`float<class_float>` **get_soft_clip_db** **(** **)** const
 
 .. _class_AudioEffectLimiter_get_soft_clip_ratio:
 
-- :ref:`float<class_float>`  **get_soft_clip_ratio**  **(** **)** const
+- :ref:`float<class_float>` **get_soft_clip_ratio** **(** **)** const
 
 .. _class_AudioEffectLimiter_get_threshold_db:
 
-- :ref:`float<class_float>`  **get_threshold_db**  **(** **)** const
+- :ref:`float<class_float>` **get_threshold_db** **(** **)** const
 
 .. _class_AudioEffectLimiter_set_ceiling_db:
 
-- void  **set_ceiling_db**  **(** :ref:`float<class_float>` ceiling  **)**
+- void **set_ceiling_db** **(** :ref:`float<class_float>` ceiling **)**
 
 .. _class_AudioEffectLimiter_set_soft_clip_db:
 
-- void  **set_soft_clip_db**  **(** :ref:`float<class_float>` soft_clip  **)**
+- void **set_soft_clip_db** **(** :ref:`float<class_float>` soft_clip **)**
 
 .. _class_AudioEffectLimiter_set_soft_clip_ratio:
 
-- void  **set_soft_clip_ratio**  **(** :ref:`float<class_float>` soft_clip  **)**
+- void **set_soft_clip_ratio** **(** :ref:`float<class_float>` soft_clip **)**
 
 .. _class_AudioEffectLimiter_set_threshold_db:
 
-- void  **set_threshold_db**  **(** :ref:`float<class_float>` threshold  **)**
+- void **set_threshold_db** **(** :ref:`float<class_float>` threshold **)**
 
 

@@ -21,75 +21,75 @@ A 2D game object, parent of all 2D related nodes. Has a position, rotation, scal
 Member Functions
 ----------------
 
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`apply_scale<class_Node2D_apply_scale>`  **(** :ref:`Vector2<class_vector2>` ratio  **)**                                            |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`edit_set_pivot<class_Node2D_edit_set_pivot>`  **(** :ref:`Vector2<class_vector2>` pivot  **)**                                      |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_angle_to<class_Node2D_get_angle_to>`  **(** :ref:`Vector2<class_vector2>` point  **)** const                                    |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`          | :ref:`get_global_position<class_Node2D_get_global_position>`  **(** **)** const                                                           |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_global_rotation<class_Node2D_get_global_rotation>`  **(** **)** const                                                           |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_global_rotation_in_degrees<class_Node2D_get_global_rotation_in_degrees>`  **(** **)** const                                     |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`          | :ref:`get_global_scale<class_Node2D_get_global_scale>`  **(** **)** const                                                                 |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`          | :ref:`get_position<class_Node2D_get_position>`  **(** **)** const                                                                         |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`  | :ref:`get_relative_transform_to_parent<class_Node2D_get_relative_transform_to_parent>`  **(** :ref:`Node<class_node>` parent  **)** const |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_rotation<class_Node2D_get_rotation>`  **(** **)** const                                                                         |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_rotation_in_degrees<class_Node2D_get_rotation_in_degrees>`  **(** **)** const                                                   |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`          | :ref:`get_scale<class_Node2D_get_scale>`  **(** **)** const                                                                               |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                  | :ref:`get_z<class_Node2D_get_z>`  **(** **)** const                                                                                       |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`global_translate<class_Node2D_global_translate>`  **(** :ref:`Vector2<class_vector2>` offset  **)**                                 |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`is_z_relative<class_Node2D_is_z_relative>`  **(** **)** const                                                                       |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`look_at<class_Node2D_look_at>`  **(** :ref:`Vector2<class_vector2>` point  **)**                                                    |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`move_local_x<class_Node2D_move_local_x>`  **(** :ref:`float<class_float>` delta, :ref:`bool<class_bool>` scaled=false  **)**        |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`move_local_y<class_Node2D_move_local_y>`  **(** :ref:`float<class_float>` delta, :ref:`bool<class_bool>` scaled=false  **)**        |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`rotate<class_Node2D_rotate>`  **(** :ref:`float<class_float>` radians  **)**                                                        |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_global_position<class_Node2D_set_global_position>`  **(** :ref:`Vector2<class_vector2>` position  **)**                         |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_global_rotation<class_Node2D_set_global_rotation>`  **(** :ref:`float<class_float>` radians  **)**                              |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_global_rotation_in_degrees<class_Node2D_set_global_rotation_in_degrees>`  **(** :ref:`float<class_float>` degrees  **)**        |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_global_scale<class_Node2D_set_global_scale>`  **(** :ref:`Vector2<class_vector2>` scale  **)**                                  |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_global_transform<class_Node2D_set_global_transform>`  **(** :ref:`Transform2D<class_transform2d>` xform  **)**                  |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_position<class_Node2D_set_position>`  **(** :ref:`Vector2<class_vector2>` position  **)**                                       |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_rotation<class_Node2D_set_rotation>`  **(** :ref:`float<class_float>` radians  **)**                                            |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_rotation_in_degrees<class_Node2D_set_rotation_in_degrees>`  **(** :ref:`float<class_float>` degrees  **)**                      |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_scale<class_Node2D_set_scale>`  **(** :ref:`Vector2<class_vector2>` scale  **)**                                                |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_transform<class_Node2D_set_transform>`  **(** :ref:`Transform2D<class_transform2d>` xform  **)**                                |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_z<class_Node2D_set_z>`  **(** :ref:`int<class_int>` z  **)**                                                                    |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_z_as_relative<class_Node2D_set_z_as_relative>`  **(** :ref:`bool<class_bool>` enable  **)**                                     |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`          | :ref:`to_global<class_Node2D_to_global>`  **(** :ref:`Vector2<class_vector2>` local_point  **)** const                                    |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`          | :ref:`to_local<class_Node2D_to_local>`  **(** :ref:`Vector2<class_vector2>` global_point  **)** const                                     |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`translate<class_Node2D_translate>`  **(** :ref:`Vector2<class_vector2>` offset  **)**                                               |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`apply_scale<class_Node2D_apply_scale>` **(** :ref:`Vector2<class_vector2>` ratio **)**                                            |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`edit_set_pivot<class_Node2D_edit_set_pivot>` **(** :ref:`Vector2<class_vector2>` pivot **)**                                      |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_angle_to<class_Node2D_get_angle_to>` **(** :ref:`Vector2<class_vector2>` point **)** const                                    |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`          | :ref:`get_global_position<class_Node2D_get_global_position>` **(** **)** const                                                          |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_global_rotation<class_Node2D_get_global_rotation>` **(** **)** const                                                          |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_global_rotation_in_degrees<class_Node2D_get_global_rotation_in_degrees>` **(** **)** const                                    |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`          | :ref:`get_global_scale<class_Node2D_get_global_scale>` **(** **)** const                                                                |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`          | :ref:`get_position<class_Node2D_get_position>` **(** **)** const                                                                        |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_transform2d>`  | :ref:`get_relative_transform_to_parent<class_Node2D_get_relative_transform_to_parent>` **(** :ref:`Node<class_node>` parent **)** const |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_rotation<class_Node2D_get_rotation>` **(** **)** const                                                                        |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_rotation_in_degrees<class_Node2D_get_rotation_in_degrees>` **(** **)** const                                                  |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`          | :ref:`get_scale<class_Node2D_get_scale>` **(** **)** const                                                                              |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`get_z<class_Node2D_get_z>` **(** **)** const                                                                                      |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`global_translate<class_Node2D_global_translate>` **(** :ref:`Vector2<class_vector2>` offset **)**                                 |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`is_z_relative<class_Node2D_is_z_relative>` **(** **)** const                                                                      |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`look_at<class_Node2D_look_at>` **(** :ref:`Vector2<class_vector2>` point **)**                                                    |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`move_local_x<class_Node2D_move_local_x>` **(** :ref:`float<class_float>` delta, :ref:`bool<class_bool>` scaled=false **)**        |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`move_local_y<class_Node2D_move_local_y>` **(** :ref:`float<class_float>` delta, :ref:`bool<class_bool>` scaled=false **)**        |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`rotate<class_Node2D_rotate>` **(** :ref:`float<class_float>` radians **)**                                                        |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_global_position<class_Node2D_set_global_position>` **(** :ref:`Vector2<class_vector2>` position **)**                         |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_global_rotation<class_Node2D_set_global_rotation>` **(** :ref:`float<class_float>` radians **)**                              |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_global_rotation_in_degrees<class_Node2D_set_global_rotation_in_degrees>` **(** :ref:`float<class_float>` degrees **)**        |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_global_scale<class_Node2D_set_global_scale>` **(** :ref:`Vector2<class_vector2>` scale **)**                                  |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_global_transform<class_Node2D_set_global_transform>` **(** :ref:`Transform2D<class_transform2d>` xform **)**                  |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_position<class_Node2D_set_position>` **(** :ref:`Vector2<class_vector2>` position **)**                                       |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_rotation<class_Node2D_set_rotation>` **(** :ref:`float<class_float>` radians **)**                                            |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_rotation_in_degrees<class_Node2D_set_rotation_in_degrees>` **(** :ref:`float<class_float>` degrees **)**                      |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_scale<class_Node2D_set_scale>` **(** :ref:`Vector2<class_vector2>` scale **)**                                                |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_transform<class_Node2D_set_transform>` **(** :ref:`Transform2D<class_transform2d>` xform **)**                                |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_z<class_Node2D_set_z>` **(** :ref:`int<class_int>` z **)**                                                                    |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_z_as_relative<class_Node2D_set_z_as_relative>` **(** :ref:`bool<class_bool>` enable **)**                                     |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`          | :ref:`to_global<class_Node2D_to_global>` **(** :ref:`Vector2<class_vector2>` local_point **)** const                                    |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`          | :ref:`to_local<class_Node2D_to_local>` **(** :ref:`Vector2<class_vector2>` global_point **)** const                                     |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`translate<class_Node2D_translate>` **(** :ref:`Vector2<class_vector2>` offset **)**                                               |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -153,201 +153,201 @@ Member Function Description
 
 .. _class_Node2D_apply_scale:
 
-- void  **apply_scale**  **(** :ref:`Vector2<class_vector2>` ratio  **)**
+- void **apply_scale** **(** :ref:`Vector2<class_vector2>` ratio **)**
 
 Multiplies the current scale by the 'ratio' vector.
 
 .. _class_Node2D_edit_set_pivot:
 
-- void  **edit_set_pivot**  **(** :ref:`Vector2<class_vector2>` pivot  **)**
+- void **edit_set_pivot** **(** :ref:`Vector2<class_vector2>` pivot **)**
 
 Set the pivot position of the 2D node to 'pivot' value. Only some Node2Ds implement this method.
 
 .. _class_Node2D_get_angle_to:
 
-- :ref:`float<class_float>`  **get_angle_to**  **(** :ref:`Vector2<class_vector2>` point  **)** const
+- :ref:`float<class_float>` **get_angle_to** **(** :ref:`Vector2<class_vector2>` point **)** const
 
 Returns the angle between the node and the 'point' in radians.
 
 .. _class_Node2D_get_global_position:
 
-- :ref:`Vector2<class_vector2>`  **get_global_position**  **(** **)** const
+- :ref:`Vector2<class_vector2>` **get_global_position** **(** **)** const
 
 Returns the node's global position.
 
 .. _class_Node2D_get_global_rotation:
 
-- :ref:`float<class_float>`  **get_global_rotation**  **(** **)** const
+- :ref:`float<class_float>` **get_global_rotation** **(** **)** const
 
 Returns the node's global rotation in radians.
 
 .. _class_Node2D_get_global_rotation_in_degrees:
 
-- :ref:`float<class_float>`  **get_global_rotation_in_degrees**  **(** **)** const
+- :ref:`float<class_float>` **get_global_rotation_in_degrees** **(** **)** const
 
 Return the node's global rotation in degrees.
 
 .. _class_Node2D_get_global_scale:
 
-- :ref:`Vector2<class_vector2>`  **get_global_scale**  **(** **)** const
+- :ref:`Vector2<class_vector2>` **get_global_scale** **(** **)** const
 
 Returns the node's global scale.
 
 .. _class_Node2D_get_position:
 
-- :ref:`Vector2<class_vector2>`  **get_position**  **(** **)** const
+- :ref:`Vector2<class_vector2>` **get_position** **(** **)** const
 
 Returns the node's position.
 
 .. _class_Node2D_get_relative_transform_to_parent:
 
-- :ref:`Transform2D<class_transform2d>`  **get_relative_transform_to_parent**  **(** :ref:`Node<class_node>` parent  **)** const
+- :ref:`Transform2D<class_transform2d>` **get_relative_transform_to_parent** **(** :ref:`Node<class_node>` parent **)** const
 
 Returns the :ref:`Transform2D<class_transform2d>` relative to this node's parent.
 
 .. _class_Node2D_get_rotation:
 
-- :ref:`float<class_float>`  **get_rotation**  **(** **)** const
+- :ref:`float<class_float>` **get_rotation** **(** **)** const
 
 Returns the node's rotation in radians.
 
 .. _class_Node2D_get_rotation_in_degrees:
 
-- :ref:`float<class_float>`  **get_rotation_in_degrees**  **(** **)** const
+- :ref:`float<class_float>` **get_rotation_in_degrees** **(** **)** const
 
 Returns the node's rotation in degrees.
 
 .. _class_Node2D_get_scale:
 
-- :ref:`Vector2<class_vector2>`  **get_scale**  **(** **)** const
+- :ref:`Vector2<class_vector2>` **get_scale** **(** **)** const
 
 Returns the node's scale.
 
 .. _class_Node2D_get_z:
 
-- :ref:`int<class_int>`  **get_z**  **(** **)** const
+- :ref:`int<class_int>` **get_z** **(** **)** const
 
 Returns the node's Z-index.
 
 .. _class_Node2D_global_translate:
 
-- void  **global_translate**  **(** :ref:`Vector2<class_vector2>` offset  **)**
+- void **global_translate** **(** :ref:`Vector2<class_vector2>` offset **)**
 
 Adds the 'offset' vector to the node's global position.
 
 .. _class_Node2D_is_z_relative:
 
-- :ref:`bool<class_bool>`  **is_z_relative**  **(** **)** const
+- :ref:`bool<class_bool>` **is_z_relative** **(** **)** const
 
 Returns true if this node's Z-index is relative to its parent's. Else, returns false.
 
 .. _class_Node2D_look_at:
 
-- void  **look_at**  **(** :ref:`Vector2<class_vector2>` point  **)**
+- void **look_at** **(** :ref:`Vector2<class_vector2>` point **)**
 
 Rotates the node so it points towards the 'point'.
 
 .. _class_Node2D_move_local_x:
 
-- void  **move_local_x**  **(** :ref:`float<class_float>` delta, :ref:`bool<class_bool>` scaled=false  **)**
+- void **move_local_x** **(** :ref:`float<class_float>` delta, :ref:`bool<class_bool>` scaled=false **)**
 
 Apply a local translation on the node's X axis based on the process's 'delta'. If 'scaled' is false, normalizes the movement.
 
 .. _class_Node2D_move_local_y:
 
-- void  **move_local_y**  **(** :ref:`float<class_float>` delta, :ref:`bool<class_bool>` scaled=false  **)**
+- void **move_local_y** **(** :ref:`float<class_float>` delta, :ref:`bool<class_bool>` scaled=false **)**
 
 Apply a local translation on the node's Y axis based on the process's 'delta'. If 'scaled' is false, normalizes the movement.
 
 .. _class_Node2D_rotate:
 
-- void  **rotate**  **(** :ref:`float<class_float>` radians  **)**
+- void **rotate** **(** :ref:`float<class_float>` radians **)**
 
 Apply a rotation to the node, in radians, starting from its current rotation.
 
 .. _class_Node2D_set_global_position:
 
-- void  **set_global_position**  **(** :ref:`Vector2<class_vector2>` position  **)**
+- void **set_global_position** **(** :ref:`Vector2<class_vector2>` position **)**
 
 Set the node's global position.
 
 .. _class_Node2D_set_global_rotation:
 
-- void  **set_global_rotation**  **(** :ref:`float<class_float>` radians  **)**
+- void **set_global_rotation** **(** :ref:`float<class_float>` radians **)**
 
 Set the node's global rotation in radians.
 
 .. _class_Node2D_set_global_rotation_in_degrees:
 
-- void  **set_global_rotation_in_degrees**  **(** :ref:`float<class_float>` degrees  **)**
+- void **set_global_rotation_in_degrees** **(** :ref:`float<class_float>` degrees **)**
 
 Set the node's global rotation in degrees.
 
 .. _class_Node2D_set_global_scale:
 
-- void  **set_global_scale**  **(** :ref:`Vector2<class_vector2>` scale  **)**
+- void **set_global_scale** **(** :ref:`Vector2<class_vector2>` scale **)**
 
 Set the node's global scale.
 
 .. _class_Node2D_set_global_transform:
 
-- void  **set_global_transform**  **(** :ref:`Transform2D<class_transform2d>` xform  **)**
+- void **set_global_transform** **(** :ref:`Transform2D<class_transform2d>` xform **)**
 
 Set the node's global :ref:`Transform2D<class_transform2d>`.
 
 .. _class_Node2D_set_position:
 
-- void  **set_position**  **(** :ref:`Vector2<class_vector2>` position  **)**
+- void **set_position** **(** :ref:`Vector2<class_vector2>` position **)**
 
 Set the node's position.
 
 .. _class_Node2D_set_rotation:
 
-- void  **set_rotation**  **(** :ref:`float<class_float>` radians  **)**
+- void **set_rotation** **(** :ref:`float<class_float>` radians **)**
 
 Set the node's rotation in radians.
 
 .. _class_Node2D_set_rotation_in_degrees:
 
-- void  **set_rotation_in_degrees**  **(** :ref:`float<class_float>` degrees  **)**
+- void **set_rotation_in_degrees** **(** :ref:`float<class_float>` degrees **)**
 
 Set the node's rotation in degrees.
 
 .. _class_Node2D_set_scale:
 
-- void  **set_scale**  **(** :ref:`Vector2<class_vector2>` scale  **)**
+- void **set_scale** **(** :ref:`Vector2<class_vector2>` scale **)**
 
 Set the node's scale.
 
 .. _class_Node2D_set_transform:
 
-- void  **set_transform**  **(** :ref:`Transform2D<class_transform2d>` xform  **)**
+- void **set_transform** **(** :ref:`Transform2D<class_transform2d>` xform **)**
 
 Set the node's local :ref:`Transform2D<class_transform2d>`.
 
 .. _class_Node2D_set_z:
 
-- void  **set_z**  **(** :ref:`int<class_int>` z  **)**
+- void **set_z** **(** :ref:`int<class_int>` z **)**
 
 Set the node's Z-index.
 
 .. _class_Node2D_set_z_as_relative:
 
-- void  **set_z_as_relative**  **(** :ref:`bool<class_bool>` enable  **)**
+- void **set_z_as_relative** **(** :ref:`bool<class_bool>` enable **)**
 
 Make the node's Z-index relative to its parent's Z-index. If this node's Z-index is 2 and its parent's effective Z-index is 3, then this node's effective Z-index will be 2 + 3 = 5.
 
 .. _class_Node2D_to_global:
 
-- :ref:`Vector2<class_vector2>`  **to_global**  **(** :ref:`Vector2<class_vector2>` local_point  **)** const
+- :ref:`Vector2<class_vector2>` **to_global** **(** :ref:`Vector2<class_vector2>` local_point **)** const
 
 .. _class_Node2D_to_local:
 
-- :ref:`Vector2<class_vector2>`  **to_local**  **(** :ref:`Vector2<class_vector2>` global_point  **)** const
+- :ref:`Vector2<class_vector2>` **to_local** **(** :ref:`Vector2<class_vector2>` global_point **)** const
 
 .. _class_Node2D_translate:
 
-- void  **translate**  **(** :ref:`Vector2<class_vector2>` offset  **)**
+- void **translate** **(** :ref:`Vector2<class_vector2>` offset **)**
 
 Translate the node locally by the 'offset' vector, starting from its current local position.
 

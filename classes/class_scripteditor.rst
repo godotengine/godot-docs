@@ -19,24 +19,24 @@ Brief Description
 Member Functions
 ----------------
 
-+------------------------------+---------------------------------------------------------------------------------+
-| :ref:`Script<class_script>`  | :ref:`get_current_script<class_ScriptEditor_get_current_script>`  **(** **)**   |
-+------------------------------+---------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`    | :ref:`get_open_scripts<class_ScriptEditor_get_open_scripts>`  **(** **)** const |
-+------------------------------+---------------------------------------------------------------------------------+
++------------------------------+--------------------------------------------------------------------------------+
+| :ref:`Script<class_script>`  | :ref:`get_current_script<class_ScriptEditor_get_current_script>` **(** **)**   |
++------------------------------+--------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`    | :ref:`get_open_scripts<class_ScriptEditor_get_open_scripts>` **(** **)** const |
++------------------------------+--------------------------------------------------------------------------------+
 
 Signals
 -------
 
 .. _class_ScriptEditor_editor_script_changed:
 
--  **editor_script_changed**  **(** :ref:`Object<class_object>` script  **)**
+- **editor_script_changed** **(** :ref:`Object<class_object>` script **)**
 
 Emitted when user changed active script. Argument is a freshly activated :ref:`Script<class_script>`.
 
 .. _class_ScriptEditor_script_close:
 
--  **script_close**  **(** :ref:`Object<class_object>` script  **)**
+- **script_close** **(** :ref:`Object<class_object>` script **)**
 
 Emitted when editor is about to close the active script. Argument is a :ref:`Script<class_script>` that is going to be closed.
 
@@ -46,13 +46,13 @@ Member Function Description
 
 .. _class_ScriptEditor_get_current_script:
 
-- :ref:`Script<class_script>`  **get_current_script**  **(** **)**
+- :ref:`Script<class_script>` **get_current_script** **(** **)**
 
 Returns a :ref:`Script<class_script>` that is currently active in editor.
 
 .. _class_ScriptEditor_get_open_scripts:
 
-- :ref:`Array<class_array>`  **get_open_scripts**  **(** **)** const
+- :ref:`Array<class_array>` **get_open_scripts** **(** **)** const
 
 Returns an array with all :ref:`Script<class_script>` objects which are currently open in editor.
 

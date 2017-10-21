@@ -17,37 +17,37 @@ Brief Description
 Member Functions
 ----------------
 
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_transform>`  | :ref:`Transform<class_Transform_Transform>`  **(** :ref:`Vector3<class_vector3>` x_axis, :ref:`Vector3<class_vector3>` y_axis, :ref:`Vector3<class_vector3>` z_axis, :ref:`Vector3<class_vector3>` origin  **)** |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_transform>`  | :ref:`Transform<class_Transform_Transform>`  **(** :ref:`Basis<class_basis>` basis, :ref:`Vector3<class_vector3>` origin  **)**                                                                                  |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_transform>`  | :ref:`Transform<class_Transform_Transform>`  **(** :ref:`Transform2D<class_transform2d>` from  **)**                                                                                                             |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_transform>`  | :ref:`Transform<class_Transform_Transform>`  **(** :ref:`Quat<class_quat>` from  **)**                                                                                                                           |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_transform>`  | :ref:`Transform<class_Transform_Transform>`  **(** :ref:`Basis<class_basis>` from  **)**                                                                                                                         |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_transform>`  | :ref:`affine_inverse<class_Transform_affine_inverse>`  **(** **)**                                                                                                                                               |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_transform>`  | :ref:`interpolate_with<class_Transform_interpolate_with>`  **(** :ref:`Transform<class_transform>` transform, :ref:`float<class_float>` weight  **)**                                                            |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_transform>`  | :ref:`inverse<class_Transform_inverse>`  **(** **)**                                                                                                                                                             |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_transform>`  | :ref:`looking_at<class_Transform_looking_at>`  **(** :ref:`Vector3<class_vector3>` target, :ref:`Vector3<class_vector3>` up  **)**                                                                               |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_transform>`  | :ref:`orthonormalized<class_Transform_orthonormalized>`  **(** **)**                                                                                                                                             |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_transform>`  | :ref:`rotated<class_Transform_rotated>`  **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` phi  **)**                                                                                          |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_transform>`  | :ref:`scaled<class_Transform_scaled>`  **(** :ref:`Vector3<class_vector3>` scale  **)**                                                                                                                          |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_transform>`  | :ref:`translated<class_Transform_translated>`  **(** :ref:`Vector3<class_vector3>` ofs  **)**                                                                                                                    |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| var                                | :ref:`xform<class_Transform_xform>`  **(** var v  **)**                                                                                                                                                          |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| var                                | :ref:`xform_inv<class_Transform_xform_inv>`  **(** var v  **)**                                                                                                                                                  |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_transform>`  | :ref:`Transform<class_Transform_Transform>` **(** :ref:`Vector3<class_vector3>` x_axis, :ref:`Vector3<class_vector3>` y_axis, :ref:`Vector3<class_vector3>` z_axis, :ref:`Vector3<class_vector3>` origin **)** |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_transform>`  | :ref:`Transform<class_Transform_Transform>` **(** :ref:`Basis<class_basis>` basis, :ref:`Vector3<class_vector3>` origin **)**                                                                                  |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_transform>`  | :ref:`Transform<class_Transform_Transform>` **(** :ref:`Transform2D<class_transform2d>` from **)**                                                                                                             |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_transform>`  | :ref:`Transform<class_Transform_Transform>` **(** :ref:`Quat<class_quat>` from **)**                                                                                                                           |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_transform>`  | :ref:`Transform<class_Transform_Transform>` **(** :ref:`Basis<class_basis>` from **)**                                                                                                                         |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_transform>`  | :ref:`affine_inverse<class_Transform_affine_inverse>` **(** **)**                                                                                                                                              |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_transform>`  | :ref:`interpolate_with<class_Transform_interpolate_with>` **(** :ref:`Transform<class_transform>` transform, :ref:`float<class_float>` weight **)**                                                            |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_transform>`  | :ref:`inverse<class_Transform_inverse>` **(** **)**                                                                                                                                                            |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_transform>`  | :ref:`looking_at<class_Transform_looking_at>` **(** :ref:`Vector3<class_vector3>` target, :ref:`Vector3<class_vector3>` up **)**                                                                               |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_transform>`  | :ref:`orthonormalized<class_Transform_orthonormalized>` **(** **)**                                                                                                                                            |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_transform>`  | :ref:`rotated<class_Transform_rotated>` **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` phi **)**                                                                                          |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_transform>`  | :ref:`scaled<class_Transform_scaled>` **(** :ref:`Vector3<class_vector3>` scale **)**                                                                                                                          |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_transform>`  | :ref:`translated<class_Transform_translated>` **(** :ref:`Vector3<class_vector3>` ofs **)**                                                                                                                    |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| var                                | :ref:`xform<class_Transform_xform>` **(** var v **)**                                                                                                                                                          |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| var                                | :ref:`xform_inv<class_Transform_xform_inv>` **(** var v **)**                                                                                                                                                  |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -71,91 +71,91 @@ Member Function Description
 
 .. _class_Transform_Transform:
 
-- :ref:`Transform<class_transform>`  **Transform**  **(** :ref:`Vector3<class_vector3>` x_axis, :ref:`Vector3<class_vector3>` y_axis, :ref:`Vector3<class_vector3>` z_axis, :ref:`Vector3<class_vector3>` origin  **)**
+- :ref:`Transform<class_transform>` **Transform** **(** :ref:`Vector3<class_vector3>` x_axis, :ref:`Vector3<class_vector3>` y_axis, :ref:`Vector3<class_vector3>` z_axis, :ref:`Vector3<class_vector3>` origin **)**
 
 Constructs the Transform from four :ref:`Vector3<class_vector3>`. Each axis corresponds to local basis vectors (some of which may be scaled).
 
 .. _class_Transform_Transform:
 
-- :ref:`Transform<class_transform>`  **Transform**  **(** :ref:`Basis<class_basis>` basis, :ref:`Vector3<class_vector3>` origin  **)**
+- :ref:`Transform<class_transform>` **Transform** **(** :ref:`Basis<class_basis>` basis, :ref:`Vector3<class_vector3>` origin **)**
 
 Constructs the Transform from a :ref:`Basis<class_basis>` and :ref:`Vector3<class_vector3>`.
 
 .. _class_Transform_Transform:
 
-- :ref:`Transform<class_transform>`  **Transform**  **(** :ref:`Transform2D<class_transform2d>` from  **)**
+- :ref:`Transform<class_transform>` **Transform** **(** :ref:`Transform2D<class_transform2d>` from **)**
 
 Constructs the Transform from a :ref:`Transform2D<class_transform2d>`.
 
 .. _class_Transform_Transform:
 
-- :ref:`Transform<class_transform>`  **Transform**  **(** :ref:`Quat<class_quat>` from  **)**
+- :ref:`Transform<class_transform>` **Transform** **(** :ref:`Quat<class_quat>` from **)**
 
 Constructs the Transform from a :ref:`Quat<class_quat>`. The origin will be Vector3(0, 0, 0).
 
 .. _class_Transform_Transform:
 
-- :ref:`Transform<class_transform>`  **Transform**  **(** :ref:`Basis<class_basis>` from  **)**
+- :ref:`Transform<class_transform>` **Transform** **(** :ref:`Basis<class_basis>` from **)**
 
 Constructs the Transform from a :ref:`Basis<class_basis>`. The origin will be Vector3(0, 0, 0).
 
 .. _class_Transform_affine_inverse:
 
-- :ref:`Transform<class_transform>`  **affine_inverse**  **(** **)**
+- :ref:`Transform<class_transform>` **affine_inverse** **(** **)**
 
 Returns the inverse of the transform, under the assumption that the transformation is composed of rotation, scaling and translation.
 
 .. _class_Transform_interpolate_with:
 
-- :ref:`Transform<class_transform>`  **interpolate_with**  **(** :ref:`Transform<class_transform>` transform, :ref:`float<class_float>` weight  **)**
+- :ref:`Transform<class_transform>` **interpolate_with** **(** :ref:`Transform<class_transform>` transform, :ref:`float<class_float>` weight **)**
 
 Interpolates the transform to other Transform by weight amount (0-1).
 
 .. _class_Transform_inverse:
 
-- :ref:`Transform<class_transform>`  **inverse**  **(** **)**
+- :ref:`Transform<class_transform>` **inverse** **(** **)**
 
 Returns the inverse of the transform, under the assumption that the transformation is composed of rotation and translation (no scaling, use affine_inverse for transforms with scaling).
 
 .. _class_Transform_looking_at:
 
-- :ref:`Transform<class_transform>`  **looking_at**  **(** :ref:`Vector3<class_vector3>` target, :ref:`Vector3<class_vector3>` up  **)**
+- :ref:`Transform<class_transform>` **looking_at** **(** :ref:`Vector3<class_vector3>` target, :ref:`Vector3<class_vector3>` up **)**
 
 Rotate the transform around the up vector to face the target.
 
 .. _class_Transform_orthonormalized:
 
-- :ref:`Transform<class_transform>`  **orthonormalized**  **(** **)**
+- :ref:`Transform<class_transform>` **orthonormalized** **(** **)**
 
 Returns the transform with the basis orthogonal (90 degrees), and normalized axis vectors.
 
 .. _class_Transform_rotated:
 
-- :ref:`Transform<class_transform>`  **rotated**  **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` phi  **)**
+- :ref:`Transform<class_transform>` **rotated** **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` phi **)**
 
 Rotates the transform around given axis by phi. The axis must be a normalized vector.
 
 .. _class_Transform_scaled:
 
-- :ref:`Transform<class_transform>`  **scaled**  **(** :ref:`Vector3<class_vector3>` scale  **)**
+- :ref:`Transform<class_transform>` **scaled** **(** :ref:`Vector3<class_vector3>` scale **)**
 
 Scales the transform by the specified 3D scaling factors.
 
 .. _class_Transform_translated:
 
-- :ref:`Transform<class_transform>`  **translated**  **(** :ref:`Vector3<class_vector3>` ofs  **)**
+- :ref:`Transform<class_transform>` **translated** **(** :ref:`Vector3<class_vector3>` ofs **)**
 
 Translates the transform by the specified offset.
 
 .. _class_Transform_xform:
 
-- var  **xform**  **(** var v  **)**
+- var **xform** **(** var v **)**
 
 Transforms the given vector "v" by this transform.
 
 .. _class_Transform_xform_inv:
 
-- var  **xform_inv**  **(** var v  **)**
+- var **xform_inv** **(** var v **)**
 
 Inverse-transforms the given vector "v" by this transform.
 

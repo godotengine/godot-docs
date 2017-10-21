@@ -19,11 +19,11 @@ A node that will attach to a bone.
 Member Functions
 ----------------
 
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_bone_name<class_BoneAttachment_get_bone_name>`  **(** **)** const                                  |
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_bone_name<class_BoneAttachment_set_bone_name>`  **(** :ref:`String<class_string>` bone_name  **)** |
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
++------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_bone_name<class_BoneAttachment_get_bone_name>` **(** **)** const                                 |
++------------------------------+------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_bone_name<class_BoneAttachment_set_bone_name>` **(** :ref:`String<class_string>` bone_name **)** |
++------------------------------+------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -35,13 +35,13 @@ Member Function Description
 
 .. _class_BoneAttachment_get_bone_name:
 
-- :ref:`String<class_string>`  **get_bone_name**  **(** **)** const
+- :ref:`String<class_string>` **get_bone_name** **(** **)** const
 
 Returns the name of the bone node attached to.
 
 .. _class_BoneAttachment_set_bone_name:
 
-- void  **set_bone_name**  **(** :ref:`String<class_string>` bone_name  **)**
+- void **set_bone_name** **(** :ref:`String<class_string>` bone_name **)**
 
 Changes the name of the bone node
 

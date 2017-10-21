@@ -19,15 +19,15 @@ Exits a function and returns an optional value.
 Member Functions
 ----------------
 
-+--------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`    | :ref:`get_return_type<class_VisualScriptReturn_get_return_type>`  **(** **)** const                                           |
-+--------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_return_value_enabled<class_VisualScriptReturn_is_return_value_enabled>`  **(** **)** const                           |
-+--------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_enable_return_value<class_VisualScriptReturn_set_enable_return_value>`  **(** :ref:`bool<class_bool>` enable  **)** |
-+--------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_return_type<class_VisualScriptReturn_set_return_type>`  **(** :ref:`int<class_int>` type  **)**                     |
-+--------------------------+-------------------------------------------------------------------------------------------------------------------------------+
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`    | :ref:`get_return_type<class_VisualScriptReturn_get_return_type>` **(** **)** const                                          |
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`is_return_value_enabled<class_VisualScriptReturn_is_return_value_enabled>` **(** **)** const                          |
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`set_enable_return_value<class_VisualScriptReturn_set_enable_return_value>` **(** :ref:`bool<class_bool>` enable **)** |
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`set_return_type<class_VisualScriptReturn_set_return_type>` **(** :ref:`int<class_int>` type **)**                     |
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -61,18 +61,18 @@ Member Function Description
 
 .. _class_VisualScriptReturn_get_return_type:
 
-- :ref:`int<class_int>`  **get_return_type**  **(** **)** const
+- :ref:`int<class_int>` **get_return_type** **(** **)** const
 
 .. _class_VisualScriptReturn_is_return_value_enabled:
 
-- :ref:`bool<class_bool>`  **is_return_value_enabled**  **(** **)** const
+- :ref:`bool<class_bool>` **is_return_value_enabled** **(** **)** const
 
 .. _class_VisualScriptReturn_set_enable_return_value:
 
-- void  **set_enable_return_value**  **(** :ref:`bool<class_bool>` enable  **)**
+- void **set_enable_return_value** **(** :ref:`bool<class_bool>` enable **)**
 
 .. _class_VisualScriptReturn_set_return_type:
 
-- void  **set_return_type**  **(** :ref:`int<class_int>` type  **)**
+- void **set_return_type** **(** :ref:`int<class_int>` type **)**
 
 

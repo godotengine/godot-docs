@@ -21,37 +21,37 @@ Canvas drawing layer.
 Member Functions
 ----------------
 
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_node>`                | :ref:`get_custom_viewport<class_CanvasLayer_get_custom_viewport>`  **(** **)** const                                |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                  | :ref:`get_layer<class_CanvasLayer_get_layer>`  **(** **)** const                                                    |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`          | :ref:`get_offset<class_CanvasLayer_get_offset>`  **(** **)** const                                                  |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_rotation<class_CanvasLayer_get_rotation>`  **(** **)** const                                              |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_rotationd<class_CanvasLayer_get_rotationd>`  **(** **)** const                                            |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`          | :ref:`get_scale<class_CanvasLayer_get_scale>`  **(** **)** const                                                    |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`  | :ref:`get_transform<class_CanvasLayer_get_transform>`  **(** **)** const                                            |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`World2D<class_world2d>`          | :ref:`get_world_2d<class_CanvasLayer_get_world_2d>`  **(** **)** const                                              |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_custom_viewport<class_CanvasLayer_set_custom_viewport>`  **(** :ref:`Node<class_node>` viewport  **)**    |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_layer<class_CanvasLayer_set_layer>`  **(** :ref:`int<class_int>` layer  **)**                             |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_offset<class_CanvasLayer_set_offset>`  **(** :ref:`Vector2<class_vector2>` offset  **)**                  |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_rotation<class_CanvasLayer_set_rotation>`  **(** :ref:`float<class_float>` radians  **)**                 |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_rotationd<class_CanvasLayer_set_rotationd>`  **(** :ref:`float<class_float>` degrees  **)**               |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_scale<class_CanvasLayer_set_scale>`  **(** :ref:`Vector2<class_vector2>` scale  **)**                     |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_transform<class_CanvasLayer_set_transform>`  **(** :ref:`Transform2D<class_transform2d>` transform  **)** |
-+----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`Node<class_node>`                | :ref:`get_custom_viewport<class_CanvasLayer_get_custom_viewport>` **(** **)** const                               |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`get_layer<class_CanvasLayer_get_layer>` **(** **)** const                                                   |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`          | :ref:`get_offset<class_CanvasLayer_get_offset>` **(** **)** const                                                 |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_rotation<class_CanvasLayer_get_rotation>` **(** **)** const                                             |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_rotationd<class_CanvasLayer_get_rotationd>` **(** **)** const                                           |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`          | :ref:`get_scale<class_CanvasLayer_get_scale>` **(** **)** const                                                   |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_transform2d>`  | :ref:`get_transform<class_CanvasLayer_get_transform>` **(** **)** const                                           |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`World2D<class_world2d>`          | :ref:`get_world_2d<class_CanvasLayer_get_world_2d>` **(** **)** const                                             |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_custom_viewport<class_CanvasLayer_set_custom_viewport>` **(** :ref:`Node<class_node>` viewport **)**    |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_layer<class_CanvasLayer_set_layer>` **(** :ref:`int<class_int>` layer **)**                             |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_offset<class_CanvasLayer_set_offset>` **(** :ref:`Vector2<class_vector2>` offset **)**                  |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_rotation<class_CanvasLayer_set_rotation>` **(** :ref:`float<class_float>` radians **)**                 |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_rotationd<class_CanvasLayer_set_rotationd>` **(** :ref:`float<class_float>` degrees **)**               |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_scale<class_CanvasLayer_set_scale>` **(** :ref:`Vector2<class_vector2>` scale **)**                     |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_transform<class_CanvasLayer_set_transform>` **(** :ref:`Transform2D<class_transform2d>` transform **)** |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -83,87 +83,87 @@ Member Function Description
 
 .. _class_CanvasLayer_get_custom_viewport:
 
-- :ref:`Node<class_node>`  **get_custom_viewport**  **(** **)** const
+- :ref:`Node<class_node>` **get_custom_viewport** **(** **)** const
 
 .. _class_CanvasLayer_get_layer:
 
-- :ref:`int<class_int>`  **get_layer**  **(** **)** const
+- :ref:`int<class_int>` **get_layer** **(** **)** const
 
 Return the layer index, determines the draw order, a lower value will be below a higher one.
 
 .. _class_CanvasLayer_get_offset:
 
-- :ref:`Vector2<class_vector2>`  **get_offset**  **(** **)** const
+- :ref:`Vector2<class_vector2>` **get_offset** **(** **)** const
 
 Return the base offset for this layer (helper).
 
 .. _class_CanvasLayer_get_rotation:
 
-- :ref:`float<class_float>`  **get_rotation**  **(** **)** const
+- :ref:`float<class_float>` **get_rotation** **(** **)** const
 
 Return the base rotation for this layer in radians (helper).
 
 .. _class_CanvasLayer_get_rotationd:
 
-- :ref:`float<class_float>`  **get_rotationd**  **(** **)** const
+- :ref:`float<class_float>` **get_rotationd** **(** **)** const
 
 Return the base rotation for this layer in degrees.
 
 .. _class_CanvasLayer_get_scale:
 
-- :ref:`Vector2<class_vector2>`  **get_scale**  **(** **)** const
+- :ref:`Vector2<class_vector2>` **get_scale** **(** **)** const
 
 Return the base scale for this layer (helper).
 
 .. _class_CanvasLayer_get_transform:
 
-- :ref:`Transform2D<class_transform2d>`  **get_transform**  **(** **)** const
+- :ref:`Transform2D<class_transform2d>` **get_transform** **(** **)** const
 
 Return the base transform for this layer.
 
 .. _class_CanvasLayer_get_world_2d:
 
-- :ref:`World2D<class_world2d>`  **get_world_2d**  **(** **)** const
+- :ref:`World2D<class_world2d>` **get_world_2d** **(** **)** const
 
 Return the :ref:`World2D<class_world2d>` used by this layer.
 
 .. _class_CanvasLayer_set_custom_viewport:
 
-- void  **set_custom_viewport**  **(** :ref:`Node<class_node>` viewport  **)**
+- void **set_custom_viewport** **(** :ref:`Node<class_node>` viewport **)**
 
 .. _class_CanvasLayer_set_layer:
 
-- void  **set_layer**  **(** :ref:`int<class_int>` layer  **)**
+- void **set_layer** **(** :ref:`int<class_int>` layer **)**
 
 Set the layer index, determines the draw order, a lower value will be below a higher one.
 
 .. _class_CanvasLayer_set_offset:
 
-- void  **set_offset**  **(** :ref:`Vector2<class_vector2>` offset  **)**
+- void **set_offset** **(** :ref:`Vector2<class_vector2>` offset **)**
 
 Set the base offset for this layer (helper).
 
 .. _class_CanvasLayer_set_rotation:
 
-- void  **set_rotation**  **(** :ref:`float<class_float>` radians  **)**
+- void **set_rotation** **(** :ref:`float<class_float>` radians **)**
 
 Set the base rotation for this layer in radians (helper).
 
 .. _class_CanvasLayer_set_rotationd:
 
-- void  **set_rotationd**  **(** :ref:`float<class_float>` degrees  **)**
+- void **set_rotationd** **(** :ref:`float<class_float>` degrees **)**
 
 Set the base rotation for this layer in degrees (helper).
 
 .. _class_CanvasLayer_set_scale:
 
-- void  **set_scale**  **(** :ref:`Vector2<class_vector2>` scale  **)**
+- void **set_scale** **(** :ref:`Vector2<class_vector2>` scale **)**
 
 Set the base scale for this layer (helper).
 
 .. _class_CanvasLayer_set_transform:
 
-- void  **set_transform**  **(** :ref:`Transform2D<class_transform2d>` transform  **)**
+- void **set_transform** **(** :ref:`Transform2D<class_transform2d>` transform **)**
 
 Set the base transform for this layer.
 

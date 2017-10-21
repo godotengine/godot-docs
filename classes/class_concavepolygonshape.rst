@@ -19,11 +19,11 @@ Concave polygon shape.
 Member Functions
 ----------------
 
-+--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector3Array<class_poolvector3array>`  | :ref:`get_faces<class_ConcavePolygonShape_get_faces>`  **(** **)** const                                                  |
-+--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_faces<class_ConcavePolygonShape_set_faces>`  **(** :ref:`PoolVector3Array<class_poolvector3array>` faces  **)** |
-+--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolVector3Array<class_poolvector3array>`  | :ref:`get_faces<class_ConcavePolygonShape_get_faces>` **(** **)** const                                                 |
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_faces<class_ConcavePolygonShape_set_faces>` **(** :ref:`PoolVector3Array<class_poolvector3array>` faces **)** |
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -35,13 +35,13 @@ Member Function Description
 
 .. _class_ConcavePolygonShape_get_faces:
 
-- :ref:`PoolVector3Array<class_poolvector3array>`  **get_faces**  **(** **)** const
+- :ref:`PoolVector3Array<class_poolvector3array>` **get_faces** **(** **)** const
 
 Return the faces (an array of triangles).
 
 .. _class_ConcavePolygonShape_set_faces:
 
-- void  **set_faces**  **(** :ref:`PoolVector3Array<class_poolvector3array>` faces  **)**
+- void **set_faces** **(** :ref:`PoolVector3Array<class_poolvector3array>` faces **)**
 
 Set the faces (an array of triangles).
 

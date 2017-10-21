@@ -19,11 +19,11 @@ Box shape resource.
 Member Functions
 ----------------
 
-+--------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`get_extents<class_BoxShape_get_extents>`  **(** **)** const                                  |
-+--------------------------------+----------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_extents<class_BoxShape_set_extents>`  **(** :ref:`Vector3<class_vector3>` extents  **)** |
-+--------------------------------+----------------------------------------------------------------------------------------------------+
++--------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`  | :ref:`get_extents<class_BoxShape_get_extents>` **(** **)** const                                 |
++--------------------------------+--------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_extents<class_BoxShape_set_extents>` **(** :ref:`Vector3<class_vector3>` extents **)** |
++--------------------------------+--------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -43,13 +43,13 @@ Member Function Description
 
 .. _class_BoxShape_get_extents:
 
-- :ref:`Vector3<class_vector3>`  **get_extents**  **(** **)** const
+- :ref:`Vector3<class_vector3>` **get_extents** **(** **)** const
 
 Return the half extents of the shape.
 
 .. _class_BoxShape_set_extents:
 
-- void  **set_extents**  **(** :ref:`Vector3<class_vector3>` extents  **)**
+- void **set_extents** **(** :ref:`Vector3<class_vector3>` extents **)**
 
 Set the half extents for the shape.
 

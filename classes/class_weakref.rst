@@ -19,9 +19,9 @@ Holds an :ref:`Object<class_object>`, but does not contribute to the reference c
 Member Functions
 ----------------
 
-+--------------------------------+----------------------------------------------------------+
-| :ref:`Variant<class_variant>`  | :ref:`get_ref<class_WeakRef_get_ref>`  **(** **)** const |
-+--------------------------------+----------------------------------------------------------+
++--------------------------------+---------------------------------------------------------+
+| :ref:`Variant<class_variant>`  | :ref:`get_ref<class_WeakRef_get_ref>` **(** **)** const |
++--------------------------------+---------------------------------------------------------+
 
 Description
 -----------
@@ -33,7 +33,7 @@ Member Function Description
 
 .. _class_WeakRef_get_ref:
 
-- :ref:`Variant<class_variant>`  **get_ref**  **(** **)** const
+- :ref:`Variant<class_variant>` **get_ref** **(** **)** const
 
 Returns the :ref:`Object<class_object>` this weakref is referring to.
 

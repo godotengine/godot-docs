@@ -19,11 +19,11 @@ Chooses between two input values.
 Member Functions
 ----------------
 
-+------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_typed<class_VisualScriptSelect_get_typed>`  **(** **)** const                       |
-+------------------------+-----------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_typed<class_VisualScriptSelect_set_typed>`  **(** :ref:`int<class_int>` type  **)** |
-+------------------------+-----------------------------------------------------------------------------------------------+
++------------------------+---------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`get_typed<class_VisualScriptSelect_get_typed>` **(** **)** const                      |
++------------------------+---------------------------------------------------------------------------------------------+
+| void                   | :ref:`set_typed<class_VisualScriptSelect_set_typed>` **(** :ref:`int<class_int>` type **)** |
++------------------------+---------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -55,10 +55,10 @@ Member Function Description
 
 .. _class_VisualScriptSelect_get_typed:
 
-- :ref:`int<class_int>`  **get_typed**  **(** **)** const
+- :ref:`int<class_int>` **get_typed** **(** **)** const
 
 .. _class_VisualScriptSelect_set_typed:
 
-- void  **set_typed**  **(** :ref:`int<class_int>` type  **)**
+- void **set_typed** **(** :ref:`int<class_int>` type **)**
 
 

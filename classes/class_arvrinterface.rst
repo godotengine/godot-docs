@@ -21,33 +21,33 @@ Base class for ARVR interface implementation.
 Member Functions
 ----------------
 
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`get_anchor_detection_is_enabled<class_ARVRInterface_get_anchor_detection_is_enabled>`  **(** **)** const                           |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_capabilities<class_ARVRInterface_get_capabilities>`  **(** **)** const                                                         |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`    | :ref:`get_name<class_ARVRInterface_get_name>`  **(** **)** const                                                                         |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_recommended_render_targetsize<class_ARVRInterface_get_recommended_render_targetsize>`  **(** **)**                             |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_tracking_status<class_ARVRInterface_get_tracking_status>`  **(** **)** const                                                   |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`initialize<class_ARVRInterface_initialize>`  **(** **)**                                                                           |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_initialized<class_ARVRInterface_is_initialized>`  **(** **)**                                                                   |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_primary<class_ARVRInterface_is_primary>`  **(** **)**                                                                           |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_stereo<class_ARVRInterface_is_stereo>`  **(** **)**                                                                             |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_anchor_detection_is_enabled<class_ARVRInterface_set_anchor_detection_is_enabled>`  **(** :ref:`bool<class_bool>` enable  **)** |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_is_initialized<class_ARVRInterface_set_is_initialized>`  **(** :ref:`bool<class_bool>` initialized  **)**                      |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_is_primary<class_ARVRInterface_set_is_primary>`  **(** :ref:`bool<class_bool>` enable  **)**                                   |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`uninitialize<class_ARVRInterface_uninitialize>`  **(** **)**                                                                       |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`get_anchor_detection_is_enabled<class_ARVRInterface_get_anchor_detection_is_enabled>` **(** **)** const                          |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_capabilities<class_ARVRInterface_get_capabilities>` **(** **)** const                                                        |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`    | :ref:`get_name<class_ARVRInterface_get_name>` **(** **)** const                                                                        |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_recommended_render_targetsize<class_ARVRInterface_get_recommended_render_targetsize>` **(** **)**                            |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_tracking_status<class_ARVRInterface_get_tracking_status>` **(** **)** const                                                  |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`initialize<class_ARVRInterface_initialize>` **(** **)**                                                                          |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_initialized<class_ARVRInterface_is_initialized>` **(** **)**                                                                  |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_primary<class_ARVRInterface_is_primary>` **(** **)**                                                                          |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_stereo<class_ARVRInterface_is_stereo>` **(** **)**                                                                            |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_anchor_detection_is_enabled<class_ARVRInterface_set_anchor_detection_is_enabled>` **(** :ref:`bool<class_bool>` enable **)** |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_is_initialized<class_ARVRInterface_set_is_initialized>` **(** :ref:`bool<class_bool>` initialized **)**                      |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_is_primary<class_ARVRInterface_set_is_primary>` **(** :ref:`bool<class_bool>` enable **)**                                   |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`uninitialize<class_ARVRInterface_uninitialize>` **(** **)**                                                                      |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -94,37 +94,37 @@ Member Function Description
 
 .. _class_ARVRInterface_get_anchor_detection_is_enabled:
 
-- :ref:`bool<class_bool>`  **get_anchor_detection_is_enabled**  **(** **)** const
+- :ref:`bool<class_bool>` **get_anchor_detection_is_enabled** **(** **)** const
 
 Returns true if achor detection is enabled (AR only).
 
 .. _class_ARVRInterface_get_capabilities:
 
-- :ref:`int<class_int>`  **get_capabilities**  **(** **)** const
+- :ref:`int<class_int>` **get_capabilities** **(** **)** const
 
 Returns a combination of flags providing information about the capabilities of this interface.
 
 .. _class_ARVRInterface_get_name:
 
-- :ref:`String<class_string>`  **get_name**  **(** **)** const
+- :ref:`String<class_string>` **get_name** **(** **)** const
 
 Returns the name of this interface (OpenVR, OpenHMD, ARKit, etc).
 
 .. _class_ARVRInterface_get_recommended_render_targetsize:
 
-- :ref:`Vector2<class_vector2>`  **get_recommended_render_targetsize**  **(** **)**
+- :ref:`Vector2<class_vector2>` **get_recommended_render_targetsize** **(** **)**
 
 Returns the resolution at which we should render our intermediate results before things like lens distortion are applied by the VR platform.
 
 .. _class_ARVRInterface_get_tracking_status:
 
-- :ref:`int<class_int>`  **get_tracking_status**  **(** **)** const
+- :ref:`int<class_int>` **get_tracking_status** **(** **)** const
 
 If supported, returns the status of our tracking. This will allow you to provide feedback to the user whether there are issues with positional tracking.
 
 .. _class_ARVRInterface_initialize:
 
-- :ref:`bool<class_bool>`  **initialize**  **(** **)**
+- :ref:`bool<class_bool>` **initialize** **(** **)**
 
 Call this to initialize this interface. The first interface that is initialized is identified as the primary interface and it will be used for rendering output.
 
@@ -138,43 +138,43 @@ While currently not used you can activate additional interfaces, you may wish to
 
 .. _class_ARVRInterface_is_initialized:
 
-- :ref:`bool<class_bool>`  **is_initialized**  **(** **)**
+- :ref:`bool<class_bool>` **is_initialized** **(** **)**
 
 Returns true if this interface is active.
 
 .. _class_ARVRInterface_is_primary:
 
-- :ref:`bool<class_bool>`  **is_primary**  **(** **)**
+- :ref:`bool<class_bool>` **is_primary** **(** **)**
 
 Returns true if this interface is currently the primary interface (the interface responsible for showing the output).
 
 .. _class_ARVRInterface_is_stereo:
 
-- :ref:`bool<class_bool>`  **is_stereo**  **(** **)**
+- :ref:`bool<class_bool>` **is_stereo** **(** **)**
 
 Returns true if the current output of this interface is in stereo.
 
 .. _class_ARVRInterface_set_anchor_detection_is_enabled:
 
-- void  **set_anchor_detection_is_enabled**  **(** :ref:`bool<class_bool>` enable  **)**
+- void **set_anchor_detection_is_enabled** **(** :ref:`bool<class_bool>` enable **)**
 
 Enables anchor detection, this is used on AR interfaces and enables the extra logic that will detect planes, features, objects, etc. and adds/modifies anchor points.
 
 .. _class_ARVRInterface_set_is_initialized:
 
-- void  **set_is_initialized**  **(** :ref:`bool<class_bool>` initialized  **)**
+- void **set_is_initialized** **(** :ref:`bool<class_bool>` initialized **)**
 
 Initialize/uninitialize this interface (same effect as calling initialize/uninitialize).
 
 .. _class_ARVRInterface_set_is_primary:
 
-- void  **set_is_primary**  **(** :ref:`bool<class_bool>` enable  **)**
+- void **set_is_primary** **(** :ref:`bool<class_bool>` enable **)**
 
 Set this interface to the primary interface (unset the old one).
 
 .. _class_ARVRInterface_uninitialize:
 
-- void  **uninitialize**  **(** **)**
+- void **uninitialize** **(** **)**
 
 Turns the interface off.
 

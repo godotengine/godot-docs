@@ -19,18 +19,18 @@ State of a function call after yielding.
 Member Functions
 ----------------
 
-+--------------------------------+------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_valid<class_GDFunctionState_is_valid>`  **(** :ref:`bool<class_bool>` extended_check=false  **)** const |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`  | :ref:`resume<class_GDFunctionState_resume>`  **(** :ref:`Variant<class_variant>` arg=null  **)**                 |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------+
++--------------------------------+----------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_valid<class_GDFunctionState_is_valid>` **(** :ref:`bool<class_bool>` extended_check=false **)** const |
++--------------------------------+----------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_variant>`  | :ref:`resume<class_GDFunctionState_resume>` **(** :ref:`Variant<class_variant>` arg=null **)**                 |
++--------------------------------+----------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
 
 .. _class_GDFunctionState_completed:
 
--  **completed**  **(** :ref:`Nil<class_nil>` result  **)**
+- **completed** **(** :ref:`Nil<class_nil>` result **)**
 
 
 Description
@@ -43,7 +43,7 @@ Member Function Description
 
 .. _class_GDFunctionState_is_valid:
 
-- :ref:`bool<class_bool>`  **is_valid**  **(** :ref:`bool<class_bool>` extended_check=false  **)** const
+- :ref:`bool<class_bool>` **is_valid** **(** :ref:`bool<class_bool>` extended_check=false **)** const
 
 Check whether the function call may be resumed. This is not the case if the function state was already resumed.
 
@@ -51,7 +51,7 @@ If ``extended_check`` is enabled, it also checks if the associated script and ob
 
 .. _class_GDFunctionState_resume:
 
-- :ref:`Variant<class_variant>`  **resume**  **(** :ref:`Variant<class_variant>` arg=null  **)**
+- :ref:`Variant<class_variant>` **resume** **(** :ref:`Variant<class_variant>` arg=null **)**
 
 Resume execution of the yielded function call.
 

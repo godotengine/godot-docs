@@ -19,11 +19,11 @@ A Visual Script node used to call built-in functions.
 Member Functions
 ----------------
 
-+------------------------+---------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_func<class_VisualScriptBuiltinFunc_get_func>`  **(** **)**                              |
-+------------------------+---------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_func<class_VisualScriptBuiltinFunc_set_func>`  **(** :ref:`int<class_int>` which  **)** |
-+------------------------+---------------------------------------------------------------------------------------------------+
++------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`get_func<class_VisualScriptBuiltinFunc_get_func>` **(** **)**                             |
++------------------------+-------------------------------------------------------------------------------------------------+
+| void                   | :ref:`set_func<class_VisualScriptBuiltinFunc_set_func>` **(** :ref:`int<class_int>` which **)** |
++------------------------+-------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -109,10 +109,10 @@ Member Function Description
 
 .. _class_VisualScriptBuiltinFunc_get_func:
 
-- :ref:`int<class_int>`  **get_func**  **(** **)**
+- :ref:`int<class_int>` **get_func** **(** **)**
 
 .. _class_VisualScriptBuiltinFunc_set_func:
 
-- void  **set_func**  **(** :ref:`int<class_int>` which  **)**
+- void **set_func** **(** :ref:`int<class_int>` which **)**
 
 

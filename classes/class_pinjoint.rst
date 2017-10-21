@@ -19,11 +19,11 @@ Pin Joint for 3D Shapes.
 Member Functions
 ----------------
 
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_param<class_PinJoint_get_param>`  **(** :ref:`int<class_int>` param  **)** const                            |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_param<class_PinJoint_set_param>`  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)** |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------+
++----------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_param<class_PinJoint_get_param>` **(** :ref:`int<class_int>` param **)** const                            |
++----------------------------+---------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_param<class_PinJoint_set_param>` **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value **)** |
++----------------------------+---------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -66,10 +66,10 @@ Member Function Description
 
 .. _class_PinJoint_get_param:
 
-- :ref:`float<class_float>`  **get_param**  **(** :ref:`int<class_int>` param  **)** const
+- :ref:`float<class_float>` **get_param** **(** :ref:`int<class_int>` param **)** const
 
 .. _class_PinJoint_set_param:
 
-- void  **set_param**  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**
+- void **set_param** **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value **)**
 
 

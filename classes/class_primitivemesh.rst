@@ -21,13 +21,13 @@ Base class for all primitive meshes. Handles applying a :ref:`Material<class_mat
 Member Functions
 ----------------
 
-+----------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`Material<class_material>`  | :ref:`get_material<class_PrimitiveMesh_get_material>`  **(** **)** const                                     |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`        | :ref:`get_mesh_arrays<class_PrimitiveMesh_get_mesh_arrays>`  **(** **)** const                               |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_material<class_PrimitiveMesh_set_material>`  **(** :ref:`Material<class_material>` material  **)** |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------+
++----------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`Material<class_material>`  | :ref:`get_material<class_PrimitiveMesh_get_material>` **(** **)** const                                    |
++----------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`        | :ref:`get_mesh_arrays<class_PrimitiveMesh_get_mesh_arrays>` **(** **)** const                              |
++----------------------------------+------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_material<class_PrimitiveMesh_set_material>` **(** :ref:`Material<class_material>` material **)** |
++----------------------------------+------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -47,14 +47,14 @@ Member Function Description
 
 .. _class_PrimitiveMesh_get_material:
 
-- :ref:`Material<class_material>`  **get_material**  **(** **)** const
+- :ref:`Material<class_material>` **get_material** **(** **)** const
 
 .. _class_PrimitiveMesh_get_mesh_arrays:
 
-- :ref:`Array<class_array>`  **get_mesh_arrays**  **(** **)** const
+- :ref:`Array<class_array>` **get_mesh_arrays** **(** **)** const
 
 .. _class_PrimitiveMesh_set_material:
 
-- void  **set_material**  **(** :ref:`Material<class_material>` material  **)**
+- void **set_material** **(** :ref:`Material<class_material>` material **)**
 
 

@@ -19,11 +19,11 @@ Brief Description
 Member Functions
 ----------------
 
-+------------------------------+--------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_load_path<class_StreamTexture_get_load_path>`  **(** **)** const           |
-+------------------------------+--------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`load<class_StreamTexture_load>`  **(** :ref:`String<class_string>` path  **)** |
-+------------------------------+--------------------------------------------------------------------------------------+
++------------------------------+------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_load_path<class_StreamTexture_get_load_path>` **(** **)** const          |
++------------------------------+------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`load<class_StreamTexture_load>` **(** :ref:`String<class_string>` path **)** |
++------------------------------+------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -38,10 +38,10 @@ Member Function Description
 
 .. _class_StreamTexture_get_load_path:
 
-- :ref:`String<class_string>`  **get_load_path**  **(** **)** const
+- :ref:`String<class_string>` **get_load_path** **(** **)** const
 
 .. _class_StreamTexture_load:
 
-- :ref:`int<class_int>`  **load**  **(** :ref:`String<class_string>` path  **)**
+- :ref:`int<class_int>` **load** **(** :ref:`String<class_string>` path **)**
 
 

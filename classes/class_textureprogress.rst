@@ -19,43 +19,43 @@ Texture-based progress bar. Useful for loading screens and life or stamina bars.
 Member Functions
 ----------------
 
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_fill_degrees<class_TextureProgress_get_fill_degrees>`  **(** **)**                                                                |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_fill_mode<class_TextureProgress_get_fill_mode>`  **(** **)**                                                                      |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`get_nine_patch_stretch<class_TextureProgress_get_nine_patch_stretch>`  **(** **)** const                                              |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_texture>`  | :ref:`get_over_texture<class_TextureProgress_get_over_texture>`  **(** **)** const                                                          |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_texture>`  | :ref:`get_progress_texture<class_TextureProgress_get_progress_texture>`  **(** **)** const                                                  |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_radial_center_offset<class_TextureProgress_get_radial_center_offset>`  **(** **)**                                                |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_radial_initial_angle<class_TextureProgress_get_radial_initial_angle>`  **(** **)**                                                |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_stretch_margin<class_TextureProgress_get_stretch_margin>`  **(** :ref:`int<class_int>` margin  **)** const                        |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_texture>`  | :ref:`get_under_texture<class_TextureProgress_get_under_texture>`  **(** **)** const                                                        |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_fill_degrees<class_TextureProgress_set_fill_degrees>`  **(** :ref:`float<class_float>` mode  **)**                                |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_fill_mode<class_TextureProgress_set_fill_mode>`  **(** :ref:`int<class_int>` mode  **)**                                          |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_nine_patch_stretch<class_TextureProgress_set_nine_patch_stretch>`  **(** :ref:`bool<class_bool>` stretch  **)**                   |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_over_texture<class_TextureProgress_set_over_texture>`  **(** :ref:`Texture<class_texture>` tex  **)**                             |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_progress_texture<class_TextureProgress_set_progress_texture>`  **(** :ref:`Texture<class_texture>` tex  **)**                     |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_radial_center_offset<class_TextureProgress_set_radial_center_offset>`  **(** :ref:`Vector2<class_vector2>` mode  **)**            |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_radial_initial_angle<class_TextureProgress_set_radial_initial_angle>`  **(** :ref:`float<class_float>` mode  **)**                |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_stretch_margin<class_TextureProgress_set_stretch_margin>`  **(** :ref:`int<class_int>` margin, :ref:`int<class_int>` value  **)** |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_under_texture<class_TextureProgress_set_under_texture>`  **(** :ref:`Texture<class_texture>` tex  **)**                           |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_fill_degrees<class_TextureProgress_get_fill_degrees>` **(** **)**                                                               |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_fill_mode<class_TextureProgress_get_fill_mode>` **(** **)**                                                                     |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`get_nine_patch_stretch<class_TextureProgress_get_nine_patch_stretch>` **(** **)** const                                             |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_texture>`  | :ref:`get_over_texture<class_TextureProgress_get_over_texture>` **(** **)** const                                                         |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_texture>`  | :ref:`get_progress_texture<class_TextureProgress_get_progress_texture>` **(** **)** const                                                 |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_radial_center_offset<class_TextureProgress_get_radial_center_offset>` **(** **)**                                               |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_radial_initial_angle<class_TextureProgress_get_radial_initial_angle>` **(** **)**                                               |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_stretch_margin<class_TextureProgress_get_stretch_margin>` **(** :ref:`int<class_int>` margin **)** const                        |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_texture>`  | :ref:`get_under_texture<class_TextureProgress_get_under_texture>` **(** **)** const                                                       |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_fill_degrees<class_TextureProgress_set_fill_degrees>` **(** :ref:`float<class_float>` mode **)**                                |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_fill_mode<class_TextureProgress_set_fill_mode>` **(** :ref:`int<class_int>` mode **)**                                          |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_nine_patch_stretch<class_TextureProgress_set_nine_patch_stretch>` **(** :ref:`bool<class_bool>` stretch **)**                   |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_over_texture<class_TextureProgress_set_over_texture>` **(** :ref:`Texture<class_texture>` tex **)**                             |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_progress_texture<class_TextureProgress_set_progress_texture>` **(** :ref:`Texture<class_texture>` tex **)**                     |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_radial_center_offset<class_TextureProgress_set_radial_center_offset>` **(** :ref:`Vector2<class_vector2>` mode **)**            |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_radial_initial_angle<class_TextureProgress_set_radial_initial_angle>` **(** :ref:`float<class_float>` mode **)**                |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_stretch_margin<class_TextureProgress_set_stretch_margin>` **(** :ref:`int<class_int>` margin, :ref:`int<class_int>` value **)** |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_under_texture<class_TextureProgress_set_under_texture>` **(** :ref:`Texture<class_texture>` tex **)**                           |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -133,82 +133,82 @@ Member Function Description
 
 .. _class_TextureProgress_get_fill_degrees:
 
-- :ref:`float<class_float>`  **get_fill_degrees**  **(** **)**
+- :ref:`float<class_float>` **get_fill_degrees** **(** **)**
 
 .. _class_TextureProgress_get_fill_mode:
 
-- :ref:`int<class_int>`  **get_fill_mode**  **(** **)**
+- :ref:`int<class_int>` **get_fill_mode** **(** **)**
 
 .. _class_TextureProgress_get_nine_patch_stretch:
 
-- :ref:`bool<class_bool>`  **get_nine_patch_stretch**  **(** **)** const
+- :ref:`bool<class_bool>` **get_nine_patch_stretch** **(** **)** const
 
 Returns true if textures are stretched as nine-patches or false otherwise.
 
 .. _class_TextureProgress_get_over_texture:
 
-- :ref:`Texture<class_texture>`  **get_over_texture**  **(** **)** const
+- :ref:`Texture<class_texture>` **get_over_texture** **(** **)** const
 
 .. _class_TextureProgress_get_progress_texture:
 
-- :ref:`Texture<class_texture>`  **get_progress_texture**  **(** **)** const
+- :ref:`Texture<class_texture>` **get_progress_texture** **(** **)** const
 
 .. _class_TextureProgress_get_radial_center_offset:
 
-- :ref:`Vector2<class_vector2>`  **get_radial_center_offset**  **(** **)**
+- :ref:`Vector2<class_vector2>` **get_radial_center_offset** **(** **)**
 
 .. _class_TextureProgress_get_radial_initial_angle:
 
-- :ref:`float<class_float>`  **get_radial_initial_angle**  **(** **)**
+- :ref:`float<class_float>` **get_radial_initial_angle** **(** **)**
 
 .. _class_TextureProgress_get_stretch_margin:
 
-- :ref:`int<class_int>`  **get_stretch_margin**  **(** :ref:`int<class_int>` margin  **)** const
+- :ref:`int<class_int>` **get_stretch_margin** **(** :ref:`int<class_int>` margin **)** const
 
 Return nine-patch texture offset for a given margin (MARGIN_LEFT, MARGIN_TOP, MARGIN_RIGHT, MARGIN_BOTTOM).
 
 .. _class_TextureProgress_get_under_texture:
 
-- :ref:`Texture<class_texture>`  **get_under_texture**  **(** **)** const
+- :ref:`Texture<class_texture>` **get_under_texture** **(** **)** const
 
 .. _class_TextureProgress_set_fill_degrees:
 
-- void  **set_fill_degrees**  **(** :ref:`float<class_float>` mode  **)**
+- void **set_fill_degrees** **(** :ref:`float<class_float>` mode **)**
 
 .. _class_TextureProgress_set_fill_mode:
 
-- void  **set_fill_mode**  **(** :ref:`int<class_int>` mode  **)**
+- void **set_fill_mode** **(** :ref:`int<class_int>` mode **)**
 
 .. _class_TextureProgress_set_nine_patch_stretch:
 
-- void  **set_nine_patch_stretch**  **(** :ref:`bool<class_bool>` stretch  **)**
+- void **set_nine_patch_stretch** **(** :ref:`bool<class_bool>` stretch **)**
 
 Set if textures should be stretched as nine-patches.
 
 .. _class_TextureProgress_set_over_texture:
 
-- void  **set_over_texture**  **(** :ref:`Texture<class_texture>` tex  **)**
+- void **set_over_texture** **(** :ref:`Texture<class_texture>` tex **)**
 
 .. _class_TextureProgress_set_progress_texture:
 
-- void  **set_progress_texture**  **(** :ref:`Texture<class_texture>` tex  **)**
+- void **set_progress_texture** **(** :ref:`Texture<class_texture>` tex **)**
 
 .. _class_TextureProgress_set_radial_center_offset:
 
-- void  **set_radial_center_offset**  **(** :ref:`Vector2<class_vector2>` mode  **)**
+- void **set_radial_center_offset** **(** :ref:`Vector2<class_vector2>` mode **)**
 
 .. _class_TextureProgress_set_radial_initial_angle:
 
-- void  **set_radial_initial_angle**  **(** :ref:`float<class_float>` mode  **)**
+- void **set_radial_initial_angle** **(** :ref:`float<class_float>` mode **)**
 
 .. _class_TextureProgress_set_stretch_margin:
 
-- void  **set_stretch_margin**  **(** :ref:`int<class_int>` margin, :ref:`int<class_int>` value  **)**
+- void **set_stretch_margin** **(** :ref:`int<class_int>` margin, :ref:`int<class_int>` value **)**
 
 Set nine-patch texture offset for a given margin (MARGIN_LEFT, MARGIN_TOP, MARGIN_RIGHT, MARGIN_BOTTOM).
 
 .. _class_TextureProgress_set_under_texture:
 
-- void  **set_under_texture**  **(** :ref:`Texture<class_texture>` tex  **)**
+- void **set_under_texture** **(** :ref:`Texture<class_texture>` tex **)**
 
 

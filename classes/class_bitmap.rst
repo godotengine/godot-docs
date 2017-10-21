@@ -19,21 +19,21 @@ Boolean matrix.
 Member Functions
 ----------------
 
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`create<class_BitMap_create>`  **(** :ref:`Vector2<class_vector2>` size  **)**                                        |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`create_from_image_alpha<class_BitMap_create_from_image_alpha>`  **(** :ref:`Image<class_image>` image  **)**         |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`get_bit<class_BitMap_get_bit>`  **(** :ref:`Vector2<class_vector2>` position  **)** const                            |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_size<class_BitMap_get_size>`  **(** **)** const                                                                  |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_true_bit_count<class_BitMap_get_true_bit_count>`  **(** **)** const                                              |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_bit<class_BitMap_set_bit>`  **(** :ref:`Vector2<class_vector2>` position, :ref:`bool<class_bool>` bit  **)**     |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_bit_rect<class_BitMap_set_bit_rect>`  **(** :ref:`Rect2<class_rect2>` p_rect, :ref:`bool<class_bool>` bit  **)** |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`create<class_BitMap_create>` **(** :ref:`Vector2<class_vector2>` size **)**                                        |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`create_from_image_alpha<class_BitMap_create_from_image_alpha>` **(** :ref:`Image<class_image>` image **)**         |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`get_bit<class_BitMap_get_bit>` **(** :ref:`Vector2<class_vector2>` position **)** const                            |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_size<class_BitMap_get_size>` **(** **)** const                                                                 |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_true_bit_count<class_BitMap_get_true_bit_count>` **(** **)** const                                             |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_bit<class_BitMap_set_bit>` **(** :ref:`Vector2<class_vector2>` position, :ref:`bool<class_bool>` bit **)**     |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_bit_rect<class_BitMap_set_bit_rect>` **(** :ref:`Rect2<class_rect2>` p_rect, :ref:`bool<class_bool>` bit **)** |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -57,43 +57,43 @@ Member Function Description
 
 .. _class_BitMap_create:
 
-- void  **create**  **(** :ref:`Vector2<class_vector2>` size  **)**
+- void **create** **(** :ref:`Vector2<class_vector2>` size **)**
 
 Creates a bitmap with the specified size, filled with false.
 
 .. _class_BitMap_create_from_image_alpha:
 
-- void  **create_from_image_alpha**  **(** :ref:`Image<class_image>` image  **)**
+- void **create_from_image_alpha** **(** :ref:`Image<class_image>` image **)**
 
 Creates a bitmap that matches the given image dimensions, every element of the bitmap is set to false if the alpha value of the image at that position is 0, and true in other case.
 
 .. _class_BitMap_get_bit:
 
-- :ref:`bool<class_bool>`  **get_bit**  **(** :ref:`Vector2<class_vector2>` position  **)** const
+- :ref:`bool<class_bool>` **get_bit** **(** :ref:`Vector2<class_vector2>` position **)** const
 
 Returns bitmap's value at the specified position.
 
 .. _class_BitMap_get_size:
 
-- :ref:`Vector2<class_vector2>`  **get_size**  **(** **)** const
+- :ref:`Vector2<class_vector2>` **get_size** **(** **)** const
 
 Returns bitmap's dimensions.
 
 .. _class_BitMap_get_true_bit_count:
 
-- :ref:`int<class_int>`  **get_true_bit_count**  **(** **)** const
+- :ref:`int<class_int>` **get_true_bit_count** **(** **)** const
 
 Returns the amount of bitmap elements that are set to true.
 
 .. _class_BitMap_set_bit:
 
-- void  **set_bit**  **(** :ref:`Vector2<class_vector2>` position, :ref:`bool<class_bool>` bit  **)**
+- void **set_bit** **(** :ref:`Vector2<class_vector2>` position, :ref:`bool<class_bool>` bit **)**
 
 Sets the bitmap's element at the specified position, to the specified value.
 
 .. _class_BitMap_set_bit_rect:
 
-- void  **set_bit_rect**  **(** :ref:`Rect2<class_rect2>` p_rect, :ref:`bool<class_bool>` bit  **)**
+- void **set_bit_rect** **(** :ref:`Rect2<class_rect2>` p_rect, :ref:`bool<class_bool>` bit **)**
 
 Sets a rectangular portion of the bitmap to the specified value.
 

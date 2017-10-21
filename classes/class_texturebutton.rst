@@ -19,39 +19,39 @@ Texture-based button. Supports Pressed, Hover, Disabled and Focused states.
 Member Functions
 ----------------
 
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`BitMap<class_bitmap>`    | :ref:`get_click_mask<class_TextureButton_get_click_mask>`  **(** **)** const                                              |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_texture>`  | :ref:`get_disabled_texture<class_TextureButton_get_disabled_texture>`  **(** **)** const                                  |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`get_expand<class_TextureButton_get_expand>`  **(** **)** const                                                      |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_texture>`  | :ref:`get_focused_texture<class_TextureButton_get_focused_texture>`  **(** **)** const                                    |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_texture>`  | :ref:`get_hover_texture<class_TextureButton_get_hover_texture>`  **(** **)** const                                        |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_texture>`  | :ref:`get_normal_texture<class_TextureButton_get_normal_texture>`  **(** **)** const                                      |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_texture>`  | :ref:`get_pressed_texture<class_TextureButton_get_pressed_texture>`  **(** **)** const                                    |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_stretch_mode<class_TextureButton_get_stretch_mode>`  **(** **)** const                                          |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_click_mask<class_TextureButton_set_click_mask>`  **(** :ref:`BitMap<class_bitmap>` mask  **)**                  |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_disabled_texture<class_TextureButton_set_disabled_texture>`  **(** :ref:`Texture<class_texture>` texture  **)** |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_expand<class_TextureButton_set_expand>`  **(** :ref:`bool<class_bool>` p_expand  **)**                          |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_focused_texture<class_TextureButton_set_focused_texture>`  **(** :ref:`Texture<class_texture>` texture  **)**   |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_hover_texture<class_TextureButton_set_hover_texture>`  **(** :ref:`Texture<class_texture>` texture  **)**       |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_normal_texture<class_TextureButton_set_normal_texture>`  **(** :ref:`Texture<class_texture>` texture  **)**     |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_pressed_texture<class_TextureButton_set_pressed_texture>`  **(** :ref:`Texture<class_texture>` texture  **)**   |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_stretch_mode<class_TextureButton_set_stretch_mode>`  **(** :ref:`int<class_int>` p_mode  **)**                  |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| :ref:`BitMap<class_bitmap>`    | :ref:`get_click_mask<class_TextureButton_get_click_mask>` **(** **)** const                                             |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_texture>`  | :ref:`get_disabled_texture<class_TextureButton_get_disabled_texture>` **(** **)** const                                 |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`get_expand<class_TextureButton_get_expand>` **(** **)** const                                                     |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_texture>`  | :ref:`get_focused_texture<class_TextureButton_get_focused_texture>` **(** **)** const                                   |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_texture>`  | :ref:`get_hover_texture<class_TextureButton_get_hover_texture>` **(** **)** const                                       |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_texture>`  | :ref:`get_normal_texture<class_TextureButton_get_normal_texture>` **(** **)** const                                     |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_texture>`  | :ref:`get_pressed_texture<class_TextureButton_get_pressed_texture>` **(** **)** const                                   |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_stretch_mode<class_TextureButton_get_stretch_mode>` **(** **)** const                                         |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_click_mask<class_TextureButton_set_click_mask>` **(** :ref:`BitMap<class_bitmap>` mask **)**                  |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_disabled_texture<class_TextureButton_set_disabled_texture>` **(** :ref:`Texture<class_texture>` texture **)** |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_expand<class_TextureButton_set_expand>` **(** :ref:`bool<class_bool>` p_expand **)**                          |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_focused_texture<class_TextureButton_set_focused_texture>` **(** :ref:`Texture<class_texture>` texture **)**   |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_hover_texture<class_TextureButton_set_hover_texture>` **(** :ref:`Texture<class_texture>` texture **)**       |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_normal_texture<class_TextureButton_set_normal_texture>` **(** :ref:`Texture<class_texture>` texture **)**     |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_pressed_texture<class_TextureButton_set_pressed_texture>` **(** :ref:`Texture<class_texture>` texture **)**   |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_stretch_mode<class_TextureButton_set_stretch_mode>` **(** :ref:`int<class_int>` p_mode **)**                  |
++--------------------------------+-------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -112,66 +112,66 @@ Member Function Description
 
 .. _class_TextureButton_get_click_mask:
 
-- :ref:`BitMap<class_bitmap>`  **get_click_mask**  **(** **)** const
+- :ref:`BitMap<class_bitmap>` **get_click_mask** **(** **)** const
 
 .. _class_TextureButton_get_disabled_texture:
 
-- :ref:`Texture<class_texture>`  **get_disabled_texture**  **(** **)** const
+- :ref:`Texture<class_texture>` **get_disabled_texture** **(** **)** const
 
 .. _class_TextureButton_get_expand:
 
-- :ref:`bool<class_bool>`  **get_expand**  **(** **)** const
+- :ref:`bool<class_bool>` **get_expand** **(** **)** const
 
 .. _class_TextureButton_get_focused_texture:
 
-- :ref:`Texture<class_texture>`  **get_focused_texture**  **(** **)** const
+- :ref:`Texture<class_texture>` **get_focused_texture** **(** **)** const
 
 .. _class_TextureButton_get_hover_texture:
 
-- :ref:`Texture<class_texture>`  **get_hover_texture**  **(** **)** const
+- :ref:`Texture<class_texture>` **get_hover_texture** **(** **)** const
 
 .. _class_TextureButton_get_normal_texture:
 
-- :ref:`Texture<class_texture>`  **get_normal_texture**  **(** **)** const
+- :ref:`Texture<class_texture>` **get_normal_texture** **(** **)** const
 
 .. _class_TextureButton_get_pressed_texture:
 
-- :ref:`Texture<class_texture>`  **get_pressed_texture**  **(** **)** const
+- :ref:`Texture<class_texture>` **get_pressed_texture** **(** **)** const
 
 .. _class_TextureButton_get_stretch_mode:
 
-- :ref:`int<class_int>`  **get_stretch_mode**  **(** **)** const
+- :ref:`int<class_int>` **get_stretch_mode** **(** **)** const
 
 .. _class_TextureButton_set_click_mask:
 
-- void  **set_click_mask**  **(** :ref:`BitMap<class_bitmap>` mask  **)**
+- void **set_click_mask** **(** :ref:`BitMap<class_bitmap>` mask **)**
 
 .. _class_TextureButton_set_disabled_texture:
 
-- void  **set_disabled_texture**  **(** :ref:`Texture<class_texture>` texture  **)**
+- void **set_disabled_texture** **(** :ref:`Texture<class_texture>` texture **)**
 
 .. _class_TextureButton_set_expand:
 
-- void  **set_expand**  **(** :ref:`bool<class_bool>` p_expand  **)**
+- void **set_expand** **(** :ref:`bool<class_bool>` p_expand **)**
 
 .. _class_TextureButton_set_focused_texture:
 
-- void  **set_focused_texture**  **(** :ref:`Texture<class_texture>` texture  **)**
+- void **set_focused_texture** **(** :ref:`Texture<class_texture>` texture **)**
 
 .. _class_TextureButton_set_hover_texture:
 
-- void  **set_hover_texture**  **(** :ref:`Texture<class_texture>` texture  **)**
+- void **set_hover_texture** **(** :ref:`Texture<class_texture>` texture **)**
 
 .. _class_TextureButton_set_normal_texture:
 
-- void  **set_normal_texture**  **(** :ref:`Texture<class_texture>` texture  **)**
+- void **set_normal_texture** **(** :ref:`Texture<class_texture>` texture **)**
 
 .. _class_TextureButton_set_pressed_texture:
 
-- void  **set_pressed_texture**  **(** :ref:`Texture<class_texture>` texture  **)**
+- void **set_pressed_texture** **(** :ref:`Texture<class_texture>` texture **)**
 
 .. _class_TextureButton_set_stretch_mode:
 
-- void  **set_stretch_mode**  **(** :ref:`int<class_int>` p_mode  **)**
+- void **set_stretch_mode** **(** :ref:`int<class_int>` p_mode **)**
 
 

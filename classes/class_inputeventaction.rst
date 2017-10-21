@@ -19,13 +19,13 @@ Input event type for actions.
 Member Functions
 ----------------
 
-+------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_action<class_InputEventAction_get_action>`  **(** **)** const                               |
-+------------------------------+-------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_action<class_InputEventAction_set_action>`  **(** :ref:`String<class_string>` action  **)** |
-+------------------------------+-------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_pressed<class_InputEventAction_set_pressed>`  **(** :ref:`bool<class_bool>` pressed  **)**  |
-+------------------------------+-------------------------------------------------------------------------------------------------------+
++------------------------------+-----------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_action<class_InputEventAction_get_action>` **(** **)** const                              |
++------------------------------+-----------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_action<class_InputEventAction_set_action>` **(** :ref:`String<class_string>` action **)** |
++------------------------------+-----------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_pressed<class_InputEventAction_set_pressed>` **(** :ref:`bool<class_bool>` pressed **)**  |
++------------------------------+-----------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -49,14 +49,14 @@ Member Function Description
 
 .. _class_InputEventAction_get_action:
 
-- :ref:`String<class_string>`  **get_action**  **(** **)** const
+- :ref:`String<class_string>` **get_action** **(** **)** const
 
 .. _class_InputEventAction_set_action:
 
-- void  **set_action**  **(** :ref:`String<class_string>` action  **)**
+- void **set_action** **(** :ref:`String<class_string>` action **)**
 
 .. _class_InputEventAction_set_pressed:
 
-- void  **set_pressed**  **(** :ref:`bool<class_bool>` pressed  **)**
+- void **set_pressed** **(** :ref:`bool<class_bool>` pressed **)**
 
 

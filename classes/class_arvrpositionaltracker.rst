@@ -19,25 +19,25 @@ A tracked object
 Member Functions
 ----------------
 
-+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`              | :ref:`get_hand<class_ARVRPositionalTracker_get_hand>`  **(** **)** const                                                              |
-+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`              | :ref:`get_joy_id<class_ARVRPositionalTracker_get_joy_id>`  **(** **)** const                                                          |
-+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`        | :ref:`get_name<class_ARVRPositionalTracker_get_name>`  **(** **)** const                                                              |
-+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Basis<class_basis>`          | :ref:`get_orientation<class_ARVRPositionalTracker_get_orientation>`  **(** **)** const                                                |
-+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`      | :ref:`get_position<class_ARVRPositionalTracker_get_position>`  **(** **)** const                                                      |
-+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`            | :ref:`get_tracks_orientation<class_ARVRPositionalTracker_get_tracks_orientation>`  **(** **)** const                                  |
-+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`            | :ref:`get_tracks_position<class_ARVRPositionalTracker_get_tracks_position>`  **(** **)** const                                        |
-+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_transform>`  | :ref:`get_transform<class_ARVRPositionalTracker_get_transform>`  **(** :ref:`bool<class_bool>` adjust_by_reference_frame  **)** const |
-+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`              | :ref:`get_type<class_ARVRPositionalTracker_get_type>`  **(** **)** const                                                              |
-+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`              | :ref:`get_hand<class_ARVRPositionalTracker_get_hand>` **(** **)** const                                                             |
++------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`              | :ref:`get_joy_id<class_ARVRPositionalTracker_get_joy_id>` **(** **)** const                                                         |
++------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`        | :ref:`get_name<class_ARVRPositionalTracker_get_name>` **(** **)** const                                                             |
++------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Basis<class_basis>`          | :ref:`get_orientation<class_ARVRPositionalTracker_get_orientation>` **(** **)** const                                               |
++------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`      | :ref:`get_position<class_ARVRPositionalTracker_get_position>` **(** **)** const                                                     |
++------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`            | :ref:`get_tracks_orientation<class_ARVRPositionalTracker_get_tracks_orientation>` **(** **)** const                                 |
++------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`            | :ref:`get_tracks_position<class_ARVRPositionalTracker_get_tracks_position>` **(** **)** const                                       |
++------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_transform>`  | :ref:`get_transform<class_ARVRPositionalTracker_get_transform>` **(** :ref:`bool<class_bool>` adjust_by_reference_frame **)** const |
++------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`              | :ref:`get_type<class_ARVRPositionalTracker_get_type>` **(** **)** const                                                             |
++------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
 -----------------
@@ -60,53 +60,53 @@ Member Function Description
 
 .. _class_ARVRPositionalTracker_get_hand:
 
-- :ref:`int<class_int>`  **get_hand**  **(** **)** const
+- :ref:`int<class_int>` **get_hand** **(** **)** const
 
 .. _class_ARVRPositionalTracker_get_joy_id:
 
-- :ref:`int<class_int>`  **get_joy_id**  **(** **)** const
+- :ref:`int<class_int>` **get_joy_id** **(** **)** const
 
 If this is a controller that is being tracked the controller will also be represented by a joystick entry with this id.
 
 .. _class_ARVRPositionalTracker_get_name:
 
-- :ref:`String<class_string>`  **get_name**  **(** **)** const
+- :ref:`String<class_string>` **get_name** **(** **)** const
 
 If available this returns the name of the controller or anchor point.
 
 .. _class_ARVRPositionalTracker_get_orientation:
 
-- :ref:`Basis<class_basis>`  **get_orientation**  **(** **)** const
+- :ref:`Basis<class_basis>` **get_orientation** **(** **)** const
 
 Returns the orientation matrix of the controller.
 
 .. _class_ARVRPositionalTracker_get_position:
 
-- :ref:`Vector3<class_vector3>`  **get_position**  **(** **)** const
+- :ref:`Vector3<class_vector3>` **get_position** **(** **)** const
 
 Returns the position of the controller adjusted by world scale.
 
 .. _class_ARVRPositionalTracker_get_tracks_orientation:
 
-- :ref:`bool<class_bool>`  **get_tracks_orientation**  **(** **)** const
+- :ref:`bool<class_bool>` **get_tracks_orientation** **(** **)** const
 
 Returns true if the orientation of this device is being tracked.
 
 .. _class_ARVRPositionalTracker_get_tracks_position:
 
-- :ref:`bool<class_bool>`  **get_tracks_position**  **(** **)** const
+- :ref:`bool<class_bool>` **get_tracks_position** **(** **)** const
 
 Returns true if the position of this device is being tracked.
 
 .. _class_ARVRPositionalTracker_get_transform:
 
-- :ref:`Transform<class_transform>`  **get_transform**  **(** :ref:`bool<class_bool>` adjust_by_reference_frame  **)** const
+- :ref:`Transform<class_transform>` **get_transform** **(** :ref:`bool<class_bool>` adjust_by_reference_frame **)** const
 
 Returns the transform combining the orientation and position of this device.
 
 .. _class_ARVRPositionalTracker_get_type:
 
-- :ref:`int<class_int>`  **get_type**  **(** **)** const
+- :ref:`int<class_int>` **get_type** **(** **)** const
 
 Type of tracker.
 

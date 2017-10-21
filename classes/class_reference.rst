@@ -21,13 +21,13 @@ Base class for anything that keeps a reference count.
 Member Functions
 ----------------
 
-+--------------------------+--------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`init_ref<class_Reference_init_ref>`  **(** **)**       |
-+--------------------------+--------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`reference<class_Reference_reference>`  **(** **)**     |
-+--------------------------+--------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`unreference<class_Reference_unreference>`  **(** **)** |
-+--------------------------+--------------------------------------------------------------+
++--------------------------+-------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`init_ref<class_Reference_init_ref>` **(** **)**       |
++--------------------------+-------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`reference<class_Reference_reference>` **(** **)**     |
++--------------------------+-------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`unreference<class_Reference_unreference>` **(** **)** |
++--------------------------+-------------------------------------------------------------+
 
 Description
 -----------
@@ -39,17 +39,17 @@ Member Function Description
 
 .. _class_Reference_init_ref:
 
-- :ref:`bool<class_bool>`  **init_ref**  **(** **)**
+- :ref:`bool<class_bool>` **init_ref** **(** **)**
 
 .. _class_Reference_reference:
 
-- :ref:`bool<class_bool>`  **reference**  **(** **)**
+- :ref:`bool<class_bool>` **reference** **(** **)**
 
 Increase the internal reference counter. Use this only if you really know what you are doing.
 
 .. _class_Reference_unreference:
 
-- :ref:`bool<class_bool>`  **unreference**  **(** **)**
+- :ref:`bool<class_bool>` **unreference** **(** **)**
 
 Decrease the internal reference counter. Use this only if you really know what you are doing.
 

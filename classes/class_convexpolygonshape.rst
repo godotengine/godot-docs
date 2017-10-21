@@ -19,11 +19,11 @@ Convex polygon shape for 3D physics.
 Member Functions
 ----------------
 
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector3Array<class_poolvector3array>`  | :ref:`get_points<class_ConvexPolygonShape_get_points>`  **(** **)** const                                                   |
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_points<class_ConvexPolygonShape_set_points>`  **(** :ref:`PoolVector3Array<class_poolvector3array>` points  **)** |
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolVector3Array<class_poolvector3array>`  | :ref:`get_points<class_ConvexPolygonShape_get_points>` **(** **)** const                                                  |
++--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_points<class_ConvexPolygonShape_set_points>` **(** :ref:`PoolVector3Array<class_poolvector3array>` points **)** |
++--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -43,10 +43,10 @@ Member Function Description
 
 .. _class_ConvexPolygonShape_get_points:
 
-- :ref:`PoolVector3Array<class_poolvector3array>`  **get_points**  **(** **)** const
+- :ref:`PoolVector3Array<class_poolvector3array>` **get_points** **(** **)** const
 
 .. _class_ConvexPolygonShape_set_points:
 
-- void  **set_points**  **(** :ref:`PoolVector3Array<class_poolvector3array>` points  **)**
+- void **set_points** **(** :ref:`PoolVector3Array<class_poolvector3array>` points **)**
 
 

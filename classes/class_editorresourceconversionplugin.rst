@@ -19,21 +19,21 @@ Brief Description
 Member Functions
 ----------------
 
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Resource<class_resource>`  | :ref:`_convert<class_EditorResourceConversionPlugin__convert>`  **(** :ref:`Resource<class_resource>` resource  **)** virtual |
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`          | :ref:`_converts_to<class_EditorResourceConversionPlugin__converts_to>`  **(** **)** virtual                                   |
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Resource<class_resource>`  | :ref:`_convert<class_EditorResourceConversionPlugin__convert>` **(** :ref:`Resource<class_resource>` resource **)** virtual |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`_converts_to<class_EditorResourceConversionPlugin__converts_to>` **(** **)** virtual                                  |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 
 Member Function Description
 ---------------------------
 
 .. _class_EditorResourceConversionPlugin__convert:
 
-- :ref:`Resource<class_resource>`  **_convert**  **(** :ref:`Resource<class_resource>` resource  **)** virtual
+- :ref:`Resource<class_resource>` **_convert** **(** :ref:`Resource<class_resource>` resource **)** virtual
 
 .. _class_EditorResourceConversionPlugin__converts_to:
 
-- :ref:`bool<class_bool>`  **_converts_to**  **(** **)** virtual
+- :ref:`bool<class_bool>` **_converts_to** **(** **)** virtual
 
 

@@ -19,31 +19,31 @@ The generic 6 degrees of freedom joint can implement a variety of joint-types by
 Member Functions
 ----------------
 
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`get_flag_x<class_Generic6DOFJoint_get_flag_x>`  **(** :ref:`int<class_int>` flag  **)** const                               |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`get_flag_y<class_Generic6DOFJoint_get_flag_y>`  **(** :ref:`int<class_int>` flag  **)** const                               |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`get_flag_z<class_Generic6DOFJoint_get_flag_z>`  **(** :ref:`int<class_int>` flag  **)** const                               |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_param_x<class_Generic6DOFJoint_get_param_x>`  **(** :ref:`int<class_int>` param  **)** const                            |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_param_y<class_Generic6DOFJoint_get_param_y>`  **(** :ref:`int<class_int>` param  **)** const                            |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_param_z<class_Generic6DOFJoint_get_param_z>`  **(** :ref:`int<class_int>` param  **)** const                            |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_flag_x<class_Generic6DOFJoint_set_flag_x>`  **(** :ref:`int<class_int>` flag, :ref:`bool<class_bool>` value  **)**      |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_flag_y<class_Generic6DOFJoint_set_flag_y>`  **(** :ref:`int<class_int>` flag, :ref:`bool<class_bool>` value  **)**      |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_flag_z<class_Generic6DOFJoint_set_flag_z>`  **(** :ref:`int<class_int>` flag, :ref:`bool<class_bool>` value  **)**      |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_param_x<class_Generic6DOFJoint_set_param_x>`  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)** |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_param_y<class_Generic6DOFJoint_set_param_y>`  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)** |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_param_z<class_Generic6DOFJoint_set_param_z>`  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)** |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`get_flag_x<class_Generic6DOFJoint_get_flag_x>` **(** :ref:`int<class_int>` flag **)** const                               |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`get_flag_y<class_Generic6DOFJoint_get_flag_y>` **(** :ref:`int<class_int>` flag **)** const                               |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`get_flag_z<class_Generic6DOFJoint_get_flag_z>` **(** :ref:`int<class_int>` flag **)** const                               |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_param_x<class_Generic6DOFJoint_get_param_x>` **(** :ref:`int<class_int>` param **)** const                            |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_param_y<class_Generic6DOFJoint_get_param_y>` **(** :ref:`int<class_int>` param **)** const                            |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_param_z<class_Generic6DOFJoint_get_param_z>` **(** :ref:`int<class_int>` param **)** const                            |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_flag_x<class_Generic6DOFJoint_set_flag_x>` **(** :ref:`int<class_int>` flag, :ref:`bool<class_bool>` value **)**      |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_flag_y<class_Generic6DOFJoint_set_flag_y>` **(** :ref:`int<class_int>` flag, :ref:`bool<class_bool>` value **)**      |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_flag_z<class_Generic6DOFJoint_set_flag_z>` **(** :ref:`int<class_int>` flag, :ref:`bool<class_bool>` value **)**      |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_param_x<class_Generic6DOFJoint_set_param_x>` **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value **)** |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_param_y<class_Generic6DOFJoint_set_param_y>` **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value **)** |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_param_z<class_Generic6DOFJoint_set_param_z>` **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value **)** |
++----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -288,50 +288,50 @@ Member Function Description
 
 .. _class_Generic6DOFJoint_get_flag_x:
 
-- :ref:`bool<class_bool>`  **get_flag_x**  **(** :ref:`int<class_int>` flag  **)** const
+- :ref:`bool<class_bool>` **get_flag_x** **(** :ref:`int<class_int>` flag **)** const
 
 .. _class_Generic6DOFJoint_get_flag_y:
 
-- :ref:`bool<class_bool>`  **get_flag_y**  **(** :ref:`int<class_int>` flag  **)** const
+- :ref:`bool<class_bool>` **get_flag_y** **(** :ref:`int<class_int>` flag **)** const
 
 .. _class_Generic6DOFJoint_get_flag_z:
 
-- :ref:`bool<class_bool>`  **get_flag_z**  **(** :ref:`int<class_int>` flag  **)** const
+- :ref:`bool<class_bool>` **get_flag_z** **(** :ref:`int<class_int>` flag **)** const
 
 .. _class_Generic6DOFJoint_get_param_x:
 
-- :ref:`float<class_float>`  **get_param_x**  **(** :ref:`int<class_int>` param  **)** const
+- :ref:`float<class_float>` **get_param_x** **(** :ref:`int<class_int>` param **)** const
 
 .. _class_Generic6DOFJoint_get_param_y:
 
-- :ref:`float<class_float>`  **get_param_y**  **(** :ref:`int<class_int>` param  **)** const
+- :ref:`float<class_float>` **get_param_y** **(** :ref:`int<class_int>` param **)** const
 
 .. _class_Generic6DOFJoint_get_param_z:
 
-- :ref:`float<class_float>`  **get_param_z**  **(** :ref:`int<class_int>` param  **)** const
+- :ref:`float<class_float>` **get_param_z** **(** :ref:`int<class_int>` param **)** const
 
 .. _class_Generic6DOFJoint_set_flag_x:
 
-- void  **set_flag_x**  **(** :ref:`int<class_int>` flag, :ref:`bool<class_bool>` value  **)**
+- void **set_flag_x** **(** :ref:`int<class_int>` flag, :ref:`bool<class_bool>` value **)**
 
 .. _class_Generic6DOFJoint_set_flag_y:
 
-- void  **set_flag_y**  **(** :ref:`int<class_int>` flag, :ref:`bool<class_bool>` value  **)**
+- void **set_flag_y** **(** :ref:`int<class_int>` flag, :ref:`bool<class_bool>` value **)**
 
 .. _class_Generic6DOFJoint_set_flag_z:
 
-- void  **set_flag_z**  **(** :ref:`int<class_int>` flag, :ref:`bool<class_bool>` value  **)**
+- void **set_flag_z** **(** :ref:`int<class_int>` flag, :ref:`bool<class_bool>` value **)**
 
 .. _class_Generic6DOFJoint_set_param_x:
 
-- void  **set_param_x**  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**
+- void **set_param_x** **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value **)**
 
 .. _class_Generic6DOFJoint_set_param_y:
 
-- void  **set_param_y**  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**
+- void **set_param_y** **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value **)**
 
 .. _class_Generic6DOFJoint_set_param_z:
 
-- void  **set_param_z**  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**
+- void **set_param_z** **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value **)**
 
 

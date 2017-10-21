@@ -17,11 +17,11 @@ Handle for a :ref:`Resource<class_resource>`'s unique ID.
 Member Functions
 ----------------
 
-+------------------------+--------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`  | :ref:`RID<class_RID_RID>`  **(** :ref:`Object<class_object>` from  **)** |
-+------------------------+--------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_id<class_RID_get_id>`  **(** **)**                             |
-+------------------------+--------------------------------------------------------------------------+
++------------------------+------------------------------------------------------------------------+
+| :ref:`RID<class_rid>`  | :ref:`RID<class_RID_RID>` **(** :ref:`Object<class_object>` from **)** |
++------------------------+------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`get_id<class_RID_get_id>` **(** **)**                            |
++------------------------+------------------------------------------------------------------------+
 
 Description
 -----------
@@ -33,13 +33,13 @@ Member Function Description
 
 .. _class_RID_RID:
 
-- :ref:`RID<class_rid>`  **RID**  **(** :ref:`Object<class_object>` from  **)**
+- :ref:`RID<class_rid>` **RID** **(** :ref:`Object<class_object>` from **)**
 
 Create a new RID instance with the ID of a given resource. When not handed a valid resource, silently stores the unused ID 0.
 
 .. _class_RID_get_id:
 
-- :ref:`int<class_int>`  **get_id**  **(** **)**
+- :ref:`int<class_int>` **get_id** **(** **)**
 
 Retrieve the ID of the referenced resource.
 

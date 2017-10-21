@@ -19,15 +19,15 @@ Simple button used to represent a link to some resource
 Member Functions
 ----------------
 
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_text<class_LinkButton_get_text>`  **(** **)** const                                                     |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_underline_mode<class_LinkButton_get_underline_mode>`  **(** **)** const                                 |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_text<class_LinkButton_set_text>`  **(** :ref:`String<class_string>` text  **)**                         |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_underline_mode<class_LinkButton_set_underline_mode>`  **(** :ref:`int<class_int>` underline_mode  **)** |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
++------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_text<class_LinkButton_get_text>` **(** **)** const                                                    |
++------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`get_underline_mode<class_LinkButton_get_underline_mode>` **(** **)** const                                |
++------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_text<class_LinkButton_set_text>` **(** :ref:`String<class_string>` text **)**                         |
++------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_underline_mode<class_LinkButton_set_underline_mode>` **(** :ref:`int<class_int>` underline_mode **)** |
++------------------------------+-----------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -58,25 +58,25 @@ Member Function Description
 
 .. _class_LinkButton_get_text:
 
-- :ref:`String<class_string>`  **get_text**  **(** **)** const
+- :ref:`String<class_string>` **get_text** **(** **)** const
 
 Returns the text of the button.
 
 .. _class_LinkButton_get_underline_mode:
 
-- :ref:`int<class_int>`  **get_underline_mode**  **(** **)** const
+- :ref:`int<class_int>` **get_underline_mode** **(** **)** const
 
 Returns the underline mode for this button.
 
 .. _class_LinkButton_set_text:
 
-- void  **set_text**  **(** :ref:`String<class_string>` text  **)**
+- void **set_text** **(** :ref:`String<class_string>` text **)**
 
 Sets the text of the button.
 
 .. _class_LinkButton_set_underline_mode:
 
-- void  **set_underline_mode**  **(** :ref:`int<class_int>` underline_mode  **)**
+- void **set_underline_mode** **(** :ref:`int<class_int>` underline_mode **)**
 
 Sets the underline mode for this button, the argument must be one of the :ref:`LinkButton<class_linkbutton>` constants (see constants section).
 

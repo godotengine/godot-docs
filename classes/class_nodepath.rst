@@ -17,23 +17,23 @@ Pre-parsed scene tree path.
 Member Functions
 ----------------
 
-+----------------------------------+-----------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_nodepath>`  | :ref:`NodePath<class_NodePath_NodePath>`  **(** :ref:`String<class_string>` from  **)** |
-+----------------------------------+-----------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`get_name<class_NodePath_get_name>`  **(** :ref:`int<class_int>` idx  **)**        |
-+----------------------------------+-----------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_name_count<class_NodePath_get_name_count>`  **(** **)**                       |
-+----------------------------------+-----------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`get_property<class_NodePath_get_property>`  **(** **)**                           |
-+----------------------------------+-----------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`get_subname<class_NodePath_get_subname>`  **(** :ref:`int<class_int>` idx  **)**  |
-+----------------------------------+-----------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_subname_count<class_NodePath_get_subname_count>`  **(** **)**                 |
-+----------------------------------+-----------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`          | :ref:`is_absolute<class_NodePath_is_absolute>`  **(** **)**                             |
-+----------------------------------+-----------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`          | :ref:`is_empty<class_NodePath_is_empty>`  **(** **)**                                   |
-+----------------------------------+-----------------------------------------------------------------------------------------+
++----------------------------------+---------------------------------------------------------------------------------------+
+| :ref:`NodePath<class_nodepath>`  | :ref:`NodePath<class_NodePath_NodePath>` **(** :ref:`String<class_string>` from **)** |
++----------------------------------+---------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`      | :ref:`get_name<class_NodePath_get_name>` **(** :ref:`int<class_int>` idx **)**        |
++----------------------------------+---------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_name_count<class_NodePath_get_name_count>` **(** **)**                      |
++----------------------------------+---------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`      | :ref:`get_property<class_NodePath_get_property>` **(** **)**                          |
++----------------------------------+---------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`      | :ref:`get_subname<class_NodePath_get_subname>` **(** :ref:`int<class_int>` idx **)**  |
++----------------------------------+---------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_subname_count<class_NodePath_get_subname_count>` **(** **)**                |
++----------------------------------+---------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`is_absolute<class_NodePath_is_absolute>` **(** **)**                            |
++----------------------------------+---------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`is_empty<class_NodePath_is_empty>` **(** **)**                                  |
++----------------------------------+---------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -49,49 +49,49 @@ Member Function Description
 
 .. _class_NodePath_NodePath:
 
-- :ref:`NodePath<class_nodepath>`  **NodePath**  **(** :ref:`String<class_string>` from  **)**
+- :ref:`NodePath<class_nodepath>` **NodePath** **(** :ref:`String<class_string>` from **)**
 
 Create a NodePath from a string, e.g. "Path2D/PathFollow2D/Sprite:texture:size". A path is absolute if it starts with a slash. Absolute paths are only valid in the global scene tree, not within individual scenes. In a relative path, ``"."`` and ``".."`` indicate the current node and its parent.
 
 .. _class_NodePath_get_name:
 
-- :ref:`String<class_string>`  **get_name**  **(** :ref:`int<class_int>` idx  **)**
+- :ref:`String<class_string>` **get_name** **(** :ref:`int<class_int>` idx **)**
 
 Get the node name indicated by ``idx`` (0 to :ref:`get_name_count<class_NodePath_get_name_count>`)
 
 .. _class_NodePath_get_name_count:
 
-- :ref:`int<class_int>`  **get_name_count**  **(** **)**
+- :ref:`int<class_int>` **get_name_count** **(** **)**
 
 Get the number of node names which make up the path.
 
 .. _class_NodePath_get_property:
 
-- :ref:`String<class_string>`  **get_property**  **(** **)**
+- :ref:`String<class_string>` **get_property** **(** **)**
 
 Get the path's property name, or an empty string if the path doesn't have a property.
 
 .. _class_NodePath_get_subname:
 
-- :ref:`String<class_string>`  **get_subname**  **(** :ref:`int<class_int>` idx  **)**
+- :ref:`String<class_string>` **get_subname** **(** :ref:`int<class_int>` idx **)**
 
 Get the resource name indicated by ``idx`` (0 to :ref:`get_subname_count<class_NodePath_get_subname_count>`)
 
 .. _class_NodePath_get_subname_count:
 
-- :ref:`int<class_int>`  **get_subname_count**  **(** **)**
+- :ref:`int<class_int>` **get_subname_count** **(** **)**
 
 Get the number of resource names in the path.
 
 .. _class_NodePath_is_absolute:
 
-- :ref:`bool<class_bool>`  **is_absolute**  **(** **)**
+- :ref:`bool<class_bool>` **is_absolute** **(** **)**
 
 Return true if the node path is absolute (not relative).
 
 .. _class_NodePath_is_empty:
 
-- :ref:`bool<class_bool>`  **is_empty**  **(** **)**
+- :ref:`bool<class_bool>` **is_empty** **(** **)**
 
 Return true if the node path is empty.
 

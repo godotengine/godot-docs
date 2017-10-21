@@ -19,9 +19,9 @@ Group of Buttons.
 Member Functions
 ----------------
 
-+--------------------------------------+------------------------------------------------------------------------------+
-| :ref:`BaseButton<class_basebutton>`  | :ref:`get_pressed_button<class_ButtonGroup_get_pressed_button>`  **(** **)** |
-+--------------------------------------+------------------------------------------------------------------------------+
++--------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`BaseButton<class_basebutton>`  | :ref:`get_pressed_button<class_ButtonGroup_get_pressed_button>` **(** **)** |
++--------------------------------------+-----------------------------------------------------------------------------+
 
 Description
 -----------
@@ -33,7 +33,7 @@ Member Function Description
 
 .. _class_ButtonGroup_get_pressed_button:
 
-- :ref:`BaseButton<class_basebutton>`  **get_pressed_button**  **(** **)**
+- :ref:`BaseButton<class_basebutton>` **get_pressed_button** **(** **)**
 
 Return the pressed button.
 

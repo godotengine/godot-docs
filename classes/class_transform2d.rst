@@ -17,41 +17,41 @@ Brief Description
 Member Functions
 ----------------
 
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`  | :ref:`Transform2D<class_Transform2D_Transform2D>`  **(** :ref:`Transform<class_transform>` from  **)**                                                                           |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`  | :ref:`Transform2D<class_Transform2D_Transform2D>`  **(** :ref:`Vector2<class_vector2>` x_axis, :ref:`Vector2<class_vector2>` y_axis, :ref:`Vector2<class_vector2>` origin  **)** |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`  | :ref:`Transform2D<class_Transform2D_Transform2D>`  **(** :ref:`float<class_float>` rotation, :ref:`Vector2<class_vector2>` position  **)**                                       |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`  | :ref:`affine_inverse<class_Transform2D_affine_inverse>`  **(** **)**                                                                                                             |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`  | :ref:`basis_xform<class_Transform2D_basis_xform>`  **(** var v  **)**                                                                                                            |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`  | :ref:`basis_xform_inv<class_Transform2D_basis_xform_inv>`  **(** var v  **)**                                                                                                    |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`          | :ref:`get_origin<class_Transform2D_get_origin>`  **(** **)**                                                                                                                     |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_rotation<class_Transform2D_get_rotation>`  **(** **)**                                                                                                                 |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`          | :ref:`get_scale<class_Transform2D_get_scale>`  **(** **)**                                                                                                                       |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`  | :ref:`interpolate_with<class_Transform2D_interpolate_with>`  **(** :ref:`Transform2D<class_transform2d>` transform, :ref:`float<class_float>` weight  **)**                      |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`  | :ref:`inverse<class_Transform2D_inverse>`  **(** **)**                                                                                                                           |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`  | :ref:`orthonormalized<class_Transform2D_orthonormalized>`  **(** **)**                                                                                                           |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`  | :ref:`rotated<class_Transform2D_rotated>`  **(** :ref:`float<class_float>` phi  **)**                                                                                            |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`  | :ref:`scaled<class_Transform2D_scaled>`  **(** :ref:`Vector2<class_vector2>` scale  **)**                                                                                        |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`  | :ref:`translated<class_Transform2D_translated>`  **(** :ref:`Vector2<class_vector2>` offset  **)**                                                                               |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`  | :ref:`xform<class_Transform2D_xform>`  **(** var v  **)**                                                                                                                        |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`  | :ref:`xform_inv<class_Transform2D_xform_inv>`  **(** var v  **)**                                                                                                                |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_transform2d>`  | :ref:`Transform2D<class_Transform2D_Transform2D>` **(** :ref:`Transform<class_transform>` from **)**                                                                           |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_transform2d>`  | :ref:`Transform2D<class_Transform2D_Transform2D>` **(** :ref:`Vector2<class_vector2>` x_axis, :ref:`Vector2<class_vector2>` y_axis, :ref:`Vector2<class_vector2>` origin **)** |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_transform2d>`  | :ref:`Transform2D<class_Transform2D_Transform2D>` **(** :ref:`float<class_float>` rotation, :ref:`Vector2<class_vector2>` position **)**                                       |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_transform2d>`  | :ref:`affine_inverse<class_Transform2D_affine_inverse>` **(** **)**                                                                                                            |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_transform2d>`  | :ref:`basis_xform<class_Transform2D_basis_xform>` **(** var v **)**                                                                                                            |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_transform2d>`  | :ref:`basis_xform_inv<class_Transform2D_basis_xform_inv>` **(** var v **)**                                                                                                    |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`          | :ref:`get_origin<class_Transform2D_get_origin>` **(** **)**                                                                                                                    |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_rotation<class_Transform2D_get_rotation>` **(** **)**                                                                                                                |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`          | :ref:`get_scale<class_Transform2D_get_scale>` **(** **)**                                                                                                                      |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_transform2d>`  | :ref:`interpolate_with<class_Transform2D_interpolate_with>` **(** :ref:`Transform2D<class_transform2d>` transform, :ref:`float<class_float>` weight **)**                      |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_transform2d>`  | :ref:`inverse<class_Transform2D_inverse>` **(** **)**                                                                                                                          |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_transform2d>`  | :ref:`orthonormalized<class_Transform2D_orthonormalized>` **(** **)**                                                                                                          |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_transform2d>`  | :ref:`rotated<class_Transform2D_rotated>` **(** :ref:`float<class_float>` phi **)**                                                                                            |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_transform2d>`  | :ref:`scaled<class_Transform2D_scaled>` **(** :ref:`Vector2<class_vector2>` scale **)**                                                                                        |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_transform2d>`  | :ref:`translated<class_Transform2D_translated>` **(** :ref:`Vector2<class_vector2>` offset **)**                                                                               |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_transform2d>`  | :ref:`xform<class_Transform2D_xform>` **(** var v **)**                                                                                                                        |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform2D<class_transform2d>`  | :ref:`xform_inv<class_Transform2D_xform_inv>` **(** var v **)**                                                                                                                |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -79,103 +79,103 @@ Member Function Description
 
 .. _class_Transform2D_Transform2D:
 
-- :ref:`Transform2D<class_transform2d>`  **Transform2D**  **(** :ref:`Transform<class_transform>` from  **)**
+- :ref:`Transform2D<class_transform2d>` **Transform2D** **(** :ref:`Transform<class_transform>` from **)**
 
 Constructs the :ref:`Transform2D<class_transform2d>` from a 3D :ref:`Transform<class_transform>`.
 
 .. _class_Transform2D_Transform2D:
 
-- :ref:`Transform2D<class_transform2d>`  **Transform2D**  **(** :ref:`Vector2<class_vector2>` x_axis, :ref:`Vector2<class_vector2>` y_axis, :ref:`Vector2<class_vector2>` origin  **)**
+- :ref:`Transform2D<class_transform2d>` **Transform2D** **(** :ref:`Vector2<class_vector2>` x_axis, :ref:`Vector2<class_vector2>` y_axis, :ref:`Vector2<class_vector2>` origin **)**
 
 Constructs the :ref:`Transform2D<class_transform2d>` from 3 :ref:`Vector2<class_vector2>` consisting of rows x, y and origin.
 
 .. _class_Transform2D_Transform2D:
 
-- :ref:`Transform2D<class_transform2d>`  **Transform2D**  **(** :ref:`float<class_float>` rotation, :ref:`Vector2<class_vector2>` position  **)**
+- :ref:`Transform2D<class_transform2d>` **Transform2D** **(** :ref:`float<class_float>` rotation, :ref:`Vector2<class_vector2>` position **)**
 
 Constructs the :ref:`Transform2D<class_transform2d>` from rotation angle in radians and position :ref:`Vector2<class_vector2>`.
 
 .. _class_Transform2D_affine_inverse:
 
-- :ref:`Transform2D<class_transform2d>`  **affine_inverse**  **(** **)**
+- :ref:`Transform2D<class_transform2d>` **affine_inverse** **(** **)**
 
 Returns the inverse of the matrix.
 
 .. _class_Transform2D_basis_xform:
 
-- :ref:`Transform2D<class_transform2d>`  **basis_xform**  **(** var v  **)**
+- :ref:`Transform2D<class_transform2d>` **basis_xform** **(** var v **)**
 
 Transforms the given vector "v" by this transform basis (no translation).
 
 .. _class_Transform2D_basis_xform_inv:
 
-- :ref:`Transform2D<class_transform2d>`  **basis_xform_inv**  **(** var v  **)**
+- :ref:`Transform2D<class_transform2d>` **basis_xform_inv** **(** var v **)**
 
 Inverse-transforms the given vector "v" by this transform basis (no translation).
 
 .. _class_Transform2D_get_origin:
 
-- :ref:`Vector2<class_vector2>`  **get_origin**  **(** **)**
+- :ref:`Vector2<class_vector2>` **get_origin** **(** **)**
 
 Returns the origin :ref:`Vector2<class_vector2>` (translation).
 
 .. _class_Transform2D_get_rotation:
 
-- :ref:`float<class_float>`  **get_rotation**  **(** **)**
+- :ref:`float<class_float>` **get_rotation** **(** **)**
 
 Returns the rotation (in radians).
 
 .. _class_Transform2D_get_scale:
 
-- :ref:`Vector2<class_vector2>`  **get_scale**  **(** **)**
+- :ref:`Vector2<class_vector2>` **get_scale** **(** **)**
 
 Returns the scale.
 
 .. _class_Transform2D_interpolate_with:
 
-- :ref:`Transform2D<class_transform2d>`  **interpolate_with**  **(** :ref:`Transform2D<class_transform2d>` transform, :ref:`float<class_float>` weight  **)**
+- :ref:`Transform2D<class_transform2d>` **interpolate_with** **(** :ref:`Transform2D<class_transform2d>` transform, :ref:`float<class_float>` weight **)**
 
 Interpolates the transform to other Transform2D by weight amount (0-1).
 
 .. _class_Transform2D_inverse:
 
-- :ref:`Transform2D<class_transform2d>`  **inverse**  **(** **)**
+- :ref:`Transform2D<class_transform2d>` **inverse** **(** **)**
 
 Returns the inverse of the transform, under the assumption that the transformation is composed of rotation and translation (no scaling, use affine_inverse for transforms with scaling).
 
 .. _class_Transform2D_orthonormalized:
 
-- :ref:`Transform2D<class_transform2d>`  **orthonormalized**  **(** **)**
+- :ref:`Transform2D<class_transform2d>` **orthonormalized** **(** **)**
 
 Returns the transform with the basis orthogonal (90 degrees), and normalized axis vectors.
 
 .. _class_Transform2D_rotated:
 
-- :ref:`Transform2D<class_transform2d>`  **rotated**  **(** :ref:`float<class_float>` phi  **)**
+- :ref:`Transform2D<class_transform2d>` **rotated** **(** :ref:`float<class_float>` phi **)**
 
 Rotates the transform by phi.
 
 .. _class_Transform2D_scaled:
 
-- :ref:`Transform2D<class_transform2d>`  **scaled**  **(** :ref:`Vector2<class_vector2>` scale  **)**
+- :ref:`Transform2D<class_transform2d>` **scaled** **(** :ref:`Vector2<class_vector2>` scale **)**
 
 Scales the transform by the specified 2D scaling factors.
 
 .. _class_Transform2D_translated:
 
-- :ref:`Transform2D<class_transform2d>`  **translated**  **(** :ref:`Vector2<class_vector2>` offset  **)**
+- :ref:`Transform2D<class_transform2d>` **translated** **(** :ref:`Vector2<class_vector2>` offset **)**
 
 Translates the transform by the specified offset.
 
 .. _class_Transform2D_xform:
 
-- :ref:`Transform2D<class_transform2d>`  **xform**  **(** var v  **)**
+- :ref:`Transform2D<class_transform2d>` **xform** **(** var v **)**
 
 Transforms the given vector "v" by this transform.
 
 .. _class_Transform2D_xform_inv:
 
-- :ref:`Transform2D<class_transform2d>`  **xform_inv**  **(** var v  **)**
+- :ref:`Transform2D<class_transform2d>` **xform_inv** **(** var v **)**
 
 Inverse-transforms the given vector "v" by this transform.
 

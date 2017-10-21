@@ -19,27 +19,27 @@ Class representing a cylindrical :ref:`PrimitiveMesh<class_primitivemesh>`.
 Member Functions
 ----------------
 
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_bottom_radius<class_CylinderMesh_get_bottom_radius>`  **(** **)** const                               |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_height<class_CylinderMesh_get_height>`  **(** **)** const                                             |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_radial_segments<class_CylinderMesh_get_radial_segments>`  **(** **)** const                           |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_rings<class_CylinderMesh_get_rings>`  **(** **)** const                                               |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_top_radius<class_CylinderMesh_get_top_radius>`  **(** **)** const                                     |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_bottom_radius<class_CylinderMesh_set_bottom_radius>`  **(** :ref:`float<class_float>` radius  **)**   |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_height<class_CylinderMesh_set_height>`  **(** :ref:`float<class_float>` height  **)**                 |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_radial_segments<class_CylinderMesh_set_radial_segments>`  **(** :ref:`int<class_int>` segments  **)** |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_rings<class_CylinderMesh_set_rings>`  **(** :ref:`int<class_int>` rings  **)**                        |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_top_radius<class_CylinderMesh_set_top_radius>`  **(** :ref:`float<class_float>` radius  **)**         |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
++----------------------------+---------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_bottom_radius<class_CylinderMesh_get_bottom_radius>` **(** **)** const                              |
++----------------------------+---------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_height<class_CylinderMesh_get_height>` **(** **)** const                                            |
++----------------------------+---------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`get_radial_segments<class_CylinderMesh_get_radial_segments>` **(** **)** const                          |
++----------------------------+---------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`get_rings<class_CylinderMesh_get_rings>` **(** **)** const                                              |
++----------------------------+---------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_top_radius<class_CylinderMesh_get_top_radius>` **(** **)** const                                    |
++----------------------------+---------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_bottom_radius<class_CylinderMesh_set_bottom_radius>` **(** :ref:`float<class_float>` radius **)**   |
++----------------------------+---------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_height<class_CylinderMesh_set_height>` **(** :ref:`float<class_float>` height **)**                 |
++----------------------------+---------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_radial_segments<class_CylinderMesh_set_radial_segments>` **(** :ref:`int<class_int>` segments **)** |
++----------------------------+---------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_rings<class_CylinderMesh_set_rings>` **(** :ref:`int<class_int>` rings **)**                        |
++----------------------------+---------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_top_radius<class_CylinderMesh_set_top_radius>` **(** :ref:`float<class_float>` radius **)**         |
++----------------------------+---------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -75,42 +75,42 @@ Member Function Description
 
 .. _class_CylinderMesh_get_bottom_radius:
 
-- :ref:`float<class_float>`  **get_bottom_radius**  **(** **)** const
+- :ref:`float<class_float>` **get_bottom_radius** **(** **)** const
 
 .. _class_CylinderMesh_get_height:
 
-- :ref:`float<class_float>`  **get_height**  **(** **)** const
+- :ref:`float<class_float>` **get_height** **(** **)** const
 
 .. _class_CylinderMesh_get_radial_segments:
 
-- :ref:`int<class_int>`  **get_radial_segments**  **(** **)** const
+- :ref:`int<class_int>` **get_radial_segments** **(** **)** const
 
 .. _class_CylinderMesh_get_rings:
 
-- :ref:`int<class_int>`  **get_rings**  **(** **)** const
+- :ref:`int<class_int>` **get_rings** **(** **)** const
 
 .. _class_CylinderMesh_get_top_radius:
 
-- :ref:`float<class_float>`  **get_top_radius**  **(** **)** const
+- :ref:`float<class_float>` **get_top_radius** **(** **)** const
 
 .. _class_CylinderMesh_set_bottom_radius:
 
-- void  **set_bottom_radius**  **(** :ref:`float<class_float>` radius  **)**
+- void **set_bottom_radius** **(** :ref:`float<class_float>` radius **)**
 
 .. _class_CylinderMesh_set_height:
 
-- void  **set_height**  **(** :ref:`float<class_float>` height  **)**
+- void **set_height** **(** :ref:`float<class_float>` height **)**
 
 .. _class_CylinderMesh_set_radial_segments:
 
-- void  **set_radial_segments**  **(** :ref:`int<class_int>` segments  **)**
+- void **set_radial_segments** **(** :ref:`int<class_int>` segments **)**
 
 .. _class_CylinderMesh_set_rings:
 
-- void  **set_rings**  **(** :ref:`int<class_int>` rings  **)**
+- void **set_rings** **(** :ref:`int<class_int>` rings **)**
 
 .. _class_CylinderMesh_set_top_radius:
 
-- void  **set_top_radius**  **(** :ref:`float<class_float>` radius  **)**
+- void **set_top_radius** **(** :ref:`float<class_float>` radius **)**
 
 

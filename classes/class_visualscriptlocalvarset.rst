@@ -19,15 +19,15 @@ Changes a local variable's value.
 Member Functions
 ----------------
 
-+------------------------------+----------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_var_name<class_VisualScriptLocalVarSet_get_var_name>`  **(** **)** const                             |
-+------------------------------+----------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_var_type<class_VisualScriptLocalVarSet_get_var_type>`  **(** **)** const                             |
-+------------------------------+----------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_var_name<class_VisualScriptLocalVarSet_set_var_name>`  **(** :ref:`String<class_string>` name  **)** |
-+------------------------------+----------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_var_type<class_VisualScriptLocalVarSet_set_var_type>`  **(** :ref:`int<class_int>` type  **)**       |
-+------------------------------+----------------------------------------------------------------------------------------------------------------+
++------------------------------+--------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_var_name<class_VisualScriptLocalVarSet_get_var_name>` **(** **)** const                            |
++------------------------------+--------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`get_var_type<class_VisualScriptLocalVarSet_get_var_type>` **(** **)** const                            |
++------------------------------+--------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_var_name<class_VisualScriptLocalVarSet_set_var_name>` **(** :ref:`String<class_string>` name **)** |
++------------------------------+--------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_var_type<class_VisualScriptLocalVarSet_set_var_type>` **(** :ref:`int<class_int>` type **)**       |
++------------------------------+--------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -63,18 +63,18 @@ Member Function Description
 
 .. _class_VisualScriptLocalVarSet_get_var_name:
 
-- :ref:`String<class_string>`  **get_var_name**  **(** **)** const
+- :ref:`String<class_string>` **get_var_name** **(** **)** const
 
 .. _class_VisualScriptLocalVarSet_get_var_type:
 
-- :ref:`int<class_int>`  **get_var_type**  **(** **)** const
+- :ref:`int<class_int>` **get_var_type** **(** **)** const
 
 .. _class_VisualScriptLocalVarSet_set_var_name:
 
-- void  **set_var_name**  **(** :ref:`String<class_string>` name  **)**
+- void **set_var_name** **(** :ref:`String<class_string>` name **)**
 
 .. _class_VisualScriptLocalVarSet_set_var_type:
 
-- void  **set_var_type**  **(** :ref:`int<class_int>` type  **)**
+- void **set_var_type** **(** :ref:`int<class_int>` type **)**
 
 

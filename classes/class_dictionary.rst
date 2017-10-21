@@ -17,25 +17,25 @@ Dictionary type.
 Member Functions
 ----------------
 
-+----------------------------+---------------------------------------------------------------------------------------+
-| void                       | :ref:`clear<class_Dictionary_clear>`  **(** **)**                                     |
-+----------------------------+---------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`empty<class_Dictionary_empty>`  **(** **)**                                     |
-+----------------------------+---------------------------------------------------------------------------------------+
-| void                       | :ref:`erase<class_Dictionary_erase>`  **(** var key  **)**                            |
-+----------------------------+---------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`has<class_Dictionary_has>`  **(** var key  **)**                                |
-+----------------------------+---------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`has_all<class_Dictionary_has_all>`  **(** :ref:`Array<class_array>` keys  **)** |
-+----------------------------+---------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`hash<class_Dictionary_hash>`  **(** **)**                                       |
-+----------------------------+---------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`  | :ref:`keys<class_Dictionary_keys>`  **(** **)**                                       |
-+----------------------------+---------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`size<class_Dictionary_size>`  **(** **)**                                       |
-+----------------------------+---------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`  | :ref:`values<class_Dictionary_values>`  **(** **)**                                   |
-+----------------------------+---------------------------------------------------------------------------------------+
++----------------------------+-------------------------------------------------------------------------------------+
+| void                       | :ref:`clear<class_Dictionary_clear>` **(** **)**                                    |
++----------------------------+-------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`empty<class_Dictionary_empty>` **(** **)**                                    |
++----------------------------+-------------------------------------------------------------------------------------+
+| void                       | :ref:`erase<class_Dictionary_erase>` **(** var key **)**                            |
++----------------------------+-------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`has<class_Dictionary_has>` **(** var key **)**                                |
++----------------------------+-------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`has_all<class_Dictionary_has_all>` **(** :ref:`Array<class_array>` keys **)** |
++----------------------------+-------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`hash<class_Dictionary_hash>` **(** **)**                                      |
++----------------------------+-------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`  | :ref:`keys<class_Dictionary_keys>` **(** **)**                                      |
++----------------------------+-------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`size<class_Dictionary_size>` **(** **)**                                      |
++----------------------------+-------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`  | :ref:`values<class_Dictionary_values>` **(** **)**                                  |
++----------------------------+-------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -47,55 +47,55 @@ Member Function Description
 
 .. _class_Dictionary_clear:
 
-- void  **clear**  **(** **)**
+- void **clear** **(** **)**
 
 Clear the dictionary, removing all key/value pairs.
 
 .. _class_Dictionary_empty:
 
-- :ref:`bool<class_bool>`  **empty**  **(** **)**
+- :ref:`bool<class_bool>` **empty** **(** **)**
 
 Return true if the dictionary is empty.
 
 .. _class_Dictionary_erase:
 
-- void  **erase**  **(** var key  **)**
+- void **erase** **(** var key **)**
 
 Erase a dictionary key/value pair by key.
 
 .. _class_Dictionary_has:
 
-- :ref:`bool<class_bool>`  **has**  **(** var key  **)**
+- :ref:`bool<class_bool>` **has** **(** var key **)**
 
 Return true if the dictionary has a given key.
 
 .. _class_Dictionary_has_all:
 
-- :ref:`bool<class_bool>`  **has_all**  **(** :ref:`Array<class_array>` keys  **)**
+- :ref:`bool<class_bool>` **has_all** **(** :ref:`Array<class_array>` keys **)**
 
 Return true if the dictionary has all of the keys in the given array.
 
 .. _class_Dictionary_hash:
 
-- :ref:`int<class_int>`  **hash**  **(** **)**
+- :ref:`int<class_int>` **hash** **(** **)**
 
 Return a hashed integer value representing the dictionary contents.
 
 .. _class_Dictionary_keys:
 
-- :ref:`Array<class_array>`  **keys**  **(** **)**
+- :ref:`Array<class_array>` **keys** **(** **)**
 
 Return the list of keys in the :ref:`Dictionary<class_dictionary>`.
 
 .. _class_Dictionary_size:
 
-- :ref:`int<class_int>`  **size**  **(** **)**
+- :ref:`int<class_int>` **size** **(** **)**
 
 Return the size of the dictionary (in pairs).
 
 .. _class_Dictionary_values:
 
-- :ref:`Array<class_array>`  **values**  **(** **)**
+- :ref:`Array<class_array>` **values** **(** **)**
 
 Return the list of values in the :ref:`Dictionary<class_dictionary>`.
 

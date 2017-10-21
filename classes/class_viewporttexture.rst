@@ -19,11 +19,11 @@ Brief Description
 Member Functions
 ----------------
 
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_nodepath>`  | :ref:`get_viewport_path_in_scene<class_ViewportTexture_get_viewport_path_in_scene>`  **(** **)** const                                 |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_viewport_path_in_scene<class_ViewportTexture_set_viewport_path_in_scene>`  **(** :ref:`NodePath<class_nodepath>` path  **)** |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`NodePath<class_nodepath>`  | :ref:`get_viewport_path_in_scene<class_ViewportTexture_get_viewport_path_in_scene>` **(** **)** const                                |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_viewport_path_in_scene<class_ViewportTexture_set_viewport_path_in_scene>` **(** :ref:`NodePath<class_nodepath>` path **)** |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -38,10 +38,10 @@ Member Function Description
 
 .. _class_ViewportTexture_get_viewport_path_in_scene:
 
-- :ref:`NodePath<class_nodepath>`  **get_viewport_path_in_scene**  **(** **)** const
+- :ref:`NodePath<class_nodepath>` **get_viewport_path_in_scene** **(** **)** const
 
 .. _class_ViewportTexture_set_viewport_path_in_scene:
 
-- void  **set_viewport_path_in_scene**  **(** :ref:`NodePath<class_nodepath>` path  **)**
+- void **set_viewport_path_in_scene** **(** :ref:`NodePath<class_nodepath>` path **)**
 
 

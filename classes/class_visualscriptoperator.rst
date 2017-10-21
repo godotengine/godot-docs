@@ -19,15 +19,15 @@ Brief Description
 Member Functions
 ----------------
 
-+------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_operator<class_VisualScriptOperator_get_operator>`  **(** **)** const                     |
-+------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_typed<class_VisualScriptOperator_get_typed>`  **(** **)** const                           |
-+------------------------+-----------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_operator<class_VisualScriptOperator_set_operator>`  **(** :ref:`int<class_int>` op  **)** |
-+------------------------+-----------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_typed<class_VisualScriptOperator_set_typed>`  **(** :ref:`int<class_int>` type  **)**     |
-+------------------------+-----------------------------------------------------------------------------------------------------+
++------------------------+---------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`get_operator<class_VisualScriptOperator_get_operator>` **(** **)** const                    |
++------------------------+---------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`get_typed<class_VisualScriptOperator_get_typed>` **(** **)** const                          |
++------------------------+---------------------------------------------------------------------------------------------------+
+| void                   | :ref:`set_operator<class_VisualScriptOperator_set_operator>` **(** :ref:`int<class_int>` op **)** |
++------------------------+---------------------------------------------------------------------------------------------------+
+| void                   | :ref:`set_typed<class_VisualScriptOperator_set_typed>` **(** :ref:`int<class_int>` type **)**     |
++------------------------+---------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -59,18 +59,18 @@ Member Function Description
 
 .. _class_VisualScriptOperator_get_operator:
 
-- :ref:`int<class_int>`  **get_operator**  **(** **)** const
+- :ref:`int<class_int>` **get_operator** **(** **)** const
 
 .. _class_VisualScriptOperator_get_typed:
 
-- :ref:`int<class_int>`  **get_typed**  **(** **)** const
+- :ref:`int<class_int>` **get_typed** **(** **)** const
 
 .. _class_VisualScriptOperator_set_operator:
 
-- void  **set_operator**  **(** :ref:`int<class_int>` op  **)**
+- void **set_operator** **(** :ref:`int<class_int>` op **)**
 
 .. _class_VisualScriptOperator_set_typed:
 
-- void  **set_typed**  **(** :ref:`int<class_int>` type  **)**
+- void **set_typed** **(** :ref:`int<class_int>` type **)**
 
 

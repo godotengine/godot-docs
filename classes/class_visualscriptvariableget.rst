@@ -19,11 +19,11 @@ Gets a variable's value.
 Member Functions
 ----------------
 
-+------------------------------+----------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_variable<class_VisualScriptVariableGet_get_variable>`  **(** **)** const                             |
-+------------------------------+----------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_variable<class_VisualScriptVariableGet_set_variable>`  **(** :ref:`String<class_string>` name  **)** |
-+------------------------------+----------------------------------------------------------------------------------------------------------------+
++------------------------------+--------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_variable<class_VisualScriptVariableGet_get_variable>` **(** **)** const                            |
++------------------------------+--------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_variable<class_VisualScriptVariableGet_set_variable>` **(** :ref:`String<class_string>` name **)** |
++------------------------------+--------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -51,10 +51,10 @@ Member Function Description
 
 .. _class_VisualScriptVariableGet_get_variable:
 
-- :ref:`String<class_string>`  **get_variable**  **(** **)** const
+- :ref:`String<class_string>` **get_variable** **(** **)** const
 
 .. _class_VisualScriptVariableGet_set_variable:
 
-- void  **set_variable**  **(** :ref:`String<class_string>` name  **)**
+- void **set_variable** **(** :ref:`String<class_string>` name **)**
 
 

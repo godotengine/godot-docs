@@ -19,15 +19,15 @@ Input event type for mouse motion events.
 Member Functions
 ----------------
 
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_relative<class_InputEventMouseMotion_get_relative>`  **(** **)** const                                   |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_speed<class_InputEventMouseMotion_get_speed>`  **(** **)** const                                         |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_relative<class_InputEventMouseMotion_set_relative>`  **(** :ref:`Vector2<class_vector2>` relative  **)** |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_speed<class_InputEventMouseMotion_set_speed>`  **(** :ref:`Vector2<class_vector2>` speed  **)**          |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------+
++--------------------------------+------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_relative<class_InputEventMouseMotion_get_relative>` **(** **)** const                                  |
++--------------------------------+------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_speed<class_InputEventMouseMotion_get_speed>` **(** **)** const                                        |
++--------------------------------+------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_relative<class_InputEventMouseMotion_set_relative>` **(** :ref:`Vector2<class_vector2>` relative **)** |
++--------------------------------+------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_speed<class_InputEventMouseMotion_set_speed>` **(** :ref:`Vector2<class_vector2>` speed **)**          |
++--------------------------------+------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -51,18 +51,18 @@ Member Function Description
 
 .. _class_InputEventMouseMotion_get_relative:
 
-- :ref:`Vector2<class_vector2>`  **get_relative**  **(** **)** const
+- :ref:`Vector2<class_vector2>` **get_relative** **(** **)** const
 
 .. _class_InputEventMouseMotion_get_speed:
 
-- :ref:`Vector2<class_vector2>`  **get_speed**  **(** **)** const
+- :ref:`Vector2<class_vector2>` **get_speed** **(** **)** const
 
 .. _class_InputEventMouseMotion_set_relative:
 
-- void  **set_relative**  **(** :ref:`Vector2<class_vector2>` relative  **)**
+- void **set_relative** **(** :ref:`Vector2<class_vector2>` relative **)**
 
 .. _class_InputEventMouseMotion_set_speed:
 
-- void  **set_speed**  **(** :ref:`Vector2<class_vector2>` speed  **)**
+- void **set_speed** **(** :ref:`Vector2<class_vector2>` speed **)**
 
 

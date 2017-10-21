@@ -19,11 +19,11 @@ Brief Description
 Member Functions
 ----------------
 
-+--------------------------+------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_stretch_enabled<class_ViewportContainer_is_stretch_enabled>`  **(** **)** const             |
-+--------------------------+------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_stretch<class_ViewportContainer_set_stretch>`  **(** :ref:`bool<class_bool>` enable  **)** |
-+--------------------------+------------------------------------------------------------------------------------------------------+
++--------------------------+----------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`is_stretch_enabled<class_ViewportContainer_is_stretch_enabled>` **(** **)** const            |
++--------------------------+----------------------------------------------------------------------------------------------------+
+| void                     | :ref:`set_stretch<class_ViewportContainer_set_stretch>` **(** :ref:`bool<class_bool>` enable **)** |
++--------------------------+----------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -38,10 +38,10 @@ Member Function Description
 
 .. _class_ViewportContainer_is_stretch_enabled:
 
-- :ref:`bool<class_bool>`  **is_stretch_enabled**  **(** **)** const
+- :ref:`bool<class_bool>` **is_stretch_enabled** **(** **)** const
 
 .. _class_ViewportContainer_set_stretch:
 
-- void  **set_stretch**  **(** :ref:`bool<class_bool>` enable  **)**
+- void **set_stretch** **(** :ref:`bool<class_bool>` enable **)**
 
 

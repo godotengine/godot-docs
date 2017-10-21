@@ -19,21 +19,21 @@ Contains the results of a regex search.
 Member Functions
 ----------------
 
-+--------------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                | :ref:`get_end<class_RegExMatch_get_end>`  **(** :ref:`Variant<class_variant>` name=0  **)** const       |
-+--------------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                | :ref:`get_group_count<class_RegExMatch_get_group_count>`  **(** **)** const                             |
-+--------------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_dictionary>`  | :ref:`get_names<class_RegExMatch_get_names>`  **(** **)** const                                         |
-+--------------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                | :ref:`get_start<class_RegExMatch_get_start>`  **(** :ref:`Variant<class_variant>` name=0  **)** const   |
-+--------------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`          | :ref:`get_string<class_RegExMatch_get_string>`  **(** :ref:`Variant<class_variant>` name=0  **)** const |
-+--------------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`            | :ref:`get_strings<class_RegExMatch_get_strings>`  **(** **)** const                                     |
-+--------------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`          | :ref:`get_subject<class_RegExMatch_get_subject>`  **(** **)** const                                     |
-+--------------------------------------+---------------------------------------------------------------------------------------------------------+
++--------------------------------------+-------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                | :ref:`get_end<class_RegExMatch_get_end>` **(** :ref:`Variant<class_variant>` name=0 **)** const       |
++--------------------------------------+-------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                | :ref:`get_group_count<class_RegExMatch_get_group_count>` **(** **)** const                            |
++--------------------------------------+-------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_dictionary>`  | :ref:`get_names<class_RegExMatch_get_names>` **(** **)** const                                        |
++--------------------------------------+-------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                | :ref:`get_start<class_RegExMatch_get_start>` **(** :ref:`Variant<class_variant>` name=0 **)** const   |
++--------------------------------------+-------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`          | :ref:`get_string<class_RegExMatch_get_string>` **(** :ref:`Variant<class_variant>` name=0 **)** const |
++--------------------------------------+-------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`            | :ref:`get_strings<class_RegExMatch_get_strings>` **(** **)** const                                    |
++--------------------------------------+-------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`          | :ref:`get_subject<class_RegExMatch_get_subject>` **(** **)** const                                    |
++--------------------------------------+-------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -45,43 +45,43 @@ Member Function Description
 
 .. _class_RegExMatch_get_end:
 
-- :ref:`int<class_int>`  **get_end**  **(** :ref:`Variant<class_variant>` name=0  **)** const
+- :ref:`int<class_int>` **get_end** **(** :ref:`Variant<class_variant>` name=0 **)** const
 
 Returns the end position of the match in the source string. An integer can be specified for numeric groups or a string for named groups. Returns -1 if that group wasn't found or doesn't exist. Defaults to 0 (whole pattern).
 
 .. _class_RegExMatch_get_group_count:
 
-- :ref:`int<class_int>`  **get_group_count**  **(** **)** const
+- :ref:`int<class_int>` **get_group_count** **(** **)** const
 
 Returns the number of numeric capturing groups.
 
 .. _class_RegExMatch_get_names:
 
-- :ref:`Dictionary<class_dictionary>`  **get_names**  **(** **)** const
+- :ref:`Dictionary<class_dictionary>` **get_names** **(** **)** const
 
 Returns an array of names of named capturing groups.
 
 .. _class_RegExMatch_get_start:
 
-- :ref:`int<class_int>`  **get_start**  **(** :ref:`Variant<class_variant>` name=0  **)** const
+- :ref:`int<class_int>` **get_start** **(** :ref:`Variant<class_variant>` name=0 **)** const
 
 Returns the starting position of the match in the source string. An integer can be specified for numeric groups or a string for named groups. Returns -1 if that group wasn't found or doesn't exist. Defaults to 0 (whole pattern).
 
 .. _class_RegExMatch_get_string:
 
-- :ref:`String<class_string>`  **get_string**  **(** :ref:`Variant<class_variant>` name=0  **)** const
+- :ref:`String<class_string>` **get_string** **(** :ref:`Variant<class_variant>` name=0 **)** const
 
 Returns the result of the match in the source string. An integer can be specified for numeric groups or a string for named groups. Returns -1 if that group wasn't found or doesn't exist. Defaults to 0 (whole pattern).
 
 .. _class_RegExMatch_get_strings:
 
-- :ref:`Array<class_array>`  **get_strings**  **(** **)** const
+- :ref:`Array<class_array>` **get_strings** **(** **)** const
 
 Returns an :ref:`Array<class_array>` of the matches in the source string.
 
 .. _class_RegExMatch_get_subject:
 
-- :ref:`String<class_string>`  **get_subject**  **(** **)** const
+- :ref:`String<class_string>` **get_subject** **(** **)** const
 
 Returns the source string used with the search pattern to find this matching result.
 

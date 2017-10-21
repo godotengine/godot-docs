@@ -19,15 +19,15 @@ Gets a contant's value.
 Member Functions
 ----------------
 
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_constant_type<class_VisualScriptConstant_get_constant_type>`  **(** **)** const                                  |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`  | :ref:`get_constant_value<class_VisualScriptConstant_get_constant_value>`  **(** **)** const                                |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_constant_type<class_VisualScriptConstant_set_constant_type>`  **(** :ref:`int<class_int>` type  **)**            |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_constant_value<class_VisualScriptConstant_set_constant_value>`  **(** :ref:`Variant<class_variant>` value  **)** |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_constant_type<class_VisualScriptConstant_get_constant_type>` **(** **)** const                                 |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_variant>`  | :ref:`get_constant_value<class_VisualScriptConstant_get_constant_value>` **(** **)** const                               |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_constant_type<class_VisualScriptConstant_set_constant_type>` **(** :ref:`int<class_int>` type **)**            |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_constant_value<class_VisualScriptConstant_set_constant_value>` **(** :ref:`Variant<class_variant>` value **)** |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -59,18 +59,18 @@ Member Function Description
 
 .. _class_VisualScriptConstant_get_constant_type:
 
-- :ref:`int<class_int>`  **get_constant_type**  **(** **)** const
+- :ref:`int<class_int>` **get_constant_type** **(** **)** const
 
 .. _class_VisualScriptConstant_get_constant_value:
 
-- :ref:`Variant<class_variant>`  **get_constant_value**  **(** **)** const
+- :ref:`Variant<class_variant>` **get_constant_value** **(** **)** const
 
 .. _class_VisualScriptConstant_set_constant_type:
 
-- void  **set_constant_type**  **(** :ref:`int<class_int>` type  **)**
+- void **set_constant_type** **(** :ref:`int<class_int>` type **)**
 
 .. _class_VisualScriptConstant_set_constant_value:
 
-- void  **set_constant_value**  **(** :ref:`Variant<class_variant>` value  **)**
+- void **set_constant_value** **(** :ref:`Variant<class_variant>` value **)**
 
 

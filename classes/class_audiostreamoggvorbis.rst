@@ -19,19 +19,19 @@ OGG Vorbis audio stream driver.
 Member Functions
 ----------------
 
-+--------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_poolbytearray>`  | :ref:`get_data<class_AudioStreamOGGVorbis_get_data>`  **(** **)** const                                            |
-+--------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                  | :ref:`get_loop_offset<class_AudioStreamOGGVorbis_get_loop_offset>`  **(** **)** const                              |
-+--------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                    | :ref:`has_loop<class_AudioStreamOGGVorbis_has_loop>`  **(** **)** const                                            |
-+--------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_data<class_AudioStreamOGGVorbis_set_data>`  **(** :ref:`PoolByteArray<class_poolbytearray>` data  **)**  |
-+--------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_loop<class_AudioStreamOGGVorbis_set_loop>`  **(** :ref:`bool<class_bool>` enable  **)**                  |
-+--------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_loop_offset<class_AudioStreamOGGVorbis_set_loop_offset>`  **(** :ref:`float<class_float>` seconds  **)** |
-+--------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolByteArray<class_poolbytearray>`  | :ref:`get_data<class_AudioStreamOGGVorbis_get_data>` **(** **)** const                                           |
++--------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                  | :ref:`get_loop_offset<class_AudioStreamOGGVorbis_get_loop_offset>` **(** **)** const                             |
++--------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                    | :ref:`has_loop<class_AudioStreamOGGVorbis_has_loop>` **(** **)** const                                           |
++--------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`set_data<class_AudioStreamOGGVorbis_set_data>` **(** :ref:`PoolByteArray<class_poolbytearray>` data **)**  |
++--------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`set_loop<class_AudioStreamOGGVorbis_set_loop>` **(** :ref:`bool<class_bool>` enable **)**                  |
++--------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`set_loop_offset<class_AudioStreamOGGVorbis_set_loop_offset>` **(** :ref:`float<class_float>` seconds **)** |
++--------------------------------------------+------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -59,26 +59,26 @@ Member Function Description
 
 .. _class_AudioStreamOGGVorbis_get_data:
 
-- :ref:`PoolByteArray<class_poolbytearray>`  **get_data**  **(** **)** const
+- :ref:`PoolByteArray<class_poolbytearray>` **get_data** **(** **)** const
 
 .. _class_AudioStreamOGGVorbis_get_loop_offset:
 
-- :ref:`float<class_float>`  **get_loop_offset**  **(** **)** const
+- :ref:`float<class_float>` **get_loop_offset** **(** **)** const
 
 .. _class_AudioStreamOGGVorbis_has_loop:
 
-- :ref:`bool<class_bool>`  **has_loop**  **(** **)** const
+- :ref:`bool<class_bool>` **has_loop** **(** **)** const
 
 .. _class_AudioStreamOGGVorbis_set_data:
 
-- void  **set_data**  **(** :ref:`PoolByteArray<class_poolbytearray>` data  **)**
+- void **set_data** **(** :ref:`PoolByteArray<class_poolbytearray>` data **)**
 
 .. _class_AudioStreamOGGVorbis_set_loop:
 
-- void  **set_loop**  **(** :ref:`bool<class_bool>` enable  **)**
+- void **set_loop** **(** :ref:`bool<class_bool>` enable **)**
 
 .. _class_AudioStreamOGGVorbis_set_loop_offset:
 
-- void  **set_loop_offset**  **(** :ref:`float<class_float>` seconds  **)**
+- void **set_loop_offset** **(** :ref:`float<class_float>` seconds **)**
 
 

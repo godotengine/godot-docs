@@ -19,17 +19,17 @@ Brief Description
 Member Functions
 ----------------
 
-+------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`get_class_name<class_NativeScript_get_class_name>`  **(** **)** const                                            |
-+------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`GDNativeLibrary<class_gdnativelibrary>`  | :ref:`get_library<class_NativeScript_get_library>`  **(** **)** const                                                  |
-+------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`                    | :ref:`new<class_NativeScript_new>`  **(** **)** vararg                                                                 |
-+------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_class_name<class_NativeScript_set_class_name>`  **(** :ref:`String<class_string>` class_name  **)**          |
-+------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_library<class_NativeScript_set_library>`  **(** :ref:`GDNativeLibrary<class_gdnativelibrary>` library  **)** |
-+------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                    | :ref:`get_class_name<class_NativeScript_get_class_name>` **(** **)** const                                           |
++------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| :ref:`GDNativeLibrary<class_gdnativelibrary>`  | :ref:`get_library<class_NativeScript_get_library>` **(** **)** const                                                 |
++------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`                    | :ref:`new<class_NativeScript_new>` **(** **)** vararg                                                                |
++------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`set_class_name<class_NativeScript_set_class_name>` **(** :ref:`String<class_string>` class_name **)**          |
++------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`set_library<class_NativeScript_set_library>` **(** :ref:`GDNativeLibrary<class_gdnativelibrary>` library **)** |
++------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -48,22 +48,22 @@ Member Function Description
 
 .. _class_NativeScript_get_class_name:
 
-- :ref:`String<class_string>`  **get_class_name**  **(** **)** const
+- :ref:`String<class_string>` **get_class_name** **(** **)** const
 
 .. _class_NativeScript_get_library:
 
-- :ref:`GDNativeLibrary<class_gdnativelibrary>`  **get_library**  **(** **)** const
+- :ref:`GDNativeLibrary<class_gdnativelibrary>` **get_library** **(** **)** const
 
 .. _class_NativeScript_new:
 
-- :ref:`Object<class_object>`  **new**  **(** **)** vararg
+- :ref:`Object<class_object>` **new** **(** **)** vararg
 
 .. _class_NativeScript_set_class_name:
 
-- void  **set_class_name**  **(** :ref:`String<class_string>` class_name  **)**
+- void **set_class_name** **(** :ref:`String<class_string>` class_name **)**
 
 .. _class_NativeScript_set_library:
 
-- void  **set_library**  **(** :ref:`GDNativeLibrary<class_gdnativelibrary>` library  **)**
+- void **set_library** **(** :ref:`GDNativeLibrary<class_gdnativelibrary>` library **)**
 
 

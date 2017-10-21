@@ -19,27 +19,27 @@ Class representing a spherical :ref:`PrimitiveMesh<class_primitivemesh>`.
 Member Functions
 ----------------
 
-+----------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_height<class_SphereMesh_get_height>`  **(** **)** const                                                    |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`get_is_hemisphere<class_SphereMesh_get_is_hemisphere>`  **(** **)** const                                      |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_radial_segments<class_SphereMesh_get_radial_segments>`  **(** **)** const                                  |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_radius<class_SphereMesh_get_radius>`  **(** **)** const                                                    |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_rings<class_SphereMesh_get_rings>`  **(** **)** const                                                      |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_height<class_SphereMesh_set_height>`  **(** :ref:`float<class_float>` height  **)**                        |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_is_hemisphere<class_SphereMesh_set_is_hemisphere>`  **(** :ref:`bool<class_bool>` is_hemisphere  **)**     |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_radial_segments<class_SphereMesh_set_radial_segments>`  **(** :ref:`int<class_int>` radial_segments  **)** |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_radius<class_SphereMesh_set_radius>`  **(** :ref:`float<class_float>` radius  **)**                        |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_rings<class_SphereMesh_set_rings>`  **(** :ref:`int<class_int>` rings  **)**                               |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------+
++----------------------------+--------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_height<class_SphereMesh_get_height>` **(** **)** const                                                   |
++----------------------------+--------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`get_is_hemisphere<class_SphereMesh_get_is_hemisphere>` **(** **)** const                                     |
++----------------------------+--------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`get_radial_segments<class_SphereMesh_get_radial_segments>` **(** **)** const                                 |
++----------------------------+--------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_radius<class_SphereMesh_get_radius>` **(** **)** const                                                   |
++----------------------------+--------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`get_rings<class_SphereMesh_get_rings>` **(** **)** const                                                     |
++----------------------------+--------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_height<class_SphereMesh_set_height>` **(** :ref:`float<class_float>` height **)**                        |
++----------------------------+--------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_is_hemisphere<class_SphereMesh_set_is_hemisphere>` **(** :ref:`bool<class_bool>` is_hemisphere **)**     |
++----------------------------+--------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_radial_segments<class_SphereMesh_set_radial_segments>` **(** :ref:`int<class_int>` radial_segments **)** |
++----------------------------+--------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_radius<class_SphereMesh_set_radius>` **(** :ref:`float<class_float>` radius **)**                        |
++----------------------------+--------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_rings<class_SphereMesh_set_rings>` **(** :ref:`int<class_int>` rings **)**                               |
++----------------------------+--------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -75,42 +75,42 @@ Member Function Description
 
 .. _class_SphereMesh_get_height:
 
-- :ref:`float<class_float>`  **get_height**  **(** **)** const
+- :ref:`float<class_float>` **get_height** **(** **)** const
 
 .. _class_SphereMesh_get_is_hemisphere:
 
-- :ref:`bool<class_bool>`  **get_is_hemisphere**  **(** **)** const
+- :ref:`bool<class_bool>` **get_is_hemisphere** **(** **)** const
 
 .. _class_SphereMesh_get_radial_segments:
 
-- :ref:`int<class_int>`  **get_radial_segments**  **(** **)** const
+- :ref:`int<class_int>` **get_radial_segments** **(** **)** const
 
 .. _class_SphereMesh_get_radius:
 
-- :ref:`float<class_float>`  **get_radius**  **(** **)** const
+- :ref:`float<class_float>` **get_radius** **(** **)** const
 
 .. _class_SphereMesh_get_rings:
 
-- :ref:`int<class_int>`  **get_rings**  **(** **)** const
+- :ref:`int<class_int>` **get_rings** **(** **)** const
 
 .. _class_SphereMesh_set_height:
 
-- void  **set_height**  **(** :ref:`float<class_float>` height  **)**
+- void **set_height** **(** :ref:`float<class_float>` height **)**
 
 .. _class_SphereMesh_set_is_hemisphere:
 
-- void  **set_is_hemisphere**  **(** :ref:`bool<class_bool>` is_hemisphere  **)**
+- void **set_is_hemisphere** **(** :ref:`bool<class_bool>` is_hemisphere **)**
 
 .. _class_SphereMesh_set_radial_segments:
 
-- void  **set_radial_segments**  **(** :ref:`int<class_int>` radial_segments  **)**
+- void **set_radial_segments** **(** :ref:`int<class_int>` radial_segments **)**
 
 .. _class_SphereMesh_set_radius:
 
-- void  **set_radius**  **(** :ref:`float<class_float>` radius  **)**
+- void **set_radius** **(** :ref:`float<class_float>` radius **)**
 
 .. _class_SphereMesh_set_rings:
 
-- void  **set_rings**  **(** :ref:`int<class_int>` rings  **)**
+- void **set_rings** **(** :ref:`int<class_int>` rings **)**
 
 

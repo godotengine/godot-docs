@@ -19,11 +19,11 @@ Sort all child nodes based on their Y positions.
 Member Functions
 ----------------
 
-+--------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_sort_enabled<class_YSort_is_sort_enabled>`  **(** **)** const                              |
-+--------------------------+-----------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_sort_enabled<class_YSort_set_sort_enabled>`  **(** :ref:`bool<class_bool>` enabled  **)** |
-+--------------------------+-----------------------------------------------------------------------------------------------------+
++--------------------------+---------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`is_sort_enabled<class_YSort_is_sort_enabled>` **(** **)** const                             |
++--------------------------+---------------------------------------------------------------------------------------------------+
+| void                     | :ref:`set_sort_enabled<class_YSort_set_sort_enabled>` **(** :ref:`bool<class_bool>` enabled **)** |
++--------------------------+---------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -43,13 +43,13 @@ Member Function Description
 
 .. _class_YSort_is_sort_enabled:
 
-- :ref:`bool<class_bool>`  **is_sort_enabled**  **(** **)** const
+- :ref:`bool<class_bool>` **is_sort_enabled** **(** **)** const
 
 Returns true if the children nodes are being sorted.
 
 .. _class_YSort_set_sort_enabled:
 
-- void  **set_sort_enabled**  **(** :ref:`bool<class_bool>` enabled  **)**
+- void **set_sort_enabled** **(** :ref:`bool<class_bool>` enabled **)**
 
 Set whether the children nodes are sorted or not. (default true)
 

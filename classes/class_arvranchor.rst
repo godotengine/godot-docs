@@ -19,19 +19,19 @@ Anchor point in AR Space
 Member Functions
 ----------------
 
-+--------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_anchor_id<class_ARVRAnchor_get_anchor_id>`  **(** **)** const                            |
-+--------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`    | :ref:`get_anchor_name<class_ARVRAnchor_get_anchor_name>`  **(** **)** const                        |
-+--------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`get_is_active<class_ARVRAnchor_get_is_active>`  **(** **)** const                            |
-+--------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`Plane<class_plane>`      | :ref:`get_plane<class_ARVRAnchor_get_plane>`  **(** **)** const                                    |
-+--------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`get_size<class_ARVRAnchor_get_size>`  **(** **)** const                                      |
-+--------------------------------+----------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_anchor_id<class_ARVRAnchor_set_anchor_id>`  **(** :ref:`int<class_int>` anchor_id  **)** |
-+--------------------------------+----------------------------------------------------------------------------------------------------+
++--------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_anchor_id<class_ARVRAnchor_get_anchor_id>` **(** **)** const                           |
++--------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`    | :ref:`get_anchor_name<class_ARVRAnchor_get_anchor_name>` **(** **)** const                       |
++--------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`get_is_active<class_ARVRAnchor_get_is_active>` **(** **)** const                           |
++--------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`Plane<class_plane>`      | :ref:`get_plane<class_ARVRAnchor_get_plane>` **(** **)** const                                   |
++--------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`  | :ref:`get_size<class_ARVRAnchor_get_size>` **(** **)** const                                     |
++--------------------------------+--------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_anchor_id<class_ARVRAnchor_set_anchor_id>` **(** :ref:`int<class_int>` anchor_id **)** |
++--------------------------------+--------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -55,37 +55,37 @@ Member Function Description
 
 .. _class_ARVRAnchor_get_anchor_id:
 
-- :ref:`int<class_int>`  **get_anchor_id**  **(** **)** const
+- :ref:`int<class_int>` **get_anchor_id** **(** **)** const
 
 Returns the anchor id for this anchor.
 
 .. _class_ARVRAnchor_get_anchor_name:
 
-- :ref:`String<class_string>`  **get_anchor_name**  **(** **)** const
+- :ref:`String<class_string>` **get_anchor_name** **(** **)** const
 
 Returns the name given to this anchor.
 
 .. _class_ARVRAnchor_get_is_active:
 
-- :ref:`bool<class_bool>`  **get_is_active**  **(** **)** const
+- :ref:`bool<class_bool>` **get_is_active** **(** **)** const
 
 Returns true if the anchor is being tracked and false if no anchor with this id is currently known.
 
 .. _class_ARVRAnchor_get_plane:
 
-- :ref:`Plane<class_plane>`  **get_plane**  **(** **)** const
+- :ref:`Plane<class_plane>` **get_plane** **(** **)** const
 
 Returns a plane aligned with our anchor, handy for intersection testing
 
 .. _class_ARVRAnchor_get_size:
 
-- :ref:`Vector3<class_vector3>`  **get_size**  **(** **)** const
+- :ref:`Vector3<class_vector3>` **get_size** **(** **)** const
 
 Returns the estimated size of the plane that was detected. Say when the anchor relates to a table in the real world, this is the estimated size of the surface of that table.
 
 .. _class_ARVRAnchor_set_anchor_id:
 
-- void  **set_anchor_id**  **(** :ref:`int<class_int>` anchor_id  **)**
+- void **set_anchor_id** **(** :ref:`int<class_int>` anchor_id **)**
 
 Binds this anchor node to an anchor with this id. You can set this before the anchor itself exists. The first anchor that is identified gets id 1, the second id 2, etc. When anchors get removed that slot remains free and can be assigned to the next anchor that is identified. The most common situation where anchors 'disappear' is when the AR server identifies that two anchors represent different parts of the same plane and merge them.
 

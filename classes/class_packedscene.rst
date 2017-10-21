@@ -19,15 +19,15 @@ Brief Description
 Member Functions
 ----------------
 
-+--------------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`              | :ref:`can_instance<class_PackedScene_can_instance>`  **(** **)** const                             |
-+--------------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`SceneState<class_scenestate>`  | :ref:`get_state<class_PackedScene_get_state>`  **(** **)**                                         |
-+--------------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_node>`              | :ref:`instance<class_PackedScene_instance>`  **(** :ref:`int<class_int>` edit_state=0  **)** const |
-+--------------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                | :ref:`pack<class_PackedScene_pack>`  **(** :ref:`Node<class_node>` path  **)**                     |
-+--------------------------------------+----------------------------------------------------------------------------------------------------+
++--------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`              | :ref:`can_instance<class_PackedScene_can_instance>` **(** **)** const                            |
++--------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`SceneState<class_scenestate>`  | :ref:`get_state<class_PackedScene_get_state>` **(** **)**                                        |
++--------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`Node<class_node>`              | :ref:`instance<class_PackedScene_instance>` **(** :ref:`int<class_int>` edit_state=0 **)** const |
++--------------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                | :ref:`pack<class_PackedScene_pack>` **(** :ref:`Node<class_node>` path **)**                     |
++--------------------------------------+--------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -54,19 +54,19 @@ Member Function Description
 
 .. _class_PackedScene_can_instance:
 
-- :ref:`bool<class_bool>`  **can_instance**  **(** **)** const
+- :ref:`bool<class_bool>` **can_instance** **(** **)** const
 
 .. _class_PackedScene_get_state:
 
-- :ref:`SceneState<class_scenestate>`  **get_state**  **(** **)**
+- :ref:`SceneState<class_scenestate>` **get_state** **(** **)**
 
 .. _class_PackedScene_instance:
 
-- :ref:`Node<class_node>`  **instance**  **(** :ref:`int<class_int>` edit_state=0  **)** const
+- :ref:`Node<class_node>` **instance** **(** :ref:`int<class_int>` edit_state=0 **)** const
 
 .. _class_PackedScene_pack:
 
-- :ref:`int<class_int>`  **pack**  **(** :ref:`Node<class_node>` path  **)**
+- :ref:`int<class_int>` **pack** **(** :ref:`Node<class_node>` path **)**
 
 Pack will ignore any sub-nodes not owned by given node. See :ref:`Node.set_owner<class_Node_set_owner>`.
 

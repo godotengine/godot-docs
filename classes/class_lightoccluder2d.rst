@@ -19,15 +19,15 @@ Occludes light cast by a Light2D, casting shadows.
 Member Functions
 ----------------
 
-+----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                              | :ref:`get_occluder_light_mask<class_LightOccluder2D_get_occluder_light_mask>`  **(** **)** const                                                |
-+----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`OccluderPolygon2D<class_occluderpolygon2d>`  | :ref:`get_occluder_polygon<class_LightOccluder2D_get_occluder_polygon>`  **(** **)** const                                                      |
-+----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                               | :ref:`set_occluder_light_mask<class_LightOccluder2D_set_occluder_light_mask>`  **(** :ref:`int<class_int>` mask  **)**                          |
-+----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                               | :ref:`set_occluder_polygon<class_LightOccluder2D_set_occluder_polygon>`  **(** :ref:`OccluderPolygon2D<class_occluderpolygon2d>` polygon  **)** |
-+----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                              | :ref:`get_occluder_light_mask<class_LightOccluder2D_get_occluder_light_mask>` **(** **)** const                                               |
++----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`OccluderPolygon2D<class_occluderpolygon2d>`  | :ref:`get_occluder_polygon<class_LightOccluder2D_get_occluder_polygon>` **(** **)** const                                                     |
++----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                               | :ref:`set_occluder_light_mask<class_LightOccluder2D_set_occluder_light_mask>` **(** :ref:`int<class_int>` mask **)**                          |
++----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                               | :ref:`set_occluder_polygon<class_LightOccluder2D_set_occluder_polygon>` **(** :ref:`OccluderPolygon2D<class_occluderpolygon2d>` polygon **)** |
++----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -51,25 +51,25 @@ Member Function Description
 
 .. _class_LightOccluder2D_get_occluder_light_mask:
 
-- :ref:`int<class_int>`  **get_occluder_light_mask**  **(** **)** const
+- :ref:`int<class_int>` **get_occluder_light_mask** **(** **)** const
 
 Return the light mask of the LightOccluder2D.
 
 .. _class_LightOccluder2D_get_occluder_polygon:
 
-- :ref:`OccluderPolygon2D<class_occluderpolygon2d>`  **get_occluder_polygon**  **(** **)** const
+- :ref:`OccluderPolygon2D<class_occluderpolygon2d>` **get_occluder_polygon** **(** **)** const
 
 Return the OccluderPolygon2D that defines the LightOccluder2D.
 
 .. _class_LightOccluder2D_set_occluder_light_mask:
 
-- void  **set_occluder_light_mask**  **(** :ref:`int<class_int>` mask  **)**
+- void **set_occluder_light_mask** **(** :ref:`int<class_int>` mask **)**
 
 Set the LightOccluder2D light mask. The LightOccluder2D will cast shadows only from Light2Ds that belong to the same light mask(s).
 
 .. _class_LightOccluder2D_set_occluder_polygon:
 
-- void  **set_occluder_polygon**  **(** :ref:`OccluderPolygon2D<class_occluderpolygon2d>` polygon  **)**
+- void **set_occluder_polygon** **(** :ref:`OccluderPolygon2D<class_occluderpolygon2d>` polygon **)**
 
 Set the OccluderPolygon2D that defines the LightOccluder2D.
 

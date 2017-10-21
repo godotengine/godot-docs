@@ -19,19 +19,19 @@ Directional Light, such as the Sun or the Moon.
 Member Functions
 ----------------
 
-+--------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`    | :ref:`get_shadow_depth_range<class_DirectionalLight_get_shadow_depth_range>`  **(** **)** const                       |
-+--------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`    | :ref:`get_shadow_mode<class_DirectionalLight_get_shadow_mode>`  **(** **)** const                                     |
-+--------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_blend_splits_enabled<class_DirectionalLight_is_blend_splits_enabled>`  **(** **)** const                     |
-+--------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_blend_splits<class_DirectionalLight_set_blend_splits>`  **(** :ref:`bool<class_bool>` enabled  **)**        |
-+--------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_shadow_depth_range<class_DirectionalLight_set_shadow_depth_range>`  **(** :ref:`int<class_int>` mode  **)** |
-+--------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_shadow_mode<class_DirectionalLight_set_shadow_mode>`  **(** :ref:`int<class_int>` mode  **)**               |
-+--------------------------+-----------------------------------------------------------------------------------------------------------------------+
++--------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`    | :ref:`get_shadow_depth_range<class_DirectionalLight_get_shadow_depth_range>` **(** **)** const                      |
++--------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`    | :ref:`get_shadow_mode<class_DirectionalLight_get_shadow_mode>` **(** **)** const                                    |
++--------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`is_blend_splits_enabled<class_DirectionalLight_is_blend_splits_enabled>` **(** **)** const                    |
++--------------------------+---------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`set_blend_splits<class_DirectionalLight_set_blend_splits>` **(** :ref:`bool<class_bool>` enabled **)**        |
++--------------------------+---------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`set_shadow_depth_range<class_DirectionalLight_set_shadow_depth_range>` **(** :ref:`int<class_int>` mode **)** |
++--------------------------+---------------------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`set_shadow_mode<class_DirectionalLight_set_shadow_mode>` **(** :ref:`int<class_int>` mode **)**               |
++--------------------------+---------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -92,26 +92,26 @@ Member Function Description
 
 .. _class_DirectionalLight_get_shadow_depth_range:
 
-- :ref:`int<class_int>`  **get_shadow_depth_range**  **(** **)** const
+- :ref:`int<class_int>` **get_shadow_depth_range** **(** **)** const
 
 .. _class_DirectionalLight_get_shadow_mode:
 
-- :ref:`int<class_int>`  **get_shadow_mode**  **(** **)** const
+- :ref:`int<class_int>` **get_shadow_mode** **(** **)** const
 
 .. _class_DirectionalLight_is_blend_splits_enabled:
 
-- :ref:`bool<class_bool>`  **is_blend_splits_enabled**  **(** **)** const
+- :ref:`bool<class_bool>` **is_blend_splits_enabled** **(** **)** const
 
 .. _class_DirectionalLight_set_blend_splits:
 
-- void  **set_blend_splits**  **(** :ref:`bool<class_bool>` enabled  **)**
+- void **set_blend_splits** **(** :ref:`bool<class_bool>` enabled **)**
 
 .. _class_DirectionalLight_set_shadow_depth_range:
 
-- void  **set_shadow_depth_range**  **(** :ref:`int<class_int>` mode  **)**
+- void **set_shadow_depth_range** **(** :ref:`int<class_int>` mode **)**
 
 .. _class_DirectionalLight_set_shadow_mode:
 
-- void  **set_shadow_mode**  **(** :ref:`int<class_int>` mode  **)**
+- void **set_shadow_mode** **(** :ref:`int<class_int>` mode **)**
 
 

@@ -19,9 +19,9 @@ Optimized translation.
 Member Functions
 ----------------
 
-+-------+-----------------------------------------------------------------------------------------------------------+
-| void  | :ref:`generate<class_PHashTranslation_generate>`  **(** :ref:`Translation<class_translation>` from  **)** |
-+-------+-----------------------------------------------------------------------------------------------------------+
++-------+---------------------------------------------------------------------------------------------------------+
+| void  | :ref:`generate<class_PHashTranslation_generate>` **(** :ref:`Translation<class_translation>` from **)** |
++-------+---------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -33,6 +33,6 @@ Member Function Description
 
 .. _class_PHashTranslation_generate:
 
-- void  **generate**  **(** :ref:`Translation<class_translation>` from  **)**
+- void **generate** **(** :ref:`Translation<class_translation>` from **)**
 
 

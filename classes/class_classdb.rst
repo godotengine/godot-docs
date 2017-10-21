@@ -19,47 +19,47 @@ Class information repository.
 Member Functions
 ----------------
 
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`can_instance<class_ClassDB_can_instance>`  **(** :ref:`String<class_string>` class  **)** const                                                                                           |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`class_exists<class_ClassDB_class_exists>`  **(** :ref:`String<class_string>` class  **)** const                                                                                           |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`class_get_category<class_ClassDB_class_get_category>`  **(** :ref:`String<class_string>` class  **)** const                                                                               |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`class_get_integer_constant<class_ClassDB_class_get_integer_constant>`  **(** :ref:`String<class_string>` class, :ref:`String<class_string>` name  **)** const                             |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`class_get_integer_constant_list<class_ClassDB_class_get_integer_constant_list>`  **(** :ref:`String<class_string>` class, :ref:`bool<class_bool>` no_inheritance=false  **)** const       |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`                      | :ref:`class_get_method_list<class_ClassDB_class_get_method_list>`  **(** :ref:`String<class_string>` class, :ref:`bool<class_bool>` no_inheritance=false  **)** const                           |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`                  | :ref:`class_get_property<class_ClassDB_class_get_property>`  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property  **)** const                                        |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`                      | :ref:`class_get_property_list<class_ClassDB_class_get_property_list>`  **(** :ref:`String<class_string>` class, :ref:`bool<class_bool>` no_inheritance=false  **)** const                       |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_dictionary>`            | :ref:`class_get_signal<class_ClassDB_class_get_signal>`  **(** :ref:`String<class_string>` class, :ref:`String<class_string>` signal  **)** const                                               |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`                      | :ref:`class_get_signal_list<class_ClassDB_class_get_signal_list>`  **(** :ref:`String<class_string>` class, :ref:`bool<class_bool>` no_inheritance=false  **)** const                           |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`class_has_integer_constant<class_ClassDB_class_has_integer_constant>`  **(** :ref:`String<class_string>` class, :ref:`String<class_string>` name  **)** const                             |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`class_has_method<class_ClassDB_class_has_method>`  **(** :ref:`String<class_string>` class, :ref:`String<class_string>` method, :ref:`bool<class_bool>` no_inheritance=false  **)** const |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`class_has_signal<class_ClassDB_class_has_signal>`  **(** :ref:`String<class_string>` class, :ref:`String<class_string>` signal  **)** const                                               |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`class_set_property<class_ClassDB_class_set_property>`  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value  **)** const   |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_class_list<class_ClassDB_get_class_list>`  **(** **)** const                                                                                                                          |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_inheriters_from_class<class_ClassDB_get_inheriters_from_class>`  **(** :ref:`String<class_string>` class  **)** const                                                                 |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`get_parent_class<class_ClassDB_get_parent_class>`  **(** :ref:`String<class_string>` class  **)** const                                                                                   |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`                  | :ref:`instance<class_ClassDB_instance>`  **(** :ref:`String<class_string>` class  **)** const                                                                                                   |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`is_class_enabled<class_ClassDB_is_class_enabled>`  **(** :ref:`String<class_string>` class  **)** const                                                                                   |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`is_parent_class<class_ClassDB_is_parent_class>`  **(** :ref:`String<class_string>` class, :ref:`String<class_string>` inherits  **)** const                                               |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                        | :ref:`can_instance<class_ClassDB_can_instance>` **(** :ref:`String<class_string>` class **)** const                                                                                           |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                        | :ref:`class_exists<class_ClassDB_class_exists>` **(** :ref:`String<class_string>` class **)** const                                                                                           |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                    | :ref:`class_get_category<class_ClassDB_class_get_category>` **(** :ref:`String<class_string>` class **)** const                                                                               |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                          | :ref:`class_get_integer_constant<class_ClassDB_class_get_integer_constant>` **(** :ref:`String<class_string>` class, :ref:`String<class_string>` name **)** const                             |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`class_get_integer_constant_list<class_ClassDB_class_get_integer_constant_list>` **(** :ref:`String<class_string>` class, :ref:`bool<class_bool>` no_inheritance=false **)** const       |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`                      | :ref:`class_get_method_list<class_ClassDB_class_get_method_list>` **(** :ref:`String<class_string>` class, :ref:`bool<class_bool>` no_inheritance=false **)** const                           |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_variant>`                  | :ref:`class_get_property<class_ClassDB_class_get_property>` **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property **)** const                                        |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`                      | :ref:`class_get_property_list<class_ClassDB_class_get_property_list>` **(** :ref:`String<class_string>` class, :ref:`bool<class_bool>` no_inheritance=false **)** const                       |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_dictionary>`            | :ref:`class_get_signal<class_ClassDB_class_get_signal>` **(** :ref:`String<class_string>` class, :ref:`String<class_string>` signal **)** const                                               |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`                      | :ref:`class_get_signal_list<class_ClassDB_class_get_signal_list>` **(** :ref:`String<class_string>` class, :ref:`bool<class_bool>` no_inheritance=false **)** const                           |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                        | :ref:`class_has_integer_constant<class_ClassDB_class_has_integer_constant>` **(** :ref:`String<class_string>` class, :ref:`String<class_string>` name **)** const                             |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                        | :ref:`class_has_method<class_ClassDB_class_has_method>` **(** :ref:`String<class_string>` class, :ref:`String<class_string>` method, :ref:`bool<class_bool>` no_inheritance=false **)** const |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                        | :ref:`class_has_signal<class_ClassDB_class_has_signal>` **(** :ref:`String<class_string>` class, :ref:`String<class_string>` signal **)** const                                               |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                          | :ref:`class_set_property<class_ClassDB_class_set_property>` **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value **)** const   |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_class_list<class_ClassDB_get_class_list>` **(** **)** const                                                                                                                         |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_inheriters_from_class<class_ClassDB_get_inheriters_from_class>` **(** :ref:`String<class_string>` class **)** const                                                                 |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                    | :ref:`get_parent_class<class_ClassDB_get_parent_class>` **(** :ref:`String<class_string>` class **)** const                                                                                   |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_variant>`                  | :ref:`instance<class_ClassDB_instance>` **(** :ref:`String<class_string>` class **)** const                                                                                                   |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                        | :ref:`is_class_enabled<class_ClassDB_is_class_enabled>` **(** :ref:`String<class_string>` class **)** const                                                                                   |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                        | :ref:`is_parent_class<class_ClassDB_is_parent_class>` **(** :ref:`String<class_string>` class, :ref:`String<class_string>` inherits **)** const                                               |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -71,119 +71,119 @@ Member Function Description
 
 .. _class_ClassDB_can_instance:
 
-- :ref:`bool<class_bool>`  **can_instance**  **(** :ref:`String<class_string>` class  **)** const
+- :ref:`bool<class_bool>` **can_instance** **(** :ref:`String<class_string>` class **)** const
 
 Returns true if you can instance objects from the specified 'class', false in other case.
 
 .. _class_ClassDB_class_exists:
 
-- :ref:`bool<class_bool>`  **class_exists**  **(** :ref:`String<class_string>` class  **)** const
+- :ref:`bool<class_bool>` **class_exists** **(** :ref:`String<class_string>` class **)** const
 
 Returns whether the specified 'class' is available or not.
 
 .. _class_ClassDB_class_get_category:
 
-- :ref:`String<class_string>`  **class_get_category**  **(** :ref:`String<class_string>` class  **)** const
+- :ref:`String<class_string>` **class_get_category** **(** :ref:`String<class_string>` class **)** const
 
 .. _class_ClassDB_class_get_integer_constant:
 
-- :ref:`int<class_int>`  **class_get_integer_constant**  **(** :ref:`String<class_string>` class, :ref:`String<class_string>` name  **)** const
+- :ref:`int<class_int>` **class_get_integer_constant** **(** :ref:`String<class_string>` class, :ref:`String<class_string>` name **)** const
 
 Returns the value of the integer constant 'name' of 'class' or its ancestry. Always returns 0 when the constant could not be found.
 
 .. _class_ClassDB_class_get_integer_constant_list:
 
-- :ref:`PoolStringArray<class_poolstringarray>`  **class_get_integer_constant_list**  **(** :ref:`String<class_string>` class, :ref:`bool<class_bool>` no_inheritance=false  **)** const
+- :ref:`PoolStringArray<class_poolstringarray>` **class_get_integer_constant_list** **(** :ref:`String<class_string>` class, :ref:`bool<class_bool>` no_inheritance=false **)** const
 
 Returns an array with the names all the integer constants of 'class' or its ancestry.
 
 .. _class_ClassDB_class_get_method_list:
 
-- :ref:`Array<class_array>`  **class_get_method_list**  **(** :ref:`String<class_string>` class, :ref:`bool<class_bool>` no_inheritance=false  **)** const
+- :ref:`Array<class_array>` **class_get_method_list** **(** :ref:`String<class_string>` class, :ref:`bool<class_bool>` no_inheritance=false **)** const
 
 Returns an array with all the methods of 'class' or its ancestry if 'no_inheritance' is false. Every element of the array is a :ref:`Dictionary<class_dictionary>` with the following keys: args, default_args, flags, id, name, return: (class_name, hint, hint_string, name, type, usage).
 
 .. _class_ClassDB_class_get_property:
 
-- :ref:`Variant<class_variant>`  **class_get_property**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property  **)** const
+- :ref:`Variant<class_variant>` **class_get_property** **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property **)** const
 
 Returns the value of 'property' of 'class' or its ancestry.
 
 .. _class_ClassDB_class_get_property_list:
 
-- :ref:`Array<class_array>`  **class_get_property_list**  **(** :ref:`String<class_string>` class, :ref:`bool<class_bool>` no_inheritance=false  **)** const
+- :ref:`Array<class_array>` **class_get_property_list** **(** :ref:`String<class_string>` class, :ref:`bool<class_bool>` no_inheritance=false **)** const
 
 Returns an array with all the properties of 'class' or its ancestry if 'no_inheritance' is false.
 
 .. _class_ClassDB_class_get_signal:
 
-- :ref:`Dictionary<class_dictionary>`  **class_get_signal**  **(** :ref:`String<class_string>` class, :ref:`String<class_string>` signal  **)** const
+- :ref:`Dictionary<class_dictionary>` **class_get_signal** **(** :ref:`String<class_string>` class, :ref:`String<class_string>` signal **)** const
 
 Returns the 'signal' data of 'class' or its ancestry. The returned value is a :ref:`Dictionary<class_dictionary>` with the following keys: args, default_args, flags, id, name, return: (class_name, hint, hint_string, name, type, usage).
 
 .. _class_ClassDB_class_get_signal_list:
 
-- :ref:`Array<class_array>`  **class_get_signal_list**  **(** :ref:`String<class_string>` class, :ref:`bool<class_bool>` no_inheritance=false  **)** const
+- :ref:`Array<class_array>` **class_get_signal_list** **(** :ref:`String<class_string>` class, :ref:`bool<class_bool>` no_inheritance=false **)** const
 
 Returns an array with all the signals of 'class' or its ancestry if 'no_inheritance' is false. Every element of the array is a :ref:`Dictionary<class_dictionary>` as described in class_get_signal.
 
 .. _class_ClassDB_class_has_integer_constant:
 
-- :ref:`bool<class_bool>`  **class_has_integer_constant**  **(** :ref:`String<class_string>` class, :ref:`String<class_string>` name  **)** const
+- :ref:`bool<class_bool>` **class_has_integer_constant** **(** :ref:`String<class_string>` class, :ref:`String<class_string>` name **)** const
 
 Return whether 'class' or its ancestry has an integer constant called 'name' or not.
 
 .. _class_ClassDB_class_has_method:
 
-- :ref:`bool<class_bool>`  **class_has_method**  **(** :ref:`String<class_string>` class, :ref:`String<class_string>` method, :ref:`bool<class_bool>` no_inheritance=false  **)** const
+- :ref:`bool<class_bool>` **class_has_method** **(** :ref:`String<class_string>` class, :ref:`String<class_string>` method, :ref:`bool<class_bool>` no_inheritance=false **)** const
 
 Return whether 'class' (or its ancestry if 'no_inheritance' is false) has a method called 'method' or not.
 
 .. _class_ClassDB_class_has_signal:
 
-- :ref:`bool<class_bool>`  **class_has_signal**  **(** :ref:`String<class_string>` class, :ref:`String<class_string>` signal  **)** const
+- :ref:`bool<class_bool>` **class_has_signal** **(** :ref:`String<class_string>` class, :ref:`String<class_string>` signal **)** const
 
 Return whether 'class' or its ancestry has a signal called 'signal' or not.
 
 .. _class_ClassDB_class_set_property:
 
-- :ref:`int<class_int>`  **class_set_property**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value  **)** const
+- :ref:`int<class_int>` **class_set_property** **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value **)** const
 
 Sets 'property' value of 'class' to 'value'.
 
 .. _class_ClassDB_get_class_list:
 
-- :ref:`PoolStringArray<class_poolstringarray>`  **get_class_list**  **(** **)** const
+- :ref:`PoolStringArray<class_poolstringarray>` **get_class_list** **(** **)** const
 
 Returns the names of all the classes available.
 
 .. _class_ClassDB_get_inheriters_from_class:
 
-- :ref:`PoolStringArray<class_poolstringarray>`  **get_inheriters_from_class**  **(** :ref:`String<class_string>` class  **)** const
+- :ref:`PoolStringArray<class_poolstringarray>` **get_inheriters_from_class** **(** :ref:`String<class_string>` class **)** const
 
 Returns the names of all the classes that directly or indirectly inherit from 'class'.
 
 .. _class_ClassDB_get_parent_class:
 
-- :ref:`String<class_string>`  **get_parent_class**  **(** :ref:`String<class_string>` class  **)** const
+- :ref:`String<class_string>` **get_parent_class** **(** :ref:`String<class_string>` class **)** const
 
 Returns the parent class of 'class'.
 
 .. _class_ClassDB_instance:
 
-- :ref:`Variant<class_variant>`  **instance**  **(** :ref:`String<class_string>` class  **)** const
+- :ref:`Variant<class_variant>` **instance** **(** :ref:`String<class_string>` class **)** const
 
 Creates an instance of 'class'.
 
 .. _class_ClassDB_is_class_enabled:
 
-- :ref:`bool<class_bool>`  **is_class_enabled**  **(** :ref:`String<class_string>` class  **)** const
+- :ref:`bool<class_bool>` **is_class_enabled** **(** :ref:`String<class_string>` class **)** const
 
 Returns whether this class is enabled or not.
 
 .. _class_ClassDB_is_parent_class:
 
-- :ref:`bool<class_bool>`  **is_parent_class**  **(** :ref:`String<class_string>` class, :ref:`String<class_string>` inherits  **)** const
+- :ref:`bool<class_bool>` **is_parent_class** **(** :ref:`String<class_string>` class, :ref:`String<class_string>` inherits **)** const
 
 Returns whether 'inherits' is an ancestor of 'class' or not.
 

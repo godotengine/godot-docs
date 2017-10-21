@@ -19,37 +19,37 @@ Helper to manage UndoRedo in the editor or custom tools.
 Member Functions
 ----------------
 
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`  | :ref:`add_do_method<class_UndoRedo_add_do_method>`  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` method  **)** vararg                                         |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`add_do_property<class_UndoRedo_add_do_property>`  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value  **)**     |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`add_do_reference<class_UndoRedo_add_do_reference>`  **(** :ref:`Object<class_object>` object  **)**                                                                              |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`  | :ref:`add_undo_method<class_UndoRedo_add_undo_method>`  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` method  **)** vararg                                     |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`add_undo_property<class_UndoRedo_add_undo_property>`  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value  **)** |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`add_undo_reference<class_UndoRedo_add_undo_reference>`  **(** :ref:`Object<class_object>` object  **)**                                                                          |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`clear_history<class_UndoRedo_clear_history>`  **(** **)**                                                                                                                        |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`commit_action<class_UndoRedo_commit_action>`  **(** **)**                                                                                                                        |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`create_action<class_UndoRedo_create_action>`  **(** :ref:`String<class_string>` name, :ref:`int<class_int>` merge_mode=0  **)**                                                  |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`    | :ref:`get_current_action_name<class_UndoRedo_get_current_action_name>`  **(** **)** const                                                                                              |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_max_steps<class_UndoRedo_get_max_steps>`  **(** **)** const                                                                                                                  |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_version<class_UndoRedo_get_version>`  **(** **)** const                                                                                                                      |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`redo<class_UndoRedo_redo>`  **(** **)**                                                                                                                                          |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_max_steps<class_UndoRedo_set_max_steps>`  **(** :ref:`int<class_int>` max_steps  **)**                                                                                       |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`undo<class_UndoRedo_undo>`  **(** **)**                                                                                                                                          |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_variant>`  | :ref:`add_do_method<class_UndoRedo_add_do_method>` **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` method **)** vararg                                         |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`add_do_property<class_UndoRedo_add_do_property>` **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value **)**     |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`add_do_reference<class_UndoRedo_add_do_reference>` **(** :ref:`Object<class_object>` object **)**                                                                              |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_variant>`  | :ref:`add_undo_method<class_UndoRedo_add_undo_method>` **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` method **)** vararg                                     |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`add_undo_property<class_UndoRedo_add_undo_property>` **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value **)** |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`add_undo_reference<class_UndoRedo_add_undo_reference>` **(** :ref:`Object<class_object>` object **)**                                                                          |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`clear_history<class_UndoRedo_clear_history>` **(** **)**                                                                                                                       |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`commit_action<class_UndoRedo_commit_action>` **(** **)**                                                                                                                       |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`create_action<class_UndoRedo_create_action>` **(** :ref:`String<class_string>` name, :ref:`int<class_int>` merge_mode=0 **)**                                                  |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`    | :ref:`get_current_action_name<class_UndoRedo_get_current_action_name>` **(** **)** const                                                                                             |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_max_steps<class_UndoRedo_get_max_steps>` **(** **)** const                                                                                                                 |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_version<class_UndoRedo_get_version>` **(** **)** const                                                                                                                     |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`redo<class_UndoRedo_redo>` **(** **)**                                                                                                                                         |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_max_steps<class_UndoRedo_set_max_steps>` **(** :ref:`int<class_int>` max_steps **)**                                                                                       |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`undo<class_UndoRedo_undo>` **(** **)**                                                                                                                                         |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
 -----------------
@@ -70,67 +70,67 @@ Member Function Description
 
 .. _class_UndoRedo_add_do_method:
 
-- :ref:`Variant<class_variant>`  **add_do_method**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` method  **)** vararg
+- :ref:`Variant<class_variant>` **add_do_method** **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` method **)** vararg
 
 .. _class_UndoRedo_add_do_property:
 
-- void  **add_do_property**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value  **)**
+- void **add_do_property** **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value **)**
 
 Set a property with a custom value.
 
 .. _class_UndoRedo_add_do_reference:
 
-- void  **add_do_reference**  **(** :ref:`Object<class_object>` object  **)**
+- void **add_do_reference** **(** :ref:`Object<class_object>` object **)**
 
 Add a 'do' reference that will be erased if the 'do' history is lost. This is useful mostly for new nodes created for the 'do' call. Do not use for resources.
 
 .. _class_UndoRedo_add_undo_method:
 
-- :ref:`Variant<class_variant>`  **add_undo_method**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` method  **)** vararg
+- :ref:`Variant<class_variant>` **add_undo_method** **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` method **)** vararg
 
 .. _class_UndoRedo_add_undo_property:
 
-- void  **add_undo_property**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value  **)**
+- void **add_undo_property** **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value **)**
 
 Undo setting of a property with a custom value.
 
 .. _class_UndoRedo_add_undo_reference:
 
-- void  **add_undo_reference**  **(** :ref:`Object<class_object>` object  **)**
+- void **add_undo_reference** **(** :ref:`Object<class_object>` object **)**
 
 Add an 'undo' reference that will be erased if the 'undo' history is lost. This is useful mostly for nodes removed with the 'do' call (not the 'undo' call!).
 
 .. _class_UndoRedo_clear_history:
 
-- void  **clear_history**  **(** **)**
+- void **clear_history** **(** **)**
 
 Clear the undo/redo history and associated references.
 
 .. _class_UndoRedo_commit_action:
 
-- void  **commit_action**  **(** **)**
+- void **commit_action** **(** **)**
 
 Commit the action. All 'do' methods/properties are called/set when this function is called.
 
 .. _class_UndoRedo_create_action:
 
-- void  **create_action**  **(** :ref:`String<class_string>` name, :ref:`int<class_int>` merge_mode=0  **)**
+- void **create_action** **(** :ref:`String<class_string>` name, :ref:`int<class_int>` merge_mode=0 **)**
 
 Create a new action. After this is called, do all your calls to :ref:`add_do_method<class_UndoRedo_add_do_method>`, :ref:`add_undo_method<class_UndoRedo_add_undo_method>`, :ref:`add_do_property<class_UndoRedo_add_do_property>` and :ref:`add_undo_property<class_UndoRedo_add_undo_property>`.
 
 .. _class_UndoRedo_get_current_action_name:
 
-- :ref:`String<class_string>`  **get_current_action_name**  **(** **)** const
+- :ref:`String<class_string>` **get_current_action_name** **(** **)** const
 
 Get the name of the current action.
 
 .. _class_UndoRedo_get_max_steps:
 
-- :ref:`int<class_int>`  **get_max_steps**  **(** **)** const
+- :ref:`int<class_int>` **get_max_steps** **(** **)** const
 
 .. _class_UndoRedo_get_version:
 
-- :ref:`int<class_int>`  **get_version**  **(** **)** const
+- :ref:`int<class_int>` **get_version** **(** **)** const
 
 Get the version, each time a new action is committed, the version number of the UndoRedo is increased automatically.
 
@@ -138,14 +138,14 @@ This is useful mostly to check if something changed from a saved version.
 
 .. _class_UndoRedo_redo:
 
-- void  **redo**  **(** **)**
+- void **redo** **(** **)**
 
 .. _class_UndoRedo_set_max_steps:
 
-- void  **set_max_steps**  **(** :ref:`int<class_int>` max_steps  **)**
+- void **set_max_steps** **(** :ref:`int<class_int>` max_steps **)**
 
 .. _class_UndoRedo_undo:
 
-- void  **undo**  **(** **)**
+- void **undo** **(** **)**
 
 

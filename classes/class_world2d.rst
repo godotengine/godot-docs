@@ -19,13 +19,13 @@ Class that has everything pertaining to a 2D world.
 Member Functions
 ----------------
 
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                              | :ref:`get_canvas<class_World2D_get_canvas>`  **(** **)**                         |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------+
-| :ref:`Physics2DDirectSpaceState<class_physics2ddirectspacestate>`  | :ref:`get_direct_space_state<class_World2D_get_direct_space_state>`  **(** **)** |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                              | :ref:`get_space<class_World2D_get_space>`  **(** **)**                           |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------+
++--------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| :ref:`RID<class_rid>`                                              | :ref:`get_canvas<class_World2D_get_canvas>` **(** **)**                         |
++--------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| :ref:`Physics2DDirectSpaceState<class_physics2ddirectspacestate>`  | :ref:`get_direct_space_state<class_World2D_get_direct_space_state>` **(** **)** |
++--------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| :ref:`RID<class_rid>`                                              | :ref:`get_space<class_World2D_get_space>` **(** **)**                           |
++--------------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -37,19 +37,19 @@ Member Function Description
 
 .. _class_World2D_get_canvas:
 
-- :ref:`RID<class_rid>`  **get_canvas**  **(** **)**
+- :ref:`RID<class_rid>` **get_canvas** **(** **)**
 
 Retrieve the :ref:`RID<class_rid>` of this world's canvas resource. Used by the :ref:`VisualServer<class_visualserver>` for 2D drawing.
 
 .. _class_World2D_get_direct_space_state:
 
-- :ref:`Physics2DDirectSpaceState<class_physics2ddirectspacestate>`  **get_direct_space_state**  **(** **)**
+- :ref:`Physics2DDirectSpaceState<class_physics2ddirectspacestate>` **get_direct_space_state** **(** **)**
 
 Retrieve the state of this world's physics space. This allows arbitrary querying for collision.
 
 .. _class_World2D_get_space:
 
-- :ref:`RID<class_rid>`  **get_space**  **(** **)**
+- :ref:`RID<class_rid>` **get_space** **(** **)**
 
 Retrieve the :ref:`RID<class_rid>` of this world's physics space resource. Used by the :ref:`Physics2DServer<class_physics2dserver>` for 2D physics, treating it as both a space and an area.
 

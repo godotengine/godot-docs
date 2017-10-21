@@ -19,19 +19,19 @@ Data transformation (marshalling) and encoding helpers.
 Member Functions
 ----------------
 
-+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_poolbytearray>`  | :ref:`base64_to_raw<class_Marshalls_base64_to_raw>`  **(** :ref:`String<class_string>` base64_str  **)**          |
-+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                | :ref:`base64_to_utf8<class_Marshalls_base64_to_utf8>`  **(** :ref:`String<class_string>` base64_str  **)**        |
-+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`              | :ref:`base64_to_variant<class_Marshalls_base64_to_variant>`  **(** :ref:`String<class_string>` base64_str  **)**  |
-+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                | :ref:`raw_to_base64<class_Marshalls_raw_to_base64>`  **(** :ref:`PoolByteArray<class_poolbytearray>` array  **)** |
-+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                | :ref:`utf8_to_base64<class_Marshalls_utf8_to_base64>`  **(** :ref:`String<class_string>` utf8_str  **)**          |
-+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                | :ref:`variant_to_base64<class_Marshalls_variant_to_base64>`  **(** :ref:`Variant<class_variant>` variant  **)**   |
-+--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolByteArray<class_poolbytearray>`  | :ref:`base64_to_raw<class_Marshalls_base64_to_raw>` **(** :ref:`String<class_string>` base64_str **)**          |
++--------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                | :ref:`base64_to_utf8<class_Marshalls_base64_to_utf8>` **(** :ref:`String<class_string>` base64_str **)**        |
++--------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_variant>`              | :ref:`base64_to_variant<class_Marshalls_base64_to_variant>` **(** :ref:`String<class_string>` base64_str **)**  |
++--------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                | :ref:`raw_to_base64<class_Marshalls_raw_to_base64>` **(** :ref:`PoolByteArray<class_poolbytearray>` array **)** |
++--------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                | :ref:`utf8_to_base64<class_Marshalls_utf8_to_base64>` **(** :ref:`String<class_string>` utf8_str **)**          |
++--------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                | :ref:`variant_to_base64<class_Marshalls_variant_to_base64>` **(** :ref:`Variant<class_variant>` variant **)**   |
++--------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -43,37 +43,37 @@ Member Function Description
 
 .. _class_Marshalls_base64_to_raw:
 
-- :ref:`PoolByteArray<class_poolbytearray>`  **base64_to_raw**  **(** :ref:`String<class_string>` base64_str  **)**
+- :ref:`PoolByteArray<class_poolbytearray>` **base64_to_raw** **(** :ref:`String<class_string>` base64_str **)**
 
 Return :ref:`PoolByteArray<class_poolbytearray>` of a given base64 encoded String.
 
 .. _class_Marshalls_base64_to_utf8:
 
-- :ref:`String<class_string>`  **base64_to_utf8**  **(** :ref:`String<class_string>` base64_str  **)**
+- :ref:`String<class_string>` **base64_to_utf8** **(** :ref:`String<class_string>` base64_str **)**
 
 Return utf8 String of a given base64 encoded String.
 
 .. _class_Marshalls_base64_to_variant:
 
-- :ref:`Variant<class_variant>`  **base64_to_variant**  **(** :ref:`String<class_string>` base64_str  **)**
+- :ref:`Variant<class_variant>` **base64_to_variant** **(** :ref:`String<class_string>` base64_str **)**
 
 Return :ref:`Variant<class_variant>` of a given base64 encoded String.
 
 .. _class_Marshalls_raw_to_base64:
 
-- :ref:`String<class_string>`  **raw_to_base64**  **(** :ref:`PoolByteArray<class_poolbytearray>` array  **)**
+- :ref:`String<class_string>` **raw_to_base64** **(** :ref:`PoolByteArray<class_poolbytearray>` array **)**
 
 Return base64 encoded String of a given :ref:`PoolByteArray<class_poolbytearray>`.
 
 .. _class_Marshalls_utf8_to_base64:
 
-- :ref:`String<class_string>`  **utf8_to_base64**  **(** :ref:`String<class_string>` utf8_str  **)**
+- :ref:`String<class_string>` **utf8_to_base64** **(** :ref:`String<class_string>` utf8_str **)**
 
 Return base64 encoded String of a given utf8 String.
 
 .. _class_Marshalls_variant_to_base64:
 
-- :ref:`String<class_string>`  **variant_to_base64**  **(** :ref:`Variant<class_variant>` variant  **)**
+- :ref:`String<class_string>` **variant_to_base64** **(** :ref:`Variant<class_variant>` variant **)**
 
 Return base64 encoded String of a given :ref:`Variant<class_variant>`.
 

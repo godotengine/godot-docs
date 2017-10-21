@@ -19,49 +19,49 @@ Hyper-text transfer protocol client.
 Member Functions
 ----------------
 
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`close<class_HTTPClient_close>`  **(** **)**                                                                                                                                                                                   |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`connect_to_host<class_HTTPClient_connect_to_host>`  **(** :ref:`String<class_string>` host, :ref:`int<class_int>` port, :ref:`bool<class_bool>` use_ssl=false, :ref:`bool<class_bool>` verify_host=true  **)**                |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StreamPeer<class_streampeer>`            | :ref:`get_connection<class_HTTPClient_get_connection>`  **(** **)** const                                                                                                                                                           |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`get_response_body_length<class_HTTPClient_get_response_body_length>`  **(** **)** const                                                                                                                                       |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`get_response_code<class_HTTPClient_get_response_code>`  **(** **)** const                                                                                                                                                     |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_response_headers<class_HTTPClient_get_response_headers>`  **(** **)**                                                                                                                                                     |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_dictionary>`            | :ref:`get_response_headers_as_dictionary<class_HTTPClient_get_response_headers_as_dictionary>`  **(** **)**                                                                                                                         |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`get_status<class_HTTPClient_get_status>`  **(** **)** const                                                                                                                                                                   |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`has_response<class_HTTPClient_has_response>`  **(** **)** const                                                                                                                                                               |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`is_blocking_mode_enabled<class_HTTPClient_is_blocking_mode_enabled>`  **(** **)** const                                                                                                                                       |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`is_response_chunked<class_HTTPClient_is_response_chunked>`  **(** **)** const                                                                                                                                                 |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`poll<class_HTTPClient_poll>`  **(** **)**                                                                                                                                                                                     |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`query_string_from_dict<class_HTTPClient_query_string_from_dict>`  **(** :ref:`Dictionary<class_dictionary>` fields  **)**                                                                                                     |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_poolbytearray>`      | :ref:`read_response_body_chunk<class_HTTPClient_read_response_body_chunk>`  **(** **)**                                                                                                                                             |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`request<class_HTTPClient_request>`  **(** :ref:`int<class_int>` method, :ref:`String<class_string>` url, :ref:`PoolStringArray<class_poolstringarray>` headers, :ref:`String<class_string>` body=""  **)**                    |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`request_raw<class_HTTPClient_request_raw>`  **(** :ref:`int<class_int>` method, :ref:`String<class_string>` url, :ref:`PoolStringArray<class_poolstringarray>` headers, :ref:`PoolByteArray<class_poolbytearray>` body  **)** |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`send_body_data<class_HTTPClient_send_body_data>`  **(** :ref:`PoolByteArray<class_poolbytearray>` body  **)**                                                                                                                 |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`send_body_text<class_HTTPClient_send_body_text>`  **(** :ref:`String<class_string>` body  **)**                                                                                                                               |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_blocking_mode<class_HTTPClient_set_blocking_mode>`  **(** :ref:`bool<class_bool>` enabled  **)**                                                                                                                          |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_connection<class_HTTPClient_set_connection>`  **(** :ref:`StreamPeer<class_streampeer>` connection  **)**                                                                                                                 |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_read_chunk_size<class_HTTPClient_set_read_chunk_size>`  **(** :ref:`int<class_int>` bytes  **)**                                                                                                                          |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`close<class_HTTPClient_close>` **(** **)**                                                                                                                                                                                  |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                          | :ref:`connect_to_host<class_HTTPClient_connect_to_host>` **(** :ref:`String<class_string>` host, :ref:`int<class_int>` port, :ref:`bool<class_bool>` use_ssl=false, :ref:`bool<class_bool>` verify_host=true **)**                |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`StreamPeer<class_streampeer>`            | :ref:`get_connection<class_HTTPClient_get_connection>` **(** **)** const                                                                                                                                                          |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                          | :ref:`get_response_body_length<class_HTTPClient_get_response_body_length>` **(** **)** const                                                                                                                                      |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                          | :ref:`get_response_code<class_HTTPClient_get_response_code>` **(** **)** const                                                                                                                                                    |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_response_headers<class_HTTPClient_get_response_headers>` **(** **)**                                                                                                                                                    |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_dictionary>`            | :ref:`get_response_headers_as_dictionary<class_HTTPClient_get_response_headers_as_dictionary>` **(** **)**                                                                                                                        |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                          | :ref:`get_status<class_HTTPClient_get_status>` **(** **)** const                                                                                                                                                                  |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                        | :ref:`has_response<class_HTTPClient_has_response>` **(** **)** const                                                                                                                                                              |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                        | :ref:`is_blocking_mode_enabled<class_HTTPClient_is_blocking_mode_enabled>` **(** **)** const                                                                                                                                      |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                        | :ref:`is_response_chunked<class_HTTPClient_is_response_chunked>` **(** **)** const                                                                                                                                                |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                          | :ref:`poll<class_HTTPClient_poll>` **(** **)**                                                                                                                                                                                    |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                    | :ref:`query_string_from_dict<class_HTTPClient_query_string_from_dict>` **(** :ref:`Dictionary<class_dictionary>` fields **)**                                                                                                     |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolByteArray<class_poolbytearray>`      | :ref:`read_response_body_chunk<class_HTTPClient_read_response_body_chunk>` **(** **)**                                                                                                                                            |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                          | :ref:`request<class_HTTPClient_request>` **(** :ref:`int<class_int>` method, :ref:`String<class_string>` url, :ref:`PoolStringArray<class_poolstringarray>` headers, :ref:`String<class_string>` body="" **)**                    |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                          | :ref:`request_raw<class_HTTPClient_request_raw>` **(** :ref:`int<class_int>` method, :ref:`String<class_string>` url, :ref:`PoolStringArray<class_poolstringarray>` headers, :ref:`PoolByteArray<class_poolbytearray>` body **)** |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                          | :ref:`send_body_data<class_HTTPClient_send_body_data>` **(** :ref:`PoolByteArray<class_poolbytearray>` body **)**                                                                                                                 |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                          | :ref:`send_body_text<class_HTTPClient_send_body_text>` **(** :ref:`String<class_string>` body **)**                                                                                                                               |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`set_blocking_mode<class_HTTPClient_set_blocking_mode>` **(** :ref:`bool<class_bool>` enabled **)**                                                                                                                          |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`set_connection<class_HTTPClient_set_connection>` **(** :ref:`StreamPeer<class_streampeer>` connection **)**                                                                                                                 |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`set_read_chunk_size<class_HTTPClient_set_read_chunk_size>` **(** :ref:`int<class_int>` bytes **)**                                                                                                                          |
++------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
 -----------------
@@ -147,13 +147,13 @@ Member Function Description
 
 .. _class_HTTPClient_close:
 
-- void  **close**  **(** **)**
+- void **close** **(** **)**
 
 Cloces the current connection, allows for reusal of :ref:`HTTPClient<class_httpclient>`.
 
 .. _class_HTTPClient_connect_to_host:
 
-- :ref:`int<class_int>`  **connect_to_host**  **(** :ref:`String<class_string>` host, :ref:`int<class_int>` port, :ref:`bool<class_bool>` use_ssl=false, :ref:`bool<class_bool>` verify_host=true  **)**
+- :ref:`int<class_int>` **connect_to_host** **(** :ref:`String<class_string>` host, :ref:`int<class_int>` port, :ref:`bool<class_bool>` use_ssl=false, :ref:`bool<class_bool>` verify_host=true **)**
 
 Connect to a host. This needs to be done before any requests are sent.
 
@@ -163,31 +163,31 @@ verify_host will check the SSL identity of the host if set to true.
 
 .. _class_HTTPClient_get_connection:
 
-- :ref:`StreamPeer<class_streampeer>`  **get_connection**  **(** **)** const
+- :ref:`StreamPeer<class_streampeer>` **get_connection** **(** **)** const
 
 Return current connection.
 
 .. _class_HTTPClient_get_response_body_length:
 
-- :ref:`int<class_int>`  **get_response_body_length**  **(** **)** const
+- :ref:`int<class_int>` **get_response_body_length** **(** **)** const
 
 Return the response's body length.
 
 .. _class_HTTPClient_get_response_code:
 
-- :ref:`int<class_int>`  **get_response_code**  **(** **)** const
+- :ref:`int<class_int>` **get_response_code** **(** **)** const
 
 Return the HTTP status code of the response.
 
 .. _class_HTTPClient_get_response_headers:
 
-- :ref:`PoolStringArray<class_poolstringarray>`  **get_response_headers**  **(** **)**
+- :ref:`PoolStringArray<class_poolstringarray>` **get_response_headers** **(** **)**
 
 Return the response headers.
 
 .. _class_HTTPClient_get_response_headers_as_dictionary:
 
-- :ref:`Dictionary<class_dictionary>`  **get_response_headers_as_dictionary**  **(** **)**
+- :ref:`Dictionary<class_dictionary>` **get_response_headers_as_dictionary** **(** **)**
 
 Returns all response headers as dictionary where the case-sensitivity of the keys and values is kept like the server delivers it. A value is a simple String, this string can have more than one value where "; " is used as separator.
 
@@ -197,37 +197,37 @@ Example: (content-length:12), (Content-Type:application/json; charset=UTF-8)
 
 .. _class_HTTPClient_get_status:
 
-- :ref:`int<class_int>`  **get_status**  **(** **)** const
+- :ref:`int<class_int>` **get_status** **(** **)** const
 
 Returns a STATUS\_\* enum constant. Need to call :ref:`poll<class_HTTPClient_poll>` in order to get status updates.
 
 .. _class_HTTPClient_has_response:
 
-- :ref:`bool<class_bool>`  **has_response**  **(** **)** const
+- :ref:`bool<class_bool>` **has_response** **(** **)** const
 
 Return whether this :ref:`HTTPClient<class_httpclient>` has a response available.
 
 .. _class_HTTPClient_is_blocking_mode_enabled:
 
-- :ref:`bool<class_bool>`  **is_blocking_mode_enabled**  **(** **)** const
+- :ref:`bool<class_bool>` **is_blocking_mode_enabled** **(** **)** const
 
 Return whether blocking mode is enabled.
 
 .. _class_HTTPClient_is_response_chunked:
 
-- :ref:`bool<class_bool>`  **is_response_chunked**  **(** **)** const
+- :ref:`bool<class_bool>` **is_response_chunked** **(** **)** const
 
 Return whether this :ref:`HTTPClient<class_httpclient>` has a response that is chunked.
 
 .. _class_HTTPClient_poll:
 
-- :ref:`int<class_int>`  **poll**  **(** **)**
+- :ref:`int<class_int>` **poll** **(** **)**
 
 This needs to be called in order to have any request processed. Check results with :ref:`get_status<class_HTTPClient_get_status>`
 
 .. _class_HTTPClient_query_string_from_dict:
 
-- :ref:`String<class_string>`  **query_string_from_dict**  **(** :ref:`Dictionary<class_dictionary>` fields  **)**
+- :ref:`String<class_string>` **query_string_from_dict** **(** :ref:`Dictionary<class_dictionary>` fields **)**
 
 Generates a GET/POST application/x-www-form-urlencoded style query string from a provided dictionary, e.g.:
 
@@ -239,13 +239,13 @@ Generates a GET/POST application/x-www-form-urlencoded style query string from a
 
 .. _class_HTTPClient_read_response_body_chunk:
 
-- :ref:`PoolByteArray<class_poolbytearray>`  **read_response_body_chunk**  **(** **)**
+- :ref:`PoolByteArray<class_poolbytearray>` **read_response_body_chunk** **(** **)**
 
 Reads one chunk from the response.
 
 .. _class_HTTPClient_request:
 
-- :ref:`int<class_int>`  **request**  **(** :ref:`int<class_int>` method, :ref:`String<class_string>` url, :ref:`PoolStringArray<class_poolstringarray>` headers, :ref:`String<class_string>` body=""  **)**
+- :ref:`int<class_int>` **request** **(** :ref:`int<class_int>` method, :ref:`String<class_string>` url, :ref:`PoolStringArray<class_poolstringarray>` headers, :ref:`String<class_string>` body="" **)**
 
 Sends a request to the connected host. The url is what is normally behind the hostname, i.e. in ``http://somehost.com/index.php``, url would be "index.php".
 
@@ -262,7 +262,7 @@ To create a POST request with query strings to push to the server, do:
 
 .. _class_HTTPClient_request_raw:
 
-- :ref:`int<class_int>`  **request_raw**  **(** :ref:`int<class_int>` method, :ref:`String<class_string>` url, :ref:`PoolStringArray<class_poolstringarray>` headers, :ref:`PoolByteArray<class_poolbytearray>` body  **)**
+- :ref:`int<class_int>` **request_raw** **(** :ref:`int<class_int>` method, :ref:`String<class_string>` url, :ref:`PoolStringArray<class_poolstringarray>` headers, :ref:`PoolByteArray<class_poolbytearray>` body **)**
 
 Sends a raw request to the connected host. The url is what is normally behind the hostname, i.e. in ``http://somehost.com/index.php``, url would be "index.php".
 
@@ -272,31 +272,31 @@ Sends body raw, as a byte array, does not encode it in any way.
 
 .. _class_HTTPClient_send_body_data:
 
-- :ref:`int<class_int>`  **send_body_data**  **(** :ref:`PoolByteArray<class_poolbytearray>` body  **)**
+- :ref:`int<class_int>` **send_body_data** **(** :ref:`PoolByteArray<class_poolbytearray>` body **)**
 
 Stub function
 
 .. _class_HTTPClient_send_body_text:
 
-- :ref:`int<class_int>`  **send_body_text**  **(** :ref:`String<class_string>` body  **)**
+- :ref:`int<class_int>` **send_body_text** **(** :ref:`String<class_string>` body **)**
 
 Stub function
 
 .. _class_HTTPClient_set_blocking_mode:
 
-- void  **set_blocking_mode**  **(** :ref:`bool<class_bool>` enabled  **)**
+- void **set_blocking_mode** **(** :ref:`bool<class_bool>` enabled **)**
 
 If set to true, execution will block until all data is read from the response.
 
 .. _class_HTTPClient_set_connection:
 
-- void  **set_connection**  **(** :ref:`StreamPeer<class_streampeer>` connection  **)**
+- void **set_connection** **(** :ref:`StreamPeer<class_streampeer>` connection **)**
 
 Set connection to use, for this client.
 
 .. _class_HTTPClient_set_read_chunk_size:
 
-- void  **set_read_chunk_size**  **(** :ref:`int<class_int>` bytes  **)**
+- void **set_read_chunk_size** **(** :ref:`int<class_int>` bytes **)**
 
 Sets the size of the buffer used and maximum bytes to read per iteration. see :ref:`read_response_body_chunk<class_HTTPClient_read_response_body_chunk>`
 

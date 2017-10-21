@@ -17,49 +17,49 @@ Axis-Aligned Bounding Box.
 Member Functions
 ----------------
 
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect3<class_rect3>`      | :ref:`Rect3<class_Rect3_Rect3>`  **(** :ref:`Vector3<class_vector3>` position, :ref:`Vector3<class_vector3>` size  **)**                     |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`encloses<class_Rect3_encloses>`  **(** :ref:`Rect3<class_rect3>` with  **)**                                                           |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect3<class_rect3>`      | :ref:`expand<class_Rect3_expand>`  **(** :ref:`Vector3<class_vector3>` to_point  **)**                                                       |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_area<class_Rect3_get_area>`  **(** **)**                                                                                           |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`get_endpoint<class_Rect3_get_endpoint>`  **(** :ref:`int<class_int>` idx  **)**                                                        |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`get_longest_axis<class_Rect3_get_longest_axis>`  **(** **)**                                                                           |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_longest_axis_index<class_Rect3_get_longest_axis_index>`  **(** **)**                                                               |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_longest_axis_size<class_Rect3_get_longest_axis_size>`  **(** **)**                                                                 |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`get_shortest_axis<class_Rect3_get_shortest_axis>`  **(** **)**                                                                         |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_shortest_axis_index<class_Rect3_get_shortest_axis_index>`  **(** **)**                                                             |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_shortest_axis_size<class_Rect3_get_shortest_axis_size>`  **(** **)**                                                               |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`get_support<class_Rect3_get_support>`  **(** :ref:`Vector3<class_vector3>` dir  **)**                                                  |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect3<class_rect3>`      | :ref:`grow<class_Rect3_grow>`  **(** :ref:`float<class_float>` by  **)**                                                                     |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`has_no_area<class_Rect3_has_no_area>`  **(** **)**                                                                                     |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`has_no_surface<class_Rect3_has_no_surface>`  **(** **)**                                                                               |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`has_point<class_Rect3_has_point>`  **(** :ref:`Vector3<class_vector3>` point  **)**                                                    |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect3<class_rect3>`      | :ref:`intersection<class_Rect3_intersection>`  **(** :ref:`Rect3<class_rect3>` with  **)**                                                   |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`intersects<class_Rect3_intersects>`  **(** :ref:`Rect3<class_rect3>` with  **)**                                                       |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`intersects_plane<class_Rect3_intersects_plane>`  **(** :ref:`Plane<class_plane>` plane  **)**                                          |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`intersects_segment<class_Rect3_intersects_segment>`  **(** :ref:`Vector3<class_vector3>` from, :ref:`Vector3<class_vector3>` to  **)** |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect3<class_rect3>`      | :ref:`merge<class_Rect3_merge>`  **(** :ref:`Rect3<class_rect3>` with  **)**                                                                 |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect3<class_rect3>`      | :ref:`Rect3<class_Rect3_Rect3>` **(** :ref:`Vector3<class_vector3>` position, :ref:`Vector3<class_vector3>` size **)**                     |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`encloses<class_Rect3_encloses>` **(** :ref:`Rect3<class_rect3>` with **)**                                                           |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect3<class_rect3>`      | :ref:`expand<class_Rect3_expand>` **(** :ref:`Vector3<class_vector3>` to_point **)**                                                       |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_area<class_Rect3_get_area>` **(** **)**                                                                                          |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`  | :ref:`get_endpoint<class_Rect3_get_endpoint>` **(** :ref:`int<class_int>` idx **)**                                                        |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`  | :ref:`get_longest_axis<class_Rect3_get_longest_axis>` **(** **)**                                                                          |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_longest_axis_index<class_Rect3_get_longest_axis_index>` **(** **)**                                                              |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_longest_axis_size<class_Rect3_get_longest_axis_size>` **(** **)**                                                                |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`  | :ref:`get_shortest_axis<class_Rect3_get_shortest_axis>` **(** **)**                                                                        |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_shortest_axis_index<class_Rect3_get_shortest_axis_index>` **(** **)**                                                            |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_shortest_axis_size<class_Rect3_get_shortest_axis_size>` **(** **)**                                                              |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_vector3>`  | :ref:`get_support<class_Rect3_get_support>` **(** :ref:`Vector3<class_vector3>` dir **)**                                                  |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect3<class_rect3>`      | :ref:`grow<class_Rect3_grow>` **(** :ref:`float<class_float>` by **)**                                                                     |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`has_no_area<class_Rect3_has_no_area>` **(** **)**                                                                                    |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`has_no_surface<class_Rect3_has_no_surface>` **(** **)**                                                                              |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`has_point<class_Rect3_has_point>` **(** :ref:`Vector3<class_vector3>` point **)**                                                    |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect3<class_rect3>`      | :ref:`intersection<class_Rect3_intersection>` **(** :ref:`Rect3<class_rect3>` with **)**                                                   |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`intersects<class_Rect3_intersects>` **(** :ref:`Rect3<class_rect3>` with **)**                                                       |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`intersects_plane<class_Rect3_intersects_plane>` **(** :ref:`Plane<class_plane>` plane **)**                                          |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`intersects_segment<class_Rect3_intersects_segment>` **(** :ref:`Vector3<class_vector3>` from, :ref:`Vector3<class_vector3>` to **)** |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Rect3<class_rect3>`      | :ref:`merge<class_Rect3_merge>` **(** :ref:`Rect3<class_rect3>` with **)**                                                                 |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -87,127 +87,127 @@ Member Function Description
 
 .. _class_Rect3_Rect3:
 
-- :ref:`Rect3<class_rect3>`  **Rect3**  **(** :ref:`Vector3<class_vector3>` position, :ref:`Vector3<class_vector3>` size  **)**
+- :ref:`Rect3<class_rect3>` **Rect3** **(** :ref:`Vector3<class_vector3>` position, :ref:`Vector3<class_vector3>` size **)**
 
 Optional constructor, accepts position and size.
 
 .. _class_Rect3_encloses:
 
-- :ref:`bool<class_bool>`  **encloses**  **(** :ref:`Rect3<class_rect3>` with  **)**
+- :ref:`bool<class_bool>` **encloses** **(** :ref:`Rect3<class_rect3>` with **)**
 
 Return true if this :ref:`Rect3<class_rect3>` completely encloses another one.
 
 .. _class_Rect3_expand:
 
-- :ref:`Rect3<class_rect3>`  **expand**  **(** :ref:`Vector3<class_vector3>` to_point  **)**
+- :ref:`Rect3<class_rect3>` **expand** **(** :ref:`Vector3<class_vector3>` to_point **)**
 
 Return this :ref:`Rect3<class_rect3>` expanded to include a given point.
 
 .. _class_Rect3_get_area:
 
-- :ref:`float<class_float>`  **get_area**  **(** **)**
+- :ref:`float<class_float>` **get_area** **(** **)**
 
 Get the area of the :ref:`Rect3<class_rect3>`.
 
 .. _class_Rect3_get_endpoint:
 
-- :ref:`Vector3<class_vector3>`  **get_endpoint**  **(** :ref:`int<class_int>` idx  **)**
+- :ref:`Vector3<class_vector3>` **get_endpoint** **(** :ref:`int<class_int>` idx **)**
 
 Get the position of the 8 endpoints of the :ref:`Rect3<class_rect3>` in space.
 
 .. _class_Rect3_get_longest_axis:
 
-- :ref:`Vector3<class_vector3>`  **get_longest_axis**  **(** **)**
+- :ref:`Vector3<class_vector3>` **get_longest_axis** **(** **)**
 
 Return the normalized longest axis of the :ref:`Rect3<class_rect3>`.
 
 .. _class_Rect3_get_longest_axis_index:
 
-- :ref:`int<class_int>`  **get_longest_axis_index**  **(** **)**
+- :ref:`int<class_int>` **get_longest_axis_index** **(** **)**
 
 Return the index of the longest axis of the :ref:`Rect3<class_rect3>` (according to :ref:`Vector3<class_vector3>`::AXIS\* enum).
 
 .. _class_Rect3_get_longest_axis_size:
 
-- :ref:`float<class_float>`  **get_longest_axis_size**  **(** **)**
+- :ref:`float<class_float>` **get_longest_axis_size** **(** **)**
 
 Return the scalar length of the longest axis of the :ref:`Rect3<class_rect3>`.
 
 .. _class_Rect3_get_shortest_axis:
 
-- :ref:`Vector3<class_vector3>`  **get_shortest_axis**  **(** **)**
+- :ref:`Vector3<class_vector3>` **get_shortest_axis** **(** **)**
 
 Return the normalized shortest axis of the :ref:`Rect3<class_rect3>`.
 
 .. _class_Rect3_get_shortest_axis_index:
 
-- :ref:`int<class_int>`  **get_shortest_axis_index**  **(** **)**
+- :ref:`int<class_int>` **get_shortest_axis_index** **(** **)**
 
 Return the index of the shortest axis of the :ref:`Rect3<class_rect3>` (according to :ref:`Vector3<class_vector3>`::AXIS\* enum).
 
 .. _class_Rect3_get_shortest_axis_size:
 
-- :ref:`float<class_float>`  **get_shortest_axis_size**  **(** **)**
+- :ref:`float<class_float>` **get_shortest_axis_size** **(** **)**
 
 Return the scalar length of the shortest axis of the :ref:`Rect3<class_rect3>`.
 
 .. _class_Rect3_get_support:
 
-- :ref:`Vector3<class_vector3>`  **get_support**  **(** :ref:`Vector3<class_vector3>` dir  **)**
+- :ref:`Vector3<class_vector3>` **get_support** **(** :ref:`Vector3<class_vector3>` dir **)**
 
 Return the support point in a given direction. This is useful for collision detection algorithms.
 
 .. _class_Rect3_grow:
 
-- :ref:`Rect3<class_rect3>`  **grow**  **(** :ref:`float<class_float>` by  **)**
+- :ref:`Rect3<class_rect3>` **grow** **(** :ref:`float<class_float>` by **)**
 
 Return a copy of the :ref:`Rect3<class_rect3>` grown a given amount of units towards all the sides.
 
 .. _class_Rect3_has_no_area:
 
-- :ref:`bool<class_bool>`  **has_no_area**  **(** **)**
+- :ref:`bool<class_bool>` **has_no_area** **(** **)**
 
 Return true if the :ref:`Rect3<class_rect3>` is flat or empty.
 
 .. _class_Rect3_has_no_surface:
 
-- :ref:`bool<class_bool>`  **has_no_surface**  **(** **)**
+- :ref:`bool<class_bool>` **has_no_surface** **(** **)**
 
 Return true if the :ref:`Rect3<class_rect3>` is empty.
 
 .. _class_Rect3_has_point:
 
-- :ref:`bool<class_bool>`  **has_point**  **(** :ref:`Vector3<class_vector3>` point  **)**
+- :ref:`bool<class_bool>` **has_point** **(** :ref:`Vector3<class_vector3>` point **)**
 
 Return true if the :ref:`Rect3<class_rect3>` contains a point.
 
 .. _class_Rect3_intersection:
 
-- :ref:`Rect3<class_rect3>`  **intersection**  **(** :ref:`Rect3<class_rect3>` with  **)**
+- :ref:`Rect3<class_rect3>` **intersection** **(** :ref:`Rect3<class_rect3>` with **)**
 
 Return the intersection between two :ref:`Rect3<class_rect3>`. An empty Rect3 (size 0,0,0) is returned on failure.
 
 .. _class_Rect3_intersects:
 
-- :ref:`bool<class_bool>`  **intersects**  **(** :ref:`Rect3<class_rect3>` with  **)**
+- :ref:`bool<class_bool>` **intersects** **(** :ref:`Rect3<class_rect3>` with **)**
 
 Return true if the :ref:`Rect3<class_rect3>` overlaps with another.
 
 .. _class_Rect3_intersects_plane:
 
-- :ref:`bool<class_bool>`  **intersects_plane**  **(** :ref:`Plane<class_plane>` plane  **)**
+- :ref:`bool<class_bool>` **intersects_plane** **(** :ref:`Plane<class_plane>` plane **)**
 
 Return true if the :ref:`Rect3<class_rect3>` is at both sides of a plane.
 
 .. _class_Rect3_intersects_segment:
 
-- :ref:`bool<class_bool>`  **intersects_segment**  **(** :ref:`Vector3<class_vector3>` from, :ref:`Vector3<class_vector3>` to  **)**
+- :ref:`bool<class_bool>` **intersects_segment** **(** :ref:`Vector3<class_vector3>` from, :ref:`Vector3<class_vector3>` to **)**
 
 Return true if the :ref:`Rect3<class_rect3>` intersects the line segment between from and to
 
 .. _class_Rect3_merge:
 
-- :ref:`Rect3<class_rect3>`  **merge**  **(** :ref:`Rect3<class_rect3>` with  **)**
+- :ref:`Rect3<class_rect3>` **merge** **(** :ref:`Rect3<class_rect3>` with **)**
 
 Combine this :ref:`Rect3<class_rect3>` with another, a larger one is returned that contains both.
 

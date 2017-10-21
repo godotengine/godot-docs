@@ -19,39 +19,39 @@ Brief Description
 Member Functions
 ----------------
 
-+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`_export_begin<class_EditorExportPlugin__export_begin>`  **(** :ref:`PoolStringArray<class_poolstringarray>` features  **)** virtual                                                                   |
-+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`_export_file<class_EditorExportPlugin__export_file>`  **(** :ref:`String<class_string>` path, :ref:`String<class_string>` type, :ref:`PoolStringArray<class_poolstringarray>` features  **)** virtual |
-+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`add_file<class_EditorExportPlugin_add_file>`  **(** :ref:`String<class_string>` path, :ref:`PoolByteArray<class_poolbytearray>` file, :ref:`bool<class_bool>` remap  **)**                            |
-+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`add_shared_object<class_EditorExportPlugin_add_shared_object>`  **(** :ref:`String<class_string>` path  **)**                                                                                         |
-+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`skip<class_EditorExportPlugin_skip>`  **(** **)**                                                                                                                                                     |
-+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void  | :ref:`_export_begin<class_EditorExportPlugin__export_begin>` **(** :ref:`PoolStringArray<class_poolstringarray>` features **)** virtual                                                                   |
++-------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void  | :ref:`_export_file<class_EditorExportPlugin__export_file>` **(** :ref:`String<class_string>` path, :ref:`String<class_string>` type, :ref:`PoolStringArray<class_poolstringarray>` features **)** virtual |
++-------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void  | :ref:`add_file<class_EditorExportPlugin_add_file>` **(** :ref:`String<class_string>` path, :ref:`PoolByteArray<class_poolbytearray>` file, :ref:`bool<class_bool>` remap **)**                            |
++-------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void  | :ref:`add_shared_object<class_EditorExportPlugin_add_shared_object>` **(** :ref:`String<class_string>` path **)**                                                                                         |
++-------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void  | :ref:`skip<class_EditorExportPlugin_skip>` **(** **)**                                                                                                                                                    |
++-------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Function Description
 ---------------------------
 
 .. _class_EditorExportPlugin__export_begin:
 
-- void  **_export_begin**  **(** :ref:`PoolStringArray<class_poolstringarray>` features  **)** virtual
+- void **_export_begin** **(** :ref:`PoolStringArray<class_poolstringarray>` features **)** virtual
 
 .. _class_EditorExportPlugin__export_file:
 
-- void  **_export_file**  **(** :ref:`String<class_string>` path, :ref:`String<class_string>` type, :ref:`PoolStringArray<class_poolstringarray>` features  **)** virtual
+- void **_export_file** **(** :ref:`String<class_string>` path, :ref:`String<class_string>` type, :ref:`PoolStringArray<class_poolstringarray>` features **)** virtual
 
 .. _class_EditorExportPlugin_add_file:
 
-- void  **add_file**  **(** :ref:`String<class_string>` path, :ref:`PoolByteArray<class_poolbytearray>` file, :ref:`bool<class_bool>` remap  **)**
+- void **add_file** **(** :ref:`String<class_string>` path, :ref:`PoolByteArray<class_poolbytearray>` file, :ref:`bool<class_bool>` remap **)**
 
 .. _class_EditorExportPlugin_add_shared_object:
 
-- void  **add_shared_object**  **(** :ref:`String<class_string>` path  **)**
+- void **add_shared_object** **(** :ref:`String<class_string>` path **)**
 
 .. _class_EditorExportPlugin_skip:
 
-- void  **skip**  **(** **)**
+- void **skip** **(** **)**
 
 

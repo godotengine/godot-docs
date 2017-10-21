@@ -19,15 +19,15 @@ A Visual Script node representing a constant from the base types.
 Member Functions
 ----------------
 
-+------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_basic_type<class_VisualScriptBasicTypeConstant_get_basic_type>`  **(** **)** const                                               |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_basic_type_constant<class_VisualScriptBasicTypeConstant_get_basic_type_constant>`  **(** **)** const                             |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_basic_type<class_VisualScriptBasicTypeConstant_set_basic_type>`  **(** :ref:`int<class_int>` name  **)**                         |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_basic_type_constant<class_VisualScriptBasicTypeConstant_set_basic_type_constant>`  **(** :ref:`String<class_string>` name  **)** |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`get_basic_type<class_VisualScriptBasicTypeConstant_get_basic_type>` **(** **)** const                                              |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_basic_type_constant<class_VisualScriptBasicTypeConstant_get_basic_type_constant>` **(** **)** const                            |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_basic_type<class_VisualScriptBasicTypeConstant_set_basic_type>` **(** :ref:`int<class_int>` name **)**                         |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_basic_type_constant<class_VisualScriptBasicTypeConstant_set_basic_type_constant>` **(** :ref:`String<class_string>` name **)** |
++------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -51,18 +51,18 @@ Member Function Description
 
 .. _class_VisualScriptBasicTypeConstant_get_basic_type:
 
-- :ref:`int<class_int>`  **get_basic_type**  **(** **)** const
+- :ref:`int<class_int>` **get_basic_type** **(** **)** const
 
 .. _class_VisualScriptBasicTypeConstant_get_basic_type_constant:
 
-- :ref:`String<class_string>`  **get_basic_type_constant**  **(** **)** const
+- :ref:`String<class_string>` **get_basic_type_constant** **(** **)** const
 
 .. _class_VisualScriptBasicTypeConstant_set_basic_type:
 
-- void  **set_basic_type**  **(** :ref:`int<class_int>` name  **)**
+- void **set_basic_type** **(** :ref:`int<class_int>` name **)**
 
 .. _class_VisualScriptBasicTypeConstant_set_basic_type_constant:
 
-- void  **set_basic_type_constant**  **(** :ref:`String<class_string>` name  **)**
+- void **set_basic_type_constant** **(** :ref:`String<class_string>` name **)**
 
 

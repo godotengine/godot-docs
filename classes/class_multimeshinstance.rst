@@ -19,11 +19,11 @@ Node that instances a :ref:`MultiMesh<class_multimesh>`.
 Member Functions
 ----------------
 
-+------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`MultiMesh<class_multimesh>`  | :ref:`get_multimesh<class_MultiMeshInstance_get_multimesh>`  **(** **)** const                                        |
-+------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_multimesh<class_MultiMeshInstance_set_multimesh>`  **(** :ref:`MultiMesh<class_multimesh>` multimesh  **)** |
-+------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
++------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| :ref:`MultiMesh<class_multimesh>`  | :ref:`get_multimesh<class_MultiMeshInstance_get_multimesh>` **(** **)** const                                       |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_multimesh<class_MultiMeshInstance_set_multimesh>` **(** :ref:`MultiMesh<class_multimesh>` multimesh **)** |
++------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -43,13 +43,13 @@ Member Function Description
 
 .. _class_MultiMeshInstance_get_multimesh:
 
-- :ref:`MultiMesh<class_multimesh>`  **get_multimesh**  **(** **)** const
+- :ref:`MultiMesh<class_multimesh>` **get_multimesh** **(** **)** const
 
 Return the :ref:`MultiMesh<class_multimesh>` that is used for instancing.
 
 .. _class_MultiMeshInstance_set_multimesh:
 
-- void  **set_multimesh**  **(** :ref:`MultiMesh<class_multimesh>` multimesh  **)**
+- void **set_multimesh** **(** :ref:`MultiMesh<class_multimesh>` multimesh **)**
 
 Set the :ref:`MultiMesh<class_multimesh>` to be instanced.
 

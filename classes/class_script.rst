@@ -21,25 +21,25 @@ A class stored as a resource.
 Member Functions
 ----------------
 
-+------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`can_instance<class_Script_can_instance>`  **(** **)** const                                                    |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_node_type<class_Script_get_node_type>`  **(** **)** const                                                  |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_source_code<class_Script_get_source_code>`  **(** **)** const                                              |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`has_script_signal<class_Script_has_script_signal>`  **(** :ref:`String<class_string>` signal_name  **)** const |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`has_source_code<class_Script_has_source_code>`  **(** **)** const                                              |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`instance_has<class_Script_instance_has>`  **(** :ref:`Object<class_object>` base_object  **)** const           |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`is_tool<class_Script_is_tool>`  **(** **)** const                                                              |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`reload<class_Script_reload>`  **(** :ref:`bool<class_bool>` keep_state=false  **)**                            |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_source_code<class_Script_set_source_code>`  **(** :ref:`String<class_string>` source  **)**                |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------+
++------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`can_instance<class_Script_can_instance>` **(** **)** const                                                   |
++------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_node_type<class_Script_get_node_type>` **(** **)** const                                                 |
++------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_source_code<class_Script_get_source_code>` **(** **)** const                                             |
++------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`has_script_signal<class_Script_has_script_signal>` **(** :ref:`String<class_string>` signal_name **)** const |
++------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`has_source_code<class_Script_has_source_code>` **(** **)** const                                             |
++------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`instance_has<class_Script_instance_has>` **(** :ref:`Object<class_object>` base_object **)** const           |
++------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`is_tool<class_Script_is_tool>` **(** **)** const                                                             |
++------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`reload<class_Script_reload>` **(** :ref:`bool<class_bool>` keep_state=false **)**                            |
++------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_source_code<class_Script_set_source_code>` **(** :ref:`String<class_string>` source **)**                |
++------------------------------+--------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -53,53 +53,53 @@ Member Function Description
 
 .. _class_Script_can_instance:
 
-- :ref:`bool<class_bool>`  **can_instance**  **(** **)** const
+- :ref:`bool<class_bool>` **can_instance** **(** **)** const
 
 Returns true if the script can be instanced.
 
 .. _class_Script_get_node_type:
 
-- :ref:`String<class_string>`  **get_node_type**  **(** **)** const
+- :ref:`String<class_string>` **get_node_type** **(** **)** const
 
 .. _class_Script_get_source_code:
 
-- :ref:`String<class_string>`  **get_source_code**  **(** **)** const
+- :ref:`String<class_string>` **get_source_code** **(** **)** const
 
 Returns the script source code, or an empty string if source code is not available.
 
 .. _class_Script_has_script_signal:
 
-- :ref:`bool<class_bool>`  **has_script_signal**  **(** :ref:`String<class_string>` signal_name  **)** const
+- :ref:`bool<class_bool>` **has_script_signal** **(** :ref:`String<class_string>` signal_name **)** const
 
 Returns true if the script, or a base class, defines a signal with the given name.
 
 .. _class_Script_has_source_code:
 
-- :ref:`bool<class_bool>`  **has_source_code**  **(** **)** const
+- :ref:`bool<class_bool>` **has_source_code** **(** **)** const
 
 Returns true if the script contains non-empty source code.
 
 .. _class_Script_instance_has:
 
-- :ref:`bool<class_bool>`  **instance_has**  **(** :ref:`Object<class_object>` base_object  **)** const
+- :ref:`bool<class_bool>` **instance_has** **(** :ref:`Object<class_object>` base_object **)** const
 
 Returns true if 'base_object' is an instance of this script.
 
 .. _class_Script_is_tool:
 
-- :ref:`bool<class_bool>`  **is_tool**  **(** **)** const
+- :ref:`bool<class_bool>` **is_tool** **(** **)** const
 
 Returns true if the script is a tool script. A tool script can run in the editor.
 
 .. _class_Script_reload:
 
-- :ref:`int<class_int>`  **reload**  **(** :ref:`bool<class_bool>` keep_state=false  **)**
+- :ref:`int<class_int>` **reload** **(** :ref:`bool<class_bool>` keep_state=false **)**
 
 Reloads the script's class implementation. Returns an error code.
 
 .. _class_Script_set_source_code:
 
-- void  **set_source_code**  **(** :ref:`String<class_string>` source  **)**
+- void **set_source_code** **(** :ref:`String<class_string>` source **)**
 
 Sets the script source code. Does not reload the class implementation.
 

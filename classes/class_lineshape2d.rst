@@ -19,15 +19,15 @@ Line shape for 2D collisions.
 Member Functions
 ----------------
 
-+--------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_d<class_LineShape2D_get_d>`  **(** **)** const                                           |
-+--------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_normal<class_LineShape2D_get_normal>`  **(** **)** const                                 |
-+--------------------------------+----------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_d<class_LineShape2D_set_d>`  **(** :ref:`float<class_float>` d  **)**                    |
-+--------------------------------+----------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_normal<class_LineShape2D_set_normal>`  **(** :ref:`Vector2<class_vector2>` normal  **)** |
-+--------------------------------+----------------------------------------------------------------------------------------------------+
++--------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_d<class_LineShape2D_get_d>` **(** **)** const                                          |
++--------------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_normal<class_LineShape2D_get_normal>` **(** **)** const                                |
++--------------------------------+--------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_d<class_LineShape2D_set_d>` **(** :ref:`float<class_float>` d **)**                    |
++--------------------------------+--------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_normal<class_LineShape2D_set_normal>` **(** :ref:`Vector2<class_vector2>` normal **)** |
++--------------------------------+--------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -51,25 +51,25 @@ Member Function Description
 
 .. _class_LineShape2D_get_d:
 
-- :ref:`float<class_float>`  **get_d**  **(** **)** const
+- :ref:`float<class_float>` **get_d** **(** **)** const
 
 Return the line distance from the origin.
 
 .. _class_LineShape2D_get_normal:
 
-- :ref:`Vector2<class_vector2>`  **get_normal**  **(** **)** const
+- :ref:`Vector2<class_vector2>` **get_normal** **(** **)** const
 
 Return the line normal.
 
 .. _class_LineShape2D_set_d:
 
-- void  **set_d**  **(** :ref:`float<class_float>` d  **)**
+- void **set_d** **(** :ref:`float<class_float>` d **)**
 
 Set the line distance from the origin.
 
 .. _class_LineShape2D_set_normal:
 
-- void  **set_normal**  **(** :ref:`Vector2<class_vector2>` normal  **)**
+- void **set_normal** **(** :ref:`Vector2<class_vector2>` normal **)**
 
 Set the line normal.
 

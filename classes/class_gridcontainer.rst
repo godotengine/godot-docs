@@ -19,11 +19,11 @@ Grid container used to arrange elements in a grid like layout
 Member Functions
 ----------------
 
-+------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_columns<class_GridContainer_get_columns>`  **(** **)** const                          |
-+------------------------+-------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_columns<class_GridContainer_set_columns>`  **(** :ref:`int<class_int>` columns  **)** |
-+------------------------+-------------------------------------------------------------------------------------------------+
++------------------------+-----------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`get_columns<class_GridContainer_get_columns>` **(** **)** const                         |
++------------------------+-----------------------------------------------------------------------------------------------+
+| void                   | :ref:`set_columns<class_GridContainer_set_columns>` **(** :ref:`int<class_int>` columns **)** |
++------------------------+-----------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -43,13 +43,13 @@ Member Function Description
 
 .. _class_GridContainer_get_columns:
 
-- :ref:`int<class_int>`  **get_columns**  **(** **)** const
+- :ref:`int<class_int>` **get_columns** **(** **)** const
 
 Returns the number of columns in this container
 
 .. _class_GridContainer_set_columns:
 
-- void  **set_columns**  **(** :ref:`int<class_int>` columns  **)**
+- void **set_columns** **(** :ref:`int<class_int>` columns **)**
 
 Sets the numbers of columns in the container, then reorder its children to accommodate the new layout
 

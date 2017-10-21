@@ -19,21 +19,21 @@ Brief Description
 Member Functions
 ----------------
 
-+------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_object_id<class_EncodedObjectAsID_get_object_id>`  **(** **)** const                     |
-+------------------------+----------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_object_id<class_EncodedObjectAsID_set_object_id>`  **(** :ref:`int<class_int>` id  **)** |
-+------------------------+----------------------------------------------------------------------------------------------------+
++------------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`get_object_id<class_EncodedObjectAsID_get_object_id>` **(** **)** const                    |
++------------------------+--------------------------------------------------------------------------------------------------+
+| void                   | :ref:`set_object_id<class_EncodedObjectAsID_set_object_id>` **(** :ref:`int<class_int>` id **)** |
++------------------------+--------------------------------------------------------------------------------------------------+
 
 Member Function Description
 ---------------------------
 
 .. _class_EncodedObjectAsID_get_object_id:
 
-- :ref:`int<class_int>`  **get_object_id**  **(** **)** const
+- :ref:`int<class_int>` **get_object_id** **(** **)** const
 
 .. _class_EncodedObjectAsID_set_object_id:
 
-- void  **set_object_id**  **(** :ref:`int<class_int>` id  **)**
+- void **set_object_id** **(** :ref:`int<class_int>` id **)**
 
 

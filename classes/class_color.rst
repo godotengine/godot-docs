@@ -17,31 +17,31 @@ Color in RGBA format with some support for ARGB format.
 Member Functions
 ----------------
 
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`    | :ref:`Color<class_Color_Color>`  **(** :ref:`float<class_float>` r, :ref:`float<class_float>` g, :ref:`float<class_float>` b, :ref:`float<class_float>` a  **)** |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`    | :ref:`Color<class_Color_Color>`  **(** :ref:`float<class_float>` r, :ref:`float<class_float>` g, :ref:`float<class_float>` b  **)**                              |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`    | :ref:`Color<class_Color_Color>`  **(** :ref:`int<class_int>` from  **)**                                                                                         |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`    | :ref:`Color<class_Color_Color>`  **(** :ref:`String<class_string>` from  **)**                                                                                   |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`    | :ref:`blend<class_Color_blend>`  **(** :ref:`Color<class_color>` over  **)**                                                                                     |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`    | :ref:`contrasted<class_Color_contrasted>`  **(** **)**                                                                                                           |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`    | :ref:`gray<class_Color_gray>`  **(** **)**                                                                                                                       |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`    | :ref:`inverted<class_Color_inverted>`  **(** **)**                                                                                                               |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`    | :ref:`linear_interpolate<class_Color_linear_interpolate>`  **(** :ref:`Color<class_color>` b, :ref:`float<class_float>` t  **)**                                 |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`to_argb32<class_Color_to_argb32>`  **(** **)**                                                                                                             |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`to_html<class_Color_to_html>`  **(** :ref:`bool<class_bool>` with_alpha=True  **)**                                                                        |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`to_rgba32<class_Color_to_rgba32>`  **(** **)**                                                                                                             |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`    | :ref:`Color<class_Color_Color>` **(** :ref:`float<class_float>` r, :ref:`float<class_float>` g, :ref:`float<class_float>` b, :ref:`float<class_float>` a **)** |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`    | :ref:`Color<class_Color_Color>` **(** :ref:`float<class_float>` r, :ref:`float<class_float>` g, :ref:`float<class_float>` b **)**                              |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`    | :ref:`Color<class_Color_Color>` **(** :ref:`int<class_int>` from **)**                                                                                         |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`    | :ref:`Color<class_Color_Color>` **(** :ref:`String<class_string>` from **)**                                                                                   |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`    | :ref:`blend<class_Color_blend>` **(** :ref:`Color<class_color>` over **)**                                                                                     |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`    | :ref:`contrasted<class_Color_contrasted>` **(** **)**                                                                                                          |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`    | :ref:`gray<class_Color_gray>` **(** **)**                                                                                                                      |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`    | :ref:`inverted<class_Color_inverted>` **(** **)**                                                                                                              |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`    | :ref:`linear_interpolate<class_Color_linear_interpolate>` **(** :ref:`Color<class_color>` b, :ref:`float<class_float>` t **)**                                 |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`to_argb32<class_Color_to_argb32>` **(** **)**                                                                                                            |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`to_html<class_Color_to_html>` **(** :ref:`bool<class_bool>` with_alpha=True **)**                                                                        |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`to_rgba32<class_Color_to_rgba32>` **(** **)**                                                                                                            |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -101,7 +101,7 @@ Member Function Description
 
 .. _class_Color_Color:
 
-- :ref:`Color<class_color>`  **Color**  **(** :ref:`float<class_float>` r, :ref:`float<class_float>` g, :ref:`float<class_float>` b, :ref:`float<class_float>` a  **)**
+- :ref:`Color<class_color>` **Color** **(** :ref:`float<class_float>` r, :ref:`float<class_float>` g, :ref:`float<class_float>` b, :ref:`float<class_float>` a **)**
 
 Constructs a color from an RGBA profile using values between 0 and 1 (float).
 
@@ -111,7 +111,7 @@ Constructs a color from an RGBA profile using values between 0 and 1 (float).
 
 .. _class_Color_Color:
 
-- :ref:`Color<class_color>`  **Color**  **(** :ref:`float<class_float>` r, :ref:`float<class_float>` g, :ref:`float<class_float>` b  **)**
+- :ref:`Color<class_color>` **Color** **(** :ref:`float<class_float>` r, :ref:`float<class_float>` g, :ref:`float<class_float>` b **)**
 
 Constructs a color from an RGB profile using values between 0 and 1 (float). Alpha will always be 1.
 
@@ -121,7 +121,7 @@ Constructs a color from an RGB profile using values between 0 and 1 (float). Alp
 
 .. _class_Color_Color:
 
-- :ref:`Color<class_color>`  **Color**  **(** :ref:`int<class_int>` from  **)**
+- :ref:`Color<class_color>` **Color** **(** :ref:`int<class_int>` from **)**
 
 Constructs a color from a 32-bit integer (each byte represents a component of the RGBA profile).
 
@@ -131,7 +131,7 @@ Constructs a color from a 32-bit integer (each byte represents a component of th
 
 .. _class_Color_Color:
 
-- :ref:`Color<class_color>`  **Color**  **(** :ref:`String<class_string>` from  **)**
+- :ref:`Color<class_color>` **Color** **(** :ref:`String<class_string>` from **)**
 
 Constructs a color from an HTML hexadecimal color string in ARGB or RGB format.
 
@@ -155,7 +155,7 @@ The following string formats are supported:
 
 .. _class_Color_blend:
 
-- :ref:`Color<class_color>`  **blend**  **(** :ref:`Color<class_color>` over  **)**
+- :ref:`Color<class_color>` **blend** **(** :ref:`Color<class_color>` over **)**
 
 Returns a new color resulting from blending this color over another color. If the color is opaque, the result would also be opaque. The other color could then take a range of values with different alpha values.
 
@@ -167,7 +167,7 @@ Returns a new color resulting from blending this color over another color. If th
 
 .. _class_Color_contrasted:
 
-- :ref:`Color<class_color>`  **contrasted**  **(** **)**
+- :ref:`Color<class_color>` **contrasted** **(** **)**
 
 Returns the most contrasting color.
 
@@ -178,7 +178,7 @@ Returns the most contrasting color.
 
 .. _class_Color_gray:
 
-- :ref:`float<class_float>`  **gray**  **(** **)**
+- :ref:`float<class_float>` **gray** **(** **)**
 
 Returns the color's grayscale.
 
@@ -191,7 +191,7 @@ The gray is calculated by (r + g + b) / 3.
 
 .. _class_Color_inverted:
 
-- :ref:`Color<class_color>`  **inverted**  **(** **)**
+- :ref:`Color<class_color>` **inverted** **(** **)**
 
 Returns the inverted color (1-r, 1-g, 1-b, 1-a).
 
@@ -202,7 +202,7 @@ Returns the inverted color (1-r, 1-g, 1-b, 1-a).
 
 .. _class_Color_linear_interpolate:
 
-- :ref:`Color<class_color>`  **linear_interpolate**  **(** :ref:`Color<class_color>` b, :ref:`float<class_float>` t  **)**
+- :ref:`Color<class_color>` **linear_interpolate** **(** :ref:`Color<class_color>` b, :ref:`float<class_float>` t **)**
 
 Returns the color of the linear interpolation with another color. The value t is between 0 and 1 (float).
 
@@ -214,7 +214,7 @@ Returns the color of the linear interpolation with another color. The value t is
 
 .. _class_Color_to_argb32:
 
-- :ref:`int<class_int>`  **to_argb32**  **(** **)**
+- :ref:`int<class_int>` **to_argb32** **(** **)**
 
 Returns the color's 32-bit integer in ARGB format (each byte represents a component of the ARGB profile). More compatible with DirectX.
 
@@ -225,7 +225,7 @@ Returns the color's 32-bit integer in ARGB format (each byte represents a compon
 
 .. _class_Color_to_html:
 
-- :ref:`String<class_string>`  **to_html**  **(** :ref:`bool<class_bool>` with_alpha=True  **)**
+- :ref:`String<class_string>` **to_html** **(** :ref:`bool<class_bool>` with_alpha=True **)**
 
 Returns the color's HTML hexadecimal color string in ARGB format (ex: ``ff34f822``).
 
@@ -239,7 +239,7 @@ Optionally flag 'false' to not include alpha in hexadecimal string.
 
 .. _class_Color_to_rgba32:
 
-- :ref:`int<class_int>`  **to_rgba32**  **(** **)**
+- :ref:`int<class_int>` **to_rgba32** **(** **)**
 
 Returns the color's 32-bit integer in ARGB format (each byte represents a component of the ARGB profile).
 

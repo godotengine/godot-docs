@@ -19,15 +19,15 @@ Base script that can be used to add extension functions to the editor.
 Member Functions
 ----------------
 
-+------------------------------------------------+---------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`_run<class_EditorScript__run>`  **(** **)** virtual                                         |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`add_root_node<class_EditorScript_add_root_node>`  **(** :ref:`Node<class_node>` node  **)** |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------+
-| :ref:`EditorInterface<class_editorinterface>`  | :ref:`get_editor_interface<class_EditorScript_get_editor_interface>`  **(** **)**                 |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_node>`                        | :ref:`get_scene<class_EditorScript_get_scene>`  **(** **)**                                       |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------+
++------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`_run<class_EditorScript__run>` **(** **)** virtual                                        |
++------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`add_root_node<class_EditorScript_add_root_node>` **(** :ref:`Node<class_node>` node **)** |
++------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`EditorInterface<class_editorinterface>`  | :ref:`get_editor_interface<class_EditorScript_get_editor_interface>` **(** **)**                |
++------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| :ref:`Node<class_node>`                        | :ref:`get_scene<class_EditorScript_get_scene>` **(** **)**                                      |
++------------------------------------------------+-------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -51,23 +51,23 @@ Member Function Description
 
 .. _class_EditorScript__run:
 
-- void  **_run**  **(** **)** virtual
+- void **_run** **(** **)** virtual
 
 This method is executed by the Editor when ``File -> Run`` is used.
 
 .. _class_EditorScript_add_root_node:
 
-- void  **add_root_node**  **(** :ref:`Node<class_node>` node  **)**
+- void **add_root_node** **(** :ref:`Node<class_node>` node **)**
 
 .. _class_EditorScript_get_editor_interface:
 
-- :ref:`EditorInterface<class_editorinterface>`  **get_editor_interface**  **(** **)**
+- :ref:`EditorInterface<class_editorinterface>` **get_editor_interface** **(** **)**
 
 Returns the :ref:`EditorInterface<class_editorinterface>` singleton instance.
 
 .. _class_EditorScript_get_scene:
 
-- :ref:`Node<class_node>`  **get_scene**  **(** **)**
+- :ref:`Node<class_node>` **get_scene** **(** **)**
 
 Returns the Editor's currently active scene.
 

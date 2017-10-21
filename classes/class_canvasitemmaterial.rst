@@ -19,15 +19,15 @@ Brief Description
 Member Functions
 ----------------
 
-+------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_blend_mode<class_CanvasItemMaterial_get_blend_mode>`  **(** **)** const                             |
-+------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_light_mode<class_CanvasItemMaterial_get_light_mode>`  **(** **)** const                             |
-+------------------------+---------------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_blend_mode<class_CanvasItemMaterial_set_blend_mode>`  **(** :ref:`int<class_int>` blend_mode  **)** |
-+------------------------+---------------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_light_mode<class_CanvasItemMaterial_set_light_mode>`  **(** :ref:`int<class_int>` light_mode  **)** |
-+------------------------+---------------------------------------------------------------------------------------------------------------+
++------------------------+-------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`get_blend_mode<class_CanvasItemMaterial_get_blend_mode>` **(** **)** const                            |
++------------------------+-------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`get_light_mode<class_CanvasItemMaterial_get_light_mode>` **(** **)** const                            |
++------------------------+-------------------------------------------------------------------------------------------------------------+
+| void                   | :ref:`set_blend_mode<class_CanvasItemMaterial_set_blend_mode>` **(** :ref:`int<class_int>` blend_mode **)** |
++------------------------+-------------------------------------------------------------------------------------------------------------+
+| void                   | :ref:`set_light_mode<class_CanvasItemMaterial_set_light_mode>` **(** :ref:`int<class_int>` light_mode **)** |
++------------------------+-------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -58,18 +58,18 @@ Member Function Description
 
 .. _class_CanvasItemMaterial_get_blend_mode:
 
-- :ref:`int<class_int>`  **get_blend_mode**  **(** **)** const
+- :ref:`int<class_int>` **get_blend_mode** **(** **)** const
 
 .. _class_CanvasItemMaterial_get_light_mode:
 
-- :ref:`int<class_int>`  **get_light_mode**  **(** **)** const
+- :ref:`int<class_int>` **get_light_mode** **(** **)** const
 
 .. _class_CanvasItemMaterial_set_blend_mode:
 
-- void  **set_blend_mode**  **(** :ref:`int<class_int>` blend_mode  **)**
+- void **set_blend_mode** **(** :ref:`int<class_int>` blend_mode **)**
 
 .. _class_CanvasItemMaterial_set_light_mode:
 
-- void  **set_light_mode**  **(** :ref:`int<class_int>` light_mode  **)**
+- void **set_light_mode** **(** :ref:`int<class_int>` light_mode **)**
 
 

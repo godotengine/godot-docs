@@ -19,16 +19,16 @@ Special button that brings up a :ref:`PopupMenu<class_popupmenu>` when clicked.
 Member Functions
 ----------------
 
-+------------------------------------+-----------------------------------------------------------+
-| :ref:`PopupMenu<class_popupmenu>`  | :ref:`get_popup<class_MenuButton_get_popup>`  **(** **)** |
-+------------------------------------+-----------------------------------------------------------+
++------------------------------------+----------------------------------------------------------+
+| :ref:`PopupMenu<class_popupmenu>`  | :ref:`get_popup<class_MenuButton_get_popup>` **(** **)** |
++------------------------------------+----------------------------------------------------------+
 
 Signals
 -------
 
 .. _class_MenuButton_about_to_show:
 
--  **about_to_show**  **(** **)**
+- **about_to_show** **(** **)**
 
 Emitted when :ref:`PopupMenu<class_popupmenu>` of this MenuButton is about to show.
 
@@ -51,7 +51,7 @@ Member Function Description
 
 .. _class_MenuButton_get_popup:
 
-- :ref:`PopupMenu<class_popupmenu>`  **get_popup**  **(** **)**
+- :ref:`PopupMenu<class_popupmenu>` **get_popup** **(** **)**
 
 Return the :ref:`PopupMenu<class_popupmenu>` contained in this button.
 

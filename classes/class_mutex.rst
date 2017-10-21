@@ -19,13 +19,13 @@ A synchronization Mutex.
 Member Functions
 ----------------
 
-+------------------------+----------------------------------------------------+
-| void                   | :ref:`lock<class_Mutex_lock>`  **(** **)**         |
-+------------------------+----------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`try_lock<class_Mutex_try_lock>`  **(** **)** |
-+------------------------+----------------------------------------------------+
-| void                   | :ref:`unlock<class_Mutex_unlock>`  **(** **)**     |
-+------------------------+----------------------------------------------------+
++------------------------+---------------------------------------------------+
+| void                   | :ref:`lock<class_Mutex_lock>` **(** **)**         |
++------------------------+---------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`try_lock<class_Mutex_try_lock>` **(** **)** |
++------------------------+---------------------------------------------------+
+| void                   | :ref:`unlock<class_Mutex_unlock>` **(** **)**     |
++------------------------+---------------------------------------------------+
 
 Description
 -----------
@@ -37,19 +37,19 @@ Member Function Description
 
 .. _class_Mutex_lock:
 
-- void  **lock**  **(** **)**
+- void **lock** **(** **)**
 
 Lock this :ref:`Mutex<class_mutex>`, blocks until it is unlocked by the current owner.
 
 .. _class_Mutex_try_lock:
 
-- :ref:`int<class_int>`  **try_lock**  **(** **)**
+- :ref:`int<class_int>` **try_lock** **(** **)**
 
 Try locking this :ref:`Mutex<class_mutex>`, does not block. Returns OK on success else ERR_BUSY.
 
 .. _class_Mutex_unlock:
 
-- void  **unlock**  **(** **)**
+- void **unlock** **(** **)**
 
 Unlock this :ref:`Mutex<class_mutex>`, leaving it to others threads.
 

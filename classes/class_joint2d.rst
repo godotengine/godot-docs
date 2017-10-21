@@ -21,23 +21,23 @@ Base node for all joint constraints in 2D physics.
 Member Functions
 ----------------
 
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`        | :ref:`get_bias<class_Joint2D_get_bias>`  **(** **)** const                                                                           |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`          | :ref:`get_exclude_nodes_from_collision<class_Joint2D_get_exclude_nodes_from_collision>`  **(** **)** const                           |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_nodepath>`  | :ref:`get_node_a<class_Joint2D_get_node_a>`  **(** **)** const                                                                       |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_nodepath>`  | :ref:`get_node_b<class_Joint2D_get_node_b>`  **(** **)** const                                                                       |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_bias<class_Joint2D_set_bias>`  **(** :ref:`float<class_float>` bias  **)**                                                 |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_exclude_nodes_from_collision<class_Joint2D_set_exclude_nodes_from_collision>`  **(** :ref:`bool<class_bool>` enable  **)** |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_node_a<class_Joint2D_set_node_a>`  **(** :ref:`NodePath<class_nodepath>` node  **)**                                       |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_node_b<class_Joint2D_set_node_b>`  **(** :ref:`NodePath<class_nodepath>` node  **)**                                       |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`        | :ref:`get_bias<class_Joint2D_get_bias>` **(** **)** const                                                                          |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`get_exclude_nodes_from_collision<class_Joint2D_get_exclude_nodes_from_collision>` **(** **)** const                          |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`NodePath<class_nodepath>`  | :ref:`get_node_a<class_Joint2D_get_node_a>` **(** **)** const                                                                      |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`NodePath<class_nodepath>`  | :ref:`get_node_b<class_Joint2D_get_node_b>` **(** **)** const                                                                      |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_bias<class_Joint2D_set_bias>` **(** :ref:`float<class_float>` bias **)**                                                 |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_exclude_nodes_from_collision<class_Joint2D_set_exclude_nodes_from_collision>` **(** :ref:`bool<class_bool>` enable **)** |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_node_a<class_Joint2D_set_node_a>` **(** :ref:`NodePath<class_nodepath>` node **)**                                       |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_node_b<class_Joint2D_set_node_b>` **(** :ref:`NodePath<class_nodepath>` node **)**                                       |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -69,41 +69,41 @@ Member Function Description
 
 .. _class_Joint2D_get_bias:
 
-- :ref:`float<class_float>`  **get_bias**  **(** **)** const
+- :ref:`float<class_float>` **get_bias** **(** **)** const
 
 .. _class_Joint2D_get_exclude_nodes_from_collision:
 
-- :ref:`bool<class_bool>`  **get_exclude_nodes_from_collision**  **(** **)** const
+- :ref:`bool<class_bool>` **get_exclude_nodes_from_collision** **(** **)** const
 
 .. _class_Joint2D_get_node_a:
 
-- :ref:`NodePath<class_nodepath>`  **get_node_a**  **(** **)** const
+- :ref:`NodePath<class_nodepath>` **get_node_a** **(** **)** const
 
 Return the path to the A node for the joint.
 
 .. _class_Joint2D_get_node_b:
 
-- :ref:`NodePath<class_nodepath>`  **get_node_b**  **(** **)** const
+- :ref:`NodePath<class_nodepath>` **get_node_b** **(** **)** const
 
 Return the path to the B node for the joint.
 
 .. _class_Joint2D_set_bias:
 
-- void  **set_bias**  **(** :ref:`float<class_float>` bias  **)**
+- void **set_bias** **(** :ref:`float<class_float>` bias **)**
 
 .. _class_Joint2D_set_exclude_nodes_from_collision:
 
-- void  **set_exclude_nodes_from_collision**  **(** :ref:`bool<class_bool>` enable  **)**
+- void **set_exclude_nodes_from_collision** **(** :ref:`bool<class_bool>` enable **)**
 
 .. _class_Joint2D_set_node_a:
 
-- void  **set_node_a**  **(** :ref:`NodePath<class_nodepath>` node  **)**
+- void **set_node_a** **(** :ref:`NodePath<class_nodepath>` node **)**
 
 Set the path to the A node for the joint. Must be of type :ref:`PhysicsBody2D<class_physicsbody2d>`.
 
 .. _class_Joint2D_set_node_b:
 
-- void  **set_node_b**  **(** :ref:`NodePath<class_nodepath>` node  **)**
+- void **set_node_b** **(** :ref:`NodePath<class_nodepath>` node **)**
 
 Set the path to the B node for the joint. Must be of type :ref:`PhysicsBody2D<class_physicsbody2d>`.
 

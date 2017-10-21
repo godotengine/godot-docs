@@ -21,59 +21,59 @@ Two tap delay and feedback options.
 Member Functions
 ----------------
 
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_dry<class_AudioEffectDelay_get_dry>`  **(** **)**                                                               |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_feedback_delay_ms<class_AudioEffectDelay_get_feedback_delay_ms>`  **(** **)** const                             |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_feedback_level_db<class_AudioEffectDelay_get_feedback_level_db>`  **(** **)** const                             |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_feedback_lowpass<class_AudioEffectDelay_get_feedback_lowpass>`  **(** **)** const                               |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_tap1_delay_ms<class_AudioEffectDelay_get_tap1_delay_ms>`  **(** **)** const                                     |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_tap1_level_db<class_AudioEffectDelay_get_tap1_level_db>`  **(** **)** const                                     |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_tap1_pan<class_AudioEffectDelay_get_tap1_pan>`  **(** **)** const                                               |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_tap2_delay_ms<class_AudioEffectDelay_get_tap2_delay_ms>`  **(** **)** const                                     |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_tap2_level_db<class_AudioEffectDelay_get_tap2_level_db>`  **(** **)** const                                     |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_tap2_pan<class_AudioEffectDelay_get_tap2_pan>`  **(** **)** const                                               |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`is_feedback_active<class_AudioEffectDelay_is_feedback_active>`  **(** **)** const                                   |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`is_tap1_active<class_AudioEffectDelay_is_tap1_active>`  **(** **)** const                                           |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`is_tap2_active<class_AudioEffectDelay_is_tap2_active>`  **(** **)** const                                           |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_dry<class_AudioEffectDelay_set_dry>`  **(** :ref:`float<class_float>` amount  **)**                             |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_feedback_active<class_AudioEffectDelay_set_feedback_active>`  **(** :ref:`bool<class_bool>` amount  **)**       |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_feedback_delay_ms<class_AudioEffectDelay_set_feedback_delay_ms>`  **(** :ref:`float<class_float>` amount  **)** |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_feedback_level_db<class_AudioEffectDelay_set_feedback_level_db>`  **(** :ref:`float<class_float>` amount  **)** |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_feedback_lowpass<class_AudioEffectDelay_set_feedback_lowpass>`  **(** :ref:`float<class_float>` amount  **)**   |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_tap1_active<class_AudioEffectDelay_set_tap1_active>`  **(** :ref:`bool<class_bool>` amount  **)**               |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_tap1_delay_ms<class_AudioEffectDelay_set_tap1_delay_ms>`  **(** :ref:`float<class_float>` amount  **)**         |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_tap1_level_db<class_AudioEffectDelay_set_tap1_level_db>`  **(** :ref:`float<class_float>` amount  **)**         |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_tap1_pan<class_AudioEffectDelay_set_tap1_pan>`  **(** :ref:`float<class_float>` amount  **)**                   |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_tap2_active<class_AudioEffectDelay_set_tap2_active>`  **(** :ref:`bool<class_bool>` amount  **)**               |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_tap2_delay_ms<class_AudioEffectDelay_set_tap2_delay_ms>`  **(** :ref:`float<class_float>` amount  **)**         |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_tap2_level_db<class_AudioEffectDelay_set_tap2_level_db>`  **(** :ref:`float<class_float>` amount  **)**         |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_tap2_pan<class_AudioEffectDelay_set_tap2_pan>`  **(** :ref:`float<class_float>` amount  **)**                   |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------+
++----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_dry<class_AudioEffectDelay_get_dry>` **(** **)**                                                              |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_feedback_delay_ms<class_AudioEffectDelay_get_feedback_delay_ms>` **(** **)** const                            |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_feedback_level_db<class_AudioEffectDelay_get_feedback_level_db>` **(** **)** const                            |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_feedback_lowpass<class_AudioEffectDelay_get_feedback_lowpass>` **(** **)** const                              |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_tap1_delay_ms<class_AudioEffectDelay_get_tap1_delay_ms>` **(** **)** const                                    |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_tap1_level_db<class_AudioEffectDelay_get_tap1_level_db>` **(** **)** const                                    |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_tap1_pan<class_AudioEffectDelay_get_tap1_pan>` **(** **)** const                                              |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_tap2_delay_ms<class_AudioEffectDelay_get_tap2_delay_ms>` **(** **)** const                                    |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_tap2_level_db<class_AudioEffectDelay_get_tap2_level_db>` **(** **)** const                                    |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_tap2_pan<class_AudioEffectDelay_get_tap2_pan>` **(** **)** const                                              |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`is_feedback_active<class_AudioEffectDelay_is_feedback_active>` **(** **)** const                                  |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`is_tap1_active<class_AudioEffectDelay_is_tap1_active>` **(** **)** const                                          |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`is_tap2_active<class_AudioEffectDelay_is_tap2_active>` **(** **)** const                                          |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_dry<class_AudioEffectDelay_set_dry>` **(** :ref:`float<class_float>` amount **)**                             |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_feedback_active<class_AudioEffectDelay_set_feedback_active>` **(** :ref:`bool<class_bool>` amount **)**       |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_feedback_delay_ms<class_AudioEffectDelay_set_feedback_delay_ms>` **(** :ref:`float<class_float>` amount **)** |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_feedback_level_db<class_AudioEffectDelay_set_feedback_level_db>` **(** :ref:`float<class_float>` amount **)** |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_feedback_lowpass<class_AudioEffectDelay_set_feedback_lowpass>` **(** :ref:`float<class_float>` amount **)**   |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_tap1_active<class_AudioEffectDelay_set_tap1_active>` **(** :ref:`bool<class_bool>` amount **)**               |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_tap1_delay_ms<class_AudioEffectDelay_set_tap1_delay_ms>` **(** :ref:`float<class_float>` amount **)**         |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_tap1_level_db<class_AudioEffectDelay_set_tap1_level_db>` **(** :ref:`float<class_float>` amount **)**         |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_tap1_pan<class_AudioEffectDelay_set_tap1_pan>` **(** :ref:`float<class_float>` amount **)**                   |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_tap2_active<class_AudioEffectDelay_set_tap2_active>` **(** :ref:`bool<class_bool>` amount **)**               |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_tap2_delay_ms<class_AudioEffectDelay_set_tap2_delay_ms>` **(** :ref:`float<class_float>` amount **)**         |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_tap2_level_db<class_AudioEffectDelay_set_tap2_level_db>` **(** :ref:`float<class_float>` amount **)**         |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_tap2_pan<class_AudioEffectDelay_set_tap2_pan>` **(** :ref:`float<class_float>` amount **)**                   |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -141,106 +141,106 @@ Member Function Description
 
 .. _class_AudioEffectDelay_get_dry:
 
-- :ref:`float<class_float>`  **get_dry**  **(** **)**
+- :ref:`float<class_float>` **get_dry** **(** **)**
 
 .. _class_AudioEffectDelay_get_feedback_delay_ms:
 
-- :ref:`float<class_float>`  **get_feedback_delay_ms**  **(** **)** const
+- :ref:`float<class_float>` **get_feedback_delay_ms** **(** **)** const
 
 .. _class_AudioEffectDelay_get_feedback_level_db:
 
-- :ref:`float<class_float>`  **get_feedback_level_db**  **(** **)** const
+- :ref:`float<class_float>` **get_feedback_level_db** **(** **)** const
 
 .. _class_AudioEffectDelay_get_feedback_lowpass:
 
-- :ref:`float<class_float>`  **get_feedback_lowpass**  **(** **)** const
+- :ref:`float<class_float>` **get_feedback_lowpass** **(** **)** const
 
 .. _class_AudioEffectDelay_get_tap1_delay_ms:
 
-- :ref:`float<class_float>`  **get_tap1_delay_ms**  **(** **)** const
+- :ref:`float<class_float>` **get_tap1_delay_ms** **(** **)** const
 
 .. _class_AudioEffectDelay_get_tap1_level_db:
 
-- :ref:`float<class_float>`  **get_tap1_level_db**  **(** **)** const
+- :ref:`float<class_float>` **get_tap1_level_db** **(** **)** const
 
 .. _class_AudioEffectDelay_get_tap1_pan:
 
-- :ref:`float<class_float>`  **get_tap1_pan**  **(** **)** const
+- :ref:`float<class_float>` **get_tap1_pan** **(** **)** const
 
 .. _class_AudioEffectDelay_get_tap2_delay_ms:
 
-- :ref:`float<class_float>`  **get_tap2_delay_ms**  **(** **)** const
+- :ref:`float<class_float>` **get_tap2_delay_ms** **(** **)** const
 
 .. _class_AudioEffectDelay_get_tap2_level_db:
 
-- :ref:`float<class_float>`  **get_tap2_level_db**  **(** **)** const
+- :ref:`float<class_float>` **get_tap2_level_db** **(** **)** const
 
 .. _class_AudioEffectDelay_get_tap2_pan:
 
-- :ref:`float<class_float>`  **get_tap2_pan**  **(** **)** const
+- :ref:`float<class_float>` **get_tap2_pan** **(** **)** const
 
 .. _class_AudioEffectDelay_is_feedback_active:
 
-- :ref:`bool<class_bool>`  **is_feedback_active**  **(** **)** const
+- :ref:`bool<class_bool>` **is_feedback_active** **(** **)** const
 
 .. _class_AudioEffectDelay_is_tap1_active:
 
-- :ref:`bool<class_bool>`  **is_tap1_active**  **(** **)** const
+- :ref:`bool<class_bool>` **is_tap1_active** **(** **)** const
 
 .. _class_AudioEffectDelay_is_tap2_active:
 
-- :ref:`bool<class_bool>`  **is_tap2_active**  **(** **)** const
+- :ref:`bool<class_bool>` **is_tap2_active** **(** **)** const
 
 .. _class_AudioEffectDelay_set_dry:
 
-- void  **set_dry**  **(** :ref:`float<class_float>` amount  **)**
+- void **set_dry** **(** :ref:`float<class_float>` amount **)**
 
 .. _class_AudioEffectDelay_set_feedback_active:
 
-- void  **set_feedback_active**  **(** :ref:`bool<class_bool>` amount  **)**
+- void **set_feedback_active** **(** :ref:`bool<class_bool>` amount **)**
 
 .. _class_AudioEffectDelay_set_feedback_delay_ms:
 
-- void  **set_feedback_delay_ms**  **(** :ref:`float<class_float>` amount  **)**
+- void **set_feedback_delay_ms** **(** :ref:`float<class_float>` amount **)**
 
 .. _class_AudioEffectDelay_set_feedback_level_db:
 
-- void  **set_feedback_level_db**  **(** :ref:`float<class_float>` amount  **)**
+- void **set_feedback_level_db** **(** :ref:`float<class_float>` amount **)**
 
 .. _class_AudioEffectDelay_set_feedback_lowpass:
 
-- void  **set_feedback_lowpass**  **(** :ref:`float<class_float>` amount  **)**
+- void **set_feedback_lowpass** **(** :ref:`float<class_float>` amount **)**
 
 .. _class_AudioEffectDelay_set_tap1_active:
 
-- void  **set_tap1_active**  **(** :ref:`bool<class_bool>` amount  **)**
+- void **set_tap1_active** **(** :ref:`bool<class_bool>` amount **)**
 
 .. _class_AudioEffectDelay_set_tap1_delay_ms:
 
-- void  **set_tap1_delay_ms**  **(** :ref:`float<class_float>` amount  **)**
+- void **set_tap1_delay_ms** **(** :ref:`float<class_float>` amount **)**
 
 .. _class_AudioEffectDelay_set_tap1_level_db:
 
-- void  **set_tap1_level_db**  **(** :ref:`float<class_float>` amount  **)**
+- void **set_tap1_level_db** **(** :ref:`float<class_float>` amount **)**
 
 .. _class_AudioEffectDelay_set_tap1_pan:
 
-- void  **set_tap1_pan**  **(** :ref:`float<class_float>` amount  **)**
+- void **set_tap1_pan** **(** :ref:`float<class_float>` amount **)**
 
 .. _class_AudioEffectDelay_set_tap2_active:
 
-- void  **set_tap2_active**  **(** :ref:`bool<class_bool>` amount  **)**
+- void **set_tap2_active** **(** :ref:`bool<class_bool>` amount **)**
 
 .. _class_AudioEffectDelay_set_tap2_delay_ms:
 
-- void  **set_tap2_delay_ms**  **(** :ref:`float<class_float>` amount  **)**
+- void **set_tap2_delay_ms** **(** :ref:`float<class_float>` amount **)**
 
 .. _class_AudioEffectDelay_set_tap2_level_db:
 
-- void  **set_tap2_level_db**  **(** :ref:`float<class_float>` amount  **)**
+- void **set_tap2_level_db** **(** :ref:`float<class_float>` amount **)**
 
 .. _class_AudioEffectDelay_set_tap2_pan:
 
-- void  **set_tap2_pan**  **(** :ref:`float<class_float>` amount  **)**
+- void **set_tap2_pan** **(** :ref:`float<class_float>` amount **)**
 
 

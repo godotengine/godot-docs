@@ -19,31 +19,31 @@ Generic mobile VR implementation
 Member Functions
 ----------------
 
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_display_to_lens<class_MobileVRInterface_get_display_to_lens>`  **(** **)** const                                      |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_display_width<class_MobileVRInterface_get_display_width>`  **(** **)** const                                          |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_iod<class_MobileVRInterface_get_iod>`  **(** **)** const                                                              |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_k1<class_MobileVRInterface_get_k1>`  **(** **)** const                                                                |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_k2<class_MobileVRInterface_get_k2>`  **(** **)** const                                                                |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_oversample<class_MobileVRInterface_get_oversample>`  **(** **)** const                                                |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_display_to_lens<class_MobileVRInterface_set_display_to_lens>`  **(** :ref:`float<class_float>` display_to_lens  **)** |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_display_width<class_MobileVRInterface_set_display_width>`  **(** :ref:`float<class_float>` display_width  **)**       |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_iod<class_MobileVRInterface_set_iod>`  **(** :ref:`float<class_float>` iod  **)**                                     |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_k1<class_MobileVRInterface_set_k1>`  **(** :ref:`float<class_float>` k  **)**                                         |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_k2<class_MobileVRInterface_set_k2>`  **(** :ref:`float<class_float>` k  **)**                                         |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_oversample<class_MobileVRInterface_set_oversample>`  **(** :ref:`float<class_float>` oversample  **)**                |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
++----------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_display_to_lens<class_MobileVRInterface_get_display_to_lens>` **(** **)** const                                     |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_display_width<class_MobileVRInterface_get_display_width>` **(** **)** const                                         |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_iod<class_MobileVRInterface_get_iod>` **(** **)** const                                                             |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_k1<class_MobileVRInterface_get_k1>` **(** **)** const                                                               |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_k2<class_MobileVRInterface_get_k2>` **(** **)** const                                                               |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_oversample<class_MobileVRInterface_get_oversample>` **(** **)** const                                               |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_display_to_lens<class_MobileVRInterface_set_display_to_lens>` **(** :ref:`float<class_float>` display_to_lens **)** |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_display_width<class_MobileVRInterface_set_display_width>` **(** :ref:`float<class_float>` display_width **)**       |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_iod<class_MobileVRInterface_set_iod>` **(** :ref:`float<class_float>` iod **)**                                     |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_k1<class_MobileVRInterface_set_k1>` **(** :ref:`float<class_float>` k **)**                                         |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_k2<class_MobileVRInterface_set_k2>` **(** :ref:`float<class_float>` k **)**                                         |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_oversample<class_MobileVRInterface_set_oversample>` **(** :ref:`float<class_float>` oversample **)**                |
++----------------------------+-------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -85,73 +85,73 @@ Member Function Description
 
 .. _class_MobileVRInterface_get_display_to_lens:
 
-- :ref:`float<class_float>`  **get_display_to_lens**  **(** **)** const
+- :ref:`float<class_float>` **get_display_to_lens** **(** **)** const
 
 Returns the distance between the display and the lens.
 
 .. _class_MobileVRInterface_get_display_width:
 
-- :ref:`float<class_float>`  **get_display_width**  **(** **)** const
+- :ref:`float<class_float>` **get_display_width** **(** **)** const
 
 Return the width of the LCD screen of the device.
 
 .. _class_MobileVRInterface_get_iod:
 
-- :ref:`float<class_float>`  **get_iod**  **(** **)** const
+- :ref:`float<class_float>` **get_iod** **(** **)** const
 
 Returns the interocular distance.
 
 .. _class_MobileVRInterface_get_k1:
 
-- :ref:`float<class_float>`  **get_k1**  **(** **)** const
+- :ref:`float<class_float>` **get_k1** **(** **)** const
 
 Returns the k1 lens constant.
 
 .. _class_MobileVRInterface_get_k2:
 
-- :ref:`float<class_float>`  **get_k2**  **(** **)** const
+- :ref:`float<class_float>` **get_k2** **(** **)** const
 
 Retuns the k2 lens constant
 
 .. _class_MobileVRInterface_get_oversample:
 
-- :ref:`float<class_float>`  **get_oversample**  **(** **)** const
+- :ref:`float<class_float>` **get_oversample** **(** **)** const
 
 Returns the oversampling setting.
 
 .. _class_MobileVRInterface_set_display_to_lens:
 
-- void  **set_display_to_lens**  **(** :ref:`float<class_float>` display_to_lens  **)**
+- void **set_display_to_lens** **(** :ref:`float<class_float>` display_to_lens **)**
 
 Sets the distance between display and the lens.
 
 .. _class_MobileVRInterface_set_display_width:
 
-- void  **set_display_width**  **(** :ref:`float<class_float>` display_width  **)**
+- void **set_display_width** **(** :ref:`float<class_float>` display_width **)**
 
 Sets the width of the LCD screen of the device.
 
 .. _class_MobileVRInterface_set_iod:
 
-- void  **set_iod**  **(** :ref:`float<class_float>` iod  **)**
+- void **set_iod** **(** :ref:`float<class_float>` iod **)**
 
 Sets the interocular distance.
 
 .. _class_MobileVRInterface_set_k1:
 
-- void  **set_k1**  **(** :ref:`float<class_float>` k  **)**
+- void **set_k1** **(** :ref:`float<class_float>` k **)**
 
 Sets the k1 lens constant.
 
 .. _class_MobileVRInterface_set_k2:
 
-- void  **set_k2**  **(** :ref:`float<class_float>` k  **)**
+- void **set_k2** **(** :ref:`float<class_float>` k **)**
 
 Sets the k2 lens constant.
 
 .. _class_MobileVRInterface_set_oversample:
 
-- void  **set_oversample**  **(** :ref:`float<class_float>` oversample  **)**
+- void **set_oversample** **(** :ref:`float<class_float>` oversample **)**
 
 Sets the oversampling setting.
 

@@ -19,11 +19,11 @@ Used with :ref:`DynamicFont<class_dynamicfont>` to describe the location of a fo
 Member Functions
 ----------------
 
-+------------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_font_path<class_DynamicFontData_get_font_path>`  **(** **)** const                             |
-+------------------------------+----------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_font_path<class_DynamicFontData_set_font_path>`  **(** :ref:`String<class_string>` path  **)** |
-+------------------------------+----------------------------------------------------------------------------------------------------------+
++------------------------------+--------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_font_path<class_DynamicFontData_get_font_path>` **(** **)** const                            |
++------------------------------+--------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_font_path<class_DynamicFontData_set_font_path>` **(** :ref:`String<class_string>` path **)** |
++------------------------------+--------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -43,13 +43,13 @@ Member Function Description
 
 .. _class_DynamicFontData_get_font_path:
 
-- :ref:`String<class_string>`  **get_font_path**  **(** **)** const
+- :ref:`String<class_string>` **get_font_path** **(** **)** const
 
 Returns the font path.
 
 .. _class_DynamicFontData_set_font_path:
 
-- void  **set_font_path**  **(** :ref:`String<class_string>` path  **)**
+- void **set_font_path** **(** :ref:`String<class_string>` path **)**
 
 Sets the font path.
 

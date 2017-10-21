@@ -19,11 +19,11 @@ Ray shape for 3D collisions.
 Member Functions
 ----------------
 
-+----------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_length<class_RayShape_get_length>`  **(** **)** const                             |
-+----------------------------+---------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_length<class_RayShape_set_length>`  **(** :ref:`float<class_float>` length  **)** |
-+----------------------------+---------------------------------------------------------------------------------------------+
++----------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_length<class_RayShape_get_length>` **(** **)** const                            |
++----------------------------+-------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_length<class_RayShape_set_length>` **(** :ref:`float<class_float>` length **)** |
++----------------------------+-------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -43,10 +43,10 @@ Member Function Description
 
 .. _class_RayShape_get_length:
 
-- :ref:`float<class_float>`  **get_length**  **(** **)** const
+- :ref:`float<class_float>` **get_length** **(** **)** const
 
 .. _class_RayShape_set_length:
 
-- void  **set_length**  **(** :ref:`float<class_float>` length  **)**
+- void **set_length** **(** :ref:`float<class_float>` length **)**
 
 

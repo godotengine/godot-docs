@@ -17,27 +17,27 @@ Real Array.
 Member Functions
 ----------------
 
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolRealArray<class_poolrealarray>`  | :ref:`PoolRealArray<class_PoolRealArray_PoolRealArray>`  **(** :ref:`Array<class_array>` from  **)**                |
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`append<class_PoolRealArray_append>`  **(** :ref:`float<class_float>` value  **)**                             |
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`append_array<class_PoolRealArray_append_array>`  **(** :ref:`PoolRealArray<class_poolrealarray>` array  **)** |
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                      | :ref:`insert<class_PoolRealArray_insert>`  **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` value  **)**  |
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`invert<class_PoolRealArray_invert>`  **(** **)**                                                              |
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`push_back<class_PoolRealArray_push_back>`  **(** :ref:`float<class_float>` value  **)**                       |
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`remove<class_PoolRealArray_remove>`  **(** :ref:`int<class_int>` idx  **)**                                   |
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`resize<class_PoolRealArray_resize>`  **(** :ref:`int<class_int>` idx  **)**                                   |
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set<class_PoolRealArray_set>`  **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` value  **)**        |
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                      | :ref:`size<class_PoolRealArray_size>`  **(** **)**                                                                  |
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolRealArray<class_poolrealarray>`  | :ref:`PoolRealArray<class_PoolRealArray_PoolRealArray>` **(** :ref:`Array<class_array>` from **)**                |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`append<class_PoolRealArray_append>` **(** :ref:`float<class_float>` value **)**                             |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`append_array<class_PoolRealArray_append_array>` **(** :ref:`PoolRealArray<class_poolrealarray>` array **)** |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                      | :ref:`insert<class_PoolRealArray_insert>` **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` value **)**  |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`invert<class_PoolRealArray_invert>` **(** **)**                                                             |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`push_back<class_PoolRealArray_push_back>` **(** :ref:`float<class_float>` value **)**                       |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`remove<class_PoolRealArray_remove>` **(** :ref:`int<class_int>` idx **)**                                   |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`resize<class_PoolRealArray_resize>` **(** :ref:`int<class_int>` idx **)**                                   |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`set<class_PoolRealArray_set>` **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` value **)**        |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                      | :ref:`size<class_PoolRealArray_size>` **(** **)**                                                                 |
++--------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -49,61 +49,61 @@ Member Function Description
 
 .. _class_PoolRealArray_PoolRealArray:
 
-- :ref:`PoolRealArray<class_poolrealarray>`  **PoolRealArray**  **(** :ref:`Array<class_array>` from  **)**
+- :ref:`PoolRealArray<class_poolrealarray>` **PoolRealArray** **(** :ref:`Array<class_array>` from **)**
 
 Create from a generic array.
 
 .. _class_PoolRealArray_append:
 
-- void  **append**  **(** :ref:`float<class_float>` value  **)**
+- void **append** **(** :ref:`float<class_float>` value **)**
 
 Append an element at the end of the array (alias of :ref:`push_back<class_PoolRealArray_push_back>`).
 
 .. _class_PoolRealArray_append_array:
 
-- void  **append_array**  **(** :ref:`PoolRealArray<class_poolrealarray>` array  **)**
+- void **append_array** **(** :ref:`PoolRealArray<class_poolrealarray>` array **)**
 
 Append an RealArray at the end of this array.
 
 .. _class_PoolRealArray_insert:
 
-- :ref:`int<class_int>`  **insert**  **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` value  **)**
+- :ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` value **)**
 
 Insert a new element at a given position in the array. The position must be valid, or at the end of the array (pos==size()).
 
 .. _class_PoolRealArray_invert:
 
-- void  **invert**  **(** **)**
+- void **invert** **(** **)**
 
 Reverse the order of the elements in the array (so first element will now be the last).
 
 .. _class_PoolRealArray_push_back:
 
-- void  **push_back**  **(** :ref:`float<class_float>` value  **)**
+- void **push_back** **(** :ref:`float<class_float>` value **)**
 
 Append an element at the end of the array.
 
 .. _class_PoolRealArray_remove:
 
-- void  **remove**  **(** :ref:`int<class_int>` idx  **)**
+- void **remove** **(** :ref:`int<class_int>` idx **)**
 
 Remove an element from the array by index.
 
 .. _class_PoolRealArray_resize:
 
-- void  **resize**  **(** :ref:`int<class_int>` idx  **)**
+- void **resize** **(** :ref:`int<class_int>` idx **)**
 
 Set the size of the array. If the array is grown reserve elements at the end of the array. If the array is shrunk truncate the array to the new size.
 
 .. _class_PoolRealArray_set:
 
-- void  **set**  **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` value  **)**
+- void **set** **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` value **)**
 
 Change the float at the given index.
 
 .. _class_PoolRealArray_size:
 
-- :ref:`int<class_int>`  **size**  **(** **)**
+- :ref:`int<class_int>` **size** **(** **)**
 
 Return the size of the array.
 

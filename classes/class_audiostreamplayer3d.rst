@@ -19,88 +19,88 @@ Plays 3D sound in 3D space
 Member Functions
 ----------------
 
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                  | :ref:`get_area_mask<class_AudioStreamPlayer3D_get_area_mask>`  **(** **)** const                                                                               |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_attenuation_filter_cutoff_hz<class_AudioStreamPlayer3D_get_attenuation_filter_cutoff_hz>`  **(** **)** const                                         |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_attenuation_filter_db<class_AudioStreamPlayer3D_get_attenuation_filter_db>`  **(** **)** const                                                       |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                  | :ref:`get_attenuation_model<class_AudioStreamPlayer3D_get_attenuation_model>`  **(** **)** const                                                               |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`            | :ref:`get_bus<class_AudioStreamPlayer3D_get_bus>`  **(** **)** const                                                                                           |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                  | :ref:`get_doppler_tracking<class_AudioStreamPlayer3D_get_doppler_tracking>`  **(** **)** const                                                                 |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_emission_angle<class_AudioStreamPlayer3D_get_emission_angle>`  **(** **)** const                                                                     |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_emission_angle_filter_attenuation_db<class_AudioStreamPlayer3D_get_emission_angle_filter_attenuation_db>`  **(** **)** const                         |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_max_db<class_AudioStreamPlayer3D_get_max_db>`  **(** **)** const                                                                                     |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_max_distance<class_AudioStreamPlayer3D_get_max_distance>`  **(** **)** const                                                                         |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                  | :ref:`get_out_of_range_mode<class_AudioStreamPlayer3D_get_out_of_range_mode>`  **(** **)** const                                                               |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_playback_position<class_AudioStreamPlayer3D_get_playback_position>`  **(** **)**                                                                     |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AudioStream<class_audiostream>`  | :ref:`get_stream<class_AudioStreamPlayer3D_get_stream>`  **(** **)** const                                                                                     |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_unit_db<class_AudioStreamPlayer3D_get_unit_db>`  **(** **)** const                                                                                   |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_unit_size<class_AudioStreamPlayer3D_get_unit_size>`  **(** **)** const                                                                               |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`is_autoplay_enabled<class_AudioStreamPlayer3D_is_autoplay_enabled>`  **(** **)**                                                                         |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`is_emission_angle_enabled<class_AudioStreamPlayer3D_is_emission_angle_enabled>`  **(** **)** const                                                       |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`is_playing<class_AudioStreamPlayer3D_is_playing>`  **(** **)** const                                                                                     |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`play<class_AudioStreamPlayer3D_play>`  **(** :ref:`float<class_float>` from_position=0.0  **)**                                                          |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`seek<class_AudioStreamPlayer3D_seek>`  **(** :ref:`float<class_float>` to_position  **)**                                                                |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_area_mask<class_AudioStreamPlayer3D_set_area_mask>`  **(** :ref:`int<class_int>` mask  **)**                                                         |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_attenuation_filter_cutoff_hz<class_AudioStreamPlayer3D_set_attenuation_filter_cutoff_hz>`  **(** :ref:`float<class_float>` degrees  **)**            |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_attenuation_filter_db<class_AudioStreamPlayer3D_set_attenuation_filter_db>`  **(** :ref:`float<class_float>` db  **)**                               |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_attenuation_model<class_AudioStreamPlayer3D_set_attenuation_model>`  **(** :ref:`int<class_int>` model  **)**                                        |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_autoplay<class_AudioStreamPlayer3D_set_autoplay>`  **(** :ref:`bool<class_bool>` enable  **)**                                                       |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_bus<class_AudioStreamPlayer3D_set_bus>`  **(** :ref:`String<class_string>` bus  **)**                                                                |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_doppler_tracking<class_AudioStreamPlayer3D_set_doppler_tracking>`  **(** :ref:`int<class_int>` mode  **)**                                           |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_emission_angle<class_AudioStreamPlayer3D_set_emission_angle>`  **(** :ref:`float<class_float>` degrees  **)**                                        |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_emission_angle_enabled<class_AudioStreamPlayer3D_set_emission_angle_enabled>`  **(** :ref:`bool<class_bool>` enabled  **)**                          |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_emission_angle_filter_attenuation_db<class_AudioStreamPlayer3D_set_emission_angle_filter_attenuation_db>`  **(** :ref:`float<class_float>` db  **)** |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_max_db<class_AudioStreamPlayer3D_set_max_db>`  **(** :ref:`float<class_float>` max_db  **)**                                                         |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_max_distance<class_AudioStreamPlayer3D_set_max_distance>`  **(** :ref:`float<class_float>` metres  **)**                                             |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_out_of_range_mode<class_AudioStreamPlayer3D_set_out_of_range_mode>`  **(** :ref:`int<class_int>` mode  **)**                                         |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_stream<class_AudioStreamPlayer3D_set_stream>`  **(** :ref:`AudioStream<class_audiostream>` stream  **)**                                             |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_unit_db<class_AudioStreamPlayer3D_set_unit_db>`  **(** :ref:`float<class_float>` unit_db  **)**                                                      |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_unit_size<class_AudioStreamPlayer3D_set_unit_size>`  **(** :ref:`float<class_float>` unit_size  **)**                                                |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`stop<class_AudioStreamPlayer3D_stop>`  **(** **)**                                                                                                       |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`get_area_mask<class_AudioStreamPlayer3D_get_area_mask>` **(** **)** const                                                                              |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_attenuation_filter_cutoff_hz<class_AudioStreamPlayer3D_get_attenuation_filter_cutoff_hz>` **(** **)** const                                        |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_attenuation_filter_db<class_AudioStreamPlayer3D_get_attenuation_filter_db>` **(** **)** const                                                      |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`get_attenuation_model<class_AudioStreamPlayer3D_get_attenuation_model>` **(** **)** const                                                              |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`            | :ref:`get_bus<class_AudioStreamPlayer3D_get_bus>` **(** **)** const                                                                                          |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`get_doppler_tracking<class_AudioStreamPlayer3D_get_doppler_tracking>` **(** **)** const                                                                |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_emission_angle<class_AudioStreamPlayer3D_get_emission_angle>` **(** **)** const                                                                    |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_emission_angle_filter_attenuation_db<class_AudioStreamPlayer3D_get_emission_angle_filter_attenuation_db>` **(** **)** const                        |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_max_db<class_AudioStreamPlayer3D_get_max_db>` **(** **)** const                                                                                    |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_max_distance<class_AudioStreamPlayer3D_get_max_distance>` **(** **)** const                                                                        |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`get_out_of_range_mode<class_AudioStreamPlayer3D_get_out_of_range_mode>` **(** **)** const                                                              |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_playback_position<class_AudioStreamPlayer3D_get_playback_position>` **(** **)**                                                                    |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`AudioStream<class_audiostream>`  | :ref:`get_stream<class_AudioStreamPlayer3D_get_stream>` **(** **)** const                                                                                    |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_unit_db<class_AudioStreamPlayer3D_get_unit_db>` **(** **)** const                                                                                  |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_unit_size<class_AudioStreamPlayer3D_get_unit_size>` **(** **)** const                                                                              |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`is_autoplay_enabled<class_AudioStreamPlayer3D_is_autoplay_enabled>` **(** **)**                                                                        |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`is_emission_angle_enabled<class_AudioStreamPlayer3D_is_emission_angle_enabled>` **(** **)** const                                                      |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`is_playing<class_AudioStreamPlayer3D_is_playing>` **(** **)** const                                                                                    |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`play<class_AudioStreamPlayer3D_play>` **(** :ref:`float<class_float>` from_position=0.0 **)**                                                          |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`seek<class_AudioStreamPlayer3D_seek>` **(** :ref:`float<class_float>` to_position **)**                                                                |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_area_mask<class_AudioStreamPlayer3D_set_area_mask>` **(** :ref:`int<class_int>` mask **)**                                                         |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_attenuation_filter_cutoff_hz<class_AudioStreamPlayer3D_set_attenuation_filter_cutoff_hz>` **(** :ref:`float<class_float>` degrees **)**            |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_attenuation_filter_db<class_AudioStreamPlayer3D_set_attenuation_filter_db>` **(** :ref:`float<class_float>` db **)**                               |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_attenuation_model<class_AudioStreamPlayer3D_set_attenuation_model>` **(** :ref:`int<class_int>` model **)**                                        |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_autoplay<class_AudioStreamPlayer3D_set_autoplay>` **(** :ref:`bool<class_bool>` enable **)**                                                       |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_bus<class_AudioStreamPlayer3D_set_bus>` **(** :ref:`String<class_string>` bus **)**                                                                |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_doppler_tracking<class_AudioStreamPlayer3D_set_doppler_tracking>` **(** :ref:`int<class_int>` mode **)**                                           |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_emission_angle<class_AudioStreamPlayer3D_set_emission_angle>` **(** :ref:`float<class_float>` degrees **)**                                        |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_emission_angle_enabled<class_AudioStreamPlayer3D_set_emission_angle_enabled>` **(** :ref:`bool<class_bool>` enabled **)**                          |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_emission_angle_filter_attenuation_db<class_AudioStreamPlayer3D_set_emission_angle_filter_attenuation_db>` **(** :ref:`float<class_float>` db **)** |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_max_db<class_AudioStreamPlayer3D_set_max_db>` **(** :ref:`float<class_float>` max_db **)**                                                         |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_max_distance<class_AudioStreamPlayer3D_set_max_distance>` **(** :ref:`float<class_float>` metres **)**                                             |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_out_of_range_mode<class_AudioStreamPlayer3D_set_out_of_range_mode>` **(** :ref:`int<class_int>` mode **)**                                         |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_stream<class_AudioStreamPlayer3D_set_stream>` **(** :ref:`AudioStream<class_audiostream>` stream **)**                                             |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_unit_db<class_AudioStreamPlayer3D_set_unit_db>` **(** :ref:`float<class_float>` unit_db **)**                                                      |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_unit_size<class_AudioStreamPlayer3D_set_unit_size>` **(** :ref:`float<class_float>` unit_size **)**                                                |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`stop<class_AudioStreamPlayer3D_stop>` **(** **)**                                                                                                      |
++----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
 
 .. _class_AudioStreamPlayer3D_finished:
 
--  **finished**  **(** **)**
+- **finished** **(** **)**
 
 Fires when the audio stops playing.
 
@@ -199,157 +199,157 @@ Member Function Description
 
 .. _class_AudioStreamPlayer3D_get_area_mask:
 
-- :ref:`int<class_int>`  **get_area_mask**  **(** **)** const
+- :ref:`int<class_int>` **get_area_mask** **(** **)** const
 
 .. _class_AudioStreamPlayer3D_get_attenuation_filter_cutoff_hz:
 
-- :ref:`float<class_float>`  **get_attenuation_filter_cutoff_hz**  **(** **)** const
+- :ref:`float<class_float>` **get_attenuation_filter_cutoff_hz** **(** **)** const
 
 .. _class_AudioStreamPlayer3D_get_attenuation_filter_db:
 
-- :ref:`float<class_float>`  **get_attenuation_filter_db**  **(** **)** const
+- :ref:`float<class_float>` **get_attenuation_filter_db** **(** **)** const
 
 .. _class_AudioStreamPlayer3D_get_attenuation_model:
 
-- :ref:`int<class_int>`  **get_attenuation_model**  **(** **)** const
+- :ref:`int<class_int>` **get_attenuation_model** **(** **)** const
 
 .. _class_AudioStreamPlayer3D_get_bus:
 
-- :ref:`String<class_string>`  **get_bus**  **(** **)** const
+- :ref:`String<class_string>` **get_bus** **(** **)** const
 
 .. _class_AudioStreamPlayer3D_get_doppler_tracking:
 
-- :ref:`int<class_int>`  **get_doppler_tracking**  **(** **)** const
+- :ref:`int<class_int>` **get_doppler_tracking** **(** **)** const
 
 .. _class_AudioStreamPlayer3D_get_emission_angle:
 
-- :ref:`float<class_float>`  **get_emission_angle**  **(** **)** const
+- :ref:`float<class_float>` **get_emission_angle** **(** **)** const
 
 .. _class_AudioStreamPlayer3D_get_emission_angle_filter_attenuation_db:
 
-- :ref:`float<class_float>`  **get_emission_angle_filter_attenuation_db**  **(** **)** const
+- :ref:`float<class_float>` **get_emission_angle_filter_attenuation_db** **(** **)** const
 
 .. _class_AudioStreamPlayer3D_get_max_db:
 
-- :ref:`float<class_float>`  **get_max_db**  **(** **)** const
+- :ref:`float<class_float>` **get_max_db** **(** **)** const
 
 .. _class_AudioStreamPlayer3D_get_max_distance:
 
-- :ref:`float<class_float>`  **get_max_distance**  **(** **)** const
+- :ref:`float<class_float>` **get_max_distance** **(** **)** const
 
 .. _class_AudioStreamPlayer3D_get_out_of_range_mode:
 
-- :ref:`int<class_int>`  **get_out_of_range_mode**  **(** **)** const
+- :ref:`int<class_int>` **get_out_of_range_mode** **(** **)** const
 
 .. _class_AudioStreamPlayer3D_get_playback_position:
 
-- :ref:`float<class_float>`  **get_playback_position**  **(** **)**
+- :ref:`float<class_float>` **get_playback_position** **(** **)**
 
 Returns the position in the :ref:`AudioStream<class_audiostream>`.
 
 .. _class_AudioStreamPlayer3D_get_stream:
 
-- :ref:`AudioStream<class_audiostream>`  **get_stream**  **(** **)** const
+- :ref:`AudioStream<class_audiostream>` **get_stream** **(** **)** const
 
 .. _class_AudioStreamPlayer3D_get_unit_db:
 
-- :ref:`float<class_float>`  **get_unit_db**  **(** **)** const
+- :ref:`float<class_float>` **get_unit_db** **(** **)** const
 
 .. _class_AudioStreamPlayer3D_get_unit_size:
 
-- :ref:`float<class_float>`  **get_unit_size**  **(** **)** const
+- :ref:`float<class_float>` **get_unit_size** **(** **)** const
 
 .. _class_AudioStreamPlayer3D_is_autoplay_enabled:
 
-- :ref:`bool<class_bool>`  **is_autoplay_enabled**  **(** **)**
+- :ref:`bool<class_bool>` **is_autoplay_enabled** **(** **)**
 
 .. _class_AudioStreamPlayer3D_is_emission_angle_enabled:
 
-- :ref:`bool<class_bool>`  **is_emission_angle_enabled**  **(** **)** const
+- :ref:`bool<class_bool>` **is_emission_angle_enabled** **(** **)** const
 
 .. _class_AudioStreamPlayer3D_is_playing:
 
-- :ref:`bool<class_bool>`  **is_playing**  **(** **)** const
+- :ref:`bool<class_bool>` **is_playing** **(** **)** const
 
 .. _class_AudioStreamPlayer3D_play:
 
-- void  **play**  **(** :ref:`float<class_float>` from_position=0.0  **)**
+- void **play** **(** :ref:`float<class_float>` from_position=0.0 **)**
 
 Plays the audio from the given position 'from_position', in seconds.
 
 .. _class_AudioStreamPlayer3D_seek:
 
-- void  **seek**  **(** :ref:`float<class_float>` to_position  **)**
+- void **seek** **(** :ref:`float<class_float>` to_position **)**
 
 Sets the position from which audio will be played, in seconds.
 
 .. _class_AudioStreamPlayer3D_set_area_mask:
 
-- void  **set_area_mask**  **(** :ref:`int<class_int>` mask  **)**
+- void **set_area_mask** **(** :ref:`int<class_int>` mask **)**
 
 .. _class_AudioStreamPlayer3D_set_attenuation_filter_cutoff_hz:
 
-- void  **set_attenuation_filter_cutoff_hz**  **(** :ref:`float<class_float>` degrees  **)**
+- void **set_attenuation_filter_cutoff_hz** **(** :ref:`float<class_float>` degrees **)**
 
 .. _class_AudioStreamPlayer3D_set_attenuation_filter_db:
 
-- void  **set_attenuation_filter_db**  **(** :ref:`float<class_float>` db  **)**
+- void **set_attenuation_filter_db** **(** :ref:`float<class_float>` db **)**
 
 .. _class_AudioStreamPlayer3D_set_attenuation_model:
 
-- void  **set_attenuation_model**  **(** :ref:`int<class_int>` model  **)**
+- void **set_attenuation_model** **(** :ref:`int<class_int>` model **)**
 
 .. _class_AudioStreamPlayer3D_set_autoplay:
 
-- void  **set_autoplay**  **(** :ref:`bool<class_bool>` enable  **)**
+- void **set_autoplay** **(** :ref:`bool<class_bool>` enable **)**
 
 .. _class_AudioStreamPlayer3D_set_bus:
 
-- void  **set_bus**  **(** :ref:`String<class_string>` bus  **)**
+- void **set_bus** **(** :ref:`String<class_string>` bus **)**
 
 .. _class_AudioStreamPlayer3D_set_doppler_tracking:
 
-- void  **set_doppler_tracking**  **(** :ref:`int<class_int>` mode  **)**
+- void **set_doppler_tracking** **(** :ref:`int<class_int>` mode **)**
 
 .. _class_AudioStreamPlayer3D_set_emission_angle:
 
-- void  **set_emission_angle**  **(** :ref:`float<class_float>` degrees  **)**
+- void **set_emission_angle** **(** :ref:`float<class_float>` degrees **)**
 
 .. _class_AudioStreamPlayer3D_set_emission_angle_enabled:
 
-- void  **set_emission_angle_enabled**  **(** :ref:`bool<class_bool>` enabled  **)**
+- void **set_emission_angle_enabled** **(** :ref:`bool<class_bool>` enabled **)**
 
 .. _class_AudioStreamPlayer3D_set_emission_angle_filter_attenuation_db:
 
-- void  **set_emission_angle_filter_attenuation_db**  **(** :ref:`float<class_float>` db  **)**
+- void **set_emission_angle_filter_attenuation_db** **(** :ref:`float<class_float>` db **)**
 
 .. _class_AudioStreamPlayer3D_set_max_db:
 
-- void  **set_max_db**  **(** :ref:`float<class_float>` max_db  **)**
+- void **set_max_db** **(** :ref:`float<class_float>` max_db **)**
 
 .. _class_AudioStreamPlayer3D_set_max_distance:
 
-- void  **set_max_distance**  **(** :ref:`float<class_float>` metres  **)**
+- void **set_max_distance** **(** :ref:`float<class_float>` metres **)**
 
 .. _class_AudioStreamPlayer3D_set_out_of_range_mode:
 
-- void  **set_out_of_range_mode**  **(** :ref:`int<class_int>` mode  **)**
+- void **set_out_of_range_mode** **(** :ref:`int<class_int>` mode **)**
 
 .. _class_AudioStreamPlayer3D_set_stream:
 
-- void  **set_stream**  **(** :ref:`AudioStream<class_audiostream>` stream  **)**
+- void **set_stream** **(** :ref:`AudioStream<class_audiostream>` stream **)**
 
 .. _class_AudioStreamPlayer3D_set_unit_db:
 
-- void  **set_unit_db**  **(** :ref:`float<class_float>` unit_db  **)**
+- void **set_unit_db** **(** :ref:`float<class_float>` unit_db **)**
 
 .. _class_AudioStreamPlayer3D_set_unit_size:
 
-- void  **set_unit_size**  **(** :ref:`float<class_float>` unit_size  **)**
+- void **set_unit_size** **(** :ref:`float<class_float>` unit_size **)**
 
 .. _class_AudioStreamPlayer3D_stop:
 
-- void  **stop**  **(** **)**
+- void **stop** **(** **)**
 
 Stops the audio.
 

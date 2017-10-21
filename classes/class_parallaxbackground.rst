@@ -19,31 +19,31 @@ A node used to create a parallax scrolling background.
 Member Functions
 ----------------
 
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_limit_begin<class_ParallaxBackground_get_limit_begin>`  **(** **)** const                                            |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_limit_end<class_ParallaxBackground_get_limit_end>`  **(** **)** const                                                |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_scroll_base_offset<class_ParallaxBackground_get_scroll_base_offset>`  **(** **)** const                              |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_scroll_base_scale<class_ParallaxBackground_get_scroll_base_scale>`  **(** **)** const                                |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_scroll_offset<class_ParallaxBackground_get_scroll_offset>`  **(** **)** const                                        |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_ignore_camera_zoom<class_ParallaxBackground_is_ignore_camera_zoom>`  **(** **)**                                      |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_ignore_camera_zoom<class_ParallaxBackground_set_ignore_camera_zoom>`  **(** :ref:`bool<class_bool>` ignore  **)**    |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_limit_begin<class_ParallaxBackground_set_limit_begin>`  **(** :ref:`Vector2<class_vector2>` ofs  **)**               |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_limit_end<class_ParallaxBackground_set_limit_end>`  **(** :ref:`Vector2<class_vector2>` ofs  **)**                   |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_scroll_base_offset<class_ParallaxBackground_set_scroll_base_offset>`  **(** :ref:`Vector2<class_vector2>` ofs  **)** |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_scroll_base_scale<class_ParallaxBackground_set_scroll_base_scale>`  **(** :ref:`Vector2<class_vector2>` scale  **)** |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_scroll_offset<class_ParallaxBackground_set_scroll_offset>`  **(** :ref:`Vector2<class_vector2>` ofs  **)**           |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_limit_begin<class_ParallaxBackground_get_limit_begin>` **(** **)** const                                           |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_limit_end<class_ParallaxBackground_get_limit_end>` **(** **)** const                                               |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_scroll_base_offset<class_ParallaxBackground_get_scroll_base_offset>` **(** **)** const                             |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_scroll_base_scale<class_ParallaxBackground_get_scroll_base_scale>` **(** **)** const                               |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_scroll_offset<class_ParallaxBackground_get_scroll_offset>` **(** **)** const                                       |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_ignore_camera_zoom<class_ParallaxBackground_is_ignore_camera_zoom>` **(** **)**                                     |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_ignore_camera_zoom<class_ParallaxBackground_set_ignore_camera_zoom>` **(** :ref:`bool<class_bool>` ignore **)**    |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_limit_begin<class_ParallaxBackground_set_limit_begin>` **(** :ref:`Vector2<class_vector2>` ofs **)**               |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_limit_end<class_ParallaxBackground_set_limit_end>` **(** :ref:`Vector2<class_vector2>` ofs **)**                   |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_scroll_base_offset<class_ParallaxBackground_set_scroll_base_offset>` **(** :ref:`Vector2<class_vector2>` ofs **)** |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_scroll_base_scale<class_ParallaxBackground_set_scroll_base_scale>` **(** :ref:`Vector2<class_vector2>` scale **)** |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_scroll_offset<class_ParallaxBackground_set_scroll_offset>` **(** :ref:`Vector2<class_vector2>` ofs **)**           |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -83,70 +83,70 @@ Member Function Description
 
 .. _class_ParallaxBackground_get_limit_begin:
 
-- :ref:`Vector2<class_vector2>`  **get_limit_begin**  **(** **)** const
+- :ref:`Vector2<class_vector2>` **get_limit_begin** **(** **)** const
 
 Return the beginning limit.
 
 .. _class_ParallaxBackground_get_limit_end:
 
-- :ref:`Vector2<class_vector2>`  **get_limit_end**  **(** **)** const
+- :ref:`Vector2<class_vector2>` **get_limit_end** **(** **)** const
 
 Return the ending limit.
 
 .. _class_ParallaxBackground_get_scroll_base_offset:
 
-- :ref:`Vector2<class_vector2>`  **get_scroll_base_offset**  **(** **)** const
+- :ref:`Vector2<class_vector2>` **get_scroll_base_offset** **(** **)** const
 
 Return the base offset.
 
 .. _class_ParallaxBackground_get_scroll_base_scale:
 
-- :ref:`Vector2<class_vector2>`  **get_scroll_base_scale**  **(** **)** const
+- :ref:`Vector2<class_vector2>` **get_scroll_base_scale** **(** **)** const
 
 Return the base motion scale.
 
 .. _class_ParallaxBackground_get_scroll_offset:
 
-- :ref:`Vector2<class_vector2>`  **get_scroll_offset**  **(** **)** const
+- :ref:`Vector2<class_vector2>` **get_scroll_offset** **(** **)** const
 
 .. _class_ParallaxBackground_is_ignore_camera_zoom:
 
-- :ref:`bool<class_bool>`  **is_ignore_camera_zoom**  **(** **)**
+- :ref:`bool<class_bool>` **is_ignore_camera_zoom** **(** **)**
 
 Return ignoring camera zoom.
 
 .. _class_ParallaxBackground_set_ignore_camera_zoom:
 
-- void  **set_ignore_camera_zoom**  **(** :ref:`bool<class_bool>` ignore  **)**
+- void **set_ignore_camera_zoom** **(** :ref:`bool<class_bool>` ignore **)**
 
 Set to true for all child :ref:`ParallaxLayer<class_parallaxlayer>` nodes to not be affected by the zoom level of the camera.
 
 .. _class_ParallaxBackground_set_limit_begin:
 
-- void  **set_limit_begin**  **(** :ref:`Vector2<class_vector2>` ofs  **)**
+- void **set_limit_begin** **(** :ref:`Vector2<class_vector2>` ofs **)**
 
 Set the left and top limits in pixels for scrolling to begin. If the camera is outside of this limit the background will not continue to scroll. If an axis is greater than or equal to the corresponding axis of limit_end, then it will not limit scrolling for that axis.
 
 .. _class_ParallaxBackground_set_limit_end:
 
-- void  **set_limit_end**  **(** :ref:`Vector2<class_vector2>` ofs  **)**
+- void **set_limit_end** **(** :ref:`Vector2<class_vector2>` ofs **)**
 
 Set the right and bottom limits in pixels for scrolling to end. If the camera is outside of this limit the background will not continue to scroll. If an axis is less than or equal to the corresponding axis of limit_begin, then it will not limit scrolling for that axis.
 
 .. _class_ParallaxBackground_set_scroll_base_offset:
 
-- void  **set_scroll_base_offset**  **(** :ref:`Vector2<class_vector2>` ofs  **)**
+- void **set_scroll_base_offset** **(** :ref:`Vector2<class_vector2>` ofs **)**
 
 Set the base offset in pixels of all children :ref:`ParallaxLayer<class_parallaxlayer>` nodes.
 
 .. _class_ParallaxBackground_set_scroll_base_scale:
 
-- void  **set_scroll_base_scale**  **(** :ref:`Vector2<class_vector2>` scale  **)**
+- void **set_scroll_base_scale** **(** :ref:`Vector2<class_vector2>` scale **)**
 
 Set the base motion scale of all children :ref:`ParallaxLayer<class_parallaxlayer>` nodes.
 
 .. _class_ParallaxBackground_set_scroll_offset:
 
-- void  **set_scroll_offset**  **(** :ref:`Vector2<class_vector2>` ofs  **)**
+- void **set_scroll_offset** **(** :ref:`Vector2<class_vector2>` ofs **)**
 
 
