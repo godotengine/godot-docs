@@ -7,12 +7,13 @@ Intro
 In this tutorial you will connect a character to a life bar and animate
 the health loss.
 
-.. figure:: img/final_result.gif
-   :alt: Here's what you'll create: the bar and the counter animate when
+.. figure:: img/lifebar_tutorial_final_result.gif
+
+   Here's what you'll create: the bar and the counter animate when
    the character takes a hit. They fade when it dies.
 
-   Here's what you'll create: the bar and the counter animate when the
-   character takes a hit. They fade when it dies.
+Here's what you'll create: the bar and the counter animate when the
+character takes a hit. They fade when it dies.
 
 You will learn:
 
@@ -51,8 +52,6 @@ To do this, we will use **signals**.
 
 .. note::
 
-::
-
     Signals are Godot's version of the Observer pattern. They allow us to send out some message. Other nodes can connect to the object that **emits** the signal and receive the information. It's a powerful tool we use a lot for User Interface and achievement systems. You don't want to use them everywhere though. Connecting two nodes adds some coupling between them. When there's a lot of connections, they become hard to manage.
     For more information on check out the [ signals video tutorial ](https://youtu.be/l0BkQxF7X3E) on GDquest.
 
@@ -77,15 +76,12 @@ anything.
 
 .. note::
 
-::
-
     This is typical of how you'd code a game: you implement the core gameplay first, handle the player's death, and only then you'll add the interface. That's because the UI listens to what's happening in the game. So it can't work if other systems aren't in place yet.
     If you design the UI before you prototype and test the gameplay, chances are it won't work well and you'll have to re-create it from scratch.
 
 The scene contains a background sprite, a GUI, and two characters.
 
-.. figure:: img/life_bar_step_tut_LevelMockup_scene_tree.png
-   :alt: The scene tree, with the GUI scene set to display its children
+.. figure:: img/lifebar_tutorial_life_bar_step_tut_LevelMockup_scene_tree.png
 
    The scene tree, with the GUI scene set to display its children
 
@@ -107,12 +103,10 @@ scene:
 
 .. note::
 
-::
-
     The project uses a simple organisation that works for game jams and tiny games.
     At the root of the project, in the `res://` folder, you will find the `LevelMockup`. That's the main game scene and the one we will work with. All the components that make up the game are in the `scenes/` folder. The `assets/` folder contains the game sprites and the font for the HP counter. In the `scripts/` folder you will find the enemy, the player, and the GUI controller scripts.
     Click the edit scene icon to the right of the node in the scene tree to open the scene in the editor. You'll see the LifeBar and EnergyBar are sub-scenes themselves. You can also right click on the `GUI` node and activate the `Editable Children` checkbox at the bottom of the drop-down menu.
-    ![The Player scene with Editable Children checked](img/Player_with_editable_children_on.png)
+    .. image:: img/lifebar_tutorial_Player_with_editable_children_on.png
 
 Set up the Lifebar with the Player's max\_health
 ------------------------------------------------
@@ -130,10 +124,8 @@ step is thus to tell the ``GUI`` what the green character's
 
 .. tip::
 
-::
-
     The bar, a `TextureProgress`, has a `max_value` of `100` by default. If you don't need to display the character's health with a number, you don't need to change its `max_value` property. You send a percentage from the `Player` to the `GUI` instead:  `health / max_health * 100`.
-    ![TextureProgress's Range section shows a max_value of 100 by default](img/TextureProgress_default_max_value.png)
+    .. image:: img/lifebar_tutorial_TextureProgress_default_max_value.png
 
 Click the script icon to the right of the ``GUI`` in the Scene dock to
 open its script. In the ``_ready`` function, we're going to store the
@@ -169,10 +161,8 @@ There are two reasons:
 
 .. note::
 
-::
-
     When you open a scene in the game, Godot creates nodes one by one, following the order in your Scene dock, from top to bottom. `GUI` and `Player` are not part of the same node branch. To make sure they both exist when we access each other, we have to use the `_ready` function. Godot calls `_ready` right after it loaded all nodes, before the game starts. It's the perfect function to set everything up and prepare the game session.
-    Learn more about _ready: :doc:`step_by_step/scripting_continued`
+    Learn more about _ready: :doc:`scripting_continued`
 
 Update health with a signal when the player takes a hit
 -------------------------------------------------------
@@ -181,8 +171,6 @@ Our GUI is ready to receive the ``health`` value updates from the
 ``Player``. To achieve this we're going to use **signals**.
 
 .. note::
-
-::
 
     There are many useful built-in signals like `enter_tree` and `exit_tree`, that all nodes emit when they are respectively created and destroyed. You can also create your own using the `signal` keyword. On the `Player` node, you'll find two signals we created for you: `died` and `health_changed`.
 
@@ -204,8 +192,6 @@ of information. And you will update the state of your connected node
 
 .. note::
 
-::
-
     The Observer pattern, that signals derive from, still adds a bit of coupling between node branches. But it's generally lighter and more secure than accessing nodes directly to communicate between two separate classes. It can be okay for a parent node to get values from its children. But you'll want to favor signals if you're working with two separate branches.
     Read Game Programming Patterns for more information on the [ Observer pattern ](http://gameprogrammingpatterns.com/observer.html).
     The [ full book ](http://gameprogrammingpatterns.com/contents.html) is available online for free.
@@ -221,8 +207,7 @@ The first section lists custom signals defined in ``player.GD``:
    moment to hide the UI.
 -  ``health_changed`` is emitted when the character got hit.
 
-.. figure:: img/health_changed_signal.png
-   :alt: We're connecting to the took\_damage signal
+.. figure:: img/lifebar_tutorial_health_changed_signal.png
 
    We're connecting to the took\_damage signal
 
@@ -234,14 +219,11 @@ signal. We already took care of it in ``player.GD``. In general I
 recommend not to add too many arguments using this window as they're
 less convenient than doing it from the code.
 
-.. figure:: img/connect_signal_window_health_changed.png
-   :alt: The Connect Signal window with the GUI node selected
+.. figure:: img/lifebar_tutorial_connect_signal_window_health_changed.png
 
    The Connect Signal window with the GUI node selected
 
 .. tip::
-
-::
 
     You can optionally connect nodes from the code. But doing it from the editor has two advantages:
 
@@ -258,13 +240,14 @@ at the bottom of the window. Godot creates the method inside the ``GUI``
 node. The script editor opens with the cursor inside a new
 ``_on_player_health_changed`` function.
 
-.. note:: When you connect nodes from the editor, Godot generates a
-method name with the following pattern: ``_on_EmitterName_signal_name``.
-If you wrote the method already, the "Make Function" option will keep
-it. You may replace the name with anything you'd like.
+.. note:: 
 
-.. figure:: img/godot_generates_signal_callback.png
-   :alt: Godot writes the callback method for you and takes you to it
+   When you connect nodes from the editor, Godot generates a
+   method name with the following pattern: ``_on_EmitterName_signal_name``.
+   If you wrote the method already, the "Make Function" option will keep
+   it. You may replace the name with anything you'd like.
+
+.. figure:: img/lifebar_tutorial_godot_generates_signal_callback.png
 
    Godot writes the callback method for you and takes you to it
 
@@ -277,9 +260,7 @@ its current ``health`` alongside it. Your code should look like:
     func _on_Player_health_changed(player_health):
         pass
 
-.. figure:: img/player_gd_emits_health_changed_code.png
-   :alt: In Player.gd, when the Player emits the took\_damage signal, it
-   also sends its health value
+.. figure:: img/lifebar_tutorial_player_gd_emits_health_changed_code.png
 
    In Player.gd, when the Player emits the took\_damage signal, it also
    sends its health value
@@ -288,8 +269,6 @@ Inside ``_on_Player_health_changed`` let's call a second function called
 ``update_health`` and pass it the ``player_health`` variable.
 
 .. note::
-
-::
 
     We could directly update the health value on `LifeBar` and `Number`. There are two reasons to use this method instead:
 
@@ -315,18 +294,18 @@ This method needs to:
         number_label.text = str(new_value)
         bar.value = new_value
 
-.. tip:: ``str`` is a built-in function that converts about any value to
-text. ``Number``'s ``text`` property requires a string so we can't
-assign it to ``new_value`` directly
+.. tip:: 
+
+    ``str`` is a built-in function that converts about any value to
+    text. ``Number``'s ``text`` property requires a string so we can't
+    assign it to ``new_value`` directly
 
 Also call ``update_health`` at the end of the ``_ready`` function to
 initialize the ``Number`` node's ``text`` with the right value at the
 start of the game. Press F5 to test the game: the life bar update with
 every attack!
 
-.. figure:: img/LifeBar_health_update_no_anim.gif
-   :alt: Both the Number node and the TextureProgress update when the
-   Player takes a hit
+.. figure:: img/lifebar_tutorial_LifeBar_health_update_no_anim.gif
 
    Both the Number node and the TextureProgress update when the Player
    takes a hit
@@ -416,8 +395,6 @@ active. Add this code after the last line:
 
 .. note::
 
-::
-
     Although we could animate the `health` property on the `Player`, we really shouldn't. Characters should lose life instantly when they get hit. It makes it a lot easier to manage their state, like to know when one died. You always want to store animations in a separate data container or node. The `tween` node is perfect for code-controlled animations. For hand-made animations, check out `AnimationPlayer`.
 
 Assign the animated\_health to the LifeBar
@@ -448,16 +425,13 @@ use the ``_process`` method to animate it. Let's now update the
 
 .. note::
 
-::
-
     `number_label` and `bar` are variables that store references to the `Number` and `TextureProgress` nodes.
 
 Play the game to see the bar animate smoothly. But the text displays
 decimal number and looks like a mess. And considering the style of the
 game, it'd be nice for the life bar to animate in a choppier fashion.
 
-.. figure:: img/number_animation_messed_up.gif
-   :alt: The animation is smooth but the number is broken
+.. figure:: img/lifebar_tutorial_number_animation_messed_up.gif
 
    The animation is smooth but the number is broken
 
@@ -475,9 +449,7 @@ local variable named ``round_value`` to store the rounded
 
 Try the game again to see a nice blocky animation.
 
-.. figure:: img/number_animation_working.gif
-   :alt: By rounding out animated\_health we hit two birds with one
-   stone
+.. figure:: img/lifebar_tutorial_number_animation_working.gif
 
    By rounding out animated\_health we hit two birds with one stone
 
@@ -503,8 +475,7 @@ Node tab next to the Inspector.
 
 Find the ``died`` signal, select it, and click the Connect button.
 
-.. figure:: img/player_died_signal_enemy_connected.png
-   :alt: The signal should already have the Enemy connected to it
+.. figure:: img/lifebar_tutorial_player_died_signal_enemy_connected.png
 
    The signal should already have the Enemy connected to it
 
@@ -514,14 +485,11 @@ Path to Node should be ``../../GUI`` and the Method in Node should show
 at the bottom of the window. This will take you to the ``GUI.gd`` file
 in the Script Workspace.
 
-.. figure:: img/player_died_connecting_signal_window.png
-   :alt: You should get these values in the Connecting Signal window
+.. figure:: img/lifebar_tutorial_player_died_connecting_signal_window.png
 
    You should get these values in the Connecting Signal window
 
 .. note::
-
-::
 
     You should see a pattern by now: every time the GUI needs a new piece of information, we emit a new signal. Use them wisely: the more connections you add, the harder they are to track.
 
@@ -530,8 +498,6 @@ property. ``modulate`` is a ``Color`` that multiplies the colors of our
 textures.
 
 .. note::
-
-::
 
     `modulate` comes from the `CanvasItem` class, All 2D and UI nodes inherit from it. It lets you toggle the visibility of the node, assign a shader to it, and modify it using a color with `modulate`.
 
@@ -578,14 +544,11 @@ method:
 
 And that is it. You may now play the game to see the final result!
 
-.. figure:: img/final_result.gif
-   :alt: The final result. Congratulations for getting there!
+.. figure:: img/lifebar_tutorial_final_result.gif
 
    The final result. Congratulations for getting there!
 
 .. note::
-
-::
 
     Using the exact same techniques, you can change the color of the bar when the Player gets poisoned, turn the bar red when its health drops low, shake the UI when he takes a critical hit... the principle is the same: emit a signal to forward the information from the `Player` to the `GUI` and let the `GUI` process it.
 
