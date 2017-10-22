@@ -124,7 +124,7 @@ Returns the position of the vertex "idx". If the index is out of bounds, the fun
 
 - :ref:`Vector2<class_vector2>`  **interpolate**  **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` t  **)** const
 
-Returns the position between the vertex "idx" and the vertex "idx"+1, where "t" controls if the point is the first vertex (t = 0.0), the last vertex (t = 1.0), or in between. Values of "t" outside the range (0.0 >= t  <=1) give strange, but predictable results.
+Returns the position between the vertex "idx" and the vertex "idx"+1, where "t" controls if the point is the first vertex (t = 0.0), the second vertex (t = 1.0), or in between. Values of "t" outside the range (0.0 >= t <= 1) give strange, but predictable results.
 
 If "idx" is out of bounds it is truncated to the first or last vertex, and "t" is ignored. If the curve has no points, the function sends an error to the console, and returns (0, 0).
 
