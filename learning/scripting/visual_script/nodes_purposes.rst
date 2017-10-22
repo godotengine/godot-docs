@@ -7,8 +7,8 @@ Nodes and Terminology
 ----------------------
 
 Before continuing, it must be noted that the *Node* terminology needs to be used with care. 
-When referring to *Visual Script Nodes* (or generally just *Nodes*) this text will refer to the little boxes you connect with lines, which are part of a graph.
-When referring to just *Scene Nodes*, it is implied that the elements that make up a Scene are being referred, which are part of a tree. Their naming is similar, but their function is different.
+When referring to *Visual Script Nodes* (or generally *Nodes*) this text will refer to the little boxes you connect with lines, which are part of a graph.
+When referring to *Scene Nodes*, it is implied that the elements that make up a Scene are being referred, which are part of a tree. Their naming is similar but their function is different.
 When referring to *Node* here, it will be implied that a *Visual Script Node* is referred to unless indicated otherwise.
 
 .. image:: img/visual_script16.png
@@ -49,7 +49,7 @@ Not every *Node* has *Sequence Ports*. In fact, most do not.
 *Data Ports* ports contain typed values. Types can be any regular Godot types, 
 such as a boolean, an integer, a string, a Vector3, an array, any Object or Scene Node, etc. 
 A *Data Port* on the right side of a node is considered an output, while, 
-a port on the left side is an input. Connecting them allows information to transfer to the next node. 
+a port on the left side is an input. Connecting them allows information to flow to the next node. 
 
 Not all *Data Port* types are compatible and will allow connections, though.
 Pay special attention to colors and icons, as each type has a different representation:
@@ -97,7 +97,7 @@ Accessing Scene Nodes
 ~~~~~~~~~~~~~~~~~~~~~
 
 One of the most common tasks is accessing Scene Tree Nodes (again, not to mistake with *Visual Script Nodes*).
-Dragging from the Scene Tree and dropping into the canvas, by default, will ask you to *call a method* (sometimes referred to as *member function*) on this node. 
+Dragging from the Scene Tree and dropping into the canvas will ask you to *call a method* (sometimes referred to as *member function*) on this node. 
 
 .. image:: img/visual_script19.png
 
@@ -115,7 +115,7 @@ Care must be taken that this only works if the scene being edited contains your 
 Accessing Scene Node Properties
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This will be by far the most common way to edit *Scene Nodes* in Visual Scripting. Simply select a *Scene Node* from the *Scene Tree*, go to the inspector, find *The Name* of the property you want to edit (hint, *not* the value!) and drag it to the canvas:
+This is the most common way to edit *Scene Nodes* in Visual Scripting. Select a *Scene Node* from the *Scene Tree*, go to the Inspector, find *the Name* of the property you want to edit (hint, *not* the value!) and drag it to the canvas:
 
 .. image:: img/visual_script21.png
 
@@ -133,14 +133,14 @@ In this case, the value can be read from a *Data Port*.
 Variables
 ~~~~~~~~~
 
-Variables are memory containers local to the script, which can hold a value. This value can be read from any of the functions of the script, or from other scripts via the method described in the previous step.
+Variables are memory containers local to the script which can hold a value. This value can be read from any of the functions of the script or from other scripts via the method described in the previous step.
 
-Adding a Variable is simple, just push the "Plus" Button on the *Variables* section of the members panel. Afterwards, doubleclick the new variable to rename it:
+To add a Variable, push the "+" button on the *Variables* section of the Members panel. Double-click the new variable to rename it:
 
 .. image:: img/visual_script23.png
 
 
-Right clicking the variable allows you to configure the type, as well as other properties:
+Right-clicking the variable allows you to configure its properties:
 
 .. image:: img/visual_script24.png
 
@@ -148,7 +148,7 @@ Right clicking the variable allows you to configure the type, as well as other p
 
 
 As it can be seen above, the type and initial value of the variable can be changed, as well as some property hints (@TODO, document this).
-Ticking the "Export" options makes the variable visible in the property editor when selecting the node. This also makes it available to other scripts via the method described in the previous step.
+Ticking the "Export" options makes the variable visible in the Inspector when selecting the node. This also makes it available to other scripts via the method described in the previous step.
 
 .. image:: img/visual_script28.png
 
@@ -166,17 +166,17 @@ Likewise, hold *Control* (*Command* on Mac) to drop a setter:
 Signals
 ~~~~~~~
 
-In the *Connecting Signals to a Function* item we have already learned about *Signals*. It is also possible to create your own signals in a script and use them. For this, just do the same steps you did for variables in the previous step, except for *Signals*:
+It is also possible to create your own signals in a script and use them. For this, do the same steps you did for variables in the previous step, except for *Signals*:
 
 .. image:: img/visual_script29.png
 
 
-A Signal can also be edited via right click menu to customize arguments:
+A signal can also be edited via right-click menu to customize its arguments:
 
 .. image:: img/visual_script30.png
 
 
-The signal you have just created will also show together with the other node signals, this allows you to eventually connect to it from another script from another *Scene Node*:
+The signal you have just created will appear in the Inspector along with the built-in node signals. This allows you to connect it from another script from another *Scene Node*:
 
 .. image:: img/visual_script31.png
 
@@ -198,10 +198,10 @@ Below the member panel, exists the list of all available node types:
 .. image:: img/visual_script33.png
 
 
-Once you're comfortable and familiar with them, the Ctrl-F (Command-F on Mac) is very useful for searching the list.
+Ctrl-F (Command-F on Mac) allows you to search the list.
 
-Any of them can be dragged to the scene. Remember that, unlike the nodes previously discussed (e.g. dragging a property
-from the inspector sets the context to the node being edited automatically), these are added without any "contextual" information, so this has to be done manually.
+Any of them can be dragged to the scene. Unlike nodes (e.g. dragging a property
+from the Inspector sets the context to the node being edited automatically), these are added without any "contextual" information, so this has to be done manually.
 
 .. image:: img/visual_script34.png
 
@@ -219,8 +219,7 @@ Most of the time they are integer or float.
 .. image:: img/visual_script36.png
 
 
-Of interest there are mainly three nodes. The first one is "Constant" which allows you to select any value of any type as constant, from an integer (42) to a String ("Hello!"). In general this node is not used that often because of default input
-values in *Data Ports*, but it's good to know it exists.
+The first one is "Constant" which allows you to select any value of any type as constant, from an integer (42) to a String ("Hello!"). In general this node is not used that often because of default input values in *Data Ports*, but it's good to know it exists.
 
 The second is the GlobalConstant node, which contains a long list of constants for global types in Godot. In there
 you can find some useful constants to refer to key names, joystick or mouse buttons, etc.
@@ -285,7 +284,7 @@ Self
 ^^^^
 
 In some rare ocassions, it may be desired to pass this Scene Node as argument. 
-It can be used to call functions and set/get properties, but it's easier to just drag nodes (or event he node itself that has the script) from the Scene Tree to the canvas for this.
+It can be used to call functions and set/get properties, or just drag nodes (or event the node itself that has the script) from the Scene Tree to the canvas for this.
 
 
 SceneTree
@@ -325,7 +324,7 @@ to top when selecting it. It can also be used to write text on it.
 Flow Control
 ~~~~~~~~~~~~
 
-Flow control nodes are all sequenced, and allow the execution to take different branches, usually depending on a
+Flow control nodes allow the execution to take different branches, usually depending on a
 given condition.
 
 .. image:: img/visual_script43.png
@@ -422,7 +421,7 @@ This is the generic calling node. It is rarely used directly but by dragging to 
 Constructors
 ^^^^^^^^^^^^
 
-These are all the functions needed to create Godot basic datatypes. If you need to, for example, create a Vector3 out of 3 floats, a constructor must be used.
+These are all the functions needed to create Godot basic datatypes. For example, If you need to create a Vector3 out of 3 floats, a constructor must be used.
 
 .. image:: img/visual_script44.png
 
