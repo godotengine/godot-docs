@@ -1,4 +1,8 @@
-In this tutorial, you will build two responsive UI (user interface)
+=======================
+ Design a title screen
+=======================
+
+In the next two tutorials, you will build two responsive UI (user interface)
 scenes step-by-step using the engine's UI system:
 
 1. A main menu
@@ -7,10 +11,10 @@ scenes step-by-step using the engine's UI system:
 You will learn how to design game UI efficiently, and how to use Godot's
 Control nodes. This page focuses on the visual part: everything you do
 from the editor. To learn how to code a life bar, 
-check out the corresponding tutorial.
+read :doc:`ui_game_user_interface`
+
 
 .. figure:: img/ui_main_menu_design_final_result.png
-   :alt: The GUI you're going to create
 
    The GUI you're going to create
 
@@ -18,7 +22,7 @@ Download the project files: :download:`ui_main_menu_design.zip <files/ui_main_me
 
 .. note: 
 
-    Read the ref:\ ``ui_design_guide`` first to learn how Godot’s UI system works
+    Read the :doc:`ui_introduction_to_the_ui_system` first to learn how Godot’s UI system works
 
 How to design your game UI
 --------------------------
@@ -32,7 +36,6 @@ Godot. You want to make sure the players can find their way around the
 interface using those placeholders.
 
 .. figure:: img/ui_design_rough.png
-   :alt: The UI's rough plan or mockup
 
    The UI's rough plan or mockup
 
@@ -70,8 +73,6 @@ contains all the files you'll need to follow along. You'll find all the
 sprites in the ``assets/main_menu`` folder.
 
 .. figure:: img/ui_main_menu_placeholder_assets.png
-   :alt: The files you'll find in Godot. The graphics look cleaner than
-   on the rough design, but they're still placeholders
 
    The files you'll find in Godot. The graphics look cleaner than on the
    rough design, but they're still placeholders
@@ -104,9 +105,7 @@ columns, so we'll use an ``HBoxContainer``. In the left column, we'll
 manage the rows with a ``VBoxContainer``. And in the right column, we'll
 center the illustration with a ``CenterContainer``.
 
-.. figure:: img/ui-mockup-break-down.png
-   :alt: Interface building blocks, broken down using the three rules of
-   thumb
+.. figure:: img/ui_mockup_break_down.png
 
    Interface building blocks, broken down using the three rules of thumb
 
@@ -161,7 +160,6 @@ Icon to the right of the Texture property, and click on ``Load``. A file
 browser opens and lets you pick a sprite to load into the texture slot.
 
 .. figure:: img/ui_TextureRect_load_texture.png
-   :alt: The file browser lets you find and load textures
 
    The file browser lets you find and load textures
 
@@ -171,7 +169,6 @@ each as a separate node. Then, double click on each of the nodes in the
 Inspector to rename them
 
 .. figure:: img/ui_main_menu_6_TextureRect_nodes.png
-   :alt: The six nodes, with textures loaded
 
    The six nodes, with textures loaded
 
@@ -200,8 +197,6 @@ need two containers as children of our ``HBoxContainer``: a
 ``CenterContainer`` for the illustration on the right.
 
 .. figure:: img/ui_main_menu_containers_step_1.png
-   :alt: You should have four nested containers, and the TextureRect
-   nodes sitting aside from it
 
    You should have four nested containers, and the TextureRect nodes
    sitting aside from it
@@ -212,7 +207,6 @@ drop them into the ``VBoxContainer``. Then, drag the illustration node
 into the ``CenterContainer``. The nodes should position automatically.
 
 .. figure:: img/ui_main_menu_containers_step_2.png
-   :alt: Containers automatically place and resize textures
 
    Containers automatically place and resize textures
 
@@ -227,8 +221,6 @@ and drop the Characters into it. The Characters element will center
 automatically.
 
 .. figure:: img/ui_main_menu_containers_step_3.png
-   :alt: The character node centers inside the right half of the screen
-   as soon as you place it inside the CenterContainer
 
    The character node centers inside the right half of the screen as
    soon as you place it inside the CenterContainer
@@ -242,8 +234,6 @@ them inside the new ``VBoxContainer``. The UI's layout should barely
 change, if at all.
 
 .. figure:: img/ui_main_menu_containers_step_4.png
-   :alt: Place the new container between the other two nodes to retain
-   the UI's layout
 
    Place the new container between the other two nodes to retain the
    UI's layout
@@ -260,8 +250,6 @@ To center the nodes in the ``VBoxContainer``, scroll to the top of the
 Inspector and change the ``Alignment`` property to ``Center``.
 
 .. figure:: img/ui_main_menu_containers_step_5.png
-   :alt: The menu options should center vertically in the UI's left
-   column
 
    The menu options should center vertically in the UI's left column
 
@@ -272,7 +260,6 @@ press enter, the ``Separation`` property becomes active and Godot adds
 30 pixels between menu options.
 
 .. figure:: img/ui_main_menu_design_final_result.png
-   :alt: The final interface
 
    The final interface
 
@@ -283,23 +270,29 @@ Congratulations for getting there! You can download the `final
 menu <#>`__ to compare with your own. In the next tutorial, you'll
 create a Game User Interface with bars and item counters.
 
-.. note::
+Break down the UI mockup
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-    Responsive User Interface is all about making sure our UIs scale well on
-    all screen types. TV screens and computer displays have different sizes
-    and ratios. In Godot, we use containers to control the position and the
-    size of UI elements. The order in which you nest matters. To see if your
-    UI adapts nicely to different screen ratios, select the root node, press
-    the Q key to activate the Select Mode, select the container and click
-    and drag on one of the container's corners to resize it. The UI
-    components should flow inside of it. You'll notice that although
-    containers move sprites around, they don't scale them. This is normal.
-    We want the UI system to handle different screen ratios, but we also
-    need the entire game to adapt to different screen resolutions. To do
-    this, Godot scales the entire window up and down. You can change the
-    scale mode in the project settings: click the Project menu -> Project
-    Settings. In the window's left column, look for the Display category.
-    Click on the Window sub-category. On the right side of the window,
-    you'll find a Stretch section. The three settings, Mode, Aspect, and
-    Shrink, control the screen size. For more information, see `Project
-    Settings <#>`__.
+Responsive User Interface is all about making sure our UIs scale well on
+all screen types. TV screens and computer displays have different sizes
+and ratios. In Godot, we use containers to control the position and the
+size of UI elements. 
+
+The order in which you nest matters. To see if your
+UI adapts nicely to different screen ratios, select the root node, press
+the Q key to activate the Select Mode, select the container and click
+and drag on one of the container's corners to resize it. The UI
+components should flow inside of it. 
+
+You'll notice that although
+containers move sprites around, they don't scale them. This is normal.
+We want the UI system to handle different screen ratios, but we also
+need the entire game to adapt to different screen resolutions. To do
+this, Godot scales the entire window up and down. 
+
+You can change the scale mode in the project settings: click the Project menu -> Project
+Settings. In the window's left column, look for the Display category.
+Click on the Window sub-category. On the right side of the window,
+you'll find a Stretch section. The three settings, Mode, Aspect, and
+Shrink, control the screen size. For more information, see `Project
+Settings <#>`__.

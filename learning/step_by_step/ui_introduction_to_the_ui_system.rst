@@ -11,7 +11,6 @@ editor. There are dozens of them, to create anything from life bars to
 complex applications. Godot's entire editor and plugins use these nodes.
 
 .. figure:: img/godot_editor_ui.png
-   :alt: Godot's editor is made with the engine's UI framework
 
    Godot's editor is made with the engine's UI framework
 
@@ -33,18 +32,18 @@ work with others like the AnimationPlayer, Tween or the StreamPlayer.
 Control nodes are CanvasItems like Node2D, so you can apply shaders to
 them.
 
-All control nodes share the same main properties: the anchor, the
-bounding rectangle, focus and focus neighbour, two properties related to
-mouse and keyboard input, the size flags, the margin, and the optional
-UI theme. Once you understand these, any Control nodes you use will add
-just a handful of additional properties. Once you understand the basics
-of the UI control nodes, it will take you far less time to learn all the
-special nodes.
+All control nodes share the same main properties:  
 
-    CB: *That list of properties is very long. Maybe better as bullets?*
+1. Anchor
+2. Bounding rectangle
+3. Focus and focus neighbour
+4. Size flags
+5. Margin
+6. The optional UI theme
 
-    CB: *I would remove this last sentence. It sounds too close to "it's
-    easy".*
+Once you understand the basics of the Control node, it will take you less time to learn all the
+nodes that derive from it.
+
 
 The 5 most common UI elements
 -----------------------------
@@ -64,27 +63,16 @@ Containers. These five Control nodes are:
 4. NinePatchRect: for scalable panels
 5. TextureButton: to create buttons
 
-    CB: *reordered to match image*
-
-.. figure:: img/5_most_common_nodes.png
-   :alt: The 5 most common Control nodes for UI design
+.. figure:: img/five_most_common_nodes.png
 
    The 5 most common Control nodes for UI design
 
 TextureRect
 ~~~~~~~~~~~
 
-    CB: *Should this be a subheading? The transitions between the five
-    are hard to see.*
-
-    **TextureRect** displays a texture or image. The main difference
-    from a Sprite node is that it can position itself and scale in
-    different ways. Set the Stretch Mode property to change its
-    behaviour:
-
-    CB: *Saying it displays a "sprite" may confuse. Didn't say
-    difference from what? It being a Control and positions/scales
-    differently is the same thing.*
+**TextureRect** displays a texture or image inside a UI.
+It seems similar to the Sprite node but it offers multiple scaling modes.
+Set the Stretch Mode property to change its behaviour:
 
 -  ``Tile`` makes the texture repeat, but it won't scale
 -  The default, ``Scale and Expand (compat)``, lets you scale the
@@ -93,14 +81,10 @@ TextureRect
    original size, in the top left corner or the center of the frame
    respectively
 
-    CB: *center vs centre spelling needs to be consistent. I'm using
-    "center" because Godot does.*
-
 As with Sprite nodes, you can modulate the TextureRect's colour. Click
 the ``Modulate`` property and use the color picker.
 
-.. figure:: img/5_common_nodes_TextureFrame.png
-   :alt: TextureRect modulated with a red color
+.. figure:: img/five_common_nodes_TextureFrame.png
 
    TextureRect modulated with a red color
 
@@ -115,17 +99,14 @@ lets you define the clickable area using a 2-bit, pure black and white
 image.
 
 In the Base Button section, you'll find a few checkboxes that change how
-the button behaves. When Toggle Mode is on, the button will toggle
-between active and normal states when you press it. Disabled makes it
-disabled by default, in which case it will use the Disabled texture.
+the button behaves. When ``Toggle Mode`` is on, the button will toggle
+between active and normal states when you press it. ``Disabled`` makes it
+disabled by default, in which case it will use the ``Disabled`` texture.
 TextureButton shares a few properties with the texture frame: it has a
-modulate property, to change its color, and Resize and Stretch modes, to
+``modulate`` property, to change its color, and ``Resize`` and ``Stretch`` modes to
 change its scale behavior.
 
-    CB: *Should the property names be ``code`` tagged?*
-
-.. figure:: img/5_common_nodes_TextureButton.png
-   :alt: TextureButton and its 5 texture slots
+.. figure:: img/five_common_nodes_TextureButton.png
 
    TextureButton and its 5 texture slots
 
@@ -138,19 +119,18 @@ bar's value.
 
 The ``Mode`` property controls the direction in which the bar grows:
 horizontally, vertically, or radially. If you set it to radial, the
-Initial Angle and Fill Degrees properties let you limit the range of the
+``Initial Angle`` and ``Fill Degrees`` properties let you limit the range of the
 gauge.
 
 To animate the bar, you'll want to look at the Range section. Set the
-Min and Max properties to define the range of the gauge. For instance,
-to represent a character's life, you'll want to set Min to 0, and Max to
-the character's maximum life. Change the Value property to update the
-bar. If you leave the Min and Max values to the default of 1 and 100,
-and set the Value property to 40, 40% of the Progress texture will show
+``Min`` and ``Max`` properties to define the range of the gauge. For instance,
+to represent a character's life, you'll want to set ``Min`` to ``0,`` and ``Max`` to
+the character's maximum life. Change the ``Value`` property to update the
+bar. If you leave the ``Min`` and ``Max`` values to the default of ``1`` and ``100,``
+and set the ``Value`` property to ``40``, 40% of the ``Progress`` texture will show
 up, and 60% of it will stay hidden.
 
-.. figure:: img/5_common_nodes_TextureProgress.png
-   :alt: TextureProgress bar, two thirds filled
+.. figure:: img/five_common_nodes_TextureProgress.png
 
    TextureProgress bar, two thirds filled
 
@@ -164,8 +144,7 @@ size. If Autowrap is off, you won't be able to scale the node. You can
 align the text horizontally and vertically with Align and Valign
 respectively.
 
-.. figure:: img/5_common_nodes_Label.png
-   :alt: Picture of a Label
+.. figure:: img/five_common_nodes_Label.png
 
    Picture of a Label
 
@@ -177,8 +156,7 @@ center and the sides tile when you scale the texture, but it never
 scales the corners. It is very useful to build panels, dialogue boxes
 and scalable backgrounds for your UI.
 
-.. figure:: img/5_common_nodes_NinePatchRect.png
-   :alt: NinePatchRect scaled with the min\_size property
+.. figure:: img/five_common_nodes_NinePatchRect.png
 
    NinePatchRect scaled with the min\_size property
 
@@ -191,7 +169,6 @@ Left, Top, Right and Bottom edges of the node. Change any of the 4
 anchors, and the margins will update automatically.
 
 .. figure:: img/anchor_property.png
-   :alt: The anchor property
 
    The anchor property
 
@@ -206,7 +183,6 @@ using the inspector’s 4 properties. The anchor menu will only show up
 when you select a control node.
 
 .. figure:: img/anchor_menu.png
-   :alt: The anchor menu in the viewport
 
    The anchor menu in the viewport
 
@@ -222,9 +198,6 @@ to the anchor position in pixels, while anchors are relative to the
 parent container's size.
 
 .. figure:: ./img/ui_anchor_and_margins.png
-   :alt: Margins are relative to the anchor position, which is relative
-   to the anchors. In practice, you'll often let the container update
-   margins for you
 
    Margins are relative to the anchor position, which is relative to the
    anchors. In practice, you'll often let the container update margins
@@ -242,7 +215,6 @@ node's own bounding Rectangle, set in the Rect section, in the
 inspector.
 
 .. figure:: img/control_node_margin.png
-   :alt: Margins on a CenterContainer set to the "Full Rect" anchor
 
    Margins on a CenterContainer set to the "Full Rect" anchor
 
@@ -265,8 +237,7 @@ TextureFrame nodes in an HBoxContainer, with the "Fill" flags on both
 axes, they'll each take up to a third of the available space, but no
 more. The container will take over the node and resize it automatically.
 
-.. figure:: img/TextureFrame_in_box_container_fill.png
-   :alt: 3 UI elements in an HBoxContainer, they align horizontally
+.. figure:: img/textureframe_in_box_container_fill.png
 
    3 UI elements in an HBoxContainer, they align horizontally
 
@@ -274,9 +245,7 @@ The "Expand" flag lets the UI element take all the space it can, and
 push against its siblings. Its bounding rectangle will grow against the
 edges of its parent, or until it's blocked by another UI node.
 
-.. figure:: img/TextureFrame_in_box_container_expand.png
-   :alt: The same example as bove, but the left node has the "Expand"
-   size flag
+.. figure:: img/textureframe_in_box_container_expand.png
 
    The same example as bove, but the left node has the "Expand" size
    flag
@@ -315,9 +284,7 @@ options to stay in the center of the viewport. As it centers everything,
 you'll often want a single container nested inside it. If you use
 textures and buttons instead, they'll stack up.
 
-.. figure:: img/5_containers_CenterContainer.png
-   :alt: CenterContainer in action. The life bar centers inside its
-   parent container.
+.. figure:: img/five_containers_CenterContainer.png
 
    CenterContainer in action. The life bar centers inside its parent
    container.
@@ -329,9 +296,7 @@ top, left, right, or bottom side of the container. No need to tick the
 checkbox: click the corresponding value box and type any number. It will
 activate automatically.
 
-.. figure:: img/5_containers_MarginContainer.png
-   :alt: The MarginContainer adds a 40px margin around the Game User
-   Interface
+.. figure:: img/five_containers_MarginContainer.png
 
    The MarginContainer adds a 40px margin around the Game User Interface
 
@@ -342,8 +307,7 @@ rows or columns. Use them to line up items in a shop, or to build
 complex grids with rows and columns of different sizes, as you can nest
 them to your heart's content.
 
-.. figure:: img/5_containers_BoxContainer.png
-   :alt: The HBoxContainer horizontally aligns UI elements
+.. figure:: img/five_containers_BoxContainer.png
 
    The HBoxContainer horizontally aligns UI elements
 
@@ -363,9 +327,7 @@ new rows as you add more textures and buttons. Like the box containers,
 it has two properties to set the vertical and horizontal separation
 between the rows and columns respectively.
 
-.. figure:: img/5_containers_GridContainer.png
-   :alt: A GridContainer with 2 columns. It sizes each column
-   automatically.
+.. figure:: img/five_containers_GridContainer.png
 
    A GridContainer with 2 columns. It sizes each column automatically.
 
