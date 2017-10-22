@@ -15,7 +15,7 @@ In Godot, a Visual Script fits smoothly together with regular scripts in the Edi
 
 
 In fact, Visual Scripting integrates so well to Godot that it's hard to believe it was added only
-in version 3.0. This is because, when editing, the rest of Godot's Panels and Docks act like a
+in version 3.0. This is because, when editing, the rest of Godot panels and docks act like a
 palette from where you can drag and drop all sorts of information to the script canvas:
 
 .. image:: img/visual_script2.png
@@ -50,8 +50,7 @@ In Godot, the scripting interface is universal and all implementations conform t
 
 A function is an individual canvas with nodes connected.
 
-A single script can contain many functions, each of which will have a canvas of its own, making scripts
-more organized.
+A single script can contain many functions, each of which will have a canvas of its own, allowing for more organization.
 
 There are three main ways to add functions in a script:
 
@@ -94,7 +93,7 @@ Once they are displayed, connect the "pressed" signal:
 .. image:: img/visual_script10.png
 
 
-This will open the connection dialog. In this dialog, we must select the node where the signal will be
+This will open the connection dialog. In this dialog, you must select the node where the signal will be
 connected to, and the function that will receive the signal:
 
 .. image:: img/visual_script11.png
@@ -132,4 +131,3 @@ simply click the Function node and check the inspector:
 
 
 More on that will be explained later in this document.
-
