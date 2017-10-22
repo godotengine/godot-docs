@@ -53,7 +53,7 @@ To do this, we will use **signals**.
 .. note::
 
     Signals are Godot's version of the Observer pattern. They allow us to send out some message. Other nodes can connect to the object that **emits** the signal and receive the information. It's a powerful tool we use a lot for User Interface and achievement systems. You don't want to use them everywhere though. Connecting two nodes adds some coupling between them. When there's a lot of connections, they become hard to manage.
-    For more information on check out the [ signals video tutorial ](https://youtu.be/l0BkQxF7X3E) on GDquest.
+    For more information on check out the `signals video tutorial <https://youtu.be/l0BkQxF7X3E>`_ on GDquest.
 
 Download and explore the start project
 --------------------------------------
@@ -193,8 +193,8 @@ of information. And you will update the state of your connected node
 .. note::
 
     The Observer pattern, that signals derive from, still adds a bit of coupling between node branches. But it's generally lighter and more secure than accessing nodes directly to communicate between two separate classes. It can be okay for a parent node to get values from its children. But you'll want to favor signals if you're working with two separate branches.
-    Read Game Programming Patterns for more information on the [ Observer pattern ](http://gameprogrammingpatterns.com/observer.html).
-    The [ full book ](http://gameprogrammingpatterns.com/contents.html) is available online for free.
+    Read Game Programming Patterns for more information on the `Observer pattern <http://gameprogrammingpatterns.com/observer.html>`_.
+    The `full book <http://gameprogrammingpatterns.com/contents.html>`_ is available online for free.
 
 With this in mind let's connect the ``GUI`` to the ``Player``. Click on
 the ``Player`` node in the scene dock to select it. Head down to the
@@ -240,7 +240,7 @@ at the bottom of the window. Godot creates the method inside the ``GUI``
 node. The script editor opens with the cursor inside a new
 ``_on_player_health_changed`` function.
 
-.. note:: 
+.. note::
 
    When you connect nodes from the editor, Godot generates a
    method name with the following pattern: ``_on_EmitterName_signal_name``.
@@ -294,7 +294,7 @@ This method needs to:
         number_label.text = str(new_value)
         bar.value = new_value
 
-.. tip:: 
+.. tip::
 
     ``str`` is a built-in function that converts about any value to
     text. ``Number``'s ``text`` property requires a string so we can't
