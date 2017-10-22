@@ -228,9 +228,17 @@ Godot's class reference supports BBcode-like tags. They add nice formatting to t
 +===========================+================================+===================================+============================================+
 | [Class]                   | Link a class                   | Move the [Sprite].                | Move the :ref:`class_sprite`.              |
 +---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
-| [method methodname]       | Link to a method in this class | See [method set_pos].             | See :ref:`set_pos <class_node2d_set_pos>`. |
+| [method methodname]       | Link to a method in this class | Call [method hide].               | See :ref:`hide <class_spatial_hide>`.      |
 +---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
-| [method Class.methodname] | Link to another class's method | See [method Node2D.set_pos].      | See :ref:`set_pos <class_node2d_set_pos>`. |
+| [method Class.methodname] | Link to another class's method | Call [method Spatial.hide].       | See :ref:`hide <class_spatial_hide>`.      |
++---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
+| [member membername]       | Link to a member in this class | Get [member scale].               | Get :ref:`scale <class_node2d_scale>`.     |
++---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
+| [member Class.membername] | Link to another class's member | Get [member Node2D.scale].        | Get :ref:`scale <class_node2d_scale>`.     |
++---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
+| [signal signalname]       | Link to a signal in this class | Emit [signal renamed].            | Emit :ref:`renamed <class_node_renamed>`.  |
++---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
+| [signal Class.signalname] | Link to another class's signal | Emit [signal Node.renamed].       | Emit :ref:`renamed <class_node_renamed>`.  |
 +---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
 | [b] [/b]                  | Bold                           | Some [b]bold[/b] text.            | Some **bold** text.                        |
 +---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
