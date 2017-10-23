@@ -397,6 +397,31 @@ differ based on your system):
     user@host:~$ ${MINGW32_PREFIX}gcc --version
     i686-w64-mingw32-gcc (GCC) 6.1.0 20160427 (Mageia MinGW 6.1.0-1.mga6)
 
+Troubleshooting
+~~~~~~~~~~~~~~~
+
+Cross-compiling from some versions of Ubuntu may lead to `this bug <https://github.com/godotengine/godot/issues/9258>`_,
+due to a default configuration lacking support for POSIX threading.
+
+You can change that configuration following those instructions,
+for 32-bit:
+
+::
+
+    sudo update-alternatives --config i686-w64-mingw32-gcc
+    <choose i686-w64-mingw32-gcc-posix from the list>
+    sudo update-alternatives --config i686-w64-mingw32-g++
+    <choose i686-w64-mingw32-g++-posix from the list>
+
+And for 64-bit:
+
+::
+
+    sudo update-alternatives --config x86_64-w64-mingw32-gcc
+    <choose x86_64-w64-mingw32-gcc-posix from the list>
+    sudo update-alternatives --config x86_64-w64-mingw32-g++
+    <choose x86_64-w64-mingw32-g++-posix from the list>
+
 Creating Windows export templates
 ---------------------------------
 
