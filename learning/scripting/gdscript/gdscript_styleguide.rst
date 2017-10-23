@@ -162,7 +162,13 @@ ugly.
 Classes and Nodes
 ~~~~~~~~~~~~~~~~~
 
-Use CapWords, or PascalCase: ``extends KinematicBody``
+Use PascalCase: ``extends KinematicBody``
+
+Also when loading a class into a constant or variable:
+
+::
+    
+    const MyCoolNode = preload('res://my_cool_node.gd')
 
 Functions and Variables
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -172,6 +178,16 @@ Use snake\_case: ``get_node()``
 Prepend a single underscore (\_) to virtual methods (functions the user
 must override), private functions, and private variables:
 ``func _ready()``
+
+Signals
+~~~~~~~
+
+Use past tense:
+
+::
+    
+    signal door_opened
+    signal score_changed
 
 Constants
 ~~~~~~~~~
