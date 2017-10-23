@@ -1,5 +1,7 @@
 _build/
 env/
 extensions/__pycache__/
+extensions/sphinx_tabs/
+extensions/*.pyc
 *~
 .directory
