@@ -345,36 +345,57 @@ architectures (Win32/x64). They are equivalent.
 Cross-compiling for Windows from other operating systems
 ---------------
 
-If you are a Linux or Mac user, you need to install mingw32 and
-mingw-w64. Under Ubuntu or Debian, just run the following commands:
+If you are a Linux or Mac user, you need to install `MinGW-w64 <https://mingw-w64.org>`_,
+which typically comes in 32-bit and 64-bit variants. The package names
+may differ based on your distro, here are some known ones:
+
++---------------+--------------------------------------------------------+
+| **Arch**      | ::                                                     |
+|               |                                                        |
+|               |     pacman -S scons mingw-w64-gcc                      |
++---------------+--------------------------------------------------------+
+| **Debian** /  | ::                                                     |
+| **Ubuntu**    |                                                        |
+|               |     apt-get install scons mingw-w64                    |
++---------------+--------------------------------------------------------+
+| **Fedora**    | ::                                                     |
+|               |                                                        |
+|               |     dnf install scons mingw32-gcc-c++ mingw64-gcc-c++  |
++---------------+--------------------------------------------------------+
+| **macOS**     | ::                                                     |
+|               |                                                        |
+|               |     brew install scons mingw-w64                       |
++---------------+--------------------------------------------------------+
+| **Mageia**    | ::                                                     |
+|               |                                                        |
+|               |     urpmi scons mingw32-gcc-c++ mingw64-gcc-c++        |
++---------------+--------------------------------------------------------+
+
+Before allowing you to attempt the compilation, SCons will check for
+the following binaries in your ``$PATH``:
 
 ::
 
-    apt-get install mingw32 mingw-w64
-
-If you are using another distro, SCons will check for the following
-binaries:
-
-::
-
-    i586-mingw32msvc-gcc
     i686-w64-mingw32-gcc
+    x86_64-w64-mingw32-gcc
 
-If the binaries are named or located somewhere else, export the
-following env variables:
+If the binaries are not located in the ``$PATH`` (e.g. ``/usr/bin``),
+you can define the following environment variables to give a hint to
+the buildsystem:
 
 ::
 
-    export MINGW32_PREFIX="/path/to/i586-mingw32msvc-"
-    export MINGW64_PREFIX="/path/to/i686-w64-mingw32-"
+    export MINGW32_PREFIX="/path/to/i686-w64-mingw32-"
+    export MINGW64_PREFIX="/path/to/x86_64-w64-mingw32-"
 
 To make sure you are doing things correctly, executing the following in
-the shell should result in a working compiler:
+the shell should result in a working compiler (the version output may
+differ based on your system):
 
 ::
 
-    user@host:~$ ${MINGW32_PREFIX}gcc
-    gcc: fatal error: no input files
+    user@host:~$ ${MINGW32_PREFIX}gcc --version
+    i686-w64-mingw32-gcc (GCC) 6.1.0 20160427 (Mageia MinGW 6.1.0-1.mga6)
 
 Creating Windows export templates
 ---------------------------------

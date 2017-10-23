@@ -37,6 +37,12 @@ Distro-specific oneliners
 |               |                                                                                                            |
 |               |     pacman -S scons libxcursor libxinerama libxrandr mesa glu alsa-lib pulseaudio freetype2                |
 +---------------+------------------------------------------------------------------------------------------------------------+
+| **Debian** /  | ::                                                                                                         |
+| **Ubuntu**    |                                                                                                            |
+|               |     sudo apt-get install build-essential scons pkg-config libx11-dev libxcursor-dev libxinerama-dev \      |
+|               |         libgl1-mesa-dev libglu-dev libasound2-dev libpulse-dev libfreetype6-dev libssl-dev libudev-dev \   |
+|               |         libxrandr-dev                                                                                      |
++---------------+------------------------------------------------------------------------------------------------------------+
 | **Fedora**    | ::                                                                                                         |
 |               |                                                                                                            |
 |               |     sudo dnf install scons pkgconfig libX11-devel libXcursor-devel libXrandr-devel libXinerama-devel \     |
@@ -69,11 +75,10 @@ Distro-specific oneliners
 |               |             Mesa-libGL-devel alsa-devel libpulse-devel freetype-devel openssl-devel libudev-devel \        |
 |               |             libGLU1                                                                                        | 
 +---------------+------------------------------------------------------------------------------------------------------------+
-| **Ubuntu**    | ::                                                                                                         |
+| **Solus**     | ::                                                                                                         |
 |               |                                                                                                            |
-|               |     sudo apt-get install build-essential scons pkg-config libx11-dev libxcursor-dev libxinerama-dev \      |
-|               |         libgl1-mesa-dev libglu-dev libasound2-dev libpulse-dev libfreetype6-dev libssl-dev libudev-dev \   |
-|               |         libxrandr-dev                                                                                      |
+|               |     sudo eopkg install -c system.devel scons libxcursor-devel libxinerama-devel libxrandr-devel \          |
+|               |         mesalib-devel libglu alsa-lib pulseaudio freetype2-devel                                           |
 +---------------+------------------------------------------------------------------------------------------------------------+
 
 Compiling
