@@ -37,4 +37,29 @@ Or:
 .. code:: bash
 
     $ gdb godot
-    > run -e -path ~/myproject
+    > run -e ~/myproject/project.godot
+
+(With the path pointing to the project.godot or pointing to a specific scene to open the editor at.)
+
+Windows example:
+
+.. code:: bash
+
+    $ gdb godot.windows.tools.64.exe
+    > run -e C:/path/to/project/project.godot
+
+(Backslashes work as well.)
+
+Running tests
+-----------------------------
+
+Example:
+Running the ``string`` tests defined in ``/main/tests/test_string.cpp``:
+
+.. code:: bash
+
+    > godot --test string
+
+Note that Godot has to be built with tools enabled for this (``tools=yes``, which is the default).
+
+Also see the output of ``godot --help``.
