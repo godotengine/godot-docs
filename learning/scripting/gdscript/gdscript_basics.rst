@@ -692,7 +692,7 @@ in the loop variable.
 
     var dict = {"a":0, "b":1, "c":2}
     for i in dict:
-        print(dict[i])  # loop provides the keys in an arbitrary order; may print 0, 1, 2, or 2, 0, 1, etc...
+        print(dict[i])  # loop provides the values in an arbitrary order; may print 0, 1, 2, or 2, 0, 1, etc...
 
     for i in range(3):
         statement  # similar to [0, 1, 2] but does not allocate an array
