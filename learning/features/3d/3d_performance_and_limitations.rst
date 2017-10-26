@@ -16,7 +16,7 @@ usability and flexibility. Some practical examples of this are:
    makes rendering less efficient, but at the same time less objects are
    rendered, so efficiency overall improves.
 -  Configuring the properties of every material for every object that
-   needs to be renderer is also slow. To solve this, objects are sorted
+   needs to be rendered is also slow. To solve this, objects are sorted
    by material to reduce the costs, but at the same time sorting has a
    cost.
 -  In 3D physics a similar situation happens. The best algorithms to
@@ -27,10 +27,10 @@ usability and flexibility. Some practical examples of this are:
 
 And there are many more examples of this! Game engines strive to be
 general purpose in nature, so balanced algorithms are always favored
-over algorithms that might be the fast in some situations and slow in
+over algorithms that might be the fastest in some situations and slow in
 others.. or algorithms that are fast but make usability more difficult.
 
-Godot is not an exception and, while it is designed to have backends
+Godot is not an exception, and while it is designed to have backends
 swappable for different algorithms, the default ones (or more like, the
 only ones that are there for now) prioritize balance and flexibility
 over performance.
@@ -180,7 +180,7 @@ particles, etc.
 Bake lighting
 -------------
 
-Small lights are usually not a performance issue. Shadows a little more.
+Small lights are usually not a performance issue, but shadows can be.
 In general, if several lights need to affect a scene, it's ideal to bake
 it (:ref:`doc_light_baking`). Baking can also improve the scene quality by
 adding indirect light bounces.
