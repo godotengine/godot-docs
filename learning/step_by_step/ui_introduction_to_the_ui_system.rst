@@ -84,7 +84,7 @@ Set the Stretch Mode property to change its behaviour:
 As with Sprite nodes, you can modulate the TextureRect's colour. Click
 the ``Modulate`` property and use the color picker.
 
-.. figure:: img/five_common_nodes_TextureFrame.png
+.. figure:: img/five_common_nodes_textureframe.png
 
    TextureRect modulated with a red color
 
@@ -106,7 +106,7 @@ TextureButton shares a few properties with the texture frame: it has a
 ``modulate`` property, to change its color, and ``Resize`` and ``Stretch`` modes to
 change its scale behavior.
 
-.. figure:: img/five_common_nodes_TextureButton.png
+.. figure:: img/five_common_nodes_texturebutton.png
 
    TextureButton and its 5 texture slots
 
@@ -130,7 +130,7 @@ bar. If you leave the ``Min`` and ``Max`` values to the default of ``1`` and ``1
 and set the ``Value`` property to ``40``, 40% of the ``Progress`` texture will show
 up, and 60% of it will stay hidden.
 
-.. figure:: img/five_common_nodes_TextureProgress.png
+.. figure:: img/five_common_nodes_textureprogress.png
 
    TextureProgress bar, two thirds filled
 
@@ -144,7 +144,7 @@ size. If Autowrap is off, you won't be able to scale the node. You can
 align the text horizontally and vertically with Align and Valign
 respectively.
 
-.. figure:: img/five_common_nodes_Label.png
+.. figure:: img/five_common_nodes_label.png
 
    Picture of a Label
 
@@ -156,7 +156,7 @@ center and the sides tile when you scale the texture, but it never
 scales the corners. It is very useful to build panels, dialogue boxes
 and scalable backgrounds for your UI.
 
-.. figure:: img/five_common_nodes_NinePatchRect.png
+.. figure:: img/five_common_nodes_ninepatchrect.png
 
    NinePatchRect scaled with the min\_size property
 
@@ -284,7 +284,7 @@ options to stay in the center of the viewport. As it centers everything,
 you'll often want a single container nested inside it. If you use
 textures and buttons instead, they'll stack up.
 
-.. figure:: img/five_containers_CenterContainer.png
+.. figure:: img/five_containers_centercontainer.png
 
    CenterContainer in action. The life bar centers inside its parent
    container.
@@ -296,7 +296,7 @@ top, left, right, or bottom side of the container. No need to tick the
 checkbox: click the corresponding value box and type any number. It will
 activate automatically.
 
-.. figure:: img/five_containers_MarginContainer.png
+.. figure:: img/five_containers_margincontainer.png
 
    The MarginContainer adds a 40px margin around the Game User Interface
 
@@ -307,7 +307,7 @@ rows or columns. Use them to line up items in a shop, or to build
 complex grids with rows and columns of different sizes, as you can nest
 them to your heart's content.
 
-.. figure:: img/five_containers_BoxContainer.png
+.. figure:: img/five_containers_boxcontainer.png
 
    The HBoxContainer horizontally aligns UI elements
 
@@ -327,7 +327,7 @@ new rows as you add more textures and buttons. Like the box containers,
 it has two properties to set the vertical and horizontal separation
 between the rows and columns respectively.
 
-.. figure:: img/five_containers_GridContainer.png
+.. figure:: img/five_containers_gridcontainer.png
 
    A GridContainer with 2 columns. It sizes each column automatically.
 
