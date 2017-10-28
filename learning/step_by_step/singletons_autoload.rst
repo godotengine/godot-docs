@@ -37,7 +37,7 @@ AutoLoad
 You can use AutoLoad to load a scene, or a script that inherits from Node (a node
 will be created and the script will be set to it). 
 
-To autoload a scene or script, select Scene > Project Settings from the menu and switch
+To autoload a scene or script, select Project > Project Settings from the menu and switch
 to the AutoLoad tab. Each entry in the list requires a name, which is used as the name
 of the node, and the node is always added to the root viewport before any other scenes 
 are loaded.
@@ -88,7 +88,7 @@ Save the script as `global.gd`:
 .. image:: img/saveasscript.png
 
 The script should open in the script editor. The next step is to add
-it to AutoLoad list. Select Scene > Project Settings from the menu,
+it to AutoLoad list. Select Project > Project Settings from the menu,
 switch to the AutoLoad tab and add a new entry with name "global" that
 points to this file:
 
