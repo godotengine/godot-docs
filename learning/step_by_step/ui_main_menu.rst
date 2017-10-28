@@ -159,7 +159,7 @@ Click each of the nodes to select it. In the inspector, click the ``…``
 Icon to the right of the Texture property, and click on ``Load``. A file
 browser opens and lets you pick a sprite to load into the texture slot.
 
-.. figure:: img/ui_TextureRect_load_texture.png
+.. figure:: img/ui_texturerect_load_texture.png
 
    The file browser lets you find and load textures
 
@@ -168,7 +168,7 @@ logo, the illustration, the three menu options and the version note,
 each as a separate node. Then, double click on each of the nodes in the
 Inspector to rename them
 
-.. figure:: img/ui_main_menu_6_TextureRect_nodes.png
+.. figure:: img/ui_main_menu_6_texturerect_nodes.png
 
    The six nodes, with textures loaded
 
