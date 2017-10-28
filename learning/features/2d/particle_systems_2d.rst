@@ -119,7 +119,7 @@ Damping
 -------
 
 Damping applies friction to the particles, forcing them to stop. It is
-specially useful for sparks or explosions, which usually begin with a
+especially useful for sparks or explosions, which usually begin with a
 high linear velocity and then stop as they fade.
 
 .. image:: img/paranim10.gif

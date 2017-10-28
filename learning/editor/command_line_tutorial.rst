@@ -99,7 +99,7 @@ Exporting
 ---------
 
 Exporting the project from the command line is also supported. This is
-specially useful for continuous integration setups. The version of Godot
+especially useful for continuous integration setups. The version of Godot
 that is headless (server build, no video) is ideal for this.
 
 ::
@@ -120,7 +120,7 @@ Running a script
 ----------------
 
 It is possible to run a simple .gd script from the command line. This
-feature is specially useful in very large projects, for batch
+feature is especially useful in very large projects, for batch
 conversion of assets or custom import/export.
 
 The script must inherit from SceneTree or MainLoop.

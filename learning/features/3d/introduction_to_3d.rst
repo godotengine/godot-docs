@@ -12,7 +12,7 @@ the 3D platformer tutorial, or the 3D kinematic character tutorials,
 which are almost identical to their 2D counterparts.
 
 In 3D, math is a little more complex than in 2D, so also checking the
-:ref:`doc_vector_math` in the wiki (which were specially created for game
+:ref:`doc_vector_math` in the wiki (which were especially created for game
 developers, not mathematicians or engineers) will help pave the way into
 efficiently developing 3D games.
 

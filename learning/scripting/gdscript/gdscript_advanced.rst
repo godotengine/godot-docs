@@ -10,7 +10,7 @@ This tutorial aims to be a quick reference for how to use GDScript more
 efficiently. It focuses on common cases specific to the language, but
 also covers a lot of information on dynamically typed languages.
 
-It's meant to be specially useful for programmers with little or no previous 
+It's meant to be especially useful for programmers with little or no previous 
 experience with dynamically typed languages.
 
 Dynamic nature
