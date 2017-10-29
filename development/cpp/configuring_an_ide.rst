@@ -41,7 +41,7 @@ Add the following includes/imports:
     core/math/
     tools/
     drivers/
-    platform/x11/  // make that platform/osx/ is you're using OS X
+    platform/x11/  // make that platform/osx/ if you're using OS X
 
 .. image:: img/kdevelop_addincludes.png
 
