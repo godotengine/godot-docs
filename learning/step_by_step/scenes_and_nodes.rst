@@ -28,14 +28,15 @@ other nodes display 3D models, etc. There are dozens of them.
 Nodes
 -----
 
-But let's start with the basics. A node is a fundamental building block for
-creating a game. A node:
+But let's start with the basics. Nodes are fundamental building blocks for
+creating a game. As mentioned above, a node can perform a variety of specialized 
+functions. However, any given node always has the following attributes:
 
--  Has a name.
--  Has editable properties.
--  Can receive a callback to process every frame.
--  Can be extended (to have more functions).
--  Can be added to other nodes as children.
+-  It has a name.
+-  It has editable properties.
+-  It can receive a callback to process every frame.
+-  It can be extended (to have more functions).
+-  It can be added to other nodes as children.
 
 .. image:: img/tree.png
 
@@ -195,10 +196,8 @@ project.godot file and shows their default values. If you change a value, a
 tick is marked to the left of its name. This means that the property will be
 saved to the project.godot file and remembered.
 
-As a side note, it is possible to add custom configuration options and read
-them at run-time using the :ref:`ProjectSettings <class_ProjectSettings>`
-singleton. This is not something you need to worry about now (this is the
-first tutorial after all!), but we mention it for future reference.
+As a side note, it is also possible to add custom configuration options and 
+read them in at run-time using the [Globals](class_globals) singleton.
 
 To be continued...
 ------------------
