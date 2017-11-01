@@ -6,12 +6,12 @@ SceneTree
 Introduction
 ------------
 
-This is where things start getting abstract, but don't panic, as
-there's not really more depth than this.
+This is where things start getting abstract, but don't panic. There's 
+not really much more depth than this.
 
-In previous tutorials, everything revolves around the concept of
-nodes, scenes are made of them, and they become active once they enter
-the *scene tree*.
+In previous tutorials, everything revolved around the concept of
+nodes. Scenes are simply a collection of nodes. They become active once 
+they enter the *scene tree*.
 
 This concept deserves going into a little more detail. In fact, the
 scene system is not even a core component of Godot, as it is possible to
@@ -33,7 +33,7 @@ main/main.cpp file in the source code if you are ever interested to
 see how this works internally).
 
 The user program, or game, starts in the MainLoop. This class has a few
-methods, for initialization, idle (frame-syncronized callback), fixed
+methods, for initialization, idle (frame-synchronized callback), fixed
 (physics-synchronized callback), and input. Again, this is really low
 level and when making games in Godot, writing your own MainLoop does not
 even make sense.
