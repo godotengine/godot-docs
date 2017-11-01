@@ -197,7 +197,7 @@ tick is marked to the left of its name. This means that the property will be
 saved to the project.godot file and remembered.
 
 As a side note, it is also possible to add custom configuration options and 
-read them in at run-time using the [Globals](class_globals) singleton.
+read them in at run-time using the :ref:`ProjectSettings <class_ProjectSettings>` singleton.
 
 To be continued...
 ------------------
