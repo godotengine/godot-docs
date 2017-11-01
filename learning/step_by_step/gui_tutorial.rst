@@ -126,7 +126,7 @@ UI complexity
 ~~~~~~~~~~~~~
 
 As mentioned before, Godot includes dozens of controls ready for use
-in a user interface. Such controls are divided in two categories. The
+in a user interface. Such controls are divided into two categories. The
 first is a small set of controls that work well for creating most game
 user interfaces. The second (and most controls are of this type) are
 meant for complex user interfaces and uniform skinning through styles. A
@@ -148,9 +148,9 @@ be skinned easily with regular textures.
 -  :ref:`TextureProgress <class_TextureProgress>`: Displays a single
    textured progress bar.
 
-Additionally, re-positioning of controls is most efficiently done with
-anchors in this case (see the :ref:`doc_size_and_anchors` tutorial for more
-information).
+Additionally, re-positioning of controls is most efficiently done 
+with anchors when using these controls (see the [Size and Anchors](tutorial_gui_repositioning) 
+tutorial for more info).
 
 In any case, it will happen often that even for simple games, more
 complex UI behaviors are required. An example of this is a scrolling
