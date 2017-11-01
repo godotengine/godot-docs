@@ -99,10 +99,9 @@ parameter, because it loads the resource at compile-time.
 
 Loading scenes
 --------------
-
-Scenes are also resources, but there is a catch. Scenes saved to disk
-are resources of type :ref:`PackedScene <class_PackedScene>`,
-this means that the scene is packed inside a resource.
+Scenes are also resources, but there is a catch. Scenes saved to disk 
+are resources of type [PackedScene](class_packedscene). This means that 
+the scene is packed inside a resource.
 
 To obtain an instance of the scene, the method
 :ref:`PackedScene.instance() <class_PackedScene_instance>`
@@ -114,9 +113,9 @@ must be used.
             var bullet = preload("res://bullet.tscn").instance()
             add_child(bullet)                  
 
-This method creates the nodes in hierarchy, configures them (sets all
-the properties) and returns the root node of the scene, which can be
-added to any other node.
+This method creates the nodes in the scene's hierarchy, configures 
+them (sets all the properties) and returns the root node of the scene, 
+which can be added to any other node.
 
 The approach has several advantages. As the
 :ref:`PackedScene.instance() <class_PackedScene_instance>`
