@@ -37,7 +37,7 @@ to the high integration with Godot:
 * It uses no garbage collector, so it trades a small bit of automation (most objects are reference counted anyway), by determinism.
 * The dynamic nature of it makes it easy to optimize chunks of it in C++ (via GDNative) if more performance is required at some point, without recompiling the engine.
 
-If undecided, and have experience in programming (specially dynamically
+If undecided, and have experience in programming (especially dynamically
 typed languages), go for GDScript!
 
 Visual Script
