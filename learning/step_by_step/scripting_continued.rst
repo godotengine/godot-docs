@@ -6,9 +6,9 @@ Scripting (continued)
 Processing
 ----------
 
-Several actions in Godot are triggered by callbacks or virtual
-functions, so there is no need to check for writing code that runs all
-the time. Additionally, a lot can be done with animation players.
+Several actions in Godot are triggered by callbacks or virtual functions, 
+so there is no need to write code that runs all the time. Additionally, a 
+lot can be done with animation players.
 
 However, it is still a very common case to have a script process on every
 frame. There are two types of processing: idle processing and physics
@@ -165,8 +165,8 @@ As mentioned before, it's best to use these functions.
 Creating nodes
 --------------
 
-To create a node from code, just call the ".new()" method (like for any
-other class-based datatype). Example:
+To create a node from code, call the .new() method, just like for any 
+other class based datatype. Example:
 
 ::
 
