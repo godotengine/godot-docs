@@ -126,7 +126,7 @@ UI complexity
 ~~~~~~~~~~~~~
 
 As mentioned before, Godot includes dozens of controls ready for use
-in a user interface. Such controls are divided into two categories. The
+in a user interface. Such controls are divided in two categories. The
 first is a small set of controls that work well for creating most game
 user interfaces. The second (and most controls are of this type) are
 meant for complex user interfaces and uniform skinning through styles. A
