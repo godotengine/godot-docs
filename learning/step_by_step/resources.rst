@@ -100,7 +100,7 @@ parameter, because it loads the resource at compile-time.
 Loading scenes
 --------------
 Scenes are also resources, but there is a catch. Scenes saved to disk 
-are resources of type [PackedScene](class_packedscene). This means that 
+are resources of type :ref:`PackedScene <class_PackedScene>`. This means that 
 the scene is packed inside a resource.
 
 To obtain an instance of the scene, the method
