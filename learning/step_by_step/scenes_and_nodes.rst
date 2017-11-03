@@ -51,9 +51,6 @@ Don't worry if this doesn't click yet. We will continue to explore this over
 the next few sections. The most important fact to remember for now is that
 nodes exist and can be arranged this way.
 
-Now that the concept of nodes has been defined, the next logical
-step is to explain what a scene is.
-
 Scenes
 ------
 
