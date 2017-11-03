@@ -6,4 +6,5 @@ Math
    :name: toc-learn-features-math
 
    vector_math
+   vectors_advanced
    matrices_and_transforms
