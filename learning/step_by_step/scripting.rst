@@ -128,7 +128,7 @@ Finally, save the scene, with a name such as "sayhello.tscn"
 Adding a script
 ~~~~~~~~~~~~~~~
 
-Right click on the panel node, and then select "Add Script" in the context
+Right click on the panel node, and then select "Attach Script" in the context
 menu:
 
 .. image:: img/add_script.png
