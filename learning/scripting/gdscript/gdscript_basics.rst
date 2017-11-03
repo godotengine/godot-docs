@@ -783,7 +783,7 @@ There are 6 pattern types:
                 print("open ended array")
 
 - dictionary pattern
-    Works in the same was as the array pattern. Every key has to be a constant pattern.
+    Works in the same way as the array pattern. Every key has to be a constant pattern.
 
     The size of the dictionary is tested first, it has to be the same size as the pattern, otherwise the pattern don't match.
 
