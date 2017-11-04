@@ -184,7 +184,7 @@ Example:
 
 ::
 
-    var result = GameCenter.post_score( { "value": 100, "category": "my_leaderboard", } )
+    var result = GameCenter.post_score( { "score": 100, "category": "my_leaderboard", } )
 
 Response event
 ^^^^^^^^^^^^^^
