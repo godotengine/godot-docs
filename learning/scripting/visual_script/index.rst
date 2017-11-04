@@ -2,7 +2,10 @@ VisualScript
 ============
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
    :name: toc-learn-scripting-visual_script
-
-   visual_script_basics
+   
+   what_is_visual_scripting
+   getting_started
+   nodes_purposes
+   
