@@ -50,7 +50,7 @@ a vector's position. The following two vectors are identical:
 
 .. image:: img/vector_xy2.png
 
-Both vectors represent a point 4 units to the left and 3 units below some
+Both vectors represent a point 4 units to the right and 3 units below some
 starting point. It does not matter where on the plane you draw the vector,
 it always represents a relative direction and magnitude.
 
