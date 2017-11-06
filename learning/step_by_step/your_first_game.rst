@@ -10,8 +10,8 @@ This tutorial will guide you through making your first Godot Engine
 project. You will learn how the Godot Engine editor works, how to structure
 a project, and how to build a 2D game.
 
-.. note:: This project is an introduction to the Godot Engine. It 
-          assumes that you have some programming experience already. If 
+.. note:: This project is an introduction to the Godot Engine. It
+          assumes that you have some programming experience already. If
           you're new to programming entirely, you should start here:
           :ref:`doc_scripting`.
 
@@ -21,8 +21,8 @@ final result:
 
 .. image:: img/dodge_preview.gif
 
-**Why 2D?** 
-    3D games are much more complex than 2D ones. You should stick to 2D 
+**Why 2D?**
+    3D games are much more complex than 2D ones. You should stick to 2D
     until you have a good understanding of the game development process.
 
 Project Setup
@@ -48,7 +48,7 @@ In this project, we will make 3 independent scenes: ``Player``,
 scene. In a larger project, it might be useful to make folders to hold
 the various scenes and their scripts, but for this relatively small
 game, you can save your scenes and scripts in the root folder, which is
-referred to as ``res://``.  You can see your project folders in the Filesystem 
+referred to as ``res://``.  You can see your project folders in the Filesystem
 Dock in the upper left corner:
 
 .. image:: img/filesystem_dock.png
@@ -68,14 +68,14 @@ node to the scene.
 
 .. image:: img/add_node.png
 
-With ``Area2D`` we can detect other objects that overlap or run into the player. 
-Change its name to ``Player``. This is the scene's "root" or top-level node. 
+With ``Area2D`` we can detect other objects that overlap or run into the player.
+Change its name to ``Player``. This is the scene's "root" or top-level node.
 We can add additional nodes to the player to add functionality.
 
 Save the scene (click Scene -> Save, or press ``Meta-s``).
 
-.. note:: In this project, we will be following the Godot Engine naming 
-          conventions. Classes (Nodes) use ``CapWords``, variables and 
+.. note:: In this project, we will be following the Godot Engine naming
+          conventions. Classes (Nodes) use ``CapWords``, variables and
           functions use ``snake_case``, and constants use ``ALL_CAPS``.
 
 Sprite Animation
@@ -101,10 +101,10 @@ Frames" side of the panel:
 .. image:: img/spriteframes_panel2.png
 
 
-Finally, add a :ref:`CollisionShape2D <class_CollisionShape2D>` as a child 
-of the ``Player``. This will determine the player's "hitbox", or the 
-bounds of its collision area.  For this character, a ``CapsuleShape2D`` 
-gives the best fit, so next to "Shape" in the Inspector, click 
+Finally, add a :ref:`CollisionShape2D <class_CollisionShape2D>` as a child
+of the ``Player``. This will determine the player's "hitbox", or the
+bounds of its collision area. For this character, a ``CapsuleShape2D``
+gives the best fit, so next to "Shape" in the Inspector, click
 "<null>"" -> "New CapsuleShape2D".  Resize the shape to cover the sprite:
 
 .. image:: img/player_coll_shape.png
@@ -126,7 +126,7 @@ node, so we'll add a script. Click the ``Player`` node and click the
 .. image:: img/add_script_button.png
 
 In the script settings window, you can leave the default settings, just
-click "Create": 
+click "Create":
 
 .. image:: img/attach_node_window.png
 
@@ -143,7 +143,7 @@ Start by declaring the member variables this object will need:
     var velocity = Vector2()  # the player's movement vector
     var screensize  # size of the game window
 
-The ``_ready()`` function is called when a node enters the scene tree, so 
+The ``_ready()`` function is called when a node enters the scene tree, so
 that's a good time to find the size of the game window:
 
 ::
@@ -155,15 +155,15 @@ Now we can use the ``_process()`` function to define what the player will do.
 The ``_process()`` function is called on every frame, so we'll use it to update
 elements of our game which we expect to be changing often. Here we'll have it:
 
-- check for input 
-- move in the given direction 
+- check for input
+- move in the given direction
 - play the appropriate animation.
 
 First, we need to check the inputs - is the player pressing a key? For
-this game, we have 4 direction inputs to check. Input actions are defined 
-in the Project Settings under "Input Map". You can define custom events and 
-assign different keys, mouse events, or other inputs to them. For this demo, 
-we will use the default events that are assigned to the arrow keys on the 
+this game, we have 4 direction inputs to check. Input actions are defined
+in the Project Settings under "Input Map". You can define custom events and
+assign different keys, mouse events, or other inputs to them. For this demo,
+we will use the default events that are assigned to the arrow keys on the
 keyboard.
 
 You can detect whether a key is pressed using
@@ -214,7 +214,7 @@ and use ``clamp()`` to prevent it from leaving the screen:
         position.x = clamp(position.x, 0, screensize.x)
         position.y = clamp(position.y, 0, screensize.y)
 
-    
+
 .. tip:: *Clamping* a value means restricting it to a given minimum/maximum range.
 
 Click "Play the Edited Scene. (F6)" and confirm you can move the player
@@ -263,8 +263,8 @@ Add the following at the top of the script (after ``extends Area2d``):
     signal hit
 
 This defines a custom signal called "hit" that we will have our player
-emit (send out) when it collides with an enemy. We will use the Area2D to 
-detect the collision. Select the ``Player`` node and click the "Node" tab 
+emit (send out) when it collides with an enemy. We will use the Area2D to
+detect the collision. Select the ``Player`` node and click the "Node" tab
 next to the Inspector to see the list of signals the player can emit:
 
 .. image:: img/player_signals.png
@@ -278,7 +278,7 @@ settings. Godot will automatically create a function called
 ``_on_Player_body_entered`` in your player's script.
 
 .. tip:: When connecting a signal, instead of having Godot create a
-         function for you, you can also give the name of an existing 
+         function for you, you can also give the name of an existing
          function that you want to link the signal to.
 
 Add this code to the function:
@@ -290,13 +290,13 @@ Add this code to the function:
         emit_signal("hit")
         monitoring = false
 
-.. warning:: Disabling the ``monitoring`` property of an ``Area2D`` means 
+.. warning:: Disabling the ``monitoring`` property of an ``Area2D`` means
              it won't detect collisions. By turning it off, we make
              sure we don't trigger the ``hit`` signal more than once. However,
-             changing the property in the midst of an ``area_entered`` signal 
-             will result in an error, because the engine hasn't finished 
+             changing the property in the midst of an ``area_entered`` signal
+             will result in an error, because the engine hasn't finished
              processing the current frame yet.
-    
+
 Instead, you can *defer* the change, which will tell the game engine to
 wait until it's safe to set monitoring to ``false``. Change the line to
 this:
@@ -353,7 +353,7 @@ We'll select one of these randomly so that the mobs will have some variety.
 
 In Godot's 2D space, a heading of zero degrees points to the right. However, our mob art
 is drawn pointing upward. To correct for this, set the ``AnimatedSprite``'s "Rotation Deg"
-property to ``90``.
+property to ``90`` under ``Node2D `` > ``Transform``.
 
 .. image:: img/mob_animations.gif
 
@@ -400,8 +400,8 @@ node and add this code:
 
     func _on_Visible_screen_exited():
         queue_free()
-        
-That completes the `Mob` scene. 
+
+That completes the `Mob` scene.
 
 Main Scene
 ----------
@@ -444,14 +444,15 @@ you will see some new buttons appear at the top of the editor:
 
 Select the middle one ("Add Point") and draw the path by clicking to add
 the points shown. To have the points snap to the grid, make sure "Use Snap" is
-checked. This option can be found under the "Edit" button to the left of the Path2D buttons.
+checked. This option can be found under the "Snapping Options" button to the left of the Path2D buttons.
+It appears as a series of three vertical dots.
 
 .. image:: img/draw_path2d.png
 
-.. important:: Draw the path in *clockwise* order, or your mobs will spawn 
+.. important:: Draw the path in *clockwise* order, or your mobs will spawn
                pointing *outwards* instead of *inwards*!
 
-Now that the path is defined, add a :ref:`PathFollow2D <class_PathFollow2D>` 
+Now that the path is defined, add a :ref:`PathFollow2D <class_PathFollow2D>`
 node as a child of ``MobPath`` and name it ``MobSpawnLocation``. This node will
 automatically rotate and follow the path you've drawn, so we can use it
 to select a random position and direction along the path.
@@ -512,7 +513,7 @@ increment the score by 1.
 In ``_on_MobTimer_timeout()`` we will create a mob instance, pick a
 random starting location along the ``Path2D``, and set the mob in
 motion. The ``PathFollow2D`` node will automatically rotate as it
-follows the path, so we will use that to select the mob's direction as 
+follows the path, so we will use that to select the mob's direction as
 well as its position.
 
 Note that a new instance must be added to the scene using
@@ -535,9 +536,9 @@ Note that a new instance must be added to the scene using
         # choose the velocity
         mob.set_linear_velocity(Vector2(rand_range(mob.MIN_SPEED, mob.MAX_SPEED), 0).rotated(direction))
 
-.. important:: In functions requiring angles, GDScript uses *radians*, 
-               not degrees. If you're more comfortable working with 
-               degrees, you'll need to use the ``deg2rad()`` and 
+.. important:: In functions requiring angles, GDScript uses *radians*,
+               not degrees. If you're more comfortable working with
+               degrees, you'll need to use the ``deg2rad()`` and
                ``rad2deg()`` functions to convert between the two measures.
 
 HUD
@@ -629,14 +630,14 @@ well. There is a font file included in the game assets called
 "Xolonium-Regular.ttf". To use this font, do the following for each of
 the three ``Control`` nodes:
 
-1. Under "Custom Fonts", choose "New DynamicFont" 
+1. Under "Custom Fonts", choose "New DynamicFont"
 
 .. image:: img/custom_font1.png
 
 2. Click on the "DynamicFont" you just added, and under "Font Data",
    choose "Load" and select the "Xolonium-Regular.ttf" file. You must
-   also set the font's ``Size``. A setting of ``64`` works well. 
-   
+   also set the font's ``Size``. A setting of ``64`` works well.
+
 .. image:: img/custom_font2.png
 
 Now add this script to the ``HUD``:
@@ -780,7 +781,7 @@ configuring particles. Feel free to experiment and create different
 effects. For the effect in the example, use the following settings:
 
 .. image:: img/particle_trail_settings.png
-   
+
 You also need to create a ``Material`` by clicking on ``<null>`` and
 then "New ParticlesMaterial". The settings for that are below:
 

@@ -26,16 +26,16 @@ frames per second (FPS) of the application:
     func _process(delta):
         # do something...
 
-The delta parameter describes the time elapsed (in seconds, as
+The delta parameter describes the time elapsed (in seconds, as a
 floating point) since the previous call to "_process()".
 
 Physics processing is similar, but it should be used for all the processes that
 must happen before each physics step. For example, to move a character.
-It is always runs before a physics step and it is called at fixed time intervals,
+It always runs before a physics step and it is called at fixed time intervals,
 60 times per second by default. Change the value in the Project Settings.
 
-The function _process() instead is not sync with physics, and its frame rate is not constant and depend by hardware and game optimization.
-Its execution is done after physics step on single thread games.
+The function _process() instead is not synced with physics. Its frame rate is not constant and dependent on hardware and game optimization.
+Its execution is done after the physics step on single thread games.
 
 A simple way to test this is to create a scene with a single Label node,
 with the following script:
