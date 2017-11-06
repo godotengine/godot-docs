@@ -326,10 +326,10 @@ That should do the trick, but...
 Mastering the PR workflow: the rebase
 -------------------------------------
 
-On the situation outlined above, your fellow contributors with an OCD
-regarding the Git history might ask your to *rebase* your branch to *squash*
-or *meld* the last two commits together (i.e. the two related to the project
-manager), as the second commit basically fixes an issue in the first one.
+On the situation outlined above, your fellow contributors who are particularly
+pedantic regarding the Git history might ask your to *rebase* your branch to
+*squash* or *meld* the last two commits together (i.e. the two related to the
+project manager), as the second commit basically fixes an issue in the first one.
 
 Once the PR is merged, it is not relevant for a changelog reader that the PR
 author made mistakes; instead, we want to keep only commits that bring from
