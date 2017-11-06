@@ -285,7 +285,7 @@ Add this code to the function:
 
 ::
 
-    func _on_Player_body_entered( area ):
+    func _on_Player_body_entered( body ):
         hide() # Player disappears after being hit
         emit_signal("hit")
         monitoring = false
