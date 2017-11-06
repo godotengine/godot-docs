@@ -103,7 +103,7 @@ Frames" side of the panel:
 
 Finally, add a :ref:`CollisionShape2D <class_CollisionShape2D>` as a child
 of the ``Player``. This will determine the player's "hitbox", or the
-bounds of its collision area. Rename the node to ``Collision``. For this character, a ``CapsuleShape2D``
+bounds of its collision area. For this character, a ``CapsuleShape2D``
 gives the best fit, so next to "Shape" in the Inspector, click
 "<null>"" -> "New CapsuleShape2D".  Resize the shape to cover the sprite:
 
@@ -439,7 +439,8 @@ you will see some new buttons appear at the top of the editor:
 
 Select the middle one ("Add Point") and draw the path by clicking to add
 the points shown. To have the points snap to the grid, make sure "Use Snap" is
-checked. This option can be found under the "Edit" button to the left of the Path2D buttons.
+checked. This option can be found under the "Snapping Options" button to the left of the Path2D buttons.
+It appears as a series of three vertical dots.
 
 .. image:: img/draw_path2d.png
 
