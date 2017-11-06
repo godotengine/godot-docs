@@ -105,7 +105,7 @@ with the main scene of the game:
 
 The function ``goto_scene`` is called from the game when the scene
 needs to be switched. It requests an interactive loader, and calls
-``set_progress(true)`` to start polling the loader in the ``_progress``
+``set_process(true)`` to start polling the loader in the ``_process``
 callback. It also starts a "loading" animation, which can show a
 progress bar or loading screen, etc.
 
