@@ -24,8 +24,6 @@ Member Functions
 +------------------------------+--------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`      | :ref:`can_instance<class_Script_can_instance>` **(** **)** const                                                   |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_node_type<class_Script_get_node_type>` **(** **)** const                                                 |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`  | :ref:`get_source_code<class_Script_get_source_code>` **(** **)** const                                             |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`      | :ref:`has_script_signal<class_Script_has_script_signal>` **(** :ref:`String<class_string>` signal_name **)** const |
@@ -56,10 +54,6 @@ Member Function Description
 - :ref:`bool<class_bool>` **can_instance** **(** **)** const
 
 Returns true if the script can be instanced.
-
-.. _class_Script_get_node_type:
-
-- :ref:`String<class_string>` **get_node_type** **(** **)** const
 
 .. _class_Script_get_source_code:
 

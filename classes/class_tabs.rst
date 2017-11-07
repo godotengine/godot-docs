@@ -104,9 +104,9 @@ Numeric Constants
 - **ALIGN_CENTER** = **1**
 - **ALIGN_RIGHT** = **2**
 - **ALIGN_MAX** = **3**
+- **CLOSE_BUTTON_SHOW_NEVER** = **0**
 - **CLOSE_BUTTON_SHOW_ACTIVE_ONLY** = **1**
 - **CLOSE_BUTTON_SHOW_ALWAYS** = **2**
-- **CLOSE_BUTTON_SHOW_NEVER** = **0**
 - **CLOSE_BUTTON_MAX** = **3**
 
 Description

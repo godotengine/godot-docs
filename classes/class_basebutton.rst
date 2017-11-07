@@ -16,7 +16,7 @@ BaseButton
 Brief Description
 -----------------
 
-Provides a base class for different kinds of buttons.
+Base class for different kinds of buttons.
 
 Member Functions
 ----------------
@@ -92,31 +92,31 @@ Member Variables
 
   .. _class_BaseButton_action_mode:
 
-- :ref:`int<class_int>` **action_mode**
+- :ref:`int<class_int>` **action_mode** - Determines when the button is considered clicked, one of the ACTION_MODE\_\* constants.
 
   .. _class_BaseButton_disabled:
 
-- :ref:`bool<class_bool>` **disabled**
+- :ref:`bool<class_bool>` **disabled** - If ``true`` the button is in disabled state and can't be clicked or toggled.
 
   .. _class_BaseButton_enabled_focus_mode:
 
-- :ref:`int<class_int>` **enabled_focus_mode**
+- :ref:`int<class_int>` **enabled_focus_mode** - Focus access mode to use when switching between enabled/disabled (see :ref:`Control.set_focus_mode<class_Control_set_focus_mode>` and :ref:`disabled<class_BaseButton_disabled>`).
 
   .. _class_BaseButton_group:
 
-- :ref:`ButtonGroup<class_buttongroup>` **group**
+- :ref:`ButtonGroup<class_buttongroup>` **group** - :ref:`ButtonGroup<class_buttongroup>` associated to the button.
 
   .. _class_BaseButton_pressed:
 
-- :ref:`bool<class_bool>` **pressed**
+- :ref:`bool<class_bool>` **pressed** - If ``true`` the button's state is pressed. Means the button is pressed down or toggled (if toggle_mode is active).
 
   .. _class_BaseButton_shortcut:
 
-- :ref:`ShortCut<class_shortcut>` **shortcut**
+- :ref:`ShortCut<class_shortcut>` **shortcut** - Shortcut associated to the button.
 
   .. _class_BaseButton_toggle_mode:
 
-- :ref:`bool<class_bool>` **toggle_mode**
+- :ref:`bool<class_bool>` **toggle_mode** - If ``true`` the button is in toggle mode. Makes the button flip state between pressed and unpressed each time its area is clicked.
 
 
 Numeric Constants
@@ -132,7 +132,7 @@ Numeric Constants
 Description
 -----------
 
-BaseButton is the abstract base class for buttons, so it shouldn't be used directly (It doesn't display anything). Other types of buttons inherit from it.
+BaseButton is the abstract base class for buttons, so it shouldn't be used directly (it doesn't display anything). Other types of buttons inherit from it.
 
 Member Function Description
 ---------------------------

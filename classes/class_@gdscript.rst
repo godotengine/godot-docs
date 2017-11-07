@@ -168,6 +168,10 @@ Member Functions
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_object>`                    | :ref:`weakref<class_@GDScript_weakref>` **(** :ref:`Object<class_object>` obj **)**                                                                                                                                             |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                      | :ref:`wrapf<class_@GDScript_wrapf>` **(** :ref:`float<class_float>` value, :ref:`float<class_float>` min, :ref:`float<class_float>` max **)**                                                                                   |
++------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                          | :ref:`wrapi<class_@GDScript_wrapi>` **(** :ref:`int<class_int>` value, :ref:`int<class_int>` min, :ref:`int<class_int>` max **)**                                                                                               |
++------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`GDFunctionState<class_gdfunctionstate>`  | :ref:`yield<class_@GDScript_yield>` **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` signal **)**                                                                                                          |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -1049,6 +1053,52 @@ prints
 Returns a weak reference to an object.
 
 A weak reference to an object is not enough to keep the object alive: when the only remaining references to a referent are weak references, garbage collection is free to destroy the referent and reuse its memory for something else. However, until the object is actually destroyed the weak reference may return the object even if there are no strong references to it.
+
+.. _class_@GDScript_wrapf:
+
+- :ref:`float<class_float>` **wrapf** **(** :ref:`float<class_float>` value, :ref:`float<class_float>` min, :ref:`float<class_float>` max **)**
+
+Wraps float ``value`` between ``min`` and ``max``.
+
+Usable for creating loop-alike behavior or infinite surfaces.
+
+::
+
+    # a is 0.5
+    a = wrapf(10.5, 0.0, 10.0)
+
+::
+
+    # a is 9.5
+    a = wrapf(-0.5, 0.0, 10.0)
+
+::
+
+    # infinite loop between 0.0 and 0.99
+    f = wrapf(f + 0.1, 0.0, 1.0)
+
+.. _class_@GDScript_wrapi:
+
+- :ref:`int<class_int>` **wrapi** **(** :ref:`int<class_int>` value, :ref:`int<class_int>` min, :ref:`int<class_int>` max **)**
+
+Wraps integer ``value`` between ``min`` and ``max``.
+
+Usable for creating loop-alike behavior or infinite surfaces.
+
+::
+
+    # a is 0
+    a = wrapi(10, 0, 10)
+
+::
+
+    # a is 9
+    a = wrapi(-1, 0, 10)
+
+::
+
+    # infinite loop between 0 and 9
+    frame = wrapi(frame + 1, 0, 10)
 
 .. _class_@GDScript_yield:
 

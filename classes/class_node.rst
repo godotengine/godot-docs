@@ -240,12 +240,12 @@ Numeric Constants
 - **NOTIFICATION_EXIT_TREE** = **11**
 - **NOTIFICATION_MOVED_IN_PARENT** = **12**
 - **NOTIFICATION_READY** = **13**
+- **NOTIFICATION_PAUSED** = **14**
+- **NOTIFICATION_UNPAUSED** = **15**
 - **NOTIFICATION_PHYSICS_PROCESS** = **16** --- Notification received every frame when the physics process flag is set (see :ref:`set_physics_process<class_Node_set_physics_process>`).
 - **NOTIFICATION_PROCESS** = **17** --- Notification received every frame when the process flag is set (see :ref:`set_process<class_Node_set_process>`).
 - **NOTIFICATION_PARENTED** = **18** --- Notification received when a node is set as a child of another node. Note that this doesn't mean that a node entered the Scene Tree.
 - **NOTIFICATION_UNPARENTED** = **19** --- Notification received when a node is unparented (parent removed it from the list of children).
-- **NOTIFICATION_PAUSED** = **14**
-- **NOTIFICATION_UNPAUSED** = **15**
 - **NOTIFICATION_INSTANCED** = **20**
 - **NOTIFICATION_DRAG_BEGIN** = **21**
 - **NOTIFICATION_DRAG_END** = **22**
@@ -287,7 +287,7 @@ To keep track of the scene hierarchy (especially when instancing scenes into oth
 
 Finally, when a node is freed with :ref:`free<class_Node_free>` or :ref:`queue_free<class_Node_queue_free>`, it will also free all its children.
 
-**Networking with nodes:** After connecting to a server (or making one, see :ref:`NetworkedMultiplayerENet<class_networkedmultiplayerenet>`) it is possible to use the built-in RPC (remote procedure call) system to easily communicate over the network. By calling :ref:`rpc<class_Node_rpc>` with a method name, it will be called locally, and in all connected peers (peers = clients and the server that accepts connections), with behaviour varying depending on the network mode (:ref:`set_network_mode<class_Node_set_network_mode>`) on the receiving peer. To identify which :ref:`Node<class_node>` receives the RPC call Godot will use its :ref:`NodePath<class_nodepath>` (make sure node names are the same on all peers).
+**Networking with nodes:** After connecting to a server (or making one, see :ref:`NetworkedMultiplayerENet<class_networkedmultiplayerenet>`) it is possible to use the built-in RPC (remote procedure call) system to easily communicate over the network. By calling :ref:`rpc<class_Node_rpc>` with a method name, it will be called locally, and in all connected peers (peers = clients and the server that accepts connections), with behaviour varying depending on the network mode (:ref:`set_network_mode<class_Node_set_network_mode>`) on the receiving peer. To identify which ``Node`` receives the RPC call Godot will use its :ref:`NodePath<class_nodepath>` (make sure node names are the same on all peers).
 
 Member Function Description
 ---------------------------
@@ -356,7 +356,7 @@ Propagated to all nodes when the previous InputEvent is not consumed by any node
 
 - void **add_child** **(** :ref:`Node<class_node>` node, :ref:`bool<class_bool>` legible_unique_name=false **)**
 
-Add a child :ref:`Node<class_node>`. Nodes can have as many children as they want, but every child must have a unique name. Children nodes are automatically deleted when the parent node is deleted, so deleting a whole scene is performed by deleting its topmost node.
+Add a child ``Node``. Nodes can have as many children as they want, but every child must have a unique name. Children nodes are automatically deleted when the parent node is deleted, so deleting a whole scene is performed by deleting its topmost node.
 
 The optional boolean argument enforces creating child nodes with human-readable names, based on the name of the node being instanced instead of its type only.
 
@@ -368,7 +368,7 @@ The optional boolean argument enforces creating child nodes with human-readable 
 
 - void **add_to_group** **(** :ref:`String<class_string>` group, :ref:`bool<class_bool>` persistent=false **)**
 
-Add a node to a group. Groups are helpers to name and organize a subset of nodes, like for example "enemies" or "collectables". A :ref:`Node<class_node>` can be in any number of groups. Nodes can be assigned a group at any time, but will not be added to it until they are inside the scene tree (see :ref:`is_inside_tree<class_Node_is_inside_tree>`).
+Add a node to a group. Groups are helpers to name and organize a subset of nodes, like for example "enemies" or "collectables". A ``Node`` can be in any number of groups. Nodes can be assigned a group at any time, but will not be added to it until they are inside the scene tree (see :ref:`is_inside_tree<class_Node_is_inside_tree>`).
 
 .. _class_Node_can_process:
 
@@ -380,7 +380,7 @@ Return true if the node can process, i.e. whether its pause mode allows processi
 
 - :ref:`Node<class_node>` **duplicate** **(** :ref:`int<class_int>` flags=15 **)** const
 
-Duplicate the node, returning a new :ref:`Node<class_node>`.
+Duplicate the node, returning a new ``Node``.
 
 You can fine-tune the behavior using the ``flags``, which are based on the DUPLICATE\_\* constants.
 
@@ -406,7 +406,7 @@ Return the amount of child nodes.
 
 - :ref:`Array<class_array>` **get_children** **(** **)** const
 
-Return an array of references (:ref:`Node<class_node>`) to the child nodes.
+Return an array of references (``Node``) to the child nodes.
 
 .. _class_Node_get_filename:
 
@@ -480,7 +480,7 @@ Get the node owner (see :ref:`set_owner<class_Node_set_owner>`).
 
 - :ref:`Node<class_node>` **get_parent** **(** **)** const
 
-Return the parent node of the current node, or an empty :ref:`Node<class_node>` if the node lacks a parent.
+Return the parent node of the current node, or an empty ``Node`` if the node lacks a parent.
 
 .. _class_Node_get_path:
 
@@ -630,7 +630,7 @@ Print the scene to stdout. Used mainly for debugging purposes.
 
 - void **propagate_call** **(** :ref:`String<class_string>` method, :ref:`Array<class_array>` args=[  ], :ref:`bool<class_bool>` parent_first=false **)**
 
-Calls the method (if present) with the arguments given in "args" on this Node and recursively on all children. If the parent_first argument is true then the method will be called on the current :ref:`Node<class_node>` first, then on all children. If it is false then the children will get called first.
+Calls the method (if present) with the arguments given in "args" on this Node and recursively on all children. If the parent_first argument is true then the method will be called on the current ``Node`` first, then on all children. If it is false then the children will get called first.
 
 .. _class_Node_propagate_notification:
 
@@ -660,7 +660,7 @@ Remove a node and set all its children as children of the parent node (if exists
 
 - void **remove_child** **(** :ref:`Node<class_node>` node **)**
 
-Remove a child :ref:`Node<class_node>`. Node is NOT deleted and will have to be deleted manually.
+Remove a child ``Node``. Node is NOT deleted and will have to be deleted manually.
 
 .. _class_Node_remove_from_group:
 
@@ -754,7 +754,7 @@ A node can contain a filename. This filename should not be changed by the user, 
 
 - void **set_name** **(** :ref:`String<class_string>` name **)**
 
-Set the name of the :ref:`Node<class_node>`. Name must be unique within parent, and setting an already existing name will cause for the node to be automatically renamed.
+Set the name of the ``Node``. Name must be unique within parent, and setting an already existing name will cause for the node to be automatically renamed.
 
 .. _class_Node_set_network_master:
 

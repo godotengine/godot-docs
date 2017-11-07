@@ -78,7 +78,7 @@ Member Variables
 
   .. _class_ARVRServer_world_scale:
 
-- :ref:`float<class_float>` **world_scale**
+- :ref:`float<class_float>` **world_scale** - Allows you to adjust the scale to your game's units. Most AR/VR platforms assume a scale of 1 game world unit = 1 meter in the real world.
 
 
 Numeric Constants
@@ -87,8 +87,8 @@ Numeric Constants
 - **TRACKER_CONTROLLER** = **1** --- Our tracker tracks the location of a controller.
 - **TRACKER_BASESTATION** = **2** --- Our tracker tracks the location of a base station.
 - **TRACKER_ANCHOR** = **4** --- Our tracker tracks the location and size of an AR anchor.
-- **TRACKER_UNKNOWN** = **128** --- Used internally if we haven't set the tracker type yet.
 - **TRACKER_ANY_KNOWN** = **127** --- Used internally to filter trackers of any known type.
+- **TRACKER_UNKNOWN** = **128** --- Used internally if we haven't set the tracker type yet.
 - **TRACKER_ANY** = **255** --- Used internally to select all trackers.
 
 Description

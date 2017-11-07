@@ -43,10 +43,10 @@ Numeric Constants
 - **RENDER_SHADER_CHANGES_IN_FRAME** = **14** --- Shader changes per frame. 3D only.
 - **RENDER_SURFACE_CHANGES_IN_FRAME** = **15** --- Render surface changes per frame. 3D only.
 - **RENDER_DRAW_CALLS_IN_FRAME** = **16** --- Draw calls per frame. 3D only.
-- **RENDER_USAGE_VIDEO_MEM_TOTAL** = **20**
 - **RENDER_VIDEO_MEM_USED** = **17** --- Video memory used. Includes both texture and vertex memory.
 - **RENDER_TEXTURE_MEM_USED** = **18** --- Texture memory used.
 - **RENDER_VERTEX_MEM_USED** = **19** --- Vertex memory used.
+- **RENDER_USAGE_VIDEO_MEM_TOTAL** = **20**
 - **PHYSICS_2D_ACTIVE_OBJECTS** = **21** --- Number of active :ref:`RigidBody2D<class_rigidbody2d>` nodes in the game.
 - **PHYSICS_2D_COLLISION_PAIRS** = **22** --- Number of collision pairs in the 2D physics engine.
 - **PHYSICS_2D_ISLAND_COUNT** = **23** --- Number of islands in the 2D physics engine.

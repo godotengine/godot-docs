@@ -14,7 +14,7 @@ InputEventJoypadMotion
 Brief Description
 -----------------
 
-Input event type for gamepad joysticks and other motions. For buttons see :ref:`InputEventJoypadMotion<class_inputeventjoypadmotion>`.
+Input event type for gamepad joysticks and other motions. For buttons see ``InputEventJoypadMotion``.
 
 Member Functions
 ----------------

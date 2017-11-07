@@ -64,17 +64,19 @@ Signals
 
 - **pre_popup_pressed** **(** **)**
 
+Emitted when the ``TabContainer``'s :ref:`Popup<class_popup>` button is clicked. See :ref:`set_popup<class_TabContainer_set_popup>` for details.
+
 .. _class_TabContainer_tab_changed:
 
 - **tab_changed** **(** :ref:`int<class_int>` tab **)**
 
-Emitted only when the current tab changes.
+Emitted when switching to another tab.
 
 .. _class_TabContainer_tab_selected:
 
 - **tab_selected** **(** :ref:`int<class_int>` tab **)**
 
-Emitted when a tab is being selected, even if it is the same tab.
+Emitted when a tab is selected, even if it is the current tab.
 
 
 Member Variables
@@ -82,15 +84,15 @@ Member Variables
 
   .. _class_TabContainer_current_tab:
 
-- :ref:`int<class_int>` **current_tab** - The current tab.
+- :ref:`int<class_int>` **current_tab** - The current tab index. When set, this index's :ref:`Control<class_control>` node's ``visible`` property is set to ``true`` and all others are set to ``false``.
 
   .. _class_TabContainer_tab_align:
 
-- :ref:`int<class_int>` **tab_align** - The alignment of all the tabs of the tab container. See the ``ALIGN\_\*`` constants.
+- :ref:`int<class_int>` **tab_align** - The alignment of all tabs in the tab container. See the ``ALIGN\_\*`` constants for details.
 
   .. _class_TabContainer_tabs_visible:
 
-- :ref:`bool<class_bool>` **tabs_visible** - If ``true`` all tabs that are children of the TabContainer will be visible.
+- :ref:`bool<class_bool>` **tabs_visible** - If ``true`` tabs are visible. If ``false`` tabs' content and titles are hidden. Default value: ``true``.
 
 
 Numeric Constants
@@ -103,9 +105,13 @@ Numeric Constants
 Description
 -----------
 
-Tabbed Container. Contains several children controls, but shows only one at the same time. Clicking on the top tabs allows to change the currently visible one.
+Sets the active tab's ``visible`` property to the value ``true``. Sets all other children's to ``false``.
 
-Children controls of this one automatically.
+Ignores non-:ref:`Control<class_control>` children.
+
+Individual tabs are always visible unless you use :ref:`set_tab_disabled<class_TabContainer_set_tab_disabled>` and :ref:`set_tab_title<class_TabContainer_set_tab_title>` to hide it.
+
+To hide only a tab's content, nest the content inside a child :ref:`Control<class_control>`, so it receives the ``TabContainer``'s visibility setting instead.
 
 Member Function Description
 ---------------------------
@@ -120,39 +126,43 @@ Returns ``true`` if the tabs are visible.
 
 - :ref:`int<class_int>` **get_current_tab** **(** **)** const
 
-Returns the current tab index that is being shown.
+Returns the currently visible tab's index.
 
 .. _class_TabContainer_get_current_tab_control:
 
 - :ref:`Control<class_control>` **get_current_tab_control** **(** **)** const
 
+Returns the child :ref:`Control<class_control>` node located at the active tab index.
+
 .. _class_TabContainer_get_popup:
 
 - :ref:`Popup<class_popup>` **get_popup** **(** **)** const
+
+Returns the :ref:`Popup<class_popup>` node instance if one has been set already with :ref:`set_popup<class_TabContainer_set_popup>`.
 
 .. _class_TabContainer_get_previous_tab:
 
 - :ref:`int<class_int>` **get_previous_tab** **(** **)** const
 
-Returns the previous tab index that was being shown.
+Returns the previously active tab index.
 
 .. _class_TabContainer_get_tab_align:
 
 - :ref:`int<class_int>` **get_tab_align** **(** **)** const
 
-Returns the tab alignment.See the ALIGN\_\* constants.
+Returns the tab alignment. See the ``ALIGN\_\*`` constants.
 
 .. _class_TabContainer_get_tab_control:
 
 - :ref:`Control<class_control>` **get_tab_control** **(** :ref:`int<class_int>` idx **)** const
 
-Returns the current tab control that is being shown.
+Returns the currently visible tab's :ref:`Control<class_control>` node.
 
 .. _class_TabContainer_get_tab_count:
 
 - :ref:`int<class_int>` **get_tab_count** **(** **)** const
 
-Returns the amount of tabs.
+Returns the number of tabs.
 
 .. _class_TabContainer_get_tab_disabled:
 
@@ -170,46 +180,48 @@ Returns the :ref:`Texture<class_texture>` for the tab at index ``tab_idx`` or nu
 
 - :ref:`String<class_string>` **get_tab_title** **(** :ref:`int<class_int>` tab_idx **)** const
 
-Returns the title for the tab at index ``tab_idx``. Tab titles are by default the children node name, but this can be overridden.
+Returns the title of the tab at index ``tab_idx``. Tab titles default to the name of the indexed child node, but this can be overridden with :ref:`set_tab_title<class_TabContainer_set_tab_title>`.
 
 .. _class_TabContainer_set_current_tab:
 
 - void **set_current_tab** **(** :ref:`int<class_int>` tab_idx **)**
 
-Bring a tab (and the Control it represents) to the front, and hide the rest.
+Sets to ``false`` the ``visible`` property for all :ref:`Control<class_control>` children except for the tab at ``tab_idx``.
 
 .. _class_TabContainer_set_popup:
 
 - void **set_popup** **(** :ref:`Node<class_node>` popup **)**
 
+If set on a :ref:`Popup<class_popup>` node instance, a popup menu icon appears in the top-right corner of the ``TabContainer``. Clicking it will expand the :ref:`Popup<class_popup>` node.
+
 .. _class_TabContainer_set_tab_align:
 
 - void **set_tab_align** **(** :ref:`int<class_int>` align **)**
 
-Set tab alignment, from the ALIGN\_\* enum. Moves tabs to the left, right or center.
+Sets tab alignment, from the ``ALIGN\_\*`` constants. Moves tabs to the left, right, or center.
 
 .. _class_TabContainer_set_tab_disabled:
 
 - void **set_tab_disabled** **(** :ref:`int<class_int>` tab_idx, :ref:`bool<class_bool>` disabled **)**
 
-Set tab at index ``tab_idx`` disabled.
+If ``disabled`` is false, hides the tab at index ``tab_idx``. Note that its title text will remain, unless also removed with :ref:`set_tab_title<class_TabContainer_set_tab_title>`.
 
 .. _class_TabContainer_set_tab_icon:
 
 - void **set_tab_icon** **(** :ref:`int<class_int>` tab_idx, :ref:`Texture<class_texture>` icon **)**
 
-Set an icon for a tab at index ``tab_idx``.
+Sets an icon for the tab at index ``tab_idx``.
 
 .. _class_TabContainer_set_tab_title:
 
 - void **set_tab_title** **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_string>` title **)**
 
-Set a title for the tab at index ``tab_idx``. Tab titles are by default the children node name, but this can be overridden.
+Sets a title for the tab at index ``tab_idx``. Tab titles default to the name of the indexed child node, but this can be overridden with :ref:`set_tab_title<class_TabContainer_set_tab_title>`.
 
 .. _class_TabContainer_set_tabs_visible:
 
 - void **set_tabs_visible** **(** :ref:`bool<class_bool>` visible **)**
 
-If ``true`` all the tabs will be visible.
+If ``true`` tabs are visible. If ``false`` tabs' content and titles are hidden. Default value: ``true``.
 
 

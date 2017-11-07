@@ -44,19 +44,19 @@ Member Variables
 
   .. _class_Joint2D_bias:
 
-- :ref:`float<class_float>` **bias**
+- :ref:`float<class_float>` **bias** - When :ref:`node_a<class_Joint2D_node_a>` and :ref:`node_b<class_Joint2D_node_b>` move in different directions the ``bias`` controls how fast the joint pulls them back to their original position. The lower the ``bias`` the more the two bodies can pull on the joint. Default value: ``0``
 
   .. _class_Joint2D_disable_collision:
 
-- :ref:`bool<class_bool>` **disable_collision**
+- :ref:`bool<class_bool>` **disable_collision** - If ``true`` :ref:`node_a<class_Joint2D_node_a>` and :ref:`node_b<class_Joint2D_node_b>` can collide. Default value: ``false``.
 
   .. _class_Joint2D_node_a:
 
-- :ref:`NodePath<class_nodepath>` **node_a**
+- :ref:`NodePath<class_nodepath>` **node_a** - The first body attached to the joint. Must derive from :ref:`PhysicsBody2D<class_physicsbody2d>`.
 
   .. _class_Joint2D_node_b:
 
-- :ref:`NodePath<class_nodepath>` **node_b**
+- :ref:`NodePath<class_nodepath>` **node_b** - The second body attached to the joint. Must derive from :ref:`PhysicsBody2D<class_physicsbody2d>`.
 
 
 Description

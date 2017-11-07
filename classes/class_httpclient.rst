@@ -52,10 +52,6 @@ Member Functions
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`request_raw<class_HTTPClient_request_raw>` **(** :ref:`int<class_int>` method, :ref:`String<class_string>` url, :ref:`PoolStringArray<class_poolstringarray>` headers, :ref:`PoolByteArray<class_poolbytearray>` body **)** |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`send_body_data<class_HTTPClient_send_body_data>` **(** :ref:`PoolByteArray<class_poolbytearray>` body **)**                                                                                                                 |
-+------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`send_body_text<class_HTTPClient_send_body_text>` **(** :ref:`String<class_string>` body **)**                                                                                                                               |
-+------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_blocking_mode<class_HTTPClient_set_blocking_mode>` **(** :ref:`bool<class_bool>` enabled **)**                                                                                                                          |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_connection<class_HTTPClient_set_connection>` **(** :ref:`StreamPeer<class_streampeer>` connection **)**                                                                                                                 |
@@ -149,7 +145,7 @@ Member Function Description
 
 - void **close** **(** **)**
 
-Cloces the current connection, allows for reusal of :ref:`HTTPClient<class_httpclient>`.
+Cloces the current connection, allows for reusal of ``HTTPClient``.
 
 .. _class_HTTPClient_connect_to_host:
 
@@ -205,7 +201,7 @@ Returns a STATUS\_\* enum constant. Need to call :ref:`poll<class_HTTPClient_pol
 
 - :ref:`bool<class_bool>` **has_response** **(** **)** const
 
-Return whether this :ref:`HTTPClient<class_httpclient>` has a response available.
+Return whether this ``HTTPClient`` has a response available.
 
 .. _class_HTTPClient_is_blocking_mode_enabled:
 
@@ -217,7 +213,7 @@ Return whether blocking mode is enabled.
 
 - :ref:`bool<class_bool>` **is_response_chunked** **(** **)** const
 
-Return whether this :ref:`HTTPClient<class_httpclient>` has a response that is chunked.
+Return whether this ``HTTPClient`` has a response that is chunked.
 
 .. _class_HTTPClient_poll:
 
@@ -269,18 +265,6 @@ Sends a raw request to the connected host. The url is what is normally behind th
 Headers are HTTP request headers.
 
 Sends body raw, as a byte array, does not encode it in any way.
-
-.. _class_HTTPClient_send_body_data:
-
-- :ref:`int<class_int>` **send_body_data** **(** :ref:`PoolByteArray<class_poolbytearray>` body **)**
-
-Stub function
-
-.. _class_HTTPClient_send_body_text:
-
-- :ref:`int<class_int>` **send_body_text** **(** :ref:`String<class_string>` body **)**
-
-Stub function
 
 .. _class_HTTPClient_set_blocking_mode:
 

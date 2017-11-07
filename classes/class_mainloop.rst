@@ -57,6 +57,7 @@ Numeric Constants
 - **NOTIFICATION_WM_FOCUS_IN** = **4**
 - **NOTIFICATION_WM_FOCUS_OUT** = **5**
 - **NOTIFICATION_WM_QUIT_REQUEST** = **6**
+- **NOTIFICATION_WM_GO_BACK_REQUEST** = **7**
 - **NOTIFICATION_WM_UNFOCUS_REQUEST** = **8**
 - **NOTIFICATION_OS_MEMORY_WARNING** = **9**
 - **NOTIFICATION_TRANSLATION_CHANGED** = **90**
@@ -65,7 +66,7 @@ Numeric Constants
 Description
 -----------
 
-Main loop is the abstract main loop base class. All other main loop classes are derived from it. Upon application start, a :ref:`MainLoop<class_mainloop>` has to be provided to OS, else the application will exit. This happens automatically (and a :ref:`SceneTree<class_scenetree>` is created), unless a main :ref:`Script<class_script>` is supplied, which may or not create and return a :ref:`MainLoop<class_mainloop>`.
+Main loop is the abstract main loop base class. All other main loop classes are derived from it. Upon application start, a ``MainLoop`` has to be provided to OS, else the application will exit. This happens automatically (and a :ref:`SceneTree<class_scenetree>` is created), unless a main :ref:`Script<class_script>` is supplied, which may or not create and return a ``MainLoop``.
 
 Member Function Description
 ---------------------------

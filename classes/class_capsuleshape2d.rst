@@ -53,24 +53,24 @@ Member Function Description
 
 - :ref:`float<class_float>` **get_height** **(** **)** const
 
-Return the height of the :ref:`CapsuleShape2D<class_capsuleshape2d>`.
+Return the height of the ``CapsuleShape2D``.
 
 .. _class_CapsuleShape2D_get_radius:
 
 - :ref:`float<class_float>` **get_radius** **(** **)** const
 
-Return the radius of the :ref:`CapsuleShape2D<class_capsuleshape2d>`.
+Return the radius of the ``CapsuleShape2D``.
 
 .. _class_CapsuleShape2D_set_height:
 
 - void **set_height** **(** :ref:`float<class_float>` height **)**
 
-Set the height of the :ref:`CapsuleShape2D<class_capsuleshape2d>`.
+Set the height of the ``CapsuleShape2D``.
 
 .. _class_CapsuleShape2D_set_radius:
 
 - void **set_radius** **(** :ref:`float<class_float>` radius **)**
 
-Set the radius of the :ref:`CapsuleShape2D<class_capsuleshape2d>`.
+Set the radius of the ``CapsuleShape2D``.
 
 

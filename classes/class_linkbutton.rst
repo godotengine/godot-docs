@@ -78,6 +78,6 @@ Sets the text of the button.
 
 - void **set_underline_mode** **(** :ref:`int<class_int>` underline_mode **)**
 
-Sets the underline mode for this button, the argument must be one of the :ref:`LinkButton<class_linkbutton>` constants (see constants section).
+Sets the underline mode for this button, the argument must be one of the ``LinkButton`` constants (see constants section).
 
 

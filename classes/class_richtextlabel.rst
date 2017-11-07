@@ -124,23 +124,23 @@ Member Variables
 
   .. _class_RichTextLabel_bbcode_enabled:
 
-- :ref:`bool<class_bool>` **bbcode_enabled**
+- :ref:`bool<class_bool>` **bbcode_enabled** - If ``true`` the label uses BBCode formatting. Default value: ``false``.
 
   .. _class_RichTextLabel_bbcode_text:
 
-- :ref:`String<class_string>` **bbcode_text**
+- :ref:`String<class_string>` **bbcode_text** - The label's text in BBCode format.
 
   .. _class_RichTextLabel_override_selected_font_color:
 
-- :ref:`bool<class_bool>` **override_selected_font_color**
+- :ref:`bool<class_bool>` **override_selected_font_color** - If ``true`` the label uses the custom font color. Default value: ``false``.
 
   .. _class_RichTextLabel_percent_visible:
 
-- :ref:`float<class_float>` **percent_visible**
+- :ref:`float<class_float>` **percent_visible** - The text's visibility, as a :ref:`float<class_float>` between 0.0 and 1.0.
 
   .. _class_RichTextLabel_visible_characters:
 
-- :ref:`int<class_int>` **visible_characters**
+- :ref:`int<class_int>` **visible_characters** - The restricted number of characters to display in the label.
 
 
 Numeric Constants
@@ -163,6 +163,7 @@ Numeric Constants
 - **ITEM_ALIGN** = **7**
 - **ITEM_INDENT** = **8**
 - **ITEM_LIST** = **9**
+- **ITEM_TABLE** = **10**
 - **ITEM_META** = **11**
 
 Description
@@ -189,17 +190,25 @@ Member Function Description
 
 - void **clear** **(** **)**
 
+Clears the label's text.
+
 .. _class_RichTextLabel_get_bbcode:
 
 - :ref:`String<class_string>` **get_bbcode** **(** **)** const
+
+Returns label's BBCode.
 
 .. _class_RichTextLabel_get_line_count:
 
 - :ref:`int<class_int>` **get_line_count** **(** **)** const
 
+Returns the number of lines in the text.
+
 .. _class_RichTextLabel_get_percent_visible:
 
 - :ref:`float<class_float>` **get_percent_visible** **(** **)** const
+
+Returns the text's visibility as a floating point value between 0.0 and 1.0.
 
 .. _class_RichTextLabel_get_tab_size:
 
@@ -209,11 +218,13 @@ Member Function Description
 
 - :ref:`String<class_string>` **get_text** **(** **)**
 
-Returns the raw text, stripping out the formatting information.
+Returns the label's text with the formatting removed.
 
 .. _class_RichTextLabel_get_total_character_count:
 
 - :ref:`int<class_int>` **get_total_character_count** **(** **)** const
+
+Returns the total number of characters.
 
 .. _class_RichTextLabel_get_v_scroll:
 
@@ -227,6 +238,8 @@ Returns the raw text, stripping out the formatting information.
 
 - :ref:`int<class_int>` **get_visible_line_count** **(** **)** const
 
+Returns the number of visible lines.
+
 .. _class_RichTextLabel_is_meta_underlined:
 
 - :ref:`bool<class_bool>` **is_meta_underlined** **(** **)** const
@@ -239,6 +252,8 @@ Returns the raw text, stripping out the formatting information.
 
 - :ref:`bool<class_bool>` **is_scroll_active** **(** **)** const
 
+Returns ``true`` if active scrolling is enabled.
+
 .. _class_RichTextLabel_is_scroll_following:
 
 - :ref:`bool<class_bool>` **is_scroll_following** **(** **)** const
@@ -247,15 +262,19 @@ Returns the raw text, stripping out the formatting information.
 
 - :ref:`bool<class_bool>` **is_selection_enabled** **(** **)** const
 
-Return true if selecting the text inside this richtext is allowed.
+Returns ``true`` if the label's text can be selected.
 
 .. _class_RichTextLabel_is_using_bbcode:
 
 - :ref:`bool<class_bool>` **is_using_bbcode** **(** **)** const
 
+Returns ``true`` if the label has BBCode.
+
 .. _class_RichTextLabel_newline:
 
 - void **newline** **(** **)**
+
+Adds a newline to the end of the rich text.
 
 .. _class_RichTextLabel_parse_bbcode:
 
@@ -313,6 +332,8 @@ Return true if selecting the text inside this richtext is allowed.
 
 - void **set_bbcode** **(** :ref:`String<class_string>` text **)**
 
+Sets the BBCode text to the label.
+
 .. _class_RichTextLabel_set_meta_underline:
 
 - void **set_meta_underline** **(** :ref:`bool<class_bool>` enable **)**
@@ -324,6 +345,8 @@ Return true if selecting the text inside this richtext is allowed.
 .. _class_RichTextLabel_set_percent_visible:
 
 - void **set_percent_visible** **(** :ref:`float<class_float>` percent_visible **)**
+
+Sets the text's visibility. Takes a floating point value between 0.0 and 1.0.
 
 .. _class_RichTextLabel_set_scroll_active:
 
@@ -337,7 +360,7 @@ Return true if selecting the text inside this richtext is allowed.
 
 - void **set_selection_enabled** **(** :ref:`bool<class_bool>` enabled **)**
 
-Set to true if selecting the text inside this richtext is allowed.
+If ``true`` text can be selected.
 
 .. _class_RichTextLabel_set_tab_size:
 

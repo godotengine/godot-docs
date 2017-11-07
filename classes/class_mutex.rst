@@ -39,18 +39,18 @@ Member Function Description
 
 - void **lock** **(** **)**
 
-Lock this :ref:`Mutex<class_mutex>`, blocks until it is unlocked by the current owner.
+Lock this ``Mutex``, blocks until it is unlocked by the current owner.
 
 .. _class_Mutex_try_lock:
 
 - :ref:`int<class_int>` **try_lock** **(** **)**
 
-Try locking this :ref:`Mutex<class_mutex>`, does not block. Returns OK on success else ERR_BUSY.
+Try locking this ``Mutex``, does not block. Returns OK on success else ERR_BUSY.
 
 .. _class_Mutex_unlock:
 
 - void **unlock** **(** **)**
 
-Unlock this :ref:`Mutex<class_mutex>`, leaving it to others threads.
+Unlock this ``Mutex``, leaving it to others threads.
 
 

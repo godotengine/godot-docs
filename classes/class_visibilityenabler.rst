@@ -40,8 +40,8 @@ Member Variables
 Numeric Constants
 -----------------
 
-- **ENABLER_FREEZE_BODIES** = **1** --- This enabler will freeze :ref:`RigidBody<class_rigidbody>` nodes.
 - **ENABLER_PAUSE_ANIMATIONS** = **0** --- This enabler will pause :ref:`AnimationPlayer<class_animationplayer>` nodes.
+- **ENABLER_FREEZE_BODIES** = **1** --- This enabler will freeze :ref:`RigidBody<class_rigidbody>` nodes.
 - **ENABLER_MAX** = **2**
 
 Description

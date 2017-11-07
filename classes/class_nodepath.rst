@@ -40,9 +40,9 @@ Description
 
 A pre-parsed relative or absolute path in a scene tree, for use with :ref:`Node.get_node<class_Node_get_node>` and similar functions. It can reference a node, a resource within a node, or a property of a node or resource. For instance, ``"Path2D/PathFollow2D/Sprite:texture:size"`` would refer to the size property of the texture resource on the node named "Sprite" which is a child of the other named nodes in the path. Note that if you want to get a resource, you must end the path with a colon, otherwise the last element will be used as a property name.
 
-You will usually just pass a string to :ref:`Node.get_node<class_Node_get_node>` and it will be automatically converted, but you may occasionally want to parse a path ahead of time with :ref:`NodePath<class_nodepath>` or the literal syntax ``@"path"``. Exporting a :ref:`NodePath<class_nodepath>` variable will give you a node selection widget in the properties panel of the editor, which can often be useful.
+You will usually just pass a string to :ref:`Node.get_node<class_Node_get_node>` and it will be automatically converted, but you may occasionally want to parse a path ahead of time with ``NodePath`` or the literal syntax ``@"path"``. Exporting a ``NodePath`` variable will give you a node selection widget in the properties panel of the editor, which can often be useful.
 
-A :ref:`NodePath<class_nodepath>` is made up of a list of node names, a list of "subnode" (resource) names, and the name of a property in the final node or resource.
+A ``NodePath`` is made up of a list of node names, a list of "subnode" (resource) names, and the name of a property in the final node or resource.
 
 Member Function Description
 ---------------------------

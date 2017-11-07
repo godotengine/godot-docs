@@ -110,8 +110,8 @@ Member Variables
 Numeric Constants
 -----------------
 
-- **TWEEN_PROCESS_PHYSICS** = **0** --- The :ref:`Tween<class_tween>` should use ``_physics_process`` for timekeeping when this is enabled.
-- **TWEEN_PROCESS_IDLE** = **1** --- The :ref:`Tween<class_tween>` should use ``_process`` for timekeeping when this is enabled (default).
+- **TWEEN_PROCESS_PHYSICS** = **0** --- The ``Tween`` should use ``_physics_process`` for timekeeping when this is enabled.
+- **TWEEN_PROCESS_IDLE** = **1** --- The ``Tween`` should use ``_process`` for timekeeping when this is enabled (default).
 - **TRANS_LINEAR** = **0** --- Means that the animation is interpolated linearly.
 - **TRANS_SINE** = **1** --- Means that the animation is interpolated using a sine wave.
 - **TRANS_QUINT** = **2** --- Means that the animation is interpolated with a quinary (to the power of 5) function.

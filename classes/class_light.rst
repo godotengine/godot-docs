@@ -119,6 +119,7 @@ Numeric Constants
 - **PARAM_SHADOW_SPLIT_3_OFFSET** = **10**
 - **PARAM_SHADOW_NORMAL_BIAS** = **11**
 - **PARAM_SHADOW_BIAS** = **12**
+- **PARAM_SHADOW_BIAS_SPLIT_SCALE** = **13**
 - **PARAM_MAX** = **14**
 
 Description

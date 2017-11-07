@@ -183,7 +183,7 @@ Returns the global transform, relative to worldspace.
 
 - :ref:`Spatial<class_spatial>` **get_parent_spatial** **(** **)** const
 
-Returns the parent :ref:`Spatial<class_spatial>`, or an empty :ref:`Object<class_object>` if no parent exists or parent is not of type :ref:`Spatial<class_spatial>`.
+Returns the parent ``Spatial``, or an empty :ref:`Object<class_object>` if no parent exists or parent is not of type ``Spatial``.
 
 .. _class_Spatial_get_rotation:
 

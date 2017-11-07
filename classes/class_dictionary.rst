@@ -85,7 +85,7 @@ Return a hashed integer value representing the dictionary contents.
 
 - :ref:`Array<class_array>` **keys** **(** **)**
 
-Return the list of keys in the :ref:`Dictionary<class_dictionary>`.
+Return the list of keys in the ``Dictionary``.
 
 .. _class_Dictionary_size:
 
@@ -97,6 +97,6 @@ Return the size of the dictionary (in pairs).
 
 - :ref:`Array<class_array>` **values** **(** **)**
 
-Return the list of values in the :ref:`Dictionary<class_dictionary>`.
+Return the list of values in the ``Dictionary``.
 
 

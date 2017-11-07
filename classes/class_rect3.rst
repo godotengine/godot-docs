@@ -70,7 +70,7 @@ Member Variables
 
   .. _class_Rect3_position:
 
-- :ref:`Vector3<class_vector3>` **position**
+- :ref:`Vector3<class_vector3>` **position** - Beginning corner.
 
   .. _class_Rect3_size:
 
@@ -80,7 +80,7 @@ Member Variables
 Description
 -----------
 
-Rect3 provides an 3D Axis-Aligned Bounding Box. It consists of a position, a size, and several utility functions. It is typically used for simple (fast) overlap tests.
+Rect3 consists of a position, a size, and several utility functions. It is typically used for fast overlap tests.
 
 Member Function Description
 ---------------------------
@@ -95,120 +95,120 @@ Optional constructor, accepts position and size.
 
 - :ref:`bool<class_bool>` **encloses** **(** :ref:`Rect3<class_rect3>` with **)**
 
-Return true if this :ref:`Rect3<class_rect3>` completely encloses another one.
+Returns ``true`` if this ``Rect3`` completely encloses another one.
 
 .. _class_Rect3_expand:
 
 - :ref:`Rect3<class_rect3>` **expand** **(** :ref:`Vector3<class_vector3>` to_point **)**
 
-Return this :ref:`Rect3<class_rect3>` expanded to include a given point.
+Returns this ``Rect3`` expanded to include a given point.
 
 .. _class_Rect3_get_area:
 
 - :ref:`float<class_float>` **get_area** **(** **)**
 
-Get the area of the :ref:`Rect3<class_rect3>`.
+Gets the area of the ``Rect3``.
 
 .. _class_Rect3_get_endpoint:
 
 - :ref:`Vector3<class_vector3>` **get_endpoint** **(** :ref:`int<class_int>` idx **)**
 
-Get the position of the 8 endpoints of the :ref:`Rect3<class_rect3>` in space.
+Gets the position of the 8 endpoints of the ``Rect3`` in space.
 
 .. _class_Rect3_get_longest_axis:
 
 - :ref:`Vector3<class_vector3>` **get_longest_axis** **(** **)**
 
-Return the normalized longest axis of the :ref:`Rect3<class_rect3>`.
+Returns the normalized longest axis of the ``Rect3``.
 
 .. _class_Rect3_get_longest_axis_index:
 
 - :ref:`int<class_int>` **get_longest_axis_index** **(** **)**
 
-Return the index of the longest axis of the :ref:`Rect3<class_rect3>` (according to :ref:`Vector3<class_vector3>`::AXIS\* enum).
+Returns the index of the longest axis of the ``Rect3`` (according to :ref:`Vector3<class_vector3>`::AXIS\* enum).
 
 .. _class_Rect3_get_longest_axis_size:
 
 - :ref:`float<class_float>` **get_longest_axis_size** **(** **)**
 
-Return the scalar length of the longest axis of the :ref:`Rect3<class_rect3>`.
+Returns the scalar length of the longest axis of the ``Rect3``.
 
 .. _class_Rect3_get_shortest_axis:
 
 - :ref:`Vector3<class_vector3>` **get_shortest_axis** **(** **)**
 
-Return the normalized shortest axis of the :ref:`Rect3<class_rect3>`.
+Returns the normalized shortest axis of the ``Rect3``.
 
 .. _class_Rect3_get_shortest_axis_index:
 
 - :ref:`int<class_int>` **get_shortest_axis_index** **(** **)**
 
-Return the index of the shortest axis of the :ref:`Rect3<class_rect3>` (according to :ref:`Vector3<class_vector3>`::AXIS\* enum).
+Returns the index of the shortest axis of the ``Rect3`` (according to :ref:`Vector3<class_vector3>`::AXIS\* enum).
 
 .. _class_Rect3_get_shortest_axis_size:
 
 - :ref:`float<class_float>` **get_shortest_axis_size** **(** **)**
 
-Return the scalar length of the shortest axis of the :ref:`Rect3<class_rect3>`.
+Returns the scalar length of the shortest axis of the ``Rect3``.
 
 .. _class_Rect3_get_support:
 
 - :ref:`Vector3<class_vector3>` **get_support** **(** :ref:`Vector3<class_vector3>` dir **)**
 
-Return the support point in a given direction. This is useful for collision detection algorithms.
+Returns the support point in a given direction. This is useful for collision detection algorithms.
 
 .. _class_Rect3_grow:
 
 - :ref:`Rect3<class_rect3>` **grow** **(** :ref:`float<class_float>` by **)**
 
-Return a copy of the :ref:`Rect3<class_rect3>` grown a given amount of units towards all the sides.
+Returns a copy of the ``Rect3`` grown a given amount of units towards all the sides.
 
 .. _class_Rect3_has_no_area:
 
 - :ref:`bool<class_bool>` **has_no_area** **(** **)**
 
-Return true if the :ref:`Rect3<class_rect3>` is flat or empty.
+Returns ``true`` if the ``Rect3`` is flat or empty.
 
 .. _class_Rect3_has_no_surface:
 
 - :ref:`bool<class_bool>` **has_no_surface** **(** **)**
 
-Return true if the :ref:`Rect3<class_rect3>` is empty.
+Returns ``true`` if the ``Rect3`` is empty.
 
 .. _class_Rect3_has_point:
 
 - :ref:`bool<class_bool>` **has_point** **(** :ref:`Vector3<class_vector3>` point **)**
 
-Return true if the :ref:`Rect3<class_rect3>` contains a point.
+Returns ``true`` if the ``Rect3`` contains a point.
 
 .. _class_Rect3_intersection:
 
 - :ref:`Rect3<class_rect3>` **intersection** **(** :ref:`Rect3<class_rect3>` with **)**
 
-Return the intersection between two :ref:`Rect3<class_rect3>`. An empty Rect3 (size 0,0,0) is returned on failure.
+Returns the intersection between two ``Rect3``. An empty Rect3 (size 0,0,0) is returned on failure.
 
 .. _class_Rect3_intersects:
 
 - :ref:`bool<class_bool>` **intersects** **(** :ref:`Rect3<class_rect3>` with **)**
 
-Return true if the :ref:`Rect3<class_rect3>` overlaps with another.
+Returns ``true`` if the ``Rect3`` overlaps with another.
 
 .. _class_Rect3_intersects_plane:
 
 - :ref:`bool<class_bool>` **intersects_plane** **(** :ref:`Plane<class_plane>` plane **)**
 
-Return true if the :ref:`Rect3<class_rect3>` is at both sides of a plane.
+Returns ``true`` if the ``Rect3`` is on both sides of a plane.
 
 .. _class_Rect3_intersects_segment:
 
 - :ref:`bool<class_bool>` **intersects_segment** **(** :ref:`Vector3<class_vector3>` from, :ref:`Vector3<class_vector3>` to **)**
 
-Return true if the :ref:`Rect3<class_rect3>` intersects the line segment between from and to
+Returns ``true`` if the ``Rect3`` intersects the line segment between ``from`` and ``to``.
 
 .. _class_Rect3_merge:
 
 - :ref:`Rect3<class_rect3>` **merge** **(** :ref:`Rect3<class_rect3>` with **)**
 
-Combine this :ref:`Rect3<class_rect3>` with another, a larger one is returned that contains both.
+Returns a larger Rect3 that contains this Rect3 and ``with``.
 
 

@@ -216,10 +216,10 @@ Continuous collision detection tries to predict where a moving body will collide
 Numeric Constants
 -----------------
 
-- **MODE_STATIC** = **1** --- Static mode. The body behaves like a :ref:`StaticBody2D<class_staticbody2d>` and does not move.
-- **MODE_KINEMATIC** = **3** --- Kinematic mode. The body behaves like a :ref:`KinematicBody2D<class_kinematicbody2d>`, and must be moved by code.
 - **MODE_RIGID** = **0** --- Rigid mode. The body behaves as a physical object. It collides with other bodies and responds to forces applied to it. This is the default mode.
+- **MODE_STATIC** = **1** --- Static mode. The body behaves like a :ref:`StaticBody2D<class_staticbody2d>` and does not move.
 - **MODE_CHARACTER** = **2** --- Character mode. Similar to ``MODE_RIGID``, but the body can not rotate.
+- **MODE_KINEMATIC** = **3** --- Kinematic mode. The body behaves like a :ref:`KinematicBody2D<class_kinematicbody2d>`, and must be moved by code.
 - **CCD_MODE_DISABLED** = **0** --- Continuous collision detection disabled. This is the fastest way to detect body collisions, but can miss small, fast-moving objects.
 - **CCD_MODE_CAST_RAY** = **1** --- Continuous collision detection enabled using raycasting. This is faster than shapecasting but less precise.
 - **CCD_MODE_CAST_SHAPE** = **2** --- Continuous collision detection enabled using shapecasting. This is the slowest CCD method and the most precise.

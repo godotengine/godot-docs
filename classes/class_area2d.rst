@@ -284,7 +284,7 @@ Return the linear damp rate.
 
 - :ref:`Array<class_array>` **get_overlapping_areas** **(** **)** const
 
-Returns a list of intersecting :ref:`Area2D<class_area2d>`\ s.
+Returns a list of intersecting ``Area2D``s.
 
 .. _class_Area2D_get_overlapping_bodies:
 

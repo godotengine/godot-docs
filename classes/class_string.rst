@@ -205,335 +205,385 @@ Member Function Description
 
 - :ref:`String<class_string>` **String** **(** :ref:`bool<class_bool>` from **)**
 
+Constructs a new String from the given :ref:`bool<class_bool>`.
+
 .. _class_String_String:
 
 - :ref:`String<class_string>` **String** **(** :ref:`int<class_int>` from **)**
+
+Constructs a new String from the given :ref:`int<class_int>`.
 
 .. _class_String_String:
 
 - :ref:`String<class_string>` **String** **(** :ref:`float<class_float>` from **)**
 
+Constructs a new String from the given :ref:`float<class_float>`.
+
 .. _class_String_String:
 
 - :ref:`String<class_string>` **String** **(** :ref:`Vector2<class_vector2>` from **)**
+
+Constructs a new String from the given :ref:`Vector2<class_vector2>`.
 
 .. _class_String_String:
 
 - :ref:`String<class_string>` **String** **(** :ref:`Rect2<class_rect2>` from **)**
 
+Constructs a new String from the given :ref:`Rect2<class_rect2>`.
+
 .. _class_String_String:
 
 - :ref:`String<class_string>` **String** **(** :ref:`Vector3<class_vector3>` from **)**
+
+Constructs a new String from the given :ref:`Vector3<class_vector3>`.
 
 .. _class_String_String:
 
 - :ref:`String<class_string>` **String** **(** :ref:`Transform2D<class_transform2d>` from **)**
 
+Constructs a new String from the given :ref:`Transform2D<class_transform2d>`.
+
 .. _class_String_String:
 
 - :ref:`String<class_string>` **String** **(** :ref:`Plane<class_plane>` from **)**
+
+Constructs a new String from the given :ref:`Plane<class_plane>`.
 
 .. _class_String_String:
 
 - :ref:`String<class_string>` **String** **(** :ref:`Quat<class_quat>` from **)**
 
+Constructs a new String from the given :ref:`Quat<class_quat>`.
+
 .. _class_String_String:
 
 - :ref:`String<class_string>` **String** **(** :ref:`Rect3<class_rect3>` from **)**
+
+Constructs a new String from the given :ref:`Rect3<class_rect3>`.
 
 .. _class_String_String:
 
 - :ref:`String<class_string>` **String** **(** :ref:`Basis<class_basis>` from **)**
 
+Constructs a new String from the given :ref:`Basis<class_basis>`.
+
 .. _class_String_String:
 
 - :ref:`String<class_string>` **String** **(** :ref:`Transform<class_transform>` from **)**
+
+Constructs a new String from the given :ref:`Transform<class_transform>`.
 
 .. _class_String_String:
 
 - :ref:`String<class_string>` **String** **(** :ref:`Color<class_color>` from **)**
 
+Constructs a new String from the given :ref:`Color<class_color>`.
+
 .. _class_String_String:
 
 - :ref:`String<class_string>` **String** **(** :ref:`NodePath<class_nodepath>` from **)**
+
+Constructs a new String from the given :ref:`NodePath<class_nodepath>`.
 
 .. _class_String_String:
 
 - :ref:`String<class_string>` **String** **(** :ref:`RID<class_rid>` from **)**
 
+Constructs a new String from the given :ref:`RID<class_rid>`.
+
 .. _class_String_String:
 
 - :ref:`String<class_string>` **String** **(** :ref:`Dictionary<class_dictionary>` from **)**
+
+Constructs a new String from the given :ref:`Dictionary<class_dictionary>`.
 
 .. _class_String_String:
 
 - :ref:`String<class_string>` **String** **(** :ref:`Array<class_array>` from **)**
 
+Constructs a new String from the given :ref:`Array<class_array>`.
+
 .. _class_String_String:
 
 - :ref:`String<class_string>` **String** **(** :ref:`PoolByteArray<class_poolbytearray>` from **)**
+
+Constructs a new String from the given :ref:`PoolByteArray<class_poolbytearray>`.
 
 .. _class_String_String:
 
 - :ref:`String<class_string>` **String** **(** :ref:`PoolIntArray<class_poolintarray>` from **)**
 
+Constructs a new String from the given :ref:`PoolIntArray<class_poolintarray>`.
+
 .. _class_String_String:
 
 - :ref:`String<class_string>` **String** **(** :ref:`PoolRealArray<class_poolrealarray>` from **)**
+
+Constructs a new String from the given :ref:`PoolRealArray<class_poolrealarray>`.
 
 .. _class_String_String:
 
 - :ref:`String<class_string>` **String** **(** :ref:`PoolStringArray<class_poolstringarray>` from **)**
 
+Constructs a new String from the given :ref:`PoolStringArray<class_poolstringarray>`.
+
 .. _class_String_String:
 
 - :ref:`String<class_string>` **String** **(** :ref:`PoolVector2Array<class_poolvector2array>` from **)**
+
+Constructs a new String from the given :ref:`PoolVector2Array<class_poolvector2array>`.
 
 .. _class_String_String:
 
 - :ref:`String<class_string>` **String** **(** :ref:`PoolVector3Array<class_poolvector3array>` from **)**
 
+Constructs a new String from the given :ref:`PoolVector3Array<class_poolvector3array>`.
+
 .. _class_String_String:
 
 - :ref:`String<class_string>` **String** **(** :ref:`PoolColorArray<class_poolcolorarray>` from **)**
+
+Constructs a new String from the given :ref:`PoolColorArray<class_poolcolorarray>`.
 
 .. _class_String_begins_with:
 
 - :ref:`bool<class_bool>` **begins_with** **(** :ref:`String<class_string>` text **)**
 
-Return true if the strings begins with the given string.
+Returns ``true`` if the string begins with the given string.
 
 .. _class_String_bigrams:
 
 - :ref:`PoolStringArray<class_poolstringarray>` **bigrams** **(** **)**
 
-Return the bigrams (pairs of consecutive letters) of this string.
+Returns the bigrams (pairs of consecutive letters) of this string.
 
 .. _class_String_c_escape:
 
 - :ref:`String<class_string>` **c_escape** **(** **)**
 
-Return a copy of the string with special characters escaped using the C language standard.
+Returns a copy of the string with special characters escaped using the C language standard.
 
 .. _class_String_c_unescape:
 
 - :ref:`String<class_string>` **c_unescape** **(** **)**
 
-Return a copy of the string with escaped characters replaced by their meanings according to the C language standard.
+Returns a copy of the string with escaped characters replaced by their meanings according to the C language standard.
 
 .. _class_String_capitalize:
 
 - :ref:`String<class_string>` **capitalize** **(** **)**
 
-Change the case of some letters. Replace underscores with spaces, convert all letters to lowercase then capitalize first and every letter following the space character. For ``capitalize camelCase mixed_with_underscores`` it will return ``Capitalize Camelcase Mixed With Underscores``.
+Changes the case of some letters. Replaces underscores with spaces, converts all letters to lowercase, then capitalizes first and every letter following the space character. For ``capitalize camelCase mixed_with_underscores`` it will return ``Capitalize Camelcase Mixed With Underscores``.
 
 .. _class_String_casecmp_to:
 
 - :ref:`int<class_int>` **casecmp_to** **(** :ref:`String<class_string>` to **)**
 
-Perform a case-sensitive comparison to another string, return -1 if less, 0 if equal and +1 if greater.
+Performs a case-sensitive comparison to another string. Returns ``-1`` if less than, ``+1`` if greater than, or ``0`` if equal.
 
 .. _class_String_empty:
 
 - :ref:`bool<class_bool>` **empty** **(** **)**
 
-Return true if the string is empty.
+Returns ``true`` if the string is empty.
 
 .. _class_String_ends_with:
 
 - :ref:`bool<class_bool>` **ends_with** **(** :ref:`String<class_string>` text **)**
 
-Return true if the strings ends with the given string.
+Returns ``true`` if the string ends with the given string.
 
 .. _class_String_erase:
 
 - void **erase** **(** :ref:`int<class_int>` position, :ref:`int<class_int>` chars **)**
 
-Erase ``chars`` characters from the string starting from ``position``.
+Erases ``chars`` characters from the string starting from ``position``.
 
 .. _class_String_find:
 
 - :ref:`int<class_int>` **find** **(** :ref:`String<class_string>` what, :ref:`int<class_int>` from=0 **)**
 
-Find the first occurrence of a substring, return the starting position of the substring or -1 if not found. Optionally, the initial search index can be passed.
+Finds the first occurrence of a substring. Returns the starting position of the substring or -1 if not found. Optionally, the initial search index can be passed.
 
 .. _class_String_find_last:
 
 - :ref:`int<class_int>` **find_last** **(** :ref:`String<class_string>` what **)**
 
-Find the last occurrence of a substring, return the starting position of the substring or -1 if not found. Optionally, the initial search index can be passed.
+Finds the last occurrence of a substring. Returns the starting position of the substring or -1 if not found. Optionally, the initial search index can be passed.
 
 .. _class_String_findn:
 
 - :ref:`int<class_int>` **findn** **(** :ref:`String<class_string>` what, :ref:`int<class_int>` from=0 **)**
 
-Find the first occurrence of a substring but search as case-insensitive, return the starting position of the substring or -1 if not found. Optionally, the initial search index can be passed.
+Finds the first occurrence of a substring, ignoring case. Returns the starting position of the substring or -1 if not found. Optionally, the initial search index can be passed.
 
 .. _class_String_format:
 
 - :ref:`String<class_string>` **format** **(** var values, :ref:`String<class_string>` placeholder={_} **)**
 
+Formats the string by replacing all occurences of ``placeholder`` with ``values``.
+
 .. _class_String_get_base_dir:
 
 - :ref:`String<class_string>` **get_base_dir** **(** **)**
 
-If the string is a path to a file, return the base directory.
+If the string is a valid file path, returns the base directory name.
 
 .. _class_String_get_basename:
 
 - :ref:`String<class_string>` **get_basename** **(** **)**
 
-If the string is a path to a file, return the path to the file without the extension.
+If the string is a valid file path, returns the full file path without the extension.
 
 .. _class_String_get_extension:
 
 - :ref:`String<class_string>` **get_extension** **(** **)**
 
-If the string is a path to a file, return the extension.
+If the string is a valid file path, returns the extension.
 
 .. _class_String_get_file:
 
 - :ref:`String<class_string>` **get_file** **(** **)**
 
-If the string is a path to a file, return the file and ignore the base directory.
+If the string is a valid file path, returns the filename.
 
 .. _class_String_hash:
 
 - :ref:`int<class_int>` **hash** **(** **)**
 
-Hash the string and return a 32 bits integer.
+Hashes the string and returns a 32-bit integer.
 
 .. _class_String_hex_to_int:
 
 - :ref:`int<class_int>` **hex_to_int** **(** **)**
 
-Convert a string containing a hexadecimal number into an int.
+Converts a string containing a hexadecimal number into an integer.
 
 .. _class_String_insert:
 
 - :ref:`String<class_string>` **insert** **(** :ref:`int<class_int>` position, :ref:`String<class_string>` what **)**
 
-Insert a substring at a given position.
+Inserts a substring at a given position.
 
 .. _class_String_is_abs_path:
 
 - :ref:`bool<class_bool>` **is_abs_path** **(** **)**
 
-If the string is a path to a file or directory, return true if the path is absolute.
+If the string is a path to a file or directory, returns ``true`` if the path is absolute.
 
 .. _class_String_is_rel_path:
 
 - :ref:`bool<class_bool>` **is_rel_path** **(** **)**
 
-If the string is a path to a file or directory, return true if the path is relative.
+If the string is a path to a file or directory, returns ``true`` if the path is relative.
 
 .. _class_String_is_subsequence_of:
 
 - :ref:`bool<class_bool>` **is_subsequence_of** **(** :ref:`String<class_string>` text **)**
 
-Check whether this string is a subsequence of the given string.
+Returns ``true`` if this string is a subsequence of the given string.
 
 .. _class_String_is_subsequence_ofi:
 
 - :ref:`bool<class_bool>` **is_subsequence_ofi** **(** :ref:`String<class_string>` text **)**
 
-Check whether this string is a subsequence of the given string, without considering case.
+Returns ``true`` if this string is a subsequence of the given string, without considering case.
 
 .. _class_String_is_valid_float:
 
 - :ref:`bool<class_bool>` **is_valid_float** **(** **)**
 
-Check whether the string contains a valid float.
+Returns ``true`` if this string contains a valid float.
 
 .. _class_String_is_valid_html_color:
 
 - :ref:`bool<class_bool>` **is_valid_html_color** **(** **)**
 
-Check whether the string contains a valid color in HTML notation.
+Returns ``true`` if this string contains a valid color in HTML notation.
 
 .. _class_String_is_valid_identifier:
 
 - :ref:`bool<class_bool>` **is_valid_identifier** **(** **)**
 
-Check whether the string is a valid identifier. As is common in programming languages, a valid identifier may contain only letters, digits and underscores (\_) and the first character may not be a digit.
+Returns ``true`` if this string is a valid identifier. A valid identifier may contain only letters, digits and underscores (\_) and the first character may not be a digit.
 
 .. _class_String_is_valid_integer:
 
 - :ref:`bool<class_bool>` **is_valid_integer** **(** **)**
 
-Check whether the string contains a valid integer.
+Returns ``true`` if this string contains a valid integer.
 
 .. _class_String_is_valid_ip_address:
 
 - :ref:`bool<class_bool>` **is_valid_ip_address** **(** **)**
 
-Check whether the string contains a valid IP address.
+Returns ``true`` if this string contains a valid IP address.
 
 .. _class_String_json_escape:
 
 - :ref:`String<class_string>` **json_escape** **(** **)**
 
-Return a copy of the string with special characters escaped using the JSON standard.
+Returns a copy of the string with special characters escaped using the JSON standard.
 
 .. _class_String_left:
 
 - :ref:`String<class_string>` **left** **(** :ref:`int<class_int>` position **)**
 
-Return an amount of characters from the left of the string.
+Returns a number of characters from the left of the string.
 
 .. _class_String_length:
 
 - :ref:`int<class_int>` **length** **(** **)**
 
-Return the length of the string in characters.
+Returns the string's amount of characters.
 
 .. _class_String_match:
 
 - :ref:`bool<class_bool>` **match** **(** :ref:`String<class_string>` expr **)**
 
-Do a simple expression match, where '\*' matches zero or more arbitrary characters and '?' matches any single character except '.'.
+Does a simple expression match, where '\*' matches zero or more arbitrary characters and '?' matches any single character except '.'.
 
 .. _class_String_matchn:
 
 - :ref:`bool<class_bool>` **matchn** **(** :ref:`String<class_string>` expr **)**
 
-Do a simple case insensitive expression match, using ? and \* wildcards (see :ref:`match<class_String_match>`).
+Does a simple case insensitive expression match, using ? and \* wildcards (see :ref:`match<class_String_match>`).
 
 .. _class_String_md5_buffer:
 
 - :ref:`PoolByteArray<class_poolbytearray>` **md5_buffer** **(** **)**
 
-Return the MD5 hash of the string as an array of bytes.
+Returns the MD5 hash of the string as an array of bytes.
 
 .. _class_String_md5_text:
 
 - :ref:`String<class_string>` **md5_text** **(** **)**
 
-Return the MD5 hash of the string as a string.
+Returns the MD5 hash of the string as a string.
 
 .. _class_String_nocasecmp_to:
 
 - :ref:`int<class_int>` **nocasecmp_to** **(** :ref:`String<class_string>` to **)**
 
-Perform a case-insensitive comparison to another string, return -1 if less, 0 if equal and +1 if greater.
+Performs a case-insensitive comparison to another string. Returns ``-1`` if less than, ``+1`` if greater than, or ``0`` if equal.
 
 .. _class_String_ord_at:
 
 - :ref:`int<class_int>` **ord_at** **(** :ref:`int<class_int>` at **)**
 
-Return the character code at position ``at``.
+Returns the character code at position ``at``.
 
 .. _class_String_pad_decimals:
 
 - :ref:`String<class_string>` **pad_decimals** **(** :ref:`int<class_int>` digits **)**
 
-Format a number to have an exact number of ``digits`` after the decimal point.
+Formats a number to have an exact number of ``digits`` after the decimal point.
 
 .. _class_String_pad_zeros:
 
 - :ref:`String<class_string>` **pad_zeros** **(** :ref:`int<class_int>` digits **)**
 
-Format a number to have an exact number of ``digits`` before the decimal point.
+Formats a number to have an exact number of ``digits`` before the decimal point.
 
 .. _class_String_percent_decode:
 
@@ -545,7 +595,7 @@ Decode a percent-encoded string. See :ref:`percent_encode<class_String_percent_e
 
 - :ref:`String<class_string>` **percent_encode** **(** **)**
 
-Percent-encode a string. This is meant to encode parameters in a URL when sending a HTTP GET request and bodies of form-urlencoded POST request.
+Percent-encodes a string. Encodes parameters in a URL when sending a HTTP GET request (and bodies of form-urlencoded POST requests).
 
 .. _class_String_plus_file:
 
@@ -557,31 +607,31 @@ If the string is a path, this concatenates ``file`` at the end of the string as 
 
 - :ref:`String<class_string>` **replace** **(** :ref:`String<class_string>` what, :ref:`String<class_string>` forwhat **)**
 
-Replace occurrences of a substring for different ones inside the string.
+Replaces occurrences of a substring with the given one inside the string.
 
 .. _class_String_replacen:
 
 - :ref:`String<class_string>` **replacen** **(** :ref:`String<class_string>` what, :ref:`String<class_string>` forwhat **)**
 
-Replace occurrences of a substring for different ones inside the string, but search case-insensitive.
+Replaces occurrences of a substring with the given one inside the string. Ignores case.
 
 .. _class_String_rfind:
 
 - :ref:`int<class_int>` **rfind** **(** :ref:`String<class_string>` what, :ref:`int<class_int>` from=-1 **)**
 
-Perform a search for a substring, but start from the end of the string instead of the beginning.
+Performs a search for a substring, but starts from the end of the string instead of the beginning.
 
 .. _class_String_rfindn:
 
 - :ref:`int<class_int>` **rfindn** **(** :ref:`String<class_string>` what, :ref:`int<class_int>` from=-1 **)**
 
-Perform a search for a substring, but start from the end of the string instead of the beginning. Also search case-insensitive.
+Performs a search for a substring, but starts from the end of the string instead of the beginning. Ignores case.
 
 .. _class_String_right:
 
 - :ref:`String<class_string>` **right** **(** :ref:`int<class_int>` position **)**
 
-Return the right side of the string from a given position.
+Returns the right side of the string from a given position.
 
 .. _class_String_sha256_buffer:
 
@@ -591,84 +641,84 @@ Return the right side of the string from a given position.
 
 - :ref:`String<class_string>` **sha256_text** **(** **)**
 
-Return the SHA-256 hash of the string as a string.
+Returns the SHA-256 hash of the string as a string.
 
 .. _class_String_similarity:
 
 - :ref:`float<class_float>` **similarity** **(** :ref:`String<class_string>` text **)**
 
-Return the similarity index of the text compared to this string. 1 means totally similar and 0 means totally dissimilar.
+Returns the similarity index of the text compared to this string. 1 means totally similar and 0 means totally dissimilar.
 
 .. _class_String_split:
 
 - :ref:`PoolStringArray<class_poolstringarray>` **split** **(** :ref:`String<class_string>` divisor, :ref:`bool<class_bool>` allow_empty=True **)**
 
-Split the string by a divisor string, return an array of the substrings. Example "One,Two,Three" will return "One","Two","Three" if split by ",".
+Splits the string by a divisor string and returns an array of the substrings. Example "One,Two,Three" will return "One","Two","Three" if split by ",".
 
 .. _class_String_split_floats:
 
 - :ref:`PoolRealArray<class_poolrealarray>` **split_floats** **(** :ref:`String<class_string>` divisor, :ref:`bool<class_bool>` allow_empty=True **)**
 
-Split the string in floats by using a divisor string, return an array of the substrings. Example "1,2.5,3" will return 1,2.5,3 if split by ",".
+Splits the string in floats by using a divisor string and returns an array of the substrings. Example "1,2.5,3" will return 1,2.5,3 if split by ",".
 
 .. _class_String_strip_edges:
 
 - :ref:`String<class_string>` **strip_edges** **(** :ref:`bool<class_bool>` left=True, :ref:`bool<class_bool>` right=True **)**
 
-Return a copy of the string stripped of any non-printable character at the beginning and the end. The optional arguments are used to toggle stripping on the left and right edges respectively.
+Returns a copy of the string stripped of any non-printable character at the beginning and the end. The optional arguments are used to toggle stripping on the left and right edges respectively.
 
 .. _class_String_substr:
 
 - :ref:`String<class_string>` **substr** **(** :ref:`int<class_int>` from, :ref:`int<class_int>` len **)**
 
-Return part of the string from the position ``from``, with length ``len``.
+Returns part of the string from the position ``from`` with length ``len``.
 
 .. _class_String_to_ascii:
 
 - :ref:`PoolByteArray<class_poolbytearray>` **to_ascii** **(** **)**
 
-Convert the String (which is a character array) to PoolByteArray (which is an array of bytes). The conversion is speeded up in comparison to to_utf8() with the assumption that all the characters the String contains are only ASCII characters.
+Converts the String (which is a character array) to :ref:`PoolByteArray<class_poolbytearray>` (which is an array of bytes). The conversion is sped up in comparison to to_utf8() with the assumption that all the characters the String contains are only ASCII characters.
 
 .. _class_String_to_float:
 
 - :ref:`float<class_float>` **to_float** **(** **)**
 
-Convert a string, containing a decimal number, into a ``float``.
+Converts a string containing a decimal number into a ``float``.
 
 .. _class_String_to_int:
 
 - :ref:`int<class_int>` **to_int** **(** **)**
 
-Convert a string, containing an integer number, into an ``int``.
+Converts a string containing an integer number into an ``int``.
 
 .. _class_String_to_lower:
 
 - :ref:`String<class_string>` **to_lower** **(** **)**
 
-Return the string converted to lowercase.
+Returns the string converted to lowercase.
 
 .. _class_String_to_upper:
 
 - :ref:`String<class_string>` **to_upper** **(** **)**
 
-Return the string converted to uppercase.
+Returns the string converted to uppercase.
 
 .. _class_String_to_utf8:
 
 - :ref:`PoolByteArray<class_poolbytearray>` **to_utf8** **(** **)**
 
-Convert the String (which is an array of characters) to PoolByteArray (which is an array of bytes). The conversion is a bit slower than to_ascii(), but supports all UTF-8 characters. Therefore, you should prefer this function over to_ascii().
+Converts the String (which is an array of characters) to :ref:`PoolByteArray<class_poolbytearray>` (which is an array of bytes). The conversion is a bit slower than to_ascii(), but supports all UTF-8 characters. Therefore, you should prefer this function over to_ascii().
 
 .. _class_String_xml_escape:
 
 - :ref:`String<class_string>` **xml_escape** **(** **)**
 
-Return a copy of the string with special characters escaped using the XML standard.
+Returns a copy of the string with special characters escaped using the XML standard.
 
 .. _class_String_xml_unescape:
 
 - :ref:`String<class_string>` **xml_unescape** **(** **)**
 
-Return a copy of the string with escaped characters replaced by their meanings according to the XML standard.
+Returns a copy of the string with escaped characters replaced by their meanings according to the XML standard.
 
 

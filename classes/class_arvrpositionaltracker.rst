@@ -42,9 +42,9 @@ Member Functions
 Numeric Constants
 -----------------
 
-- **TRACKER_HAND_UNKNOWN** = **0**
-- **TRACKER_LEFT_HAND** = **1**
-- **TRACKER_RIGHT_HAND** = **2**
+- **TRACKER_HAND_UNKNOWN** = **0** --- The hand this tracker is held in is unknown or not applicable.
+- **TRACKER_LEFT_HAND** = **1** --- This tracker is the left hand controller.
+- **TRACKER_RIGHT_HAND** = **2** --- This tracker is the right hand controller.
 
 Description
 -----------
@@ -61,6 +61,8 @@ Member Function Description
 .. _class_ARVRPositionalTracker_get_hand:
 
 - :ref:`int<class_int>` **get_hand** **(** **)** const
+
+Returns the hand holding this tracker, if known. See TRACKER\_\* constants.
 
 .. _class_ARVRPositionalTracker_get_joy_id:
 

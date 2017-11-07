@@ -14,5 +14,10 @@ AudioEffectLowPassFilter
 Brief Description
 -----------------
 
+Adds a low pass filter to the Audio Bus.
 
+Description
+-----------
+
+Cuts frequencies higher than the :ref:`cutoff_hz<class_AudioEffectLowPassFilter_cutoff_hz>` and allows lower frequencies to pass.
 

@@ -99,13 +99,13 @@ Adds a character to the font, where ``character`` is the unicode value, ``textur
 
 - void **add_kerning_pair** **(** :ref:`int<class_int>` char_a, :ref:`int<class_int>` char_b, :ref:`int<class_int>` kerning **)**
 
-Adds a kerning pair to the :ref:`BitmapFont<class_bitmapfont>` as a difference. Kerning pairs are special cases where a typeface advance is determined by the next character.
+Adds a kerning pair to the ``BitmapFont`` as a difference. Kerning pairs are special cases where a typeface advance is determined by the next character.
 
 .. _class_BitmapFont_add_texture:
 
 - void **add_texture** **(** :ref:`Texture<class_texture>` texture **)**
 
-Adds a texture to the :ref:`BitmapFont<class_bitmapfont>`.
+Adds a texture to the ``BitmapFont``.
 
 .. _class_BitmapFont_clear:
 

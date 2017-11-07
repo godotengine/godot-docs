@@ -16,7 +16,7 @@ AudioEffectFilter
 Brief Description
 -----------------
 
-
+Adds a filter to the Audio Bus.
 
 Member Functions
 ----------------
@@ -44,19 +44,19 @@ Member Variables
 
   .. _class_AudioEffectFilter_cutoff_hz:
 
-- :ref:`float<class_float>` **cutoff_hz**
+- :ref:`float<class_float>` **cutoff_hz** - Threshold frequency for the filter.
 
-  .. _class_AudioEffectFilter_dB:
+  .. _class_AudioEffectFilter_db:
 
-- :ref:`int<class_int>` **dB**
+- :ref:`int<class_int>` **db**
 
   .. _class_AudioEffectFilter_gain:
 
-- :ref:`float<class_float>` **gain**
+- :ref:`float<class_float>` **gain** - Gain amount of the frequencies after the filter.
 
   .. _class_AudioEffectFilter_resonance:
 
-- :ref:`float<class_float>` **resonance**
+- :ref:`float<class_float>` **resonance** - Amount of boost in the overtones near the cutoff frequency.
 
 
 Numeric Constants
@@ -66,6 +66,11 @@ Numeric Constants
 - **FILTER_12DB** = **1**
 - **FILTER_18DB** = **2**
 - **FILTER_24DB** = **3**
+
+Description
+-----------
+
+Allows frequencies other than the :ref:`cutoff_hz<class_AudioEffectFilter_cutoff_hz>` to pass.
 
 Member Function Description
 ---------------------------

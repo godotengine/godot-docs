@@ -36,10 +36,10 @@ Member Functions
 Numeric Constants
 -----------------
 
-- **STATUS_NONE** = **0** --- The initial status of the :ref:`StreamPeerTCP<class_streampeertcp>`, also the status after a disconnect.
-- **STATUS_CONNECTING** = **1** --- A status representing a :ref:`StreamPeerTCP<class_streampeertcp>` that is connecting to a host.
-- **STATUS_CONNECTED** = **2** --- A status representing a :ref:`StreamPeerTCP<class_streampeertcp>` that is connected to a host.
-- **STATUS_ERROR** = **3** --- A staus representing a :ref:`StreamPeerTCP<class_streampeertcp>` in error state.
+- **STATUS_NONE** = **0** --- The initial status of the ``StreamPeerTCP``, also the status after a disconnect.
+- **STATUS_CONNECTING** = **1** --- A status representing a ``StreamPeerTCP`` that is connecting to a host.
+- **STATUS_CONNECTED** = **2** --- A status representing a ``StreamPeerTCP`` that is connected to a host.
+- **STATUS_ERROR** = **3** --- A staus representing a ``StreamPeerTCP`` in error state.
 
 Description
 -----------

@@ -63,7 +63,7 @@ Append an element at the end of the array (alias of :ref:`push_back<class_PoolCo
 
 - void **append_array** **(** :ref:`PoolColorArray<class_poolcolorarray>` array **)**
 
-Append a :ref:`PoolColorArray<class_poolcolorarray>` at the end of this array.
+Append a ``PoolColorArray`` at the end of this array.
 
 .. _class_PoolColorArray_insert:
 

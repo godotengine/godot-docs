@@ -120,15 +120,15 @@ Member Variables
 
   .. _class_Node2D_rotation:
 
-- :ref:`float<class_float>` **rotation** - Rotation in radians.
+- :ref:`float<class_float>` **rotation** - Rotation in radians, relative to the node's parent.
 
   .. _class_Node2D_rotation_deg:
 
-- :ref:`float<class_float>` **rotation_deg** - Rotation in degrees.
+- :ref:`float<class_float>` **rotation_deg** - Rotation in degrees, relative to the node's parent.
 
   .. _class_Node2D_scale:
 
-- :ref:`Vector2<class_vector2>` **scale** - Rotation in degrees.
+- :ref:`Vector2<class_vector2>` **scale** - The node's scale. Unscaled value: ``(1, 1)``
 
   .. _class_Node2D_transform:
 
@@ -140,7 +140,7 @@ Member Variables
 
   .. _class_Node2D_z_as_relative:
 
-- :ref:`bool<class_bool>` **z_as_relative** - Make the node's Z-index relative to its parent's Z-index. If this node's Z-index is 2 and its parent's effective Z-index is 3, then this node's effective Z-index will be 2 + 3 = 5.
+- :ref:`bool<class_bool>` **z_as_relative** - If ``true`` the node's Z-index is relative to its parent's Z-index. If this node's Z-index is 2 and its parent's effective Z-index is 3, then this node's effective Z-index will be 2 + 3 = 5.
 
 
 Description
@@ -161,7 +161,7 @@ Multiplies the current scale by the 'ratio' vector.
 
 - void **edit_set_pivot** **(** :ref:`Vector2<class_vector2>` pivot **)**
 
-Set the pivot position of the 2D node to 'pivot' value. Only some Node2Ds implement this method.
+Sets the node's pivot position.
 
 .. _class_Node2D_get_angle_to:
 
@@ -251,104 +251,108 @@ Rotates the node so it points towards the 'point'.
 
 - void **move_local_x** **(** :ref:`float<class_float>` delta, :ref:`bool<class_bool>` scaled=false **)**
 
-Apply a local translation on the node's X axis based on the process's 'delta'. If 'scaled' is false, normalizes the movement.
+Applies a local translation on the node's X axis based on the :ref:`Node._process<class_Node__process>`'s ``delta``. If ``scaled`` is false, normalizes the movement.
 
 .. _class_Node2D_move_local_y:
 
 - void **move_local_y** **(** :ref:`float<class_float>` delta, :ref:`bool<class_bool>` scaled=false **)**
 
-Apply a local translation on the node's Y axis based on the process's 'delta'. If 'scaled' is false, normalizes the movement.
+Applies a local translation on the node's Y axis based on the :ref:`Node._process<class_Node__process>`'s ``delta``. If ``scaled`` is false, normalizes the movement.
 
 .. _class_Node2D_rotate:
 
 - void **rotate** **(** :ref:`float<class_float>` radians **)**
 
-Apply a rotation to the node, in radians, starting from its current rotation.
+Applies a rotation to the node, in radians, starting from its current rotation.
 
 .. _class_Node2D_set_global_position:
 
 - void **set_global_position** **(** :ref:`Vector2<class_vector2>` position **)**
 
-Set the node's global position.
+Sets the node's global position.
 
 .. _class_Node2D_set_global_rotation:
 
 - void **set_global_rotation** **(** :ref:`float<class_float>` radians **)**
 
-Set the node's global rotation in radians.
+Sets the node's global rotation in radians.
 
 .. _class_Node2D_set_global_rotation_in_degrees:
 
 - void **set_global_rotation_in_degrees** **(** :ref:`float<class_float>` degrees **)**
 
-Set the node's global rotation in degrees.
+Sets the node's global rotation in degrees.
 
 .. _class_Node2D_set_global_scale:
 
 - void **set_global_scale** **(** :ref:`Vector2<class_vector2>` scale **)**
 
-Set the node's global scale.
+Sets the node's global scale.
 
 .. _class_Node2D_set_global_transform:
 
 - void **set_global_transform** **(** :ref:`Transform2D<class_transform2d>` xform **)**
 
-Set the node's global :ref:`Transform2D<class_transform2d>`.
+Sets the node's global :ref:`Transform2D<class_transform2d>`.
 
 .. _class_Node2D_set_position:
 
 - void **set_position** **(** :ref:`Vector2<class_vector2>` position **)**
 
-Set the node's position.
+Sets the node's position.
 
 .. _class_Node2D_set_rotation:
 
 - void **set_rotation** **(** :ref:`float<class_float>` radians **)**
 
-Set the node's rotation in radians.
+Sets the node's rotation in radians.
 
 .. _class_Node2D_set_rotation_in_degrees:
 
 - void **set_rotation_in_degrees** **(** :ref:`float<class_float>` degrees **)**
 
-Set the node's rotation in degrees.
+Sets the node's rotation in degrees.
 
 .. _class_Node2D_set_scale:
 
 - void **set_scale** **(** :ref:`Vector2<class_vector2>` scale **)**
 
-Set the node's scale.
+Sets the node's scale.
 
 .. _class_Node2D_set_transform:
 
 - void **set_transform** **(** :ref:`Transform2D<class_transform2d>` xform **)**
 
-Set the node's local :ref:`Transform2D<class_transform2d>`.
+Sets the node's local :ref:`Transform2D<class_transform2d>`.
 
 .. _class_Node2D_set_z:
 
 - void **set_z** **(** :ref:`int<class_int>` z **)**
 
-Set the node's Z-index.
+Sets the node's Z-index.
 
 .. _class_Node2D_set_z_as_relative:
 
 - void **set_z_as_relative** **(** :ref:`bool<class_bool>` enable **)**
 
-Make the node's Z-index relative to its parent's Z-index. If this node's Z-index is 2 and its parent's effective Z-index is 3, then this node's effective Z-index will be 2 + 3 = 5.
+Makes the node's Z-index relative to its parent's Z-index. If this node's Z-index is 2 and its parent's effective Z-index is 3, then this node's effective Z-index will be 2 + 3 = 5.
 
 .. _class_Node2D_to_global:
 
 - :ref:`Vector2<class_vector2>` **to_global** **(** :ref:`Vector2<class_vector2>` local_point **)** const
 
+Converts a local point's coordinates to global coordinates.
+
 .. _class_Node2D_to_local:
 
 - :ref:`Vector2<class_vector2>` **to_local** **(** :ref:`Vector2<class_vector2>` global_point **)** const
+
+Converts a global point's coordinates to local coordinates.
 
 .. _class_Node2D_translate:
 
 - void **translate** **(** :ref:`Vector2<class_vector2>` offset **)**
 
-Translate the node locally by the 'offset' vector, starting from its current local position.
+Translates the node by the given ``offset`` in local coordinates.
 
 

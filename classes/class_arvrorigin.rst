@@ -30,7 +30,9 @@ Member Variables
 
   .. _class_ARVROrigin_world_scale:
 
-- :ref:`float<class_float>` **world_scale**
+- :ref:`float<class_float>` **world_scale** - Allows you to adjust the scale to your game's units. Most AR/VR platforms assume a scale of 1 game world unit = 1 meter in the real world.
+
+Note that this method is a passthrough to the :ref:`ARVRServer<class_arvrserver>` itself.
 
 
 Description

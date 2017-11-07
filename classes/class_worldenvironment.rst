@@ -36,7 +36,7 @@ Member Variables
 Description
 -----------
 
-The :ref:`WorldEnvironment<class_worldenvironment>` node can be added to a scene in order to set default :ref:`Environment<class_environment>` variables for the scene. The :ref:`WorldEnvironment<class_worldenvironment>` can be overridden by an :ref:`Environment<class_environment>` node set on the current :ref:`Camera<class_camera>`. Additionally, only one :ref:`WorldEnvironment<class_worldenvironment>` may be instanced in a given scene at a time. The :ref:`WorldEnvironment<class_worldenvironment>` allows the user to specify default lighting parameters (e.g. ambient lighting), various post-processing effects (e.g. SSAO, DOF, Tonemapping), and how to draw the background (e.g. solid color, skybox).
+The ``WorldEnvironment`` node can be added to a scene in order to set default :ref:`Environment<class_environment>` variables for the scene. The ``WorldEnvironment`` can be overridden by an :ref:`Environment<class_environment>` node set on the current :ref:`Camera<class_camera>`. Additionally, only one ``WorldEnvironment`` may be instanced in a given scene at a time. The ``WorldEnvironment`` allows the user to specify default lighting parameters (e.g. ambient lighting), various post-processing effects (e.g. SSAO, DOF, Tonemapping), and how to draw the background (e.g. solid color, skybox).
 
 Member Function Description
 ---------------------------

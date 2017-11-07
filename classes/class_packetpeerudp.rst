@@ -47,7 +47,7 @@ Member Function Description
 
 - void **close** **(** **)**
 
-Close the UDP socket the :ref:`PacketPeerUDP<class_packetpeerudp>` is currently listening on.
+Close the UDP socket the ``PacketPeerUDP`` is currently listening on.
 
 .. _class_PacketPeerUDP_get_packet_ip:
 
@@ -65,13 +65,13 @@ Return the port of the remote peer that sent the last packet(that was received w
 
 - :ref:`bool<class_bool>` **is_listening** **(** **)** const
 
-Return whether this :ref:`PacketPeerUDP<class_packetpeerudp>` is listening.
+Return whether this ``PacketPeerUDP`` is listening.
 
 .. _class_PacketPeerUDP_listen:
 
 - :ref:`int<class_int>` **listen** **(** :ref:`int<class_int>` port, :ref:`String<class_string>` bind_address="*", :ref:`int<class_int>` recv_buf_size=65536 **)**
 
-Make this :ref:`PacketPeerUDP<class_packetpeerudp>` listen on the "port" binding to "bind_address" with a buffer size "recv_buf_size".
+Make this ``PacketPeerUDP`` listen on the "port" binding to "bind_address" with a buffer size "recv_buf_size".
 
 If "bind_address" is set as "\*" (default), the peer will listen on all available addresses (both IPv4 and IPv6).
 

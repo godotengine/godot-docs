@@ -32,7 +32,7 @@ Description
 
 In GDScript, functions are not *first-class objects*. This means it is impossible to store them directly as variables, return them from another function, or pass them as arguments.
 
-However, by creating a :ref:`FuncRef<class_funcref>` using the :ref:`@GDScript.funcref<class_@GDScript_funcref>` function, a reference to a function in a given object can be created, passed around and called.
+However, by creating a ``FuncRef`` using the :ref:`@GDScript.funcref<class_@GDScript_funcref>` function, a reference to a function in a given object can be created, passed around and called.
 
 Member Function Description
 ---------------------------

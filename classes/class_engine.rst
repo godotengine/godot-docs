@@ -50,7 +50,7 @@ Member Functions
 Description
 -----------
 
-The :ref:`Engine<class_engine>` class allows you to query and modify the game's run-time parameters, such as frames per second, time scale, and others.
+The ``Engine`` class allows you to query and modify the game's run-time parameters, such as frames per second, time scale, and others.
 
 Member Function Description
 ---------------------------

@@ -38,7 +38,7 @@ Member Variables
 
   .. _class_ARVRAnchor_anchor_id:
 
-- :ref:`int<class_int>` **anchor_id**
+- :ref:`int<class_int>` **anchor_id** - The anchor's id. You can set this before the anchor itself exists. The first anchor gets an id of ``1``, the second an id of ``2``, etc. When anchors get removed, the engine can then assign the corresponding id to new anchors. The most common situation where anchors 'disappear' is when the AR server identifies that two anchors represent different parts of the same plane and merges them.
 
 
 Description

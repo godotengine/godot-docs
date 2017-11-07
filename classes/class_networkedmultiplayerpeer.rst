@@ -104,7 +104,7 @@ Member Function Description
 
 - :ref:`bool<class_bool>` **is_refusing_new_connections** **(** **)** const
 
-Return whether this :ref:`NetworkedMultiplayerPeer<class_networkedmultiplayerpeer>` is refusing new connections.
+Return whether this ``NetworkedMultiplayerPeer`` is refusing new connections.
 
 .. _class_NetworkedMultiplayerPeer_poll:
 
@@ -114,7 +114,7 @@ Return whether this :ref:`NetworkedMultiplayerPeer<class_networkedmultiplayerpee
 
 - void **set_refuse_new_connections** **(** :ref:`bool<class_bool>` enable **)**
 
-If ``endable`` is true, this :ref:`NetworkedMultiplayerPeer<class_networkedmultiplayerpeer>` will refuse new connections.
+If ``endable`` is true, this ``NetworkedMultiplayerPeer`` will refuse new connections.
 
 .. _class_NetworkedMultiplayerPeer_set_target_peer:
 

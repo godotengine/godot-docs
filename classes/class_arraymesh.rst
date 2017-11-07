@@ -135,7 +135,7 @@ Surfaces are created to be rendered using a "primitive", which may be PRIMITIVE_
 
 - :ref:`int<class_int>` **get_surface_count** **(** **)** const
 
-Return the amount of surfaces that the :ref:`ArrayMesh<class_arraymesh>` holds.
+Return the amount of surfaces that the ``ArrayMesh`` holds.
 
 .. _class_ArrayMesh_regen_normalmaps:
 

@@ -71,7 +71,7 @@ Returns true if an action has an :ref:`InputEvent<class_inputevent>` associated 
 
 - void **add_action** **(** :ref:`String<class_string>` action **)**
 
-Adds an (empty) action to the :ref:`InputMap<class_inputmap>`. An :ref:`InputEvent<class_inputevent>` can then be added to this action with :ref:`action_add_event<class_InputMap_action_add_event>`.
+Adds an (empty) action to the ``InputMap``. An :ref:`InputEvent<class_inputevent>` can then be added to this action with :ref:`action_add_event<class_InputMap_action_add_event>`.
 
 .. _class_InputMap_erase_action:
 

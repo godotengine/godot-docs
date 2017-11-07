@@ -14,5 +14,10 @@ AudioEffectBandPassFilter
 Brief Description
 -----------------
 
+Adds a band pass filter to the Audio Bus.
 
+Description
+-----------
+
+Attenuates the frequencies inside of a range around the :ref:`cutoff_hz<class_AudioEffectBandPassFilter_cutoff_hz>` and cuts frequencies outside of this band.
 

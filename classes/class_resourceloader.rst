@@ -36,7 +36,7 @@ Member Functions
 Description
 -----------
 
-Resource Loader. This is a static object accessible as :ref:`ResourceLoader<class_resourceloader>`. GDScript has a simplified load() function, though.
+Resource Loader. This is a static object accessible as ``ResourceLoader``. GDScript has a simplified load() function, though.
 
 Member Function Description
 ---------------------------

@@ -408,7 +408,7 @@ Returns the path to the current engine executable.
 
 Returns the current latin keyboard variant as a String.
 
-Possible return values are: "QWERTY", "AZERTY", "QZERTY", "DVORAK", "NEO" or "ERROR"
+Possible return values are: "QWERTY", "AZERTY", "QZERTY", "DVORAK", "NEO", "COLEMAK" or "ERROR".
 
 .. _class_OS_get_locale:
 

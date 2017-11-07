@@ -40,7 +40,7 @@ Description
 
 Convex Polygon Shape for 2D physics. A convex polygon, whatever its shape, is internally decomposed into as many convex polygons as needed to ensure all collision checks against it are always done on convex polygons (which are faster to check).
 
-The main difference between a :ref:`ConvexPolygonShape2D<class_convexpolygonshape2d>` and a :ref:`ConcavePolygonShape2D<class_concavepolygonshape2d>` is that a concave polygon assumes it is concave and uses a more complex method of collision detection, and a convex one forces itself to be convex in order to speed up collision detection.
+The main difference between a ``ConvexPolygonShape2D`` and a :ref:`ConcavePolygonShape2D<class_concavepolygonshape2d>` is that a concave polygon assumes it is concave and uses a more complex method of collision detection, and a convex one forces itself to be convex in order to speed up collision detection.
 
 Member Function Description
 ---------------------------

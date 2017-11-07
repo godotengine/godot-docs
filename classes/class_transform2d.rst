@@ -81,19 +81,19 @@ Member Function Description
 
 - :ref:`Transform2D<class_transform2d>` **Transform2D** **(** :ref:`Transform<class_transform>` from **)**
 
-Constructs the :ref:`Transform2D<class_transform2d>` from a 3D :ref:`Transform<class_transform>`.
+Constructs the ``Transform2D`` from a 3D :ref:`Transform<class_transform>`.
 
 .. _class_Transform2D_Transform2D:
 
 - :ref:`Transform2D<class_transform2d>` **Transform2D** **(** :ref:`Vector2<class_vector2>` x_axis, :ref:`Vector2<class_vector2>` y_axis, :ref:`Vector2<class_vector2>` origin **)**
 
-Constructs the :ref:`Transform2D<class_transform2d>` from 3 :ref:`Vector2<class_vector2>` consisting of rows x, y and origin.
+Constructs the ``Transform2D`` from 3 :ref:`Vector2<class_vector2>` consisting of rows x, y and origin.
 
 .. _class_Transform2D_Transform2D:
 
 - :ref:`Transform2D<class_transform2d>` **Transform2D** **(** :ref:`float<class_float>` rotation, :ref:`Vector2<class_vector2>` position **)**
 
-Constructs the :ref:`Transform2D<class_transform2d>` from rotation angle in radians and position :ref:`Vector2<class_vector2>`.
+Constructs the ``Transform2D`` from rotation angle in radians and position :ref:`Vector2<class_vector2>`.
 
 .. _class_Transform2D_affine_inverse:
 

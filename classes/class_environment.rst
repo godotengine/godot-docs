@@ -94,13 +94,19 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_ssao_bias<class_Environment_get_ssao_bias>` **(** **)** const                                                                              |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_ssao_blur<class_Environment_get_ssao_blur>` **(** **)** const                                                                              |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_color>`      | :ref:`get_ssao_color<class_Environment_get_ssao_color>` **(** **)** const                                                                            |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_ssao_direct_light_affect<class_Environment_get_ssao_direct_light_affect>` **(** **)** const                                                |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`      | :ref:`get_ssao_edge_sharpness<class_Environment_get_ssao_edge_sharpness>` **(** **)** const                                                          |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_ssao_intensity<class_Environment_get_ssao_intensity>` **(** **)** const                                                                    |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_ssao_intensity2<class_Environment_get_ssao_intensity2>` **(** **)** const                                                                  |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_ssao_quality<class_Environment_get_ssao_quality>` **(** **)** const                                                                        |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`get_ssao_radius<class_Environment_get_ssao_radius>` **(** **)** const                                                                          |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -149,8 +155,6 @@ Member Functions
 | :ref:`bool<class_bool>`        | :ref:`is_glow_enabled<class_Environment_is_glow_enabled>` **(** **)** const                                                                          |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`is_glow_level_enabled<class_Environment_is_glow_level_enabled>` **(** :ref:`int<class_int>` idx **)** const                                    |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_ssao_blur_enabled<class_Environment_is_ssao_blur_enabled>` **(** **)** const                                                                |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`is_ssao_enabled<class_Environment_is_ssao_enabled>` **(** **)** const                                                                          |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -252,17 +256,21 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_ssao_bias<class_Environment_set_ssao_bias>` **(** :ref:`float<class_float>` bias **)**                                                     |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_ssao_blur<class_Environment_set_ssao_blur>` **(** :ref:`bool<class_bool>` enabled **)**                                                    |
+| void                           | :ref:`set_ssao_blur<class_Environment_set_ssao_blur>` **(** :ref:`int<class_int>` mode **)**                                                         |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_ssao_color<class_Environment_set_ssao_color>` **(** :ref:`Color<class_color>` color **)**                                                  |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_ssao_direct_light_affect<class_Environment_set_ssao_direct_light_affect>` **(** :ref:`float<class_float>` amount **)**                     |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_ssao_edge_sharpness<class_Environment_set_ssao_edge_sharpness>` **(** :ref:`float<class_float>` edge_sharpness **)**                       |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_ssao_enabled<class_Environment_set_ssao_enabled>` **(** :ref:`bool<class_bool>` enabled **)**                                              |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_ssao_intensity<class_Environment_set_ssao_intensity>` **(** :ref:`float<class_float>` intensity **)**                                      |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_ssao_intensity2<class_Environment_set_ssao_intensity2>` **(** :ref:`float<class_float>` intensity **)**                                    |
++--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_ssao_quality<class_Environment_set_ssao_quality>` **(** :ref:`int<class_int>` quality **)**                                                |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_ssao_radius<class_Environment_set_ssao_radius>` **(** :ref:`float<class_float>` radius **)**                                               |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -558,11 +566,15 @@ Member Variables
 
   .. _class_Environment_ssao_blur:
 
-- :ref:`bool<class_bool>` **ssao_blur**
+- :ref:`int<class_int>` **ssao_blur**
 
   .. _class_Environment_ssao_color:
 
 - :ref:`Color<class_color>` **ssao_color**
+
+  .. _class_Environment_ssao_edge_sharpness:
+
+- :ref:`float<class_float>` **ssao_edge_sharpness**
 
   .. _class_Environment_ssao_enabled:
 
@@ -579,6 +591,10 @@ Member Variables
   .. _class_Environment_ssao_light_affect:
 
 - :ref:`float<class_float>` **ssao_light_affect**
+
+  .. _class_Environment_ssao_quality:
+
+- :ref:`int<class_int>` **ssao_quality**
 
   .. _class_Environment_ssao_radius:
 
@@ -622,6 +638,13 @@ Numeric Constants
 - **DOF_BLUR_QUALITY_LOW** = **0** --- Low depth-of-field blur quality.
 - **DOF_BLUR_QUALITY_MEDIUM** = **1** --- Medium depth-of-field blur quality.
 - **DOF_BLUR_QUALITY_HIGH** = **2** --- High depth-of-field blur quality.
+- **SSAO_BLUR_DISABLED** = **0**
+- **SSAO_BLUR_1x1** = **1**
+- **SSAO_BLUR_2x2** = **2**
+- **SSAO_BLUR_3x3** = **3**
+- **SSAO_QUALITY_LOW** = **0**
+- **SSAO_QUALITY_MEDIUM** = **1**
+- **SSAO_QUALITY_HIGH** = **2**
 
 Description
 -----------
@@ -789,6 +812,10 @@ Member Function Description
 
 - :ref:`float<class_float>` **get_ssao_bias** **(** **)** const
 
+.. _class_Environment_get_ssao_blur:
+
+- :ref:`int<class_int>` **get_ssao_blur** **(** **)** const
+
 .. _class_Environment_get_ssao_color:
 
 - :ref:`Color<class_color>` **get_ssao_color** **(** **)** const
@@ -797,6 +824,10 @@ Member Function Description
 
 - :ref:`float<class_float>` **get_ssao_direct_light_affect** **(** **)** const
 
+.. _class_Environment_get_ssao_edge_sharpness:
+
+- :ref:`float<class_float>` **get_ssao_edge_sharpness** **(** **)** const
+
 .. _class_Environment_get_ssao_intensity:
 
 - :ref:`float<class_float>` **get_ssao_intensity** **(** **)** const
@@ -804,6 +835,10 @@ Member Function Description
 .. _class_Environment_get_ssao_intensity2:
 
 - :ref:`float<class_float>` **get_ssao_intensity2** **(** **)** const
+
+.. _class_Environment_get_ssao_quality:
+
+- :ref:`int<class_int>` **get_ssao_quality** **(** **)** const
 
 .. _class_Environment_get_ssao_radius:
 
@@ -900,10 +935,6 @@ Member Function Description
 .. _class_Environment_is_glow_level_enabled:
 
 - :ref:`bool<class_bool>` **is_glow_level_enabled** **(** :ref:`int<class_int>` idx **)** const
-
-.. _class_Environment_is_ssao_blur_enabled:
-
-- :ref:`bool<class_bool>` **is_ssao_blur_enabled** **(** **)** const
 
 .. _class_Environment_is_ssao_enabled:
 
@@ -1107,7 +1138,7 @@ Member Function Description
 
 .. _class_Environment_set_ssao_blur:
 
-- void **set_ssao_blur** **(** :ref:`bool<class_bool>` enabled **)**
+- void **set_ssao_blur** **(** :ref:`int<class_int>` mode **)**
 
 .. _class_Environment_set_ssao_color:
 
@@ -1116,6 +1147,10 @@ Member Function Description
 .. _class_Environment_set_ssao_direct_light_affect:
 
 - void **set_ssao_direct_light_affect** **(** :ref:`float<class_float>` amount **)**
+
+.. _class_Environment_set_ssao_edge_sharpness:
+
+- void **set_ssao_edge_sharpness** **(** :ref:`float<class_float>` edge_sharpness **)**
 
 .. _class_Environment_set_ssao_enabled:
 
@@ -1128,6 +1163,10 @@ Member Function Description
 .. _class_Environment_set_ssao_intensity2:
 
 - void **set_ssao_intensity2** **(** :ref:`float<class_float>` intensity **)**
+
+.. _class_Environment_set_ssao_quality:
+
+- void **set_ssao_quality** **(** :ref:`int<class_int>` quality **)**
 
 .. _class_Environment_set_ssao_radius:
 
