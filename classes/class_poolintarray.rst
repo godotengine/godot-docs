@@ -63,7 +63,7 @@ Append an element at the end of the array (alias of :ref:`push_back<class_PoolIn
 
 - void **append_array** **(** :ref:`PoolIntArray<class_poolintarray>` array **)**
 
-Append an :ref:`PoolIntArray<class_poolintarray>` at the end of this array.
+Append an ``PoolIntArray`` at the end of this array.
 
 .. _class_PoolIntArray_insert:
 

@@ -783,7 +783,7 @@ There are 6 pattern types:
                 print("open ended array")
 
 - dictionary pattern
-    Works in the same was as the array pattern. Every key has to be a constant pattern.
+    Works in the same way as the array pattern. Every key has to be a constant pattern.
 
     The size of the dictionary is tested first, it has to be the same size as the pattern, otherwise the pattern don't match.
 
@@ -1328,7 +1328,7 @@ be obtained when a call to Node._ready() is made.
     func _ready():
         mylabel = get_node("MyLabel")
 
-This can get a little cumbersome, specially when nodes and external
+This can get a little cumbersome, especially when nodes and external
 references pile up. For this, GDScript has the ``onready`` keyword, that
 defers initialization of a member variable until _ready is called. It
 can replace the above code with a single line:

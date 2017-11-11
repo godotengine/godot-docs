@@ -37,7 +37,7 @@ to the high integration with Godot:
 * It uses no garbage collector, so it trades a small bit of automation (most objects are reference counted anyway), by determinism.
 * The dynamic nature of it makes it easy to optimize chunks of it in C++ (via GDNative) if more performance is required at some point, without recompiling the engine.
 
-If undecided, and have experience in programming (specially dynamically
+If undecided, and have experience in programming (especially dynamically
 typed languages), go for GDScript!
 
 Visual Script
@@ -128,7 +128,7 @@ Finally, save the scene, with a name such as "sayhello.tscn"
 Adding a script
 ~~~~~~~~~~~~~~~
 
-Right click on the panel node, and then select "Add Script" in the context
+Right click on the panel node, and then select "Attach Script" in the context
 menu:
 
 .. image:: img/add_script.png

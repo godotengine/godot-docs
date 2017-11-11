@@ -60,7 +60,7 @@ Member Function Description
 
 - void **create** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`int<class_int>` format, :ref:`int<class_int>` flags=7 **)**
 
-Create a new :ref:`ImageTexture<class_imagetexture>` with "width" and "height".
+Create a new ``ImageTexture`` with "width" and "height".
 
 "format" one of :ref:`Image<class_image>`.FORMAT\_\*.
 
@@ -70,43 +70,43 @@ Create a new :ref:`ImageTexture<class_imagetexture>` with "width" and "height".
 
 - void **create_from_image** **(** :ref:`Image<class_image>` image, :ref:`int<class_int>` flags=7 **)**
 
-Create a new :ref:`ImageTexture<class_imagetexture>` from an :ref:`Image<class_image>` with "flags" from :ref:`Texture<class_texture>`.FLAG\_\*.
+Create a new ``ImageTexture`` from an :ref:`Image<class_image>` with "flags" from :ref:`Texture<class_texture>`.FLAG\_\*.
 
 .. _class_ImageTexture_get_format:
 
 - :ref:`int<class_int>` **get_format** **(** **)** const
 
-Return the format of the :ref:`ImageTexture<class_imagetexture>`, one of :ref:`Image<class_image>`.FORMAT\_\*.
+Return the format of the ``ImageTexture``, one of :ref:`Image<class_image>`.FORMAT\_\*.
 
 .. _class_ImageTexture_get_lossy_storage_quality:
 
 - :ref:`float<class_float>` **get_lossy_storage_quality** **(** **)** const
 
-Return the storage quality for :ref:`ImageTexture<class_imagetexture>`.STORAGE_COMPRESS_LOSSY.
+Return the storage quality for ``ImageTexture``.STORAGE_COMPRESS_LOSSY.
 
 .. _class_ImageTexture_get_storage:
 
 - :ref:`int<class_int>` **get_storage** **(** **)** const
 
-Return the storage type. One of :ref:`ImageTexture<class_imagetexture>`.STORAGE\_\*.
+Return the storage type. One of ``ImageTexture``.STORAGE\_\*.
 
 .. _class_ImageTexture_load:
 
 - void **load** **(** :ref:`String<class_string>` path **)**
 
-Load an :ref:`ImageTexture<class_imagetexture>`.
+Load an ``ImageTexture``.
 
 .. _class_ImageTexture_set_data:
 
 - void **set_data** **(** :ref:`Image<class_image>` image **)**
 
-Set the :ref:`Image<class_image>` of this :ref:`ImageTexture<class_imagetexture>`.
+Set the :ref:`Image<class_image>` of this ``ImageTexture``.
 
 .. _class_ImageTexture_set_lossy_storage_quality:
 
 - void **set_lossy_storage_quality** **(** :ref:`float<class_float>` quality **)**
 
-Set the storage quality in case of :ref:`ImageTexture<class_imagetexture>`.STORAGE_COMPRESS_LOSSY.
+Set the storage quality in case of ``ImageTexture``.STORAGE_COMPRESS_LOSSY.
 
 .. _class_ImageTexture_set_size_override:
 
@@ -118,6 +118,6 @@ Resizes the ``ImageTexture`` to the specified dimensions.
 
 - void **set_storage** **(** :ref:`int<class_int>` mode **)**
 
-Set the storage type. One of :ref:`ImageTexture<class_imagetexture>`.STORAGE\_\*.
+Set the storage type. One of ``ImageTexture``.STORAGE\_\*.
 
 

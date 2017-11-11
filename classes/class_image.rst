@@ -112,7 +112,7 @@ Member Variables
 
   .. _class_Image_data:
 
-- :ref:`Dictionary<class_dictionary>` **data**
+- :ref:`Dictionary<class_dictionary>` **data** - Holds all of the image's color data in a given format. See ``FORMAT\_\*`` constants.
 
 
 Numeric Constants
@@ -174,7 +174,7 @@ Numeric Constants
 Description
 -----------
 
-Native image datatype. Contains image data, which can be converted to a texture, and several functions to interact with it.
+Native image datatype. Contains image data, which can be converted to a :ref:`Texture<class_texture>`, and several functions to interact with it. The maximum width and height for an ``Image`` is 16384 pixels.
 
 Member Function Description
 ---------------------------
@@ -183,200 +183,272 @@ Member Function Description
 
 - void **blend_rect** **(** :ref:`Image<class_image>` src, :ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` dst **)**
 
-Alpha-blends a "src_rect" :ref:`Rect2<class_rect2>` from "src" :ref:`Image<class_image>` to this :ref:`Image<class_image>` on coordinates "dest".
+Alpha-blends ``src_rect`` from ``src`` image to this image at coordinates ``dest``.
 
 .. _class_Image_blend_rect_mask:
 
 - void **blend_rect_mask** **(** :ref:`Image<class_image>` src, :ref:`Image<class_image>` mask, :ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` dst **)**
 
-Alpha-blends a "src_rect" :ref:`Rect2<class_rect2>` from "src" :ref:`Image<class_image>` to this :ref:`Image<class_image>` using a "mask" :ref:`Image<class_image>` on coordinates "dest". Alpha channels are required for both "src" and "mask", dest pixels and src pixels will blend if the corresponding mask pixel's alpha value is not 0. "src" :ref:`Image<class_image>` and "mask" :ref:`Image<class_image>` \*must\* have the same size (width and height) but they can have different formats
+Alpha-blends ``src_rect`` from ``src`` image to this image using ``mask`` image at coordinates ``dst``. Alpha channels are required for both ``src`` and ``mask``. ``dst`` pixels and ``src`` pixels will blend if the corresponding mask pixel's alpha value is not 0. ``src`` image and ``mask`` image **must** have the same size (width and height) but they can have different formats.
 
 .. _class_Image_blit_rect:
 
 - void **blit_rect** **(** :ref:`Image<class_image>` src, :ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` dst **)**
 
-Copy a "src_rect" :ref:`Rect2<class_rect2>` from "src" :ref:`Image<class_image>` to this :ref:`Image<class_image>` on coordinates "dest".
+Copies ``src_rect`` from ``src`` image to this image at coordinates ``dst``.
 
 .. _class_Image_blit_rect_mask:
 
 - void **blit_rect_mask** **(** :ref:`Image<class_image>` src, :ref:`Image<class_image>` mask, :ref:`Rect2<class_rect2>` src_rect, :ref:`Vector2<class_vector2>` dst **)**
 
-Blits a "src_rect" :ref:`Rect2<class_rect2>` from "src" :ref:`Image<class_image>` to this :ref:`Image<class_image>` using a "mask" :ref:`Image<class_image>` on coordinates "dest". Alpha channel is required for "mask", will copy src pixel onto dest if the corresponding mask pixel's alpha value is not 0. "src" :ref:`Image<class_image>` and "mask" :ref:`Image<class_image>` \*must\* have the same size (width and height) but they can have different formats
+Blits ``src_rect`` area from ``src`` image to this image at the coordinates given by ``dst``. ``src`` pixel is copied onto ``dst`` if the corresponding ``mask`` pixel's alpha value is not 0. ``src`` image and ``mask`` image **must** have the same size (width and height) but they can have different formats.
 
 .. _class_Image_clear_mipmaps:
 
 - void **clear_mipmaps** **(** **)**
 
+Removes the image's mipmaps.
+
 .. _class_Image_compress:
 
 - :ref:`int<class_int>` **compress** **(** :ref:`int<class_int>` mode, :ref:`int<class_int>` source, :ref:`float<class_float>` lossy_quality **)**
+
+Compresses the image to use less memory. Can not directly access pixel data while the image is compressed. Returns error if the chosen compression mode is not available. See ``COMPRESS\_\*`` constants.
 
 .. _class_Image_convert:
 
 - void **convert** **(** :ref:`int<class_int>` format **)**
 
+Converts the image's format. See ``FORMAT\_\*`` constants.
+
 .. _class_Image_copy_from:
 
 - void **copy_from** **(** :ref:`Image<class_image>` src **)**
+
+Copies ``src`` image to this image.
 
 .. _class_Image_create:
 
 - void **create** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` use_mipmaps, :ref:`int<class_int>` format **)**
 
-Create an empty image of a specific size and format.
+Creates an empty image of given size and format. See ``FORMAT\_\*`` constants. If ``use_mipmaps`` is true then generate mipmaps for this image. See the ``generate_mipmaps`` method.
 
 .. _class_Image_create_from_data:
 
 - void **create_from_data** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` use_mipmaps, :ref:`int<class_int>` format, :ref:`PoolByteArray<class_poolbytearray>` data **)**
 
+Creates a new image of given size and format. See ``FORMAT\_\*`` constants. Fills the image with the given raw data. If ``use_mipmaps`` is true then generate mipmaps for this image. See the ``generate_mipmaps`` method.
+
 .. _class_Image_crop:
 
 - void **crop** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height **)**
+
+Crops the image to the given ``width`` and ``height``. If the specified size is larger than the current size, the extra area is filled with black pixels.
 
 .. _class_Image_decompress:
 
 - :ref:`int<class_int>` **decompress** **(** **)**
 
+Decompresses the image if it is compressed. Returns an error if decompress function is not available.
+
 .. _class_Image_detect_alpha:
 
 - :ref:`int<class_int>` **detect_alpha** **(** **)** const
+
+Returns ALPHA_BLEND if the image has data for alpha values. Returns ALPHA_BIT if all the alpha values are below a certain threshold or the maximum value. Returns ALPHA_NONE if no data for alpha values is found.
 
 .. _class_Image_expand_x2_hq2x:
 
 - void **expand_x2_hq2x** **(** **)**
 
+Stretches the image and enlarges it by a factor of 2. No interpolation is done.
+
 .. _class_Image_fill:
 
 - void **fill** **(** :ref:`Color<class_color>` color **)**
 
-Fills an :ref:`Image<class_image>` with a specified :ref:`Color<class_color>`
+Fills the image with a given :ref:`Color<class_color>`.
 
 .. _class_Image_fix_alpha_edges:
 
 - void **fix_alpha_edges** **(** **)**
 
+Blends low-alpha pixels with nearby pixels.
+
 .. _class_Image_flip_x:
 
 - void **flip_x** **(** **)**
+
+Flips the image horizontally.
 
 .. _class_Image_flip_y:
 
 - void **flip_y** **(** **)**
 
+Flips the image vertically.
+
 .. _class_Image_generate_mipmaps:
 
 - :ref:`int<class_int>` **generate_mipmaps** **(** **)**
+
+Generates mipmaps for the image. Mipmaps are pre-calculated and lower resolution copies of the image. Mipmaps are automatically used if the image needs to be scaled down when rendered. This improves image quality and the performance of the rendering. Returns an error if the image is compressed, in a custom format or if the image's width/height is 0.
 
 .. _class_Image_get_data:
 
 - :ref:`PoolByteArray<class_poolbytearray>` **get_data** **(** **)** const
 
-Return the raw data of the :ref:`Image<class_image>`.
+Returns the image's raw data.
 
 .. _class_Image_get_format:
 
 - :ref:`int<class_int>` **get_format** **(** **)** const
 
-Return the format of the :ref:`Image<class_image>`, one of :ref:`Image<class_image>`.FORMAT\_\*.
+Returns the image's raw data.
 
 .. _class_Image_get_height:
 
 - :ref:`int<class_int>` **get_height** **(** **)** const
 
-Return the height of the :ref:`Image<class_image>`.
+Returns the image's height.
 
 .. _class_Image_get_mipmap_offset:
 
 - :ref:`int<class_int>` **get_mipmap_offset** **(** :ref:`int<class_int>` mipmap **)** const
 
+Returns the offset where the image's mipmap with index ``mipmap`` is stored in the ``data`` dictionary.
+
 .. _class_Image_get_pixel:
 
 - :ref:`Color<class_color>` **get_pixel** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** const
+
+Returns the color of the pixel at ``(x, y)`` if the image is locked. If the image is unlocked it always returns a :ref:`Color<class_color>` with the value ``(0, 0, 0, 1.0)``.
 
 .. _class_Image_get_rect:
 
 - :ref:`Image<class_image>` **get_rect** **(** :ref:`Rect2<class_rect2>` rect **)** const
 
-Return a new :ref:`Image<class_image>` that is a copy of "area" in this :ref:`Image<class_image>`.
+Returns a new image that is a copy of the image's area specified with ``rect``.
 
 .. _class_Image_get_size:
 
 - :ref:`Vector2<class_vector2>` **get_size** **(** **)** const
 
+Returns the image's size (width and height).
+
 .. _class_Image_get_used_rect:
 
 - :ref:`Rect2<class_rect2>` **get_used_rect** **(** **)** const
 
-Return the area of this :ref:`Image<class_image>` that is used/visibly colored/opaque.
+Returns a :ref:`Rect2<class_rect2>` enclosing the visible portion of the image.
 
 .. _class_Image_get_width:
 
 - :ref:`int<class_int>` **get_width** **(** **)** const
 
-Return the width of the :ref:`Image<class_image>`.
+Returns the image's width.
 
 .. _class_Image_has_mipmaps:
 
 - :ref:`bool<class_bool>` **has_mipmaps** **(** **)** const
 
+Returns ``true`` if the image has generated mipmaps.
+
 .. _class_Image_is_compressed:
 
 - :ref:`bool<class_bool>` **is_compressed** **(** **)** const
+
+Returns ``true`` if the image is compressed.
 
 .. _class_Image_is_empty:
 
 - :ref:`bool<class_bool>` **is_empty** **(** **)** const
 
+Returns ``true`` if the image has no data.
+
 .. _class_Image_is_invisible:
 
 - :ref:`bool<class_bool>` **is_invisible** **(** **)** const
+
+Returns ``true`` if all the image's pixels have an alpha value of 0. Returns ``false`` if any pixel has an alpha value higher than 0.
 
 .. _class_Image_load:
 
 - :ref:`int<class_int>` **load** **(** :ref:`String<class_string>` path **)**
 
-Load an :ref:`Image<class_image>`.
+Loads an image from file ``path``.
 
 .. _class_Image_lock:
 
 - void **lock** **(** **)**
 
+Locks the data and prevents changes.
+
 .. _class_Image_normalmap_to_xy:
 
 - void **normalmap_to_xy** **(** **)**
+
+Converts the image's data to represent coordinates on a 3D plane. This is used when the image represents a normalmap. A normalmap can add lots of detail to a 3D surface without increasing the polygon count.
 
 .. _class_Image_premultiply_alpha:
 
 - void **premultiply_alpha** **(** **)**
 
+Multiplies color values with alpha values. Resulting color values for a pixel are ``(color \* alpha)/256``.
+
 .. _class_Image_resize:
 
 - void **resize** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`int<class_int>` interpolation=1 **)**
+
+Resizes the image to the given ``width`` and ``height``. New pixels are calculated using ``interpolation``. See ``interpolation`` constants.
 
 .. _class_Image_resize_to_po2:
 
 - void **resize_to_po2** **(** :ref:`bool<class_bool>` square=false **)**
 
+Resizes the image to the nearest power of 2 for the width and height. If ``square`` is ``true`` then set width and height to be the same.
+
 .. _class_Image_save_png:
 
 - :ref:`int<class_int>` **save_png** **(** :ref:`String<class_string>` path **)** const
 
-Save this :ref:`Image<class_image>` as a png.
+Saves the image as a PNG file to ``path``.
 
 .. _class_Image_set_pixel:
 
 - void **set_pixel** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`Color<class_color>` color **)**
 
+Sets the :ref:`Color<class_color>` of the pixel at ``(x, y)`` if the image is unlocked. Example:
+
+``
+
+var img = Image.new()
+
+img.lock()
+
+img.set_pixel(x, y, color) # Does not have an effect
+
+img.unlock()
+
+img.set_pixel(x, y, color) # Works
+
+``.
+
 .. _class_Image_shrink_x2:
 
 - void **shrink_x2** **(** **)**
+
+Shrinks the image by a factor of 2.
 
 .. _class_Image_srgb_to_linear:
 
 - void **srgb_to_linear** **(** **)**
 
+Converts the raw data from the sRGB colorspace to a linear scale.
+
 .. _class_Image_unlock:
 
 - void **unlock** **(** **)**
+
+Unlocks the data for writing access.
 
 

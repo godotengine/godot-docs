@@ -123,7 +123,7 @@ Get a signed byte from the stream.
 
 - :ref:`int<class_int>` **get_available_bytes** **(** **)** const
 
-Return the amount of bytes this :ref:`StreamPeer<class_streampeer>` has available.
+Return the amount of bytes this ``StreamPeer`` has available.
 
 .. _class_StreamPeer_get_data:
 
@@ -195,7 +195,7 @@ Get a Variant from the stream.
 
 - :ref:`bool<class_bool>` **is_big_endian_enabled** **(** **)** const
 
-Return whether this :ref:`StreamPeer<class_streampeer>` is using big-endian format.
+Return whether this ``StreamPeer`` is using big-endian format.
 
 .. _class_StreamPeer_put_16:
 
@@ -285,6 +285,6 @@ Put a Variant into the stream.
 
 - void **set_big_endian** **(** :ref:`bool<class_bool>` enable **)**
 
-Set this :ref:`StreamPeer<class_streampeer>` to use big-endian format. Default is false.
+Set this ``StreamPeer`` to use big-endian format. Default is false.
 
 

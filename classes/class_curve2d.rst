@@ -62,11 +62,11 @@ Member Variables
 
   .. _class_Curve2D__data:
 
-- :ref:`Dictionary<class_dictionary>` **_data**
+- :ref:`Dictionary<class_dictionary>` **_data** - The points describing the curve. Value is a :ref:`Dictionary<class_dictionary>` with the keys ``in``, ``out``, and ``pos``. The key pos is the position of a vertex of the curve, the key in is the vector from that position to the control point before this vertex, the key out is the vector from that position to the controlpoint after this vertex.
 
   .. _class_Curve2D_bake_interval:
 
-- :ref:`float<class_float>` **bake_interval**
+- :ref:`float<class_float>` **bake_interval** - The distance in pixels between two adjacent cached points. Changing it forces the cache to be recomputed the next time the :ref:`get_baked_points<class_Curve2D_get_baked_points>` or :ref:`get_baked_length<class_Curve2D_get_baked_length>` function is called. The smaller the distance, the more points in the cache and the more memory it will consume, so use with care.
 
 
 Description
@@ -90,6 +90,8 @@ If "at_position" is given, the point is inserted before the point number "at_pos
 .. _class_Curve2D_clear_points:
 
 - void **clear_points** **(** **)**
+
+Removes all points from the curve.
 
 .. _class_Curve2D_get_bake_interval:
 

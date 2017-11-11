@@ -54,6 +54,12 @@ Member Functions
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`remove_point<class_AStar_remove_point>` **(** :ref:`int<class_int>` id **)**                                                                               |
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_point_position<class_AStar_set_point_position>` **(** :ref:`int<class_int>` id, :ref:`Vector3<class_vector3>` position **)**                           |
++--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                             | :ref:`set_point_weight_scale<class_AStar_set_point_weight_scale>` **(** :ref:`int<class_int>` id, :ref:`float<class_float>` weight_scale **)**                   |
++--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolIntArray<class_poolintarray>`          | :ref:`get_point_connections<class_AStar_get_point_connections>` **(** :ref:`int<class_int>` id **)**                                                             |
++--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -88,6 +94,8 @@ Adds a new point at the given position with the given identifier. The algorithm 
     var as = AStar.new()
     
     as.add_point(1, Vector3(1,0,0), 4) # Adds the point (1,0,0) with weight_scale=4 and id=1
+
+If there already exists a point for the given id, its position and weight scale are updated to the given values.
 
 .. _class_AStar_are_points_connected:
 
@@ -127,7 +135,7 @@ Deletes the segment between the given points.
 
 - :ref:`int<class_int>` **get_available_point_id** **(** **)** const
 
-Returns an id with no point associated to it.
+Returns the next available point id with no point associated to it.
 
 .. _class_AStar_get_closest_point:
 
@@ -212,5 +220,37 @@ Returns whether a point associated with the given id exists.
 - void **remove_point** **(** :ref:`int<class_int>` id **)**
 
 Removes the point associated with the given id from the points pool.
+
+.. _class_AStar_set_point_position:
+
+- void **set_point_position** **(** :ref:`int<class_int>` id, :ref:`Vector3<class_vector3>` position **)**
+
+Sets the position for the point with the given id.
+
+.. _class_AStar_set_point_weight_scale:
+
+- void **set_point_weight_scale** **(** :ref:`int<class_int>` id, :ref:`float<class_float>` weight_scale **)**
+
+Sets the ``weight_scale`` for the point with the given id.
+
+.. _class_AStar_get_point_connections:
+
+- :ref:`PoolIntArray<class_poolintarray>` **get_point_connections** **(** :ref:`int<class_int>` id **)**
+
+Returns an array with the ids of the points that form the connect with the given point. 
+
+::
+
+    var as = AStar.new()
+    
+    as.add_point(1, Vector3(0,0,0))
+    as.add_point(2, Vector3(0,1,0))
+    as.add_point(3, Vector3(1,1,0))
+    as.add_point(4, Vector3(2,0,0))
+    
+    as.connect_points(1, 2, true)
+    as.connect_points(1, 3, true)
+    
+    var neighbors = as.get_point_connections(1) # returns [2, 3]
 
 

@@ -42,19 +42,19 @@ Member Variables
 
   .. _class_DampedSpringJoint2D_damping:
 
-- :ref:`float<class_float>` **damping**
+- :ref:`float<class_float>` **damping** - The spring joint's damping ratio. A value between ``0`` and ``1``. When the two bodies move into different directions the system tries to align them to the spring axis again. A high ``damping`` value forces the attached bodies to align faster. Default value: ``1``
 
   .. _class_DampedSpringJoint2D_length:
 
-- :ref:`float<class_float>` **length**
+- :ref:`float<class_float>` **length** - The spring joint's maximum length. The two attached bodies cannot stretch it past this value. Default value: ``50``
 
   .. _class_DampedSpringJoint2D_rest_length:
 
-- :ref:`float<class_float>` **rest_length**
+- :ref:`float<class_float>` **rest_length** - When the bodies attached to the spring joint move they stretch or squash it. The joint always tries to resize towards this length. Default value: ``0``
 
   .. _class_DampedSpringJoint2D_stiffness:
 
-- :ref:`float<class_float>` **stiffness**
+- :ref:`float<class_float>` **stiffness** - The higher the value, the less the bodies attached to the joint will deform it. The joint applies an opposing force to the bodies, the product of the stiffness multiplied by the size difference from its resting length. Default value: ``20``
 
 
 Description

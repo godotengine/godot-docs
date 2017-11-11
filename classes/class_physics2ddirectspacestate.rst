@@ -40,8 +40,8 @@ Numeric Constants
 - **TYPE_MASK_KINEMATIC_BODY** = **2** --- Check for collisions with kinematic bodies.
 - **TYPE_MASK_RIGID_BODY** = **4** --- Check for collisions with rigid bodies.
 - **TYPE_MASK_CHARACTER_BODY** = **8** --- Check for collisions with rigid bodies in character mode.
-- **TYPE_MASK_AREA** = **16** --- Check for collisions with areas.
 - **TYPE_MASK_COLLISION** = **15** --- Check for collisions with any kind of bodies (but not areas).
+- **TYPE_MASK_AREA** = **16** --- Check for collisions with areas.
 
 Description
 -----------

@@ -50,25 +50,31 @@ Member Variables
 
   .. _class_Quat_w:
 
-- :ref:`float<class_float>` **w**
+- :ref:`float<class_float>` **w** - W component of the quaternion. Default value: ``1``
 
   .. _class_Quat_x:
 
-- :ref:`float<class_float>` **x**
+- :ref:`float<class_float>` **x** - X component of the quaternion. Default value: ``0``
 
   .. _class_Quat_y:
 
-- :ref:`float<class_float>` **y**
+- :ref:`float<class_float>` **y** - Y component of the quaternion. Default value: ``0``
 
   .. _class_Quat_z:
 
-- :ref:`float<class_float>` **z**
+- :ref:`float<class_float>` **z** - Z component of the quaternion. Default value: ``0``
 
 
 Description
 -----------
 
-Quaternion is a 4 dimensional vector that is used to represent a rotation. It mainly exists to perform SLERP (spherical-linear interpolation) between two rotations. Multiplying quaternions also cheaply reproduces rotation sequences. However quaternions need to be often renormalized, or else they suffer from precision issues.
+A 4-dimensional vector representing a rotation.
+
+The vector represents a 4 dimensional complex number where multiplication of the basis elements is not commutative (multiplying i with j gives a different result than multiplying j with i).
+
+Multiplying quaternions reproduces rotation sequences. However quaternions need to be often renormalized, or else they suffer from precision issues.
+
+It can be used to perform SLERP (spherical-linear interpolation) between two rotations.
 
 Member Function Description
 ---------------------------
@@ -76,6 +82,8 @@ Member Function Description
 .. _class_Quat_Quat:
 
 - :ref:`Quat<class_quat>` **Quat** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z, :ref:`float<class_float>` w **)**
+
+Returns a quaternion defined by these values.
 
 .. _class_Quat_Quat:
 
@@ -92,6 +100,8 @@ Returns the rotation matrix corresponding to the given quaternion.
 .. _class_Quat_cubic_slerp:
 
 - :ref:`Quat<class_quat>` **cubic_slerp** **(** :ref:`Quat<class_quat>` b, :ref:`Quat<class_quat>` pre_a, :ref:`Quat<class_quat>` post_b, :ref:`float<class_float>` t **)**
+
+Performs a cubic spherical-linear interpolation with another quaternion.
 
 .. _class_Quat_dot:
 
@@ -133,14 +143,18 @@ Returns a copy of the quaternion, normalized to unit length.
 
 - :ref:`Quat<class_quat>` **slerp** **(** :ref:`Quat<class_quat>` b, :ref:`float<class_float>` t **)**
 
-Perform a spherical-linear interpolation with another quaternion.
+Performs a spherical-linear interpolation with another quaternion.
 
 .. _class_Quat_slerpni:
 
 - :ref:`Quat<class_quat>` **slerpni** **(** :ref:`Quat<class_quat>` b, :ref:`float<class_float>` t **)**
 
+Performs a spherical-linear interpolation with another quaterion without checking if the rotation path is not bigger than 90°.
+
 .. _class_Quat_xform:
 
 - :ref:`Vector3<class_vector3>` **xform** **(** :ref:`Vector3<class_vector3>` v **)**
+
+Transforms the vector ``v`` by this quaternion.
 
 

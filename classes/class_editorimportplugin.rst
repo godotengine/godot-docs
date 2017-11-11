@@ -86,8 +86,8 @@ Below is an example EditorImportPlugin that imports a :ref:`Mesh<class_mesh>` fr
         return [{"name": "my_option", "default_value": false}]
     
     func load(src, dst, opts, r_platform_variants, r_gen_files):
-        var f = File.new()
-        if f.open(src, File.READ) != OK:
+        var file = File.new()
+        if file.open(src, File.READ) != OK:
             return FAILED
     
         var mesh = Mesh.new()

@@ -14,7 +14,7 @@ OccluderPolygon2D
 Brief Description
 -----------------
 
-
+Defines a 2D polygon for LightOccluder2D.
 
 Member Functions
 ----------------
@@ -38,23 +38,28 @@ Member Variables
 
   .. _class_OccluderPolygon2D_closed:
 
-- :ref:`bool<class_bool>` **closed**
+- :ref:`bool<class_bool>` **closed** - If ``true`` closes the polygon. A closed OccluderPolygon2D occludes the light coming from any direction. An opened OccluderPolygon2D occludes the light only at its outline's direction. Default value ``true``.
 
   .. _class_OccluderPolygon2D_cull_mode:
 
-- :ref:`int<class_int>` **cull_mode**
+- :ref:`int<class_int>` **cull_mode** - Set the direction of the occlusion culling when not ``CULL_DISABLED``. Default value ``DISABLED``.
 
   .. _class_OccluderPolygon2D_polygon:
 
-- :ref:`PoolVector2Array<class_poolvector2array>` **polygon**
+- :ref:`PoolVector2Array<class_poolvector2array>` **polygon** - A :ref:`Vector2<class_vector2>` array with the index for polygon's vertices positions.
 
 
 Numeric Constants
 -----------------
 
-- **CULL_DISABLED** = **0**
-- **CULL_CLOCKWISE** = **1**
-- **CULL_COUNTER_CLOCKWISE** = **2**
+- **CULL_DISABLED** = **0** --- Culling mode for the occlusion. Disabled means no culling. See :ref:`cull_mode<class_OccluderPolygon2D_cull_mode>`.
+- **CULL_CLOCKWISE** = **1** --- Culling mode for the occlusion. Sets the culling to be in clockwise direction. See :ref:`cull_mode<class_OccluderPolygon2D_cull_mode>`.
+- **CULL_COUNTER_CLOCKWISE** = **2** --- Culling mode for the occlusion. Sets the culling to be in counter clockwise direction. See :ref:`cull_mode<class_OccluderPolygon2D_cull_mode>`.
+
+Description
+-----------
+
+Editor facility that helps you draw a 2D polygon used as resource for :ref:`LightOccluder2D<class_lightoccluder2d>`.
 
 Member Function Description
 ---------------------------

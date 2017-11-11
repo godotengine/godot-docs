@@ -44,7 +44,7 @@ Basically, the oldschool way of handling collisions (which is not
 necessarily simpler under the hood, but well hidden and presented as a
 nice and simple API).
 
-Fixed process
+Physics process
 ~~~~~~~~~~~~~
 
 To manage the logic of a kinematic body or character, it is always
@@ -60,9 +60,6 @@ or lose precision if the frame rate is too high or too low.
 
     func _physics_process(delta):
         pass
-
-    func _ready():
-        set_physics_process(true)
 
 Scene setup
 ~~~~~~~~~~~
@@ -113,9 +110,6 @@ So, let's move our sprite downwards until it hits the floor:
     func _physics_process(delta):
         move( Vector2(0,1) ) #move down 1 pixel per physics frame
 
-    func _ready():
-        set_physics_process(true)
-
 The result is that the character will move, but stop right when
 hitting the floor. Pretty cool, huh?
 
@@ -135,9 +129,6 @@ little more like an actual game character:
 
         var motion = velocity * delta
         move( motion )
-
-    func _ready():
-        set_physics_process(true)
 
 Now the character falls smoothly. Let's make it walk to the sides, left
 and right when touching the directional keys. Remember that the values
@@ -167,9 +158,6 @@ This adds simple walking support by pressing left and right:
 
         var motion = velocity * delta
         move(motion)
-
-    func _ready():
-        set_physics_process(true)
 
 And give it a try.
 
@@ -233,10 +221,6 @@ this way:
             motion = n.slide(motion)
             velocity = n.slide(velocity)
             move(motion)
-
-
-    func _ready():
-        set_physics_process(true)
 
 Note that not only the motion has been modified but also the velocity.
 This makes sense as it helps keep the new direction too.

@@ -115,6 +115,7 @@ Numeric Constants
 - **SUBDIV_64** = **0**
 - **SUBDIV_128** = **1**
 - **SUBDIV_256** = **2**
+- **SUBDIV_512** = **3**
 - **SUBDIV_MAX** = **4**
 
 Member Function Description

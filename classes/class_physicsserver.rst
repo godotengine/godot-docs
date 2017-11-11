@@ -339,8 +339,8 @@ The higher, the faster.
 - **BODY_PARAM_FRICTION** = **1** --- Constant to set/get a body's friction.
 - **BODY_PARAM_MASS** = **2** --- Constant to set/get a body's mass.
 - **BODY_PARAM_GRAVITY_SCALE** = **3** --- Constant to set/get a body's gravity multiplier.
-- **BODY_PARAM_ANGULAR_DAMP** = **5** --- Constant to set/get a body's angular dampening factor.
 - **BODY_PARAM_LINEAR_DAMP** = **4** --- Constant to set/get a body's linear dampening factor.
+- **BODY_PARAM_ANGULAR_DAMP** = **5** --- Constant to set/get a body's angular dampening factor.
 - **BODY_PARAM_MAX** = **6** --- This is the last ID for body parameters. Any attempt to set this property is ignored. Any attempt to get it returns 0.
 - **BODY_STATE_TRANSFORM** = **0** --- Constant to set/get the current transform matrix of the body.
 - **BODY_STATE_LINEAR_VELOCITY** = **1** --- Constant to set/get the current linear velocity of the body.

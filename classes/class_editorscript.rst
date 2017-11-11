@@ -42,9 +42,9 @@ Example script:
     extends EditorScript
     
     func _run():
-    print("Hello from the Godot Editor!")
+        print("Hello from the Godot Editor!")
 
-Note that the script is run in the Editor context, which means the output is visible in the console window started with the Editor (STDOUT) instead of the usual Godot \*Output\* dock.
+Note that the script is run in the Editor context, which means the output is visible in the console window started with the Editor (STDOUT) instead of the usual Godot *Output* dock.
 
 Member Function Description
 ---------------------------

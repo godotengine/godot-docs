@@ -113,7 +113,7 @@ Moves the body along the vector ``rel_vec``. The body will stop if it collides. 
 
 - :ref:`Vector2<class_vector2>` **move_and_slide** **(** :ref:`Vector2<class_vector2>` linear_velocity, :ref:`Vector2<class_vector2>` floor_normal=Vector2( 0, 0 ), :ref:`float<class_float>` slope_stop_min_velocity=5, :ref:`int<class_int>` max_bounces=4, :ref:`float<class_float>` floor_max_angle=0.785398 **)**
 
-Moves the body along a vector. If the body collides with another, it will slide along the other body rather than stop immediately. If the other body is a :ref:`KinematicBody2D<class_kinematicbody2d>` or :ref:`RigidBody2D<class_rigidbody2d>`, it will also be affected by the motion of the other body. You can use this to make moving or rotating platforms, or to make nodes push other nodes.
+Moves the body along a vector. If the body collides with another, it will slide along the other body rather than stop immediately. If the other body is a ``KinematicBody2D`` or :ref:`RigidBody2D<class_rigidbody2d>`, it will also be affected by the motion of the other body. You can use this to make moving or rotating platforms, or to make nodes push other nodes.
 
 ``linear_velocity`` is a value in pixels per second. Unlike in for example :ref:`move_and_collide<class_KinematicBody2D_move_and_collide>`, you should *not* multiply it with ``delta`` — this is done by the method.
 

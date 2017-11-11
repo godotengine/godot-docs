@@ -58,7 +58,7 @@ Member Variables
 
   .. _class_ARVRController_controller_id:
 
-- :ref:`int<class_int>` **controller_id**
+- :ref:`int<class_int>` **controller_id** - The controller's id. The first controller that the :ref:`ARVRServer<class_arvrserver>` detects will have id 1, the second id 2, the third id 3, etc. When a controller is turned off, it's slot is freed. This ensures controllers will keep the same id even when controllers with lower ids are turned off.
 
 
 Description
@@ -88,6 +88,8 @@ If active, returns the name of the associated controller if provided by the AR/V
 .. _class_ARVRController_get_hand:
 
 - :ref:`int<class_int>` **get_hand** **(** **)** const
+
+Returns the hand holding this controller, if known. See TRACKER\_\* constants in :ref:`ARVRPositionalTracker<class_arvrpositionaltracker>`.
 
 .. _class_ARVRController_get_is_active:
 

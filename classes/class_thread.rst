@@ -48,19 +48,19 @@ Member Function Description
 
 - :ref:`String<class_string>` **get_id** **(** **)** const
 
-Returns the current :ref:`Thread<class_thread>`\ s id, uniquely identifying it among all threads.
+Returns the current ``Thread``s id, uniquely identifying it among all threads.
 
 .. _class_Thread_is_active:
 
 - :ref:`bool<class_bool>` **is_active** **(** **)** const
 
-Returns true if this :ref:`Thread<class_thread>` is currently active. An active :ref:`Thread<class_thread>` cannot start work on a new method but can be joined with :ref:`wait_to_finish<class_Thread_wait_to_finish>`.
+Returns true if this ``Thread`` is currently active. An active ``Thread`` cannot start work on a new method but can be joined with :ref:`wait_to_finish<class_Thread_wait_to_finish>`.
 
 .. _class_Thread_start:
 
 - :ref:`int<class_int>` **start** **(** :ref:`Object<class_object>` instance, :ref:`String<class_string>` method, :ref:`Variant<class_variant>` userdata=null, :ref:`int<class_int>` priority=1 **)**
 
-Starts a new :ref:`Thread<class_thread>` that runs "method" on object "instance" with "userdata" passed as an argument. The "priority" of the :ref:`Thread<class_thread>` can be changed by passing a PRIORITY\_\* enum.
+Starts a new ``Thread`` that runs "method" on object "instance" with "userdata" passed as an argument. The "priority" of the ``Thread`` can be changed by passing a PRIORITY\_\* enum.
 
 Returns OK on success, or ERR_CANT_CREATE on failure.
 
@@ -68,6 +68,6 @@ Returns OK on success, or ERR_CANT_CREATE on failure.
 
 - :ref:`Variant<class_variant>` **wait_to_finish** **(** **)**
 
-Joins the :ref:`Thread<class_thread>` and waits for it to finish. Returns what the method called returned.
+Joins the ``Thread`` and waits for it to finish. Returns what the method called returned.
 
 

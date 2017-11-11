@@ -34,11 +34,11 @@ Member Variables
 
   .. _class_GrooveJoint2D_initial_offset:
 
-- :ref:`float<class_float>` **initial_offset**
+- :ref:`float<class_float>` **initial_offset** - The body B's initial anchor position defined by the joint's origin and a local offset :ref:`initial_offset<class_GrooveJoint2D_initial_offset>` along the joint's y axis (along the groove). Default value: ``25``
 
   .. _class_GrooveJoint2D_length:
 
-- :ref:`float<class_float>` **length**
+- :ref:`float<class_float>` **length** - The groove's length. The groove is from the joint's origin towards :ref:`length<class_GrooveJoint2D_length>` along the joint's local y axis. Default value: ``50``
 
 
 Description

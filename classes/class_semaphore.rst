@@ -37,12 +37,12 @@ Member Function Description
 
 - :ref:`int<class_int>` **post** **(** **)**
 
-Lowers the :ref:`Semaphore<class_semaphore>`, allowing one more thread in.
+Lowers the ``Semaphore``, allowing one more thread in.
 
 .. _class_Semaphore_wait:
 
 - :ref:`int<class_int>` **wait** **(** **)**
 
-Tries to wait for the :ref:`Semaphore<class_semaphore>`, if its value is zero, blocks until non-zero.
+Tries to wait for the ``Semaphore``, if its value is zero, blocks until non-zero.
 
 

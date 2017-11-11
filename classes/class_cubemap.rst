@@ -14,7 +14,7 @@ CubeMap
 Brief Description
 -----------------
 
-
+A CubeMap is a 6 sided 3D texture.
 
 Member Functions
 ----------------
@@ -41,6 +41,18 @@ Member Functions
 | void                       | :ref:`set_storage<class_CubeMap_set_storage>` **(** :ref:`int<class_int>` mode **)**                                    |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+  .. _class_CubeMap_lossy_storage_quality:
+
+- :ref:`float<class_float>` **lossy_storage_quality** - The lossy storage quality of the CubeMap if the storage mode is set to STORAGE_COMPRESS_LOSSY.
+
+  .. _class_CubeMap_storage_mode:
+
+- :ref:`int<class_int>` **storage_mode** - The CubeMap's storage mode. See ``STORAGE\_\*`` constants.
+
+
 Numeric Constants
 -----------------
 
@@ -58,6 +70,11 @@ Numeric Constants
 - **FLAG_FILTER** = **4**
 - **FLAGS_DEFAULT** = **7**
 
+Description
+-----------
+
+A CubeMap is a 6 sided 3D texture typically used for faking reflections. It can be used to make an object look as if it's reflecting its surroundings. This usually delivers much better performance than other reflection methods.
+
 Member Function Description
 ---------------------------
 
@@ -69,6 +86,8 @@ Member Function Description
 
 - :ref:`int<class_int>` **get_height** **(** **)** const
 
+Returns the CubeMap's height.
+
 .. _class_CubeMap_get_lossy_storage_quality:
 
 - :ref:`float<class_float>` **get_lossy_storage_quality** **(** **)** const
@@ -77,6 +96,8 @@ Member Function Description
 
 - :ref:`Image<class_image>` **get_side** **(** :ref:`int<class_int>` side **)** const
 
+Returns an :ref:`Image<class_image>` for a side of the CubeMap using one of the ``SIDE\_\*`` constants or an integer 0-5.
+
 .. _class_CubeMap_get_storage:
 
 - :ref:`int<class_int>` **get_storage** **(** **)** const
@@ -84,6 +105,8 @@ Member Function Description
 .. _class_CubeMap_get_width:
 
 - :ref:`int<class_int>` **get_width** **(** **)** const
+
+Returns the CubeMap's width.
 
 .. _class_CubeMap_set_flags:
 
@@ -96,6 +119,8 @@ Member Function Description
 .. _class_CubeMap_set_side:
 
 - void **set_side** **(** :ref:`int<class_int>` side, :ref:`Image<class_image>` image **)**
+
+Sets an :ref:`Image<class_image>` for a side of the CubeMap using one of the ``SIDE\_\*`` constants or an integer 0-5.
 
 .. _class_CubeMap_set_storage:
 

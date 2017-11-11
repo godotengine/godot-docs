@@ -84,13 +84,13 @@ Signals
 
 - **text_changed** **(** :ref:`String<class_string>` text **)**
 
-When the text changes, this signal is emitted.
+Emitted when the text changes.
 
 .. _class_LineEdit_text_entered:
 
 - **text_entered** **(** :ref:`String<class_string>` text **)**
 
-This signal is emitted when the user presses KEY_ENTER on the :ref:`LineEdit<class_lineedit>`. This signal is often used as an alternate confirmation mechanism in dialogs.
+Emitted when the user presses KEY_ENTER on the ``LineEdit``.
 
 
 Member Variables
@@ -98,62 +98,62 @@ Member Variables
 
   .. _class_LineEdit_align:
 
-- :ref:`int<class_int>` **align**
+- :ref:`int<class_int>` **align** - Text alignment as defined in the ALIGN\_\* enum.
 
   .. _class_LineEdit_caret_blink:
 
-- :ref:`bool<class_bool>` **caret_blink**
+- :ref:`bool<class_bool>` **caret_blink** - If ``true`` the caret (visual cursor) blinks.
 
   .. _class_LineEdit_caret_blink_speed:
 
-- :ref:`float<class_float>` **caret_blink_speed**
+- :ref:`float<class_float>` **caret_blink_speed** - Duration (in seconds) of a caret's blinking cycle.
 
   .. _class_LineEdit_editable:
 
-- :ref:`bool<class_bool>` **editable**
+- :ref:`bool<class_bool>` **editable** - If ``false`` existing text cannot be modified and new text cannot be added.
 
   .. _class_LineEdit_expand_to_len:
 
-- :ref:`bool<class_bool>` **expand_to_len**
+- :ref:`bool<class_bool>` **expand_to_len** - If ``true`` the :ref:`LineEdit<class_lineedit>` width will increase to stay longer than the :ref:`text<class_LineEdit_text>`. It will **not** compress if the :ref:`text<class_LineEdit_text>` is shortened.
 
   .. _class_LineEdit_focus_mode:
 
-- :ref:`int<class_int>` **focus_mode**
+- :ref:`int<class_int>` **focus_mode** - Defines how the :ref:`LineEdit<class_lineedit>` can grab focus (Keyboard and mouse, only keyboard, or none). See ``enum FocusMode`` in :ref:`Control<class_control>` for details.
 
   .. _class_LineEdit_max_length:
 
-- :ref:`int<class_int>` **max_length**
+- :ref:`int<class_int>` **max_length** - Maximum amount of characters that can be entered inside the :ref:`LineEdit<class_lineedit>`. If ``0``, there is no limit.
 
   .. _class_LineEdit_placeholder_alpha:
 
-- :ref:`float<class_float>` **placeholder_alpha**
+- :ref:`float<class_float>` **placeholder_alpha** - Opacity of the :ref:`placeholder_text<class_LineEdit_placeholder_text>`. From ``0`` to ``1``.
 
   .. _class_LineEdit_placeholder_text:
 
-- :ref:`String<class_string>` **placeholder_text**
+- :ref:`String<class_string>` **placeholder_text** - Text shown when the :ref:`LineEdit<class_lineedit>` is empty. It is **not** the :ref:`LineEdit<class_lineedit>`'s default value (see :ref:`text<class_LineEdit_text>`).
 
   .. _class_LineEdit_secret:
 
-- :ref:`bool<class_bool>` **secret**
+- :ref:`bool<class_bool>` **secret** - If ``true`` every character is shown as "\*".
 
   .. _class_LineEdit_text:
 
-- :ref:`String<class_string>` **text**
+- :ref:`String<class_string>` **text** - String value of the :ref:`LineEdit<class_lineedit>`.
 
 
 Numeric Constants
 -----------------
 
-- **ALIGN_LEFT** = **0** --- Align left.
-- **ALIGN_CENTER** = **1** --- Align center.
-- **ALIGN_RIGHT** = **2** --- Align right.
-- **ALIGN_FILL** = **3** --- Align fill.
-- **MENU_CUT** = **0** --- Cut (Copy and clear).
-- **MENU_COPY** = **1** --- Copy the selected text.
-- **MENU_PASTE** = **2** --- Paste the clipboard text over the selected text.
-- **MENU_CLEAR** = **3** --- Clear the text.
-- **MENU_SELECT_ALL** = **4** --- Select all text.
-- **MENU_UNDO** = **5** --- Undo an action.
+- **ALIGN_LEFT** = **0** --- Aligns the text on the left hand side of the :ref:`LineEdit<class_lineedit>`.
+- **ALIGN_CENTER** = **1** --- Centers the text in the middle of the :ref:`LineEdit<class_lineedit>`.
+- **ALIGN_RIGHT** = **2** --- Aligns the text on the right hand side of the :ref:`LineEdit<class_lineedit>`.
+- **ALIGN_FILL** = **3** --- Stretches whitespaces to fit the :ref:`LineEdit<class_lineedit>`'s width.
+- **MENU_CUT** = **0** --- Cuts (Copies and clears) the selected text.
+- **MENU_COPY** = **1** --- Copies the selected text.
+- **MENU_PASTE** = **2** --- Pastes the clipboard text over the selected text (or at the cursor's position).
+- **MENU_CLEAR** = **3** --- Erases the whole Linedit text.
+- **MENU_SELECT_ALL** = **4** --- Selects the whole Linedit text.
+- **MENU_UNDO** = **5** --- Undoes the previous action.
 - **MENU_MAX** = **6**
 
 Description
@@ -168,13 +168,13 @@ Member Function Description
 
 - void **append_at_cursor** **(** :ref:`String<class_string>` text **)**
 
-Append text at cursor, scrolling the :ref:`LineEdit<class_lineedit>` when needed.
+Adds ``text`` after the cursor. If the resulting value is longer than :ref:`max_length<class_LineEdit_max_length>`, nothing happens.
 
 .. _class_LineEdit_clear:
 
 - void **clear** **(** **)**
 
-Clear the :ref:`LineEdit<class_lineedit>` text.
+Erases the :ref:`LineEdit<class_lineedit>` text.
 
 .. _class_LineEdit_cursor_get_blink_enabled:
 
@@ -204,13 +204,13 @@ Set the line edit caret blink speed. Cannot be less then or equal to 0.
 
 - :ref:`int<class_int>` **get_align** **(** **)** const
 
-Return the align mode of the :ref:`LineEdit<class_lineedit>`.
+Return the align mode of the ``LineEdit``.
 
 .. _class_LineEdit_get_cursor_position:
 
 - :ref:`int<class_int>` **get_cursor_position** **(** **)** const
 
-Return the cursor position inside the :ref:`LineEdit<class_lineedit>`.
+Returns the cursor position inside the ``LineEdit``.
 
 .. _class_LineEdit_get_expand_to_text_length:
 
@@ -220,13 +220,13 @@ Return the cursor position inside the :ref:`LineEdit<class_lineedit>`.
 
 - :ref:`int<class_int>` **get_max_length** **(** **)** const
 
-Return the maximum amount of characters the :ref:`LineEdit<class_lineedit>` can edit. If 0 is returned, no limit exists.
+Return the maximum amount of characters the ``LineEdit`` can edit. If 0 is returned, no limit exists.
 
 .. _class_LineEdit_get_menu:
 
 - :ref:`PopupMenu<class_popupmenu>` **get_menu** **(** **)** const
 
-Return the :ref:`PopupMenu<class_popupmenu>` of this :ref:`LineEdit<class_lineedit>`.
+Returns the :ref:`PopupMenu<class_popupmenu>` of this ``LineEdit``. By default, this menu is displayed when right-clicking on the :ref:`LineEdit<class_lineedit>`.
 
 .. _class_LineEdit_get_placeholder:
 
@@ -244,61 +244,62 @@ Return transparency of the placeholder text.
 
 - :ref:`String<class_string>` **get_text** **(** **)** const
 
-Return the text in the :ref:`LineEdit<class_lineedit>`.
+Return the text in the ``LineEdit``.
 
 .. _class_LineEdit_is_editable:
 
 - :ref:`bool<class_bool>` **is_editable** **(** **)** const
 
-Return the *editable* status of the :ref:`LineEdit<class_lineedit>` (see :ref:`set_editable<class_LineEdit_set_editable>`).
+Return the *editable* status of the ``LineEdit`` (see :ref:`set_editable<class_LineEdit_set_editable>`).
 
 .. _class_LineEdit_is_secret:
 
 - :ref:`bool<class_bool>` **is_secret** **(** **)** const
 
-Return the *secret* status of the :ref:`LineEdit<class_lineedit>` (see :ref:`set_secret<class_LineEdit_set_secret>`).
+Return the *secret* status of the ``LineEdit`` (see :ref:`set_secret<class_LineEdit_set_secret>`).
 
 .. _class_LineEdit_menu_option:
 
 - void **menu_option** **(** :ref:`int<class_int>` option **)**
 
-Execute a given action as defined in the MENU\_\* enum.
+Executes a given action as defined in the MENU\_\* enum.
 
 .. _class_LineEdit_select:
 
 - void **select** **(** :ref:`int<class_int>` from=0, :ref:`int<class_int>` to=-1 **)**
 
-Select the text inside :ref:`LineEdit<class_lineedit>` by the given character positions. ``from`` is default to the beginning. ``to`` is default to the end.
+Selects characters inside :ref:`LineEdit<class_lineedit>` between ``from`` and ``to``. By default ``from`` is at the beginning and ``to`` at the end.
 
 ::
 
-    select()     # select all
-    select(5)    # select from the fifth character to the end.
-    select(2, 5) # select from the second to the fifth character.
+    text = "Welcome"
+    select()     # Welcome
+    select(4)    # ome
+    select(2, 5) # lco
 
 .. _class_LineEdit_select_all:
 
 - void **select_all** **(** **)**
 
-Select the whole string.
+Selects the whole :ref:`String<class_string>`.
 
 .. _class_LineEdit_set_align:
 
 - void **set_align** **(** :ref:`int<class_int>` align **)**
 
-Set text alignment of the :ref:`LineEdit<class_lineedit>`.
+Set text alignment of the ``LineEdit``.
 
 .. _class_LineEdit_set_cursor_position:
 
 - void **set_cursor_position** **(** :ref:`int<class_int>` position **)**
 
-Set the cursor position inside the :ref:`LineEdit<class_lineedit>`, causing it to scroll if needed.
+Sets the cursor position inside the ``LineEdit``. The text may scroll if needed.
 
 .. _class_LineEdit_set_editable:
 
 - void **set_editable** **(** :ref:`bool<class_bool>` enabled **)**
 
-Set the *editable* status of the :ref:`LineEdit<class_lineedit>`. When disabled, existing text can't be modified and new text can't be added.
+Set the *editable* status of the ``LineEdit``. When disabled, existing text can't be modified and new text can't be added.
 
 .. _class_LineEdit_set_expand_to_text_length:
 
@@ -308,7 +309,7 @@ Set the *editable* status of the :ref:`LineEdit<class_lineedit>`. When disabled,
 
 - void **set_max_length** **(** :ref:`int<class_int>` chars **)**
 
-Set the maximum amount of characters the :ref:`LineEdit<class_lineedit>` can edit, and cropping existing text in case it exceeds that limit. Setting 0 removes the limit.
+Set the maximum amount of characters the ``LineEdit`` can edit, and cropping existing text in case it exceeds that limit. Setting 0 removes the limit.
 
 .. _class_LineEdit_set_placeholder:
 
@@ -326,12 +327,12 @@ Set transparency of the placeholder text.
 
 - void **set_secret** **(** :ref:`bool<class_bool>` enabled **)**
 
-Set the *secret* status of the :ref:`LineEdit<class_lineedit>`. When enabled, every character is displayed as "\*".
+Set the *secret* status of the ``LineEdit``. When enabled, every character is displayed as "\*".
 
 .. _class_LineEdit_set_text:
 
 - void **set_text** **(** :ref:`String<class_string>` text **)**
 
-Set the text in the :ref:`LineEdit<class_lineedit>`, clearing the existing one and the selection.
+Set the text in the ``LineEdit``, clearing the existing one and the selection.
 
 

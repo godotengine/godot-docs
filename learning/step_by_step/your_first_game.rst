@@ -149,7 +149,6 @@ that's a good time to find the size of the game window:
 ::
 
     func _ready():
-        hide()
         screensize = get_viewport_rect().size
 
 Now we can use the ``_process()`` function to define what the player will do.
@@ -242,7 +241,13 @@ Let's place this code at the end of our ``_process()`` function:
             $AnimatedSprite.flip_v = velocity.y > 0
 
 Play the scene again and check that the animations are correct in each
-of the directions.
+of the directions. When you're sure that movement is working correctly,
+add this line to ``_ready()`` so the player will be hidden when the game
+starts:
+
+::
+    
+    hide()
 
 Preparing for Collisions
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -280,7 +285,7 @@ Add this code to the function:
 
 ::
 
-    func _on_Player_body_entered( area ):
+    func _on_Player_body_entered( body ):
         hide() # Player disappears after being hit
         emit_signal("hit")
         monitoring = false

@@ -36,7 +36,7 @@ Each one has a specific function:
    be defined in this enumerator. The role will be followed even if the
    light is disabled, which allows to configure a light and then disable
    it for baking.
--  **Energy**: This value is a multiplier for the light, it's specially
+-  **Energy**: This value is a multiplier for the light, it's especially
    useful for :ref:`doc_high_dynamic_range` and for Spot and Omni lights, because it can
    create very bright spots near the emitter.
 -  **Diffuse and Specular**: These light values get multiplied by the

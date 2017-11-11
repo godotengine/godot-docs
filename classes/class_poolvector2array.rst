@@ -51,7 +51,7 @@ Member Function Description
 
 - :ref:`PoolVector2Array<class_poolvector2array>` **PoolVector2Array** **(** :ref:`Array<class_array>` from **)**
 
-Construct a new :ref:`PoolVector2Array<class_poolvector2array>`. Optionally, you can pass in an Array that will be converted.
+Construct a new ``PoolVector2Array``. Optionally, you can pass in an Array that will be converted.
 
 .. _class_PoolVector2Array_append:
 
@@ -63,7 +63,7 @@ Append an element at the end of the array (alias of :ref:`push_back<class_PoolVe
 
 - void **append_array** **(** :ref:`PoolVector2Array<class_poolvector2array>` array **)**
 
-Append an :ref:`PoolVector2Array<class_poolvector2array>` at the end of this array.
+Append an ``PoolVector2Array`` at the end of this array.
 
 .. _class_PoolVector2Array_insert:
 

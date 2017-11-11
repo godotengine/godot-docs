@@ -68,7 +68,7 @@ Member Functions
 Description
 -----------
 
-The :ref:`SurfaceTool<class_surfacetool>` is used to construct a :ref:`Mesh<class_mesh>` by specifying vertex attributes individually. It can be used to construct a :ref:`Mesh<class_mesh>` from script. All properties except index need to be added before a call to :ref:`add_vertex<class_SurfaceTool_add_vertex>`. For example adding vertex colors and UVs looks like
+The ``SurfaceTool`` is used to construct a :ref:`Mesh<class_mesh>` by specifying vertex attributes individually. It can be used to construct a :ref:`Mesh<class_mesh>` from script. All properties except index need to be added before a call to :ref:`add_vertex<class_SurfaceTool_add_vertex>`. For example adding vertex colors and UVs looks like
 
 ::
 
@@ -78,7 +78,7 @@ The :ref:`SurfaceTool<class_surfacetool>` is used to construct a :ref:`Mesh<clas
     st.add_uv(Vector2(0, 0))
     st.add_vertex(Vector3(0, 0, 0))
 
-The :ref:`SurfaceTool<class_surfacetool>` now contains one vertex of a triangle which has a UV coordinate and a specified :ref:`Color<class_color>`. If another vertex were added without calls to :ref:`add_uv<class_SurfaceTool_add_uv>` or :ref:`add_color<class_SurfaceTool_add_color>` then the last values would be used.
+The ``SurfaceTool`` now contains one vertex of a triangle which has a UV coordinate and a specified :ref:`Color<class_color>`. If another vertex were added without calls to :ref:`add_uv<class_SurfaceTool_add_uv>` or :ref:`add_color<class_SurfaceTool_add_color>` then the last values would be used.
 
 It is very important that vertex attributes are passed **before** the call to :ref:`add_vertex<class_SurfaceTool_add_vertex>`, failure to do this will result in an error when committing the vertex information to a mesh.
 

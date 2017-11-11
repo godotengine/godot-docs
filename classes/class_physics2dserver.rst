@@ -204,6 +204,7 @@ Numeric Constants
 - **SPACE_PARAM_BODY_TIME_TO_SLEEP** = **5** --- Constant to set/get the maximum time of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after this time.
 - **SPACE_PARAM_CONSTRAINT_DEFAULT_BIAS** = **6** --- Constant to set/get the default solver bias for all physics constraints. A solver bias is a factor controlling how much two objects "rebound", after violating a constraint, to avoid leaving them in that state because of numerical imprecision.
 - **SHAPE_LINE** = **0** --- This is the constant for creating line shapes. A line shape is an infinite line with an origin point, and a normal. Thus, it can be used for front/behind checks.
+- **SHAPE_RAY** = **1**
 - **SHAPE_SEGMENT** = **2** --- This is the constant for creating segment shapes. A segment shape is a line from a point A to a point B. It can be checked for intersections.
 - **SHAPE_CIRCLE** = **3** --- This is the constant for creating circle shapes. A circle shape only has a radius. It can be used for intersections and inside/outside checks.
 - **SHAPE_RECTANGLE** = **4** --- This is the constant for creating rectangle shapes. A rectangle shape is defined by a width and a height. It can be used for intersections and inside/outside checks.

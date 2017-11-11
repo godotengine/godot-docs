@@ -50,33 +50,33 @@ Member Variables
 
   .. _class_ParallaxBackground_scroll_base_offset:
 
-- :ref:`Vector2<class_vector2>` **scroll_base_offset**
+- :ref:`Vector2<class_vector2>` **scroll_base_offset** - Base position offset of all :ref:`ParallaxLayer<class_parallaxlayer>` children.
 
   .. _class_ParallaxBackground_scroll_base_scale:
 
-- :ref:`Vector2<class_vector2>` **scroll_base_scale**
+- :ref:`Vector2<class_vector2>` **scroll_base_scale** - Base motion scale of all :ref:`ParallaxLayer<class_parallaxlayer>` children.
 
   .. _class_ParallaxBackground_scroll_ignore_camera_zoom:
 
-- :ref:`bool<class_bool>` **scroll_ignore_camera_zoom**
+- :ref:`bool<class_bool>` **scroll_ignore_camera_zoom** - If ``true`` elements in :ref:`ParallaxLayer<class_parallaxlayer>` child aren't affected by the zoom level of the camera.
 
   .. _class_ParallaxBackground_scroll_limit_begin:
 
-- :ref:`Vector2<class_vector2>` **scroll_limit_begin**
+- :ref:`Vector2<class_vector2>` **scroll_limit_begin** - Top left limits for scrolling to begin. If the camera is outside of this limit the background will stop scrolling. Must be lower than :ref:`scroll_limit_end<class_ParallaxBackground_scroll_limit_end>` to work.
 
   .. _class_ParallaxBackground_scroll_limit_end:
 
-- :ref:`Vector2<class_vector2>` **scroll_limit_end**
+- :ref:`Vector2<class_vector2>` **scroll_limit_end** - Right bottom limits for scrolling to end. If the camera is outside of this limit the background will stop scrolling. Must be higher than :ref:`scroll_limit_begin<class_ParallaxBackground_scroll_limit_begin>` to work.
 
   .. _class_ParallaxBackground_scroll_offset:
 
-- :ref:`Vector2<class_vector2>` **scroll_offset**
+- :ref:`Vector2<class_vector2>` **scroll_offset** - The ParallaxBackground's scroll value. Calculated automatically when using a :ref:`Camera2D<class_camera2d>`, but can be used to manually manage scrolling when no camera is present.
 
 
 Description
 -----------
 
-A ParallaxBackground will use one or more :ref:`ParallaxLayer<class_parallaxlayer>` nodes to create a parallax scrolling background. Each :ref:`ParallaxLayer<class_parallaxlayer>` can be set to move at different speeds relative to the camera movement, this can be used to create an illusion of depth in a 2D game.
+A ParallaxBackground uses one or more :ref:`ParallaxLayer<class_parallaxlayer>` child nodes to create a parallax effect. Each :ref:`ParallaxLayer<class_parallaxlayer>` can move at a different speed using :ref:`ParallaxLayer.motion_offset<class_ParallaxLayer_motion_offset>`. This creates an illusion of depth in a 2D game. If not used with a :ref:`Camera2D<class_camera2d>`, you must manually calculate the :ref:`scroll_offset<class_ParallaxBackground_scroll_offset>`.
 
 Member Function Description
 ---------------------------

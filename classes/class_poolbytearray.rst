@@ -73,19 +73,19 @@ Append an element at the end of the array (alias of :ref:`push_back<class_PoolBy
 
 - void **append_array** **(** :ref:`PoolByteArray<class_poolbytearray>` array **)**
 
-Append a :ref:`PoolByteArray<class_poolbytearray>` at the end of this array.
+Append a ``PoolByteArray`` at the end of this array.
 
 .. _class_PoolByteArray_compress:
 
 - :ref:`PoolByteArray<class_poolbytearray>` **compress** **(** :ref:`int<class_int>` compression_mode=0 **)**
 
-Returns a new :ref:`PoolByteArray<class_poolbytearray>` with the data compressed. Set the compression mode using one of :ref:`File<class_file>`'s COMPRESS\_\* constants.
+Returns a new ``PoolByteArray`` with the data compressed. Set the compression mode using one of :ref:`File<class_file>`'s COMPRESS\_\* constants.
 
 .. _class_PoolByteArray_decompress:
 
 - :ref:`PoolByteArray<class_poolbytearray>` **decompress** **(** :ref:`int<class_int>` buffer_size, :ref:`int<class_int>` compression_mode=0 **)**
 
-Returns a new :ref:`PoolByteArray<class_poolbytearray>` with the data decompressed. Set buffer_size to the size of the uncompressed data. Set the compression mode using one of :ref:`File<class_file>`'s COMPRESS\_\* constants.
+Returns a new ``PoolByteArray`` with the data decompressed. Set buffer_size to the size of the uncompressed data. Set the compression mode using one of :ref:`File<class_file>`'s COMPRESS\_\* constants.
 
 .. _class_PoolByteArray_get_string_from_ascii:
 
@@ -145,6 +145,6 @@ Return the size of the array.
 
 - :ref:`PoolByteArray<class_poolbytearray>` **subarray** **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)**
 
-Returns the slice of the :ref:`PoolByteArray<class_poolbytearray>` between indices (inclusive) as a new :ref:`PoolByteArray<class_poolbytearray>`.  Any negative index is considered to be from the end of the array.
+Returns the slice of the ``PoolByteArray`` between indices (inclusive) as a new ``PoolByteArray``.  Any negative index is considered to be from the end of the array.
 
 

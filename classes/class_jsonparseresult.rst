@@ -70,7 +70,7 @@ Member Variables
 Description
 -----------
 
-Returned by :ref:`JSON.parse<class_JSON_parse>`, :ref:`JSONParseResult<class_jsonparseresult>` contains decoded JSON or error information if JSON source not successfully parsed. You can check if JSON source was successfully parsed with ``if json_result.error == 0``.
+Returned by :ref:`JSON.parse<class_JSON_parse>`, ``JSONParseResult`` contains decoded JSON or error information if JSON source not successfully parsed. You can check if JSON source was successfully parsed with ``if json_result.error == 0``.
 
 Member Function Description
 ---------------------------

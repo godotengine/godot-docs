@@ -113,7 +113,7 @@ Add a separator to the list of items. Separators help to group items. Separator 
 
 - void **clear** **(** **)**
 
-Clear all the items in the :ref:`OptionButton<class_optionbutton>`.
+Clear all the items in the ``OptionButton``.
 
 .. _class_OptionButton_get_item_count:
 

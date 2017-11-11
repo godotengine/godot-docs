@@ -48,7 +48,7 @@ The higher, the faster.
 
 The swing span defines, how much rotation will not get corrected allong the swing axis.
 
-Could be defined as looseness in the :ref:`ConeTwistJoint<class_conetwistjoint>`.
+Could be defined as looseness in the ``ConeTwistJoint``.
 
 If below 0.05, this behaviour is locked. Default value: ``PI/4``.
 
@@ -66,7 +66,7 @@ Numeric Constants
 
 The swing span defines, how much rotation will not get corrected allong the swing axis.
 
-Could be defined as looseness in the :ref:`ConeTwistJoint<class_conetwistjoint>`.
+Could be defined as looseness in the ``ConeTwistJoint``.
 
 If below 0.05, this behaviour is locked. Default value: ``PI/4``.
 - **PARAM_TWIST_SPAN** = **1** --- Twist is the rotation around the twist axis, this value defined how far the joint can twist.

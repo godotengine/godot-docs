@@ -114,7 +114,7 @@ Member Variables
 
   .. _class_Camera2D_current:
 
-- :ref:`bool<class_bool>` **current** - If ``true`` this camera is the active camera for the current scene. Only one camera can be current, so setting a different camera ``current`` will disable this one.
+- :ref:`bool<class_bool>` **current** - If ``true`` the camera is the active camera for the current scene. Only one camera can be current, so setting a different camera ``current`` will disable this one.
 
   .. _class_Camera2D_drag_margin_bottom:
 
@@ -122,7 +122,7 @@ Member Variables
 
   .. _class_Camera2D_drag_margin_h_enabled:
 
-- :ref:`bool<class_bool>` **drag_margin_h_enabled**
+- :ref:`bool<class_bool>` **drag_margin_h_enabled** - If ``true`` the camera only moves when reaching the horizontal drag margins. If ``false`` the camera moves horizontally regardless of margins. Default value: ``true``.
 
   .. _class_Camera2D_drag_margin_left:
 
@@ -138,19 +138,19 @@ Member Variables
 
   .. _class_Camera2D_drag_margin_v_enabled:
 
-- :ref:`bool<class_bool>` **drag_margin_v_enabled**
+- :ref:`bool<class_bool>` **drag_margin_v_enabled** - If ``true`` the camera only moves when reaching the vertical drag margins. If ``false`` the camera moves vertically regardless of margins. Default value: ``true``.
 
   .. _class_Camera2D_editor_draw_drag_margin:
 
-- :ref:`bool<class_bool>` **editor_draw_drag_margin**
+- :ref:`bool<class_bool>` **editor_draw_drag_margin** - If ``true`` draws the camera's drag margin rectangle in the editor. Default value: ``false``
 
   .. _class_Camera2D_editor_draw_limits:
 
-- :ref:`bool<class_bool>` **editor_draw_limits**
+- :ref:`bool<class_bool>` **editor_draw_limits** - If ``true`` draws the camera's limits rectangle in the editor. Default value: ``true``
 
   .. _class_Camera2D_editor_draw_screen:
 
-- :ref:`bool<class_bool>` **editor_draw_screen**
+- :ref:`bool<class_bool>` **editor_draw_screen** - If ``true`` draws the camera's screen rectangle in the editor. Default value: ``false``
 
   .. _class_Camera2D_limit_bottom:
 
@@ -166,7 +166,7 @@ Member Variables
 
   .. _class_Camera2D_limit_smoothed:
 
-- :ref:`bool<class_bool>` **limit_smoothed**
+- :ref:`bool<class_bool>` **limit_smoothed** - If ``true`` the camera smoothly stops when reaches its limits. Default value: ``false``
 
   .. _class_Camera2D_limit_top:
 
@@ -178,15 +178,15 @@ Member Variables
 
   .. _class_Camera2D_rotating:
 
-- :ref:`bool<class_bool>` **rotating**
+- :ref:`bool<class_bool>` **rotating** - If ``true`` the camera rotates with the target. Default value: ``false``
 
   .. _class_Camera2D_smoothing_enabled:
 
-- :ref:`bool<class_bool>` **smoothing_enabled**
+- :ref:`bool<class_bool>` **smoothing_enabled** - If ``true`` the camera smoothly moves towards the target at :ref:`smoothing_speed<class_Camera2D_smoothing_speed>`. Default value: ``false``
 
   .. _class_Camera2D_smoothing_speed:
 
-- :ref:`float<class_float>` **smoothing_speed**
+- :ref:`float<class_float>` **smoothing_speed** - Speed in pixels per second of the camera's smoothing effect when :ref:`smoothing_enabled<class_Camera2D_smoothing_enabled>` is ``true``
 
   .. _class_Camera2D_zoom:
 
@@ -196,8 +196,8 @@ Member Variables
 Numeric Constants
 -----------------
 
-- **ANCHOR_MODE_DRAG_CENTER** = **1**
 - **ANCHOR_MODE_FIXED_TOP_LEFT** = **0**
+- **ANCHOR_MODE_DRAG_CENTER** = **1**
 
 Description
 -----------

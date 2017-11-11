@@ -63,7 +63,7 @@ Append an element at the end of the array (alias of :ref:`push_back<class_PoolVe
 
 - void **append_array** **(** :ref:`PoolVector3Array<class_poolvector3array>` array **)**
 
-Append an :ref:`PoolVector3Array<class_poolvector3array>` at the end of this array.
+Append an ``PoolVector3Array`` at the end of this array.
 
 .. _class_PoolVector3Array_insert:
 

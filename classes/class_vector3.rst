@@ -116,6 +116,8 @@ Returns a new vector with all components in absolute values (i.e. positive).
 
 - :ref:`float<class_float>` **angle_to** **(** :ref:`Vector3<class_vector3>` to **)**
 
+Returns the vector's minimum angle to the vector ``to``.
+
 .. _class_Vector3_bounce:
 
 - :ref:`Vector3<class_vector3>` **bounce** **(** :ref:`Vector3<class_vector3>` n **)**
@@ -132,31 +134,31 @@ Returns a new vector with all components rounded up.
 
 - :ref:`Vector3<class_vector3>` **cross** **(** :ref:`Vector3<class_vector3>` b **)**
 
-Return the cross product with b.
+Returns the cross product with ``b``.
 
 .. _class_Vector3_cubic_interpolate:
 
 - :ref:`Vector3<class_vector3>` **cubic_interpolate** **(** :ref:`Vector3<class_vector3>` b, :ref:`Vector3<class_vector3>` pre_a, :ref:`Vector3<class_vector3>` post_b, :ref:`float<class_float>` t **)**
 
-Perform a cubic interpolation between vectors pre_a, a, b, post_b (a is current), by the given amount (t).
+Performs a cubic interpolation between vectors ``pre_a``, ``a``, ``b``, ``post_b`` (``a`` is current), by the given amount (t).
 
 .. _class_Vector3_distance_squared_to:
 
 - :ref:`float<class_float>` **distance_squared_to** **(** :ref:`Vector3<class_vector3>` b **)**
 
-Return the squared distance (distance minus the last square root) to b. Prefer this function over distance_to if you need to sort vectors or need the squared distance for some formula.
+Returns the squared distance to ``b``. Prefer this function over distance_to if you need to sort vectors or need the squared distance for some formula.
 
 .. _class_Vector3_distance_to:
 
 - :ref:`float<class_float>` **distance_to** **(** :ref:`Vector3<class_vector3>` b **)**
 
-Return the distance to b.
+Returns the distance to b.
 
 .. _class_Vector3_dot:
 
 - :ref:`float<class_float>` **dot** **(** :ref:`Vector3<class_vector3>` b **)**
 
-Return the dot product with b.
+Returns the dot product with b.
 
 .. _class_Vector3_floor:
 
@@ -180,13 +182,13 @@ Returns whether the vector is normalized or not.
 
 - :ref:`float<class_float>` **length** **(** **)**
 
-Return the length of the vector.
+Returns the length of the vector.
 
 .. _class_Vector3_length_squared:
 
 - :ref:`float<class_float>` **length_squared** **(** **)**
 
-Return the length of the vector, squared. Prefer this function over "length" if you need to sort vectors or need the squared length for some formula.
+Returns the length of the vector, squared. Prefer this function over "length" if you need to sort vectors or need the squared length for some formula.
 
 .. _class_Vector3_linear_interpolate:
 
@@ -210,13 +212,13 @@ Returns AXIS_X, AXIS_Y or AXIS_Z depending on which axis is the smallest.
 
 - :ref:`Vector3<class_vector3>` **normalized** **(** **)**
 
-Return a copy of the normalized vector to unit length. This is the same as v / v.length().
+Returns a copy of the normalized vector to unit length. This is the same as v / v.length().
 
 .. _class_Vector3_outer:
 
 - :ref:`Basis<class_basis>` **outer** **(** :ref:`Vector3<class_vector3>` b **)**
 
-Return the outer product with b.
+Returns the outer product with b.
 
 .. _class_Vector3_reflect:
 
@@ -240,12 +242,12 @@ Slide returns the component of the vector along the given plane, specified by it
 
 - :ref:`Vector3<class_vector3>` **snapped** **(** :ref:`float<class_float>` by **)**
 
-Return a copy of the vector, snapped to the lowest neared multiple.
+Returns a copy of the vector, snapped to the lowest neared multiple.
 
 .. _class_Vector3_to_diagonal_matrix:
 
 - :ref:`Basis<class_basis>` **to_diagonal_matrix** **(** **)**
 
-Return a diagonal matrix with the vector as main diagonal.
+Returns a diagonal matrix with the vector as main diagonal.
 
 

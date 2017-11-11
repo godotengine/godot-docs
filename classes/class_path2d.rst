@@ -14,7 +14,7 @@ Path2D
 Brief Description
 -----------------
 
-Container for a :ref:`Curve2D<class_curve2d>`.
+Contains a :ref:`Curve2D<class_curve2d>` path for :ref:`PathFollow2D<class_pathfollow2d>` nodes to follow.
 
 Member Functions
 ----------------
@@ -30,13 +30,13 @@ Member Variables
 
   .. _class_Path2D_curve:
 
-- :ref:`Curve2D<class_curve2d>` **curve**
+- :ref:`Curve2D<class_curve2d>` **curve** - A :ref:`Curve2D<class_curve2d>` describing the path.
 
 
 Description
 -----------
 
-This class is a container/Node-ification of a :ref:`Curve2D<class_curve2d>`, so it can have :ref:`Node2D<class_node2d>` properties and :ref:`Node<class_node>` info.
+Can have :ref:`PathFollow2D<class_pathfollow2d>` child-nodes moving along the :ref:`Curve2D<class_curve2d>`. See :ref:`PathFollow2D<class_pathfollow2d>` for more information on this usage.
 
 Member Function Description
 ---------------------------

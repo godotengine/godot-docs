@@ -102,7 +102,7 @@ use the same as a parent viewport (root viewport does contain one
 though, which is the one objects are rendered to by default). A world can
 be set in a viewport using the "world" property, and that will separate
 all children nodes of that viewport from interacting with the parent
-viewport world. This is specially useful in scenarios where, for
+viewport world. This is especially useful in scenarios where, for
 example, you might want to show a separate character in 3D imposed over
 the game (like in Starcraft).
 

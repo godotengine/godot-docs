@@ -26,6 +26,8 @@ Member Functions
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`  | :ref:`get_locale<class_TranslationServer_get_locale>` **(** **)** const                                                             |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_locale_name<class_TranslationServer_get_locale_name>` **(** :ref:`String<class_string>` locale **)** const                |
++------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`remove_translation<class_TranslationServer_remove_translation>` **(** :ref:`Translation<class_translation>` translation **)** |
 +------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`set_locale<class_TranslationServer_set_locale>` **(** :ref:`String<class_string>` locale **)**                                |
@@ -47,6 +49,10 @@ Member Function Description
 .. _class_TranslationServer_get_locale:
 
 - :ref:`String<class_string>` **get_locale** **(** **)** const
+
+.. _class_TranslationServer_get_locale_name:
+
+- :ref:`String<class_string>` **get_locale_name** **(** :ref:`String<class_string>` locale **)** const
 
 .. _class_TranslationServer_remove_translation:
 

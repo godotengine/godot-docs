@@ -14,7 +14,7 @@ RemoteTransform2D
 Brief Description
 -----------------
 
-
+RemoteTransform2D mirrors the :ref:`Transform2D<class_transform2d>` of another :ref:`CanvasItem<class_canvasitem>` derived Node in the scene.
 
 Member Functions
 ----------------
@@ -46,24 +46,31 @@ Member Variables
 
   .. _class_RemoteTransform2D_remote_path:
 
-- :ref:`NodePath<class_nodepath>` **remote_path**
+- :ref:`NodePath<class_nodepath>` **remote_path** - The remote node's :ref:`NodePath<class_nodepath>`.
 
   .. _class_RemoteTransform2D_update_position:
 
-- :ref:`bool<class_bool>` **update_position**
+- :ref:`bool<class_bool>` **update_position** - If ``true`` the remote node's position is mirrored.
 
   .. _class_RemoteTransform2D_update_rotation:
 
-- :ref:`bool<class_bool>` **update_rotation**
+- :ref:`bool<class_bool>` **update_rotation** - If ``true`` the remote node's rotation is mirrored.
 
   .. _class_RemoteTransform2D_update_scale:
 
-- :ref:`bool<class_bool>` **update_scale**
+- :ref:`bool<class_bool>` **update_scale** - If ``true`` the remote node's scale is mirrored.
 
   .. _class_RemoteTransform2D_use_global_coordinates:
 
-- :ref:`bool<class_bool>` **use_global_coordinates**
+- :ref:`bool<class_bool>` **use_global_coordinates** - If ``true`` global coordinates are used. If ``false`` local coordinates are used. Default value: ``true``.
 
+
+Description
+-----------
+
+RemoteTransform2D mirrors the :ref:`Transform2D<class_transform2d>` of another :ref:`CanvasItem<class_canvasitem>` derived Node (called the remote node) in the scene.
+
+It can be set to track another Node's position, rotation and/or and update its own accordingly, using either global or local coordinates.
 
 Member Function Description
 ---------------------------

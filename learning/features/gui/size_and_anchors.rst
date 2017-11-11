@@ -3,9 +3,9 @@
 Size and anchors
 ----------------
 
-If a game was to be always run in the same device and at the same
+If a game was always going to be run on the same device and at the same
 resolution, positioning controls would be a simple matter of setting the
-position and size of each one of them. Unfortunately, it is rarely the
+position and size of each one of them. Unfortunately, that is rarely the
 case.
 
 Only TVs nowadays have a standard resolution and aspect ratio.

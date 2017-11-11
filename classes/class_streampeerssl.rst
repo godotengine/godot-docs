@@ -32,8 +32,8 @@ Member Functions
 Numeric Constants
 -----------------
 
-- **STATUS_DISCONNECTED** = **0** --- A status representing a :ref:`StreamPeerSSL<class_streampeerssl>` that is disconnected.
-- **STATUS_CONNECTED** = **1** --- A status representing a :ref:`StreamPeerSSL<class_streampeerssl>` that is connected to a host.
+- **STATUS_DISCONNECTED** = **0** --- A status representing a ``StreamPeerSSL`` that is disconnected.
+- **STATUS_CONNECTED** = **1** --- A status representing a ``StreamPeerSSL`` that is connected to a host.
 - **STATUS_ERROR_NO_CERTIFICATE** = **2** --- An errot status that shows the peer did not present a SSL certificate and validation was requested.
 - **STATUS_ERROR_HOSTNAME_MISMATCH** = **3** --- An error status that shows a mismatch in the SSL certificate domain presented by the host and the domain requested for validation.
 
@@ -53,7 +53,7 @@ Member Function Description
 
 - :ref:`int<class_int>` **connect_to_stream** **(** :ref:`StreamPeer<class_streampeer>` stream, :ref:`bool<class_bool>` validate_certs=false, :ref:`String<class_string>` for_hostname="" **)**
 
-Connect to a peer using an underlying :ref:`StreamPeer<class_streampeer>` "stream", when "validate_certs" is true, :ref:`StreamPeerSSL<class_streampeerssl>` will validate that the certificate presented by the peer matches the "for_hostname".
+Connect to a peer using an underlying :ref:`StreamPeer<class_streampeer>` "stream", when "validate_certs" is true, ``StreamPeerSSL`` will validate that the certificate presented by the peer matches the "for_hostname".
 
 .. _class_StreamPeerSSL_disconnect_from_stream:
 

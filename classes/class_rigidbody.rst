@@ -212,10 +212,10 @@ Continuous collision detection tries to predict where a moving body will collide
 Numeric Constants
 -----------------
 
-- **MODE_STATIC** = **1** --- Static mode. The body behaves like a :ref:`StaticBody<class_staticbody>`, and can only move by user code.
-- **MODE_KINEMATIC** = **3** --- Kinematic body. The body behaves like a :ref:`KinematicBody<class_kinematicbody>`, and can only move by user code.
 - **MODE_RIGID** = **0** --- Rigid body. This is the "natural" state of a rigid body. It is affected by forces, and can move, rotate, and be affected by user code.
+- **MODE_STATIC** = **1** --- Static mode. The body behaves like a :ref:`StaticBody<class_staticbody>`, and can only move by user code.
 - **MODE_CHARACTER** = **2** --- Character body. This behaves like a rigid body, but can not rotate.
+- **MODE_KINEMATIC** = **3** --- Kinematic body. The body behaves like a :ref:`KinematicBody<class_kinematicbody>`, and can only move by user code.
 - **AXIS_LOCK_DISABLED** = **0**
 - **AXIS_LOCK_X** = **1**
 - **AXIS_LOCK_Y** = **2**
