@@ -113,7 +113,7 @@ center the illustration with a ``CenterContainer``.
 
     Containers adapt to the window's resolution and width-to-height
     ratio. Although we could place UI elements by hand, containers are
-    faster, more precise, and `responsive <>`__.
+    faster, more precise, and ``responsive``.
 
 Prepare the Main Menu scene
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -125,7 +125,7 @@ We have to add a root node before we can save the scene. Your UI's root
 should be the outermost container or element. In this case it's a
 ``MarginContainer``. ``MarginContainer`` is a good starting point for
 most interfaces, as you often need padding around the UI. Press
-:kbd:``Ctrl S`` to save the scene to the disk. Name it *MainMenu*.
+``Meta+S`` to save the scene to the disk. Name it *MainMenu*.
 
 Select the ``MarginContainer`` again, and head to the inspector to
 define the margins' size. Scroll down the ``Control`` class, to the
@@ -137,7 +137,7 @@ define the margins' size. Scroll down the ``Control`` class, to the
 -  Margin Bottom: *80*
 
 We want the container to fit the window. In the Viewport, open the
-Anchor menu and select the last option, ``Full Rect and Fit Parent``.
+Layout menu and select the last option, ``Full Rect``.
 
 Add the UI sprites
 ~~~~~~~~~~~~~~~~~~
