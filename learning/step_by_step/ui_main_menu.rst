@@ -10,7 +10,7 @@ scenes step-by-step using the engine's UI system:
 
 You will learn how to design game UI efficiently, and how to use Godot's
 Control nodes. This page focuses on the visual part: everything you do
-from the editor. To learn how to code a life bar, 
+from the editor. To learn how to code a life bar,
 read :doc:`ui_game_user_interface`
 
 
@@ -20,7 +20,7 @@ read :doc:`ui_game_user_interface`
 
 Download the project files: :download:`ui_main_menu_design.zip <files/ui_main_menu_design.zip>` and extract the archive. Import the `start/` project in Godot to follow this tutorial. The `end/` folder contains the final result.
 
-.. note: 
+.. note:
 
     Read the :doc:`ui_introduction_to_the_ui_system` first to learn how Godot’s UI system works
 
@@ -68,9 +68,9 @@ not work as well as you’d like. You’re likely to throw parts away and
 redesign components as you go. When you're sure everything works, it's
 easy to make some parts reusable, as you'll see below.
 
-Please download :download:``ui_design.zip </files/ui_design.zip>``. It
+Please download :download:`ui_main_menu_design.zip <files/ui_main_menu_design.zip>`. It
 contains all the files you'll need to follow along. You'll find all the
-sprites in the ``assets/main_menu`` folder.
+sprites in the ``start/assets/main_menu`` folder.
 
 .. figure:: img/ui_main_menu_placeholder_assets.png
 
@@ -109,7 +109,7 @@ center the illustration with a ``CenterContainer``.
 
    Interface building blocks, broken down using the three rules of thumb
 
-.. tip:: 
+.. tip::
 
     Containers adapt to the window's resolution and width-to-height
     ratio. Although we could place UI elements by hand, containers are
@@ -172,7 +172,7 @@ Inspector to rename them
 
    The six nodes, with textures loaded
 
-.. note:: 
+.. note::
 
     If you want to support localization in your game, use
     ``Labels`` for menu options instead of ``TextureRect``.
@@ -276,19 +276,19 @@ Break down the UI mockup
 Responsive User Interface is all about making sure our UIs scale well on
 all screen types. TV screens and computer displays have different sizes
 and ratios. In Godot, we use containers to control the position and the
-size of UI elements. 
+size of UI elements.
 
 The order in which you nest matters. To see if your
 UI adapts nicely to different screen ratios, select the root node, press
 the Q key to activate the Select Mode, select the container and click
 and drag on one of the container's corners to resize it. The UI
-components should flow inside of it. 
+components should flow inside of it.
 
 You'll notice that although
 containers move sprites around, they don't scale them. This is normal.
 We want the UI system to handle different screen ratios, but we also
 need the entire game to adapt to different screen resolutions. To do
-this, Godot scales the entire window up and down. 
+this, Godot scales the entire window up and down.
 
 You can change the scale mode in the project settings: click the Project menu -> Project
 Settings. In the window's left column, look for the Display category.
