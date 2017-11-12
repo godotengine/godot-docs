@@ -72,6 +72,13 @@ With ``Area2D`` we can detect other objects that overlap or run into the player.
 Change its name to ``Player``. This is the scene's "root" or top-level node.
 We can add additional nodes to the player to add functionality.
 
+Before we add any children to the ``Player`` node, we want to make sure we don't
+accidentally move or resize them by clicking on them. Select the player node and
+click the icon next to the lock - its tooltip says "Makes sure the objects children
+are not selectable."
+
+.. image:: img/lock_children.png
+
 Save the scene (click Scene -> Save, or press ``Meta-s``).
 
 .. note:: In this project, we will be following the Godot Engine naming
@@ -100,6 +107,12 @@ Frames" side of the panel:
 
 .. image:: img/spriteframes_panel2.png
 
+The player images are a bit too large for the game window, so we need to
+scale them down. Click on the ``AnimatedSprite`` node and set the ``Scale``
+property to ``(0.5, 0.5)``. You can find it in the Inspector under the
+``Node2D`` heading.
+
+.. image:: img/player_scale.png
 
 Finally, add a :ref:`CollisionShape2D <class_CollisionShape2D>` as a child
 of the ``Player``. This will determine the player's "hitbox", or the
@@ -139,9 +152,16 @@ Start by declaring the member variables this object will need:
 
     extends Area2D
 
-    var SPEED = 400  # how fast the player will move (pixels/sec)
+    export (int) var SPEED  # how fast the player will move (pixels/sec)
     var velocity = Vector2()  # the player's movement vector
     var screensize  # size of the game window
+
+Using the ``export`` keyword on the first variable ``SPEED`` allows us to
+set its value in the Inspector. This can be very handy for values that you
+want to be able to adjust just like a node's built-in properties. Click on
+the ``Player`` node and set the speed property to ``400``.
+
+.. image:: img/export_variable.png
 
 The ``_ready()`` function is called when a node enters the scene tree, so
 that's a good time to find the size of the game window:
@@ -339,6 +359,9 @@ The Mob scene will use the following nodes:
    -  :ref:`CollisionShape2D <class_CollisionShape2D>`
    -  :ref:`VisibilityNotifier2D <class_VisibilityNotifier2D>` (named ``Visibility``)
 
+Don't forget to set the children so they can't be selected, like you did with the
+Player scene.
+
 In the :ref:`RigidBody2D <class_RigidBody2D>` properties, set ``Gravity Scale`` to ``0`` (so
 that the mob will not fall downward). In addition, under the
 ``PhysicsBody2D`` section in the Inspector, click the ``Mask`` property and
@@ -351,14 +374,14 @@ This time, we have 3 animations: "fly", "swim", and "walk". Set the ``Playing``
 property in the Inspector to "On" and adjust the "Speed (FPS)" setting as shown below.
 We'll select one of these randomly so that the mobs will have some variety.
 
-In Godot's 2D space, a heading of zero degrees points to the right. However, our mob art
-is drawn pointing upward. To correct for this, set the ``AnimatedSprite``'s "Rotation Deg"
-property to ``90`` under ``Node2D `` > ``Transform``.
+Like the player images, these mob images need to be scaled down. Set the
+``AnimatedSprite``'s ``Scale`` property to ``(0.75, 0.75)``.
 
 .. image:: img/mob_animations.gif
 
 As in the ``Player`` scene, add a ``CapsuleShape2D`` for the
-collision and then save the scene.
+collision. To align the shape with the image, you'll need to set the
+``Rotation Deg`` property to ``90`` under ``Node2D``.
 
 Enemy Script
 ~~~~~~~~~~~~
@@ -369,14 +392,15 @@ Add a script to the ``Mob`` and add the following member variables:
 
     extends RigidBody2D
 
-    var MIN_SPEED = 150  # minimum speed range
-    var MAX_SPEED = 250  # maximum speed range
+    export (int) var MIN_SPEED # minimum speed range
+    export (int) var MAX_SPEED # maximum speed range
     var mob_types = ["walk", "swim", "fly"]
 
 We'll pick a random value between ``MIN_SPEED`` and ``MAX_SPEED`` for
 how fast each mob will move (it would be boring if they were all moving
-at the same speed). We also have an array containing the names of the three
-animations, which we'll use to select a random one.
+at the same speed). Set them to ``150`` and ``250`` in the Inspector. We
+also have an array containing the names of the three animations, which
+we'll use to select a random one.
 
 Now let's look at the rest of the script. In ``_ready()`` we choose a
 random one of the three animation types:
@@ -443,18 +467,22 @@ you will see some new buttons appear at the top of the editor:
 .. image:: img/path2d_buttons.png
 
 Select the middle one ("Add Point") and draw the path by clicking to add
-the points shown. To have the points snap to the grid, make sure "Use Snap" is
-checked. This option can be found under the "Snapping Options" button to the left of the Path2D buttons.
-It appears as a series of three vertical dots.
+the points shown. To have the points snap to the grid, make sure "Snap to
+Grid" is checked. This option can be found under the "Snapping Options"
+button to the left of the "Lock" button. It appears as a series of three
+vertical dots.
 
-.. image:: img/draw_path2d.png
+.. image:: img/draw_path2d.gif
 
 .. important:: Draw the path in *clockwise* order, or your mobs will spawn
                pointing *outwards* instead of *inwards*!
 
+After placing point ``4`` in the image, click the "Close Curve" button and
+your curve will be complete.
+
 Now that the path is defined, add a :ref:`PathFollow2D <class_PathFollow2D>`
 node as a child of ``MobPath`` and name it ``MobSpawnLocation``. This node will
-automatically rotate and follow the path you've drawn, so we can use it
+automatically rotate and follow the path as it moves, so we can use it
 to select a random position and direction along the path.
 
 Main Script
@@ -474,12 +502,8 @@ instance.
     func _ready():
         randomize()
 
-Using ``export`` lets you set the value of a variable in the Inspector
-like so:
-
-.. image:: img/load_mob_scene.png
-
-Click on "<null>"" and choose "Load", then select ``Mob.tscn``.
+Drag the ``Mob.tscn`` from the "FileSystem" panel and drop it in the
+``Mob`` property.
 
 Next, click on the Player and connect the ``hit`` signal to the
 ``game_over`` function, which will handle what needs to happen when a
@@ -523,13 +547,13 @@ Note that a new instance must be added to the scene using
 
     func _on_MobTimer_timeout():
         # choose a random location on the Path2D
-        $"MobPath/MobSpawnLocation".set_offset(randi())
+        $MobPath/MobSpawnLocation.set_offset(randi())
         # create a Mob instance and add it to the scene
         var mob = Mob.instance()
         add_child(mob)
         # choose a direction and position
-        var direction = $"MobPath/MobSpawnLocation".rotation
-        mob.position = $"MobPath/MobSpawnLocation".position
+        var direction = $MobPath/MobSpawnLocation.rotation
+        mob.position = $MobPath/MobSpawnLocation.position
         # add some randomness to the direction
         direction += rand_range(-PI/4, PI/4)
         mob.rotation = direction
@@ -606,7 +630,7 @@ MessageLabel
 -  ``Margin``:
 
    -  Left: ``-240``
-   -  Top: ``-260``
+   -  Top: ``-200``
    -  Right: ``240``
    -  Bottom: ``60``
 
@@ -729,6 +753,9 @@ sync with the changing score:
 ::
 
         $HUD.update_score(score)
+
+Now you're ready to play! Click the "Play the Project" button. You will
+be asked to select a main scene, so choose ``Main.tscn``.
 
 Finishing Up
 ------------
