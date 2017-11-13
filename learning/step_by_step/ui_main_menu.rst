@@ -150,9 +150,9 @@ Select the ``MarginContainer``, and create the UI elements as
 3. The version note
 4. And the main menu’s illustration
 
-Click the ``Add Node`` button or press :kbd:``Ctrl A`` on your keyboard.
+Click the ``Add Node`` button or press ``Meta+A`` on your keyboard.
 Start to type ``TextureRect`` to find the corresponding node and press
-enter. With the new node selected, press :kbd:``Ctrl D`` five times to
+enter. With the new node selected, press ``Meta+D`` five times to
 create five extra ``TextureRect`` instances.
 
 Click each of the nodes to select it. In the inspector, click the ``…``
@@ -227,7 +227,7 @@ automatically.
 
 To space out the menu options and the logo on the left, we'll use one
 final container and its size flags. Select the ``VBoxContainer`` and
-press :kbd:``Ctrl A`` to add a new node inside it. Add a second
+press ``Meta+A`` to add a new node inside it. Add a second
 ``VBoxContainer`` and name it "MenuOptions". Select all three menu
 options, ``Continue``, ``NewGame`` and ``Options``, and drag and drop
 them inside the new ``VBoxContainer``. The UI's layout should barely
