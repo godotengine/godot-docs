@@ -53,7 +53,7 @@ Example (x11)
     # Build temporary binary
     scons p=x11 tools=yes module_mono_enabled=yes mono_glue=no
     # Generate glue sources
-    bin/godot.x11.tools.64 --generate-mono-glue modules/mono/glue
+    bin/godot.x11.tools.64.mono --generate-mono-glue modules/mono/glue
 
     ### Build binaries normally
     # Editor
