@@ -30,7 +30,7 @@ Member Functions
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`            | :ref:`get_rotation<class_Spatial_get_rotation>` **(** **)** const                                                                                                                            |
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`            | :ref:`get_rotation_deg<class_Spatial_get_rotation_deg>` **(** **)** const                                                                                                                    |
+| :ref:`Vector3<class_vector3>`            | :ref:`get_rotation_degrees<class_Spatial_get_rotation_degrees>` **(** **)** const                                                                                                            |
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`            | :ref:`get_scale<class_Spatial_get_scale>` **(** **)** const                                                                                                                                  |
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -84,9 +84,9 @@ Member Functions
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_notify_transform<class_Spatial_set_notify_transform>` **(** :ref:`bool<class_bool>` enable **)**                                                                                   |
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_rotation<class_Spatial_set_rotation>` **(** :ref:`Vector3<class_vector3>` rotation_rad **)**                                                                                       |
+| void                                     | :ref:`set_rotation<class_Spatial_set_rotation>` **(** :ref:`Vector3<class_vector3>` radians **)**                                                                                            |
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_rotation_deg<class_Spatial_set_rotation_deg>` **(** :ref:`Vector3<class_vector3>` rotation_deg **)**                                                                               |
+| void                                     | :ref:`set_rotation_degrees<class_Spatial_set_rotation_degrees>` **(** :ref:`Vector3<class_vector3>` degrees **)**                                                                            |
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_scale<class_Spatial_set_scale>` **(** :ref:`Vector3<class_vector3>` scale **)**                                                                                                    |
 +------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -128,9 +128,9 @@ Member Variables
 
 - :ref:`Vector3<class_vector3>` **rotation** - Local euler rotation in radians of this node.
 
-  .. _class_Spatial_rotation_deg:
+  .. _class_Spatial_rotation_degrees:
 
-- :ref:`Vector3<class_vector3>` **rotation_deg** - Local euler rotation in degrees of this node.
+- :ref:`Vector3<class_vector3>` **rotation_degrees** - Local euler rotation in degrees of this node.
 
   .. _class_Spatial_scale:
 
@@ -191,9 +191,9 @@ Returns the parent ``Spatial``, or an empty :ref:`Object<class_object>` if no pa
 
 Returns the rotation (in radians).
 
-.. _class_Spatial_get_rotation_deg:
+.. _class_Spatial_get_rotation_degrees:
 
-- :ref:`Vector3<class_vector3>` **get_rotation_deg** **(** **)** const
+- :ref:`Vector3<class_vector3>` **get_rotation_degrees** **(** **)** const
 
 Returns the rotation (in degrees).
 
@@ -351,13 +351,13 @@ Set whether the node notifies about its global and local transformation changes.
 
 .. _class_Spatial_set_rotation:
 
-- void **set_rotation** **(** :ref:`Vector3<class_vector3>` rotation_rad **)**
+- void **set_rotation** **(** :ref:`Vector3<class_vector3>` radians **)**
 
 Set the rotation (in radians).
 
-.. _class_Spatial_set_rotation_deg:
+.. _class_Spatial_set_rotation_degrees:
 
-- void **set_rotation_deg** **(** :ref:`Vector3<class_vector3>` rotation_deg **)**
+- void **set_rotation_degrees** **(** :ref:`Vector3<class_vector3>` degrees **)**
 
 Set the rotation (in degrees).
 

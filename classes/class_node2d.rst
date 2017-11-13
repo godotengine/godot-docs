@@ -32,7 +32,7 @@ Member Functions
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`              | :ref:`get_global_rotation<class_Node2D_get_global_rotation>` **(** **)** const                                                          |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_global_rotation_in_degrees<class_Node2D_get_global_rotation_in_degrees>` **(** **)** const                                    |
+| :ref:`float<class_float>`              | :ref:`get_global_rotation_degrees<class_Node2D_get_global_rotation_degrees>` **(** **)** const                                          |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`          | :ref:`get_global_scale<class_Node2D_get_global_scale>` **(** **)** const                                                                |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
@@ -42,7 +42,7 @@ Member Functions
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`              | :ref:`get_rotation<class_Node2D_get_rotation>` **(** **)** const                                                                        |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_rotation_in_degrees<class_Node2D_get_rotation_in_degrees>` **(** **)** const                                                  |
+| :ref:`float<class_float>`              | :ref:`get_rotation_degrees<class_Node2D_get_rotation_degrees>` **(** **)** const                                                        |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`          | :ref:`get_scale<class_Node2D_get_scale>` **(** **)** const                                                                              |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
@@ -64,7 +64,7 @@ Member Functions
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`set_global_rotation<class_Node2D_set_global_rotation>` **(** :ref:`float<class_float>` radians **)**                              |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_global_rotation_in_degrees<class_Node2D_set_global_rotation_in_degrees>` **(** :ref:`float<class_float>` degrees **)**        |
+| void                                   | :ref:`set_global_rotation_degrees<class_Node2D_set_global_rotation_degrees>` **(** :ref:`float<class_float>` degrees **)**              |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`set_global_scale<class_Node2D_set_global_scale>` **(** :ref:`Vector2<class_vector2>` scale **)**                                  |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
@@ -74,7 +74,7 @@ Member Functions
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`set_rotation<class_Node2D_set_rotation>` **(** :ref:`float<class_float>` radians **)**                                            |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_rotation_in_degrees<class_Node2D_set_rotation_in_degrees>` **(** :ref:`float<class_float>` degrees **)**                      |
+| void                                   | :ref:`set_rotation_degrees<class_Node2D_set_rotation_degrees>` **(** :ref:`float<class_float>` degrees **)**                            |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`set_scale<class_Node2D_set_scale>` **(** :ref:`Vector2<class_vector2>` scale **)**                                                |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
@@ -102,9 +102,9 @@ Member Variables
 
 - :ref:`float<class_float>` **global_rotation** - Global rotation in radians.
 
-  .. _class_Node2D_global_rotation_deg:
+  .. _class_Node2D_global_rotation_degrees:
 
-- :ref:`float<class_float>` **global_rotation_deg** - Global rotation in degrees.
+- :ref:`float<class_float>` **global_rotation_degrees** - Global rotation in degrees.
 
   .. _class_Node2D_global_scale:
 
@@ -122,9 +122,9 @@ Member Variables
 
 - :ref:`float<class_float>` **rotation** - Rotation in radians, relative to the node's parent.
 
-  .. _class_Node2D_rotation_deg:
+  .. _class_Node2D_rotation_degrees:
 
-- :ref:`float<class_float>` **rotation_deg** - Rotation in degrees, relative to the node's parent.
+- :ref:`float<class_float>` **rotation_degrees** - Rotation in degrees, relative to the node's parent.
 
   .. _class_Node2D_scale:
 
@@ -181,9 +181,9 @@ Returns the node's global position.
 
 Returns the node's global rotation in radians.
 
-.. _class_Node2D_get_global_rotation_in_degrees:
+.. _class_Node2D_get_global_rotation_degrees:
 
-- :ref:`float<class_float>` **get_global_rotation_in_degrees** **(** **)** const
+- :ref:`float<class_float>` **get_global_rotation_degrees** **(** **)** const
 
 Return the node's global rotation in degrees.
 
@@ -211,9 +211,9 @@ Returns the :ref:`Transform2D<class_transform2d>` relative to this node's parent
 
 Returns the node's rotation in radians.
 
-.. _class_Node2D_get_rotation_in_degrees:
+.. _class_Node2D_get_rotation_degrees:
 
-- :ref:`float<class_float>` **get_rotation_in_degrees** **(** **)** const
+- :ref:`float<class_float>` **get_rotation_degrees** **(** **)** const
 
 Returns the node's rotation in degrees.
 
@@ -277,9 +277,9 @@ Sets the node's global position.
 
 Sets the node's global rotation in radians.
 
-.. _class_Node2D_set_global_rotation_in_degrees:
+.. _class_Node2D_set_global_rotation_degrees:
 
-- void **set_global_rotation_in_degrees** **(** :ref:`float<class_float>` degrees **)**
+- void **set_global_rotation_degrees** **(** :ref:`float<class_float>` degrees **)**
 
 Sets the node's global rotation in degrees.
 
@@ -307,9 +307,9 @@ Sets the node's position.
 
 Sets the node's rotation in radians.
 
-.. _class_Node2D_set_rotation_in_degrees:
+.. _class_Node2D_set_rotation_degrees:
 
-- void **set_rotation_in_degrees** **(** :ref:`float<class_float>` degrees **)**
+- void **set_rotation_degrees** **(** :ref:`float<class_float>` degrees **)**
 
 Sets the node's rotation in degrees.
 

@@ -42,6 +42,8 @@ Member Functions
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolIntArray<class_poolintarray>`          | :ref:`get_id_path<class_AStar_get_id_path>` **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)**                                               |
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolIntArray<class_poolintarray>`          | :ref:`get_point_connections<class_AStar_get_point_connections>` **(** :ref:`int<class_int>` arg0 **)**                                                           |
++--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolVector3Array<class_poolvector3array>`  | :ref:`get_point_path<class_AStar_get_point_path>` **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)**                                         |
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`                    | :ref:`get_point_position<class_AStar_get_point_position>` **(** :ref:`int<class_int>` id **)** const                                                             |
@@ -57,8 +59,6 @@ Member Functions
 | void                                             | :ref:`set_point_position<class_AStar_set_point_position>` **(** :ref:`int<class_int>` id, :ref:`Vector3<class_vector3>` position **)**                           |
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`set_point_weight_scale<class_AStar_set_point_weight_scale>` **(** :ref:`int<class_int>` id, :ref:`float<class_float>` weight_scale **)**                   |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolIntArray<class_poolintarray>`          | :ref:`get_point_connections<class_AStar_get_point_connections>` **(** :ref:`int<class_int>` id **)**                                                             |
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -187,6 +187,26 @@ Returns an array with the ids of the points that form the path found by AStar be
 
 If you change the 2nd point's weight to 3, then the result will be ``[1, 4, 3]`` instead, because now even though the distance is longer, it's "easier" to get through point 4 than through point 2.
 
+.. _class_AStar_get_point_connections:
+
+- :ref:`PoolIntArray<class_poolintarray>` **get_point_connections** **(** :ref:`int<class_int>` arg0 **)**
+
+Returns an array with the ids of the points that form the connect with the given point.
+
+::
+
+    var as = AStar.new()
+    
+    as.add_point(1, Vector3(0,0,0))
+    as.add_point(2, Vector3(0,1,0))
+    as.add_point(3, Vector3(1,1,0))
+    as.add_point(4, Vector3(2,0,0))
+    
+    as.connect_points(1, 2, true)
+    as.connect_points(1, 3, true)
+    
+    var neighbors = as.get_point_connections(1) # returns [2, 3]
+
 .. _class_AStar_get_point_path:
 
 - :ref:`PoolVector3Array<class_poolvector3array>` **get_point_path** **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)**
@@ -232,25 +252,5 @@ Sets the position for the point with the given id.
 - void **set_point_weight_scale** **(** :ref:`int<class_int>` id, :ref:`float<class_float>` weight_scale **)**
 
 Sets the ``weight_scale`` for the point with the given id.
-
-.. _class_AStar_get_point_connections:
-
-- :ref:`PoolIntArray<class_poolintarray>` **get_point_connections** **(** :ref:`int<class_int>` id **)**
-
-Returns an array with the ids of the points that form the connect with the given point. 
-
-::
-
-    var as = AStar.new()
-    
-    as.add_point(1, Vector3(0,0,0))
-    as.add_point(2, Vector3(0,1,0))
-    as.add_point(3, Vector3(1,1,0))
-    as.add_point(4, Vector3(2,0,0))
-    
-    as.connect_points(1, 2, true)
-    as.connect_points(1, 3, true)
-    
-    var neighbors = as.get_point_connections(1) # returns [2, 3]
 
 

@@ -48,6 +48,8 @@ Member Functions
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`        | :ref:`get_text<class_LineEdit_get_text>` **(** **)** const                                                             |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`            | :ref:`is_context_menu_enabled<class_LineEdit_is_context_menu_enabled>` **(** **)**                                     |
++------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`            | :ref:`is_editable<class_LineEdit_is_editable>` **(** **)** const                                                       |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`            | :ref:`is_secret<class_LineEdit_is_secret>` **(** **)** const                                                           |
@@ -59,6 +61,8 @@ Member Functions
 | void                               | :ref:`select_all<class_LineEdit_select_all>` **(** **)**                                                               |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_align<class_LineEdit_set_align>` **(** :ref:`int<class_int>` align **)**                                     |
++------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_context_menu_enabled<class_LineEdit_set_context_menu_enabled>` **(** :ref:`bool<class_bool>` enable **)**    |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_cursor_position<class_LineEdit_set_cursor_position>` **(** :ref:`int<class_int>` position **)**              |
 +------------------------------------+------------------------------------------------------------------------------------------------------------------------+
@@ -108,6 +112,10 @@ Member Variables
 
 - :ref:`float<class_float>` **caret_blink_speed** - Duration (in seconds) of a caret's blinking cycle.
 
+  .. _class_LineEdit_context_menu_enabled:
+
+- :ref:`bool<class_bool>` **context_menu_enabled** - If ``true`` the context menu will appear when right clicked.
+
   .. _class_LineEdit_editable:
 
 - :ref:`bool<class_bool>` **editable** - If ``false`` existing text cannot be modified and new text cannot be added.
@@ -154,7 +162,8 @@ Numeric Constants
 - **MENU_CLEAR** = **3** --- Erases the whole Linedit text.
 - **MENU_SELECT_ALL** = **4** --- Selects the whole Linedit text.
 - **MENU_UNDO** = **5** --- Undoes the previous action.
-- **MENU_MAX** = **6**
+- **MENU_REDO** = **6**
+- **MENU_MAX** = **7**
 
 Description
 -----------
@@ -246,6 +255,12 @@ Return transparency of the placeholder text.
 
 Return the text in the ``LineEdit``.
 
+.. _class_LineEdit_is_context_menu_enabled:
+
+- :ref:`bool<class_bool>` **is_context_menu_enabled** **(** **)**
+
+Returns true if the context menu is enabled.
+
 .. _class_LineEdit_is_editable:
 
 - :ref:`bool<class_bool>` **is_editable** **(** **)** const
@@ -288,6 +303,12 @@ Selects the whole :ref:`String<class_string>`.
 - void **set_align** **(** :ref:`int<class_int>` align **)**
 
 Set text alignment of the ``LineEdit``.
+
+.. _class_LineEdit_set_context_menu_enabled:
+
+- void **set_context_menu_enabled** **(** :ref:`bool<class_bool>` enable **)**
+
+Set the status of the context menu. When enabled, the context menu will appear when the ``LineEdit`` is right clicked.
 
 .. _class_LineEdit_set_cursor_position:
 

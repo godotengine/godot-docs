@@ -80,7 +80,7 @@ Member Functions
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`body_clear_shapes<class_Physics2DServer_body_clear_shapes>` **(** :ref:`RID<class_rid>` body **)**                                                                                                                                                                                                       |
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                              | :ref:`body_create<class_Physics2DServer_body_create>` **(** :ref:`int<class_int>` mode=2, :ref:`bool<class_bool>` init_sleeping=false **)**                                                                                                                                                                    |
+| :ref:`RID<class_rid>`                                              | :ref:`body_create<class_Physics2DServer_body_create>` **(** **)**                                                                                                                                                                                                                                              |
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                              | :ref:`body_get_collision_layer<class_Physics2DServer_body_get_collision_layer>` **(** :ref:`RID<class_rid>` body **)** const                                                                                                                                                                                   |
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -150,6 +150,14 @@ Member Functions
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                            | :ref:`body_test_motion<class_Physics2DServer_body_test_motion>` **(** :ref:`RID<class_rid>` body, :ref:`Transform2D<class_transform2d>` from, :ref:`Vector2<class_vector2>` motion, :ref:`float<class_float>` margin=0.08, :ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>` result=null **)** |
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_rid>`                                              | :ref:`capsule_shape_create<class_Physics2DServer_capsule_shape_create>` **(** **)**                                                                                                                                                                                                                            |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_rid>`                                              | :ref:`circle_shape_create<class_Physics2DServer_circle_shape_create>` **(** **)**                                                                                                                                                                                                                              |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_rid>`                                              | :ref:`concave_polygon_shape_create<class_Physics2DServer_concave_polygon_shape_create>` **(** **)**                                                                                                                                                                                                            |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_rid>`                                              | :ref:`convex_polygon_shape_create<class_Physics2DServer_convex_polygon_shape_create>` **(** **)**                                                                                                                                                                                                              |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_rid>`                                              | :ref:`damped_spring_joint_create<class_Physics2DServer_damped_spring_joint_create>` **(** :ref:`Vector2<class_vector2>` anchor_a, :ref:`Vector2<class_vector2>` anchor_b, :ref:`RID<class_rid>` body_a, :ref:`RID<class_rid>` body_b **)**                                                                     |
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                          | :ref:`damped_string_joint_get_param<class_Physics2DServer_damped_string_joint_get_param>` **(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` param **)** const                                                                                                                                           |
@@ -168,11 +176,17 @@ Member Functions
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`joint_set_param<class_Physics2DServer_joint_set_param>` **(** :ref:`RID<class_rid>` joint, :ref:`int<class_int>` param, :ref:`float<class_float>` value **)**                                                                                                                                            |
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_rid>`                                              | :ref:`line_shape_create<class_Physics2DServer_line_shape_create>` **(** **)**                                                                                                                                                                                                                                  |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_rid>`                                              | :ref:`pin_joint_create<class_Physics2DServer_pin_joint_create>` **(** :ref:`Vector2<class_vector2>` anchor, :ref:`RID<class_rid>` body_a, :ref:`RID<class_rid>` body_b **)**                                                                                                                                   |
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                               | :ref:`set_active<class_Physics2DServer_set_active>` **(** :ref:`bool<class_bool>` active **)**                                                                                                                                                                                                                 |
+| :ref:`RID<class_rid>`                                              | :ref:`ray_shape_create<class_Physics2DServer_ray_shape_create>` **(** **)**                                                                                                                                                                                                                                    |
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                              | :ref:`shape_create<class_Physics2DServer_shape_create>` **(** :ref:`int<class_int>` type **)**                                                                                                                                                                                                                 |
+| :ref:`RID<class_rid>`                                              | :ref:`rectangle_shape_create<class_Physics2DServer_rectangle_shape_create>` **(** **)**                                                                                                                                                                                                                        |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_rid>`                                              | :ref:`segment_shape_create<class_Physics2DServer_segment_shape_create>` **(** **)**                                                                                                                                                                                                                            |
++--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                               | :ref:`set_active<class_Physics2DServer_set_active>` **(** :ref:`bool<class_bool>` active **)**                                                                                                                                                                                                                 |
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_variant>`                                      | :ref:`shape_get_data<class_Physics2DServer_shape_get_data>` **(** :ref:`RID<class_rid>` shape **)** const                                                                                                                                                                                                      |
 +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -451,7 +465,7 @@ Removes all shapes from a body.
 
 .. _class_Physics2DServer_body_create:
 
-- :ref:`RID<class_rid>` **body_create** **(** :ref:`int<class_int>` mode=2, :ref:`bool<class_bool>` init_sleeping=false **)**
+- :ref:`RID<class_rid>` **body_create** **(** **)**
 
 Creates a physics body. The first parameter can be any value from constants BODY_MODE\*, for the type of body created. Additionally, the body can be created in sleeping state to save processing time.
 
@@ -661,6 +675,22 @@ Sets a body state (see BODY_STATE\* constants).
 
 Returns whether a body can move from a given point in a given direction. Apart from the boolean return value, a :ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>` can be passed to return additional information in.
 
+.. _class_Physics2DServer_capsule_shape_create:
+
+- :ref:`RID<class_rid>` **capsule_shape_create** **(** **)**
+
+.. _class_Physics2DServer_circle_shape_create:
+
+- :ref:`RID<class_rid>` **circle_shape_create** **(** **)**
+
+.. _class_Physics2DServer_concave_polygon_shape_create:
+
+- :ref:`RID<class_rid>` **concave_polygon_shape_create** **(** **)**
+
+.. _class_Physics2DServer_convex_polygon_shape_create:
+
+- :ref:`RID<class_rid>` **convex_polygon_shape_create** **(** **)**
+
 .. _class_Physics2DServer_damped_spring_joint_create:
 
 - :ref:`RID<class_rid>` **damped_spring_joint_create** **(** :ref:`Vector2<class_vector2>` anchor_a, :ref:`Vector2<class_vector2>` anchor_b, :ref:`RID<class_rid>` body_a, :ref:`RID<class_rid>` body_b **)**
@@ -715,23 +745,33 @@ Returns the type of a joint (see JOINT\_\* constants).
 
 Sets a joint parameter. Parameters are explained in the JOINT_PARAM\* constants.
 
+.. _class_Physics2DServer_line_shape_create:
+
+- :ref:`RID<class_rid>` **line_shape_create** **(** **)**
+
 .. _class_Physics2DServer_pin_joint_create:
 
 - :ref:`RID<class_rid>` **pin_joint_create** **(** :ref:`Vector2<class_vector2>` anchor, :ref:`RID<class_rid>` body_a, :ref:`RID<class_rid>` body_b **)**
 
 Creates a pin joint between two bodies. If not specified, the second body is assumed to be the joint itself.
 
+.. _class_Physics2DServer_ray_shape_create:
+
+- :ref:`RID<class_rid>` **ray_shape_create** **(** **)**
+
+.. _class_Physics2DServer_rectangle_shape_create:
+
+- :ref:`RID<class_rid>` **rectangle_shape_create** **(** **)**
+
+.. _class_Physics2DServer_segment_shape_create:
+
+- :ref:`RID<class_rid>` **segment_shape_create** **(** **)**
+
 .. _class_Physics2DServer_set_active:
 
 - void **set_active** **(** :ref:`bool<class_bool>` active **)**
 
 Activates or deactivates the 2D physics engine.
-
-.. _class_Physics2DServer_shape_create:
-
-- :ref:`RID<class_rid>` **shape_create** **(** :ref:`int<class_int>` type **)**
-
-Creates a shape of type SHAPE\_\*. Does not assign it to a body or an area. To do so, you must use :ref:`area_set_shape<class_Physics2DServer_area_set_shape>` or :ref:`body_set_shape<class_Physics2DServer_body_set_shape>`.
 
 .. _class_Physics2DServer_shape_get_data:
 

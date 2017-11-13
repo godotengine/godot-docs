@@ -424,7 +424,9 @@ Numeric Constants
 - **JOY_AXIS_5** = **5**
 - **JOY_AXIS_6** = **6** --- Joypad Left Trigger Analog Axis
 - **JOY_AXIS_7** = **7** --- Joypad Right Trigger Analog Axis
-- **JOY_AXIS_MAX** = **8**
+- **JOY_AXIS_8** = **8**
+- **JOY_AXIS_9** = **9**
+- **JOY_AXIS_MAX** = **10**
 - **JOY_ANALOG_LX** = **0** --- Joypad Left Stick Horizontal Axis
 - **JOY_ANALOG_LY** = **1** --- Joypad Left Stick Vertical Axis
 - **JOY_ANALOG_RX** = **2** --- Joypad Right Stick Horizontal Axis

@@ -30,7 +30,7 @@ Member Functions
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`              | :ref:`get_rotation<class_CanvasLayer_get_rotation>` **(** **)** const                                             |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_rotationd<class_CanvasLayer_get_rotationd>` **(** **)** const                                           |
+| :ref:`float<class_float>`              | :ref:`get_rotation_degrees<class_CanvasLayer_get_rotation_degrees>` **(** **)** const                             |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`          | :ref:`get_scale<class_CanvasLayer_get_scale>` **(** **)** const                                                   |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------+
@@ -46,7 +46,7 @@ Member Functions
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`set_rotation<class_CanvasLayer_set_rotation>` **(** :ref:`float<class_float>` radians **)**                 |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_rotationd<class_CanvasLayer_set_rotationd>` **(** :ref:`float<class_float>` degrees **)**               |
+| void                                   | :ref:`set_rotation_degrees<class_CanvasLayer_set_rotation_degrees>` **(** :ref:`float<class_float>` degrees **)** |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`set_scale<class_CanvasLayer_set_scale>` **(** :ref:`Vector2<class_vector2>` scale **)**                     |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------+
@@ -103,9 +103,9 @@ Return the base offset for this layer (helper).
 
 Return the base rotation for this layer in radians (helper).
 
-.. _class_CanvasLayer_get_rotationd:
+.. _class_CanvasLayer_get_rotation_degrees:
 
-- :ref:`float<class_float>` **get_rotationd** **(** **)** const
+- :ref:`float<class_float>` **get_rotation_degrees** **(** **)** const
 
 Return the base rotation for this layer in degrees.
 
@@ -149,9 +149,9 @@ Set the base offset for this layer (helper).
 
 Set the base rotation for this layer in radians (helper).
 
-.. _class_CanvasLayer_set_rotationd:
+.. _class_CanvasLayer_set_rotation_degrees:
 
-- void **set_rotationd** **(** :ref:`float<class_float>` degrees **)**
+- void **set_rotation_degrees** **(** :ref:`float<class_float>` degrees **)**
 
 Set the base rotation for this layer in degrees (helper).
 

@@ -26,6 +26,10 @@ Member Functions
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_array>`                        | :ref:`build_cylinder_planes<class_Geometry_build_cylinder_planes>` **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, :ref:`int<class_int>` axis=2 **)**                                                        |
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolVector3Array<class_poolvector3array>`  | :ref:`clip_polygon<class_Geometry_clip_polygon>` **(** :ref:`PoolVector3Array<class_poolvector3array>` points, :ref:`Plane<class_plane>` plane **)**                                                                                                                |
++--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolVector2Array<class_poolvector2array>`  | :ref:`convex_hull_2d<class_Geometry_convex_hull_2d>` **(** :ref:`PoolVector2Array<class_poolvector2array>` points **)**                                                                                                                                             |
++--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`                    | :ref:`get_closest_point_to_segment<class_Geometry_get_closest_point_to_segment>` **(** :ref:`Vector3<class_vector3>` point, :ref:`Vector3<class_vector3>` s1, :ref:`Vector3<class_vector3>` s2 **)**                                                                |
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`                    | :ref:`get_closest_point_to_segment_2d<class_Geometry_get_closest_point_to_segment_2d>` **(** :ref:`Vector2<class_vector2>` point, :ref:`Vector2<class_vector2>` s1, :ref:`Vector2<class_vector2>` s2 **)**                                                          |
@@ -60,10 +64,6 @@ Member Functions
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolIntArray<class_poolintarray>`          | :ref:`triangulate_polygon<class_Geometry_triangulate_polygon>` **(** :ref:`PoolVector2Array<class_poolvector2array>` polygon **)**                                                                                                                                  |
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector2Array<class_poolvector2array>`  | :ref:`convex_hull_2d<class_Geometry_convex_hull_2d>` **(** :ref:`PoolVector2Array<class_poolvector2array>` points **)**                                                                                                                                             |
-+--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector3Array<class_poolvector3array>`  | :ref:`clip_polygon<class_Geometry_clip_polygon>` **(** :ref:`PoolVector3Array<class_poolvector3array>` points, :ref:`Plane<class_plane>` plane **)**                                                                                                                |
-+--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Function Description
 ---------------------------
@@ -85,6 +85,18 @@ Returns an array of :ref:`Plane<class_plane>`\ s closely bounding a faceted caps
 - :ref:`Array<class_array>` **build_cylinder_planes** **(** :ref:`float<class_float>` radius, :ref:`float<class_float>` height, :ref:`int<class_int>` sides, :ref:`int<class_int>` axis=2 **)**
 
 Returns an array of :ref:`Plane<class_plane>`\ s closely bounding a faceted cylinder centered at the origin with radius ``radius`` and height ``height``. The parameter ``sides`` defines how many planes will be generated for the round part of the cylinder. The parameter ``axis`` describes the axis along which the cylinder is oriented (0 for X, 1 for Y, 2 for Z).
+
+.. _class_Geometry_clip_polygon:
+
+- :ref:`PoolVector3Array<class_poolvector3array>` **clip_polygon** **(** :ref:`PoolVector3Array<class_poolvector3array>` points, :ref:`Plane<class_plane>` plane **)**
+
+Clips the polygon defined by the points in ``points`` against the ``plane`` and returns the points of the clipped polygon.
+
+.. _class_Geometry_convex_hull_2d:
+
+- :ref:`PoolVector2Array<class_poolvector2array>` **convex_hull_2d** **(** :ref:`PoolVector2Array<class_poolvector2array>` points **)**
+
+Given an array of :ref:`Vector2<class_vector2>`\ s, returns the convex hull as a list of points in counter-clockwise order. The last point is the same as the first one.
 
 .. _class_Geometry_get_closest_point_to_segment:
 
@@ -185,17 +197,5 @@ Tests if the segment (``from``, ``to``) intersects the triangle ``a``, ``b``, ``
 - :ref:`PoolIntArray<class_poolintarray>` **triangulate_polygon** **(** :ref:`PoolVector2Array<class_poolvector2array>` polygon **)**
 
 Triangulates the polygon specified by the points in ``polygon``. Returns a :ref:`PoolIntArray<class_poolintarray>` where each triangle consists of three consecutive point indices into ``polygon`` (i.e. the returned array will have ``n \* 3`` elements, with ``n`` being the number of found triangles). If the triangulation did not succeed, an empty :ref:`PoolIntArray<class_poolintarray>` is returned.
-
-.. _class_Geometry_convex_hull_2d:
-
-- :ref:`PoolVector2Array<class_poolvector2array>` **convex_hull_2d** **(** :ref:`PoolVector2Array<class_poolvector2array>` points **)**
-
-Given an array of :ref:`Vector2<class_vector2>`\ s, returns the convex hull as a list of points in counter-clockwise order. The last point is the same as the first one.
-
-.. _class_Geometry_clip_polygon:
-
-- :ref:`PoolVector3Array<class_poolvector3array>` **clip_polygon** **(** :ref:`PoolVector3Array<class_poolvector3array>` points, :ref:`Plane<class_plane>` plane **)**
-
-Clips the polygon defined by the points in ``points`` against the ``plane`` and returns the points of the clipped polygon.
 
 

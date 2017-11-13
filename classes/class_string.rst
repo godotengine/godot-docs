@@ -78,6 +78,8 @@ Member Functions
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`casecmp_to<class_String_casecmp_to>` **(** :ref:`String<class_string>` to **)**                                                    |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                    | :ref:`dedent<class_String_dedent>` **(** **)**                                                                                           |
++------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`empty<class_String_empty>` **(** **)**                                                                                             |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`ends_with<class_String_ends_with>` **(** :ref:`String<class_string>` text **)**                                                    |
@@ -380,6 +382,10 @@ Changes the case of some letters. Replaces underscores with spaces, converts all
 - :ref:`int<class_int>` **casecmp_to** **(** :ref:`String<class_string>` to **)**
 
 Performs a case-sensitive comparison to another string. Returns ``-1`` if less than, ``+1`` if greater than, or ``0`` if equal.
+
+.. _class_String_dedent:
+
+- :ref:`String<class_string>` **dedent** **(** **)**
 
 .. _class_String_empty:
 

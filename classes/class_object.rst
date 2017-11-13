@@ -138,91 +138,103 @@ Member Function Description
 
 - void **_get** **(** :ref:`String<class_string>` property **)** virtual
 
-Return a property, return null if the property does not exist.
+Returns the given property. Returns ``null`` if the ``property`` does not exist.
 
 .. _class_Object__get_property_list:
 
 - :ref:`Array<class_array>` **_get_property_list** **(** **)** virtual
 
-Return the property list, array of dictionaries, dictionaries must contain: name:String, type:int (see TYPE\_\* enum in :ref:`@Global Scope<class_@global scope>`) and optionally: hint:int (see PROPERTY_HINT\_\* in :ref:`@Global Scope<class_@global scope>`), hint_string:String, usage:int (see PROPERTY_USAGE\_\* in :ref:`@Global Scope<class_@global scope>`).
+Returns the object's property list as an :ref:`Array<class_array>` of dictionaries. Dictionaries must contain: name:String, type:int (see TYPE\_\* enum in :ref:`@Global Scope<class_@global scope>`) and optionally: hint:int (see PROPERTY_HINT\_\* in :ref:`@Global Scope<class_@global scope>`), hint_string:String, usage:int (see PROPERTY_USAGE\_\* in :ref:`@Global Scope<class_@global scope>`).
 
 .. _class_Object__init:
 
 - void **_init** **(** **)** virtual
 
+The virtual method called upon initialization.
+
 .. _class_Object__notification:
 
 - void **_notification** **(** :ref:`int<class_int>` what **)** virtual
 
-Notification request, the notification id is received.
+Notify the object internally using an ID.
 
 .. _class_Object__set:
 
 - :ref:`bool<class_bool>` **_set** **(** :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value **)** virtual
 
-Set a property. Return true if the property was found.
+Sets a property. Returns ``true`` if the ``property`` exists.
 
 .. _class_Object_add_user_signal:
 
 - void **add_user_signal** **(** :ref:`String<class_string>` signal, :ref:`Array<class_array>` arguments=[  ] **)**
 
-Add a user signal (can be added anytime). Arguments are optional, but can be added as an array of dictionaries, each containing "name" and "type" (from :ref:`@Global Scope<class_@global scope>` TYPE\_\*).
+Adds a user-defined ``signal``. Arguments are optional, but can be added as an :ref:`Array<class_array>` of dictionaries, each containing "name" and "type" (from :ref:`@Global Scope<class_@global scope>` TYPE\_\*).
 
 .. _class_Object_call:
 
 - :ref:`Variant<class_variant>` **call** **(** :ref:`String<class_string>` method **)** vararg
 
+Calls the ``method`` on the object and returns a result. Pass parameters as a comma separated list.
+
 .. _class_Object_call_deferred:
 
 - :ref:`Variant<class_variant>` **call_deferred** **(** :ref:`String<class_string>` method **)** vararg
+
+Calls the ``method`` on the object during idle time and returns a result. Pass parameters as a comma separated list.
 
 .. _class_Object_callv:
 
 - :ref:`Variant<class_variant>` **callv** **(** :ref:`String<class_string>` method, :ref:`Array<class_array>` arg_array **)**
 
+Calls the ``method`` on the object and returns a result. Pass parameters as an :ref:`Array<class_array>`.
+
 .. _class_Object_can_translate_messages:
 
 - :ref:`bool<class_bool>` **can_translate_messages** **(** **)** const
 
-Return true if this object can translate strings.
+Returns ``true`` if the object can translate strings.
 
 .. _class_Object_connect:
 
 - :ref:`int<class_int>` **connect** **(** :ref:`String<class_string>` signal, :ref:`Object<class_object>` target, :ref:`String<class_string>` method, :ref:`Array<class_array>` binds=[  ], :ref:`int<class_int>` flags=0 **)**
 
-Connect a signal to a method at a target (member function). Binds are optional and are passed as extra arguments to the call. Flags specify optional deferred or one shot connections, see enum CONNECT\_\*. A signal can only be connected once to a method, and it will throw an error if already connected. If you want to avoid this, use :ref:`is_connected<class_Object_is_connected>` to check.
+Connects a ``signal`` to a ``method`` on a ``target`` object. Pass optional ``binds`` to the call. Use ``flags`` to set deferred or one shot connections. See ``CONNECT\_\*`` constants. A ``signal`` can only be connected once to a ``method``. It will throw an error if already connected. To avoid this, first use :ref:`is_connected<class_Object_is_connected>` to check for existing connections.
 
 .. _class_Object_disconnect:
 
 - void **disconnect** **(** :ref:`String<class_string>` signal, :ref:`Object<class_object>` target, :ref:`String<class_string>` method **)**
 
-Disconnect a signal from a method.
+Disconnects a ``signal`` from a ``method`` on the given ``target``.
 
 .. _class_Object_emit_signal:
 
 - :ref:`Variant<class_variant>` **emit_signal** **(** :ref:`String<class_string>` signal **)** vararg
 
+Emits the given ``signal``.
+
 .. _class_Object_free:
 
 - void **free** **(** **)**
+
+Deletes the object from memory.
 
 .. _class_Object_get:
 
 - :ref:`Variant<class_variant>` **get** **(** :ref:`String<class_string>` property **)** const
 
-Get a property from the object.
+Returns a :ref:`Variant<class_variant>` for a ``property``.
 
 .. _class_Object_get_class:
 
 - :ref:`String<class_string>` **get_class** **(** **)** const
 
-Return the class of the object as a string.
+Returns the object's class as a :ref:`String<class_string>`.
 
 .. _class_Object_get_incoming_connections:
 
 - :ref:`Array<class_array>` **get_incoming_connections** **(** **)** const
 
-Returns an :ref:`Array<class_array>` of dictionaries with information about signals that are connected to this object.
+Returns an :ref:`Array<class_array>` of dictionaries with information about signals that are connected to the object.
 
 Inside each :ref:`Dictionary<class_dictionary>` there are 3 fields:
 
@@ -236,81 +248,91 @@ Inside each :ref:`Dictionary<class_dictionary>` there are 3 fields:
 
 - :ref:`int<class_int>` **get_instance_id** **(** **)** const
 
-Return the instance ID. All objects have a unique instance ID.
+Returns the object's unique instance ID.
 
 .. _class_Object_get_meta:
 
 - :ref:`Variant<class_variant>` **get_meta** **(** :ref:`String<class_string>` name **)** const
 
-Return a metadata from the object.
+Returns the object's metadata for the given ``name``.
 
 .. _class_Object_get_meta_list:
 
 - :ref:`PoolStringArray<class_poolstringarray>` **get_meta_list** **(** **)** const
 
-Return the list of metadata in the object.
+Returns the object's metadata as a :ref:`PoolStringArray<class_poolstringarray>`.
 
 .. _class_Object_get_method_list:
 
 - :ref:`Array<class_array>` **get_method_list** **(** **)** const
 
+Returns the object's methods and their signatures as an :ref:`Array<class_array>`.
+
 .. _class_Object_get_property_list:
 
 - :ref:`Array<class_array>` **get_property_list** **(** **)** const
 
-Return the list of properties as an array of dictionaries, dictionaries contain: name:String, type:int (see TYPE\_\* enum in :ref:`@Global Scope<class_@global scope>`) and optionally: hint:int (see PROPERTY_HINT\_\* in :ref:`@Global Scope<class_@global scope>`), hint_string:String, usage:int (see PROPERTY_USAGE\_\* in :ref:`@Global Scope<class_@global scope>`).
+Returns the list of properties as an :ref:`Array<class_array>` of dictionaries. Dictionaries contain: name:String, type:int (see TYPE\_\* enum in :ref:`@Global Scope<class_@global scope>`) and optionally: hint:int (see PROPERTY_HINT\_\* in :ref:`@Global Scope<class_@global scope>`), hint_string:String, usage:int (see PROPERTY_USAGE\_\* in :ref:`@Global Scope<class_@global scope>`).
 
 .. _class_Object_get_script:
 
 - :ref:`Reference<class_reference>` **get_script** **(** **)** const
 
-Return the object script (or null if it doesn't have one).
+Returns the object's :ref:`Script<class_script>` or ``null`` if one doesn't exist.
 
 .. _class_Object_get_signal_connection_list:
 
 - :ref:`Array<class_array>` **get_signal_connection_list** **(** :ref:`String<class_string>` signal **)** const
 
+Returns an :ref:`Array<class_array>` of connections for the given ``signal``.
+
 .. _class_Object_get_signal_list:
 
 - :ref:`Array<class_array>` **get_signal_list** **(** **)** const
 
-Return the list of signals as an array of dictionaries.
+Returns the list of signals as an :ref:`Array<class_array>` of dictionaries.
 
 .. _class_Object_has_meta:
 
 - :ref:`bool<class_bool>` **has_meta** **(** :ref:`String<class_string>` name **)** const
 
-Return true if a metadata is found with the requested name.
+Returns ``true`` if a metadata is found with the given ``name``.
 
 .. _class_Object_has_method:
 
 - :ref:`bool<class_bool>` **has_method** **(** :ref:`String<class_string>` method **)** const
 
+Returns ``true`` if the object contains the given ``method``.
+
 .. _class_Object_has_user_signal:
 
 - :ref:`bool<class_bool>` **has_user_signal** **(** :ref:`String<class_string>` signal **)** const
+
+Returns ``true`` if the given user-defined ``signal`` exists.
 
 .. _class_Object_is_blocking_signals:
 
 - :ref:`bool<class_bool>` **is_blocking_signals** **(** **)** const
 
-Return true if signal emission blocking is enabled.
+Returns ``true`` if signal emission blocking is enabled.
 
 .. _class_Object_is_class:
 
 - :ref:`bool<class_bool>` **is_class** **(** :ref:`String<class_string>` type **)** const
 
-Check the class of the object against a string (including inheritance).
+Returns ``true`` if the object inherits from the given ``type``.
 
 .. _class_Object_is_connected:
 
 - :ref:`bool<class_bool>` **is_connected** **(** :ref:`String<class_string>` signal, :ref:`Object<class_object>` target, :ref:`String<class_string>` method **)** const
 
-Return true if a connection exists for a given signal and target/method.
+Returns ``true`` if a connection exists for a given ``signal``, ``target``, and ``method``.
 
 .. _class_Object_is_queued_for_deletion:
 
 - :ref:`bool<class_bool>` **is_queued_for_deletion** **(** **)** const
+
+Returns ``true`` if the ``queue_free`` method was called for the object.
 
 .. _class_Object_notification:
 
@@ -338,7 +360,7 @@ If set to true, signal emission is blocked.
 
 - void **set_message_translation** **(** :ref:`bool<class_bool>` enable **)**
 
-Define whether this object can translate strings (with calls to :ref:`tr<class_Object_tr>`). Default is true.
+Define whether the object can translate strings (with calls to :ref:`tr<class_Object_tr>`). Default is true.
 
 .. _class_Object_set_meta:
 

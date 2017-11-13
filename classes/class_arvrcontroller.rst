@@ -32,9 +32,13 @@ Member Functions
 +------------------------------+------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`        | :ref:`get_joystick_id<class_ARVRController_get_joystick_id>` **(** **)** const                                   |
 +------------------------------+------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`    | :ref:`get_rumble<class_ARVRController_get_rumble>` **(** **)** const                                             |
++------------------------------+------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`        | :ref:`is_button_pressed<class_ARVRController_is_button_pressed>` **(** :ref:`int<class_int>` button **)** const  |
 +------------------------------+------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`set_controller_id<class_ARVRController_set_controller_id>` **(** :ref:`int<class_int>` controller_id **)** |
++------------------------------+------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_rumble<class_ARVRController_set_rumble>` **(** :ref:`float<class_float>` rumble **)**                  |
 +------------------------------+------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -59,6 +63,10 @@ Member Variables
   .. _class_ARVRController_controller_id:
 
 - :ref:`int<class_int>` **controller_id** - The controller's id. The first controller that the :ref:`ARVRServer<class_arvrserver>` detects will have id 1, the second id 2, the third id 3, etc. When a controller is turned off, it's slot is freed. This ensures controllers will keep the same id even when controllers with lower ids are turned off.
+
+  .. _class_ARVRController_rumble:
+
+- :ref:`float<class_float>` **rumble**
 
 
 Description
@@ -109,6 +117,10 @@ Returns the value of the given axis for things like triggers, touchpads, etc. th
 
 Returns the ID of the joystick object bound to this. Every controller tracked by the ARVR Server that has buttons and axis will also be registered as a joystick within Godot. This means that all the normal joystick tracking and input mapping will work for buttons and axis found on the AR/VR controllers. This ID is purely offered as information so you can link up the controller with its joystick entry.
 
+.. _class_ARVRController_get_rumble:
+
+- :ref:`float<class_float>` **get_rumble** **(** **)** const
+
 .. _class_ARVRController_is_button_pressed:
 
 - :ref:`int<class_int>` **is_button_pressed** **(** :ref:`int<class_int>` button **)** const
@@ -120,5 +132,9 @@ Is the given button currently pressed?
 - void **set_controller_id** **(** :ref:`int<class_int>` controller_id **)**
 
 Changes the id that identifies the controller bound to this node. The first controller that the ARVR Server detects will have id 1, the second id 2, the third id 3, etc. When a controller is turned off that slot is freed ensuring that controllers will keep the same id while it is turned on even when controllers with lower ids are turned off.
+
+.. _class_ARVRController_set_rumble:
+
+- void **set_rumble** **(** :ref:`float<class_float>` rumble **)**
 
 

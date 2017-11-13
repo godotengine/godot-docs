@@ -32,6 +32,8 @@ Member Functions
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                | :ref:`get_center_y<class_TileMap_get_center_y>` **(** **)** const                                                                                                                                                                                     |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`get_clip_uv<class_TileMap_get_clip_uv>` **(** **)** const                                                                                                                                                                                       |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`              | :ref:`get_collision_bounce<class_TileMap_get_collision_bounce>` **(** **)** const                                                                                                                                                                     |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`              | :ref:`get_collision_friction<class_TileMap_get_collision_friction>` **(** **)** const                                                                                                                                                                 |
@@ -86,6 +88,8 @@ Member Functions
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`set_center_y<class_TileMap_set_center_y>` **(** :ref:`bool<class_bool>` enable **)**                                                                                                                                                            |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_clip_uv<class_TileMap_set_clip_uv>` **(** :ref:`bool<class_bool>` enable **)**                                                                                                                                                              |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`set_collision_bounce<class_TileMap_set_collision_bounce>` **(** :ref:`float<class_float>` value **)**                                                                                                                                           |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`set_collision_friction<class_TileMap_set_collision_friction>` **(** :ref:`float<class_float>` value **)**                                                                                                                                       |
@@ -131,6 +135,10 @@ Emitted when a tilemap setting has changed.
 
 Member Variables
 ----------------
+
+  .. _class_TileMap_cell_clip_uv:
+
+- :ref:`bool<class_bool>` **cell_clip_uv**
 
   .. _class_TileMap_cell_custom_transform:
 
@@ -250,6 +258,10 @@ Return true if tiles are to be centered in x coordinate (by default this is fals
 - :ref:`bool<class_bool>` **get_center_y** **(** **)** const
 
 Return true if tiles are to be centered in y coordinate (by default this is false and they are drawn from upper left cell corner).
+
+.. _class_TileMap_get_clip_uv:
+
+- :ref:`bool<class_bool>` **get_clip_uv** **(** **)** const
 
 .. _class_TileMap_get_collision_bounce:
 
@@ -412,6 +424,10 @@ Set tiles to be centered in x coordinate. (by default this is false and they are
 - void **set_center_y** **(** :ref:`bool<class_bool>` enable **)**
 
 Set tiles to be centered in y coordinate. (by default this is false and they are drawn from upper left cell corner).
+
+.. _class_TileMap_set_clip_uv:
+
+- void **set_clip_uv** **(** :ref:`bool<class_bool>` enable **)**
 
 .. _class_TileMap_set_collision_bounce:
 

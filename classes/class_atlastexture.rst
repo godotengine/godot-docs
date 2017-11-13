@@ -19,19 +19,23 @@ Packs multiple small textures in a single, bigger one. Helps to optimize video m
 Member Functions
 ----------------
 
-+--------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_texture>`  | :ref:`get_atlas<class_AtlasTexture_get_atlas>` **(** **)** const                               |
-+--------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_rect2>`      | :ref:`get_margin<class_AtlasTexture_get_margin>` **(** **)** const                             |
-+--------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_rect2>`      | :ref:`get_region<class_AtlasTexture_get_region>` **(** **)** const                             |
-+--------------------------------+------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_atlas<class_AtlasTexture_set_atlas>` **(** :ref:`Texture<class_texture>` atlas **)** |
-+--------------------------------+------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_margin<class_AtlasTexture_set_margin>` **(** :ref:`Rect2<class_rect2>` margin **)**  |
-+--------------------------------+------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_region<class_AtlasTexture_set_region>` **(** :ref:`Rect2<class_rect2>` region **)**  |
-+--------------------------------+------------------------------------------------------------------------------------------------+
++--------------------------------+-------------------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_texture>`  | :ref:`get_atlas<class_AtlasTexture_get_atlas>` **(** **)** const                                      |
++--------------------------------+-------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2<class_rect2>`      | :ref:`get_margin<class_AtlasTexture_get_margin>` **(** **)** const                                    |
++--------------------------------+-------------------------------------------------------------------------------------------------------+
+| :ref:`Rect2<class_rect2>`      | :ref:`get_region<class_AtlasTexture_get_region>` **(** **)** const                                    |
++--------------------------------+-------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`has_filter_clip<class_AtlasTexture_has_filter_clip>` **(** **)** const                          |
++--------------------------------+-------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_atlas<class_AtlasTexture_set_atlas>` **(** :ref:`Texture<class_texture>` atlas **)**        |
++--------------------------------+-------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_filter_clip<class_AtlasTexture_set_filter_clip>` **(** :ref:`bool<class_bool>` enable **)** |
++--------------------------------+-------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_margin<class_AtlasTexture_set_margin>` **(** :ref:`Rect2<class_rect2>` margin **)**         |
++--------------------------------+-------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_region<class_AtlasTexture_set_region>` **(** :ref:`Rect2<class_rect2>` region **)**         |
++--------------------------------+-------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -39,6 +43,10 @@ Member Variables
   .. _class_AtlasTexture_atlas:
 
 - :ref:`Texture<class_texture>` **atlas** - The texture that contains the atlas. Can be any :ref:`Texture<class_texture>` subtype.
+
+  .. _class_AtlasTexture_filter_clip:
+
+- :ref:`bool<class_bool>` **filter_clip**
 
   .. _class_AtlasTexture_margin:
 
@@ -71,9 +79,17 @@ Member Function Description
 
 - :ref:`Rect2<class_rect2>` **get_region** **(** **)** const
 
+.. _class_AtlasTexture_has_filter_clip:
+
+- :ref:`bool<class_bool>` **has_filter_clip** **(** **)** const
+
 .. _class_AtlasTexture_set_atlas:
 
 - void **set_atlas** **(** :ref:`Texture<class_texture>` atlas **)**
+
+.. _class_AtlasTexture_set_filter_clip:
+
+- void **set_filter_clip** **(** :ref:`bool<class_bool>` enable **)**
 
 .. _class_AtlasTexture_set_margin:
 

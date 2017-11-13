@@ -76,11 +76,15 @@ Member Functions
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`insert_text_at_cursor<class_TextEdit_insert_text_at_cursor>` **(** :ref:`String<class_string>` text **)**                                                                                                           |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`is_context_menu_enabled<class_TextEdit_is_context_menu_enabled>` **(** **)**                                                                                                                                        |
++------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                  | :ref:`is_highlight_all_occurrences_enabled<class_TextEdit_is_highlight_all_occurrences_enabled>` **(** **)** const                                                                                                        |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                  | :ref:`is_highlight_current_line_enabled<class_TextEdit_is_highlight_current_line_enabled>` **(** **)** const                                                                                                              |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                  | :ref:`is_overriding_selected_font_color<class_TextEdit_is_overriding_selected_font_color>` **(** **)** const                                                                                                              |
++------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`is_readonly<class_TextEdit_is_readonly>` **(** **)** const                                                                                                                                                          |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                  | :ref:`is_selection_active<class_TextEdit_is_selection_active>` **(** **)** const                                                                                                                                          |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -101,6 +105,8 @@ Member Functions
 | void                                     | :ref:`select<class_TextEdit_select>` **(** :ref:`int<class_int>` from_line, :ref:`int<class_int>` from_column, :ref:`int<class_int>` to_line, :ref:`int<class_int>` to_column **)**                                       |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`select_all<class_TextEdit_select_all>` **(** **)**                                                                                                                                                                  |
++------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`set_context_menu_enabled<class_TextEdit_set_context_menu_enabled>` **(** :ref:`bool<class_bool>` enable **)**                                                                                                       |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_highlight_all_occurrences<class_TextEdit_set_highlight_all_occurrences>` **(** :ref:`bool<class_bool>` enable **)**                                                                                             |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -172,6 +178,10 @@ Member Variables
 
 - :ref:`bool<class_bool>` **caret_block_mode**
 
+  .. _class_TextEdit_context_menu_enabled:
+
+- :ref:`bool<class_bool>` **context_menu_enabled**
+
   .. _class_TextEdit_highlight_all_occurrences:
 
 - :ref:`bool<class_bool>` **highlight_all_occurrences**
@@ -184,6 +194,10 @@ Member Variables
 
 - :ref:`bool<class_bool>` **override_selected_font_color**
 
+  .. _class_TextEdit_readonly:
+
+- :ref:`bool<class_bool>` **readonly** - If ``true`` read-only mode is enabled. Existing text cannot be modified and new text cannot be added.
+
   .. _class_TextEdit_show_line_numbers:
 
 - :ref:`bool<class_bool>` **show_line_numbers**
@@ -195,6 +209,10 @@ Member Variables
   .. _class_TextEdit_syntax_highlighting:
 
 - :ref:`bool<class_bool>` **syntax_highlighting**
+
+  .. _class_TextEdit_text:
+
+- :ref:`String<class_string>` **text** - String value of the :ref:`TextEdit<class_textedit>`.
 
   .. _class_TextEdit_v_scroll_speed:
 
@@ -381,6 +399,12 @@ Return the whole text.
 
 Insert a given text at the cursor position.
 
+.. _class_TextEdit_is_context_menu_enabled:
+
+- :ref:`bool<class_bool>` **is_context_menu_enabled** **(** **)**
+
+Returns true if the context menu is enabled.
+
 .. _class_TextEdit_is_highlight_all_occurrences_enabled:
 
 - :ref:`bool<class_bool>` **is_highlight_all_occurrences_enabled** **(** **)** const
@@ -394,6 +418,12 @@ Returns true if highlight all occurrences is enabled.
 .. _class_TextEdit_is_overriding_selected_font_color:
 
 - :ref:`bool<class_bool>` **is_overriding_selected_font_color** **(** **)** const
+
+.. _class_TextEdit_is_readonly:
+
+- :ref:`bool<class_bool>` **is_readonly** **(** **)** const
+
+Return true if the text editor is in read-only mode (see :ref:`set_readonly<class_TextEdit_set_readonly>`).
 
 .. _class_TextEdit_is_selection_active:
 
@@ -450,6 +480,12 @@ Perform selection, from line/column to line/column.
 - void **select_all** **(** **)**
 
 Select all the text.
+
+.. _class_TextEdit_set_context_menu_enabled:
+
+- void **set_context_menu_enabled** **(** :ref:`bool<class_bool>` enable **)**
+
+Set the status of the context menu. When enabled, the context menu will appear when the ``TextEdit`` is right clicked.
 
 .. _class_TextEdit_set_highlight_all_occurrences:
 

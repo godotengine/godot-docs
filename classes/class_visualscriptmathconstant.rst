@@ -38,8 +38,8 @@ Numeric Constants
 
 - **MATH_CONSTANT_ONE** = **0** --- Unity: ``1``
 - **MATH_CONSTANT_PI** = **1** --- Pi: ``3.141593``
-- **MATH_CONSTANT_2PI** = **2** --- Pi times two: ``6.283185``
-- **MATH_CONSTANT_HALF_PI** = **3** --- Pi divided by two: ``1.570796``
+- **MATH_CONSTANT_HALF_PI** = **2** --- Pi divided by two: ``1.570796``
+- **MATH_CONSTANT_TAU** = **3** --- Tau: ``6.283185``
 - **MATH_CONSTANT_E** = **4** --- Natural log: ``2.718282``
 - **MATH_CONSTANT_SQRT2** = **5** --- Square root of two: ``1.414214``
 - **MATH_CONSTANT_INF** = **6** --- Infinity: ``inf``

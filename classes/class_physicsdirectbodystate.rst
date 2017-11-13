@@ -9,7 +9,7 @@ PhysicsDirectBodyState
 
 **Inherits:** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`PhysicsDirectBodyStateSW<class_physicsdirectbodystatesw>`
+**Inherited By:** :ref:`BulletPhysicsDirectBodyState<class_bulletphysicsdirectbodystate>`
 
 **Category:** Core
 

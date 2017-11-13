@@ -9,7 +9,7 @@ PhysicsServer
 
 **Inherits:** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`PhysicsServerSW<class_physicsserversw>`
+**Inherited By:** :ref:`BulletPhysicsServer<class_bulletphysicsserver>`
 
 **Category:** Core
 
@@ -92,6 +92,8 @@ Member Functions
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PhysicsDirectBodyState<class_physicsdirectbodystate>`    | :ref:`body_get_direct_state<class_PhysicsServer_body_get_direct_state>` **(** :ref:`RID<class_rid>` body **)**                                                                                                                                                    |
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                      | :ref:`body_get_kinematic_safe_margin<class_PhysicsServer_body_get_kinematic_safe_margin>` **(** :ref:`RID<class_rid>` body **)** const                                                                                                                            |
++----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                          | :ref:`body_get_max_contacts_reported<class_PhysicsServer_body_get_max_contacts_reported>` **(** :ref:`RID<class_rid>` body **)** const                                                                                                                            |
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                          | :ref:`body_get_mode<class_PhysicsServer_body_get_mode>` **(** :ref:`RID<class_rid>` body **)** const                                                                                                                                                              |
@@ -131,6 +133,8 @@ Member Functions
 | void                                                           | :ref:`body_set_enable_continuous_collision_detection<class_PhysicsServer_body_set_enable_continuous_collision_detection>` **(** :ref:`RID<class_rid>` body, :ref:`bool<class_bool>` enable **)**                                                                  |
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`body_set_force_integration_callback<class_PhysicsServer_body_set_force_integration_callback>` **(** :ref:`RID<class_rid>` body, :ref:`Object<class_object>` receiver, :ref:`String<class_string>` method, :ref:`Variant<class_variant>` userdata=null **)** |
++----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                           | :ref:`body_set_kinematic_safe_margin<class_PhysicsServer_body_set_kinematic_safe_margin>` **(** :ref:`RID<class_rid>` body, :ref:`float<class_float>` margin **)**                                                                                                |
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`body_set_max_contacts_reported<class_PhysicsServer_body_set_max_contacts_reported>` **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` amount **)**                                                                                                    |
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -334,7 +338,8 @@ The higher, the faster.
 - **BODY_MODE_STATIC** = **0** --- Constant for static bodies.
 - **BODY_MODE_KINEMATIC** = **1** --- Constant for kinematic bodies.
 - **BODY_MODE_RIGID** = **2** --- Constant for rigid bodies.
-- **BODY_MODE_CHARACTER** = **3** --- Constant for rigid bodies in character mode. In this mode, a body can not rotate, and only its linear velocity is affected by physics.
+- **BODY_MODE_SOFT** = **3**
+- **BODY_MODE_CHARACTER** = **4** --- Constant for rigid bodies in character mode. In this mode, a body can not rotate, and only its linear velocity is affected by physics.
 - **BODY_PARAM_BOUNCE** = **0** --- Constant to set/get a body's bounce factor.
 - **BODY_PARAM_FRICTION** = **1** --- Constant to set/get a body's friction.
 - **BODY_PARAM_MASS** = **2** --- Constant to set/get a body's mass.
@@ -595,6 +600,10 @@ Returns the physics layer or layers a body can collide with.
 
 Returns the :ref:`PhysicsDirectBodyState<class_physicsdirectbodystate>` of the body.
 
+.. _class_PhysicsServer_body_get_kinematic_safe_margin:
+
+- :ref:`float<class_float>` **body_get_kinematic_safe_margin** **(** :ref:`RID<class_rid>` body **)** const
+
 .. _class_PhysicsServer_body_get_max_contacts_reported:
 
 - :ref:`int<class_int>` **body_get_max_contacts_reported** **(** :ref:`RID<class_rid>` body **)** const
@@ -718,6 +727,10 @@ Continuous collision detection tries to predict where a moving body will collide
 - void **body_set_force_integration_callback** **(** :ref:`RID<class_rid>` body, :ref:`Object<class_object>` receiver, :ref:`String<class_string>` method, :ref:`Variant<class_variant>` userdata=null **)**
 
 Sets the function used to calculate physics for an object, if that object allows it (see :ref:`body_set_omit_force integration<class_PhysicsServer_body_set_omit_force integration>`).
+
+.. _class_PhysicsServer_body_set_kinematic_safe_margin:
+
+- void **body_set_kinematic_safe_margin** **(** :ref:`RID<class_rid>` body, :ref:`float<class_float>` margin **)**
 
 .. _class_PhysicsServer_body_set_max_contacts_reported:
 

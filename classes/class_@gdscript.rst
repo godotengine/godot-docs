@@ -178,7 +178,8 @@ Member Functions
 Numeric Constants
 -----------------
 
-- **PI** = **3.141593** --- Constant that represents how many times the diameter of a circumference fits around its perimeter.
+- **PI** = **3.141593** --- Constant that represents how many times the diameter of a circle fits around its perimeter.
+- **TAU** = **6.283185** --- The circle constant, the circumference of the unit circle.
 - **INF** = **inf** --- A positive infinity. (For negative infinity, use -INF).
 - **NAN** = **nan** --- Macro constant that expands to an expression of type float that represents a NaN.
 

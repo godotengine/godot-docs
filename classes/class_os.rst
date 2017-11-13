@@ -560,7 +560,7 @@ Returns the current time zone as a dictionary with the keys: bias and name.
 
 - :ref:`String<class_string>` **get_unique_id** **(** **)** const
 
-Returns a unique string.
+Returns a string that is unique to the device. Currently only works on Android and iOS. Returns empty string on other platforms.
 
 .. _class_OS_get_unix_time:
 

@@ -9,7 +9,7 @@ StyleBox
 
 **Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`StyleBoxFlat<class_styleboxflat>`, :ref:`StyleBoxTexture<class_styleboxtexture>`, :ref:`StyleBoxEmpty<class_styleboxempty>`
+**Inherited By:** :ref:`StyleBoxLine<class_styleboxline>`, :ref:`StyleBoxFlat<class_styleboxflat>`, :ref:`StyleBoxTexture<class_styleboxtexture>`, :ref:`StyleBoxEmpty<class_styleboxempty>`
 
 **Category:** Core
 
