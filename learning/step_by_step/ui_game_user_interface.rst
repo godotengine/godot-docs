@@ -83,7 +83,7 @@ four containers, we have the base for our GUI scene.
 
    You should have 4 containers that look like this
 
-.. note:: 
+.. note::
 
     We can work this way because we first broke down our UI design
     and took a few moments to think about the containers we'd use. When you
@@ -172,7 +172,7 @@ Select the ``Title`` and in the Inspector, change its ``Stretch Mode``
 property to ``Keep Centered``. Resize it in the viewport with the
 ``Select Mode`` tool so it only takes the left half of the background.
 Next, select the ``Number`` node. In the viewport, click the ``Anchor``
-menu and click ``Full Rect and Fit Parent``. The node will resize to fit
+menu and click ``Full Rect``. The node will resize to fit
 the ``Background``. Head to the Inspector and change its ``Align``
 property to ``Right``, and the ``VAlign`` property to ``Center``. The
 text should snap to the center of the ``Background``'s right edge.
@@ -265,8 +265,8 @@ With the ``Icon`` node selected, in the inspector, scroll to the top to
 see the ``Texture`` slot. Head to the FileSystem dock on the left and
 select the ``bombs_icon.png``. Drag and drop it onto the ``Texture``
 slot. In the Scene Tab select both the ``Icon`` and the ``Number``
-nodes. Click the anchor menu in the toolbar at the top of the viewport
-and select ``Full Rect and Fit Parent``. Both nodes will update to fit
+nodes. Click the Layout menu in the toolbar at the top of the viewport
+and select ``Full Rect``. Both nodes will update to fit
 the size of the ``Background``.
 
 .. figure:: ./img/ui_gui_step_tutorial_counter_design_2.png
@@ -291,10 +291,10 @@ it's as thin as possible. You'll see the gauge prevents you from making
 it too small. A container cannot be smaller than the minimal size of its
 children. The container's margins also weigh in.
 
-Select the Icon, click the Anchor menu, and select
-``Full Rect and Fit Parent`` to re-center it. We need it to anchor to
-the ``Background``'s right edge. Open the Anchor menu again and select
-``Right Wide``. Move the icon up so it is centered vertically with the
+Select the Icon, click the Layout menu, and select
+``Full Rect`` to re-center it. We need it to anchor to
+the ``Background``'s right edge. Open the Layout menu again and select
+``Center Right``. Move the icon up so it is centered vertically with the
 ``Background``.
 
 .. figure:: ./img/ui_gui_step_tutorial_counter_design_4.png
@@ -337,7 +337,7 @@ HBoxContainer. Right click on it and click on ``Save Branch as Scene``.
 Save the scene as ``Bar.tscn``. You should see the node branch turn it
 to a single ``Bar`` node.
 
-.. tip:: 
+.. tip::
 
     A scene is a tree of nodes. The topmost node is the tree's
     **root**, and the children at the bottom of the hierarchy are
@@ -385,7 +385,7 @@ variations manually.
 A reload icon will appear next to the properties you override. Click it
 to reset the value to the parent scene's default.
 
-.. note:: 
+.. note::
 
     Think of scene inheritance like the node tree, or the
     ``extends`` keyword in GDScript. An inherited scene does everything like
@@ -398,7 +398,7 @@ Inherit the Bar Scene to build the LifeBar
 Go to ``Scene -> New Inherited Scene`` to create a new type of ``Bar``.
 Select the Bar scene and open it. You should see a new [unsaved] tab,
 that's like your ``Bar``, but with all nodes except the root in grey.
-Press :kbd:``Ctrl S`` to save the new inherited scene and name it
+Press ``Meta+S`` to save the new inherited scene and name it
 ``LifeBar``.
 
 .. figure:: img/ui_gui_step_tutorial_inherited_scene_parent.png
@@ -412,7 +412,7 @@ other nodes inside the scene should describe the component's structure
 with broad terms, so it works with all inherited scenes. Like our
 ``TextureProgress`` and ``Number`` nodes.
 
-.. note:: 
+.. note::
 
     If you've ever done web design, it's the same spirit as
     working with CSS: you create a base class, and add variations with
@@ -461,10 +461,10 @@ all the resources this node uses and create unique copies for us.
 
    Use this option to create unique copies of the resources for one node
 
-.. tip:: 
+.. tip::
 
     When you duplicate a node from the Scene tree, with
-    :kbd:``Ctrl D``, it shares its resources with the original node. You
+    ``Meta+D``, it shares its resources with the original node. You
     need to use ``Make Sub-Resources Unique`` before you can tweak the
     resources without affecting the source node.
 
@@ -498,7 +498,7 @@ as well.
 
    The Count looks better now it's a bit smaller
 
-.. tip:: 
+.. tip::
 
     The Count node's size affects the position of the
     TextureProgress. As we'll align our bars vertically in a moment, we're
@@ -564,7 +564,7 @@ centers inside the ``HBoxContainer``.
 
    Now both counters have a decent size
 
-.. tip:: 
+.. tip::
 
     Change the ``Min Size`` property of the ``Counters`` container
     to control the height of the counters' background.
@@ -582,7 +582,7 @@ vertically with the Life\` \`Bar.
 
    The 2 bars align perfectly
 
-.. note:: 
+.. note::
 
     We could have setup the ``EnergyBar`` this way a few moments
     ago. But this shows you that you can go back to any scene anytime, tweak
@@ -598,7 +598,7 @@ Head to the FileSystem dock and open ``LevelMockup.tscn``.
 
 Drag-and-drop the ``GUI.tscn`` scene right below the ``bg`` node and
 above the ``Characters``. The GUI will scale to fit the entire viewport.
-Head to the anchor menu and select the ``Top Wide`` option so it anchors
+Head to the Layout menu and select the ``Center Top`` option so it anchors
 to the top edge of the game window. Then resize the GUI to make it as
 small as possible vertically. Now you can see how the interface looks in
 the context of the game.
@@ -610,7 +610,7 @@ find final project `here <#>`__.
 
    The final result
 
-.. note:: 
+.. note::
 
     **A final note about Responsive Design**. If you resize the
     GUI, you'll see the nodes move, but the textures and text won't scale.
