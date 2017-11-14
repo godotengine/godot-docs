@@ -58,7 +58,7 @@ To do this, we will use **signals**.
 Download and explore the start project
 --------------------------------------
 
-Download the Godot project. It contains all the assets and scripts you
+Download the Godot project: :download:`ui_code_life_bar.zip <files/ui_code_life_bar.zip>`. It contains all the assets and scripts you
 need to get started. Extract the .zip archive to get two folders:
 
 -  tutorial/ contains the start and end godot games for this tutorial
