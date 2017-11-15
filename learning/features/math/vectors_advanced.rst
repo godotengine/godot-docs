@@ -145,9 +145,9 @@ degrees to either side:
     # calculate vector from a to b
     var dvec = (point_b - point_a).normalized()
     # rotate 90 degrees
-    var normal = Vector2(dvec.y,-dev.x)
+    var normal = Vector2(dvec.y,-dvec.x)
     # or alternatively
-    # var normal = Vector2(-dvec.y,dev.x)
+    # var normal = Vector2(-dvec.y,dvec.x)
     # depending the desired side of the normal
 
 The rest is the same as the previous example, either point_a or
@@ -169,7 +169,7 @@ Some examples of planes
 Here is a simple example of what planes are useful for. Imagine you have
 a `convex <http://www.mathsisfun.com/definitions/convex.html>`__
 polygon. For example, a rectangle, a trapezoid, a triangle, or just any
-polygon where faces that don't bend inwards.
+polygon where no faces bend inwards.
 
 For every segment of the polygon, we compute the plane that passes by
 that segment. Once we have the list of planes, we can do neat things,
@@ -199,8 +199,8 @@ physics engines use this to detect collision.
 
 The idea is really simple! With a point, just checking if a plane
 returns a positive distance is enough to tell if the point is outside.
-With another polygon, we must find a plane where *all the **other**
-polygon points* return a positive distance to it. This check is
+With another polygon, we must find a plane where *all* *the* ***other***
+*polygon* *points* return a positive distance to it. This check is
 performed with the planes of A against the points of B, and then with
 the planes of B against the points of A:
 
