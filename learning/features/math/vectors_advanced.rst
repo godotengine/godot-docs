@@ -145,9 +145,9 @@ degrees to either side:
     # calculate vector from a to b
     var dvec = (point_b - point_a).normalized()
     # rotate 90 degrees
-    var normal = Vector2(dvec.y,-dvec.x)
+    var normal = Vector2(dvec.y, -dvec.x)
     # or alternatively
-    # var normal = Vector2(-dvec.y,dvec.x)
+    # var normal = Vector2(-dvec.y, dvec.x)
     # depending the desired side of the normal
 
 The rest is the same as the previous example, either point_a or
