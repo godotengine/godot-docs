@@ -6,5 +6,6 @@ Tutorials
    :name: toc-community-tutorials
 
    3d/index
+   vr/index
 
 .. external_resources
