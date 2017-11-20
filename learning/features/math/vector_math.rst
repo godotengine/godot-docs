@@ -60,12 +60,12 @@ Vector Operations
 You can use either method (x and y coordinates or angle and magnitude) to
 refer to a vector, but for convenience programmers typically use the
 coordinate notation. For example, in Godot the origin is the top-left
-corner of the screen, so to place a 2D node 400 pixels to the right and
+corner of the screen, so to place a 2D node named ``Node2D`` 400 pixels to the right and
 300 pixels down, use the following code:
 
 ::
 
-    $Node2D.position = Vector2(400, 300)
+    $Node2D.position = Vector2(400, 300)  # "$" fetches the node by name from the tree
 
 Godot supports both :ref:`Vector2 <class_Vector2>` and
 :ref:`Vector3 <class_Vector3>` for 2D and 3D usage respectively. The same
@@ -123,7 +123,7 @@ Let's look at two common uses for vector addition and subtraction.
 
 - Movement
 
-A vector can represent **any** quantity with a magnitude and direction. In
+A vector can represent **any** quantity with a magnitude and direction. Typical examples are: position, direction, velocity, acceleration, force etc. In
 this image, the spaceship at step 1 has a position vector of ``(1,3)`` and
 a velocity vector of ``(2,1)``. The velocity vector represents how far the
 ship moves each step. We can find the position for step 2 by adding
@@ -161,7 +161,7 @@ by its magnitude:
 ::
 
     var a = Vector2(2, 4)
-    var m = sqrt(a.x*a.x + a.y*a.y)
+    var m = sqrt(a.x*a.x + a.y*a.y)  # get magnitude "m" using the Pythagorean theorem 
     a.x /= m
     a.y /= m
 
@@ -198,7 +198,7 @@ to handle this. Here is a GDScript example of the diagram above using a
 
 ::
 
-    var collision = move_and_collide(velocity * delta)
+    var collision = move_and_collide(velocity * delta)  # object "collision" retains information about the collision
     if collision:
         var reflect = collision.remainder.bounce(collision.normal)
         velocity = velocity.bounce(collision.normal)
@@ -243,7 +243,7 @@ Facing
 
 We can use this fact to detect whether an object is facing toward another
 object. In the diagram below, the player ``P`` is trying to avoid the
-zombies ``A`` and ``B``. Can the zombies see the player?
+zombies ``A`` and ``B``. Assuming zombies have a field of view of **180°**, can they see the player?
 
 .. image:: img/vector_facing2.png
 
