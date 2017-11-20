@@ -45,7 +45,7 @@ necessarily simpler under the hood, but well hidden and presented as a
 nice and simple API).
 
 Physics process
-~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 To manage the logic of a kinematic body or character, it is always
 advised to use physics process, because it's called before physics step and its execution is
