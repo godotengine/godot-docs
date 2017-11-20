@@ -8,6 +8,6 @@
    introduction_to_3d
    3d_performance_and_limitations
    spatial_material
-   shader_materials
+   lighting
    high_dynamic_range
    using_gridmaps
