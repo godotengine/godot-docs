@@ -13,7 +13,6 @@ Engine features
    viewports/index
    inputs/index
    animation/index
-   lighting/index
    shading/index
    networking/index
    platform/index
