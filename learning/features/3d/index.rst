@@ -8,6 +8,7 @@
    introduction_to_3d
    3d_performance_and_limitations
    spatial_material
-   lighting
+   lights_and_shadows
+   reflection_probes
    high_dynamic_range
    using_gridmaps
