@@ -54,11 +54,11 @@ Below is an image of how tweaking bias looks like. Default values work for most 
 
 .. image:: img/shadow_bias.png
 
-Finally, if gaps cant be solved, the Contact option can help:
+Finally, if gaps cant be solved, the **Contact** option can help:
 
 .. image:: img/shadow_contact.png
 
-Any sort of bias issues can always be fixed by increasing the shadow map resolution, although that may run worse in lower end hardware.
+Any sort of bias issues can always be fixed by increasing the shadow map resolution, although that may lead to decreased peformance on low-end hardware.
 
 Directional light
 ~~~~~~~~~~~~~~~~~
@@ -99,13 +99,13 @@ To control PSSM, a number of parameters are exposed:
 
 .. image:: img/directional_shadow_params.png
 
-Each split distance is controlled relative to the camera far (or max distance), so 0 is where the eye and 1 is where the shadow ends far away.
-Default values generally work well, but tweaking the first split a bit is often common to give more detail to close objects.
+Each split distance is controlled relative to the camera far (or shadow **Max Distance** if greater than zero), so *0.0* is the eye position and *1.0* is where the shadow ends at a distance.
+Splits are in-between. Default values generally work well, but tweaking the first split a bit is common to give more detail to close objects (like a character in a third person game).
 
-Always make sure to set a shadow max distance according to what the scene needs. The closer the max distance, the higher quality they shadows will have.
+Always make sure to set a shadow *Max Distance* according to what the scene needs. The closer the max distance, the higher quality they shadows will have.
 
-Sometimes, the transition between a split and the next can look bad. To fix this, the **"Blend Splits"** option can be turned own, which sacrifices detail for smoother
-transitions.
+Sometimes, the transition between a split and the next can look bad. To fix this, the **"Blend Splits"** option can be turned own, which sacrifices detail in exchange for smoother
+transitions:
 
 .. image:: img/blend_splits.png
 
@@ -116,8 +116,13 @@ the shadow a bit thinner.
 
 The **"Bias Split Scale"** parameter can control extra bias for the splits that are far away. If self shadowing occurs only on the splits far away, this value can fix them.
 
-Finally, the **"Depth Range"** setting allows choosing between a stable shadow with motion, or maximizing the depth range. The former ensures that, when the camera moves, the blockyness
-of the shadow does not appear to wobble, while the later ensures more resolution (which can compensate the wobbliness). Just experiment which setting works better for your scene.
+Finally, the **"Depth Range"** has to settings:
+
+- **Stable**: Keeps the shadow stable while the camera moves, the blocks that appear in the outline when close to the shadow edges remain in-place. This is the default and generally desired,
+but it reduces the effective shadow resolution.
+- **Optimized**: Triest to achieve the maximum resolution available at any given time. This may result in a "moving saw" effect on shadow edges, but at the same time the shadow looks more detailed (so this effect may be subtle enough to be forgiven).
+
+Just experiment which setting works better for your scene.
 
 Shadowmap size for directional lights can be changed in Project Settings -> Rendering -> Quality:
 
@@ -136,7 +141,7 @@ radius .
 In real life, light attenuation is an inverse function, which means omni lights don't really have a radius.
 This is a problem, because it means computing several omni lights would become really demanding.
 
-To solve this, a radius is introduced, together with an attenuation function. 
+To solve this, a *Range* is introduced, together with an attenuation function. 
 
 .. image:: img/light_omni_params.png
 
@@ -151,13 +156,13 @@ Omni Shadow Mapping
 Omni light shadow mapping is relatively straightforward, as it just works. The main issue that needs to be
 considered is the algorithm used to render it. 
 
-Omni Shadows can be rendered as either "Dual Paraboloid" or "Cube Mapped". The former renders very quickly but can cause deformations,
+Omni Shadows can be rendered as either **"Dual Paraboloid" or "Cube Mapped"**. The former renders very quickly but can cause deformations,
 while the later is more correct but more costly. 
 
 .. image:: img/shadow_omni_dp_cm.png
 
-If the objects being renderer are mostly irregular, Dual Paraboloid is usually enough. In any case, shadows are often cached too, so it may
-not make much of a difference (more on that later).
+If the objects being renderer are mostly irregular, Dual Paraboloid is usually enough. In any case, as these shadows are cached in a shadow atlas (more on that at the end), it
+may not make a difference in performance for most scenes.
 
 
 Spot light
@@ -165,7 +170,7 @@ Spot light
 
 Spot lights are similar to omni lights, except they emit light only into a cone
 (or "cutoff"). They are useful to simulate flashlights,
-car lights, refletors, spots, etc. This type of light is also attenuated towards the
+car lights, reflectors, spots, etc. This type of light is also attenuated towards the
 opposite direction it points to.
 
 .. image:: img/light_spot.png
@@ -179,7 +184,7 @@ Spot lights share the same **Range** and **Attenuation** as **OmniLight**, and a
 Spot Shadow Mapping
 ^^^^^^^^^^^^^^^^^^^
 
-Spots dont need any parameters for shadow mapping, they should just work. Keep in mind that, at more than 89 degrees, shadows
+Spots dont need any parameters for shadow mapping, they should just work. Keep in mind that, at more than 89 degrees of aperture, shadows
 stop functioning for spots, and you should consider using an Omni light.
 
 Shadow Atlas
@@ -198,9 +203,8 @@ Each quadrant, can be subdivided to allocate any number of shadow maps, followin
 
 .. image:: img/shadow_quadrants2.png
 
-The allocation logic is simple, the biggest shadow map represents a light the size of the screen (or bigger), and
-as soon as lights get further away from the screen (hence) smaller shadow mapps represent slots for lights that
-appear smaller on screen.
+The allocation logic is simple, the biggest shadow map size (when no subdivision is used) represents a light the size of the screen (or bigger).
+Subdivisions (smaller maps) represent shadows for lights that are further away from view and proportionally smaller.
 
 Every frame, the following logic is done for all lights:
 
@@ -213,10 +217,16 @@ If the slots in a quadrant are full, lights are pushed back to smaller slots dep
 This allocation strategy works for most games, but you may to use a separate one in some cases (as example, a top-down game where
 all lights are around the same size and quadrands may have all the same subdivision).
 
+Shadow Filter Quality
+~~~~~~~~~~~~~~~~~~~~~
 
+The filter quality of shadows can be tweaked. This can be found in Project Settings -> Rendering -> Quality -> Shadows. Godot supports no filter, PCF5 and PCF13.
 
+.. image:: img/shadow_pcf1.png
 
+It affects the blockyness of the shadow outline:
 
+.. image:: img/shadow_pcf2.png
 
 
 
