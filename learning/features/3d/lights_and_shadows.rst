@@ -118,8 +118,7 @@ The **"Bias Split Scale"** parameter can control extra bias for the splits that 
 
 Finally, the **"Depth Range"** has to settings:
 
-- **Stable**: Keeps the shadow stable while the camera moves, the blocks that appear in the outline when close to the shadow edges remain in-place. This is the default and generally desired,
-but it reduces the effective shadow resolution.
+- **Stable**: Keeps the shadow stable while the camera moves, the blocks that appear in the outline when close to the shadow edges remain in-place. This is the default and generally desired, but it reduces the effective shadow resolution.
 - **Optimized**: Triest to achieve the maximum resolution available at any given time. This may result in a "moving saw" effect on shadow edges, but at the same time the shadow looks more detailed (so this effect may be subtle enough to be forgiven).
 
 Just experiment which setting works better for your scene.

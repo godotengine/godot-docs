@@ -1,7 +1,7 @@
 .. _doc_reflection_probes:
 
 Reflection Probes
-=========
+=================
 
 Introduction
 ------------
