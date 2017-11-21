@@ -10,5 +10,6 @@
    spatial_material
    lights_and_shadows
    reflection_probes
+   gi_probes
    high_dynamic_range
    using_gridmaps
