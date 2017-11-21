@@ -123,7 +123,7 @@ Let's look at two common uses for vector addition and subtraction.
 
 - Movement
 
-A vector can represent **any** quantity with a magnitude and direction. Typical examples are: position, velocity, acceleration and force. In
+A vector can represent **any** quantity with a magnitude and direction. Typical examples are: position, velocity, acceleration, and force. In
 this image, the spaceship at step 1 has a position vector of ``(1,3)`` and
 a velocity vector of ``(2,1)``. The velocity vector represents how far the
 ship moves each step. We can find the position for step 2 by adding
