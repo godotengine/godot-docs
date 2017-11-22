@@ -5,3 +5,6 @@ __pycache__
 *.pyc
 *~
 .directory
+
+# Finder (MacOS) makes these automatically.
+.DS_Store
