@@ -262,7 +262,9 @@ The final script should look basically like this:
 
     using Godot;
 
-    public class SayHello : Panel
+    // IMPORTANT: the name of the class MUST match the filename exactly.
+    // this is case sensitive!
+    public class sayhello : Panel
     {
         public void _OnButtonPressed()
         {
