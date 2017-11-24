@@ -169,12 +169,11 @@ Our job is to add the missing text between these marks:
 -  <description></description>
 -  <brief_description></brief_description>
 -  <constant></constant>
+-  <method></method>
 -  <member></member>
 -  <signal></signal>
 
 Write in a clear and simple language. Always follow the :ref:`class_reference_styleguide` to keep your descriptions short and easy to read. **Do not leave empty lines** in the descriptions: each line in the XML file will result in a new paragraph. 
-
-.. warning:: In Godot 3.0, the <member> tags replace the old setters and getters. As soon as we moved all descriptions to the <member> tags, most methods starting with set\_ or get\_ will disappear. Skip them for now, and document all <member> tags.
 
 Here's how a class looks like in XML:
 
