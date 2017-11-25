@@ -93,7 +93,7 @@ After all the rendering is done, the linear-space rendered image must be
 converted back to sRGB. To do this, simply enable sRGB conversion in the
 current :ref:`Environment <class_Environment>` (more on that below).
 
-Keep in mind that sRGB [STRIKEOUT:> Linear and Linear]> sRGB conversions
+Keep in mind that sRGB -> Linear and Linear -> sRGB conversions
 must always be **both** enabled. Failing to enable one of them will
 result in horrible visuals suitable only for avant garde experimental
 indie games.

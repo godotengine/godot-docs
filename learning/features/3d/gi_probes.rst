@@ -6,7 +6,7 @@ GI Probes
 Introduction
 ------------
 
-Just like with :ref:`doc_reflection_probes`, and as stated in the :ref:`doc_spatial_materials`, objects can show reflected or diffuse light.
+Just like with :ref:`doc_reflection_probes`, and as stated in the :ref:`doc_spatial_material`, objects can show reflected or diffuse light.
 GI Probes are similar to Reflection Probes, but they use a different and more complex technique to produce indirect light and reflections.
 
 The strength of GI Probes are real-time, high quality, indirect light. While the scene needs a quick pre-bake for the static objects that
