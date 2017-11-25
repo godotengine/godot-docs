@@ -11,5 +11,6 @@
    lights_and_shadows
    reflection_probes
    gi_probes
+   environment_and_post_processing
    high_dynamic_range
    using_gridmaps
