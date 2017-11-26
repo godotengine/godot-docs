@@ -3,7 +3,7 @@
 Environment and Post-Processing
 ===============================
 
-Godot 3 provides a redesigned Environment resource, as well as a brand new post-processing system with many available effects, right out of the box.
+Godot 3 provides a redesigned Environment resource, as well as a brand new post-processing system with many available effects right out of the box.
 
 Environment
 -----------
@@ -24,11 +24,11 @@ This is mostly useful when wanting to override an existing environment, but in g
 WorldEnvironment Node
 ^^^^^^^^^^^^^^^^^^^^^
 
-The WorldEnvironment node can be added to any scene, but only one per active scene tree can exist. Adding more than one will result in a warning.
+The WorldEnvironment node can be added to any scene, but only one can exist per active scene tree. Adding more than one will result in a warning.
 
 .. image:: img/environment_world.png
 
-Any Environment set to it more priority than the default Environment (explained below). The fact that it can be configured per-scene makes it the most pratical.
+Any Environment added has higher priority than the default Environment (explained below). This means it can be overriden on a per-scene basis, which makes it quite useful.
 
 
 Default Environment
@@ -39,7 +39,7 @@ Just head to Project Settings -> Rendering -> Environment:
 
 .. image:: img/environment_default.png
 
-New projects created from the Project Manager come with a default environment. If one needs to be created, save it to disk before referencing it here.
+New projects created from the Project Manager come with a default environment (``default_env.tres``). If one needs to be created, save it to disk before referencing it here.
 
 Environment Options
 -------------------
@@ -50,8 +50,7 @@ Following is a detailed description of all environment options and how they are 
 Background
 ^^^^^^^^^^
 
-The Background section contains settings on how to fill the background (parts of the screen where objects where not drawn). In Godot 3.0, the background not only serves the purpose
-of displaying an image or color, it can affects how objects are affected by ambient and reflected light.
+The Background section contains settings on how to fill the background (parts of the screen where objects where not drawn). In Godot 3.0, the background not only serves the purpose of displaying an image or color, it can change how objects are affected by ambient and reflected light.
 
 .. image:: img/environment_background1.png
 
@@ -73,15 +72,15 @@ There are two types of ambient light, the *Ambient Color* (which is just a const
 .. image:: img/environment_ambient.png
 
 
-Why a *Sky* is set as background, it's possible to blend between color and sky using the **Sky Contribution** setting (this value is 1.0 by default for convenience, so only light ambient affects objects).
+When a *Sky* is set as background, it's possible to blend between ambient color and sky using the **Sky Contribution** setting (this value is 1.0 by default for convenience, so only sky affects objects).
 
-Here is a comparison of how different ambient affect a scene:
+Here is a comparison of how different ambient light affects a scene:
 
 .. image:: img/environment_ambient2.png
 
 Finally there is a **Energy** setting, which is just a multiplier, useful when working with HDR.
 
-In general, unless doing simple scenes, large exteriors or for performance reasons (ambient light is cheap), using ambient does not provide the best lighting quality. It's better to generate
+In general, ambient light should only be used for simple scenes, large exteriors or for performance reasons (ambient light is cheap), as it does not provide the best lighting quality. It's better to generate
 ambient light from ReflectionProbe or GIProbe, which will more faithfully simulate how indirect light propagates. Below is a comparision in quality between using a flat ambient color and a GIProbe:
 
 .. image:: img/environment_ambient_comparison.png
@@ -93,8 +92,8 @@ Fog
 
 Fog, just as in real life, makes distant objects fade away into an uniform color. The physical effect is actually pretty complex, but Godot provides a good approximation. There are two kinds of fog in Godot:
 
-- **Depth Fog:** This one applies based on the distance from the camera.
-- **Height Fog:** This one applies to any objects below (or above) a certain height, regardless of the distance from the camera.
+- **Depth Fog:** This one is applied based on the distance from the camera.
+- **Height Fog:** This one is applied to any objects below (or above) a certain height, regardless of the distance from the camera.
 
 .. image:: img/environment_fog_depth_height.png
 
@@ -121,8 +120,7 @@ Auto Exposure (HDR)
 ^^^^^^^^^^^^^^^^^^^
 
 Even though, in most cases, lighting and texturing are heavily artist controlled, Godot suports a simple high dynamic range implementation with auto exposure mechanism. This is generally used for the
-sake of realism, when combining interior areas with low light and outdoors. Auto expure simulates the camera (or eye) effort to adapt between light and dark locations.
-different amount of light.
+sake of realism, when combining interior areas with low light and outdoors. Auto expure simulates the camera (or eye) effort to adapt between light and dark locations and their different amount of light.
 
 .. image:: img/environment_hdr_autoexp.gif
 
@@ -145,17 +143,17 @@ The user-controllable values in the Auto Exposure section come with sensible def
 Mid and Post-Processing Effects
 -------------------------------
 
-A large amount of common mid and post-processing effects are supported in Environment.
+A large amount of widely-used mid and post-processing effects are supported in Environment.
 
 Screen-Space Reflections (SSR)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 While Godot supports three sources of reflection data (Sky, ReflectionProbe and GIProbe), they may not provide enough detail for all situations. Scenarios
-where Screen Space Refletions makw the most sense is when objects are in contact with each other (object over floor, over a table, floating on water, etc). 
+where Screen Space Refletions make the most sense are when objects are in contact with each other (object over floor, over a table, floating on water, etc). 
 
 .. image:: img/environment_ssr.png
 
-The other advantage to using it (even if only enabled to a minimum), is that it works in real-time (while the other types of reflections are pre-computed). This is great to
+The other advantage (even if only enabled to a minimum), is that it works in real-time (while the other types of reflections are pre-computed). This is great to
 make characters, cars, etc. reflect when moving around.
 
 A few user-controlled parameters are available to better tweak the technique:
@@ -173,7 +171,7 @@ Screen-Space Ambient Occlusion (SSAO)
 
 As mentioned in the **Ambient** section, areas where light from light nodes does not reach (either because it's outside the radius or shadowed) are lit with ambient light. Godot can simulate this using GIProbe, ReflectionProbe, the Sky or a constant ambient color. The problem, however, is that all the methods proposed before act more on larger scale (large regions) than at the smaller geometry level.
 
-Constant ambient color and Sky are uniform and the same everywhere, while GI and Reflection probe have more local detail, but not enough to simulate situations where light is not able to fill inside hollow or concave features.
+Constant ambient color and Sky are uniform and the same everywhere, while GI and Reflection probes have more local detail, but not enough to simulate situations where light is not able to fill inside hollow or concave features.
 
 This can be simulated with Screen Space Ambient Occlusion. As you can see in the image below, the goal of it is to make sure concave areas are darker, simulating a narrower path for the light to enter:
 
@@ -187,7 +185,7 @@ SSAO looks best when combined with a real source of indirect light, like GIProbe
 
 .. image:: img/environment_ssao2.png
 
-Tweaking SSAO is made possible with several available parameters:
+Tweaking SSAO is possible with several parameters:
 
 .. image:: img/environment_ssao_parameters.png
 
@@ -266,7 +264,7 @@ The real strength of this system, though, is to combine levels to create more in
 .. image:: img/environment_glow_layers2.png
  
 Finally, as the highest layers are created by stretching small blurred images, it is possible that some blockyness may be visible. Enabling **Bicubic Upscaling* gets rids of the it,
-at a minimum performance cost.
+at a minimal performance cost.
 
 .. image:: img/environment_glow_bicubic.png
 
