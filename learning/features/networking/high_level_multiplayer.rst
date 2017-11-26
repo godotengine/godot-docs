@@ -3,63 +3,100 @@
 High level multiplayer
 ======================
 
-Why high level?
+High level vs low level API
 ----------------
 
-Godot always supported standard networking via UDP, TCP and some high level protocols such as SSL and HTTP.
-These protocols are very flexible and should support everything. However, for games themselves (or unless you are working
-with a custom server), using them to synchronize game state manually can be an enormous amount of work.
+Godot always supported standard low-level networking via UDP, TCP and some higher level protocols such as SSL and HTTP.
+These protocols are flexible and can be used for (almost) anything. However for games (unless you are working
+with a custom server) using them to synchronize game state manually can be a large amount of work.
+
 This is due to the inherent limitations of the protocols:
 
-- TCP ensures packets will always arrive, but latency is generally high due to error correction.
-  It's also quite a complex protocol because it understands what a "connection" is.
-- UDP is a simpler protocol which only sends packets (no connection required). The fact it does no error correction
-  makes it pretty quick (low latency), but it has the disadvantage that packets may be lost along the way.
+- TCP ensures packets will always arrive reliably and in order, but latency is generally higher due to error correction.
+  It's also quite a complex protocol because it understands what a "connection" is, and optimizes for goals that often don't suit applications like multiplayer games. Packets are buffered to be sent in larger batches, trading less per-packet overhead for higher latency. This can be useful for things like HTTP, but generally not for games. Some of this can be configured and disabled (e.g. by disabling "Nagle's algorithm" for the TCP connection).
+- UDP is a simpler protocol which only sends packets (and has no concept of a "connection"). No error correction
+  makes it pretty quick (low latency), but packets may be lost along the way or received in the wrong order.
   Added to that, the MTU (maximum packet size) for UDP is generally low (only a few hundred bytes), so transmitting
-  larger packets means splitting them, reorganizing them, retrying if a part fails, etc.
+  larger packets means splitting them, reorganizing them and retrying if a part fails.
+
+In general, TCP can be thought of as reliable, ordered, and slow; UDP as unreliable, unordered and fast.
+Because of the large difference in performance it often makes sense to re-build the parts of TCP wanted for games (optional reliability and packet order) while avoiding the unwanted parts (congestion/traffic control features, Nagle's algorithm, etc). Due to this most game engines come with such an implementation, and Godot is no exception.
+
+In summary you can use the low-level networking API for maximum control and implement everything on top of bare network protocols or use the high-level API based on :ref:`SceneTree <class_SceneTree>` that does most of the heavy lifting behind the scenes in a generally optimized way.
+
+.. note:: More about TCP/IP, UDP, and networking:
+	  https://gafferongames.com/post/udp_vs_tcp/
+          Gaffer On Games has a lot of useful articles about networking in Games (https://gafferongames.com/tags/networking),
+	  including the widely referenced one on networking models in games:
+	  https://gafferongames.com/post/what_every_programmer_needs_to_know_about_game_networking/
+	  If you want to use your low-level networking library of choice instead of Godot's built-in networking,
+	  see here for an example:
+	  https://github.com/PerduGames/gdnet3
+
+.. warning:: Adding networking to your game comes with some responsibility.
+	     It can make your application vulnerable if done wrong and may lead to cheats or exploits.
+	     It may even allow an attacker to compromise the machines your application runs on
+	     and use your servers to send spam, attack others or steal your users data if they play your game.
+	     
+	     This is always the case when networking is involved and has nothing to do with Godot.
+	     You can of course experiment, but when you release a networked application,
+	     always take care of any possible security concerns.
 
 Mid level abstraction
 ---------------------
 
-Before going into how we would like to synchronize a game across the network, it would be wise to understand how the base network API 
-for synchronization works. Godot uses a mid-level object :ref:`NetworkedMultiplayerPeer <class_NetworkedMultiplayerPeer>`.
+Before going into how we would like to synchronize a game across the network, it can be helpful to understand how the base network API for synchronization works.
+
+Godot uses a mid-level object :ref:`NetworkedMultiplayerPeer <class_NetworkedMultiplayerPeer>`.
 This object is not meant to be created directly, but is designed so that several implementations can provide it:
 
 .. image:: img/nmpeer.png
 
-This object extends from :ref:`PacketPeer <class_PacketPeer>`, so it has all the useful methods for serializing data you are used to, thanks to
-Godot's beautiful object-oriented design. It adds methods to set a peer, transfer mode, etc. It also includes signals that will let you know
-when peers connect or disconnect.
+This object extends from :ref:`PacketPeer <class_PacketPeer>`, so it inherits all the useful methods for serializing, sending and receiving data. On top of that, it adds methods to set a peer, transfer mode, etc. It also includes signals that will let you know when peers connect or disconnect.
 
-The idea is that this class interface can abstract most types of network layers, topologies and libraries. By default Godot 
-provides an implementation based on ENet (:ref:`NetworkedMultiplayerEnet <class_NetworkedMultiplayerENet>`), but the plan
-is that this could support mobile APIs (for adhoc WiFi, Bluetooth), custom device/console networking APIs, etc.
+This class interface can abstract most types of network layers, topologies and libraries. By default Godot 
+provides an implementation based on ENet (:ref:`NetworkedMultiplayerEnet <class_NetworkedMultiplayerENet>`), but this could be used to implement mobile APIs (for adhoc WiFi, Bluetooth) or custom device/console-specific networking APIs.
 
 For most common cases, using this object directly is discouraged, as Godot provides even higher level networking facilities. 
-Yet it is made available to scripting in case a game has specific needs for a lower level API.
+Yet it is made available in case a game has specific needs for a lower level API.
 
 Initializing the network
 ------------------------
 
 The object that controls networking in Godot is the same one that controls everything tree-related: :ref:`SceneTree <class_SceneTree>`.
 
-To initialize high level networking, SceneTree must be provided a NetworkedMultiplayerPeer object.
+To initialize high level networking, the SceneTree must be provided a NetworkedMultiplayerPeer object.
 
-Initializing as a server, listening on the given port, with a given maximum of 4 peers:
+To create that object it first has to be initialized as a server or client.
+
+Initializing as a server, listening on the given port, with a given maximum number of peers:
 
 ::
 
-    var host = NetworkedMultiplayerENet.new()
-    host.create_server(SERVER_PORT, 4)
-    get_tree().set_network_peer(host)
+    var peer = NetworkedMultiplayerENet.new()
+    peer.create_server(SERVER_PORT, MAX_PLAYERS)
+    get_tree().set_network_peer(peer)
 
 Initializing as a client, connecting to a given IP and port:
 
 ::
 
-    var host = NetworkedMultiplayerENet.new()
-    host.create_client(ip, SERVER_PORT)
-    get_tree().set_network_peer(host)
+    var peer = NetworkedMultiplayerENet.new()
+    peer.create_client(SERVER_IP, SERVER_PORT)
+    get_tree().set_network_peer(peer)
+
+Note that it may make sense to store the local network peer instance on the SceneTree to be able to access it later,
+as there currently is no `get_tree().get_network_peer()`. This can be done via SceneTree's metadata feature:
+
+::
+
+    get_tree().set_meta("network_peer", peer)
+
+Checking whether the tree is initialized as a server or client:
+
+::
+
+    get_tree().is_networking_server()
 
 Terminating the networking feature:
 
@@ -67,20 +104,24 @@ Terminating the networking feature:
 
     get_tree().set_network_peer(null)
 
+(Although it may make sense to send a message first to let the other peers know you're going away instead of letting the connection close or timeout, depending on your game.)
+
 Managing connections
 --------------------
 
 Some games accept connections at any time, others during the lobby phase. Godot can be requested to no longer accept 
-connections at any point. To manage who connects, Godot provides the following signals in SceneTree:
+connections at any point (see `set_refuse_new_network_connections(bool)` and related methods on :ref:`SceneTree <class_SceneTree>`). To manage who connects, Godot provides the following signals in SceneTree:
 
 Server and Clients:
 
 - `network_peer_connected(int id)`
 - `network_peer_disconnected(int id)`
 
-The above signals are called in every peer connected to the server when a new one connects or disconnects.
-It is very useful to keep track of the IDs above (clients will connect with non-zero and non-one unique ID),
-while the server is warranted to always use ID=1. These IDs will be useful mostly for lobby management.
+The above signals are called on every peer connected to the server (including on the server) when a new peer connects or disconnects.
+Clients will connect with a unique ID greater than 1, while network peer ID 1 is always the server.
+Anything below 1 should be handled as invalid.
+You can retrieve the ID for the local system via :ref:`SceneTree.get_network_unique_id() <class_SceneTree_get_network_unique_id>`.
+These IDs will be useful mostly for lobby management and should generally be stored as they identify connected peers and thus players. You can also use IDs to send messages only to certain peers.
 
 Clients:
 
@@ -88,12 +129,12 @@ Clients:
 - `connection_failed`
 - `server_disconnected`
 
-Again, all these functions are mainly useful for lobby management, or for adding/removing players on the fly. 
-For these tasks, the server clearly has to work as a server and you have do tasks manually such as sending a new
-player that connected information about other already connected players (e.g. their names, stats, etc).
+Again, all these functions are mainly useful for lobby management or for adding/removing players on the fly. 
+For these tasks the server clearly has to work as a server and you have do tasks manually such as sending a newly connected
+player information about other already connected players (e.g. their names, stats, etc).
 
-Lobby can be implemented any way you want, but the most common way is to use a node with the same name across scenes in all peers.
-Generally, an autoloaded node/singleton is a great fit for this, to always have access to e.g. "/root/lobby".
+Lobbies can be implemented any way you want, but the most common way is to use a node with the same name across scenes in all peers.
+Generally, an autoloaded node/singleton is a great fit for this, to always have access to, e.g. "/root/lobby".
 
 RPC
 ---
@@ -118,8 +159,8 @@ Functions can be called in two fashions:
 - Reliable: the function call will arrive no matter what, but may take longer because it will be re-transmitted in case of failure.
 - Unreliable: if the function call does not arrive, it will not be re-transmitted, but if it arrives it will do it quickly.
 
-In most cases, Reliable is desired. Unreliable is mostly useful when synchronizing objects that move (sync must happen constantly, 
-and if a packet is lost, it's not that bad because a new one will eventually arrive).
+In most cases, reliable is desired. Unreliable is mostly useful when synchronizing object positions (sync must happen constantly, 
+and if a packet is lost, it's not that bad because a new one will eventually arrive and it would likely be outdated because the object moved further in the meantime, even if it was resent reliably).
 
 Back to lobby
 -------------
@@ -181,7 +222,7 @@ You might have noticed already something different, which is the usage of the `r
 
     remote func register_player(id, info):
   
-This keyword has two main uses. The first is to let Godot know that this function can be called from RPC. If no keywords are added,
+This keyword has two main uses. The first is to let Godot know that this function can be called from RPC. If no keywords are added
 Godot will block any attempts to call functions for security. This makes security work a lot easier (so a client can't call a function
 to delete a file on another client's system).
 
@@ -198,14 +239,14 @@ The `sync` keyword means that the `rpc()` call will go via network and execute r
 
 The others will be explained further down.
 
-With this, lobby management should be more or less explained. Once you have your game going, you will most likely want to add some
+With this, lobby management should be more or less explained. Once you have your game going you will most likely want to add some
 extra security to make sure clients don't do anything funny (just validate the info they send from time to time, or before 
-game start). For the sake of simplicity and the fact each game will share different information, this was not done here.
+game start). For the sake of simplicity and because each game will share different information, this is not shown here.
 
 Starting the game
 -----------------
 
-Once enough people has gathered in the lobby, the server will most likely want to start the game. This is honestly nothing
+Once enough players have gathered in the lobby, the server should probably start the game. This is nothing
 special in itself, but we'll explain a few nice tricks that can be done at this point to make your life much easier.
 
 Player scenes
@@ -215,7 +256,7 @@ In most games, each player will likely have its own scene. Remember that this is
 you need to instance **one scene for each player connected to it**. For a 4 player game, each peer needs to instance 4 player nodes.
 
 So, how to name such nodes? In Godot nodes need to have an unique name. It must also be relatively easy for a player to tell which
-nodes represent each player id.
+nodes represent each player ID.
 
 The solution is to simply name the *root nodes of the instanced player scenes as their network ID*. This way, they will be the same in 
 every peer and RPC will work great! Here is an example:
@@ -223,31 +264,36 @@ every peer and RPC will work great! Here is an example:
 ::
 
     remote func pre_configure_game():
+    	var selfPeerID = get_tree().get_network_unique_id()
+	
         # Load world
         var world = load(which_level).instance()
         get_node("/root").add_child(world)
 
         # Load my player
         var my_player = preload("res://player.tscn").instance()
-        my_player.set_name(str(get_tree().get_network_unique_id()))
-        my_player.set_network_mode(NETWORK_MODE_MASTER) # Will be explained later
+        my_player.set_name(str(selfPeerID))
+        my_player.set_network_master(selfPeerID) # Will be explained later
         get_node("/root/world/players").add_child(my_player)
 
         # Load other players
         for p in player_info:
             var player = preload("res://player.tscn").instance()
             player.set_name(str(p))
-            player.set_network_mode(NETWORK_MODE_SLAVE) # Will be explained later
             get_node("/root/world/players").add_child(player)
 
         # Tell server (remember, server is always ID=1) that this peer is done pre-configuring
-        rpc_id(1, "done_preconfiguring", get_tree().get_network_unique_id())
+        rpc_id(1, "done_preconfiguring", selfPeerID)
 	
-Synchronized game start
+
+.. note:: Depending on when you execute pre_configure_game() you may need to change any calls to ``add_child()``
+          to be deferred via ``call_deferred()`` as the SceneTree is locked while the scene is being created (e.g. when ``_ready()`` is being called).
+
+Synchronizing game start
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Setting up players might take different amount of time on every peer due to lag and any large number of reasons.
-To make sure the game will actually start when everyone is ready, pausing the game can be very useful:
+Setting up players might take different amount of time on every peer due to lag, different hardware, or other reasons.
+To make sure the game will actually start when everyone is ready, pausing the game until all players are ready can be very useful:
 
 ::
 
@@ -278,46 +324,49 @@ When the server gets the OK from all the peers, it can tell them to start, as fo
 Synchronizing the game
 ----------------------
 
-In most games, the goal of supporting multiplayer neworking is to make sure that the game runs synchronized in all the peers playing it.
-Besides supplying an RPC and remote member variable set implementation, Godot adds the concept of master and slave network modes.
+In most games the goal of multiplayer networking is that the game runs synchronized on all the peers playing it.
+Besides supplying an RPC and remote member variable set implementation, Godot adds the concept network masters.
 
-Master and slave modes
+Network master
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Very similarly to how the pause mode works in regular nodes (with pause, process, inherit modes), nodes can be set a "network mode"
-with the function :ref:`Node.set_network_mode(mode) <class_Node_set_network_mode>`. The mode can be: Master, Slave and Inherit.
+The network master of a node is the peer that has the ultimate authority over it.
 
-The Inherit mode assumes the value of the parent node. If the parent node is also in this mode, it will go up in the parenthood chain until it finds a specific mode.
-If no non-inherit mode is found, Master will be assumed for the server and Slave for clients.
+When not explicitly set the network master is inherited from the parent node, which if not changed is always going to be the server (ID 1). Thus the server has authority over all nodes by default.
 
-This means that, upon loading scenes, the server is by default the master and clients are the slaves. Checking that a node is in master mode is done by calling:
+The network master can be set
+with the function :ref:`Node.set_network_master(id, recursive) <class_Node_set_network_master>` (recursive is true by default and means the network master is recursively set on all child nodes of the node as well).
+
+Checking that a specific node instance on a peer is the network master for this node for all connected peers is done by calling:
 
 ::
 
-    is_network_master()
+    :ref:`Node.is_network_master() <class_Node_is_network_master>`
 	
-If you have paid attention to the previous example, it's possible you noticed each node being set a role when being loaded in each peer:
+This will by default return true when executed on the server and false on all client peers.
+
+If you have paid attention to the previous example, it's possible you noticed that the local peer is set to have network master authority for their own player instead of the server:
 
 ::
 
         [...]
         # Load my player
         var my_player = preload("res://player.tscn").instance()
-        my_player.set_name(str(get_tree().get_network_unique_id()))
-        my_player.set_network_mode(NETWORK_MODE_MASTER)
+        my_player.set_name(str(selfPeerID))
+        my_player.set_network_master(selfPeerID) # The player belongs to this peer, it has the authority
         get_node("/root/world/players").add_child(my_player)
 
         # Load other players
         for p in player_info:
             var player = preload("res://player.tscn").instance()
             player.set_name(str(p))
-            player.set_network_mode(NETWORK_MODE_SLAVE)
             get_node("/root/world/players").add_child(player)
 	[...]
 
 
-Here, each time this piece of code is executed on each peer, the peer makes the node it controls master, and the ones it does not slaves.
-The modes for each are different on each peer. To clarify, here is an example of how this looks in the
+Each time this piece of code is executed on each peer, the peer makes itself master on the node it controls, and all other nodes remain as slaves with the server being their network master.
+
+To clarify, here is an example of how this looks in the
 `bomber demo <https://github.com/godotengine/godot-demo-projects/tree/master/networking/simple_multiplayer>`_:
 
 .. image:: img/nmms.png
@@ -362,4 +411,9 @@ who is master for that instance will actually get the function.
 This instance, then, calls the `stun` function in the same instances of that same player (but in different peers), and only those which are set as slave,
 making the player look stunned in all the peers (as well as the current, master one).
 
-.. FIXME: Document the sync keyword
+Note that you could also send the stun() message only to a specific player by using rpc_id(<id>, "exploded", bomb_owner).
+This may not make much sense for an area-of-effect case like the bomb but in other cases, like single target damage.
+
+::
+
+    rpc_id(TARGET_PEER_ID, "stun") # Only stun the target peer
