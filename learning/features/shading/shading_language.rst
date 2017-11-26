@@ -639,6 +639,8 @@ Render Modes
 +---------------------------------+----------------------------------------------------------------------+
 | **specular_toon**               | Toon for specular.                                                   |
 +---------------------------------+----------------------------------------------------------------------+
+| **specular_disabled**           | Disable specular.                                                    |
++---------------------------------+----------------------------------------------------------------------+
 | **skip_vertex_transform**       | VERTEX/NORMAL/etc need to be transformed manually in VS.             |
 +---------------------------------+----------------------------------------------------------------------+
 | **world_vertex_coords**         | VERTEX/NORMAL/etc are modified in world coordinates instead of local.|
