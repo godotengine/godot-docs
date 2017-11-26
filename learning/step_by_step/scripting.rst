@@ -18,10 +18,6 @@ main reason to choose them is the level of integration with Godot, as this
 makes the experience smoother (both have very slick editor integration, while
 C# and C++ need to be edited in a separate IDE). If you are a big fan of statically typed languages, though, go with C# and C++.
 
-There are more languages available via GDNative interface, but keep in mind
-we don't have official support for them so you will have to work with the
-provided in that case.
-
 GDScript
 ~~~~~~~~
 
@@ -40,22 +36,22 @@ to the high integration with Godot:
 If undecided, and have experience in programming (especially dynamically
 typed languages), go for GDScript!
 
-Visual Script
+VisualScript
 ~~~~~~~~~~~~~
 
 Begining 3.0, Godot offers :ref:`visualscript<Visual Scripting>`. This is a
 somewhat typical implementation of blocks and connections language, but
 adapted to how Godot works. 
 
-Visual Scripting is a great tool for non-programmers, or even for developers
+Visual scripting is a great tool for non-programmers, or even for developers
 with ample programming experience that want to make parts of the code more
-accessible to others (like Game/Level Designers or Artists).
+accessible to others (like game/level designers or artists).
 
 It can also be used by programmers to build state machines or custom
-visual node workflows (like a Dialogue System).
+visual node workflows (like a dialogue system).
 
 
-Microsoft C#
+.NET / C#
 ~~~~~~~~~~~~
 
 As Microsoft's C# is a favorite amongst game developers, we have added
@@ -70,7 +66,12 @@ For companies, this is usually the best choice, given the large amount of
 programmers that can be found in the labor market familiar with it, which
 reduces the learning time of the engine.
 
-GDNative C++
+Since Godot uses the `Mono <https://mono-project.com>`_ .NET runtime, in theory
+any third-party .NET library or framework can be used for scripting in Godot, as
+well as any Common Language Infrastructure-compliant programming language, such as
+F#, Boo or ClojureCLR. In practice however, C# is the only officially-supported .NET option.
+
+GDNative / C++
 ~~~~~~~~~~~~
 
 Finally, this is one of our brightest additions for the 3.0 release.
@@ -84,7 +85,11 @@ API Bridge.
 This language is the best choice for performance and does not need to be
 used for an entire game (other parts can be written in GDScript or Visual
 Script). Yet, the API is very clear and easy to use as it resembles, mostly,
-Godot actual C++ API.
+Godot's actual C++ API.
+
+There are more languages available via the GDNative interface, but keep in mind
+we don't have official support for them so you will have to work with the
+provided in that case.
 
 Scripting a scene
 -----------------
