@@ -205,9 +205,14 @@ node that owns the script.
 In our case, because the button and the label are siblings under the panel
 where the script is attached, you can fetch the button as follows:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     get_node("Button")
+
+ .. code-tab:: csharp
+
+    GetNode("Button")
 
 Next, write a function which will be called when the button is pressed:
 
@@ -219,7 +224,11 @@ Next, write a function which will be called when the button is pressed:
 
  .. code-tab:: csharp
 
-   // i dont know how this is supposed to be in C#
+    public void _OnButtonPressed()
+    {
+        var label = (Label)GetNode("Label");
+        label.Text = "HELLO!";
+    }
 
  .. group-tab:: VS
 
@@ -228,14 +237,23 @@ Next, write a function which will be called when the button is pressed:
 Finally, connect the button's "pressed" signal to that callback in _ready(), by
 using :ref:`Object.connect() <class_Object_connect>`.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _ready():
         get_node("Button").connect("pressed",self,"_on_button_pressed")
 
+ .. code-tab:: csharp
+
+    public override void _Ready()
+    {
+        GetNode("Button").Connect("pressed", this, nameof(_OnButtonPressed));
+    }
+
 The final script should look basically like this:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     extends Panel
 
@@ -244,6 +262,27 @@ The final script should look basically like this:
 
     func _ready():
         get_node("Button").connect("pressed",self,"_on_button_pressed")
+
+ .. code-tab:: csharp
+
+    using Godot;
+
+    // IMPORTANT: the name of the class MUST match the filename exactly.
+    // this is case sensitive!
+    public class sayhello : Panel
+    {
+        public void _OnButtonPressed()
+        {
+            var label = (Label)GetNode("Label");
+            label.Text = "HELLO!";
+        }
+
+        public override void _Ready()
+        {
+            GetNode("Button").Connect("pressed", this, nameof(_OnButtonPressed));
+        }
+    }
+
 
 Run the scene and press the button. You should get the following result:
 
@@ -256,10 +295,17 @@ works. For some given node, get_node(path) searches its immediate children.
 In the above code, this means that *Button* must be a child of *Panel*. If
 *Button* were instead a child of *Label*, the code to obtain it would be:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     # not for this case
     # but just in case
     get_node("Label/Button") 
+
+ .. code-tab:: csharp
+
+    // not for this case
+    // but just in case
+    GetNode("Label/Button")
 
 Also, remember that nodes are referenced by name, not by type.
