@@ -373,10 +373,10 @@ and a ``d`` scalar distance.
 Quaternion is a datatype used for representing a 3D rotation. It's
 useful for interpolating rotations.
 
-:ref:`Rect3 <class_Rect3>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+:ref:`AABB <class_AABB>`
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-Axis Aligned bounding box (or 3D box) contains 2 vectors fields: ``position``
+Axis-aligned bounding box (or 3D box) contains 2 vectors fields: ``position``
 and ``size``. Alternatively contains an ``end`` field which is
 ``position+size``.
 

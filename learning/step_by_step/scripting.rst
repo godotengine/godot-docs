@@ -72,7 +72,7 @@ well as any Common Language Infrastructure-compliant programming language, such 
 F#, Boo or ClojureCLR. In practice however, C# is the only officially-supported .NET option.
 
 GDNative / C++
-~~~~~~~~~~~~
+~~~~~~~~~~~~~~
 
 Finally, this is one of our brightest additions for the 3.0 release.
 GDNative allows scripting in C++ without requiring to recompile (or even

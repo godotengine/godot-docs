@@ -3,7 +3,7 @@
 Pull request workflow
 =====================
 
-.. highlight:: shell
+.. highlight:: none
 
 The so-called "PR workflow" used by Godot is common to many projects using
 Git, and should be familiar to veteran free software contributors. The idea
@@ -129,6 +129,7 @@ a feature branch:
 
     // Create the branch based on the current branch (master)
     $ git branch better-project-manager
+
     // Change the current branch to the new one
     $ git checkout better-project-manager
 
@@ -231,21 +232,27 @@ Here's how the shell history could look like on our example:
 
     // It's nice to know where you're starting from
     $ git log
+
     // Do changes to the project manager
     $ nano editor/project_manager.cpp
+
     // Find an unrelated bug in Control and fix it
     $ nano scene/gui/control.cpp
+
     // Review changes
     $ git status
     $ git diff
+
     // We'll do two commits for our unrelated changes,
     // starting by the Control changes necessary for the PM enhancements
     $ git add scene/gui/control.cpp
     $ git commit -m "Fix handling of margins in Control"
+
     // Check we did good
     $ git log
     $ git show
     $ git status
+
     // Make our second commit
     $ git add editor/project_manager.cpp
     $ git commit -m "Add a pretty banner to the project manager"
@@ -315,6 +322,7 @@ branch, push it to your fork, and the PR will be updated automatically:
 
     // Check out your branch again if you had changed in the meantime
     $ git checkout better-project-manager
+
     // Fix a mistake
     $ nano editor/project_manager.cpp
     $ git add editor/project_manager.cpp
