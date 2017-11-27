@@ -38,47 +38,45 @@ integer, specifying the type of data:
 +--------+--------------------------+
 | 7      | vector3                  |
 +--------+--------------------------+
-| 8      | matrix32                 |
+| 8      | transform2d              |
 +--------+--------------------------+
 | 9      | plane                    |
 +--------+--------------------------+
-| 10     | quaternion               |
+| 10     | quat                     |
 +--------+--------------------------+
-| 11     | aabb (rect3)             |
+| 11     | aabb                     |
 +--------+--------------------------+
-| 12     | matrix3x3                |
+| 12     | basis                    |
 +--------+--------------------------+
-| 13     | transform (matrix 4x3)   |
+| 13     | transform                |
 +--------+--------------------------+
 | 14     | color                    |
 +--------+--------------------------+
-| 15     | image                    |
+| 15     | node path                |
 +--------+--------------------------+
-| 16     | node path                |
+| 16     | rid                      |
 +--------+--------------------------+
-| 17     | rid (unsupported)        |
+| 17     | object                   |
 +--------+--------------------------+
-| 18     | object (unsupported)     |
+| 18     | dictionary               |
 +--------+--------------------------+
-| 19     | input event              |
+| 19     | array                    |
 +--------+--------------------------+
-| 20     | dictionary               |
+| 20     | raw array                |
 +--------+--------------------------+
-| 21     | array                    |
+| 21     | int array                |
 +--------+--------------------------+
-| 22     | ByteArray                |
+| 22     | real array               |
 +--------+--------------------------+
-| 23     | IntArray                 |
+| 23     | string array             |
 +--------+--------------------------+
-| 24     | FloatArray               |
+| 24     | vector2 array            |
 +--------+--------------------------+
-| 25     | StringArray              |
+| 25     | vector3 array            |
 +--------+--------------------------+
-| 26     | Vector2Array             |
+| 26     | color array              |
 +--------+--------------------------+
-| 27     | Vector3Array             |
-+--------+--------------------------+
-| 28     | ColorArray               |
+| 27     | max                      |
 +--------+--------------------------+
 
 Following this is the actual packet contents, which varies for each type
@@ -87,8 +85,8 @@ of packet:
 0: null
 ~~~~~~~
 
-1: bool
-~~~~~~~
+1: :ref:`bool<class_bool>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------+-------+-----------+---------------------------+
 | Offset   | Len   | Type      | Description               |
@@ -96,8 +94,8 @@ of packet:
 | 4        | 4     | Integer   | 0 for False, 1 for True   |
 +----------+-------+-----------+---------------------------+
 
-2: integer
-~~~~~~~~~~
+2: :ref:`int<class_int>`
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------+-------+-----------+--------------------------+
 | Offset   | Len   | Type      | Description              |
@@ -105,8 +103,8 @@ of packet:
 | 4        | 4     | Integer   | Signed, 32-Bit Integer   |
 +----------+-------+-----------+--------------------------+
 
-3: float
-~~~~~~~~
+3: :ref:`float<class_float>`/real
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------+-------+---------+-------------------------+
 | Offset   | Len   | Type    | Description             |
@@ -114,8 +112,8 @@ of packet:
 | 4        | 4     | Float   | IEE 754 32-Bits Float   |
 +----------+-------+---------+-------------------------+
 
-4: string
-~~~~~~~~~
+4: :ref:`String<class_string>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------+-------+-----------+----------------------------+
 | Offset   | Len   | Type      | Description                |
@@ -127,8 +125,8 @@ of packet:
 
 This field is padded to 4 bytes.
 
-5: vector2
-~~~~~~~~~~
+5: :ref:`Vector2<class_vector2>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------+-------+---------+----------------+
 | Offset   | Len   | Type    | Description    |
@@ -138,8 +136,8 @@ This field is padded to 4 bytes.
 | 8        | 4     | Float   | Y Coordinate   |
 +----------+-------+---------+----------------+
 
-6: rect2
-~~~~~~~~
+6: :ref:`Rect2<class_rect2>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------+-------+---------+----------------+
 | Offset   | Len   | Type    | Description    |
@@ -153,8 +151,8 @@ This field is padded to 4 bytes.
 | 16       | 4     | Float   | Y Size         |
 +----------+-------+---------+----------------+
 
-7: vector3
-~~~~~~~~~~
+7: :ref:`Vector3<class_vector3>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------+-------+---------+----------------+
 | Offset   | Len   | Type    | Description    |
@@ -166,8 +164,8 @@ This field is padded to 4 bytes.
 | 12       | 4     | Float   | Z Coordinate   |
 +----------+-------+---------+----------------+
 
-8: matrix32
-~~~~~~~~~~~
+8: :ref:`Transform2D<class_transform2d>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------+-------+---------+---------------+
 | Offset   | Len   | Type    | Description   |
@@ -185,8 +183,8 @@ This field is padded to 4 bytes.
 | 24       | 4     | Float   | [2][1]        |
 +----------+-------+---------+---------------+
 
-9: plane
-~~~~~~~~
+9: :ref:`Plane<class_plane>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------+-------+---------+---------------+
 | Offset   | Len   | Type    | Description   |
@@ -200,8 +198,8 @@ This field is padded to 4 bytes.
 | 16       | 4     | Float   | Distance      |
 +----------+-------+---------+---------------+
 
-10: quaternion
-~~~~~~~~~~~~~~
+10: :ref:`Quat<class_quat>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------+-------+---------+---------------+
 | Offset   | Len   | Type    | Description   |
@@ -215,8 +213,8 @@ This field is padded to 4 bytes.
 | 16       | 4     | Float   | Real W        |
 +----------+-------+---------+---------------+
 
-11: aabb (rect3)
-~~~~~~~~~~~~~~~~
+11: :ref:`AABB<class_aabb>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------+-------+---------+----------------+
 | Offset   | Len   | Type    | Description    |
@@ -234,8 +232,8 @@ This field is padded to 4 bytes.
 | 24       | 4     | Float   | Z Size         |
 +----------+-------+---------+----------------+
 
-12: matrix3x3
-~~~~~~~~~~~~~
+12: :ref:`Basis<class_basis>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------+-------+---------+---------------+
 | Offset   | Len   | Type    | Description   |
@@ -259,8 +257,8 @@ This field is padded to 4 bytes.
 | 36       | 4     | Float   | [2][2]        |
 +----------+-------+---------+---------------+
 
-13: transform (matrix 4x3)
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+13: :ref:`Transform<class_transform>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------+-------+---------+---------------+
 | Offset   | Len   | Type    | Description   |
@@ -290,8 +288,8 @@ This field is padded to 4 bytes.
 | 48       | 4     | Float   | [3][2]        |
 +----------+-------+---------+---------------+
 
-14: color
-~~~~~~~~~
+14: :ref:`Color<class_color>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------+-------+---------+----------------+
 | Offset   | Len   | Type    | Description    |
@@ -305,29 +303,8 @@ This field is padded to 4 bytes.
 | 16       | 4     | Float   | Alpha (0..1)   |
 +----------+-------+---------+----------------+
 
-15: image
-~~~~~~~~~
-
-+---------------------+-------+-----------+--------------------------------------------------+
-| Offset              | Len   | Type      | Description                                      |
-+=====================+=======+===========+==================================================+
-| 4                   | 4     | Integer   | Format (see FORMAT\_\* in "Image":class_image    |
-+---------------------+-------+-----------+--------------------------------------------------+
-| 8                   | 4     | Integer   | Mip-Maps (0 means no mip-maps).                  |
-+---------------------+-------+-----------+--------------------------------------------------+
-| 12                  | 4     | Integer   | Width (Pixels)                                   |
-+---------------------+-------+-----------+--------------------------------------------------+
-| 16                  | 4     | Integer   | Height (Pixels)                                  |
-+---------------------+-------+-----------+--------------------------------------------------+
-| 20                  | 4     | Integer   | Data Length                                      |
-+---------------------+-------+-----------+--------------------------------------------------+
-| 24..24+DataLength   | 1     | Byte      | Image Data                                       |
-+---------------------+-------+-----------+--------------------------------------------------+
-
-This field is padded to 4 bytes.
-
-16: node path
-~~~~~~~~~~~~~
+15: :ref:`NodePath<class_nodepath>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------+-------+-----------+-----------------------------------------------------------------------------------------+
 | Offset   | Len   | Type      | Description                                                                             |
@@ -369,17 +346,14 @@ For each Name and Sub-Name
 
 Every name string is padded to 4 bytes.
 
-17: rid (unsupported)
-~~~~~~~~~~~~~~~~~~~~~
+16: :ref:`RID<class_rid>` (unsupported)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-18: object (unsupported)
-~~~~~~~~~~~~~~~~~~~~~~~~
+17: :ref:`Object<class_object>` (unsupported)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-19: input event
-~~~~~~~~~~~~~~~
-
-20: dictionary
-~~~~~~~~~~~~~~
+18: :ref:`Dictionary<class_dictionary>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------+-------+-----------+---------------------------------------------------------------------+
 | Offset   | Len   | Type      | Description                                                         |
@@ -390,8 +364,8 @@ Every name string is padded to 4 bytes.
 Then what follows is, for amount of "elements", pairs of key and value,
 one after the other, using this same format.
 
-21: array
-~~~~~~~~~
+19: :ref:`Array<class_array>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------+-------+-----------+---------------------------------------------------------------------+
 | Offset   | Len   | Type      | Description                                                         |
@@ -402,8 +376,8 @@ one after the other, using this same format.
 Then what follows is, for amount of "elements", values one after the
 other, using this same format.
 
-22: :ref:`class_ByteArray`
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+20: :ref:`PoolByteArray<class_poolbytearray>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------+-------+-----------+------------------------+
 | Offset        | Len   | Type      | Description            |
@@ -415,8 +389,8 @@ other, using this same format.
 
 The array data is padded to 4 bytes.
 
-23: :ref:`class_IntArray`
-~~~~~~~~~~~~~~~~~~~~~~~~~
+21: :ref:`PoolIntArray<class_poolintarray>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +------------------+-------+-----------+---------------------------+
 | Offset           | Len   | Type      | Description               |
@@ -426,8 +400,8 @@ The array data is padded to 4 bytes.
 | 8..8+length\*4   | 4     | Integer   | 32 Bits Signed Integer    |
 +------------------+-------+-----------+---------------------------+
 
-24: :ref:`class_FloatArray`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+22: :ref:`PoolRealArray<class_poolrealarray>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +------------------+-------+-----------+---------------------------+
 | Offset           | Len   | Type      | Description               |
@@ -437,8 +411,8 @@ The array data is padded to 4 bytes.
 | 8..8+length\*4   | 4     |Integer    | 32 Bits IEE 754 Float     |
 +------------------+-------+-----------+---------------------------+
 
-25: :ref:`class_StringArray`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+23: :ref:`PoolStringArray<class_poolstringarray>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------+-------+-----------+--------------------------+
 | Offset   | Len   | Type      | Description              |
@@ -458,8 +432,8 @@ For each String:
 
 Every string is is padded to 4 bytes.
 
-26: :ref:`class_Vector2Array`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+24: :ref:`PoolVector2Array<class_poolvector2array>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-------------------+-------+-----------+----------------+
 | Offset            | Len   | Type      | Description    |
@@ -471,8 +445,8 @@ Every string is is padded to 4 bytes.
 | 8..12+length\*8   | 4     | Float     | Y Coordinate   |
 +-------------------+-------+-----------+----------------+
 
-27: :ref:`class_Vector3Array`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+25: :ref:`PoolVector3Array<class_poolvector3array>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------------+-------+-----------+----------------+
 | Offset             | Len   | Type      | Description    |
@@ -486,8 +460,8 @@ Every string is is padded to 4 bytes.
 | 8..16+length\*12   | 4     | Float     | Z Coordinate   |
 +--------------------+-------+-----------+----------------+
 
-28: :ref:`class_ColorArray`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+26: :ref:`PoolColorArray<class_poolcolorarray>`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------------+-------+-----------+----------------+
 | Offset             | Len   | Type      | Description    |
