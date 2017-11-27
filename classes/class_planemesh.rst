@@ -16,23 +16,6 @@ Brief Description
 
 Class representing a planar :ref:`PrimitiveMesh<class_primitivemesh>`.
 
-Member Functions
-----------------
-
-+--------------------------------+-------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_size<class_PlaneMesh_get_size>` **(** **)** const                                                 |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_subdivide_depth<class_PlaneMesh_get_subdivide_depth>` **(** **)** const                           |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_subdivide_width<class_PlaneMesh_get_subdivide_width>` **(** **)** const                           |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_size<class_PlaneMesh_set_size>` **(** :ref:`Vector2<class_vector2>` size **)**                    |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_subdivide_depth<class_PlaneMesh_set_subdivide_depth>` **(** :ref:`int<class_int>` subdivide **)** |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_subdivide_width<class_PlaneMesh_set_subdivide_width>` **(** :ref:`int<class_int>` subdivide **)** |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -53,32 +36,4 @@ Description
 -----------
 
 Class representing a planar :ref:`PrimitiveMesh<class_primitivemesh>`. This flat mesh does not have a thickness.
-
-Member Function Description
----------------------------
-
-.. _class_PlaneMesh_get_size:
-
-- :ref:`Vector2<class_vector2>` **get_size** **(** **)** const
-
-.. _class_PlaneMesh_get_subdivide_depth:
-
-- :ref:`int<class_int>` **get_subdivide_depth** **(** **)** const
-
-.. _class_PlaneMesh_get_subdivide_width:
-
-- :ref:`int<class_int>` **get_subdivide_width** **(** **)** const
-
-.. _class_PlaneMesh_set_size:
-
-- void **set_size** **(** :ref:`Vector2<class_vector2>` size **)**
-
-.. _class_PlaneMesh_set_subdivide_depth:
-
-- void **set_subdivide_depth** **(** :ref:`int<class_int>` subdivide **)**
-
-.. _class_PlaneMesh_set_subdivide_width:
-
-- void **set_subdivide_width** **(** :ref:`int<class_int>` subdivide **)**
-
 

@@ -18,19 +18,6 @@ Brief Description
 
 Abstract base :ref:`Resource<class_resource>` for coloring and shading geometry.
 
-Member Functions
-----------------
-
-+----------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`Material<class_material>`  | :ref:`get_next_pass<class_Material_get_next_pass>` **(** **)** const                                      |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_render_priority<class_Material_get_render_priority>` **(** **)** const                          |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_next_pass<class_Material_set_next_pass>` **(** :ref:`Material<class_material>` next_pass **)**  |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_render_priority<class_Material_set_render_priority>` **(** :ref:`int<class_int>` priority **)** |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -53,24 +40,4 @@ Description
 -----------
 
 Material is a base :ref:`Resource<class_resource>` used for coloring and shading geometry. All materials inherit from it and almost all :ref:`VisualInstance<class_visualinstance>` derived nodes carry a Material. A few flags and parameters are shared between all material types and are configured here.
-
-Member Function Description
----------------------------
-
-.. _class_Material_get_next_pass:
-
-- :ref:`Material<class_material>` **get_next_pass** **(** **)** const
-
-.. _class_Material_get_render_priority:
-
-- :ref:`int<class_int>` **get_render_priority** **(** **)** const
-
-.. _class_Material_set_next_pass:
-
-- void **set_next_pass** **(** :ref:`Material<class_material>` next_pass **)**
-
-.. _class_Material_set_render_priority:
-
-- void **set_render_priority** **(** :ref:`int<class_int>` priority **)**
-
 

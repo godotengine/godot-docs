@@ -9,7 +9,7 @@ ResourceImporter
 
 **Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`ResourceImporterOGGVorbis<class_resourceimporteroggvorbis>`
+**Inherited By:** :ref:`ResourceImporterTheora<class_resourceimportertheora>`, :ref:`ResourceImporterOGGVorbis<class_resourceimporteroggvorbis>`, :ref:`ResourceImporterWebm<class_resourceimporterwebm>`
 
 **Category:** Core
 

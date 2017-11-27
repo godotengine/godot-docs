@@ -21,17 +21,13 @@ Brief Description
 Member Functions
 ----------------
 
-+----------------------------+---------------------------------------------------------------------------------------------------+
-| :ref:`Rect3<class_rect3>`  | :ref:`get_aabb<class_VisualInstance_get_aabb>` **(** **)** const                                  |
-+----------------------------+---------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_layer_mask<class_VisualInstance_get_layer_mask>` **(** **)** const                      |
-+----------------------------+---------------------------------------------------------------------------------------------------+
-| :ref:`Rect3<class_rect3>`  | :ref:`get_transformed_aabb<class_VisualInstance_get_transformed_aabb>` **(** **)** const          |
-+----------------------------+---------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_base<class_VisualInstance_set_base>` **(** :ref:`RID<class_rid>` base **)**             |
-+----------------------------+---------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_layer_mask<class_VisualInstance_set_layer_mask>` **(** :ref:`int<class_int>` mask **)** |
-+----------------------------+---------------------------------------------------------------------------------------------------+
++--------------------------+------------------------------------------------------------------------------------------+
+| :ref:`AABB<class_aabb>`  | :ref:`get_aabb<class_VisualInstance_get_aabb>` **(** **)** const                         |
++--------------------------+------------------------------------------------------------------------------------------+
+| :ref:`AABB<class_aabb>`  | :ref:`get_transformed_aabb<class_VisualInstance_get_transformed_aabb>` **(** **)** const |
++--------------------------+------------------------------------------------------------------------------------------+
+| void                     | :ref:`set_base<class_VisualInstance_set_base>` **(** :ref:`RID<class_rid>` base **)**    |
++--------------------------+------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -46,22 +42,14 @@ Member Function Description
 
 .. _class_VisualInstance_get_aabb:
 
-- :ref:`Rect3<class_rect3>` **get_aabb** **(** **)** const
-
-.. _class_VisualInstance_get_layer_mask:
-
-- :ref:`int<class_int>` **get_layer_mask** **(** **)** const
+- :ref:`AABB<class_aabb>` **get_aabb** **(** **)** const
 
 .. _class_VisualInstance_get_transformed_aabb:
 
-- :ref:`Rect3<class_rect3>` **get_transformed_aabb** **(** **)** const
+- :ref:`AABB<class_aabb>` **get_transformed_aabb** **(** **)** const
 
 .. _class_VisualInstance_set_base:
 
 - void **set_base** **(** :ref:`RID<class_rid>` base **)**
-
-.. _class_VisualInstance_set_layer_mask:
-
-- void **set_layer_mask** **(** :ref:`int<class_int>` mask **)**
 
 

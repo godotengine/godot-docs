@@ -16,15 +16,6 @@ Brief Description
 
 Colored rect for canvas.
 
-Member Functions
-----------------
-
-+----------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`  | :ref:`get_frame_color<class_ColorRect_get_frame_color>` **(** **)** const                           |
-+----------------------------+-----------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_frame_color<class_ColorRect_set_frame_color>` **(** :ref:`Color<class_color>` color **)** |
-+----------------------------+-----------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -41,30 +32,4 @@ Description
 -----------
 
 An object that is represented on the canvas as a rect with color. :ref:`Color<class_color>` is used to set or get color info for the rect.
-
-Member Function Description
----------------------------
-
-.. _class_ColorRect_get_frame_color:
-
-- :ref:`Color<class_color>` **get_frame_color** **(** **)** const
-
-Return the color in RGBA format.
-
-::
-
-    var cr = get_node("colorrect_node")
-    var c = cr.get_frame_color() # Default color is white
-
-.. _class_ColorRect_set_frame_color:
-
-- void **set_frame_color** **(** :ref:`Color<class_color>` color **)**
-
-Set new color to ColorRect.
-
-::
-
-    var cr = get_node("colorrect_node")
-    cr.set_frame_color(Color(1, 0, 0, 1)) # Set color rect node to red
-
 

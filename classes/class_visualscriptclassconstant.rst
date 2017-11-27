@@ -16,19 +16,6 @@ Brief Description
 
 Gets a constant from a given class.
 
-Member Functions
-----------------
-
-+------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_base_type<class_VisualScriptClassConstant_get_base_type>` **(** **)**                                            |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_class_constant<class_VisualScriptClassConstant_get_class_constant>` **(** **)**                                  |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_base_type<class_VisualScriptClassConstant_set_base_type>` **(** :ref:`String<class_string>` name **)**           |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_class_constant<class_VisualScriptClassConstant_set_class_constant>` **(** :ref:`String<class_string>` name **)** |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -53,24 +40,4 @@ none
 **Output Ports:**
 
 - Data (variant): ``value``
-
-Member Function Description
----------------------------
-
-.. _class_VisualScriptClassConstant_get_base_type:
-
-- :ref:`String<class_string>` **get_base_type** **(** **)**
-
-.. _class_VisualScriptClassConstant_get_class_constant:
-
-- :ref:`String<class_string>` **get_class_constant** **(** **)**
-
-.. _class_VisualScriptClassConstant_set_base_type:
-
-- void **set_base_type** **(** :ref:`String<class_string>` name **)**
-
-.. _class_VisualScriptClassConstant_set_class_constant:
-
-- void **set_class_constant** **(** :ref:`String<class_string>` name **)**
-
 

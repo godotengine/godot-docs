@@ -24,17 +24,17 @@ Member Functions
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`ensure_tab_visible<class_Tabs_ensure_tab_visible>` **(** :ref:`int<class_int>` idx **)**                                   |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_current_tab<class_Tabs_get_current_tab>` **(** **)** const                                                             |
+| :ref:`bool<class_bool>`        | :ref:`get_offset_buttons_visible<class_Tabs_get_offset_buttons_visible>` **(** **)** const                                       |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_tab_align<class_Tabs_get_tab_align>` **(** **)** const                                                                 |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_tab_close_display_policy<class_Tabs_get_tab_close_display_policy>` **(** **)** const                                   |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_tab_count<class_Tabs_get_tab_count>` **(** **)** const                                                                 |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`get_tab_disabled<class_Tabs_get_tab_disabled>` **(** :ref:`int<class_int>` tab_idx **)** const                             |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Texture<class_texture>`  | :ref:`get_tab_icon<class_Tabs_get_tab_icon>` **(** :ref:`int<class_int>` tab_idx **)** const                                     |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_tab_offset<class_Tabs_get_tab_offset>` **(** **)** const                                                               |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Rect2<class_rect2>`      | :ref:`get_tab_rect<class_Tabs_get_tab_rect>` **(** :ref:`int<class_int>` tab_idx **)** const                                     |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
@@ -44,11 +44,7 @@ Member Functions
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`remove_tab<class_Tabs_remove_tab>` **(** :ref:`int<class_int>` tab_idx **)**                                               |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_current_tab<class_Tabs_set_current_tab>` **(** :ref:`int<class_int>` tab_idx **)**                                     |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_tab_align<class_Tabs_set_tab_align>` **(** :ref:`int<class_int>` align **)**                                           |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_tab_close_display_policy<class_Tabs_set_tab_close_display_policy>` **(** :ref:`int<class_int>` policy **)**            |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_tab_disabled<class_Tabs_set_tab_disabled>` **(** :ref:`int<class_int>` tab_idx, :ref:`bool<class_bool>` disabled **)** |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
@@ -92,6 +88,10 @@ Member Variables
 
 - :ref:`int<class_int>` **current_tab**
 
+  .. _class_Tabs_scrolling_enabled:
+
+- :ref:`bool<class_bool>` **scrolling_enabled**
+
   .. _class_Tabs_tab_close_display_policy:
 
 - :ref:`int<class_int>` **tab_close_display_policy**
@@ -125,17 +125,13 @@ Member Function Description
 
 - void **ensure_tab_visible** **(** :ref:`int<class_int>` idx **)**
 
-.. _class_Tabs_get_current_tab:
+.. _class_Tabs_get_offset_buttons_visible:
 
-- :ref:`int<class_int>` **get_current_tab** **(** **)** const
+- :ref:`bool<class_bool>` **get_offset_buttons_visible** **(** **)** const
 
 .. _class_Tabs_get_tab_align:
 
 - :ref:`int<class_int>` **get_tab_align** **(** **)** const
-
-.. _class_Tabs_get_tab_close_display_policy:
-
-- :ref:`int<class_int>` **get_tab_close_display_policy** **(** **)** const
 
 .. _class_Tabs_get_tab_count:
 
@@ -148,6 +144,10 @@ Member Function Description
 .. _class_Tabs_get_tab_icon:
 
 - :ref:`Texture<class_texture>` **get_tab_icon** **(** :ref:`int<class_int>` tab_idx **)** const
+
+.. _class_Tabs_get_tab_offset:
+
+- :ref:`int<class_int>` **get_tab_offset** **(** **)** const
 
 .. _class_Tabs_get_tab_rect:
 
@@ -169,17 +169,9 @@ Rearrange tab.
 
 - void **remove_tab** **(** :ref:`int<class_int>` tab_idx **)**
 
-.. _class_Tabs_set_current_tab:
-
-- void **set_current_tab** **(** :ref:`int<class_int>` tab_idx **)**
-
 .. _class_Tabs_set_tab_align:
 
 - void **set_tab_align** **(** :ref:`int<class_int>` align **)**
-
-.. _class_Tabs_set_tab_close_display_policy:
-
-- void **set_tab_close_display_policy** **(** :ref:`int<class_int>` policy **)**
 
 .. _class_Tabs_set_tab_disabled:
 

@@ -16,15 +16,6 @@ Brief Description
 
 Node reference.
 
-Member Functions
-----------------
-
-+----------------------------------+------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_nodepath>`  | :ref:`get_node_path<class_VisualScriptSceneNode_get_node_path>` **(** **)**                                      |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_node_path<class_VisualScriptSceneNode_set_node_path>` **(** :ref:`NodePath<class_nodepath>` path **)** |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -45,16 +36,4 @@ none
 **Output Ports:**
 
 - Data: ``node`` (obj)
-
-Member Function Description
----------------------------
-
-.. _class_VisualScriptSceneNode_get_node_path:
-
-- :ref:`NodePath<class_nodepath>` **get_node_path** **(** **)**
-
-.. _class_VisualScriptSceneNode_set_node_path:
-
-- void **set_node_path** **(** :ref:`NodePath<class_nodepath>` path **)**
-
 

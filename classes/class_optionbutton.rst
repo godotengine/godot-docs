@@ -38,8 +38,6 @@ Member Functions
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`    | :ref:`get_item_text<class_OptionButton_get_item_text>` **(** :ref:`int<class_int>` idx **)** const                                                                    |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_selected<class_OptionButton_get_selected>` **(** **)** const                                                                                                |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_selected_id<class_OptionButton_get_selected_id>` **(** **)** const                                                                                          |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_variant>`  | :ref:`get_selected_metadata<class_OptionButton_get_selected_metadata>` **(** **)** const                                                                              |
@@ -142,12 +140,6 @@ Return the ID of the item at index "idx".
 - :ref:`String<class_string>` **get_item_text** **(** :ref:`int<class_int>` idx **)** const
 
 Return the text of the item at index "idx".
-
-.. _class_OptionButton_get_selected:
-
-- :ref:`int<class_int>` **get_selected** **(** **)** const
-
-Return the current item index
 
 .. _class_OptionButton_get_selected_id:
 

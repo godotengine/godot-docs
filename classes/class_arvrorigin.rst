@@ -16,15 +16,6 @@ Brief Description
 
 Our origin point in AR/VR.
 
-Member Functions
-----------------
-
-+----------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_world_scale<class_ARVROrigin_get_world_scale>` **(** **)** const                                 |
-+----------------------------+------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_world_scale<class_ARVROrigin_set_world_scale>` **(** :ref:`float<class_float>` world_scale **)** |
-+----------------------------+------------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -45,24 +36,4 @@ There should be only one of these nodes in your scene and you must have one. All
 It is the position of this node that you update when you're character needs to move through your game world while we're not moving in the real world. Movement in the real world is always in relation to this origin point.
 
 So say that your character is driving a car, the ARVROrigin node should be a child node of this car. If you implement a teleport system to move your character, you change the position of this node. Etc.
-
-Member Function Description
----------------------------
-
-.. _class_ARVROrigin_get_world_scale:
-
-- :ref:`float<class_float>` **get_world_scale** **(** **)** const
-
-Get the world scale applied to our positioning.
-
-.. _class_ARVROrigin_set_world_scale:
-
-- void **set_world_scale** **(** :ref:`float<class_float>` world_scale **)**
-
-Changes the world scaling factor.
-
-Most AR/VR platforms will assume a unit size of 1 unit in your game world = 1 meter in the real world. This scale allows you to adjust this to the unit system you use in your game. 
-
-Note that this method is a passthrough to the ARVRServer itself.
-
 

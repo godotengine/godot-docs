@@ -28,11 +28,15 @@ Member Functions
 +--------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`MainLoop<class_mainloop>`      | :ref:`get_main_loop<class_Engine_get_main_loop>` **(** **)** const                                                               |
 +--------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`          | :ref:`get_singleton<class_Engine_get_singleton>` **(** :ref:`String<class_string>` name **)** const                              |
++--------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`            | :ref:`get_target_fps<class_Engine_get_target_fps>` **(** **)** const                                                             |
 +--------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`            | :ref:`get_time_scale<class_Engine_get_time_scale>` **(** **)**                                                                   |
 +--------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_dictionary>`  | :ref:`get_version_info<class_Engine_get_version_info>` **(** **)** const                                                         |
++--------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`              | :ref:`has_singleton<class_Engine_has_singleton>` **(** :ref:`String<class_string>` name **)** const                              |
 +--------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`              | :ref:`is_editor_hint<class_Engine_is_editor_hint>` **(** **)** const                                                             |
 +--------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
@@ -79,6 +83,10 @@ Returns the number of fixed iterations per second (for fixed process and physics
 
 Returns the main loop object (see :ref:`MainLoop<class_mainloop>` and :ref:`SceneTree<class_scenetree>`).
 
+.. _class_Engine_get_singleton:
+
+- :ref:`Object<class_object>` **get_singleton** **(** :ref:`String<class_string>` name **)** const
+
 .. _class_Engine_get_target_fps:
 
 - :ref:`float<class_float>` **get_target_fps** **(** **)** const
@@ -107,9 +115,13 @@ Returns the current engine version information in a Dictionary.
 
 "status"   - Holds the status (e.g. "beta", "rc1", "rc2", ... "stable") as a String
 
-"revision" - Holds the revision (e.g. "custom-build") as a String
+"build"    - Holds the build name (e.g. "custom-build") as a String
 
-"string"   - major + minor + patch + status + revision in a single String
+"string"   - major + minor + patch + status + build in a single String
+
+.. _class_Engine_has_singleton:
+
+- :ref:`bool<class_bool>` **has_singleton** **(** :ref:`String<class_string>` name **)** const
 
 .. _class_Engine_is_editor_hint:
 

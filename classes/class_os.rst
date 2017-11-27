@@ -46,8 +46,6 @@ Member Functions
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_current_screen<class_OS_get_current_screen>` **(** **)** const                                                                                                                                                 |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`get_data_dir<class_OS_get_data_dir>` **(** **)** const                                                                                                                                                             |
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_dictionary>`            | :ref:`get_date<class_OS_get_date>` **(** :ref:`bool<class_bool>` utc=false **)** const                                                                                                                                   |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_dictionary>`            | :ref:`get_datetime<class_OS_get_datetime>` **(** :ref:`bool<class_bool>` utc=false **)** const                                                                                                                           |
@@ -113,6 +111,8 @@ Member Functions
 | :ref:`int<class_int>`                          | :ref:`get_unix_time<class_OS_get_unix_time>` **(** **)** const                                                                                                                                                           |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_unix_time_from_datetime<class_OS_get_unix_time_from_datetime>` **(** :ref:`Dictionary<class_dictionary>` datetime **)** const                                                                                  |
++------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                    | :ref:`get_user_data_dir<class_OS_get_user_data_dir>` **(** **)** const                                                                                                                                                   |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_virtual_keyboard_height<class_OS_get_virtual_keyboard_height>` **(** **)**                                                                                                                                     |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -354,12 +354,6 @@ Returns the command line arguments passed to the engine.
 
 Returns the current screen index (0 padded).
 
-.. _class_OS_get_data_dir:
-
-- :ref:`String<class_string>` **get_data_dir** **(** **)** const
-
-Returns the absolute directory path of user data path(user://).
-
 .. _class_OS_get_date:
 
 - :ref:`Dictionary<class_dictionary>` **get_date** **(** :ref:`bool<class_bool>` utc=false **)** const
@@ -577,6 +571,12 @@ Get an epoch time value from a dictionary of time values.
 ``datetime`` must be populated with the following keys: year, month, day, hour, minute, second.
 
 You can pass the output from :ref:`get_datetime_from_unix_time<class_OS_get_datetime_from_unix_time>` directly into this function. Daylight savings time (dst), if present, is ignored.
+
+.. _class_OS_get_user_data_dir:
+
+- :ref:`String<class_string>` **get_user_data_dir** **(** **)** const
+
+Returns the absolute directory path where user data is written (``user://``).
 
 .. _class_OS_get_virtual_keyboard_height:
 

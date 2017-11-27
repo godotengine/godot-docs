@@ -220,7 +220,7 @@ Returns ``true`` if endian swap is enabled for this file.
 
 - :ref:`int<class_int>` **get_error** **(** **)** const
 
-Returns the last error that happened when trying to perform operations. Compare with the ``ERR_FILE\_\*`` constants from :ref:`@Global Scope<class_@global scope>`.
+Returns the last error that happened when trying to perform operations. Compare with the ``ERR_FILE\_\*`` constants from :ref:`@GlobalScope<class_@globalscope>`.
 
 .. _class_File_get_float:
 

@@ -16,6 +16,14 @@ Brief Description
 
 Class representing a square mesh.
 
+Member Variables
+----------------
+
+  .. _class_QuadMesh_size:
+
+- :ref:`Vector2<class_vector2>` **size**
+
+
 Description
 -----------
 

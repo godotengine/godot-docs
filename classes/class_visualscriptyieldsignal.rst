@@ -16,27 +16,6 @@ Brief Description
 
 
 
-Member Functions
-----------------
-
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_nodepath>`  | :ref:`get_base_path<class_VisualScriptYieldSignal_get_base_path>` **(** **)** const                                     |
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`get_base_type<class_VisualScriptYieldSignal_get_base_type>` **(** **)** const                                     |
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_call_mode<class_VisualScriptYieldSignal_get_call_mode>` **(** **)** const                                     |
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`get_signal<class_VisualScriptYieldSignal_get_signal>` **(** **)** const                                           |
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_base_path<class_VisualScriptYieldSignal_set_base_path>` **(** :ref:`NodePath<class_nodepath>` base_path **)** |
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_base_type<class_VisualScriptYieldSignal_set_base_type>` **(** :ref:`String<class_string>` base_type **)**     |
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_call_mode<class_VisualScriptYieldSignal_set_call_mode>` **(** :ref:`int<class_int>` mode **)**                |
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_signal<class_VisualScriptYieldSignal_set_signal>` **(** :ref:`String<class_string>` signal **)**              |
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -63,40 +42,4 @@ Numeric Constants
 - **CALL_MODE_SELF** = **0**
 - **CALL_MODE_NODE_PATH** = **1**
 - **CALL_MODE_INSTANCE** = **2**
-
-Member Function Description
----------------------------
-
-.. _class_VisualScriptYieldSignal_get_base_path:
-
-- :ref:`NodePath<class_nodepath>` **get_base_path** **(** **)** const
-
-.. _class_VisualScriptYieldSignal_get_base_type:
-
-- :ref:`String<class_string>` **get_base_type** **(** **)** const
-
-.. _class_VisualScriptYieldSignal_get_call_mode:
-
-- :ref:`int<class_int>` **get_call_mode** **(** **)** const
-
-.. _class_VisualScriptYieldSignal_get_signal:
-
-- :ref:`String<class_string>` **get_signal** **(** **)** const
-
-.. _class_VisualScriptYieldSignal_set_base_path:
-
-- void **set_base_path** **(** :ref:`NodePath<class_nodepath>` base_path **)**
-
-.. _class_VisualScriptYieldSignal_set_base_type:
-
-- void **set_base_type** **(** :ref:`String<class_string>` base_type **)**
-
-.. _class_VisualScriptYieldSignal_set_call_mode:
-
-- void **set_call_mode** **(** :ref:`int<class_int>` mode **)**
-
-.. _class_VisualScriptYieldSignal_set_signal:
-
-- void **set_signal** **(** :ref:`String<class_string>` signal **)**
-
 

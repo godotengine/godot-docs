@@ -16,17 +16,6 @@ Brief Description
 
 
 
-Member Functions
-----------------
-
-+----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`Curve<class_curve>`  | :ref:`get_curve<class_CurveTexture_get_curve>` **(** **)** const                           |
-+----------------------------+--------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_curve<class_CurveTexture_set_curve>` **(** :ref:`Curve<class_curve>` curve **)** |
-+----------------------------+--------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_width<class_CurveTexture_set_width>` **(** :ref:`int<class_int>` width **)**     |
-+----------------------------+--------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -37,21 +26,5 @@ Member Variables
   .. _class_CurveTexture_width:
 
 - :ref:`int<class_int>` **width**
-
-
-Member Function Description
----------------------------
-
-.. _class_CurveTexture_get_curve:
-
-- :ref:`Curve<class_curve>` **get_curve** **(** **)** const
-
-.. _class_CurveTexture_set_curve:
-
-- void **set_curve** **(** :ref:`Curve<class_curve>` curve **)**
-
-.. _class_CurveTexture_set_width:
-
-- void **set_width** **(** :ref:`int<class_int>` width **)**
 
 

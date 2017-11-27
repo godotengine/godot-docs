@@ -284,7 +284,7 @@ Sets the name of the bus at index ``bus_idx`` to ``name``.
 
 - void **set_bus_send** **(** :ref:`int<class_int>` bus_idx, :ref:`String<class_string>` send **)**
 
-Connects the output of the bus at ``bus_idx`` to the bus named ``send[/send].
+Connects the output of the bus at ``bus_idx`` to the bus named ``send``.
 
 .. _class_AudioServer_set_bus_solo:
 

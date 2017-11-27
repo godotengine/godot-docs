@@ -16,19 +16,6 @@ Brief Description
 
 Capsule shape for 2D collisions.
 
-Member Functions
-----------------
-
-+----------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_height<class_CapsuleShape2D_get_height>` **(** **)** const                            |
-+----------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_radius<class_CapsuleShape2D_get_radius>` **(** **)** const                            |
-+----------------------------+-------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_height<class_CapsuleShape2D_set_height>` **(** :ref:`float<class_float>` height **)** |
-+----------------------------+-------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_radius<class_CapsuleShape2D_set_radius>` **(** :ref:`float<class_float>` radius **)** |
-+----------------------------+-------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -45,32 +32,4 @@ Description
 -----------
 
 Capsule shape for 2D collisions.
-
-Member Function Description
----------------------------
-
-.. _class_CapsuleShape2D_get_height:
-
-- :ref:`float<class_float>` **get_height** **(** **)** const
-
-Return the height of the ``CapsuleShape2D``.
-
-.. _class_CapsuleShape2D_get_radius:
-
-- :ref:`float<class_float>` **get_radius** **(** **)** const
-
-Return the radius of the ``CapsuleShape2D``.
-
-.. _class_CapsuleShape2D_set_height:
-
-- void **set_height** **(** :ref:`float<class_float>` height **)**
-
-Set the height of the ``CapsuleShape2D``.
-
-.. _class_CapsuleShape2D_set_radius:
-
-- void **set_radius** **(** :ref:`float<class_float>` radius **)**
-
-Set the radius of the ``CapsuleShape2D``.
-
 

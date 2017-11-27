@@ -16,17 +16,6 @@ Brief Description
 
 Input event type for actions.
 
-Member Functions
-----------------
-
-+------------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_action<class_InputEventAction_get_action>` **(** **)** const                              |
-+------------------------------+-----------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_action<class_InputEventAction_set_action>` **(** :ref:`String<class_string>` action **)** |
-+------------------------------+-----------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_pressed<class_InputEventAction_set_pressed>` **(** :ref:`bool<class_bool>` pressed **)**  |
-+------------------------------+-----------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -42,21 +31,5 @@ Member Variables
 Description
 -----------
 
-Contains a generic action which can be targeted from several type of inputs. Actions can be created from the project settings menu ``Project > Project Settings > Input Map[/Code]. See [method Node._input].
-
-Member Function Description
----------------------------
-
-.. _class_InputEventAction_get_action:
-
-- :ref:`String<class_string>` **get_action** **(** **)** const
-
-.. _class_InputEventAction_set_action:
-
-- void **set_action** **(** :ref:`String<class_string>` action **)**
-
-.. _class_InputEventAction_set_pressed:
-
-- void **set_pressed** **(** :ref:`bool<class_bool>` pressed **)**
-
+Contains a generic action which can be targeted from several type of inputs. Actions can be created from the project settings menu ``Project > Project Settings > Input Map``. See :ref:`Node._input<class_Node__input>`.
 

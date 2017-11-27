@@ -24,8 +24,6 @@ Member Functions
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`clear_points<class_Curve3D_clear_points>` **(** **)**                                                                                                                                                                                   |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                        | :ref:`get_bake_interval<class_Curve3D_get_bake_interval>` **(** **)** const                                                                                                                                                                   |
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                        | :ref:`get_baked_length<class_Curve3D_get_baked_length>` **(** **)** const                                                                                                                                                                     |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolVector3Array<class_poolvector3array>`  | :ref:`get_baked_points<class_Curve3D_get_baked_points>` **(** **)** const                                                                                                                                                                     |
@@ -49,8 +47,6 @@ Member Functions
 | :ref:`Vector3<class_vector3>`                    | :ref:`interpolatef<class_Curve3D_interpolatef>` **(** :ref:`float<class_float>` fofs **)** const                                                                                                                                              |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`remove_point<class_Curve3D_remove_point>` **(** :ref:`int<class_int>` idx **)**                                                                                                                                                         |
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_bake_interval<class_Curve3D_set_bake_interval>` **(** :ref:`float<class_float>` distance **)**                                                                                                                                      |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`set_point_in<class_Curve3D_set_point_in>` **(** :ref:`int<class_int>` idx, :ref:`Vector3<class_vector3>` position **)**                                                                                                                 |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -96,12 +92,6 @@ If "at_position" is given, the point is inserted before the point number "at_pos
 .. _class_Curve3D_clear_points:
 
 - void **clear_points** **(** **)**
-
-.. _class_Curve3D_get_bake_interval:
-
-- :ref:`float<class_float>` **get_bake_interval** **(** **)** const
-
-Returns the distance between two adjacent cached points.
 
 .. _class_Curve3D_get_baked_length:
 
@@ -180,12 +170,6 @@ Returns the position at the vertex "fofs". It calls :ref:`interpolate<class_Curv
 - void **remove_point** **(** :ref:`int<class_int>` idx **)**
 
 Deletes the point "idx" from the curve. Sends an error to the console if "idx" is out of bounds.
-
-.. _class_Curve3D_set_bake_interval:
-
-- void **set_bake_interval** **(** :ref:`float<class_float>` distance **)**
-
-Sets the distance in 3D units between two adjacent cached points. Changing it forces the cache to be recomputed the next time a xxx_baked_xxx function is called. The less distance, the more points the cache will have, and the more memory it will consume, so use with care.
 
 .. _class_Curve3D_set_point_in:
 

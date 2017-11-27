@@ -30,15 +30,11 @@ Member Functions
 +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolVector3Array<class_poolvector3array>`  | :ref:`get_simple_path<class_Navigation_get_simple_path>` **(** :ref:`Vector3<class_vector3>` start, :ref:`Vector3<class_vector3>` end, :ref:`bool<class_bool>` optimize=true **)**                                 |
 +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`                    | :ref:`get_up_vector<class_Navigation_get_up_vector>` **(** **)** const                                                                                                                                             |
-+--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                            | :ref:`navmesh_create<class_Navigation_navmesh_create>` **(** :ref:`NavigationMesh<class_navigationmesh>` mesh, :ref:`Transform<class_transform>` xform, :ref:`Object<class_object>` owner=null **)**               |
 +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`navmesh_remove<class_Navigation_navmesh_remove>` **(** :ref:`int<class_int>` id **)**                                                                                                                        |
 +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`navmesh_set_transform<class_Navigation_navmesh_set_transform>` **(** :ref:`int<class_int>` id, :ref:`Transform<class_transform>` xform **)**                                                                 |
-+--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_up_vector<class_Navigation_set_up_vector>` **(** :ref:`Vector3<class_vector3>` up **)**                                                                                                                  |
 +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
@@ -72,10 +68,6 @@ Member Function Description
 
 - :ref:`PoolVector3Array<class_poolvector3array>` **get_simple_path** **(** :ref:`Vector3<class_vector3>` start, :ref:`Vector3<class_vector3>` end, :ref:`bool<class_bool>` optimize=true **)**
 
-.. _class_Navigation_get_up_vector:
-
-- :ref:`Vector3<class_vector3>` **get_up_vector** **(** **)** const
-
 .. _class_Navigation_navmesh_create:
 
 - :ref:`int<class_int>` **navmesh_create** **(** :ref:`NavigationMesh<class_navigationmesh>` mesh, :ref:`Transform<class_transform>` xform, :ref:`Object<class_object>` owner=null **)**
@@ -87,9 +79,5 @@ Member Function Description
 .. _class_Navigation_navmesh_set_transform:
 
 - void **navmesh_set_transform** **(** :ref:`int<class_int>` id, :ref:`Transform<class_transform>` xform **)**
-
-.. _class_Navigation_set_up_vector:
-
-- void **set_up_vector** **(** :ref:`Vector3<class_vector3>` up **)**
 
 

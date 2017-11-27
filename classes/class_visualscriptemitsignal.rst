@@ -16,15 +16,6 @@ Brief Description
 
 Emits a specified signal.
 
-Member Functions
-----------------
-
-+------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_signal<class_VisualScriptEmitSignal_get_signal>` **(** **)** const                            |
-+------------------------------+---------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_signal<class_VisualScriptEmitSignal_set_signal>` **(** :ref:`String<class_string>` name **)** |
-+------------------------------+---------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -45,16 +36,4 @@ Emits a specified signal when it is executed.
 **Output Ports:**
 
 - Sequence
-
-Member Function Description
----------------------------
-
-.. _class_VisualScriptEmitSignal_get_signal:
-
-- :ref:`String<class_string>` **get_signal** **(** **)** const
-
-.. _class_VisualScriptEmitSignal_set_signal:
-
-- void **set_signal** **(** :ref:`String<class_string>` name **)**
-
 

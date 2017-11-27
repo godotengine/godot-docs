@@ -19,17 +19,9 @@ Button that pops out a :ref:`ColorPicker<class_colorpicker>`
 Member Functions
 ----------------
 
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`              | :ref:`get_pick_color<class_ColorPickerButton_get_pick_color>` **(** **)** const                           |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`ColorPicker<class_colorpicker>`  | :ref:`get_picker<class_ColorPickerButton_get_picker>` **(** **)**                                         |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`is_editing_alpha<class_ColorPickerButton_is_editing_alpha>` **(** **)** const                       |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_edit_alpha<class_ColorPickerButton_set_edit_alpha>` **(** :ref:`bool<class_bool>` show **)**    |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_pick_color<class_ColorPickerButton_set_pick_color>` **(** :ref:`Color<class_color>` color **)** |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------+
++----------------------------------------+-------------------------------------------------------------------+
+| :ref:`ColorPicker<class_colorpicker>`  | :ref:`get_picker<class_ColorPickerButton_get_picker>` **(** **)** |
++----------------------------------------+-------------------------------------------------------------------+
 
 Signals
 -------
@@ -61,37 +53,8 @@ Encapsulates a :ref:`ColorPicker<class_colorpicker>` making it accesible by pres
 Member Function Description
 ---------------------------
 
-.. _class_ColorPickerButton_get_pick_color:
-
-- :ref:`Color<class_color>` **get_pick_color** **(** **)** const
-
 .. _class_ColorPickerButton_get_picker:
 
 - :ref:`ColorPicker<class_colorpicker>` **get_picker** **(** **)**
-
-.. _class_ColorPickerButton_is_editing_alpha:
-
-- :ref:`bool<class_bool>` **is_editing_alpha** **(** **)** const
-
-See :ref:`ColorPicker.is_edit_alpha<class_ColorPicker_is_edit_alpha>`
-
-.. _class_ColorPickerButton_set_edit_alpha:
-
-- void **set_edit_alpha** **(** :ref:`bool<class_bool>` show **)**
-
-See :ref:`ColorPicker.set_edit_alpha<class_ColorPicker_set_edit_alpha>`
-
-.. _class_ColorPickerButton_set_pick_color:
-
-- void **set_pick_color** **(** :ref:`Color<class_color>` color **)**
-
-Set new color to ColorRect.
-
-
-
-::
-
-    var cr = get_node("colorrect_node")
-    cr.set_frame_color(Color(1, 0, 0, 1)) # Set color rect node to red
 
 

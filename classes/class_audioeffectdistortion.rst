@@ -18,31 +18,6 @@ Adds a Distortion audio effect to an Audio bus.
 
 Modify the sound to make it dirty.
 
-Member Functions
-----------------
-
-+----------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_drive<class_AudioEffectDistortion_get_drive>` **(** **)** const                                          |
-+----------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_keep_hf_hz<class_AudioEffectDistortion_get_keep_hf_hz>` **(** **)** const                                |
-+----------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_mode<class_AudioEffectDistortion_get_mode>` **(** **)** const                                            |
-+----------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_post_gain<class_AudioEffectDistortion_get_post_gain>` **(** **)** const                                  |
-+----------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_pre_gain<class_AudioEffectDistortion_get_pre_gain>` **(** **)** const                                    |
-+----------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_drive<class_AudioEffectDistortion_set_drive>` **(** :ref:`float<class_float>` drive **)**                |
-+----------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_keep_hf_hz<class_AudioEffectDistortion_set_keep_hf_hz>` **(** :ref:`float<class_float>` keep_hf_hz **)** |
-+----------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_mode<class_AudioEffectDistortion_set_mode>` **(** :ref:`int<class_int>` mode **)**                       |
-+----------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_post_gain<class_AudioEffectDistortion_set_post_gain>` **(** :ref:`float<class_float>` post_gain **)**    |
-+----------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_pre_gain<class_AudioEffectDistortion_set_pre_gain>` **(** :ref:`float<class_float>` pre_gain **)**       |
-+----------------------------+--------------------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -82,48 +57,4 @@ Description
 Modify the sound and make it dirty. Different types are available : clip, tan, lofi (bit crushing), overdrive, or waveshape.
 
 By distorting the waveform the frequency content change, which will often make the sound "crunchy" or "abrasive". For games, it can simulate sound coming from some saturated device or speaker very efficiently.
-
-Member Function Description
----------------------------
-
-.. _class_AudioEffectDistortion_get_drive:
-
-- :ref:`float<class_float>` **get_drive** **(** **)** const
-
-.. _class_AudioEffectDistortion_get_keep_hf_hz:
-
-- :ref:`float<class_float>` **get_keep_hf_hz** **(** **)** const
-
-.. _class_AudioEffectDistortion_get_mode:
-
-- :ref:`int<class_int>` **get_mode** **(** **)** const
-
-.. _class_AudioEffectDistortion_get_post_gain:
-
-- :ref:`float<class_float>` **get_post_gain** **(** **)** const
-
-.. _class_AudioEffectDistortion_get_pre_gain:
-
-- :ref:`float<class_float>` **get_pre_gain** **(** **)** const
-
-.. _class_AudioEffectDistortion_set_drive:
-
-- void **set_drive** **(** :ref:`float<class_float>` drive **)**
-
-.. _class_AudioEffectDistortion_set_keep_hf_hz:
-
-- void **set_keep_hf_hz** **(** :ref:`float<class_float>` keep_hf_hz **)**
-
-.. _class_AudioEffectDistortion_set_mode:
-
-- void **set_mode** **(** :ref:`int<class_int>` mode **)**
-
-.. _class_AudioEffectDistortion_set_post_gain:
-
-- void **set_post_gain** **(** :ref:`float<class_float>` post_gain **)**
-
-.. _class_AudioEffectDistortion_set_pre_gain:
-
-- void **set_pre_gain** **(** :ref:`float<class_float>` pre_gain **)**
-
 

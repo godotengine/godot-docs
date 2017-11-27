@@ -16,15 +16,6 @@ Brief Description
 
 Changes a variable's value.
 
-Member Functions
-----------------
-
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_variable<class_VisualScriptVariableSet_get_variable>` **(** **)** const                            |
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_variable<class_VisualScriptVariableSet_set_variable>` **(** :ref:`String<class_string>` name **)** |
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -47,16 +38,4 @@ Changes a variable's value to the given input.
 **Output Ports:**
 
 - Sequence
-
-Member Function Description
----------------------------
-
-.. _class_VisualScriptVariableSet_get_variable:
-
-- :ref:`String<class_string>` **get_variable** **(** **)** const
-
-.. _class_VisualScriptVariableSet_set_variable:
-
-- void **set_variable** **(** :ref:`String<class_string>` name **)**
-
 

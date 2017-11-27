@@ -38,8 +38,6 @@ Member Functions
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_animation_list<class_AnimationPlayer_get_animation_list>` **(** **)** const                                                                                                                                  |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`get_animation_process_mode<class_AnimationPlayer_get_animation_process_mode>` **(** **)** const                                                                                                                  |
-+------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                    | :ref:`get_autoplay<class_AnimationPlayer_get_autoplay>` **(** **)** const                                                                                                                                              |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`get_blend_time<class_AnimationPlayer_get_blend_time>` **(** :ref:`String<class_string>` anim_from, :ref:`String<class_string>` anim_to **)** const                                                               |
@@ -50,11 +48,7 @@ Member Functions
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`get_current_animation_position<class_AnimationPlayer_get_current_animation_position>` **(** **)** const                                                                                                          |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                      | :ref:`get_default_blend_time<class_AnimationPlayer_get_default_blend_time>` **(** **)** const                                                                                                                          |
-+------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`get_position<class_AnimationPlayer_get_position>` **(** **)** const                                                                                                                                              |
-+------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_nodepath>`                | :ref:`get_root<class_AnimationPlayer_get_root>` **(** **)** const                                                                                                                                                      |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`get_speed_scale<class_AnimationPlayer_get_speed_scale>` **(** **)** const                                                                                                                                        |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -78,17 +72,11 @@ Member Functions
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_active<class_AnimationPlayer_set_active>` **(** :ref:`bool<class_bool>` active **)**                                                                                                                         |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_animation_process_mode<class_AnimationPlayer_set_animation_process_mode>` **(** :ref:`int<class_int>` mode **)**                                                                                             |
-+------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_autoplay<class_AnimationPlayer_set_autoplay>` **(** :ref:`String<class_string>` name **)**                                                                                                                   |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_blend_time<class_AnimationPlayer_set_blend_time>` **(** :ref:`String<class_string>` anim_from, :ref:`String<class_string>` anim_to, :ref:`float<class_float>` sec **)**                                      |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_current_animation<class_AnimationPlayer_set_current_animation>` **(** :ref:`String<class_string>` anim **)**                                                                                                 |
-+------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_default_blend_time<class_AnimationPlayer_set_default_blend_time>` **(** :ref:`float<class_float>` sec **)**                                                                                                  |
-+------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_root<class_AnimationPlayer_set_root>` **(** :ref:`NodePath<class_nodepath>` path **)**                                                                                                                       |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_speed_scale<class_AnimationPlayer_set_speed_scale>` **(** :ref:`float<class_float>` speed **)**                                                                                                              |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -203,12 +191,6 @@ Get an :ref:`Animation<class_animation>` resource by requesting a name.
 
 Get the list of names of the animations stored in the player.
 
-.. _class_AnimationPlayer_get_animation_process_mode:
-
-- :ref:`int<class_int>` **get_animation_process_mode** **(** **)** const
-
-Return the mode in which the animation player processes. See :ref:`set_animation_process_mode<class_AnimationPlayer_set_animation_process_mode>`.
-
 .. _class_AnimationPlayer_get_autoplay:
 
 - :ref:`String<class_string>` **get_autoplay** **(** **)** const
@@ -239,23 +221,11 @@ Get the length (in seconds) of the currently being played animation.
 
 Get the position (in seconds) of the currently being played animation.
 
-.. _class_AnimationPlayer_get_default_blend_time:
-
-- :ref:`float<class_float>` **get_default_blend_time** **(** **)** const
-
-Return the default blend time between animations.
-
 .. _class_AnimationPlayer_get_position:
 
 - :ref:`float<class_float>` **get_position** **(** **)** const
 
 Return the playback position (in seconds) in an animation channel (or channel 0 if none is provided).
-
-.. _class_AnimationPlayer_get_root:
-
-- :ref:`NodePath<class_nodepath>` **get_root** **(** **)** const
-
-Return path to root node (see :ref:`set_root<class_AnimationPlayer_set_root>`).
 
 .. _class_AnimationPlayer_get_speed_scale:
 
@@ -323,12 +293,6 @@ Seek the animation to a given position in time (in seconds). If 'update' is true
 
 Set the player as active (playing). If false, it will do nothing.
 
-.. _class_AnimationPlayer_set_animation_process_mode:
-
-- void **set_animation_process_mode** **(** :ref:`int<class_int>` mode **)**
-
-Set the mode in which the animation player processes. By default, it processes on idle time (framerate dependent), but using fixed time works well for animating static collision bodies in 2D and 3D. See enum ANIMATION_PROCESS\_\*.
-
 .. _class_AnimationPlayer_set_autoplay:
 
 - void **set_autoplay** **(** :ref:`String<class_string>` name **)**
@@ -346,18 +310,6 @@ Specify a blend time (in seconds) between two animations, referenced by their na
 - void **set_current_animation** **(** :ref:`String<class_string>` anim **)**
 
 Set the current animation (even if no playback occurs). Using set_current_animation() and set_active() are similar to calling play().
-
-.. _class_AnimationPlayer_set_default_blend_time:
-
-- void **set_default_blend_time** **(** :ref:`float<class_float>` sec **)**
-
-Set the default blend time between animations.
-
-.. _class_AnimationPlayer_set_root:
-
-- void **set_root** **(** :ref:`NodePath<class_nodepath>` path **)**
-
-AnimationPlayer resolves animation track paths from this node (which is relative to itself), by default root is "..", but it can be changed.
 
 .. _class_AnimationPlayer_set_speed_scale:
 

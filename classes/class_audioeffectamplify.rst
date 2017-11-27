@@ -18,15 +18,6 @@ Adds a Amplify audio effect to an Audio bus.
 
 Increases or decreases the volume of the selected audio bus.
 
-Member Functions
-----------------
-
-+----------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_volume_db<class_AudioEffectAmplify_get_volume_db>` **(** **)** const                            |
-+----------------------------+-----------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_volume_db<class_AudioEffectAmplify_set_volume_db>` **(** :ref:`float<class_float>` volume **)** |
-+----------------------------+-----------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -39,16 +30,4 @@ Description
 -----------
 
 Increases or decreases the volume being routed through the audio bus.
-
-Member Function Description
----------------------------
-
-.. _class_AudioEffectAmplify_get_volume_db:
-
-- :ref:`float<class_float>` **get_volume_db** **(** **)** const
-
-.. _class_AudioEffectAmplify_set_volume_db:
-
-- void **set_volume_db** **(** :ref:`float<class_float>` volume **)**
-
 

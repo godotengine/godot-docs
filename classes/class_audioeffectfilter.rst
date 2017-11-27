@@ -18,27 +18,6 @@ Brief Description
 
 Adds a filter to the Audio Bus.
 
-Member Functions
-----------------
-
-+----------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_cutoff<class_AudioEffectFilter_get_cutoff>` **(** **)** const                                  |
-+----------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_db<class_AudioEffectFilter_get_db>` **(** **)** const                                          |
-+----------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_gain<class_AudioEffectFilter_get_gain>` **(** **)** const                                      |
-+----------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_resonance<class_AudioEffectFilter_get_resonance>` **(** **)** const                            |
-+----------------------------+----------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_cutoff<class_AudioEffectFilter_set_cutoff>` **(** :ref:`float<class_float>` freq **)**         |
-+----------------------------+----------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_db<class_AudioEffectFilter_set_db>` **(** :ref:`int<class_int>` amount **)**                   |
-+----------------------------+----------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_gain<class_AudioEffectFilter_set_gain>` **(** :ref:`float<class_float>` amount **)**           |
-+----------------------------+----------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_resonance<class_AudioEffectFilter_set_resonance>` **(** :ref:`float<class_float>` amount **)** |
-+----------------------------+----------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -71,40 +50,4 @@ Description
 -----------
 
 Allows frequencies other than the :ref:`cutoff_hz<class_AudioEffectFilter_cutoff_hz>` to pass.
-
-Member Function Description
----------------------------
-
-.. _class_AudioEffectFilter_get_cutoff:
-
-- :ref:`float<class_float>` **get_cutoff** **(** **)** const
-
-.. _class_AudioEffectFilter_get_db:
-
-- :ref:`int<class_int>` **get_db** **(** **)** const
-
-.. _class_AudioEffectFilter_get_gain:
-
-- :ref:`float<class_float>` **get_gain** **(** **)** const
-
-.. _class_AudioEffectFilter_get_resonance:
-
-- :ref:`float<class_float>` **get_resonance** **(** **)** const
-
-.. _class_AudioEffectFilter_set_cutoff:
-
-- void **set_cutoff** **(** :ref:`float<class_float>` freq **)**
-
-.. _class_AudioEffectFilter_set_db:
-
-- void **set_db** **(** :ref:`int<class_int>` amount **)**
-
-.. _class_AudioEffectFilter_set_gain:
-
-- void **set_gain** **(** :ref:`float<class_float>` amount **)**
-
-.. _class_AudioEffectFilter_set_resonance:
-
-- void **set_resonance** **(** :ref:`float<class_float>` amount **)**
-
 

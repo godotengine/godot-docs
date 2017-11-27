@@ -149,7 +149,7 @@ Reloads the scene at the given path.
 
 - :ref:`int<class_int>` **save_scene** **(** **)**
 
-Saves the scene. Returns either OK or ERR_CANT_CREATE. See :ref:`@Global Scope<class_@global scope>` constants.
+Saves the scene. Returns either OK or ERR_CANT_CREATE. See :ref:`@GlobalScope<class_@globalscope>` constants.
 
 .. _class_EditorInterface_save_scene_as:
 

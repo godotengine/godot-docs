@@ -30,15 +30,11 @@ Member Functions
 +----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_array>`              | :ref:`get_shape_owners<class_CollisionObject2D_get_shape_owners>` **(** **)**                                                                                                                  |
 +----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`is_pickable<class_CollisionObject2D_is_pickable>` **(** **)** const                                                                                                                      |
-+----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                | :ref:`is_shape_owner_disabled<class_CollisionObject2D_is_shape_owner_disabled>` **(** :ref:`int<class_int>` owner_id **)** const                                                               |
 +----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                | :ref:`is_shape_owner_one_way_collision_enabled<class_CollisionObject2D_is_shape_owner_one_way_collision_enabled>` **(** :ref:`int<class_int>` owner_id **)** const                             |
 +----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`remove_shape_owner<class_CollisionObject2D_remove_shape_owner>` **(** :ref:`int<class_int>` owner_id **)**                                                                               |
-+----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_pickable<class_CollisionObject2D_set_pickable>` **(** :ref:`bool<class_bool>` enabled **)**                                                                                          |
 +----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`shape_find_owner<class_CollisionObject2D_shape_find_owner>` **(** :ref:`int<class_int>` shape_index **)** const                                                                          |
 +----------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -125,12 +121,6 @@ Returns the object's :ref:`RID<class_rid>`.
 
 Returns an :ref:`Array<class_array>` of ``owner_id`` identifiers. You can use these ids in other methods that take ``owner_id`` as an argument.
 
-.. _class_CollisionObject2D_is_pickable:
-
-- :ref:`bool<class_bool>` **is_pickable** **(** **)** const
-
-Return whether this object is pickable.
-
 .. _class_CollisionObject2D_is_shape_owner_disabled:
 
 - :ref:`bool<class_bool>` **is_shape_owner_disabled** **(** :ref:`int<class_int>` owner_id **)** const
@@ -146,12 +136,6 @@ If ``true`` the shape owner and its shapes are disabled.
 - void **remove_shape_owner** **(** :ref:`int<class_int>` owner_id **)**
 
 Removes the given shape owner.
-
-.. _class_CollisionObject2D_set_pickable:
-
-- void **set_pickable** **(** :ref:`bool<class_bool>` enabled **)**
-
-Set whether this object is pickable. A pickable object can detect the mouse pointer enter/leave it and, if the mouse is inside it, report input events.
 
 .. _class_CollisionObject2D_shape_find_owner:
 

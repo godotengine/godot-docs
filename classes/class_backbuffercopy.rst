@@ -16,19 +16,6 @@ Brief Description
 
 Copies a region of the screen (or the whole screen) to a buffer so it can be accessed with the texscreen() shader instruction.
 
-Member Functions
-----------------
-
-+----------------------------+------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_copy_mode<class_BackBufferCopy_get_copy_mode>` **(** **)** const                           |
-+----------------------------+------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_rect2>`  | :ref:`get_rect<class_BackBufferCopy_get_rect>` **(** **)** const                                     |
-+----------------------------+------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_copy_mode<class_BackBufferCopy_set_copy_mode>` **(** :ref:`int<class_int>` copy_mode **)** |
-+----------------------------+------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_rect<class_BackBufferCopy_set_rect>` **(** :ref:`Rect2<class_rect2>` rect **)**            |
-+----------------------------+------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -52,32 +39,4 @@ Description
 -----------
 
 Node for back-buffering the currently displayed screen. The region defined in the BackBufferCopy node is bufferized with the content of the screen it covers, or the entire screen according to the copy mode set. Accessing this buffer is done with the texscreen() shader instruction.
-
-Member Function Description
----------------------------
-
-.. _class_BackBufferCopy_get_copy_mode:
-
-- :ref:`int<class_int>` **get_copy_mode** **(** **)** const
-
-Return the copy mode currently applied to the BackBufferCopy. See ``COPY_MODE\_\*`` constants.
-
-.. _class_BackBufferCopy_get_rect:
-
-- :ref:`Rect2<class_rect2>` **get_rect** **(** **)** const
-
-Return the area covered by the BackBufferCopy.
-
-.. _class_BackBufferCopy_set_copy_mode:
-
-- void **set_copy_mode** **(** :ref:`int<class_int>` copy_mode **)**
-
-Set the copy mode of the BackBufferCopy. See ``COPY_MODE\_\*`` constants.
-
-.. _class_BackBufferCopy_set_rect:
-
-- void **set_rect** **(** :ref:`Rect2<class_rect2>` rect **)**
-
-Defines the area covered by the BackBufferCopy.
-
 

@@ -16,15 +16,6 @@ Brief Description
 
 Concave polygon 2D shape resource for physics.
 
-Member Functions
-----------------
-
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector2Array<class_poolvector2array>`  | :ref:`get_segments<class_ConcavePolygonShape2D_get_segments>` **(** **)** const                                                    |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_segments<class_ConcavePolygonShape2D_set_segments>` **(** :ref:`PoolVector2Array<class_poolvector2array>` segments **)** |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -39,20 +30,4 @@ Description
 Concave polygon 2D shape resource for physics. It is made out of segments and is very optimal for complex polygonal concave collisions. It is really not advised to use for :ref:`RigidBody2D<class_rigidbody2d>` nodes. A CollisionPolygon2D in convex decomposition mode (solids) or several convex objects are advised for that instead. Otherwise, a concave polygon 2D shape is better for static collisions.
 
 The main difference between a :ref:`ConvexPolygonShape2D<class_convexpolygonshape2d>` and a ``ConcavePolygonShape2D`` is that a concave polygon assumes it is concave and uses a more complex method of collision detection, and a convex one forces itself to be convex in order to speed up collision detection.
-
-Member Function Description
----------------------------
-
-.. _class_ConcavePolygonShape2D_get_segments:
-
-- :ref:`PoolVector2Array<class_poolvector2array>` **get_segments** **(** **)** const
-
-Return the array of segments.
-
-.. _class_ConcavePolygonShape2D_set_segments:
-
-- void **set_segments** **(** :ref:`PoolVector2Array<class_poolvector2array>` segments **)**
-
-Set the array of segments.
-
 

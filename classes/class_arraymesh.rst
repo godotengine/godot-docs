@@ -34,7 +34,7 @@ Member Functions
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`      | :ref:`get_blend_shape_name<class_ArrayMesh_get_blend_shape_name>` **(** :ref:`int<class_int>` index **)** const                                                                                                                                |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect3<class_rect3>`        | :ref:`get_custom_aabb<class_ArrayMesh_get_custom_aabb>` **(** **)** const                                                                                                                                                                      |
+| :ref:`AABB<class_aabb>`          | :ref:`get_custom_aabb<class_ArrayMesh_get_custom_aabb>` **(** **)** const                                                                                                                                                                      |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`            | :ref:`get_surface_count<class_ArrayMesh_get_surface_count>` **(** **)** const                                                                                                                                                                  |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -42,7 +42,7 @@ Member Functions
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_blend_shape_mode<class_ArrayMesh_set_blend_shape_mode>` **(** :ref:`int<class_int>` mode **)**                                                                                                                                       |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_custom_aabb<class_ArrayMesh_set_custom_aabb>` **(** :ref:`Rect3<class_rect3>` aabb **)**                                                                                                                                             |
+| void                             | :ref:`set_custom_aabb<class_ArrayMesh_set_custom_aabb>` **(** :ref:`AABB<class_aabb>` aabb **)**                                                                                                                                               |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`            | :ref:`surface_get_array_index_len<class_ArrayMesh_surface_get_array_index_len>` **(** :ref:`int<class_int>` surf_idx **)** const                                                                                                               |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -65,6 +65,8 @@ Member Functions
 | void                             | :ref:`surface_set_material<class_ArrayMesh_surface_set_material>` **(** :ref:`int<class_int>` surf_idx, :ref:`Material<class_material>` material **)**                                                                                         |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`surface_set_name<class_ArrayMesh_surface_set_name>` **(** :ref:`int<class_int>` surf_idx, :ref:`String<class_string>` name **)**                                                                                                         |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`surface_update_region<class_ArrayMesh_surface_update_region>` **(** :ref:`int<class_int>` surf_idx, :ref:`int<class_int>` offset, :ref:`PoolByteArray<class_poolbytearray>` data **)**                                                   |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
@@ -129,7 +131,7 @@ Surfaces are created to be rendered using a "primitive", which may be PRIMITIVE_
 
 .. _class_ArrayMesh_get_custom_aabb:
 
-- :ref:`Rect3<class_rect3>` **get_custom_aabb** **(** **)** const
+- :ref:`AABB<class_aabb>` **get_custom_aabb** **(** **)** const
 
 .. _class_ArrayMesh_get_surface_count:
 
@@ -147,7 +149,7 @@ Return the amount of surfaces that the ``ArrayMesh`` holds.
 
 .. _class_ArrayMesh_set_custom_aabb:
 
-- void **set_custom_aabb** **(** :ref:`Rect3<class_rect3>` aabb **)**
+- void **set_custom_aabb** **(** :ref:`AABB<class_aabb>` aabb **)**
 
 .. _class_ArrayMesh_surface_get_array_index_len:
 
@@ -206,5 +208,9 @@ Remove a surface at position surf_idx, shifting greater surfaces one surf_idx sl
 - void **surface_set_name** **(** :ref:`int<class_int>` surf_idx, :ref:`String<class_string>` name **)**
 
 Set a :ref:`Material<class_material>` for a given surface. Surface will be rendered using this material.
+
+.. _class_ArrayMesh_surface_update_region:
+
+- void **surface_update_region** **(** :ref:`int<class_int>` surf_idx, :ref:`int<class_int>` offset, :ref:`PoolByteArray<class_poolbytearray>` data **)**
 
 

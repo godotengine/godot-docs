@@ -19,29 +19,19 @@ Direct access object to a space in the :ref:`Physics2DServer<class_physics2dserv
 Member Functions
 ----------------
 
-+--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`            | :ref:`cast_motion<class_Physics2DDirectSpaceState_cast_motion>` **(** :ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>` shape **)**                                                                                                                                 |
-+--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`            | :ref:`collide_shape<class_Physics2DDirectSpaceState_collide_shape>` **(** :ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>` shape, :ref:`int<class_int>` max_results=32 **)**                                                                                       |
-+--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_dictionary>`  | :ref:`get_rest_info<class_Physics2DDirectSpaceState_get_rest_info>` **(** :ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>` shape **)**                                                                                                                             |
-+--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`            | :ref:`intersect_point<class_Physics2DDirectSpaceState_intersect_point>` **(** :ref:`Vector2<class_vector2>` point, :ref:`int<class_int>` max_results=32, :ref:`Array<class_array>` exclude=[  ], :ref:`int<class_int>` collision_layer=2147483647, :ref:`int<class_int>` type_mask=15 **)** |
-+--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_dictionary>`  | :ref:`intersect_ray<class_Physics2DDirectSpaceState_intersect_ray>` **(** :ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to, :ref:`Array<class_array>` exclude=[  ], :ref:`int<class_int>` collision_layer=2147483647, :ref:`int<class_int>` type_mask=15 **)**          |
-+--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`            | :ref:`intersect_shape<class_Physics2DDirectSpaceState_intersect_shape>` **(** :ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>` shape, :ref:`int<class_int>` max_results=32 **)**                                                                                   |
-+--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Numeric Constants
------------------
-
-- **TYPE_MASK_STATIC_BODY** = **1** --- Check for collisions with static bodies.
-- **TYPE_MASK_KINEMATIC_BODY** = **2** --- Check for collisions with kinematic bodies.
-- **TYPE_MASK_RIGID_BODY** = **4** --- Check for collisions with rigid bodies.
-- **TYPE_MASK_CHARACTER_BODY** = **8** --- Check for collisions with rigid bodies in character mode.
-- **TYPE_MASK_COLLISION** = **15** --- Check for collisions with any kind of bodies (but not areas).
-- **TYPE_MASK_AREA** = **16** --- Check for collisions with areas.
++--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`            | :ref:`cast_motion<class_Physics2DDirectSpaceState_cast_motion>` **(** :ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>` shape **)**                                                                                             |
++--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`            | :ref:`collide_shape<class_Physics2DDirectSpaceState_collide_shape>` **(** :ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>` shape, :ref:`int<class_int>` max_results=32 **)**                                                   |
++--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_dictionary>`  | :ref:`get_rest_info<class_Physics2DDirectSpaceState_get_rest_info>` **(** :ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>` shape **)**                                                                                         |
++--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`            | :ref:`intersect_point<class_Physics2DDirectSpaceState_intersect_point>` **(** :ref:`Vector2<class_vector2>` point, :ref:`int<class_int>` max_results=32, :ref:`Array<class_array>` exclude=[  ], :ref:`int<class_int>` collision_layer=2147483647 **)** |
++--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Dictionary<class_dictionary>`  | :ref:`intersect_ray<class_Physics2DDirectSpaceState_intersect_ray>` **(** :ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to, :ref:`Array<class_array>` exclude=[  ], :ref:`int<class_int>` collision_layer=2147483647 **)**          |
++--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`            | :ref:`intersect_shape<class_Physics2DDirectSpaceState_intersect_shape>` **(** :ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>` shape, :ref:`int<class_int>` max_results=32 **)**                                               |
++--------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
@@ -91,7 +81,7 @@ If the shape did not intersect anything, then an empty dictionary (dir.empty()==
 
 .. _class_Physics2DDirectSpaceState_intersect_point:
 
-- :ref:`Array<class_array>` **intersect_point** **(** :ref:`Vector2<class_vector2>` point, :ref:`int<class_int>` max_results=32, :ref:`Array<class_array>` exclude=[  ], :ref:`int<class_int>` collision_layer=2147483647, :ref:`int<class_int>` type_mask=15 **)**
+- :ref:`Array<class_array>` **intersect_point** **(** :ref:`Vector2<class_vector2>` point, :ref:`int<class_int>` max_results=32, :ref:`Array<class_array>` exclude=[  ], :ref:`int<class_int>` collision_layer=2147483647 **)**
 
 Check whether a point is inside any shape. The shapes the point is inside of are returned in an array containing dictionaries with the following fields:
 
@@ -105,11 +95,11 @@ collider: Object the point is inside of.
 
 rid: :ref:`RID<class_rid>` of the object the point is in.
 
-Additionally, the method can take an array of objects or :ref:`RID<class_rid>`\ s that are to be excluded from collisions, a bitmask representing the physics layers to check in, and another bitmask for the types of objects to check (see TYPE_MASK\_\* constants).
+Additionally, the method can take an array of objects or :ref:`RID<class_rid>`\ s that are to be excluded from collisions, or a bitmask representing the physics layers to check in.
 
 .. _class_Physics2DDirectSpaceState_intersect_ray:
 
-- :ref:`Dictionary<class_dictionary>` **intersect_ray** **(** :ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to, :ref:`Array<class_array>` exclude=[  ], :ref:`int<class_int>` collision_layer=2147483647, :ref:`int<class_int>` type_mask=15 **)**
+- :ref:`Dictionary<class_dictionary>` **intersect_ray** **(** :ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to, :ref:`Array<class_array>` exclude=[  ], :ref:`int<class_int>` collision_layer=2147483647 **)**
 
 Intersect a ray in a given space. The returned object is a dictionary with the following fields:
 
@@ -129,7 +119,7 @@ rid: :ref:`RID<class_rid>` of the object against which the ray was stopped.
 
 If the ray did not intersect anything, then an empty dictionary (dir.empty()==true) is returned instead.
 
-Additionally, the method can take an array of objects or :ref:`RID<class_rid>`\ s that are to be excluded from collisions, a bitmask representing the physics layers to check in, and another bitmask for the types of objects to check (see TYPE_MASK\_\* constants).
+Additionally, the method can take an array of objects or :ref:`RID<class_rid>`\ s that are to be excluded from collisions, or a bitmask representing the physics layers to check in.
 
 .. _class_Physics2DDirectSpaceState_intersect_shape:
 

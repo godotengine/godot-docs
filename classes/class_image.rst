@@ -417,21 +417,15 @@ Saves the image as a PNG file to ``path``.
 
 - void **set_pixel** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`Color<class_color>` color **)**
 
-Sets the :ref:`Color<class_color>` of the pixel at ``(x, y)`` if the image is unlocked. Example:
+Sets the :ref:`Color<class_color>` of the pixel at ``(x, y)`` if the image is locked. Example:
 
-``
+::
 
-var img = Image.new()
-
-img.lock()
-
-img.set_pixel(x, y, color) # Does not have an effect
-
-img.unlock()
-
-img.set_pixel(x, y, color) # Works
-
-``.
+    var img = Image.new()
+    img.unlock()
+    img.set_pixel(x, y, color) # Does not have an effect
+    img.lock()
+    img.set_pixel(x, y, color) # Works
 
 .. _class_Image_shrink_x2:
 

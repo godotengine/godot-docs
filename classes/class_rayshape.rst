@@ -16,15 +16,6 @@ Brief Description
 
 Ray shape for 3D collisions.
 
-Member Functions
-----------------
-
-+----------------------------+-------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_length<class_RayShape_get_length>` **(** **)** const                            |
-+----------------------------+-------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_length<class_RayShape_set_length>` **(** :ref:`float<class_float>` length **)** |
-+----------------------------+-------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -37,16 +28,4 @@ Description
 -----------
 
 Ray shape for 3D collisions, which can be set into a :ref:`PhysicsBody<class_physicsbody>` or :ref:`Area<class_area>`. A ray is not really a collision body, instead it tries to separate itself from whatever is touching its far endpoint. It's often useful for characters.
-
-Member Function Description
----------------------------
-
-.. _class_RayShape_get_length:
-
-- :ref:`float<class_float>` **get_length** **(** **)** const
-
-.. _class_RayShape_set_length:
-
-- void **set_length** **(** :ref:`float<class_float>` length **)**
-
 

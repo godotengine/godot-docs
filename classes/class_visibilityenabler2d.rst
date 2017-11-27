@@ -16,15 +16,6 @@ Brief Description
 
 Enable certain nodes only when visible.
 
-Member Functions
-----------------
-
-+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_enabler_enabled<class_VisibilityEnabler2D_is_enabler_enabled>` **(** :ref:`int<class_int>` enabler **)** const              |
-+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_enabler<class_VisibilityEnabler2D_set_enabler>` **(** :ref:`int<class_int>` enabler, :ref:`bool<class_bool>` enabled **)** |
-+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -68,20 +59,4 @@ Description
 -----------
 
 The VisibilityEnabler2D will disable :ref:`RigidBody2D<class_rigidbody2d>`, :ref:`AnimationPlayer<class_animationplayer>`, and other nodes when they are not visible. It will only affect other nodes within the same scene as the VisibilityEnabler2D itself.
-
-Member Function Description
----------------------------
-
-.. _class_VisibilityEnabler2D_is_enabler_enabled:
-
-- :ref:`bool<class_bool>` **is_enabler_enabled** **(** :ref:`int<class_int>` enabler **)** const
-
-Returns whether the specified enabler was set to true or not.
-
-.. _class_VisibilityEnabler2D_set_enabler:
-
-- void **set_enabler** **(** :ref:`int<class_int>` enabler, :ref:`bool<class_bool>` enabled **)**
-
-Set an enabler to true for all nodes of its type to be disabled when the VisibilityEnabler2D is not in view. See the constants for enablers and what they affect.
-
 

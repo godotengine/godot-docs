@@ -20,7 +20,7 @@ Member Functions
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Basis<class_basis>`      | :ref:`Basis<class_Basis_Basis>` **(** :ref:`Quat<class_quat>` from **)**                                                                                     |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Basis<class_basis>`      | :ref:`Basis<class_Basis_Basis>` **(** :ref:`Vector3<class_vector3>` euler **)**                                                                              |
+| :ref:`Basis<class_basis>`      | :ref:`Basis<class_Basis_Basis>` **(** :ref:`Vector3<class_vector3>` from **)**                                                                               |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Basis<class_basis>`      | :ref:`Basis<class_Basis_Basis>` **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` phi **)**                                                |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -89,7 +89,7 @@ Create a rotation matrix from the given quaternion.
 
 .. _class_Basis_Basis:
 
-- :ref:`Basis<class_basis>` **Basis** **(** :ref:`Vector3<class_vector3>` euler **)**
+- :ref:`Basis<class_basis>` **Basis** **(** :ref:`Vector3<class_vector3>` from **)**
 
 Create a rotation matrix (in the YXZ convention: first Z, then X, and Y last) from the specified Euler angles, given in the vector format as (X-angle, Y-angle, Z-angle).
 

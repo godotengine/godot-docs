@@ -22,7 +22,7 @@ Member Functions
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`add_collision_segments<class_EditorSpatialGizmo_add_collision_segments>` **(** :ref:`PoolVector3Array<class_poolvector3array>` segments **)**                                                            |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`add_collision_triangles<class_EditorSpatialGizmo_add_collision_triangles>` **(** :ref:`TriangleMesh<class_trianglemesh>` triangles, :ref:`Rect3<class_rect3>` bounds **)**                               |
+| void                           | :ref:`add_collision_triangles<class_EditorSpatialGizmo_add_collision_triangles>` **(** :ref:`TriangleMesh<class_trianglemesh>` triangles, :ref:`AABB<class_aabb>` bounds **)**                                 |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`add_handles<class_EditorSpatialGizmo_add_handles>` **(** :ref:`PoolVector3Array<class_poolvector3array>` handles, :ref:`bool<class_bool>` billboard=false, :ref:`bool<class_bool>` secondary=false **)** |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -61,7 +61,7 @@ Member Function Description
 
 .. _class_EditorSpatialGizmo_add_collision_triangles:
 
-- void **add_collision_triangles** **(** :ref:`TriangleMesh<class_trianglemesh>` triangles, :ref:`Rect3<class_rect3>` bounds **)**
+- void **add_collision_triangles** **(** :ref:`TriangleMesh<class_trianglemesh>` triangles, :ref:`AABB<class_aabb>` bounds **)**
 
 Add collision triangles to the gizmo for picking. A :ref:`TriangleMesh<class_trianglemesh>` can be generated from a regular :ref:`Mesh<class_mesh>` too. Call this function during :ref:`redraw<class_EditorSpatialGizmo_redraw>`.
 

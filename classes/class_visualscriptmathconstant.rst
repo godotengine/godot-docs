@@ -16,15 +16,6 @@ Brief Description
 
 Commonly used mathematical constants.
 
-Member Functions
-----------------
-
-+------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_math_constant<class_VisualScriptMathConstant_get_math_constant>` **(** **)**                             |
-+------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_math_constant<class_VisualScriptMathConstant_set_math_constant>` **(** :ref:`int<class_int>` which **)** |
-+------------------------+--------------------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -58,16 +49,4 @@ none
 **Output Ports:**
 
 - Data (variant): ``get``
-
-Member Function Description
----------------------------
-
-.. _class_VisualScriptMathConstant_get_math_constant:
-
-- :ref:`int<class_int>` **get_math_constant** **(** **)**
-
-.. _class_VisualScriptMathConstant_set_math_constant:
-
-- void **set_math_constant** **(** :ref:`int<class_int>` which **)**
-
 

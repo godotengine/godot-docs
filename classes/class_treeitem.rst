@@ -157,7 +157,7 @@ Numeric Constants
 Description
 -----------
 
-Control for a single item inside a :ref:`Tree<class_tree>`. May have child ``TreeItem``s and be styled as well as contain buttons.
+Control for a single item inside a :ref:`Tree<class_tree>`. May have child ``TreeItem``\ s and be styled as well as contain buttons.
 
 Member Function Description
 ---------------------------

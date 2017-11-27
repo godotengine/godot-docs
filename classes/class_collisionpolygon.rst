@@ -16,23 +16,6 @@ Brief Description
 
 Editor-only class for defining a collision polygon in 3D space.
 
-Member Functions
-----------------
-
-+--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                        | :ref:`get_depth<class_CollisionPolygon_get_depth>` **(** **)** const                                                       |
-+--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector2Array<class_poolvector2array>`  | :ref:`get_polygon<class_CollisionPolygon_get_polygon>` **(** **)** const                                                   |
-+--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                          | :ref:`is_disabled<class_CollisionPolygon_is_disabled>` **(** **)** const                                                   |
-+--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_depth<class_CollisionPolygon_set_depth>` **(** :ref:`float<class_float>` depth **)**                             |
-+--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_disabled<class_CollisionPolygon_set_disabled>` **(** :ref:`bool<class_bool>` disabled **)**                      |
-+--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_polygon<class_CollisionPolygon_set_polygon>` **(** :ref:`PoolVector2Array<class_poolvector2array>` polygon **)** |
-+--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -53,32 +36,4 @@ Description
 -----------
 
 Allows editing a collision polygon's vertices on a selected plane. Can also set a depth perpendicular to that plane. This class is only available in the editor. It will not appear in the scene tree at runtime. Creates a :ref:`Shape<class_shape>` for gameplay. Properties modified during gameplay will have no effect.
-
-Member Function Description
----------------------------
-
-.. _class_CollisionPolygon_get_depth:
-
-- :ref:`float<class_float>` **get_depth** **(** **)** const
-
-.. _class_CollisionPolygon_get_polygon:
-
-- :ref:`PoolVector2Array<class_poolvector2array>` **get_polygon** **(** **)** const
-
-.. _class_CollisionPolygon_is_disabled:
-
-- :ref:`bool<class_bool>` **is_disabled** **(** **)** const
-
-.. _class_CollisionPolygon_set_depth:
-
-- void **set_depth** **(** :ref:`float<class_float>` depth **)**
-
-.. _class_CollisionPolygon_set_disabled:
-
-- void **set_disabled** **(** :ref:`bool<class_bool>` disabled **)**
-
-.. _class_CollisionPolygon_set_polygon:
-
-- void **set_polygon** **(** :ref:`PoolVector2Array<class_poolvector2array>` polygon **)**
-
 

@@ -30,9 +30,13 @@ Member Functions
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_color>`    | :ref:`contrasted<class_Color_contrasted>` **(** **)**                                                                                                          |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`    | :ref:`darkened<class_Color_darkened>` **(** :ref:`float<class_float>` amount **)**                                                                             |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`    | :ref:`gray<class_Color_gray>` **(** **)**                                                                                                                      |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_color>`    | :ref:`inverted<class_Color_inverted>` **(** **)**                                                                                                              |
++------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`    | :ref:`lightened<class_Color_lightened>` **(** :ref:`float<class_float>` amount **)**                                                                           |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_color>`    | :ref:`linear_interpolate<class_Color_linear_interpolate>` **(** :ref:`Color<class_color>` b, :ref:`float<class_float>` t **)**                                 |
 +------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -176,6 +180,17 @@ Returns the most contrasting color.
     var c = Color(.3, .4, .9)
     var contrastedColor = c.contrasted() # a color of an RGBA(204, 229, 102, 255)
 
+.. _class_Color_darkened:
+
+- :ref:`Color<class_color>` **darkened** **(** :ref:`float<class_float>` amount **)**
+
+Returns a new color resulting from making this color darker by the specified percentage (0-1).
+
+::
+
+    var green = Color(0.0, 1.0, 0.0)
+    var darkgreen = green.darkened(0.2) # 20% darker than regular green
+
 .. _class_Color_gray:
 
 - :ref:`float<class_float>` **gray** **(** **)**
@@ -199,6 +214,17 @@ Returns the inverted color (1-r, 1-g, 1-b, 1-a).
 
     var c = Color(.3, .4, .9)
     var invertedColor = c.inverted() # a color of an RGBA(178, 153, 26, 255)
+
+.. _class_Color_lightened:
+
+- :ref:`Color<class_color>` **lightened** **(** :ref:`float<class_float>` amount **)**
+
+Returns a new color resulting from making this color lighter by the specified percentage (0-1).
+
+::
+
+    var green = Color(0.0, 1.0, 0.0)
+    var lightgreen = green.lightened(0.2) # 20% lighter than regular green
 
 .. _class_Color_linear_interpolate:
 

@@ -16,32 +16,11 @@ Brief Description
 
 
 
-Member Functions
-----------------
-
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_resource_path<class_VisualScriptResourcePath_get_resource_path>` **(** **)**                                  |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_resource_path<class_VisualScriptResourcePath_set_resource_path>` **(** :ref:`String<class_string>` path **)** |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
   .. _class_VisualScriptResourcePath_path:
 
 - :ref:`String<class_string>` **path**
-
-
-Member Function Description
----------------------------
-
-.. _class_VisualScriptResourcePath_get_resource_path:
-
-- :ref:`String<class_string>` **get_resource_path** **(** **)**
-
-.. _class_VisualScriptResourcePath_set_resource_path:
-
-- void **set_resource_path** **(** :ref:`String<class_string>` path **)**
 
 

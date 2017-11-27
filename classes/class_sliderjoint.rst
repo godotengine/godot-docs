@@ -16,15 +16,6 @@ Brief Description
 
 Piston kind of slider between two bodies in 3D.
 
-Member Functions
-----------------
-
-+----------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_param<class_SliderJoint_get_param>` **(** :ref:`int<class_int>` param **)** const                            |
-+----------------------------+------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_param<class_SliderJoint_set_param>` **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value **)** |
-+----------------------------+------------------------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -154,16 +145,4 @@ Description
 -----------
 
 Slides across the x-axis of the Pivot object.
-
-Member Function Description
----------------------------
-
-.. _class_SliderJoint_get_param:
-
-- :ref:`float<class_float>` **get_param** **(** :ref:`int<class_int>` param **)** const
-
-.. _class_SliderJoint_set_param:
-
-- void **set_param** **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value **)**
-
 

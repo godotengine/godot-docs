@@ -16,15 +16,6 @@ Brief Description
 
 A Visual Script node used to call built-in functions.
 
-Member Functions
-----------------
-
-+------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_func<class_VisualScriptBuiltinFunc_get_func>` **(** **)**                             |
-+------------------------+-------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_func<class_VisualScriptBuiltinFunc_set_func>` **(** :ref:`int<class_int>` which **)** |
-+------------------------+-------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -76,28 +67,30 @@ Numeric Constants
 - **MATH_RAD2DEG** = **37** --- Convert the input from radians to degrees.
 - **MATH_LINEAR2DB** = **38** --- Convert the input from linear volume to decibel volume.
 - **MATH_DB2LINEAR** = **39** --- Convert the input from decibel volume to linear volume.
-- **MATH_WRAP** = **40**
-- **MATH_WRAPF** = **41**
-- **LOGIC_MAX** = **42** --- Return the greater of the two numbers, also known as their maximum.
-- **LOGIC_MIN** = **43** --- Return the lesser of the two numbers, also known as their minimum.
-- **LOGIC_CLAMP** = **44** --- Return the input clamped inside the given range, ensuring the result is never outside it. Equivalent to `min(max(input, range_low), range_high)`
-- **LOGIC_NEAREST_PO2** = **45** --- Return the nearest power of 2 to the input.
-- **OBJ_WEAKREF** = **46** --- Create a :ref:`WeakRef<class_weakref>` from the input.
-- **FUNC_FUNCREF** = **47** --- Create a :ref:`FuncRef<class_funcref>` from the input.
-- **TYPE_CONVERT** = **48** --- Convert between types.
-- **TYPE_OF** = **49** --- Return the type of the input as an integer. Check enum Variant.Type for the integers that might be returned.
-- **TYPE_EXISTS** = **50** --- Checks if a type is registered in the :ref:`ClassDB<class_classdb>`.
-- **TEXT_CHAR** = **51** --- Return a character with the given ascii value.
-- **TEXT_STR** = **52** --- Convert the input to a string.
-- **TEXT_PRINT** = **53** --- Print the given string to the output window.
-- **TEXT_PRINTERR** = **54** --- Print the given string to the standard error output.
-- **TEXT_PRINTRAW** = **55** --- Print the given string to the standard output, without adding a newline.
-- **VAR_TO_STR** = **56** --- Serialize a :ref:`Variant<class_variant>` to a string.
-- **STR_TO_VAR** = **57** --- Deserialize a :ref:`Variant<class_variant>` from a string serialized using VAR_TO_STR.
-- **VAR_TO_BYTES** = **58** --- Serialize a :ref:`Variant<class_variant>` to a :ref:`PoolByteArray<class_poolbytearray>`.
-- **BYTES_TO_VAR** = **59** --- Deserialize a :ref:`Variant<class_variant>` from a :ref:`PoolByteArray<class_poolbytearray>` serialized using VAR_TO_BYTES.
-- **COLORN** = **60** --- Return the :ref:`Color<class_color>` with the given name and alpha ranging from 0 to 1. Note: names are defined in color_names.inc.
-- **FUNC_MAX** = **61** --- The maximum value the :ref:`function<class_VisualScriptBuiltinFunc_function>` property can have.
+- **MATH_POLAR2CARTESIAN** = **40** --- Converts a 2D point expressed in the polar coordinate system (a distance from the origin ``r`` and an angle ``th``) to the cartesian coordinate system (x and y axis).
+- **MATH_CARTESIAN2POLAR** = **41** --- Converts a 2D point expressed in the cartesian coordinate system (x and y axis) to the polar coordinate system (a distance from the origin and an angle).
+- **MATH_WRAP** = **42**
+- **MATH_WRAPF** = **43**
+- **LOGIC_MAX** = **44** --- Return the greater of the two numbers, also known as their maximum.
+- **LOGIC_MIN** = **45** --- Return the lesser of the two numbers, also known as their minimum.
+- **LOGIC_CLAMP** = **46** --- Return the input clamped inside the given range, ensuring the result is never outside it. Equivalent to `min(max(input, range_low), range_high)`
+- **LOGIC_NEAREST_PO2** = **47** --- Return the nearest power of 2 to the input.
+- **OBJ_WEAKREF** = **48** --- Create a :ref:`WeakRef<class_weakref>` from the input.
+- **FUNC_FUNCREF** = **49** --- Create a :ref:`FuncRef<class_funcref>` from the input.
+- **TYPE_CONVERT** = **50** --- Convert between types.
+- **TYPE_OF** = **51** --- Return the type of the input as an integer. Check enum Variant.Type for the integers that might be returned.
+- **TYPE_EXISTS** = **52** --- Checks if a type is registered in the :ref:`ClassDB<class_classdb>`.
+- **TEXT_CHAR** = **53** --- Return a character with the given ascii value.
+- **TEXT_STR** = **54** --- Convert the input to a string.
+- **TEXT_PRINT** = **55** --- Print the given string to the output window.
+- **TEXT_PRINTERR** = **56** --- Print the given string to the standard error output.
+- **TEXT_PRINTRAW** = **57** --- Print the given string to the standard output, without adding a newline.
+- **VAR_TO_STR** = **58** --- Serialize a :ref:`Variant<class_variant>` to a string.
+- **STR_TO_VAR** = **59** --- Deserialize a :ref:`Variant<class_variant>` from a string serialized using VAR_TO_STR.
+- **VAR_TO_BYTES** = **60** --- Serialize a :ref:`Variant<class_variant>` to a :ref:`PoolByteArray<class_poolbytearray>`.
+- **BYTES_TO_VAR** = **61** --- Deserialize a :ref:`Variant<class_variant>` from a :ref:`PoolByteArray<class_poolbytearray>` serialized using VAR_TO_BYTES.
+- **COLORN** = **62** --- Return the :ref:`Color<class_color>` with the given name and alpha ranging from 0 to 1. Note: names are defined in color_names.inc.
+- **FUNC_MAX** = **63** --- The maximum value the :ref:`function<class_VisualScriptBuiltinFunc_function>` property can have.
 
 Description
 -----------
@@ -105,16 +98,4 @@ Description
 A built-in function used inside a :ref:`VisualScript<class_visualscript>`. It is usually a math function or an utility function.
 
 See also :ref:`@GDScript<class_@gdscript>`, for the same functions in the GDScript language.
-
-Member Function Description
----------------------------
-
-.. _class_VisualScriptBuiltinFunc_get_func:
-
-- :ref:`int<class_int>` **get_func** **(** **)**
-
-.. _class_VisualScriptBuiltinFunc_set_func:
-
-- void **set_func** **(** :ref:`int<class_int>` which **)**
-
 

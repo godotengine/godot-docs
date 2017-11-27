@@ -89,7 +89,7 @@ Member Function Description
 
 Change the currently opened directory to the one passed as an argument. The argument can be relative to the current directory (e.g. ``newdir`` or ``../newdir``), or an absolute path (e.g. ``/tmp/newdir`` or ``res://somedir/newdir``).
 
-The method returns one of the error code constants defined in :ref:`@Global Scope<class_@global scope>` (OK or ERR\_\*).
+The method returns one of the error code constants defined in :ref:`@GlobalScope<class_@globalscope>` (OK or ERR\_\*).
 
 .. _class_Directory_copy:
 
@@ -97,7 +97,7 @@ The method returns one of the error code constants defined in :ref:`@Global Scop
 
 Copy the *from* file to the *to* destination. Both arguments should be paths to files, either relative or absolute. If the destination file exists and is not access-protected, it will be overwritten.
 
-Returns one of the error code constants defined in :ref:`@Global Scope<class_@global scope>` (OK, FAILED or ERR\_\*).
+Returns one of the error code constants defined in :ref:`@GlobalScope<class_@globalscope>` (OK, FAILED or ERR\_\*).
 
 .. _class_Directory_current_is_dir:
 
@@ -177,7 +177,7 @@ Close the current stream opened with :ref:`list_dir_begin<class_Directory_list_d
 
 Create a directory. The argument can be relative to the current directory, or an absolute path. The target directory should be placed in an already existing directory (to create the full path recursively, see :ref:`make_dir_recursive<class_Directory_make_dir_recursive>`).
 
-The method returns one of the error code constants defined in :ref:`@Global Scope<class_@global scope>` (OK, FAILED or ERR\_\*).
+The method returns one of the error code constants defined in :ref:`@GlobalScope<class_@globalscope>` (OK, FAILED or ERR\_\*).
 
 .. _class_Directory_make_dir_recursive:
 
@@ -185,7 +185,7 @@ The method returns one of the error code constants defined in :ref:`@Global Scop
 
 Create a target directory and all necessary intermediate directories in its path, by calling :ref:`make_dir<class_Directory_make_dir>` recursively. The argument can be relative to the current directory, or an absolute path.
 
-Return one of the error code constants defined in :ref:`@Global Scope<class_@global scope>` (OK, FAILED or ERR\_\*).
+Return one of the error code constants defined in :ref:`@GlobalScope<class_@globalscope>` (OK, FAILED or ERR\_\*).
 
 .. _class_Directory_open:
 
@@ -193,7 +193,7 @@ Return one of the error code constants defined in :ref:`@Global Scope<class_@glo
 
 Open an existing directory of the filesystem. The *path* argument can be within the project tree (``res://folder``), the user directory (``user://folder``) or an absolute path of the user filesystem (e.g. ``/tmp/folder`` or ``C:\tmp\folder``).
 
-The method returns one of the error code constants defined in :ref:`@Global Scope<class_@global scope>` (OK or ERR\_\*).
+The method returns one of the error code constants defined in :ref:`@GlobalScope<class_@globalscope>` (OK or ERR\_\*).
 
 .. _class_Directory_remove:
 
@@ -201,7 +201,7 @@ The method returns one of the error code constants defined in :ref:`@Global Scop
 
 Delete the target file or an empty directory. The argument can be relative to the current directory, or an absolute path. If the target directory is not empty, the operation will fail.
 
-Return one of the error code constants defined in :ref:`@Global Scope<class_@global scope>` (OK or FAILED).
+Return one of the error code constants defined in :ref:`@GlobalScope<class_@globalscope>` (OK or FAILED).
 
 .. _class_Directory_rename:
 
@@ -209,6 +209,6 @@ Return one of the error code constants defined in :ref:`@Global Scope<class_@glo
 
 Rename (move) the *from* file to the *to* destination. Both arguments should be paths to files, either relative or absolute. If the destination file exists and is not access-protected, it will be overwritten.
 
-Return one of the error code constants defined in :ref:`@Global Scope<class_@global scope>` (OK or FAILED).
+Return one of the error code constants defined in :ref:`@GlobalScope<class_@globalscope>` (OK or FAILED).
 
 

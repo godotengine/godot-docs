@@ -19,43 +19,27 @@ Dialog for selecting files or directories in the filesystem.
 Member Functions
 ----------------
 
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`add_filter<class_FileDialog_add_filter>` **(** :ref:`String<class_string>` filter **)**                      |
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`clear_filters<class_FileDialog_clear_filters>` **(** **)**                                                   |
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`get_access<class_FileDialog_get_access>` **(** **)** const                                                   |
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`get_current_dir<class_FileDialog_get_current_dir>` **(** **)** const                                         |
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`get_current_file<class_FileDialog_get_current_file>` **(** **)** const                                       |
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`get_current_path<class_FileDialog_get_current_path>` **(** **)** const                                       |
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_filters<class_FileDialog_get_filters>` **(** **)** const                                                 |
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`get_mode<class_FileDialog_get_mode>` **(** **)** const                                                       |
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`VBoxContainer<class_vboxcontainer>`      | :ref:`get_vbox<class_FileDialog_get_vbox>` **(** **)**                                                             |
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`invalidate<class_FileDialog_invalidate>` **(** **)**                                                         |
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`is_showing_hidden_files<class_FileDialog_is_showing_hidden_files>` **(** **)** const                         |
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_access<class_FileDialog_set_access>` **(** :ref:`int<class_int>` access **)**                            |
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_current_dir<class_FileDialog_set_current_dir>` **(** :ref:`String<class_string>` dir **)**               |
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_current_file<class_FileDialog_set_current_file>` **(** :ref:`String<class_string>` file **)**            |
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_current_path<class_FileDialog_set_current_path>` **(** :ref:`String<class_string>` path **)**            |
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_filters<class_FileDialog_set_filters>` **(** :ref:`PoolStringArray<class_poolstringarray>` filters **)** |
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_mode<class_FileDialog_set_mode>` **(** :ref:`int<class_int>` mode **)**                                  |
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_show_hidden_files<class_FileDialog_set_show_hidden_files>` **(** :ref:`bool<class_bool>` show **)**      |
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------+---------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`add_filter<class_FileDialog_add_filter>` **(** :ref:`String<class_string>` filter **)**           |
++--------------------------------------------+---------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`clear_filters<class_FileDialog_clear_filters>` **(** **)**                                        |
++--------------------------------------------+---------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                | :ref:`get_current_dir<class_FileDialog_get_current_dir>` **(** **)** const                              |
++--------------------------------------------+---------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                | :ref:`get_current_file<class_FileDialog_get_current_file>` **(** **)** const                            |
++--------------------------------------------+---------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                | :ref:`get_current_path<class_FileDialog_get_current_path>` **(** **)** const                            |
++--------------------------------------------+---------------------------------------------------------------------------------------------------------+
+| :ref:`VBoxContainer<class_vboxcontainer>`  | :ref:`get_vbox<class_FileDialog_get_vbox>` **(** **)**                                                  |
++--------------------------------------------+---------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`invalidate<class_FileDialog_invalidate>` **(** **)**                                              |
++--------------------------------------------+---------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`set_current_dir<class_FileDialog_set_current_dir>` **(** :ref:`String<class_string>` dir **)**    |
++--------------------------------------------+---------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`set_current_file<class_FileDialog_set_current_file>` **(** :ref:`String<class_string>` file **)** |
++--------------------------------------------+---------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`set_current_path<class_FileDialog_set_current_path>` **(** :ref:`String<class_string>` path **)** |
++--------------------------------------------+---------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -131,12 +115,6 @@ Add a custom filter. Filter format is: "mask ; description", example (C++): dial
 
 Clear all the added filters in the dialog.
 
-.. _class_FileDialog_get_access:
-
-- :ref:`int<class_int>` **get_access** **(** **)** const
-
-Return the file access permission of the dialog.
-
 .. _class_FileDialog_get_current_dir:
 
 - :ref:`String<class_string>` **get_current_dir** **(** **)** const
@@ -155,16 +133,6 @@ Get the current selected file of the file dialog (empty if none).
 
 Get the current selected path (directory and file) of the file dialog (empty if none).
 
-.. _class_FileDialog_get_filters:
-
-- :ref:`PoolStringArray<class_poolstringarray>` **get_filters** **(** **)** const
-
-.. _class_FileDialog_get_mode:
-
-- :ref:`int<class_int>` **get_mode** **(** **)** const
-
-Get the file dialog mode from the MODE\_\* enum.
-
 .. _class_FileDialog_get_vbox:
 
 - :ref:`VBoxContainer<class_vboxcontainer>` **get_vbox** **(** **)**
@@ -176,18 +144,6 @@ Return the vertical box container of the dialog, custom controls can be added to
 - void **invalidate** **(** **)**
 
 Invalidate and update the current dialog content list.
-
-.. _class_FileDialog_is_showing_hidden_files:
-
-- :ref:`bool<class_bool>` **is_showing_hidden_files** **(** **)** const
-
-Return true if the dialog allows show hidden files.
-
-.. _class_FileDialog_set_access:
-
-- void **set_access** **(** :ref:`int<class_int>` access **)**
-
-Set the file access permission of the dialog(Must be one of ACCESS_RESOURCES, ACCESS_USERDATA or ACCESS_FILESYSTEM).
 
 .. _class_FileDialog_set_current_dir:
 
@@ -206,21 +162,5 @@ Set the current selected file name of the file dialog.
 - void **set_current_path** **(** :ref:`String<class_string>` path **)**
 
 Set the current selected file path of the file dialog.
-
-.. _class_FileDialog_set_filters:
-
-- void **set_filters** **(** :ref:`PoolStringArray<class_poolstringarray>` filters **)**
-
-.. _class_FileDialog_set_mode:
-
-- void **set_mode** **(** :ref:`int<class_int>` mode **)**
-
-Set the file dialog mode from the MODE\_\* enum.
-
-.. _class_FileDialog_set_show_hidden_files:
-
-- void **set_show_hidden_files** **(** :ref:`bool<class_bool>` show **)**
-
-Set the dialog should show hidden files.
 
 

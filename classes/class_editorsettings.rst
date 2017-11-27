@@ -26,13 +26,13 @@ Member Functions
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_favorite_dirs<class_EditorSettings_get_favorite_dirs>` **(** **)** const                                                                 |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`get_project_settings_path<class_EditorSettings_get_project_settings_path>` **(** **)** const                                                 |
+| :ref:`String<class_string>`                    | :ref:`get_project_settings_dir<class_EditorSettings_get_project_settings_dir>` **(** **)** const                                                   |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_recent_dirs<class_EditorSettings_get_recent_dirs>` **(** **)** const                                                                     |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_variant>`                  | :ref:`get_setting<class_EditorSettings_get_setting>` **(** :ref:`String<class_string>` name **)** const                                            |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`get_settings_path<class_EditorSettings_get_settings_path>` **(** **)** const                                                                 |
+| :ref:`String<class_string>`                    | :ref:`get_settings_dir<class_EditorSettings_get_settings_dir>` **(** **)** const                                                                   |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`has_setting<class_EditorSettings_has_setting>` **(** :ref:`String<class_string>` name **)** const                                            |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -77,7 +77,7 @@ Member Function Description
 
 - void **add_property_info** **(** :ref:`Dictionary<class_dictionary>` info **)**
 
-Add a custom property info to a property. The dictionary must contain: name::ref:`String<class_string>`(the name of the property) and type::ref:`int<class_int>`(see TYPE\_\* in :ref:`@Global Scope<class_@global scope>`), and optionally hint::ref:`int<class_int>`(see PROPERTY_HINT\_\* in :ref:`@Global Scope<class_@global scope>`), hint_string::ref:`String<class_string>`.
+Add a custom property info to a property. The dictionary must contain: name::ref:`String<class_string>`(the name of the property) and type::ref:`int<class_int>`(see TYPE\_\* in :ref:`@GlobalScope<class_@globalscope>`), and optionally hint::ref:`int<class_int>`(see PROPERTY_HINT\_\* in :ref:`@GlobalScope<class_@globalscope>`), hint_string::ref:`String<class_string>`.
 
 Example:
 
@@ -106,9 +106,9 @@ Erase a given setting (pass full property path).
 
 Get the list of favorite directories for this project.
 
-.. _class_EditorSettings_get_project_settings_path:
+.. _class_EditorSettings_get_project_settings_dir:
 
-- :ref:`String<class_string>` **get_project_settings_path** **(** **)** const
+- :ref:`String<class_string>` **get_project_settings_dir** **(** **)** const
 
 Get the specific project settings path. Projects all have a unique sub-directory inside the settings path where project specific settings are saved.
 
@@ -122,9 +122,9 @@ Get the list of recently visited folders in the file dialog for this project.
 
 - :ref:`Variant<class_variant>` **get_setting** **(** :ref:`String<class_string>` name **)** const
 
-.. _class_EditorSettings_get_settings_path:
+.. _class_EditorSettings_get_settings_dir:
 
-- :ref:`String<class_string>` **get_settings_path** **(** **)** const
+- :ref:`String<class_string>` **get_settings_dir** **(** **)** const
 
 Get the global settings path for the engine. Inside this path you can find some standard paths such as:
 

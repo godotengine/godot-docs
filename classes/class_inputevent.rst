@@ -26,8 +26,6 @@ Member Functions
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`          | :ref:`as_text<class_InputEvent_as_text>` **(** **)** const                                                                                                            |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                | :ref:`get_device<class_InputEvent_get_device>` **(** **)** const                                                                                                      |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                | :ref:`get_id<class_InputEvent_get_id>` **(** **)** const                                                                                                              |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`              | :ref:`is_action<class_InputEvent_is_action>` **(** :ref:`String<class_string>` action **)** const                                                                     |
@@ -41,8 +39,6 @@ Member Functions
 | :ref:`bool<class_bool>`              | :ref:`is_echo<class_InputEvent_is_echo>` **(** **)** const                                                                                                            |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`              | :ref:`is_pressed<class_InputEvent_is_pressed>` **(** **)** const                                                                                                      |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                 | :ref:`set_device<class_InputEvent_set_device>` **(** :ref:`int<class_int>` device **)**                                                                               |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                 | :ref:`set_id<class_InputEvent_set_id>` **(** :ref:`int<class_int>` id **)**                                                                                           |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -71,19 +67,13 @@ Member Function Description
 
 - :ref:`bool<class_bool>` **action_match** **(** :ref:`InputEvent<class_inputevent>` event **)** const
 
-Returns ``true`` if this event matches ``event[event].
+Returns ``true`` if this event matches ``event``.
 
 .. _class_InputEvent_as_text:
 
 - :ref:`String<class_string>` **as_text** **(** **)** const
 
 Returns a :ref:`String<class_string>` representation of the event.
-
-.. _class_InputEvent_get_device:
-
-- :ref:`int<class_int>` **get_device** **(** **)** const
-
-Returns the device's id that generated the event.
 
 .. _class_InputEvent_get_id:
 
@@ -126,10 +116,6 @@ Returns ``true`` if this input event is an echo event (only for events of type K
 - :ref:`bool<class_bool>` **is_pressed** **(** **)** const
 
 Returns ``true`` if this input event is pressed. Not relevant for the event types ``MOUSE_MOTION``, ``SCREEN_DRAG`` or ``NONE``.
-
-.. _class_InputEvent_set_device:
-
-- void **set_device** **(** :ref:`int<class_int>` device **)**
 
 .. _class_InputEvent_set_id:
 

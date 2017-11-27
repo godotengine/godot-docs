@@ -16,31 +16,12 @@ Brief Description
 
 Input event type for mouse button events.
 
-Member Functions
-----------------
-
-+----------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_button_index<class_InputEventMouseButton_get_button_index>` **(** **)** const                              |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_factor<class_InputEventMouseButton_get_factor>` **(** **)**                                                |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`is_doubleclick<class_InputEventMouseButton_is_doubleclick>` **(** **)** const                                  |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_button_index<class_InputEventMouseButton_set_button_index>` **(** :ref:`int<class_int>` button_index **)** |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_doubleclick<class_InputEventMouseButton_set_doubleclick>` **(** :ref:`bool<class_bool>` doubleclick **)**  |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_factor<class_InputEventMouseButton_set_factor>` **(** :ref:`float<class_float>` factor **)**               |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_pressed<class_InputEventMouseButton_set_pressed>` **(** :ref:`bool<class_bool>` pressed **)**              |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
   .. _class_InputEventMouseButton_button_index:
 
-- :ref:`int<class_int>` **button_index** - Mouse button identifier, one of the BUTTON\_\* or BUTTON_WHEEL\_\* constants in :ref:`@Global Scope<class_@global scope>`.
+- :ref:`int<class_int>` **button_index** - Mouse button identifier, one of the BUTTON\_\* or BUTTON_WHEEL\_\* constants in :ref:`@GlobalScope<class_@globalscope>`.
 
   .. _class_InputEventMouseButton_doubleclick:
 
@@ -59,36 +40,4 @@ Description
 -----------
 
 Contains mouse click informations. See :ref:`Node._input<class_Node__input>`.
-
-Member Function Description
----------------------------
-
-.. _class_InputEventMouseButton_get_button_index:
-
-- :ref:`int<class_int>` **get_button_index** **(** **)** const
-
-.. _class_InputEventMouseButton_get_factor:
-
-- :ref:`float<class_float>` **get_factor** **(** **)**
-
-.. _class_InputEventMouseButton_is_doubleclick:
-
-- :ref:`bool<class_bool>` **is_doubleclick** **(** **)** const
-
-.. _class_InputEventMouseButton_set_button_index:
-
-- void **set_button_index** **(** :ref:`int<class_int>` button_index **)**
-
-.. _class_InputEventMouseButton_set_doubleclick:
-
-- void **set_doubleclick** **(** :ref:`bool<class_bool>` doubleclick **)**
-
-.. _class_InputEventMouseButton_set_factor:
-
-- void **set_factor** **(** :ref:`float<class_float>` factor **)**
-
-.. _class_InputEventMouseButton_set_pressed:
-
-- void **set_pressed** **(** :ref:`bool<class_bool>` pressed **)**
-
 

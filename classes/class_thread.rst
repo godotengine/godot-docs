@@ -48,7 +48,7 @@ Member Function Description
 
 - :ref:`String<class_string>` **get_id** **(** **)** const
 
-Returns the current ``Thread``s id, uniquely identifying it among all threads.
+Returns the current ``Thread``\ s id, uniquely identifying it among all threads.
 
 .. _class_Thread_is_active:
 

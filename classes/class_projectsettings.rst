@@ -28,13 +28,9 @@ Member Functions
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_variant>`  | :ref:`get_setting<class_ProjectSettings_get_setting>` **(** :ref:`String<class_string>` name **)** const                                            |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`    | :ref:`get_singleton<class_ProjectSettings_get_singleton>` **(** :ref:`String<class_string>` name **)** const                                        |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`    | :ref:`globalize_path<class_ProjectSettings_globalize_path>` **(** :ref:`String<class_string>` path **)** const                                      |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`has_setting<class_ProjectSettings_has_setting>` **(** :ref:`String<class_string>` name **)** const                                            |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`has_singleton<class_ProjectSettings_has_singleton>` **(** :ref:`String<class_string>` name **)** const                                        |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`load_resource_pack<class_ProjectSettings_load_resource_pack>` **(** :ref:`String<class_string>` pack **)**                                    |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -67,7 +63,7 @@ Member Function Description
 
 - void **add_property_info** **(** :ref:`Dictionary<class_dictionary>` hint **)**
 
-Add a custom property info to a property. The dictionary must contain: name::ref:`String<class_string>`(the name of the property) and type::ref:`int<class_int>`(see TYPE\_\* in :ref:`@Global Scope<class_@global scope>`), and optionally hint::ref:`int<class_int>`(see PROPERTY_HINT\_\* in :ref:`@Global Scope<class_@global scope>`), hint_string::ref:`String<class_string>`.
+Add a custom property info to a property. The dictionary must contain: name::ref:`String<class_string>`(the name of the property) and type::ref:`int<class_int>`(see TYPE\_\* in :ref:`@GlobalScope<class_@globalscope>`), and optionally hint::ref:`int<class_int>`(see PROPERTY_HINT\_\* in :ref:`@GlobalScope<class_@globalscope>`), hint_string::ref:`String<class_string>`.
 
 Example:
 
@@ -100,10 +96,6 @@ Return the order of a configuration value (influences when saved to the config f
 
 - :ref:`Variant<class_variant>` **get_setting** **(** :ref:`String<class_string>` name **)** const
 
-.. _class_ProjectSettings_get_singleton:
-
-- :ref:`Object<class_object>` **get_singleton** **(** :ref:`String<class_string>` name **)** const
-
 .. _class_ProjectSettings_globalize_path:
 
 - :ref:`String<class_string>` **globalize_path** **(** :ref:`String<class_string>` path **)** const
@@ -115,10 +107,6 @@ Convert a localized path (res://) to a full native OS path.
 - :ref:`bool<class_bool>` **has_setting** **(** :ref:`String<class_string>` name **)** const
 
 Return true if a configuration value is present.
-
-.. _class_ProjectSettings_has_singleton:
-
-- :ref:`bool<class_bool>` **has_singleton** **(** :ref:`String<class_string>` name **)** const
 
 .. _class_ProjectSettings_load_resource_pack:
 

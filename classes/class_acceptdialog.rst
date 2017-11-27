@@ -26,19 +26,11 @@ Member Functions
 +------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Button<class_button>`  | :ref:`add_cancel<class_AcceptDialog_add_cancel>` **(** :ref:`String<class_string>` name **)**                                                                             |
 +------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`get_hide_on_ok<class_AcceptDialog_get_hide_on_ok>` **(** **)** const                                                                                                |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Label<class_label>`    | :ref:`get_label<class_AcceptDialog_get_label>` **(** **)**                                                                                                                |
 +------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Button<class_button>`  | :ref:`get_ok<class_AcceptDialog_get_ok>` **(** **)**                                                                                                                      |
 +------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_text<class_AcceptDialog_get_text>` **(** **)** const                                                                                                            |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`register_text_enter<class_AcceptDialog_register_text_enter>` **(** :ref:`Node<class_node>` line_edit **)**                                                          |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_hide_on_ok<class_AcceptDialog_set_hide_on_ok>` **(** :ref:`bool<class_bool>` enabled **)**                                                                      |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_text<class_AcceptDialog_set_text>` **(** :ref:`String<class_string>` text **)**                                                                                 |
 +------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -91,12 +83,6 @@ If ``true``, *right* will place the button to the right of any sibling buttons. 
 
 Adds a button with label *name* and a cancel action to the dialog and returns the created button.
 
-.. _class_AcceptDialog_get_hide_on_ok:
-
-- :ref:`bool<class_bool>` **get_hide_on_ok** **(** **)** const
-
-Return true if the dialog will be hidden when accepted (default true).
-
 .. _class_AcceptDialog_get_label:
 
 - :ref:`Label<class_label>` **get_label** **(** **)**
@@ -109,28 +95,10 @@ Return the label used for built-in text.
 
 Return the OK Button.
 
-.. _class_AcceptDialog_get_text:
-
-- :ref:`String<class_string>` **get_text** **(** **)** const
-
-Return the built-in label text.
-
 .. _class_AcceptDialog_register_text_enter:
 
 - void **register_text_enter** **(** :ref:`Node<class_node>` line_edit **)**
 
 Registers a :ref:`LineEdit<class_lineedit>` in the dialog. When the enter key is pressed, the dialog will be accepted.
-
-.. _class_AcceptDialog_set_hide_on_ok:
-
-- void **set_hide_on_ok** **(** :ref:`bool<class_bool>` enabled **)**
-
-Set whether the dialog is hidden when accepted (default true).
-
-.. _class_AcceptDialog_set_text:
-
-- void **set_text** **(** :ref:`String<class_string>` text **)**
-
-Set the built-in label text.
 
 

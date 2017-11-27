@@ -26,15 +26,7 @@ Member Functions
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`create_trimesh_collision<class_MeshInstance_create_trimesh_collision>` **(** **)**                                                                 |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Mesh<class_mesh>`          | :ref:`get_mesh<class_MeshInstance_get_mesh>` **(** **)** const                                                                                           |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_nodepath>`  | :ref:`get_skeleton_path<class_MeshInstance_get_skeleton_path>` **(** **)**                                                                               |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Material<class_material>`  | :ref:`get_surface_material<class_MeshInstance_get_surface_material>` **(** :ref:`int<class_int>` surface **)** const                                     |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_mesh<class_MeshInstance_set_mesh>` **(** :ref:`Mesh<class_mesh>` mesh **)**                                                                    |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_skeleton_path<class_MeshInstance_set_skeleton_path>` **(** :ref:`NodePath<class_nodepath>` skeleton_path **)**                                 |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_surface_material<class_MeshInstance_set_surface_material>` **(** :ref:`int<class_int>` surface, :ref:`Material<class_material>` material **)** |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -75,29 +67,11 @@ This helper creates a :ref:`StaticBody<class_staticbody>` child :ref:`Node<class
 
 This helper creates a :ref:`StaticBody<class_staticbody>` child :ref:`Node<class_node>` with a :ref:`ConcavePolygonShape<class_concavepolygonshape>` :ref:`CollisionShape<class_collisionshape>` calculated from the mesh geometry. It's mainly used for testing.
 
-.. _class_MeshInstance_get_mesh:
-
-- :ref:`Mesh<class_mesh>` **get_mesh** **(** **)** const
-
-Returns the current :ref:`Mesh<class_mesh>` resource for the instance.
-
-.. _class_MeshInstance_get_skeleton_path:
-
-- :ref:`NodePath<class_nodepath>` **get_skeleton_path** **(** **)**
-
 .. _class_MeshInstance_get_surface_material:
 
 - :ref:`Material<class_material>` **get_surface_material** **(** :ref:`int<class_int>` surface **)** const
 
 Returns the :ref:`Material<class_material>` for a surface of the :ref:`Mesh<class_mesh>` resource.
-
-.. _class_MeshInstance_set_mesh:
-
-- void **set_mesh** **(** :ref:`Mesh<class_mesh>` mesh **)**
-
-.. _class_MeshInstance_set_skeleton_path:
-
-- void **set_skeleton_path** **(** :ref:`NodePath<class_nodepath>` skeleton_path **)**
 
 .. _class_MeshInstance_set_surface_material:
 

@@ -16,23 +16,6 @@ Brief Description
 
 Defines a 2D polygon for LightOccluder2D.
 
-Member Functions
-----------------
-
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                            | :ref:`get_cull_mode<class_OccluderPolygon2D_get_cull_mode>` **(** **)** const                                               |
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector2Array<class_poolvector2array>`  | :ref:`get_polygon<class_OccluderPolygon2D_get_polygon>` **(** **)** const                                                   |
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                          | :ref:`is_closed<class_OccluderPolygon2D_is_closed>` **(** **)** const                                                       |
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_closed<class_OccluderPolygon2D_set_closed>` **(** :ref:`bool<class_bool>` closed **)**                            |
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_cull_mode<class_OccluderPolygon2D_set_cull_mode>` **(** :ref:`int<class_int>` cull_mode **)**                     |
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_polygon<class_OccluderPolygon2D_set_polygon>` **(** :ref:`PoolVector2Array<class_poolvector2array>` polygon **)** |
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -60,32 +43,4 @@ Description
 -----------
 
 Editor facility that helps you draw a 2D polygon used as resource for :ref:`LightOccluder2D<class_lightoccluder2d>`.
-
-Member Function Description
----------------------------
-
-.. _class_OccluderPolygon2D_get_cull_mode:
-
-- :ref:`int<class_int>` **get_cull_mode** **(** **)** const
-
-.. _class_OccluderPolygon2D_get_polygon:
-
-- :ref:`PoolVector2Array<class_poolvector2array>` **get_polygon** **(** **)** const
-
-.. _class_OccluderPolygon2D_is_closed:
-
-- :ref:`bool<class_bool>` **is_closed** **(** **)** const
-
-.. _class_OccluderPolygon2D_set_closed:
-
-- void **set_closed** **(** :ref:`bool<class_bool>` closed **)**
-
-.. _class_OccluderPolygon2D_set_cull_mode:
-
-- void **set_cull_mode** **(** :ref:`int<class_int>` cull_mode **)**
-
-.. _class_OccluderPolygon2D_set_polygon:
-
-- void **set_polygon** **(** :ref:`PoolVector2Array<class_poolvector2array>` polygon **)**
-
 

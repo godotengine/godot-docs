@@ -19,31 +19,23 @@ Color interpolator node.
 Member Functions
 ----------------
 
-+----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`add_point<class_Gradient_add_point>` **(** :ref:`float<class_float>` offset, :ref:`Color<class_color>` color **)** |
-+----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`                    | :ref:`get_color<class_Gradient_get_color>` **(** :ref:`int<class_int>` point **)** const                                 |
-+----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolColorArray<class_poolcolorarray>`  | :ref:`get_colors<class_Gradient_get_colors>` **(** **)** const                                                           |
-+----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                    | :ref:`get_offset<class_Gradient_get_offset>` **(** :ref:`int<class_int>` point **)** const                               |
-+----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolRealArray<class_poolrealarray>`    | :ref:`get_offsets<class_Gradient_get_offsets>` **(** **)** const                                                         |
-+----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                        | :ref:`get_point_count<class_Gradient_get_point_count>` **(** **)** const                                                 |
-+----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`                    | :ref:`interpolate<class_Gradient_interpolate>` **(** :ref:`float<class_float>` offset **)**                              |
-+----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`remove_point<class_Gradient_remove_point>` **(** :ref:`int<class_int>` offset **)**                                |
-+----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set_color<class_Gradient_set_color>` **(** :ref:`int<class_int>` point, :ref:`Color<class_color>` color **)**      |
-+----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set_colors<class_Gradient_set_colors>` **(** :ref:`PoolColorArray<class_poolcolorarray>` colors **)**              |
-+----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set_offset<class_Gradient_set_offset>` **(** :ref:`int<class_int>` point, :ref:`float<class_float>` offset **)**   |
-+----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set_offsets<class_Gradient_set_offsets>` **(** :ref:`PoolRealArray<class_poolrealarray>` offsets **)**             |
-+----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
++----------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`add_point<class_Gradient_add_point>` **(** :ref:`float<class_float>` offset, :ref:`Color<class_color>` color **)** |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`  | :ref:`get_color<class_Gradient_get_color>` **(** :ref:`int<class_int>` point **)** const                                 |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_offset<class_Gradient_get_offset>` **(** :ref:`int<class_int>` point **)** const                               |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`      | :ref:`get_point_count<class_Gradient_get_point_count>` **(** **)** const                                                 |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_color>`  | :ref:`interpolate<class_Gradient_interpolate>` **(** :ref:`float<class_float>` offset **)**                              |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`remove_point<class_Gradient_remove_point>` **(** :ref:`int<class_int>` offset **)**                                |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_color<class_Gradient_set_color>` **(** :ref:`int<class_int>` point, :ref:`Color<class_color>` color **)**      |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_offset<class_Gradient_set_offset>` **(** :ref:`int<class_int>` point, :ref:`float<class_float>` offset **)**   |
++----------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -77,23 +69,11 @@ Adds the specified color to the end of the ramp, with the specified offset
 
 Returns the color of the ramp color at index *point*
 
-.. _class_Gradient_get_colors:
-
-- :ref:`PoolColorArray<class_poolcolorarray>` **get_colors** **(** **)** const
-
-Returns the colors in the ramp
-
 .. _class_Gradient_get_offset:
 
 - :ref:`float<class_float>` **get_offset** **(** :ref:`int<class_int>` point **)** const
 
 Returns the offset of the ramp color at index *point*
-
-.. _class_Gradient_get_offsets:
-
-- :ref:`PoolRealArray<class_poolrealarray>` **get_offsets** **(** **)** const
-
-Returns the offsets for the colors in this ramp
 
 .. _class_Gradient_get_point_count:
 
@@ -119,22 +99,10 @@ Removes the color at the index *offset*
 
 Sets the color of the ramp color at index *point*
 
-.. _class_Gradient_set_colors:
-
-- void **set_colors** **(** :ref:`PoolColorArray<class_poolcolorarray>` colors **)**
-
-Sets the colors for the specified amount of elements. Calling this function with a different number of elements than previously defined causes the ramp to resize its colors and offsets array to accommodate the new elements.
-
 .. _class_Gradient_set_offset:
 
 - void **set_offset** **(** :ref:`int<class_int>` point, :ref:`float<class_float>` offset **)**
 
 Sets the offset for the ramp color at index *point*
-
-.. _class_Gradient_set_offsets:
-
-- void **set_offsets** **(** :ref:`PoolRealArray<class_poolrealarray>` offsets **)**
-
-Sets the offset for the specified amount of elements. Calling this function with a different number of elements than previously defined causes the ramp to resize its colors and offsets array to accommodate the new elements, all new colors will be black by default.
 
 

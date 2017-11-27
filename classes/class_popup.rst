@@ -21,19 +21,15 @@ Base container control for popups and dialogs.
 Member Functions
 ----------------
 
-+--------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_exclusive<class_Popup_is_exclusive>` **(** **)** const                                                                     |
-+--------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`popup<class_Popup_popup>` **(** :ref:`Rect2<class_rect2>` bounds=Rect2( 0, 0, 0, 0 ) **)**                                    |
-+--------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`popup_centered<class_Popup_popup_centered>` **(** :ref:`Vector2<class_vector2>` size=Vector2( 0, 0 ) **)**                    |
-+--------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`popup_centered_minsize<class_Popup_popup_centered_minsize>` **(** :ref:`Vector2<class_vector2>` minsize=Vector2( 0, 0 ) **)** |
-+--------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`popup_centered_ratio<class_Popup_popup_centered_ratio>` **(** :ref:`float<class_float>` ratio=0.75 **)**                      |
-+--------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_exclusive<class_Popup_set_exclusive>` **(** :ref:`bool<class_bool>` enable **)**                                          |
-+--------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
++-------+-------------------------------------------------------------------------------------------------------------------------------------+
+| void  | :ref:`popup<class_Popup_popup>` **(** :ref:`Rect2<class_rect2>` bounds=Rect2( 0, 0, 0, 0 ) **)**                                    |
++-------+-------------------------------------------------------------------------------------------------------------------------------------+
+| void  | :ref:`popup_centered<class_Popup_popup_centered>` **(** :ref:`Vector2<class_vector2>` size=Vector2( 0, 0 ) **)**                    |
++-------+-------------------------------------------------------------------------------------------------------------------------------------+
+| void  | :ref:`popup_centered_minsize<class_Popup_popup_centered_minsize>` **(** :ref:`Vector2<class_vector2>` minsize=Vector2( 0, 0 ) **)** |
++-------+-------------------------------------------------------------------------------------------------------------------------------------+
+| void  | :ref:`popup_centered_ratio<class_Popup_popup_centered_ratio>` **(** :ref:`float<class_float>` ratio=0.75 **)**                      |
++-------+-------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -73,12 +69,6 @@ Popup is a base :ref:`Control<class_control>` used to show dialogs and popups. I
 Member Function Description
 ---------------------------
 
-.. _class_Popup_is_exclusive:
-
-- :ref:`bool<class_bool>` **is_exclusive** **(** **)** const
-
-Returns whether the popup will hide other popups when shown on the screen.
-
 .. _class_Popup_popup:
 
 - void **popup** **(** :ref:`Rect2<class_rect2>` bounds=Rect2( 0, 0, 0, 0 ) **)**
@@ -102,11 +92,5 @@ Popup (show the control in modal form) in the center of the screen, ensuring the
 - void **popup_centered_ratio** **(** :ref:`float<class_float>` ratio=0.75 **)**
 
 Popup (show the control in modal form) in the center of the screen, scaled at a ratio of size of the screen.
-
-.. _class_Popup_set_exclusive:
-
-- void **set_exclusive** **(** :ref:`bool<class_bool>` enable **)**
-
-Make the popup hide other popups when shown on the screen.
 
 

@@ -7,7 +7,7 @@
 Object
 ======
 
-**Inherited By:** :ref:`Physics2DServer<class_physics2dserver>`, :ref:`MainLoop<class_mainloop>`, :ref:`Input<class_input>`, :ref:`Node<class_node>`, :ref:`Geometry<class_geometry>`, :ref:`ARVRPositionalTracker<class_arvrpositionaltracker>`, :ref:`TreeItem<class_treeitem>`, :ref:`PhysicsDirectBodyState<class_physicsdirectbodystate>`, :ref:`ARVRServer<class_arvrserver>`, :ref:`PhysicsDirectSpaceState<class_physicsdirectspacestate>`, :ref:`Reference<class_reference>`, :ref:`Engine<class_engine>`, :ref:`Physics2DDirectSpaceState<class_physics2ddirectspacestate>`, :ref:`InputMap<class_inputmap>`, :ref:`UndoRedo<class_undoredo>`, :ref:`PhysicsServer<class_physicsserver>`, :ref:`ProjectSettings<class_projectsettings>`, :ref:`ResourceSaver<class_resourcesaver>`, :ref:`Performance<class_performance>`, :ref:`ResourceLoader<class_resourceloader>`, :ref:`JSON<class_json>`, :ref:`AudioServer<class_audioserver>`, :ref:`IP<class_ip>`, :ref:`ClassDB<class_classdb>`, :ref:`VisualServer<class_visualserver>`, :ref:`OS<class_os>`, :ref:`GodotSharp<class_godotsharp>`, :ref:`EditorSelection<class_editorselection>`, :ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>`, :ref:`TranslationServer<class_translationserver>`, :ref:`EditorFileSystemDirectory<class_editorfilesystemdirectory>`
+**Inherited By:** :ref:`Reference<class_reference>`, :ref:`Physics2DServer<class_physics2dserver>`, :ref:`MainLoop<class_mainloop>`, :ref:`Input<class_input>`, :ref:`Node<class_node>`, :ref:`Geometry<class_geometry>`, :ref:`ARVRPositionalTracker<class_arvrpositionaltracker>`, :ref:`TreeItem<class_treeitem>`, :ref:`PhysicsDirectBodyState<class_physicsdirectbodystate>`, :ref:`JavaScript<class_javascript>`, :ref:`ARVRServer<class_arvrserver>`, :ref:`PhysicsDirectSpaceState<class_physicsdirectspacestate>`, :ref:`Engine<class_engine>`, :ref:`Physics2DDirectSpaceState<class_physics2ddirectspacestate>`, :ref:`InputMap<class_inputmap>`, :ref:`UndoRedo<class_undoredo>`, :ref:`PhysicsServer<class_physicsserver>`, :ref:`ProjectSettings<class_projectsettings>`, :ref:`ResourceSaver<class_resourcesaver>`, :ref:`Performance<class_performance>`, :ref:`ResourceLoader<class_resourceloader>`, :ref:`JSON<class_json>`, :ref:`AudioServer<class_audioserver>`, :ref:`IP<class_ip>`, :ref:`ClassDB<class_classdb>`, :ref:`VisualServer<class_visualserver>`, :ref:`OS<class_os>`, :ref:`GodotSharp<class_godotsharp>`, :ref:`EditorSelection<class_editorselection>`, :ref:`Physics2DDirectBodyState<class_physics2ddirectbodystate>`, :ref:`VisualScriptEditor<class_visualscripteditor>`, :ref:`TranslationServer<class_translationserver>`, :ref:`EditorFileSystemDirectory<class_editorfilesystemdirectory>`
 
 **Category:** Core
 
@@ -54,6 +54,8 @@ Member Functions
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_array>`                      | :ref:`get_incoming_connections<class_Object_get_incoming_connections>` **(** **)** const                                                                                                                                         |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_variant>`                  | :ref:`get_indexed<class_Object_get_indexed>` **(** :ref:`NodePath<class_nodepath>` property **)** const                                                                                                                          |
++------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_instance_id<class_Object_get_instance_id>` **(** **)** const                                                                                                                                                           |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_variant>`                  | :ref:`get_meta<class_Object_get_meta>` **(** :ref:`String<class_string>` name **)** const                                                                                                                                        |
@@ -91,6 +93,8 @@ Member Functions
 | void                                           | :ref:`set<class_Object_set>` **(** :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value **)**                                                                                                               |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_block_signals<class_Object_set_block_signals>` **(** :ref:`bool<class_bool>` enable **)**                                                                                                                              |
++------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`set_indexed<class_Object_set_indexed>` **(** :ref:`NodePath<class_nodepath>` property, :ref:`Variant<class_variant>` value **)**                                                                                           |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_message_translation<class_Object_set_message_translation>` **(** :ref:`bool<class_bool>` enable **)**                                                                                                                  |
 +------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -144,7 +148,7 @@ Returns the given property. Returns ``null`` if the ``property`` does not exist.
 
 - :ref:`Array<class_array>` **_get_property_list** **(** **)** virtual
 
-Returns the object's property list as an :ref:`Array<class_array>` of dictionaries. Dictionaries must contain: name:String, type:int (see TYPE\_\* enum in :ref:`@Global Scope<class_@global scope>`) and optionally: hint:int (see PROPERTY_HINT\_\* in :ref:`@Global Scope<class_@global scope>`), hint_string:String, usage:int (see PROPERTY_USAGE\_\* in :ref:`@Global Scope<class_@global scope>`).
+Returns the object's property list as an :ref:`Array<class_array>` of dictionaries. Dictionaries must contain: name:String, type:int (see TYPE\_\* enum in :ref:`@GlobalScope<class_@globalscope>`) and optionally: hint:int (see PROPERTY_HINT\_\* in :ref:`@GlobalScope<class_@globalscope>`), hint_string:String, usage:int (see PROPERTY_USAGE\_\* in :ref:`@GlobalScope<class_@globalscope>`).
 
 .. _class_Object__init:
 
@@ -168,7 +172,7 @@ Sets a property. Returns ``true`` if the ``property`` exists.
 
 - void **add_user_signal** **(** :ref:`String<class_string>` signal, :ref:`Array<class_array>` arguments=[  ] **)**
 
-Adds a user-defined ``signal``. Arguments are optional, but can be added as an :ref:`Array<class_array>` of dictionaries, each containing "name" and "type" (from :ref:`@Global Scope<class_@global scope>` TYPE\_\*).
+Adds a user-defined ``signal``. Arguments are optional, but can be added as an :ref:`Array<class_array>` of dictionaries, each containing "name" and "type" (from :ref:`@GlobalScope<class_@globalscope>` TYPE\_\*).
 
 .. _class_Object_call:
 
@@ -244,6 +248,10 @@ Inside each :ref:`Dictionary<class_dictionary>` there are 3 fields:
 
 - "method_name" is a name of method to which signal is connected.
 
+.. _class_Object_get_indexed:
+
+- :ref:`Variant<class_variant>` **get_indexed** **(** :ref:`NodePath<class_nodepath>` property **)** const
+
 .. _class_Object_get_instance_id:
 
 - :ref:`int<class_int>` **get_instance_id** **(** **)** const
@@ -272,7 +280,7 @@ Returns the object's methods and their signatures as an :ref:`Array<class_array>
 
 - :ref:`Array<class_array>` **get_property_list** **(** **)** const
 
-Returns the list of properties as an :ref:`Array<class_array>` of dictionaries. Dictionaries contain: name:String, type:int (see TYPE\_\* enum in :ref:`@Global Scope<class_@global scope>`) and optionally: hint:int (see PROPERTY_HINT\_\* in :ref:`@Global Scope<class_@global scope>`), hint_string:String, usage:int (see PROPERTY_USAGE\_\* in :ref:`@Global Scope<class_@global scope>`).
+Returns the list of properties as an :ref:`Array<class_array>` of dictionaries. Dictionaries contain: name:String, type:int (see TYPE\_\* enum in :ref:`@GlobalScope<class_@globalscope>`) and optionally: hint:int (see PROPERTY_HINT\_\* in :ref:`@GlobalScope<class_@globalscope>`), hint_string:String, usage:int (see PROPERTY_USAGE\_\* in :ref:`@GlobalScope<class_@globalscope>`).
 
 .. _class_Object_get_script:
 
@@ -355,6 +363,10 @@ Set property into the object.
 - void **set_block_signals** **(** :ref:`bool<class_bool>` enable **)**
 
 If set to true, signal emission is blocked.
+
+.. _class_Object_set_indexed:
+
+- void **set_indexed** **(** :ref:`NodePath<class_nodepath>` property, :ref:`Variant<class_variant>` value **)**
 
 .. _class_Object_set_message_translation:
 

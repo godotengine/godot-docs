@@ -19,47 +19,43 @@ Brief Description
 Member Functions
 ----------------
 
-+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_active_library_path<class_GDNativeLibrary_get_active_library_path>` **(** **)** const                                                    |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_library_path<class_GDNativeLibrary_get_library_path>` **(** :ref:`String<class_string>` platform **)** const                             |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`is_singleton_gdnative<class_GDNativeLibrary_is_singleton_gdnative>` **(** **)** const                                                        |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_library_path<class_GDNativeLibrary_set_library_path>` **(** :ref:`String<class_string>` platform, :ref:`String<class_string>` path **)** |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_singleton_gdnative<class_GDNativeLibrary_set_singleton_gdnative>` **(** :ref:`bool<class_bool>` singleton **)**                          |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------+---------------------------------------------------------------------------------------------------+
+| :ref:`ConfigFile<class_configfile>`            | :ref:`get_config_file<class_GDNativeLibrary_get_config_file>` **(** **)**                         |
++------------------------------------------------+---------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_current_dependencies<class_GDNativeLibrary_get_current_dependencies>` **(** **)** const |
++------------------------------------------------+---------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                    | :ref:`get_current_library_path<class_GDNativeLibrary_get_current_library_path>` **(** **)** const |
++------------------------------------------------+---------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
 
-  .. _class_GDNativeLibrary_singleton_gdnative:
+  .. _class_GDNativeLibrary_load_once:
 
-- :ref:`bool<class_bool>` **singleton_gdnative**
+- :ref:`bool<class_bool>` **load_once**
+
+  .. _class_GDNativeLibrary_singleton:
+
+- :ref:`bool<class_bool>` **singleton**
+
+  .. _class_GDNativeLibrary_symbol_prefix:
+
+- :ref:`String<class_string>` **symbol_prefix**
 
 
 Member Function Description
 ---------------------------
 
-.. _class_GDNativeLibrary_get_active_library_path:
+.. _class_GDNativeLibrary_get_config_file:
 
-- :ref:`String<class_string>` **get_active_library_path** **(** **)** const
+- :ref:`ConfigFile<class_configfile>` **get_config_file** **(** **)**
 
-.. _class_GDNativeLibrary_get_library_path:
+.. _class_GDNativeLibrary_get_current_dependencies:
 
-- :ref:`String<class_string>` **get_library_path** **(** :ref:`String<class_string>` platform **)** const
+- :ref:`PoolStringArray<class_poolstringarray>` **get_current_dependencies** **(** **)** const
 
-.. _class_GDNativeLibrary_is_singleton_gdnative:
+.. _class_GDNativeLibrary_get_current_library_path:
 
-- :ref:`bool<class_bool>` **is_singleton_gdnative** **(** **)** const
-
-.. _class_GDNativeLibrary_set_library_path:
-
-- void **set_library_path** **(** :ref:`String<class_string>` platform, :ref:`String<class_string>` path **)**
-
-.. _class_GDNativeLibrary_set_singleton_gdnative:
-
-- void **set_singleton_gdnative** **(** :ref:`bool<class_bool>` singleton **)**
+- :ref:`String<class_string>` **get_current_library_path** **(** **)** const
 
 

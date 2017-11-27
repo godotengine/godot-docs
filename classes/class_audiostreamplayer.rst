@@ -19,37 +19,15 @@ Plays back audio.
 Member Functions
 ----------------
 
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`            | :ref:`get_bus<class_AudioStreamPlayer_get_bus>` **(** **)** const                                              |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                  | :ref:`get_mix_target<class_AudioStreamPlayer_get_mix_target>` **(** **)** const                                |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_playback_position<class_AudioStreamPlayer_get_playback_position>` **(** **)**                        |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| :ref:`AudioStream<class_audiostream>`  | :ref:`get_stream<class_AudioStreamPlayer_get_stream>` **(** **)** const                                        |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_volume_db<class_AudioStreamPlayer_get_volume_db>` **(** **)** const                                  |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`is_autoplay_enabled<class_AudioStreamPlayer_is_autoplay_enabled>` **(** **)**                            |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`is_playing<class_AudioStreamPlayer_is_playing>` **(** **)** const                                        |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`play<class_AudioStreamPlayer_play>` **(** :ref:`float<class_float>` from_position=0.0 **)**              |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`seek<class_AudioStreamPlayer_seek>` **(** :ref:`float<class_float>` to_position **)**                    |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_autoplay<class_AudioStreamPlayer_set_autoplay>` **(** :ref:`bool<class_bool>` enable **)**           |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_bus<class_AudioStreamPlayer_set_bus>` **(** :ref:`String<class_string>` bus **)**                    |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_mix_target<class_AudioStreamPlayer_set_mix_target>` **(** :ref:`int<class_int>` mix_target **)**     |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_stream<class_AudioStreamPlayer_set_stream>` **(** :ref:`AudioStream<class_audiostream>` stream **)** |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_volume_db<class_AudioStreamPlayer_set_volume_db>` **(** :ref:`float<class_float>` volume_db **)**    |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`stop<class_AudioStreamPlayer_stop>` **(** **)**                                                          |
-+----------------------------------------+----------------------------------------------------------------------------------------------------------------+
++----------------------------+---------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_playback_position<class_AudioStreamPlayer_get_playback_position>` **(** **)**           |
++----------------------------+---------------------------------------------------------------------------------------------------+
+| void                       | :ref:`play<class_AudioStreamPlayer_play>` **(** :ref:`float<class_float>` from_position=0.0 **)** |
++----------------------------+---------------------------------------------------------------------------------------------------+
+| void                       | :ref:`seek<class_AudioStreamPlayer_seek>` **(** :ref:`float<class_float>` to_position **)**       |
++----------------------------+---------------------------------------------------------------------------------------------------+
+| void                       | :ref:`stop<class_AudioStreamPlayer_stop>` **(** **)**                                             |
++----------------------------+---------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -104,35 +82,11 @@ Plays background audio.
 Member Function Description
 ---------------------------
 
-.. _class_AudioStreamPlayer_get_bus:
-
-- :ref:`String<class_string>` **get_bus** **(** **)** const
-
-.. _class_AudioStreamPlayer_get_mix_target:
-
-- :ref:`int<class_int>` **get_mix_target** **(** **)** const
-
 .. _class_AudioStreamPlayer_get_playback_position:
 
 - :ref:`float<class_float>` **get_playback_position** **(** **)**
 
 Returns the position in the :ref:`AudioStream<class_audiostream>`.
-
-.. _class_AudioStreamPlayer_get_stream:
-
-- :ref:`AudioStream<class_audiostream>` **get_stream** **(** **)** const
-
-.. _class_AudioStreamPlayer_get_volume_db:
-
-- :ref:`float<class_float>` **get_volume_db** **(** **)** const
-
-.. _class_AudioStreamPlayer_is_autoplay_enabled:
-
-- :ref:`bool<class_bool>` **is_autoplay_enabled** **(** **)**
-
-.. _class_AudioStreamPlayer_is_playing:
-
-- :ref:`bool<class_bool>` **is_playing** **(** **)** const
 
 .. _class_AudioStreamPlayer_play:
 
@@ -145,26 +99,6 @@ Plays the audio from the given position 'from_position', in seconds.
 - void **seek** **(** :ref:`float<class_float>` to_position **)**
 
 Sets the position from which audio will be played, in seconds.
-
-.. _class_AudioStreamPlayer_set_autoplay:
-
-- void **set_autoplay** **(** :ref:`bool<class_bool>` enable **)**
-
-.. _class_AudioStreamPlayer_set_bus:
-
-- void **set_bus** **(** :ref:`String<class_string>` bus **)**
-
-.. _class_AudioStreamPlayer_set_mix_target:
-
-- void **set_mix_target** **(** :ref:`int<class_int>` mix_target **)**
-
-.. _class_AudioStreamPlayer_set_stream:
-
-- void **set_stream** **(** :ref:`AudioStream<class_audiostream>` stream **)**
-
-.. _class_AudioStreamPlayer_set_volume_db:
-
-- void **set_volume_db** **(** :ref:`float<class_float>` volume_db **)**
 
 .. _class_AudioStreamPlayer_stop:
 

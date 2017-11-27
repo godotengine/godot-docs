@@ -21,43 +21,15 @@ Abstract base class for range-based controls.
 Member Functions
 ----------------
 
-+----------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_as_ratio<class_Range_get_as_ratio>` **(** **)** const                                               |
-+----------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_max<class_Range_get_max>` **(** **)** const                                                         |
-+----------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_min<class_Range_get_min>` **(** **)** const                                                         |
-+----------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_page<class_Range_get_page>` **(** **)** const                                                       |
-+----------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_step<class_Range_get_step>` **(** **)** const                                                       |
-+----------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_value<class_Range_get_value>` **(** **)** const                                                     |
-+----------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`is_ratio_exp<class_Range_is_ratio_exp>` **(** **)** const                                               |
-+----------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`is_using_rounded_values<class_Range_is_using_rounded_values>` **(** **)** const                         |
-+----------------------------+---------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_as_ratio<class_Range_set_as_ratio>` **(** :ref:`float<class_float>` value **)**                     |
-+----------------------------+---------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_exp_ratio<class_Range_set_exp_ratio>` **(** :ref:`bool<class_bool>` enabled **)**                   |
-+----------------------------+---------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_max<class_Range_set_max>` **(** :ref:`float<class_float>` maximum **)**                             |
-+----------------------------+---------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_min<class_Range_set_min>` **(** :ref:`float<class_float>` minimum **)**                             |
-+----------------------------+---------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_page<class_Range_set_page>` **(** :ref:`float<class_float>` pagesize **)**                          |
-+----------------------------+---------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_step<class_Range_set_step>` **(** :ref:`float<class_float>` step **)**                              |
-+----------------------------+---------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_use_rounded_values<class_Range_set_use_rounded_values>` **(** :ref:`bool<class_bool>` enabled **)** |
-+----------------------------+---------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_value<class_Range_set_value>` **(** :ref:`float<class_float>` value **)**                           |
-+----------------------------+---------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`share<class_Range_share>` **(** :ref:`Node<class_node>` with **)**                                      |
-+----------------------------+---------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`unshare<class_Range_unshare>` **(** **)**                                                               |
-+----------------------------+---------------------------------------------------------------------------------------------------------------+
++----------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_as_ratio<class_Range_get_as_ratio>` **(** **)** const                           |
++----------------------------+-------------------------------------------------------------------------------------------+
+| void                       | :ref:`set_as_ratio<class_Range_set_as_ratio>` **(** :ref:`float<class_float>` value **)** |
++----------------------------+-------------------------------------------------------------------------------------------+
+| void                       | :ref:`share<class_Range_share>` **(** :ref:`Node<class_node>` with **)**                  |
++----------------------------+-------------------------------------------------------------------------------------------+
+| void                       | :ref:`unshare<class_Range_unshare>` **(** **)**                                           |
++----------------------------+-------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -121,81 +93,11 @@ Member Function Description
 
 Return value mapped to 0 to 1 range.
 
-.. _class_Range_get_max:
-
-- :ref:`float<class_float>` **get_max** **(** **)** const
-
-Return the maximum value.
-
-.. _class_Range_get_min:
-
-- :ref:`float<class_float>` **get_min** **(** **)** const
-
-Return the minimum value.
-
-.. _class_Range_get_page:
-
-- :ref:`float<class_float>` **get_page** **(** **)** const
-
-Return the page size, if page is 0, paging is disabled.
-
-.. _class_Range_get_step:
-
-- :ref:`float<class_float>` **get_step** **(** **)** const
-
-Return the stepping, if step is 0, stepping is disabled.
-
-.. _class_Range_get_value:
-
-- :ref:`float<class_float>` **get_value** **(** **)** const
-
-.. _class_Range_is_ratio_exp:
-
-- :ref:`bool<class_bool>` **is_ratio_exp** **(** **)** const
-
-.. _class_Range_is_using_rounded_values:
-
-- :ref:`bool<class_bool>` **is_using_rounded_values** **(** **)** const
-
 .. _class_Range_set_as_ratio:
 
 - void **set_as_ratio** **(** :ref:`float<class_float>` value **)**
 
 Set value mapped to 0 to 1 (unit) range, it will then be converted to the actual value within min and max.
-
-.. _class_Range_set_exp_ratio:
-
-- void **set_exp_ratio** **(** :ref:`bool<class_bool>` enabled **)**
-
-.. _class_Range_set_max:
-
-- void **set_max** **(** :ref:`float<class_float>` maximum **)**
-
-.. _class_Range_set_min:
-
-- void **set_min** **(** :ref:`float<class_float>` minimum **)**
-
-Set minimum value, clamped range value to it if it's less.
-
-.. _class_Range_set_page:
-
-- void **set_page** **(** :ref:`float<class_float>` pagesize **)**
-
-Set page size. Page is mainly used for scrollbars or anything that controls text scrolling.
-
-.. _class_Range_set_step:
-
-- void **set_step** **(** :ref:`float<class_float>` step **)**
-
-Set step value. If step is 0, stepping will be disabled.
-
-.. _class_Range_set_use_rounded_values:
-
-- void **set_use_rounded_values** **(** :ref:`bool<class_bool>` enabled **)**
-
-.. _class_Range_set_value:
-
-- void **set_value** **(** :ref:`float<class_float>` value **)**
 
 .. _class_Range_share:
 

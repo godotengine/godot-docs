@@ -22,8 +22,6 @@ Member Functions
 +----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`                            | :ref:`get_floor_velocity<class_KinematicBody2D_get_floor_velocity>` **(** **)** const                                                                                                                                                                                                                                           |
 +----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                | :ref:`get_safe_margin<class_KinematicBody2D_get_safe_margin>` **(** **)** const                                                                                                                                                                                                                                                 |
-+----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`KinematicCollision2D<class_kinematiccollision2d>`  | :ref:`get_slide_collision<class_KinematicBody2D_get_slide_collision>` **(** :ref:`int<class_int>` slide_idx **)**                                                                                                                                                                                                               |
 +----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                    | :ref:`get_slide_count<class_KinematicBody2D_get_slide_count>` **(** **)** const                                                                                                                                                                                                                                                 |
@@ -37,8 +35,6 @@ Member Functions
 | :ref:`KinematicCollision2D<class_kinematiccollision2d>`  | :ref:`move_and_collide<class_KinematicBody2D_move_and_collide>` **(** :ref:`Vector2<class_vector2>` rel_vec **)**                                                                                                                                                                                                               |
 +----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`                            | :ref:`move_and_slide<class_KinematicBody2D_move_and_slide>` **(** :ref:`Vector2<class_vector2>` linear_velocity, :ref:`Vector2<class_vector2>` floor_normal=Vector2( 0, 0 ), :ref:`float<class_float>` slope_stop_min_velocity=5, :ref:`int<class_int>` max_bounces=4, :ref:`float<class_float>` floor_max_angle=0.785398 **)** |
-+----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                     | :ref:`set_safe_margin<class_KinematicBody2D_set_safe_margin>` **(** :ref:`float<class_float>` pixels **)**                                                                                                                                                                                                                      |
 +----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                  | :ref:`test_move<class_KinematicBody2D_test_move>` **(** :ref:`Transform2D<class_transform2d>` from, :ref:`Vector2<class_vector2>` rel_vec **)**                                                                                                                                                                                 |
 +----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -69,15 +65,11 @@ Member Function Description
 
 Returns the velocity of the floor. Only updates when calling :ref:`move_and_slide<class_KinematicBody2D_move_and_slide>`.
 
-.. _class_KinematicBody2D_get_safe_margin:
-
-- :ref:`float<class_float>` **get_safe_margin** **(** **)** const
-
 .. _class_KinematicBody2D_get_slide_collision:
 
 - :ref:`KinematicCollision2D<class_kinematiccollision2d>` **get_slide_collision** **(** :ref:`int<class_int>` slide_idx **)**
 
-Returns a :ref:`KinematicCollision2D<class_kinematiccollision2d>`, which contains information about a collision that occured during the last :ref:`move_and_slide<class_KinematicBody2D_move_and_slide>` call. Since the body can collide several times in a single call to :ref:`move_and_slide<class_KinematicBody2D_move_and_slide>`, you must specify the index of the collision in the range 0 to (:ref:`get_slide_count<class_KinematicBody2D_get_slide_count>`()-1).
+Returns a :ref:`KinematicCollision2D<class_kinematiccollision2d>`, which contains information about a collision that occured during the last :ref:`move_and_slide<class_KinematicBody2D_move_and_slide>` call. Since the body can collide several times in a single call to :ref:`move_and_slide<class_KinematicBody2D_move_and_slide>`, you must specify the index of the collision in the range 0 to (:ref:`get_slide_count<class_KinematicBody2D_get_slide_count>` - 1).
 
 .. _class_KinematicBody2D_get_slide_count:
 
@@ -126,10 +118,6 @@ If the body collides, it will change direction a maximum of ``max_bounces`` time
 ``floor_max_angle`` is the maximum angle (in radians) where a slope is still considered a floor (or a ceiling), rather than a wall. The default value equals 45 degrees.
 
 Returns the movement that remained when the body stopped. To get more detailed information about collisions that occured, use :ref:`get_slide_collision<class_KinematicBody2D_get_slide_collision>`.
-
-.. _class_KinematicBody2D_set_safe_margin:
-
-- void **set_safe_margin** **(** :ref:`float<class_float>` pixels **)**
 
 .. _class_KinematicBody2D_test_move:
 

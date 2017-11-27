@@ -18,29 +18,12 @@ Brief Description
 
 Base input event type for mouse events.
 
-Member Functions
-----------------
-
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_button_mask<class_InputEventMouse_get_button_mask>` **(** **)** const                                                 |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_global_position<class_InputEventMouse_get_global_position>` **(** **)** const                                         |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_position<class_InputEventMouse_get_position>` **(** **)** const                                                       |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_button_mask<class_InputEventMouse_set_button_mask>` **(** :ref:`int<class_int>` button_mask **)**                     |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_global_position<class_InputEventMouse_set_global_position>` **(** :ref:`Vector2<class_vector2>` global_position **)** |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_position<class_InputEventMouse_set_position>` **(** :ref:`Vector2<class_vector2>` position **)**                      |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
   .. _class_InputEventMouse_button_mask:
 
-- :ref:`int<class_int>` **button_mask** - Mouse button mask identifier, one of or a bitwise combination of the BUTTON_MASK\_\* constants in :ref:`@Global Scope<class_@global scope>`.
+- :ref:`int<class_int>` **button_mask** - Mouse button mask identifier, one of or a bitwise combination of the BUTTON_MASK\_\* constants in :ref:`@GlobalScope<class_@globalscope>`.
 
   .. _class_InputEventMouse_global_position:
 
@@ -55,32 +38,4 @@ Description
 -----------
 
 Stores general mouse events informations.
-
-Member Function Description
----------------------------
-
-.. _class_InputEventMouse_get_button_mask:
-
-- :ref:`int<class_int>` **get_button_mask** **(** **)** const
-
-.. _class_InputEventMouse_get_global_position:
-
-- :ref:`Vector2<class_vector2>` **get_global_position** **(** **)** const
-
-.. _class_InputEventMouse_get_position:
-
-- :ref:`Vector2<class_vector2>` **get_position** **(** **)** const
-
-.. _class_InputEventMouse_set_button_mask:
-
-- void **set_button_mask** **(** :ref:`int<class_int>` button_mask **)**
-
-.. _class_InputEventMouse_set_global_position:
-
-- void **set_global_position** **(** :ref:`Vector2<class_vector2>` global_position **)**
-
-.. _class_InputEventMouse_set_position:
-
-- void **set_position** **(** :ref:`Vector2<class_vector2>` position **)**
-
 

@@ -30,8 +30,6 @@ Member Functions
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`      | :ref:`get_position<class_ARVRPositionalTracker_get_position>` **(** **)** const                                                     |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`          | :ref:`get_rumble<class_ARVRPositionalTracker_get_rumble>` **(** **)** const                                                         |
-+------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`            | :ref:`get_tracks_orientation<class_ARVRPositionalTracker_get_tracks_orientation>` **(** **)** const                                 |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`            | :ref:`get_tracks_position<class_ARVRPositionalTracker_get_tracks_position>` **(** **)** const                                       |
@@ -39,8 +37,6 @@ Member Functions
 | :ref:`Transform<class_transform>`  | :ref:`get_transform<class_ARVRPositionalTracker_get_transform>` **(** :ref:`bool<class_bool>` adjust_by_reference_frame **)** const |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`              | :ref:`get_type<class_ARVRPositionalTracker_get_type>` **(** **)** const                                                             |
-+------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_rumble<class_ARVRPositionalTracker_set_rumble>` **(** :ref:`float<class_float>` rumble **)**                              |
 +------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
@@ -100,10 +96,6 @@ Returns the orientation matrix of the controller.
 
 Returns the position of the controller adjusted by world scale.
 
-.. _class_ARVRPositionalTracker_get_rumble:
-
-- :ref:`float<class_float>` **get_rumble** **(** **)** const
-
 .. _class_ARVRPositionalTracker_get_tracks_orientation:
 
 - :ref:`bool<class_bool>` **get_tracks_orientation** **(** **)** const
@@ -127,9 +119,5 @@ Returns the transform combining the orientation and position of this device.
 - :ref:`int<class_int>` **get_type** **(** **)** const
 
 Type of tracker.
-
-.. _class_ARVRPositionalTracker_set_rumble:
-
-- void **set_rumble** **(** :ref:`float<class_float>` rumble **)**
 
 

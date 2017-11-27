@@ -19,19 +19,11 @@ Node that represents collision shape data in 3D space.
 Member Functions
 ----------------
 
-+----------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`Shape<class_shape>`  | :ref:`get_shape<class_CollisionShape_get_shape>` **(** **)** const                                                  |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`is_disabled<class_CollisionShape_is_disabled>` **(** **)** const                                              |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`make_convex_from_brothers<class_CollisionShape_make_convex_from_brothers>` **(** **)**                        |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`resource_changed<class_CollisionShape_resource_changed>` **(** :ref:`Resource<class_resource>` resource **)** |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_disabled<class_CollisionShape_set_disabled>` **(** :ref:`bool<class_bool>` enable **)**                   |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_shape<class_CollisionShape_set_shape>` **(** :ref:`Shape<class_shape>` shape **)**                        |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------+
++-------+---------------------------------------------------------------------------------------------------------------------+
+| void  | :ref:`make_convex_from_brothers<class_CollisionShape_make_convex_from_brothers>` **(** **)**                        |
++-------+---------------------------------------------------------------------------------------------------------------------+
+| void  | :ref:`resource_changed<class_CollisionShape_resource_changed>` **(** :ref:`Resource<class_resource>` resource **)** |
++-------+---------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -53,14 +45,6 @@ Editor facility for creating and editing collision shapes in 3D space. You can u
 Member Function Description
 ---------------------------
 
-.. _class_CollisionShape_get_shape:
-
-- :ref:`Shape<class_shape>` **get_shape** **(** **)** const
-
-.. _class_CollisionShape_is_disabled:
-
-- :ref:`bool<class_bool>` **is_disabled** **(** **)** const
-
 .. _class_CollisionShape_make_convex_from_brothers:
 
 - void **make_convex_from_brothers** **(** **)**
@@ -72,13 +56,5 @@ Sets the collision shape's shape to the addition of all its convexed :ref:`MeshI
 - void **resource_changed** **(** :ref:`Resource<class_resource>` resource **)**
 
 If this method exists within a script it will be called whenever the shape resource has been modified.
-
-.. _class_CollisionShape_set_disabled:
-
-- void **set_disabled** **(** :ref:`bool<class_bool>` enable **)**
-
-.. _class_CollisionShape_set_shape:
-
-- void **set_shape** **(** :ref:`Shape<class_shape>` shape **)**
 
 

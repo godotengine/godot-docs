@@ -21,13 +21,9 @@ Base class for box containers.
 Member Functions
 ----------------
 
-+------------------------+----------------------------------------------------------------------------------------------------+
-| void                   | :ref:`add_spacer<class_BoxContainer_add_spacer>` **(** :ref:`bool<class_bool>` begin **)**         |
-+------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_alignment<class_BoxContainer_get_alignment>` **(** **)** const                           |
-+------------------------+----------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_alignment<class_BoxContainer_set_alignment>` **(** :ref:`int<class_int>` alignment **)** |
-+------------------------+----------------------------------------------------------------------------------------------------+
++-------+--------------------------------------------------------------------------------------------+
+| void  | :ref:`add_spacer<class_BoxContainer_add_spacer>` **(** :ref:`bool<class_bool>` begin **)** |
++-------+--------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -57,17 +53,5 @@ Member Function Description
 - void **add_spacer** **(** :ref:`bool<class_bool>` begin **)**
 
 Adds a control to the box as a spacer. If ``true``, *begin* will insert the spacer control in front of other children.
-
-.. _class_BoxContainer_get_alignment:
-
-- :ref:`int<class_int>` **get_alignment** **(** **)** const
-
-Return the alignment of children in the container.
-
-.. _class_BoxContainer_set_alignment:
-
-- void **set_alignment** **(** :ref:`int<class_int>` alignment **)**
-
-Set the alignment of children in the container(Must be one of ALIGN_BEGIN, ALIGN_CENTER or ALIGN_END).
 
 

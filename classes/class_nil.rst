@@ -48,7 +48,7 @@ Member Functions
 +-------+--------------------------------------------------------------------------------------------+
 | void  | :ref:`Nil<class_Nil_Nil>` **(** :ref:`Basis<class_basis>` from **)**                       |
 +-------+--------------------------------------------------------------------------------------------+
-| void  | :ref:`Nil<class_Nil_Nil>` **(** :ref:`Rect3<class_rect3>` from **)**                       |
+| void  | :ref:`Nil<class_Nil_Nil>` **(** :ref:`AABB<class_aabb>` from **)**                         |
 +-------+--------------------------------------------------------------------------------------------+
 | void  | :ref:`Nil<class_Nil_Nil>` **(** :ref:`Quat<class_quat>` from **)**                         |
 +-------+--------------------------------------------------------------------------------------------+
@@ -136,7 +136,7 @@ Member Function Description
 
 .. _class_Nil_Nil:
 
-- void **Nil** **(** :ref:`Rect3<class_rect3>` from **)**
+- void **Nil** **(** :ref:`AABB<class_aabb>` from **)**
 
 .. _class_Nil_Nil:
 

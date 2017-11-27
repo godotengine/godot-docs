@@ -16,15 +16,6 @@ Brief Description
 
 Node that instances a :ref:`MultiMesh<class_multimesh>`.
 
-Member Functions
-----------------
-
-+------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`MultiMesh<class_multimesh>`  | :ref:`get_multimesh<class_MultiMeshInstance_get_multimesh>` **(** **)** const                                       |
-+------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_multimesh<class_MultiMeshInstance_set_multimesh>` **(** :ref:`MultiMesh<class_multimesh>` multimesh **)** |
-+------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -37,20 +28,4 @@ Description
 -----------
 
 MultiMeshInstance is a :ref:`Node<class_node>` that takes a :ref:`MultiMesh<class_multimesh>` resource and adds it to the current scenario by creating an instance of it (yes, this is an instance of instances).
-
-Member Function Description
----------------------------
-
-.. _class_MultiMeshInstance_get_multimesh:
-
-- :ref:`MultiMesh<class_multimesh>` **get_multimesh** **(** **)** const
-
-Return the :ref:`MultiMesh<class_multimesh>` that is used for instancing.
-
-.. _class_MultiMeshInstance_set_multimesh:
-
-- void **set_multimesh** **(** :ref:`MultiMesh<class_multimesh>` multimesh **)**
-
-Set the :ref:`MultiMesh<class_multimesh>` to be instanced.
-
 

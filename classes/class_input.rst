@@ -163,7 +163,7 @@ If the device has a gyroscope, this will return the rate of rotation in rad/s ar
 
 - :ref:`float<class_float>` **get_joy_axis** **(** :ref:`int<class_int>` device, :ref:`int<class_int>` axis **)** const
 
-Returns the current value of the joypad axis at given index (see ``JOY\_\*`` constants in :ref:`@Global Scope<class_@global scope>`)
+Returns the current value of the joypad axis at given index (see ``JOY\_\*`` constants in :ref:`@GlobalScope<class_@globalscope>`)
 
 .. _class_Input_get_joy_axis_index_from_string:
 
@@ -251,25 +251,25 @@ Returns ``true`` if you are pressing the action event.
 
 - :ref:`bool<class_bool>` **is_joy_button_pressed** **(** :ref:`int<class_int>` device, :ref:`int<class_int>` button **)** const
 
-Returns ``true`` if you are pressing the joypad button. (see ``JOY\_\*`` constants in :ref:`@Global Scope<class_@global scope>`)
+Returns ``true`` if you are pressing the joypad button. (see ``JOY\_\*`` constants in :ref:`@GlobalScope<class_@globalscope>`)
 
 .. _class_Input_is_joy_known:
 
 - :ref:`bool<class_bool>` **is_joy_known** **(** :ref:`int<class_int>` device **)**
 
-Returns ``true`` if the system knows the specified device. This means that it sets all button and axis indices exactly as defined in the ``JOY\_\*`` constants (see :ref:`@Global Scope<class_@global scope>`). Unknown joypads are not expected to match these constants, but you can still retrieve events from them.
+Returns ``true`` if the system knows the specified device. This means that it sets all button and axis indices exactly as defined in the ``JOY\_\*`` constants (see :ref:`@GlobalScope<class_@globalscope>`). Unknown joypads are not expected to match these constants, but you can still retrieve events from them.
 
 .. _class_Input_is_key_pressed:
 
 - :ref:`bool<class_bool>` **is_key_pressed** **(** :ref:`int<class_int>` scancode **)** const
 
-Returns ``true`` if you are pressing the key. You can pass ``KEY\_\*``, which are pre-defined constants listed in :ref:`@Global Scope<class_@global scope>`.
+Returns ``true`` if you are pressing the key. You can pass ``KEY\_\*``, which are pre-defined constants listed in :ref:`@GlobalScope<class_@globalscope>`.
 
 .. _class_Input_is_mouse_button_pressed:
 
 - :ref:`bool<class_bool>` **is_mouse_button_pressed** **(** :ref:`int<class_int>` button **)** const
 
-Returns ``true`` if you are pressing the mouse button. You can pass ``BUTTON\_\*``, which are pre-defined constants listed in :ref:`@Global Scope<class_@global scope>`.
+Returns ``true`` if you are pressing the mouse button. You can pass ``BUTTON\_\*``, which are pre-defined constants listed in :ref:`@GlobalScope<class_@globalscope>`.
 
 .. _class_Input_joy_connection_changed:
 

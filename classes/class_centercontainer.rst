@@ -16,15 +16,6 @@ Brief Description
 
 Keeps children controls centered.
 
-Member Functions
-----------------
-
-+--------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_using_top_left<class_CenterContainer_is_using_top_left>` **(** **)** const                        |
-+--------------------------+------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_use_top_left<class_CenterContainer_set_use_top_left>` **(** :ref:`bool<class_bool>` enable **)** |
-+--------------------------+------------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -37,20 +28,4 @@ Description
 -----------
 
 CenterContainer Keeps children controls centered. This container keeps all children to their minimum size, in the center.
-
-Member Function Description
----------------------------
-
-.. _class_CenterContainer_is_using_top_left:
-
-- :ref:`bool<class_bool>` **is_using_top_left** **(** **)** const
-
-Should put children to the top left corner instead of center of the container.
-
-.. _class_CenterContainer_set_use_top_left:
-
-- void **set_use_top_left** **(** :ref:`bool<class_bool>` enable **)**
-
-This function will anchor the container children to the top left corner of the the container boundaries, moving all its children to that position, (the children new center will be the top left corner of the container).
-
 

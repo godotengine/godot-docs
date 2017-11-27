@@ -16,15 +16,6 @@ Brief Description
 
 A twist joint between two 3D bodies
 
-Member Functions
-----------------
-
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_param<class_ConeTwistJoint_get_param>` **(** :ref:`int<class_int>` param **)** const                            |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_param<class_ConeTwistJoint_set_param>` **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value **)** |
-+----------------------------+---------------------------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -87,16 +78,4 @@ The joint can rotate the bodies across an axis defined by the local x-axes of th
 The twist axis is initiated as the x-axis of the :ref:`Joint<class_joint>`.
 
 Once the Bodies swing, the twist axis is calculated as the middle of the x-axes of the Joint in the local space of the two Bodies.
-
-Member Function Description
----------------------------
-
-.. _class_ConeTwistJoint_get_param:
-
-- :ref:`float<class_float>` **get_param** **(** :ref:`int<class_int>` param **)** const
-
-.. _class_ConeTwistJoint_set_param:
-
-- void **set_param** **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value **)**
-
 

@@ -18,27 +18,6 @@ Input event type for screen drag events.
 
 (only available on mobile devices)
 
-Member Functions
-----------------
-
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_index<class_InputEventScreenDrag_get_index>` **(** **)** const                                        |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_position<class_InputEventScreenDrag_get_position>` **(** **)** const                                  |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_relative<class_InputEventScreenDrag_get_relative>` **(** **)** const                                  |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_speed<class_InputEventScreenDrag_get_speed>` **(** **)** const                                        |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_index<class_InputEventScreenDrag_set_index>` **(** :ref:`int<class_int>` index **)**                  |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_position<class_InputEventScreenDrag_set_position>` **(** :ref:`Vector2<class_vector2>` position **)** |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_relative<class_InputEventScreenDrag_set_relative>` **(** :ref:`Vector2<class_vector2>` relative **)** |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_speed<class_InputEventScreenDrag_set_speed>` **(** :ref:`Vector2<class_vector2>` speed **)**          |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -63,40 +42,4 @@ Description
 -----------
 
 Contains screen drag informations. See :ref:`Node._input<class_Node__input>`.
-
-Member Function Description
----------------------------
-
-.. _class_InputEventScreenDrag_get_index:
-
-- :ref:`int<class_int>` **get_index** **(** **)** const
-
-.. _class_InputEventScreenDrag_get_position:
-
-- :ref:`Vector2<class_vector2>` **get_position** **(** **)** const
-
-.. _class_InputEventScreenDrag_get_relative:
-
-- :ref:`Vector2<class_vector2>` **get_relative** **(** **)** const
-
-.. _class_InputEventScreenDrag_get_speed:
-
-- :ref:`Vector2<class_vector2>` **get_speed** **(** **)** const
-
-.. _class_InputEventScreenDrag_set_index:
-
-- void **set_index** **(** :ref:`int<class_int>` index **)**
-
-.. _class_InputEventScreenDrag_set_position:
-
-- void **set_position** **(** :ref:`Vector2<class_vector2>` position **)**
-
-.. _class_InputEventScreenDrag_set_relative:
-
-- void **set_relative** **(** :ref:`Vector2<class_vector2>` relative **)**
-
-.. _class_InputEventScreenDrag_set_speed:
-
-- void **set_speed** **(** :ref:`Vector2<class_vector2>` speed **)**
-
 

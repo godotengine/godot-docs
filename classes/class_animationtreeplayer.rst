@@ -54,8 +54,6 @@ Member Functions
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`disconnect_nodes<class_AnimationTreePlayer_disconnect_nodes>` **(** :ref:`String<class_string>` id, :ref:`int<class_int>` dst_input_idx **)**                                                                         |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`get_animation_process_mode<class_AnimationTreePlayer_get_animation_process_mode>` **(** **)** const                                                                                                                   |
-+------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`NodePath<class_nodepath>`                | :ref:`get_base_path<class_AnimationTreePlayer_get_base_path>` **(** **)** const                                                                                                                                             |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`NodePath<class_nodepath>`                | :ref:`get_master_player<class_AnimationTreePlayer_get_master_player>` **(** **)** const                                                                                                                                     |
@@ -117,8 +115,6 @@ Member Functions
 | void                                           | :ref:`reset<class_AnimationTreePlayer_reset>` **(** **)**                                                                                                                                                                   |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_active<class_AnimationTreePlayer_set_active>` **(** :ref:`bool<class_bool>` enabled **)**                                                                                                                         |
-+------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_animation_process_mode<class_AnimationTreePlayer_set_animation_process_mode>` **(** :ref:`int<class_int>` mode **)**                                                                                              |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_base_path<class_AnimationTreePlayer_set_base_path>` **(** :ref:`NodePath<class_nodepath>` path **)**                                                                                                              |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -272,12 +268,6 @@ Connects node ``id`` to ``dst_id`` at the specified input slot.
 - void **disconnect_nodes** **(** :ref:`String<class_string>` id, :ref:`int<class_int>` dst_input_idx **)**
 
 Disconnects nodes connected to ``id`` at the specified input slot.
-
-.. _class_AnimationTreePlayer_get_animation_process_mode:
-
-- :ref:`int<class_int>` **get_animation_process_mode** **(** **)** const
-
-Returns playback process mode of this AnimationTreePlayer.
 
 .. _class_AnimationTreePlayer_get_base_path:
 
@@ -454,12 +444,6 @@ Resets this AnimationTreePlayer.
 - void **set_active** **(** :ref:`bool<class_bool>` enabled **)**
 
 Sets whether this AnimationTreePlayer is active. AnimationTreePlayer will start processing if set to active.
-
-.. _class_AnimationTreePlayer_set_animation_process_mode:
-
-- void **set_animation_process_mode** **(** :ref:`int<class_int>` mode **)**
-
-Sets process mode (ANIMATION_PROCESS\_\*) of this AnimationTreePlayer.
 
 .. _class_AnimationTreePlayer_set_base_path:
 

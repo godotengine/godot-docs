@@ -16,27 +16,6 @@ Brief Description
 
 Static body for 2D Physics.
 
-Member Functions
-----------------
-
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_bounce<class_StaticBody2D_get_bounce>` **(** **)** const                                                                 |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_constant_angular_velocity<class_StaticBody2D_get_constant_angular_velocity>` **(** **)** const                           |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_constant_linear_velocity<class_StaticBody2D_get_constant_linear_velocity>` **(** **)** const                             |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_friction<class_StaticBody2D_get_friction>` **(** **)** const                                                             |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_bounce<class_StaticBody2D_set_bounce>` **(** :ref:`float<class_float>` bounce **)**                                      |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_constant_angular_velocity<class_StaticBody2D_set_constant_angular_velocity>` **(** :ref:`float<class_float>` vel **)**   |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_constant_linear_velocity<class_StaticBody2D_set_constant_linear_velocity>` **(** :ref:`Vector2<class_vector2>` vel **)** |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_friction<class_StaticBody2D_set_friction>` **(** :ref:`float<class_float>` friction **)**                                |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -63,56 +42,4 @@ Description
 Static body for 2D Physics. A StaticBody2D is a body that is not intended to move. It is ideal for implementing objects in the environment, such as walls or platforms.
 
 Additionally, a constant linear or angular velocity can be set for the static body, which will affect colliding bodies as if it were moving (for example, a conveyor belt).
-
-Member Function Description
----------------------------
-
-.. _class_StaticBody2D_get_bounce:
-
-- :ref:`float<class_float>` **get_bounce** **(** **)** const
-
-Return the body bounciness.
-
-.. _class_StaticBody2D_get_constant_angular_velocity:
-
-- :ref:`float<class_float>` **get_constant_angular_velocity** **(** **)** const
-
-Return the constant angular velocity for the body.
-
-.. _class_StaticBody2D_get_constant_linear_velocity:
-
-- :ref:`Vector2<class_vector2>` **get_constant_linear_velocity** **(** **)** const
-
-Return the constant linear velocity for the body.
-
-.. _class_StaticBody2D_get_friction:
-
-- :ref:`float<class_float>` **get_friction** **(** **)** const
-
-Return the body friction.
-
-.. _class_StaticBody2D_set_bounce:
-
-- void **set_bounce** **(** :ref:`float<class_float>` bounce **)**
-
-Set the body bounciness, from 0 (not bouncy) to 1 (bouncy).
-
-.. _class_StaticBody2D_set_constant_angular_velocity:
-
-- void **set_constant_angular_velocity** **(** :ref:`float<class_float>` vel **)**
-
-Set a constant angular velocity for the body. This does not rotate the body, but affects other bodies touching it, as if it was rotating.
-
-.. _class_StaticBody2D_set_constant_linear_velocity:
-
-- void **set_constant_linear_velocity** **(** :ref:`Vector2<class_vector2>` vel **)**
-
-Set a constant linear velocity for the body. This does not move the body, but affects other bodies touching it, as if it was moving.
-
-.. _class_StaticBody2D_set_friction:
-
-- void **set_friction** **(** :ref:`float<class_float>` friction **)**
-
-Set the body friction, from 0 (frictionless) to 1 (full friction).
-
 

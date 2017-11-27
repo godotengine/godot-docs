@@ -21,13 +21,9 @@ Detects when the node is visible on screen.
 Member Functions
 ----------------
 
-+----------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`Rect3<class_rect3>`  | :ref:`get_aabb<class_VisibilityNotifier_get_aabb>` **(** **)** const                          |
-+----------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`is_on_screen<class_VisibilityNotifier_is_on_screen>` **(** **)** const                  |
-+----------------------------+-----------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_aabb<class_VisibilityNotifier_set_aabb>` **(** :ref:`Rect3<class_rect3>` rect **)** |
-+----------------------------+-----------------------------------------------------------------------------------------------+
++--------------------------+------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`is_on_screen<class_VisibilityNotifier_is_on_screen>` **(** **)** const |
++--------------------------+------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -62,7 +58,7 @@ Member Variables
 
   .. _class_VisibilityNotifier_aabb:
 
-- :ref:`Rect3<class_rect3>` **aabb** - The VisibilityNotifier's bounding box.
+- :ref:`AABB<class_aabb>` **aabb** - The VisibilityNotifier's bounding box.
 
 
 Description
@@ -73,22 +69,10 @@ The VisibilityNotifier detects when it is visible on the screen. It also notifie
 Member Function Description
 ---------------------------
 
-.. _class_VisibilityNotifier_get_aabb:
-
-- :ref:`Rect3<class_rect3>` **get_aabb** **(** **)** const
-
-Returns the bounding box of the VisibilityNotifier.
-
 .. _class_VisibilityNotifier_is_on_screen:
 
 - :ref:`bool<class_bool>` **is_on_screen** **(** **)** const
 
 If ``true`` the bounding box is on the screen.
-
-.. _class_VisibilityNotifier_set_aabb:
-
-- void **set_aabb** **(** :ref:`Rect3<class_rect3>` rect **)**
-
-Set the visibility bounding box of the VisibilityNotifier.
 
 

@@ -16,19 +16,6 @@ Brief Description
 
 
 
-Member Functions
-----------------
-
-+------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_base_script<class_VisualScriptTypeCast_get_base_script>` **(** **)** const                            |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_base_type<class_VisualScriptTypeCast_get_base_type>` **(** **)** const                                |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_base_script<class_VisualScriptTypeCast_set_base_script>` **(** :ref:`String<class_string>` path **)** |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_base_type<class_VisualScriptTypeCast_set_base_type>` **(** :ref:`String<class_string>` type **)**     |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -39,25 +26,5 @@ Member Variables
   .. _class_VisualScriptTypeCast_base_type:
 
 - :ref:`String<class_string>` **base_type**
-
-
-Member Function Description
----------------------------
-
-.. _class_VisualScriptTypeCast_get_base_script:
-
-- :ref:`String<class_string>` **get_base_script** **(** **)** const
-
-.. _class_VisualScriptTypeCast_get_base_type:
-
-- :ref:`String<class_string>` **get_base_type** **(** **)** const
-
-.. _class_VisualScriptTypeCast_set_base_script:
-
-- void **set_base_script** **(** :ref:`String<class_string>` path **)**
-
-.. _class_VisualScriptTypeCast_set_base_type:
-
-- void **set_base_type** **(** :ref:`String<class_string>` type **)**
 
 

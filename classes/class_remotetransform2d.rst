@@ -14,51 +14,26 @@ RemoteTransform2D
 Brief Description
 -----------------
 
-RemoteTransform2D mirrors the :ref:`Transform2D<class_transform2d>` of another :ref:`CanvasItem<class_canvasitem>` derived Node in the scene.
-
-Member Functions
-----------------
-
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_nodepath>`  | :ref:`get_remote_node<class_RemoteTransform2D_get_remote_node>` **(** **)** const                                                                |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`          | :ref:`get_update_position<class_RemoteTransform2D_get_update_position>` **(** **)** const                                                        |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`          | :ref:`get_update_rotation<class_RemoteTransform2D_get_update_rotation>` **(** **)** const                                                        |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`          | :ref:`get_update_scale<class_RemoteTransform2D_get_update_scale>` **(** **)** const                                                              |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`          | :ref:`get_use_global_coordinates<class_RemoteTransform2D_get_use_global_coordinates>` **(** **)** const                                          |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_remote_node<class_RemoteTransform2D_set_remote_node>` **(** :ref:`NodePath<class_nodepath>` path **)**                                 |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_update_position<class_RemoteTransform2D_set_update_position>` **(** :ref:`bool<class_bool>` update_remote_position **)**               |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_update_rotation<class_RemoteTransform2D_set_update_rotation>` **(** :ref:`bool<class_bool>` update_remote_rotation **)**               |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_update_scale<class_RemoteTransform2D_set_update_scale>` **(** :ref:`bool<class_bool>` update_remote_scale **)**                        |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_use_global_coordinates<class_RemoteTransform2D_set_use_global_coordinates>` **(** :ref:`bool<class_bool>` use_global_coordinates **)** |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+RemoteTransform2D leads the :ref:`Transform2D<class_transform2d>` of another :ref:`CanvasItem<class_canvasitem>` derived Node in the scene.
 
 Member Variables
 ----------------
 
   .. _class_RemoteTransform2D_remote_path:
 
-- :ref:`NodePath<class_nodepath>` **remote_path** - The remote node's :ref:`NodePath<class_nodepath>`.
+- :ref:`NodePath<class_nodepath>` **remote_path** - The :ref:`NodePath<class_nodepath>` to the remote node, relative to the RemoteTransform2D's position in the scene.
 
   .. _class_RemoteTransform2D_update_position:
 
-- :ref:`bool<class_bool>` **update_position** - If ``true`` the remote node's position is mirrored.
+- :ref:`bool<class_bool>` **update_position** - If ``true`` the remote node's position is tracked. Default value: ``true``.
 
   .. _class_RemoteTransform2D_update_rotation:
 
-- :ref:`bool<class_bool>` **update_rotation** - If ``true`` the remote node's rotation is mirrored.
+- :ref:`bool<class_bool>` **update_rotation** - If ``true`` the remote node's rotation is tracked. Default value: ``true``.
 
   .. _class_RemoteTransform2D_update_scale:
 
-- :ref:`bool<class_bool>` **update_scale** - If ``true`` the remote node's scale is mirrored.
+- :ref:`bool<class_bool>` **update_scale** - If ``true`` the remote node's scale is tracked. Default value: ``true``.
 
   .. _class_RemoteTransform2D_use_global_coordinates:
 
@@ -68,51 +43,7 @@ Member Variables
 Description
 -----------
 
-RemoteTransform2D mirrors the :ref:`Transform2D<class_transform2d>` of another :ref:`CanvasItem<class_canvasitem>` derived Node (called the remote node) in the scene.
+RemoteTransform2D leads the :ref:`Transform2D<class_transform2d>` of another :ref:`CanvasItem<class_canvasitem>` derived Node (called the remote node) in the scene.
 
-It can be set to track another Node's position, rotation and/or and update its own accordingly, using either global or local coordinates.
-
-Member Function Description
----------------------------
-
-.. _class_RemoteTransform2D_get_remote_node:
-
-- :ref:`NodePath<class_nodepath>` **get_remote_node** **(** **)** const
-
-.. _class_RemoteTransform2D_get_update_position:
-
-- :ref:`bool<class_bool>` **get_update_position** **(** **)** const
-
-.. _class_RemoteTransform2D_get_update_rotation:
-
-- :ref:`bool<class_bool>` **get_update_rotation** **(** **)** const
-
-.. _class_RemoteTransform2D_get_update_scale:
-
-- :ref:`bool<class_bool>` **get_update_scale** **(** **)** const
-
-.. _class_RemoteTransform2D_get_use_global_coordinates:
-
-- :ref:`bool<class_bool>` **get_use_global_coordinates** **(** **)** const
-
-.. _class_RemoteTransform2D_set_remote_node:
-
-- void **set_remote_node** **(** :ref:`NodePath<class_nodepath>` path **)**
-
-.. _class_RemoteTransform2D_set_update_position:
-
-- void **set_update_position** **(** :ref:`bool<class_bool>` update_remote_position **)**
-
-.. _class_RemoteTransform2D_set_update_rotation:
-
-- void **set_update_rotation** **(** :ref:`bool<class_bool>` update_remote_rotation **)**
-
-.. _class_RemoteTransform2D_set_update_scale:
-
-- void **set_update_scale** **(** :ref:`bool<class_bool>` update_remote_scale **)**
-
-.. _class_RemoteTransform2D_set_use_global_coordinates:
-
-- void **set_use_global_coordinates** **(** :ref:`bool<class_bool>` use_global_coordinates **)**
-
+It can be set to track another Node's position, rotation and/or scale. It can update using either global or local coordinates.
 

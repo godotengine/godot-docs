@@ -36,7 +36,7 @@ Member Functions
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                    | :ref:`String<class_String_String>` **(** :ref:`Quat<class_quat>` from **)**                                                              |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`String<class_String_String>` **(** :ref:`Rect3<class_rect3>` from **)**                                                            |
+| :ref:`String<class_string>`                    | :ref:`String<class_String_String>` **(** :ref:`AABB<class_aabb>` from **)**                                                              |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                    | :ref:`String<class_String_String>` **(** :ref:`Basis<class_basis>` from **)**                                                            |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
@@ -259,9 +259,9 @@ Constructs a new String from the given :ref:`Quat<class_quat>`.
 
 .. _class_String_String:
 
-- :ref:`String<class_string>` **String** **(** :ref:`Rect3<class_rect3>` from **)**
+- :ref:`String<class_string>` **String** **(** :ref:`AABB<class_aabb>` from **)**
 
-Constructs a new String from the given :ref:`Rect3<class_rect3>`.
+Constructs a new String from the given :ref:`AABB<class_aabb>`.
 
 .. _class_String_String:
 

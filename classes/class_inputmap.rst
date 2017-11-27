@@ -44,7 +44,7 @@ Member Functions
 Description
 -----------
 
-Manages all :ref:`InputEventAction<class_inputeventaction>` which can be created/modified from the project settings menu ``Project > Project Settings > Input Map[/Code] or in code with [method add_action] and [method action_add_event]. See [method Node._input].
+Manages all :ref:`InputEventAction<class_inputeventaction>` which can be created/modified from the project settings menu ``Project > Project Settings > Input Map`` or in code with :ref:`add_action<class_InputMap_add_action>` and :ref:`action_add_event<class_InputMap_action_add_event>`. See :ref:`Node._input<class_Node__input>`.
 
 Member Function Description
 ---------------------------

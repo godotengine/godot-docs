@@ -16,19 +16,6 @@ Brief Description
 
 
 
-Member Functions
-----------------
-
-+------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_action_mode<class_VisualScriptInputAction_get_action_mode>` **(** **)** const                            |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_action_name<class_VisualScriptInputAction_get_action_name>` **(** **)** const                            |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_action_mode<class_VisualScriptInputAction_set_action_mode>` **(** :ref:`int<class_int>` mode **)**       |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_action_name<class_VisualScriptInputAction_set_action_name>` **(** :ref:`String<class_string>` name **)** |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -48,24 +35,4 @@ Numeric Constants
 - **MODE_RELEASED** = **1**
 - **MODE_JUST_PRESSED** = **2**
 - **MODE_JUST_RELEASED** = **3**
-
-Member Function Description
----------------------------
-
-.. _class_VisualScriptInputAction_get_action_mode:
-
-- :ref:`int<class_int>` **get_action_mode** **(** **)** const
-
-.. _class_VisualScriptInputAction_get_action_name:
-
-- :ref:`String<class_string>` **get_action_name** **(** **)** const
-
-.. _class_VisualScriptInputAction_set_action_mode:
-
-- void **set_action_mode** **(** :ref:`int<class_int>` mode **)**
-
-.. _class_VisualScriptInputAction_set_action_name:
-
-- void **set_action_name** **(** :ref:`String<class_string>` name **)**
-
 

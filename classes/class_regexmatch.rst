@@ -38,7 +38,7 @@ Member Functions
 Description
 -----------
 
-Contains the results of a regex search. :ref:`RegEx.search<class_RegEx_search>` returns an instance of ``RegExMatch`` if it finds the search pattern in the source string.
+Contains the results of a single regex match returned by :ref:`RegEx.search<class_RegEx_search>` and :ref:`RegEx.search_all<class_RegEx_search_all>`. It can be used to find the position and range of the match and its capturing groups, and it can extract its sub-string for you.
 
 Member Function Description
 ---------------------------
@@ -47,37 +47,43 @@ Member Function Description
 
 - :ref:`int<class_int>` **get_end** **(** :ref:`Variant<class_variant>` name=0 **)** const
 
-Returns the end position of the match in the source string. An integer can be specified for numeric groups or a string for named groups. Returns -1 if that group wasn't found or doesn't exist. Defaults to 0 (whole pattern).
+Returns the end position of the match within the source string. The end position of capturing groups can be retrieved by providing its group number as an integer or its string name (if it's a named group). The default value of 0 refers to the whole pattern.
+
+Returns -1 if the group did not match or doesn't exist.
 
 .. _class_RegExMatch_get_group_count:
 
 - :ref:`int<class_int>` **get_group_count** **(** **)** const
 
-Returns the number of numeric capturing groups.
+Returns the number of capturing groups.
 
 .. _class_RegExMatch_get_names:
 
 - :ref:`Dictionary<class_dictionary>` **get_names** **(** **)** const
 
-Returns an array of names of named capturing groups.
+Returns a dictionary of named groups and its corresponding group number. Only groups with that were matched are included. If multiple groups have the same name, that name would refer to the first matching one.
 
 .. _class_RegExMatch_get_start:
 
 - :ref:`int<class_int>` **get_start** **(** :ref:`Variant<class_variant>` name=0 **)** const
 
-Returns the starting position of the match in the source string. An integer can be specified for numeric groups or a string for named groups. Returns -1 if that group wasn't found or doesn't exist. Defaults to 0 (whole pattern).
+Returns the starting position of the match within the source string. The starting position of capturing groups can be retrieved by providing its group number as an integer or its string name (if it's a named group). The default value of 0 refers to the whole pattern.
+
+Returns -1 if the group did not match or doesn't exist.
 
 .. _class_RegExMatch_get_string:
 
 - :ref:`String<class_string>` **get_string** **(** :ref:`Variant<class_variant>` name=0 **)** const
 
-Returns the result of the match in the source string. An integer can be specified for numeric groups or a string for named groups. Returns -1 if that group wasn't found or doesn't exist. Defaults to 0 (whole pattern).
+Returns the substring of the match from the source string. Capturing groups can be retrieved by providing its group number as an integer or its string name (if it's a named group). The default value of 0 refers to the whole pattern.
+
+Returns an empty string if the group did not match or doesn't exist.
 
 .. _class_RegExMatch_get_strings:
 
 - :ref:`Array<class_array>` **get_strings** **(** **)** const
 
-Returns an :ref:`Array<class_array>` of the matches in the source string.
+Returns an :ref:`Array<class_array>` of the match and its capturing groups.
 
 .. _class_RegExMatch_get_subject:
 

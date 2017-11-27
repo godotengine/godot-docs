@@ -24,21 +24,13 @@ Member Functions
 +--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                     | :ref:`add_collision_exception_with<class_PhysicsBody2D_add_collision_exception_with>` **(** :ref:`Node<class_node>` body **)**                   |
 +--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`    | :ref:`get_collision_layer<class_PhysicsBody2D_get_collision_layer>` **(** **)** const                                                            |
-+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`  | :ref:`get_collision_layer_bit<class_PhysicsBody2D_get_collision_layer_bit>` **(** :ref:`int<class_int>` bit **)** const                          |
-+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`    | :ref:`get_collision_mask<class_PhysicsBody2D_get_collision_mask>` **(** **)** const                                                              |
 +--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`  | :ref:`get_collision_mask_bit<class_PhysicsBody2D_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** const                            |
 +--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                     | :ref:`remove_collision_exception_with<class_PhysicsBody2D_remove_collision_exception_with>` **(** :ref:`Node<class_node>` body **)**             |
 +--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_collision_layer<class_PhysicsBody2D_set_collision_layer>` **(** :ref:`int<class_int>` layer **)**                                      |
-+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                     | :ref:`set_collision_layer_bit<class_PhysicsBody2D_set_collision_layer_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)** |
-+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_collision_mask<class_PhysicsBody2D_set_collision_mask>` **(** :ref:`int<class_int>` mask **)**                                         |
 +--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                     | :ref:`set_collision_mask_bit<class_PhysicsBody2D_set_collision_mask_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**   |
 +--------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -77,23 +69,11 @@ Member Function Description
 
 Adds a body to the list of bodies that this body can't collide with.
 
-.. _class_PhysicsBody2D_get_collision_layer:
-
-- :ref:`int<class_int>` **get_collision_layer** **(** **)** const
-
-Return the physics layer this area is in.
-
 .. _class_PhysicsBody2D_get_collision_layer_bit:
 
 - :ref:`bool<class_bool>` **get_collision_layer_bit** **(** :ref:`int<class_int>` bit **)** const
 
 Return an individual bit on the collision mask.
-
-.. _class_PhysicsBody2D_get_collision_mask:
-
-- :ref:`int<class_int>` **get_collision_mask** **(** **)** const
-
-Return the physics layers this area can scan for collisions.
 
 .. _class_PhysicsBody2D_get_collision_mask_bit:
 
@@ -107,27 +87,11 @@ Return an individual bit on the collision mask.
 
 Removes a body from the list of bodies that this body can't collide with.
 
-.. _class_PhysicsBody2D_set_collision_layer:
-
-- void **set_collision_layer** **(** :ref:`int<class_int>` layer **)**
-
-Set the physics layers this area is in.
-
-Collidable objects can exist in any of 32 different layers. These layers are not visual, but more of a tagging system instead. A collidable can use these layers/tags to select with which objects it can collide, using :ref:`set_collision_mask<class_PhysicsBody2D_set_collision_mask>`.
-
-A contact is detected if object A is in any of the layers that object B scans, or object B is in any layer scanned by object A.
-
 .. _class_PhysicsBody2D_set_collision_layer_bit:
 
 - void **set_collision_layer_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
 Set/clear individual bits on the layer mask. This makes getting a body in/out of only one layer easier.
-
-.. _class_PhysicsBody2D_set_collision_mask:
-
-- void **set_collision_mask** **(** :ref:`int<class_int>` mask **)**
-
-Set the physics layers this area can scan for collisions.
 
 .. _class_PhysicsBody2D_set_collision_mask_bit:
 

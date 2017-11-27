@@ -16,15 +16,6 @@ Brief Description
 
 Contains a :ref:`Curve2D<class_curve2d>` path for :ref:`PathFollow2D<class_pathfollow2d>` nodes to follow.
 
-Member Functions
-----------------
-
-+--------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`Curve2D<class_curve2d>`  | :ref:`get_curve<class_Path2D_get_curve>` **(** **)** const                               |
-+--------------------------------+------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_curve<class_Path2D_set_curve>` **(** :ref:`Curve2D<class_curve2d>` curve **)** |
-+--------------------------------+------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -37,20 +28,4 @@ Description
 -----------
 
 Can have :ref:`PathFollow2D<class_pathfollow2d>` child-nodes moving along the :ref:`Curve2D<class_curve2d>`. See :ref:`PathFollow2D<class_pathfollow2d>` for more information on this usage.
-
-Member Function Description
----------------------------
-
-.. _class_Path2D_get_curve:
-
-- :ref:`Curve2D<class_curve2d>` **get_curve** **(** **)** const
-
-Returns the :ref:`Curve2D<class_curve2d>` contained.
-
-.. _class_Path2D_set_curve:
-
-- void **set_curve** **(** :ref:`Curve2D<class_curve2d>` curve **)**
-
-Sets the :ref:`Curve2D<class_curve2d>`.
-
 

@@ -101,7 +101,7 @@ Return the specified input port's name.
 
 - :ref:`int<class_int>` **_get_input_value_port_type** **(** :ref:`int<class_int>` idx **)** virtual
 
-Return the specified input port's type. See the TYPE\_\* enum in @GlobalScope.
+Return the specified input port's type. See the TYPE\_\* enum in :ref:`@GlobalScope<class_@globalscope>`.
 
 .. _class_VisualScriptCustomNode__get_output_sequence_port_count:
 
@@ -131,7 +131,7 @@ Return the specified output's name.
 
 - :ref:`int<class_int>` **_get_output_value_port_type** **(** :ref:`int<class_int>` idx **)** virtual
 
-Return the specified output's type. See the TYPE\_\* enum in @GlobalScope.
+Return the specified output's type. See the TYPE\_\* enum in :ref:`@GlobalScope<class_@globalscope>`.
 
 .. _class_VisualScriptCustomNode__get_text:
 

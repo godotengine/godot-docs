@@ -19,17 +19,13 @@ Brief Description
 Member Functions
 ----------------
 
-+--------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`          | :ref:`get_as_text<class_ShortCut_get_as_text>` **(** **)** const                                           |
-+--------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`InputEvent<class_inputevent>`  | :ref:`get_shortcut<class_ShortCut_get_shortcut>` **(** **)** const                                         |
-+--------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`              | :ref:`is_shortcut<class_ShortCut_is_shortcut>` **(** :ref:`InputEvent<class_inputevent>` event **)** const |
-+--------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`              | :ref:`is_valid<class_ShortCut_is_valid>` **(** **)** const                                                 |
-+--------------------------------------+------------------------------------------------------------------------------------------------------------+
-| void                                 | :ref:`set_shortcut<class_ShortCut_set_shortcut>` **(** :ref:`InputEvent<class_inputevent>` event **)**     |
-+--------------------------------------+------------------------------------------------------------------------------------------------------------+
++------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_as_text<class_ShortCut_get_as_text>` **(** **)** const                                           |
++------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`is_shortcut<class_ShortCut_is_shortcut>` **(** :ref:`InputEvent<class_inputevent>` event **)** const |
++------------------------------+------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`      | :ref:`is_valid<class_ShortCut_is_valid>` **(** **)** const                                                 |
++------------------------------+------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -46,10 +42,6 @@ Member Function Description
 
 - :ref:`String<class_string>` **get_as_text** **(** **)** const
 
-.. _class_ShortCut_get_shortcut:
-
-- :ref:`InputEvent<class_inputevent>` **get_shortcut** **(** **)** const
-
 .. _class_ShortCut_is_shortcut:
 
 - :ref:`bool<class_bool>` **is_shortcut** **(** :ref:`InputEvent<class_inputevent>` event **)** const
@@ -57,9 +49,5 @@ Member Function Description
 .. _class_ShortCut_is_valid:
 
 - :ref:`bool<class_bool>` **is_valid** **(** **)** const
-
-.. _class_ShortCut_set_shortcut:
-
-- void **set_shortcut** **(** :ref:`InputEvent<class_inputevent>` event **)**
 
 

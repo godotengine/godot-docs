@@ -19,21 +19,9 @@ Numerical input text field.
 Member Functions
 ----------------
 
-+----------------------------------+----------------------------------------------------------------------------------------------+
-| :ref:`LineEdit<class_lineedit>`  | :ref:`get_line_edit<class_SpinBox_get_line_edit>` **(** **)**                                |
-+----------------------------------+----------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`get_prefix<class_SpinBox_get_prefix>` **(** **)** const                                |
-+----------------------------------+----------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`get_suffix<class_SpinBox_get_suffix>` **(** **)** const                                |
-+----------------------------------+----------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`          | :ref:`is_editable<class_SpinBox_is_editable>` **(** **)** const                              |
-+----------------------------------+----------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_editable<class_SpinBox_set_editable>` **(** :ref:`bool<class_bool>` editable **)** |
-+----------------------------------+----------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_prefix<class_SpinBox_set_prefix>` **(** :ref:`String<class_string>` prefix **)**   |
-+----------------------------------+----------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_suffix<class_SpinBox_set_suffix>` **(** :ref:`String<class_string>` suffix **)**   |
-+----------------------------------+----------------------------------------------------------------------------------------------+
++----------------------------------+---------------------------------------------------------------+
+| :ref:`LineEdit<class_lineedit>`  | :ref:`get_line_edit<class_SpinBox_get_line_edit>` **(** **)** |
++----------------------------------+---------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -62,39 +50,5 @@ Member Function Description
 .. _class_SpinBox_get_line_edit:
 
 - :ref:`LineEdit<class_lineedit>` **get_line_edit** **(** **)**
-
-.. _class_SpinBox_get_prefix:
-
-- :ref:`String<class_string>` **get_prefix** **(** **)** const
-
-.. _class_SpinBox_get_suffix:
-
-- :ref:`String<class_string>` **get_suffix** **(** **)** const
-
-Return the specific suffix.
-
-.. _class_SpinBox_is_editable:
-
-- :ref:`bool<class_bool>` **is_editable** **(** **)** const
-
-Return if the spinbox is editable.
-
-.. _class_SpinBox_set_editable:
-
-- void **set_editable** **(** :ref:`bool<class_bool>` editable **)**
-
-Set whether the spinbox is editable.
-
-.. _class_SpinBox_set_prefix:
-
-- void **set_prefix** **(** :ref:`String<class_string>` prefix **)**
-
-Set a prefix.
-
-.. _class_SpinBox_set_suffix:
-
-- void **set_suffix** **(** :ref:`String<class_string>` suffix **)**
-
-Set a specific suffix.
 
 

@@ -16,27 +16,6 @@ Brief Description
 
 Defines a 2D collision polygon.
 
-Member Functions
-----------------
-
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                            | :ref:`get_build_mode<class_CollisionPolygon2D_get_build_mode>` **(** **)** const                                             |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector2Array<class_poolvector2array>`  | :ref:`get_polygon<class_CollisionPolygon2D_get_polygon>` **(** **)** const                                                   |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                          | :ref:`is_disabled<class_CollisionPolygon2D_is_disabled>` **(** **)** const                                                   |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                          | :ref:`is_one_way_collision_enabled<class_CollisionPolygon2D_is_one_way_collision_enabled>` **(** **)** const                 |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_build_mode<class_CollisionPolygon2D_set_build_mode>` **(** :ref:`int<class_int>` build_mode **)**                  |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_disabled<class_CollisionPolygon2D_set_disabled>` **(** :ref:`bool<class_bool>` disabled **)**                      |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_one_way_collision<class_CollisionPolygon2D_set_one_way_collision>` **(** :ref:`bool<class_bool>` enabled **)**     |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_polygon<class_CollisionPolygon2D_set_polygon>` **(** :ref:`PoolVector2Array<class_poolvector2array>` polygon **)** |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -67,50 +46,4 @@ Description
 -----------
 
 Provides a 2D collision polygon to a :ref:`CollisionObject2D<class_collisionobject2d>` parent. Polygon can be drawn in the editor or specified by a list of vertices.
-
-Member Function Description
----------------------------
-
-.. _class_CollisionPolygon2D_get_build_mode:
-
-- :ref:`int<class_int>` **get_build_mode** **(** **)** const
-
-Return whether the polygon is a :ref:`ConvexPolygonShape2D<class_convexpolygonshape2d>` (``build_mode==0``), or a :ref:`ConcavePolygonShape2D<class_concavepolygonshape2d>` (``build_mode==1``).
-
-.. _class_CollisionPolygon2D_get_polygon:
-
-- :ref:`PoolVector2Array<class_poolvector2array>` **get_polygon** **(** **)** const
-
-Return the list of points that define the polygon.
-
-.. _class_CollisionPolygon2D_is_disabled:
-
-- :ref:`bool<class_bool>` **is_disabled** **(** **)** const
-
-.. _class_CollisionPolygon2D_is_one_way_collision_enabled:
-
-- :ref:`bool<class_bool>` **is_one_way_collision_enabled** **(** **)** const
-
-.. _class_CollisionPolygon2D_set_build_mode:
-
-- void **set_build_mode** **(** :ref:`int<class_int>` build_mode **)**
-
-Set whether the polygon is to be a :ref:`ConvexPolygonShape2D<class_convexpolygonshape2d>` (``build_mode==0``), or a :ref:`ConcavePolygonShape2D<class_concavepolygonshape2d>` (``build_mode==1``).
-
-.. _class_CollisionPolygon2D_set_disabled:
-
-- void **set_disabled** **(** :ref:`bool<class_bool>` disabled **)**
-
-.. _class_CollisionPolygon2D_set_one_way_collision:
-
-- void **set_one_way_collision** **(** :ref:`bool<class_bool>` enabled **)**
-
-.. _class_CollisionPolygon2D_set_polygon:
-
-- void **set_polygon** **(** :ref:`PoolVector2Array<class_poolvector2array>` polygon **)**
-
-Set the array of points forming the polygon.
-
-When editing the point list via the editor, depending on :ref:`get_build_mode<class_CollisionPolygon2D_get_build_mode>`, it has to be a list of points (for ``build_mode==0``), or a list of lines (for ``build_mode==1``). In the second case, the even elements of the array define the start point of the line, and the odd elements the end point.
-
 

@@ -28,13 +28,9 @@ Member Functions
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`force_raycast_update<class_RayCast2D_force_raycast_update>` **(** **)**                                                              |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_cast_to<class_RayCast2D_get_cast_to>` **(** **)** const                                                                          |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_object>`    | :ref:`get_collider<class_RayCast2D_get_collider>` **(** **)** const                                                                        |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_collider_shape<class_RayCast2D_get_collider_shape>` **(** **)** const                                                            |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_collision_mask<class_RayCast2D_get_collision_mask>` **(** **)** const                                                            |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`get_collision_mask_bit<class_RayCast2D_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** const                          |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -42,29 +38,13 @@ Member Functions
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`get_collision_point<class_RayCast2D_get_collision_point>` **(** **)** const                                                          |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`get_exclude_parent_body<class_RayCast2D_get_exclude_parent_body>` **(** **)** const                                                  |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_type_mask<class_RayCast2D_get_type_mask>` **(** **)** const                                                                      |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`is_colliding<class_RayCast2D_is_colliding>` **(** **)** const                                                                        |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_enabled<class_RayCast2D_is_enabled>` **(** **)** const                                                                            |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`remove_exception<class_RayCast2D_remove_exception>` **(** :ref:`Object<class_object>` node **)**                                     |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`remove_exception_rid<class_RayCast2D_remove_exception_rid>` **(** :ref:`RID<class_rid>` rid **)**                                    |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_cast_to<class_RayCast2D_set_cast_to>` **(** :ref:`Vector2<class_vector2>` local_point **)**                                      |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_collision_mask<class_RayCast2D_set_collision_mask>` **(** :ref:`int<class_int>` mask **)**                                       |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_collision_mask_bit<class_RayCast2D_set_collision_mask_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)** |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_enabled<class_RayCast2D_set_enabled>` **(** :ref:`bool<class_bool>` enabled **)**                                                |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_exclude_parent_body<class_RayCast2D_set_exclude_parent_body>` **(** :ref:`bool<class_bool>` mask **)**                           |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_type_mask<class_RayCast2D_set_type_mask>` **(** :ref:`int<class_int>` mask **)**                                                 |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
@@ -85,16 +65,6 @@ Member Variables
   .. _class_RayCast2D_exclude_parent:
 
 - :ref:`bool<class_bool>` **exclude_parent** - If ``true``, the parent node will be excluded from collision detection. Default value: ``true``.
-
-  .. _class_RayCast2D_type_mask:
-
-- :ref:`int<class_int>` **type_mask** - Object types to detect using a logical sum (OR operation) of type constants defined in :ref:`Physics2DDirectSpaceState<class_physics2ddirectspacestate>`.
-
-Example:
-
-::
-
-    RayCast.type_mask = Physics2DDirectSpaceState.TYPE_MASK_STATIC_BODY | Physics2DDirectSpaceState.TYPE_MASK_KINEMATIC_BODY
 
 
 Description
@@ -135,12 +105,6 @@ Removes all collision exceptions for this ray.
 
 Updates the collision information for the ray.  Use this method to update the collision information immediately instead of waiting for the next ``_physics_process`` call, for example if the ray or its parent has changed state. Note: ``enabled == true`` is not required for this to work.
 
-.. _class_RayCast2D_get_cast_to:
-
-- :ref:`Vector2<class_vector2>` **get_cast_to** **(** **)** const
-
-Return the destination point of this ray object.
-
 .. _class_RayCast2D_get_collider:
 
 - :ref:`Object<class_object>` **get_collider** **(** **)** const
@@ -167,12 +131,6 @@ Example:
     if RayCast2D.is_colliding():
         var shape = RayCast2D.get_collider_shape()
 
-.. _class_RayCast2D_get_collision_mask:
-
-- :ref:`int<class_int>` **get_collision_mask** **(** **)** const
-
-Returns the collision mask for this ray.
-
 .. _class_RayCast2D_get_collision_mask_bit:
 
 - :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
@@ -189,29 +147,11 @@ Returns the normal of the intersecting object's shape at the collision point.
 
 Returns the collision point at which the ray intersects the closest object. Note: this point is in the **global** coordinate system.
 
-.. _class_RayCast2D_get_exclude_parent_body:
-
-- :ref:`bool<class_bool>` **get_exclude_parent_body** **(** **)** const
-
-Returns whether this ray should hit your parent node, if it's a body.
-
-.. _class_RayCast2D_get_type_mask:
-
-- :ref:`int<class_int>` **get_type_mask** **(** **)** const
-
-Returns the type mask (types of objects to detect) for this ray. The value is a sum (bitwise OR'd) of constants available for :ref:`Physics2DDirectSpaceState<class_physics2ddirectspacestate>`.
-
 .. _class_RayCast2D_is_colliding:
 
 - :ref:`bool<class_bool>` **is_colliding** **(** **)** const
 
 Return whether the closest object the ray is pointing to is colliding with the vector (considering the vector length).
-
-.. _class_RayCast2D_is_enabled:
-
-- :ref:`bool<class_bool>` **is_enabled** **(** **)** const
-
-Returns whether this raycast is enabled or not.
 
 .. _class_RayCast2D_remove_exception:
 
@@ -225,38 +165,8 @@ Removes a collision exception so the ray does report collisions with the specifi
 
 Removes a collision exception so the ray does report collisions with the specified :ref:`RID<class_rid>`.
 
-.. _class_RayCast2D_set_cast_to:
-
-- void **set_cast_to** **(** :ref:`Vector2<class_vector2>` local_point **)**
-
-Sets the ray destination point, so that the ray will test from the ray's origin to ``local_point``
-
-.. _class_RayCast2D_set_collision_mask:
-
-- void **set_collision_mask** **(** :ref:`int<class_int>` mask **)**
-
-Set the mask to filter objects. Only objects in at least one collision layer enabled in the mask will be detected.
-
 .. _class_RayCast2D_set_collision_mask_bit:
 
 - void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
-
-.. _class_RayCast2D_set_enabled:
-
-- void **set_enabled** **(** :ref:`bool<class_bool>` enabled **)**
-
-Enables the RayCast2D. Only enabled raycasts will be able to query the space and report collisions.
-
-.. _class_RayCast2D_set_exclude_parent_body:
-
-- void **set_exclude_parent_body** **(** :ref:`bool<class_bool>` mask **)**
-
-Toggle whether this ray should hit your parent node, if it's a body.
-
-.. _class_RayCast2D_set_type_mask:
-
-- void **set_type_mask** **(** :ref:`int<class_int>` mask **)**
-
-Set the types of objects to detect. For ``mask`` use a logic sum (OR operation) of constants defined in :ref:`Physics2DDirectSpaceState<class_physics2ddirectspacestate>`, eg. ``Physics2DDirectSpaceState.TYPE_MASK_STATIC_BODY | Physics2DDirectSpaceState.TYPE_MASK_KINEMATIC_BODY`` to detect only those two types.
 
 

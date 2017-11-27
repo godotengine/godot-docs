@@ -78,8 +78,6 @@ Member Functions
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`NodePath<class_nodepath>`    | :ref:`get_path_to<class_Node_get_path_to>` **(** :ref:`Node<class_node>` node **)** const                                                                                                    |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`              | :ref:`get_pause_mode<class_Node_get_pause_mode>` **(** **)** const                                                                                                                           |
-+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`          | :ref:`get_physics_process_delta_time<class_Node_get_physics_process_delta_time>` **(** **)** const                                                                                           |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`              | :ref:`get_position_in_parent<class_Node_get_position_in_parent>` **(** **)** const                                                                                                           |
@@ -97,8 +95,6 @@ Member Functions
 | :ref:`bool<class_bool>`            | :ref:`has_node_and_resource<class_Node_has_node_and_resource>` **(** :ref:`NodePath<class_nodepath>` path **)** const                                                                        |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`            | :ref:`is_a_parent_of<class_Node_is_a_parent_of>` **(** :ref:`Node<class_node>` node **)** const                                                                                              |
-+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`            | :ref:`is_displayed_folded<class_Node_is_displayed_folded>` **(** **)** const                                                                                                                 |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`            | :ref:`is_greater_than<class_Node_is_greater_than>` **(** :ref:`Node<class_node>` node **)** const                                                                                            |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -166,8 +162,6 @@ Member Functions
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`rset_unreliable_id<class_Node_rset_unreliable_id>` **(** :ref:`int<class_int>` peer_id, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value **)**                |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_display_folded<class_Node_set_display_folded>` **(** :ref:`bool<class_bool>` fold **)**                                                                                            |
-+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_filename<class_Node_set_filename>` **(** :ref:`String<class_string>` filename **)**                                                                                                |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_name<class_Node_set_name>` **(** :ref:`String<class_string>` name **)**                                                                                                            |
@@ -175,8 +169,6 @@ Member Functions
 | void                               | :ref:`set_network_master<class_Node_set_network_master>` **(** :ref:`int<class_int>` id, :ref:`bool<class_bool>` recursive=true **)**                                                        |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_owner<class_Node_set_owner>` **(** :ref:`Node<class_node>` owner **)**                                                                                                             |
-+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_pause_mode<class_Node_set_pause_mode>` **(** :ref:`int<class_int>` mode **)**                                                                                                      |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_physics_process<class_Node_set_physics_process>` **(** :ref:`bool<class_bool>` enable **)**                                                                                        |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -494,12 +486,6 @@ Return the absolute path of the current node. This only works if the current nod
 
 Return the relative path from the current node to the specified node in "node" argument. Both nodes must be in the same scene, or else the function will fail.
 
-.. _class_Node_get_pause_mode:
-
-- :ref:`int<class_int>` **get_pause_mode** **(** **)** const
-
-Return the pause mode (PAUSE_MODE\_\*) of this Node.
-
 .. _class_Node_get_physics_process_delta_time:
 
 - :ref:`float<class_float>` **get_physics_process_delta_time** **(** **)** const
@@ -547,10 +533,6 @@ Return whether the node that a given :ref:`NodePath<class_nodepath>` points too 
 - :ref:`bool<class_bool>` **is_a_parent_of** **(** :ref:`Node<class_node>` node **)** const
 
 Return *true* if the "node" argument is a direct or indirect child of the current node, otherwise return *false*.
-
-.. _class_Node_is_displayed_folded:
-
-- :ref:`bool<class_bool>` **is_displayed_folded** **(** **)** const
 
 .. _class_Node_is_greater_than:
 
@@ -740,10 +722,6 @@ Remotely change property's value on other peers (and locally) using an unreliabl
 
 Remotely change property's value on a specific peer identified by *peer_id* using an unreliable protocol.
 
-.. _class_Node_set_display_folded:
-
-- void **set_display_folded** **(** :ref:`bool<class_bool>` fold **)**
-
 .. _class_Node_set_filename:
 
 - void **set_filename** **(** :ref:`String<class_string>` filename **)**
@@ -765,12 +743,6 @@ Set the name of the ``Node``. Name must be unique within parent, and setting an 
 - void **set_owner** **(** :ref:`Node<class_node>` owner **)**
 
 Set the node owner. A node can have any other node as owner (as long as a valid parent, grandparent, etc ascending in the tree). When saving a node (using SceneSaver) all the nodes it owns will be saved with it. This allows to create complex SceneTrees, with instancing and subinstancing.
-
-.. _class_Node_set_pause_mode:
-
-- void **set_pause_mode** **(** :ref:`int<class_int>` mode **)**
-
-Set pause mode (PAUSE_MODE\_\*) of this Node.
 
 .. _class_Node_set_physics_process:
 

@@ -16,19 +16,6 @@ Brief Description
 
 
 
-Member Functions
-----------------
-
-+----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NavigationMesh<class_navigationmesh>`  | :ref:`get_navigation_mesh<class_NavigationMeshInstance_get_navigation_mesh>` **(** **)** const                                               |
-+----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`is_enabled<class_NavigationMeshInstance_is_enabled>` **(** **)** const                                                                 |
-+----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set_enabled<class_NavigationMeshInstance_set_enabled>` **(** :ref:`bool<class_bool>` enabled **)**                                     |
-+----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set_navigation_mesh<class_NavigationMeshInstance_set_navigation_mesh>` **(** :ref:`NavigationMesh<class_navigationmesh>` navmesh **)** |
-+----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -39,25 +26,5 @@ Member Variables
   .. _class_NavigationMeshInstance_navmesh:
 
 - :ref:`NavigationMesh<class_navigationmesh>` **navmesh**
-
-
-Member Function Description
----------------------------
-
-.. _class_NavigationMeshInstance_get_navigation_mesh:
-
-- :ref:`NavigationMesh<class_navigationmesh>` **get_navigation_mesh** **(** **)** const
-
-.. _class_NavigationMeshInstance_is_enabled:
-
-- :ref:`bool<class_bool>` **is_enabled** **(** **)** const
-
-.. _class_NavigationMeshInstance_set_enabled:
-
-- void **set_enabled** **(** :ref:`bool<class_bool>` enabled **)**
-
-.. _class_NavigationMeshInstance_set_navigation_mesh:
-
-- void **set_navigation_mesh** **(** :ref:`NavigationMesh<class_navigationmesh>` navmesh **)**
 
 
