@@ -1,3 +1,5 @@
+.. _doc_design_interfaces_with_the_control_nodes:
+
 Design interfaces with the Control nodes
 ========================================
 

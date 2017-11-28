@@ -263,7 +263,7 @@ The real strength of this system, though, is to combine levels to create more in
 
 .. image:: img/environment_glow_layers2.png
  
-Finally, as the highest layers are created by stretching small blurred images, it is possible that some blockyness may be visible. Enabling **Bicubic Upscaling* gets rids of the it,
+Finally, as the highest layers are created by stretching small blurred images, it is possible that some blockyness may be visible. Enabling **Bicubic Upscaling** gets rids of the it,
 at a minimal performance cost.
 
 .. image:: img/environment_glow_bicubic.png

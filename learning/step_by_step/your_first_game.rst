@@ -600,7 +600,7 @@ Create the following children of the ``HUD`` node:
           origin, or the reference point for the edges of the node. Margins
           update automatically when you move or resize a control node. They
           represent the distance from the control node's edges to its anchor.
-          See :ref:`doc_gui_tutorial` for more details.
+          See :ref:`doc_design_interfaces_with_the_control_nodes` for more details.
 
 Arrange the nodes as shown below. Click the "Anchor" button to
 set a Control node's anchor:

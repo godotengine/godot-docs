@@ -3,7 +3,7 @@
 Introduction to the buildsystem
 ===============================
 
-.. highlight:: shell
+.. highlight:: none
 
 SCons
 -----
