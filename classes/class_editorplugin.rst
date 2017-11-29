@@ -44,7 +44,9 @@ Member Functions
 +------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                              | :ref:`forward_canvas_gui_input<class_EditorPlugin_forward_canvas_gui_input>` **(** :ref:`Transform2D<class_transform2d>` canvas_xform, :ref:`InputEvent<class_inputevent>` event **)** virtual                    |
 +------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`forward_draw_over_canvas<class_EditorPlugin_forward_draw_over_canvas>` **(** :ref:`Transform2D<class_transform2d>` canvas_xform, :ref:`Control<class_control>` canvas **)** virtual                         |
+| void                                                 | :ref:`forward_draw_over_viewport<class_EditorPlugin_forward_draw_over_viewport>` **(** :ref:`Control<class_control>` overlay **)** virtual                                                                        |
++------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                 | :ref:`forward_force_draw_over_viewport<class_EditorPlugin_forward_force_draw_over_viewport>` **(** :ref:`Control<class_control>` overlay **)** virtual                                                            |
 +------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                              | :ref:`forward_spatial_gui_input<class_EditorPlugin_forward_spatial_gui_input>` **(** :ref:`Camera<class_camera>` camera, :ref:`InputEvent<class_inputevent>` event **)** virtual                                  |
 +------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -84,13 +86,15 @@ Member Functions
 +------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`save_external_data<class_EditorPlugin_save_external_data>` **(** **)** virtual                                                                                                                              |
 +------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                 | :ref:`set_force_draw_over_forwarding_enabled<class_EditorPlugin_set_force_draw_over_forwarding_enabled>` **(** **)**                                                                                              |
++------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`set_input_event_forwarding_always_enabled<class_EditorPlugin_set_input_event_forwarding_always_enabled>` **(** **)**                                                                                        |
 +------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`set_state<class_EditorPlugin_set_state>` **(** :ref:`Dictionary<class_dictionary>` state **)** virtual                                                                                                      |
 +------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`set_window_layout<class_EditorPlugin_set_window_layout>` **(** :ref:`ConfigFile<class_configfile>` layout **)** virtual                                                                                     |
 +------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                 | :ref:`update_canvas<class_EditorPlugin_update_canvas>` **(** **)**                                                                                                                                                |
+| :ref:`int<class_int>`                                | :ref:`update_overlays<class_EditorPlugin_update_overlays>` **(** **)** const                                                                                                                                      |
 +------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -224,11 +228,13 @@ This function is used for plugins that edit specific object types (nodes or reso
 
 - :ref:`bool<class_bool>` **forward_canvas_gui_input** **(** :ref:`Transform2D<class_transform2d>` canvas_xform, :ref:`InputEvent<class_inputevent>` event **)** virtual
 
-.. _class_EditorPlugin_forward_draw_over_canvas:
+.. _class_EditorPlugin_forward_draw_over_viewport:
 
-- void **forward_draw_over_canvas** **(** :ref:`Transform2D<class_transform2d>` canvas_xform, :ref:`Control<class_control>` canvas **)** virtual
+- void **forward_draw_over_viewport** **(** :ref:`Control<class_control>` overlay **)** virtual
 
-This function is called every time the 2D canvas editor draws (which overlays over the edited scene). Drawing over the supplied control will draw over the edited scene. To convert from control coordinates to edited scene coordinates (including zoom and offset), a transform is also provided. If you require this control to be redraw, call :ref:`update_canvas<class_EditorPlugin_update_canvas>`.
+.. _class_EditorPlugin_forward_force_draw_over_viewport:
+
+- void **forward_force_draw_over_viewport** **(** :ref:`Control<class_control>` overlay **)** virtual
 
 .. _class_EditorPlugin_forward_spatial_gui_input:
 
@@ -336,6 +342,10 @@ Remove a custom type added by :ref:`EditorPlugin.add_custom_type<class_EditorPlu
 
 This method is called after the editor saves the project or when it's closed. It asks the plugin to save edited external scenes/resources.
 
+.. _class_EditorPlugin_set_force_draw_over_forwarding_enabled:
+
+- void **set_force_draw_over_forwarding_enabled** **(** **)**
+
 .. _class_EditorPlugin_set_input_event_forwarding_always_enabled:
 
 - void **set_input_event_forwarding_always_enabled** **(** **)**
@@ -354,10 +364,8 @@ Restore the state saved by :ref:`EditorPlugin.get_state<class_EditorPlugin_get_s
 
 Restore the plugin GUI layout saved by :ref:`EditorPlugin.get_window_layout<class_EditorPlugin_get_window_layout>`.
 
-.. _class_EditorPlugin_update_canvas:
+.. _class_EditorPlugin_update_overlays:
 
-- void **update_canvas** **(** **)**
-
-Updates the control used to draw the edited scene over the 2D canvas. This is used together with :ref:`forward_canvas_input_event<class_EditorPlugin_forward_canvas_input_event>`.
+- :ref:`int<class_int>` **update_overlays** **(** **)** const
 
 

@@ -23,45 +23,55 @@ Member Variables
 
   .. _class_GeometryInstance_cast_shadow:
 
-- :ref:`int<class_int>` **cast_shadow**
+- :ref:`int<class_int>` **cast_shadow** - The selected shadow casting flag. See SHADOW_CASTING_SETTING\_\* constants for values.
 
   .. _class_GeometryInstance_extra_cull_margin:
 
-- :ref:`float<class_float>` **extra_cull_margin**
+- :ref:`float<class_float>` **extra_cull_margin** - The extra distance added to the GeometryInstance's bounding box (:ref:`AABB<class_aabb>`) to increase its cull box.
 
   .. _class_GeometryInstance_lod_max_distance:
 
-- :ref:`float<class_float>` **lod_max_distance**
+- :ref:`float<class_float>` **lod_max_distance** - The GeometryInstance's max LOD distance.
 
   .. _class_GeometryInstance_lod_max_hysteresis:
 
-- :ref:`float<class_float>` **lod_max_hysteresis**
+- :ref:`float<class_float>` **lod_max_hysteresis** - The GeometryInstance's max LOD margin.
 
   .. _class_GeometryInstance_lod_min_distance:
 
-- :ref:`float<class_float>` **lod_min_distance**
+- :ref:`float<class_float>` **lod_min_distance** - The GeometryInstance's min LOD distance.
 
   .. _class_GeometryInstance_lod_min_hysteresis:
 
-- :ref:`float<class_float>` **lod_min_hysteresis**
+- :ref:`float<class_float>` **lod_min_hysteresis** - The GeometryInstance's min LOD margin.
 
   .. _class_GeometryInstance_material_override:
 
-- :ref:`Material<class_material>` **material_override**
+- :ref:`Material<class_material>` **material_override** - The material override for the whole geometry.
+
+If there is a material in material_override, it will be used instead of any material set in any material slot of the mesh.
 
   .. _class_GeometryInstance_use_in_baked_light:
 
-- :ref:`bool<class_bool>` **use_in_baked_light**
+- :ref:`bool<class_bool>` **use_in_baked_light** - If ``true`` this GeometryInstance will be used when baking lights using a :ref:`GIProbe<class_giprobe>` and/or any other form of baked lighting.
 
 
 Numeric Constants
 -----------------
 
-- **SHADOW_CASTING_SETTING_OFF** = **0**
-- **SHADOW_CASTING_SETTING_ON** = **1**
-- **SHADOW_CASTING_SETTING_DOUBLE_SIDED** = **2**
-- **SHADOW_CASTING_SETTING_SHADOWS_ONLY** = **3**
-- **FLAG_USE_BAKED_LIGHT** = **0**
+- **SHADOW_CASTING_SETTING_OFF** = **0** --- Will not cast any shadows.
+- **SHADOW_CASTING_SETTING_ON** = **1** --- Will cast shadows from all visible faces in the GeometryInstance.
+
+Will take culling into account, so faces not being rendered will not be taken into account when shadow casting.
+- **SHADOW_CASTING_SETTING_DOUBLE_SIDED** = **2** --- Will cast shadows from all visible faces in the GeometryInstance.
+
+Will not take culling into account, so all faces will be taken into account when shadow casting.
+- **SHADOW_CASTING_SETTING_SHADOWS_ONLY** = **3** --- Will only show the shadows casted from this object.
+
+In other words: The actual mesh will not be visible, only the shadows casted from the mesh.
+- **FLAG_USE_BAKED_LIGHT** = **0** --- Will allow the GeometryInstance to be used when baking lights using a :ref:`GIProbe<class_giprobe>` and/or any other form of baked lighting.
+
+Added documentation for GeometryInstance and VisualInstance
 - **FLAG_MAX** = **1**
 
 Description

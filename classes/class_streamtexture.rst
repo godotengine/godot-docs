@@ -14,13 +14,18 @@ StreamTexture
 Brief Description
 -----------------
 
-
+A .stex texture.
 
 Member Variables
 ----------------
 
   .. _class_StreamTexture_load_path:
 
-- :ref:`String<class_string>` **load_path**
+- :ref:`String<class_string>` **load_path** - The StreamTexture's filepath to a .stex file.
 
+
+Description
+-----------
+
+A texture that is loaded from a .stex file.
 

@@ -16,25 +16,34 @@ Sky
 Brief Description
 -----------------
 
-
+The base class for :ref:`PanoramaSky<class_panoramasky>` and :ref:`ProceduralSky<class_proceduralsky>`.
 
 Member Variables
 ----------------
 
   .. _class_Sky_radiance_size:
 
-- :ref:`int<class_int>` **radiance_size**
+- :ref:`int<class_int>` **radiance_size** - The Sky's radiance map size.
+
+The higher the radiance map size, the more detailed the lighting from the Sky will be.
+
+See RADIANCE_SIZE\_\* constants for values. Default size is RADIANCE_SIZE_512.
 
 
 Numeric Constants
 -----------------
 
-- **RADIANCE_SIZE_32** = **0**
-- **RADIANCE_SIZE_64** = **1**
-- **RADIANCE_SIZE_128** = **2**
-- **RADIANCE_SIZE_256** = **3**
-- **RADIANCE_SIZE_512** = **4**
-- **RADIANCE_SIZE_1024** = **5**
-- **RADIANCE_SIZE_2048** = **6**
-- **RADIANCE_SIZE_MAX** = **7**
+- **RADIANCE_SIZE_32** = **0** --- Radiance texture size is 32x32 pixels.
+- **RADIANCE_SIZE_64** = **1** --- Radiance texture size is 64x64 pixels.
+- **RADIANCE_SIZE_128** = **2** --- Radiance texture size is 128x128 pixels.
+- **RADIANCE_SIZE_256** = **3** --- Radiance texture size is 256x256 pixels.
+- **RADIANCE_SIZE_512** = **4** --- Radiance texture size is 512x512 pixels.
+- **RADIANCE_SIZE_1024** = **5** --- Radiance texture size is 1024x1024 pixels.
+- **RADIANCE_SIZE_2048** = **6** --- Radiance texture size is 2048x2048 pixels.
+- **RADIANCE_SIZE_MAX** = **7** --- Radiance texture size is the largest size it can be.
+
+Description
+-----------
+
+The base class for :ref:`PanoramaSky<class_panoramasky>` and :ref:`ProceduralSky<class_proceduralsky>`.
 

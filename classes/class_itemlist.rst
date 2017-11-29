@@ -118,6 +118,10 @@ Fired when specified item has been selected.
 
 Fired when a multiple selection is altered on a list allowing multiple selection.
 
+.. _class_ItemList_nothing_selected:
+
+- **nothing_selected** **(** **)**
+
 .. _class_ItemList_rmb_clicked:
 
 - **rmb_clicked** **(** :ref:`Vector2<class_vector2>` at_position **)**

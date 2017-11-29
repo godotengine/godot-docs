@@ -34,7 +34,9 @@ Member Variables
 
   .. _class_VisualInstance_layers:
 
-- :ref:`int<class_int>` **layers**
+- :ref:`int<class_int>` **layers** - The render layer(s) this VisualInstance is drawn on.
+
+This object will only be visible for :ref:`Camera<class_camera>`\ s whose cull mask includes the render object this VisualInstance is set to.
 
 
 Member Function Description
@@ -44,12 +46,22 @@ Member Function Description
 
 - :ref:`AABB<class_aabb>` **get_aabb** **(** **)** const
 
+Returns the :ref:`AABB<class_aabb>` (also known as the bounding box) for this VisualInstance.
+
 .. _class_VisualInstance_get_transformed_aabb:
 
 - :ref:`AABB<class_aabb>` **get_transformed_aabb** **(** **)** const
 
+Returns the transformed :ref:`AABB<class_aabb>` (also known as the bounding box) for this VisualInstance.
+
+Transformed in this case means the :ref:`AABB<class_aabb>` plus the position, rotation, and scale of the :ref:`Spatial<class_spatial>`\ s :ref:`Transform<class_transform>`
+
 .. _class_VisualInstance_set_base:
 
 - void **set_base** **(** :ref:`RID<class_rid>` base **)**
+
+Sets the base of the VisualInstance, which changes how the engine handles the VisualInstance under the hood.
+
+It is recommended to only use set_base if you know what you're doing.
 
 

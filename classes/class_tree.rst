@@ -176,6 +176,10 @@ Emitted when an item is selected with right mouse button.
 
 Emitted instead of ``item_selected`` when ``select_mode`` is ``SELECT_MULTI``.
 
+.. _class_Tree_nothing_selected:
+
+- **nothing_selected** **(** **)**
+
 
 Numeric Constants
 -----------------

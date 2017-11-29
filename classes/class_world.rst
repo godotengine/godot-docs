@@ -32,11 +32,11 @@ Member Variables
 
   .. _class_World_environment:
 
-- :ref:`Environment<class_environment>` **environment**
+- :ref:`Environment<class_environment>` **environment** - The World's :ref:`Environment<class_environment>`.
 
   .. _class_World_fallback_environment:
 
-- :ref:`Environment<class_environment>` **fallback_environment**
+- :ref:`Environment<class_environment>` **fallback_environment** - The World's fallback_environment will be used if the World's :ref:`Environment<class_environment>` fails or is missing.
 
 
 Description
@@ -51,12 +51,18 @@ Member Function Description
 
 - :ref:`PhysicsDirectSpaceState<class_physicsdirectspacestate>` **get_direct_space_state** **(** **)**
 
+Returns the World's physics space.
+
 .. _class_World_get_scenario:
 
 - :ref:`RID<class_rid>` **get_scenario** **(** **)** const
 
+Returns the World's visual scenario.
+
 .. _class_World_get_space:
 
 - :ref:`RID<class_rid>` **get_space** **(** **)** const
+
+Returns the World's sound space.
 
 

@@ -381,7 +381,7 @@ Loads an image from file ``path``.
 
 - void **lock** **(** **)**
 
-Locks the data and prevents changes.
+Locks the data for writing access.
 
 .. _class_Image_normalmap_to_xy:
 
@@ -422,10 +422,10 @@ Sets the :ref:`Color<class_color>` of the pixel at ``(x, y)`` if the image is lo
 ::
 
     var img = Image.new()
-    img.unlock()
-    img.set_pixel(x, y, color) # Does not have an effect
     img.lock()
     img.set_pixel(x, y, color) # Works
+    img.unlock()
+    img.set_pixel(x, y, color) # Does not have an effect
 
 .. _class_Image_shrink_x2:
 
@@ -443,6 +443,6 @@ Converts the raw data from the sRGB colorspace to a linear scale.
 
 - void **unlock** **(** **)**
 
-Unlocks the data for writing access.
+Unlocks the data and prevents changes.
 
 

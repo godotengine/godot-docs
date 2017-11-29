@@ -24,6 +24,8 @@ Member Functions
 +--------------------------------------------+---------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`clear_filters<class_FileDialog_clear_filters>` **(** **)**                                        |
 +--------------------------------------------+---------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`deselect_items<class_FileDialog_deselect_items>` **(** **)**                                      |
++--------------------------------------------+---------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                | :ref:`get_current_dir<class_FileDialog_get_current_dir>` **(** **)** const                              |
 +--------------------------------------------+---------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                | :ref:`get_current_file<class_FileDialog_get_current_file>` **(** **)** const                            |
@@ -114,6 +116,10 @@ Add a custom filter. Filter format is: "mask ; description", example (C++): dial
 - void **clear_filters** **(** **)**
 
 Clear all the added filters in the dialog.
+
+.. _class_FileDialog_deselect_items:
+
+- void **deselect_items** **(** **)**
 
 .. _class_FileDialog_get_current_dir:
 
