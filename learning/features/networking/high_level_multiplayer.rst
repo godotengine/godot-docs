@@ -4,7 +4,7 @@ High level multiplayer
 ======================
 
 High level vs low level API
-----------------
+---------------------------
 
 Godot always supported standard low-level networking via UDP, TCP and some higher level protocols such as SSL and HTTP.
 These protocols are flexible and can be used for (almost) anything. However for games (unless you are working
@@ -290,7 +290,7 @@ every peer and RPC will work great! Here is an example:
           to be deferred via ``call_deferred()`` as the SceneTree is locked while the scene is being created (e.g. when ``_ready()`` is being called).
 
 Synchronizing game start
-^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 Setting up players might take different amount of time on every peer due to lag, different hardware, or other reasons.
 To make sure the game will actually start when everyone is ready, pausing the game until all players are ready can be very useful:
@@ -337,13 +337,7 @@ When not explicitly set the network master is inherited from the parent node, wh
 The network master can be set
 with the function :ref:`Node.set_network_master(id, recursive) <class_Node_set_network_master>` (recursive is true by default and means the network master is recursively set on all child nodes of the node as well).
 
-Checking that a specific node instance on a peer is the network master for this node for all connected peers is done by calling:
-
-::
-
-    :ref:`Node.is_network_master() <class_Node_is_network_master>`
-	
-This will by default return true when executed on the server and false on all client peers.
+Checking that a specific node instance on a peer is the network master for this node for all connected peers is done by calling :ref:`Node.is_network_master() <class_Node_is_network_master>`. This will return true when executed on the server and false on all client peers.
 
 If you have paid attention to the previous example, it's possible you noticed that the local peer is set to have network master authority for their own player instead of the server:
 
