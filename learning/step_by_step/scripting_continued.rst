@@ -76,18 +76,18 @@ all enemies can be notified about the alarm sounding, by using
 ::
 
     func _on_discovered(): # this is a fictional function
-        get_tree().call_group("guards", "player_was_discovered")
+        get_tree().call_group("enemies", "player_was_discovered")
 
 The above code calls the function "player_was_discovered" on every
-member of the group "guards".
+member of the group "enemies".
 
-Optionally, it is possible to get the full list of "guards" nodes by
+Optionally, it is possible to get the full list of "enemies" nodes by
 calling
 :ref:`SceneTree.get_nodes_in_group() <class_SceneTree_get_nodes_in_group>`:
 
 ::
 
-    var guards = get_tree().get_nodes_in_group("guards")
+    var enemies = get_tree().get_nodes_in_group("enemies")
 
 More will be added about
 :ref:`SceneTree <class_SceneTree>`
