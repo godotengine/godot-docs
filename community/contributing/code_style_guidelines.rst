@@ -51,8 +51,9 @@ Using clang-format locally
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First of all, you will need to install clang-format. As of now, you need to use
-either clang-format 3.9.x or 4.x to be compatible with Godot's format. The
-upcoming 5.x branch changed the syntax for Obj-C and will error out.
+**clang-format 5.x** to be compatible with Godot's format. The upcoming 6.x
+branch has not been tested yet and my cause inconsistencies; the previous 3.x
+branch is incompatible with the style definitions and will error out.
 
 Installation
 ^^^^^^^^^^^^
@@ -60,7 +61,10 @@ Installation
 Here's how to install clang-format:
 
 - Linux: It will usually be available out-of-the-box with the clang toolchain
-  packaged by your distribution.
+  packaged by your distribution. If your distro version is not the required one,
+  you can download a pre-compiled version from the
+  `LLVM website <http://llvm.org/releases/download.html>`__, or if you are on
+  a Debian derivative, use the `upstream repos <http://apt.llvm.org/>`__.
 - macOS and Windows: You can download precompiled binaries from the
   `LLVM website <http://llvm.org/releases/download.html>`__. You may need to add
   the path to the binary's folder to your system's ``PATH`` environment
@@ -96,7 +100,7 @@ This "hook" is a script which can be found in ``misc/hooks``, refer to that
 folder's README.md for installation instructions.
 
 If your clang-format is not in the ``PATH``, you may have to edit the
-``pre-commit-clang-format`` to point to the correct binary for it work.
+``pre-commit-clang-format`` to point to the correct binary for it to work.
 The hook was tested on Linux and macOS, but should also work in the Git Shell
 on Windows.
 
