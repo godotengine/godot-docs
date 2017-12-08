@@ -15,7 +15,7 @@ endif
 
 # check for latex dependencies
 E := $(foreach exec, $(LATEXDEPS),\
-	$(if $(shell which $(exec)), some string,$(error The $(exec) command was not found. Make sure you have LaTeX installed and added to your PATH. If you don't have LaTeX installed, grab it from https://www.latex-project.org/get/)))
+	$(if $(shell which $(exec)), some string,$(warning The $(exec) command was not found: math formulas will not be built. LaTeX is required for math formula support. If you don't have LaTeX installed, grab it from https://www.latex-project.org/get/)))
 
 # Internal variables.
 PAPEROPT_a4     = -D latex_paper_size=a4
