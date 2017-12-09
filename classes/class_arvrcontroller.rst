@@ -40,13 +40,13 @@ Signals
 
 - **button_pressed** **(** :ref:`int<class_int>` button **)**
 
-When a button on this controller is pressed, this signal is given.
+Emitted when a button on this controller is pressed.
 
 .. _class_ARVRController_button_release:
 
 - **button_release** **(** :ref:`int<class_int>` button **)**
 
-When a button on this controller is released, this signal is given.
+Emitted when a button on this controller is released.
 
 
 Member Variables
@@ -58,7 +58,7 @@ Member Variables
 
   .. _class_ARVRController_rumble:
 
-- :ref:`float<class_float>` **rumble**
+- :ref:`float<class_float>` **rumble** - The degree to which the tracker rumbles. Ranges from ``0.0`` to ``1.0`` with precision ``.01``. If changed, updates :ref:`ARVRPositionalTracker.rumble<class_ARVRPositionalTracker_rumble>` accordingly.
 
 
 Description
@@ -89,7 +89,7 @@ Returns the hand holding this controller, if known. See TRACKER\_\* constants in
 
 - :ref:`bool<class_bool>` **get_is_active** **(** **)** const
 
-Returns true if the controller bound to this node is currently active and being tracked.
+Returns ``true`` if the bound controller is active. ARVR systems attempt to track active controllers.
 
 .. _class_ARVRController_get_joystick_axis:
 
@@ -107,6 +107,6 @@ Returns the ID of the joystick object bound to this. Every controller tracked by
 
 - :ref:`int<class_int>` **is_button_pressed** **(** :ref:`int<class_int>` button **)** const
 
-Is the given button currently pressed?
+Returns ``true`` if the button at index ``button`` is pressed.
 
 

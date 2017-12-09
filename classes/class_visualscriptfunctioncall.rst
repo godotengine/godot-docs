@@ -19,10 +19,6 @@ Brief Description
 Member Variables
 ----------------
 
-  .. _class_VisualScriptFunctionCall_argument_cache:
-
-- :ref:`Dictionary<class_dictionary>` **argument_cache**
-
   .. _class_VisualScriptFunctionCall_base_script:
 
 - :ref:`String<class_string>` **base_script**

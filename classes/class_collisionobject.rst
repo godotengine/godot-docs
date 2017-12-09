@@ -64,6 +64,8 @@ Signals
 
 - **input_event** **(** :ref:`Object<class_object>` camera, :ref:`Object<class_object>` event, :ref:`Vector3<class_vector3>` click_position, :ref:`Vector3<class_vector3>` click_normal, :ref:`int<class_int>` shape_idx **)**
 
+Emitted when :ref:`_input_event<class_CollisionObject__input_event>` receives an event. See its description for details.
+
 .. _class_CollisionObject_mouse_entered:
 
 - **mouse_entered** **(** **)**
@@ -82,11 +84,11 @@ Member Variables
 
   .. _class_CollisionObject_input_capture_on_drag:
 
-- :ref:`bool<class_bool>` **input_capture_on_drag**
+- :ref:`bool<class_bool>` **input_capture_on_drag** - If ``true`` the ``CollisionObject`` will continue to receive input events as the mouse is dragged across its shapes. Default value: ``false``.
 
   .. _class_CollisionObject_input_ray_pickable:
 
-- :ref:`bool<class_bool>` **input_ray_pickable**
+- :ref:`bool<class_bool>` **input_ray_pickable** - If ``true`` the :ref:`CollisionObject<class_collisionobject>`'s shapes will respond to :ref:`RayCast<class_raycast>`\ s. Default value: ``true``.
 
 
 Description
@@ -100,6 +102,8 @@ Member Function Description
 .. _class_CollisionObject__input_event:
 
 - void **_input_event** **(** :ref:`Object<class_object>` camera, :ref:`InputEvent<class_inputevent>` event, :ref:`Vector3<class_vector3>` click_position, :ref:`Vector3<class_vector3>` click_normal, :ref:`int<class_int>` shape_idx **)** virtual
+
+Accepts unhandled :ref:`InputEvent<class_inputevent>`\ s. ``click_position`` is the clicked location in world space and ``click_normal`` is the normal vector extending from the clicked surface of the :ref:`Shape<class_shape>` at ``shape_idx``. Connect to the ``input_event`` signal to easily pick up these events.
 
 .. _class_CollisionObject_create_shape_owner:
 
@@ -170,6 +174,8 @@ Returns the number of shapes the given shape owner contains.
 .. _class_CollisionObject_shape_owner_get_shape_index:
 
 - :ref:`int<class_int>` **shape_owner_get_shape_index** **(** :ref:`int<class_int>` owner_id, :ref:`int<class_int>` shape_id **)** const
+
+Returns the child index of the :ref:`Shape<class_shape>` with the given id from the given shape owner.
 
 .. _class_CollisionObject_shape_owner_get_transform:
 

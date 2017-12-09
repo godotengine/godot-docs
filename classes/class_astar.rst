@@ -229,6 +229,8 @@ Returns the weight scale of the point associated with the given id.
 
 - :ref:`Array<class_array>` **get_points** **(** **)**
 
+Returns an array of all points.
+
 .. _class_AStar_has_point:
 
 - :ref:`bool<class_bool>` **has_point** **(** :ref:`int<class_int>` id **)** const

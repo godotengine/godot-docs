@@ -34,10 +34,6 @@ Member Functions
 Member Variables
 ----------------
 
-  .. _class_MultiMesh_color_array:
-
-- :ref:`PoolColorArray<class_poolcolorarray>` **color_array**
-
   .. _class_MultiMesh_color_format:
 
 - :ref:`int<class_int>` **color_format**
@@ -49,10 +45,6 @@ Member Variables
   .. _class_MultiMesh_mesh:
 
 - :ref:`Mesh<class_mesh>` **mesh**
-
-  .. _class_MultiMesh_transform_array:
-
-- :ref:`PoolVector3Array<class_poolvector3array>` **transform_array**
 
   .. _class_MultiMesh_transform_format:
 

@@ -85,6 +85,8 @@ Returns whether the specified 'class' is available or not.
 
 - :ref:`String<class_string>` **class_get_category** **(** :ref:`String<class_string>` class **)** const
 
+Returns a category associated with the class for use in documentation and the Asset Library. Debug mode required.
+
 .. _class_ClassDB_class_get_integer_constant:
 
 - :ref:`int<class_int>` **class_get_integer_constant** **(** :ref:`String<class_string>` class, :ref:`String<class_string>` name **)** const

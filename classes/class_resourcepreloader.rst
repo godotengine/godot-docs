@@ -33,14 +33,6 @@ Member Functions
 | void                                           | :ref:`rename_resource<class_ResourcePreloader_rename_resource>` **(** :ref:`String<class_string>` name, :ref:`String<class_string>` newname **)** |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
-
-  .. _class_ResourcePreloader_resources:
-
-- :ref:`Array<class_array>` **resources**
-
-
 Description
 -----------
 

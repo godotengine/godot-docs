@@ -30,11 +30,11 @@ Member Variables
 
   .. _class_WindowDialog_resizable:
 
-- :ref:`bool<class_bool>` **resizable**
+- :ref:`bool<class_bool>` **resizable** - If ``true`` the user can resize the window. Default value: ``false``.
 
   .. _class_WindowDialog_window_title:
 
-- :ref:`String<class_string>` **window_title**
+- :ref:`String<class_string>` **window_title** - The text displayed in the window's title bar. Default value: "Save a File".
 
 
 Description

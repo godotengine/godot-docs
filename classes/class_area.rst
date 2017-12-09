@@ -146,19 +146,19 @@ Member Variables
 
   .. _class_Area_reverb_bus_amount:
 
-- :ref:`float<class_float>` **reverb_bus_amount**
+- :ref:`float<class_float>` **reverb_bus_amount** - The degree to which this area applies reverb to its associated audio. Ranges from ``0`` to ``1`` with ``0.1`` precision.
 
   .. _class_Area_reverb_bus_enable:
 
-- :ref:`bool<class_bool>` **reverb_bus_enable**
+- :ref:`bool<class_bool>` **reverb_bus_enable** - If ``true`` the area applies reverb to its associated audio.
 
   .. _class_Area_reverb_bus_name:
 
-- :ref:`String<class_string>` **reverb_bus_name**
+- :ref:`String<class_string>` **reverb_bus_name** - The reverb bus name to use for this area's associated audio.
 
   .. _class_Area_reverb_bus_uniformity:
 
-- :ref:`float<class_float>` **reverb_bus_uniformity**
+- :ref:`float<class_float>` **reverb_bus_uniformity** - The degree to which this area's reverb is a uniform effect. Ranges from ``0`` to ``1`` with ``0.1`` precision.
 
   .. _class_Area_space_override:
 
@@ -186,13 +186,13 @@ Member Function Description
 
 - :ref:`bool<class_bool>` **get_collision_layer_bit** **(** :ref:`int<class_int>` bit **)** const
 
-Return an individual bit on the layer mask.
+Returns an individual bit on the layer mask.
 
 .. _class_Area_get_collision_mask_bit:
 
 - :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
 
-Return an individual bit on the collision mask.
+Returns an individual bit on the collision mask.
 
 .. _class_Area_get_overlapping_areas:
 
@@ -222,12 +222,12 @@ If ``true`` the given body overlaps the Area.
 
 - void **set_collision_layer_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
-Set/clear individual bits on the layer mask. This makes getting an area in/out of only one layer easier.
+Set/clear individual bits on the layer mask. This simplifies editing this ``Area[code]'s layers.
 
 .. _class_Area_set_collision_mask_bit:
 
 - void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
-Set/clear individual bits on the collision mask. This makes selecting the areas scanned easier.
+Set/clear individual bits on the collision mask. This simplifies editing which ``Area`` layers this ``Area`` scans.
 
 

@@ -68,10 +68,6 @@ Signals
 Member Variables
 ----------------
 
-  .. _class_Curve__data:
-
-- :ref:`Array<class_array>` **_data**
-
   .. _class_Curve_bake_resolution:
 
 - :ref:`int<class_int>` **bake_resolution**

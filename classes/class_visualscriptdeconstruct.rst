@@ -19,10 +19,6 @@ A Visual Script node which deconstructs a base type instance into its parts.
 Member Variables
 ----------------
 
-  .. _class_VisualScriptDeconstruct_elem_cache:
-
-- :ref:`Array<class_array>` **elem_cache**
-
   .. _class_VisualScriptDeconstruct_type:
 
 - :ref:`int<class_int>` **type** - The type to deconstruct.

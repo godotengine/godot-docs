@@ -44,7 +44,7 @@ Member Variables
 
   .. _class_ARVRPositionalTracker_rumble:
 
-- :ref:`float<class_float>` **rumble**
+- :ref:`float<class_float>` **rumble** - The degree to which the tracker rumbles. Ranges from ``0.0`` to ``1.0`` with precision ``.01``.
 
 
 Numeric Constants
@@ -82,42 +82,42 @@ If this is a controller that is being tracked the controller will also be repres
 
 - :ref:`String<class_string>` **get_name** **(** **)** const
 
-If available this returns the name of the controller or anchor point.
+Returns the controller or anchor point's name if available.
 
 .. _class_ARVRPositionalTracker_get_orientation:
 
 - :ref:`Basis<class_basis>` **get_orientation** **(** **)** const
 
-Returns the orientation matrix of the controller.
+Returns the controller's orientation matrix.
 
 .. _class_ARVRPositionalTracker_get_position:
 
 - :ref:`Vector3<class_vector3>` **get_position** **(** **)** const
 
-Returns the position of the controller adjusted by world scale.
+Returns the world-space controller position.
 
 .. _class_ARVRPositionalTracker_get_tracks_orientation:
 
 - :ref:`bool<class_bool>` **get_tracks_orientation** **(** **)** const
 
-Returns true if the orientation of this device is being tracked.
+Returns ``true`` if this device tracks orientation.
 
 .. _class_ARVRPositionalTracker_get_tracks_position:
 
 - :ref:`bool<class_bool>` **get_tracks_position** **(** **)** const
 
-Returns true if the position of this device is being tracked.
+Returns ``true`` if this device tracks position.
 
 .. _class_ARVRPositionalTracker_get_transform:
 
 - :ref:`Transform<class_transform>` **get_transform** **(** :ref:`bool<class_bool>` adjust_by_reference_frame **)** const
 
-Returns the transform combining the orientation and position of this device.
+Returns the transform combining this device's orientation and position.
 
 .. _class_ARVRPositionalTracker_get_type:
 
 - :ref:`int<class_int>` **get_type** **(** **)** const
 
-Type of tracker.
+Returns the tracker's type.
 
 

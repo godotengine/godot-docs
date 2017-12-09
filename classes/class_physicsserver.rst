@@ -84,7 +84,7 @@ Member Functions
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_rid>`                                          | :ref:`body_create<class_PhysicsServer_body_create>` **(** :ref:`int<class_int>` mode=2, :ref:`bool<class_bool>` init_sleeping=false **)**                                                                                                                         |
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                          | :ref:`body_get_axis_lock<class_PhysicsServer_body_get_axis_lock>` **(** :ref:`RID<class_rid>` body **)** const                                                                                                                                                    |
+| :ref:`bool<class_bool>`                                        | :ref:`body_get_axis_lock<class_PhysicsServer_body_get_axis_lock>` **(** :ref:`RID<class_rid>` body **)** const                                                                                                                                                    |
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                          | :ref:`body_get_collision_layer<class_PhysicsServer_body_get_collision_layer>` **(** :ref:`RID<class_rid>` body **)** const                                                                                                                                        |
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -122,7 +122,7 @@ Member Functions
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`body_remove_shape<class_PhysicsServer_body_remove_shape>` **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx **)**                                                                                                                           |
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                           | :ref:`body_set_axis_lock<class_PhysicsServer_body_set_axis_lock>` **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` axis **)**                                                                                                                              |
+| void                                                           | :ref:`body_set_axis_lock<class_PhysicsServer_body_set_axis_lock>` **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` axis, :ref:`bool<class_bool>` lock **)**                                                                                                |
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                           | :ref:`body_set_axis_velocity<class_PhysicsServer_body_set_axis_velocity>` **(** :ref:`RID<class_rid>` body, :ref:`Vector3<class_vector3>` axis_velocity **)**                                                                                                     |
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -365,10 +365,6 @@ The higher, the faster.
 - **SPACE_PARAM_BODY_TIME_TO_SLEEP** = **5** --- Constant to set/get the maximum time of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after this time.
 - **SPACE_PARAM_BODY_ANGULAR_VELOCITY_DAMP_RATIO** = **6**
 - **SPACE_PARAM_CONSTRAINT_DEFAULT_BIAS** = **7** --- Constant to set/get the default solver bias for all physics constraints. A solver bias is a factor controlling how much two objects "rebound", after violating a constraint, to avoid leaving them in that state because of numerical imprecision.
-- **BODY_AXIS_LOCK_DISABLED** = **0** --- The Body can rotate and move freely.
-- **BODY_AXIS_LOCK_X** = **1** --- The Body cannot move across x axis can only rotate across x axis.
-- **BODY_AXIS_LOCK_Y** = **2** --- The Body cannot move across y axis can only rotate across y axis.
-- **BODY_AXIS_LOCK_Z** = **3** --- The Body cannot move across z axis can only rotate across z axis.
 
 Description
 -----------
@@ -576,7 +572,7 @@ Creates a physics body. The first parameter can be any value from constants BODY
 
 .. _class_PhysicsServer_body_get_axis_lock:
 
-- :ref:`int<class_int>` **body_get_axis_lock** **(** :ref:`RID<class_rid>` body **)** const
+- :ref:`bool<class_bool>` **body_get_axis_lock** **(** :ref:`RID<class_rid>` body **)** const
 
 Gets the information, which Axis is locked if any. The can be any calue from the constants BODY_AXIS_LOCK\*
 
@@ -692,9 +688,7 @@ Removes a shape from a body. The shape is not deleted, so it can be reused after
 
 .. _class_PhysicsServer_body_set_axis_lock:
 
-- void **body_set_axis_lock** **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` axis **)**
-
-Locks velocity along one axis to 0 and only allows rotation along this axis, can also be set to disabled which disables this functionality.
+- void **body_set_axis_lock** **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` axis, :ref:`bool<class_bool>` lock **)**
 
 .. _class_PhysicsServer_body_set_axis_velocity:
 

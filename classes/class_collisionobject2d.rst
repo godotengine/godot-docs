@@ -68,7 +68,7 @@ Signals
 
 - **input_event** **(** :ref:`Object<class_object>` viewport, :ref:`Object<class_object>` event, :ref:`int<class_int>` shape_idx **)**
 
-Emitted when an input event occurs and ``input_pickable`` is ``true``.
+Emitted when an input event occurs and ``input_pickable`` is ``true``. See :ref:`_input_event<class_CollisionObject2D__input_event>` for details.
 
 .. _class_CollisionObject2D_mouse_entered:
 
@@ -103,6 +103,8 @@ Member Function Description
 
 - void **_input_event** **(** :ref:`Object<class_object>` viewport, :ref:`InputEvent<class_inputevent>` event, :ref:`int<class_int>` shape_idx **)** virtual
 
+Accepts unhandled :ref:`InputEvent<class_inputevent>`\ s. ``shape_idx`` is the child index of the clicked :ref:`Shape2D<class_shape2d>`. Connect to the ``input_event`` signal to easily pick up these events.
+
 .. _class_CollisionObject2D_create_shape_owner:
 
 - :ref:`int<class_int>` **create_shape_owner** **(** :ref:`Object<class_object>` owner **)**
@@ -130,6 +132,8 @@ If ``true`` the shape owner and its shapes are disabled.
 .. _class_CollisionObject2D_is_shape_owner_one_way_collision_enabled:
 
 - :ref:`bool<class_bool>` **is_shape_owner_one_way_collision_enabled** **(** :ref:`int<class_int>` owner_id **)** const
+
+Returns ``true`` if collisions for the shape owner originating from this ``CollisionObject2D`` will not be reported to collided with ``CollisionObject2D``\ s.
 
 .. _class_CollisionObject2D_remove_shape_owner:
 
@@ -177,6 +181,8 @@ Returns the number of shapes the given shape owner contains.
 
 - :ref:`int<class_int>` **shape_owner_get_shape_index** **(** :ref:`int<class_int>` owner_id, :ref:`int<class_int>` shape_id **)** const
 
+Returns the child index of the :ref:`Shape2D<class_shape2d>` with the given id from the given shape owner.
+
 .. _class_CollisionObject2D_shape_owner_get_transform:
 
 - :ref:`Transform2D<class_transform2d>` **shape_owner_get_transform** **(** :ref:`int<class_int>` owner_id **)** const
@@ -198,6 +204,8 @@ If ``true`` disables the given shape owner.
 .. _class_CollisionObject2D_shape_owner_set_one_way_collision:
 
 - void **shape_owner_set_one_way_collision** **(** :ref:`int<class_int>` owner_id, :ref:`bool<class_bool>` enable **)**
+
+If ``enable`` is ``true``, collisions for the shape owner originating from this ``CollisionObject2D`` will not be reported to collided with ``CollisionObject2D``\ s.
 
 .. _class_CollisionObject2D_shape_owner_set_transform:
 

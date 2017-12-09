@@ -50,6 +50,8 @@ Emitted if the filesystem changed.
 
 - **resources_reimported** **(** :ref:`PoolStringArray<class_poolstringarray>` resources **)**
 
+Remitted if a resource is reimported.
+
 .. _class_EditorFileSystem_sources_changed:
 
 - **sources_changed** **(** :ref:`bool<class_bool>` exist **)**
@@ -80,6 +82,8 @@ Get the root directory object.
 .. _class_EditorFileSystem_get_filesystem_path:
 
 - :ref:`EditorFileSystemDirectory<class_editorfilesystemdirectory>` **get_filesystem_path** **(** :ref:`String<class_string>` path **)**
+
+Returns a view into the filesystem at ``path``.
 
 .. _class_EditorFileSystem_get_scanning_progress:
 

@@ -22,6 +22,8 @@ Member Functions
 +----------------------------------------+-------------------------------------------------------------------+
 | :ref:`ColorPicker<class_colorpicker>`  | :ref:`get_picker<class_ColorPickerButton_get_picker>` **(** **)** |
 +----------------------------------------+-------------------------------------------------------------------+
+| :ref:`PopupPanel<class_popuppanel>`    | :ref:`get_popup<class_ColorPickerButton_get_popup>` **(** **)**   |
++----------------------------------------+-------------------------------------------------------------------+
 
 Signals
 -------
@@ -30,7 +32,7 @@ Signals
 
 - **color_changed** **(** :ref:`Color<class_color>` color **)**
 
-Emitted when the color is changed.
+Emitted when the color changes.
 
 
 Member Variables
@@ -38,11 +40,11 @@ Member Variables
 
   .. _class_ColorPickerButton_color:
 
-- :ref:`Color<class_color>` **color**
+- :ref:`Color<class_color>` **color** - The currently selected color.
 
   .. _class_ColorPickerButton_edit_alpha:
 
-- :ref:`bool<class_bool>` **edit_alpha**
+- :ref:`bool<class_bool>` **edit_alpha** - If ``true`` the alpha channel in the displayed :ref:`ColorPicker<class_colorpicker>` will be visible. Default value: ``true``.
 
 
 Description
@@ -56,5 +58,13 @@ Member Function Description
 .. _class_ColorPickerButton_get_picker:
 
 - :ref:`ColorPicker<class_colorpicker>` **get_picker** **(** **)**
+
+Returns the ``ColorPicker`` that this ``ColorPickerButton`` toggles.
+
+.. _class_ColorPickerButton_get_popup:
+
+- :ref:`PopupPanel<class_popuppanel>` **get_popup** **(** **)**
+
+Returns the control's :ref:`PopupPanel<class_popuppanel>` which allows you to connect to Popup Signals. This allows you to handle events when the ColorPicker is shown or hidden.
 
 

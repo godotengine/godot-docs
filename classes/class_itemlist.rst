@@ -150,10 +150,6 @@ Member Variables
 
 - :ref:`float<class_float>` **icon_scale**
 
-  .. _class_ItemList_items:
-
-- :ref:`Array<class_array>` **items**
-
   .. _class_ItemList_max_columns:
 
 - :ref:`int<class_int>` **max_columns**

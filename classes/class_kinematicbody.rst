@@ -42,6 +42,18 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_KinematicBody_axis_lock_x:
+
+- :ref:`bool<class_bool>` **axis_lock_x**
+
+  .. _class_KinematicBody_axis_lock_y:
+
+- :ref:`bool<class_bool>` **axis_lock_y**
+
+  .. _class_KinematicBody_axis_lock_z:
+
+- :ref:`bool<class_bool>` **axis_lock_z**
+
   .. _class_KinematicBody_collision/safe_margin:
 
 - :ref:`float<class_float>` **collision/safe_margin** - If the body is at least this close to another body, this body will consider them to be colliding.

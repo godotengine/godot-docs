@@ -138,8 +138,8 @@ Member Variables
 Numeric Constants
 -----------------
 
-- **ANCHOR_MODE_FIXED_TOP_LEFT** = **0**
-- **ANCHOR_MODE_DRAG_CENTER** = **1**
+- **ANCHOR_MODE_FIXED_TOP_LEFT** = **0** --- The camera's position is fixed so that the top-left corner is always at the origin.
+- **ANCHOR_MODE_DRAG_CENTER** = **1** --- The camera's position takes into account vertical/horizontal offsets and the screen size.
 
 Description
 -----------
@@ -161,6 +161,8 @@ Align the camera to the tracked node
 
 - void **clear_current** **(** **)**
 
+Removes any ``Camera2D`` from the ancestor :ref:`Viewport<class_viewport>`'s internal currently-assigned camera.
+
 .. _class_Camera2D_force_update_scroll:
 
 - void **force_update_scroll** **(** **)**
@@ -177,17 +179,25 @@ Return the camera position.
 
 - :ref:`Vector2<class_vector2>` **get_camera_screen_center** **(** **)** const
 
+Returns the location of the ``Camera2D``'s screen-center, relative to the origin.
+
 .. _class_Camera2D_get_custom_viewport:
 
 - :ref:`Node<class_node>` **get_custom_viewport** **(** **)** const
+
+Returns the :ref:`Viewport<class_viewport>` used by the camera if it is not using the default viewport.
 
 .. _class_Camera2D_get_h_offset:
 
 - :ref:`float<class_float>` **get_h_offset** **(** **)** const
 
+Returns the horizontal offset of the camera.
+
 .. _class_Camera2D_get_v_offset:
 
 - :ref:`float<class_float>` **get_v_offset** **(** **)** const
+
+Returns the vertical offset of the camera.
 
 .. _class_Camera2D_make_current:
 
@@ -207,12 +217,18 @@ This has no effect if smoothing is disabled.
 
 - void **set_custom_viewport** **(** :ref:`Node<class_node>` viewport **)**
 
+Assigns a custom :ref:`Viewport<class_viewport>` node to the ``Camera2D``. If ``viewport`` is not a :ref:`Viewport<class_viewport>`, it re-assigns the default viewport instead.
+
 .. _class_Camera2D_set_h_offset:
 
 - void **set_h_offset** **(** :ref:`float<class_float>` ofs **)**
 
+The camera's horizontal offset is set to ``ofs``.
+
 .. _class_Camera2D_set_v_offset:
 
 - void **set_v_offset** **(** :ref:`float<class_float>` ofs **)**
+
+The camera's vertical offset is set to ``ofs``.
 
 

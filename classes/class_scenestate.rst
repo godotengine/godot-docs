@@ -14,7 +14,7 @@ SceneState
 Brief Description
 -----------------
 
-
+A script interface to a scene file's data.
 
 Member Functions
 ----------------
@@ -62,9 +62,14 @@ Member Functions
 Numeric Constants
 -----------------
 
-- **GEN_EDIT_STATE_DISABLED** = **0**
-- **GEN_EDIT_STATE_INSTANCE** = **1**
-- **GEN_EDIT_STATE_MAIN** = **2**
+- **GEN_EDIT_STATE_DISABLED** = **0** --- If passed to :ref:`PackedScene.instance<class_PackedScene_instance>`, blocks edits to the scene state.
+- **GEN_EDIT_STATE_INSTANCE** = **1** --- If passed to :ref:`PackedScene.instance<class_PackedScene_instance>`, provides inherited scene resources to the local scene. Requires tools compiled.
+- **GEN_EDIT_STATE_MAIN** = **2** --- If passed to :ref:`PackedScene.instance<class_PackedScene_instance>`, provides local scene resources to the local scene. Only the main scene should receive the main edit state. Requires tools compiled.
+
+Description
+-----------
+
+Maintains a list of resources, nodes, exported and overridden properties, and built-in scripts associated with a scene.
 
 Member Function Description
 ---------------------------
@@ -73,76 +78,114 @@ Member Function Description
 
 - :ref:`Array<class_array>` **get_connection_binds** **(** :ref:`int<class_int>` idx **)** const
 
+Returns the list of bound parameters for the signal at ``idx``.
+
 .. _class_SceneState_get_connection_count:
 
 - :ref:`int<class_int>` **get_connection_count** **(** **)** const
+
+Returns the number of signal connections in the scene.
 
 .. _class_SceneState_get_connection_flags:
 
 - :ref:`int<class_int>` **get_connection_flags** **(** :ref:`int<class_int>` idx **)** const
 
+Returns the flags for the signal at ``idx``. See :ref:`Object<class_object>`'s ``CONNECT\_\*`` flags.
+
 .. _class_SceneState_get_connection_method:
 
 - :ref:`String<class_string>` **get_connection_method** **(** :ref:`int<class_int>` idx **)** const
+
+Returns the method connected to the signal at ``idx``.
 
 .. _class_SceneState_get_connection_signal:
 
 - :ref:`String<class_string>` **get_connection_signal** **(** :ref:`int<class_int>` idx **)** const
 
+Returns the name of the signal at ``idx``.
+
 .. _class_SceneState_get_connection_source:
 
 - :ref:`NodePath<class_nodepath>` **get_connection_source** **(** :ref:`int<class_int>` idx **)** const
+
+Returns the path to the node that owns the signal at ``idx``, relative to the root node.
 
 .. _class_SceneState_get_connection_target:
 
 - :ref:`NodePath<class_nodepath>` **get_connection_target** **(** :ref:`int<class_int>` idx **)** const
 
+Returns the path to the node that owns the method connected to the signal at ``idx``, relative to the root node.
+
 .. _class_SceneState_get_node_count:
 
 - :ref:`int<class_int>` **get_node_count** **(** **)** const
+
+Returns the number of nodes in the scene.
 
 .. _class_SceneState_get_node_groups:
 
 - :ref:`PoolStringArray<class_poolstringarray>` **get_node_groups** **(** :ref:`int<class_int>` idx **)** const
 
+Returns the list of group names associated with the node at ``idx``.
+
 .. _class_SceneState_get_node_instance:
 
 - :ref:`PackedScene<class_packedscene>` **get_node_instance** **(** :ref:`int<class_int>` idx **)** const
+
+Returns the scene for the node at ``idx`` or ``null`` if the node is not an instance.
 
 .. _class_SceneState_get_node_instance_placeholder:
 
 - :ref:`String<class_string>` **get_node_instance_placeholder** **(** :ref:`int<class_int>` idx **)** const
 
+Returns the path to the represented scene file if the node at ``idx`` is an :ref:`InstancePlaceholder<class_instanceplaceholder>`.
+
 .. _class_SceneState_get_node_name:
 
 - :ref:`String<class_string>` **get_node_name** **(** :ref:`int<class_int>` idx **)** const
+
+Returns the name of the node at ``idx``.
 
 .. _class_SceneState_get_node_owner_path:
 
 - :ref:`NodePath<class_nodepath>` **get_node_owner_path** **(** :ref:`int<class_int>` idx **)** const
 
+Returns the path to the owner of the node at ``idx``, relative to the root node.
+
 .. _class_SceneState_get_node_path:
 
 - :ref:`NodePath<class_nodepath>` **get_node_path** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` for_parent=false **)** const
+
+Returns the path to the node at ``idx``.
 
 .. _class_SceneState_get_node_property_count:
 
 - :ref:`int<class_int>` **get_node_property_count** **(** :ref:`int<class_int>` idx **)** const
 
+Returns the number of exported or overridden properties for the node at ``idx``.
+
 .. _class_SceneState_get_node_property_name:
 
 - :ref:`String<class_string>` **get_node_property_name** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` prop_idx **)** const
+
+Returns the name of the property at ``prop_idx`` for the node at ``idx``.
 
 .. _class_SceneState_get_node_property_value:
 
 - :ref:`Variant<class_variant>` **get_node_property_value** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` prop_idx **)** const
 
+Returns the value of the property at ``prop_idx`` for the node at ``idx``.
+
 .. _class_SceneState_get_node_type:
 
 - :ref:`String<class_string>` **get_node_type** **(** :ref:`int<class_int>` idx **)** const
 
+Returns the type of the node at ``idx``.
+
 .. _class_SceneState_is_node_instance_placeholder:
 
 - :ref:`bool<class_bool>` **is_node_instance_placeholder** **(** :ref:`int<class_int>` idx **)** const
+
+Returns ``true`` if the node at ``idx`` is an :ref:`InstancePlaceholder<class_instanceplaceholder>`.
 
 

@@ -14,7 +14,7 @@ PackedScene
 Brief Description
 -----------------
 
-
+An abstraction of a serialized scene.
 
 Member Functions
 ----------------
@@ -34,18 +34,22 @@ Member Variables
 
   .. _class_PackedScene__bundled:
 
-- :ref:`Dictionary<class_dictionary>` **_bundled**
+- :ref:`Dictionary<class_dictionary>` **_bundled** - A dictionary representation of the scene contents.
+
+Available keys include "rnames" and "variants" for resources, "node_count", "nodes", "node_paths" for nodes, "editable_instances" for base scene children overrides, "conn_count" and "conns" for signal connections, and "version" for the format style of the PackedScene.
 
 
 Numeric Constants
 -----------------
 
-- **GEN_EDIT_STATE_DISABLED** = **0**
-- **GEN_EDIT_STATE_INSTANCE** = **1**
-- **GEN_EDIT_STATE_MAIN** = **2**
+- **GEN_EDIT_STATE_DISABLED** = **0** --- If passed to :ref:`instance<class_PackedScene_instance>`, blocks edits to the scene state.
+- **GEN_EDIT_STATE_INSTANCE** = **1** --- If passed to :ref:`instance<class_PackedScene_instance>`, provides local scene resources to the local scene. Requires tools compiled.
+- **GEN_EDIT_STATE_MAIN** = **2** --- If passed to :ref:`instance<class_PackedScene_instance>`, provides local scene resources to the local scene. Only the main scene should receive the main edit state. Requires tools compiled.
 
 Description
 -----------
+
+A simplified interface to a scene file. Provides access to operations and checks that can be performed on the scene resource itself.
 
 TODO: explain ownership, and that node does not need to own itself
 
@@ -56,13 +60,19 @@ Member Function Description
 
 - :ref:`bool<class_bool>` **can_instance** **(** **)** const
 
+Returns ``true`` if the scene file has nodes.
+
 .. _class_PackedScene_get_state:
 
 - :ref:`SceneState<class_scenestate>` **get_state** **(** **)**
 
+Returns the ``SceneState`` representing the scene file contents.
+
 .. _class_PackedScene_instance:
 
 - :ref:`Node<class_node>` **instance** **(** :ref:`int<class_int>` edit_state=0 **)** const
+
+Instantiates the scene's node hierarchy. Triggers child scene instantiation(s). Triggers the enum Object.NOTIFICATION_INSTANCED notification on the root node.
 
 .. _class_PackedScene_pack:
 

@@ -21,7 +21,7 @@ Member Variables
 
   .. _class_CenterContainer_use_top_left:
 
-- :ref:`bool<class_bool>` **use_top_left**
+- :ref:`bool<class_bool>` **use_top_left** - If ``true`` centers children relative to the ``CenterContainer``'s top left corner. Default value: ``false``.
 
 
 Description

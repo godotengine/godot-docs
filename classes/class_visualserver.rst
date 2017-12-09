@@ -382,84 +382,86 @@ Signals
 Numeric Constants
 -----------------
 
-- **NO_INDEX_ARRAY** = **-1**
+- **NO_INDEX_ARRAY** = **-1** --- Marks an error that shows that the index array is empty.
 - **ARRAY_WEIGHTS_SIZE** = **4**
-- **CANVAS_ITEM_Z_MIN** = **-4096**
-- **CANVAS_ITEM_Z_MAX** = **4096**
+- **CANVAS_ITEM_Z_MIN** = **-4096** --- The minimum Z-layer for canvas items.
+- **CANVAS_ITEM_Z_MAX** = **4096** --- The maximum Z-layer for canvas items.
 - **MAX_GLOW_LEVELS** = **7**
 - **MAX_CURSORS** = **8**
-- **MATERIAL_RENDER_PRIORITY_MIN** = **-128**
-- **MATERIAL_RENDER_PRIORITY_MAX** = **127**
-- **CUBEMAP_LEFT** = **0**
-- **CUBEMAP_RIGHT** = **1**
-- **CUBEMAP_BOTTOM** = **2**
-- **CUBEMAP_TOP** = **3**
-- **CUBEMAP_FRONT** = **4**
-- **CUBEMAP_BACK** = **5**
-- **TEXTURE_FLAG_MIPMAPS** = **1**
-- **TEXTURE_FLAG_REPEAT** = **2**
-- **TEXTURE_FLAG_FILTER** = **4**
-- **TEXTURE_FLAG_ANISOTROPIC_FILTER** = **8**
-- **TEXTURE_FLAG_CONVERT_TO_LINEAR** = **16**
-- **TEXTURE_FLAG_MIRRORED_REPEAT** = **32**
-- **TEXTURE_FLAG_CUBEMAP** = **2048**
-- **TEXTURE_FLAG_USED_FOR_STREAMING** = **4096**
-- **TEXTURE_FLAGS_DEFAULT** = **7**
-- **SHADER_SPATIAL** = **0**
-- **SHADER_CANVAS_ITEM** = **1**
-- **SHADER_PARTICLES** = **2**
-- **SHADER_MAX** = **3**
-- **ARRAY_VERTEX** = **0**
-- **ARRAY_NORMAL** = **1**
-- **ARRAY_TANGENT** = **2**
-- **ARRAY_COLOR** = **3**
-- **ARRAY_TEX_UV** = **4**
-- **ARRAY_TEX_UV2** = **5**
-- **ARRAY_BONES** = **6**
-- **ARRAY_WEIGHTS** = **7**
-- **ARRAY_INDEX** = **8**
-- **ARRAY_MAX** = **9**
-- **ARRAY_FORMAT_VERTEX** = **1**
-- **ARRAY_FORMAT_NORMAL** = **2**
-- **ARRAY_FORMAT_TANGENT** = **4**
-- **ARRAY_FORMAT_COLOR** = **8**
-- **ARRAY_FORMAT_TEX_UV** = **16**
-- **ARRAY_FORMAT_TEX_UV2** = **32**
-- **ARRAY_FORMAT_BONES** = **64**
-- **ARRAY_FORMAT_WEIGHTS** = **128**
-- **ARRAY_FORMAT_INDEX** = **256**
-- **ARRAY_COMPRESS_VERTEX** = **512**
-- **ARRAY_COMPRESS_NORMAL** = **1024**
-- **ARRAY_COMPRESS_TANGENT** = **2048**
-- **ARRAY_COMPRESS_COLOR** = **4096**
-- **ARRAY_COMPRESS_TEX_UV** = **8192**
-- **ARRAY_COMPRESS_TEX_UV2** = **16384**
+- **MATERIAL_RENDER_PRIORITY_MIN** = **-128** --- The minimum renderpriority of all materials.
+- **MATERIAL_RENDER_PRIORITY_MAX** = **127** --- The maximum renderpriority of all materials.
+- **CUBEMAP_LEFT** = **0** --- Marks the left side of a cubemap.
+- **CUBEMAP_RIGHT** = **1** --- Marks the right side of a cubemap.
+- **CUBEMAP_BOTTOM** = **2** --- Marks the bottom side of a cubemap.
+- **CUBEMAP_TOP** = **3** --- Marks the top side of a cubemap.
+- **CUBEMAP_FRONT** = **4** --- Marks the front side of a cubemap.
+- **CUBEMAP_BACK** = **5** --- Marks the back side of a cubemap.
+- **TEXTURE_FLAG_MIPMAPS** = **1** --- Generate mipmaps, which are smaller versions of the same texture to use when zoomed out, keeping the aspect ratio.
+- **TEXTURE_FLAG_REPEAT** = **2** --- Repeat (instead of clamp to edge).
+- **TEXTURE_FLAG_FILTER** = **4** --- Turn on magnifying filter, to enable smooth zooming in of the texture.
+- **TEXTURE_FLAG_ANISOTROPIC_FILTER** = **8** --- Anisotropic mipmap filtering. Generates smaller versions of the same texture with different aspect ratios.
+
+More effective on planes often shown going to the horrizon as those textures (Walls or Ground for example) get squashed in the viewport to different aspect ratios and regular mipmaps keep the aspect ratio so they don't optimize storage that well in those cases.
+- **TEXTURE_FLAG_CONVERT_TO_LINEAR** = **16** --- Converts texture to SRGB color space.
+- **TEXTURE_FLAG_MIRRORED_REPEAT** = **32** --- Repeat texture with alternate sections mirrored.
+- **TEXTURE_FLAG_CUBEMAP** = **2048** --- Texture is a cubemap.
+- **TEXTURE_FLAG_USED_FOR_STREAMING** = **4096** --- Texture is a video surface.
+- **TEXTURE_FLAGS_DEFAULT** = **7** --- Default flags. Generate mipmaps, repeat, and filter are enabled.
+- **SHADER_SPATIAL** = **0** --- Shader is a 3D shader.
+- **SHADER_CANVAS_ITEM** = **1** --- Shader is a 2D shader.
+- **SHADER_PARTICLES** = **2** --- Shader is a particle shader.
+- **SHADER_MAX** = **3** --- Marks maximum of the shader types array. used internally.
+- **ARRAY_VERTEX** = **0** --- Array is a vertex array.
+- **ARRAY_NORMAL** = **1** --- Array is a normal array.
+- **ARRAY_TANGENT** = **2** --- Array is a tangent array.
+- **ARRAY_COLOR** = **3** --- Array is a color array.
+- **ARRAY_TEX_UV** = **4** --- Array is a uv coordinates array.
+- **ARRAY_TEX_UV2** = **5** --- Array is a uv coordinates array for the second uv coordinates.
+- **ARRAY_BONES** = **6** --- Array contains bone information.
+- **ARRAY_WEIGHTS** = **7** --- Array is weight information.
+- **ARRAY_INDEX** = **8** --- Array is index array.
+- **ARRAY_MAX** = **9** --- Marks the maximum of the array types. Used internally.
+- **ARRAY_FORMAT_VERTEX** = **1** --- Flag used to mark a vertex array.
+- **ARRAY_FORMAT_NORMAL** = **2** --- Flag used to mark a normal array.
+- **ARRAY_FORMAT_TANGENT** = **4** --- Flag used to mark a tangent array.
+- **ARRAY_FORMAT_COLOR** = **8** --- Flag used to mark a color array.
+- **ARRAY_FORMAT_TEX_UV** = **16** --- Flag used to mark a uv coordinates array.
+- **ARRAY_FORMAT_TEX_UV2** = **32** --- Flag used to mark a uv coordinates array for the second uv coordinates.
+- **ARRAY_FORMAT_BONES** = **64** --- Flag used to mark a bone information array.
+- **ARRAY_FORMAT_WEIGHTS** = **128** --- Flag used to mark a weights array.
+- **ARRAY_FORMAT_INDEX** = **256** --- Flag used to mark a index array.
+- **ARRAY_COMPRESS_VERTEX** = **512** --- Flag used to mark a compressed (half float) vertex array.
+- **ARRAY_COMPRESS_NORMAL** = **1024** --- Flag used to mark a compressed (half float) normal array.
+- **ARRAY_COMPRESS_TANGENT** = **2048** --- Flag used to mark a compressed (half float) tangent array.
+- **ARRAY_COMPRESS_COLOR** = **4096** --- Flag used to mark a compressed (half float) color array.
+- **ARRAY_COMPRESS_TEX_UV** = **8192** --- Flag used to mark a compressed (half float) uv coordinates array.
+- **ARRAY_COMPRESS_TEX_UV2** = **16384** --- Flag used to mark a compressed (half float) uv coordinates array for the second uv coordinates.
 - **ARRAY_COMPRESS_BONES** = **32768**
-- **ARRAY_COMPRESS_WEIGHTS** = **65536**
+- **ARRAY_COMPRESS_WEIGHTS** = **65536** --- Flag used to mark a compressed (half float) weight array.
 - **ARRAY_COMPRESS_INDEX** = **131072**
-- **ARRAY_FLAG_USE_2D_VERTICES** = **262144**
-- **ARRAY_FLAG_USE_16_BIT_BONES** = **524288**
-- **ARRAY_COMPRESS_DEFAULT** = **97792**
-- **PRIMITIVE_POINTS** = **0**
-- **PRIMITIVE_LINES** = **1**
-- **PRIMITIVE_LINE_STRIP** = **2**
-- **PRIMITIVE_LINE_LOOP** = **3**
-- **PRIMITIVE_TRIANGLES** = **4**
-- **PRIMITIVE_TRIANGLE_STRIP** = **5**
-- **PRIMITIVE_TRIANGLE_FAN** = **6**
-- **PRIMITIVE_MAX** = **7**
+- **ARRAY_FLAG_USE_2D_VERTICES** = **262144** --- Flag used to mark that the array contains 2D vertices.
+- **ARRAY_FLAG_USE_16_BIT_BONES** = **524288** --- Flag used to mark that the array uses 16 bit bones instead of 8 bit.
+- **ARRAY_COMPRESS_DEFAULT** = **97792** --- Used to set flags ARRAY_COMPRESS_VERTEX, ARRAY_COMPRESS_NORMAL, ARRAY_COMPRESS_TANGENT, ARRAY_COMPRESS_COLOR, ARRAY_COMPRESS_TEX_UV, ARRAY_COMPRESS_TEX_UV2 and ARRAY_COMPRESS_WEIGHTS quickly.
+- **PRIMITIVE_POINTS** = **0** --- Primitive to draw consists of points.
+- **PRIMITIVE_LINES** = **1** --- Primitive to draw consists of lines.
+- **PRIMITIVE_LINE_STRIP** = **2** --- Primitive to draw consists of a line strip from start to end.
+- **PRIMITIVE_LINE_LOOP** = **3** --- Primitive to draw consists of a line loop (a line strip with a line between the last and the first vertex).
+- **PRIMITIVE_TRIANGLES** = **4** --- Primitive to draw consists of triangles.
+- **PRIMITIVE_TRIANGLE_STRIP** = **5** --- Primitive to draw consists of a triangle strip (the last 3 verticies are always combined to make a triangle).
+- **PRIMITIVE_TRIANGLE_FAN** = **6** --- Primitive to draw consists of a triangle strip (the last 2 verticies are always combined with the first to make a triangle).
+- **PRIMITIVE_MAX** = **7** --- Marks the primitive types endpoint. used internally.
 - **BLEND_SHAPE_MODE_NORMALIZED** = **0**
 - **BLEND_SHAPE_MODE_RELATIVE** = **1**
-- **LIGHT_DIRECTIONAL** = **0**
-- **LIGHT_OMNI** = **1**
-- **LIGHT_SPOT** = **2**
-- **LIGHT_PARAM_ENERGY** = **0**
-- **LIGHT_PARAM_SPECULAR** = **2**
-- **LIGHT_PARAM_RANGE** = **3**
-- **LIGHT_PARAM_ATTENUATION** = **4**
-- **LIGHT_PARAM_SPOT_ANGLE** = **5**
-- **LIGHT_PARAM_SPOT_ATTENUATION** = **6**
-- **LIGHT_PARAM_CONTACT_SHADOW_SIZE** = **7**
+- **LIGHT_DIRECTIONAL** = **0** --- Is a directional (sun) light.
+- **LIGHT_OMNI** = **1** --- is an omni light.
+- **LIGHT_SPOT** = **2** --- is an spot light.
+- **LIGHT_PARAM_ENERGY** = **0** --- The light's energy.
+- **LIGHT_PARAM_SPECULAR** = **2** --- The light's influence on specularity.
+- **LIGHT_PARAM_RANGE** = **3** --- The light's range.
+- **LIGHT_PARAM_ATTENUATION** = **4** --- The light's attenuation.
+- **LIGHT_PARAM_SPOT_ANGLE** = **5** --- The spotlight's angle.
+- **LIGHT_PARAM_SPOT_ATTENUATION** = **6** --- The spotlight's attenuation.
+- **LIGHT_PARAM_CONTACT_SHADOW_SIZE** = **7** --- Scales the shadow color.
 - **LIGHT_PARAM_SHADOW_MAX_DISTANCE** = **8**
 - **LIGHT_PARAM_SHADOW_SPLIT_1_OFFSET** = **9**
 - **LIGHT_PARAM_SHADOW_SPLIT_2_OFFSET** = **10**
@@ -467,74 +469,74 @@ Numeric Constants
 - **LIGHT_PARAM_SHADOW_NORMAL_BIAS** = **12**
 - **LIGHT_PARAM_SHADOW_BIAS** = **13**
 - **LIGHT_PARAM_SHADOW_BIAS_SPLIT_SCALE** = **14**
-- **LIGHT_PARAM_MAX** = **15**
+- **LIGHT_PARAM_MAX** = **15** --- The light parameters endpoint. Used internally.
 - **VIEWPORT_UPDATE_DISABLED** = **0**
 - **VIEWPORT_UPDATE_ONCE** = **1**
 - **VIEWPORT_UPDATE_WHEN_VISIBLE** = **2**
 - **VIEWPORT_UPDATE_ALWAYS** = **3**
-- **VIEWPORT_CLEAR_ALWAYS** = **0**
-- **VIEWPORT_CLEAR_NEVER** = **1**
-- **VIEWPORT_CLEAR_ONLY_NEXT_FRAME** = **2**
-- **VIEWPORT_MSAA_DISABLED** = **0**
-- **VIEWPORT_MSAA_2X** = **1**
-- **VIEWPORT_MSAA_4X** = **2**
-- **VIEWPORT_MSAA_8X** = **3**
-- **VIEWPORT_MSAA_16X** = **4**
-- **VIEWPORT_USAGE_2D** = **0**
-- **VIEWPORT_USAGE_2D_NO_SAMPLING** = **1**
-- **VIEWPORT_USAGE_3D** = **2**
-- **VIEWPORT_USAGE_3D_NO_EFFECTS** = **3**
+- **VIEWPORT_CLEAR_ALWAYS** = **0** --- The viewport is always cleared before drawing.
+- **VIEWPORT_CLEAR_NEVER** = **1** --- The viewport is never cleared before drawing.
+- **VIEWPORT_CLEAR_ONLY_NEXT_FRAME** = **2** --- The viewport is cleared once, then the clear mode is set to VIEWPORT_CLEAR_NEVER.
+- **VIEWPORT_MSAA_DISABLED** = **0** --- Multisample antialiasing is disabled.
+- **VIEWPORT_MSAA_2X** = **1** --- Multisample antialiasing is set to 2X.
+- **VIEWPORT_MSAA_4X** = **2** --- Multisample antialiasing is set to 4X.
+- **VIEWPORT_MSAA_8X** = **3** --- Multisample antialiasing is set to 8X.
+- **VIEWPORT_MSAA_16X** = **4** --- Multisample antialiasing is set to 16X.
+- **VIEWPORT_USAGE_2D** = **0** --- The Viewport does not render 3D but samples.
+- **VIEWPORT_USAGE_2D_NO_SAMPLING** = **1** --- The Viewport does not render 3D and does not sample.
+- **VIEWPORT_USAGE_3D** = **2** --- The Viewport renders 3D with effects.
+- **VIEWPORT_USAGE_3D_NO_EFFECTS** = **3** --- The Viewport renders 3D but without effects.
 - **VIEWPORT_RENDER_INFO_OBJECTS_IN_FRAME** = **0**
 - **VIEWPORT_RENDER_INFO_VERTICES_IN_FRAME** = **1**
 - **VIEWPORT_RENDER_INFO_MATERIAL_CHANGES_IN_FRAME** = **2**
 - **VIEWPORT_RENDER_INFO_SHADER_CHANGES_IN_FRAME** = **3**
 - **VIEWPORT_RENDER_INFO_SURFACE_CHANGES_IN_FRAME** = **4**
 - **VIEWPORT_RENDER_INFO_DRAW_CALLS_IN_FRAME** = **5**
-- **VIEWPORT_RENDER_INFO_MAX** = **6**
-- **VIEWPORT_DEBUG_DRAW_DISABLED** = **0**
-- **VIEWPORT_DEBUG_DRAW_UNSHADED** = **1**
-- **VIEWPORT_DEBUG_DRAW_OVERDRAW** = **2**
-- **VIEWPORT_DEBUG_DRAW_WIREFRAME** = **3**
+- **VIEWPORT_RENDER_INFO_MAX** = **6** --- Marks end of VIEWPORT_RENDER_INFO\* constants. Used internally.
+- **VIEWPORT_DEBUG_DRAW_DISABLED** = **0** --- Debug draw is disabled. Default setting.
+- **VIEWPORT_DEBUG_DRAW_UNSHADED** = **1** --- Debug draw sets objects to unshaded.
+- **VIEWPORT_DEBUG_DRAW_OVERDRAW** = **2** --- Overwrites clear color to ``(0,0,0,0)``.
+- **VIEWPORT_DEBUG_DRAW_WIREFRAME** = **3** --- Debug draw draws objects in wireframe.
 - **SCENARIO_DEBUG_DISABLED** = **0**
 - **SCENARIO_DEBUG_WIREFRAME** = **1**
 - **SCENARIO_DEBUG_OVERDRAW** = **2**
 - **SCENARIO_DEBUG_SHADELESS** = **3**
-- **INSTANCE_NONE** = **0**
-- **INSTANCE_MESH** = **1**
-- **INSTANCE_MULTIMESH** = **2**
-- **INSTANCE_IMMEDIATE** = **3**
-- **INSTANCE_PARTICLES** = **4**
-- **INSTANCE_LIGHT** = **5**
+- **INSTANCE_NONE** = **0** --- The instance does not have a type.
+- **INSTANCE_MESH** = **1** --- The instance is a mesh.
+- **INSTANCE_MULTIMESH** = **2** --- The instance is a multimesh.
+- **INSTANCE_IMMEDIATE** = **3** --- The instance is an immediate geometry.
+- **INSTANCE_PARTICLES** = **4** --- The instance is a particle emitter.
+- **INSTANCE_LIGHT** = **5** --- The instance is a light.
 - **INSTANCE_REFLECTION_PROBE** = **6**
 - **INSTANCE_GI_PROBE** = **7**
-- **INSTANCE_MAX** = **8**
-- **INSTANCE_GEOMETRY_MASK** = **30**
-- **NINE_PATCH_STRETCH** = **0**
-- **NINE_PATCH_TILE** = **1**
-- **NINE_PATCH_TILE_FIT** = **2**
-- **CANVAS_LIGHT_MODE_ADD** = **0**
-- **CANVAS_LIGHT_MODE_SUB** = **1**
-- **CANVAS_LIGHT_MODE_MIX** = **2**
-- **CANVAS_LIGHT_MODE_MASK** = **3**
+- **INSTANCE_MAX** = **8** --- The max value for INSTANCE\_\* constants, used internally.
+- **INSTANCE_GEOMETRY_MASK** = **30** --- A combination of the flags of geometry instances (mesh, multimesh, immediate and particles).
+- **NINE_PATCH_STRETCH** = **0** --- The nine patch gets stretched where needed.
+- **NINE_PATCH_TILE** = **1** --- The nine patch gets filled with tiles where needed.
+- **NINE_PATCH_TILE_FIT** = **2** --- The nine patch gets filled with tiles where needed and stretches them a bit if needed.
+- **CANVAS_LIGHT_MODE_ADD** = **0** --- Adds light color additive to the canvas.
+- **CANVAS_LIGHT_MODE_SUB** = **1** --- Adds light color subtractive to the canvas.
+- **CANVAS_LIGHT_MODE_MIX** = **2** --- The light adds color depending on transparency.
+- **CANVAS_LIGHT_MODE_MASK** = **3** --- The light adds color depending on mask.
 - **CANVAS_LIGHT_FILTER_NONE** = **0**
 - **CANVAS_LIGHT_FILTER_PCF3** = **1**
 - **CANVAS_LIGHT_FILTER_PCF5** = **2**
 - **CANVAS_LIGHT_FILTER_PCF7** = **3**
 - **CANVAS_LIGHT_FILTER_PCF9** = **4**
 - **CANVAS_LIGHT_FILTER_PCF13** = **5**
-- **CANVAS_OCCLUDER_POLYGON_CULL_DISABLED** = **0**
-- **CANVAS_OCCLUDER_POLYGON_CULL_CLOCKWISE** = **1**
-- **CANVAS_OCCLUDER_POLYGON_CULL_COUNTER_CLOCKWISE** = **2**
-- **INFO_OBJECTS_IN_FRAME** = **0**
-- **INFO_VERTICES_IN_FRAME** = **1**
-- **INFO_MATERIAL_CHANGES_IN_FRAME** = **2**
-- **INFO_SHADER_CHANGES_IN_FRAME** = **3**
-- **INFO_SURFACE_CHANGES_IN_FRAME** = **4**
-- **INFO_DRAW_CALLS_IN_FRAME** = **5**
+- **CANVAS_OCCLUDER_POLYGON_CULL_DISABLED** = **0** --- Culling of the canvas occluder is disabled.
+- **CANVAS_OCCLUDER_POLYGON_CULL_CLOCKWISE** = **1** --- Culling of the canvas occluder is clockwise.
+- **CANVAS_OCCLUDER_POLYGON_CULL_COUNTER_CLOCKWISE** = **2** --- Culling of the canvas occluder is counterclockwise.
+- **INFO_OBJECTS_IN_FRAME** = **0** --- The amount of objects in the frame.
+- **INFO_VERTICES_IN_FRAME** = **1** --- The amount of vertices in the frame.
+- **INFO_MATERIAL_CHANGES_IN_FRAME** = **2** --- The amount of modified materials in the frame.
+- **INFO_SHADER_CHANGES_IN_FRAME** = **3** --- The amount of shader rebinds in the frame.
+- **INFO_SURFACE_CHANGES_IN_FRAME** = **4** --- The amount of surface changes in the frame.
+- **INFO_DRAW_CALLS_IN_FRAME** = **5** --- The amount of draw calls in frame.
 - **INFO_USAGE_VIDEO_MEM_TOTAL** = **6**
-- **INFO_VIDEO_MEM_USED** = **7**
-- **INFO_TEXTURE_MEM_USED** = **8**
-- **INFO_VERTEX_MEM_USED** = **9**
+- **INFO_VIDEO_MEM_USED** = **7** --- The amount of vertex memory and texture memory used.
+- **INFO_TEXTURE_MEM_USED** = **8** --- The amount of texture memory used.
+- **INFO_VERTEX_MEM_USED** = **9** --- The amount of vertex memory used.
 - **FEATURE_SHADERS** = **0**
 - **FEATURE_MULTITHREADED** = **1**
 
@@ -552,93 +554,143 @@ Member Function Description
 
 - void **black_bars_set_images** **(** :ref:`RID<class_rid>` left, :ref:`RID<class_rid>` top, :ref:`RID<class_rid>` right, :ref:`RID<class_rid>` bottom **)**
 
+Sets images to be rendered in the window margin.
+
 .. _class_VisualServer_black_bars_set_margins:
 
 - void **black_bars_set_margins** **(** :ref:`int<class_int>` left, :ref:`int<class_int>` top, :ref:`int<class_int>` right, :ref:`int<class_int>` bottom **)**
+
+Sets margin size, where black bars (or images, if :ref:`black_bars_set_images<class_VisualServer_black_bars_set_images>` was used) are rendered.
 
 .. _class_VisualServer_canvas_create:
 
 - :ref:`RID<class_rid>` **canvas_create** **(** **)**
 
+Creates a canvas and returns the assigned :ref:`RID<class_rid>`.
+
 .. _class_VisualServer_canvas_item_add_circle:
 
 - void **canvas_item_add_circle** **(** :ref:`RID<class_rid>` item, :ref:`Vector2<class_vector2>` pos, :ref:`float<class_float>` radius, :ref:`Color<class_color>` color **)**
+
+Adds a circle command to the :ref:`CanvasItem<class_canvasitem>`'s draw commands.
 
 .. _class_VisualServer_canvas_item_add_clip_ignore:
 
 - void **canvas_item_add_clip_ignore** **(** :ref:`RID<class_rid>` item, :ref:`bool<class_bool>` ignore **)**
 
+If ignore is ``true``, the VisualServer does not perform clipping.
+
 .. _class_VisualServer_canvas_item_add_line:
 
 - void **canvas_item_add_line** **(** :ref:`RID<class_rid>` item, :ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to, :ref:`Color<class_color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
+
+Adds a line command to the :ref:`CanvasItem<class_canvasitem>`'s draw commands.
 
 .. _class_VisualServer_canvas_item_add_mesh:
 
 - void **canvas_item_add_mesh** **(** :ref:`RID<class_rid>` item, :ref:`RID<class_rid>` mesh, :ref:`RID<class_rid>` skeleton **)**
 
+Adds a :ref:`Mesh<class_mesh>` to the :ref:`CanvasItem<class_canvasitem>`'s draw commands. Only affects its aabb at the moment.
+
 .. _class_VisualServer_canvas_item_add_multimesh:
 
 - void **canvas_item_add_multimesh** **(** :ref:`RID<class_rid>` item, :ref:`RID<class_rid>` mesh, :ref:`RID<class_rid>` skeleton **)**
+
+Adds a :ref:`MultiMesh<class_multimesh>` to the :ref:`CanvasItem<class_canvasitem>`'s draw commands. Only affects its aabb at the moment.
 
 .. _class_VisualServer_canvas_item_add_nine_patch:
 
 - void **canvas_item_add_nine_patch** **(** :ref:`RID<class_rid>` item, :ref:`Rect2<class_rect2>` rect, :ref:`Rect2<class_rect2>` source, :ref:`RID<class_rid>` texture, :ref:`Vector2<class_vector2>` topleft, :ref:`Vector2<class_vector2>` bottomright, :ref:`int<class_int>` x_axis_mode=0, :ref:`int<class_int>` y_axis_mode=0, :ref:`bool<class_bool>` draw_center=true, :ref:`Color<class_color>` modulate=Color( 1, 1, 1, 1 ), :ref:`RID<class_rid>` normal_map **)**
 
+Adds a nine patch image to the :ref:`CanvasItem<class_canvasitem>`'s draw commands.
+
+See :ref:`NinePatchRect<class_ninepatchrect>` for more explanation.
+
 .. _class_VisualServer_canvas_item_add_particles:
 
 - void **canvas_item_add_particles** **(** :ref:`RID<class_rid>` item, :ref:`RID<class_rid>` particles, :ref:`RID<class_rid>` texture, :ref:`RID<class_rid>` normal_map, :ref:`int<class_int>` h_frames, :ref:`int<class_int>` v_frames **)**
+
+Adds a particles system to the :ref:`CanvasItem<class_canvasitem>`'s draw commands.
 
 .. _class_VisualServer_canvas_item_add_polygon:
 
 - void **canvas_item_add_polygon** **(** :ref:`RID<class_rid>` item, :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`PoolColorArray<class_poolcolorarray>` colors, :ref:`PoolVector2Array<class_poolvector2array>` uvs=PoolVector2Array(  ), :ref:`RID<class_rid>` texture, :ref:`RID<class_rid>` normal_map, :ref:`bool<class_bool>` antialiased=false **)**
 
+Adds a polygon to the :ref:`CanvasItem<class_canvasitem>`'s draw commands.
+
 .. _class_VisualServer_canvas_item_add_polyline:
 
 - void **canvas_item_add_polyline** **(** :ref:`RID<class_rid>` item, :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`PoolColorArray<class_poolcolorarray>` colors, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
+
+Adds a polyline, which is a line from mutliple points with a width, to the :ref:`CanvasItem<class_canvasitem>`'s draw commands.
 
 .. _class_VisualServer_canvas_item_add_primitive:
 
 - void **canvas_item_add_primitive** **(** :ref:`RID<class_rid>` item, :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`PoolColorArray<class_poolcolorarray>` colors, :ref:`PoolVector2Array<class_poolvector2array>` uvs, :ref:`RID<class_rid>` texture, :ref:`float<class_float>` width=1.0, :ref:`RID<class_rid>` normal_map **)**
 
+Adds a primitive to the :ref:`CanvasItem<class_canvasitem>`'s draw commands.
+
 .. _class_VisualServer_canvas_item_add_rect:
 
 - void **canvas_item_add_rect** **(** :ref:`RID<class_rid>` item, :ref:`Rect2<class_rect2>` rect, :ref:`Color<class_color>` color **)**
+
+Adds a rectangle to the :ref:`CanvasItem<class_canvasitem>`'s draw commands.
 
 .. _class_VisualServer_canvas_item_add_set_transform:
 
 - void **canvas_item_add_set_transform** **(** :ref:`RID<class_rid>` item, :ref:`Transform2D<class_transform2d>` transform **)**
 
+Adds a :ref:`Transform2D<class_transform2d>` command to the :ref:`CanvasItem<class_canvasitem>`'s draw commands.
+
+This sets the extra_matrix uniform when executed. This affects the later command's of the canvas item.
+
 .. _class_VisualServer_canvas_item_add_texture_rect:
 
 - void **canvas_item_add_texture_rect** **(** :ref:`RID<class_rid>` item, :ref:`Rect2<class_rect2>` rect, :ref:`RID<class_rid>` texture, :ref:`bool<class_bool>` tile=false, :ref:`Color<class_color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`RID<class_rid>` normal_map **)**
+
+Adds a textured rect to the :ref:`CanvasItem<class_canvasitem>`'s draw commands.
 
 .. _class_VisualServer_canvas_item_add_texture_rect_region:
 
 - void **canvas_item_add_texture_rect_region** **(** :ref:`RID<class_rid>` item, :ref:`Rect2<class_rect2>` rect, :ref:`RID<class_rid>` texture, :ref:`Rect2<class_rect2>` src_rect, :ref:`Color<class_color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`RID<class_rid>` normal_map, :ref:`bool<class_bool>` clip_uv=true **)**
 
+Adds a texture rect with region setting to the :ref:`CanvasItem<class_canvasitem>`'s draw commands.
+
 .. _class_VisualServer_canvas_item_add_triangle_array:
 
 - void **canvas_item_add_triangle_array** **(** :ref:`RID<class_rid>` item, :ref:`PoolIntArray<class_poolintarray>` indices, :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`PoolColorArray<class_poolcolorarray>` colors, :ref:`PoolVector2Array<class_poolvector2array>` uvs=PoolVector2Array(  ), :ref:`RID<class_rid>` texture, :ref:`int<class_int>` count=-1, :ref:`RID<class_rid>` normal_map **)**
+
+Adds a triangle array to the :ref:`CanvasItem<class_canvasitem>`'s draw commands.
 
 .. _class_VisualServer_canvas_item_clear:
 
 - void **canvas_item_clear** **(** :ref:`RID<class_rid>` item **)**
 
+Clears the :ref:`CanvasItem<class_canvasitem>` and removes all commands in it.
+
 .. _class_VisualServer_canvas_item_create:
 
 - :ref:`RID<class_rid>` **canvas_item_create** **(** **)**
+
+Creates a new :ref:`CanvasItem<class_canvasitem>` and returns its :ref:`RID<class_rid>`.
 
 .. _class_VisualServer_canvas_item_set_clip:
 
 - void **canvas_item_set_clip** **(** :ref:`RID<class_rid>` item, :ref:`bool<class_bool>` clip **)**
 
+Sets clipping for the :ref:`CanvasItem<class_canvasitem>`.
+
 .. _class_VisualServer_canvas_item_set_copy_to_backbuffer:
 
 - void **canvas_item_set_copy_to_backbuffer** **(** :ref:`RID<class_rid>` item, :ref:`bool<class_bool>` enabled, :ref:`Rect2<class_rect2>` rect **)**
 
+Sets the :ref:`CanvasItem<class_canvasitem>` to copy a rect to the backbuffer.
+
 .. _class_VisualServer_canvas_item_set_custom_rect:
 
 - void **canvas_item_set_custom_rect** **(** :ref:`RID<class_rid>` item, :ref:`bool<class_bool>` use_custom_rect, :ref:`Rect2<class_rect2>` rect=Rect2( 0, 0, 0, 0 ) **)**
+
+Defines a custom drawing rectangle for the :ref:`CanvasItem<class_canvasitem>`.
 
 .. _class_VisualServer_canvas_item_set_distance_field_mode:
 
@@ -648,117 +700,175 @@ Member Function Description
 
 - void **canvas_item_set_draw_behind_parent** **(** :ref:`RID<class_rid>` item, :ref:`bool<class_bool>` enabled **)**
 
+Sets :ref:`CanvasItem<class_canvasitem>` to be drawn behind its parent.
+
 .. _class_VisualServer_canvas_item_set_draw_index:
 
 - void **canvas_item_set_draw_index** **(** :ref:`RID<class_rid>` item, :ref:`int<class_int>` index **)**
+
+Sets the index for the :ref:`CanvasItem<class_canvasitem>`.
 
 .. _class_VisualServer_canvas_item_set_light_mask:
 
 - void **canvas_item_set_light_mask** **(** :ref:`RID<class_rid>` item, :ref:`int<class_int>` mask **)**
 
+The light mask. See :ref:`LightOccluder2D<class_lightoccluder2d>` for more information on light masks.
+
 .. _class_VisualServer_canvas_item_set_material:
 
 - void **canvas_item_set_material** **(** :ref:`RID<class_rid>` item, :ref:`RID<class_rid>` material **)**
+
+Sets a new material to the :ref:`CanvasItem<class_canvasitem>`.
 
 .. _class_VisualServer_canvas_item_set_modulate:
 
 - void **canvas_item_set_modulate** **(** :ref:`RID<class_rid>` item, :ref:`Color<class_color>` color **)**
 
+Sets the color that modulates the :ref:`CanvasItem<class_canvasitem>` and its children.
+
 .. _class_VisualServer_canvas_item_set_parent:
 
 - void **canvas_item_set_parent** **(** :ref:`RID<class_rid>` item, :ref:`RID<class_rid>` parent **)**
+
+Sets the parent for the :ref:`CanvasItem<class_canvasitem>`.
 
 .. _class_VisualServer_canvas_item_set_self_modulate:
 
 - void **canvas_item_set_self_modulate** **(** :ref:`RID<class_rid>` item, :ref:`Color<class_color>` color **)**
 
+Sets the color that modulates the :ref:`CanvasItem<class_canvasitem>` without children.
+
 .. _class_VisualServer_canvas_item_set_sort_children_by_y:
 
 - void **canvas_item_set_sort_children_by_y** **(** :ref:`RID<class_rid>` item, :ref:`bool<class_bool>` enabled **)**
+
+Sets if :ref:`CanvasItem<class_canvasitem>`'s children should be sorted by y-position.
 
 .. _class_VisualServer_canvas_item_set_transform:
 
 - void **canvas_item_set_transform** **(** :ref:`RID<class_rid>` item, :ref:`Transform2D<class_transform2d>` transform **)**
 
+Sets the :ref:`CanvasItem<class_canvasitem>`'s :ref:`Transform2D<class_transform2d>`.
+
 .. _class_VisualServer_canvas_item_set_use_parent_material:
 
 - void **canvas_item_set_use_parent_material** **(** :ref:`RID<class_rid>` item, :ref:`bool<class_bool>` enabled **)**
+
+Sets if the :ref:`CanvasItem<class_canvasitem>` uses its parent's material.
 
 .. _class_VisualServer_canvas_item_set_visible:
 
 - void **canvas_item_set_visible** **(** :ref:`RID<class_rid>` item, :ref:`bool<class_bool>` visible **)**
 
+Sets if the canvas item (including its children) is visible.
+
 .. _class_VisualServer_canvas_item_set_z:
 
 - void **canvas_item_set_z** **(** :ref:`RID<class_rid>` item, :ref:`int<class_int>` z **)**
+
+Sets the :ref:`CanvasItem<class_canvasitem>`'s z order position.
 
 .. _class_VisualServer_canvas_item_set_z_as_relative_to_parent:
 
 - void **canvas_item_set_z_as_relative_to_parent** **(** :ref:`RID<class_rid>` item, :ref:`bool<class_bool>` enabled **)**
 
+If this is enabled, the z-position of the parent will be added to the childrens z-position.
+
 .. _class_VisualServer_canvas_light_attach_to_canvas:
 
 - void **canvas_light_attach_to_canvas** **(** :ref:`RID<class_rid>` light, :ref:`RID<class_rid>` canvas **)**
+
+Attaches the canvas light to the canvas. Removes it from its previous canvas.
 
 .. _class_VisualServer_canvas_light_create:
 
 - :ref:`RID<class_rid>` **canvas_light_create** **(** **)**
 
+Creates a canvas light.
+
 .. _class_VisualServer_canvas_light_occluder_attach_to_canvas:
 
 - void **canvas_light_occluder_attach_to_canvas** **(** :ref:`RID<class_rid>` occluder, :ref:`RID<class_rid>` canvas **)**
+
+Attaches a light occluder to the canvas. Removes it from its previous canvas.
 
 .. _class_VisualServer_canvas_light_occluder_create:
 
 - :ref:`RID<class_rid>` **canvas_light_occluder_create** **(** **)**
 
+Creates a light occluder.
+
 .. _class_VisualServer_canvas_light_occluder_set_enabled:
 
 - void **canvas_light_occluder_set_enabled** **(** :ref:`RID<class_rid>` occluder, :ref:`bool<class_bool>` enabled **)**
+
+Enables or disables light occluder.
 
 .. _class_VisualServer_canvas_light_occluder_set_light_mask:
 
 - void **canvas_light_occluder_set_light_mask** **(** :ref:`RID<class_rid>` occluder, :ref:`int<class_int>` mask **)**
 
+The light mask. See :ref:`LightOccluder2D<class_lightoccluder2d>` for more information on light masks
+
 .. _class_VisualServer_canvas_light_occluder_set_polygon:
 
 - void **canvas_light_occluder_set_polygon** **(** :ref:`RID<class_rid>` occluder, :ref:`RID<class_rid>` polygon **)**
+
+Sets a light occluder's polygon.
 
 .. _class_VisualServer_canvas_light_occluder_set_transform:
 
 - void **canvas_light_occluder_set_transform** **(** :ref:`RID<class_rid>` occluder, :ref:`Transform2D<class_transform2d>` transform **)**
 
+Sets a light occluder's :ref:`Transform2D<class_transform2d>`.
+
 .. _class_VisualServer_canvas_light_set_color:
 
 - void **canvas_light_set_color** **(** :ref:`RID<class_rid>` light, :ref:`Color<class_color>` color **)**
+
+Sets the color for a light.
 
 .. _class_VisualServer_canvas_light_set_enabled:
 
 - void **canvas_light_set_enabled** **(** :ref:`RID<class_rid>` light, :ref:`bool<class_bool>` enabled **)**
 
+Enables or disables a canvas light.
+
 .. _class_VisualServer_canvas_light_set_energy:
 
 - void **canvas_light_set_energy** **(** :ref:`RID<class_rid>` light, :ref:`float<class_float>` energy **)**
+
+Sets a canvas light's energy.
 
 .. _class_VisualServer_canvas_light_set_height:
 
 - void **canvas_light_set_height** **(** :ref:`RID<class_rid>` light, :ref:`float<class_float>` height **)**
 
+Sets a canvas light's height.
+
 .. _class_VisualServer_canvas_light_set_item_cull_mask:
 
 - void **canvas_light_set_item_cull_mask** **(** :ref:`RID<class_rid>` light, :ref:`int<class_int>` mask **)**
+
+The light mask. See :ref:`LightOccluder2D<class_lightoccluder2d>` for more information on light masks
 
 .. _class_VisualServer_canvas_light_set_item_shadow_cull_mask:
 
 - void **canvas_light_set_item_shadow_cull_mask** **(** :ref:`RID<class_rid>` light, :ref:`int<class_int>` mask **)**
 
+The shadow mask. binary about wich layers this canvas light affects wich canvas item's shadows. See :ref:`LightOccluder2D<class_lightoccluder2d>` for more information on light masks.
+
 .. _class_VisualServer_canvas_light_set_layer_range:
 
 - void **canvas_light_set_layer_range** **(** :ref:`RID<class_rid>` light, :ref:`int<class_int>` min_layer, :ref:`int<class_int>` max_layer **)**
 
+The layer range that gets rendered with this light.
+
 .. _class_VisualServer_canvas_light_set_mode:
 
 - void **canvas_light_set_mode** **(** :ref:`RID<class_rid>` light, :ref:`int<class_int>` mode **)**
+
+The mode of the light, see CANVAS_LIGHT_MODE\_\* constants.
 
 .. _class_VisualServer_canvas_light_set_scale:
 
@@ -768,25 +878,37 @@ Member Function Description
 
 - void **canvas_light_set_shadow_buffer_size** **(** :ref:`RID<class_rid>` light, :ref:`int<class_int>` size **)**
 
+Sets the width of the shadow buffer, size gets scaled to the next power of two for this.
+
 .. _class_VisualServer_canvas_light_set_shadow_color:
 
 - void **canvas_light_set_shadow_color** **(** :ref:`RID<class_rid>` light, :ref:`Color<class_color>` color **)**
+
+Sets the color of the canvas light's shadow.
 
 .. _class_VisualServer_canvas_light_set_shadow_enabled:
 
 - void **canvas_light_set_shadow_enabled** **(** :ref:`RID<class_rid>` light, :ref:`bool<class_bool>` enabled **)**
 
+Enables or disables the canvas light's shadow.
+
 .. _class_VisualServer_canvas_light_set_shadow_filter:
 
 - void **canvas_light_set_shadow_filter** **(** :ref:`RID<class_rid>` light, :ref:`int<class_int>` filter **)**
+
+Sets the canvas light's shadow's filter, see CANVAS_LIGHT_SHADOW_FILTER\_\* constants.
 
 .. _class_VisualServer_canvas_light_set_shadow_gradient_length:
 
 - void **canvas_light_set_shadow_gradient_length** **(** :ref:`RID<class_rid>` light, :ref:`float<class_float>` length **)**
 
+Sets the length of the shadow's gradient.
+
 .. _class_VisualServer_canvas_light_set_shadow_smooth:
 
 - void **canvas_light_set_shadow_smooth** **(** :ref:`RID<class_rid>` light, :ref:`float<class_float>` smooth **)**
+
+Smoothens the shadow. The lower, the more smooth.
 
 .. _class_VisualServer_canvas_light_set_texture:
 
@@ -800,6 +922,8 @@ Member Function Description
 
 - void **canvas_light_set_transform** **(** :ref:`RID<class_rid>` light, :ref:`Transform2D<class_transform2d>` transform **)**
 
+Sets the canvas light's :ref:`Transform2D<class_transform2d>`.
+
 .. _class_VisualServer_canvas_light_set_z_range:
 
 - void **canvas_light_set_z_range** **(** :ref:`RID<class_rid>` light, :ref:`int<class_int>` min_z, :ref:`int<class_int>` max_z **)**
@@ -808,65 +932,97 @@ Member Function Description
 
 - :ref:`RID<class_rid>` **canvas_occluder_polygon_create** **(** **)**
 
+Creates a new light occluder polygon.
+
 .. _class_VisualServer_canvas_occluder_polygon_set_cull_mode:
 
 - void **canvas_occluder_polygon_set_cull_mode** **(** :ref:`RID<class_rid>` occluder_polygon, :ref:`int<class_int>` mode **)**
+
+Sets an occluder polygons cull mode. See CANVAS_OCCLUDER_POLYGON_CULL_MODE\_\* constants.
 
 .. _class_VisualServer_canvas_occluder_polygon_set_shape:
 
 - void **canvas_occluder_polygon_set_shape** **(** :ref:`RID<class_rid>` occluder_polygon, :ref:`PoolVector2Array<class_poolvector2array>` shape, :ref:`bool<class_bool>` closed **)**
 
+Sets the shape of the occluder polygon.
+
 .. _class_VisualServer_canvas_occluder_polygon_set_shape_as_lines:
 
 - void **canvas_occluder_polygon_set_shape_as_lines** **(** :ref:`RID<class_rid>` occluder_polygon, :ref:`PoolVector2Array<class_poolvector2array>` shape **)**
+
+Sets the shape of the occluder polygon as lines.
 
 .. _class_VisualServer_canvas_set_item_mirroring:
 
 - void **canvas_set_item_mirroring** **(** :ref:`RID<class_rid>` canvas, :ref:`RID<class_rid>` item, :ref:`Vector2<class_vector2>` mirroring **)**
 
+A copy of the canvas item will be drawn with a local offset of the mirroring :ref:`Vector2<class_vector2>`.
+
 .. _class_VisualServer_canvas_set_modulate:
 
 - void **canvas_set_modulate** **(** :ref:`RID<class_rid>` canvas, :ref:`Color<class_color>` color **)**
+
+Modulates all colors in the given canvas.
 
 .. _class_VisualServer_draw:
 
 - void **draw** **(** :ref:`bool<class_bool>` swap_buffers=true **)**
 
+Draws a frame.
+
 .. _class_VisualServer_finish:
 
 - void **finish** **(** **)**
+
+Removes buffers and clears testcubes.
 
 .. _class_VisualServer_force_draw:
 
 - void **force_draw** **(** :ref:`bool<class_bool>` swap_buffers=true **)**
 
+Draws a frame. Same as :ref:`draw<class_VisualServer_draw>`.
+
 .. _class_VisualServer_force_sync:
 
 - void **force_sync** **(** **)**
+
+Syncronizes threads.
 
 .. _class_VisualServer_free:
 
 - void **free** **(** :ref:`RID<class_rid>` rid **)**
 
+Tries to free an object in the VisualServer.
+
 .. _class_VisualServer_get_render_info:
 
 - :ref:`int<class_int>` **get_render_info** **(** :ref:`int<class_int>` info **)**
+
+Returns a certain information, see RENDER_INFO\_\* for options.
 
 .. _class_VisualServer_get_test_cube:
 
 - :ref:`RID<class_rid>` **get_test_cube** **(** **)**
 
+Returns the id of the test cube. Creates one if none exists.
+
 .. _class_VisualServer_get_test_texture:
 
 - :ref:`RID<class_rid>` **get_test_texture** **(** **)**
+
+Returns the id of the test texture. Creates one if none exists.
 
 .. _class_VisualServer_get_white_texture:
 
 - :ref:`RID<class_rid>` **get_white_texture** **(** **)**
 
+Returns the id of a white texture. Creates one if none exists.
+
 .. _class_VisualServer_has_changed:
 
 - :ref:`bool<class_bool>` **has_changed** **(** **)** const
+
+Returns ``true`` if changes have been made to the VisualServer's data. :ref:`draw<class_VisualServer_draw>` is usually called if this happens.
 
 .. _class_VisualServer_has_feature:
 
@@ -876,137 +1032,205 @@ Member Function Description
 
 - :ref:`bool<class_bool>` **has_os_feature** **(** :ref:`String<class_string>` feature **)** const
 
+Returns true, if the OS supports a certain feature. Features might be s3tc, etc, etc2 and pvrtc,
+
 .. _class_VisualServer_init:
 
 - void **init** **(** **)**
+
+Initializes the visual server.
 
 .. _class_VisualServer_make_sphere_mesh:
 
 - :ref:`RID<class_rid>` **make_sphere_mesh** **(** :ref:`int<class_int>` latitudes, :ref:`int<class_int>` longitudes, :ref:`float<class_float>` radius **)**
 
+Returns a mesh of a sphere with the given amount of horizontal and vertical subdivisions.
+
 .. _class_VisualServer_material_create:
 
 - :ref:`RID<class_rid>` **material_create** **(** **)**
+
+Returns an empty material.
 
 .. _class_VisualServer_material_get_param:
 
 - :ref:`Variant<class_variant>` **material_get_param** **(** :ref:`RID<class_rid>` material, :ref:`String<class_string>` parameter **)** const
 
+Returns the value of a certain material's parameter.
+
 .. _class_VisualServer_material_get_shader:
 
 - :ref:`RID<class_rid>` **material_get_shader** **(** :ref:`RID<class_rid>` shader_material **)** const
+
+Returns the shader of a certain material's shader. Returns an empty RID if the material doesn't have a shader.
 
 .. _class_VisualServer_material_set_line_width:
 
 - void **material_set_line_width** **(** :ref:`RID<class_rid>` material, :ref:`float<class_float>` width **)**
 
+Sets a materials line width.
+
 .. _class_VisualServer_material_set_next_pass:
 
 - void **material_set_next_pass** **(** :ref:`RID<class_rid>` material, :ref:`RID<class_rid>` next_material **)**
+
+Sets an objects next material.
 
 .. _class_VisualServer_material_set_param:
 
 - void **material_set_param** **(** :ref:`RID<class_rid>` material, :ref:`String<class_string>` parameter, :ref:`Variant<class_variant>` value **)**
 
+Sets a materials parameter.
+
 .. _class_VisualServer_material_set_render_priority:
 
 - void **material_set_render_priority** **(** :ref:`RID<class_rid>` material, :ref:`int<class_int>` priority **)**
+
+Sets a material's render priority.
 
 .. _class_VisualServer_material_set_shader:
 
 - void **material_set_shader** **(** :ref:`RID<class_rid>` shader_material, :ref:`RID<class_rid>` shader **)**
 
+Sets a shader material's shader.
+
 .. _class_VisualServer_mesh_add_surface_from_arrays:
 
 - void **mesh_add_surface_from_arrays** **(** :ref:`RID<class_rid>` mesh, :ref:`int<class_int>` primtive, :ref:`Array<class_array>` arrays, :ref:`Array<class_array>` blend_shapes=[  ], :ref:`int<class_int>` compress_format=97792 **)**
+
+Adds a surface generated from the Arrays to a mesh. See PRIMITIVE_TYPE\_\* constants for types.
 
 .. _class_VisualServer_mesh_clear:
 
 - void **mesh_clear** **(** :ref:`RID<class_rid>` mesh **)**
 
+Removes all surfaces from a mesh.
+
 .. _class_VisualServer_mesh_create:
 
 - :ref:`RID<class_rid>` **mesh_create** **(** **)**
+
+Creates a new mesh.
 
 .. _class_VisualServer_mesh_get_blend_shape_count:
 
 - :ref:`int<class_int>` **mesh_get_blend_shape_count** **(** :ref:`RID<class_rid>` mesh **)** const
 
+Returns a mesh's blend shape count.
+
 .. _class_VisualServer_mesh_get_blend_shape_mode:
 
 - :ref:`int<class_int>` **mesh_get_blend_shape_mode** **(** :ref:`RID<class_rid>` mesh **)** const
+
+Returns a mesh's blend shape mode.
 
 .. _class_VisualServer_mesh_get_custom_aabb:
 
 - :ref:`AABB<class_aabb>` **mesh_get_custom_aabb** **(** :ref:`RID<class_rid>` mesh **)** const
 
+Returns a mesh's custom aabb.
+
 .. _class_VisualServer_mesh_get_surface_count:
 
 - :ref:`int<class_int>` **mesh_get_surface_count** **(** :ref:`RID<class_rid>` mesh **)** const
+
+Returns a mesh's number of surfaces.
 
 .. _class_VisualServer_mesh_remove_surface:
 
 - void **mesh_remove_surface** **(** :ref:`RID<class_rid>` mesh, :ref:`int<class_int>` index **)**
 
+Removes a mesh's surface.
+
 .. _class_VisualServer_mesh_set_blend_shape_count:
 
 - void **mesh_set_blend_shape_count** **(** :ref:`RID<class_rid>` mesh, :ref:`int<class_int>` amount **)**
+
+Sets a mesh's blend shape count.
 
 .. _class_VisualServer_mesh_set_blend_shape_mode:
 
 - void **mesh_set_blend_shape_mode** **(** :ref:`RID<class_rid>` mesh, :ref:`int<class_int>` mode **)**
 
+Sets a mesh's blend shape mode.
+
 .. _class_VisualServer_mesh_set_custom_aabb:
 
 - void **mesh_set_custom_aabb** **(** :ref:`RID<class_rid>` mesh, :ref:`AABB<class_aabb>` aabb **)**
+
+Sets a mesh's custom aabb.
 
 .. _class_VisualServer_mesh_surface_get_aabb:
 
 - :ref:`AABB<class_aabb>` **mesh_surface_get_aabb** **(** :ref:`RID<class_rid>` mesh, :ref:`int<class_int>` surface **)** const
 
+Returns a mesh's surface's aabb.
+
 .. _class_VisualServer_mesh_surface_get_array:
 
 - :ref:`PoolByteArray<class_poolbytearray>` **mesh_surface_get_array** **(** :ref:`RID<class_rid>` mesh, :ref:`int<class_int>` surface **)** const
+
+Returns a mesh's surface's vertex buffer.
 
 .. _class_VisualServer_mesh_surface_get_array_index_len:
 
 - :ref:`int<class_int>` **mesh_surface_get_array_index_len** **(** :ref:`RID<class_rid>` mesh, :ref:`int<class_int>` surface **)** const
 
+Returns a mesh's surface's amount of indices.
+
 .. _class_VisualServer_mesh_surface_get_array_len:
 
 - :ref:`int<class_int>` **mesh_surface_get_array_len** **(** :ref:`RID<class_rid>` mesh, :ref:`int<class_int>` surface **)** const
+
+Returns a mesh's surface's amount of vertices.
 
 .. _class_VisualServer_mesh_surface_get_arrays:
 
 - :ref:`Array<class_array>` **mesh_surface_get_arrays** **(** :ref:`RID<class_rid>` mesh, :ref:`int<class_int>` surface **)** const
 
+Returns a mesh's surface's buffer arrays.
+
 .. _class_VisualServer_mesh_surface_get_blend_shape_arrays:
 
 - :ref:`Array<class_array>` **mesh_surface_get_blend_shape_arrays** **(** :ref:`RID<class_rid>` mesh, :ref:`int<class_int>` surface **)** const
+
+Returns a mesh's surface's arrays for blend shapes
 
 .. _class_VisualServer_mesh_surface_get_format:
 
 - :ref:`int<class_int>` **mesh_surface_get_format** **(** :ref:`RID<class_rid>` mesh, :ref:`int<class_int>` surface **)** const
 
+Returns the format of a mesh's surface.
+
 .. _class_VisualServer_mesh_surface_get_index_array:
 
 - :ref:`PoolByteArray<class_poolbytearray>` **mesh_surface_get_index_array** **(** :ref:`RID<class_rid>` mesh, :ref:`int<class_int>` surface **)** const
+
+Returns a mesh's surface's index buffer.
 
 .. _class_VisualServer_mesh_surface_get_material:
 
 - :ref:`RID<class_rid>` **mesh_surface_get_material** **(** :ref:`RID<class_rid>` mesh, :ref:`int<class_int>` surface **)** const
 
+Returns a mesh's surface's material.
+
 .. _class_VisualServer_mesh_surface_get_primitive_type:
 
 - :ref:`int<class_int>` **mesh_surface_get_primitive_type** **(** :ref:`RID<class_rid>` mesh, :ref:`int<class_int>` surface **)** const
+
+Returns the primitive type of a mesh's surface.
 
 .. _class_VisualServer_mesh_surface_get_skeleton_aabb:
 
 - :ref:`Array<class_array>` **mesh_surface_get_skeleton_aabb** **(** :ref:`RID<class_rid>` mesh, :ref:`int<class_int>` surface **)** const
 
+Returns the aabb of a mesh's surface's skeleton.
+
 .. _class_VisualServer_mesh_surface_set_material:
 
 - void **mesh_surface_set_material** **(** :ref:`RID<class_rid>` mesh, :ref:`int<class_int>` surface, :ref:`RID<class_rid>` material **)**
+
+Sets a mesh's surface's material.
 
 .. _class_VisualServer_request_frame_drawn_callback:
 
@@ -1020,6 +1244,8 @@ The callback method must use only 1 argument which will be called with 'userdata
 
 - void **set_boot_image** **(** :ref:`Image<class_image>` image, :ref:`Color<class_color>` color, :ref:`bool<class_bool>` scale **)**
 
+Sets a boot image. The color defines the background color and if scale is ``true``, the image will be scaled to fit the screen size.
+
 .. _class_VisualServer_set_debug_generate_wireframes:
 
 - void **set_debug_generate_wireframes** **(** :ref:`bool<class_bool>` generate **)**
@@ -1032,33 +1258,49 @@ The callback method must use only 1 argument which will be called with 'userdata
 
 - :ref:`RID<class_rid>` **shader_create** **(** **)**
 
+Creates an empty shader.
+
 .. _class_VisualServer_shader_get_code:
 
 - :ref:`String<class_string>` **shader_get_code** **(** :ref:`RID<class_rid>` shader **)** const
+
+Returns a shader's code.
 
 .. _class_VisualServer_shader_get_default_texture_param:
 
 - :ref:`RID<class_rid>` **shader_get_default_texture_param** **(** :ref:`RID<class_rid>` shader, :ref:`String<class_string>` name **)** const
 
+Returns a default texture from a shader searched by name.
+
 .. _class_VisualServer_shader_get_param_list:
 
 - :ref:`Array<class_array>` **shader_get_param_list** **(** :ref:`RID<class_rid>` shader **)** const
+
+Returns the parameters of a shader.
 
 .. _class_VisualServer_shader_set_code:
 
 - void **shader_set_code** **(** :ref:`RID<class_rid>` shader, :ref:`String<class_string>` code **)**
 
+Sets a shader's code.
+
 .. _class_VisualServer_shader_set_default_texture_param:
 
 - void **shader_set_default_texture_param** **(** :ref:`RID<class_rid>` shader, :ref:`String<class_string>` name, :ref:`RID<class_rid>` texture **)**
+
+Sets a shader's default texture. Overwrites the texture given by name.
 
 .. _class_VisualServer_sky_create:
 
 - :ref:`RID<class_rid>` **sky_create** **(** **)**
 
+Creates an empty sky.
+
 .. _class_VisualServer_sky_set_texture:
 
 - void **sky_set_texture** **(** :ref:`RID<class_rid>` sky, :ref:`RID<class_rid>` cube_map, :ref:`int<class_int>` radiance_size **)**
+
+Sets a sky's texture.
 
 .. _class_VisualServer_sync:
 
@@ -1068,141 +1310,211 @@ The callback method must use only 1 argument which will be called with 'userdata
 
 - void **texture_allocate** **(** :ref:`RID<class_rid>` texture, :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`int<class_int>` format, :ref:`int<class_int>` flags=7 **)**
 
+Allocates space for a texture's image or video.
+
 .. _class_VisualServer_texture_create:
 
 - :ref:`RID<class_rid>` **texture_create** **(** **)**
+
+Creates an empty texture.
 
 .. _class_VisualServer_texture_create_from_image:
 
 - :ref:`RID<class_rid>` **texture_create_from_image** **(** :ref:`Image<class_image>` image, :ref:`int<class_int>` flags=7 **)**
 
+Creates a texture, allocates the space for an image, and fills in the image.
+
 .. _class_VisualServer_texture_debug_usage:
 
 - :ref:`Array<class_array>` **texture_debug_usage** **(** **)**
+
+Returns a list of all the textures and their information.
 
 .. _class_VisualServer_texture_get_data:
 
 - :ref:`Image<class_image>` **texture_get_data** **(** :ref:`RID<class_rid>` texture, :ref:`int<class_int>` cube_side=0 **)** const
 
+Returns a copy of a texture's image unless it's a CubeMap, in wich case it returns the :ref:`RID<class_rid>` of the image at one of the cubes sides.
+
 .. _class_VisualServer_texture_get_flags:
 
 - :ref:`int<class_int>` **texture_get_flags** **(** :ref:`RID<class_rid>` texture **)** const
+
+Returns the flags of a texture.
 
 .. _class_VisualServer_texture_get_format:
 
 - :ref:`int<class_int>` **texture_get_format** **(** :ref:`RID<class_rid>` texture **)** const
 
+Returns the format of the texture's image.
+
 .. _class_VisualServer_texture_get_height:
 
 - :ref:`int<class_int>` **texture_get_height** **(** :ref:`RID<class_rid>` texture **)** const
+
+Returns the texture's height.
 
 .. _class_VisualServer_texture_get_path:
 
 - :ref:`String<class_string>` **texture_get_path** **(** :ref:`RID<class_rid>` texture **)** const
 
+Returns the texture's path.
+
 .. _class_VisualServer_texture_get_texid:
 
 - :ref:`int<class_int>` **texture_get_texid** **(** :ref:`RID<class_rid>` texture **)** const
+
+Returns the opengl id of the texture's image.
 
 .. _class_VisualServer_texture_get_width:
 
 - :ref:`int<class_int>` **texture_get_width** **(** :ref:`RID<class_rid>` texture **)** const
 
+Returns the texture's width.
+
 .. _class_VisualServer_texture_set_data:
 
 - void **texture_set_data** **(** :ref:`RID<class_rid>` texture, :ref:`Image<class_image>` image, :ref:`int<class_int>` cube_side=0 **)**
+
+Sets the texture's image data. If it's a CubeMap, it sets the image data at a cube side.
 
 .. _class_VisualServer_texture_set_flags:
 
 - void **texture_set_flags** **(** :ref:`RID<class_rid>` texture, :ref:`int<class_int>` flags **)**
 
+Sets the texture's flags. See enum TextureFlags for options
+
 .. _class_VisualServer_texture_set_path:
 
 - void **texture_set_path** **(** :ref:`RID<class_rid>` texture, :ref:`String<class_string>` path **)**
+
+Sets the texture's path.
 
 .. _class_VisualServer_texture_set_shrink_all_x2_on_set_data:
 
 - void **texture_set_shrink_all_x2_on_set_data** **(** :ref:`bool<class_bool>` shrink **)**
 
+If ``true``, sets internal processes to shrink all image data to half the size.
+
 .. _class_VisualServer_texture_set_size_override:
 
 - void **texture_set_size_override** **(** :ref:`RID<class_rid>` texture, :ref:`int<class_int>` width, :ref:`int<class_int>` height **)**
+
+Overwrites the texture's width and height.
 
 .. _class_VisualServer_textures_keep_original:
 
 - void **textures_keep_original** **(** :ref:`bool<class_bool>` enable **)**
 
+If ``true``, the image will be stored in the texture's images array if overwritten.
+
 .. _class_VisualServer_viewport_attach_camera:
 
 - void **viewport_attach_camera** **(** :ref:`RID<class_rid>` viewport, :ref:`RID<class_rid>` camera **)**
+
+Sets a viewport's camera.
 
 .. _class_VisualServer_viewport_attach_canvas:
 
 - void **viewport_attach_canvas** **(** :ref:`RID<class_rid>` viewport, :ref:`RID<class_rid>` canvas **)**
 
+Sets a viewport's canvas.
+
 .. _class_VisualServer_viewport_attach_to_screen:
 
 - void **viewport_attach_to_screen** **(** :ref:`RID<class_rid>` viewport, :ref:`Rect2<class_rect2>` rect=Rect2( 0, 0, 0, 0 ), :ref:`int<class_int>` screen=0 **)**
+
+Attaches a viewport to a screen.
 
 .. _class_VisualServer_viewport_create:
 
 - :ref:`RID<class_rid>` **viewport_create** **(** **)**
 
+Creates an empty viewport.
+
 .. _class_VisualServer_viewport_detach:
 
 - void **viewport_detach** **(** :ref:`RID<class_rid>` viewport **)**
+
+Detaches the viewport from the screen.
 
 .. _class_VisualServer_viewport_get_render_info:
 
 - :ref:`int<class_int>` **viewport_get_render_info** **(** :ref:`RID<class_rid>` viewport, :ref:`int<class_int>` info **)**
 
+Returns a viewport's render info. for options see VIEWPORT_RENDER_INFO\* constants.
+
 .. _class_VisualServer_viewport_get_texture:
 
 - :ref:`RID<class_rid>` **viewport_get_texture** **(** :ref:`RID<class_rid>` viewport **)** const
+
+Returns the viewport's last rendered frame.
 
 .. _class_VisualServer_viewport_remove_canvas:
 
 - void **viewport_remove_canvas** **(** :ref:`RID<class_rid>` viewport, :ref:`RID<class_rid>` canvas **)**
 
+Detaches a viewport from a canvas and vice versa.
+
 .. _class_VisualServer_viewport_set_active:
 
 - void **viewport_set_active** **(** :ref:`RID<class_rid>` viewport, :ref:`bool<class_bool>` active **)**
+
+If ``true``, sets the viewport active, else sets it inactive.
 
 .. _class_VisualServer_viewport_set_canvas_layer:
 
 - void **viewport_set_canvas_layer** **(** :ref:`RID<class_rid>` viewport, :ref:`RID<class_rid>` canvas, :ref:`int<class_int>` layer **)**
 
+Sets the renderlayer for a viewport's canvas.
+
 .. _class_VisualServer_viewport_set_canvas_transform:
 
 - void **viewport_set_canvas_transform** **(** :ref:`RID<class_rid>` viewport, :ref:`RID<class_rid>` canvas, :ref:`Transform2D<class_transform2d>` offset **)**
+
+Sets the transformation of a viewport's canvas.
 
 .. _class_VisualServer_viewport_set_clear_mode:
 
 - void **viewport_set_clear_mode** **(** :ref:`RID<class_rid>` viewport, :ref:`int<class_int>` clear_mode **)**
 
+Sets the clear mode of a viewport. See VIEWPORT_CLEAR_MODE\_\* constants for options.
+
 .. _class_VisualServer_viewport_set_debug_draw:
 
 - void **viewport_set_debug_draw** **(** :ref:`RID<class_rid>` viewport, :ref:`int<class_int>` draw **)**
+
+Sets the debug draw mode of a viewport. See VIEWPORT_DEBUG_DRAW\_\* constants for options.
 
 .. _class_VisualServer_viewport_set_disable_3d:
 
 - void **viewport_set_disable_3d** **(** :ref:`RID<class_rid>` viewport, :ref:`bool<class_bool>` disabled **)**
 
+If ``true`` a viewport's 3D rendering should be disabled.
+
 .. _class_VisualServer_viewport_set_disable_environment:
 
 - void **viewport_set_disable_environment** **(** :ref:`RID<class_rid>` viewport, :ref:`bool<class_bool>` disabled **)**
+
+If ``true`` rendering of a viewport's environment should be disabled.
 
 .. _class_VisualServer_viewport_set_global_canvas_transform:
 
 - void **viewport_set_global_canvas_transform** **(** :ref:`RID<class_rid>` viewport, :ref:`Transform2D<class_transform2d>` transform **)**
 
+Sets the viewport's global transformation matrix.
+
 .. _class_VisualServer_viewport_set_hdr:
 
 - void **viewport_set_hdr** **(** :ref:`RID<class_rid>` viewport, :ref:`bool<class_bool>` enabled **)**
 
+If ``true`` the viewport should render to hdr.
+
 .. _class_VisualServer_viewport_set_hide_canvas:
 
 - void **viewport_set_hide_canvas** **(** :ref:`RID<class_rid>` viewport, :ref:`bool<class_bool>` hidden **)**
+
+If ``true`` the viewport's canvas should not be rendered.
 
 .. _class_VisualServer_viewport_set_hide_scenario:
 
@@ -1212,44 +1524,68 @@ The callback method must use only 1 argument which will be called with 'userdata
 
 - void **viewport_set_msaa** **(** :ref:`RID<class_rid>` viewport, :ref:`int<class_int>` msaa **)**
 
+Sets the anti-aliasing mode. see enum ViewportMSAA for options.
+
 .. _class_VisualServer_viewport_set_parent_viewport:
 
 - void **viewport_set_parent_viewport** **(** :ref:`RID<class_rid>` viewport, :ref:`RID<class_rid>` parent_viewport **)**
+
+Sets the viewport's parent to another viewport.
 
 .. _class_VisualServer_viewport_set_scenario:
 
 - void **viewport_set_scenario** **(** :ref:`RID<class_rid>` viewport, :ref:`RID<class_rid>` scenario **)**
 
+Sets a viewport's scenario.
+
+The scenario contains information about the enum ScenarioDebugMode, environment information, reflection atlas etc.
+
 .. _class_VisualServer_viewport_set_shadow_atlas_quadrant_subdivision:
 
 - void **viewport_set_shadow_atlas_quadrant_subdivision** **(** :ref:`RID<class_rid>` viewport, :ref:`int<class_int>` quadrant, :ref:`int<class_int>` subdivision **)**
+
+Sets the shadow atlas quadrant's subdivision.
 
 .. _class_VisualServer_viewport_set_shadow_atlas_size:
 
 - void **viewport_set_shadow_atlas_size** **(** :ref:`RID<class_rid>` viewport, :ref:`int<class_int>` size **)**
 
+Sets the size of the shadow atlas's images.
+
 .. _class_VisualServer_viewport_set_size:
 
 - void **viewport_set_size** **(** :ref:`RID<class_rid>` viewport, :ref:`int<class_int>` width, :ref:`int<class_int>` height **)**
+
+Sets the viewport's width and height.
 
 .. _class_VisualServer_viewport_set_transparent_background:
 
 - void **viewport_set_transparent_background** **(** :ref:`RID<class_rid>` viewport, :ref:`bool<class_bool>` enabled **)**
 
+If ``true`` the viewport should render its background as transparent.
+
 .. _class_VisualServer_viewport_set_update_mode:
 
 - void **viewport_set_update_mode** **(** :ref:`RID<class_rid>` viewport, :ref:`int<class_int>` update_mode **)**
+
+Sets when the viewport should be updated. See VIEWPORT_UPDATE_MODE\_\* constants for options.
 
 .. _class_VisualServer_viewport_set_usage:
 
 - void **viewport_set_usage** **(** :ref:`RID<class_rid>` viewport, :ref:`int<class_int>` usage **)**
 
+Sets what should be rendered in the viewport. See VIEWPORT_USAGE\_\* constants for options.
+
 .. _class_VisualServer_viewport_set_use_arvr:
 
 - void **viewport_set_use_arvr** **(** :ref:`RID<class_rid>` viewport, :ref:`bool<class_bool>` use_arvr **)**
 
+If ``true`` the viewport should use augmented or virtual reality technologies. See :ref:`ARVRInterface<class_arvrinterface>`.
+
 .. _class_VisualServer_viewport_set_vflip:
 
 - void **viewport_set_vflip** **(** :ref:`RID<class_rid>` viewport, :ref:`bool<class_bool>` enabled **)**
+
+If ``true`` the viewport's rendering should be flipped vertically.
 
 

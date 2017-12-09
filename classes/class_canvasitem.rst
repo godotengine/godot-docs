@@ -32,6 +32,10 @@ Member Functions
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`draw_line<class_CanvasItem_draw_line>` **(** :ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to, :ref:`Color<class_color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**                                                                                                                                            |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`draw_multiline<class_CanvasItem_draw_multiline>` **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`Color<class_color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**                                                                                                                                                |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`draw_multiline_colors<class_CanvasItem_draw_multiline_colors>` **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`PoolColorArray<class_poolcolorarray>` colors, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**                                                                                                               |
++----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`draw_polygon<class_CanvasItem_draw_polygon>` **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`PoolColorArray<class_poolcolorarray>` colors, :ref:`PoolVector2Array<class_poolvector2array>` uvs=PoolVector2Array(  ), :ref:`Texture<class_texture>` texture=null, :ref:`Texture<class_texture>` normal_map=null, :ref:`bool<class_bool>` antialiased=false **)** |
 +----------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`draw_polyline<class_CanvasItem_draw_polyline>` **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`Color<class_color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**                                                                                                                                                  |
@@ -136,35 +140,35 @@ Member Variables
 
   .. _class_CanvasItem_light_mask:
 
-- :ref:`int<class_int>` **light_mask**
+- :ref:`int<class_int>` **light_mask** - The rendering layers in which this ``CanvasItem`` responds to :ref:`Light2D<class_light2d>` nodes. Default value: ``1``.
 
   .. _class_CanvasItem_material:
 
-- :ref:`Material<class_material>` **material**
+- :ref:`Material<class_material>` **material** - The material applied to textures on this ``CanvasItem``. Default value: ``null``.
 
   .. _class_CanvasItem_modulate:
 
-- :ref:`Color<class_color>` **modulate**
+- :ref:`Color<class_color>` **modulate** - The color applied to textures on this ``CanvasItem``. Default value: ``Color(1, 1, 1, 1)`` (opaque "white").
 
   .. _class_CanvasItem_self_modulate:
 
-- :ref:`Color<class_color>` **self_modulate**
+- :ref:`Color<class_color>` **self_modulate** - The color applied to textures on this ``CanvasItem``. This is not inherited by children ``CanvasItem``\ s. Default value: ``Color(1, 1, 1, 1)`` (opaque "white")..
 
   .. _class_CanvasItem_show_behind_parent:
 
-- :ref:`bool<class_bool>` **show_behind_parent**
+- :ref:`bool<class_bool>` **show_behind_parent** - If ``true`` the object draws behind its parent. Default value: ``false``.
 
   .. _class_CanvasItem_show_on_top:
 
-- :ref:`bool<class_bool>` **show_on_top**
+- :ref:`bool<class_bool>` **show_on_top** - If ``true`` the object draws on top of its parent. Default value: ``true``.
 
   .. _class_CanvasItem_use_parent_material:
 
-- :ref:`bool<class_bool>` **use_parent_material**
+- :ref:`bool<class_bool>` **use_parent_material** - If ``true`` the parent ``CanvasItem``'s :ref:`material<class_CanvasItem_material>` property is used as this one's material. Default value: ``false``.
 
   .. _class_CanvasItem_visible:
 
-- :ref:`bool<class_bool>` **visible**
+- :ref:`bool<class_bool>` **visible** - If ``true`` this ``CanvasItem`` is drawn. Default value: ``true``.
 
 
 Numeric Constants
@@ -227,6 +231,14 @@ Draw a colored polygon of any amount of points, convex or concave.
 
 Draw a line from a 2D point to another, with a given color and width. It can be optionally antialiased.
 
+.. _class_CanvasItem_draw_multiline:
+
+- void **draw_multiline** **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`Color<class_color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
+
+.. _class_CanvasItem_draw_multiline_colors:
+
+- void **draw_multiline_colors** **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`PoolColorArray<class_poolcolorarray>` colors, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
+
 .. _class_CanvasItem_draw_polygon:
 
 - void **draw_polygon** **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`PoolColorArray<class_poolcolorarray>` colors, :ref:`PoolVector2Array<class_poolvector2array>` uvs=PoolVector2Array(  ), :ref:`Texture<class_texture>` texture=null, :ref:`Texture<class_texture>` normal_map=null, :ref:`bool<class_bool>` antialiased=false **)**
@@ -237,9 +249,13 @@ Draw a polygon of any amount of points, convex or concave.
 
 - void **draw_polyline** **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`Color<class_color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
+Draw a polyline with a uniform ``color`` and ``width`` and optional antialiasing.
+
 .. _class_CanvasItem_draw_polyline_colors:
 
 - void **draw_polyline_colors** **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`PoolColorArray<class_poolcolorarray>` colors, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
+
+Draw a polyline with a uniform ``width``, segment-by-segment coloring, and optional antialiasing. Colors assigned to line segments match by index between ``points`` and ``colors``.
 
 .. _class_CanvasItem_draw_primitive:
 
@@ -257,11 +273,13 @@ Draw a colored rectangle.
 
 - void **draw_set_transform** **(** :ref:`Vector2<class_vector2>` position, :ref:`float<class_float>` rotation, :ref:`Vector2<class_vector2>` scale **)**
 
-Set a custom transform for drawing. Anything drawn afterwards will be transformed by this.
+Sets a custom transform for drawing via components. Anything drawn afterwards will be transformed by this.
 
 .. _class_CanvasItem_draw_set_transform_matrix:
 
 - void **draw_set_transform_matrix** **(** :ref:`Transform2D<class_transform2d>` xform **)**
+
+Sets a custom transform for drawing via matrix. Anything drawn afterwards will be transformed by this.
 
 .. _class_CanvasItem_draw_string:
 
@@ -369,6 +387,8 @@ Hide the CanvasItem currently visible.
 
 - :ref:`bool<class_bool>` **is_local_transform_notification_enabled** **(** **)** const
 
+Returns ``true`` if local transform notifications are communicated to children.
+
 .. _class_CanvasItem_is_set_as_toplevel:
 
 - :ref:`bool<class_bool>` **is_set_as_toplevel** **(** **)** const
@@ -379,31 +399,43 @@ Return if set as toplevel. See :ref:`set_as_toplevel<class_CanvasItem_set_as_top
 
 - :ref:`bool<class_bool>` **is_transform_notification_enabled** **(** **)** const
 
+Returns ``true`` if global transform notifications are communicated to children.
+
 .. _class_CanvasItem_is_visible_in_tree:
 
 - :ref:`bool<class_bool>` **is_visible_in_tree** **(** **)** const
+
+Returns ``true`` if the node is in the :ref:`SceneTree<class_scenetree>` and is visible on-screen.
 
 .. _class_CanvasItem_make_canvas_position_local:
 
 - :ref:`Vector2<class_vector2>` **make_canvas_position_local** **(** :ref:`Vector2<class_vector2>` screen_point **)** const
 
+Assigns ``screen_point`` as this node's new local transform.
+
 .. _class_CanvasItem_make_input_local:
 
 - :ref:`InputEvent<class_inputevent>` **make_input_local** **(** :ref:`InputEvent<class_inputevent>` event **)** const
+
+Transformations issued by ``event``'s inputs are applied in local space instead of global space.
 
 .. _class_CanvasItem_set_as_toplevel:
 
 - void **set_as_toplevel** **(** :ref:`bool<class_bool>` enable **)**
 
-Set as top level. This means that it will not inherit transform from parent canvas items.
+Sets as top level. This means that it will not inherit transform from parent canvas items.
 
 .. _class_CanvasItem_set_notify_local_transform:
 
 - void **set_notify_local_transform** **(** :ref:`bool<class_bool>` enable **)**
 
+If ``enable`` is ``true``, children will be updated with local transform data.
+
 .. _class_CanvasItem_set_notify_transform:
 
 - void **set_notify_transform** **(** :ref:`bool<class_bool>` enable **)**
+
+If ``enable`` is ``true``, children will be updated with global transform data.
 
 .. _class_CanvasItem_show:
 

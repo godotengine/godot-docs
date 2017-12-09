@@ -482,7 +482,6 @@ Numeric Constants
 - **ERR_BUSY** = **44** --- Busy error
 - **ERR_HELP** = **46** --- Help error
 - **ERR_BUG** = **47** --- Bug error
-- **ERR_WTF** = **49** --- WTF error (something probably went really wrong)
 - **PROPERTY_HINT_NONE** = **0** --- No hint for edited property.
 - **PROPERTY_HINT_RANGE** = **1** --- Hints that the string is a range, defined as "min,max" or "min,max,step". This is valid for integers and floats.
 - **PROPERTY_HINT_EXP_RANGE** = **2** --- Hints that the string is an exponential range, defined as "min,max" or "min,max,step". This is valid for integers and floats.
@@ -520,7 +519,7 @@ Numeric Constants
 - **PROPERTY_USAGE_SCRIPT_VARIABLE** = **8192**
 - **PROPERTY_USAGE_DEFAULT** = **7** --- Default usage (storage and editor).
 - **PROPERTY_USAGE_DEFAULT_INTL** = **71**
-- **PROPERTY_USAGE_NOEDITOR** = **5**
+- **PROPERTY_USAGE_NOEDITOR** = **1048581**
 - **METHOD_FLAG_NORMAL** = **1** --- Flag for normal method
 - **METHOD_FLAG_EDITOR** = **2** --- Flag for editor method
 - **METHOD_FLAG_NOSCRIPT** = **4**

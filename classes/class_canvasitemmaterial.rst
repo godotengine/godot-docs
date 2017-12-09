@@ -14,29 +14,34 @@ CanvasItemMaterial
 Brief Description
 -----------------
 
-
+A material for :ref:`CanvasItem<class_canvasitem>`\ s.
 
 Member Variables
 ----------------
 
   .. _class_CanvasItemMaterial_blend_mode:
 
-- :ref:`int<class_int>` **blend_mode**
+- :ref:`int<class_int>` **blend_mode** - The manner in which a material's rendering is applied to underlying textures.
 
   .. _class_CanvasItemMaterial_light_mode:
 
-- :ref:`int<class_int>` **light_mode**
+- :ref:`int<class_int>` **light_mode** - The manner in which material reacts to lighting.
 
 
 Numeric Constants
 -----------------
 
-- **BLEND_MODE_MIX** = **0**
-- **BLEND_MODE_ADD** = **1**
-- **BLEND_MODE_SUB** = **2**
-- **BLEND_MODE_MUL** = **3**
-- **BLEND_MODE_PREMULT_ALPHA** = **4**
-- **LIGHT_MODE_NORMAL** = **0**
-- **LIGHT_MODE_UNSHADED** = **1**
-- **LIGHT_MODE_LIGHT_ONLY** = **2**
+- **BLEND_MODE_MIX** = **0** --- Mix blending mode. Colors are assumed to be independent of the alpha (opacity) value.
+- **BLEND_MODE_ADD** = **1** --- Additive blending mode.
+- **BLEND_MODE_SUB** = **2** --- Subtractive blending mode.
+- **BLEND_MODE_MUL** = **3** --- Multiplicative blending mode.
+- **BLEND_MODE_PREMULT_ALPHA** = **4** --- Mix blending mode. Colors are assumed to be premultiplied by the alpha (opacity) value.
+- **LIGHT_MODE_NORMAL** = **0** --- Render the material using both light and non-light sensitive material properties.
+- **LIGHT_MODE_UNSHADED** = **1** --- Render the material as if there were no light.
+- **LIGHT_MODE_LIGHT_ONLY** = **2** --- Render the material as if there were only light.
+
+Description
+-----------
+
+``CanvasItemMaterial``\ s provide a means of modifying the textures associated with a CanvasItem. They specialize in describing blend and lighting behaviors for textures. Use a :ref:`ShaderMaterial<class_shadermaterial>` to more fully customize a material's interactions with a :ref:`CanvasItem<class_canvasitem>`.
 

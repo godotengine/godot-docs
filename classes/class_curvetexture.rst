@@ -14,17 +14,22 @@ CurveTexture
 Brief Description
 -----------------
 
-
+A texture that shows a curve.
 
 Member Variables
 ----------------
 
   .. _class_CurveTexture_curve:
 
-- :ref:`Curve<class_curve>` **curve**
+- :ref:`Curve<class_curve>` **curve** - The ``curve`` rendered onto the texture.
 
   .. _class_CurveTexture_width:
 
-- :ref:`int<class_int>` **width**
+- :ref:`int<class_int>` **width** - The width of the texture.
 
+
+Description
+-----------
+
+Renders a given :ref:`Curve<class_curve>` provided to it. Simplifies the task of drawing curves and/or saving them as image files.
 

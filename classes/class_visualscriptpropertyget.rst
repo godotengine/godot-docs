@@ -47,10 +47,6 @@ Member Variables
 
 - :ref:`int<class_int>` **set_mode**
 
-  .. _class_VisualScriptPropertyGet_type_cache:
-
-- :ref:`int<class_int>` **type_cache**
-
 
 Numeric Constants
 -----------------

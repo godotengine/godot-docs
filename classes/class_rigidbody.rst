@@ -78,9 +78,17 @@ Member Variables
 
 - :ref:`Vector3<class_vector3>` **angular_velocity** - RigidBody's rotational velocity.
 
-  .. _class_RigidBody_axis_lock:
+  .. _class_RigidBody_axis_lock_x:
 
-- :ref:`int<class_int>` **axis_lock** - Locks the rotational forces to a particular axis, preventing rotations on other axes.
+- :ref:`bool<class_bool>` **axis_lock_x**
+
+  .. _class_RigidBody_axis_lock_y:
+
+- :ref:`bool<class_bool>` **axis_lock_y**
+
+  .. _class_RigidBody_axis_lock_z:
+
+- :ref:`bool<class_bool>` **axis_lock_z**
 
   .. _class_RigidBody_bounce:
 
@@ -148,10 +156,6 @@ Numeric Constants
 - **MODE_STATIC** = **1** --- Static mode. The body behaves like a :ref:`StaticBody<class_staticbody>`, and can only move by user code.
 - **MODE_CHARACTER** = **2** --- Character body. This behaves like a rigid body, but can not rotate.
 - **MODE_KINEMATIC** = **3** --- Kinematic body. The body behaves like a :ref:`KinematicBody<class_kinematicbody>`, and can only move by user code.
-- **AXIS_LOCK_DISABLED** = **0**
-- **AXIS_LOCK_X** = **1**
-- **AXIS_LOCK_Y** = **2**
-- **AXIS_LOCK_Z** = **3**
 
 Description
 -----------

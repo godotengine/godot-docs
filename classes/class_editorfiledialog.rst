@@ -19,47 +19,15 @@ Brief Description
 Member Functions
 ----------------
 
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`add_filter<class_EditorFileDialog_add_filter>` **(** :ref:`String<class_string>` filter **)**                                    |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`clear_filters<class_EditorFileDialog_clear_filters>` **(** **)**                                                                 |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                      | :ref:`get_access<class_EditorFileDialog_get_access>` **(** **)** const                                                                 |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                | :ref:`get_current_dir<class_EditorFileDialog_get_current_dir>` **(** **)** const                                                       |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                | :ref:`get_current_file<class_EditorFileDialog_get_current_file>` **(** **)** const                                                     |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                | :ref:`get_current_path<class_EditorFileDialog_get_current_path>` **(** **)** const                                                     |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                      | :ref:`get_display_mode<class_EditorFileDialog_get_display_mode>` **(** **)** const                                                     |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                      | :ref:`get_mode<class_EditorFileDialog_get_mode>` **(** **)** const                                                                     |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`VBoxContainer<class_vboxcontainer>`  | :ref:`get_vbox<class_EditorFileDialog_get_vbox>` **(** **)**                                                                           |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`invalidate<class_EditorFileDialog_invalidate>` **(** **)**                                                                       |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                    | :ref:`is_overwrite_warning_disabled<class_EditorFileDialog_is_overwrite_warning_disabled>` **(** **)** const                           |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                    | :ref:`is_showing_hidden_files<class_EditorFileDialog_is_showing_hidden_files>` **(** **)** const                                       |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_access<class_EditorFileDialog_set_access>` **(** :ref:`int<class_int>` access **)**                                          |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_current_dir<class_EditorFileDialog_set_current_dir>` **(** :ref:`String<class_string>` dir **)**                             |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_current_file<class_EditorFileDialog_set_current_file>` **(** :ref:`String<class_string>` file **)**                          |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_current_path<class_EditorFileDialog_set_current_path>` **(** :ref:`String<class_string>` path **)**                          |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_disable_overwrite_warning<class_EditorFileDialog_set_disable_overwrite_warning>` **(** :ref:`bool<class_bool>` disable **)** |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_display_mode<class_EditorFileDialog_set_display_mode>` **(** :ref:`int<class_int>` mode **)**                                |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_mode<class_EditorFileDialog_set_mode>` **(** :ref:`int<class_int>` mode **)**                                                |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_show_hidden_files<class_EditorFileDialog_set_show_hidden_files>` **(** :ref:`bool<class_bool>` show **)**                    |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------+-----------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`add_filter<class_EditorFileDialog_add_filter>` **(** :ref:`String<class_string>` filter **)** |
++--------------------------------------------+-----------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`clear_filters<class_EditorFileDialog_clear_filters>` **(** **)**                              |
++--------------------------------------------+-----------------------------------------------------------------------------------------------------+
+| :ref:`VBoxContainer<class_vboxcontainer>`  | :ref:`get_vbox<class_EditorFileDialog_get_vbox>` **(** **)**                                        |
++--------------------------------------------+-----------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`invalidate<class_EditorFileDialog_invalidate>` **(** **)**                                    |
++--------------------------------------------+-----------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -68,28 +36,70 @@ Signals
 
 - **dir_selected** **(** :ref:`String<class_string>` dir **)**
 
+Emitted when a directory is selected.
+
 .. _class_EditorFileDialog_file_selected:
 
 - **file_selected** **(** :ref:`String<class_string>` path **)**
+
+Emitted when a file is selected.
 
 .. _class_EditorFileDialog_files_selected:
 
 - **files_selected** **(** :ref:`PoolStringArray<class_poolstringarray>` paths **)**
 
+Emitted when multiple files are selected.
+
+
+Member Variables
+----------------
+
+  .. _class_EditorFileDialog_access:
+
+- :ref:`int<class_int>` **access** - The location from which the user may select a file, including ``res://``, ``user://``, and the local file system.
+
+  .. _class_EditorFileDialog_current_dir:
+
+- :ref:`String<class_string>` **current_dir** - The currently occupied directory.
+
+  .. _class_EditorFileDialog_current_file:
+
+- :ref:`String<class_string>` **current_file** - The currently selected file.
+
+  .. _class_EditorFileDialog_current_path:
+
+- :ref:`String<class_string>` **current_path** - The file system path in the address bar.
+
+  .. _class_EditorFileDialog_disable_overwrite_warning:
+
+- :ref:`bool<class_bool>` **disable_overwrite_warning** - If ``true`` the ``EditorFileDialog`` will not warn the user before overwriting files.
+
+  .. _class_EditorFileDialog_display_mode:
+
+- :ref:`int<class_int>` **display_mode** - The view format in which the ``EditorFileDialog`` displays resources to the user.
+
+  .. _class_EditorFileDialog_mode:
+
+- :ref:`int<class_int>` **mode** - The purpose of the ``EditorFileDialog``. Changes allowed behaviors.
+
+  .. _class_EditorFileDialog_show_hidden_files:
+
+- :ref:`bool<class_bool>` **show_hidden_files** - If ``true`` hidden files and directories will be visible in the ``EditorFileDialog``.
+
 
 Numeric Constants
 -----------------
 
-- **MODE_OPEN_FILE** = **0**
-- **MODE_OPEN_FILES** = **1**
-- **MODE_OPEN_DIR** = **2**
-- **MODE_OPEN_ANY** = **3**
-- **MODE_SAVE_FILE** = **4**
-- **ACCESS_RESOURCES** = **0**
-- **ACCESS_USERDATA** = **1**
-- **ACCESS_FILESYSTEM** = **2**
-- **DISPLAY_THUMBNAILS** = **0**
-- **DISPLAY_LIST** = **1**
+- **MODE_OPEN_FILE** = **0** --- The ``EditorFileDialog`` can select only one file. Accepting the window will open the file.
+- **MODE_OPEN_FILES** = **1** --- The ``EditorFileDialog`` can select multiple files. Accepting the window will open all files.
+- **MODE_OPEN_DIR** = **2** --- The ``EditorFileDialog`` can select only one directory. Accepting the window will open the directory.
+- **MODE_OPEN_ANY** = **3** --- The ``EditorFileDialog`` can select a file or directory. Accepting the window will open it.
+- **MODE_SAVE_FILE** = **4** --- The ``EditorFileDialog`` can select only one file. Accepting the window will save the file.
+- **ACCESS_RESOURCES** = **0** --- The ``EditorFileDialog`` can only view ``res://`` directory contents.
+- **ACCESS_USERDATA** = **1** --- The ``EditorFileDialog`` can only view ``user://`` directory contents.
+- **ACCESS_FILESYSTEM** = **2** --- The ``EditorFileDialog`` can view the entire local file system.
+- **DISPLAY_THUMBNAILS** = **0** --- The ``EditorFileDialog`` displays resources as thumbnails.
+- **DISPLAY_LIST** = **1** --- The ``EditorFileDialog`` displays resources as a list of filenames.
 
 Member Function Description
 ---------------------------
@@ -98,80 +108,26 @@ Member Function Description
 
 - void **add_filter** **(** :ref:`String<class_string>` filter **)**
 
+Adds a comma-delimited file extension filter option to the ``EditorFileDialog`` with an optional semi-colon-delimited label.
+
+Example: "\*.tscn, \*.scn; Scenes", results in filter text "Scenes (\*.tscn, \*.scn)".
+
 .. _class_EditorFileDialog_clear_filters:
 
 - void **clear_filters** **(** **)**
 
-.. _class_EditorFileDialog_get_access:
-
-- :ref:`int<class_int>` **get_access** **(** **)** const
-
-.. _class_EditorFileDialog_get_current_dir:
-
-- :ref:`String<class_string>` **get_current_dir** **(** **)** const
-
-.. _class_EditorFileDialog_get_current_file:
-
-- :ref:`String<class_string>` **get_current_file** **(** **)** const
-
-.. _class_EditorFileDialog_get_current_path:
-
-- :ref:`String<class_string>` **get_current_path** **(** **)** const
-
-.. _class_EditorFileDialog_get_display_mode:
-
-- :ref:`int<class_int>` **get_display_mode** **(** **)** const
-
-.. _class_EditorFileDialog_get_mode:
-
-- :ref:`int<class_int>` **get_mode** **(** **)** const
+Removes all filters except for "All Files (\*)".
 
 .. _class_EditorFileDialog_get_vbox:
 
 - :ref:`VBoxContainer<class_vboxcontainer>` **get_vbox** **(** **)**
 
+Returns the ``VBoxContainer`` used to display the file system.
+
 .. _class_EditorFileDialog_invalidate:
 
 - void **invalidate** **(** **)**
 
-.. _class_EditorFileDialog_is_overwrite_warning_disabled:
-
-- :ref:`bool<class_bool>` **is_overwrite_warning_disabled** **(** **)** const
-
-.. _class_EditorFileDialog_is_showing_hidden_files:
-
-- :ref:`bool<class_bool>` **is_showing_hidden_files** **(** **)** const
-
-.. _class_EditorFileDialog_set_access:
-
-- void **set_access** **(** :ref:`int<class_int>` access **)**
-
-.. _class_EditorFileDialog_set_current_dir:
-
-- void **set_current_dir** **(** :ref:`String<class_string>` dir **)**
-
-.. _class_EditorFileDialog_set_current_file:
-
-- void **set_current_file** **(** :ref:`String<class_string>` file **)**
-
-.. _class_EditorFileDialog_set_current_path:
-
-- void **set_current_path** **(** :ref:`String<class_string>` path **)**
-
-.. _class_EditorFileDialog_set_disable_overwrite_warning:
-
-- void **set_disable_overwrite_warning** **(** :ref:`bool<class_bool>` disable **)**
-
-.. _class_EditorFileDialog_set_display_mode:
-
-- void **set_display_mode** **(** :ref:`int<class_int>` mode **)**
-
-.. _class_EditorFileDialog_set_mode:
-
-- void **set_mode** **(** :ref:`int<class_int>` mode **)**
-
-.. _class_EditorFileDialog_set_show_hidden_files:
-
-- void **set_show_hidden_files** **(** :ref:`bool<class_bool>` show **)**
+Notify the ``EditorFileDialog`` that its view of the data is no longer accurate. Updates the view contents on next view update.
 
 

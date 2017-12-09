@@ -51,10 +51,6 @@ Member Variables
 
 - :ref:`int<class_int>` **set_mode**
 
-  .. _class_VisualScriptPropertySet_type_cache:
-
-- :ref:`Dictionary<class_dictionary>` **type_cache**
-
 
 Numeric Constants
 -----------------

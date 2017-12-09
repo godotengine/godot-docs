@@ -80,6 +80,10 @@ Member Variables
 
 - :ref:`int<class_int>` **mode**
 
+  .. _class_FileDialog_mode_overrides_title:
+
+- :ref:`bool<class_bool>` **mode_overrides_title** - If ``true``, changing the ``mode`` property will set the window title accordingly (e. g. setting mode to ``MODE_OPEN_FILE`` will change the window title to "Open a File").
+
   .. _class_FileDialog_show_hidden_files:
 
 - :ref:`bool<class_bool>` **show_hidden_files**

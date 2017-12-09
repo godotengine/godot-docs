@@ -298,4 +298,15 @@ Sort the array using natural order and return reference to the array.
 
 Sort the array using a custom method and return reference to the array. The arguments are an object that holds the method and the name of such method. The custom method receives two arguments (a pair of elements from the array) and must return true if the first argument is less than the second, and return false otherwise. Note: you cannot randomize the return value as the heapsort algorithm expects a deterministic result. Doing so will result in unexpected behavior.
 
+::
+
+    class MyCustomSorter:
+        static func sort(a, b):
+            if a[0] < b[0]:
+                return true
+        return false
+    
+    var my_items = [[5, "Potato"], [9, "Rice"], [4, "Tomato"]]
+    my_items.sort_custom(MyCustomSorter, "sort")
+
 

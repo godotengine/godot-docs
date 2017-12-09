@@ -16,7 +16,7 @@ NetworkedMultiplayerPeer
 Brief Description
 -----------------
 
-
+A high-level network interface to simplify multiplayer interactions.
 
 Member Functions
 ----------------
@@ -46,44 +46,49 @@ Signals
 
 - **connection_failed** **(** **)**
 
-Emitted when failed to connect to server.
+Emitted when a connection attempt fails.
 
 .. _class_NetworkedMultiplayerPeer_connection_succeeded:
 
 - **connection_succeeded** **(** **)**
 
-Emitted when successfully connected to server.
+Emitted when a connection attempt succeeds.
 
 .. _class_NetworkedMultiplayerPeer_peer_connected:
 
 - **peer_connected** **(** :ref:`int<class_int>` id **)**
 
-Emitted by the server when a client is connected.
+Emitted by the server when a client connects.
 
 .. _class_NetworkedMultiplayerPeer_peer_disconnected:
 
 - **peer_disconnected** **(** :ref:`int<class_int>` id **)**
 
-Emitted by the server when a client is disconnected.
+Emitted by the server when a client disconnects.
 
 .. _class_NetworkedMultiplayerPeer_server_disconnected:
 
 - **server_disconnected** **(** **)**
 
-Emitted by clients when server is disconnected.
+Emitted by clients when the server disconnects.
 
 
 Numeric Constants
 -----------------
 
-- **TRANSFER_MODE_UNRELIABLE** = **0**
-- **TRANSFER_MODE_UNRELIABLE_ORDERED** = **1**
-- **TRANSFER_MODE_RELIABLE** = **2**
-- **CONNECTION_DISCONNECTED** = **0**
-- **CONNECTION_CONNECTING** = **1**
-- **CONNECTION_CONNECTED** = **2**
-- **TARGET_PEER_BROADCAST** = **0**
-- **TARGET_PEER_SERVER** = **1**
+- **TRANSFER_MODE_UNRELIABLE** = **0** --- Packets are sent via unordered UDP packets.
+- **TRANSFER_MODE_UNRELIABLE_ORDERED** = **1** --- Packets are sent via ordered UDP packets.
+- **TRANSFER_MODE_RELIABLE** = **2** --- Packets are sent via TCP packets.
+- **CONNECTION_DISCONNECTED** = **0** --- The ongoing connection disconnected.
+- **CONNECTION_CONNECTING** = **1** --- A connection attempt is ongoing.
+- **CONNECTION_CONNECTED** = **2** --- The connection attempt succeeded.
+- **TARGET_PEER_BROADCAST** = **0** --- Packets are sent to the server and then redistributed to other peers.
+- **TARGET_PEER_SERVER** = **1** --- Packets are sent to the server alone.
+
+Description
+-----------
+
+Manages the connection to network peers. Assigns unique IDs to each client connected to the server.
 
 Member Function Description
 ---------------------------
@@ -92,36 +97,48 @@ Member Function Description
 
 - :ref:`int<class_int>` **get_connection_status** **(** **)** const
 
+Returns the current state of the connection. See enum ConnectionStatus.
+
 .. _class_NetworkedMultiplayerPeer_get_packet_peer:
 
 - :ref:`int<class_int>` **get_packet_peer** **(** **)** const
+
+Returns the ID of the ``NetworkedMultiplayerPeer`` who sent the most recent packet.
 
 .. _class_NetworkedMultiplayerPeer_get_unique_id:
 
 - :ref:`int<class_int>` **get_unique_id** **(** **)** const
 
+Returns the ID of this ``NetworkedMultiplayerPeer``.
+
 .. _class_NetworkedMultiplayerPeer_is_refusing_new_connections:
 
 - :ref:`bool<class_bool>` **is_refusing_new_connections** **(** **)** const
 
-Return whether this ``NetworkedMultiplayerPeer`` is refusing new connections.
+Returns ``true`` if this ``NetworkedMultiplayerPeer`` refuses new connections. Default value: ``false``.
 
 .. _class_NetworkedMultiplayerPeer_poll:
 
 - void **poll** **(** **)**
 
+Waits up to 1 second to receive a new network event.
+
 .. _class_NetworkedMultiplayerPeer_set_refuse_new_connections:
 
 - void **set_refuse_new_connections** **(** :ref:`bool<class_bool>` enable **)**
 
-If ``endable`` is true, this ``NetworkedMultiplayerPeer`` will refuse new connections.
+If ``true`` this ``NetworkedMultiplayerPeer`` refuses new connections. Default value: ``false``.
 
 .. _class_NetworkedMultiplayerPeer_set_target_peer:
 
 - void **set_target_peer** **(** :ref:`int<class_int>` id **)**
 
+The peer to which packets will be sent. Default value: ``0``.
+
 .. _class_NetworkedMultiplayerPeer_set_transfer_mode:
 
 - void **set_transfer_mode** **(** :ref:`int<class_int>` mode **)**
+
+The manner in which to send packets to the ``target_peer``. See enum TransferMode.
 
 

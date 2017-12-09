@@ -33,6 +33,14 @@ Member Functions
 | :ref:`PoolVector3Array<class_poolvector3array>`  | :ref:`get_faces<class_Mesh_get_faces>` **(** **)** const                                            |
 +--------------------------------------------------+-----------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+  .. _class_Mesh_lightmap_size_hint:
+
+- :ref:`Vector2<class_vector2>` **lightmap_size_hint**
+
+
 Numeric Constants
 -----------------
 

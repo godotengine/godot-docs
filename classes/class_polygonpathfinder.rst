@@ -37,14 +37,6 @@ Member Functions
 | void                                             | :ref:`setup<class_PolygonPathFinder_setup>` **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`PoolIntArray<class_poolintarray>` connections **)** |
 +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
-
-  .. _class_PolygonPathFinder_data:
-
-- :ref:`Dictionary<class_dictionary>` **data**
-
-
 Member Function Description
 ---------------------------
 

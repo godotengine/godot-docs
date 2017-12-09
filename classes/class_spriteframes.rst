@@ -54,10 +54,6 @@ Member Functions
 Member Variables
 ----------------
 
-  .. _class_SpriteFrames_animations:
-
-- :ref:`Array<class_array>` **animations** - An :ref:`Array<class_array>` containing the ``name``, ``speed``, ``loop``, and ``frames`` of each animation.
-
   .. _class_SpriteFrames_frames:
 
 - :ref:`Array<class_array>` **frames**

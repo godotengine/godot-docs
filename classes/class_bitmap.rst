@@ -35,18 +35,6 @@ Member Functions
 | void                           | :ref:`set_bit_rect<class_BitMap_set_bit_rect>` **(** :ref:`Rect2<class_rect2>` p_rect, :ref:`bool<class_bool>` bit **)** |
 +--------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
-
-  .. _class_BitMap_data:
-
-- :ref:`Dictionary<class_dictionary>` **data** - Returns a :ref:`Dictionary<class_dictionary>` with two keys :
-
-``data`` : :ref:`PoolByteArray<class_poolbytearray>` with ``true``/``false`` ``BitMap`` data.
-
-``size`` : The ``Bitmap``'s size.
-
-
 Description
 -----------
 

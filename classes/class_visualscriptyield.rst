@@ -16,12 +16,17 @@ Brief Description
 
 
 
-Member Variables
+Member Functions
 ----------------
 
-  .. _class_VisualScriptYield_mode:
++------------------------+------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`get_yield_mode<class_VisualScriptYield_get_yield_mode>` **(** **)**                            |
++------------------------+------------------------------------------------------------------------------------------------------+
+| void                   | :ref:`set_yield_mode<class_VisualScriptYield_set_yield_mode>` **(** :ref:`int<class_int>` mode **)** |
++------------------------+------------------------------------------------------------------------------------------------------+
 
-- :ref:`int<class_int>` **mode**
+Member Variables
+----------------
 
   .. _class_VisualScriptYield_wait_time:
 
@@ -34,4 +39,16 @@ Numeric Constants
 - **YIELD_FRAME** = **1**
 - **YIELD_PHYSICS_FRAME** = **2**
 - **YIELD_WAIT** = **3**
+
+Member Function Description
+---------------------------
+
+.. _class_VisualScriptYield_get_yield_mode:
+
+- :ref:`int<class_int>` **get_yield_mode** **(** **)**
+
+.. _class_VisualScriptYield_set_yield_mode:
+
+- void **set_yield_mode** **(** :ref:`int<class_int>` mode **)**
+
 

@@ -59,6 +59,10 @@ This method is executed by the Editor when ``File -> Run`` is used.
 
 - void **add_root_node** **(** :ref:`Node<class_node>` node **)**
 
+Adds ``node`` as a child of the root node in the editor context.
+
+WARNING: The implementation of this method is currently disabled.
+
 .. _class_EditorScript_get_editor_interface:
 
 - :ref:`EditorInterface<class_editorinterface>` **get_editor_interface** **(** **)**

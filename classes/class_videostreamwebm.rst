@@ -16,11 +16,24 @@ Brief Description
 
 
 
-Member Variables
+Member Functions
 ----------------
 
-  .. _class_VideoStreamWebm_file:
++------------------------------+----------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`  | :ref:`get_file<class_VideoStreamWebm_get_file>` **(** **)**                                  |
++------------------------------+----------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_file<class_VideoStreamWebm_set_file>` **(** :ref:`String<class_string>` file **)** |
++------------------------------+----------------------------------------------------------------------------------------------+
 
-- :ref:`String<class_string>` **file**
+Member Function Description
+---------------------------
+
+.. _class_VideoStreamWebm_get_file:
+
+- :ref:`String<class_string>` **get_file** **(** **)**
+
+.. _class_VideoStreamWebm_set_file:
+
+- void **set_file** **(** :ref:`String<class_string>` file **)**
 
 

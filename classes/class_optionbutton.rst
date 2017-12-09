@@ -72,10 +72,6 @@ This signal is emitted when the current item was changed by the user. ID of the 
 Member Variables
 ----------------
 
-  .. _class_OptionButton_items:
-
-- :ref:`Array<class_array>` **items**
-
   .. _class_OptionButton_selected:
 
 - :ref:`int<class_int>` **selected**

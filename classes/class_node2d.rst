@@ -28,6 +28,8 @@ Member Functions
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform2D<class_transform2d>`  | :ref:`get_relative_transform_to_parent<class_Node2D_get_relative_transform_to_parent>` **(** :ref:`Node<class_node>` parent **)** const |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`              | :ref:`get_rotation<class_Node2D_get_rotation>` **(** **)** const                                                                        |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`global_translate<class_Node2D_global_translate>` **(** :ref:`Vector2<class_vector2>` offset **)**                                 |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`look_at<class_Node2D_look_at>` **(** :ref:`Vector2<class_vector2>` point **)**                                                    |
@@ -37,6 +39,8 @@ Member Functions
 | void                                   | :ref:`move_local_y<class_Node2D_move_local_y>` **(** :ref:`float<class_float>` delta, :ref:`bool<class_bool>` scaled=false **)**        |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`rotate<class_Node2D_rotate>` **(** :ref:`float<class_float>` radians **)**                                                        |
++----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_rotation<class_Node2D_set_rotation>` **(** :ref:`float<class_float>` radians **)**                                            |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`          | :ref:`to_global<class_Node2D_to_global>` **(** :ref:`Vector2<class_vector2>` local_point **)** const                                    |
 +----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
@@ -71,10 +75,6 @@ Member Variables
   .. _class_Node2D_position:
 
 - :ref:`Vector2<class_vector2>` **position** - Position, relative to the node's parent.
-
-  .. _class_Node2D_rotation:
-
-- :ref:`float<class_float>` **rotation** - Rotation in radians, relative to the node's parent.
 
   .. _class_Node2D_rotation_degrees:
 
@@ -123,6 +123,10 @@ Returns the angle between the node and the 'point' in radians.
 
 Returns the :ref:`Transform2D<class_transform2d>` relative to this node's parent.
 
+.. _class_Node2D_get_rotation:
+
+- :ref:`float<class_float>` **get_rotation** **(** **)** const
+
 .. _class_Node2D_global_translate:
 
 - void **global_translate** **(** :ref:`Vector2<class_vector2>` offset **)**
@@ -152,6 +156,10 @@ Applies a local translation on the node's Y axis based on the :ref:`Node._proces
 - void **rotate** **(** :ref:`float<class_float>` radians **)**
 
 Applies a rotation to the node, in radians, starting from its current rotation.
+
+.. _class_Node2D_set_rotation:
+
+- void **set_rotation** **(** :ref:`float<class_float>` radians **)**
 
 .. _class_Node2D_to_global:
 

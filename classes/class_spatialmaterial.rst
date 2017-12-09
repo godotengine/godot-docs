@@ -155,6 +155,10 @@ Member Variables
 
 - :ref:`Texture<class_texture>` **emission_texture**
 
+  .. _class_SpatialMaterial_flags_albedo_tex_force_srgb:
+
+- :ref:`bool<class_bool>` **flags_albedo_tex_force_srgb**
+
   .. _class_SpatialMaterial_flags_fixed_size:
 
 - :ref:`bool<class_bool>` **flags_fixed_size**
@@ -446,7 +450,8 @@ Numeric Constants
 - **FLAG_AO_ON_UV2** = **10**
 - **FLAG_USE_ALPHA_SCISSOR** = **11**
 - **FLAG_TRIPLANAR_USE_WORLD** = **9**
-- **FLAG_MAX** = **12**
+- **FLAG_ALBEDO_TEXTURE_FORCE_SRGB** = **12**
+- **FLAG_MAX** = **13**
 - **DIFFUSE_BURLEY** = **0**
 - **DIFFUSE_LAMBERT** = **1**
 - **DIFFUSE_LAMBERT_WRAP** = **2**

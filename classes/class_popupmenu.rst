@@ -126,10 +126,6 @@ Member Variables
 
 - :ref:`bool<class_bool>` **hide_on_item_selection**
 
-  .. _class_PopupMenu_items:
-
-- :ref:`Array<class_array>` **items**
-
 
 Description
 -----------

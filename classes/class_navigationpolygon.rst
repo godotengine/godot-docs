@@ -38,28 +38,16 @@ Member Functions
 +--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                            | :ref:`get_polygon_count<class_NavigationPolygon_get_polygon_count>` **(** **)** const                                                                                      |
 +--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolVector2Array<class_poolvector2array>`  | :ref:`get_vertices<class_NavigationPolygon_get_vertices>` **(** **)** const                                                                                                |
++--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`make_polygons_from_outlines<class_NavigationPolygon_make_polygons_from_outlines>` **(** **)**                                                                        |
 +--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`remove_outline<class_NavigationPolygon_remove_outline>` **(** :ref:`int<class_int>` idx **)**                                                                        |
 +--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`set_outline<class_NavigationPolygon_set_outline>` **(** :ref:`int<class_int>` idx, :ref:`PoolVector2Array<class_poolvector2array>` outline **)**                     |
 +--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-  .. _class_NavigationPolygon_outlines:
-
-- :ref:`Array<class_array>` **outlines**
-
-  .. _class_NavigationPolygon_polygons:
-
-- :ref:`Array<class_array>` **polygons**
-
-  .. _class_NavigationPolygon_vertices:
-
-- :ref:`PoolVector2Array<class_poolvector2array>` **vertices**
-
+| void                                             | :ref:`set_vertices<class_NavigationPolygon_set_vertices>` **(** :ref:`PoolVector2Array<class_poolvector2array>` vertices **)**                                             |
++--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Function Description
 ---------------------------
@@ -100,6 +88,10 @@ Member Function Description
 
 - :ref:`int<class_int>` **get_polygon_count** **(** **)** const
 
+.. _class_NavigationPolygon_get_vertices:
+
+- :ref:`PoolVector2Array<class_poolvector2array>` **get_vertices** **(** **)** const
+
 .. _class_NavigationPolygon_make_polygons_from_outlines:
 
 - void **make_polygons_from_outlines** **(** **)**
@@ -111,5 +103,9 @@ Member Function Description
 .. _class_NavigationPolygon_set_outline:
 
 - void **set_outline** **(** :ref:`int<class_int>` idx, :ref:`PoolVector2Array<class_poolvector2array>` outline **)**
+
+.. _class_NavigationPolygon_set_vertices:
+
+- void **set_vertices** **(** :ref:`PoolVector2Array<class_poolvector2array>` vertices **)**
 
 

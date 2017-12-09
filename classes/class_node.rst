@@ -96,6 +96,8 @@ Member Functions
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`            | :ref:`is_a_parent_of<class_Node_is_a_parent_of>` **(** :ref:`Node<class_node>` node **)** const                                                                                              |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`            | :ref:`is_displayed_folded<class_Node_is_displayed_folded>` **(** **)** const                                                                                                                 |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`            | :ref:`is_greater_than<class_Node_is_greater_than>` **(** :ref:`Node<class_node>` node **)** const                                                                                            |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`            | :ref:`is_in_group<class_Node_is_in_group>` **(** :ref:`String<class_string>` group **)** const                                                                                               |
@@ -162,6 +164,8 @@ Member Functions
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`rset_unreliable_id<class_Node_rset_unreliable_id>` **(** :ref:`int<class_int>` peer_id, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value **)**                |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_display_folded<class_Node_set_display_folded>` **(** :ref:`bool<class_bool>` fold **)**                                                                                            |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_filename<class_Node_set_filename>` **(** :ref:`String<class_string>` filename **)**                                                                                                |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_name<class_Node_set_name>` **(** :ref:`String<class_string>` name **)**                                                                                                            |
@@ -211,14 +215,6 @@ Emitted when Node exits the tree.
 
 Member Variables
 ----------------
-
-  .. _class_Node__import_path:
-
-- :ref:`NodePath<class_nodepath>` **_import_path**
-
-  .. _class_Node_editor/display_folded:
-
-- :ref:`bool<class_bool>` **editor/display_folded**
 
   .. _class_Node_pause_mode:
 
@@ -542,6 +538,10 @@ Returns ``true`` if the node that the :ref:`NodePath<class_nodepath>` points to 
 
 Returns ``true`` if the "node" argument is a direct or indirect child of the current node, otherwise return ``false[code].
 
+.. _class_Node_is_displayed_folded:
+
+- :ref:`bool<class_bool>` **is_displayed_folded** **(** **)** const
+
 .. _class_Node_is_greater_than:
 
 - :ref:`bool<class_bool>` **is_greater_than** **(** :ref:`Node<class_node>` node **)** const
@@ -731,6 +731,10 @@ Remotely changes property's value on other peers (and locally) using an unreliab
 - void **rset_unreliable_id** **(** :ref:`int<class_int>` peer_id, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value **)**
 
 Remotely changes property's value on a specific peer identified by *peer_id* using an unreliable protocol.
+
+.. _class_Node_set_display_folded:
+
+- void **set_display_folded** **(** :ref:`bool<class_bool>` fold **)**
 
 .. _class_Node_set_filename:
 

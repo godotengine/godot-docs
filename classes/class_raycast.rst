@@ -60,7 +60,11 @@ Member Variables
 
   .. _class_RayCast_enabled:
 
-- :ref:`bool<class_bool>` **enabled** - If ``true``, collisions will be reported. Default value: ``false``.
+- :ref:`bool<class_bool>` **enabled** - If ``true`` collisions will be reported. Default value: ``false``.
+
+  .. _class_RayCast_exclude_parent:
+
+- :ref:`bool<class_bool>` **exclude_parent** - If ``true`` collisions will be ignored for this RayCast's immediate parent. Default value: ``true``.
 
 
 Description
@@ -133,6 +137,8 @@ Example:
 
 - :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
 
+Returns ``true`` if the bit index passed is turned on. Note that bit indexes range from 0-19.
+
 .. _class_RayCast_get_collision_normal:
 
 - :ref:`Vector3<class_vector3>` **get_collision_normal** **(** **)** const
@@ -166,5 +172,7 @@ Removes a collision exception so the ray does report collisions with the specifi
 .. _class_RayCast_set_collision_mask_bit:
 
 - void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
+
+Sets the bit index passed to the ``value`` passed. Note that bit indexes range from 0-19.
 
 

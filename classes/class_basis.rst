@@ -60,15 +60,15 @@ Member Variables
 
   .. _class_Basis_x:
 
-- :ref:`Vector3<class_vector3>` **x**
+- :ref:`Vector3<class_vector3>` **x** - The basis matrix's x vector.
 
   .. _class_Basis_y:
 
-- :ref:`Vector3<class_vector3>` **y**
+- :ref:`Vector3<class_vector3>` **y** - The basis matrix's y vector.
 
   .. _class_Basis_z:
 
-- :ref:`Vector3<class_vector3>` **z**
+- :ref:`Vector3<class_vector3>` **z** - The basis matrix's z vector.
 
 
 Description

@@ -69,6 +69,8 @@ Member Function Description
 
 - :ref:`Node<class_node>` **get_custom_viewport** **(** **)** const
 
+Returns the :ref:`Viewport<class_viewport>` used by the camera if it is not using the default viewport.
+
 .. _class_CanvasLayer_get_rotation:
 
 - :ref:`float<class_float>` **get_rotation** **(** **)** const
@@ -90,6 +92,8 @@ Return the :ref:`World2D<class_world2d>` used by this layer.
 .. _class_CanvasLayer_set_custom_viewport:
 
 - void **set_custom_viewport** **(** :ref:`Node<class_node>` viewport **)**
+
+Assigns a custom :ref:`Viewport<class_viewport>` node to the ``CanvasLayer``. If ``viewport`` is not a :ref:`Viewport<class_viewport>`, it re-assigns the default viewport instead.
 
 .. _class_CanvasLayer_set_rotation:
 

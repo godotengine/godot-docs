@@ -54,13 +54,7 @@ Member Functions
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`disconnect_nodes<class_AnimationTreePlayer_disconnect_nodes>` **(** :ref:`String<class_string>` id, :ref:`int<class_int>` dst_input_idx **)**                                                                         |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_nodepath>`                | :ref:`get_base_path<class_AnimationTreePlayer_get_base_path>` **(** **)** const                                                                                                                                             |
-+------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_nodepath>`                | :ref:`get_master_player<class_AnimationTreePlayer_get_master_player>` **(** **)** const                                                                                                                                     |
-+------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_node_list<class_AnimationTreePlayer_get_node_list>` **(** **)**                                                                                                                                                   |
-+------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`is_active<class_AnimationTreePlayer_is_active>` **(** **)** const                                                                                                                                                     |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`mix_node_get_amount<class_AnimationTreePlayer_mix_node_get_amount>` **(** :ref:`String<class_string>` id **)** const                                                                                                  |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -114,12 +108,6 @@ Member Functions
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`reset<class_AnimationTreePlayer_reset>` **(** **)**                                                                                                                                                                   |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_active<class_AnimationTreePlayer_set_active>` **(** :ref:`bool<class_bool>` enabled **)**                                                                                                                         |
-+------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_base_path<class_AnimationTreePlayer_set_base_path>` **(** :ref:`NodePath<class_nodepath>` path **)**                                                                                                              |
-+------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_master_player<class_AnimationTreePlayer_set_master_player>` **(** :ref:`NodePath<class_nodepath>` nodepath **)**                                                                                                  |
-+------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`timescale_node_get_scale<class_AnimationTreePlayer_timescale_node_get_scale>` **(** :ref:`String<class_string>` id **)** const                                                                                        |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`timescale_node_set_scale<class_AnimationTreePlayer_timescale_node_set_scale>` **(** :ref:`String<class_string>` id, :ref:`float<class_float>` scale **)**                                                             |
@@ -148,9 +136,21 @@ Member Functions
 Member Variables
 ----------------
 
+  .. _class_AnimationTreePlayer_active:
+
+- :ref:`bool<class_bool>` **active** - If ``true`` the ``AnimationTreePlayer`` is able to play animations. Default value: ``false``.
+
+  .. _class_AnimationTreePlayer_base_path:
+
+- :ref:`NodePath<class_nodepath>` **base_path** - The node from which to relatively access other nodes. Default value: ``".."``.
+
+  .. _class_AnimationTreePlayer_master_player:
+
+- :ref:`NodePath<class_nodepath>` **master_player** - The path to the :ref:`AnimationPlayer<class_animationplayer>` from which this ``AnimationTreePlayer`` binds animations to animation nodes.
+
   .. _class_AnimationTreePlayer_playback_process_mode:
 
-- :ref:`int<class_int>` **playback_process_mode**
+- :ref:`int<class_int>` **playback_process_mode** - The thread in which to update animations. Default value: enum ANIMATION_PROCESS_IDLE.
 
 
 Numeric Constants
@@ -166,13 +166,13 @@ Numeric Constants
 - **NODE_TIMESCALE** = **7** --- TimeScale node.
 - **NODE_TIMESEEK** = **8** --- TimeSeek node.
 - **NODE_TRANSITION** = **9** --- Transition node.
-- **ANIMATION_PROCESS_PHYSICS** = **0**
-- **ANIMATION_PROCESS_IDLE** = **1**
+- **ANIMATION_PROCESS_PHYSICS** = **0** --- Process animation during the physics process. This is especially useful when animating physics bodies.
+- **ANIMATION_PROCESS_IDLE** = **1** --- Process animation during the idle process.
 
 Description
 -----------
 
-Animation Player that uses a node graph for the blending. This kind of player is very useful when animating character or other skeleton based rigs, because it can combine several animations to form a desired pose.
+A node graph tool for blending multiple animations bound to an :ref:`AnimationPlayer<class_animationplayer>`. Especially useful for animating characters or other skeleton-based rigs. It can combine several animations to form a desired pose.
 
 Member Function Description
 ---------------------------
@@ -181,35 +181,43 @@ Member Function Description
 
 - void **add_node** **(** :ref:`int<class_int>` type, :ref:`String<class_string>` id **)**
 
-Add a node of a given type in the graph with given id.
+Adds a ``type`` node to the graph with name ``id``.
 
 .. _class_AnimationTreePlayer_advance:
 
 - void **advance** **(** :ref:`float<class_float>` delta **)**
 
+Shifts position in the animation timeline. Delta is the time in seconds to shift.
+
 .. _class_AnimationTreePlayer_animation_node_get_animation:
 
 - :ref:`Animation<class_animation>` **animation_node_get_animation** **(** :ref:`String<class_string>` id **)** const
 
-Returns an animation given its name.
+Returns the :ref:`AnimationPlayer<class_animationplayer>`'s animation bound to the ``AnimationTreePlayer``'s animation node with name ``id``.
 
 .. _class_AnimationTreePlayer_animation_node_get_master_animation:
 
 - :ref:`String<class_string>` **animation_node_get_master_animation** **(** :ref:`String<class_string>` id **)** const
 
+Returns the name of the :ref:`master_player<class_AnimationTreePlayer_master_player>`'s animation bound to this animation node.
+
 .. _class_AnimationTreePlayer_animation_node_set_animation:
 
 - void **animation_node_set_animation** **(** :ref:`String<class_string>` id, :ref:`Animation<class_animation>` animation **)**
 
-Set the animation for an animation node.
+Binds a new animation from the :ref:`master_player<class_AnimationTreePlayer_master_player>` to the ``AnimationTreePlayer``'s animation node with name ``id``.
 
 .. _class_AnimationTreePlayer_animation_node_set_filter_path:
 
 - void **animation_node_set_filter_path** **(** :ref:`String<class_string>` id, :ref:`NodePath<class_nodepath>` path, :ref:`bool<class_bool>` enable **)**
 
+If ``enable`` is ``true``, the animation node with ID ``id`` turns off the track modifying the property at ``path``. The modified node's children continue to animate.
+
 .. _class_AnimationTreePlayer_animation_node_set_master_animation:
 
 - void **animation_node_set_master_animation** **(** :ref:`String<class_string>` id, :ref:`String<class_string>` source **)**
+
+Binds the animation named ``source`` from :ref:`master_player<class_AnimationTreePlayer_master_player>` to the animation node ``id``. Recalculates caches.
 
 .. _class_AnimationTreePlayer_are_nodes_connected:
 
@@ -232,6 +240,8 @@ Sets the blend amount of a Blend2 node given its name and value.
 .. _class_AnimationTreePlayer_blend2_node_set_filter_path:
 
 - void **blend2_node_set_filter_path** **(** :ref:`String<class_string>` id, :ref:`NodePath<class_nodepath>` path, :ref:`bool<class_bool>` enable **)**
+
+If ``enable`` is ``true``, the blend2 node with ID ``id`` turns off the track modifying the property at ``path``. The modified node's children continue to animate.
 
 .. _class_AnimationTreePlayer_blend3_node_get_amount:
 
@@ -269,25 +279,11 @@ Connects node ``id`` to ``dst_id`` at the specified input slot.
 
 Disconnects nodes connected to ``id`` at the specified input slot.
 
-.. _class_AnimationTreePlayer_get_base_path:
-
-- :ref:`NodePath<class_nodepath>` **get_base_path** **(** **)** const
-
-.. _class_AnimationTreePlayer_get_master_player:
-
-- :ref:`NodePath<class_nodepath>` **get_master_player** **(** **)** const
-
 .. _class_AnimationTreePlayer_get_node_list:
 
 - :ref:`PoolStringArray<class_poolstringarray>` **get_node_list** **(** **)**
 
 Returns a PoolStringArray containing the name of all nodes.
-
-.. _class_AnimationTreePlayer_is_active:
-
-- :ref:`bool<class_bool>` **is_active** **(** **)** const
-
-Returns whether this AnimationTreePlayer is active.
 
 .. _class_AnimationTreePlayer_mix_node_get_amount:
 
@@ -413,6 +409,8 @@ Sets fade out time of a OneShot node given its name and value in seconds.
 
 - void **oneshot_node_set_filter_path** **(** :ref:`String<class_string>` id, :ref:`NodePath<class_nodepath>` path, :ref:`bool<class_bool>` enable **)**
 
+If ``enable`` is ``true``, the oneshot node with ID ``id`` turns off the track modifying the property at ``path``. The modified node's children continue to animate.
+
 .. _class_AnimationTreePlayer_oneshot_node_start:
 
 - void **oneshot_node_start** **(** :ref:`String<class_string>` id **)**
@@ -423,15 +421,19 @@ Starts a OneShot node given its name.
 
 - void **oneshot_node_stop** **(** :ref:`String<class_string>` id **)**
 
-Stops a OneShot node given its name.
+Stops the OneShot node with name ``id``.
 
 .. _class_AnimationTreePlayer_recompute_caches:
 
 - void **recompute_caches** **(** **)**
 
+Manually recalculates the cache of track information generated from animation nodes. Needed when external sources modify the animation nodes' state.
+
 .. _class_AnimationTreePlayer_remove_node:
 
 - void **remove_node** **(** :ref:`String<class_string>` id **)**
+
+Removes the animation node with name ``id``.
 
 .. _class_AnimationTreePlayer_reset:
 
@@ -439,74 +441,76 @@ Stops a OneShot node given its name.
 
 Resets this AnimationTreePlayer.
 
-.. _class_AnimationTreePlayer_set_active:
-
-- void **set_active** **(** :ref:`bool<class_bool>` enabled **)**
-
-Sets whether this AnimationTreePlayer is active. AnimationTreePlayer will start processing if set to active.
-
-.. _class_AnimationTreePlayer_set_base_path:
-
-- void **set_base_path** **(** :ref:`NodePath<class_nodepath>` path **)**
-
-Sets base path of this AnimationTreePlayer.
-
-.. _class_AnimationTreePlayer_set_master_player:
-
-- void **set_master_player** **(** :ref:`NodePath<class_nodepath>` nodepath **)**
-
 .. _class_AnimationTreePlayer_timescale_node_get_scale:
 
 - :ref:`float<class_float>` **timescale_node_get_scale** **(** :ref:`String<class_string>` id **)** const
 
-Returns time scale value of a TimeScale node given its name.
+Returns time scale value of the TimeScale node with name ``id``.
 
 .. _class_AnimationTreePlayer_timescale_node_set_scale:
 
 - void **timescale_node_set_scale** **(** :ref:`String<class_string>` id, :ref:`float<class_float>` scale **)**
 
-Sets time scale value of a TimeScale node given its name and value.
+Sets the time scale of the TimeScale node with name ``id`` to ``scale``.
 
 .. _class_AnimationTreePlayer_timeseek_node_seek:
 
 - void **timeseek_node_seek** **(** :ref:`String<class_string>` id, :ref:`float<class_float>` seconds **)**
 
-Sets time seek value of a TimeSeek node given its name and value.
+Sets the time seek value of the TimeSeek node with name ``id`` to ``seconds``
 
 .. _class_AnimationTreePlayer_transition_node_delete_input:
 
 - void **transition_node_delete_input** **(** :ref:`String<class_string>` id, :ref:`int<class_int>` input_idx **)**
 
+Deletes the input at ``input_idx`` for the transition node with name ``id``.
+
 .. _class_AnimationTreePlayer_transition_node_get_current:
 
 - :ref:`int<class_int>` **transition_node_get_current** **(** :ref:`String<class_string>` id **)** const
+
+Returns the index of the currently evaluated input for the transition node with name ``id``.
 
 .. _class_AnimationTreePlayer_transition_node_get_input_count:
 
 - :ref:`int<class_int>` **transition_node_get_input_count** **(** :ref:`String<class_string>` id **)** const
 
+Returns the number of inputs for the transition node with name ``id``.
+
 .. _class_AnimationTreePlayer_transition_node_get_xfade_time:
 
 - :ref:`float<class_float>` **transition_node_get_xfade_time** **(** :ref:`String<class_string>` id **)** const
+
+Returns the cross fade time for the transition node with name ``id``.
 
 .. _class_AnimationTreePlayer_transition_node_has_input_auto_advance:
 
 - :ref:`bool<class_bool>` **transition_node_has_input_auto_advance** **(** :ref:`String<class_string>` id, :ref:`int<class_int>` input_idx **)** const
 
+Returns ``true`` if the input at ``input_idx`` on transition node with name ``id`` is set to automatically advance to the next input upon completion.
+
 .. _class_AnimationTreePlayer_transition_node_set_current:
 
 - void **transition_node_set_current** **(** :ref:`String<class_string>` id, :ref:`int<class_int>` input_idx **)**
+
+The transition node with name ``id`` sets its current input at ``input_idx``.
 
 .. _class_AnimationTreePlayer_transition_node_set_input_auto_advance:
 
 - void **transition_node_set_input_auto_advance** **(** :ref:`String<class_string>` id, :ref:`int<class_int>` input_idx, :ref:`bool<class_bool>` enable **)**
 
+The transition node with name ``id`` advances to its next input automatically when the input at ``input_idx`` completes.
+
 .. _class_AnimationTreePlayer_transition_node_set_input_count:
 
 - void **transition_node_set_input_count** **(** :ref:`String<class_string>` id, :ref:`int<class_int>` count **)**
 
+Resizes the number of inputs available for the transition node with name ``id``.
+
 .. _class_AnimationTreePlayer_transition_node_set_xfade_time:
 
 - void **transition_node_set_xfade_time** **(** :ref:`String<class_string>` id, :ref:`float<class_float>` time_sec **)**
+
+The transition node with name ``id`` sets its cross fade time to ``time_sec``.
 
 

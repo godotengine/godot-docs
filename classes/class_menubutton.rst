@@ -33,14 +33,6 @@ Signals
 Emitted when :ref:`PopupMenu<class_popupmenu>` of this MenuButton is about to show.
 
 
-Member Variables
-----------------
-
-  .. _class_MenuButton_items:
-
-- :ref:`Array<class_array>` **items**
-
-
 Description
 -----------
 

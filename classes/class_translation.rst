@@ -40,10 +40,6 @@ Member Variables
 
 - :ref:`String<class_string>` **locale**
 
-  .. _class_Translation_messages:
-
-- :ref:`PoolStringArray<class_poolstringarray>` **messages**
-
 
 Description
 -----------

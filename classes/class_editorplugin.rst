@@ -32,6 +32,8 @@ Member Functions
 +------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`add_import_plugin<class_EditorPlugin_add_import_plugin>` **(** :ref:`EditorImportPlugin<class_editorimportplugin>` importer **)**                                                                           |
 +------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                 | :ref:`add_scene_import_plugin<class_EditorPlugin_add_scene_import_plugin>` **(** :ref:`EditorSceneImporter<class_editorsceneimporter>` scene_importer **)**                                                       |
++------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`add_tool_submenu_item<class_EditorPlugin_add_tool_submenu_item>` **(** :ref:`String<class_string>` name, :ref:`Object<class_object>` submenu **)**                                                          |
 +------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`apply_changes<class_EditorPlugin_apply_changes>` **(** **)** virtual                                                                                                                                        |
@@ -53,6 +55,8 @@ Member Functions
 | :ref:`PoolStringArray<class_poolstringarray>`        | :ref:`get_breakpoints<class_EditorPlugin_get_breakpoints>` **(** **)** virtual                                                                                                                                    |
 +------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`EditorInterface<class_editorinterface>`        | :ref:`get_editor_interface<class_EditorPlugin_get_editor_interface>` **(** **)**                                                                                                                                  |
++------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_object>`                          | :ref:`get_plugin_icon<class_EditorPlugin_get_plugin_icon>` **(** **)** virtual                                                                                                                                    |
 +------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                          | :ref:`get_plugin_name<class_EditorPlugin_get_plugin_name>` **(** **)** virtual                                                                                                                                    |
 +------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -83,6 +87,8 @@ Member Functions
 | void                                                 | :ref:`remove_export_plugin<class_EditorPlugin_remove_export_plugin>` **(** :ref:`EditorExportPlugin<class_editorexportplugin>` exporter **)**                                                                     |
 +------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`remove_import_plugin<class_EditorPlugin_remove_import_plugin>` **(** :ref:`EditorImportPlugin<class_editorimportplugin>` importer **)**                                                                     |
++------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                 | :ref:`remove_scene_import_plugin<class_EditorPlugin_remove_scene_import_plugin>` **(** :ref:`EditorSceneImporter<class_editorsceneimporter>` scene_importer **)**                                                 |
 +------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`save_external_data<class_EditorPlugin_save_external_data>` **(** **)** virtual                                                                                                                              |
 +------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -194,6 +200,10 @@ During run-time, this will be a simple object with a script so this function doe
 
 - void **add_import_plugin** **(** :ref:`EditorImportPlugin<class_editorimportplugin>` importer **)**
 
+.. _class_EditorPlugin_add_scene_import_plugin:
+
+- void **add_scene_import_plugin** **(** :ref:`EditorSceneImporter<class_editorsceneimporter>` scene_importer **)**
+
 .. _class_EditorPlugin_add_tool_submenu_item:
 
 - void **add_tool_submenu_item** **(** :ref:`String<class_string>` name, :ref:`Object<class_object>` submenu **)**
@@ -253,6 +263,10 @@ This is for editors that edit script based objects. You can return a list of bre
 .. _class_EditorPlugin_get_editor_interface:
 
 - :ref:`EditorInterface<class_editorinterface>` **get_editor_interface** **(** **)**
+
+.. _class_EditorPlugin_get_plugin_icon:
+
+- :ref:`Object<class_object>` **get_plugin_icon** **(** **)** virtual
 
 .. _class_EditorPlugin_get_plugin_name:
 
@@ -335,6 +349,10 @@ Remove a custom type added by :ref:`EditorPlugin.add_custom_type<class_EditorPlu
 .. _class_EditorPlugin_remove_import_plugin:
 
 - void **remove_import_plugin** **(** :ref:`EditorImportPlugin<class_editorimportplugin>` importer **)**
+
+.. _class_EditorPlugin_remove_scene_import_plugin:
+
+- void **remove_scene_import_plugin** **(** :ref:`EditorSceneImporter<class_editorsceneimporter>` scene_importer **)**
 
 .. _class_EditorPlugin_save_external_data:
 

@@ -24,6 +24,8 @@ Member Functions
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`clear<class_Animation_clear>` **(** **)**                                                                                                                                                                                                                    |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`copy_track<class_Animation_copy_track>` **(** :ref:`int<class_int>` track, :ref:`Animation<class_animation>` to_animation **)**                                                                                                                              |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                    | :ref:`find_track<class_Animation_find_track>` **(** :ref:`NodePath<class_nodepath>` path **)** const                                                                                                                                                               |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                | :ref:`get_length<class_Animation_get_length>` **(** **)** const                                                                                                                                                                                                    |
@@ -68,6 +70,8 @@ Member Functions
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`track_insert_key<class_Animation_track_insert_key>` **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` time, :ref:`Variant<class_variant>` key, :ref:`float<class_float>` transition=1 **)**                                                         |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`track_is_enabled<class_Animation_track_is_enabled>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                                              |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                  | :ref:`track_is_imported<class_Animation_track_is_imported>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                                            |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`track_move_down<class_Animation_track_move_down>` **(** :ref:`int<class_int>` idx **)**                                                                                                                                                                      |
@@ -77,6 +81,8 @@ Member Functions
 | void                                     | :ref:`track_remove_key<class_Animation_track_remove_key>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx **)**                                                                                                                                     |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`track_remove_key_at_position<class_Animation_track_remove_key_at_position>` **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` position **)**                                                                                                        |
++------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`track_set_enabled<class_Animation_track_set_enabled>` **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enabled **)**                                                                                                                                 |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`track_set_imported<class_Animation_track_set_imported>` **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` imported **)**                                                                                                                              |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -135,6 +141,10 @@ Add a track to the Animation. The track type must be specified as any of the val
 - void **clear** **(** **)**
 
 Clear the animation (clear all tracks and reset all).
+
+.. _class_Animation_copy_track:
+
+- void **copy_track** **(** :ref:`int<class_int>` track, :ref:`Animation<class_animation>` to_animation **)**
 
 .. _class_Animation_find_track:
 
@@ -218,6 +228,8 @@ Find the key index by time in a given track. Optionally, only find it if the exa
 
 - :ref:`bool<class_bool>` **track_get_interpolation_loop_wrap** **(** :ref:`int<class_int>` idx **)** const
 
+Returns ``true`` if the track at ``idx`` wraps the interpolation loop. Default value: ``true``.
+
 .. _class_Animation_track_get_interpolation_type:
 
 - :ref:`int<class_int>` **track_get_interpolation_type** **(** :ref:`int<class_int>` idx **)** const
@@ -266,6 +278,10 @@ Get the type of a track.
 
 Insert a generic key in a given track.
 
+.. _class_Animation_track_is_enabled:
+
+- :ref:`bool<class_bool>` **track_is_enabled** **(** :ref:`int<class_int>` idx **)** const
+
 .. _class_Animation_track_is_imported:
 
 - :ref:`bool<class_bool>` **track_is_imported** **(** :ref:`int<class_int>` idx **)** const
@@ -296,6 +312,10 @@ Remove a key by index in a given track.
 
 Remove a key by position (seconds) in a given track.
 
+.. _class_Animation_track_set_enabled:
+
+- void **track_set_enabled** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enabled **)**
+
 .. _class_Animation_track_set_imported:
 
 - void **track_set_imported** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` imported **)**
@@ -305,6 +325,8 @@ Set the given track as imported or not.
 .. _class_Animation_track_set_interpolation_loop_wrap:
 
 - void **track_set_interpolation_loop_wrap** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` interpolation **)**
+
+If ``true`` the track at ``idx`` wraps the interpolation loop.
 
 .. _class_Animation_track_set_interpolation_type:
 

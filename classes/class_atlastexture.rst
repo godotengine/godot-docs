@@ -25,7 +25,7 @@ Member Variables
 
   .. _class_AtlasTexture_filter_clip:
 
-- :ref:`bool<class_bool>` **filter_clip**
+- :ref:`bool<class_bool>` **filter_clip** - If ``true`` clips the area outside of the region to avoid bleeding of the surrounding texture pixels.
 
   .. _class_AtlasTexture_margin:
 
