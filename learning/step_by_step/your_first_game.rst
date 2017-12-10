@@ -231,8 +231,8 @@ and use ``clamp()`` to prevent it from leaving the screen:
 ::
 
         position += velocity * delta
-        position.x = clamp(position.x, 0, screensize.x)
-        position.y = clamp(position.y, 0, screensize.y)
+        position.x = clamp(position.x, 0, screensize.size.x)
+        position.y = clamp(position.y, 0, screensize.size.y)
 
 
 .. tip:: *Clamping* a value means restricting it to a given minimum/maximum range.
