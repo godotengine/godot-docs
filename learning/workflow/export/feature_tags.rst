@@ -11,7 +11,7 @@ as a string, and it can refer to many of the following:
 
 * Platform name.
 * Platform bits (64/32).
-* Platform type (dekstop/mobile).
+* Platform type (desktop/mobile).
 * Supported texture compression in platform.
 * Whether a build is debug or release.
 * Many more things.
