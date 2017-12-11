@@ -1,10 +1,7 @@
 .. _doc_what_is_visual_script:
 
-Visual Scripting
-================
-
-Introduction
-------------
+What is Visual Scripting
+========================
 
 Visual Scripting is a tool designed to make the entry barrier to programming
 much lower. As code is more visual, it needs less abstract thinking to be

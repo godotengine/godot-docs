@@ -1,10 +1,7 @@
 .. _doc_nodes_purposes_visual_script:
 
-Visual Scripting
-================
-
 Nodes and Terminology
-----------------------
+=====================
 
 Before continuing, it must be noted that the *Node* terminology needs to be used with care. 
 When referring to *Visual Script Nodes* (or generally *Nodes*) this text will refer to the little boxes you connect with lines, which are part of a graph.
