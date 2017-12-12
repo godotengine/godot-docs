@@ -174,10 +174,9 @@ else.
 
 -  **32**: Build binaries for 32 bits platform.
 -  **64**: Build binaries for 64 bits platform.
--  **default**: Built whatever the build system feels is best. On Linux
-   this depends on the host platform (if not cross compiling), while on
-   Windows and Mac it defaults to produce 32 bits binaries unless 64
-   bits is specified.
+-  **default**: Build whatever the build system feels is best. On Linux
+   this depends on the host platform (if not cross compiling),
+   on Mac it defaults to 64 bits and on Windows it defaults to 32 bits.
 
 ::
 
