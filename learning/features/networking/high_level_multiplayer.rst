@@ -6,11 +6,12 @@ High level multiplayer
 High level vs low level API
 ---------------------------
 
-Godot always supported standard low-level networking via UDP, TCP and some higher level protocols such as SSL and HTTP.
-These protocols are flexible and can be used for (almost) anything. However for games (unless you are working
-with a custom server) using them to synchronize game state manually can be a large amount of work.
+The following explains the differences of high- and low-level networking in Godot as well as some fundamentals. If you want to jump in head-first and add networking to your first nodes, skip to `Initializing the network`_ below. But make sure to read the rest later on!
 
-This is due to the inherent limitations of the protocols:
+Godot always supported standard low-level networking via UDP, TCP and some higher level protocols such as SSL and HTTP.
+These protocols are flexible and can be used for almost anything. However using them to synchronize game state manually can be a large amount of work. Sometimes that work can't be avoided or is worth it, for example when working with a custom server implementation on the backend. But in most cases it's worthwhile to consider Godot's high-level networking API, which sacrifices some of the fine-grained control of low-level networking for greater ease of use.
+
+This is due to the inherent limitations of the low-level protocols:
 
 - TCP ensures packets will always arrive reliably and in order, but latency is generally higher due to error correction.
   It's also quite a complex protocol because it understands what a "connection" is, and optimizes for goals that often don't suit applications like multiplayer games. Packets are buffered to be sent in larger batches, trading less per-packet overhead for higher latency. This can be useful for things like HTTP, but generally not for games. Some of this can be configured and disabled (e.g. by disabling "Nagle's algorithm" for the TCP connection).
@@ -24,11 +25,19 @@ Because of the large difference in performance it often makes sense to re-build 
 
 In summary you can use the low-level networking API for maximum control and implement everything on top of bare network protocols or use the high-level API based on :ref:`SceneTree <class_SceneTree>` that does most of the heavy lifting behind the scenes in a generally optimized way.
 
+.. note:: Most of Godot's supported platforms offer all or most of the mentioned high- and low-level networking
+	  features. As networking is always largely hardware and operating system dependant, however,
+	  some features may change or not be available on some target platforms. Most notably,
+	  the HTML5 platform currently only offers WebSocket support and lacks some of the higher level features as
+	  well as raw access to low-level protocols like TCP and UDP.
+
 .. note:: More about TCP/IP, UDP, and networking:
 	  https://gafferongames.com/post/udp_vs_tcp/
-          Gaffer On Games has a lot of useful articles about networking in Games (https://gafferongames.com/tags/networking),
-	  including the widely referenced one on networking models in games:
-	  https://gafferongames.com/post/what_every_programmer_needs_to_know_about_game_networking/
+	  
+	  Gaffer On Games has a lot of useful articles about networking in Games
+	  (`here <https://gafferongames.com/tags/networking>`__), including the comprehensive
+	  `introduction to networking models in games <https://gafferongames.com/post/what_every_programmer_needs_to_know_about_game_networking/>`__.
+	  
 	  If you want to use your low-level networking library of choice instead of Godot's built-in networking,
 	  see here for an example:
 	  https://github.com/PerduGames/gdnet3
@@ -265,7 +274,7 @@ every peer and RPC will work great! Here is an example:
 
     remote func pre_configure_game():
     	var selfPeerID = get_tree().get_network_unique_id()
-	
+
         # Load world
         var world = load(which_level).instance()
         get_node("/root").add_child(world)
@@ -284,7 +293,7 @@ every peer and RPC will work great! Here is an example:
 
         # Tell server (remember, server is always ID=1) that this peer is done pre-configuring
         rpc_id(1, "done_preconfiguring", selfPeerID)
-	
+
 
 .. note:: Depending on when you execute pre_configure_game() you may need to change any calls to ``add_child()``
           to be deferred via ``call_deferred()`` as the SceneTree is locked while the scene is being created (e.g. when ``_ready()`` is being called).
@@ -316,7 +325,7 @@ When the server gets the OK from all the peers, it can tell them to start, as fo
 
         if (players_done.size() == player_info.size()):
             rpc("post_configure_game")
-		
+
     remote func post_configure_game():
         get_tree().set_pause(false)
         # Game starts now!
