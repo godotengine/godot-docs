@@ -13,7 +13,7 @@ textures, audios, scenes, etc.
 
 In Godot 3.0, we use a more modern approach to importing: Simply drop
 your assets (image files, scenes, audios, fonts, etc) directly in the
-project folder (copy them manually with your OS file exporer). 
+project folder (copy them manually with your OS file exporer).
 Godot will automatically import these files internally
 and keep the imported resources hidden in a res://.import folder.
 
@@ -38,8 +38,9 @@ exposed parameters will apply to all of them when reimporting.
 Automatic reimport
 ------------------
 
-When the source asset changes, Godot will perform and automatic reimport
-of it, applying the preset configured for that specific asset.
+When the MD5 checksum of the source asset changes, Godot will perform an
+automatic reimport of it, applying the preset configured for that specific
+asset.
 
 Files generated
 -----------------
@@ -54,15 +55,15 @@ Additionally, extra assets will be presset in the hidden res://.import folder:
 .. image:: img/asset_workflow5.png
 
 If any of the files present in this folder is erased (or the whole folder), the
-asset or asssets will be reimported automatically. As such, Commiting this folder 
+asset or asssets will be reimported automatically. As such, Commiting this folder
 to the version control system is optional. It can save time on
-reimporting time when checking out in another computer, but it takes considerably 
+reimporting time when checking out in another computer, but it takes considerably
 more space and transfer time. Pick your poison!
 
 Changing import resource type
 -----------------------------
 
-Some source assets can be imported as different types of resources. 
+Some source assets can be imported as different types of resources.
 For this, just select the relevant type of resource desired and
 press "Reimport":
 
@@ -83,10 +84,7 @@ Simplicity is key!
 ------------------
 
 This is a very simple workflow which should take very little time to get used to. It also enforces a more
-correct way to deal with resources. 
+correct way to deal with resources.
 
 There are many types of assets available for import, so please continue reading to understand how to work
 with all of them!
-
-
-
