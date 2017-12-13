@@ -551,8 +551,9 @@ Note that a new instance must be added to the scene using
         # create a Mob instance and add it to the scene
         var mob = Mob.instance()
         add_child(mob)
-        # choose a direction and position
-        var direction = $MobPath/MobSpawnLocation.rotation
+        # set the mob's direction perpendicular to the path direction
+        var direction = $MobPath/MobSpawnLocation.rotation + PI/2
+        # set the mob's position to the random location
         mob.position = $MobPath/MobSpawnLocation.position
         # add some randomness to the direction
         direction += rand_range(-PI/4, PI/4)
