@@ -1,7 +1,7 @@
 .. _doc_compiling_for_osx:
 
-Compiling for OSX
-=================
+Compiling for macOS
+===================
 
 .. highlight:: shell
 
@@ -14,6 +14,7 @@ required:
 -  Python 2.7+ (3.0 is untested as of now)
 -  SCons build system
 -  Xcode (or the more lightweight Command Line Tools for Xcode)
+-  clang-5.0 or clang-devel port from MacPorts (optional, required for OpenMP support)
 
 Compiling
 ---------
@@ -40,6 +41,44 @@ built with `scons p=osx target=release_debug`:
     user@host:~/godot$ mkdir -p Godot.app/Contents/MacOS
     user@host:~/godot$ cp bin/godot.osx.opt.tools.fat Godot.app/Contents/MacOS/Godot
     user@host:~/godot$ chmod +x Godot.app/Contents/MacOS/Godot
+
+Compiling with OpenMP support
+-----------------------------
+
+Follow the directions to install MacPorts: <https://www.macports.org/install.php>
+
+Start a terminal, and install clang-5.0 (stable version) or clang-devel (latest version)
+port and dependencies:
+
+::
+
+    user@host:~/godot$ sudo port install clang-5.0
+
+Now you can compile with `macports_clang={version}` added to the SCons arguments:
+
+::
+
+    user@host:~/godot$ scons platform=osx macports_clang=5.0
+
+Resulting binary executable is dynamically linked against LLVM OpenMP Runtime (``/opt/local/lib/libomp/libomp.dylib``).
+
+To create relocatable .app bundle use "dylibbundler" program available from MacPorts.
+
+Install dylibbundler port:
+
+::
+
+    user@host:~/godot$ sudo port install dylibbundler
+
+Build an .app bundle:
+
+::
+
+    user@host:~/godot$ cp -r misc/dist/osx_tools.app ./Godot.app
+    user@host:~/godot$ mkdir -p Godot.app/Contents/MacOS
+    user@host:~/godot$ cp bin/godot.osx.tools.64 Godot.app/Contents/MacOS/Godot
+    user@host:~/godot$ chmod +x Godot.app/Contents/MacOS/Godot
+    user@host:~/godot$ dylibbundler -od -b -x Godot.app/Contents/MacOS/Godot -d Godot.app/Contents/libs/
 
 Cross-compiling
 ---------------
