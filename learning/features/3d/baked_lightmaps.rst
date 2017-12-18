@@ -9,14 +9,14 @@ Introduction
 Baked lightmaps are an alternative workflow for adding indirect (or baked) lighting to a scene. Unlike the :ref:`doc_gi_probes` approach,
 baked lightmaps work fine on very low end PCs and mobile as they consume almost no resources in run-time.
 
-Unlike GIProbes, Baked Lightmaps are completely static, one baked they can't be modified at all. They also don't provide the scene with
+Unlike GIProbes, Baked Lightmaps are completely static, once baked they can't be modified at all. They also don't provide the scene with
 reflections, so using :ref:`doc_reflection_probes` together with it on interiors (or using a Sky on exteriors) is a requirement to
 get good quality.
 
 As they are baked, they have less problems regarding to light bleeding than GIProbe and indirect light can look better if using Raytrace
 mode on high quality setting (but baking can take a while to bake).
 
-In the end, deciding whith indirect lighting approach is better depends on your use case. In general GIProbe looks better and is much
+In the end, deciding which indirect lighting approach is better depends on your use case. In general GIProbe looks better and is much
 easier to set upt. For low end compatibility or mobile, though, Baked Lightmaps are your only choice.
 
 Visual Comparison
@@ -82,7 +82,7 @@ are wildly different, more than half or twice), this will result in inefficient 
 Checking UV2
 ~~~~~~~~~~~~
 
-In the mesh menu mentioned before, the UV2 texture coordinates can be visualized. Make sure, if something is failing, to check that the meshes have theese UV2 coordinates:
+In the mesh menu mentioned before, the UV2 texture coordinates can be visualized. Make sure, if something is failing, to check that the meshes have these UV2 coordinates:
 
 .. image:: img/baked_light_uvchannel.png
 
@@ -133,7 +133,7 @@ Baking Quality
 ~~~~~~~~~~~~~~
 
 BakedLightmap uses, for simplicity, a voxelized version of the scene to compute lighting. Voxel size can be adjusted with the **Bake Subdiv** parameter. 
-More subdvision results in more detail, but also takes more time to bake.
+More subdivision results in more detail, but also takes more time to bake.
 
 In general, the defaults are good enough. There is also a **Capture Subdivision** (that must always be equal or less to the main subdivision), which is used
 for capturing light in dynamic objects (more on that later). It's default value is also good enough for more cases.
