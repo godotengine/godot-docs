@@ -67,12 +67,18 @@ method suffices (described in :ref:`doc_scene_tree`), so this method is for
 more complex behavior when switching between scenes.
 
 First download the template from here:
-:download:`autoload.zip <files/autoload.zip>`, then open it.
+:download:`singletons_autoload.zip <files/singletons_autoload.zip>`, then unzip it.
 
+There are two projects within the "Singletons_AutoLoad_Example" directory.
+"Singletons_AutoLoad-Start" is the base project you should import to begin.
+"Singletons_AutoLoad-End" is the final project you can view for reference.
+
+In "Singletons_AutoLoad-Start"...
 Two scenes are present, scene_a.tscn and scene_b.tscn on an otherwise
 empty project. Each are identical and contain a button connected to a
-callback for switching to the other scene. When the project runs, it
-starts in scene_a.tscn. However, this currently does nothing and pressing the
+callback for switching to the other scene as well as a Label to provide visual feedback
+on what scene you are on. When the project runs, it starts in scene_a.tscn.
+However, this currently does nothing and pressing the
 button does not work.
 
 global.gd
@@ -82,6 +88,10 @@ First of all, create a global.gd script. The easy way to create a
 resource from scratch is from the new resource button in the inspector tab:
 
 .. image:: img/newscript.png
+
+Select "GDScript" and hit "Create".
+
+.. image:: img/createscript.png
 
 Save the script as `global.gd`:
 
@@ -93,6 +103,10 @@ switch to the AutoLoad tab and add a new entry with name "global" that
 points to this file:
 
 .. image:: img/addglobal.png
+
+To add the resource, You can navigate to the file, select it, then hit the "Add" button.
+
+.. image:: img/actuallyhittheaddbutton.png
 
 Now, whenever you run any of your scenes, the script is always loaded.
 
@@ -111,8 +125,9 @@ loaded!
     var current_scene = null
 
     func _ready():
-            var root = get_tree().get_root()
-            current_scene = root.get_child( root.get_child_count() -1 )
+      var root = get_tree().get_root()
+      current_scene = root.get_child(root.get_child_count() - 1)
+      pass
 
 Next up is the function for changing the scene. This function frees the
 current scene and replaces it with the requested one.
@@ -120,36 +135,29 @@ current scene and replaces it with the requested one.
 ::
 
     func goto_scene(path):
-
-        # This function will usually be called from a signal callback,
-        # or some other function from the running scene.
-        # Deleting the current scene at this point might be
-        # a bad idea, because it may be inside of a callback or function of it.
-        # The worst case will be a crash or unexpected behavior.
-
-        # The way around this is deferring the load to a later time, when
-        # it is ensured that no code from the current scene is running:
-
-        call_deferred("_deferred_goto_scene",path)
-
+      # This function will usually be called from a signal callback,
+      # or some other function from the running scene.
+      # Deleting the current scene at this point might be
+      # a bad idea, because it may be inside of a callback or function of it.
+      # The worst case will be a crash or unexpected behavior.
+      # The way around this is deferring the load to a later time, when
+      # it is ensured that no code from the current scene is running:
+      call_deferred("_deferred_goto_scene", path)
+      pass
 
     func _deferred_goto_scene(path):
-
-        # Immediately free the current scene,
-        # there is no risk here.    
-        current_scene.free()
-
-        # Load new scene
-        var s = ResourceLoader.load(path)
-
-        # Instance the new scene
-        current_scene = s.instance()
-
-        # Add it to the active scene, as child of root
-        get_tree().get_root().add_child(current_scene)
-
-        # optional, to make it compatible with the SceneTree.change_scene() API
-        get_tree().set_current_scene( current_scene )
+      # Because we used `call_deferred("_deferred_goto_scene", path)`
+      # it is safe to immediately free the scene.
+      current_scene.free()
+      # Load New Scene
+      var resource_loader = ResourceLoader.load(path)
+      # Create an Instance of the Scene
+      current_scene = resource_loader.instance()
+      # Add it to the active scene as a child of the root
+      get_tree().get_root().add_child(current_scene)
+      # Optional: Ensures compatibility with the SceneTree.change_scene() API
+      get_tree().set_current_scene(current_scene)
+      pass
 
 As mentioned in the comments above, we really want to avoid the
 situation of having the current scene being deleted while being used
