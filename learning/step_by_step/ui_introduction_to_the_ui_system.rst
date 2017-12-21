@@ -179,14 +179,14 @@ How to change the anchor
 
 Like any properties, you can edit the 4 anchor points in the Inspector,
 but this is not the most convenient way. When you select a control node,
-the anchor menu appears above the viewport, in the toolbar. It gives you
+the layout menu appears above the viewport, in the toolbar. It gives you
 a list of icons to set all 4 anchors with a single click, instead of
-using the inspector’s 4 properties. The anchor menu will only show up
+using the inspector’s 4 properties. The layout menu will only show up
 when you select a control node.
 
-.. figure:: img/anchor_menu.png
+.. figure:: img/layout_menu.png
 
-   The anchor menu in the viewport
+   The layout menu in the viewport
 
 Anchors are relative to the parent container
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
