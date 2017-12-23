@@ -16,10 +16,6 @@ flexibility for content creation and integration.
 History
 ~~~~~~~
 
-Initially, Godot was designed to support multiple scripting languages
-(this ability still exists today). However, only GDScript is in use
-right now. There is a little history behind this.
-
 In the early days, the engine used the `Lua <http://www.lua.org>`__
 scripting language. Lua is fast, but creating bindings to an object
 oriented system (by using fallbacks) was complex and slow and took an
