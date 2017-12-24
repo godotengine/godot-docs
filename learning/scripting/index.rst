@@ -7,3 +7,4 @@ Scripting
 
    gdscript/index
    visual_script/index
+   C#/index
