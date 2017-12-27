@@ -294,5 +294,4 @@ You can change the scale mode in the project settings: click the Project menu ->
 Settings. In the window's left column, look for the Display category.
 Click on the Window sub-category. On the right side of the window,
 you'll find a Stretch section. The three settings, Mode, Aspect, and
-Shrink, control the screen size. For more information, see `Project
-Settings - Multiple resolutions <http://docs.godotengine.org/en/latest/learning/features/viewports/multiple_resolutions.html>`__.
+Shrink, control the screen size. For more information, see `:ref:'Project Settings<doc_multiple_resolutions>'`__.
