@@ -11,16 +11,16 @@ implemented in Godot with the Mono 5.2 .NET framework, and has support for C# 7.
 
 .. note:: This is **not** a full-scale tutorial on the C# language as a whole.
         If you aren't already familiar with its syntax or features,
-        see https://docs.microsoft.com/en-us/dotnet/csharp/index
+        see the `Microsoft C# guide<https://docs.microsoft.com/en-us/dotnet/csharp/index>`_
 
 Necessary Downloads
 -------------------
 
-To use C# in Godot you must have 'Mono<http://www.mono-project.com/download/>'_
+To use C# in Godot you must have `Mono<http://www.mono-project.com/download/>`_
 installed(at least version 5.2), and use the 
 Mono version of Godot.(You can still use GDScript and VisualScript in this version).
 Windows users also need MS Build 15.0, which comes bundled with Visual Studio 2017,
-or can be downloaded separately with 'build tools for Visual Studio 2017<https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=15#>'_.
+or can be downloaded separately with `build tools for Visual Studio 2017<https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=15#>`_.
 
 
 History
