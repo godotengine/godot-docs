@@ -107,7 +107,7 @@ Pointers & referencing:
 
 In static languages such as C or C++ (and to some extent Java and C#),
 there is a distinction between a variable and a pointer/reference to a
-variable. The later allows the object to be modified by other functions
+variable. The latter allows the object to be modified by other functions
 by passing a reference to the original one.
 
 In C# or Java, everything not a built-in type (int, float, sometimes
@@ -293,7 +293,7 @@ easily with dictionaries. Here's a simple battleship game example:
 
 Dictionaries can also be used as data markup or quick structures. While
 GDScript dictionaries resemble python dictionaries, it also supports Lua
-style syntax an indexing, which makes it very useful for writing initial
+style syntax and indexing, which makes it very useful for writing initial
 states and quick structs:
 
 ::
