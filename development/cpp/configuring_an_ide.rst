@@ -83,7 +83,7 @@ Importing the project
 -  Set the path to your Godot root directory and enter the project name.
 -  Here you can choose which folders and files will be visible to the project. C/C++ files
    are added automatically. Potentially useful additions: \*.py for buildsystem files, \*.java for Android development,
-   \*.mm for OSX. Click "Next".
+   \*.mm for macOS. Click "Next".
 -  Click *Finish*.
 -  Add a line containing ``.`` to *project_name.includes* to get working code completion.
 

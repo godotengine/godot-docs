@@ -24,8 +24,8 @@ Create a debug.keystore
 
 Android needs a debug keystore file to install to devices and distribute
 non-release APKs. If you have used the SDK before and have built
-projects, ant or eclipse probably generated one for you (In Linux and
-OSX, you can find it in the ~/.android folder).
+projects, ant or eclipse probably generated one for you (on Linux and
+macOS, you can find it in the ``~/.android`` directory).
 
 If you can't find it or need to generate one, the keytool command from
 the JDK can be used for this purpose:

@@ -33,9 +33,9 @@ Here is a list of most feature tags in Godot. Keep in mind they are *case sensit
 +=================+========================================================+
 | **Android**     | Running on Android                                     |
 +-----------------+--------------------------------------------------------+
-| **JavaScript**  | Running on Javascript (HTML5)                          |
+| **JavaScript**  | Running on JavaScript (HTML5)                          |
 +-----------------+--------------------------------------------------------+
-| **OSX**         | Running on OSX                                         |
+| **OSX**         | Running on macOS                                       |
 +-----------------+--------------------------------------------------------+
 | **iOS**         | Running on iOS                                         |
 +-----------------+--------------------------------------------------------+
@@ -49,17 +49,17 @@ Here is a list of most feature tags in Godot. Keep in mind they are *case sensit
 +-----------------+--------------------------------------------------------+
 | **release**     | Running on release build                               |
 +-----------------+--------------------------------------------------------+
-| **32**          | Running on 32 bits build                               |
+| **32**          | Running on 32-bit build                                |
 +-----------------+--------------------------------------------------------+
-| **64**          | Running on 64 bits build                               |
+| **64**          | Running on 64-bit build                                |
 +-----------------+--------------------------------------------------------+
 | **mobile**      | Host OS is a mobile platform                           |
 +-----------------+--------------------------------------------------------+
-| **pc**          | Host OS is a PC                                        |
+| **pc**          | Host OS is a PC platform (desktop/laptop)              |
 +-----------------+--------------------------------------------------------+
-| **web**         | Hot OS is a web browser                                |
+| **web**         | Hot OS is a Web browser                                |
 +-----------------+--------------------------------------------------------+
-| **etc**         | Textures using ETC compression are supported           |
+| **etc**         | Textures using ETC1 compression are supported          |
 +-----------------+--------------------------------------------------------+
 | **etc2**        | Textures using ETC2 compression are supported          |
 +-----------------+--------------------------------------------------------+
@@ -104,5 +104,3 @@ Customizing Build
 
 Feature tags can be used to customize a build process too, by writing a custom **ExportPlugin**.
 They also are used to specify which shared library is loaded and exported in **GDNative**.
-
-

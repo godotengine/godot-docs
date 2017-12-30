@@ -10,8 +10,8 @@ Requirements
 
 To compile export templates for the Web, the following is required:
 
--  `Emscripten <http://emscripten.org/>`__: The easiest way to install it, if it's not up to date in your Linux package manager, is to use the `Emscripten SDK <http://emscripten.org/>`__ (Install in a path without spaces, i.e. not on "Program Files")
--  `Python 2.7+ <https://www.python.org/>`__ (3.0 is untested as of now)
+-  `Emscripten <http://emscripten.org/>`__: The easiest way to install it, if it's not up to date in your Linux package manager, is to use the `Emscripten SDK <http://emscripten.org/>`__ (Install in a path without spaces, i.e. not in "Program Files")
+-  `Python 2.7+ or Python 3.5+ <https://www.python.org/>`__
 -  `SCons <http://www.scons.org>`__ build system
 
 Building export templates
@@ -23,7 +23,7 @@ installation directory of Emscripten:
 -  If you installed Emscripten via the Emscripten SDK, you will declare the variable with a path to your downloaded folder::
 
     export EMSCRIPTEN_ROOT=~/emsdk/emscripten/master
-    
+
 -  If you installed Emscripten via your package manager, you can know the path with the ``em-config`` command::
 
     em-config EMSCRIPTEN_ROOT
@@ -31,7 +31,7 @@ installation directory of Emscripten:
    So you will declare the variable as for example::
 
     export EMSCRIPTEN_ROOT=/usr/lib/emscripten
-    
+
 The Emscripten variables are defined in the ``~/.emscripten`` file, so this is an alternative way to check. Erase this file if you want to reinstall Emscripten with a fresh new method.
 
 If you are on Windows and used Emscripten SDK, start a regular prompt or the Emscripten Command Prompt.

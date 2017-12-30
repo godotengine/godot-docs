@@ -11,7 +11,7 @@ Requirements
 For compiling under Linux or other Unix variants, the following is
 required:
 
--  Python 2.7+ (3.0 is untested as of now)
+-  Python 2.7+ or Python 3.5+
 -  SCons build system
 -  Xcode (or the more lightweight Command Line Tools for Xcode)
 

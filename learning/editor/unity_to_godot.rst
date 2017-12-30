@@ -1,6 +1,6 @@
 .. _unity3D_to_godot:
 
-..    references : 
+..    references :
 ..    https://wiki.unrealengine.com/Unity3D_Developer's_Guide_to_Unreal_Engine_4
 ..    https://docs.unrealengine.com/latest/INT/GettingStarted/FromUnity/
 
@@ -17,14 +17,14 @@ Differences
 +===================+===================================================================================+================================================================================================================+
 | License           | Proprietary, closed, free license with revenue caps and usage restrictions        | MIT license, free and fully open source without any restriction                                                |
 +-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| OS (editor)       | Windows, OSX, Linux (unofficial and unsupported)                                  | Windows, X11 (Linux, \*BSD), Haiku, OSX                                                                        |
+| OS (editor)       | Windows, macOS, Linux (unofficial and unsupported)                                | Windows, X11 (Linux, \*BSD), Haiku, macOS                                                                      |
 +-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-| OS (export)       | | Desktop: Windows, Linux/SteamOS, OSX                                            | | Desktop: Windows, X11, OSX                                                                                   |
-|                   | | Mobile: Android, iOS, Windows Phone, Tizen,                                     | | Mobile: Android, iOS, Blackberry (deprecated)                                                                |
-|                   | | Web: WebGL                                                                      | | Web: WebGL, HTML5 (via emscripten, broken)                                                                   |
-|                   | | Consoles: PS4, PS Vita, XBox One, XBox 360, WiiU, 3DS                           |                                                                                                                |
+| OS (export)       | | Desktop: Windows, Linux/SteamOS, macOS                                          | | Desktop: Windows, X11, macOS                                                                                 |
+|                   | | Mobile: Android, iOS, Windows Phone, Tizen,                                     | | Mobile: Android, iOS,                                                                                        |
+|                   | | Web: WebAssembly or asm.js                                                      | | Web: WebAssembly                                                                                             |
+|                   | | Consoles: PS4, PS Vita, Xbox One, Xbox 360, Wii U, Nintendo 3DS                 |                                                                                                                |
 |                   | | VR: Oculus Rift, SteamVR, Google Cardboard, Playstation VR, Gear VR, HoloLens   |                                                                                                                |
-|                   | | TV: AndroidTV, Samsung SMARTTV, tvOS                                            |                                                                                                                |
+|                   | | TV: Android TV, Samsung SMART TV, tvOS                                          |                                                                                                                |
 +-------------------+-----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 | Scene system      | | Component/Scene (GameObject > Component)                                        | Scene tree and nodes, allowing scenes to be nested and/or inherit other scenes                                 |
 |                   | | Prefabs                                                                         |                                                                                                                |
@@ -58,12 +58,12 @@ Godot's Scene panel is similar to Unity's Hierarchy panel but, as each node has 
 
 The Inspector in Godot is more minimalist and designed to only show properties. Thanks to this, objects can export a much larger amount of useful parameters to the user, without having to hide functionality in language APIs. As a plus, Godot allows animating any of those properties visually, so changing colors, textures, enumerations or even links to resources in real-time is possible without involving code.
 
-Finally, the Toolbar at the top of the screen is similar in the sense that it allows controlling the project playback, but projects in Godot run in a separate window, as they don't execute inside the editor (but the tree and objects can still be explored in the debugger window). 
+Finally, the Toolbar at the top of the screen is similar in the sense that it allows controlling the project playback, but projects in Godot run in a separate window, as they don't execute inside the editor (but the tree and objects can still be explored in the debugger window).
 
 This approach has the disadvantage that the running game can't be explored from different angles (though this may be supported in the future, and displaying collision gizmos in the running game is already possible), but in exchange has several advantages:
 
 - Running the project and closing it is very fast (Unity has to save, run the project, close the project and then reload the previous state).
-- Live editing is a lot more useful, because changes done to the editor take effect immediately in the game, and are not lost (nor have to be synced) when the game is closed. This allows fantastic workflows, like creating levels while you play them. 
+- Live editing is a lot more useful, because changes done to the editor take effect immediately in the game, and are not lost (nor have to be synced) when the game is closed. This allows fantastic workflows, like creating levels while you play them.
 - The editor is more stable, because the game runs in a separate process.
 
 Finally, the top toolbar includes a menu for remote debugging. These options make it simple to deploy to a device (connected phone, tablet or browser via HTML5), and debug/live edit on it after the game was exported.
@@ -73,7 +73,7 @@ The scene system
 
 This is the most important difference between Unity and Godot, and actually the favourite feature of most Godot users.
 
-Unity's scene system consist in embedding all the required assets in a scene, and link them together by setting components and scripts to them. 
+Unity's scene system consist in embedding all the required assets in a scene, and link them together by setting components and scripts to them.
 
 Godot's scene system is different: it actually consists in a tree made of nodes. Each node serves a purpose: Sprite, Mesh, Light... Basically, this is similar to Unity scene system. However, each node can have multiple children, which make each a subscene of the main scene. This means you can compose a whole scene with different scenes, stored in different files.
 
@@ -101,7 +101,7 @@ There again, an enemy is a reusable element in other levels. It is almost the sa
 
 It is composed of Bricks (for platforms), Coins (for the player to grab) and a certain number of instances of the previous Enemy scene. These will be different, separate enemies, whose behaviour and appearance will be the same as defined in the Enemy scene. Each instance is then considered as a node in the Level scene tree. Of course, you can set different properties for each enemy node (to change its color for example).
 
-Finally, the main scene would then be composed of one root node with 2 children: a Player instance node, and a Level instance node. 
+Finally, the main scene would then be composed of one root node with 2 children: a Player instance node, and a Level instance node.
 The root node can be anything, generally a "root" type such as "Node" which is the most global type, or "Node2D" (root type of all 2D-related nodes), "Spatial" (root type of all 3D-related nodes) or "Control" (root type of all GUI-related nodes).
 
 
@@ -163,9 +163,9 @@ Unity allows you to attach as many scripts as you want to a GameObject. Each scr
 
 In Godot, you can only attach one script per node. You can use either an external GDScript file, or include it directly in the node. If you need to attach more scripts to one node, then you may consider 2 solutions, depending on your scene and on what you want to achieve:
 
-- either add a new node between your target node and its current parent, then add a script to this new node. 
+- either add a new node between your target node and its current parent, then add a script to this new node.
 - or, your can split your target node into multiple children and attach one script to each of them.
-  
+
 As you can see, it can be easy to turn a scene tree to a mess. This is why it is important to have a real reflection, and consider splitting a complicated scene into multiple, smaller branches.
 
 Connections : groups and signals
@@ -179,6 +179,6 @@ But there's more! Certain nodes throw signals when certain actions happen. You c
 Using Godot in C++
 ------------------
 
-Just for your information, Godot also allows you to develop your project directly in C++ by using its API, which is not possible with Unity at the moment. As an example, you can consider Godot Engine's editor as a "game" written in C++ using Godot API. 
+Just for your information, Godot also allows you to develop your project directly in C++ by using its API, which is not possible with Unity at the moment. As an example, you can consider Godot Engine's editor as a "game" written in C++ using Godot API.
 
 If you are interested in using Godot in C++, you may want to start reading the :ref:`Developing in C++ <doc_introduction_to_godot_development>` page.

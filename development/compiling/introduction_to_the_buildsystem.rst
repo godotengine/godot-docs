@@ -133,7 +133,7 @@ build targets, and which will be explained below.
 Tools
 -----
 
-Tools are enabled by default in all PC targets (Linux, Windows, OSX),
+Tools are enabled by default in all PC targets (Linux, Windows, macOS),
 disabled for everything else. Disabling tools produces a binary that can
 run projects but that does not include the editor or the project
 manager.
@@ -220,7 +220,7 @@ To create those yourself, just follow the instructions detailed for each
 platform in this same tutorial section. Each platform explains how to
 create its own template.
 
-If you are developing for multiple platforms, OSX is definitely the most convenient
+If you are developing for multiple platforms, macOS is definitely the most convenient
 host platform for cross compilation, since you can cross-compile for
 almost every target (except for UWP). Linux and Windows come in second
 place, but Linux has the advantage of being the easier platform to set

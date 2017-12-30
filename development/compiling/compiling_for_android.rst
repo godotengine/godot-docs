@@ -19,12 +19,12 @@ export template.
 Requirements
 ------------
 
-For compiling under Windows, Linux or OSX, the following is required:
+For compiling under Windows, Linux or macOS, the following is required:
 
--  Python 2.7+ (3.0 is untested as of now)
+-  Python 2.7+ or Python 3.5+
 -  SCons build system
 -  [Windows only] PyWin32 (optional, for parallel compilation)
--  Android SDK version 23.0.3 [Note: Please install all Tools and Extras of sdk manager]
+-  Android SDK version 23.0.3 [Note: Please install all tools and extras of the SDK Manager]
 -  Android build tools version 19.1
 -  Android NDK r13 or later
 -  Gradle (will be downloaded and installed automatically if missing)
@@ -44,11 +44,11 @@ To set those environment variables on Windows, press Windows+R, type
 pane, then click on **Environment variables** on the window that
 appears.
 
-To set those environment variables on Unix (e.g. Linux, Mac OSX), use
+To set those environment variables on Unix (e.g. Linux, macOS), use
 ``export ANDROID_HOME=/path/to/android-sdk`` and
 ``export ANDROID_NDK_ROOT=/path/to/android-ndk``.
-Where /path/to/android-sdk and /path/to/android-ndk is the path where Android Sdk 
-and Android Ndk are placed on you PC.
+Where /path/to/android-sdk and /path/to/android-ndk is the path where Android SDK
+and Android NDK are placed on your PC.
 
 Toolchain
 ~~~~~~~~~
@@ -77,8 +77,8 @@ the following arguments:
     C:\godot> scons platform=android target=release
     C:\godot> cd platform/android/java
     C:\godot\platform\android\java> gradlew build
-    
-(on Linux/OSX, execute the `gradlew` script with `./gradlew build`)
+
+(on Linux or macOS, execute the `gradlew` script with `./gradlew build`)
 
 The resulting APK is in:
 
@@ -93,7 +93,7 @@ The resulting APK is in:
     C:\godot> scons platform=android target=release_debug
     C:\godot> cd platform/android/java
     C:\godot\platform\android\java> gradlew build
-    
+
 The resulting APK is in:
 
 ::
@@ -122,7 +122,7 @@ with Gradle. For example for the release template:
     C:\godot> scons platform=android target=release android_arch=x86
     C:\godot> cd platform/android/java
     C:\godot\platform\android\java> gradlew build
-    
+
 
 This will create a fat binary that works in both platforms, but will add
 about 6 megabytes to the APK.
@@ -155,7 +155,7 @@ The templates folder can be located in:
 
 -  Windows: ``C:\Users\[username]\AppData\Roaming\Godot\templates``
 -  Linux: ``/home/[username]/.godot/templates``
--  Mac OSX: ``/users/[username]/.godot/templates``
+-  macOS: ``/users/[username]/.godot/templates``
 
 .. TODO: Move these paths to a common reference page
 
@@ -210,21 +210,21 @@ In any case, ``adb logcat`` should also show the cause of the error.
 Compilation fails
 ~~~~~~~~~~~~~~~~~
 
-On Linux systems with Kernel version 4.3 or newer, compilation may fail 
+On Linux systems with Kernel version 4.3 or newer, compilation may fail
 with the error "pthread_create failed: Resource temporarily unavailable."
 
-This is because of a change in the way Linux limits thread creation. But 
-you can change those limits through the command line. Please read this 
+This is because of a change in the way Linux limits thread creation. But
+you can change those limits through the command line. Please read this
 section thoroughly before beginning.
 
-First open a terminal, then begin compilation as usual (it may be a good 
-idea to run a --clean first). While compiling enter the following in 
+First open a terminal, then begin compilation as usual (it may be a good
+idea to run a --clean first). While compiling enter the following in
 your terminal:
 
 ::
 
     user@host:~/$ top -b -n 1 | grep scons
-    
+
 The output should list a scons process, with its PID as the first number
 in the output. For example the PID 1077 in the output shown below:
 
@@ -246,11 +246,10 @@ You can increase those limits with the command:
 
     user@host:~/$ prlimit --pid=1077 --nproc=60000:60500
 
-Obviously you should substitute the scons PID output by top and a limits 
-that you think suitable. These are in the form --nproc=soft:hard where 
-soft must be lesser than or equal to hard. See the man page for more 
+Obviously you should substitute the scons PID output by top and a limits
+that you think suitable. These are in the form --nproc=soft:hard where
+soft must be lesser than or equal to hard. See the man page for more
 information.
 
-If all went well, and you entered the prlimit command while scons was 
+If all went well, and you entered the prlimit command while scons was
 running, then your compilation should continue without the error.
-
