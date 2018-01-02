@@ -39,7 +39,7 @@ References:
 
 -  `core/variant.h <https://github.com/godotengine/godot/blob/master/core/variant.h>`__
 
-Dictionary and Array
+Containers: Dictionary and Array
 --------------------
 
 Both are implemented using variants. A Dictionary can match any datatype
@@ -47,13 +47,11 @@ used as key to any other datatype. An Array just holds an array of
 Variants. Of course, a Variant can also hold a Dictionary and an Array
 inside, making it even more flexible.
 
-Both have a shared mode and a COW mode. Scripts often use them in shared
-mode (meaning modifications to a container will modify all references to
-it), or COW mode (modifications will always alter the local copy, making
-a copy of the internal data if necessary, but will not affect the other
-copies). In COW mode, Both Dictionary and Array are thread-safe,
-otherwise a Mutex should be created to lock if multi thread access is
+Modifications to a container will modify all references to
+it. A Mutex should be created to lock it if multi threaded access is
 desired.
+
+Copy-on-write (COW) mode support for containers was dropped with Godot 3.0.
 
 References:
 ~~~~~~~~~~~
