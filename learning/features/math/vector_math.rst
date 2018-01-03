@@ -212,14 +212,17 @@ but is often misunderstood. Dot product is an operation on two vectors that
 returns a **scalar**. Unlike a vector, which contains both magnitude and
 direction, a scalar value has only magnitude.
 
-The formula for dot product takes two common
-forms:
+The formula for dot product takes two common forms:
 
-.. image:: img/vector_dot1.png
+.. math::
+    
+    A \cdot B = \left \| A \right \|\left \| B \right \|\cos \Theta
 
 and
 
-.. image:: img/vector_dot2.png
+.. math::
+    
+    A \cdot B = A_{x}B_{x} + A_{y}B_{y}
 
 However, in most cases it is easiest to use the built-in method. Note that
 the order of the two vectors does not matter:
