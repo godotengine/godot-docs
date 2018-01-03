@@ -18,7 +18,7 @@ A Variant can:
 -  Store almost any datatype
 -  Perform operations between many variants (GDScript uses Variant as
    its atomic/native datatype).
--  Be hashed, so it can be compared quickly to over variants
+-  Be hashed, so it can be compared quickly to other variants
 -  Be used to convert safely between datatypes
 -  Be used to abstract calling methods and their arguments (Godot
    exports all its functions through variants)
