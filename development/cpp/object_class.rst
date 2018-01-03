@@ -242,7 +242,7 @@ Declaring them must be done using Ref<> template. For example:
         GDCLASS(MyReference, Reference);
     };
 
-    Ref<MyReference> myref = memnew(MyReference);
+    Ref<MyReference> myref(memnew(MyReference));
 
 ``myref`` is reference counted. It will be freed when no more Ref<>
 templates point to it.
