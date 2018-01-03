@@ -21,7 +21,7 @@ A Variant can:
 -  Be hashed, so it can be compared quickly to other variants
 -  Be used to convert safely between datatypes
 -  Be used to abstract calling methods and their arguments (Godot
-   exports all its functions through variants)
+   exports all it's functions through variants)
 -  Be used to defer calls or move data between threads.
 -  Be serialized as binary and stored to disk, or transferred via
    network.
