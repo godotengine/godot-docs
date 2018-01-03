@@ -8,3 +8,6 @@ __pycache__
 
 # Finder (MacOS) makes these automatically.
 .DS_Store
+
+# And Windows keeps creating these.
+Thumbs.db

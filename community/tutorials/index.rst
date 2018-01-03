@@ -6,6 +6,7 @@ Tutorials
    :name: toc-community-tutorials
 
    3d/index
+   gdnative/index
    vr/index
 
 .. external_resources
