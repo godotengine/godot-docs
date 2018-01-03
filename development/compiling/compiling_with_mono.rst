@@ -8,8 +8,9 @@ Compiling with Mono
 Requirements
 ------------
 
--  Mono 5.2.0+
--  pkg-config
+- Mono 5.2.0+
+- MSBuild
+- pkg-config
 
 Environment Variables
 ---------------------
