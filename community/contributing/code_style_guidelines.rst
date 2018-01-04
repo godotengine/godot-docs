@@ -129,8 +129,8 @@ Once a style is decided upon, it could also be enforced via clang-format.
 Python
 ------
 
-Godot's SCons buildsystem is written in Python 2, and various scripts included
-in the source tree are either in Python 2 or Python 3.
+Godot's SCons buildsystem is written in Python, and various scripts included
+in the source tree are also using Python.
 
 For those, we follow the `PEP-8 style guide <https://www.python.org/dev/peps/pep-0008/>`__,
 this is however not as strongly enforced as for the C++ code. If you are so
