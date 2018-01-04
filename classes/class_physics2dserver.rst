@@ -259,6 +259,9 @@ Numeric Constants
 - **JOINT_PIN** = **0** --- Constant to create pin joints.
 - **JOINT_GROOVE** = **1** --- Constant to create groove joints.
 - **JOINT_DAMPED_SPRING** = **2** --- Constant to create damped spring joints.
+- **JOINT_PARAM_BIAS** = **0**
+- **JOINT_PARAM_MAX_BIAS** = **1**
+- **JOINT_PARAM_MAX_FORCE** = **2**
 - **DAMPED_STRING_REST_LENGTH** = **0** --- Set the resting length of the spring joint. The joint will always try to go to back this length when pulled apart.
 - **DAMPED_STRING_STIFFNESS** = **1** --- Set the stiffness of the spring joint. The joint applies a force equal to the stiffness times the distance from its resting length.
 - **DAMPED_STRING_DAMPING** = **2** --- Set the damping ratio of the spring joint. A value of 0 indicates an undamped spring, while 1 causes the system to reach equilibrium as fast as possible (critical damping).
@@ -401,7 +404,7 @@ Substitutes a given area shape by another. The old shape is selected by its inde
 
 - void **area_set_shape_disabled** **(** :ref:`RID<class_rid>` area, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` disable **)**
 
-Disables a given shape in this area if ``disable is true``
+Disables a given shape in an area.
 
 .. _class_Physics2DServer_area_set_shape_transform:
 
@@ -637,13 +640,13 @@ Substitutes a given body shape by another. The old shape is selected by its inde
 
 - void **body_set_shape_as_one_way_collision** **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` enable **)**
 
-Enables one way collision on body if ``enable is true``.
+Enables one way collision on body if ``enable`` is ``true``.
 
 .. _class_Physics2DServer_body_set_shape_disabled:
 
 - void **body_set_shape_disabled** **(** :ref:`RID<class_rid>` body, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` disable **)**
 
-Disables shape in body if ``disable is true``.
+Disables shape in body if ``disable`` is ``true``.
 
 .. _class_Physics2DServer_body_set_shape_metadata:
 

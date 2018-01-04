@@ -24,11 +24,11 @@ Member Functions
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                      | :ref:`get_available_packet_count<class_PacketPeer_get_available_packet_count>` **(** **)** const                        |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_poolbytearray>`  | :ref:`get_packet<class_PacketPeer_get_packet>` **(** **)** const                                                        |
+| :ref:`PoolByteArray<class_poolbytearray>`  | :ref:`get_packet<class_PacketPeer_get_packet>` **(** **)**                                                              |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                      | :ref:`get_packet_error<class_PacketPeer_get_packet_error>` **(** **)** const                                            |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`              | :ref:`get_var<class_PacketPeer_get_var>` **(** **)** const                                                              |
+| :ref:`Variant<class_variant>`              | :ref:`get_var<class_PacketPeer_get_var>` **(** **)**                                                                    |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                    | :ref:`is_object_decoding_allowed<class_PacketPeer_is_object_decoding_allowed>` **(** **)** const                        |
 +--------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
@@ -55,7 +55,7 @@ Return the number of packets currently available in the ring-buffer.
 
 .. _class_PacketPeer_get_packet:
 
-- :ref:`PoolByteArray<class_poolbytearray>` **get_packet** **(** **)** const
+- :ref:`PoolByteArray<class_poolbytearray>` **get_packet** **(** **)**
 
 Get a raw packet.
 
@@ -67,7 +67,7 @@ Return the error state of the last packet received (via :ref:`get_packet<class_P
 
 .. _class_PacketPeer_get_var:
 
-- :ref:`Variant<class_variant>` **get_var** **(** **)** const
+- :ref:`Variant<class_variant>` **get_var** **(** **)**
 
 Get a Variant.
 

@@ -19,9 +19,11 @@ Special button that brings up a :ref:`PopupMenu<class_popupmenu>` when clicked.
 Member Functions
 ----------------
 
-+------------------------------------+----------------------------------------------------------+
-| :ref:`PopupMenu<class_popupmenu>`  | :ref:`get_popup<class_MenuButton_get_popup>` **(** **)** |
-+------------------------------------+----------------------------------------------------------+
++------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| :ref:`PopupMenu<class_popupmenu>`  | :ref:`get_popup<class_MenuButton_get_popup>` **(** **)** const                                                    |
++------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`set_disable_shortcuts<class_MenuButton_set_disable_shortcuts>` **(** :ref:`bool<class_bool>` disabled **)** |
++------------------------------------+-------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -43,8 +45,12 @@ Member Function Description
 
 .. _class_MenuButton_get_popup:
 
-- :ref:`PopupMenu<class_popupmenu>` **get_popup** **(** **)**
+- :ref:`PopupMenu<class_popupmenu>` **get_popup** **(** **)** const
 
 Return the :ref:`PopupMenu<class_popupmenu>` contained in this button.
+
+.. _class_MenuButton_set_disable_shortcuts:
+
+- void **set_disable_shortcuts** **(** :ref:`bool<class_bool>` disabled **)**
 
 

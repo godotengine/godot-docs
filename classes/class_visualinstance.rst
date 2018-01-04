@@ -9,7 +9,7 @@ VisualInstance
 
 **Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`Light<class_light>`, :ref:`ReflectionProbe<class_reflectionprobe>`, :ref:`GIProbe<class_giprobe>`, :ref:`GeometryInstance<class_geometryinstance>`
+**Inherited By:** :ref:`BakedLightmap<class_bakedlightmap>`, :ref:`Light<class_light>`, :ref:`ReflectionProbe<class_reflectionprobe>`, :ref:`GIProbe<class_giprobe>`, :ref:`GeometryInstance<class_geometryinstance>`
 
 **Category:** Core
 

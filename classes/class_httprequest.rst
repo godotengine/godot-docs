@@ -14,7 +14,7 @@ HTTPRequest
 Brief Description
 -----------------
 
-A Node with the ability to send HTTP requests.
+A node with the ability to send HTTP requests.
 
 Member Functions
 ----------------
@@ -50,15 +50,15 @@ Member Variables
 
   .. _class_HTTPRequest_body_size_limit:
 
-- :ref:`int<class_int>` **body_size_limit**
+- :ref:`int<class_int>` **body_size_limit** - Maximum allowed size for response bodies.
 
   .. _class_HTTPRequest_max_redirects:
 
-- :ref:`int<class_int>` **max_redirects**
+- :ref:`int<class_int>` **max_redirects** - Maximum number of allowed redirects.
 
   .. _class_HTTPRequest_use_threads:
 
-- :ref:`bool<class_bool>` **use_threads**
+- :ref:`bool<class_bool>` **use_threads** - If ``true`` multithreading is used to improve performance.
 
 
 Numeric Constants
@@ -72,7 +72,7 @@ Numeric Constants
 - **RESULT_SSL_HANDSHAKE_ERROR** = **5** --- Request failed on SSL handshake.
 - **RESULT_NO_RESPONSE** = **6** --- Request does not have a response(yet).
 - **RESULT_BODY_SIZE_LIMIT_EXCEEDED** = **7** --- Request exceeded its maximum size limit, see :ref:`set_body_size_limit<class_HTTPRequest_set_body_size_limit>`.
-- **RESULT_REQUEST_FAILED** = **8** --- Request failed. (unused)
+- **RESULT_REQUEST_FAILED** = **8** --- Request failed. (Unused)
 - **RESULT_DOWNLOAD_FILE_CANT_OPEN** = **9** --- HTTPRequest couldn't open the download file.
 - **RESULT_DOWNLOAD_FILE_WRITE_ERROR** = **10** --- HTTPRequest couldn't write to the download file.
 - **RESULT_REDIRECT_LIMIT_REACHED** = **11** --- Request reached its maximum redirect limit, see :ref:`set_max_redirects<class_HTTPRequest_set_max_redirects>`.
@@ -80,9 +80,9 @@ Numeric Constants
 Description
 -----------
 
-A Node with the ability to send HTTP requests. Uses a :ref:`HTTPClient<class_httpclient>` internally, supports HTTPS.
+A node with the ability to send HTTP requests. Uses :ref:`HTTPClient<class_httpclient>` internally.
 
-Can be used to make HTTP requests or download files via HTTP.
+Can be used to make HTTP requests, i.e. download or upload files or web content via HTTP.
 
 Member Function Description
 ---------------------------
@@ -91,31 +91,31 @@ Member Function Description
 
 - void **cancel_request** **(** **)**
 
-Cancel the current request.
+Cancels the current request.
 
 .. _class_HTTPRequest_get_body_size:
 
 - :ref:`int<class_int>` **get_body_size** **(** **)** const
 
-Return the response body length.
+Returns the response body length.
 
 .. _class_HTTPRequest_get_download_file:
 
 - :ref:`String<class_string>` **get_download_file** **(** **)** const
 
-Return the file this request will download into.
+Returns the file this request will download into.
 
 .. _class_HTTPRequest_get_downloaded_bytes:
 
 - :ref:`int<class_int>` **get_downloaded_bytes** **(** **)** const
 
-Return the amount of bytes this HTTPRequest downloaded.
+Returns the amount of bytes this HTTPRequest downloaded.
 
 .. _class_HTTPRequest_get_http_client_status:
 
 - :ref:`int<class_int>` **get_http_client_status** **(** **)** const
 
-Return the current status of the underlying :ref:`HTTPClient<class_httpclient>`.
+Returns the current status of the underlying :ref:`HTTPClient<class_httpclient>`. See ``STATUS\_\*`` enum on :ref:`HTTPClient<class_httpclient>`.
 
 .. _class_HTTPRequest_request:
 
@@ -125,6 +125,6 @@ Return the current status of the underlying :ref:`HTTPClient<class_httpclient>`.
 
 - void **set_download_file** **(** :ref:`String<class_string>` path **)**
 
-Set the file to download into. Outputs the response body into the file.
+Sets the file to download into. Outputs the response body into the file if set.
 
 

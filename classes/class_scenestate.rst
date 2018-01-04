@@ -38,6 +38,8 @@ Member Functions
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_node_groups<class_SceneState_get_node_groups>` **(** :ref:`int<class_int>` idx **)** const                                                 |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                          | :ref:`get_node_index<class_SceneState_get_node_index>` **(** :ref:`int<class_int>` idx **)** const                                                   |
++------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PackedScene<class_packedscene>`          | :ref:`get_node_instance<class_SceneState_get_node_instance>` **(** :ref:`int<class_int>` idx **)** const                                             |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                    | :ref:`get_node_instance_placeholder<class_SceneState_get_node_instance_placeholder>` **(** :ref:`int<class_int>` idx **)** const                     |
@@ -127,6 +129,10 @@ Returns the number of nodes in the scene.
 - :ref:`PoolStringArray<class_poolstringarray>` **get_node_groups** **(** :ref:`int<class_int>` idx **)** const
 
 Returns the list of group names associated with the node at ``idx``.
+
+.. _class_SceneState_get_node_index:
+
+- :ref:`int<class_int>` **get_node_index** **(** :ref:`int<class_int>` idx **)** const
 
 .. _class_SceneState_get_node_instance:
 

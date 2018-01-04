@@ -88,13 +88,13 @@ Member Variables
 
 - :ref:`Transform2D<class_transform2d>` **transform** - Local :ref:`Transform2D<class_transform2d>`.
 
-  .. _class_Node2D_z:
-
-- :ref:`int<class_int>` **z** - Z-index. Controls the order in which the nodes render. A node with a higher Z-index will display in front of others.
-
   .. _class_Node2D_z_as_relative:
 
 - :ref:`bool<class_bool>` **z_as_relative** - If ``true`` the node's Z-index is relative to its parent's Z-index. If this node's Z-index is 2 and its parent's effective Z-index is 3, then this node's effective Z-index will be 2 + 3 = 5.
+
+  .. _class_Node2D_z_index:
+
+- :ref:`int<class_int>` **z_index** - Z-index. Controls the order in which the nodes render. A node with a higher Z-index will display in front of others.
 
 
 Description

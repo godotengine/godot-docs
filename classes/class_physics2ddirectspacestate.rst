@@ -45,55 +45,53 @@ Member Function Description
 
 - :ref:`Array<class_array>` **cast_motion** **(** :ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>` shape **)**
 
-Check whether the shape can travel to a point. If it can, the method will return an array with two floats: The first is the distance the shape can move in that direction without colliding, and the second is the distance at which it will collide.
+Checks how far the shape can travel toward a point. Note that both the shape and the motion are supplied through a :ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>` object. The method will return an array with two floats between 0 and 1, both representing a fraction of ``motion``. The first is how far the shape can move without triggering a collision, and the second is the point at which a collision will occur. If no collision is detected, the returned array will be 1, 1.
 
-If the shape can not move, the array will be empty.
+If the shape can not move, the array will be empty (``dir.empty()==true``).
 
 .. _class_Physics2DDirectSpaceState_collide_shape:
 
 - :ref:`Array<class_array>` **collide_shape** **(** :ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>` shape, :ref:`int<class_int>` max_results=32 **)**
 
-Check the intersections of a shape, given through a :ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>` object, against the space. The resulting array contains a list of points where the shape intersects another. Like with :ref:`intersect_shape<class_Physics2DDirectSpaceState_intersect_shape>`, the number of returned results can be limited to save processing time.
+Checks the intersections of a shape, given through a :ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>` object, against the space. The resulting array contains a list of points where the shape intersects another. Like with :ref:`intersect_shape<class_Physics2DDirectSpaceState_intersect_shape>`, the number of returned results can be limited to save processing time.
 
 .. _class_Physics2DDirectSpaceState_get_rest_info:
 
 - :ref:`Dictionary<class_dictionary>` **get_rest_info** **(** :ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>` shape **)**
 
-Check the intersections of a shape, given through a :ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>` object, against the space. If it collides with more than a shape, the nearest one is selected. The returned object is a dictionary containing the following fields:
+Checks the intersections of a shape, given through a :ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>` object, against the space. If it collides with more than one shape, the nearest one is selected. Note that this method does not take into account the ``motion`` property of the object. The returned object is a dictionary containing the following fields:
 
-pointo: Place where the shapes intersect.
+``collider_id``: The colliding object's ID.
 
-normal: Normal of the object at the point where the shapes intersect.
+``linear_velocity``: The colliding object's velocity :ref:`Vector2<class_vector2>`. If the object is an :ref:`Area2D<class_area2d>`, the result is ``(0, 0)``.
 
-shape: Shape index within the object against which the shape intersected.
+``metadata``: The intersecting shape's metadata. This metadata is different from :ref:`Object.get_meta<class_Object_get_meta>`, and is set with :ref:`Physics2DServer.shape_set_data<class_Physics2DServer_shape_set_data>`.
 
-metadata: Metadata of the shape against which the shape intersected. This metadata is different from :ref:`Object.get_meta<class_Object_get_meta>`, and is set with :ref:`Physics2DServer.shape_set_data<class_Physics2DServer_shape_set_data>`.
+``normal``: The object's surface normal at the intersection point.
 
-collider_id: Id of the object against which the shape intersected.
+``point``: The intersection point.
 
-collider: Object against which the shape intersected.
+``rid``: The intersecting object's :ref:`RID<class_rid>`.
 
-rid: :ref:`RID<class_rid>` of the object against which the shape intersected.
+``shape``: The shape index of the colliding shape.
 
-linear_velocity: The movement vector of the object the shape intersected, if it was a body. If it was an area, it is (0,0).
-
-If the shape did not intersect anything, then an empty dictionary (dir.empty()==true) is returned instead.
+If the shape did not intersect anything, then an empty dictionary (``dir.empty()==true``) is returned instead.
 
 .. _class_Physics2DDirectSpaceState_intersect_point:
 
 - :ref:`Array<class_array>` **intersect_point** **(** :ref:`Vector2<class_vector2>` point, :ref:`int<class_int>` max_results=32, :ref:`Array<class_array>` exclude=[  ], :ref:`int<class_int>` collision_layer=2147483647 **)**
 
-Check whether a point is inside any shape. The shapes the point is inside of are returned in an array containing dictionaries with the following fields:
+Checks whether a point is inside any shape. The shapes the point is inside of are returned in an array containing dictionaries with the following fields:
 
-shape: Shape index within the object the point is in.
+``collider``: The colliding object.
 
-metadata: Metadata of the shape the point is in. This metadata is different from :ref:`Object.get_meta<class_Object_get_meta>`, and is set with :ref:`Physics2DServer.shape_set_data<class_Physics2DServer_shape_set_data>`.
+``collider_id``: The colliding object's ID.
 
-collider_id: Id of the object the point is in.
+``metadata``: The intersecting shape's metadata. This metadata is different from :ref:`Object.get_meta<class_Object_get_meta>`, and is set with :ref:`Physics2DServer.shape_set_data<class_Physics2DServer_shape_set_data>`.
 
-collider: Object the point is inside of.
+``rid``: The intersecting object's :ref:`RID<class_rid>`.
 
-rid: :ref:`RID<class_rid>` of the object the point is in.
+``shape``: The shape index of the colliding shape.
 
 Additionally, the method can take an array of objects or :ref:`RID<class_rid>`\ s that are to be excluded from collisions, or a bitmask representing the physics layers to check in.
 
@@ -101,23 +99,23 @@ Additionally, the method can take an array of objects or :ref:`RID<class_rid>`\ 
 
 - :ref:`Dictionary<class_dictionary>` **intersect_ray** **(** :ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to, :ref:`Array<class_array>` exclude=[  ], :ref:`int<class_int>` collision_layer=2147483647 **)**
 
-Intersect a ray in a given space. The returned object is a dictionary with the following fields:
+Intersects a ray in a given space. The returned object is a dictionary with the following fields:
 
-position: Place where ray is stopped.
+``collider``: The colliding object.
 
-normal: Normal of the object at the point where the ray was stopped.
+``collider_id``: The colliding object's ID.
 
-shape: Shape index within the object against which the ray was stopped.
+``metadata``: The intersecting shape's metadata. This metadata is different from :ref:`Object.get_meta<class_Object_get_meta>`, and is set with :ref:`Physics2DServer.shape_set_data<class_Physics2DServer_shape_set_data>`.
 
-metadata: Metadata of the shape against which the ray was stopped. This metadata is different from :ref:`Object.get_meta<class_Object_get_meta>`, and is set with :ref:`Physics2DServer.shape_set_data<class_Physics2DServer_shape_set_data>`.
+``normal``: The object's surface normal at the intersection point.
 
-collider_id: Id of the object against which the ray was stopped.
+``position``: The intersection point.
 
-collider: Object against which the ray was stopped.
+``rid``: The intersecting object's :ref:`RID<class_rid>`.
 
-rid: :ref:`RID<class_rid>` of the object against which the ray was stopped.
+``shape``: The shape index of the colliding shape.
 
-If the ray did not intersect anything, then an empty dictionary (dir.empty()==true) is returned instead.
+If the ray did not intersect anything, then an empty dictionary (``dir.empty()==true``) is returned instead.
 
 Additionally, the method can take an array of objects or :ref:`RID<class_rid>`\ s that are to be excluded from collisions, or a bitmask representing the physics layers to check in.
 
@@ -125,17 +123,17 @@ Additionally, the method can take an array of objects or :ref:`RID<class_rid>`\ 
 
 - :ref:`Array<class_array>` **intersect_shape** **(** :ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>` shape, :ref:`int<class_int>` max_results=32 **)**
 
-Check the intersections of a shape, given through a :ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>` object, against the space. The intersected shapes are returned in an array containing dictionaries with the following fields:
+Checks the intersections of a shape, given through a :ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>` object, against the space. Note that this method does not take into account the ``motion`` property of the object. The intersected shapes are returned in an array containing dictionaries with the following fields:
 
-shape: Shape index within the object the shape intersected.
+``collider``: The colliding object.
 
-metadata: Metadata of the shape intersected by the shape given through the :ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>`. This metadata is different from :ref:`Object.get_meta<class_Object_get_meta>`, and is set with :ref:`Physics2DServer.shape_set_data<class_Physics2DServer_shape_set_data>`.
+``collider_id``: The colliding object's ID.
 
-collider_id: Id of the object the shape intersected.
+``metadata``: The intersecting shape's metadata. This metadata is different from :ref:`Object.get_meta<class_Object_get_meta>`, and is set with :ref:`Physics2DServer.shape_set_data<class_Physics2DServer_shape_set_data>`.
 
-collider: Object the shape intersected.
+``rid``: The intersecting object's :ref:`RID<class_rid>`.
 
-rid: :ref:`RID<class_rid>` of the object the shape intersected.
+``shape``: The shape index of the colliding shape.
 
 The number of intersections can be limited with the second parameter, to reduce the processing time.
 

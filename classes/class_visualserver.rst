@@ -90,9 +90,9 @@ Member Functions
 +--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`canvas_item_set_visible<class_VisualServer_canvas_item_set_visible>` **(** :ref:`RID<class_rid>` item, :ref:`bool<class_bool>` visible **)**                                                                                                                                                                                                                                                                                                                                                                       |
 +--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`canvas_item_set_z<class_VisualServer_canvas_item_set_z>` **(** :ref:`RID<class_rid>` item, :ref:`int<class_int>` z **)**                                                                                                                                                                                                                                                                                                                                                                                           |
-+--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`canvas_item_set_z_as_relative_to_parent<class_VisualServer_canvas_item_set_z_as_relative_to_parent>` **(** :ref:`RID<class_rid>` item, :ref:`bool<class_bool>` enabled **)**                                                                                                                                                                                                                                                                                                                                       |
++--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                       | :ref:`canvas_item_set_z_index<class_VisualServer_canvas_item_set_z_index>` **(** :ref:`RID<class_rid>` item, :ref:`int<class_int>` z_index **)**                                                                                                                                                                                                                                                                                                                                                                         |
 +--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                       | :ref:`canvas_light_attach_to_canvas<class_VisualServer_canvas_light_attach_to_canvas>` **(** :ref:`RID<class_rid>` light, :ref:`RID<class_rid>` canvas **)**                                                                                                                                                                                                                                                                                                                                                             |
 +--------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -509,7 +509,8 @@ More effective on planes often shown going to the horrizon as those textures (Wa
 - **INSTANCE_LIGHT** = **5** --- The instance is a light.
 - **INSTANCE_REFLECTION_PROBE** = **6**
 - **INSTANCE_GI_PROBE** = **7**
-- **INSTANCE_MAX** = **8** --- The max value for INSTANCE\_\* constants, used internally.
+- **INSTANCE_LIGHTMAP_CAPTURE** = **8**
+- **INSTANCE_MAX** = **9** --- The max value for INSTANCE\_\* constants, used internally.
 - **INSTANCE_GEOMETRY_MASK** = **30** --- A combination of the flags of geometry instances (mesh, multimesh, immediate and particles).
 - **NINE_PATCH_STRETCH** = **0** --- The nine patch gets stretched where needed.
 - **NINE_PATCH_TILE** = **1** --- The nine patch gets filled with tiles where needed.
@@ -762,17 +763,17 @@ Sets if the :ref:`CanvasItem<class_canvasitem>` uses its parent's material.
 
 Sets if the canvas item (including its children) is visible.
 
-.. _class_VisualServer_canvas_item_set_z:
-
-- void **canvas_item_set_z** **(** :ref:`RID<class_rid>` item, :ref:`int<class_int>` z **)**
-
-Sets the :ref:`CanvasItem<class_canvasitem>`'s z order position.
-
 .. _class_VisualServer_canvas_item_set_z_as_relative_to_parent:
 
 - void **canvas_item_set_z_as_relative_to_parent** **(** :ref:`RID<class_rid>` item, :ref:`bool<class_bool>` enabled **)**
 
-If this is enabled, the z-position of the parent will be added to the childrens z-position.
+If this is enabled, the z-index of the parent will be added to the children's z-index.
+
+.. _class_VisualServer_canvas_item_set_z_index:
+
+- void **canvas_item_set_z_index** **(** :ref:`RID<class_rid>` item, :ref:`int<class_int>` z_index **)**
+
+Sets the :ref:`CanvasItem<class_canvasitem>`'s z-index, i.e. its draw order (lower indexes are drawn first).
 
 .. _class_VisualServer_canvas_light_attach_to_canvas:
 

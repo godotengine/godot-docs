@@ -113,6 +113,10 @@ Numeric Constants
 - **MARGIN_TOP** = **1** --- Top margin, used usually for :ref:`Control<class_control>` or :ref:`StyleBox<class_stylebox>` derived classes.
 - **MARGIN_RIGHT** = **2** --- Right margin, used usually for :ref:`Control<class_control>` or :ref:`StyleBox<class_stylebox>` derived classes.
 - **MARGIN_BOTTOM** = **3** --- Bottom margin, used usually for :ref:`Control<class_control>` or :ref:`StyleBox<class_stylebox>` derived classes.
+- **CORNER_TOP_LEFT** = **0**
+- **CORNER_TOP_RIGHT** = **1**
+- **CORNER_BOTTOM_RIGHT** = **2**
+- **CORNER_BOTTOM_LEFT** = **3**
 - **VERTICAL** = **1** --- General vertical alignment, used usually for :ref:`Separator<class_separator>`, :ref:`ScrollBar<class_scrollbar>`, :ref:`Slider<class_slider>`, etc.
 - **HORIZONTAL** = **0** --- General horizontal alignment, used usually for :ref:`Separator<class_separator>`, :ref:`ScrollBar<class_scrollbar>`, :ref:`Slider<class_slider>`, etc.
 - **HALIGN_LEFT** = **0** --- Horizontal left alignment, usually for text-derived classes.
@@ -556,6 +560,32 @@ Numeric Constants
 - **TYPE_VECTOR3_ARRAY** = **25** --- Variable is of type :ref:`PoolVector3Array<class_poolvector3array>`.
 - **TYPE_COLOR_ARRAY** = **26** --- Variable is of type :ref:`PoolColorArray<class_poolcolorarray>`.
 - **TYPE_MAX** = **27** --- Marker for end of type constants.
+- **OP_EQUAL** = **0**
+- **OP_NOT_EQUAL** = **1**
+- **OP_LESS** = **2**
+- **OP_LESS_EQUAL** = **3**
+- **OP_GREATER** = **4**
+- **OP_GREATER_EQUAL** = **5**
+- **OP_ADD** = **6**
+- **OP_SUBTRACT** = **7**
+- **OP_MULTIPLY** = **8**
+- **OP_DIVIDE** = **9**
+- **OP_NEGATE** = **10**
+- **OP_POSITIVE** = **11**
+- **OP_MODULE** = **12**
+- **OP_STRING_CONCAT** = **13**
+- **OP_SHIFT_LEFT** = **14**
+- **OP_SHIFT_RIGHT** = **15**
+- **OP_BIT_AND** = **16**
+- **OP_BIT_OR** = **17**
+- **OP_BIT_XOR** = **18**
+- **OP_BIT_NEGATE** = **19**
+- **OP_AND** = **20**
+- **OP_OR** = **21**
+- **OP_XOR** = **22**
+- **OP_NOT** = **23**
+- **OP_IN** = **24**
+- **OP_MAX** = **25**
 
 Description
 -----------

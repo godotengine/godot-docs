@@ -19,17 +19,19 @@ Brief Description
 Member Functions
 ----------------
 
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`can_drop_data_fw<class_ScriptEditor_can_drop_data_fw>` **(** :ref:`Vector2<class_vector2>` arg0, :ref:`Variant<class_variant>` arg1, :ref:`Control<class_control>` arg2 **)** const |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`drop_data_fw<class_ScriptEditor_drop_data_fw>` **(** :ref:`Vector2<class_vector2>` arg0, :ref:`Variant<class_variant>` arg1, :ref:`Control<class_control>` arg2 **)**               |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Script<class_script>`    | :ref:`get_current_script<class_ScriptEditor_get_current_script>` **(** **)**                                                                                                              |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`  | :ref:`get_drag_data_fw<class_ScriptEditor_get_drag_data_fw>` **(** :ref:`Vector2<class_vector2>` arg0, :ref:`Control<class_control>` arg1 **)**                                           |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`      | :ref:`get_open_scripts<class_ScriptEditor_get_open_scripts>` **(** **)** const                                                                                                            |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`can_drop_data_fw<class_ScriptEditor_can_drop_data_fw>` **(** :ref:`Vector2<class_vector2>` point, :ref:`Variant<class_variant>` data, :ref:`Control<class_control>` from **)** const |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`drop_data_fw<class_ScriptEditor_drop_data_fw>` **(** :ref:`Vector2<class_vector2>` point, :ref:`Variant<class_variant>` data, :ref:`Control<class_control>` from **)**               |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Script<class_script>`    | :ref:`get_current_script<class_ScriptEditor_get_current_script>` **(** **)**                                                                                                               |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_variant>`  | :ref:`get_drag_data_fw<class_ScriptEditor_get_drag_data_fw>` **(** :ref:`Vector2<class_vector2>` point, :ref:`Control<class_control>` from **)**                                           |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`      | :ref:`get_open_scripts<class_ScriptEditor_get_open_scripts>` **(** **)** const                                                                                                             |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`open_script_create_dialog<class_ScriptEditor_open_script_create_dialog>` **(** :ref:`String<class_string>` base_name, :ref:`String<class_string>` base_path **)**                    |
++--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -52,11 +54,11 @@ Member Function Description
 
 .. _class_ScriptEditor_can_drop_data_fw:
 
-- :ref:`bool<class_bool>` **can_drop_data_fw** **(** :ref:`Vector2<class_vector2>` arg0, :ref:`Variant<class_variant>` arg1, :ref:`Control<class_control>` arg2 **)** const
+- :ref:`bool<class_bool>` **can_drop_data_fw** **(** :ref:`Vector2<class_vector2>` point, :ref:`Variant<class_variant>` data, :ref:`Control<class_control>` from **)** const
 
 .. _class_ScriptEditor_drop_data_fw:
 
-- void **drop_data_fw** **(** :ref:`Vector2<class_vector2>` arg0, :ref:`Variant<class_variant>` arg1, :ref:`Control<class_control>` arg2 **)**
+- void **drop_data_fw** **(** :ref:`Vector2<class_vector2>` point, :ref:`Variant<class_variant>` data, :ref:`Control<class_control>` from **)**
 
 .. _class_ScriptEditor_get_current_script:
 
@@ -66,12 +68,16 @@ Returns a :ref:`Script<class_script>` that is currently active in editor.
 
 .. _class_ScriptEditor_get_drag_data_fw:
 
-- :ref:`Variant<class_variant>` **get_drag_data_fw** **(** :ref:`Vector2<class_vector2>` arg0, :ref:`Control<class_control>` arg1 **)**
+- :ref:`Variant<class_variant>` **get_drag_data_fw** **(** :ref:`Vector2<class_vector2>` point, :ref:`Control<class_control>` from **)**
 
 .. _class_ScriptEditor_get_open_scripts:
 
 - :ref:`Array<class_array>` **get_open_scripts** **(** **)** const
 
 Returns an array with all :ref:`Script<class_script>` objects which are currently open in editor.
+
+.. _class_ScriptEditor_open_script_create_dialog:
+
+- void **open_script_create_dialog** **(** :ref:`String<class_string>` base_name, :ref:`String<class_string>` base_path **)**
 
 

@@ -54,7 +54,13 @@ Member Variables
 
   .. _class_ARVRController_controller_id:
 
-- :ref:`int<class_int>` **controller_id** - The controller's id. The first controller that the :ref:`ARVRServer<class_arvrserver>` detects will have id 1, the second id 2, the third id 3, etc. When a controller is turned off, it's slot is freed. This ensures controllers will keep the same id even when controllers with lower ids are turned off.
+- :ref:`int<class_int>` **controller_id** - The controller's id.
+
+A controller id of 0 is unbound and will always result in an inactive node. Controller id 1 is reserved for the first controller that identifies itself as the left hand controller and id 2 is reserved for the first controller that identifies itself as the right hand controller.
+
+For any other controller that the :ref:`ARVRServer<class_arvrserver>` detects we continue with controller id 3.
+
+When a controller is turned off, its slot is freed. This ensures controllers will keep the same id even when controllers with lower ids are turned off.
 
   .. _class_ARVRController_rumble:
 

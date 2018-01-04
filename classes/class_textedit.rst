@@ -42,6 +42,8 @@ Member Functions
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`cut<class_TextEdit_cut>` **(** **)**                                                                                                                                                                                |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                     | :ref:`deselect<class_TextEdit_deselect>` **(** **)**                                                                                                                                                                      |
++------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`fold_all_lines<class_TextEdit_fold_all_lines>` **(** **)**                                                                                                                                                          |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`fold_line<class_TextEdit_fold_line>` **(** :ref:`int<class_int>` line **)**                                                                                                                                         |
@@ -68,7 +70,7 @@ Member Functions
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                  | :ref:`is_folded<class_TextEdit_is_folded>` **(** :ref:`int<class_int>` line **)** const                                                                                                                                   |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`is_line_hidden<class_TextEdit_is_line_hidden>` **(** :ref:`int<class_int>` arg0 **)** const                                                                                                                         |
+| :ref:`bool<class_bool>`                  | :ref:`is_line_hidden<class_TextEdit_is_line_hidden>` **(** :ref:`int<class_int>` line **)** const                                                                                                                         |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                  | :ref:`is_selection_active<class_TextEdit_is_selection_active>` **(** **)** const                                                                                                                                          |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -134,19 +136,27 @@ Member Variables
 
   .. _class_TextEdit_caret_blink:
 
-- :ref:`bool<class_bool>` **caret_blink**
+- :ref:`bool<class_bool>` **caret_blink** - If ``true`` the caret (visual cursor) blinks.
 
   .. _class_TextEdit_caret_blink_speed:
 
-- :ref:`float<class_float>` **caret_blink_speed**
+- :ref:`float<class_float>` **caret_blink_speed** - Duration (in seconds) of a caret's blinking cycle.
 
   .. _class_TextEdit_caret_block_mode:
 
-- :ref:`bool<class_bool>` **caret_block_mode**
+- :ref:`bool<class_bool>` **caret_block_mode** - If ``true`` the caret displays as a rectangle.
+
+If ``false`` the caret displays as a bar.
+
+  .. _class_TextEdit_caret_moving_by_right_click:
+
+- :ref:`bool<class_bool>` **caret_moving_by_right_click** - If ``true`` a right click moves the cursor at the mouse position before displaying the context menu.
+
+If ``false`` the context menu disregards mouse location.
 
   .. _class_TextEdit_context_menu_enabled:
 
-- :ref:`bool<class_bool>` **context_menu_enabled**
+- :ref:`bool<class_bool>` **context_menu_enabled** - If ``true`` a right click displays the context menu.
 
   .. _class_TextEdit_hiding_enabled:
 
@@ -158,7 +168,7 @@ Member Variables
 
   .. _class_TextEdit_highlight_current_line:
 
-- :ref:`bool<class_bool>` **highlight_current_line**
+- :ref:`bool<class_bool>` **highlight_current_line** - If ``true`` the line containing the cursor is highlighted.
 
   .. _class_TextEdit_override_selected_font_color:
 
@@ -170,7 +180,7 @@ Member Variables
 
   .. _class_TextEdit_show_line_numbers:
 
-- :ref:`bool<class_bool>` **show_line_numbers**
+- :ref:`bool<class_bool>` **show_line_numbers** - If ``true`` line numbers are displayed to the left of the text.
 
   .. _class_TextEdit_smooth_scrolling:
 
@@ -195,12 +205,12 @@ Numeric Constants
 - **SEARCH_MATCH_CASE** = **1** --- Match case when searching.
 - **SEARCH_WHOLE_WORDS** = **2** --- Match whole words when searching.
 - **SEARCH_BACKWARDS** = **4** --- Search from end to beginning.
-- **MENU_CUT** = **0**
-- **MENU_COPY** = **1**
-- **MENU_PASTE** = **2**
-- **MENU_CLEAR** = **3**
-- **MENU_SELECT_ALL** = **4**
-- **MENU_UNDO** = **5**
+- **MENU_CUT** = **0** --- Cuts (Copies and clears) the selected text.
+- **MENU_COPY** = **1** --- Copies the selected text.
+- **MENU_PASTE** = **2** --- Pastes the clipboard text over the selected text (or at the cursor's position).
+- **MENU_CLEAR** = **3** --- Erases the whole :ref:`TextEdit<class_textedit>` text.
+- **MENU_SELECT_ALL** = **4** --- Selects the whole :ref:`TextEdit<class_textedit>` text.
+- **MENU_UNDO** = **5** --- Undoes the previous action.
 - **MENU_MAX** = **6**
 
 Description
@@ -270,6 +280,12 @@ Return the line the editing cursor is at.
 - void **cut** **(** **)**
 
 Cut the current selection.
+
+.. _class_TextEdit_deselect:
+
+- void **deselect** **(** **)**
+
+Clears the current selection.
 
 .. _class_TextEdit_fold_all_lines:
 
@@ -341,7 +357,7 @@ Insert a given text at the cursor position.
 
 .. _class_TextEdit_is_line_hidden:
 
-- :ref:`bool<class_bool>` **is_line_hidden** **(** :ref:`int<class_int>` arg0 **)** const
+- :ref:`bool<class_bool>` **is_line_hidden** **(** :ref:`int<class_int>` line **)** const
 
 .. _class_TextEdit_is_selection_active:
 

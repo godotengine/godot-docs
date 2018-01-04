@@ -82,7 +82,7 @@ Member Functions
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`remove_joy_mapping<class_Input_remove_joy_mapping>` **(** :ref:`String<class_string>` guid **)**                                                                                                                           |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_custom_mouse_cursor<class_Input_set_custom_mouse_cursor>` **(** :ref:`Resource<class_resource>` image, :ref:`Vector2<class_vector2>` hotspot=Vector2( 0, 0 ) **)**                                                     |
+| void                           | :ref:`set_custom_mouse_cursor<class_Input_set_custom_mouse_cursor>` **(** :ref:`Resource<class_resource>` image, :ref:`int<class_int>` shape=0, :ref:`Vector2<class_vector2>` hotspot=Vector2( 0, 0 ) **)**                      |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_mouse_mode<class_Input_set_mouse_mode>` **(** :ref:`int<class_int>` mode **)**                                                                                                                                         |
 +--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -110,6 +110,23 @@ Numeric Constants
 - **MOUSE_MODE_HIDDEN** = **1** --- Makes the mouse cursor hidden if it is visible.
 - **MOUSE_MODE_CAPTURED** = **2** --- Captures the mouse. The mouse will be hidden and unable to leave the game window. But it will still register movement and mouse button presses.
 - **MOUSE_MODE_CONFINED** = **3**
+- **CURSOR_ARROW** = **0**
+- **CURSOR_IBEAM** = **1**
+- **CURSOR_POINTING_HAND** = **2**
+- **CURSOR_CROSS** = **3**
+- **CURSOR_WAIT** = **4**
+- **CURSOR_BUSY** = **5**
+- **CURSOR_DRAG** = **6**
+- **CURSOR_CAN_DROP** = **7**
+- **CURSOR_FORBIDDEN** = **8**
+- **CURSOR_VSIZE** = **9**
+- **CURSOR_HSIZE** = **10**
+- **CURSOR_BDIAGSIZE** = **11**
+- **CURSOR_FDIAGSIZE** = **12**
+- **CURSOR_MOVE** = **13**
+- **CURSOR_VSPLIT** = **14**
+- **CURSOR_HSPLIT** = **15**
+- **CURSOR_HELP** = **16**
 
 Description
 -----------
@@ -287,7 +304,9 @@ Removes all mappings from the internal db that match the given uid.
 
 .. _class_Input_set_custom_mouse_cursor:
 
-- void **set_custom_mouse_cursor** **(** :ref:`Resource<class_resource>` image, :ref:`Vector2<class_vector2>` hotspot=Vector2( 0, 0 ) **)**
+- void **set_custom_mouse_cursor** **(** :ref:`Resource<class_resource>` image, :ref:`int<class_int>` shape=0, :ref:`Vector2<class_vector2>` hotspot=Vector2( 0, 0 ) **)**
+
+Set a custom mouse cursor image, which is only visible inside the game window. The hotspot can also be specified. See enum ``CURSOR\_\*`` for the list of shapes.
 
 .. _class_Input_set_mouse_mode:
 

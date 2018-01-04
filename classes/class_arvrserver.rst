@@ -20,7 +20,7 @@ Member Functions
 ----------------
 
 +------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                       | :ref:`center_on_hmd<class_ARVRServer_center_on_hmd>` **(** :ref:`bool<class_bool>` ignore_tilt, :ref:`bool<class_bool>` keep_height **)** |
+| void                                                       | :ref:`center_on_hmd<class_ARVRServer_center_on_hmd>` **(** :ref:`int<class_int>` rotation_mode, :ref:`bool<class_bool>` keep_height **)** |
 +------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`ARVRInterface<class_arvrinterface>`                  | :ref:`find_interface<class_ARVRServer_find_interface>` **(** :ref:`String<class_string>` name **)** const                                 |
 +------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
@@ -84,6 +84,9 @@ Numeric Constants
 - **TRACKER_ANY_KNOWN** = **127** --- Used internally to filter trackers of any known type.
 - **TRACKER_UNKNOWN** = **128** --- Used internally if we haven't set the tracker type yet.
 - **TRACKER_ANY** = **255** --- Used internally to select all trackers.
+- **RESET_FULL_ROTATION** = **0** --- Fully reset the orientation of the HMD. Regardless of what direction the user is looking to in the real world. The user will look dead ahead in the virtual world.
+- **RESET_BUT_KEEP_TILT** = **1** --- Resets the orientation but keeps the tilt of the device. So if we're looking down, we keep looking down but heading will be reset.
+- **DONT_RESET_ROTATION** = **2** --- Does not reset the orientation of the HMD, only the position of the player gets centered.
 
 Description
 -----------
@@ -95,7 +98,7 @@ Member Function Description
 
 .. _class_ARVRServer_center_on_hmd:
 
-- void **center_on_hmd** **(** :ref:`bool<class_bool>` ignore_tilt, :ref:`bool<class_bool>` keep_height **)**
+- void **center_on_hmd** **(** :ref:`int<class_int>` rotation_mode, :ref:`bool<class_bool>` keep_height **)**
 
 This is a really important function to understand correctly. AR and VR platforms all handle positioning slightly differently.
 

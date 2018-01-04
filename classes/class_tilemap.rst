@@ -26,10 +26,6 @@ Member Functions
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_cellv<class_TileMap_get_cellv>` **(** :ref:`Vector2<class_vector2>` position **)** const                                                                                                                                                                                                                  |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`get_center_x<class_TileMap_get_center_x>` **(** **)** const                                                                                                                                                                                                                                                   |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`get_center_y<class_TileMap_get_center_y>` **(** **)** const                                                                                                                                                                                                                                                   |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`get_collision_layer_bit<class_TileMap_get_collision_layer_bit>` **(** :ref:`int<class_int>` bit **)** const                                                                                                                                                                                                   |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`get_collision_mask_bit<class_TileMap_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** const                                                                                                                                                                                                     |
@@ -52,13 +48,13 @@ Member Functions
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_cellv<class_TileMap_set_cellv>` **(** :ref:`Vector2<class_vector2>` position, :ref:`int<class_int>` tile, :ref:`bool<class_bool>` flip_x=false, :ref:`bool<class_bool>` flip_y=false, :ref:`bool<class_bool>` transpose=false **)**                                                                       |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_center_x<class_TileMap_set_center_x>` **(** :ref:`bool<class_bool>` enable **)**                                                                                                                                                                                                                          |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_center_y<class_TileMap_set_center_y>` **(** :ref:`bool<class_bool>` enable **)**                                                                                                                                                                                                                          |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_collision_layer_bit<class_TileMap_set_collision_layer_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**                                                                                                                                                                          |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_collision_mask_bit<class_TileMap_set_collision_mask_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**                                                                                                                                                                            |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`update_bitmask_area<class_TileMap_update_bitmask_area>` **(** :ref:`Vector2<class_vector2>` position **)**                                                                                                                                                                                                    |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`update_bitmask_region<class_TileMap_update_bitmask_region>` **(** :ref:`Vector2<class_vector2>` start=Vector2( 0, 0 ), :ref:`Vector2<class_vector2>` end=Vector2( 0, 0 ) **)**                                                                                                                                |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`world_to_map<class_TileMap_world_to_map>` **(** :ref:`Vector2<class_vector2>` world_position **)** const                                                                                                                                                                                                      |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -177,18 +173,6 @@ Return the tile index of the referenced cell.
 
 Return the tile index of the cell referenced by a Vector2.
 
-.. _class_TileMap_get_center_x:
-
-- :ref:`bool<class_bool>` **get_center_x** **(** **)** const
-
-Return true if tiles are to be centered in x coordinate (by default this is false and they are drawn from upper left cell corner).
-
-.. _class_TileMap_get_center_y:
-
-- :ref:`bool<class_bool>` **get_center_y** **(** **)** const
-
-Return true if tiles are to be centered in y coordinate (by default this is false and they are drawn from upper left cell corner).
-
 .. _class_TileMap_get_collision_layer_bit:
 
 - :ref:`bool<class_bool>` **get_collision_layer_bit** **(** :ref:`int<class_int>` bit **)** const
@@ -257,18 +241,6 @@ A tile index of -1 clears the cell.
 
 Optionally, the tile can also be flipped over the X and Y axes or transposed.
 
-.. _class_TileMap_set_center_x:
-
-- void **set_center_x** **(** :ref:`bool<class_bool>` enable **)**
-
-Set tiles to be centered in x coordinate. (by default this is false and they are drawn from upper left cell corner).
-
-.. _class_TileMap_set_center_y:
-
-- void **set_center_y** **(** :ref:`bool<class_bool>` enable **)**
-
-Set tiles to be centered in y coordinate. (by default this is false and they are drawn from upper left cell corner).
-
 .. _class_TileMap_set_collision_layer_bit:
 
 - void **set_collision_layer_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
@@ -276,6 +248,20 @@ Set tiles to be centered in y coordinate. (by default this is false and they are
 .. _class_TileMap_set_collision_mask_bit:
 
 - void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
+
+.. _class_TileMap_update_bitmask_area:
+
+- void **update_bitmask_area** **(** :ref:`Vector2<class_vector2>` position **)**
+
+Applies autotiling rules to the cell (and its adjacent cells) referenced by its grid-based X and Y coordinates.
+
+.. _class_TileMap_update_bitmask_region:
+
+- void **update_bitmask_region** **(** :ref:`Vector2<class_vector2>` start=Vector2( 0, 0 ), :ref:`Vector2<class_vector2>` end=Vector2( 0, 0 ) **)**
+
+Applies autotiling rules to the cells in the given region (specified by grid-based X and Y coordinates).
+
+Calling with invalid (or missing) parameters applies autotiling rules for the entire TileMap.
 
 .. _class_TileMap_world_to_map:
 

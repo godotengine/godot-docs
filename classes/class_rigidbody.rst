@@ -78,17 +78,29 @@ Member Variables
 
 - :ref:`Vector3<class_vector3>` **angular_velocity** - RigidBody's rotational velocity.
 
-  .. _class_RigidBody_axis_lock_x:
+  .. _class_RigidBody_axis_lock_angular_x:
 
-- :ref:`bool<class_bool>` **axis_lock_x**
+- :ref:`bool<class_bool>` **axis_lock_angular_x**
 
-  .. _class_RigidBody_axis_lock_y:
+  .. _class_RigidBody_axis_lock_angular_y:
 
-- :ref:`bool<class_bool>` **axis_lock_y**
+- :ref:`bool<class_bool>` **axis_lock_angular_y**
 
-  .. _class_RigidBody_axis_lock_z:
+  .. _class_RigidBody_axis_lock_angular_z:
 
-- :ref:`bool<class_bool>` **axis_lock_z**
+- :ref:`bool<class_bool>` **axis_lock_angular_z**
+
+  .. _class_RigidBody_axis_lock_linear_x:
+
+- :ref:`bool<class_bool>` **axis_lock_linear_x**
+
+  .. _class_RigidBody_axis_lock_linear_y:
+
+- :ref:`bool<class_bool>` **axis_lock_linear_y**
+
+  .. _class_RigidBody_axis_lock_linear_z:
+
+- :ref:`bool<class_bool>` **axis_lock_linear_z**
 
   .. _class_RigidBody_bounce:
 

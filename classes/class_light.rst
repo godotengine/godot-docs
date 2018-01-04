@@ -25,6 +25,10 @@ Member Variables
 
 - :ref:`bool<class_bool>` **editor_only**
 
+  .. _class_Light_light_bake_mode:
+
+- :ref:`int<class_int>` **light_bake_mode**
+
   .. _class_Light_light_color:
 
 - :ref:`Color<class_color>` **light_color**
@@ -89,6 +93,9 @@ Numeric Constants
 - **PARAM_SHADOW_BIAS** = **13**
 - **PARAM_SHADOW_BIAS_SPLIT_SCALE** = **14**
 - **PARAM_MAX** = **15**
+- **BAKE_DISABLED** = **0**
+- **BAKE_INDIRECT** = **1**
+- **BAKE_ALL** = **2**
 
 Description
 -----------

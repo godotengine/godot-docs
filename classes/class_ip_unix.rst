@@ -14,5 +14,10 @@ IP_Unix
 Brief Description
 -----------------
 
+Unix IP support. See :ref:`IP<class_ip>`.
 
+Description
+-----------
+
+Unix-specific implementation of IP support functions. See :ref:`IP<class_ip>`.
 

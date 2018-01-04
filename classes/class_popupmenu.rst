@@ -62,6 +62,8 @@ Member Functions
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`      | :ref:`get_item_tooltip<class_PopupMenu_get_item_tooltip>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                  |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`is_hide_on_state_item_selection<class_PopupMenu_is_hide_on_state_item_selection>` **(** **)** const                                                                                                                              |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`is_item_checkable<class_PopupMenu_is_item_checkable>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`is_item_checked<class_PopupMenu_is_item_checked>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                    |
@@ -71,6 +73,8 @@ Member Functions
 | :ref:`bool<class_bool>`          | :ref:`is_item_separator<class_PopupMenu_is_item_separator>` **(** :ref:`int<class_int>` idx **)** const                                                                                                                                |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`remove_item<class_PopupMenu_remove_item>` **(** :ref:`int<class_int>` idx **)**                                                                                                                                                  |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_hide_on_state_item_selection<class_PopupMenu_set_hide_on_state_item_selection>` **(** :ref:`bool<class_bool>` enable **)**                                                                                                   |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_item_accelerator<class_PopupMenu_set_item_accelerator>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` accel **)**                                                                                                   |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -88,6 +92,8 @@ Member Functions
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_item_metadata<class_PopupMenu_set_item_metadata>` **(** :ref:`int<class_int>` idx, :ref:`Variant<class_variant>` metadata **)**                                                                                              |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`set_item_multistate<class_PopupMenu_set_item_multistate>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` state **)**                                                                                                     |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_item_shortcut<class_PopupMenu_set_item_shortcut>` **(** :ref:`int<class_int>` idx, :ref:`ShortCut<class_shortcut>` shortcut, :ref:`bool<class_bool>` global=false **)**                                                      |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_item_submenu<class_PopupMenu_set_item_submenu>` **(** :ref:`int<class_int>` idx, :ref:`String<class_string>` submenu **)**                                                                                                   |
@@ -97,6 +103,8 @@ Member Functions
 | void                             | :ref:`set_item_tooltip<class_PopupMenu_set_item_tooltip>` **(** :ref:`int<class_int>` idx, :ref:`String<class_string>` tooltip **)**                                                                                                   |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`toggle_item_checked<class_PopupMenu_toggle_item_checked>` **(** :ref:`int<class_int>` idx **)**                                                                                                                                  |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`toggle_item_multistate<class_PopupMenu_toggle_item_multistate>` **(** :ref:`int<class_int>` idx **)**                                                                                                                            |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -251,6 +259,10 @@ Return the text of the item at index "idx".
 
 - :ref:`String<class_string>` **get_item_tooltip** **(** :ref:`int<class_int>` idx **)** const
 
+.. _class_PopupMenu_is_hide_on_state_item_selection:
+
+- :ref:`bool<class_bool>` **is_hide_on_state_item_selection** **(** **)** const
+
 .. _class_PopupMenu_is_item_checkable:
 
 - :ref:`bool<class_bool>` **is_item_checkable** **(** :ref:`int<class_int>` idx **)** const
@@ -280,6 +292,10 @@ Return whether the item is a seperator. If it is, it would be displayed as a lin
 - void **remove_item** **(** :ref:`int<class_int>` idx **)**
 
 Removes the item at index "idx" from the menu. Note that the indexes of items after the removed item are going to be shifted by one.
+
+.. _class_PopupMenu_set_hide_on_state_item_selection:
+
+- void **set_hide_on_state_item_selection** **(** :ref:`bool<class_bool>` enable **)**
 
 .. _class_PopupMenu_set_item_accelerator:
 
@@ -327,6 +343,10 @@ Set the id of the item at index "idx".
 
 Sets the metadata of an item, which might be of any type. You can later get it with :ref:`get_item_metadata<class_PopupMenu_get_item_metadata>`, which provides a simple way of assigning context data to items.
 
+.. _class_PopupMenu_set_item_multistate:
+
+- void **set_item_multistate** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` state **)**
+
 .. _class_PopupMenu_set_item_shortcut:
 
 - void **set_item_shortcut** **(** :ref:`int<class_int>` idx, :ref:`ShortCut<class_shortcut>` shortcut, :ref:`bool<class_bool>` global=false **)**
@@ -350,5 +370,9 @@ Set the text of the item at index "idx".
 .. _class_PopupMenu_toggle_item_checked:
 
 - void **toggle_item_checked** **(** :ref:`int<class_int>` idx **)**
+
+.. _class_PopupMenu_toggle_item_multistate:
+
+- void **toggle_item_multistate** **(** :ref:`int<class_int>` idx **)**
 
 

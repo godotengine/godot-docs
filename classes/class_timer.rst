@@ -81,29 +81,33 @@ Member Function Description
 
 - :ref:`float<class_float>` **get_time_left** **(** **)** const
 
-Return the time left for timeout in seconds if the timer is active, 0 otherwise.
+Returns the timer's remaining time in seconds. Returns 0 if the timer is inactive.
 
 .. _class_Timer_is_paused:
 
 - :ref:`bool<class_bool>` **is_paused** **(** **)** const
 
-Return if the timer is paused or not.
+Returns ``true`` if the timer is paused.
 
 .. _class_Timer_is_stopped:
 
 - :ref:`bool<class_bool>` **is_stopped** **(** **)** const
 
+Returns ``true`` if the timer is stopped.
+
 .. _class_Timer_set_paused:
 
 - void **set_paused** **(** :ref:`bool<class_bool>` paused **)**
 
-Set whether the timer is paused or not. A paused timer will be inactive until it is unpaused again.
+Pauses the timer. If ``paused`` is ``true``, the timer will not process until it is started or unpaused again, even if :ref:`start<class_Timer_start>` is called.
 
 .. _class_Timer_start:
 
 - void **start** **(** **)**
 
-Start the Timer.
+Starts the timer. This also resets the remaining time to ``wait_time``.
+
+Note: this method will not resume a paused timer. See :ref:`set_paused<class_Timer_set_paused>`.
 
 .. _class_Timer_stop:
 

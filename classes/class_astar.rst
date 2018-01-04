@@ -20,9 +20,9 @@ Member Functions
 ----------------
 
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`_compute_cost<class_AStar__compute_cost>` **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)** virtual                                   |
+| :ref:`float<class_float>`                        | :ref:`_compute_cost<class_AStar__compute_cost>` **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)** virtual                                   |
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`_estimate_cost<class_AStar__estimate_cost>` **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)** virtual                                 |
+| :ref:`float<class_float>`                        | :ref:`_estimate_cost<class_AStar__estimate_cost>` **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)** virtual                                 |
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                             | :ref:`add_point<class_AStar_add_point>` **(** :ref:`int<class_int>` id, :ref:`Vector3<class_vector3>` position, :ref:`float<class_float>` weight_scale=1.0 **)** |
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -42,7 +42,7 @@ Member Functions
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolIntArray<class_poolintarray>`          | :ref:`get_id_path<class_AStar_get_id_path>` **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)**                                               |
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolIntArray<class_poolintarray>`          | :ref:`get_point_connections<class_AStar_get_point_connections>` **(** :ref:`int<class_int>` arg0 **)**                                                           |
+| :ref:`PoolIntArray<class_poolintarray>`          | :ref:`get_point_connections<class_AStar_get_point_connections>` **(** :ref:`int<class_int>` id **)**                                                             |
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolVector3Array<class_poolvector3array>`  | :ref:`get_point_path<class_AStar_get_point_path>` **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)**                                         |
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -73,13 +73,13 @@ Member Function Description
 
 .. _class_AStar__compute_cost:
 
-- void **_compute_cost** **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)** virtual
+- :ref:`float<class_float>` **_compute_cost** **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)** virtual
 
 Called when computing the cost between two connected points.
 
 .. _class_AStar__estimate_cost:
 
-- void **_estimate_cost** **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)** virtual
+- :ref:`float<class_float>` **_estimate_cost** **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)** virtual
 
 Called when estimating the cost between a point and the path's ending point.
 
@@ -189,7 +189,7 @@ If you change the 2nd point's weight to 3, then the result will be ``[1, 4, 3]``
 
 .. _class_AStar_get_point_connections:
 
-- :ref:`PoolIntArray<class_poolintarray>` **get_point_connections** **(** :ref:`int<class_int>` arg0 **)**
+- :ref:`PoolIntArray<class_poolintarray>` **get_point_connections** **(** :ref:`int<class_int>` id **)**
 
 Returns an array with the ids of the points that form the connect with the given point.
 

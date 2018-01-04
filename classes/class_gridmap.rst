@@ -22,6 +22,12 @@ Member Functions
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`clear<class_GridMap_clear>` **(** **)**                                                                                                                                                            |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`clear_baked_meshes<class_GridMap_clear_baked_meshes>` **(** **)**                                                                                                                                  |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_rid>`                  | :ref:`get_bake_mesh_instance<class_GridMap_get_bake_mesh_instance>` **(** :ref:`int<class_int>` idx **)**                                                                                                |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_array>`              | :ref:`get_bake_meshes<class_GridMap_get_bake_meshes>` **(** **)**                                                                                                                                        |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`get_cell_item<class_GridMap_get_cell_item>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z **)** const                                                            |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`get_cell_item_orientation<class_GridMap_get_cell_item_orientation>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z **)** const                                    |
@@ -34,6 +40,10 @@ Member Functions
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                | :ref:`get_center_z<class_GridMap_get_center_z>` **(** **)** const                                                                                                                                        |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`get_collision_layer_bit<class_GridMap_get_collision_layer_bit>` **(** :ref:`int<class_int>` bit **)** const                                                                                        |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                | :ref:`get_collision_mask_bit<class_GridMap_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** const                                                                                          |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_array>`              | :ref:`get_meshes<class_GridMap_get_meshes>` **(** **)**                                                                                                                                                  |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                  | :ref:`get_octant_size<class_GridMap_get_octant_size>` **(** **)** const                                                                                                                                  |
@@ -41,6 +51,8 @@ Member Functions
 | :ref:`MeshLibrary<class_meshlibrary>`  | :ref:`get_theme<class_GridMap_get_theme>` **(** **)** const                                                                                                                                              |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_array>`              | :ref:`get_used_cells<class_GridMap_get_used_cells>` **(** **)** const                                                                                                                                    |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`make_baked_meshes<class_GridMap_make_baked_meshes>` **(** :ref:`bool<class_bool>` gen_lightmap_uv=false, :ref:`float<class_float>` lightmap_uv_texel_size=0.1 **)**                                |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`          | :ref:`map_to_world<class_GridMap_map_to_world>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z **)** const                                                              |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -58,12 +70,28 @@ Member Functions
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`set_clip<class_GridMap_set_clip>` **(** :ref:`bool<class_bool>` enabled, :ref:`bool<class_bool>` clipabove=true, :ref:`int<class_int>` floor=0, :ref:`int<class_int>` axis=0 **)**                 |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_collision_layer_bit<class_GridMap_set_collision_layer_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**                                                               |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_collision_mask_bit<class_GridMap_set_collision_mask_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**                                                                 |
++----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`set_octant_size<class_GridMap_set_octant_size>` **(** :ref:`int<class_int>` size **)**                                                                                                             |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`set_theme<class_GridMap_set_theme>` **(** :ref:`MeshLibrary<class_meshlibrary>` theme **)**                                                                                                        |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector3<class_vector3>`          | :ref:`world_to_map<class_GridMap_world_to_map>` **(** :ref:`Vector3<class_vector3>` pos **)** const                                                                                                      |
 +----------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+  .. _class_GridMap_collision_layer:
+
+- :ref:`int<class_int>` **collision_layer**
+
+  .. _class_GridMap_collision_mask:
+
+- :ref:`int<class_int>` **collision_mask**
+
 
 Numeric Constants
 -----------------
@@ -89,6 +117,18 @@ Member Function Description
 - void **clear** **(** **)**
 
 Clear all cells.
+
+.. _class_GridMap_clear_baked_meshes:
+
+- void **clear_baked_meshes** **(** **)**
+
+.. _class_GridMap_get_bake_mesh_instance:
+
+- :ref:`RID<class_rid>` **get_bake_mesh_instance** **(** :ref:`int<class_int>` idx **)**
+
+.. _class_GridMap_get_bake_meshes:
+
+- :ref:`Array<class_array>` **get_bake_meshes** **(** **)**
 
 .. _class_GridMap_get_cell_item:
 
@@ -126,6 +166,14 @@ Returns whether or not grid items are centered on the Y axis.
 
 Returns whether or not grid items are centered on the Z axis.
 
+.. _class_GridMap_get_collision_layer_bit:
+
+- :ref:`bool<class_bool>` **get_collision_layer_bit** **(** :ref:`int<class_int>` bit **)** const
+
+.. _class_GridMap_get_collision_mask_bit:
+
+- :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
+
 .. _class_GridMap_get_meshes:
 
 - :ref:`Array<class_array>` **get_meshes** **(** **)**
@@ -149,6 +197,10 @@ The assigned :ref:`MeshLibrary<class_meshlibrary>`.
 - :ref:`Array<class_array>` **get_used_cells** **(** **)** const
 
 Array of :ref:`Vector3<class_vector3>` with the non empty cell coordinates in the grid map.
+
+.. _class_GridMap_make_baked_meshes:
+
+- void **make_baked_meshes** **(** :ref:`bool<class_bool>` gen_lightmap_uv=false, :ref:`float<class_float>` lightmap_uv_texel_size=0.1 **)**
 
 .. _class_GridMap_map_to_world:
 
@@ -195,6 +247,14 @@ Set grid items to be centered on the Z axis. By default it is enabled.
 .. _class_GridMap_set_clip:
 
 - void **set_clip** **(** :ref:`bool<class_bool>` enabled, :ref:`bool<class_bool>` clipabove=true, :ref:`int<class_int>` floor=0, :ref:`int<class_int>` axis=0 **)**
+
+.. _class_GridMap_set_collision_layer_bit:
+
+- void **set_collision_layer_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
+
+.. _class_GridMap_set_collision_mask_bit:
+
+- void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
 .. _class_GridMap_set_octant_size:
 

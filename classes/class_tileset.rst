@@ -20,13 +20,13 @@ Member Functions
 ----------------
 
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                               | :ref:`_forward_subtile_selection<class_TileSet__forward_subtile_selection>` **(** :ref:`int<class_int>` autotile_id, :ref:`int<class_int>` bitmask, :ref:`Object<class_object>` tilemap, :ref:`Vector2<class_vector2>` tile_location **)** virtual                                        |
+| :ref:`Vector2<class_vector2>`                      | :ref:`_forward_subtile_selection<class_TileSet__forward_subtile_selection>` **(** :ref:`int<class_int>` autotile_id, :ref:`int<class_int>` bitmask, :ref:`Object<class_object>` tilemap, :ref:`Vector2<class_vector2>` tile_location **)** virtual                                        |
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                               | :ref:`_is_tile_bound<class_TileSet__is_tile_bound>` **(** :ref:`int<class_int>` drawn_id, :ref:`int<class_int>` neighbor_id **)** virtual                                                                                                                                                 |
+| :ref:`bool<class_bool>`                            | :ref:`_is_tile_bound<class_TileSet__is_tile_bound>` **(** :ref:`int<class_int>` drawn_id, :ref:`int<class_int>` neighbor_id **)** virtual                                                                                                                                                 |
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                              | :ref:`autotile_get_bitmask_mode<class_TileSet_autotile_get_bitmask_mode>` **(** :ref:`int<class_int>` arg0 **)** const                                                                                                                                                                    |
+| :ref:`int<class_int>`                              | :ref:`autotile_get_bitmask_mode<class_TileSet_autotile_get_bitmask_mode>` **(** :ref:`int<class_int>` id **)** const                                                                                                                                                                      |
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                               | :ref:`autotile_set_bitmask_mode<class_TileSet_autotile_set_bitmask_mode>` **(** :ref:`int<class_int>` mode, :ref:`int<class_int>` arg1 **)**                                                                                                                                              |
+| void                                               | :ref:`autotile_set_bitmask_mode<class_TileSet_autotile_set_bitmask_mode>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` mode **)**                                                                                                                                                |
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                               | :ref:`clear<class_TileSet_clear>` **(** **)**                                                                                                                                                                                                                                             |
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -127,19 +127,19 @@ Member Function Description
 
 .. _class_TileSet__forward_subtile_selection:
 
-- void **_forward_subtile_selection** **(** :ref:`int<class_int>` autotile_id, :ref:`int<class_int>` bitmask, :ref:`Object<class_object>` tilemap, :ref:`Vector2<class_vector2>` tile_location **)** virtual
+- :ref:`Vector2<class_vector2>` **_forward_subtile_selection** **(** :ref:`int<class_int>` autotile_id, :ref:`int<class_int>` bitmask, :ref:`Object<class_object>` tilemap, :ref:`Vector2<class_vector2>` tile_location **)** virtual
 
 .. _class_TileSet__is_tile_bound:
 
-- void **_is_tile_bound** **(** :ref:`int<class_int>` drawn_id, :ref:`int<class_int>` neighbor_id **)** virtual
+- :ref:`bool<class_bool>` **_is_tile_bound** **(** :ref:`int<class_int>` drawn_id, :ref:`int<class_int>` neighbor_id **)** virtual
 
 .. _class_TileSet_autotile_get_bitmask_mode:
 
-- :ref:`int<class_int>` **autotile_get_bitmask_mode** **(** :ref:`int<class_int>` arg0 **)** const
+- :ref:`int<class_int>` **autotile_get_bitmask_mode** **(** :ref:`int<class_int>` id **)** const
 
 .. _class_TileSet_autotile_set_bitmask_mode:
 
-- void **autotile_set_bitmask_mode** **(** :ref:`int<class_int>` mode, :ref:`int<class_int>` arg1 **)**
+- void **autotile_set_bitmask_mode** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` mode **)**
 
 .. _class_TileSet_clear:
 

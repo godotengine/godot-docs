@@ -171,7 +171,7 @@ Get an unsigned 32 bit value from the stream.
 
 - :ref:`int<class_int>` **get_u64** **(** **)**
 
-Get an unsigned 16 bit value from the stream.
+Get an unsigned 64 bit value from the stream.
 
 .. _class_StreamPeer_get_u8:
 

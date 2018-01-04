@@ -28,7 +28,7 @@ Member Functions
 Description
 -----------
 
-A synchronization Semaphore. Element used in multi-threadding. Initialized to zero on creation.
+A synchronization Semaphore. Element used to synchronize multiple :ref:`Thread<class_thread>`\ s. Initialized to zero on creation. Be careful to avoid deadlocks. For a binary version, see :ref:`Mutex<class_mutex>`.
 
 Member Function Description
 ---------------------------
@@ -37,12 +37,12 @@ Member Function Description
 
 - :ref:`int<class_int>` **post** **(** **)**
 
-Lowers the ``Semaphore``, allowing one more thread in.
+Lowers the ``Semaphore``, allowing one more thread in. Returns OK on success, ERR_BUSY otherwise.
 
 .. _class_Semaphore_wait:
 
 - :ref:`int<class_int>` **wait** **(** **)**
 
-Tries to wait for the ``Semaphore``, if its value is zero, blocks until non-zero.
+Tries to wait for the ``Semaphore``, if its value is zero, blocks until non-zero. Returns OK on success, ERR_BUSY otherwise.
 
 

@@ -64,7 +64,7 @@ Member Variables
 
   .. _class_Curve3D_bake_interval:
 
-- :ref:`float<class_float>` **bake_interval**
+- :ref:`float<class_float>` **bake_interval** - The distance in meters between two adjacent cached points. Changing it forces the cache to be recomputed the next time the :ref:`get_baked_points<class_Curve3D_get_baked_points>` or :ref:`get_baked_length<class_Curve3D_get_baked_length>` function is called. The smaller the distance, the more points in the cache and the more memory it will consume, so use with care.
 
 
 Description
@@ -88,6 +88,8 @@ If "at_position" is given, the point is inserted before the point number "at_pos
 .. _class_Curve3D_clear_points:
 
 - void **clear_points** **(** **)**
+
+Removes all points from the curve.
 
 .. _class_Curve3D_get_baked_length:
 

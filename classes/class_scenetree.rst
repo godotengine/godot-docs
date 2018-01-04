@@ -64,6 +64,8 @@ Member Functions
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                      | :ref:`is_refusing_new_network_connections<class_SceneTree_is_refusing_new_network_connections>` **(** **)** const                                                                                                  |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                      | :ref:`is_using_font_oversampling<class_SceneTree_is_using_font_oversampling>` **(** **)** const                                                                                                                    |
++----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`notify_group<class_SceneTree_notify_group>` **(** :ref:`String<class_string>` group, :ref:`int<class_int>` notification **)**                                                                                |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`notify_group_flags<class_SceneTree_notify_group_flags>` **(** :ref:`int<class_int>` call_flags, :ref:`String<class_string>` group, :ref:`int<class_int>` notification **)**                                  |
@@ -94,9 +96,13 @@ Member Functions
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`set_pause<class_SceneTree_set_pause>` **(** :ref:`bool<class_bool>` enable **)**                                                                                                                             |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                         | :ref:`set_quit_on_go_back<class_SceneTree_set_quit_on_go_back>` **(** :ref:`bool<class_bool>` enabled **)**                                                                                                        |
++----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`set_refuse_new_network_connections<class_SceneTree_set_refuse_new_network_connections>` **(** :ref:`bool<class_bool>` refuse **)**                                                                           |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`set_screen_stretch<class_SceneTree_set_screen_stretch>` **(** :ref:`int<class_int>` mode, :ref:`int<class_int>` aspect, :ref:`Vector2<class_vector2>` minsize, :ref:`float<class_float>` shrink=1 **)**      |
++----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                         | :ref:`set_use_font_oversampling<class_SceneTree_set_use_font_oversampling>` **(** :ref:`bool<class_bool>` enable **)**                                                                                             |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -266,6 +272,10 @@ Returns true if this SceneTree's :ref:`NetworkedMultiplayerPeer<class_networkedm
 
 - :ref:`bool<class_bool>` **is_refusing_new_network_connections** **(** **)** const
 
+.. _class_SceneTree_is_using_font_oversampling:
+
+- :ref:`bool<class_bool>` **is_using_font_oversampling** **(** **)** const
+
 .. _class_SceneTree_notify_group:
 
 - void **notify_group** **(** :ref:`String<class_string>` group, :ref:`int<class_int>` notification **)**
@@ -328,6 +338,10 @@ Set the peer object to handle the RPC system (effectively enabling networking). 
 
 - void **set_pause** **(** :ref:`bool<class_bool>` enable **)**
 
+.. _class_SceneTree_set_quit_on_go_back:
+
+- void **set_quit_on_go_back** **(** :ref:`bool<class_bool>` enabled **)**
+
 .. _class_SceneTree_set_refuse_new_network_connections:
 
 - void **set_refuse_new_network_connections** **(** :ref:`bool<class_bool>` refuse **)**
@@ -335,5 +349,9 @@ Set the peer object to handle the RPC system (effectively enabling networking). 
 .. _class_SceneTree_set_screen_stretch:
 
 - void **set_screen_stretch** **(** :ref:`int<class_int>` mode, :ref:`int<class_int>` aspect, :ref:`Vector2<class_vector2>` minsize, :ref:`float<class_float>` shrink=1 **)**
+
+.. _class_SceneTree_set_use_font_oversampling:
+
+- void **set_use_font_oversampling** **(** :ref:`bool<class_bool>` enable **)**
 
 

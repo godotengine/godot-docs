@@ -24,7 +24,7 @@ Member Functions
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`clear<class_Tree_clear>` **(** **)**                                                                                                   |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`      | :ref:`create_item<class_Tree_create_item>` **(** :ref:`Object<class_object>` parent=null **)**                                               |
+| :ref:`Object<class_object>`      | :ref:`create_item<class_Tree_create_item>` **(** :ref:`Object<class_object>` parent=null, :ref:`int<class_int>` idx=-1 **)**                 |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`ensure_cursor_is_visible<class_Tree_ensure_cursor_is_visible>` **(** **)**                                                             |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -226,7 +226,7 @@ Clears the tree. This removes all items.
 
 .. _class_Tree_create_item:
 
-- :ref:`Object<class_object>` **create_item** **(** :ref:`Object<class_object>` parent=null **)**
+- :ref:`Object<class_object>` **create_item** **(** :ref:`Object<class_object>` parent=null, :ref:`int<class_int>` idx=-1 **)**
 
 Create an item in the tree and add it as the last child of ``parent``. If parent is not given, it will be added as the root's last child, or it'll the be the root itself if the tree is empty.
 

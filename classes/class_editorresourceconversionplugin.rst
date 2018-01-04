@@ -22,7 +22,7 @@ Member Functions
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Resource<class_resource>`  | :ref:`_convert<class_EditorResourceConversionPlugin__convert>` **(** :ref:`Resource<class_resource>` resource **)** virtual |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`          | :ref:`_converts_to<class_EditorResourceConversionPlugin__converts_to>` **(** **)** virtual                                  |
+| :ref:`String<class_string>`      | :ref:`_converts_to<class_EditorResourceConversionPlugin__converts_to>` **(** **)** virtual                                  |
 +----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 
 Member Function Description
@@ -34,6 +34,6 @@ Member Function Description
 
 .. _class_EditorResourceConversionPlugin__converts_to:
 
-- :ref:`bool<class_bool>` **_converts_to** **(** **)** virtual
+- :ref:`String<class_string>` **_converts_to** **(** **)** virtual
 
 

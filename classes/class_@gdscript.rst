@@ -610,7 +610,7 @@ Converts from linear energy to decibels (audio).
 
 - :ref:`Object<class_object>` **load** **(** :ref:`String<class_string>` path **)**
 
-Loads a resource from the filesystem located at 'path'. Note: resource paths can be obtained by right clicking on a resource in the Assets Panel and choosing "Copy Path".
+Loads a resource from the filesystem located at ``path``. Note: resource paths can be obtained by right clicking on a resource in the Assets Panel and choosing "Copy Path".
 
 ::
 
@@ -895,11 +895,12 @@ Sets seed for the random number generator.
 
 - :ref:`float<class_float>` **sign** **(** :ref:`float<class_float>` s **)**
 
-Returns sign of ``s`` -1 or 1.
+Returns the sign of ``s``: -1 or 1. Returns 0 if ``s`` is 0.
 
 ::
 
     sign(-6) # returns -1
+    sign(0)  # returns 0
     sign(6)  # returns 1
 
 .. _class_@GDScript_sin:

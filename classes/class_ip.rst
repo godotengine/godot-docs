@@ -16,7 +16,7 @@ IP
 Brief Description
 -----------------
 
-IP Protocol support functions.
+Internet protocol (IP) support functions like DNS resolution.
 
 Member Functions
 ----------------
@@ -40,21 +40,21 @@ Member Functions
 Numeric Constants
 -----------------
 
-- **RESOLVER_STATUS_NONE** = **0**
-- **RESOLVER_STATUS_WAITING** = **1**
-- **RESOLVER_STATUS_DONE** = **2**
-- **RESOLVER_STATUS_ERROR** = **3**
-- **RESOLVER_MAX_QUERIES** = **32**
-- **RESOLVER_INVALID_ID** = **-1**
-- **TYPE_NONE** = **0**
-- **TYPE_IPV4** = **1**
-- **TYPE_IPV6** = **2**
-- **TYPE_ANY** = **3**
+- **RESOLVER_STATUS_NONE** = **0** --- DNS hostname resolver status: No status.
+- **RESOLVER_STATUS_WAITING** = **1** --- DNS hostname resolver status: Waiting.
+- **RESOLVER_STATUS_DONE** = **2** --- DNS hostname resolver status: Done.
+- **RESOLVER_STATUS_ERROR** = **3** --- DNS hostname resolver status: Error.
+- **RESOLVER_MAX_QUERIES** = **32** --- Maximum number of concurrent DNS resolver queries allowed, ``RESOLVER_INVALID_ID`` is returned if exceeded.
+- **RESOLVER_INVALID_ID** = **-1** --- Invalid ID constant. Returned if ``RESOLVER_MAX_QUERIES`` is exceeded.
+- **TYPE_NONE** = **0** --- Address type: None.
+- **TYPE_IPV4** = **1** --- Address type: Internet protocol version 4 (IPv4).
+- **TYPE_IPV6** = **2** --- Address type: Internet protocol version 6 (IPv6).
+- **TYPE_ANY** = **3** --- Address type: Any.
 
 Description
 -----------
 
-IP contains support functions for the IPv4 protocol. TCP/IP support is in different classes (see :ref:`StreamPeerTCP<class_streampeertcp>` and :ref:`TCP_Server<class_tcp_server>`). IP provides hostname resolution support, both blocking and threaded.
+IP contains support functions for the Internet Protocol (IP). TCP/IP support is in different classes (see :ref:`StreamPeerTCP<class_streampeertcp>` and :ref:`TCP_Server<class_tcp_server>`). IP provides DNS hostname resolution support, both blocking and threaded.
 
 Member Function Description
 ---------------------------

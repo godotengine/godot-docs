@@ -24,6 +24,8 @@ Member Functions
 +------------------------------------+------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`clear<class_LineEdit_clear>` **(** **)**                                                             |
 +------------------------------------+------------------------------------------------------------------------------------------------------------+
+| void                               | :ref:`deselect<class_LineEdit_deselect>` **(** **)**                                                       |
++------------------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`              | :ref:`get_cursor_position<class_LineEdit_get_cursor_position>` **(** **)** const                           |
 +------------------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`PopupMenu<class_popupmenu>`  | :ref:`get_menu<class_LineEdit_get_menu>` **(** **)** const                                                 |
@@ -140,6 +142,12 @@ Adds ``text`` after the cursor. If the resulting value is longer than :ref:`max_
 - void **clear** **(** **)**
 
 Erases the :ref:`LineEdit<class_lineedit>` text.
+
+.. _class_LineEdit_deselect:
+
+- void **deselect** **(** **)**
+
+Clears the current selection.
 
 .. _class_LineEdit_get_cursor_position:
 

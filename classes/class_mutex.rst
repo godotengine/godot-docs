@@ -30,7 +30,7 @@ Member Functions
 Description
 -----------
 
-A synchronization Mutex. Element used in multi-threadding. Basically a binary :ref:`Semaphore<class_semaphore>`. Guarantees that only one thread has this lock, can be used to protect a critical section.
+A synchronization Mutex. Element used to synchronize multiple :ref:`Thread<class_thread>`\ s. Basically a binary :ref:`Semaphore<class_semaphore>`. Guarantees that only one thread can ever acquire this lock at a time. Can be used to protect a critical section. Be careful to avoid deadlocks.
 
 Member Function Description
 ---------------------------
@@ -45,12 +45,12 @@ Lock this ``Mutex``, blocks until it is unlocked by the current owner.
 
 - :ref:`int<class_int>` **try_lock** **(** **)**
 
-Try locking this ``Mutex``, does not block. Returns OK on success else ERR_BUSY.
+Try locking this ``Mutex``, does not block. Returns OK on success, ERR_BUSY otherwise.
 
 .. _class_Mutex_unlock:
 
 - void **unlock** **(** **)**
 
-Unlock this ``Mutex``, leaving it to others threads.
+Unlock this ``Mutex``, leaving it to other threads.
 
 

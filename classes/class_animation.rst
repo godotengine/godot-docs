@@ -146,6 +146,8 @@ Clear the animation (clear all tracks and reset all).
 
 - void **copy_track** **(** :ref:`int<class_int>` track, :ref:`Animation<class_animation>` to_animation **)**
 
+Adds a new track that is a copy of the given track from ``to_animation``.
+
 .. _class_Animation_find_track:
 
 - :ref:`int<class_int>` **find_track** **(** :ref:`NodePath<class_nodepath>` path **)** const
@@ -282,6 +284,8 @@ Insert a generic key in a given track.
 
 - :ref:`bool<class_bool>` **track_is_enabled** **(** :ref:`int<class_int>` idx **)** const
 
+Returns ``true`` if the track at index ``idx`` is enabled.
+
 .. _class_Animation_track_is_imported:
 
 - :ref:`bool<class_bool>` **track_is_imported** **(** :ref:`int<class_int>` idx **)** const
@@ -315,6 +319,8 @@ Remove a key by position (seconds) in a given track.
 .. _class_Animation_track_set_enabled:
 
 - void **track_set_enabled** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enabled **)**
+
+Enables/disables the given track. Tracks are enabled by default.
 
 .. _class_Animation_track_set_imported:
 

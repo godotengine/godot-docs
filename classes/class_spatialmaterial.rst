@@ -147,6 +147,10 @@ Member Variables
 
 - :ref:`float<class_float>` **emission_energy**
 
+  .. _class_SpatialMaterial_emission_on_uv2:
+
+- :ref:`bool<class_bool>` **emission_on_uv2**
+
   .. _class_SpatialMaterial_emission_operator:
 
 - :ref:`int<class_int>` **emission_operator**
@@ -448,10 +452,11 @@ Numeric Constants
 - **FLAG_UV1_USE_TRIPLANAR** = **7**
 - **FLAG_UV2_USE_TRIPLANAR** = **8**
 - **FLAG_AO_ON_UV2** = **10**
-- **FLAG_USE_ALPHA_SCISSOR** = **11**
+- **FLAG_EMISSION_ON_UV2** = **11**
+- **FLAG_USE_ALPHA_SCISSOR** = **12**
 - **FLAG_TRIPLANAR_USE_WORLD** = **9**
-- **FLAG_ALBEDO_TEXTURE_FORCE_SRGB** = **12**
-- **FLAG_MAX** = **13**
+- **FLAG_ALBEDO_TEXTURE_FORCE_SRGB** = **13**
+- **FLAG_MAX** = **14**
 - **DIFFUSE_BURLEY** = **0**
 - **DIFFUSE_LAMBERT** = **1**
 - **DIFFUSE_LAMBERT_WRAP** = **2**

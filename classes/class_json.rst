@@ -28,7 +28,7 @@ Member Functions
 Description
 -----------
 
-Helper class for parsing JSON data.
+Helper class for parsing JSON data. For usage example, see :ref:`JSONParseResult<class_jsonparseresult>`.
 
 Member Function Description
 ---------------------------

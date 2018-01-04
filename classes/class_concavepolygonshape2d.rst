@@ -21,7 +21,7 @@ Member Variables
 
   .. _class_ConcavePolygonShape2D_segments:
 
-- :ref:`PoolVector2Array<class_poolvector2array>` **segments**
+- :ref:`PoolVector2Array<class_poolvector2array>` **segments** - The array of points that make up the ``ConcavePolygonShape2D``'s line segments.
 
 
 Description

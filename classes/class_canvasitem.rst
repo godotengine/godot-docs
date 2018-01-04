@@ -211,63 +211,67 @@ Called (if exists) to draw the canvas item.
 
 - :ref:`float<class_float>` **draw_char** **(** :ref:`Font<class_font>` font, :ref:`Vector2<class_vector2>` position, :ref:`String<class_string>` char, :ref:`String<class_string>` next, :ref:`Color<class_color>` modulate=Color( 1, 1, 1, 1 ) **)**
 
-Draw a string character using a custom font. Returns the advance, depending on the char width and kerning with an optional next char.
+Draws a string character using a custom font. Returns the advance, depending on the char width and kerning with an optional next char.
 
 .. _class_CanvasItem_draw_circle:
 
 - void **draw_circle** **(** :ref:`Vector2<class_vector2>` position, :ref:`float<class_float>` radius, :ref:`Color<class_color>` color **)**
 
-Draw a colored circle.
+Draws a colored circle.
 
 .. _class_CanvasItem_draw_colored_polygon:
 
 - void **draw_colored_polygon** **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`Color<class_color>` color, :ref:`PoolVector2Array<class_poolvector2array>` uvs=PoolVector2Array(  ), :ref:`Texture<class_texture>` texture=null, :ref:`Texture<class_texture>` normal_map=null, :ref:`bool<class_bool>` antialiased=false **)**
 
-Draw a colored polygon of any amount of points, convex or concave.
+Draws a colored polygon of any amount of points, convex or concave.
 
 .. _class_CanvasItem_draw_line:
 
 - void **draw_line** **(** :ref:`Vector2<class_vector2>` from, :ref:`Vector2<class_vector2>` to, :ref:`Color<class_color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
-Draw a line from a 2D point to another, with a given color and width. It can be optionally antialiased.
+Draws a line from a 2D point to another, with a given color and width. It can be optionally antialiased.
 
 .. _class_CanvasItem_draw_multiline:
 
 - void **draw_multiline** **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`Color<class_color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
+Draws multiple, parallel lines with a uniform ``color`` and ``width`` and optional antialiasing.
+
 .. _class_CanvasItem_draw_multiline_colors:
 
 - void **draw_multiline_colors** **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`PoolColorArray<class_poolcolorarray>` colors, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
+
+Draws multiple, parallel lines with a uniform ``width``, segment-by-segment coloring, and optional antialiasing. Colors assigned to line segments match by index between ``points`` and ``colors``.
 
 .. _class_CanvasItem_draw_polygon:
 
 - void **draw_polygon** **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`PoolColorArray<class_poolcolorarray>` colors, :ref:`PoolVector2Array<class_poolvector2array>` uvs=PoolVector2Array(  ), :ref:`Texture<class_texture>` texture=null, :ref:`Texture<class_texture>` normal_map=null, :ref:`bool<class_bool>` antialiased=false **)**
 
-Draw a polygon of any amount of points, convex or concave.
+Draws a polygon of any amount of points, convex or concave.
 
 .. _class_CanvasItem_draw_polyline:
 
 - void **draw_polyline** **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`Color<class_color>` color, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
-Draw a polyline with a uniform ``color`` and ``width`` and optional antialiasing.
+Draws interconnected line segments with a uniform ``color`` and ``width`` and optional antialiasing.
 
 .. _class_CanvasItem_draw_polyline_colors:
 
 - void **draw_polyline_colors** **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`PoolColorArray<class_poolcolorarray>` colors, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
-Draw a polyline with a uniform ``width``, segment-by-segment coloring, and optional antialiasing. Colors assigned to line segments match by index between ``points`` and ``colors``.
+Draws interconnected line segments with a uniform ``width``, segment-by-segment coloring, and optional antialiasing. Colors assigned to line segments match by index between ``points`` and ``colors``.
 
 .. _class_CanvasItem_draw_primitive:
 
 - void **draw_primitive** **(** :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`PoolColorArray<class_poolcolorarray>` colors, :ref:`PoolVector2Array<class_poolvector2array>` uvs, :ref:`Texture<class_texture>` texture=null, :ref:`float<class_float>` width=1.0, :ref:`Texture<class_texture>` normal_map=null **)**
 
-Draw a custom primitive, 1 point for a point, 2 points for a line, 3 points for a triangle and 4 points for a quad.
+Draws a custom primitive, 1 point for a point, 2 points for a line, 3 points for a triangle and 4 points for a quad.
 
 .. _class_CanvasItem_draw_rect:
 
 - void **draw_rect** **(** :ref:`Rect2<class_rect2>` rect, :ref:`Color<class_color>` color, :ref:`bool<class_bool>` filled=true **)**
 
-Draw a colored rectangle.
+Draws a colored rectangle.
 
 .. _class_CanvasItem_draw_set_transform:
 
@@ -285,31 +289,31 @@ Sets a custom transform for drawing via matrix. Anything drawn afterwards will b
 
 - void **draw_string** **(** :ref:`Font<class_font>` font, :ref:`Vector2<class_vector2>` position, :ref:`String<class_string>` text, :ref:`Color<class_color>` modulate=Color( 1, 1, 1, 1 ), :ref:`int<class_int>` clip_w=-1 **)**
 
-Draw a string using a custom font.
+Draws a string using a custom font.
 
 .. _class_CanvasItem_draw_style_box:
 
 - void **draw_style_box** **(** :ref:`StyleBox<class_stylebox>` style_box, :ref:`Rect2<class_rect2>` rect **)**
 
-Draw a styled rectangle.
+Draws a styled rectangle.
 
 .. _class_CanvasItem_draw_texture:
 
 - void **draw_texture** **(** :ref:`Texture<class_texture>` texture, :ref:`Vector2<class_vector2>` position, :ref:`Color<class_color>` modulate=Color( 1, 1, 1, 1 ), :ref:`Texture<class_texture>` normal_map=null **)**
 
-Draw a texture at a given position.
+Draws a texture at a given position.
 
 .. _class_CanvasItem_draw_texture_rect:
 
 - void **draw_texture_rect** **(** :ref:`Texture<class_texture>` texture, :ref:`Rect2<class_rect2>` rect, :ref:`bool<class_bool>` tile, :ref:`Color<class_color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_texture>` normal_map=null **)**
 
-Draw a textured rectangle at a given position, optionally modulated by a color. Transpose swaps the x and y coordinates when reading the texture.
+Draws a textured rectangle at a given position, optionally modulated by a color. Transpose swaps the x and y coordinates when reading the texture.
 
 .. _class_CanvasItem_draw_texture_rect_region:
 
 - void **draw_texture_rect_region** **(** :ref:`Texture<class_texture>` texture, :ref:`Rect2<class_rect2>` rect, :ref:`Rect2<class_rect2>` src_rect, :ref:`Color<class_color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_texture>` normal_map=null, :ref:`bool<class_bool>` clip_uv=true **)**
 
-Draw a textured rectangle region at a given position, optionally modulated by a color. Transpose swaps the x and y coordinates when reading the texture.
+Draws a textured rectangle region at a given position, optionally modulated by a color. Transpose swaps the x and y coordinates when reading the texture.
 
 .. _class_CanvasItem_get_canvas:
 

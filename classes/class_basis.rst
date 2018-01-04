@@ -97,7 +97,7 @@ Create a rotation matrix (in the YXZ convention: first Z, then X, and Y last) fr
 
 - :ref:`Basis<class_basis>` **Basis** **(** :ref:`Vector3<class_vector3>` axis, :ref:`float<class_float>` phi **)**
 
-Create a rotation matrix which rotates around the given axis by the specified angle. The axis must be a normalized vector.
+Create a rotation matrix which rotates around the given axis by the specified angle, in radians. The axis must be a normalized vector.
 
 .. _class_Basis_Basis:
 
