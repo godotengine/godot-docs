@@ -29,7 +29,13 @@ frames per second (FPS) of the application:
 The delta parameter describes the time elapsed (in seconds, as a
 floating point) since the previous call to "_process()".
 
-Physics processing is similar, but it should be used for all the processes that
+This delta parameter can be used to make sure things always take the same time,
+regardless of the hardware the game is running on.
+
+For example, movement is often multiplied with the time delta to make the movement
+constant and independent from the frame rate.
+
+Physics processing (``_physics_process()``) is similar, but it should be used for all the processes that
 must happen before each physics step. For example, to move a character.
 It always runs before a physics step and it is called at fixed time intervals,
 60 times per second by default. Change the value in the Project Settings.
