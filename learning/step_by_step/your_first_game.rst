@@ -308,22 +308,12 @@ Add this code to the function:
     func _on_Player_body_entered( body ):
         hide() # Player disappears after being hit
         emit_signal("hit")
-        monitoring = false
+        $CollisionShape2D.disabled = true
 
-.. warning:: Disabling the ``monitoring`` property of an ``Area2D`` means
+.. Note:: Disabling the area's collision shape means
              it won't detect collisions. By turning it off, we make
-             sure we don't trigger the ``hit`` signal more than once. However,
-             changing the property in the midst of an ``area_entered`` signal
-             will result in an error, because the engine hasn't finished
-             processing the current frame yet.
+             sure we don't trigger the ``hit`` signal more than once.
 
-Instead, you can *defer* the change, which will tell the game engine to
-wait until it's safe to set monitoring to ``false``. Change the line to
-this:
-
-::
-
-        call_deferred("set_monitoring", false)
 
 The last piece for our player is to add a function we can call to reset
 the player when starting a new game.
@@ -505,21 +495,23 @@ instance.
 Drag the ``Mob.tscn`` from the "FileSystem" panel and drop it in the
 ``Mob`` property.
 
-Next, click on the Player and connect the ``hit`` signal to the
-``game_over`` function, which will handle what needs to happen when a
-game ends. We will also have a ``new_game`` function to set everything
-up for a new game:
+Next, click on the Player and connect the ``hit`` signal. We want to make a
+new function named ``game_over``, which will handle what needs to happen when a
+game ends. Type "game_over" in the "Method In Node" box at the bottom of the
+"Connecting Signal" window. Add the following code, as well as a ``new_game``
+function to set everything up for a new game:
 
 ::
+
+    func game_over():
+        $ScoreTimer.stop()
+        $MobTimer.stop()
 
     func new_game():
         score = 0
         $Player.start($StartPosition.position)
         $StartTimer.start()
 
-    func game_over():
-        $ScoreTimer.stop()
-        $MobTimer.stop()
 
 Now connect the ``timeout()`` signal of each of the Timer nodes.
 ``StartTimer`` will start the other two timers. ``ScoreTimer`` will
@@ -814,6 +806,20 @@ You also need to create a ``Material`` by clicking on ``<null>`` and
 then "New ParticlesMaterial". The settings for that are below:
 
 .. image:: img/particle_trail_settings2.png
+
+To make the gradient for the "Color Ramp" setting, we want a gradient taking
+the alpha (transparency) of the sprite from 0.5 (semi-transparent) to
+0.0 (fully transparent).
+
+Click "New GradientTexture", then under "Gradient", click "New Gradient". You'll
+see a window like this:
+
+.. image:: img/color_gradient_ui.png
+
+The left and right boxes represent the start and end colors. Click on each
+and then click the large square on the right to choose the color. For the first
+color, set the ``A`` (alpha) value to around halfway. For the second, set it
+all the way to ``0``.
 
 .. seealso:: See :ref:`Particles2D <class_Particles2D>` for more details on using
              particle effects.
