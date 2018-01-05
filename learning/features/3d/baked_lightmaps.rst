@@ -151,7 +151,7 @@ Besides the capture size, quality can be modified by setting the **Bake Mode**. 
 Baking
 ------
 
-To begin he bake process, just push the big **Bake Lightmaps** button on top, when selecting the BakedLightmap node:
+To begin the bake process, just push the big **Bake Lightmaps** button on top, when selecting the BakedLightmap node:
 
 .. image:: img/baked_light_bake.png
 

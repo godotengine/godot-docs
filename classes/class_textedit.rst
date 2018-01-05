@@ -413,7 +413,7 @@ Set the maximum amount of characters editable.
 
 - void **set_wrap** **(** :ref:`bool<class_bool>` enable **)**
 
-Enable text wrapping when it goes beyond he edge of what is visible.
+Enable text wrapping when it goes beyond the edge of what is visible.
 
 .. _class_TextEdit_toggle_fold_line:
 

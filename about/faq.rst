@@ -7,8 +7,8 @@ GDScript? Why your own scripting language? Why not Lua, Javascript, C#, etc.?
 -----------------------------------------------------------------------------
 
 The short answer is, we'd rather a programmer does the small effort to
-learn GDScript so he or she later has a seamless experience, than
-attracting him or her with a familiar programming language that results
+learn GDScript so they later have a seamless experience, than
+attracting them with a familiar programming language that results
 in a worse experience. We are OK if you would rather not give Godot a
 chance because of this, but we strongly encourage you to try it and see
 the benefits yourself.

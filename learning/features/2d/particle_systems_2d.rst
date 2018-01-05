@@ -11,7 +11,7 @@ provided. Particle systems are used to simulate complex physical effects
 such as sparks, fire, magic particles, smoke, mist, magic, etc.
 
 The idea is that a "particle" is emitted at a fixed interval and with a
-fixed lifetime. During his lifetime, every particle will have the same
+fixed lifetime. During its lifetime, every particle will have the same
 base behavior. What makes every particle different and provides a more
 organic look is the "randomness" associated to each parameter. In
 essence, creating a particle system means setting base physics
