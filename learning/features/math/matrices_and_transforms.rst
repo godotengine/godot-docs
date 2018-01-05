@@ -91,7 +91,7 @@ the point:
 
 ::
 
-    var final_pos = x.dot(new_pos) + y.dot(new_pos)
+    var final_pos = Vector2(x.dot(new_pos), y.dot(new_pos))
 
 Then what we have is.. wait a minute, it's the ship in its design
 position!
@@ -108,7 +108,7 @@ were computed. Calculating distance in a direction or plane was one of
 the uses for the dot product. This was enough to obtain back the
 design coordinates for every point in the ship.
 
-So, what he have been working with so far (with X, Y and Origin) is an
+So, what we have been working with so far (with X, Y and Origin) is an
 *Oriented Coordinate System\*. X an Y are the **Basis**, and \*Origin*
 is the offset.
 
@@ -220,7 +220,7 @@ method:
     # Move 2 units towards where the basis is oriented
     var m = Matrix32()
     m = m.rotated(PI/2) # rotate 90°
-    m=m.translated( Vector2(2,0) )
+    m = m.translated( Vector2(2,0) )
 
 .. image:: img/tutomat14.png
 
@@ -378,7 +378,7 @@ Because in matrix math, A * B is not the same as B * A.
 Multiplication by inverse
 -------------------------
 
-Multiplying a matrix by its inverse, results in identity
+Multiplying a matrix by its inverse, results in identity:
 
 ::
 
@@ -498,4 +498,4 @@ An example:
     var t = Transform()
     pos = t.xform(pos) # transform 3D position
     pos = t.basis.xform(pos) # (only rotate)
-    pos = t.origin + pos  (only translate)
+    pos = t.origin + pos # (only translate)
