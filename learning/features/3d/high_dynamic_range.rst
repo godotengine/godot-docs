@@ -7,7 +7,7 @@ Introduction
 ------------
 
 Normally, an artist does all the 3D modelling, then all the texturing,
-looks at his or her awesome looking model in the 3D DCC and says "looks
+looks at their awesome looking model in the 3D DCC and says "looks
 fantastic, ready for integration!" then goes into the game, lighting is
 setup and the game runs.
 

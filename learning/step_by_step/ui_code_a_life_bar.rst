@@ -114,7 +114,7 @@ Set up the Lifebar with the Player's max\_health
 We have to tell the GUI somehow what the player's current health is, to
 update the lifebar's texture, and to display the remaining health in the
 HP counter in the top left corner of the screen. To do this we send the
-player's health to the GUI every time he takes damage. The GUI will then
+player's health to the GUI every time they take damage. The GUI will then
 update the ``Lifebar`` and ``Number`` nodes with this value.
 
 We could stop here to display the number, but we need to initialize the
@@ -550,7 +550,7 @@ And that is it. You may now play the game to see the final result!
 
 .. note::
 
-    Using the exact same techniques, you can change the color of the bar when the Player gets poisoned, turn the bar red when its health drops low, shake the UI when he takes a critical hit... the principle is the same: emit a signal to forward the information from the `Player` to the `GUI` and let the `GUI` process it.
+    Using the exact same techniques, you can change the color of the bar when the Player gets poisoned, turn the bar red when its health drops low, shake the UI when they take a critical hit... the principle is the same: emit a signal to forward the information from the `Player` to the `GUI` and let the `GUI` process it.
 
 .. raw:: html
 

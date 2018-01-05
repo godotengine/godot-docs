@@ -29,7 +29,7 @@ Member Variables
 
   .. _class_InputEventJoypadButton_pressure:
 
-- :ref:`float<class_float>` **pressure** - Represents the pressure the user puts on the button with his finger, if the controller supports it. Ranges from ``0`` to ``1``.
+- :ref:`float<class_float>` **pressure** - Represents the pressure the user puts on the button with their finger, if the controller supports it. Ranges from ``0`` to ``1``.
 
 
 Description

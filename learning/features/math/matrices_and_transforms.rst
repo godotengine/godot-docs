@@ -108,7 +108,7 @@ were computed. Calculating distance in a direction or plane was one of
 the uses for the dot product. This was enough to obtain back the
 design coordinates for every point in the ship.
 
-So, what he have been working with so far (with X, Y and Origin) is an
+So, what we have been working with so far (with X, Y and Origin) is an
 *Oriented Coordinate System\*. X an Y are the **Basis**, and \*Origin*
 is the offset.
 
