@@ -41,7 +41,11 @@ received input, in order:
    "input_event" will be emitted (this function is re-implementable by
    script by inheriting from it). If the control wants to "consume" the
    event, it will call :ref:`Control.accept_event() <class_Control_accept_event>` and the event will
-   not spread any more.
+   not spread any more. Events that are not consumed will propagate  **up**,
+   to :ref:`Control <class_Control>`'s ancestors. Use :ref:`Control.mouse_filter <class_Control_mouse_filter>`
+   property to control whether a :ref:`Control <class_Control>` is notified
+   of mouse events via :ref:`Control._gui_input() <class_Control__gui_input>`
+   callback, and whether these events are propagated further.
 3. If so far no one consumed the event, the unhandled input callback
    will be called if overriden (and not disabled with 
    :ref:`Node.set_process_unhandled_input() <class_Node_set_process_unhandled_input>`).
