@@ -606,12 +606,12 @@ placement, use the following settings:
 ScoreLabel
 ~~~~~~~~~~
 
--  ``Anchor``: "Center Top"
+-  ``Layout``: "Center Top"
 -  ``Margin``:
 
-   -  Left: ``-240``
+   -  Left: ``-25``
    -  Top: ``0``
-   -  Right: ``240``
+   -  Right: ``25``
    -  Bottom: ``100``
 
 -  Text: ``0``
@@ -619,20 +619,20 @@ ScoreLabel
 MessageLabel
 ~~~~~~~~~~~~
 
--  ``Anchor``: "Center"
+-  ``Layout``: "Center Bottom"
 -  ``Margin``:
 
-   -  Left: ``-240``
+   -  Left: ``-100``
    -  Top: ``-200``
-   -  Right: ``240``
-   -  Bottom: ``60``
+   -  Right: ``100``
+   -  Bottom: ``-100``
 
 -  Text: ``Dodge the Creeps!``
 
 StartButton
 ~~~~~~~~~~~
 
--  ``Anchor``: "Center"
+-  ``Layout``: "Center"
 -  ``Margin``:
 
    -  Left: ``-60``
