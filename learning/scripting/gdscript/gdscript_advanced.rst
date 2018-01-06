@@ -310,9 +310,9 @@ states and quick structs:
 
     # indexing
 
-    d.mother = "rebecca" # this doesn't work (use syntax below to add a key:value pair)
+    d.mother = "rebecca" # this works
     d["mother"] = "rebecca" # this works
-    d.name = "caroline" # if key exists, assignment does work, this is why it's like a quick struct.
+    d.name = "caroline" # this works, this is why it's like a quick struct.
 
 For & while
 -----------
