@@ -7,7 +7,7 @@ Base resolution
 ---------------
 
 A base screen resolution for the project can be specified in the project
-settings.
+settings under ``display``, ``window``
 
 .. image:: img/screenres.png
 
