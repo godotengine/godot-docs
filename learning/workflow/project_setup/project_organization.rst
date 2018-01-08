@@ -33,16 +33,20 @@ can usually be organized in a place, while a separate folder is used
 to store built levels that use them.
 
 ::
-	/models/town/house/house.dae
-	/models/town/house/window.png
-	/models/town/house/door.png
-	/characters/player/cubio.dae
-	/characters/player/cubio.png
-	/characters/enemies/goblin/goblin.dae
-	/characters/enemies/goblin/goblin.png
-	/characters/npcs/suzanne/suzanne.dae
-	/characters/npcs/suzanne/suzanne.png
-	/levels/riverdale/riverdale.scn
+
+    /project.godot
+    /docs/.gdignore
+    /docs/learning.html
+    /models/town/house/house.dae
+    /models/town/house/window.png
+    /models/town/house/door.png
+    /characters/player/cubio.dae
+    /characters/player/cubio.png
+    /characters/enemies/goblin/goblin.dae
+    /characters/enemies/goblin/goblin.png
+    /characters/npcs/suzanne/suzanne.dae
+    /characters/npcs/suzanne/suzanne.png
+    /levels/riverdale/riverdale.scn
 
 Importing
 ---------
@@ -53,3 +57,6 @@ resulted in an organization hazzle for most developers.
 
 Because of this, assets are now imported from within the project
 folder transparently.
+
+If a folder shouldn't be imported into Godot an exception can be made with a
+.gdignore file.
