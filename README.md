@@ -53,6 +53,12 @@ You can then build the HTML documentation from the root folder of this repositor
 make html
 ```
 
+or:
+
+```sh
+make SPHINXBUILD=~/.local/bin/sphinx-build html
+```
+
 The compilation might take some time as the `classes/` folder contains many files to parse.  
 You can then test the changes live by opening `_build/html/index.html` in your favourite browser.
 
