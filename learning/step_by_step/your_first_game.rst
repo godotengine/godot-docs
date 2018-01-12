@@ -412,7 +412,7 @@ node and add this code:
 
 ::
 
-    func _on_Visible_screen_exited():
+    func _on_Visibility_screen_exited():
         queue_free()
 
 That completes the `Mob` scene.
