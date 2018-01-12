@@ -85,3 +85,13 @@ latex_documents = [
   (master_doc, 'GodotEngine.tex', 'Godot Engine Documentation',
    'Juan Linietsky, Ariel Manzur and the Godot community', 'manual'),
 ]
+
+# -- Godot custom HTML feedback link --------------------------------------
+# https://docs.readthedocs.io/en/latest/guides/adding-custom-css.html
+# http://www.sphinx-doc.org/en/1.5.6/config.html#confval-html_static_path
+
+html_static_path = ['html_inc']
+
+def setup(app):
+    app.add_stylesheet('feedback/godot_feedback.css')
+    app.add_javascript('feedback/godot_feedback.js')
