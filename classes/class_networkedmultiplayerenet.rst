@@ -33,14 +33,19 @@ Member Functions
 | void                   | :ref:`set_compression_mode<class_NetworkedMultiplayerENet_set_compression_mode>` **(** :ref:`int<class_int>` mode **)**                                                                                                      |
 +------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_NetworkedMultiplayerENet_CompressionMode:
+
+enum **CompressionMode**
 
 - **COMPRESS_NONE** = **0**
 - **COMPRESS_RANGE_CODER** = **1**
 - **COMPRESS_FASTLZ** = **2**
 - **COMPRESS_ZLIB** = **3**
 - **COMPRESS_ZSTD** = **4**
+
 
 Description
 -----------

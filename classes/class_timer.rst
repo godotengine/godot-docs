@@ -56,18 +56,23 @@ Member Variables
 
   .. _class_Timer_process_mode:
 
-- :ref:`int<class_int>` **process_mode** - Processing mode. Uses TIMER_PROCESS\_\* constants as value.
+- :ref:`TimerProcessMode<enum_timer_timerprocessmode>` **process_mode** - Processing mode. Uses TIMER_PROCESS\_\* constants as value.
 
   .. _class_Timer_wait_time:
 
 - :ref:`float<class_float>` **wait_time** - Wait time in seconds.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_Timer_TimerProcessMode:
+
+enum **TimerProcessMode**
 
 - **TIMER_PROCESS_PHYSICS** = **0** --- Update the Timer during the physics step at each frame (fixed framerate processing).
 - **TIMER_PROCESS_IDLE** = **1** --- Update the Timer during the idle time at each frame.
+
 
 Description
 -----------

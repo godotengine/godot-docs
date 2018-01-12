@@ -33,12 +33,17 @@ Member Variables
 - :ref:`float<class_float>` **wait_time**
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_VisualScriptYield_YieldMode:
+
+enum **YieldMode**
 
 - **YIELD_FRAME** = **1**
 - **YIELD_PHYSICS_FRAME** = **2**
 - **YIELD_WAIT** = **3**
+
 
 Member Function Description
 ---------------------------

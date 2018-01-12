@@ -107,18 +107,33 @@ Member Functions
 | void                                     | :ref:`value_track_set_update_mode<class_Animation_value_track_set_update_mode>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` mode **)**                                                                                                                  |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_Animation_UpdateMode:
+
+enum **UpdateMode**
+
+- **UPDATE_CONTINUOUS** = **0** --- Update between keyframes.
+- **UPDATE_DISCRETE** = **1** --- Update at the keyframes and hold the value.
+- **UPDATE_TRIGGER** = **2** --- Update at the keyframes.
+
+  .. _enum_Animation_InterpolationType:
+
+enum **InterpolationType**
+
+- **INTERPOLATION_NEAREST** = **0** --- No interpolation (nearest value).
+- **INTERPOLATION_LINEAR** = **1** --- Linear interpolation.
+- **INTERPOLATION_CUBIC** = **2** --- Cubic interpolation.
+
+  .. _enum_Animation_TrackType:
+
+enum **TrackType**
 
 - **TYPE_VALUE** = **0** --- Value tracks set values in node properties, but only those which can be Interpolated.
 - **TYPE_TRANSFORM** = **1** --- Transform tracks are used to change node local transforms or skeleton pose bones. Transitions are Interpolated.
 - **TYPE_METHOD** = **2** --- Method tracks call functions with given arguments per key.
-- **INTERPOLATION_NEAREST** = **0** --- No interpolation (nearest value).
-- **INTERPOLATION_LINEAR** = **1** --- Linear interpolation.
-- **INTERPOLATION_CUBIC** = **2** --- Cubic interpolation.
-- **UPDATE_CONTINUOUS** = **0** --- Update between keyframes.
-- **UPDATE_DISCRETE** = **1** --- Update at the keyframes and hold the value.
-- **UPDATE_TRIGGER** = **2** --- Update at the keyframes.
+
 
 Description
 -----------

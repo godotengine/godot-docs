@@ -114,8 +114,12 @@ Makes all rotation slower when between 0 and 1.
 - :ref:`float<class_float>` **linear_ortho/softness** - A factor applied to the movement accross axes orthogonal to the slider.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_SliderJoint_Param:
+
+enum **Param**
 
 - **PARAM_LINEAR_LIMIT_UPPER** = **0** --- The maximum difference between the pivot points on their x-axis before damping happens.
 - **PARAM_LINEAR_LIMIT_LOWER** = **1** --- The minimum difference between the pivot points on their x-axis before damping happens.
@@ -140,6 +144,7 @@ Numeric Constants
 - **PARAM_ANGULAR_ORTHOGONAL_RESTITUTION** = **20** --- The amount of restitution of the rotation across axes orthogonal to the slider.
 - **PARAM_ANGULAR_ORTHOGONAL_DAMPING** = **21** --- The amount of damping of the rotation across axes orthogonal to the slider.
 - **PARAM_MAX** = **22** --- End flag of PARAM\_\* constants, used internally.
+
 
 Description
 -----------

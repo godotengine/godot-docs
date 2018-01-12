@@ -113,7 +113,7 @@ Member Variables
 
   .. _class_ParticlesMaterial_emission_shape:
 
-- :ref:`int<class_int>` **emission_shape** - Particles will be emitted inside this region. Use ``EMISSION_SHAPE\_\*`` constants for values. Default value: ``EMISSION_SHAPE_POINT``.
+- :ref:`EmissionShape<enum_particlesmaterial_emissionshape>` **emission_shape** - Particles will be emitted inside this region. Use ``EMISSION_SHAPE\_\*`` constants for values. Default value: ``EMISSION_SHAPE_POINT``.
 
   .. _class_ParticlesMaterial_emission_sphere_radius:
 
@@ -236,8 +236,20 @@ Member Variables
 - :ref:`CurveTexture<class_curvetexture>` **trail_size_modifier** - Trail particles' size will vary along this :ref:`CurveTexture<class_curvetexture>`.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_ParticlesMaterial_Flags:
+
+enum **Flags**
+
+- **FLAG_ALIGN_Y_TO_VELOCITY** = **0** --- Use with :ref:`set_flag<class_ParticlesMaterial_set_flag>` to set :ref:`flag_align_y<class_ParticlesMaterial_flag_align_y>`.
+- **FLAG_ROTATE_Y** = **1** --- Use with :ref:`set_flag<class_ParticlesMaterial_set_flag>` to set :ref:`flag_rotate_y<class_ParticlesMaterial_flag_rotate_y>`
+- **FLAG_MAX** = **4**
+
+  .. _enum_ParticlesMaterial_Parameter:
+
+enum **Parameter**
 
 - **PARAM_INITIAL_LINEAR_VELOCITY** = **0** --- Use with :ref:`set_param<class_ParticlesMaterial_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_set_param_texture>` to set initial velocity properties.
 - **PARAM_ANGULAR_VELOCITY** = **1** --- Use with :ref:`set_param<class_ParticlesMaterial_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_set_param_texture>` to set angular velocity properties.
@@ -252,14 +264,17 @@ Numeric Constants
 - **PARAM_ANIM_SPEED** = **10** --- Use with :ref:`set_param<class_ParticlesMaterial_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_set_param_texture>` to set animation speed properties.
 - **PARAM_ANIM_OFFSET** = **11** --- Use with :ref:`set_param<class_ParticlesMaterial_set_param>`, :ref:`set_param_randomness<class_ParticlesMaterial_set_param_randomness>`, and :ref:`set_param_texture<class_ParticlesMaterial_set_param_texture>` to set animation offset properties.
 - **PARAM_MAX** = **12**
-- **FLAG_ALIGN_Y_TO_VELOCITY** = **0** --- Use with :ref:`set_flag<class_ParticlesMaterial_set_flag>` to set :ref:`flag_align_y<class_ParticlesMaterial_flag_align_y>`.
-- **FLAG_ROTATE_Y** = **1** --- Use with :ref:`set_flag<class_ParticlesMaterial_set_flag>` to set :ref:`flag_rotate_y<class_ParticlesMaterial_flag_rotate_y>`
-- **FLAG_MAX** = **4**
+
+  .. _enum_ParticlesMaterial_EmissionShape:
+
+enum **EmissionShape**
+
 - **EMISSION_SHAPE_POINT** = **0** --- All particles will be emitted from a single point.
 - **EMISSION_SHAPE_SPHERE** = **1** --- Particles will be emitted in the volume of a sphere.
 - **EMISSION_SHAPE_BOX** = **2** --- Particles will be emitted in the volume of a box.
 - **EMISSION_SHAPE_POINTS** = **3**
 - **EMISSION_SHAPE_DIRECTED_POINTS** = **4**
+
 
 Description
 -----------

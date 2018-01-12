@@ -162,17 +162,22 @@ Member Variables
 
   .. _class_Area_space_override:
 
-- :ref:`int<class_int>` **space_override** - Override mode for gravity and damping calculations within this area. See the SPACE_OVERRIDE\_\* constants for values.
+- :ref:`SpaceOverride<enum_area_spaceoverride>` **space_override** - Override mode for gravity and damping calculations within this area. See the SPACE_OVERRIDE\_\* constants for values.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_Area_SpaceOverride:
+
+enum **SpaceOverride**
 
 - **SPACE_OVERRIDE_DISABLED** = **0** --- This area does not affect gravity/damping.
 - **SPACE_OVERRIDE_COMBINE** = **1** --- This area adds its gravity/damping values to whatever has been calculated so far (in ``priority`` order).
 - **SPACE_OVERRIDE_COMBINE_REPLACE** = **2** --- This area adds its gravity/damping values to whatever has been calculated so far (in ``priority`` order), ignoring any lower priority areas.
 - **SPACE_OVERRIDE_REPLACE** = **3** --- This area replaces any gravity/damping, even the defaults, ignoring any lower priority areas.
 - **SPACE_OVERRIDE_REPLACE_COMBINE** = **4** --- This area replaces any gravity/damping calculated so far (in ``priority`` order), but keeps calculating the rest of the areas.
+
 
 Description
 -----------
@@ -198,25 +203,25 @@ Returns an individual bit on the collision mask.
 
 - :ref:`Array<class_array>` **get_overlapping_areas** **(** **)** const
 
-Returns a list of intersecting ``Area``\ s.
+Returns a list of intersecting ``Area``\ s. For performance reasons (collisions are all processed at the same time) this list is modified once during the physics step, not immediately after objects are moved. Consider using signals instead.
 
 .. _class_Area_get_overlapping_bodies:
 
 - :ref:`Array<class_array>` **get_overlapping_bodies** **(** **)** const
 
-Returns a list of intersecting :ref:`PhysicsBody<class_physicsbody>`\ s.
+Returns a list of intersecting :ref:`PhysicsBody<class_physicsbody>`\ s. For performance reasons (collisions are all processed at the same time) this list is modified once during the physics step, not immediately after objects are moved. Consider using signals instead.
 
 .. _class_Area_overlaps_area:
 
 - :ref:`bool<class_bool>` **overlaps_area** **(** :ref:`Node<class_node>` area **)** const
 
-If ``true`` the given area overlaps the Area.
+If ``true`` the given area overlaps the Area. Note that the result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
 
 .. _class_Area_overlaps_body:
 
 - :ref:`bool<class_bool>` **overlaps_body** **(** :ref:`Node<class_node>` body **)** const
 
-If ``true`` the given body overlaps the Area.
+If ``true`` the given body overlaps the Area. Note that the result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
 
 .. _class_Area_set_collision_layer_bit:
 

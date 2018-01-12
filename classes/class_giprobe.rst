@@ -66,17 +66,22 @@ Member Variables
 
   .. _class_GIProbe_subdiv:
 
-- :ref:`int<class_int>` **subdiv**
+- :ref:`Subdiv<enum_giprobe_subdiv>` **subdiv**
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_GIProbe_Subdiv:
+
+enum **Subdiv**
 
 - **SUBDIV_64** = **0**
 - **SUBDIV_128** = **1**
 - **SUBDIV_256** = **2**
 - **SUBDIV_512** = **3**
 - **SUBDIV_MAX** = **4**
+
 
 Member Function Description
 ---------------------------

@@ -30,11 +30,11 @@ Member Variables
 
   .. _class_SpriteBase3D_alpha_cut:
 
-- :ref:`int<class_int>` **alpha_cut**
+- :ref:`AlphaCutMode<enum_spritebase3d_alphacutmode>` **alpha_cut**
 
   .. _class_SpriteBase3D_axis:
 
-- :ref:`int<class_int>` **axis** - The direction in which the front of the texture faces.
+- :ref:`Axis<enum_vector3_axis>` **axis** - The direction in which the front of the texture faces.
 
   .. _class_SpriteBase3D_centered:
 
@@ -77,16 +77,26 @@ Member Variables
 - :ref:`bool<class_bool>` **transparent** - If ``true`` the texture's transparency and the opacity are used to make those parts of the Sprite invisible. Default value: ``true``.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_SpriteBase3D_AlphaCutMode:
+
+enum **AlphaCutMode**
+
+- **ALPHA_CUT_DISABLED** = **0**
+- **ALPHA_CUT_DISCARD** = **1**
+- **ALPHA_CUT_OPAQUE_PREPASS** = **2**
+
+  .. _enum_SpriteBase3D_DrawFlags:
+
+enum **DrawFlags**
 
 - **FLAG_TRANSPARENT** = **0** --- If set, the texture's transparency and the opacity are used to make those parts of the Sprite invisible.
 - **FLAG_SHADED** = **1** --- If set, the Light in the Environment has effects on the Sprite.
 - **FLAG_DOUBLE_SIDED** = **2** --- If set, texture can be seen from the back as well, if not, it is invisible when looking at it from behind.
 - **FLAG_MAX** = **3** --- Used internally to mark the end of the Flags section.
-- **ALPHA_CUT_DISABLED** = **0**
-- **ALPHA_CUT_DISCARD** = **1**
-- **ALPHA_CUT_OPAQUE_PREPASS** = **2**
+
 
 Description
 -----------

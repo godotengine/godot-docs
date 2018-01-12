@@ -21,11 +21,11 @@ Member Variables
 
   .. _class_VisualScriptOperator_operator:
 
-- :ref:`int<class_int>` **operator**
+- :ref:`Operator<enum_variant_operator>` **operator**
 
   .. _class_VisualScriptOperator_type:
 
-- :ref:`int<class_int>` **type**
+- :ref:`Type<enum_variant_type>` **type**
 
 
 Description

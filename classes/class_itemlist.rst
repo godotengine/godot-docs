@@ -144,7 +144,7 @@ Member Variables
 
   .. _class_ItemList_icon_mode:
 
-- :ref:`int<class_int>` **icon_mode**
+- :ref:`IconMode<enum_itemlist_iconmode>` **icon_mode**
 
   .. _class_ItemList_icon_scale:
 
@@ -164,16 +164,26 @@ Member Variables
 
   .. _class_ItemList_select_mode:
 
-- :ref:`int<class_int>` **select_mode**
+- :ref:`SelectMode<enum_itemlist_selectmode>` **select_mode**
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_ItemList_IconMode:
+
+enum **IconMode**
 
 - **ICON_MODE_TOP** = **0**
 - **ICON_MODE_LEFT** = **1**
+
+  .. _enum_ItemList_SelectMode:
+
+enum **SelectMode**
+
 - **SELECT_SINGLE** = **0**
 - **SELECT_MULTI** = **1**
+
 
 Description
 -----------

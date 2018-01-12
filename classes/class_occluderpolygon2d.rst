@@ -25,19 +25,24 @@ Member Variables
 
   .. _class_OccluderPolygon2D_cull_mode:
 
-- :ref:`int<class_int>` **cull_mode** - Set the direction of the occlusion culling when not ``CULL_DISABLED``. Default value ``DISABLED``.
+- :ref:`CullMode<enum_occluderpolygon2d_cullmode>` **cull_mode** - Set the direction of the occlusion culling when not ``CULL_DISABLED``. Default value ``DISABLED``.
 
   .. _class_OccluderPolygon2D_polygon:
 
 - :ref:`PoolVector2Array<class_poolvector2array>` **polygon** - A :ref:`Vector2<class_vector2>` array with the index for polygon's vertices positions.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_OccluderPolygon2D_CullMode:
+
+enum **CullMode**
 
 - **CULL_DISABLED** = **0** --- Culling mode for the occlusion. Disabled means no culling. See :ref:`cull_mode<class_OccluderPolygon2D_cull_mode>`.
 - **CULL_CLOCKWISE** = **1** --- Culling mode for the occlusion. Sets the culling to be in clockwise direction. See :ref:`cull_mode<class_OccluderPolygon2D_cull_mode>`.
 - **CULL_COUNTER_CLOCKWISE** = **2** --- Culling mode for the occlusion. Sets the culling to be in counter clockwise direction. See :ref:`cull_mode<class_OccluderPolygon2D_cull_mode>`.
+
 
 Description
 -----------

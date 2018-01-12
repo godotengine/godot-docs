@@ -21,7 +21,7 @@ Member Variables
 
   .. _class_VisualScriptPropertySet_assign_op:
 
-- :ref:`int<class_int>` **assign_op**
+- :ref:`AssignOp<enum_visualscriptpropertyset_assignop>` **assign_op**
 
   .. _class_VisualScriptPropertySet_base_script:
 
@@ -33,7 +33,7 @@ Member Variables
 
   .. _class_VisualScriptPropertySet_basic_type:
 
-- :ref:`int<class_int>` **basic_type**
+- :ref:`Type<enum_variant_type>` **basic_type**
 
   .. _class_VisualScriptPropertySet_index:
 
@@ -49,16 +49,25 @@ Member Variables
 
   .. _class_VisualScriptPropertySet_set_mode:
 
-- :ref:`int<class_int>` **set_mode**
+- :ref:`CallMode<enum_visualscriptpropertyset_callmode>` **set_mode**
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_VisualScriptPropertySet_CallMode:
+
+enum **CallMode**
 
 - **CALL_MODE_SELF** = **0**
 - **CALL_MODE_NODE_PATH** = **1**
 - **CALL_MODE_INSTANCE** = **2**
 - **CALL_MODE_BASIC_TYPE** = **3**
+
+  .. _enum_VisualScriptPropertySet_AssignOp:
+
+enum **AssignOp**
+
 - **ASSIGN_OP_NONE** = **0**
 - **ASSIGN_OP_ADD** = **1**
 - **ASSIGN_OP_SUB** = **2**
@@ -70,4 +79,5 @@ Numeric Constants
 - **ASSIGN_OP_BIT_AND** = **8**
 - **ASSIGN_OP_BIT_OR** = **9**
 - **ASSIGN_OP_BIT_XOR** = **10**
+
 

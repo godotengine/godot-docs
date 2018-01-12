@@ -119,8 +119,46 @@ Member Variables
 - :ref:`Dictionary<class_dictionary>` **data** - Holds all of the image's color data in a given format. See ``FORMAT\_\*`` constants.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_Image_CompressMode:
+
+enum **CompressMode**
+
+- **COMPRESS_S3TC** = **0**
+- **COMPRESS_PVRTC2** = **1**
+- **COMPRESS_PVRTC4** = **2**
+- **COMPRESS_ETC** = **3**
+- **COMPRESS_ETC2** = **4**
+
+  .. _enum_Image_Interpolation:
+
+enum **Interpolation**
+
+- **INTERPOLATE_NEAREST** = **0**
+- **INTERPOLATE_BILINEAR** = **1**
+- **INTERPOLATE_CUBIC** = **2**
+
+  .. _enum_Image_AlphaMode:
+
+enum **AlphaMode**
+
+- **ALPHA_NONE** = **0**
+- **ALPHA_BIT** = **1**
+- **ALPHA_BLEND** = **2**
+
+  .. _enum_Image_CompressSource:
+
+enum **CompressSource**
+
+- **COMPRESS_SOURCE_GENERIC** = **0**
+- **COMPRESS_SOURCE_SRGB** = **1**
+- **COMPRESS_SOURCE_NORMAL** = **2**
+
+  .. _enum_Image_Format:
+
+enum **Format**
 
 - **FORMAT_L8** = **0**
 - **FORMAT_LA8** = **1**
@@ -160,20 +198,7 @@ Numeric Constants
 - **FORMAT_ETC2_RGBA8** = **35**
 - **FORMAT_ETC2_RGB8A1** = **36**
 - **FORMAT_MAX** = **37**
-- **INTERPOLATE_NEAREST** = **0**
-- **INTERPOLATE_BILINEAR** = **1**
-- **INTERPOLATE_CUBIC** = **2**
-- **ALPHA_NONE** = **0**
-- **ALPHA_BIT** = **1**
-- **ALPHA_BLEND** = **2**
-- **COMPRESS_S3TC** = **0**
-- **COMPRESS_PVRTC2** = **1**
-- **COMPRESS_PVRTC4** = **2**
-- **COMPRESS_ETC** = **3**
-- **COMPRESS_ETC2** = **4**
-- **COMPRESS_SOURCE_GENERIC** = **0**
-- **COMPRESS_SOURCE_SRGB** = **1**
-- **COMPRESS_SOURCE_NORMAL** = **2**
+
 
 Description
 -----------
@@ -434,6 +459,7 @@ Sets the :ref:`Color<class_color>` of the pixel at ``(x, y)`` if the image is lo
 ::
 
     var img = Image.new()
+    img.create(img_width, img_height, false, Image.FORMAT_RGBA8)
     img.lock()
     img.set_pixel(x, y, color) # Works
     img.unlock()

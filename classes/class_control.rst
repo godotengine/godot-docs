@@ -188,13 +188,13 @@ Emitted when a modal ``Control`` is closed. See :ref:`show_modal<class_Control_s
 
 - **mouse_entered** **(** **)**
 
-Emitted when the mouse enters the control's ``Rect`` area.
+Emitted when the mouse enters the control's ``Rect`` area, provided its :ref:`mouse_filter<class_Control_mouse_filter>` lets the event reach it.
 
 .. _class_Control_mouse_exited:
 
 - **mouse_exited** **(** **)**
 
-Emitted when the mouse leaves the control's ``Rect`` area.
+Emitted when the mouse leaves the control's ``Rect`` area, provided its :ref:`mouse_filter<class_Control_mouse_filter>` lets the event reach it.
 
 .. _class_Control_resized:
 
@@ -256,11 +256,11 @@ If the user presses Tab, Godot will give focus to the closest node to the right 
 
   .. _class_Control_grow_horizontal:
 
-- :ref:`int<class_int>` **grow_horizontal**
+- :ref:`GrowDirection<enum_control_growdirection>` **grow_horizontal**
 
   .. _class_Control_grow_vertical:
 
-- :ref:`int<class_int>` **grow_vertical**
+- :ref:`GrowDirection<enum_control_growdirection>` **grow_vertical**
 
   .. _class_Control_hint_tooltip:
 
@@ -286,7 +286,7 @@ Margins are often controlled by one or multiple parent :ref:`Container<class_con
 
   .. _class_Control_mouse_filter:
 
-- :ref:`int<class_int>` **mouse_filter**
+- :ref:`MouseFilter<enum_control_mousefilter>` **mouse_filter** - Controls whether the control will be able to receive mouse button input events through :ref:`_gui_input<class_Control__gui_input>` and how these events should be handled. Use one of the ``MOUSE_FILTER\_\*`` constants. See the constants to learn what each does.
 
   .. _class_Control_rect_clip_content:
 
@@ -336,9 +336,6 @@ Margins are often controlled by one or multiple parent :ref:`Container<class_con
 Numeric Constants
 -----------------
 
-- **FOCUS_NONE** = **0** --- The node cannot grab focus. Use with :ref:`set_focus_mode<class_Control_set_focus_mode>`.
-- **FOCUS_CLICK** = **1** --- The node can only grab focus on mouse clicks. Use with :ref:`set_focus_mode<class_Control_set_focus_mode>`.
-- **FOCUS_ALL** = **2** --- The node can grab focus on mouse click or using the arrows and the Tab keys on the keyboard. Use with :ref:`set_focus_mode<class_Control_set_focus_mode>`.
 - **NOTIFICATION_RESIZED** = **40** --- Sent when the node changes size. Use :ref:`rect_size<class_Control_rect_size>` to get the new size.
 - **NOTIFICATION_MOUSE_ENTER** = **41** --- Sent when the mouse pointer enters the node's ``Rect`` area.
 - **NOTIFICATION_MOUSE_EXIT** = **42** --- Sent when the mouse pointer exits the node's ``Rect`` area.
@@ -346,6 +343,24 @@ Numeric Constants
 - **NOTIFICATION_FOCUS_EXIT** = **44** --- Sent when the node loses focus.
 - **NOTIFICATION_THEME_CHANGED** = **45** --- Sent when the node's :ref:`theme<class_Control_theme>` changes, right before Godot redraws the ``Control``. Happens when you call one of the ``add\_\*_override``
 - **NOTIFICATION_MODAL_CLOSE** = **46** --- Sent when an open modal dialog closes. See :ref:`show_modal<class_Control_show_modal>`.
+
+Enums
+-----
+
+  .. _enum_Control_SizeFlags:
+
+enum **SizeFlags**
+
+- **SIZE_FILL** = **1** --- Tells the parent :ref:`Container<class_container>` to expand the bounds of this node to fill all the available space without pushing any other node. Use with :ref:`size_flags_horizontal<class_Control_size_flags_horizontal>` and :ref:`size_flags_vertical<class_Control_size_flags_vertical>`.
+- **SIZE_EXPAND** = **2** --- Tells the parent :ref:`Container<class_container>` to let this node take all the available space on the axis you flag. If multiple neighboring nodes are set to expand, they'll share the space based on their stretch ratio. See :ref:`size_flags_stretch_ratio<class_Control_size_flags_stretch_ratio>`. Use with :ref:`size_flags_horizontal<class_Control_size_flags_horizontal>` and :ref:`size_flags_vertical<class_Control_size_flags_vertical>`.
+- **SIZE_EXPAND_FILL** = **3** --- Sets the node's size flags to both fill and expand. See the 2 constants above for more information.
+- **SIZE_SHRINK_CENTER** = **4** --- Tells the parent :ref:`Container<class_container>` to center the node in itself. It centers the ``Control`` based on its bounding box, so it doesn't work with the fill or expand size flags. Use with :ref:`size_flags_horizontal<class_Control_size_flags_horizontal>` and :ref:`size_flags_vertical<class_Control_size_flags_vertical>`.
+- **SIZE_SHRINK_END** = **8** --- Tells the parent :ref:`Container<class_container>` to align the node with its end, either the bottom or the right edge. It doesn't work with the fill or expand size flags. Use with :ref:`size_flags_horizontal<class_Control_size_flags_horizontal>` and :ref:`size_flags_vertical<class_Control_size_flags_vertical>`.
+
+  .. _enum_Control_CursorShape:
+
+enum **CursorShape**
+
 - **CURSOR_ARROW** = **0** --- Show the system's arrow mouse cursor when the user hovers the node. Use with :ref:`set_default_cursor_shape<class_Control_set_default_cursor_shape>`.
 - **CURSOR_IBEAM** = **1** --- Show the system's I-beam mouse cursor when the user hovers the node. The I-beam pointer has a shape similar to "I". It tells the user they can highlight or insert text.
 - **CURSOR_POINTING_HAND** = **2** --- Show the system's pointing hand mouse cursor when the user hovers the node.
@@ -363,6 +378,35 @@ Numeric Constants
 - **CURSOR_VSPLIT** = **14** --- Show the system's vertical split mouse cursor when the user hovers the node. On Windows, it's the same as ``CURSOR_VSIZE``.
 - **CURSOR_HSPLIT** = **15** --- Show the system's horizontal split mouse cursor when the user hovers the node. On Windows, it's the same as ``CURSOR_HSIZE``.
 - **CURSOR_HELP** = **16** --- Show the system's help mouse cursor when the user hovers the node, a question mark.
+
+  .. _enum_Control_FocusMode:
+
+enum **FocusMode**
+
+- **FOCUS_NONE** = **0** --- The node cannot grab focus. Use with :ref:`set_focus_mode<class_Control_set_focus_mode>`.
+- **FOCUS_CLICK** = **1** --- The node can only grab focus on mouse clicks. Use with :ref:`set_focus_mode<class_Control_set_focus_mode>`.
+- **FOCUS_ALL** = **2** --- The node can grab focus on mouse click or using the arrows and the Tab keys on the keyboard. Use with :ref:`set_focus_mode<class_Control_set_focus_mode>`.
+
+  .. _enum_Control_GrowDirection:
+
+enum **GrowDirection**
+
+- **GROW_DIRECTION_BEGIN** = **0**
+- **GROW_DIRECTION_END** = **1**
+
+  .. _enum_Control_LayoutPresetMode:
+
+enum **LayoutPresetMode**
+
+- **PRESET_MODE_MINSIZE** = **0**
+- **PRESET_MODE_KEEP_WIDTH** = **1**
+- **PRESET_MODE_KEEP_HEIGHT** = **2**
+- **PRESET_MODE_KEEP_SIZE** = **3**
+
+  .. _enum_Control_LayoutPreset:
+
+enum **LayoutPreset**
+
 - **PRESET_TOP_LEFT** = **0** --- Snap all 4 anchors to the top-left of the parent container's bounds. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
 - **PRESET_TOP_RIGHT** = **1** --- Snap all 4 anchors to the top-right of the parent container's bounds. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
 - **PRESET_BOTTOM_LEFT** = **2** --- Snap all 4 anchors to the bottom-left of the parent container's bounds. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
@@ -379,22 +423,22 @@ Numeric Constants
 - **PRESET_VCENTER_WIDE** = **13** --- Snap all 4 anchors to a vertical line that cuts the parent container in half. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
 - **PRESET_HCENTER_WIDE** = **14** --- Snap all 4 anchors to a horizontal line that cuts the parent container in half. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
 - **PRESET_WIDE** = **15** --- Snap all 4 anchors to the respective corners of the parent container. Set all 4 margins to 0 after you applied this preset and the ``Control`` will fit its parent container. Use with :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
-- **PRESET_MODE_MINSIZE** = **0**
-- **PRESET_MODE_KEEP_WIDTH** = **1**
-- **PRESET_MODE_KEEP_HEIGHT** = **2**
-- **PRESET_MODE_KEEP_SIZE** = **3**
-- **SIZE_FILL** = **1** --- Tells the parent :ref:`Container<class_container>` to expand the bounds of this node to fill all the available space without pushing any other node. Use with :ref:`size_flags_horizontal<class_Control_size_flags_horizontal>` and :ref:`size_flags_vertical<class_Control_size_flags_vertical>`.
-- **SIZE_EXPAND** = **2** --- Tells the parent :ref:`Container<class_container>` to let this node take all the available space on the axis you flag. If multiple neighboring nodes are set to expand, they'll share the space based on their stretch ratio. See :ref:`size_flags_stretch_ratio<class_Control_size_flags_stretch_ratio>`. Use with :ref:`size_flags_horizontal<class_Control_size_flags_horizontal>` and :ref:`size_flags_vertical<class_Control_size_flags_vertical>`.
-- **SIZE_EXPAND_FILL** = **3** --- Sets the node's size flags to both fill and expand. See the 2 constants above for more information.
-- **SIZE_SHRINK_CENTER** = **4** --- Tells the parent :ref:`Container<class_container>` to center the node in itself. It centers the ``Control`` based on its bounding box, so it doesn't work with the fill or expand size flags. Use with :ref:`size_flags_horizontal<class_Control_size_flags_horizontal>` and :ref:`size_flags_vertical<class_Control_size_flags_vertical>`.
-- **SIZE_SHRINK_END** = **8** --- Tells the parent :ref:`Container<class_container>` to align the node with its end, either the bottom or the right edge. It doesn't work with the fill or expand size flags. Use with :ref:`size_flags_horizontal<class_Control_size_flags_horizontal>` and :ref:`size_flags_vertical<class_Control_size_flags_vertical>`.
-- **MOUSE_FILTER_STOP** = **0**
-- **MOUSE_FILTER_PASS** = **1**
-- **MOUSE_FILTER_IGNORE** = **2**
-- **GROW_DIRECTION_BEGIN** = **0**
-- **GROW_DIRECTION_END** = **1**
+
+  .. _enum_Control_MouseFilter:
+
+enum **MouseFilter**
+
+- **MOUSE_FILTER_STOP** = **0** --- The control will receive mouse button input events through :ref:`_gui_input<class_Control__gui_input>` if clicked on. These events are automatically marked as handled and they will not propagate further to other controls.
+- **MOUSE_FILTER_PASS** = **1** --- The control will receive mouse button input events through :ref:`_gui_input<class_Control__gui_input>` if clicked on. If this control does not handle the event, the parent control (if any) will be considered for a mouse click, and so on until there is no more parent control to potentially handle it. Even if no control handled it at all, the event will still be handled automatically.
+- **MOUSE_FILTER_IGNORE** = **2** --- The control will not receive mouse button input events through :ref:`_gui_input<class_Control__gui_input>` and will not block other controls from receiving these events. These events will also not be handled automatically.
+
+  .. _enum_Control_Anchor:
+
+enum **Anchor**
+
 - **ANCHOR_BEGIN** = **0** --- Snaps one of the 4 anchor's sides to the origin of the node's ``Rect``, in the top left. Use it with one of the ``anchor\_\*`` member variables, like :ref:`anchor_left<class_Control_anchor_left>`. To change all 4 anchors at once, use :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
 - **ANCHOR_END** = **1** --- Snaps one of the 4 anchor's sides to the end of the node's ``Rect``, in the bottom right. Use it with one of the ``anchor\_\*`` member variables, like :ref:`anchor_left<class_Control_anchor_left>`. To change all 4 anchors at once, use :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+
 
 Description
 -----------

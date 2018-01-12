@@ -23,7 +23,7 @@ Member Variables
 
   .. _class_Button_align:
 
-- :ref:`int<class_int>` **align** - Text alignment policy for the button's text, use one of the ALIGN\_\* constants.
+- :ref:`TextAlign<enum_button_textalign>` **align** - Text alignment policy for the button's text, use one of the ALIGN\_\* constants.
 
   .. _class_Button_clip_text:
 
@@ -42,12 +42,17 @@ Member Variables
 - :ref:`String<class_string>` **text** - The button's text that will be displayed inside the button's area.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_Button_TextAlign:
+
+enum **TextAlign**
 
 - **ALIGN_LEFT** = **0** --- Align the text to the left.
 - **ALIGN_CENTER** = **1** --- Align the text to the center.
 - **ALIGN_RIGHT** = **2** --- Align the text to the right.
+
 
 Description
 -----------

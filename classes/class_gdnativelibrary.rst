@@ -34,6 +34,10 @@ Member Variables
 
 - :ref:`bool<class_bool>` **load_once**
 
+  .. _class_GDNativeLibrary_reloadable:
+
+- :ref:`bool<class_bool>` **reloadable**
+
   .. _class_GDNativeLibrary_singleton:
 
 - :ref:`bool<class_bool>` **singleton**

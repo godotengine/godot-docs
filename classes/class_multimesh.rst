@@ -36,7 +36,7 @@ Member Variables
 
   .. _class_MultiMesh_color_format:
 
-- :ref:`int<class_int>` **color_format**
+- :ref:`ColorFormat<enum_multimesh_colorformat>` **color_format**
 
   .. _class_MultiMesh_instance_count:
 
@@ -48,17 +48,27 @@ Member Variables
 
   .. _class_MultiMesh_transform_format:
 
-- :ref:`int<class_int>` **transform_format**
+- :ref:`TransformFormat<enum_multimesh_transformformat>` **transform_format**
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_MultiMesh_TransformFormat:
+
+enum **TransformFormat**
 
 - **TRANSFORM_2D** = **0**
 - **TRANSFORM_3D** = **1**
+
+  .. _enum_MultiMesh_ColorFormat:
+
+enum **ColorFormat**
+
 - **COLOR_NONE** = **0**
 - **COLOR_8BIT** = **1**
 - **COLOR_FLOAT** = **2**
+
 
 Description
 -----------

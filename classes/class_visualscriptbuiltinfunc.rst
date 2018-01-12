@@ -21,11 +21,15 @@ Member Variables
 
   .. _class_VisualScriptBuiltinFunc_function:
 
-- :ref:`int<class_int>` **function** - The function to be executed.
+- :ref:`BuiltinFunc<enum_visualscriptbuiltinfunc_builtinfunc>` **function** - The function to be executed.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_VisualScriptBuiltinFunc_BuiltinFunc:
+
+enum **BuiltinFunc**
 
 - **MATH_SIN** = **0** --- Return the sine of the input.
 - **MATH_COS** = **1** --- Return the cosine of the input.
@@ -91,6 +95,7 @@ Numeric Constants
 - **BYTES_TO_VAR** = **61** --- Deserialize a :ref:`Variant<class_variant>` from a :ref:`PoolByteArray<class_poolbytearray>` serialized using VAR_TO_BYTES.
 - **COLORN** = **62** --- Return the :ref:`Color<class_color>` with the given name and alpha ranging from 0 to 1. Note: names are defined in color_names.inc.
 - **FUNC_MAX** = **63** --- The maximum value the :ref:`function<class_VisualScriptBuiltinFunc_function>` property can have.
+
 
 Description
 -----------

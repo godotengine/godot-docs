@@ -41,18 +41,35 @@ Member Variables
 - :ref:`Vector2<class_vector2>` **lightmap_size_hint**
 
 
-Numeric Constants
------------------
+Enums
+-----
 
-- **PRIMITIVE_POINTS** = **0** --- Render array as points (one vertex equals one point).
-- **PRIMITIVE_LINES** = **1** --- Render array as lines (every two vertices a line is created).
-- **PRIMITIVE_LINE_STRIP** = **2** --- Render array as line strip.
-- **PRIMITIVE_LINE_LOOP** = **3** --- Render array as line loop (like line strip, but closed).
-- **PRIMITIVE_TRIANGLES** = **4** --- Render array as triangles (every three vertices a triangle is created).
-- **PRIMITIVE_TRIANGLE_STRIP** = **5** --- Render array as triangle strips.
-- **PRIMITIVE_TRIANGLE_FAN** = **6** --- Render array as triangle fans.
+  .. _enum_Mesh_BlendShapeMode:
+
+enum **BlendShapeMode**
+
 - **BLEND_SHAPE_MODE_NORMALIZED** = **0**
 - **BLEND_SHAPE_MODE_RELATIVE** = **1**
+
+  .. _enum_Mesh_ArrayType:
+
+enum **ArrayType**
+
+- **ARRAY_VERTEX** = **0**
+- **ARRAY_NORMAL** = **1**
+- **ARRAY_TANGENT** = **2**
+- **ARRAY_COLOR** = **3**
+- **ARRAY_TEX_UV** = **4**
+- **ARRAY_TEX_UV2** = **5**
+- **ARRAY_BONES** = **6**
+- **ARRAY_WEIGHTS** = **7**
+- **ARRAY_INDEX** = **8**
+- **ARRAY_MAX** = **9**
+
+  .. _enum_Mesh_ArrayFormat:
+
+enum **ArrayFormat**
+
 - **ARRAY_FORMAT_VERTEX** = **1**
 - **ARRAY_FORMAT_NORMAL** = **2**
 - **ARRAY_FORMAT_TANGENT** = **4**
@@ -75,16 +92,19 @@ Numeric Constants
 - **ARRAY_FLAG_USE_2D_VERTICES** = **262144**
 - **ARRAY_FLAG_USE_16_BIT_BONES** = **524288**
 - **ARRAY_COMPRESS_DEFAULT** = **97792**
-- **ARRAY_VERTEX** = **0**
-- **ARRAY_NORMAL** = **1**
-- **ARRAY_TANGENT** = **2**
-- **ARRAY_COLOR** = **3**
-- **ARRAY_TEX_UV** = **4**
-- **ARRAY_TEX_UV2** = **5**
-- **ARRAY_BONES** = **6**
-- **ARRAY_WEIGHTS** = **7**
-- **ARRAY_INDEX** = **8**
-- **ARRAY_MAX** = **9**
+
+  .. _enum_Mesh_PrimitiveType:
+
+enum **PrimitiveType**
+
+- **PRIMITIVE_POINTS** = **0** --- Render array as points (one vertex equals one point).
+- **PRIMITIVE_LINES** = **1** --- Render array as lines (every two vertices a line is created).
+- **PRIMITIVE_LINE_STRIP** = **2** --- Render array as line strip.
+- **PRIMITIVE_LINE_LOOP** = **3** --- Render array as line loop (like line strip, but closed).
+- **PRIMITIVE_TRIANGLES** = **4** --- Render array as triangles (every three vertices a triangle is created).
+- **PRIMITIVE_TRIANGLE_STRIP** = **5** --- Render array as triangle strips.
+- **PRIMITIVE_TRIANGLE_FAN** = **6** --- Render array as triangle fans.
+
 
 Description
 -----------

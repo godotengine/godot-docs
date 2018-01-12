@@ -218,7 +218,7 @@ Member Variables
 
   .. _class_Node_pause_mode:
 
-- :ref:`int<class_int>` **pause_mode**
+- :ref:`PauseMode<enum_node_pausemode>` **pause_mode**
 
 
 Numeric Constants
@@ -241,18 +241,37 @@ Numeric Constants
 - **NOTIFICATION_TRANSLATION_CHANGED** = **24**
 - **NOTIFICATION_INTERNAL_PROCESS** = **25**
 - **NOTIFICATION_INTERNAL_PHYSICS_PROCESS** = **26**
+
+Enums
+-----
+
+  .. _enum_Node_PauseMode:
+
+enum **PauseMode**
+
+- **PAUSE_MODE_INHERIT** = **0** --- Inherits pause mode from parent. For root node, it is equivalent to PAUSE_MODE_STOP.
+- **PAUSE_MODE_STOP** = **1** --- Stop processing when SceneTree is paused.
+- **PAUSE_MODE_PROCESS** = **2** --- Continue to process regardless of SceneTree pause state.
+
+  .. _enum_Node_RPCMode:
+
+enum **RPCMode**
+
 - **RPC_MODE_DISABLED** = **0**
 - **RPC_MODE_REMOTE** = **1** --- Call a method remotely.
 - **RPC_MODE_SYNC** = **2** --- Call a method both remotely and locally.
 - **RPC_MODE_MASTER** = **3** --- Call a method if the Node is Master.
 - **RPC_MODE_SLAVE** = **4** --- Call a method if the Node is Slave.
-- **PAUSE_MODE_INHERIT** = **0** --- Inherits pause mode from parent. For root node, it is equivalent to PAUSE_MODE_STOP.
-- **PAUSE_MODE_STOP** = **1** --- Stop processing when SceneTree is paused.
-- **PAUSE_MODE_PROCESS** = **2** --- Continue to process regardless of SceneTree pause state.
+
+  .. _enum_Node_DuplicateFlags:
+
+enum **DuplicateFlags**
+
 - **DUPLICATE_SIGNALS** = **1** --- Duplicate the node's signals.
 - **DUPLICATE_GROUPS** = **2** --- Duplicate the node's groups.
 - **DUPLICATE_SCRIPTS** = **4** --- Duplicate the node's scripts.
 - **DUPLICATE_USE_INSTANCING** = **8** --- Duplicate using instancing.
+
 
 Description
 -----------

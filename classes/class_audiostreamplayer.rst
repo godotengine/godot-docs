@@ -52,7 +52,7 @@ Member Variables
 
   .. _class_AudioStreamPlayer_mix_target:
 
-- :ref:`int<class_int>` **mix_target** - If the audio configuration has more than two speakers, this sets the target channels. See ``MIX_TARGET\_\*`` constants.
+- :ref:`MixTarget<enum_audiostreamplayer_mixtarget>` **mix_target** - If the audio configuration has more than two speakers, this sets the target channels. See ``MIX_TARGET\_\*`` constants.
 
   .. _class_AudioStreamPlayer_playing:
 
@@ -67,12 +67,17 @@ Member Variables
 - :ref:`float<class_float>` **volume_db** - Volume of sound, in dB.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_AudioStreamPlayer_MixTarget:
+
+enum **MixTarget**
 
 - **MIX_TARGET_STEREO** = **0** --- The audio will be played only on the first channel.
 - **MIX_TARGET_SURROUND** = **1** --- The audio will be played on all surround channels.
 - **MIX_TARGET_CENTER** = **2** --- The audio will be played on the second channel, which is usually the center.
+
 
 Description
 -----------

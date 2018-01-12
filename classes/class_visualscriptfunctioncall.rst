@@ -29,11 +29,11 @@ Member Variables
 
   .. _class_VisualScriptFunctionCall_basic_type:
 
-- :ref:`int<class_int>` **basic_type**
+- :ref:`Type<enum_variant_type>` **basic_type**
 
   .. _class_VisualScriptFunctionCall_call_mode:
 
-- :ref:`int<class_int>` **call_mode**
+- :ref:`CallMode<enum_visualscriptfunctioncall_callmode>` **call_mode**
 
   .. _class_VisualScriptFunctionCall_function:
 
@@ -45,7 +45,7 @@ Member Variables
 
   .. _class_VisualScriptFunctionCall_rpc_call_mode:
 
-- :ref:`int<class_int>` **rpc_call_mode**
+- :ref:`RPCCallMode<enum_visualscriptfunctioncall_rpccallmode>` **rpc_call_mode**
 
   .. _class_VisualScriptFunctionCall_singleton:
 
@@ -60,17 +60,27 @@ Member Variables
 - :ref:`bool<class_bool>` **validate**
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_VisualScriptFunctionCall_CallMode:
+
+enum **CallMode**
 
 - **CALL_MODE_SELF** = **0**
 - **CALL_MODE_NODE_PATH** = **1**
 - **CALL_MODE_INSTANCE** = **2**
 - **CALL_MODE_BASIC_TYPE** = **3**
 - **CALL_MODE_SINGLETON** = **4**
+
+  .. _enum_VisualScriptFunctionCall_RPCCallMode:
+
+enum **RPCCallMode**
+
 - **RPC_DISABLED** = **0**
 - **RPC_RELIABLE** = **1**
 - **RPC_UNRELIABLE** = **2**
 - **RPC_RELIABLE_TO_ID** = **3**
 - **RPC_UNRELIABLE_TO_ID** = **4**
+
 

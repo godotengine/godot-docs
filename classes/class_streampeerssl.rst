@@ -29,13 +29,18 @@ Member Functions
 | :ref:`int<class_int>`  | :ref:`get_status<class_StreamPeerSSL_get_status>` **(** **)** const                                                                                                                                               |
 +------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_StreamPeerSSL_Status:
+
+enum **Status**
 
 - **STATUS_DISCONNECTED** = **0** --- A status representing a ``StreamPeerSSL`` that is disconnected.
 - **STATUS_CONNECTED** = **1** --- A status representing a ``StreamPeerSSL`` that is connected to a host.
 - **STATUS_ERROR_NO_CERTIFICATE** = **2** --- An errot status that shows the peer did not present a SSL certificate and validation was requested.
 - **STATUS_ERROR_HOSTNAME_MISMATCH** = **3** --- An error status that shows a mismatch in the SSL certificate domain presented by the host and the domain requested for validation.
+
 
 Description
 -----------

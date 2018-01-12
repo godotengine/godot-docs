@@ -61,8 +61,12 @@ Member Variables
 - :ref:`bool<class_bool>` **use_threads** - If ``true`` multithreading is used to improve performance.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_HTTPRequest_Result:
+
+enum **Result**
 
 - **RESULT_SUCCESS** = **0** --- Request successful.
 - **RESULT_CHUNKED_BODY_SIZE_MISMATCH** = **1**
@@ -76,6 +80,7 @@ Numeric Constants
 - **RESULT_DOWNLOAD_FILE_CANT_OPEN** = **9** --- HTTPRequest couldn't open the download file.
 - **RESULT_DOWNLOAD_FILE_WRITE_ERROR** = **10** --- HTTPRequest couldn't write to the download file.
 - **RESULT_REDIRECT_LIMIT_REACHED** = **11** --- Request reached its maximum redirect limit, see :ref:`set_max_redirects<class_HTTPRequest_set_max_redirects>`.
+
 
 Description
 -----------

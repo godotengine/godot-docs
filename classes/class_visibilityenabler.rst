@@ -28,12 +28,17 @@ Member Variables
 - :ref:`bool<class_bool>` **pause_animations**
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_VisibilityEnabler_Enabler:
+
+enum **Enabler**
 
 - **ENABLER_PAUSE_ANIMATIONS** = **0** --- This enabler will pause :ref:`AnimationPlayer<class_animationplayer>` nodes.
 - **ENABLER_FREEZE_BODIES** = **1** --- This enabler will freeze :ref:`RigidBody<class_rigidbody>` nodes.
 - **ENABLER_MAX** = **2**
+
 
 Description
 -----------

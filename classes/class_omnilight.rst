@@ -29,20 +29,30 @@ Member Variables
 
   .. _class_OmniLight_omni_shadow_detail:
 
-- :ref:`int<class_int>` **omni_shadow_detail**
+- :ref:`ShadowDetail<enum_omnilight_shadowdetail>` **omni_shadow_detail**
 
   .. _class_OmniLight_omni_shadow_mode:
 
-- :ref:`int<class_int>` **omni_shadow_mode**
+- :ref:`ShadowMode<enum_omnilight_shadowmode>` **omni_shadow_mode**
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_OmniLight_ShadowDetail:
+
+enum **ShadowDetail**
+
+- **SHADOW_DETAIL_VERTICAL** = **0**
+- **SHADOW_DETAIL_HORIZONTAL** = **1**
+
+  .. _enum_OmniLight_ShadowMode:
+
+enum **ShadowMode**
 
 - **SHADOW_DUAL_PARABOLOID** = **0**
 - **SHADOW_CUBE** = **1**
-- **SHADOW_DETAIL_VERTICAL** = **0**
-- **SHADOW_DETAIL_HORIZONTAL** = **1**
+
 
 Description
 -----------

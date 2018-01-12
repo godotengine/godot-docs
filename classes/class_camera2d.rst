@@ -52,7 +52,7 @@ Member Variables
 
   .. _class_Camera2D_anchor_mode:
 
-- :ref:`int<class_int>` **anchor_mode** - The Camera2D's anchor point. See ``ANCHOR_MODE\_\*`` constants.
+- :ref:`AnchorMode<enum_camera2d_anchormode>` **anchor_mode** - The Camera2D's anchor point. See ``ANCHOR_MODE\_\*`` constants.
 
   .. _class_Camera2D_current:
 
@@ -135,11 +135,16 @@ Member Variables
 - :ref:`Vector2<class_vector2>` **zoom** - The camera's zoom relative to the viewport. Values larger than ``Vector2(1, 1)`` zoom out and smaller values zoom in. For an example, use ``Vector2(0.5, 0.5)`` for a 2x zoom in, and ``Vector2(4, 4)`` for a 4x zoom out.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_Camera2D_AnchorMode:
+
+enum **AnchorMode**
 
 - **ANCHOR_MODE_FIXED_TOP_LEFT** = **0** --- The camera's position is fixed so that the top-left corner is always at the origin.
 - **ANCHOR_MODE_DRAG_CENTER** = **1** --- The camera's position takes into account vertical/horizontal offsets and the screen size.
+
 
 Description
 -----------

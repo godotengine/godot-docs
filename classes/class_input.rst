@@ -103,13 +103,22 @@ Signals
 Emitted when a joypad device has been connected or disconnected
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_Input_MouseMode:
+
+enum **MouseMode**
 
 - **MOUSE_MODE_VISIBLE** = **0** --- Makes the mouse cursor visible if it is hidden.
 - **MOUSE_MODE_HIDDEN** = **1** --- Makes the mouse cursor hidden if it is visible.
 - **MOUSE_MODE_CAPTURED** = **2** --- Captures the mouse. The mouse will be hidden and unable to leave the game window. But it will still register movement and mouse button presses.
 - **MOUSE_MODE_CONFINED** = **3**
+
+  .. _enum_Input_CursorShape:
+
+enum **CursorShape**
+
 - **CURSOR_ARROW** = **0**
 - **CURSOR_IBEAM** = **1**
 - **CURSOR_POINTING_HAND** = **2**
@@ -127,6 +136,7 @@ Numeric Constants
 - **CURSOR_VSPLIT** = **14**
 - **CURSOR_HSPLIT** = **15**
 - **CURSOR_HELP** = **16**
+
 
 Description
 -----------

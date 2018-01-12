@@ -38,6 +38,8 @@ Member Functions
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`ScriptEditor<class_scripteditor>`                    | :ref:`get_script_editor<class_EditorInterface_get_script_editor>` **(** **)**                                                                           |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                                | :ref:`get_selected_path<class_EditorInterface_get_selected_path>` **(** **)** const                                                                     |
++------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`EditorSelection<class_editorselection>`              | :ref:`get_selection<class_EditorInterface_get_selection>` **(** **)**                                                                                   |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`inspect_object<class_EditorInterface_inspect_object>` **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` for_property="" **)** |
@@ -51,6 +53,8 @@ Member Functions
 | :ref:`int<class_int>`                                      | :ref:`save_scene<class_EditorInterface_save_scene>` **(** **)**                                                                                         |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`save_scene_as<class_EditorInterface_save_scene_as>` **(** :ref:`String<class_string>` path, :ref:`bool<class_bool>` with_preview=true **)**       |
++------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                       | :ref:`select_file<class_EditorInterface_select_file>` **(** :ref:`String<class_string>` p_file **)**                                                    |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -115,6 +119,10 @@ Returns the :ref:`EditorResourcePreview<class_editorresourcepreview>`\ er.
 
 Returns the :ref:`ScriptEditor<class_scripteditor>`.
 
+.. _class_EditorInterface_get_selected_path:
+
+- :ref:`String<class_string>` **get_selected_path** **(** **)** const
+
 .. _class_EditorInterface_get_selection:
 
 - :ref:`EditorSelection<class_editorselection>` **get_selection** **(** **)**
@@ -156,5 +164,9 @@ Saves the scene. Returns either OK or ERR_CANT_CREATE. See :ref:`@GlobalScope<cl
 - void **save_scene_as** **(** :ref:`String<class_string>` path, :ref:`bool<class_bool>` with_preview=true **)**
 
 Saves the scene as a file at ``path``.
+
+.. _class_EditorInterface_select_file:
+
+- void **select_file** **(** :ref:`String<class_string>` p_file **)**
 
 

@@ -76,14 +76,19 @@ Member Variables
 
   .. _class_TouchScreenButton_visibility_mode:
 
-- :ref:`int<class_int>` **visibility_mode** - The button's visibility mode. See ``VISIBILITY\_\*`` constants.
+- :ref:`VisibilityMode<enum_touchscreenbutton_visibilitymode>` **visibility_mode** - The button's visibility mode. See ``VISIBILITY\_\*`` constants.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_TouchScreenButton_VisibilityMode:
+
+enum **VisibilityMode**
 
 - **VISIBILITY_ALWAYS** = **0** --- Always visible.
 - **VISIBILITY_TOUCHSCREEN_ONLY** = **1** --- Visible on touch screens only.
+
 
 Description
 -----------

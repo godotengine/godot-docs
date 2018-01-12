@@ -70,7 +70,7 @@ Member Variables
 
   .. _class_FileDialog_access:
 
-- :ref:`int<class_int>` **access**
+- :ref:`Access<enum_filedialog_access>` **access**
 
   .. _class_FileDialog_filters:
 
@@ -78,7 +78,7 @@ Member Variables
 
   .. _class_FileDialog_mode:
 
-- :ref:`int<class_int>` **mode**
+- :ref:`Mode<enum_filedialog_mode>` **mode**
 
   .. _class_FileDialog_mode_overrides_title:
 
@@ -89,17 +89,27 @@ Member Variables
 - :ref:`bool<class_bool>` **show_hidden_files**
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_FileDialog_Access:
+
+enum **Access**
+
+- **ACCESS_RESOURCES** = **0** --- The dialog allows the selection of file and directory.
+- **ACCESS_USERDATA** = **1** --- The dialog allows access files under :ref:`Resource<class_resource>` path(res://) .
+- **ACCESS_FILESYSTEM** = **2** --- The dialog allows access files in whole file system.
+
+  .. _enum_FileDialog_Mode:
+
+enum **Mode**
 
 - **MODE_OPEN_FILE** = **0** --- The dialog allows the selection of one, and only one file.
 - **MODE_OPEN_FILES** = **1** --- The dialog allows the selection of multiple files.
 - **MODE_OPEN_DIR** = **2** --- The dialog functions as a folder selector, disallowing the selection of any file.
 - **MODE_OPEN_ANY** = **3** --- The dialog allows the selection of a file or a directory.
 - **MODE_SAVE_FILE** = **4** --- The dialog will warn when a file exists.
-- **ACCESS_RESOURCES** = **0** --- The dialog allows the selection of file and directory.
-- **ACCESS_USERDATA** = **1** --- The dialog allows access files under :ref:`Resource<class_resource>` path(res://) .
-- **ACCESS_FILESYSTEM** = **2** --- The dialog allows access files in whole file system.
+
 
 Description
 -----------

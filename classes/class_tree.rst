@@ -181,15 +181,25 @@ Emitted instead of ``item_selected`` when ``select_mode`` is ``SELECT_MULTI``.
 - **nothing_selected** **(** **)**
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_Tree_DropModeFlags:
+
+enum **DropModeFlags**
+
+- **DROP_MODE_DISABLED** = **0**
+- **DROP_MODE_ON_ITEM** = **1**
+- **DROP_MODE_INBETWEEN** = **2**
+
+  .. _enum_Tree_SelectMode:
+
+enum **SelectMode**
 
 - **SELECT_SINGLE** = **0** --- Allow selection of a single item at a time.
 - **SELECT_ROW** = **1**
 - **SELECT_MULTI** = **2** --- Allow selection of multiple items at the same time.
-- **DROP_MODE_DISABLED** = **0**
-- **DROP_MODE_ON_ITEM** = **1**
-- **DROP_MODE_INBETWEEN** = **2**
+
 
 Description
 -----------

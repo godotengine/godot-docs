@@ -59,8 +59,27 @@ Member Functions
 | void                                           | :ref:`set_read_chunk_size<class_HTTPClient_set_read_chunk_size>` **(** :ref:`int<class_int>` bytes **)**                                                                                                                          |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_HTTPClient_Status:
+
+enum **Status**
+
+- **STATUS_DISCONNECTED** = **0** --- Status: Disconnected from the server.
+- **STATUS_RESOLVING** = **1** --- Status: Currently resolving the hostname for the given URL into an IP.
+- **STATUS_CANT_RESOLVE** = **2** --- Status: DNS failure: Can't resolve the hostname for the given URL.
+- **STATUS_CONNECTING** = **3** --- Status: Currently connecting to server.
+- **STATUS_CANT_CONNECT** = **4** --- Status: Can't connect to the server.
+- **STATUS_CONNECTED** = **5** --- Status: Connection established.
+- **STATUS_REQUESTING** = **6** --- Status: Currently sending request.
+- **STATUS_BODY** = **7** --- Status: HTTP body received.
+- **STATUS_CONNECTION_ERROR** = **8** --- Status: Error in HTTP connection.
+- **STATUS_SSL_HANDSHAKE_ERROR** = **9** --- Status: Error in SSL handshake.
+
+  .. _enum_HTTPClient_Method:
+
+enum **Method**
 
 - **METHOD_GET** = **0** --- HTTP GET method. The GET method requests a representation of the specified resource. Requests using GET should only retrieve data.
 - **METHOD_HEAD** = **1** --- HTTP HEAD method. The HEAD method asks for a response identical to that of a GET request, but without the response body. This is useful to request metadata like HTTP headers or to check if a resource exists.
@@ -72,16 +91,11 @@ Numeric Constants
 - **METHOD_CONNECT** = **7** --- HTTP CONNECT method. The CONNECT method establishes a tunnel to the server identified by the target resource. Rarely used.
 - **METHOD_PATCH** = **8** --- HTTP PATCH method. The PATCH method is used to apply partial modifications to a resource.
 - **METHOD_MAX** = **9** --- Marker for end of ``METHOD\_\*`` enum. Not used.
-- **STATUS_DISCONNECTED** = **0** --- Status: Disconnected from the server.
-- **STATUS_RESOLVING** = **1** --- Status: Currently resolving the hostname for the given URL into an IP.
-- **STATUS_CANT_RESOLVE** = **2** --- Status: DNS failure: Can't resolve the hostname for the given URL.
-- **STATUS_CONNECTING** = **3** --- Status: Currently connecting to server.
-- **STATUS_CANT_CONNECT** = **4** --- Status: Can't connect to the server.
-- **STATUS_CONNECTED** = **5** --- Status: Connection established.
-- **STATUS_REQUESTING** = **6** --- Status: Currently sending request.
-- **STATUS_BODY** = **7** --- Status: HTTP body received.
-- **STATUS_CONNECTION_ERROR** = **8** --- Status: Error in HTTP connection.
-- **STATUS_SSL_HANDSHAKE_ERROR** = **9** --- Status: Error in SSL handshake.
+
+  .. _enum_HTTPClient_ResponseCode:
+
+enum **ResponseCode**
+
 - **RESPONSE_CONTINUE** = **100** --- HTTP status code ``100 Continue``. Interim response that indicates everything so far is OK and that the client should continue with the request (or ignore this status if already finished).
 - **RESPONSE_SWITCHING_PROTOCOLS** = **101** --- HTTP status code ``101 Switching Protocol``. Sent in response to an ``Upgrade`` request header by the client. Indicates the protocol the server is switching to.
 - **RESPONSE_PROCESSING** = **102** --- HTTP status code ``102 Processing`` (WebDAV). Indicates that the server has received and is processing the request, but no response is available yet.
@@ -143,6 +157,7 @@ Numeric Constants
 - **RESPONSE_LOOP_DETECTED** = **508** --- HTTP status code ``508 Loop Detected``. The server terminated an operation because it encountered an infinite loop while processing a request with "Depth: infinity". This status indicates that the entire operation failed.
 - **RESPONSE_NOT_EXTENDED** = **510** --- HTTP status code ``510 Not Extended``. The policy for accessing the resource has not been met in the request. The server should send back all the information necessary for the client to issue an extended request.
 - **RESPONSE_NETWORK_AUTH_REQUIRED** = **511** --- HTTP status code ``511 Network Authentication Required``. The client needs to authenticate to gain network access.
+
 
 Description
 -----------

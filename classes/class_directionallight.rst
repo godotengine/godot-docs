@@ -29,7 +29,7 @@ Member Variables
 
   .. _class_DirectionalLight_directional_shadow_depth_range:
 
-- :ref:`int<class_int>` **directional_shadow_depth_range**
+- :ref:`ShadowDepthRange<enum_directionallight_shadowdepthrange>` **directional_shadow_depth_range**
 
   .. _class_DirectionalLight_directional_shadow_max_distance:
 
@@ -37,7 +37,7 @@ Member Variables
 
   .. _class_DirectionalLight_directional_shadow_mode:
 
-- :ref:`int<class_int>` **directional_shadow_mode**
+- :ref:`ShadowMode<enum_directionallight_shadowmode>` **directional_shadow_mode**
 
   .. _class_DirectionalLight_directional_shadow_normal_bias:
 
@@ -56,14 +56,24 @@ Member Variables
 - :ref:`float<class_float>` **directional_shadow_split_3**
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_DirectionalLight_ShadowDepthRange:
+
+enum **ShadowDepthRange**
+
+- **SHADOW_DEPTH_RANGE_STABLE** = **0**
+- **SHADOW_DEPTH_RANGE_OPTIMIZED** = **1**
+
+  .. _enum_DirectionalLight_ShadowMode:
+
+enum **ShadowMode**
 
 - **SHADOW_ORTHOGONAL** = **0**
 - **SHADOW_PARALLEL_2_SPLITS** = **1**
 - **SHADOW_PARALLEL_4_SPLITS** = **2**
-- **SHADOW_DEPTH_RANGE_STABLE** = **0**
-- **SHADOW_DEPTH_RANGE_OPTIMIZED** = **1**
+
 
 Description
 -----------

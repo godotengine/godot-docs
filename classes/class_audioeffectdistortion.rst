@@ -31,7 +31,7 @@ Member Variables
 
   .. _class_AudioEffectDistortion_mode:
 
-- :ref:`int<class_int>` **mode** - Distortion type. Default value: ``MODE_CLIP``.
+- :ref:`Mode<enum_audioeffectdistortion_mode>` **mode** - Distortion type. Default value: ``MODE_CLIP``.
 
   .. _class_AudioEffectDistortion_post_gain:
 
@@ -42,14 +42,19 @@ Member Variables
 - :ref:`float<class_float>` **pre_gain** - Increases or decreases the volume before the effect. Value can range from -60 to 60. Default value: ``0``.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_AudioEffectDistortion_Mode:
+
+enum **Mode**
 
 - **MODE_CLIP** = **0** --- Digital distortion effect which cuts off peaks at the top and bottom of the waveform.
 - **MODE_ATAN** = **1**
 - **MODE_LOFI** = **2** --- Low-resolution digital distortion effect. You can use it to emulate the sound of early digital audio devices.
 - **MODE_OVERDRIVE** = **3** --- Emulates the warm distortion produced by a field effect transistor, which is commonly used in solid-state musical instrument amplifiers.
 - **MODE_WAVESHAPE** = **4** --- Waveshaper distortions are used mainly by electronic musicians to achieve an extra-abrasive sound.
+
 
 Description
 -----------

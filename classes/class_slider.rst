@@ -27,7 +27,7 @@ Member Variables
 
   .. _class_Slider_focus_mode:
 
-- :ref:`int<class_int>` **focus_mode**
+- :ref:`FocusMode<enum_control_focusmode>` **focus_mode**
 
   .. _class_Slider_tick_count:
 

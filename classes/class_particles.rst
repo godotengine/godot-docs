@@ -34,7 +34,7 @@ Member Variables
 
   .. _class_Particles_draw_order:
 
-- :ref:`int<class_int>` **draw_order** - Particle draw order. Uses ``DRAW_ORDER\_\*`` values. Default value: ``DRAW_ORDER_INDEX``.
+- :ref:`DrawOrder<enum_particles_draworder>` **draw_order** - Particle draw order. Uses ``DRAW_ORDER\_\*`` values. Default value: ``DRAW_ORDER_INDEX``.
 
   .. _class_Particles_draw_pass_1:
 
@@ -108,10 +108,19 @@ Member Variables
 Numeric Constants
 -----------------
 
+- **MAX_DRAW_PASSES** = **4**
+
+Enums
+-----
+
+  .. _enum_Particles_DrawOrder:
+
+enum **DrawOrder**
+
 - **DRAW_ORDER_INDEX** = **0** --- Particles are drawn in the order emitted.
 - **DRAW_ORDER_LIFETIME** = **1** --- Particles are drawn in order of remaining lifetime.
 - **DRAW_ORDER_VIEW_DEPTH** = **2** --- Particles are drawn in order of depth.
-- **MAX_DRAW_PASSES** = **4**
+
 
 Description
 -----------

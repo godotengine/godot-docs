@@ -81,11 +81,15 @@ Member Variables
 
   .. _class_ProceduralSky_texture_size:
 
-- :ref:`int<class_int>` **texture_size**
+- :ref:`TextureSize<enum_proceduralsky_texturesize>` **texture_size**
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_ProceduralSky_TextureSize:
+
+enum **TextureSize**
 
 - **TEXTURE_SIZE_256** = **0**
 - **TEXTURE_SIZE_512** = **1**
@@ -93,4 +97,5 @@ Numeric Constants
 - **TEXTURE_SIZE_2048** = **3**
 - **TEXTURE_SIZE_4096** = **4**
 - **TEXTURE_SIZE_MAX** = **5**
+
 

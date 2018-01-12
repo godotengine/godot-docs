@@ -30,7 +30,7 @@ Member Variables
 
   .. _class_AudioStreamSample_format:
 
-- :ref:`int<class_int>` **format** - Audio format. See FORMAT\_\* constants for values.
+- :ref:`Format<enum_audiostreamsample_format>` **format** - Audio format. See FORMAT\_\* constants for values.
 
   .. _class_AudioStreamSample_loop_begin:
 
@@ -42,7 +42,7 @@ Member Variables
 
   .. _class_AudioStreamSample_loop_mode:
 
-- :ref:`int<class_int>` **loop_mode** - Loop mode. See LOOP\_\* constants for values.
+- :ref:`LoopMode<enum_audiostreamsample_loopmode>` **loop_mode** - Loop mode. See LOOP\_\* constants for values.
 
   .. _class_AudioStreamSample_mix_rate:
 
@@ -53,15 +53,25 @@ Member Variables
 - :ref:`bool<class_bool>` **stereo** - If ``true``, audio is stereo. Default value: ``false``.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_AudioStreamSample_LoopMode:
+
+enum **LoopMode**
+
+- **LOOP_DISABLED** = **0** --- Audio does not loop.
+- **LOOP_FORWARD** = **1** --- Audio loops the data between loop_begin and loop_end playing forward only.
+- **LOOP_PING_PONG** = **2** --- Audio loops the data between loop_begin and loop_end playing back and forth.
+
+  .. _enum_AudioStreamSample_Format:
+
+enum **Format**
 
 - **FORMAT_8_BITS** = **0** --- Audio codec 8 bit.
 - **FORMAT_16_BITS** = **1** --- Audio codec 16 bit.
 - **FORMAT_IMA_ADPCM** = **2** --- Audio codec IMA ADPCM.
-- **LOOP_DISABLED** = **0** --- Audio does not loop.
-- **LOOP_FORWARD** = **1** --- Audio loops the data between loop_begin and loop_end playing forward only.
-- **LOOP_PING_PONG** = **2** --- Audio loops the data between loop_begin and loop_end playing back and forth.
+
 
 Description
 -----------

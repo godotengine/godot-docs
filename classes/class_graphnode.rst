@@ -119,12 +119,17 @@ Member Variables
 - :ref:`String<class_string>` **title**
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_GraphNode_Overlay:
+
+enum **Overlay**
 
 - **OVERLAY_DISABLED** = **0**
 - **OVERLAY_BREAKPOINT** = **1**
 - **OVERLAY_POSITION** = **2**
+
 
 Description
 -----------

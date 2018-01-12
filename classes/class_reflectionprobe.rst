@@ -65,12 +65,17 @@ Member Variables
 
   .. _class_ReflectionProbe_update_mode:
 
-- :ref:`int<class_int>` **update_mode**
+- :ref:`UpdateMode<enum_reflectionprobe_updatemode>` **update_mode**
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_ReflectionProbe_UpdateMode:
+
+enum **UpdateMode**
 
 - **UPDATE_ONCE** = **0**
 - **UPDATE_ALWAYS** = **1**
+
 

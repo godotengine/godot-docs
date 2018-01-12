@@ -67,13 +67,18 @@ Member Variables
 - :ref:`bool<class_bool>` **use_mipmaps** - If ``true`` mipmapping is used.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_DynamicFont_SpacingType:
+
+enum **SpacingType**
 
 - **SPACING_TOP** = **0** --- Spacing at the top.
 - **SPACING_BOTTOM** = **1** --- Spacing at the bottom.
 - **SPACING_CHAR** = **2** --- Character spacing.
 - **SPACING_SPACE** = **3** --- Space spacing.
+
 
 Description
 -----------

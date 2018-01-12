@@ -140,7 +140,7 @@ Returns the cross product with ``b``.
 
 - :ref:`Vector3<class_vector3>` **cubic_interpolate** **(** :ref:`Vector3<class_vector3>` b, :ref:`Vector3<class_vector3>` pre_a, :ref:`Vector3<class_vector3>` post_b, :ref:`float<class_float>` t **)**
 
-Performs a cubic interpolation between vectors ``pre_a``, ``a``, ``b``, ``post_b`` (``a`` is current), by the given amount (t).
+Performs a cubic interpolation between vectors ``pre_a``, ``a``, ``b``, ``post_b`` (``a`` is current), by the given amount (t). (t) should be a float of 0.0-1.0, a percentage of how far along the interpolation is.
 
 .. _class_Vector3_distance_squared_to:
 
@@ -194,7 +194,7 @@ Returns the length of the vector, squared. Prefer this function over "length" if
 
 - :ref:`Vector3<class_vector3>` **linear_interpolate** **(** :ref:`Vector3<class_vector3>` b, :ref:`float<class_float>` t **)**
 
-Linearly interpolates the vector to a given one (b), by the given amount (t).
+Linearly interpolates the vector to a given one (b), by the given amount (t). (t) should be a float of 0.0-1.0, a percentage of how far along the interpolation is.
 
 .. _class_Vector3_max_axis:
 

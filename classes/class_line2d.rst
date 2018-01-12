@@ -36,7 +36,7 @@ Member Variables
 
   .. _class_Line2D_begin_cap_mode:
 
-- :ref:`int<class_int>` **begin_cap_mode** - Controls the style of the line's first point. Use ``LINE_CAP\_\*`` constants. Default value: ``LINE_CAP_NONE``.
+- :ref:`LineCapMode<enum_line2d_linecapmode>` **begin_cap_mode** - Controls the style of the line's first point. Use ``LINE_CAP\_\*`` constants. Default value: ``LINE_CAP_NONE``.
 
   .. _class_Line2D_default_color:
 
@@ -44,7 +44,7 @@ Member Variables
 
   .. _class_Line2D_end_cap_mode:
 
-- :ref:`int<class_int>` **end_cap_mode** - Controls the style of the line's last point. Use ``LINE_CAP\_\*`` constants. Default value: ``LINE_CAP_NONE``.
+- :ref:`LineCapMode<enum_line2d_linecapmode>` **end_cap_mode** - Controls the style of the line's last point. Use ``LINE_CAP\_\*`` constants. Default value: ``LINE_CAP_NONE``.
 
   .. _class_Line2D_gradient:
 
@@ -52,7 +52,7 @@ Member Variables
 
   .. _class_Line2D_joint_mode:
 
-- :ref:`int<class_int>` **joint_mode** - The style for the points inbetween the start and the end.
+- :ref:`LineJointMode<enum_line2d_linejointmode>` **joint_mode** - The style for the points inbetween the start and the end.
 
   .. _class_Line2D_points:
 
@@ -72,24 +72,39 @@ Member Variables
 
   .. _class_Line2D_texture_mode:
 
-- :ref:`int<class_int>` **texture_mode** - The style to render the ``texture`` on the line. Use ``LINE_TEXTURE\_\*`` constants. Default value: ``LINE_TEXTURE_NONE``.
+- :ref:`LineTextureMode<enum_line2d_linetexturemode>` **texture_mode** - The style to render the ``texture`` on the line. Use ``LINE_TEXTURE\_\*`` constants. Default value: ``LINE_TEXTURE_NONE``.
 
   .. _class_Line2D_width:
 
 - :ref:`float<class_float>` **width** - The line's width.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_Line2D_LineCapMode:
+
+enum **LineCapMode**
+
+- **LINE_CAP_NONE** = **0** --- Don't have a line cap.
+- **LINE_CAP_BOX** = **1** --- Draws the line cap as a box.
+- **LINE_CAP_ROUND** = **2** --- Draws the line cap as a circle.
+
+  .. _enum_Line2D_LineTextureMode:
+
+enum **LineTextureMode**
+
+- **LINE_TEXTURE_NONE** = **0** --- Takes the left pixels of the texture and renders it over the whole line.
+- **LINE_TEXTURE_TILE** = **1** --- Tiles the texture over the line. The texture need to be imported with Repeat Enabled for it to work properly.
+
+  .. _enum_Line2D_LineJointMode:
+
+enum **LineJointMode**
 
 - **LINE_JOINT_SHARP** = **0** --- The line's joints will be pointy. If ``sharp_limit`` is greater than the rotation of a joint, it becomes a bevel joint instead.
 - **LINE_JOINT_BEVEL** = **1** --- The line's joints will be bevelled/chamfered.
 - **LINE_JOINT_ROUND** = **2** --- The line's joints will be rounded.
-- **LINE_CAP_NONE** = **0** --- Don't have a line cap.
-- **LINE_CAP_BOX** = **1** --- Draws the line cap as a box.
-- **LINE_CAP_ROUND** = **2** --- Draws the line cap as a circle.
-- **LINE_TEXTURE_NONE** = **0** --- Takes the left pixels of the texture and renders it over the whole line.
-- **LINE_TEXTURE_TILE** = **1** --- Tiles the texture over the line. The texture need to be imported with Repeat Enabled for it to work properly.
+
 
 Description
 -----------

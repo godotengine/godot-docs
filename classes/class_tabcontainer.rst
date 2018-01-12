@@ -76,19 +76,24 @@ Member Variables
 
   .. _class_TabContainer_tab_align:
 
-- :ref:`int<class_int>` **tab_align** - The alignment of all tabs in the tab container. See the ``ALIGN\_\*`` constants for details.
+- :ref:`TabAlign<enum_tabcontainer_tabalign>` **tab_align** - The alignment of all tabs in the tab container. See the ``ALIGN\_\*`` constants for details.
 
   .. _class_TabContainer_tabs_visible:
 
 - :ref:`bool<class_bool>` **tabs_visible** - If ``true`` tabs are visible. If ``false`` tabs' content and titles are hidden. Default value: ``true``.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_TabContainer_TabAlign:
+
+enum **TabAlign**
 
 - **ALIGN_LEFT** = **0**
 - **ALIGN_CENTER** = **1**
 - **ALIGN_RIGHT** = **2**
+
 
 Description
 -----------

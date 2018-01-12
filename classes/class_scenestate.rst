@@ -61,12 +61,17 @@ Member Functions
 | :ref:`bool<class_bool>`                        | :ref:`is_node_instance_placeholder<class_SceneState_is_node_instance_placeholder>` **(** :ref:`int<class_int>` idx **)** const                       |
 +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_SceneState_GenEditState:
+
+enum **GenEditState**
 
 - **GEN_EDIT_STATE_DISABLED** = **0** --- If passed to :ref:`PackedScene.instance<class_PackedScene_instance>`, blocks edits to the scene state.
 - **GEN_EDIT_STATE_INSTANCE** = **1** --- If passed to :ref:`PackedScene.instance<class_PackedScene_instance>`, provides inherited scene resources to the local scene. Requires tools compiled.
 - **GEN_EDIT_STATE_MAIN** = **2** --- If passed to :ref:`PackedScene.instance<class_PackedScene_instance>`, provides local scene resources to the local scene. Only the main scene should receive the main edit state. Requires tools compiled.
+
 
 Description
 -----------

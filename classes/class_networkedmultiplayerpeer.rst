@@ -76,14 +76,28 @@ Emitted by clients when the server disconnects.
 Numeric Constants
 -----------------
 
+- **TARGET_PEER_BROADCAST** = **0** --- Packets are sent to the server and then redistributed to other peers.
+- **TARGET_PEER_SERVER** = **1** --- Packets are sent to the server alone.
+
+Enums
+-----
+
+  .. _enum_NetworkedMultiplayerPeer_TransferMode:
+
+enum **TransferMode**
+
 - **TRANSFER_MODE_UNRELIABLE** = **0** --- Packets are sent via unordered UDP packets.
 - **TRANSFER_MODE_UNRELIABLE_ORDERED** = **1** --- Packets are sent via ordered UDP packets.
 - **TRANSFER_MODE_RELIABLE** = **2** --- Packets are sent via TCP packets.
+
+  .. _enum_NetworkedMultiplayerPeer_ConnectionStatus:
+
+enum **ConnectionStatus**
+
 - **CONNECTION_DISCONNECTED** = **0** --- The ongoing connection disconnected.
 - **CONNECTION_CONNECTING** = **1** --- A connection attempt is ongoing.
 - **CONNECTION_CONNECTED** = **2** --- The connection attempt succeeded.
-- **TARGET_PEER_BROADCAST** = **0** --- Packets are sent to the server and then redistributed to other peers.
-- **TARGET_PEER_SERVER** = **1** --- Packets are sent to the server alone.
+
 
 Description
 -----------

@@ -112,18 +112,23 @@ Member Variables
 
   .. _class_AnimationPlayer_playback_process_mode:
 
-- :ref:`int<class_int>` **playback_process_mode** - The process notification in which to update animations. Default value: enum ANIMATION_PROCESS_IDLE.
+- :ref:`AnimationProcessMode<enum_animationplayer_animationprocessmode>` **playback_process_mode** - The process notification in which to update animations. Default value: enum ANIMATION_PROCESS_IDLE.
 
   .. _class_AnimationPlayer_root_node:
 
 - :ref:`NodePath<class_nodepath>` **root_node** - The node from which node path references will travel. Default value: ``".."``.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_AnimationPlayer_AnimationProcessMode:
+
+enum **AnimationProcessMode**
 
 - **ANIMATION_PROCESS_PHYSICS** = **0** --- Process animation during the physics process. This is especially useful when animating physics bodies.
 - **ANIMATION_PROCESS_IDLE** = **1** --- Process animation during the idle process.
+
 
 Description
 -----------

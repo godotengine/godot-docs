@@ -25,15 +25,19 @@ Member Variables
 
   .. _class_TextureRect_stretch_mode:
 
-- :ref:`int<class_int>` **stretch_mode** - Controls the texture's behavior when you resize the node's bounding rectangle. Set it to one of the ``STRETCH\_\*`` constants. See the constants to learn more.
+- :ref:`StretchMode<enum_texturerect_stretchmode>` **stretch_mode** - Controls the texture's behavior when you resize the node's bounding rectangle. Set it to one of the ``STRETCH\_\*`` constants. See the constants to learn more.
 
   .. _class_TextureRect_texture:
 
 - :ref:`Texture<class_texture>` **texture** - The node's :ref:`Texture<class_texture>` resource.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_TextureRect_StretchMode:
+
+enum **StretchMode**
 
 - **STRETCH_SCALE_ON_EXPAND** = **0** --- Scale to fit the node's bounding rectangle, only if ``expand`` is ``true``. Default ``stretch_mode``, for backwards compatibility. Until you set ``expand`` to ``true``, the texture will behave like ``STRETCH_KEEP``.
 - **STRETCH_SCALE** = **1** --- Scale to fit the node's bounding rectangle.
@@ -43,6 +47,7 @@ Numeric Constants
 - **STRETCH_KEEP_ASPECT** = **5** --- Scale the texture to fit the node's bounding rectangle, but maintain the texture's aspect ratio.
 - **STRETCH_KEEP_ASPECT_CENTERED** = **6** --- Scale the texture to fit the node's bounding rectangle, center it and maintain its aspect ratio.
 - **STRETCH_KEEP_ASPECT_COVERED** = **7** --- Scale the texture so that the shorter side fits the bounding rectangle. The other side clips to the node's limits.
+
 
 Description
 -----------

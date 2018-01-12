@@ -107,17 +107,27 @@ Member Functions
 | void                                           | :ref:`store_var<class_File_store_var>` **(** :ref:`Variant<class_variant>` value **)**                                                                                                |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_File_CompressionMode:
+
+enum **CompressionMode**
+
+- **COMPRESSION_FASTLZ** = **0** --- Uses the FastLZ compression method.
+- **COMPRESSION_DEFLATE** = **1** --- Uses the Deflate compression method.
+- **COMPRESSION_ZSTD** = **2** --- Uses the Zstd compression method.
+- **COMPRESSION_GZIP** = **3** --- Uses the gzip compression method.
+
+  .. _enum_File_ModeFlags:
+
+enum **ModeFlags**
 
 - **READ** = **1** --- Opens the file for read operations.
 - **WRITE** = **2** --- Opens the file for write operations. Create it if the file does not exist and truncate if it exists.
 - **READ_WRITE** = **3** --- Opens the file for read and write operations. Does not truncate the file.
 - **WRITE_READ** = **7** --- Opens the file for read and write operations. Create it if the file does not exist and truncate if it exists.
-- **COMPRESSION_FASTLZ** = **0** --- Uses the FastLZ compression method.
-- **COMPRESSION_DEFLATE** = **1** --- Uses the Deflate compression method.
-- **COMPRESSION_ZSTD** = **2** --- Uses the Zstd compression method.
-- **COMPRESSION_GZIP** = **3** --- Uses the gzip compression method.
+
 
 Description
 -----------

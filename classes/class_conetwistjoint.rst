@@ -50,8 +50,12 @@ If below 0.05, this behaviour is locked. Default value: ``PI/4``.
 Twist is locked if below 0.05.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_ConeTwistJoint_Param:
+
+enum **Param**
 
 - **PARAM_SWING_SPAN** = **0** --- Swing is rotation from side to side, around the axis perpendicular to the twist axis.
 
@@ -69,6 +73,7 @@ The higher, the faster.
 - **PARAM_SOFTNESS** = **3** --- The ease with which the joint starts to twist. If it's too low, it takes more force to start twisting the joint.
 - **PARAM_RELAXATION** = **4** --- Defines, how fast the swing- and twist-speed-difference on both sides gets synced.
 - **PARAM_MAX** = **5** --- End flag of PARAM\_\* constants, used internally.
+
 
 Description
 -----------

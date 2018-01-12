@@ -41,12 +41,17 @@ Member Functions
 | void                       | :ref:`set_storage<class_ImageTexture_set_storage>` **(** :ref:`int<class_int>` mode **)**                                                                                   |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_ImageTexture_Storage:
+
+enum **Storage**
 
 - **STORAGE_RAW** = **0** --- :ref:`Image<class_image>` data is stored raw and unaltered.
 - **STORAGE_COMPRESS_LOSSY** = **1** --- :ref:`Image<class_image>` data is compressed with a lossy algorithm. You can set the storage quality with :ref:`set_lossy_storage_quality<class_ImageTexture_set_lossy_storage_quality>`.
 - **STORAGE_COMPRESS_LOSSLESS** = **2** --- :ref:`Image<class_image>` data is compressed with a lossless algorithm.
+
 
 Description
 -----------

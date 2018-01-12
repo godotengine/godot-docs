@@ -219,8 +219,47 @@ Member Functions
 | void                                           | :ref:`show_virtual_keyboard<class_OS_show_virtual_keyboard>` **(** :ref:`String<class_string>` existing_text="" **)**                                                                                                    |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_OS_SystemDir:
+
+enum **SystemDir**
+
+- **SYSTEM_DIR_DESKTOP** = **0**
+- **SYSTEM_DIR_DCIM** = **1**
+- **SYSTEM_DIR_DOCUMENTS** = **2**
+- **SYSTEM_DIR_DOWNLOADS** = **3**
+- **SYSTEM_DIR_MOVIES** = **4**
+- **SYSTEM_DIR_MUSIC** = **5**
+- **SYSTEM_DIR_PICTURES** = **6**
+- **SYSTEM_DIR_RINGTONES** = **7**
+
+  .. _enum_OS_ScreenOrientation:
+
+enum **ScreenOrientation**
+
+- **SCREEN_ORIENTATION_LANDSCAPE** = **0**
+- **SCREEN_ORIENTATION_PORTRAIT** = **1**
+- **SCREEN_ORIENTATION_REVERSE_LANDSCAPE** = **2**
+- **SCREEN_ORIENTATION_REVERSE_PORTRAIT** = **3**
+- **SCREEN_ORIENTATION_SENSOR_LANDSCAPE** = **4**
+- **SCREEN_ORIENTATION_SENSOR_PORTRAIT** = **5**
+- **SCREEN_ORIENTATION_SENSOR** = **6**
+
+  .. _enum_OS_PowerState:
+
+enum **PowerState**
+
+- **POWERSTATE_UNKNOWN** = **0**
+- **POWERSTATE_ON_BATTERY** = **1**
+- **POWERSTATE_NO_BATTERY** = **2**
+- **POWERSTATE_CHARGING** = **3**
+- **POWERSTATE_CHARGED** = **4**
+
+  .. _enum_OS_Weekday:
+
+enum **Weekday**
 
 - **DAY_SUNDAY** = **0**
 - **DAY_MONDAY** = **1**
@@ -229,6 +268,11 @@ Numeric Constants
 - **DAY_THURSDAY** = **4**
 - **DAY_FRIDAY** = **5**
 - **DAY_SATURDAY** = **6**
+
+  .. _enum_OS_Month:
+
+enum **Month**
+
 - **MONTH_JANUARY** = **1**
 - **MONTH_FEBRUARY** = **2**
 - **MONTH_MARCH** = **3**
@@ -241,26 +285,7 @@ Numeric Constants
 - **MONTH_OCTOBER** = **10**
 - **MONTH_NOVEMBER** = **11**
 - **MONTH_DECEMBER** = **12**
-- **SCREEN_ORIENTATION_LANDSCAPE** = **0**
-- **SCREEN_ORIENTATION_PORTRAIT** = **1**
-- **SCREEN_ORIENTATION_REVERSE_LANDSCAPE** = **2**
-- **SCREEN_ORIENTATION_REVERSE_PORTRAIT** = **3**
-- **SCREEN_ORIENTATION_SENSOR_LANDSCAPE** = **4**
-- **SCREEN_ORIENTATION_SENSOR_PORTRAIT** = **5**
-- **SCREEN_ORIENTATION_SENSOR** = **6**
-- **SYSTEM_DIR_DESKTOP** = **0**
-- **SYSTEM_DIR_DCIM** = **1**
-- **SYSTEM_DIR_DOCUMENTS** = **2**
-- **SYSTEM_DIR_DOWNLOADS** = **3**
-- **SYSTEM_DIR_MOVIES** = **4**
-- **SYSTEM_DIR_MUSIC** = **5**
-- **SYSTEM_DIR_PICTURES** = **6**
-- **SYSTEM_DIR_RINGTONES** = **7**
-- **POWERSTATE_UNKNOWN** = **0**
-- **POWERSTATE_ON_BATTERY** = **1**
-- **POWERSTATE_NO_BATTERY** = **2**
-- **POWERSTATE_CHARGING** = **3**
-- **POWERSTATE_CHARGED** = **4**
+
 
 Description
 -----------

@@ -82,7 +82,7 @@ Member Variables
 
   .. _class_TileMap_cell_half_offset:
 
-- :ref:`int<class_int>` **cell_half_offset** - Amount to offset alternating tiles. Uses HALF_OFFSET\_\* constants. Default value: HALF_OFFSET_DISABLED.
+- :ref:`HalfOffset<enum_tilemap_halfoffset>` **cell_half_offset** - Amount to offset alternating tiles. Uses HALF_OFFSET\_\* constants. Default value: HALF_OFFSET_DISABLED.
 
   .. _class_TileMap_cell_quadrant_size:
 
@@ -94,7 +94,7 @@ Member Variables
 
   .. _class_TileMap_cell_tile_origin:
 
-- :ref:`int<class_int>` **cell_tile_origin** - Position for tile origin. Uses TILE_ORIGIN\_\* constants. Default value: TILE_ORIGIN_TOP_LEFT.
+- :ref:`TileOrigin<enum_tilemap_tileorigin>` **cell_tile_origin** - Position for tile origin. Uses TILE_ORIGIN\_\* constants. Default value: TILE_ORIGIN_TOP_LEFT.
 
   .. _class_TileMap_cell_y_sort:
 
@@ -122,7 +122,7 @@ Member Variables
 
   .. _class_TileMap_mode:
 
-- :ref:`int<class_int>` **mode** - The TileMap orientation mode. Uses MODE\_\* constants. Default value: MODE_SQUARE.
+- :ref:`Mode<enum_tilemap_mode>` **mode** - The TileMap orientation mode. Uses MODE\_\* constants. Default value: MODE_SQUARE.
 
   .. _class_TileMap_occluder_light_mask:
 
@@ -137,15 +137,34 @@ Numeric Constants
 -----------------
 
 - **INVALID_CELL** = **-1** --- Returned when a cell doesn't exist.
-- **MODE_SQUARE** = **0** --- Orthogonal orientation mode.
-- **MODE_ISOMETRIC** = **1** --- Isometric orientation mode.
-- **MODE_CUSTOM** = **2** --- Custom orientation mode.
+
+Enums
+-----
+
+  .. _enum_TileMap_HalfOffset:
+
+enum **HalfOffset**
+
 - **HALF_OFFSET_X** = **0** --- Half offset on the X coordinate.
 - **HALF_OFFSET_Y** = **1** --- Half offset on the Y coordinate.
 - **HALF_OFFSET_DISABLED** = **2** --- Half offset disabled.
+
+  .. _enum_TileMap_TileOrigin:
+
+enum **TileOrigin**
+
 - **TILE_ORIGIN_TOP_LEFT** = **0** --- Tile origin at its top-left corner.
 - **TILE_ORIGIN_CENTER** = **1** --- Tile origin at its center.
 - **TILE_ORIGIN_BOTTOM_LEFT** = **2**
+
+  .. _enum_TileMap_Mode:
+
+enum **Mode**
+
+- **MODE_SQUARE** = **0** --- Orthogonal orientation mode.
+- **MODE_ISOMETRIC** = **1** --- Isometric orientation mode.
+- **MODE_CUSTOM** = **2** --- Custom orientation mode.
+
 
 Description
 -----------

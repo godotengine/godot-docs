@@ -150,11 +150,22 @@ Member Variables
 
   .. _class_AnimationTreePlayer_playback_process_mode:
 
-- :ref:`int<class_int>` **playback_process_mode** - The thread in which to update animations. Default value: enum ANIMATION_PROCESS_IDLE.
+- :ref:`AnimationProcessMode<enum_animationtreeplayer_animationprocessmode>` **playback_process_mode** - The thread in which to update animations. Default value: enum ANIMATION_PROCESS_IDLE.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_AnimationTreePlayer_AnimationProcessMode:
+
+enum **AnimationProcessMode**
+
+- **ANIMATION_PROCESS_PHYSICS** = **0** --- Process animation during the physics process. This is especially useful when animating physics bodies.
+- **ANIMATION_PROCESS_IDLE** = **1** --- Process animation during the idle process.
+
+  .. _enum_AnimationTreePlayer_NodeType:
+
+enum **NodeType**
 
 - **NODE_OUTPUT** = **0** --- Output node.
 - **NODE_ANIMATION** = **1** --- Animation node.
@@ -166,8 +177,7 @@ Numeric Constants
 - **NODE_TIMESCALE** = **7** --- TimeScale node.
 - **NODE_TIMESEEK** = **8** --- TimeSeek node.
 - **NODE_TRANSITION** = **9** --- Transition node.
-- **ANIMATION_PROCESS_PHYSICS** = **0** --- Process animation during the physics process. This is especially useful when animating physics bodies.
-- **ANIMATION_PROCESS_IDLE** = **1** --- Process animation during the idle process.
+
 
 Description
 -----------

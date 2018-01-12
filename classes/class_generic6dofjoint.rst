@@ -226,8 +226,21 @@ The lower, the longer an impulse from one side takes to travel to the other side
 - :ref:`float<class_float>` **linear_limit_z/upper_distance** - The maximum difference between the pivot points' z-axis.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_Generic6DOFJoint_Flag:
+
+enum **Flag**
+
+- **FLAG_ENABLE_LINEAR_LIMIT** = **0** --- If ``set`` there is linear motion possible within the given limits.
+- **FLAG_ENABLE_ANGULAR_LIMIT** = **1** --- If ``set`` there is rotational motion possible.
+- **FLAG_ENABLE_MOTOR** = **2** --- If ``set`` there is a rotational motor across these axes.
+- **FLAG_MAX** = **3** --- End flag of FLAG\_\* constants, used internally.
+
+  .. _enum_Generic6DOFJoint_Param:
+
+enum **Param**
 
 - **PARAM_LINEAR_LOWER_LIMIT** = **0** --- The minimum difference between the pivot points' axes.
 - **PARAM_LINEAR_UPPER_LIMIT** = **1** --- The maximum difference between the pivot points' axes.
@@ -244,10 +257,7 @@ Numeric Constants
 - **PARAM_ANGULAR_MOTOR_TARGET_VELOCITY** = **12** --- Target speed for the motor at the axes.
 - **PARAM_ANGULAR_MOTOR_FORCE_LIMIT** = **13** --- Maximum acceleration for the motor at the axes.
 - **PARAM_MAX** = **14** --- End flag of PARAM\_\* constants, used internally.
-- **FLAG_ENABLE_LINEAR_LIMIT** = **0** --- If ``set`` there is linear motion possible within the given limits.
-- **FLAG_ENABLE_ANGULAR_LIMIT** = **1** --- If ``set`` there is rotational motion possible.
-- **FLAG_ENABLE_MOTOR** = **2** --- If ``set`` there is a rotational motor across these axes.
-- **FLAG_MAX** = **3** --- End flag of FLAG\_\* constants, used internally.
+
 
 Description
 -----------

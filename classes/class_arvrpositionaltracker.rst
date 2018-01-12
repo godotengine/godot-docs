@@ -47,12 +47,17 @@ Member Variables
 - :ref:`float<class_float>` **rumble** - The degree to which the tracker rumbles. Ranges from ``0.0`` to ``1.0`` with precision ``.01``.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_ARVRPositionalTracker_TrackerHand:
+
+enum **TrackerHand**
 
 - **TRACKER_HAND_UNKNOWN** = **0** --- The hand this tracker is held in is unknown or not applicable.
 - **TRACKER_LEFT_HAND** = **1** --- This tracker is the left hand controller.
 - **TRACKER_RIGHT_HAND** = **2** --- This tracker is the right hand controller.
+
 
 Description
 -----------

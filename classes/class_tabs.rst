@@ -94,20 +94,30 @@ Member Variables
 
   .. _class_Tabs_tab_close_display_policy:
 
-- :ref:`int<class_int>` **tab_close_display_policy**
+- :ref:`CloseButtonDisplayPolicy<enum_tabs_closebuttondisplaypolicy>` **tab_close_display_policy**
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_Tabs_CloseButtonDisplayPolicy:
+
+enum **CloseButtonDisplayPolicy**
+
+- **CLOSE_BUTTON_SHOW_NEVER** = **0**
+- **CLOSE_BUTTON_SHOW_ACTIVE_ONLY** = **1**
+- **CLOSE_BUTTON_SHOW_ALWAYS** = **2**
+- **CLOSE_BUTTON_MAX** = **3**
+
+  .. _enum_Tabs_TabAlign:
+
+enum **TabAlign**
 
 - **ALIGN_LEFT** = **0**
 - **ALIGN_CENTER** = **1**
 - **ALIGN_RIGHT** = **2**
 - **ALIGN_MAX** = **3**
-- **CLOSE_BUTTON_SHOW_NEVER** = **0**
-- **CLOSE_BUTTON_SHOW_ACTIVE_ONLY** = **1**
-- **CLOSE_BUTTON_SHOW_ALWAYS** = **2**
-- **CLOSE_BUTTON_MAX** = **3**
+
 
 Description
 -----------

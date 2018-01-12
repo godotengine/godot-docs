@@ -38,11 +38,11 @@ Member Variables
 
   .. _class_StyleBoxTexture_axis_stretch_horizontal:
 
-- :ref:`int<class_int>` **axis_stretch_horizontal**
+- :ref:`AxisStretchMode<enum_styleboxtexture_axisstretchmode>` **axis_stretch_horizontal**
 
   .. _class_StyleBoxTexture_axis_stretch_vertical:
 
-- :ref:`int<class_int>` **axis_stretch_vertical**
+- :ref:`AxisStretchMode<enum_styleboxtexture_axisstretchmode>` **axis_stretch_vertical**
 
   .. _class_StyleBoxTexture_draw_center:
 
@@ -97,12 +97,17 @@ Member Variables
 - :ref:`Resource<class_resource>` **texture**
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_StyleBoxTexture_AxisStretchMode:
+
+enum **AxisStretchMode**
 
 - **AXIS_STRETCH_MODE_STRETCH** = **0**
 - **AXIS_STRETCH_MODE_TILE** = **1**
 - **AXIS_STRETCH_MODE_TILE_FIT** = **2**
+
 
 Description
 -----------

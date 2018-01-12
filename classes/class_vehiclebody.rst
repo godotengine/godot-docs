@@ -7,7 +7,7 @@
 VehicleBody
 ===========
 
-**Inherits:** :ref:`PhysicsBody<class_physicsbody>` **<** :ref:`CollisionObject<class_collisionobject>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`RigidBody<class_rigidbody>` **<** :ref:`PhysicsBody<class_physicsbody>` **<** :ref:`CollisionObject<class_collisionobject>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
 **Category:** Core
 
@@ -15,13 +15,6 @@ Brief Description
 -----------------
 
 
-
-Member Functions
-----------------
-
-+--------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`get_linear_velocity<class_VehicleBody_get_linear_velocity>` **(** **)** const |
-+--------------------------------+-------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -34,31 +27,8 @@ Member Variables
 
 - :ref:`float<class_float>` **engine_force**
 
-  .. _class_VehicleBody_friction:
-
-- :ref:`float<class_float>` **friction**
-
-  .. _class_VehicleBody_mass:
-
-- :ref:`float<class_float>` **mass**
-
   .. _class_VehicleBody_steering:
 
 - :ref:`float<class_float>` **steering**
-
-
-Member Function Description
----------------------------
-
-.. _class_VehicleBody_get_linear_velocity:
-
-- :ref:`Vector3<class_vector3>` **get_linear_velocity** **(** **)** const
-
-Returns the VehicleBody's velocity vector. To get the absolute speed in scalar value, get the length of the return vector in pixels/second. Example:
-
-::
-
-    # vehicle is an instance of VehicleBody
-    var speed = vehicle.get_linear_velocity().length()
 
 

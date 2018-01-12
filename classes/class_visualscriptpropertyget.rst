@@ -29,7 +29,7 @@ Member Variables
 
   .. _class_VisualScriptPropertyGet_basic_type:
 
-- :ref:`int<class_int>` **basic_type**
+- :ref:`Type<enum_variant_type>` **basic_type**
 
   .. _class_VisualScriptPropertyGet_index:
 
@@ -45,13 +45,18 @@ Member Variables
 
   .. _class_VisualScriptPropertyGet_set_mode:
 
-- :ref:`int<class_int>` **set_mode**
+- :ref:`CallMode<enum_visualscriptpropertyget_callmode>` **set_mode**
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_VisualScriptPropertyGet_CallMode:
+
+enum **CallMode**
 
 - **CALL_MODE_SELF** = **0**
 - **CALL_MODE_NODE_PATH** = **1**
 - **CALL_MODE_INSTANCE** = **2**
+
 

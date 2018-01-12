@@ -56,7 +56,7 @@ Member Variables
 
   .. _class_EditorFileDialog_access:
 
-- :ref:`int<class_int>` **access** - The location from which the user may select a file, including ``res://``, ``user://``, and the local file system.
+- :ref:`Access<enum_editorfiledialog_access>` **access** - The location from which the user may select a file, including ``res://``, ``user://``, and the local file system.
 
   .. _class_EditorFileDialog_current_dir:
 
@@ -76,30 +76,45 @@ Member Variables
 
   .. _class_EditorFileDialog_display_mode:
 
-- :ref:`int<class_int>` **display_mode** - The view format in which the ``EditorFileDialog`` displays resources to the user.
+- :ref:`DisplayMode<enum_editorfiledialog_displaymode>` **display_mode** - The view format in which the ``EditorFileDialog`` displays resources to the user.
 
   .. _class_EditorFileDialog_mode:
 
-- :ref:`int<class_int>` **mode** - The purpose of the ``EditorFileDialog``. Changes allowed behaviors.
+- :ref:`Mode<enum_editorfiledialog_mode>` **mode** - The purpose of the ``EditorFileDialog``. Changes allowed behaviors.
 
   .. _class_EditorFileDialog_show_hidden_files:
 
 - :ref:`bool<class_bool>` **show_hidden_files** - If ``true`` hidden files and directories will be visible in the ``EditorFileDialog``.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_EditorFileDialog_Access:
+
+enum **Access**
+
+- **ACCESS_RESOURCES** = **0** --- The ``EditorFileDialog`` can only view ``res://`` directory contents.
+- **ACCESS_USERDATA** = **1** --- The ``EditorFileDialog`` can only view ``user://`` directory contents.
+- **ACCESS_FILESYSTEM** = **2** --- The ``EditorFileDialog`` can view the entire local file system.
+
+  .. _enum_EditorFileDialog_DisplayMode:
+
+enum **DisplayMode**
+
+- **DISPLAY_THUMBNAILS** = **0** --- The ``EditorFileDialog`` displays resources as thumbnails.
+- **DISPLAY_LIST** = **1** --- The ``EditorFileDialog`` displays resources as a list of filenames.
+
+  .. _enum_EditorFileDialog_Mode:
+
+enum **Mode**
 
 - **MODE_OPEN_FILE** = **0** --- The ``EditorFileDialog`` can select only one file. Accepting the window will open the file.
 - **MODE_OPEN_FILES** = **1** --- The ``EditorFileDialog`` can select multiple files. Accepting the window will open all files.
 - **MODE_OPEN_DIR** = **2** --- The ``EditorFileDialog`` can select only one directory. Accepting the window will open the directory.
 - **MODE_OPEN_ANY** = **3** --- The ``EditorFileDialog`` can select a file or directory. Accepting the window will open it.
 - **MODE_SAVE_FILE** = **4** --- The ``EditorFileDialog`` can select only one file. Accepting the window will save the file.
-- **ACCESS_RESOURCES** = **0** --- The ``EditorFileDialog`` can only view ``res://`` directory contents.
-- **ACCESS_USERDATA** = **1** --- The ``EditorFileDialog`` can only view ``user://`` directory contents.
-- **ACCESS_FILESYSTEM** = **2** --- The ``EditorFileDialog`` can view the entire local file system.
-- **DISPLAY_THUMBNAILS** = **0** --- The ``EditorFileDialog`` displays resources as thumbnails.
-- **DISPLAY_LIST** = **1** --- The ``EditorFileDialog`` displays resources as a list of filenames.
+
 
 Member Function Description
 ---------------------------

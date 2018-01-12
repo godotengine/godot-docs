@@ -118,9 +118,18 @@ Numeric Constants
 
 - **NOTIFICATION_POSTINITIALIZE** = **0** --- Called right when the object is initialized. Not available in script.
 - **NOTIFICATION_PREDELETE** = **1** --- Called before the object is about to be deleted.
+
+Enums
+-----
+
+  .. _enum_Object_ConnectFlags:
+
+enum **ConnectFlags**
+
 - **CONNECT_DEFERRED** = **1** --- Connect a signal in deferred mode. This way, signal emissions are stored in a queue, then set on idle time.
 - **CONNECT_PERSIST** = **2** --- Persisting connections are saved when the object is serialized to file.
 - **CONNECT_ONESHOT** = **4** --- One shot connections disconnect themselves after emission.
+
 
 Description
 -----------

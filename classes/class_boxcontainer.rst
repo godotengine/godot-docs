@@ -30,15 +30,20 @@ Member Variables
 
   .. _class_BoxContainer_alignment:
 
-- :ref:`int<class_int>` **alignment** - The alignment of the container's children (must be one of ALIGN_BEGIN, ALIGN_CENTER, or ALIGN_END).
+- :ref:`AlignMode<enum_boxcontainer_alignmode>` **alignment** - The alignment of the container's children (must be one of ALIGN_BEGIN, ALIGN_CENTER, or ALIGN_END).
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_BoxContainer_AlignMode:
+
+enum **AlignMode**
 
 - **ALIGN_BEGIN** = **0** --- Aligns children with the beginning of the container.
 - **ALIGN_CENTER** = **1** --- Aligns children with the center of the container.
 - **ALIGN_END** = **2** --- Aligns children with the end of the container.
+
 
 Description
 -----------

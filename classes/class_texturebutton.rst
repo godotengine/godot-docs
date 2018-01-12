@@ -25,7 +25,7 @@ Member Variables
 
   .. _class_TextureButton_stretch_mode:
 
-- :ref:`int<class_int>` **stretch_mode** - Controls the texture's behavior when you resize the node's bounding rectangle, **only if** :ref:`expand<class_TextureButton_expand>` is ``true``. Set it to one of the ``STRETCH\_\*`` constants. See the constants to learn more.
+- :ref:`StretchMode<enum_texturebutton_stretchmode>` **stretch_mode** - Controls the texture's behavior when you resize the node's bounding rectangle, **only if** :ref:`expand<class_TextureButton_expand>` is ``true``. Set it to one of the ``STRETCH\_\*`` constants. See the constants to learn more.
 
   .. _class_TextureButton_texture_click_mask:
 
@@ -52,8 +52,12 @@ Member Variables
 - :ref:`Texture<class_texture>` **texture_pressed** - Texture to display on mouse down over the node, if the node has keyboard focus and the player presses the enter key or if the player presses the :ref:`BaseButton.shortcut<class_BaseButton_shortcut>` key.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_TextureButton_StretchMode:
+
+enum **StretchMode**
 
 - **STRETCH_SCALE** = **0** --- Scale to fit the node's bounding rectangle.
 - **STRETCH_TILE** = **1** --- Tile inside the node's bounding rectangle.
@@ -62,6 +66,7 @@ Numeric Constants
 - **STRETCH_KEEP_ASPECT** = **4** --- Scale the texture to fit the node's bounding rectangle, but maintain the texture's aspect ratio.
 - **STRETCH_KEEP_ASPECT_CENTERED** = **5** --- Scale the texture to fit the node's bounding rectangle, center it, and maintain its aspect ratio.
 - **STRETCH_KEEP_ASPECT_COVERED** = **6** --- Scale the texture so that the shorter side fits the bounding rectangle. The other side clips to the node's limits.
+
 
 Description
 -----------

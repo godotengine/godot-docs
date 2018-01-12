@@ -139,7 +139,7 @@ Returns the vector with a maximum length.
 
 - :ref:`Vector2<class_vector2>` **cubic_interpolate** **(** :ref:`Vector2<class_vector2>` b, :ref:`Vector2<class_vector2>` pre_a, :ref:`Vector2<class_vector2>` post_b, :ref:`float<class_float>` t **)**
 
-Cubicly interpolates between this Vector and "b", using "pre_a" and "post_b" as handles, and returning the result at position "t".
+Cubicly interpolates between this Vector and "b", using "pre_a" and "post_b" as handles, and returning the result at position "t". "t" should be a float of 0.0-1.0, a percentage of how far along the interpolation is.
 
 .. _class_Vector2_distance_squared_to:
 
@@ -187,7 +187,7 @@ Returns the squared length of the vector. Prefer this function over "length" if 
 
 - :ref:`Vector2<class_vector2>` **linear_interpolate** **(** :ref:`Vector2<class_vector2>` b, :ref:`float<class_float>` t **)**
 
-Returns the result of the linear interpolation between this vector and "b", by amount "t".
+Returns the result of the linear interpolation between this vector and "b", by amount "t". "t" should be a float of 0.0-1.0, a percentage of how far along the interpolation is.
 
 .. _class_Vector2_normalized:
 

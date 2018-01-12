@@ -33,13 +33,18 @@ Member Functions
 | :ref:`bool<class_bool>`      | :ref:`is_connected_to_host<class_StreamPeerTCP_is_connected_to_host>` **(** **)** const                                              |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_StreamPeerTCP_Status:
+
+enum **Status**
 
 - **STATUS_NONE** = **0** --- The initial status of the ``StreamPeerTCP``, also the status after a disconnect.
 - **STATUS_CONNECTING** = **1** --- A status representing a ``StreamPeerTCP`` that is connecting to a host.
 - **STATUS_CONNECTED** = **2** --- A status representing a ``StreamPeerTCP`` that is connected to a host.
 - **STATUS_ERROR** = **3** --- A staus representing a ``StreamPeerTCP`` in error state.
+
 
 Description
 -----------

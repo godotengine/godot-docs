@@ -44,8 +44,12 @@ Member Variables
 - :ref:`bool<class_bool>` **process_parent**
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_VisibilityEnabler2D_Enabler:
+
+enum **Enabler**
 
 - **ENABLER_PAUSE_ANIMATIONS** = **0** --- This enabler will pause :ref:`AnimationPlayer<class_animationplayer>` nodes.
 - **ENABLER_FREEZE_BODIES** = **1** --- This enabler will freeze :ref:`RigidBody2D<class_rigidbody2d>` nodes.
@@ -54,6 +58,7 @@ Numeric Constants
 - **ENABLER_PARENT_PHYSICS_PROCESS** = **4** --- This enabler will stop the parent's _physics_process function.
 - **ENABLER_PAUSE_ANIMATED_SPRITES** = **5**
 - **ENABLER_MAX** = **6**
+
 
 Description
 -----------

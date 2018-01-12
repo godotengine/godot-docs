@@ -49,13 +49,18 @@ Member Functions
 | void                       | :ref:`set_v_offset<class_PathFollow_set_v_offset>` **(** :ref:`float<class_float>` v_offset **)**                   |
 +----------------------------+---------------------------------------------------------------------------------------------------------------------+
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_PathFollow_RotationMode:
+
+enum **RotationMode**
 
 - **ROTATION_NONE** = **0** --- Forbids the PathFollow to rotate.
 - **ROTATION_Y** = **1** --- Allows the PathFollow to rotate in the Y axis only.
 - **ROTATION_XY** = **2** --- Allows the PathFollow to rotate in both the X, and Y axes.
 - **ROTATION_XYZ** = **3** --- Allows the PathFollow to rotate in any axis.
+
 
 Description
 -----------

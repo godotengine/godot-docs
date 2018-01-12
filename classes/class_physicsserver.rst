@@ -233,14 +233,84 @@ Member Functions
 | void                                                           | :ref:`space_set_param<class_PhysicsServer_space_set_param>` **(** :ref:`RID<class_rid>` space, :ref:`int<class_int>` param, :ref:`float<class_float>` value **)**                                                                                                 |
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Numeric Constants
------------------
+Enums
+-----
 
-- **JOINT_PIN** = **0** --- The :ref:`Joint<class_joint>` is a :ref:`PinJoint<class_pinjoint>`.
-- **JOINT_HINGE** = **1** --- The :ref:`Joint<class_joint>` is a :ref:`HingeJoint<class_hingejoint>`.
-- **JOINT_SLIDER** = **2** --- The :ref:`Joint<class_joint>` is a :ref:`SliderJoint<class_sliderjoint>`.
-- **JOINT_CONE_TWIST** = **3** --- The :ref:`Joint<class_joint>` is a :ref:`ConeTwistJoint<class_conetwistjoint>`.
-- **JOINT_6DOF** = **4** --- The :ref:`Joint<class_joint>` is a :ref:`Generic6DOFJoint<class_generic6dofjoint>`.
+  .. _enum_PhysicsServer_BodyState:
+
+enum **BodyState**
+
+- **BODY_STATE_TRANSFORM** = **0** --- Constant to set/get the current transform matrix of the body.
+- **BODY_STATE_LINEAR_VELOCITY** = **1** --- Constant to set/get the current linear velocity of the body.
+- **BODY_STATE_ANGULAR_VELOCITY** = **2** --- Constant to set/get the current angular velocity of the body.
+- **BODY_STATE_SLEEPING** = **3** --- Constant to sleep/wake up a body, or to get whether it is sleeping.
+- **BODY_STATE_CAN_SLEEP** = **4** --- Constant to set/get whether the body can sleep.
+
+  .. _enum_PhysicsServer_G6DOFJointAxisParam:
+
+enum **G6DOFJointAxisParam**
+
+- **G6DOF_JOINT_LINEAR_LOWER_LIMIT** = **0** --- The minimum difference between the pivot points' axes.
+- **G6DOF_JOINT_LINEAR_UPPER_LIMIT** = **1** --- The maximum difference between the pivot points' axes.
+- **G6DOF_JOINT_LINEAR_LIMIT_SOFTNESS** = **2** --- A factor that gets applied to the movement accross the axes. The lower, the slower the movement.
+- **G6DOF_JOINT_LINEAR_RESTITUTION** = **3** --- The amount of restitution on the axes movement. The lower, the more velocity-energy gets lost.
+- **G6DOF_JOINT_LINEAR_DAMPING** = **4** --- The amount of damping that happens at the linear motion across the axes.
+- **G6DOF_JOINT_ANGULAR_LOWER_LIMIT** = **5** --- The minimum rotation in negative direction to break loose and rotate arround the axes.
+- **G6DOF_JOINT_ANGULAR_UPPER_LIMIT** = **6** --- The minimum rotation in positive direction to break loose and rotate arround the axes.
+- **G6DOF_JOINT_ANGULAR_LIMIT_SOFTNESS** = **7** --- A factor that gets multiplied onto all rotations accross the axes.
+- **G6DOF_JOINT_ANGULAR_DAMPING** = **8** --- The amount of rotational damping accross the axes. The lower, the more dampening occurs.
+- **G6DOF_JOINT_ANGULAR_RESTITUTION** = **9** --- The amount of rotational restitution accross the axes. The lower, the more restitution occurs.
+- **G6DOF_JOINT_ANGULAR_FORCE_LIMIT** = **10** --- The maximum amount of force that can occur, when rotating arround the axes.
+- **G6DOF_JOINT_ANGULAR_ERP** = **11** --- When correcting the crossing of limits in rotation accross the axes, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
+- **G6DOF_JOINT_ANGULAR_MOTOR_TARGET_VELOCITY** = **12** --- Target speed for the motor at the axes.
+- **G6DOF_JOINT_ANGULAR_MOTOR_FORCE_LIMIT** = **13** --- Maximum acceleration for the motor at the axes.
+
+  .. _enum_PhysicsServer_ProcessInfo:
+
+enum **ProcessInfo**
+
+- **INFO_ACTIVE_OBJECTS** = **0** --- Constant to get the number of objects that are not sleeping.
+- **INFO_COLLISION_PAIRS** = **1** --- Constant to get the number of possible collisions.
+- **INFO_ISLAND_COUNT** = **2** --- Constant to get the number of space regions where a collision could occur.
+
+  .. _enum_PhysicsServer_ShapeType:
+
+enum **ShapeType**
+
+- **SHAPE_PLANE** = **0** --- The :ref:`Shape<class_shape>` is a :ref:`PlaneShape<class_planeshape>`.
+- **SHAPE_RAY** = **1** --- The :ref:`Shape<class_shape>` is a :ref:`RayShape<class_rayshape>`.
+- **SHAPE_SPHERE** = **2** --- The :ref:`Shape<class_shape>` is a :ref:`SphereShape<class_sphereshape>`.
+- **SHAPE_BOX** = **3** --- The :ref:`Shape<class_shape>` is a :ref:`BoxShape<class_boxshape>`.
+- **SHAPE_CAPSULE** = **4** --- The :ref:`Shape<class_shape>` is a :ref:`CapsuleShape<class_capsuleshape>`.
+- **SHAPE_CONVEX_POLYGON** = **5** --- The :ref:`Shape<class_shape>` is a :ref:`ConvexPolygonShape<class_convexpolygonshape>`.
+- **SHAPE_CONCAVE_POLYGON** = **6** --- The :ref:`Shape<class_shape>` is a :ref:`ConcavePolygonShape<class_concavepolygonshape>`.
+- **SHAPE_HEIGHTMAP** = **7** --- The :ref:`Shape<class_shape>` is a HeightMapShape.
+- **SHAPE_CUSTOM** = **8** --- This constant is used internally by the engine. Any attempt to create this kind of shape results in an error.
+
+  .. _enum_PhysicsServer_HingeJointFlag:
+
+enum **HingeJointFlag**
+
+- **HINGE_JOINT_FLAG_USE_LIMIT** = **0** --- If ``true`` the Hinge has a maximum and a minimum rotation.
+- **HINGE_JOINT_FLAG_ENABLE_MOTOR** = **1** --- If ``true`` a motor turns the Hinge
+
+  .. _enum_PhysicsServer_AreaParameter:
+
+enum **AreaParameter**
+
+- **AREA_PARAM_GRAVITY** = **0** --- Constant to set/get gravity strength in an area.
+- **AREA_PARAM_GRAVITY_VECTOR** = **1** --- Constant to set/get gravity vector/center in an area.
+- **AREA_PARAM_GRAVITY_IS_POINT** = **2** --- Constant to set/get whether the gravity vector of an area is a direction, or a center point.
+- **AREA_PARAM_GRAVITY_DISTANCE_SCALE** = **3** --- Constant to set/get the falloff factor for point gravity of an area. The greater this value is, the faster the strength of gravity decreases with the square of distance.
+- **AREA_PARAM_GRAVITY_POINT_ATTENUATION** = **4** --- This constant was used to set/get the falloff factor for point gravity. It has been superseded by AREA_PARAM_GRAVITY_DISTANCE_SCALE.
+- **AREA_PARAM_LINEAR_DAMP** = **5** --- Constant to set/get the linear dampening factor of an area.
+- **AREA_PARAM_ANGULAR_DAMP** = **6** --- Constant to set/get the angular dampening factor of an area.
+- **AREA_PARAM_PRIORITY** = **7** --- Constant to set/get the priority (order of processing) of an area.
+
+  .. _enum_PhysicsServer_PinJointParam:
+
+enum **PinJointParam**
+
 - **PIN_JOINT_BIAS** = **0** --- The strength with which the pinned objects try to stay in positional relation to each other.
 
 The higher, the stronger.
@@ -248,16 +318,92 @@ The higher, the stronger.
 
 The higher, the stronger.
 - **PIN_JOINT_IMPULSE_CLAMP** = **2** --- If above 0, this value is the maximum value for an impulse that this Joint puts on it's ends.
-- **HINGE_JOINT_BIAS** = **0** --- The speed with wich the two bodies get pulled together when they move in different directions.
-- **HINGE_JOINT_LIMIT_UPPER** = **1** --- The maximum rotation across the Hinge.
-- **HINGE_JOINT_LIMIT_LOWER** = **2** --- The minimum rotation across the Hinge.
-- **HINGE_JOINT_LIMIT_BIAS** = **3** --- The speed with which the rotation across the axis perpendicular to the hinge gets corrected.
-- **HINGE_JOINT_LIMIT_SOFTNESS** = **4**
-- **HINGE_JOINT_LIMIT_RELAXATION** = **5** --- The lower this value, the more the rotation gets slowed down.
-- **HINGE_JOINT_MOTOR_TARGET_VELOCITY** = **6** --- Target speed for the motor.
-- **HINGE_JOINT_MOTOR_MAX_IMPULSE** = **7** --- Maximum acceleration for the motor.
-- **HINGE_JOINT_FLAG_USE_LIMIT** = **0** --- If ``true`` the Hinge has a maximum and a minimum rotation.
-- **HINGE_JOINT_FLAG_ENABLE_MOTOR** = **1** --- If ``true`` a motor turns the Hinge
+
+  .. _enum_PhysicsServer_BodyParameter:
+
+enum **BodyParameter**
+
+- **BODY_PARAM_BOUNCE** = **0** --- Constant to set/get a body's bounce factor.
+- **BODY_PARAM_FRICTION** = **1** --- Constant to set/get a body's friction.
+- **BODY_PARAM_MASS** = **2** --- Constant to set/get a body's mass.
+- **BODY_PARAM_GRAVITY_SCALE** = **3** --- Constant to set/get a body's gravity multiplier.
+- **BODY_PARAM_LINEAR_DAMP** = **4** --- Constant to set/get a body's linear dampening factor.
+- **BODY_PARAM_ANGULAR_DAMP** = **5** --- Constant to set/get a body's angular dampening factor.
+- **BODY_PARAM_MAX** = **6** --- This is the last ID for body parameters. Any attempt to set this property is ignored. Any attempt to get it returns 0.
+
+  .. _enum_PhysicsServer_BodyMode:
+
+enum **BodyMode**
+
+- **BODY_MODE_STATIC** = **0** --- Constant for static bodies.
+- **BODY_MODE_KINEMATIC** = **1** --- Constant for kinematic bodies.
+- **BODY_MODE_RIGID** = **2** --- Constant for rigid bodies.
+- **BODY_MODE_SOFT** = **3**
+- **BODY_MODE_CHARACTER** = **4** --- Constant for rigid bodies in character mode. In this mode, a body can not rotate, and only its linear velocity is affected by physics.
+
+  .. _enum_PhysicsServer_SpaceParameter:
+
+enum **SpaceParameter**
+
+- **SPACE_PARAM_CONTACT_RECYCLE_RADIUS** = **0** --- Constant to set/get the maximum distance a pair of bodies has to move before their collision status has to be recalculated.
+- **SPACE_PARAM_CONTACT_MAX_SEPARATION** = **1** --- Constant to set/get the maximum distance a shape can be from another before they are considered separated.
+- **SPACE_PARAM_BODY_MAX_ALLOWED_PENETRATION** = **2** --- Constant to set/get the maximum distance a shape can penetrate another shape before it is considered a collision.
+- **SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD** = **3** --- Constant to set/get the threshold linear velocity of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after the time given.
+- **SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD** = **4** --- Constant to set/get the threshold angular velocity of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after the time given.
+- **SPACE_PARAM_BODY_TIME_TO_SLEEP** = **5** --- Constant to set/get the maximum time of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after this time.
+- **SPACE_PARAM_BODY_ANGULAR_VELOCITY_DAMP_RATIO** = **6**
+- **SPACE_PARAM_CONSTRAINT_DEFAULT_BIAS** = **7** --- Constant to set/get the default solver bias for all physics constraints. A solver bias is a factor controlling how much two objects "rebound", after violating a constraint, to avoid leaving them in that state because of numerical imprecision.
+
+  .. _enum_PhysicsServer_AreaBodyStatus:
+
+enum **AreaBodyStatus**
+
+- **AREA_BODY_ADDED** = **0** --- The value of the first parameter and area callback function receives, when an object enters one of its shapes.
+- **AREA_BODY_REMOVED** = **1** --- The value of the first parameter and area callback function receives, when an object exits one of its shapes.
+
+  .. _enum_PhysicsServer_BodyAxis:
+
+enum **BodyAxis**
+
+- **BODY_AXIS_LINEAR_X** = **1**
+- **BODY_AXIS_LINEAR_Y** = **2**
+- **BODY_AXIS_LINEAR_Z** = **4**
+- **BODY_AXIS_ANGULAR_X** = **8**
+- **BODY_AXIS_ANGULAR_Y** = **16**
+- **BODY_AXIS_ANGULAR_Z** = **32**
+
+  .. _enum_PhysicsServer_JointType:
+
+enum **JointType**
+
+- **JOINT_PIN** = **0** --- The :ref:`Joint<class_joint>` is a :ref:`PinJoint<class_pinjoint>`.
+- **JOINT_HINGE** = **1** --- The :ref:`Joint<class_joint>` is a :ref:`HingeJoint<class_hingejoint>`.
+- **JOINT_SLIDER** = **2** --- The :ref:`Joint<class_joint>` is a :ref:`SliderJoint<class_sliderjoint>`.
+- **JOINT_CONE_TWIST** = **3** --- The :ref:`Joint<class_joint>` is a :ref:`ConeTwistJoint<class_conetwistjoint>`.
+- **JOINT_6DOF** = **4** --- The :ref:`Joint<class_joint>` is a :ref:`Generic6DOFJoint<class_generic6dofjoint>`.
+
+  .. _enum_PhysicsServer_AreaSpaceOverrideMode:
+
+enum **AreaSpaceOverrideMode**
+
+- **AREA_SPACE_OVERRIDE_DISABLED** = **0** --- This area does not affect gravity/damp. These are generally areas that exist only to detect collisions, and objects entering or exiting them.
+- **AREA_SPACE_OVERRIDE_COMBINE** = **1** --- This area adds its gravity/damp values to whatever has been calculated so far. This way, many overlapping areas can combine their physics to make interesting effects.
+- **AREA_SPACE_OVERRIDE_COMBINE_REPLACE** = **2** --- This area adds its gravity/damp values to whatever has been calculated so far. Then stops taking into account the rest of the areas, even the default one.
+- **AREA_SPACE_OVERRIDE_REPLACE** = **3** --- This area replaces any gravity/damp, even the default one, and stops taking into account the rest of the areas.
+- **AREA_SPACE_OVERRIDE_REPLACE_COMBINE** = **4** --- This area replaces any gravity/damp calculated so far, but keeps calculating the rest of the areas, down to the default one.
+
+  .. _enum_PhysicsServer_G6DOFJointAxisFlag:
+
+enum **G6DOFJointAxisFlag**
+
+- **G6DOF_JOINT_FLAG_ENABLE_LINEAR_LIMIT** = **0** --- If ``set`` there is linear motion possible within the given limits.
+- **G6DOF_JOINT_FLAG_ENABLE_ANGULAR_LIMIT** = **1** --- If ``set`` there is rotational motion possible.
+- **G6DOF_JOINT_FLAG_ENABLE_MOTOR** = **2** --- If ``set`` there is a rotational motor across these axes.
+
+  .. _enum_PhysicsServer_SliderJointParam:
+
+enum **SliderJointParam**
+
 - **SLIDER_JOINT_LINEAR_LIMIT_UPPER** = **0** --- The maximum difference between the pivot points on their x-axis before damping happens.
 - **SLIDER_JOINT_LINEAR_LIMIT_LOWER** = **1** --- The minimum difference between the pivot points on their x-axis before damping happens.
 - **SLIDER_JOINT_LINEAR_LIMIT_SOFTNESS** = **2** --- A factor applied to the movement accross the slider axis once the limits get surpassed. The lower, the slower the movement.
@@ -281,6 +427,11 @@ The higher, the stronger.
 - **SLIDER_JOINT_ANGULAR_ORTHOGONAL_RESTITUTION** = **20** --- The amount of restitution of the rotation across axes orthogonal to the slider.
 - **SLIDER_JOINT_ANGULAR_ORTHOGONAL_DAMPING** = **21** --- The amount of damping of the rotation across axes orthogonal to the slider.
 - **SLIDER_JOINT_MAX** = **22** --- End flag of SLIDER_JOINT\_\* constants, used internally.
+
+  .. _enum_PhysicsServer_ConeTwistJointParam:
+
+enum **ConeTwistJointParam**
+
 - **CONE_TWIST_JOINT_SWING_SPAN** = **0** --- Swing is rotation from side to side, around the axis perpendicular to the twist axis.
 
 The swing span defines, how much rotation will not get corrected allong the swing axis.
@@ -296,81 +447,20 @@ Twist is locked if below 0.05.
 The higher, the faster.
 - **CONE_TWIST_JOINT_SOFTNESS** = **3** --- The ease with which the Joint twists, if it's too low, it takes more force to twist the joint.
 - **CONE_TWIST_JOINT_RELAXATION** = **4** --- Defines, how fast the swing- and twist-speed-difference on both sides gets synced.
-- **G6DOF_JOINT_LINEAR_LOWER_LIMIT** = **0** --- The minimum difference between the pivot points' axes.
-- **G6DOF_JOINT_LINEAR_UPPER_LIMIT** = **1** --- The maximum difference between the pivot points' axes.
-- **G6DOF_JOINT_LINEAR_LIMIT_SOFTNESS** = **2** --- A factor that gets applied to the movement accross the axes. The lower, the slower the movement.
-- **G6DOF_JOINT_LINEAR_RESTITUTION** = **3** --- The amount of restitution on the axes movement. The lower, the more velocity-energy gets lost.
-- **G6DOF_JOINT_LINEAR_DAMPING** = **4** --- The amount of damping that happens at the linear motion across the axes.
-- **G6DOF_JOINT_ANGULAR_LOWER_LIMIT** = **5** --- The minimum rotation in negative direction to break loose and rotate arround the axes.
-- **G6DOF_JOINT_ANGULAR_UPPER_LIMIT** = **6** --- The minimum rotation in positive direction to break loose and rotate arround the axes.
-- **G6DOF_JOINT_ANGULAR_LIMIT_SOFTNESS** = **7** --- A factor that gets multiplied onto all rotations accross the axes.
-- **G6DOF_JOINT_ANGULAR_DAMPING** = **8** --- The amount of rotational damping accross the axes. The lower, the more dampening occurs.
-- **G6DOF_JOINT_ANGULAR_RESTITUTION** = **9** --- The amount of rotational restitution accross the axes. The lower, the more restitution occurs.
-- **G6DOF_JOINT_ANGULAR_FORCE_LIMIT** = **10** --- The maximum amount of force that can occur, when rotating arround the axes.
-- **G6DOF_JOINT_ANGULAR_ERP** = **11** --- When correcting the crossing of limits in rotation accross the axes, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
-- **G6DOF_JOINT_ANGULAR_MOTOR_TARGET_VELOCITY** = **12** --- Target speed for the motor at the axes.
-- **G6DOF_JOINT_ANGULAR_MOTOR_FORCE_LIMIT** = **13** --- Maximum acceleration for the motor at the axes.
-- **G6DOF_JOINT_FLAG_ENABLE_LINEAR_LIMIT** = **0** --- If ``set`` there is linear motion possible within the given limits.
-- **G6DOF_JOINT_FLAG_ENABLE_ANGULAR_LIMIT** = **1** --- If ``set`` there is rotational motion possible.
-- **G6DOF_JOINT_FLAG_ENABLE_MOTOR** = **2** --- If ``set`` there is a rotational motor across these axes.
-- **SHAPE_PLANE** = **0** --- The :ref:`Shape<class_shape>` is a :ref:`PlaneShape<class_planeshape>`.
-- **SHAPE_RAY** = **1** --- The :ref:`Shape<class_shape>` is a :ref:`RayShape<class_rayshape>`.
-- **SHAPE_SPHERE** = **2** --- The :ref:`Shape<class_shape>` is a :ref:`SphereShape<class_sphereshape>`.
-- **SHAPE_BOX** = **3** --- The :ref:`Shape<class_shape>` is a :ref:`BoxShape<class_boxshape>`.
-- **SHAPE_CAPSULE** = **4** --- The :ref:`Shape<class_shape>` is a :ref:`CapsuleShape<class_capsuleshape>`.
-- **SHAPE_CONVEX_POLYGON** = **5** --- The :ref:`Shape<class_shape>` is a :ref:`ConvexPolygonShape<class_convexpolygonshape>`.
-- **SHAPE_CONCAVE_POLYGON** = **6** --- The :ref:`Shape<class_shape>` is a :ref:`ConcavePolygonShape<class_concavepolygonshape>`.
-- **SHAPE_HEIGHTMAP** = **7** --- The :ref:`Shape<class_shape>` is a HeightMapShape.
-- **SHAPE_CUSTOM** = **8** --- This constant is used internally by the engine. Any attempt to create this kind of shape results in an error.
-- **AREA_PARAM_GRAVITY** = **0** --- Constant to set/get gravity strength in an area.
-- **AREA_PARAM_GRAVITY_VECTOR** = **1** --- Constant to set/get gravity vector/center in an area.
-- **AREA_PARAM_GRAVITY_IS_POINT** = **2** --- Constant to set/get whether the gravity vector of an area is a direction, or a center point.
-- **AREA_PARAM_GRAVITY_DISTANCE_SCALE** = **3** --- Constant to set/get the falloff factor for point gravity of an area. The greater this value is, the faster the strength of gravity decreases with the square of distance.
-- **AREA_PARAM_GRAVITY_POINT_ATTENUATION** = **4** --- This constant was used to set/get the falloff factor for point gravity. It has been superseded by AREA_PARAM_GRAVITY_DISTANCE_SCALE.
-- **AREA_PARAM_LINEAR_DAMP** = **5** --- Constant to set/get the linear dampening factor of an area.
-- **AREA_PARAM_ANGULAR_DAMP** = **6** --- Constant to set/get the angular dampening factor of an area.
-- **AREA_PARAM_PRIORITY** = **7** --- Constant to set/get the priority (order of processing) of an area.
-- **AREA_SPACE_OVERRIDE_DISABLED** = **0** --- This area does not affect gravity/damp. These are generally areas that exist only to detect collisions, and objects entering or exiting them.
-- **AREA_SPACE_OVERRIDE_COMBINE** = **1** --- This area adds its gravity/damp values to whatever has been calculated so far. This way, many overlapping areas can combine their physics to make interesting effects.
-- **AREA_SPACE_OVERRIDE_COMBINE_REPLACE** = **2** --- This area adds its gravity/damp values to whatever has been calculated so far. Then stops taking into account the rest of the areas, even the default one.
-- **AREA_SPACE_OVERRIDE_REPLACE** = **3** --- This area replaces any gravity/damp, even the default one, and stops taking into account the rest of the areas.
-- **AREA_SPACE_OVERRIDE_REPLACE_COMBINE** = **4** --- This area replaces any gravity/damp calculated so far, but keeps calculating the rest of the areas, down to the default one.
-- **BODY_MODE_STATIC** = **0** --- Constant for static bodies.
-- **BODY_MODE_KINEMATIC** = **1** --- Constant for kinematic bodies.
-- **BODY_MODE_RIGID** = **2** --- Constant for rigid bodies.
-- **BODY_MODE_SOFT** = **3**
-- **BODY_MODE_CHARACTER** = **4** --- Constant for rigid bodies in character mode. In this mode, a body can not rotate, and only its linear velocity is affected by physics.
-- **BODY_PARAM_BOUNCE** = **0** --- Constant to set/get a body's bounce factor.
-- **BODY_PARAM_FRICTION** = **1** --- Constant to set/get a body's friction.
-- **BODY_PARAM_MASS** = **2** --- Constant to set/get a body's mass.
-- **BODY_PARAM_GRAVITY_SCALE** = **3** --- Constant to set/get a body's gravity multiplier.
-- **BODY_PARAM_LINEAR_DAMP** = **4** --- Constant to set/get a body's linear dampening factor.
-- **BODY_PARAM_ANGULAR_DAMP** = **5** --- Constant to set/get a body's angular dampening factor.
-- **BODY_PARAM_MAX** = **6** --- This is the last ID for body parameters. Any attempt to set this property is ignored. Any attempt to get it returns 0.
-- **BODY_STATE_TRANSFORM** = **0** --- Constant to set/get the current transform matrix of the body.
-- **BODY_STATE_LINEAR_VELOCITY** = **1** --- Constant to set/get the current linear velocity of the body.
-- **BODY_STATE_ANGULAR_VELOCITY** = **2** --- Constant to set/get the current angular velocity of the body.
-- **BODY_STATE_SLEEPING** = **3** --- Constant to sleep/wake up a body, or to get whether it is sleeping.
-- **BODY_STATE_CAN_SLEEP** = **4** --- Constant to set/get whether the body can sleep.
-- **AREA_BODY_ADDED** = **0** --- The value of the first parameter and area callback function receives, when an object enters one of its shapes.
-- **AREA_BODY_REMOVED** = **1** --- The value of the first parameter and area callback function receives, when an object exits one of its shapes.
-- **INFO_ACTIVE_OBJECTS** = **0** --- Constant to get the number of objects that are not sleeping.
-- **INFO_COLLISION_PAIRS** = **1** --- Constant to get the number of possible collisions.
-- **INFO_ISLAND_COUNT** = **2** --- Constant to get the number of space regions where a collision could occur.
-- **SPACE_PARAM_CONTACT_RECYCLE_RADIUS** = **0** --- Constant to set/get the maximum distance a pair of bodies has to move before their collision status has to be recalculated.
-- **SPACE_PARAM_CONTACT_MAX_SEPARATION** = **1** --- Constant to set/get the maximum distance a shape can be from another before they are considered separated.
-- **SPACE_PARAM_BODY_MAX_ALLOWED_PENETRATION** = **2** --- Constant to set/get the maximum distance a shape can penetrate another shape before it is considered a collision.
-- **SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD** = **3** --- Constant to set/get the threshold linear velocity of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after the time given.
-- **SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD** = **4** --- Constant to set/get the threshold angular velocity of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after the time given.
-- **SPACE_PARAM_BODY_TIME_TO_SLEEP** = **5** --- Constant to set/get the maximum time of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after this time.
-- **SPACE_PARAM_BODY_ANGULAR_VELOCITY_DAMP_RATIO** = **6**
-- **SPACE_PARAM_CONSTRAINT_DEFAULT_BIAS** = **7** --- Constant to set/get the default solver bias for all physics constraints. A solver bias is a factor controlling how much two objects "rebound", after violating a constraint, to avoid leaving them in that state because of numerical imprecision.
-- **BODY_AXIS_LINEAR_X** = **1**
-- **BODY_AXIS_LINEAR_Y** = **2**
-- **BODY_AXIS_LINEAR_Z** = **4**
-- **BODY_AXIS_ANGULAR_X** = **8**
-- **BODY_AXIS_ANGULAR_Y** = **16**
-- **BODY_AXIS_ANGULAR_Z** = **32**
+
+  .. _enum_PhysicsServer_HingeJointParam:
+
+enum **HingeJointParam**
+
+- **HINGE_JOINT_BIAS** = **0** --- The speed with wich the two bodies get pulled together when they move in different directions.
+- **HINGE_JOINT_LIMIT_UPPER** = **1** --- The maximum rotation across the Hinge.
+- **HINGE_JOINT_LIMIT_LOWER** = **2** --- The minimum rotation across the Hinge.
+- **HINGE_JOINT_LIMIT_BIAS** = **3** --- The speed with which the rotation across the axis perpendicular to the hinge gets corrected.
+- **HINGE_JOINT_LIMIT_SOFTNESS** = **4**
+- **HINGE_JOINT_LIMIT_RELAXATION** = **5** --- The lower this value, the more the rotation gets slowed down.
+- **HINGE_JOINT_MOTOR_TARGET_VELOCITY** = **6** --- Target speed for the motor.
+- **HINGE_JOINT_MOTOR_MAX_IMPULSE** = **7** --- Maximum acceleration for the motor.
+
 
 Description
 -----------

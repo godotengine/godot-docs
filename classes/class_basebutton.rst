@@ -21,15 +21,15 @@ Base class for different kinds of buttons.
 Member Functions
 ----------------
 
-+--------------------------+------------------------------------------------------------------------------------------------+
-| void                     | :ref:`_pressed<class_BaseButton__pressed>` **(** **)** virtual                                 |
-+--------------------------+------------------------------------------------------------------------------------------------+
-| void                     | :ref:`_toggled<class_BaseButton__toggled>` **(** :ref:`bool<class_bool>` pressed **)** virtual |
-+--------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`    | :ref:`get_draw_mode<class_BaseButton_get_draw_mode>` **(** **)** const                         |
-+--------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_hovered<class_BaseButton_is_hovered>` **(** **)** const                               |
-+--------------------------+------------------------------------------------------------------------------------------------+
++--------------------------+-------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`_pressed<class_BaseButton__pressed>` **(** **)** virtual                                        |
++--------------------------+-------------------------------------------------------------------------------------------------------+
+| void                     | :ref:`_toggled<class_BaseButton__toggled>` **(** :ref:`bool<class_bool>` button_pressed **)** virtual |
++--------------------------+-------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`    | :ref:`get_draw_mode<class_BaseButton_get_draw_mode>` **(** **)** const                                |
++--------------------------+-------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`is_hovered<class_BaseButton_is_hovered>` **(** **)** const                                      |
++--------------------------+-------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -54,7 +54,7 @@ This signal is emitted every time the button is toggled or pressed (i.e. activat
 
 .. _class_BaseButton_toggled:
 
-- **toggled** **(** :ref:`bool<class_bool>` pressed **)**
+- **toggled** **(** :ref:`bool<class_bool>` button_pressed **)**
 
 This signal is emitted when the button was just toggled between pressed and normal states (only if toggle_mode is active). The new state is contained in the *pressed* argument.
 
@@ -64,7 +64,7 @@ Member Variables
 
   .. _class_BaseButton_action_mode:
 
-- :ref:`int<class_int>` **action_mode** - Determines when the button is considered clicked, one of the ACTION_MODE\_\* constants.
+- :ref:`ActionMode<enum_basebutton_actionmode>` **action_mode** - Determines when the button is considered clicked, one of the ACTION_MODE\_\* constants.
 
   .. _class_BaseButton_disabled:
 
@@ -72,7 +72,7 @@ Member Variables
 
   .. _class_BaseButton_enabled_focus_mode:
 
-- :ref:`int<class_int>` **enabled_focus_mode** - Focus access mode to use when switching between enabled/disabled (see :ref:`Control.set_focus_mode<class_Control_set_focus_mode>` and :ref:`disabled<class_BaseButton_disabled>`).
+- :ref:`FocusMode<enum_control_focusmode>` **enabled_focus_mode** - Focus access mode to use when switching between enabled/disabled (see :ref:`Control.set_focus_mode<class_Control_set_focus_mode>` and :ref:`disabled<class_BaseButton_disabled>`).
 
   .. _class_BaseButton_group:
 
@@ -91,15 +91,25 @@ Member Variables
 - :ref:`bool<class_bool>` **toggle_mode** - If ``true`` the button is in toggle mode. Makes the button flip state between pressed and unpressed each time its area is clicked.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_BaseButton_ActionMode:
+
+enum **ActionMode**
+
+- **ACTION_MODE_BUTTON_PRESS** = **0** --- Require just a press to consider the button clicked.
+- **ACTION_MODE_BUTTON_RELEASE** = **1** --- Require a press and a subsequent release before considering the button clicked.
+
+  .. _enum_BaseButton_DrawMode:
+
+enum **DrawMode**
 
 - **DRAW_NORMAL** = **0** --- The normal state (i.e. not pressed, not hovered, not toggled and enabled) of buttons.
 - **DRAW_PRESSED** = **1** --- The state of buttons are pressed.
 - **DRAW_HOVER** = **2** --- The state of buttons are hovered.
 - **DRAW_DISABLED** = **3** --- The state of buttons are disabled.
-- **ACTION_MODE_BUTTON_PRESS** = **0** --- Require just a press to consider the button clicked.
-- **ACTION_MODE_BUTTON_RELEASE** = **1** --- Require a press and a subsequent release before considering the button clicked.
+
 
 Description
 -----------
@@ -117,7 +127,7 @@ Called when button is pressed.
 
 .. _class_BaseButton__toggled:
 
-- void **_toggled** **(** :ref:`bool<class_bool>` pressed **)** virtual
+- void **_toggled** **(** :ref:`bool<class_bool>` button_pressed **)** virtual
 
 Called when button is toggled (only if toggle_mode is active).
 

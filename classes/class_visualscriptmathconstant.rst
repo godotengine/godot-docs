@@ -21,11 +21,15 @@ Member Variables
 
   .. _class_VisualScriptMathConstant_constant:
 
-- :ref:`int<class_int>` **constant** - The math constant.
+- :ref:`MathConstant<enum_visualscriptmathconstant_mathconstant>` **constant** - The math constant.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_VisualScriptMathConstant_MathConstant:
+
+enum **MathConstant**
 
 - **MATH_CONSTANT_ONE** = **0** --- Unity: ``1``
 - **MATH_CONSTANT_PI** = **1** --- Pi: ``3.141593``
@@ -36,6 +40,7 @@ Numeric Constants
 - **MATH_CONSTANT_INF** = **6** --- Infinity: ``inf``
 - **MATH_CONSTANT_NAN** = **7** --- Not a number: ``nan``
 - **MATH_CONSTANT_MAX** = **8**
+
 
 Description
 -----------

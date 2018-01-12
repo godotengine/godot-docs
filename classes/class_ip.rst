@@ -40,16 +40,30 @@ Member Functions
 Numeric Constants
 -----------------
 
+- **RESOLVER_MAX_QUERIES** = **32** --- Maximum number of concurrent DNS resolver queries allowed, ``RESOLVER_INVALID_ID`` is returned if exceeded.
+- **RESOLVER_INVALID_ID** = **-1** --- Invalid ID constant. Returned if ``RESOLVER_MAX_QUERIES`` is exceeded.
+
+Enums
+-----
+
+  .. _enum_IP_ResolverStatus:
+
+enum **ResolverStatus**
+
 - **RESOLVER_STATUS_NONE** = **0** --- DNS hostname resolver status: No status.
 - **RESOLVER_STATUS_WAITING** = **1** --- DNS hostname resolver status: Waiting.
 - **RESOLVER_STATUS_DONE** = **2** --- DNS hostname resolver status: Done.
 - **RESOLVER_STATUS_ERROR** = **3** --- DNS hostname resolver status: Error.
-- **RESOLVER_MAX_QUERIES** = **32** --- Maximum number of concurrent DNS resolver queries allowed, ``RESOLVER_INVALID_ID`` is returned if exceeded.
-- **RESOLVER_INVALID_ID** = **-1** --- Invalid ID constant. Returned if ``RESOLVER_MAX_QUERIES`` is exceeded.
+
+  .. _enum_IP_Type:
+
+enum **Type**
+
 - **TYPE_NONE** = **0** --- Address type: None.
 - **TYPE_IPV4** = **1** --- Address type: Internet protocol version 4 (IPv4).
 - **TYPE_IPV6** = **2** --- Address type: Internet protocol version 6 (IPv6).
 - **TYPE_ANY** = **3** --- Address type: Any.
+
 
 Description
 -----------

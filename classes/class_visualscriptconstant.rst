@@ -21,7 +21,7 @@ Member Variables
 
   .. _class_VisualScriptConstant_type:
 
-- :ref:`int<class_int>` **type** - The constant's type.
+- :ref:`Type<enum_variant_type>` **type** - The constant's type.
 
   .. _class_VisualScriptConstant_value:
 

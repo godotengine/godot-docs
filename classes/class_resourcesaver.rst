@@ -25,8 +25,12 @@ Member Functions
 | :ref:`int<class_int>`                          | :ref:`save<class_ResourceSaver_save>` **(** :ref:`String<class_string>` path, :ref:`Resource<class_resource>` resource, :ref:`int<class_int>` flags=0 **)** |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_ResourceSaver_SaverFlags:
+
+enum **SaverFlags**
 
 - **FLAG_RELATIVE_PATHS** = **1**
 - **FLAG_BUNDLE_RESOURCES** = **2**
@@ -34,6 +38,7 @@ Numeric Constants
 - **FLAG_OMIT_EDITOR_PROPERTIES** = **8**
 - **FLAG_SAVE_BIG_ENDIAN** = **16**
 - **FLAG_COMPRESS** = **32**
+
 
 Description
 -----------

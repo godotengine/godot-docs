@@ -25,7 +25,7 @@ Member Variables
 
   .. _class_VisualScriptYieldSignal_call_mode:
 
-- :ref:`int<class_int>` **call_mode**
+- :ref:`CallMode<enum_visualscriptyieldsignal_callmode>` **call_mode**
 
   .. _class_VisualScriptYieldSignal_node_path:
 
@@ -36,10 +36,15 @@ Member Variables
 - :ref:`String<class_string>` **signal**
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_VisualScriptYieldSignal_CallMode:
+
+enum **CallMode**
 
 - **CALL_MODE_SELF** = **0**
 - **CALL_MODE_NODE_PATH** = **1**
 - **CALL_MODE_INSTANCE** = **2**
+
 

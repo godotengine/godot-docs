@@ -29,12 +29,17 @@ Member Functions
 | :ref:`Variant<class_variant>`  | :ref:`wait_to_finish<class_Thread_wait_to_finish>` **(** **)**                                                                                                                                       |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_Thread_Priority:
+
+enum **Priority**
 
 - **PRIORITY_LOW** = **0**
 - **PRIORITY_NORMAL** = **1**
 - **PRIORITY_HIGH** = **2**
+
 
 Description
 -----------

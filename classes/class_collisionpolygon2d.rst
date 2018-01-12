@@ -21,7 +21,7 @@ Member Variables
 
   .. _class_CollisionPolygon2D_build_mode:
 
-- :ref:`int<class_int>` **build_mode** - Collision build mode. Use one of the ``BUILD\_\*`` constants. Default value: ``BUILD_SOLIDS``.
+- :ref:`BuildMode<enum_collisionpolygon2d_buildmode>` **build_mode** - Collision build mode. Use one of the ``BUILD\_\*`` constants. Default value: ``BUILD_SOLIDS``.
 
   .. _class_CollisionPolygon2D_disabled:
 
@@ -36,11 +36,16 @@ Member Variables
 - :ref:`PoolVector2Array<class_poolvector2array>` **polygon** - The polygon's list of vertices. The final point will be connected to the first.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_CollisionPolygon2D_BuildMode:
+
+enum **BuildMode**
 
 - **BUILD_SOLIDS** = **0** --- Collisions will include the polygon and its contained area.
 - **BUILD_SEGMENTS** = **1** --- Collisions will only include the polygon edges.
+
 
 Description
 -----------

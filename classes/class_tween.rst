@@ -100,14 +100,32 @@ Member Variables
 
   .. _class_Tween_playback_process_mode:
 
-- :ref:`int<class_int>` **playback_process_mode**
+- :ref:`TweenProcessMode<enum_tween_tweenprocessmode>` **playback_process_mode**
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_Tween_TweenProcessMode:
+
+enum **TweenProcessMode**
 
 - **TWEEN_PROCESS_PHYSICS** = **0** --- The ``Tween`` should use ``_physics_process`` for timekeeping when this is enabled.
 - **TWEEN_PROCESS_IDLE** = **1** --- The ``Tween`` should use ``_process`` for timekeeping when this is enabled (default).
+
+  .. _enum_Tween_EaseType:
+
+enum **EaseType**
+
+- **EASE_IN** = **0** --- Signifies that the interpolation should be focused in the beginning.
+- **EASE_OUT** = **1** --- Signifies that the interpolation should be focused in the end.
+- **EASE_IN_OUT** = **2** --- Signifies that the interpolation should be focused in both ends.
+- **EASE_OUT_IN** = **3** --- Signifies that the interpolation should be focused in both ends, but they should be switched (a bit hard to explain, try it for yourself to be sure).
+
+  .. _enum_Tween_TransitionType:
+
+enum **TransitionType**
+
 - **TRANS_LINEAR** = **0** --- Means that the animation is interpolated linearly.
 - **TRANS_SINE** = **1** --- Means that the animation is interpolated using a sine wave.
 - **TRANS_QUINT** = **2** --- Means that the animation is interpolated with a quinary (to the power of 5) function.
@@ -119,10 +137,7 @@ Numeric Constants
 - **TRANS_CIRC** = **8** --- Means that the animation is interpolated with a function using square roots.
 - **TRANS_BOUNCE** = **9** --- Means that the animation is interpolated by bouncing at, but never surpassing, the end.
 - **TRANS_BACK** = **10** --- Means that the animation is interpolated backing out at edges.
-- **EASE_IN** = **0** --- Signifies that the interpolation should be focused in the beginning.
-- **EASE_OUT** = **1** --- Signifies that the interpolation should be focused in the end.
-- **EASE_IN_OUT** = **2** --- Signifies that the interpolation should be focused in both ends.
-- **EASE_OUT_IN** = **3** --- Signifies that the interpolation should be focused in both ends, but they should be switched (a bit hard to explain, try it for yourself to be sure).
+
 
 Description
 -----------

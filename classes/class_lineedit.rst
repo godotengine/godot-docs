@@ -44,13 +44,13 @@ Signals
 
 .. _class_LineEdit_text_changed:
 
-- **text_changed** **(** :ref:`String<class_string>` text **)**
+- **text_changed** **(** :ref:`String<class_string>` new_text **)**
 
 Emitted when the text changes.
 
 .. _class_LineEdit_text_entered:
 
-- **text_entered** **(** :ref:`String<class_string>` text **)**
+- **text_entered** **(** :ref:`String<class_string>` new_text **)**
 
 Emitted when the user presses KEY_ENTER on the ``LineEdit``.
 
@@ -60,7 +60,7 @@ Member Variables
 
   .. _class_LineEdit_align:
 
-- :ref:`int<class_int>` **align** - Text alignment as defined in the ALIGN\_\* enum.
+- :ref:`Align<enum_lineedit_align>` **align** - Text alignment as defined in the ALIGN\_\* enum.
 
   .. _class_LineEdit_caret_blink:
 
@@ -84,7 +84,7 @@ Member Variables
 
   .. _class_LineEdit_focus_mode:
 
-- :ref:`int<class_int>` **focus_mode** - Defines how the :ref:`LineEdit<class_lineedit>` can grab focus (Keyboard and mouse, only keyboard, or none). See ``enum FocusMode`` in :ref:`Control<class_control>` for details.
+- :ref:`FocusMode<enum_control_focusmode>` **focus_mode** - Defines how the :ref:`LineEdit<class_lineedit>` can grab focus (Keyboard and mouse, only keyboard, or none). See ``enum FocusMode`` in :ref:`Control<class_control>` for details.
 
   .. _class_LineEdit_max_length:
 
@@ -107,13 +107,22 @@ Member Variables
 - :ref:`String<class_string>` **text** - String value of the :ref:`LineEdit<class_lineedit>`.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_LineEdit_Align:
+
+enum **Align**
 
 - **ALIGN_LEFT** = **0** --- Aligns the text on the left hand side of the :ref:`LineEdit<class_lineedit>`.
 - **ALIGN_CENTER** = **1** --- Centers the text in the middle of the :ref:`LineEdit<class_lineedit>`.
 - **ALIGN_RIGHT** = **2** --- Aligns the text on the right hand side of the :ref:`LineEdit<class_lineedit>`.
 - **ALIGN_FILL** = **3** --- Stretches whitespaces to fit the :ref:`LineEdit<class_lineedit>`'s width.
+
+  .. _enum_LineEdit_MenuItems:
+
+enum **MenuItems**
+
 - **MENU_CUT** = **0** --- Cuts (Copies and clears) the selected text.
 - **MENU_COPY** = **1** --- Copies the selected text.
 - **MENU_PASTE** = **2** --- Pastes the clipboard text over the selected text (or at the cursor's position).
@@ -122,6 +131,7 @@ Numeric Constants
 - **MENU_UNDO** = **5** --- Undoes the previous action.
 - **MENU_REDO** = **6**
 - **MENU_MAX** = **7**
+
 
 Description
 -----------

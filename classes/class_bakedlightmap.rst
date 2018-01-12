@@ -46,7 +46,7 @@ Member Variables
 
   .. _class_BakedLightmap_bake_mode:
 
-- :ref:`int<class_int>` **bake_mode**
+- :ref:`BakeMode<enum_bakedlightmap_bakemode>` **bake_mode**
 
   .. _class_BakedLightmap_bake_propagation:
 
@@ -54,7 +54,7 @@ Member Variables
 
   .. _class_BakedLightmap_bake_quality:
 
-- :ref:`int<class_int>` **bake_quality**
+- :ref:`BakeQuality<enum_bakedlightmap_bakequality>` **bake_quality**
 
   .. _class_BakedLightmap_capture_cell_size:
 
@@ -69,19 +69,34 @@ Member Variables
 - :ref:`BakedLightmapData<class_bakedlightmapdata>` **light_data**
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_BakedLightmap_BakeQuality:
+
+enum **BakeQuality**
 
 - **BAKE_QUALITY_LOW** = **0**
 - **BAKE_QUALITY_MEDIUM** = **1**
 - **BAKE_QUALITY_HIGH** = **2**
-- **BAKE_MODE_CONE_TRACE** = **0**
-- **BAKE_MODE_RAY_TRACE** = **1**
+
+  .. _enum_BakedLightmap_BakeError:
+
+enum **BakeError**
+
 - **BAKE_ERROR_OK** = **0**
 - **BAKE_ERROR_NO_SAVE_PATH** = **1**
 - **BAKE_ERROR_NO_MESHES** = **2**
 - **BAKE_ERROR_CANT_CREATE_IMAGE** = **3**
 - **BAKE_ERROR_USER_ABORTED** = **4**
+
+  .. _enum_BakedLightmap_BakeMode:
+
+enum **BakeMode**
+
+- **BAKE_MODE_CONE_TRACE** = **0**
+- **BAKE_MODE_RAY_TRACE** = **1**
+
 
 Member Function Description
 ---------------------------

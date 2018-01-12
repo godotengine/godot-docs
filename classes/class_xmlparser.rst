@@ -55,8 +55,12 @@ Member Functions
 | void                         | :ref:`skip_section<class_XMLParser_skip_section>` **(** **)**                                                                            |
 +------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_XMLParser_NodeType:
+
+enum **NodeType**
 
 - **NODE_NONE** = **0** --- There's no node (no file or buffer opened)
 - **NODE_ELEMENT** = **1** --- Element (tag)
@@ -65,6 +69,7 @@ Numeric Constants
 - **NODE_COMMENT** = **4** --- Comment node
 - **NODE_CDATA** = **5** --- CDATA content
 - **NODE_UNKNOWN** = **6** --- Unknown node
+
 
 Description
 -----------

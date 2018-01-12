@@ -108,7 +108,7 @@ Member Variables
 
   .. _class_RigidBody2D_continuous_cd:
 
-- :ref:`int<class_int>` **continuous_cd** - Continuous collision detection mode. Default value: ``CCD_MODE_DISABLED``.
+- :ref:`CCDMode<enum_rigidbody2d_ccdmode>` **continuous_cd** - Continuous collision detection mode. Default value: ``CCD_MODE_DISABLED``.
 
 Continuous collision detection tries to predict where a moving body will collide instead of moving it and correcting its movement after collision. Continuous collision detection is slower, but more precise and misses fewer collisions with small, fast-moving objects. Raycasting and shapecasting methods are available. See ``CCD_MODE\_`` constants for details.
 
@@ -138,7 +138,7 @@ Continuous collision detection tries to predict where a moving body will collide
 
   .. _class_RigidBody2D_mode:
 
-- :ref:`int<class_int>` **mode** - The body's mode. See ``MODE\_\*`` constants. Default value: ``MODE_RIGID``.
+- :ref:`Mode<enum_rigidbody2d_mode>` **mode** - The body's mode. See ``MODE\_\*`` constants. Default value: ``MODE_RIGID``.
 
   .. _class_RigidBody2D_sleeping:
 
@@ -149,16 +149,26 @@ Continuous collision detection tries to predict where a moving body will collide
 - :ref:`float<class_float>` **weight** - The body's weight based on its mass and the "Default Gravity" value in "Project > Project Settings > Physics > 2d".
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_RigidBody2D_CCDMode:
+
+enum **CCDMode**
+
+- **CCD_MODE_DISABLED** = **0** --- Continuous collision detection disabled. This is the fastest way to detect body collisions, but can miss small, fast-moving objects.
+- **CCD_MODE_CAST_RAY** = **1** --- Continuous collision detection enabled using raycasting. This is faster than shapecasting but less precise.
+- **CCD_MODE_CAST_SHAPE** = **2** --- Continuous collision detection enabled using shapecasting. This is the slowest CCD method and the most precise.
+
+  .. _enum_RigidBody2D_Mode:
+
+enum **Mode**
 
 - **MODE_RIGID** = **0** --- Rigid mode. The body behaves as a physical object. It collides with other bodies and responds to forces applied to it. This is the default mode.
 - **MODE_STATIC** = **1** --- Static mode. The body behaves like a :ref:`StaticBody2D<class_staticbody2d>` and does not move.
 - **MODE_CHARACTER** = **2** --- Character mode. Similar to ``MODE_RIGID``, but the body can not rotate.
 - **MODE_KINEMATIC** = **3** --- Kinematic mode. The body behaves like a :ref:`KinematicBody2D<class_kinematicbody2d>`, and must be moved by code.
-- **CCD_MODE_DISABLED** = **0** --- Continuous collision detection disabled. This is the fastest way to detect body collisions, but can miss small, fast-moving objects.
-- **CCD_MODE_CAST_RAY** = **1** --- Continuous collision detection enabled using raycasting. This is faster than shapecasting but less precise.
-- **CCD_MODE_CAST_SHAPE** = **2** --- Continuous collision detection enabled using shapecasting. This is the slowest CCD method and the most precise.
+
 
 Description
 -----------
@@ -216,7 +226,7 @@ Returns the body's total applied torque.
 
 - :ref:`Array<class_array>` **get_colliding_bodies** **(** **)** const
 
-Returns a list of the bodies colliding with this one. Use :ref:`contacts_reported<class_RigidBody2D_contacts_reported>` to set the maximum number reported. You must also set :ref:`contact_monitor<class_RigidBody2D_contact_monitor>` to ``true``.
+Returns a list of the bodies colliding with this one. Use :ref:`contacts_reported<class_RigidBody2D_contacts_reported>` to set the maximum number reported. You must also set :ref:`contact_monitor<class_RigidBody2D_contact_monitor>` to ``true``. Note that the result of this test is not immediate after moving objects. For performance, list of collisions is updated once per frame and before the physics step. Consider using signals instead.
 
 .. _class_RigidBody2D_get_inertia:
 

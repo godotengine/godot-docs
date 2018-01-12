@@ -9,6 +9,8 @@ RigidBody
 
 **Inherits:** :ref:`PhysicsBody<class_physicsbody>` **<** :ref:`CollisionObject<class_collisionobject>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
 
+**Inherited By:** :ref:`VehicleBody<class_vehiclebody>`
+
 **Category:** Core
 
 Brief Description
@@ -150,7 +152,7 @@ Continuous collision detection tries to predict where a moving body will collide
 
   .. _class_RigidBody_mode:
 
-- :ref:`int<class_int>` **mode** - The body mode from the MODE\_\* enum. Modes include: MODE_STATIC, MODE_KINEMATIC, MODE_RIGID, and MODE_CHARACTER.
+- :ref:`Mode<enum_rigidbody_mode>` **mode** - The body mode from the MODE\_\* enum. Modes include: MODE_STATIC, MODE_KINEMATIC, MODE_RIGID, and MODE_CHARACTER.
 
   .. _class_RigidBody_sleeping:
 
@@ -161,13 +163,18 @@ Continuous collision detection tries to predict where a moving body will collide
 - :ref:`float<class_float>` **weight** - RigidBody's weight based on its mass and the global 3D gravity. Global values are set in "Project > Project Settings > Physics > 3d".
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_RigidBody_Mode:
+
+enum **Mode**
 
 - **MODE_RIGID** = **0** --- Rigid body. This is the "natural" state of a rigid body. It is affected by forces, and can move, rotate, and be affected by user code.
 - **MODE_STATIC** = **1** --- Static mode. The body behaves like a :ref:`StaticBody<class_staticbody>`, and can only move by user code.
 - **MODE_CHARACTER** = **2** --- Character body. This behaves like a rigid body, but can not rotate.
 - **MODE_KINEMATIC** = **3** --- Kinematic body. The body behaves like a :ref:`KinematicBody<class_kinematicbody>`, and can only move by user code.
+
 
 Description
 -----------
@@ -201,7 +208,7 @@ Apply a positioned impulse (which will be affected by the body mass and shape). 
 
 - :ref:`Array<class_array>` **get_colliding_bodies** **(** **)** const
 
-Return a list of the bodies colliding with this one. By default, number of max contacts reported is at 0 , see :ref:`set_max_contacts_reported<class_RigidBody_set_max_contacts_reported>` to increase it.
+Return a list of the bodies colliding with this one. By default, number of max contacts reported is at 0 , see :ref:`set_max_contacts_reported<class_RigidBody_set_max_contacts_reported>` to increase it.  Note that the result of this test is not immediate after moving objects. For performance, list of collisions is updated once per frame and before the physics step. Consider using signals instead.
 
 .. _class_RigidBody_set_axis_velocity:
 

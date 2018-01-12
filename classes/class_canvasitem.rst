@@ -174,16 +174,25 @@ Member Variables
 Numeric Constants
 -----------------
 
-- **BLEND_MODE_MIX** = **0** --- Mix blending mode. Colors are assumed to be independent of the alpha (opacity) value.
-- **BLEND_MODE_ADD** = **1** --- Additive blending mode.
-- **BLEND_MODE_SUB** = **2** --- Subtractive blending mode.
-- **BLEND_MODE_MUL** = **3** --- Multiplicative blending mode.
-- **BLEND_MODE_PREMULT_ALPHA** = **4** --- Mix blending mode. Colors are assumed to be premultiplied by the alpha (opacity) value.
 - **NOTIFICATION_TRANSFORM_CHANGED** = **29** --- Canvas item transform has changed. Only received if requested.
 - **NOTIFICATION_DRAW** = **30** --- CanvasItem is requested to draw.
 - **NOTIFICATION_VISIBILITY_CHANGED** = **31** --- Canvas item visibility has changed.
 - **NOTIFICATION_ENTER_CANVAS** = **32** --- Canvas item has entered the canvas.
 - **NOTIFICATION_EXIT_CANVAS** = **33** --- Canvas item has exited the canvas.
+
+Enums
+-----
+
+  .. _enum_CanvasItem_BlendMode:
+
+enum **BlendMode**
+
+- **BLEND_MODE_MIX** = **0** --- Mix blending mode. Colors are assumed to be independent of the alpha (opacity) value.
+- **BLEND_MODE_ADD** = **1** --- Additive blending mode.
+- **BLEND_MODE_SUB** = **2** --- Subtractive blending mode.
+- **BLEND_MODE_MUL** = **3** --- Multiplicative blending mode.
+- **BLEND_MODE_PREMULT_ALPHA** = **4** --- Mix blending mode. Colors are assumed to be premultiplied by the alpha (opacity) value.
+
 
 Description
 -----------

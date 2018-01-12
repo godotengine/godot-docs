@@ -101,11 +101,20 @@ Member Functions
 | void                                               | :ref:`tile_set_texture_offset<class_TileSet_tile_set_texture_offset>` **(** :ref:`int<class_int>` id, :ref:`Vector2<class_vector2>` texture_offset **)**                                                                                                                                  |
 +----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_TileSet_BitmaskMode:
+
+enum **BitmaskMode**
 
 - **BITMASK_2X2** = **0**
 - **BITMASK_3X3** = **1**
+
+  .. _enum_TileSet_AutotileBindings:
+
+enum **AutotileBindings**
+
 - **BIND_TOPLEFT** = **1**
 - **BIND_TOP** = **2**
 - **BIND_TOPRIGHT** = **4**
@@ -114,6 +123,7 @@ Numeric Constants
 - **BIND_BOTTOMLEFT** = **64**
 - **BIND_BOTTOM** = **128**
 - **BIND_BOTTOMRIGHT** = **256**
+
 
 Description
 -----------

@@ -21,19 +21,24 @@ Member Variables
 
   .. _class_BackBufferCopy_copy_mode:
 
-- :ref:`int<class_int>` **copy_mode** - Buffer mode. See ``COPY_MODE\_\*`` constants.
+- :ref:`CopyMode<enum_backbuffercopy_copymode>` **copy_mode** - Buffer mode. See ``COPY_MODE\_\*`` constants.
 
   .. _class_BackBufferCopy_rect:
 
 - :ref:`Rect2<class_rect2>` **rect** - The area covered by the BackBufferCopy. Only used if ``copy_mode`` is ``COPY_MODE_RECT``.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_BackBufferCopy_CopyMode:
+
+enum **CopyMode**
 
 - **COPY_MODE_DISABLED** = **0** --- Disables the buffering mode. This means the BackBufferCopy node will directly use the portion of screen it covers.
 - **COPY_MODE_RECT** = **1** --- BackBufferCopy buffers a rectangular region.
 - **COPY_MODE_VIEWPORT** = **2** --- BackBufferCopy buffers the entire screen.
+
 
 Description
 -----------

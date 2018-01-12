@@ -102,7 +102,7 @@ Member Variables
 
   .. _class_Viewport_debug_draw:
 
-- :ref:`int<class_int>` **debug_draw**
+- :ref:`DebugDraw<enum_viewport_debugdraw>` **debug_draw**
 
   .. _class_Viewport_disable_3d:
 
@@ -122,7 +122,7 @@ Member Variables
 
   .. _class_Viewport_msaa:
 
-- :ref:`int<class_int>` **msaa**
+- :ref:`MSAA<enum_viewport_msaa>` **msaa**
 
   .. _class_Viewport_own_world:
 
@@ -134,11 +134,11 @@ Member Variables
 
   .. _class_Viewport_render_target_clear_mode:
 
-- :ref:`int<class_int>` **render_target_clear_mode**
+- :ref:`ClearMode<enum_viewport_clearmode>` **render_target_clear_mode**
 
   .. _class_Viewport_render_target_update_mode:
 
-- :ref:`int<class_int>` **render_target_update_mode**
+- :ref:`UpdateMode<enum_viewport_updatemode>` **render_target_update_mode**
 
   .. _class_Viewport_render_target_v_flip:
 
@@ -146,19 +146,19 @@ Member Variables
 
   .. _class_Viewport_shadow_atlas_quad_0:
 
-- :ref:`int<class_int>` **shadow_atlas_quad_0**
+- :ref:`ShadowAtlasQuadrantSubdiv<enum_viewport_shadowatlasquadrantsubdiv>` **shadow_atlas_quad_0**
 
   .. _class_Viewport_shadow_atlas_quad_1:
 
-- :ref:`int<class_int>` **shadow_atlas_quad_1**
+- :ref:`ShadowAtlasQuadrantSubdiv<enum_viewport_shadowatlasquadrantsubdiv>` **shadow_atlas_quad_1**
 
   .. _class_Viewport_shadow_atlas_quad_2:
 
-- :ref:`int<class_int>` **shadow_atlas_quad_2**
+- :ref:`ShadowAtlasQuadrantSubdiv<enum_viewport_shadowatlasquadrantsubdiv>` **shadow_atlas_quad_2**
 
   .. _class_Viewport_shadow_atlas_quad_3:
 
-- :ref:`int<class_int>` **shadow_atlas_quad_3**
+- :ref:`ShadowAtlasQuadrantSubdiv<enum_viewport_shadowatlasquadrantsubdiv>` **shadow_atlas_quad_3**
 
   .. _class_Viewport_shadow_atlas_size:
 
@@ -174,20 +174,77 @@ Member Variables
 
   .. _class_Viewport_usage:
 
-- :ref:`int<class_int>` **usage**
+- :ref:`Usage<enum_viewport_usage>` **usage**
 
   .. _class_Viewport_world:
 
 - :ref:`World<class_world>` **world**
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_Viewport_UpdateMode:
+
+enum **UpdateMode**
 
 - **UPDATE_DISABLED** = **0** --- Do not update the render target.
 - **UPDATE_ONCE** = **1** --- Update the render target once, then switch to ``UPDATE_DISABLED``
 - **UPDATE_WHEN_VISIBLE** = **2** --- Update the render target only when it is visible. This is the default value.
 - **UPDATE_ALWAYS** = **3**
+
+  .. _enum_Viewport_RenderInfo:
+
+enum **RenderInfo**
+
+- **RENDER_INFO_OBJECTS_IN_FRAME** = **0**
+- **RENDER_INFO_VERTICES_IN_FRAME** = **1**
+- **RENDER_INFO_MATERIAL_CHANGES_IN_FRAME** = **2**
+- **RENDER_INFO_SHADER_CHANGES_IN_FRAME** = **3**
+- **RENDER_INFO_SURFACE_CHANGES_IN_FRAME** = **4**
+- **RENDER_INFO_DRAW_CALLS_IN_FRAME** = **5**
+- **RENDER_INFO_MAX** = **6**
+
+  .. _enum_Viewport_MSAA:
+
+enum **MSAA**
+
+- **MSAA_DISABLED** = **0**
+- **MSAA_2X** = **1**
+- **MSAA_4X** = **2**
+- **MSAA_8X** = **3**
+- **MSAA_16X** = **4**
+
+  .. _enum_Viewport_ClearMode:
+
+enum **ClearMode**
+
+- **CLEAR_MODE_ALWAYS** = **0**
+- **CLEAR_MODE_NEVER** = **1**
+- **CLEAR_MODE_ONLY_NEXT_FRAME** = **2**
+
+  .. _enum_Viewport_Usage:
+
+enum **Usage**
+
+- **USAGE_2D** = **0**
+- **USAGE_2D_NO_SAMPLING** = **1**
+- **USAGE_3D** = **2**
+- **USAGE_3D_NO_EFFECTS** = **3**
+
+  .. _enum_Viewport_DebugDraw:
+
+enum **DebugDraw**
+
+- **DEBUG_DRAW_DISABLED** = **0**
+- **DEBUG_DRAW_UNSHADED** = **1**
+- **DEBUG_DRAW_OVERDRAW** = **2**
+- **DEBUG_DRAW_WIREFRAME** = **3**
+
+  .. _enum_Viewport_ShadowAtlasQuadrantSubdiv:
+
+enum **ShadowAtlasQuadrantSubdiv**
+
 - **SHADOW_ATLAS_QUADRANT_SUBDIV_DISABLED** = **0**
 - **SHADOW_ATLAS_QUADRANT_SUBDIV_1** = **1**
 - **SHADOW_ATLAS_QUADRANT_SUBDIV_4** = **2**
@@ -196,29 +253,7 @@ Numeric Constants
 - **SHADOW_ATLAS_QUADRANT_SUBDIV_256** = **5**
 - **SHADOW_ATLAS_QUADRANT_SUBDIV_1024** = **6**
 - **SHADOW_ATLAS_QUADRANT_SUBDIV_MAX** = **7**
-- **RENDER_INFO_OBJECTS_IN_FRAME** = **0**
-- **RENDER_INFO_VERTICES_IN_FRAME** = **1**
-- **RENDER_INFO_MATERIAL_CHANGES_IN_FRAME** = **2**
-- **RENDER_INFO_SHADER_CHANGES_IN_FRAME** = **3**
-- **RENDER_INFO_SURFACE_CHANGES_IN_FRAME** = **4**
-- **RENDER_INFO_DRAW_CALLS_IN_FRAME** = **5**
-- **RENDER_INFO_MAX** = **6**
-- **DEBUG_DRAW_DISABLED** = **0**
-- **DEBUG_DRAW_UNSHADED** = **1**
-- **DEBUG_DRAW_OVERDRAW** = **2**
-- **DEBUG_DRAW_WIREFRAME** = **3**
-- **MSAA_DISABLED** = **0**
-- **MSAA_2X** = **1**
-- **MSAA_4X** = **2**
-- **MSAA_8X** = **3**
-- **MSAA_16X** = **4**
-- **USAGE_2D** = **0**
-- **USAGE_2D_NO_SAMPLING** = **1**
-- **USAGE_3D** = **2**
-- **USAGE_3D_NO_EFFECTS** = **3**
-- **CLEAR_MODE_ALWAYS** = **0**
-- **CLEAR_MODE_NEVER** = **1**
-- **CLEAR_MODE_ONLY_NEXT_FRAME** = **2**
+
 
 Description
 -----------

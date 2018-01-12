@@ -44,7 +44,7 @@ Member Functions
 +------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`edit<class_EditorPlugin_edit>` **(** :ref:`Object<class_object>` object **)** virtual                                                                                                                       |
 +------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                              | :ref:`forward_canvas_gui_input<class_EditorPlugin_forward_canvas_gui_input>` **(** :ref:`Transform2D<class_transform2d>` canvas_xform, :ref:`InputEvent<class_inputevent>` event **)** virtual                    |
+| :ref:`bool<class_bool>`                              | :ref:`forward_canvas_gui_input<class_EditorPlugin_forward_canvas_gui_input>` **(** :ref:`InputEvent<class_inputevent>` event **)** virtual                                                                        |
 +------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`forward_draw_over_viewport<class_EditorPlugin_forward_draw_over_viewport>` **(** :ref:`Control<class_control>` overlay **)** virtual                                                                        |
 +------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -125,17 +125,13 @@ Emitted when user change scene. The argument is a root node of freshly opened sc
 Emitted when user close scene. The argument is file path to a closed scene.
 
 
-Numeric Constants
------------------
+Enums
+-----
 
-- **CONTAINER_TOOLBAR** = **0**
-- **CONTAINER_SPATIAL_EDITOR_MENU** = **1**
-- **CONTAINER_SPATIAL_EDITOR_SIDE** = **2**
-- **CONTAINER_SPATIAL_EDITOR_BOTTOM** = **3**
-- **CONTAINER_CANVAS_EDITOR_MENU** = **4**
-- **CONTAINER_CANVAS_EDITOR_SIDE** = **5**
-- **CONTAINER_CANVAS_EDITOR_BOTTOM** = **6**
-- **CONTAINER_PROPERTY_EDITOR_BOTTOM** = **7**
+  .. _enum_EditorPlugin_DockSlot:
+
+enum **DockSlot**
+
 - **DOCK_SLOT_LEFT_UL** = **0**
 - **DOCK_SLOT_LEFT_BL** = **1**
 - **DOCK_SLOT_LEFT_UR** = **2**
@@ -145,6 +141,20 @@ Numeric Constants
 - **DOCK_SLOT_RIGHT_UR** = **6**
 - **DOCK_SLOT_RIGHT_BR** = **7**
 - **DOCK_SLOT_MAX** = **8**
+
+  .. _enum_EditorPlugin_CustomControlContainer:
+
+enum **CustomControlContainer**
+
+- **CONTAINER_TOOLBAR** = **0**
+- **CONTAINER_SPATIAL_EDITOR_MENU** = **1**
+- **CONTAINER_SPATIAL_EDITOR_SIDE** = **2**
+- **CONTAINER_SPATIAL_EDITOR_BOTTOM** = **3**
+- **CONTAINER_CANVAS_EDITOR_MENU** = **4**
+- **CONTAINER_CANVAS_EDITOR_SIDE** = **5**
+- **CONTAINER_CANVAS_EDITOR_BOTTOM** = **6**
+- **CONTAINER_PROPERTY_EDITOR_BOTTOM** = **7**
+
 
 Description
 -----------
@@ -236,7 +246,7 @@ This function is used for plugins that edit specific object types (nodes or reso
 
 .. _class_EditorPlugin_forward_canvas_gui_input:
 
-- :ref:`bool<class_bool>` **forward_canvas_gui_input** **(** :ref:`Transform2D<class_transform2d>` canvas_xform, :ref:`InputEvent<class_inputevent>` event **)** virtual
+- :ref:`bool<class_bool>` **forward_canvas_gui_input** **(** :ref:`InputEvent<class_inputevent>` event **)** virtual
 
 .. _class_EditorPlugin_forward_draw_over_viewport:
 

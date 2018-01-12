@@ -33,12 +33,17 @@ Member Functions
 | void                           | :ref:`set_default_texture_param<class_Shader_set_default_texture_param>` **(** :ref:`String<class_string>` param, :ref:`Texture<class_texture>` texture **)** |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_Shader_Mode:
+
+enum **Mode**
 
 - **MODE_SPATIAL** = **0**
 - **MODE_CANVAS_ITEM** = **1**
 - **MODE_PARTICLES** = **2**
+
 
 Description
 -----------

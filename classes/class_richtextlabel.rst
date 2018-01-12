@@ -137,16 +137,30 @@ Member Variables
 - :ref:`int<class_int>` **visible_characters** - The restricted number of characters to display in the label.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_RichTextLabel_ListType:
+
+enum **ListType**
+
+- **LIST_NUMBERS** = **0**
+- **LIST_LETTERS** = **1**
+- **LIST_DOTS** = **2**
+
+  .. _enum_RichTextLabel_Align:
+
+enum **Align**
 
 - **ALIGN_LEFT** = **0**
 - **ALIGN_CENTER** = **1**
 - **ALIGN_RIGHT** = **2**
 - **ALIGN_FILL** = **3**
-- **LIST_NUMBERS** = **0**
-- **LIST_LETTERS** = **1**
-- **LIST_DOTS** = **2**
+
+  .. _enum_RichTextLabel_ItemType:
+
+enum **ItemType**
+
 - **ITEM_FRAME** = **0**
 - **ITEM_TEXT** = **1**
 - **ITEM_IMAGE** = **2**
@@ -159,6 +173,7 @@ Numeric Constants
 - **ITEM_LIST** = **9**
 - **ITEM_TABLE** = **10**
 - **ITEM_META** = **11**
+
 
 Description
 -----------

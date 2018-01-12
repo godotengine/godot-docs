@@ -100,6 +100,8 @@ Description
 
 A color is represented as red, green and blue (r,g,b) components. Additionally, "a" represents the alpha component, often used for transparency. Values are in floating point and usually range from 0 to 1.  Some methods (such as set_modulate(color)) may accept values > 1.
 
+You can also create a color from standardised color names with :ref:`@GDScript.ColorN<class_@GDScript_ColorN>`.
+
 Member Function Description
 ---------------------------
 
@@ -137,7 +139,7 @@ Constructs a color from a 32-bit integer (each byte represents a component of th
 
 - :ref:`Color<class_color>` **Color** **(** :ref:`String<class_string>` from **)**
 
-Constructs a color from an HTML hexadecimal color string in ARGB or RGB format.
+Constructs a color from an HTML hexadecimal color string in ARGB or RGB format. See also :ref:`@GDScript.ColorN<class_@GDScript_ColorN>`.
 
 The following string formats are supported:
 

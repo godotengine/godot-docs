@@ -23,8 +23,12 @@ Member Functions
 | :ref:`float<class_float>`  | :ref:`get_monitor<class_Performance_get_monitor>` **(** :ref:`int<class_int>` monitor **)** const |
 +----------------------------+---------------------------------------------------------------------------------------------------+
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_Performance_Monitor:
+
+enum **Monitor**
 
 - **TIME_FPS** = **0** --- Frames per second.
 - **TIME_PROCESS** = **1** --- Time it took to complete one frame.
@@ -54,6 +58,7 @@ Numeric Constants
 - **PHYSICS_3D_COLLISION_PAIRS** = **25** --- Number of collision pairs in the 3D physics engine.
 - **PHYSICS_3D_ISLAND_COUNT** = **26** --- Number of islands in the 3D physics engine.
 - **MONITOR_MAX** = **27**
+
 
 Description
 -----------

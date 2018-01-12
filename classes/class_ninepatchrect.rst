@@ -31,11 +31,11 @@ Member Variables
 
   .. _class_NinePatchRect_axis_stretch_horizontal:
 
-- :ref:`int<class_int>` **axis_stretch_horizontal** - Doesn't do anything at the time of writing.
+- :ref:`AxisStretchMode<enum_ninepatchrect_axisstretchmode>` **axis_stretch_horizontal** - Doesn't do anything at the time of writing.
 
   .. _class_NinePatchRect_axis_stretch_vertical:
 
-- :ref:`int<class_int>` **axis_stretch_vertical** - Doesn't do anything at the time of writing.
+- :ref:`AxisStretchMode<enum_ninepatchrect_axisstretchmode>` **axis_stretch_vertical** - Doesn't do anything at the time of writing.
 
   .. _class_NinePatchRect_draw_center:
 
@@ -66,12 +66,17 @@ Member Variables
 - :ref:`Texture<class_texture>` **texture** - The node's texture resource.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_NinePatchRect_AxisStretchMode:
+
+enum **AxisStretchMode**
 
 - **AXIS_STRETCH_MODE_STRETCH** = **0** --- Doesn't do anything at the time of writing. Default value for ``axis_stretch_horizontal`` and ``axis_stretch_vertical``.
 - **AXIS_STRETCH_MODE_TILE** = **1** --- Doesn't do anything at the time of writing.
 - **AXIS_STRETCH_MODE_TILE_FIT** = **2** --- Doesn't do anything at the time of writing.
+
 
 Description
 -----------

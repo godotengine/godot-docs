@@ -199,12 +199,13 @@ If ``false`` the context menu disregards mouse location.
 - :ref:`float<class_float>` **v_scroll_speed**
 
 
-Numeric Constants
------------------
+Enums
+-----
 
-- **SEARCH_MATCH_CASE** = **1** --- Match case when searching.
-- **SEARCH_WHOLE_WORDS** = **2** --- Match whole words when searching.
-- **SEARCH_BACKWARDS** = **4** --- Search from end to beginning.
+  .. _enum_TextEdit_MenuItems:
+
+enum **MenuItems**
+
 - **MENU_CUT** = **0** --- Cuts (Copies and clears) the selected text.
 - **MENU_COPY** = **1** --- Copies the selected text.
 - **MENU_PASTE** = **2** --- Pastes the clipboard text over the selected text (or at the cursor's position).
@@ -212,6 +213,15 @@ Numeric Constants
 - **MENU_SELECT_ALL** = **4** --- Selects the whole :ref:`TextEdit<class_textedit>` text.
 - **MENU_UNDO** = **5** --- Undoes the previous action.
 - **MENU_MAX** = **6**
+
+  .. _enum_TextEdit_SearchFlags:
+
+enum **SearchFlags**
+
+- **SEARCH_MATCH_CASE** = **1** --- Match case when searching.
+- **SEARCH_WHOLE_WORDS** = **2** --- Match whole words when searching.
+- **SEARCH_BACKWARDS** = **4** --- Search from end to beginning.
+
 
 Description
 -----------
@@ -413,7 +423,7 @@ Set the maximum amount of characters editable.
 
 - void **set_wrap** **(** :ref:`bool<class_bool>` enable **)**
 
-Enable text wrapping when it goes beyond the edge of what is visible.
+Enable text wrapping when it goes beyond he edge of what is visible.
 
 .. _class_TextEdit_toggle_fold_line:
 

@@ -37,19 +37,24 @@ Member Variables
 
   .. _class_SplitContainer_dragger_visibility:
 
-- :ref:`int<class_int>` **dragger_visibility**
+- :ref:`DraggerVisibility<enum_splitcontainer_draggervisibility>` **dragger_visibility**
 
   .. _class_SplitContainer_split_offset:
 
 - :ref:`int<class_int>` **split_offset**
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_SplitContainer_DraggerVisibility:
+
+enum **DraggerVisibility**
 
 - **DRAGGER_VISIBLE** = **0** --- The split dragger is visible.
 - **DRAGGER_HIDDEN** = **1** --- The split dragger is invisible.
 - **DRAGGER_HIDDEN_COLLAPSED** = **2** --- The split dragger is invisible and collapsed.
+
 
 Description
 -----------

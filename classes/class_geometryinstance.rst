@@ -23,7 +23,7 @@ Member Variables
 
   .. _class_GeometryInstance_cast_shadow:
 
-- :ref:`int<class_int>` **cast_shadow** - The selected shadow casting flag. See SHADOW_CASTING_SETTING\_\* constants for values.
+- :ref:`ShadowCastingSetting<enum_geometryinstance_shadowcastingsetting>` **cast_shadow** - The selected shadow casting flag. See SHADOW_CASTING_SETTING\_\* constants for values.
 
   .. _class_GeometryInstance_extra_cull_margin:
 
@@ -56,8 +56,21 @@ If there is a material in material_override, it will be used instead of any mate
 - :ref:`bool<class_bool>` **use_in_baked_light** - If ``true`` this GeometryInstance will be used when baking lights using a :ref:`GIProbe<class_giprobe>` and/or any other form of baked lighting.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_GeometryInstance_Flags:
+
+enum **Flags**
+
+- **FLAG_USE_BAKED_LIGHT** = **0** --- Will allow the GeometryInstance to be used when baking lights using a :ref:`GIProbe<class_giprobe>` and/or any other form of baked lighting.
+
+Added documentation for GeometryInstance and VisualInstance
+- **FLAG_MAX** = **1**
+
+  .. _enum_GeometryInstance_ShadowCastingSetting:
+
+enum **ShadowCastingSetting**
 
 - **SHADOW_CASTING_SETTING_OFF** = **0** --- Will not cast any shadows.
 - **SHADOW_CASTING_SETTING_ON** = **1** --- Will cast shadows from all visible faces in the GeometryInstance.
@@ -69,10 +82,7 @@ Will not take culling into account, so all faces will be taken into account when
 - **SHADOW_CASTING_SETTING_SHADOWS_ONLY** = **3** --- Will only show the shadows casted from this object.
 
 In other words: The actual mesh will not be visible, only the shadows casted from the mesh.
-- **FLAG_USE_BAKED_LIGHT** = **0** --- Will allow the GeometryInstance to be used when baking lights using a :ref:`GIProbe<class_giprobe>` and/or any other form of baked lighting.
 
-Added documentation for GeometryInstance and VisualInstance
-- **FLAG_MAX** = **1**
 
 Description
 -----------

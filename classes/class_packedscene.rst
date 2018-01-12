@@ -39,12 +39,17 @@ Member Variables
 Available keys include "rnames" and "variants" for resources, "node_count", "nodes", "node_paths" for nodes, "editable_instances" for base scene children overrides, "conn_count" and "conns" for signal connections, and "version" for the format style of the PackedScene.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_PackedScene_GenEditState:
+
+enum **GenEditState**
 
 - **GEN_EDIT_STATE_DISABLED** = **0** --- If passed to :ref:`instance<class_PackedScene_instance>`, blocks edits to the scene state.
 - **GEN_EDIT_STATE_INSTANCE** = **1** --- If passed to :ref:`instance<class_PackedScene_instance>`, provides local scene resources to the local scene. Requires tools compiled.
 - **GEN_EDIT_STATE_MAIN** = **2** --- If passed to :ref:`instance<class_PackedScene_instance>`, provides local scene resources to the local scene. Only the main scene should receive the main edit state. Requires tools compiled.
+
 
 Description
 -----------

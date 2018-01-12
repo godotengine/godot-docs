@@ -21,7 +21,7 @@ Member Variables
 
   .. _class_VisualScriptLocalVarSet_type:
 
-- :ref:`int<class_int>` **type** - The local variable's type.
+- :ref:`Type<enum_variant_type>` **type** - The local variable's type.
 
   .. _class_VisualScriptLocalVarSet_var_name:
 

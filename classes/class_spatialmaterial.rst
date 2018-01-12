@@ -57,7 +57,7 @@ Member Variables
 
   .. _class_SpatialMaterial_ao_texture_channel:
 
-- :ref:`int<class_int>` **ao_texture_channel**
+- :ref:`TextureChannel<enum_spatialmaterial_texturechannel>` **ao_texture_channel**
 
   .. _class_SpatialMaterial_clearcoat:
 
@@ -105,7 +105,7 @@ Member Variables
 
   .. _class_SpatialMaterial_detail_blend_mode:
 
-- :ref:`int<class_int>` **detail_blend_mode**
+- :ref:`BlendMode<enum_spatialmaterial_blendmode>` **detail_blend_mode**
 
   .. _class_SpatialMaterial_detail_enabled:
 
@@ -121,7 +121,7 @@ Member Variables
 
   .. _class_SpatialMaterial_detail_uv_layer:
 
-- :ref:`int<class_int>` **detail_uv_layer**
+- :ref:`DetailUV<enum_spatialmaterial_detailuv>` **detail_uv_layer**
 
   .. _class_SpatialMaterial_distance_fade_enable:
 
@@ -153,7 +153,7 @@ Member Variables
 
   .. _class_SpatialMaterial_emission_operator:
 
-- :ref:`int<class_int>` **emission_operator**
+- :ref:`EmissionOperator<enum_spatialmaterial_emissionoperator>` **emission_operator**
 
   .. _class_SpatialMaterial_emission_texture:
 
@@ -205,7 +205,7 @@ Member Variables
 
   .. _class_SpatialMaterial_metallic_texture_channel:
 
-- :ref:`int<class_int>` **metallic_texture_channel**
+- :ref:`TextureChannel<enum_spatialmaterial_texturechannel>` **metallic_texture_channel**
 
   .. _class_SpatialMaterial_normal_enabled:
 
@@ -225,23 +225,23 @@ Member Variables
 
   .. _class_SpatialMaterial_params_billboard_mode:
 
-- :ref:`int<class_int>` **params_billboard_mode**
+- :ref:`BillboardMode<enum_spatialmaterial_billboardmode>` **params_billboard_mode**
 
   .. _class_SpatialMaterial_params_blend_mode:
 
-- :ref:`int<class_int>` **params_blend_mode**
+- :ref:`BlendMode<enum_spatialmaterial_blendmode>` **params_blend_mode**
 
   .. _class_SpatialMaterial_params_cull_mode:
 
-- :ref:`int<class_int>` **params_cull_mode**
+- :ref:`CullMode<enum_spatialmaterial_cullmode>` **params_cull_mode**
 
   .. _class_SpatialMaterial_params_depth_draw_mode:
 
-- :ref:`int<class_int>` **params_depth_draw_mode**
+- :ref:`DepthDrawMode<enum_spatialmaterial_depthdrawmode>` **params_depth_draw_mode**
 
   .. _class_SpatialMaterial_params_diffuse_mode:
 
-- :ref:`int<class_int>` **params_diffuse_mode**
+- :ref:`DiffuseMode<enum_spatialmaterial_diffusemode>` **params_diffuse_mode**
 
   .. _class_SpatialMaterial_params_grow:
 
@@ -261,7 +261,7 @@ Member Variables
 
   .. _class_SpatialMaterial_params_specular_mode:
 
-- :ref:`int<class_int>` **params_specular_mode**
+- :ref:`SpecularMode<enum_spatialmaterial_specularmode>` **params_specular_mode**
 
   .. _class_SpatialMaterial_params_use_alpha_scissor:
 
@@ -301,7 +301,7 @@ Member Variables
 
   .. _class_SpatialMaterial_refraction_texture_channel:
 
-- :ref:`int<class_int>` **refraction_texture_channel**
+- :ref:`TextureChannel<enum_spatialmaterial_texturechannel>` **refraction_texture_channel**
 
   .. _class_SpatialMaterial_rim:
 
@@ -329,7 +329,7 @@ Member Variables
 
   .. _class_SpatialMaterial_roughness_texture_channel:
 
-- :ref:`int<class_int>` **roughness_texture_channel**
+- :ref:`TextureChannel<enum_spatialmaterial_texturechannel>` **roughness_texture_channel**
 
   .. _class_SpatialMaterial_subsurf_scatter_enabled:
 
@@ -396,8 +396,19 @@ Member Variables
 - :ref:`bool<class_bool>` **vertex_color_use_as_albedo**
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_SpatialMaterial_DetailUV:
+
+enum **DetailUV**
+
+- **DETAIL_UV_1** = **0**
+- **DETAIL_UV_2** = **1**
+
+  .. _enum_SpatialMaterial_TextureParam:
+
+enum **TextureParam**
 
 - **TEXTURE_ALBEDO** = **0**
 - **TEXTURE_METALLIC** = **1**
@@ -416,8 +427,38 @@ Numeric Constants
 - **TEXTURE_DETAIL_ALBEDO** = **14**
 - **TEXTURE_DETAIL_NORMAL** = **15**
 - **TEXTURE_MAX** = **16**
-- **DETAIL_UV_1** = **0**
-- **DETAIL_UV_2** = **1**
+
+  .. _enum_SpatialMaterial_DepthDrawMode:
+
+enum **DepthDrawMode**
+
+- **DEPTH_DRAW_OPAQUE_ONLY** = **0**
+- **DEPTH_DRAW_ALWAYS** = **1**
+- **DEPTH_DRAW_DISABLED** = **2**
+- **DEPTH_DRAW_ALPHA_OPAQUE_PREPASS** = **3**
+
+  .. _enum_SpatialMaterial_DiffuseMode:
+
+enum **DiffuseMode**
+
+- **DIFFUSE_BURLEY** = **0**
+- **DIFFUSE_LAMBERT** = **1**
+- **DIFFUSE_LAMBERT_WRAP** = **2**
+- **DIFFUSE_OREN_NAYAR** = **3**
+- **DIFFUSE_TOON** = **4**
+
+  .. _enum_SpatialMaterial_CullMode:
+
+enum **CullMode**
+
+- **CULL_BACK** = **0**
+- **CULL_FRONT** = **1**
+- **CULL_DISABLED** = **2**
+
+  .. _enum_SpatialMaterial_Feature:
+
+enum **Feature**
+
 - **FEATURE_TRANSPARENT** = **0**
 - **FEATURE_EMISSION** = **1**
 - **FEATURE_NORMAL_MAPPING** = **2**
@@ -431,17 +472,11 @@ Numeric Constants
 - **FEATURE_REFRACTION** = **10**
 - **FEATURE_DETAIL** = **11**
 - **FEATURE_MAX** = **12**
-- **BLEND_MODE_MIX** = **0**
-- **BLEND_MODE_ADD** = **1**
-- **BLEND_MODE_SUB** = **2**
-- **BLEND_MODE_MUL** = **3**
-- **DEPTH_DRAW_OPAQUE_ONLY** = **0**
-- **DEPTH_DRAW_ALWAYS** = **1**
-- **DEPTH_DRAW_DISABLED** = **2**
-- **DEPTH_DRAW_ALPHA_OPAQUE_PREPASS** = **3**
-- **CULL_BACK** = **0**
-- **CULL_FRONT** = **1**
-- **CULL_DISABLED** = **2**
+
+  .. _enum_SpatialMaterial_Flags:
+
+enum **Flags**
+
 - **FLAG_UNSHADED** = **0**
 - **FLAG_USE_VERTEX_LIGHTING** = **1**
 - **FLAG_DISABLE_DEPTH_TEST** = **2**
@@ -457,25 +492,50 @@ Numeric Constants
 - **FLAG_TRIPLANAR_USE_WORLD** = **9**
 - **FLAG_ALBEDO_TEXTURE_FORCE_SRGB** = **13**
 - **FLAG_MAX** = **14**
-- **DIFFUSE_BURLEY** = **0**
-- **DIFFUSE_LAMBERT** = **1**
-- **DIFFUSE_LAMBERT_WRAP** = **2**
-- **DIFFUSE_OREN_NAYAR** = **3**
-- **DIFFUSE_TOON** = **4**
+
+  .. _enum_SpatialMaterial_BlendMode:
+
+enum **BlendMode**
+
+- **BLEND_MODE_MIX** = **0**
+- **BLEND_MODE_ADD** = **1**
+- **BLEND_MODE_SUB** = **2**
+- **BLEND_MODE_MUL** = **3**
+
+  .. _enum_SpatialMaterial_SpecularMode:
+
+enum **SpecularMode**
+
 - **SPECULAR_SCHLICK_GGX** = **0**
 - **SPECULAR_BLINN** = **1**
 - **SPECULAR_PHONG** = **2**
 - **SPECULAR_TOON** = **3**
 - **SPECULAR_DISABLED** = **4**
-- **BILLBOARD_DISABLED** = **0**
-- **BILLBOARD_ENABLED** = **1**
-- **BILLBOARD_FIXED_Y** = **2**
-- **BILLBOARD_PARTICLES** = **3**
+
+  .. _enum_SpatialMaterial_TextureChannel:
+
+enum **TextureChannel**
+
 - **TEXTURE_CHANNEL_RED** = **0**
 - **TEXTURE_CHANNEL_GREEN** = **1**
 - **TEXTURE_CHANNEL_BLUE** = **2**
 - **TEXTURE_CHANNEL_ALPHA** = **3**
 - **TEXTURE_CHANNEL_GRAYSCALE** = **4**
+
+  .. _enum_SpatialMaterial_BillboardMode:
+
+enum **BillboardMode**
+
+- **BILLBOARD_DISABLED** = **0**
+- **BILLBOARD_ENABLED** = **1**
+- **BILLBOARD_FIXED_Y** = **2**
+- **BILLBOARD_PARTICLES** = **3**
+
+  .. _enum_SpatialMaterial_EmissionOperator:
+
+enum **EmissionOperator**
+
 - **EMISSION_OP_ADD** = **0**
 - **EMISSION_OP_MULTIPLY** = **1**
+
 

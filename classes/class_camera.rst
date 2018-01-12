@@ -58,7 +58,7 @@ Member Variables
 
   .. _class_Camera_doppler_tracking:
 
-- :ref:`int<class_int>` **doppler_tracking** - If not ``DOPPLER_TRACKING_DISABLED`` this Camera will simulate the Doppler effect for objects changed in particular ``_process`` methods. Default value: ``DOPPLER_TRACKING_DISABLED``.
+- :ref:`DopplerTracking<enum_camera_dopplertracking>` **doppler_tracking** - If not ``DOPPLER_TRACKING_DISABLED`` this Camera will simulate the Doppler effect for objects changed in particular ``_process`` methods. Default value: ``DOPPLER_TRACKING_DISABLED``.
 
   .. _class_Camera_environment:
 
@@ -78,7 +78,7 @@ Member Variables
 
   .. _class_Camera_keep_aspect:
 
-- :ref:`int<class_int>` **keep_aspect** - The axis to lock during :ref:`fov<class_Camera_fov>`/:ref:`size<class_Camera_size>` adjustments.
+- :ref:`KeepAspect<enum_camera_keepaspect>` **keep_aspect** - The axis to lock during :ref:`fov<class_Camera_fov>`/:ref:`size<class_Camera_size>` adjustments.
 
   .. _class_Camera_near:
 
@@ -86,7 +86,7 @@ Member Variables
 
   .. _class_Camera_projection:
 
-- :ref:`int<class_int>` **projection** - The camera's projection mode. In ``PROJECTION_PERSPECTIVE`` mode, objects' z-distance from the camera's local space scales their perceived size.
+- :ref:`Projection<enum_camera_projection>` **projection** - The camera's projection mode. In ``PROJECTION_PERSPECTIVE`` mode, objects' z-distance from the camera's local space scales their perceived size.
 
   .. _class_Camera_size:
 
@@ -97,16 +97,31 @@ Member Variables
 - :ref:`float<class_float>` **v_offset** - The horizontal (Y) offset of the Camear viewport.
 
 
-Numeric Constants
------------------
+Enums
+-----
 
-- **PROJECTION_PERSPECTIVE** = **0** --- Perspective Projection (object's size on the screen becomes smaller when far away).
-- **PROJECTION_ORTHOGONAL** = **1** --- Orthogonal Projection (objects remain the same size on the screen no matter how far away they are).
-- **KEEP_WIDTH** = **0** --- Preserves the horizontal aspect ratio.
-- **KEEP_HEIGHT** = **1** --- Preserves the vertical aspect ratio.
+  .. _enum_Camera_DopplerTracking:
+
+enum **DopplerTracking**
+
 - **DOPPLER_TRACKING_DISABLED** = **0** --- Disable Doppler effect simulation (default).
 - **DOPPLER_TRACKING_IDLE_STEP** = **1** --- Simulate Doppler effect by tracking positions of objects that are changed in ``_process``. Changes in the relative velocity of this Camera compared to those objects affect how Audio is perceived (changing the Audio's ``pitch shift``).
 - **DOPPLER_TRACKING_PHYSICS_STEP** = **2** --- Simulate Doppler effect by tracking positions of objects that are changed in ``_physics_process``. Changes in the relative velocity of this Camera compared to those objects affect how Audio is perceived (changing the Audio's ``pitch shift``).
+
+  .. _enum_Camera_Projection:
+
+enum **Projection**
+
+- **PROJECTION_PERSPECTIVE** = **0** --- Perspective Projection (object's size on the screen becomes smaller when far away).
+- **PROJECTION_ORTHOGONAL** = **1** --- Orthogonal Projection (objects remain the same size on the screen no matter how far away they are).
+
+  .. _enum_Camera_KeepAspect:
+
+enum **KeepAspect**
+
+- **KEEP_WIDTH** = **0** --- Preserves the horizontal aspect ratio.
+- **KEEP_HEIGHT** = **1** --- Preserves the vertical aspect ratio.
+
 
 Description
 -----------

@@ -72,8 +72,12 @@ The ``value`` property comes from :ref:`Range<class_range>`. See :ref:`Range.val
 - :ref:`Texture<class_texture>` **texture_under** - :ref:`Texture<class_texture>` that draws under the progress bar. The bar's background.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_TextureProgress_FillMode:
+
+enum **FillMode**
 
 - **FILL_LEFT_TO_RIGHT** = **0** --- The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills from left to right.
 - **FILL_RIGHT_TO_LEFT** = **1** --- The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills from right to left.
@@ -81,6 +85,7 @@ Numeric Constants
 - **FILL_BOTTOM_TO_TOP** = **3** --- The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills from bottom to top.
 - **FILL_CLOCKWISE** = **4** --- Turns the node into a radial bar. The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills clockwise. See :ref:`radial_center_offset<class_TextureProgress_radial_center_offset>`, :ref:`radial_initial_angle<class_TextureProgress_radial_initial_angle>` and :ref:`radial_fill_degrees<class_TextureProgress_radial_fill_degrees>` to refine its behavior.
 - **FILL_COUNTER_CLOCKWISE** = **5** --- Turns the node into a radial bar. The :ref:`texture_progress<class_TextureProgress_texture_progress>` fills counter-clockwise. See :ref:`radial_center_offset<class_TextureProgress_radial_center_offset>`, :ref:`radial_initial_angle<class_TextureProgress_radial_initial_angle>` and :ref:`radial_fill_degrees<class_TextureProgress_radial_fill_degrees>` to refine its behavior.
+
 
 Description
 -----------

@@ -85,7 +85,7 @@ Member Variables
 
   .. _class_Environment_background_mode:
 
-- :ref:`int<class_int>` **background_mode** - Defines the mode of background.
+- :ref:`BGMode<enum_environment_bgmode>` **background_mode** - Defines the mode of background.
 
   .. _class_Environment_background_sky:
 
@@ -109,7 +109,7 @@ Member Variables
 
   .. _class_Environment_dof_blur_far_quality:
 
-- :ref:`int<class_int>` **dof_blur_far_quality** - Quality of the far blur quality.
+- :ref:`DOFBlurQuality<enum_environment_dofblurquality>` **dof_blur_far_quality** - Quality of the far blur quality.
 
   .. _class_Environment_dof_blur_far_transition:
 
@@ -129,7 +129,7 @@ Member Variables
 
   .. _class_Environment_dof_blur_near_quality:
 
-- :ref:`int<class_int>` **dof_blur_near_quality** - Quality of the near blur quality.
+- :ref:`DOFBlurQuality<enum_environment_dofblurquality>` **dof_blur_near_quality** - Quality of the near blur quality.
 
   .. _class_Environment_dof_blur_near_transition:
 
@@ -193,7 +193,7 @@ Member Variables
 
   .. _class_Environment_glow_blend_mode:
 
-- :ref:`int<class_int>` **glow_blend_mode** - Glow blending mode.
+- :ref:`GlowBlendMode<enum_environment_glowblendmode>` **glow_blend_mode** - Glow blending mode.
 
   .. _class_Environment_glow_bloom:
 
@@ -277,7 +277,7 @@ Member Variables
 
   .. _class_Environment_ssao_blur:
 
-- :ref:`int<class_int>` **ssao_blur**
+- :ref:`SSAOBlur<enum_environment_ssaoblur>` **ssao_blur**
 
   .. _class_Environment_ssao_color:
 
@@ -305,7 +305,7 @@ Member Variables
 
   .. _class_Environment_ssao_quality:
 
-- :ref:`int<class_int>` **ssao_quality**
+- :ref:`SSAOQuality<enum_environment_ssaoquality>` **ssao_quality**
 
   .. _class_Environment_ssao_radius:
 
@@ -321,15 +321,19 @@ Member Variables
 
   .. _class_Environment_tonemap_mode:
 
-- :ref:`int<class_int>` **tonemap_mode** - Tonemapping mode.
+- :ref:`ToneMapper<enum_environment_tonemapper>` **tonemap_mode** - Tonemapping mode.
 
   .. _class_Environment_tonemap_white:
 
 - :ref:`float<class_float>` **tonemap_white** - White reference value for tonemap.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_Environment_BGMode:
+
+enum **BGMode**
 
 - **BG_KEEP** = **5** --- Keep on screen every pixel drawn in the background.
 - **BG_CLEAR_COLOR** = **0** --- Clear the background using the project's clear color.
@@ -338,24 +342,50 @@ Numeric Constants
 - **BG_COLOR_SKY** = **3** --- Clear the background using a custom clear color and allows defining a sky for shading and reflection.
 - **BG_CANVAS** = **4** --- Display a :ref:`CanvasLayer<class_canvaslayer>` in the background.
 - **BG_MAX** = **6** --- Helper constant keeping track of the enum's size, has no direct usage in API calls.
+
+  .. _enum_Environment_DOFBlurQuality:
+
+enum **DOFBlurQuality**
+
+- **DOF_BLUR_QUALITY_LOW** = **0** --- Low depth-of-field blur quality.
+- **DOF_BLUR_QUALITY_MEDIUM** = **1** --- Medium depth-of-field blur quality.
+- **DOF_BLUR_QUALITY_HIGH** = **2** --- High depth-of-field blur quality.
+
+  .. _enum_Environment_GlowBlendMode:
+
+enum **GlowBlendMode**
+
 - **GLOW_BLEND_MODE_ADDITIVE** = **0** --- Additive glow blending mode. Mostly used for particles, glows (bloom), lens flare, bright sources.
 - **GLOW_BLEND_MODE_SCREEN** = **1** --- Screen glow blending mode. Increases brightness, used frequently with bloom.
 - **GLOW_BLEND_MODE_SOFTLIGHT** = **2** --- Softlight glow blending mode. Modifies contrast, exposes shadows and highlights, vivid bloom.
 - **GLOW_BLEND_MODE_REPLACE** = **3** --- Replace glow blending mode. Replaces all pixels' color by the glow value.
+
+  .. _enum_Environment_ToneMapper:
+
+enum **ToneMapper**
+
 - **TONE_MAPPER_LINEAR** = **0** --- Linear tonemapper operator. Reads the linear data and performs an exposure adjustment.
 - **TONE_MAPPER_REINHARDT** = **1** --- Reinhardt tonemapper operator. Performs a variation on rendered pixels' colors by this formula: color = color / (1 + color).
 - **TONE_MAPPER_FILMIC** = **2** --- Filmic tonemapper operator.
 - **TONE_MAPPER_ACES** = **3** --- Academy Color Encoding System tonemapper operator.
-- **DOF_BLUR_QUALITY_LOW** = **0** --- Low depth-of-field blur quality.
-- **DOF_BLUR_QUALITY_MEDIUM** = **1** --- Medium depth-of-field blur quality.
-- **DOF_BLUR_QUALITY_HIGH** = **2** --- High depth-of-field blur quality.
+
+  .. _enum_Environment_SSAOBlur:
+
+enum **SSAOBlur**
+
 - **SSAO_BLUR_DISABLED** = **0**
 - **SSAO_BLUR_1x1** = **1**
 - **SSAO_BLUR_2x2** = **2**
 - **SSAO_BLUR_3x3** = **3**
+
+  .. _enum_Environment_SSAOQuality:
+
+enum **SSAOQuality**
+
 - **SSAO_QUALITY_LOW** = **0**
 - **SSAO_QUALITY_MEDIUM** = **1**
 - **SSAO_QUALITY_HIGH** = **2**
+
 
 Description
 -----------

@@ -133,7 +133,7 @@ Moves the body along a vector. If the body collides with another, it will slide 
 
 ``linear_velocity`` is a value in pixels per second. Unlike in for example :ref:`move_and_collide<class_KinematicBody_move_and_collide>`, you should *not* multiply it with ``delta`` — this is done by the method.
 
-``floor_normal`` is the up direction, used to determine what is a wall and what is a floor or a ceiling. If set to the default value of ``Vector2(0, 0)``, everything is considered a wall. This is useful for topdown games.
+``floor_normal`` is the up direction, used to determine what is a wall and what is a floor or a ceiling. If set to the default value of ``Vector3(0, 0, 0)``, everything is considered a wall. This is useful for topdown games.
 
 If the body is standing on a slope and the horizontal speed (relative to the floor's speed) goes below ``slope_stop_min_velocity``, the body will stop completely. This prevents the body from sliding down slopes when you include gravity in ``linear_velocity``. When set to lower values, the body will not be able to stand still on steep slopes.
 

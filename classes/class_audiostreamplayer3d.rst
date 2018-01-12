@@ -56,7 +56,7 @@ Member Variables
 
   .. _class_AudioStreamPlayer3D_attenuation_model:
 
-- :ref:`int<class_int>` **attenuation_model** - Decides if audio should get quieter with distance linearly, quadratically or logarithmically.
+- :ref:`AttenuationModel<enum_audiostreamplayer3d_attenuationmodel>` **attenuation_model** - Decides if audio should get quieter with distance linearly, quadratically or logarithmically.
 
   .. _class_AudioStreamPlayer3D_autoplay:
 
@@ -68,7 +68,7 @@ Member Variables
 
   .. _class_AudioStreamPlayer3D_doppler_tracking:
 
-- :ref:`int<class_int>` **doppler_tracking** - Decides in which step the Doppler effect should be calculated.
+- :ref:`DopplerTracking<enum_audiostreamplayer3d_dopplertracking>` **doppler_tracking** - Decides in which step the Doppler effect should be calculated.
 
   .. _class_AudioStreamPlayer3D_emission_angle_degrees:
 
@@ -92,7 +92,7 @@ Member Variables
 
   .. _class_AudioStreamPlayer3D_out_of_range_mode:
 
-- :ref:`int<class_int>` **out_of_range_mode** - Decides if audio should pause when source is outside of 'max_distance' range.
+- :ref:`OutOfRangeMode<enum_audiostreamplayer3d_outofrangemode>` **out_of_range_mode** - Decides if audio should pause when source is outside of 'max_distance' range.
 
   .. _class_AudioStreamPlayer3D_playing:
 
@@ -111,17 +111,32 @@ Member Variables
 - :ref:`float<class_float>` **unit_size** - Factor for the attenuation effect.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_AudioStreamPlayer3D_DopplerTracking:
+
+enum **DopplerTracking**
+
+- **DOPPLER_TRACKING_DISABLED** = **0** --- Disables doppler tracking.
+- **DOPPLER_TRACKING_IDLE_STEP** = **1** --- Executes doppler tracking in idle step.
+- **DOPPLER_TRACKING_PHYSICS_STEP** = **2** --- Executes doppler tracking in physics step.
+
+  .. _enum_AudioStreamPlayer3D_OutOfRangeMode:
+
+enum **OutOfRangeMode**
+
+- **OUT_OF_RANGE_MIX** = **0** --- Mix this audio in, even when it's out of range.
+- **OUT_OF_RANGE_PAUSE** = **1** --- Pause this audio when it gets out of range.
+
+  .. _enum_AudioStreamPlayer3D_AttenuationModel:
+
+enum **AttenuationModel**
 
 - **ATTENUATION_INVERSE_DISTANCE** = **0** --- Linear dampening of loudness according to distance.
 - **ATTENUATION_INVERSE_SQUARE_DISTANCE** = **1** --- Squared dampening of loudness according to distance.
 - **ATTENUATION_LOGARITHMIC** = **2** --- Logarithmic dampening of loudness according to distance.
-- **OUT_OF_RANGE_MIX** = **0** --- Mix this audio in, even when it's out of range.
-- **OUT_OF_RANGE_PAUSE** = **1** --- Pause this audio when it gets out of range.
-- **DOPPLER_TRACKING_DISABLED** = **0** --- Disables doppler tracking.
-- **DOPPLER_TRACKING_IDLE_STEP** = **1** --- Executes doppler tracking in idle step.
-- **DOPPLER_TRACKING_PHYSICS_STEP** = **2** --- Executes doppler tracking in physics step.
+
 
 Description
 -----------

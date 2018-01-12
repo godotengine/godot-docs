@@ -27,7 +27,7 @@ Member Variables
 
   .. _class_AudioEffectFilter_db:
 
-- :ref:`int<class_int>` **db**
+- :ref:`FilterDB<enum_audioeffectfilter_filterdb>` **db**
 
   .. _class_AudioEffectFilter_gain:
 
@@ -38,13 +38,18 @@ Member Variables
 - :ref:`float<class_float>` **resonance** - Amount of boost in the overtones near the cutoff frequency.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_AudioEffectFilter_FilterDB:
+
+enum **FilterDB**
 
 - **FILTER_6DB** = **0**
 - **FILTER_12DB** = **1**
 - **FILTER_18DB** = **2**
 - **FILTER_24DB** = **3**
+
 
 Description
 -----------

@@ -36,8 +36,12 @@ The higher, the stronger.
 - :ref:`float<class_float>` **params/impulse_clamp** - If above 0, this value is the maximum value for an impulse that this Joint produces.
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_PinJoint_Param:
+
+enum **Param**
 
 - **PARAM_BIAS** = **0** --- The force with wich the pinned objects stay in positional relation to each other.
 
@@ -46,6 +50,7 @@ The higher, the stronger.
 
 The higher, the stronger.
 - **PARAM_IMPULSE_CLAMP** = **2** --- If above 0, this value is the maximum value for an impulse that this Joint produces.
+
 
 Description
 -----------

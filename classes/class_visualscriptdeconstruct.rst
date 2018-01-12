@@ -21,7 +21,7 @@ Member Variables
 
   .. _class_VisualScriptDeconstruct_type:
 
-- :ref:`int<class_int>` **type** - The type to deconstruct.
+- :ref:`Type<enum_variant_type>` **type** - The type to deconstruct.
 
 
 Description

@@ -43,8 +43,12 @@ Member Functions
 | void                           | :ref:`set_flags<class_Texture_set_flags>` **(** :ref:`int<class_int>` flags **)**                                                                                                                                                                                                                                                                                     |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_Texture_Flags:
+
+enum **Flags**
 
 - **FLAG_MIPMAPS** = **1** --- Generate mipmaps, which are smaller versions of the same texture to use when zoomed out, keeping the aspect ratio.
 - **FLAG_REPEAT** = **2** --- Repeats texture (instead of clamp to edge).
@@ -56,6 +60,7 @@ More effective on planes often shown going to the horrizon as those textures (Wa
 - **FLAG_CONVERT_TO_LINEAR** = **16** --- Converts texture to SRGB color space.
 - **FLAG_MIRRORED_REPEAT** = **32** --- Repeats texture with alternate sections mirrored.
 - **FLAG_VIDEO_SURFACE** = **4096** --- Texture is a video surface.
+
 
 Description
 -----------

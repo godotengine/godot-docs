@@ -25,14 +25,19 @@ Member Variables
 
   .. _class_VisualScriptInputAction_mode:
 
-- :ref:`int<class_int>` **mode**
+- :ref:`Mode<enum_visualscriptinputaction_mode>` **mode**
 
 
-Numeric Constants
------------------
+Enums
+-----
+
+  .. _enum_VisualScriptInputAction_Mode:
+
+enum **Mode**
 
 - **MODE_PRESSED** = **0**
 - **MODE_RELEASED** = **1**
 - **MODE_JUST_PRESSED** = **2**
 - **MODE_JUST_RELEASED** = **3**
+
 
