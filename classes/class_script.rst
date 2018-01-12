@@ -28,8 +28,6 @@ Member Functions
 +------------------------------+--------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`  | :ref:`get_instance_base_type<class_Script_get_instance_base_type>` **(** **)** const                               |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_source_code<class_Script_get_source_code>` **(** **)** const                                             |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`      | :ref:`has_script_signal<class_Script_has_script_signal>` **(** :ref:`String<class_string>` signal_name **)** const |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`      | :ref:`has_source_code<class_Script_has_source_code>` **(** **)** const                                             |
@@ -40,8 +38,14 @@ Member Functions
 +------------------------------+--------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`        | :ref:`reload<class_Script_reload>` **(** :ref:`bool<class_bool>` keep_state=false **)**                            |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_source_code<class_Script_set_source_code>` **(** :ref:`String<class_string>` source **)**                |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+  .. _class_Script_source_code:
+
+- :ref:`String<class_string>` **source_code** - The script source code, or an empty string if source code is not available. When set, does not reload the class implementation automatically.
+
 
 Description
 -----------
@@ -66,12 +70,6 @@ Returns true if the script can be instanced.
 .. _class_Script_get_instance_base_type:
 
 - :ref:`String<class_string>` **get_instance_base_type** **(** **)** const
-
-.. _class_Script_get_source_code:
-
-- :ref:`String<class_string>` **get_source_code** **(** **)** const
-
-Returns the script source code, or an empty string if source code is not available.
 
 .. _class_Script_has_script_signal:
 
@@ -102,11 +100,5 @@ Returns true if the script is a tool script. A tool script can run in the editor
 - :ref:`int<class_int>` **reload** **(** :ref:`bool<class_bool>` keep_state=false **)**
 
 Reloads the script's class implementation. Returns an error code.
-
-.. _class_Script_set_source_code:
-
-- void **set_source_code** **(** :ref:`String<class_string>` source **)**
-
-Sets the script source code. Does not reload the class implementation.
 
 

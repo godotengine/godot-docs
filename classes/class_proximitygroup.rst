@@ -22,10 +22,6 @@ Member Functions
 +-------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | void  | :ref:`broadcast<class_ProximityGroup_broadcast>` **(** :ref:`String<class_string>` name, :ref:`Variant<class_variant>` parameters **)** |
 +-------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`set_dispatch_mode<class_ProximityGroup_set_dispatch_mode>` **(** :ref:`int<class_int>` mode **)**                                 |
-+-------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void  | :ref:`set_group_name<class_ProximityGroup_set_group_name>` **(** :ref:`String<class_string>` name **)**                                 |
-+-------+-----------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -38,9 +34,28 @@ Signals
 Member Variables
 ----------------
 
+  .. _class_ProximityGroup_dispatch_mode:
+
+- :ref:`DispatchMode<enum_proximitygroup_dispatchmode>` **dispatch_mode**
+
   .. _class_ProximityGroup_grid_radius:
 
 - :ref:`Vector3<class_vector3>` **grid_radius**
+
+  .. _class_ProximityGroup_group_name:
+
+- :ref:`String<class_string>` **group_name**
+
+
+Enums
+-----
+
+  .. _enum_ProximityGroup_DispatchMode:
+
+enum **DispatchMode**
+
+- **MODE_PROXY** = **0**
+- **MODE_SIGNAL** = **1**
 
 
 Description
@@ -54,13 +69,5 @@ Member Function Description
 .. _class_ProximityGroup_broadcast:
 
 - void **broadcast** **(** :ref:`String<class_string>` name, :ref:`Variant<class_variant>` parameters **)**
-
-.. _class_ProximityGroup_set_dispatch_mode:
-
-- void **set_dispatch_mode** **(** :ref:`int<class_int>` mode **)**
-
-.. _class_ProximityGroup_set_group_name:
-
-- void **set_group_name** **(** :ref:`String<class_string>` name **)**
 
 

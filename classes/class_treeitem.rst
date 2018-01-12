@@ -40,8 +40,6 @@ Member Functions
 +--------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Color<class_color>`            | :ref:`get_custom_bg_color<class_TreeItem_get_custom_bg_color>` **(** :ref:`int<class_int>` column **)** const                                                                                                                                    |
 +--------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                | :ref:`get_custom_minimum_height<class_TreeItem_get_custom_minimum_height>` **(** **)** const                                                                                                                                                     |
-+--------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`              | :ref:`get_expand_right<class_TreeItem_get_expand_right>` **(** :ref:`int<class_int>` column **)** const                                                                                                                                          |
 +--------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Texture<class_texture>`        | :ref:`get_icon<class_TreeItem_get_icon>` **(** :ref:`int<class_int>` column **)** const                                                                                                                                                          |
@@ -76,13 +74,9 @@ Member Functions
 +--------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`              | :ref:`is_checked<class_TreeItem_is_checked>` **(** :ref:`int<class_int>` column **)** const                                                                                                                                                      |
 +--------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`              | :ref:`is_collapsed<class_TreeItem_is_collapsed>` **(** **)**                                                                                                                                                                                     |
-+--------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`              | :ref:`is_custom_set_as_button<class_TreeItem_is_custom_set_as_button>` **(** :ref:`int<class_int>` column **)** const                                                                                                                            |
 +--------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`              | :ref:`is_editable<class_TreeItem_is_editable>` **(** :ref:`int<class_int>` column **)**                                                                                                                                                          |
-+--------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`              | :ref:`is_folding_disabled<class_TreeItem_is_folding_disabled>` **(** **)** const                                                                                                                                                                 |
 +--------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`              | :ref:`is_selectable<class_TreeItem_is_selectable>` **(** :ref:`int<class_int>` column **)** const                                                                                                                                                |
 +--------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -102,8 +96,6 @@ Member Functions
 +--------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                 | :ref:`set_checked<class_TreeItem_set_checked>` **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` checked **)**                                                                                                                         |
 +--------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                 | :ref:`set_collapsed<class_TreeItem_set_collapsed>` **(** :ref:`bool<class_bool>` enable **)**                                                                                                                                                    |
-+--------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                 | :ref:`set_custom_as_button<class_TreeItem_set_custom_as_button>` **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` enable **)**                                                                                                        |
 +--------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                 | :ref:`set_custom_bg_color<class_TreeItem_set_custom_bg_color>` **(** :ref:`int<class_int>` column, :ref:`Color<class_color>` color, :ref:`bool<class_bool>` just_outline=false **)**                                                             |
@@ -111,10 +103,6 @@ Member Functions
 | void                                 | :ref:`set_custom_color<class_TreeItem_set_custom_color>` **(** :ref:`int<class_int>` column, :ref:`Color<class_color>` color **)**                                                                                                               |
 +--------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                 | :ref:`set_custom_draw<class_TreeItem_set_custom_draw>` **(** :ref:`int<class_int>` column, :ref:`Object<class_object>` object, :ref:`String<class_string>` callback **)**                                                                        |
-+--------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                 | :ref:`set_custom_minimum_height<class_TreeItem_set_custom_minimum_height>` **(** :ref:`int<class_int>` height **)**                                                                                                                              |
-+--------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                 | :ref:`set_disable_folding<class_TreeItem_set_disable_folding>` **(** :ref:`bool<class_bool>` disable **)**                                                                                                                                       |
 +--------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                 | :ref:`set_editable<class_TreeItem_set_editable>` **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` enabled **)**                                                                                                                       |
 +--------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -140,6 +128,22 @@ Member Functions
 +--------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                 | :ref:`set_tooltip<class_TreeItem_set_tooltip>` **(** :ref:`int<class_int>` column, :ref:`String<class_string>` tooltip **)**                                                                                                                     |
 +--------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+  .. _class_TreeItem_collapsed:
+
+- :ref:`bool<class_bool>` **collapsed** - If ``true`` the TreeItem is collapsed.
+
+  .. _class_TreeItem_custom_minimum_height:
+
+- :ref:`int<class_int>` **custom_minimum_height** - The custom minimum height.
+
+  .. _class_TreeItem_disable_folding:
+
+- :ref:`bool<class_bool>` **disable_folding** - If ``true`` folding is disabled for this TreeItem.
+
 
 Enums
 -----
@@ -231,12 +235,6 @@ Returns the TreeItem's child items.
 - :ref:`Color<class_color>` **get_custom_bg_color** **(** :ref:`int<class_int>` column **)** const
 
 Returns the custom background color of column ``column``.
-
-.. _class_TreeItem_get_custom_minimum_height:
-
-- :ref:`int<class_int>` **get_custom_minimum_height** **(** **)** const
-
-Returns the custom minimum height.
 
 .. _class_TreeItem_get_expand_right:
 
@@ -334,12 +332,6 @@ Returns ``true`` if the button at index ``button_idx`` for the given column is d
 
 Returns ``true`` if the given column is checked.
 
-.. _class_TreeItem_is_collapsed:
-
-- :ref:`bool<class_bool>` **is_collapsed** **(** **)**
-
-Returns ``true`` if this TreeItem is collapsed.
-
 .. _class_TreeItem_is_custom_set_as_button:
 
 - :ref:`bool<class_bool>` **is_custom_set_as_button** **(** :ref:`int<class_int>` column **)** const
@@ -349,12 +341,6 @@ Returns ``true`` if this TreeItem is collapsed.
 - :ref:`bool<class_bool>` **is_editable** **(** :ref:`int<class_int>` column **)**
 
 Returns ``true`` if column ``column`` is editable.
-
-.. _class_TreeItem_is_folding_disabled:
-
-- :ref:`bool<class_bool>` **is_folding_disabled** **(** **)** const
-
-Returns ``true`` if folding is disabled for this TreeItem.
 
 .. _class_TreeItem_is_selectable:
 
@@ -410,12 +396,6 @@ Sets the given column's cell mode to ``mode``. See ``CELL_MODE\_\*`` constants.
 
 If ``true`` the column ``column`` is checked.
 
-.. _class_TreeItem_set_collapsed:
-
-- void **set_collapsed** **(** :ref:`bool<class_bool>` enable **)**
-
-If ``true`` the TreeItem is collapsed.
-
 .. _class_TreeItem_set_custom_as_button:
 
 - void **set_custom_as_button** **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` enable **)**
@@ -437,18 +417,6 @@ Sets the given column's custom color.
 - void **set_custom_draw** **(** :ref:`int<class_int>` column, :ref:`Object<class_object>` object, :ref:`String<class_string>` callback **)**
 
 Sets the given column's custom draw callback to ``callback`` method on ``object``.
-
-.. _class_TreeItem_set_custom_minimum_height:
-
-- void **set_custom_minimum_height** **(** :ref:`int<class_int>` height **)**
-
-Sets the custom minimum height of this TreeItem.
-
-.. _class_TreeItem_set_disable_folding:
-
-- void **set_disable_folding** **(** :ref:`bool<class_bool>` disable **)**
-
-If ``true`` folding is disabled for this TreeItem.
 
 .. _class_TreeItem_set_editable:
 

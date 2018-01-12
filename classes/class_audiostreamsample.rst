@@ -16,15 +16,6 @@ Brief Description
 
 Plays audio.
 
-Member Functions
-----------------
-
-+--------------------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_poolbytearray>`  | :ref:`get_data<class_AudioStreamSample_get_data>` **(** **)** const                                          |
-+--------------------------------------------+--------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_data<class_AudioStreamSample_set_data>` **(** :ref:`PoolByteArray<class_poolbytearray>` data **)** |
-+--------------------------------------------+--------------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -77,16 +68,4 @@ Description
 -----------
 
 Plays audio, can loop.
-
-Member Function Description
----------------------------
-
-.. _class_AudioStreamSample_get_data:
-
-- :ref:`PoolByteArray<class_poolbytearray>` **get_data** **(** **)** const
-
-.. _class_AudioStreamSample_set_data:
-
-- void **set_data** **(** :ref:`PoolByteArray<class_poolbytearray>` data **)**
-
 

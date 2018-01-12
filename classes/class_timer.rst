@@ -19,19 +19,13 @@ A countdown timer.
 Member Functions
 ----------------
 
-+----------------------------+--------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_time_left<class_Timer_get_time_left>` **(** **)** const                    |
-+----------------------------+--------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`is_paused<class_Timer_is_paused>` **(** **)** const                            |
-+----------------------------+--------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`is_stopped<class_Timer_is_stopped>` **(** **)** const                          |
-+----------------------------+--------------------------------------------------------------------------------------+
-| void                       | :ref:`set_paused<class_Timer_set_paused>` **(** :ref:`bool<class_bool>` paused **)** |
-+----------------------------+--------------------------------------------------------------------------------------+
-| void                       | :ref:`start<class_Timer_start>` **(** **)**                                          |
-+----------------------------+--------------------------------------------------------------------------------------+
-| void                       | :ref:`stop<class_Timer_stop>` **(** **)**                                            |
-+----------------------------+--------------------------------------------------------------------------------------+
++--------------------------+-------------------------------------------------------------+
+| :ref:`bool<class_bool>`  | :ref:`is_stopped<class_Timer_is_stopped>` **(** **)** const |
++--------------------------+-------------------------------------------------------------+
+| void                     | :ref:`start<class_Timer_start>` **(** **)**                 |
++--------------------------+-------------------------------------------------------------+
+| void                     | :ref:`stop<class_Timer_stop>` **(** **)**                   |
++--------------------------+-------------------------------------------------------------+
 
 Signals
 -------
@@ -54,9 +48,17 @@ Member Variables
 
 - :ref:`bool<class_bool>` **one_shot** - If ``true``, Timer will stop when reaching 0. If ``false``, it will restart. Default value: ``false``.
 
+  .. _class_Timer_paused:
+
+- :ref:`bool<class_bool>` **paused** - If ``true``, the timer is paused and will not process until it is unpaused again, even if :ref:`start<class_Timer_start>` is called.
+
   .. _class_Timer_process_mode:
 
 - :ref:`TimerProcessMode<enum_timer_timerprocessmode>` **process_mode** - Processing mode. Uses TIMER_PROCESS\_\* constants as value.
+
+  .. _class_Timer_time_left:
+
+- :ref:`float<class_float>` **time_left** - The timer's remaining time in seconds. Returns 0 if the timer is inactive.
 
   .. _class_Timer_wait_time:
 
@@ -82,29 +84,11 @@ Counts down a specified interval and emits a signal on reaching 0. Can be set to
 Member Function Description
 ---------------------------
 
-.. _class_Timer_get_time_left:
-
-- :ref:`float<class_float>` **get_time_left** **(** **)** const
-
-Returns the timer's remaining time in seconds. Returns 0 if the timer is inactive.
-
-.. _class_Timer_is_paused:
-
-- :ref:`bool<class_bool>` **is_paused** **(** **)** const
-
-Returns ``true`` if the timer is paused.
-
 .. _class_Timer_is_stopped:
 
 - :ref:`bool<class_bool>` **is_stopped** **(** **)** const
 
 Returns ``true`` if the timer is stopped.
-
-.. _class_Timer_set_paused:
-
-- void **set_paused** **(** :ref:`bool<class_bool>` paused **)**
-
-Pauses the timer. If ``paused`` is ``true``, the timer will not process until it is started or unpaused again, even if :ref:`start<class_Timer_start>` is called.
 
 .. _class_Timer_start:
 

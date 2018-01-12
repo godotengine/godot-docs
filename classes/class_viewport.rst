@@ -26,11 +26,7 @@ Member Functions
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Camera<class_camera>`                    | :ref:`get_camera<class_Viewport_get_camera>` **(** **)** const                                                                                                                                                    |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`          | :ref:`get_canvas_transform<class_Viewport_get_canvas_transform>` **(** **)** const                                                                                                                                |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform2D<class_transform2d>`          | :ref:`get_final_transform<class_Viewport_get_final_transform>` **(** **)** const                                                                                                                                  |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`          | :ref:`get_global_canvas_transform<class_Viewport_get_global_canvas_transform>` **(** **)** const                                                                                                                  |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`                  | :ref:`get_mouse_position<class_Viewport_get_mouse_position>` **(** **)** const                                                                                                                                    |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -44,8 +40,6 @@ Member Functions
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Rect2<class_rect2>`                      | :ref:`get_visible_rect<class_Viewport_get_visible_rect>` **(** **)** const                                                                                                                                        |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`World2D<class_world2d>`                  | :ref:`get_world_2d<class_Viewport_get_world_2d>` **(** **)** const                                                                                                                                                |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_variant>`                  | :ref:`gui_get_drag_data<class_Viewport_gui_get_drag_data>` **(** **)** const                                                                                                                                      |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`gui_has_modal_stack<class_Viewport_gui_has_modal_stack>` **(** **)** const                                                                                                                                  |
@@ -58,15 +52,9 @@ Member Functions
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_attach_to_screen_rect<class_Viewport_set_attach_to_screen_rect>` **(** :ref:`Rect2<class_rect2>` rect **)**                                                                                             |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_canvas_transform<class_Viewport_set_canvas_transform>` **(** :ref:`Transform2D<class_transform2d>` xform **)**                                                                                          |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_global_canvas_transform<class_Viewport_set_global_canvas_transform>` **(** :ref:`Transform2D<class_transform2d>` xform **)**                                                                            |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_size_override<class_Viewport_set_size_override>` **(** :ref:`bool<class_bool>` enable, :ref:`Vector2<class_vector2>` size=Vector2( -1, -1 ), :ref:`Vector2<class_vector2>` margin=Vector2( 0, 0 ) **)** |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_size_override_stretch<class_Viewport_set_size_override_stretch>` **(** :ref:`bool<class_bool>` enabled **)**                                                                                            |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_world_2d<class_Viewport_set_world_2d>` **(** :ref:`World2D<class_world2d>` world_2d **)**                                                                                                               |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`unhandled_input<class_Viewport_unhandled_input>` **(** :ref:`InputEvent<class_inputevent>` local_event **)**                                                                                                |
 +------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -100,6 +88,10 @@ Member Variables
 
 - :ref:`bool<class_bool>` **audio_listener_enable_3d**
 
+  .. _class_Viewport_canvas_transform:
+
+- :ref:`Transform2D<class_transform2d>` **canvas_transform** - The canvas transform of the viewport, useful for changing the on-screen positions of all child :ref:`CanvasItem<class_canvasitem>`\ s. This is relative to the global canvas transform of the viewport.
+
   .. _class_Viewport_debug_draw:
 
 - :ref:`DebugDraw<enum_viewport_debugdraw>` **debug_draw**
@@ -107,6 +99,10 @@ Member Variables
   .. _class_Viewport_disable_3d:
 
 - :ref:`bool<class_bool>` **disable_3d**
+
+  .. _class_Viewport_global_canvas_transform:
+
+- :ref:`Transform2D<class_transform2d>` **global_canvas_transform** - The global canvas transform of the viewport. The canvas transform is relative to this.
 
   .. _class_Viewport_gui_disable_input:
 
@@ -179,6 +175,10 @@ Member Variables
   .. _class_Viewport_world:
 
 - :ref:`World<class_world>` **world**
+
+  .. _class_Viewport_world_2d:
+
+- :ref:`World2D<class_world2d>` **world_2d**
 
 
 Enums
@@ -291,23 +291,11 @@ Return the 2D world of the viewport.
 
 Return the active 3D camera.
 
-.. _class_Viewport_get_canvas_transform:
-
-- :ref:`Transform2D<class_transform2d>` **get_canvas_transform** **(** **)** const
-
-Get the canvas transform of the viewport.
-
 .. _class_Viewport_get_final_transform:
 
 - :ref:`Transform2D<class_transform2d>` **get_final_transform** **(** **)** const
 
 Get the total transform of the viewport.
-
-.. _class_Viewport_get_global_canvas_transform:
-
-- :ref:`Transform2D<class_transform2d>` **get_global_canvas_transform** **(** **)** const
-
-Get the global canvas transform of the viewport.
 
 .. _class_Viewport_get_mouse_position:
 
@@ -343,12 +331,6 @@ Get the viewport RID from the :ref:`VisualServer<class_visualserver>`.
 
 Return the final, visible rect in global screen coordinates.
 
-.. _class_Viewport_get_world_2d:
-
-- :ref:`World2D<class_world2d>` **get_world_2d** **(** **)** const
-
-Return the 2D world of the viewport.
-
 .. _class_Viewport_gui_get_drag_data:
 
 - :ref:`Variant<class_variant>` **gui_get_drag_data** **(** **)** const
@@ -381,18 +363,6 @@ Get the enabled status of the size strech override set with :ref:`set_size_overr
 
 - void **set_attach_to_screen_rect** **(** :ref:`Rect2<class_rect2>` rect **)**
 
-.. _class_Viewport_set_canvas_transform:
-
-- void **set_canvas_transform** **(** :ref:`Transform2D<class_transform2d>` xform **)**
-
-Set the canvas transform of the viewport, useful for changing the on-screen positions of all child :ref:`CanvasItem<class_canvasitem>`\ s. This is relative to the global canvas transform of the viewport.
-
-.. _class_Viewport_set_global_canvas_transform:
-
-- void **set_global_canvas_transform** **(** :ref:`Transform2D<class_transform2d>` xform **)**
-
-Set the global canvas transform of the viewport. The canvas transform is relative to this.
-
 .. _class_Viewport_set_size_override:
 
 - void **set_size_override** **(** :ref:`bool<class_bool>` enable, :ref:`Vector2<class_vector2>` size=Vector2( -1, -1 ), :ref:`Vector2<class_vector2>` margin=Vector2( 0, 0 ) **)**
@@ -404,10 +374,6 @@ Set the size override of the viewport. If the enable parameter is true, it would
 - void **set_size_override_stretch** **(** :ref:`bool<class_bool>` enabled **)**
 
 Set whether the size override affects stretch as well.
-
-.. _class_Viewport_set_world_2d:
-
-- void **set_world_2d** **(** :ref:`World2D<class_world2d>` world_2d **)**
 
 .. _class_Viewport_unhandled_input:
 

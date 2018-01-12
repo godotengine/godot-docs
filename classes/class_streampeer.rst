@@ -54,8 +54,6 @@ Member Functions
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_variant>`  | :ref:`get_var<class_StreamPeer_get_var>` **(** **)**                                                                  |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_big_endian_enabled<class_StreamPeer_is_big_endian_enabled>` **(** **)** const                                |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`put_16<class_StreamPeer_put_16>` **(** :ref:`int<class_int>` val **)**                                          |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`put_32<class_StreamPeer_put_32>` **(** :ref:`int<class_int>` val **)**                                          |
@@ -84,8 +82,14 @@ Member Functions
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`put_var<class_StreamPeer_put_var>` **(** :ref:`Variant<class_variant>` val **)**                                |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_big_endian<class_StreamPeer_set_big_endian>` **(** :ref:`bool<class_bool>` enable **)**                     |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+  .. _class_StreamPeer_big_endian:
+
+- :ref:`bool<class_bool>` **big_endian** - If ``true``, this ``StreamPeer`` will using big-endian format for encoding and decoding.
+
 
 Description
 -----------
@@ -191,12 +195,6 @@ Get a utf8 string with byte-length "bytes" from the stream (this decodes the str
 
 Get a Variant from the stream.
 
-.. _class_StreamPeer_is_big_endian_enabled:
-
-- :ref:`bool<class_bool>` **is_big_endian_enabled** **(** **)** const
-
-Return whether this ``StreamPeer`` is using big-endian format.
-
 .. _class_StreamPeer_put_16:
 
 - void **put_16** **(** :ref:`int<class_int>` val **)**
@@ -280,11 +278,5 @@ Put a zero-terminated utf8 string into the stream.
 - void **put_var** **(** :ref:`Variant<class_variant>` val **)**
 
 Put a Variant into the stream.
-
-.. _class_StreamPeer_set_big_endian:
-
-- void **set_big_endian** **(** :ref:`bool<class_bool>` enable **)**
-
-Set this ``StreamPeer`` to use big-endian format. Default is false.
 
 

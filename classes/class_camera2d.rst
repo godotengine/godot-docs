@@ -19,33 +19,21 @@ Camera node for 2D scenes.
 Member Functions
 ----------------
 
-+--------------------------------+-------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`align<class_Camera2D_align>` **(** **)**                                                              |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`clear_current<class_Camera2D_clear_current>` **(** **)**                                              |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`force_update_scroll<class_Camera2D_force_update_scroll>` **(** **)**                                  |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_camera_position<class_Camera2D_get_camera_position>` **(** **)** const                            |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_camera_screen_center<class_Camera2D_get_camera_screen_center>` **(** **)** const                  |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_node>`        | :ref:`get_custom_viewport<class_Camera2D_get_custom_viewport>` **(** **)** const                            |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_h_offset<class_Camera2D_get_h_offset>` **(** **)** const                                          |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_v_offset<class_Camera2D_get_v_offset>` **(** **)** const                                          |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`make_current<class_Camera2D_make_current>` **(** **)**                                                |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`reset_smoothing<class_Camera2D_reset_smoothing>` **(** **)**                                          |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_custom_viewport<class_Camera2D_set_custom_viewport>` **(** :ref:`Node<class_node>` viewport **)** |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_h_offset<class_Camera2D_set_h_offset>` **(** :ref:`float<class_float>` ofs **)**                  |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_v_offset<class_Camera2D_set_v_offset>` **(** :ref:`float<class_float>` ofs **)**                  |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------+
++--------------------------------+--------------------------------------------------------------------------------------------+
+| void                           | :ref:`align<class_Camera2D_align>` **(** **)**                                             |
++--------------------------------+--------------------------------------------------------------------------------------------+
+| void                           | :ref:`clear_current<class_Camera2D_clear_current>` **(** **)**                             |
++--------------------------------+--------------------------------------------------------------------------------------------+
+| void                           | :ref:`force_update_scroll<class_Camera2D_force_update_scroll>` **(** **)**                 |
++--------------------------------+--------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_camera_position<class_Camera2D_get_camera_position>` **(** **)** const           |
++--------------------------------+--------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_camera_screen_center<class_Camera2D_get_camera_screen_center>` **(** **)** const |
++--------------------------------+--------------------------------------------------------------------------------------------+
+| void                           | :ref:`make_current<class_Camera2D_make_current>` **(** **)**                               |
++--------------------------------+--------------------------------------------------------------------------------------------+
+| void                           | :ref:`reset_smoothing<class_Camera2D_reset_smoothing>` **(** **)**                         |
++--------------------------------+--------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -57,6 +45,10 @@ Member Variables
   .. _class_Camera2D_current:
 
 - :ref:`bool<class_bool>` **current** - If ``true`` the camera is the active camera for the current scene. Only one camera can be current, so setting a different camera ``current`` will disable this one.
+
+  .. _class_Camera2D_custom_viewport:
+
+- :ref:`Node<class_node>` **custom_viewport** - The custom :ref:`Viewport<class_viewport>` node attached to the ``Camera2D``. If null or not a :ref:`Viewport<class_viewport>`, uses the default viewport instead.
 
   .. _class_Camera2D_drag_margin_bottom:
 
@@ -117,6 +109,14 @@ Member Variables
   .. _class_Camera2D_offset:
 
 - :ref:`Vector2<class_vector2>` **offset** - The camera's offset, useful for looking around or camera shake animations.
+
+  .. _class_Camera2D_offset_h:
+
+- :ref:`float<class_float>` **offset_h** - The horizontal offset of the camera, relative to the drag margins. Default value: ``0``
+
+  .. _class_Camera2D_offset_v:
+
+- :ref:`float<class_float>` **offset_v** - The vertical offset of the camera, relative to the drag margins. Default value: ``0``
 
   .. _class_Camera2D_rotating:
 
@@ -186,24 +186,6 @@ Return the camera position.
 
 Returns the location of the ``Camera2D``'s screen-center, relative to the origin.
 
-.. _class_Camera2D_get_custom_viewport:
-
-- :ref:`Node<class_node>` **get_custom_viewport** **(** **)** const
-
-Returns the :ref:`Viewport<class_viewport>` used by the camera if it is not using the default viewport.
-
-.. _class_Camera2D_get_h_offset:
-
-- :ref:`float<class_float>` **get_h_offset** **(** **)** const
-
-Returns the horizontal offset of the camera.
-
-.. _class_Camera2D_get_v_offset:
-
-- :ref:`float<class_float>` **get_v_offset** **(** **)** const
-
-Returns the vertical offset of the camera.
-
 .. _class_Camera2D_make_current:
 
 - void **make_current** **(** **)**
@@ -217,23 +199,5 @@ Make this the current 2D camera for the scene (viewport and layer), in case ther
 Set the camera's position immediately to its current smoothing destination.
 
 This has no effect if smoothing is disabled.
-
-.. _class_Camera2D_set_custom_viewport:
-
-- void **set_custom_viewport** **(** :ref:`Node<class_node>` viewport **)**
-
-Assigns a custom :ref:`Viewport<class_viewport>` node to the ``Camera2D``. If ``viewport`` is not a :ref:`Viewport<class_viewport>`, it re-assigns the default viewport instead.
-
-.. _class_Camera2D_set_h_offset:
-
-- void **set_h_offset** **(** :ref:`float<class_float>` ofs **)**
-
-The camera's horizontal offset is set to ``ofs``.
-
-.. _class_Camera2D_set_v_offset:
-
-- void **set_v_offset** **(** :ref:`float<class_float>` ofs **)**
-
-The camera's vertical offset is set to ``ofs``.
 
 

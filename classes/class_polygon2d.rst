@@ -16,15 +16,6 @@ Brief Description
 
 A 2D polygon.
 
-Member Functions
-----------------
-
-+----------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_texture_rotation<class_Polygon2D_get_texture_rotation>` **(** **)** const                                      |
-+----------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_texture_rotation<class_Polygon2D_set_texture_rotation>` **(** :ref:`float<class_float>` texture_rotation **)** |
-+----------------------------+--------------------------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -62,7 +53,11 @@ Member Variables
 
   .. _class_Polygon2D_texture_rotation:
 
-- :ref:`float<class_float>` **texture_rotation** - The texture's rotation in degrees.
+- :ref:`float<class_float>` **texture_rotation** - The texture's rotation in radians.
+
+  .. _class_Polygon2D_texture_rotation_degrees:
+
+- :ref:`float<class_float>` **texture_rotation_degrees** - The texture's rotation in degrees.
 
   .. _class_Polygon2D_texture_scale:
 
@@ -81,20 +76,4 @@ Description
 -----------
 
 A Polygon2D is defined by a set of points. Each point is connected to the next, with the final point being connected to the first, resulting in a closed polygon. Polygon2Ds can be filled with color (solid or gradient) or filled with a given texture.
-
-Member Function Description
----------------------------
-
-.. _class_Polygon2D_get_texture_rotation:
-
-- :ref:`float<class_float>` **get_texture_rotation** **(** **)** const
-
-Return the rotation in radians of the texture polygon.
-
-.. _class_Polygon2D_set_texture_rotation:
-
-- void **set_texture_rotation** **(** :ref:`float<class_float>` texture_rotation **)**
-
-Set the amount of rotation of the polygon texture, ``texture_rotation`` is specified in radians and clockwise rotation.
-
 

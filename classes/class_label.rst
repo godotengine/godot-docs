@@ -19,19 +19,15 @@ Displays plain text in a line or wrapped inside a rectangle. For formatted text,
 Member Functions
 ----------------
 
-+------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_line_count<class_Label_get_line_count>` **(** **)** const                                        |
-+------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_line_height<class_Label_get_line_height>` **(** **)** const                                      |
-+------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_total_character_count<class_Label_get_total_character_count>` **(** **)** const                  |
-+------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_visible_characters<class_Label_get_visible_characters>` **(** **)** const                        |
-+------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_visible_line_count<class_Label_get_visible_line_count>` **(** **)** const                        |
-+------------------------+------------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_visible_characters<class_Label_set_visible_characters>` **(** :ref:`int<class_int>` amount **)** |
-+------------------------+------------------------------------------------------------------------------------------------------------+
++------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`get_line_count<class_Label_get_line_count>` **(** **)** const                       |
++------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`get_line_height<class_Label_get_line_height>` **(** **)** const                     |
++------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`get_total_character_count<class_Label_get_total_character_count>` **(** **)** const |
++------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`get_visible_line_count<class_Label_get_visible_line_count>` **(** **)** const       |
++------------------------+-------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -71,6 +67,10 @@ Member Variables
   .. _class_Label_valign:
 
 - :ref:`VAlign<enum_label_valign>` **valign** - Controls the text's vertical align. Supports top, center, bottom, and fill. Set it to one of the ``VALIGN\_\*`` constants.
+
+  .. _class_Label_visible_characters:
+
+- :ref:`int<class_int>` **visible_characters** - Restricts the number of characters to display. Set to -1 to disable.
 
 
 Enums
@@ -123,22 +123,10 @@ Returns the font size in pixels.
 
 Returns the total length of the text.
 
-.. _class_Label_get_visible_characters:
-
-- :ref:`int<class_int>` **get_visible_characters** **(** **)** const
-
-Returns the restricted number of characters to display. Returns -1 if unrestricted.
-
 .. _class_Label_get_visible_line_count:
 
 - :ref:`int<class_int>` **get_visible_line_count** **(** **)** const
 
 Returns the number of lines shown. Useful if the ``Label`` 's height cannot currently display all lines.
-
-.. _class_Label_set_visible_characters:
-
-- void **set_visible_characters** **(** :ref:`int<class_int>` amount **)**
-
-Restricts the number of characters to display. Set to -1 to disable.
 
 

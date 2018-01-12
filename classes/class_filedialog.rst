@@ -19,29 +19,17 @@ Dialog for selecting files or directories in the filesystem.
 Member Functions
 ----------------
 
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`add_filter<class_FileDialog_add_filter>` **(** :ref:`String<class_string>` filter **)**           |
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`clear_filters<class_FileDialog_clear_filters>` **(** **)**                                        |
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`deselect_items<class_FileDialog_deselect_items>` **(** **)**                                      |
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                | :ref:`get_current_dir<class_FileDialog_get_current_dir>` **(** **)** const                              |
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                | :ref:`get_current_file<class_FileDialog_get_current_file>` **(** **)** const                            |
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                | :ref:`get_current_path<class_FileDialog_get_current_path>` **(** **)** const                            |
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`VBoxContainer<class_vboxcontainer>`  | :ref:`get_vbox<class_FileDialog_get_vbox>` **(** **)**                                                  |
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`invalidate<class_FileDialog_invalidate>` **(** **)**                                              |
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_current_dir<class_FileDialog_set_current_dir>` **(** :ref:`String<class_string>` dir **)**    |
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_current_file<class_FileDialog_set_current_file>` **(** :ref:`String<class_string>` file **)** |
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_current_path<class_FileDialog_set_current_path>` **(** :ref:`String<class_string>` path **)** |
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------+
++--------------------------------------------+-----------------------------------------------------------------------------------------------+
+| void                                       | :ref:`add_filter<class_FileDialog_add_filter>` **(** :ref:`String<class_string>` filter **)** |
++--------------------------------------------+-----------------------------------------------------------------------------------------------+
+| void                                       | :ref:`clear_filters<class_FileDialog_clear_filters>` **(** **)**                              |
++--------------------------------------------+-----------------------------------------------------------------------------------------------+
+| void                                       | :ref:`deselect_items<class_FileDialog_deselect_items>` **(** **)**                            |
++--------------------------------------------+-----------------------------------------------------------------------------------------------+
+| :ref:`VBoxContainer<class_vboxcontainer>`  | :ref:`get_vbox<class_FileDialog_get_vbox>` **(** **)**                                        |
++--------------------------------------------+-----------------------------------------------------------------------------------------------+
+| void                                       | :ref:`invalidate<class_FileDialog_invalidate>` **(** **)**                                    |
++--------------------------------------------+-----------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -71,6 +59,18 @@ Member Variables
   .. _class_FileDialog_access:
 
 - :ref:`Access<enum_filedialog_access>` **access**
+
+  .. _class_FileDialog_current_dir:
+
+- :ref:`String<class_string>` **current_dir** - The current working directory of the file dialog.
+
+  .. _class_FileDialog_current_file:
+
+- :ref:`String<class_string>` **current_file** - The currently selected file of the file dialog.
+
+  .. _class_FileDialog_current_path:
+
+- :ref:`String<class_string>` **current_path** - The currently selected file path of the file dialog.
 
   .. _class_FileDialog_filters:
 
@@ -135,24 +135,6 @@ Clear all the added filters in the dialog.
 
 - void **deselect_items** **(** **)**
 
-.. _class_FileDialog_get_current_dir:
-
-- :ref:`String<class_string>` **get_current_dir** **(** **)** const
-
-Get the current working directory of the file dialog.
-
-.. _class_FileDialog_get_current_file:
-
-- :ref:`String<class_string>` **get_current_file** **(** **)** const
-
-Get the current selected file of the file dialog (empty if none).
-
-.. _class_FileDialog_get_current_path:
-
-- :ref:`String<class_string>` **get_current_path** **(** **)** const
-
-Get the current selected path (directory and file) of the file dialog (empty if none).
-
 .. _class_FileDialog_get_vbox:
 
 - :ref:`VBoxContainer<class_vboxcontainer>` **get_vbox** **(** **)**
@@ -164,23 +146,5 @@ Return the vertical box container of the dialog, custom controls can be added to
 - void **invalidate** **(** **)**
 
 Invalidate and update the current dialog content list.
-
-.. _class_FileDialog_set_current_dir:
-
-- void **set_current_dir** **(** :ref:`String<class_string>` dir **)**
-
-Set the current working directory of the file dialog.
-
-.. _class_FileDialog_set_current_file:
-
-- void **set_current_file** **(** :ref:`String<class_string>` file **)**
-
-Set the current selected file name of the file dialog.
-
-.. _class_FileDialog_set_current_path:
-
-- void **set_current_path** **(** :ref:`String<class_string>` path **)**
-
-Set the current selected file path of the file dialog.
 
 

@@ -26,8 +26,6 @@ Member Functions
 +------------------------------------+------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`deselect<class_LineEdit_deselect>` **(** **)**                                                       |
 +------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`              | :ref:`get_cursor_position<class_LineEdit_get_cursor_position>` **(** **)** const                           |
-+------------------------------------+------------------------------------------------------------------------------------------------------------+
 | :ref:`PopupMenu<class_popupmenu>`  | :ref:`get_menu<class_LineEdit_get_menu>` **(** **)** const                                                 |
 +------------------------------------+------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`menu_option<class_LineEdit_menu_option>` **(** :ref:`int<class_int>` option **)**                    |
@@ -35,8 +33,6 @@ Member Functions
 | void                               | :ref:`select<class_LineEdit_select>` **(** :ref:`int<class_int>` from=0, :ref:`int<class_int>` to=-1 **)** |
 +------------------------------------+------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`select_all<class_LineEdit_select_all>` **(** **)**                                                   |
-+------------------------------------+------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_cursor_position<class_LineEdit_set_cursor_position>` **(** :ref:`int<class_int>` position **)**  |
 +------------------------------------+------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -69,6 +65,10 @@ Member Variables
   .. _class_LineEdit_caret_blink_speed:
 
 - :ref:`float<class_float>` **caret_blink_speed** - Duration (in seconds) of a caret's blinking cycle.
+
+  .. _class_LineEdit_caret_position:
+
+- :ref:`int<class_int>` **caret_position** - The cursor's position inside the ``LineEdit``. When set, the text may scroll to accomodate it.
 
   .. _class_LineEdit_context_menu_enabled:
 
@@ -159,12 +159,6 @@ Erases the :ref:`LineEdit<class_lineedit>` text.
 
 Clears the current selection.
 
-.. _class_LineEdit_get_cursor_position:
-
-- :ref:`int<class_int>` **get_cursor_position** **(** **)** const
-
-Returns the cursor position inside the ``LineEdit``.
-
 .. _class_LineEdit_get_menu:
 
 - :ref:`PopupMenu<class_popupmenu>` **get_menu** **(** **)** const
@@ -195,11 +189,5 @@ Selects characters inside :ref:`LineEdit<class_lineedit>` between ``from`` and `
 - void **select_all** **(** **)**
 
 Selects the whole :ref:`String<class_string>`.
-
-.. _class_LineEdit_set_cursor_position:
-
-- void **set_cursor_position** **(** :ref:`int<class_int>` position **)**
-
-Sets the cursor position inside the ``LineEdit``. The text may scroll if needed.
 
 

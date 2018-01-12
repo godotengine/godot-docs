@@ -56,21 +56,15 @@ Member Functions
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_array>`          | :ref:`get_children<class_Node_get_children>` **(** **)** const                                                                                                                               |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`        | :ref:`get_filename<class_Node_get_filename>` **(** **)** const                                                                                                                               |
-+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_array>`          | :ref:`get_groups<class_Node_get_groups>` **(** **)** const                                                                                                                                   |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`              | :ref:`get_index<class_Node_get_index>` **(** **)** const                                                                                                                                     |
-+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`        | :ref:`get_name<class_Node_get_name>` **(** **)** const                                                                                                                                       |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`              | :ref:`get_network_master<class_Node_get_network_master>` **(** **)** const                                                                                                                   |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Node<class_node>`            | :ref:`get_node<class_Node_get_node>` **(** :ref:`NodePath<class_nodepath>` path **)** const                                                                                                  |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_array>`          | :ref:`get_node_and_resource<class_Node_get_node_and_resource>` **(** :ref:`NodePath<class_nodepath>` path **)**                                                                              |
-+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_node>`            | :ref:`get_owner<class_Node_get_owner>` **(** **)** const                                                                                                                                     |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Node<class_node>`            | :ref:`get_parent<class_Node_get_parent>` **(** **)** const                                                                                                                                   |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -166,13 +160,7 @@ Member Functions
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_display_folded<class_Node_set_display_folded>` **(** :ref:`bool<class_bool>` fold **)**                                                                                            |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_filename<class_Node_set_filename>` **(** :ref:`String<class_string>` filename **)**                                                                                                |
-+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_name<class_Node_set_name>` **(** :ref:`String<class_string>` name **)**                                                                                                            |
-+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_network_master<class_Node_set_network_master>` **(** :ref:`int<class_int>` id, :ref:`bool<class_bool>` recursive=true **)**                                                        |
-+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_owner<class_Node_set_owner>` **(** :ref:`Node<class_node>` owner **)**                                                                                                             |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                               | :ref:`set_physics_process<class_Node_set_physics_process>` **(** :ref:`bool<class_bool>` enable **)**                                                                                        |
 +------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -215,6 +203,20 @@ Emitted when the node exits the tree.
 
 Member Variables
 ----------------
+
+  .. _class_Node_filename:
+
+- :ref:`String<class_string>` **filename** - When a scene is instanced from a file, its topmost node contains the filename from which it was loaded.
+
+  .. _class_Node_name:
+
+- :ref:`String<class_string>` **name** - The name of the node. This name is unique among the siblings (other child nodes from the same parent).
+
+When set to an existing name, the node will be automatically renamed
+
+  .. _class_Node_owner:
+
+- :ref:`Node<class_node>` **owner** - The node owner. A node can have any other node as owner (as long as it is a valid parent, grandparent, etc. ascending in the tree). When saving a node (using SceneSaver) all the nodes it owns will be saved with it. This allows for the creation of complex :ref:`SceneTree<class_scenetree>`\ s, with instancing and subinstancing.
 
   .. _class_Node_pause_mode:
 
@@ -423,12 +425,6 @@ Returns the number of child nodes.
 
 Returns an array of references to node's children.
 
-.. _class_Node_get_filename:
-
-- :ref:`String<class_string>` **get_filename** **(** **)** const
-
-Returns a filename that may be contained by the node. When a scene is instanced from a file, its topmost node contains the filename from which it was loaded (see :ref:`set_filename<class_Node_set_filename>`).
-
 .. _class_Node_get_groups:
 
 - :ref:`Array<class_array>` **get_groups** **(** **)** const
@@ -440,12 +436,6 @@ Returns an array listing the groups that the node is a member of.
 - :ref:`int<class_int>` **get_index** **(** **)** const
 
 Returns the node's index, i.e. its position among the siblings of its parent.
-
-.. _class_Node_get_name:
-
-- :ref:`String<class_string>` **get_name** **(** **)** const
-
-Returns the name of the node. This name is unique among the siblings (other child nodes from the same parent).
 
 .. _class_Node_get_network_master:
 
@@ -486,12 +476,6 @@ Possible paths are:
 .. _class_Node_get_node_and_resource:
 
 - :ref:`Array<class_array>` **get_node_and_resource** **(** :ref:`NodePath<class_nodepath>` path **)**
-
-.. _class_Node_get_owner:
-
-- :ref:`Node<class_node>` **get_owner** **(** **)** const
-
-Returns the node owner (see :ref:`set_owner<class_Node_set_owner>`).
 
 .. _class_Node_get_parent:
 
@@ -763,29 +747,11 @@ Remotely changes property's value on a specific peer identified by *peer_id* usi
 
 Sets the folded state of the node in the Scene dock.
 
-.. _class_Node_set_filename:
-
-- void **set_filename** **(** :ref:`String<class_string>` filename **)**
-
-A node can contain a filename. This filename should not be changed by the user, unless writing editors and tools. When a scene is instanced from a file, its topmost node contains the filename from which it was loaded.
-
-.. _class_Node_set_name:
-
-- void **set_name** **(** :ref:`String<class_string>` name **)**
-
-Sets the name of the node. The name must be unique within the parent. Using an existing name will cause the node to be automatically renamed.
-
 .. _class_Node_set_network_master:
 
 - void **set_network_master** **(** :ref:`int<class_int>` id, :ref:`bool<class_bool>` recursive=true **)**
 
 Sets the node network master to the peer with the given peer ID. The network master is the peer that has authority over it on the network. Inherited from the parent node by default, which ultimately defaults to peer ID 1 (the server).
-
-.. _class_Node_set_owner:
-
-- void **set_owner** **(** :ref:`Node<class_node>` owner **)**
-
-Sets the node owner. A node can have any other node as owner (as long as it is a valid parent, grandparent, etc ascending in the tree). When saving a node (using SceneSaver) all the nodes it owns will be saved with it. This allows for the creation of complex :ref:`SceneTree<class_scenetree>`\ s, with instancing and subinstancing.
 
 .. _class_Node_set_physics_process:
 

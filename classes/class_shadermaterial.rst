@@ -20,29 +20,25 @@ Member Functions
 ----------------
 
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Shader<class_shader>`    | :ref:`get_shader<class_ShaderMaterial_get_shader>` **(** **)** const                                                                              |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_variant>`  | :ref:`get_shader_param<class_ShaderMaterial_get_shader_param>` **(** :ref:`String<class_string>` param **)** const                                |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_shader<class_ShaderMaterial_set_shader>` **(** :ref:`Shader<class_shader>` shader **)**                                                 |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_shader_param<class_ShaderMaterial_set_shader_param>` **(** :ref:`String<class_string>` param, :ref:`Variant<class_variant>` value **)** |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Member Variables
+----------------
+
+  .. _class_ShaderMaterial_shader:
+
+- :ref:`Shader<class_shader>` **shader**
+
+
 Member Function Description
 ---------------------------
-
-.. _class_ShaderMaterial_get_shader:
-
-- :ref:`Shader<class_shader>` **get_shader** **(** **)** const
 
 .. _class_ShaderMaterial_get_shader_param:
 
 - :ref:`Variant<class_variant>` **get_shader_param** **(** :ref:`String<class_string>` param **)** const
-
-.. _class_ShaderMaterial_set_shader:
-
-- void **set_shader** **(** :ref:`Shader<class_shader>` shader **)**
 
 .. _class_ShaderMaterial_set_shader_param:
 

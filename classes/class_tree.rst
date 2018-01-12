@@ -28,21 +28,13 @@ Member Functions
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`ensure_cursor_is_visible<class_Tree_ensure_cursor_is_visible>` **(** **)**                                                             |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`          | :ref:`get_allow_reselect<class_Tree_get_allow_reselect>` **(** **)** const                                                                   |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`          | :ref:`get_allow_rmb_select<class_Tree_get_allow_rmb_select>` **(** **)** const                                                               |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`            | :ref:`get_column_at_position<class_Tree_get_column_at_position>` **(** :ref:`Vector2<class_vector2>` position **)** const                    |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`      | :ref:`get_column_title<class_Tree_get_column_title>` **(** :ref:`int<class_int>` column **)** const                                          |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`            | :ref:`get_column_width<class_Tree_get_column_width>` **(** :ref:`int<class_int>` column **)** const                                          |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_columns<class_Tree_get_columns>` **(** **)** const                                                                                 |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Rect2<class_rect2>`        | :ref:`get_custom_popup_rect<class_Tree_get_custom_popup_rect>` **(** **)** const                                                             |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_drop_mode_flags<class_Tree_get_drop_mode_flags>` **(** **)** const                                                                 |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`            | :ref:`get_drop_section_at_position<class_Tree_get_drop_section_at_position>` **(** :ref:`Vector2<class_vector2>` position **)** const        |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -66,12 +58,6 @@ Member Functions
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`            | :ref:`get_selected_column<class_Tree_get_selected_column>` **(** **)** const                                                                 |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`          | :ref:`is_folding_hidden<class_Tree_is_folding_hidden>` **(** **)** const                                                                     |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_allow_reselect<class_Tree_set_allow_reselect>` **(** :ref:`bool<class_bool>` allow **)**                                           |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_allow_rmb_select<class_Tree_set_allow_rmb_select>` **(** :ref:`bool<class_bool>` allow **)**                                       |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_column_expand<class_Tree_set_column_expand>` **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` expand **)**              |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_column_min_width<class_Tree_set_column_min_width>` **(** :ref:`int<class_int>` column, :ref:`int<class_int>` min_width **)**       |
@@ -79,16 +65,6 @@ Member Functions
 | void                             | :ref:`set_column_title<class_Tree_set_column_title>` **(** :ref:`int<class_int>` column, :ref:`String<class_string>` title **)**             |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_column_titles_visible<class_Tree_set_column_titles_visible>` **(** :ref:`bool<class_bool>` visible **)**                           |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_columns<class_Tree_set_columns>` **(** :ref:`int<class_int>` amount **)**                                                          |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_drop_mode_flags<class_Tree_set_drop_mode_flags>` **(** :ref:`int<class_int>` flags **)**                                           |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_hide_folding<class_Tree_set_hide_folding>` **(** :ref:`bool<class_bool>` hide **)**                                                |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_hide_root<class_Tree_set_hide_root>` **(** :ref:`bool<class_bool>` enable **)**                                                    |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_select_mode<class_Tree_set_select_mode>` **(** :ref:`int<class_int>` mode **)**                                                    |
 +----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -181,6 +157,38 @@ Emitted instead of ``item_selected`` when ``select_mode`` is ``SELECT_MULTI``.
 - **nothing_selected** **(** **)**
 
 
+Member Variables
+----------------
+
+  .. _class_Tree_allow_reselect:
+
+- :ref:`bool<class_bool>` **allow_reselect** - If ``true`` the currently selected cell may be selected again.
+
+  .. _class_Tree_allow_rmb_select:
+
+- :ref:`bool<class_bool>` **allow_rmb_select** - If ``true`` a right mouse button click can select items.
+
+  .. _class_Tree_columns:
+
+- :ref:`int<class_int>` **columns** - The amount of columns.
+
+  .. _class_Tree_drop_mode_flags:
+
+- :ref:`int<class_int>` **drop_mode_flags** - The drop mode as an OR combination of flags. See ``DROP_MODE\_\*`` constants.
+
+  .. _class_Tree_hide_folding:
+
+- :ref:`bool<class_bool>` **hide_folding** - If ``true`` the folding arrow is hidden.
+
+  .. _class_Tree_hide_root:
+
+- :ref:`bool<class_bool>` **hide_root** - If ``true`` the tree's root is hidden.
+
+  .. _class_Tree_select_mode:
+
+- :ref:`SelectMode<enum_tree_selectmode>` **select_mode** - Allow single or multiple selection. See the ``SELECT\_\*`` constants.
+
+
 Enums
 -----
 
@@ -246,18 +254,6 @@ Create an item in the tree and add it as the last child of ``parent``. If parent
 
 Makes the currently selected item visible. This will scroll the tree to make sure the selected item is visible.
 
-.. _class_Tree_get_allow_reselect:
-
-- :ref:`bool<class_bool>` **get_allow_reselect** **(** **)** const
-
-Returns ``true`` if a cell that is currently already selected may be selected again.
-
-.. _class_Tree_get_allow_rmb_select:
-
-- :ref:`bool<class_bool>` **get_allow_rmb_select** **(** **)** const
-
-Returns ``true`` if a right click can select items.
-
 .. _class_Tree_get_column_at_position:
 
 - :ref:`int<class_int>` **get_column_at_position** **(** :ref:`Vector2<class_vector2>` position **)** const
@@ -276,23 +272,11 @@ Returns the column's title.
 
 Returns the column's width in pixels.
 
-.. _class_Tree_get_columns:
-
-- :ref:`int<class_int>` **get_columns** **(** **)** const
-
-Returns the amount of columns.
-
 .. _class_Tree_get_custom_popup_rect:
 
 - :ref:`Rect2<class_rect2>` **get_custom_popup_rect** **(** **)** const
 
 Returns the rectangle for custom popups. Helper to create custom cell controls that display a popup. See :ref:`TreeItem.set_cell_mode<class_TreeItem_set_cell_mode>`.
-
-.. _class_Tree_get_drop_mode_flags:
-
-- :ref:`int<class_int>` **get_drop_mode_flags** **(** **)** const
-
-Returns the current drop mode's flags.
 
 .. _class_Tree_get_drop_section_at_position:
 
@@ -358,24 +342,6 @@ Returns the currently selected item.
 
 Returns the current selection's column.
 
-.. _class_Tree_is_folding_hidden:
-
-- :ref:`bool<class_bool>` **is_folding_hidden** **(** **)** const
-
-Returns ``true`` if the folding arrow is hidden.
-
-.. _class_Tree_set_allow_reselect:
-
-- void **set_allow_reselect** **(** :ref:`bool<class_bool>` allow **)**
-
-If ``true`` the currently selected cell may be selected again.
-
-.. _class_Tree_set_allow_rmb_select:
-
-- void **set_allow_rmb_select** **(** :ref:`bool<class_bool>` allow **)**
-
-If ``true`` a right mouse button click can select items.
-
 .. _class_Tree_set_column_expand:
 
 - void **set_column_expand** **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` expand **)**
@@ -399,35 +365,5 @@ Set the title of a column.
 - void **set_column_titles_visible** **(** :ref:`bool<class_bool>` visible **)**
 
 If ``true`` column titles are visible.
-
-.. _class_Tree_set_columns:
-
-- void **set_columns** **(** :ref:`int<class_int>` amount **)**
-
-Set the amount of columns.
-
-.. _class_Tree_set_drop_mode_flags:
-
-- void **set_drop_mode_flags** **(** :ref:`int<class_int>` flags **)**
-
-Set the drop mode as an OR combination of flags. See ``DROP_MODE\_\*`` constants.
-
-.. _class_Tree_set_hide_folding:
-
-- void **set_hide_folding** **(** :ref:`bool<class_bool>` hide **)**
-
-If ``true`` the folding arrow is hidden.
-
-.. _class_Tree_set_hide_root:
-
-- void **set_hide_root** **(** :ref:`bool<class_bool>` enable **)**
-
-If ``true`` the tree's root is hidden.
-
-.. _class_Tree_set_select_mode:
-
-- void **set_select_mode** **(** :ref:`int<class_int>` mode **)**
-
-Allow single or multiple selection. See the ``SELECT\_\*`` constants.
 
 

@@ -18,15 +18,6 @@ Adds a Reverb audio effect to an Audio bus.
 
 Simulates the sound of acoustic environments such as rooms, concert halls, caverns, or an open spaces.
 
-Member Functions
-----------------
-
-+----------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_predelay_feedback<class_AudioEffectReverb_get_predelay_feedback>` **(** **)** const                              |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_predelay_feedback<class_AudioEffectReverb_set_predelay_feedback>` **(** :ref:`float<class_float>` feedback **)** |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
@@ -67,16 +58,4 @@ Description
 -----------
 
 Simulates rooms of different sizes. Its parameters can be adjusted to simulate the sound of a specific room.
-
-Member Function Description
----------------------------
-
-.. _class_AudioEffectReverb_get_predelay_feedback:
-
-- :ref:`float<class_float>` **get_predelay_feedback** **(** **)** const
-
-.. _class_AudioEffectReverb_set_predelay_feedback:
-
-- void **set_predelay_feedback** **(** :ref:`float<class_float>` feedback **)**
-
 

@@ -24,8 +24,6 @@ Member Functions
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`connect_to_host<class_HTTPClient_connect_to_host>` **(** :ref:`String<class_string>` host, :ref:`int<class_int>` port=-1, :ref:`bool<class_bool>` use_ssl=false, :ref:`bool<class_bool>` verify_host=true **)**             |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StreamPeer<class_streampeer>`            | :ref:`get_connection<class_HTTPClient_get_connection>` **(** **)** const                                                                                                                                                          |
-+------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_response_body_length<class_HTTPClient_get_response_body_length>` **(** **)** const                                                                                                                                      |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_response_code<class_HTTPClient_get_response_code>` **(** **)** const                                                                                                                                                    |
@@ -37,8 +35,6 @@ Member Functions
 | :ref:`int<class_int>`                          | :ref:`get_status<class_HTTPClient_get_status>` **(** **)** const                                                                                                                                                                  |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`has_response<class_HTTPClient_has_response>` **(** **)** const                                                                                                                                                              |
-+------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`is_blocking_mode_enabled<class_HTTPClient_is_blocking_mode_enabled>` **(** **)** const                                                                                                                                      |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`is_response_chunked<class_HTTPClient_is_response_chunked>` **(** **)** const                                                                                                                                                |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -52,12 +48,20 @@ Member Functions
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`request_raw<class_HTTPClient_request_raw>` **(** :ref:`int<class_int>` method, :ref:`String<class_string>` url, :ref:`PoolStringArray<class_poolstringarray>` headers, :ref:`PoolByteArray<class_poolbytearray>` body **)** |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_blocking_mode<class_HTTPClient_set_blocking_mode>` **(** :ref:`bool<class_bool>` enabled **)**                                                                                                                          |
-+------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_connection<class_HTTPClient_set_connection>` **(** :ref:`StreamPeer<class_streampeer>` connection **)**                                                                                                                 |
-+------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_read_chunk_size<class_HTTPClient_set_read_chunk_size>` **(** :ref:`int<class_int>` bytes **)**                                                                                                                          |
 +------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+  .. _class_HTTPClient_blocking_mode_enabled:
+
+- :ref:`bool<class_bool>` **blocking_mode_enabled** - If ``true``, execution will block until all data is read from the response.
+
+  .. _class_HTTPClient_connection:
+
+- :ref:`StreamPeer<class_streampeer>` **connection** - The connection to use for this client.
+
 
 Enums
 -----
@@ -191,12 +195,6 @@ If no ``port`` is specified (or ``-1`` is used), it is automatically set to 80 f
 
 ``verify_host`` will check the SSL identity of the host if set to ``true``.
 
-.. _class_HTTPClient_get_connection:
-
-- :ref:`StreamPeer<class_streampeer>` **get_connection** **(** **)** const
-
-Returns the current connection.
-
 .. _class_HTTPClient_get_response_body_length:
 
 - :ref:`int<class_int>` **get_response_body_length** **(** **)** const
@@ -236,12 +234,6 @@ Returns a STATUS\_\* enum constant. Need to call :ref:`poll<class_HTTPClient_pol
 - :ref:`bool<class_bool>` **has_response** **(** **)** const
 
 If ``true`` this ``HTTPClient`` has a response available.
-
-.. _class_HTTPClient_is_blocking_mode_enabled:
-
-- :ref:`bool<class_bool>` **is_blocking_mode_enabled** **(** **)** const
-
-If ``true`` blocking mode is enabled.
 
 .. _class_HTTPClient_is_response_chunked:
 
@@ -299,18 +291,6 @@ Sends a raw request to the connected host. The URL parameter is just the part af
 Headers are HTTP request headers. For available HTTP methods, see ``METHOD\_\*``.
 
 Sends the body data raw, as a byte array and does not encode it in any way.
-
-.. _class_HTTPClient_set_blocking_mode:
-
-- void **set_blocking_mode** **(** :ref:`bool<class_bool>` enabled **)**
-
-If set to true, execution will block until all data is read from the response.
-
-.. _class_HTTPClient_set_connection:
-
-- void **set_connection** **(** :ref:`StreamPeer<class_streampeer>` connection **)**
-
-Sets connection to use for this client.
 
 .. _class_HTTPClient_set_read_chunk_size:
 

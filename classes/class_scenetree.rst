@@ -30,10 +30,6 @@ Member Functions
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`SceneTreeTimer<class_scenetreetimer>`  | :ref:`create_timer<class_SceneTree_create_timer>` **(** :ref:`float<class_float>` time_sec, :ref:`bool<class_bool>` pause_mode_process=true **)**                                                                  |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_node>`                      | :ref:`get_current_scene<class_SceneTree_get_current_scene>` **(** **)** const                                                                                                                                      |
-+----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_node>`                      | :ref:`get_edited_scene_root<class_SceneTree_get_edited_scene_root>` **(** **)** const                                                                                                                              |
-+----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                        | :ref:`get_frame<class_SceneTree_get_frame>` **(** **)** const                                                                                                                                                      |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolIntArray<class_poolintarray>`      | :ref:`get_network_connected_peers<class_SceneTree_get_network_connected_peers>` **(** **)** const                                                                                                                  |
@@ -44,27 +40,15 @@ Member Functions
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_array>`                    | :ref:`get_nodes_in_group<class_SceneTree_get_nodes_in_group>` **(** :ref:`String<class_string>` group **)**                                                                                                        |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Viewport<class_viewport>`              | :ref:`get_root<class_SceneTree_get_root>` **(** **)** const                                                                                                                                                        |
-+----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                        | :ref:`get_rpc_sender_id<class_SceneTree_get_rpc_sender_id>` **(** **)** const                                                                                                                                      |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                      | :ref:`has_group<class_SceneTree_has_group>` **(** :ref:`String<class_string>` name **)** const                                                                                                                     |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                      | :ref:`has_network_peer<class_SceneTree_has_network_peer>` **(** **)** const                                                                                                                                        |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`is_debugging_collisions_hint<class_SceneTree_is_debugging_collisions_hint>` **(** **)** const                                                                                                                |
-+----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`is_debugging_navigation_hint<class_SceneTree_is_debugging_navigation_hint>` **(** **)** const                                                                                                                |
-+----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                      | :ref:`is_input_handled<class_SceneTree_is_input_handled>` **(** **)**                                                                                                                                              |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                      | :ref:`is_network_server<class_SceneTree_is_network_server>` **(** **)** const                                                                                                                                      |
-+----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`is_paused<class_SceneTree_is_paused>` **(** **)** const                                                                                                                                                      |
-+----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`is_refusing_new_network_connections<class_SceneTree_is_refusing_new_network_connections>` **(** **)** const                                                                                                  |
-+----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`is_using_font_oversampling<class_SceneTree_is_using_font_oversampling>` **(** **)** const                                                                                                                    |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`notify_group<class_SceneTree_notify_group>` **(** :ref:`String<class_string>` group, :ref:`int<class_int>` notification **)**                                                                                |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -78,31 +62,15 @@ Member Functions
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`set_auto_accept_quit<class_SceneTree_set_auto_accept_quit>` **(** :ref:`bool<class_bool>` enabled **)**                                                                                                      |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set_current_scene<class_SceneTree_set_current_scene>` **(** :ref:`Node<class_node>` child_node **)**                                                                                                         |
-+----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set_debug_collisions_hint<class_SceneTree_set_debug_collisions_hint>` **(** :ref:`bool<class_bool>` enable **)**                                                                                             |
-+----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set_debug_navigation_hint<class_SceneTree_set_debug_navigation_hint>` **(** :ref:`bool<class_bool>` enable **)**                                                                                             |
-+----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set_edited_scene_root<class_SceneTree_set_edited_scene_root>` **(** :ref:`Node<class_node>` scene **)**                                                                                                      |
-+----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`set_group<class_SceneTree_set_group>` **(** :ref:`String<class_string>` group, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value **)**                                               |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`set_group_flags<class_SceneTree_set_group_flags>` **(** :ref:`int<class_int>` call_flags, :ref:`String<class_string>` group, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value **)** |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`set_input_as_handled<class_SceneTree_set_input_as_handled>` **(** **)**                                                                                                                                      |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set_network_peer<class_SceneTree_set_network_peer>` **(** :ref:`NetworkedMultiplayerPeer<class_networkedmultiplayerpeer>` peer **)**                                                                         |
-+----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set_pause<class_SceneTree_set_pause>` **(** :ref:`bool<class_bool>` enable **)**                                                                                                                             |
-+----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`set_quit_on_go_back<class_SceneTree_set_quit_on_go_back>` **(** :ref:`bool<class_bool>` enabled **)**                                                                                                        |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set_refuse_new_network_connections<class_SceneTree_set_refuse_new_network_connections>` **(** :ref:`bool<class_bool>` refuse **)**                                                                           |
-+----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                         | :ref:`set_screen_stretch<class_SceneTree_set_screen_stretch>` **(** :ref:`int<class_int>` mode, :ref:`int<class_int>` aspect, :ref:`Vector2<class_vector2>` minsize, :ref:`float<class_float>` shrink=1 **)**      |
-+----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set_use_font_oversampling<class_SceneTree_set_use_font_oversampling>` **(** :ref:`bool<class_bool>` enable **)**                                                                                             |
 +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -161,6 +129,46 @@ Signals
 - **tree_changed** **(** **)**
 
 
+Member Variables
+----------------
+
+  .. _class_SceneTree_current_scene:
+
+- :ref:`Node<class_node>` **current_scene**
+
+  .. _class_SceneTree_debug_collisions_hint:
+
+- :ref:`bool<class_bool>` **debug_collisions_hint**
+
+  .. _class_SceneTree_debug_navigation_hint:
+
+- :ref:`bool<class_bool>` **debug_navigation_hint**
+
+  .. _class_SceneTree_edited_scene_root:
+
+- :ref:`Node<class_node>` **edited_scene_root**
+
+  .. _class_SceneTree_network_peer:
+
+- :ref:`NetworkedMultiplayerPeer<class_networkedmultiplayerpeer>` **network_peer** - The peer object to handle the RPC system (effectively enabling networking when set). Depending on the peer itself, the SceneTree will become a network server (check with :ref:`is_network_server()<class_SceneTree_is_network_server()>`) and will set root node's network mode to master (see NETWORK_MODE\_\* constants in :ref:`Node<class_node>`), or it will become a regular peer with root node set to slave. All child nodes are set to inherit the network mode by default. Handling of networking-related events (connection, disconnection, new clients) is done by connecting to SceneTree's signals.
+
+  .. _class_SceneTree_paused:
+
+- :ref:`bool<class_bool>` **paused**
+
+  .. _class_SceneTree_refuse_new_network_connections:
+
+- :ref:`bool<class_bool>` **refuse_new_network_connections**
+
+  .. _class_SceneTree_root:
+
+- :ref:`Viewport<class_viewport>` **root**
+
+  .. _class_SceneTree_use_font_oversampling:
+
+- :ref:`bool<class_bool>` **use_font_oversampling**
+
+
 Enums
 -----
 
@@ -215,14 +223,6 @@ Member Function Description
 
 - :ref:`SceneTreeTimer<class_scenetreetimer>` **create_timer** **(** :ref:`float<class_float>` time_sec, :ref:`bool<class_bool>` pause_mode_process=true **)**
 
-.. _class_SceneTree_get_current_scene:
-
-- :ref:`Node<class_node>` **get_current_scene** **(** **)** const
-
-.. _class_SceneTree_get_edited_scene_root:
-
-- :ref:`Node<class_node>` **get_edited_scene_root** **(** **)** const
-
 .. _class_SceneTree_get_frame:
 
 - :ref:`int<class_int>` **get_frame** **(** **)** const
@@ -243,10 +243,6 @@ Member Function Description
 
 - :ref:`Array<class_array>` **get_nodes_in_group** **(** :ref:`String<class_string>` group **)**
 
-.. _class_SceneTree_get_root:
-
-- :ref:`Viewport<class_viewport>` **get_root** **(** **)** const
-
 .. _class_SceneTree_get_rpc_sender_id:
 
 - :ref:`int<class_int>` **get_rpc_sender_id** **(** **)** const
@@ -261,14 +257,6 @@ Member Function Description
 
 Returns true if there is a :ref:`NetworkedMultiplayerPeer<class_networkedmultiplayerpeer>` set (with :ref:`SceneTree.set_network_peer<class_SceneTree_set_network_peer>`).
 
-.. _class_SceneTree_is_debugging_collisions_hint:
-
-- :ref:`bool<class_bool>` **is_debugging_collisions_hint** **(** **)** const
-
-.. _class_SceneTree_is_debugging_navigation_hint:
-
-- :ref:`bool<class_bool>` **is_debugging_navigation_hint** **(** **)** const
-
 .. _class_SceneTree_is_input_handled:
 
 - :ref:`bool<class_bool>` **is_input_handled** **(** **)**
@@ -278,18 +266,6 @@ Returns true if there is a :ref:`NetworkedMultiplayerPeer<class_networkedmultipl
 - :ref:`bool<class_bool>` **is_network_server** **(** **)** const
 
 Returns true if this SceneTree's :ref:`NetworkedMultiplayerPeer<class_networkedmultiplayerpeer>` is in server mode (listening for connections).
-
-.. _class_SceneTree_is_paused:
-
-- :ref:`bool<class_bool>` **is_paused** **(** **)** const
-
-.. _class_SceneTree_is_refusing_new_network_connections:
-
-- :ref:`bool<class_bool>` **is_refusing_new_network_connections** **(** **)** const
-
-.. _class_SceneTree_is_using_font_oversampling:
-
-- :ref:`bool<class_bool>` **is_using_font_oversampling** **(** **)** const
 
 .. _class_SceneTree_notify_group:
 
@@ -315,22 +291,6 @@ Returns true if this SceneTree's :ref:`NetworkedMultiplayerPeer<class_networkedm
 
 - void **set_auto_accept_quit** **(** :ref:`bool<class_bool>` enabled **)**
 
-.. _class_SceneTree_set_current_scene:
-
-- void **set_current_scene** **(** :ref:`Node<class_node>` child_node **)**
-
-.. _class_SceneTree_set_debug_collisions_hint:
-
-- void **set_debug_collisions_hint** **(** :ref:`bool<class_bool>` enable **)**
-
-.. _class_SceneTree_set_debug_navigation_hint:
-
-- void **set_debug_navigation_hint** **(** :ref:`bool<class_bool>` enable **)**
-
-.. _class_SceneTree_set_edited_scene_root:
-
-- void **set_edited_scene_root** **(** :ref:`Node<class_node>` scene **)**
-
 .. _class_SceneTree_set_group:
 
 - void **set_group** **(** :ref:`String<class_string>` group, :ref:`String<class_string>` property, :ref:`Variant<class_variant>` value **)**
@@ -343,30 +303,12 @@ Returns true if this SceneTree's :ref:`NetworkedMultiplayerPeer<class_networkedm
 
 - void **set_input_as_handled** **(** **)**
 
-.. _class_SceneTree_set_network_peer:
-
-- void **set_network_peer** **(** :ref:`NetworkedMultiplayerPeer<class_networkedmultiplayerpeer>` peer **)**
-
-Set the peer object to handle the RPC system (effectively enabling networking). Depending on the peer itself, the SceneTree will become a network server (check with :ref:`is_network_server()<class_SceneTree_is_network_server()>`) and will set root node's network mode to master (see NETWORK_MODE\_\* constants in :ref:`Node<class_node>`), or it will become a regular peer with root node set to slave. All child nodes are set to inherit the network mode by default. Handling of networking-related events (connection, disconnection, new clients) is done by connecting to SceneTree's signals.
-
-.. _class_SceneTree_set_pause:
-
-- void **set_pause** **(** :ref:`bool<class_bool>` enable **)**
-
 .. _class_SceneTree_set_quit_on_go_back:
 
 - void **set_quit_on_go_back** **(** :ref:`bool<class_bool>` enabled **)**
 
-.. _class_SceneTree_set_refuse_new_network_connections:
-
-- void **set_refuse_new_network_connections** **(** :ref:`bool<class_bool>` refuse **)**
-
 .. _class_SceneTree_set_screen_stretch:
 
 - void **set_screen_stretch** **(** :ref:`int<class_int>` mode, :ref:`int<class_int>` aspect, :ref:`Vector2<class_vector2>` minsize, :ref:`float<class_float>` shrink=1 **)**
-
-.. _class_SceneTree_set_use_font_oversampling:
-
-- void **set_use_font_oversampling** **(** :ref:`bool<class_bool>` enable **)**
 
 

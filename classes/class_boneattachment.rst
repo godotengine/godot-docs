@@ -16,33 +16,16 @@ Brief Description
 
 A node that will attach to a bone.
 
-Member Functions
+Member Variables
 ----------------
 
-+------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_bone_name<class_BoneAttachment_get_bone_name>` **(** **)** const                                 |
-+------------------------------+------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_bone_name<class_BoneAttachment_set_bone_name>` **(** :ref:`String<class_string>` bone_name **)** |
-+------------------------------+------------------------------------------------------------------------------------------------------------+
+  .. _class_BoneAttachment_bone_name:
+
+- :ref:`String<class_string>` **bone_name** - The name of the attached bone.
+
 
 Description
 -----------
 
 This node must be the child of a :ref:`Skeleton<class_skeleton>` node. You can then select a bone for this node to attach to. The BoneAttachment node will copy the transform of the selected bone.
-
-Member Function Description
----------------------------
-
-.. _class_BoneAttachment_get_bone_name:
-
-- :ref:`String<class_string>` **get_bone_name** **(** **)** const
-
-Returns the name of the bone node attached to.
-
-.. _class_BoneAttachment_set_bone_name:
-
-- void **set_bone_name** **(** :ref:`String<class_string>` bone_name **)**
-
-Changes the name of the bone node
-
 

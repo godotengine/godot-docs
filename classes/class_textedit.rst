@@ -88,10 +88,6 @@ Member Functions
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_line_as_hidden<class_TextEdit_set_line_as_hidden>` **(** :ref:`int<class_int>` line, :ref:`bool<class_bool>` enable **)**                                                                                       |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_max_chars<class_TextEdit_set_max_chars>` **(** :ref:`int<class_int>` amount **)**                                                                                                                               |
-+------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_wrap<class_TextEdit_set_wrap>` **(** :ref:`bool<class_bool>` enable **)**                                                                                                                                       |
-+------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`toggle_fold_line<class_TextEdit_toggle_fold_line>` **(** :ref:`int<class_int>` line **)**                                                                                                                           |
 +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`undo<class_TextEdit_undo>` **(** **)**                                                                                                                                                                              |
@@ -196,7 +192,11 @@ If ``false`` the context menu disregards mouse location.
 
   .. _class_TextEdit_v_scroll_speed:
 
-- :ref:`float<class_float>` **v_scroll_speed**
+- :ref:`float<class_float>` **v_scroll_speed** - If ``true``, enables text wrapping when it goes beyond he edge of what is visible.
+
+  .. _class_TextEdit_wrap_lines:
+
+- :ref:`bool<class_bool>` **wrap_lines**
 
 
 Enums
@@ -412,18 +412,6 @@ Select all the text.
 .. _class_TextEdit_set_line_as_hidden:
 
 - void **set_line_as_hidden** **(** :ref:`int<class_int>` line, :ref:`bool<class_bool>` enable **)**
-
-.. _class_TextEdit_set_max_chars:
-
-- void **set_max_chars** **(** :ref:`int<class_int>` amount **)**
-
-Set the maximum amount of characters editable.
-
-.. _class_TextEdit_set_wrap:
-
-- void **set_wrap** **(** :ref:`bool<class_bool>` enable **)**
-
-Enable text wrapping when it goes beyond he edge of what is visible.
 
 .. _class_TextEdit_toggle_fold_line:
 

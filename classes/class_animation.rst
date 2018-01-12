@@ -28,13 +28,7 @@ Member Functions
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                    | :ref:`find_track<class_Animation_find_track>` **(** :ref:`NodePath<class_nodepath>` path **)** const                                                                                                                                                               |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                | :ref:`get_length<class_Animation_get_length>` **(** **)** const                                                                                                                                                                                                    |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                | :ref:`get_step<class_Animation_get_step>` **(** **)** const                                                                                                                                                                                                        |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                    | :ref:`get_track_count<class_Animation_get_track_count>` **(** **)** const                                                                                                                                                                                          |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`has_loop<class_Animation_has_loop>` **(** **)** const                                                                                                                                                                                                        |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`PoolIntArray<class_poolintarray>`  | :ref:`method_track_get_key_indices<class_Animation_method_track_get_key_indices>` **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` time_sec, :ref:`float<class_float>` delta **)** const                                                                 |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -43,12 +37,6 @@ Member Functions
 | :ref:`Array<class_array>`                | :ref:`method_track_get_params<class_Animation_method_track_get_params>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` key_idx **)** const                                                                                                                 |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`remove_track<class_Animation_remove_track>` **(** :ref:`int<class_int>` idx **)**                                                                                                                                                                            |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_length<class_Animation_set_length>` **(** :ref:`float<class_float>` time_sec **)**                                                                                                                                                                       |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_loop<class_Animation_set_loop>` **(** :ref:`bool<class_bool>` enabled **)**                                                                                                                                                                              |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_step<class_Animation_set_step>` **(** :ref:`float<class_float>` size_sec **)**                                                                                                                                                                           |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                    | :ref:`track_find_key<class_Animation_track_find_key>` **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` time, :ref:`bool<class_bool>` exact=false **)** const                                                                                             |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -106,6 +94,22 @@ Member Functions
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`value_track_set_update_mode<class_Animation_value_track_set_update_mode>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` mode **)**                                                                                                                  |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+  .. _class_Animation_length:
+
+- :ref:`float<class_float>` **length** - The total length of the animation (in seconds). Note that length is not delimited by the last key, as this one may be before or after the end to ensure correct interpolation and looping.
+
+  .. _class_Animation_loop:
+
+- :ref:`bool<class_bool>` **loop** - A flag indicating that the animation must loop. This is uses for correct interpolation of animation cycles, and for hinting the player that it must restart the animation.
+
+  .. _class_Animation_step:
+
+- :ref:`float<class_float>` **step** - The animation step value.
+
 
 Enums
 -----
@@ -169,29 +173,11 @@ Adds a new track that is a copy of the given track from ``to_animation``.
 
 Return the index of the specified track. If the track is not found, return -1.
 
-.. _class_Animation_get_length:
-
-- :ref:`float<class_float>` **get_length** **(** **)** const
-
-Return the total length of the animation (in seconds).
-
-.. _class_Animation_get_step:
-
-- :ref:`float<class_float>` **get_step** **(** **)** const
-
-Get the animation step value.
-
 .. _class_Animation_get_track_count:
 
 - :ref:`int<class_int>` **get_track_count** **(** **)** const
 
 Return the amount of tracks in the animation.
-
-.. _class_Animation_has_loop:
-
-- :ref:`bool<class_bool>` **has_loop** **(** **)** const
-
-Return whether the animation has the loop flag set.
 
 .. _class_Animation_method_track_get_key_indices:
 
@@ -216,24 +202,6 @@ Return the arguments values to be called on a method track for a given key in a 
 - void **remove_track** **(** :ref:`int<class_int>` idx **)**
 
 Remove a track by specifying the track index.
-
-.. _class_Animation_set_length:
-
-- void **set_length** **(** :ref:`float<class_float>` time_sec **)**
-
-Set the total length of the animation (in seconds). Note that length is not delimited by the last key, as this one may be before or after the end to ensure correct interpolation and looping.
-
-.. _class_Animation_set_loop:
-
-- void **set_loop** **(** :ref:`bool<class_bool>` enabled **)**
-
-Set a flag indicating that the animation must loop. This is uses for correct interpolation of animation cycles, and for hinting the player that it must restart the animation.
-
-.. _class_Animation_set_step:
-
-- void **set_step** **(** :ref:`float<class_float>` size_sec **)**
-
-Set the animation step value.
 
 .. _class_Animation_track_find_key:
 

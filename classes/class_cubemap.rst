@@ -20,21 +20,21 @@ Member Functions
 ----------------
 
 +----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_flags<class_CubeMap_get_flags>` **(** **)** const                                                     |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`      | :ref:`get_height<class_CubeMap_get_height>` **(** **)** const                                                   |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------+
 | :ref:`Image<class_image>`  | :ref:`get_side<class_CubeMap_get_side>` **(** :ref:`int<class_int>` side **)** const                            |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`      | :ref:`get_width<class_CubeMap_get_width>` **(** **)** const                                                     |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_flags<class_CubeMap_set_flags>` **(** :ref:`int<class_int>` flags **)**                               |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`set_side<class_CubeMap_set_side>` **(** :ref:`int<class_int>` side, :ref:`Image<class_image>` image **)** |
 +----------------------------+-----------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
+
+  .. _class_CubeMap_flags:
+
+- :ref:`int<class_int>` **flags** - The render flags for the ``CubeMap``. See the ``FLAG\_\*`` constants for details.
 
   .. _class_CubeMap_lossy_storage_quality:
 
@@ -85,12 +85,6 @@ A 6-sided 3D texture typically used for faking reflections. It can be used to ma
 Member Function Description
 ---------------------------
 
-.. _class_CubeMap_get_flags:
-
-- :ref:`int<class_int>` **get_flags** **(** **)** const
-
-Returns the render flags for the ``CubeMap``. See the ``FLAG\_\*`` constants for details.
-
 .. _class_CubeMap_get_height:
 
 - :ref:`int<class_int>` **get_height** **(** **)** const
@@ -108,12 +102,6 @@ Returns an :ref:`Image<class_image>` for a side of the ``CubeMap`` using one of 
 - :ref:`int<class_int>` **get_width** **(** **)** const
 
 Returns the ``CubeMap``'s width.
-
-.. _class_CubeMap_set_flags:
-
-- void **set_flags** **(** :ref:`int<class_int>` flags **)**
-
-Returns the render flags for the ``CubeMap``. See the ``FLAG\_\*`` constants for details.
 
 .. _class_CubeMap_set_side:
 

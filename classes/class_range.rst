@@ -21,15 +21,11 @@ Abstract base class for range-based controls.
 Member Functions
 ----------------
 
-+----------------------------+-------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_as_ratio<class_Range_get_as_ratio>` **(** **)** const                           |
-+----------------------------+-------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_as_ratio<class_Range_set_as_ratio>` **(** :ref:`float<class_float>` value **)** |
-+----------------------------+-------------------------------------------------------------------------------------------+
-| void                       | :ref:`share<class_Range_share>` **(** :ref:`Node<class_node>` with **)**                  |
-+----------------------------+-------------------------------------------------------------------------------------------+
-| void                       | :ref:`unshare<class_Range_unshare>` **(** **)**                                           |
-+----------------------------+-------------------------------------------------------------------------------------------+
++-------+--------------------------------------------------------------------------+
+| void  | :ref:`share<class_Range_share>` **(** :ref:`Node<class_node>` with **)** |
++-------+--------------------------------------------------------------------------+
+| void  | :ref:`unshare<class_Range_unshare>` **(** **)**                          |
++-------+--------------------------------------------------------------------------+
 
 Signals
 -------
@@ -66,6 +62,10 @@ Member Variables
 
 - :ref:`float<class_float>` **page** - Page size. Used mainly for :ref:`ScrollBar<class_scrollbar>`. ScrollBar's length is its size multiplied by ``page`` over the difference between ``min_value`` and ``max_value``.
 
+  .. _class_Range_ratio:
+
+- :ref:`float<class_float>` **ratio** - The value mapped between 0 and 1.
+
   .. _class_Range_rounded:
 
 - :ref:`bool<class_bool>` **rounded** - If ``true``, ``value`` will always be rounded to the nearest integer.
@@ -86,18 +86,6 @@ Range is a base class for :ref:`Control<class_control>` nodes that change a floa
 
 Member Function Description
 ---------------------------
-
-.. _class_Range_get_as_ratio:
-
-- :ref:`float<class_float>` **get_as_ratio** **(** **)** const
-
-Return value mapped to 0 to 1 range.
-
-.. _class_Range_set_as_ratio:
-
-- void **set_as_ratio** **(** :ref:`float<class_float>` value **)**
-
-Set value mapped to 0 to 1 (unit) range, it will then be converted to the actual value within min and max.
 
 .. _class_Range_share:
 

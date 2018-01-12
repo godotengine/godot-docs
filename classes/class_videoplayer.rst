@@ -19,29 +19,17 @@ Control to play video files.
 Member Functions
 ----------------
 
-+--------------------------------+------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_buffering_msec<class_VideoPlayer_get_buffering_msec>` **(** **)** const                                |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`    | :ref:`get_stream_name<class_VideoPlayer_get_stream_name>` **(** **)** const                                      |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_stream_position<class_VideoPlayer_get_stream_position>` **(** **)** const                              |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_texture>`  | :ref:`get_video_texture<class_VideoPlayer_get_video_texture>` **(** **)**                                        |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_volume<class_VideoPlayer_get_volume>` **(** **)** const                                                |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_playing<class_VideoPlayer_is_playing>` **(** **)** const                                                |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`play<class_VideoPlayer_play>` **(** **)**                                                                  |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_buffering_msec<class_VideoPlayer_set_buffering_msec>` **(** :ref:`int<class_int>` msec **)**           |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_stream_position<class_VideoPlayer_set_stream_position>` **(** :ref:`float<class_float>` position **)** |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_volume<class_VideoPlayer_set_volume>` **(** :ref:`float<class_float>` volume **)**                     |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`stop<class_VideoPlayer_stop>` **(** **)**                                                                  |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------+
++--------------------------------+-----------------------------------------------------------------------------+
+| :ref:`String<class_string>`    | :ref:`get_stream_name<class_VideoPlayer_get_stream_name>` **(** **)** const |
++--------------------------------+-----------------------------------------------------------------------------+
+| :ref:`Texture<class_texture>`  | :ref:`get_video_texture<class_VideoPlayer_get_video_texture>` **(** **)**   |
++--------------------------------+-----------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`        | :ref:`is_playing<class_VideoPlayer_is_playing>` **(** **)** const           |
++--------------------------------+-----------------------------------------------------------------------------+
+| void                           | :ref:`play<class_VideoPlayer_play>` **(** **)**                             |
++--------------------------------+-----------------------------------------------------------------------------+
+| void                           | :ref:`stop<class_VideoPlayer_stop>` **(** **)**                             |
++--------------------------------+-----------------------------------------------------------------------------+
 
 Member Variables
 ----------------
@@ -53,6 +41,10 @@ Member Variables
   .. _class_VideoPlayer_autoplay:
 
 - :ref:`bool<class_bool>` **autoplay**
+
+  .. _class_VideoPlayer_buffering_msec:
+
+- :ref:`int<class_int>` **buffering_msec** - The amount of milliseconds to store in buffer while playing.
 
   .. _class_VideoPlayer_bus:
 
@@ -70,6 +62,14 @@ Member Variables
 
 - :ref:`VideoStream<class_videostream>` **stream**
 
+  .. _class_VideoPlayer_stream_position:
+
+- :ref:`float<class_float>` **stream_position** - The current position of the stream, in seconds.
+
+  .. _class_VideoPlayer_volume:
+
+- :ref:`float<class_float>` **volume** - The volume of the audio track as a linear value.
+
   .. _class_VideoPlayer_volume_db:
 
 - :ref:`float<class_float>` **volume_db**
@@ -83,35 +83,17 @@ This control has the ability to play video streams. The only format accepted is 
 Member Function Description
 ---------------------------
 
-.. _class_VideoPlayer_get_buffering_msec:
-
-- :ref:`int<class_int>` **get_buffering_msec** **(** **)** const
-
-Get the amount of milliseconds to store in buffer while playing.
-
 .. _class_VideoPlayer_get_stream_name:
 
 - :ref:`String<class_string>` **get_stream_name** **(** **)** const
 
 Get the name of the video stream.
 
-.. _class_VideoPlayer_get_stream_position:
-
-- :ref:`float<class_float>` **get_stream_position** **(** **)** const
-
-Get the current position of the stream, in seconds.
-
 .. _class_VideoPlayer_get_video_texture:
 
 - :ref:`Texture<class_texture>` **get_video_texture** **(** **)**
 
 Get the current frame of the video as a :ref:`Texture<class_texture>`.
-
-.. _class_VideoPlayer_get_volume:
-
-- :ref:`float<class_float>` **get_volume** **(** **)** const
-
-Get the volume of the audio track as a linear value.
 
 .. _class_VideoPlayer_is_playing:
 
@@ -124,24 +106,6 @@ Get whether or not the video is playing.
 - void **play** **(** **)**
 
 Start the video playback.
-
-.. _class_VideoPlayer_set_buffering_msec:
-
-- void **set_buffering_msec** **(** :ref:`int<class_int>` msec **)**
-
-Set the amount of milliseconds to buffer during playback.
-
-.. _class_VideoPlayer_set_stream_position:
-
-- void **set_stream_position** **(** :ref:`float<class_float>` position **)**
-
-Set the current position of the stream, in seconds.
-
-.. _class_VideoPlayer_set_volume:
-
-- void **set_volume** **(** :ref:`float<class_float>` volume **)**
-
-Set the audio volume as a linear value.
 
 .. _class_VideoPlayer_stop:
 

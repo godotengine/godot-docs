@@ -16,15 +16,6 @@ Brief Description
 
 
 
-Member Functions
-----------------
-
-+----------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_time_left<class_SceneTreeTimer_get_time_left>` **(** **)** const                          |
-+----------------------------+-----------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_time_left<class_SceneTreeTimer_set_time_left>` **(** :ref:`float<class_float>` time **)** |
-+----------------------------+-----------------------------------------------------------------------------------------------------+
-
 Signals
 -------
 
@@ -33,15 +24,11 @@ Signals
 - **timeout** **(** **)**
 
 
-Member Function Description
----------------------------
+Member Variables
+----------------
 
-.. _class_SceneTreeTimer_get_time_left:
+  .. _class_SceneTreeTimer_time_left:
 
-- :ref:`float<class_float>` **get_time_left** **(** **)** const
-
-.. _class_SceneTreeTimer_set_time_left:
-
-- void **set_time_left** **(** :ref:`float<class_float>` time **)**
+- :ref:`float<class_float>` **time_left**
 
 

@@ -30,23 +30,11 @@ Member Functions
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                | :ref:`get_line_count<class_RichTextLabel_get_line_count>` **(** **)** const                                                                                                       |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                | :ref:`get_tab_size<class_RichTextLabel_get_tab_size>` **(** **)** const                                                                                                           |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`          | :ref:`get_text<class_RichTextLabel_get_text>` **(** **)**                                                                                                                         |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                | :ref:`get_total_character_count<class_RichTextLabel_get_total_character_count>` **(** **)** const                                                                                 |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`VScrollBar<class_vscrollbar>`  | :ref:`get_v_scroll<class_RichTextLabel_get_v_scroll>` **(** **)**                                                                                                                 |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                | :ref:`get_visible_line_count<class_RichTextLabel_get_visible_line_count>` **(** **)** const                                                                                       |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`              | :ref:`is_meta_underlined<class_RichTextLabel_is_meta_underlined>` **(** **)** const                                                                                               |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`              | :ref:`is_scroll_active<class_RichTextLabel_is_scroll_active>` **(** **)** const                                                                                                   |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`              | :ref:`is_scroll_following<class_RichTextLabel_is_scroll_following>` **(** **)** const                                                                                             |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`              | :ref:`is_selection_enabled<class_RichTextLabel_is_selection_enabled>` **(** **)** const                                                                                           |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                 | :ref:`newline<class_RichTextLabel_newline>` **(** **)**                                                                                                                           |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -76,19 +64,7 @@ Member Functions
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                 | :ref:`scroll_to_line<class_RichTextLabel_scroll_to_line>` **(** :ref:`int<class_int>` line **)**                                                                                  |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                 | :ref:`set_meta_underline<class_RichTextLabel_set_meta_underline>` **(** :ref:`bool<class_bool>` enable **)**                                                                      |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                 | :ref:`set_scroll_active<class_RichTextLabel_set_scroll_active>` **(** :ref:`bool<class_bool>` active **)**                                                                        |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                 | :ref:`set_scroll_follow<class_RichTextLabel_set_scroll_follow>` **(** :ref:`bool<class_bool>` follow **)**                                                                        |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                 | :ref:`set_selection_enabled<class_RichTextLabel_set_selection_enabled>` **(** :ref:`bool<class_bool>` enabled **)**                                                               |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                 | :ref:`set_tab_size<class_RichTextLabel_set_tab_size>` **(** :ref:`int<class_int>` spaces **)**                                                                                    |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                 | :ref:`set_table_column_expand<class_RichTextLabel_set_table_column_expand>` **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` expand, :ref:`int<class_int>` ratio **)** |
-+--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                 | :ref:`set_text<class_RichTextLabel_set_text>` **(** :ref:`String<class_string>` text **)**                                                                                        |
 +--------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
@@ -124,6 +100,10 @@ Member Variables
 
 - :ref:`String<class_string>` **bbcode_text** - The label's text in BBCode format. Is not representative of manual modifications to the internal tag stack. Erases changes made by other methods when edited.
 
+  .. _class_RichTextLabel_meta_underlined:
+
+- :ref:`bool<class_bool>` **meta_underlined** - If ``true``, the label underlines meta tags such as url{text}. Default value: ``true``.
+
   .. _class_RichTextLabel_override_selected_font_color:
 
 - :ref:`bool<class_bool>` **override_selected_font_color** - If ``true`` the label uses the custom font color. Default value: ``false``.
@@ -131,6 +111,28 @@ Member Variables
   .. _class_RichTextLabel_percent_visible:
 
 - :ref:`float<class_float>` **percent_visible** - The text's visibility, as a :ref:`float<class_float>` between 0.0 and 1.0.
+
+  .. _class_RichTextLabel_scroll_active:
+
+- :ref:`bool<class_bool>` **scroll_active** - If ``true``, the scrollbar is visible. Does not block scrolling completely. See :ref:`scroll_to_line<class_RichTextLabel_scroll_to_line>`. Default value: ``true``.
+
+  .. _class_RichTextLabel_scroll_following:
+
+- :ref:`bool<class_bool>` **scroll_following** - If ``true``, the window scrolls down to display new content automatically. Default value: ``false``.
+
+  .. _class_RichTextLabel_selection_enabled:
+
+- :ref:`bool<class_bool>` **selection_enabled** - If ``true``, the label allows text selection.
+
+  .. _class_RichTextLabel_tab_size:
+
+- :ref:`int<class_int>` **tab_size** - The number of spaces associated with a single tab length. Does not affect "\t" in text tags, only indent tags.
+
+  .. _class_RichTextLabel_text:
+
+- :ref:`String<class_string>` **text** - The raw text of the label.
+
+When set, clears the tag stack and adds a raw text tag to the top of it. Does not parse bbcodes. Does not modify :ref:`bbcode_text<class_RichTextLabel_bbcode_text>`.
 
   .. _class_RichTextLabel_visible_characters:
 
@@ -215,18 +217,6 @@ Clears the tag stack and sets :ref:`bbcode_text<class_RichTextLabel_bbcode_text>
 
 Returns the total number of newlines in the tag stack's text tags. Considers wrapped text as one line.
 
-.. _class_RichTextLabel_get_tab_size:
-
-- :ref:`int<class_int>` **get_tab_size** **(** **)** const
-
-Returns the number of spaces associated with a single tab length. Does not affect "\t" in text tags, only indent tags.
-
-.. _class_RichTextLabel_get_text:
-
-- :ref:`String<class_string>` **get_text** **(** **)**
-
-Returns the raw content of :ref:`bbcode_text<class_RichTextLabel_bbcode_text>`.
-
 .. _class_RichTextLabel_get_total_character_count:
 
 - :ref:`int<class_int>` **get_total_character_count** **(** **)** const
@@ -244,30 +234,6 @@ Returns the vertical scrollbar.
 - :ref:`int<class_int>` **get_visible_line_count** **(** **)** const
 
 Returns the number of visible lines.
-
-.. _class_RichTextLabel_is_meta_underlined:
-
-- :ref:`bool<class_bool>` **is_meta_underlined** **(** **)** const
-
-Returns ``true`` if the label underlines meta tags such as url{text}.
-
-.. _class_RichTextLabel_is_scroll_active:
-
-- :ref:`bool<class_bool>` **is_scroll_active** **(** **)** const
-
-Returns ``true`` if the scrollbar is visible. Does not block scrolling completely. See :ref:`scroll_to_line<class_RichTextLabel_scroll_to_line>`.
-
-.. _class_RichTextLabel_is_scroll_following:
-
-- :ref:`bool<class_bool>` **is_scroll_following** **(** **)** const
-
-Returns ``true`` if the window scrolls down to display new content automatically.
-
-.. _class_RichTextLabel_is_selection_enabled:
-
-- :ref:`bool<class_bool>` **is_selection_enabled** **(** **)** const
-
-Returns ``true`` if the label allows text selection.
 
 .. _class_RichTextLabel_newline:
 
@@ -353,36 +319,6 @@ Removes a line of content from the label. Returns ``true`` if the line exists.
 
 Scrolls the window's top line to match ``line``.
 
-.. _class_RichTextLabel_set_meta_underline:
-
-- void **set_meta_underline** **(** :ref:`bool<class_bool>` enable **)**
-
-If ``true`` will underline meta tags such as the url bbcode. Default value: ``true``.
-
-.. _class_RichTextLabel_set_scroll_active:
-
-- void **set_scroll_active** **(** :ref:`bool<class_bool>` active **)**
-
-If ``false`` the vertical scrollbar is hidden. Default value: ``true``.
-
-.. _class_RichTextLabel_set_scroll_follow:
-
-- void **set_scroll_follow** **(** :ref:`bool<class_bool>` follow **)**
-
-If ``true`` the window scrolls to reveal new content. Default value: ``false``.
-
-.. _class_RichTextLabel_set_selection_enabled:
-
-- void **set_selection_enabled** **(** :ref:`bool<class_bool>` enabled **)**
-
-If ``true`` text can be selected.
-
-.. _class_RichTextLabel_set_tab_size:
-
-- void **set_tab_size** **(** :ref:`int<class_int>` spaces **)**
-
-Sets the current tab length in spaces. Use with :ref:`push_indent<class_RichTextLabel_push_indent>` to redefine indent length.
-
 .. _class_RichTextLabel_set_table_column_expand:
 
 - void **set_table_column_expand** **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` expand, :ref:`int<class_int>` ratio **)**
@@ -392,11 +328,5 @@ Edits the selected columns expansion options. If ``expand`` is ``true``, the col
 For example, 2 columns with ratios 3 and 4 plus 70 pixels in available width would expand 30 and 40 pixels, respectively.
 
 Columns with a ``false`` expand will not contribute to the total ratio.
-
-.. _class_RichTextLabel_set_text:
-
-- void **set_text** **(** :ref:`String<class_string>` text **)**
-
-Clears the tag stack and adds a raw text tag to the top of it. Does not parse bbcodes. Does not modify :ref:`bbcode_text<class_RichTextLabel_bbcode_text>`.
 
 

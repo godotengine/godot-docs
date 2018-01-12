@@ -22,8 +22,6 @@ Member Functions
 ----------------
 
 +--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                          | :ref:`get_angular_velocity<class_Physics2DDirectBodyState_get_angular_velocity>` **(** **)** const                                                                             |
-+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`RID<class_rid>`                                              | :ref:`get_contact_collider<class_Physics2DDirectBodyState_get_contact_collider>` **(** :ref:`int<class_int>` contact_idx **)** const                                           |
 +--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                              | :ref:`get_contact_collider_id<class_Physics2DDirectBodyState_get_contact_collider_id>` **(** :ref:`int<class_int>` contact_idx **)** const                                     |
@@ -46,36 +44,54 @@ Member Functions
 +--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                              | :ref:`get_contact_local_shape<class_Physics2DDirectBodyState_get_contact_local_shape>` **(** :ref:`int<class_int>` contact_idx **)** const                                     |
 +--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                          | :ref:`get_inverse_inertia<class_Physics2DDirectBodyState_get_inverse_inertia>` **(** **)** const                                                                               |
-+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                          | :ref:`get_inverse_mass<class_Physics2DDirectBodyState_get_inverse_mass>` **(** **)** const                                                                                     |
-+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`                                      | :ref:`get_linear_velocity<class_Physics2DDirectBodyState_get_linear_velocity>` **(** **)** const                                                                               |
-+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Physics2DDirectSpaceState<class_physics2ddirectspacestate>`  | :ref:`get_space_state<class_Physics2DDirectBodyState_get_space_state>` **(** **)**                                                                                             |
-+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                          | :ref:`get_step<class_Physics2DDirectBodyState_get_step>` **(** **)** const                                                                                                     |
-+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                          | :ref:`get_total_angular_damp<class_Physics2DDirectBodyState_get_total_angular_damp>` **(** **)** const                                                                         |
-+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`                                      | :ref:`get_total_gravity<class_Physics2DDirectBodyState_get_total_gravity>` **(** **)** const                                                                                   |
-+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                          | :ref:`get_total_linear_damp<class_Physics2DDirectBodyState_get_total_linear_damp>` **(** **)** const                                                                           |
-+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`                              | :ref:`get_transform<class_Physics2DDirectBodyState_get_transform>` **(** **)** const                                                                                           |
 +--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                               | :ref:`integrate_forces<class_Physics2DDirectBodyState_integrate_forces>` **(** **)**                                                                                           |
 +--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                            | :ref:`is_sleeping<class_Physics2DDirectBodyState_is_sleeping>` **(** **)** const                                                                                               |
-+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                               | :ref:`set_angular_velocity<class_Physics2DDirectBodyState_set_angular_velocity>` **(** :ref:`float<class_float>` velocity **)**                                                |
-+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                               | :ref:`set_linear_velocity<class_Physics2DDirectBodyState_set_linear_velocity>` **(** :ref:`Vector2<class_vector2>` velocity **)**                                              |
-+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                               | :ref:`set_sleep_state<class_Physics2DDirectBodyState_set_sleep_state>` **(** :ref:`bool<class_bool>` enabled **)**                                                             |
-+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                               | :ref:`set_transform<class_Physics2DDirectBodyState_set_transform>` **(** :ref:`Transform2D<class_transform2d>` transform **)**                                                 |
-+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+  .. _class_Physics2DDirectBodyState_angular_velocity:
+
+- :ref:`float<class_float>` **angular_velocity** - The angular velocity of the body.
+
+  .. _class_Physics2DDirectBodyState_inverse_inertia:
+
+- :ref:`float<class_float>` **inverse_inertia** - The inverse of the inertia of the body.
+
+  .. _class_Physics2DDirectBodyState_inverse_mass:
+
+- :ref:`float<class_float>` **inverse_mass** - The inverse of the mass of the body.
+
+  .. _class_Physics2DDirectBodyState_linear_velocity:
+
+- :ref:`Vector2<class_vector2>` **linear_velocity** - The linear velocity of the body.
+
+  .. _class_Physics2DDirectBodyState_sleeping:
+
+- :ref:`bool<class_bool>` **sleeping** - ``true`` if this body is currently sleeping (not active).
+
+  .. _class_Physics2DDirectBodyState_step:
+
+- :ref:`float<class_float>` **step** - The timestep (delta) used for the simulation.
+
+  .. _class_Physics2DDirectBodyState_total_angular_damp:
+
+- :ref:`float<class_float>` **total_angular_damp** - The rate at which the body stops rotating, if there are not any other forces moving it.
+
+  .. _class_Physics2DDirectBodyState_total_gravity:
+
+- :ref:`Vector2<class_vector2>` **total_gravity** - The total gravity vector being currently applied to this body.
+
+  .. _class_Physics2DDirectBodyState_total_linear_damp:
+
+- :ref:`float<class_float>` **total_linear_damp** - The rate at which the body stops moving, if there are not any other forces moving it.
+
+  .. _class_Physics2DDirectBodyState_transform:
+
+- :ref:`Transform2D<class_transform2d>` **transform** - The transformation matrix of the body.
+
 
 Description
 -----------
@@ -84,12 +100,6 @@ Direct access object to a physics body in the :ref:`Physics2DServer<class_physic
 
 Member Function Description
 ---------------------------
-
-.. _class_Physics2DDirectBodyState_get_angular_velocity:
-
-- :ref:`float<class_float>` **get_angular_velocity** **(** **)** const
-
-Return the angular velocity of the body.
 
 .. _class_Physics2DDirectBodyState_get_contact_collider:
 
@@ -157,94 +167,16 @@ Return the local position (of this body) of the contact point.
 
 Return the local shape index of the collision.
 
-.. _class_Physics2DDirectBodyState_get_inverse_inertia:
-
-- :ref:`float<class_float>` **get_inverse_inertia** **(** **)** const
-
-Return the inverse of the inertia of the body.
-
-.. _class_Physics2DDirectBodyState_get_inverse_mass:
-
-- :ref:`float<class_float>` **get_inverse_mass** **(** **)** const
-
-Return the inverse of the mass of the body.
-
-.. _class_Physics2DDirectBodyState_get_linear_velocity:
-
-- :ref:`Vector2<class_vector2>` **get_linear_velocity** **(** **)** const
-
-Return the current linear velocity of the body.
-
 .. _class_Physics2DDirectBodyState_get_space_state:
 
 - :ref:`Physics2DDirectSpaceState<class_physics2ddirectspacestate>` **get_space_state** **(** **)**
 
 Return the current state of space, useful for queries.
 
-.. _class_Physics2DDirectBodyState_get_step:
-
-- :ref:`float<class_float>` **get_step** **(** **)** const
-
-Return the timestep (delta) used for the simulation.
-
-.. _class_Physics2DDirectBodyState_get_total_angular_damp:
-
-- :ref:`float<class_float>` **get_total_angular_damp** **(** **)** const
-
-Return the rate at which the body stops rotating, if there are not any other forces moving it.
-
-.. _class_Physics2DDirectBodyState_get_total_gravity:
-
-- :ref:`Vector2<class_vector2>` **get_total_gravity** **(** **)** const
-
-Return the total gravity vector being currently applied to this body.
-
-.. _class_Physics2DDirectBodyState_get_total_linear_damp:
-
-- :ref:`float<class_float>` **get_total_linear_damp** **(** **)** const
-
-Return the rate at which the body stops moving, if there are not any other forces moving it.
-
-.. _class_Physics2DDirectBodyState_get_transform:
-
-- :ref:`Transform2D<class_transform2d>` **get_transform** **(** **)** const
-
-Return the transform matrix of the body.
-
 .. _class_Physics2DDirectBodyState_integrate_forces:
 
 - void **integrate_forces** **(** **)**
 
 Call the built-in force integration code.
-
-.. _class_Physics2DDirectBodyState_is_sleeping:
-
-- :ref:`bool<class_bool>` **is_sleeping** **(** **)** const
-
-Return true if this body is currently sleeping (not active).
-
-.. _class_Physics2DDirectBodyState_set_angular_velocity:
-
-- void **set_angular_velocity** **(** :ref:`float<class_float>` velocity **)**
-
-Change the angular velocity of the body.
-
-.. _class_Physics2DDirectBodyState_set_linear_velocity:
-
-- void **set_linear_velocity** **(** :ref:`Vector2<class_vector2>` velocity **)**
-
-Change the linear velocity of the body.
-
-.. _class_Physics2DDirectBodyState_set_sleep_state:
-
-- void **set_sleep_state** **(** :ref:`bool<class_bool>` enabled **)**
-
-Set the sleeping state of the body, only affects character/rigid bodies.
-
-.. _class_Physics2DDirectBodyState_set_transform:
-
-- void **set_transform** **(** :ref:`Transform2D<class_transform2d>` transform **)**
-
-Change the transform matrix of the body.
 
 

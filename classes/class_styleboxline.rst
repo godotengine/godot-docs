@@ -16,21 +16,16 @@ Brief Description
 
 
 
-Member Functions
-----------------
-
-+----------------------------+-----------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_grow<class_StyleBoxLine_get_grow>` **(** **)** const                          |
-+----------------------------+-----------------------------------------------------------------------------------------+
-| void                       | :ref:`set_grow<class_StyleBoxLine_set_grow>` **(** :ref:`float<class_float>` grow **)** |
-+----------------------------+-----------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
   .. _class_StyleBoxLine_color:
 
 - :ref:`Color<class_color>` **color**
+
+  .. _class_StyleBoxLine_grow:
+
+- :ref:`float<class_float>` **grow**
 
   .. _class_StyleBoxLine_thickness:
 
@@ -39,17 +34,5 @@ Member Variables
   .. _class_StyleBoxLine_vertical:
 
 - :ref:`bool<class_bool>` **vertical**
-
-
-Member Function Description
----------------------------
-
-.. _class_StyleBoxLine_get_grow:
-
-- :ref:`float<class_float>` **get_grow** **(** **)** const
-
-.. _class_StyleBoxLine_set_grow:
-
-- void **set_grow** **(** :ref:`float<class_float>` grow **)**
 
 

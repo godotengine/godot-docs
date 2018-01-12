@@ -56,19 +56,13 @@ Member Functions
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`            | :ref:`get_cursor_shape<class_Control_get_cursor_shape>` **(** :ref:`Vector2<class_vector2>` position=Vector2( 0, 0 ) **)** const                                                                                                   |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_default_cursor_shape<class_Control_get_default_cursor_shape>` **(** **)** const                                                                                                                                          |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_object>`      | :ref:`get_drag_data<class_Control_get_drag_data>` **(** :ref:`Vector2<class_vector2>` position **)** virtual                                                                                                                       |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`    | :ref:`get_end<class_Control_get_end>` **(** **)** const                                                                                                                                                                            |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_focus_mode<class_Control_get_focus_mode>` **(** **)** const                                                                                                                                                              |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Control<class_control>`    | :ref:`get_focus_owner<class_Control_get_focus_owner>` **(** **)** const                                                                                                                                                            |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Font<class_font>`          | :ref:`get_font<class_Control_get_font>` **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type="" **)** const                                                                                                    |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`    | :ref:`get_global_position<class_Control_get_global_position>` **(** **)** const                                                                                                                                                    |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Rect2<class_rect2>`        | :ref:`get_global_rect<class_Control_get_global_rect>` **(** **)** const                                                                                                                                                            |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -130,17 +124,11 @@ Member Functions
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_begin<class_Control_set_begin>` **(** :ref:`Vector2<class_vector2>` position **)**                                                                                                                                       |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_default_cursor_shape<class_Control_set_default_cursor_shape>` **(** :ref:`int<class_int>` shape **)**                                                                                                                    |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_drag_forwarding<class_Control_set_drag_forwarding>` **(** :ref:`Control<class_control>` target **)**                                                                                                                     |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_drag_preview<class_Control_set_drag_preview>` **(** :ref:`Control<class_control>` control **)**                                                                                                                          |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_end<class_Control_set_end>` **(** :ref:`Vector2<class_vector2>` position **)**                                                                                                                                           |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_focus_mode<class_Control_set_focus_mode>` **(** :ref:`int<class_int>` mode **)**                                                                                                                                         |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_global_position<class_Control_set_global_position>` **(** :ref:`Vector2<class_vector2>` position **)**                                                                                                                   |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`set_margins_preset<class_Control_set_margins_preset>` **(** :ref:`int<class_int>` preset, :ref:`int<class_int>` resize_mode=0, :ref:`int<class_int>` margin=0 **)**                                                          |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -228,6 +216,10 @@ Member Variables
 
 - :ref:`float<class_float>` **anchor_top** - Anchors the top edge of the node to the origin, the center or the end of its parent container. It changes how the top margin updates when the node moves or changes size. Use one of the ``ANCHOR\_\*`` constants. Default value: ``ANCHOR_BEGIN``.
 
+  .. _class_Control_focus_mode:
+
+- :ref:`FocusMode<enum_control_focusmode>` **focus_mode** - The focus access mode for the control (None, Click or All). Only one Control can be focused at the same time, and it will receive keyboard signals.
+
   .. _class_Control_focus_neighbour_bottom:
 
 - :ref:`NodePath<class_nodepath>` **focus_neighbour_bottom** - Tells Godot which node it should give keyboard focus to if the user presses Tab, the down arrow on the keyboard, or down on a gamepad. The node must be a ``Control``. If this property is not set, Godot will give focus to the closest ``Control`` to the bottom of this one.
@@ -284,6 +276,10 @@ Margins are often controlled by one or multiple parent :ref:`Container<class_con
 
 - :ref:`float<class_float>` **margin_top** - Distance between the node's top edge and its parent container, based on :ref:`anchor_top<class_Control_anchor_top>`.
 
+  .. _class_Control_mouse_default_cursor_shape:
+
+- :ref:`CursorShape<enum_control_cursorshape>` **mouse_default_cursor_shape** - The default cursor shape for this control. Useful for Godot plugins and applications or games that use the system's mouse cursors.
+
   .. _class_Control_mouse_filter:
 
 - :ref:`MouseFilter<enum_control_mousefilter>` **mouse_filter** - Controls whether the control will be able to receive mouse button input events through :ref:`_gui_input<class_Control__gui_input>` and how these events should be handled. Use one of the ``MOUSE_FILTER\_\*`` constants. See the constants to learn what each does.
@@ -291,6 +287,10 @@ Margins are often controlled by one or multiple parent :ref:`Container<class_con
   .. _class_Control_rect_clip_content:
 
 - :ref:`bool<class_bool>` **rect_clip_content**
+
+  .. _class_Control_rect_global_position:
+
+- :ref:`Vector2<class_vector2>` **rect_global_position** - The node's global position, relative to the world (usually to the top-left corner of the window).
 
   .. _class_Control_rect_min_size:
 
@@ -550,12 +550,6 @@ Overrides the ``name`` Stylebox in the theme resource the node uses. If ``styleb
 
 Returns the mouse cursor shape the control displays on mouse hover, one of the ``CURSOR\_\*`` constants.
 
-.. _class_Control_get_default_cursor_shape:
-
-- :ref:`int<class_int>` **get_default_cursor_shape** **(** **)** const
-
-Returns the default cursor shape for this control. See enum ``CURSOR\_\*`` for the list of shapes.
-
 .. _class_Control_get_drag_data:
 
 - :ref:`Object<class_object>` **get_drag_data** **(** :ref:`Vector2<class_vector2>` position **)** virtual
@@ -566,12 +560,6 @@ Returns the default cursor shape for this control. See enum ``CURSOR\_\*`` for t
 
 Returns MARGIN_LEFT and MARGIN_TOP at the same time. This is a helper (see :ref:`set_margin<class_Control_set_margin>`).
 
-.. _class_Control_get_focus_mode:
-
-- :ref:`int<class_int>` **get_focus_mode** **(** **)** const
-
-Returns the focus access mode for the control (FOCUS_NONE, FOCUS_CLICK, FOCUS_ALL) (see :ref:`set_focus_mode<class_Control_set_focus_mode>`).
-
 .. _class_Control_get_focus_owner:
 
 - :ref:`Control<class_control>` **get_focus_owner** **(** **)** const
@@ -581,12 +569,6 @@ Return which control is owning the keyboard focus, or null if no one.
 .. _class_Control_get_font:
 
 - :ref:`Font<class_font>` **get_font** **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type="" **)** const
-
-.. _class_Control_get_global_position:
-
-- :ref:`Vector2<class_vector2>` **get_global_position** **(** **)** const
-
-Returns the Control position, relative to the top-left corner of the parent Control and independent of the anchor mode.
 
 .. _class_Control_get_global_rect:
 
@@ -726,12 +708,6 @@ Give up the focus, no other control will be able to receive keyboard input.
 
 Sets MARGIN_LEFT and MARGIN_TOP at the same time. This is a helper (see :ref:`set_margin<class_Control_set_margin>`).
 
-.. _class_Control_set_default_cursor_shape:
-
-- void **set_default_cursor_shape** **(** :ref:`int<class_int>` shape **)**
-
-Sets the default cursor shape for this control. See ``CURSOR\_\*`` for the list of available cursor shapes. Useful for Godot plugins and applications or games that use the system's mouse cursors.
-
 .. _class_Control_set_drag_forwarding:
 
 - void **set_drag_forwarding** **(** :ref:`Control<class_control>` target **)**
@@ -745,18 +721,6 @@ Sets the default cursor shape for this control. See ``CURSOR\_\*`` for the list 
 - void **set_end** **(** :ref:`Vector2<class_vector2>` position **)**
 
 Sets MARGIN_RIGHT and MARGIN_BOTTOM at the same time. This is a helper (see :ref:`set_margin<class_Control_set_margin>`).
-
-.. _class_Control_set_focus_mode:
-
-- void **set_focus_mode** **(** :ref:`int<class_int>` mode **)**
-
-Set the focus access mode for the control (FOCUS_NONE, FOCUS_CLICK, FOCUS_ALL). Only one Control can be focused at the same time, and it will receive keyboard signals.
-
-.. _class_Control_set_global_position:
-
-- void **set_global_position** **(** :ref:`Vector2<class_vector2>` position **)**
-
-Move the Control to a new position, relative to the top-left corner of the *window* Control, and without changing current anchor mode. (see :ref:`set_margin<class_Control_set_margin>`).
 
 .. _class_Control_set_margins_preset:
 

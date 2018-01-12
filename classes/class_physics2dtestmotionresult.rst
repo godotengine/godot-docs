@@ -16,66 +16,43 @@ Brief Description
 
 
 
-Member Functions
+Member Variables
 ----------------
 
-+--------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`    | :ref:`get_collider<class_Physics2DTestMotionResult_get_collider>` **(** **)** const                   |
-+--------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_collider_id<class_Physics2DTestMotionResult_get_collider_id>` **(** **)** const             |
-+--------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`          | :ref:`get_collider_rid<class_Physics2DTestMotionResult_get_collider_rid>` **(** **)** const           |
-+--------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_collider_shape<class_Physics2DTestMotionResult_get_collider_shape>` **(** **)** const       |
-+--------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_collider_velocity<class_Physics2DTestMotionResult_get_collider_velocity>` **(** **)** const |
-+--------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_collision_normal<class_Physics2DTestMotionResult_get_collision_normal>` **(** **)** const   |
-+--------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_collision_point<class_Physics2DTestMotionResult_get_collision_point>` **(** **)** const     |
-+--------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_motion<class_Physics2DTestMotionResult_get_motion>` **(** **)** const                       |
-+--------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_motion_remainder<class_Physics2DTestMotionResult_get_motion_remainder>` **(** **)** const   |
-+--------------------------------+-------------------------------------------------------------------------------------------------------+
+  .. _class_Physics2DTestMotionResult_collider:
 
-Member Function Description
----------------------------
+- :ref:`Object<class_object>` **collider**
 
-.. _class_Physics2DTestMotionResult_get_collider:
+  .. _class_Physics2DTestMotionResult_collider_id:
 
-- :ref:`Object<class_object>` **get_collider** **(** **)** const
+- :ref:`int<class_int>` **collider_id**
 
-.. _class_Physics2DTestMotionResult_get_collider_id:
+  .. _class_Physics2DTestMotionResult_collider_rid:
 
-- :ref:`int<class_int>` **get_collider_id** **(** **)** const
+- :ref:`RID<class_rid>` **collider_rid**
 
-.. _class_Physics2DTestMotionResult_get_collider_rid:
+  .. _class_Physics2DTestMotionResult_collider_shape:
 
-- :ref:`RID<class_rid>` **get_collider_rid** **(** **)** const
+- :ref:`int<class_int>` **collider_shape**
 
-.. _class_Physics2DTestMotionResult_get_collider_shape:
+  .. _class_Physics2DTestMotionResult_collider_velocity:
 
-- :ref:`int<class_int>` **get_collider_shape** **(** **)** const
+- :ref:`Vector2<class_vector2>` **collider_velocity**
 
-.. _class_Physics2DTestMotionResult_get_collider_velocity:
+  .. _class_Physics2DTestMotionResult_collision_normal:
 
-- :ref:`Vector2<class_vector2>` **get_collider_velocity** **(** **)** const
+- :ref:`Vector2<class_vector2>` **collision_normal**
 
-.. _class_Physics2DTestMotionResult_get_collision_normal:
+  .. _class_Physics2DTestMotionResult_collision_point:
 
-- :ref:`Vector2<class_vector2>` **get_collision_normal** **(** **)** const
+- :ref:`Vector2<class_vector2>` **collision_point**
 
-.. _class_Physics2DTestMotionResult_get_collision_point:
+  .. _class_Physics2DTestMotionResult_motion:
 
-- :ref:`Vector2<class_vector2>` **get_collision_point** **(** **)** const
+- :ref:`Vector2<class_vector2>` **motion**
 
-.. _class_Physics2DTestMotionResult_get_motion:
+  .. _class_Physics2DTestMotionResult_motion_remainder:
 
-- :ref:`Vector2<class_vector2>` **get_motion** **(** **)** const
-
-.. _class_Physics2DTestMotionResult_get_motion_remainder:
-
-- :ref:`Vector2<class_vector2>` **get_motion_remainder** **(** **)** const
+- :ref:`Vector2<class_vector2>` **motion_remainder**
 
 

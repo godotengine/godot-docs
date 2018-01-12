@@ -19,40 +19,40 @@ Brief Description
 Member Functions
 ----------------
 
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`add_user<class_BakedLightmapData_add_user>` **(** :ref:`NodePath<class_nodepath>` path, :ref:`Texture<class_texture>` lightmap, :ref:`int<class_int>` instance **)** |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`clear_users<class_BakedLightmapData_clear_users>` **(** **)**                                                                                                        |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AABB<class_aabb>`                    | :ref:`get_bounds<class_BakedLightmapData_get_bounds>` **(** **)** const                                                                                                    |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_transform>`          | :ref:`get_cell_space_transform<class_BakedLightmapData_get_cell_space_transform>` **(** **)** const                                                                        |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                      | :ref:`get_cell_subdiv<class_BakedLightmapData_get_cell_subdiv>` **(** **)** const                                                                                          |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_poolbytearray>`  | :ref:`get_octree<class_BakedLightmapData_get_octree>` **(** **)** const                                                                                                    |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                      | :ref:`get_user_count<class_BakedLightmapData_get_user_count>` **(** **)** const                                                                                            |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_texture>`              | :ref:`get_user_lightmap<class_BakedLightmapData_get_user_lightmap>` **(** :ref:`int<class_int>` user_idx **)** const                                                       |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_nodepath>`            | :ref:`get_user_path<class_BakedLightmapData_get_user_path>` **(** :ref:`int<class_int>` user_idx **)** const                                                               |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_bounds<class_BakedLightmapData_set_bounds>` **(** :ref:`AABB<class_aabb>` bounds **)**                                                                           |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_cell_space_transform<class_BakedLightmapData_set_cell_space_transform>` **(** :ref:`Transform<class_transform>` xform **)**                                      |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_cell_subdiv<class_BakedLightmapData_set_cell_subdiv>` **(** :ref:`int<class_int>` cell_subdiv **)**                                                              |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_octree<class_BakedLightmapData_set_octree>` **(** :ref:`PoolByteArray<class_poolbytearray>` octree **)**                                                         |
-+--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`add_user<class_BakedLightmapData_add_user>` **(** :ref:`NodePath<class_nodepath>` path, :ref:`Texture<class_texture>` lightmap, :ref:`int<class_int>` instance **)** |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                             | :ref:`clear_users<class_BakedLightmapData_clear_users>` **(** **)**                                                                                                        |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`get_user_count<class_BakedLightmapData_get_user_count>` **(** **)** const                                                                                            |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_texture>`    | :ref:`get_user_lightmap<class_BakedLightmapData_get_user_lightmap>` **(** :ref:`int<class_int>` user_idx **)** const                                                       |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`NodePath<class_nodepath>`  | :ref:`get_user_path<class_BakedLightmapData_get_user_path>` **(** :ref:`int<class_int>` user_idx **)** const                                                               |
++----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
 ----------------
 
+  .. _class_BakedLightmapData_bounds:
+
+- :ref:`AABB<class_aabb>` **bounds**
+
+  .. _class_BakedLightmapData_cell_space_transform:
+
+- :ref:`Transform<class_transform>` **cell_space_transform**
+
+  .. _class_BakedLightmapData_cell_subdiv:
+
+- :ref:`int<class_int>` **cell_subdiv**
+
   .. _class_BakedLightmapData_energy:
 
 - :ref:`float<class_float>` **energy**
+
+  .. _class_BakedLightmapData_octree:
+
+- :ref:`PoolByteArray<class_poolbytearray>` **octree**
 
 
 Member Function Description
@@ -66,22 +66,6 @@ Member Function Description
 
 - void **clear_users** **(** **)**
 
-.. _class_BakedLightmapData_get_bounds:
-
-- :ref:`AABB<class_aabb>` **get_bounds** **(** **)** const
-
-.. _class_BakedLightmapData_get_cell_space_transform:
-
-- :ref:`Transform<class_transform>` **get_cell_space_transform** **(** **)** const
-
-.. _class_BakedLightmapData_get_cell_subdiv:
-
-- :ref:`int<class_int>` **get_cell_subdiv** **(** **)** const
-
-.. _class_BakedLightmapData_get_octree:
-
-- :ref:`PoolByteArray<class_poolbytearray>` **get_octree** **(** **)** const
-
 .. _class_BakedLightmapData_get_user_count:
 
 - :ref:`int<class_int>` **get_user_count** **(** **)** const
@@ -93,21 +77,5 @@ Member Function Description
 .. _class_BakedLightmapData_get_user_path:
 
 - :ref:`NodePath<class_nodepath>` **get_user_path** **(** :ref:`int<class_int>` user_idx **)** const
-
-.. _class_BakedLightmapData_set_bounds:
-
-- void **set_bounds** **(** :ref:`AABB<class_aabb>` bounds **)**
-
-.. _class_BakedLightmapData_set_cell_space_transform:
-
-- void **set_cell_space_transform** **(** :ref:`Transform<class_transform>` xform **)**
-
-.. _class_BakedLightmapData_set_cell_subdiv:
-
-- void **set_cell_subdiv** **(** :ref:`int<class_int>` cell_subdiv **)**
-
-.. _class_BakedLightmapData_set_octree:
-
-- void **set_octree** **(** :ref:`PoolByteArray<class_poolbytearray>` octree **)**
 
 

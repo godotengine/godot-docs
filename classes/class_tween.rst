@@ -26,8 +26,6 @@ Member Functions
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`  | :ref:`get_runtime<class_Tween_get_runtime>` **(** **)** const                                                                                                                                                                                                                                                                                                                                                           |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_speed_scale<class_Tween_get_speed_scale>` **(** **)** const                                                                                                                                                                                                                                                                                                                                                   |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`    | :ref:`interpolate_callback<class_Tween_interpolate_callback>` **(** :ref:`Object<class_object>` object, :ref:`float<class_float>` duration, :ref:`String<class_string>` callback, :ref:`Variant<class_variant>` arg1=null, :ref:`Variant<class_variant>` arg2=null, :ref:`Variant<class_variant>` arg3=null, :ref:`Variant<class_variant>` arg4=null, :ref:`Variant<class_variant>` arg5=null **)**                     |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`    | :ref:`interpolate_deferred_callback<class_Tween_interpolate_deferred_callback>` **(** :ref:`Object<class_object>` object, :ref:`float<class_float>` duration, :ref:`String<class_string>` callback, :ref:`Variant<class_variant>` arg1=null, :ref:`Variant<class_variant>` arg2=null, :ref:`Variant<class_variant>` arg3=null, :ref:`Variant<class_variant>` arg4=null, :ref:`Variant<class_variant>` arg5=null **)**   |
@@ -37,8 +35,6 @@ Member Functions
 | :ref:`bool<class_bool>`    | :ref:`interpolate_property<class_Tween_interpolate_property>` **(** :ref:`Object<class_object>` object, :ref:`NodePath<class_nodepath>` property, :ref:`Variant<class_variant>` initial_val, :ref:`Variant<class_variant>` final_val, :ref:`float<class_float>` duration, :ref:`int<class_int>` trans_type, :ref:`int<class_int>` ease_type, :ref:`float<class_float>` delay=0 **)**                                    |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`    | :ref:`is_active<class_Tween_is_active>` **(** **)** const                                                                                                                                                                                                                                                                                                                                                               |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`is_repeat<class_Tween_is_repeat>` **(** **)** const                                                                                                                                                                                                                                                                                                                                                               |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`    | :ref:`remove<class_Tween_remove>` **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key="" **)**                                                                                                                                                                                                                                                                                                    |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -55,10 +51,6 @@ Member Functions
 | :ref:`bool<class_bool>`    | :ref:`seek<class_Tween_seek>` **(** :ref:`float<class_float>` time **)**                                                                                                                                                                                                                                                                                                                                                |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`set_active<class_Tween_set_active>` **(** :ref:`bool<class_bool>` active **)**                                                                                                                                                                                                                                                                                                                                    |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_repeat<class_Tween_set_repeat>` **(** :ref:`bool<class_bool>` repeat **)**                                                                                                                                                                                                                                                                                                                                    |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_speed_scale<class_Tween_set_speed_scale>` **(** :ref:`float<class_float>` speed **)**                                                                                                                                                                                                                                                                                                                         |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`    | :ref:`start<class_Tween_start>` **(** **)**                                                                                                                                                                                                                                                                                                                                                                             |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -101,6 +93,14 @@ Member Variables
   .. _class_Tween_playback_process_mode:
 
 - :ref:`TweenProcessMode<enum_tween_tweenprocessmode>` **playback_process_mode**
+
+  .. _class_Tween_playback_speed:
+
+- :ref:`float<class_float>` **playback_speed** - The speed multiplier of the tween. Set it to 1 for normal speed, 2 for two times nromal speed, and 0.5 for half of the normal speed. Setting it to 0 would pause the animation, but you might consider using :ref:`set_active<class_Tween_set_active>` or :ref:`stop_all<class_Tween_stop_all>` and :ref:`resume_all<class_Tween_resume_all>` for this.
+
+  .. _class_Tween_repeat:
+
+- :ref:`bool<class_bool>` **repeat** - If ``true``, the tween will repeat.
 
 
 Enums
@@ -181,12 +181,6 @@ Follow ``property`` of ``object`` and apply it on ``target_property`` of ``targe
 
 Returns the time needed for all tweens to end in seconds, measured from the start. Thus, if you have two tweens, one ending 10 seconds after the start and the other - 20 seconds, it would return 20 seconds, as by that time all tweens would have finished.
 
-.. _class_Tween_get_speed_scale:
-
-- :ref:`float<class_float>` **get_speed_scale** **(** **)** const
-
-Returns the speed that has been set from editor GUI or :ref:`set_repeat<class_Tween_set_repeat>`.
-
 .. _class_Tween_interpolate_callback:
 
 - :ref:`bool<class_bool>` **interpolate_callback** **(** :ref:`Object<class_object>` object, :ref:`float<class_float>` duration, :ref:`String<class_string>` callback, :ref:`Variant<class_variant>` arg1=null, :ref:`Variant<class_variant>` arg2=null, :ref:`Variant<class_variant>` arg3=null, :ref:`Variant<class_variant>` arg4=null, :ref:`Variant<class_variant>` arg5=null **)**
@@ -220,12 +214,6 @@ Animate ``property`` of ``object`` from ``initial_val`` to ``final_val`` for ``d
 - :ref:`bool<class_bool>` **is_active** **(** **)** const
 
 Returns true if any tweens are currently running, and false otherwise. Note that this method doesn't consider tweens that have ended.
-
-.. _class_Tween_is_repeat:
-
-- :ref:`bool<class_bool>` **is_repeat** **(** **)** const
-
-Returns true if repeat has been set from editor GUI or :ref:`set_repeat<class_Tween_set_repeat>`.
 
 .. _class_Tween_remove:
 
@@ -274,18 +262,6 @@ Seek the animation to the given ``time`` in seconds.
 - void **set_active** **(** :ref:`bool<class_bool>` active **)**
 
 Activate/deactivate the tween. You can use this for pausing animations, though :ref:`stop_all<class_Tween_stop_all>` and :ref:`resume_all<class_Tween_resume_all>` might be more fit for this.
-
-.. _class_Tween_set_repeat:
-
-- void **set_repeat** **(** :ref:`bool<class_bool>` repeat **)**
-
-Make the tween repeat after all tweens have finished.
-
-.. _class_Tween_set_speed_scale:
-
-- void **set_speed_scale** **(** :ref:`float<class_float>` speed **)**
-
-Set the speed multiplier of the tween. Set it to 1 for normal speed, 2 for two times nromal speed, and 0.5 for half of the normal speed. Setting it to 0 would pause the animation, but you might consider using :ref:`set_active<class_Tween_set_active>` or :ref:`stop_all<class_Tween_stop_all>` and :ref:`resume_all<class_Tween_resume_all>` for this.
 
 .. _class_Tween_start:
 

@@ -16,19 +16,12 @@ Brief Description
 
 Class that has everything pertaining to a world.
 
-Member Functions
-----------------
-
-+----------------------------------------------------------------+-------------------------------------------------------------------------------+
-| :ref:`PhysicsDirectSpaceState<class_physicsdirectspacestate>`  | :ref:`get_direct_space_state<class_World_get_direct_space_state>` **(** **)** |
-+----------------------------------------------------------------+-------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                          | :ref:`get_scenario<class_World_get_scenario>` **(** **)** const               |
-+----------------------------------------------------------------+-------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                          | :ref:`get_space<class_World_get_space>` **(** **)** const                     |
-+----------------------------------------------------------------+-------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
+
+  .. _class_World_direct_space_state:
+
+- :ref:`PhysicsDirectSpaceState<class_physicsdirectspacestate>` **direct_space_state** - The World's physics direct space state, used for making various queries. Might be used only during ``_physics_process``.
 
   .. _class_World_environment:
 
@@ -38,31 +31,17 @@ Member Variables
 
 - :ref:`Environment<class_environment>` **fallback_environment** - The World's fallback_environment will be used if the World's :ref:`Environment<class_environment>` fails or is missing.
 
+  .. _class_World_scenario:
+
+- :ref:`RID<class_rid>` **scenario** - The World's visual scenario.
+
+  .. _class_World_space:
+
+- :ref:`RID<class_rid>` **space** - The World's physics space.
+
 
 Description
 -----------
 
 Class that has everything pertaining to a world. A physics space, a visual scenario and a sound space. Spatial nodes register their resources into the current world.
-
-Member Function Description
----------------------------
-
-.. _class_World_get_direct_space_state:
-
-- :ref:`PhysicsDirectSpaceState<class_physicsdirectspacestate>` **get_direct_space_state** **(** **)**
-
-Returns the World's physics space.
-
-.. _class_World_get_scenario:
-
-- :ref:`RID<class_rid>` **get_scenario** **(** **)** const
-
-Returns the World's visual scenario.
-
-.. _class_World_get_space:
-
-- :ref:`RID<class_rid>` **get_space** **(** **)** const
-
-Returns the World's sound space.
-
 

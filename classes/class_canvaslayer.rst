@@ -21,24 +21,16 @@ Canvas drawing layer.
 Member Functions
 ----------------
 
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_node>`                | :ref:`get_custom_viewport<class_CanvasLayer_get_custom_viewport>` **(** **)** const                               |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_rotation<class_CanvasLayer_get_rotation>` **(** **)** const                                             |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`  | :ref:`get_transform<class_CanvasLayer_get_transform>` **(** **)** const                                           |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`World2D<class_world2d>`          | :ref:`get_world_2d<class_CanvasLayer_get_world_2d>` **(** **)** const                                             |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_custom_viewport<class_CanvasLayer_set_custom_viewport>` **(** :ref:`Node<class_node>` viewport **)**    |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_rotation<class_CanvasLayer_set_rotation>` **(** :ref:`float<class_float>` radians **)**                 |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_transform<class_CanvasLayer_set_transform>` **(** :ref:`Transform2D<class_transform2d>` transform **)** |
-+----------------------------------------+-------------------------------------------------------------------------------------------------------------------+
++--------------------------------+-----------------------------------------------------------------------+
+| :ref:`World2D<class_world2d>`  | :ref:`get_world_2d<class_CanvasLayer_get_world_2d>` **(** **)** const |
++--------------------------------+-----------------------------------------------------------------------+
 
 Member Variables
 ----------------
+
+  .. _class_CanvasLayer_custom_viewport:
+
+- :ref:`Node<class_node>` **custom_viewport** - The custom :ref:`Viewport<class_viewport>` node assigned to the ``CanvasLayer``. If null, uses the default viewport instead.
 
   .. _class_CanvasLayer_layer:
 
@@ -50,11 +42,19 @@ Member Variables
 
   .. _class_CanvasLayer_rotation:
 
-- :ref:`float<class_float>` **rotation** - The layer's rotation in degrees.
+- :ref:`float<class_float>` **rotation** - The layer's rotation in radians.
+
+  .. _class_CanvasLayer_rotation_degrees:
+
+- :ref:`float<class_float>` **rotation_degrees** - The layer's rotation in degrees.
 
   .. _class_CanvasLayer_scale:
 
 - :ref:`Vector2<class_vector2>` **scale** - The layer's scale.
+
+  .. _class_CanvasLayer_transform:
+
+- :ref:`Transform2D<class_transform2d>` **transform** - The layer's transform.
 
 
 Description
@@ -65,46 +65,10 @@ Canvas drawing layer. :ref:`CanvasItem<class_canvasitem>` nodes that are direct 
 Member Function Description
 ---------------------------
 
-.. _class_CanvasLayer_get_custom_viewport:
-
-- :ref:`Node<class_node>` **get_custom_viewport** **(** **)** const
-
-Returns the :ref:`Viewport<class_viewport>` used by the camera if it is not using the default viewport.
-
-.. _class_CanvasLayer_get_rotation:
-
-- :ref:`float<class_float>` **get_rotation** **(** **)** const
-
-Return the base rotation for this layer in radians (helper).
-
-.. _class_CanvasLayer_get_transform:
-
-- :ref:`Transform2D<class_transform2d>` **get_transform** **(** **)** const
-
-Return the base transform for this layer.
-
 .. _class_CanvasLayer_get_world_2d:
 
 - :ref:`World2D<class_world2d>` **get_world_2d** **(** **)** const
 
 Return the :ref:`World2D<class_world2d>` used by this layer.
-
-.. _class_CanvasLayer_set_custom_viewport:
-
-- void **set_custom_viewport** **(** :ref:`Node<class_node>` viewport **)**
-
-Assigns a custom :ref:`Viewport<class_viewport>` node to the ``CanvasLayer``. If ``viewport`` is not a :ref:`Viewport<class_viewport>`, it re-assigns the default viewport instead.
-
-.. _class_CanvasLayer_set_rotation:
-
-- void **set_rotation** **(** :ref:`float<class_float>` radians **)**
-
-Set the base rotation for this layer in radians (helper).
-
-.. _class_CanvasLayer_set_transform:
-
-- void **set_transform** **(** :ref:`Transform2D<class_transform2d>` transform **)**
-
-Set the base transform for this layer.
 
 

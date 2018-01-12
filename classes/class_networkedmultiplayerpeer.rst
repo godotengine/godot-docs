@@ -21,23 +21,17 @@ A high-level network interface to simplify multiplayer interactions.
 Member Functions
 ----------------
 
-+--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`    | :ref:`get_connection_status<class_NetworkedMultiplayerPeer_get_connection_status>` **(** **)** const                                    |
-+--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`    | :ref:`get_packet_peer<class_NetworkedMultiplayerPeer_get_packet_peer>` **(** **)** const                                                |
-+--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`    | :ref:`get_unique_id<class_NetworkedMultiplayerPeer_get_unique_id>` **(** **)** const                                                    |
-+--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_refusing_new_connections<class_NetworkedMultiplayerPeer_is_refusing_new_connections>` **(** **)** const                        |
-+--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`poll<class_NetworkedMultiplayerPeer_poll>` **(** **)**                                                                            |
-+--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_refuse_new_connections<class_NetworkedMultiplayerPeer_set_refuse_new_connections>` **(** :ref:`bool<class_bool>` enable **)** |
-+--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_target_peer<class_NetworkedMultiplayerPeer_set_target_peer>` **(** :ref:`int<class_int>` id **)**                             |
-+--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_transfer_mode<class_NetworkedMultiplayerPeer_set_transfer_mode>` **(** :ref:`int<class_int>` mode **)**                       |
-+--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
++------------------------+-------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`get_connection_status<class_NetworkedMultiplayerPeer_get_connection_status>` **(** **)** const        |
++------------------------+-------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`get_packet_peer<class_NetworkedMultiplayerPeer_get_packet_peer>` **(** **)** const                    |
++------------------------+-------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`  | :ref:`get_unique_id<class_NetworkedMultiplayerPeer_get_unique_id>` **(** **)** const                        |
++------------------------+-------------------------------------------------------------------------------------------------------------+
+| void                   | :ref:`poll<class_NetworkedMultiplayerPeer_poll>` **(** **)**                                                |
++------------------------+-------------------------------------------------------------------------------------------------------------+
+| void                   | :ref:`set_target_peer<class_NetworkedMultiplayerPeer_set_target_peer>` **(** :ref:`int<class_int>` id **)** |
++------------------------+-------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
@@ -71,6 +65,18 @@ Emitted by the server when a client disconnects.
 - **server_disconnected** **(** **)**
 
 Emitted by clients when the server disconnects.
+
+
+Member Variables
+----------------
+
+  .. _class_NetworkedMultiplayerPeer_refuse_new_connections:
+
+- :ref:`bool<class_bool>` **refuse_new_connections** - If ``true`` this ``NetworkedMultiplayerPeer`` refuses new connections. Default value: ``false``.
+
+  .. _class_NetworkedMultiplayerPeer_transfer_mode:
+
+- :ref:`TransferMode<enum_networkedmultiplayerpeer_transfermode>` **transfer_mode** - The manner in which to send packets to the ``target_peer``. See enum TransferMode.
 
 
 Numeric Constants
@@ -125,34 +131,16 @@ Returns the ID of the ``NetworkedMultiplayerPeer`` who sent the most recent pack
 
 Returns the ID of this ``NetworkedMultiplayerPeer``.
 
-.. _class_NetworkedMultiplayerPeer_is_refusing_new_connections:
-
-- :ref:`bool<class_bool>` **is_refusing_new_connections** **(** **)** const
-
-Returns ``true`` if this ``NetworkedMultiplayerPeer`` refuses new connections. Default value: ``false``.
-
 .. _class_NetworkedMultiplayerPeer_poll:
 
 - void **poll** **(** **)**
 
 Waits up to 1 second to receive a new network event.
 
-.. _class_NetworkedMultiplayerPeer_set_refuse_new_connections:
-
-- void **set_refuse_new_connections** **(** :ref:`bool<class_bool>` enable **)**
-
-If ``true`` this ``NetworkedMultiplayerPeer`` refuses new connections. Default value: ``false``.
-
 .. _class_NetworkedMultiplayerPeer_set_target_peer:
 
 - void **set_target_peer** **(** :ref:`int<class_int>` id **)**
 
 The peer to which packets will be sent. Default value: ``0``.
-
-.. _class_NetworkedMultiplayerPeer_set_transfer_mode:
-
-- void **set_transfer_mode** **(** :ref:`int<class_int>` mode **)**
-
-The manner in which to send packets to the ``target_peer``. See enum TransferMode.
 
 

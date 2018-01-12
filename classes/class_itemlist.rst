@@ -28,8 +28,6 @@ Member Functions
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`ensure_current_is_visible<class_ItemList_ensure_current_is_visible>` **(** **)**                                                                                  |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`            | :ref:`get_fixed_icon_size<class_ItemList_get_fixed_icon_size>` **(** **)** const                                                                                        |
-+------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                    | :ref:`get_item_at_position<class_ItemList_get_item_at_position>` **(** :ref:`Vector2<class_vector2>` position, :ref:`bool<class_bool>` exact=false **)** const          |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                    | :ref:`get_item_count<class_ItemList_get_item_count>` **(** **)** const                                                                                                  |
@@ -61,8 +59,6 @@ Member Functions
 | void                                     | :ref:`remove_item<class_ItemList_remove_item>` **(** :ref:`int<class_int>` idx **)**                                                                                    |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`select<class_ItemList_select>` **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` single=true **)**                                                         |
-+------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_fixed_icon_size<class_ItemList_set_fixed_icon_size>` **(** :ref:`Vector2<class_vector2>` size **)**                                                           |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                     | :ref:`set_item_custom_bg_color<class_ItemList_set_item_custom_bg_color>` **(** :ref:`int<class_int>` idx, :ref:`Color<class_color>` custom_bg_color **)**               |
 +------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -141,6 +137,10 @@ Member Variables
   .. _class_ItemList_fixed_column_width:
 
 - :ref:`int<class_int>` **fixed_column_width**
+
+  .. _class_ItemList_fixed_icon_size:
+
+- :ref:`Vector2<class_vector2>` **fixed_icon_size**
 
   .. _class_ItemList_icon_mode:
 
@@ -224,10 +224,6 @@ Remove all items from the list.
 - void **ensure_current_is_visible** **(** **)**
 
 Ensure selection is visible, adjusting the scroll position as necessary.
-
-.. _class_ItemList_get_fixed_icon_size:
-
-- :ref:`Vector2<class_vector2>` **get_fixed_icon_size** **(** **)** const
 
 .. _class_ItemList_get_item_at_position:
 
@@ -318,10 +314,6 @@ Remove item at specified index from the list.
 Select the item at the specified index.
 
 Note:  This method does not trigger the item selection signal.
-
-.. _class_ItemList_set_fixed_icon_size:
-
-- void **set_fixed_icon_size** **(** :ref:`Vector2<class_vector2>` size **)**
 
 .. _class_ItemList_set_item_custom_bg_color:
 

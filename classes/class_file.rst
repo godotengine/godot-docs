@@ -42,8 +42,6 @@ Member Functions
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`get_double<class_File_get_double>` **(** **)** const                                                                                                                            |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`get_endian_swap<class_File_get_endian_swap>` **(** **)**                                                                                                                        |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_error<class_File_get_error>` **(** **)** const                                                                                                                              |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                      | :ref:`get_float<class_File_get_float>` **(** **)** const                                                                                                                              |
@@ -80,8 +78,6 @@ Member Functions
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`seek_end<class_File_seek_end>` **(** :ref:`int<class_int>` position=0 **)**                                                                                                     |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_endian_swap<class_File_set_endian_swap>` **(** :ref:`bool<class_bool>` enable **)**                                                                                         |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`store_16<class_File_store_16>` **(** :ref:`int<class_int>` value **)**                                                                                                          |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`store_32<class_File_store_32>` **(** :ref:`int<class_int>` value **)**                                                                                                          |
@@ -106,6 +102,16 @@ Member Functions
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`store_var<class_File_store_var>` **(** :ref:`Variant<class_variant>` value **)**                                                                                                |
 +------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Member Variables
+----------------
+
+  .. _class_File_endian_swap:
+
+- :ref:`bool<class_bool>` **endian_swap** - If ``true`` the file's endianness is swapped. Use this if you're dealing with files written in big endian machines.
+
+Note that this is about the file format, not CPU type. This is always reseted to ``false`` whenever you open the file.
+
 
 Enums
 -----
@@ -220,12 +226,6 @@ Returns the next value of the file in CSV (Comma Separated Values) format. You c
 
 Returns the next 64 bits from the file as a floating point number.
 
-.. _class_File_get_endian_swap:
-
-- :ref:`bool<class_bool>` **get_endian_swap** **(** **)**
-
-Returns ``true`` if endian swap is enabled for this file.
-
 .. _class_File_get_error:
 
 - :ref:`int<class_int>` **get_error** **(** **)** const
@@ -333,14 +333,6 @@ Change the file reading/writing cursor to the specified position (in bytes from 
 - void **seek_end** **(** :ref:`int<class_int>` position=0 **)**
 
 Changes the file reading/writing cursor to the specified position (in bytes from the end of the file). Note that this is an offset, so you should use negative numbers or the cursor will be at the end of the file.
-
-.. _class_File_set_endian_swap:
-
-- void **set_endian_swap** **(** :ref:`bool<class_bool>` enable **)**
-
-If ``true`` the file's endianness is swapped. Use this if you're dealing with files written in big endian machines.
-
-Note that this is about the file format, not CPU type. This is always reseted to ``false`` whenever you open the file.
 
 .. _class_File_store_16:
 

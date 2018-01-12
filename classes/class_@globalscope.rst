@@ -185,7 +185,7 @@ enum **PropertyUsageFlags**
 - **PROPERTY_USAGE_SCRIPT_VARIABLE** = **8192**
 - **PROPERTY_USAGE_DEFAULT** = **7** --- Default usage (storage and editor).
 - **PROPERTY_USAGE_DEFAULT_INTL** = **71**
-- **PROPERTY_USAGE_NOEDITOR** = **1048581**
+- **PROPERTY_USAGE_NOEDITOR** = **5**
 
   .. _enum_@GlobalScope_JoystickList:
 

@@ -16,61 +16,28 @@ Brief Description
 
 A helper node for displaying scrollable elements (e.g. lists).
 
-Member Functions
-----------------
-
-+------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_h_scroll<class_ScrollContainer_get_h_scroll>` **(** **)** const                     |
-+------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_v_scroll<class_ScrollContainer_get_v_scroll>` **(** **)** const                     |
-+------------------------+-----------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_h_scroll<class_ScrollContainer_set_h_scroll>` **(** :ref:`int<class_int>` val **)** |
-+------------------------+-----------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_v_scroll<class_ScrollContainer_set_v_scroll>` **(** :ref:`int<class_int>` val **)** |
-+------------------------+-----------------------------------------------------------------------------------------------+
-
 Member Variables
 ----------------
 
   .. _class_ScrollContainer_scroll_horizontal:
 
-- :ref:`bool<class_bool>` **scroll_horizontal**
+- :ref:`int<class_int>` **scroll_horizontal** - The current horizontal scroll value.
+
+  .. _class_ScrollContainer_scroll_horizontal_enabled:
+
+- :ref:`bool<class_bool>` **scroll_horizontal_enabled** - If ``true``, enables horizontal scrolling.
 
   .. _class_ScrollContainer_scroll_vertical:
 
-- :ref:`bool<class_bool>` **scroll_vertical**
+- :ref:`int<class_int>` **scroll_vertical** - The current horizontal scroll value.
+
+  .. _class_ScrollContainer_scroll_vertical_enabled:
+
+- :ref:`bool<class_bool>` **scroll_vertical_enabled** - If ``true``, enables vertical scrolling.
 
 
 Description
 -----------
 
 A ScrollContainer node with a :ref:`Control<class_control>` child and scrollbar child (HScrollbar, :ref:`VScrollBar<class_vscrollbar>`, or both) will only draw the Control within the ScrollContainer area.  Scrollbars will automatically be drawn at the right (for vertical) or bottom (for horizontal) and will enable dragging to move the viewable Control (and its children) within the ScrollContainer.  Scrollbars will also automatically resize the grabber based on the minimum_size of the Control relative to the ScrollContainer.  Works great with a :ref:`Panel<class_panel>` control.  You can set EXPAND on children size flags, so they will upscale to ScrollContainer size if ScrollContainer size is bigger (scroll is invisible for chosen dimension).
-
-Member Function Description
----------------------------
-
-.. _class_ScrollContainer_get_h_scroll:
-
-- :ref:`int<class_int>` **get_h_scroll** **(** **)** const
-
-Return current horizontal scroll value.
-
-.. _class_ScrollContainer_get_v_scroll:
-
-- :ref:`int<class_int>` **get_v_scroll** **(** **)** const
-
-Return current vertical scroll value.
-
-.. _class_ScrollContainer_set_h_scroll:
-
-- void **set_h_scroll** **(** :ref:`int<class_int>` val **)**
-
-Set horizontal scroll value.
-
-.. _class_ScrollContainer_set_v_scroll:
-
-- void **set_v_scroll** **(** :ref:`int<class_int>` val **)**
-
-Set vertical scroll value.
-
 
