@@ -3,81 +3,74 @@
 Exporting for the Web
 =====================
 
-Exporting for the web generates several files to be served from a web server,
-including a default HTML page for presentation. A custom HTML file can be
-used, see :ref:`doc_compiling_for_web`.
+HTML5 export allows publishing games made in Godot Engine to the browser.
+This requires support for the recent technologies `WebAssembly
+<http://webassembly.org/>`__ and `WebGL 2.0 <https://www.khronos.org/webgl/>`__
+in the user's browser. **Firefox** and **Chromium** (Chrome, Opera) are
+the most popular supported browsers, **Safari** and **Edge** do not work yet.
 
-The default HTML file is designed to fit the game perfectly without cutting off
-parts of the canvas when the browser window is scaled to the game's dimensions.
-This way it can be inserted into an ``<iframe>`` with the game's size, as is
-common on most web game hosting sites.
+Limitations
+-----------
 
-Serving the files
------------------
+For security and privacy reasons, many features that work effortlessly on
+native platforms are more complicated on the web platform. Following is a list
+of limitations you should be aware of when porting a Godot game to the web.
 
-The generated ``.html`` file can be used as ``DirectoryIndex`` and can be
-renamed to e.g. ``index.html`` at any time, its name is never depended on.
-It can also be inserted into another HTML file as an ``<iframe>`` element.
-Users must allow **third-party** cookies when playing a game presented in an
-iframe.
+Exported ``.html`` file must not be reused
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The other exported files are served as they are next to the ``.html`` file,
-names unchanged.
+On export, several text placeholders are replaced in the **generated HTML
+file** specifically for the given export options. It must not be reused in
+futher exports.
 
-The ``.mem`` and ``.pck`` files are binary, usually delivered with the
-MIME-type ``application/octet-stream``. The ``.wasm`` file is the WebAssembly
-module, delivered as ``application/wasm``.
+Using cookies for data persistence
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Delivering the files with gzip compression is recommended especially for the
-``.pck``, ``.asm.js``, ``.mem`` and ``.wasm`` files, which are usually large in
-size.
+Users must **allow cookies** (specifically IndexedDB) if persistence of the
+``user://`` file system is desired. When playing a game presented in an
+``iframe``, **third-party** cookies must also be enabled. Incognito/private
+mode also prevents persistence.
 
-Export options
---------------
+The method ``OS.is_userfs_persistent()`` can be used to check if the
+``user://`` file system is persistent, but can give false positives in some
+cases.
 
-If a runnable web export template is available, a button appears between the
-*Stop scene* and *Play edited Scene* buttons in the editor to quickly open the
-game in the default browser for testing.
-
-**Target** sets the format of the engine. *WebAssembly* is a newer and more
-performant technology that is only supported by recent browser versions.
-*asm.js* is a highly optimizable subset of JavaScript and supported by some
-older browser versions. A 64-bit browser is required to run games in asm.js
-format. Most notably, this is a problem with Firefox, which on Windows is
-shipped as a 32-bit application by default.
-
-For asm.js **Memory Size** is fixed and must thus be set during export. Try
-using no more than necessary to strain users' browsers as little as possible.
-For WebAssembly, memory growth is enabled, so this option is not needed nor
-displayed.
-
-**Head Include** is appended into the ``<head>`` element of the generated
-HTML page. This allows, for example, linking web fonts for use in the page.
-
-Turning on **Debugging Enabled** when exporting will, in addition to enabling
-various debug features of the engine, display a debug output below the canvas,
-displaying JavaScript and engine errors.
-You can also use the browser-integrated developer console, usually opened with
-the F12 key, which often shows more information, including WebGL errors.
-
-Web export limitations
-----------------------
-
-Exported files must not be reused
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The exported files ending with ``.html`` and ``fs.js`` are adjusted on export
-specifically for that game's version and the given export options. They must
-not be reused in futher exports.
-
-Some functions must be called from input callbacks
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Full screen and mouse capture
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Browsers do not allow arbitrarily **entering full screen** at any time. The same
 goes for **capturing the cursor**. Instead, these actions have to occur as a
 response to a JavaScript input event. In Godot, this is most easily done by
-entering full screen from within an input callback such ``_input`` or
+entering full screen from within an input callback such as ``_input`` or
 ``_unhandled_input``.
+
+For the same reason, the full screen project setting is ignored.
+
+HTTPClient
+~~~~~~~~~~
+
+The ``HTTPClient`` implementation for the HTML5 platform has several
+restrictions:
+
+ -  Accessing or changing the ``StreamPeer`` is not possible
+ -  Blocking mode is not available
+ -  No chunked responses
+ -  Host verification cannot be disabled
+ -  Subject to `same-origin policy <https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy>`_
+
+Unimplemented functionality
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following functionality is currently unavailable on the HTML5 platform:
+
+ -  Threads
+ -  GDNative
+ -  Clipboard synchronisation between engine and operating system
+ -  Networking other than ``HTTPClient``
+
+Check the `list of open HTML5 issues on Github <https://github.com/godotengine/godot/issues?q=is:open+is:issue+label:platform:html5>`_
+to see if functionality you're interested in has an issue yet. If not, open one
+to communicate your interest.
 
 Starting exported games from the local file system
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -89,66 +82,98 @@ Python offers an easy method for this, using ``python -m SimpleHTTPServer``
 with Python 2 or ``python -m http.server`` with Python 3 will serve the current
 working directory on ``http://localhost:8000``.
 
-Locale lookup
-~~~~~~~~~~~~~
+Serving the files
+-----------------
 
-Godot tries to detect the user's locale using information provided by the
-browser, but this is rather unreliable. A better way is to use CGI to read the
-HTTP ``Accept-Language`` header. If you assign its value to the JavaScript
-property ``Module.locale`` after the ``Module`` objects is created, but before
-the engine starts, Godot will use that value to initialize the locale.
-In any case, users should always be offered the option to configure the locale
-manually.
+Exporting for the web generates several files to be served from a web server,
+including a default HTML page for presentation. A custom HTML file can be
+used, see :ref:`doc_customizing_html5_shell`.
+
+The generated ``.html`` file can be used as ``DirectoryIndex`` in Apache
+servers and can be renamed to e.g. ``index.html`` at any time, its name is
+never depended on by default.
+
+The HTML page is designed to fit the game perfectly without cutting off
+parts of the canvas when the browser window is scaled to the game's dimensions.
+This way it can be inserted into an ``<iframe>`` with the game's size, as is
+common on most web game hosting sites.
+
+The other exported files are served as they are, next to the ``.html`` file,
+names unchanged. The ``.wasm`` file is a binary WebAssembly module implementing
+the engine. The ``.pck`` file is the Godot main pack containing your game. The
+``.js`` file contains start-up code and is used by the ``.html`` file to access
+the engine. The ``.png`` file contains the boot splash image. It is not used in
+the default HTML page, but is included for
+:ref:`custom HTML pages <doc_customizing_html5_shell>`.
+
+The ``.pck`` file is binary, usually delivered with the MIME-type
+``application/octet-stream``. The ``.wasm`` file is delivered as
+``application/wasm``.
+
+Delivering the files with server-side compression is recommended especially for
+the ``.pck`` and ``.wasm`` files, which are usually large in size.
+The WebAssembly module compresses particularily well, down to around a quarter
+of its original size with GZip.
+
+Export options
+--------------
+
+If a runnable web export template is available, a button appears between the
+*Stop scene* and *Play edited Scene* buttons in the editor to quickly open the
+game in the default browser for testing.
+
+If a path to a **Custom HTML shell** file is given, it will be used instead of
+the default HTML page. See :ref:`doc_customizing_html5_shell`.
+
+**Head Include** is appended into the ``<head>`` element of the generated
+HTML page. This allows to, for example, load webfonts and third-party
+JavaScript APIs, include CSS, or run JavaScript code.
+
+Turning on **Export with Debug** when exporting will, in addition to enabling
+various debug features of the engine, display a debug output below the canvas
+when using the default HTML page, displaying JavaScript and engine errors.
+You can also use the browser-integrated developer console, usually opened with
+the F12 key, which often shows more information, including WebGL errors.
 
 Calling JavaScript from script
 ------------------------------
 
-In web builds, the ``JavaScript`` singleton is available. If offers a single
+In web builds, the ``JavaScript`` singleton is implemented. If offers a single
 method called ``eval`` that works similarly to the JavaScript function of the
 same name. It takes a string as an argument and executes it as JavaScript code.
 This allows interacting with the browser in ways not possible with script
 languages integrated into Godot.
 
-In order to keep your code compatible with other platforms, check if the
-JavaScript singleton is available before using it::
-
-    var JavaScript
-
-    func _ready():
-        # retrieve the singleton here, will return `null` on platforms other than web
-        JavaScript = Globals.get_singleton("JavaScript")
+::
 
     func my_func():
-        # call JavaScript.eval only if available
-        if JavaScript:
-            JavaScript.eval("alert('Calling JavaScript per GDScript!');")
+        JavaScript.eval("alert('Calling JavaScript per GDScript!');")
 
-The return value of the last JavaScript statement is converted to a GDScript
-value and returned by ``eval()`` under certain circumstances:
+The value of the last JavaScript statement is converted to a GDScript value and
+returned by ``eval()`` under certain circumstances:
 
- * JavaScript ``number`` is returned as GDScript :ref:`class_int` if it is an
-   integer or as :ref:`class_float` otherwise
+ * JavaScript ``number`` is returned as GDScript :ref:`class_float`
  * JavaScript ``boolean`` is returned as GDScript :ref:`class_bool`
  * JavaScript ``string`` is returned as GDScript :ref:`class_String`
- * JavaScript ``object`` is only converted and returned if it has certain
-   ``Number``-type properties, listed in order of priority:
+ * JavaScript ``ArrayBuffer``, ``TypedArray`` and ``DataView`` are returned as
+   GDScript :ref:`class_PoolByteArray`
 
-    * Objects with ``x``, ``y`` and ``z`` properties are returned as a :ref:`class_Vector3`
-    * Objects with ``x``, ``y``, ``width`` and ``height`` properties are returned as a :ref:`class_Rect2`
-    * Objects with ``x`` and ``y`` properties are returned as a :ref:`class_Vector2`
-    * Objects with an ``r``, ``g``, ``b`` and an optional ``a``  property are
-      returned as a :ref:`class_Color`, the JavaScript values are interpreted
-      as 8-bit values (0-255) for the color components and
-      floating point values (0.0-1.0) for the alpha channel
+::
+
+    func my_func2():
+        var js_return = JavaScript.eval("var myNumber = 1; myNumber + 2;")
+        print(js_return) # prints '3.0'
 
 Any other JavaScript value is returned as ``null``.
+
+Calling ``JavaScript.eval`` on platforms other than HTML5 will also return
+``null``.
 
 The ``eval`` method also accepts a second, optional Boolean argument, which
 specifies whether to execute the code in the global execution context,
 defaulting to ``false`` to prevent polluting the global namespace::
 
-    func my_func2():
-        if JavaScript:
-            # execute in global execution context,
-            # thus adding a new JavaScript global variable `MyGlobal`
-            JavaScript.eval("var MyGlobal = {};", true)
+    func my_func3():
+        # execute in global execution context,
+        # thus adding a new JavaScript global variable `MyGlobal`
+        JavaScript.eval("var SomeGlobal = {};", true)
