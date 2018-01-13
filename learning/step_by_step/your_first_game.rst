@@ -323,7 +323,6 @@ the player when starting a new game.
     func start(pos):
         position = pos
         show()
-        monitoring = true
         $CollisionShape2D.disabled = false
 
 Enemy Scene
