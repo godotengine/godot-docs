@@ -324,6 +324,7 @@ the player when starting a new game.
         position = pos
         show()
         monitoring = true
+        $CollisionShape2D.disabled = false
 
 Enemy Scene
 -----------
