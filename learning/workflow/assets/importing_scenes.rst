@@ -157,9 +157,9 @@ These are:
  * Vertex Colors                                                : 32-bit float to 32-bit unsigned integer.
  * UV                                                           : 32-bit float to 32-bit unsigned integer.
  * UV2                                                          : 32-bit float to 32-bit unsigned integer.
- * Vertex weights                                               : 32-bit float to 16-bit signed integer.
- * Armature bones                                               : 32-bit float to 16-bit signed integer.
- * Array index                                                  : 32-bit or 16-bit integer based on how many elements there are.
+ * Vertex weights                                               : 32-bit float to 16-bit unsigned integer.
+ * Armature bones                                               : 32-bit float to 16-bit unsigned integer.
+ * Array index                                                  : 32-bit or 16-bit unsigned integer based on how many elements there are.
 
 Additional info:
  * UV2 = The second UV channel for detail textures and baked lightmap textures.
