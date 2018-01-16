@@ -75,7 +75,7 @@ here's a simple example of how GDScript looks.
     const answer = 42
     const thename = "Charly"
 
-    # enums (Godot 2.1.3+)
+    # enums
 
     enum {UNIT_NEUTRAL, UNIT_ENEMY, UNIT_ALLY}
     enum Named {THING_1, THING_2, ANOTHER_THING = -1}
@@ -185,7 +185,7 @@ keywords are reserved words (tokens), they can't be used as identifiers.
 +------------+---------------------------------------------------------------------------------------------------------------+
 | const      | Defines a constant.                                                                                           |
 +------------+---------------------------------------------------------------------------------------------------------------+
-| enum       | Defines an enum. (Godot 2.1.3+)                                                                               |
+| enum       | Defines an enum.                                                                                              |
 +------------+---------------------------------------------------------------------------------------------------------------+
 | var        | Defines a variable.                                                                                           |
 +------------+---------------------------------------------------------------------------------------------------------------+
@@ -248,7 +248,7 @@ The following is the list of supported operators and their precedence
 +---------------------------------------------------------------+-----------------------------------------+
 | ``or`` ``||``                                                 | Boolean OR                              |
 +---------------------------------------------------------------+-----------------------------------------+
-| ``if x else``                                                 | Ternary if/else (Godot 2.1.3+)          |
+| ``if x else``                                                 | Ternary if/else                         |
 +---------------------------------------------------------------+-----------------------------------------+
 | ``=`` ``+=`` ``-=`` ``*=`` ``/=`` ``%=`` ``&=`` ``|=``        | Assignment, Lowest Priority             |
 +---------------------------------------------------------------+-----------------------------------------+
@@ -538,8 +538,6 @@ expressions and must be assigned on initialization.
 Enums
 ^^^^^
 
-*Note, only available in Godot 2.1.3 or higher.*
-
 Enums are basically a shorthand for constants, and are pretty useful if you
 want to assign consecutive integers to some constant.
 
@@ -660,8 +658,7 @@ Short statements can be written on the same line as the condition::
         return x
 
 Sometimes you might want to assign a different initial value based on a
-boolean expression. In this case ternary-if expressions come in handy
-(Godot 2.1.3+)::
+boolean expression. In this case ternary-if expressions come in handy::
 
     var x = [true-value] if [expression] else [false-value]
     y += 3 if y < 10 else -1
