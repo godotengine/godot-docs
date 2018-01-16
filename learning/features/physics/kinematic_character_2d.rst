@@ -157,78 +157,13 @@ This adds simple walking support by pressing left and right:
             velocity.x = 0
 
         var motion = velocity * delta
-        move(motion)
+        
+        # The second parameter of move_and_slide is the normal pointing up.
+        # In the case of a 2d platformer, in Godot upward is negative y, which translates to -1 as a normal.
+        move_and_slide(motion, Vector2(0, -1))
 
 And give it a try.
 
-Problem?
-~~~~~~~~
-
-And... it doesn't work very well. If you go to the left against a wall,
-it gets stuck unless you release the arrow key. Once it is on the floor,
-it also gets stuck and it won't walk. What is going on??
-
-The answer is, what it seems like it should be simple, it isn't that
-simple in reality. If the motion can't be completed, the character will
-stop moving. It's as simple as that. This diagram should illustrate
-better what is going on:
-
-.. image:: img/motion_diagram.png
-
-Basically, the desired motion vector will never complete because it hits
-the floor and the wall too early in the motion trajectory and that makes
-it stop there. Remember that even though the character is on the floor,
-the gravity is always turning the motion vector downwards.
-
-Solution!
-~~~~~~~~~
-
-The solution? This situation is solved by "sliding" by the collision
-normal. KinematicBody2D provides two useful functions:
-
--  :ref:`KinematicBody2D.is_colliding() <class_KinematicBody2D_is_colliding>`
--  :ref:`KinematicBody2D.get_collision_normal() <class_KinematicBody2D_get_collision_normal>`
-
-So what we want to do is this:
-
-.. image:: img/motion_reflect.png
-
-When colliding, the function ``move()`` returns the "remainder" of the
-motion vector. That means, if the motion vector is 40 pixels, but
-collision happened at 10 pixels, the same vector but 30 pixels long is
-returned.
-
-The correct way to solve the motion is, then, to slide by the normal
-this way:
-
-::
-
-    func _physics_process(delta):
-
-        velocity.y += delta * GRAVITY
-        if (Input.is_action_pressed("ui_left")):
-            velocity.x = - WALK_SPEED
-        elif (Input.is_action_pressed("ui_right")):
-            velocity.x =   WALK_SPEED
-        else:
-            velocity.x = 0
-
-        var motion = velocity * delta
-        motion = move(motion)
-
-        if (is_colliding()):
-            var n = get_collision_normal()
-            motion = n.slide(motion)
-            velocity = n.slide(velocity)
-            move(motion)
-
-Note that not only the motion has been modified but also the velocity.
-This makes sense as it helps keep the new direction too.
-
-The normal can also be used to detect that the character is on floor, by
-checking the angle. If the normal points up (or at least, within a
-certain threshold), the character can be determined to be there.
-
-A more complete demo can be found in the demo zip distributed with the
+This is a good starting point for a platformer. A more complete demo can be found in the demo zip distributed with the
 engine, or in the
 https://github.com/godotengine/godot-demo-projects/tree/master/2d/kinematic_character.
