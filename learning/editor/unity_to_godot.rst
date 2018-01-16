@@ -137,7 +137,7 @@ Godot does not provide prefabs as such, but this functionality is here again fil
 
 .. image:: img/save-branch-as-scene.png
 
-To be precise, you can modify the parameters of the instance in the Inspector panel. However, the nodes that compose this instance are locked and you can unlock them if you need to by clicking the clapperboard icon next to the instance in the Scene tree, and select "Editable children" in the menu. You don't need to do this to add new children nodes to this node, but remember that these new children will belong to the instance, not the 'template' scene. If you want to add new children to all the instances of your 'template' scene, then you need to add it once in the 'template' scene.
+To be precise, you can modify the parameters of the instance in the Inspector panel. However, the nodes that compose this instance are locked and you can unlock them if you need to by right clicking the instance in the Scene tree, and selecting "Editable children" in the menu. You don't need to do this to add new children nodes to this node, but remember that these new children will belong to the instance, not the 'template' scene. If you want to add new children to all the instances of your 'template' scene, then you need to add it once in the 'template' scene.
 
 .. image:: img/editable-children.png
 
