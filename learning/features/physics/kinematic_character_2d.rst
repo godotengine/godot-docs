@@ -142,7 +142,6 @@ This adds simple walking support by pressing left and right:
 
     const GRAVITY = 200.0
     const WALK_SPEED = 200
-    const NORMAL_UP = Vector2(0, -1)
 
     var velocity = Vector2()
 
@@ -158,7 +157,10 @@ This adds simple walking support by pressing left and right:
             velocity.x = 0
 
         var motion = velocity * delta
-        move_and_slide(motion, NORMAL_UP)
+        
+        # The second parameter of move_and_slide is the normal pointing up.
+        # In the case of a 2d platformer, in Godot upward is negative y, which translates to -1 as a normal.
+        move_and_slide(motion, Vector2(0, -1))
 
 And give it a try.
 
