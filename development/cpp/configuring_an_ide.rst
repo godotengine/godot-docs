@@ -191,7 +191,13 @@ Test it:
 - It should break at the point!
 
 
-Other editors (vim, emacs, Atom...)
------------------------------------
+Other editors (Visual Studio Code, vim, emacs, Atom...)
+-------------------------------------------------------
+
+Visual Studio Code
+------------------
+
+Download Godot Tools Extension from the official `Marketplace <https://marketplace.visualstudio.com/items?itemName=geequlim.godot-tools>`_.
+
 
 TODO.
