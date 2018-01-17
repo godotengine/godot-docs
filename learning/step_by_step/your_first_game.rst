@@ -79,7 +79,7 @@ are not selectable."
 
 .. image:: img/lock_children.png
 
-Save the scene (click Scene -> Save, or press ``Meta-s``).
+Save the scene (click Scene -> Save, or press ``Control+S`` on Windows/Linux or ``Command+S`` on Mac).
 
 .. note:: In this project, we will be following the Godot Engine naming
           conventions. Classes (Nodes) use ``CapWords``, variables and
@@ -225,6 +225,12 @@ more fast diagonal movement.
 We also check whether the player is moving so we can start or stop the
 AnimatedSprite animation.
 
+.. tip:: ``$`` returns the node at the relative path from this node, or returns ``null`` if the node is not found.
+         Since AnimatedSprite is a child of the current node, we can just use ``$AnimatedSprite``.
+         
+         ``$`` is the short hand for ``get_node()``.
+         So in the code above, ``$AnimatedSprite.play()`` is the same as ``get_node("AnimatedSprite").play()``.
+
 Now that we have a movement direction, we can update the player's position
 and use ``clamp()`` to prevent it from leaving the screen:
 
@@ -239,6 +245,10 @@ and use ``clamp()`` to prevent it from leaving the screen:
 
 Click "Play the Edited Scene. (F6)" and confirm you can move the player
 around the screen in all directions.
+
+.. warning:: If you get an error in the "Debugger" panel that refers to a "null instance",
+             this likely means you spelled the node name wrong. Node names are case sensitive
+             and ``$NodeName`` or ``get_node("NodeName")`` must match the name you see in the scene tree.
 
 Choosing Animations
 ~~~~~~~~~~~~~~~~~~~
