@@ -198,7 +198,13 @@ Emitted when the node enters the tree.
 
 - **tree_exited** **(** **)**
 
-Emitted when the node exits the tree.
+Emitted after the node exits the tree and is no longer active.
+
+.. _class_Node_tree_exiting:
+
+- **tree_exiting** **(** **)**
+
+Emitted when the node is still active but about to exit the tree. This is the right place for de-initialization.
 
 
 Member Variables
@@ -227,7 +233,7 @@ Numeric Constants
 -----------------
 
 - **NOTIFICATION_ENTER_TREE** = **10** --- Notification received when the node enters a :ref:`SceneTree<class_scenetree>`.
-- **NOTIFICATION_EXIT_TREE** = **11** --- Notification received when the node exits a :ref:`SceneTree<class_scenetree>`.
+- **NOTIFICATION_EXIT_TREE** = **11** --- Notification received when the node is about to exit a :ref:`SceneTree<class_scenetree>`.
 - **NOTIFICATION_MOVED_IN_PARENT** = **12** --- Notification received when the node is moved in the parent.
 - **NOTIFICATION_READY** = **13** --- Notification received when the node is ready. See :ref:`_ready<class_Node__ready>`.
 - **NOTIFICATION_PAUSED** = **14** --- Notification received when the node is paused.
@@ -313,9 +319,9 @@ Corresponds to the NOTIFICATION_ENTER_TREE notification in :ref:`Object._notific
 
 - void **_exit_tree** **(** **)** virtual
 
-Called when the node leaves the :ref:`SceneTree<class_scenetree>` (e.g. upon freeing, scene changing, or after calling :ref:`remove_child<class_Node_remove_child>` in a script). If the node has children, its :ref:`_exit_tree<class_Node__exit_tree>` callback will be called last, after all its children have left the tree.
+Called when the node is about to leave the :ref:`SceneTree<class_scenetree>` (e.g. upon freeing, scene changing, or after calling :ref:`remove_child<class_Node_remove_child>` in a script). If the node has children, its :ref:`_exit_tree<class_Node__exit_tree>` callback will be called last, after all its children have left the tree.
 
-Corresponds to the NOTIFICATION_EXIT_TREE notification in :ref:`Object._notification<class_Object__notification>`.
+Corresponds to the NOTIFICATION_EXIT_TREE notification in :ref:`Object._notification<class_Object__notification>` and signal :ref:`tree_exiting<class_Node_tree_exiting>`. To get notified when the node has already left the active tree, connect to the :ref:`tree_exited<class_Node_tree_exited>`
 
 .. _class_Node__input:
 

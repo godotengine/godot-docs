@@ -72,19 +72,23 @@ If the currently being played animation changes, this signal will notify of such
 
 .. _class_AnimationPlayer_animation_finished:
 
-- **animation_finished** **(** :ref:`String<class_string>` name **)**
+- **animation_finished** **(** :ref:`String<class_string>` anim_name **)**
 
 Notifies when an animation finished playing.
 
 .. _class_AnimationPlayer_animation_started:
 
-- **animation_started** **(** :ref:`String<class_string>` name **)**
+- **animation_started** **(** :ref:`String<class_string>` anim_name **)**
 
 Notifies when an animation starts playing.
 
 
 Member Variables
 ----------------
+
+  .. _class_AnimationPlayer_assigned_animation:
+
+- :ref:`String<class_string>` **assigned_animation** - If playing, the current animation; otherwise, the animation last played. When set, would change the animation, but would not play it unless currently playing. See also :ref:`current_animation<class_AnimationPlayer_current_animation>`.
 
   .. _class_AnimationPlayer_autoplay:
 

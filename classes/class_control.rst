@@ -38,7 +38,7 @@ Member Functions
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`add_shader_override<class_Control_add_shader_override>` **(** :ref:`String<class_string>` name, :ref:`Shader<class_shader>` shader **)**                                                                                     |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`add_style_override<class_Control_add_style_override>` **(** :ref:`String<class_string>` name, :ref:`StyleBox<class_stylebox>` stylebox **)**                                                                                 |
+| void                             | :ref:`add_stylebox_override<class_Control_add_stylebox_override>` **(** :ref:`String<class_string>` name, :ref:`StyleBox<class_stylebox>` stylebox **)**                                                                           |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`can_drop_data<class_Control_can_drop_data>` **(** :ref:`Vector2<class_vector2>` position, :ref:`Variant<class_variant>` data **)** virtual                                                                                   |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -105,6 +105,8 @@ Member Functions
 | :ref:`bool<class_bool>`          | :ref:`has_icon_override<class_Control_has_icon_override>` **(** :ref:`String<class_string>` name **)** const                                                                                                                       |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`has_point<class_Control_has_point>` **(** :ref:`Vector2<class_vector2>` point **)** virtual                                                                                                                                  |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`has_shader_override<class_Control_has_shader_override>` **(** :ref:`String<class_string>` name **)** const                                                                                                                   |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`          | :ref:`has_stylebox<class_Control_has_stylebox>` **(** :ref:`String<class_string>` name, :ref:`String<class_string>` type="" **)** const                                                                                            |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -510,9 +512,9 @@ Overrides the ``name`` icon in the theme resource the node uses. If ``icon`` is 
 
 Overrides the ``name`` shader in the theme resource the node uses. If ``shader`` is empty, Godot clears the override.
 
-.. _class_Control_add_style_override:
+.. _class_Control_add_stylebox_override:
 
-- void **add_style_override** **(** :ref:`String<class_string>` name, :ref:`StyleBox<class_stylebox>` stylebox **)**
+- void **add_stylebox_override** **(** :ref:`String<class_string>` name, :ref:`StyleBox<class_stylebox>` stylebox **)**
 
 Overrides the ``name`` Stylebox in the theme resource the node uses. If ``stylebox`` is empty, Godot clears the override.
 
@@ -667,6 +669,10 @@ Return whether the Control is the current focused control (see :ref:`set_focus_m
 .. _class_Control_has_point:
 
 - :ref:`bool<class_bool>` **has_point** **(** :ref:`Vector2<class_vector2>` point **)** virtual
+
+.. _class_Control_has_shader_override:
+
+- :ref:`bool<class_bool>` **has_shader_override** **(** :ref:`String<class_string>` name **)** const
 
 .. _class_Control_has_stylebox:
 

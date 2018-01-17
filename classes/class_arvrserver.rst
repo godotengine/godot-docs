@@ -44,25 +44,25 @@ Signals
 
 .. _class_ARVRServer_interface_added:
 
-- **interface_added** **(** :ref:`String<class_string>` name **)**
+- **interface_added** **(** :ref:`String<class_string>` interface_name **)**
 
 Signal send when a new interface has been added.
 
 .. _class_ARVRServer_interface_removed:
 
-- **interface_removed** **(** :ref:`String<class_string>` name **)**
+- **interface_removed** **(** :ref:`String<class_string>` interface_name **)**
 
 Signal send when an interface is removed.
 
 .. _class_ARVRServer_tracker_added:
 
-- **tracker_added** **(** :ref:`String<class_string>` name, :ref:`int<class_int>` type, :ref:`int<class_int>` id **)**
+- **tracker_added** **(** :ref:`String<class_string>` tracker_name, :ref:`int<class_int>` type, :ref:`int<class_int>` id **)**
 
 Signal send when a new tracker has been added. If you don't use a fixed number of controllers or if you're using ARVRAnchors for an AR solution it is important to react to this signal and add the appropriate ARVRController or ARVRAnchor node related to this new tracker.
 
 .. _class_ARVRServer_tracker_removed:
 
-- **tracker_removed** **(** :ref:`String<class_string>` name, :ref:`int<class_int>` type, :ref:`int<class_int>` id **)**
+- **tracker_removed** **(** :ref:`String<class_string>` tracker_name, :ref:`int<class_int>` type, :ref:`int<class_int>` id **)**
 
 Signal send when a tracker is removed, you should remove any ARVRController or ARVRAnchor points if applicable. This is not mandatory, the nodes simply become inactive and will be made active again when a new tracker becomes available (i.e. a new controller is switched on that takes the place of the previous one).
 

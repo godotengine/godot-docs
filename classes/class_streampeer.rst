@@ -54,33 +54,33 @@ Member Functions
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_variant>`  | :ref:`get_var<class_StreamPeer_get_var>` **(** **)**                                                                  |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`put_16<class_StreamPeer_put_16>` **(** :ref:`int<class_int>` val **)**                                          |
+| void                           | :ref:`put_16<class_StreamPeer_put_16>` **(** :ref:`int<class_int>` value **)**                                        |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`put_32<class_StreamPeer_put_32>` **(** :ref:`int<class_int>` val **)**                                          |
+| void                           | :ref:`put_32<class_StreamPeer_put_32>` **(** :ref:`int<class_int>` value **)**                                        |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`put_64<class_StreamPeer_put_64>` **(** :ref:`int<class_int>` val **)**                                          |
+| void                           | :ref:`put_64<class_StreamPeer_put_64>` **(** :ref:`int<class_int>` value **)**                                        |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`put_8<class_StreamPeer_put_8>` **(** :ref:`int<class_int>` val **)**                                            |
+| void                           | :ref:`put_8<class_StreamPeer_put_8>` **(** :ref:`int<class_int>` value **)**                                          |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`put_data<class_StreamPeer_put_data>` **(** :ref:`PoolByteArray<class_poolbytearray>` data **)**                 |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`put_double<class_StreamPeer_put_double>` **(** :ref:`float<class_float>` val **)**                              |
+| void                           | :ref:`put_double<class_StreamPeer_put_double>` **(** :ref:`float<class_float>` value **)**                            |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`put_float<class_StreamPeer_put_float>` **(** :ref:`float<class_float>` val **)**                                |
+| void                           | :ref:`put_float<class_StreamPeer_put_float>` **(** :ref:`float<class_float>` value **)**                              |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_array>`      | :ref:`put_partial_data<class_StreamPeer_put_partial_data>` **(** :ref:`PoolByteArray<class_poolbytearray>` data **)** |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`put_u16<class_StreamPeer_put_u16>` **(** :ref:`int<class_int>` val **)**                                        |
+| void                           | :ref:`put_u16<class_StreamPeer_put_u16>` **(** :ref:`int<class_int>` value **)**                                      |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`put_u32<class_StreamPeer_put_u32>` **(** :ref:`int<class_int>` val **)**                                        |
+| void                           | :ref:`put_u32<class_StreamPeer_put_u32>` **(** :ref:`int<class_int>` value **)**                                      |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`put_u64<class_StreamPeer_put_u64>` **(** :ref:`int<class_int>` val **)**                                        |
+| void                           | :ref:`put_u64<class_StreamPeer_put_u64>` **(** :ref:`int<class_int>` value **)**                                      |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`put_u8<class_StreamPeer_put_u8>` **(** :ref:`int<class_int>` val **)**                                          |
+| void                           | :ref:`put_u8<class_StreamPeer_put_u8>` **(** :ref:`int<class_int>` value **)**                                        |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`put_utf8_string<class_StreamPeer_put_utf8_string>` **(** :ref:`String<class_string>` val **)**                  |
+| void                           | :ref:`put_utf8_string<class_StreamPeer_put_utf8_string>` **(** :ref:`String<class_string>` value **)**                |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`put_var<class_StreamPeer_put_var>` **(** :ref:`Variant<class_variant>` val **)**                                |
+| void                           | :ref:`put_var<class_StreamPeer_put_var>` **(** :ref:`Variant<class_variant>` value **)**                              |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
@@ -197,25 +197,25 @@ Get a Variant from the stream.
 
 .. _class_StreamPeer_put_16:
 
-- void **put_16** **(** :ref:`int<class_int>` val **)**
+- void **put_16** **(** :ref:`int<class_int>` value **)**
 
 Put a signed 16 bit value into the stream.
 
 .. _class_StreamPeer_put_32:
 
-- void **put_32** **(** :ref:`int<class_int>` val **)**
+- void **put_32** **(** :ref:`int<class_int>` value **)**
 
 Put a signed 32 bit value into the stream.
 
 .. _class_StreamPeer_put_64:
 
-- void **put_64** **(** :ref:`int<class_int>` val **)**
+- void **put_64** **(** :ref:`int<class_int>` value **)**
 
 Put a signed 64 bit value into the stream.
 
 .. _class_StreamPeer_put_8:
 
-- void **put_8** **(** :ref:`int<class_int>` val **)**
+- void **put_8** **(** :ref:`int<class_int>` value **)**
 
 Put a signed byte into the stream.
 
@@ -227,13 +227,13 @@ Send a chunk of data through the connection, blocking if necessary until the dat
 
 .. _class_StreamPeer_put_double:
 
-- void **put_double** **(** :ref:`float<class_float>` val **)**
+- void **put_double** **(** :ref:`float<class_float>` value **)**
 
 Put a double-precision float into the stream.
 
 .. _class_StreamPeer_put_float:
 
-- void **put_float** **(** :ref:`float<class_float>` val **)**
+- void **put_float** **(** :ref:`float<class_float>` value **)**
 
 Put a single-precision float into the stream.
 
@@ -245,37 +245,37 @@ Send a chunk of data through the connection, if all the data could not be sent a
 
 .. _class_StreamPeer_put_u16:
 
-- void **put_u16** **(** :ref:`int<class_int>` val **)**
+- void **put_u16** **(** :ref:`int<class_int>` value **)**
 
 Put an unsigned 16 bit value into the stream.
 
 .. _class_StreamPeer_put_u32:
 
-- void **put_u32** **(** :ref:`int<class_int>` val **)**
+- void **put_u32** **(** :ref:`int<class_int>` value **)**
 
 Put an unsigned 32 bit value into the stream.
 
 .. _class_StreamPeer_put_u64:
 
-- void **put_u64** **(** :ref:`int<class_int>` val **)**
+- void **put_u64** **(** :ref:`int<class_int>` value **)**
 
 Put an unsigned 64 bit value into the stream.
 
 .. _class_StreamPeer_put_u8:
 
-- void **put_u8** **(** :ref:`int<class_int>` val **)**
+- void **put_u8** **(** :ref:`int<class_int>` value **)**
 
 Put an unsigned byte into the stream.
 
 .. _class_StreamPeer_put_utf8_string:
 
-- void **put_utf8_string** **(** :ref:`String<class_string>` val **)**
+- void **put_utf8_string** **(** :ref:`String<class_string>` value **)**
 
 Put a zero-terminated utf8 string into the stream.
 
 .. _class_StreamPeer_put_var:
 
-- void **put_var** **(** :ref:`Variant<class_variant>` val **)**
+- void **put_var** **(** :ref:`Variant<class_variant>` value **)**
 
 Put a Variant into the stream.
 

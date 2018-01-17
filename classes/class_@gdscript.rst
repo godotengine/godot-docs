@@ -42,7 +42,7 @@ Member Functions
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                                | :ref:`char<class_@GDScript_char>` **(** :ref:`int<class_int>` ascii **)**                                                                                                                                                       |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`clamp<class_@GDScript_clamp>` **(** :ref:`float<class_float>` val, :ref:`float<class_float>` min, :ref:`float<class_float>` max **)**                                                                                     |
+| :ref:`float<class_float>`                                  | :ref:`clamp<class_@GDScript_clamp>` **(** :ref:`float<class_float>` value, :ref:`float<class_float>` min, :ref:`float<class_float>` max **)**                                                                                   |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_object>`                                | :ref:`convert<class_@GDScript_convert>` **(** :ref:`Variant<class_variant>` what, :ref:`int<class_int>` type **)**                                                                                                              |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -78,7 +78,7 @@ Member Functions
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Object<class_object>`                                | :ref:`instance_from_id<class_@GDScript_instance_from_id>` **(** :ref:`int<class_int>` instance_id **)**                                                                                                                         |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`inverse_lerp<class_@GDScript_inverse_lerp>` **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` value **)**                                                                     |
+| :ref:`float<class_float>`                                  | :ref:`inverse_lerp<class_@GDScript_inverse_lerp>` **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` weight **)**                                                                    |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                                    | :ref:`is_inf<class_@GDScript_is_inf>` **(** :ref:`float<class_float>` s **)**                                                                                                                                                   |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -98,7 +98,7 @@ Member Functions
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                  | :ref:`min<class_@GDScript_min>` **(** :ref:`float<class_float>` a, :ref:`float<class_float>` b **)**                                                                                                                            |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                      | :ref:`nearest_po2<class_@GDScript_nearest_po2>` **(** :ref:`int<class_int>` val **)**                                                                                                                                           |
+| :ref:`int<class_int>`                                      | :ref:`nearest_po2<class_@GDScript_nearest_po2>` **(** :ref:`int<class_int>` value **)**                                                                                                                                         |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Variant<class_variant>`                              | :ref:`parse_json<class_@GDScript_parse_json>` **(** :ref:`String<class_string>` json **)**                                                                                                                                      |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -336,7 +336,7 @@ Returns a character as a String of the given ASCII code.
 
 .. _class_@GDScript_clamp:
 
-- :ref:`float<class_float>` **clamp** **(** :ref:`float<class_float>` val, :ref:`float<class_float>` min, :ref:`float<class_float>` max **)**
+- :ref:`float<class_float>` **clamp** **(** :ref:`float<class_float>` value, :ref:`float<class_float>` min, :ref:`float<class_float>` max **)**
 
 Clamps ``val`` and returns a value not less than ``min`` and not more than ``max``.
 
@@ -563,7 +563,7 @@ Returns the Object that corresponds to ``instance_id``. All Objects have a uniqu
 
 .. _class_@GDScript_inverse_lerp:
 
-- :ref:`float<class_float>` **inverse_lerp** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **inverse_lerp** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` weight **)**
 
 Returns a normalized value considering the given range.
 
@@ -655,7 +655,7 @@ Returns the minimum of two values.
 
 .. _class_@GDScript_nearest_po2:
 
-- :ref:`int<class_int>` **nearest_po2** **(** :ref:`int<class_int>` val **)**
+- :ref:`int<class_int>` **nearest_po2** **(** :ref:`int<class_int>` value **)**
 
 Returns the nearest larger power of 2 for integer ``val``.
 

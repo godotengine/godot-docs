@@ -59,7 +59,7 @@ Member Variables
 
   .. _class_@GlobalScope_JavaScript:
 
-- :ref:`JavaScript<class_javascript>` **JavaScript**
+- :ref:`JavaScript<class_javascript>` **JavaScript** - :ref:`JavaScript<class_javascript>` singleton
 
   .. _class_@GlobalScope_Marshalls:
 

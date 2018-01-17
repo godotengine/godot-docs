@@ -48,7 +48,7 @@ Member Variables
 
   .. _class_Engine_target_fps:
 
-- :ref:`float<class_float>` **target_fps** - The desired frames per second. If the hardware cannot keep up, this setting may not be respected. Defaults to 0, which indicates no limit.
+- :ref:`int<class_int>` **target_fps** - The desired frames per second. If the hardware cannot keep up, this setting may not be respected. Defaults to 0, which indicates no limit.
 
   .. _class_Engine_time_scale:
 

@@ -14,7 +14,7 @@ AnimationTreePlayer
 Brief Description
 -----------------
 
-Animation Player that uses a node graph for the blending.
+Animation Player that uses a node graph for blending Animations.
 
 Member Functions
 ----------------
@@ -144,9 +144,13 @@ Member Variables
 
 - :ref:`NodePath<class_nodepath>` **base_path** - The node from which to relatively access other nodes. Default value: ``".."``.
 
+It accesses the Bones, so it should point to the same Node the AnimationPlayer would point its Root Node at.
+
   .. _class_AnimationTreePlayer_master_player:
 
 - :ref:`NodePath<class_nodepath>` **master_player** - The path to the :ref:`AnimationPlayer<class_animationplayer>` from which this ``AnimationTreePlayer`` binds animations to animation nodes.
+
+Once set, Animation nodes can be added to the AnimationTreePlayer.
 
   .. _class_AnimationTreePlayer_playback_process_mode:
 
@@ -184,6 +188,8 @@ Description
 
 A node graph tool for blending multiple animations bound to an :ref:`AnimationPlayer<class_animationplayer>`. Especially useful for animating characters or other skeleton-based rigs. It can combine several animations to form a desired pose.
 
+It takes :ref:`Animation<class_animation>`\ s from an :ref:`AnimationPlayer<class_animationplayer>` node and mixes them depending on the graph.
+
 Member Function Description
 ---------------------------
 
@@ -203,19 +209,19 @@ Shifts position in the animation timeline. Delta is the time in seconds to shift
 
 - :ref:`Animation<class_animation>` **animation_node_get_animation** **(** :ref:`String<class_string>` id **)** const
 
-Returns the :ref:`AnimationPlayer<class_animationplayer>`'s animation bound to the ``AnimationTreePlayer``'s animation node with name ``id``.
+Returns the :ref:`AnimationPlayer<class_animationplayer>`'s :ref:`Animation<class_animation>` bound to the ``AnimationTreePlayer``'s animation node with name ``id``.
 
 .. _class_AnimationTreePlayer_animation_node_get_master_animation:
 
 - :ref:`String<class_string>` **animation_node_get_master_animation** **(** :ref:`String<class_string>` id **)** const
 
-Returns the name of the :ref:`master_player<class_AnimationTreePlayer_master_player>`'s animation bound to this animation node.
+Returns the name of the :ref:`master_player<class_AnimationTreePlayer_master_player>`'s :ref:`Animation<class_animation>` bound to this animation node.
 
 .. _class_AnimationTreePlayer_animation_node_set_animation:
 
 - void **animation_node_set_animation** **(** :ref:`String<class_string>` id, :ref:`Animation<class_animation>` animation **)**
 
-Binds a new animation from the :ref:`master_player<class_AnimationTreePlayer_master_player>` to the ``AnimationTreePlayer``'s animation node with name ``id``.
+Binds a new :ref:`Animation<class_animation>` from the :ref:`master_player<class_AnimationTreePlayer_master_player>` to the ``AnimationTreePlayer``'s animation node with name ``id``.
 
 .. _class_AnimationTreePlayer_animation_node_set_filter_path:
 
@@ -227,7 +233,7 @@ If ``enable`` is ``true``, the animation node with ID ``id`` turns off the track
 
 - void **animation_node_set_master_animation** **(** :ref:`String<class_string>` id, :ref:`String<class_string>` source **)**
 
-Binds the animation named ``source`` from :ref:`master_player<class_AnimationTreePlayer_master_player>` to the animation node ``id``. Recalculates caches.
+Binds the :ref:`Animation<class_animation>` named ``source`` from :ref:`master_player<class_AnimationTreePlayer_master_player>` to the animation node ``id``. Recalculates caches.
 
 .. _class_AnimationTreePlayer_are_nodes_connected:
 
@@ -247,6 +253,14 @@ Returns the blend amount of a Blend2 node given its name.
 
 Sets the blend amount of a Blend2 node given its name and value.
 
+A Blend2 Node blends two animations with the amount between 0 and 1.
+
+At 0, Output is input a.
+
+Towards 1, the influence of a gets lessened, the influence of b gets raised.
+
+At 1, Output is input b.
+
 .. _class_AnimationTreePlayer_blend2_node_set_filter_path:
 
 - void **blend2_node_set_filter_path** **(** :ref:`String<class_string>` id, :ref:`NodePath<class_nodepath>` path, :ref:`bool<class_bool>` enable **)**
@@ -265,6 +279,18 @@ Returns the blend amount of a Blend3 node given its name.
 
 Sets the blend amount of a Blend3 node given its name and value.
 
+A Blend3 Node blends three animations with the amount between -1 and 1.
+
+At -1, Output is input b-.
+
+From -1 to 0, the influence of b- gets lessened, the influence of a gets raised and the influence of b+ is 0.
+
+At 0, Output is input a.
+
+From 0 to 1, the influence of a gets lessened, the influence of b+ gets raised and the influence of b+ is 0.
+
+At 1, Output is input b+.
+
 .. _class_AnimationTreePlayer_blend4_node_get_amount:
 
 - :ref:`Vector2<class_vector2>` **blend4_node_get_amount** **(** :ref:`String<class_string>` id **)** const
@@ -276,6 +302,10 @@ Returns the blend amount of a Blend4 node given its name.
 - void **blend4_node_set_amount** **(** :ref:`String<class_string>` id, :ref:`Vector2<class_vector2>` blend **)**
 
 Sets the blend amount of a Blend4 node given its name and value.
+
+A Blend4 Node blends two pairs of animations.
+
+The two pairs are blended like blend2 and then added together.
 
 .. _class_AnimationTreePlayer_connect_nodes:
 
@@ -293,7 +323,7 @@ Disconnects nodes connected to ``id`` at the specified input slot.
 
 - :ref:`PoolStringArray<class_poolstringarray>` **get_node_list** **(** **)**
 
-Returns a PoolStringArray containing the name of all nodes.
+Returns a :ref:`PoolStringArray<class_poolstringarray>` containing the name of all nodes.
 
 .. _class_AnimationTreePlayer_mix_node_get_amount:
 
@@ -306,6 +336,8 @@ Returns mix amount of a Mix node given its name.
 - void **mix_node_set_amount** **(** :ref:`String<class_string>` id, :ref:`float<class_float>` ratio **)**
 
 Sets mix amount of a Mix node given its name and value.
+
+A Mix node adds input b to input a by a the amount given by ratio.
 
 .. _class_AnimationTreePlayer_node_exists:
 
@@ -449,7 +481,7 @@ Removes the animation node with name ``id``.
 
 - void **reset** **(** **)**
 
-Resets this AnimationTreePlayer.
+Resets this ``AnimationTreePlayer``.
 
 .. _class_AnimationTreePlayer_timescale_node_get_scale:
 
@@ -463,11 +495,17 @@ Returns time scale value of the TimeScale node with name ``id``.
 
 Sets the time scale of the TimeScale node with name ``id`` to ``scale``.
 
+The timescale node is used to speed :ref:`Animation<class_animation>`\ s up if the scale is above 1 or slow them down if it is below 1.
+
+If applied after a blend or mix, affects all input animations to that blend or mix.
+
 .. _class_AnimationTreePlayer_timeseek_node_seek:
 
 - void **timeseek_node_seek** **(** :ref:`String<class_string>` id, :ref:`float<class_float>` seconds **)**
 
 Sets the time seek value of the TimeSeek node with name ``id`` to ``seconds``
+
+This functions as a seek in the :ref:`Animation<class_animation>` or the blend or mix of :ref:`Animation<class_animation>`\ s input in it.
 
 .. _class_AnimationTreePlayer_transition_node_delete_input:
 
@@ -485,7 +523,7 @@ Returns the index of the currently evaluated input for the transition node with 
 
 - :ref:`int<class_int>` **transition_node_get_input_count** **(** :ref:`String<class_string>` id **)** const
 
-Returns the number of inputs for the transition node with name ``id``.
+Returns the number of inputs for the transition node with name ``id``. You can add inputs by rightclicking on the transition node.
 
 .. _class_AnimationTreePlayer_transition_node_get_xfade_time:
 
