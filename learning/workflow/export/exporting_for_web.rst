@@ -21,7 +21,7 @@ Exported ``.html`` file must not be reused
 
 On export, several text placeholders are replaced in the **generated HTML
 file** specifically for the given export options. It must not be reused in
-futher exports.
+further exports.
 
 Using cookies for data persistence
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -112,7 +112,7 @@ The ``.pck`` file is binary, usually delivered with the MIME-type
 
 Delivering the files with server-side compression is recommended especially for
 the ``.pck`` and ``.wasm`` files, which are usually large in size.
-The WebAssembly module compresses particularily well, down to around a quarter
+The WebAssembly module compresses particularly well, down to around a quarter
 of its original size with GZip.
 
 Export options

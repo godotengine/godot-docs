@@ -53,7 +53,7 @@ Importing
 
 Godot version previous to 3.0 did the import process from files outside
 the project. While this can be useful in very large projects, it
-resulted in an organization hazzle for most developers.
+resulted in an organization hassle for most developers.
 
 Because of this, assets are now imported from within the project
 folder transparently.

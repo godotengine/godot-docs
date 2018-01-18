@@ -6,7 +6,7 @@ Import process
 Importing assets in Godot 3.0+
 ------------------------------
 
-Previously, importing assets in Godot 2.x required manual maintainance
+Previously, importing assets in Godot 2.x required manual maintenance
 of a separate directory with source assets. Without doing this, it was
 impossible to specify how to convert and change import flags for
 textures, audios, scenes, etc.
@@ -55,7 +55,7 @@ Additionally, extra assets will be presset in the hidden res://.import folder:
 .. image:: img/asset_workflow5.png
 
 If any of the files present in this folder is erased (or the whole folder), the
-asset or asssets will be reimported automatically. As such, Commiting this folder
+asset or asssets will be reimported automatically. As such, committing this folder
 to the version control system is optional. It can save time on
 reimporting time when checking out in another computer, but it takes considerably
 more space and transfer time. Pick your poison!

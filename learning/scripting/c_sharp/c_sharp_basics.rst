@@ -45,7 +45,7 @@ and on that page choose your external editor of choice.
 Creating a C# script
 --------------------
 
-After you sucessfully setup C# for Godot, you should see the following option when selecting ``Attach script`` in the context menu of a node in your scene:
+After you successfully setup C# for Godot, you should see the following option when selecting ``Attach script`` in the context menu of a node in your scene:
 
 .. image:: img/attachcsharpscript.png
 

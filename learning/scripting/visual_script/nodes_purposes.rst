@@ -280,7 +280,7 @@ from the scene tree to the canvas (this will create it and configure it).
 Self
 ^^^^
 
-In some rare ocassions, it may be desired to pass this Scene Node as argument. 
+In some rare occasions, it may be desired to pass this Scene Node as argument. 
 It can be used to call functions and set/get properties, or just drag nodes (or event the node itself that has the script) from the Scene Tree to the canvas for this.
 
 
@@ -405,7 +405,7 @@ at some point.
 By Type
 ^^^^^^^
 
-Those are the methods available to basic types. For example, if you want a dot-product, you can search for "dot" intead of the Vector3 category.
+Those are the methods available to basic types. For example, if you want a dot-product, you can search for "dot" instead of the Vector3 category.
 In most cases just search the list of nodes, it should be faster.
 
 
@@ -453,7 +453,7 @@ Default nodes allow you to wait for a frame to pass, a fixed frame or a given am
 Yield
 ^^^^^
 
-This node completely suspends the execution of the script, and it wil make the function return a value that can be used to resume execution.
+This node completely suspends the execution of the script, and it will make the function return a value that can be used to resume execution.
 
 
 Yield Signal

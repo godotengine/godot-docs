@@ -158,7 +158,7 @@ Deselect rotation, because we are only interested in the location of our
 sprite for this tutorial and click on the key button.
 
 As we don't have a track already set up for the transform/location
-property, Godot asks, wether it should set it up for us. Click on
+property, Godot asks, whether it should set it up for us. Click on
 "Create".
 
 This creates a new track and our very first keyframe at the beginning of

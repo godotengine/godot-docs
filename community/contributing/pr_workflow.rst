@@ -31,7 +31,7 @@ The `repository on GitHub <https://github.com/godotengine/godot>`_ is a
 issue tracker and PR system.
 
 The Git version control system is the tool used to keep track of successive
-edits to the source code - to contibute efficiently to Godot, learning the
+edits to the source code - to contribute efficiently to Godot, learning the
 basics of the Git command line is *highly* recommended. There exist some
 graphical interfaces for Git, but they usually encourage users to take bad
 habits regarding the Git and PR workflow, and we therefore recommend not to
@@ -274,7 +274,7 @@ remote branch to share them with the world. The syntax for this is:
 
     $ git push <remote> <local branch>[:<remote branch>]
 
-The part about the remote branch can be ommitted if you want it to have the
+The part about the remote branch can be omitted if you want it to have the
 same name as the local branch, which is our case in this example, so we will
 do:
 

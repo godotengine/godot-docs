@@ -68,7 +68,7 @@ Contributing code changes upstream has two big advantages:
 -  Your own code will be reviewed and improved by other developers, and will be
    further maintained directly in the upstream project, so you won't have to
    reapply your own changes every time you move to a newer version. On the
-   other hand it comes with a responsability, as your changes have to be
+   other hand it comes with a responsibility, as your changes have to be
    generic enough to be beneficial to all users, and not just your project; so
    in some cases it might still be relevant to keep your changes only for your
    own project, if they are too specific.

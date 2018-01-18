@@ -47,7 +47,7 @@ received input, in order:
    of mouse events via :ref:`Control._gui_input() <class_Control__gui_input>`
    callback, and whether these events are propagated further.
 3. If so far no one consumed the event, the unhandled input callback
-   will be called if overriden (and not disabled with 
+   will be called if overridden (and not disabled with 
    :ref:`Node.set_process_unhandled_input() <class_Node_set_process_unhandled_input>`).
    If any function consumes the event, it can call :ref:`SceneTree.set_input_as_handled() <class_SceneTree_set_input_as_handled>`, and the
    event will not spread any more. The unhandled input callback is ideal for full-screen gameplay events, so they are not received when a GUI is active.

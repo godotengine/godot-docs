@@ -28,7 +28,7 @@ The WorldEnvironment node can be added to any scene, but only one can exist per 
 
 .. image:: img/environment_world.png
 
-Any Environment added has higher priority than the default Environment (explained below). This means it can be overriden on a per-scene basis, which makes it quite useful.
+Any Environment added has higher priority than the default Environment (explained below). This means it can be overridden on a per-scene basis, which makes it quite useful.
 
 
 Default Environment
@@ -81,7 +81,7 @@ Here is a comparison of how different ambient light affects a scene:
 Finally there is a **Energy** setting, which is just a multiplier, useful when working with HDR.
 
 In general, ambient light should only be used for simple scenes, large exteriors or for performance reasons (ambient light is cheap), as it does not provide the best lighting quality. It's better to generate
-ambient light from ReflectionProbe or GIProbe, which will more faithfully simulate how indirect light propagates. Below is a comparision in quality between using a flat ambient color and a GIProbe:
+ambient light from ReflectionProbe or GIProbe, which will more faithfully simulate how indirect light propagates. Below is a comparison in quality between using a flat ambient color and a GIProbe:
 
 .. image:: img/environment_ambient_comparison.png
 
@@ -103,7 +103,7 @@ Two properties can be tweaked to make the fog effect more interesting:
 
 The first is **Sun Amount**, which makes use of the Sun Color property of the fog. When looking towards a directional light (usually a sun), the color of the fog will be changed, simulating the sunlight passing through the fog.
 
-The second is **Transmit Enabled** wich simulates more realistic light transmittance. In practice, it makes light stand out more across the fog.
+The second is **Transmit Enabled** which simulates more realistic light transmittance. In practice, it makes light stand out more across the fog.
 
 .. image:: img/environment_fog_transmission.png
 
@@ -233,7 +233,7 @@ the **Glow** effect.
 
 By default, even if the effect is enabled, it will be very weak or invisible. One of two conditions need to happen for it to actually show:
 
-- 1) The light in a pixel surpasses the **HDR Treshold** (where 0 is all light surpasses it, and 1.0 is light over the tonemapper **White** value). Normally this value is expected to be at 1.0, but it can be lowered to allow more light to bleed. There is also an extra parameter, **HDR Scale** that allows scaling (making brighter or darker) the light surpasing the threshold.
+- 1) The light in a pixel surpasses the **HDR Threshold** (where 0 is all light surpasses it, and 1.0 is light over the tonemapper **White** value). Normally this value is expected to be at 1.0, but it can be lowered to allow more light to bleed. There is also an extra parameter, **HDR Scale** that allows scaling (making brighter or darker) the light surpasing the threshold.
 
 .. image:: img/environment_glow_threshold.png
 
@@ -252,7 +252,7 @@ The **Blend Mode** of the effect can also be changed:
 
 - **Additive** is the strongest one, as it just adds the glow effect over the image with no blending involved. In general, it's too strong to be used, but can look good with low intensity Bloom (produces a dream-like effect).
 - **Screen** is the default one. It ensures glow never brights more than itself, and works great as an all around.
-- **Softlight** is the weakest one, producing only a subtle color disturbance arround the objects. This mode works best on dark scenes.
+- **Softlight** is the weakest one, producing only a subtle color disturbance around the objects. This mode works best on dark scenes.
 - **Replace** can be used to blur the whole screen or debug the effect. It just shows the glow effect without the image below.
 
 To change the glow effect size and shape, Godot provides **Levels**. Smaller levels are strong glows that appear around objects, while large levels are hazy glows covering the whole screen:

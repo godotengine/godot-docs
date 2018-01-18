@@ -46,7 +46,7 @@ Compiling for 32 and 64-bit
 All macOS versions after 10.6 are 64-bit exclusive, so the executable
 will be a ".64" file by default for most users. If you would like to 
 compile a ".fat" executable which contains both 32 and 64-bit code, 
-you can do so by specifiying the bits in the scons command like so:
+you can do so by specifying the bits in the scons command like so:
 
 ::
 

@@ -60,7 +60,7 @@ by running the lighting shader on every pixel.
 As these calculations are costly, performance can be brought down considerably in some corner cases such as drawing
 several layers of transparency (common in particle systems). Switching to per vertex lighting may help these cases.
 
-Additionaly, on very low end devices such as mobile, switching to vertex lighting can considerably increase rendering performance.
+Additionally, on very low end devices such as mobile, switching to vertex lighting can considerably increase rendering performance.
 
 
 .. image:: img/spatial_material2.png
@@ -157,7 +157,7 @@ Controls the blend mode for the material. Keep in mind that any mode other than 
 
 * Mix: Default blend mode, alpha controls how much the object is visible.
 * Add: Object is blended additively, nice for flares or some fire-like effects.
-* Sub: Object is substracted.
+* Sub: Object is subtracted.
 * Mul: Object is multiplied.
 
 .. image:: img/spatial_material8.png
@@ -224,7 +224,7 @@ add some grow:
 Use Alpha Scissor
 ~~~~~~~~~~~~~~~~~
 
-When transparency other than 0 or 1 is not needed, it's possible to set a treshold to avoid the object from rendering these pixels.
+When transparency other than 0 or 1 is not needed, it's possible to set a threshold to avoid the object from rendering these pixels.
 
 .. image:: img/spatial_material12.png
 
@@ -339,7 +339,7 @@ This effect emulates light that goes beneath an object's surface, is scattered, 
 Transmission
 ~~~~~~~~~~~~
 
-Controls how much light from the lit side (visible to light) is transfered to the dark side (opposite side to light). This works very well for thin objects such as tree/plant leaves,
+Controls how much light from the lit side (visible to light) is transferred to the dark side (opposite side to light). This works very well for thin objects such as tree/plant leaves,
 grass, human ears, etc.
 
 .. image:: img/spatial_material22.png

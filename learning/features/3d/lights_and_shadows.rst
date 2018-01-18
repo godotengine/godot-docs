@@ -54,7 +54,7 @@ Below is an image of how tweaking bias looks like. Default values work for most 
 
 .. image:: img/shadow_bias.png
 
-Finally, if gaps cant be solved, the **Contact** option can help:
+Finally, if gaps can't be solved, the **Contact** option can help:
 
 .. image:: img/shadow_contact.png
 
@@ -183,7 +183,7 @@ Spot lights share the same **Range** and **Attenuation** as **OmniLight**, and a
 Spot Shadow Mapping
 ^^^^^^^^^^^^^^^^^^^
 
-Spots dont need any parameters for shadow mapping, they should just work. Keep in mind that, at more than 89 degrees of aperture, shadows
+Spots don't need any parameters for shadow mapping, they should just work. Keep in mind that, at more than 89 degrees of aperture, shadows
 stop functioning for spots, and you should consider using an Omni light.
 
 Shadow Atlas

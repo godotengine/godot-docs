@@ -435,7 +435,7 @@ to ``EnergyBar``. We need to replace the HP texture with EP one, and to
 change the textures on the gauge.
 
 Head to the FileSystem dock on the left, select the ``Title`` node in
-the Scene tree and drag and drop the ``label_EP.PNG`` file onto the
+the Scene tree and drag and drop the ``label_EP.png`` file onto the
 texture slot. Select the ``Number`` node and change the ``Text``
 property to a different value like ``14``.
 
@@ -521,7 +521,7 @@ as ``BombCounter`` too. That's all for this scene.
 Go to ``Scene -> New Inherited Scene`` again and select ``Counter.tscn``
 once more. Save the scene as ``RupeeCounter.tscn``. Rename the root node
 ``RupeeCounter``. For this one, we mainly need to replace the bomb icon
-with the rupee icon. In the FileSystem tab, drag the ``rupees_icon.PNG``
+with the rupee icon. In the FileSystem tab, drag the ``rupees_icon.png``
 onto the ``Icon`` node's ``Texture`` slot. ``Icon`` already anchors to
 the right edge of the ``Background`` node so we can change its position
 and it will scale and reposition with the ``RupeeCounter`` container.

@@ -9,7 +9,7 @@ Godot Scene Importer
 When dealing with 3D assets, Godot has a very flexible and configurable importer.
 
 Godot works with *scenes*. This means that the entire scene being worked on in your favorite 3D DCC will be
-transfered as close as possible.
+transferred as close as possible.
 
 Godot supports the following 3D *scene file fomats*: 
 

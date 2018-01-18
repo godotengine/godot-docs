@@ -26,7 +26,7 @@ Because of the large difference in performance it often makes sense to re-build 
 In summary you can use the low-level networking API for maximum control and implement everything on top of bare network protocols or use the high-level API based on :ref:`SceneTree <class_SceneTree>` that does most of the heavy lifting behind the scenes in a generally optimized way.
 
 .. note:: Most of Godot's supported platforms offer all or most of the mentioned high- and low-level networking
-	  features. As networking is always largely hardware and operating system dependant, however,
+	  features. As networking is always largely hardware and operating system dependent, however,
 	  some features may change or not be available on some target platforms. Most notably,
 	  the HTML5 platform currently only offers WebSocket support and lacks some of the higher level features as
 	  well as raw access to low-level protocols like TCP and UDP.

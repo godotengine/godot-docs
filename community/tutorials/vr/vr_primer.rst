@@ -27,7 +27,7 @@ This code finds the interface we wish to use, initializes it and if that is succ
 
 For our mobile vr interface, and any interface where the main input is directly displayed on screen, the main viewport needs to be the viewport where arvr is set to true. But for interfaces that render on an externally attached device you can use a secondary viewport. In this later case a viewport that shows its output on screen will show an undistorted version of the left eye while showing the fully processed stereo scopic output on the device.
 
-Finally you should only intialize an interface once, switching scenes and reinitializing interfaces will just introduce a lot of overhead. If you want to turn the headset off temporarily just disable the viewport or set arvr to false on the viewport. In most scenarios though you wouldn't disable the headset once you're in VR, this can be very disconcerting to the gamer.
+Finally you should only initialize an interface once, switching scenes and reinitializing interfaces will just introduce a lot of overhead. If you want to turn the headset off temporarily just disable the viewport or set arvr to false on the viewport. In most scenarios though you wouldn't disable the headset once you're in VR, this can be very disconcerting to the gamer.
 
 New AR/VR Nodes
 ---------------
@@ -59,7 +59,7 @@ Other things to consider
 ------------------------
 There are a few other subjects that we need to briefly touch upon in this primer that are important to know.
 
-The first are our units. In normal 3D games you don't have to think alot about units. As long as everything is at the same scale a box sized 1 unit by 1 unit by 1 unit can be any size from a cube you can hold in your hand to something the size of a building. 
+The first are our units. In normal 3D games you don't have to think a lot about units. As long as everything is at the same scale a box sized 1 unit by 1 unit by 1 unit can be any size from a cube you can hold in your hand to something the size of a building. 
 In AR and VR this changes because things in your virtual world are mapped to things in the real world. If you step 1 meter forward in the real world, but you only move 1 cm forward in your virtual world, you have a problem. The same with the position of your controllers, if they don't appear in the right relative space it breaks the immersion for the player. 
 Most VR platforms including our AR/VR Server assumes that 1 unit = 1 meter. The AR/VR server however has a property that for convenience is also exposed on the ARVROrigin node called world scale. For instance setting this to a value of 10 it changes our coordinate system so 10 units = 1 meter. 
 

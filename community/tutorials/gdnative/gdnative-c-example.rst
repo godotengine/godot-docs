@@ -133,7 +133,7 @@ Next up is ``gdnative_terminate`` which is called before the library is unloaded
 
 Finally we have ``nativescript_init`` which is the most important function we'll need today. This function will be called by Godot as part of loading a GDNative library and communicates back to Godot what objects we make available to Godot.
 
-We first tell Godot which classes are implemented by calling ``nativescript_register_class``. The first parameter here is the handle pointer given to us. The second is the name of our object class. The third is the type of object in Godot that we 'inherit' from, this is not true inheritence but it's close enough. Finally, our fourth and fifth parameters are descriptions for our constructor and destructor.
+We first tell Godot which classes are implemented by calling ``nativescript_register_class``. The first parameter here is the handle pointer given to us. The second is the name of our object class. The third is the type of object in Godot that we 'inherit' from, this is not true inheritance but it's close enough. Finally, our fourth and fifth parameters are descriptions for our constructor and destructor.
 
 We then tell Godot about our methods (well our one method in this case), by calling ``nativescript_register_method`` for each method of our class. In our case, that is just ``get_data``. Our first parameter is yet again our handle pointer. The second is again the name of the object class we're registering. The third is the name of our function as it will be known to GDScript. The fourth is our attributes setting. The fifth and final parameter is a description of which function to call when the method gets called.
 

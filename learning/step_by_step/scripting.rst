@@ -39,7 +39,7 @@ typed languages), go for GDScript!
 VisualScript
 ~~~~~~~~~~~~~
 
-Begining 3.0, Godot offers :ref:`visualscript<Visual Scripting>`. This is a
+Beginning 3.0, Godot offers :ref:`visualscript<Visual Scripting>`. This is a
 somewhat typical implementation of blocks and connections language, but
 adapted to how Godot works. 
 
