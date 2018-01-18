@@ -135,6 +135,8 @@ Example:
 
 - :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
 
+Return an individual bit on the collision mask.
+
 .. _class_RayCast2D_get_collision_normal:
 
 - :ref:`Vector2<class_vector2>` **get_collision_normal** **(** **)** const
@@ -168,5 +170,7 @@ Removes a collision exception so the ray does report collisions with the specifi
 .. _class_RayCast2D_set_collision_mask_bit:
 
 - void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
+
+Set/clear individual bits on the collision mask. This makes selecting the areas scanned easier.
 
 

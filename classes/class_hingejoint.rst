@@ -57,7 +57,7 @@ Member Variables
 
   .. _class_HingeJoint_params/bias:
 
-- :ref:`float<class_float>` **params/bias** - The speed with wich the two bodies get pulled together when they move in different directions.
+- :ref:`float<class_float>` **params/bias** - The speed with which the two bodies get pulled together when they move in different directions.
 
 
 Enums
@@ -75,7 +75,7 @@ enum **Flag**
 
 enum **Param**
 
-- **PARAM_BIAS** = **0** --- The speed with wich the two bodies get pulled together when they move in different directions.
+- **PARAM_BIAS** = **0** --- The speed with which the two bodies get pulled together when they move in different directions.
 - **PARAM_LIMIT_UPPER** = **1** --- The maximum rotation. only active if :ref:`angular_limit/enable<class_HingeJoint_angular_limit/enable>` is ``true``.
 - **PARAM_LIMIT_LOWER** = **2** --- The minimum rotation. only active if :ref:`angular_limit/enable<class_HingeJoint_angular_limit/enable>` is ``true``.
 - **PARAM_LIMIT_BIAS** = **3** --- The speed with which the rotation across the axis perpendicular to the hinge gets corrected.
@@ -89,5 +89,5 @@ enum **Param**
 Description
 -----------
 
-Normaly uses the z-axis of body A as the hinge axis, another axis can be specified when adding it manually though.
+Normally uses the z-axis of body A as the hinge axis, another axis can be specified when adding it manually though.
 

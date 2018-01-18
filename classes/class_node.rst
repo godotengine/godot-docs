@@ -329,7 +329,7 @@ Corresponds to the NOTIFICATION_EXIT_TREE notification in :ref:`Object._notifica
 
 Called when there is an input event. The input event propagates through the node tree until a node consumes it.
 
-It is only called if input processing is enabled, which is done automatically if this method is overriden, and can be toggled with :ref:`set_process_input<class_Node_set_process_input>`.
+It is only called if input processing is enabled, which is done automatically if this method is overridden, and can be toggled with :ref:`set_process_input<class_Node_set_process_input>`.
 
 .. _class_Node__physics_process:
 
@@ -337,7 +337,7 @@ It is only called if input processing is enabled, which is done automatically if
 
 Called during the physics processing step of the main loop. Physics processing means that the frame rate is synced to the physics, i.e. the ``delta`` variable should be constant.
 
-It is only called if physics processing is enabled, which is done automatically if this method is overriden, and can be toggled with :ref:`set_physics_process<class_Node_set_physics_process>`.
+It is only called if physics processing is enabled, which is done automatically if this method is overridden, and can be toggled with :ref:`set_physics_process<class_Node_set_physics_process>`.
 
 Corresponds to the NOTIFICATION_PHYSICS_PROCESS notification in :ref:`Object._notification<class_Object__notification>`.
 
@@ -347,7 +347,7 @@ Corresponds to the NOTIFICATION_PHYSICS_PROCESS notification in :ref:`Object._no
 
 Called during the processing step of the main loop. Processing happens at every frame and as fast as possible, so the ``delta`` time since the previous frame is not constant.
 
-It is only called if processing is enabled, which is done automatically if this method is overriden, and can be toggled with :ref:`set_process<class_Node_set_process>`.
+It is only called if processing is enabled, which is done automatically if this method is overridden, and can be toggled with :ref:`set_process<class_Node_set_process>`.
 
 Corresponds to the NOTIFICATION_PROCESS notification in :ref:`Object._notification<class_Object__notification>`.
 
@@ -365,7 +365,7 @@ Corresponds to the NOTIFICATION_READY notification in :ref:`Object._notification
 
 Propagated to all nodes when the previous InputEvent is not consumed by any nodes.
 
-It is only called if unhandled input processing is enabled, which is done automatically if this method is overriden, and can be toggled with :ref:`set_process_unhandled_input<class_Node_set_process_unhandled_input>`.
+It is only called if unhandled input processing is enabled, which is done automatically if this method is overridden, and can be toggled with :ref:`set_process_unhandled_input<class_Node_set_process_unhandled_input>`.
 
 .. _class_Node__unhandled_key_input:
 
@@ -763,7 +763,7 @@ Sets the node network master to the peer with the given peer ID. The network mas
 
 - void **set_physics_process** **(** :ref:`bool<class_bool>` enable **)**
 
-Enables or disables physics (i.e. fixed framerate) processing. When a node is being processed, it will receive a NOTIFICATION_PHYSICS_PROCESS at a fixed (usually 60 fps, see :ref:`OS<class_os>` to change) interval (and the :ref:`_physics_process<class_Node__physics_process>` callback will be called if exists). Enabled automatically if :ref:`_physics_process<class_Node__physics_process>` is overriden. Any calls to this before :ref:`_ready<class_Node__ready>` will be ignored.
+Enables or disables physics (i.e. fixed framerate) processing. When a node is being processed, it will receive a NOTIFICATION_PHYSICS_PROCESS at a fixed (usually 60 fps, see :ref:`OS<class_os>` to change) interval (and the :ref:`_physics_process<class_Node__physics_process>` callback will be called if exists). Enabled automatically if :ref:`_physics_process<class_Node__physics_process>` is overridden. Any calls to this before :ref:`_ready<class_Node__ready>` will be ignored.
 
 .. _class_Node_set_physics_process_internal:
 
@@ -773,13 +773,13 @@ Enables or disables physics (i.e. fixed framerate) processing. When a node is be
 
 - void **set_process** **(** :ref:`bool<class_bool>` enable **)**
 
-Enables or disables processing. When a node is being processed, it will receive a NOTIFICATION_PROCESS on every drawn frame (and the :ref:`_process<class_Node__process>` callback will be called if exists). Enabled automatically if :ref:`_process<class_Node__process>` is overriden. Any calls to this before :ref:`_ready<class_Node__ready>` will be ignored.
+Enables or disables processing. When a node is being processed, it will receive a NOTIFICATION_PROCESS on every drawn frame (and the :ref:`_process<class_Node__process>` callback will be called if exists). Enabled automatically if :ref:`_process<class_Node__process>` is overridden. Any calls to this before :ref:`_ready<class_Node__ready>` will be ignored.
 
 .. _class_Node_set_process_input:
 
 - void **set_process_input** **(** :ref:`bool<class_bool>` enable **)**
 
-Enables or disables input processing. This is not required for GUI controls! Enabled automatically if :ref:`_input<class_Node__input>` is overriden. Any calls to this before :ref:`_ready<class_Node__ready>` will be ignored.
+Enables or disables input processing. This is not required for GUI controls! Enabled automatically if :ref:`_input<class_Node__input>` is overridden. Any calls to this before :ref:`_ready<class_Node__ready>` will be ignored.
 
 .. _class_Node_set_process_internal:
 
@@ -789,13 +789,13 @@ Enables or disables input processing. This is not required for GUI controls! Ena
 
 - void **set_process_unhandled_input** **(** :ref:`bool<class_bool>` enable **)**
 
-Enables unhandled input processing. This is not required for GUI controls! It enables the node to receive all input that was not previously handled (usually by a :ref:`Control<class_control>`). Enabled automatically if :ref:`_unhandled_input<class_Node__unhandled_input>` is overriden. Any calls to this before :ref:`_ready<class_Node__ready>` will be ignored.
+Enables unhandled input processing. This is not required for GUI controls! It enables the node to receive all input that was not previously handled (usually by a :ref:`Control<class_control>`). Enabled automatically if :ref:`_unhandled_input<class_Node__unhandled_input>` is overridden. Any calls to this before :ref:`_ready<class_Node__ready>` will be ignored.
 
 .. _class_Node_set_process_unhandled_key_input:
 
 - void **set_process_unhandled_key_input** **(** :ref:`bool<class_bool>` enable **)**
 
-Enables unhandled key input processing. Enabled automatically if :ref:`_unhandled_key_input<class_Node__unhandled_key_input>` is overriden. Any calls to this before :ref:`_ready<class_Node__ready>` will be ignored.
+Enables unhandled key input processing. Enabled automatically if :ref:`_unhandled_key_input<class_Node__unhandled_key_input>` is overridden. Any calls to this before :ref:`_ready<class_Node__ready>` will be ignored.
 
 .. _class_Node_set_scene_instance_load_placeholder:
 

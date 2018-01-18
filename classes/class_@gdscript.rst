@@ -338,7 +338,7 @@ Returns a character as a String of the given ASCII code.
 
 - :ref:`float<class_float>` **clamp** **(** :ref:`float<class_float>` value, :ref:`float<class_float>` min, :ref:`float<class_float>` max **)**
 
-Clamps ``val`` and returns a value not less than ``min`` and not more than ``max``.
+Clamps ``value`` and returns a value not less than ``min`` and not more than ``max``.
 
 ::
 
@@ -657,7 +657,7 @@ Returns the minimum of two values.
 
 - :ref:`int<class_int>` **nearest_po2** **(** :ref:`int<class_int>` value **)**
 
-Returns the nearest larger power of 2 for integer ``val``.
+Returns the nearest larger power of 2 for integer ``value``.
 
 ::
 

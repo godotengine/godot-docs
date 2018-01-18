@@ -254,7 +254,7 @@ enum **JoystickList**
 
 enum **Error**
 
-- **OK** = **0** --- Functions that return Error return OK when no error occured. Most functions don't return errors and/or just print errors to STDOUT.
+- **OK** = **0** --- Functions that return Error return OK when no error occurred. Most functions don't return errors and/or just print errors to STDOUT.
 - **FAILED** = **1** --- Generic error.
 - **ERR_UNAVAILABLE** = **2** --- Unavailable error
 - **ERR_UNCONFIGURED** = **3** --- Unconfigured error

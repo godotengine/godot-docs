@@ -82,7 +82,7 @@ enum **Capabilities**
 - **ARVR_MONO** = **1** --- This interface can work with normal rendering output (non-HMD based AR).
 - **ARVR_STEREO** = **2** --- This interface supports stereoscopic rendering.
 - **ARVR_AR** = **4** --- This interface support AR (video background and real world tracking).
-- **ARVR_EXTERNAL** = **8** --- This interface outputs to an external device, if the main viewport is used the on screen output is an unmodified buffer of either the left or right eye (stretched if the viewport size is not changed to the same aspect ratio of get_render_targetsize. Using a seperate viewport node frees up the main viewport for other purposes.
+- **ARVR_EXTERNAL** = **8** --- This interface outputs to an external device, if the main viewport is used the on screen output is an unmodified buffer of either the left or right eye (stretched if the viewport size is not changed to the same aspect ratio of get_render_targetsize. Using a separate viewport node frees up the main viewport for other purposes.
 
 
 Description

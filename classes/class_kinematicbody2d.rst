@@ -69,7 +69,7 @@ Returns the velocity of the floor. Only updates when calling :ref:`move_and_slid
 
 - :ref:`KinematicCollision2D<class_kinematiccollision2d>` **get_slide_collision** **(** :ref:`int<class_int>` slide_idx **)**
 
-Returns a :ref:`KinematicCollision2D<class_kinematiccollision2d>`, which contains information about a collision that occured during the last :ref:`move_and_slide<class_KinematicBody2D_move_and_slide>` call. Since the body can collide several times in a single call to :ref:`move_and_slide<class_KinematicBody2D_move_and_slide>`, you must specify the index of the collision in the range 0 to (:ref:`get_slide_count<class_KinematicBody2D_get_slide_count>` - 1).
+Returns a :ref:`KinematicCollision2D<class_kinematiccollision2d>`, which contains information about a collision that occurred during the last :ref:`move_and_slide<class_KinematicBody2D_move_and_slide>` call. Since the body can collide several times in a single call to :ref:`move_and_slide<class_KinematicBody2D_move_and_slide>`, you must specify the index of the collision in the range 0 to (:ref:`get_slide_count<class_KinematicBody2D_get_slide_count>` - 1).
 
 .. _class_KinematicBody2D_get_slide_count:
 
@@ -117,7 +117,7 @@ If the body collides, it will change direction a maximum of ``max_bounces`` time
 
 ``floor_max_angle`` is the maximum angle (in radians) where a slope is still considered a floor (or a ceiling), rather than a wall. The default value equals 45 degrees.
 
-Returns the movement that remained when the body stopped. To get more detailed information about collisions that occured, use :ref:`get_slide_collision<class_KinematicBody2D_get_slide_collision>`.
+Returns the movement that remained when the body stopped. To get more detailed information about collisions that occurred, use :ref:`get_slide_collision<class_KinematicBody2D_get_slide_collision>`.
 
 .. _class_KinematicBody2D_test_move:
 

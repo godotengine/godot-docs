@@ -21,13 +21,13 @@ Member Variables
 
   .. _class_PinJoint_params/bias:
 
-- :ref:`float<class_float>` **params/bias** - The force with wich the pinned objects stay in positional relation to each other.
+- :ref:`float<class_float>` **params/bias** - The force with which the pinned objects stay in positional relation to each other.
 
 The higher, the stronger.
 
   .. _class_PinJoint_params/damping:
 
-- :ref:`float<class_float>` **params/damping** - The force with wich the pinned objects stay in velocity relation to each other.
+- :ref:`float<class_float>` **params/damping** - The force with which the pinned objects stay in velocity relation to each other.
 
 The higher, the stronger.
 
@@ -43,10 +43,10 @@ Enums
 
 enum **Param**
 
-- **PARAM_BIAS** = **0** --- The force with wich the pinned objects stay in positional relation to each other.
+- **PARAM_BIAS** = **0** --- The force with which the pinned objects stay in positional relation to each other.
 
 The higher, the stronger.
-- **PARAM_DAMPING** = **1** --- The force with wich the pinned objects stay in velocity relation to each other.
+- **PARAM_DAMPING** = **1** --- The force with which the pinned objects stay in velocity relation to each other.
 
 The higher, the stronger.
 - **PARAM_IMPULSE_CLAMP** = **2** --- If above 0, this value is the maximum value for an impulse that this Joint produces.

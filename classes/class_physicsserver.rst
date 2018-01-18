@@ -252,16 +252,16 @@ enum **G6DOFJointAxisParam**
 
 - **G6DOF_JOINT_LINEAR_LOWER_LIMIT** = **0** --- The minimum difference between the pivot points' axes.
 - **G6DOF_JOINT_LINEAR_UPPER_LIMIT** = **1** --- The maximum difference between the pivot points' axes.
-- **G6DOF_JOINT_LINEAR_LIMIT_SOFTNESS** = **2** --- A factor that gets applied to the movement accross the axes. The lower, the slower the movement.
+- **G6DOF_JOINT_LINEAR_LIMIT_SOFTNESS** = **2** --- A factor that gets applied to the movement across the axes. The lower, the slower the movement.
 - **G6DOF_JOINT_LINEAR_RESTITUTION** = **3** --- The amount of restitution on the axes movement. The lower, the more velocity-energy gets lost.
 - **G6DOF_JOINT_LINEAR_DAMPING** = **4** --- The amount of damping that happens at the linear motion across the axes.
-- **G6DOF_JOINT_ANGULAR_LOWER_LIMIT** = **5** --- The minimum rotation in negative direction to break loose and rotate arround the axes.
-- **G6DOF_JOINT_ANGULAR_UPPER_LIMIT** = **6** --- The minimum rotation in positive direction to break loose and rotate arround the axes.
-- **G6DOF_JOINT_ANGULAR_LIMIT_SOFTNESS** = **7** --- A factor that gets multiplied onto all rotations accross the axes.
-- **G6DOF_JOINT_ANGULAR_DAMPING** = **8** --- The amount of rotational damping accross the axes. The lower, the more dampening occurs.
-- **G6DOF_JOINT_ANGULAR_RESTITUTION** = **9** --- The amount of rotational restitution accross the axes. The lower, the more restitution occurs.
-- **G6DOF_JOINT_ANGULAR_FORCE_LIMIT** = **10** --- The maximum amount of force that can occur, when rotating arround the axes.
-- **G6DOF_JOINT_ANGULAR_ERP** = **11** --- When correcting the crossing of limits in rotation accross the axes, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
+- **G6DOF_JOINT_ANGULAR_LOWER_LIMIT** = **5** --- The minimum rotation in negative direction to break loose and rotate around the axes.
+- **G6DOF_JOINT_ANGULAR_UPPER_LIMIT** = **6** --- The minimum rotation in positive direction to break loose and rotate around the axes.
+- **G6DOF_JOINT_ANGULAR_LIMIT_SOFTNESS** = **7** --- A factor that gets multiplied onto all rotations across the axes.
+- **G6DOF_JOINT_ANGULAR_DAMPING** = **8** --- The amount of rotational damping across the axes. The lower, the more dampening occurs.
+- **G6DOF_JOINT_ANGULAR_RESTITUTION** = **9** --- The amount of rotational restitution across the axes. The lower, the more restitution occurs.
+- **G6DOF_JOINT_ANGULAR_FORCE_LIMIT** = **10** --- The maximum amount of force that can occur, when rotating around the axes.
+- **G6DOF_JOINT_ANGULAR_ERP** = **11** --- When correcting the crossing of limits in rotation across the axes, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
 - **G6DOF_JOINT_ANGULAR_MOTOR_TARGET_VELOCITY** = **12** --- Target speed for the motor at the axes.
 - **G6DOF_JOINT_ANGULAR_MOTOR_FORCE_LIMIT** = **13** --- Maximum acceleration for the motor at the axes.
 
@@ -406,15 +406,15 @@ enum **SliderJointParam**
 
 - **SLIDER_JOINT_LINEAR_LIMIT_UPPER** = **0** --- The maximum difference between the pivot points on their x-axis before damping happens.
 - **SLIDER_JOINT_LINEAR_LIMIT_LOWER** = **1** --- The minimum difference between the pivot points on their x-axis before damping happens.
-- **SLIDER_JOINT_LINEAR_LIMIT_SOFTNESS** = **2** --- A factor applied to the movement accross the slider axis once the limits get surpassed. The lower, the slower the movement.
+- **SLIDER_JOINT_LINEAR_LIMIT_SOFTNESS** = **2** --- A factor applied to the movement across the slider axis once the limits get surpassed. The lower, the slower the movement.
 - **SLIDER_JOINT_LINEAR_LIMIT_RESTITUTION** = **3** --- The amount of restitution once the limits are surpassed. The lower, the more velocityenergy gets lost.
 - **SLIDER_JOINT_LINEAR_LIMIT_DAMPING** = **4** --- The amount of damping once the slider limits are surpassed.
-- **SLIDER_JOINT_LINEAR_MOTION_SOFTNESS** = **5** --- A factor applied to the movement accross the slider axis as long as the slider is in the limits. The lower, the slower the movement.
+- **SLIDER_JOINT_LINEAR_MOTION_SOFTNESS** = **5** --- A factor applied to the movement across the slider axis as long as the slider is in the limits. The lower, the slower the movement.
 - **SLIDER_JOINT_LINEAR_MOTION_RESTITUTION** = **6** --- The amount of restitution inside the slider limits.
 - **SLIDER_JOINT_LINEAR_MOTION_DAMPING** = **7** --- The amount of damping inside the slider limits.
-- **SLIDER_JOINT_LINEAR_ORTHOGONAL_SOFTNESS** = **8** --- A factor applied to the movement accross axes orthogonal to the slider.
-- **SLIDER_JOINT_LINEAR_ORTHOGONAL_RESTITUTION** = **9** --- The amount of restitution when movement is accross axes orthogonal to the slider.
-- **SLIDER_JOINT_LINEAR_ORTHOGONAL_DAMPING** = **10** --- The amount of damping when movement is accross axes orthogonal to the slider.
+- **SLIDER_JOINT_LINEAR_ORTHOGONAL_SOFTNESS** = **8** --- A factor applied to the movement across axes orthogonal to the slider.
+- **SLIDER_JOINT_LINEAR_ORTHOGONAL_RESTITUTION** = **9** --- The amount of restitution when movement is across axes orthogonal to the slider.
+- **SLIDER_JOINT_LINEAR_ORTHOGONAL_DAMPING** = **10** --- The amount of damping when movement is across axes orthogonal to the slider.
 - **SLIDER_JOINT_ANGULAR_LIMIT_UPPER** = **11** --- The upper limit of rotation in the slider.
 - **SLIDER_JOINT_ANGULAR_LIMIT_LOWER** = **12** --- The lower limit of rotation in the slider.
 - **SLIDER_JOINT_ANGULAR_LIMIT_SOFTNESS** = **13** --- A factor applied to the all rotation once the limit is surpassed.
@@ -452,7 +452,7 @@ The higher, the faster.
 
 enum **HingeJointParam**
 
-- **HINGE_JOINT_BIAS** = **0** --- The speed with wich the two bodies get pulled together when they move in different directions.
+- **HINGE_JOINT_BIAS** = **0** --- The speed with which the two bodies get pulled together when they move in different directions.
 - **HINGE_JOINT_LIMIT_UPPER** = **1** --- The maximum rotation across the Hinge.
 - **HINGE_JOINT_LIMIT_LOWER** = **2** --- The minimum rotation across the Hinge.
 - **HINGE_JOINT_LIMIT_BIAS** = **3** --- The speed with which the rotation across the axis perpendicular to the hinge gets corrected.

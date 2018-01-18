@@ -31,11 +31,11 @@ Member Variables
 
   .. _class_InputEventMouse_position:
 
-- :ref:`Vector2<class_vector2>` **position** - Mouse local position relative to the :ref:`Viewport<class_viewport>`. If used in :ref:`Control._gui_input<class_Control__gui_input>` the position is relative to the current :ref:`Control<class_control>` wich is under the mouse.
+- :ref:`Vector2<class_vector2>` **position** - Mouse local position relative to the :ref:`Viewport<class_viewport>`. If used in :ref:`Control._gui_input<class_Control__gui_input>` the position is relative to the current :ref:`Control<class_control>` which is under the mouse.
 
 
 Description
 -----------
 
-Stores general mouse events informations.
+Stores general mouse events information.
 

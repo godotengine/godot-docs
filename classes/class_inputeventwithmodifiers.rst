@@ -45,5 +45,5 @@ Member Variables
 Description
 -----------
 
-Contains keys events informations with modifiers support like ``SHIFT`` or ``ALT``. See :ref:`Node._input<class_Node__input>`.
+Contains keys events information with modifiers support like ``SHIFT`` or ``ALT``. See :ref:`Node._input<class_Node__input>`.
 

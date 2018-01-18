@@ -31,5 +31,5 @@ Member Variables
 Description
 -----------
 
-Contains mouse motion informations. Supports relative, absolute positions and speed. See :ref:`Node._input<class_Node__input>`.
+Contains mouse motion information. Supports relative, absolute positions and speed. See :ref:`Node._input<class_Node__input>`.
 

@@ -150,7 +150,7 @@ Member Function Description
 
 - void **action_press** **(** :ref:`String<class_string>` action **)**
 
-This will simulate pressing the specificed action.
+This will simulate pressing the specified action.
 
 .. _class_Input_action_release:
 

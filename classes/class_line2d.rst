@@ -52,7 +52,7 @@ Member Variables
 
   .. _class_Line2D_joint_mode:
 
-- :ref:`LineJointMode<enum_line2d_linejointmode>` **joint_mode** - The style for the points inbetween the start and the end.
+- :ref:`LineJointMode<enum_line2d_linejointmode>` **joint_mode** - The style for the points between the start and the end.
 
   .. _class_Line2D_points:
 

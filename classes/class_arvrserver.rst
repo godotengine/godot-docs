@@ -138,7 +138,7 @@ Get the interface registered at a given index in our list of interfaces.
 
 - :ref:`int<class_int>` **get_interface_count** **(** **)** const
 
-Get the number of interfaces currently registered with the AR/VR server. If you're game supports multiple AR/VR platforms you can look throught the available interface and either present the user with a selection or simply try an initialize each interface and use the first one that returns true.
+Get the number of interfaces currently registered with the AR/VR server. If you're game supports multiple AR/VR platforms you can look through the available interface and either present the user with a selection or simply try an initialize each interface and use the first one that returns true.
 
 .. _class_ARVRServer_get_interfaces:
 

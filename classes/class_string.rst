@@ -427,7 +427,7 @@ Finds the first occurrence of a substring, ignoring case. Returns the starting p
 
 - :ref:`String<class_string>` **format** **(** var values, :ref:`String<class_string>` placeholder={_} **)**
 
-Formats the string by replacing all occurences of ``placeholder`` with ``values``.
+Formats the string by replacing all occurrences of ``placeholder`` with ``values``.
 
 .. _class_String_get_base_dir:
 

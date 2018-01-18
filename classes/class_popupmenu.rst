@@ -281,7 +281,7 @@ Return whether the item at index "idx" is disabled. When it is disabled it can't
 
 - :ref:`bool<class_bool>` **is_item_separator** **(** :ref:`int<class_int>` idx **)** const
 
-Return whether the item is a seperator. If it is, it would be displayed as a line.
+Return whether the item is a separator. If it is, it would be displayed as a line.
 
 .. _class_PopupMenu_remove_item:
 
@@ -305,7 +305,7 @@ Set whether the item at index "idx" has a checkbox. Note that checkable items ju
 
 - void **set_item_as_separator** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` enable **)**
 
-Mark the item at index "idx" as a seperator, which means that it would be displayed as a mere line.
+Mark the item at index "idx" as a separator, which means that it would be displayed as a mere line.
 
 .. _class_PopupMenu_set_item_checked:
 

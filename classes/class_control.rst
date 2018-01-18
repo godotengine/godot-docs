@@ -453,7 +453,7 @@ For more information on Godot's UI system, anchors, margins, and containers, see
 
 Godot sends input events to the scene's root node first, by calling :ref:`Node._input<class_Node__input>`. :ref:`Node._input<class_Node__input>` forwards the event down the node tree to the nodes under the mouse cursor, or on keyboard focus. To do so, it calls :ref:`MainLoop._input_event<class_MainLoop__input_event>`. Call :ref:`accept_event<class_Control_accept_event>` so no other node receives the event. Once you accepted an input, it becomes handled so :ref:`Node._unhandled_input<class_Node__unhandled_input>` will not process it.
 
-Only one ``Control`` node can be in keyboard focus. Only the node in focus will receive keyboard events. To get the foucs, call :ref:`set_focus_mode<class_Control_set_focus_mode>`. ``Control`` nodes lose focus when another node grabs it, or if you hide the node in focus.
+Only one ``Control`` node can be in keyboard focus. Only the node in focus will receive keyboard events. To get the focus, call :ref:`set_focus_mode<class_Control_set_focus_mode>`. ``Control`` nodes lose focus when another node grabs it, or if you hide the node in focus.
 
 Call :ref:`set_ignore_mouse<class_Control_set_ignore_mouse>` to tell a ``Control`` node to ignore mouse or touch events. You'll need it if you place an icon on top of a button.
 

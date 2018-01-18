@@ -39,5 +39,5 @@ Member Variables
 Description
 -----------
 
-Contains mouse click informations. See :ref:`Node._input<class_Node__input>`.
+Contains mouse click information. See :ref:`Node._input<class_Node__input>`.
 

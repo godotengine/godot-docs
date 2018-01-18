@@ -21,11 +21,13 @@ Member Variables
 
   .. _class_MultiMeshInstance_multimesh:
 
-- :ref:`MultiMesh<class_multimesh>` **multimesh**
+- :ref:`MultiMesh<class_multimesh>` **multimesh** - The :ref:`MultiMesh<class_multimesh>` resource that will be used and shared among all instances of the ``MultiMeshInstance``.
 
 
 Description
 -----------
 
-MultiMeshInstance is a :ref:`Node<class_node>` that takes a :ref:`MultiMesh<class_multimesh>` resource and adds it to the current scenario by creating an instance of it (yes, this is an instance of instances).
+``MultiMeshInstance`` is a specialized node to instance :ref:`GeometryInstance<class_geometryinstance>`\ s based on a :ref:`MultiMesh<class_multimesh>` resource.
+
+This is useful to optimize the rendering of a high amount of instances of a given mesh (for example tree in a forest or grass strands).
 

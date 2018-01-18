@@ -434,8 +434,8 @@ enum **PrimitiveType**
 - **PRIMITIVE_LINE_STRIP** = **2** --- Primitive to draw consists of a line strip from start to end.
 - **PRIMITIVE_LINE_LOOP** = **3** --- Primitive to draw consists of a line loop (a line strip with a line between the last and the first vertex).
 - **PRIMITIVE_TRIANGLES** = **4** --- Primitive to draw consists of triangles.
-- **PRIMITIVE_TRIANGLE_STRIP** = **5** --- Primitive to draw consists of a triangle strip (the last 3 verticies are always combined to make a triangle).
-- **PRIMITIVE_TRIANGLE_FAN** = **6** --- Primitive to draw consists of a triangle strip (the last 2 verticies are always combined with the first to make a triangle).
+- **PRIMITIVE_TRIANGLE_STRIP** = **5** --- Primitive to draw consists of a triangle strip (the last 3 vertices are always combined to make a triangle).
+- **PRIMITIVE_TRIANGLE_FAN** = **6** --- Primitive to draw consists of a triangle strip (the last 2 vertices are always combined with the first to make a triangle).
 - **PRIMITIVE_MAX** = **7** --- Marks the primitive types endpoint. used internally.
 
   .. _enum_VisualServer_BlendShapeMode:
@@ -742,7 +742,7 @@ Adds a polygon to the :ref:`CanvasItem<class_canvasitem>`'s draw commands.
 
 - void **canvas_item_add_polyline** **(** :ref:`RID<class_rid>` item, :ref:`PoolVector2Array<class_poolvector2array>` points, :ref:`PoolColorArray<class_poolcolorarray>` colors, :ref:`float<class_float>` width=1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
-Adds a polyline, which is a line from mutliple points with a width, to the :ref:`CanvasItem<class_canvasitem>`'s draw commands.
+Adds a polyline, which is a line from multiple points with a width, to the :ref:`CanvasItem<class_canvasitem>`'s draw commands.
 
 .. _class_VisualServer_canvas_item_add_primitive:
 
@@ -976,7 +976,7 @@ The light mask. See :ref:`LightOccluder2D<class_lightoccluder2d>` for more infor
 
 - void **canvas_light_set_item_shadow_cull_mask** **(** :ref:`RID<class_rid>` light, :ref:`int<class_int>` mask **)**
 
-The shadow mask. binary about wich layers this canvas light affects wich canvas item's shadows. See :ref:`LightOccluder2D<class_lightoccluder2d>` for more information on light masks.
+The shadow mask. binary about which layers this canvas light affects which canvas item's shadows. See :ref:`LightOccluder2D<class_lightoccluder2d>` for more information on light masks.
 
 .. _class_VisualServer_canvas_light_set_layer_range:
 
@@ -1454,7 +1454,7 @@ Returns a list of all the textures and their information.
 
 - :ref:`Image<class_image>` **texture_get_data** **(** :ref:`RID<class_rid>` texture, :ref:`int<class_int>` cube_side=0 **)** const
 
-Returns a copy of a texture's image unless it's a CubeMap, in wich case it returns the :ref:`RID<class_rid>` of the image at one of the cubes sides.
+Returns a copy of a texture's image unless it's a CubeMap, in which case it returns the :ref:`RID<class_rid>` of the image at one of the cubes sides.
 
 .. _class_VisualServer_texture_get_flags:
 

@@ -35,7 +35,7 @@ Member Variables
 
   .. _class_Joint_solver/priority:
 
-- :ref:`int<class_int>` **solver/priority** - The order in wich the solver is executed compared to the other Joints, the lower, the earlier.
+- :ref:`int<class_int>` **solver/priority** - The order in which the solver is executed compared to the other Joints, the lower, the earlier.
 
 
 Description

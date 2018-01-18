@@ -68,7 +68,7 @@ Member Variables
 
   .. _class_LineEdit_caret_position:
 
-- :ref:`int<class_int>` **caret_position** - The cursor's position inside the ``LineEdit``. When set, the text may scroll to accomodate it.
+- :ref:`int<class_int>` **caret_position** - The cursor's position inside the ``LineEdit``. When set, the text may scroll to accommodate it.
 
   .. _class_LineEdit_context_menu_enabled:
 

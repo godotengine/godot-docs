@@ -35,11 +35,11 @@ The lower, the longer an impulse from one side takes to travel to the other side
 
   .. _class_Generic6DOFJoint_angular_limit_x/force_limit:
 
-- :ref:`float<class_float>` **angular_limit_x/force_limit** - The maximum amount of force that can occur, when rotating arround x-axis.
+- :ref:`float<class_float>` **angular_limit_x/force_limit** - The maximum amount of force that can occur, when rotating around x-axis.
 
   .. _class_Generic6DOFJoint_angular_limit_x/lower_angle:
 
-- :ref:`float<class_float>` **angular_limit_x/lower_angle** - The minimum rotation in negative direction to break loose and rotate arround the x-axis.
+- :ref:`float<class_float>` **angular_limit_x/lower_angle** - The minimum rotation in negative direction to break loose and rotate around the x-axis.
 
   .. _class_Generic6DOFJoint_angular_limit_x/restitution:
 
@@ -51,7 +51,7 @@ The lower, the longer an impulse from one side takes to travel to the other side
 
   .. _class_Generic6DOFJoint_angular_limit_x/upper_angle:
 
-- :ref:`float<class_float>` **angular_limit_x/upper_angle** - The minimum rotation in positive direction to break loose and rotate arround the x-axis.
+- :ref:`float<class_float>` **angular_limit_x/upper_angle** - The minimum rotation in positive direction to break loose and rotate around the x-axis.
 
   .. _class_Generic6DOFJoint_angular_limit_y/damping:
 
@@ -67,11 +67,11 @@ The lower, the longer an impulse from one side takes to travel to the other side
 
   .. _class_Generic6DOFJoint_angular_limit_y/force_limit:
 
-- :ref:`float<class_float>` **angular_limit_y/force_limit** - The maximum amount of force that can occur, when rotating arround y-axis.
+- :ref:`float<class_float>` **angular_limit_y/force_limit** - The maximum amount of force that can occur, when rotating around y-axis.
 
   .. _class_Generic6DOFJoint_angular_limit_y/lower_angle:
 
-- :ref:`float<class_float>` **angular_limit_y/lower_angle** - The minimum rotation in negative direction to break loose and rotate arround the y-axis.
+- :ref:`float<class_float>` **angular_limit_y/lower_angle** - The minimum rotation in negative direction to break loose and rotate around the y-axis.
 
   .. _class_Generic6DOFJoint_angular_limit_y/restitution:
 
@@ -83,7 +83,7 @@ The lower, the longer an impulse from one side takes to travel to the other side
 
   .. _class_Generic6DOFJoint_angular_limit_y/upper_angle:
 
-- :ref:`float<class_float>` **angular_limit_y/upper_angle** - The minimum rotation in positive direction to break loose and rotate arround the y-axis.
+- :ref:`float<class_float>` **angular_limit_y/upper_angle** - The minimum rotation in positive direction to break loose and rotate around the y-axis.
 
   .. _class_Generic6DOFJoint_angular_limit_z/damping:
 
@@ -99,11 +99,11 @@ The lower, the longer an impulse from one side takes to travel to the other side
 
   .. _class_Generic6DOFJoint_angular_limit_z/force_limit:
 
-- :ref:`float<class_float>` **angular_limit_z/force_limit** - The maximum amount of force that can occur, when rotating arround z-axis.
+- :ref:`float<class_float>` **angular_limit_z/force_limit** - The maximum amount of force that can occur, when rotating around z-axis.
 
   .. _class_Generic6DOFJoint_angular_limit_z/lower_angle:
 
-- :ref:`float<class_float>` **angular_limit_z/lower_angle** - The minimum rotation in negative direction to break loose and rotate arround the z-axis.
+- :ref:`float<class_float>` **angular_limit_z/lower_angle** - The minimum rotation in negative direction to break loose and rotate around the z-axis.
 
   .. _class_Generic6DOFJoint_angular_limit_z/restitution:
 
@@ -115,7 +115,7 @@ The lower, the longer an impulse from one side takes to travel to the other side
 
   .. _class_Generic6DOFJoint_angular_limit_z/upper_angle:
 
-- :ref:`float<class_float>` **angular_limit_z/upper_angle** - The minimum rotation in positive direction to break loose and rotate arround the z-axis.
+- :ref:`float<class_float>` **angular_limit_z/upper_angle** - The minimum rotation in positive direction to break loose and rotate around the z-axis.
 
   .. _class_Generic6DOFJoint_angular_motor_x/enabled:
 
@@ -247,12 +247,12 @@ enum **Param**
 - **PARAM_LINEAR_LIMIT_SOFTNESS** = **2** --- A factor applied to the movement across the axes The lower, the slower the movement.
 - **PARAM_LINEAR_RESTITUTION** = **3** --- The amount of restitution on the axes movement The lower, the more momentum gets lost.
 - **PARAM_LINEAR_DAMPING** = **4** --- The amount of damping that happens at the linear motion across the axes.
-- **PARAM_ANGULAR_LOWER_LIMIT** = **5** --- The minimum rotation in negative direction to break loose and rotate arround the axes.
-- **PARAM_ANGULAR_UPPER_LIMIT** = **6** --- The minimum rotation in positive direction to break loose and rotate arround the axes.
+- **PARAM_ANGULAR_LOWER_LIMIT** = **5** --- The minimum rotation in negative direction to break loose and rotate around the axes.
+- **PARAM_ANGULAR_UPPER_LIMIT** = **6** --- The minimum rotation in positive direction to break loose and rotate around the axes.
 - **PARAM_ANGULAR_LIMIT_SOFTNESS** = **7** --- The speed of all rotations across the axes.
 - **PARAM_ANGULAR_DAMPING** = **8** --- The amount of rotational damping across the axes. The lower, the more dampening occurs.
 - **PARAM_ANGULAR_RESTITUTION** = **9** --- The amount of rotational restitution across the axes. The lower, the more restitution occurs.
-- **PARAM_ANGULAR_FORCE_LIMIT** = **10** --- The maximum amount of force that can occur, when rotating arround the axes.
+- **PARAM_ANGULAR_FORCE_LIMIT** = **10** --- The maximum amount of force that can occur, when rotating around the axes.
 - **PARAM_ANGULAR_ERP** = **11** --- When rotating across the axes, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
 - **PARAM_ANGULAR_MOTOR_TARGET_VELOCITY** = **12** --- Target speed for the motor at the axes.
 - **PARAM_ANGULAR_MOTOR_FORCE_LIMIT** = **13** --- Maximum acceleration for the motor at the axes.

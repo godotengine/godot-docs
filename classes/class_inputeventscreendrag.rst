@@ -41,5 +41,5 @@ Member Variables
 Description
 -----------
 
-Contains screen drag informations. See :ref:`Node._input<class_Node__input>`.
+Contains screen drag information. See :ref:`Node._input<class_Node__input>`.
 
