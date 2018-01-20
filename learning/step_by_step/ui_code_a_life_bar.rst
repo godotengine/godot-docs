@@ -12,8 +12,6 @@ the health loss.
    Here's what you'll create: the bar and the counter animate when
    the character takes a hit. They fade when it dies.
 
-Here's what you'll create: the bar and the counter animate when the
-character takes a hit. They fade when it dies.
 
 You will learn:
 
@@ -59,14 +57,9 @@ Download and explore the start project
 --------------------------------------
 
 Download the Godot project: :download:`ui_code_life_bar.zip <files/ui_code_life_bar.zip>`. It contains all the assets and scripts you
-need to get started. Extract the .zip archive to get two folders:
+need to get started. Extract the .zip archive to get two folders: `start` and `end`.
 
--  tutorial/ contains the start and end godot games for this tutorial
--  exercise/ lets you practice what you'll learn here by adding a new
-   GUI element on your own. You'll find more on that at the bottom of
-   the page
-
-Load the ``tutorial/start`` project in Godot. In the ``FileSystem`` dock
+Load the ``start`` project in Godot. In the ``FileSystem`` dock
 double click on LevelMockup.tscn to open it. It's an RPG game's mockup
 where 2 characters face each other. The pink enemy attacks and damages
 the green square at regular time intervals, until its death. Feel free
@@ -104,9 +97,14 @@ scene:
 .. note::
 
     The project uses a simple organisation that works for game jams and tiny games.
+
     At the root of the project, in the `res://` folder, you will find the `LevelMockup`. That's the main game scene and the one we will work with. All the components that make up the game are in the `scenes/` folder. The `assets/` folder contains the game sprites and the font for the HP counter. In the `scripts/` folder you will find the enemy, the player, and the GUI controller scripts.
-    Click the edit scene icon to the right of the node in the scene tree to open the scene in the editor. You'll see the LifeBar and EnergyBar are sub-scenes themselves. You can also right click on the `GUI` node and activate the `Editable Children` checkbox at the bottom of the drop-down menu.
-    .. image:: img/lifebar_tutorial_Player_with_editable_children_on.png
+
+    Click the edit scene icon to the right of the node in the scene tree to open the scene in the editor. You'll see the LifeBar and EnergyBar are sub-scenes themselves.
+
+.. figure:: img/lifebar_tutorial_Player_with_editable_children_on.png
+
+       lifebar_tutorial_Player_with_editable_children_on.png
 
 Set up the Lifebar with the Player's max\_health
 ------------------------------------------------
@@ -125,7 +123,8 @@ step is thus to tell the ``GUI`` what the green character's
 .. tip::
 
     The bar, a `TextureProgress`, has a `max_value` of `100` by default. If you don't need to display the character's health with a number, you don't need to change its `max_value` property. You send a percentage from the `Player` to the `GUI` instead:  `health / max_health * 100`.
-    .. image:: img/lifebar_tutorial_TextureProgress_default_max_value.png
+
+.. figure:: img/lifebar_tutorial_TextureProgress_default_max_value.png
 
 Click the script icon to the right of the ``GUI`` in the Scene dock to
 open its script. In the ``_ready`` function, we're going to store the
@@ -152,12 +151,9 @@ combine the two lines into one, but we'll need to use
 game, so we could work with this. Why do we still use ``max_health``?
 There are two reasons:
 
-1. We don't have the guarantee that ``health`` will always equal
-   ``max_health``: a future version of the game may load a level where
-   the player already lost some health.
-2. Because ``GUI`` is higher than ``Player`` in the scene tree, Godot
-   will call its ``_ready`` function first. If we got the ``health``
-   value then it would still be at ``0``.
+We don't have the guarantee that ``health`` will always equal
+``max_health``: a future version of the game may load a level where
+the player already lost some health.
 
 .. note::
 
@@ -302,7 +298,7 @@ This method needs to:
 
 Also call ``update_health`` at the end of the ``_ready`` function to
 initialize the ``Number`` node's ``text`` with the right value at the
-start of the game. Press F5 to test the game: the life bar update with
+start of the game. Press F5 to test the game: the life bar updates with
 every attack!
 
 .. figure:: img/lifebar_tutorial_LifeBar_health_update_no_anim.gif
@@ -408,7 +404,7 @@ So far, the update\_health method looks like this:
 ::
 
     func update_health(new_value):
-        Tween.interpolate_property(self, "animated_health", animated_health, new_value, 0.6, Tween.TRANS_LINEAR, Tween.EASE_IN)
+        tween.interpolate_property(self, "animated_health", animated_health, new_value, 0.6, Tween.TRANS_LINEAR, Tween.EASE_IN)
         if not Tween.is_active():
             Tween.start()
 
@@ -551,15 +547,3 @@ And that is it. You may now play the game to see the final result!
 .. note::
 
     Using the exact same techniques, you can change the color of the bar when the Player gets poisoned, turn the bar red when its health drops low, shake the UI when they take a critical hit... the principle is the same: emit a signal to forward the information from the `Player` to the `GUI` and let the `GUI` process it.
-
-.. raw:: html
-
-   <!-- ## Exercise: Add the stamina bar -->
-
-.. raw:: html
-
-   <!-- Use exercise/start and exercise/end -->
-
-.. raw:: html
-
-   <!-- TODO: DEMO: add stamina management code in the exercise version of the project -->
