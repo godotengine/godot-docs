@@ -17,5 +17,5 @@ Engine features
    networking/index
    platform/index
    audio/index
+   assetlib/index
    misc/index
-
