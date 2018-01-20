@@ -64,7 +64,7 @@ tree as reusable sub-scenes. We'll do just that in a moment.
 For now, let's start with a few containers.
 
 Create a new scene and add a ``MarginContainer``. Select the node and
-name it ``GUI``. Then save the scene and name it ``GUI.tscn``. It will
+name it ``GUI``. Then save the scene as ``GUI.tscn``. It will
 contain the entire GUI.
 
 With the ``MarginContainer`` selected, head to the inspector and scroll
@@ -429,9 +429,9 @@ We already setup the ``LifeBar``'s design with the main ``Bar`` scene.
 Now we need the ``EnergyBar``.
 
 Let's create a new inherited scene, and once again select the
-``Bar.tscn`` scene and open it. Save the new scene as
-``EnergyBar.tscn``. Double-click on the ``Bar`` root node and rename it
-to ``EnergyBar``. We need to replace the HP texture with EP one, and to
+``Bar.tscn`` scene and open it. Double-click on the ``Bar`` root node and rename it
+to ``EnergyBar``. Save the new scene as ``EnergyBar.tscn``.
+We need to replace the HP texture with EP one, and to
 change the textures on the gauge.
 
 Head to the FileSystem dock on the left, select the ``Title`` node in
@@ -488,7 +488,7 @@ set based on its textures, you won't be able to downsize the ``Count``
 node below that. That is also the size the ``Bar`` container will have.
 You may downscale this one as well.
 
-last but not least, the ``Count`` container has a minimum size that
+Last but not least, the ``Background`` container has a minimum size that
 makes it a bit large. Select it and in the ``Rect`` section, change the
 ``Min Size`` property down to ``80`` pixels. It should resize
 automatically and the ``Title`` and ``Number`` nodes should reposition
@@ -511,16 +511,16 @@ Prepare the bomb and rupee counters
 
 Let us now take care of the counters. Go to
 ``Scene -> New Inherited Scene`` and select the ``Counter.tscn`` as a
-base. Save the new scene as ``BombCounter.tscn``. Rename the root node
-as ``BombCounter`` too. That's all for this scene.
+base. Rename the root node as ``BombCounter`` too.
+Save the new scene as ``BombCounter.tscn``. That's all for this scene.
 
 .. figure:: ./img/ui_gui_step_tutorial_design_counters_1.png
 
    The bomb counter is the same as the original Counter scene
 
 Go to ``Scene -> New Inherited Scene`` again and select ``Counter.tscn``
-once more. Save the scene as ``RupeeCounter.tscn``. Rename the root node
-``RupeeCounter``. For this one, we mainly need to replace the bomb icon
+once more. Rename the root node ``RupeeCounter`` and save the scene as ``RupeeCounter.tscn``.
+For this one, we mainly need to replace the bomb icon
 with the rupee icon. In the FileSystem tab, drag the ``rupees_icon.png``
 onto the ``Icon`` node's ``Texture`` slot. ``Icon`` already anchors to
 the right edge of the ``Background`` node so we can change its position
