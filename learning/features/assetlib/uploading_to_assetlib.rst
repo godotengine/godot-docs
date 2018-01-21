@@ -91,7 +91,7 @@ submission boxes to enable them.
     computed instead.
 
 Once you are done, hit Submit. Your asset will be entered into the pending queue,
-which you can visit on the AssetLib here. The approval process is manual and may
+which you can visit on the AssetLib `here <https://godotengine.org/asset-library/asset/edit?&asset=-1>`_ . The approval process is manual and may
 take up to a few days for your addon to be accepted (or rejected), so please
 be patient! You will be informed when your asset is reviewed. If it was rejected,
 you will be told why that may have been, and you will be able to submit it again
