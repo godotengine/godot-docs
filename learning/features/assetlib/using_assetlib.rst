@@ -103,7 +103,64 @@ guidelines are, in the next part of this tutorial, ::ref:`doc_uploading_to_asset
 In the editor
 -------------
 
-[TODO]
+You can also access the AssetLib directly from Godot. It is available from the
+project's workspaces tab (in a similar manner to the 2D, 3D and Script views):
+
+|image7|
+
+Click on it, and Godot will fetch info about the assets from the AssetLib. Once
+it's finished, you will see a window similar to what the AssetLib website looks
+like, with some differences:
+
+|image8|
+
+Similarly to the web version of the AssetLib, here you can search
+for assets by category, name, and sort them by factors such as name or edit date.
+
+Notably, you can only fetch assets for the current version of Godot you are running,
+and you cannot download demos or projects this way.
+
+In the future, you will be able to choose a different AssetLib provider to fetch
+assets from (using the Site dropdown menu), however currently only the official
+`Godot website <https://godotengine.org>`_ version of the AssetLib is supported,
+as well as the version that may be running on your local machine's web server
+(the localhost option).
+
+When you click on an asset, you will see more information about it.
+
+|image9|
+
+If you click on the Install button, Godot will fetch an archive of the asset,
+and will track download progress of it at the bottom of the editor window. If
+the download fails, you can retry it using the Retry button.
+
+|image10|
+
+When it finishes, you can proceed to install it using the Install button.
+This will bring up the Package Installer window.
+
+|image11|
+
+Here you can see a list of all the files that will be installed. You can tick off
+any of the files that you do not wish to install, and Godot will also inform you
+about any problems with files that it cannot install. These files will be shown
+in red, and hovering over them will show you a message stating why it cannot be
+installed. 
+
+|image12|
+
+Once you are done, you can press the Install button, which will unzip all the
+files in the archive, and import any assets contained therein, such as images or
+3D models. Once this is done, you should see a message stating that the Package
+installation is complete.
+
+|image13|
+
+You may also use the Import button to import asset archives obtained
+elsewhere (such as downloading them directly from the AssetLib web frontend),
+which will take you through the same package installation procedure as with the
+assets downloaded directly via Godot that we just covered.
+
 
 .. |image0| image:: ./img/assetlib_website.png
 .. |image1| image:: ./img/assetlib_search.png
@@ -112,3 +169,10 @@ In the editor
 .. |image4| image:: ./img/assetlib_register.png
 .. |image5| image:: ./img/assetlib_login.png
 .. |image6| image:: ./img/assetlib_login_header.png
+.. |image7| image:: ./img/assetlib_editor_workspace.png
+.. |image8| image:: ./img/assetlib_editor.png
+.. |image9| image:: ./img/assetlib_editor_asset.png
+.. |image10| image:: ./img/assetlib_editor_download.png
+.. |image11| image:: ./img/assetlib_editor_installer.png
+.. |image12| image:: ./img/assetlib_editor_installer_error.png
+.. |image13| image:: ./img/assetlib_editor_installer_success.png
