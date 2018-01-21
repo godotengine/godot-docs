@@ -26,6 +26,6 @@ and usability issues. As with all Godot projects, the code repository is availab
 where you can submit pull requests and issues, so please do not hesitate to visit it!
 
 Frequently asked questions
-==========================
+--------------------------
 
 [TODO]
