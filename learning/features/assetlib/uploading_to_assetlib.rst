@@ -25,43 +25,54 @@ While it may look like a lot (and there is more to scroll down), each field is
 described in terms of what you should put in. We will nonetheless go over what
 is required in the submission form here as well.
 
-* **Asset Name**: The name of your asset. Should be a unique, descriptive title of 
+* **Asset Name**: 
+    The name of your asset. Should be a unique, descriptive title of 
     what your asset is.
-* **Category**: The category that your asset belongs to, and will be shown in
+* **Category**: 
+    The category that your asset belongs to, and will be shown in
     search results. The category is split into **Addons** and **Projects**. Assets
     of the Project type (Templates, Demos, Projects) do not show up in the in-editor
     AssetLib, and can only be downloaded from the website version of the AssetLib,
     as well as from the provider directly (see below).
-* **Godot version**: The version of the engine that the asset works with.
+* **Godot version**: 
+    The version of the engine that the asset works with.
     Currently it's not possible to have a single asset entry contain downloads for
     multiple engine versions, so you may need to re-submit the asset mulitple times,
     with an etry for each Godot version it supports. This is particularly important
     when dealing with major versions of the engine, such as Godot 2.x and Godot 3.x.
-* **Version**: The version number of the asset. While you are free to choose
+* **Version**: 
+    The version number of the asset. While you are free to choose
     and use any  versioning scheme that you like, you may want to look into
     something such as `SemVer <https://semver.org>`_ if you want your asset's
     versioning scheme to be clear and consistent. 
-* **Repository host**: Assets uploaded to the AssetLib are not hosted on it
+* **Repository host**: 
+    Assets uploaded to the AssetLib are not hosted on it
     directly, and instead point to repositories hosted on third-party Git providers,
     such as GitHub, GitLab or Bitbucket. This is where you choose which provider
     your asset uses, so the final download link can be computed.
-* **Repository URL**: The URL to your asset's files/webpage. This will vary
+* **Repository URL**: 
+    The URL to your asset's files/webpage. This will vary
     based on your choice of provider, but it should look similar to `https://github.com/<user>/<project>`.
-* **Issues URL**: The URL to your asset's issue tracker. Again, this will differ
+* **Issues URL**: 
+    The URL to your asset's issue tracker. Again, this will differ
     from repository host to repository host, but will likely look similar to
     `https://github.cmo/<user>/<project>/issues`. You may leave this field empty
     if you use your provider's issue tracker, and it's part of the same repository.
-    * **Download Commit/Tag**: The commit or tag of the asset. For example,
+* **Download Commit/Tag**:
+    The commit or tag of the asset. For example,
     `b1d3172f89b86e52465a74f63a74ac84c491d3e1` or `v1.0`. From this, the actual
     download URL will be computed.
-* **Icon URL**: The URL to your asset's icon (which will be used as a thumbnail
+* **Icon URL**:
+    The URL to your asset's icon (which will be used as a thumbnail
     in the AssetLib search results, and on the asset's page). Should be an image
     in either the PNG or JPG format.
-* **License**: The license under which you are distributing the asset. The list
+* **License**:
+    The license under which you are distributing the asset. The list
     includes a variety of free and open-source software liceses, such as GPL
     (v2 and v3), MIT, BSD and Boost Software License. You can visit `OpenSource.org <https://opensource.org>`_  
     for a detailed description of each of the listed liceses.
-* **Description**: Finally, you can use the Description field for a textual
+* **Description**:
+    Finally, you can use the Description field for a textual
     overview of your asset, its features and behavior, a changelog, et cetera. In the
     future, formatting with Markdown will be supported, but currently, your only
     option is plain text.
@@ -70,9 +81,12 @@ You may also include up to three text and/or image previews, which will be shown
 at the bottom of the asset page. Use the "Enable" checkbox on each of the preview
 submission boxes to enable them.
 
-* **Type**: Either an image, or a video.
-* **Image/YouTube URL**: Either a link to the image, or to a video, hosted on YouTube.
-* **Thumbnail URL**: An URL to a image that will be used as a thumbnail for the
+* **Type**: 
+    Either an image, or a video.
+* **Image/YouTube URL**:
+    Either a link to the image, or to a video, hosted on YouTube.
+* **Thumbnail URL**:
+    An URL to a image that will be used as a thumbnail for the
     preview. This option will be removed eventually, and thumbnails will be automatically
     computed instead.
 
