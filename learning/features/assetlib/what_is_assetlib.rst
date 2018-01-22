@@ -28,4 +28,8 @@ where you can submit pull requests and issues, so please do not hesitate to visi
 Frequently asked questions
 --------------------------
 
-[TODO]
+Can paid assets be uploaded to the asset library?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Not on the official one, though in the future there might be other asset
+libraries which allow it.
