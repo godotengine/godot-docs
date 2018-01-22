@@ -4,8 +4,9 @@ Introduction
 ============
 
 .. warning:: C# support is a new feature in Godot 3.0.
-	     As such, you may still run into some issues or find spots where the documentation could be improved.
-	     Please report those issues on `Github <https://github.com/godotengine/godot/issues>`_.
+             As such, you may still run into some issues, or find spots where the documentation could be improved.
+             Please report issues with C# in Godot on the `engine Github page <https://github.com/godotengine/godot/issues>`_.
+             And any documentation issues on the `documentation Github Page <https://github.com/godotengine/godot-docs/issues>`_.
 
 This page provides a brief intro to C#, both what it is and how to use it in Godot.
 Afterwards, you may want to look at :ref:`how to use specific features <doc_c_sharp_features>`,
