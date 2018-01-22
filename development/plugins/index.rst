@@ -6,3 +6,4 @@ Editor plugins
    :name: toc-devel-plugins
 
    making_plugins
+   import_plugins
