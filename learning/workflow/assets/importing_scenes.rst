@@ -255,8 +255,8 @@ Remove nodes (-noimp)
 Node names that have this suffix will be removed at import time, mo
 matter what their type is. They will not appear in the imported scene.
 
-Create collisions (-col, -colonly)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Create collisions (-col, -colonly, -convcolonly)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Option "-col" will work only for Mesh nodes. If it is detected, a child
 static collision node will be added, using the same geometry as the mesh.
@@ -267,6 +267,8 @@ too un-smooth for collisions, which ends up not working well.
 To solve this, the "-colonly" modifier exists, which will remove the mesh upon
 import and create a :ref:`class_staticbody` collision instead.
 This helps the visual mesh and actual collision to be separated.
+
+Option "-convcolonly" will create :ref:`class_convexpolygonshape` instead of :ref:`class_concavepolygonshape`.
 
 Option "-colonly" can be also used with Blender's empty objects.
 On import it will create a :ref:`class_staticbody` with
