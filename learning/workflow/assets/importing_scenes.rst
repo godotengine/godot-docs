@@ -146,9 +146,29 @@ is only present if materials are saved as files.
 Compress
 ^^^^^^^^
 
-Makes meshes compact 3D vertices to more efficient data types for rendering.
-In few cases, this might lead to loss of precision so disabling this option
-is allowed.
+Makes meshes use less precise numbers for multiple aspects of the mesh in order
+to save space.
+
+These are:
+ * Transform Matrix (Location, rotation, and scale)             : 32-bit float to 16-bit signed integer.
+ * Vertices                                                     : 32-bit float to 16-bit signed integer.
+ * Normals                                                      : 32-bit float to 32-bit unsigned integer.
+ * Tangents                                                     : 32-bit float to 32-bit unsigned integer.
+ * Vertex Colors                                                : 32-bit float to 32-bit unsigned integer.
+ * UV                                                           : 32-bit float to 32-bit unsigned integer.
+ * UV2                                                          : 32-bit float to 32-bit unsigned integer.
+ * Vertex weights                                               : 32-bit float to 16-bit unsigned integer.
+ * Armature bones                                               : 32-bit float to 16-bit unsigned integer.
+ * Array index                                                  : 32-bit or 16-bit unsigned integer based on how many elements there are.
+
+Additional info:
+ * UV2 = The second UV channel for detail textures and baked lightmap textures.
+ * Array index = An array of numbers that number each element of the arrays above; i.e. they number the vertecies and normals.
+
+In some cases, this might lead to loss of precision so disabling this option
+may be needed. For instance, if a mesh is very big or there are multiple meshes
+being imported that cover a large area, compressing the import of this mesh(s)
+may lead to gaps in geometry or vertices not being exactly where they should be.
 
 Meshes
 ~~~~~~~
@@ -255,8 +275,8 @@ Remove nodes (-noimp)
 Node names that have this suffix will be removed at import time, mo
 matter what their type is. They will not appear in the imported scene.
 
-Create collisions (-col, -colonly)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Create collisions (-col, -colonly, -convcolonly)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Option "-col" will work only for Mesh nodes. If it is detected, a child
 static collision node will be added, using the same geometry as the mesh.
@@ -267,6 +287,8 @@ too un-smooth for collisions, which ends up not working well.
 To solve this, the "-colonly" modifier exists, which will remove the mesh upon
 import and create a :ref:`class_staticbody` collision instead.
 This helps the visual mesh and actual collision to be separated.
+
+Option "-convcolonly" will create :ref:`class_convexpolygonshape` instead of :ref:`class_concavepolygonshape`.
 
 Option "-colonly" can be also used with Blender's empty objects.
 On import it will create a :ref:`class_staticbody` with

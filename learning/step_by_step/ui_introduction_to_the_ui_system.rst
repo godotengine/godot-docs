@@ -34,7 +34,7 @@ work with others like the AnimationPlayer, Tween or the StreamPlayer.
 Control nodes are CanvasItems like Node2D, so you can apply shaders to
 them.
 
-All control nodes share the same main properties:  
+All control nodes share the same main properties:
 
 1. Anchor
 2. Bounding rectangle
@@ -162,13 +162,26 @@ and scalable backgrounds for your UI.
 
    NinePatchRect scaled with the min\_size property
 
+There are two workflows to build responsive UIs
+-----------------------------------------------
+
+There are two workflows to build scalable and flexible interfaces in Godot:
+
+1. You have many container nodes at your disposal that scale and place UI elements for you. They take control over their children.
+2. On the other side, you have the layout menu. It helps you to anchor, place and resize a UI element within its parent.
+
+The two approaches are not always compatible. Because a container controls its children, you cannot use the layout menu on them. Each container has a specific effect so you may need to nest several of them to get a working interface. With the layout approach you work from the bottom up, on the children. As you don't insert extra containers in the scene it can make for cleaner hierarchies, but it's harder to arrange items in a row, column, grid, etc.
+
+As you create UIs for your games and tools, you'll develop a sense for what fits best in each situation.
+
+
 Place UI elements precisely with anchors
 ----------------------------------------
 
 Control nodes have a position and size, but they also have anchors and
 margins. Anchors define the origin, or the reference point, for the
 Left, Top, Right and Bottom edges of the node. Change any of the 4
-anchors, and the margins will update automatically.
+anchors to change the reference point of the margins.
 
 .. figure:: img/anchor_property.png
 

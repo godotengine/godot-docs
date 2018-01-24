@@ -10,6 +10,7 @@ Step by step
    instancing_continued
    scripting
    scripting_continued
+   intro_to_the_editor_interface
    your_first_game
    ui_introduction_to_the_ui_system
    ui_main_menu

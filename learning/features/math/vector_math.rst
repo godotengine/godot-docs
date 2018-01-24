@@ -268,10 +268,14 @@ In GDScript it would look like this:
 Cross product
 ~~~~~~~~~~~~~
 
-Like the dot product, the cross product is an operation on two vectors.
+Like the dot product, the **cross product** is an operation on two vectors.
 However, the result of the cross product is a vector with a direction
-that is perpendicular to both and with a length that is the average of
-the the two lengths.
+that is perpendicular to both. Its magnitude depends on their relative angle.
+If two vectors are parallel, the result of their cross product will be null vector.
+
+::
+
+    \left \| a x b \right \| = \left \| a \right \|\left \| b \right \|\ sin(a,b)
 
 .. image:: img/tutovec16.png
 
