@@ -31,5 +31,7 @@ Frequently asked questions
 Can paid assets be uploaded to the asset library?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Not on the official one, though in the future there might be other asset
+Not to the official one, though in the future there might be other asset
 libraries which allow it.
+That said, you are allowed to monetize and sell Godot assets outside the
+Asset Library.
