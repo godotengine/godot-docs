@@ -69,34 +69,34 @@ Lifetime: 4.0
 One Shot
 --------
 
-When enabled, a Particles2D node will emit all of it's particles once 
+When enabled, a Particles2D node will emit all of its particles once
 and then never again.
 
 Preprocess
 ----------
 
-Particle systems begin with 0 particles emitted, then start emitting.
+Particle systems begin with zero particles emitted, then start emitting.
 This can be an inconvenience when just loading a scene and systems like
-a torch, mist, etc begin emitting the moment you enter. Preprocess is
-used to let the system process a given amount of seconds before it is
-actually shown the first time.
+a torch, mist, etc. begin emitting the moment you enter. Preprocess is
+used to let the system process a given number of seconds before it is
+actually drawn the first time.
 
 Speed Scale
 -----------
 
-The speed scale has a default value of 1, and is used to adjust the 
+The speed scale has a default value of ``1``, and is used to adjust the
 speed of a particle system. Lowering the value will make the particles 
-slower, increaseing the value will make the particles much faster.
+slower, increasing the value will make the particles much faster.
 
 Explosiveness
 -------------
 
-If lifetime is 1 and there are 10 particles, it means every particle
+If lifetime is ``1`` and there are ten particles, it means a particle
 will be emitted every 0.1 seconds. The explosiveness parameter changes
 this, and forces particles to be emitted all together. Ranges are:
 
--  0: Emit all particles together.
--  1: Emit particles at equal interval.
+-  0: Emit particles at regular intervals (default value).
+-  1: Emit all particles simultaneously.
 
 Values in the middle are also allowed. This feature is useful for
 creating explosions or sudden bursts of particles:
@@ -106,19 +106,19 @@ creating explosions or sudden bursts of particles:
 Randomness
 ----------
 
-All physics parameters can be randomized. Random variables go from 0 to
-1. The formula to randomize a parameter is:
+All physics parameters can be randomized. Random values range from ``0`` to
+``1``. The formula to randomize a parameter is:
 
 ::
 
-    initial_value = param_value + param_value*randomness
+    initial_value = param_value + param_value * randomness
 
 Fixed FPS
 ---------
 
 This setting can be used to set the particle system to render at a fixed 
-FPS. For instance, changing the FPS to 2 will make the particles render 
-every 2 frames a second, however it will not slow down. 
+FPS. For instance, changing the value to ``2`` will make the particles render
+at 2 frames per second. Note this does not slow down the particle system itself.
 
 Fract Delta
 -----------
@@ -131,28 +131,30 @@ Drawing Parameters
 Visability Rect
 ---------------
  
-The W and H values control width and height of the visability rectnagle 
-respectively. The X and Y values control the position of the Upper left 
-corner of the visability rectangle relative to the particle emitter.
+The ``W`` and ``H`` values control width and height of the visibility
+rectangle. The ``X`` and ``Y`` values control the position of the upper-left
+corner of the visibility rectangle relative to the particle emitter.
 
 Local Coords
 ------------
 
 By default this option is on, and it means that the space that particles
-are emitted to is contained within the node. If the node is moved, all
+are emitted to is relative to the node. If the node is moved, all
 particles are moved with it:
 
 .. image:: img/paranim20.gif
 
 If disabled, particles will emit to global space, meaning that if the
-node is moved, the emissor is moved too:
+node is moved, already emitted particles are not affected:
 
 .. image:: img/paranim21.gif
 
 Draw Order
 ----------
 
-The particle draw order can be set to index or lifetime.
+This controls the order in which individual particles are drawn. ``Index``
+means particles are drawn according to their emission order (default).
+``Lifetime`` means they are drawn in order of remaining lifetime.
 
 ParticlesMaterial settings
 ==========================
@@ -160,7 +162,7 @@ ParticlesMaterial settings
 Direction
 ---------
 
-This is the base angle at which particles emit. Default is 0 (down):
+This is the base angle at which particles emit. Default is ``0`` (down):
 
 .. image:: img/paranim1.gif
 
@@ -170,14 +172,14 @@ affect them:
 .. image:: img/paranim2.gif
 
 This parameter is useful because, by rotating the node, gravity will
-also be rotated. Changing direction keeps them separate.
+also be rotated. Changing direction allows them to be separated.
 
 Spread
 ------
 
-Spread is the angle at which particles will randomly be emitted.
-Increasing the spread will increase the angle. A spread of 180 will emit
-in all directions.
+This parameter is the angle in degrees which will be randomly added in
+either direction to the base ``Direction``. A spread of ``180`` will emit
+in all directions (+/- 180).
 
 .. image:: img/paranim3.gif
 
