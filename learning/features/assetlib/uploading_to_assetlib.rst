@@ -21,7 +21,7 @@ of the AssetLib, which will look like this:
 
 |image0|
 
-While it may look like a lot (and there is more to scroll down), each field is
+While it may look like a lot (and there is more as you scroll down), each field is
 described in terms of what you should put in. We will nonetheless go over what
 is required in the submission form here as well.
 
@@ -72,14 +72,14 @@ is required in the submission form here as well.
     The license under which you are distributing the asset. The list
     includes a variety of free and open-source software liceses, such as GPL
     (v2 and v3), MIT, BSD and Boost Software License. You can visit `OpenSource.org <https://opensource.org>`_  
-    for a detailed description of each of the listed liceses.
+    for a detailed description of each of the listed licenses.
 * **Description**:
     Finally, you can use the Description field for a textual
     overview of your asset, its features and behavior, a changelog, et cetera. In the
     future, formatting with Markdown will be supported, but currently, your only
     option is plain text.
 
-You may also include up to three text and/or image previews, which will be shown
+You may also include up to three video and/or image previews, which will be shown
 at the bottom of the asset page. Use the "Enable" checkbox on each of the preview
 submission boxes to enable them.
 
