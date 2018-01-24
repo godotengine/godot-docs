@@ -113,7 +113,7 @@ center the illustration with a ``CenterContainer``.
 
     Containers adapt to the window's resolution and width-to-height
     ratio. Although we could place UI elements by hand, containers are
-    faster, more precise, and ``responsive``.
+    faster, more precise, and **responsive**.
 
 Prepare the Main Menu scene
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
