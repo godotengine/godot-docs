@@ -67,7 +67,7 @@ Now let's take a look at what an asset's page looks like and what it contains.
 8. The date of the asset's latest edit/update.
 9. A textual description of the asset.
 10. Links related to the asset (download link, file list, issue tracker).
-11. A SHA-256 of the asset, for download validation purposes.
+11. A SHA-256 hash of the asset, for download validation purposes.
 12. Images and videos showcasing the asset.
 
 Registering and logging in
