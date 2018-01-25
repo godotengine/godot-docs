@@ -79,6 +79,7 @@ The main documentation for the site is organized into the following sections:
    development/plugins/index
    development/compiling/index
    development/cpp/index
+   development/consoles/consoles
 
 
 .. toctree::
