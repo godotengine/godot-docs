@@ -7,3 +7,4 @@ Platform-specific
 
    android_in_app_purchases
    services_for_ios
+   consoles
