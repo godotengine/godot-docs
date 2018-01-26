@@ -409,7 +409,7 @@ Summing up
 As you see, it's really easy to develop Godot in C++. Just write your
 stuff normally and remember to:
 
--  use ``OBJ_TYPE`` macro for inheritance, so Godot can wrap it
+-  use ``GDCLASS`` macro for inheritance, so Godot can wrap it
 -  use ``_bind_methods`` to bind your functions to scripting, and to
    allow them to work as callbacks for signals.
 

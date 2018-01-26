@@ -74,9 +74,9 @@ relatively intuitive:
   documentation, as it contains all the necessary information on using the
   engine to make games. It starts with the :ref:`Step by step
   <toc-learn-step_by_step>` tutorial which should be the entry point for all
-  new users. Its cornerstone is the :ref:`Engine features <toc-learn-features>`
-  category, which contains many feature-specific tutorials and documentation
-  which can be read as needed, in any order.
+  new users.
+- The :ref:`sec-tutorials` section, on the other hand, can be read as needed,
+  in any order. It contains many feature-specific tutorials and documentations.
 - The :ref:`sec-devel` section is intended for advanced users and contributors
   to the engine development, with information on compiling the engine,
   developing C++ modules or editor plugins.
@@ -84,7 +84,7 @@ relatively intuitive:
   engine development and the life of its community, e.g. how to report bugs,
   help with the documentation, etc. It's also the place for tutorials
   contributed by community members before they are properly reviewed and
-  adapted to be integrated in the official list of the :ref:`sec-learn`
+  adapted to be integrated in the official list of the :ref:`sec-tutorials`
   section.
 - Finally, the :ref:`sec-class-ref` is the documentation of the Godot API,
   which is also available directly within the script editor. It is generated

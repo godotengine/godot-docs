@@ -1,6 +1,8 @@
 Godot’s design philosophy
 =========================
 
+*Now you've gotten your hands wet, let's talk about Godot's design.*
+
 **Every game engine is different and fits different needs**. They do not
 only offer a wide range of features: each engine’s design is unique. This
 leads to different workflows and different ways to reason about your
@@ -11,6 +13,8 @@ from some of its core pillars. It is not a list of available features or
 an engine comparison. To know whether any engine can be a good fit for
 your project or not, you need to both try it out for yourself and
 understand its design and limitations.
+
+Please watch `Discover Godot 3, the Free game engine <https://youtu.be/4v3qge-3CqQ>`_ if you're looking for an overview of the engine's features.
 
 Object-oriented design and composition
 --------------------------------------
@@ -92,7 +96,7 @@ Note that if this is true for 2d at the time of writing, the 3d
 workspace still doesn’t feature as many tools. You’ll need external
 programs or add-ons to edit terrains, animate complex characters, etc.
 Godot provides a complete API to extend the editor’s functionality using
-game code. See `The Godot editor is a Godot game <#>`__ below.
+game code. See `The Godot editor is a Godot game`_ below.
 
 |image4|
 
@@ -102,7 +106,7 @@ manage states and transitions visually*
 Open source
 -----------
 
-Godot offers a fully open source code-base under the MIT license. This
+Godot offers a fully open source code-base under the **MIT license**. This
 means all the technologies that ship with it have to be Free as well.
 For the most part, they’re coded from the ground up by contributors.
 
@@ -111,12 +115,15 @@ They just won’t ship with the engine. This may include NViDia PhysX,
 Google Admob or an FBX file importer. Any of these can come as
 third-party plugins instead.
 
-On the other hand, an open codebase means you can learn from and extend
-the engine to your heart’s content. You can also debug games easily
+On the other hand, an open codebase means you can **learn from and extend
+the engine** to your heart’s content. You can also debug games easily
 as Godot will print errors with a stack trace, even if they come from the engine itself.
 
-Note this does not affect the work you do with Godot in any way: there’s
-no strings attached to the engine or anything you make with it.
+.. note::
+
+   This **does not affect the work you do with Godot** in any way: there’s
+   no strings attached to the engine or anything you make with it.
+
 
 Community-driven
 ----------------

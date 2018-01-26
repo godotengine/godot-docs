@@ -67,7 +67,7 @@ Now let's take a look at what an asset's page looks like and what it contains.
 8. The date of the asset's latest edit/update.
 9. A textual description of the asset.
 10. Links related to the asset (download link, file list, issue tracker).
-11. A SHA-256 of the asset, for download validation purposes.
+11. A SHA-256 hash of the asset, for download validation purposes.
 12. Images and videos showcasing the asset.
 
 Registering and logging in
@@ -111,6 +111,7 @@ places - in the Project Manager's Templates tab, and inside of a project, from
 the workspaces list.
 
 |image7|
+|image14|
 
 Click on it, and Godot will fetch info about the assets from the AssetLib. Once
 it's finished, you will see a window similar to what the AssetLib website looks
@@ -125,6 +126,9 @@ Notably, you can only fetch assets for the current version of Godot you are runn
 Also, you can only download Projects, Demos and Templates from the Project Manager
 view of the AssetLib, while Addons (tools, scripts, materials etc.) can only be
 downloaded from the in-project AssetLib. 
+In addition, unlike when using the web frontend, the search results are updated
+in real-time (you do not have to press Search after every change to your search
+query for the changes to take place).
 
 In the future, you will be able to choose a different AssetLib provider to fetch
 assets from (using the Site dropdown menu), however currently only the official
