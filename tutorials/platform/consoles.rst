@@ -27,6 +27,6 @@ your games to consoles.
 
 Following is the list of providers:
 
-* .. _a Lone Wolf Technology: http://www.lonewolftechnology.com/ offers
+* `Lone Wolf Technology <http://www.lonewolftechnology.com/>`_ offers
   Switch, PS4 and XBox One porting and publishing of Godot games.
 
