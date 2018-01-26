@@ -57,7 +57,7 @@ Here is a list of most feature tags in Godot. Keep in mind they are *case sensit
 +-----------------+--------------------------------------------------------+
 | **pc**          | Host OS is a PC platform (desktop/laptop)              |
 +-----------------+--------------------------------------------------------+
-| **web**         | Hot OS is a Web browser                                |
+| **web**         | Host OS is a Web browser                                |
 +-----------------+--------------------------------------------------------+
 | **etc**         | Textures using ETC1 compression are supported          |
 +-----------------+--------------------------------------------------------+
@@ -72,7 +72,7 @@ Custom features
 ---------------
 
 It is possible to add custom features to a build, just use the relevant
-field in the *export preset** used to generate it:
+field in the *export preset* used to generate it:
 
 .. image:: img/feature_tags1.png
 
