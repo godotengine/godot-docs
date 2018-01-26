@@ -106,7 +106,7 @@ manage states and transitions visually*
 Open source
 -----------
 
-Godot offers a fully open source code-base under the MIT license. This
+Godot offers a fully open source code-base under the **MIT license**. This
 means all the technologies that ship with it have to be Free as well.
 For the most part, they’re coded from the ground up by contributors.
 
@@ -115,12 +115,15 @@ They just won’t ship with the engine. This may include NViDia PhysX,
 Google Admob or an FBX file importer. Any of these can come as
 third-party plugins instead.
 
-On the other hand, an open codebase means you can learn from and extend
-the engine to your heart’s content. You can also debug games easily
+On the other hand, an open codebase means you can **learn from and extend
+the engine** to your heart’s content. You can also debug games easily
 as Godot will print errors with a stack trace, even if they come from the engine itself.
 
-Note this does not affect the work you do with Godot in any way: there’s
-no strings attached to the engine or anything you make with it.
+.. note::
+
+   This **does not affect the work you do with Godot** in any way: there’s
+   no strings attached to the engine or anything you make with it.
+
 
 Community-driven
 ----------------
