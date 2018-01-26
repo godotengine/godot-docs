@@ -3,6 +3,6 @@ VR
 
 .. toctree::
    :maxdepth: 1
-   :name: toc-community-tutorials-vr
+   :name: toc-tutorials-vr
 
    vr_primer

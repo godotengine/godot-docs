@@ -15,3 +15,6 @@
    environment_and_post_processing
    high_dynamic_range
    using_gridmaps
+   working_with_3d_skeletons
+   inverse_kinematics
+   mesh_generation_with_heightmap_and_shaders

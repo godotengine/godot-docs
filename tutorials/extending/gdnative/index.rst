@@ -3,6 +3,6 @@ GDNATIVE
 
 .. toctree::
    :maxdepth: 1
-   :name: toc-community-tutorials-gdnative
+   :name: toc-tutorials-gdnative
 
    gdnative-c-example
