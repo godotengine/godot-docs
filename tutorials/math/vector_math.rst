@@ -273,9 +273,9 @@ However, the result of the cross product is a vector with a direction
 that is perpendicular to both. Its magnitude depends on their relative angle.
 If two vectors are parallel, the result of their cross product will be null vector.
 
-::
+.. math::
 
-    \left \| a x b \right \| = \left \| a \right \|\left \| b \right \|\ sin(a,b)
+    \left \|a \times b  \right \| = \left \| a \right \|\left \| b \right \|\ |\sin(a,b)|
 
 .. image:: img/tutovec16.png
 
