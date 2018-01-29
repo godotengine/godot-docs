@@ -1,3 +1,5 @@
+.. _doc_intro_to_the_editor_interface:
+
 Introduction to Godot’s editor
 ==============================
 

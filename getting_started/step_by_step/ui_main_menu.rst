@@ -1,6 +1,7 @@
-=======================
- Design a title screen
-=======================
+.. _doc_ui_main_menu:
+
+Design a title screen
+=====================
 
 In the next two tutorials, you will build two responsive UI (user interface)
 scenes step-by-step using the engine's UI system:
@@ -294,4 +295,4 @@ You can change the scale mode in the project settings: click the Project menu ->
 Settings. In the window's left column, look for the Display category.
 Click on the Window sub-category. On the right side of the window,
 you'll find a Stretch section. The three settings, Mode, Aspect, and
-Shrink, control the screen size. For more information, see `:ref:'Project Settings<doc_multiple_resolutions>'`__.
+Shrink, control the screen size. For more information, see :ref:`doc_multiple_resolutions`.

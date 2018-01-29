@@ -96,7 +96,8 @@ Moving the Kinematic character
 
 Go back to the character scene, and open the script, the magic begins
 now! Kinematic body will do nothing by default, but it has a really
-useful function called :ref:`KinematicBody2D.move() <class_KinematicBody2D_move>`.
+useful function called
+:ref:`KinematicBody2D.move_and_collide() <class_KinematicBody2D_move_and_collide>`.
 This function takes a :ref:`Vector2 <class_Vector2>` as
 an argument, and tries to apply that motion to the kinematic body. If a
 collision happens, it stops right at the moment of the collision.
@@ -108,7 +109,7 @@ So, let's move our sprite downwards until it hits the floor:
     extends KinematicBody2D
 
     func _physics_process(delta):
-        move( Vector2(0,1) ) #move down 1 pixel per physics frame
+        move_and_collide(Vector2(0,1)) # Move down 1 pixel per physics frame
 
 The result is that the character will move, but stop right when
 hitting the floor. Pretty cool, huh?
@@ -128,7 +129,7 @@ little more like an actual game character:
         velocity.y += delta * GRAVITY
 
         var motion = velocity * delta
-        move( motion )
+        move_and_collide(motion)
 
 Now the character falls smoothly. Let's make it walk to the sides, left
 and right when touching the directional keys. Remember that the values

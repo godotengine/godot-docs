@@ -343,7 +343,7 @@ Advanced: Call Func tracks
 
 Godot's animation engine doesn't stop here. If you're already
 comfortable with Godot's scripting language
-:doc:`/learning/scripting/index` and :doc:`/classes/index` you
+:ref:`doc_gdscript` and :doc:`/classes/index` you
 know that each node type is a class and has a bunch of callable
 functions.
 

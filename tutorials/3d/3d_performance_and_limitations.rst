@@ -49,7 +49,7 @@ Reuse shaders and materials
 
 Godot renderer is a little different to what is out there. It's designed
 to minimize GPU state changes as much as possible.
-:ref:`FixedMaterial <class_FixedMaterial>`
+:ref:`class_SpatialMaterial`
 does a good job at reusing materials that need similar shaders but, if
 custom shaders are used, make sure to reuse them as much as possible.
 Godot's priorities will be like this:
@@ -59,7 +59,7 @@ Godot's priorities will be like this:
    of objects (in the hundreds or thousands) try reusing the materials
    or in the worst case use atlases.
 -  **Reusing Shaders**: If materials can't be reused, at least try to
-   re-use shaders (or FixedMaterials with different parameters but same
+   re-use shaders (or SpatialMaterials with different parameters but same
    configuration).
 
 If a scene has, for example, 20.000 objects with 20.000 different
@@ -182,7 +182,7 @@ Bake lighting
 
 Small lights are usually not a performance issue. Shadows a little more.
 In general, if several lights need to affect a scene, it's ideal to bake
-it (:ref:`doc_light_baking`). Baking can also improve the scene quality by
+it (:ref:`doc_baked_lightmaps`). Baking can also improve the scene quality by
 adding indirect light bounces.
 
 If working on mobile, baking to texture is recommended, since this
