@@ -69,10 +69,20 @@ On Windows, you need to:
 * Install Python. Don't forget to check the "Add Python to PATH" box.
 * Use the above `pip` commands.
 
-Building is still done at the root folder of this repository, but with this command line instead:
+Building is still done at the root folder of this repository using the provided `make.bat`:
+```sh
+make.bat html
+```
+
+Alternatively, you can build with this command instead:
 ```sh
 sphinx-build -b html ./ _build
 ```
+
+Note that during the first build, various installation prompts may appear and ask to install LaTeX plugins.
+Make sure you don't miss them, especially if they open behind other windows, else the build may appear to hang until you confirm these prompts.
+
+You could also install a normal `make` toolchain (for example via MinGW) and build the docs using the normal `make html`.
 
 ### Building with Sphinx and virtualenv
 

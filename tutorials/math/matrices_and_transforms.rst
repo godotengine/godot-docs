@@ -484,8 +484,8 @@ Transform
 To add the final component to the mix, Godot provides the
 :ref:`Transform <class_Transform>` type. Transform has two members:
 
--  *basis* (of type :ref:`Matrix3 <class_Matrix3>`
--  *origin* (of type :ref:`Vector3 <class_Vector3>`
+-  *basis* (of type :ref:`Basis <class_Basis>`)
+-  *origin* (of type :ref:`Vector3 <class_Vector3>`)
 
 Any 3D transform can be represented with Transform, and the separation
 of basis and origin makes it easier to work translation and rotation

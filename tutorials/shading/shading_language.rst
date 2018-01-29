@@ -357,6 +357,39 @@ pixel in the fragment processor.
         ALBEDO = some_color;
     }
 
+Interpolation qualifiers
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Certain values are interpolated during the shading pipeline. You can modify how these interpolations
+are done by using *interpolation qualifiers*. 
+
+.. code-block:: glsl
+
+    shader_type spatial;
+
+    varying flat vec3 our_color;
+    
+    void vertex() {
+        our_color = COLOR.rgb;
+    }
+
+    void fragment() {
+        ALBEDO = our_color;
+    }
+
+There are three possible interpolation qualifiers:
+
++-------------------+---------------------------------------------------------------------------------+
+| Qualifier         | Description                                                                     | 
++===================+=================================================================================+
+| **flat**          | The value is not interpolated                                                   |
++-------------------+---------------------------------------------------------------------------------+
+| **noperspective** | The value is linearly interpolated in window-space                              |
++-------------------+---------------------------------------------------------------------------------+
+| **smooth**        | The value is interpolated in a perspective-correct fashion. This is the default |
++-------------------+---------------------------------------------------------------------------------+
+
+
 Uniforms
 ~~~~~~~~
 

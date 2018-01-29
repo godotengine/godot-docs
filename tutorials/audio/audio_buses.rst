@@ -29,11 +29,12 @@ more intuitive for audio professionals.
 
 For those unfamiliar with it, it can be explained with a few facts:
 
-* Decibel scale is a relative scale, every 6dB (dB means decibel), sound doubles or halves.
-* The scale is logarithmic, so true zero (no audio) can't be represented.
+* The decibel (dB) scale is a relative scale. It represents the ratio of sound power by using 10 times the base 10 logarithm of the ratio (10×log\ :sub:`10`\ (P/P\ :sub:`0`\ )).
+* For every 3dB, sound doubles or halves. 6dB represents a factor 4, 9dB a factor 8, 10dB a factor 10, 20dB a factor 100, etc.
+* Since the scale is logarithmic, true zero (no audio) can't be represented.
 * 0dB is considered the maximum audible volume without *clipping*. This limit is not the human limit but a limit from the sound hardware. Your sound output simply can't output any sound louder than 0dB without distorting it (clipping it).
 * Because of the above, your sound mix should work in a way where the sound output of the *Master Bus* (more on that later), should never be above 0dB.
-* Every 6dB below the 0dB limit, sound energy is *halved*. It means the sound volume at -6dB is half as loud as 0dB. -12dB is half as loud as -6dB and so on.
+* Every 3dB below the 0dB limit, sound energy is *halved*. It means the sound volume at -3dB is half as loud as 0dB. -6dB is half as loud as -3dB and so on.
 * When working with decibels, sound is considered no longer audible between -60dB and -80dB. This makes your working range generally between -60dB and 0dB.
 
 This can take a bit getting used to, but it's friendlier in the end and will allow you to communicate better with audio professionals.

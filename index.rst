@@ -68,18 +68,18 @@ The main documentation for the site is organized into the following sections:
    tutorials/shading/index
    tutorials/networking/index
    tutorials/assetlib/index
-   tutorials/misc/index
+   tutorials/vr/index
+   tutorials/plugins/index
    tutorials/platform/index
+   tutorials/misc/index
 
 .. toctree::
    :maxdepth: 1
    :caption: Development
    :name: sec-devel
 
-   development/plugins/index
    development/compiling/index
    development/cpp/index
-   development/consoles/consoles
 
 
 .. toctree::
@@ -87,8 +87,7 @@ The main documentation for the site is organized into the following sections:
    :caption: Community
    :name: sec-community
 
-   community/contributing/index
-   community/tutorials/index
+   community/index
 
 
 .. toctree::

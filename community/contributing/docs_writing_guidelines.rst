@@ -386,3 +386,24 @@ class names, which you can't fold, are ``Classes`` e.g. the
 ``KinematicBody2D class``. And individual lines with key-value pairs are
 ``properties``. E.g. ``position`` or ``modulate color`` are both
 ``properties``.
+
+Image Contribution guidelines
+-----------------------------
+
+A significant part of the documentation is images, and there are several important
+guidelines to follow.
+
+First, you should always be using the default editor theme and text when taking screenshots.
+
+For 3D screenshots use 4xMSAA, enable anisotropic filtering on the projects textures,
+and set the anisotropic filter quality to 16x in Project Settings
+
+Screenshot size should not exceed 1920x1080.
+
+When you need to highlight an area of the editor to show something, like a 
+button or option, use a 2 pixel thick outline without a bevel.
+
+Before you add or replace any images in the documentation, they should be run through
+a png compressor to save size. The built in lossless compressor in programs like Krita
+or Photoshop should be done. However you should also use a lossy one, such as `pngquant <https://pngquant.org/>`_
+where almost no image quality is lost during compression.

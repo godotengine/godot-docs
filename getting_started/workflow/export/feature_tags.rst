@@ -57,7 +57,7 @@ Here is a list of most feature tags in Godot. Keep in mind they are *case sensit
 +-----------------+--------------------------------------------------------+
 | **pc**          | Host OS is a PC platform (desktop/laptop)              |
 +-----------------+--------------------------------------------------------+
-| **web**         | Host OS is a Web browser                                |
+| **web**         | Host OS is a Web browser                               |
 +-----------------+--------------------------------------------------------+
 | **etc**         | Textures using ETC1 compression are supported          |
 +-----------------+--------------------------------------------------------+
