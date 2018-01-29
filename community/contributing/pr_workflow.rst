@@ -30,12 +30,18 @@ The `repository on GitHub <https://github.com/godotengine/godot>`_ is a
 `Git <https://git-scm.com>`_ code repository together with an embedded
 issue tracker and PR system.
 
+.. note:: If you are contributing to the documention, its repository can
+          be found `here <https://github.com/godotengine/godot-docs>`_. 
+
 The Git version control system is the tool used to keep track of successive
 edits to the source code - to contribute efficiently to Godot, learning the
 basics of the Git command line is *highly* recommended. There exist some
 graphical interfaces for Git, but they usually encourage users to take bad
 habits regarding the Git and PR workflow, and we therefore recommend not to
-use them (especially GitHub's online editor).
+use them. In particular, we advise not to use Github's online editor for code 
+contributions (It's tolerated for documentation changes) as it enforces one 
+commit per file and per modification, which qucikly leads to PRs with an 
+unreadable Git history (especially after peer review).
 
 .. seealso:: The first sections of Git's "Book" are a good introduction to
              the tool's philosophy and the various commands you need to
@@ -75,7 +81,14 @@ Godot repo, with your GitHub username as namespace:
 .. image:: img/github_fork_url.png
 
 You can then *clone* your fork, i.e. create a local copy of the online
-repository (in Git speak, the *origin remote*):
+repository (in Git speak, the *origin remote*). If you haven't already,
+download Git from `its website <https://git-scm.com>`_ if you're using Windows or 
+Mac, if you're using Linux install it through your package manager. 
+
+.. note:: if you are on Windows open Git Bash to type commands. Mac and linux users
+          can use their respective terminals.
+
+To clone your fork from GitHub, use the following command:
 
 ::
 
@@ -86,14 +99,18 @@ repository (in Git speak, the *origin remote*):
           not be typed.
 
 After a little while, you should have a ``godot`` directory in your current
-working directory. Move into it (``cd godot``), and we will set up a useful
-reference:
+working directory. Move into it using the ``cd`` command:
+
+::
+    
+    $ cd godot 
+
+We will start by setting up a reference ot the original repository that we forked:
 
 ::
 
     $ git remote add upstream https://github.com/godotengine/godot
     $ git fetch upstream
-
 This will create a reference named *upstream* pointing to the original
 godotengine/godot repository. This will be useful when you want to pull new
 commits from its *master* branch to update your fork. You have another
@@ -233,7 +250,7 @@ Here's how the shell history could look like on our example:
     // It's nice to know where you're starting from
     $ git log
 
-    // Do changes to the project manager
+    // Do changes to the project manager with the nano text editor
     $ nano editor/project_manager.cpp
 
     // Find an unrelated bug in Control and fix it
@@ -415,3 +432,26 @@ will have to *force* it:
 And tadaa! Git will happily *replace* your remote branch with what you had
 locally (so make sure that's what you wanted, using ``git log``). This will
 also update the PR accordingly.
+
+Deleting a Git Branch
+---------------------
+
+After your pull request gets merged there's one last thing you should do, delete your 
+Git branch for the PR. There wont be issues if you don't delete your branch, but it's 
+good practice to do so. You'll need to do this twice, once for the local branch and another 
+for the remote branch on GitHub.
+
+To delete our better project manager branch locally use this command:
+
+::
+
+    $ git branch -d better-project-manager 
+
+Alternatively, if the branch hadn't been merged yet and we wanted to delete it anyway, instead 
+of ``-d`` you would use ``-D``. 
+
+Next, to delete the remote branch on GitHub use this command:
+
+::
+
+    $ git push origin -d better-project-manager
