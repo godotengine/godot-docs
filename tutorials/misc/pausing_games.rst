@@ -19,13 +19,13 @@ Godot.
 How pausing works
 -----------------
 
-To set pause mode, the pause state must be set. This is done by calling
-:ref:`SceneTree.set_pause() <class_SceneTree_set_pause>`
-with a "true" argument:
+To set pause mode, the pause state must be set. This is done by assigning
+"true" to the :ref:`SceneTree.paused <class_SceneTree_paused>` member
+variable:
 
 ::
 
-    get_tree().set_pause(true)
+    get_tree().paused = true
 
 Doing so will have the following behavior:
 
@@ -81,8 +81,8 @@ enable the pause and show the pause screen.
 ::
 
     func _on_pause_button_pressed():
-        get_tree().set_pause(true)
-        get_node("pause_popup").show()
+        get_tree().paused = true
+        $pause_popup.show()
 
 To remove the pause, just do the opposite when the pause screen is
 closed:
@@ -90,7 +90,7 @@ closed:
 ::
 
     func _on_pause_popup_close_pressed():
-        get_node("pause_popup").hide()
-        get_tree().set_pause(false)
+        $pause_popup.hide()
+        get_tree().paused = false
 
 And that should be all!

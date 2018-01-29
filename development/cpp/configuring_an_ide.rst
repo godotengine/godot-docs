@@ -4,7 +4,7 @@ Configuring an IDE
 ==================
 
 We assume that you already `cloned <https://github.com/godotengine/godot>`_
-and :ref:`compiled <toc-compiling>` Godot.
+and :ref:`compiled <toc-devel-compiling>` Godot.
 
 Kdevelop
 --------

@@ -40,7 +40,7 @@ References:
 -  `core/variant.h <https://github.com/godotengine/godot/blob/master/core/variant.h>`__
 
 Containers: Dictionary and Array
---------------------
+--------------------------------
 
 Both are implemented using variants. A Dictionary can match any datatype
 used as key to any other datatype. An Array just holds an array of

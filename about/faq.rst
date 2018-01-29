@@ -37,13 +37,13 @@ Which platforms are supported by Godot?
 
 * Windows
 * Mac OS X
-* X11 (Linux, *BSD)
+* X11 (Linux, \*BSD)
 
 **For exporting your games:**
 
 * Windows (and UWP)
 * Mac OS X
-* X11 (Linux, *BSD)
+* X11 (Linux, \*BSD)
 * Android
 * iOS
 * Web
@@ -60,7 +60,7 @@ Which languages are supported in Godot?
 ---------------------------------------
 
 The officially supported languages for Godot are GDScript, Visual Scripting, C# and C++.
-See the subcategories for each language in the :ref:`toc-learn-scripting` section.
+See the subcategories for each language in the :ref:`scripting <toc-learn-scripting>` section.
 
 Note that C# and Visual Scripting support is comparatively young and GDScript still has
 some advantages as outlined below.
@@ -72,7 +72,7 @@ Work is currently underway, for example, on unofficial bindings for Godot
 to `Python <https://github.com/touilleMan/godot-python>`_ and `Nim <https://github.com/pragmagic/godot-nim>`_.
 
 GDScript? Why use a custom scripting language instead of my language of choice?
------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 The short answer is that we think the additional complexity both on your side
 (when first learning Godot and GDScript) as well as our side (maintenance)
@@ -222,9 +222,8 @@ And that's it! Your game should work in multiple resolutions.
 
 If there really is a desire to make your game also work on ancient
 devices with tiny screens (less than 300 pixels in width), you can use
-the :ref:`export option <doc_exporting_images>` to shrink
-images, and set that build to be used for certain screen sizes in the
-App Store or Google Play.
+the export option to shrink images, and set that build to be used for
+certain screen sizes in the App Store or Google Play.
 
 I have a great idea that will make Godot better. What do you think?
 -------------------------------------------------------------------
@@ -286,7 +285,7 @@ discussing any idea. Be specific and concrete.
 Bonus points for bringing screenshots, concrete numbers, test cases or example projects (if applicable).
 
 How can I support Godot development or contribute?
------------------------------------------
+--------------------------------------------------
 
 See :ref:`doc_ways_to_contribute`.
 

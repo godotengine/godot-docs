@@ -96,10 +96,10 @@ There are several types of InputEvent, described in the table below:
 | :ref:`InputEventMouseMotion <class_InputEventMouseMotion>`        | MOUSE_MOTION       | Contains motion information, such as    |
 |                                                                   |                    | relative, absolute positions and speed. |
 +-------------------------------------------------------------------+--------------------+-----------------------------------------+
-| :ref:`InputEventJoystickMotion <class_InputEventJoystickMotion>`  | JOYSTICK_MOTION    | Contains Joystick/Joypad analog axis    |
+| :ref:`InputEventJoypadMotion <class_InputEventJoypadMotion>`      | JOYSTICK_MOTION    | Contains Joystick/Joypad analog axis    |
 |                                                                   |                    | information.                            |
 +-------------------------------------------------------------------+--------------------+-----------------------------------------+
-| :ref:`InputEventJoystickButton <class_InputEventJoystickButton>`  | JOYSTICK_BUTTON    | Contains Joystick/Joypad button         |
+| :ref:`InputEventJoypadButton <class_InputEventJoypadButton>`      | JOYSTICK_BUTTON    | Contains Joystick/Joypad button         |
 |                                                                   |                    | information.                            |
 +-------------------------------------------------------------------+--------------------+-----------------------------------------+
 | :ref:`InputEventScreenTouch <class_InputEventScreenTouch>`        | SCREEN_TOUCH       | Contains multi-touch press/release      |

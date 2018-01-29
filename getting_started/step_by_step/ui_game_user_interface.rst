@@ -1,3 +1,5 @@
+.. _doc_ui_game_user_interface:
+
 Design the GUI
 ==============
 

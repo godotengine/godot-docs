@@ -16,7 +16,7 @@ under non-free, proprietary licenses, limiting what you can do with them.
 
 The Asset Library is different - all assets are distributed free of charge, and under
 a host of open-source licenses (such as the MIT license, the GPL, and the Boost Software License).
-This makes the AssetLib more similar to the software repositories of a GNU/Linux distribution.
+This makes the AssetLib more similar to the software repositories of a Linux distribution.
 
 This set of pages will cover how to use the AssetLib (both from inside Godot, and on the
 website), how you can submit your own assets, and what the guidelines for submission are.

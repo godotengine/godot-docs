@@ -41,9 +41,9 @@ Serializing
 The next step is to serialize the data. This makes it much easier to
 read and store to disk. In this case, we're assuming each member of
 group Persist is an instanced node and thus has a path. GDScript
-has helper functions for this, such as :ref:`Dictionary.to_json()
-<class_Dictionary_to_json>` and :ref:`Dictionary.parse_json()
-<class_Dictionary_parse_json>`, so we will use a dictionary. Our node needs to
+has helper functions for this, such as :ref:`to_json()
+<class_@GDScript_to_json>` and :ref:`parse_json()
+<class_@GDScript_parse_json>`, so we will use a dictionary. Our node needs to
 contain a save function that returns this data. The save function will look
 like this:
 
@@ -96,7 +96,7 @@ way to pull the data out of the file as well.
         var savenodes = get_tree().get_nodes_in_group("Persist")
         for i in savenodes:
             var nodedata = i.save()
-            savegame.store_line(nodedata.to_json())
+            savegame.store_line(to_json(nodedata))
         savegame.close()
 
 Game saved! Loading is fairly simple as well. For that we'll read each
@@ -120,10 +120,9 @@ load function:
             i.queue_free()
 
         # Load the file line by line and process that dictionary to restore the object it represents
-        var currentline = {} # dict.parse_json() requires a declared dict.
         savegame.open("user://savegame.save", File.READ)
         while (!savegame.eof_reached()):
-            currentline.parse_json(savegame.get_line())
+            var currentLine = parse_json(savegame.get_line())
             # First we need to create the object and add it to the tree and set its position.
             var newobject = load(currentline["filename"]).instance()
             get_node(currentline["parent"]).add_child(newobject)
