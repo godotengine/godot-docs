@@ -3,12 +3,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Godot Docs – *master* branch
-============================
+Godot Docs – *3.0* branch
+=========================
 
-.. attention:: This is the documentation for the unstable (master) branch.
-               Looking for the documentation of the current **stable** branch?
-               `Have a look here <http://docs.godotengine.org/en/stable>`_.
+.. tip:: This is the documentation for the stable 3.0 branch.
+         Looking for the documentation of the current **development** branch?
+         `Have a look here <http://docs.godotengine.org/en/latest>`_.
+         For the stable 2.1 branch, `it's here <http://docs.godotengine.org/en/2.1>`_.
 
 Welcome to the official documentation of Godot Engine, the free and open source
 community-driven 2D and 3D game engine! If you are new to this documentation,
