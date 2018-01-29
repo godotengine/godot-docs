@@ -173,7 +173,7 @@ Our job is to add the missing text between these marks:
 -  <member></member>
 -  <signal></signal>
 
-Write in a clear and simple language. Always follow the :ref:`class_reference_styleguide` to keep your descriptions short and easy to read. **Do not leave empty lines** in the descriptions: each line in the XML file will result in a new paragraph. 
+Write in a clear and simple language. Always follow the :ref:`writing guidelines <doc_docs_writing_guidelines>` to keep your descriptions short and easy to read. **Do not leave empty lines** in the descriptions: each line in the XML file will result in a new paragraph. 
 
 Here's how a class looks like in XML:
 

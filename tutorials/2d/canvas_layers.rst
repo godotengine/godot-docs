@@ -16,8 +16,8 @@ will be moved too.
 These nodes are placed as direct or indirect children to a
 :ref:`Viewport <class_Viewport>`, and will be displayed through it.
 
-Viewport has a property "canvas_transform"
-:ref:`Viewport.set_canvas_transform() <class_Viewport_set_canvas_transform>`,
+Viewport has the property
+:ref:`Viewport.canvas_transform <class_Viewport_canvas_transform>`,
 which allows to transform all the CanvasItem hierarchy by a custom
 :ref:`Transform2D <class_Transform2D>` transform. Nodes such as
 :ref:`Camera2D <class_Camera2D>`, work by changing that transform.
@@ -73,4 +73,4 @@ Even though there shouldn't be any performance limitation, it is not
 advised to use excessive amount of layers to arrange drawing order of
 nodes. The most optimal way will always be arranging them by tree order.
 2d nodes also have a property for controlling their drawing order
-(see :ref:`Node2D.set_z() <class_Node2D_set_z>`).
+(see :ref:`Node2D.z_index <class_Node2D_z_index>`).

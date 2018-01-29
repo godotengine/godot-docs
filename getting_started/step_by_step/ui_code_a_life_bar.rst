@@ -1,3 +1,5 @@
+.. _doc_ui_code_a_life_bar:
+
 Control the game's UI with code
 ===============================
 
@@ -17,12 +19,7 @@ You will learn:
 
 -  How to **connect** a character to a GUI with signals
 -  How to **control** a GUI with GDscript
--  How to **animate** a life bar with the `Tween <#>`__ node
-
-
-.. warning::
-
-   This tutorial relies on a recent build of Godot 3's master branch. You will find some differences with Godot 3 alpha 1, and some more changes might happen in Godot 3 beta. We'll adapt the page after the beta release.
+-  How to **animate** a life bar with the :ref:`Tween <class_Tween>` node
 
 
 If you want to learn how to set up the interface instead, check out the
@@ -30,7 +27,6 @@ step-by-step UI tutorials:
 
 -  Create a main menu screen
 -  Create a game user interface
-
 
 
 When you code a game, you want to build the core gameplay first: the

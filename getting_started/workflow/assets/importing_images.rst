@@ -25,7 +25,7 @@ Import options are vast:
 .. image:: img/image_import1.png
 
 Compression:
--------------
+------------
 
 Images are one of the largest assets in a game. To handle them efficiently, they need to be compressed.
 Godot offers several compression methods, depending on the use case.
@@ -145,7 +145,7 @@ An alternative to fix darkened borders is to use premultiplied alpha. By enablin
 Keep in mind that a material will need to be created that uses the PREMULT ALPHA blend mode on canvas items that need it.
 
 HDR as SRGB
-~~~~~~~~~~~~
+~~~~~~~~~~~
 
 Some few HDR files are broken and contain SRGB color data. It is advised to not use them but, in the worst case, toggling this option on will make them look right.
 

@@ -1,7 +1,7 @@
 .. _doc_baked_lightmaps:
 
 Baked Lightmaps
-==========
+===============
 
 Introduction
 ------------
@@ -55,7 +55,7 @@ If you use external meshes on import, the size will be kept.
 Be wary that most unwrappers in 3D DCCs are not very quality oriented, as they are meant to work quick. You will mostly need to use seams or other techniques to create better unwrapping.
 
 Unwrap from within Godot
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Godot has an option to unwrap meshes and visualize the UV channels. It can be found in the Mesh menu:
 
@@ -87,7 +87,7 @@ In the mesh menu mentioned before, the UV2 texture coordinates can be visualized
 .. image:: img/baked_light_uvchannel.png
 
 Setting up the Scene
-----------------
+--------------------
 
 Before anything is done, a **BakedLight** Node needs to be added to a scene. This will enable light baking on all nodes (and sub-nodes) in that scene, even on instanced scenes. 
 
@@ -97,7 +97,7 @@ A sub-scene can be instanced several times, as this is supported by the baker an
 
 
 Configure Bounds
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 Lightmap needs an approximate volume of the area affected, because it uses it to transfer light to dynamic objects inside (more on that later). Just 
 cover the scene with the volume, as you do with GIProbe:
@@ -158,7 +158,7 @@ To begin the bake process, just push the big **Bake Lightmaps** button on top, w
 This can take from seconds to minutes (or hours) depending on scene size, bake method and quality selected.
 
 Configuring Bake
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 Several more options are present for baking:
 
@@ -174,7 +174,7 @@ Several more options are present for baking:
 
 
 Dynamic Objects
-----------------
+---------------
 
 In other engines or lightmapper implementations, you are required to manually place small objects called "lightprobes" all around the level to generate *capture* data. This is used to, then, transfer the light to dynamic objects that move around the scene.
 

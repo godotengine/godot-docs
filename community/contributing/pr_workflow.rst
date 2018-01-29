@@ -111,6 +111,7 @@ We will start by setting up a reference ot the original repository that we forke
 
     $ git remote add upstream https://github.com/godotengine/godot
     $ git fetch upstream
+
 This will create a reference named *upstream* pointing to the original
 godotengine/godot repository. This will be useful when you want to pull new
 commits from its *master* branch to update your fork. You have another

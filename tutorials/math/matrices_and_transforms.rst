@@ -109,7 +109,7 @@ the uses for the dot product. This was enough to obtain back the
 design coordinates for every point in the ship.
 
 So, what we have been working with so far (with X, Y and Origin) is an
-*Oriented Coordinate System\*. X an Y are the **Basis**, and \*Origin*
+*Oriented Coordinate System*. X an Y are the **Basis**, and *Origin*
 is the offset.
 
 Basis
@@ -143,29 +143,29 @@ depth, only its practical use. There is plenty of material for that,
 which should be a lot simpler to understand after completing this
 tutorial. We'll just explain how to use transforms.
 
-Matrix32
---------
+Transform2D
+-----------
 
-:ref:`Matrix32 <class_Matrix32>` is a 3x2 matrix. It has 3 Vector2 elements and
+:ref:`class_Transform2D` is a 3x2 matrix. It has 3 Vector2 elements and
 it's used for 2D. The "X" axis is the element 0, "Y" axis is the element 1 and
 "Origin" is element 2. It's not divided in basis/origin for convenience, due to
 its simplicity.
 
 ::
 
-    var m = Matrix32()
+    var m = Transform2D()
     var x = m[0] # 'X'
     var y = m[1] # 'Y'
     var o = m[2] # 'Origin'
     
 
-Most operations will be explained with this datatype (Matrix32), but the
+Most operations will be explained with this datatype (Transform2D), but the
 same logic applies to 3D.
 
 Identity
 --------
 
-By default, Matrix32 is created as an "identity" matrix. This means:
+By default, Transform2D is created as an "identity" matrix. This means:
 
 -  'X' Points right: Vector2(1,0)
 -  'Y' Points up (or down in pixels): Vector2(0,1)
@@ -184,11 +184,11 @@ Operations
 Rotation
 --------
 
-Rotating Matrix32 is done by using the "rotated" function:
+Rotating Transform2D is done by using the "rotated" function:
 
 ::
 
-    var m = Matrix32()
+    var m = Transform2D()
     m = m.rotated(PI/2) # rotate 90°
 
 .. image:: img/tutomat12.png
@@ -196,13 +196,13 @@ Rotating Matrix32 is done by using the "rotated" function:
 Translation
 -----------
 
-There are two ways to translate a Matrix32, the first one is just moving
+There are two ways to translate a Transform2D, the first one is just moving
 the origin:
 
 ::
 
     # Move 2 units to the right
-    var m = Matrix32()
+    var m = Transform2D()
     m = m.rotated(PI/2) # rotate 90°
     m[2]+=Vector2(2,0)
 
@@ -212,13 +212,13 @@ This will always work in global coordinates.
 
 If instead, translation is desired in *local* coordinates of the
 matrix (towards where the *basis* is oriented), there is the
-:ref:`Matrix32.translated() <class_Matrix32_translated>`
+:ref:`Transform2D.translated() <class_Transform2D_translated>`
 method:
 
 ::
 
     # Move 2 units towards where the basis is oriented
-    var m = Matrix32()
+    var m = Transform2D()
     m = m.rotated(PI/2) # rotate 90°
     m = m.translated( Vector2(2,0) )
 
@@ -234,7 +234,7 @@ the scale). It will leave the origin alone:
 ::
 
     # Make the basis twice its size.
-    var m = Matrix32()
+    var m = Transform2D()
     m = m.scaled( Vector2(2,2) )
 
 .. image:: img/tutomat15.png
@@ -298,7 +298,7 @@ Or pre-multiplication:
 Orthonormal matrices
 --------------------
 
-However, if the Matrix has been scaled (vectors are not unit length),
+However, if the matrix has been scaled (vectors are not unit length),
 or the basis vectors are not orthogonal (90°), the inverse transform
 will not work.
 
@@ -311,7 +311,7 @@ the position unchanged:
 ::
 
     # Does nothing, pos is unchanged
-    pos = Matrix32().xform(pos)
+    pos = Transform2D().xform(pos)
 
 Affine inverse
 --------------
@@ -393,7 +393,7 @@ Multiplying a matrix by identity, will result in the unchanged matrix:
 ::
 
     # B will be equal to A
-    B = A * Matrix32()
+    B = A * Transform2D()
 
 Matrix tips
 -----------

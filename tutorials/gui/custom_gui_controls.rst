@@ -25,8 +25,8 @@ Checking control size
 
 Unlike 2D nodes, "size" is very important with controls, as it helps to
 organize them in proper layouts. For this, the
-:ref:`Control.get_size() <class_Control_get_size>`
-method is provided. Checking it during _draw() is vital to ensure
+:ref:`Control.rect_size <class_Control_rect_size>`
+member variable is provided. Checking it during _draw() is vital to ensure
 everything is kept in-bounds.
 
 Checking focus
@@ -35,11 +35,11 @@ Checking focus
 Some controls (such as buttons or text editors) might provide input
 focus for keyboard or joypad input. Examples of this are entering text
 or pressing a button. This is controlled with the
-:ref:`Control.set_focus_mode() <class_Control_set_focus_mode>`
-function. When drawing, and if the control supports input focus, it is
+:ref:`Control.focus_mode <class_Control_focus_mode>`
+member variable. When drawing, and if the control supports input focus, it is
 always desired to show some sort of indicator (highight, box, etc) to
 indicate that this is the currently focused control. To check for this
-status, the :ref:`Control.has_focus() <class_Control_has_focus>`
+status, the :ref:`Control.has_focus() <class_Control_has_focus>` method
 exists. Example
 
 ::
@@ -94,7 +94,7 @@ when:
 -  The button was pressed over this control (control always
    captures input until button is released)
 -  Control provides keyboard/joypad focus via
-   :ref:`Control.set_focus_mode() <class_Control_set_focus_mode>`.
+   :ref:`Control.focus_mode <class_Control_focus_mode>`.
 
 This function is
 :ref:`Control._gui_input() <class_Control__gui_input>`.

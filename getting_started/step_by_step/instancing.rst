@@ -4,7 +4,7 @@ Instancing
 ==========
 
 Introduction
----------
+------------
 
 Creating a single scene and adding nodes into it might work for small
 projects, but as a project grows in size and complexity, the number of nodes
