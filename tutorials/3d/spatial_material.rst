@@ -34,7 +34,7 @@ This technique is less efficient (many state changes happen) and makes the mater
 unusable with many mid and post processing effects (such as SSAO, SSR, etc) that
 require perfectly opaque geometry.
 
-For this reason, materials in Godot are assumed opaque unless specified otherwise. 
+For this reason, materials in Godot are assumed opaque unless specified otherwise.
 The main settings that enable transparency are:
 
 * Transparent flag (this one)
@@ -126,13 +126,13 @@ Diffuse Mode
 ~~~~~~~~~~~~
 
 Specifies the algorithm used by diffuse scattering of light when hitting the object. The
-default one is Lambert, which does not vary with roughness. Other modes are also available:
+default one is Burley. Other modes are also available:
 
-* Lambert: Default mode, is not affected by roughness.
-* Lambert Wrap: Extends lambert to cover more than 90 degrees when roughness increases. Works great for hair and simulating cheap subsurface scattering. This implementation is energy conserving.
-* Oren Nayar: This implementation aims to take microsurfacing into account (via roughness). Works really well for clay-like materials and some types of cloth. 
-* Burley: The original Disney Principled PBS diffuse algorithm.
-* Toon: Provides a hard cut for lighting, with smoothing affected by roughness.
+* **Burley:** Default mode, the original Disney Principled PBS diffuse algorithm.
+* **Lambert:** Is not affected by roughness.
+* **Lambert Wrap:** Extends Lambert to cover more than 90 degrees when roughness increases. Works great for hair and simulating cheap subsurface scattering. This implementation is energy conserving.
+* **Oren Nayar:** This implementation aims to take microsurfacing into account (via roughness). Works really well for clay-like materials and some types of cloth.
+* **Toon:** Provides a hard cut for lighting, with smoothing affected by roughness.
 
 .. image:: img/spatial_material6.png
 
@@ -141,11 +141,11 @@ Specular Mode
 
 Specifies how the specular blob will be rendered. The specular blob represents the shape of a light source reflected in the object.
 
-* ShlickGGX: The most common blob used by PBR 3D engines nowadays.
-* Blinn: Common in previous gen engines. Not worth using nowadays, but left here for the sake of compatibility.
-* Phong: Same as above.
-* Toon: Creates a toon blob, which changes size depending on roughness.
-* Disabled: Sometimes, that blob gets in the way. Be gone!
+* **ShlickGGX:** The most common blob used by PBR 3D engines nowadays.
+* **Blinn:** Common in previous-generation engines. Not worth using nowadays, but left here for the sake of compatibility.
+* **Phong:** Same as above.
+* **Toon:** Creates a toon blob, which changes size depending on roughness.
+* **Disabled:** Sometimes, that blob gets in the way. Be gone!
 
 .. image:: img/spatial_material7.png
 
@@ -174,7 +174,7 @@ Determines which side of the object is not drawn when back-faces are rendered:
 Depth Draw Mode
 ~~~~~~~~~~~~~~~
 
-Specifies when depth rendering must take place. 
+Specifies when depth rendering must take place.
 
 * Opaque Only (default): Depth is only drawn for opaque objects
 * Always: Depth draw is drawn for both opaque and transparent objects
@@ -243,7 +243,7 @@ Albedo is the base color for the material. Everything else works based on it. Wh
 In previous versions of Godot, this channel was named *diffuse*. The change of name mainly happens because, in PBR rendering, this color affects many more
 calculations than just the diffuse lighting path.
 
-Albedo color and texture can be used together, as they are multiplied. 
+Albedo color and texture can be used together, as they are multiplied.
 
 *Alpha channel* in albedo color and texture is also used for the object transparency. If you use a color or texture with *alpha channel*, make sure to either enable
 transparency or *alpha scissoring* for it to work.
