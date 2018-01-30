@@ -8,7 +8,7 @@ Introduction
 This tutorial gives you a springboard into the world of AR and VR in the Godot game engine.
 
 A new architecture was introduced in Godot 3 called the AR/VR Server. On top of this architecture specific implementations are available as interfaces most of which are plugins based on GDNative.
-This tutorial focusses purely on the core elements abstracted by the core architecture. This architecture has enough features for you to create an entire VR experience that can then be deployed for various interfaces. However each platform often has some unique features that are impossible to abstract. Such features will be documented on the relevant interfaces and fall outside of the scope of this primer.
+This tutorial focuses purely on the core elements abstracted by the core architecture. This architecture has enough features for you to create an entire VR experience that can then be deployed for various interfaces. However each platform often has some unique features that are impossible to abstract. Such features will be documented on the relevant interfaces and fall outside of the scope of this primer.
 
 AR/VR Server
 ------------
@@ -38,7 +38,7 @@ Three new node types have been added for supporting AR and VR in Godot and one a
 * :ref:`ARVRController <class_ARVRController>` - a new spatial class that tracks the location of a controller
 * :ref:`ARVRAnchor <class_ARVRAnchor>` - an anchor point for an AR implementation mapping a real world location into your virtual world
 
-The first two must exist in your scene for AR/VR to work and this tutorial focusses purely on them. 
+The first two must exist in your scene for AR/VR to work and this tutorial focuses purely on them. 
 
 :ref:`ARVROrigin <class_ARVROrigin>` is an important node, you must have one and only one of these somewhere in your scene. This node maps the center of your real world tracking space to a location in your virtual world. Everything else is positionally tracked in relation to this point. Where this point lies exactly differs from one implementation to another but the best example to understand how this node works is to take a look at a room scale location. While we have functions to adjust the point to center it on the player by default the origin point will be the center location of the room you are in. As you physically walk around the room the location of the HMD is tracked in relation to this center position and the tracking is mirror in the virtual world.
 
