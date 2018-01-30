@@ -8,7 +8,7 @@ What can I do with Godot? How much does it cost? What are the license terms?
 
 Godot is Free/Libre Open Source Software available under the `OSI-approved <https://opensource.org/licenses/MIT>`_ MIT license.
 
-This means it is free as in "free spech" as well as in "free beer".
+This means it is free as in "free speech" as well as in "free beer".
 
 In short:
 
