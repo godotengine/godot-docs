@@ -190,9 +190,9 @@ assets in different resolutions was a good idea, so many continued
 towards that path. That originally worked to a point and only for
 Apple devices, but then several Android and Apple devices with
 different resolutions and aspect ratios were created, with a very
-wide range of sizes an DPIs.
+wide range of sizes and DPIs.
 
-The most common and proper way to this is to, instead, is to use a
+The most common and proper way to achieve this is to, instead, use a
 single base resolution for the game and only handle different screen
 aspects. This is mostly needed for 2D, as in 3D it's just a matter of
 Camera XFov or YFov.
