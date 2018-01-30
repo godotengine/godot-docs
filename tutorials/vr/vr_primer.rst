@@ -3,20 +3,20 @@
 An AR/VR Primer for Godot
 =========================
 
-Introduction
-------------
 This tutorial gives you a springboard into the world of AR and VR in the Godot game engine.
 
 A new architecture was introduced in Godot 3 called the AR/VR Server. On top of this architecture specific implementations are available as interfaces most of which are plugins based on GDNative.
-This tutorial focusses purely on the core elements abstracted by the core architecture. This architecture has enough features for you to create an entire VR experience that can then be deployed for various interfaces. However each platform often has some unique features that are impossible to abstract. Such features will be documented on the relevant interfaces and fall outside of the scope of this primer.
+This tutorial focuses purely on the core elements abstracted by the core architecture. This architecture has enough features for you to create an entire VR experience that can then be deployed for various interfaces. However each platform often has some unique features that are impossible to abstract. Such features will be documented on the relevant interfaces and fall outside of the scope of this primer.
 
 AR/VR Server
 ------------
+
 When Godot starts each available interface will make itself known to the AR/VR server. GDNative interfaces are setup as singletons, as long as they are added to the list of GDNative singletons in your project they will make themselves known to the server.
 
 You can use the function :ref:`get_interfaces <class_ARVRServer_get_interfaces>` to return a list of available interfaces but for this tutorial we're going to use the :ref:`native mobile VR interface <class_MobileVRInterface>` in our examples. This interface is a very simple and straight forward implementation that uses the 3DOF sensors on your phone for orientation and outputs a stereo scopic image to screen. It is also available in the Godot core and outputs to screen on desktop which makes it ideal for prototyping or a tutorial such as this one.
 
 To enable an interface you execute the following code:
+
 ::
 
     var arvr_interface = ARVRServer.find_interface("Native mobile")
@@ -31,6 +31,7 @@ Finally you should only initialize an interface once, switching scenes and reini
 
 New AR/VR Nodes
 ---------------
+
 Three new node types have been added for supporting AR and VR in Godot and one additional node type especially for AR. These are:
 
 * :ref:`ARVROrigin <class_ARVROrigin>` - our origin point in the world
@@ -38,7 +39,7 @@ Three new node types have been added for supporting AR and VR in Godot and one a
 * :ref:`ARVRController <class_ARVRController>` - a new spatial class that tracks the location of a controller
 * :ref:`ARVRAnchor <class_ARVRAnchor>` - an anchor point for an AR implementation mapping a real world location into your virtual world
 
-The first two must exist in your scene for AR/VR to work and this tutorial focusses purely on them. 
+The first two must exist in your scene for AR/VR to work and this tutorial focuses purely on them.
 
 :ref:`ARVROrigin <class_ARVROrigin>` is an important node, you must have one and only one of these somewhere in your scene. This node maps the center of your real world tracking space to a location in your virtual world. Everything else is positionally tracked in relation to this point. Where this point lies exactly differs from one implementation to another but the best example to understand how this node works is to take a look at a room scale location. While we have functions to adjust the point to center it on the player by default the origin point will be the center location of the room you are in. As you physically walk around the room the location of the HMD is tracked in relation to this center position and the tracking is mirror in the virtual world.
 
@@ -57,11 +58,12 @@ And that's all you need to get started. Obviously you need to add something more
 
 Other things to consider
 ------------------------
+
 There are a few other subjects that we need to briefly touch upon in this primer that are important to know.
 
-The first are our units. In normal 3D games you don't have to think a lot about units. As long as everything is at the same scale a box sized 1 unit by 1 unit by 1 unit can be any size from a cube you can hold in your hand to something the size of a building. 
-In AR and VR this changes because things in your virtual world are mapped to things in the real world. If you step 1 meter forward in the real world, but you only move 1 cm forward in your virtual world, you have a problem. The same with the position of your controllers, if they don't appear in the right relative space it breaks the immersion for the player. 
-Most VR platforms including our AR/VR Server assumes that 1 unit = 1 meter. The AR/VR server however has a property that for convenience is also exposed on the ARVROrigin node called world scale. For instance setting this to a value of 10 it changes our coordinate system so 10 units = 1 meter. 
+The first are our units. In normal 3D games you don't have to think a lot about units. As long as everything is at the same scale a box sized 1 unit by 1 unit by 1 unit can be any size from a cube you can hold in your hand to something the size of a building.
+In AR and VR this changes because things in your virtual world are mapped to things in the real world. If you step 1 meter forward in the real world, but you only move 1 cm forward in your virtual world, you have a problem. The same with the position of your controllers, if they don't appear in the right relative space it breaks the immersion for the player.
+Most VR platforms including our AR/VR Server assumes that 1 unit = 1 meter. The AR/VR server however has a property that for convenience is also exposed on the ARVROrigin node called world scale. For instance setting this to a value of 10 it changes our coordinate system so 10 units = 1 meter.
 
 Performance is another thing that needs to be carefully considered. Especially VR taxes your game a lot more then most people realise. For mobile VR you have to be extra careful here but even for desktop games there are three factors that make life extra difficult:
 
@@ -69,4 +71,4 @@ Performance is another thing that needs to be carefully considered. Especially V
 * A normal game will run acceptable on 30fps and ideally manages 60fps. That gives you a big range to play with between lower end and higher end hardware. For any HMD application of AR or VR however 60fps is the absolute minimum and you really should target your games to running 90fps stabily to ensure your users don't get motion sickness right off the bat.
 * The high FOV and related lens distortion effect require many VR experiences to render at double the resolution. Yes a VIVE may only have a resolution of 1080x1200 per eye, we're rendering each eye at 2160x2400 as a result. This is less of an issue for most AR applications.
 
-All in all, the workload your GPU has in comparison with a normal 3D game is a fair amount higher. While things are in the pipeline to improve this such as MultiView and foviated rendering these aren't supported on all devices. This is why you see many VR games using a more art style and if you pay close attention to those VR games that go for realism, you'll probably notice they're a bit more conservative on the effects or use some good old optical trickery. 
+All in all, the workload your GPU has in comparison with a normal 3D game is a fair amount higher. While things are in the pipeline to improve this such as MultiView and foviated rendering these aren't supported on all devices. This is why you see many VR games using a more art style and if you pay close attention to those VR games that go for realism, you'll probably notice they're a bit more conservative on the effects or use some good old optical trickery.
