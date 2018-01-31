@@ -100,7 +100,7 @@ When the English documentation is ready for translations, we will provide
 tools to simplify the work of translators by tracking changes to the English
 docs that they should translate on their end.
 
-Licence
+License
 -------
 
 This documentation and every page it contains is published under the terms of
