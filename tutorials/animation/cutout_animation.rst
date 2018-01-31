@@ -81,7 +81,8 @@ create a child sprite and load the torso, later accommodate it properly:
 .. image:: img/tuto_cutout3.png
 
 This looks good. Let's see if our hierarchy works as a skeleton by
-rotating the torso:
+rotating the torso. We can do this be pressing ``E`` to enter rotate mode, 
+and dragging with the left mouse button. To exit rotate mode just hit ``ESC``.
 
 .. image:: img/tutovec_torso1.gif
 
@@ -190,7 +191,7 @@ skeletons, a chain of nodes must be selected from top to bottom:
 
 .. image:: img/tuto_cutout11.png
 
-Then, the option to create a skeleton is located at Edit > Make Bones:
+Then, click on the Skeleton menu and select ``Make Bones``.
 
 .. image:: img/tuto_cutout12.png
 
@@ -230,7 +231,15 @@ The result resembles a skeleton a lot more, and now the arm and forearm
 can be selected and animated.
 
 Finally, create endpoints in all meaningful extremities and connect the
-whole skeleton with bones up to the hip:
+whole skeleton with bones up to the hip.
+
+You may notice when connecting the hip and torso, that an extra bone is created. 
+To fix this, select the root and hip node, open the Skeleton menu, click ``clear bones``. 
+
+.. image:: img/tuto_cutout15_2.png
+
+
+After fixing that your final skeleton should look something like this:
 
 .. image:: img/tuto_cutout16.png
 
@@ -348,8 +357,10 @@ Batch setting transition curves
 
 When creating really complex animations and inserting lots of keyframes,
 editing the individual keyframe curves for each can become an endless
-task. For this, the Animation Editor has a small menu where changing all
-the curves is easy. Just select every single keyframe and (generally)
-apply the "Out-In" transition curve to smooth the animation:
+task. For this, the Animation Editor has a small menu where changing
+animation curves is easy. First select the appropriate keys. Next click on the 
+pencil icon in the bottom right of the animation panel, this will open the 
+transition editor. Now click on one of the curve options most appropriate for 
+your animation.
 
 .. image:: img/tuto_cutout24.png
