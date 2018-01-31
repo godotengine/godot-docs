@@ -9,3 +9,4 @@ General
 ---------------
 
 - `awesome-godot: A curated list of resources by Calinou <https://github.com/Calinou/awesome-godot>`_
+- `Zeef Godot Engine: A curated directory of resources by Andre Schmitz <https://godot-engine.zeef.com/andre.antonio.schmitz>`_
