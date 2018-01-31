@@ -173,7 +173,7 @@ the ``Title`` and ``Number``, and drag and drop them onto
 Select the ``Title`` and in the Inspector, change its ``Stretch Mode``
 property to ``Keep Centered``. Resize it in the viewport with the
 ``Select Mode`` tool so it only takes the left half of the background.
-Next, select the ``Number`` node. In the viewport, click the ``Anchor``
+Next, select the ``Number`` node. In the viewport, click the ``Layout``
 menu and click ``Full Rect``. The node will resize to fit
 the ``Background``. Head to the Inspector and change its ``Align``
 property to ``Right``, and the ``VAlign`` property to ``Center``. The
