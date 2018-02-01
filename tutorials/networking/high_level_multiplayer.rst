@@ -148,7 +148,7 @@ Generally, an autoloaded node/singleton is a great fit for this, to always have 
 RPC
 ---
 
-To communicate between peers, the easiest way is to use RPC (remote procedure call). This is implemented as a set of functions
+To communicate between peers, the easiest way is to use RPCs (remote procedure calls). This is implemented as a set of functions
 in :ref:`Node <class_Node>`:
 
 - `rpc("function_name", <optional_args>)`
@@ -170,6 +170,8 @@ Functions can be called in two fashions:
 
 In most cases, reliable is desired. Unreliable is mostly useful when synchronizing object positions (sync must happen constantly, 
 and if a packet is lost, it's not that bad because a new one will eventually arrive and it would likely be outdated because the object moved further in the meantime, even if it was resent reliably).
+
+There is also the `get_rpc_sender_id` function in `SceneTree` which can be used to check which peer (or peer ID) sent a RPC call.
 
 Back to lobby
 -------------
@@ -247,6 +249,7 @@ The `remote` keyword means that the `rpc()` call will go via network and execute
 The `sync` keyword means that the `rpc()` call will go via network and execute remotely, but will also execute locally (do a normal function call).
 
 The others will be explained further down.
+Note that you could also use the `get_rpc_sender_id` function on `SceneTree` to check which peer actually made the RPC call to `register_player`.
 
 With this, lobby management should be more or less explained. Once you have your game going you will most likely want to add some
 extra security to make sure clients don't do anything funny (just validate the info they send from time to time, or before 
