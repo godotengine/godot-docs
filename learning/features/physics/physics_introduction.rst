@@ -5,7 +5,7 @@ Physics introduction
 
 Our world is made of tangible matter. In our world, a piano can't go
 through a wall when going into a house. It needs to use the door. Video
-games are often like the the real world and Pac-Man can't go through the
+games are often like the real world and Pac-Man can't go through the
 walls of his maze (although he can teleport from the left to the right
 side of the screen and back).
 
