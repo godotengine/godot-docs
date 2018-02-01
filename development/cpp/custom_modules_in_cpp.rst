@@ -25,7 +25,7 @@ While it's recommended that most of a game is written in scripting (as
 it is an enormous time saver), it's perfectly possible to use C++
 instead. Adding C++ modules can be useful in the following scenarios:
 
--  Binding an external library to Godot (like Bullet, Physx, FMOD, etc).
+-  Binding an external library to Godot (like Physx, FMOD, etc).
 -  Optimize critical parts of a game.
 -  Adding new functionality to the engine and/or editor.
 -  Porting an existing game.
