@@ -7,8 +7,8 @@ Godot Docs – *2.1* branch
 =========================
 
 .. tip:: This is the documentation for the stable 2.1 branch.
-         Looking for the documentation of the current **development** branch?
-         `Have a look here <http://docs.godotengine.org/en/latest>`_.
+         Looking for the documentation of the current **3.0** branch?
+         `Have a look here <http://docs.godotengine.org/en/3.0>`_.
 
 Welcome to the official documentation of Godot Engine, the free and open source
 community-driven 2D and 3D game engine! If you are new to this documentation,
