@@ -54,7 +54,7 @@ Member Functions
 Description
 -----------
 
-Contains global variables accessible from everywhere. Use the normal :ref:`Object<class_object>` API, such as "ProjectSettings.get(variable)", "ProjectSettings.set(variable,value)" or "ProjectSettings.has(variable)" to access them. Variables stored in project.godot are also loaded into ProjectSettings, making this object very useful for reading custom game configuration options.
+Contains global variables accessible from everywhere. Use "ProjectSettings.get_setting(variable)", "ProjectSettings.set_setting(variable,value)" or "ProjectSettings.has_setting(variable)" to access them. Variables stored in project.godot are also loaded into ProjectSettings, making this object very useful for reading custom game configuration options.
 
 Member Function Description
 ---------------------------

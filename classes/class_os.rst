@@ -351,7 +351,24 @@ At the end of the file is a statistic of all used Resource Types.
 
 - :ref:`int<class_int>` **execute** **(** :ref:`String<class_string>` path, :ref:`PoolStringArray<class_poolstringarray>` arguments, :ref:`bool<class_bool>` blocking, :ref:`Array<class_array>` output=[  ] **)**
 
-Execute the binary file in given path, optionally blocking until it returns. A process ID is returned.
+Execute the file at the given path, optionally blocking until it returns.
+
+Platform path resolution will take place.  The resolved file must exist and be executable.
+
+Returns a process id.
+
+For example:
+
+::
+
+    var output = []
+    var pid = OS.execute('ls', [], true, output)
+
+If you wish to access a shell built-in or perform a composite command, a platform specific shell can be invoked.  For example:
+
+::
+
+    var pid = OS.execute('CMD.exe', ['/C', 'cd %TEMP% && dir'], true, output)
 
 .. _class_OS_find_scancode_from_string:
 

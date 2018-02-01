@@ -276,8 +276,6 @@ Returns the color's 32-bit integer in ARGB format (each byte represents a compon
     var c = Color(1, .5, .2)
     print(str(c.to_32())) # prints 4294934323
 
-
-
-*This is same as :ref:`to_ARGB32<class_Color_to_ARGB32>` but may be changed later to support RGBA format instead*.
+*This is same as :ref:`to_argb32<class_Color_to_argb32>` but may be changed later to support RGBA format instead*.
 
 
