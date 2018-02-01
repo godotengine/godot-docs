@@ -71,7 +71,7 @@ Distro-specific oneliners
 | **Solus**     | ::                                                                                                         |
 |               |                                                                                                            |
 |               |     sudo eopkg install -c system.devel scons libxcursor-devel libxinerama-devel libxi-devel \              |
-|               |         libxrandr-devel mesalib-devel libglu alsa-lib pulseaudio freetype2-devel                           |
+|               |         libxrandr-devel mesalib-devel libglu alsa-lib pulseaudio freetype2-devel pulseaudio-devel          |
 +---------------+------------------------------------------------------------------------------------------------------------+
 
 Compiling
