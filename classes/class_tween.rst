@@ -70,19 +70,19 @@ Signals
 
 .. _class_Tween_tween_completed:
 
-- **tween_completed** **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key **)**
+- **tween_completed** **(** :ref:`Object<class_object>` object, :ref:`NodePath<class_nodepath>` key **)**
 
 This signal is emitted when a tween ends.
 
 .. _class_Tween_tween_started:
 
-- **tween_started** **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key **)**
+- **tween_started** **(** :ref:`Object<class_object>` object, :ref:`NodePath<class_nodepath>` key **)**
 
 This signal is emitted when a tween starts.
 
 .. _class_Tween_tween_step:
 
-- **tween_step** **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key, :ref:`float<class_float>` elapsed, :ref:`Object<class_object>` value **)**
+- **tween_step** **(** :ref:`Object<class_object>` object, :ref:`NodePath<class_nodepath>` key, :ref:`float<class_float>` elapsed, :ref:`Object<class_object>` value **)**
 
 This signal is emitted each step of the tweening.
 

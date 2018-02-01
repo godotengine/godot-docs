@@ -387,6 +387,8 @@ Performs a case-sensitive comparison to another string. Returns ``-1`` if less t
 
 - :ref:`String<class_string>` **dedent** **(** **)**
 
+Removes indentation from string.
+
 .. _class_String_empty:
 
 - :ref:`bool<class_bool>` **empty** **(** **)**
@@ -415,7 +417,7 @@ Finds the first occurrence of a substring. Returns the starting position of the 
 
 - :ref:`int<class_int>` **find_last** **(** :ref:`String<class_string>` what **)**
 
-Finds the last occurrence of a substring. Returns the starting position of the substring or -1 if not found. Optionally, the initial search index can be passed.
+Finds the last occurrence of a substring. Returns the starting position of the substring or -1 if not found.
 
 .. _class_String_findn:
 

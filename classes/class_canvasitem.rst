@@ -418,7 +418,7 @@ Returns ``true`` if global transform notifications are communicated to children.
 
 - :ref:`bool<class_bool>` **is_visible_in_tree** **(** **)** const
 
-Returns ``true`` if the node is in the :ref:`SceneTree<class_scenetree>` and is visible on-screen.
+Returns ``true`` if the node is present in the :ref:`SceneTree<class_scenetree>`, its :ref:`visible<class_CanvasItem_visible>` property is ``true`` and its inherited visibility is also ``true``.
 
 .. _class_CanvasItem_make_canvas_position_local:
 
