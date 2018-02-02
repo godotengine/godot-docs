@@ -24,7 +24,9 @@ Having them as separate images also works.
 
 .. image:: img/tileset.png
 
-Create a new project and move the above png image into the directory.
+Create a new project and move the above png image into the directory. Next 
+go into the image settings and turn off ``Filter``, keeping it on will cause 
+issues later. 
 
 We will be creating a :ref:`TileSet <class_TileSet>`
 resource. While this resource exports properties, it's pretty difficult
@@ -41,8 +43,9 @@ TileSet scene
 -------------
 
 Create a new scene with a regular node or node2d as root. For each tile,
-add a sprite as a child. Since tiles here are 50x50, enabling snap might be
-a good idea.
+add a sprite as a child. Since tiles here are 50x50, you should turn on the grid
+ (``G`` key) and enable snap. Moving tiles with the mouse might still be a innacurate
+ so use your arrow keys as well.
 
 If more than one tile is present in the source image, make sure to use
 the region property of the sprite to adjust which part of the texture is being
@@ -74,12 +77,12 @@ recommended because it is easier to edit.
 
 .. image:: img/tile_example3.png
 
-Finally, edit the polygon, this will give the tile a collision.
-**Remember to use snap!** Using snap will make sure collision polygons
-are aligned properly, allowing a character to walk seamlessly from tile
-to tile. Also **do not scale or move** the collision and/or collision
-polygon nodes. Leave them at offset 0,0, with scale 1,1 and rotation 0
-with respect to the parent sprite.
+Finally, edit the polygon, this will give the tile a collision, and fix 
+the warning icon next to the CollisionPolygon node. **Remember to use snap!** 
+Using snap will make sure collision polygons are aligned properly, allowing 
+a character to walk seamlessly from tile to tile. Also **do not scale or move** 
+the collision and/or collision polygon nodes. Leave them at offset 0,0, with 
+scale 1,1 and rotation 0 with respect to the parent sprite.
 
 .. image:: img/tile_example4.png
 
@@ -141,6 +144,9 @@ common, given it's a huge node), it is recommended that you lock it,
 using the lock button:
 
 .. image:: img/tile_lock.png
+
+If you accidentally place a tile somewhere you don't want it to be, you 
+can delete it with ``RMB`` while in the tilemap editor. 
 
 You can also flip and rotate sprites in the TileMap editor (note:
 flipping the sprite in the TileSet will have no effect). Icons at the
