@@ -229,7 +229,7 @@ Or unordered sets:
 Dictionaries
 ------------
 
-Dictionaries are always a very powerful in dynamically typed languages.
+Dictionaries are a very powerful tool in dynamically typed languages.
 Most programmers that come from statically typed languages (such as C++
 or C#) ignore their existence and make their life unnecessarily more
 difficult. This datatype is generally not present in such languages (or
@@ -432,7 +432,7 @@ statically typed language would be something like:
         entity->smash();
     }
 
-This, way, everything that can be smashed by a rock would have to
+This way, everything that can be smashed by a rock would have to
 inherit Smashable. If a character, enemy, piece of furniture, small rock
 were all smashable, they would need to inherit from the class Smashable,
 possibly requiring multiple inheritance. If multiple inheritance was
@@ -462,8 +462,9 @@ In this case, it translates to:
 
 *"If the object can be smashed, don't care what it is, just smash it."*
 
-Yes, we should call it Hulk typing instead. Anyway though, there exists
-the possibility of the object being hit not having a smash() function.
+Yes, we should call it Hulk typing instead.
+
+It's possible that the object being hit doesn't have a smash() function.
 Some dynamically typed languages simply ignore a method call when it
 doesn't exist (like Objective C), but GDScript is more strict, so
 checking if the function exists is desirable:
