@@ -44,8 +44,8 @@ TileSet scene
 
 Create a new scene with a regular node or node2d as root. For each tile,
 add a sprite as a child. Since tiles here are 50x50, you should turn on the grid
- (``G`` key) and enable snap. Moving tiles with the mouse might still be a innacurate
- so use your arrow keys as well.
+(``G`` key) and enable snap. Moving tiles with the mouse might still be a innacurate
+so use your arrow keys as well.
 
 If more than one tile is present in the source image, make sure to use
 the region property of the sprite to adjust which part of the texture is being
