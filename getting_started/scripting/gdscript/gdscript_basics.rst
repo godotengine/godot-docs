@@ -699,9 +699,12 @@ Basic syntax:
 ::
 
     match [expression]:
-        [pattern](s): [block]
-        [pattern](s): [block]
-        [pattern](s): [block]
+        [pattern](s):
+            [block]
+        [pattern](s):
+            [block]
+        [pattern](s):
+            [block]
 
 
 **Crash-course for people who are familiar to switch statements**:
@@ -724,18 +727,24 @@ There are 6 pattern types:
     constant primitives, like numbers and strings ::
 
         match x:
-            1:      print("We are number one!")
-            2:      print("Two are better than one!")
-            "test": print("Oh snap! It's a string!")
+            1:
+                print("We are number one!")
+            2:
+                print("Two are better than one!")
+            "test":
+                print("Oh snap! It's a string!")
 
 
 - variable pattern
     matches the contents of a variable/enum ::
 
         match typeof(x):
-            TYPE_FLOAT:  print("float")
-            TYPE_STRING: print("text")
-            TYPE_ARRAY:  print("array")
+            TYPE_FLOAT:
+                print("float")
+            TYPE_STRING:
+                print("text")
+            TYPE_ARRAY:
+                print("array")
 
 
 - wildcard pattern
@@ -744,9 +753,12 @@ There are 6 pattern types:
     It can be used as the equivalent of the ``default`` in a ``switch`` statement in other languages. ::
 
         match x:
-            1: print("it's one!")
-            2: print("it's one times two!")
-            _: print("it's not 1 or 2. I don't care tbh.")
+            1:
+                print("it's one!")
+            2:
+                print("it's one times two!")
+            _:
+                print("it's not 1 or 2. I don't care tbh.")
 
 
 - binding pattern
@@ -754,9 +766,12 @@ There are 6 pattern types:
     It's especially useful in array and dictionary patterns. ::
 
         match x:
-            1:           print("it's one!")
-            2:           print("it's one times two!")
-            var new_var: print("it's not 1 or 2, it's ", new_var)
+            1:
+                print("it's one!")
+            2:
+                print("it's one times two!")
+            var new_var:
+                print("it's not 1 or 2, it's ", new_var)
 
 
 - array pattern
