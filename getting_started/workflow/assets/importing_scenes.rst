@@ -163,7 +163,7 @@ These are:
 
 Additional info:
  * UV2 = The second UV channel for detail textures and baked lightmap textures.
- * Array index = An array of numbers that number each element of the arrays above; i.e. they number the vertecies and normals.
+ * Array index = An array of numbers that number each element of the arrays above; i.e. they number the vertices and normals.
 
 In some cases, this might lead to loss of precision so disabling this option
 may be needed. For instance, if a mesh is very big or there are multiple meshes
@@ -208,33 +208,33 @@ each animation in a separate file.
 
 Import of animations is enabled by default.
 
-Animation : FPS
+FPS
 ~~~~~~~~~~~~~~~
 
 Most 3D export formats store animation timeline in seconds instead of frames. To ensure
 animations are imported as faithfully as possible, please specify the frames per second
 used to edit them. Failing to do this may result in minimal jitter.
 
-Animation : Filter Script
+Filter Script
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 It is possible to specify a filter script in a special syntax to decide which tracks from which
 animations should be kept. (@TODO this needs documentation)
 
-Animation : Storage
+Storage
 ~~~~~~~~~~~~~~~~~~~
 
 By default, animations are saved as built-in. It is possible to save them to a file instead. This
 allows adding custom tracks to the animations and keeping them after a reimport.
 
 
-Animation : Optimizer
+Optimizer
 ~~~~~~~~~~~~~~~~~~~~~
 
 When animations are imported, an optimizer is run which reduces the size of the animation considerably.
 In general, this should always be turned on unless you suspect that an animation might be broken due to it being enabled.
 
-Animation : Clips
+Clips
 ~~~~~~~~~~~~~~~~~~~~~
 
 It is possible to specify multiple animations from a single timeline as clips. Just specify from which frame to which frame each
@@ -252,6 +252,7 @@ following dialog will appear:
 .. image:: img/scene_import4.png
 
 In inherited scenes, the only limitations for modifications are: 
+
 * Nodes can't be removed (but can be added anywhere).
 * Sub-Resources can't be edited (save them externally as described above for this)
 
@@ -261,6 +262,7 @@ Import Hints
 ------------
 
 Many times, when editing a scene, there are common tasks that need to be done after exporting:
+
 * Adding collision detection to objects:
 * Setting objects as navigation meshes
 * Deleting nodes that are not used in the game engine (like specific lights used for modelling)
@@ -314,6 +316,6 @@ removed.
 Rigid Body (-rigid)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Creates a rigid body from this mesh
+Creates a rigid body from this mesh.
 
 
