@@ -189,7 +189,7 @@ being used (for speed at least) is pixels/second.
 
 This adds simple walking support by pressing left and right:
 
-..tabs::
+.. tabs::
  .. code-tab:: gdscript GDScript
 
     extends KinematicBody2D
