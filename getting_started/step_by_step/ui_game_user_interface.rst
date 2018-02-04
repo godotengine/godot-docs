@@ -101,7 +101,7 @@ Once again, the ``HBoxContainer`` is the perfect tool for the job.
 Select the ``Bars`` node and add a new ``HBoxContainer`` inside of it.
 Name it ``Bar``.
 
-The label itself is requires at least three nodes: a ``NinePatchRect``
+The label itself requires at least three nodes: a ``NinePatchRect``
 for the background, on top of which we'll add a texture on the left,
 either ``HP`` or ``EP``, and a ``Label`` on the right for the value. We
 can nest ``Control`` nodes however we want. We could use the
@@ -379,7 +379,7 @@ On an inherited scene, you can change any property of every node in the
 inspector, aside from its name. If you modify and save the parent scene,
 all the inherited scenes update to reflect the changes. If you change a
 value in the inherited scene, it will always overrides the parent's
-property. It's useful UIs as they often require variations of the same
+property. It's useful for UIs as they often require variations of the same
 elements. In general, in UI design, buttons, panels etc. share a common
 base style and interactions. We don't want to copy it over to all
 variations manually.
@@ -422,7 +422,7 @@ with broad terms, so it works with all inherited scenes. Like our
     button-red variations for the user to accept and refuse prompts. The new
     class contains the name of the parent element and an extra keyword to
     explain how it modifies it. When we create an inherited scene and change
-    the name of the top level node, we're doing the same thing
+    the name of the top level node, we're doing the same thing.
 
 Design the EnergyBar
 ~~~~~~~~~~~~~~~~~~~~
@@ -619,7 +619,7 @@ find final project `here <#>`__.
     The GUI also has a minimum size, based on the textures inside of it. In
     games, we don’t need the interface to be as flexible as that of a
     website. You almost never want to support both landscape and portrait
-    screen orientations. It’s one of the other. In landscape orientation,
+    screen orientations. It’s one or the other. In landscape orientation,
     the most common ratios range from 4:3 to 16:10. They are close to one
     another. That's why it’s enough for the GUI elements to only move
     horizontally when we change the window size.
