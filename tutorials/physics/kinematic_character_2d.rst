@@ -54,12 +54,27 @@ per second, always. This makes physics and motion calculation work in a
 more predictable way than using regular process, which might have spikes
 or lose precision if the frame rate is too high or too low.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     extends KinematicBody2D
 
     func _physics_process(delta):
         pass
+
+ .. code-tab:: csharp
+
+    using Godot;
+    using System;
+
+    public class PhysicsScript : KinematicBody2D
+    {
+        
+        public override void _PhysicsProcess(float delta)
+        {
+        }
+    }
+
 
 Scene setup
 ~~~~~~~~~~~
@@ -70,9 +85,10 @@ for the character. Use the robot sprite and create a scene like this:
 
 .. image:: img/kbscene.png
 
-Let's add a circular collision shape to the collision body, create a new
-CircleShape2D in the shape property of CollisionShape2D. Set the radius
-to 30:
+You'll notice that there's a warning icon next to our CollisionShape2D node, 
+that's because we haven't defined a shape for it. Create a new CircleShape2D 
+in the shape property of CollisionShape2D. Click on <CircleShape2D> to go to the 
+options for it, and set the radius to 30:
 
 .. image:: img/kbradius.png
 
@@ -104,12 +120,28 @@ collision happens, it stops right at the moment of the collision.
 
 So, let's move our sprite downwards until it hits the floor:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript 
 
     extends KinematicBody2D
 
     func _physics_process(delta):
         move_and_collide(Vector2(0,1)) # Move down 1 pixel per physics frame
+
+ .. code-tab:: csharp 
+
+    using Godot;
+    using System;
+
+    public class PhysicsScript : KinematicBody2D
+    {
+        
+        public override void _PhysicsProcess(float delta)
+        {
+            // Move down 1 pixel per physics frame
+            MoveAndCollide(new Vector2 (0,1));
+        }
+    }
 
 The result is that the character will move, but stop right when
 hitting the floor. Pretty cool, huh?
@@ -117,7 +149,8 @@ hitting the floor. Pretty cool, huh?
 The next step will be adding gravity to the mix, this way it behaves a
 little more like an actual game character:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript 
 
     extends KinematicBody2D
 
@@ -131,13 +164,33 @@ little more like an actual game character:
         var motion = velocity * delta
         move_and_collide(motion)
 
+ .. code-tab:: csharp 
+
+    using Godot;
+    using System;
+
+    public class PhysicsScript : KinematicBody2D
+    {
+        const float gravity = 200.0f;
+        Vector2 velocity;
+
+        public override void _PhysicsProcess(float delta)
+        {
+            velocity.y += delta * gravity;
+
+            var motion = velocity * delta;
+            MoveAndCollide(motion);
+        }
+    }
+
 Now the character falls smoothly. Let's make it walk to the sides, left
 and right when touching the directional keys. Remember that the values
 being used (for speed at least) is pixels/second.
 
 This adds simple walking support by pressing left and right:
 
-::
+..tabs::
+ .. code-tab:: gdscript GDScript
 
     extends KinematicBody2D
 
@@ -156,12 +209,49 @@ This adds simple walking support by pressing left and right:
             velocity.x =  WALK_SPEED
         else:
             velocity.x = 0
-
-        var motion = velocity * delta
         
+        # We don't need to multiply velocity by delta becuase MoveAndSlide already takes delta time into account.
+
         # The second parameter of move_and_slide is the normal pointing up.
         # In the case of a 2d platformer, in Godot upward is negative y, which translates to -1 as a normal.
-        move_and_slide(motion, Vector2(0, -1))
+        move_and_slide(velocity, Vector2(0, -1))
+
+ .. code-tab:: csharp 
+
+    using Godot;
+    using System;
+
+    public class PhysicsScript : KinematicBody2D
+    {
+        const float gravity = 200.0f;
+        const int walk_speed = 200;
+
+        Vector2 velocity;
+
+        public override void _PhysicsProcess(float delta)
+        {
+            velocity.y += delta * gravity;
+
+            if (Input.IsActionPressed("ui_left"))
+            {
+                velocity.x = -walk_speed;
+            }
+            else if (Input.IsActionPressed("ui_right"))
+            {
+                velocity.x = walk_speed;
+            }
+            else
+            {
+                velocity.x = 0;
+            }
+
+            // We don't need to multiply velocity by delta because MoveAndSlide already takes delta time into account.
+
+            // The second parameter of MoveAndSlide is the normal pointing up.
+            // In the case of a 2d platformer, in Godot upward is negative y, which translates to -1 as a normal. 
+            MoveAndSlide(velocity, new Vector2(0, -1));
+        }
+    }
 
 And give it a try.
 
