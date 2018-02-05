@@ -133,9 +133,9 @@ other objects there. So lets rotate our "upperarm" bone:
         print("bone transform: ", t)
         set_process(true)
 
-    func _process(dt):
+    func _process(delta):
         var t = skel.get_bone_pose(id)
-        t = t.rotated(Vector3(0.0, 1.0, 0.0), 0.1 * dt)
+        t = t.rotated(Vector3(0.0, 1.0, 0.0), 0.1 * delta)
         skel.set_bone_pose(id, t)
 
 Now we can rotate individual bones. The same happens for scale and
@@ -253,7 +253,7 @@ which does that:
         set_process(true)
     var bone = "upperarm"
     var coordinate = 0
-    func _process(dt):
+    func _process(delta):
         if Input.is_action_pressed("select_x"):
             coordinate = 0
         elif Input.is_action_pressed("select_y"):
@@ -296,7 +296,7 @@ The full code for arm control is this:
         var newpose = newpose.rotated(Vector3(0.0, 0.0, 1.0), ang.z)
         skel.set_bone_pose(b, newpose)
 
-    func _process(dt):
+    func _process(delta):
         if Input.is_action_pressed("select_x"):
             coordinate = 0
         elif Input.is_action_pressed("select_y"):

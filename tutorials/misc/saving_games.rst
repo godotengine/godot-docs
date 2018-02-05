@@ -31,8 +31,8 @@ to save them and then tell them all to save with this script:
 
 ::
 
-    var savenodes = get_tree().get_nodes_in_group("Persist")
-        for i in savenodes:
+    var save_nodes = get_tree().get_nodes_in_group("Persist")
+        for i in save_nodes:
         # Now we can call our save function on each node.
 
 Serializing
@@ -50,27 +50,27 @@ like this:
 ::
 
     func save():
-        var savedict = {
-            filename=get_filename(),
-            parent=get_parent().get_path(),
-            posx=get_pos().x, #Vector2 is not supported by json
-            posy=get_pos().y,
-            attack=attack,
-            defense=defense,
-            currenthealth=currenthealth,
-            maxhealth=maxhealth,
-            damage=damage,
-            regen=regen,
-            experience=experience,
-            TNL=TNL,
-            level=level,
-            AttackGrowth=AttackGrowth,
-            DefenseGrowth=DefenseGrowth,
-            HealthGrowth=HealthGrowth,
-            isalive=isalive,
-            last_attack=last_attack
+        var save_dict = {
+            filename = get_filename(),
+            parent = get_parent().get_path(),
+            pos_x = get_pos().x, # Vector2 is not supported by JSON
+            pos_y = get_pos().y,
+            attack = attack,
+            defense = defense,
+            current_health = current_health,
+            max_health = max_health,
+            damage = damage,
+            regen = regen,
+            experience = experience,
+            tnl = tnl,
+            level = level,
+            attack_growth = attack_growth,
+            defense_growth = defense_growth,
+            health_growth = health_growth,
+            is_alive = is_alive,
+            last_attack = last_attack
         }
-        return savedict
+        return save_dict
 
 This gives us a dictionary with the style
 ``{ "variable_name":that_variables_value }`` which will be useful when
@@ -91,13 +91,13 @@ way to pull the data out of the file as well.
     # Note: This can be called from anywhere inside the tree.  This function is path independent.
     # Go through everything in the persist category and ask them to return a dict of relevant variables
     func save_game():
-        var savegame = File.new()
-        savegame.open("user://savegame.save", File.WRITE)
-        var savenodes = get_tree().get_nodes_in_group("Persist")
-        for i in savenodes:
-            var nodedata = i.save()
-            savegame.store_line(to_json(nodedata))
-        savegame.close()
+        var save_game = File.new()
+        save_game.open("user://savegame.save", File.WRITE)
+        var save_nodes = get_tree().get_nodes_in_group("Persist")
+        for i in save_nodes:
+            var node_data = i.save()
+            save_game.store_line(to_json(node_data))
+        save_game.close()
 
 Game saved! Loading is fairly simple as well. For that we'll read each
 line, use parse_json() to read it back to a dict, and then iterate over
@@ -109,30 +109,30 @@ load function:
 
     # Note: This can be called from anywhere inside the tree.  This function is path independent.
     func load_game():
-        var savegame = File.new()
-        if !savegame.file_exists("user://savegame.save"):
-            return #Error!  We don't have a save to load
+        var save_game = File.new()
+        if not save_game.file_exists("user://save_game.save"):
+            return # Error!  We don't have a save to load.
 
         # We need to revert the game state so we're not cloning objects during loading.  This will vary wildly depending on the needs of a project, so take care with this step.
         # For our example, we will accomplish this by deleting savable objects.
-        var savenodes = get_tree().get_nodes_in_group("Persist")
-        for i in savenodes:
+        var save_nodes = get_tree().get_nodes_in_group("Persist")
+        for i in save_nodes:
             i.queue_free()
 
         # Load the file line by line and process that dictionary to restore the object it represents
-        savegame.open("user://savegame.save", File.READ)
-        while (!savegame.eof_reached()):
-            var currentLine = parse_json(savegame.get_line())
+        save_game.open("user://savegame.save", File.READ)
+        while not save_game.eof_reached():
+            var current_line = parse_json(save_game.get_line())
             # First we need to create the object and add it to the tree and set its position.
-            var newobject = load(currentline["filename"]).instance()
-            get_node(currentline["parent"]).add_child(newobject)
-            newobject.set_position(Vector2(currentline["posx"],currentline["posy"]))
+            var new_object = load(current_line["filename"]).instance()
+            get_node(current_line["parent"]).add_child(new_object)
+            new_object.set_position(Vector2(current_line["pos_x"],current_line["pos_y"]))
             # Now we set the remaining variables.
-            for i in currentline.keys():
-                if (i == "filename" or i == "parent" or i == "posx" or i == "posy"):
+            for i in current_line.keys():
+                if i == "filename" or i == "parent" or i == "pos_x" or i == "pos_y":
                     continue
-                newobject.set(i, currentline[i])
-        savegame.close()
+                new_object.set(i, current_line[i])
+        save_game.close()
 
 And now we can save and load an arbitrary number of objects laid out
 almost anywhere across the scene tree! Each object can store different

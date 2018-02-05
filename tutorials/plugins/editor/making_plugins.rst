@@ -208,13 +208,13 @@ deactivated. The code can be like this::
         dock = preload("res://addons/my_custom_dock/my_dock.tscn").instance()
 
         # Add the loaded scene to the docks:
-        add_control_to_dock( DOCK_SLOT_LEFT_UL, dock)
+        add_control_to_dock(DOCK_SLOT_LEFT_UL, dock)
         # Note that LEFT_UL means the left of the editor, upper-left dock
 
     func _exit_tree():
         # Clean-up of the plugin goes here
         # Remove the scene from the docks:
-        remove_control_from_docks( dock ) # Remove the dock
+        remove_control_from_docks(dock) # Remove the dock
         dock.free() # Erase the control from the memory
 
 While the dock position is chosen when adding it, the user is free to move it

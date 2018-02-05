@@ -64,7 +64,7 @@ here's a simple example of how GDScript looks.
     var a = 5
     var s = "Hello"
     var arr = [1, 2, 3]
-    var dict = {"key":"value", 2:3}
+    var dict = {"key": "value", 2:3}
 
     # constants
 
@@ -96,7 +96,7 @@ here's a simple example of how GDScript looks.
         for i in range(20):
             print(i)
 
-        while(param2 != 0):
+        while param2 != 0:
             param2 -= 1
 
         var local_var2 = param1+3
@@ -426,13 +426,13 @@ Starting with Godot 2.1, indices may be negative like in Python, to count from t
 
 ::
 
-    var arr=[]
-    arr=[1, 2, 3]
-    var b = arr[1]            # this is 2
-    var c = arr[arr.size()-1] # this is 3
-    var d = arr[-1]           # same as the previous line, but shorter
-    arr[0] = "Hi!"            # replacing value 1 with "Hi"
-    arr.append(4)             # array is now ["Hi", 2, 3, 4]
+    var arr = []
+    arr = [1, 2, 3]
+    var b = arr[1] # this is 2
+    var c = arr[arr.size() - 1] # this is 3
+    var d = arr[-1] # same as the previous line, but shorter
+    arr[0] = "Hi!" # replacing value 1 with "Hi"
+    arr.append(4) # array is now ["Hi", 2, 3, 4]
 
 GDScript arrays are allocated linearly in memory for speed. Very
 large arrays (more than tens of thousands of elements) may however cause
@@ -456,13 +456,13 @@ Associative container which contains values referenced by unique keys.
 
 ::
 
-    var d={4:5, "a key":"a value", 28:[1,2,3]}
+    var d = {4: 5, "a key": "a value", 28: [1, 2, 3]}
     d["Hi!"] = 0
     d = {
-        22         : "Value",
-        "somekey"  : 2,
-        "otherkey" : [2,3,4],
-        "morekey"  : "Hello"
+        22: "Value",
+        "somekey": 2,
+        "otherkey": [2, 3, 4],
+        "morekey": "Hello"
     }
 
 Lua-style table syntax is also supported. Lua-style uses ``=`` instead of ``:``
@@ -475,7 +475,7 @@ start with a digit.
     var d = {
         test22 = "Value",
         somekey = 2,
-        otherkey = [2,3,4],
+        otherkey = [2, 3, 4],
         morekey = "Hello"
     }
 
@@ -483,7 +483,7 @@ To add a key to an existing dictionary, access it like an existing key and
 assign to it::
 
     var d = {} # create an empty Dictionary
-    d.Waiting = 14 # add String "Waiting" as a key and assign the value 14 to it
+    d.waiting = 14 # add String "Waiting" as a key and assign the value 14 to it
     d[4] = "hello" # add integer `4` as a key and assign the String "hello" as its value
     d["Godot"] = 3.01 # add String "Godot" as a key and assign the value 3.01 to it
 
@@ -499,10 +499,10 @@ value upon initialization.
 
 ::
 
-    var a  # data type is null by default
+    var a # data type is null by default
     var b = 5
     var c = 3.8
-    var d = b + c  # variables are always initialized in order
+    var d = b + c # variables are always initialized in order
 
 Constants
 ~~~~~~~~~
@@ -515,10 +515,10 @@ expressions and must be assigned on initialization.
     const a = 5
     const b = Vector2(20, 20)
     const c = 10 + 20 # constant expression
-    const d = Vector2(20, 30).x  # constant expression: 20
-    const e = [1, 2, 3, 4][0]  # constant expression: 1
-    const f = sin(20)  # sin() can be used in constant expressions
-    const g = x + 20  # invalid; this is not a constant expression!
+    const d = Vector2(20, 30).x # constant expression: 20
+    const e = [1, 2, 3, 4][0] # constant expression: 1
+    const f = sin(20) # sin() can be used in constant expressions
+    const g = x + 20 # invalid; this is not a constant expression!
 
 Enums
 ^^^^^
@@ -637,7 +637,7 @@ nature of the tab-based indentation, ``elif`` can be used instead of
 
 Short statements can be written on the same line as the condition::
 
-    if (1 + 1 == 2): return 2 + 2
+    if 1 + 1 == 2: return 2 + 2
     else:
         var x = 3 + 3
         return x
@@ -670,23 +670,23 @@ in the loop variable.
 ::
 
     for x in [5, 7, 11]:
-        statement  # loop iterates 3 times with x as 5, then 7 and finally 11
+        statement # loop iterates 3 times with x as 5, then 7 and finally 11
 
-    var dict = {"a":0, "b":1, "c":2}
+    var dict = {"a": 0, "b": 1, "c": 2}
     for i in dict:
-        print(dict[i])  # loop provides the keys in an arbitrary order; may print 0, 1, 2, or 2, 0, 1, etc...
+        print(dict[i])
 
     for i in range(3):
-        statement  # similar to [0, 1, 2] but does not allocate an array
+        statement # similar to [0, 1, 2] but does not allocate an array
 
     for i in range(1,3):
-        statement  # similar to [1, 2] but does not allocate an array
+        statement # similar to [1, 2] but does not allocate an array
 
     for i in range(2,8,2):
-        statement  # similar to [2, 4, 6] but does not allocate an array
+        statement # similar to [2, 4, 6] but does not allocate an array
 
     for c in "Hello":
-        print(c)   # iterate through all characters in a String, print every letter on new line
+        print(c) # iterate through all characters in a String, print every letter on new line
 
 match
 ^^^^^
@@ -914,7 +914,7 @@ function.
 
 ::
 
-    # inside a class file
+    # Inside a class file
 
     # An inner class in this class file
     class SomeInnerClass:
@@ -955,7 +955,7 @@ is done by using the ``export`` keyword::
 
     extends Button
 
-    export var number = 5  # value will be saved and visible in the property editor
+    export var number = 5 # value will be saved and visible in the property editor
 
 An exported variable must be initialized to a constant expression or have an
 export hint in the form of an argument to the export keyword (see below).
@@ -1032,11 +1032,11 @@ special export syntax is provided.
     # Colors
 
     # Color given as Red-Green-Blue value
-    export(Color, RGB) var col  # Color is RGB
+    export(Color, RGB) var col # Color is RGB
     # Color given as Red-Green-Blue-Alpha value
-    export(Color, RGBA) var col  # Color is RGBA
+    export(Color, RGBA) var col # Color is RGBA
 
-    # another node in the scene can be exported too
+    # Another node in the scene can be exported too
 
     export(NodePath) var node
 
@@ -1149,11 +1149,11 @@ illustration of this:
 
     func _init():
         # Does not trigger setter/getter
-        myinteger=5
+        myinteger = 5
         print(myinteger)
 
         # Does trigger setter/getter
-        self.myinteger=5
+        self.myinteger = 5
         print(self.myinteger)
 
 Tool mode
@@ -1209,11 +1209,11 @@ declared and connect it to the method of another instance:
         print("Got callback!")
 
     func _callback_args(a,b):
-        print("Got callback with args! a: ",a," and b: ",b)
+        print("Got callback with args! a: ", a, " and b: ", b)
 
     func _at_some_func():
-        instance.connect("your_signal_name",self,"_callback_no_args")
-        instance.connect("your_signal_name_with_args",self,"_callback_args")
+        instance.connect("your_signal_name", self, "_callback_no_args")
+        instance.connect("your_signal_name_with_args", self, "_callback_args")
 
 It is also possible to bind arguments to a signal that lacks them with
 your custom values:
@@ -1221,7 +1221,7 @@ your custom values:
 ::
 
     func _at_some_func():
-        instance.connect("your_signal_name",self,"_callback_args",[22,"hello"])
+        instance.connect("your_signal_name", self, "_callback_args", [22, "hello"])
 
 This is very useful when a signal from many objects is connected to a
 single callback and the sender must be identified:
@@ -1229,11 +1229,11 @@ single callback and the sender must be identified:
 ::
 
     func _button_pressed(which):
-        print("Button was pressed: ",which.get_name())
+        print("Button was pressed: ", which.get_name())
 
     func _ready():
         for b in get_node("buttons").get_children():
-            b.connect("pressed",self,"_button_pressed",[b])
+            b.connect("pressed", self, "_button_pressed",[b])
 
 Finally, emitting a custom signal is done by using the
 Object.emit_signal method:
@@ -1242,7 +1242,7 @@ Object.emit_signal method:
 
     func _at_some_func():
         emit_signal("your_signal_name")
-        emit_signal("your_signal_name_with_args",55,128)
+        emit_signal("your_signal_name_with_args", 55, 128)
         someinstance.emit_signal("somesignal")
 
 Coroutines
@@ -1259,13 +1259,11 @@ an example:
 ::
 
     func myfunc():
-
        print("hello")
        yield()
        print("world")
 
     func _ready():
-
         var y = myfunc()
         # Function state saved in 'y'
         print("my dear")
@@ -1286,16 +1284,14 @@ example:
 ::
 
     func myfunc():
-
        print("hello")
-       print( yield() )
+       print(yield())
        return "cheers!"
 
     func _ready():
-
         var y = myfunc()
         # Function state saved in 'y'
-        print( y.resume("world") )
+        print(y.resume("world"))
         # 'y' resumed and is now an invalid state
 
 Will print:

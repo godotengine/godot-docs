@@ -245,7 +245,7 @@ Example of Dictionary:
 
 ::
 
-    var d = { "name": "john", "age": 22 } # simple syntax
+    var d = {"name": "john", "age": 22} # simple syntax
     print("Name: ", d["name"], " Age: ", d["age"])
 
 Dictionaries are also dynamic, keys can be added or removed at any point
@@ -271,9 +271,9 @@ easily with dictionaries. Here's a simple battleship game example:
     var board = {}
 
     func initialize():
-        board[Vector(1,1)] = SHIP
-        board[Vector(1,2)] = SHIP
-        board[Vector(1,3)] = SHIP
+        board[Vector(1, 1)] = SHIP
+        board[Vector(1, 2)] = SHIP
+        board[Vector(1, 3)] = SHIP
 
     func missile(pos):
 
@@ -287,9 +287,9 @@ easily with dictionaries. Here's a simple battleship game example:
 
     func game():
         initialize()
-        missile(Vector2(1,1))
-        missile(Vector2(5,8))
-        missile(Vector2(2,3))
+        missile(Vector2(1, 1))
+        missile(Vector2(5, 8))
+        missile(Vector2(2, 3))
 
 Dictionaries can also be used as data markup or quick structures. While
 GDScript dictionaries resemble python dictionaries, it also supports Lua
@@ -364,9 +364,9 @@ The range() function can take 3 arguments:
 
 ::
 
-        range(n) (will go from 0 to n-1)
-        range(b, n) (will go from b to n-1)
-        range(b, n, s) (will go from b to n-1, in steps of s)
+        range(n) # will go from 0 to n-1
+        range(b, n) # will go from b to n-1
+        range(b, n, s) # will go from b to n-1, in steps of s
 
 Some examples:
 
@@ -409,7 +409,7 @@ while() loops are the same everywhere:
 
     var i = 0
 
-    while(i < strings.size()):
+    while i < strings.size():
         print(strings[i])
         i += 1
 
@@ -472,7 +472,7 @@ checking if the function exists is desirable:
 ::
 
     func _on_object_hit(object):
-        if (object.has_method("smash")):
+        if object.has_method("smash"):
             object.smash()
 
 Then, simply define that method and anything the rock touches can be

@@ -83,28 +83,28 @@ must be used, for example:
     func _physics_process(delta):
         var space_state = get_world().get_direct_space_state()
         # use global coordinates, not local to node
-        var result = space_state.intersect_ray( Vector2(0,0), Vector2(50,100) )
+        var result = space_state.intersect_ray(Vector2(0, 0), Vector2(50, 100))
 
 Result is a dictionary. If the ray didn't hit anything, the dictionary will
 be empty. If it did hit something it will contain collision information:
 
 ::
 
-        if (not result.empty()):
-            print("Hit at point: ",result.position)
+        if not result.empty():
+            print("Hit at point: ", result.position)
 
 The collision result dictionary, when something hit, has this format:
 
 ::
 
     {
-       position:Vector2 # point in world space for collision
-       normal:Vector2 # normal in world space for collision
-       collider:Object # Object collided or null (if unassociated)
-       collider_id:ObjectID # Object it collided against
-       rid:RID # RID it collided against
-       shape:int # shape index of collider
-       metadata:Variant() # metadata of collider
+       position: Vector2 # point in world space for collision
+       normal: Vector2 # normal in world space for collision
+       collider: Object # Object collided or null (if unassociated)
+       collider_id: ObjectID # Object it collided against
+       rid: RID # RID it collided against
+       shape: int # shape index of collider
+       metadata: Variant() # metadata of collider
     }
 
     # in case of 3D, Vector3 is returned.
@@ -131,7 +131,7 @@ collisionobject based node:
 
     func _physics_process(delta):
         var space_state = get_world().get_direct_space_state()
-        var result = space_state.intersect_ray( get_global_pos(), enemy_pos, [ self ] )
+        var result = space_state.intersect_ray(get_global_pos(), enemy_pos, [self])
 
 The extra argument is a list of exceptions, can be objects or RIDs.
 
@@ -158,12 +158,11 @@ To obtain it using a camera, the following code can be used:
 
     const ray_length = 1000
 
-    func _input(ev):
-        if ev is InputEventMouseButton and ev.pressed and ev.button_index==1:
-
+    func _input(event):
+        if event is InputEventMouseButton and event.pressed and event.button_index == 1:
               var camera = get_node("camera")
-              var from = camera.project_ray_origin(ev.position)
-              var to = from + camera.project_ray_normal(ev.position) * ray_length
+              var from = camera.project_ray_origin(event.position)
+              var to = from + camera.project_ray_normal(event.position) * ray_length
 
 Of course, remember that during ``_input()``, space may be locked, so save
 your query for ``_physics_process()``.

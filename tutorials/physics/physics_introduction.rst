@@ -38,7 +38,7 @@ but they can be created via code easily. For example:
 
     # Create a box
     var b = RectangleShape2D.new()
-    b.set_extents(Vector2(20,10))
+    b.set_extents(Vector2(20, 10))
 
 The main use for shapes is checking collision/intersection and getting
 resolution information. Shapes are mostly convex, (except the
@@ -91,7 +91,7 @@ against everything in two for loops like this:
 
     for i in colliders:
         for j in colliders:
-            if (i.collides(j)):
+            if i.collides(j):
                 do_collision_code()
 
 But this scales really bad. Let's imagine there are only 100 objects in
