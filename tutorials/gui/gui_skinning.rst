@@ -70,7 +70,7 @@ An example usage:
 ::
 
     var t = Theme.new()
-    t.set_color("font_color","Label",Color(1.0,1.0,1.0))
+    t.set_color("font_color", "Label", Color(1.0, 1.0, 1.0))
 
     var l = Label.new()
     l.set_theme(t)
@@ -86,7 +86,7 @@ directly and only for a specific control by using the override API in
 ::
 
     var l = Label.new()
-    l.add_color_override("font_color",Color(1.0,1.0,1.0))
+    l.add_color_override("font_color", Color(1.0, 1.0, 1.0))
 
 In the inline help of Godot (in the script tab) you can check which theme options
 are overrideable, or check the :ref:`Control <class_Control>` class reference.

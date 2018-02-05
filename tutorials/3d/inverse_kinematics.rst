@@ -67,9 +67,9 @@ We will just use exported variable for bone length to be easy.
 
 ::
 
-    export var IK_bone="lowerarm"
-    export var IK_bone_length=1.0
-    export var IK_error = 0.1
+    export var ik_bone = "lowerarm"
+    export var ik_bone_length = 1.0
+    export var ik_error = 0.1
 
 Now, we need to apply our transformations from IK bone to the base of
 chain. So we apply rotation to IK bone then move from our IK bone up to
@@ -78,7 +78,7 @@ current bone again, etc. So we need to limit our chain somewhat.
 
 ::
 
-    export var IK_limit = 2
+    export var ik_limit = 2
 
 For ``_ready()`` function:
 
@@ -94,8 +94,8 @@ Now we can write our chain-passing function:
 ::
 
     func pass_chain():
-        var b = skel.find_bone(IK_bone)
-        var l = IK_limit
+        var b = skel.find_bone(ik_bone)
+        var l = ik_limit
         while b >= 0 and l > 0:
             print( "name":", skel.get_bone_name(b))
             print( "local transform":", skel.get_bone_pose(b))
@@ -107,8 +107,8 @@ And for the ``_process()`` function:
 
 ::
 
-    func _process(dt):
-        pass_chain(dt)
+    func _process(delta):
+        pass_chain(delta)
 
 Executing this script will just pass through bone chain printing bone
 transforms.
@@ -117,25 +117,28 @@ transforms.
 
     extends Spatial
 
-    export var IK_bone="lowerarm"
-    export var IK_bone_length=1.0
-    export var IK_error = 0.1
-    export var IK_limit = 2
+    export var ik_bone = "lowerarm"
+    export var ik_bone_length = 1.0
+    export var ik_error = 0.1
+    export var ik_limit = 2
     var skel
+
     func _ready():
         skel = get_node("arm/Armature/Skeleton")
         set_process(true)
-    func pass_chain(dt):
-        var b = skel.find_bone(IK_bone)
-        var l = IK_limit
+
+    func pass_chain(delta):
+        var b = skel.find_bone(ik_bone)
+        var l = ik_limit
         while b >= 0 and l > 0:
             print("name: ", skel.get_bone_name(b))
             print("local transform: ", skel.get_bone_pose(b))
             print( "global transform:", skel.get_bone_global_pose(b))
             b = skel.get_bone_parent(b)
             l = l - 1
-    func _process(dt):
-        pass_chain(dt)
+
+    func _process(delta):
+        pass_chain(delta)
 
 Now we need to actually work with target. The target should be placed
 somewhere accessible. Since "arm" is imported scene, we better place
@@ -153,6 +156,7 @@ Then modify ``_ready()`` function to look like this:
 
     var skel
     var target
+
     func _ready():
         skel = get_node("arm/Armature/Skeleton")
         target = get_node("target")

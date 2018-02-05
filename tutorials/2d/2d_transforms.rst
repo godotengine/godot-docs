@@ -91,7 +91,7 @@ way:
 
 ::
 
-    var local_pos = Vector2(10,20) # local to Control/Node2D
+    var local_pos = Vector2(10, 20) # local to Control/Node2D
     var ie = InputEventMouseButton.new()
     ie.button_index = BUTTON_LEFT
     ie.position = get_viewport_transform() * (get_global_transform() * local_pos)

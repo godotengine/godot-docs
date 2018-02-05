@@ -218,7 +218,7 @@ Let's get back to the lobby. Imagine that each player that connects to the serve
         # Store the info
         player_info[id] = info
         # If I'm the server, let the new guy know about existing players
-        if (get_tree().is_network_server()):
+        if get_tree().is_network_server():
             # Send my info to new player
             rpc_id(id, "register_player", 1, my_info)
             # Send the info of existing players
@@ -326,7 +326,7 @@ When the server gets the OK from all the peers, it can tell them to start, as fo
 
         players_done.append(who)
 
-        if (players_done.size() == player_info.size()):
+        if players_done.size() == player_info.size():
             rpc("post_configure_game")
 
     remote func post_configure_game():
@@ -391,7 +391,7 @@ Example bomb code:
 ::
 
     for p in bodies_in_area:
-        if (p.has_method("exploded")):
+        if p.has_method("exploded"):
             p.rpc("exploded", bomb_owner)
 
 Example player code:
@@ -402,7 +402,7 @@ Example player code:
         stunned = true
 
     master func exploded(by_who):
-        if (stunned):
+        if stunned:
             return # Already stunned
 
         rpc("stun")

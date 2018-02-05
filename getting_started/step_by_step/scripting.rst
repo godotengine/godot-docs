@@ -224,7 +224,7 @@ Next, write a function which will be called when the button is pressed:
  .. code-tab:: gdscript GDScript
 
     func _on_button_pressed():  
-        get_node("Label").text="HELLO!"
+        get_node("Label").text = "HELLO!"
 
  .. code-tab:: csharp
 
@@ -234,10 +234,6 @@ Next, write a function which will be called when the button is pressed:
         label.Text = "HELLO!";
     }
 
- .. group-tab:: VS
-
-    .. image:: img/signals.png
-
 Finally, connect the button's "pressed" signal to ``_ready()`` by
 using :ref:`Object.connect() <class_Object_connect>`.
 
@@ -245,7 +241,7 @@ using :ref:`Object.connect() <class_Object_connect>`.
  .. code-tab:: gdscript GDScript
 
     func _ready():
-        get_node("Button").connect("pressed",self,"_on_button_pressed")
+        get_node("Button").connect("pressed", self, "_on_button_pressed")
 
  .. code-tab:: csharp
 
@@ -262,10 +258,10 @@ The final script should look like this:
     extends Panel
 
     func _on_button_pressed():
-        get_node("Label").text="HELLO!"
+        get_node("Label").text = "HELLO!"
 
     func _ready():
-        get_node("Button").connect("pressed",self,"_on_button_pressed")
+        get_node("Button").connect("pressed", self, "_on_button_pressed")
 
  .. code-tab:: csharp
 
