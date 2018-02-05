@@ -8,7 +8,7 @@ Compiling with Mono
 Requirements
 ------------
 
-- Mono 5.2.0+
+- Mono 5.2.0+ (mono-complete)
 - MSBuild
 - pkg-config
 
