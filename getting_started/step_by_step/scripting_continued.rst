@@ -14,7 +14,7 @@ frame. There are two types of processing: idle processing and physics
 processing.
 
 Idle processing is activated when the method :ref:`Node._process() <class_Node__process>`
-is found in a script. It can be turned and on with the
+is found in a script. It can be turned off and on with the
 :ref:`Node.set_process() <class_Node_set_process>` function.
 
 This method will be called every time a frame is drawn, so it's fully dependent on
@@ -123,7 +123,7 @@ provides simpler overrideable functions.
 Overrideable functions
 ----------------------
 
-Such overrideable, which are described as
+Such overrideable functions, which are described as
 follows, can be applied to nodes:
 
 ::
@@ -190,12 +190,12 @@ used:
 
 When a node is freed, it also frees all its children nodes. Because of
 this, manually deleting nodes is much simpler than it appears. Just free
-the base node and everything else in the sub-tree goes away with it.
+the base node and everything else in the subtree goes away with it.
 
 A situation might occur where we want to delete a node that
 is currently "blocked", because it is emitting a signal or calling a
-function. This will result in crashing the game. Running Godot
-in the debugger will often catch this case and warn you about it.
+function. This will crash the game. Running Godot
+with the debugger will often catch this case and warn you about it.
 
 The safest way to delete a node is by using
 :ref:`Node.queue_free() <class_Node_queue_free>`.
@@ -217,7 +217,7 @@ first one is to load the scene from your hard drive:
     var scene = load("res://myscene.tscn") # will load when the script is instanced
 
 Preloading it can be more convenient, as it happens at parse
-time.
+time:
 
 ::
 
