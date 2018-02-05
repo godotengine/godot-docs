@@ -33,7 +33,7 @@ how many frames per second (FPS) the application is running at:
         // do something...
     }
 
-The delta parameter describes the time elapsed in seconds, as a
+The delta parameter contains the time elapsed in seconds, as a
 floating point, since the previous call to ``_process()``.
 
 This parameter can be used to make sure things always take the same 
