@@ -293,7 +293,7 @@ easily with dictionaries. Here's a simple battleship game example:
 
 Dictionaries can also be used as data markup or quick structures. While
 GDScript dictionaries resemble python dictionaries, it also supports Lua
-style syntax an indexing, which makes it very useful for writing initial
+style syntax and indexing, which makes it very useful for writing initial
 states and quick structs:
 
 ::
