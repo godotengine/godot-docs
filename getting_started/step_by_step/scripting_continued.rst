@@ -25,6 +25,7 @@ how many frames per second (FPS) the application is running at:
 
     func _process(delta):
         # do something...
+        pass
 
  .. code-tab:: csharp
     
@@ -59,7 +60,7 @@ with the following script:
 
     extends Label
 
-    var accum=0
+    var accum = 0
 
     func _process(delta):
         accum += delta
@@ -156,11 +157,11 @@ function in your script:
  .. code-tab:: gdscript GDScript
 
     func _notification(what):
-        if (what == NOTIFICATION_READY):
-            print("This is the same as overriding _ready()...")
-        elif (what == NOTIFICATION_PROCESS):
-            var delta = get_process_time()
-            print("This is the same as overriding _process()...")
+        match what:
+            NOTIFICATION_READY:
+                print("This is the same as overriding _ready()...")
+            NOTIFICATION_PROCESS:
+                print("This is the same as overriding _process()...")
 
  .. code-tab:: csharp
 

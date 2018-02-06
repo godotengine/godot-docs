@@ -23,7 +23,7 @@ Handling it is done as follows (on any node):
 ::
 
     func _notification(what):
-        if (what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST):
+        if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
             get_tree().quit() # default behavior
 
 When developing mobile apps, quitting is not desired unless the user is

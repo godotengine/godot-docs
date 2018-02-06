@@ -27,17 +27,15 @@ for example:
 
 ::
 
-    func _input(ev):
+    func _input(event):
        # Mouse in viewport coordinates
-
-       if (ev is InputEventMouseButton):
-           print("Mouse Click/Unclick at: ",ev.position)
-       elif (ev is InputEventMouseMotion):
-           print("Mouse Motion at: ",ev.position)
+       if event is InputEventMouseButton:
+           print("Mouse Click/Unclick at: ", event.position)
+       elif event is InputEventMouseMotion:
+           print("Mouse Motion at: ", event.position)
 
        # Print the size of the viewport
-
-       print("Viewport Resolution is: ",get_viewport_rect().size)
+       print("Viewport Resolution is: ", get_viewport_rect().size)
 
     func _ready():
         set_process_input(true)

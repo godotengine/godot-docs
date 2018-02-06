@@ -126,7 +126,7 @@ So, let's move our sprite downwards until it hits the floor:
     extends KinematicBody2D
 
     func _physics_process(delta):
-        move_and_collide(Vector2(0,1)) # Move down 1 pixel per physics frame
+        move_and_collide(Vector2(0, 1)) # Move down 1 pixel per physics frame
 
  .. code-tab:: csharp 
 
@@ -158,7 +158,6 @@ little more like an actual game character:
     var velocity = Vector2()
 
     func _physics_process(delta):
-
         velocity.y += delta * GRAVITY
 
         var motion = velocity * delta
@@ -200,12 +199,11 @@ This adds simple walking support by pressing left and right:
     var velocity = Vector2()
 
     func _physics_process(delta):
-
         velocity.y += delta * GRAVITY
 
-        if (Input.is_action_pressed("ui_left")):
+        if Input.is_action_pressed("ui_left"):
             velocity.x = -WALK_SPEED
-        elif (Input.is_action_pressed("ui_right")):
+        elif Input.is_action_pressed("ui_right"):
             velocity.x =  WALK_SPEED
         else:
             velocity.x = 0

@@ -201,8 +201,10 @@ now, but we can make this method future-proof by returning the size of our
 
     func get_preset_name(preset):
         match preset:
-            PRESET_DEFAULT: return "Default"
-            _ : return "Unknown"
+            PRESET_DEFAULT:
+                return "Default"
+            _:
+                return "Unknown"
 
 
 Here we have the
@@ -224,10 +226,11 @@ you do this you have to be careful when you add more presets.
         match preset:
             PRESET_DEFAULT:
                 return [{
-                        "name": "use_red_anyway",
-                        "default_value": false
+                           "name": "use_red_anyway",
+                           "default_value": false
                         }]
-            _: return []
+            _:
+                return []
 
 This is the method which defines the available options.
 :ref:`get_import_options<class_EditorImportPlugin_get_import_options>` returns
@@ -287,7 +290,7 @@ method. Our sample code is a bit long, so let's split in a few parts:
     func import(source_file, save_path, options, r_platform_variants, r_gen_files):
         var file = File.new()
         var err = file.open(source_file, File.READ)
-        if (err != OK):
+        if err != OK:
             return err
 
         var line = file.get_line()

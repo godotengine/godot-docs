@@ -70,13 +70,13 @@ redrawn if modified:
     export var texture setget _set_texture
 
     func _set_texture(value):
-        #if the texture variable is modified externally,
-        #this callback is called.
-        texture=value #texture was changed
-        update() #update the node
+        # if the texture variable is modified externally,
+        # this callback is called.
+        texture = value #texture was changed
+        update() # update the node
 
     func _draw():
-        draw_texture(texture,Vector2())
+        draw_texture(texture, Vector2())
 
 In some cases, it may be desired to draw every frame. For this, just
 call update() from the _process() callback, like this:
@@ -110,17 +110,17 @@ Basically, drawing a shape on screen requires it to be decomposed into a certain
 
 ::
 
-    func draw_circle_arc( center, radius, angle_from, angle_to, color ):
+    func draw_circle_arc(center, radius, angle_from, angle_to, color):
         var nb_points = 32
         var points_arc = Vector2Array()
     
         for i in range(nb_points+1):
-            var angle_point = angle_from + i*(angle_to-angle_from)/nb_points - 90
-            var point = center + Vector2( cos(deg2rad(angle_point)), sin(deg2rad(angle_point)) ) * radius
-            points_arc.push_back( point )
+            var angle_point = angle_from + i * (angle_to-angle_from) / nb_points - 90
+            var point = center + Vector2(cos(deg2rad(angle_point)), sin(deg2rad(angle_point))) * radius
+            points_arc.push_back(point)
     
-        for indexPoint in range(nb_points):
-            draw_line(points_arc[indexPoint], points_arc[indexPoint+1], color)
+        for index_point in range(nb_points):
+            draw_line(points_arc[index_point], points_arc[index_point + 1], color)
 
 Remember the number of points our shape has to be decomposed into? We fixed this number in the nb_points variable to a value of 32. Then, we initialize an empty Vector2Array, which is simply an array of Vector2.
 
@@ -139,12 +139,12 @@ We now have a function that draws stuff on the screen: it is time to call in the
 ::
 
     func _draw():
-        var center = Vector2(200,200)
+        var center = Vector2(200, 200)
         var radius = 80
         var angle_from = 75
         var angle_to = 195
         var color = Color(1.0, 0.0, 0.0)
-        draw_circle_arc( center, radius, angle_from, angle_to, color )
+        draw_circle_arc(center, radius, angle_from, angle_to, color)
 
 Result:
 
@@ -158,15 +158,15 @@ We can take this a step further and not only write a function that draws the pla
 
 ::
 
-    func draw_circle_arc_poly( center, radius, angle_from, angle_to, color ):
+    func draw_circle_arc_poly(center, radius, angle_from, angle_to, color):
         var nb_points = 32
         var points_arc = Vector2Array()
         points_arc.push_back(center)
         var colors = ColorArray([color])
     
         for i in range(nb_points+1):
-            var angle_point = angle_from + i*(angle_to-angle_from)/nb_points - 90
-            points_arc.push_back(center + Vector2( cos( deg2rad(angle_point) ), sin( deg2rad(angle_point) ) ) * radius)
+            var angle_point = angle_from + i * (angle_to - angle_from) / nb_points - 90
+            points_arc.push_back(center + Vector2(cos(deg2rad(angle_point)), sin(deg2rad(angle_point))) * radius)
         draw_polygon(points_arc, colors)
         
         
@@ -209,7 +209,7 @@ Finally, we must not forget to call the update() function, which automatically c
      angle_to += rotation_ang
      
      # we only wrap angles if both of them are bigger than 360
-     if (angle_from > 360 && angle_to > 360):
+     if angle_from > 360 and angle_to > 360:
          angle_from = wrap(angle_from, 0, 360)
          angle_to = wrap(angle_to, 0, 360)
      update()
@@ -218,7 +218,7 @@ Also, don't forget to modify the _draw() function to make use of these variables
 ::
 
  func _draw():
-	var center = Vector2(200,200)
+	var center = Vector2(200, 200)
 	var radius = 80
 	var color = Color(1.0, 0.0, 0.0)
 
@@ -238,7 +238,7 @@ In our case, we simply need to multiply our 'rotation_ang' variable by 'delta' i
      angle_to += rotation_ang * delta
      
      # we only wrap angles if both of them are bigger than 360
-     if (angle_from > 360 && angle_to > 360):
+     if angle_from > 360 and angle_to > 360:
          angle_from = wrap(angle_from, 0, 360)
          angle_to = wrap(angle_to, 0, 360)
      update()

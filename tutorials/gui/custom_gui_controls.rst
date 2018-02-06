@@ -45,7 +45,7 @@ exists. Example
 ::
 
     func _draw():
-        if (has_focus()):
+        if has_focus():
              draw_selected()
         else:
              draw_normal()
@@ -68,14 +68,14 @@ for example:
 ::
 
     func get_minimum_size(): 
-        return Vector2(30,30)
+        return Vector2(30, 30)
 
 Or alternatively, set it via function:
 
 ::
 
     func _ready():
-        set_custom_minimum_size( Vector2(30,30) )
+        set_custom_minimum_size(Vector2(30, 30))
 
 Input
 -----
@@ -104,8 +104,8 @@ Simply override it in your control. No processing needs to be set.
 
     extends Control
 
-    func _gui_input(ev):
-       if (ev is InputEventMouseButton and ev.button_index==BUTTON_LEFT and ev.pressed):
+    func _gui_input(event):
+       if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
            print("Left mouse button was pressed!")
 
 For more information about events themselves, check the :ref:`doc_inputevent`
@@ -120,24 +120,24 @@ exists, but can be checked with the _notification callback:
 ::
 
     func _notification(what):
-
-       if (what==NOTIFICATION_MOUSE_ENTER):
-          pass # mouse entered the area of this control
-       elif (what==NOTIFICATION_MOUSE_EXIT):
-          pass # mouse exited the area of this control
-       elif (what==NOTIFICATION_FOCUS_ENTER):
-          pass # control gained focus
-       elif (what==NOTIFICATION_FOCUS_EXIT):
-          pass # control lost focus
-       elif (what==NOTIFICATION_THEME_CHANGED):
-          pass # theme used to draw the control changed
-          # update and redraw is recommended if using a theme
-       elif (what==NOTIFICATION_VISIBILITY_CHANGED):
-          pass # control became visible/invisible
-          # check new status with is_visible()
-       elif (what==NOTIFICATION_RESIZED):
-          pass # control changed size, check new size
-          # with get_size()
-       elif (what==NOTIFICATION_MODAL_CLOSED):
-          pass # for modal popups, notification
-          # that the popup was closed
+        match what:
+            NOTIFICATION_MOUSE_ENTER:
+                pass # mouse entered the area of this control
+            NOTIFICATION_MOUSE_EXIT:
+                pass # mouse exited the area of this control
+            NOTIFICATION_FOCUS_ENTER:
+                pass # control gained focus
+            NOTIFICATION_FOCUS_EXIT:
+                pass # control lost focus
+            NOTIFICATION_THEME_CHANGED:
+                pass # theme used to draw the control changed
+                # update and redraw is recommended if using a theme
+            NOTIFICATION_VISIBILITY_CHANGED:
+                pass # control became visible/invisible
+                # check new status with is_visible()
+            NOTIFICATION_RESIZED:
+                pass # control changed size, check new size
+                # with get_size()
+            NOTIFICATION_MODAL_CLOSED):
+                pass # for modal popups, notification
+                # that the popup was closed
