@@ -221,15 +221,6 @@ follows, can be applied to nodes:
         # This is called every physics frame.
         pass
 
-    func _paused():
-        # Called when game is paused. After this call, the node will not receive
-        # any more process callbacks.
-        pass
-
-    func _unpaused():
-        # Called when game is unpaused.
-        pass
-
  .. code-tab:: csharp
  
     public override void _EnterTree()
