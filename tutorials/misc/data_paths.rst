@@ -35,5 +35,6 @@ Storing persistent files in such scenarios should be done by using the
 
 In some devices (for example, mobile ad consoles) this path is unique
 for the app. Under desktop operating systems, the engine uses the
-typical ~/.Name (check the project name under the settings) in macOS and
-Linux, and APPDATA/Name for Windows.
+typical ``~/.local/share/godot/app_userdata/Name`` (check the project
+name under the settings) in macOS and Linux, and ``APPDATA/Name``
+for Windows.
