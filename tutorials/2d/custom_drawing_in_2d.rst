@@ -112,7 +112,7 @@ Basically, drawing a shape on screen requires it to be decomposed into a certain
 
     func draw_circle_arc(center, radius, angle_from, angle_to, color):
         var nb_points = 32
-        var points_arc = Vector2Array()
+        var points_arc = PoolVector2Array()
     
         for i in range(nb_points+1):
             var angle_point = angle_from + i * (angle_to-angle_from) / nb_points - 90
@@ -122,7 +122,7 @@ Basically, drawing a shape on screen requires it to be decomposed into a certain
         for index_point in range(nb_points):
             draw_line(points_arc[index_point], points_arc[index_point + 1], color)
 
-Remember the number of points our shape has to be decomposed into? We fixed this number in the nb_points variable to a value of 32. Then, we initialize an empty Vector2Array, which is simply an array of Vector2.
+Remember the number of points our shape has to be decomposed into? We fixed this number in the nb_points variable to a value of 32. Then, we initialize an empty PoolVector2Array, which is simply an array of Vector2.
 
 The next step consists of computing the actual positions of these 32 points that compose an arc. This is done in the first for-loop: we iterate over the number of points for which we want to compute the positions, plus one to include the last point. We first determine the angle of each point, between the starting and ending angles. 
 
