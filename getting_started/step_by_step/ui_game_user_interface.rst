@@ -101,7 +101,7 @@ Once again, the ``HBoxContainer`` is the perfect tool for the job.
 Select the ``Bars`` node and add a new ``HBoxContainer`` inside of it.
 Name it ``Bar``.
 
-The label itself is requires at least three nodes: a ``NinePatchRect``
+The label itself requires at least three nodes: a ``NinePatchRect``
 for the background, on top of which we'll add a texture on the left,
 either ``HP`` or ``EP``, and a ``Label`` on the right for the value. We
 can nest ``Control`` nodes however we want. We could use the
