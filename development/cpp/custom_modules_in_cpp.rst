@@ -338,7 +338,7 @@ shared module as target in the scons command:
 
 ::
 
-    user@host:~/godot$ scons summator_shared=yes bin/summator.x11.tools.64.so
+    user@host:~/godot$ scons summator_shared=yes platform=x11 bin/libsummator.x11.tools.64.so
 
 Writing custom documentation
 ----------------------------
