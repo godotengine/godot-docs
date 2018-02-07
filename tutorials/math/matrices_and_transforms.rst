@@ -435,16 +435,16 @@ Matrices & transforms in 3D
 As mentioned before, for 3D, we deal with 3 :ref:`Vector3 <class_Vector3>`
 vectors for the rotation matrix, and an extra one for the origin.
 
-Matrix3
--------
+Basis
+-----
 
-Godot has a special type for a 3x3 matrix, named :ref:`Matrix3 <class_Matrix3>`.
+Godot has a special type for a 3x3 matrix, named :ref:`Basis <class_basis>`.
 It can be used to represent a 3D rotation and scale. Sub vectors can be
 accessed as:
 
 ::
 
-    var m = Matrix3()
+    var m = Basis()
     var x = m[0] # Vector3
     var y = m[1] # Vector3
     var z = m[2] # Vector3
@@ -453,12 +453,12 @@ Or, alternatively as:
 
 ::
 
-    var m = Matrix3()
+    var m = Basis()
     var x = m.x # Vector3
     var y = m.y # Vector3
     var z = m.z # Vector3
 
-Matrix3 is also initialized to Identity by default:
+Basis is also initialized to Identity by default:
 
 .. image:: img/tutomat17.png
 
@@ -475,7 +475,7 @@ that can point to any direction, but length must be one (1.0).
 ::
 
     #rotate in Y axis
-    var m3 = Matrix3()
+    var m3 = Basis()
     m3 = m3.rotated( Vector3(0,1,0), PI/2 )
 
 Transform
