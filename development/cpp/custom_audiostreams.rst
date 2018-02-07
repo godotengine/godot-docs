@@ -7,16 +7,16 @@ Introduction
 ------------
 
 AudioStream is the base class of all audio emitting objects. 
-AudioStreamPlayer binds onto an AudioStream to emit pcm data 
+AudioStreamPlayer binds onto an AudioStream to emit PCM data 
 into an AudioServer which manages audio drivers.
 
-All audio resources requires two audio based classes; AudioStream 
+All audio resources require two audio based classes: AudioStream 
 and AudioStreamPlayback. As a data container, AudioStream contains 
 the resource and exposes itself to GDScript. AudioStream references 
-its own internal custom AudioStreamPlayback which translate 
+its own internal custom AudioStreamPlayback which translates 
 AudioStream into PCM data.
 
-This doc assumes the reader knows how to create C++ Modules. If not, refer to this guide  
+This guide assumes the reader knows how to create C++ modules. If not, refer to this guide  
 :ref:`doc_custom_modules_in_c++`.
 
 References:
@@ -38,9 +38,9 @@ Create an AudioStream
 ---------------------
 
 
-An AudioStream consists of three components; data container, stream name, 
+An AudioStream consists of three components: data container, stream name, 
 and an AudioStreamPlayback friend class generator. Audio data can be 
-loaded a number of ways such as an internal counter for a tone generator, 
+loaded in a number of ways such as with an internal counter for a tone generator, 
 internal/external buffer, or a file reference.
 
 
@@ -72,6 +72,7 @@ Therefore, playback state must be self contained in AudioStreamPlayback.
 		virtual Ref<AudioStreamPlayback> instance_playback();
 		virtual String get_stream_name() const;
 		void gen_tone(int16_t *, int frames);
+		virtual float get_length() const { return 0; } //if supported, otherwise return 0
 		AudioStreamMyTone();
 
 	protected:
@@ -123,8 +124,9 @@ References:
 Create an AudioStreamPlayback
 -----------------------------
 
-AudioStreamPlayer uses ``mix`` callback to obtain pcm data. The callback must match sample rate and fill the buffer. 
+AudioStreamPlayer uses ``mix`` callback to obtain PCM data. The callback must match sample rate and fill the buffer. 
 
+Since AudioStreamPlayback is controlled by the audio thread, i/o and dynamic memory allocation are forbidden.
 
 .. code:: cpp
 
