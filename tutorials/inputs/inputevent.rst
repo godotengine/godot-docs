@@ -126,8 +126,7 @@ logic. This allows for:
 -  Input to be reconfigured at run-time.
 
 Actions can be created from the Project Settings menu in the Actions
-tab. Read :ref:`doc_simple_2d_game-input_actions_setup` for an
-explanation on how the action editor works.
+tab.
 
 Any event has the methods :ref:`InputEvent.is_action() <class_InputEvent_is_action>`,
 :ref:`InputEvent.is_pressed() <class_InputEvent_is_pressed>` and :ref:`InputEvent <class_InputEvent>`.
