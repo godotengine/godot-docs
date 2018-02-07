@@ -56,7 +56,7 @@ we can jump into Godot and create our GUI.
 Create the base GUI
 -------------------
 
-There 2 possible approaches to the GUI: we can design elements in
+There are 2 possible approaches to the GUI: we can design elements in
 separate scenes and put them together, or prototype everything in a
 single scene and break it down later. I recommend working with a single
 scene as you can play with your UI's placement and proportions faster
@@ -101,7 +101,7 @@ Once again, the ``HBoxContainer`` is the perfect tool for the job.
 Select the ``Bars`` node and add a new ``HBoxContainer`` inside of it.
 Name it ``Bar``.
 
-The label itself is requires at least three nodes: a ``NinePatchRect``
+The label itself requires at least three nodes: a ``NinePatchRect``
 for the background, on top of which we'll add a texture on the left,
 either ``HP`` or ``EP``, and a ``Label`` on the right for the value. We
 can nest ``Control`` nodes however we want. We could use the
