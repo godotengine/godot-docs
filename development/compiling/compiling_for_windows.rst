@@ -16,7 +16,7 @@ For compiling under Windows, the following is required:
    **Make sure you read Installing Visual Studio caveats below or you
    will have to run/download the installer again.**
 -  `Python 2.7+ or Python 3.5+ <https://www.python.org/downloads/>`__.
--  `Pywin32 Python Extension <https://sourceforge.net/projects/pywin32/files/pywin32/>`__
+-  `Pywin32 Python Extension <https://github.com/mhammond/pywin32>`__
    for parallel builds (which increase the build speed by a great factor).
 -  `SCons <http://www.scons.org>`__ build system.
 
