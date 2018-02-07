@@ -56,7 +56,7 @@ we can jump into Godot and create our GUI.
 Create the base GUI
 -------------------
 
-There 2 possible approaches to the GUI: we can design elements in
+There are 2 possible approaches to the GUI: we can design elements in
 separate scenes and put them together, or prototype everything in a
 single scene and break it down later. I recommend working with a single
 scene as you can play with your UI's placement and proportions faster
