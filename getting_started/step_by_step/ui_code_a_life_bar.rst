@@ -363,7 +363,7 @@ string. That's why we write it as ``"animated_health"``.
 
 The starting point is the current value the bar's at. We still have to
 code this part, but it's going to be ``animated_health``. The end point
-of the animation is the ``Player``'s ``health`` after he
+of the animation is the ``Player``'s ``health`` after the
 ``health_changed``: that's ``new_value``. And ``0.6`` is the animation's
 duration in seconds.
 
@@ -401,8 +401,8 @@ So far, the update\_health method looks like this:
 
     func update_health(new_value):
         tween.interpolate_property(self, "animated_health", animated_health, new_value, 0.6, Tween.TRANS_LINEAR, Tween.EASE_IN)
-        if not Tween.is_active():
-            Tween.start()
+        if not tween.is_active():
+            tween.start()
 
 In this specific case, because ``number_label`` takes text, we need to
 use the ``_process`` method to animate it. Let's now update the
@@ -519,7 +519,7 @@ We then have to call the ``interpolate_property`` method of the
 
 ::
 
-    Tween.interpolate_property(self, "modulate", start_color, end_color, 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
+    tween.interpolate_property(self, "modulate", start_color, end_color, 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
 
 This time we change the ``modulate`` property and have it animate from
 ``start_color`` to the ``end_color``. The duration is of one second,
