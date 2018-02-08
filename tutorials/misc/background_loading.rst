@@ -131,7 +131,7 @@ we deal with the return value from that call. ``OK`` means keep polling,
 error. Also note we skip one frame (via ``wait_frames``, set on the
 ``goto_scene`` function) to allow the loading screen to show up.
 
-Note how use use ``OS.get_ticks_msec`` to control how long we block the
+Note how we use ``OS.get_ticks_msec`` to control how long we block the
 thread. Some stages might load really fast, which means we might be able
 to cram more than one call to ``poll`` in one frame, some might take way
 more than your value for ``time_max``, so keep in mind we won't have
