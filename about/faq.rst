@@ -85,7 +85,7 @@ but we strongly encourage you to try it and see the benefits for yourself.
 GDScript is designed to integrate from the ground to the way Godot
 works, more than any other language, and is very simple and easy to
 learn. Takes at most a day or two to get comfortable and it's very easy
-to see the benefits once you do. Please do the effort to learn
+to see the benefits once you do. Please spend the effort to learn
 GDScript, you will not regret it.
 
 Godot C++ API is also efficient and easy to use (the entire Godot
