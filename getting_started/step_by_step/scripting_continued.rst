@@ -63,7 +63,7 @@ with the following script:
     var accum = 0
 
     func _process(delta):
-        accum += delta
+        accum += 1
         text = str(accum) # text is a built-in label property
 
  .. code-tab:: csharp
