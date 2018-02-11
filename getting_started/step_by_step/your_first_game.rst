@@ -6,39 +6,38 @@ Your First Game
 Overview
 --------
 
-This tutorial will guide you through making your first Godot Engine
-project. You will learn how the Godot Engine editor works, how to structure
+This tutorial will guide you through making your first Godot
+project. You will learn how the Godot editor works, how to structure
 a project, and how to build a 2D game.
 
-.. note:: This project is an introduction to the Godot Engine. It
+.. note:: This project is an introduction to the Godot engine. It
           assumes that you have some programming experience already. If
           you're new to programming entirely, you should start here:
           :ref:`doc_scripting`.
 
-The game is called *"Dodge the Creeps"*. Your character must move and
+The game is called "Dodge the Creeps!". Your character must move and
 avoid the enemies for as long as possible. Here is a preview of the
 final result:
 
 .. image:: img/dodge_preview.gif
 
-**Why 2D?**
-    3D games are much more complex than 2D ones. You should stick to 2D
-    until you have a good understanding of the game development process.
+**Why 2D?** 3D games are much more complex than 2D ones. You should stick to 2D
+until you have a good understanding of the game development process.
 
 Project Setup
 -------------
 
 Launch Godot and create a new project. Then, download
 :download:`dodge_assets.zip <files/dodge_assets.zip>` - the images and sounds you'll be
-using to make the game. Unzip these files in your new project folder.
+using to make the game. Unzip these files to your project folder.
 
-.. note:: For this tutorial, we will assume you are already familiar with the
-          Godot Engine editor. If you haven't read :ref:`doc_scenes_and_nodes`, do so now
+.. note:: For this tutorial, we will assume you are familiar with the
+          editor. If you haven't read :ref:`doc_scenes_and_nodes`, do so now
           for an explanation of setting up a project and using the editor.
 
-This game will use "portrait" mode, so we need to adjust the size of the
+This game will use portrait mode, so we need to adjust the size of the
 game window. Click on Project -> Project Settings -> Display -> Window and
-set ``Width`` to ``480`` and ``Height`` to ``720``.
+set "Width" to 480 and "Height" to 720.
 
 Organizing the Project
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -47,8 +46,8 @@ In this project, we will make 3 independent scenes: ``Player``,
 ``Mob``, and ``HUD``, which we will combine into the game's ``Main``
 scene. In a larger project, it might be useful to make folders to hold
 the various scenes and their scripts, but for this relatively small
-game, you can save your scenes and scripts in the root folder, which is
-referred to as ``res://``.  You can see your project folders in the Filesystem
+game, you can save your scenes and scripts in the root folder,
+referred to as ``res://``.  You can see your project folders in the FileSystem
 Dock in the upper left corner:
 
 .. image:: img/filesystem_dock.png
@@ -56,9 +55,9 @@ Dock in the upper left corner:
 Player Scene
 ------------
 
-The first scene we make defines the "Player" object. One of the benefits
+The first scene we will make defines the ``Player`` object. One of the benefits
 of creating a separate Player scene is that we can test it separately, even
-before we've created the other parts of the game.
+before we've created other parts of the game.
 
 Node Structure
 ~~~~~~~~~~~~~~
@@ -68,21 +67,21 @@ node to the scene.
 
 .. image:: img/add_node.png
 
-With ``Area2D`` we can detect other objects that overlap or run into the player.
-Change its name to ``Player``. This is the scene's "root" or top-level node.
-We can add additional nodes to the player to add functionality.
+With ``Area2D`` we can detect objects that overlap or run into the player.
+Change its name to ``Player`` by clicking on the node's name.
+This is the scene's root node. We can add additional nodes to the player to add functionality.
 
 Before we add any children to the ``Player`` node, we want to make sure we don't
-accidentally move or resize them by clicking on them. Select the player node and
-click the icon next to the lock - its tooltip says "Makes sure the objects children
+accidentally move or resize them by clicking on them. Select the node and
+click the icon to the right of the lock; its tooltip says "Makes sure the object's children
 are not selectable."
 
 .. image:: img/lock_children.png
 
-Save the scene (click Scene -> Save, or press ``Control+S`` on Windows/Linux or ``Command+S`` on Mac).
+Save the scene. Click Scene -> Save, or press ``Ctrl+S`` on Windows/Linux or ``Command+S`` on Mac.
 
-.. note:: In this project, we will be following the Godot Engine naming
-          conventions. Classes (Nodes) use ``CapWords``, variables and
+.. note:: For this project, we will be following the Godot naming
+          conventions. Classes (nodes) use ``PascalCase``, variables and
           functions use ``snake_case``, and constants use ``ALL_CAPS``.
 
 Sprite Animation
@@ -92,7 +91,7 @@ Click on the ``Player`` node and add an :ref:`AnimatedSprite <class_AnimatedSpri
 child. The ``AnimatedSprite`` will handle the appearance and animations
 for our player. Notice that there is a warning symbol next to the node.
 An ``AnimatedSprite`` requires a :ref:`SpriteFrames <class_SpriteFrames>` resource, which is a
-list of the animation(s) it can display. To create one, find the
+list of the animations it can display. To create one, find the
 ``Frames`` property in the Inspector and click "<null>" ->
 "New SpriteFrames". Next, in the same location, click
 ``<SpriteFrames>`` to open the "SpriteFrames" panel:
@@ -102,8 +101,8 @@ list of the animation(s) it can display. To create one, find the
 
 On the left is a list of animations. Click the "default" one and rename
 it to "right". Then click the "Add" button to create a second animation
-named "up". Drag the two images for each animation into "Animation
-Frames" side of the panel:
+named "up". Drag the two images for each animation, named ``playerGrey_up[1/2]`` and ``playerGrey_walk[1/2]``,
+into the "Animation Frames" side of the panel:
 
 .. image:: img/spriteframes_panel2.png
 
@@ -115,15 +114,15 @@ property to ``(0.5, 0.5)``. You can find it in the Inspector under the
 .. image:: img/player_scale.png
 
 Finally, add a :ref:`CollisionShape2D <class_CollisionShape2D>` as a child
-of the ``Player``. This will determine the player's "hitbox", or the
+of ``Player``. This will determine the player's "hitbox", or the
 bounds of its collision area. For this character, a ``CapsuleShape2D``
-gives the best fit, so next to "Shape" in the Inspector, click
+node gives the best fit, so next to "Shape" in the Inspector, click
 "<null>"" -> "New CapsuleShape2D".  Resize the shape to cover the sprite:
 
 .. image:: img/player_coll_shape.png
 
-.. warning:: Remember not to scale the shape's outline! Only use the
-             size handles (red) to adjust the shape!
+.. warning:: Don't scale the shape's outline! Only use the
+             size handles (circled in red) to adjust the shape!
 
 When you're finished, your ``Player`` scene should look like this:
 
@@ -138,13 +137,13 @@ node, so we'll add a script. Click the ``Player`` node and click the
 
 .. image:: img/add_script_button.png
 
-In the script settings window, you can leave the default settings, just
+In the script settings window, you can leave the default settings alone. Just
 click "Create":
 
 .. image:: img/attach_node_window.png
 
-.. note:: If this is your first time encountering GDScript please read
-          :ref:`doc_scripting` first.
+.. note:: If this is your first time encountering GDScript, please read
+          :ref:`doc_scripting` before continuing.
 
 Start by declaring the member variables this object will need:
 
@@ -163,8 +162,8 @@ the ``Player`` node and set the speed property to ``400``.
 
 .. image:: img/export_variable.png
 
-The ``_ready()`` function is called when a node enters the scene tree, so
-that's a good time to find the size of the game window:
+The ``_ready()`` function is called when a node enters the scene tree, 
+which is a good time to find the size of the game window:
 
 ::
 
@@ -172,14 +171,14 @@ that's a good time to find the size of the game window:
         screensize = get_viewport_rect().size
 
 Now we can use the ``_process()`` function to define what the player will do.
-The ``_process()`` function is called on every frame, so we'll use it to update
-elements of our game which we expect to be changing often. Here we'll have it:
+``_process()`` is called every frame, so we'll use it to update
+elements of our game which we expect will change often. Here we'll make it:
 
-- check for input
-- move in the given direction
-- play the appropriate animation.
+- Check for input.
+- Move in the given direction.
+- Play the appropriate animation.
 
-First, we need to check the inputs - is the player pressing a key? For
+First, we need to check for input - is the player pressing a key? For
 this game, we have 4 direction inputs to check. Input actions are defined
 in the Project Settings under "Input Map". You can define custom events and
 assign different keys, mouse events, or other inputs to them. For this demo,
@@ -218,7 +217,7 @@ We can prevent that if we *normalize* the velocity, which means we set
 its *length* to ``1``, and multiply by the desired speed. This means no
 more fast diagonal movement.
 
-.. tip:: If you've never used vector math before (or just need a refresher)
+.. tip:: If you've never used vector math before, or just need a refresher,
          you can see an explanation of vector usage in Godot at :ref:`doc_vector_math`.
          It's good to know but won't be necessary for the rest of this tutorial.
 
@@ -228,10 +227,10 @@ AnimatedSprite animation.
 .. tip:: ``$`` returns the node at the relative path from this node, or returns ``null`` if the node is not found.
          Since AnimatedSprite is a child of the current node, we can just use ``$AnimatedSprite``.
          
-         ``$`` is the short hand for ``get_node()``.
+         ``$`` is shorthand for ``get_node()``.
          So in the code above, ``$AnimatedSprite.play()`` is the same as ``get_node("AnimatedSprite").play()``.
 
-Now that we have a movement direction, we can update the player's position
+Now that we have a movement direction, we can update ``Player``'s position
 and use ``clamp()`` to prevent it from leaving the screen:
 
 ::
@@ -241,13 +240,13 @@ and use ``clamp()`` to prevent it from leaving the screen:
         position.y = clamp(position.y, 0, screensize.y)
 
 
-.. tip:: *Clamping* a value means restricting it to a given minimum/maximum range.
+.. tip:: *Clamping* a value means restricting it to a given range.
 
-Click "Play the Edited Scene. (F6)" and confirm you can move the player
+Click "Play Scene" (``F6``) and confirm you can move the player
 around the screen in all directions.
 
 .. warning:: If you get an error in the "Debugger" panel that refers to a "null instance",
-             this likely means you spelled the node name wrong. Node names are case sensitive
+             this likely means you spelled the node name wrong. Node names are case-sensitive
              and ``$NodeName`` or ``get_node("NodeName")`` must match the name you see in the scene tree.
 
 Choosing Animations
@@ -255,9 +254,9 @@ Choosing Animations
 
 Now that the player can move, we need to change which animation the
 AnimatedSprite is playing based on direction. We have a "right"
-animation, which should be flipped horizontally (using the ``flip_h``
-property) for left movement, and an "up" animation, which should be
-flipped vertically (``flip_v``) for downward movement.
+animation, which should be flipped horizontally using the ``flip_h``
+property for left movement, and an "up" animation, which should be
+flipped vertically with ``flip_v`` for downward movement.
 Let's place this code at the end of our ``_process()`` function:
 
 ::
@@ -271,7 +270,7 @@ Let's place this code at the end of our ``_process()`` function:
             $AnimatedSprite.flip_v = velocity.y > 0
 
 Play the scene again and check that the animations are correct in each
-of the directions. When you're sure that movement is working correctly,
+of the directions. When you're sure the movement is working correctly,
 add this line to ``_ready()`` so the player will be hidden when the game
 starts:
 
@@ -282,29 +281,29 @@ starts:
 Preparing for Collisions
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-We want the player to detect when it is hit by an enemy, but we haven't
-made any enemies yet! That's OK because we're going to use Godot's
+We want ``Player`` to detect when it's hit by an enemy, but we haven't
+made any enemies yet! That's OK, because we're going to use Godot's
 *signal* functionality to make it work.
 
-Add the following at the top of the script (after ``extends Area2d``):
+Add the following at the top of the script, after ``extends Area2d``:
 
 ::
 
     signal hit
 
 This defines a custom signal called "hit" that we will have our player
-emit (send out) when it collides with an enemy. We will use the Area2D to
+emit (send out) when it collides with an enemy. We will use ``Area2D`` to
 detect the collision. Select the ``Player`` node and click the "Node" tab
-next to the Inspector to see the list of signals the player can emit:
+next to the Inspector tab to see the list of signals the player can emit:
 
 .. image:: img/player_signals.png
 
 Notice our custom "hit" signal is there as well! Since our enemies are
 going to be ``RigidBody2D`` nodes, we want the
-``body_entered( Object body )`` signal - that will be emitted when a
+``body_entered( Object body )`` signal; this will be emitted when a
 body contacts the player. Click "Connect.." and then "Connect" again on
-the "Connecting Signal" window - we don't need to change any of those
-settings. Godot will automatically create a function called
+the "Connecting Signal" window. We don't need to change any of these
+settings - Godot will automatically create a function called
 ``_on_Player_body_entered`` in your player's script.
 
 .. tip:: When connecting a signal, instead of having Godot create a
@@ -321,8 +320,8 @@ Add this code to the function:
         $CollisionShape2D.disabled = true
 
 .. Note:: Disabling the area's collision shape means
-             it won't detect collisions. By turning it off, we make
-             sure we don't trigger the ``hit`` signal more than once.
+          it won't detect collisions. By turning it off, we make
+          sure we don't trigger the ``hit`` signal more than once.
 
 
 The last piece for our player is to add a function we can call to reset
@@ -340,7 +339,7 @@ Enemy Scene
 
 Now it's time to make the enemies our player will have to dodge. Their
 behavior will not be very complex: mobs will spawn randomly at the edges
-of the screen and move in a straight line (in a random direction), then
+of the screen and move in a random direction in a straight line, then
 despawn when they go offscreen.
 
 We will build this into a ``Mob`` scene, which we can then *instance* to
@@ -362,26 +361,28 @@ The Mob scene will use the following nodes:
 Don't forget to set the children so they can't be selected, like you did with the
 Player scene.
 
-In the :ref:`RigidBody2D <class_RigidBody2D>` properties, set ``Gravity Scale`` to ``0`` (so
-that the mob will not fall downward). In addition, under the
-``PhysicsBody2D`` section in the Inspector, click the ``Mask`` property and
-uncheck the first box. This will ensure that the mobs do not collide with each other.
+In the :ref:`RigidBody2D <class_RigidBody2D>` properties, set ``Gravity Scale`` to ``0``, so
+the mob will not fall downward. In addition, under the
+``PhysicsBody2D`` section, click the ``Mask`` property and
+uncheck the first box. This will ensure the mobs do not collide with each other.
 
 .. image:: img/set_collision_mask.png
 
 Set up the :ref:`AnimatedSprite <class_AnimatedSprite>` like you did for the player.
-This time, we have 3 animations: "fly", "swim", and "walk". Set the ``Playing``
+This time, we have 3 animations: ``fly``, ``swim``, and ``walk``. Set the ``Playing``
 property in the Inspector to "On" and adjust the "Speed (FPS)" setting as shown below.
-We'll select one of these randomly so that the mobs will have some variety.
+We'll select one of these animations randomly so that the mobs will have some variety.
+
+.. image:: img/mob_animations.gif
+
+``fly`` should be set to 3 FPS, with ``swim`` and ``walk`` set to 4 FPS. 
 
 Like the player images, these mob images need to be scaled down. Set the
 ``AnimatedSprite``'s ``Scale`` property to ``(0.75, 0.75)``.
 
-.. image:: img/mob_animations.gif
-
 As in the ``Player`` scene, add a ``CapsuleShape2D`` for the
 collision. To align the shape with the image, you'll need to set the
-``Rotation Deg`` property to ``90`` under ``Node2D``.
+``Rotation Degrees`` property to ``90`` under ``Node2D``.
 
 Enemy Script
 ~~~~~~~~~~~~
@@ -402,8 +403,8 @@ at the same speed). Set them to ``150`` and ``250`` in the Inspector. We
 also have an array containing the names of the three animations, which
 we'll use to select a random one.
 
-Now let's look at the rest of the script. In ``_ready()`` we choose a
-random one of the three animation types:
+Now let's look at the rest of the script. In ``_ready()`` we randomly 
+choose one of the three animation types:
 
 ::
 
@@ -425,7 +426,7 @@ node and add this code:
     func _on_Visibility_screen_exited():
         queue_free()
 
-That completes the `Mob` scene.
+This completes the `Mob` scene.
 
 Main Scene
 ----------
@@ -460,16 +461,16 @@ Spawning Mobs
 ~~~~~~~~~~~~~
 
 The Main node will be spawning new mobs, and we want them to appear at a
-random location on the edge of the screen. Add a :ref:`Path2D <class_Path2D>` named
-``MobPath`` as a child of ``Main``. When you select the ``Path2D`` node
-you will see some new buttons appear at the top of the editor:
+random location on the edge of the screen. Add a :ref:`Path2D <class_Path2D>` node named
+``MobPath`` as a child of ``Main``. When you select ``Path2D``, 
+you will see some new buttons at the top of the editor:
 
 .. image:: img/path2d_buttons.png
 
 Select the middle one ("Add Point") and draw the path by clicking to add
-the points shown. To have the points snap to the grid, make sure "Snap to
-Grid" is checked. This option can be found under the "Snapping Options"
-button to the left of the "Lock" button. It appears as a series of three
+the points at the corners shown. To have the points snap to the grid, make sure "Snap to
+Grid" is checked. This option can be found under the "Snapping options"
+button to the left of the "Lock" button, appearing as a series of three
 vertical dots.
 
 .. image:: img/draw_path2d.gif
@@ -502,7 +503,7 @@ instance.
     func _ready():
         randomize()
 
-Drag the ``Mob.tscn`` from the "FileSystem" panel and drop it in the
+Drag ``Mob.tscn`` from the "FileSystem" panel and drop it in the
 ``Mob`` property.
 
 Next, click on the Player and connect the ``hit`` signal. We want to make a
@@ -548,14 +549,14 @@ Note that a new instance must be added to the scene using
 ::
 
     func _on_MobTimer_timeout():
-        # choose a random location on the Path2D
+        # choose a random location on Path2D
         $MobPath/MobSpawnLocation.set_offset(randi())
         # create a Mob instance and add it to the scene
         var mob = Mob.instance()
         add_child(mob)
         # set the mob's direction perpendicular to the path direction
         var direction = $MobPath/MobSpawnLocation.rotation + PI/2
-        # set the mob's position to the random location
+        # set the mob's position to a random location
         mob.position = $MobPath/MobSpawnLocation.position
         # add some randomness to the direction
         direction += rand_range(-PI/4, PI/4)
@@ -566,41 +567,41 @@ Note that a new instance must be added to the scene using
 .. important:: In functions requiring angles, GDScript uses *radians*,
                not degrees. If you're more comfortable working with
                degrees, you'll need to use the ``deg2rad()`` and
-               ``rad2deg()`` functions to convert between the two measures.
+               ``rad2deg()`` functions to convert between the two.
 
 HUD
 ---
 
 The final piece our game needs is a UI: an interface to display things
 like score, a "game over" message, and a restart button. Create a new
-scene, and add a :ref:`CanvasLayer <class_CanvasLayer>` node named ``HUD`` ("HUD" stands for
-"heads-up display", meaning an informational display that appears as an
-overlay, on top of the game view).
+scene, and add a :ref:`CanvasLayer <class_CanvasLayer>` node named ``HUD``. "HUD" stands for
+"heads-up display", an informational display that appears as an
+overlay on top of the game view.
 
 The :ref:`CanvasLayer <class_CanvasLayer>` node lets us draw our UI elements on
-the layer above the rest of the game so that the information it displays doesn't get
-covered up by any game elements like the player or the mobs.
+a layer above the rest of the game, so that the information it displays isn't
+covered up by any game elements like the player or mobs.
 
 The HUD displays the following information:
 
--  Score, changed by ``ScoreTimer``
+-  Score, changed by ``ScoreTimer``.
 -  A message, such as "Game Over" or "Get Ready!"
--  A "Start" button to begin the game
+-  A "Start" button to begin the game.
 
 The basic node for UI elements is :ref:`Control <class_Control>`. To create our UI,
-we'll use two types of :ref:`Control <class_Control>` nodes: The :ref:`Label <class_Label>`
-and the :ref:`Button <class_Button>`.
+we'll use two types of :ref:`Control <class_Control>` nodes: :ref:`Label <class_Label>`
+and :ref:`Button <class_Button>`.
 
-Create the following children of the ``HUD`` node:
+Create the following as children of the ``HUD`` node:
 
--  :ref:`Label <class_Label>` (named ``ScoreLabel``)
--  :ref:`Label <class_Label>` (named ``MessageLabel``)
--  :ref:`Button <class_Button>` (named ``StartButton``)
--  :ref:`Timer <class_Timer>` (named ``MessageTimer``)
+-  :ref:`Label <class_Label>` named ``ScoreLabel``.
+-  :ref:`Label <class_Label>` named ``MessageLabel``.
+-  :ref:`Button <class_Button>` named ``StartButton``.
+-  :ref:`Timer <class_Timer>` named ``MessageTimer``.
 
-.. note:: **Anchors and Margins** ``Control`` nodes have a position and size,
+.. note:: **Anchors and Margins:** ``Control`` nodes have a position and size,
           but they also have anchors and margins. Anchors define the
-          origin, or the reference point for the edges of the node. Margins
+          origin - the reference point for the edges of the node. Margins
           update automatically when you move or resize a control node. They
           represent the distance from the control node's edges to its anchor.
           See :ref:`doc_design_interfaces_with_the_control_nodes` for more details.
@@ -667,7 +668,7 @@ the three ``Control`` nodes:
 
 .. image:: img/custom_font2.png
 
-Now add this script to the ``HUD``:
+Now add this script to ``HUD``:
 
 ::
 
@@ -699,7 +700,7 @@ temporarily, such as "Get Ready". On the ``MessageTimer``, set the
         $MessageLabel.show()
 
 This function is called when the player loses. It will show "Game
-Over" for 2 seconds, and then return to the game title and show the
+Over" for 2 seconds, then return to the title screen and show the
 "Start" button.
 
 ::
@@ -726,7 +727,8 @@ Connecting HUD to Main
 
 Now that we're done creating the ``HUD`` scene, save it and go back to ``Main``.
 Instance the ``HUD`` scene in ``Main`` like you did the ``Player`` scene, and place it at the
-bottom of tree. The full tree should look like this, so make sure you didn't miss anything:
+bottom of the tree. The full tree should look like this,
+so make sure you didn't miss anything:
 
 .. image:: img/completed_main_scene.png
 
@@ -763,8 +765,8 @@ be asked to select a main scene, so choose ``Main.tscn``.
 Finishing Up
 ------------
 
-We've now completed all the functionality for our game. Below are some
-remaining steps to add a bit more "juice" and improve the game
+We have now completed all the functionality for our game. Below are some
+remaining steps to add a bit more "juice" to improve the game
 experience. Feel free to expand the gameplay with your own ideas.
 
 Background
@@ -785,19 +787,18 @@ Sound Effects
 
 Sound and music can be the single most effective way to add appeal to
 the game experience. In your game assets folder, you have two sound
-files: "House In a Forest Loop.ogg", for background music, and
+files: "House In a Forest Loop.ogg" for background music, and
 "gameover.wav" for when the player loses.
 
 Add two :ref:`AudioStreamPlayer <class_AudioStreamPlayer>` nodes as children of ``Main``. Name one of
 them ``Music`` and the other ``DeathSound``. On each one, click on the
-``Stream`` property, select "Load" and choose the corresponding audio
+``Stream`` property, select "Load", and choose the corresponding audio
 file.
 
 To play the music, add ``$Music.play()`` in the ``new_game()`` function
 and ``$Music.stop()`` in the ``game_over()`` function.
 
-Finally, add ``$DeathSound.play()`` in the ``game_over()`` function as
-well.
+Finally, add ``$DeathSound.play()`` in the ``game_over()`` function.
 
 Particles
 ~~~~~~~~~
@@ -808,7 +809,7 @@ player's movement. Choose your ``Player`` scene and add a
 
 There are a very large number of properties to choose from when
 configuring particles. Feel free to experiment and create different
-effects. For the effect in the example, use the following settings:
+effects. For the effect in this example, use the following settings:
 
 .. image:: img/particle_trail_settings.png
 
