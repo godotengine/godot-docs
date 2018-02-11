@@ -69,7 +69,7 @@ advantages and disadvantages ( |good| = Best, |bad| =Worst ):
 HDR Mode
 ~~~~~~~~
 
-Godot supports high dynamic range textures (as .HDR or .EXR). These are mostly useful as high dynamic range equirectancular panorama skys (the internet 
+Godot supports high dynamic range textures (as .HDR or .EXR). These are mostly useful as high dynamic range equirectangular panorama skies (the internet 
 has plenty of if you look for them), which replace Cubemaps in Godot 2.x. Modern PCs support the BC6H VRAM format, but there are still plenty that do not.
 
 If you want Godot to ensure full compatibility in for kind of textures, enable the "Force RGBE" option.
