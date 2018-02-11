@@ -242,7 +242,7 @@ and use ``clamp()`` to prevent it from leaving the screen:
 
 .. tip:: *Clamping* a value means restricting it to a given range.
 
-Click "Play the edited scene" (``F6``) and confirm you can move the player
+Click "Play Scene" (``F6``) and confirm you can move the player
 around the screen in all directions.
 
 .. warning:: If you get an error in the "Debugger" panel that refers to a "null instance",
@@ -253,9 +253,9 @@ Choosing Animations
 ~~~~~~~~~~~~~~~~~~~
 
 Now that the player can move, we need to change which animation the
-AnimatedSprite is playing based on direction. We have a ``right``
+AnimatedSprite is playing based on direction. We have a "right"
 animation, which should be flipped horizontally using the ``flip_h``
-property for left movement, and an ``up`` animation, which should be
+property for left movement, and an "up" animation, which should be
 flipped vertically with ``flip_v`` for downward movement.
 Let's place this code at the end of our ``_process()`` function:
 
@@ -403,7 +403,7 @@ at the same speed). Set them to ``150`` and ``250`` in the Inspector. We
 also have an array containing the names of the three animations, which
 we'll use to select a random one.
 
-Now let's look at the rest of the script. In ``_ready()`` we will randomly 
+Now let's look at the rest of the script. In ``_ready()`` we randomly 
 choose one of the three animation types:
 
 ::
@@ -688,7 +688,7 @@ has been pressed.
 
 This function is called when we want to display a message
 temporarily, such as "Get Ready". On the ``MessageTimer``, set the
-``Wait Time`` to ``2`` and set 	the ``One Shot`` property to "On".
+``Wait Time`` to ``2`` and set the ``One Shot`` property to "On".
 
 ::
 
