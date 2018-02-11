@@ -81,7 +81,7 @@ are not selectable."
 Save the scene. Click Scene -> Save, or press ``Ctrl+S`` on Windows/Linux or ``Command+S`` on Mac.
 
 .. note:: For this project, we will be following the Godot naming
-          conventions. Classes (nodes) use ``CamelCase``, variables and
+          conventions. Classes (nodes) use ``PascalCase``, variables and
           functions use ``snake_case``, and constants use ``ALL_CAPS``.
 
 Sprite Animation
