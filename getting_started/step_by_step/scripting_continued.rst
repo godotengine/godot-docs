@@ -63,7 +63,7 @@ with the following script:
     var accum = 0
 
     func _process(delta):
-        accum += delta
+        accum += 1
         text = str(accum) # text is a built-in label property
 
  .. code-tab:: csharp
@@ -303,7 +303,7 @@ used:
 
     public void _SomeAction()
     {
-        _sprite.Free();
+        _sprite.Free(); // immediately removes the node from the scene and frees it
     }
 
 When a node is freed, it also frees all its children nodes. Because of
@@ -323,13 +323,13 @@ This erases the node safely during idle.
  .. code-tab:: gdscript GDScript
 
     func _someaction():
-        s.queue_free() # immediately removes the node from the scene and frees it
+        s.queue_free() # removes the node from the scene and frees it when idle
 
  .. code-tab:: csharp
 
     public void _SomeAction()
     {
-        _sprite.QueueFree(); // immediately removes the node from the scene and frees it
+        _sprite.QueueFree(); // removes the node from the scene and frees it when idle
     }
 
 Instancing scenes
