@@ -29,7 +29,7 @@ Using cookies for data persistence
 Users must **allow cookies** (specifically IndexedDB) if persistence of the
 ``user://`` file system is desired. When playing a game presented in an
 ``iframe``, **third-party** cookies must also be enabled. Incognito/private
-mode also prevents persistence.
+browsing mode also prevents persistence.
 
 The method ``OS.is_userfs_persistent()`` can be used to check if the
 ``user://`` file system is persistent, but can give false positives in some
@@ -113,7 +113,7 @@ The ``.pck`` file is binary, usually delivered with the MIME-type
 Delivering the files with server-side compression is recommended especially for
 the ``.pck`` and ``.wasm`` files, which are usually large in size.
 The WebAssembly module compresses particularly well, down to around a quarter
-of its original size with GZip.
+of its original size with gzip compression.
 
 Export options
 --------------
