@@ -6,6 +6,8 @@ They are meant to be parsed with the [Sphinx](http://sphinx-doc.org/) documentat
 
 ## Contributing changes
 
+**Pull Requests should use the `master` branch by default. Only make Pull Requests against other branches (e.g. `2.1` or `3.0`) if your changes only apply to that specific version of Godot.**
+
 Though arguably less convenient to edit than a wiki, this git repository is meant to receive pull requests to always improve the documentation, add new pages, etc. Having direct access to the source files in a revision control system is a big plus to ensure the quality of our documentation.
 
 ### Editing existing pages
