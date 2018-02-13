@@ -3,17 +3,16 @@
 Godot’s design philosophy
 =========================
 
-*Now you've gotten your hands wet, let's talk about Godot's design.*
+Now you've gotten your hands wet, let's talk about Godot's design.
 
-**Every game engine is different and fits different needs**. They do not
-only offer a wide range of features: each engine’s design is unique. This
-leads to different workflows and different ways to reason about your
-games’ structure. This all stems from their design philosophy.
+**Every game engine is different and fits different needs.** Not only do they offer a range of features, the design of each engine is unique. This
+leads to different workflows and different ways to form your
+games’ structures. This all stems from their respective design philosophies.
 
-This page is here to **help you understand how Godot works**, starting
-from some of its core pillars. It is not a list of available features or
-an engine comparison. To know whether any engine can be a good fit for
-your project or not, you need to both try it out for yourself and
+This page is here to help you understand how Godot works, starting
+with some of its core pillars. It is not a list of available features, nor
+is it an engine comparison. To know if any engine can be a good fit for
+your project, you need to try it out for yourself and
 understand its design and limitations.
 
 Please watch `Discover Godot 3, the Free game engine <https://youtu.be/4v3qge-3CqQ>`_ if you're looking for an overview of the engine's features.
@@ -21,8 +20,8 @@ Please watch `Discover Godot 3, the Free game engine <https://youtu.be/4v3qge-3C
 Object-oriented design and composition
 --------------------------------------
 
-Godot embraces object-oriented design at its core with its **flexible
-scene system and Node hierarchy**. It tries to stay away from strict
+Godot embraces object-oriented design at its core with its flexible
+scene system and Node hierarchy. It tries to stay away from strict
 programming patterns to offer an intuitive way to structure your game.
 
 For one, Godot lets you **compose or aggregate** scenes.
@@ -36,10 +35,10 @@ On top of that, you can **inherit** from any scene.
 
 A Godot scene could be a Weapon, a Character, an Item, a Door, a Level,
 part of a level… anything you’d like. It works like a class in pure code
-except you’re free to design it using the editor, using only the
+except you’re free to design it by using the editor, using only the
 code, or mixing and matching the two.
 
-It’s different from prefabs you find in several 3d engines as you can
+It’s different from prefabs you find in several 3D engines as you can
 then inherit from and extend those scenes. You may create a Magician
 that extends your Character. Modify the Character in the editor and the Magician
 will update as well. It helps you build your projects so that their
@@ -50,7 +49,7 @@ structure matches the game’s design.
 Also note that Godot offers many different types of objects called
 nodes, each with a specific purpose. Nodes are part of a tree and always
 inherit from their parents up to the Node class. Although the engine
-does feature some components like collision shapes, they’re the
+does feature components like collision shapes, they’re the
 exception, not the norm.
 
 |image1|
@@ -62,31 +61,30 @@ to draw custom shapes and render with a custom shader.
 All-inclusive package
 ---------------------
 
-Godot tries to provide its own tools to answer all of the most common
+Godot tries to provide its own tools to answer most common
 needs. It has a dedicated scripting workspace, an animation editor, a
 tilemap editor, a shader editor, a debugger, a profiler,
-hot-reload locally and on remote devices, etc.
+the ability to hot-reload locally and on remote devices, etc.
 
 |image2|
 
 The goal is to offer a full package to create games and a continuous
 user experience. You can still work with external programs as long as
-there is an import plugin for it or you can create one, like the `Tiled
-map editor importer <https://github.com/vnen/godot-tiled-importer>`__.
+there is an import plugin for it. Or you can create one, like the `Tiled
+Map Importer <https://github.com/vnen/godot-tiled-importer>`__.
 
 That is also partly why Godot offers its own programming languages
 GDscript and VisualScript, along with C#. They’re designed for the needs
-of game developers, game designers, and they’re tightly integrated in
+of game developers and game designers, and they’re tightly integrated in
 the engine and the editor.
 
-GDscript lets you write simple code using a Python-like syntax,
+GDscript lets you write simple code using Python-like syntax,
 yet it detects types and offers a static-language's quality of auto-completion.
-It's also optimized for gameplay code with built-in types like Vectors, Colors, etc.
+It is also optimized for gameplay code with built-in types like Vectors and Colors.
 
-Note that with GDNative, you can write high performance code using compiled
-languages like C, C++, Rust or Python (Cython compiler) without recompiling
-the engine.
-
+Note that with GDNative, you can write high-performance code using compiled
+languages like C, C++, Rust, or Python (using the Cython compiler)
+without recompiling the engine.
 
 |image3|
 
@@ -94,9 +92,8 @@ the engine.
 in the editor. You can drag and drop nodes or resources into the graph
 to create new code blocks.*
 
-Note that if this is true for 2d at the time of writing, the 3d
-workspace still doesn’t feature as many tools. You’ll need external
-programs or add-ons to edit terrains, animate complex characters, etc.
+Note that the 3D workspace doesn’t feature as many tools as the 2D workspace.
+You’ll need external programs or add-ons to edit terrains, animate complex characters, and so on.
 Godot provides a complete API to extend the editor’s functionality using
 game code. See `The Godot editor is a Godot game`_ below.
 
@@ -105,16 +102,16 @@ game code. See `The Godot editor is a Godot game`_ below.
 *A State Machine editor plugin in Godot 2 by kubecz3k. It lets you
 manage states and transitions visually*
 
-Open source
+Open-source
 -----------
 
-Godot offers a fully open source code-base under the **MIT license**. This
-means all the technologies that ship with it have to be Free as well.
-For the most part, they’re coded from the ground up by contributors.
+Godot offers a fully open-source codebase under the **MIT license.** This
+means all the technologies that ship with it have to be Free (as in freedom) as well.
+For the most part, they’re coded from the ground-up by contributors.
 
-Anyone can plug in proprietary tools for the needs of their projects.
-They just won’t ship with the engine. This may include NViDia PhysX,
-Google Admob or an FBX file importer. Any of these can come as
+Anyone can plug in proprietary tools for the needs of their projects - 
+they just won’t ship with the engine. This may include NViDia PhysX,
+Google Admob, or an FBX file importer. Any of these can come as
 third-party plugins instead.
 
 On the other hand, an open codebase means you can **learn from and extend
@@ -130,14 +127,14 @@ as Godot will print errors with a stack trace, even if they come from the engine
 Community-driven
 ----------------
 
-**Godot is made by its community, for the community and all game
-creators out there**. It’s the needs of the users and open discussions
+**Godot is made by its community, for the community, and for all game
+creators out there.** It’s the needs of the users and open discussions
 that drive the core updates. New features from the core developers often
 focus on what will benefit the most users first.
 
 That said, although a handful of core developers work on it full-time,
 the project has over 500 contributors at the time of writing. Benevolent
-programmers work on features they may need themselves so you’ll see
+programmers work on features they may need themselves, so you’ll see
 improvements in all corners of the engine at the same time in every
 major release.
 
@@ -145,9 +142,9 @@ The Godot editor is a Godot game
 --------------------------------
 
 The Godot editor runs on the game engine. It uses the engine’s own UI
-system, it can hot reload code and scenes when you test your projects,
+system, it can hot-reload code and scenes when you test your projects,
 or run game code in the editor. This means you can **use the same code**
-and scenes for your games or **to build plugins and extend the editor**.
+and scenes for your games, or **build plugins and extend the editor.**
 
 This leads to a reliable and flexible UI system as it powers the editor
 itself. With the ``tool`` keyword, you can run any game code in the editor.
@@ -159,18 +156,17 @@ tools for its node-based programming system and for the rest of the
 interface.*
 
 Put the ``tool`` keyword at the top of any GDscript file and it will run
-in the editor. This lets you create plugins like custom level editors,
-import and export plugins or scripts with the same nodes and API you use
-in your projects.
+in the editor. This lets you import and export plugins, create plugins like custom level editors,
+or create scripts with the same nodes and API you use in your projects.
 
 
-Separate 2d and 3d engines
+Separate 2D and 3D engines
 --------------------------
 
-Godot offers dedicated 2d and 3d rendering engines. As a result **the
-base unit for 2d scenes is pixels**. Even though the engines are
-separate, you can render 2d in 3d, 3d in 2d, and overlay 2d sprites and
-interface over your 3d world.
+Godot offers dedicated 2D and 3D rendering engines. As a result **the
+base unit for 2D scenes is pixels.** Even though the engines are
+separate, you can render 2D in 3D, 3D in 2D, and overlay 2D sprites and
+interface over your 3D world.
 
 .. |image0| image:: ./img/engine_design_01.png
 .. |image1| image:: ./img/engine_design_02.png
