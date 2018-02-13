@@ -19,9 +19,17 @@ Limitations on Xbox One
 
 As described in `UWP documentation <https://msdn.microsoft.com/en-us/windows/uwp/xbox-apps/system-resource-allocation>`__:
 
-- available RAM is 1GB (after exceeding it, application will encounter memory allocation failures and will crash)
-- share of 2-4 CPU cores
-- share of 45% of GPU power
+- Submitted as an "App"
+    - available memory is 1GB
+    - share of 2-4 CPU cores
+    - shared access of GPU power (45%)
+
+- Submitted as a "Game" (through `Xbox Live Creators Program <https://www.xbox.com/en-US/developers/creators-program>`__)
+    - available memory is 5GB
+    - 4 exclusive CPU cores and 2 shared CPU cores
+    - exclusive access to GPU power (100%)
+    
+- Exceeding these memory limitations will cause allocation failures and the application will crash.
 
 Creating a signing certificate
 ------------------------------
