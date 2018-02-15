@@ -14,7 +14,7 @@ InputEventJoypadMotion
 Brief Description
 -----------------
 
-Input event type for gamepad joysticks and other motions. For buttons see ``InputEventJoypadMotion``.
+Input event type for gamepad joysticks and other motions. For buttons see ``InputEventJoypadButton``.
 
 Member Variables
 ----------------
