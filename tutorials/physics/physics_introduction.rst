@@ -246,7 +246,7 @@ They have two main uses:
    etc). As an example, the 2d/platformer demo uses them for moving
    platforms.
 -  **Kinematic Characters**: KinematicBody2D also has an API for moving
-   objects (the ``move()`` function) while performing collision tests. This
+   objects (the ``move_and_slide()`` function) while performing collision tests. This
    makes them really useful to implement characters that collide against
    a world, but that don't require advanced physics. There is a tutorial
    about it :ref:`doc_kinematic_character_2d`.
