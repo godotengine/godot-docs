@@ -105,7 +105,7 @@ working directory. Move into it using the ``cd`` command:
     
     $ cd godot 
 
-We will start by setting up a reference ot the original repository that we forked:
+We will start by setting up a reference to the original repository that we forked:
 
 ::
 
