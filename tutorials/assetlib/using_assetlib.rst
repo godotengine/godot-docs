@@ -111,6 +111,7 @@ places - in the Project Manager's Templates tab, and inside of a project, from
 the workspaces list.
 
 |image7|
+
 |image14|
 
 Click on it, and Godot will fetch info about the assets from the AssetLib. Once
