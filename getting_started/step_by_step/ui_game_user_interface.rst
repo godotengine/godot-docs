@@ -549,7 +549,7 @@ onto the ``Bars`` container in the scene tree. Do the same for the
    The LifeBar and the EnergyBar align automatically
 
 Now, drag and drop the BombCounter and RupeeCounter scenes onto the
-Counters node. They'll resize size automatically.
+Counters node. They'll resize automatically.
 
 .. figure:: ./img/ui_gui_step_tutorial_assemble_final_gui_2.png
 
@@ -578,7 +578,7 @@ node to open its scene. Select the ``Count`` node and scroll down to the
 the ``Rect`` section set the node's ``Min Size`` back to 100, the same
 value as on the LifeBar. The ``Count`` should now have some margin on
 the left. If you save and go back to the GUI scene, it will be aligned
-vertically with the Life\` \`Bar.
+vertically with the ``LifeBar``.
 
 .. figure:: ./img/ui_gui_step_tutorial_assemble_final_gui_4.png
 
@@ -620,6 +620,6 @@ find final project `here <#>`__.
     games, we don’t need the interface to be as flexible as that of a
     website. You almost never want to support both landscape and portrait
     screen orientations. It’s one or the other. In landscape orientation,
-    the most common ratios range from 4:3 to 16:10. They are close to one
+    the most common ratios range from 4:3 to 16:9. They are close to one
     another. That's why it’s enough for the GUI elements to only move
     horizontally when we change the window size.
