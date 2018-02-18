@@ -445,16 +445,14 @@ Try the game again to see a nice blocky animation.
 
    By rounding out animated\_health we hit two birds with one stone
 
-.. tip:
+.. tip::
 
-::
-
-Every time the player takes a hit, the ``GUI`` calls
-``_on_Player_health_changed``, which in turn calls ``update_health``. This
-updates the animation and the ``number_label`` and ``bar`` follow in
-``_process``. The animated life bar that shows the health going down gradually
-is just a trick. It makes the GUI feel alive. If the ``Player`` takes 3 damage,
-it happens in an instant.
+    Every time the player takes a hit, the ``GUI`` calls
+    ``_on_Player_health_changed``, which in turn calls ``update_health``. This
+    updates the animation and the ``number_label`` and ``bar`` follow in
+    ``_process``. The animated life bar that shows the health going down gradually
+    is just a trick. It makes the GUI feel alive. If the ``Player`` takes 3 damage,
+    it happens in an instant.
 
 Fade the bar when the Player dies
 ---------------------------------
