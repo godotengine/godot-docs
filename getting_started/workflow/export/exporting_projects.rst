@@ -54,25 +54,31 @@ that has been standardized for more than a decade, but mobile devices
 use different formats for texture compression, such as PVRCT (iOS) or
 ETC (Android).
 
-Export dialog
--------------
+Export menu
+-----------
 
 After many attempts at different export workflows, the current one has
 proven to work the best. At the time of this writing, not all platforms are
 supported yet, but the supported platforms continue to grow.
 
-To open the export dialog, just click the "Export" button:
+To open the export menu, just click the "Export" button:
 
 .. image:: img/export.png
 
-The dialog will open, showing all the supported export platforms:
+The export menu will open, however it will be completely empty.
 
 .. image:: img/export_dialog.png
+
+That is because we need to add an export preset. To do that click the 
+`add..` button at the top of the export menu. This will open a drop down
+ list of platforms to choose from for an export preset.
+
+.. image:: img/export_preset.png
 
 The default options are often enough to export, so tweaking them is not
 necessary, but provide extra control. However, many platforms require additional
 tools (SDKs) to be installed to be able to export. Additionally, Godot
-needs export templates installed to create packages. The export dialog
+needs export templates installed to create packages. The export menu
 will complain when something is missing and will not allow the user to
 export for that platform until they resolve it:
 
