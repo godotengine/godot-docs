@@ -8,6 +8,7 @@ Editor manual
    2d_and_3d_keybindings
    unity_to_godot
    command_line_tutorial
+   features
 
 .. ue4_to_godot
 .. debugging
