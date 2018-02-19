@@ -106,7 +106,7 @@ Member Variables
 
 - :ref:`CCDMode<enum_rigidbody2d_ccdmode>` **continuous_cd** - Continuous collision detection mode. Default value: ``CCD_MODE_DISABLED``.
 
-Continuous collision detection tries to predict where a moving body will collide instead of moving it and correcting its movement after collision. Continuous collision detection is slower, but more precise and misses fewer collisions with small, fast-moving objects. Raycasting and shapecasting methods are available. See ``CCD_MODE\_`` constants for details.
+Continuous collision detection tries to predict where a moving body will collide instead of moving it and correcting its movement after collision. Continuous collision detection is slower, but more precise and misses fewer collisions with small, fast-moving objects. Raycasting and shapecasting methods are available. See ``CCD_MODE_`` constants for details.
 
   .. _class_RigidBody2D_custom_integrator:
 
@@ -138,7 +138,7 @@ Continuous collision detection tries to predict where a moving body will collide
 
   .. _class_RigidBody2D_mode:
 
-- :ref:`Mode<enum_rigidbody2d_mode>` **mode** - The body's mode. See ``MODE\_\*`` constants. Default value: ``MODE_RIGID``.
+- :ref:`Mode<enum_rigidbody2d_mode>` **mode** - The body's mode. See ``MODE_*`` constants. Default value: ``MODE_RIGID``.
 
   .. _class_RigidBody2D_sleeping:
 

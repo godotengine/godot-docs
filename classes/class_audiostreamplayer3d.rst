@@ -94,6 +94,10 @@ Member Variables
 
 - :ref:`OutOfRangeMode<enum_audiostreamplayer3d_outofrangemode>` **out_of_range_mode** - Decides if audio should pause when source is outside of 'max_distance' range.
 
+  .. _class_AudioStreamPlayer3D_pitch_scale:
+
+- :ref:`float<class_float>` **pitch_scale**
+
   .. _class_AudioStreamPlayer3D_playing:
 
 - :ref:`bool<class_bool>` **playing** - If ``true``, audio is playing.

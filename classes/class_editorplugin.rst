@@ -80,6 +80,8 @@ Member Functions
 +------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`remove_control_from_bottom_panel<class_EditorPlugin_remove_control_from_bottom_panel>` **(** :ref:`Control<class_control>` control **)**                                                                    |
 +------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                 | :ref:`remove_control_from_container<class_EditorPlugin_remove_control_from_container>` **(** :ref:`int<class_int>` container, :ref:`Control<class_control>` control **)**                                         |
++------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`remove_control_from_docks<class_EditorPlugin_remove_control_from_docks>` **(** :ref:`Control<class_control>` control **)**                                                                                  |
 +------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`remove_custom_type<class_EditorPlugin_remove_custom_type>` **(** :ref:`String<class_string>` type **)**                                                                                                     |
@@ -339,6 +341,12 @@ Queue save the project's editor layout.
 - void **remove_control_from_bottom_panel** **(** :ref:`Control<class_control>` control **)**
 
 Remove the control from the bottom panel. Don't forget to call this if you added one, so the editor can remove it cleanly.
+
+.. _class_EditorPlugin_remove_control_from_container:
+
+- void **remove_control_from_container** **(** :ref:`int<class_int>` container, :ref:`Control<class_control>` control **)**
+
+Remove the control from the specified container. Use it when cleaning up after adding a control with :ref:`add_control_to_container<class_EditorPlugin_add_control_to_container>`. Note that you can simply free the control if you won't use it anymore.
 
 .. _class_EditorPlugin_remove_control_from_docks:
 

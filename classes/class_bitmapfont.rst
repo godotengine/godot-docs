@@ -14,7 +14,7 @@ BitmapFont
 Brief Description
 -----------------
 
-Renders text using ``\*.fnt`` fonts.
+Renders text using ``*.fnt`` fonts.
 
 Member Functions
 ----------------
@@ -62,7 +62,7 @@ Member Variables
 Description
 -----------
 
-Renders text using ``\*.fnt`` fonts containing texture atlases. Supports distance fields. For using vector font files like TTF directly, see :ref:`DynamicFont<class_dynamicfont>`.
+Renders text using ``*.fnt`` fonts containing texture atlases. Supports distance fields. For using vector font files like TTF directly, see :ref:`DynamicFont<class_dynamicfont>`.
 
 Member Function Description
 ---------------------------
@@ -95,7 +95,7 @@ Clears all the font data and settings.
 
 - :ref:`int<class_int>` **create_from_fnt** **(** :ref:`String<class_string>` path **)**
 
-Creates a BitmapFont from the ``\*.fnt`` file at ``path``.
+Creates a BitmapFont from the ``*.fnt`` file at ``path``.
 
 .. _class_BitmapFont_get_char_size:
 

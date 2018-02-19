@@ -111,13 +111,13 @@ Returns ``true`` if the specified section-key pair exists.
 
 - :ref:`int<class_int>` **load** **(** :ref:`String<class_string>` path **)**
 
-Loads the config file specified as a parameter. The file's contents are parsed and loaded in the ConfigFile object which the method was called on. Returns one of the ``OK``, ``FAILED`` or ``ERR\_\*`` constants listed in :ref:`@GlobalScope<class_@globalscope>`. If the load was successful, the return value is ``OK``.
+Loads the config file specified as a parameter. The file's contents are parsed and loaded in the ConfigFile object which the method was called on. Returns one of the ``OK``, ``FAILED`` or ``ERR_*`` constants listed in :ref:`@GlobalScope<class_@globalscope>`. If the load was successful, the return value is ``OK``.
 
 .. _class_ConfigFile_save:
 
 - :ref:`int<class_int>` **save** **(** :ref:`String<class_string>` path **)**
 
-Saves the contents of the ConfigFile object to the file specified as a parameter. The output file uses an INI-style structure. Returns one of the ``OK``, ``FAILED`` or ``ERR\_\*`` constants listed in :ref:`@GlobalScope<class_@globalscope>`. If the load was successful, the return value is ``OK``.
+Saves the contents of the ConfigFile object to the file specified as a parameter. The output file uses an INI-style structure. Returns one of the ``OK``, ``FAILED`` or ``ERR_*`` constants listed in :ref:`@GlobalScope<class_@globalscope>`. If the load was successful, the return value is ``OK``.
 
 .. _class_ConfigFile_set_value:
 

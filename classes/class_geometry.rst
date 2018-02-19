@@ -196,6 +196,6 @@ Tests if the segment (``from``, ``to``) intersects the triangle ``a``, ``b``, ``
 
 - :ref:`PoolIntArray<class_poolintarray>` **triangulate_polygon** **(** :ref:`PoolVector2Array<class_poolvector2array>` polygon **)**
 
-Triangulates the polygon specified by the points in ``polygon``. Returns a :ref:`PoolIntArray<class_poolintarray>` where each triangle consists of three consecutive point indices into ``polygon`` (i.e. the returned array will have ``n \* 3`` elements, with ``n`` being the number of found triangles). If the triangulation did not succeed, an empty :ref:`PoolIntArray<class_poolintarray>` is returned.
+Triangulates the polygon specified by the points in ``polygon``. Returns a :ref:`PoolIntArray<class_poolintarray>` where each triangle consists of three consecutive point indices into ``polygon`` (i.e. the returned array will have ``n * 3`` elements, with ``n`` being the number of found triangles). If the triangulation did not succeed, an empty :ref:`PoolIntArray<class_poolintarray>` is returned.
 
 

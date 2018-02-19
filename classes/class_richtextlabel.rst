@@ -182,7 +182,7 @@ Description
 
 Rich text can contain custom text, fonts, images and some basic formatting. The label manages these as an internal tag stack. It also adapts itself to given width/heights.
 
-Note that assignments to :ref:`bbcode_text<class_RichTextLabel_bbcode_text>` clear the tag stack and reconstruct it from the property's contents. Any edits made to :ref:`bbcode_text<class_RichTextLabel_bbcode_text>` will erase previous edits made from other manual sources such as :ref:`append_bbcode<class_RichTextLabel_append_bbcode>` and the ``push\_\*`` / :ref:`pop<class_RichTextLabel_pop>` methods.
+Note that assignments to :ref:`bbcode_text<class_RichTextLabel_bbcode_text>` clear the tag stack and reconstruct it from the property's contents. Any edits made to :ref:`bbcode_text<class_RichTextLabel_bbcode_text>` will erase previous edits made from other manual sources such as :ref:`append_bbcode<class_RichTextLabel_append_bbcode>` and the ``push_*`` / :ref:`pop<class_RichTextLabel_pop>` methods.
 
 Member Function Description
 ---------------------------
@@ -251,7 +251,7 @@ The assignment version of :ref:`append_bbcode<class_RichTextLabel_append_bbcode>
 
 - void **pop** **(** **)**
 
-Terminates the current tag. Use after ``push\_\*`` methods to close bbcodes manually. Does not need to follow ``add\_\*`` methods.
+Terminates the current tag. Use after ``push_*`` methods to close bbcodes manually. Does not need to follow ``add_*`` methods.
 
 .. _class_RichTextLabel_push_align:
 

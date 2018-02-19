@@ -21,7 +21,7 @@ Member Variables
 
   .. _class_CollisionPolygon2D_build_mode:
 
-- :ref:`BuildMode<enum_collisionpolygon2d_buildmode>` **build_mode** - Collision build mode. Use one of the ``BUILD\_\*`` constants. Default value: ``BUILD_SOLIDS``.
+- :ref:`BuildMode<enum_collisionpolygon2d_buildmode>` **build_mode** - Collision build mode. Use one of the ``BUILD_*`` constants. Default value: ``BUILD_SOLIDS``.
 
   .. _class_CollisionPolygon2D_disabled:
 

@@ -94,7 +94,7 @@ enum **Method**
 - **METHOD_TRACE** = **6** --- HTTP TRACE method. The TRACE method performs a message loop-back test along the path to the target resource. Returns the entire HTTP request received in the response body. Rarely used.
 - **METHOD_CONNECT** = **7** --- HTTP CONNECT method. The CONNECT method establishes a tunnel to the server identified by the target resource. Rarely used.
 - **METHOD_PATCH** = **8** --- HTTP PATCH method. The PATCH method is used to apply partial modifications to a resource.
-- **METHOD_MAX** = **9** --- Marker for end of ``METHOD\_\*`` enum. Not used.
+- **METHOD_MAX** = **9** --- Marker for end of ``METHOD_*`` enum. Not used.
 
   .. _enum_HTTPClient_ResponseCode:
 
@@ -271,7 +271,7 @@ Reads one chunk from the response.
 
 Sends a request to the connected host. The URL parameter is just the part after the host, so for ``http://somehost.com/index.php``, it is ``index.php``.
 
-Headers are HTTP request headers. For available HTTP methods, see ``METHOD\_\*``.
+Headers are HTTP request headers. For available HTTP methods, see ``METHOD_*``.
 
 To create a POST request with query strings to push to the server, do:
 
@@ -288,7 +288,7 @@ To create a POST request with query strings to push to the server, do:
 
 Sends a raw request to the connected host. The URL parameter is just the part after the host, so for ``http://somehost.com/index.php``, it is ``index.php``.
 
-Headers are HTTP request headers. For available HTTP methods, see ``METHOD\_\*``.
+Headers are HTTP request headers. For available HTTP methods, see ``METHOD_*``.
 
 Sends the body data raw, as a byte array and does not encode it in any way.
 

@@ -25,7 +25,7 @@ Member Variables
 
   .. _class_TextureButton_stretch_mode:
 
-- :ref:`StretchMode<enum_texturebutton_stretchmode>` **stretch_mode** - Controls the texture's behavior when you resize the node's bounding rectangle, **only if** :ref:`expand<class_TextureButton_expand>` is ``true``. Set it to one of the ``STRETCH\_\*`` constants. See the constants to learn more.
+- :ref:`StretchMode<enum_texturebutton_stretchmode>` **stretch_mode** - Controls the texture's behavior when you resize the node's bounding rectangle, **only if** :ref:`expand<class_TextureButton_expand>` is ``true``. Set it to one of the ``STRETCH_*`` constants. See the constants to learn more.
 
   .. _class_TextureButton_texture_click_mask:
 

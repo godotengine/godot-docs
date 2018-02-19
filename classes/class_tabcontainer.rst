@@ -76,7 +76,7 @@ Member Variables
 
   .. _class_TabContainer_tab_align:
 
-- :ref:`TabAlign<enum_tabcontainer_tabalign>` **tab_align** - The alignment of all tabs in the tab container. See the ``ALIGN\_\*`` constants for details.
+- :ref:`TabAlign<enum_tabcontainer_tabalign>` **tab_align** - The alignment of all tabs in the tab container. See the ``ALIGN_*`` constants for details.
 
   .. _class_TabContainer_tabs_visible:
 

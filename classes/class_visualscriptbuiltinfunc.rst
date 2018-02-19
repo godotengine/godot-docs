@@ -57,7 +57,7 @@ enum **BuiltinFunc**
 - **MATH_EASE** = **23** --- Easing function, based on exponent. 0 is constant, 1 is linear, 0 to 1 is ease-in, 1+ is ease out. Negative values are in-out/out in.
 - **MATH_DECIMALS** = **24** --- Return the number of digit places after the decimal that the first non-zero digit occurs.
 - **MATH_STEPIFY** = **25** --- Return the input snapped to a given step.
-- **MATH_LERP** = **26** --- Return a number linearly interpolated between the first two inputs, based on the third input. Uses the formula ``a + (a - b) \* t``.
+- **MATH_LERP** = **26** --- Return a number linearly interpolated between the first two inputs, based on the third input. Uses the formula ``a + (a - b) * t``.
 - **MATH_INVERSE_LERP** = **27**
 - **MATH_RANGE_LERP** = **28**
 - **MATH_DECTIME** = **29** --- Return the result of 'value' decreased by 'step' \* 'amount'.

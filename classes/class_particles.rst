@@ -34,7 +34,7 @@ Member Variables
 
   .. _class_Particles_draw_order:
 
-- :ref:`DrawOrder<enum_particles_draworder>` **draw_order** - Particle draw order. Uses ``DRAW_ORDER\_\*`` values. Default value: ``DRAW_ORDER_INDEX``.
+- :ref:`DrawOrder<enum_particles_draworder>` **draw_order** - Particle draw order. Uses ``DRAW_ORDER_*`` values. Default value: ``DRAW_ORDER_INDEX``.
 
   .. _class_Particles_draw_pass_1:
 

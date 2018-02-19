@@ -36,7 +36,7 @@ Member Variables
 
   .. _class_Line2D_begin_cap_mode:
 
-- :ref:`LineCapMode<enum_line2d_linecapmode>` **begin_cap_mode** - Controls the style of the line's first point. Use ``LINE_CAP\_\*`` constants. Default value: ``LINE_CAP_NONE``.
+- :ref:`LineCapMode<enum_line2d_linecapmode>` **begin_cap_mode** - Controls the style of the line's first point. Use ``LINE_CAP_*`` constants. Default value: ``LINE_CAP_NONE``.
 
   .. _class_Line2D_default_color:
 
@@ -44,7 +44,7 @@ Member Variables
 
   .. _class_Line2D_end_cap_mode:
 
-- :ref:`LineCapMode<enum_line2d_linecapmode>` **end_cap_mode** - Controls the style of the line's last point. Use ``LINE_CAP\_\*`` constants. Default value: ``LINE_CAP_NONE``.
+- :ref:`LineCapMode<enum_line2d_linecapmode>` **end_cap_mode** - Controls the style of the line's last point. Use ``LINE_CAP_*`` constants. Default value: ``LINE_CAP_NONE``.
 
   .. _class_Line2D_gradient:
 
@@ -72,7 +72,7 @@ Member Variables
 
   .. _class_Line2D_texture_mode:
 
-- :ref:`LineTextureMode<enum_line2d_linetexturemode>` **texture_mode** - The style to render the ``texture`` on the line. Use ``LINE_TEXTURE\_\*`` constants. Default value: ``LINE_TEXTURE_NONE``.
+- :ref:`LineTextureMode<enum_line2d_linetexturemode>` **texture_mode** - The style to render the ``texture`` on the line. Use ``LINE_TEXTURE_*`` constants. Default value: ``LINE_TEXTURE_NONE``.
 
   .. _class_Line2D_width:
 

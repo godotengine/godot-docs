@@ -18,9 +18,9 @@ Member Functions
 ----------------
 
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`                                  | :ref:`Color8<class_@GDScript_Color8>` **(** :ref:`int<class_int>` r8, :ref:`int<class_int>` g8, :ref:`int<class_int>` b8, :ref:`int<class_int>` a8 **)**                                                                        |
+| :ref:`Color<class_color>`                                  | :ref:`Color8<class_@GDScript_Color8>` **(** :ref:`int<class_int>` r8, :ref:`int<class_int>` g8, :ref:`int<class_int>` b8, :ref:`int<class_int>` a8=255 **)**                                                                    |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`                                  | :ref:`ColorN<class_@GDScript_ColorN>` **(** :ref:`String<class_string>` name, :ref:`float<class_float>` alpha **)**                                                                                                             |
+| :ref:`Color<class_color>`                                  | :ref:`ColorN<class_@GDScript_ColorN>` **(** :ref:`String<class_string>` name, :ref:`float<class_float>` alpha=1.0 **)**                                                                                                         |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`                                  | :ref:`abs<class_@GDScript_abs>` **(** :ref:`float<class_float>` s **)**                                                                                                                                                         |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -176,7 +176,7 @@ Member Functions
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                                      | :ref:`wrapi<class_@GDScript_wrapi>` **(** :ref:`int<class_int>` value, :ref:`int<class_int>` min, :ref:`int<class_int>` max **)**                                                                                               |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`GDScriptFunctionState<class_gdscriptfunctionstate>`  | :ref:`yield<class_@GDScript_yield>` **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` signal **)**                                                                                                          |
+| :ref:`GDScriptFunctionState<class_gdscriptfunctionstate>`  | :ref:`yield<class_@GDScript_yield>` **(** :ref:`Object<class_object>` object=null, :ref:`String<class_string>` signal="" **)**                                                                                                  |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
@@ -199,7 +199,7 @@ Member Function Description
 
 .. _class_@GDScript_Color8:
 
-- :ref:`Color<class_color>` **Color8** **(** :ref:`int<class_int>` r8, :ref:`int<class_int>` g8, :ref:`int<class_int>` b8, :ref:`int<class_int>` a8 **)**
+- :ref:`Color<class_color>` **Color8** **(** :ref:`int<class_int>` r8, :ref:`int<class_int>` g8, :ref:`int<class_int>` b8, :ref:`int<class_int>` a8=255 **)**
 
 Returns a 32 bit color with red, green, blue and alpha channels. Each channel has 8 bits of information ranging from 0 to 255.
 
@@ -217,7 +217,7 @@ Returns a 32 bit color with red, green, blue and alpha channels. Each channel ha
 
 .. _class_@GDScript_ColorN:
 
-- :ref:`Color<class_color>` **ColorN** **(** :ref:`String<class_string>` name, :ref:`float<class_float>` alpha **)**
+- :ref:`Color<class_color>` **ColorN** **(** :ref:`String<class_string>` name, :ref:`float<class_float>` alpha=1.0 **)**
 
 Returns a color according to the standardised ``name`` with ``alpha`` ranging from 0 to 1.
 
@@ -375,7 +375,7 @@ Returns the cosine of angle ``s`` in radians.
 ::
 
     # prints 1 and -1
-    print(cos(PI\*2))
+    print(cos(PI*2))
     print(cos(PI))
 
 .. _class_@GDScript_cosh:
@@ -672,6 +672,8 @@ Returns the nearest larger power of 2 for integer ``value``.
 Parse JSON text to a Variant (use :ref:`typeof<class_@GDScript_typeof>` to check if it is what you expect).
 
 Be aware that the JSON specification does not define integer or float types, but only a number type. Therefore, parsing a JSON text will convert all numerical values to :ref:`float<class_float>` types.
+
+Note that JSON objects do not preserve key order like Godot dictionaries, thus you should not rely on keys being in a certain order if a dictionary is constructed from JSON. In contrast, JSON arrays retain the order of their elements:
 
 ::
 
@@ -1124,7 +1126,7 @@ Usable for creating loop-alike behavior or infinite surfaces.
 
 .. _class_@GDScript_yield:
 
-- :ref:`GDScriptFunctionState<class_gdscriptfunctionstate>` **yield** **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` signal **)**
+- :ref:`GDScriptFunctionState<class_gdscriptfunctionstate>` **yield** **(** :ref:`Object<class_object>` object=null, :ref:`String<class_string>` signal="" **)**
 
 Stops the function execution and returns the current state. Call :ref:`GDScriptFunctionState.resume<class_GDScriptFunctionState_resume>` on the state to resume execution. This invalidates the state.
 

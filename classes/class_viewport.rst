@@ -78,15 +78,15 @@ Member Variables
 
   .. _class_Viewport_arvr:
 
-- :ref:`bool<class_bool>` **arvr**
+- :ref:`bool<class_bool>` **arvr** - If ``true`` the viewport will be used in AR/VR process. Default value: ``false``.
 
   .. _class_Viewport_audio_listener_enable_2d:
 
-- :ref:`bool<class_bool>` **audio_listener_enable_2d**
+- :ref:`bool<class_bool>` **audio_listener_enable_2d** - If ``true`` the viewport will process 2D audio streams. Default value: ``false``.
 
   .. _class_Viewport_audio_listener_enable_3d:
 
-- :ref:`bool<class_bool>` **audio_listener_enable_3d**
+- :ref:`bool<class_bool>` **audio_listener_enable_3d** - If ``true`` the viewport will process 3D audio streams. Default value: ``false``.
 
   .. _class_Viewport_canvas_transform:
 
@@ -94,11 +94,11 @@ Member Variables
 
   .. _class_Viewport_debug_draw:
 
-- :ref:`DebugDraw<enum_viewport_debugdraw>` **debug_draw**
+- :ref:`DebugDraw<enum_viewport_debugdraw>` **debug_draw** - The overlay mode for test rendered geometry in debug purposes. Default value: ``DEBUG_DRAW_DISABLED``.
 
   .. _class_Viewport_disable_3d:
 
-- :ref:`bool<class_bool>` **disable_3d**
+- :ref:`bool<class_bool>` **disable_3d** - If ``true`` the viewport will disable 3D rendering. For actual disabling use ``usage``. Default value: ``false``.
 
   .. _class_Viewport_global_canvas_transform:
 
@@ -106,79 +106,79 @@ Member Variables
 
   .. _class_Viewport_gui_disable_input:
 
-- :ref:`bool<class_bool>` **gui_disable_input**
+- :ref:`bool<class_bool>` **gui_disable_input** - If ``true`` the viewport will not receive input event. Default value: ``false``.
 
   .. _class_Viewport_gui_snap_controls_to_pixels:
 
-- :ref:`bool<class_bool>` **gui_snap_controls_to_pixels**
+- :ref:`bool<class_bool>` **gui_snap_controls_to_pixels** - If ``true`` the GUI controls on the viewport will lay pixel perfectly. Default value: ``true``.
 
   .. _class_Viewport_hdr:
 
-- :ref:`bool<class_bool>` **hdr**
+- :ref:`bool<class_bool>` **hdr** - If ``true`` the viewport rendering will receive benefits from High Dynamic Range algorithm. Default value: ``true``.
 
   .. _class_Viewport_msaa:
 
-- :ref:`MSAA<enum_viewport_msaa>` **msaa**
+- :ref:`MSAA<enum_viewport_msaa>` **msaa** - The multisample anti-aliasing mode. Default value: ``MSAA_DISABLED``.
 
   .. _class_Viewport_own_world:
 
-- :ref:`bool<class_bool>` **own_world**
+- :ref:`bool<class_bool>` **own_world** - If ``true`` the viewport will use :ref:`World<class_world>` defined in ``world`` property. Default value: ``false``.
 
   .. _class_Viewport_physics_object_picking:
 
-- :ref:`bool<class_bool>` **physics_object_picking**
+- :ref:`bool<class_bool>` **physics_object_picking** - If ``true`` the objects rendered by viewport become subjects of mouse picking process. Default value: ``false``.
 
   .. _class_Viewport_render_target_clear_mode:
 
-- :ref:`ClearMode<enum_viewport_clearmode>` **render_target_clear_mode**
+- :ref:`ClearMode<enum_viewport_clearmode>` **render_target_clear_mode** - The clear mode when viewport used as a render target. Default value: ``CLEAR_MODE_ALWAYS``.
 
   .. _class_Viewport_render_target_update_mode:
 
-- :ref:`UpdateMode<enum_viewport_updatemode>` **render_target_update_mode**
+- :ref:`UpdateMode<enum_viewport_updatemode>` **render_target_update_mode** - The update mode when viewport used as a render target. Default value: ``UPDATE_WHEN_VISIBLE``.
 
   .. _class_Viewport_render_target_v_flip:
 
-- :ref:`bool<class_bool>` **render_target_v_flip**
+- :ref:`bool<class_bool>` **render_target_v_flip** - If ``true`` the result of rendering will be flipped vertically. Default value: ``false``.
 
   .. _class_Viewport_shadow_atlas_quad_0:
 
-- :ref:`ShadowAtlasQuadrantSubdiv<enum_viewport_shadowatlasquadrantsubdiv>` **shadow_atlas_quad_0**
+- :ref:`ShadowAtlasQuadrantSubdiv<enum_viewport_shadowatlasquadrantsubdiv>` **shadow_atlas_quad_0** - The subdivision amount of first quadrant on shadow atlas. Default value: ``SHADOW_ATLAS_QUADRANT_SUBDIV_4``.
 
   .. _class_Viewport_shadow_atlas_quad_1:
 
-- :ref:`ShadowAtlasQuadrantSubdiv<enum_viewport_shadowatlasquadrantsubdiv>` **shadow_atlas_quad_1**
+- :ref:`ShadowAtlasQuadrantSubdiv<enum_viewport_shadowatlasquadrantsubdiv>` **shadow_atlas_quad_1** - The subdivision amount of second quadrant on shadow atlas. Default value: ``SHADOW_ATLAS_QUADRANT_SUBDIV_4``.
 
   .. _class_Viewport_shadow_atlas_quad_2:
 
-- :ref:`ShadowAtlasQuadrantSubdiv<enum_viewport_shadowatlasquadrantsubdiv>` **shadow_atlas_quad_2**
+- :ref:`ShadowAtlasQuadrantSubdiv<enum_viewport_shadowatlasquadrantsubdiv>` **shadow_atlas_quad_2** - The subdivision amount of third quadrant on shadow atlas. Default value: ``SHADOW_ATLAS_QUADRANT_SUBDIV_16``.
 
   .. _class_Viewport_shadow_atlas_quad_3:
 
-- :ref:`ShadowAtlasQuadrantSubdiv<enum_viewport_shadowatlasquadrantsubdiv>` **shadow_atlas_quad_3**
+- :ref:`ShadowAtlasQuadrantSubdiv<enum_viewport_shadowatlasquadrantsubdiv>` **shadow_atlas_quad_3** - The subdivision amount of fourth quadrant on shadow atlas. Default value: ``SHADOW_ATLAS_QUADRANT_SUBDIV_64``.
 
   .. _class_Viewport_shadow_atlas_size:
 
-- :ref:`int<class_int>` **shadow_atlas_size**
+- :ref:`int<class_int>` **shadow_atlas_size** - The resolution of shadow atlas. Both width and height is equal to one value.
 
   .. _class_Viewport_size:
 
-- :ref:`Vector2<class_vector2>` **size**
+- :ref:`Vector2<class_vector2>` **size** - The width and height of viewport.
 
   .. _class_Viewport_transparent_bg:
 
-- :ref:`bool<class_bool>` **transparent_bg**
+- :ref:`bool<class_bool>` **transparent_bg** - If ``true`` the viewport should render its background as transparent. Default value: ``false``.
 
   .. _class_Viewport_usage:
 
-- :ref:`Usage<enum_viewport_usage>` **usage**
+- :ref:`Usage<enum_viewport_usage>` **usage** - The rendering mode of viewport. Default value: ``USAGE_3D``.
 
   .. _class_Viewport_world:
 
-- :ref:`World<class_world>` **world**
+- :ref:`World<class_world>` **world** - The custom :ref:`World<class_world>` which can be used as 3D environment source.
 
   .. _class_Viewport_world_2d:
 
-- :ref:`World2D<class_world2d>` **world_2d**
+- :ref:`World2D<class_world2d>` **world_2d** - The custom :ref:`World2D<class_world2d>` which can be used as 2D environment source.
 
 
 Enums
@@ -191,25 +191,25 @@ enum **UpdateMode**
 - **UPDATE_DISABLED** = **0** --- Do not update the render target.
 - **UPDATE_ONCE** = **1** --- Update the render target once, then switch to ``UPDATE_DISABLED``
 - **UPDATE_WHEN_VISIBLE** = **2** --- Update the render target only when it is visible. This is the default value.
-- **UPDATE_ALWAYS** = **3**
+- **UPDATE_ALWAYS** = **3** --- Always update the render target.
 
   .. _enum_Viewport_RenderInfo:
 
 enum **RenderInfo**
 
-- **RENDER_INFO_OBJECTS_IN_FRAME** = **0**
-- **RENDER_INFO_VERTICES_IN_FRAME** = **1**
-- **RENDER_INFO_MATERIAL_CHANGES_IN_FRAME** = **2**
-- **RENDER_INFO_SHADER_CHANGES_IN_FRAME** = **3**
-- **RENDER_INFO_SURFACE_CHANGES_IN_FRAME** = **4**
-- **RENDER_INFO_DRAW_CALLS_IN_FRAME** = **5**
-- **RENDER_INFO_MAX** = **6**
+- **RENDER_INFO_OBJECTS_IN_FRAME** = **0** --- Amount of objects in frame.
+- **RENDER_INFO_VERTICES_IN_FRAME** = **1** --- Amount of vertices in frame.
+- **RENDER_INFO_MATERIAL_CHANGES_IN_FRAME** = **2** --- Amount of material changes in frame.
+- **RENDER_INFO_SHADER_CHANGES_IN_FRAME** = **3** --- Amount of shader changes in frame.
+- **RENDER_INFO_SURFACE_CHANGES_IN_FRAME** = **4** --- Amount of surface changes in frame.
+- **RENDER_INFO_DRAW_CALLS_IN_FRAME** = **5** --- Amount of draw calls in frame.
+- **RENDER_INFO_MAX** = **6** --- Enum limiter. Do not use it directly.
 
   .. _enum_Viewport_MSAA:
 
 enum **MSAA**
 
-- **MSAA_DISABLED** = **0**
+- **MSAA_DISABLED** = **0** --- Multisample anti-aliasing mode disabled. This is the default value.
 - **MSAA_2X** = **1**
 - **MSAA_4X** = **2**
 - **MSAA_8X** = **3**
@@ -236,10 +236,10 @@ enum **Usage**
 
 enum **DebugDraw**
 
-- **DEBUG_DRAW_DISABLED** = **0**
-- **DEBUG_DRAW_UNSHADED** = **1**
+- **DEBUG_DRAW_DISABLED** = **0** --- Objects are displayed normally.
+- **DEBUG_DRAW_UNSHADED** = **1** --- Objects are displayed without light information.
 - **DEBUG_DRAW_OVERDRAW** = **2**
-- **DEBUG_DRAW_WIREFRAME** = **3**
+- **DEBUG_DRAW_WIREFRAME** = **3** --- Objects are displayed in wireframe style.
 
   .. _enum_Viewport_ShadowAtlasQuadrantSubdiv:
 
@@ -252,7 +252,7 @@ enum **ShadowAtlasQuadrantSubdiv**
 - **SHADOW_ATLAS_QUADRANT_SUBDIV_64** = **4**
 - **SHADOW_ATLAS_QUADRANT_SUBDIV_256** = **5**
 - **SHADOW_ATLAS_QUADRANT_SUBDIV_1024** = **6**
-- **SHADOW_ATLAS_QUADRANT_SUBDIV_MAX** = **7**
+- **SHADOW_ATLAS_QUADRANT_SUBDIV_MAX** = **7** --- Enum limiter. Do not use it directly.
 
 
 Description
@@ -306,6 +306,8 @@ Get the mouse position, relative to the viewport.
 .. _class_Viewport_get_render_info:
 
 - :ref:`int<class_int>` **get_render_info** **(** :ref:`int<class_int>` info **)**
+
+Get the specific information about the viewport from rendering pipeline.
 
 .. _class_Viewport_get_size_override:
 

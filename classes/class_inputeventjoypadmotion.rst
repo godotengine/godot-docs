@@ -14,14 +14,14 @@ InputEventJoypadMotion
 Brief Description
 -----------------
 
-Input event type for gamepad joysticks and other motions. For buttons see ``InputEventJoypadMotion``.
+Input event type for gamepad joysticks and other motions. For buttons see ``InputEventJoypadButton``.
 
 Member Variables
 ----------------
 
   .. _class_InputEventJoypadMotion_axis:
 
-- :ref:`int<class_int>` **axis** - Axis identifier. Use one of the ``JOY_AXIS\_\*`` constants in @global Scope.
+- :ref:`int<class_int>` **axis** - Axis identifier. Use one of the ``JOY_AXIS_*`` constants in @global Scope.
 
   .. _class_InputEventJoypadMotion_axis_value:
 

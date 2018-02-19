@@ -107,7 +107,7 @@ Member Function Description
 
 - :ref:`int<class_int>` **add_point** **(** :ref:`Vector2<class_vector2>` position, :ref:`float<class_float>` left_tangent=0, :ref:`float<class_float>` right_tangent=0, :ref:`int<class_int>` left_mode=0, :ref:`int<class_int>` right_mode=0 **)**
 
-Adds a point to the curve. For each side, if the ``\*_mode`` is ``TANGENT_LINEAR``, the ``\*_tangent`` angle (in degrees) uses the slope of the curve halfway to the adjacent point. Allows custom assignments to the ``\*_tangent`` angle if ``\*_mode`` is set to ``TANGENT_FREE``.
+Adds a point to the curve. For each side, if the ``*_mode`` is ``TANGENT_LINEAR``, the ``*_tangent`` angle (in degrees) uses the slope of the curve halfway to the adjacent point. Allows custom assignments to the ``*_tangent`` angle if ``*_mode`` is set to ``TANGENT_FREE``.
 
 .. _class_Curve_bake:
 

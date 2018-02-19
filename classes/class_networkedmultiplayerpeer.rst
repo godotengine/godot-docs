@@ -9,7 +9,7 @@ NetworkedMultiplayerPeer
 
 **Inherits:** :ref:`PacketPeer<class_packetpeer>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
 
-**Inherited By:** :ref:`NetworkedMultiplayerENet<class_networkedmultiplayerenet>`
+**Inherited By:** :ref:`NetworkedMultiplayerENet<class_networkedmultiplayerenet>`, :ref:`WebSocketMultiplayerPeer<class_websocketmultiplayerpeer>`
 
 **Category:** Core
 

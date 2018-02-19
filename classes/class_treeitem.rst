@@ -222,7 +222,7 @@ Returns the number of buttons in column ``column``. May be used to get the most 
 
 - :ref:`int<class_int>` **get_cell_mode** **(** :ref:`int<class_int>` column **)** const
 
-Returns the column's cell mode. See ``CELL_MODE\_\*`` constants.
+Returns the column's cell mode. See ``CELL_MODE_*`` constants.
 
 .. _class_TreeItem_get_children:
 
@@ -388,7 +388,7 @@ Sets the given column's button :ref:`Texture<class_texture>` at index ``button_i
 
 - void **set_cell_mode** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` mode **)**
 
-Sets the given column's cell mode to ``mode``. See ``CELL_MODE\_\*`` constants.
+Sets the given column's cell mode to ``mode``. See ``CELL_MODE_*`` constants.
 
 .. _class_TreeItem_set_checked:
 
@@ -474,7 +474,7 @@ If ``true`` the given column is selectable.
 
 - void **set_text_align** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` text_align **)**
 
-Sets the given column's text alignment. See ``ALIGN\_\*`` constants.
+Sets the given column's text alignment. See ``ALIGN_*`` constants.
 
 .. _class_TreeItem_set_tooltip:
 

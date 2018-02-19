@@ -90,7 +90,7 @@ Description
 
 Theme for skinning controls. Controls can be skinned individually, but for complex applications it's more efficient to just create a global theme that defines everything. This theme can be applied to any :ref:`Control<class_control>`, and it and its children will automatically use it.
 
-See the :ref:`GUI skinning tutorial<doc_gui_skinning>` for more information.
+Theme resources can be alternatively loaded by writing them in a .theme file, see docs for more info.
 
 Member Function Description
 ---------------------------

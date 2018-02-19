@@ -18,8 +18,23 @@ Brief Description
 
 Base class for audio streams.
 
+Member Functions
+----------------
+
++----------------------------+-------------------------------------------------------------------+
+| :ref:`float<class_float>`  | :ref:`get_length<class_AudioStream_get_length>` **(** **)** const |
++----------------------------+-------------------------------------------------------------------+
+
 Description
 -----------
 
 Base class for audio streams. Audio streams are used for music playback, or other types of streamed sounds that don't fit or require more flexibility than a Sample.
+
+Member Function Description
+---------------------------
+
+.. _class_AudioStream_get_length:
+
+- :ref:`float<class_float>` **get_length** **(** **)** const
+
 

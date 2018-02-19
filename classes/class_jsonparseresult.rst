@@ -35,13 +35,15 @@ Member Variables
 
 - :ref:`Variant<class_variant>` **result** - A :ref:`Variant<class_variant>` containing the parsed JSON. Use typeof() to check if it is what you expect. For example, if JSON source starts with curly braces (``{}``) a :ref:`Dictionary<class_dictionary>` will be returned, if JSON source starts with braces (``[]``) an :ref:`Array<class_array>` will be returned.
 
-*Be aware that the JSON specification does not define integer or float types, but only a number type. Therefore, parsing a JSON text will convert all numerical values to float types.*
+*Be aware that the JSON specification does not define integer or float types, but only a number type. Therefore, parsing a JSON text will convert all numerical values to float types.
+
+Note that JSON objects do not preserve key order like Godot dictionaries, thus you should not rely on keys being in a certain order if a dictionary is constructed from JSON. In contrast, JSON arrays retain the order of their elements:*
 
 ::
 
-    p = JSON.parse('["hello", "world", "!"]')
-    if typeof(p) == TYPE_ARRAY:
-        print(p[0]) # prints 'hello'
+    var p = JSON.parse('["hello", "world", "!"]')
+    if typeof(p.result) == TYPE_ARRAY:
+        print(p.result[0]) # prints 'hello'
     else:
         print("unexpected results")
 
@@ -49,5 +51,5 @@ Member Variables
 Description
 -----------
 
-Returned by :ref:`JSON.parse<class_JSON_parse>`, ``JSONParseResult`` contains decoded JSON or error information if JSON source not successfully parsed. You can check if JSON source was successfully parsed with ``if json_result.error == 0``.
+Returned by :ref:`JSON.parse<class_JSON_parse>`, ``JSONParseResult`` contains decoded JSON or error information if JSON source not successfully parsed. You can check if JSON source was successfully parsed with ``if json_result.error == OK``.
 

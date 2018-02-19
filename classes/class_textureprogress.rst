@@ -25,7 +25,7 @@ Member Variables
 
   .. _class_TextureProgress_nine_patch_stretch:
 
-- :ref:`bool<class_bool>` **nine_patch_stretch** - If ``true`` Godot treats the bar's textures like :ref:`NinePatchRect<class_ninepatchrect>`. Use ``stretch_margin\_\*``, like :ref:`stretch_margin_bottom<class_TextureProgress_stretch_margin_bottom>`, to set up the nine patch's 3x3 grid. Default value: ``false``.
+- :ref:`bool<class_bool>` **nine_patch_stretch** - If ``true`` Godot treats the bar's textures like :ref:`NinePatchRect<class_ninepatchrect>`. Use ``stretch_margin_*``, like :ref:`stretch_margin_bottom<class_TextureProgress_stretch_margin_bottom>`, to set up the nine patch's 3x3 grid. Default value: ``false``.
 
   .. _class_TextureProgress_radial_center_offset:
 

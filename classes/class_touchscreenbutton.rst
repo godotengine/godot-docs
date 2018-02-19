@@ -76,7 +76,7 @@ Member Variables
 
   .. _class_TouchScreenButton_visibility_mode:
 
-- :ref:`VisibilityMode<enum_touchscreenbutton_visibilitymode>` **visibility_mode** - The button's visibility mode. See ``VISIBILITY\_\*`` constants.
+- :ref:`VisibilityMode<enum_touchscreenbutton_visibilitymode>` **visibility_mode** - The button's visibility mode. See ``VISIBILITY_*`` constants.
 
 
 Enums

@@ -26,9 +26,9 @@ Member Functions
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform2D<class_transform2d>`  | :ref:`affine_inverse<class_Transform2D_affine_inverse>` **(** **)**                                                                                                            |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`  | :ref:`basis_xform<class_Transform2D_basis_xform>` **(** var v **)**                                                                                                            |
+| :ref:`Vector2<class_vector2>`          | :ref:`basis_xform<class_Transform2D_basis_xform>` **(** :ref:`Vector2<class_vector2>` v **)**                                                                                  |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`  | :ref:`basis_xform_inv<class_Transform2D_basis_xform_inv>` **(** var v **)**                                                                                                    |
+| :ref:`Vector2<class_vector2>`          | :ref:`basis_xform_inv<class_Transform2D_basis_xform_inv>` **(** :ref:`Vector2<class_vector2>` v **)**                                                                          |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`          | :ref:`get_origin<class_Transform2D_get_origin>` **(** **)**                                                                                                                    |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -48,9 +48,9 @@ Member Functions
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Transform2D<class_transform2d>`  | :ref:`translated<class_Transform2D_translated>` **(** :ref:`Vector2<class_vector2>` offset **)**                                                                               |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`  | :ref:`xform<class_Transform2D_xform>` **(** var v **)**                                                                                                                        |
+| var                                    | :ref:`xform<class_Transform2D_xform>` **(** var v **)**                                                                                                                        |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_transform2d>`  | :ref:`xform_inv<class_Transform2D_xform_inv>` **(** var v **)**                                                                                                                |
+| var                                    | :ref:`xform_inv<class_Transform2D_xform_inv>` **(** var v **)**                                                                                                                |
 +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Member Variables
@@ -103,13 +103,13 @@ Returns the inverse of the matrix.
 
 .. _class_Transform2D_basis_xform:
 
-- :ref:`Transform2D<class_transform2d>` **basis_xform** **(** var v **)**
+- :ref:`Vector2<class_vector2>` **basis_xform** **(** :ref:`Vector2<class_vector2>` v **)**
 
 Transforms the given vector by this transform's basis (no translation).
 
 .. _class_Transform2D_basis_xform_inv:
 
-- :ref:`Transform2D<class_transform2d>` **basis_xform_inv** **(** var v **)**
+- :ref:`Vector2<class_vector2>` **basis_xform_inv** **(** :ref:`Vector2<class_vector2>` v **)**
 
 Inverse-transforms the given vector by this transform's basis (no translation).
 
@@ -169,14 +169,14 @@ Translates the transform by the given offset.
 
 .. _class_Transform2D_xform:
 
-- :ref:`Transform2D<class_transform2d>` **xform** **(** var v **)**
+- var **xform** **(** var v **)**
 
-Transforms the given vector "v" by this transform.
+Transforms the given :ref:`Vector2<class_vector2>` or :ref:`Rect2<class_rect2>` by this transform.
 
 .. _class_Transform2D_xform_inv:
 
-- :ref:`Transform2D<class_transform2d>` **xform_inv** **(** var v **)**
+- var **xform_inv** **(** var v **)**
 
-Inverse-transforms the given vector "v" by this transform.
+Inverse-transforms the given :ref:`Vector2<class_vector2>` or :ref:`Rect2<class_rect2>` by this transform.
 
 

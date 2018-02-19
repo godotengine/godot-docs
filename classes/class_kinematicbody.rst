@@ -137,7 +137,7 @@ Moves the body along a vector. If the body collides with another, it will slide 
 
 If the body is standing on a slope and the horizontal speed (relative to the floor's speed) goes below ``slope_stop_min_velocity``, the body will stop completely. This prevents the body from sliding down slopes when you include gravity in ``linear_velocity``. When set to lower values, the body will not be able to stand still on steep slopes.
 
-If the body collides, it will change direction a maximum of ``max_bounces`` times before it stops.
+If the body collides, it will change direction a maximum of ``max_slides`` times before it stops.
 
 ``floor_max_angle`` is the maximum angle (in radians) where a slope is still considered a floor (or a ceiling), rather than a wall. The default value equals 45 degrees.
 

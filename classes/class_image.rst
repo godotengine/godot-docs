@@ -116,7 +116,7 @@ Member Variables
 
   .. _class_Image_data:
 
-- :ref:`Dictionary<class_dictionary>` **data** - Holds all of the image's color data in a given format. See ``FORMAT\_\*`` constants.
+- :ref:`Dictionary<class_dictionary>` **data** - Holds all of the image's color data in a given format. See ``FORMAT_*`` constants.
 
 
 Enums
@@ -242,13 +242,13 @@ Removes the image's mipmaps.
 
 - :ref:`int<class_int>` **compress** **(** :ref:`int<class_int>` mode, :ref:`int<class_int>` source, :ref:`float<class_float>` lossy_quality **)**
 
-Compresses the image to use less memory. Can not directly access pixel data while the image is compressed. Returns error if the chosen compression mode is not available. See ``COMPRESS\_\*`` constants.
+Compresses the image to use less memory. Can not directly access pixel data while the image is compressed. Returns error if the chosen compression mode is not available. See ``COMPRESS_*`` constants.
 
 .. _class_Image_convert:
 
 - void **convert** **(** :ref:`int<class_int>` format **)**
 
-Converts the image's format. See ``FORMAT\_\*`` constants.
+Converts the image's format. See ``FORMAT_*`` constants.
 
 .. _class_Image_copy_from:
 
@@ -260,13 +260,13 @@ Copies ``src`` image to this image.
 
 - void **create** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` use_mipmaps, :ref:`int<class_int>` format **)**
 
-Creates an empty image of given size and format. See ``FORMAT\_\*`` constants. If ``use_mipmaps`` is true then generate mipmaps for this image. See the ``generate_mipmaps`` method.
+Creates an empty image of given size and format. See ``FORMAT_*`` constants. If ``use_mipmaps`` is true then generate mipmaps for this image. See the ``generate_mipmaps`` method.
 
 .. _class_Image_create_from_data:
 
 - void **create_from_data** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` use_mipmaps, :ref:`int<class_int>` format, :ref:`PoolByteArray<class_poolbytearray>` data **)**
 
-Creates a new image of given size and format. See ``FORMAT\_\*`` constants. Fills the image with the given raw data. If ``use_mipmaps`` is true then generate mipmaps for this image. See the ``generate_mipmaps`` method.
+Creates a new image of given size and format. See ``FORMAT_*`` constants. Fills the image with the given raw data. If ``use_mipmaps`` is true then generate mipmaps for this image. See the ``generate_mipmaps`` method.
 
 .. _class_Image_crop:
 
@@ -332,7 +332,7 @@ Returns the image's raw data.
 
 - :ref:`int<class_int>` **get_format** **(** **)** const
 
-Returns the image's raw data.
+Returns the image’s format. See ``FORMAT_*`` constants.
 
 .. _class_Image_get_height:
 
@@ -430,7 +430,7 @@ Converts the image's data to represent coordinates on a 3D plane. This is used w
 
 - void **premultiply_alpha** **(** **)**
 
-Multiplies color values with alpha values. Resulting color values for a pixel are ``(color \* alpha)/256``.
+Multiplies color values with alpha values. Resulting color values for a pixel are ``(color * alpha)/256``.
 
 .. _class_Image_resize:
 

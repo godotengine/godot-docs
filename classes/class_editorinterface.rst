@@ -44,6 +44,8 @@ Member Functions
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`inspect_object<class_EditorInterface_inspect_object>` **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` for_property="" **)** |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                    | :ref:`is_plugin_enabled<class_EditorInterface_is_plugin_enabled>` **(** :ref:`String<class_string>` plugin **)** const                                  |
++------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_array>`                                  | :ref:`make_mesh_previews<class_EditorInterface_make_mesh_previews>` **(** :ref:`Array<class_array>` meshes, :ref:`int<class_int>` preview_size **)**    |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`open_scene_from_path<class_EditorInterface_open_scene_from_path>` **(** :ref:`String<class_string>` scene_filepath **)**                          |
@@ -55,6 +57,8 @@ Member Functions
 | void                                                       | :ref:`save_scene_as<class_EditorInterface_save_scene_as>` **(** :ref:`String<class_string>` path, :ref:`bool<class_bool>` with_preview=true **)**       |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                       | :ref:`select_file<class_EditorInterface_select_file>` **(** :ref:`String<class_string>` p_file **)**                                                    |
++------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                       | :ref:`set_plugin_enabled<class_EditorInterface_set_plugin_enabled>` **(** :ref:`String<class_string>` plugin, :ref:`bool<class_bool>` enabled **)**     |
 +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
@@ -135,6 +139,12 @@ Returns the :ref:`EditorSelection<class_editorselection>`.
 
 Shows the given property on the given ``object`` in the Editor's Inspector dock.
 
+.. _class_EditorInterface_is_plugin_enabled:
+
+- :ref:`bool<class_bool>` **is_plugin_enabled** **(** :ref:`String<class_string>` plugin **)** const
+
+Returns the enabled status of a plugin. The plugin name is the same as its directory name.
+
 .. _class_EditorInterface_make_mesh_previews:
 
 - :ref:`Array<class_array>` **make_mesh_previews** **(** :ref:`Array<class_array>` meshes, :ref:`int<class_int>` preview_size **)**
@@ -168,5 +178,11 @@ Saves the scene as a file at ``path``.
 .. _class_EditorInterface_select_file:
 
 - void **select_file** **(** :ref:`String<class_string>` p_file **)**
+
+.. _class_EditorInterface_set_plugin_enabled:
+
+- void **set_plugin_enabled** **(** :ref:`String<class_string>` plugin, :ref:`bool<class_bool>` enabled **)**
+
+Sets the enabled status of a plugin. The plugin name is the same as its directory name.
 
 

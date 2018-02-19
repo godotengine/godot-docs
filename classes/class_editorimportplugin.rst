@@ -22,6 +22,8 @@ Member Functions
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_array>`    | :ref:`get_import_options<class_EditorImportPlugin_get_import_options>` **(** :ref:`int<class_int>` preset **)** virtual                                                                                                                                                              |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`get_import_order<class_EditorImportPlugin_get_import_order>` **(** **)** virtual                                                                                                                                                                                               |
++------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`  | :ref:`get_importer_name<class_EditorImportPlugin_get_importer_name>` **(** **)** virtual                                                                                                                                                                                             |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`      | :ref:`get_option_visibility<class_EditorImportPlugin_get_option_visibility>` **(** :ref:`String<class_string>` option, :ref:`Dictionary<class_dictionary>` options **)** virtual                                                                                                     |
@@ -29,6 +31,8 @@ Member Functions
 | :ref:`int<class_int>`        | :ref:`get_preset_count<class_EditorImportPlugin_get_preset_count>` **(** **)** virtual                                                                                                                                                                                               |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`  | :ref:`get_preset_name<class_EditorImportPlugin_get_preset_name>` **(** :ref:`int<class_int>` preset **)** virtual                                                                                                                                                                    |
++------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`    | :ref:`get_priority<class_EditorImportPlugin_get_priority>` **(** **)** virtual                                                                                                                                                                                                       |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Array<class_array>`    | :ref:`get_recognized_extensions<class_EditorImportPlugin_get_recognized_extensions>` **(** **)** virtual                                                                                                                                                                             |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -105,6 +109,12 @@ Member Function Description
 
 Get the options and default values for the preset at this index. Returns an Array of Dictionaries with the following keys: "name", "default_value", "property_hint" (optional), "hint_string" (optional), "usage" (optional).
 
+.. _class_EditorImportPlugin_get_import_order:
+
+- :ref:`int<class_int>` **get_import_order** **(** **)** virtual
+
+Get the order of this importer to be run when importing resources. Higher values will be called later. Use this to ensure the importer runs after the dependencies are already imported.
+
 .. _class_EditorImportPlugin_get_importer_name:
 
 - :ref:`String<class_string>` **get_importer_name** **(** **)** virtual
@@ -126,6 +136,12 @@ Get the number of initial presets defined by the plugin. Use :ref:`get_import_op
 - :ref:`String<class_string>` **get_preset_name** **(** :ref:`int<class_int>` preset **)** virtual
 
 Get the name of the options preset at this index.
+
+.. _class_EditorImportPlugin_get_priority:
+
+- :ref:`float<class_float>` **get_priority** **(** **)** virtual
+
+Get the priority of this plugin for the recognized extension. Higher priority plugins will be preferred. Default value is 1.0.
 
 .. _class_EditorImportPlugin_get_recognized_extensions:
 

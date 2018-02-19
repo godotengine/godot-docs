@@ -40,7 +40,7 @@ Member Variables
 
   .. _class_Camera2D_anchor_mode:
 
-- :ref:`AnchorMode<enum_camera2d_anchormode>` **anchor_mode** - The Camera2D's anchor point. See ``ANCHOR_MODE\_\*`` constants.
+- :ref:`AnchorMode<enum_camera2d_anchormode>` **anchor_mode** - The Camera2D's anchor point. See ``ANCHOR_MODE_*`` constants.
 
   .. _class_Camera2D_current:
 

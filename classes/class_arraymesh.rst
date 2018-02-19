@@ -34,6 +34,8 @@ Member Functions
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`            | :ref:`get_surface_count<class_ArrayMesh_get_surface_count>` **(** **)** const                                                                                                                                                                  |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`lightmap_unwrap<class_ArrayMesh_lightmap_unwrap>` **(** :ref:`Transform<class_transform>` arg0, :ref:`float<class_float>` arg1 **)**                                                                                                     |
++----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                             | :ref:`regen_normalmaps<class_ArrayMesh_regen_normalmaps>` **(** **)**                                                                                                                                                                          |
 +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`            | :ref:`surface_get_array_index_len<class_ArrayMesh_surface_get_array_index_len>` **(** :ref:`int<class_int>` surf_idx **)** const                                                                                                               |
@@ -148,6 +150,10 @@ Surfaces are created to be rendered using a "primitive", which may be PRIMITIVE_
 - :ref:`int<class_int>` **get_surface_count** **(** **)** const
 
 Return the amount of surfaces that the ``ArrayMesh`` holds.
+
+.. _class_ArrayMesh_lightmap_unwrap:
+
+- :ref:`int<class_int>` **lightmap_unwrap** **(** :ref:`Transform<class_transform>` arg0, :ref:`float<class_float>` arg1 **)**
 
 .. _class_ArrayMesh_regen_normalmaps:
 

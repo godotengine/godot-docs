@@ -97,7 +97,7 @@ Returns the number of signal connections in the scene.
 
 - :ref:`int<class_int>` **get_connection_flags** **(** :ref:`int<class_int>` idx **)** const
 
-Returns the flags for the signal at ``idx``. See :ref:`Object<class_object>`'s ``CONNECT\_\*`` flags.
+Returns the flags for the signal at ``idx``. See :ref:`Object<class_object>`'s ``CONNECT_*`` flags.
 
 .. _class_SceneState_get_connection_method:
 

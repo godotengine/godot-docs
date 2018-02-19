@@ -34,7 +34,7 @@ Member Variables
 
   .. _class_Label_align:
 
-- :ref:`Align<enum_label_align>` **align** - Controls the text's horizontal align. Supports left, center, right, and fill, or justify. Set it to one of the ``ALIGN\_\*`` constants.
+- :ref:`Align<enum_label_align>` **align** - Controls the text's horizontal align. Supports left, center, right, and fill, or justify. Set it to one of the ``ALIGN_*`` constants.
 
   .. _class_Label_autowrap:
 
@@ -66,7 +66,7 @@ Member Variables
 
   .. _class_Label_valign:
 
-- :ref:`VAlign<enum_label_valign>` **valign** - Controls the text's vertical align. Supports top, center, bottom, and fill. Set it to one of the ``VALIGN\_\*`` constants.
+- :ref:`VAlign<enum_label_valign>` **valign** - Controls the text's vertical align. Supports top, center, bottom, and fill. Set it to one of the ``VALIGN_*`` constants.
 
   .. _class_Label_visible_characters:
 

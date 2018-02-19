@@ -137,7 +137,7 @@ Get the byte offset of the current node since the beginning of the file or buffe
 
 - :ref:`int<class_int>` **get_node_type** **(** **)**
 
-Get the type of the current node. Compare with ``NODE\_\*`` constants.
+Get the type of the current node. Compare with ``NODE_*`` constants.
 
 .. _class_XMLParser_has_attribute:
 

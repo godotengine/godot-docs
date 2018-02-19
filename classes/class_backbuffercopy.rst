@@ -21,7 +21,7 @@ Member Variables
 
   .. _class_BackBufferCopy_copy_mode:
 
-- :ref:`CopyMode<enum_backbuffercopy_copymode>` **copy_mode** - Buffer mode. See ``COPY_MODE\_\*`` constants.
+- :ref:`CopyMode<enum_backbuffercopy_copymode>` **copy_mode** - Buffer mode. See ``COPY_MODE_*`` constants.
 
   .. _class_BackBufferCopy_rect:
 

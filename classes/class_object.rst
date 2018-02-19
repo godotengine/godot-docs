@@ -211,7 +211,7 @@ Returns ``true`` if the object can translate strings.
 
 - :ref:`int<class_int>` **connect** **(** :ref:`String<class_string>` signal, :ref:`Object<class_object>` target, :ref:`String<class_string>` method, :ref:`Array<class_array>` binds=[  ], :ref:`int<class_int>` flags=0 **)**
 
-Connects a ``signal`` to a ``method`` on a ``target`` object. Pass optional ``binds`` to the call. Use ``flags`` to set deferred or one shot connections. See ``CONNECT\_\*`` constants. A ``signal`` can only be connected once to a ``method``. It will throw an error if already connected. To avoid this, first use :ref:`is_connected<class_Object_is_connected>` to check for existing connections.
+Connects a ``signal`` to a ``method`` on a ``target`` object. Pass optional ``binds`` to the call. Use ``flags`` to set deferred or one shot connections. See ``CONNECT_*`` constants. A ``signal`` can only be connected once to a ``method``. It will throw an error if already connected. To avoid this, first use :ref:`is_connected<class_Object_is_connected>` to check for existing connections.
 
 .. _class_Object_disconnect:
 

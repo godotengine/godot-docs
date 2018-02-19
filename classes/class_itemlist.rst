@@ -126,9 +126,13 @@ Fired when a multiple selection is altered on a list allowing multiple selection
 Member Variables
 ----------------
 
+  .. _class_ItemList_allow_reselect:
+
+- :ref:`bool<class_bool>` **allow_reselect** - If ``true`` the currently selected item may be selected again.
+
   .. _class_ItemList_allow_rmb_select:
 
-- :ref:`bool<class_bool>` **allow_rmb_select**
+- :ref:`bool<class_bool>` **allow_rmb_select** - If ``true`` a right mouse button click can select items.
 
   .. _class_ItemList_auto_height:
 
@@ -164,7 +168,7 @@ Member Variables
 
   .. _class_ItemList_select_mode:
 
-- :ref:`SelectMode<enum_itemlist_selectmode>` **select_mode**
+- :ref:`SelectMode<enum_itemlist_selectmode>` **select_mode** - Allow single or multiple selection. See the ``SELECT_*`` constants.
 
 
 Enums

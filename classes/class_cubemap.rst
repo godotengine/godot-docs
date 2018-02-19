@@ -34,7 +34,7 @@ Member Variables
 
   .. _class_CubeMap_flags:
 
-- :ref:`int<class_int>` **flags** - The render flags for the ``CubeMap``. See the ``FLAG\_\*`` constants for details.
+- :ref:`int<class_int>` **flags** - The render flags for the ``CubeMap``. See the ``FLAG_*`` constants for details.
 
   .. _class_CubeMap_lossy_storage_quality:
 
@@ -42,7 +42,7 @@ Member Variables
 
   .. _class_CubeMap_storage_mode:
 
-- :ref:`Storage<enum_cubemap_storage>` **storage_mode** - The ``CubeMap``'s storage mode. See ``STORAGE\_\*`` constants.
+- :ref:`Storage<enum_cubemap_storage>` **storage_mode** - The ``CubeMap``'s storage mode. See ``STORAGE_*`` constants.
 
 
 Enums
@@ -95,7 +95,7 @@ Returns the ``CubeMap``'s height.
 
 - :ref:`Image<class_image>` **get_side** **(** :ref:`int<class_int>` side **)** const
 
-Returns an :ref:`Image<class_image>` for a side of the ``CubeMap`` using one of the ``SIDE\_\*`` constants or an integer 0-5.
+Returns an :ref:`Image<class_image>` for a side of the ``CubeMap`` using one of the ``SIDE_*`` constants or an integer 0-5.
 
 .. _class_CubeMap_get_width:
 
@@ -107,6 +107,6 @@ Returns the ``CubeMap``'s width.
 
 - void **set_side** **(** :ref:`int<class_int>` side, :ref:`Image<class_image>` image **)**
 
-Sets an :ref:`Image<class_image>` for a side of the ``CubeMap`` using one of the ``SIDE\_\*`` constants or an integer 0-5.
+Sets an :ref:`Image<class_image>` for a side of the ``CubeMap`` using one of the ``SIDE_*`` constants or an integer 0-5.
 
 

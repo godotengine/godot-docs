@@ -20,6 +20,14 @@ Member Functions
 ----------------
 
 +----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`add_valid_connection_type<class_GraphEdit_add_valid_connection_type>` **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)**                                                   |
++----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`add_valid_left_disconnect_type<class_GraphEdit_add_valid_left_disconnect_type>` **(** :ref:`int<class_int>` type **)**                                                                             |
++----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`add_valid_right_disconnect_type<class_GraphEdit_add_valid_right_disconnect_type>` **(** :ref:`int<class_int>` type **)**                                                                           |
++----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`clear_connections<class_GraphEdit_clear_connections>` **(** **)**                                                                                                                                  |
++----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`      | :ref:`connect_node<class_GraphEdit_connect_node>` **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_port, :ref:`String<class_string>` to, :ref:`int<class_int>` to_port **)**           |
 +----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`disconnect_node<class_GraphEdit_disconnect_node>` **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_port, :ref:`String<class_string>` to, :ref:`int<class_int>` to_port **)**     |
@@ -27,6 +35,14 @@ Member Functions
 | :ref:`Array<class_array>`  | :ref:`get_connection_list<class_GraphEdit_get_connection_list>` **(** **)** const                                                                                                                        |
 +----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`    | :ref:`is_node_connected<class_GraphEdit_is_node_connected>` **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_port, :ref:`String<class_string>` to, :ref:`int<class_int>` to_port **)** |
++----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`    | :ref:`is_valid_connection_type<class_GraphEdit_is_valid_connection_type>` **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)** const                                               |
++----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`remove_valid_connection_type<class_GraphEdit_remove_valid_connection_type>` **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)**                                             |
++----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`remove_valid_left_disconnect_type<class_GraphEdit_remove_valid_left_disconnect_type>` **(** :ref:`int<class_int>` type **)**                                                                       |
++----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                       | :ref:`remove_valid_right_disconnect_type<class_GraphEdit_remove_valid_right_disconnect_type>` **(** :ref:`int<class_int>` type **)**                                                                     |
 +----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                       | :ref:`set_selected<class_GraphEdit_set_selected>` **(** :ref:`Node<class_node>` node **)**                                                                                                               |
 +----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -123,6 +139,30 @@ It is greatly advised to enable low processor usage mode (see :ref:`OS.set_low_p
 Member Function Description
 ---------------------------
 
+.. _class_GraphEdit_add_valid_connection_type:
+
+- void **add_valid_connection_type** **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)**
+
+Makes possible the connection between two different slot types. The type is defined with the :ref:`GraphNode.set_slot<class_GraphNode_set_slot>` method.
+
+.. _class_GraphEdit_add_valid_left_disconnect_type:
+
+- void **add_valid_left_disconnect_type** **(** :ref:`int<class_int>` type **)**
+
+Makes possible to disconnect nodes when dragging from the slot at the left if it has the specified type.
+
+.. _class_GraphEdit_add_valid_right_disconnect_type:
+
+- void **add_valid_right_disconnect_type** **(** :ref:`int<class_int>` type **)**
+
+Makes possible to disconnect nodes when dragging from the slot at the right if it has the specified type.
+
+.. _class_GraphEdit_clear_connections:
+
+- void **clear_connections** **(** **)**
+
+Remove all connections between nodes.
+
 .. _class_GraphEdit_connect_node:
 
 - :ref:`int<class_int>` **connect_node** **(** :ref:`String<class_string>` from, :ref:`int<class_int>` from_port, :ref:`String<class_string>` to, :ref:`int<class_int>` to_port **)**
@@ -147,8 +187,34 @@ Return an Array containing the list of connections. A connection consists in a s
 
 Return true if the 'from_port' slot of 'from' GraphNode is connected to the 'to_port' slot of 'to' GraphNode.
 
+.. _class_GraphEdit_is_valid_connection_type:
+
+- :ref:`bool<class_bool>` **is_valid_connection_type** **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)** const
+
+Returns whether it's possible to connect slots of the specified types.
+
+.. _class_GraphEdit_remove_valid_connection_type:
+
+- void **remove_valid_connection_type** **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)**
+
+Makes it not possible to connect between two different slot types. The type is defined with the :ref:`GraphNode.set_slot<class_GraphNode_set_slot>` method.
+
+.. _class_GraphEdit_remove_valid_left_disconnect_type:
+
+- void **remove_valid_left_disconnect_type** **(** :ref:`int<class_int>` type **)**
+
+Removes the possibility to disconnect nodes when dragging from the slot at the left if it has the specified type.
+
+.. _class_GraphEdit_remove_valid_right_disconnect_type:
+
+- void **remove_valid_right_disconnect_type** **(** :ref:`int<class_int>` type **)**
+
+Removes the possibility to disconnect nodes when dragging from the slot at the right if it has the specified type.
+
 .. _class_GraphEdit_set_selected:
 
 - void **set_selected** **(** :ref:`Node<class_node>` node **)**
+
+Sets the specified ``node`` as the one selected.
 
 

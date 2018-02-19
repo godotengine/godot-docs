@@ -32,6 +32,8 @@ Member Functions
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`      | :ref:`is_connected_to_host<class_StreamPeerTCP_is_connected_to_host>` **(** **)** const                                              |
 +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`set_no_delay<class_StreamPeerTCP_set_no_delay>` **(** :ref:`bool<class_bool>` enabled **)**                                    |
++------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
 Enums
 -----
@@ -87,5 +89,13 @@ Return the status of the connection, one of STATUS\_\* enum.
 .. _class_StreamPeerTCP_is_connected_to_host:
 
 - :ref:`bool<class_bool>` **is_connected_to_host** **(** **)** const
+
+.. _class_StreamPeerTCP_set_no_delay:
+
+- void **set_no_delay** **(** :ref:`bool<class_bool>` enabled **)**
+
+Disable Nagle algorithm to improve latency for small packets.
+
+Note that for applications that send large packets, or need to transfer a lot of data, this can reduce total bandwidth.
 
 

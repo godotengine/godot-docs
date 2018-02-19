@@ -204,19 +204,19 @@ Member Variables
 
   .. _class_Control_anchor_bottom:
 
-- :ref:`float<class_float>` **anchor_bottom** - Anchors the bottom edge of the node to the origin, the center, or the end of its parent container. It changes how the bottom margin updates when the node moves or changes size. Use one of the ``ANCHOR\_\*`` constants. Default value: ``ANCHOR_BEGIN``.
+- :ref:`float<class_float>` **anchor_bottom** - Anchors the bottom edge of the node to the origin, the center, or the end of its parent container. It changes how the bottom margin updates when the node moves or changes size. Use one of the ``ANCHOR_*`` constants. Default value: ``ANCHOR_BEGIN``.
 
   .. _class_Control_anchor_left:
 
-- :ref:`float<class_float>` **anchor_left** - Anchors the left edge of the node to the origin, the center or the end of its parent container. It changes how the left margin updates when the node moves or changes size. Use one of the ``ANCHOR\_\*`` constants. Default value: ``ANCHOR_BEGIN``.
+- :ref:`float<class_float>` **anchor_left** - Anchors the left edge of the node to the origin, the center or the end of its parent container. It changes how the left margin updates when the node moves or changes size. Use one of the ``ANCHOR_*`` constants. Default value: ``ANCHOR_BEGIN``.
 
   .. _class_Control_anchor_right:
 
-- :ref:`float<class_float>` **anchor_right** - Anchors the right edge of the node to the origin, the center or the end of its parent container. It changes how the right margin updates when the node moves or changes size. Use one of the ``ANCHOR\_\*`` constants. Default value: ``ANCHOR_BEGIN``.
+- :ref:`float<class_float>` **anchor_right** - Anchors the right edge of the node to the origin, the center or the end of its parent container. It changes how the right margin updates when the node moves or changes size. Use one of the ``ANCHOR_*`` constants. Default value: ``ANCHOR_BEGIN``.
 
   .. _class_Control_anchor_top:
 
-- :ref:`float<class_float>` **anchor_top** - Anchors the top edge of the node to the origin, the center or the end of its parent container. It changes how the top margin updates when the node moves or changes size. Use one of the ``ANCHOR\_\*`` constants. Default value: ``ANCHOR_BEGIN``.
+- :ref:`float<class_float>` **anchor_top** - Anchors the top edge of the node to the origin, the center or the end of its parent container. It changes how the top margin updates when the node moves or changes size. Use one of the ``ANCHOR_*`` constants. Default value: ``ANCHOR_BEGIN``.
 
   .. _class_Control_focus_mode:
 
@@ -284,7 +284,7 @@ Margins are often controlled by one or multiple parent :ref:`Container<class_con
 
   .. _class_Control_mouse_filter:
 
-- :ref:`MouseFilter<enum_control_mousefilter>` **mouse_filter** - Controls whether the control will be able to receive mouse button input events through :ref:`_gui_input<class_Control__gui_input>` and how these events should be handled. Use one of the ``MOUSE_FILTER\_\*`` constants. See the constants to learn what each does.
+- :ref:`MouseFilter<enum_control_mousefilter>` **mouse_filter** - Controls whether the control will be able to receive mouse button input events through :ref:`_gui_input<class_Control__gui_input>` and how these events should be handled. Use one of the ``MOUSE_FILTER_*`` constants. See the constants to learn what each does.
 
   .. _class_Control_rect_clip_content:
 
@@ -320,7 +320,7 @@ Margins are often controlled by one or multiple parent :ref:`Container<class_con
 
   .. _class_Control_size_flags_horizontal:
 
-- :ref:`int<class_int>` **size_flags_horizontal** - Tells the parent :ref:`Container<class_container>` nodes how they should resize and place the node on the X axis. Use one of the ``SIZE\_\*`` constants to change the flags. See the constants to learn what each does.
+- :ref:`int<class_int>` **size_flags_horizontal** - Tells the parent :ref:`Container<class_container>` nodes how they should resize and place the node on the X axis. Use one of the ``SIZE_*`` constants to change the flags. See the constants to learn what each does.
 
   .. _class_Control_size_flags_stretch_ratio:
 
@@ -328,7 +328,7 @@ Margins are often controlled by one or multiple parent :ref:`Container<class_con
 
   .. _class_Control_size_flags_vertical:
 
-- :ref:`int<class_int>` **size_flags_vertical** - Tells the parent :ref:`Container<class_container>` nodes how they should resize and place the node on the Y axis. Use one of the ``SIZE\_\*`` constants to change the flags. See the constants to learn what each does.
+- :ref:`int<class_int>` **size_flags_vertical** - Tells the parent :ref:`Container<class_container>` nodes how they should resize and place the node on the Y axis. Use one of the ``SIZE_*`` constants to change the flags. See the constants to learn what each does.
 
   .. _class_Control_theme:
 
@@ -343,7 +343,7 @@ Numeric Constants
 - **NOTIFICATION_MOUSE_EXIT** = **42** --- Sent when the mouse pointer exits the node's ``Rect`` area.
 - **NOTIFICATION_FOCUS_ENTER** = **43** --- Sent when the node grabs focus.
 - **NOTIFICATION_FOCUS_EXIT** = **44** --- Sent when the node loses focus.
-- **NOTIFICATION_THEME_CHANGED** = **45** --- Sent when the node's :ref:`theme<class_Control_theme>` changes, right before Godot redraws the ``Control``. Happens when you call one of the ``add\_\*_override``
+- **NOTIFICATION_THEME_CHANGED** = **45** --- Sent when the node's :ref:`theme<class_Control_theme>` changes, right before Godot redraws the ``Control``. Happens when you call one of the ``add_*_override``
 - **NOTIFICATION_MODAL_CLOSE** = **46** --- Sent when an open modal dialog closes. See :ref:`show_modal<class_Control_show_modal>`.
 
 Enums
@@ -438,8 +438,8 @@ enum **MouseFilter**
 
 enum **Anchor**
 
-- **ANCHOR_BEGIN** = **0** --- Snaps one of the 4 anchor's sides to the origin of the node's ``Rect``, in the top left. Use it with one of the ``anchor\_\*`` member variables, like :ref:`anchor_left<class_Control_anchor_left>`. To change all 4 anchors at once, use :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
-- **ANCHOR_END** = **1** --- Snaps one of the 4 anchor's sides to the end of the node's ``Rect``, in the bottom right. Use it with one of the ``anchor\_\*`` member variables, like :ref:`anchor_left<class_Control_anchor_left>`. To change all 4 anchors at once, use :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+- **ANCHOR_BEGIN** = **0** --- Snaps one of the 4 anchor's sides to the origin of the node's ``Rect``, in the top left. Use it with one of the ``anchor_*`` member variables, like :ref:`anchor_left<class_Control_anchor_left>`. To change all 4 anchors at once, use :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
+- **ANCHOR_END** = **1** --- Snaps one of the 4 anchor's sides to the end of the node's ``Rect``, in the bottom right. Use it with one of the ``anchor_*`` member variables, like :ref:`anchor_left<class_Control_anchor_left>`. To change all 4 anchors at once, use :ref:`set_anchors_preset<class_Control_set_anchors_preset>`.
 
 
 Description
@@ -453,11 +453,11 @@ For more information on Godot's UI system, anchors, margins, and containers, see
 
 Godot sends input events to the scene's root node first, by calling :ref:`Node._input<class_Node__input>`. :ref:`Node._input<class_Node__input>` forwards the event down the node tree to the nodes under the mouse cursor, or on keyboard focus. To do so, it calls :ref:`MainLoop._input_event<class_MainLoop__input_event>`. Call :ref:`accept_event<class_Control_accept_event>` so no other node receives the event. Once you accepted an input, it becomes handled so :ref:`Node._unhandled_input<class_Node__unhandled_input>` will not process it.
 
-Only one ``Control`` node can be in keyboard focus. Only the node in focus will receive keyboard events. To get the focus, call :ref:`set_focus_mode<class_Control_set_focus_mode>`. ``Control`` nodes lose focus when another node grabs it, or if you hide the node in focus.
+Only one ``Control`` node can be in keyboard focus. Only the node in focus will receive keyboard events. To get the focus, call :ref:`grab_focus<class_Control_grab_focus>`. ``Control`` nodes lose focus when another node grabs it, or if you hide the node in focus.
 
-Call :ref:`set_ignore_mouse<class_Control_set_ignore_mouse>` to tell a ``Control`` node to ignore mouse or touch events. You'll need it if you place an icon on top of a button.
+Set :ref:`mouse_filter<class_Control_mouse_filter>` to MOUSE_FILTER_IGNORE to tell a ``Control`` node to ignore mouse or touch events. You'll need it if you place an icon on top of a button.
 
-:ref:`Theme<class_theme>` resources change the Control's appearance. If you change the :ref:`Theme<class_theme>` on a ``Control`` node, it affects all of its children. To override some of the theme's parameters, call one of the ``add\_\*_override`` methods, like :ref:`add_font_override<class_Control_add_font_override>`. You can override the theme with the inspector.
+:ref:`Theme<class_theme>` resources change the Control's appearance. If you change the :ref:`Theme<class_theme>` on a ``Control`` node, it affects all of its children. To override some of the theme's parameters, call one of the ``add_*_override`` methods, like :ref:`add_font_override<class_Control_add_font_override>`. You can override the theme with the inspector.
 
 Member Function Description
 ---------------------------
@@ -550,7 +550,7 @@ Overrides the ``name`` Stylebox in the theme resource the node uses. If ``styleb
 
 - :ref:`int<class_int>` **get_cursor_shape** **(** :ref:`Vector2<class_vector2>` position=Vector2( 0, 0 ) **)** const
 
-Returns the mouse cursor shape the control displays on mouse hover, one of the ``CURSOR\_\*`` constants.
+Returns the mouse cursor shape the control displays on mouse hover, one of the ``CURSOR_*`` constants.
 
 .. _class_Control_get_drag_data:
 

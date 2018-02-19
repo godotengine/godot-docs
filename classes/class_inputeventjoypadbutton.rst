@@ -21,7 +21,7 @@ Member Variables
 
   .. _class_InputEventJoypadButton_button_index:
 
-- :ref:`int<class_int>` **button_index** - Button identifier. One of the ``JOY_BUTTON\_\*`` constants from @global Scope.
+- :ref:`int<class_int>` **button_index** - Button identifier. One of the ``JOY_BUTTON_*`` constants from @global Scope.
 
   .. _class_InputEventJoypadButton_pressed:
 

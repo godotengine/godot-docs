@@ -113,7 +113,7 @@ Member Variables
 
   .. _class_ParticlesMaterial_emission_shape:
 
-- :ref:`EmissionShape<enum_particlesmaterial_emissionshape>` **emission_shape** - Particles will be emitted inside this region. Use ``EMISSION_SHAPE\_\*`` constants for values. Default value: ``EMISSION_SHAPE_POINT``.
+- :ref:`EmissionShape<enum_particlesmaterial_emissionshape>` **emission_shape** - Particles will be emitted inside this region. Use ``EMISSION_SHAPE_*`` constants for values. Default value: ``EMISSION_SHAPE_POINT``.
 
   .. _class_ParticlesMaterial_emission_sphere_radius:
 

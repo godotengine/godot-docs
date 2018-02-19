@@ -94,7 +94,7 @@ Member Variables
 Description
 -----------
 
-CollisionObject2D is the base class for 2D physics objects. It can hold any number of 2D collision :ref:`Shape2D<class_shape2d>`\ s. Each shape must be assigned to a *shape owner*. The CollisionObject2D can have any number of shape owners. Shape owners are not nodes and do not appear in the editor, but are accessible through code using the ``shape_owner\_\*`` methods.
+CollisionObject2D is the base class for 2D physics objects. It can hold any number of 2D collision :ref:`Shape2D<class_shape2d>`\ s. Each shape must be assigned to a *shape owner*. The CollisionObject2D can have any number of shape owners. Shape owners are not nodes and do not appear in the editor, but are accessible through code using the ``shape_owner_*`` methods.
 
 Member Function Description
 ---------------------------

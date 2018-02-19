@@ -26,6 +26,8 @@ Member Functions
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`can_use_threads<class_OS_can_use_threads>` **(** **)** const                                                                                                                                                       |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`center_window<class_OS_center_window>` **(** **)**                                                                                                                                                                 |
++------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`delay_msec<class_OS_delay_msec>` **(** :ref:`int<class_int>` msec **)** const                                                                                                                                      |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`delay_usec<class_OS_delay_usec>` **(** :ref:`int<class_int>` usec **)** const                                                                                                                                      |
@@ -69,6 +71,8 @@ Member Functions
 | :ref:`int<class_int>`                          | :ref:`get_process_id<class_OS_get_process_id>` **(** **)** const                                                                                                                                                         |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`get_processor_count<class_OS_get_processor_count>` **(** **)** const                                                                                                                                               |
++------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`                  | :ref:`get_real_window_size<class_OS_get_real_window_size>` **(** **)** const                                                                                                                                             |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`String<class_string>`                    | :ref:`get_scancode_string<class_OS_get_scancode_string>` **(** :ref:`int<class_int>` code **)** const                                                                                                                    |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -126,6 +130,8 @@ Member Functions
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`is_userfs_persistent<class_OS_is_userfs_persistent>` **(** **)** const                                                                                                                                             |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                        | :ref:`is_window_always_on_top<class_OS_is_window_always_on_top>` **(** **)** const                                                                                                                                       |
++------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`                          | :ref:`kill<class_OS_kill>` **(** :ref:`int<class_int>` pid **)**                                                                                                                                                         |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`                        | :ref:`native_video_is_playing<class_OS_native_video_is_playing>` **(** **)**                                                                                                                                             |
@@ -155,6 +161,8 @@ Member Functions
 | :ref:`int<class_int>`                          | :ref:`set_thread_name<class_OS_set_thread_name>` **(** :ref:`String<class_string>` name **)**                                                                                                                            |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_use_file_access_save_and_swap<class_OS_set_use_file_access_save_and_swap>` **(** :ref:`bool<class_bool>` enabled **)**                                                                                         |
++------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                           | :ref:`set_window_always_on_top<class_OS_set_window_always_on_top>` **(** :ref:`bool<class_bool>` enabled **)**                                                                                                           |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                           | :ref:`set_window_title<class_OS_set_window_title>` **(** :ref:`String<class_string>` title **)**                                                                                                                         |
 +------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -317,6 +325,10 @@ Returns ``true`` if the host OS allows drawing.
 
 Returns ``true`` if the current host platform is using multiple threads.
 
+.. _class_OS_center_window:
+
+- void **center_window** **(** **)**
+
 .. _class_OS_delay_msec:
 
 - void **delay_msec** **(** :ref:`int<class_int>` msec **)** const
@@ -462,7 +474,7 @@ Returns the time in seconds before the device runs out of battery.
 
 - :ref:`int<class_int>` **get_power_state** **(** **)**
 
-Returns the current state of the device regarding battery and power. See ``POWERSTATE\_\*`` constants.
+Returns the current state of the device regarding battery and power. See ``POWERSTATE_*`` constants.
 
 .. _class_OS_get_process_id:
 
@@ -475,6 +487,10 @@ Returns the game process ID
 - :ref:`int<class_int>` **get_processor_count** **(** **)** const
 
 Returns the number of cores available in the host machine.
+
+.. _class_OS_get_real_window_size:
+
+- :ref:`Vector2<class_vector2>` **get_real_window_size** **(** **)** const
 
 .. _class_OS_get_scancode_string:
 
@@ -572,7 +588,9 @@ Returns the current time zone as a dictionary with the keys: bias and name.
 
 - :ref:`String<class_string>` **get_unique_id** **(** **)** const
 
-Returns a string that is unique to the device. Currently only works on Android and iOS. Returns empty string on other platforms.
+Returns a string that is unique to the device.
+
+Returns empty string on HTML5 and UWP which are not supported yet.
 
 .. _class_OS_get_unix_time:
 
@@ -662,6 +680,10 @@ Returns ``true`` if the engine was executed with -v (verbose stdout).
 
 If ``true``, the ``user://`` file system is persistent, so that its state is the same after a player quits and starts the game again. Relevant to the HTML5 platform, where this persistence may be unavailable.
 
+.. _class_OS_is_window_always_on_top:
+
+- :ref:`bool<class_bool>` **is_window_always_on_top** **(** **)** const
+
 .. _class_OS_kill:
 
 - :ref:`int<class_int>` **kill** **(** :ref:`int<class_int>` pid **)**
@@ -749,6 +771,10 @@ Sets the name of the current thread.
 - void **set_use_file_access_save_and_swap** **(** :ref:`bool<class_bool>` enabled **)**
 
 Enables backup saves if ``enabled`` is ``true``.
+
+.. _class_OS_set_window_always_on_top:
+
+- void **set_window_always_on_top** **(** :ref:`bool<class_bool>` enabled **)**
 
 .. _class_OS_set_window_title:
 

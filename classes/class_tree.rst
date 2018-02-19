@@ -174,7 +174,7 @@ Member Variables
 
   .. _class_Tree_drop_mode_flags:
 
-- :ref:`int<class_int>` **drop_mode_flags** - The drop mode as an OR combination of flags. See ``DROP_MODE\_\*`` constants.
+- :ref:`int<class_int>` **drop_mode_flags** - The drop mode as an OR combination of flags. See ``DROP_MODE_*`` constants.
 
   .. _class_Tree_hide_folding:
 
@@ -186,7 +186,7 @@ Member Variables
 
   .. _class_Tree_select_mode:
 
-- :ref:`SelectMode<enum_tree_selectmode>` **select_mode** - Allow single or multiple selection. See the ``SELECT\_\*`` constants.
+- :ref:`SelectMode<enum_tree_selectmode>` **select_mode** - Allow single or multiple selection. See the ``SELECT_*`` constants.
 
 
 Enums

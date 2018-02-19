@@ -94,7 +94,7 @@ Member Variables
 Description
 -----------
 
-CollisionObject is the base class for physics objects. It can hold any number of collision :ref:`Shape<class_shape>`\ s. Each shape must be assigned to a *shape owner*. The CollisionObject can have any number of shape owners. Shape owners are not nodes and do not appear in the editor, but are accessible through code using the ``shape_owner\_\*`` methods.
+CollisionObject is the base class for physics objects. It can hold any number of collision :ref:`Shape<class_shape>`\ s. Each shape must be assigned to a *shape owner*. The CollisionObject can have any number of shape owners. Shape owners are not nodes and do not appear in the editor, but are accessible through code using the ``shape_owner_*`` methods.
 
 Member Function Description
 ---------------------------
