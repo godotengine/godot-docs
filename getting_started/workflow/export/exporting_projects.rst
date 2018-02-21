@@ -69,9 +69,9 @@ The export menu will open, however it will be completely empty.
 
 .. image:: img/export_dialog.png
 
-That is because we need to add an export preset. To do that click the 
-`add..` button at the top of the export menu. This will open a drop down
- list of platforms to choose from for an export preset.
+That is because we need to add an export preset. To do that click the
+`Add..` button at the top of the export menu. This will open a drop down
+list of platforms to choose from for an export preset.
 
 .. image:: img/export_preset.png
 
