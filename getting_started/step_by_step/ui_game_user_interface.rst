@@ -574,7 +574,7 @@ centers inside the ``HBoxContainer``.
 We have one small issue left with the EP label on the EnergyBar: the 2
 bars should align vertically. Click the icon next to the ``EnergyBar``
 node to open its scene. Select the ``Count`` node and scroll down to the
-``Custom Constant`` section. As a add a ``Margin Left`` of ``20``. In
+``Custom Constant`` section. Add a ``Margin Left`` of ``20``. In
 the ``Rect`` section set the node's ``Min Size`` back to 100, the same
 value as on the LifeBar. The ``Count`` should now have some margin on
 the left. If you save and go back to the GUI scene, it will be aligned
