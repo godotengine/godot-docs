@@ -74,7 +74,7 @@ Member Variables
 
   .. _class_Camera_h_offset:
 
-- :ref:`float<class_float>` **h_offset** - The horizontal (X) offset of the Camear viewport.
+- :ref:`float<class_float>` **h_offset** - The horizontal (X) offset of the Camera viewport.
 
   .. _class_Camera_keep_aspect:
 
@@ -94,7 +94,7 @@ Member Variables
 
   .. _class_Camera_v_offset:
 
-- :ref:`float<class_float>` **v_offset** - The horizontal (Y) offset of the Camear viewport.
+- :ref:`float<class_float>` **v_offset** - The horizontal (Y) offset of the Camera viewport.
 
 
 Enums
