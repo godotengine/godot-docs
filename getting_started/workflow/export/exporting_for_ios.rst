@@ -10,63 +10,33 @@ publish, etc.
 Requirements
 ------------
 
--  Download XCode for iOS
--  Download the export templates: https://godotengine.org/download
--  Since there is no automatic deployer yet, unzip export_templates.tpz
-   manually and extract GodotiOSXCode.zip from it.
+-  You must export for iOS on a mac
+-  Download the export templates. Use the Godot menu: Editor > Manage Export Templates
 
-The zip contains an XCode project, godot_ios.xcodeproj, an empty
-data.pck file and the engine executable. Open the project, and modify
-the game name, icon, organization, provisioning signing certificate
-identities (??), etc.
 
-Add your project data
+Exporting your project
 ---------------------
 
-Using the Godot editor, :ref:`doc_exporting_for_pc`, to obtain the data.pck
-file. Replace the empty data.pck in the XCode project with the new one,
-and run/archive.
+In the Godot editor, open the Export window from the Project menu. When the 
+Export window opens, click Add.. and select iOS. 
 
-If you want to test your scenes on the iOS device as you edit them, you
-can add your game directory to the project (instead of data.pck), and
-add a property "godot_path" to Info.plist, with the name of your
-directory as its value.
+If you haven't downloaded the Godot export templates for your version, a 
+"Manage Export Templates" link will appear on the bottom of the window. Click
+that link and install the templates, it may take several minutes. 
 
-.. image:: img/godot_path.png
+Once the templates are installed, fill in your export options.
+Several are required. 
 
-Alternatively you can add all the files from your game directly, with
-"engine.cfg" at the root.
+.. image:: img/ios_export_requiredoptions.png
 
-Loading files from a host
--------------------------
+After you click Export Project, there are still two important options left. 
 
-Sometimes your game becomes too big and deploying to the device takes
-too long every time you run. In that case you can deploy only the engine
-executable, and serve the game files from your computer.
+.. image:: img/ios_export_file.png
 
-Setting up the file host
-~~~~~~~~~~~~~~~~~~~~~~~~
+Make sure to specify the File field. It will be used as your Xcode project name. 
 
-On your PC, open the editor, and click the righ-most icon on the
-top-center group of icons, and select "Enable File Server". The icon
-turns red. Your PC will open a port and accept connections to serve
-files from your project's directory (so enable your local firewall
-accordingly).
-
-.. image:: img/rfs_server.png
-
-Setting up the game
-~~~~~~~~~~~~~~~~~~~
-
-On XCode, click on your app name (top left, next to the "Stop" button),
-and select "Edit Scheme". Go to the "Arguments" tab, and add 2
-arguments, "-rfs" and the IP of your PC.
-
-.. image:: img/edit_scheme.png
-
-When you run, your device will connect to the host and open the files
-remotely. Note that the directory with the game data ("platformer") is
-no longer added to the project, only the engine executable.
+Go to the export directory you specified, open the .xcodeproj file and build and 
+run as normal. 
 
 Services for iOS
 ----------------
