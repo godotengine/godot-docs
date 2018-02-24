@@ -7,7 +7,7 @@ Introduction
 ------------
 
 Godot has a small but very useful feature called viewports. Viewports
-are, as they name implies, rectangles where the world is drawn. They
+are, as the name implies, rectangles where the world is drawn. They
 have three main uses, but can flexibly adapted to a lot more. All this
 is done via the :ref:`Viewport <class_Viewport>` node.
 
