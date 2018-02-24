@@ -92,8 +92,6 @@ call update() from the _process() callback, like this:
     func _process(delta):
         update()
 
-    func _ready():
-        set_process(true)
 
 An example: drawing circular arcs
 ----------------------------------
@@ -188,7 +186,7 @@ First, we have to make both angle_from and angle_to variables global at the top 
 
 
 
-We make these values change in the _process(delta) function. To activate this function, we need to call set_process(true) in the _ready() function. 
+We make these values change in the _process(delta) function. 
 
 We also increment our angle_from and angle_to values here. However, we must not forget to wrap() the resulting values between 0 and 360°! That is, if the angle is 361°, then it is actually 1°. If you don't wrap these values, the script will work correctly. But angle values will grow bigger and bigger over time, until they reach the maximum integer value Godot can manage (2^31 - 1). When this happens, Godot may crash or produce unexpected behavior. Since Godot doesn't provide a wrap() function, we'll create it here, as it is relatively simple.
 
@@ -196,9 +194,6 @@ Finally, we must not forget to call the update() function, which automatically c
 
 ::
 
- func _ready():
-     set_process(true)
- 
  func wrap(value, min_val, max_val):
      var f1 = value - min_val
      var f2 = max_val - min_val
