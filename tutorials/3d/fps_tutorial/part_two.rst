@@ -690,10 +690,7 @@ Lets add a few things to ``_physics_process`` so we can fire our weapons. Here's
 
         if is_on_floor():
             if Input.is_action_just_pressed("movement_jump"):
-                if is_sprinting:
-                    vel.y = SPRINT_JUMP_SPEED
-                else:
-                    vel.y = JUMP_SPEED
+                vel.y = JUMP_SPEED
 
         if Input.is_action_just_pressed("flashlight"):
             if flashlight.is_visible_in_tree():
@@ -701,16 +698,15 @@ Lets add a few things to ``_physics_process`` so we can fire our weapons. Here's
             else:
                 flashlight.show()
 
+        if Input.is_action_pressed("movement_sprint"):
+            is_sprinting = true;
+        else:
+            is_sprinting = false;
+
         dir.y = 0
         dir = dir.normalized()
 
-        var grav = 0
-        if Input.is_action_pressed("movement_sprint"):
-            is_sprinting = true
-            grav = sprint_grav
-        else:
-            is_sprinting = false;
-            grav = norm_grav
+        var grav = norm_grav
 
         vel.y += delta*grav
 

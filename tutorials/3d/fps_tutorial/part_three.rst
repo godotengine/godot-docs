@@ -27,6 +27,12 @@ Now that we have a fully working FPS, let's move to a more FPS like level. Open 
 ``Test_Level.tscn`` is a complete custom FPS level created for the purpose of this tutorial. Press ``F6`` to
 play the open scene, or press the "play current scene button", and give it a whirl.
 
+.. warning:: There will (likely) be the occasional random freeze as you go through the level. This is a known
+             issue.
+
+             If you find any way to solve it, please let me know on the Github repository, the Godot forums,
+             or on Twitter! Be sure to include ``@TwistedTwigleg`` so I will have a greater chance of seeing it!
+
 You might have noticed there are several boxes and cylinders placed throughout the level. They are :ref:`RigidBody <class_RigidBody>`
 nodes we can place ``RigidBody_hit_test.gd`` on and then they will react to being hit with bullets, so lets do that!
 
@@ -231,11 +237,13 @@ somewhere in ``_physics_process``, ideally nearby your other input related code:
     # Reloading
     if reloading_gun == false:
         if Input.is_action_just_pressed("reload"):
-            if animation_manager.current_state != "Pistol_reload" and animation_manager.current_state != "Rifle_reload":
-                reloading_gun = true
+            if current_gun == "PISTOL" or current_gun == "RIFLE"
+                if animation_manager.current_state != "Pistol_reload" and animation_manager.current_state != "Rifle_reload":
+                    reloading_gun = true
 
 First we see if the player is already reloading. If they are not, then we check if they've pressed
-the reloading action. If they have pressed the ``reload`` action, we then make sure they are not already
+the reloading action. If they have pressed the ``reload`` action, we then check if they are using
+a weapon that has the ability to be reloaded. Finally, we make sure they are not already
 in a reloading animation. If they are not, we set ``reloading_gun`` to ``true``.
 
 We do not want to do our reloading processing here with the input in an effort to keep game logic
