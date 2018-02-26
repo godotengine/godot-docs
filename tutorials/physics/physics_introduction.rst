@@ -3,450 +3,360 @@
 Physics introduction
 ====================
 
-Our world is made of tangible matter. In our world, a piano can't go
-through a wall when going into a house. It needs to use the door. Video
-games are often like the the real world and Pac-Man can't go through the
-walls of his maze (although he can teleport from the left to the right
-side of the screen and back).
+In game development you often need to know when two objects in the game
+intersect or come into contact. This is known as **collision detection**.
+When a collision is detected, you typically want something to happen. This
+is known as **collision response**.
 
-Anyway, moving sprites around is nice but one day they have to collide
-properly, so let's get to the point.
+Godot offers a number of collision objects in 2D and 3D to provide both collision detection
+and response. Trying to decide which one to use for your project can be confusing.
+You can avoid problems and simplify development if you understand how each works
+and what their pros and cons are.
 
-Shapes
+In this guide you will learn:
+
+-   Godot's four collision object types
+-   How each collision object works
+-   When and why to choose one type over another
+
+.. note:: This document's examples will use 2D objects. Every 2D physics object
+          and collision shape has a direct equivalent in 3D and in most cases
+          they work in much the same way.
+
+Collision Objects
+-----------------
+
+Godot offers four kinds of physics bodies, extending :ref:`CollisionObject2D <class_CollisionObject2D>`:
+
+- :ref:`Area2D <class_Area2D>`
+    ``Area2D`` nodes provide **detection** and **influence**. They can detect when
+    objects overlap and can emit signals when bodies enter or exit. An ``Area2D``
+    can also be used to override physics properties such as gravity or damping
+    in a defined area.
+
+The other three bodies extend from :ref:`PhysicsBody2D <class_PhysicsBody2D>`:
+
+- :ref:`StaticBody2D <class_StaticBody2D>`
+    A static body is one that is not moved by the physics engine. It participates
+    in collision detection, but does not move in response to the collision. They
+    are most often used for objects that are part of the environment or that do
+    not need to have any dynamic behavior.
+
+- :ref:`RigidBody2D <class_RigidBody2D>`
+    This is the node that implements simulated 2D physics. You do not control a
+    ``RigidBody2D`` directly, but instead you apply forces to it (gravity, impulses,
+    etc.) and the physics engine calculates the resulting movement.
+
+- :ref:`KinematicBody2D <class_KinematicBody2D>`
+    A body that provides collision detection, but no physics. All movement and
+    collision response must be implemented in code.
+
+Collision Shapes
+~~~~~~~~~~~~~~~~
+
+A physics body can hold any number of :ref:`Shape2D <class_Shape2D>` objects
+as children. These shapes are used to define the object's collision bounds
+and to detect contact with other objects.
+
+.. note:: In order to detect collisions, at least one ``Shape2D`` must be
+          assigned to the object.
+          
+The most common way to assign a shape is by adding a :ref:`CollisionShape2D <class_CollisionShape2D>`
+or :ref:`CollisionPolygon2D <class_CollisionPolygon2D>` as a child of the object.
+These nodes allow you to draw the shape directly in the editor workspace.
+
+.. important:: Be careful to never scale your collision shapes in the editor.
+                The "Scale" property in the Inspector should remain ``(1, 1)``. When changing
+                sizing the collision shape, you should always use the size handles, **not**
+                the ``Node2D`` scale handles. Scaling a shape can result in unexpected
+                collision behavior.
+
+.. image:: img/player_coll_shape.png
+
+Physics process callback
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The physics engine may spawn multiple threads to improve performance, so
+it can use up to a full frame to process physics. Because of this, the value
+of a body's state variables such as ``position`` or ``linear velocity``
+may not be accurate for the current frame.
+
+In order to avoid this inaccuracy, any code that needs to access a body's properties should
+be run in the :ref:`Node._physics_process() <class_Node__physics_process>`
+callback, which is called before each physics step at a constant frame rate
+(60 times per second by default).
+        
+Collision Layers and Masks
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+One of the most powerful but frequently misunderstood collision features
+is the collision layer system. This system allows you to build up very complex
+interactions between a variety of objects. The key concepts are **layers**
+and **masks**. Each ``CollisionObject2D`` has 20 different physics layers
+it can interact with.
+
+Let's look at each of the properties in turn:
+
+- collision_layer
+    This describes the layers that the object appears **in**. By default, all
+    bodies are on layer ``1``.
+
+- collision_mask
+    This describes what layers the body will **scan** for collisions. If an
+    object isn't in one of the mask layers, the body will ignore it. By default,
+    all bodies scan layer ``1``.
+
+These properties can be configured via code, or by editing them in the Inspector.
+
+Keeping track of what you're using each layer for can be difficult, so you
+may find it useful to assign names to the layers you're using. Names can
+be assigned in Project Settings -> Layer Names.
+
+.. image:: img/physics_layer_names.png
+
+**Example:**
+
+You have four node types in your game: Walls, Player, Enemy, and Coin. Both
+Player and Enemy should collide with Walls. The Player node should detect
+collisions with both Enemy and Coin, but Enemy and Coin should ignore each
+other.
+
+Start by naming layers 1-4 "walls", "player", "enemies", and "coins" and
+place each node type in its respective layer using the "Layer" property.
+Then set each node's "Mask" property by selecting the layers it should
+interact with. For example, the Player's settings would look like this:
+
+.. image:: img/player_collision_layers.png
+.. image:: img/player_collision_mask.png
+
+Area2D
 ------
 
-The base collidable object in Godot's 2D world is a
-:ref:`Shape2D <class_Shape2D>`.
-There are many types of shapes, all of them inherit this base class:
+Area nodes provide **detection** and **influence**. They can detect when
+objects overlap and emit signals when bodies enter or exit. Areas can also
+be used to override physics properties such as gravity or damping in a
+defined area.
 
--  :ref:`CircleShape2D <class_CircleShape2D>`
--  :ref:`RectangleShape2D <class_RectangleShape2D>`
--  :ref:`CapsuleShape2D <class_CapsuleShape2D>`
--  :ref:`ConvexPolygonShape2D <class_ConvexPolygonShape2D>`
--  :ref:`ConcavePolygonShape2D <class_ConcavePolygonShape2D>`
--  etc. (there are others check the class list).
+There are three main uses for :ref:`Area2D <class_Area2D>`:
 
-Shapes are of type
-:ref:`Resource <class_Resource>`,
-but they can be created via code easily. For example:
+- Overriding physics parameters such as gravity in a given region.
 
-::
+- Detecting when other bodies enter or exit a region or what bodies are currently in a region.
 
-    # Create a circle
-    var c = CircleShape2D.new()
-    c.set_radius(20)
+- Checking other areas for overlap.
 
-    # Create a box
-    var b = RectangleShape2D.new()
-    b.set_extents(Vector2(20, 10))
-
-The main use for shapes is checking collision/intersection and getting
-resolution information. Shapes are mostly convex, (except the
-concavepolygon one, which is just a list of segments to check collision
-against). This collision check is done easily with the built-in
-functions like:
-
-::
-
-    # Check if there is a collision between two shapes, each with a transform
-    if b.collide(b_xform, a, a_xform):
-        print("OMG Collision!")
-
-Godot will return correct collision and collision info from the
-different calls to the Shape2D api. Collision between all shapes and
-transforms can be done this way, or even obtaining contact information,
-motion casting, etc.
-
-Transforming shapes
-~~~~~~~~~~~~~~~~~~~
-
-As seen before in the collide functions, 2D shapes in Godot can be
-transformed by using a regular :ref:`Transform2D <class_Transform2D>`
-transform, meaning the functions can check for collisions while the
-shapes are scaled, moved and
-rotated. The only limitation to this is that shapes with curved sections
-(such as circle and capsule) can only be scaled uniformly. This means
-that circle or capsule shapes scaled in the form of an ellipse **will
-not work properly**. This is a limitation on the collision algorithm
-used (SAT), so make sure that your circle and capsule shapes are always
-scaled uniformly!
-
-.. image:: img/shape_rules.png
-
-When problems begin
--------------------
-
-Even though this sounds good, reality is that collision detection alone
-is usually not enough in most scenarios. Many problems start arising as
-long as the development of the game is in progress:
-
-Too many combinations!
-~~~~~~~~~~~~~~~~~~~~~~
-
-Games have several dozens, hundreds, thousands! of objects that can
-collide and be collided. The typical approach is to test everything
-against everything in two for loops like this:
-
-::
-
-    for i in colliders:
-        for j in colliders:
-            if i.collides(j):
-                do_collision_code()
-
-But this scales really bad. Let's imagine there are only 100 objects in
-the game. This means that 100\*100=10000 collisions will need to be
-tested each frame. This is a lot!
-
-Visual aid
-~~~~~~~~~~
-
-Most of the time, creating a shape via code is not enough. We need to
-visually place it over a sprite, draw a collision polygon, etc. It is
-obvious that we need nodes to create the proper collision shapes in a
-scene.
-
-Collision resolution
-~~~~~~~~~~~~~~~~~~~~
-
-Imagine we solved the collision issue, we can tell easily and quickly
-which shapes overlap. If many of them are dynamic objects that move
-around, or move according to newtonian physics, solving a collision of
-multiple objects can be really difficult code-wise.
-
-Introducing... Godot's physics engine!
---------------------------------------
-
-To solve all these problems, Godot has a physics and collision engine
-that is well integrated into the scene system, yet it allows different
-levels and layers of functionality. The built-in physics engine can be
-used for:
-
--  Simple Collision Detection: See :ref:`Shape2D <class_Shape2D>`
-   API.
--  Scene Kinematics: Handle shapes, collisions, broadphase, etc as
-   nodes. See :ref:`Area2D <class_Area2D>`.
--  Scene Physics: Rigid bodies and constraints as nodes. See
-   :ref:`RigidBody2D <class_RigidBody2D>`, and the joint nodes.
-
-Units of measure
-~~~~~~~~~~~~~~~~
-
-It is often a problem when integrating a 2D physics engine to a game
-that such engines are optimized to work using meters as unit of measure.
-Godot uses a built-in custom 2D physics engine that is designed to
-function properly in pixels, so all units and default values used for
-stabilization are tuned for this, making development more
-straightforward.
-
-CollisionObject2D
------------------
-
-:ref:`CollisionObject2D <class_CollisionObject2D>`
-is the (virtual) base node for everything that can be collided in 2D.
-Area2D, StaticBody2D, KinematicBody2D and RigidBody2D all inherit from
-it. This node contains a list of shapes (Shape2D) and a relative
-transform. This means that all collisionable objects in Godot can use
-multiple shapes at different transforms (offset/scale/rotation). Just
-remember that, as mentioned before, **non-uniform scale will not work
-for circle and capsule shapes**.
-
-.. image:: img/collision_inheritance.png
-
-A CollisionObject2D comes in different flavors: StaticBody2D, RigidBody2D,
-KinematicBody2D and Area2D. However, before we dig into them, let's have
-a look how to define the shape of a collision object.
-There are two special nodes for that.
-
-CollisionShape2D
-~~~~~~~~~~~~~~~~
-
-This node is a helper node, which must be created as a direct child of a
-CollisionObject2D-derived node: :ref:`Area2D <class_Area2D>`,
-:ref:`StaticBody2D <class_StaticBody2D>`, :ref:`KinematicBody2D <class_KinematicBody2D>`,
-:ref:`RigidBody2D <class_RigidBody2D>`.
-
-The purpose of a CollisionShape2D instance is to add collision shapes to
-its parent class. Multiple children of type CollisionShape2D can be added to a
-CollisionObject2D-derived object with the effect that the parent will
-simply get more collision shapes. When a CollisionShape2D is edited (or added, moved,
-deleted) the list of shapes in the parent node is updated.
-
-At run time, though, this node does not exist and it can't be accessed with
-``get_node()``. This is because it is a helper node only for editing the collision shapes.
-To access the shapes created at runtime, use the CollisionObject2D API directly.
-
-As an example, here's the scene from the platformer, containing an
-Area2D (named 'coin') having two children: a CollisionShape2D (named 'collision')
-and a sprite (called 'sprite'):
-
-.. image:: img/area2dcoin.png
-
-CollisionPolygon2D
-~~~~~~~~~~~~~~~~~~
-
-This one is similar to CollisionShape2D, except that instead of
-assigning a shape, a polygon can be edited (drawn by the user) to
-determine the shape. The polygon can be convex or concave, it doesn't
-matter.
-
-Here is another scene involving a CollisionPolygon2D: A StaticBody2D has
-been added as a child of a sprite so that the collision object moves together
-with the sprite. In turn, the CollisionPolygon is a child of StaticBody2D, meaning it
-adds collision shapes to it.
-
-.. image:: img/spritewithcollision.png
-
-The CollisionPolygon2D will decompose the user-defined polygon into convex shapes
-(shapes can only be convex, remember?) before adding them to the CollisionObject2D.
-The following image shows such a decomposition:
-
-.. image:: img/decomposed.png
-
-Triggers
-~~~~~~~~
-
-A CollisionShape2D or CollisionPolygon2D can be set as a trigger by setting
-the boolean flag with the same name. When
-used in a RigidBody2D or KinematicBody2D, "trigger" shapes take part
-in collision detection but are unaffected by physics (they don't block
-movement etc).
-Defining a collision shape as a trigger is mostly useful in two situations:
-
--  Collisions for a specific shape shall be disabled.
--  An Area2D shall send ``body_enter`` and ``body_exit`` signals when the
-   trigger shape enters it (useful in several situations).
+By default, areas also receive mouse and touchscreen input.
 
 StaticBody2D
-~~~~~~~~~~~~
+------------
 
-The simplest node in the physics engine is the :ref:`StaticBody2D <class_StaticBody2D>`.
-This node takes part in collision detection. However, it does not move or rotate
-after a collision, so physics do not influence them. The node is static.
-Other nodes can collide against it and will be influenced accordingly.
+A static body is one that is not moved by the physics engine. It participates
+in collision detection, but does not move in response to the collision. However,
+it can impart motion or rotation to a colliding body **as if** it were moving,
+using its ``constant_linear_velocity`` and ``constant_angular_velocity`` properties.
 
-The platformer example uses StaticBody2D objects for the floors and walls.
-These are the static parts of a level and shall stay right where they
-are even if the player jumps onto them.
+``StaticBody2D`` nodes are most often used for objects that are part of the environment
+or that do not need to have any dynamic behavior.
 
-KinematicBody2D
-~~~~~~~~~~~~~~~
+Example uses for ``StaticBody2D``:
 
-Similar to StaticBody2D, objects of type :ref:`KinematicBody2D <class_KinematicBody2D>`
-are not affected by physics (although they take part in collision detection, of course).
-However, KinematicBody2D are not static but can be moved via code or an animation.
-They have two main uses:
-
--  **Simulated Motion**: When these bodies are moved manually, either
-   from code or from an :ref:`AnimationPlayer <class_AnimationPlayer>`
-   (with process mode set to physics!), the physics will automatically
-   compute an estimate of their linear and angular velocity. This makes
-   them very useful for moving platforms or other
-   AnimationPlayer-controlled objects (like a door, a bridge that opens,
-   etc). As an example, the 2d/platformer demo uses them for moving
-   platforms.
--  **Kinematic Characters**: KinematicBody2D also has an API for moving
-   objects (the ``move_and_slide()`` function) while performing collision tests. This
-   makes them really useful to implement characters that collide against
-   a world, but that don't require advanced physics. There is a tutorial
-   about it :ref:`doc_kinematic_character_2d`.
+-   Platforms (including moving platforms)
+-   Conveyor belts
+-   Walls and other obstacles
 
 RigidBody2D
-~~~~~~~~~~~
+-----------
 
-This type of body simulates Newtonian physics. It has mass, friction,
-bounce, and the (0,0) coordinates simulate the center of mass. When real
-physics are needed, :ref:`RigidBody2D <class_RigidBody2D>`
-is the node to use. The motion of this body is affected by gravity
-and/or other bodies.
+This is the node that implements simulated 2D physics. You do not control a
+:ref:`RigidBody2D <class_RigidBody2D>` directly. Instead you apply forces
+to it and the physics engine calculates the resulting movement, including
+collisions with other bodies, and collision responses such as bouncing,
+rotating, etc.
 
-Rigid bodies are usually active all the time, but when they end up in
-resting position and don't move for a while, they are put to sleep until
-something else wakes them up. This saves an enormous amount of CPU.
+You can modify a rigid body's behavior via  properties such as "Mass",
+"Friction", or "Bounce", which can be set in the Inspector.
 
-RigidBody2D nodes update their transform constantly, as it is generated
-by the simulation from a position, linear velocity and angular velocity.
-As a result, [STRIKEOUT:this node can't be scaled]. Scaling the children
-nodes should work fine though.
+The body's behavior is also affected by the world's properties, as set in
+`Project Settings -> Physics`, or by entering an :ref:`Area2D <class_Area2D>`
+that is overriding the global physics properties.
 
-A RigidBody2D has a ``Mode`` flag to change its behavior (something
-which is very common in games). It can behave like a rigid body,
-a character (a rigid body without the ability to rotate so that it is
-always upright), a kinematic body or a static body. This flag can be
-changed dynamically according to the current situation. For example,
-an enemy frozen by an ice beam becomes a static body.
+When a rigid body is at rest and hasn't moved for a time, it goes to sleep.
+A sleeping body acts like a static body, and its forces are not calculated by
+the physics engine. The body will wake up when forces are applied, either by
+a collision or via code. 
 
-The best way to interact with a RigidBody2D is during the force
-integration callback by overriding the function
+Rigid body modes
+~~~~~~~~~~~~~~~~
+
+A rigid body can be set to one of four modes:
+
+-   **Rigid** - The body behaves as a physical object. It collides with other bodies and responds to forces applied to it. This is the default mode.
+-   **Static** - The body behaves like a :ref:`StaticBody2D <class_StaticBody2D>` and does not move.
+-   **Character** - Similar to "Rigid" mode, but the body can not rotate.
+-   **Kinematic** - The body behaves like a :ref:`KinematicBody2D <class_KinematicBody2D>` and must be moved by code.
+
+Using RigidBody2D
+~~~~~~~~~~~~~~~~~
+
+One of the benefits of using a rigid body is that a lot of behavior can be had
+"for free" without writing any code. For example, if you were making an
+"Angry Birds"-style game with falling blocks, you would only need to create
+RigidBody2Ds and adjust their properties. Stacking, falling, and bouncing would
+automatically be calculated by the physics engine.
+
+However, if you do wish to have some control over the body, you should take
+care - altering the ``position``, ``linear_velocity``, or other physics properties
+of a rigid body can result in unexpected behavior. If you need to alter any
+of the physics-related properties, you should use the :ref:`_integrate_forces() <class_RigidBody2D__integrate_forces>`
+callback instead of ``_physics_process()``. In this callback, you have access
+to the body's :ref:`Physics2DDirectBodyState <class_Physics2DDirectBodyState>`,
+which allows for safely changing properties and synchronizing them with
+the physics engine.
+
+For example, here is the code for an "Asteroids" style spaceship:
 
 ::
+    
+    extends RigidBody2D
+
+    var thrust = Vector2(0, 250)
+    var torque = 20000
 
     func _integrate_forces(state):
-        [use state to change the object]
+        if Input.is_action_pressed("ui_up"):
+            set_applied_force(thrust.rotated(rotation))
+        else:
+            set_applied_force(Vector2())
+        var rotation_dir = 0
+        if Input.is_action_pressed("ui_right"):
+            rotation_dir += 1
+        if Input.is_action_pressed("ui_left"):
+            rotation_dir -= 1
+        set_applied_torque(rotation_dir * torque)
 
-The "state" parameter is of type :ref:`Physics2DDirectBodyState <class_Physics2DDirectBodyState>`.
-Please do not use the state object outside the callback as it will
-result in an error.
+Note that we are not setting the ``linear_velocity`` or ``angular_velocity``
+properties directly, but rather applying forces (``thrust`` and ``torque``) to
+the body and letting the physics engine calculate the resulting movement.
 
-During the evaluation of the aforementioned function, the physics engine
-synchronizes state with the scene and allows full modification of the
-object's parameters.  Since physics may run in its own thread, parameter
-changes outside that callback will not take place until the next frame.
-
-.. note::
-
-    When a RigidBody goes to sleep then the :ref:`_integrate_forces() <class_RigidBody2D__integrate_forces>`
-    method will not be called (I.E. they act like a static body until a
-    collision or a force is applied to them). To override this behavior you will
-    need to keep the rigid body "awake" by creating a collision, applying a force to it
-    (e.g. :ref:`linear_velocity <class_RigidBody2D_linear_velocity>`)
-    or by disabling the `can_sleep` property (see :ref:`can_sleep <class_RigidBody2D_can_sleep>`).
-    Be aware that this can have an effect on performance.
+.. note:: When a rigid body goes to sleep the ``_integrate_forces()``
+          function will not be called. To override this behavior you will
+          need to keep the body awake by creating a collision, applying a
+          force to it, or by disabling the :ref:`can_sleep <class_RigidBody2D_can_sleep>`
+          property. Be aware that this can have a negative effect on performance.
 
 Contact reporting
------------------
+~~~~~~~~~~~~~~~~~
 
-In general, RigidBody2D will not keep track of the contacts, because
-this can require a huge amount of memory if thousands of rigid bodies
-are in the scene. To get contacts reported, simply increase the amount
-of the "contacts reported" property from zero to a meaningful value
-(depending on how many you are expecting to get). The contacts can be
-later obtained via the
+By default, rigid bodies do not keep track of contacts, because this can
+require a huge amount of memory if many bodies are in the scene. To enable
+contact reporting, set the :ref:`contacts_reported <class_RigidBody2D_contacts_reported>`
+property to a non-zero value. The contacts can then be obtained via
 :ref:`Physics2DDirectBodyState.get_contact_count() <class_Physics2DDirectBodyState_get_contact_count>`
 and related functions.
 
-Contact monitoring via signals is also available (signals similar to the
-ones in Area2D, described below) via a boolean property.
+Contact monitoring via signals can be enabled via the :ref:`contact_monitor <class_RigidBody2D_contact_monitor>`
+property. See :ref:`RigidBody2D <class_RigidBody2D>` for the list of available
+signals.
 
-Area2D
-~~~~~~
+KinematicBody2D
+---------------
 
-Areas in Godot physics have three main roles:
+:ref:`KinematicBody2D <class_KinematicBody2D>` bodies detect collisions with
+other bodies, but are not affected by physics properties like gravity or friction.
+Instead, they must be controlled by the user via code. The physics engine will
+not move a kinematic body.
 
-1. Override the space parameters for objects entering them (ie.
-   gravity, gravity direction, gravity type, density, etc).
+When moving a kinematic body, you should not set its ``position`` directly.
+Instead, you use the ``move_and_collide()`` or ``move_and_slide()`` methods.
+These methods move the body along a given vector, and it will instantly stop
+if a collision is detected with another body. After the body has collided,
+any collision response must be coded manually.
 
-2. Monitor when rigid or kinematic bodies enter or exit the area.
+Kinematic collision response
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-3. Monitor other areas (this is the simplest way to get overlap test)
+After a collision, you may want the body to bounce, to slide along a wall,
+or to alter the properties of the object it hit. The way you handle collision
+response depends on which method you used to move the KinematicBody2D.
 
-The second function is the most common. For it to work, the "monitoring"
-property must be enabled (it is by default). There are two types of
-signals emitted by this node:
+:ref:`move_and_collide <class_KinematicBody2D_move_and_collide>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When using ``move_and_collide()``, the function returns a
+:ref:`KinematicCollision2D <class_KinematicCollision2D>` object, which contains
+information about the collision and the colliding body. You can use this
+information to determine the response.
+
+For example, if you want to find the point in space where the collision
+occurred:
 
 ::
 
-    # Simple, high level notification
-    body_enter(body:PhysicsBody2D)
-    body_exit(body:PhysicsBody2D)
-    area_enter(area:Area2D)
-    area_exit(body:Area2D)
+    extends KinematicBody2D
+    
+    var velocity = Vector2(250, 250)
+    
+    func _physics_process(delta):
+        var collision_info = move_and_collide(velocity * delta)
+        if collision_info:
+            var collision_point = collision_info.position
 
-    # Low level shape-based notification
-    # Notifies which shape specifically in both the body and area are in contact
-    body_enter_shape(body_id:int,body:PhysicsBody2D,body_shape_index:int,area_shape_index:idx)
-    body_exit_shape(body_id:int,body:PhysicsBody2D,body_shape_index:int,area_shape_index:idx)
-    area_enter_shape(area_id:int,area:Area2D,area_shape_index:int,self_shape_index:idx)
-    area_exit_shape(area_id:int,area:Area2D,area_shape_index:int,self_shape_index:idx)
+Or to bounce off of the colliding object:
 
-By default, areas also receive mouse/touchscreen input, providing a
-lower-level way than controls to implement this kind of input in a game.
-Bodies support this but it's disabled by default.
+::
 
-In case of overlap, who receives collision information?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    extends KinematicBody2D
+    
+    var velocity = Vector2(250, 250)
+    
+    func _physics_process(delta):
+        var collide = move_and_collide(velocity * delta)
+        if collide:
+            velocity = velocity.bounce(collide.normal)
 
-Remember that not every combination of two bodies can "report" contacts.
-Static bodies are passive and will not report contacts when hit.
-Kinematic Bodies will report contacts but only against Rigid/Character
-bodies. Area2D will report overlap (not detailed contacts) with bodies
-and with other areas. The following table should make it more visual:
+:ref:`move_and_slide <class_KinematicBody2D_move_and_slide>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+-------------------+-------------+-----------------+-----------------+---------------+--------+
-| **Type**          | *RigidBody* | *CharacterBody* | *KinematicBody* | *StaticBody*  | *Area* |
-+===================+=============+=================+=================+===============+========+
-| **RigidBody**     | Both        | Both            | Both            | Rigidbody     | Area   |
-+-------------------+-------------+-----------------+-----------------+---------------+--------+
-| **CharacterBody** | Both        | Both            | Both            | CharacterBody | Area   |
-+-------------------+-------------+-----------------+-----------------+---------------+--------+
-| **KinematicBody** | Both        | Both            | None            | None          | Area   |
-+-------------------+-------------+-----------------+-----------------+---------------+--------+
-| **StaticBody**    | RigidBody   | CharacterBody   | None            | None          | None   |
-+-------------------+-------------+-----------------+-----------------+---------------+--------+
-| **Area**          | Area        | Area            | Area            | None          | Both   |
-+-------------------+-------------+-----------------+-----------------+---------------+--------+
+Sliding is a very common collision response; imagine a moving along walls
+in a top-down game or running up and down slopes in a platformer. While it's
+possible to code this response yourself after using ``move_and_collide()``,
+``move_and_slide()`` provides a convenient way to implement sliding movement
+without writing very much code.
 
-Physics global variables
-------------------------
+.. warning:: ``move_and_slide()`` automatically includes the timestep in its
+             calculation, so you should **not** multiply the velocity vector
+             by ``delta``.
 
-A few global variables can be tweaked in the project settings for
-adjusting how 2D physics works:
-
-.. image:: img/physics2d_options.png
-
-Leaving them alone is best (except for the gravity, that needs to be
-adjusted in most games), but there is one specific parameter that might
-need tweaking which is the "cell_size". Godot 2D physics engine used by
-default a space hashing algorithm that divides space in cells to compute
-close collision pairs more efficiently.
-
-If a game uses several colliders that are really small and occupy a
-small portion of the screen, it might be necessary to shrink that value
-(always to a power of 2) to improve efficiency. Likewise if a game uses
-few large colliders that span a huge map (of several screens of size),
-increasing that value a bit might help save resources.
-
-Fixed process callback
-----------------------
-
-The physics engine may spawn multiple threads to improve performance, so
-it can use up to a full frame to process physics. Because of this, when
-accessing physics variables such as position, linear velocity, etc. they
-might not be representative of what is going on in the current frame.
-
-To solve this, Godot has a physics process callback, which is like process
-but it's called before each physics step always at the same frame rate
-(by default 60 times per second).
-During this time, the physics engine is in *synchronization* state and
-can be accessed directly and without delays.
-
-To enable a physics process callback, use the ``set_physics_process()``
-function, example:
+For example, use the following code to make a character that can walk along
+the ground (including slopes) and jump when standing on the ground:
 
 ::
 
     extends KinematicBody2D
 
+    var run_speed = 350
+    var jump_speed = -1000
+    var gravity = 2500
+
+    var velocity = Vector2()
+
+    func get_input():
+    	velocity.x = 0
+    	var right = Input.is_action_pressed('ui_right')
+    	var left = Input.is_action_pressed('ui_left')
+    	var jump = Input.is_action_just_pressed('ui_select')
+    	
+    	if is_on_floor() and jump:
+    		velocity.y = jump_speed
+    	if right:
+    		velocity.x += run_speed
+    	if left:
+    		velocity.x -= run_speed
+    	
     func _physics_process(delta):
-        move(direction * delta)
+    	velocity.y += gravity * delta
+    	get_input()
+    	velocity = move_and_slide(velocity, Vector2(0, -1))
 
-    func _ready():
-        set_physics_process(true)
-
-Casting rays and motion queries
--------------------------------
-
-It is very often desired to "explore" the world around from our code.
-Throwing rays is the most common way to do it. The simplest way to do
-this is by using the RayCast2D node, which will throw a ray every frame
-and record the intersection.
-
-At the moment there isn't a high level API for this, so the physics
-server must be used directly. For this, the
-:ref:`Physics2DDirectspaceState <class_Physics2DDirectspaceState>`
-class must be used. To obtain it, the following steps must be taken:
-
-1. It must be used inside the ``_physics_process()`` callback, or at
-   ``_integrate_forces()``
-
-2. The 2D RIDs for the space and physics server must be obtained.
-
-The following code should work:
-
-::
-
-    func _physics_process(delta):
-        var space = get_world_2d().get_space()
-        var space_state = Physics2DServer.space_get_direct_state(space)
-
-Enjoy doing space queries!
+See :ref:`doc_kinematic_character_2d` for more details on using ``move_and_slide()``,
+including a demo project with detailed code.
