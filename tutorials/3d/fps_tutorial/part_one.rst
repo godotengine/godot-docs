@@ -399,9 +399,6 @@ is visible, or hidden. If it is visible, we hide it. If it is hidden, we make it
 Next we assure that our movement vector does not have any movement on the ``Y`` axis, and then we normalize it.
 We set a variable to our normal gravity and apply that gravity to our velocity.
 
-.. note:: If you are wondering why we are seemingly needlessly assigning a new variable
-          for gravity, it is because later we will be changing gravity.
-
 After that we assign our velocity to a new variable (called ``hvel``) and remove any movement on the ``Y`` axis.
 Next we set a new variable (``target``) to our direction vector. Then we multiply that by our max speed
 so we know how far we will can move in the direction provided by ``dir``.
@@ -470,10 +467,8 @@ First we need a few more global variables in our player script:
 
 ::
 
-    const sprint_grav = -30.8
     const MAX_SPRINT_SPEED = 30
     const SPRINT_ACCEL = 18
-    const SPRINT_JUMP_SPEED = 24
     var is_sprinting = false
 
 All of these variables work exactly the same as the non sprinting variables with
@@ -483,24 +478,18 @@ whether the player is currently sprinting.
 Now we just need to change some of the code in our ``_physics_process`` function
 so we can add the ability to sprint.
 
-First, we want to change gravity when we are sprinting. The reason behind this is
-we want the player to feel a little more weighty when sprinting. If we were not also
-increasing the max speed and jump height, we wouldn't need to change gravity, but since
-we are, we need to make a few changes.
-
-The first change is we need to replace ``var grav = norm_grav`` with the code below:
+The first thing we need to do is add the following code, preferably by the other input related code:
 
 ::
 
-    # Was "var grav = norm_grav"
-    var grav = 0
     if Input.is_action_pressed("movement_sprint"):
         is_sprinting = true
-        grav = sprint_grav
     else:
         is_sprinting = false;
-        grav = norm_grav
 
+
+This will set ``is_sprinting`` to true when we are holding down the ``movement_sprint`` action, and false
+when the ``movement_sprint`` action is released.
 
 Next we need to set our max speed to the higher speed if we are sprinting, and we also need
 to change our acceleration to the new acceleration:
@@ -525,23 +514,8 @@ to change our acceleration to the new acceleration:
     else:
         accel = DEACCEL
 
-
-Finally, we need to increase the jump height when we are sprinting:
-
-::
-
-    # Same code as before
-    if is_on_floor():
-        if Input.is_action_just_pressed("movement_jump"):
-            # NEW CODE. replaces "vel.y = JUMP_SPEED"
-            if is_sprinting:
-                vel.y = SPRINT_JUMP_SPEED
-            else:
-                vel.y = JUMP_SPEED
-
 Now you should be able to sprint if you press the shift button! Go give it a
-whirl! You can change the sprint related global variables to make the player faster, to reduce
-gravity, and to accelerate faster.
+whirl! You can change the sprint related global variables to make the player faster when sprinting!
 
 Phew! That was a lot of work. Now you have a fully working first person character!
 
