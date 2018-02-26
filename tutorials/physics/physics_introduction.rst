@@ -317,7 +317,7 @@ Or to bounce off of the colliding object:
 :ref:`move_and_slide <class_KinematicBody2D_move_and_slide>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Sliding is a very common collision response; imagine a moving along walls
+Sliding is a very common collision response; imagine a player moving along walls
 in a top-down game or running up and down slopes in a platformer. While it's
 possible to code this response yourself after using ``move_and_collide()``,
 ``move_and_slide()`` provides a convenient way to implement sliding movement
