@@ -92,8 +92,6 @@ call update() from the _process() callback, like this:
     func _process(delta):
         update()
 
-    func _ready():
-        set_process(true)
 
 An example: drawing circular arcs
 ----------------------------------
@@ -128,7 +126,7 @@ The next step consists of computing the actual positions of these 32 points that
 
 The reason why each angle is reduced by 90° is that we will compute 2D positions out of each angle using trigonometry (you know, cosine and sine stuff...). However, to be simple, cos() and sin() use radians, not degrees. The angle of 0° (0 radian) starts at 3 o'clock, although we want to start counting at 0 o'clock. So, we just reduce each angle by 90° in order to start counting from 0 o'clock.
 
-The actual position of a point located on a circle at angle 'angle' (in radians) is given by Vector2(cos(angle), sin(angle)). Since cos() and sin() return values between -1 and 1, the position is located on a circle of radius 1. To have this position on our support circle, which has a radius of 'radius', we simply need to multiply the position by 'radius'. Finally, we need to position our support circle at the 'center' position, which is performed by adding it to our Vector2 value. Finally, we insert the point in the Vector2Array which was previously defined.
+The actual position of a point located on a circle at angle 'angle' (in radians) is given by Vector2(cos(angle), sin(angle)). Since cos() and sin() return values between -1 and 1, the position is located on a circle of radius 1. To have this position on our support circle, which has a radius of 'radius', we simply need to multiply the position by 'radius'. Finally, we need to position our support circle at the 'center' position, which is performed by adding it to our Vector2 value. Finally, we insert the point in the PoolVector2Array which was previously defined.
 
 Now, we need to actually draw our points. As you can imagine, we will not simply draw our 32 points: we need to draw everything that is between each of them. We could have computed every point ourselves using the previous method, and drew it one by one. But this is too complicated and inefficient (except if explicitly needed). So, we simply draw lines between each pair of points. Unless the radius of our support circle is very big, the length of each line between a pair of points will never be long enough to see them. If this happens, we simply would need to increase the number of points.
 
@@ -160,9 +158,9 @@ We can take this a step further and not only write a function that draws the pla
 
     func draw_circle_arc_poly(center, radius, angle_from, angle_to, color):
         var nb_points = 32
-        var points_arc = Vector2Array()
+        var points_arc = PoolVector2Array()
         points_arc.push_back(center)
-        var colors = ColorArray([color])
+        var colors = PoolColorArray([color])
     
         for i in range(nb_points+1):
             var angle_point = angle_from + i * (angle_to - angle_from) / nb_points - 90
@@ -188,7 +186,7 @@ First, we have to make both angle_from and angle_to variables global at the top 
 
 
 
-We make these values change in the _process(delta) function. To activate this function, we need to call set_process(true) in the _ready() function. 
+We make these values change in the _process(delta) function. 
 
 We also increment our angle_from and angle_to values here. However, we must not forget to wrap() the resulting values between 0 and 360°! That is, if the angle is 361°, then it is actually 1°. If you don't wrap these values, the script will work correctly. But angle values will grow bigger and bigger over time, until they reach the maximum integer value Godot can manage (2^31 - 1). When this happens, Godot may crash or produce unexpected behavior. Since Godot doesn't provide a wrap() function, we'll create it here, as it is relatively simple.
 
@@ -196,9 +194,6 @@ Finally, we must not forget to call the update() function, which automatically c
 
 ::
 
- func _ready():
-     set_process(true)
- 
  func wrap(value, min_val, max_val):
      var f1 = value - min_val
      var f2 = max_val - min_val
